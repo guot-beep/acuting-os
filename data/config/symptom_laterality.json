@@ -1,0 +1,51 @@
+{
+  "dataset": "Symptom laterality (症狀側性) controlled vocabulary",
+  "policy": [
+    "Values for a symptom card clinical_attributes.laterality. Small on purpose: laterality is one of the few attributes nearly always askable and nearly always recorded, so a large vocabulary here would be noise.",
+    "SCOPE CAVEAT (2026-08-06): left/right/bilateral/midline/unilateral_alternating are true SIDEDNESS.  is not — it describes position changing over time, which is distribution/mobility, a different axis. It is kept here as a TEMPORARY COMPATIBILITY VALUE because 遊走性 is diagnostically meaningful (風) and the pilot needs somewhere to put it.",
+    "The 15 pilot cards decide whether this splits into symptom_laterality + symptom_distribution_or_mobility. Do NOT read  as a side; a template or UI that renders it as one is wrong.",
+    "IDs are ASCII (D10)."
+  ],
+  "created": "2026-08-06",
+  "applies_to": "sym.* records via clinical_attributes.laterality",
+  "records": [
+    {
+      "id": "left",
+      "name_zh": "左側",
+      "name_en": "Left",
+      "axis": "laterality"
+    },
+    {
+      "id": "right",
+      "name_zh": "右側",
+      "name_en": "Right",
+      "axis": "laterality"
+    },
+    {
+      "id": "bilateral",
+      "name_zh": "雙側",
+      "name_en": "Bilateral",
+      "axis": "laterality"
+    },
+    {
+      "id": "midline",
+      "name_zh": "正中",
+      "name_en": "Midline",
+      "axis": "laterality"
+    },
+    {
+      "id": "unilateral_alternating",
+      "name_zh": "單側交替",
+      "name_en": "Alternating unilateral",
+      "axis": "laterality"
+    },
+    {
+      "id": "migratory",
+      "name_zh": "遊走",
+      "name_en": "Migratory",
+      "note_zh": "遊走性有辨證意義（風），但它描述的是位置隨時間移動，不是側性。暫置於此，待 15 張試點後判斷是否獨立成 symptom_distribution_or_mobility。",
+      "axis": "distribution_or_mobility",
+      "status": "temporary_compatibility_value"
+    }
+  ]
+}

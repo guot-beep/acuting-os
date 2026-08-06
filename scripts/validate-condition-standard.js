@@ -95,7 +95,14 @@ const CONTENT_FIELDS = new Set([
   "classical_references_zh", "classical_references_en",
 ]);
 const RELATION_FIELDS = new Set([
-  "related_eastern_diseases", "related_patterns", "related_tcm_symptoms",
+  "related_eastern_diseases", "related_patterns",
+  // edge.condition_symptoms (D13, descriptive). related_tcm_symptoms is
+  // deprecated_but_temporarily_accepted, NOT retired — 1 record still holds a
+  // value and deleting it before its ids exist would lose the inline blob
+  // (§0 只加深不刪除). It stays approved so that record is not a defect, and
+  // N2 reports it so it does not become invisible. Removed from APPROVED only
+  // after migration. New content must use sign_symptom_ids.
+  "sign_symptom_ids", "related_tcm_symptoms",
   "herb_formulas", "acupoint_protocols", "medication_links", "workflow_links",
 ]);
 const PROVENANCE_FIELDS = new Set([
@@ -335,6 +342,11 @@ for (const rec of scope) {
     if (!v) continue;
     const n = sharedValues.get(f).get(v);
     if (n >= 2) add("C10", `${f} is shared verbatim by ${n} records — boilerplate or misfiled text, not this condition's content. Do NOT translate it; the fill line replaces it from real sources.`);
+  }
+
+  // N2 deprecated_but_temporarily_accepted field still in use
+  if (!isEmpty(rec.related_tcm_symptoms)) {
+    notes.push({ code: "N2", id, category: cat, detail: "uses related_tcm_symptoms — deprecated_but_temporarily_accepted. Migrate to sign_symptom_ids (edge.condition_symptoms); no NEW content may use this field." });
   }
 
   // N1 unlifted inline pattern blobs

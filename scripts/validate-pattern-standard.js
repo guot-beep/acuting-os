@@ -63,7 +63,10 @@ const APPROVED = new Set([
   "mechanism_zh", "mechanism_en", "common_causes_zh", "common_causes_en",
   "progression_zh", "progression_en",
   // 4.4 presentation
-  "key_signs_zh", "key_signs_en", "supporting_signs_zh", "supporting_signs_en",
+  "key_signs_zh", "key_signs_en",
+  // edge.pattern_symptoms (D13, descriptive). ADDITIVE: key_signs_zh stays as
+  // display fallback until sym.* coverage is sufficient (§0 只加深不刪除).
+  "key_signs_ids", "supporting_signs_zh", "supporting_signs_en",
   "tongue_zh", "tongue_en", "pulse_zh", "pulse_en",
   "emotional_features_zh", "emotional_features_en",
   // 4.5 differential

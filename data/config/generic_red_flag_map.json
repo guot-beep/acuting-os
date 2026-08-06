@@ -1,0 +1,20 @@
+{
+  "dataset": "Generic red-flag phrasings that must be referenced, not repeated",
+  "purpose": "Turns a HUMAN adjudication into a machine rule. When review confirms that a red-flag sentence is generic and already covered by a registered safety_flag, the phrasing is recorded here — and from then on validate-symptom-standard Y15 blocks it, so the same boilerplate cannot come back under a new record.",
+  "policy": [
+    "Detection of verbatim duplication is NOT blocking (that is note N3). Blocking on exact match would reward paraphrase: an agent rewrites '突發劇烈頭痛' as '突然出現非常嚴重的頭痛', the check goes quiet, and the boilerplate survives with the signal destroyed. Worse than not checking.",
+    "Y15 blocks only on an entry in THIS file — i.e. only where a human has already decided that this wording belongs to that safety_flag. The machine never makes that call itself.",
+    "This is a boilerplate ratchet: entries only ever get added, and each one closes a phrasing permanently.",
+    "maps_to must be an id in data/config/safety_flag_vocabulary.json.",
+    "Adding an entry is a review decision, not a cleanup task. If a phrasing is genuinely specific to one symptom, it does NOT belong here even if it happens to appear twice."
+  ],
+  "created": "2026-08-06",
+  "field_definitions": {
+    "phrasing_zh": "the exact string as written on a card",
+    "maps_to": "safety_flag id that already covers it",
+    "decided_by": "who adjudicated",
+    "decided_on": "date",
+    "note": "why this wording is generic rather than symptom-specific"
+  },
+  "entries": []
+}

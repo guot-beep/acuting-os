@@ -144,11 +144,31 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 |---|---|---|
 | `related_patterns` | `pattern.*` | **C6:必須解析得到** |
 | `related_eastern_diseases` | 中醫病名 | — |
-| `related_tcm_symptoms` | 症狀 | — |
+| **`sign_symptom_ids`** | `sym.*` | **新的正典欄位**(edge.condition_symptoms,D13)。這一側是 authored side:填 migraine 卡時症狀就在眼前,不必去改三張症狀卡 |
+| ~~`related_tcm_symptoms`~~ | 症狀 | **deprecated_but_temporarily_accepted** —— 見下 |
 | `herb_formulas` | `formula.*` | — |
 | `acupoint_protocols` | 穴位處方 | — |
 | `medication_links` | 西藥(藥理層做完後接) | — |
 | `workflow_links` | 臨床流程 | — |
+
+> #### `related_tcm_symptoms` 的過渡狀態(2026-08-06)
+>
+> 它是 `sign_symptom_ids` 的前身,而且存的是內嵌 blob 不是 id。三個檔案對它的
+> 說法必須一致,否則會出現「registry 說已退役 / validator 說仍核准 / 模板說不能用」
+> 這種互相矛盾:
+>
+> | 規則 | 狀態 |
+> |---|---|
+> | **新內容一律不准用** | 新的症狀連結寫 `sign_symptom_ids` |
+> | 既有那 1 筆(`cond.functional_dyspepsia`)可暫留 | 現在刪掉會在 id 存在之前先丟掉 blob(§0 只加深不刪除)|
+> | 仍在 validator 的 approved 清單 | 所以那 1 筆不會變成缺陷 |
+> | validator 發 **N2 提示**,不阻擋 | 讓它可見,不讓它擋路 |
+> | 遷移後才從 approved 移除 | 那時才轉為 `retired` |
+>
+> **這是第三種狀態,不是 `retired`。** retired 的欄位是「沒人能寫、也沒有資料
+> 持有」;這個欄位還握著資料,所以叫它 retired 而 validator 又核准它,就是
+> 自相矛盾。正本記在 `data/config/relation_registry.json` 的
+> `deprecated_but_temporarily_accepted`。
 
 ### 3.4 來源(**只用 `sources`**)
 

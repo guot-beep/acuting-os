@@ -70,6 +70,8 @@ const APPROVED = new Set([
   "etiology_zh", "etiology_en",
   "pathomechanism_zh", "pathomechanism_en",
   "key_manifestations_zh", "key_manifestations_en",
+  // edge.tdis_symptoms (D13, descriptive)
+  "key_manifestation_ids",
   "associated_manifestations_zh", "associated_manifestations_en",
   "disease_location_zh", "disease_location_en",
   "red_flags_zh", "red_flags_en",
