@@ -6231,6 +6231,34 @@ function renderChannelOverviewCard(ch) {
         </details>
       </section>
     ` : ''}
+
+    ${(ch.pathomechanism_zh || ch.preservation_zh) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #f4f8f6; border: 1px solid #c8ded3; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #1b5e3a; outline: none; user-select: none;">
+            🩺 常見經絡異常與日常養生保健 (Pathomechanism & Preservation)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #3b7a57; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${ch.pathomechanism_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #d9534f; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #f2dede; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #a94442; margin-bottom: 0.4rem;">⚠️ 常見經絡異常：是動病、所生病與虛實病理 (Pathomechanism)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.pathomechanism_zh)}</pre>
+                ${ch.pathomechanism_en ? `<div style="font-size: 0.82rem; color: #737373; line-height: 1.5; font-style: italic;">${escapeHtml(ch.pathomechanism_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.preservation_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #5cb85c; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #dff0d8; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #3c763d; margin-bottom: 0.4rem;">🌿 經絡保養與日常養生導引 (Meridian Care & Preservation)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.preservation_zh)}</pre>
+                ${ch.preservation_en ? `<div style="font-size: 0.82rem; color: #4f7942; line-height: 1.5; font-style: italic;">${escapeHtml(ch.preservation_en)}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        </details>
+      </section>
+    ` : ''}
   `;
 }
 
