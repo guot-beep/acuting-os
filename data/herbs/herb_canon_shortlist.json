@@ -79913,6 +79913,139 @@
         "Hepatoprotective, detoxifying, accelerates toxin metabolism",
         "Antitussive, expectorant, lubricates respiratory mucosa"
       ]
+    },
+    {
+      "id": "herb.xiong_huang",
+      "name_zh": "雄黃",
+      "name_en": "Realgar",
+      "pinyin": "xiong huang",
+      "category": "驅蟲藥 / Expel Parasites",
+      "category_zh": "驅蟲藥",
+      "properties_taste_temp": "辛，溫；有毒",
+      "channels_zh": [
+        "肝",
+        "大腸"
+      ],
+      "functions_zh": [
+        "解毒殺蟲",
+        "燥濕祛痰",
+        "截瘧"
+      ],
+      "indications_zh": [
+        "癰腫疔瘡",
+        "蛇蟲咬傷",
+        "疥癬",
+        "驚癇",
+        "瘧疾"
+      ],
+      "dosage": "內服 0.05–0.1g，入丸散用；外用適量。",
+      "cautions_zh": [
+        "主成分為二硫化二砷（As₂S₂），有毒。",
+        "⚠️ 忌火煅。加熱後氧化為三氧化二砷（砒霜），毒性劇增 —— 這是本品最重要的一條炮製禁忌。",
+        "不可久服，內服須嚴格控制劑量並由醫師監督。"
+      ],
+      "contraindications_zh": [
+        "孕婦禁用。",
+        "陰虧血虛者忌服。"
+      ],
+      "safety_flags": [
+        "toxicity_review",
+        "pregnancy_review",
+        "not_for_self_treatment",
+        "dose_preparation_review",
+        "heavy_metal_review"
+      ],
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "review_status": "draft",
+      "source_type": "claude_minimal_record_for_F12_link",
+      "clinical_use_note": "因 F12 而建立：安宮牛黃丸的組成引用此味，中藥庫卻沒有記錄，導致方劑驗證器阻擋。此為最小可用記錄，內容以毒性與炮製禁忌為主，其餘欄位待補。",
+      "field_sources": {
+        "dosage": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ],
+        "cautions_zh": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ],
+        "contraindications_zh": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ],
+        "functions_zh": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ]
+      },
+      "category_note_zh": "教科書多歸「外用藥 / 解毒殺蟲燥濕止癢藥」，本庫無該分類，故歸入最接近且已存在的驅蟲藥（殺蟲為其核心功效）。分類詞彙表若日後補上外用藥，此味應遷回。"
+    },
+    {
+      "id": "herb.zhu_sha",
+      "name_zh": "硃砂",
+      "name_en": "Cinnabar",
+      "pinyin": "zhu sha",
+      "aliases_zh": [
+        "朱砂",
+        "辰砂"
+      ],
+      "category": "安神藥 / Calm Spirit",
+      "category_zh": "安神藥",
+      "properties_taste_temp": "甘，微寒；有毒",
+      "channels_zh": [
+        "心"
+      ],
+      "functions_zh": [
+        "清心鎮驚",
+        "安神",
+        "明目",
+        "解毒"
+      ],
+      "indications_zh": [
+        "心悸易驚",
+        "失眠多夢",
+        "癲癇發狂",
+        "小兒驚風",
+        "瘡瘍腫毒"
+      ],
+      "dosage": "內服 0.1–0.5g，只入丸散，不入湯劑。",
+      "cautions_zh": [
+        "主成分為硫化汞（HgS），有毒。",
+        "⚠️ 忌火煅。加熱析出汞，毒性劇增。",
+        "⚠️ 不入湯劑 —— 水飛後入丸散服。",
+        "不可久服，蓄積性中毒可致肝腎損害。"
+      ],
+      "contraindications_zh": [
+        "孕婦禁用。",
+        "肝腎功能不全者禁用。",
+        "不宜與含碘、含溴製劑同用。"
+      ],
+      "safety_flags": [
+        "toxicity_review",
+        "pregnancy_review",
+        "not_for_self_treatment",
+        "dose_preparation_review",
+        "heavy_metal_review",
+        "medication_review"
+      ],
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan",
+        "formula.tian_wang_bu_xin_dan"
+      ],
+      "review_status": "draft",
+      "source_type": "claude_minimal_record_for_F12_link",
+      "clinical_use_note": "因 F12 而建立,理由同雄黃。",
+      "field_sources": {
+        "dosage": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ],
+        "cautions_zh": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ],
+        "contraindications_zh": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ],
+        "functions_zh": [
+          "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
+        ]
+      }
     }
   ],
   "batch_summary": {

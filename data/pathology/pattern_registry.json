@@ -880,6 +880,42 @@
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "ba_gang",
       "system_zh": "八綱辨證"
+    },
+    {
+      "id": "pattern.wind_cold",
+      "name_zh": "風寒",
+      "name_en": "Wind Cold",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.wind_external"
+      ],
+      "system": "bing_yin",
+      "system_zh": "病因辨證",
+      "newly_registered_note_zh": "登錄為正式詞彙,尚未被任何病症或鑑別卡引用。",
+      "restored_note": "硬刪於 b26d0a0，2026-08-06 還原。D6 禁止硬刪知識記錄；退役請用 review_status=\"deprecated\"。此 id 被 sym.headache / sym.fever 的 differentiation[].points_to 引用。"
+    },
+    {
+      "id": "pattern.wind_heat",
+      "name_zh": "風熱",
+      "name_en": "Wind Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.wind_external"
+      ],
+      "system": "bing_yin",
+      "system_zh": "病因辨證",
+      "newly_registered_note_zh": "登錄為正式詞彙,尚未被任何病症或鑑別卡引用。",
+      "restored_note": "硬刪於 b26d0a0，2026-08-06 還原。D6 禁止硬刪知識記錄；退役請用 review_status=\"deprecated\"。此 id 被 sym.headache / sym.fever 的 differentiation[].points_to 引用。"
     }
   ]
 }

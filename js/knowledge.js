@@ -901,8 +901,16 @@
     if (app.length) out.push(detailSection("現代應用", "What this formula treats today（課件 Applications）", detailPairedList(app, appEn)));
     const res = cleanList(record.modern_research_zh), resEn = cleanList(record.modern_research_en);
     if (res.length) out.push(detailSection("現代藥理", "Modern research（課件）", detailPairedList(res, resEn)));
-    const dis = cleanList(record.modern_diseases_zh);
-    if (dis.length) out.push(detailSection("CloudTCM 可改善疾病", "關聯疾病索引（來源為關鍵字關聯，非臨床應用，需自行判讀）", `<div class="k-chip-cloud">${dis.map(tag).join("")}</div>`));
+    // modern_diseases_zh is NOT rendered. It is CloudTCM keyword co-occurrence:
+    // whatever disease names happened to appear on the same page. That is why
+    // 桂枝湯 carried 心肌梗塞, 痲瘋 and 麻疹, and why Ting could not work out what
+    // the block was for — there was nothing to work out. It answered no question
+    // a reader has, while sitting above 現代應用, which answers the real one.
+    //
+    // The data stays in the record (§0 — this is a display decision, not a
+    // deletion) and the template's §1 row 13b is corrected to match. If a use
+    // for it ever appears, it comes back as a deliberate section, not as the
+    // loudest thing on the card.
     return out.join("");
   }
 
@@ -1052,7 +1060,32 @@
     }).join("");
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
     const relatedConditions = entityChips(record.related_conditions);
-    const modern = modernTagChips(record.modern_clinical_use_tags);
+    /* 現代運用索引 read only modern_clinical_use_tags, which is null on most
+       formulas — so the section rendered "—" while the record was actually
+       carrying 感冒 / Common Cold and 營衛不和 / Ying-Wei Disharmony in
+       condition_tags_* and pattern_tags_*. The bilingual tag layer existed and
+       nothing rendered it (template lesson 9, and lesson 2's warning that the
+       tag layer dies silently because the card still looks fine).
+       Pairs are index-aligned per §2; a zh with no en shows the zh alone rather
+       than a half-translation. */
+    const bilingualTagChips = (zhList, enList, kindZh, kindEn) => {
+      const zh = cleanList(zhList), en = cleanList(enList);
+      if (!zh.length) return "";
+      return zh.map((z, i) => {
+        const e = zh.length === en.length ? en[i] : "";
+        const label = e ? `${z} · ${e}` : z;
+        return `<button type="button" class="k-modern-chip k-chip-${kindEn}" data-search-term="${esc(z)}"
+          title="${esc(kindZh)} — 點擊全站搜尋">${esc(label)}</button>`;
+      }).join("");
+    };
+    const modern = [
+      bilingualTagChips(record.condition_tags_zh, record.condition_tags_en, "病證", "condition"),
+      bilingualTagChips(record.pattern_tags_zh, record.pattern_tags_en, "證型", "pattern"),
+      // modernTagChips renders an em-dash placeholder for an empty group, which
+      // is exactly the "—" that made this section look broken. Drop those.
+      modernTagChips(record.modern_clinical_use_tags),
+      modernTagChips(record.modern_use_tags),
+    ].map((h) => (h && /<button/.test(h) ? h : "")).filter(Boolean).join("");
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     const contraindicationsZh = cleanList(record.contraindications_zh || record.cautions_zh);
     const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
@@ -1063,7 +1096,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("⚠️ 注意事項與禁忌", "Contraindications & Cautions", contraHtml)}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${modern ? detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", `<div class="k-chip-cloud">${modern}</div>`) : ""}${detailSection("相關病名與證型", "Related conditions and patterns", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
