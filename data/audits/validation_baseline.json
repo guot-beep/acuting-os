@@ -9,6 +9,10 @@
     {
       "date": "2026-08-06",
       "reason": "tdis joins the ratchet: template+validator shipped (D14 parts 2-3); baseline recorded after the taxonomy split took T10 from 150 to 28"
+    },
+    {
+      "date": "2026-08-06",
+      "reason": "symptoms namespace joins the ratchet: template + validator shipped 2026-08-06, completing D14 for all four namespaces"
     }
   ],
   "layers": {
@@ -38,6 +42,11 @@
         "T10": 28
       },
       "doc": "docs/TDIS_CARD_TEMPLATE.md"
+    },
+    "symptoms": {
+      "defects": 0,
+      "by_code": {},
+      "doc": "docs/SYMPTOM_CARD_TEMPLATE.md"
     },
     "naming": {
       "defects": 1,

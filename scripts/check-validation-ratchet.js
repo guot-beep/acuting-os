@@ -68,6 +68,14 @@ const RATCHETED = [
     doc: "docs/TDIS_CARD_TEMPLATE.md",
   },
   {
+    key: "symptoms",
+    script: "scripts/validate-symptom-standard.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    doc: "docs/SYMPTOM_CARD_TEMPLATE.md",
+  },
+  {
     key: "naming",
     script: "scripts/validate-naming.js",
     args: [],

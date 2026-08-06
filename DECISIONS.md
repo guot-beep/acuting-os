@@ -280,7 +280,7 @@ migration for Ting.
   | `cond.*` | 西醫病名 | Biomedical condition — has diagnostic criteria, labs/imaging, an ICD position | **150** ✅ |
   | `tdis.*` | 中醫病名 | TCM disease — a classical illness name defined by a symptom cluster (感冒·咳嗽·喘證·胃痛) | **75** ✅ |
   | `pattern.*` | 證型 | Syndrome differentiation conclusion — a snapshot of the pathomechanism (肝陽上亢) | **61 registry / 50 library** ✅ |
-  | `sym.*` | 症狀/體徵 | Symptom or sign — a single observation (頭痛·口苦·惡寒) | **0 — not built** ❌ |
+  | `sym.*` | 症狀/體徵 | Symptom or sign — a single observation (頭痛·口苦·惡寒) | **0 records; vocabulary + template + validator built 2026-08-06** |
 
 - **Ting's framing was right with one correction.** She proposed
   "condition = 西醫病名, pattern = 中醫". `cond.*` = 西醫病名 is correct. But
@@ -390,7 +390,10 @@ migration for Ting.
   - `tdis.*` ✅ all four (`TDIS_CARD_TEMPLATE.md` + `validate-tdis-standard.js`
     shipped; `classical_source_hint` split into `taxonomy_id` +
     `classical_source`, 61/75 auto-assigned, 14 left for a human pass)
-  - `sym.*` — nothing, deliberately (D11: build it when a real consumer needs it)
+  - `sym.*` ✅ all four (2026-08-06). The consumer D11 was waiting for arrived:
+    CloudTCM's 129 symptom entries had source pages and diagrams and nowhere to
+    live. Vocabulary, template and validator now exist; records are still 0 —
+    correctly built and honestly empty.
 - **All four ratchet layers are now in CI**: conditions 577 · patterns 250 ·
   tdis 103 · naming 1.
 - **Reconsider only if:** never fill a namespace that is missing part 1, 2 or 3.

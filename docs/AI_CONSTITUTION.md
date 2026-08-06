@@ -108,6 +108,7 @@ node scripts/build-data.js                     # 改了 data/**.json 一定要�
 node scripts/validate-condition-standard.js    # 西醫病名線
 node scripts/validate-tdis-standard.js         # 中醫病名線
 node scripts/validate-pattern-standard.js      # 證型線
+node scripts/validate-symptom-standard.js      # 症狀線
 node scripts/validate-acupoint-standard.js     # 穴位線
 node scripts/validate-point-ids.js             # 穴位線 · D2 id 完整性
 node scripts/validate-herb-standard.js         # 中藥線
