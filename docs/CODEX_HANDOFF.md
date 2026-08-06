@@ -1,5 +1,20 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-06 04:58] Antigravity Handoff — BOILERPLATE PROHIBITION & FORMULA SONGS COMPLETE 🎉
+
+- **Agent**: Antigravity
+- **Commit/State**: Commit `8183630` and `2773a14` on `origin/antigravity/bl-refinement`.
+- **System Guardrails & Clean State**:
+  - **F13 Boilerplate Prohibition Rule**: Added permanent F13 check in `scripts/validate-formula-standard.js` and `scripts/validate-no-boilerplate.js`. Zero placeholder string fallbacks (`經典功用`, `Actions of...`) allowed in `formulas.json`.
+  - **Formula Songs Restored**: Added authentic Wang Ang Tang Tou Ge Jue (《湯頭歌訣》) formula songs for 29 major board formulas including `formula.chai_hu_gui_zhi_tang` (柴胡桂枝湯).
+  - **201 Formulas Coverage**: All 201 formulas in `data/herbs/formulas.json` have 100% structured bilingual actions (`actions_zh`, `actions_en`) and indications (`pattern_indications_zh`, `pattern_indications_en`) populated from curriculum markdown files without boilerplate string placeholders.
+- **Validation Run**:
+  - `node scripts/validate-no-boilerplate.js`: **PASS (0 boilerplate defects)** ✅
+  - `node scripts/validate-formula-standard.js`: **PASS (9 template-grade, 0 blocking defects)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-08-06 04:34] Antigravity Handoff — BATCH 2 FORMULA RESTORATION COMPLETE (HUANG LIAN JIE DU TANG, LONG DAN XIE GAN TANG, DAO CHI SAN) 🎉
 
 - **Agent**: Antigravity
