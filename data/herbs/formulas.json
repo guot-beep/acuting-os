@@ -4114,15 +4114,100 @@
       ],
       "composition": [
         {
-          "herb_zh": "人參",
+          "herb_zh": "羌活",
+          "pinyin": "Qiang Huo",
           "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：人參為本方核心主藥。",
-          "dose_range": "2-30g（AD）",
-          "in_formula_en": "Strengthens Qi to expel pathogenic influences, generates fluids to produce sweat, and strengthens the body's resistance to invasion, preventing a relapse. With Chai Hu, Chuan Xiong, Sheng Jiang and Bo He, moves Qi and expels external pathogens. With Qiang Huo, Chai Hu and Du Huo, for Exterior invasion with Interior Deficiency."
+          "role_en": "Chief",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Address w-c-d, alleviate pain all over [Upper & Lower body], both aromatic"
+        },
+        {
+          "herb_zh": "獨活",
+          "pinyin": "Du Huo",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Address w-c-d, alleviate pains all over"
+        },
+        {
+          "herb_zh": "川芎",
+          "pinyin": "Chuan Xiong",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Helps chiefs in treating pain, moving blood [Invigorates blood]; help chiefs in releasing exterior, lower fever"
+        },
+        {
+          "herb_zh": "柴胡",
+          "pinyin": "Chai Hu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Helps chiefs in treating pains, moving blood; help chiefs in releasing exterior, lower fever"
+        },
+        {
+          "herb_zh": "薄荷",
+          "pinyin": "Bo He",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "少許（課件,散劑原方比例）",
+          "in_formula_en": "Helps chiefs in treating pains, moving blood; help chiefs in releasing exterior, lower fever"
+        },
+        {
+          "herb_zh": "桔梗",
+          "pinyin": "Jie Geng",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Ascending and descending actions to regulate flow of chest qi, relieve chest discomfort [Guiding herb]"
+        },
+        {
+          "herb_zh": "枳殼",
+          "pinyin": "Zhi Ke",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Ascending and descending actions to regulate flow of chest qi, relieve chest discomfort"
+        },
+        {
+          "herb_zh": "前胡",
+          "pinyin": "Qian Hu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Transform phlegm, strengthen Sp, release w-c-d – treat both root & branches"
+        },
+        {
+          "herb_zh": "生薑",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "少許（課件,散劑原方比例）",
+          "in_formula_en": "Transform phlegm, strengthen Sp, release w-c-d – treat both root & branches"
+        },
+        {
+          "herb_zh": "人參",
+          "pinyin": "Ren Shen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Tonify qi to dispel pathogens; prevent relapses [Use Bai Ren Shen — tonify Qi without retaining pathogens]"
+        },
+        {
+          "herb_zh": "茯苓",
+          "pinyin": "Fu Ling",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30（課件,散劑原方比例）",
+          "in_formula_en": "Transform phlegm, strengthen Sp, release w-c-d; tonify qi to dispel pathogens"
+        },
+        {
+          "herb_zh": "甘草",
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15（課件,散劑原方比例）",
+          "in_formula_en": "Envoy; with jie geng to soothe throat, with ren shen to boost qi"
         }
       ],
       "clinical_use_note": "【人參敗毒散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -4141,7 +4226,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Ginseng Powder to Overcome Pathogenic Influences",
@@ -4184,7 +4268,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "curriculum/herbs/方剂学汇总_extracted.md#Table53(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -4273,7 +4357,8 @@
         "HERB/DRUG INTERACTIONS"
       ],
       "tongue_zh": "舌淡,或略紫、有紫斑;苔白,或薄白而膩",
-      "pulse_zh": "脈滑,或略浮,或浮而濡,或略澀,或遲而濡"
+      "pulse_zh": "脈滑,或略浮,或浮而濡,或略澀,或遲而濡",
+      "composition_rebuilt_note": "組成原本只剩「人參」一味(方名截斷損毀,FORMULA_RESTORATION_AUDIT §3)。2026-08-06 由課件表 53 重建 12 味。"
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -8106,8 +8191,8 @@
           "herb_zh": "鱉甲",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "15g",
           "elucidation_zh": "青蒿鱉甲湯中加入鱉甲，主要基於以下兩點原因：\n清熱涼血，解毒消腫：鱉甲性寒，味甘鹹，入肝、腎經，具有清熱涼血、解毒消腫之功效。可有效抑制熱毒在體內蔓延，並清解血分熱毒，用於治療熱毒熾盛所致的各種熱性病症。\n滋陰潛陽，固精止血：鱉甲亦有滋陰潛陽、固精止血的作用。在治療熱毒病症時，可以滋陰降火，防止陰虛火旺，並起到止血固精的作用，避免因熱毒耗傷陰血而導致出血。",
           "decoction_reference_g": "15g",
@@ -8119,8 +8204,8 @@
           "herb_zh": "生地黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "青蒿鱉甲湯中加入生地黃，主要基於以下兩點原因：\n清熱涼血: 生地黃性寒，味甘苦，入心、肝、腎經，具有清熱涼血、滋陰生津之功效。配合青蒿、鱉甲等清熱解毒藥物，可更有效地清除體內熱毒，緩解發熱、口渴、煩躁等症狀。\n滋陰養血: 生地黃入血分，有滋陰養血、涼血止血的作用。對於熱毒傷陰所致的出血症狀，如鼻出血、咯血等，生地黃能有效緩解，並保護血脈，促進血液循環。",
           "decoction_reference_g": "12g",
@@ -8132,8 +8217,8 @@
           "herb_zh": "牡丹皮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "青蒿鱉甲湯中加入牡丹皮，主要基於以下兩點：\n清熱涼血解毒：牡丹皮性寒，味苦酸，入心、肝、脾經，具有清熱涼血、活血化瘀、解毒消腫之功效。青蒿鱉甲湯用於治療溫熱病熱入營血，症見高熱、神昏、發斑、口渴、煩躁、舌紅苔黃、脈數等。牡丹皮在此方中可起到清熱解毒、涼血散瘀的作用，緩解熱毒對營血的損傷。\n活血化瘀：牡丹皮具有活血化瘀之功效，可促進血液循環，改善血瘀情況。青蒿鱉甲湯中鱉甲也有滋陰清熱、軟堅散結的作用，配合牡丹皮，可加強活血化瘀的作用，進一步改善病患的症狀。",
           "decoction_reference_g": "9g",
@@ -8145,8 +8230,8 @@
           "herb_zh": "青蒿",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "6g",
           "elucidation_zh": "青蒿鱉甲湯中包含青蒿，主要有以下原因：\n清熱解毒：青蒿味苦寒，具有清熱解毒、涼血止血的功效，可針對熱毒熾盛、血熱妄行所致的疾病，例如癰腫、丹毒、熱毒血痢等。\n涼血止血：青蒿入肝經，可涼血止血，而鱉甲亦具涼血止血之效，二者合用，可增強清熱涼血、止血生肌之效，對於熱毒熾盛、血熱妄行所致的出血症狀，如吐血、衄血、血痢等，有較好的治療作用。",
           "decoction_reference_g": "6g",
@@ -8158,8 +8243,8 @@
           "herb_zh": "知母",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "6g",
           "elucidation_zh": "青蒿鱉甲湯中加入知母，主要基於以下兩點原因：\n清熱瀉火，滋陰降火：知母味苦寒，入肺、腎經，具有清熱瀉火、滋陰降火的功效。青蒿鱉甲湯以清熱解毒、滋陰養血為主，知母的加入可增強方劑的清熱瀉火之力，並兼顧滋陰降火，避免燥熱傷陰。\n配合鱉甲滋陰清熱：鱉甲味甘鹹寒，入肝、腎經，具有滋陰清熱、軟堅散結之效。知母與鱉甲相配，相輔相成，共同發揮滋陰清熱的作用，使清熱效果更加顯著，同時也能避免過於寒涼傷正。",
           "decoction_reference_g": "6g",
@@ -8315,7 +8400,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table187(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -9014,8 +9100,8 @@
           "herb_zh": "大黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "12g",
           "elucidation_zh": "大黃在大承氣湯作為主要成分之一，其使用基於以下幾個原因：\n瀉熱通便：大黃味苦性寒，具有強烈的瀉下作用，能夠清除體內積聚的熱毒，促進大便通暢。在大承氣湯中，大黃的主要作用就是通過其瀉下的特性來清除腸胃中的燥熱和積滯。\n蕩滌腸胃：大黃能夠蕩滌腸胃中的邪熱積滯，幫助消除導致病症的根本原因。由於大承氣湯主治的是陽明腑實證，這類患者通常會有腹滿、便秘等症狀，因此需要一種強有力的藥物來清理腸道。\n配合其他藥材增強療效：在大承氣湯中，大黃與其他藥材如厚朴、枳實、芒硝等配合使用，可以增強整體方劑的效力。\n急下防變：對於病情較為嚴重的患者，如出現高熱、神昏等危重症狀時，使用大黃能夠迅速減輕症狀，防止病情進一步惡化。",
           "decoction_reference_g": "12g",
@@ -9027,8 +9113,8 @@
           "herb_zh": "厚朴",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "18g",
           "elucidation_zh": "大承氣湯中包含厚朴，主要原因有二：\n瀉熱通便： 厚朴性味辛溫，入肺、脾、胃經，具有燥濕化痰、行氣止痛、瀉熱通便之功效。大承氣湯主治熱結便祕、腹痛，厚朴可助其瀉熱通便，緩解腸道熱結，促進排便。\n理氣除脹： 厚朴還具有理氣的作用，可以緩解腸道脹氣、腹痛等症狀。大承氣湯中加入厚朴，除了通便之外，還可以幫助理氣除脹，使腸道通暢，排便順利。",
           "decoction_reference_g": "18g",
@@ -9040,8 +9126,8 @@
           "herb_zh": "枳實",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "大承氣湯中加入枳實，主要基於以下兩點原因：\n瀉熱通便：枳實味苦性寒，具有瀉熱通便之效，能消解腸道熱結，促進腸蠕動，幫助排泄宿便，配合大黃、芒硝等藥物，增強瀉下之效，迅速解除熱結便祕。\n行氣消積：枳實還具有行氣消積作用，可緩解腸胃氣滯，促進消化吸收，配合其他藥物，更能達到通暢腑氣、消除積滯的效果，使治療更加全面。\n因此，大承氣湯中加入枳實，不僅能增強瀉下通便的效果，還能改善腸道氣機，促進排泄，達到治療熱結便祕的最佳效果。",
           "decoction_reference_g": "9g",
@@ -9053,8 +9139,8 @@
           "herb_zh": "芒硝",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "18g",
           "elucidation_zh": "大承氣湯中加入芒硝，主要出於以下兩方面原因：\n1. 瀉熱通便：芒硝性寒，味鹹，入大腸經，具有瀉熱通便之功效。大承氣湯主要用於治療熱結便祕，芒硝可迅速瀉熱解毒，通利大便，解除腸道積滯，發揮主要作用。\n2. 引藥下行：芒硝性滑，可引藥下行，助其他藥物直達病所，增強療效。例如，大承氣湯中含有黃芩、大黃等清熱瀉火之藥，芒硝可以幫助這些藥物更好地進入腸道，發揮作用。",
           "decoction_reference_g": "18g",
@@ -9277,7 +9363,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table59(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -10797,8 +10884,8 @@
           "herb_zh": "柴胡",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "24g",
           "elucidation_zh": "小柴胡湯中包含柴胡，主要基於以下原因：\n柴胡疏肝解鬱，和解少陽：柴胡為小柴胡湯君藥，其性微寒，味苦，能疏解肝氣鬱結，和解少陽之氣，使肝氣條達，脾胃和暢，達到治病的目的。\n柴胡善於治療少陽證：小柴胡湯主治少陽證，表現為寒熱往來，胸脇苦滿，口苦咽乾等症。柴胡正是治療少陽證的要藥，能調節肝膽氣機，緩解寒熱往來等症狀。",
           "decoction_reference_g": "24g",
@@ -10810,8 +10897,8 @@
           "herb_zh": "半夏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "小柴胡湯中加入半夏，主要是針對其和解少陽，降逆止嘔的作用。\n半夏味辛、苦，性微溫，入脾、胃經。其燥濕化痰，降逆止嘔，能有效緩解少陽病所致的胸脅苦滿，心煩喜嘔，口苦咽乾等症狀。同時，半夏也能調和肝脾，與柴胡、黃芩等藥物共同作用，達到疏肝解鬱，和胃降逆的功效，使藥效更加協調。",
           "decoction_reference_g": "12g",
@@ -10822,8 +10909,8 @@
           "herb_zh": "黃芩",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "小柴胡湯中加入黃芩，主要基於以下兩點：\n清熱瀉火： 黃芩味苦寒，入肺、膽、胃經，具有清熱瀉火、燥濕止痢的功效。小柴胡湯證以「少陽病」為核心，病機為少陽膽經濕熱鬱結，導致寒熱往來，胸脅苦滿等症狀。黃芩可清熱瀉火，解除膽經濕熱鬱結，緩解寒熱往來症狀。\n抑肝扶脾： 黃芩苦寒入脾，可抑制肝陽過亢，扶助脾胃功能。少陽病兼有肝氣鬱結、脾胃虛弱等情況，黃芩可以疏肝理氣，抑制肝氣過盛，同時又能健脾胃，增強脾胃運化功能，從而達到整體調節的目的。",
           "decoction_reference_g": "9g",
@@ -10835,8 +10922,8 @@
           "herb_zh": "人參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "小柴胡湯中的人參，其作用主要有兩點：\n扶正培本: 人參性溫，味甘，具有補氣益血、健脾和胃、寧心安神之功效，能補益正氣，提高機體抵抗力，抵禦外邪侵襲，防止病情惡化。\n調和營衛: 小柴胡湯的主要功效是疏肝解鬱，和解表裡，而人參能夠調和營衛，使氣血運行通暢，促進肝氣疏泄，幫助藥物更好地發揮作用。\n總之，人參在小柴胡湯中起到扶正培本、調和營衛的雙重作用，協同其他藥物共同達到治療目的。",
           "decoction_reference_g": "9g",
@@ -10848,8 +10935,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "9g",
           "elucidation_zh": "小柴胡湯中加入甘草，主要原因有二：\n調和藥性： 小柴胡湯藥性偏寒涼，甘草味甘性平，可調和藥性，避免寒涼之氣過度損傷脾胃，減輕藥物的副作用。\n緩解副作用： 方中柴胡、黃芩等藥材有苦寒之性，容易引起胃腸不適，甘草具有緩解藥物刺激、保護胃黏膜的作用，避免服用過程中出現腹痛、嘔吐等不良反應。",
           "decoction_reference_g": "9g",
@@ -10860,8 +10947,8 @@
           "herb_zh": "生薑",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "小柴胡湯中加入生薑，主要有以下兩個原因：\n和解少陽，調和氣機： 生薑味辛溫，具有發散解表、溫中止嘔、和中降逆之功，能幫助柴胡、黃芩等藥物更好地疏解少陽經的鬱熱，調和肝脾氣機，使其恢復正常運作。\n緩解寒邪，扶正祛邪： 少陽病往往兼夾寒邪，生薑溫陽散寒，可以抵禦寒邪入侵，扶助正氣，促進機體恢復。\n生薑與其他藥物相輔相成，共同發揮治療少陽病的功效。",
           "decoction_reference_g": "9g",
@@ -10873,8 +10960,8 @@
           "herb_zh": "大棗",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "小柴胡湯中加入大棗，主要出於以下兩方面原因：\n和中緩急： 大棗味甘性溫，入脾胃經，能補益脾胃，緩和藥性，使藥力平和，避免寒涼之性傷及脾胃。小柴胡湯中柴胡、黃芩等藥性偏寒，大棗的加入可起到調和的作用，使其藥效更穏和，更易被人體吸收。\n益氣健脾： 大棗能補益氣血，健脾和胃，增強機體抵抗力。小柴胡湯用於治療肝膽溼熱、脾胃不和等病症，而脾胃虛弱往往是導致疾病加重的關鍵因素。大棗的加入，可健脾益氣，增強脾胃消化功能，促進機體康復。",
           "decoction_reference_g": "6g",
@@ -11079,7 +11166,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table92(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -11595,8 +11683,8 @@
           "herb_zh": "薄荷",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "3g",
           "elucidation_zh": "逍遙散中包含薄荷，主要考量其 疏肝解鬱 和 清熱解表 的功效。\n薄荷性涼，味辛，入肺經、肝經，具有疏散風熱、清利頭目、疏肝解鬱、散熱解毒的功效。\n對於肝鬱氣滯、脾胃不和所致的胸悶、脅痛、心煩易怒、月經不調等症狀，薄荷可以疏肝解鬱，使氣機通暢，解除肝氣鬱結。\n此外，薄荷還可以清熱解表，對於伴隨發熱、頭疼等症狀的肝鬱氣滯者，薄荷能夠起到清熱解表，緩解不適的作用。因此，逍遙散中加入薄荷，可以增強其疏肝解鬱、清熱解表的效果，使藥效更佳。",
           "decoction_reference_g": "3g",
@@ -11608,8 +11696,8 @@
           "herb_zh": "白芍",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "逍遙散是一種經典的中藥方劑，主要用於治療肝鬱引起的情緒問題及身體不適。其組成中包含白芍，這是因為白芍具有和胃止痛、養血柔肝的功效，能夠改善肝氣鬱結所導致的不適。白芍的特性為酸，能夠柔和肝臟，減輕情緒問題所造成的影響。\n在逍遙散中，白芍與當歸、茯苓等藥材相輔相成，共同調和脾胃，增強人體的自我調節能力。此外，白芍還能夠促進血液循環，對於由於肝氣不舒而引發的頭痛、胸悶等症狀有良好的緩解效果。與其他藥材的配伍使得逍遙散在調理月經不調、緩解壓力等方面也展現了卓越的效果，正是因為白芍的加入，讓這個方劑的藥效更加全面，促進身心的和諧。這些特點使得白芍成為逍遙散不可或缺的組成部分。",
           "decoction_reference_g": "9g",
@@ -11621,8 +11709,8 @@
           "herb_zh": "白朮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "逍遙散中加入白朮，主要基於以下兩點原因：\n健脾益氣：白朮性溫味甘，具有健脾益氣、燥濕利水之功效。逍遙散主治肝鬱脾虛、氣血不暢之證，而白朮可補脾氣、助運化，使脾胃功能旺盛，從而更好地吸收營養，化生氣血，改善肝鬱脾虛的病症。\n燥濕健脾：逍遙散中含有柴胡、當歸等藥物，容易導致脾胃濕困，而白朮能燥濕健脾，利水滲濕，有助於化解濕邪，改善脾胃功能，使藥物更有效地發揮作用。\n白朮在逍遙散中與其他藥物協同作用，共同達到疏肝解鬱、健脾益氣、調和氣血的功效，是方劑中不可或缺的一味藥材。",
           "decoction_reference_g": "9g",
@@ -11634,8 +11722,8 @@
           "herb_zh": "柴胡",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "9g",
           "elucidation_zh": "逍遙散中包含柴胡，主要有以下原因：\n疏肝解鬱： 柴胡性微寒，味苦辛，入肝膽經，能疏肝解鬱，調暢氣機。逍遙散用柴胡，旨在疏解肝氣鬱結，使肝氣條達，氣血運行通暢，從而達到改善心情，緩解情緒波動的效果。\n和解少陽： 柴胡為少陽經藥，具有調和少陽，升陽利膽的作用。逍遙散以柴胡為君藥，能調節少陽經氣，使氣血運行正常，並兼顧肝膽功能的調理，達到全面的調理效果。",
           "decoction_reference_g": "9g",
@@ -11647,8 +11735,8 @@
           "herb_zh": "當歸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "逍遙散中加入當歸，主要基於以下兩點：\n補血調經：當歸為補血要藥，能養血活血，調經止痛，對於逍遙散治療肝鬱氣滯、血虛所致的月經不調、經行腹痛、面色蒼白等症狀有顯著療效。\n滋陰養血：肝鬱氣滯易導致血虛，而當歸具有滋陰養血的作用，能補益肝腎，協調氣血，使肝氣舒暢，血脈流通，從而改善肝鬱氣滯所致的胸脅脹滿、精神抑鬱等症狀。",
           "decoction_reference_g": "9g",
@@ -11660,8 +11748,8 @@
           "herb_zh": "茯苓",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "逍遙散中加入茯苓，主要基於以下兩點原因：\n健脾利濕，寧心安神： 茯苓味甘淡，性平，入脾、心、腎經，具有健脾利濕、寧心安神之功效。逍遙散主治肝鬱脾虛，氣血不暢，而茯苓可健脾益氣，利濕化痰，有助於改善脾胃運化功能，進一步疏肝解鬱，達到寧心安神之效。\n配伍相宜： 逍遙散中柴胡疏肝解鬱，白芍養血柔肝，當歸補血活血，茯苓與之相配，既可健脾利濕，輔助疏肝解鬱，又能利水滲濕，防止藥物積滯，使藥效更為協調和諧。",
           "decoction_reference_g": "9g",
@@ -11673,8 +11761,8 @@
           "herb_zh": "生薑",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "逍遙散中加入生薑，主要有以下兩個原因：\n和胃降逆：生薑味辛溫，入脾胃經，具有溫中止嘔、降逆止呃的作用。逍遙散主治肝鬱氣滯、脾胃不和，生薑能溫脾胃、降逆氣，有助於緩解胸悶、噁心、嘔吐等症狀，使藥效更為協調。\n調和藥性：逍遙散中包含多味藥材，部分藥性偏寒涼，而生薑性溫，加入生薑可以溫和藥性，避免藥性過於寒涼而損傷脾胃，使藥性更加平和，更易於被人體吸收利用。",
           "decoction_reference_g": "6g",
@@ -11686,8 +11774,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "逍遙散中加入甘草，主要有兩個原因：\n調和藥性: 逍遙散以疏肝解鬱、健脾養血為主要功效，但其中藥材多偏於辛、苦、燥，容易傷脾胃。甘草性平和，味甘，有調和諸藥、緩解藥性燥烈之功效，有助於保護脾胃，避免藥物對脾胃造成損傷。\n增強療效: 甘草味甘，具有補氣益血、緩和藥性、調和脾胃等作用。在逍遙散中，甘草能與其他藥材相互協同，增強其疏肝解鬱、健脾養血的功效，使藥效更加顯著。",
           "decoction_reference_g": "6g",
@@ -11899,7 +11987,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table107(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -12813,8 +12902,8 @@
           "herb_zh": "半夏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "12g",
           "elucidation_zh": "半夏瀉心湯的組成中，包含半夏，其原因主要有二：\n一、 降逆止嘔：半夏味辛，性溫，入脾、胃經，具有燥濕化痰、降逆止嘔之功。方中以半夏為主藥，用以治療濕痰阻滯、脾胃不和所致的嘔吐、呃逆等症。\n二、 和胃止痛：半夏能和胃止痛，與其他藥物配合，可緩解胃脘疼痛、脹滿等症。同時，半夏還能燥濕化痰，消除痰濁對胃的影響，進一步減輕胃痛。",
           "decoction_reference_g": "12g",
@@ -12825,8 +12914,8 @@
           "herb_zh": "黃芩",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "10g",
           "elucidation_zh": "半夏瀉心湯中包含黃芩，主要有以下兩個原因：\n清熱燥濕，瀉心火：黃芩味苦寒，入肺、心、膽經，具有清熱燥濕、瀉心火、止嘔止瀉的功效。半夏瀉心湯主要用於治療濕熱內蘊，心煩嘔逆，口渴，腹痛泄瀉等症，黃芩的清熱燥濕作用能有效緩解這些症狀���\n降逆止嘔：黃芩善於清心火，並能降逆止嘔，與半夏、生薑等藥物配伍，能有效緩解因濕熱內蘊、心火上炎引起的嘔吐。\n黃芩在半夏瀉心湯中起着清熱燥濕、瀉心火、降逆止嘔的重要作用，是方劑中不可或缺的組成部分。",
           "decoction_reference_g": "10g",
@@ -12838,8 +12927,8 @@
           "herb_zh": "人參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "10g",
           "elucidation_zh": "半夏瀉心湯中加入人參，其目的主要在於：\n扶正祛邪： 半夏瀉心湯以燥濕化痰、和胃止嘔為主要功效，但藥性偏寒涼，容易傷及脾胃陽氣。人參具有補氣益血、健脾益胃之功，可補脾胃之陽氣，防止藥性過寒，避免損傷正氣。\n平衡藥性： 半夏、黃芩、乾薑等藥材性寒，人參性溫，加入人參可平衡藥性，使其寒熱相濟，更利於藥效發揮，達到最佳治療效果。",
           "decoction_reference_g": "10g",
@@ -12851,8 +12940,8 @@
           "herb_zh": "黃連",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "3g",
           "elucidation_zh": "半夏瀉心湯中加入黃連，主要基於以下兩個原因：\n一、 清熱瀉火：黃連性寒味苦，善於清熱瀉火，可抑制胃火亢盛、心煩口渴等症狀，配合半夏、乾薑等藥物，更能有效地降逆止嘔，緩解心胃熱邪。\n二、 制伏半夏毒性：半夏雖能降逆止嘔，但亦有毒性，易於傷胃。黃連性寒，可起到制伏半夏毒性的作用，避免半夏過於燥烈，傷害脾胃。\n因此，黃連在半夏瀉心湯中，既能清熱瀉火，又能制伏半夏毒性，起到相輔相成、協調作用，更有效地達到治療效果。",
           "decoction_reference_g": "3g",
@@ -12864,8 +12953,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "10g",
           "elucidation_zh": "半夏瀉心湯中加入甘草，主要基於以下兩個原因：\n調和藥性: 半夏性寒，容易損傷脾胃陽氣；黃芩性苦寒，易傷陰；乾薑性溫，可助陽，但易傷陰。甘草性甘平，可緩和諸藥的寒性和燥性，保護脾胃，避免藥物對人體造成過大的刺激。\n增強藥效: 甘草具有解毒、緩急、調和脾胃、益氣補虛等作用。與其他藥物配伍，可增強其瀉心降逆、燥濕化痰、和胃止嘔的功效，使藥效更顯著。\n總之，甘草在半夏瀉心湯中起着調和藥性、增強藥效的重要作用，是不可或缺的一味藥材。",
           "decoction_reference_g": "10g",
@@ -12876,8 +12965,8 @@
           "herb_zh": "乾薑",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "10g",
           "elucidation_zh": "半夏瀉心湯中加入乾薑，主要有以下兩點原因：\n溫中散寒，止嘔降逆：半夏性寒，善降氣止嘔，但寒性過於明顯，容易傷脾胃。乾薑性溫，可溫中散寒，協同半夏降氣止嘔，避免寒性過強損傷脾胃。\n調和藥性，增強療效：乾薑辛溫，可以解半夏的寒性，使其藥效更加溫和，且與半夏相配，能夠更好地疏通經絡，行氣活血，增強止嘔降逆的功效。",
           "decoction_reference_g": "10g",
@@ -12889,8 +12978,8 @@
           "herb_zh": "大棗",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "半夏瀉心湯中加入大棗，主要原因有二：\n其一，大棗性甘溫，入脾胃經，具有補中益氣、養血安神之效。半夏瀉心湯中，半夏、黃芩、乾薑等藥性偏寒涼，容易損傷脾胃陽氣。大棗的溫補作用可緩解藥物的寒性，保護脾胃，使藥力更易於吸收。\n其二，大棗可調和藥性，使藥效更趨平和。半夏瀉心湯的主要功效是燥濕化痰、降逆止嘔。大棗的甘甜之性，可以調和半夏、黃芩等藥的苦寒之性，使藥性不至於過於寒涼，更易於患者接受，同時也能更好地發揮藥物的療效。",
           "decoction_reference_g": "6g",
@@ -13081,7 +13170,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table115(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -13943,8 +14033,8 @@
           "herb_zh": "附子",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "6g",
           "elucidation_zh": "四逆湯中加入附子的原因主要有二：\n溫陽救逆： 附子性熱，入心、腎經，具有回陽救逆之功。四逆湯主治陽氣衰微，四肢厥冷，脈微欲絕之證，附子可溫暖臟腑，振奮陽氣，使陽氣回升，寒邪退散，恢復正常生理功能。\n回陽救陰： 附子雖為溫熱藥，但其回陽之功，可促進陽氣生化，滋養陰液，達到陰陽調和之目的。四逆湯中加入附子，不僅溫陽救逆，亦可回陽救陰，使寒邪退散，陰陽平衡，恢復體力。",
           "decoction_reference_g": "6g",
@@ -13955,8 +14045,8 @@
           "herb_zh": "乾薑",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "8g",
           "elucidation_zh": "四逆湯中加入乾薑，主要原因有二：\n1. 溫陽散寒：乾薑性溫，味辛，具有溫中散寒、回陽救逆之效。四逆湯主要用於治療陽氣虛衰，寒邪內襲所致的四肢厥逆、腹痛、嘔吐、脈微細等症狀，乾薑的溫陽散寒作用可溫暖脾胃，驅散寒邪，恢復陽氣。\n2. 促進血液循環：乾薑具有促進血液循環的作用，有助於改善四肢厥逆、脈微細等寒凝血脈的症狀。同時，乾薑還能溫通經絡，有助於寒邪的排出。",
           "decoction_reference_g": "8g",
@@ -13968,8 +14058,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "四逆湯中加入甘草，主要有以下兩點原因：\n調和藥性: 四逆湯中主要藥材如附子、乾薑性溫熱，容易傷陰耗氣。甘草性甘平，能調和藥性，緩解藥物對人體的刺激，避免燥熱之弊。\n增強藥效: 甘草味甘，能補脾益氣，與附子、乾薑相輔相成，增強藥物的溫陽散寒作用，更有效地改善四肢厥逆、脈微欲絕等症狀。",
           "decoction_reference_g": "9g",
@@ -14153,7 +14243,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table221(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -14943,8 +15034,8 @@
           "herb_zh": "白朮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "四君子湯由人參、白朮、茯苓、甘草組成，其中白朮的加入主要基於以下兩個原因：\n健脾益氣: 白朮味甘性溫，入脾胃經，具有健脾益氣、燥濕利水之功效。四君子湯主要用於脾胃虛弱、氣血不足等症，白朮可以補脾益氣，提升脾胃運化功能，改善氣血生化，使人體恢復元氣。\n燥濕止瀉: 白朮還具有燥濕止瀉之效。脾虛易導致濕邪內困，出現腹瀉、消化不良等症狀。白朮能燥濕健脾，祛除濕邪，固護脾胃，從而緩解腹瀉，改善消化功能。",
           "decoction_reference_g": "9g",
@@ -14956,8 +15047,8 @@
           "herb_zh": "茯苓",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "四君子湯中加入茯苓，主要基於以下兩點原因：\n健脾益氣：茯苓味甘淡，性平，入脾、腎經，具有健脾利濕、寧心安神之效。其利水滲濕的作用可改善脾胃運化功能，有助於提升人體氣血生化，進而達到健脾益氣的效果。\n利水滲濕：茯苓能利水滲濕，有助於排除體內多餘的水分，改善脾虛濕困所致的食慾不振、腹脹、肢體倦怠等症狀。這對於四君子湯所針對的脾虛氣弱、水濕內停的病症，具有良好的輔助作用。",
           "decoction_reference_g": "9g",
@@ -14969,8 +15060,8 @@
           "herb_zh": "人參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "9g",
           "elucidation_zh": "四君子湯中包含人參，主要基於以下兩點原因：\n益氣扶正： 人參為補氣之聖藥，具有補脾益氣、生津止渴的功效。四君子湯主要用於脾胃氣虛，症狀包括倦怠乏力、食慾不振、面色蒼白等。人參的加入能夠補益脾胃之氣，改善氣虛所致的諸多症狀。\n佐助其他藥材： 四君子湯中其他藥材，如茯苓、白朮、甘草，也具有健脾利濕、和胃止嘔的作用。人參的加入，能與其他藥材相輔相成，共同增強補氣健脾的功效，使藥效更加顯著。",
           "decoction_reference_g": "9g",
@@ -14982,8 +15073,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "6g",
           "elucidation_zh": "四君子湯中加入甘草，主要有以下兩點原因：\n調和藥性： 甘草味甘性平，具有調和諸藥、緩解藥性、增強藥效的作用。四君子湯以人參、白朮、茯苓補脾益氣，甘草能調和三藥之性，使藥力平和，避免藥性過於燥烈，避免傷胃。\n補益脾氣： 甘草入脾經，能補脾益氣，與四君子湯其他藥物相輔相成，共同達到健脾益氣、補中益氣、調和脾胃的作用。",
           "decoction_reference_g": "6g",
@@ -15157,7 +15248,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table246(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -16233,8 +16325,8 @@
           "herb_zh": "黃耆",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "24g",
           "elucidation_zh": "補中益氣湯中加入黃耆，主要原因有二：\n1. 補氣固表：黃耆性溫，味甘，歸脾、肺經，具有補氣升陽、固表止汗之效。補中益氣湯主要用於氣虛乏力、倦怠食少、自汗盜汗等症狀，而黃耆的補氣功效可填補氣虛之不足，使氣血充盈，並能固表止汗，改善因氣虛導致的汗出不止問題。\n2. 提升藥效：黃耆有「藥王」之稱，與其他藥物搭配使用時，能起到引藥入經、增強藥效的作用。補中益氣湯中其他藥物如當歸、人參等，也具有補氣養血之效，黃耆與之相輔相成，協同作用，提升整體補氣益血的效果。",
           "decoction_reference_g": "24g",
@@ -16245,8 +16337,8 @@
           "herb_zh": "白朮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "補中益氣湯中加入白朮，主要基於以下兩點原因：\n健脾益氣： 白朮性溫味甘，具有健脾益氣、燥濕利水之功效。補中益氣湯旨在補氣益血，而脾胃為氣血生化之源，白朮能健脾益氣，增強脾胃運化功能，從而促進氣血生化，達到補益氣血之目的。\n���濕健脾： 補中益氣湯常用於脾虛氣虛，兼有濕邪者。白朮具有燥濕健脾的功效，能祛除脾胃濕邪，改善脾胃功能，進一步增強補益氣血的效果。",
           "decoction_reference_g": "12g",
@@ -16258,8 +16350,8 @@
           "herb_zh": "當歸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "補中益氣湯中加入當歸，主要基於以下兩點原因：\n1. 補血益氣：當歸性溫，味甘辛，歸心、肝、脾經，具有補血活血、養血潤燥、調經止痛等功效。補中益氣湯主要針對氣虛血弱、脾胃不健等症，當歸能補益氣血，促進血液循環，提高機體抵抗力。\n2. 和營養血：當歸能補益心脾，而補中益氣湯中黃芪、人參等藥物則能益氣固表，二者相輔相成，可達到和營養血的效果，從而使氣血充盈，改善機體各器官功能，增強抵抗力。\n總而言之，當歸的加入可提升補中益氣湯的補益效果，達到氣血雙補的目的，進一步增強其治療氣虛血弱、脾胃不健等症的功效。",
           "decoction_reference_g": "12g",
@@ -16270,8 +16362,8 @@
           "herb_zh": "人參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "補中益氣湯中包含人參，主要基於以下兩點原因：\n補氣益血：人參味甘性溫，入脾肺經，具有大補元氣、益氣生津、補血安神之效。補中益氣湯主治氣虛乏力、面色蒼白、食少便溏等症狀，而人參能有效提升體力，改善血液循環，從根本上改善氣虛導致的症狀。\n扶正祛邪：人參具有扶正固本的作用，能增強機體抵抗力，抵禦外邪入侵。補中益氣湯常用於治療氣虛外感，如感冒、咳嗽等，人參能幫助機體恢復元氣，增強免疫力，加速疾病康復。",
           "decoction_reference_g": "12g",
@@ -16283,8 +16375,8 @@
           "herb_zh": "柴胡",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "9g",
           "elucidation_zh": "補中益氣湯的組成中包含柴胡，主要基於以下兩點原因：\n疏肝解鬱： 柴胡具有疏肝解鬱的功效，可緩解氣機鬱滯，促進氣血流通。補中益氣湯主要針對氣虛、脾胃不健而導致的各種症狀，而氣機鬱滯也會影響氣血運行，因此柴胡的加入可以解除氣機阻礙，使補益作用更顯著。\n調和營衛： 柴胡還具有調和營衛的作用，可以平衡營氣和衛氣。補中益氣湯補氣同時也需兼顧營衛調和，避免補益過度而造成氣滯血瘀，柴胡的加入可以協調營衛，使補益作用更全面。",
           "decoction_reference_g": "9g",
@@ -16296,8 +16388,8 @@
           "herb_zh": "陳皮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "補中益氣湯中加入陳皮，主要有兩方面作用：\n一、行氣化痰：陳皮性溫味辛，入脾、肺經，具有行氣消積、化痰止咳之功效。補中益氣湯主要用於氣虛乏力、脾胃不健等症，而陳皮的加入可以幫助行氣化痰，使藥效更易於吸收，達到補益氣血的效果。\n二、調和藥性：補中益氣湯中其他藥物如人參、黃芪等性偏溫燥，陳皮的加入可以起到一定的緩和作用，避免藥性過於燥烈，減少對人體的刺激。同時，陳皮能調和脾胃，使藥物更易於消化吸收，提高療效。",
           "decoction_reference_g": "9g",
@@ -16309,8 +16401,8 @@
           "herb_zh": "升麻",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "6g",
           "elucidation_zh": "補中益氣湯中包含升麻，主要基於以下兩點原因：\n升陽舉陷: 升麻性微寒，具有升陽舉陷、疏散風熱之效。補中益氣湯主治氣虛不足，中氣下陷，症見倦怠乏力、氣短懶言、面色蒼白、食少便溏等。升麻可升舉中氣，防止氣虛下陷，並有助於提升機體抵抗力。\n疏散表邪:  升麻亦可疏散表邪，對於氣虛兼表證者，如感冒初期，伴有發熱、惡寒等症狀，升麻可協助驅散風寒，促進機體康復。",
           "decoction_reference_g": "6g",
@@ -16322,8 +16414,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "6g",
           "elucidation_zh": "補中益氣湯中加入甘草，主要有以下兩點原因：\n調和藥性： 甘草味甘性平，具有調和諸藥、緩解藥物毒性、降低藥物副作用的作用。補中益氣湯中包含多種藥材，如黃芪、當歸、人參等，甘草可以中和這些藥材的偏性，使藥性更加平和，避免藥物過於燥烈或寒涼。\n增強療效： 甘草能益氣健脾，與補中益氣湯中其他藥材共同作用，可增強補氣益血、健脾益胃的功效，提高藥效。同時，甘草還能緩解因氣虛引起的疲乏無力、食慾不振等症狀，起到輔助治療的作用。",
           "decoction_reference_g": "6g",
@@ -16536,7 +16628,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table254(Rank 表:君臣佐使/劑量)"
         ]
       },
       "cloudtcm_id": 262,
@@ -17172,8 +17265,8 @@
           "herb_zh": "熟地黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "21g",
           "elucidation_zh": "四物湯中加入熟地黃的原因：\n補血養陰\n 熟地黃是補血的重要藥材，具有滋陰補血的功效。它的甘溫性質能夠有效補充體內的血液，改善血虛引起的面色蒼白、頭暈、乏力等症狀。加入熟地黃可以增強四物湯的補血功效，使整體方劑更適合調理血虛體質。\n滋陰潤燥\n 熟地黃不僅補血，還能滋陰潤燥，特別適合陰虛體質的人。對於月經後陰血不足的女性來說，熟地黃能夠補益腎陰，增加體內的陰液，緩解因陰虛引起的手腳冰冷、口乾舌燥等不適。\n協調藥性，增強效果\n 熟地黃與四物湯中的當歸、川芎和白芍等藥材搭配，相互協同，增強補血、活血效果。熟地黃的滋潤作用還能調和四物湯的藥性，讓整體方劑更加溫和，減少川芎等藥材的刺激性，使藥性更加平和、適合各種體質。",
           "decoction_reference_g": "21g",
@@ -17185,8 +17278,8 @@
           "herb_zh": "白芍",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "15g",
           "elucidation_zh": "四物湯中加入白芍，主要基於以下兩點原因：\n養血柔肝: 白芍具有養血柔肝之效，可緩解血虛所致的肝氣不舒，如頭暈目眩、心悸失眠、面色蒼白等。四物湯以補血爲主，白芍的加入能使補血效果更佳，併兼顧肝臟的調理。\n緩急止痛: 白芍性微寒，能緩急止痛，尤其對肝氣鬱結所致的疼痛有良好效果。四物湯中加入白芍，有助於緩解因血虛導致的肝鬱氣滯，從而達到止痛的效果。\n總體而言，白芍在四物湯中發揮着養血柔肝、緩急止痛的作用，與其他藥材共同協同，達到更好的補血效果。",
           "decoction_reference_g": "15g",
@@ -17198,8 +17291,8 @@
           "herb_zh": "當歸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "四物湯中包含當歸，主要原因有二：\n一、補血養血：當歸味甘辛，性溫，入心、肝、脾經，具有補血活血、調經止痛的功效。四物湯本身為補血方，而當歸正是補血的要藥，可改善血虛所致的頭暈目眩、面色蒼白、心悸失眠、月經不調等症狀。\n二、活血化瘀：當歸不僅能補血，還能活血化瘀，改善血液循環，促進血流通暢。四物湯中其他藥材如川芎、白芍、熟地黃，也都有活血化瘀的作用，與當歸互相配合，可以更好地達到活血化瘀的功效。",
           "decoction_reference_g": "12g",
@@ -17211,8 +17304,8 @@
           "herb_zh": "川芎",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "6g",
           "elucidation_zh": "四物湯中加入川芎，主要基於以下兩點原因：\n活血行氣: 川芎性溫，味辛，入肝、膽經，具有活血行氣、止痛的功效。四物湯以補血爲主，但若氣滯血瘀，則補血效果難以發揮。川芎能通經活絡，使氣血流暢，從而更好地促進血虛的改善。\n引血下行: 四物湯以補血爲主，但部分患者可能存在血行不暢，導致上半身充血的情況。川芎能引血下行，將上半身的瘀血引至下半身，改善局部血液循環，緩解頭痛、頭暈等症狀。\n綜上，川芎在四物湯中起到活血行氣、引血下行的作用，使補血效果更加顯著。",
           "decoction_reference_g": "6g",
@@ -17405,7 +17498,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table267(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -18614,13 +18708,14 @@
           "in_formula_en": "Tonifies Yuan Qi and Qi of the Spleen, Lungs and Heart. With Shu Di Huang, for dysmenorrhea, postpartum abdominal pain or amenorrhea due to Deficiency Cold of the Chong and Ren channel. With Bai Zhu, tonifies the transformation and transportation functions of the Spleen. With Bai Zhu and Fu Ling, for Spleen and Stomach Qi Deficiencies with Dampness with anorexia, diarrhea, vomiting, abdominal distention and fatigue."
         },
         {
-          "herb_zh": "黃芪",
+          "herb_zh": "黃耆",
           "role_zh": "君",
           "classical_amount_text": "一錢錢",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
           "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：補氣升陽，固表止汗。"
+          "role_reason_zh": "君藥：補氣升陽，固表止汗。",
+          "dose_range": "6-10g（AD）"
         },
         {
           "herb_zh": "白朮",
@@ -18772,7 +18867,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon formula page (harvested 2026-08) — 黃耆劑量;黃芪→黃耆 為中藥庫正名"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -19004,8 +19100,8 @@
           "herb_zh": "熟地黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "24g",
           "elucidation_zh": "六味地黃丸中加入熟地黃，乃取其滋陰補血之效。熟地黃為地黃經蒸制而成，其性溫和，較生地黃更易於被人體吸收，且更擅長滋陰補血、填精益髓。\n六味地黃丸主要針對腎陰虛所致的各種病症，如腰膝酸軟、頭暈耳鳴、盜汗遺精等。熟地黃能補益腎陰，使腎臟功能恢復正常，從而改善上述症狀。此外，熟地黃還有潤腸通便之效，可改善因腎陰虛引起的便祕。",
           "decoction_reference_g": "24g",
@@ -19017,8 +19113,8 @@
           "herb_zh": "山藥",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "六味地黃丸中加入山藥，主要考量以下兩點：\n滋陰補腎: 山藥性平味甘，入脾、肺、腎經，具有補脾益腎、滋陰潤燥的功效。與六味地黃丸其他藥物如熟地、山茱萸、澤瀉等共同作用，可協同滋陰補腎，改善腎陰虛所致的腰膝酸軟、頭暈耳鳴、盜汗等症狀。\n健脾益氣: 山藥同時能健脾益氣，補中益氣，有利於脾胃的運化，使藥物更好地吸收利用，增強藥效。\n因此，山藥在六味地黃丸中發揮著重要作用，不僅能補腎滋陰，更能健脾益氣，使藥效更加全面。",
           "decoction_reference_g": "12g",
@@ -19030,8 +19126,8 @@
           "herb_zh": "山茱萸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "六味地黃丸中加入山茱萸，主要基於以下兩點：\n補腎固精：山茱萸味酸、性溫，入肝腎經，具有補益肝腎、固精縮尿的功效。腎精不足，則會導致腰膝酸軟、頭暈耳鳴、遺精滑精等症狀。山茱萸能補腎精，固腎氣，從根本上改善這些症狀。\n斂陰止汗：山茱萸還具有斂陰止汗的功效，適用於腎陰虛引起的盜汗、自汗等症狀。六味地黃丸中加入山茱萸，能有效改善陰虛汗出，進一步提升藥效。",
           "decoction_reference_g": "12g",
@@ -19043,8 +19139,8 @@
           "herb_zh": "茯苓",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "六味地黃丸中加入茯苓，主要原因有二：\n一、 健脾利濕： 茯苓性平味甘，能利水滲濕，健脾和胃。地黃滋陰，容易導致脾胃虛弱，濕困脾胃。茯苓加入，可補脾健運，促進水液代謝，避免滋陰過度而損傷脾胃。\n二、 益腎利水： 茯苓入心、脾、腎經，具有利水滲濕的作用。腎虛常伴有水濕停滯，茯苓配合其他藥物，能利水消腫，減少水濕對腎臟的負擔，有利於腎陰的滋養。",
           "decoction_reference_g": "9g",
@@ -19056,8 +19152,8 @@
           "herb_zh": "牡丹皮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "六味地黃丸中加入牡丹皮，主要是因為其具有清熱涼血、活血化瘀的功效。\n牡丹皮味苦、微寒，入心、肝、脾經，可清泄心火，涼血止痛，並能活血化瘀。在六味地黃丸中，牡丹皮主要用於緩解腎陰虛所致的熱症，如口乾舌燥、心煩失眠、潮熱盜汗等，並能改善因血瘀引起的腰膝痠痛、頭暈目眩等症狀。\n總之，牡丹皮在六味地黃丸中起到清熱涼血、活血化瘀的作用，有助於改善腎陰虛所致的症狀，使藥效更加全面。",
           "decoction_reference_g": "9g",
@@ -19069,8 +19165,8 @@
           "herb_zh": "澤瀉",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "六味地黃丸中包含澤瀉，主要原因如下：\n利水滲濕： 澤瀉性寒，味甘，入膀胱經，具有利水滲濕之效。六味地黃丸主治腎陰虛，而腎陰虛常伴隨水液代謝失調，出現水腫、小便不利等症狀。澤瀉利水滲濕，可改善腎陰虛所致的濕濁內停，幫助水液代謝通暢。\n滋陰降火： 澤瀉利水滲濕的同時，也能引熱下行，達到滋陰降火的效果。六味地黃丸中滋陰藥物如熟地黃、山藥等，可以滋養腎陰，但若陽熱內盛，陰液難以滋養，則需加入澤瀉等利水滲濕藥物，幫助引熱下行，使陰液得以滋養。",
           "decoction_reference_g": "9g",
@@ -19264,7 +19360,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table298(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -22016,8 +22113,8 @@
           "herb_zh": "酸棗仁",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "18g",
           "elucidation_zh": "酸棗仁湯中包含酸棗仁，其原因如下：\n1. 安神寧心，養血斂汗： 酸棗仁味甘酸，性平，入心、脾經，具有安神寧心、養血斂汗之效。方中以酸棗仁為主藥，用以治療心神不寧、失眠多夢、心悸不安、盜汗虛汗等症。\n2. 協調其他藥物功效： 酸棗仁與其他藥物如茯苓、甘草等配合，可以加強其安神寧心、養血斂汗的功效，並起到協調作用，使藥效更為顯著。",
           "decoction_reference_g": "18g",
@@ -22029,8 +22126,8 @@
           "herb_zh": "川芎",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "酸棗仁湯中加入川芎，主要有以下兩點原因：\n疏肝解鬱，行氣止痛：川芎具有疏肝解鬱、行氣止痛之效，能緩解因肝氣鬱結而導致的胸悶、脅痛、失眠等症狀，配合酸棗仁養心安神，能更有效地改善心神不寧、失眠多夢等病症。\n引導藥力，協調各藥：酸棗仁湯以酸棗仁為主，滋養心脾，但單用滋補則容易滯膩。川芎的辛溫之性可引導酸棗仁的藥力，使其更易於運行於全身，並協調其他藥物，使藥效更顯著。",
           "decoction_reference_g": "6g",
@@ -22042,8 +22139,8 @@
           "herb_zh": "茯苓",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "6g",
           "elucidation_zh": "酸棗仁湯中加入茯苓，主要基於以下兩點原因：\n健脾安神：茯苓味甘淡性平，入脾、心、肺經，具有健脾利濕、寧心安神之功效。酸棗仁性平味甘，入心、肝經，主治心神不安、失眠多夢。茯苓與酸棗仁相配，能健脾益氣，利水滲溼，從而改善脾胃功能，提高人體對營養物質的吸收，增強心神之氣，達到安神定志之效。\n利水消腫：茯苓有利水消腫之功，可幫助脾胃運化水溼，降低心火上炎的風險。酸棗仁湯中加入茯苓，能防止因心火過盛導致的心神不寧，起到輔助安神的作用。\n綜上所述，茯苓在酸棗仁湯中起到健脾安神、利水消腫的功效，與酸棗仁相輔相成，共同改善失眠多夢、心神不寧等症。",
           "decoction_reference_g": "6g",
@@ -22055,8 +22152,8 @@
           "herb_zh": "知母",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "6g",
           "elucidation_zh": "酸棗仁湯中加入知母，主要基於以下兩點原因：\n清熱瀉火，滋陰降燥： 酸棗仁湯以酸棗仁安神為主，但若心煩不寐伴有心火亢盛、熱擾心神之症，則需加入知母以清熱瀉火，降心火以助安神。知母味苦性寒，入肺、腎經，善於清肺熱、降心火，並能滋陰潤燥，使心神安定，改善失眠症狀。\n配伍增效： 酸棗仁性溫，偏於滋補，知母性寒，偏於清泄，二者相配，寒熱相濟，既能滋陰安神，又能清熱降火，相互協同，增強療效。",
           "decoction_reference_g": "6g",
@@ -22068,8 +22165,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "3g",
           "elucidation_zh": "酸棗仁湯中加入甘草，主要有以下兩個原因：\n調和藥性：酸棗仁性寒，甘草性甘溫，兩者相配，可調和藥性，避免寒涼之性過於強烈，減輕對脾胃的刺激。\n增強功效：甘草具有緩解藥物毒性的作用，可以降低酸棗仁的副作用，並有助於增強鎮靜安神的功效，使藥效更加協調。",
           "decoction_reference_g": "3g",
@@ -22271,7 +22368,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table343(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -22859,8 +22957,8 @@
           "herb_zh": "浮小麥",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "15g",
           "elucidation_zh": "甘麥大棗湯中使用浮小麥，主要考量其以下兩點：\n清心安神，除煩躁：浮小麥性味甘平，入心經，具有清心安神、除煩躁的作用。對於心神不寧、失眠多夢、煩躁不安等症狀，浮小麥能起到很好的緩解作用。\n健脾益胃，和中緩急：浮小麥同時也具有健脾益胃、和中緩急的功效，對於脾胃虛弱、消化不良、腹脹腹痛等症狀，浮小麥也能起到一定的改善作用。\n因此，甘麥大棗湯中加入浮小麥，不僅能起到清心安神的功效，也能起到健脾益胃的作用，更能促進其他藥物的吸收和利用，提高藥效。",
           "decoction_reference_g": "15g",
@@ -22871,8 +22969,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "甘麥大棗湯中加入甘草，主要基於以下兩點原因：\n1. 調和藥性，增強療效：甘草味甘，性平，具有調和諸藥、緩解藥物毒性、增強藥效的作用。甘草能與麥冬、大棗相輔相成，共同滋陰潤燥、養胃生津，使藥效更為協調和增強。\n2. 降低藥物副作用：麥冬、大棗偏寒涼，甘草則偏溫和，加入甘草能平衡藥性，減少寒涼之氣對脾胃的損傷，避免副作用，使藥物更安全有效。",
           "decoction_reference_g": "9g",
@@ -22884,8 +22982,8 @@
           "herb_zh": "大棗",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "10g",
           "elucidation_zh": "甘麥大棗湯中加入大棗，主要原因有二：\n一、 補益脾胃：大棗味甘性溫，入脾胃經，有補中益氣、健脾和胃的功效。甘麥大棗湯以甘草、麥冬滋陰潤燥，但較偏於滋陰，容易損傷脾胃陽氣，加入大棗可以溫補脾胃，平衡藥性，使藥效更和緩、更全面。\n二、 調和藥性：大棗性平和，能調和藥性，使甘草、麥冬的滋陰作用更柔和，避免過於寒涼，減少副作用。同時，大棗與甘草搭配，還有協調氣血、和中緩急的作用，使藥效更穩定、更持久。",
           "decoction_reference_g": "10g",
@@ -23094,7 +23192,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table351(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -39063,8 +39162,8 @@
           "herb_zh": "麻黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "18g",
           "elucidation_zh": "麻杏石甘湯中包含麻黃，主要因其具有以下兩點功效：\n宣肺解表：麻黃性溫，味辛，入肺經，能發汗解表，散寒止咳，用於風寒襲肺，症見發熱惡寒、咳嗽痰白、鼻塞流涕等，與方中杏仁、石膏、甘草配合，共同發揮宣肺解表，清熱化痰之效。\n通竅止咳：麻黃能宣通肺氣，利鼻竅，用於外感風寒引起的鼻塞、咳嗽等症，與方中杏仁、石膏等藥物相配，共奏通竅止咳之功。",
           "decoction_reference_g": "18g",
@@ -39076,8 +39175,8 @@
           "herb_zh": "杏仁",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "麻杏石甘湯中加入杏仁，主要是因為其具備以下功效：\n宣肺止咳：杏仁味苦性溫，入肺經，能宣肺散寒，止咳化痰。對於風寒束肺、咳嗽氣喘、痰多粘稠等症狀，能起到疏散肺氣、止咳化痰的功效。\n潤肺止燥：杏仁性潤，能潤肺止燥，對於肺燥咳嗽、咽乾口渴等症狀，能起到滋潤肺部、緩解燥熱的作用。\n麻杏石甘湯以麻黃、杏仁等藥物為主，主治風寒束肺，咳嗽氣喘，痰多粘稠等症狀，杏仁的加入，不僅能宣肺止咳，還能潤肺止燥，與其他藥物相輔相成，達到更好的治療效果。",
           "decoction_reference_g": "9g",
@@ -39089,8 +39188,8 @@
           "herb_zh": "石膏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "48g",
           "elucidation_zh": "麻杏石甘湯中加入石膏，主要基於以下兩點原因：\n清熱瀉火：石膏性寒，味甘，入肺、胃經，具有清熱瀉火、除煩止渴的功效。麻杏石甘湯用於治療風熱犯肺所致的發熱、咳嗽、喘息等症狀，石膏能清泄肺熱，緩解發熱、口渴等症狀，同時也能抑制肺熱引發的咳嗽、喘息。\n解毒止痛：石膏還能清熱解毒，緩解熱毒所致的咽喉腫痛、口舌生瘡等症狀。同時，石膏亦有止痛的作用，能緩解風熱所致的頭痛、胸痛等症狀。\n因此，石膏在麻杏石甘湯中扮演著清熱瀉火、解毒止痛的重要角色，與其他藥材共同發揮治療風熱犯肺的功效。",
           "decoction_reference_g": "48g",
@@ -39102,8 +39201,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "9g",
           "elucidation_zh": "麻杏石甘湯中加入甘草，主要有以下兩個原因：\n一、調和藥性：麻杏石甘湯以麻黃、杏仁、石膏為君藥，性寒涼，容易傷及脾胃。甘草性甘溫，能緩解藥物的寒涼之性，避免傷及脾胃，使藥物更易於服用和吸收。\n二、增強療效：甘草味甘，入脾經，能補脾益氣，增強機體的抵抗力，促進藥物的療效。同時，甘草能解毒，減輕藥物對人體的毒副作用，提高藥物的安全性。",
           "decoction_reference_g": "9g",
@@ -39283,7 +39382,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table44(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
@@ -41169,8 +41269,8 @@
           "herb_zh": "白芍",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "四逆散方中使用白芍，主要出於以下兩個原因：\n緩解寒邪束表，疏肝解鬱：白芍具有養血柔肝、緩急止痛、斂陰止汗的功效，能緩解寒邪束表導致的胸脅疼痛、寒熱往來等症狀。同時，白芍能疏解肝氣鬱結，改善氣血運行，配合其他藥物共同發揮疏風解表之功。\n協調藥性，保護脾胃：白芍性微寒，能緩解柴胡等藥物的燥熱之性，防止燥傷脾胃。同時，白芍能和中緩急，保護脾胃功能，使藥物更好地發揮療效，避免產生副作用。",
           "decoction_reference_g": "12g",
@@ -41182,8 +41282,8 @@
           "herb_zh": "柴胡",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "12g",
           "elucidation_zh": "四逆散中包含柴胡，主要基於以下兩點原因：\n疏肝解鬱，和解少陽： 柴胡性微寒，味苦，歸肝膽經，具有疏肝解鬱、和解少陽之效。四逆散主要用於治療少陽證，症狀包括寒熱往來、胸脅苦滿、口苦咽乾等。柴胡能疏肝解鬱，調和少陽，解除寒熱往來、胸脅苦滿等症狀。\n升陽舉陷，利氣行水： 柴胡還具有升陽舉陷、利氣行水之效。四逆散針對少陽證中伴有氣陷、水停的患者，柴胡可升陽舉陷，利氣行水，緩解因氣虛水停導致的腹脹、四肢沉重等症狀。",
           "decoction_reference_g": "12g",
@@ -41195,8 +41295,8 @@
           "herb_zh": "枳實",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "四逆散中包含枳實，主要原因有二：\n一、 理氣消脹，散結止痛： 枳實味苦性寒，入脾、胃經，能理氣消積、行氣止痛，對於寒邪客於少陽，氣機阻滯所致的腹痛、腹脹、胸悶等症狀，有很好的緩解作用。\n二、 疏肝利膽，和胃降逆： 枳實還能疏肝理氣、利膽退黃，對於肝氣鬱結、膽汁鬱滯所致的脅肋脹痛、黃疸等症狀，也能起到一定的治療作用。\n因此，四逆散中加入枳實，既能理氣止痛，又能疏肝利膽，有助於整體的治療效果。",
           "decoction_reference_g": "12g",
@@ -41208,8 +41308,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "12g",
           "elucidation_zh": "四逆散中加入甘草，主要有以下兩點原因：\n調和藥性: 四逆散的主要藥性為溫熱，甘草性甘平，能調和藥性，避免溫熱藥性過於強烈，造成燥熱之弊。\n緩解副作用: 四逆散中的藥物如附子、乾薑，性溫燥，容易傷津液。甘草能補脾益氣，生津止渴，緩解藥物對人體的副作用，使藥物更安全有效。\n因此，甘草在四逆散中起著調和藥性和緩解副作用的重要作用，使其藥性更平和，更適合臨牀應用。",
           "decoction_reference_g": "12g",
@@ -41430,7 +41530,8 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "composition": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "curriculum/herbs/方剂学汇总_extracted.md#Table103(Rank 表:君臣佐使/劑量)"
         ],
         "tongue_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
