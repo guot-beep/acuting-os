@@ -3520,7 +3520,10 @@
       "tier_zh": "國考超高頻必考首選 ★★★★★",
       "exam_rating": "★ 2026 NCBAHM 官方大綱必考首選",
       "clinical_frequency": "臨床極高頻常用處方",
-      "study_tags": [],
+      "study_tags": [
+        "uri",
+        "muscle_layer_release"
+      ],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [],
       "actions_en": [
@@ -3663,10 +3666,12 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ],
         "condition_tags_zh": [
-          "data/config/formula_tag_glossary.json"
+          "data/config/formula_tag_glossary.json",
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
         "condition_tags_en": [
-          "data/config/formula_tag_glossary.json"
+          "data/config/formula_tag_glossary.json",
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
@@ -3703,19 +3708,37 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/173",
       "cloudtcm_id": 173,
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
-        "體質調理"
+        "體質調理",
+        "感冒",
+        "頭痛",
+        "發熱"
       ],
       "condition_tags_en": [
-        "Constitutional Regulation"
+        "Constitutional Regulation",
+        "Common Cold",
+        "Headache",
+        "Fever"
       ],
-      "pattern_tags_zh": [],
-      "pattern_tags_en": [],
+      "pattern_tags_zh": [
+        "風寒",
+        "裡熱"
+      ],
+      "pattern_tags_en": [
+        "Wind-Cold",
+        "Interior Heat"
+      ],
       "action_profile": {
         "basis": "decoction_g",
         "total_g": 66,
@@ -4100,7 +4123,11 @@
       "tier_zh": "國考超高頻必考首選 ★★★★★",
       "exam_rating": "★ 2026 NCBAHM 官方大綱必考首選",
       "clinical_frequency": "臨床極高頻常用處方",
-      "study_tags": [],
+      "study_tags": [
+        "uri",
+        "body_aches",
+        "qi_deficiency_exterior"
+      ],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [],
       "actions_en": [
@@ -4246,10 +4273,12 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ],
         "condition_tags_zh": [
-          "data/config/formula_tag_glossary.json"
+          "data/config/formula_tag_glossary.json",
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
         "condition_tags_en": [
-          "data/config/formula_tag_glossary.json"
+          "data/config/formula_tag_glossary.json",
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
@@ -4283,19 +4312,37 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
       "cloudtcm_id": 12,
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
-        "體質調理"
+        "體質調理",
+        "感冒",
+        "身痛",
+        "咳嗽"
       ],
       "condition_tags_en": [
-        "Constitutional Regulation"
+        "Constitutional Regulation",
+        "Common Cold",
+        "Body Aches",
+        "Cough"
       ],
-      "pattern_tags_zh": [],
-      "pattern_tags_en": [],
+      "pattern_tags_zh": [
+        "風寒",
+        "氣虛"
+      ],
+      "pattern_tags_en": [
+        "Wind-Cold",
+        "Qi Deficiency"
+      ],
       "formula_song": "人參敗毒草苓芎，羌獨柴前枳桔同。\n生薑薄荷煎服勝，氣虛外感風濕功。",
       "formula_song_zh": "人參敗毒草苓芎，羌獨柴前枳桔同。\n生薑薄荷煎服勝，氣虛外感風濕功。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
@@ -4551,7 +4598,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "four_greats",
+        "qi_level_heat"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Clears Qi-level heat and generates fluids — purges Yangming Qi-stage heat and quenches thirst",
@@ -4785,6 +4835,18 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 98,
@@ -4983,7 +5045,27 @@
       "tongue_en": "Red tip and sides; coating: Yellow, dry or white",
       "pulse_en": "Flooding and forceful or Large and forceless or Slippery and rapid",
       "tongue_zh": "舌尖邊紅;苔黃燥或白",
-      "pulse_zh": "脈洪大有力,或大而無力,或滑數"
+      "pulse_zh": "脈洪大有力,或大而無力,或滑數",
+      "condition_tags_zh": [
+        "發熱",
+        "口渴",
+        "頭痛"
+      ],
+      "condition_tags_en": [
+        "Fever",
+        "Thirst",
+        "Headache"
+      ],
+      "pattern_tags_zh": [
+        "氣分熱盛",
+        "陽明證",
+        "裡熱"
+      ],
+      "pattern_tags_en": [
+        "Qi-Level Heat Excess",
+        "Yang Ming Pattern",
+        "Interior Heat"
+      ]
     },
     {
       "id": "formula.zhu_ye_shi_gao_tang",
@@ -5349,7 +5431,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "fire_toxin",
+        "three_jiao_heat"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Drains fire and relieves toxicity — purges toxic fire excess from all three burners",
@@ -5578,6 +5663,18 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 244,
@@ -5753,7 +5850,29 @@
       "tongue_en": "Red; coating: Yellow",
       "pulse_en": "Rapid and forceful",
       "tongue_zh": "舌紅;苔黃",
-      "pulse_zh": "脈數而有力"
+      "pulse_zh": "脈數而有力",
+      "condition_tags_zh": [
+        "發熱",
+        "失眠",
+        "黃疸",
+        "鼻衄"
+      ],
+      "condition_tags_en": [
+        "Fever",
+        "Insomnia",
+        "Jaundice",
+        "Epistaxis (Nosebleed)"
+      ],
+      "pattern_tags_zh": [
+        "火毒",
+        "裡熱",
+        "熱證"
+      ],
+      "pattern_tags_en": [
+        "Fire Toxin",
+        "Interior Heat",
+        "Heat Pattern"
+      ]
     },
     {
       "id": "formula.xie_xin_tang",
@@ -8150,7 +8269,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "night_fever",
+        "yin_deficiency_heat"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Nourishes the Yin",
@@ -8392,6 +8514,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 567,
@@ -8440,7 +8574,23 @@
       ],
       "tongue_zh": "舌紅;苔少",
       "pulse_zh": "脈細數",
-      "administration_zh": "水五杯，煮取二至三杯，分二至三次溫服。"
+      "administration_zh": "水五杯，煮取二至三杯，分二至三次溫服。",
+      "condition_tags_zh": [
+        "發熱",
+        "盜汗"
+      ],
+      "condition_tags_en": [
+        "Fever",
+        "Night Sweats"
+      ],
+      "pattern_tags_zh": [
+        "陰虛",
+        "虛熱"
+      ],
+      "pattern_tags_en": [
+        "Yin Deficiency",
+        "Deficiency Heat"
+      ]
     },
     {
       "id": "formula.qing_gu_san",
@@ -9070,7 +9220,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "purgation",
+        "pi_man_zao_shi"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Strongly purges Heat Accumulation"
@@ -9322,6 +9475,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為 CloudTCM 條文,en 為 AD 證型,兩源並記非逐條對譯"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 32,
@@ -9383,6 +9548,26 @@
       "pulse_zh": "脈沉實而數,或滑數",
       "applications_zh": [
         "大承氣湯常用於治療急性單純性腸梗阻、粘連性腸梗阻、蛔蟲性腸梗阻，以及急性膽囊炎、急性胰腺炎、急性闌尾炎、幽門梗阻、急腹症、流行性乙型腦炎、感染性休克等疾病。此外，某些熱性病，如扁桃腺發炎、神志昏迷、抽搐、發狂等症狀。"
+      ],
+      "condition_tags_zh": [
+        "便祕",
+        "腹脹滿",
+        "發熱"
+      ],
+      "condition_tags_en": [
+        "Constipation",
+        "Bloating",
+        "Fever"
+      ],
+      "pattern_tags_zh": [
+        "陽明腑實",
+        "陽明證",
+        "裡熱"
+      ],
+      "pattern_tags_en": [
+        "Yang Ming Fu Excess",
+        "Yang Ming Pattern",
+        "Interior Heat"
       ]
     },
     {
@@ -9409,7 +9594,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "constipation_context",
+        "purgation"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Moderately purges Heat accumulation",
@@ -9649,6 +9837,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為古籍條文(CloudTCM),en 為 AD 證型,兩源並記非逐條對譯"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 40,
@@ -9709,6 +9909,24 @@
       ],
       "modern_research_zh": [
         "註2:尹東閣,杜豫吉,孔佳輝,等.經典名方小承氣湯對胃黏膜的保護作用及機制研究[J].中華中醫藥雜誌,2024/王本賢,郭秀霞,張婉君,等.小承氣湯加減輔治輕型急性胰腺炎臨床觀察[J].實用中醫藥雜誌,2024/葉佳雪,王詩源.小承氣湯給藥途徑與現代臨床應用的研究進展[J].江西中醫藥,2023/陳新勝,彭支蓮,王轉麗.小承氣湯治療頑固性呃逆1例[J].實用中醫藥雜誌,2023/楊棟梁.承氣湯的復方配伍規律研究探討[J].婚育與健康,2023/尹東閣,蔡夢如,胡雪凌,等.經典名方小承氣湯藥效成分及臨床應用研究進展[J].遼寧中醫藥大學學報,2023"
+      ],
+      "condition_tags_zh": [
+        "便祕",
+        "腹脹",
+        "痢疾"
+      ],
+      "condition_tags_en": [
+        "Constipation",
+        "Abdominal Distension",
+        "Dysentery"
+      ],
+      "pattern_tags_zh": [
+        "陽明證",
+        "裡熱"
+      ],
+      "pattern_tags_en": [
+        "Yang Ming Pattern",
+        "Interior Heat"
       ]
     },
     {
@@ -9735,7 +9953,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "constipation_context",
+        "purgation"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Mildly purges Heat accumulation"
@@ -9983,6 +10204,18 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 277,
@@ -10037,6 +10270,24 @@
       "pulse_zh": "脈沉實而數",
       "modern_research_en": [
         "This formula has been used with satisfactory results in treating drug overdose."
+      ],
+      "condition_tags_zh": [
+        "便祕",
+        "腹脹",
+        "發熱"
+      ],
+      "condition_tags_en": [
+        "Constipation",
+        "Abdominal Distension",
+        "Fever"
+      ],
+      "pattern_tags_zh": [
+        "陽明證",
+        "裡熱"
+      ],
+      "pattern_tags_en": [
+        "Yang Ming Pattern",
+        "Interior Heat"
       ]
     },
     {
@@ -13168,7 +13419,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "diarrhea_context",
+        "middle_jiao_cold"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Action: 理中丸：清熱解表、調理氣血"
@@ -13339,6 +13593,18 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -13375,7 +13641,29 @@
         "Abdominal fullness and distention"
       ],
       "tongue_zh": "舌淡而潤;苔白或無苔",
-      "pulse_zh": "脈沉弱而遲,或沉細,或大而無力"
+      "pulse_zh": "脈沉弱而遲,或沉細,或大而無力",
+      "condition_tags_zh": [
+        "腹痛",
+        "泄瀉",
+        "嘔吐",
+        "畏寒"
+      ],
+      "condition_tags_en": [
+        "Abdominal Pain",
+        "Diarrhea",
+        "Vomiting",
+        "Cold Intolerance"
+      ],
+      "pattern_tags_zh": [
+        "脾胃虛寒",
+        "裡寒",
+        "陽虛"
+      ],
+      "pattern_tags_en": [
+        "Spleen-Stomach Deficiency Cold",
+        "Interior Cold",
+        "Yang Deficiency"
+      ]
     },
     {
       "id": "formula.fu_zi_li_zhong_wan",
@@ -13882,7 +14170,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "yang_rescue",
+        "shaoyin"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Rescues Yang",
@@ -14122,6 +14413,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 483,
@@ -14190,6 +14493,28 @@
         "慢性過敏症：凡是慢性過敏，例如：過敏性鼻炎、難治性皮膚病...等等，因為體內陰寒所致者，可運用四逆湯。",
         "憂鬱症、躁鬱症：有一定比例的憂鬱症、躁鬱症患者體內陰寒旺盛，在服用四逆湯之後明顯改善。",
         "各種癌症輔助治療：多數癌症最後都是落於三陰病，因此普遍怕冷、手腳冰冷。運用四逆湯改善陽虛現象，疏通經絡，對於癌症治療有輔助效果。"
+      ],
+      "condition_tags_zh": [
+        "四肢冰冷",
+        "畏寒",
+        "泄瀉"
+      ],
+      "condition_tags_en": [
+        "Cold Extremities",
+        "Cold Intolerance",
+        "Diarrhea"
+      ],
+      "pattern_tags_zh": [
+        "亡陽",
+        "陽虛",
+        "裡寒",
+        "少陰證"
+      ],
+      "pattern_tags_en": [
+        "Yang Collapse",
+        "Yang Deficiency",
+        "Interior Cold",
+        "Shao Yin Pattern"
       ]
     },
     {
@@ -14888,7 +15213,10 @@
       "pinyin": "Si Jun Zi Tang",
       "category_id": "formula_category.tonify",
       "category_en": "Tonify",
-      "study_tags": [],
+      "study_tags": [
+        "qi_tonic_base",
+        "spleen_qi"
+      ],
       "pattern_focus_en": [
         "Spleen qi deficiency"
       ],
@@ -16881,7 +17209,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "summer_qi_yin",
+        "palpitations_context"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Action: 生脈散：清熱解表、調理氣血"
@@ -17042,6 +17373,18 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -17075,7 +17418,25 @@
         "Myasthenia gravis"
       ],
       "tongue_zh": "舌紅而乾,或淡紅而乾;苔薄而乾",
-      "pulse_zh": "脈虛數,或遲而結代"
+      "pulse_zh": "脈虛數,或遲而結代",
+      "condition_tags_zh": [
+        "疲勞",
+        "心悸",
+        "自汗",
+        "口渴"
+      ],
+      "condition_tags_en": [
+        "Fatigue",
+        "Palpitations",
+        "Spontaneous Sweating",
+        "Thirst"
+      ],
+      "pattern_tags_zh": [
+        "氣陰兩虛"
+      ],
+      "pattern_tags_en": [
+        "Qi & Yin Deficiency"
+      ]
     },
     {
       "id": "formula.ren_shen_yang_rong_tang",
@@ -18609,7 +18970,10 @@
       "tier_zh": "國考超高頻必考首選 ★★★★★",
       "exam_rating": "★ 2026 NCBAHM 官方大綱必考首選",
       "clinical_frequency": "臨床極高頻常用處方",
-      "study_tags": [],
+      "study_tags": [
+        "tonification",
+        "qi_blood_tonic"
+      ],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [],
       "actions_en": [
@@ -18763,10 +19127,12 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ],
         "condition_tags_zh": [
-          "data/config/formula_tag_glossary.json"
+          "data/config/formula_tag_glossary.json",
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
         "condition_tags_en": [
-          "data/config/formula_tag_glossary.json"
+          "data/config/formula_tag_glossary.json",
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
@@ -18807,19 +19173,37 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/20",
       "cloudtcm_id": 20,
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
-        "體質調理"
+        "體質調理",
+        "疲勞",
+        "貧血",
+        "病後虛弱"
       ],
       "condition_tags_en": [
-        "Constitutional Regulation"
+        "Constitutional Regulation",
+        "Fatigue",
+        "Anemia",
+        "Post-Illness Fatigue"
       ],
-      "pattern_tags_zh": [],
-      "pattern_tags_en": [],
+      "pattern_tags_zh": [
+        "氣血兩虛",
+        "陽虛"
+      ],
+      "pattern_tags_en": [
+        "Qi & Blood Deficiency",
+        "Yang Deficiency"
+      ],
       "action_profile": {
         "basis": "decoction_g",
         "total_g": 81,
@@ -22072,7 +22456,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "insomnia_context",
+        "blood_deficiency"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Nourishes Liver Blood",
@@ -22340,6 +22727,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為 CloudTCM 條文(第2條由原功用句濃縮,原文在 zhu_zhi_zh),en 為 AD 證型,兩源並記"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 270,
@@ -22408,6 +22807,28 @@
       "pulse_zh": "脈弦數,或細數,或細弱,或細緊",
       "applications_zh": [
         "酸棗仁湯現代運用於神經衰弱、高血壓、心臟神經官能症、陣發性心動過速、更年期綜合症、精神障礙(憂鬱症、焦慮性神經症、精神分裂妄想症)，屬於心肝血虛，虛熱內擾者，可用本方加減治療。"
+      ],
+      "condition_tags_zh": [
+        "失眠",
+        "心悸",
+        "盜汗",
+        "眩暈"
+      ],
+      "condition_tags_en": [
+        "Insomnia",
+        "Palpitations",
+        "Night Sweats",
+        "Dizziness"
+      ],
+      "pattern_tags_zh": [
+        "肝血虛",
+        "血虛",
+        "虛熱"
+      ],
+      "pattern_tags_en": [
+        "Liver Blood Deficiency",
+        "Blood Deficiency",
+        "Deficiency Heat"
       ]
     },
     {
@@ -22863,7 +23284,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "zang_zao",
+        "emotional_context"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Nourishes HT",
@@ -23087,6 +23511,18 @@
         ],
         "pattern_indications_en": [
           "curriculum/herbs/方剂学汇总_extracted.md#Table350(Indications 行逐字)"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 89,
@@ -23141,6 +23577,26 @@
       "pulse_zh": "脈細數",
       "applications_zh": [
         "現代臨床上，甘麥大棗湯可適用於治療臟躁證、癔病、神經衰弱、自律神經失調、睡眠障礙、多汗症、小兒磨牙、癲癇、健忘、小兒啼哭不止、憂鬱、失眠、更年期綜合症、精神心理疾病所致大腸激躁症、考前緊張症候群...等。"
+      ],
+      "condition_tags_zh": [
+        "失眠",
+        "焦慮",
+        "憂鬱",
+        "汗證"
+      ],
+      "condition_tags_en": [
+        "Insomnia",
+        "Anxiety",
+        "Depression",
+        "Sweating Disorders"
+      ],
+      "pattern_tags_zh": [
+        "臟躁",
+        "心陰虛"
+      ],
+      "pattern_tags_en": [
+        "Zang Zao (Restless Organ)",
+        "Heart Yin Deficiency"
       ]
     },
     {
@@ -39003,7 +39459,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "wheezing_context",
+        "lung_heat"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Disperses Wind-Heat",
@@ -39265,6 +39724,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為 CloudTCM 條文,en 為 AD 證型,兩源並記非逐條對譯"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 224,
@@ -39327,6 +39798,26 @@
       "applications_zh": [
         "近代中醫臨床，對於麻杏石甘湯的運用非常頻繁，效果也顯著，若分析超過2000篇期刊論文，可以歸納對於以下疾病產生一定的效果：",
         "流行性感冒(感冒)、上呼吸道感染、急性支氣管炎、支氣管肺炎，扁桃體炎、小兒支氣管肺炎、小兒肺炎、肺炎、社區獲得性肺炎、大葉性肺炎、扁桃體炎、咽喉炎、猩紅熱(爛喉痧)、夏季熱中暑、新型冠狀病毒感染、支氣管哮喘、咳嗽變異性哮喘、感染後慢性咳嗽、鼻竇炎、上氣道咳嗽綜合徵、麻疹合併肺炎、百日咳、肺炎支原體肺炎、喘息性肺炎、病毒性肺炎、毛細支氣管炎、急性呼吸道感染伴高熱、夏季熱中暑、慢性阻塞性肺疾病急性加重期（AECOPD）、急性肺損傷、急性放射性肺炎、放射性肺損傷、急性腦卒中相關性肺炎、墜積性肺炎、醫院獲得性肺炎、術後肺部感染、膿毒症、肺癌化療輔助治療、皮膚科（痤瘡、蕁麻疹、慢性蕁麻疹、酒糟鼻）、肛腸科（脫肛、痔瘡）、五官科、泌尿科（排尿障礙、尿路感染、遺尿症、壓力性尿失禁）、組織細胞性壞死性淋巴結炎、急性胰腺炎相關性肺損傷、過敏性疾病。"
+      ],
+      "condition_tags_zh": [
+        "咳嗽",
+        "氣喘",
+        "發熱",
+        "支氣管炎"
+      ],
+      "condition_tags_en": [
+        "Cough",
+        "Asthma",
+        "Fever",
+        "Bronchitis"
+      ],
+      "pattern_tags_zh": [
+        "肺熱",
+        "風熱"
+      ],
+      "pattern_tags_en": [
+        "Lung Heat",
+        "Wind-Heat"
       ]
     },
     {
@@ -41103,7 +41594,10 @@
       "clinical_use_note": "",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
+      "study_tags": [
+        "liver_qi",
+        "cold_extremities"
+      ],
       "pattern_focus_en": [],
       "actions_en": [
         "Releases the Exterior",
@@ -41364,6 +41858,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
+        ],
+        "condition_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "condition_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_zh": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_tags_en": [
+          "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ]
       },
       "cloudtcm_id": 78,
@@ -41433,6 +41939,28 @@
         "皮膚與五官科疾病：痤瘡（青春痘）、黃褐斑、慢性蕁麻疹、神經性皮炎、帶狀皰疹後遺神經痛、慢性咽炎。",
         "兒科與其他疾病：小兒發熱、小兒厭食症、偏頭痛、不明原因腹痛、亞健康狀態調理。",
         "四逆散的臨床運用"
+      ],
+      "condition_tags_zh": [
+        "脅痛",
+        "腹痛",
+        "憂鬱",
+        "四肢冰冷"
+      ],
+      "condition_tags_en": [
+        "Hypochondriac Pain",
+        "Abdominal Pain",
+        "Depression",
+        "Cold Extremities"
+      ],
+      "pattern_tags_zh": [
+        "肝氣鬱結",
+        "肝脾不和",
+        "氣滯"
+      ],
+      "pattern_tags_en": [
+        "Liver Qi Stagnation",
+        "Liver-Spleen Disharmony",
+        "Qi Stagnation"
       ]
     },
     {
