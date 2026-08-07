@@ -35,9 +35,7 @@
     const comparisonFilter = el("comparisonFilter");
     if (comparisonFilter) comparisonFilter.placeholder = modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes...");
     const conditionFilter = el("conditionFilter");
-    if (conditionFilter) conditionFilter.placeholder = modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD...");
-    const cloudtcmDiseaseFilter = el("cloudtcmDiseaseFilter");
-    if (cloudtcmDiseaseFilter) cloudtcmDiseaseFilter.placeholder = modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID...");
+    if (conditionFilter) conditionFilter.placeholder = modeText("搜尋病名、證型、別名、拼音、ICD...", "Search diagnosis names, patterns, aliases, pinyin, ICD...");
   }
   document.addEventListener("acuting:content-mode", applyKnowledgeModeText);
   function esc(v) {
