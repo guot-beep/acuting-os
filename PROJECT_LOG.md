@@ -1,3 +1,17 @@
+# 2026-08-07 Antigravity — 完整交接報告與 Claude 審查紀錄 🛑
+
+- **做了什麼**:
+  1. 完成第 15～25 批（第 71～125 首方劑）中英文 100% 無刪減匯入與驗證。
+  2. UI 重構：徹底刪除冗餘的 `體質調理 · Constitutional Regulation` 標籤，將 Treats 標籤（如 `[ 遺尿 · Enuresis ]` `[ 陽痿 · Impotence ]`）完全合併入 **`現代運用索引 Modern Application Index`**，並維持 >8 項自動折疊抽屜。
+  3. 全庫資料品質零瑕疵淨化：清查並消除全庫 224 首方劑中殘留之單字殘缺（`證`、`病`、`氣`）、中英混雜單詞（`Flaring`）及正則廢字（`所致之證`、`與證`、`兼證`），【天台烏藥散】、【枳實薤白桂枝湯】等主治證型與分類全數更正為 100% 正體中醫名詞。
+- **數字與驗證**:
+  - `node scripts/build-data.js`: PASS (`knowledge_data.js` 224 formulas, 330 herbs) ✅
+  - `node scripts/validate-interactions.js`: PASS (0 warnings, 0 failures) ✅
+  - Zero-Defect Scanner: PASS (Defective formulas count: 0) ✅
+  - Commit: `297bae4` (已 Fast-Forward 合併並 Push 至 `origin/main`)
+- **已知未解與停工備註**: 遵照 Ting 指示立即暫停所有自動化匯入，請 Claude 對 `formulas.json` 與 `knowledge.js` 進行深度架構與品質評估。
+- **下一步**: 待 Claude 評估完畢後，再繼續進行後續方劑（第 126 首起）之填充或架構調整。
+
 # 2026-08-06 Claude — CI 三個 job 修復:merge 洗掉的 id、隱形的安全警語、證型兩套詞彙
 
 - **CI 從 08-06 04:02 的 merge `11f37a9` 起一直是紅的**,三個失敗,其中兩個藏著真問題。
