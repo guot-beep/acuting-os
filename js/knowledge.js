@@ -743,7 +743,7 @@
 
   function formulaFamilySection(record) {
     const fam = Array.isArray(record.formula_family) ? record.formula_family : [];
-    if (!fam.length) return '<p class="k-detail-empty">待補 / Pending</p>';
+    if (!fam.length) return "";   // concatenated with formulaCompareSection — see detailSection
     const sign = { "加": "＋", "減": "－", "倍": "×", "合方": "＋方", "同類": "≈" };
     return `<ul class="k-family">${fam.map((f) => `
       <li class="k-family__row">
@@ -756,7 +756,7 @@
 
   function formulaCompareSection(record) {
     const rows = Array.isArray(record.compare_with) ? record.compare_with : [];
-    if (!rows.length) return '<p class="k-detail-empty">待補 / Pending</p>';
+    if (!rows.length) return "";  // concatenated with formulaRadarSection — see detailSection
     return `<ul class="k-fcompare">${rows.map((c) => {
       const other = (c.codes || []).find((x) => x !== record.id) || "";
       return `<li><span class="kfc-axis">${esc(c.axis || "")}</span><span class="kfc-note">${esc(c.note || "")}</span></li>`;
@@ -1234,7 +1234,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
@@ -1436,7 +1436,7 @@
           ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", keyPairs || herbPairsSection(record))}
           ${record.classical_text_zh ? detailSection("古籍原文 (Classical Text)", "本草原文與英譯", `<blockquote class="k-classic">${linkifyHerbs(record.classical_text_zh, record.id)}${record.classical_text_en ? `<span class="k-classic-en">${esc(record.classical_text_en)}</span>` : ""}</blockquote>`) : ""}
           ${record.classical_text_zh ? detailSection("古文典籍記載", "Classical text quotation", `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(record.classical_text_zh).replace(/\n/g, '<br>')}</blockquote>`) : ""}
-          ${detailSection("學習筆記", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}
+          ${detailSection("學習筆記", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}
         ` 
       },
       { 
