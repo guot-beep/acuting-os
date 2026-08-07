@@ -6314,7 +6314,9 @@
           "in_formula_zh": "清熱瀉火。",
           "actions_zh": "清熱瀉火。",
           "role_reason_zh": "清熱瀉火。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -6332,7 +6334,9 @@
           "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chi_shao",
@@ -6350,7 +6354,9 @@
           "in_formula_zh": "清熱涼血，散瘀止痛。",
           "actions_zh": "清熱涼血，散瘀止痛。",
           "role_reason_zh": "清熱涼血，散瘀止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -6368,7 +6374,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【升麻葛根湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -6880,7 +6888,9 @@
           "in_formula_zh": "緩解。",
           "actions_zh": "緩解。",
           "role_reason_zh": "緩解。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.qian_hu",
@@ -6936,7 +6946,9 @@
           "in_formula_zh": "補中益氣，健脾益肺，養血生津。",
           "actions_zh": "補中益氣，健脾益肺，養血生津。",
           "role_reason_zh": "補中益氣，健脾益肺，養血生津。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fu_ling",
@@ -20712,7 +20724,9 @@
           "actions_zh": "滋陰養陰， 清熱瀉火。",
           "in_formula_en": "Nourishes Yin, clears Heat, moistens Dryness and softens hardness.",
           "actions_en": "Nourishes Yin, clears Heat, moistens Dryness and softens hardness.",
-          "role_reason_zh": "滋陰養陰， 清熱瀉火。"
+          "role_reason_zh": "滋陰養陰， 清熱瀉火。",
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.mai_men_dong",
@@ -20727,7 +20741,9 @@
           "actions_zh": "養陰潤肺，益胃生津，清心除煩。",
           "in_formula_en": "Nourishes Yin, generates fluids, moistens Lungs and clears Heart.",
           "actions_en": "Nourishes Yin, generates fluids, moistens Lungs and clears Heart.",
-          "role_reason_zh": "養陰潤肺，益胃生津，清心除煩。"
+          "role_reason_zh": "養陰潤肺，益胃生津，清心除煩。",
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.sheng_di_huang",
@@ -20742,7 +20758,9 @@
           "actions_zh": "清熱涼血，養陰生津。",
           "in_formula_en": "Clears Heat, cools Blood, nourishes Yin and generates fluids.",
           "actions_en": "Clears Heat, cools Blood, nourishes Yin and generates fluids.",
-          "role_reason_zh": "清熱涼血，養陰生津。"
+          "role_reason_zh": "清熱涼血，養陰生津。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.da_huang",
@@ -20757,7 +20775,9 @@
           "actions_zh": "瀉熱通便，涼血解毒，逐瘀通經。",
           "in_formula_en": "Drains Heat, unblocks bowels and purges heat stagnation.",
           "actions_en": "Drains Heat, unblocks bowels and purges heat stagnation.",
-          "role_reason_zh": "瀉熱通便，涼血解毒，逐瘀通經。"
+          "role_reason_zh": "瀉熱通便，涼血解毒，逐瘀通經。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.mang_xiao",
@@ -20772,7 +20792,9 @@
           "actions_zh": "健脾和中，調和諸藥。",
           "in_formula_en": "Moistens Dryness, softens hardness and purges Heat.",
           "actions_en": "Moistens Dryness, softens hardness and purges Heat.",
-          "role_reason_zh": "健脾和中，調和諸藥。"
+          "role_reason_zh": "健脾和中，調和諸藥。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【增液承氣湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -21931,7 +21953,9 @@
           "actions_zh": "和中健脾，調和諸藥。。",
           "in_formula_en": "Moistens Intestines and unblocks bowel movements.",
           "actions_en": "Moistens Intestines and unblocks bowel movements.",
-          "role_reason_zh": "和中健脾，調和諸藥。。"
+          "role_reason_zh": "和中健脾，調和諸藥。。",
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.tao_ren",
@@ -21946,7 +21970,9 @@
           "actions_zh": "健脾和中，調和諸藥。",
           "in_formula_en": "Invigorates Blood, dispels stasis, moistens Intestines.",
           "actions_en": "Invigorates Blood, dispels stasis, moistens Intestines.",
-          "role_reason_zh": "健脾和中，調和諸藥。"
+          "role_reason_zh": "健脾和中，調和諸藥。",
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.dang_gui",
@@ -21961,7 +21987,9 @@
           "actions_zh": "養血活血，調經止痛，潤腸通便。",
           "in_formula_en": "Nourishes Blood and moistens Dryness.",
           "actions_en": "Nourishes Blood and moistens Dryness.",
-          "role_reason_zh": "養血活血，調經止痛，潤腸通便。"
+          "role_reason_zh": "養血活血，調經止痛，潤腸通便。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_di_huang",
@@ -21976,7 +22004,9 @@
           "actions_zh": "清熱涼血，養陰生津。",
           "in_formula_en": "Nourishes Yin, clears Heat and generates fluids.",
           "actions_en": "Nourishes Yin, clears Heat and generates fluids.",
-          "role_reason_zh": "清熱涼血，養陰生津。"
+          "role_reason_zh": "清熱涼血，養陰生津。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_ke",
@@ -21991,7 +22021,9 @@
           "actions_zh": "理氣寬中。",
           "in_formula_en": "Moves Qi and relaxes Intestines.",
           "actions_en": "Moves Qi and relaxes Intestines.",
-          "role_reason_zh": "理氣寬中。"
+          "role_reason_zh": "理氣寬中。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【潤腸丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -22102,7 +22134,9 @@
           "actions_zh": "健脾和中，調和諸藥。",
           "in_formula_en": "Warms Kidney Yang, moistens Intestines and unblocks bowel movements; acts as Chief.",
           "actions_en": "Warms Kidney Yang, moistens Intestines and unblocks bowel movements; acts as Chief.",
-          "role_reason_zh": "健脾和中，調和諸藥。"
+          "role_reason_zh": "健脾和中，調和諸藥。",
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.dang_gui",
@@ -22117,7 +22151,9 @@
           "actions_zh": "養血活血，調經止痛，潤腸通便。",
           "in_formula_en": "Nourishes Blood, moistens Dryness, moves Blood and assists bowel evacuation.",
           "actions_en": "Nourishes Blood, moistens Dryness, moves Blood and assists bowel evacuation.",
-          "role_reason_zh": "養血活血，調經止痛，潤腸通便。"
+          "role_reason_zh": "養血活血，調經止痛，潤腸通便。",
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.niu_xi",
@@ -22132,7 +22168,9 @@
           "actions_zh": "補肝腎，強筋骨，活血通經，引火下行。",
           "in_formula_en": "Tonifies Liver and Kidney, strengthens lower back and knees, directs medicine downward.",
           "actions_en": "Tonifies Liver and Kidney, strengthens lower back and knees, directs medicine downward.",
-          "role_reason_zh": "補肝腎，強筋骨，活血通經，引火下行。"
+          "role_reason_zh": "補肝腎，強筋骨，活血通經，引火下行。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.ze_xie",
@@ -22147,7 +22185,9 @@
           "actions_zh": "利水滲濕，泄熱清相火。",
           "in_formula_en": "Drains Dampness, directs turbid Qi downward and prevents stagnation from rich tonics.",
           "actions_en": "Drains Dampness, directs turbid Qi downward and prevents stagnation from rich tonics.",
-          "role_reason_zh": "利水滲濕，泄熱清相火。"
+          "role_reason_zh": "利水滲濕，泄熱清相火。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_ke",
@@ -22162,7 +22202,9 @@
           "actions_zh": "緩解。",
           "in_formula_en": "Relieves chest oppression and descends Qi to ease bowel movements.",
           "actions_en": "Relieves chest oppression and descends Qi to ease bowel movements.",
-          "role_reason_zh": "緩解。"
+          "role_reason_zh": "緩解。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_ma",
@@ -22177,7 +22219,9 @@
           "actions_zh": "發表透疹，清熱解毒，升舉陽氣。",
           "in_formula_en": "Raises clear Yang so turbid Qi descends, balancing downward draining actions.",
           "actions_en": "Raises clear Yang so turbid Qi descends, balancing downward draining actions.",
-          "role_reason_zh": "發表透疹，清熱解毒，升舉陽氣。"
+          "role_reason_zh": "發表透疹，清熱解毒，升舉陽氣。",
+          "role_zh": "使",
+          "role_en": "Envoy"
         }
       ],
       "clinical_use_note": "【濟川煎】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -30240,7 +30284,9 @@
           "in_formula_zh": "補氣升陽，固表止汗，托毒生肌，利水消腫。",
           "actions_zh": "補氣升陽，固表止汗，托毒生肌，利水消腫。",
           "role_reason_zh": "補氣升陽，固表止汗，托毒生肌，利水消腫。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.yi_tang",
@@ -30258,7 +30304,9 @@
           "in_formula_zh": "健脾和胃， 緩解。",
           "actions_zh": "健脾和胃， 緩解。",
           "role_reason_zh": "健脾和胃， 緩解。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.gui_zhi",
@@ -30276,7 +30324,9 @@
           "in_formula_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "actions_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "role_reason_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -30294,7 +30344,9 @@
           "in_formula_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "role_reason_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -30312,7 +30364,9 @@
           "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -30330,7 +30384,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.da_zhao",
@@ -30348,7 +30404,9 @@
           "in_formula_zh": "補中益氣，養血安神，調和營衛。",
           "actions_zh": "補中益氣，養血安神，調和營衛。",
           "role_reason_zh": "補中益氣，養血安神，調和營衛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【黃芪建中湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -31447,7 +31505,9 @@
           "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "in_formula_en": "Strongly tonifies Yuan Qi, rescues collapse and saves emergency; acts as Chief.",
           "actions_en": "Strongly tonifies Yuan Qi, rescues collapse and saves emergency; acts as Chief.",
-          "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。"
+          "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.zhi_fu_zi",
@@ -31462,7 +31522,9 @@
           "actions_zh": "回陽救逆，補火助陽，散寒止痛。",
           "in_formula_en": "Warms Mingmen, revives Yang and rescues collapse; acts as Deputy.",
           "actions_en": "Warms Mingmen, revives Yang and rescues collapse; acts as Deputy.",
-          "role_reason_zh": "回陽救逆，補火助陽，散寒止痛。"
+          "role_reason_zh": "回陽救逆，補火助陽，散寒止痛。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【參附湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -34815,7 +34877,9 @@
           "in_formula_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.dang_shen",
@@ -34833,7 +34897,9 @@
           "in_formula_zh": "補中益氣，健脾益肺，養血生津。",
           "actions_zh": "補中益氣，健脾益肺，養血生津。",
           "role_reason_zh": "補中益氣，健脾益肺，養血生津。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.bai_zhu",
@@ -34851,7 +34917,9 @@
           "in_formula_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "actions_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "role_reason_zh": "健脾益氣，燥濕利水，止汗安胎。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fu_ling",
@@ -34869,7 +34937,9 @@
           "in_formula_zh": "滲濕利水，健脾和中，寧心安神。",
           "actions_zh": "滲濕利水，健脾和中，寧心安神。",
           "role_reason_zh": "滲濕利水，健脾和中，寧心安神。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
@@ -34887,7 +34957,9 @@
           "in_formula_zh": "補中益氣，緩急止痛，調和諸藥。",
           "actions_zh": "補中益氣，緩急止痛，調和諸藥。",
           "role_reason_zh": "補中益氣，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chen_pi",
@@ -34905,7 +34977,9 @@
           "in_formula_zh": "理氣健脾，燥濕化痰，和胃降逆。",
           "actions_zh": "理氣健脾，燥濕化痰，和胃降逆。",
           "role_reason_zh": "理氣健脾，燥濕化痰，和胃降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.ban_xia",
@@ -34923,7 +34997,9 @@
           "in_formula_zh": "燥濕化痰，降逆止嘔，消痞散結。",
           "actions_zh": "燥濕化痰，降逆止嘔，消痞散結。",
           "role_reason_zh": "燥濕化痰，降逆止嘔，消痞散結。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sha_ren",
@@ -34941,7 +35017,9 @@
           "in_formula_zh": "化濕開胃，溫脾止瀉，理氣安胎。",
           "actions_zh": "化濕開胃，溫脾止瀉，理氣安胎。",
           "role_reason_zh": "化濕開胃，溫脾止瀉，理氣安胎。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.mu_xiang",
@@ -34959,7 +35037,9 @@
           "in_formula_zh": "行氣止痛，健脾消食，調暢腸胃。",
           "actions_zh": "行氣止痛，健脾消食，調暢腸胃。",
           "role_reason_zh": "行氣止痛，健脾消食，調暢腸胃。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【香砂六君子湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -41192,8 +41272,8 @@
           "herb_zh": "熟地黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "24g",
           "elucidation_zh": "桃紅四物湯中加入熟地黃，主要基於以下兩點原因：\n補血滋陰： 熟地黃性溫，味甘苦，入心、肝、腎經，具有補血滋陰、養血生津的功效。四物湯本身以補血為主，加入熟地黃可加強補血效果，更能滋養陰液，使血脈流通，改善貧血、面色蒼白、頭暈目眩等症狀。\n活血化瘀： 熟地黃能促進血紅蛋白的合成，提高血液的攜氧能力，並能活化血液循環，改善血瘀情況。桃紅四物湯中加入桃仁、紅花等活血化瘀藥材，與熟地黃的協同作用，可更有效地化解瘀血，促進血液循環，改善痛經、經血不暢等症狀。",
           "decoction_reference_g": "24g",
@@ -41210,8 +41290,8 @@
           "herb_zh": "白芍",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "桃紅四物湯中加入白芍，主要有以下兩點原因：\n緩解血瘀： 白芍具有養血柔肝、斂陰止痛之效，可緩解血瘀所致的疼痛。四物湯原本以補血為主，加入白芍可協調氣血，使補血效果更佳，且能避免補血過於燥熱而引起瘀血。\n滋陰養血： 白芍性微寒，可滋陰養血，與桃仁、紅花等活血化瘀藥物搭配使用，可避免活血過度而傷陰。同時，白芍還能緩解四物湯中熟地黃的燥熱之性，使藥性更加平和，更適合女性使用。",
           "decoction_reference_g": "12g",
@@ -41228,8 +41308,8 @@
           "herb_zh": "當歸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "桃紅四物湯中加入當歸，主要基於以下兩個原因：\n活血化瘀，調經止痛: 當歸為補血活血藥，能改善血液循環，促進血行，對於經血不調、痛經等症狀有顯著療效。桃紅四物湯本身以四物湯為基礎，加入桃仁、紅花等活血化瘀藥材，而當歸的加入更能加強活血化瘀的作用，使藥效更為顯著。\n補血養血，滋潤氣血: 當歸具有補血養血的功效，能改善氣血不足，使面色紅潤，精神飽滿。與四物湯中其他補血藥材配合，能更有效地改善血虛症狀，使身體恢復元氣。",
           "decoction_reference_g": "12g",
@@ -41246,8 +41326,8 @@
           "herb_zh": "桃仁",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "桃紅四物湯中加入桃仁，主要有以下兩點原因：\n活血化瘀： 桃仁具有活血化瘀、潤腸通便的功效，能有效改善血瘀所致的經血不通、痛經、面色晦暗、瘀血阻滯等症狀。\n調和藥性： 四物湯偏於補血滋陰，而桃仁屬活血化瘀藥，加入桃仁可以調和藥性，避免藥性偏寒，使藥效更為平和，更利於活血化瘀，改善血液循環，達到治療的效果。",
           "decoction_reference_g": "9g",
@@ -41264,8 +41344,8 @@
           "herb_zh": "川芎",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "桃紅四物湯中加入川芎，主要是爲了活血化瘀、行氣止痛。\n川芎味辛、性溫，入肝、膽經，具有活血行氣、祛風止痛的功效。桃紅四物湯以補血養血爲主，而川芎的加入則可以改善血瘀阻滯的情況，使血液流通更加順暢，從而更好地發揮補血功效。\n此外，川芎還能緩解因血瘀引起的疼痛症狀，例如月經期間的腹痛、經行不暢等，使得藥效更加全面。因此，川芎在桃紅四物湯中起着重要的輔助作用，能有效提升整體療效。",
           "decoction_reference_g": "6g",
@@ -41282,8 +41362,8 @@
           "herb_zh": "紅花",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "桃紅四物湯中加入紅花，主要有以下兩大原因：\n活血化瘀：紅花性溫，味辛，入心、肝經，具有活血化瘀、通經止痛的功效。四物湯以補血為主，但若血瘀不通，補血效果也會受限。紅花的加入，可促進氣血運行，改善瘀血阻滯，增強四物湯的活血功效。\n調和氣血：桃紅四物湯主要用於治療血虛、血瘀所致的月經不調、痛經等症。紅花能活血化瘀，而四物湯則補血養血，兩者配合，可調和氣血，使氣血充盈，血脈流暢，達到治療目的。",
           "decoction_reference_g": "6g",
@@ -51341,7 +51421,9 @@
           "in_formula_zh": "補火助陽，引火歸元，散寒止痛，溫通經脈。",
           "actions_zh": "補火助陽，引火歸元，散寒止痛，溫通經脈。",
           "role_reason_zh": "補火助陽，引火歸元，散寒止痛，溫通經脈。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.ze_xie",
@@ -56430,7 +56512,9 @@
           "actions_zh": "補腎固精，養肝明目，止瀉安胎。",
           "in_formula_en": "Tonifies Kidney, augments Essence and stabilizes fetal development; acts as Chief.",
           "actions_en": "Tonifies Kidney, augments Essence and stabilizes fetal development; acts as Chief.",
-          "role_reason_zh": "補腎固精，養肝明目，止瀉安胎。"
+          "role_reason_zh": "補腎固精，養肝明目，止瀉安胎。",
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.sang_ji_sheng",
@@ -56445,7 +56529,9 @@
           "actions_zh": "補血養血。",
           "in_formula_en": "Nourishes Blood, reinforces Kidney and calms fetus; acts as Deputy.",
           "actions_en": "Nourishes Blood, reinforces Kidney and calms fetus; acts as Deputy.",
-          "role_reason_zh": "補血養血。"
+          "role_reason_zh": "補血養血。",
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.xu_duan",
@@ -56460,7 +56546,9 @@
           "actions_zh": "補肝腎，強筋骨，續折傷，止崩漏，安胎固本。",
           "in_formula_en": "Tonifies Liver/Kidney, mends sinews/bones and stops bleeding to calm fetus.",
           "actions_en": "Tonifies Liver/Kidney, mends sinews/bones and stops bleeding to calm fetus.",
-          "role_reason_zh": "補肝腎，強筋骨，續折傷，止崩漏，安胎固本。"
+          "role_reason_zh": "補肝腎，強筋骨，續折傷，止崩漏，安胎固本。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.e_jiao",
@@ -56475,7 +56563,9 @@
           "actions_zh": "滋陰補血，沖任固本，止血安胎。",
           "in_formula_en": "Nourishes Yin/Blood, stops bleeding and secures fetus; acts as Assistant/Envoy.",
           "actions_en": "Nourishes Yin/Blood, stops bleeding and secures fetus; acts as Assistant/Envoy.",
-          "role_reason_zh": "滋陰補血，沖任固本，止血安胎。"
+          "role_reason_zh": "滋陰補血，沖任固本，止血安胎。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【壽胎丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -57263,8 +57353,8 @@
           "herb_zh": "酸棗仁",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "18g",
           "elucidation_zh": "天王補心丹中包含酸棗仁，主要基於以下兩點原因：\n安神定志: 酸棗仁味甘酸，性平，歸脾、肝、心經。其藥性具有養心安神、斂汗止汗、緩解焦慮不安的作用。天王補心丹用於治療心悸、失眠、多夢、心煩易怒等症，而酸棗仁可以有效緩解心神不寧，改善睡眠質量，達到安神定志的效果。\n養心益氣: 酸棗仁還有滋陰養血、益氣補血的功效，可以改善心氣不足、血虛所致的失眠、心悸等症。天王補心丹整體藥性偏於滋陰養心，酸棗仁的加入更能增強方劑的補益心氣之效，進一步提高療效。",
           "decoction_reference_g": "18g",
@@ -57281,8 +57371,8 @@
           "herb_zh": "五味子",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "18g",
           "elucidation_zh": "天王補心丹中加入五味子，主要有以下兩方面原因：\n固攝心氣，寧心安神：五味子味酸甘，性溫，入肺、心、腎經，具有斂肺止咳、滋腎固精、益氣生津、寧心安神的功效。其酸斂之性能收斂心氣，防止心氣耗散，而其益氣生津的功效則可滋養心陰，從而達到寧心安神之效，與方中其他藥物協同作用，達到治療心悸、失眠、健忘等症的效果。\n補益脾腎，增強藥效：五味子入腎經，具有補腎固精之效，可與方中其他補腎藥物如黃芪、茯苓等相輔相成，增強補益脾腎之功效，從而更好地改善心腎兩虛所致的各種症狀。此外，五味子還可與人參、麥冬等藥物共同作用，提高藥物療效，達到更好的治療效果。",
           "decoction_reference_g": "18g",
@@ -57299,8 +57389,8 @@
           "herb_zh": "柏子仁",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入柏子仁，主要有兩大原因：\n安神定志：柏子仁性味甘平，入心、腎經，具有養心安神、滋陰潤燥的功效。心神不寧，失眠多夢，心悸不安，皆可藉由柏子仁的安神作用改善。天王補心丹主治心神不安，心悸失眠，煩躁易怒等症狀，柏子仁的安神功效，正好與方劑的整體作用相輔相成。\n滋陰潤燥：柏子仁同時具有滋陰潤燥的功效，可緩解心陰不足，心火亢盛所導致的口乾舌燥、心煩不安等症狀。天王補心丹中含有黃連、黃芩等清熱燥濕之品，若單用清熱藥，容易傷陰，而柏子仁的滋陰潤燥作用，可平衡藥性，防止燥烈傷陰。",
           "decoction_reference_g": "12g",
@@ -57317,8 +57407,8 @@
           "herb_zh": "丹參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入丹參，主要基於以下兩點原因：\n活血化瘀，涼血止痛：丹參具有活血化瘀、涼血止痛的功效，可改善心血瘀阻，緩解胸痛、心悸等症狀，對於心血不足、心脈瘀阻導致的心悸、失眠等症有較好的治療效果。\n配合其他藥材，增強療效：丹參與方中其他藥材如生地、麥冬、玄參等配合，能更好地發揮清心降火、養心安神的作用。例如，丹參可輔助生地清熱涼血，更有效地改善心火亢盛引起的煩躁不安、口舌生瘡等症狀。",
           "decoction_reference_g": "12g",
@@ -57335,8 +57425,8 @@
           "herb_zh": "茯苓",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入茯苓，主要有以下兩點原因：\n利水滲濕，寧心安神： 茯苓味甘淡，性平，入心、脾、腎三經，具有利水滲濕、健脾寧心的功效。心悸失眠，多因心神不寧、水濕內停所致，茯苓可利水滲濕，使水濕之邪化解，心神安寧，從而改善心悸失眠症狀。\n配合其他藥物，增強療效： 天王補心丹以滋陰清熱、寧心安神為治則，茯苓與其他藥物相配伍，可增強其功效。如與生地黃、麥冬等滋陰清熱藥物合用，可增強滋陰清熱之力；與遠志、柏子仁等寧心安神藥物合用，可增強安神定志之效。",
           "decoction_reference_g": "12g",
@@ -57353,8 +57443,8 @@
           "herb_zh": "桔梗",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入桔梗，主要基於以下兩點：\n宣肺利咽，通絡化痰： 桔梗具有宣肺利咽、通絡化痰的功效。心悸、失眠等症往往與痰濕阻滯心竅有關，桔梗可化痰濕，使心氣通暢，有助於改善心悸、失眠等症狀。\n升提藥力，引藥入心： 桔梗具有升提藥力，能將其他藥材的藥效引導至心經，增強藥效。天王補心丹中多為滋陰降火、安神定志的藥材，桔梗的加入可將藥效提升至心臟，更有效地改善心神不安、心悸失眠等症狀。",
           "decoction_reference_g": "12g",
@@ -57371,8 +57461,8 @@
           "herb_zh": "麥門冬",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中包含麥門冬，主要基於以下原因：\n滋陰潤肺：麥門冬味甘性寒，入肺、心經，具有滋陰潤肺、清心除煩的功效。其性寒，能清心火，滋陰液，緩解心煩不寐、口渴咽乾等症狀，與方劑中其他藥材如生地黃、玄參等共同作用，達到滋陰降火、清熱除煩的效果。\n養心安神：麥門冬能養陰生津，使心氣得到滋潤，緩解心神不安、失眠多夢等症狀。與方劑中其他藥材如柏子仁、酸棗仁等共同作用，達到養心安神、改善睡眠的效果。",
           "decoction_reference_g": "12g",
@@ -57389,8 +57479,8 @@
           "herb_zh": "人參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入人參，主要有以下兩點原因：\n益氣補心：人參味甘性溫，歸脾、肺、心經，具有補氣益血、生津止渴、安神定志之效。心氣不足，則心悸怔忡、失眠多夢、面色蒼白、倦怠乏力。人參能補益心氣，改善心臟功能，緩解心悸、失眠等症狀。\n扶正祛邪：天王補心丹為治療心悸、失眠、健忘等症的經典方劑，其病因多與心氣不足、心陰虧虛、心神不寧有關。人參能扶正固本，增強機體抵抗力，進一步助於抵禦外邪，有效改善心臟功能，增強心神，達到標本兼治的效果。",
           "decoction_reference_g": "12g",
@@ -57407,8 +57497,8 @@
           "herb_zh": "生地黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入生地黃，主要基於以下兩個原因：\n1. 清熱涼血： 生地黃味甘性寒，具有清熱涼血、養陰生津的功效。天王補心丹主治心火亢盛、心陰不足所致的心悸、失眠、心煩、口渴等症狀。生地黃可以清心火、降心熱，同時滋陰養血，平衡心陰心陽，達到清熱涼血、滋陰安神之效。\n2. 滋陰潤燥： 心陰不足容易導致心神不安，表現為失眠多夢、心悸等。生地黃滋陰潤燥，可以滋養心陰，緩解心神不寧的症狀，同時還能改善因心陰不足引起的口乾舌燥、皮膚乾燥等問題。",
           "decoction_reference_g": "12g",
@@ -57425,8 +57515,8 @@
           "herb_zh": "天門冬",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中包含天門冬，主要原因有二：\n滋陰降火： 天門冬性寒，味甘，入肺、腎經，具有滋陰潤燥、清熱降火之效。天王補心丹主治心火亢盛、陰虛內熱所致的心悸、失眠、煩躁等症，天門冬可清心火、滋心陰，起到降火安神的作用。\n生津止渴： 天門冬亦具生津止渴之功。心火亢盛，易耗傷津液，導致口渴咽乾。天門冬可滋陰生津，緩解因心火亢盛而導致的口渴症狀。\n由此可見，天門冬在天王補心丹中，起着清心降火、滋陰生津的重要作用，是方劑中不可或缺的一味藥材。",
           "decoction_reference_g": "12g",
@@ -57443,8 +57533,8 @@
           "herb_zh": "玄參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中包含玄參，主要有以下兩方面原因：\n清熱涼血，滋陰降火：玄參味甘苦性寒，入心、肺、腎三經，具有清熱涼血、滋陰降火之效，可有效緩解心煩失眠、口燥咽乾、心悸不安等症狀，與方中其他藥物如生地、麥冬等共同起到清熱滋陰的作用。\n改善心神不寧：玄參能清熱降火，平息心神，改善心神不寧、失眠多夢等症狀，與方中其他藥物如柏子仁、酸棗仁等共同起到安神寧心的作用，使患者心神安定，睡眠改善。",
           "decoction_reference_g": "12g",
@@ -57461,8 +57551,8 @@
           "herb_zh": "遠志",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "天王補心丹中加入遠志，主要基於以下兩點原因：\n安心寧神，改善心悸失眠：遠志味甘性溫，入心經，具有安神定志、解鬱寬胸之效。對於心神不寧、心悸失眠、驚悸不安等症狀，能起到良好的緩解作用。\n增強補心功效，促進心血循環：天王補心丹以補心安神為主要功效，遠志配合其他藥物，可增強補益心氣、改善心血循環的作用。\n因此，遠志的加入，既可安神定志，又可增強補心功效，有利於整體方劑療效的提升。",
           "decoction_reference_g": "12g",
@@ -57479,8 +57569,8 @@
           "herb_zh": "當歸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "10g",
           "elucidation_zh": "天王補心丹方中加入當歸，主要基於以下兩點：\n養血安神： 當歸性溫，味甘辛，入心、肝、脾經，具有補血活血、養心安神之效。方中心悸失眠、心煩不安等症狀，皆為心血不足、心神不安所致，而當歸可補血養心，使心血充盈，心神安定，從而緩解症狀。\n活血化瘀： 當歸具活血化瘀之效，可改善心脈瘀阻，促進血液循環，使心氣血運行通暢，改善心臟功能，進而達到補心安神之效。",
           "decoction_reference_g": "10g",
@@ -72271,7 +72361,9 @@
           "in_formula_zh": "回陽救逆，補火助陽，散寒止痛。",
           "actions_zh": "回陽救逆，補火助陽，散寒止痛。",
           "role_reason_zh": "回陽救逆，補火助陽，散寒止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "",
@@ -72289,7 +72381,9 @@
           "in_formula_zh": "溫中散寒，溫脾止瀉。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.fu_ling",
@@ -72307,7 +72401,9 @@
           "in_formula_zh": "滲濕利水，健脾和中，寧心安神。",
           "actions_zh": "滲濕利水，健脾和中，寧心安神。",
           "role_reason_zh": "滲濕利水，健脾和中，寧心安神。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bai_zhu",
@@ -72325,7 +72421,9 @@
           "in_formula_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "actions_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "role_reason_zh": "健脾益氣，燥濕利水，止汗安胎。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.mu_gua",
@@ -72343,7 +72441,9 @@
           "in_formula_zh": "健脾益氣， 和胃降逆。",
           "actions_zh": "健脾益氣， 和胃降逆。",
           "role_reason_zh": "健脾益氣， 和胃降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.hou_po",
@@ -72361,7 +72461,9 @@
           "in_formula_zh": "理氣寬中。",
           "actions_zh": "理氣寬中。",
           "role_reason_zh": "理氣寬中。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.mu_xiang",
@@ -72379,7 +72481,9 @@
           "in_formula_zh": "行氣止痛，健脾消食，調暢腸胃。",
           "actions_zh": "行氣止痛，健脾消食，調暢腸胃。",
           "role_reason_zh": "行氣止痛，健脾消食，調暢腸胃。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.da_fu_pi",
@@ -72397,7 +72501,9 @@
           "in_formula_zh": "理氣寬中， 滲濕利水。",
           "actions_zh": "理氣寬中， 滲濕利水。",
           "role_reason_zh": "理氣寬中， 滲濕利水。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bing_lang",
@@ -72415,7 +72521,9 @@
           "in_formula_zh": "殺蟲消積，降氣行滯，行水化濕。",
           "actions_zh": "殺蟲消積，降氣行滯，行水化濕。",
           "role_reason_zh": "殺蟲消積，降氣行滯，行水化濕。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.cao_guo",
@@ -72433,7 +72541,9 @@
           "in_formula_zh": "燥濕健脾， 緩解。",
           "actions_zh": "燥濕健脾， 緩解。",
           "role_reason_zh": "燥濕健脾， 緩解。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
@@ -72451,7 +72561,9 @@
           "in_formula_zh": "補中益氣，緩急止痛，調和諸藥。",
           "actions_zh": "補中益氣，緩急止痛，調和諸藥。",
           "role_reason_zh": "補中益氣，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -72469,7 +72581,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.da_zhao",
@@ -72487,7 +72601,9 @@
           "in_formula_zh": "補中益氣，養血安神，調和營衛。",
           "actions_zh": "補中益氣，養血安神，調和營衛。",
           "role_reason_zh": "補中益氣，養血安神，調和營衛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "clinical_use_note": "【實脾飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -87444,7 +87560,9 @@
           "in_formula_zh": "緩急止痛。",
           "actions_zh": "緩急止痛。",
           "role_reason_zh": "緩急止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.du_huo",
@@ -87462,7 +87580,9 @@
           "in_formula_zh": "緩急止痛。",
           "actions_zh": "緩急止痛。",
           "role_reason_zh": "緩急止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.chuan_xiong",
@@ -87480,7 +87600,9 @@
           "in_formula_zh": "活血行氣，祛風止痛，調經理血。",
           "actions_zh": "活血行氣，祛風止痛，調經理血。",
           "role_reason_zh": "活血行氣，祛風止痛，調經理血。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chai_hu",
@@ -87498,7 +87620,9 @@
           "in_formula_zh": "疏散退熱，疏肝解鬱，升舉陽氣。",
           "actions_zh": "疏散退熱，疏肝解鬱，升舉陽氣。",
           "role_reason_zh": "疏散退熱，疏肝解鬱，升舉陽氣。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.jie_geng",
@@ -87516,7 +87640,9 @@
           "in_formula_zh": "宣肺祛痰，利咽開音，排膿，載藥上行。",
           "actions_zh": "宣肺祛痰，利咽開音，排膿，載藥上行。",
           "role_reason_zh": "宣肺祛痰，利咽開音，排膿，載藥上行。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "",
@@ -87534,7 +87660,9 @@
           "in_formula_zh": "緩解。",
           "actions_zh": "緩解。",
           "role_reason_zh": "緩解。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.qian_hu",
@@ -87552,7 +87680,9 @@
           "in_formula_zh": "化痰降逆。",
           "actions_zh": "化痰降逆。",
           "role_reason_zh": "化痰降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.ren_shen",
@@ -87570,7 +87700,9 @@
           "in_formula_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.dang_shen",
@@ -87588,7 +87720,9 @@
           "in_formula_zh": "補中益氣，健脾益肺，養血生津。",
           "actions_zh": "補中益氣，健脾益肺，養血生津。",
           "role_reason_zh": "補中益氣，健脾益肺，養血生津。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fu_ling",
@@ -87606,7 +87740,9 @@
           "in_formula_zh": "滲濕利水，健脾和中，寧心安神。",
           "actions_zh": "滲濕利水，健脾和中，寧心安神。",
           "role_reason_zh": "滲濕利水，健脾和中，寧心安神。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -87624,7 +87760,9 @@
           "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -87642,7 +87780,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bo_he",
@@ -87660,7 +87800,9 @@
           "in_formula_zh": "和中健脾，調和諸藥。。",
           "actions_zh": "和中健脾，調和諸藥。。",
           "role_reason_zh": "和中健脾，調和諸藥。。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "pattern_indications_en": [
@@ -89452,8 +89594,8 @@
           "herb_zh": "麻黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "9g",
           "elucidation_zh": "定喘湯中包含麻黃，主要是利用其發汗解表、宣肺平喘的功效。麻黃性溫，味辛，入肺經，能發散風寒，宣通肺氣，使痰液易於排出，達到止咳平喘的效果。\n同時，麻黃也能溫肺化飲，對於因寒邪客肺、肺氣不利而引起的咳嗽、喘息、痰多等症狀有較好的療效。因此，在治療寒性哮喘、肺寒咳嗽等病症時，定喘湯中常加入麻黃，以發揮其宣肺平喘、溫肺化飲的作用。",
           "decoction_reference_g": "9g",
@@ -89470,8 +89612,8 @@
           "herb_zh": "銀杏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "定喘湯為治療喘息、咳嗽等呼吸系統疾病的中醫方劑，其組成包括麻黃、杏仁、半夏、厚朴、甘草、生薑、細辛以及銀杏等多種中藥材。銀杏在此方中扮演著關鍵角色，其主要功效在於宣肺平喘、化痰止咳。根據中醫理論，喘息之病往往因外感風寒或內傷飲食而致肺氣上逆，銀杏葉能清熱解毒、擴張支氣管，有助於改善肺部微循環，促進氣道暢通，從而緩解喘息症狀。此外，銀杏還具有抗氧化和抗炎作用，可減少氣道炎症，對慢性呼吸道疾病患者尤為適用。因此，在定喘湯的配方中加入銀杏，旨在增強整體療效，達到了解表散寒、宣肺定喘的目的。",
           "decoction_reference_g": "9g",
@@ -89487,8 +89629,8 @@
           "herb_zh": "半夏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "定喘湯中加入半夏，主要出於以下兩方面原因：\n降逆止嘔： 半夏味辛、苦，性溫，入肺、脾經。具有降逆止嘔、化痰止咳之功效。定喘湯的組成中，通常會含有麻黃等辛溫之品，容易導致氣上逆，出現嘔吐等症狀。半夏能降逆止嘔，防止藥物副作用的產生。\n燥濕化痰： 定喘湯的主要功效是止咳平喘，而痰濕阻肺是導致咳嗽哮喘的重要病因之一。半夏具有燥濕化痰的功效，能將痰濕化解，有利於改善呼吸道症狀，提高治療效果。",
           "decoction_reference_g": "9g",
@@ -89505,8 +89647,8 @@
           "herb_zh": "款冬花",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "定喘湯中加入款冬花，主要基於其潤肺止咳，化痰平喘的功效。\n款冬花性味甘溫，入肺經，具有溫肺化痰、止咳平喘的功效，適用於寒性咳嗽、痰多喘咳等症狀。\n在定喘湯中，款冬花與其他藥物配伍，可以增強藥效，達到更好的治療效果。例如，款冬花與杏仁、紫菀等藥物配伍，可以更有效地化痰止咳，緩解呼吸道炎症；與黃芪、甘草等藥物配伍，可以補氣益肺，提高機體抵抗力。",
           "decoction_reference_g": "9g",
@@ -89523,8 +89665,8 @@
           "herb_zh": "桑白皮",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "定喘湯中加入桑白皮，主要基於以下兩點原因：\n一、 宣肺止咳：桑白皮性寒，味苦，歸肺經，具有宣肺止咳、降氣化痰的功效。它可以疏散肺氣，宣通肺竅，對於風寒束肺、痰濁壅肺所致的咳嗽、喘息等症狀有很好的療效。\n二、 利水消腫：桑白皮還具有一定的利水消腫作用，可以幫助排除體內多餘的水分，緩解肺部積水引起的呼吸困難。\n因此，定喘湯中加入桑白皮，可以起到宣肺止咳、利水消腫的作用，對於治療咳嗽、喘息等呼吸道疾病具有重要的意義。",
           "decoction_reference_g": "6g",
@@ -89541,8 +89683,8 @@
           "herb_zh": "紫蘇子",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "定喘湯中加入蘇子，主要基於其以下兩點功效：\n降氣平喘： 蘇子味辛性溫，入肺經，具有降氣平喘之效。其能降肺氣之逆，平息喘咳，適用於痰多、氣喘、咳喘等症狀。\n潤肺止咳： 蘇子含有豐富的脂肪油及揮髮油，具有潤肺止咳的作用。能滋潤乾燥的肺部，緩解因燥熱引起的咳嗽、咽喉乾癢等症狀。\n因此，定喘湯中加入蘇子，可有效緩解氣喘、咳嗽等症狀，達到止咳平喘的效果。",
           "decoction_reference_g": "6g",
@@ -89559,8 +89701,8 @@
           "herb_zh": "杏仁",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "4.5g",
           "elucidation_zh": "定喘湯中加入杏仁，主要有以下兩個原因：\n宣肺止咳：杏仁性味苦甘，入肺經，具有宣肺止咳之效。對於因肺氣閉塞、痰濁壅肺而導致的喘咳症狀，杏仁能疏通肺氣，化痰止咳，使呼吸通暢。\n潤肺止燥：杏仁亦具潤肺止燥之功。在哮喘發作時，肺氣耗傷，易出現燥熱症狀，杏仁能滋潤肺燥，緩解哮喘發作時的燥熱不適，使患者更容易平穩呼吸。",
           "decoction_reference_g": "4.5g",
@@ -89577,8 +89719,8 @@
           "herb_zh": "黃芩",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "4.5g",
           "elucidation_zh": "定喘湯中加入黃芩，主要基於以下兩點原因：\n清熱瀉火，降氣平喘： 黃芩味苦寒，入肺經，具有清熱瀉火、降氣平喘的功效。對於因肺熱壅盛、氣逆上衝所致的咳嗽喘息，黃芩可以清熱降火，使肺氣宣降，達到平喘止咳之效。\n抑制痰液生成，利於化痰： 黃芩還具有利濕化痰的作用。對於痰熱壅肺、痰多粘稠的患者，黃芩可以抑制痰液的生成，並促進痰液的排出，有助於改善呼吸道症狀。\n因此，定喘湯中加入黃芩，可以有效改善因肺熱、痰熱所致的咳嗽喘息，達到清熱降火、平喘止咳的治療目的。",
           "decoction_reference_g": "4.5g",
@@ -89595,8 +89737,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "3g",
           "elucidation_zh": "定喘湯中加入甘草，主要有以下兩點原因：\n調和藥性: 定喘湯中多用辛溫燥烈之藥，容易傷肺氣。甘草性甘平，能調和諸藥，緩解藥性過於猛烈對肺部的刺激，避免燥熱傷肺。\n增強療效: 甘草具有潤肺止咳、緩解氣喘的作用，與其他藥材協同作用，增強定喘湯的整體療效，使止咳平喘效果更佳。\n甘草在方劑中扮演著重要角色，不僅調和藥性，更能增強療效，使其成為定喘湯不可或缺的藥材之一。",
           "decoction_reference_g": "3g",
@@ -101969,8 +102111,8 @@
           "herb_zh": "半夏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "9g",
           "elucidation_zh": "旋覆代赭湯中加入半夏，主要考量其以下兩點：\n降逆止嘔： 半夏性溫，味辛，入脾、胃經，具有降逆止嘔之效。旋覆代赭湯主治痰飲阻肺、氣逆上衝所致的咳嗽、氣喘、嘔吐等症，半夏可與旋覆花、代赭石等藥物協同作用，降逆止嘔，使痰飲下降，氣逆消除。\n燥濕化痰： 半夏性燥，善於燥濕化痰。旋覆代赭湯中常伴隨痰飲阻滯，半夏可以幫助燥濕化痰，進一步解除痰飲對肺氣的阻礙，使咳嗽、氣喘等症狀得到改善。",
           "decoction_reference_g": "9g",
@@ -101987,8 +102129,8 @@
           "herb_zh": "代赭石",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "9g",
           "elucidation_zh": "旋覆代赭湯中包含代赭石，主要原因有二：\n一、 止嘔降逆： 代赭石性寒，味甘苦，入肝脾經，具有鎮靜、止嘔的作用。旋覆代赭湯主要用於治療痰熱壅肺所致的咳嗽、氣喘、胸悶，而代赭石可降逆止嘔，緩解因痰熱上逆所引起的噁心嘔吐。\n二、 降逆止呃： 代赭石可平降胃氣，止呃逆。旋覆代赭湯中旋覆花、半夏等藥物亦有止咳化痰的作用，代赭石的加入可協同止呃，使療效更佳。",
           "decoction_reference_g": "9g",
@@ -102005,8 +102147,8 @@
           "herb_zh": "旋覆花",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "9g",
           "elucidation_zh": "旋覆代赭湯中包含旋覆花，主要原因如下：\n降逆止嘔： 旋覆花味辛、性溫，入肺、脾經，具有降逆止嘔的功效。其能降胃氣上逆，止嘔吐呃逆，對於痰涎壅盛、胃氣上逆引起的嘔吐，具有較好的治療作用。\n化痰止咳： 旋覆花亦有化痰止咳之效。其能宣肺利氣，降逆化痰，對於痰多咳嗽，痰涎壅盛，呼吸不暢等症，能起到一定的改善作用。\n旋覆花在旋覆代赭湯中，與代赭石、半夏等藥物配伍，起到降逆止嘔、化痰止咳的功效，對於痰涎壅盛、胃氣上逆引起的嘔吐、咳嗽等症，具有較好的療效。",
           "decoction_reference_g": "9g",
@@ -102023,8 +102165,8 @@
           "herb_zh": "人參",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "旋覆代赭湯為治療胃虛痰阻，氣逆不降之主方，方中含有人參，其目的在於補益脾胃，增強中氣。人參味甘性溫，歸脾肺經，擅長補五臟、安精神、定魂魄、止驚悸、除邪氣，尤為健脾益氣之上品。在本方中，人參與旋覆花、代赭石等藥物相配，既可增強脾胃功能，促進消化吸收，又可協同其他藥物下降逆氣，使全方具有升降調和、健脾益氣、和胃降逆之功。對於因脾胃虛弱導致的噯氣、嘔吐、脘腹脹滿等症狀，旋覆代赭湯通過人參的補益作用，能夠達到固本培元、調和氣機之效，從而改善症狀，恢復健康。",
           "decoction_reference_g": "6g",
@@ -102041,8 +102183,8 @@
           "herb_zh": "生薑",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "10g",
           "elucidation_zh": "旋覆代赭湯中加入生薑，主要是基於以下兩點原因：\n和胃降逆： 生薑性溫，味辛，能溫中散寒，和胃降逆，可以緩解旋覆代赭湯中赭石、半夏等藥物對胃的刺激，防止其寒涼之性損傷脾胃。\n調和藥性： 生薑的辛溫之性，可以調和旋覆代赭湯中諸藥的寒涼之性，使藥性更加平和，更好地發揮治療效果。\n因此，生薑的加入，可以有效地減輕旋覆代赭湯對胃的刺激，並使藥性更加協調，從而提高治療效果。",
           "decoction_reference_g": "10g",
@@ -102059,8 +102201,8 @@
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "6g",
           "elucidation_zh": "旋覆代赭湯中加入甘草，主要有以下兩大原因：\n調和藥性: 旋覆花、代赭石等藥材性寒，甘草性甘溫，能調和藥性，避免寒性過於強烈，以免損傷脾胃。\n緩解副作用:  甘草具備解毒和緩解藥物副作用的作用。旋覆代赭湯治療的是嘔吐、呃逆等症狀，甘草可以減輕藥物對胃腸道的刺激，提高患者的耐受性，使藥效更平穩。",
           "decoction_reference_g": "6g",
@@ -102077,8 +102219,8 @@
           "herb_zh": "大棗",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "4g",
           "elucidation_zh": "旋覆代赭湯中加入大棗，主要有兩方面原因：\n緩和藥性，調和脾胃：旋覆代赭湯以旋覆花、代赭石等藥物為主，其性偏寒涼，容易損傷脾胃。大棗味甘性溫，入脾胃經，能補中益氣，緩和藥性，防止寒涼之品損傷脾胃，使藥力更易於吸收利用。\n和中健脾，助藥力達效：旋覆代赭湯主要用於治療痰飲停滯、胸悶氣喘等症，脾胃虛弱者更易感受外邪，導致痰飲停滯。大棗能健脾和胃，增強脾胃運化水濕的能力，進一步促進藥物療效。",
           "decoction_reference_g": "4g",
@@ -102343,7 +102485,9 @@
           "in_formula_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
           "role_reason_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
           "is_alternate": false,
-          "actions_zh": "清熱瀉火，除煩止渴，斂瘡生肌。"
+          "actions_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.shu_di_huang",
@@ -102361,7 +102505,9 @@
           "in_formula_zh": "滋陰補血，益精填髓。",
           "role_reason_zh": "滋陰補血，益精填髓。",
           "is_alternate": false,
-          "actions_zh": "滋陰補血，益精填髓。"
+          "actions_zh": "滋陰補血，益精填髓。",
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.zhi_mu",
@@ -102379,7 +102525,9 @@
           "in_formula_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。",
           "role_reason_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。",
           "is_alternate": false,
-          "actions_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。"
+          "actions_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.mai_men_dong",
@@ -102397,7 +102545,9 @@
           "in_formula_zh": "養陰潤肺，益胃生津，清心除煩。",
           "role_reason_zh": "養陰潤肺，益胃生津，清心除煩。",
           "is_alternate": false,
-          "actions_zh": "養陰潤肺，益胃生津，清心除煩。"
+          "actions_zh": "養陰潤肺，益胃生津，清心除煩。",
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.niu_xi",
@@ -102415,7 +102565,9 @@
           "in_formula_zh": "補肝腎，強筋骨，活血通經，引火下行。",
           "role_reason_zh": "補肝腎，強筋骨，活血通經，引火下行。",
           "is_alternate": false,
-          "actions_zh": "補肝腎，強筋骨，活血通經，引火下行。"
+          "actions_zh": "補肝腎，強筋骨，活血通經，引火下行。",
+          "role_zh": "使",
+          "role_en": "Envoy"
         }
       ],
       "pattern_indications_en": [
@@ -102759,7 +102911,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.xie_bai",
@@ -102777,7 +102931,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.zhi_shi",
@@ -102795,7 +102951,9 @@
           "in_formula_zh": "化痰降逆。",
           "actions_zh": "化痰降逆。",
           "role_reason_zh": "化痰降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.hou_po",
@@ -102813,7 +102971,9 @@
           "in_formula_zh": "燥濕健脾， 化痰降逆 ， 緩解。",
           "actions_zh": "燥濕健脾， 化痰降逆 ， 緩解。",
           "role_reason_zh": "燥濕健脾， 化痰降逆 ， 緩解。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gui_zhi",
@@ -102831,7 +102991,9 @@
           "in_formula_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "actions_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "role_reason_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "pattern_indications_en": [
@@ -104552,7 +104714,9 @@
           "in_formula_zh": "止咳化痰。",
           "actions_zh": "止咳化痰。",
           "role_reason_zh": "止咳化痰。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.xing_ren",
@@ -104570,7 +104734,9 @@
           "in_formula_zh": "止咳化痰。",
           "actions_zh": "止咳化痰。",
           "role_reason_zh": "止咳化痰。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.gui_zhi",
@@ -104588,7 +104754,9 @@
           "in_formula_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "actions_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "role_reason_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.shi_gao",
@@ -104606,7 +104774,9 @@
           "in_formula_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
           "actions_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
           "role_reason_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
@@ -104624,7 +104794,9 @@
           "in_formula_zh": "補中益氣，緩急止痛，調和諸藥。",
           "actions_zh": "補中益氣，緩急止痛，調和諸藥。",
           "role_reason_zh": "補中益氣，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -104642,7 +104814,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.da_zhao",
@@ -104660,7 +104834,9 @@
           "in_formula_zh": "補中益氣，養血安神，調和營衛。",
           "actions_zh": "補中益氣，養血安神，調和營衛。",
           "role_reason_zh": "補中益氣，養血安神，調和營衛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "actions_zh": [
@@ -105148,7 +105324,9 @@
           "in_formula_zh": "養血活血，調經止痛，潤腸通便。",
           "actions_zh": "養血活血，調經止痛，潤腸通便。",
           "role_reason_zh": "養血活血，調經止痛，潤腸通便。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -105166,7 +105344,9 @@
           "in_formula_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "role_reason_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.bai_zhu",
@@ -105184,7 +105364,9 @@
           "in_formula_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "actions_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "role_reason_zh": "健脾益氣，燥濕利水，止汗安胎。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fu_ling",
@@ -105202,7 +105384,9 @@
           "in_formula_zh": "滲濕利水，健脾和中，寧心安神。",
           "actions_zh": "滲濕利水，健脾和中，寧心安神。",
           "role_reason_zh": "滲濕利水，健脾和中，寧心安神。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.ze_xie",
@@ -105220,7 +105404,9 @@
           "in_formula_zh": "利水滲濕，泄熱清相火。",
           "actions_zh": "利水滲濕，泄熱清相火。",
           "role_reason_zh": "利水滲濕，泄熱清相火。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chuan_xiong",
@@ -105238,7 +105424,9 @@
           "in_formula_zh": "活血行氣，祛風止痛，調經理血。",
           "actions_zh": "活血行氣，祛風止痛，調經理血。",
           "role_reason_zh": "活血行氣，祛風止痛，調經理血。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "actions_zh": [
@@ -105468,7 +105656,9 @@
           "in_formula_zh": "清熱涼血，養陰生津。",
           "actions_zh": "清熱涼血，養陰生津。",
           "role_reason_zh": "清熱涼血，養陰生津。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.dang_gui",
@@ -105486,7 +105676,9 @@
           "in_formula_zh": "養血活血，調經止痛，潤腸通便。",
           "actions_zh": "養血活血，調經止痛，潤腸通便。",
           "role_reason_zh": "養血活血，調經止痛，潤腸通便。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -105504,7 +105696,9 @@
           "in_formula_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "role_reason_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chuan_xiong",
@@ -105522,7 +105716,9 @@
           "in_formula_zh": "活血行氣，祛風止痛，調經理血。",
           "actions_zh": "活血行氣，祛風止痛，調經理血。",
           "role_reason_zh": "活血行氣，祛風止痛，調經理血。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "",
@@ -105540,7 +105736,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.jing_jie",
@@ -105558,7 +105756,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fang_feng",
@@ -105576,7 +105776,9 @@
           "in_formula_zh": "祛風解表，勝濕止痛，止痙。",
           "actions_zh": "祛風解表，勝濕止痛，止痙。",
           "role_reason_zh": "祛風解表，勝濕止痛，止痙。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.huang_qi",
@@ -105594,7 +105796,9 @@
           "in_formula_zh": "補氣升陽，固表止汗，托毒生肌，利水消腫。",
           "actions_zh": "補氣升陽，固表止汗，托毒生肌，利水消腫。",
           "role_reason_zh": "補氣升陽，固表止汗，托毒生肌，利水消腫。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.he_shou_wu",
@@ -105612,7 +105816,9 @@
           "in_formula_zh": "補益 ， 補血養血。",
           "actions_zh": "補益 ， 補血養血。",
           "role_reason_zh": "補益 ， 補血養血。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -105630,7 +105836,9 @@
           "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "使",
+          "role_en": "Envoy"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -105648,7 +105856,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "actions_zh": [
@@ -108844,7 +109054,9 @@
           "in_formula_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "actions_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
           "role_reason_zh": "發汗解肌，溫通經脈，助陽化氣，平沖降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.ma_huang",
@@ -108862,7 +109074,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.fu_zi",
@@ -108880,7 +109094,9 @@
           "in_formula_zh": "回陽救逆，補火助陽，散寒止痛。",
           "actions_zh": "回陽救逆，補火助陽，散寒止痛。",
           "role_reason_zh": "回陽救逆，補火助陽，散寒止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_mu",
@@ -108898,7 +109114,9 @@
           "in_formula_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。",
           "actions_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。",
           "role_reason_zh": "清熱瀉火，滋陰潤燥，清肺潤燥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -108916,7 +109134,9 @@
           "in_formula_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "role_reason_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bai_zhu",
@@ -108934,7 +109154,9 @@
           "in_formula_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "actions_zh": "健脾益氣，燥濕利水，止汗安胎。",
           "role_reason_zh": "健脾益氣，燥濕利水，止汗安胎。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fang_feng",
@@ -108952,7 +109174,9 @@
           "in_formula_zh": "祛風解表，勝濕止痛，止痙。",
           "actions_zh": "祛風解表，勝濕止痛，止痙。",
           "role_reason_zh": "祛風解表，勝濕止痛，止痙。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -108970,7 +109194,9 @@
           "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
           "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
@@ -108988,7 +109214,9 @@
           "in_formula_zh": "補中益氣，緩急止痛，調和諸藥。",
           "actions_zh": "補中益氣，緩急止痛，調和諸藥。",
           "role_reason_zh": "補中益氣，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "使",
+          "role_en": "Envoy"
         }
       ],
       "actions_zh": [
@@ -109222,7 +109450,9 @@
           "in_formula_zh": "行氣止痛，清熱燥濕，殺蟲。",
           "actions_zh": "行氣止痛，清熱燥濕，殺蟲。",
           "role_reason_zh": "行氣止痛，清熱燥濕，殺蟲。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.yan_hu_suo",
@@ -109240,7 +109470,9 @@
           "in_formula_zh": "理氣寬中 ， 緩急止痛。",
           "actions_zh": "理氣寬中 ， 緩急止痛。",
           "role_reason_zh": "理氣寬中 ， 緩急止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "actions_zh": [
@@ -109665,7 +109897,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "",
@@ -109683,7 +109917,9 @@
           "in_formula_zh": "替代藥材。",
           "actions_zh": "替代藥材。",
           "role_reason_zh": "替代藥材。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "",
@@ -109701,7 +109937,9 @@
           "in_formula_zh": "替代藥材。",
           "actions_zh": "替代藥材。",
           "role_reason_zh": "替代藥材。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gou_teng",
@@ -109719,7 +109957,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sang_ye",
@@ -109737,7 +109977,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.ju_hua",
@@ -109755,7 +109997,9 @@
           "in_formula_zh": "疏風清熱，平肝明目，清熱解毒。",
           "actions_zh": "疏風清熱，平肝明目，清熱解毒。",
           "role_reason_zh": "疏風清熱，平肝明目，清熱解毒。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -109773,7 +110017,9 @@
           "in_formula_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "role_reason_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_di_huang",
@@ -109791,7 +110037,9 @@
           "in_formula_zh": "清熱涼血，養陰生津。",
           "actions_zh": "清熱涼血，養陰生津。",
           "role_reason_zh": "清熱涼血，養陰生津。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chuan_bei_mu",
@@ -109809,7 +110057,9 @@
           "in_formula_zh": "清熱瀉火， 化痰降逆。",
           "actions_zh": "清熱瀉火， 化痰降逆。",
           "role_reason_zh": "清熱瀉火， 化痰降逆。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.fu_shen",
@@ -109827,7 +110077,9 @@
           "in_formula_zh": "和中健脾，調和諸藥。。",
           "actions_zh": "和中健脾，調和諸藥。。",
           "role_reason_zh": "和中健脾，調和諸藥。。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.zhu_ru",
@@ -109845,7 +110097,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -109863,7 +110117,9 @@
           "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "使",
+          "role_en": "Envoy"
         }
       ],
       "actions_zh": [
@@ -110728,7 +110984,9 @@
           "in_formula_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
           "role_reason_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
@@ -110746,7 +111004,9 @@
           "in_formula_zh": "補中益氣，緩急止痛，調和諸藥。",
           "actions_zh": "補中益氣，緩急止痛，調和諸藥。",
           "role_reason_zh": "補中益氣，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "使",
+          "role_en": "Envoy"
         }
       ],
       "actions_zh": [
@@ -111938,7 +112198,9 @@
           "in_formula_zh": "涼血止血， 清熱瀉火。",
           "actions_zh": "涼血止血， 清熱瀉火。",
           "role_reason_zh": "涼血止血， 清熱瀉火。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.shui_niu_jiao",
@@ -111956,7 +112218,9 @@
           "in_formula_zh": "替代藥材。",
           "actions_zh": "替代藥材。",
           "role_reason_zh": "替代藥材。",
-          "is_alternate": true
+          "is_alternate": true,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "herb.sheng_di_huang",
@@ -111974,7 +112238,9 @@
           "in_formula_zh": "清熱涼血，養陰生津。",
           "actions_zh": "清熱涼血，養陰生津。",
           "role_reason_zh": "清熱涼血，養陰生津。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.chi_shao",
@@ -111992,7 +112258,9 @@
           "in_formula_zh": "清熱涼血，散瘀止痛。",
           "actions_zh": "清熱涼血，散瘀止痛。",
           "role_reason_zh": "清熱涼血，散瘀止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.mu_dan_pi",
@@ -112010,7 +112278,9 @@
           "in_formula_zh": "清熱涼血，活血散瘀，退虛熱。",
           "actions_zh": "清熱涼血，活血散瘀，退虛熱。",
           "role_reason_zh": "清熱涼血，活血散瘀，退虛熱。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "actions_zh": [
@@ -112836,7 +113106,9 @@
           "in_formula_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
           "actions_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
           "role_reason_zh": "清熱瀉火，除煩止渴，斂瘡生肌。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.zhi_zi",
@@ -112854,7 +113126,9 @@
           "in_formula_zh": "清熱瀉火，涼血解毒，利濕退黃。",
           "actions_zh": "清熱瀉火，涼血解毒，利濕退黃。",
           "role_reason_zh": "清熱瀉火，涼血解毒，利濕退黃。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "role_en": "Deputy"
         },
         {
           "herb_id": "",
@@ -112872,7 +113146,9 @@
           "in_formula_zh": "升舉清陽，散脾胃伏火。",
           "actions_zh": "升舉清陽 ， 緩解。",
           "role_reason_zh": "升舉清陽 ， 緩解。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.huo_xiang",
@@ -112890,7 +113166,9 @@
           "in_formula_zh": "健脾和中，調和諸藥。",
           "actions_zh": "健脾和中，調和諸藥。",
           "role_reason_zh": "健脾和中，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -112908,7 +113186,9 @@
           "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "使",
+          "role_en": "Envoy"
         }
       ],
       "actions_zh": [
@@ -113086,7 +113366,9 @@
           "in_formula_zh": "滋陰養陰， 生津止渴。",
           "actions_zh": "滋陰養陰， 生津止渴。",
           "role_reason_zh": "滋陰養陰， 生津止渴。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "role_en": "Chief"
         },
         {
           "herb_id": "herb.mai_men_dong",
@@ -113104,7 +113386,9 @@
           "in_formula_zh": "養陰潤肺，益胃生津，清心除煩。",
           "actions_zh": "養陰潤肺，益胃生津，清心除煩。",
           "role_reason_zh": "養陰潤肺，益胃生津，清心除煩。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         },
         {
           "herb_id": "herb.sheng_di_huang",
@@ -113122,7 +113406,9 @@
           "in_formula_zh": "清熱涼血，養陰生津。",
           "actions_zh": "清熱涼血，養陰生津。",
           "role_reason_zh": "清熱涼血，養陰生津。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "role_en": "Assistant"
         }
       ],
       "actions_zh": [
