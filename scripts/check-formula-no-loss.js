@@ -32,9 +32,22 @@ const FROM = argv.includes("--from") ? argv[argv.indexOf("--from") + 1] : null;
 const cjk = (s) => (String(s).match(/[一-鿿]/g) || []).length;
 const hasRole = (r) => (r.composition || []).some((h) => String(h?.role_zh || h?.role || "").trim());
 
+/* Unique Chinese strings, not a raw character count. A raw count reports
+   de-duplication as loss: moving 39 duplicated strings out of _en dropped
+   1,873 characters while the unique-string set actually GREW from 5,954 to
+   5,985. What matters is whether a sentence that existed anywhere still exists
+   somewhere — that catches real deletion and ignores tidying. */
+function chineseStrings(o, into = new Set()) {
+  if (Array.isArray(o)) o.forEach((v) => chineseStrings(v, into));
+  else if (o && typeof o === "object") Object.values(o).forEach((v) => chineseStrings(v, into));
+  else if (typeof o === "string") { const t = o.trim(); if (/[一-鿿]/.test(t)) into.add(t); }
+  return into;
+}
+
 function profile(recs) {
   let zhInEn = 0, chars = 0;
   const comp = {};
+  const uniq = chineseStrings(recs);
   for (const r of recs) {
     chars += cjk(JSON.stringify(r));
     comp[r.id] = Array.isArray(r.composition) ? r.composition.length : 0;
@@ -43,7 +56,7 @@ function profile(recs) {
       for (const s of (Array.isArray(r[f]) ? r[f] : [r[f]])) if (typeof s === "string" && cjk(s)) zhInEn++;
     }
   }
-  return { records: recs.length, withRoles: recs.filter(hasRole).length, chars, zhInEn, comp };
+  return { records: recs.length, withRoles: recs.filter(hasRole).length, chars, uniqueZh: uniq.size, zhInEn, comp };
 }
 
 const load = (text) => { const j = JSON.parse(text); return j.formulas || j.records; };
@@ -68,7 +81,7 @@ const cmp = (label, before, after, worseWhen) => {
 };
 cmp("方劑數", base.records, now.records, (b, a) => a < b);
 cmp("有君臣佐使", base.withRoles, now.withRoles, (b, a) => a < b);
-cmp("中文字元", base.chars, now.chars, (b, a) => a < b);
+cmp("唯一中文字串", base.uniqueZh ?? base.chars, now.uniqueZh, (b, a) => a < b);
 cmp("中文誤置於 _en", base.zhInEn, now.zhInEn, (b, a) => a > b);
 
 const shrank = Object.entries(base.comp || {})
