@@ -7021,3 +7021,31 @@ html { scroll-padding-top: 92px; }
 }
 .k-list-label:first-child { margin-top: 0; }
 .k-list-label + .k-detail-list { margin-top: 0; }
+
+/* Diagnosis tab (restored 2026-08-07 — originally 28575cc, lost in the 8/6
+   bl-refinement merge). Three namespaces, grouped by controlled vocabularies. */
+.k-dx-types { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0; }
+.k-dx-types button {
+  padding: .3rem .7rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line, #d5d5d5); background: transparent;
+  font: inherit; font-size: .85rem; color: inherit;
+}
+.k-dx-types button.is-active { background: var(--accent, #2f6f4f); color: #fff; border-color: transparent; }
+.k-dx-section { margin-block: 1.2rem; }
+.k-dx-group { margin-block: .5rem; }
+.k-dx-group > summary {
+  cursor: pointer; padding: .35rem 0; font-weight: 600;
+  border-bottom: 1px solid var(--line, #e3e3e3);
+}
+.k-dx-group > summary small { font-weight: 400; opacity: .7; }
+.k-dx-group > summary b { font-weight: 600; opacity: .55; margin-left: .25rem; }
+.k-dx-group > .k-grid { margin-top: .6rem; }
+/* The gap is stated in the group header, not hidden: a category that is 12
+   records short of safety text says so where you choose what to read. */
+.k-dx-gap { font-weight: 400; font-size: .8rem; color: var(--warn, #a15c00); margin-left: .4rem; }
+.k-pill-warn {
+  display: inline-block; padding: .1rem .5rem; border-radius: 999px;
+  font-size: .74rem; font-weight: 600;
+  background: var(--warn-bg, #fff3e0); color: var(--warn, #a15c00);
+}
+.k-entity-chip.is-unresolved { opacity: .65; }

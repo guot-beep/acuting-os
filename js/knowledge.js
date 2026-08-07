@@ -46,6 +46,11 @@
       .replace(/"/g, "&quot;");
   }
   function tag(t) { return `<span class="k-tag">${esc(t)}</span>`; }
+  function asList(values) {
+    if (Array.isArray(values)) return values;
+    if (values == null || values === "") return [];
+    return [values];
+  }
 
   /* Modern application tags were rendering as raw snake_case keys — common_cold,
      uri, chills_body_ache_context. Those are internal identifiers, not content.
@@ -243,6 +248,7 @@
       add(K.conditionCanon);
       add(K.conditions);
       add(K.tdisRegistry);
+      add(K.symptoms);
     }
     return map;
   })();
@@ -272,6 +278,18 @@
       const kind = entityKindLabel(id);
       return `<span class="k-entity-chip">${kind ? `<small>${esc(kind)}</small>` : ""}${esc(entityLabel(id))}</span>`;
     }).join("");
+  }
+
+  /* sym.* chips. An id with no card behind it says so, rather than rendering
+     as if a symptom card existed (only 3 sym.* records exist today). */
+  const SYMPTOM_IDS = new Set((((K && K.symptoms && K.symptoms.records) || [])).map((r) => r.id));
+  function symptomChips(ids) {
+    const list = (ids || []).filter(Boolean);
+    if (!list.length) return "";
+    return list.map((id) => SYMPTOM_IDS.has(id)
+      ? `<span class="k-entity-chip"><small>症狀</small>${esc(entityLabel(id))}</span>`
+      : `<span class="k-entity-chip is-unresolved" title="${esc(id)} — 尚無症狀卡 / no symptom card yet"><small>症狀</small>${esc(entityLabel(id))} ⚠</span>`
+    ).join("");
   }
 
   /* ⚠ LABEL RESOLVERS — DO NOT let a render-site rewrite drop these calls.
@@ -2015,21 +2033,57 @@
   }
 
   // ---- Conditions ----------------------------------------------------------
+  // Rebuilt 2026-08-05 (28575cc + 0b9eaf4): three diagnostic namespaces, one
+  // search surface; CloudTCM is an import layer, not a namespace (D11), so its
+  // pages attach to the cards they describe instead of keeping a parallel
+  // classification. The 8/6 bl-refinement merge resolved this file to the
+  // pre-rebuild side and silently brought the old tab back — restored 8/7.
+  // The Antigravity pattern big-card (modal + preview renderer) is kept: that
+  // is what the 8/6 merge was trying to preserve.
   const condHost = el("conditionRecords");
   if (condHost) {
-    const allConds = (K.conditionCanon && K.conditionCanon.records) || [];
-    const cloudDiseaseCategories = (K.cloudtcmDiseaseCategories && K.cloudtcmDiseaseCategories.records) || [];
-    const cloudDiseaseEntries = (K.cloudtcmDiseaseEntries && K.cloudtcmDiseaseEntries.records) || [];
-    const cloudDiseaseCategoryById = new Map(cloudDiseaseCategories.map((record) => [record.id, record]));
-    // CONDITIONS_MODULE_DESIGN gate: do not present a condition as study-ready
-    // until its safety prompts exist. Skeleton-only records remain counted below.
-    const conds = allConds.filter((record) =>
-      (record.red_flags_zh || []).length && (record.red_flags_en || []).length
+    const conds = (K.conditionCanon && K.conditionCanon.records) || [];
+    const tdisRecords = (K.tdisRegistry && K.tdisRegistry.records) || [];
+    const patternRecords = (K.patternLibrary && K.patternLibrary.records) || [];
+
+    const cloudCounts = (K.cloudtcmRefMap && K.cloudtcmRefMap.counts) || {};
+    const cloudNote = modeText(
+      `雲端中醫 ${cloudCounts.source_entries || 0} 筆已融入：${cloudCounts.matched_to_canonical || 0} 筆的來源頁掛在上方對應的卡片上；${cloudCounts.symptom_seed_for_sym || 0} 筆其實是症狀，成為 sym.* 症狀軸的種子；${cloudCounts.disease_gap_for_cond || 0} 筆是尚未建卡的西醫病名。它不再有自己的分類。`,
+      `CloudTCM's ${cloudCounts.source_entries || 0} entries are dissolved: ${cloudCounts.matched_to_canonical || 0} source pages now sit on the matching cards above; ${cloudCounts.symptom_seed_for_sym || 0} were symptoms and seeded the sym.* axis; ${cloudCounts.disease_gap_for_cond || 0} are biomedical conditions not yet carded. It no longer has a classification of its own.`
     );
-    const eastern = K.conditions.eastern_diseases || [];
-    const patterns = (K.patternLibrary && K.patternLibrary.records) ? K.patternLibrary.records : (K.conditions.tcm_patterns || []);
+
+    // Grouping vocabularies (D14 part 1 for each namespace).
+    const condCategories = (K.conditionCategoryVocabulary && K.conditionCategoryVocabulary.categories) || [];
+    const condCategoryById = new Map(condCategories.map((c) => [c.id, c]));
+    const tdisTaxonomy = (K.tcmDiseaseTaxonomy && K.tcmDiseaseTaxonomy.categories) || [];
+    const patternFamilies = (K.patternFamilyVocabulary && K.patternFamilyVocabulary.records) || [];
+
+    // CloudTCM keeps no classification of its own (Ting 2026-08-06). Its exact
+    // source pages and diagrams attach to whichever canonical record they
+    // describe. The 129 symptom entries seeded data/config/symptom_taxonomy.json
+    // instead — they were never diseases, which is why only 20 of 190 matched a
+    // disease record.
+    const cloudRefs = (K.cloudtcmRefMap && K.cloudtcmRefMap.refs) || {};
+    const cloudRefBlock = (recordId) => {
+      const list = cloudRefs[recordId] || [];
+      if (!list.length) return "";
+      return `<div class="k-source-links k-condition-source-links">${list.map((r) => `
+        <a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">
+          <strong>雲端中醫 · ${esc(r.name_zh)}</strong>
+          <small>${esc(r.name_en_draft || "CloudTCM source page")}</small>
+        </a>`).join("")}</div>`;
+    };
+
+    // A record with no red flags is NOT hidden. The old gate filtered the grid
+    // to the records that had them, so the rest were invisible — search 眩暈 in
+    // clinic, get nothing, conclude it does not exist. Labelling the gap is
+    // honest; hiding it makes the gap itself invisible. Unflagged records sort
+    // last inside their group and carry a warning badge.
+    const hasRedFlags = (r) => asList(r.red_flags_zh).length > 0 || asList(r.red_flags_en).length > 0;
+    const noFlagBadge = `<span class="k-pill k-pill-warn" title="尚未填入安全警訊">⚠ 無安全警訊</span>`;
+
     const conditionSources = (record) => {
-      const links = (record.source_links || []).filter((link) =>
+      const links = asList(record.source_links).filter((link) =>
         link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
       );
       if (!links.length) return "";
@@ -2040,6 +2094,7 @@
         </a>`).join("")}
       </div>`;
     };
+
     let patternLangMode = "zh";
 
     function openPatternBigCardModal(p, langMode = patternLangMode) {
@@ -2083,7 +2138,7 @@
       modal.innerHTML = `
         <div class="k-big-card" role="dialog" aria-modal="true">
           <button type="button" class="k-big-card-close" id="patternModalCloseBtn" aria-label="Close">&times;</button>
-          
+
           <!-- Big Card Top Bar & Language Switcher -->
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e5dccb; padding-bottom: 0.6rem;">
             <div id="bigCardLangSwitcher" class="k-cloud-disease-categories" style="margin: 0;">
@@ -2095,7 +2150,7 @@
 
           <div class="k-big-card-header">
             <h2 class="k-big-card-title">${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)} ${p.pinyin ? `(${esc(p.pinyin)})` : ""}</small></h2>
-            <p class="k-meta">ID: <code>${esc(p.id)}</code> · ${esc(p.pattern_category || "zang_fu")} ${p.eight_principles ? ` · ${esc(p.eight_principles.excess_deficiency || "")} · ${esc(p.eight_principles.heat_cold || "")}` : ""}</p>
+            <p class="k-meta">ID: <code>${esc(p.id)}</code> · ${esc(p.pattern_category || p.pattern_family || "zang_fu")} ${p.eight_principles ? ` · ${esc(p.eight_principles.excess_deficiency || "")} · ${esc(p.eight_principles.heat_cold || "")}` : ""}</p>
           </div>
 
           <!-- 1. 病因與病理機轉 -->
@@ -2129,9 +2184,9 @@
           ${(formulas.length || points.length || conditions.length) ? `
             <div class="k-big-card-section">
               <h3>${isEn ? "4. Primary Treatment & Links" : "4. 代表方藥與針灸處方 Primary Treatment & Links"}</h3>
-              ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(id)}</a>`).join(" ")}</p>` : ""}
+              ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(entityLabel(id))}</a>`).join(" ")}</p>` : ""}
               ${points.length ? `<p><strong>📌 ${isEn ? "Acupuncture Points:" : "針灸配穴："}</strong> ${points.map(code => `<a href="#point/${esc(code)}" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">📌 ${esc(code)}</a>`).join(" ")}</p>` : ""}
-              ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => `<span class="k-tag">${esc(id)}</span>`).join(" ")}</p>` : ""}
+              ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => `<span class="k-tag">${esc(entityLabel(id))}</span>`).join(" ")}</p>` : ""}
             </div>
           ` : ""}
 
@@ -2208,6 +2263,7 @@
               <p>${esc(pulseText)}</p>
             </div>
           </div>
+          ${asList(p.key_signs_ids).length ? `<p class="k-tags">${symptomChips(asList(p.key_signs_ids))}</p>` : ""}
           <div style="margin-top: 0.75rem; text-align: right;">
             <button type="button" class="k-entity-chip" data-open-big-pattern="${esc(p.id)}" style="background: #e2d2b8; border-color: #c8b598; cursor: pointer; padding: 0.35rem 0.75rem; font-size: 0.84rem;">
               ${isEn ? "📖 Open Big Card &rarr;" : "📖 開啟證型大卡 · Open Big Card &rarr;"}
@@ -2215,149 +2271,178 @@
           </div>
         </article>`;
     };
+
+    // Preview card renderers — one shape per namespace, same shell.
     const renderConditions = (list) => list.map((c) => {
-      const relatedSymptoms = (c.related_tcm_symptoms || []).map((item) =>
+      const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
       ).join("");
-      const aliases = [...(c.aliases_zh || []), ...(c.aliases_en || [])];
+      const symptomIds = asList(c.sign_symptom_ids);
+      const aliases = [...asList(c.aliases_zh), ...asList(c.aliases_en)];
+      const flags = asList(c.red_flags_zh);
       return `
         <article class="k-card k-condition-card" data-record-id="${esc(c.id)}">
-          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}</header>
-          <p class="k-meta">${esc(c.id)} · ${esc(c.category || "")} · ICD hint ${esc(c.icd_hint || "—")}</p>
+          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}${hasRedFlags(c) ? "" : noFlagBadge}</header>
+          <p class="k-meta">${esc(c.id)} · ICD hint ${esc(c.icd_hint || "—")}</p>
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
           ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
+          ${symptomIds.length ? `<div class="k-condition-related"><strong>症狀 <small>Symptoms</small></strong><p class="k-tags">${symptomChips(symptomIds)}</p></div>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
-          ${(c.related_eastern_diseases || []).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
-          ${(c.red_flags_zh || []).length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags</summary><p class="k-flags">⚠ ${(c.red_flags_zh || []).slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
-          ${conditionSources(c)}
+          ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
+          ${flags.length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags (${flags.length})</summary><p class="k-flags">⚠ ${flags.slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
+          ${conditionSources(c)}${cloudRefBlock(c.id)}
         </article>`;
     }).join("");
-    const cloudDiseaseCard = (record) => `
-      <article class="k-card k-cloud-disease-card" data-record-id="${esc(record.id)}">
-        <header><strong>${esc(record.name_zh)} <small>${esc(record.name_en)}</small></strong>${statusPill(record.review_status)}</header>
-        <p class="k-meta">${esc(record.id)}</p>
-        <p class="k-tags">${(record.category_ids || []).map((id) => {
-          const category = cloudDiseaseCategoryById.get(id);
-          return tag(category ? `${category.name_zh} · ${category.name_en}` : id);
-        }).join("")}</p>
-        <a class="k-cloud-disease-link" href="${esc(record.source_url)}" target="_blank" rel="noopener noreferrer">
-          <strong>雲端中醫原始頁</strong><small>Open exact CloudTCM source page</small>
-        </a>
-      </article>`;
-    const cloudDiseasePageSize = 24;
-    let cloudDiseasePage = 1;
-    let activeCloudDiseaseCategory = "";
-    const renderCloudDiseaseDirectory = () => {
-      const query = String(el("cloudtcmDiseaseFilter")?.value || "").trim().toLowerCase();
-      const filtered = cloudDiseaseEntries.filter((record) => {
-        const matchesCategory = !activeCloudDiseaseCategory || (record.category_ids || []).includes(activeCloudDiseaseCategory);
-        const text = [record.id, record.name_zh, record.name_en, ...(record.category_ids || []).map((id) => {
-          const category = cloudDiseaseCategoryById.get(id);
-          return category ? `${category.name_zh} ${category.name_en}` : id;
-        })].join(" ").toLowerCase();
-        return matchesCategory && (!query || text.includes(query));
+
+    const renderTdis = (list) => list.map((t) => `
+      <article class="k-card k-condition-card" data-record-id="${esc(t.id)}">
+        <header><strong>${esc(t.name_zh)} <small>${esc(t.name_en || "")}</small></strong>${statusPill(t.review_status)}${hasRedFlags(t) ? "" : noFlagBadge}</header>
+        <p class="k-meta">${esc(t.id)}${t.pinyin ? ` · ${esc(t.pinyin)}` : ""}${t.classical_source ? ` · ${esc(t.classical_source)}` : ""}</p>
+        ${t.definition_zh ? `<p>${esc(t.definition_zh)}</p>` : ""}
+        ${asList(t.key_manifestation_ids).length ? `<p class="k-tags">${symptomChips(asList(t.key_manifestation_ids))}</p>` : ""}
+        ${asList(t.related_patterns).length ? `<p class="k-tags">${entityChips(t.related_patterns)}</p>` : ""}${cloudRefBlock(t.id)}
+      </article>`).join("");
+
+    const renderPatterns = (list) => list.map((p) => renderPatternCard(p, patternLangMode)).join("");
+
+    // Group renderer shared by all three namespaces: one <details> per bucket,
+    // count in the summary, safety-incomplete records sorted last inside it.
+    const renderGroups = (buckets, renderer) => buckets
+      .filter((b) => b.items.length)
+      .map((b) => `
+        <details class="k-dx-group" open>
+          <summary>${esc(b.label_zh)} <small>${esc(b.label_en || "")}</small> <b>${b.items.length}</b>${b.gap ? ` <span class="k-dx-gap">⚠ ${b.gap}</span>` : ""}</summary>
+          <div class="k-grid k-grid-wide">${renderer(b.items)}</div>
+        </details>`).join("");
+
+    const bySafetyThenName = (a, b) => (hasRedFlags(b) - hasRedFlags(a))
+      || String(a.name_zh || "").localeCompare(String(b.name_zh || ""), "zh-Hant");
+
+    const condBuckets = () => {
+      const seen = new Set();
+      const buckets = condCategories.map((cat) => {
+        const items = conds.filter((c) => c.category === cat.id).sort(bySafetyThenName);
+        items.forEach((c) => seen.add(c.id));
+        const missing = items.filter((c) => !hasRedFlags(c)).length;
+        return { label_zh: cat.name_zh || cat.id, label_en: cat.name_en || "", items, gap: missing ? `${missing} 缺安全警訊` : "" };
       });
-      const totalPages = Math.max(1, Math.ceil(filtered.length / cloudDiseasePageSize));
-      cloudDiseasePage = Math.min(Math.max(1, cloudDiseasePage), totalPages);
-      const start = (cloudDiseasePage - 1) * cloudDiseasePageSize;
-      el("cloudtcmDiseaseGrid").innerHTML = filtered.slice(start, start + cloudDiseasePageSize).map(cloudDiseaseCard).join("")
-        || '<p class="k-missing">找不到相符病症 / No matching source entry.</p>';
-      el("cloudtcmDiseasePageStatus").textContent = `${filtered.length} 筆 · 第 ${cloudDiseasePage} / ${totalPages} 頁`;
-      el("cloudtcmDiseasePrev").disabled = cloudDiseasePage <= 1;
-      el("cloudtcmDiseaseNext").disabled = cloudDiseasePage >= totalPages;
-      el("cloudtcmDiseaseCategoryBar").querySelectorAll?.("[data-cloud-disease-category]").forEach((button) => {
-        button.classList.toggle("is-active", button.dataset.cloudDiseaseCategory === activeCloudDiseaseCategory);
+      const rest = conds.filter((c) => !seen.has(c.id)).sort(bySafetyThenName);
+      if (rest.length) buckets.push({ label_zh: "未分類", label_en: "Uncategorised", items: rest, gap: "" });
+      return buckets;
+    };
+
+    const tdisBuckets = () => {
+      const seen = new Set();
+      const buckets = [];
+      tdisTaxonomy.forEach((cat) => (cat.children || []).forEach((leaf) => {
+        const items = tdisRecords.filter((t) => t.taxonomy_id === leaf.id).sort(bySafetyThenName);
+        items.forEach((t) => seen.add(t.id));
+        const missing = items.filter((t) => !hasRedFlags(t)).length;
+        buckets.push({
+          label_zh: `${cat.name_zh}·${leaf.name_zh}`, label_en: leaf.name_en || "",
+          items, gap: missing ? `${missing} 缺安全警訊` : "",
+        });
+      }));
+      const rest = tdisRecords.filter((t) => !seen.has(t.id)).sort(bySafetyThenName);
+      if (rest.length) {
+        buckets.push({
+          label_zh: "待分類", label_en: "Awaiting classification",
+          items: rest, gap: `${rest.length} 筆仍用舊的 classical_source_hint`,
+        });
+      }
+      return buckets;
+    };
+
+    const patternBuckets = () => {
+      const seen = new Set();
+      const buckets = patternFamilies.map((f) => {
+        const items = patternRecords.filter((p) => p.pattern_family === f.id).sort(bySafetyThenName);
+        items.forEach((p) => seen.add(p.id));
+        return { label_zh: f.name_zh, label_en: f.name_en || "", items, gap: "" };
+      });
+      const rest = patternRecords.filter((p) => !seen.has(p.id)).sort(bySafetyThenName);
+      if (rest.length) {
+        buckets.push({
+          label_zh: "待分類", label_en: "Awaiting classification",
+          items: rest, gap: `${rest.length} 筆尚未指定辨證體系`,
+        });
+      }
+      return buckets;
+    };
+
+    // One search box across all three namespaces, one type filter. The user
+    // searches 眩暈 once — she should not have to know whether it is filed as a
+    // 西醫病名, a 中醫病名 or a 證型 to find it. (Two search boxes and two
+    // category bars on one page is what made this tab confusing.)
+    let activeDxType = "all";
+    const dxMatches = (record, q) => !q || [
+      record.id, record.name_zh, record.name_en, record.pinyin, record.icd_hint,
+      ...asList(record.aliases_zh), ...asList(record.aliases_en),
+      ...asList(record.key_signs_zh), ...asList(record.key_manifestations_zh),
+      ...asList(record.key_manifestations_en),
+      ...asList(record.related_tcm_symptoms).flatMap((i) => [i.name_zh, i.name_en]),
+    ].filter(Boolean).join(" ").toLowerCase().includes(q);
+
+    const renderDx = () => {
+      const q = String(el("conditionFilter")?.value || "").trim().toLowerCase();
+      const pick = (list) => list.filter((r) => dxMatches(r, q));
+      const sections = [];
+      if (activeDxType === "all" || activeDxType === "cond") {
+        const hits = pick(conds);
+        sections.push({ key: "cond", zh: "西醫病名", en: "Biomedical conditions", n: hits.length,
+          html: renderGroups(condBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderConditions) });
+      }
+      if (activeDxType === "all" || activeDxType === "tdis") {
+        const hits = pick(tdisRecords);
+        sections.push({ key: "tdis", zh: "中醫病名", en: "TCM diseases", n: hits.length,
+          html: renderGroups(tdisBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderTdis) });
+      }
+      if (activeDxType === "all" || activeDxType === "pattern") {
+        const hits = pick(patternRecords);
+        sections.push({ key: "pattern", zh: "證型", en: "TCM patterns", n: hits.length,
+          html: renderGroups(patternBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderPatterns) });
+      }
+      const body = sections.filter((s) => s.n).map((s) => `
+        <section class="k-dx-section">
+          <div class="mini-heading"><strong>${esc(s.zh)} <small>${esc(s.en)}</small> <b>${s.n}</b></strong></div>
+          ${s.html}
+        </section>`).join("");
+      el("conditionGrid").innerHTML = body || '<p class="k-missing">找不到相符診斷 / No matching diagnosis.</p>';
+      el("dxTypeBar")?.querySelectorAll("[data-dx-type]").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.dataset.dxType === activeDxType);
       });
     };
-    condHost.innerHTML = `
-      <div class="mini-heading" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-        <div>
-          <strong>${esc(modeText(`TCM Pattern Library / 中醫證型預覽卡（${patterns.length} 筆）`, `TCM Pattern Library (${patterns.length})`))}</strong>
-          <span style="display: block;">${esc(modeText("依據 Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1 規格建置 Prototype 卡片", "Built according to Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1 specification."))}</span>
-        </div>
-        <div id="patternLangToggleBar" class="k-cloud-disease-categories" style="margin: 0;">
-          <button type="button" class="${patternLangMode === 'zh' ? 'is-active' : ''}" data-pattern-lang="zh">🇹🇼 中文版 · Chinese</button>
-          <button type="button" class="${patternLangMode === 'en' ? 'is-active' : ''}" data-pattern-lang="en">🇺🇸 English Version · 英文版</button>
-        </div>
-      </div>
-      <div class="k-grid k-grid-wide" id="tcmPatternGrid" style="margin-bottom: 1.5rem;">
-        ${patterns.map((p) => renderPatternCard(p, patternLangMode)).join("")}
-      </div>
-      <div class="mini-heading">
-        <strong>${esc(modeText(`Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）`, `Western Conditions (${conds.length} safety-filled · ${allConds.length} canon)`))}</strong>
-        <span>${esc(modeText("來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。", "Source: condition_canon_shortlist.json · biomedical and TCM names are related mappings, not one-to-one translations."))}</span>
-      </div>
-      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD..."))}" class="k-filter" />
-      <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
-      <section class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
-        <div class="mini-heading">
-          <strong id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})`, `CloudTCM Disease & Symptom Index (${cloudDiseaseEntries.length})`))}</strong>
-          <span>${esc(modeText(`205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `205 source cards are consolidated into ${cloudDiseaseEntries.length} stable page IDs; English labels are curated drafts.`))}</span>
-        </div>
-        <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
-          <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
-          ${cloudDiseaseCategories.map((category) => `<button type="button" data-cloud-disease-category="${esc(category.id)}">${esc(category.name_zh)} · ${esc(category.name_en)}</button>`).join("")}
-        </div>
-        <input type="search" id="cloudtcmDiseaseFilter" placeholder="${esc(modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID..."))}" class="k-filter" />
-        <div class="k-cloud-disease-toolbar">
-          <span id="cloudtcmDiseasePageStatus"></span>
-          <div>
-            <button type="button" id="cloudtcmDiseasePrev" aria-label="${esc(modeText("上一頁", "Previous page"))}">${esc(modeText("上一頁", "Previous"))}</button>
-            <button type="button" id="cloudtcmDiseaseNext" aria-label="${esc(modeText("下一頁", "Next page"))}">${esc(modeText("下一頁", "Next"))}</button>
-          </div>
-        </div>
-        <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
-      </section>
-      <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
-    
-    el("patternLangToggleBar")?.addEventListener("click", (event) => {
-      const btn = event.target.closest("[data-pattern-lang]");
-      if (!btn) return;
-      patternLangMode = btn.dataset.patternLang || "zh";
-      el("patternLangToggleBar").querySelectorAll("[data-pattern-lang]").forEach((b) => {
-        b.classList.toggle("is-active", b.dataset.patternLang === patternLangMode);
-      });
-      el("tcmPatternGrid").innerHTML = patterns.map((p) => renderPatternCard(p, patternLangMode)).join("");
-    });
 
-    el("conditionFilter").addEventListener("input", (event) => {
-      const q = event.target.value.trim().toLowerCase();
-      const hits = conds.filter((record) => [
-        record.id, record.name_zh, record.name_en, record.icd_hint, record.category,
-        ...(record.aliases_zh || []), ...(record.aliases_en || []),
-        ...(record.related_tcm_symptoms || []).flatMap((item) => [item.name_zh, item.name_en])
-      ].join(" ").toLowerCase().includes(q));
-      el("conditionGrid").innerHTML = renderConditions(hits) || '<p class="k-missing">找不到相符病症 / No matching condition.</p>';
-    });
-    el("cloudtcmDiseaseFilter").addEventListener("input", () => {
-      cloudDiseasePage = 1;
-      renderCloudDiseaseDirectory();
-    });
-    el("cloudtcmDiseaseCategoryBar").addEventListener("click", (event) => {
-      const button = event.target.closest("[data-cloud-disease-category]");
+    const condMissingFlags = conds.filter((c) => !hasRedFlags(c)).length;
+    condHost.innerHTML = `
+      <div class="mini-heading">
+        <strong>${esc(modeText(`診斷 / Diagnosis（西醫病名 ${conds.length} · 中醫病名 ${tdisRecords.length} · 證型 ${patternRecords.length}）`, `Diagnosis (${conds.length} biomedical · ${tdisRecords.length} TCM diseases · ${patternRecords.length} patterns)`))}</strong>
+        <span>${esc(modeText(`三種是不同的實體，不是同義詞：一病多證、同證異病。中西醫名稱是相關映射，不是一對一翻譯。目前 ${condMissingFlags} 筆西醫病名尚無安全警訊，已標示但未隱藏。`, `Three distinct entity types, not synonyms. Biomedical and TCM names are related mappings, never one-to-one. ${condMissingFlags} biomedical conditions still have no red flags — flagged, not hidden.`))}</span>
+      </div>
+      <div id="dxTypeBar" class="k-dx-types" aria-label="${esc(modeText("診斷類型", "Diagnosis type"))}">
+        <button type="button" class="is-active" data-dx-type="all">${esc(modeText("全部 · All", "All"))}</button>
+        <button type="button" data-dx-type="cond">${esc(modeText("西醫病名", "Biomedical"))} ${conds.length}</button>
+        <button type="button" data-dx-type="tdis">${esc(modeText("中醫病名", "TCM disease"))} ${tdisRecords.length}</button>
+        <button type="button" data-dx-type="pattern">${esc(modeText("證型", "Pattern"))} ${patternRecords.length}</button>
+      </div>
+      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋病名、證型、別名、拼音、ICD...", "Search diagnosis names, patterns, aliases, pinyin, ICD..."))}" class="k-filter" />
+      <div id="conditionGrid"></div>
+      <p class="k-meta">${esc(cloudNote)}</p>`;
+
+    el("conditionFilter").addEventListener("input", renderDx);
+    el("dxTypeBar").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-dx-type]");
       if (!button) return;
-      activeCloudDiseaseCategory = button.dataset.cloudDiseaseCategory || "";
-      cloudDiseasePage = 1;
-      renderCloudDiseaseDirectory();
+      activeDxType = button.dataset.dxType;
+      renderDx();
     });
-    el("cloudtcmDiseasePrev").addEventListener("click", () => {
-      cloudDiseasePage -= 1;
-      renderCloudDiseaseDirectory();
-    });
-    el("cloudtcmDiseaseNext").addEventListener("click", () => {
-      cloudDiseasePage += 1;
-      renderCloudDiseaseDirectory();
-    });
-    el("tcmPatternGrid")?.addEventListener("click", (event) => {
+    condHost.addEventListener("click", (event) => {
       const btn = event.target.closest("[data-open-big-pattern]");
       if (!btn) return;
-      const pid = btn.dataset.openBigPattern;
-      const found = patterns.find((r) => r.id === pid);
-      if (found) {
-        openPatternBigCardModal(found, patternLangMode);
-      }
+      const found = patternRecords.find((r) => r.id === btn.dataset.openBigPattern);
+      if (found) openPatternBigCardModal(found, patternLangMode);
     });
-    renderCloudDiseaseDirectory();
+    renderDx();
   }
 
   // ---- Source registry -------------------------------------------------------
