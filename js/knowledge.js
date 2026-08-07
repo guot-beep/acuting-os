@@ -910,6 +910,21 @@
      derived one gave no hint it was a modification — which is the single most
      useful thing to know about 大青龍湯. Mirrored by
      scripts/link-formula-family-back.js, never authored twice. */
+  /* Hero tile 2: whichever source pages this formula actually has. Styled for
+     the hero gradient (translucent fill, light text) rather than reusing the
+     bottom panel's white chips, which was why the first attempt was reverted.
+     Falls back to the tier only when there is genuinely no link to show, so the
+     tile is never empty and never claims a link that isn't there. */
+  function heroSourceTile(record) {
+    const chip = (url, label) =>
+      `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-hero-src">${esc(label)} ↗</a>`;
+    const links = [];
+    if (record.cloudtcm_url) links.push(chip(record.cloudtcm_url, "雲端中醫"));
+    if (record.american_dragon_url) links.push(chip(record.american_dragon_url, "American Dragon"));
+    if (!links.length) return ["學習層級 Tier", record.tier || "draft"];
+    return ["來源頁面 Source pages", links.join(""), true];
+  }
+
   function formulaSourceLinks(record) {
     const a = (url, label, note) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link"${note ? ` title="${esc(note)}"` : ""} style="margin-right:6px;display:inline-block;padding:2px 8px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:4px;color:#0284c7;font-size:0.85em;text-decoration:none;">${esc(label)} ↗</a>`;
     const out = [];
@@ -1021,15 +1036,13 @@
           // formula card. Falls back to the tier only when no link exists, so
           // the tile is never empty.
           //
-          // 2026-08-06: an attempt to put BOTH source links here was reverted.
-          // formulaSourceLinks() styles its chips for the pale Sources panel at
-          // the bottom of the card (white fill, blue text); dropped into this
-          // hero the tiles sit on a #70405d→#a05d7d gradient and read as glaring
-          // white blocks. Anything moved into the hero needs hero-native styling
-          // (translucent fill, light text), not the bottom panel's chips.
-          record.cloudtcm_url
-            ? ["雲端中醫 CloudTCM", `<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">開啟方劑頁面 ↗</a>`, true]
-            : ["學習層級 Tier", record.tier || "draft"],
+          // 2026-08-06: a first attempt to put BOTH links here was reverted for
+          // styling — formulaSourceLinks() paints white chips that glare on the
+          // #70405d→#a05d7d gradient. The fix is hero-native styling, not
+          // dropping the link. 2026-08-07: the tile only ever offered CloudTCM,
+          // so the 67 formulas that have an American Dragon page and no CloudTCM
+          // one showed "Tier: draft" — a filled link field rendering as nothing.
+          heroSourceTile(record),
           // Ting wants the herbs themselves here, not a count — the tile is
           // the first thing she reads on a formula card. Falls back to pinyin
           // when a curriculum ingredient has no Chinese name yet.

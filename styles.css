@@ -6389,6 +6389,28 @@ html { scroll-padding-top: 92px; }
    link. Entries with no online home say so instead of looking like dead links. */
 .k-src-title { color: #38bdf8; font-weight: 700; text-decoration: none; }
 .k-src-title:hover, .k-src-title:focus-visible { text-decoration: underline; }
+
+/* Formula hero source chips. The bottom Sources panel uses white chips with
+   blue text; on the hero's #70405d→#a05d7d gradient those read as glaring
+   white blocks, which is why an earlier attempt to show links here was
+   reverted. These are hero-native instead: translucent fill, light text. */
+.k-hero-src {
+  display: inline-block;
+  margin: 2px 6px 2px 0;
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 0.82em;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.k-hero-src:hover, .k-hero-src:focus-visible {
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.75);
+}
 .k-src-host { margin: 0.15rem 0 0.4rem; font-size: 0.76rem; opacity: 0.62; font-family: ui-monospace, monospace; }
 .k-src-host.is-none { font-family: inherit; font-style: italic; }
 .k-card.has-link { border-color: rgba(56, 189, 248, 0.35); }
