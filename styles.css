@@ -7009,3 +7009,15 @@ html { scroll-padding-top: 92px; }
 .k-en-drawer[open] > summary::before { content: "▾ "; }
 .k-en-drawer > summary:hover { color: #6b5b47; }
 .k-en-drawer .k-detail-list { margin-top: 4px; color: #6f6558; font-size: 0.92em; }
+
+/* Group label inside a detail list. Source lists carry heading lines that end
+   in a colon (「For Wind predominant Bi:」); as bullets they sat level with the
+   herbs they introduce, which is why 人參敗毒散's modifications read as noise. */
+.k-list-label {
+  margin: 10px 0 2px;
+  color: #6b4a63;
+  font-weight: 700;
+  font-size: 0.92em;
+}
+.k-list-label:first-child { margin-top: 0; }
+.k-list-label + .k-detail-list { margin-top: 0; }

@@ -437,11 +437,29 @@
     return /[a-zA-Z克兩錢枚]/.test(text) ? text : `${text}${suffix}`;
   }
 
+  /* A line ending in a colon is a group label, not an item — 人參敗毒散's
+     modifications read 「For Wind predominant Bi:」 as its own bullet, level
+     with the herbs underneath it. Rendering it as a small heading restores the
+     shape the source had, without inventing which additions belong to which
+     label (the extraction lost that, and guessing would look complete and be
+     made up). */
   function detailList(values, emptyText = "待補 / Content pending source review") {
     const items = cleanList(values);
-    return items.length
-      ? `<ul class="k-detail-list">${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`
-      : `<p class="k-detail-empty">${esc(emptyText)}</p>`;
+    if (!items.length) return `<p class="k-detail-empty">${esc(emptyText)}</p>`;
+    const html = [];
+    let open = false;
+    for (const item of items) {
+      const text = String(item).trim();
+      if (/[:：]$/.test(text) && text.length < 40) {
+        if (open) { html.push("</ul>"); open = false; }
+        html.push(`<p class="k-list-label">${esc(text.replace(/[:：]$/, ""))}</p>`);
+        continue;
+      }
+      if (!open) { html.push('<ul class="k-detail-list">'); open = true; }
+      html.push(`<li>${esc(text)}</li>`);
+    }
+    if (open) html.push("</ul>");
+    return html.join("");
   }
 
   /* 中英逐條成對 (FORMULA_CARD_TEMPLATE §1 sections 5 and 6). The formula card
@@ -1178,6 +1196,12 @@
     const actions = cleanList(record.actions_en).length ? record.actions_en : (cleanList(exam.actions_en).length ? exam.actions_en : []);
     const indications = cleanList(record.pattern_indications_en).length ? record.pattern_indications_en : (cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : []);
     const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
+    /* 濃縮藥粉 only exists on a handful of formulas — 45 of 1,610 composition
+       rows — so on every other card it printed 待來源核對 down a whole column.
+       Same call Ting already made on 原典用量: the field stays in the data, the
+       column only appears on cards that have a value in it. */
+    const showGranule = (record.composition || []).some(
+      (i) => usableText(i.granule_reference_g) || usableText(i.granule_dose_g));
     const composition = (record.composition || []).map((item) => {
       const herb = (item.pinyin && herbByPinyin.get(normalizeKey(item.pinyin))) || (item.herb_zh && herbByNameZh.get(usableText(item.herb_zh))) || (item.herbZh && herbByNameZh.get(usableText(item.herbZh)));
       const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" • ") || "Composition item pending";
@@ -1207,7 +1231,7 @@
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
         <td class="k-dose-role">${roleReasonHtml ? roleReasonHtml : '<span class="k-detail-empty">—</span>'}</td>
         <td>${esc(decoctionDose)}</td>
-        <td><strong>${esc(granuleDose)}</strong>${granuleContext ? `<small>${esc(granuleContext)}</small>` : ""}</td>
+        ${showGranule ? `<td><strong>${esc(granuleDose)}</strong>${granuleContext ? `<small>${esc(granuleContext)}</small>` : ""}</td>` : ""}
       </tr>`;
     }).join("");
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
@@ -1272,7 +1296,7 @@
 
     return [
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
-      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
