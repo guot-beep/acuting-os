@@ -56,6 +56,13 @@ const TARGETS = [
   // rest are standard-code dupes that get id = code. starter_points.json is
   // omitted (pure standard dupes, contributes no runtime-unique point).
   { rel: "data/acupoints/embedded/professional_points.json", get: (d) => d, family: "auto" },
+  /* extra_points.json must stay in this list because validate-point-ids.js
+   * reads it (its line 32). The two source lists drifting apart is not a
+   * theoretical risk: the 72 EX ids backfilled on 2026-08-05 were reverted by
+   * merge 11f37a9 on 08-06, and because only the VALIDATOR knew about this
+   * file, nothing could put them back — CI stayed red with no way to fix it
+   * mechanically. Adding a data file to one list means adding it to both. */
+  { rel: "data/acupoints/extra_points.json", get: (d) => d.records || d.points || (Array.isArray(d) ? d : []), family: "ex" },
 ];
 
 const codeToId = new Map();   // code -> id (must be a function)
@@ -65,7 +72,8 @@ const problems = [];
 
 for (const t of TARGETS) {
   const full = path.join(ROOT, t.rel);
-  const data = JSON.parse(fs.readFileSync(full, "utf8"));
+  const raw = fs.readFileSync(full, "utf8");
+  const data = JSON.parse(raw);
   const records = t.get(data);
   for (const rec of records) {
     if (!rec || !rec.code) continue;
@@ -86,13 +94,23 @@ for (const t of TARGETS) {
     added++;
   }
   if (APPLY && !problems.length) {
-    fs.writeFileSync(full, JSON.stringify(data, null, jsonIndent(t.rel)) + "\n");
+    /* Two guards, both learned the hard way on 2026-08-06:
+     * 1. Reuse the file's OWN indentation. A hardcoded width reformatted
+     *    361.json from 4 spaces to 2 and produced a 104,798-line diff that
+     *    changed nothing — in a repo where three agents merge this file, that
+     *    churn is a merge conflict waiting to happen.
+     * 2. Only write when the bytes actually differ, so a no-op run leaves the
+     *    working tree clean instead of touching every source file. */
+    const next = JSON.stringify(data, null, detectIndent(raw)) + "\n";
+    if (next !== raw) fs.writeFileSync(full, next);
   }
 }
 
-function jsonIndent(rel) {
-  // 361.json is compact (1-space historically); keep others at 2.
-  return rel.endsWith("361.json") ? 1 : 2;
+/** Indentation of the first indented line, so a rewrite matches the original. */
+function detectIndent(text) {
+  const m = /\n(\x20+)\S/.exec(text);
+  if (m) return m[1].length;
+  return /\n\t+\S/.test(text) ? "\t" : 2;
 }
 
 console.log(`Families assigned. Would add: ${added}, already correct: ${already}`);

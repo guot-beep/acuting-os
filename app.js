@@ -143,7 +143,14 @@ function needling361Text(needling) {
 function adapt361Record(record) {
   const prefix = channelCodeFromPointCode(record.code);
   const meta = channelPrefixMeta[prefix] || { meridian: "Standard Channel / 標準經穴", region: "待補", x: 180, y: 320 };
+  // contraindications is read FIRST and is not optional: the 2026-08-02 needling
+  // -depth pass wrote lines like 「趾端穴，僅可沿皮下淺刺 0.1 吋，不可深刺」into
+  // this field, and because the adapter did not read it, 21 points showed no
+  // depth warning on the card while the data sat in the file. Absolute 禁忌 and
+  // relative 慎用 still share one string here — splitting them into two boxes is
+  // a card change, but invisible safety text was the bug that mattered.
   const rawCautions = [
+    ...(Array.isArray(record.contraindications) ? record.contraindications : (typeof record.contraindications === "string" ? record.contraindications.split("\n") : [])),
     ...(Array.isArray(record.cautions_zh) ? record.cautions_zh : (typeof record.cautions_zh === "string" ? record.cautions_zh.split("\n") : [])),
     ...(Array.isArray(record.cautions) ? record.cautions : (typeof record.cautions === "string" ? record.cautions.split("\n") : [])),
     ...(Array.isArray(record.danger) ? record.danger : (typeof record.danger === "string" ? record.danger.split("\n") : []))

@@ -203,6 +203,31 @@ differential_patterns:
 | `field_sources` | 逐欄位出處 |
 | `legacy_ids` | 對應到的 `pat.*` 舊 id(來自 alias map) |
 
+### 4.9 v1.0 匯入欄位(2026-08-06 審核後採納,尚待整併)
+
+merge `11f37a9` 帶進 17 筆用另一套欄位名寫的證型記錄。**內容生成的 agent 不該自己
+改 schema**,但那些欄位裝著真內容(八綱分類、考點、鑑別敘述、實體連結),刪掉會違反
+§0,所以審核後採納並記在這裡 —— 模板不描述記錄實際長什麼樣,就是兩套詞彙分岔的起點。
+
+有正典對應的已經由 `scripts/migrate-pattern-v1-vocabulary.js` 搬完(`source_ids`→
+`sources`、`pattern_category`→`pattern_family`、`primary_formula_ids`→`typical_formulas`、
+`primary_acupoint_ids`→`typical_points`、`tongue_preview`/`pulse_preview`→`tongue_zh`/`_en`)。
+下面這些沒有正典對應:
+
+| 欄位 | 說明 |
+|---|---|
+| `short_summary_zh` / `_en` | 一段話總結,小卡用 |
+| `key_manifestations_zh` / `_en` · `key_manifestation_ids` | 比 `key_signs_zh` 更細的表現清單。**兩者尚未整併** —— 不要自行合併或刪除任何一邊,回報給 Ting |
+| `differentiation_preview_zh` / `_en` | 散文式鑑別敘述。**不等於 `differential_patterns`**(後者是結構化陣列),所以 N1 仍然計缺 |
+| `eight_principles` | 八綱物件(表裡/寒熱/虛實/陰陽) |
+| `zang_fu_ids` · `qi_blood_fluid_ids` · `pathogenic_factor_ids` | 分類連結 |
+| `related_tcm_disease_ids` · `related_biomedical_condition_ids` · `tag_ids` | 實體連結 |
+| `exam_pearls_zh` | 考點 |
+| `entity_type` · `schema_version` · `created_at` · `updated_at` · `last_reviewed_at` | 記錄 metadata |
+
+⚠️ **這一節是待辦,不是定案。** 整併方向(哪一套詞彙留下)要 Ting 看過卡片再定。
+新記錄一律用 §4.1–4.8 的正典欄位,不要再用這一組寫新資料。
+
 ---
 
 ## §5 驗證器錯誤碼

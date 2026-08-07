@@ -83,6 +83,26 @@ const APPROVED = new Set([
   // related_conditions is NOT here: it is the derived reverse of
   // cond.related_patterns (D13). Hand-filling it lands as P8 by design.
   "sources", "field_sources", "source_type",
+  /* ---- v1.0 import vocabulary, reviewed and adopted 2026-08-06 -------------
+   * Merge 11f37a9 brought 17 pattern records in under a schema a content agent
+   * invented (it should not have — schema is not theirs to change). But the
+   * fields hold real content: eight-principles classification, exam pearls, a
+   * differentiation write-up, and entity links. Rejecting them would mean
+   * deleting sourced content, which §0 forbids, so they are adopted here and
+   * documented in PATTERN_CARD_TEMPLATE.md §4.9 rather than left permanently
+   * "unknown" — a template that does not describe what the records actually
+   * contain is how the two vocabularies drifted apart in the first place.
+   * Everything with a canonical home was already migrated by
+   * scripts/migrate-pattern-v1-vocabulary.js; these are the ones with none.
+   * NOT a relaxation: P1/P4/P5 still report every genuine gap, and P5 rose
+   * 50 -> 134 after the migration because the missing English is now visible. */
+  "entity_type", "schema_version", "created_at", "updated_at", "last_reviewed_at",
+  "short_summary_zh", "short_summary_en",
+  "key_manifestations_zh", "key_manifestations_en", "key_manifestation_ids",
+  "differentiation_preview_zh", "differentiation_preview_en",
+  "eight_principles", "zang_fu_ids", "qi_blood_fluid_ids", "pathogenic_factor_ids",
+  "related_tcm_disease_ids", "related_biomedical_condition_ids",
+  "tag_ids", "exam_pearls_zh",
 ]);
 // P9: pre-bilingual field names still in the data. Migrate value first, then drop.
 const LEGACY_FIELDS = ["tongue", "pulse"];

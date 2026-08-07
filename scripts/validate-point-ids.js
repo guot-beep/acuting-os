@@ -72,7 +72,11 @@ for (const f of FILES) {
  * count, so the expectation moves with them. Raise a number here only when the
  * records genuinely exist — lowering one to make a run pass would defeat the
  * check entirely. */
-const EXPECT = { standard: 361, ex: 72, tung: 277, ear: 41 };
+/* ear 41 -> 215 (2026-08-06): the auricular layer was deliberately expanded to
+ * the 203 Dr. Li-Chun Huang eLotus CORE points (commit 517ef5a) plus the GB93
+ * index; update-point-manifest reported REMOVED: 0, so this is pure growth, not
+ * a reshuffle. The guard still bites in the direction that matters — a shrink. */
+const EXPECT = { standard: 361, ex: 72, tung: 277, ear: 215 };
 for (const k of Object.keys(EXPECT)) {
   // standard counts include the professional-file dupes that also equal code;
   // dedupe by counting distinct ids per namespace instead.

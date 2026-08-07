@@ -33,11 +33,18 @@ const ROOT = path.join(__dirname, "..");
 //   present in the retired embedded extras, deduped by code) + 29 auricular
 //   embedded + 18 scalp + 13 GB93 index (1 code overlaps auricular embedded)
 //   + 277 Tung = 769.
-const EXPECTED_TOTAL = 769;
+// 2026-08-06: the auricular layer grew from 29 embedded points to the 203 Dr.
+// Li-Chun Huang eLotus CORE points (commit 517ef5a) and the EX layer went from
+// 2 runtime points to all 72. update-point-manifest reported REMOVED: 0 — pure
+// growth. New census: 361 standard + 72 EX + 215 ear (203 embedded + GB93 index
+// + AT/SC/CO/HX/AH/TF/TG/LO) + 22 scalp/MS + 277 Tung = 947.
+// These are shrink guards. Raise one only against a counted census like this;
+// lowering one to make a red run pass would delete the guard's whole purpose.
+const EXPECTED_TOTAL = 947;
 const EXPECTED_STANDARD = 361;
 const EXPECTED_TUNG = 277;
 const EXPECTED_GB93_INDEX = 13;
-const EXPECTED_AURICULAR_EMBEDDED = 29;
+const EXPECTED_AURICULAR_EMBEDDED = 203;
 const EXPECTED_EXTRAS = ["EX-HN3", "EX-HN5"];
 
 globalThis.window = globalThis;
