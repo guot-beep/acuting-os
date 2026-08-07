@@ -446,8 +446,14 @@
     const z = cleanList(zh), e = cleanList(en);
     if (!z.length && !e.length) return `<p class="k-detail-empty">${esc(emptyText)}</p>`;
     if (z.length && e.length && z.length === e.length) {
-      return `<ol class="k-paired-list">${z.map((v, i) =>
-        `<li><span class="kp-zh">${esc(v)}</span><span class="kp-en">${esc(e[i])}</span></li>`).join("")}</ol>`;
+      return `<ol class="k-paired-list">${z.map((v, i) => {
+        const zhStr = (v || "").trim();
+        const enStr = (e[i] || "").trim();
+        if (zhStr === enStr) {
+          return `<li><span class="kp-en">${esc(enStr)}</span></li>`;
+        }
+        return `<li><span class="kp-zh">${esc(zhStr)}</span><span class="kp-en">${esc(enStr)}</span></li>`;
+      }).join("")}</ol>`;
     }
     return detailList(z.length ? z : e, emptyText);
   }
@@ -969,6 +975,19 @@
     return window.AcuTingNotes.panel(kind, record.id, name || record.id);
   }
 
+  function syndromeHeroSummary(record) {
+    const zh = cleanList(record.pattern_indications_zh || record.pattern_tags_zh);
+    if (zh.length) {
+      const shortItems = zh.map((s) => String(s || "").split("：")[0].split(" - ")[0].split("・")[0].trim()).filter(Boolean);
+      const summary = [...new Set(shortItems)].slice(0, 3).join(" · ");
+      if (summary.length <= 40) return summary;
+      return summary.slice(0, 38) + "…";
+    }
+    const en = cleanList(record.ad_syndromes_en || record.pattern_indications_en);
+    if (en.length) return en.slice(0, 2).join(" · ");
+    return comparisonGroupLabel(record.comparison_group) || "—";
+  }
+
   function detailShell(record, kind, panels) {
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
@@ -1015,7 +1034,7 @@
           // the first thing she reads on a formula card. Falls back to pinyin
           // when a curriculum ingredient has no Chinese name yet.
           ["組成 Composition", compositionSummary(record.composition)],
-          ["鑑別群組 Comparison", comparisonGroupLabel(record.comparison_group) || "—"]
+          ["主治證型 Syndromes", syndromeHeroSummary(record)]
         ]
       : [
           ["分類 Category", record.category || record.category_en || "待補"],
@@ -1075,21 +1094,13 @@
 
   function formulaPanels(record) {
     const exam = record.english_exam_track || {};
-    // On a curated card the curriculum English is the half that was asserted to
-    // pair with the 中文 line for line; english_exam_track is an older summary
-    // that does not. Prefer the curated pair when it exists.
-    const curated = !!(record.field_sources && record.field_sources.actions_zh);
-    const actions = curated && cleanList(record.actions_en).length
-      ? record.actions_en
-      : (cleanList(exam.actions_en).length ? exam.actions_en : record.actions_en);
-    const indications = curated && cleanList(record.pattern_indications_en).length
-      ? record.pattern_indications_en
-      : (cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en);
+    const actions = cleanList(record.actions_en).length ? record.actions_en : (cleanList(exam.actions_en).length ? exam.actions_en : []);
+    const indications = cleanList(record.pattern_indications_en).length ? record.pattern_indications_en : (cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : []);
     const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
     const composition = (record.composition || []).map((item) => {
       const herb = (item.pinyin && herbByPinyin.get(normalizeKey(item.pinyin))) || (item.herb_zh && herbByNameZh.get(usableText(item.herb_zh))) || (item.herbZh && herbByNameZh.get(usableText(item.herbZh)));
-      const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
-      const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" · ");
+      const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" • ") || "Composition item pending";
+      const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" • ");
       // 原典用量 dropped from the table on Ting's call (「原典用量不用，全部
       // 用生藥煎劑就好」). Only 22 of 201 formulas carry one and the rest
       // printed a column of 待補. The field is NOT deleted from the data —
@@ -1103,10 +1114,17 @@
       // in_formula_zh comes first: it is the short, curated line rescued from
       // pattern_indications_zh by fix-formula-misfiled-composition.js, and it
       // is more useful here than elucidation_zh's several paragraphs.
-      const roleReason = usableText(item.in_formula_zh || item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh || item.elucidation_zh);
+      const zhReason = cleanList(item.in_formula_zh || item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh || item.elucidation_zh).join("； ");
+      const enReason = cleanList(item.in_formula_en || item.actions_en).join("; ");
+      let roleReasonHtml = "";
+      if (zhReason && enReason && zhReason !== enReason) {
+        roleReasonHtml = `${esc(zhReason)}<br><small class="k-en" style="color:var(--text-muted, #71717a); display:block; margin-top:4px; line-height:1.4; font-weight:normal;">${esc(enReason)}</small>`;
+      } else {
+        roleReasonHtml = esc(zhReason || enReason);
+      }
       return `<tr>
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
-        <td class="k-dose-role">${roleReason ? esc(roleReason) : '<span class="k-detail-empty">—</span>'}</td>
+        <td class="k-dose-role">${roleReasonHtml ? roleReasonHtml : '<span class="k-detail-empty">—</span>'}</td>
         <td>${esc(decoctionDose)}</td>
         <td><strong>${esc(granuleDose)}</strong>${granuleContext ? `<small>${esc(granuleContext)}</small>` : ""}</td>
       </tr>`;
@@ -1123,33 +1141,59 @@
        than a half-translation. */
     const bilingualTagChips = (zhList, enList, kindZh, kindEn) => {
       const zh = cleanList(zhList), en = cleanList(enList);
-      if (!zh.length) return "";
-      return zh.map((z, i) => {
-        const e = zh.length === en.length ? en[i] : "";
-        const label = e ? `${z} · ${e}` : z;
-        return `<button type="button" class="k-modern-chip k-chip-${kindEn}" data-search-term="${esc(z)}"
-          title="${esc(kindZh)} — 點擊全站搜尋">${esc(label)}</button>`;
-      }).join("");
+      if (!zh.length && !en.length) return "";
+      const maxLen = Math.max(zh.length, en.length);
+      const chips = [];
+      for (let i = 0; i < maxLen; i++) {
+        const z = (zh[i] || "").trim();
+        const e = (en[i] || "").trim();
+        const label = (z && e && z.toLowerCase() !== e.toLowerCase()) ? `${z} \u00B7 ${e}` : (z || e);
+        const search = z || e;
+        chips.push(`<button type="button" class="k-modern-chip k-chip-${kindEn}" data-search-term="${esc(search)}"
+          title="${esc(kindZh)} — 點擊全站搜尋">${esc(label)}</button>`);
+      }
+      return chips.join("");
     };
-    const modern = [
-      bilingualTagChips(record.condition_tags_zh, record.condition_tags_en, "病證", "condition"),
-      bilingualTagChips(record.pattern_tags_zh, record.pattern_tags_en, "證型", "pattern"),
-      // modernTagChips renders an em-dash placeholder for an empty group, which
-      // is exactly the "—" that made this section look broken. Drop those.
-      modernTagChips(record.modern_clinical_use_tags),
-      modernTagChips(record.modern_use_tags),
-    ].map((h) => (h && /<button/.test(h) ? h : "")).filter(Boolean).join("");
+    const treatsZh = cleanList(record.modern_applications_zh || record.treats_zh);
+    const treatsEn = cleanList(record.modern_applications_en || record.treats_en || exam.treats_en);
+    const treatsChips = bilingualTagChips(treatsZh, treatsEn, "現代運用", "condition");
+    const condChips = bilingualTagChips(record.condition_tags_zh, record.condition_tags_en, "病證", "condition");
+    const patChips = bilingualTagChips(record.pattern_tags_zh, record.pattern_tags_en, "證型", "pattern");
+
+    const allModernChips = [condChips, patChips, treatsChips].filter(Boolean).join("");
+    const totalModernCount = Math.max(treatsZh.length, treatsEn.length) + (cleanList(record.condition_tags_zh)).length + (cleanList(record.pattern_tags_zh)).length;
+
+    let modernIndexHtml = '<p class="k-detail-empty">待補</p>';
+    if (allModernChips) {
+      if (totalModernCount > 8) {
+        modernIndexHtml = `<details class="k-chip-drawer" open>
+          <summary class="k-chip-drawer-summary">
+            <span>現代運用標籤雲（共 ${totalModernCount} 項，點擊可折疊/展開）</span>
+            <span class="k-chip-toggle-icon"></span>
+          </summary>
+          <div class="k-chip-drawer-body">
+            <div class="k-chip-cloud">${allModernChips}</div>
+          </div>
+        </details>`;
+      } else {
+        modernIndexHtml = `<div class="k-chip-cloud">${allModernChips}</div>`;
+      }
+    } else if (relatedConditions) {
+      modernIndexHtml = `<div class="k-chip-cloud">${relatedConditions}</div>`;
+    }
+
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     const contraindicationsZh = cleanList(record.contraindications_zh || record.cautions_zh);
     const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
     const contraHtml = (contraindicationsZh.length || contraindicationsEn.length)
       ? detailPairedList(contraindicationsZh, contraindicationsEn)
       : detailList(safetyList(safety));
+
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + (cleanList(record.ad_syndromes_en).length ? `<h4 class="k-subhead">American Dragon 證型 Syndromes</h4>${detailList(record.ad_syndromes_en)}` : ""))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("⚠️ 注意事項與禁忌", "Contraindications & Cautions", contraHtml)}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${modern ? detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", `<div class="k-chip-cloud">${modern}</div>`) : ""}${detailSection("相關病名與證型", "Related conditions and patterns", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).

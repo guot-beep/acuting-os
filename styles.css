@@ -5161,6 +5161,42 @@ body[data-content-mode="english"] .i18n-zh {
 .k-detail-empty { color: #917b53; font-style: italic; }
 .k-detail-note { color: #655a49; margin-bottom: 0.65rem !important; }
 .k-chip-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.k-chip-drawer {
+  background: #fdfbf7;
+  border: 1px solid #e5dbca;
+  border-radius: 8px;
+  margin: 0.35rem 0 0.65rem;
+  overflow: hidden;
+}
+.k-chip-drawer summary.k-chip-drawer-summary {
+  align-items: center;
+  background: #f5edd7;
+  border-bottom: 1px solid #ebdcb8;
+  color: #614815;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.84rem;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 0.45rem 0.8rem;
+  user-select: none;
+}
+.k-chip-drawer summary.k-chip-drawer-summary:hover {
+  background: #eee0bf;
+}
+.k-chip-drawer-body {
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 0.65rem;
+}
+.k-chip-toggle-icon::after {
+  content: " ▼ 點擊收起 / 展開";
+  font-size: 0.76rem;
+  opacity: 0.85;
+}
+.k-chip-drawer[open] .k-chip-toggle-icon::after {
+  content: " ▲ 點擊收起";
+}
 .k-modern-chip,
 .k-static-chip,
 .k-relation-chip {
