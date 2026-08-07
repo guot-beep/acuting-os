@@ -1,0 +1,766 @@
+{
+  "dataset": "chatgpt_seed_batch01",
+  "source": "ChatGPT extraction 2026-08-07, archived from Downloads",
+  "policy": [
+    "Staging only (D14 import layer). Nothing here may appear in canonical relation fields.",
+    "ICD codes are UNVERIFIED until checked against official FY2026 files.",
+    "zh labels are drafts, not canon."
+  ],
+  "created": "2026-08-08",
+  "records": [
+    {
+      "group": "neuro",
+      "entity_type": "symptom",
+      "name_en": "Headache",
+      "name_zh_draft": "頭痛",
+      "aliases_en": ["head pain"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R51.9", "display": "Headache, unspecified", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://medlineplus.gov/headache.html",
+        "https://www.cms.gov/medicare/coding-billing/icd-10-codes"
+      ],
+      "notes": "Complaint only; do not assume migraine. Safety: new/unusually severe headache, abrupt onset, neurologic deficits, trauma, systemic illness, or change from usual pattern requires biomedical evaluation."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "condition",
+      "name_en": "Migraine",
+      "name_zh_draft": "偏頭痛",
+      "aliases_en": ["migraine headache"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "G43.*", "display": "Migraine family", "note": "store family; select specific child code"},
+        {"code": "G43.909", "display": "", "note": "common unspecified example; do not default to this if more specific documentation exists"}
+      ],
+      "match_hint": "cond.migraine",
+      "source_urls": [
+        "https://medlineplus.gov/migraine.html",
+        "https://connect.medlineplus.gov/application?informationRecipient.languageCode.c=en&mainSearchCriteria.v.c=G43.909&mainSearchCriteria.v.cs=2.16.840.1.113883.6.90&mainSearchCriteria.v.dn=Migraines"
+      ],
+      "notes": "Use exact child code when aura/intractability/status migrainosus are documented. Do not default every migraine to G43.909."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "symptom",
+      "name_en": "Dizziness",
+      "name_zh_draft": "頭暈",
+      "aliases_en": ["lightheadedness", "wooziness", "unsteadiness"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R42", "display": "Dizziness and giddiness", "note": ""}
+      ],
+      "match_hint": "cond.dizziness_vertigo",
+      "source_urls": [
+        "https://medlineplus.gov/dizzinessandvertigo.html"
+      ],
+      "notes": "Broader than vertigo. Do not equate with vertigo, BPPV, Ménière disease, or syncope. match_hint caveat: canon entity 'Dizziness / Vertigo' is a merged concept while this MD keeps dizziness and vertigo as separate sym.* entities — needs human review, not an exact 1:1 match."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "symptom",
+      "name_en": "Vertigo",
+      "name_zh_draft": "眩暈",
+      "aliases_en": ["spinning sensation"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R42", "display": "Dizziness and giddiness", "note": "often used if only a symptom is documented"},
+        {"code": "H81.*", "display": "", "note": "diagnosed vestibular disorders use this family"}
+      ],
+      "match_hint": "cond.dizziness_vertigo",
+      "source_urls": [],
+      "notes": "Do not code BPPV merely from 'dizzy'. match_hint caveat: canon entity 'Dizziness / Vertigo' is a merged concept while this MD keeps dizziness and vertigo as separate sym.* entities — needs human review, not an exact 1:1 match."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "condition",
+      "name_en": "Benign paroxysmal positional vertigo",
+      "name_zh_draft": "良性陣發性位置性眩暈",
+      "aliases_en": ["BPPV", "positional vertigo"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "H81.10", "display": "unspecified ear", "note": ""},
+        {"code": "H81.11", "display": "right ear", "note": ""},
+        {"code": "H81.12", "display": "left ear", "note": ""},
+        {"code": "H81.13", "display": "bilateral", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://www.nidcd.nih.gov/health/balance-disorders",
+        "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=57434"
+      ],
+      "notes": "Brief intense positional vertigo; laterality exists. Clues: rolling over in bed, looking up, bending down, turning the head; brief attacks rather than continuous nonspecific dizziness."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "condition",
+      "name_en": "Ménière disease",
+      "name_zh_draft": "梅尼爾氏病",
+      "aliases_en": ["Meniere disease", "Ménière's disease"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "H81.01", "display": "right", "note": ""},
+        {"code": "H81.02", "display": "left", "note": ""},
+        {"code": "H81.03", "display": "bilateral", "note": ""},
+        {"code": "H81.09", "display": "unspecified ear", "note": ""}
+      ],
+      "match_hint": "cond.menieres",
+      "source_urls": [
+        "https://medlineplus.gov/menieresdisease.html",
+        "https://www.nidcd.nih.gov/health/balance-disorders"
+      ],
+      "notes": "Episodic vertigo + hearing symptoms / tinnitus / aural fullness."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "condition",
+      "name_en": "Vestibular neuritis",
+      "name_zh_draft": "前庭神經炎",
+      "aliases_en": ["vestibular neuronitis"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "H81.20", "display": "unspecified", "note": ""},
+        {"code": "H81.21", "display": "right", "note": ""},
+        {"code": "H81.22", "display": "left", "note": ""},
+        {"code": "H81.23", "display": "bilateral", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Distinguish from BPPV and Ménière."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "symptom",
+      "name_en": "Tinnitus",
+      "name_zh_draft": "耳鳴",
+      "aliases_en": ["ringing in ears"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "H93.11", "display": "right", "note": ""},
+        {"code": "H93.12", "display": "left", "note": ""},
+        {"code": "H93.13", "display": "bilateral", "note": ""},
+        {"code": "H93.19", "display": "unspecified ear", "note": ""}
+      ],
+      "match_hint": "cond.tinnitus",
+      "source_urls": [],
+      "notes": "Laterality is important. Track pulsatile vs nonpulsatile, hearing loss, sudden onset, vestibular symptoms. Sources referenced by name only in this section: 'CMS Vestibular/Audiologic coding article' (URL given under BPPV row, not repeated here); NIDCD health information noted as preferred for future full content enrichment."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "condition",
+      "name_en": "Trigeminal neuralgia",
+      "name_zh_draft": "三叉神經痛",
+      "aliases_en": ["tic douloureux"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "G50.0", "display": "", "note": ""}
+      ],
+      "match_hint": "cond.trigeminal_neuralgia",
+      "source_urls": [
+        "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=56607"
+      ],
+      "notes": "Distinct facial neuropathic pain diagnosis; should remain distinct from generic facial pain and headache."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "condition",
+      "name_en": "Occipital neuralgia",
+      "name_zh_draft": "枕神經痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.81", "display": "", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Do not merge with generic headache."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "symptom",
+      "name_en": "Syncope / fainting",
+      "name_zh_draft": "暈厥",
+      "aliases_en": ["fainting", "passed out"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R55", "display": "Syncope and collapse", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "High safety importance; not the same as dizziness."
+    },
+    {
+      "group": "neuro",
+      "entity_type": "symptom",
+      "name_en": "Paresthesia",
+      "name_zh_draft": "感覺異常",
+      "aliases_en": ["numbness/tingling when nonspecific"],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Code depends on site/etiology; do not force one generic diagnosis. Track site/laterality and diagnosed neuropathy separately."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Neck pain / Cervicalgia",
+      "name_zh_draft": "頸痛 / 頸部疼痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.2", "display": "Cervicalgia", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Common acupuncture complaint. Do not merge with cervical radiculopathy, cervical disc disorder, myelopathy. Coding evidence: CMS lists M54.2 Cervicalgia and separate radiculopathy/disc codes. Canon has cond.neck_pain_stiff ('Acute Neck Pain / Stiff Neck') but that is a narrower, qualified subtype — not treated as an unambiguous match."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Low back pain",
+      "name_zh_draft": "下背痛 / 腰背痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.50", "display": "unspecified", "note": ""},
+        {"code": "M54.51", "display": "vertebrogenic", "note": ""},
+        {"code": "M54.59", "display": "other", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://www.niams.nih.gov/health-topics/back-pain",
+        "https://www.niams.nih.gov/zh-hans/health-topics/beitong"
+      ],
+      "notes": "Do not flatten specific documented etiologies. Do not auto-upgrade nonspecific pain to vertebrogenic pain. Safety content should review for concerning neurologic deficits, trauma/fracture risk, systemic illness. Canon has cond.chronic_low_back_pain, a chronic-qualified subtype — not treated as an unambiguous match."
+    },
+    {
+      "group": "msk",
+      "entity_type": "mixed",
+      "name_en": "Sciatica",
+      "name_zh_draft": "坐骨神經痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.30", "display": "unspecified", "note": ""},
+        {"code": "M54.31", "display": "right", "note": ""},
+        {"code": "M54.32", "display": "left", "note": ""},
+        {"code": "M54.40/M54.41/M54.42", "display": "", "note": "if low back pain with sciatica is specifically documented"}
+      ],
+      "match_hint": "cond.sciatica",
+      "source_urls": [],
+      "notes": "Laterality. Do not store one combined 'sciatica' label and discard whether low-back pain accompanies it. Entity type listed in table as 'condition/symptom depending documentation'."
+    },
+    {
+      "group": "msk",
+      "entity_type": "condition",
+      "name_en": "Cervical radiculopathy",
+      "name_zh_draft": "頸椎神經根病變",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.12", "display": "Radiculopathy, cervical region", "note": ""},
+        {"code": "M50.*", "display": "", "note": "disc-specific; may apply"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Do not equate radiculopathy with neck pain. Track sensory symptoms, weakness, reflex changes, distribution, laterality."
+    },
+    {
+      "group": "msk",
+      "entity_type": "condition",
+      "name_en": "Lumbar radiculopathy",
+      "name_zh_draft": "腰椎神經根病變",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.16", "display": "Radiculopathy, lumbar region", "note": ""},
+        {"code": "M51.16", "display": "", "note": "disc-specific; may apply"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Distinct from uncomplicated low back pain. Disc-disorder-with-radiculopathy codes may be more appropriate when the underlying diagnosis is documented."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Shoulder pain",
+      "name_zh_draft": "肩痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M25.511", "display": "right", "note": ""},
+        {"code": "M25.512", "display": "left", "note": ""},
+        {"code": "M25.519", "display": "unspecified", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Laterality. Use symptom cards for the complaint and condition cards for the established cause; do not replace every encounter with a specific diagnosis."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Knee pain",
+      "name_zh_draft": "膝痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M25.561", "display": "right", "note": ""},
+        {"code": "M25.562", "display": "left", "note": ""},
+        {"code": "M25.569", "display": "unspecified", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Laterality. sym.knee_pain may be associated with cond.knee_osteoarthritis, but do not replace every knee-pain encounter with osteoarthritis."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Hip pain",
+      "name_zh_draft": "髖痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M25.551", "display": "right", "note": ""},
+        {"code": "M25.552", "display": "left", "note": ""},
+        {"code": "M25.559", "display": "unspecified", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Laterality."
+    },
+    {
+      "group": "msk",
+      "entity_type": "condition",
+      "name_en": "Carpal tunnel syndrome",
+      "name_zh_draft": "腕隧道症候群",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "G56.00", "display": "unspecified upper limb", "note": "use laterality-specific child code if documented"}
+      ],
+      "match_hint": "cond.carpal_tunnel",
+      "source_urls": [
+        "https://www.niams.nih.gov/health-topics/carpal-tunnel-syndrome"
+      ],
+      "notes": "Median nerve entrapment. Typical presentation: numbness/tingling especially involving thumb, index, and middle fingers; symptoms often develop gradually."
+    },
+    {
+      "group": "msk",
+      "entity_type": "condition",
+      "name_en": "Fibromyalgia",
+      "name_zh_draft": "纖維肌痛症",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M79.7", "display": "", "note": ""}
+      ],
+      "match_hint": "cond.fibromyalgia",
+      "source_urls": [
+        "https://www.niams.nih.gov/health-topics/fibromyalgia"
+      ],
+      "notes": "Widespread pain + fatigue/sleep issues. Common symptoms: widespread pain, fatigue, poor sleep, stiffness, tenderness, paresthesia, cognitive complaints; increased pain sensitivity is an important feature."
+    },
+    {
+      "group": "msk",
+      "entity_type": "condition",
+      "name_en": "Osteoarthritis",
+      "name_zh_draft": "骨關節炎",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M15-M19", "display": "site-specific family", "note": "do not assign one generic site code"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://www.niams.nih.gov/health-topics/osteoarthritis",
+        "https://www.niams.nih.gov/zh-hans/health-topics/shenmeshiguxingguanjieyan"
+      ],
+      "notes": "Card should link to knee/hip/hand/site variants. Coding should usually resolve to anatomical site-specific ICD-10-CM concepts rather than a generic label. Canon has site-specific cond.knee_osteoarthritis and cond.hip_osteoarthritis but no generic entity — not an unambiguous match for this row."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Cramp and spasm",
+      "name_zh_draft": "痙攣 / 肌肉抽筋",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R25.2", "display": "Cramp and spasm", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Useful for real acupuncture chief complaints."
+    },
+    {
+      "group": "msk",
+      "entity_type": "symptom",
+      "name_en": "Jaw pain",
+      "name_zh_draft": "下顎痛 / 顎痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R68.84", "display": "Jaw pain", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Keep separate from trigeminal neuralgia/TMJ diagnosis."
+    },
+    {
+      "group": "msk",
+      "entity_type": "condition",
+      "name_en": "Occipital neuralgia",
+      "name_zh_draft": "枕神經痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "M54.81", "display": "", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Cross-listed with neuro group."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Abdominal pain",
+      "name_zh_draft": "腹痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R10.*", "display": "family", "note": ""},
+        {"code": "R10.9", "display": "unspecified", "note": ""},
+        {"code": "R10.10", "display": "upper abdominal pain, unspecified", "note": ""},
+        {"code": "R10.11", "display": "RUQ", "note": ""},
+        {"code": "R10.12", "display": "LUQ", "note": ""},
+        {"code": "R10.13", "display": "epigastric", "note": ""},
+        {"code": "R10.30", "display": "lower abdominal pain", "note": ""},
+        {"code": "R10.31", "display": "RLQ", "note": ""},
+        {"code": "R10.32", "display": "LLQ", "note": ""},
+        {"code": "R10.33", "display": "periumbilical", "note": ""},
+        {"code": "R10.84", "display": "generalized", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://medlineplus.gov/abdominalpain.html"
+      ],
+      "notes": "Location-specific codes should be preferred when documented rather than R10.9. High-priority safety: sudden sharp pain, associated chest/neck/shoulder pain, hematemesis, or blood in stool require urgent medical attention."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Nausea",
+      "name_zh_draft": "噁心",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R11.0", "display": "", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Do not merge with vomiting. Canon has cond.nausea_vomiting, a merged Nausea-and-Vomiting entity — not an unambiguous match given this MD's explicit instruction to keep them separate."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Diarrhea",
+      "name_zh_draft": "腹瀉",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R19.7", "display": "Diarrhea, unspecified", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Cause-specific diagnosis may supersede. Canon has cond.chronic_diarrhea, a chronic-qualified subtype — not treated as an unambiguous match."
+    },
+    {
+      "group": "gi",
+      "entity_type": "mixed",
+      "name_en": "Constipation",
+      "name_zh_draft": "便秘",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "K59.00", "display": "Constipation, unspecified", "note": "more specific codes exist"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation"
+      ],
+      "notes": "Track frequency/stool difficulty. Definition: may involve fewer than three bowel movements per week, hard/dry/lumpy stools, difficult or painful passage, or incomplete evacuation. Safety/referral: persistent constipation plus rectal bleeding, blood in stool, or continual abdominal pain requires medical assessment. Canon has cond.chronic_constipation, a chronic-qualified subtype — not treated as an unambiguous match."
+    },
+    {
+      "group": "gi",
+      "entity_type": "condition",
+      "name_en": "Irritable bowel syndrome",
+      "name_zh_draft": "腸躁症 / 大腸激躁症",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "K58.0", "display": "diarrhea", "note": ""},
+        {"code": "K58.1", "display": "constipation", "note": ""},
+        {"code": "K58.2", "display": "mixed", "note": ""},
+        {"code": "K58.8", "display": "other", "note": ""},
+        {"code": "K58.9", "display": "without diarrhea", "note": ""}
+      ],
+      "match_hint": "cond.ibs",
+      "source_urls": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/symptoms-causes"
+      ],
+      "notes": "Preserve subtype; do not discard it. Common presentation: abdominal pain, diarrhea and/or constipation, bloating, incomplete evacuation sensation, mucus may occur, symptoms may fluctuate."
+    },
+    {
+      "group": "gi",
+      "entity_type": "condition",
+      "name_en": "GERD",
+      "name_zh_draft": "胃食道逆流病",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "K21.9", "display": "without esophagitis", "note": ""},
+        {"code": "K21.00", "display": "with esophagitis, without bleeding", "note": ""},
+        {"code": "K21.01", "display": "with esophagitis, with bleeding", "note": ""}
+      ],
+      "match_hint": "cond.gerd",
+      "source_urls": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/definition-facts",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/symptoms-causes",
+        "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=56395"
+      ],
+      "notes": "Do not merge reflux symptom with established GERD. Common symptoms: heartburn, regurgitation; may include chest pain, nausea, dysphagia/odynophagia, chronic cough, hoarseness. Safety/referral features: chest pain, persistent vomiting, dysphagia/odynophagia, GI bleeding, unexplained weight loss."
+    },
+    {
+      "group": "gi",
+      "entity_type": "condition",
+      "name_en": "Functional dyspepsia",
+      "name_zh_draft": "功能性消化不良",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "K30", "display": "Functional dyspepsia", "note": ""}
+      ],
+      "match_hint": "cond.functional_dyspepsia",
+      "source_urls": [],
+      "notes": "Separate from generic epigastric pain, GERD, gastroparesis, gastritis."
+    },
+    {
+      "group": "gi",
+      "entity_type": "condition",
+      "name_en": "Gastroparesis",
+      "name_zh_draft": "胃輕癱 / 胃排空延遲",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "K31.84", "display": "", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/gastroparesis"
+      ],
+      "notes": "Delayed gastric emptying without mechanical obstruction. Common presentation: early satiety, prolonged fullness after eating, nausea, vomiting."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Bloating",
+      "name_zh_draft": "腹脹",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Coding varies; do not force to IBS. Useful clinical symptom."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Regurgitation",
+      "name_zh_draft": "反流 / 反芻感",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Coding depends on context. Common GERD manifestation."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Heartburn",
+      "name_zh_draft": "胃灼熱 / 火燒心",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Symptom coding exists but diagnosed GERD may be more appropriate; keep symptom separate."
+    },
+    {
+      "group": "gi",
+      "entity_type": "symptom",
+      "name_en": "Early satiety",
+      "name_zh_draft": "早飽",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R68.81", "display": "Early satiety", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Useful gastroparesis/dyspepsia observation."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "mixed",
+      "name_en": "Dysmenorrhea",
+      "name_zh_draft": "痛經 / 經痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N94.4", "display": "primary", "note": ""},
+        {"code": "N94.5", "display": "secondary", "note": ""},
+        {"code": "N94.6", "display": "unspecified", "note": ""}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://medlineplus.gov/periodpain.html",
+        "https://womenshealth.gov/menstrual-cycle/period-problems"
+      ],
+      "notes": "Preserve primary vs secondary; do not default to primary if etiology has not been assessed/documented. Canon has two separate entries, cond.primary_dysmenorrhea and cond.secondary_dysmenorrhea, so a single unqualified match would be ambiguous."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "mixed",
+      "name_en": "Irregular menstruation",
+      "name_zh_draft": "月經不規則",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N92.6", "display": "Irregular menstruation, unspecified", "note": "more specific N92.* codes exist"}
+      ],
+      "match_hint": "cond.irregular_menstruation",
+      "source_urls": [],
+      "notes": "Do not use if a more specific abnormality is documented. HHS Office on Women's Health describes irregular cycles using interval and month-to-month variability examples."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "symptom",
+      "name_en": "Abnormal uterine/vaginal bleeding",
+      "name_zh_draft": "異常子宮／陰道出血",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N93.9", "display": "Abnormal uterine and vaginal bleeding, unspecified", "note": "more specific codes exist"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [
+        "https://womenshealth.gov/menstrual-cycle/period-problems"
+      ],
+      "notes": "High safety relevance. Bleeding that differs from the expected menstrual pattern or occurs outside expected menstruation; bleeding after menopause should not be normalized as a routine 'menopause symptom' — HHS advises prompt medical evaluation."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "mixed",
+      "name_en": "Amenorrhea",
+      "name_zh_draft": "閉經",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N91.2", "display": "unspecified", "note": "more specific codes exist"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Pregnancy and underlying cause matter. Canon has cond.amenorrhea, but its name is specifically 'Secondary Amenorrhea' — not treated as an unambiguous match for this generic row."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "condition",
+      "name_en": "Premenstrual syndrome",
+      "name_zh_draft": "經前症候群",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N94.3", "display": "Premenstrual tension syndrome", "note": ""}
+      ],
+      "match_hint": "cond.pms",
+      "source_urls": [
+        "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+      ],
+      "notes": "PMDD is a different diagnosis; do not merge PMS with PMDD. Common manifestations: bloating, headache, mood changes/irritability, fatigue, other physical/emotional symptoms; cyclic, occurring after ovulation and before menstruation, improving soon after menstruation begins."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "mixed",
+      "name_en": "Menopausal symptoms / climacteric state",
+      "name_zh_draft": "更年期症狀 / 更年期狀態",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N95.1", "display": "", "note": ""}
+      ],
+      "match_hint": "cond.menopause_syndrome",
+      "source_urls": [
+        "https://womenshealth.gov/menopause/menopause-basics",
+        "https://womenshealth.gov/menopause/menopause-symptoms-and-relief"
+      ],
+      "notes": "Do not use for asymptomatic menopause if another code is appropriate. Common manifestations: irregular menstrual cycles during transition, hot flashes, sleep difficulty, mood changes, vaginal dryness, urinary/sexual symptoms may occur. Safety: vaginal bleeding after menopause requires medical evaluation."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "symptom",
+      "name_en": "Pelvic pain",
+      "name_zh_draft": "骨盆痛",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "R10.2", "display": "family", "note": "current more-specific pelvic pain variants may apply"}
+      ],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Track laterality if schema supports it. Canon has cond.chronic_pelvic_pain, a chronic-qualified subtype — not treated as an unambiguous match for this generic row."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "symptom",
+      "name_en": "Hot flashes",
+      "name_zh_draft": "熱潮紅 / 潮熱",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Commonly linked to menopausal state when clinically established, but do not invent menopause diagnosis from one symptom."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "symptom",
+      "name_en": "Heavy menstrual bleeding",
+      "name_zh_draft": "經血過多 / 月經量過多",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [
+        {"code": "N92.*", "display": "family", "note": ""}
+      ],
+      "match_hint": "cond.menorrhagia",
+      "source_urls": [],
+      "notes": "Cycle regularity matters."
+    },
+    {
+      "group": "womens_health",
+      "entity_type": "symptom",
+      "name_en": "Postmenopausal bleeding",
+      "name_zh_draft": "絕經後出血",
+      "aliases_en": [],
+      "aliases_zh_draft": [],
+      "icd10cm_candidates": [],
+      "match_hint": "none_found",
+      "source_urls": [],
+      "notes": "Safety-critical; requires prompt biomedical evaluation. Coding should use the specific documented diagnosis/symptom rather than a generic label."
+    }
+  ]
+}
