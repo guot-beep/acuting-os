@@ -913,7 +913,7 @@
         "formula.xiao_qing_long_tang",
         "formula.bai_du_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "pinyin_toned": "Má Huáng Tāng",
       "source_text_zh": "《傷寒論》",
       "authored_by": "model_draft",
@@ -2348,7 +2348,7 @@
         "formula.sang_ju_yin",
         "formula.ma_xing_shi_gan_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《溫病條辨》",
       "exact_source_url": "https://cloudtcm.com/formula/271",
       "fetched_at": "2026-07-23T07:08:38.467Z",
@@ -2899,7 +2899,7 @@
         "formula.yin_qiao_san",
         "formula.ma_xing_shi_gan_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《溫病條辨》",
       "exact_source_url": "https://cloudtcm.com/formula/162",
       "fetched_at": "2026-07-23T07:08:38.734Z",
@@ -3678,7 +3678,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "actions_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
@@ -3700,6 +3700,9 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/173",
@@ -3794,15 +3797,17 @@
         "+ More Gypsum Fibrosum"
       ],
       "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
         "Contraindicate for those with no Interior Heat.",
         "Do not use if the Yang Ming has been already attacked with constipation and abdominal pain.",
-        "Avoid acrid, oily or spicy foods while taking this formula.",
-        "HERB/DRUG INTERACTIONS"
+        "Avoid acrid, oily or spicy foods while taking this formula."
       ],
       "tongue_zh": "舌正常;苔薄黃",
-      "pulse_zh": "脈浮而微洪"
+      "pulse_zh": "脈浮而微洪",
+      "contraindications_zh": [
+        "無裡熱者不宜使用",
+        "陽明已受邪而見便秘、腹痛者不用",
+        "服藥期間忌辛辣、油膩之品"
+      ]
     },
     {
       "id": "formula.ge_gen_tang",
@@ -4256,7 +4261,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "actions_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
@@ -4275,6 +4280,9 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
@@ -4347,18 +4355,22 @@
         "+ Minor Invigorate the Channels Special Pill"
       ],
       "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
         "Contraindicated for those with Damp-Heat in the channels.",
         "Contraindicated for those with Exterior Wind-Heat.",
         "Contraindicated for those with Internal Heat.",
         "Contraindicated for those with Yin Deficiency with Exterior Invasion.",
-        "Contraindicated for those with a strong constitution.",
-        "HERB/DRUG INTERACTIONS"
+        "Contraindicated for those with a strong constitution."
       ],
       "tongue_zh": "舌淡,或略紫、有紫斑;苔白,或薄白而膩",
       "pulse_zh": "脈滑,或略浮,或浮而濡,或略澀,或遲而濡",
-      "composition_rebuilt_note": "組成原本只剩「人參」一味(方名截斷損毀,FORMULA_RESTORATION_AUDIT §3)。2026-08-06 由課件表 53 重建 12 味。"
+      "composition_rebuilt_note": "組成原本只剩「人參」一味(方名截斷損毀,FORMULA_RESTORATION_AUDIT §3)。2026-08-06 由課件表 53 重建 12 味。",
+      "contraindications_zh": [
+        "經絡濕熱者禁用",
+        "外感風熱者禁用",
+        "裡熱者禁用",
+        "陰虛而外感者禁用",
+        "體質強實者禁用"
+      ]
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -6114,9 +6126,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear the Nutritive Level Decoction",
@@ -6248,9 +6258,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -7203,7 +7211,7 @@
       "related_formulas": [
         "formula.zuo_jin_wan"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《醫宗金鑑》",
       "exact_source_url": "https://cloudtcm.com/formula/286",
       "fetched_at": "2026-07-23T07:08:42.257Z",
@@ -9830,14 +9838,13 @@
         "註： 以上藥物用量為古代用量，現代應用需根據患者具體情況調整。加入桂枝、桃仁是用於治療大熱之氣，熱甚搏血的情況。加入黃連、犀角用於疏利三焦，徹其本熱。"
       ],
       "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
         "Contraindicated during pregnancy.",
-        "Use extreme caution with weak patients, add tonics.",
-        "HERB/DRUG INTERACTIONS",
-        "This formula has been used with satisfactory results in treating drug overdose."
+        "Use extreme caution with weak patients, add tonics."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "孕婦禁用",
+        "體虛者須極慎用,宜加補益之品"
+      ],
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/277",
@@ -9872,9 +9879,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/277",
       "fetched_at": "2026-07-23T07:08:56.266Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "syndromes_zh": [
         "承氣湯證",
         "肺胃熱盛"
@@ -9940,7 +9945,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
@@ -9972,6 +9977,12 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為古籍條文(CloudTCM),en 為 AD 證型,兩源並記非逐條對譯"
+        ],
+        "modern_research_en": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)(原誤列於禁忌欄,已搬移)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "cloudtcm_id": 277,
@@ -10023,7 +10034,10 @@
         "Pelvic inflammatory disease"
       ],
       "tongue_zh": "舌淡紅而乾、有芒刺;苔黃或黑",
-      "pulse_zh": "脈沉實而數"
+      "pulse_zh": "脈沉實而數",
+      "modern_research_en": [
+        "This formula has been used with satisfactory results in treating drug overdose."
+      ]
     },
     {
       "id": "formula.zeng_ye_cheng_qi_tang",
@@ -10870,7 +10884,7 @@
         "formula.da_chai_hu_tang",
         "formula.ban_xia_xie_xin_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/43",
       "fetched_at": "2026-07-23T07:08:39.025Z",
@@ -11717,7 +11731,7 @@
         "formula.yue_ju_wan",
         "formula.chai_hu_shu_gan_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/219",
       "fetched_at": "2026-07-23T07:08:39.319Z",
@@ -12255,13 +12269,11 @@
         "formula.yue_ju_wan",
         "formula.chai_hu_shu_gan_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《醫統》",
       "exact_source_url": "https://cloudtcm.com/formula/65",
       "fetched_at": "2026-07-23T07:08:39.588Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "pharmacology_zh": "神經與精神系統\n\n1. 抗憂鬱\n\n調節神經傳導物質：影響大腦中的化學物質，如提升5-HT、多巴胺與正腎上腺素的含量，並增加調控神經元生長與可塑性的BDNF水平來緩解憂鬱。\n\n保護神經元：透過啟動細胞「自噬」機制清除受損物質，並調節MAPK、PI3K/AKT等細胞存活信號路徑，減少海馬迴等腦區的神經元凋亡。\n\n抗神經發炎：抑制腦部免疫細胞（小膠質細胞）的過度活化，進而降低IL-1β、TNF-α等促發炎因子的釋放。\n\n2. 抗焦慮\n\n調節壓力荷爾蒙：有效改善壓力反應系統（HPA軸）的功能紊亂，使體內過高的壓力荷爾蒙（皮質醇）恢復正常，從而發揮抗焦慮效果。\n\n3. 改善睡眠與認知\n\n研究顯示，其可作為輔助療法，改善中風後失眠、阿茲海默症相關認知障礙、帕金森氏症抑鬱等多種神經系統問題，並可改善慢性疲勞症候群患者的疲勞狀態。\n\n消化與代謝系統\n\n1. 調節腸胃功能\n\n透過調節「腦腸軸」，顯著改善功能性消化不良、腸躁症等壓力型腸胃問題。\n\n2. 全面保護肝臟\n\n對抗肝損傷：可降低肝細胞死亡，減輕脂肪堆積與發炎，並提升肝臟自身抗氧化能力（如增加穀胱甘肽、SOD等酵素活性），對部分藥物或化學物質誘導的肝損傷有預防效果。\n\n逆轉肝纖維化：抑制肝星狀細胞活化，阻斷關鍵的TGF-β1/Smad纖維化信號路徑，從而逆轉肝纖維化進程。\n\n婦科與內分泌系統\n\n1. 調節生殖內分泌軸\n\n可調節因肝鬱導致的HPG軸功能紊亂，讓紊亂的體內激素恢復平衡。例如，對乳腺增生或停經症候群，可降低過高的雌激素（E2）與泌乳素（PRL），此效果非直接補充荷爾蒙，而是起雙向調節作用。\n\n2. 改善婦科相關問題\n\n可用於治療多種與內分泌失調相關的婦科問題，包括經痛、月經不調、多囊性卵巢症候群（PCOS）、卵巢早衰或更年期症候群。部分研究也肯定其對改善不孕或子宮內膜環境的助益。\n\n免疫與發炎反應\n\n維持免疫平衡：具免疫調節作用，可調節Th1/Th2免疫反應的平衡，並抑制多種發炎因子的過度產生，在多種自體免疫疾病（如橋本氏甲狀腺炎）中觀察到減輕組織發炎損傷的效果。\n\n腫瘤輔助治療\n\n提高化療效果與安全性：研究發現，可影響化療藥物在血液及腦內的濃度與代謝，與抗肝癌化療藥5-FU併用可能具潛在增效作用（但需注意使用劑量）。\n\n抑制腫瘤生長：藥方中的某些活性成分（如芍藥苷、槲皮素等）可直接抑制乳癌、肝癌等腫瘤細胞的增生與轉移，或誘導其凋亡。\n\n提升生活品質：在肝癌等癌症治療中，有助於調節免疫力，改善患者因疾病和治療引起的疲勞、厭食、情緒低落等問題。",
       "syndromes_zh": [
         "肝脾不調",
@@ -12925,7 +12937,7 @@
         "formula.xiao_chai_hu_tang",
         "formula.da_chai_hu_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/67",
       "fetched_at": "2026-07-23T07:08:42.504Z",
@@ -13240,15 +13252,17 @@
       ],
       "modifications_zh": [],
       "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
         "Contraindicated for those with External Wind Invasion with fever.",
         "Contraindicated for those with Yin Deficiency.",
         "Use with caution during pregnancy.",
-        "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped.",
-        "HERB/DRUG INTERACTIONS"
+        "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "外感風邪發熱者禁用",
+        "陰虛者禁用",
+        "孕婦慎用",
+        "霍亂吐瀉止後即當停藥"
+      ],
       "safety_flags": [],
       "source_urls": [
         "https://www.sunten.com.tw/",
@@ -13283,9 +13297,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Regulate the Middle Pill",
@@ -13311,7 +13323,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
@@ -13324,6 +13336,9 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -14780,9 +14795,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/256",
       "fetched_at": "2026-07-23T07:08:47.071Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "syndromes_zh": [
         "少陰寒化證",
         "當歸四逆湯證",
@@ -14965,9 +14978,13 @@
       ],
       "modifications_zh": [],
       "contraindications_en": [
-        "Review cloying/digestive tolerance and acute excess patterns"
+        "Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation.",
+        "Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "實證而高熱、煩躁、口渴、便秘者禁用",
+        "虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用"
+      ],
       "herb_drug_cautions": [
         "cloying_digestive_effect",
         "medication_review"
@@ -15030,13 +15047,11 @@
         "formula.sheng_mai_san",
         "formula.yu_ping_feng_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《聖濟總錄》",
       "exact_source_url": "https://cloudtcm.com/formula/75",
       "fetched_at": "2026-07-23T07:08:39.847Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "pharmacology_zh": "白朮：有明顯而持久的利尿作用，且能促進電解質特別是鈉的排出，還能鎮靜、保護肝臟、防止肝糖元減少。\n\n人參：能興奮人體新陳代謝機能，又使血色素增加。\n\n茯苓：含有豐富的茯苓酶、葡萄糖、果糖及礦物質，有顯著的營養利尿作用。\n\n合為滋養強壯健胃利尿劑，綜觀全方：能興奮中樞神經系統，減輕疲乏感。有促使紅細胞、血色素及自細胞升高的作用。能增強機體的免疫功能，可糾正胃腸功能紊亂，並有護肝效能。故其強壯補養作用頗為突出，不僅有補氣之功，而且有補血之力，故為補氣與雙補氣血的基礎要方。",
       "syndromes_zh": [
         "肺氣虛",
@@ -15126,6 +15141,12 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "contraindications_en": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "cloudtcm_id": 75,
@@ -15409,7 +15430,7 @@
         "formula.sheng_mai_san",
         "formula.yu_ping_feng_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《醫學正傳》",
       "exact_source_url": "https://cloudtcm.com/formula/54",
       "fetched_at": "2026-07-23T07:08:40.130Z",
@@ -16403,7 +16424,7 @@
         "formula.sheng_mai_san",
         "formula.yu_ping_feng_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《脾胃論》",
       "exact_source_url": "https://cloudtcm.com/formula/262",
       "fetched_at": "2026-07-23T07:08:40.411Z",
@@ -16512,6 +16533,18 @@
         ],
         "pattern_indications_en": [
           "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(由搬移前 CloudTCM 原文濃縮,原文完整保留於 chinese_depth_track),en 為 AD 證型,兩源並記"
+        ],
+        "tongue_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md#Table253(正文 T/P 行;中文為回譯)"
+        ],
+        "tongue_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md#Table253(正文 T/P 行;中文為回譯)"
+        ],
+        "pulse_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md#Table253(正文 T/P 行;中文為回譯)"
+        ],
+        "pulse_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md#Table253(正文 T/P 行;中文為回譯)"
         ]
       },
       "cloudtcm_id": 262,
@@ -16593,7 +16626,11 @@
       "applications_zh": [
         "此方應用極廣，現代常用於治療肌肉弛緩性疾病，例如：子宮脫垂、胃肝脾腎等內臟下垂，胃粘膜脫垂、脫肛、疝氣、膀胱肌麻痹而導致排尿困難、重症肌無力、腸蠕動弛緩引起的虛性便秘等。",
         "內傷發熱，腹瀉、慢性肝炎，原發性低血壓，心律不整，失眠，頭痛，健忘，老年性失智，耳鳴，汗證、乳糜尿，崩漏，帶下，滑胎，惡性腫瘤及其放化療後毒副反應明顯者，麻痹性斜視，視神經及視網膜病變，慢性鼻炎，鼓膜內陷，復發性口瘡，慢性咽炎等辨證屬於中氣不足，清陽不升的多種疾病。"
-      ]
+      ],
+      "tongue_en": "pale with thin, white coating",
+      "tongue_zh": "舌淡;苔薄白",
+      "pulse_en": "flooding, deficient, or deficient & rootless at right Guan",
+      "pulse_zh": "脈洪大而虛,或虛而右關無根"
     },
     {
       "id": "formula.yu_ping_feng_san",
@@ -16918,15 +16955,17 @@
       ],
       "modifications_zh": [],
       "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
         "Use extreme caution with high fever.",
         "Use extreme caution for unresolved external cough.",
         "Do not use in initial stage flu in summer with mild conditions.",
-        "Do not use if Fluids are not yet injured.",
-        "HERB/DRUG INTERACTIONS"
+        "Do not use if Fluids are not yet injured."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "高熱者須極慎用",
+        "外感咳嗽未解者須極慎用",
+        "夏月外感初起之輕證不用",
+        "津液未傷者不用"
+      ],
       "safety_flags": [],
       "source_urls": [
         "https://www.sunten.com.tw/",
@@ -16961,9 +17000,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Generate the Pulse Powder",
@@ -16989,7 +17026,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
@@ -17002,6 +17039,9 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -17287,7 +17327,7 @@
       "related_formulas": [
         "formula.dang_gui_bu_xue_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/77",
       "fetched_at": "2026-07-23T07:08:40.994Z",
@@ -17718,7 +17758,7 @@
         "formula.shi_xiao_san",
         "formula.gui_zhi_fu_ling_wan"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《醫宗金鑑》",
       "exact_source_url": "https://cloudtcm.com/formula/171",
       "fetched_at": "2026-07-23T07:08:43.549Z",
@@ -18428,7 +18468,7 @@
         "formula.gui_pi_tang",
         "formula.zhi_gan_cao_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《瑞竹堂經驗方》",
       "exact_source_url": "https://cloudtcm.com/formula/18",
       "fetched_at": "2026-07-23T07:08:41.440Z",
@@ -18738,7 +18778,7 @@
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
         "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "actions_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
@@ -18761,6 +18801,12 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "modern_research_en": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)(原誤列於禁忌欄,已搬移)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/20",
@@ -18864,19 +18910,21 @@
         "+ Concha Ostreae"
       ],
       "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
-        "Contraindicated for those with Heat or Excess disorders.",
-        "HERB/DRUG INTERACTIONS",
+        "Contraindicated for those with Heat or Excess disorders."
+      ],
+      "tongue_zh": "舌淡;苔薄白",
+      "pulse_zh": "脈細弱",
+      "contraindications_zh": [
+        "熱證或實證者禁用"
+      ],
+      "modern_research_en": [
         "This formula may have a marked protective effect against chemotherapy- and radiation-induced toxicities.",
         "This formula may have a marked protective effect against cyclophosphamide- or prednisone-induced immuno-suppression.",
         "This formula may have a marked protective effect against carboplatin- or cisplatin-induced myclosuppression.",
         "This formula may have a marked protective effect against cis-diamminedichloroplatinum-induced nephrotoxicity and bone marrow toxicity.",
         "This formula may have a marked protective effect against interferon toxicity.",
         "This formula may have a marked protective effect against rifampin-induced neutropenia."
-      ],
-      "tongue_zh": "舌淡;苔薄白",
-      "pulse_zh": "脈細弱"
+      ]
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -19148,7 +19196,7 @@
         "formula.zuo_gui_wan",
         "formula.yi_guan_jian"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《小兒藥証直訣》",
       "exact_source_url": "https://cloudtcm.com/formula/55",
       "fetched_at": "2026-07-23T07:08:41.706Z",
@@ -20499,9 +20547,21 @@
       ],
       "modifications_zh": [],
       "contraindications_en": [
-        "Review heat signs, hypertension, pregnancy, cardiac disease, kidney disease, and medication context"
+        "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat.",
+        "Use with caution for those with gastrointestinal weakness.",
+        "Contraindicated for those with marked ascites.",
+        "Contraindicated for those with frequent diarrhea.",
+        "Contraindicated for those with facial flushing with fever.",
+        "Contraindicated during pregnancy."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "陰虛而口乾咽燥、舌紅無苔者禁用",
+        "胃腸虛弱者慎用",
+        "腹水顯著者禁用",
+        "經常腹瀉者禁用",
+        "面赤發熱者禁用",
+        "孕婦禁用"
+      ],
       "herb_drug_cautions": [
         "heat_signs",
         "kidney_disease_review",
@@ -20560,7 +20620,7 @@
       "related_formulas": [
         "formula.you_gui_wan"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "syndromes_zh": [
         "腎陽不足",
         "腰膝冷痛",
@@ -20626,6 +20686,15 @@
         ],
         "pulse_zh": [
           "譯自 tongue_en/pulse_en(American Dragon harvest 2026-08,scripts/fill-formula-tongue-pulse-zh.js 回譯為標準舌脈用語)"
+        ],
+        "modern_research_en": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)(原誤列於禁忌欄,已搬移)"
+        ],
+        "contraindications_en": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ]
       },
       "condition_tags_zh": [
@@ -20682,7 +20751,10 @@
         "Addison’s Disease"
       ],
       "tongue_zh": "舌淡胖;苔薄白而潤",
-      "pulse_zh": "脈沉,或沉細,或弱而遲"
+      "pulse_zh": "脈沉,或沉細,或弱而遲",
+      "modern_research_en": [
+        "This formula may be effective in treating side effects and adverse reactions, including dizziness, weight gain, perspiration and emotional disturbances associated with long-term prednisone use."
+      ]
     },
     {
       "id": "formula.zhi_gan_cao_tang",
@@ -21414,9 +21486,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Oyster Shell Powder",
@@ -21510,9 +21580,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "True Man’s Decoction to Nourish the Organs",
@@ -21640,9 +21708,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Four-Miracle Pill",
@@ -22129,11 +22195,7 @@
         "加減法：若心煩不眠，屬肝血不足，陰虛內熱較甚者，合二至丸或加生地黃、玄參、白芍等，以養血滋陰清熱。兼見盜汗甚者，加五味子、白芍、浮小麥以安神斂汗。",
         "心悸較重者，加龍齒、龜甲、珍珠母等以鎮驚安神。心悸多夢，時有驚醒，舌淡，脈細弦，屬心膽氣虛者，可加黨參、龍齒以益氣鎮驚。如精神抑鬱，心煩不眠較甚者，可合甘麥大棗湯加夜交藤、合歡皮以緩肝安神解鬱，或加入合歡花、夜交藤、石菖蒲、鬱金等解鬱安神之品，療效更好。"
       ],
-      "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
-        "HERB/DRUG INTERACTIONS"
-      ],
+      "contraindications_en": [],
       "contraindications_zh": [],
       "safety_flags": [],
       "source_urls": [
@@ -22631,7 +22693,7 @@
         "formula.gan_mai_da_zao_tang",
         "formula.huang_lian_e_jiao_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《校註婦人良方》",
       "exact_source_url": "https://cloudtcm.com/formula/58",
       "fetched_at": "2026-07-23T07:08:41.973Z",
@@ -22886,11 +22948,7 @@
         "Huang Qi"
       ],
       "modifications_zh": [],
-      "contraindications_en": [
-        "AND HERB/DRUG INTERACTIONS",
-        "CONTRAINDICATIONS",
-        "HERB/DRUG INTERACTIONS"
-      ],
+      "contraindications_en": [],
       "contraindications_zh": [],
       "safety_flags": [],
       "source_urls": [
@@ -22926,9 +22984,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/89",
       "fetched_at": "2026-07-23T07:08:48.678Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "pharmacology_zh": "〈甘草〉含類似去氧皮質酮的作用，能調整人體的內分泌，此方對睡眠時異常精神緊張，可降低大腦的興奮而易於進入睡眠狀態。對腦神經的異常興奮有抑制作用，使神經系的過敏狀態恢復正常。\n\n本方有鎮靜作用，可調整神經活動，緩和神經緊張，雖然是平淡之方，但對「臟躁證」確實有良好效果。\n\n本方具有鎮靜催眠、抗驚厥、解痙鎮痛、抗菌解熱等作用。",
       "syndromes_zh": [
         "心氣虛",
@@ -24540,7 +24596,7 @@
         "formula.gui_zhi_fu_ling_wan",
         "formula.tao_hong_si_wu_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《醫林改錯》",
       "exact_source_url": "https://cloudtcm.com/formula/109",
       "fetched_at": "2026-07-23T07:08:43.817Z",
@@ -26066,7 +26122,7 @@
       "related_formulas": [
         "formula.sheng_hua_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/249",
       "fetched_at": "2026-07-23T07:08:43.289Z",
@@ -26978,7 +27034,7 @@
       "related_formulas": [
         "formula.huo_xiang_zheng_qi_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/79",
       "fetched_at": "2026-07-23T07:08:43.027Z",
@@ -30415,7 +30471,7 @@
         "formula.bei_mu_gua_lou_san",
         "formula.ban_xia_bai_zhu_tian_ma_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/7",
       "fetched_at": "2026-07-23T07:08:42.776Z",
@@ -31627,9 +31683,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear the Qi and Transform Phlegm Pill",
@@ -33343,9 +33397,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Sedate the Liver and Extinguish Wind Decoction",
@@ -34128,9 +34180,7 @@
       "source_classic": "《證治準繩方》",
       "exact_source_url": "https://cloudtcm.com/formula/193",
       "fetched_at": "2026-07-23T07:08:50.319Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "symptoms_zh": [
         "食慾不振"
       ],
@@ -35908,7 +35958,7 @@
         "formula.ba_zhen_tang",
         "formula.zhi_gan_cao_tang"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "",
       "source_classic": "《濟生方》",
       "exact_source_url": "https://cloudtcm.com/formula/293",
       "fetched_at": "2026-07-23T07:08:40.680Z",
@@ -36681,9 +36731,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Fritillaria and Trichosanthes Fruit Powder",
@@ -36776,9 +36824,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -38075,9 +38121,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -38473,9 +38517,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -38565,9 +38607,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -40762,9 +40802,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -41471,9 +41509,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -42881,9 +42917,7 @@
       "source_classic": "《溫病條辨》",
       "exact_source_url": "https://cloudtcm.com/formula/114",
       "fetched_at": "2026-07-23T07:08:59.687Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "syndromes_zh": [
         "外感風熱",
         "外感風寒"
@@ -43142,9 +43176,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/62",
       "fetched_at": "2026-07-23T07:08:59.949Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "pharmacology_zh": "旋覆代赭湯的現代藥理研究尚較缺少，旋覆花所含旋覆花黃酮能緩解組織胺引起的豚鼠支氣管痙攣，故能平喘。對離體豚鼠氣管亦有抗組織胺作用，但較氨茶撿發生的作用慢而弱。旋覆花中含有大量的綠原酶與咖啡酸，而綠原酶則能顯著增強大鼠、小鼠的腸蠕動功能，還可提高大鼠的中取興奮性。代栳石主要含三氧化二鐵，含鐵量約占40%~60%，另含少量鎂、鈣、鋁、砷等雜質。\n\n生薑含有人體必需的十幾種氨基酸成分，對胃液的分泌有明顯的促進作用，能促進消化機能。半夏中含有豐富的生物驗性物質，這些物質對嘔吐有明顯的抑制作用，此外還具有鎮咳作用。\n\n人參能興奮中樞，使紅細胞及血色素增加，提高動物與人的體力與智力活動能力，並能增強機體對各種有害刺激的非特異性抵抗力，是一種全身性的強壯滋補藥。大棗含營養物質，有助千滋養。甘草有去痰止咳作用。綜觀全方，具有明顯的鎮吐作用、止咳平喘作用及滋補強壯作用。",
       "modern_diseases_zh": [
         "胃潰瘍",
@@ -43609,9 +43641,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": [],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
