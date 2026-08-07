@@ -6942,3 +6942,70 @@ html { scroll-padding-top: 92px; }
   font-size: 0.82em;
   font-style: italic;
 }
+
+/* 我的病例 on a knowledge card — the visits where this formula/point was used.
+   Deliberately restrained: this is a clinical record inside a study card, so it
+   reads as a list of rows, not as decorated cards competing with the content
+   above it. Only de-identified fields are ever rendered here. */
+.k-case-count { margin: 0 0 8px; color: #6b5b47; font-size: 0.9em; }
+.k-case-list { list-style: none; margin: 0; padding: 0; }
+.k-case-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(140, 120, 95, 0.16);
+}
+.k-case-list li:last-child { border-bottom: 0; }
+.k-case-open {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+.k-case-open .kc-code {
+  font-variant-numeric: tabular-nums;
+  color: #8a6d3b;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+.k-case-open .kc-title { color: #7b3f5d; font-weight: 600; }
+.k-case-open:hover .kc-title, .k-case-open:focus-visible .kc-title { text-decoration: underline; }
+.k-case-list .kc-meta { color: #8b8073; font-size: 0.84em; margin-left: auto; }
+.k-case-list .kc-verdict {
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.kc-improved { background: #e7f3ea; color: #2f6b45; }
+.kc-unchanged { background: #f0eee9; color: #6b6357; }
+.kc-worse { background: #f8e8e6; color: #96412f; }
+.kc-unclear { background: #f2eef7; color: #5f4c78; }
+
+/* English-source drawer on a bilingual list. The 中文 is the card's content;
+   the English source list supports it and must not out-weigh it, which is what
+   happened when 大黃牡丹湯 showed one Chinese contraindication above six
+   English ones. Closed by default, with the count on the label so nothing is
+   hidden — just not shouting. */
+.k-en-drawer { margin-top: 6px; }
+.k-en-drawer > summary {
+  cursor: pointer;
+  color: #8a7a63;
+  font-size: 0.84em;
+  font-style: italic;
+  list-style: none;
+  padding: 2px 0;
+}
+.k-en-drawer > summary::-webkit-details-marker { display: none; }
+.k-en-drawer > summary::before { content: "▸ "; font-style: normal; }
+.k-en-drawer[open] > summary::before { content: "▾ "; }
+.k-en-drawer > summary:hover { color: #6b5b47; }
+.k-en-drawer .k-detail-list { margin-top: 4px; color: #6f6558; font-size: 0.92em; }

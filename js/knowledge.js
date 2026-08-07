@@ -93,6 +93,13 @@
     const chip = e.target.closest("[data-concept-id]");
     if (chip) { setActiveConcept(chip.dataset.conceptId); return; }
     if (e.target.closest("[data-concept-clear]")) { setActiveConcept(null); }
+    // 我的病例 row → open that case in the case workspace. app.js owns the store
+    // and the navigation; this only asks.
+    const caseBtn = e.target.closest("[data-case-open]");
+    if (caseBtn && window.AcuTingCases && window.AcuTingCases.open) {
+      document.querySelector("[data-detail-close]")?.click();   // same idiom the formula chips use
+      window.AcuTingCases.open(caseBtn.dataset.caseOpen);
+    }
   });
 
   function resolveModernTag(raw) {
@@ -463,9 +470,16 @@
        English ones, and the 4 were invisible. Show both, separately labelled,
        so nothing is hidden and nothing is falsely paired. */
     if (z.length && e.length) {
+      /* The English goes in a drawer, closed. Printing it inline made 大黃牡丹湯
+         show one Chinese contraindication above six English ones — the English
+         out-weighed the content it was supposed to support, on a Chinese-first
+         card. It is one click away and the count is on the label, so nothing is
+         hidden and the 中文 leads. */
       return `${detailList(z, emptyText)}
-        <p class="k-unpaired-note">英文來源條目數不同，另列於下（不逐條對應）</p>
-        ${detailList(e, emptyText)}`;
+        <details class="k-en-drawer">
+          <summary>${esc(`英文來源另有 ${e.length} 條（不逐條對應）`)}</summary>
+          ${detailList(e, emptyText)}
+        </details>`;
     }
     return detailList(z.length ? z : e, emptyText);
   }
@@ -947,6 +961,32 @@
     return ["來源頁面 Source pages", links.join(""), true];
   }
 
+  /* 我的病例 — the visits where Ting actually prescribed this formula.
+     A formula card that cannot answer "where have I used this" is a reference
+     book; with it, the knowledge layer and the clinical record are one system.
+     Only de-identified fields cross over (see window.AcuTingCases): code, visit
+     number, date, title, verdict — never S/O/A/P text (DECISIONS D4/D7). */
+  function formulaCaseSection(record) {
+    const api = window.AcuTingCases;
+    if (!api || !api.usedIn) return "";
+    const rows = api.usedIn("formula", record.id);
+    if (!rows.length) return "";
+    const cases = new Set(rows.map((r) => r.caseId));
+    return `<p class="k-case-count">${esc(`${cases.size} 個病例 · ${rows.length} 次就診用過本方`)}</p>
+      <ul class="k-case-list">${rows.slice(0, 12).map((r) => {
+        const v = VERDICT_LABEL[r.verdict];
+        return `<li>
+          <button type="button" class="k-case-open" data-case-open="${esc(r.caseId)}">
+            <span class="kc-code">${esc(r.patientCode || "—")}</span>
+            <span class="kc-title">${esc(r.caseTitle || "未命名病例")}</span>
+          </button>
+          <span class="kc-meta">${esc([r.visitNumber ? `第 ${r.visitNumber} 診` : "", r.date].filter(Boolean).join(" · "))}</span>
+          ${v ? `<span class="kc-verdict kc-${esc(r.verdict)}">${esc(v[0])}</span>` : ""}
+        </li>`;
+      }).join("")}</ul>
+      ${rows.length > 12 ? `<p class="k-meta">${esc(`另有 ${rows.length - 12} 次，見病例區`)}</p>` : ""}`;
+  }
+
   function formulaSourceLinks(record) {
     const a = (url, label, note) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link"${note ? ` title="${esc(note)}"` : ""} style="margin-right:6px;display:inline-block;padding:2px 8px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:4px;color:#0284c7;font-size:0.85em;text-decoration:none;">${esc(label)} ↗</a>`;
     const out = [];
@@ -1234,7 +1274,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).

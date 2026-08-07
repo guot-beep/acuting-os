@@ -4906,6 +4906,58 @@ function createId(prefix) {
   return `${prefix}.${Date.now().toString(36)}.${Math.random().toString(36).slice(2, 8)}`;
 }
 
+/* Reverse lookup: which of Ting's own visits used this formula / point / drug.
+   The link already existed one way — a SOAP note stores formulaLinks — but a
+   formula card could not answer "where have I actually used this", which is the
+   difference between a reference book and a clinical record. The knowledge
+   cards live in js/knowledge.js and must not read the case store directly, so
+   app.js owns it and exposes this, the same way notes.js and review.js are
+   reached (window.AcuTingNotes / window.AcuTingReview).
+
+   De-identified by construction: only patient_code, visit number, date, the
+   case title and the outcome verdict cross this boundary. No S/O/A/P text, no
+   name, no birth date — a study card must never become a place patient
+   narrative leaks into (DECISIONS D4/D7). */
+window.AcuTingCases = {
+  usedIn(kind, id) {
+    if (!id) return [];
+    const field = { formula: "formulaLinks", point: "acupointLinks", drug: "medicationLinks" }[kind];
+    if (!field) return [];
+    const wanted = String(id).trim().toLowerCase();
+    const out = [];
+    for (const c of clinicalCases) {
+      for (const note of c.soapNotes || []) {
+        const links = (note[field] || []).map((x) => String(x).trim().toLowerCase());
+        if (!links.includes(wanted)) continue;
+        out.push({
+          caseId: c.id,
+          patientCode: c.patientCode || "",
+          caseTitle: c.caseTitle || "",
+          caseCategory: c.caseCategory || "",
+          visitNumber: note.visitNumber || "",
+          date: note.visitDate || note.date || "",
+          // The label travels with the value. Handing the card a bare key would
+          // make it invent its own vocabulary, which is exactly how the pattern
+          // layer ended up with two sets of field names.
+          verdict: note.outcomeVerdict || "",
+          verdictZh: OUTCOME_VERDICTS[note.outcomeVerdict]?.zh || "",
+          verdictTone: OUTCOME_VERDICTS[note.outcomeVerdict]?.tone || ""
+        });
+      }
+    }
+    return out.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  },
+  open(caseId) {
+    const found = clinicalCases.find((c) => c.id === caseId);
+    if (!found) return false;
+    selectedCaseId = caseId;
+    if (typeof caseSearch !== "undefined" && caseSearch) caseSearch.value = "";
+    renderClinicalCases();
+    goToSection("caseWorkspace");
+    return true;
+  }
+};
+
 function renderClinicalCases() {
   if (learnFromMode) return renderLearnFromReview();
   const filtered = getFilteredClinicalCases();
