@@ -104,6 +104,14 @@ const herbNames = (() => {
   return set;
 })();
 
+// Ids the composition may link to, so F12 can accept 制半夏 / (黨參) whose
+// display name is deliberately not the library's name (see the check itself).
+const herbIds = (() => {
+  if (!fs.existsSync(HERBS)) return new Set();
+  const j = JSON.parse(fs.readFileSync(HERBS, "utf8"));
+  return new Set((j.records || j).map((h) => String(h.id || "").trim()).filter(Boolean));
+})();
+
 const ROLE_OK = /^(君|臣|佐|使|chief|deputy|assistant|envoy)/i;
 // A whole sentence in the tag layer is the defect that destroyed the acupoint
 // search layer once already. But a flat character limit is the wrong test:
@@ -295,7 +303,17 @@ for (const r of recs) {
 
   // ── F12 composition → herb canon ─────────────────────────────────────────
   if (herbNames) {
-    const unknown = comp.map((c) => String(c?.herb_zh || "").trim())
+    /* The test is "can Ting look this ingredient up", not "is the display name
+       spelled exactly like the library entry". 制半夏, 薑炒厚朴 and (黨參) are
+       correct on a formula card — the processing and the substitution marker are
+       clinical information, and rewriting them to the base herb would delete it.
+       What matters is that the row links somewhere, so a resolving herb_id
+       counts. 127 entries were being reported as unknown while their name was
+       already clickable. An entry with neither a known name nor a resolving id
+       still fails, which is the case this code was written for. */
+    const unknown = comp
+      .filter((c) => !(c && c.herb_id && herbIds.has(String(c.herb_id).trim())))
+      .map((c) => String(c?.herb_zh || "").trim())
       .filter((n) => n && !herbNames.has(n));
     if (unknown.length) {
       flag(r, `中藥庫查無:${unknown.slice(0, 3).join("、")}`);

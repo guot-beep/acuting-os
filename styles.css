@@ -6930,3 +6930,15 @@ html { scroll-padding-top: 92px; }
 .rich-paragraph-gap {
   height: 0.6rem;
 }
+
+/* Unpaired bilingual lists. When the 中文 and English lists have different
+   lengths they are separate source lists, not a translation pair, so they are
+   shown one after the other with this line between them rather than zipped by
+   index (which would put the wrong English under a Chinese item) or the
+   English being dropped, which is what used to happen. */
+.k-unpaired-note {
+  margin: 6px 0 2px;
+  color: #8a7a63;
+  font-size: 0.82em;
+  font-style: italic;
+}

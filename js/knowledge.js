@@ -455,6 +455,18 @@
         return `<li><span class="kp-zh">${esc(zhStr)}</span><span class="kp-en">${esc(enStr)}</span></li>`;
       }).join("")}</ol>`;
     }
+    /* Lists of different lengths are not a broken translation — they are two
+       independent lists (a curated 中文 set against American Dragon's full
+       English one), which is why they must never be zipped by index. The old
+       fallback showed the Chinese and dropped the English entirely, hiding
+       content on 108 fields: 桂枝湯 has 3 Chinese contraindications and 4
+       English ones, and the 4 were invisible. Show both, separately labelled,
+       so nothing is hidden and nothing is falsely paired. */
+    if (z.length && e.length) {
+      return `${detailList(z, emptyText)}
+        <p class="k-unpaired-note">英文來源條目數不同，另列於下（不逐條對應）</p>
+        ${detailList(e, emptyText)}`;
+    }
     return detailList(z.length ? z : e, emptyText);
   }
 
