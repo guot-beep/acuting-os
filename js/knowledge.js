@@ -976,14 +976,18 @@
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
           // Ting removed the Tier tile long ago and wants this slot to be the
-          // source links instead — they are the pages she actually opens from a
-          // formula card, and having them only at the bottom of the Safety tab
-          // meant scrolling past the whole card to reach them. Both links, same
-          // hrefs as the bottom 來源 section (formulaSourceLinks) so the two can
-          // never disagree. Falls back to the tier when neither link exists, so
+          // CloudTCM link instead — it is the page she actually opens from a
+          // formula card. Falls back to the tier only when no link exists, so
           // the tile is never empty.
-          (record.cloudtcm_url || record.american_dragon_url)
-            ? ["來源 Sources", formulaSourceLinks(record), true]
+          //
+          // 2026-08-06: an attempt to put BOTH source links here was reverted.
+          // formulaSourceLinks() styles its chips for the pale Sources panel at
+          // the bottom of the card (white fill, blue text); dropped into this
+          // hero the tiles sit on a #70405d→#a05d7d gradient and read as glaring
+          // white blocks. Anything moved into the hero needs hero-native styling
+          // (translucent fill, light text), not the bottom panel's chips.
+          record.cloudtcm_url
+            ? ["雲端中醫 CloudTCM", `<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">開啟方劑頁面 ↗</a>`, true]
             : ["學習層級 Tier", record.tier || "draft"],
           // Ting wants the herbs themselves here, not a count — the tile is
           // the first thing she reads on a formula card. Falls back to pinyin
