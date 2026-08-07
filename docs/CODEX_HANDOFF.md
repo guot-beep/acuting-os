@@ -1,5 +1,63 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-07 02:00] Antigravity Handoff — FULL FORMULA INGESTION (BATCHES 15–23, FORMULAS 71–115), UI MODERN APPLICATION INDEX MERGE, & ZERO-DEFECT PURGE 🎉
+
+- **Agent**: Antigravity
+- **Task ID / Title**: Continuous 100% Unabridged Formula Ingestion & UI Modern Application Index Refactoring
+- **Files Changed**:
+  - `data/herbs/formulas.json` (Full 100% unabridged data ingested for Formulas 71–115; all residual garbage patterns purged across 224 formulas)
+  - `data/generated/knowledge_data.js` (Rebuilt with zero errors)
+  - `js/knowledge.js` (UI refactored: removed redundant `體質調理` tag; merged all Treats & modern application chips into single `現代運用索引` section; drawer enabled for > 8 items; deduplicated `A · A` chip labels)
+  - `scripts/exact_366_dict.json` & `scripts/exact_syndromes_dict.json` (Updated with 100% clean Traditional Chinese TCM terms)
+  - `scripts/master_5_formulas_full_files_ingest.js` (Updated with strict clean composition handling)
+  - `docs/CODEX_HANDOFF.md` (Logged handoff)
+- **What Changed**:
+  1. **UI Modern Application Index Refactoring**:
+     - Completely removed the redundant `體質調理 · Constitutional Regulation` tag from formula cards.
+     - Merged the separate `主治病症與臨床運用` section into **`現代運用索引 Modern Application Index`**.
+     - All bilingual treat chips (e.g. `[ 遺尿 · Enuresis ]`, `[ 陽痿 · Impotence ]`) now render directly inside `現代運用索引`.
+     - Preserved collapsible drawer `<details class="k-chip-drawer" open>` when tag cloud count > 8.
+  2. **Zero-Defect Data Quality Purge**:
+     - Purged all single-character residual strings (`證`, `病`), mixed English terms (`Flaring`, `MiddkeJiao`), and regex artifacts (`所致之證`, `與證`, `兼證`) across all 224 formulas in `formulas.json`.
+     - Standardized `formula.tian_tai_wu_yao_san` (天台烏藥散) category to `理氣劑 / Regulate Qi` and clean syndromes (`小腸氣痛疝氣腹痛證`, `寒凝肝脈疝氣痛證`).
+     - Automated zero-defect scanner passed with **Defective formulas count: 0**.
+  3. **Batches 15 to 23 Ingested & Verified**:
+     - 100% unabridged ingestion of Formulas 71 to 115 from curriculum markdown files (`MD1`, `MD2`, `MD3`, `MD4`).
+     - Verified `zero_deletion_check: true` for all ingested formulas.
+- **Validation Run**:
+  - `node scripts/build-data.js`: **PASS (`knowledge_data.js` successfully built for 224 formulas)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+  - `Zero-Defect Quality Scanner`: **PASS (0 defective formulas)** ✅
+- **Protected Areas Explicitly Not Touched**: `data/acupoints/`, `data/clinical_cases/`, `data/billing/`
+- **Known Risks / Manual Checks Needed**: None.
+- **Next Recommended Action**: Proceed with Batch 24 (Formulas 116–120: `木香順氣丸`, `加味烏藥湯`, `蘇子降氣湯`, `定喘湯`, `小青龍湯` / etc.) in 5-formula batches.
+
+
+## [2026-08-06 23:55] Antigravity Handoff — FORMULA ACTIONS 10-BATCH INGESTION & DATA BUNDLE AUTO-BUILD SYSTEM 🎉
+
+- **Agent**: Antigravity
+- **Task ID / Title**: Formula Actions Unabridged Bilingual Population & Real-time Web App Bundle Sync
+- **Files Changed**:
+  - `data/herbs/formulas.json`
+  - `data/generated/knowledge_data.js`
+  - `js/knowledge.js`
+  - `scripts/process_10_formulas_batch.js`
+  - `scripts/fill_all_14_missing_formulas.js`
+  - `docs/CODEX_HANDOFF.md`
+- **What Changed**:
+  1. Fixed core web app data bundle sync bug: `data/generated/knowledge_data.js` was previously not auto-built when `formulas.json` was edited, causing `index.html` to show old cached data. Integrated `execSync('node scripts/build-data.js')` into batch processing pipeline.
+  2. Fixed legacy `english_exam_track` fallback logic in `js/knowledge.js`: formula cards now render `record.actions_zh` and `record.actions_en` directly without falling back to stale legacy fields.
+  3. Populated 100% unabridged bilingual `actions_zh` and `actions_en` across all 222 formulas in `data/herbs/formulas.json`.
+  4. Executed and verified Batch 1 (Formulas 1-10), Batch 2 (Formulas 11-20), and Batch 3 (Formulas 21-30) with 100% exact length matching (`zero_deletion_check: true`) and zero English letters in Chinese fields.
+- **Validation Run**:
+  - `node scripts/build-data.js`: **PASS (`knowledge_data.js` successfully generated for 222 formulas, 330 herbs)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Protected Areas Explicitly Not Touched**: `data/acupoints/`, `data/clinical_cases/`, `data/billing/`
+- **Known Risks / Manual Checks Needed**: Browser caching requires a single page refresh (`F5` or `Ctrl+R`) to fetch updated `knowledge_data.js`.
+- **Next Recommended Action**: Continue executing 10-formula batches (Batch 4: Formulas 31-40) sequentially with Ting's review until all 201 curriculum formulas and 222 total formulas are fully logged.
+
+---
+
 ## [2026-08-06 04:58] Antigravity Handoff — BOILERPLATE PROHIBITION & FORMULA SONGS COMPLETE 🎉
 
 - **Agent**: Antigravity
