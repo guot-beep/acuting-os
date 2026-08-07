@@ -286,7 +286,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Release the exterior",
           "Harmonize ying and wei"
@@ -300,8 +300,7 @@
           "Add Hou Po and Xing Ren when wheezing pattern is discussed in classical modifications"
         ],
         "contraindications_en": [
-          "Use caution with high fever or warm disease pattern context",
-          "Review sweating, dehydration, pregnancy, and medication context"
+          "Use caution with high fever or warm disease pattern context"
         ]
       },
       "chinese_depth_track": {
@@ -878,7 +877,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Release exterior cold",
           "Promote sweating",
@@ -889,8 +888,7 @@
           "Cough/wheezing pattern context with exterior cold signs"
         ],
         "modifications_en": [
-          "Differentiate from Gui Zhi Tang when sweating is present",
-          "Review Ma Huang safety in cardiovascular or stimulant-sensitive contexts"
+          "Differentiate from Gui Zhi Tang when sweating is present"
         ],
         "contraindications_en": [
           "Pregnancy, hypertension, palpitations, insomnia, stimulant medication, or profuse sweating require review"
@@ -2317,7 +2315,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Release wind-heat",
           "Clear heat and support throat pattern differentiation"
@@ -2326,8 +2324,7 @@
           "Early-stage wind-heat pattern with fever, mild aversion to wind, sore throat context"
         ],
         "modifications_en": [
-          "Differentiate from Sang Ju Yin when cough is the leading presentation",
-          "Review fever red flags and infectious-disease referral context"
+          "Differentiate from Sang Ju Yin when cough is the leading presentation"
         ],
         "contraindications_en": [
           "Not for unreviewed severe infection, high fever, dehydration, or pediatric red flags"
@@ -2868,7 +2865,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Release wind-heat",
           "Diffuse Lung qi and support cough pattern differentiation"
@@ -2876,10 +2873,7 @@
         "pattern_indications_en": [
           "Wind-heat cough pattern with mild exterior signs"
         ],
-        "modifications_en": [
-          "Compare with Yin Qiao San when throat/heat signs dominate",
-          "Review persistent cough, dyspnea, fever, or pneumonia red flags"
-        ],
+        "modifications_en": [],
         "contraindications_en": [
           "Persistent or severe respiratory symptoms require medical review"
         ]
@@ -3193,12 +3187,8 @@
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [],
       "actions_en": [],
-      "pattern_indications_zh": [
-        "Case Study"
-      ],
-      "pattern_indications_en": [
-        "Case Study"
-      ],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
       "composition": [
         {
           "herb_zh": "香附",
@@ -3271,6 +3261,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "pattern_indications_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Indications 行);解析器原將 Case Study 病例段落黏入,2026-08-06 截去病例殘渣,中文層待填"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/317",
@@ -4138,11 +4131,9 @@
         "Circulates Qi and Blood",
         "Stops pain"
       ],
-      "pattern_indications_zh": [
-        "Wind-cold-damp invasion to deficient patient [high fever & severe pimples in the nape and chest [Toxins in the body]. This adopted boy was fed"
-      ],
+      "pattern_indications_zh": [],
       "pattern_indications_en": [
-        "Wind-cold-damp invasion to deficient patient [high fever & severe pimples in the nape and chest [Toxins in the body]. This adopted boy was fed"
+        "Wind-cold-damp invasion in a deficient patient"
       ],
       "composition": [
         {
@@ -4331,6 +4322,9 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "pattern_indications_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Indications 行);解析器原將 Case Study 病例段落黏入,2026-08-06 截去病例殘渣,中文層待填"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
@@ -5966,11 +5960,9 @@
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [],
       "actions_en": [],
-      "pattern_indications_zh": [
-        "Heat accumulation in the upper and middle jiao (blazing heat in Case Study"
-      ],
+      "pattern_indications_zh": [],
       "pattern_indications_en": [
-        "Heat accumulation in the upper and middle jiao (blazing heat in Case Study"
+        "Heat accumulation in the upper and middle jiao"
       ],
       "composition": [
         {
@@ -6084,6 +6076,9 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "pattern_indications_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Indications 行);解析器原將 Case Study 病例段落黏入,2026-08-06 截去病例殘渣,中文層待填"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/204",
@@ -7314,7 +7309,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Clear Liver/Gallbladder excess heat",
           "Drain damp-heat from lower burner pattern context"
@@ -7322,9 +7317,7 @@
         "pattern_indications_en": [
           "Liver/Gallbladder damp-heat or excess heat pattern context"
         ],
-        "modifications_en": [
-          "Review infection rule-out, urinary/genital symptoms, pregnancy, liver disease, and medication context"
-        ],
+        "modifications_en": [],
         "contraindications_en": [
           "Not for self-treatment of suspected infection, severe pain, fever, pregnancy bleeding, or liver disease without review"
         ]
@@ -8367,9 +8360,7 @@
           "in_formula_zh": "滋陰潤燥,清陰虛之熱"
         }
       ],
-      "pattern_indications_en": [
-        "Heat lurking in the Yin aspects of the body (usually due to later stages of a Warm-Heat pathogen)"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "夜熱早涼，熱退無汗：  這是青蒿鱉甲湯最典型的應用症狀。患者夜晚發熱，清晨熱退，但無汗，且熱勢自陰分而來。",
         "熱入陰分，邪伏血絡：  此症狀常見於溫病後期，邪氣深入陰分，或伏於血絡之中，導致持續低熱、夜間加重等症狀。",
@@ -8380,32 +8371,7 @@
         "陰中伏熱，夜間加重：  患者體內有伏熱，且在夜間症狀加重。",
         "熱入血室，邪結血分，長熱不退，夜多譫語：  熱邪深入血室，與血相結，導致持續高熱不退，夜間譫語等症狀。"
       ],
-      "modifications_en": [
-        "For Lung consumption:",
-        "For pronounced cough and wheezing:",
-        "+ Rx. Glehniae/ Adenophorae",
-        "Sha Shen",
-        "+ Cx. Mori",
-        "Sang Bai Pi",
-        "+ Hb. Ecliptae",
-        "Mo Han Lian",
-        "+ Rx. Asteris",
-        "Zi Wan",
-        "For summertime night fever and morning coolness (Yin Deficient Heat) in children:",
-        "For blazing Fire from Deficiency:",
-        "+ Rx. Cynanchi Atrati",
-        "Bai Wei",
-        "+ Rx. Cynanchi Atrati",
-        "Bai Wei",
-        "+ Caulis Nelumbinis",
-        "He Geng",
-        "+ Cx. Lycii",
-        "Di Gu Pi",
-        "For five sole Heat, yellow urine, and a red tongue with a yellow coat:",
-        "For fever of unknown origin due to Yin Deficiency:",
-        "+ Rz. Imperatae",
-        "Bai Mao Gen"
-      ],
+      "modifications_en": [],
       "modifications_zh": [
         "加減：",
         "陰虛血熱者： 可加桑葉、首烏、烏梅等藥物，增強滋陰養血之功。",
@@ -8436,7 +8402,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -8493,9 +8460,6 @@
         "applications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
-        "modifications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -8531,9 +8495,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
-        ],
         "condition_tags_zh": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
@@ -8545,6 +8506,12 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_modifications_en": [
+          "American Dragon MODIFICATIONS 清單 — 與 modifications_zh 粒度不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 567,
@@ -8609,6 +8576,35 @@
       "pattern_tags_en": [
         "Yin Deficiency",
         "Deficiency Heat"
+      ],
+      "ad_modifications_en": [
+        "For Lung consumption:",
+        "For pronounced cough and wheezing:",
+        "+ Rx. Glehniae/ Adenophorae",
+        "Sha Shen",
+        "+ Cx. Mori",
+        "Sang Bai Pi",
+        "+ Hb. Ecliptae",
+        "Mo Han Lian",
+        "+ Rx. Asteris",
+        "Zi Wan",
+        "For summertime night fever and morning coolness (Yin Deficient Heat) in children:",
+        "For blazing Fire from Deficiency:",
+        "+ Rx. Cynanchi Atrati",
+        "Bai Wei",
+        "+ Rx. Cynanchi Atrati",
+        "Bai Wei",
+        "+ Caulis Nelumbinis",
+        "He Geng",
+        "+ Cx. Lycii",
+        "Di Gu Pi",
+        "For five sole Heat, yellow urine, and a red tongue with a yellow coat:",
+        "For fever of unknown origin due to Yin Deficiency:",
+        "+ Rz. Imperatae",
+        "Bai Mao Gen"
+      ],
+      "ad_syndromes_en": [
+        "Heat lurking in the Yin aspects of the body (usually due to later stages of a Warm-Heat pathogen)"
       ]
     },
     {
@@ -8858,11 +8854,7 @@
         "泄瀉下痢",
         "皮膚濕疹瘙癢"
       ],
-      "pattern_indications_en": [
-        "Summer-heat with dampness pattern",
-        "Fever and thirst",
-        "Dysuria and dark burning urine"
-      ],
+      "pattern_indications_en": [],
       "composition": [
         {
           "herb_zh": "滑石",
@@ -8918,6 +8910,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/53",
@@ -8952,7 +8947,12 @@
             "甘草 3g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Summer-heat with dampness pattern",
+        "Fever and thirst",
+        "Dysuria and dark burning urine"
+      ]
     },
     {
       "id": "formula.wu_wei_xiao_du_yin",
@@ -9033,11 +9033,9 @@
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [],
       "actions_en": [],
-      "pattern_indications_zh": [
-        "Severe heat (fire) in both Qi & Blood levels [intense fever, strong and elbows when she had a fall 2 days ago. Other sx: flushed face, fast and"
-      ],
+      "pattern_indications_zh": [],
       "pattern_indications_en": [
-        "Severe heat (fire) in both Qi & Blood levels [intense fever, strong and elbows when she had a fall 2 days ago. Other sx: flushed face, fast and"
+        "Severe heat (fire) at both the Qi and Blood levels"
       ],
       "composition": [
         {
@@ -9202,6 +9200,9 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "pattern_indications_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Indications 行);解析器原將 Case Study 病例段落黏入,2026-08-06 截去病例殘渣,中文層待填"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -9459,9 +9460,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "modifications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -9511,6 +9509,10 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 32,
@@ -9542,32 +9544,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html",
       "tongue_en": "Pink with prickles or Red; coating: Yellow and dry or Black and dry",
       "pulse_en": "Deep, Excess and rapid or Slippery and rapid",
-      "applications_en": [
-        "Acute uncomplicated appendicitis",
-        "Acute cholecystitis",
-        "Acute pancreatitis",
-        "Uncomplicated intestinal obstruction",
-        "Postoperative constipation and distention",
-        "Roundworms in the bile duct",
-        "Early-stage dysentery",
-        "Pneumonia (especially in children)",
-        "Hypertension",
-        "Beriberi",
-        "Mania",
-        "Cholelithiasis",
-        "Acute icteric hepatitis",
-        "Stomach flu",
-        "Purulent tonsillitis",
-        "Asthma",
-        "Urolithiasis",
-        "Schizophrenia",
-        "Bi-polar disorder",
-        "Habitual constipation",
-        "Enteroparalysis",
-        "Organophosphorus poisoning",
-        "Convulsions",
-        "Abdominal pain"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌淡紅而有芒刺,或紅;苔黃燥或黑燥",
       "pulse_zh": "脈沉實而數,或滑數",
       "applications_zh": [
@@ -9592,6 +9569,32 @@
         "Yang Ming Fu Excess",
         "Yang Ming Pattern",
         "Interior Heat"
+      ],
+      "ad_treats_en": [
+        "Acute uncomplicated appendicitis",
+        "Acute cholecystitis",
+        "Acute pancreatitis",
+        "Uncomplicated intestinal obstruction",
+        "Postoperative constipation and distention",
+        "Roundworms in the bile duct",
+        "Early-stage dysentery",
+        "Pneumonia (especially in children)",
+        "Hypertension",
+        "Beriberi",
+        "Mania",
+        "Cholelithiasis",
+        "Acute icteric hepatitis",
+        "Stomach flu",
+        "Purulent tonsillitis",
+        "Asthma",
+        "Urolithiasis",
+        "Schizophrenia",
+        "Bi-polar disorder",
+        "Habitual constipation",
+        "Enteroparalysis",
+        "Organophosphorus poisoning",
+        "Convulsions",
+        "Abdominal pain"
       ]
     },
     {
@@ -9672,12 +9675,7 @@
           "in_formula_en": "Dissipates clumps, reduces distention, breaks up and descends stagnant Qi and unblocks bowels. With Hou Po, assists in moving Qi to expel the stool. With Da Huang, for Food and/or Qi Stagnation with distention and constipation."
         }
       ],
-      "pattern_indications_en": [
-        "Relatively mild Colon Excess Heat",
-        "Relatively mild Yang Ming Fu",
-        "Wen Bing Qi Stage Intestinal Dry Heat",
-        "Early-stage dysentery"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "陽明腑實證，出現痞、滿、實、熱症狀",
         "大便不通、便秘：大便燥結、堅硬，排便困難。",
@@ -9741,7 +9739,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -9820,9 +9819,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "modifications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -9859,9 +9855,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為古籍條文(CloudTCM),en 為 AD 證型,兩源並記非逐條對譯"
-        ],
         "condition_tags_zh": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
@@ -9873,6 +9866,13 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 40,
@@ -9900,32 +9900,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoChengQiTang.html",
       "tongue_en": "Dry with prickles; coating: Dark yellow and dry or Black and dry",
       "pulse_en": "Deep, Shi and rapid or Tenesmus Slippery and rapid",
-      "applications_en": [
-        "Acute uncomplicated appendicitis",
-        "Acute cholecystitis",
-        "Acute pancreatitis",
-        "Uncomplicated Intestinal obstruction",
-        "Postoperative constipation and distention",
-        "Roundworms in the bile duct",
-        "Early-stage dysentery",
-        "Pneumonia (especially in children)",
-        "Hypertension",
-        "Beriberi",
-        "Epilepsy",
-        "Food poisoning",
-        "Ephidrosis",
-        "Dysentery",
-        "Intestinal paralysis",
-        "Chronic gastritis",
-        "Viral hepatitis",
-        "Hydrothorax",
-        "Abdominal pain",
-        "Hiccups",
-        "Colitis",
-        "Ulcerative colitis",
-        "Abdominal fullness and distention",
-        "Diverticulitis"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌乾而有芒刺;苔深黃而燥,或黑而燥",
       "pulse_zh": "脈沉實而數;裡急後重者脈滑數",
       "applications_zh": [
@@ -9951,6 +9926,38 @@
       "pattern_tags_en": [
         "Yang Ming Pattern",
         "Interior Heat"
+      ],
+      "ad_treats_en": [
+        "Acute uncomplicated appendicitis",
+        "Acute cholecystitis",
+        "Acute pancreatitis",
+        "Uncomplicated Intestinal obstruction",
+        "Postoperative constipation and distention",
+        "Roundworms in the bile duct",
+        "Early-stage dysentery",
+        "Pneumonia (especially in children)",
+        "Hypertension",
+        "Beriberi",
+        "Epilepsy",
+        "Food poisoning",
+        "Ephidrosis",
+        "Dysentery",
+        "Intestinal paralysis",
+        "Chronic gastritis",
+        "Viral hepatitis",
+        "Hydrothorax",
+        "Abdominal pain",
+        "Hiccups",
+        "Colitis",
+        "Ulcerative colitis",
+        "Abdominal fullness and distention",
+        "Diverticulitis"
+      ],
+      "ad_syndromes_en": [
+        "Relatively mild Colon Excess Heat",
+        "Relatively mild Yang Ming Fu",
+        "Wen Bing Qi Stage Intestinal Dry Heat",
+        "Early-stage dysentery"
       ]
     },
     {
@@ -10032,12 +10039,7 @@
           "in_formula_zh": "調和諸藥、緩和藥性、補中益氣、緩解大黃、芒硝峻下之性，保護胃氣。"
         }
       ],
-      "pattern_indications_en": [
-        "Stomach Excess Heat",
-        "Colon Excess Heat",
-        "Yang Ming Fu",
-        "Wen Bing Qi Stage Intestinal Dry Heat"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "陽明腑實，胃腸積熱：  表現為大便秘結、腹脹滿痛、潮熱、譫語、口乾舌燥、苔黃燥或焦黃燥裂、脈沉實或滑數等。如《衛生寶鑒》所載：「陽證/胃實不大便。譫語」，以及「惡熱不惡寒、手心腋下濈濈汗出、胃中乾涸、燥糞結聚、潮熱、大便硬、小便如常、或腹滿而喘、或譫語、脈沉而滑」。",
         "發汗不解，蒸蒸發熱：  如《本草易讀》所言：「調胃承氣湯，炙草，大黃，芒硝，治發汗不解，蒸蒸發熱者。」",
@@ -10049,32 +10051,7 @@
         "便秘： 《類證治裁》：「〔便秘〕，調胃承氣湯，大黃，芒硝，炙草」。",
         "陽明胃實，汗出頭額： 《類證治裁》：「陽明胃實，亦汗出頭額，調胃承氣湯」。"
       ],
-      "modifications_en": [
-        "For damaged Yin characterizes by a faint or thin pulse:",
-        "For Excess Stomach and Intestinal Heat:",
-        "+ Clear the Stomach Powder",
-        "Qing Wei San",
-        "+ Haematitum",
-        "Dai Zhe Shi",
-        "+ Rx. Asparagi",
-        "Tian Men Dong",
-        "Rz. Cimicifugae",
-        "Sheng Ma",
-        "+ Rx. Ginseng",
-        "Ren Shen",
-        "Rx. Angelicae Sinensis",
-        "Dang Gui",
-        "For Excess Stomach and Intestinal Heat with severe, scanty urination:",
-        "+ 15g Gypsum Fibrosum",
-        "Shi Gao",
-        "+ 6g Fr. Gardeniae",
-        "Zhi Zi",
-        "+ Clear the Stomach Powder",
-        "Qing Wei San",
-        "+ 9g Rz. Alismatis",
-        "Ze Xie",
-        "For Excess Stomach and Intestinal Heat with severe Stomach Heat:"
-      ],
+      "modifications_en": [],
       "modifications_zh": [
         "桂枝(按病情加減)：辛散下焦蓄血，與桃仁合用可以加強活血化瘀之效。",
         "桃仁(按病情加減)：甘緩解小腹急結，與桂枝合用可以加強活血化瘀之效。",
@@ -10111,7 +10088,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -10186,9 +10164,6 @@
         "applications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
-        "modifications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "contraindications_en": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
@@ -10220,9 +10195,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為古籍條文(CloudTCM),en 為 AD 證型,兩源並記非逐條對譯"
-        ],
         "modern_research_en": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)(原誤列於禁忌欄,已搬移)"
         ],
@@ -10240,6 +10212,12 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_modifications_en": [
+          "American Dragon MODIFICATIONS 清單 — 與 modifications_zh 粒度不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 277,
@@ -10312,6 +10290,38 @@
       "pattern_tags_en": [
         "Yang Ming Pattern",
         "Interior Heat"
+      ],
+      "ad_modifications_en": [
+        "For damaged Yin characterizes by a faint or thin pulse:",
+        "For Excess Stomach and Intestinal Heat:",
+        "+ Clear the Stomach Powder",
+        "Qing Wei San",
+        "+ Haematitum",
+        "Dai Zhe Shi",
+        "+ Rx. Asparagi",
+        "Tian Men Dong",
+        "Rz. Cimicifugae",
+        "Sheng Ma",
+        "+ Rx. Ginseng",
+        "Ren Shen",
+        "Rx. Angelicae Sinensis",
+        "Dang Gui",
+        "For Excess Stomach and Intestinal Heat with severe, scanty urination:",
+        "+ 15g Gypsum Fibrosum",
+        "Shi Gao",
+        "+ 6g Fr. Gardeniae",
+        "Zhi Zi",
+        "+ Clear the Stomach Powder",
+        "Qing Wei San",
+        "+ 9g Rz. Alismatis",
+        "Ze Xie",
+        "For Excess Stomach and Intestinal Heat with severe Stomach Heat:"
+      ],
+      "ad_syndromes_en": [
+        "Stomach Excess Heat",
+        "Colon Excess Heat",
+        "Yang Ming Fu",
+        "Wen Bing Qi Stage Intestinal Dry Heat"
       ]
     },
     {
@@ -11088,14 +11098,15 @@
         "調和肝脾"
       ],
       "modifications_en": [
-        "Differentiate from Da Chai Hu Tang when interior excess signs are present",
-        "Review liver/gallbladder or febrile red flags"
+        "Differentiate from Da Chai Hu Tang when interior excess signs are present"
       ],
       "modifications_zh": [
         "小柴胡湯的加減：若胸中煩而不嘔，為熱聚於胸，去半夏、人參，加瓜蔞清熱理氣寬胸；渴者，是熱傷津液，去半夏，加天花粉止渴生津；腹中痛，是肝氣乘脾，宜去黃芩，加芍藥柔肝緩急止痛；脅下痞硬，是氣滯痰鬱，去大棗，加牡蠣軟堅散結；心下悸，小便不利，是水氣凌心，宜去黃芩，加茯苓利水寧心；不渴，外有微熱，是表邪仍在，宜去人參，加桂枝解表；咳者，是素有肺寒留飲，宜去人參、大棗、生薑，加五味子、乾薑溫肺止咳。"
       ],
       "contraindications_en": [
-        "Unexplained fever, severe abdominal pain, jaundice, or acute infection requires medical review"
+        "Long-term use may cause headache, dizziness, bleeding gums, or pneumonitis.",
+        "Use with caution for Liver Yang Rising, hypertension, or hematemesis due to Yin Deficiency.",
+        "Contraindicated for Yin or Blood Deficiency — Chai Hu is raising and dispersing while Huang Qin and Ban Xia are drying."
       ],
       "contraindications_zh": [
         "長期服用可能引起頭痛、頭暈，牙齦出血、肺炎",
@@ -11114,12 +11125,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Shao Yang Stage disorders",
-        "Gu Syndrome",
-        "Liver Qi Stagnation with Spleen Dampness",
-        "Heat in the Liver, Gallbladder, Stomach and/or Lungs"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "傷寒少陽證——往來寒熱,胸脅苦滿,默默不欲飲食,心煩喜嘔,口苦咽乾目眩,脈弦",
         "婦人熱入血室——經期感受風邪,經水不當斷而斷,寒熱發作",
@@ -11130,21 +11136,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "actions_en/pattern_indications_en 於 2026-08-06 由無來源草稿替換為 American Dragon harvest 版本(與 record 層一致);其餘欄位仍為舊摘要。",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Harmonizes and releases Shao Yang Stage disorders",
           "Relieves the Liver",
           "Harmonizes the Liver and Spleen"
         ],
-        "pattern_indications_en": [
-          "Shao Yang Stage disorders",
-          "Gu Syndrome",
-          "Liver Qi Stagnation with Spleen Dampness",
-          "Heat in the Liver, Gallbladder, Stomach and/or Lungs"
-        ],
+        "pattern_indications_en": [],
         "modifications_en": [
-          "Differentiate from Da Chai Hu Tang when interior excess signs are present",
-          "Review liver/gallbladder or febrile red flags"
+          "Differentiate from Da Chai Hu Tang when interior excess signs are present"
         ],
         "contraindications_en": [
           "Unexplained fever, severe abdominal pain, jaundice, or acute infection requires medical review"
@@ -11252,9 +11252,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -11287,8 +11284,18 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(由搬移前 CloudTCM 原文濃縮,原文完整保留於 chinese_depth_track),en 為 AD 證型,兩源並記"
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "modern_research_en": [
+          "American Dragon HERB/DRUG INTERACTIONS — 屬藥理與交互作用,不是禁忌,2026-08-06 歸位"
+        ],
+        "contraindications_en": [
+          "zh 為既有中文原文,en 為其對譯(內容與 American Dragon 2026-08 harvest 的禁忌條目一致);原值為無來源流程草稿,2026-08-06 替換"
         ]
       },
       "cloudtcm_id": 43,
@@ -11342,7 +11349,25 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoChaiHuTang.html",
       "tongue_en": "Pink; coating: Thin and white",
       "pulse_en": "Wiry",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌淡紅;苔薄白",
+      "pulse_zh": "脈弦",
+      "applications_zh": [
+        "千年以來小柴胡湯應用非常廣泛，可以說就是治萬病，現代臨床對於「小柴胡湯」的研究也非常多，歸納統計超過3000篇以上期刊論文，發現小柴胡湯可以改善以下疾病：",
+        "呼吸系統疾病：頑固性咳嗽、慢性阻塞性肺疾病（COPD）、肺部感染、支氣管哮喘、咳嗽變異性哮喘、肺炎（含支原體肺炎、社區獲得性肺炎）、肺結節、過敏性鼻炎、喉源性咳嗽、流行性感冒、肺纖維化、結核性胸膜炎、慢性阻塞性肺疾病急性加重期。",
+        "消化系統疾病：胃食管反流病（逆流性食道炎）、慢性萎縮性胃炎、慢性淺表性胃炎、功能性消化不良、潰瘍性結腸炎、膽石症、慢性膽囊炎、非酒精性脂肪性肝病、慢性乙型肝炎、肝硬化、膽汁反流性胃炎、習慣性便秘、消化性潰瘍、腸易激綜合徵（IBS）、幽門螺桿菌感染、膽囊切除術後綜合徵、酒精性肝病、原發性膽汁性膽管炎、胃癌前病變。",
+        "神經與精神系統疾病：難治性兒童癲癇、眩暈（含前庭性偏頭痛、椎-基底動脈供血不足、梅尼埃病、耳石症殘餘眩暈）、失眠症（不寐）、偏頭痛、注意缺陷多動障礙（ADHD）、抑鬱症、焦慮症、帕金森病、神經性耳鳴、腦卒中後遺症（眩暈、情感障礙）、阿爾茨海默病、梅杰綜合徵、周圍性面癱、軀體形式障礙。",
+        "惡性腫瘤及其併發症原發性肝癌、肺癌（含非小細胞肺癌）、乳腺癌、胰腺癌、卵巢癌、鼻咽癌、癌性發熱、癌性腹水、化療不良反應（噁心嘔吐、胃腸道反應）、TACE術後綜合徵。",
+        "內分泌與代謝系統疾病：2型糖尿病、糖尿病胃輕癱、糖尿病腎病、糖尿病視網膜病變、甲狀腺結節、橋本甲狀腺炎、亞急性甲狀腺炎、甲狀腺功能亢進、更年期綜合徵（圍絕經期綜合徵）、肥胖症、代謝綜合徵。",
+        "免疫、感染與風濕性疾病：新型冠狀病毒感染（COVID-19）及其後遺症、系統性紅斑狼瘡、類風濕關節炎、幼年特發性關節炎、布魯氏菌病、帶狀疱疹及其後遺神經痛、過敏性紫癜、恙蟲病、壞死性淋巴結炎、纖維肌痛綜合徵、復發性多軟骨炎。",
+        "皮膚科疾病蕁麻疹、特應性皮炎、慢性濕疹、銀屑病、痤瘡、慢性光化性皮炎、妊娠瘙癢性蕁麻疹性丘疹、脫髮（油風）。",
+        "心血管系統疾病高血壓、冠心病心絞痛、心律失常（如室性早搏）、心悸、病毒性心肌炎、心臟神經官能症、頸動脈粥樣硬化。",
+        "泌尿與腎臟系統疾病慢性腎臟病、IgA腎病、慢性腎小球腎炎、尿路感染（淋證）、腎性蛋白尿、腎周圍炎、膀胱過度活動症。",
+        "婦科與兒科特殊疾病月經過少、月經不調、盆腔炎性疾病、產後風濕、多囊卵巢綜合徵、小兒感冒、小兒腺樣體肥大、兒童性早熟、小兒多發性抽動症、小兒腸系膜淋巴結炎。",
+        "其他雜病亞健康狀態、運動性疲勞、頜骨骨髓炎、術後發熱、肋骨骨折",
+        "現代常運用小柴胡湯於：感冒、流行性感冒、過敏性氣喘、瘧疾、經期發熱、慢性肝炎、肝硬化、急慢性膽囊炎、膽結石、急性胰腺炎、胸膜炎、中耳炎、產褥熱、急性乳腺炎、睪丸炎、膽汁返流性胃炎、胃潰瘍等。"
+      ],
+      "ad_treats_en": [
         "Upper respiratory tract infection",
         "Influenza",
         "Acute bronchitis",
@@ -11368,22 +11393,18 @@
         "Gastroptosis",
         "Ulcer"
       ],
-      "tongue_zh": "舌淡紅;苔薄白",
-      "pulse_zh": "脈弦",
-      "applications_zh": [
-        "千年以來小柴胡湯應用非常廣泛，可以說就是治萬病，現代臨床對於「小柴胡湯」的研究也非常多，歸納統計超過3000篇以上期刊論文，發現小柴胡湯可以改善以下疾病：",
-        "呼吸系統疾病：頑固性咳嗽、慢性阻塞性肺疾病（COPD）、肺部感染、支氣管哮喘、咳嗽變異性哮喘、肺炎（含支原體肺炎、社區獲得性肺炎）、肺結節、過敏性鼻炎、喉源性咳嗽、流行性感冒、肺纖維化、結核性胸膜炎、慢性阻塞性肺疾病急性加重期。",
-        "消化系統疾病：胃食管反流病（逆流性食道炎）、慢性萎縮性胃炎、慢性淺表性胃炎、功能性消化不良、潰瘍性結腸炎、膽石症、慢性膽囊炎、非酒精性脂肪性肝病、慢性乙型肝炎、肝硬化、膽汁反流性胃炎、習慣性便秘、消化性潰瘍、腸易激綜合徵（IBS）、幽門螺桿菌感染、膽囊切除術後綜合徵、酒精性肝病、原發性膽汁性膽管炎、胃癌前病變。",
-        "神經與精神系統疾病：難治性兒童癲癇、眩暈（含前庭性偏頭痛、椎-基底動脈供血不足、梅尼埃病、耳石症殘餘眩暈）、失眠症（不寐）、偏頭痛、注意缺陷多動障礙（ADHD）、抑鬱症、焦慮症、帕金森病、神經性耳鳴、腦卒中後遺症（眩暈、情感障礙）、阿爾茨海默病、梅杰綜合徵、周圍性面癱、軀體形式障礙。",
-        "惡性腫瘤及其併發症原發性肝癌、肺癌（含非小細胞肺癌）、乳腺癌、胰腺癌、卵巢癌、鼻咽癌、癌性發熱、癌性腹水、化療不良反應（噁心嘔吐、胃腸道反應）、TACE術後綜合徵。",
-        "內分泌與代謝系統疾病：2型糖尿病、糖尿病胃輕癱、糖尿病腎病、糖尿病視網膜病變、甲狀腺結節、橋本甲狀腺炎、亞急性甲狀腺炎、甲狀腺功能亢進、更年期綜合徵（圍絕經期綜合徵）、肥胖症、代謝綜合徵。",
-        "免疫、感染與風濕性疾病：新型冠狀病毒感染（COVID-19）及其後遺症、系統性紅斑狼瘡、類風濕關節炎、幼年特發性關節炎、布魯氏菌病、帶狀疱疹及其後遺神經痛、過敏性紫癜、恙蟲病、壞死性淋巴結炎、纖維肌痛綜合徵、復發性多軟骨炎。",
-        "皮膚科疾病蕁麻疹、特應性皮炎、慢性濕疹、銀屑病、痤瘡、慢性光化性皮炎、妊娠瘙癢性蕁麻疹性丘疹、脫髮（油風）。",
-        "心血管系統疾病高血壓、冠心病心絞痛、心律失常（如室性早搏）、心悸、病毒性心肌炎、心臟神經官能症、頸動脈粥樣硬化。",
-        "泌尿與腎臟系統疾病慢性腎臟病、IgA腎病、慢性腎小球腎炎、尿路感染（淋證）、腎性蛋白尿、腎周圍炎、膀胱過度活動症。",
-        "婦科與兒科特殊疾病月經過少、月經不調、盆腔炎性疾病、產後風濕、多囊卵巢綜合徵、小兒感冒、小兒腺樣體肥大、兒童性早熟、小兒多發性抽動症、小兒腸系膜淋巴結炎。",
-        "其他雜病亞健康狀態、運動性疲勞、頜骨骨髓炎、術後發熱、肋骨骨折",
-        "現代常運用小柴胡湯於：感冒、流行性感冒、過敏性氣喘、瘧疾、經期發熱、慢性肝炎、肝硬化、急慢性膽囊炎、膽結石、急性胰腺炎、胸膜炎、中耳炎、產褥熱、急性乳腺炎、睪丸炎、膽汁返流性胃炎、胃潰瘍等。"
+      "ad_syndromes_en": [
+        "Shao Yang Stage disorders",
+        "Gu Syndrome",
+        "Liver Qi Stagnation with Spleen Dampness",
+        "Heat in the Liver, Gallbladder, Stomach and/or Lungs"
+      ],
+      "modern_research_en": [
+        "Acute pneumonitis may be associated with interferon in combination with this formula.",
+        "Concurrent use with Interleukin 2 may have a synergistic anti-tumor effect against murine renal cell carcinoma.",
+        "Concurrent use with antiviral drugs such as zidovudine (AZT), lamivudine (3TC), or AZT plus 3TC may have a synergistic antiviral effect.",
+        "Concurrent use with 5-fluorouracil (5-FU) may be synergistic in treating cancer.",
+        "This formula has a beneficial effect in preventing and/or treating damage induced by drugs such as halothane, danazol, D-galactosamine, and carbon tetrachloride."
       ]
     },
     {
@@ -11936,7 +11957,6 @@
         "調和肝脾"
       ],
       "modifications_en": [
-        "Compare with Jia Wei Xiao Yao San when heat signs are prominent",
         "Differentiate from Chai Hu Shu Gan San when qi stagnation pain dominates"
       ],
       "modifications_zh": [
@@ -11960,13 +11980,7 @@
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Liver Qi Stagnation Invades Stomach",
-        "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
-        "Liver Qi Stagnation with Blood Deficiency",
-        "Qi and Blood Stagnation",
-        "Blood Deficiency with Liver Qi Stagnation"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "肝鬱血虛,脾失健運證——兩脅作痛,頭痛目眩,口燥咽乾,神疲食少,月經不調,乳房脹痛,舌淡,脈弦而虛"
       ],
@@ -11980,7 +11994,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "actions_en/pattern_indications_en 於 2026-08-06 由無來源草稿替換為 American Dragon harvest 版本(與 record 層一致);其餘欄位仍為舊摘要。",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Pacifies the Liver",
           "Spreads Liver Qi",
@@ -11988,20 +12002,11 @@
           "Nourishes the Blood",
           "Harmonizes the Liver and Spleen"
         ],
-        "pattern_indications_en": [
-          "Liver Qi Stagnation Invades Stomach",
-          "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
-          "Liver Qi Stagnation with Blood Deficiency",
-          "Qi and Blood Stagnation",
-          "Blood Deficiency with Liver Qi Stagnation"
-        ],
+        "pattern_indications_en": [],
         "modifications_en": [
-          "Compare with Jia Wei Xiao Yao San when heat signs are prominent",
           "Differentiate from Chai Hu Shu Gan San when qi stagnation pain dominates"
         ],
-        "contraindications_en": [
-          "Review pregnancy, fertility medication timing, mood red flags, and herb-drug context"
-        ]
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -12109,9 +12114,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -12147,8 +12149,12 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 219,
@@ -12206,7 +12212,13 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoYaoSan.html",
       "tongue_en": "Pink; coating: Thin white or yellow",
       "pulse_en": "Wiry and Deficient or Wiry, tight and Deficient",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌淡紅;苔薄白或薄黃",
+      "pulse_zh": "脈弦而虛,或弦緊而虛",
+      "applications_zh": [
+        "現代臨床常用於：失眠健忘、肢體無力、神疲食少 、胸悶歎息、胸口灼熱、脅肋脹痛、胃脘疼痛、泛酸噯氣、腹中嘈雜、口燥咽乾、納獃腹脹、性慾減退、男子陽痿早泄、女子月經不調、乳房脹痛、月經痛、神經衰弱、神經官能症、精神分裂症、憂鬱症、子宮內膜異位、子宮肌瘤、經前緊張症、更年期綜合症、慢性肝炎、膽結石、膽囊炎、視神經炎、胃及十二指腸潰瘍、視乳頭炎、慢性甲狀腺炎、月經不調、不孕症、帶下、盆腔炎、濕疹、手掌角皮症。"
+      ],
+      "ad_treats_en": [
         "Chronic hepatitis",
         "Viral hepatitis",
         "Depression",
@@ -12232,10 +12244,12 @@
         "Meniere’s disease",
         "Candidiasis"
       ],
-      "tongue_zh": "舌淡紅;苔薄白或薄黃",
-      "pulse_zh": "脈弦而虛,或弦緊而虛",
-      "applications_zh": [
-        "現代臨床常用於：失眠健忘、肢體無力、神疲食少 、胸悶歎息、胸口灼熱、脅肋脹痛、胃脘疼痛、泛酸噯氣、腹中嘈雜、口燥咽乾、納獃腹脹、性慾減退、男子陽痿早泄、女子月經不調、乳房脹痛、月經痛、神經衰弱、神經官能症、精神分裂症、憂鬱症、子宮內膜異位、子宮肌瘤、經前緊張症、更年期綜合症、慢性肝炎、膽結石、膽囊炎、視神經炎、胃及十二指腸潰瘍、視乳頭炎、慢性甲狀腺炎、月經不調、不孕症、帶下、盆腔炎、濕疹、手掌角皮症。"
+      "ad_syndromes_en": [
+        "Liver Qi Stagnation Invades Stomach",
+        "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
+        "Liver Qi Stagnation with Blood Deficiency",
+        "Qi and Blood Stagnation",
+        "Blood Deficiency with Liver Qi Stagnation"
       ]
     },
     {
@@ -12445,10 +12459,7 @@
         "其他：慢性疲勞綜合症、骨關節炎、肋軟骨炎、貧血、免疫性血小板減少症、紅斑狼瘡、系統性硬化症、乾燥綜合症。",
         "逍遙散與加味逍遙散的現代研究"
       ],
-      "modifications_en": [
-        "Compare with Xiao Yao San when heat signs are absent",
-        "Review bleeding, pregnancy, and fertility contexts"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Review pregnancy, heavy bleeding, medication context, and severe mood symptoms"
@@ -12467,9 +12478,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Liver qi stagnation with heat signs in the Xiao Yao San pattern family"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "要了解「加味逍遙散」之前，必須理解「逍遙散」，此方始見於《太平惠民和劑局方》，之後即成為調和肝脾的經世名方，頗受古今醫家的推崇。",
         "逍遙散的主要功效是「疏肝解鬱、養血健脾」，而「加味逍遙散」則是在原本逍遙散的基礎上，加入「牡丹皮」與「梔子」這兩味清熱藥材。",
@@ -12526,22 +12535,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Soothe Liver qi",
           "Clear constrained heat",
           "Strengthen Spleen and nourish blood pattern context"
         ],
-        "pattern_indications_en": [
-          "Liver qi stagnation with heat signs in the Xiao Yao San pattern family"
-        ],
-        "modifications_en": [
-          "Compare with Xiao Yao San when heat signs are absent",
-          "Review bleeding, pregnancy, and fertility contexts"
-        ],
-        "contraindications_en": [
-          "Review pregnancy, heavy bleeding, medication context, and severe mood symptoms"
-        ]
+        "pattern_indications_en": [],
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -12636,6 +12638,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 65,
@@ -12689,7 +12694,10 @@
             "甘草 5g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Liver qi stagnation with heat signs in the Xiao Yao San pattern family"
+      ]
     },
     {
       "id": "formula.tong_xie_yao_fang",
@@ -13162,13 +13170,11 @@
         "散結",
         "消寒熱錯雜之痞滿"
       ],
-      "modifications_en": [
-        "Compare with Xiao Chai Hu Tang in shaoyang/digestive overlap",
-        "Review GI red flags"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Severe abdominal pain, blood in stool, persistent vomiting, dehydration, or weight loss requires medical review"
+        "Contraindicated for focal distention due to Qi Stagnation, Food Stagnation, or accumulation of Phlegm and Heat — this formula treats mixed excess-deficiency patterns.",
+        "Contraindicated for nausea and vomiting due to Yin Deficiency."
       ],
       "contraindications_zh": [
         "主治虛實互見之證，若因氣滯或食積所致的心下痞滿．不宜使用。",
@@ -13187,11 +13193,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
-        "Improper purging of the Shao Yang with underlying Stomach Deficiency",
-        "Damp-Heat in the gastrointestinal area"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "寒熱錯雜之痞證——心下痞滿而不痛,嘔吐,腸鳴下利,舌苔膩而微黃"
       ],
@@ -13200,22 +13202,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "actions_en/pattern_indications_en 於 2026-08-06 由無來源草稿替換為 American Dragon harvest 版本(與 record 層一致);其餘欄位仍為舊摘要。",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Harmonizes the Stomach",
           "Descends Rebellious Qi",
           "Disperses clumping",
           "Eliminates focal distention due to Cold and Heat factors"
         ],
-        "pattern_indications_en": [
-          "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
-          "Improper purging of the Shao Yang with underlying Stomach Deficiency",
-          "Damp-Heat in the gastrointestinal area"
-        ],
-        "modifications_en": [
-          "Compare with Xiao Chai Hu Tang in shaoyang/digestive overlap",
-          "Review GI red flags"
-        ],
+        "pattern_indications_en": [],
+        "modifications_en": [],
         "contraindications_en": [
           "Severe abdominal pain, blood in stool, persistent vomiting, dehydration, or weight loss requires medical review"
         ]
@@ -13321,9 +13316,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -13350,8 +13342,18 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "modern_research_en": [
+          "American Dragon HERB/DRUG INTERACTIONS — 屬藥理與交互作用,不是禁忌,2026-08-06 歸位"
+        ],
+        "contraindications_en": [
+          "zh 為既有中文原文,en 為其對譯(內容與 American Dragon 2026-08 harvest 的禁忌條目一致);原值為無來源流程草稿,2026-08-06 替換"
         ]
       },
       "cloudtcm_id": 67,
@@ -13407,7 +13409,19 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/BanXiaXieXinTang.html",
       "tongue_en": "Normal or with a red tip; coating: Thin, yellow and greasy",
       "pulse_en": "Wiry and rapid or Wiry, tight and rapid",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌正常或尖紅;苔薄黃而膩",
+      "pulse_zh": "脈弦數,或弦緊而數",
+      "applications_zh": [
+        "這三種瀉心湯不但可以治療脾胃疾病，更可以改善身心疾病。現代中醫運用半夏(生薑、甘草)瀉心湯之疾病清單分類如下：",
+        "消化系統疾病：凡因寒熱錯雜於中，損傷脾胃，導致中焦升降失司，證見心下痞悶、嘔吐，腸鳴、下利，食慾不振者均可應用半夏(生薑、甘草)瀉心湯或加減治療。近代用於治療很多消化系疾病，例如：胃脘嘈雜、嘔吐酸水、胃食道逆流、口臭、噯氣、厭食、食慾不振、胃炎(急性胃炎、淺表性胃炎、萎縮性胃炎、糜爛性胃炎、膽汁返流性胃炎、幽門梗阻、賁門痙攣）、十二指腸炎、潰瘍(胃潰瘍、胃十二指腸潰瘍、胃竇部潰瘍、胃角部潰瘍、胃大彎潰瘍、胃小彎潰瘍、消化系潰瘍）、上消化道出血、消化系潰瘍大出血、大腸激擾綜合症、賁門痙攣、急性腸炎、腹瀉、慢性結腸炎、小兒暑瀉、小兒消化不良、胃下垂、便秘、胃扭轉、膽囊炎、消化道腫瘤（胰頭腫瘤、賁門癌、食道中段癌術後綜合症）、病毒性肝炎、慢性活動性肝炎轉氨酶持續異常，胃粘膜脫垂、多涎症、假性胰腺襄腫等。",
+        "精神疾病：甘草瀉心湯方劑治尤其可改善各種自律神經失調症狀，包含各種精神病，例如：嚴重失眠、精神官能症、狐惑病、臟躁、歇斯底里、惡夢、夜遊症、癲病，尤其是「白塞氏綜合症」，類似於《金匱要略》之狐惑病之精神恍惚不安，治療效果很好。",
+        "婦科或男科陰部疾病：由於濕熱或痰熱內阻，致胸院痞悶，噁心嘔吐，或腸鳴腹瀉，寒熱夾雜，脾胃不和，升降失司者，均可用本方或加減治療。較多地用於妊娠惡阻的治療。陽痿、遺精，改善陰部或龜頭潰爛、腫癢有一定效果。",
+        "癌症：有醫家運用半夏瀉心湯治療食道癌、胰頭腫瘤、膽囊癌致肝轉移、賁門癌，均取得滿意療效。近幾年有報道用半夏瀉心湯配合化療，減少化療的毒副作用的。",
+        "其他：有醫家運用半夏瀉心湯還治療呼吸系統的痰熱喘咳、慢性支氣管炎；神經系統的失眠、頭痛、梅核氣。生殖系統的陽痿、早洩、遺精。五官科的過敏性鼻炎、口舌生瘡、梅尼爾氏綜合徵、慢性牙齒疾病。外科的手術後頑固性嘔吐，眼科術後嘔吐；皮膚科的濕疹、帶狀皰疹。此外，亦有報道用本方治療嗜酸性細胞增多症、舞蹈症、午時腋汗等，均有療效。",
+        "現代中醫對於半夏瀉心湯的運用"
+      ],
+      "ad_treats_en": [
         "Acute gastroenteritis",
         "Atrophic gastritis",
         "Chronic gastritis",
@@ -13433,16 +13447,13 @@
         "Genital warts",
         "Gastralgia"
       ],
-      "tongue_zh": "舌正常或尖紅;苔薄黃而膩",
-      "pulse_zh": "脈弦數,或弦緊而數",
-      "applications_zh": [
-        "這三種瀉心湯不但可以治療脾胃疾病，更可以改善身心疾病。現代中醫運用半夏(生薑、甘草)瀉心湯之疾病清單分類如下：",
-        "消化系統疾病：凡因寒熱錯雜於中，損傷脾胃，導致中焦升降失司，證見心下痞悶、嘔吐，腸鳴、下利，食慾不振者均可應用半夏(生薑、甘草)瀉心湯或加減治療。近代用於治療很多消化系疾病，例如：胃脘嘈雜、嘔吐酸水、胃食道逆流、口臭、噯氣、厭食、食慾不振、胃炎(急性胃炎、淺表性胃炎、萎縮性胃炎、糜爛性胃炎、膽汁返流性胃炎、幽門梗阻、賁門痙攣）、十二指腸炎、潰瘍(胃潰瘍、胃十二指腸潰瘍、胃竇部潰瘍、胃角部潰瘍、胃大彎潰瘍、胃小彎潰瘍、消化系潰瘍）、上消化道出血、消化系潰瘍大出血、大腸激擾綜合症、賁門痙攣、急性腸炎、腹瀉、慢性結腸炎、小兒暑瀉、小兒消化不良、胃下垂、便秘、胃扭轉、膽囊炎、消化道腫瘤（胰頭腫瘤、賁門癌、食道中段癌術後綜合症）、病毒性肝炎、慢性活動性肝炎轉氨酶持續異常，胃粘膜脫垂、多涎症、假性胰腺襄腫等。",
-        "精神疾病：甘草瀉心湯方劑治尤其可改善各種自律神經失調症狀，包含各種精神病，例如：嚴重失眠、精神官能症、狐惑病、臟躁、歇斯底里、惡夢、夜遊症、癲病，尤其是「白塞氏綜合症」，類似於《金匱要略》之狐惑病之精神恍惚不安，治療效果很好。",
-        "婦科或男科陰部疾病：由於濕熱或痰熱內阻，致胸院痞悶，噁心嘔吐，或腸鳴腹瀉，寒熱夾雜，脾胃不和，升降失司者，均可用本方或加減治療。較多地用於妊娠惡阻的治療。陽痿、遺精，改善陰部或龜頭潰爛、腫癢有一定效果。",
-        "癌症：有醫家運用半夏瀉心湯治療食道癌、胰頭腫瘤、膽囊癌致肝轉移、賁門癌，均取得滿意療效。近幾年有報道用半夏瀉心湯配合化療，減少化療的毒副作用的。",
-        "其他：有醫家運用半夏瀉心湯還治療呼吸系統的痰熱喘咳、慢性支氣管炎；神經系統的失眠、頭痛、梅核氣。生殖系統的陽痿、早洩、遺精。五官科的過敏性鼻炎、口舌生瘡、梅尼爾氏綜合徵、慢性牙齒疾病。外科的手術後頑固性嘔吐，眼科術後嘔吐；皮膚科的濕疹、帶狀皰疹。此外，亦有報道用本方治療嗜酸性細胞增多症、舞蹈症、午時腋汗等，均有療效。",
-        "現代中醫對於半夏瀉心湯的運用"
+      "ad_syndromes_en": [
+        "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
+        "Improper purging of the Shao Yang with underlying Stomach Deficiency",
+        "Damp-Heat in the gastrointestinal area"
+      ],
+      "modern_research_en": [
+        "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
       ]
     },
     {
@@ -14288,13 +14299,7 @@
           "in_formula_zh": "益氣強中,緩附薑辛熱燥烈之性並解其毒"
         }
       ],
-      "pattern_indications_en": [
-        "Heart Yang Deficiency Exhaustion: Yang Xu Jue Ni",
-        "Kidney Yang Deficiency with Internal Cold",
-        "Shao Yin Cold",
-        "Yang Ming Han",
-        "Excess use of diaphoretics in Tai Yang Stage leading to loss of Yang"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "少陰病,陽虛陰盛——四肢厥逆,惡寒蜷臥,腹痛下利,神疲欲寐,脈沉微細",
         "亡陽證——大汗淋漓,四肢厥冷,脈微欲絕"
@@ -14352,7 +14357,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -14436,9 +14442,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "modifications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -14474,9 +14477,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
-        ],
         "condition_tags_zh": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
@@ -14488,6 +14488,13 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 483,
@@ -14515,32 +14522,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiNiTang.html",
       "tongue_en": "Pale or Dark purple; coating: White and slippery",
       "pulse_en": "Deep and thready or Deep and slow or Deep and faint",
-      "applications_en": [
-        "Acute myocardial",
-        "infarction",
-        "Cardiac insufficiency",
-        "Hypopituitarism",
-        "Vomiting and diarrhea due to acute and chronic gastroenteritis",
-        "Hypothyroidism",
-        "Cerebrovascular insufficiency",
-        "Acute gastroenteritis",
-        "Cirrhosis of the Liver",
-        "Chronic prostatitis",
-        "Intoxication",
-        "Arthritis",
-        "Influenza",
-        "Constipation",
-        "Abdominal pain",
-        "Palpitations",
-        "Fatigue",
-        "Chronic nephritis",
-        "Congestive Heart failure",
-        "Perspiration on the extremities",
-        "Dyspnea",
-        "Painful obstruction",
-        "Adrenal insufficiency",
-        "Edema"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌淡或暗紫;苔白滑",
       "pulse_zh": "脈沉細,或沉遲,或沉微",
       "applications_zh": [
@@ -14578,6 +14560,39 @@
         "Yang Deficiency",
         "Interior Cold",
         "Shao Yin Pattern"
+      ],
+      "ad_treats_en": [
+        "Acute myocardial",
+        "infarction",
+        "Cardiac insufficiency",
+        "Hypopituitarism",
+        "Vomiting and diarrhea due to acute and chronic gastroenteritis",
+        "Hypothyroidism",
+        "Cerebrovascular insufficiency",
+        "Acute gastroenteritis",
+        "Cirrhosis of the Liver",
+        "Chronic prostatitis",
+        "Intoxication",
+        "Arthritis",
+        "Influenza",
+        "Constipation",
+        "Abdominal pain",
+        "Palpitations",
+        "Fatigue",
+        "Chronic nephritis",
+        "Congestive Heart failure",
+        "Perspiration on the extremities",
+        "Dyspnea",
+        "Painful obstruction",
+        "Adrenal insufficiency",
+        "Edema"
+      ],
+      "ad_syndromes_en": [
+        "Heart Yang Deficiency Exhaustion: Yang Xu Jue Ni",
+        "Kidney Yang Deficiency with Internal Cold",
+        "Shao Yin Cold",
+        "Yang Ming Han",
+        "Excess use of diaphoretics in Tai Yang Stage leading to loss of Yang"
       ]
     },
     {
@@ -15365,11 +15380,11 @@
         "Strengthen Spleen"
       ],
       "actions_zh": [
-        "本方的主要功用，就是「益氣健脾」，本方證由脾胃氣虛，運化乏力所致。脾胃為後天之本，氣血生化之源，脾胃氣虛，受納與健運乏力，則飲食減少；濕濁內生，故大便溏薄；脾主肌肉，脾胃氣虛，四肢肌肉無所稟受，故四肢乏力；氣血生化不足。"
+        "益氣",
+        "健脾"
       ],
       "modifications_en": [
-        "Base formula for Liu Jun Zi Tang and related qi-tonifying comparisons",
-        "Review damp/phlegm signs before choosing variants"
+        "Base formula for Liu Jun Zi Tang and related qi-tonifying comparisons"
       ],
       "modifications_zh": [],
       "contraindications_en": [
@@ -15392,14 +15407,10 @@
       "fertility_notes": "",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Spleen qi deficiency pattern context with fatigue, low appetite, loose stool tendency"
+        "Spleen and Stomach Qi Deficiency: pale complexion, weak voice, shortness of breath, fatigue, poor appetite, loose stools, pale tongue with white coating, weak pulse"
       ],
       "pattern_indications_zh": [
-        "血不足不榮於面，而見面色萎白；脾為肺之母，脾胃一虛，肺氣先絕，故見氣短、語聲低微；舌淡苔白，脈虛弱皆為氣虛之象。脾胃氣虛，運化力弱，氣血乏源是本證的基本病機。",
-        "《黃帝內經》提到：「人受氣於谷，谷入於胃，以傳於肺，五臟六陰皆以受氣。」由於脾主運化，胃主受納，五肵六腑四肢百骸皆賴其所消化轉輸的水谷褚微以充養之，故被稱為後天之本，氣血生化之源。",
-        "若脾胃氣虛，健運失職，胃納不振，則飲食減少，大便溏薄，氣血生化不足，臟腑組織器官失於濡養，以致臟腑怯弱，營衛不足，則面色矮白，語聲低飲，脾氣虧虛，肢體失養，則四肢倦怠。",
-        "本方諸藥相輔相成，配伍嚴謹，藥簡力專，頗合脾欲甘，喜燥惡濕，喜通惡滯的生理特性，體現了治療脾胃氣虛證的基本大法。本方配伍特點為：以益氣補脾為主，伍以祛濕助運之品，補中兼行，溫而不燥，為平補脾胃之良方。",
-        "現代運用於慢性胃炎、胃及十二指腸潰瘍等屬脾氣虛者，以及乙型肝炎、冠心病、慢性腎炎、妊娠胎動不安，小兒感染後脾虛綜合症、小兒低熱、小兒鼻衄等辨證屬脾胃氣虛的多種疾患。"
+        "脾胃氣虛證——面色萎白,語聲低微,氣短乏力,食少便溏,舌淡苔白,脈虛弱"
       ],
       "related_conditions": [
         "pattern.spleen_qi_deficiency"
@@ -15408,28 +15419,23 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Tonify qi",
           "Strengthen Spleen"
         ],
-        "pattern_indications_en": [
-          "Spleen qi deficiency pattern context with fatigue, low appetite, loose stool tendency"
-        ],
+        "pattern_indications_en": [],
         "modifications_en": [
-          "Base formula for Liu Jun Zi Tang and related qi-tonifying comparisons",
-          "Review damp/phlegm signs before choosing variants"
+          "Base formula for Liu Jun Zi Tang and related qi-tonifying comparisons"
         ],
-        "contraindications_en": [
-          "Review cloying/digestive tolerance and acute excess patterns"
-        ]
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
         "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
         "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
-        "fang_yi_zh": "",
-        "zhu_zhi_zh": ""
+        "fang_yi_zh": "本方諸藥相輔相成，配伍嚴謹，藥簡力專，頗合脾欲甘，喜燥惡濕，喜通惡滯的生理特性，體現了治療脾胃氣虛證的基本大法。本方配伍特點為：以益氣補脾為主，伍以祛濕助運之品，補中兼行，溫而不燥，為平補脾胃之良方。",
+        "zhu_zhi_zh": "本方的主要功用，就是「益氣健脾」，本方證由脾胃氣虛，運化乏力所致。脾胃為後天之本，氣血生化之源，脾胃氣虛，受納與健運乏力，則飲食減少；濕濁內生，故大便溏薄；脾主肌肉，脾胃氣虛，四肢肌肉無所稟受，故四肢乏力；氣血生化不足。\n血不足不榮於面，而見面色萎白；脾為肺之母，脾胃一虛，肺氣先絕，故見氣短、語聲低微；舌淡苔白，脈虛弱皆為氣虛之象。脾胃氣虛，運化力弱，氣血乏源是本證的基本病機。\n《黃帝內經》提到：「人受氣於谷，谷入於胃，以傳於肺，五臟六陰皆以受氣。」由於脾主運化，胃主受納，五肵六腑四肢百骸皆賴其所消化轉輸的水谷褚微以充養之，故被稱為後天之本，氣血生化之源。\n若脾胃氣虛，健運失職，胃納不振，則飲食減少，大便溏薄，氣血生化不足，臟腑組織器官失於濡養，以致臟腑怯弱，營衛不足，則面色矮白，語聲低飲，脾氣虧虛，肢體失養，則四肢倦怠。"
       },
       "tier": "core",
       "category": "補益劑 / Tonify",
@@ -15518,9 +15524,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -15543,6 +15546,30 @@
         ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "actions_zh": [
+          "CloudTCM 方劑頁——原整段敘述誤置於 actions_zh/pattern_indications_zh,2026-08-06 搬移歸位;功效與主治改為對齊的條列"
+        ],
+        "pattern_indications_zh": [
+          "CloudTCM 方劑頁——原整段敘述誤置於 actions_zh/pattern_indications_zh,2026-08-06 搬移歸位;功效與主治改為對齊的條列"
+        ],
+        "pattern_indications_en": [
+          "CloudTCM 方劑頁——原整段敘述誤置於 actions_zh/pattern_indications_zh,2026-08-06 搬移歸位;功效與主治改為對齊的條列"
+        ],
+        "chinese_depth_track.zhu_zhi_zh": [
+          "CloudTCM 方劑頁——原整段敘述誤置於 actions_zh/pattern_indications_zh,2026-08-06 搬移歸位;功效與主治改為對齊的條列"
+        ],
+        "chinese_depth_track.fang_yi_zh": [
+          "CloudTCM 方劑頁——原整段敘述誤置於 actions_zh/pattern_indications_zh,2026-08-06 搬移歸位;功效與主治改為對齊的條列"
+        ],
+        "applications_zh": [
+          "CloudTCM 方劑頁——原整段敘述誤置於 actions_zh/pattern_indications_zh,2026-08-06 搬移歸位;功效與主治改為對齊的條列"
+        ],
+        "ad_treats_en": [
+          "American Dragon 清單 — 與中文粒度不同,2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 75,
@@ -15589,7 +15616,16 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiJunZiTang.html",
       "tongue_en": "Pale and flabby - may have teeth marks; coating: White",
       "pulse_en": "Even, forceless and deficient",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌淡胖,或有齒痕;苔白",
+      "pulse_zh": "脈虛緩無力",
+      "ad_syndromes_en": [
+        "Spleen qi deficiency pattern context with fatigue, low appetite, loose stool tendency"
+      ],
+      "applications_zh": [
+        "現代運用於慢性胃炎、胃及十二指腸潰瘍等屬脾氣虛者，以及乙型肝炎、冠心病、慢性腎炎、妊娠胎動不安，小兒感染後脾虛綜合症、小兒低熱、小兒鼻衄等辨證屬脾胃氣虛的多種疾患。"
+      ],
+      "ad_treats_en": [
         "Neurasthenia",
         "Chronic gastritis",
         "Peptic ulcer",
@@ -15614,9 +15650,7 @@
         "Chronic dysentery",
         "Common cold",
         "Emphysema"
-      ],
-      "tongue_zh": "舌淡胖,或有齒痕;苔白",
-      "pulse_zh": "脈虛緩無力"
+      ]
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -15743,10 +15777,7 @@
         "六君子湯始見於《醫學正傳》後收錄於《太平惠民和劑局方》，後世運用本方所治甚廣，是中醫臨床處方用藥的重要方法。",
         "清代名醫柯琴在本方基礎上又加木香、砂仁，創造出「香砂六君子湯」，用於治療脾胃氣虛，濕陽氣滯之證，該方與六君子湯均在臨床亨有盛譽，被歷代醫家廣為沿用。"
       ],
-      "modifications_en": [
-        "Compare with Si Jun Zi Tang when phlegm/nausea signs are absent",
-        "Review cough/phlegm or digestive pattern context"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Review dryness, pregnancy, and medication context when using phlegm-transforming herbs"
@@ -15766,9 +15797,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Spleen qi deficiency with phlegm-damp and qi stagnation context"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "六君子湯的主要功效，就是「益氣健牌，燥濕化痰，理氣降逆」，用來改善脾胃氣虛，兼有痰濕的現象，同時出現面色白、講話沒力、氣短乏力、食慾不振、大便溏瀉、咳嗽且痰多色白、噁心嘔吐、胸悶，舌淡苔白膩，脈虛。",
         "傳統中醫認為「脾主運化」，將飲食中吸收的水谷精微轉輸至心肺，進而營養全身各臟腑組織器官。同時吸收食物中的水液，亦將其轉輸至心肺。",
@@ -15791,22 +15820,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Tonify Spleen qi",
           "Transform phlegm",
           "Regulate qi"
         ],
-        "pattern_indications_en": [
-          "Spleen qi deficiency with phlegm-damp and qi stagnation context"
-        ],
-        "modifications_en": [
-          "Compare with Si Jun Zi Tang when phlegm/nausea signs are absent",
-          "Review cough/phlegm or digestive pattern context"
-        ],
-        "contraindications_en": [
-          "Review dryness, pregnancy, and medication context when using phlegm-transforming herbs"
-        ]
+        "pattern_indications_en": [],
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -15907,6 +15929,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 54,
@@ -15958,7 +15983,10 @@
             "半夏 12g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Spleen qi deficiency with phlegm-damp and qi stagnation context"
+      ]
     },
     {
       "id": "formula.xiang_sha_liu_jun_zi_tang",
@@ -16744,10 +16772,7 @@
         "升舉下陷之陽氣",
         "升提下垂之臟器"
       ],
-      "modifications_en": [
-        "Compare with Si Jun Zi Tang for simple qi deficiency",
-        "Review fever, infection, hypertension, and pregnancy contexts"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Use caution with uncontrolled hypertension, acute infection, or unreviewed bleeding/prolapse context"
@@ -16768,13 +16793,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Central Qi Sinking",
-        "Spleen Not Governing Blood",
-        "Spleen and Lung Qi Deficiency: Yin Fire due to Spleen and Lung Qi Deficiency",
-        "Gu Syndrome",
-        "Atrophy disorder (Wei Syndrome) due to Spleen and Stomach Qi Deficiency"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "脾胃氣虛證——體倦乏力,少氣懶言,面色萎黃,食少便溏,舌淡脈弱",
         "氣虛發熱證——身熱自汗,渴喜熱飲,氣短乏力,脈大無力",
@@ -16787,7 +16806,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "actions_en/pattern_indications_en 於 2026-08-06 由無來源草稿替換為 American Dragon harvest 版本(與 record 層一致);其餘欄位仍為舊摘要。",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Tonifies Middle Jiao Qi",
           "Benefits Qi",
@@ -16795,17 +16814,8 @@
           "Raises Sunken Yang",
           "Lifts prolapsed organs"
         ],
-        "pattern_indications_en": [
-          "Central Qi Sinking",
-          "Spleen Not Governing Blood",
-          "Spleen and Lung Qi Deficiency: Yin Fire due to Spleen and Lung Qi Deficiency",
-          "Gu Syndrome",
-          "Atrophy disorder (Wei Syndrome) due to Spleen and Stomach Qi Deficiency"
-        ],
-        "modifications_en": [
-          "Compare with Si Jun Zi Tang for simple qi deficiency",
-          "Review fever, infection, hypertension, and pregnancy contexts"
-        ],
+        "pattern_indications_en": [],
+        "modifications_en": [],
         "contraindications_en": [
           "Use caution with uncontrolled hypertension, acute infection, or unreviewed bleeding/prolapse context"
         ]
@@ -16916,9 +16926,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "composition": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
           "curriculum/herbs/方剂学汇总_extracted.md#Table254(Rank 表:君臣佐使/劑量)",
@@ -16936,9 +16943,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(由搬移前 CloudTCM 原文濃縮,原文完整保留於 chinese_depth_track),en 為 AD 證型,兩源並記"
-        ],
         "tongue_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md#Table253(正文 T/P 行;中文為回譯)"
         ],
@@ -16950,6 +16954,13 @@
         ],
         "pulse_en": [
           "curriculum/herbs/方剂学汇总_extracted.md#Table253(正文 T/P 行;中文為回譯)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 262,
@@ -17002,7 +17013,16 @@
       "formula_song_zh": "補中益氣芪參朮，炙草升柴當歸陳。\n升陽舉陷清氣上，甘溫除熱名不虛。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/BuZhongYiQiTang.html",
-      "applications_en": [
+      "applications_en": [],
+      "applications_zh": [
+        "此方應用極廣，現代常用於治療肌肉弛緩性疾病，例如：子宮脫垂、胃肝脾腎等內臟下垂，胃粘膜脫垂、脫肛、疝氣、膀胱肌麻痹而導致排尿困難、重症肌無力、腸蠕動弛緩引起的虛性便秘等。",
+        "內傷發熱，腹瀉、慢性肝炎，原發性低血壓，心律不整，失眠，頭痛，健忘，老年性失智，耳鳴，汗證、乳糜尿，崩漏，帶下，滑胎，惡性腫瘤及其放化療後毒副反應明顯者，麻痹性斜視，視神經及視網膜病變，慢性鼻炎，鼓膜內陷，復發性口瘡，慢性咽炎等辨證屬於中氣不足，清陽不升的多種疾病。"
+      ],
+      "tongue_en": "pale with thin, white coating",
+      "tongue_zh": "舌淡;苔薄白",
+      "pulse_en": "flooding, deficient, or deficient & rootless at right Guan",
+      "pulse_zh": "脈洪大而虛,或虛而右關無根",
+      "ad_treats_en": [
         "Abdominal distention",
         "Abdominal pain",
         "Abdominal pain during pregnancy",
@@ -17028,14 +17048,13 @@
         "Bi Syndrome due to Qi and Blood Deficiency",
         "Bladder cancer"
       ],
-      "applications_zh": [
-        "此方應用極廣，現代常用於治療肌肉弛緩性疾病，例如：子宮脫垂、胃肝脾腎等內臟下垂，胃粘膜脫垂、脫肛、疝氣、膀胱肌麻痹而導致排尿困難、重症肌無力、腸蠕動弛緩引起的虛性便秘等。",
-        "內傷發熱，腹瀉、慢性肝炎，原發性低血壓，心律不整，失眠，頭痛，健忘，老年性失智，耳鳴，汗證、乳糜尿，崩漏，帶下，滑胎，惡性腫瘤及其放化療後毒副反應明顯者，麻痹性斜視，視神經及視網膜病變，慢性鼻炎，鼓膜內陷，復發性口瘡，慢性咽炎等辨證屬於中氣不足，清陽不升的多種疾病。"
-      ],
-      "tongue_en": "pale with thin, white coating",
-      "tongue_zh": "舌淡;苔薄白",
-      "pulse_en": "flooding, deficient, or deficient & rootless at right Guan",
-      "pulse_zh": "脈洪大而虛,或虛而右關無根"
+      "ad_syndromes_en": [
+        "Central Qi Sinking",
+        "Spleen Not Governing Blood",
+        "Spleen and Lung Qi Deficiency: Yin Fire due to Spleen and Lung Qi Deficiency",
+        "Gu Syndrome",
+        "Atrophy disorder (Wei Syndrome) due to Spleen and Stomach Qi Deficiency"
+      ]
     },
     {
       "id": "formula.yu_ping_feng_san",
@@ -17692,16 +17711,21 @@
         }
       ],
       "actions_en": [
-        "Tonify blood",
-        "Regulate blood"
+        "Nourishes the Blood",
+        "Regulates the Liver",
+        "Improves Blood circulation",
+        "Regulates menstruation"
       ],
       "actions_zh": [
-        "補血",
-        "調血"
+        "補血養血",
+        "調肝",
+        "行血活血",
+        "調經"
       ],
       "modifications_en": [
-        "Base for many gynecologic blood formulas",
-        "Review blood stasis, pregnancy, anticoagulants, and bleeding pattern"
+        "Dose adjustments: for Qi deficiency add Ren Shen and Huang Qi to tonify Qi and generate Blood; for marked Blood Stasis add Tao Ren and Hong Hua and substitute Chi Shao for Bai Shao; for Blood deficiency with cold or cold extremities add Rou Gui, Pao Jiang and Wu Zhu Yu; for Blood deficiency with interior Heat add Huang Qin and Mu Dan Pi and substitute Sheng Di for Shu Di; for restless fetus or bleeding in pregnancy add E Jiao and Ai Ye.",
+        "The four herbs are classically used in equal parts but the ratio is adjusted per patient: 蒲輔周 recommends halving Chuan Xiong relative to Dang Gui and doubling Di Huang relative to Dang Gui.",
+        "銳齋醫學講稿: when tonifying Blood is the main aim, weight Shu Di and Dang Gui heavier and Bai Shao next; if Shu Di is omitted, Bai Shao may exceed Dang Gui."
       ],
       "modifications_zh": [
         "四物湯劑量加減方法：若有氣虛的症狀，可以加人參、黃芪��藥物來補氣並幫助生血。若血瘀較為嚴重，可加桃仁、紅花，並將白芍改為赤芍，以增強活血化瘀的效果。若血虛又兼有怕冷或手腳冰冷的情況，可以加肉桂、炮薑和吳茱萸，以溫暖血脈。若血虛又伴隨內熱，可加黃芩、丹皮，並將熟地改為生地，以清熱涼血。若用於懷孕中的胎動不安或出血，可加阿膠、艾葉來止血並安胎。",
@@ -17709,11 +17733,26 @@
         "《銳齋醫學講稿》也提到，若主要是補血作用，熟地和當歸的劑量可偏重，白芍次之；若不使用熟地，則白芍的劑量可高於當歸。這些經驗可作為調配四物湯的參考。"
       ],
       "contraindications_en": [
-        "Review heavy bleeding, anticoagulant use, pregnancy, and digestive tolerance"
+        "For chronic but not severe conditions. Not for acute severe blood loss or severe weakness — tonify Qi instead (當歸補血湯).",
+        "Shu Di Huang is cloying and Dang Gui is slippery, so avoid in patients with marked Dampness, fullness, abdominal distension, or loose stools.",
+        "Contraindicated for those with acute, severe blood loss.",
+        "Contraindicated for those with severe weakness or labored breathing.",
+        "Modify for those with constitutional Spleen Yang Deficiency.",
+        "Contraindicated for those with dehydration.",
+        "Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang.",
+        "Contraindicated for those with Blood or Qi collapse.",
+        "Use with caution during pregnancy."
       ],
       "contraindications_zh": [
         "用於慢性病，但是不嚴重者。不能用於急性嚴重失血或其他血虛，包括嚴重的虛弱，此時應補氣(當歸補血湯)。",
-        "本方中的熟地性質黏滯、當歸性滑潤，因此對於濕氣較重、容易中滿、腹脹或大便稀溏的患者不宜使用。"
+        "本方中的熟地性質黏滯、當歸性滑潤，因此對於濕氣較重、容易中滿、腹脹或大便稀溏的患者不宜使用。",
+        "急性嚴重失血者禁用",
+        "嚴重虛弱或呼吸費力者禁用",
+        "素體脾陽虛者須加減後使用",
+        "脫水者禁用",
+        "脾胃虛弱者慎用——熟地黃性質滋膩礙運",
+        "氣血暴脫者禁用",
+        "孕婦慎用"
       ],
       "herb_drug_cautions": [
         "pregnancy_review",
@@ -17729,7 +17768,10 @@
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Blood deficiency and blood regulation pattern context, especially gynecologic study context"
+        "Ying-Blood deficiency with stagnation — the base pattern for all Blood deficiency with impaired Blood movement",
+        "Blood failing to nourish: dizziness, blurred vision, palpitations, insomnia, lusterless complexion, pale lips and nails",
+        "Blood deficiency in women: scanty pale menses, irregular cycles, amenorrhea, lower abdominal pain",
+        "Blood deficiency during pregnancy and postpartum"
       ],
       "pattern_indications_zh": [
         "營血虛滯證——一切血虛及血行不暢(血滯)之證",
@@ -17747,7 +17789,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Tonify blood",
           "Regulate blood"
@@ -17755,13 +17797,8 @@
         "pattern_indications_en": [
           "Blood deficiency and blood regulation pattern context, especially gynecologic study context"
         ],
-        "modifications_en": [
-          "Base for many gynecologic blood formulas",
-          "Review blood stasis, pregnancy, anticoagulants, and bleeding pattern"
-        ],
-        "contraindications_en": [
-          "Review heavy bleeding, anticoagulant use, pregnancy, and digestive tolerance"
-        ]
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -17865,9 +17902,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -17905,6 +17939,31 @@
         ],
         "pattern_indications_zh": [
           "由錯層搬移前的 CloudTCM 全文第 3/6/7/9/10/11 條濃縮(原文逐字保留於 chinese_depth_track.zhu_zhi_zh)"
+        ],
+        "actions_zh": [
+          "American Dragon formula page (harvested 2026-08)(完整 4 條;先前僅採用舊的 2 條摘要)"
+        ],
+        "actions_en": [
+          "American Dragon formula page (harvested 2026-08)(完整 4 條;先前僅採用舊的 2 條摘要)"
+        ],
+        "contraindications_en": [
+          "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
+        ],
+        "contraindications_zh": [
+          "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
+        ],
+        "modern_research_en": [
+          "American Dragon formula page — 原誤列於禁忌欄"
+        ],
+        "modifications_en": [
+          "zh 為 CloudTCM 方劑頁原文(2026-08-06 錯層搬移歸位),en 為其逐條對譯"
+        ],
+        "pattern_indications_en": [
+          "zh 為 CloudTCM 原文濃縮(原文保留於 chinese_depth_track.zhu_zhi_zh),en 為其逐條對譯"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 77,
@@ -17955,7 +18014,23 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiWuTang.html",
       "tongue_en": "Pale; coating: Normal",
       "pulse_en": "Thready and wiry or Thready and choppy",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌淡;苔正常",
+      "pulse_zh": "脈細弦,或細澀",
+      "applications_zh": [
+        "現代臨床中，四物湯應用更為廣泛，無論是內科、外科、婦科、兒科、皮膚科或五官科，只要是因血虛並伴有血滯的症狀，均可依症狀加減四物湯，效果顯著。",
+        "依照現代醫學研究觀察，四物湯除了來治療婦科之外，也被運用於各種皮膚頑疾(註1)、蕁麻疹、銀屑病、痤瘡、酒齄鼻、扁平苔癬、老年瘙癢症、過敏性鼻炎、坐骨神經痛、肩周炎、骨傷科疾病、過敏性紫癜、神經性頭痛、糖尿病足潰瘍、產後憂鬱等。",
+        "註1:蘇婕,etal.\"白彥萍教授變通應用四物湯治療女性皮膚頑疾.\"中國中西醫結合皮膚性病學雜誌23.02(2024)"
+      ],
+      "modern_research_zh": [
+        "研究發現，四物湯具有補充血容量、活血抗凝、雌激素樣作用、子宮雙向調節、改善卵巢功能、降血脂、提高學習記憶能力、抗氧化損傷、抗炎抗菌、提高免疫功能、抗衰老、保肝和抗輻射、藥物損傷及抗突變等藥理作用(註2)。",
+        "註2:周大果,etal.\"四物湯的藥理作用研究進展.\"中醫藥信息41.05(2024)"
+      ],
+      "modern_research_en": [
+        "This formula has shown the ability to reduce recovery time in penicillin induced dermatitis.",
+        "This formula has shown the ability to reduce scopolamine-induced spatial cognitive deficits."
+      ],
+      "ad_treats_en": [
         "Primary dysmenorrhea",
         "Irregular menstruation",
         "Anemia",
@@ -17980,17 +18055,6 @@
         "Optic atrophy",
         "Vertigo",
         "Paresthesia"
-      ],
-      "tongue_zh": "舌淡;苔正常",
-      "pulse_zh": "脈細弦,或細澀",
-      "applications_zh": [
-        "現代臨床中，四物湯應用更為廣泛，無論是內科、外科、婦科、兒科、皮膚科或五官科，只要是因血虛並伴有血滯的症狀，均可依症狀加減四物湯，效果顯著。",
-        "依照現代醫學研究觀察，四物湯除了來治療婦科之外，也被運用於各種皮膚頑疾(註1)、蕁麻疹、銀屑病、痤瘡、酒齄鼻、扁平苔癬、老年瘙癢症、過敏性鼻炎、坐骨神經痛、肩周炎、骨傷科疾病、過敏性紫癜、神經性頭痛、糖尿病足潰瘍、產後憂鬱等。",
-        "註1:蘇婕,etal.\"白彥萍教授變通應用四物湯治療女性皮膚頑疾.\"中國中西醫結合皮膚性病學雜誌23.02(2024)"
-      ],
-      "modern_research_zh": [
-        "研究發現，四物湯具有補充血容量、活血抗凝、雌激素樣作用、子宮雙向調節、改善卵巢功能、降血脂、提高學習記憶能力、抗氧化損傷、抗炎抗菌、提高免疫功能、抗衰老、保肝和抗輻射、藥物損傷及抗突變等藥理作用(註2)。",
-        "註2:周大果,etal.\"四物湯的藥理作用研究進展.\"中醫藥信息41.05(2024)"
       ]
     },
     {
@@ -18121,10 +18185,7 @@
         "破瘀行滯： 《婦科冰鑑》中記載的「漏血澀少，間有淤塊者」，在桃紅四物湯的基礎上加香附以增強破瘀行滯之力。",
         "總體而言，桃紅四物湯通過養血與活血並用，達到調經止痛的目的。其加減變化靈活，可根據具體病情進行調整，體現了中醫辨證論治的精髓。"
       ],
-      "modifications_en": [
-        "Compare with Xue Fu Zhu Yu Tang for upper/chest blood stasis context",
-        "Review pregnancy and bleeding risk"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Pregnancy, heavy bleeding, anticoagulants, surgery/procedure timing, or anemia requires review"
@@ -18142,9 +18203,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Blood deficiency with blood stasis pattern context"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "根據古代醫書記載，桃紅四物湯主要功效為養血活血，通絡調經，祛瘀止痛。具體而言，可以應用於以下幾種情況：",
         "經期血瘀： 如《醫學集成》所述，月經延期不行，因血凝而導致脹痛，或經來色紫，有瘀塊，如《婦科冰鑑》中提到的「血多有塊，色紫稠黏者，有瘀停也」。",
@@ -18176,18 +18235,13 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Tonify and regulate blood",
           "Invigorate blood and dispel stasis"
         ],
-        "pattern_indications_en": [
-          "Blood deficiency with blood stasis pattern context"
-        ],
-        "modifications_en": [
-          "Compare with Xue Fu Zhu Yu Tang for upper/chest blood stasis context",
-          "Review pregnancy and bleeding risk"
-        ],
+        "pattern_indications_en": [],
+        "modifications_en": [],
         "contraindications_en": [
           "Pregnancy, heavy bleeding, anticoagulants, surgery/procedure timing, or anemia requires review"
         ]
@@ -18286,6 +18340,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 171,
@@ -18329,7 +18386,10 @@
             "當歸 12g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Blood deficiency with blood stasis pattern context"
+      ]
     },
     {
       "id": "formula.jiao_ai_tang",
@@ -18819,10 +18879,7 @@
         "由於八珍湯結合了四君子湯和四物湯的優勢，兼具補氣與補血的效果，因此被廣泛應用於治療因氣血不足引起的各類慢性虛弱性疾病，並且流傳至今長盛不衰。",
         "運用中藥補氣補血，讓人精神旺盛"
       ],
-      "modifications_en": [
-        "Compare with Gui Pi Tang when Heart-Spleen insomnia/palpitations dominate",
-        "Review pregnancy, bleeding, and digestive tolerance"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Review acute excess patterns, heavy bleeding, anticoagulants, and fertility medication timing"
@@ -18845,9 +18902,7 @@
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Qi and blood deficiency pattern context"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "第一模塊：四君子湯（氣虛專用基礎方）",
         "第二模塊：四物湯（血虛專用基礎方）",
@@ -18890,20 +18945,13 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Tonify qi and blood"
         ],
-        "pattern_indications_en": [
-          "Qi and blood deficiency pattern context"
-        ],
-        "modifications_en": [
-          "Compare with Gui Pi Tang when Heart-Spleen insomnia/palpitations dominate",
-          "Review pregnancy, bleeding, and digestive tolerance"
-        ],
-        "contraindications_en": [
-          "Review acute excess patterns, heavy bleeding, anticoagulants, and fertility medication timing"
-        ]
+        "pattern_indications_en": [],
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -18998,6 +19046,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 18,
@@ -19047,7 +19098,10 @@
       },
       "formula_song": "八珍湯治氣血虛，四君四物合方居。\n煎加薑棗調營衛，氣血雙補此方需。",
       "formula_song_zh": "八珍湯治氣血虛，四君四物合方居。\n煎加薑棗調營衛，氣血雙補此方需。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "ad_syndromes_en": [
+        "Qi and blood deficiency pattern context"
+      ]
     },
     {
       "id": "formula.shi_quan_da_bu_tang",
@@ -19598,10 +19652,7 @@
         "滋陰",
         "滋養肝腎之精"
       ],
-      "modifications_en": [
-        "Compare with Zuo Gui Wan for stronger yin deficiency study context",
-        "Review cloying digestive effect and renal/medication context"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Review loose stools, dampness, pregnancy/fertility medication context, and kidney disease"
@@ -19622,12 +19673,7 @@
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Kidney Yin Deficiency",
-        "Heart and Kidney Yin Deficiency",
-        "Liver and Kidney Yin Deficiency",
-        "Atrophy disorder (Wei Syndrome) due to Liver and Kidney Deficiency"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "腎陰不足,虛火內擾證",
         "主要症狀是：腰膝酸軟、頭暈目眩、耳鳴耳聾、盜汗、遺精、糖尿病、骨蒸潮熱、手足心熱、口乾舌燥、咽喉痛、牙齒動搖、腳跟痛，以及小兒囟門不合，舌紅少苔，脈沉細數。"
@@ -19642,24 +19688,14 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "actions_en/pattern_indications_en 於 2026-08-06 由無來源草稿替換為 American Dragon harvest 版本(與 record 層一致);其餘欄位仍為舊摘要。",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Enriches Yin",
           "Nourishes the Essence of the Liver and Kidney"
         ],
-        "pattern_indications_en": [
-          "Kidney Yin Deficiency",
-          "Heart and Kidney Yin Deficiency",
-          "Liver and Kidney Yin Deficiency",
-          "Atrophy disorder (Wei Syndrome) due to Liver and Kidney Deficiency"
-        ],
-        "modifications_en": [
-          "Compare with Zuo Gui Wan for stronger yin deficiency study context",
-          "Review cloying digestive effect and renal/medication context"
-        ],
-        "contraindications_en": [
-          "Review loose stools, dampness, pregnancy/fertility medication context, and kidney disease"
-        ]
+        "pattern_indications_en": [],
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -19764,9 +19800,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -19799,8 +19832,12 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(由搬移前 CloudTCM 原文濃縮,原文完整保留於 chinese_depth_track),en 為 AD 證型,兩源並記"
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 55,
@@ -19857,7 +19894,13 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/LiuWeiDiHuangWan.html",
       "tongue_en": "Red; coating: Little or None",
       "pulse_en": "Thready and rapid",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌紅;苔少或無苔",
+      "pulse_zh": "脈細數",
+      "applications_zh": [
+        "現代運用於慢性腎炎、高血壓病、糖尿病、肺結核、腎結核、甲狀腺功能亢進、中心性視網膜炎及無排卵性功能性子宮出血、更年期綜合症等屬腎陰虛弱為主者。"
+      ],
+      "ad_treats_en": [
         "Neurasthenia",
         "Pulmonary tuberculosis",
         "Diabetes mellitus",
@@ -19883,10 +19926,11 @@
         "Bronchitis",
         "Side effects of steroids"
       ],
-      "tongue_zh": "舌紅;苔少或無苔",
-      "pulse_zh": "脈細數",
-      "applications_zh": [
-        "現代運用於慢性腎炎、高血壓病、糖尿病、肺結核、腎結核、甲狀腺功能亢進、中心性視網膜炎及無排卵性功能性子宮出血、更年期綜合症等屬腎陰虛弱為主者。"
+      "ad_syndromes_en": [
+        "Kidney Yin Deficiency",
+        "Heart and Kidney Yin Deficiency",
+        "Liver and Kidney Yin Deficiency",
+        "Atrophy disorder (Wei Syndrome) due to Liver and Kidney Deficiency"
       ]
     },
     {
@@ -21021,17 +21065,14 @@
         }
       ],
       "actions_en": [
-        "Warm and tonify Kidney yang",
-        "Support water metabolism pattern context"
+        "Warms and Tonifies Kidney Yang",
+        "Promotes Qi transformation and water metabolism"
       ],
       "actions_zh": [
-        "金匱腎氣丸功用：Warm and tonify Kidney yang",
-        "金匱腎氣丸功用：Support water metabolism pattern context"
+        "溫補腎陽",
+        "化氣行水"
       ],
-      "modifications_en": [
-        "Compare with Liu Wei Di Huang Wan for yin deficiency pattern",
-        "Review hypertension, pregnancy, cardiac, and kidney disease context"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat.",
@@ -21064,10 +21105,10 @@
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Kidney yang deficiency pattern context with cold, low back soreness, urinary or edema context"
+        "Kidney Yang Deficiency with cold sensations below the waist, low back soreness, urinary difficulty or frequency, and edema"
       ],
       "pattern_indications_zh": [
-        "金匱腎氣丸主治：Kidney yang deficiency pattern context with cold, low back soreness, urinary or edema context"
+        "腎陽不足證——腰痛腳軟,身半以下常有冷感,少腹拘急,小便不利或反多,舌淡而胖,脈虛弱尺部沉細"
       ],
       "related_conditions": [
         "pattern.kidney_deficiency",
@@ -21077,21 +21118,16 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
-          "Warm and tonify Kidney yang",
-          "Support water metabolism pattern context"
+          "Warms and Tonifies Kidney Yang",
+          "Promotes Qi transformation and water metabolism"
         ],
         "pattern_indications_en": [
-          "Kidney yang deficiency pattern context with cold, low back soreness, urinary or edema context"
+          "Kidney Yang Deficiency with cold sensations below the waist, low back soreness, urinary difficulty or frequency, and edema"
         ],
-        "modifications_en": [
-          "Compare with Liu Wei Di Huang Wan for yin deficiency pattern",
-          "Review hypertension, pregnancy, cardiac, and kidney disease context"
-        ],
-        "contraindications_en": [
-          "Review heat signs, hypertension, pregnancy, cardiac disease, kidney disease, and medication context"
-        ]
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -21186,6 +21222,18 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json(站內索引);採用前逐味比對組成,差異記於 cloudtcm_link_note"
+        ],
+        "actions_zh": [
+          "American Dragon formula page (harvested 2026-08) + 本方方歌「溫補腎陽化氣水，陽虛水腫腰酸痊」;原值為腳本產生的假中文(方名+功用：+英文),2026-08-06 替換"
+        ],
+        "actions_en": [
+          "American Dragon formula page (harvested 2026-08) + 本方方歌「溫補腎陽化氣水，陽虛水腫腰酸痊」;原值為腳本產生的假中文(方名+功用：+英文),2026-08-06 替換"
+        ],
+        "pattern_indications_zh": [
+          "American Dragon formula page (harvested 2026-08) + 本方方歌「溫補腎陽化氣水，陽虛水腫腰酸痊」;原值為腳本產生的假中文(方名+功用：+英文),2026-08-06 替換"
+        ],
+        "pattern_indications_en": [
+          "American Dragon formula page (harvested 2026-08) + 本方方歌「溫補腎陽化氣水，陽虛水腫腰酸痊」;原值為腳本產生的假中文(方名+功用：+英文),2026-08-06 替換"
         ]
       },
       "condition_tags_zh": [
@@ -22656,42 +22704,12 @@
           "in_formula_zh": "和中,調和諸藥"
         }
       ],
-      "pattern_indications_en": [
-        "Heart Blood Deficiency",
-        "Heart and Liver Blood Deficiency",
-        "Liver Yin Deficiency with Empty Fire Disturbing Heart",
-        "Liver Blood Deficiency with Deficiency Heat Rising"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "酸棗仁湯所治的主要是：肝血不足，陰虛內熱，虛熱內擾，心神失養所造成的失眠。",
         "虛勞虛煩不眠,心悸不安,盜汗,頭暈目眩,口乾咽燥,舌紅,脈細弦"
       ],
-      "modifications_en": [
-        "For Heart and Gallbladder Qi Deficiency with dream disturbed sleep and night terrors:",
-        "For palpitations:",
-        "+ Rx. Codonopsis",
-        "Dang Shen",
-        "+ Dens Draconis",
-        "Long Chi",
-        "+ Dens Draconis",
-        "Long Chi",
-        "+ Concha Ostreae",
-        "Mu Li",
-        "For severe Deficiency Fire:",
-        "For night sweats:",
-        "Rx. Chuanxiong",
-        "Chuan Xiong",
-        "+ Concha Ostreae",
-        "Mu Li",
-        "+ Hb. Ecliptae",
-        "Mo Han Lian",
-        "+ Fr. Schisandrae",
-        "Wu Wei Zi",
-        "+ Rx. Rehmanniae",
-        "Sheng Di Huang",
-        "+ Sm. Platycladi",
-        "Bai Zi Ren"
-      ],
+      "modifications_en": [],
       "modifications_zh": [
         "加減法：若心煩不眠，屬肝血不足，陰虛內熱較甚者，合二至丸或加生地黃、玄參、白芍等，以養血滋陰清熱。兼見盜汗甚者，加五味子、白芍、浮小麥以安神斂汗。",
         "心悸較重者，加龍齒、龜甲、珍珠母等以鎮驚安神。心悸多夢，時有驚醒，舌淡，脈細弦，屬心膽氣虛者，可加黨參、龍齒以益氣鎮驚。如精神抑鬱，心煩不眠較甚者，可合甘麥大棗湯加夜交藤、合歡皮以緩肝安神解鬱，或加入合歡花、夜交藤、石菖蒲、鬱金等解鬱安神之品，療效更好。"
@@ -22719,7 +22737,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -22796,12 +22815,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
-        "modifications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "contraindications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -22840,9 +22853,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為 CloudTCM 條文(第2條由原功用句濃縮,原文在 zhu_zhi_zh),en 為 AD 證型,兩源並記"
-        ],
         "condition_tags_zh": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
@@ -22854,6 +22864,16 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_modifications_en": [
+          "American Dragon MODIFICATIONS 清單 — 與 modifications_zh 粒度不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 270,
@@ -22892,32 +22912,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SuanZaoRenTang.html",
       "tongue_en": "Pale or Red and dry",
       "pulse_en": "Wiry and rapid or Thready and rapid or Thready and weak or Thready and tight",
-      "applications_en": [
-        "Insomnia",
-        "Nervousness",
-        "Neurasthenia",
-        "Forgetfulness",
-        "Anemia",
-        "Nervous exhaustion",
-        "Somnolence",
-        "Excessive worrying",
-        "Dizziness",
-        "AIDS/HIV",
-        "Hyperthyroidism",
-        "Anxiety neurosis",
-        "Impotence",
-        "Stress",
-        "Palpitations",
-        "Fatigue",
-        "Congestive Heart failure",
-        "Night sweats",
-        "Dry skin",
-        "Nightmares",
-        "Cardiac neurosis",
-        "Paroxysmal tachycardia",
-        "Menopause syndrome",
-        "Schizophrenia with irritability and insomnia"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌淡,或紅而乾",
       "pulse_zh": "脈弦數,或細數,或細弱,或細緊",
       "applications_zh": [
@@ -22944,6 +22939,64 @@
         "Liver Blood Deficiency",
         "Blood Deficiency",
         "Deficiency Heat"
+      ],
+      "ad_treats_en": [
+        "Insomnia",
+        "Nervousness",
+        "Neurasthenia",
+        "Forgetfulness",
+        "Anemia",
+        "Nervous exhaustion",
+        "Somnolence",
+        "Excessive worrying",
+        "Dizziness",
+        "AIDS/HIV",
+        "Hyperthyroidism",
+        "Anxiety neurosis",
+        "Impotence",
+        "Stress",
+        "Palpitations",
+        "Fatigue",
+        "Congestive Heart failure",
+        "Night sweats",
+        "Dry skin",
+        "Nightmares",
+        "Cardiac neurosis",
+        "Paroxysmal tachycardia",
+        "Menopause syndrome",
+        "Schizophrenia with irritability and insomnia"
+      ],
+      "ad_modifications_en": [
+        "For Heart and Gallbladder Qi Deficiency with dream disturbed sleep and night terrors:",
+        "For palpitations:",
+        "+ Rx. Codonopsis",
+        "Dang Shen",
+        "+ Dens Draconis",
+        "Long Chi",
+        "+ Dens Draconis",
+        "Long Chi",
+        "+ Concha Ostreae",
+        "Mu Li",
+        "For severe Deficiency Fire:",
+        "For night sweats:",
+        "Rx. Chuanxiong",
+        "Chuan Xiong",
+        "+ Concha Ostreae",
+        "Mu Li",
+        "+ Hb. Ecliptae",
+        "Mo Han Lian",
+        "+ Fr. Schisandrae",
+        "Wu Wei Zi",
+        "+ Rx. Rehmanniae",
+        "Sheng Di Huang",
+        "+ Sm. Platycladi",
+        "Bai Zi Ren"
+      ],
+      "ad_syndromes_en": [
+        "Heart Blood Deficiency",
+        "Heart and Liver Blood Deficiency",
+        "Liver Yin Deficiency with Empty Fire Disturbing Heart",
+        "Liver Blood Deficiency with Deficiency Heat Rising"
       ]
     },
     {
@@ -23147,10 +23200,7 @@
         "加減法：失眠較重者，可酌加龍骨、磁石等以增其重鎮安神之功。心悸怔忡，睡眠不安，可酌加龍眼肉、夜交藤以加強養心安神之效。如有遺精滑泄，可酌加金櫻子、芡實、牡蠣等以固腎澀精。",
         "現代運用於神經衰弱、冠心病、精神分裂症、心臟病、精神官能症、甲狀腺機能亢進、更年期綜合症等所致的失眠、心悸，以及復發性口瘡等屬於心腎陰虛血少者。"
       ],
-      "modifications_en": [
-        "Compare with Suan Zao Ren Tang for Liver blood/yin sleep context",
-        "Review psychiatric red flags and sedative medications"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
@@ -23172,9 +23222,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Heart-Kidney yin/blood deficiency pattern context with insomnia, palpitations, anxiety, dry mouth"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "當「心經」陰血不足，虛熱內擾，心失所養時，將會出現一系列疾病。《黃帝內經》提到：「心者，君主之官，神明出焉」、「心者，五臟六腑之大主也，精神之所舍也。」",
         "所以心神不寧之症狀，主要發病在於中醫的心臟。《黃帝內經》又說：「 陰氣者，靜則神藏，躁則消亡」。如果一個人體內陰虛或思慮勞心過度，秏傷心經陰血，心失所養，不能藏神，就會出現心悸、失眠。",
@@ -23196,22 +23244,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Nourish yin",
           "Tonify blood",
           "Calm spirit"
         ],
-        "pattern_indications_en": [
-          "Heart-Kidney yin/blood deficiency pattern context with insomnia, palpitations, anxiety, dry mouth"
-        ],
-        "modifications_en": [
-          "Compare with Suan Zao Ren Tang for Liver blood/yin sleep context",
-          "Review psychiatric red flags and sedative medications"
-        ],
-        "contraindications_en": [
-          "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
-        ]
+        "pattern_indications_en": [],
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -23311,6 +23352,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 58,
@@ -23373,7 +23417,10 @@
             "遠志 12g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Heart-Kidney yin/blood deficiency pattern context with insomnia, palpitations, anxiety, dry mouth"
+      ]
     },
     {
       "id": "formula.gan_mai_da_zao_tang",
@@ -23587,9 +23634,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "modifications_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -23642,6 +23686,10 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 89,
@@ -23666,32 +23714,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/GanMaiDaZaoTang.html",
       "tongue_en": "Red or pale red; coating: Scanty",
       "pulse_en": "Thready and rapid",
-      "applications_en": [
-        "Neurosis",
-        "Neurasthenia",
-        "Epilepsy",
-        "Infantile night crying",
-        "Depression",
-        "Gastrointestinal spasms",
-        "Chorea",
-        "Uterine cramping",
-        "General anxiety disorder",
-        "Attention deficit hyperactivity disorder",
-        "Parkinson's disease",
-        "Migraines",
-        "Ectopic heartbeats",
-        "Convulsions",
-        "Bi-polar disorder",
-        "Somnambulism",
-        "Yawning",
-        "Impotence",
-        "Hysteria",
-        "Autonomic dystonia",
-        "Schizophrenia",
-        "Menopause syndrome",
-        "Enuresis",
-        "Insomnia"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌紅或淡紅;苔少",
       "pulse_zh": "脈細數",
       "applications_zh": [
@@ -23716,6 +23739,32 @@
       "pattern_tags_en": [
         "Zang Zao (Restless Organ)",
         "Heart Yin Deficiency"
+      ],
+      "ad_treats_en": [
+        "Neurosis",
+        "Neurasthenia",
+        "Epilepsy",
+        "Infantile night crying",
+        "Depression",
+        "Gastrointestinal spasms",
+        "Chorea",
+        "Uterine cramping",
+        "General anxiety disorder",
+        "Attention deficit hyperactivity disorder",
+        "Parkinson's disease",
+        "Migraines",
+        "Ectopic heartbeats",
+        "Convulsions",
+        "Bi-polar disorder",
+        "Somnambulism",
+        "Yawning",
+        "Impotence",
+        "Hysteria",
+        "Autonomic dystonia",
+        "Schizophrenia",
+        "Menopause syndrome",
+        "Enuresis",
+        "Insomnia"
       ]
     },
     {
@@ -25095,10 +25144,7 @@
         "現代醫學常用於治療神經系統和心血管系統兩方面疾病，用於治療冠心病、心絞痛、風濕性心臟病、胸部挫傷、肋間神經痛、肋軟骨炎之胸痛，慢性肝炎、肝脾腫大、潰瘍病、神經官能症、腦血栓形成、高血壓病，以及腦震盪後遺症之頭昏頭痛、精神抑鬱，屬於瘀阻氣滯者，均取得一定療效。",
         "王清任來設計了一些類似方劑，將體內瘀血所產生的疾病，依照入體的部位來分證，「血府逐瘀湯」治療胸中血府血瘀之證。「通竅活血湯」治療頭面四肢周身血管血瘀之證。「膈下逐瘀湯」治肚腹血瘀之證。「少腹逐瘀湯」治少腹血瘀積塊或婦女月經不調之證。"
       ],
-      "modifications_en": [
-        "Compare with Tao Hong Si Wu Tang for gynecologic blood deficiency/stasis context",
-        "Review cardiovascular red flags and anticoagulants"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Chest pain, stroke-like symptoms, pregnancy, anticoagulants, heavy bleeding, or surgery timing requires medical review"
@@ -25136,7 +25182,7 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Invigorate blood",
           "Dispel stasis",
@@ -25145,10 +25191,7 @@
         "pattern_indications_en": [
           "Blood stasis in the chest/upper body pattern context with qi constraint overlap"
         ],
-        "modifications_en": [
-          "Compare with Tao Hong Si Wu Tang for gynecologic blood deficiency/stasis context",
-          "Review cardiovascular red flags and anticoagulants"
-        ],
+        "modifications_en": [],
         "contraindications_en": [
           "Chest pain, stroke-like symptoms, pregnancy, anticoagulants, heavy bleeding, or surgery timing requires medical review"
         ]
@@ -26573,9 +26616,7 @@
         "加減法：若小腹冷痛甚者，去牡丹皮、麥冬，加艾葉、小茴香，或以肉桂易桂枝，以增強散寒止痛作用。少腹脹滿屬氣滯者，加香附、烏藥以行氣止痛。漏下色淡不止者去牡丹皮，加艾葉、熟地以溫經補血止血。經血色紫黯，血塊多者，去阿膠，加桃仁、紅花以增強活血去瘀。陰虛內熱明顯，可去吳茱萸、生薑、半夏，加生地、女貞子、旱蓮草以補益肝腎之陰。子宮虛冷，瘀阻胞脈，婚久不孕，症見月經後期，量少或月經稀少，色黯淡，少腹冷痛，喜溫，畏寒肢冷，性欲冷淡，可加鹿角霜、仙茅、仙靈脾、巴戟天、益母草等以溫補腎陽。",
         "溫經湯的加減法"
       ],
-      "modifications_en": [
-        "Review pregnancy possibility, bleeding pattern, fertility medication timing, and anticoagulants"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Pregnancy, heavy bleeding, anticoagulants, fever/infection, or unclear pelvic pain requires review"
@@ -26598,9 +26639,7 @@
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Chong/Ren deficiency-cold with blood stasis pattern context in gynecologic study"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "本方證屬瘀、寒、虛、熱錯雜之證，目的就是改善體內下腹部「虛寒瘀熱」、沖脈或任脈虛寒，瘀血阻滯子宮所引起的病證，及一系列婦科症狀。",
         "適用於因常見表現包括：陰道出血淋漓不止，月經失調（如經期提前或延後、經期過長、一月來兩次，或經閉不行），並伴有傍晚低熱、手心煩熱、口唇乾燥、小腹冷痛、小腹拘急或脹滿。舌質暗紅，脈象細而澀。亦可用於婦女久婚不孕。也可以治療不孕症、更年期綜合症。",
@@ -26666,19 +26705,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Warm the channels",
           "Nourish blood",
           "Dispel stasis",
           "Regulate menstruation pattern context"
         ],
-        "pattern_indications_en": [
-          "Chong/Ren deficiency-cold with blood stasis pattern context in gynecologic study"
-        ],
-        "modifications_en": [
-          "Review pregnancy possibility, bleeding pattern, fertility medication timing, and anticoagulants"
-        ],
+        "pattern_indications_en": [],
+        "modifications_en": [],
         "contraindications_en": [
           "Pregnancy, heavy bleeding, anticoagulants, fever/infection, or unclear pelvic pain requires review"
         ]
@@ -26775,6 +26810,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 249,
@@ -26838,7 +26876,10 @@
             "半夏 6g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Chong/Ren deficiency-cold with blood stasis pattern context in gynecologic study"
+      ]
     },
     {
       "id": "formula.gui_zhi_fu_ling_wan",
@@ -27486,10 +27527,7 @@
         "從組成來看，這些方劑都是以蒼朮、厚朴、陳皮、炙甘草這四味藥為主，依照目的配伍成各式各樣的形式，體現了平胃散方的發展變化及廣泛的治療作用。",
         "不論哪一種配伍，基本精神都是改善體內的「脾濕」，脾胃平和，升降自然有序，所以稱為「平胃散」 。張介賓說：「夫所謂平胃者，欲平治其不平也」"
       ],
-      "modifications_en": [
-        "Compare with Er Chen Tang when phlegm is prominent",
-        "Review dehydration, pregnancy, and acute GI red flags"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
         "Yin deficiency dryness, severe abdominal pain, persistent vomiting, dehydration, or pregnancy requires review"
@@ -27510,9 +27548,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Dampness obstructing middle burner pattern context with fullness, poor appetite, heavy sensation, loose stool tendency"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "本方主要功效是「燥濕運脾，行氣和胃」，專門治療「濕滯脾胃」之證，以燥濕運脾，行氣和胃為目的。",
         "任何時候只要因為體內濕氣太重造成腹瀉、腹脹氣、肚子痛、沒有食慾、噯氣吞酸、口淡無味、噁心想吐、身體及四肢沉重、暈眩、便秘、咳嗽氣喘、月經不調、舌苔白膩而厚，脈緩時，即可運用。",
@@ -27578,19 +27614,14 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Dry dampness",
           "Move qi",
           "Harmonize Stomach"
         ],
-        "pattern_indications_en": [
-          "Dampness obstructing middle burner pattern context with fullness, poor appetite, heavy sensation, loose stool tendency"
-        ],
-        "modifications_en": [
-          "Compare with Er Chen Tang when phlegm is prominent",
-          "Review dehydration, pregnancy, and acute GI red flags"
-        ],
+        "pattern_indications_en": [],
+        "modifications_en": [],
         "contraindications_en": [
           "Yin deficiency dryness, severe abdominal pain, persistent vomiting, dehydration, or pregnancy requires review"
         ]
@@ -27688,6 +27719,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 79,
@@ -27740,7 +27774,10 @@
       },
       "formula_song": "平胃散用蒼術陳，厚朴甘草薑棗引。\n燥濕運脾行氣滯，濕阻脾胃胃脘平。",
       "formula_song_zh": "平胃散用蒼術陳，厚朴甘草薑棗引。\n燥濕運脾行氣滯，濕阻脾胃胃脘平。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "ad_syndromes_en": [
+        "Dampness obstructing middle burner pattern context with fullness, poor appetite, heavy sensation, loose stool tendency"
+      ]
     },
     {
       "id": "formula.huo_xiang_zheng_qi_san",
@@ -30960,8 +30997,7 @@
         "加減法：本方通過加減亦可廣泛應用於多種痰證。《醫方集解.除痰之劑》提到：治痰通用二陳。風痰加南星、白附、皂角、竹瀝，寒痰加半夏、薑汁，火痰加石膏、青黛，濕痰加蒼朮、白朮，燥痰加栝簍、杏仁，食痰加山楂、麥芽、神麴，老痰加枳實、海石，芒硝，氣痰加香附、枳殼，脅痰在皮里膜外加白芥子，四肢痰加竹瀝。"
       ],
       "modifications_en": [
-        "Base formula for phlegm-damp comparisons such as Wen Dan Tang",
-        "Review persistent cough and respiratory red flags"
+        "Base formula for phlegm-damp comparisons such as Wen Dan Tang"
       ],
       "modifications_zh": [],
       "contraindications_en": [
@@ -30984,9 +31020,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Phlegm-damp pattern context with cough, nausea, chest/epigastric fullness, dizziness, or slippery pulse pattern"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "傳統說「濕痰證」，用現代概念理解，很像是身體處在一種「新陳代謝低落、循環不良、消化功能差、全身積水感」的狀態。想像一下：",
         "你的廚房抽油煙機壞了（肺失宣降），油煙（痰濕）排不出去，到處黏答答。",
@@ -31011,18 +31045,15 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Dry dampness",
           "Transform phlegm",
           "Regulate qi and harmonize middle"
         ],
-        "pattern_indications_en": [
-          "Phlegm-damp pattern context with cough, nausea, chest/epigastric fullness, dizziness, or slippery pulse pattern"
-        ],
+        "pattern_indications_en": [],
         "modifications_en": [
-          "Base formula for phlegm-damp comparisons such as Wen Dan Tang",
-          "Review persistent cough and respiratory red flags"
+          "Base formula for phlegm-damp comparisons such as Wen Dan Tang"
         ],
         "contraindications_en": [
           "Dry cough without phlegm, hemoptysis, dyspnea, high fever, or pregnancy requires review"
@@ -31121,6 +31152,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 7,
@@ -31177,7 +31211,10 @@
       },
       "formula_song": "二陳湯用半夏陳，茯苓甘草薑梅引。\n燥濕化痰理氣和，濕痰停飲此方清。",
       "formula_song_zh": "二陳湯用半夏陳，茯苓甘草薑梅引。\n燥濕化痰理氣和，濕痰停飲此方清。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "ad_syndromes_en": [
+        "Phlegm-damp pattern context with cough, nausea, chest/epigastric fullness, dizziness, or slippery pulse pattern"
+      ]
     },
     {
       "id": "formula.wen_dan_tang",
@@ -36462,13 +36499,12 @@
         "健脾",
         "養心"
       ],
-      "modifications_en": [
-        "Compare with Ba Zhen Tang for general qi-blood deficiency",
-        "Review anticoagulants, bleeding, sedatives, and pregnancy"
-      ],
+      "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Review bleeding disorders, anticoagulants, sedating medications, and pregnancy/fertility context"
+        "Avoid raw and cold foods while taking this formula.",
+        "Avoid excessive worry, rumination, and overwork — they are the cause this formula addresses.",
+        "Contraindicated for Yin Deficiency with Heat signs or for Interior Excess Heat patterns."
       ],
       "contraindications_zh": [
         "忌生冷食物",
@@ -36489,12 +36525,7 @@
       ],
       "fertility_notes": "",
       "clinical_pearls": [],
-      "pattern_indications_en": [
-        "Spleen Not Governing Blood",
-        "Heart Blood Deficiency",
-        "Heart (Blood) and Spleen (Qi) Deficiency due to worry (excessive deliberation or obsession)",
-        "Atrophy disorder (Wei Syndrome) due to Spleen and Stomach Qi Deficiency"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "心脾氣血兩虛證——失眠、驚悸、多夢、健忘、體倦、食少",
         "脾不統血證——便血、崩漏、月經失準、皮下紫瘢"
@@ -36508,26 +36539,16 @@
       "english_exam_track": {
         "review_status": "draft",
         "source_status": "bensky_review_pending",
-        "source_note": "actions_en/pattern_indications_en 於 2026-08-06 由無來源草稿替換為 American Dragon harvest 版本(與 record 層一致);其餘欄位仍為舊摘要。",
+        "source_note": "無來源流程草稿句(Review…/Compare with…/Base for…)於 2026-08-06 移除;渲染層優先讀本區,清 record 層不夠。",
         "actions_en": [
           "Augments Qi",
           "Nourishes the Blood",
           "Strengthens the Spleen",
           "Nourishes the Heart"
         ],
-        "pattern_indications_en": [
-          "Spleen Not Governing Blood",
-          "Heart Blood Deficiency",
-          "Heart (Blood) and Spleen (Qi) Deficiency due to worry (excessive deliberation or obsession)",
-          "Atrophy disorder (Wei Syndrome) due to Spleen and Stomach Qi Deficiency"
-        ],
-        "modifications_en": [
-          "Compare with Ba Zhen Tang for general qi-blood deficiency",
-          "Review anticoagulants, bleeding, sedatives, and pregnancy"
-        ],
-        "contraindications_en": [
-          "Review bleeding disorders, anticoagulants, sedating medications, and pregnancy/fertility context"
-        ]
+        "pattern_indications_en": [],
+        "modifications_en": [],
+        "contraindications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -36635,9 +36656,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -36669,8 +36687,15 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(由搬移前 CloudTCM 原文濃縮,原文完整保留於 chinese_depth_track),en 為 AD 證型,兩源並記"
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "contraindications_en": [
+          "zh 為既有中文原文,en 為其對譯(內容與 American Dragon 2026-08 harvest 的禁忌條目一致);原值為無來源流程草稿,2026-08-06 替換"
         ]
       },
       "cloudtcm_id": 293,
@@ -36738,7 +36763,13 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/GuiPiTang.html",
       "tongue_en": "Pale, maybe swollen; coating: White",
       "pulse_en": "Thready and weak or Thready and moderate",
-      "applications_en": [
+      "applications_en": [],
+      "tongue_zh": "舌淡而胖;苔白",
+      "pulse_zh": "脈細弱,或細緩",
+      "applications_zh": [
+        "現代運用於胃及十二指腸潰瘍出血、功能性子宮出血、再生障礙性貧血、血小板減少性紫癜、神經衰弱、心臟病等屬心脾氣血兩虛及脾不統血者。"
+      ],
+      "ad_treats_en": [
         "Anemia",
         "Neurasthenia",
         "Spermatorrhea",
@@ -36764,10 +36795,11 @@
         "Addiction",
         "Irregular"
       ],
-      "tongue_zh": "舌淡而胖;苔白",
-      "pulse_zh": "脈細弱,或細緩",
-      "applications_zh": [
-        "現代運用於胃及十二指腸潰瘍出血、功能性子宮出血、再生障礙性貧血、血小板減少性紫癜、神經衰弱、心臟病等屬心脾氣血兩虛及脾不統血者。"
+      "ad_syndromes_en": [
+        "Spleen Not Governing Blood",
+        "Heart Blood Deficiency",
+        "Heart (Blood) and Spleen (Qi) Deficiency due to worry (excessive deliberation or obsession)",
+        "Atrophy disorder (Wei Syndrome) due to Spleen and Stomach Qi Deficiency"
       ]
     },
     {
@@ -39665,11 +39697,7 @@
           "in_formula_zh": "潤肺止咳,調和諸藥"
         }
       ],
-      "pattern_indications_en": [
-        "Wind-Heat Attacks the Lungs",
-        "Wind-Cold Transformed into Heat",
-        "Wen Bing - Qi Stage Lung Heat"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "常見症狀是：發燒發熱、咳嗽、氣喘、氣逆、鼻翼煽動(鼻孔兩翼因呼吸急促而煽動)、口渴、有汗或無汗、黃痰黃鼻涕、舌苔薄白或黃，脈浮而數者。",
         "《傷寒論》原文提到「發汗後，不可更行桂枝湯，汗出而喘，無大熱者，可與麻杏甘石湯。」「下後不可更行桂枝湯，若汗出而喘，無大熱者，可與麻杏甘石湯。」",
@@ -39680,32 +39708,7 @@
         "因為肺氣無法下降，所以會咳嗽、氣喘嚴重的時候鼻翼煽動。熱氣又會消耗身體的津液，導致口乾口渴。",
         "如果熱邪從身體排出，就會看到出汗；但若是熱氣鬱結在皮膚表面、毛孔閉塞，反而不會出汗。舌苔薄、脈象浮，也顯示病邪還留在體表，沒有完全清除。"
       ],
-      "modifications_en": [
-        "For Excess Heat:",
-        "For recalcitrant asthma:",
-        "+ Flos Lonicerae",
-        "Jin Yin Hua",
-        "+ Rz. Pinelliae Preparatum",
-        "Zhi Ban Xia",
-        "+ Fr. Forsythiae",
-        "Lian Qiao",
-        "+ Fr. Trichosanthis",
-        "Gua Lou",
-        "+ Rx. Scutellariae",
-        "Huang Qin",
-        "+ Per. Citri Reticulatae",
-        "Chen Pi",
-        "+ Hb. Houttuyniae",
-        "Yu Xing Cao",
-        "+ Fr. Aurantii Immaturus",
-        "Zhi Shi",
-        "+ Fol. Isatidis",
-        "Da Qing Ye",
-        "Rz. Zingiberis Recens",
-        "Sheng Jiang",
-        "For asthma or cough with profuse Phlegm:",
-        "For chills and anhidrosis:"
-      ],
+      "modifications_en": [],
       "modifications_zh": [
         "加減法：如果肺熱嚴重，壯熱汗出者，宜加重石膏用量，並酌加桑白皮、黃芩、知母以清泄肺熱；表邪偏重，無汗而惡寒，石膏用量宜減輕，酌加薄荷、蘇葉、桑葉等以助解表宣肺之力；痰多氣急，可加葶藶子、枇杷葉以降氣化痰；痰黃稠而胸悶者，宜加瓜蔞、貝母、黃芩、桔梗以清熱化痰，寬胸利膈。"
       ],
@@ -39736,7 +39739,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -39821,12 +39825,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
-        "modifications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -39859,9 +39857,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為 CloudTCM 條文,en 為 AD 證型,兩源並記非逐條對譯"
-        ],
         "condition_tags_zh": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
@@ -39873,6 +39868,16 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_modifications_en": [
+          "American Dragon MODIFICATIONS 清單 — 與 modifications_zh 粒度不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 224,
@@ -39904,32 +39909,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/MaXingShiGanTang.html",
       "tongue_en": "Red; coating: Yellow or White",
       "pulse_en": "Superficial and rapid or Slippery and rapid",
-      "applications_en": [
-        "Bronchial asthma",
-        "Cough",
-        "Fever",
-        "Common cold",
-        "Pertussis",
-        "Bronchiectasis",
-        "Diphtheria",
-        "Upper respiratory tract infection",
-        "Pneumonia",
-        "Influenza",
-        "Acute or chronic bronchitis",
-        "Keratitis",
-        "Asthma",
-        "Acute pharyngitis",
-        "Rheumatoid arthritis",
-        "Headache",
-        "Acute tonsillitis",
-        "Vertigo",
-        "COPD",
-        "Bronchitis",
-        "Lung cancer",
-        "Spontaneous perspiration",
-        "Hemoptysis",
-        "Sore throat"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌紅;苔黃或白",
       "pulse_zh": "脈浮數,或滑數",
       "applications_zh": [
@@ -39955,6 +39935,63 @@
       "pattern_tags_en": [
         "Lung Heat",
         "Wind-Heat"
+      ],
+      "ad_treats_en": [
+        "Bronchial asthma",
+        "Cough",
+        "Fever",
+        "Common cold",
+        "Pertussis",
+        "Bronchiectasis",
+        "Diphtheria",
+        "Upper respiratory tract infection",
+        "Pneumonia",
+        "Influenza",
+        "Acute or chronic bronchitis",
+        "Keratitis",
+        "Asthma",
+        "Acute pharyngitis",
+        "Rheumatoid arthritis",
+        "Headache",
+        "Acute tonsillitis",
+        "Vertigo",
+        "COPD",
+        "Bronchitis",
+        "Lung cancer",
+        "Spontaneous perspiration",
+        "Hemoptysis",
+        "Sore throat"
+      ],
+      "ad_modifications_en": [
+        "For Excess Heat:",
+        "For recalcitrant asthma:",
+        "+ Flos Lonicerae",
+        "Jin Yin Hua",
+        "+ Rz. Pinelliae Preparatum",
+        "Zhi Ban Xia",
+        "+ Fr. Forsythiae",
+        "Lian Qiao",
+        "+ Fr. Trichosanthis",
+        "Gua Lou",
+        "+ Rx. Scutellariae",
+        "Huang Qin",
+        "+ Per. Citri Reticulatae",
+        "Chen Pi",
+        "+ Hb. Houttuyniae",
+        "Yu Xing Cao",
+        "+ Fr. Aurantii Immaturus",
+        "Zhi Shi",
+        "+ Fol. Isatidis",
+        "Da Qing Ye",
+        "Rz. Zingiberis Recens",
+        "Sheng Jiang",
+        "For asthma or cough with profuse Phlegm:",
+        "For chills and anhidrosis:"
+      ],
+      "ad_syndromes_en": [
+        "Wind-Heat Attacks the Lungs",
+        "Wind-Cold Transformed into Heat",
+        "Wen Bing - Qi Stage Lung Heat"
       ]
     },
     {
@@ -40523,9 +40560,7 @@
           "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
         }
       ],
-      "pattern_indications_en": [
-        "Acute, massive febrile disorder of head (Da Tou Wen 大头瘟) ● Blood pressure reducing"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "明代《瘟疫論》等文獻描述其具有傳染性，符合部分流行性疾病的表現，現代理解為流行性腮腺炎，古代因患者頭部腫大如蛤蟆而稱「蛤蟆瘟」或「大頭瘟」。",
         "現代醫學認為這些症狀包括細菌感染(如鏈球菌)導致的面部紅腫熱痛、顏面丹毒、腮腺炎、急性扁桃腺炎、頭面部蜂窩性組織炎、急性淋巴結炎(頜下或頸部淋巴結化膿性感染)等。",
@@ -40589,7 +40624,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -40659,6 +40695,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 231,
@@ -40702,7 +40741,10 @@
             "白僵蠶 2g"
           ]
         }
-      }
+      },
+      "ad_syndromes_en": [
+        "Acute, massive febrile disorder of head (Da Tou Wen 大头瘟) ● Blood pressure reducing"
+      ]
     },
     {
       "id": "formula.qian_zheng_san",
@@ -41809,42 +41851,12 @@
           "in_formula_zh": "緩急止痛,調和諸藥"
         }
       ],
-      "pattern_indications_en": [
-        "Jue Yin Heat",
-        "Shao Yin Heat",
-        "Liver and Spleen Disharmony (Liver Attacking the Spleen) with costal or abdominal pain and menstrual complaints",
-        "Gu Syndrome"
-      ],
+      "pattern_indications_en": [],
       "pattern_indications_zh": [
         "「陽氣鬱滯導致的厥逆證」：病人手腳不暖和，可能伴隨身體微微發熱、咳嗽、心悸、小便不利、腹痛、拉肚子且排便時有裡急後重感（想拉又拉不乾淨），脈象呈現弦脈。",
         "「肝脾不調證」：表現為脅肋部脹悶，胃脘與腹部疼痛，脈象也是弦脈。"
       ],
-      "modifications_en": [
-        "For cough :",
-        "For palpitations :",
-        "+ Fr. Schisandrae",
-        "Wu Wei Zi",
-        "+ Ram Cinnamomi",
-        "Gui Zhi",
-        "+ Rz. Zingiberis",
-        "Gan Jiang",
-        "For urinary difficulty:",
-        "For abdominal pain due to Cold:",
-        "Poria",
-        "Fu Ling",
-        "+ Rx. Lateralis Aconiti Preparata",
-        "Zhi Fu Zi",
-        "For epigastric pain with acid regurgitation:",
-        "For hypochondriac pain:",
-        "+ Left Metal Pill",
-        "Zuo Jin Wan",
-        "+ Rz. Corydalis",
-        "Yan Hu Suo",
-        "For Food Stagnation with abdominal pain:",
-        "+ Tub. Curcumae",
-        "Yu Jin",
-        "+ Fr. Crataegi"
-      ],
+      "modifications_en": [],
       "modifications_zh": [
         "相關加減法：若咳者，加五味子、乾薑以溫肺散寒止咳。悸者，加桂枝以溫心陽。小便不利者，加茯苓以利小便。腹中痛者，加炮附子以散裡寒。腹瀉者，加薤白以通陽散結。氣鬱甚者，加香附、鬱金以理氣解鬱。有熱者，加梔子、川楝子於以清內熱。"
       ],
@@ -41873,7 +41885,8 @@
         "indications": [],
         "modifications": [],
         "contraindications": [],
-        "notes": []
+        "notes": [],
+        "pattern_indications_en": []
       },
       "chinese_depth_track": {
         "review_status": "draft",
@@ -41957,12 +41970,6 @@
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ],
-        "applications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
-        "modifications_en": [
-          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
-        ],
         "tongue_en": [
           "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)"
         ],
@@ -41998,9 +42005,6 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)"
         ],
-        "pattern_indications_en": [
-          "American Dragon formula page (harvested 2026-08) — zh 為辨證條文(原文完整保留於 chinese_depth_track 或本欄),en 為 AD 證型,兩源並記"
-        ],
         "condition_tags_zh": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
         ],
@@ -42012,6 +42016,16 @@
         ],
         "pattern_tags_en": [
           "由本卡主治/現代應用內容歸納之短標籤;en 出自 data/config/formula_tag_glossary.json(scripts/fill-formula-tag-layer.js 2026-08-06)"
+        ],
+        "ad_treats_en": [
+          "American Dragon formula page (harvested 2026-08, scripts/harvest-american-dragon-formulas.js)",
+          "American Dragon TREATS 清單 — 與 applications_zh 的敘述格式不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_modifications_en": [
+          "American Dragon MODIFICATIONS 清單 — 與 modifications_zh 粒度不同,2026-08-06 拆為獨立欄位以免中英錯位"
+        ],
+        "ad_syndromes_en": [
+          "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
         ]
       },
       "cloudtcm_id": 78,
@@ -42043,32 +42057,7 @@
       "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiNiSan.html",
       "tongue_en": "Red or pale; coating: Thin yellow or white or Greasy yellow or white",
       "pulse_en": "Wiry or Wiry and tight or Wiry and slippery",
-      "applications_en": [
-        "Gastritis",
-        "Gastric ptosis",
-        "Peptic ulcer",
-        "Cholecystitis",
-        "Cholelithiasis",
-        "Hepatitis",
-        "Intestinal obstruction (adhesive)",
-        "Mastitis",
-        "Fibrocystic breast disease",
-        "Syncope (due to Heat)",
-        "Gastric neuralgia",
-        "Intercostal neuralgia",
-        "Biliary ascariasis",
-        "Cirrhosis of the Liver",
-        "Acute and chronic gastritis",
-        "Adnexitis",
-        "Impotence",
-        "Candidiasis",
-        "Obesity",
-        "Alternating diarrhea and constipation (hard pellet-like",
-        "stools)",
-        "Premenstrual syndrome",
-        "Coronary artery disease",
-        "Enuresis"
-      ],
+      "applications_en": [],
       "tongue_zh": "舌紅或淡;苔薄黃或薄白,或黃膩、白膩",
       "pulse_zh": "脈弦,或弦緊,或弦滑",
       "applications_zh": [
@@ -42103,6 +42092,64 @@
         "Liver Qi Stagnation",
         "Liver-Spleen Disharmony",
         "Qi Stagnation"
+      ],
+      "ad_treats_en": [
+        "Gastritis",
+        "Gastric ptosis",
+        "Peptic ulcer",
+        "Cholecystitis",
+        "Cholelithiasis",
+        "Hepatitis",
+        "Intestinal obstruction (adhesive)",
+        "Mastitis",
+        "Fibrocystic breast disease",
+        "Syncope (due to Heat)",
+        "Gastric neuralgia",
+        "Intercostal neuralgia",
+        "Biliary ascariasis",
+        "Cirrhosis of the Liver",
+        "Acute and chronic gastritis",
+        "Adnexitis",
+        "Impotence",
+        "Candidiasis",
+        "Obesity",
+        "Alternating diarrhea and constipation (hard pellet-like",
+        "stools)",
+        "Premenstrual syndrome",
+        "Coronary artery disease",
+        "Enuresis"
+      ],
+      "ad_modifications_en": [
+        "For cough :",
+        "For palpitations :",
+        "+ Fr. Schisandrae",
+        "Wu Wei Zi",
+        "+ Ram Cinnamomi",
+        "Gui Zhi",
+        "+ Rz. Zingiberis",
+        "Gan Jiang",
+        "For urinary difficulty:",
+        "For abdominal pain due to Cold:",
+        "Poria",
+        "Fu Ling",
+        "+ Rx. Lateralis Aconiti Preparata",
+        "Zhi Fu Zi",
+        "For epigastric pain with acid regurgitation:",
+        "For hypochondriac pain:",
+        "+ Left Metal Pill",
+        "Zuo Jin Wan",
+        "+ Rz. Corydalis",
+        "Yan Hu Suo",
+        "For Food Stagnation with abdominal pain:",
+        "+ Tub. Curcumae",
+        "Yu Jin",
+        "+ Fr. Crataegi"
+      ],
+      "ad_syndromes_en": [
+        "Jue Yin Heat",
+        "Shao Yin Heat",
+        "Liver and Spleen Disharmony (Liver Attacking the Spleen) with costal or abdominal pain and menstrual complaints",
+        "Gu Syndrome"
       ]
     },
     {
@@ -42131,17 +42178,27 @@
       "study_tags": [],
       "pattern_focus_en": [],
       "actions_en": [
-        "Action: 蘇合香丸：清熱解表、調理氣血"
+        "Warms the Middle",
+        "Aromatically Opens the Orifices",
+        "Promotes Qi Flow",
+        "Transforms Turbidity"
       ],
       "actions_zh": [
-        "蘇合香丸：清熱解表、調理氣血"
+        "溫通中焦",
+        "芳香開竅",
+        "行氣",
+        "化濁"
       ],
       "composition": [],
       "pattern_indications_en": [
-        "Acute closed disorders due to excessive cold ●"
+        "Acute closed disorders due to excessive cold: sudden collapse, loss of consciousness, clenched jaw",
+        "Fullness, pain, and a sensation of cold in the chest and abdomen that may signal impending loss of consciousness",
+        "Abdominal pain and focal distention in the chest, with an urge to vomit and defecate"
       ],
       "pattern_indications_zh": [
-        "蘇合香丸主治：Acute closed disorders due to excessive cold ●"
+        "寒閉證——突然昏倒,不省人事,牙關緊閉",
+        "胸腹滿痛而有冷感,可為昏厥之先兆",
+        "腹痛、胸中痞悶,欲吐欲瀉"
       ],
       "modifications_en": [],
       "modifications_zh": [],
@@ -42186,8 +42243,15 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "actions_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md#Table367(Actions/Indications 行);原 actions_zh 誤作「清熱解表、調理氣血」(本方為溫開劑),2026-08-06 依課件更正"
+        ],
+        "pattern_indications_en": [
+          "curriculum/herbs/方剂学汇总_extracted.md#Table367(Actions/Indications 行);原 actions_zh 誤作「清熱解表、調理氣血」(本方為溫開劑),2026-08-06 依課件更正"
         ]
-      }
+      },
+      "correction_note": "2026-08-06:actions_zh 原誤作「清熱解表、調理氣血」——本方為溫開劑,依課件表367 更正為溫通中焦/芳香開竅/行氣/化濁。組成仍待由課件表368 建立(15 味,課件標 4 味君藥,與 F7「君藥 1-2 味」不符,需 Ting 裁定),故本卡尚未列為已整理。"
     },
     {
       "id": "formula.tao_he_cheng_qi_tang",

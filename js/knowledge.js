@@ -673,14 +673,29 @@
      the treatment strategy the outline examines by name (Domain I.B.5), the
      family is what "加減" actually means, and the tongue/pulse is the selection
      signal that tells this formula apart from its neighbours. */
+  /* exam_importance is shared boilerplate on 200 of 201 formulas: one sentence
+     of exam-outline Domain percentages (169 cards) or "not on the outline" (31),
+     identical word for word. Printed at the very top of every card it is pure
+     noise — Ting: 「前面還放一堆廢話」— and it pushes the one line that IS
+     per-formula (exam_pearl) below the fold. The ★ header already says whether
+     the formula is on the board list, which is the only part of that sentence
+     that varies. So: print exam_importance only when it is NOT one of the shared
+     strings. The data stays (§0); this is a display decision. */
+  const SHARED_EXAM_SCOPE = [
+    "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑",
+    "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑",
+  ];
   function formulaExamBanner(record) {
     const onBoard = record.on_board_list;
     const pearl = usableText(record.exam_pearl);
-    if (!record.exam_importance && !pearl) return "";
+    const scope = usableText(record.exam_importance);
+    const scopeIsShared = scope && SHARED_EXAM_SCOPE.some((s) => scope.startsWith(s));
+    const showScope = scope && !scopeIsShared;
+    if (!showScope && !pearl) return "";
     const bold = (t) => esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong class="k-pearl-key">$1</strong>').replace(/\n/g, "<br>");
     return `<section class="k-exam-banner${onBoard ? " is-board" : ""}">
       <h4>${onBoard ? "★ 考試重點 · NCBAHM 應試方劑" : "💡 學習提示"}</h4>
-      ${record.exam_importance ? `<p class="k-exam-scope">${esc(record.exam_importance)}</p>` : ""}
+      ${showScope ? `<p class="k-exam-scope">${esc(scope)}</p>` : ""}
       ${pearl ? `<p class="k-exam-pearl">${bold(pearl)}</p>` : ""}
     </section>`;
   }
@@ -923,6 +938,13 @@
     const out = [];
     const app = cleanList(record.applications_zh), appEn = cleanList(record.applications_en);
     if (app.length) out.push(detailSection("現代應用", "What this formula treats today（課件 Applications）", detailPairedList(app, appEn)));
+    // American Dragon's TREATS list: 24 English condition names, a different
+    // granularity from the Chinese prose above. They used to share
+    // applications_zh/_en, where the length mismatch made detailPairedList fall
+    // back to Chinese only — the English was in the data and invisible on the
+    // card. Its own section, so both actually render.
+    const adTreats = cleanList(record.ad_treats_en);
+    if (adTreats.length) out.push(detailSection("現代應用（American Dragon 清單）", "Conditions treated — American Dragon", detailList(adTreats)));
     const res = cleanList(record.modern_research_zh), resEn = cleanList(record.modern_research_en);
     if (res.length) out.push(detailSection("現代藥理", "Modern research（課件）", detailPairedList(res, resEn)));
     // modern_diseases_zh is NOT rendered. It is CloudTCM keyword co-occurrence:
@@ -1124,7 +1146,7 @@
       ? detailPairedList(contraindicationsZh, contraindicationsEn)
       : detailList(safetyList(safety));
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("⚠️ 注意事項與禁忌", "Contraindications & Cautions", contraHtml)}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + (cleanList(record.ad_syndromes_en).length ? `<h4 class="k-subhead">American Dragon 證型 Syndromes</h4>${detailList(record.ad_syndromes_en)}` : ""))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("⚠️ 注意事項與禁忌", "Contraindications & Cautions", contraHtml)}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${modern ? detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", `<div class="k-chip-cloud">${modern}</div>`) : ""}${detailSection("相關病名與證型", "Related conditions and patterns", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
