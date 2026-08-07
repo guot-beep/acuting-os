@@ -890,9 +890,18 @@
      useful thing to know about 大青龍湯. Mirrored by
      scripts/link-formula-family-back.js, never authored twice. */
   function formulaSourceLinks(record) {
-    const a = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link" style="margin-right:6px;display:inline-block;padding:2px 8px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:4px;color:#0284c7;font-size:0.85em;text-decoration:none;">${esc(label)} ↗</a>`;
+    const a = (url, label, note) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link"${note ? ` title="${esc(note)}"` : ""} style="margin-right:6px;display:inline-block;padding:2px 8px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:4px;color:#0284c7;font-size:0.85em;text-decoration:none;">${esc(label)} ↗</a>`;
     const out = [];
-    if (record.cloudtcm_url) out.push(a(record.cloudtcm_url, "雲端中醫 CloudTCM"));
+    if (record.cloudtcm_url) {
+      // 3 formulas link to a page filed under a different name (理中湯 for
+      // 理中丸, 生脈飲 for 生脈散, 八味地黃丸 for 金匱腎氣丸). Say so on the
+      // chip — clicking through to a differently-named page otherwise reads
+      // like a broken link, and for 金匱腎氣丸 the target really does differ
+      // by one herb (肉桂 vs 桂枝), which she needs to know before trusting it.
+      const note = usableText(record.cloudtcm_link_note);
+      out.push(a(record.cloudtcm_url, "雲端中醫 CloudTCM", note));
+      if (note) out.push(`<small class="k-src-note" style="display:block;color:#92400e;font-size:0.78em;margin-top:2px;">※ ${esc(note)}</small>`);
+    }
     if (record.american_dragon_url) out.push(a(record.american_dragon_url, "American Dragon"));
     return out.length ? out.join("") : `<span class="k-meta">${esc(record.tier || "draft")}</span>`;
   }
@@ -967,11 +976,14 @@
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
           // Ting removed the Tier tile long ago and wants this slot to be the
-          // CloudTCM link instead — it is the page she actually opens from a
-          // formula card. Falls back to the tier only when no link exists, so
+          // source links instead — they are the pages she actually opens from a
+          // formula card, and having them only at the bottom of the Safety tab
+          // meant scrolling past the whole card to reach them. Both links, same
+          // hrefs as the bottom 來源 section (formulaSourceLinks) so the two can
+          // never disagree. Falls back to the tier when neither link exists, so
           // the tile is never empty.
-          record.cloudtcm_url
-            ? ["雲端中醫 CloudTCM", `<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">開啟方劑頁面 ↗</a>`, true]
+          (record.cloudtcm_url || record.american_dragon_url)
+            ? ["來源 Sources", formulaSourceLinks(record), true]
             : ["學習層級 Tier", record.tier || "draft"],
           // Ting wants the herbs themselves here, not a count — the tile is
           // the first thing she reads on a formula card. Falls back to pinyin
