@@ -1,3 +1,13 @@
+# 2026-08-06 Claude — CI 三個 job 修復:merge 洗掉的 id、隱形的安全警語、證型兩套詞彙
+
+- **CI 從 08-06 04:02 的 merge `11f37a9` 起一直是紅的**,三個失敗,其中兩個藏著真問題。
+- **① 21 張穴位卡的安全警語是隱形的**:`adapt361Record` 讀 cautions_zh/cautions/danger,獨漏 `contraindications` —— 08-02 那批針刺深度強化(如「趾端穴，僅可沿皮下淺刺 0.1 吋，不可深刺」)全寫在該欄。已修,在 SP1 卡片上目視確認四條全部顯示。
+- **② 72 個奇穴 D2 id 被 merge 回退**,且無法機械還原,因為 `validate-point-ids` 掃 `extra_points.json` 而 `add-point-ids` 沒有(憲法點名過的來源清單分岔,一直沒補)。兩邊已對齊;id 還原、帳本承認(REMOVED: 0)。順帶修掉 add-point-ids 把 361.json 重排成 104,798 行無意義 diff 的行為(改成沿用原縮排 + 不寫未變更的檔案)。
+- **③ 證型層是兩套詞彙相撞,不是內容流失**:同一個 merge 帶進 17 筆自創 schema 的記錄。驗證器報「59/59 完全沒有來源」,但那 17 筆的 `source_ids` 有真引用;卡片也讀不到它們的方劑與穴位。有正典對應的已用 `scripts/migrate-pattern-v1-vocabulary.js` 搬完(先搬值再刪鍵),其餘採納並寫進 `PATTERN_CARD_TEMPLATE §4.9`。**自己的 byte 檢查抓到遷移掉了肝陽上亢的「少津」與腎陽虛的「遲」(遲脈是腎陽虛的關鍵指徵)** —— 已改成兩讀並記,複驗 0 字元遺失。
+- **數字(每個都可用括號內指令重現)**:point-ids 76→0 (`validate-point-ids`);validate-data 3→0;證型 691→220 (`validate-pattern-standard`,P1 59→43 · P4 59→42 · P8 422→0 · P9 100→0 · P5 50→134 因為缺英文不再被舊欄位名藏住);乾淨記錄 0→8;棘輪天花板 250→220。層級普查更新:ear id 41→215、耳穴內嵌 29→203、defaultPoints 769→947。13 個 CI validator + git diff --check 全過。commit `2396f93`,已 push branch + main。
+- **跨線動到的檔案(明天要注意)**:`data/acupoints/**`(奇穴線)與 `data/pathology/pattern_library.json`(證型線)—— 都是修復 merge 回退,不是內容創作。**證型線第一批的 P9 遷移已經做完,不用重做**(見 DISPATCH §2b)。
+- **已知未解**:N1 鑑別 59/59 仍缺(`differentiation_preview_zh` 是散文,不等於結構化的 `differential_patterns`);`key_manifestations_zh` 與 `key_signs_zh` 兩套並存待 Ting 定奪;formulas.json ~100 欄近義重複欄位仍未收斂;`validate-herb-standard` E5 仍是 SOFT_PAIR,32 味中英錯位照樣 PASS。
+
 # 2026-08-06 Claude — 規則系統瘦身:713→151 行,58 份歷史文件歸檔
 
 - **Ting 的診斷請求**:昨天十小時的「優化」讓所有 agent 更不服從。原因:規則總量爆炸(docs/ 110+ 檔、22k 行、五個 READ-FIRST)超過任何 agent 的注意力;模板/schema/驗證器/渲染器四個真相互相漂移;agent 實際模仿的是髒資料不是文件。鐵證:「不准寫 100%」是 8/05 寫的,8/06 有 10+ 個 commit 標題含「100%」。
