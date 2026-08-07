@@ -37,10 +37,20 @@ const hasRole = (r) => (r.composition || []).some((h) => String(h?.role_zh || h?
    1,873 characters while the unique-string set actually GREW from 5,954 to
    5,985. What matters is whether a sentence that existed anywhere still exists
    somewhere — that catches real deletion and ignores tidying. */
+/* Compared on the Chinese characters alone, with punctuation and spacing
+   stripped. Exact-string comparison called every repair a deletion: cleaning
+   「清熱瀉火，　，。」 to 「清熱瀉火。」 removed a string and added a different one,
+   and 166 such tidy-ups looked like 166 losses. A guard that cries wolf gets
+   switched off, which is the failure this whole file exists to prevent. On the
+   characters, that pair is identical — while a genuinely deleted sentence still
+   disappears. */
 function chineseStrings(o, into = new Set()) {
   if (Array.isArray(o)) o.forEach((v) => chineseStrings(v, into));
   else if (o && typeof o === "object") Object.values(o).forEach((v) => chineseStrings(v, into));
-  else if (typeof o === "string") { const t = o.trim(); if (/[一-鿿]/.test(t)) into.add(t); }
+  else if (typeof o === "string") {
+    const t = o.replace(/[^一-鿿]/g, "");
+    if (t) into.add(t);
+  }
   return into;
 }
 
