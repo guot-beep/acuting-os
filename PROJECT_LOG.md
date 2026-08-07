@@ -1,3 +1,10 @@
+# 2026-08-06 Claude — 規則系統瘦身:713→151 行,58 份歷史文件歸檔
+
+- **Ting 的診斷請求**:昨天十小時的「優化」讓所有 agent 更不服從。原因:規則總量爆炸(docs/ 110+ 檔、22k 行、五個 READ-FIRST)超過任何 agent 的注意力;模板/schema/驗證器/渲染器四個真相互相漂移;agent 實際模仿的是髒資料不是文件。鐵證:「不准寫 100%」是 8/05 寫的,8/06 有 10+ 個 commit 標題含「100%」。
+- **做了**:AI_CONSTITUTION v2(201→51 行,派工單自動跟著瘦)、AGENTS.md(256→48)、CLAUDE.md(90→52);裁決掉 fill-and-ship vs staging-gate 矛盾(draft 直接上,gate 只留給 canonical 覆蓋/刪除/範圍);58 份一次性報告移入 docs/archive/(含 README 聲明「不是規則」);活文件裡 §A/§C/§E2 舊引用全部更新。
+- **驗證**:build-data PASS、content-junk PASS、git diff --check PASS;active validator 只引用留下的 TEMPLATE,無斷鏈。commit be7902e,已 push branch + main。
+- **已知未解(下一步,按槓桿排序)**:① formulas.json 一筆記錄 ~100 欄、大量近義重複欄位(modifications/modifications_zh、formula_song/formula_song_zh)——schema 不收斂,「不 follow 模板」就會一直復發;② validate-herb-standard 的 E5 被降成 SOFT_PAIR,實測 32 味中英錯位照樣 PASS——驗證器要重新對齊模板硬規則;③ formulas 尚有 34 筆 en 有值 zh 為空、13 筆組成疑似截斷。
+- **給下一個 agent**:規則正本只剩 AGENTS.md 地圖列的那幾份;docs/ 其他=歷史。派工照 skills/acuting-dispatch,憲法整段貼。
 # 2026-08-06 Claude — A2: birth_month, pathomechanism, and the migration mapping made reviewable
 
 - Three columns, all additive, `schema.sql` stays at 20 tables. **No `visit_measurements`, no `fertility_workflow_id`, no UI, no symptom/formula changes.**
