@@ -458,7 +458,17 @@
     return detailList(z.length ? z : e, emptyText);
   }
 
+  /* Ting 2026-08-07:「這些待補如果你沒東西補 就不要出現」. A card carrying six
+     待補 / Pending headings buries the three sections that do have content, and
+     a heading with nothing under it is not honest reporting — it is noise. The
+     Quality page is where coverage gets counted; the card should show what it
+     has. Any section whose whole body is one k-detail-empty placeholder is
+     dropped, so this applies to every card without hunting each call site. */
+  const isPlaceholderOnly = (html) =>
+    !String(html).replace(/<p class="k-detail-empty">[\s\S]*?<\/p>/g, "").trim();
+
   function detailSection(titleZh, titleEn, content) {
+    if (isPlaceholderOnly(content)) return "";
     return `<section class="k-detail-section"><h3>${esc(titleZh)} <small>${esc(titleEn)}</small></h3>${content}</section>`;
   }
 
@@ -1004,6 +1014,12 @@
   }
 
   function detailShell(record, kind, panels) {
+    /* Once detailSection() drops placeholder-only sections, a tab can end up
+       with nothing in it — 藥對 on a formula with no recorded pairs. An empty
+       tab is worse than a 待補 line, because it reads as a loading bug. The
+       notes tab always stays: it is Ting's own layer and starts empty by
+       design. */
+    panels = (panels || []).filter((p) => p && (p.id === "notes" || String(p.content || "").trim()));
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
     const mappedHerb = kind === "herb" ? (HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))) : null;
