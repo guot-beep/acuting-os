@@ -60,6 +60,14 @@ function tidy(s) {
   t = t.replace(/^[\s，,。.、；;]+/, "");
   t = t.replace(/[\s，,、；;]+(?=。)/g, "");
   t = t.replace(/[\s，,、；;]+$/, "").trim();
+  /* Repeated or mixed terminators left by the same bad fill: 「調和諸藥。。」,
+     「…，。」. Only punctuation is touched — Ting 2026-08-07:「小問題不用清空
+     這樣我空很多地方更麻煩 你看到就把標點符號改一下就好」. */
+  t = t.replace(/[。.]{2,}/g, "。");
+  t = t.replace(/[，,、；;]+[。.]/g, "。");
+  t = t.replace(/[。.][，,、；;]+/g, "。");
+  t = t.replace(/[，,]{2,}/g, "，");
+  t = t.replace(/[、]{2,}/g, "、");
   if (!/[一-鿿A-Za-z0-9]/.test(t)) return "";
   if (/[一-鿿]/.test(t) && !/[。.]$/.test(t)) t += "。";
   return t;
