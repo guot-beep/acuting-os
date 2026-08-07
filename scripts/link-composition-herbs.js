@@ -43,6 +43,17 @@ function resolve(name) {
   const bare = raw.replace(/^[（(]\s*/, "").replace(/\s*[）)]$/, "").trim();   // (黨參) -> 黨參
   candidates.push(bare);
   for (const p of PREFIX) if (bare.startsWith(p) && bare.length > p.length) candidates.push(bare.slice(p.length));
+  /* Part-of-plant and preparation suffixes: 當歸尾 is the tail of 當歸, 甘草梢
+     the tip of 甘草, 梔子炭 the charred form. The part is worth showing on the
+     card, so only the link is resolved to the base herb. 皮/仁/子/葉 are NOT
+     here — 陳皮, 杏仁, 蘇子 and 桑葉 are herbs in their own right, not parts of
+     another entry, and stripping them would link to something else entirely. */
+  const SUFFIX = ["尾", "梢", "炭", "末", "汁", "霜"];
+  for (const s of SUFFIX) if (bare.endsWith(s) && bare.length > s.length + 1) {
+    const stem = bare.slice(0, -s.length);
+    candidates.push(stem);
+    for (const p of PREFIX) if (stem.startsWith(p) && stem.length > p.length) candidates.push(stem.slice(p.length));
+  }
   for (const c of candidates) {
     const hit = only(byName, c);
     if (hit) return { herb: hit, via: c === bare ? "括號/原名" : "炮製前綴" };

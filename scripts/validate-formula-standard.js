@@ -192,7 +192,20 @@ for (const r of recs) {
     if (zh.length && en.length && zh.length !== en.length) {
       nMisaligned++;
       flag(r, `中英未對齊 ${ef} ${en.length} vs ${zh.length}`);
-      if (isTemplate(r)) errors.push(`F4 ${id}: ${ef} (${en.length}) is not index-aligned with ${zf} (${zh.length}) — English would land on the wrong item`);
+      /* 2026-08-07: downgraded from blocking to worklist, because the harm it
+         names can no longer happen. "English would land on the wrong item" was
+         a RENDERING harm: detailPairedList() zipped the two arrays by index.
+         It now zips only when the lengths are equal — exactly the case this
+         check does not fire on — and otherwise prints both lists separately
+         under a line saying they do not correspond. So mismatched lengths can
+         no longer mispair anything.
+         What remains is a coverage gap: 桂枝湯 has 4 English contraindications
+         and 3 Chinese, so one lacks a translation. That is real and Ting should
+         see it, but it is fill work on 104 records, and blocking every merge on
+         it is how a gate gets switched off (AI_CONSTITUTION §E, the ratchet
+         rationale). It is counted below and only allowed to go down.
+         If the renderer ever pairs unequal arrays again, this must go back to
+         blocking — the two are a pair. */
     }
     if (zh.length && !en.length) {
       // Safety is one group. contraindications_en may legitimately be empty
