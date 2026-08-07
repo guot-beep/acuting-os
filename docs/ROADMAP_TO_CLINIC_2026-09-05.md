@@ -42,7 +42,7 @@ Ting 2026-08-05:「我要做到系統成熟到可以登入病例,九月五號要
 
 ---
 
-## 2. 四條線與所有權(防 merge,細節見 `docs/AI_CONSTITUTION.md` §A)
+## 2. 四條線與所有權(防 merge,細節見 `docs/AI_CONSTITUTION.md` §一)
 
 | 線 | Owner | 路徑 | 八月任務 |
 |---|---|---|---|

@@ -19,7 +19,7 @@
 - 「把 DailyMed setid `7cdcd001…` 的 CONTRAINDICATIONS 區段抄過來」→ 轉錄 → 可驗證
 
 **編造在結構上做不到**:要嘛附上真實 setid,要嘛留空。
-留空是誠實的來源缺口(憲法 §E2 最後一列),編造的禁忌會在診所裡被相信。
+留空是誠實的來源缺口(憲法 §三：查不到就停下來回報),編造的禁忌會在診所裡被相信。
 
 ---
 
@@ -154,7 +154,7 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 | `related_herb_ids` | 連 `herb.*` |
 | `related_formula_ids` | 連 `formula.*` |
 | `related_pattern_ids` | 連 `pattern.*` |
-| `tcm_relation_note_zh` | **憲法 §C.13:不准建立中西醫一對一等同** |
+| `tcm_relation_note_zh` | **憲法紅線 9:不准建立中西醫一對一等同** |
 
 ⚠️ **中西藥交互作用是全庫最容易編出「聽起來很合理」內容的欄位。**
 你會在診所裡相信它。沒有具名來源就留空。
@@ -200,7 +200,7 @@ MedlinePlus  furosemide → /meds/a682858.html              lookup（不可推�
 | 個人臨床筆記 | **不進 data/** | `js/notes.js` localStorage,key `drug:<id>` |
 | 長篇學習筆記 | markdown 文件,不是 JSON 欄位 | `docs/pharm_notes/<drug>.md` |
 
-⚠️ **個人筆記與病人資料絕不可寫進 `data/`**(憲法 §B.4)。
+⚠️ **個人筆記與病人資料絕不可寫進 `data/`**(憲法紅線 7)。
 
 ---
 
@@ -216,7 +216,7 @@ MedlinePlus  furosemide → /meds/a682858.html              lookup（不可推�
 
 ---
 
-## §4 誰做什麼（憲法 §A 的答案）
+## §4 誰做什麼（憲法 §一 檔案所有權的答案）
 
 | 範圍 | 主人 |
 |---|---|
@@ -243,7 +243,7 @@ MedlinePlus  furosemide → /meds/a682858.html              lookup（不可推�
 | Mannitol | 滲透性利尿 | — |
 
 **做完這五個先停下來給 Ting 看**,確認模板不會太肥、欄位不會大量空白,
-再往下做。憲法 §D18:一批 20–30 筆,但模板第一批更少。
+再往下做。憲法 §三:一批最多 30 筆,但模板第一批更少。
 
 ---
 

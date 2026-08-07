@@ -2,7 +2,7 @@
 
 **建立**：2026-08-06 · Claude
 **狀態**：規格已定，資料層尚未建立（`data/pharmacology/**` 的主人待 Ting 指定）
-**相關**：`docs/AI_CONSTITUTION.md` §C（內容紀律）、`docs/HERB_CARD_TEMPLATE.md` 教訓 10
+**相關**：`docs/AI_CONSTITUTION.md` §二（紅線）、`docs/HERB_CARD_TEMPLATE.md` 教訓 10
 
 ---
 
@@ -69,7 +69,7 @@ Lasix / Furosemide / Furosemide 20 mg tablet / Furosemide oral solution
 | 5 | **FDA Drug Safety Communications** | 上市後新發現的風險警示 | **lookup** · 條件式 |
 | 6 | **FDA REMS** | 風險評估與管控（限制配送、處方者認證、病人登錄、孕期預防方案） | **lookup** · 條件式 |
 
-**條件式的意思是:沒有就不要建欄位。** 憲法 §C.12 —— 200 筆共用一句
+**條件式的意思是:沒有就不要建欄位。** 憲法紅線 6 —— 200 筆共用一句
 「無相關警示」比留空更糟,而且會毀掉覆蓋率統計。
 
 卡片上顯示的應該是**查核日期**而不是空白宣稱:
@@ -90,7 +90,7 @@ FDA Safety Update    最後查核 2026-08-06 · 無連結警示
 | 10 | **ClinicalTrials.gov** | 進行中／已完成研究、仿單外用途 | **derivable**（搜尋式） | 未測 |
 
 **PubMed 不要只放首頁。** 放固定搜尋式,例如 `Furosemide AND hypokalemia`。
-但要標明**那是搜尋不是結論** —— 憲法 §C.14:機轉 ≠ 療效,案例報告 ≠ 臨床證據。
+但要標明**那是搜尋不是結論** —— 憲法紅線 9:機轉 ≠ 療效,案例報告 ≠ 臨床證據。
 
 ### 第五層 · 整合醫學（你的差異化）
 
@@ -203,7 +203,7 @@ ai-explanation      ← 永遠不可假裝成原始資料
 
 ## §6 已知未解（留給 Ting）
 
-1. **`data/pharmacology/**` 的主人是誰**（憲法 §A 每條線一個主人）
+1. **`data/pharmacology/**` 的主人是誰**（憲法 §一 每條線一個主人）
 2. **id 命名空間**:建議 `drug.furosemide` / `drugclass.loop_diuretics`,與
    `herb.*` / `formula.*` 一致,需鎖進 `DECISIONS.md`
 3. Drugs@FDA / Medication Guide / REMS / MedlinePlus 健康主題 / PubMed /

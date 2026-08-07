@@ -50,17 +50,17 @@ remaining 150" produces 150 half-finished records.
 
 ## File ownership — copy from the constitution, do not improvise
 
-`docs/AI_CONSTITUTION.md` §A is the table. The forbidden list in a brief is
+`docs/AI_CONSTITUTION.md` §一 is the table. The forbidden list in a brief is
 **every other line's paths, written out** — not "don't touch other files".
 Vague prohibitions are how `app.js` got overwritten.
 
-Current lines (re-check §A before每 dispatch, it changes):
+Current lines (re-check §一 before每 dispatch, it changes):
 
 | Line | Allowed | Skill |
 |---|---|---|
 | 病症/證型 | `data/pathology/**` · `data/config/*pattern*` | `acuting-condition-fill` |
 | 穴位(奇穴) | `data/acupoints/**` | `acuting-extra-point-refinement` |
-| 方劑/中藥 | `data/formulas/**` · `data/herbs/**` | — (templates only) |
+| 方劑/中藥 | `data/herbs/**`（formulas.json 在這裡；`data/formulas/` 只有 worklist） | — (templates only) |
 | 病例/UI/工程 | `app.js` · `js/**` · `dist/**` · `data/clinical_cases/**` · `scripts/**` · `docs/**` | Claude only |
 
 ## Done criteria must be numbers

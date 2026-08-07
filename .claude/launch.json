@@ -4,8 +4,9 @@
     {
       "name": "acuting-static",
       "runtimeExecutable": "C:/Users/guoti/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
-      "runtimeArgs": ["scripts/dev-server.js", "8361"],
-      "port": 8361
+      "runtimeArgs": ["scripts/dev-server.js"],
+      "port": 8361,
+      "autoPort": true
     }
   ]
 }
