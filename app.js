@@ -4242,6 +4242,25 @@ function externalPointLinks(point) {
   const sources = point.sources || [];
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
 
+  // Extra-point codes are stable database identifiers, not derivable URL
+  // slugs. Expose only exact pages that were explicitly stored and reviewed;
+  // the standard-point builders below can otherwise produce an empty
+  // CloudTCM link or send American Dragon to its home page.
+  if (isExtraPoint(point)) {
+    const storedUrls = [...sources, ...visualLinks.map((link) => link.url)]
+      .map((url) => String(url || "").trim())
+      .filter((url) => /^https?:\/\//i.test(url));
+    const cloudtcm = storedUrls.find((url) => /cloudtcm\.com\/(?:dic|acupoint)\/\d+/i.test(url));
+    const americanDragon = storedUrls.find((url) => /americandragon\.com\/Points\/(?!Index2\.html(?:$|[?#]))[^/?#]+\.html(?:$|[?#])/i.test(url));
+    const elotus = storedUrls.find((url) => /mastertungacupuncture\.org\/acupuncture\/traditional\/points\/(?!list(?:$|[?#]))[^/?#]+/i.test(url));
+
+    return [
+      cloudtcm ? { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: cloudtcm, kind: "chinese" } : null,
+      americanDragon ? { label: "American Dragon (AD)", url: americanDragon, kind: "english" } : null,
+      elotus ? { label: contentMode === "english" ? "eLotus CORE" : "eLotus 權威圖解", url: elotus, kind: "english" } : null
+    ].filter(Boolean);
+  }
+
   if (isAuricularPoint(point)) {
     const elotusLink = visualLinks.find(l => (l.url || '').includes('mastertungacupuncture.org'))?.url || sources.find(s => s.includes('mastertungacupuncture.org')) || `https://www.mastertungacupuncture.org/acupuncture/auricular/lch/points/${(point.code||'').toLowerCase().replace('ear-lch-', '').replace('ear-', '')}`;
     return [

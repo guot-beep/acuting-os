@@ -7751,30 +7751,15 @@
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juqueshu-ex-b14",
-      "https://www.americandragon.com/PointsIndex2.html",
-      "https://yibian.hopto.org/shu/?sid=7454",
-      "https://cloudtcm.com/dic/6477",
-      "https://www.medicalteaching.org/posts/VRX3YXcBhgYN2SYvdVGd/",
+      "https://kurohon.jp/gakusei/kiketsu_am/",
       "https://www.heart.org/en/about-us/heart-attack-and-stroke-symptoms"
     ],
     "visualLinks": [
       {
-        "labelZh": "eLotus · 巨闕俞 Ex-B14 精確頁",
-        "labelEn": "eLotus · Exact Juqueshu Ex-B14 Page",
+        "labelZh": "eLotus · 巨闕俞（本庫 EX-B10；來源 Ex-B14）",
+        "labelEn": "eLotus · Juqueshu (Database EX-B10; Source Ex-B14)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juqueshu-ex-b14",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
-      },
-      {
-        "labelZh": "醫砭 · 巨闕俞 EX-B11 解剖與操作",
-        "labelEn": "Yibian · Juqueshu EX-B11 Anatomy and Technique",
-        "url": "https://yibian.hopto.org/shu/?sid=7454",
-        "source": "Yibian supplemental Chinese point reference"
-      },
-      {
-        "labelZh": "雲端中醫 · 巨闕俞精確頁",
-        "labelEn": "CloudTCM · Exact Juqueshu Page",
-        "url": "https://cloudtcm.com/dic/6477",
-        "source": "CloudTCM supplemental reference"
       }
     ],
     "x": 180,
@@ -7847,8 +7832,8 @@
         "2026-08-08 live page opened: eLotus exact Juqueshu Ex-B14 page",
         "2026-08-08 live page opened and searched: American Dragon pinyin index; Juqueshu absent",
         "2026-08-08 guessed American Dragon /Points/Juqueshu.html failed to open",
-        "2026-08-08 Yibian, CloudTCM, and MedicalTeaching exact URLs returned indexed content but direct reopen returned an internal/cache error",
-        "2026-08-08 live page opened: AHA heart-attack and stroke warning-sign guidance"
+        "2026-08-08 live pages opened: Japanese exam-oriented source and AHA emergency source",
+        "2026-08-08 Yibian, CloudTCM, and MedicalTeaching exact URLs matched readable indexed content but failed direct opening in the current session; retained as provenance only and removed from clickable card links"
       ]
     },
     "review_status": "draft",
@@ -7983,9 +7968,7 @@
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15",
-      "https://www.americandragon.com/PointsIndex2.html",
       "https://cloudtcm.com/dic/5720",
-      "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/",
       "https://kurohon.jp/gakusei/kiketsu_am/",
       "https://www.merckmanuals.com/professional/neurologic-disorders/spinal-cord-disorders/overview-of-spinal-cord-disorders",
       "https://www.mayoclinic.org/first-aid/first-aid-fractures/basics/art-20056641",
@@ -7993,8 +7976,8 @@
     ],
     "visualLinks": [
       {
-        "labelZh": "eLotus · 接脊 Ex-B15 精確頁",
-        "labelEn": "eLotus · Exact Jieji Ex-B15 Page",
+        "labelZh": "eLotus · 接脊（本庫 EX-B11；來源 Ex-B15）",
+        "labelEn": "eLotus · Jieji (Database EX-B11; Source Ex-B15)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
       },
@@ -8003,12 +7986,6 @@
         "labelEn": "CloudTCM · Exact Jieji (Jiegu) Page",
         "url": "https://cloudtcm.com/dic/5720",
         "source": "CloudTCM supplemental reference"
-      },
-      {
-        "labelZh": "醫學網 · 接脊（接骨）解剖與操作",
-        "labelEn": "MedicalTeaching · Jieji Anatomy and Technique",
-        "url": "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/",
-        "source": "MedicalTeaching supplemental Chinese point reference"
       }
     ],
     "x": 180,
@@ -8085,7 +8062,8 @@
         "2026-08-08 live page opened: eLotus exact Jieji Ex-B15 page",
         "2026-08-08 live page opened and searched: American Dragon pinyin index; Jieji and Jiegu absent",
         "2026-08-08 guessed American Dragon Jieji and Jiegu detail URLs failed to open",
-        "2026-08-08 exact CloudTCM, MedicalTeaching, Japanese exam-oriented, Merck, Mayo, and CDC URLs returned readable indexed content"
+        "2026-08-08 live pages opened: exact CloudTCM, Japanese exam-oriented, Merck, Mayo, and CDC sources",
+        "2026-08-08 MedicalTeaching exact URL matched readable indexed content but failed direct opening in the current session; retained as provenance only and removed from clickable card links"
       ]
     },
     "review_status": "draft",
