@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B1 定喘四源與氣胸安全修整
+
+- **做了什麼**：整合 Board、課件缺口、eLotus Ex-B1、AD M-BW-1、CCAOM 潔針安全與胸膜頂解剖研究；原始 HTML 核對 AD 四組配穴，補齊嚴格雙語卡片與欄位溯源。
+- **數字 before→after**：嚴格模板／四源稽核 `27/72 → 28/72`；待修 `45/72 → 44/72`；泛用 Cloud URL 維持 `15/72`；技法、來源 URL、亂碼缺口均為 `0/72`。
+- **來源與安全**：共同刺法為直刺0.5～0.8寸；AD 另列朝脊柱0.5～1寸，方向與深度不拆開。CCAOM 記錄定喘少見氣胸事件；屍體研究沒有提供定喘專屬安全深度，故不製造單一『安全數字』。
+- **驗證**：point/all extra validators、`build-data`、`validate-data`、`validate-interactions`、`validate-point-ids`、`validate-content-junk`、`node --check app.js` 與 task-file `git diff --check` 全通過；內容 commit `fa3b62e`。
+- **已知未解／下一步**：44 張仍待修、15 張仍有泛用 Cloud URL；下一張 EX-B2 華佗夾脊。跨線 JS、Pattern 與 `curriculum/conditions/*` 檔案未納入。
+
 # 2026-08-08 Codex — EX-CA5 利尿四層來源缺口與安全修整
 
 - **做了什麼**：逐層查核 Board、`curriculum/acupoints/`、eLotus、American Dragon 與 CloudTCM 精確詞典頁，將拼音 `Liniu` 校正為 `Liniao`，補齊嚴格雙語卡片、配穴、別名、來源差異與欄位溯源；保留穩定 `EX-CA5`／`ex.ca5`。

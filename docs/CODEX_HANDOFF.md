@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B1 定喘四源與氣胸安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `fa3b62e` (`feat(acupoints): refine Dingchuan safety`).
+- **Files Changed**: `data/acupoints/extra_points.json`, `data/audits/missing_report.json`, and rebuilt `data/generated/app_data.js` / `data/generated/knowledge_data.js`. Pre-existing `js/knowledge.js`, `js/router.js`, Pattern reports, and `curriculum/conditions/*` archive were excluded.
+- **Four Layers**: NCBAHM 2026 Appendix A lists Dingchuan; local curriculum has no dedicated entry. Exact eLotus Ex-B1 and AD M-BW-1 pages were opened; the AD index-to-detail link and raw combination-table HTML were checked. CloudTCM exact-name searches found no dedicated detail page.
+- **Reconciliation**: shared technique is perpendicular 0.5–0.8 cun; AD additionally gives spine-directed 0.5–1 cun variants and sensation. The 1-cun value remains direction-bound and is not generalized laterally. Added AD actions, indications, four correctly aligned combination groups, names, code variant, and modern-extra-point note while preserving legacy phlegm/channel actions as labeled content.
+- **Safety**: CCAOM CNT Manual reports infrequent pneumothorax events at Dingchuan; a 2006 cadaveric pleural-cupula study warns that exceeding location/direction limits can injure pleura but supplies no Dingchuan-specific safe depth in its abstract. The card preserves both without manufacturing consensus and adds exact post-needling warning signs, risk factors, anatomy/stopping gaps, and non-numeric moxa/special-population gaps.
+- **Measured Counts**: strict-template/four-source-audited `27/72 → 28/72`; records with issues `45/72 → 44/72`; generic CloudTCM URL remains `15/72`; measurable-method/source-URL/mojibake gaps remain `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data`, `validate-interactions`, `validate-point-ids`, `validate-content-junk`, `node --check app.js`, and task-file `git diff --check` passed.
+- **Next**: EX-B2 華佗夾脊 (Huatuojiaji); treat cervical, thoracic, and lumbar technique/anatomy as region-specific rather than one uniform depth.
+
 ## [2026-08-08] Codex Handoff — EX-CA5 利尿四層來源缺口與安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `49496de` (`feat(acupoints): refine Liniao extra point`).
