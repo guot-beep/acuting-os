@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B8 十七椎四層、異名與椎管深度衝突修整
+
+- **做了什麼**：整合 Board 的 Shiqizhuixue／Shiqizhuixia、本地 checklist／腰痛課件、eLotus Ex-B8、AD M-BW-25／拼音索引與醫砭 EX-B8；保留 `EX-B8`／`ex.b8`，補齊異名、定位、解剖、全部功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `34/72 → 35/72`；待修 `38/72 → 37/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：一般層採 eLotus／AD 共同直刺0.8～1.2寸；AD 0.5～1寸分列。AD／醫砭1.5～2寸與 AD 所列皮膚至椎管1.25～1.75寸重疊，只作衝突記錄，不作常規深刺許可；另補神經紅旗與孕兒、高風險、灸量來源缺口。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B8 runtime assertions、雙語配對與 task-file diff 檢查均通過；內容 commit `2ac77dc`。
+- **已知未解／下一步**：37張待修、12張泛用 Cloud URL；下一張 EX-B9 腰奇。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
 # 2026-08-08 Codex — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 
 - **做了什麼**：整合 Board、課程 checklist、eLotus Ex-B7、AD M-BW-24／拼音索引、醫砭 EX-B7 與中國大百科代碼；補齊定位、解剖、全部功效主治、針灸法、配穴、別名、考點、安全及逐欄來源。

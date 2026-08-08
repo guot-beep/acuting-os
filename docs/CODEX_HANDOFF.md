@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B8 十七椎四層、異名與椎管深度衝突修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `2ac77dc` (`feat(acupoints): reconcile Shiqizhui canal safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; the occupied Pattern worktree and all unrelated files were isolated and excluded.
+- **Four Layers**: NCBAHM Appendix A lists Shiqizhuixue/Shiqizhuixia; the local checklist lists Shi Qi Zhui Xia, and course notes use it as a tender L5-S1 local point in low-back-pain sets. Exact eLotus Ex-B8, AD M-BW-25 plus pinyin index, and Yibian EX-B8 were checked; AD's exact-page content was readable from its precise indexed result, while direct open showed a verification interstitial.
+- **Identity / Content**: preserved immutable `EX-B8` / `ex.b8` and database name 十七椎/Shiqizhui; added 十七椎下, Shiqizhuixue/Shiqizhuixia, M-BW-25, 腰孔, and 上仙 as source-labeled variants. Integrated all eLotus/AD actions and indications, Yibian anatomy/indications, local-course and exact-page combinations, while retaining the legacy BL32+SP6 dysmenorrhea combination as unverified exact grouping.
+- **Safety**: the general layer uses shared perpendicular 0.8-1.2 cun. AD's 0.5-1 cun remains separate; AD/Yibian 1.5-2 cun overlaps AD's stated 1.25-1.75-cun skin-to-spinal-canal depth and is retained only as a conflict, not a routine deep-insertion range. Added neurologic red flags and explicit pregnancy, pediatric, high-risk, and moxa-dose gaps without inventing protocols.
+- **Measured Counts**: strict/four-source `34/72 → 35/72`; issues `38/72 → 37/72`; generic Cloud URL remains `12/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947), interactions, point IDs (925), content-junk, app syntax, EX-B8 runtime assertions, JSON pairing, and task-file diff check passed.
+- **Next**: EX-B9 腰奇 (Yaoqi); verify sacrococcygeal landmark variants, oblique direction/depth, epilepsy claims, and exact AD/eLotus pages before writing.
+
 ## [2026-08-08] Codex Handoff — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `9dbb1c2` (`feat(acupoints): reconcile Yaoyan source variants`).
