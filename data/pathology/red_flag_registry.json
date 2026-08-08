@@ -529,6 +529,177 @@
       ],
       "review_status": "draft",
       "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.chronic_diarrhea.dehydration_signs",
+      "entity_id": "cond.chronic_diarrhea",
+      "trigger_zh": "出現脫水症狀",
+      "trigger_en": "Symptoms of dehydration",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Diarrhea",
+          "section": "When should I seek a doctor's help?",
+          "quote_en": "stools that are black and tarry or contain red blood or pus; symptoms of dehydration",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.nausea_vomiting.hematemesis",
+      "entity_id": "cond.nausea_vomiting",
+      "trigger_zh": "嘔吐物帶血",
+      "trigger_en": "Blood in the vomit",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/nauseaandvomiting.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Nausea and Vomiting",
+          "section": "When do I need to see a health care provider for nausea and vomiting?",
+          "quote_en": "Blood in the vomit; Severe abdominal pain; Severe headache and stiff neck; Signs of dehydration",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.nausea_vomiting.meningismus_severe_headache",
+      "entity_id": "cond.nausea_vomiting",
+      "trigger_zh": "劇烈頭痛伴隨頸部僵硬",
+      "trigger_en": "Severe headache and stiff neck",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/nauseaandvomiting.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Nausea and Vomiting",
+          "section": "When do I need to see a health care provider for nausea and vomiting?",
+          "quote_en": "Blood in the vomit; Severe abdominal pain; Severe headache and stiff neck; Signs of dehydration",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.nausea_vomiting.severe_abdominal_pain_or_dehydration",
+      "entity_id": "cond.nausea_vomiting",
+      "trigger_zh": "劇烈腹痛或出現脫水徵兆",
+      "trigger_en": "Severe abdominal pain or signs of dehydration",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/nauseaandvomiting.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Nausea and Vomiting",
+          "section": "When do I need to see a health care provider for nausea and vomiting?",
+          "quote_en": "Blood in the vomit; Severe abdominal pain; Severe headache and stiff neck; Signs of dehydration",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.hemorrhoids.severe_pain_bleeding_with_systemic_symptoms",
+      "entity_id": "cond.hemorrhoids",
+      "trigger_zh": "劇烈肛門痛與直腸出血，特別是伴隨腹部不適、腹瀉或發燒",
+      "trigger_en": "Severe anal pain and rectal bleeding, especially with abdominal discomfort, diarrhea, or fever",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/hemorrhoids/treatment",
+          "source_org": "NIDDK",
+          "page_title": "Treatment of Hemorrhoids",
+          "section": "Seek care right away",
+          "quote_en": "severe anal pain and bleeding from your rectum, particularly with discomfort or pain in your abdomen, diarrhea, or fever.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.gallbladder_dysfunction.jaundice_fever_chills",
+      "entity_id": "cond.gallbladder_dysfunction",
+      "trigger_zh": "發燒（含低燒）、畏寒或黃疸（皮膚或眼白發黃）",
+      "trigger_en": "Fever, chills, or jaundice (yellowish skin or whites of eyes)",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Gallstones",
+          "section": "Seek care right away for a gallbladder attack",
+          "quote_en": "fever—even a low-grade fever—or chills; yellowish color of your skin or whites of your eyes, called jaundice",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.cinv.chemotherapy_neutropenic_fever",
+      "entity_id": "cond.cinv",
+      "trigger_zh": "化療期間發燒（屬醫療急症）",
+      "trigger_en": "Fever during chemotherapy treatment (medical emergency)",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/cancer-preventing-infections/patients/fever.html",
+          "source_org": "CDC",
+          "page_title": "Watch Out for Fever",
+          "section": "What to know",
+          "quote_en": "If you get a fever during your chemotherapy treatment, it’s a medical emergency.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.post_op_ileus.complete_obstruction_swollen_abdomen",
+      "entity_id": "cond.post_op_ileus",
+      "trigger_zh": "無法排便或排氣、腹部膨脹或持續嘔吐",
+      "trigger_en": "Cannot pass stool or gas, swollen abdomen, or persistent vomiting",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000260.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Intestinal obstruction and Ileus",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Cannot pass stool or gas; Have a swollen abdomen; Keep vomiting",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.food_sensitivity.anaphylaxis_differential",
+      "entity_id": "cond.food_sensitivity",
+      "trigger_zh": "出現過敏性休克症狀（屬醫療急症，需立即送醫鑑別與急救）",
+      "trigger_en": "Symptoms of anaphylaxis require immediate emergency care",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/foodallergy.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Food Allergy",
+          "section": "What are the symptoms of food allergies?",
+          "quote_en": "This is a medical emergency. Call 911 if someone is having the symptoms of anaphylaxis.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
     }
   ]
 }
