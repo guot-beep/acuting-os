@@ -2142,19 +2142,65 @@
         {
           "code": "G43.82",
           "label_en": "Menstrual migraine",
-          "primary": true,
-          "note_zh": "",
+          "primary": false,
+          "note_zh": "錯碼：FY2026 官方碼表 G43.82x 全屬月經性偏頭痛（G43.821–.839），非前庭性偏頭痛。NLM 官方標籤 \"Menstrual migraine\" 早已說明此事。請勿用於任何文件。",
           "label_source": "nlm_icd10cm",
           "code_specificity": "category_needs_leaf",
-          "nearest_billable": "G43.821"
+          "nearest_billable": "G43.821",
+          "mapping_status": "incorrect_do_not_use"
         }
       ],
       "tcm_dictionary_refs": [],
       "cpt_placeholder": [],
       "insurance_placeholder": {},
-      "documentation_note_zh": "",
-      "review_status": "draft",
-      "sources": []
+      "documentation_note_zh": "暫勿使用本病症的 ICD 對應做任何文件——現有碼已標記錯誤，更正佇列待人工編碼審查。",
+      "review_status": "correction_queued",
+      "sources": [],
+      "icd10_correction_queue": {
+        "queued_at": "2026-08-08",
+        "queued_by": "claude",
+        "status": "requires_human_coding_review",
+        "current_incorrect_mapping": {
+          "code": "G43.82",
+          "official_family_fy2026": "G43.821 / G43.829 / G43.831 / G43.839 — all \"Menstrual migraine …\""
+        },
+        "reason": "The seed hint G43.82 lands in the menstrual-migraine family. Verified twice against the official FY2026 (April 1, 2026 update) full-code list: ChatGPT extraction 2026-08-07 (status code_not_found) and Claude independent page check 2026-08-08. No ICD-10-CM code named \"vestibular migraine\" exists on the opened official pages.",
+        "official_evidence": [
+          {
+            "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0413.html",
+            "source_org": "CMS",
+            "note": "FY2026 v43.1 full-code list: G43.801/.809/.811/.819 = Other migraine; G43.821–.839 = Menstrual migraine",
+            "icd10cm_version": "FY2026 April 1, 2026 update"
+          },
+          {
+            "source_ref": "data/imports/official/cond_batch1_neuro_vertigo.json → cond.migraine_vestibular",
+            "note": "accepted staging record, status code_not_found"
+          }
+        ],
+        "candidate_mappings": [
+          {
+            "code": "G43.801",
+            "official_description": "Other migraine, not intractable, with status migrainosus",
+            "status": "candidate_requires_human_coding_review"
+          },
+          {
+            "code": "G43.809",
+            "official_description": "Other migraine, not intractable, without status migrainosus",
+            "status": "candidate_requires_human_coding_review"
+          },
+          {
+            "code": "G43.811",
+            "official_description": "Other migraine, intractable, with status migrainosus",
+            "status": "candidate_requires_human_coding_review"
+          },
+          {
+            "code": "G43.819",
+            "official_description": "Other migraine, intractable, without status migrainosus",
+            "status": "candidate_requires_human_coding_review"
+          }
+        ],
+        "candidate_note": "The \"Other migraine\" family exists on the official page and is the plausible home, but placing vestibular migraine there is a clinical coding judgement — candidates are NOT promoted to the official icd10[] list until Ting reviews. Canonical id and canon icd_hint untouched; the icd_hint disagreement resolves when this queue item is decided."
+      }
     },
     {
       "id": "xwalk.eczema",
