@@ -174,6 +174,10 @@ const ONLY_CATEGORY = catIdx >= 0 ? argv[catIdx + 1] : null;
 
 // --- load -------------------------------------------------------------------
 const conditions = readJson(CONDITION_FILE).records || [];
+// Entities with at least one structured red-flag record (see C4).
+const RED_FLAG_COVERED = new Set(
+  (readJson("data/pathology/red_flag_registry.json").records || []).map((r) => r.entity_id)
+);
 const patternIds = new Set([
   ...(readJson(PATTERN_REGISTRY).records || []).map((r) => r.id),
   ...(readJson(PATTERN_LIBRARY).records || []).map((r) => r.id),
@@ -230,9 +234,12 @@ for (const rec of scope) {
     add("C3", `entity_type "${rec.entity_type}" disagrees with the "${String(rec.id).split(".")[0]}.*" namespace — expected "${expectedType}" (D11: the namespace IS the type). A TCM disease belongs in tdis.*, not here.`);
   }
 
-  // C4 red flags — SAFETY
-  if (isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en)) {
-    add("C4", "no red_flags_zh and no red_flags_en");
+  // C4 red flags — SAFETY. The structured registry (red_flag_registry.json,
+  // 2026-08-08) is an equally valid home: build-data derives its triggers onto
+  // the card, so a registry-covered condition DOES tell the reader when to
+  // stop. Inline strings are legacy-authored and still count.
+  if (isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en) && !RED_FLAG_COVERED.has(rec.id)) {
+    add("C4", "no red_flags_zh / red_flags_en and no red_flag_registry record");
   }
 
   // C11 risk_factors shape (§5.5). Not required — checked only when filled, and

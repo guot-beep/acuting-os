@@ -148,7 +148,37 @@ const knowledge = {
   pharmDrugClasses: readJson("data/pharmacology/drug_classes.json"),
   pharmDrugTargets: readJson("data/pharmacology/drug_targets.json"),
   pharmDrugSystems: readJson("data/pharmacology/drug_systems.json"),
+  // Structured safety layer (2026-08-08). Canonical red flags live here as
+  // records with tier + evidence; the card arrays below are presentation.
+  redFlagRegistry: readJson("data/pathology/red_flag_registry.json"),
 };
+
+// Derive registry triggers into the cards' red_flags_zh/_en — IN THE BUNDLE
+// ONLY (D13: derive, never write back to source files). Legacy inline strings
+// stay; dedup means a migrated trigger never renders twice. red_flag_record_ids
+// gives the future Case/Visit safety screen stable per-flag identity.
+{
+  const byEntity = new Map();
+  for (const r of (knowledge.redFlagRegistry.records || [])) {
+    if (!byEntity.has(r.entity_id)) byEntity.set(r.entity_id, []);
+    byEntity.get(r.entity_id).push(r);
+  }
+  const mergeFlags = (rec) => {
+    const flags = byEntity.get(rec.id);
+    if (!flags || !flags.length) return;
+    const zh = new Set((rec.red_flags_zh || []).map((s) => String(s).trim()));
+    const en = new Set((rec.red_flags_en || []).map((s) => String(s).trim()));
+    for (const f of flags) {
+      const tzh = String(f.trigger_zh || "").trim();
+      const ten = String(f.trigger_en || "").trim();
+      if (tzh && !zh.has(tzh)) { (rec.red_flags_zh = rec.red_flags_zh || []).push(tzh); zh.add(tzh); }
+      if (ten && !en.has(ten)) { (rec.red_flags_en = rec.red_flags_en || []).push(ten); en.add(ten); }
+    }
+    rec.red_flag_record_ids = flags.map((f) => f.id);
+  };
+  (knowledge.conditionCanon.records || []).forEach(mergeFlags);
+  (knowledge.tdisRegistry.records || []).forEach(mergeFlags);
+}
 // Deterministic banner — see the app_data.js note above.
 const kBody = "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n";
 const kBanner = `// GENERATED FILE - DO NOT EDIT.

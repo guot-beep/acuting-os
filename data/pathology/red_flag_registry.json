@@ -1,0 +1,30 @@
+{
+  "dataset": "Red-flag registry — the structured safety layer for diagnostic entities",
+  "policy": [
+    "One record per (entity, trigger). This registry is the CANONICAL home of red flags going forward; red_flags_zh/_en on cards are PRESENTATION, derived into the bundle at build time (scripts/build-data.js merges registry triggers into the card's arrays — source files are never rewritten).",
+    "Legacy inline red_flags_zh/_en already authored on cards (e.g. the 25 gyn records, 2026-08) stay authored in place until migrated batch by batch; the build-time merge deduplicates, so a migrated trigger never renders twice.",
+    "Every record MUST carry at least one evidence entry with an https source_url from the docs/COND_INGESTION_SPEC.md whitelist. A red flag without a source does not get written — 查不到就是答案, it stays a gap in the fill queue, never an invented trigger (AI_CONSTITUTION).",
+    "entity_id may be cond.* or tdis.* (shared-safety rule, v2 spec §28: never duplicate the same warning prose across namespaces by hand — give the second entity its own record only when the trigger genuinely differs).",
+    "Patient-level safety flags (pregnancy, anticoagulants, pacemaker…) are a DIFFERENT layer: data/config/safety_flag_vocabulary.json + case safetyFlags. This registry is per-diagnosis referral triggers, not per-patient status.",
+    "Why this exists as a sidecar instead of richer card fields: future Case/Visit safety screening needs stable per-flag identity (screened / present / absent per visit) and a tier machine-readable for decision support. Strings on cards cannot carry identity — renaming a string orphans every clinical record that referenced it. Structured now avoids that migration (Ting, 2026-08-08)."
+  ],
+  "created": "2026-08-08",
+  "tier_vocabulary": {
+    "emergency_referral": { "zh": "急診轉介", "en": "Emergency referral — stop and send now" },
+    "urgent_referral": { "zh": "儘速就醫", "en": "Urgent medical evaluation (days, not weeks)" },
+    "routine_referral": { "zh": "常規轉介評估", "en": "Routine biomedical evaluation" }
+  },
+  "field_definitions": {
+    "id": "rf.<entity-slug>.<trigger-slug> — stable forever once written",
+    "entity_id": "FK → cond.* (condition_canon_shortlist) or tdis.* (tdis_registry)",
+    "trigger_zh": "the warning sign, Traditional Chinese, one clinical fact per record",
+    "trigger_en": "the warning sign, English — both languages required (bilingual law)",
+    "tier": "one of tier_vocabulary",
+    "action_zh": "optional — what to do beyond the tier default (documentation language, never treatment instruction)",
+    "action_en": "optional twin",
+    "evidence": "[{source_url, source_org, quote_en (≤40 words verbatim), retrieved_at}] — ≥1 required",
+    "review_status": "draft | source_checked | clinically_reviewed",
+    "authored_by": "who wrote the record (agent line or owner)"
+  },
+  "records": []
+}
