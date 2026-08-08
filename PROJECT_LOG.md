@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-CA3 三角灸嚴格四源修整
+
+- **做了什麼**：依 Board Outline、`curriculum/acupoints/`、eLotus、American Dragon 拼音索引及補充 CloudTCM 精確頁，逐欄修整 EX-CA3 三角灸；保留穩定 `EX-CA3`／`ex.ca3`，並明列 eLotus 使用 Ex-CA6。
+- **數字 before→after**：嚴格模板／四源稽核 `24/72 → 25/72`；待修 `48/72 → 47/72`；泛用 CloudTCM URL `18/72 → 17/72`；可測量技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 支持對側施灸但未列壯數；AD 拼音索引查無專頁；CloudTCM 列十四壯但未明示單點或總量。原卡 5–7 壯、孕期警語、慢性腹瀉與不孕只作未核實舊值；無來源的直刺 0.3–0.8 寸與點刺出血不再列為可執行技法。
+- **驗證**：`validate-extra-point-standard --all`、`build-data`、`validate-data`、`validate-interactions`、`validate-point-ids`、`validate-content-junk`、`validate-content-quality`、`node --check app.js`、`git diff --check` 均通過；內容 commit `cec0657`。
+- **已知未解／下一步**：47 張仍在 worklist，17 張仍有泛用 CloudTCM URL；下一張為 EX-CA4 胃上。未追蹤的 `curriculum/conditions/*` 壓縮檔未觸碰。
+
 # 2026-08-07 Codex — 經外奇穴回歸修復 + EX-CA2 提托嚴格修整
 
 - **做了什麼**：確認 `origin/main` 的 23 張嚴格卡曾被後續全穴位對齊 commit 覆蓋；從 `bd74e7c` 恢復 EX-HN1–22、EX-CA1 的精修內容，同時保留現行 23 個穩定 `id`，再依四層工作流修整 EX-CA2 提托。

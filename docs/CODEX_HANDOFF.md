@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-CA3 三角灸嚴格四源修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `cec0657` (`feat(acupoints): curate Sanjiaojiu source gaps`).
+- **Files Changed**: `data/acupoints/extra_points.json`, `data/audits/missing_report.json`, and rebuilt `data/generated/app_data.js` / `data/generated/knowledge_data.js`. The untracked `curriculum/conditions/Acuting_OS_Pattern_V2_CODEX_Handoff_Batch02-10_2026-08-08.zip` was not touched or staged.
+- **Scope / Sources**:
+  - NCBAHM 2026 ACPL Appendix A does not list Sanjiaojiu; `curriculum/acupoints/` has no dedicated entry after Chinese, pinyin, alias, and code searches.
+  - Exact live eLotus page: `https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6` (code Ex-CA6, Triangle Moxa, mouth-width equilateral-triangle location, hernia/abdominal pain, pain relief, contralateral moxa).
+  - American Dragon pinyin index `https://www.americandragon.com/PointsIndex2.html` had no Sanjiaojiu/Sanjiao/Qipang/Triangular entry; no AD detail-page content was claimed.
+  - Exact supplemental CloudTCM entry: `https://cloudtcm.com/dic/12961` (疝氣穴／臍旁穴, contralateral or bilateral moxa, fourteen cones, Cold-type hernia/scrotal pain, and CV4-CV6-LR1 combination).
+- **Content / Safety Decisions**:
+  - Preserved immutable database code `EX-CA3` and id `ex.ca3`; explicitly distinguished eLotus Ex-CA6.
+  - Replaced unsupported executable `直刺0.3–0.8寸／點刺出血` with source-supported moxibustion-only wording. eLotus supplies no cone count; CloudTCM's fourteen cones remain ambiguous as per-point versus total.
+  - Retained legacy 5–7 cones, chronic diarrhea, infertility, warming-the-Middle/stopping-diarrhea, and pregnancy caution only as unverified legacy content. Added point-specific heat-injury, anatomy, pregnancy-source, and hernia-emergency gaps without inventing protocols.
+  - Added paired bilingual identity, exam, location, anatomy, technique, functions, indications, tags, combinations, cautions, aliases, clinical pearls, exact links, and field-level provenance.
+- **Measured Counts**: strict-template/four-source-audited `24/72 → 25/72`; records with issues `48/72 → 47/72`; generic CloudTCM URL `18/72 → 17/72`; missing measurable method/source URL/mojibake remain `0/72`.
+- **Validation**: `validate-extra-point-standard --all`, `build-data`, `validate-data`, `validate-interactions`, `validate-point-ids`, `validate-content-junk`, `validate-content-quality`, `node --check app.js`, and `git diff --check` passed. The known full-repo encoding debt was not changed by this batch.
+- **Next**: EX-CA4 胃上 (Weishang). Repeat the four-layer lookup, verify exact links, preserve unsupported legacy material as labeled legacy rather than executable technique, and add print-book edition/page citations only after Ting supplies inspected pages.
+
 ## [2026-08-07] Codex Handoff — Extra-point regression recovery + EX-CA2 Tituo
 
 - **Branch**: `codex/extra-points-2026-08-07`, based on `origin/main` at `515532f`.
