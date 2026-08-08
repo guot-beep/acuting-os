@@ -1384,6 +1384,12 @@
           "distinguishing_zh": "胃熱熾盛以消穀善飢、牙齦腫痛等單純熱象為主;肝膽濕熱兼見口苦、身目發黃等濕邪表現。",
           "distinguishing_en": "Stomach Heat presents pure heat signs; Liver-Gallbladder Damp-Heat additionally shows Dampness signs such as bitter taste and jaundice.",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.stomach_fire",
+          "distinguishing_zh": "AcuTing 刻意保留兩個獨立正典節點：胃熱熾盛為較廣泛/較輕的胃熱概念；胃火熾盛為更強烈的火熱階段（消穀善飢、牙齦腫痛出血、便秘更著、脈洪大有力）。部分外部來源將兩者視為同一證型，此分歧予以保留。",
+          "distinguishing_en": "AcuTing deliberately keeps two separate canonical nodes: Stomach Heat is the broader, less intense concept; Stomach Fire Blazing is the more intense Fire-stage manifestation (stronger hunger, gum swelling/bleeding, more pronounced constipation, a bigger more forceful pulse). Some external sources treat these as one Pattern — that disagreement is preserved.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
         }
       ],
       "sources": [
@@ -6320,6 +6326,403 @@
       ],
       "differential_patterns": [],
       "deprecated_note_zh": "2026-08-08 停用：與 pattern.heart_kidney_not_communicating 同為「心腎不交」的重複匯入記錄，經 Ting/ChatGPT 正典審查判定為重複。內容已合併進 pattern.heart_kidney_not_communicating（別名、來源、方劑、穴位、關聯病症）。未硬刪，id 保留於檔案內供追溯（D6）。對應：DECISIONS.md D16。"
+    },
+    {
+      "id": "pattern.stomach_fire",
+      "name_zh": "胃火熾盛",
+      "name_en": "Stomach Fire Blazing",
+      "pinyin": "Wei Huo Chi Sheng",
+      "pinyin_toned": "Wèi Huǒ Chì Shèng",
+      "aliases_zh": [
+        "胃火",
+        "胃火上炎",
+        "胃火亢盛"
+      ],
+      "aliases_en": [
+        "Stomach Fire",
+        "Stomach Fire Flaring",
+        "Excess Stomach Fire"
+      ],
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "胃脘灼熱或灼痛",
+        "口渴多飲喜冷",
+        "消穀善飢",
+        "牙齦紅腫疼痛或出血"
+      ],
+      "key_signs_en": [
+        "Burning epigastric sensation or pain",
+        "Strong thirst, preference for cold drinks",
+        "Excessive/rapid hunger",
+        "Swollen, painful, or bleeding gums"
+      ],
+      "supporting_signs_zh": [
+        "口臭",
+        "口乾",
+        "便秘",
+        "尿黃或小便短赤",
+        "面部熱感或面紅",
+        "口舌潰瘍"
+      ],
+      "supporting_signs_en": [
+        "Foul breath",
+        "Dry mouth",
+        "Constipation",
+        "Dark or scant-red urine may occur",
+        "Facial heat/flushing",
+        "Mouth/tongue ulcers may occur"
+      ],
+      "tongue_zh": "舌紅",
+      "tongue_en": "Red tongue",
+      "pulse_zh": "脈滑數，洪大有力",
+      "pulse_en": "Slippery, rapid, big and forceful pulse",
+      "mechanism_zh": "胃中實熱壅盛，熱勢進一步化火。胃火循足陽明經上炎，可灼傷齒齦與口腔；火熱迫津外耗，故口渴喜冷、便秘；胃腐熟功能亢進可見消穀善飢。火熱久留可進一步耗傷胃陰與津液。",
+      "mechanism_en": "Excess Heat accumulates in the Stomach and intensifies into Fire. Stomach Fire flares upward along the Yangming channel, affecting the gums and mouth; strong Heat consumes fluids, producing thirst and constipation, while excessive Stomach activity causes rapid hunger. Persistent Fire can further injure Stomach Yin and fluids.",
+      "common_causes_zh": "嗜食辛辣肥甘厚膩、胃熱日久化火、情志鬱久化火（部分源流）",
+      "common_causes_en": "Excessive spicy, rich, greasy food; prolonged Stomach Heat intensifying into Fire; in some source traditions, prolonged emotional constraint transforming into internal Heat",
+      "progression_zh": "胃熱日久可進一步化火，形成胃火熾盛（此為傾向而非必然）；胃火久留可耗傷胃陰，轉為胃陰虛；火熱迫血可致齒衄等出血表現。",
+      "progression_en": "Prolonged Stomach Heat may intensify into Stomach Fire (a tendency, not an absolute progression); persistent Fire can injure Stomach Yin, shifting toward Stomach Yin Deficiency; severe Fire forcing Blood can produce bleeding such as gum bleeding.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "AcuTing 刻意保留兩個獨立正典節點：胃火熾盛熱勢更強，消穀善飢、牙齦腫痛出血、便秘、脈洪大有力等表現更劇；胃熱熾盛為較廣泛/較輕的胃熱概念。部分外部來源（如 Me & Qi）將兩者視為同一證型，AcuTing 保留此來源分歧而不強行統一。",
+          "distinguishing_en": "AcuTing deliberately keeps two separate canonical nodes: Stomach Fire Blazing is the more intense Fire-stage manifestation (stronger hunger, gum swelling/bleeding, constipation, a bigger more forceful pulse); Stomach Heat is the broader, less intense concept. Some external sources (e.g. Me & Qi) treat these as one Pattern — that source disagreement is preserved rather than resolved.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        },
+        {
+          "pattern_id": "pattern.stomach_yin_deficiency",
+          "distinguishing_zh": "胃火熾盛屬純實熱，脈滑數有力；胃陰虛屬虛熱，飢不欲食、舌紅少苔或花剝、脈細，虛熱而非實火。",
+          "distinguishing_en": "Stomach Fire Blazing is a pure excess-heat pattern with a forceful pulse; Stomach Yin Deficiency is a deficiency-heat pattern — hunger without desire to eat, a red peeled/scant-coated tongue, and a thin pulse (Empty Heat, not full Fire).",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        }
+      ],
+      "treatment_principle_zh": "清胃瀉火，清熱和胃；火傷津陰者兼養陰生津。",
+      "treatment_principle_en": "Clear Stomach Heat, drain Fire and harmonize the Stomach; when Fire has damaged Yin/fluids, also nourish Yin and generate fluids.",
+      "typical_formulas": [
+        "formula.qing_wei_san",
+        "formula.yu_nu_jian"
+      ],
+      "typical_points": [
+        "ST44",
+        "ST45",
+        "CV12",
+        "ST21",
+        "PC6",
+        "LI4",
+        "LI11",
+        "PC8",
+        "ST6",
+        "ST36",
+        "BL21"
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+        "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)",
+        "Sacred Lotus — Stomach Pattern Differentiation (https://sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-stomach-patterns-tcm)",
+        "Me & Qi — Stomach Fire (Stomach Heat) (https://www.meandqi.com/knowledge-base/patterns/stomach-fire-stomach-heat)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "tongue": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "pulse": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "mechanism": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "formulas": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "pattern.wind_cold",
+      "name_zh": "風寒",
+      "name_en": "Wind-Cold",
+      "pinyin": "Feng Han",
+      "pinyin_toned": "Fēng Hán",
+      "aliases_zh": [
+        "風寒束表",
+        "外感風寒"
+      ],
+      "aliases_en": [
+        "Wind-Cold Fettering the Exterior",
+        "External Wind-Cold"
+      ],
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "惡寒重，發熱輕",
+        "無汗",
+        "頭痛、身痛或項背拘急",
+        "鼻塞、清稀鼻涕"
+      ],
+      "key_signs_en": [
+        "Pronounced chills with mild fever",
+        "No sweating (classic excess-Cold presentation)",
+        "Headache, body aches, or stiff neck/upper back",
+        "Nasal congestion with clear, watery discharge"
+      ],
+      "supporting_signs_zh": [
+        "怕風怕冷",
+        "噴嚏",
+        "咽癢",
+        "咳嗽痰清稀白",
+        "無明顯口渴或喜溫飲"
+      ],
+      "supporting_signs_en": [
+        "Aversion to wind/cold",
+        "Sneezing",
+        "Itchy/scratchy throat",
+        "Cough with thin white sputum",
+        "Little thirst, or preference for warm drinks"
+      ],
+      "tongue_zh": "舌質正常或淡紅，苔薄白而潤",
+      "tongue_en": "Normal or pale-pink tongue with a thin, white, moist coating",
+      "pulse_zh": "脈浮緊；表虛(桂枝湯證型)則浮緩",
+      "pulse_en": "Floating, tight pulse in the classic exterior-excess presentation; floating and relaxed/moderate in the exterior-deficiency (Gui Zhi Tang) subtype",
+      "mechanism_zh": "外感風寒侵襲肌表，風邪開泄而寒邪收引，寒束肌表使衛氣宣發受阻、腠理閉塞，故惡寒較重、無汗、頭身疼痛；肺失宣降則可見鼻塞、清涕、噴嚏與咳嗽。",
+      "mechanism_en": "External Wind-Cold attacks the body surface. Cold constrains the exterior, impairs the circulation of Wei Qi, and closes the pores — producing pronounced chills, absence of sweating, headache, and body aches. When Lung dispersing/descending is affected, nasal congestion, clear discharge, sneezing, and cough may occur.",
+      "common_causes_zh": "感受風寒之邪、汗出當風、氣候驟變、衛外不固（易感性因素，非唯一病因）",
+      "common_causes_en": "Exposure to Wind and Cold, becoming chilled after sweating, sudden environmental temperature change; insufficient Wei Qi relative to the pathogen increases susceptibility but is not itself the exterior cause",
+      "progression_zh": "風寒鬱久可化熱轉為風熱或內熱；風寒可進一步影響肺系，成為風寒犯肺之肺系專證；兼夾濕邪則成風寒濕。此三者為傾向，非絕對病程。",
+      "progression_en": "Prolonged Wind-Cold may transform into Wind-Heat or interior Heat; it may further affect the Lung specifically as Wind-Cold Attacking the Lung; combined with Dampness it becomes Wind-Cold-Damp. These are tendencies, not absolute trajectories.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_heat",
+          "distinguishing_zh": "風寒惡寒重於發熱、無汗、鼻涕清稀、咽癢不紅、口不渴、苔薄白、脈浮緊；風熱發熱重於惡寒、可微汗、咽紅腫痛、口渴、鼻涕黃稠、苔薄黃、脈浮數。",
+          "distinguishing_en": "Wind-Cold shows chills predominating over fever, no sweating, clear watery discharge, an itchy (not red) throat, little thirst, a thin white coating, and a floating tight pulse; Wind-Heat shows fever predominating over chills, possible slight sweating, a red sore throat, thirst, yellow thick discharge, a thin yellow coating, and a floating rapid pulse.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        },
+        {
+          "pattern_id": "pattern.wind_cold_invading_lung",
+          "distinguishing_zh": "本節點（風寒）強調衛表之爭的廣泛外感表現；風寒犯肺為其肺系專證亞型，以咳嗽、痰白清稀、鼻塞等肺氣失宣表現為臨床主軸。",
+          "distinguishing_en": "This general node (Wind-Cold) emphasizes the broad exterior/Wei-level battle; Wind-Cold Attacking the Lung is its Lung-specific subtype, dominated clinically by cough, thin white sputum, and nasal symptoms from impaired Lung Qi.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        }
+      ],
+      "treatment_principle_zh": "辛溫解表，祛風散寒，宣肺；表虛自汗者兼調和營衛。",
+      "treatment_principle_en": "Release the exterior with acrid-warm methods, dispel Wind-Cold, and restore Lung dispersing/descending; when exterior-deficiency spontaneous sweating predominates, also harmonize Ying and Wei.",
+      "typical_formulas": [
+        "formula.ma_huang_tang",
+        "formula.gui_zhi_tang",
+        "formula.xiao_qing_long_tang",
+        "formula.xiang_su_san"
+      ],
+      "typical_points": [
+        "GV16",
+        "BL12",
+        "GB20",
+        "LU7",
+        "LI4",
+        "BL13",
+        "GV14",
+        "TE5"
+      ],
+      "sources": [
+        "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)",
+        "Sacred Lotus — Eight Principles differentiation (https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/differentiation-syndromes-8-principles-ba-gong-tcm)",
+        "Sacred Lotus — Lung Pattern Differentiation (https://sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-lung-patterns-tcm)",
+        "Sacred Lotus — Acupuncture Point Prescriptions (https://www.sacredlotus.com/go/acupuncture/get/acupuncture-point-prescriptions)",
+        "Me & Qi — Wind-Cold (https://www.meandqi.com/tcm-education-center/patterns/wind-cold)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "supporting_signs": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "tongue": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "pulse": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "mechanism": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "formulas": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "points": [
+          "Sacred Lotus — Acupuncture Point Prescriptions (https://www.sacredlotus.com/go/acupuncture/get/acupuncture-point-prescriptions)",
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "pattern.wind_heat",
+      "name_zh": "風熱",
+      "name_en": "Wind-Heat",
+      "pinyin": "Feng Re",
+      "pinyin_toned": "Fēng Rè",
+      "aliases_zh": [
+        "外感風熱",
+        "風熱犯表"
+      ],
+      "aliases_en": [
+        "External Wind-Heat",
+        "Wind-Heat Invading the Exterior"
+      ],
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "發熱重，惡寒較輕或微惡風",
+        "咽紅咽痛",
+        "微汗或有汗而熱不解",
+        "口渴"
+      ],
+      "key_signs_en": [
+        "Fever more prominent than chills; mild aversion to wind",
+        "Red, sore throat",
+        "Slight sweating, often without full relief of fever",
+        "Thirst"
+      ],
+      "supporting_signs_zh": [
+        "頭痛",
+        "鼻塞，鼻涕黃稠",
+        "咳嗽，痰黃或較黏",
+        "眼紅乾澀",
+        "口乾",
+        "輕微身痛"
+      ],
+      "supporting_signs_en": [
+        "Headache",
+        "Nasal congestion with yellow, thicker discharge",
+        "Cough, sometimes with yellow or sticky sputum",
+        "Red, dry eyes",
+        "Dry mouth",
+        "Mild body aches"
+      ],
+      "tongue_zh": "舌尖紅或舌邊略紅，苔薄，初起可白轉薄黃",
+      "tongue_en": "Red tip or slightly red edges, thin coating — white-to-slightly-yellow very early, thin yellow as Heat becomes clearer",
+      "pulse_zh": "脈浮數，邪熱較盛時可稍有力",
+      "pulse_en": "Floating, rapid pulse; may be slightly forceful when the pathogen/Heat is stronger",
+      "mechanism_zh": "風熱之邪侵襲肌表，衛氣與邪相爭而發熱，熱邪開泄腠理可見微汗；風熱上犯肺衛與咽喉，肺失宣降則咳嗽、鼻塞，熱灼津液則口渴、咽紅咽痛。",
+      "mechanism_en": "External Wind-Heat invades the surface and disrupts Wei Qi; the struggle between Wei Qi and the pathogen produces fever, and Heat's opening effect on the pores can cause mild sweating. When Wind-Heat affects the Lung surface and throat, cough and nasal congestion develop, while Heat consuming fluids produces thirst and a red, sore throat.",
+      "common_causes_zh": "外感風熱之邪、感受季節溫熱病邪、風寒鬱久化熱、誤用溫燥發汗加重熱象",
+      "common_causes_en": "External Wind-Heat invasion, seasonal Warm/Heat pathogen exposure, Wind-Cold transforming into Heat over time, or aggravation of a Heat presentation by incorrect warming treatment",
+      "progression_zh": "風熱可進一步影響肺系,成為風熱犯肺之肺系專證；熱邪深入可轉為肺熱(裡熱)重證；在溫病體系中,風熱屬衛分階段,可進一步傳入氣分。此為傾向而非必然病程。",
+      "progression_en": "Wind-Heat may further affect the Lung specifically as Wind-Heat Attacking the Lung; deeper penetration of the heat can progress to Lung Heat (an interior pattern); within the Wen-Bing framework, Wind-Heat corresponds to the Wei level and may transmit further to the Qi level. These are tendencies, not an inevitable course.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold",
+          "distinguishing_zh": "風熱發熱重於惡寒、可微汗、咽紅腫痛、口渴、鼻涕黃稠、苔薄黃、脈浮數；風寒惡寒重於發熱、無汗、鼻涕清稀、咽癢不紅、口不渴、苔薄白、脈浮緊。",
+          "distinguishing_en": "Wind-Heat shows fever predominating over chills, possible slight sweating, a red sore throat, thirst, yellow thick discharge, a thin yellow coating, and a floating rapid pulse; Wind-Cold shows chills predominating, no sweating, clear watery discharge, an itchy throat, little thirst, a thin white coating, and a floating tight pulse.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        },
+        {
+          "pattern_id": "pattern.wind_heat_invading_lung",
+          "distinguishing_zh": "本節點（風熱）強調衛分/體表層次的廣泛外感表現；風熱犯肺為其肺系專證亞型，以咳嗽為主症、痰黃更明顯、肺系症狀更突出。",
+          "distinguishing_en": "This general node (Wind-Heat) emphasizes the broad Wei-level/exterior presentation; Wind-Heat Attacking the Lung is its Lung-specific subtype, dominated by cough as the primary symptom with more prominent yellow phlegm and Lung involvement.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        },
+        {
+          "pattern_id": "pattern.phlegm_heat_in_lung",
+          "distinguishing_zh": "風熱為表證，病位淺，脈浮；痰熱壅肺為裡熱重證，痰黃稠量多、胸痛喘促，脈不再主浮，程度較重。",
+          "distinguishing_en": "Wind-Heat is an exterior pattern with a floating pulse; Phlegm-Heat Obstructing the Lung is a more severe interior-heat pattern with copious thick yellow sputum, chest pain, and dyspnea, and the pulse is no longer chiefly floating.",
+          "source": "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        }
+      ],
+      "treatment_principle_zh": "辛涼解表，疏風清熱，宣肺利咽。",
+      "treatment_principle_en": "Release the exterior with acrid-cool methods, disperse Wind, clear Heat, diffuse the Lung, and benefit the throat.",
+      "typical_formulas": [
+        "formula.yin_qiao_san",
+        "formula.sang_ju_yin",
+        "formula.ma_xing_shi_gan_tang"
+      ],
+      "typical_points": [
+        "GV14",
+        "LI11",
+        "TE5",
+        "LI4",
+        "LU10",
+        "LU11",
+        "LU7",
+        "BL13"
+      ],
+      "sources": [
+        "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)",
+        "Sacred Lotus — Eight Principles differentiation (https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/differentiation-syndromes-8-principles-ba-gong-tcm)",
+        "Sacred Lotus — Four Levels / Wei-level differentiation (https://sacredlotus.com/go/diagnosis-chinese-medicine/get/differentiation-syndromes-4-levels-tcm)",
+        "Sacred Lotus — Acupuncture Point Prescriptions (https://www.sacredlotus.com/go/acupuncture/get/acupuncture-point-prescriptions)",
+        "Me & Qi — Wind-Heat (https://www.meandqi.com/knowledge-base/patterns/wind-heat)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "supporting_signs": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "tongue": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "pulse": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "mechanism": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "formulas": [
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ],
+        "points": [
+          "Sacred Lotus — Acupuncture Point Prescriptions (https://www.sacredlotus.com/go/acupuncture/get/acupuncture-point-prescriptions)",
+          "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
+        ]
+      },
+      "review_status": "draft"
     }
   ]
 }
