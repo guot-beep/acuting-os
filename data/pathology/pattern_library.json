@@ -1025,7 +1025,79 @@
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈濡數"
+      "pulse_zh": "脈濡數",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Epigastric/abdominal oppression and fullness",
+        "Bitter, sticky taste in the mouth",
+        "Heaviness of the body",
+        "Sticky, unsatisfying stools"
+      ],
+      "supporting_signs_zh": [
+        "食慾差",
+        "噁心欲嘔",
+        "尿黃"
+      ],
+      "supporting_signs_en": [
+        "Poor appetite",
+        "Nausea",
+        "Dark yellow urine may accompany"
+      ],
+      "tongue_en": "Red tongue with yellow, greasy coating",
+      "pulse_en": "Soggy, rapid pulse",
+      "mechanism_zh": "濕熱蘊結脾胃,運化與受納失職,氣機壅滯,故見脘腹痞悶、口苦口黏、身重;濕熱下注腸道,故大便黏滯不爽。",
+      "mechanism_en": "Damp-Heat accumulates in the Spleen and Stomach, impairing transportation and reception — producing epigastric oppression, a bitter sticky taste, and body heaviness; Damp-Heat descending to the intestines produces sticky, unsatisfying stools.",
+      "common_causes_zh": "嗜食肥甘厚膩、外感濕熱之邪、脾虛濕停日久化熱",
+      "common_causes_en": "Excessive rich/greasy food, external Damp-Heat invasion, chronic Spleen-deficiency Dampness transforming into heat",
+      "progression_zh": "濕熱鬱久可致黃疸;下注可與下焦濕熱或肝膽濕熱並見。",
+      "progression_en": "Prolonged Damp-Heat can cause jaundice; it may descend and coexist with Lower-Burner or Liver-Gallbladder Damp-Heat.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.cold_damp_encumbering_spleen",
+          "distinguishing_zh": "脾胃濕熱苔黃膩、脈濡數,屬濕熱;寒濕困脾苔白膩、脈濡緩,口淡不渴,屬寒濕。",
+          "distinguishing_en": "Damp-Heat in Spleen-Stomach shows a yellow greasy coating and rapid pulse; Cold-Damp Encumbering the Spleen shows a white greasy coating, a moderate pulse, and a bland mouth.",
+          "tongue_difference_zh": "濕熱苔黃膩;寒濕苔白膩",
+          "pulse_difference_zh": "濕熱脈濡數;寒濕脈濡緩",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.cold_damp_encumbering_spleen",
@@ -1039,11 +1111,104 @@
       ],
       "treatment_principle_zh": "溫中散寒化濕",
       "treatment_principle_en": "Warm the middle, dispel cold-damp",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV12",
+        "SP3",
+        "SP6",
+        "SP9",
+        "ST36",
+        "BL20",
+        "BL21"
+      ],
+      "typical_formulas": [
+        "formula.ping_wei_san"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡胖苔白膩",
-      "pulse_zh": "脈濡緩"
+      "pulse_zh": "脈濡緩",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Epigastric/abdominal oppression and fullness",
+        "Bland mouth without thirst",
+        "Heaviness of the head and body",
+        "Loose stools"
+      ],
+      "supporting_signs_zh": [
+        "食慾不振",
+        "噁心嘔吐",
+        "肢體浮腫"
+      ],
+      "supporting_signs_en": [
+        "Poor appetite",
+        "Nausea/vomiting",
+        "Limb edema may accompany"
+      ],
+      "tongue_en": "Pale, swollen tongue with white, greasy coating",
+      "pulse_en": "Soggy, moderate pulse",
+      "mechanism_zh": "寒濕內盛,困阻脾陽,運化失職,清陽不升,故見脘腹脹悶、口淡不渴、頭身困重、便溏。",
+      "mechanism_en": "Internal Cold-Damp encumbers Spleen Yang and impairs transportation, preventing clear Yang from rising — producing epigastric fullness, a bland mouth without thirst, heaviness of the head and body, and loose stools.",
+      "common_causes_zh": "外感寒濕之邪、久居潮濕之地、過食生冷",
+      "common_causes_en": "External Cold-Damp invasion, prolonged residence in damp environments, excessive raw/cold food",
+      "progression_zh": "寒濕困脾日久傷陽,可發展為脾陽虛;濕邪鬱久可化熱,轉為脾胃濕熱。",
+      "progression_en": "Prolonged Cold-Damp encumbrance can injure Yang, progressing to Spleen Yang Deficiency; stagnant Dampness may transform into heat, shifting toward Damp-Heat in Spleen-Stomach.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.damp_heat_spleen_stomach",
+          "distinguishing_zh": "寒濕困脾口淡不渴、苔白膩,屬寒濕;脾胃濕熱口苦口黏、苔黃膩,屬濕熱。",
+          "distinguishing_en": "Cold-Damp Encumbering the Spleen shows a bland mouth and white greasy coating; Damp-Heat in Spleen-Stomach shows a bitter sticky taste and yellow greasy coating.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "寒濕困脾以身重困倦、苔白膩等濕邪為主,屬實證或虛實夾雜;脾陽虛以脘腹冷痛喜溫、四肢冷等虛寒為主,屬純虛證。",
+          "distinguishing_en": "Cold-Damp Encumbering the Spleen centers on Dampness signs and is excess or mixed; Spleen Yang Deficiency centers on deficiency-cold signs (pain relieved by warmth, cold limbs) and is a pure deficiency pattern.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.stomach_heat",
@@ -1058,11 +1223,103 @@
       ],
       "treatment_principle_zh": "清胃瀉火",
       "treatment_principle_en": "Clear stomach fire",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LI4",
+        "LI11",
+        "PC6",
+        "ST44",
+        "ST45"
+      ],
+      "typical_formulas": [
+        "formula.qing_wei_san"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃",
-      "pulse_zh": "脈滑數"
+      "pulse_zh": "脈滑數",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Burning epigastric pain",
+        "Excessive hunger",
+        "Foul breath",
+        "Swollen, painful gums",
+        "Constipation"
+      ],
+      "supporting_signs_zh": [
+        "口渴喜冷飲",
+        "牙齦潰爛或出血",
+        "小便短赤"
+      ],
+      "supporting_signs_en": [
+        "Thirst with preference for cold drinks",
+        "Bleeding/ulcerated gums may occur",
+        "Scant, dark urine may occur"
+      ],
+      "tongue_en": "Red tongue with yellow coating",
+      "pulse_en": "Slippery, rapid pulse",
+      "mechanism_zh": "胃熱熾盛,腐熟太過,故消穀善飢;熱盛傷絡,循經上炎於齒齦,故牙齦腫痛;熱盛傷津,故口臭便秘。",
+      "mechanism_en": "Intense Stomach Heat accelerates the 'rotting and ripening' of food, causing excessive hunger; the heat rises along the channel to the gums producing swelling and pain, while consuming fluids produces foul breath and constipation.",
+      "common_causes_zh": "嗜食辛辣肥甘、情志化火犯胃、外感熱邪傳裡",
+      "common_causes_en": "Excessive spicy/rich food, emotional fire invading the Stomach, external heat transmitted to the interior",
+      "progression_zh": "胃熱日久傷陰,可發展為胃陰虛;熱盛動血可致齒衄或吐血。",
+      "progression_en": "Prolonged Stomach Heat can consume Yin, progressing to Stomach Yin Deficiency; severe heat can force Blood to move recklessly, causing gum bleeding or hematemesis.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stomach_yin_deficiency",
+          "distinguishing_zh": "胃熱熾盛為實熱證,消穀善飢、苔黃、脈滑數有力;胃陰虛為虛熱證,飢不欲食、舌紅少苔、脈細數。",
+          "distinguishing_en": "Stomach Heat is an excess-heat pattern with excessive hunger and a forceful rapid pulse; Stomach Yin Deficiency is a deficiency-heat pattern with hunger but no desire to eat and a thready rapid pulse.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.liver_gallbladder_damp_heat",
+          "distinguishing_zh": "胃熱熾盛以消穀善飢、牙齦腫痛等單純熱象為主;肝膽濕熱兼見口苦、身目發黃等濕邪表現。",
+          "distinguishing_en": "Stomach Heat presents pure heat signs; Liver-Gallbladder Damp-Heat additionally shows Dampness signs such as bitter taste and jaundice.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.stomach_yin_deficiency",
@@ -1076,11 +1333,95 @@
       ],
       "treatment_principle_zh": "養陰益胃",
       "treatment_principle_en": "Nourish stomach yin",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "KI3",
+        "CV12",
+        "SP6",
+        "ST36",
+        "BL21"
+      ],
+      "typical_formulas": [
+        "formula.sha_shen_mai_men_dong_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "pulse_zh": "脈細數",
+      "zang_fu": [
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "key_signs_en": [
+        "Dull epigastric pain",
+        "Hunger without desire to eat",
+        "Dry mouth and throat",
+        "Dry, bound stools"
+      ],
+      "supporting_signs_zh": [
+        "食後腹脹",
+        "低熱煩躁",
+        "乾嘔呃逆"
+      ],
+      "supporting_signs_en": [
+        "Post-meal distention",
+        "Low-grade heat and irritability",
+        "Dry retching or hiccups may occur"
+      ],
+      "tongue_en": "Red tongue with little, dry coating",
+      "pulse_en": "Thready, rapid pulse",
+      "mechanism_zh": "胃陰不足,失於濡潤和降,虛熱內生,故見胃脘隱痛、飢不欲食、口乾咽燥;腸道失潤,故大便乾結。",
+      "mechanism_en": "Stomach Yin deficiency loses its moistening and descending function, allowing deficiency heat to arise internally — producing dull epigastric pain, hunger without appetite, and dry mouth/throat, with dry intestines producing bound stools.",
+      "common_causes_zh": "熱病後期傷津、久病傷陰、過食辛燥、情志化火",
+      "common_causes_en": "Late-stage febrile disease consuming fluids, chronic illness injuring Yin, excessive spicy/drying food, emotional fire",
+      "progression_zh": "多由胃熱傷陰或久病傷陰發展而來;胃陰虛日久可累及脾氣,形成氣陰兩虛。",
+      "progression_en": "Commonly develops from Stomach Heat or chronic illness injuring Yin; prolonged Stomach Yin Deficiency can involve Spleen Qi, forming combined Qi-Yin deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "胃陰虛為虛熱證,飢不欲食、舌紅少苔;胃熱熾盛為實熱證,消穀善飢、苔黃厚。",
+          "distinguishing_en": "Stomach Yin Deficiency is a deficiency-heat pattern with hunger but no desire to eat; Stomach Heat is an excess-heat pattern with excessive hunger and a thick yellow coating.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.food_stagnation",
@@ -1094,11 +1435,101 @@
       ],
       "treatment_principle_zh": "消食導滯",
       "treatment_principle_en": "Reduce food stagnation, guide out accumulation",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR13",
+        "LR14",
+        "PC6",
+        "CV11",
+        "CV12",
+        "SP4",
+        "ST21",
+        "ST36",
+        "ST44"
+      ],
+      "typical_formulas": [
+        "formula.bao_he_wan"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔厚膩",
-      "pulse_zh": "脈滑"
+      "pulse_zh": "脈滑",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "stomach",
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Epigastric/abdominal fullness and distention",
+        "Foul, rotten-food belching and acid regurgitation",
+        "Aversion to food",
+        "Foul-smelling, sour stools"
+      ],
+      "supporting_signs_zh": [
+        "拒按",
+        "食後嘔吐，吐後脹減",
+        "矢氣"
+      ],
+      "supporting_signs_en": [
+        "Dislike of pressure on the abdomen",
+        "Vomiting after eating with relief after vomiting",
+        "Flatulence"
+      ],
+      "tongue_en": "Thick, greasy tongue coating",
+      "pulse_en": "Slippery pulse",
+      "mechanism_zh": "飲食不節,暴飲暴食,損傷脾胃,食滯中焦,運化失職,氣機壅滯,故見脘腹脹滿、噯腐吞酸、厭食。",
+      "mechanism_en": "Dietary irregularity or overeating injures the Spleen and Stomach, causing food to stagnate in the Middle Burner and obstructing Qi movement — producing fullness, foul belching, acid regurgitation, and aversion to food.",
+      "common_causes_zh": "暴飲暴食、飲食不節、脾胃素虛運化無力",
+      "common_causes_en": "Overeating, dietary irregularity, underlying Spleen-Stomach weakness with impaired transportation",
+      "progression_zh": "食積日久可化熱,或損傷脾胃形成脾胃虛弱;反覆食積可致小兒疳積。",
+      "progression_en": "Prolonged food stagnation can transform into heat, or injure the Spleen-Stomach leading to Spleen-Stomach weakness; recurrent episodes in children can lead to infantile malnutrition patterns.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.cold_damp_encumbering_spleen",
+          "distinguishing_zh": "食滯胃脘以噯腐吞酸、拒按、便酸臭為特徵,病因在飲食;寒濕困脾以身重困倦、口淡不渴為主,病因在濕邪。",
+          "distinguishing_en": "Food Stagnation is distinguished by foul belching and dislike of pressure, caused by diet; Cold-Damp Encumbering the Spleen centers on heaviness and a bland mouth, caused by Dampness.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_qi_stagnation",
@@ -4079,7 +4510,11 @@
         "NCBAHM_2026_CH_Outline",
         "https://cloudtcm.com/pattern/142"
       ],
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen",
+        "lung"
+      ]
     },
     {
       "id": "pattern.wind_damp_bi",
