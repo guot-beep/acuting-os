@@ -37,10 +37,10 @@
   },
   "records": [
     {
-      "id": "rf.bells_palsy.unexplained_facial_droop",
+      "id": "rf.bells_palsy.facial_droop_symptoms",
       "entity_id": "cond.bells_palsy",
       "trigger_zh": "出現顏面下垂或面神經麻痺症狀",
-      "trigger_en": "Unexplained facial droop or facial palsy symptoms",
+      "trigger_en": "Facial droop or other symptoms of Bell palsy",
       "tier": "urgent_referral",
       "evidence": [
         {
@@ -77,8 +77,8 @@
     {
       "id": "rf.stroke_rehab.recurrent_stroke_signs",
       "entity_id": "cond.stroke_rehab",
-      "trigger_zh": "出現新發或復發之中風症狀（顏面下垂、單側肢體無力、言語不清等）",
-      "trigger_en": "New or recurrent signs of stroke (facial droop, unilateral limb weakness, speech difficulty)",
+      "trigger_zh": "出現新發或復發之中風症狀",
+      "trigger_en": "New or recurrent signs of stroke",
       "tier": "emergency_referral",
       "evidence": [
         {
@@ -94,7 +94,7 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.peripheral_neuropathy.progressive_sensory_motor_loss",
+      "id": "rf.peripheral_neuropathy.sensory_motor_loss",
       "entity_id": "cond.peripheral_neuropathy",
       "trigger_zh": "身體局部出現運動能力或感覺喪失",
       "trigger_en": "Loss of movement or sensation in any part of the body",
@@ -153,8 +153,8 @@
     {
       "id": "rf.parkinsons.recent_falls",
       "entity_id": "cond.parkinsons",
-      "trigger_zh": "近期頻繁跌倒",
-      "trigger_en": "Recent or recurrent falls",
+      "trigger_zh": "近期跌倒",
+      "trigger_en": "Recent falls",
       "tier": "urgent_referral",
       "evidence": [
         {
@@ -170,10 +170,10 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.parkinsons.dysphagia_choking",
+      "id": "rf.parkinsons.choking_when_eating",
       "entity_id": "cond.parkinsons",
       "trigger_zh": "進食時嗆咳或噎窒",
-      "trigger_en": "Choking or coughing when eating (dysphagia)",
+      "trigger_en": "Choking or coughing when eating",
       "tier": "urgent_referral",
       "evidence": [
         {
@@ -191,8 +191,8 @@
     {
       "id": "rf.multiple_sclerosis.recent_falls",
       "entity_id": "cond.multiple_sclerosis",
-      "trigger_zh": "近期頻繁跌倒",
-      "trigger_en": "Recent or recurrent falls",
+      "trigger_zh": "近期跌倒",
+      "trigger_en": "Recent falls",
       "tier": "urgent_referral",
       "evidence": [
         {
@@ -208,10 +208,10 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.multiple_sclerosis.dysphagia_choking",
+      "id": "rf.multiple_sclerosis.choking_when_eating",
       "entity_id": "cond.multiple_sclerosis",
       "trigger_zh": "進食時嗆咳或噎窒",
-      "trigger_en": "Choking or coughing when eating (dysphagia)",
+      "trigger_en": "Choking or coughing when eating",
       "tier": "urgent_referral",
       "evidence": [
         {
@@ -229,8 +229,8 @@
     {
       "id": "rf.essential_tremor.new_onset_or_disabling_tremor",
       "entity_id": "cond.essential_tremor",
-      "trigger_zh": "新出現顫抖或顫抖已嚴重影響日常生活功能",
-      "trigger_en": "New-onset tremor or tremor interfering significantly with daily activities",
+      "trigger_zh": "新出現顫抖，或顫抖使日常生活活動變得困難",
+      "trigger_en": "New tremor, or tremor that makes it hard to perform daily activities",
       "tier": "routine_referral",
       "evidence": [
         {
@@ -246,10 +246,10 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.dizziness_vertigo.focal_neurologic_deficits",
+      "id": "rf.dizziness_vertigo.weakness_vision_speech_changes",
       "entity_id": "cond.dizziness_vertigo",
       "trigger_zh": "伴隨肢體無力、無法移動手臂或腿部、視力或言語改變",
-      "trigger_en": "Focal neurological deficits (weakness, paralysis, vision or speech changes)",
+      "trigger_en": "Weakness, cannot move an arm or leg, or change in vision or speech",
       "tier": "emergency_referral",
       "evidence": [
         {
@@ -322,9 +322,9 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.migraine_vestibular.thunderclap_worst_headache",
+      "id": "rf.migraine_vestibular.worst_headache_of_life",
       "entity_id": "cond.migraine_vestibular",
-      "trigger_zh": "經歷人生中最嚴重的頭痛（雷擊樣頭痛）",
+      "trigger_zh": "經歷人生中最嚴重的頭痛",
       "trigger_en": "Experiencing the worst headache of your life",
       "tier": "emergency_referral",
       "evidence": [
@@ -436,10 +436,10 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.ibs.unexplained_weight_loss_anemia",
+      "id": "rf.ibs.weight_loss_anemia",
       "entity_id": "cond.ibs",
-      "trigger_zh": "貧血或不明原因體重減輕",
-      "trigger_en": "Anemia or unexplained weight loss",
+      "trigger_zh": "貧血或體重減輕",
+      "trigger_en": "Anemia or weight loss",
       "tier": "urgent_referral",
       "evidence": [
         {
@@ -474,7 +474,7 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.ibd.crohn_severe_pain_fistula_vomiting",
+      "id": "rf.ibd.crohn_severe_pain_bleeding_vomiting",
       "entity_id": "cond.ibd",
       "trigger_zh": "劇烈腹痛、直腸出血或滲液病灶，或持續超過一天的嘔吐",
       "trigger_en": "Very bad abdominal pain, rectal bleeding/drainage/sores, or vomiting >24h",
@@ -493,7 +493,7 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.chronic_constipation.obstruction_signs_fever",
+      "id": "rf.chronic_constipation.cannot_pass_gas_vomiting_fever",
       "entity_id": "cond.chronic_constipation",
       "trigger_zh": "無法排氣、嘔吐或發燒",
       "trigger_en": "Inability to pass gas, vomiting, or fever",
@@ -569,7 +569,7 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.nausea_vomiting.meningismus_severe_headache",
+      "id": "rf.nausea_vomiting.severe_headache_stiff_neck",
       "entity_id": "cond.nausea_vomiting",
       "trigger_zh": "劇烈頭痛伴隨頸部僵硬",
       "trigger_en": "Severe headache and stiff neck",
@@ -645,7 +645,7 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.cinv.chemotherapy_neutropenic_fever",
+      "id": "rf.cinv.fever_during_chemotherapy",
       "entity_id": "cond.cinv",
       "trigger_zh": "化療期間發燒（屬醫療急症）",
       "trigger_en": "Fever during chemotherapy treatment (medical emergency)",
@@ -664,7 +664,7 @@
       "authored_by": "antigravity"
     },
     {
-      "id": "rf.post_op_ileus.complete_obstruction_swollen_abdomen",
+      "id": "rf.post_op_ileus.cannot_pass_stool_gas_swollen_abdomen",
       "entity_id": "cond.post_op_ileus",
       "trigger_zh": "無法排便或排氣、腹部膨脹或持續嘔吐",
       "trigger_en": "Cannot pass stool or gas, swollen abdomen, or persistent vomiting",
