@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
+
+- **做了什麼**：將舊卡主名接骨 Jiegu 校正為接脊（接骨）Jieji，保留 `EX-B11`／`ex.b11` 與舊值；核對 Board／課件缺口、eLotus Ex-B15、AD 拼音索引缺頁、CloudTCM、MedicalTeaching、日本考試資料及胸腰交界解剖，補齊全卡與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `37/72 → 38/72`；待修 `35/72 → 34/72`；泛用 Cloud URL `11/72 → 10/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：本庫 EX-B11、eLotus／日本 Ex-B15 與低權威 EX-B07 分列；一般層向上斜刺0.5～1寸，但補充來源同時引歷史禁針，衝突保留。T12～L1脊髓圓錐／椎管、兒童與癲癇、疑似骨折／脊柱外傷及灸量缺口已補入；接骨別名不等於骨折療效證據。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）與 `validate-interactions.js` 全通過；內容 commit `1c9de53`。
+- **已知未解／下一步**：34張待修、10張泛用 Cloud URL；下一張 EX-B12 坐骨。American Dragon 無 Jieji／Jiegu 專頁；古今針禁衝突及 MedicalTeaching 配伍中的未標準化『百合穴』已保留原文、不擅自修正。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
 # 2026-08-08 Codex — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
 
 - **做了什麼**：核對 Board／課件缺口、eLotus Ex-B14、AD 拼音索引缺頁、醫砭 EX-B11、CloudTCM 精確頁與 MedicalTeaching；保留資料庫 `EX-B10`／`ex.b10`，補齊英文名、異名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源。

@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `1c9de53` (`feat(acupoints): correct Jieji identity and safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; the occupied Pattern worktree and unrelated files remained isolated.
+- **Four Layers**: Jieji/Jiegu is absent from the NCBAHM Appendix A named focus list, and no dedicated local curriculum entry was found. The exact eLotus Ex-B15 page was opened. The American Dragon pinyin index was opened and searched for Jieji and Jiegu; neither is present, and both guessed detail URLs failed. Exact CloudTCM and MedicalTeaching pages plus Japanese exam-oriented material were checked as supplemental references.
+- **Identity / Reconciliation**: preserved immutable database `EX-B11` / `ex.b11`, but corrected the medically mismatched primary name from 接骨/Jiegu to 接脊（接骨）/Jieji/Connecting Vertebrae. Jiegu remains an alias and legacy value. eLotus/Japanese material uses Ex-B15, while a lower-authority page uses EX-B07; all code variants remain source-labeled. Legacy fracture pain and bone-healing actions are retained but marked unsupported rather than deleted.
+- **Content / Safety**: integrated all eLotus digestive, pediatric, neurologic, hernia, technique, and moxa content; added MedicalTeaching anatomy, expanded indications, combinations, retention, classical moxa, and its quoted historical no-needle statement. Modern exact pages use upward-oblique 0.5-1.0 cun, while historical needling prohibition remains an unresolved safety conflict. Added T12-L1 conus/canal anatomy, neurologic stopping rules, pediatric/seizure boundaries, suspected-fracture/spinal-trauma boundaries, and pregnancy/high-risk/moxa gaps without inventing protocols.
+- **Measured Counts**: strict/four-source `37/72 → 38/72`; issues `35/72 → 34/72`; generic Cloud URL `11/72 → 10/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, and task-file `git diff --check` passed.
+- **Next**: EX-B12 坐骨 (Zuogu); verify code/name/location variants, sciatic-nerve anatomy, deep gluteal needling depth, motor deficits, and exact eLotus/AD pages before writing.
+
 ## [2026-08-08] Codex Handoff — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `417102f` (`feat(acupoints): reconcile Juqueshu source conflicts`).
