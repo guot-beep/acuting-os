@@ -2747,7 +2747,7 @@
         "RN6"
       ],
       "typical_formulas": [
-        "formula.jin_kui_shen_qi_wan",
+        "formula.jin_gui_shen_qi_wan",
         "formula.you_gui_wan"
       ],
       "review_status": "draft",
@@ -2824,7 +2824,18 @@
         "NCBAHM_CH_Exam_Content_Outline_2026",
         "https://cloudtcm.com/pattern/kidney_yang_xu"
       ],
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "kidney"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "腎陽虛見畏寒肢冷、五更瀉等虛寒之象;腎陰虛見五心煩熱、盜汗等虛熱之象,二者為腎系陰陽兩端。",
+          "distinguishing_en": "Kidney Yang Deficiency shows deficiency-cold signs (cold limbs, early-morning diarrhea); Kidney Yin Deficiency shows deficiency-heat signs (five-center heat, night sweats) — the two Yin/Yang poles of Kidney deficiency.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ]
     },
     {
       "id": "pattern.kidney_yin_deficiency",
@@ -2921,7 +2932,18 @@
         "NCBAHM_CH_Exam_Content_Outline_2026",
         "https://cloudtcm.com/pattern/kidney_yin_xu"
       ],
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "kidney"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "腎陰虛見五心煩熱、盜汗等虛熱之象;腎陽虛見畏寒肢冷、五更瀉等虛寒之象。",
+          "distinguishing_en": "Kidney Yin Deficiency shows deficiency-heat signs; Kidney Yang Deficiency shows deficiency-cold signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ]
     },
     {
       "id": "pattern.kidney_essence_deficiency",
@@ -2936,11 +2958,104 @@
       ],
       "treatment_principle_zh": "填精補髓",
       "treatment_principle_en": "Replenish essence and marrow",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "GV4",
+        "KI3",
+        "CV4",
+        "BL11",
+        "BL23"
+      ],
+      "typical_formulas": [
+        "formula.zuo_gui_wan",
+        "formula.you_gui_wan"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡",
-      "pulse_zh": "脈弱"
+      "pulse_zh": "脈弱",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Delayed growth/development",
+        "Premature aging",
+        "Poor memory",
+        "Infertility",
+        "Loose teeth and hair loss"
+      ],
+      "supporting_signs_zh": [
+        "眩暈耳鳴",
+        "腰膝痠軟",
+        "骨脆或步行無力"
+      ],
+      "supporting_signs_en": [
+        "Dizziness and tinnitus",
+        "Sore, weak low back and knees",
+        "Brittle bones or weak lower limbs"
+      ],
+      "tongue_en": "Pale tongue",
+      "pulse_en": "Weak pulse",
+      "mechanism_zh": "腎藏精,主生長發育與生殖。稟賦不足或後天久病耗傷腎精,精不化髓,腦髓失充,骨骼失養,故見發育遲緩、早衰、健忘、齒搖髮脫、不孕不育。",
+      "mechanism_en": "The Kidney stores Essence (Jing) and governs growth, development, and reproduction. Congenital weakness or chronic illness consuming Kidney Essence leaves the marrow and brain unfilled and the bones unnourished — producing delayed development, premature aging, poor memory, loose teeth, hair loss, and infertility.",
+      "common_causes_zh": "稟賦不足、房勞過度、久病及腎、年老精氣自衰",
+      "common_causes_en": "Congenital weakness, excessive sexual activity, chronic illness reaching the Kidney, age-related decline of Essence",
+      "progression_zh": "精不化氣可及腎氣虛、腎陽虛;精不養陰可及腎陰虛;精虧髓虛日久可致骨痿。",
+      "progression_en": "Essence deficiency can extend to Kidney Qi or Yang deficiency, or to Kidney Yin deficiency if it fails to nourish Yin; prolonged Essence-Marrow deficiency can lead to bone wasting.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "腎精不足以發育遲緩、早衰、齒搖髮脫等精髓虧虛表現為主,無明顯熱象;腎陰虛兼見五心煩熱、盜汗等虛熱表現。",
+          "distinguishing_en": "Kidney Essence Deficiency centers on Essence-Marrow depletion signs (delayed development, premature aging) without heat signs; Kidney Yin Deficiency additionally shows deficiency-heat signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "腎精不足以生長發育與生殖功能減退為核心;腎陽虛以畏寒肢冷、五更瀉等溫煦失職表現為核心,二者常兼夾。",
+          "distinguishing_en": "Kidney Essence Deficiency centers on impaired growth/reproduction; Kidney Yang Deficiency centers on impaired warming function (cold limbs, early-morning diarrhea) — the two often coexist.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.kidney_qi_not_firm",
@@ -2954,11 +3069,86 @@
       ],
       "treatment_principle_zh": "固攝腎氣",
       "treatment_principle_en": "Secure kidney qi",
-      "typical_points": [],
+      "typical_points": [
+        "KI3",
+        "CV4",
+        "BL23"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌淡",
-      "pulse_zh": "脈沉弱"
+      "pulse_zh": "脈沉弱",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Frequent, clear urination or enuresis",
+        "Spermatorrhea, premature ejaculation",
+        "Thin, clear vaginal discharge",
+        "Tendency to miscarriage/slippery fetus"
+      ],
+      "supporting_signs_zh": [
+        "腰膝痠軟",
+        "耳鳴或聽力下降"
+      ],
+      "supporting_signs_en": [
+        "Sore, weak low back and knees",
+        "Tinnitus/hearing decline may accompany"
+      ],
+      "tongue_en": "Pale tongue",
+      "pulse_en": "Deep, weak pulse",
+      "mechanism_zh": "腎氣虧虛,固攝封藏失職,故見小便頻數清長或遺尿、滑精早洩、帶下清稀;腎氣不固胞胎,故胎動易滑。",
+      "mechanism_en": "Kidney Qi deficiency impairs its function of securing and storing — producing frequent clear urination or enuresis, spermatorrhea, thin vaginal discharge, and (in pregnancy) a tendency toward miscarriage from failure to secure the fetus.",
+      "common_causes_zh": "先天稟賦不足、年老腎氣漸衰、房勞過度、久病傷腎",
+      "common_causes_en": "Congenital weakness, age-related decline of Kidney Qi, excessive sexual activity, chronic illness injuring the Kidney",
+      "progression_zh": "腎氣不固日久,氣損及陽,可發展為腎陽虛;攝納失職日久可及腎不納氣。",
+      "progression_en": "Prolonged Kidney Qi Not Firm can extend to Yang, progressing to Kidney Yang Deficiency; prolonged failure of the securing function can extend to Kidney Failing to Grasp Qi.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "腎氣不固以固攝失職(遺尿、滑精、帶下清稀)為核心;腎陽虛兼見畏寒肢冷、五更瀉等溫煦失職表現,程度更重。",
+          "distinguishing_en": "Kidney Qi Not Firm centers on failure of the securing function; Kidney Yang Deficiency additionally shows impaired warming (cold limbs, early-morning diarrhea) and is more severe.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.kidney_not_grasping_qi",
@@ -2972,11 +3162,91 @@
       ],
       "treatment_principle_zh": "補腎納氣",
       "treatment_principle_en": "Supplement the kidney to absorb qi",
-      "typical_points": [],
+      "typical_points": [
+        "CV4",
+        "CV6",
+        "KI3",
+        "BL13",
+        "BL23"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌淡",
-      "pulse_zh": "脈沉弱"
+      "pulse_zh": "脈沉弱",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "kidney",
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Chronic cough and wheezing",
+        "More exhalation than inhalation (difficulty inhaling)",
+        "Dyspnea worse with exertion",
+        "Spontaneous sweating"
+      ],
+      "supporting_signs_zh": [
+        "聲音低弱",
+        "腰膝痠軟",
+        "畏寒肢冷"
+      ],
+      "supporting_signs_en": [
+        "Weak voice",
+        "Sore, weak low back and knees",
+        "Cold limbs, aversion to cold may accompany"
+      ],
+      "tongue_en": "Pale tongue",
+      "pulse_en": "Deep, weak pulse",
+      "mechanism_zh": "肺主呼氣,腎主納氣。久病咳喘傷及腎氣,腎失攝納,氣浮於上,故呼多吸少、動則喘甚;衛外不固,故自汗。",
+      "mechanism_en": "The Lung governs exhalation while the Kidney governs the grasping of Qi (inhalation). Chronic cough/wheezing injures Kidney Qi, so the Kidney fails to grasp Qi and it floats upward — producing predominant exhalation over inhalation and dyspnea worse with exertion, with spontaneous sweating from a weakened defensive layer.",
+      "common_causes_zh": "久病咳喘、肺氣虛日久及腎、年老腎氣衰",
+      "common_causes_en": "Chronic cough/wheezing, long-standing Lung Qi deficiency extending to the Kidney, age-related Kidney Qi decline",
+      "progression_zh": "多由肺氣虛或腎氣虛發展而來;氣虛及陽,可發展為腎陽虛;病情危重時可見氣脫。",
+      "progression_en": "Commonly develops from Lung or Kidney Qi deficiency; if Qi deficiency extends to Yang it can progress to Kidney Yang Deficiency; in critical cases Qi collapse can occur.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_qi_deficiency",
+          "distinguishing_zh": "腎不納氣以動則喘甚、呼多吸少為特徵性表現;肺氣虛以咳嗽無力、氣短為主,活動後喘促不如腎不納氣顯著。",
+          "distinguishing_en": "Kidney Failing to Grasp Qi is distinguished by dyspnea markedly worse with exertion and difficulty inhaling; Lung Qi Deficiency shows a weak cough and mild breathlessness without this exertional pattern.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.heart_kidney_not_communicating",
@@ -3250,11 +3520,103 @@
       ],
       "treatment_principle_zh": "滋補肺腎之陰",
       "treatment_principle_en": "Enrich lung and kidney yin",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "KI3",
+        "KI6",
+        "LU9",
+        "BL13",
+        "BL23"
+      ],
+      "typical_formulas": [
+        "formula.bai_he_gu_jin_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "pulse_zh": "脈細數",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung",
+        "kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "key_signs_en": [
+        "Dry cough with scant sputum or blood-streaked sputum",
+        "Sore, weak low back and knees",
+        "Tidal fever and night sweats",
+        "Hoarse voice"
+      ],
+      "supporting_signs_zh": [
+        "口咽乾",
+        "顴紅",
+        "遺精或月經量少"
+      ],
+      "supporting_signs_en": [
+        "Dry mouth and throat",
+        "Malar flush",
+        "Spermatorrhea or scanty menses may accompany"
+      ],
+      "tongue_en": "Red, dry tongue with no coating",
+      "pulse_en": "Thready, rapid pulse",
+      "mechanism_zh": "肺腎陰液互資,金水相生。久咳傷肺陰,下汲腎陰,或腎陰虛不能上滋肺陰,終致肺腎兩虧,虛火內熾,故見乾咳少痰、痰中帶血、骨蒸潮熱、盜汗顴紅。",
+      "mechanism_en": "The Lung and Kidney mutually nourish each other's Yin ('Metal generates Water'). Chronic cough injuring Lung Yin can draw on Kidney Yin, or Kidney Yin deficiency can fail to nourish the Lung — eventually both organs become Yin-deficient with internal deficiency fire, producing a dry cough with blood-streaked sputum, tidal fever, night sweats, and malar flush.",
+      "common_causes_zh": "久咳傷陰、肺癆日久、房勞過度傷腎陰、年老陰液漸虧",
+      "common_causes_en": "Chronic cough injuring Yin, prolonged consumptive cough (Lung Wilting), excessive sexual activity injuring Kidney Yin, age-related Yin decline",
+      "progression_zh": "多由肺陰虛或腎陰虛單獨發展、日久相互累及而成;虛火灼傷肺絡可致反覆咯血。",
+      "progression_en": "Commonly develops when isolated Lung Yin or Kidney Yin deficiency progresses and involves the other organ; deficiency fire scorching the Lung vessels can cause recurrent hemoptysis.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_yin_deficiency",
+          "distinguishing_zh": "肺腎陰虛兼見腰膝痠軟等腎陰虛表現;肺陰虛病位局限於肺,無明顯腎系症狀。",
+          "distinguishing_en": "Lung-Kidney Yin Deficiency adds Kidney Yin signs (sore low back/knees) to the Lung Yin deficiency picture; Lung Yin Deficiency alone lacks Kidney-system signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "肺腎陰虛以乾咳痰血等肺系表現為突出;腎陰虛以腰膝痠軟、耳鳴為主,無明顯肺系症狀。",
+          "distinguishing_en": "Lung-Kidney Yin Deficiency is distinguished by prominent Lung-system signs (dry cough, blood-streaked sputum); Kidney Yin Deficiency alone lacks Lung-system signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.spleen_kidney_yang_deficiency",
@@ -3526,11 +3888,100 @@
       ],
       "treatment_principle_zh": "清熱利濕",
       "treatment_principle_en": "Clear heat, drain damp from the lower burner",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV3",
+        "SP6",
+        "SP9",
+        "BL28",
+        "BL39"
+      ],
+      "typical_formulas": [
+        "formula.ba_zheng_san"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈滑數"
+      "pulse_zh": "脈滑數",
+      "pattern_family": "san_jiao",
+      "zang_fu": [
+        "bladder"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Frequent, urgent, painful urination",
+        "Dark yellow urine",
+        "Thick, foul, yellow vaginal discharge",
+        "Genital dampness and itching"
+      ],
+      "supporting_signs_zh": [
+        "少腹脹滿不適",
+        "腰痛或發熱"
+      ],
+      "supporting_signs_en": [
+        "Suprapubic fullness/discomfort",
+        "Low-back pain or fever may accompany"
+      ],
+      "tongue_en": "Red tongue with yellow, greasy coating",
+      "pulse_en": "Slippery, rapid pulse",
+      "mechanism_zh": "濕熱蘊結下焦,膀胱氣化不利,故見小便頻急澀痛、尿黃赤;濕熱下注前陰,故帶下黃稠臭穢、陰部濕癢。",
+      "mechanism_en": "Damp-Heat accumulates in the Lower Burner and impairs the Bladder's Qi transformation, producing urgent, frequent, painful urination with dark urine; Damp-Heat descending to the genitals produces thick, foul, yellow discharge and itching.",
+      "common_causes_zh": "外感濕熱之邪、嗜食肥甘、外陰不潔、肝經濕熱下注",
+      "common_causes_en": "External Damp-Heat invasion, excessive rich food, poor genital hygiene, Liver-channel Damp-Heat descending",
+      "progression_zh": "濕熱下注日久可致淋證反覆發作;上蒙可與肝膽濕熱並見。",
+      "progression_en": "Prolonged Lower-Burner Damp-Heat can cause recurrent Lin (dysuria) syndromes; it may coexist with Liver-Gallbladder Damp-Heat.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_gallbladder_damp_heat",
+          "distinguishing_zh": "下焦濕熱病位偏下焦(尿頻尿痛、帶下);肝膽濕熱病位偏上中焦(脅肋脹痛、口苦、黃疸),二者可同時並見。",
+          "distinguishing_en": "Lower-Burner Damp-Heat is centered on the lower burner (urinary/genital signs); Liver-Gallbladder Damp-Heat is centered on the upper/middle burner (hypochondriac pain, jaundice) — the two may coexist.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.heat_lin",
+          "distinguishing_zh": "下焦濕熱為廣義濕熱下注病機;熱淋是其在膀胱的具體淋證表現,以小便灼熱刺痛、急迫為核心。",
+          "distinguishing_en": "Lower-Burner Damp-Heat is the broader mechanism; Heat Lin is its specific presentation as a Bladder dysuria syndrome, centered on burning, stabbing, urgent urination.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.phlegm_damp",
