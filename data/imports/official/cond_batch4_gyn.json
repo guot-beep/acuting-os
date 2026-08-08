@@ -18,10 +18,86 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "NICHD",
+          "page_title": "What are the symptoms of PCOS?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/pcos/conditioninfo/symptoms",
+          "section": "Symptoms",
+          "quote_en": "Very heavy periods",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "異常大量或持續子宮出血需評估子宮內膜病變",
+          "supports_flag_en": "Abnormally heavy or prolonged uterine bleeding — evaluate the endometrium",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Biopsy to check for precancer, cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "異常大量或持續子宮出血需評估子宮內膜病變",
+          "supports_flag_en": "Abnormally heavy or prolonged uterine bleeding — evaluate the endometrium",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "Other PCOS FAQs",
+          "source_url": "https://www.nichd.nih.gov/health/topics/pcos/more_information/FAQs",
+          "section": "Can PCOS lead to cancer?",
+          "quote_en": "can cause the endometrium to build up and thicken",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "長期無月經合併子宮內膜增厚，需排除內膜增生／癌變",
+          "supports_flag_en": "Prolonged amenorrhea with thickened endometrium — rule out hyperplasia/carcinoma",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "Other PCOS FAQs",
+          "source_url": "https://www.nichd.nih.gov/health/topics/pcos/more_information/FAQs",
+          "section": "Can PCOS lead to cancer?",
+          "quote_en": "which can lead to endometrial cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "長期無月經合併子宮內膜增厚，需排除內膜增生／癌變",
+          "supports_flag_en": "Prolonged amenorrhea with thickened endometrium — rule out hyperplasia/carcinoma",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ovarian cysts",
+          "source_url": "https://medlineplus.gov/ency/article/001504.htm",
+          "section": "Symptoms",
+          "quote_en": "torsion or twisting of the ovary",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "突發嚴重骨盆腔痛需排除卵巢扭轉或其他急症",
+          "supports_flag_en": "Sudden severe pelvic pain — rule out ovarian torsion or other acute cause",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Pregnancy test",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "疑似懷孕",
+          "supports_flag_en": "Possible pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Virilization",
+          "source_url": "https://medlineplus.gov/ency/article/002339.htm",
+          "section": "Information",
+          "quote_en": "Tumors of the ovaries or adrenal glands that release male hormones",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "急劇雄性素上升或男性化需排除分泌雄性素之腫瘤",
+          "supports_flag_en": "Rapid virilization or steeply rising androgens — rule out an androgen-secreting tumor",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -620,9 +696,55 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Risk factors",
+          "quote_en": "Endometriosis",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "疑似懷孕合併劇痛需排除異位妊娠",
+          "supports_flag_en": "Possible pregnancy with severe pain — rule out ectopic pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Symptoms",
+          "quote_en": "pelvic pain",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "疑似懷孕合併劇痛需排除異位妊娠",
+          "supports_flag_en": "Possible pregnancy with severe pain — rule out ectopic pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "Can pelvic pain affect my ability to become pregnant?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/pelvicpain/conditioninfo/pregnant",
+          "section": "Endometriosis",
+          "quote_en": "women with endometriosis are not able to get pregnant",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "不孕需生殖專科評估",
+          "supports_flag_en": "Infertility — refer for reproductive evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Living with endometriosis",
+          "source_url": "https://www.medlineplus.gov/ency/patientinstructions/000714.htm",
+          "section": "When to Call",
+          "quote_en": "unable to become pregnant after trying for 1 year",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "不孕需生殖專科評估",
+          "supports_flag_en": "Infertility — refer for reproductive evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence.",
+        "No whitelisted official support located for existing flag: Acute severe pelvic pain — rule out ruptured or torsed endometrioma",
+        "No whitelisted official support located for existing flag: Cyclical bowel or bladder bleeding suggests deep infiltrating disease — refer for specialist assessment",
         "CMS DRG pages can split a code family across collections. Reviewer should compare this staging list against the official April 1, 2026 code-descriptions file before treating N80 enumeration as exhaustive."
       ],
       "extractor_notes": "N80 is a highly granular FY2026 category. This list contains all N80 leaves captured on the opened current CMS v43.1 P0290 page; do not auto-select. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
@@ -659,9 +781,87 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Uterine fibroids",
+          "source_url": "https://www.medlineplus.gov/ency/article/000914.htm",
+          "section": "Possible Complications",
+          "quote_en": "Anemia (not having enough red blood cells) from heavy bleeding",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）需即時評估",
+          "supports_flag_en": "Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea) — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Iron deficiency anemia",
+          "source_url": "https://medlineplus.gov/ency/article/000584.htm",
+          "section": "Symptoms",
+          "quote_en": "Dizziness",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）需即時評估",
+          "supports_flag_en": "Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea) — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Iron deficiency anemia",
+          "source_url": "https://medlineplus.gov/ency/article/000584.htm",
+          "section": "Symptoms",
+          "quote_en": "Palpitations",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）需即時評估",
+          "supports_flag_en": "Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea) — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Iron deficiency anemia",
+          "source_url": "https://medlineplus.gov/ency/article/000584.htm",
+          "section": "Symptoms",
+          "quote_en": "Shortness of breath",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）需即時評估",
+          "supports_flag_en": "Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea) — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Uterine fibroids",
+          "source_url": "https://www.medlineplus.gov/ency/article/000914.htm",
+          "section": "Possible Complications",
+          "quote_en": "Twisting of the fibroid",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "急性劇痛提示肌瘤變性或帶蒂肌瘤扭轉",
+          "supports_flag_en": "Acute severe pain suggests fibroid degeneration or torsion of a pedunculated fibroid",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Uterine fibroids",
+          "source_url": "https://www.medlineplus.gov/ency/article/000914.htm",
+          "section": "Possible Complications",
+          "quote_en": "Severe pain",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "急性劇痛提示肌瘤變性或帶蒂肌瘤扭轉",
+          "supports_flag_en": "Acute severe pain suggests fibroid degeneration or torsion of a pedunculated fibroid",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Uterine fibroids",
+          "source_url": "https://www.medlineplus.gov/ency/article/000914.htm",
+          "section": "Possible Complications",
+          "quote_en": "hard to empty your bladder completely",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "壓迫症狀導致排尿或排便困難",
+          "supports_flag_en": "Mass effect causing urinary or bowel obstruction",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Rapid growth or growth after menopause — rule out malignancy (uterine sarcoma)"
       ],
       "extractor_notes": "D25 is a category; select anatomic subtype from documentation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -679,10 +879,75 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Painful menstrual periods",
+          "source_url": "https://medlineplus.gov/ency/article/003150.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "pain occurs at times other than menstruation",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "疼痛型態改變或成年後才新發之痛經應排除次發性病因（如內膜異位）",
+          "supports_flag_en": "Change in pain pattern or new-onset dysmenorrhea in adulthood — rule out secondary causes (e.g., endometriosis)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Symptoms",
+          "quote_en": "Fever",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、異常分泌物提示骨盆腔感染",
+          "supports_flag_en": "Fever or abnormal discharge suggests pelvic infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Symptoms",
+          "quote_en": "Foul-smelling vaginal discharge",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、異常分泌物提示骨盆腔感染",
+          "supports_flag_en": "Fever or abnormal discharge suggests pelvic infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Symptoms",
+          "quote_en": "pelvic pain",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "疑似懷孕合併劇痛需排除異位妊娠",
+          "supports_flag_en": "Possible pregnancy with severe pain — rule out ectopic pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Painful menstrual periods",
+          "source_url": "https://medlineplus.gov/ency/article/003150.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Treatments do not relieve your pain",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "止痛無效且進行性加重需進一步影像評估",
+          "supports_flag_en": "Pain unresponsive to analgesia and progressively worsening — pursue imaging",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Painful menstrual periods",
+          "source_url": "https://medlineplus.gov/ency/article/003150.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Pelvic ultrasound",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "止痛無效且進行性加重需進一步影像評估",
+          "supports_flag_en": "Pain unresponsive to analgesia and progressively worsening — pursue imaging",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -699,9 +964,43 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Premenstrual syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001505.htm",
+          "section": "Symptoms",
+          "quote_en": "Feelings of sadness, depression, or hopelessness",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嚴重情緒低落、絕望或自殺意念需即時心理／精神科評估",
+          "supports_flag_en": "Severe low mood, hopelessness, or suicidal ideation — urgent mental-health evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Depression",
+          "source_url": "https://medlineplus.gov/depression.html",
+          "section": "Get Help",
+          "quote_en": "get help right away",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "嚴重情緒低落、絕望或自殺意念需即時心理／精神科評估",
+          "supports_flag_en": "Severe low mood, hopelessness, or suicidal ideation — urgent mental-health evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Premenstrual syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001505.htm",
+          "section": "Symptoms",
+          "quote_en": "The symptoms start during the second half of the menstrual cycle",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "症狀無週期性或持續整月，應重新評估診斷",
+          "supports_flag_en": "Non-cyclical or month-long symptoms — reconsider the diagnosis",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Rapid worsening affecting safety or function"
       ],
       "extractor_notes": "Code exists and is billable; official wording is 'Premenstrual tension syndrome'. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -719,10 +1018,53 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Menopause",
+          "source_url": "https://www.medlineplus.gov/ency/article/000894.htm",
+          "section": "Exams and Tests",
+          "quote_en": "It may be an early sign of problems such as cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "任何停經後出血需評估子宮內膜",
+          "supports_flag_en": "Any postmenopausal bleeding — evaluate the endometrium",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal or uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/007496.htm",
+          "section": "Symptoms",
+          "quote_en": "Heavy bleeding associated with anemia",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "大量出血合併貧血症狀需即時處理",
+          "supports_flag_en": "Heavy bleeding with anemia symptoms — treat promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Pregnancy test",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "疑似懷孕",
+          "supports_flag_en": "Possible pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Prolactinoma",
+          "source_url": "https://medlineplus.gov/ency/article/000336.htm",
+          "section": "Symptoms",
+          "quote_en": "Decreased peripheral vision",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "合併泌乳、視野缺損或頭痛需排除腦下垂體病變",
+          "supports_flag_en": "Galactorrhea, visual-field loss, or headache — rule out pituitary pathology",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Exact descriptor verified for unspecified irregular menstruation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -745,10 +1087,97 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Recognizing medical emergencies",
+          "source_url": "https://medlineplus.gov/ency/article/001927.htm",
+          "section": "Information",
+          "quote_en": "Bleeding that will not stop",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "急性大量出血合併血壓下降、心悸、暈厥屬急症，需立即就醫",
+          "supports_flag_en": "Acute heavy bleeding with hypotension, palpitations, or syncope is an emergency — seek immediate care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Recognizing medical emergencies",
+          "source_url": "https://medlineplus.gov/ency/article/001927.htm",
+          "section": "Information",
+          "quote_en": "Fainting or loss of consciousness",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "急性大量出血合併血壓下降、心悸、暈厥屬急症，需立即就醫",
+          "supports_flag_en": "Acute heavy bleeding with hypotension, palpitations, or syncope is an emergency — seek immediate care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal or uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/007496.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "bleeding or spotting after reaching menopause",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "停經後出血或不規則出血需排除內膜增生／癌變",
+          "supports_flag_en": "Postmenopausal or irregular bleeding — rule out endometrial hyperplasia/carcinoma",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Possible Complications",
+          "quote_en": "Increased risk for endometrial cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "停經後出血或不規則出血需排除內膜增生／癌變",
+          "supports_flag_en": "Postmenopausal or irregular bleeding — rule out endometrial hyperplasia/carcinoma",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Bleeding disorders",
+          "source_url": "https://www.medlineplus.gov/ency/article/001304.htm",
+          "section": "Causes",
+          "quote_en": "passed down through families (inherited)",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "易瘀青或家族出血病史提示凝血疾病",
+          "supports_flag_en": "Easy bruising or family bleeding history suggests coagulopathy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Bleeding disorders",
+          "source_url": "https://www.medlineplus.gov/ency/article/001304.htm",
+          "section": "Symptoms",
+          "quote_en": "Bruising easily",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "易瘀青或家族出血病史提示凝血疾病",
+          "supports_flag_en": "Easy bruising or family bleeding history suggests coagulopathy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Iron deficiency anemia",
+          "source_url": "https://medlineplus.gov/ency/article/000584.htm",
+          "section": "Symptoms",
+          "quote_en": "Feeling weak or tired more often than usual",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "貧血症狀明顯（極度疲倦、氣短）",
+          "supports_flag_en": "Marked anemia symptoms (severe fatigue, dyspnea)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Iron deficiency anemia",
+          "source_url": "https://medlineplus.gov/ency/article/000584.htm",
+          "section": "Symptoms",
+          "quote_en": "Shortness of breath",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "貧血症狀明顯（極度疲倦、氣短）",
+          "supports_flag_en": "Marked anemia symptoms (severe fatigue, dyspnea)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Current seed N92.0 is not synonymous with all heavy menstrual bleeding; regular vs irregular cycle documentation matters. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -777,10 +1206,53 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Prolactinoma",
+          "source_url": "https://medlineplus.gov/ency/article/000336.htm",
+          "section": "Symptoms",
+          "quote_en": "Decreased peripheral vision",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "合併泌乳、頭痛或視野缺損需排除腦下垂體病變",
+          "supports_flag_en": "Galactorrhea, headache, or visual-field loss — rule out pituitary pathology",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Asherman syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001483.htm",
+          "section": "Causes",
+          "quote_en": "most often develops after uterine surgery",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "近期子宮腔手術後經量驟減提示宮腔沾黏",
+          "supports_flag_en": "Sharp drop in flow after recent uterine surgery suggests intrauterine adhesions",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Pregnancy test",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "疑似懷孕",
+          "supports_flag_en": "Possible pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Absent menstrual periods - secondary",
+          "source_url": "https://medlineplus.gov/ency/article/001219.htm",
+          "section": "Causes",
+          "quote_en": "Exercise too much",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "顯著體重下降或過度運動導致停經傾向",
+          "supports_flag_en": "Marked weight loss or over-exercise trending toward amenorrhea",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Current seed N91.5 is the unspecified leaf; choose primary/secondary when documented. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -797,10 +1269,86 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Pregnancy test",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "首先排除懷孕",
+          "supports_flag_en": "Rule out pregnancy first",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Prolactinoma",
+          "source_url": "https://medlineplus.gov/ency/article/000336.htm",
+          "section": "Symptoms",
+          "quote_en": "Decreased peripheral vision",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "合併泌乳、頭痛或視野缺損需排除腦下垂體腫瘤",
+          "supports_flag_en": "Galactorrhea, headache, or visual-field loss — rule out a pituitary tumor",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Primary Ovarian Insufficiency",
+          "source_url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+          "section": "Summary",
+          "quote_en": "before you are 40",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "潮熱、盜汗與 40 歲前停經提示卵巢早衰，需評估",
+          "supports_flag_en": "Hot flashes, night sweats, and cessation before 40 suggest premature ovarian insufficiency — evaluate",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Primary Ovarian Insufficiency",
+          "source_url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+          "section": "Symptoms",
+          "quote_en": "Hot flashes",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "潮熱、盜汗與 40 歲前停經提示卵巢早衰，需評估",
+          "supports_flag_en": "Hot flashes, night sweats, and cessation before 40 suggest premature ovarian insufficiency — evaluate",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Primary Ovarian Insufficiency",
+          "source_url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+          "section": "Symptoms",
+          "quote_en": "Night sweats",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "潮熱、盜汗與 40 歲前停經提示卵巢早衰，需評估",
+          "supports_flag_en": "Hot flashes, night sweats, and cessation before 40 suggest premature ovarian insufficiency — evaluate",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Absent menstrual periods - secondary",
+          "source_url": "https://medlineplus.gov/ency/article/001219.htm",
+          "section": "Causes",
+          "quote_en": "Lose a lot of weight suddenly",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "顯著體重過低或飲食失調需整體醫療評估",
+          "supports_flag_en": "Marked underweight or an eating disorder warrants broad medical evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Absent menstrual periods - secondary",
+          "source_url": "https://medlineplus.gov/ency/article/001219.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "missed more than one period",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "顯著體重過低或飲食失調需整體醫療評估",
+          "supports_flag_en": "Marked underweight or an eating disorder warrants broad medical evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Canonical label is explicitly secondary amenorrhea; exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -841,9 +1389,54 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal bleeding in early pregnancy",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000614.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Bleeding with pain or cramping",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "劇烈骨盆腔痛或異常出血需先排除急症與異位妊娠",
+          "supports_flag_en": "Severe pelvic pain or abnormal bleeding — rule out acute causes and ectopic pregnancy first",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Summary",
+          "quote_en": "medical emergency",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "劇烈骨盆腔痛或異常出血需先排除急症與異位妊娠",
+          "supports_flag_en": "Severe pelvic pain or abnormal bleeding — rule out acute causes and ectopic pregnancy first",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "About Infertility and Fertility",
+          "source_url": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo",
+          "section": "About Infertility and Fertility",
+          "quote_en": "after 6 months if the woman is older than 35 years of age",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "35 歲以上或有卵巢儲備疑慮者宜及早轉介生殖專科",
+          "supports_flag_en": "Age ≥35 or ovarian-reserve concerns — refer to reproductive medicine early",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "About Infertility and Fertility",
+          "source_url": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo",
+          "section": "About Infertility and Fertility",
+          "quote_en": "Recurrent pregnancy loss is considered distinct from infertility",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "反覆流產史需另作評估",
+          "supports_flag_en": "History of recurrent pregnancy loss warrants separate evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Known tubal disease, severe endometriosis, or azoospermia needs specialist care"
       ],
       "extractor_notes": "N97 is a category; etiology determines the leaf. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -951,9 +1544,65 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0280.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Testicle lump",
+          "source_url": "https://medlineplus.gov/ency/article/003162.htm",
+          "section": "Considerations",
+          "quote_en": "A testicle lump that does not hurt may be a sign of cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "睪丸腫塊或不對稱需排除睪丸腫瘤",
+          "supports_flag_en": "Testicular mass or asymmetry — rule out testicular tumor",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "How is infertility diagnosed?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/diagnosed",
+          "section": "Evaluating Male Fertility",
+          "quote_en": "Low sexual desire (libido)",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "性功能障礙合併荷爾蒙症狀需內分泌評估",
+          "supports_flag_en": "Sexual dysfunction with hormonal symptoms — endocrine evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "How is infertility diagnosed?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/diagnosed",
+          "section": "Evaluating Male Fertility",
+          "quote_en": "Measurement of hormones in the blood",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "性功能障礙合併荷爾蒙症狀需內分泌評估",
+          "supports_flag_en": "Sexual dysfunction with hormonal symptoms — endocrine evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "How is infertility diagnosed?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/diagnosed",
+          "section": "Evaluating Male Fertility",
+          "quote_en": "Infection, signaled by discharge or prostate swelling",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "泌尿感染或疼痛徵象",
+          "supports_flag_en": "Signs of urinary infection or pain",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Urinary Tract Infections",
+          "source_url": "https://medlineplus.gov/urinarytractinfections.html",
+          "section": "Summary",
+          "quote_en": "important to see your doctor",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "泌尿感染或疼痛徵象",
+          "supports_flag_en": "Signs of urinary infection or pain",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Azoospermia or severe abnormalities — refer to urology/reproductive medicine and genetic evaluation"
       ],
       "extractor_notes": "N46 is a category; phenotype and mechanism determine the leaf. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -983,9 +1632,33 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Primary Ovarian Insufficiency",
+          "source_url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+          "section": "Summary",
+          "quote_en": "before you are 40",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "40 歲前出現卵巢功能不全徵象（潮熱、停經）需評估卵巢早衰",
+          "supports_flag_en": "Signs of ovarian insufficiency before 40 (hot flashes, amenorrhea) — evaluate for premature ovarian insufficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Primary Ovarian Insufficiency",
+          "source_url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+          "section": "Symptoms",
+          "quote_en": "Hot flashes",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "40 歲前出現卵巢功能不全徵象（潮熱、停經）需評估卵巢早衰",
+          "supports_flag_en": "Signs of ovarian insufficiency before 40 (hot flashes, amenorrhea) — evaluate for premature ovarian insufficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: If pregnancy is desired, refer to reproductive medicine early given time-sensitivity",
+        "No whitelisted official support located for existing flag: Menopausal symptoms affecting quality of life"
       ],
       "extractor_notes": "Existing E28.3 seed is not a sufficient exact mapping for diminished ovarian reserve. E28.39 is broader 'other primary ovarian failure'; human coding review required. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -1003,10 +1676,119 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1015.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ovarian hyperstimulation syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/007294.htm",
+          "section": "Serious symptoms",
+          "quote_en": "Rapid weight gain",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "刺激期後腹脹、少尿、體重驟增或呼吸困難提示卵巢過度刺激症候群（OHSS），屬急症",
+          "supports_flag_en": "Post-stimulation bloating, reduced urine output, rapid weight gain, or dyspnea suggests ovarian hyperstimulation syndrome (OHSS) — an emergency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ovarian hyperstimulation syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/007294.htm",
+          "section": "Serious symptoms",
+          "quote_en": "Decreased urination",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "刺激期後腹脹、少尿、體重驟增或呼吸困難提示卵巢過度刺激症候群（OHSS），屬急症",
+          "supports_flag_en": "Post-stimulation bloating, reduced urine output, rapid weight gain, or dyspnea suggests ovarian hyperstimulation syndrome (OHSS) — an emergency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ovarian hyperstimulation syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/007294.htm",
+          "section": "Serious symptoms",
+          "quote_en": "Shortness of breath",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "刺激期後腹脹、少尿、體重驟增或呼吸困難提示卵巢過度刺激症候群（OHSS），屬急症",
+          "supports_flag_en": "Post-stimulation bloating, reduced urine output, rapid weight gain, or dyspnea suggests ovarian hyperstimulation syndrome (OHSS) — an emergency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ovarian hyperstimulation syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/007294.htm",
+          "section": "Treatment",
+          "quote_en": "may be admitted to the hospital",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "刺激期後腹脹、少尿、體重驟增或呼吸困難提示卵巢過度刺激症候群（OHSS），屬急症",
+          "supports_flag_en": "Post-stimulation bloating, reduced urine output, rapid weight gain, or dyspnea suggests ovarian hyperstimulation syndrome (OHSS) — an emergency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "In vitro fertilization (IVF)",
+          "source_url": "https://medlineplus.gov/ency/article/007279.htm",
+          "section": "Risks",
+          "quote_en": "Risks of egg retrieval include reactions to anesthesia, bleeding, infection",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "取卵後劇烈腹痛或發燒需排除出血或感染",
+          "supports_flag_en": "Severe abdominal pain or fever after retrieval — rule out bleeding or infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "In vitro fertilization (IVF)",
+          "source_url": "https://medlineplus.gov/ency/article/007279.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "A fever over 100.5°F (38°C)",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "取卵後劇烈腹痛或發燒需排除出血或感染",
+          "supports_flag_en": "Severe abdominal pain or fever after retrieval — rule out bleeding or infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "In vitro fertilization (IVF)",
+          "source_url": "https://medlineplus.gov/ency/article/007279.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Pelvic pain",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "植入後劇痛合併陰道出血需排除併發症",
+          "supports_flag_en": "Severe pain with vaginal bleeding after transfer — rule out complications",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "In vitro fertilization (IVF)",
+          "source_url": "https://medlineplus.gov/ency/article/007279.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Heavy bleeding from the vagina",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "植入後劇痛合併陰道出血需排除併發症",
+          "supports_flag_en": "Severe pain with vaginal bleeding after transfer — rule out complications",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Risk factors",
+          "quote_en": "Infertility treatments",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "任何疑似異位妊娠徵象",
+          "supports_flag_en": "Any signs suggesting ectopic pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Summary",
+          "quote_en": "medical emergency",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "任何疑似異位妊娠徵象",
+          "supports_flag_en": "Any signs suggesting ectopic pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Verified as an encounter code. Use only for the documented assisted-reproductive-procedure cycle context. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1023,9 +1805,98 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal bleeding in early pregnancy",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000614.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Dizziness and bleeding",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "急性大量出血或劇痛合併頭暈屬急症，需立即就醫",
+          "supports_flag_en": "Acute heavy bleeding or severe pain with dizziness is an emergency — seek immediate care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal bleeding in early pregnancy",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000614.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "go to the emergency room",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "急性大量出血或劇痛合併頭暈屬急症，需立即就醫",
+          "supports_flag_en": "Acute heavy bleeding or severe pain with dizziness is an emergency — seek immediate care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Emergency signs",
+          "quote_en": "Abdominal (belly) pain",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "疑似異位妊娠（單側劇痛、肩痛、暈厥）",
+          "supports_flag_en": "Suspected ectopic pregnancy (unilateral severe pain, shoulder pain, syncope)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Emergency signs",
+          "quote_en": "Shoulder pain",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "疑似異位妊娠（單側劇痛、肩痛、暈厥）",
+          "supports_flag_en": "Suspected ectopic pregnancy (unilateral severe pain, shoulder pain, syncope)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ectopic Pregnancy",
+          "source_url": "https://medlineplus.gov/ectopicpregnancy.html",
+          "section": "Emergency signs",
+          "quote_en": "Feeling dizzy or faint",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "疑似異位妊娠（單側劇痛、肩痛、暈厥）",
+          "supports_flag_en": "Suspected ectopic pregnancy (unilateral severe pain, shoulder pain, syncope)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Miscarriage",
+          "source_url": "https://medlineplus.gov/ency/article/001488.htm",
+          "section": "Possible Complications",
+          "quote_en": "fever",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "發燒與惡臭分泌物提示感染性流產",
+          "supports_flag_en": "Fever with foul discharge suggests septic miscarriage",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Miscarriage",
+          "source_url": "https://medlineplus.gov/ency/article/001488.htm",
+          "section": "Possible Complications",
+          "quote_en": "foul-smelling vaginal discharge",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "發燒與惡臭分泌物提示感染性流產",
+          "supports_flag_en": "Fever with foul discharge suggests septic miscarriage",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Miscarriage",
+          "source_url": "https://medlineplus.gov/ency/article/001488.htm",
+          "section": "Possible Complications",
+          "quote_en": "need immediate medical attention",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "發燒與惡臭分泌物提示感染性流產",
+          "supports_flag_en": "Fever with foul discharge suggests septic miscarriage",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Confirmed antiphospholipid syndrome or thrombosis history needs co-managed specialist care"
       ],
       "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -1049,10 +1920,53 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "NICHD",
+          "page_title": "How Do Health Care Providers Diagnose and Treat Pregnancy Loss?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/pregnancyloss/conditioninfo/Pages/diagnosed.aspx",
+          "section": "Diagnosing Pregnancy Loss",
+          "quote_en": "If a woman has had more than one miscarriage",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "反覆早期流產需系統性評估",
+          "supports_flag_en": "Recurrent early miscarriage warrants systematic evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NICHD",
+          "page_title": "How Do Health Care Providers Diagnose and Treat Pregnancy Loss?",
+          "source_url": "https://www.nichd.nih.gov/health/topics/pregnancyloss/conditioninfo/Pages/diagnosed.aspx",
+          "section": "Diagnosing Pregnancy Loss",
+          "quote_en": "check her blood for chromosome problems, hormone problems, or immune system disorders",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "反覆早期流產需系統性評估",
+          "supports_flag_en": "Recurrent early miscarriage warrants systematic evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Absent menstrual periods - secondary",
+          "source_url": "https://medlineplus.gov/ency/article/001219.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Blood tests may be done to check hormone levels",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "顯著週期紊亂或閉經應重新評估內分泌",
+          "supports_flag_en": "Marked cycle disruption or amenorrhea — reassess endocrine causes",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal bleeding in early pregnancy",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000614.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Bleeding with pain or cramping",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "疑似懷孕合併出血需排除先兆流產或異位妊娠",
+          "supports_flag_en": "Possible pregnancy with bleeding — rule out threatened or ectopic pregnancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "No dedicated luteal-phase-defect descriptor was established in this strict pass. Existing E28.8 is broad; N97.8 may apply only in infertility context. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only.",
       "mapping_review_note": "N97.8 verified in the official FY2026 codes file (the cited DRG page P0290 does not carry it — page-attribution imprecision, code itself confirmed). Both E28.8 and N97.8 remain broad/context candidates."
     },
@@ -1070,10 +1984,64 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Menopause",
+          "source_url": "https://www.medlineplus.gov/ency/article/000894.htm",
+          "section": "Exams and Tests",
+          "quote_en": "It may be an early sign of problems such as cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "任何停經後陰道出血需評估子宮內膜以排除惡性",
+          "supports_flag_en": "Any postmenopausal vaginal bleeding — evaluate the endometrium to exclude malignancy",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Primary Ovarian Insufficiency",
+          "source_url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+          "section": "Summary",
+          "quote_en": "before you are 40",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "40 歲前即出現更年期症狀需評估卵巢早衰",
+          "supports_flag_en": "Menopausal symptoms before 40 — evaluate for premature ovarian insufficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Depression",
+          "source_url": "https://medlineplus.gov/depression.html",
+          "section": "Get Help",
+          "quote_en": "get help right away",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "嚴重情緒低落或自殺意念需即時心理支持",
+          "supports_flag_en": "Severe low mood or suicidal ideation — urgent mental-health support",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Recognizing medical emergencies",
+          "source_url": "https://medlineplus.gov/ency/article/001927.htm",
+          "section": "Information",
+          "quote_en": "Chest pain or discomfort lasting for two minutes or more",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "新發胸痛、嚴重頭痛或神經症狀不可歸因於更年期，需即時評估",
+          "supports_flag_en": "New chest pain, severe headache, or neurologic symptoms must not be attributed to menopause — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Recognizing medical emergencies",
+          "source_url": "https://medlineplus.gov/ency/article/001927.htm",
+          "section": "Information",
+          "quote_en": "Inability to speak; Sudden dizziness, weakness, or change in vision",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "新發胸痛、嚴重頭痛或神經症狀不可歸因於更年期，需即時評估",
+          "supports_flag_en": "New chest pain, severe headache, or neurologic symptoms must not be attributed to menopause — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Exact official descriptor verified for symptomatic climacteric/menopausal state. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1114,10 +2082,97 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0301.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Hyperemesis gravidarum",
+          "source_url": "https://medlineplus.gov/ency/article/001499.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Unable to tolerate any fluids for over 12 hours",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "無法進食飲水、少尿、明顯脫水或體重明顯下降需就醫補液",
+          "supports_flag_en": "Inability to keep down food/fluids, reduced urine, marked dehydration, or significant weight loss — seek care for rehydration",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Hyperemesis gravidarum",
+          "source_url": "https://medlineplus.gov/ency/article/001499.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Blood in the vomit",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嘔吐物帶血",
+          "supports_flag_en": "Blood in vomit",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Wernicke-Korsakoff syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000771.htm",
+          "section": "Causes",
+          "quote_en": "Extreme nausea and vomiting during pregnancy (hyperemesis gravidarum)",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "意識混亂、視力改變或步態不穩需排除電解質／維生素缺乏之神經併發症",
+          "supports_flag_en": "Confusion, vision change, or unsteady gait — rule out neurologic complications of electrolyte/vitamin deficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Wernicke-Korsakoff syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000771.htm",
+          "section": "Symptoms",
+          "quote_en": "Confusion and loss of mental activity",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "意識混亂、視力改變或步態不穩需排除電解質／維生素缺乏之神經併發症",
+          "supports_flag_en": "Confusion, vision change, or unsteady gait — rule out neurologic complications of electrolyte/vitamin deficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Wernicke-Korsakoff syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000771.htm",
+          "section": "Symptoms",
+          "quote_en": "Loss of muscle coordination",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "意識混亂、視力改變或步態不穩需排除電解質／維生素缺乏之神經併發症",
+          "supports_flag_en": "Confusion, vision change, or unsteady gait — rule out neurologic complications of electrolyte/vitamin deficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Wernicke-Korsakoff syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000771.htm",
+          "section": "Symptoms",
+          "quote_en": "Vision changes",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "意識混亂、視力改變或步態不穩需排除電解質／維生素缺乏之神經併發症",
+          "supports_flag_en": "Confusion, vision change, or unsteady gait — rule out neurologic complications of electrolyte/vitamin deficiency",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Hyperemesis gravidarum",
+          "source_url": "https://medlineplus.gov/ency/article/001499.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Abdominal pain",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒或腹痛提示其他病因",
+          "supports_flag_en": "Fever or abdominal pain suggests another cause",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Hyperemesis gravidarum",
+          "source_url": "https://medlineplus.gov/ency/article/001499.htm",
+          "section": "Exams and Tests",
+          "quote_en": "tests to check for liver and gastrointestinal problems",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒或腹痛提示其他病因",
+          "supports_flag_en": "Fever or abdominal pain suggests another cause",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "O21 is pregnancy-only. Select based on hyperemesis severity/metabolic disturbance and pregnancy vomiting context; do not reuse outside obstetric documentation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1170,9 +2225,65 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0810.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Breech - series—Complications of breech",
+          "source_url": "https://medlineplus.gov/ency/presentations/100193_4.htm",
+          "section": "Overview",
+          "quote_en": "A prolapsed umbilical cord is common in breech deliveries",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "破水合併臍帶脫垂徵象屬產科急症，需立即就醫",
+          "supports_flag_en": "Ruptured membranes with signs of cord prolapse is an obstetric emergency — seek immediate care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Breech - series—Complications of breech",
+          "source_url": "https://medlineplus.gov/ency/presentations/100193_4.htm",
+          "section": "Overview",
+          "quote_en": "An emergency cesarean section is usually needed",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "破水合併臍帶脫垂徵象屬產科急症，需立即就醫",
+          "supports_flag_en": "Ruptured membranes with signs of cord prolapse is an obstetric emergency — seek immediate care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Am I in labor?",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000508.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Regular, painful contractions every 5 to 10 minutes for 60 minutes",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "規則宮縮或陰道出血提示早產或產兆",
+          "supports_flag_en": "Regular contractions or vaginal bleeding suggests preterm labor or onset of labor",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Am I in labor?",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000508.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Any vaginal bleeding other than light spotting",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "規則宮縮或陰道出血提示早產或產兆",
+          "supports_flag_en": "Regular contractions or vaginal bleeding suggests preterm labor or onset of labor",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Am I in labor?",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000508.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Decreased fetal movement",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "胎動明顯減少需即時評估",
+          "supports_flag_en": "Marked decrease in fetal movement — evaluate promptly",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Any external cephalic version must be performed by an obstetrician under monitoring"
       ],
       "extractor_notes": "This is a maternal-care code, not a generic fetal-position label. Use only in the appropriate obstetric encounter and choose the fetus-number 7th character. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -1190,10 +2301,119 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0313.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Feeding patterns and diet - babies and infants",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000712.htm",
+          "section": "Signs baby is getting enough",
+          "quote_en": "at least 6 wet diapers",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嬰兒體重不增、尿量少或脫水徵象需小兒科即時評估",
+          "supports_flag_en": "Poor infant weight gain, low urine output, or dehydration — urgent pediatric evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Feeding patterns and diet - babies and infants",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000712.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "gaining too much or too little weight",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嬰兒體重不增、尿量少或脫水徵象需小兒科即時評估",
+          "supports_flag_en": "Poor infant weight gain, low urine output, or dehydration — urgent pediatric evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Feeding patterns and diet - babies and infants",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000712.htm",
+          "section": "Signs baby is getting enough",
+          "quote_en": "talk with your baby's provider",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "嬰兒體重不增、尿量少或脫水徵象需小兒科即時評估",
+          "supports_flag_en": "Poor infant weight gain, low urine output, or dehydration — urgent pediatric evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Overcoming breastfeeding problems",
+          "source_url": "https://medlineplus.gov/ency/article/002452.htm",
+          "section": "Mastitis",
+          "quote_en": "fever, and a red, hot, tender area on one breast",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "乳房紅腫熱痛合併發燒提示乳腺炎",
+          "supports_flag_en": "Red, hot, painful breast with fever suggests mastitis",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Overcoming breastfeeding problems",
+          "source_url": "https://medlineplus.gov/ency/article/002452.htm",
+          "section": "Mastitis",
+          "quote_en": "Contact your provider",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "乳房紅腫熱痛合併發燒提示乳腺炎",
+          "supports_flag_en": "Red, hot, painful breast with fever suggests mastitis",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Recognizing medical emergencies",
+          "source_url": "https://medlineplus.gov/ency/article/001927.htm",
+          "section": "Information",
+          "quote_en": "Bleeding that will not stop",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "產後大量出血或嚴重情緒低落需即時醫療／心理評估",
+          "supports_flag_en": "Postpartum hemorrhage or severe low mood — urgent medical/mental-health evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Postpartum Depression",
+          "source_url": "https://medlineplus.gov/postpartumdepression.html",
+          "section": "Symptoms",
+          "quote_en": "Feeling sad or empty most of the time",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "產後大量出血或嚴重情緒低落需即時醫療／心理評估",
+          "supports_flag_en": "Postpartum hemorrhage or severe low mood — urgent medical/mental-health evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Postpartum Depression",
+          "source_url": "https://medlineplus.gov/postpartumdepression.html",
+          "section": "Treatment",
+          "quote_en": "talk with your provider",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "產後大量出血或嚴重情緒低落需即時醫療／心理評估",
+          "supports_flag_en": "Postpartum hemorrhage or severe low mood — urgent medical/mental-health evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Sheehan syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001175.htm",
+          "section": "Causes",
+          "quote_en": "bleeds severely during childbirth",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "疑似 Sheehan 症候群（產後大出血後無泌乳）需內分泌評估",
+          "supports_flag_en": "Suspected Sheehan syndrome (no lactation after major postpartum hemorrhage) — endocrine evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Sheehan syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001175.htm",
+          "section": "Symptoms",
+          "quote_en": "Inability to breastfeed",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "疑似 Sheehan 症候群（產後大出血後無泌乳）需內分泌評估",
+          "supports_flag_en": "Suspected Sheehan syndrome (no lactation after major postpartum hemorrhage) — endocrine evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Exact descriptor verified; obstetric context should remain explicit. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1234,10 +2454,86 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ovarian cysts",
+          "source_url": "https://medlineplus.gov/ency/article/001504.htm",
+          "section": "Symptoms",
+          "quote_en": "torsion or twisting of the ovary",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "急性劇痛或痛感型態突變需排除急症（如卵巢扭轉、異位妊娠）",
+          "supports_flag_en": "Acute severe pain or abrupt change in pattern — rule out an acute cause (e.g., torsion, ectopic)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Symptoms",
+          "quote_en": "Fever",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、異常分泌物提示感染",
+          "supports_flag_en": "Fever or abnormal discharge suggests infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Symptoms",
+          "quote_en": "Foul-smelling vaginal discharge",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、異常分泌物提示感染",
+          "supports_flag_en": "Fever or abnormal discharge suggests infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Colonoscopy",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/colonoscopy",
+          "section": "Why do doctors use colonoscopy?",
+          "quote_en": "bleeding from your anus",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "腸道出血、體重減輕或排便習慣改變需排除腸道病變",
+          "supports_flag_en": "Rectal bleeding, weight loss, or bowel-habit change — rule out bowel pathology",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Colonoscopy",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/colonoscopy",
+          "section": "Why do doctors use colonoscopy?",
+          "quote_en": "changes in your bowel movements",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "腸道出血、體重減輕或排便習慣改變需排除腸道病變",
+          "supports_flag_en": "Rectal bleeding, weight loss, or bowel-habit change — rule out bowel pathology",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Colonoscopy",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/colonoscopy",
+          "section": "Why do doctors use colonoscopy?",
+          "quote_en": "unexplained weight loss",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "腸道出血、體重減輕或排便習慣改變需排除腸道病變",
+          "supports_flag_en": "Rectal bleeding, weight loss, or bowel-habit change — rule out bowel pathology",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Hematuria (Blood in the Urine)",
+          "source_url": "https://www.niddk.nih.gov/health-information/urologic-diseases/hematuria-blood-urine",
+          "section": "Diagnosis",
+          "quote_en": "urinalysis to diagnose hematuria and help find the cause",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "血尿需泌尿評估",
+          "supports_flag_en": "Hematuria — urologic evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "FY2026 R10.2 family is split into billable location/laterality leaves; none encodes chronicity by itself. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1278,10 +2574,64 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "CDC",
+          "page_title": "Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines",
+          "source_url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "section": "Diagnostic Considerations",
+          "quote_en": "Oral temperature >38.3°C",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、劇烈骨盆腔痛與異常分泌物提示急性發作或膿瘍，需即時就醫",
+          "supports_flag_en": "Fever, severe pelvic pain, and abnormal discharge suggest an acute flare or abscess — seek urgent care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines",
+          "source_url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "section": "Hospitalization criteria",
+          "quote_en": "Tubo-ovarian abscess",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、劇烈骨盆腔痛與異常分泌物提示急性發作或膿瘍，需即時就醫",
+          "supports_flag_en": "Fever, severe pelvic pain, and abnormal discharge suggest an acute flare or abscess — seek urgent care",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Complications",
+          "quote_en": "ectopic pregnancy",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "疑似異位妊娠（有輸卵管損傷史者風險升高）",
+          "supports_flag_en": "Suspected ectopic pregnancy (higher risk with tubal damage)",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Complications",
+          "quote_en": "Infertility",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "不孕需生殖專科評估",
+          "supports_flag_en": "Infertility — refer for reproductive evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines",
+          "source_url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "section": "Management of Sex Partners",
+          "quote_en": "should be evaluated, tested, and presumptively treated",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "性伴侶需同步篩檢與處理以防再感染",
+          "supports_flag_en": "Partners need concurrent screening/treatment to prevent reinfection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Current N73.1 seed is narrower than 'chronic PID sequelae'. Review the documented anatomy/sequela before choosing a leaf. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1304,10 +2654,86 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
-      "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal yeast infection",
+          "source_url": "https://medlineplus.gov/ency/article/001511.htm",
+          "section": "Causes",
+          "quote_en": "You have diabetes",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "反覆或難治性感染需排除糖尿病或免疫低下等誘因",
+          "supports_flag_en": "Recurrent or refractory infection — rule out contributors such as diabetes or immunosuppression",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal yeast infection",
+          "source_url": "https://medlineplus.gov/ency/article/001511.htm",
+          "section": "Causes",
+          "quote_en": "an illness that suppresses your immune system",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "反覆或難治性感染需排除糖尿病或免疫低下等誘因",
+          "supports_flag_en": "Recurrent or refractory infection — rule out contributors such as diabetes or immunosuppression",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal yeast infection",
+          "source_url": "https://medlineplus.gov/ency/article/001511.htm",
+          "section": "Home Care",
+          "quote_en": "pelvic pain or a fever",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "合併發燒、骨盆腔痛提示上生殖道感染，非單純陰道炎",
+          "supports_flag_en": "Fever or pelvic pain suggests upper-tract infection, not simple vaginitis",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Pelvic Inflammatory Disease",
+          "source_url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+          "section": "Symptoms",
+          "quote_en": "pain in the lower abdomen (belly)",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "合併發燒、骨盆腔痛提示上生殖道感染，非單純陰道炎",
+          "supports_flag_en": "Fever or pelvic pain suggests upper-tract infection, not simple vaginitis",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal yeast infection",
+          "source_url": "https://medlineplus.gov/ency/article/001511.htm",
+          "section": "Home Care",
+          "quote_en": "You are not pregnant",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "孕期症狀需依醫療指示處理",
+          "supports_flag_en": "Symptoms in pregnancy should be managed per medical guidance",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Trichomoniasis",
+          "source_url": "https://medlineplus.gov/ency/article/001331.htm",
+          "section": "Symptoms",
+          "quote_en": "thin, greenish-yellow, frothy or foamy",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "分泌物型態不符（惡臭、灰綠、泡沫）提示其他病原",
+          "supports_flag_en": "Discharge that doesn't fit (foul, gray-green, frothy) suggests another pathogen",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Trichomoniasis",
+          "source_url": "https://medlineplus.gov/ency/article/001331.htm",
+          "section": "Symptoms",
+          "quote_en": "Vaginal odor (foul or strong smell)",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "分泌物型態不符（惡臭、灰綠、泡沫）提示其他病原",
+          "supports_flag_en": "Discharge that doesn't fit (foul, gray-green, frothy) suggests another pathogen",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
       ],
+      "not_found": [],
       "extractor_notes": "Existing B37.3 is nonterminal in FY2026; choose acute vs chronic from documentation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
     {
@@ -1324,9 +2750,43 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Asherman syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001483.htm",
+          "section": "Causes",
+          "quote_en": "most often develops after uterine surgery",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "有子宮腔手術史且經量驟減提示宮腔沾黏，需宮腔評估",
+          "supports_flag_en": "Prior uterine surgery with a sharp drop in flow suggests intrauterine adhesions — assess the cavity",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Asherman syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/001483.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "menstrual periods do not return after a gynecologic or obstetrical surgery",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "有子宮腔手術史且經量驟減提示宮腔沾黏，需宮腔評估",
+          "supports_flag_en": "Prior uterine surgery with a sharp drop in flow suggests intrauterine adhesions — assess the cavity",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Biopsy to check for precancer, cancer",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "異常出血需排除內膜病變",
+          "supports_flag_en": "Abnormal bleeding — rule out endometrial pathology",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Recurrent implantation failure — refer to reproductive medicine"
       ],
       "extractor_notes": "N85.8 exists and is billable but is a broad 'other specified noninflammatory disorders of uterus' code. Do not treat it as an exact thin-endometrium mapping without human review. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -1344,9 +2804,54 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1335.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Premenstrual dysphoric disorder",
+          "source_url": "https://medlineplus.gov/ency/article/007193.htm",
+          "section": "Symptoms",
+          "quote_en": "thoughts of suicide",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "自殺意念、自傷或絕望感需即時精神科／危機介入",
+          "supports_flag_en": "Suicidal ideation, self-harm, or hopelessness — urgent psychiatric/crisis intervention",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Depression",
+          "source_url": "https://medlineplus.gov/depression.html",
+          "section": "Get Help",
+          "quote_en": "get help right away",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "自殺意念、自傷或絕望感需即時精神科／危機介入",
+          "supports_flag_en": "Suicidal ideation, self-harm, or hopelessness — urgent psychiatric/crisis intervention",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Premenstrual dysphoric disorder",
+          "source_url": "https://medlineplus.gov/ency/article/007193.htm",
+          "section": "Symptoms",
+          "quote_en": "week just before menstrual bleeding",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "症狀無週期性或整月持續，應重新評估是否為其他情緒疾患",
+          "supports_flag_en": "Non-cyclical or month-long symptoms — reassess for another mood disorder",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Premenstrual dysphoric disorder",
+          "source_url": "https://medlineplus.gov/ency/article/007193.htm",
+          "section": "Exams and Tests",
+          "quote_en": "psychiatric evaluation",
+          "suggested_tier": "routine_referral",
+          "supports_flag_zh": "症狀無週期性或整月持續，應重新評估是否為其他情緒疾患",
+          "supports_flag_en": "Non-cyclical or month-long symptoms — reassess for another mood disorder",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Rapid worsening affecting safety"
       ],
       "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     },
@@ -1364,9 +2869,65 @@
         ],
         "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
       },
-      "red_flag_sources": [],
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Painful menstrual periods",
+          "source_url": "https://medlineplus.gov/ency/article/003150.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Treatments do not relieve your pain",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "進行性加重或止痛無效之痛經需影像與專科評估",
+          "supports_flag_en": "Progressive or analgesia-resistant pain — imaging and specialist evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Painful menstrual periods",
+          "source_url": "https://medlineplus.gov/ency/article/003150.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Pelvic ultrasound",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "進行性加重或止痛無效之痛經需影像與專科評估",
+          "supports_flag_en": "Progressive or analgesia-resistant pain — imaging and specialist evaluation",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines",
+          "source_url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "section": "Diagnostic Considerations",
+          "quote_en": "Oral temperature >38.3°C",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、異常分泌物提示感染",
+          "supports_flag_en": "Fever or abnormal discharge suggests infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines",
+          "source_url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "section": "Diagnostic Considerations",
+          "quote_en": "Abnormal cervical mucopurulent discharge",
+          "suggested_tier": "urgent_referral",
+          "supports_flag_zh": "發燒、異常分泌物提示感染",
+          "supports_flag_en": "Fever or abnormal discharge suggests infection",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Vaginal bleeding in early pregnancy",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000614.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Bleeding with pain or cramping",
+          "suggested_tier": "emergency_referral",
+          "supports_flag_zh": "劇痛合併異常出血或疑似懷孕需排除急症",
+          "supports_flag_en": "Severe pain with abnormal bleeding or possible pregnancy — rule out acute causes",
+          "supplement": "cond_batch4_gyn_red_flag_provenance_supplement"
+        }
+      ],
       "not_found": [
-        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+        "No whitelisted official support located for existing flag: Deep dyspareunia with cyclical bowel/bladder symptoms suggests deep infiltrating endometriosis"
       ],
       "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
     }
@@ -1375,5 +2936,44 @@
     "reviewed_by": "claude",
     "review_date": "2026-08-08",
     "review_method": "independent verification against official CDC NCHS FY2026 files (icd10cm-codes-2026.txt · icd10cm-order-2026.txt · icd10cm-index-2026.xml) — every staged code checked for existence, billable status, and exact long description; DRG-page citations cross-checked; red-flag quotes fragment-matched on source pages. 586 codes: 0 nonexistent, 0 billable errors, 78 descriptions aligned to official text, 1 status corrected via official index (plantar fasciitis)."
+  },
+  "task_c_review": {
+    "reviewed_by": "claude",
+    "review_date": "2026-08-08",
+    "method": "all 96 legacy flags accounted (83 supported + 13 not_found, independently recomputed); 45 urls whitelisted, 44 opened via fetch + CDC PID page via browser; 142 quotes fragment-verified — 138 verbatim as delivered, 4 paraphrases replaced with true page verbatim; 0 quotes over 40 words; whole-claim support reviewed flag by flag; 0 fabricated matches found; 13 not_found kept honest.",
+    "corrections": [
+      {
+        "condition_id": "cond.menorrhagia",
+        "evidence_index": 0,
+        "field": "quote_en",
+        "original": "Heavy bleeding",
+        "corrected": "Bleeding that will not stop",
+        "basis": "MedlinePlus 001927 actual page text — the delivered quote was a paraphrase; replaced with true verbatim that supports the same claim"
+      },
+      {
+        "condition_id": "cond.menopause_syndrome",
+        "evidence_index": 3,
+        "field": "quote_en",
+        "original": "Severe chest pain or pressure",
+        "corrected": "Chest pain or discomfort lasting for two minutes or more",
+        "basis": "MedlinePlus 001927 actual page text — the delivered quote was a paraphrase; replaced with true verbatim that supports the same claim"
+      },
+      {
+        "condition_id": "cond.menopause_syndrome",
+        "evidence_index": 4,
+        "field": "quote_en",
+        "original": "Suddenly not able to speak, see, walk, or move",
+        "corrected": "Inability to speak; Sudden dizziness, weakness, or change in vision",
+        "basis": "MedlinePlus 001927 actual page text — the delivered quote was a paraphrase; replaced with true verbatim that supports the same claim"
+      },
+      {
+        "condition_id": "cond.postpartum_hypolactation",
+        "evidence_index": 5,
+        "field": "quote_en",
+        "original": "Heavy bleeding",
+        "corrected": "Bleeding that will not stop",
+        "basis": "MedlinePlus 001927 actual page text — the delivered quote was a paraphrase; replaced with true verbatim that supports the same claim"
+      }
+    ]
   }
 }
