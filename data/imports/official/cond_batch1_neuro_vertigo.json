@@ -26,10 +26,20 @@
           "section": "When to Contact a Medical Professional",
           "quote_en": "Contact your provider right away if your face droops or you have other symptoms of Bell palsy.",
           "suggested_tier": "urgent_referral"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "Signs and Symptoms of Stroke",
+          "source_url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+          "section": "When to seek emergency help — B.E. F.A.S.T to identify stroke",
+          "quote_en": "F—Face: Ask the person to smile. Does one side of the face droop? T—Time: If you see any of these signs, call 9-1-1 right away.",
+          "suggested_tier": "emergency_referral",
+          "evidence_context": "differential",
+          "supplement": "cond_safety_supplement_01"
         }
       ],
       "not_found": [],
-      "extractor_notes": "Red-flag source is the whitelisted MedlinePlus Bell palsy page. It supports prompt medical evaluation; final stroke-vs-Bell-palsy safety wording is for reviewer normalization."
+      "extractor_notes": "Red-flag source is the whitelisted MedlinePlus Bell palsy page. It supports prompt medical evaluation; final stroke-vs-Bell-palsy safety wording is for reviewer normalization. CDC stroke-differential evidence added via cond_safety_supplement_01 (evidence_context: differential — emergency screening for new facial droop, not a Bell palsy disease-course flag)."
     },
     {
       "condition_id": "cond.stroke_rehab",
@@ -407,7 +417,10 @@
   "review": {
     "reviewed_by": "claude",
     "review_date": "2026-08-08",
-    "review_method": "independent re-verification: all 27 condition ids resolved against canon; 47/47 urls whitelisted and opened; 25/25 quotes located verbatim on source pages (2 CDC pages via browser, hemorrhoids page has spaced commas in HTML); 92/92 codes located on the cited CMS MS-DRG v43.1 pages (manual lists codes without dots); descriptions cross-checked against official page text."
+    "review_method": "independent re-verification: all 27 condition ids resolved against canon; 47/47 urls whitelisted and opened; 25/25 quotes located verbatim on source pages (2 CDC pages via browser, hemorrhoids page has spaced commas in HTML); 92/92 codes located on the cited CMS MS-DRG v43.1 pages (manual lists codes without dots); descriptions cross-checked against official page text.",
+    "supplements": [
+      "accepted 2026-08-08 from cond_safety_supplement_01: url opened, quote fragments located verbatim, tier and evidence_context reviewed"
+    ]
   },
   "corrections_applied": [
     {

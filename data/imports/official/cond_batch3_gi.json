@@ -320,12 +320,20 @@
           "section": "Complications",
           "quote_en": "severe or heavy rectal bleeding that may require emergency surgery",
           "suggested_tier": "emergency_referral"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Crohn disease",
+          "source_url": "https://medlineplus.gov/ency/article/000249.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Have very bad abdominal pain; Have rectal bleeding, drainage, or sores; Have nausea and vomiting that lasts for more than a day",
+          "suggested_tier": "urgent_referral",
+          "evidence_context": "crohn_specific",
+          "supplement": "cond_safety_supplement_01"
         }
       ],
-      "not_found": [
-        "The red-flag evidence above is ulcerative-colitis-specific. A separate whitelisted Crohn's-disease emergency/seek-care passage was not captured in this extraction pass."
-      ],
-      "extractor_notes": "K50-K51 are ranges, not single billable codes. The codes[] list intentionally shows only the unspecified-location/type billable subset; the official family has additional location/type-specific descendants. Human coding review must choose based on documented IBD subtype, location, and complication."
+      "not_found": [],
+      "extractor_notes": "K50-K51 are ranges, not single billable codes. The codes[] list intentionally shows only the unspecified-location/type billable subset; the official family has additional location/type-specific descendants. Human coding review must choose based on documented IBD subtype, location, and complication. Crohn-specific seek-care evidence added via cond_safety_supplement_01 (MedlinePlus Crohn disease); both major IBD subtypes now have source evidence."
     },
     {
       "condition_id": "cond.chronic_constipation",
@@ -720,7 +728,10 @@
   "review": {
     "reviewed_by": "claude",
     "review_date": "2026-08-08",
-    "review_method": "independent re-verification: all 27 condition ids resolved against canon; 47/47 urls whitelisted and opened; 25/25 quotes located verbatim on source pages (2 CDC pages via browser, hemorrhoids page has spaced commas in HTML); 92/92 codes located on the cited CMS MS-DRG v43.1 pages (manual lists codes without dots); descriptions cross-checked against official page text."
+    "review_method": "independent re-verification: all 27 condition ids resolved against canon; 47/47 urls whitelisted and opened; 25/25 quotes located verbatim on source pages (2 CDC pages via browser, hemorrhoids page has spaced commas in HTML); 92/92 codes located on the cited CMS MS-DRG v43.1 pages (manual lists codes without dots); descriptions cross-checked against official page text.",
+    "supplements": [
+      "accepted 2026-08-08 from cond_safety_supplement_01: url opened, quote fragments located verbatim, tier and evidence_context reviewed"
+    ]
   },
   "corrections_applied": [
     {
