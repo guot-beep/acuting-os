@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
+
+- **做了什麼**：整合 Board、課程 checklist、eLotus Ex-B7、AD M-BW-24／拼音索引、醫砭 EX-B7 與中國大百科代碼；補齊定位、解剖、全部功效主治、針灸法、配穴、別名、考點、安全及逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `33/72 → 34/72`；待修 `39/72 → 38/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：核心採 L4旁開約3.5寸、直刺0.8～1.2寸；eLotus／AD 的 L3/L4定位差異與 AD／醫砭較深直橫刺分列。醫砭局部血管神經與非專穴 L4 MRI 限定深刺；AD 的 `UB-54 Weizhong` 錯碼明列，標準委中 BL40 保留。肺結核／虛勞內容不寫成活動性結核治療。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B7 runtime assertions 與 task-file diff 檢查均通過；內容 commit `9dbb1c2`。
+- **已知未解／下一步**：38張待修、12張泛用 Cloud URL；下一張 EX-B8 十七椎。跨線 JS、Pattern 與 `curriculum/conditions/*` 未納入。
+
 # 2026-08-08 Codex — EX-B6 腰宜四層來源、深斜刺分層與 L4 解剖缺口修整
 
 - **做了什麼**：整合 NCBAHM／課件缺口、eLotus Ex-B6、AD 拼音索引缺頁、中國大百科 EX-B6 代碼與 L4 區域 MRI；補齊英文名、定位、功效／主治、成對標籤、針灸法、安全、考點與逐欄來源，移除泛用 Cloud 目錄。

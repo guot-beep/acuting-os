@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `9dbb1c2` (`feat(acupoints): reconcile Yaoyan source variants`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; unrelated JS, Pattern reports, and condition archive excluded.
+- **Four Layers**: NCBAHM Appendix A and the local competency checklist name Yaoyan; the checklist has no detail. Exact eLotus Ex-B7, AD M-BW-24 plus pinyin index, Yibian EX-B7, and Encyclopedia of China code excerpt were opened. Board/course/eLotus/AD provenance is complete.
+- **Reconciliation / Safety**: core location is L4/approximately 3.5 cun, while eLotus allows 3.5–4 and AD also lists L3/3–4 and L4/3.8. General method is shared perpendicular 0.8–1.2 cun; AD 1–2-cun and Yibian 1.5–2.5-cun straight/transverse variants remain separate. Yibian anatomy and non-point-specific L4 MRI variability constrain the deeper methods. AD's `UB-54 Weizhong` mismatch is disclosed; standard BL40 is retained.
+- **Content**: integrated all eLotus/AD actions, indications, moxa (including AD seven cones for lumbar pain), sensation, aliases, and combinations; preserved legacy leukorrhea, enuresis, and Blood/channel action as source-labeled. Historical TB/consumption text is not presented as active-TB treatment.
+- **Measured Counts**: strict/four-source `33/72 → 34/72`; issues `39/72 → 38/72`; generic Cloud URL remains `12/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data` (947), interactions, point IDs (925), content-junk, app syntax, EX-B7 runtime assertions, and task-file diff check passed.
+- **Next**: EX-B8 十七椎 (Shiqizhui/Shiqizhuixue); Board-listed, requiring code/name variant, sacral-midline depth, gynecologic/hemorrhoid claims, and exact AD page reconciliation.
+
 ## [2026-08-08] Codex Handoff — EX-B6 腰宜四層來源、深斜刺分層與 L4 解剖缺口修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `09b6f4b` (`feat(acupoints): refine Yaoyi source safety`).
