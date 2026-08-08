@@ -43,11 +43,18 @@ for (const r of records) {
 
   if (!String(r.trigger_zh || "").trim() || !String(r.trigger_en || "").trim()) add("RF3", "trigger_zh AND trigger_en are both required");
 
-  if (!tiers.has(r.tier)) add("RF4", `tier "${r.tier}" not in tier_vocabulary (${[...tiers].join(" | ")})`);
+  // Legacy-migration records (2026-08-08, Batch 4 gyn) may carry
+  // provenance_status "not_found": the flag already exists on the card, and
+  // the registry records honestly that no whitelisted source was located.
+  // Only那一類 is exempt from tier + evidence — authored records still may
+  // not be written without a source.
+  const isLegacyNotFound = r.provenance_status === "not_found" && /^legacy_card_migration/.test(String(r.origin || ""));
+  if (!isLegacyNotFound && !tiers.has(r.tier)) add("RF4", `tier "${r.tier}" not in tier_vocabulary (${[...tiers].join(" | ")})`);
+  if (isLegacyNotFound && (r.evidence || []).length) add("RF5", "not_found record carries evidence — status and ledger disagree");
 
   const evidence = Array.isArray(r.evidence) ? r.evidence : [];
   const usable = evidence.filter((e) => /^https:\/\//.test(String(e && e.source_url || "")));
-  if (!usable.length) add("RF5", "no evidence entry with an https source_url — a red flag without a source does not get written");
+  if (!isLegacyNotFound && !usable.length) add("RF5", "no evidence entry with an https source_url — a red flag without a source does not get written");
 
   if (!REVIEW.has(r.review_status)) add("RF6", `review_status "${r.review_status}" not in draft|source_checked|clinically_reviewed`);
 }
