@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B4 痞根四源、腎臟風險與腫塊紅旗修整
+
+- **做了什麼**：整合 Board、課件缺口、eLotus Ex-B4、AD M-BW-16／拼音索引及 WHO 命名結果；補齊 L1旁開3.5寸、三組刺法、功效、胃腸／腫塊／腰痛主治、別名與逐欄位來源，移除泛用 Cloud 目錄連結。
+- **數字 before→after**：嚴格模板／四源稽核 `30/72 → 31/72`；待修 `42/72 → 41/72`；泛用 Cloud URL `15/72 → 14/72`；技法、來源 URL、亂碼缺口均為 `0/72`。
+- **來源與安全**：一般層採直刺0.5～0.8寸；eLotus 至1寸與 AD 內斜0.8～1寸／直刺1～1.5寸分列。加入 L1 腎損傷／腎周血腫、上腰椎屍體研究與針刺腎裂傷區域證據，不製造痞根專屬安全深度；另補抗凝出血、不明腫塊與 Tumor Root 非癌症治療邊界。
+- **驗證**：單穴／全72卡 validator、`build-data`、`validate-data`（947 runtime points）、`validate-interactions`、`validate-point-ids`（925 ids）、`validate-content-junk`、`node --check app.js` 與 task-file `git diff --check` 全通過；內容 commit `38a1e8f`。
+- **已知未解／下一步**：41張仍待修、14張仍有泛用 Cloud URL；下一張 EX-B5 下極俞。跨線 JS、Pattern 與 `curriculum/conditions/*` 檔案未納入。
+
 # 2026-08-08 Codex — EX-B3 胃脘下俞名稱、胰俞別名與胸膜安全修整
 
 - **做了什麼**：主名校正為國家標準「胃脘下俞（胰俞）」，整合 eLotus Ex-B3、AD Yishu M-BW-12／拼音索引、2014專穴綜述與2020試驗方案；補齊 T8／1.5寸定位、別名、功效、主治、解剖與逐欄位來源。

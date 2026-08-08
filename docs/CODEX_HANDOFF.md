@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B4 痞根四源、腎臟風險與腫塊紅旗修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `38a1e8f` (`feat(acupoints): refine Pigen safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; unrelated JS, Pattern, and `curriculum/conditions/*` files were excluded.
+- **Four Layers**: NCBAHM Appendix A lists Pigen; no dedicated local course entry was found. Exact eLotus Ex-B4 and AD M-BW-16 pages plus the AD pinyin index were opened. WHO 1991 nomenclature search identified Pigen Ex-B4; the exact PDF fetch failed. CloudTCM exact-name search found no readable page, so the generic directory URL was removed.
+- **Reconciliation**: preserved L1/3.5-cun bilateral location and all legacy indications. Added eLotus Spleen/Stomach and Qi/pain actions; AD Upper-Middle Burner Qi, local Qi-Blood stagnation, additional GI/renal wording, aliases, and three technique variants. Legacy intestinal hernia remains labeled unverified; AD's Tumor Root is not represented as a cancer claim.
+- **Safety**: general needling is perpendicular 0.5–0.8 cun. eLotus to 1 cun, AD medial-oblique 0.8–1 cun, and AD straight 1–1.5 cun remain separate source variants. Regional L1 renal-injury/perirenal-hematoma, upper-lumbar cadaver, and acupuncture kidney-laceration evidence were added without inventing an EX-B4 safe depth. Added bleeding-risk, renal-warning-sign, undiagnosed-mass, moxa-dose, and special-population boundaries.
+- **Measured Counts**: strict-template/four-source-audited `30/72 → 31/72`; records with issues `42/72 → 41/72`; generic CloudTCM URL `15/72 → 14/72`; measurable-method/source-URL/mojibake gaps remain `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, `validate-point-ids` (925 ids), `validate-content-junk`, `node --check app.js`, and task-file `git diff --check` passed.
+- **Next**: EX-B5 下極俞 (Xiazhishi); first reconcile database name/code against eLotus and AD, then verify sacrolumbar anatomy and pelvic-organ claims.
+
 ## [2026-08-08] Codex Handoff — EX-B3 胃脘下俞名稱、胰俞別名與胸膜安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `33020db` (`feat(acupoints): refine Weiwanxiashu safety`).
