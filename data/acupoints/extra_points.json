@@ -7859,46 +7859,238 @@
   {
     "code": "EX-B11",
     "display_code": "EX-B11",
-    "nameZh": "接骨",
-    "nameEn": "Jiegu",
-    "pinyin": "Jiegu",
+    "nameZh": "接脊（接骨）",
+    "nameEn": "Connecting Vertebrae",
+    "pinyin": "Jieji",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
-    "location": "背部，第12胸椎棘突下。",
-    "locationEn": "On the back, below spinous process of T12.",
-    "techniqueNotes": "直刺0.5~1.0寸。可灸。\nPerpendicular 0.5-1.0 cun.",
-    "functions": "活血止痛，續筋接骨",
-    "functionsEn": "Activates blood and relieves pain; Benefits bones",
+    "location": "背部後正中線，第12胸椎與第1腰椎棘突之間凹陷中（即第12胸椎棘突下）。",
+    "locationEn": "On the posterior midline of the back, in the depression between the T12 and L1 spinous processes (immediately inferior to the T12 spinous process).",
+    "cunMeasurement": "無橫向寸量；以第12胸椎與第1腰椎棘突間隙、胸腰交界及後正中線定位。No transverse cun measurement; locate by the T12-L1 interspinous space at the thoracolumbar junction on the posterior midline.",
+    "anatomyZh": "MedicalTeaching 精確頁列皮膚、皮下組織、棘上韌帶及棘間韌帶；淺層有第12胸神經後支內側皮支及伴行血管，深層有椎外後靜脈叢、第12胸神經後支分支及第12肋間後動靜脈背側支。此處接近胸腰交界；Merck 列成人脊髓通常終於L1～L2形成脊髓圓錐，因此來源未給皮膚至椎管／脊髓圓錐的個體化距離時，不得把正中線深刺視為安全。",
+    "anatomyEn": "The exact MedicalTeaching page lists skin, subcutaneous tissue, supraspinous ligament, and interspinous ligament; superficially it lists the medial cutaneous branch of the T12 posterior ramus and accompanying vessels, and deeply the posterior external vertebral venous plexus, branches of the T12 posterior ramus, and dorsal branches of the twelfth posterior intercostal vessels. This is the thoracolumbar junction. Merck states that the adult spinal cord usually ends at L1-L2 as the conus medullaris; without an individualized skin-to-canal/conus distance, deep midline insertion cannot be presumed safe.",
+    "acumethodZh": "一般層採 eLotus、CloudTCM 與 MedicalTeaching 的向上斜刺0.5～1.0寸；MedicalTeaching 另列局部痠麻脹感及留針30分鐘。其同頁亦引《中國針灸學》『禁刺』，與現代針法構成未調和的歷史安全衝突，必須保留。舊卡直刺0.3～0.8寸及點刺出血未獲精確頁支持，退出可執行層。",
+    "acumethodEn": "The general layer uses the upward-oblique 0.5-1.0-cun method shared by eLotus, CloudTCM, and MedicalTeaching; MedicalTeaching additionally describes local aching/numbness/distention and 30-minute retention. The same page quotes a historical Chinese Acupuncture source that prohibits needling, creating an unresolved historical safety conflict that must remain visible. The legacy perpendicular 0.3-0.8-cun and prick-to-bleed methods lack exact-page support and are removed from the executable layer.",
+    "moxaZh": "eLotus 列灸5～10分鐘；CloudTCM 列1～3壯或溫和灸5～10分鐘；MedicalTeaching 列5～7壯或溫灸5～15分鐘，並引古典小兒痢疾／脫肛用麥粒大艾炷1壯。壯數與時間各依原來源分列；古典小兒劑量不轉成現代兒科方案。來源未提供直接／間接法、皮膚保護、溫度及停止規則。",
+    "moxaEn": "eLotus lists 5-10 minutes; CloudTCM lists 1-3 cones or 5-10 minutes of mild moxa; MedicalTeaching lists 5-7 cones or 5-15 minutes of warm moxa and quotes a classical one-wheat-grain-sized-cone method for pediatric dysentery/rectal prolapse. Cone counts and time ranges remain source-specific; the historical pediatric dose is not converted into a modern pediatric protocol. The sources do not provide direct/indirect method, skin protection, temperature, or stopping rules.",
+    "techniqueNotes": "【一般層】向上斜刺0.5～1.0寸；MedicalTeaching 列留針30分鐘。\n【歷史衝突】同一補充頁引《中國針灸學》禁針，不能省略。\n【灸法】eLotus 5～10分鐘；CloudTCM 1～3壯或5～10分鐘；MedicalTeaching 5～7壯或5～15分鐘。\n【退出執行】舊直刺0.3～0.8寸與點刺出血未獲精確頁支持。\nGeneral layer: upward-oblique insertion 0.5-1.0 cun; MedicalTeaching lists 30-minute retention. A quoted historical prohibition on needling remains an unresolved conflict. Moxa ranges remain source-specific. Legacy perpendicular needling and bloodletting are not executable.",
+    "functions": "消食導滯、健脾和胃；利濕止痛；活血止痛、續筋接骨（舊卡未獲精確頁支持）",
+    "functionsEn": "Promotes digestion and relieves food stagnation; Strengthens the Spleen and harmonizes the Stomach; Resolves Dampness and relieves pain; Activates Blood/benefits bone healing (unsupported legacy card functions)",
+    "functionsZhList": [
+      "消食導滯、健脾和胃",
+      "利濕止痛",
+      "活血止痛、續筋接骨（舊卡未核實）"
+    ],
+    "functionsEnList": [
+      "Promotes digestion and relieves food stagnation; strengthens the Spleen and harmonizes the Stomach",
+      "Resolves Dampness and relieves pain",
+      "Activates Blood and benefits bone healing (unverified legacy)"
+    ],
+    "pointIdentityZh": [
+      "胸腰交界後正中線經外奇穴",
+      "資料庫穩定代碼 EX-B11、永久 id ex.b11",
+      "主名校正為接脊 Jieji；接骨 Jiegu 保留為別名／舊卡名",
+      "eLotus 與日本考試資料標 Ex-B15；另有低權威資料標 EX-B07，編碼差異未調和"
+    ],
+    "pointIdentityEn": [
+      "Extra point on the posterior midline at the thoracolumbar junction",
+      "Stable database code EX-B11 and permanent id ex.b11",
+      "Primary name corrected to Jieji/Connecting Vertebrae; Jiegu/Connecting Bone remains an alias and legacy card name",
+      "eLotus and Japanese exam-oriented material label it Ex-B15, while a lower-authority source labels it EX-B07; the code discrepancy remains unresolved"
+    ],
+    "exam_importance": "非 NCBAHM Appendix A 明列穴；本地 curriculum/acupoints 未找到專條。應辨識第12胸椎棘突下、接脊為主名／接骨為別名，以及本穴主治核心偏消化與小兒疾患而不是骨折復位或癒合。",
+    "exam_importance_en": "Not explicitly listed in NCBAHM Appendix A, and no dedicated local curriculum entry was found. Recognize the location below T12, Jieji as the primary name with Jiegu as an alias, and that the sourced indication core is digestive/pediatric rather than fracture reduction or healing.",
+    "exam_pearl": "核心記憶：T12～L1後正中線；『接脊』不是『接骨折』。名稱別名容易造成把未證實的骨折主治誤塞入卡片。",
+    "exam_pearl_en": "Core pearl: posterior midline at T12-L1. Jieji means Connecting Vertebrae; the alias Jiegu must not be misread as proof that the point treats or unites fractures.",
     "patterns": [
-      "骨折疼痛",
-      "腰脊強痛",
-      "消化不良"
+      "消化不良、食慾不振／胃痙攣",
+      "小兒赤白痢、腹痛、腹瀉／慢性腸炎",
+      "脫肛",
+      "小兒癲癇／驚風",
+      "脊背神經痛、腰背痛／脊柱強痛",
+      "疝痛",
+      "嘔吐、腹脹",
+      "骨折疼痛（舊卡未獲精確頁支持）"
     ],
     "patternsEn": [
-      "Fracture pain",
-      "Spinal stiffness",
-      "Indigestion"
+      "Indigestion, poor appetite/gastric spasm",
+      "Pediatric dysentery, abdominal pain, diarrhea/chronic enteritis",
+      "Rectal prolapse",
+      "Pediatric epilepsy/convulsions",
+      "Spinal neuralgia, low-back pain/spinal stiffness",
+      "Hernia pain",
+      "Vomiting and abdominal distention",
+      "Fracture pain (unsupported legacy card indication)"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "消食導滯",
+      "健脾和胃",
+      "利濕止痛"
+    ],
+    "action_tags_en": [
+      "Promote Digestion and Relieve Food Stagnation",
+      "Strengthen the Spleen and Harmonize the Stomach",
+      "Resolve Dampness and Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "消化不良",
+      "胃痙攣",
+      "腹痛腹瀉",
+      "慢性腸炎",
+      "痢疾",
+      "脫肛",
+      "癲癇／驚風",
+      "脊背神經痛",
+      "疝痛"
+    ],
+    "disease_tags_en": [
+      "Indigestion",
+      "Gastric Spasm",
+      "Abdominal Pain and Diarrhea",
+      "Chronic Enteritis",
+      "Dysentery",
+      "Rectal Prolapse",
+      "Epilepsy/Convulsions",
+      "Spinal Neuralgia",
+      "Hernia Pain"
+    ],
+    "cautions": "【脊髓圓錐／椎管】本穴位於T12～L1後正中線；成人脊髓通常至L1～L2形成脊髓圓錐，來源未提供個體化皮膚至椎管距離。只保留現代精確頁的向上斜刺0.5～1寸，不把椎管當靶點；同頁所引歷史『禁刺』必須作未調和安全衝突保留。【停止規則】尖銳電擊樣或異常軀幹／下肢放射感、突發麻木無力、劇烈深痛、阻力異常、大小便控制改變或顯著出血時停止並立即評估。【高風險背景】胸腰椎畸形／感染／腫瘤／外傷、既往手術、抗凝／抗血小板、凝血異常或極端體型，四源無專穴調整方案。【兒科與癲癇】小兒痢疾、脫肛、癲癇／驚風是主治記錄，不是兒童刺灸安全許可；古典麥粒大1壯不可直接套入現代兒童。發作超過5分鐘、接連發作、呼吸／甦醒困難、受傷、水中或首次發作等依 CDC 呼叫急救。【骨折邊界】『接骨』是別名；骨折痛與續筋接骨僅為未核實舊卡值。疑似骨折或脊柱創傷依 Mayo 應保持不動並求醫，不以本穴替代影像、復位、固定或急救。【孕期與灸法缺口】舊卡孕婦慎用無精確頁支持，不能升格為已核實禁忌；來源沉默也不是許可。各頁灸量不一且無皮膚保護／停止規則。舊點刺出血不執行。",
+    "cautionsEn": [
+      "Conus/canal: the point lies on the T12-L1 posterior midline, and the adult spinal cord usually ends at L1-L2 as the conus medullaris. Exact sources provide no individualized skin-to-canal distance. Retain only the modern exact pages' upward-oblique 0.5-1-cun method, never target the canal, and preserve the quoted historical prohibition on needling as an unresolved safety conflict.",
+      "Stopping rules: stop and urgently assess sharp electric or abnormal trunk/lower-limb radiation, sudden numbness or weakness, severe deep pain, unusual resistance, change in bladder/bowel control, or significant bleeding.",
+      "High-risk context: thoracolumbar deformity/infection/tumor/trauma, prior surgery, anticoagulant/antiplatelet therapy, coagulopathy, or extreme body habitus requires individualized assessment; none of the four layers supplies a point-specific adjustment protocol.",
+      "Pediatrics/seizures: pediatric dysentery, prolapse, epilepsy, and convulsions are indication records, not pediatric needling/moxa clearance. Do not convert the classical one-wheat-grain-sized-cone instruction into a modern pediatric dose. CDC emergency criteria apply to prolonged, repeated, first, injured, water-related, pregnancy-related, or breathing/recovery-complicated seizures.",
+      "Fracture boundary: Jiegu is an alias; fracture pain and bone-healing actions are unverified legacy values. For suspected fracture or spinal trauma, Mayo advises keeping the person still and obtaining medical care; this point does not replace imaging, reduction, immobilization, or emergency care.",
+      "Pregnancy/moxa/legacy gap: the legacy pregnancy caution has no exact-page support and cannot be upgraded to a verified contraindication; source silence is not clearance. Moxa doses differ and lack skin-protection/stopping rules. Legacy prick-to-bleed is not executable."
+    ],
+    "acuTags": [
+      "非Board明列",
+      "T12-L1後正中線",
+      "接脊主名",
+      "接骨別名",
+      "向上斜刺",
+      "脊髓圓錐風險",
+      "兒科主治非安全許可",
+      "編碼衝突"
+    ],
+    "combinePointsZh": "【脫肛｜MedicalTeaching】接脊＋百合穴（來源原文；穴名／代碼未能標準化）＋長強（DU1）＋承山（BL57）。【痢疾｜MedicalTeaching】接脊＋天樞（ST25）＋上巨虛（ST37）。【癲癇｜MedicalTeaching】接脊＋腰奇（EX-B9）＋申脈（BL62）＋照海（KI6）＋大椎（DU14）＋後溪（SI3）。【腰痛｜MedicalTeaching】接脊＋相應夾脊＋水溝（DU26）。以上為來源記錄；未標準化的『百合穴』不擅自改作百會，且配伍不等同兒科、癲癇或脊柱急症方案。",
+    "combinePointsEn": "For rectal prolapse, MedicalTeaching lists Jieji + Baihe point (the source wording could not be standardized to a verified point/code) + Changqiang (DU1) + Chengshan (BL57). For dysentery: Jieji + Tianshu (ST25) + Shangjuxu (ST37). For epilepsy: Jieji + Yaoqi (EX-B9) + Shenmai (BL62) + Zhaohai (KI6) + Dazhui (DU14) + Houxi (SI3). For low-back pain: Jieji + corresponding Jiaji points + Shuigou (DU26). The unstandardized 'Baihe point' is not silently changed to Baihui, and these combinations are not pediatric, seizure, or spinal-emergency protocols.",
+    "clinical_pearls": "eLotus 精確頁的實際主名為接脊 Jieji／Connecting Vertebrae、代碼 Ex-B15；提供T12～L1定位、完整消化／小兒／神經主治、消食止痛、向上斜刺0.5～1寸及灸5～10分鐘。American Dragon 拼音索引檢索 Jieji／Jiegu 均無結果，兩個猜測頁皆無法開啟。CloudTCM 精確頁確認接骨為別名並補1～3壯或5～10分鐘；MedicalTeaching 補詳細解剖、留針、主治、配伍與『古代偏灸、部分教材禁針』衝突。Board 與本地課件均無專條。",
+    "clinical_pearls_en": "The exact eLotus page uses Jieji/Connecting Vertebrae as the primary name and Ex-B15 as its code; it supplies the T12-L1 location, full digestive/pediatric/neurologic indications, digestion/pain action, upward-oblique 0.5-1-cun method, and 5-10-minute moxa. The American Dragon pinyin index has no Jieji or Jiegu result, and both guessed detail pages failed. The exact CloudTCM page confirms Jiegu as an alias and adds 1-3 cones or 5-10 minutes. MedicalTeaching adds detailed anatomy, retention, expanded indications, combinations, and the conflict between modern needling and historically moxa-only/no-needle teaching. Neither Board nor local curriculum has a dedicated entry.",
+    "nameIntroZh": "『接脊』之『接』有連接之意，『脊』指胸腰椎交界；eLotus 英譯 Connecting Vertebrae。『接骨』是資料所列別名，不表示本穴已被證實可接續骨折。",
+    "nameIntroEn": "Jie means to connect and ji refers to the spine at the thoracolumbar junction; eLotus translates it as Connecting Vertebrae. Jiegu/Connecting Bone is a recorded alias, not evidence that the point unites fractures.",
+    "evidence": "四層整合：Jieji 不在 NCBAHM Appendix A 明列清單，本地 curriculum/acupoints 未找到專條。eLotus 精確頁已開啟，主名接脊、代碼 Ex-B15；日本考試資料亦以接脊為主名、接骨為別名。資料庫 `EX-B11`／`ex.b11` 保留，但主名由舊卡接骨 Jiegu 校正為接脊（接骨）Jieji。另有低權威頁標 EX-B07，編碼衝突不強行調和。American Dragon 拼音索引已開啟並搜尋 Jieji／Jiegu，兩個名字均不存在，猜測頁也無法開啟。CloudTCM `dic/5720` 與 MedicalTeaching 精確頁補充內容。舊骨折疼痛、續筋接骨、直刺、放血與孕婦慎用均只保留為未核實舊值。Merck、Mayo、CDC 僅提供解剖與急症邊界，不作穴位療效證據。\nFour-layer synthesis: Jieji is not named in NCBAHM Appendix A, and no dedicated local curriculum entry was found. The exact eLotus page was opened and uses Jieji/Connecting Vertebrae with code Ex-B15; Japanese exam-oriented material also treats Jieji as primary and Jiegu as an alias. Database `EX-B11`/`ex.b11` is preserved, while the legacy primary name Jiegu is corrected to Jieji (Jiegu). A lower-authority page uses EX-B07; the code conflict is not forced into false consensus. The American Dragon pinyin index was opened and searched for Jieji/Jiegu without either name, and both guessed pages failed. Exact CloudTCM `dic/5720` and MedicalTeaching pages supplement the content. Legacy fracture pain, bone-healing action, perpendicular needling, bloodletting, and pregnancy caution remain only as unverified old values. Merck, Mayo, and CDC supply anatomy/emergency boundaries, not point-efficacy evidence.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://cloudtcm.com/dic/5720",
+      "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/",
+      "https://kurohon.jp/gakusei/kiketsu_am/",
+      "https://www.merckmanuals.com/professional/neurologic-disorders/spinal-cord-disorders/overview-of-spinal-cord-disorders",
+      "https://www.mayoclinic.org/first-aid/first-aid-fractures/basics/art-20056641",
+      "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 接骨 EX-B11",
-        "labelEn": "Extra Point · Jiegu EX-B11",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "labelZh": "eLotus · 接脊 Ex-B15 精確頁",
+        "labelEn": "eLotus · Exact Jieji Ex-B15 Page",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "雲端中醫 · 接脊（接骨）精確頁",
+        "labelEn": "CloudTCM · Exact Jieji (Jiegu) Page",
+        "url": "https://cloudtcm.com/dic/5720",
+        "source": "CloudTCM supplemental reference"
+      },
+      {
+        "labelZh": "醫學網 · 接脊（接骨）解剖與操作",
+        "labelEn": "MedicalTeaching · Jieji Anatomy and Technique",
+        "url": "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/",
+        "source": "MedicalTeaching supplemental Chinese point reference"
       }
     ],
     "x": 180,
     "y": 255,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.8 寸，可灸；或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.8 cun; moxibustion applicable, or prick to bleed.",
-    "cautions": "嚴格無菌操作，避免深刺傷及血管或神經。孕婦慎用。",
-    "cautionsEn": "Maintain strict aseptic technique; avoid deep insertion hitting vessels or nerves. Caution in pregnancy.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Jieji/Jiegu is not in the named focus list",
+        "scope note: Appendix A says the examination is not exclusively limited to its named list"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 接脊, 接骨, Jieji, Jiegu, EX-B11, EX-B15, and EX-B07 in curriculum/board and curriculum/acupoints found no dedicated entry",
+        "source-gap note: no local course location, action, indication, technique, moxa, anatomy, combination, or safety detail"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: opened and searched for Jieji and Jiegu on 2026-08-08; neither entry was found",
+        "https://www.americandragon.com/Points/Jieji.html and https://www.americandragon.com/Points/Jiegu.html: guessed exact URLs failed to open on 2026-08-08",
+        "source-gap note: no AD-specific location, action, indication, technique, combination, contraindication, or safety content was available"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15 and https://cloudtcm.com/dic/5720: posterior midline depression between T12 and L1 / below T12 spinous process",
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: posterior midline below T12, inferior to DU6 Jizhong"
+      ],
+      "anatomy": [
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: skin, subcutaneous tissue, supraspinous/interspinous ligaments; T12 posterior-ramus and posterior intercostal vascular branches; posterior external vertebral venous plexus",
+        "https://www.merckmanuals.com/professional/neurologic-disorders/spinal-cord-disorders/overview-of-spinal-cord-disorders: adult spinal cord usually terminates at L1-L2 as conus medullaris; regional anatomy, not a point-specific depth",
+        "source-gap note: no exact point page gives individualized skin-to-canal or skin-to-conus distance"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15 and https://cloudtcm.com/dic/5720: obliquely upward 0.5-1.0 cun",
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: obliquely upward 0.5-1.0 cun, local sensation, retain 30 minutes; also quotes historical 'needling prohibited' guidance",
+        "unresolved historical safety conflict: modern exact pages permit oblique needling while a quoted older source prohibits needling",
+        "unverified legacy values removed from executable layer: perpendicular 0.3-0.8 cun and prick to bleed"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15: moxa 5-10 minutes",
+        "https://cloudtcm.com/dic/5720: 1-3 cones or mild moxa 5-10 minutes",
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: 5-7 cones or warm moxa 5-15 minutes; quotes one wheat-grain-sized cone for historical pediatric dysentery/prolapse use",
+        "source-gap note: no source supplies direct/indirect method, skin protection, temperature, or stopping rule; historical pediatric dose is not a modern protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15: promotes digestion and relieves pain",
+        "https://cloudtcm.com/dic/5720 and https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: strengthens Spleen/harmonizes Stomach, promotes digestion, resolves Dampness",
+        "unverified legacy functions retained but labeled: activates Blood, relieves pain, benefits tendon/bone healing"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15: indigestion, pediatric dysentery, abdominal pain, diarrhea, chronic enteritis, rectal prolapse, pediatric epilepsy, spinal neuralgia, hernia pain",
+        "https://cloudtcm.com/dic/5720: pediatric dysentery, rectal prolapse, epilepsy, indigestion/abdominal distention",
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: expands digestive, pediatric-convulsion, back-pain, hepatobiliary, genitourinary, and male-reproductive indication wording",
+        "unverified legacy indication retained but labeled: fracture pain"
+      ],
+      "combinations": [
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: prolapse, dysentery, epilepsy, and low-back-pain combinations preserved in combinePoints fields",
+        "unresolved nomenclature: MedicalTeaching's prolapse combination says 百合穴/Baihe point, which was not silently normalized to Baihui",
+        "source-boundary note: combinations are not pediatric, seizure, or spinal-emergency protocols"
+      ],
+      "cautions": [
+        "https://www.medicalteaching.org/posts/yhX5YXcBhgYN2SYvzlTi/: quotes historical preference for moxa and a Chinese Acupuncture source stating needling is prohibited",
+        "https://www.merckmanuals.com/professional/neurologic-disorders/spinal-cord-disorders/overview-of-spinal-cord-disorders: conus medullaris usually at L1-L2",
+        "https://www.mayoclinic.org/first-aid/first-aid-fractures/basics/art-20056641: suspected fracture/spinal trauma requires medical care and avoiding movement; not point-efficacy evidence",
+        "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html: seizure first aid and emergency thresholds; not point-efficacy evidence",
+        "source-gap note: no point-specific pregnancy, pediatric needling, anticoagulation, coagulopathy, thoracolumbar disease/deformity/infection/tumor/trauma, prior-surgery, body-habitus, or stopping protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-B11 / ex.b11; primary name corrected to 接脊 / Jieji, with 接骨 / Jiegu retained as alias and legacy name",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jieji-ex-b15: Ex-B15, Jieji, Connecting Vertebrae",
+        "https://kurohon.jp/gakusei/kiketsu_am/: Japanese exam-oriented list uses Jieji as the point and Jiegu as an alias",
+        "https://www.jendow.com.tw/wiki/%E6%8E%A5%E8%84%8A: lower-authority page labels Jieji EX-B07",
+        "unresolved code conflict: database EX-B11 versus eLotus/Japanese Ex-B15 versus lower-authority EX-B07; database code/id preserved"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Jieji Ex-B15 page",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; Jieji and Jiegu absent",
+        "2026-08-08 guessed American Dragon Jieji and Jiegu detail URLs failed to open",
+        "2026-08-08 exact CloudTCM, MedicalTeaching, Japanese exam-oriented, Merck, Mayo, and CDC URLs returned readable indexed content"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "一般層向上斜刺0.5～1.0寸；同一補充來源另引歷史禁針，屬未調和安全衝突。舊直刺0.3～0.8寸及點刺出血未獲精確頁支持，不執行。",
+    "needlingEn": "General layer: upward-oblique insertion 0.5-1.0 cun. The same supplemental source also quotes a historical prohibition on needling, an unresolved safety conflict. Legacy perpendicular 0.3-0.8-cun and prick-to-bleed methods lack exact-page support and are not executable.",
     "id": "ex.b11"
   },
   {
