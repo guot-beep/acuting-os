@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B5 下極俞／下志室同位異名與椎管安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `8202f48` (`feat(acupoints): reconcile Xiajishu identity`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; unrelated files excluded.
+- **Four Layers / Conflict**: NCBAHM Appendix A and local course have no dedicated entry. Chinese references use 下極俞 Xiajishu EX-B5; WHO 1991/eLotus use same-location 下志室 Xiazhishi *Ex-B5, while eLotus separately codes ancient Xiajiyu as Ex-B13. AD's pinyin index has none of the three names. The database `EX-B5`/`ex.b5` identity was preserved and the conflict made explicit.
+- **Content / Safety**: location and perpendicular 0.5–1 cun agree. Chinese reference adds fascia/ligament, vessel/nerve, local sensation, 3–7 cones, indications and a lumbar-pain combination; eLotus adds Kidney/back action, urinary/GI indications and 5–10-minute moxa. Added spinal-canal/hematoma, anticoagulation/spine-history, neurological red-flag and urinary-care boundaries; cone/minute units remain separate.
+- **Measured Counts**: strict/four-source `31/72 → 32/72`; issues `41/72 → 40/72`; generic Cloud URL `14/72 → 13/72`; measurable/source/mojibake gaps `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data` (947), `validate-interactions`, `validate-point-ids` (925), `validate-content-junk`, `node --check app.js`, and task-file `git diff --check` passed.
+- **Next**: EX-B6 腰宜 (Yaoyi); verify its code/name against eLotus Yaoyi and AD, then resolve pelvic/lumbar safety.
+
 ## [2026-08-08] Codex Handoff — EX-B4 痞根四源、腎臟風險與腫塊紅旗修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `38a1e8f` (`feat(acupoints): refine Pigen safety`).
