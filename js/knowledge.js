@@ -2042,7 +2042,17 @@
   if (condHost) {
     const conds = (K.conditionCanon && K.conditionCanon.records) || [];
     const tdisRecords = (K.tdisRegistry && K.tdisRegistry.records) || [];
-    const patternRecords = (K.patternLibrary && K.patternLibrary.records) || [];
+    // Deprecated patterns (retired duplicate-import records, D16) stay in
+    // pattern_library.json (D6 forbids hard delete) but are not a canonical
+    // Pattern card: excluded here from the rendered count, search results,
+    // classification buckets and "Awaiting classification". Their Chinese/
+    // English names remain resolvable via ENTITY_NAMES (line ~245) and the
+    // comparison-table patternLabels (line ~1930), which still read the full,
+    // unfiltered K.patternLibrary.records — so any historical reference to a
+    // retired id still displays a name instead of a raw id; it is simply never
+    // offered as something to browse or search into.
+    const patternRecords = ((K.patternLibrary && K.patternLibrary.records) || [])
+      .filter((p) => p.review_status !== "deprecated");
 
     const cloudCounts = (K.cloudtcmRefMap && K.cloudtcmRefMap.counts) || {};
     const cloudNote = modeText(
