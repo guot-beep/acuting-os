@@ -7427,47 +7427,204 @@
     "code": "EX-B9",
     "display_code": "EX-B9",
     "nameZh": "腰奇",
-    "nameEn": "Yaoqi",
+    "nameEn": "Lower Back Miscellany",
     "pinyin": "Yaoqi",
     "meridian": "Extra Points / 經外奇穴",
-    "region": "背部 / Back Region",
-    "location": "骶部，尾骨尖直上2寸，兩骶角之間凹陷中。",
-    "locationEn": "In sacral region, 2 cun directly above tip of coccyx, in depression between sacral cornua.",
-    "techniqueNotes": "向上平刺1.0~2.0寸。可灸。\nSubcutaneous upward 1.0-2.0 cun. Moxa applicable.",
-    "functions": "鎮靜安神，熄風止痙",
-    "functionsEn": "Calms the mind; Pacifies wind and stops spasms",
+    "region": "骶尾部 / Sacrococcygeal Region",
+    "location": "骶尾部後正中線，尾骨尖直上2寸。American Dragon 另列第二骶椎棘突下，屬未調和的來源定位變體。",
+    "locationEn": "On the posterior midline of the sacrococcygeal region, 2 cun directly superior to the tip of the coccyx. American Dragon separately places it below the S2 spinous process; this remains an unreconciled source-location variant.",
+    "cunMeasurement": "尾骨尖直上2寸；後正中線。2 cun directly superior to the coccyx tip on the posterior midline.",
+    "anatomyZh": "醫砭精確頁列本穴在棘上韌帶中，附近有第二、第三骶動靜脈，並分布第二、第三骶神經後支。四層來源未提供皮膚至骶管、骶骨裂孔或其他深層結構的個體化距離。",
+    "anatomyEn": "The exact Yibian page places the point in the supraspinous ligament and lists the second and third sacral arteries and veins and posterior branches of the second and third sacral nerves. The four source layers provide no individualized skin-to-sacral-canal, sacral-foramen, or other deep-structure distance.",
+    "acumethodZh": "一般層採 eLotus 的向上沿皮刺1～2寸。American Dragon 列向上斜刺2～2.5寸，醫砭列向上沿皮刺2～2.5寸，作較長來源變體分列。既有直刺0.3～0.8寸與點刺出血沒有在精確頁核實，退出可執行層但保留於來源缺口紀錄。",
+    "acumethodEn": "The general layer uses eLotus's upward subcutaneous insertion of 1-2 cun. American Dragon lists upward oblique insertion 2-2.5 cun, and Yibian lists upward subcutaneous insertion 2-2.5 cun; these remain separately labeled longer variants. The legacy perpendicular 0.3-0.8-cun and prick-to-bleed methods were not confirmed on the exact pages and are removed from the executable layer but preserved in the source-gap record.",
+    "moxaZh": "eLotus 僅列可灸；American Dragon 與醫砭精確頁未提供本穴灸法。四層均無壯數、時間、直接／間接法、皮膚保護或停止規則，因此不補猜劑量。",
+    "moxaEn": "eLotus only states that moxibustion is applicable; the exact American Dragon and Yibian pages provide no Yaoqi moxa method. None of the four layers supplies cone count, duration, direct/indirect method, skin protection, or stopping rules, so no dose is inferred.",
+    "techniqueNotes": "【一般層】向上沿皮刺1～2寸；eLotus 列可灸但無灸量。\n【較長變體】AD 向上斜刺2～2.5寸；醫砭向上沿皮刺2～2.5寸。\n【退出執行】舊卡直刺0.3～0.8寸及點刺出血未獲精確頁支持。\nGeneral layer: upward subcutaneous insertion 1-2 cun; eLotus permits moxa but gives no dose. Longer variants: AD upward oblique and Yibian upward subcutaneous 2-2.5 cun. The legacy perpendicular 0.3-0.8-cun and bloodletting methods lack exact-page support and are not executable.",
+    "functions": "鎮靜安神，熄風止痙（既有功能，癲癇主治支持但精確頁未列為獨立 action）",
+    "functionsEn": "Calms the Shen; Pacifies Wind and stops spasms (legacy function supported by the seizure indication but not listed as a separate exact-page action)",
+    "functionsZhList": [
+      "鎮靜安神",
+      "熄風止痙（既有功能／主治推定）"
+    ],
+    "functionsEnList": [
+      "Calms the Shen",
+      "Pacifies Wind and stops spasms (legacy/indication-derived)"
+    ],
+    "pointIdentityZh": [
+      "骶尾部後正中線經外奇穴",
+      "資料庫穩定代碼 EX-B9",
+      "American Dragon 代碼 M-BW-29"
+    ],
+    "pointIdentityEn": [
+      "Extra point on the posterior midline of the sacrococcygeal region",
+      "Stable database code EX-B9",
+      "American Dragon code M-BW-29"
+    ],
+    "exam_importance": "非 NCBAHM Appendix A 明列穴；本地 curriculum/acupoints 未找到專條。仍應辨識與十七椎、長強的定位差異及向上沿皮刺方向。",
+    "exam_importance_en": "Not explicitly listed in NCBAHM Appendix A, and no dedicated entry was found in the local acupoint curriculum. Still distinguish it from Shiqizhui and Changqiang and remember the upward subcutaneous direction.",
+    "exam_pearl": "核心記憶：尾骨尖直上2寸、向上沿皮刺；但 AD 改列第二骶椎棘突下，定位衝突必須標來源。癲癇是主治，不代表可取代抗癲癇藥或急救。",
+    "exam_pearl_en": "Core pearl: 2 cun superior to the coccyx tip, with upward subcutaneous insertion. AD instead places it below the S2 spinous process, so the location conflict must stay source-labeled. A seizure indication does not replace antiseizure medication or emergency care.",
     "patterns": [
-      "癲癇",
+      "癲癇／痫證",
       "頭痛",
       "失眠",
       "便秘"
     ],
     "patternsEn": [
-      "Epilepsy",
+      "Epilepsy/seizure disorders",
       "Headache",
       "Insomnia",
       "Constipation"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "鎮靜安神",
+      "熄風止痙"
+    ],
+    "action_tags_en": [
+      "Calm the Shen",
+      "Pacify Wind and Stop Spasms"
+    ],
+    "disease_tags_zh": [
+      "癲癇／痫證",
+      "頭痛",
+      "失眠",
+      "便秘"
+    ],
+    "disease_tags_en": [
+      "Epilepsy/Seizure Disorders",
+      "Headache",
+      "Insomnia",
+      "Constipation"
+    ],
+    "cautions": "【定位不可混同】eLotus／醫砭的尾骨尖直上2寸與 AD 的第二骶椎棘突下未能證明同點；觸診定位不清時不得以兩者互換。【方向與深度】精確頁一致要求向上沿皮／斜刺；沒有來源支持直向深刺。1～2寸與2～2.5寸須分列，不可合併為可自由選擇的1～2.5寸。【局部解剖】醫砭列第二、三骶血管及骶神經後支；顯著出血、尖銳電擊樣放射感、異常麻木無力或劇烈深痛應停止並評估。抗凝／抗血小板、凝血異常、骶尾外傷／畸形／感染／腫瘤或手術史，四源無專穴方案。【癲癇邊界】癲癇主治不代表治癒或可停抗癲癇藥；發作超過5分鐘、接連發作、呼吸／甦醒困難、受傷、水中發作、首次發作、孕期發作或糖尿病伴失去意識，依 CDC 應呼叫急救。【孕兒與灸法缺口】舊卡『孕婦慎用』無精確頁依據，不能升格為已核實禁忌；同樣也不能把來源沉默當作安全。四層沒有孕期、兒童或灸量方案。【舊技法缺口】舊直刺0.3～0.8寸及點刺出血無精確頁支持，不執行。",
+    "cautionsEn": [
+      "Do not conflate locations: the eLotus/Yibian location 2 cun above the coccyx tip and AD's location below the S2 spinous process were not shown to be identical. Do not substitute one for the other when landmarks are unclear.",
+      "Direction and depth: all exact pages specify upward subcutaneous/oblique insertion; no exact source supports deep perpendicular insertion. Keep 1-2 cun and 2-2.5 cun as separate source ranges rather than a freely interchangeable 1-2.5-cun span.",
+      "Local anatomy: Yibian lists the second/third sacral vessels and posterior sacral nerve branches. Stop and assess significant bleeding, sharp electric radiation, abnormal numbness or weakness, or severe deep pain. The four sources provide no point-specific protocol for anticoagulant/antiplatelet use, coagulopathy, sacrococcygeal trauma/deformity/infection/tumor, or prior surgery.",
+      "Epilepsy boundary: a seizure indication is not proof of cure and does not justify stopping antiseizure medication. CDC advises emergency help for a seizure lasting more than 5 minutes, repeated seizures, breathing or waking difficulty, injury, a seizure in water, a first seizure, a seizure during pregnancy, or loss of consciousness with diabetes.",
+      "Pregnancy/pediatric/moxa gap: the legacy 'caution in pregnancy' statement has no exact-page source and cannot be upgraded to a verified contraindication; source silence also cannot be treated as clearance. The four layers provide no pregnancy, pediatric, or moxa-dose protocol.",
+      "Legacy technique gap: the former perpendicular 0.3-0.8-cun and prick-to-bleed methods have no exact-page support and are not executable."
+    ],
+    "acuTags": [
+      "非Board明列",
+      "尾骨尖上2寸",
+      "骶尾後正中線",
+      "向上沿皮刺",
+      "癲癇主治",
+      "定位衝突"
+    ],
+    "combinePointsZh": "【癲癇間歇期｜醫砭】腰奇＋鳩尾（CV15）＋神門（HT7）＋間使（PC5）＋筋縮（DU8）＋豐隆（ST40）＋大椎（DU14）＋風池（GB20）＋風府（DU16）＋百會（DU20）。【癲癇｜AD 交叉頁】Yaoqi 本頁配穴欄空白；AD 的陶道（DU13）頁列陶道＋腰奇＋水溝（DU26）＋內關（PC6）＋豐隆（ST40），長強（DU1）頁列長強＋腰奇＋癲癇（M-BW-36），巨闕（CV14）頁列巨闕＋大椎（DU14）＋水溝（DU26）＋腰奇＋內關（PC6）。上述只保留為來源配伍，不等同癲癇急救或停藥方案。",
+    "combinePointsEn": "For the interictal stage of epilepsy, Yibian lists Yaoqi + Jiuwei (CV15) + Shenmen (HT7) + Jianshi (PC5) + Jinsuo (DU8) + Fenglong (ST40) + Dazhui (DU14) + Fengchi (GB20) + Fengfu (DU16) + Baihui (DU20). Yaoqi's own AD combination section is blank, but AD cross-pages list: Taodao (DU13) + Yaoqi + Shuigou (DU26) + Neiguan (PC6) + Fenglong (ST40); Changqiang (DU1) + Yaoqi + Dianxian (M-BW-36); and Juque (CV14) + Dazhui (DU14) + Shuigou (DU26) + Yaoqi + Neiguan (PC6). These are source-recorded combinations, not seizure first aid or medication-withdrawal plans.",
+    "clinical_pearls": "eLotus：尾骨尖上2寸、癲癇／頭痛／失眠／便秘、安神、向上沿皮1～2寸、可灸。AD 精確頁只補 M-BW-29、Lower Back's Miscellany、S2棘突下、向上斜刺2～2.5寸與 seizures；actions／contraindications／本頁配穴皆空白，配穴須由 AD 其他精確穴頁交叉取得。醫砭補 EX-B9、命名、骶血管神經、2～2.5寸與癲癇間歇期配伍。Board 與本地課件均無專條。",
+    "clinical_pearls_en": "eLotus gives 2 cun above the coccyx tip; epilepsy, headache, insomnia, and constipation; calming the Shen; upward subcutaneous 1-2 cun; and moxa applicable. AD adds M-BW-29, Lower Back's Miscellany, a conflicting S2 location, upward oblique 2-2.5 cun, and seizures, while its actions, contraindications, and on-page combinations are blank; combinations come only from other exact AD point pages. Yibian adds EX-B9, name explanation, sacral vessels/nerves, 2-2.5 cun, and an interictal epilepsy combination. Neither the Board nor local curriculum has a dedicated entry.",
+    "nameIntroZh": "『腰奇』之『腰』指腰骶最下部，『奇』取資料所稱對便秘、頭痛、癲癇等有特殊應用之意。American Dragon 英譯 Lower Back's Miscellany；名稱含義不是療效保證。",
+    "nameIntroEn": "Yao refers to the low lumbar-sacral region, while qi denotes the unusual or miscellaneous applications traditionally associated with constipation, headache, and epilepsy. American Dragon translates it as Lower Back's Miscellany; the name is not a guarantee of efficacy.",
+    "evidence": "四層整合：Yaoqi 不在 NCBAHM Appendix A 明列清單，本地 curriculum/acupoints 亦未找到專條。eLotus Ex-B9、American Dragon M-BW-29 精確頁與 AD 拼音索引均已開啟；醫砭 EX-B9 精確內容由精確 URL 的索引結果讀取，直接重開 cache miss。定位存在尾骨尖上2寸與 S2棘突下衝突；一般層採 eLotus 向上沿皮1～2寸，AD／醫砭2～2.5寸分列。舊直刺、放血與孕婦慎用均只保留為未核實舊值。CDC 僅提供癲癇急救邊界，不作穴位療效證據。\nFour-layer synthesis: Yaoqi is not named in NCBAHM Appendix A, and no dedicated local curriculum entry was found. Exact eLotus Ex-B9 and AD M-BW-29 pages and the AD pinyin index were opened. Exact Yibian EX-B9 content was read from its precisely indexed URL; direct reopening cache-missed. The coccyx-tip and S2 locations conflict. The general layer uses eLotus's upward subcutaneous 1-2 cun, while AD/Yibian 2-2.5 cun remains separate. Legacy perpendicular needling, bloodletting, and pregnancy caution remain only as unverified historical card values. CDC supplies an emergency-care boundary, not point-efficacy evidence.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9",
+      "https://www.americandragon.com/Points/Yaoqi.html",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://yibian.hopto.org/en/db/?ano=409",
+      "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 腰奇 EX-B9 (eLotus CORE)",
-        "labelEn": "Extra Point · Yaoqi EX-B9 (eLotus CORE)",
+        "labelZh": "eLotus · 腰奇 Ex-B9 精確頁",
+        "labelEn": "eLotus · Exact Yaoqi Ex-B9 Page",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 腰奇 M-BW-29 精確頁",
+        "labelEn": "American Dragon · Exact Yaoqi M-BW-29 Page",
+        "url": "https://www.americandragon.com/Points/Yaoqi.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "醫砭 · 腰奇 EX-B9 解剖與操作",
+        "labelEn": "Yibian · Yaoqi EX-B9 Anatomy and Technique",
+        "url": "https://yibian.hopto.org/en/db/?ano=409",
+        "source": "Yibian supplemental Chinese point reference"
       }
     ],
     "x": 180,
     "y": 295,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.8 寸，可灸；或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.8 cun; moxibustion applicable, or prick to bleed.",
-    "cautions": "嚴格無菌操作，避免深刺傷及血管或神經。孕婦慎用。",
-    "cautionsEn": "Maintain strict aseptic technique; avoid deep insertion hitting vessels or nerves. Caution in pregnancy.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Yaoqi is not in the named focus list",
+        "scope note: Appendix A says the examination is not exclusively limited to its named list"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 腰奇, Yaoqi, Yao Qi, EX-B9, and M-BW-29 in curriculum/board and curriculum/acupoints found no dedicated Yaoqi entry",
+        "source-gap note: no local course location, action, indication, technique, moxa, anatomy, combination, or safety detail"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Yaoqi present and linked from the pinyin index on 2026-08-08",
+        "https://www.americandragon.com/Points/Yaoqi.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9 and https://yibian.hopto.org/en/db/?ano=409: 2 cun directly above coccyx tip",
+        "https://www.americandragon.com/Points/Yaoqi.html: below S2 spinous process",
+        "unresolved conflict: exact sources do not demonstrate that the coccyx-based and S2-based landmarks are identical"
+      ],
+      "anatomy": [
+        "https://yibian.hopto.org/en/db/?ano=409: supraspinous ligament; second/third sacral arteries and veins; posterior branches of second/third sacral nerves",
+        "source-gap note: no exact page gives individualized skin-to-sacral-canal, sacral-foramen, or other deep-structure distance"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9: upward subcutaneous 1-2 cun",
+        "https://www.americandragon.com/Points/Yaoqi.html: upward slanted 2-2.5 cun",
+        "https://yibian.hopto.org/en/db/?ano=409: upward subcutaneous 2-2.5 cun",
+        "unverified legacy values removed from executable layer: perpendicular 0.3-0.8 cun and prick to bleed"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9: moxibustion applicable",
+        "source-gap note: exact AD/Yibian pages supply no Yaoqi moxa method; no source supplies cone count, duration, direct/indirect method, skin protection, or stopping rule"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9: calms the Shen",
+        "legacy function retained but labeled indication-derived: pacifies Wind and stops spasms; exact pages list seizures but not this separate action"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9 and https://yibian.hopto.org/en/db/?ano=409: epilepsy/seizures, headache, insomnia, constipation",
+        "https://www.americandragon.com/Points/Yaoqi.html: seizures only"
+      ],
+      "combinations": [
+        "https://yibian.hopto.org/en/db/?ano=409: CV15+HT7+PC5+DU8+ST40+DU14+GB20+DU16+DU20 for interictal epilepsy",
+        "https://www.americandragon.com/Points/Yaoqi.html: on-page combinations section blank",
+        "https://www.americandragon.com/Points/DU-13.html: DU13+Yaoqi+DU26+PC6+ST40 for seizures",
+        "https://www.americandragon.com/Points/DU-1.html: DU1+Yaoqi+M-BW-36 Dianxian for seizures",
+        "https://www.americandragon.com/Points/REN-14.html: CV14+DU14+DU26+Yaoqi+PC6 for seizures"
+      ],
+      "cautions": [
+        "https://yibian.hopto.org/en/db/?ano=409: local sacral vessels and posterior nerve branches",
+        "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html: seizure first aid and emergency thresholds; not point-efficacy evidence",
+        "https://www.americandragon.com/Points/Yaoqi.html: contraindications field blank",
+        "source-gap note: no point-specific pregnancy, pediatric, anticoagulation, coagulopathy, sacrococcygeal trauma/deformity/infection/tumor, prior-surgery, needle-length, or stopping protocol",
+        "unverified legacy pregnancy caution preserved as a gap, not upgraded to a verified contraindication; source silence is not clearance"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-B9 / ex.b9 / 腰奇 / Yaoqi",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoqi-ex-b9: Ex-B9, Yaoqi, Miscellaneous of the Lower Back",
+        "https://www.americandragon.com/Points/Yaoqi.html: M-BW-29, Yaoqi, Lower Back's Miscellany",
+        "https://yibian.hopto.org/en/db/?ano=409: EX-B9 腰奇"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Yaoqi Ex-B9 page",
+        "2026-08-08 live page opened: American Dragon exact Yaoqi M-BW-29 page",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; Yaoqi entry present",
+        "2026-08-08 Yibian exact URL indexed content read; direct reopen returned cache miss",
+        "2026-08-08 live page opened: CDC seizure first-aid guidance"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "一般層採向上沿皮刺1～2寸。AD 向上斜刺2～2.5寸與醫砭向上沿皮刺2～2.5寸為較長來源變體；舊直刺0.3～0.8寸及點刺出血未獲精確頁支持，不執行。",
+    "needlingEn": "The general layer uses upward subcutaneous insertion 1-2 cun. AD's upward oblique 2-2.5 cun and Yibian's upward subcutaneous 2-2.5 cun remain longer source variants. The legacy perpendicular 0.3-0.8-cun and bloodletting methods lack exact-page support and are not executable.",
     "id": "ex.b9"
   },
   {
