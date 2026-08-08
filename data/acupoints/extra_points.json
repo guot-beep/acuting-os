@@ -6522,43 +6522,212 @@
     "pinyin": "Xiajishu",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
-    "location": "腰部，第3腰椎棘突下。",
-    "locationEn": "In lumbar region, below spinous process of L3.",
-    "techniqueNotes": "直刺0.5~1.0寸。可灸。\nPerpendicular 0.5-1.0 cun. Moxa applicable.",
-    "functions": "益腎壯腰，理氣止痛",
-    "functionsEn": "Tonifies kidneys and strengthens lumbar; Relieves pain",
+    "location": "腰部，後正中線上，第3腰椎（L3）棘突下凹陷中。華文標準資料的下極俞 Xiajishu EX-B5 與 eLotus／WHO 1991 的下志室 Xiazhishi Ex-B5 定位相同；eLotus 另註古籍下極俞 Xiajiyu（站內 Ex-B13）亦同位。本卡保留現行下極俞 EX-B5，不合併或改寫其他代碼。",
+    "locationEn": "In the lumbar region, on the posterior midline in the depression below the L3 spinous process. Chinese standard references place Xiajishu (下極俞) EX-B5 here, while eLotus/WHO 1991 place Xiazhishi (下志室) Ex-B5 at the same location. eLotus additionally notes that the ancient-text Xiajiyu (its Ex-B13) appears to share the location. This card retains the existing Xiajishu EX-B5 identity and does not merge or rewrite the other code system.",
+    "cunMeasurement": "本穴無旁開寸數；先確認 L3 棘突，再取其棘突下、後正中線凹陷。不可把『L3棘突下』誤作 L3–L4 任意旁開點，也不可因 eLotus 同位註記而更改本庫 `EX-B5`／`ex.b5`。",
+    "anatomyZh": "華文穴位資料列本穴位於腰背筋膜、棘上韌帶及棘間韌帶中；有腰動脈後支、棘間皮下靜脈叢，並分布腰神經後支內側支。四個核心內容層未提供皮膚至椎板、黃韌帶、硬膜外腔、硬膜囊或馬尾神經的距離。因穴位在 L3 後正中線，深層方向指向椎管區；補充病例文獻證實針刺後可罕見發生脊髓硬膜外／蛛網膜下出血，但不是 EX-B5 專穴病例，僅作禁止無依據深刺的區域風險邊界。",
+    "anatomyEn": "A Chinese point reference places the point within thoracolumbar fascia, supraspinous and interspinous ligaments, with posterior lumbar arterial branches, a subcutaneous interspinous venous plexus, and medial branches of the posterior lumbar nerves. The four core content layers give no distance from skin to lamina, ligamentum flavum, epidural space, dural sac, or cauda equina. Because the point is on the L3 posterior midline, a deep trajectory is directed toward the spinal canal region. Supplemental case literature documents rare spinal epidural/subarachnoid hemorrhage after acupuncture, but not specifically at EX-B5; it is used only as a regional boundary against unsupported deep insertion.",
+    "techniqueNotes": "下極俞華文資料：直刺0.5～1寸，局部酸脹；可灸3～7壯。eLotus 下志室 Ex-B5（同位來源變體）：直刺0.5～1寸，艾灸5～10分鐘。兩者的進針範圍一致，因此一般層可保留直刺0.5～1寸；灸量則必須分開，不把壯數與分鐘數互換。American Dragon 拼音索引查無 Xiajishu、Xiazhishi 或 Xiajiyu 專頁。\nChinese Xiajishu reference: perpendicular 0.5-1 cun with local soreness/distention; moxa 3-7 cones. eLotus Xiazhishi Ex-B5 (same-location source variant): perpendicular 0.5-1 cun; moxa 5-10 minutes. The insertion ranges agree, so the general layer retains perpendicular 0.5-1 cun. Moxa values remain separate and cones are not converted into minutes. The American Dragon pinyin index contains no Xiajishu, Xiazhishi, or Xiajiyu detail entry.",
+    "acumethodZh": "直刺0.5～1寸，以局部酸脹為華文資料所述針感。來源未提供針具長度、棘間韌帶深度、骨性接觸、個體體型調整或接近椎管的停止規則；不得因位於腰椎下段而自行深刺。",
+    "acumethodEn": "Perpendicular insertion 0.5-1 cun; a Chinese reference describes local soreness and distention. Sources give no needle length, interspinous-ligament depth, bony-contact rule, body-habitus adjustment, or stopping criterion near the spinal canal; lower-lumbar location is not permission for deeper insertion.",
+    "moxaZh": "華文下極俞資料列艾炷灸3～7壯；eLotus 同位下志室列艾灸5～10分鐘。兩種計量分列，來源均未交代直接／間接灸、艾條距離、皮膚保護、熱傷害停止規則、療程頻率或特殊族群，因此不能互換或延伸。",
+    "moxaEn": "The Chinese Xiajishu reference lists 3-7 moxa cones; eLotus's same-location Xiazhishi lists 5-10 minutes. These units remain separate. Neither source specifies direct versus indirect moxa, stick distance, skin protection, thermal-injury stopping rules, treatment frequency, or special-population protocols, so the values are neither converted nor extended.",
+    "functions": "益腎壯腰；理氣止痛",
+    "functionsEn": "Tonifies the Kidney and strengthens the lumbar region; Regulates Qi and relieves pain",
+    "functionsZhList": [
+      "益腎壯腰（eLotus 同位下志室明列補腎強背；保留舊卡核心）",
+      "理氣止痛（既有表述；依腹痛、腸疝痛與腰／下肢疼痛主治整理，精確頁未獨立明列）"
+    ],
+    "functionsEnList": [
+      "Tonifies the Kidney and strengthens the lumbar region (eLotus explicitly lists tonifying Kidney/strengthening the back for the same-location Xiazhishi; preserves the legacy core)",
+      "Regulates Qi and relieves pain (legacy wording organized from abdominal, hernia, lumbar, and lower-limb pain indications rather than an explicitly separated exact-page action)"
+    ],
+    "pointIdentityZh": [
+      "L3 棘突下後正中線的腰部經外奇穴",
+      "未列入 NCBAHM 2026 ACPL Appendix A 具名優先清單",
+      "本庫與華文標準資料使用下極俞 Xiajishu EX-B5",
+      "WHO 1991／eLotus 將同位 EX-B5 列為下志室 Xiazhishi；eLotus 另將古籍下極俞 Xiajiyu 編為 Ex-B13，屬未解命名／序列衝突"
+    ],
+    "pointIdentityEn": [
+      "Lumbar extra point on the posterior midline below the L3 spinous process",
+      "Not named in the NCBAHM 2026 ACPL Appendix A priority list",
+      "The database and Chinese standard references use Xiajishu (下極俞) EX-B5",
+      "WHO 1991/eLotus assign the same-location EX-B5 to Xiazhishi (下志室), while eLotus separately codes ancient-text Xiajiyu as Ex-B13; this nomenclature/sequence conflict remains unresolved"
+    ],
+    "exam_star": 0,
+    "exam_importance": "本穴未列 NCBAHM Appendix A。學習核心：L3棘突下、後正中線、直刺0.5～1寸；腰痛、腹痛腹瀉、小便不利／遺尿。必須辨識本庫下極俞 Xiajishu EX-B5 與 WHO／eLotus 下志室 Xiazhishi Ex-B5 的同位異名衝突。",
+    "exam_importance_en": "This point is not named in NCBAHM Appendix A. Study core: posterior midline below L3, perpendicular 0.5-1 cun; lumbar pain, abdominal pain/diarrhea, dysuria or enuresis. Recognize the same-location nomenclature conflict between database Xiajishu EX-B5 and WHO/eLotus Xiazhishi Ex-B5.",
+    "exam_pearl": "先記『L3棘突下正中線』。下極俞與下志室在部分標準／網站同位同碼，但中文名、拼音與 eLotus 序列並不一致；不可把這個衝突藏掉。",
+    "exam_pearl_en": "First remember 'posterior midline below L3.' Xiajishu and Xiazhishi share location/code in some standards/sites, but their Chinese names, pinyin, and eLotus sequence are inconsistent; the conflict must remain visible.",
     "patterns": [
       "腰痛",
       "下肢痿痺",
       "腹痛腹瀉",
-      "小便不利"
+      "小便不利",
+      "腸炎",
+      "膀胱炎／尿路感染",
+      "遺尿",
+      "膀胱虛寒",
+      "腸疝痛",
+      "下肢疼痛"
     ],
     "patternsEn": [
       "Low back pain",
-      "Lower limb weakness",
-      "Abdominal pain",
-      "Dysuriaria"
+      "Lower-limb weakness or Bi (legacy wording; exact reference lists pain)",
+      "Abdominal pain and diarrhea",
+      "Dysuria",
+      "Enteritis",
+      "Cystitis or urinary tract infection",
+      "Enuresis",
+      "Cold Bladder pattern",
+      "Intestinal hernia pain",
+      "Lower-limb pain"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "益腎",
+      "強腰",
+      "理氣止痛"
+    ],
+    "action_tags_en": [
+      "Tonify the Kidney",
+      "Strengthen the Lumbar Region",
+      "Regulate Qi and Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "腰痛",
+      "腹痛腹瀉",
+      "小便不利",
+      "遺尿",
+      "下肢疼痛"
+    ],
+    "disease_tags_en": [
+      "Low-back Pain",
+      "Abdominal Pain and Diarrhea",
+      "Dysuria",
+      "Enuresis",
+      "Lower-limb Pain"
+    ],
+    "cautions": "【椎管方向】本穴位於 L3 後正中線、棘上／棘間韌帶區；來源只支持直刺0.5～1寸，未提供至黃韌帶、硬膜外腔、硬膜囊或馬尾神經的個體距離。不得為追求強針感超越來源深度。【出血與神經風險】局部有腰動脈後支與棘間靜脈叢；針刺相關脊髓硬膜外／蛛網膜下出血雖罕見，顯示深部或出血風險不能忽略。抗凝／抗血小板、凝血異常、脊柱狹窄、椎體骨折、感染、既往腰椎手術／融合或解剖變異需另行評估，四源無本穴專屬方案。【術後警訊】針後新發或加劇的劇烈腰背痛、放射痛、下肢無力／麻木、鞍區感覺異常、尿瀦留／失禁或排便功能改變，須緊急排除椎管內血腫或馬尾壓迫。【泌尿症狀界限】小便不利、尿路感染／膀胱炎主治不取代尿液檢查、抗感染或梗阻評估；發熱、血尿、腰脅痛、嘔吐或無法排尿需先就醫。【艾灸】3～7壯與5～10分鐘是不同來源單位，不互換；無熱安全與孕兒條文。【命名缺口】WHO／eLotus 與華文標準的 EX-B5 名稱衝突尚未解決，不能假裝四源一致。",
+    "cautionsEn": [
+      "Spinal-canal direction: this point is on the L3 posterior midline in the supraspinous/interspinous-ligament region. Sources support only perpendicular 0.5-1 cun and give no individual distance to ligamentum flavum, epidural space, dural sac, or cauda equina. Do not exceed the source range to chase stronger sensation.",
+      "Bleeding/neurological risk: posterior lumbar arterial branches and an interspinous venous plexus are reported locally. Rare acupuncture-related spinal epidural/subarachnoid hemorrhage shows that deep and bleeding risks cannot be ignored. Anticoagulant/antiplatelet use, coagulopathy, spinal stenosis, vertebral fracture, infection, prior lumbar surgery/fusion, or anatomical variants require separate assessment; the four layers give no point-specific protocol.",
+      "Post-needling warning signs: new or worsening severe lumbar pain, radicular pain, leg weakness/numbness, saddle sensory change, urinary retention/incontinence, or bowel-function change requires urgent evaluation for intraspinal hematoma or cauda-equina compression.",
+      "Urinary-symptom boundary: dysuria, UTI/cystitis, or bladder indications do not replace urinalysis, anti-infective care, or obstruction assessment. Fever, hematuria, flank pain, vomiting, or inability to urinate requires medical evaluation first.",
+      "Moxa: 3-7 cones and 5-10 minutes are different source units and are not converted. Thermal-safety and pregnancy/pediatric protocols are absent.",
+      "Nomenclature gap: the EX-B5 name conflict between WHO/eLotus and Chinese standard references remains unresolved and must not be presented as four-source consensus."
+    ],
+    "acuTags": [
+      "腰部正中線",
+      "腰痛",
+      "泌尿症狀",
+      "椎管風險"
+    ],
+    "combinePointsZh": "華文下極俞資料列：配腰眼、腎俞、委中治腰痛。eLotus 同位下志室頁未列配穴；American Dragon 無專頁。此組保留為單一具名補充來源配穴，不冒充四源共識。",
+    "combinePointsEn": "A Chinese Xiajishu reference combines it with Yaoyan, Shenshu (BL23), and Weizhong (BL40) for lumbar pain. The same-location eLotus Xiazhishi page lists no combinations, and American Dragon has no detail page. This remains a single-source combination rather than four-layer consensus.",
+    "clinical_pearls": "華文下極俞資料補入逐層解剖、局部血管神經、3～7壯、針感與腰痛配穴；eLotus 同位下志室補入腸炎、膀胱炎／尿路感染、遺尿、膀胱虛寒、補腎強背及艾灸5～10分鐘。兩者刺法同為直刺0.5～1寸。既有下肢痿痺保留，但精確華文頁只列下肢疼痛；理氣止痛保留為主治衍生功效。CloudTCM 搜尋只找到不同概念『下極之俞』，未當作本穴專頁。",
+    "clinical_pearls_en": "The Chinese Xiajishu reference adds layered anatomy, local vessels/nerves, 3-7 cones, needling sensation, and a lumbar-pain combination. The same-location eLotus Xiazhishi adds enteritis, cystitis/UTI, enuresis, Cold Bladder, Kidney/back action, and 5-10-minute moxa. Both use perpendicular 0.5-1 cun. Legacy lower-limb weakness/Bi is retained, but the exact Chinese page only lists lower-limb pain; regulate Qi/relieve pain remains indication-derived. CloudTCM search returned only the different concept 'lower extremity shu' and was not treated as this point's detail page.",
+    "nameIntroZh": "『下極俞』又見十五椎、下極之俞；華文拼音 Xiajishu。WHO 1991／eLotus 的 EX-B5 名稱為下志室 Xiazhishi（Lower Will Chamber），eLotus 並將古籍下極俞 Xiajiyu 編為 Ex-B13。三個拼音不能互換成同一無衝突標籤。",
+    "nameIntroEn": "Xiajishu (下極俞) is also called Fifteenth Vertebra or Shu of the Lower Extremity in Chinese references. WHO 1991/eLotus name EX-B5 Xiazhishi (下志室, Lower Will Chamber), while eLotus separately codes ancient-text Xiajiyu as Ex-B13. The three pinyin forms cannot be collapsed into one conflict-free label.",
+    "evidence": "四層查核：NCBAHM 2026 ACPL Appendix A 未列 Xiajishu／Xiazhishi；curriculum/acupoints 無專條。eLotus Xiazhishi Ex-B5 精確頁提供 L3棘突下正中線、腹瀉腸炎、泌尿與腰痛主治、補腎強背、直刺0.5～1寸、灸5～10分鐘，並明記古籍 Xiajiyu Ex-B13 與其同位。American Dragon 拼音索引查無 Xiajishu、Xiazhishi、Xiajiyu。WHO 1991 Extra Points 表將 Xiazhishi 列為 *Ex-B5；華文標準資料則將下極俞 Xiajishu 列 EX-B5，形成未解命名衝突。補充華文精確頁提供解剖、3～7壯與配穴；補充病例提供椎管出血風險。CloudTCM 無本穴可核讀專頁，泛用目錄連結已移除。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/bitstream/handle/10665/207637/Standard_acupuncture_nomenclature_1991_partII_eng.pdf?isAllowed=y&sequence=1",
+      "https://yibian.hopto.org/db/?ano=404&lc=tw",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8332956/"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 下極俞 EX-B5",
-        "labelEn": "Extra Point · Xiajishu EX-B5",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "labelZh": "eLotus · 同位下志室 Ex-B5 精確頁",
+        "labelEn": "eLotus · Exact Same-location Xiazhishi Ex-B5 Page",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5",
+        "source": "MasterTungAcupuncture.org / eLotus CORE; nomenclature-conflict source"
+      },
+      {
+        "labelZh": "醫砭 · 下極俞 EX-B5 精確頁",
+        "labelEn": "Yibian · Exact Xiajishu EX-B5 Page",
+        "url": "https://yibian.hopto.org/db/?ano=404&lc=tw",
+        "source": "Yibian supplemental Chinese point reference"
+      },
+      {
+        "labelZh": "WHO 1991 · 經外奇穴標準命名表",
+        "labelEn": "WHO 1991 · Standard Nomenclature of Extra Points",
+        "url": "https://iris.who.int/bitstream/handle/10665/207637/Standard_acupuncture_nomenclature_1991_partII_eng.pdf?isAllowed=y&sequence=1",
+        "source": "WHO Western Pacific; lists Xiazhishi *Ex-B5"
       }
     ],
     "x": 180,
     "y": 270,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun; moxibustion applicable.",
-    "cautions": "避開大血管。",
-    "cautionsEn": "Avoid major blood vessels.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: neither Xiajishu nor Xiazhishi is named in the priority list"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated entry found in curriculum/acupoints by 下極俞, 下志室, Xiajishu, Xiazhishi, Xiajiyu, EX-B5, or Ex-B5 search on 2026-08-08"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: same-location Xiazhishi Ex-B5 page; explicit Xiajiyu Ex-B13 same-location remark"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: no Xiajishu, Xiazhishi, or Xiajiyu entry found in the pinyin index on 2026-08-08"
+      ],
+      "location": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: Xiajishu EX-B5 on posterior midline below L3 spinous process",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: Xiazhishi Ex-B5 at the identical L3 posterior-midline location"
+      ],
+      "anatomy": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: thoracolumbar fascia, supraspinous/interspinous ligaments, posterior lumbar arterial branches, interspinous subcutaneous venous plexus, and medial posterior-ramus branches",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8332956/: regional acupuncture-associated spinal epidural/subarachnoid hemorrhage case; not EX-B5-specific",
+        "source-gap note: no point-specific skin-to-epidural-space/dural-sac/cauda-equina distance"
+      ],
+      "technique": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: perpendicular 0.5-1 cun with local soreness/distention",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: perpendicular 0.5-1 cun",
+        "source-gap note: no needle-length, ligament-depth, bony-contact, body-habitus, or spinal-canal stopping rule"
+      ],
+      "moxibustion": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: 3-7 moxa cones",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: 5-10 minutes",
+        "source-gap note: cone and minute units are not converted; no direct/indirect type, heat distance, skin protection, stopping rule, frequency, or special-population protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: strengthens the back and tonifies the Kidney",
+        "legacy regulates Qi/relieves pain retained as indication-derived rather than exact-page explicit action"
+      ],
+      "indications": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: lumbar pain, abdominal pain, diarrhea, dysuria, enuresis, intestinal hernia pain, lower-limb pain",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: abdominal pain, diarrhea, enteritis, cystitis, UTI, dysuria, enuresis, Cold Bladder, back pain",
+        "legacy lower-limb weakness/Bi retained; exact Chinese reference lists lower-limb pain rather than weakness"
+      ],
+      "combinations": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: Xiajishu + Yaoyan + BL23 + BL40 for lumbar pain",
+        "source-gap note: no combinations on eLotus same-location page; no AD detail page"
+      ],
+      "cautions": [
+        "https://yibian.hopto.org/db/?ano=404&lc=tw: local vessels/nerves and ligament anatomy",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8332956/: regional intraspinal hemorrhage evidence",
+        "source-gap note: no point-specific anticoagulation, pregnancy, pediatric, spinal-stenosis, fracture, prior-surgery, infection, needle-length, or stopping protocol",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-B5 / ex.b5 / 下極俞 / Xiajishu",
+        "https://yibian.hopto.org/db/?ano=404&lc=tw and Chinese encyclopedia result: 下極俞 Xiajishu EX-B5",
+        "https://iris.who.int/bitstream/handle/10665/207637/Standard_acupuncture_nomenclature_1991_partII_eng.pdf?isAllowed=y&sequence=1: WHO table lists Xiazhishi *Ex-B5",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiazhishi-ex-b5: Xiazhishi Ex-B5; Xiajiyu Ex-B13 same-location remark"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Xiazhishi Ex-B5 same-location page",
+        "2026-08-08 live page searched: American Dragon pinyin index; no Xiajishu/Xiazhishi/Xiajiyu entry",
+        "2026-08-08 WHO exact PDF indexed text read: Xiazhishi *Ex-B5 in the extra-point table",
+        "2026-08-08 exact Yibian Xiajishu EX-B5 indexed content read",
+        "2026-08-08 supplemental PMC case indexed content read",
+        "2026-08-08 CloudTCM search found no dedicated Xiajishu/Xiazhishi page; a different '下極之俞' concept was excluded and the generic directory URL removed"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "直刺0.5～1寸，以局部酸脹為華文資料所述針感。不得超出來源深度追求強刺激；四源未提供至椎管／硬膜囊的個體距離或停止規則。",
+    "needlingEn": "Perpendicular insertion 0.5-1 cun, with local soreness/distention described by the Chinese reference. Do not exceed the sourced depth to chase stronger stimulation; the four layers provide no individual distance or stopping rule for the spinal canal/dural sac.",
     "id": "ex.b5"
   },
   {
