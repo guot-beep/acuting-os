@@ -62,7 +62,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "level": "pattern",
-      "needs_system": true
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -73,7 +74,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "level": "pattern",
-      "needs_system": true
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.damp_heat",
@@ -106,7 +108,8 @@
       "member_of": [
         "pattern.damp_heat"
       ],
-      "needs_system": true
+      "system": "san_jiao",
+      "system_zh": "三焦辨證"
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -120,7 +123,8 @@
       "member_of": [
         "pattern.damp_heat"
       ],
-      "needs_system": true
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.fire",
@@ -150,7 +154,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "level": "pattern",
-      "needs_system": true
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.heart_blood_deficiency",
@@ -290,7 +295,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "level": "pattern",
-      "needs_system": true
+      "system": "jing_luo",
+      "system_zh": "經絡辨證"
     },
     {
       "id": "pattern.kidney_deficiency",
@@ -592,7 +598,8 @@
       "member_of": [
         "pattern.phlegm"
       ],
-      "needs_system": true
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.phlegm_heat_in_lung",
@@ -606,7 +613,8 @@
       "member_of": [
         "pattern.phlegm"
       ],
-      "needs_system": true
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.phlegm_misting_heart",
@@ -620,7 +628,8 @@
       "member_of": [
         "pattern.phlegm"
       ],
-      "needs_system": true
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -792,7 +801,8 @@
       "member_of": [
         "pattern.wind_external"
       ],
-      "needs_system": true
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.wind_damp_bi",
@@ -838,7 +848,8 @@
       "member_of": [
         "pattern.wind_external"
       ],
-      "needs_system": true
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.yang_deficiency",
