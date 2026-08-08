@@ -7184,49 +7184,243 @@
     "code": "EX-B8",
     "display_code": "EX-B8",
     "nameZh": "十七椎",
-    "nameEn": "Shiqizhui",
+    "nameEn": "Below the Seventeenth Vertebra",
     "pinyin": "Shiqizhui",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
     "location": "腰部，後正中線上，第5腰椎棘突下。",
-    "locationEn": "In lumbar region, on posterior midline, below spinous process of L5.",
-    "techniqueNotes": "直刺0.5~1.0寸。可灸。\nPerpendicular 0.5-1.0 cun. Moxa applicable.",
-    "functions": "補腎壯腰，調經止痛",
-    "functionsEn": "Tonifies kidneys; Regulates menses and relieves pain",
+    "locationEn": "In the lumbar region, on the posterior midline, in the depression inferior to the spinous process of L5.",
+    "cunMeasurement": "後正中線；第5腰椎棘突下凹陷。Posterior midline; depression inferior to the L5 spinous process.",
+    "anatomyZh": "醫砭精確頁列腰背筋膜、棘上韌帶與棘間韌帶，並列腰動脈後支及腰神經後支內側支、棘間皮下神經叢。American Dragon 另指出皮膚至椎管約1.25～1.75寸且隨體型而異；此為該頁安全警示，不是可達的治療靶深。",
+    "anatomyEn": "The exact Yibian page lists thoracolumbar fascia, the supraspinous and interspinous ligaments, posterior lumbar arterial branches, medial branches of the posterior lumbar nerves, and the interspinous subcutaneous nerve plexus. American Dragon separately states that the spinal canal lies about 1.25-1.75 cun beneath the skin and varies with body build; this is a page-specific safety warning, not a therapeutic target depth.",
+    "acumethodZh": "一般執行層採 eLotus 與 AD 共同列出的直刺0.8～1.2寸；既有／AD另列直刺0.5～1寸。AD及醫砭亦各列直刺1.5～2寸，但此範圍與 AD 所列椎管深度1.25～1.75寸重疊，僅保留為來源衝突，不作常規操作建議。",
+    "acumethodEn": "For the general executable layer, use the perpendicular 0.8-1.2 cun range shared by eLotus and AD; the legacy/AD alternative of 0.5-1 cun is also source-labeled. AD and Yibian each list perpendicular 1.5-2 cun, but that range overlaps AD's stated 1.25-1.75-cun skin-to-spinal-canal depth. It is retained as a source conflict, not as routine procedural advice.",
+    "moxaZh": "eLotus 與 American Dragon 均列可灸；精確頁未提供壯數、時間、直接／間接法、皮膚保護、停止規則或孕兒方案，因此不補猜操作劑量。",
+    "moxaEn": "eLotus and American Dragon both state that moxibustion is applicable. Their exact pages provide no cone count, duration, direct/indirect method, skin protection, stopping rule, or pregnancy/pediatric protocol, so no procedural dose is inferred.",
+    "techniqueNotes": "【一般層】直刺0.8～1.2寸；可灸但無可核實的灸量。\n【來源變體】AD另列直刺0.5～1寸；AD與醫砭另列1.5～2寸，因與AD所列椎管深度1.25～1.75寸重疊，只作衝突記錄，不作常規深刺建議。\nGeneral layer: perpendicular 0.8-1.2 cun. Moxibustion is applicable, but no verifiable dose is supplied. AD also lists 0.5-1 cun; AD and Yibian list 1.5-2 cun, which overlaps AD's stated 1.25-1.75-cun spinal-canal depth and is therefore documented only as a conflict, not a routine deep-insertion recommendation.",
+    "functions": "補腎，促進排尿，行氣活血通絡，利腰止痛，調經止痛",
+    "functionsEn": "Tonifies the Kidneys; Promotes urination; Activates Qi, Blood, and the channel; Benefits the back and alleviates pain; Regulates menstruation and relieves pain",
+    "functionsZhList": [
+      "補腎",
+      "促進排尿",
+      "行氣活血通絡",
+      "利腰止痛",
+      "調經止痛"
+    ],
+    "functionsEnList": [
+      "Tonifies the Kidneys",
+      "Promotes urination",
+      "Activates Qi, Blood, and the channel",
+      "Benefits the back and alleviates pain",
+      "Regulates menstruation and relieves pain"
+    ],
+    "pointIdentityZh": [
+      "後正中線第5腰椎棘突下的經外奇穴",
+      "又名十七椎下；Board 並列 Shiqizhuixue／Shiqizhuixia",
+      "American Dragon 代碼 M-BW-25；資料庫穩定代碼維持 EX-B8"
+    ],
+    "pointIdentityEn": [
+      "Extra point on the posterior midline below the L5 spinous process",
+      "Also called Shiqizhuixia; the Board lists Shiqizhuixue/Shiqizhuixia",
+      "American Dragon code M-BW-25; the database's stable code remains EX-B8"
+    ],
+    "exam_importance": "Board 高優先：NCBAHM Appendix A 明列 Shiqizhuixue／Shiqizhuixia；本地 competency checklist 亦列 Shi Qi Zhui Xia。",
+    "exam_importance_en": "High Board priority: NCBAHM Appendix A explicitly lists Shiqizhuixue/Shiqizhuixia, and the local competency checklist also lists Shi Qi Zhui Xia.",
+    "exam_pearl": "定位口訣：L5棘突下、後正中線。不要與腰眼（L4旁開）或腰奇（骶尾部）混淆；深刺版本與 AD 所列椎管深度重疊，是安全衝突考點。",
+    "exam_pearl_en": "Location pearl: below the L5 spinous process on the posterior midline. Distinguish it from Yaoyan (lateral to L4) and Yaoqi (sacrococcygeal region). The deeper source variant overlaps AD's stated spinal-canal depth and is a safety-conflict teaching point.",
     "patterns": [
       "痛經",
       "崩漏",
       "腰骶痛",
       "遺尿",
-      "下肢癱瘓"
+      "下肢癱瘓",
+      "月經不調",
+      "腰腿痛與坐骨神經痛",
+      "排尿困難或尿痛",
+      "胎兒壓迫膀胱所致排尿不適（AD用語）",
+      "小兒麻痺後遺症",
+      "痔瘡與肛門疾病",
+      "外傷性截癱（AD用語）"
     ],
     "patternsEn": [
       "Dysmenorrhea",
-      "Uterine bleeding",
+      "Flooding/spotting or uterine bleeding",
       "Lumbosacral pain",
-      "Enuresis"
+      "Enuresis",
+      "Lower-extremity paralysis",
+      "Irregular menstruation",
+      "Lumbar-leg pain and sciatica",
+      "Difficult or painful urination",
+      "Urinary discomfort from fetal pressure on the bladder (AD wording)",
+      "Sequelae of poliomyelitis",
+      "Hemorrhoids and anal disorders",
+      "Traumatic paraplegia (AD wording)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【痛經】十七椎配次髎（BL32）、三陰交（SP6）：通經止痛。",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "補腎",
+      "利尿",
+      "行氣活血通絡",
+      "利腰止痛",
+      "調經止痛"
+    ],
+    "action_tags_en": [
+      "Tonify the Kidneys",
+      "Promote Urination",
+      "Activate Qi and Blood and Unblock the Channel",
+      "Benefit the Back and Alleviate Pain",
+      "Regulate Menstruation and Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "腰骶痛",
+      "坐骨神經痛",
+      "痛經",
+      "月經不調",
+      "崩漏",
+      "排尿困難",
+      "遺尿",
+      "下肢癱瘓"
+    ],
+    "disease_tags_en": [
+      "Lumbosacral Pain",
+      "Sciatica",
+      "Dysmenorrhea",
+      "Irregular Menstruation",
+      "Flooding and Spotting",
+      "Difficult Urination",
+      "Enuresis",
+      "Lower-extremity Paralysis"
+    ],
+    "cautions": "【椎管深度衝突】AD 明列皮膚至椎管約1.25～1.75寸且因體型而異；同頁與醫砭又列直刺1.5～2寸。兩者不可合併成常規深刺許可，一般層維持共同的0.8～1.2寸，且不以椎管為治療靶點。【停止規則】出現尖銳電擊樣或向臀腿放射的異常感、突發麻木無力、劇烈深部疼痛、阻力異常或顯著出血，應停止並重新評估。【高風險背景】脊柱畸形／病變／感染／腫瘤、重大外傷、腰椎手術史、抗凝／抗血小板、凝血異常或極端體型，四層來源均無專穴調整方案，須個別評估。【神經紅旗】下肢癱瘓、外傷性截癱與排尿主治不取代急症評估；新發或惡化的雙腿無力、尿瀦留／失禁、糞失禁或鞍區麻木須立即就醫。【孕兒缺口】AD 的胎壓膀胱與小兒麻痺後遺症是主治記錄，不代表孕期或兒童刺灸安全；來源未提供專屬方案。【灸法缺口】僅知可灸，無可核實劑量與熱傷害停止規則。",
+    "cautionsEn": [
+      "Spinal-canal depth conflict: AD states that the canal is about 1.25-1.75 cun beneath the skin and varies with body build, yet the same page and Yibian also list perpendicular 1.5-2 cun. These statements cannot be merged into routine permission for deep insertion. Keep the shared 0.8-1.2-cun range in the general layer and never treat the spinal canal as a target.",
+      "Stopping rules: stop and reassess if sharp electric or abnormal buttock/leg radiation, sudden numbness or weakness, severe deep pain, unusual resistance, or significant bleeding occurs.",
+      "High-risk context: spinal deformity/disease/infection/tumor, major trauma, prior lumbar surgery, anticoagulant/antiplatelet therapy, coagulopathy, or extreme body habitus requires individualized assessment; none of the four source layers provides a point-specific adjustment protocol.",
+      "Neurologic red flags: lower-limb paralysis, traumatic paraplegia, and urinary indications do not replace emergency evaluation. New or worsening bilateral leg weakness, urinary retention/incontinence, fecal incontinence, or saddle anesthesia requires immediate medical attention.",
+      "Pregnancy/pediatric gap: AD's fetal-bladder-pressure and post-polio indications are indication records, not pregnancy or pediatric needling/moxa clearance; no point-specific protocol is supplied.",
+      "Moxa gap: the exact point pages only state that moxa is applicable and give no verifiable dose or thermal-injury stopping rule."
+    ],
+    "acuTags": [
+      "Board重點",
+      "L5棘突下",
+      "後正中線",
+      "腰骶痛",
+      "婦科與泌尿",
+      "椎管深度衝突"
+    ],
+    "combinePointsZh": "【痛經｜既有卡保留】十七椎＋次髎（BL32）＋三陰交（SP6）；精確頁未以此三穴作獨立組方，故保留並標為既有內容。【痛經｜AD】十七椎下＋中極（CV3）＋三陰交（SP6）＋太谿（KI3）。【痛經｜醫砭】十七椎下＋關元（CV4）＋中極（CV3）＋氣衝（ST30）＋太衝（LR3）＋地機（SP8）＋血海（SP10）＋次髎（BL32）。【慢性腰痛｜AD】十七椎下＋關元俞（BL26）＋胞肓（BL53）＋委中（BL40）；另列十七椎下＋華佗夾脊（EX-B2）治下肢癱瘓，以及十七椎下＋秩邊（BL54）＋關元俞（BL26）治腰骶痛。【腰痛｜本地課件】局部可取腰陽關（DU3）、關元俞（BL26）、十七椎、上髎（BL31）、次髎（BL32）、環跳（GB30），並依證選陽陵泉（GB34）、懸鐘（GB39）、足臨泣（GB41）、委中（BL40）、承山（BL57）、飛揚（BL58）、崑崙（BL60）、申脈（BL62）等遠端穴。【產後腹痛｜醫砭】十七椎＋中極（CV3）＋關元（CV4）＋三陰交（SP6）＋中髎（BL33）＋天樞（ST25）＋歸來（ST29）。",
+    "combinePointsEn": "For dysmenorrhea, retain the legacy Shiqizhui + Ciliao (BL32) + Sanyinjiao (SP6) combination, while noting that the exact pages do not present this exact trio as a standalone formula. AD lists Shiqizhuixia + Zhongji (CV3) + Sanyinjiao (SP6) + Taixi (KI3). Yibian lists Shiqizhuixia + Guanyuan (CV4) + Zhongji (CV3) + Qichong (ST30) + Taichong (LR3) + Diji (SP8) + Xuehai (SP10) + Ciliao (BL32). For chronic lumbar pain, AD lists Shiqizhuixia + Guanyuanshu (BL26) + Baohuang (BL53) + Weizhong (BL40); it separately lists Shiqizhuixia + Huatuojiaji (EX-B2) for lower-limb paralysis and Shiqizhuixia + Zhibian (BL54) + Guanyuanshu (BL26) for lumbosacral pain. The local curriculum's lumbar-pain set includes Yaoyangguan (DU3), Guanyuanshu (BL26), Shiqizhui, Shangliao (BL31), Ciliao (BL32), and Huantiao (GB30), with distal points selected from GB34, GB39, GB41, BL40, BL57, BL58, BL60, and BL62. For postpartum abdominal pain, Yibian lists Shiqizhui + CV3 + CV4 + SP6 + BL33 + ST25 + ST29.",
+    "clinical_pearls": "Board 將本穴列為 Shiqizhuixue／Shiqizhuixia；eLotus 主名十七椎下、備註亦稱十七椎，AD 用 M-BW-25，醫砭以十七椎為主名並列十七椎下、腰孔、上仙。共同定位是 L5棘突下後正中線。共同核心為腰腿痛、月經失調／痛經與補腎止痛；AD 另補利尿、痔／肛門病及癱瘓相關條目。本地課件只在腰痛局部壓痛點組合中使用本穴，沒有獨立刺法或安全數字。最重要的臨床界線是：AD 的椎管深度警示與深刺版本互相重疊，不能把來源集合當成安全範圍。",
+    "clinical_pearls_en": "The Board lists Shiqizhuixue/Shiqizhuixia. eLotus uses Shiqizhuixia and remarks that it is also called Shiqizhui; AD uses M-BW-25; Yibian uses Shiqizhui with aliases Shiqizhuixia, Yaokong, and Shangxian. All agree on the posterior midline below L5. The shared core covers lumbar/leg pain, menstrual disturbance/dysmenorrhea, Kidney tonification, and pain relief; AD additionally records urination, hemorrhoid/anal, and paralysis-related items. The local curriculum uses it only among tender local points for low-back pain and gives no standalone technique or safety number. The critical clinical boundary is that AD's canal-depth warning overlaps the deeper needling variant, so the union of source ranges is not a safe operating range.",
+    "nameIntroZh": "『十七椎』以第一胸椎起算椎骨序數，第十七椎相當於第五腰椎；穴在其棘突下，故又名十七椎下。Board 的 Shiqizhuixue／Shiqizhuixia、eLotus 的 Shiqizhuixia 與資料庫 Shiqizhui 指向同一定位。",
+    "nameIntroEn": "When vertebrae are counted from T1, the seventeenth vertebra corresponds to L5; the point lies below its spinous process, hence the alias Shiqizhuixia. The Board's Shiqizhuixue/Shiqizhuixia, eLotus's Shiqizhuixia, and the database's Shiqizhui refer to the same location.",
+    "evidence": "四層整合：NCBAHM Appendix A 明列 Shiqizhuixue／Shiqizhuixia；本地 competency checklist 列名，另有課件把本穴列為腰痛的局部壓痛點，但未提供獨立安全數字。eLotus Ex-B8 精確頁已開啟；American Dragon 拼音索引已核對，M-BW-25 精確頁內容由其精確 URL 的索引結果讀取，直接開頁遇驗證中介頁；醫砭精確頁已開啟。常規層採 eLotus／AD 共同的0.8～1.2寸，1.5～2寸僅保留為與 AD 椎管深度警示重疊的衝突。來源沉默不代表孕期、兒童或高風險患者安全。\nFour-layer synthesis: NCBAHM Appendix A names Shiqizhuixue/Shiqizhuixia; the local competency checklist names it, and local course notes use it among tender local points for low-back pain but provide no standalone safety number. The exact eLotus Ex-B8 page was opened. The American Dragon pinyin index was checked; content for its exact M-BW-25 URL was read from the precisely indexed result, while direct opening encountered a verification interstitial. The exact Yibian page was opened. The general layer uses the shared eLotus/AD 0.8-1.2-cun range; 1.5-2 cun remains only as a conflict overlapping AD's canal-depth warning. Source silence is not pregnancy, pediatric, or high-risk clearance.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhui-ex-b8"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8",
+      "https://www.americandragon.com/Points/Shiqizhuixia.html",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://yibian.hopto.org/cn/db/?ano=407",
+      "https://www.aans.org/patients/conditions-treatments/cauda-equina-syndrome/"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 十七椎 EX-B8 (eLotus CORE)",
-        "labelEn": "Extra Point · Shiqizhui EX-B8 (eLotus CORE)",
-        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhui-ex-b8",
+        "labelZh": "eLotus · 十七椎下 Ex-B8 精確頁",
+        "labelEn": "eLotus · Exact Shiqizhuixia Ex-B8 Page",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 十七椎下 M-BW-25 精確頁",
+        "labelEn": "American Dragon · Exact Shiqizhuixia M-BW-25 Page",
+        "url": "https://www.americandragon.com/Points/Shiqizhuixia.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "醫砭 · 十七椎 EX-B8 解剖與操作",
+        "labelEn": "Yibian · Shiqizhui EX-B8 Anatomy and Technique",
+        "url": "https://yibian.hopto.org/cn/db/?ano=407",
+        "source": "Yibian supplemental Chinese point reference"
       }
     ],
     "x": 180,
     "y": 285,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun; moxibustion applicable.",
-    "cautions": "腰骶部針刺注意神經感覺。",
-    "cautionsEn": "Monitor nerve sensation in sacral area.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Baichongwo and Shiqizhuixue/Shiqizhuixia listed among named extra-point priorities"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Competency+checklist+-+Acupuncture.md: Shi Qi Zhui Xia listed in the extra-point competency checklist",
+        "curriculum/acupoints/Techniques 3 points.md and curriculum/acupoints/7 URINARY BLADDER CHANNEL FOOT TAI YANG ...md: Shi Qi Zhui identified as a tender local point between L5 and S1 in a low-back-pain point set",
+        "source-gap note: local course material supplies no standalone action, numeric needling, moxa, anatomy, pregnancy, pediatric, or high-risk protocol"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Shiqizhuixia present in the pinyin index on 2026-08-08",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8 and https://www.americandragon.com/Points/Shiqizhuixia.html: posterior midline depression below L5 spinous process",
+        "https://yibian.hopto.org/cn/db/?ano=407: posterior midline below L5 spinous process",
+        "local curriculum describes the same landmark as between L5 and S1"
+      ],
+      "anatomy": [
+        "https://yibian.hopto.org/cn/db/?ano=407: thoracolumbar fascia, supraspinous/interspinous ligaments, posterior lumbar arterial branches, medial posterior lumbar nerve branches, interspinous subcutaneous nerve plexus",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: spinal canal stated as approximately 1.25-1.75 cun from skin and variable with body build",
+        "source-gap note: no exact page supplies a patient-specific skin-to-canal measurement, safe tissue endpoint, or imaging-based adjustment protocol"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8: perpendicular 0.8-1.2 cun",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: perpendicular 0.5-1 cun; straight 1.5-2 cun with local distention/numbness and possible electric leg sensation when deep; perpendicular 0.8-1.2 cun",
+        "https://yibian.hopto.org/cn/db/?ano=407: perpendicular 1.5-2 cun",
+        "safety conflict: the 1.5-2-cun variants overlap AD's stated 1.25-1.75-cun skin-to-spinal-canal depth and are not normalized into the executable range"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8 and https://www.americandragon.com/Points/Shiqizhuixia.html: moxibustion applicable",
+        "source-gap note: no cone count, duration, direct/indirect method, skin protection, thermal stopping rule, pregnancy, or pediatric protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8: tonifies Kidneys, activates Qi and Blood, alleviates pain",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: tonifies Kidneys, promotes urination, activates channel, alleviates pain, benefits back",
+        "legacy action retained and source-labeled: regulates menstruation and relieves pain"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8: lumbar/thigh pain, lower-extremity paralysis, irregular menstruation, dysmenorrhea",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: lumbar/leg pain, dysuria/difficult urination, fetal pressure on bladder, dysmenorrhea, post-polio sequelae, hemorrhoids, irregular menstruation, lumbosacral pain/stiffness, sciatica, functional uterine bleeding, anal disease, traumatic paraplegia, thigh pain",
+        "https://yibian.hopto.org/cn/db/?ano=407: lumbosacral/leg pain, dysmenorrhea, flooding/spotting, enuresis",
+        "legacy enuresis and flooding/spotting confirmed by Yibian rather than removed"
+      ],
+      "combinations": [
+        "legacy retained: Shiqizhui + BL32 + SP6 for dysmenorrhea; exact pages do not present this exact trio as a standalone formula",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: BL26+BL53+BL40 for chronic lumbar pain; EX-B2 for lower-limb paralysis; BL54+BL26 for lumbosacral pain; CV3+SP6+KI3 for dysmenorrhea",
+        "https://yibian.hopto.org/cn/db/?ano=407: CV4+CV3+ST30+LR3+SP8+SP10+BL32 for dysmenorrhea; CV3+CV4+SP6+BL33+ST25+ST29 for postpartum abdominal pain",
+        "local curriculum: DU3, BL26, Shiqizhui, BL31, BL32, and GB30 as local/tender low-back points, with GB34, GB39, GB41, BL40, BL57, BL58, BL60, and BL62 as listed distal options"
+      ],
+      "cautions": [
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: page-specific spinal-canal depth warning and body-build variability; its contraindications section is blank",
+        "https://www.aans.org/patients/conditions-treatments/cauda-equina-syndrome/: urinary retention/incontinence, fecal incontinence, saddle anesthesia, and lower-extremity weakness/paralysis are red flags requiring immediate medical evaluation",
+        "source-gap note: no point-specific pregnancy, pediatric, anticoagulation, coagulopathy, prior-spine-surgery, infection, tumor, major-trauma, needle-length, or moxa protocol",
+        "source silence and an indication record must not be interpreted as procedural safety clearance"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-B8 / ex.b8 / 十七椎 / Shiqizhui",
+        "NCBAHM Appendix A: Shiqizhuixue/Shiqizhuixia",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shiqizhuixia-ex-b8: Ex-B8, Shiqizhuixia, also known as Shiqizhui, Below the 17th Vertebra",
+        "https://www.americandragon.com/Points/Shiqizhuixia.html: M-BW-25, Shiqizhuixia, Below the Seventeenth Vertebra",
+        "https://yibian.hopto.org/cn/db/?ano=407: EX-B8 十七椎; aliases 十七椎下、腰孔、上仙"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Shiqizhuixia Ex-B8 page; obsolete /shiqizhui-ex-b8 URL removed",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; Shiqizhuixia entry present",
+        "2026-08-08 American Dragon exact URL precisely indexed and content read; direct detail-page open returned a verification interstitial, explicitly disclosed",
+        "2026-08-08 live page opened: Yibian exact Shiqizhui EX-B8 page",
+        "2026-08-08 live page opened: AANS cauda-equina red-flag guidance"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "一般層採直刺0.8～1.2寸。AD另列0.5～1寸；AD與醫砭的1.5～2寸因與AD所列椎管深度1.25～1.75寸重疊，只保留為來源衝突，不作常規深刺範圍。",
+    "needlingEn": "The general layer uses perpendicular 0.8-1.2 cun. AD also lists 0.5-1 cun. The AD/Yibian 1.5-2-cun variants overlap AD's stated 1.25-1.75-cun spinal-canal depth and are retained only as a source conflict, not as a routine deep-insertion range.",
     "id": "ex.b8"
   },
   {
