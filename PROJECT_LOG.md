@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-CA4 胃上來源變體嚴格修整
+
+- **做了什麼**：從 American Dragon 拼音索引核對 Weishang／Weishangxue，再整合 Board、課件與 eLotus 精確頁；保留穩定 `EX-CA4`／`ex.ca4`，分開記錄 eLotus Ex-CA7 與 AD 相關條目 Weishangxue N-CA-18。
+- **數字 before→after**：嚴格模板／四源稽核 `25/72 → 26/72`；待修 `47/72 → 46/72`；泛用 CloudTCM URL `17/72 → 16/72`；可測量技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 旁開4寸；AD 主說4寸、另說2.5寸；舊卡3寸未核實。兩個精確內容頁共同支持朝臍中／ST25皮下或橫刺2～3寸；原卡向下斜刺1～1.5寸及批次加入的直刺0.3～0.8寸／點刺出血不再列為可執行技法。eLotus 艾灸10～15分鐘仍缺熱安全細節。
+- **驗證**：胃上單卡與全72卡 validator、`build-data`、`validate-data`、`validate-interactions`、`validate-point-ids`、`validate-content-junk`、`validate-content-quality`、`node --check app.js`、`git diff --check` 均通過；內容 commit `4f566bd`。
+- **已知未解／下一步**：AD 索引的 Weishang 連結本輪無法開啟；可讀的是另列 Weishangxue 頁。46 張仍在 worklist、16 張仍有泛用連結；下一張為 EX-CA5 利尿。未追蹤的 `curriculum/conditions/*` 壓縮檔未觸碰。
+
 # 2026-08-08 Codex — EX-CA3 三角灸嚴格四源修整
 
 - **做了什麼**：依 Board Outline、`curriculum/acupoints/`、eLotus、American Dragon 拼音索引及補充 CloudTCM 精確頁，逐欄修整 EX-CA3 三角灸；保留穩定 `EX-CA3`／`ex.ca3`，並明列 eLotus 使用 Ex-CA6。

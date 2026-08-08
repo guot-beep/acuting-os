@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-CA4 胃上來源變體嚴格修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `4f566bd` (`feat(acupoints): reconcile Weishang source variants`).
+- **Files Changed**: `data/acupoints/extra_points.json`, `data/audits/missing_report.json`, and rebuilt `data/generated/app_data.js` / `data/generated/knowledge_data.js`. The untracked `curriculum/conditions/Acuting_OS_Pattern_V2_CODEX_Handoff_Batch02-10_2026-08-08.zip` was not touched or staged.
+- **Scope / Exact Sources**:
+  - NCBAHM 2026 ACPL Appendix A does not list Weishang. `curriculum/acupoints/` has no dedicated entry after 胃上／Weishang／EX-CA4／Ex-CA7／提垂穴／Weishangxue searches; the sole 胃上 text hit describes channel trajectory, not this point.
+  - eLotus exact page: `https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7` (Weishang Ex-CA7; 2 cun superior and 4 cun lateral to the umbilicus; subcutaneous 2–3 cun toward umbilicus or ST25; moxa 10–15 minutes; actions, applications, and 提垂穴 alias).
+  - American Dragon pinyin index separately lists Weishang and Weishangxue. The Weishang index link did not open in the available fetch environment. The exact readable related page is `https://www.americandragon.com/Points/Weishangxue.html` (N-CA-18; main 4-cun and alternate 2.5-cun lateral locations; transverse 2–3 cun toward umbilicus or ST25; gastroptosis, abdominal distention, sensation, and combinations).
+  - CloudTCM exact-name searches found no dedicated Weishang page; the generic directory link was removed.
+- **Reconciliation / Safety**:
+  - Preserved immutable database `EX-CA4` / `ex.ca4`; separated it from eLotus Ex-CA7 and the related AD Weishangxue N-CA-18 rather than relabeling ids or declaring the codes identical.
+  - Preserved location discrepancies: eLotus 4 cun lateral; AD main 4 cun and alternate 2.5 cun; legacy 3 cun unverified. No averaging or synthetic consensus.
+  - Executable needling now follows the exact-page agreement: subcutaneous/transverse 2–3 cun toward the umbilicus or ST25. This is along-wall needle travel, not perpendicular depth. Legacy downward-oblique 1.0–1.5 cun and bulk-added perpendicular 0.3–0.8 cun/bloodletting are retained only as unsupported history.
+  - Added source-specific moxa, actions, indications, combinations, bilingual tags, aliases, identity, exam layer, and field provenance. Added missing abdominal-layer/body-habitus/stopping-rule, thermal-safety, pregnancy-source, and AD-identity boundaries without inventing protocols.
+- **Measured Counts**: strict-template/four-source-audited `25/72 → 26/72`; records with issues `47/72 → 46/72`; generic CloudTCM URL `17/72 → 16/72`; measurable-method/source-URL/mojibake gaps remain `0/72`.
+- **Validation**: targeted and all-record extra-point validators, `build-data`, `validate-data`, `validate-interactions`, `validate-point-ids`, `validate-content-junk`, `validate-content-quality`, `node --check app.js`, and `git diff --check` passed.
+- **Next**: EX-CA5 利尿 (Liniao). Use the AD pinyin index first, open exact detail pages, and keep any bladder-region depth, direction, pregnancy, or moxa values source-specific.
+
 ## [2026-08-08] Codex Handoff — EX-CA3 三角灸嚴格四源修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `cec0657` (`feat(acupoints): curate Sanjiaojiu source gaps`).
