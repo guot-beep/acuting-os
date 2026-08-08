@@ -6064,48 +6064,230 @@
   {
     "code": "EX-B3",
     "display_code": "EX-B3",
-    "nameZh": "胃管下俞（胰俞）",
+    "nameZh": "胃脘下俞（胰俞）",
     "nameEn": "Weiwanxiashu",
     "pinyin": "Weiwanxiashu",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
-    "location": "背部，第8胸椎棘突下，旁開1.5寸。",
-    "locationEn": "On the back, 1.5 cun lateral to lower border of T8.",
-    "techniqueNotes": "斜刺0.5~0.8寸。可灸。\nOblique 0.5-0.8 cun. Moxa applicable.",
-    "functions": "健脾和胃，生津止渴，清胰利膽",
-    "functionsEn": "Strengthens spleen; Generates fluids; Benefits pancreas",
+    "location": "背部，第8胸椎（T8）棘突下緣水平，後正中線旁開1.5寸，左右各一穴。American Dragon 補充可取豎脊肌肉眼可見最高處作旁開定位參考；此觸診提示不能取代 T8 棘突與1.5寸量取。",
+    "locationEn": "On the back, bilateral, 1.5 cun lateral to the posterior midline at the level of the lower border of the T8 spinous process. American Dragon adds the visible highest point of the paraspinal muscle as a locating reference; this palpatory cue does not replace identifying T8 and measuring 1.5 cun.",
+    "cunMeasurement": "先定位 T8 棘突下緣水平，再自後正中線量取1.5寸，左右成對。國家標準／研究文獻使用胃脘下俞 EX-B3；eLotus 頁面顯示胃管下俞 Ex-B3；AD 以胰俞 Yishu、M-BW-12 收錄，均屬命名／代碼來源差異，不改動本庫永久 `EX-B3`。",
+    "anatomyZh": "2014年專穴綜述記載局部由淺入深為皮膚、皮下組織、斜方肌、背闊肌、豎脊肌；淺層有 T8 脊神經後支皮支及伴行血管，深層有 T8 後支肌支與第8肋間後動靜脈的背側分支／後支。該文引用屍體研究，左右側與性別的危險點深度不同，並列另一研究的平均安全深度21.54 mm、危險深度30.77 mm。這些是固定屍體／文獻數據，不是對每位患者的通用進針處方；胸膜與肺仍是本穴最重要深部風險。",
+    "anatomyEn": "A 2014 point-specific review describes the local layers as skin, subcutaneous tissue, trapezius, latissimus dorsi, and erector spinae. Superficially it reports the cutaneous branch of the T8 posterior ramus with accompanying vessels; deeper structures include the muscular branch of the T8 posterior ramus and dorsal/posterior branches of the eighth posterior intercostal vessels. The review cites cadaver data showing side- and sex-related differences in dangerous depth and a separate study reporting mean safe and dangerous depths of 21.54 mm and 30.77 mm. These fixed-cadaver/literature measurements are not universal patient prescriptions; pleura and lung remain the principal deep risks.",
+    "techniqueNotes": "eLotus：斜刺0.5～0.7寸，未註明方向，可灸。American Dragon：向脊柱斜刺0.5～1寸；另列橫向斜刺1～1.5寸，並明確警告直刺或向外斜刺有顯著氣胸風險。2020糖尿病周邊神經病變試驗方案依 WHO 定位，採向內斜刺0.5～0.8寸；這是研究方案，不是療效證明。2014專穴綜述建議向脊柱45°～60°斜刺1～1.5寸；若直刺則不超過20 mm，但此點與 AD『直刺有顯著風險』衝突。本卡一般可執行層採共同較保守的向脊柱斜刺0.5～0.7寸；其餘分列為來源變體。舊卡『直刺0.5～1寸』缺具名來源且與 AD 警示衝突，僅留作已校正歷史值。\neLotus: oblique 0.5-0.7 cun, direction unspecified; moxibustion applicable. American Dragon: oblique toward the spine 0.5-1 cun and a separate transverse-oblique 1-1.5-cun method, with explicit warning that perpendicular or outward-oblique insertion carries substantial pneumothorax risk. A 2020 diabetic peripheral-neuropathy trial protocol used WHO location and medial-oblique 0.5-0.8 cun; it is a study protocol, not efficacy proof. A 2014 point-specific review recommends 45-60° medial-oblique insertion 1-1.5 cun and limits perpendicular insertion to 20 mm, which conflicts with AD's warning against perpendicular needling. The general executable layer therefore uses the shared, more conservative medial-oblique 0.5-0.7 cun; other values remain source-specific variants. The legacy perpendicular 0.5-1-cun instruction lacks a named source and conflicts with AD, so it is retained only as corrected history.",
+    "acumethodZh": "一般層：針尖向脊柱斜刺0.5～0.7寸。eLotus 未寫方向，故『向脊柱』來自 AD 與研究安全層；不能把 AD 的1寸上限或橫向斜刺1～1.5寸無條件併入 eLotus。2014文獻的45°～60°、1～1.5寸與直刺不超過20 mm屬文獻建議，且與 AD 直刺警告有衝突，臨床不可忽略個體胸壁厚度。",
+    "acumethodEn": "General layer: oblique insertion toward the spine, 0.5-0.7 cun. eLotus does not specify direction, so 'toward the spine' comes from AD and the supplemental safety literature. AD's 1-cun upper value or transverse-oblique 1-1.5-cun method cannot be silently merged into eLotus. The 2014 literature recommendation of 45-60° medial-oblique 1-1.5 cun and perpendicular no more than 20 mm is source-specific and conflicts with AD's perpendicular warning; individual thoracic-wall thickness cannot be ignored.",
+    "moxaZh": "eLotus 只寫可灸，未給灸法或劑量。AD 配穴表的原始 HTML 第一欄寫『第8胸椎棘突下之穴（100壯）』，但沒有旁開1.5寸、穴名或代碼，不能確認就是胰俞本穴；2014綜述引述古籍亦見100壯歷史灸法。兩者都缺現代艾灸種類、皮膚保護、分次、熱傷害停止規則與特殊族群條文，故不把100壯轉成現代可執行劑量。",
+    "moxaEn": "eLotus only says moxibustion is applicable and gives no method or dose. In AD's raw combination-table HTML, the first column says 'the point found inferior to the spinous process of the eighth thoracic vertebra (100 moxa cones)' but supplies no 1.5-cun lateral distance, point name, or code, so it cannot be confirmed as Yishu itself. The 2014 review also quotes a historical 100-cone method. Neither source supplies a modern moxa type, skin protection, fractionation, thermal-injury stopping rule, or special-population protocol; 100 cones is not converted into an executable contemporary dose.",
+    "functions": "清熱生津；健脾和胃；和胃化痰；理氣止痛；疏肝利膽",
+    "functionsEn": "Clears Heat and generates fluids; Strengthens the Spleen and harmonizes the Stomach; Harmonizes the Stomach and transforms phlegm; Regulates Qi and relieves pain; Soothes the Liver and benefits the Gallbladder",
+    "functionsZhList": [
+      "清熱生津（eLotus 與 AD 明列）",
+      "健脾和胃（2014專穴綜述引述現代穴位文獻；保留舊卡核心）",
+      "和胃化痰（2014專穴綜述引述標準化方案）",
+      "理氣止痛（2014專穴綜述引述標準化方案）",
+      "疏肝利膽（2014專穴綜述引述實用穴位文獻；舊卡『清胰利膽』中的『清胰』不是兩個精確頁的標準功效，僅保留於來源說明）"
+    ],
+    "functionsEnList": [
+      "Clears Heat and generates fluids (explicit in eLotus and AD)",
+      "Strengthens the Spleen and harmonizes the Stomach (reported by the 2014 point review from modern point literature; preserves the legacy core)",
+      "Harmonizes the Stomach and transforms phlegm (reported by the 2014 review from a nomenclature-standardization source)",
+      "Regulates Qi and relieves pain (reported by the 2014 review from a nomenclature-standardization source)",
+      "Soothes the Liver and benefits the Gallbladder (reported by the 2014 review from practical point literature; legacy 'clears the pancreas' is not a standardized action on either exact page and remains only in provenance notes)"
+    ],
+    "pointIdentityZh": [
+      "第8胸椎棘突下旁開1.5寸、左右成對的胸背部經外奇穴",
+      "未列入 NCBAHM 2026 ACPL Appendix A 具名優先清單",
+      "國家標準／本庫使用胃脘下俞 EX-B3；eLotus 使用胃管下俞 Ex-B3",
+      "American Dragon 以胰俞 Yishu、M-BW-12 收錄，另列 Weiguanxiashu／Stomach Controller Lower Shu"
+    ],
+    "pointIdentityEn": [
+      "Bilateral thoracic extra point 1.5 cun lateral to the lower border of the T8 spinous process",
+      "Not named in the NCBAHM 2026 ACPL Appendix A priority list",
+      "The national-standard literature/database use Weiwanxiashu EX-B3; eLotus displays Weiguanxiashu/Weiwanxiashu Ex-B3",
+      "American Dragon files it as Yishu (Pancreas Hollow), M-BW-12, with Weiguanxiashu/Stomach Controller Lower Shu as aliases"
+    ],
+    "exam_star": 0,
+    "exam_importance": "本穴未列 NCBAHM Appendix A 具名清單。學習核心：T8 棘突下旁開1.5寸、EX-B3；清熱生津，主消渴／咽乾及胃脘、胸脅疼痛與嘔吐；胸段必須向脊柱斜刺並防氣胸。",
+    "exam_importance_en": "This point is not named in NCBAHM Appendix A. Study core: EX-B3, 1.5 cun lateral to the lower border of T8; clears Heat and generates fluids for wasting-thirst/dry throat plus epigastric, chest/hypochondriac pain and vomiting; thoracic insertion is directed medially with pneumothorax precautions.",
+    "exam_pearl": "『胃脘下俞』先記 T8、旁開1.5寸、消渴；AD 要用別名 Yishu 才能找到。不要把胰俞的經驗主治寫成『可取代糖尿病治療』，也不要把歷史100壯當現代標準灸量。",
+    "exam_pearl_en": "For Weiwanxiashu, remember T8, 1.5 cun lateral, and wasting-thirst. American Dragon is found under the alias Yishu. Do not turn its empirical diabetes indication into a replacement for diabetes care, or a historical 100-cone statement into a modern standard dose.",
     "patterns": [
       "糖尿病（消渴）",
       "胰腺炎",
       "胃痛",
-      "嘔吐"
+      "嘔吐",
+      "咽喉乾燥",
+      "腹痛",
+      "胸痛／脅痛",
+      "肋間神經痛",
+      "消化不良"
     ],
     "patternsEn": [
-      "Diabetes",
+      "Diabetes / wasting-thirst disorder",
       "Pancreatitis",
-      "Gastric pain",
+      "Epigastric pain",
+      "Vomiting",
+      "Dry throat",
+      "Abdominal pain",
+      "Chest or hypochondriac pain",
+      "Intercostal neuralgia",
+      "Indigestion"
+    ],
+    "action_tags_zh": [
+      "清熱生津",
+      "健脾和胃",
+      "理氣止痛",
+      "疏肝利膽"
+    ],
+    "action_tags_en": [
+      "Clear Heat and Generate Fluids",
+      "Strengthen the Spleen and Harmonize the Stomach",
+      "Regulate Qi and Relieve Pain",
+      "Soothe the Liver and Benefit the Gallbladder"
+    ],
+    "disease_tags_zh": [
+      "消渴",
+      "咽乾",
+      "胃脘痛",
+      "胸脅痛",
+      "嘔吐"
+    ],
+    "disease_tags_en": [
+      "Wasting-Thirst Disorder",
+      "Dry Throat",
+      "Epigastric Pain",
+      "Chest or Hypochondriac Pain",
       "Vomiting"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "cautions": "【胸膜／肺風險】AD 明確警告直刺或向外斜刺有顯著氣胸風險；一般層只保留向脊柱斜刺。2014綜述亦稱向外斜刺易致氣胸、血氣胸。【來源衝突】AD 反對直刺；2014綜述則列直刺不超過20 mm。因兩者不一致，不能把20 mm當作普遍安全許可，舊卡直刺0.5～1寸已退出可執行層。【屍體數據界限】2014綜述所引21.54 mm平均安全深度、30.77 mm危險深度及左右／性別差異，來自屍體或文獻研究；實際胸壁厚度仍受體型、年齡、姿勢與個體解剖影響，不能按平均值進針。【警訊】胸段針刺後若有胸痛、呼吸困難、乾咳、呼吸急促、發紺、頭暈或延遲出現症狀，須立即作胸膜／肺損傷評估。【糖尿病界限】消渴／糖尿病是傳統與經驗主治；2020資料是試驗方案而非結果，2014綜述包含動物與異質研究，均不能支持停藥、取代血糖監測或把本穴當單一治療。【艾灸】eLotus 僅稱可灸；AD 的100壯欄位未能確認為本穴，古籍100壯也缺現代熱安全條件，故不執行化。【特殊族群缺口】四源未提供孕期、兒童、抗凝／出血風險、嚴重肺病、極端體型、脊柱術後或感染的點特異方案；來源沉默不等於安全許可。",
+    "cautionsEn": [
+      "Pleural/lung risk: AD explicitly warns that perpendicular or outward-oblique insertion carries substantial pneumothorax risk; the general layer retains only medial-oblique insertion. The 2014 review likewise warns that outward oblique insertion may cause pneumothorax or hemopneumothorax.",
+      "Source conflict: AD advises against perpendicular insertion, whereas the 2014 review permits perpendicular insertion no deeper than 20 mm. Because these sources disagree, 20 mm is not treated as universal permission; the legacy perpendicular 0.5-1-cun instruction has been removed from the executable layer.",
+      "Cadaver-data limit: the 2014 review's cited mean safe depth of 21.54 mm, dangerous depth of 30.77 mm, and side/sex differences come from cadaveric or literature studies. Actual thoracic-wall thickness varies with body habitus, age, positioning, and individual anatomy; average values are not patient-specific insertion targets.",
+      "Warning signs: chest pain, dyspnea, dry cough, tachypnea, cyanosis, dizziness, or delayed symptoms after thoracic needling require urgent evaluation for pleural/lung injury.",
+      "Diabetes boundary: wasting-thirst/diabetes is a traditional empirical indication. The 2020 source is a trial protocol rather than outcomes, and the 2014 review includes animal and heterogeneous studies; neither justifies stopping medication, replacing glucose monitoring, or using this point as monotherapy.",
+      "Moxa: eLotus only says moxa is applicable. AD's 100-cone table entry cannot be confirmed as this point, while historical 100-cone wording lacks modern thermal safeguards; neither is operationalized.",
+      "Special-population gap: the four layers provide no point-specific protocol for pregnancy, children, anticoagulation/bleeding risk, severe lung disease, extreme body habitus, prior spinal surgery, or infection. Source silence is not permission."
+    ],
+    "acuTags": [
+      "胸背部",
+      "消渴",
+      "胸脅痛",
+      "氣胸風險"
+    ],
+    "combinePointsZh": "eLotus 精確頁未列配穴。AD 精確頁的配穴表原始 HTML 只有一欄：『第8胸椎棘突下之穴（100壯）』配消渴、咽乾，但沒有穴名、旁開距離或代碼；這可能指另一個正中穴或歷史灸法，不能冒充胃脘下俞的固定配穴或本穴灸量。AD 其他穴頁另有胰俞配伍，但不屬本穴精確頁資訊架構，本卡不擴充搬運。",
+    "combinePointsEn": "The eLotus exact page lists no combinations. In AD's raw combination-table HTML, the only populated column pairs 'the point found inferior to the spinous process of the eighth thoracic vertebra (100 moxa cones)' with wasting-thirst and dry throat, but provides no point name, lateral distance, or code. It may refer to a different midline point or a historical moxa method and cannot be represented as a fixed Weiwanxiashu combination or dose. Other AD point pages contain Yishu combinations, but they are outside this exact page's information architecture and are not imported here.",
+    "clinical_pearls": "兩個精確頁共同核心是 T8 棘突下旁開1.5寸、清熱生津、消渴與胃脘／胸脅症狀。AD 補入 Yishu／M-BW-12 身分、豎脊肌最高處觸診提示、向脊柱方向、肋間神經痛與氣胸警示；eLotus 提供 Ex-B3 與0.5～0.7寸。2014專穴綜述補入標準中文名胃脘下俞、胰俞等別名、局部層次、T8後支／肋間血管、功效擴充、古籍灸法與研究證據，但其降糖資料多為動物或文獻綜述，不升格成臨床療效保證。",
+    "clinical_pearls_en": "The stable core across the two exact pages is 1.5 cun lateral to the T8 spinous-process lower border, clearing Heat/generating fluids, and wasting-thirst plus epigastric/chest-hypochondriac symptoms. AD adds the Yishu/M-BW-12 identity, visible paraspinal-muscle locating cue, medial direction, intercostal neuralgia, and pneumothorax warning; eLotus supplies Ex-B3 and 0.5-0.7 cun. The 2014 point review adds the standardized Chinese name, Yishu and other aliases, local layers, T8 posterior-ramus/intercostal vessels, expanded actions, historical moxa, and research context. Much of its glucose evidence is animal or review-level and is not upgraded into a clinical efficacy guarantee.",
+    "nameIntroZh": "本卡主名校正為國家標準／研究文獻所用『胃脘下俞』；『胃管下俞』保留為 eLotus 顯示與古籍『胃管下輸』相關異寫。常見別名胰俞（Yishu／Pancreas Hollow），另見聶俞、膵俞、內胰俞、胃下俞；不將這些別名建立成新穴位記錄。",
+    "nameIntroEn": "The primary Chinese name is corrected to 胃脘下俞, as used by national-standard literature. 胃管下俞 is retained as the eLotus display/historical orthographic form related to 胃管下輸. The common alias is Yishu (胰俞, Pancreas Hollow); Nie Shu, Shuishu, Neiyishu, and Weixiashu are additional literature aliases and are not created as separate points.",
+    "evidence": "四層查核：NCBAHM 2026 ACPL Appendix A 未列 Weiwanxiashu；curriculum/acupoints 以中英文名、代碼與別名搜尋無專條。eLotus Ex-B3 精確頁提供胃管下俞顯示名、T8旁開1.5寸、清熱生津、消渴／嘔吐／腹痛／胸脅痛、斜刺0.5～0.7寸與可灸。AD 拼音索引需以 Yishu 找到 M-BW-12 精確頁，提供胰俞別名、定位觸診提示、向脊柱0.5～1寸及橫向斜刺1～1.5寸、氣胸警告、清熱生津、主治與含糊的100壯表格；禁忌欄空白不視為安全證明。補充專穴層採2014《胃脘下俞穴的古今研究》與2020糖尿病周邊神經病變試驗方案；研究方案不等於結果。CloudTCM 未找到可核讀專頁。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3",
+      "https://www.americandragon.com/Points/Yishu.html",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7586683/"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 胰俞 EX-B3 (eLotus CORE)",
-        "labelEn": "Extra Point · Weiwanxiashu EX-B3 (eLotus CORE)",
+        "labelZh": "eLotus · 胃管下俞 Ex-B3 精確頁",
+        "labelEn": "eLotus · Exact Weiwanxiashu Ex-B3 Page",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 胰俞 Yishu M-BW-12 精確頁",
+        "labelEn": "American Dragon · Exact Yishu M-BW-12 Page",
+        "url": "https://www.americandragon.com/Points/Yishu.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "上海針灸雜誌 · 胃脘下俞穴的古今研究",
+        "labelEn": "Shanghai Journal of Acupuncture and Moxibustion · Ancient and Modern Studies on Weiwanxiashu",
+        "url": "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf",
+        "source": "Shanghai Journal of Acupuncture and Moxibustion (2014); PDF text readable, screenshot cache-missed in this review"
       }
     ],
     "x": 183,
     "y": 245,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun; moxibustion applicable.",
-    "cautions": "注意艾灸溫熱，防止燙傷。",
-    "cautionsEn": "Control moxa temperature; prevent burns.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Weiwanxiashu/Yishu not named in the priority list"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated entry found in curriculum/acupoints by 胃脘下俞, 胃管下俞, 胰俞, Weiwanxiashu, Yishu, EX-B3, Ex-B3, or M-BW-12 search on 2026-08-08"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Yishu present in the pinyin index and linked to the exact page on 2026-08-08",
+        "https://www.americandragon.com/Points/Yishu.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3: 1.5 cun lateral to lower border of T8 spinous process",
+        "https://www.americandragon.com/Points/Yishu.html: 1.5 cun lateral to T8 spinous process; visible highest point of paraspinal muscles as locating note",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: national-standard EX-B3 location at T8, 1.5 cun bilateral"
+      ],
+      "anatomy": [
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf pp.1163-1164: skin, subcutaneous tissue, trapezius, latissimus dorsi, erector spinae; T8 posterior-ramus branches and eighth posterior intercostal vascular branches; cadaver dangerous-depth data and side/sex variation",
+        "source boundary: cited cadaver mean depths are not universal patient-specific insertion targets"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3: oblique 0.5-0.7 cun; direction not stated",
+        "https://www.americandragon.com/Points/Yishu.html: toward-spine oblique 0.5-1 cun; transverse oblique 1-1.5 cun; perpendicular or outward-oblique pneumothorax warning",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7586683/: WHO-located trial protocol used medial-oblique 0.5-0.8 cun; protocol only, not outcomes",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: review recommendation medial-oblique 45-60 degrees, 1-1.5 cun; perpendicular no more than 20 mm; conflict with AD retained",
+        "unverified legacy value retained outside executable layer: perpendicular 0.5-1 cun"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3: moxibustion applicable, no method or dose",
+        "https://www.americandragon.com/Points/Yishu.html raw HTML: ambiguous separate table label 'point inferior to T8 spinous process (100 moxa cones)' without Yishu name, lateral distance, or code",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: historical 100-cone quotations, no contemporary thermal-safety protocol",
+        "source-gap note: no verified modern cone/minute dose, skin protection, fractionation, stopping rule, or special-population protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3 and https://www.americandragon.com/Points/Yishu.html: clears Heat and generates fluids",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: harmonizes Stomach/transforms phlegm, regulates Qi/relieves pain, strengthens Spleen/harmonizes Stomach, soothes Liver/benefits Gallbladder",
+        "legacy 'clears/benefits pancreas' retained as non-standardized provenance rather than promoted to exact-page action"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3: diabetes, vomiting, abdominal pain, chest pain, hypochondriac pain",
+        "https://www.americandragon.com/Points/Yishu.html: diabetes/wasting-thirst, Stomach diseases, dry throat, epigastric pain, intercostal neuralgia, chest/lateral-region pain, vomiting",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: pancreatitis, cough, indigestion, hepatitis, cholecystitis, hiccup and other literature-reported indications"
+      ],
+      "combinations": [
+        "source-gap note: no combinations listed on the eLotus exact page",
+        "https://www.americandragon.com/Points/Yishu.html raw HTML: one ambiguous unnamed point inferior to T8 with 100 cones for wasting-thirst/dry throat; not represented as a verified Yishu combination or dose"
+      ],
+      "cautions": [
+        "https://www.americandragon.com/Points/Yishu.html: substantial pneumothorax risk with perpendicular or outward-oblique insertion",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: outward direction may injure lung and cause pneumothorax/hemopneumothorax; cadaver-depth and body-habitus cautions",
+        "evidence boundary: diabetes protocol/review does not justify replacing medication, glucose monitoring, or standard care",
+        "source-gap note: no point-specific pregnancy, pediatric, anticoagulation, severe-lung-disease, prior-spine-surgery, infection, or thermal stopping protocol",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable code: EX-B3; standardized primary Chinese name corrected to 胃脘下俞; alias 胰俞 retained",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weiwanxiashu-ex-b3: Ex-B3, displayed 胃管下俞, alias Weiwangxiashu",
+        "https://www.americandragon.com/Points/Yishu.html: M-BW-12 Yishu, Pancreas Hollow, Stomach Controller Lower Shu, Weiguanxiashu",
+        "https://www.acumoxj.com/uploads/20210908/66524076f5c29dfa2f8f433a0fdfb906.pdf: 胃脘下俞 EX-B3; aliases 胰俞, 聶俞, 膵俞, 內胰俞, 胃下俞 and historical variants"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Weiwanxiashu Ex-B3 page",
+        "2026-08-08 live page opened and raw combination-table HTML inspected: American Dragon exact Yishu M-BW-12 page",
+        "2026-08-08 live page opened: American Dragon pinyin index; Yishu entry present",
+        "2026-08-08 exact 2014 journal PDF text opened; screenshot attempt cache-missed in the available fetch environment",
+        "2026-08-08 PubMed Central trial-protocol exact indexed content was readable; direct open encountered reCAPTCHA",
+        "2026-08-08 CloudTCM exact-name searches found no readable dedicated Weiwanxiashu/Yishu page"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "一般層採針尖向脊柱斜刺0.5～0.7寸。AD 另列向脊柱0.5～1寸與橫向斜刺1～1.5寸；2020試驗方案為向內斜刺0.5～0.8寸；2014綜述另列向脊柱45°～60°斜刺1～1.5寸。直刺資料互相衝突且有氣胸風險，不列一般操作。",
+    "needlingEn": "The general layer uses medial-oblique insertion toward the spine, 0.5-0.7 cun. AD separately lists toward-spine 0.5-1 cun and transverse-oblique 1-1.5 cun; a 2020 trial protocol used medial-oblique 0.5-0.8 cun; a 2014 review separately recommends medial-oblique 45-60 degrees, 1-1.5 cun. Perpendicular statements conflict and carry pneumothorax risk, so they are excluded from general execution.",
     "id": "ex.b3"
   },
   {
