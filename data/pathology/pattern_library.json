@@ -1764,7 +1764,12 @@
         "LR2",
         "LR3",
         "GB20",
-        "GV20"
+        "GV20",
+        "LI4",
+        "LI11",
+        "ST44",
+        "ST36",
+        "SP6"
       ],
       "typical_formulas": [
         "formula.long_dan_xie_gan_tang"
@@ -1791,12 +1796,16 @@
       "supporting_signs_zh": [
         "面紅",
         "脅肋灼痛",
-        "便秘尿黃"
+        "便秘尿黃",
+        "頭痛如裂，項背緊繃",
+        "鼻衄"
       ],
       "supporting_signs_en": [
         "Flushed face",
         "Burning hypochondriac pain",
-        "Constipation and dark urine"
+        "Constipation and dark urine",
+        "Splitting headache with a tight neck/upper back",
+        "Epistaxis (in severe cases)"
       ],
       "tongue_en": "Red tongue with yellow coating",
       "pulse_en": "Wiry, rapid pulse",
@@ -1822,14 +1831,16 @@
       ],
       "sources": [
         "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
-        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+        "Bastyr_Therapeutics_5_Hypertension_Apichai_2025"
       ],
       "field_sources": {
         "key_signs": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ],
         "supporting_signs": [
-          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "Bastyr_Therapeutics_5_Hypertension_Apichai_2025 (via retired pattern.liver_fire_flaring import)"
         ],
         "tongue": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
@@ -1847,9 +1858,36 @@
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ],
         "points": [
-          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+          "Bastyr_Therapeutics_5_Hypertension_Apichai_2025 (via retired pattern.liver_fire_flaring import)"
         ]
-      }
+      },
+      "pinyin": "Gan Huo Shang Yan",
+      "pinyin_toned": "Gān Huǒ Shàng Yán",
+      "aliases_zh": [
+        "肝火亢盛",
+        "肝經實火"
+      ],
+      "aliases_en": [
+        "Liver Fire Excess",
+        "Flaring Liver Fire"
+      ],
+      "related_tcm_disease_ids": [
+        "tdis.xuan_yun",
+        "tdis.tou_tong"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.hypertension",
+        "cond.migraine"
+      ],
+      "tag_ids": [
+        "肝火上炎",
+        "清肝瀉火",
+        "龍膽瀉肝湯",
+        "眩暈",
+        "頭痛"
+      ],
+      "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點（來自已退役 pattern.liver_fire_flaring，高血壓/眩暈頭痛專題匯入）：代表方龍膽瀉肝湯。主穴：LR2 行間、LI4 合谷、LI11 曲池、GB20 風池、GV20 百會、ST44 內庭。"
     },
     {
       "id": "pattern.liver_yang_rising",
@@ -1985,7 +2023,8 @@
         "GV20",
         "LR3",
         "LR14",
-        "GB34"
+        "GB34",
+        "PC7"
       ],
       "typical_formulas": [
         "formula.zhen_gan_xi_feng_tang"
@@ -2011,11 +2050,17 @@
       ],
       "supporting_signs_zh": [
         "肢體麻木",
-        "口眼歪斜"
+        "口眼歪斜",
+        "高調耳鳴",
+        "舌強語澀",
+        "半身不遂"
       ],
       "supporting_signs_en": [
         "Limb numbness",
-        "Facial deviation"
+        "Facial deviation",
+        "High-pitched tinnitus",
+        "Tongue stiffness",
+        "Hemiplegia (in severe/stroke-context cases)"
       ],
       "tongue_en": "Red tongue",
       "pulse_en": "Wiry, forceful pulse",
@@ -2035,14 +2080,16 @@
       ],
       "sources": [
         "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
-        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+        "Bastyr_Therapeutics_5_Hypertension_Apichai_2025"
       ],
       "field_sources": {
         "key_signs": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ],
         "supporting_signs": [
-          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "Bastyr_Therapeutics_5_Hypertension_Apichai_2025 (via retired pattern.liver_wind_stirring import)"
         ],
         "tongue": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
@@ -2060,9 +2107,39 @@
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ],
         "points": [
-          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+          "Bastyr_Therapeutics_5_Hypertension_Apichai_2025 (via retired pattern.liver_wind_stirring import)"
         ]
-      }
+      },
+      "pinyin": "Gan Feng Nei Dong",
+      "pinyin_toned": "Gān Fēng Nèi Dòng",
+      "aliases_zh": [
+        "陽化風動",
+        "肝風上擾"
+      ],
+      "aliases_en": [
+        "Yang Transforming into Wind",
+        "Wind Stirring Pattern"
+      ],
+      "related_tcm_disease_ids": [
+        "tdis.zhong_feng",
+        "tdis.xuan_yun",
+        "tdis.tou_tong"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.stroke",
+        "cond.hypertensive_crisis",
+        "cond.tia",
+        "cond.hypertension"
+      ],
+      "tag_ids": [
+        "肝風內動",
+        "鎮肝熄風",
+        "中風前兆",
+        "急症紅旗",
+        "眩暈"
+      ],
+      "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點（來自已退役 pattern.liver_wind_stirring，高血壓/中風前兆專題匯入，急症紅旗）：代表方鎮肝熄風湯。主穴：GB20 風池、GV20 百會、LR14 期門、LR3 太衝、GB34 陽陵泉、PC7 大陵。"
     },
     {
       "id": "pattern.liver_blood_deficiency",
@@ -3822,10 +3899,12 @@
         "PC6",
         "PC7",
         "BL15",
-        "BL23"
+        "BL23",
+        "EX-HN16"
       ],
       "typical_formulas": [
-        "formula.tian_wang_bu_xin_dan"
+        "formula.tian_wang_bu_xin_dan",
+        "formula.huang_lian_e_jiao_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌紅少苔",
@@ -3851,13 +3930,15 @@
         "耳鳴眩暈",
         "五心煩熱",
         "口乾咽燥",
-        "夢遺"
+        "夢遺",
+        "口舌生瘡"
       ],
       "supporting_signs_en": [
         "Tinnitus and dizziness",
         "Five-center heat",
         "Dry mouth and throat",
-        "Seminal emission (may occur)"
+        "Seminal emission (may occur)",
+        "Mouth/tongue ulcers"
       ],
       "tongue_en": "Red tongue with little coating",
       "pulse_en": "Thready, rapid pulse",
@@ -3875,17 +3956,13 @@
           "tongue_difference_zh": "皆可見舌紅少苔",
           "pulse_difference_zh": "皆可見脈細數",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
-        },
-        {
-          "pattern_id": "pattern.insomnia_heart_kidney_disharmony",
-          "distinguishing_zh": "兩者為同一病機(水火未濟)在庫中並存的兩筆記錄,臨床表現高度重疊;鑑別時以既有卡片個別脈絡為準,避免混用。",
-          "distinguishing_en": "These two records describe the same Water-Fire disharmony mechanism and overlap heavily in presentation; treat as parallel canonical entries pending review rather than merging.",
-          "source": "AcuTing internal note — flagged for review, not a clinical distinction"
         }
       ],
       "sources": [
         "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
-        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+        "Bastyr_Insomnia_Therapeutics_Notes_2025",
+        "https://cloudtcm.com/pattern/heart_kidney_disharmony"
       ],
       "field_sources": {
         "key_signs": [
@@ -3893,7 +3970,8 @@
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ],
         "supporting_signs": [
-          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)"
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
+          "Bastyr_Insomnia_Therapeutics_Notes_2025 (via retired pattern.insomnia_heart_kidney_disharmony import)"
         ],
         "tongue": [
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
@@ -3911,13 +3989,40 @@
         ],
         "formulas": [
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
-          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+          "Bastyr_Insomnia_Therapeutics_Notes_2025 (via retired pattern.insomnia_heart_kidney_disharmony import)"
         ],
         "points": [
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
-          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)",
+          "Bastyr_Insomnia_Therapeutics_Notes_2025 (via retired pattern.insomnia_heart_kidney_disharmony import)"
         ]
-      }
+      },
+      "pinyin": "Xin Shen Bu Jiao",
+      "pinyin_toned": "Xīn Shèn Bù Jiāo",
+      "aliases_zh": [
+        "水火未濟",
+        "心火亢盛腎陰不足"
+      ],
+      "aliases_en": [
+        "Non-Interaction of Heart and Kidney",
+        "Water and Fire Incompatibility"
+      ],
+      "related_tcm_disease_ids": [
+        "tdis.shi_mian",
+        "tdis.xin_ji"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.insomnia",
+        "cond.anxiety"
+      ],
+      "tag_ids": [
+        "心腎不交",
+        "水火未濟",
+        "黃連阿膠湯",
+        "不寐"
+      ],
+      "exam_pearls_zh": "Bastyr Insomnia Therapeutics & NCCAOM 考點（來自已退役 pattern.insomnia_heart_kidney_disharmony）：代表方黃連阿膠湯或交泰丸（交泰丸尚未登記入方劑庫）。主穴：HT7 神門、KI3 太溪、SP6 三陰交、EX-HN16 安眠。"
     },
     {
       "id": "pattern.heart_spleen_deficiency",
@@ -5937,7 +6042,7 @@
         "Liver Fire Excess",
         "Flaring Liver Fire"
       ],
-      "review_status": "draft",
+      "review_status": "deprecated",
       "schema_version": "v1.0",
       "zang_fu_ids": [
         "organ.liver"
@@ -6019,14 +6124,8 @@
       "zang_fu": [
         "liver"
       ],
-      "differential_patterns": [
-        {
-          "pattern_id": "pattern.liver_fire",
-          "distinguishing_zh": "pattern.liver_fire 與本記錄同為「肝火上炎」,是庫中並存的兩筆記錄,臨床表現高度重疊;鑑別時以既有卡片個別脈絡為準,避免混用。",
-          "distinguishing_en": "pattern.liver_fire and this record both encode 肝火上炎 (Liver Fire Flaming/Flaring Upward) as separate canonical IDs with heavily overlapping presentation. Treat as parallel canonical entries pending review rather than merging.",
-          "source": "AcuTing internal note — flagged for review, not a clinical distinction"
-        }
-      ]
+      "differential_patterns": [],
+      "deprecated_note_zh": "2026-08-08 停用：與 pattern.liver_fire 同為「肝火上炎」的重複匯入記錄（源自高血壓/頭痛專題批次），經 Ting/ChatGPT 正典審查判定為術語變體而非獨立證型。內容已合併進 pattern.liver_fire。未硬刪，id 保留於檔案內供追溯（D6）。對應：DECISIONS.md D16。"
     },
     {
       "id": "pattern.liver_wind_stirring",
@@ -6042,7 +6141,7 @@
         "Internal Liver Wind",
         "Wind Stirring Pattern"
       ],
-      "review_status": "draft",
+      "review_status": "deprecated",
       "schema_version": "v1.0",
       "zang_fu_ids": [
         "organ.liver"
@@ -6124,14 +6223,8 @@
       "zang_fu": [
         "liver"
       ],
-      "differential_patterns": [
-        {
-          "pattern_id": "pattern.liver_wind",
-          "distinguishing_zh": "pattern.liver_wind 與本記錄同為「肝風內動」,是庫中並存的兩筆記錄,臨床表現高度重疊;鑑別時以既有卡片個別脈絡為準,避免混用。",
-          "distinguishing_en": "pattern.liver_wind and this record both encode 肝風內動 (Internal/Stirring Liver Wind) as separate canonical IDs with heavily overlapping presentation. Treat as parallel canonical entries pending review rather than merging.",
-          "source": "AcuTing internal note — flagged for review, not a clinical distinction"
-        }
-      ]
+      "differential_patterns": [],
+      "deprecated_note_zh": "2026-08-08 停用：與 pattern.liver_wind 同為「肝風內動」的重複匯入記錄（源自高血壓/中風前兆專題批次），經 Ting/ChatGPT 正典審查判定生物醫學情境（中風/TIA vs 帕金森氏症）不構成獨立證型。內容已合併進 pattern.liver_wind。未硬刪，id 保留於檔案內供追溯（D6）。對應：DECISIONS.md D16。"
     },
     {
       "id": "pattern.insomnia_heart_kidney_disharmony",
@@ -6147,7 +6240,7 @@
         "Non-Interaction of Heart and Kidney",
         "Water and Fire Incompatibility"
       ],
-      "review_status": "draft",
+      "review_status": "deprecated",
       "schema_version": "v1.0",
       "zang_fu_ids": [
         "organ.heart",
@@ -6225,14 +6318,8 @@
         "BL15",
         "BL23"
       ],
-      "differential_patterns": [
-        {
-          "pattern_id": "pattern.heart_kidney_not_communicating",
-          "distinguishing_zh": "兩者為同一病機(水火未濟)在庫中並存的兩筆記錄,臨床表現高度重疊;鑑別時以既有卡片個別脈絡為準,避免混用。",
-          "distinguishing_en": "These two records describe the same Water-Fire disharmony mechanism and overlap heavily in presentation; treat as parallel canonical entries pending review rather than merging.",
-          "source": "AcuTing internal note — flagged for review, not a clinical distinction"
-        }
-      ]
+      "differential_patterns": [],
+      "deprecated_note_zh": "2026-08-08 停用：與 pattern.heart_kidney_not_communicating 同為「心腎不交」的重複匯入記錄，經 Ting/ChatGPT 正典審查判定為重複。內容已合併進 pattern.heart_kidney_not_communicating（別名、來源、方劑、穴位、關聯病症）。未硬刪，id 保留於檔案內供追溯（D6）。對應：DECISIONS.md D16。"
     }
   ]
 }

@@ -57,6 +57,7 @@ const APPROVED = new Set([
   // 4.1 identity
   "id", "name_zh", "name_en", "pinyin", "pinyin_toned", "aliases_zh", "aliases_en",
   "pattern_family", "secondary_family", "review_status", "authored_by", "legacy_ids",
+  "deprecated_note_zh", "deprecated_note_en",
   // 4.2 positioning
   "eight_principles", "zang_fu", "qi_blood_fluid", "root_or_branch",
   // 4.3 mechanism

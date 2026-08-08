@@ -128,6 +128,7 @@ Antigravity 寫的**內容本身不差**,壞的是四件事:
 | `pattern_family` | 辨證體系。**值來自 `data/config/pattern_family_vocabulary.json`,不是自由文字**:`ba_gang` 八綱 · `zang_fu` 臟腑 · `qi_xue_jin_ye` 氣血津液 · `bing_yin` 病因 · `liu_jing` 六經 · `wei_qi_ying_xue` 衛氣營血 · `san_jiao` 三焦 · `jing_luo` 經絡。不在清單裡 = P1 缺陷 | ✅ |
 | `secondary_family` | 一個證真的橫跨兩個體系時(痰熱壅肺 兼 臟腑/病因),主欄位放**做出診斷時所用**的體系,另一個放這裡 | — |
 | `review_status` | `draft` \| `source_checked` \| `deprecated` | ✅ |
+| `deprecated_note_zh` / `deprecated_note_en` | **僅當 `review_status: "deprecated"`**:為什麼退役、正典替代 id 是誰、決策出處(D 編號)。D6 禁止硬刪,退役記錄要能讓人看懂為什麼還在檔案裡 | — |
 | `authored_by` | `owner` \| `model_draft` | — |
 
 ### 4.2 辨識定位
