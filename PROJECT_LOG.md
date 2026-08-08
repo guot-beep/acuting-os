@@ -1,3 +1,11 @@
+# 2026-08-07 Codex — 經外奇穴回歸修復 + EX-CA2 提托嚴格修整
+
+- **做了什麼**：確認 `origin/main` 的 23 張嚴格卡曾被後續全穴位對齊 commit 覆蓋；從 `bd74e7c` 恢復 EX-HN1–22、EX-CA1 的精修內容，同時保留現行 23 個穩定 `id`，再依四層工作流修整 EX-CA2 提托。
+- **數字 before→after**：實跑 validator 的嚴格卡／四源稽核 `0/72 → 24/72`（恢復 23 張 + 新增提托 1 張）；待修 `72/72 → 48/72`；generic CloudTCM URL `25/72 → 18/72`；可測量技法缺口維持 `0/72`。
+- **提托來源與校正**：Board Appendix A 列 Tituo；課件無專條；eLotus `Ex-CA3` 與 AD `N-CA-4` 精確頁均已開啟。分列 0.8–1.2／1–1.5 寸與 AD 提拉固定法；無來源的 0.3–0.8 寸、艾灸、點刺出血不再列為可執行技法；孕期禁用保留為待具名來源核實。
+- **驗證**：`validate-extra-point-standard --all` 24/72、`build-data`、`validate-data`（947 runtime points）、`validate-interactions`、`validate-point-ids`（925 ids）、`validate-content-junk`、`validate-content-quality`、`node --check app.js`、`git diff --check` 均通過；全庫 `validate-encoding` 仍因既有跨線資料失敗（13,536 issues，清單未含 `extra_points.json`）。
+- **已知未解／下一步**：48 張仍在 worklist；18 張仍含泛用 CloudTCM 目錄連結；全庫 encoding gate 的既有債務不在本批改動範圍。下一張依序為 EX-CA3 三角灸，且需先處理本庫代碼／名稱與 eLotus 腹部奇穴序列不一致問題；若 Ting 提供借書頁面，依版次與頁碼補 `field_sources.print_books`。
+
 # 2026-08-07 Claude — 方劑卡全面優化：可點藥名 1522/1610、待補歸零、127 首完成
 
 - **拓關的三批推送都驗過**（用我的 commit 當基準，不看他的回報）：君臣佐使 79→221、唯一中文內容只增不減、組成零縮水。他改用「只填空欄位」之後品質是好的。

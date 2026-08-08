@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 49,
+        "records_with_issues": 48,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
-        "generic_source_url": 17,
-        "strict_template_complete": 23,
-        "four_source_audit_complete": 23,
+        "generic_source_url": 18,
+        "strict_template_complete": 24,
+        "four_source_audit_complete": 24,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN22 plus EX-CA1 are complete under this contract; 49/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 17 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review. EX-HN22 is a high-risk source-gap card: no exact Board/course/eLotus/AD body-point entry validates the legacy 1.0-1.5-cun tongue-root trajectory. EX-CA1 integrates Board-listed Zigong, its dedicated course entry, eLotus EX-CA1, and AD M-CA-18, preserves source-specific 0.5-2.5-cun techniques, and explicitly states that AD's 'calms the fetus' action does not override the course pregnancy prohibition."
+        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 24/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1, and EX-CA2; 48/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Eighteen records still contain a generic CloudTCM directory URL after later main-branch data changes and require replacement or an explicit source-gap audit. EX-HN22 remains a high-risk source-gap card because no exact Board/course/eLotus/AD body-point entry validates the legacy 1.0-1.5-cun tongue-root trajectory. EX-CA2 Tituo now separates the database EX-CA2, eLotus Ex-CA3, and AD N-CA-4 codes; distinguishes eLotus 0.8-1.2 cun from AD 0.8-1.2 and 1-1.5 cun methods; records AD's advanced lift-and-tape technique without presenting it as a complete procedure; and marks the retained legacy pregnancy warning as unverified rather than pretending four-source support."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue the 72-record restart sequentially from EX-CA2 Tituo. Follow skills/acuting-extra-point-refinement/SKILL.md: integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup; preserve source differences and legacy content; add paired bilingual strict-template fields; record live exact-link checks or explicit source gaps; and add full edition/page-level print citations if Ting supplies borrowed-book pages. Current baseline: 23/72 strict-template and four-source complete (EX-HN1 through EX-HN22 plus EX-CA1).",
+  "next_recommendation": "Continue the 72-record restart sequentially from EX-CA3 Sanjiaojiu. Follow skills/acuting-extra-point-refinement/SKILL.md: integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup; preserve source differences and legacy content; add paired bilingual strict-template fields; record live exact-link checks or explicit source gaps; and add full edition/page-level print citations if Ting supplies borrowed-book pages. Current measured baseline: 24/72 strict-template and four-source-audited records (EX-HN1 through EX-HN22 plus EX-CA1 and EX-CA2).",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",

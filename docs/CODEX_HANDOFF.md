@@ -1,5 +1,34 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-07] Codex Handoff — Extra-point regression recovery + EX-CA2 Tituo
+
+- **Branch**: `codex/extra-points-2026-08-07`, based on `origin/main` at `515532f`.
+- **Files Changed**:
+  - `data/acupoints/extra_points.json`
+  - `data/audits/missing_report.json`
+  - `data/generated/app_data.js` (rebuilt, not hand-edited)
+  - `PROJECT_LOG.md`
+  - `docs/CODEX_HANDOFF.md`
+- **State Audit / Regression Recovery**:
+  - The checked-in audit claimed 23/72 strict cards, but a fresh validator run measured 0/72 because later whole-layer alignment commits had overwritten the refined records while leaving the audit stale.
+  - Restored the known-good refined content for `EX-HN1`–`EX-HN22` and `EX-CA1` from `bd74e7c`.
+  - Preserved current immutable `id` values and synchronized runtime-facing `needling`/`needlingEn` with each refined source-separated technique; both review-status fields are `draft`.
+- **EX-CA2 Tituo**:
+  - Board: listed in NCBAHM 2026 Appendix A. Curriculum: no dedicated entry found after Chinese-name, pinyin, and source-code searches.
+  - Exact live pages: eLotus `Tituo (Ex-CA3)` and American Dragon `Tituo (N-CA-4)`; AD's pinyin index also linked to the exact page.
+  - Preserved the immutable database code `EX-CA2` while explicitly recording the eLotus/AD code discrepancy. Did not claim a point-level WHO code because none was directly verified in this pass.
+  - Separated eLotus perpendicular 0.8–1.2 cun, AD straight 1–1.5 cun / perpendicular 0.8–1.2 cun, and AD's advanced CV2-directed muscular lift-and-tape technique. Removed unsupported 0.3–0.8-cun, moxa, and bloodletting text from executable technique fields.
+  - Retained the legacy pregnancy prohibition as an unresolved safety warning; none of the four reviewed layers supplied a Tituo-specific pregnancy statement. Added anatomy, stopping-rule, hernia-emergency, and high-risk source gaps without inventing protocol.
+- **Measured Counts**:
+  - Fresh-start validator: strict-template/four-source-audited `0/72`; records with issues `72/72`; generic CloudTCM URL `25/72`.
+  - Current: strict-template/four-source-audited `24/72`; records with issues `48/72`; generic CloudTCM URL `18/72`; missing measurable method `0/72`; missing source URL `0/72`; mojibake `0/72`.
+- **Validation**:
+  - `scripts/validate-extra-point-standard.js --all`: audit pass, 24/72 strict and four-source-audited.
+  - `scripts/build-data.js`: pass; `defaultPoints` downstream validation totals 947.
+  - `scripts/validate-data.js`, `scripts/validate-interactions.js`, `scripts/validate-point-ids.js`, `scripts/validate-content-junk.js`, `scripts/validate-content-quality.js`, `node --check app.js`, and `git diff --check`: pass.
+  - Full-repo `scripts/validate-encoding.js`: pre-existing cross-line failure with 13,536 reported issues across 561 checked files; its by-file list does not include `data/acupoints/extra_points.json`. No out-of-scope encoding data was edited.
+- **Next**: `EX-CA3 三角灸`. Reconcile its database name/code with eLotus's abdominal extra-point sequence before drafting; preserve all source discrepancies and do not relabel immutable ids. Add edition/page-level `field_sources.print_books` only after Ting supplies and the pages are directly inspected.
+
 ## [2026-08-07 02:00] Antigravity Handoff — FULL FORMULA INGESTION (BATCHES 15–23, FORMULAS 71–115), UI MODERN APPLICATION INDEX MERGE, & ZERO-DEFECT PURGE 🎉
 
 - **Agent**: Antigravity
