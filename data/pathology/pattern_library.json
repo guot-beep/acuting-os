@@ -226,6 +226,12 @@
           "pulse_difference_zh": "陰虛脈細數;氣虛脈弱",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
+      ],
+      "key_signs_en": [
+        "Dry cough with scant sputum",
+        "Dry throat",
+        "Tidal fever and night sweats",
+        "Hoarse voice"
       ]
     },
     {
@@ -770,6 +776,12 @@
           "pulse_difference_zh": "氣虛脈緩弱;陽虛脈沉弱",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
+      ],
+      "key_signs_en": [
+        "Poor appetite with abdominal distention",
+        "Loose stools",
+        "Fatigue and weakness",
+        "Sallow complexion"
       ]
     },
     {
@@ -1101,8 +1113,17 @@
       ],
       "treatment_principle_zh": "清熱化濕",
       "treatment_principle_en": "Clear heat, transform damp",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV12",
+        "SP9",
+        "ST36",
+        "BL20",
+        "BL21"
+      ],
+      "typical_formulas": [
+        "formula.lian_po_yin",
+        "formula.gan_lu_xiao_du_dan"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃膩",
       "pulse_zh": "脈濡數",
@@ -1501,7 +1522,8 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "pattern_family": "zang_fu"
     },
     {
       "id": "pattern.food_stagnation",
@@ -1937,6 +1959,13 @@
       "zang_fu": [
         "liver",
         "kidney"
+      ],
+      "key_signs_en": [
+        "Dizziness and tinnitus",
+        "Distending head/eye pain",
+        "Flushed face and red eyes",
+        "Sore, weak low back and knees",
+        "Irritability and quick temper"
       ]
     },
     {
@@ -2255,7 +2284,8 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "pattern_family": "zang_fu"
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -2466,7 +2496,8 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "pattern_family": "zang_fu"
     },
     {
       "id": "pattern.heart_qi_deficiency",
@@ -3346,6 +3377,13 @@
           "distinguishing_en": "Kidney Yang Deficiency shows deficiency-cold signs (cold limbs, early-morning diarrhea); Kidney Yin Deficiency shows deficiency-heat signs (five-center heat, night sweats) — the two Yin/Yang poles of Kidney deficiency.",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
+      ],
+      "key_signs_en": [
+        "Cold, aching low back and knees",
+        "Aversion to cold, cold limbs",
+        "Reduced libido",
+        "Frequent nighttime urination",
+        "Early-morning diarrhea"
       ]
     },
     {
@@ -3454,6 +3492,13 @@
           "distinguishing_en": "Kidney Yin Deficiency shows deficiency-heat signs; Kidney Yang Deficiency shows deficiency-cold signs.",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
+      ],
+      "key_signs_en": [
+        "Sore, weak low back and knees",
+        "Dizziness and tinnitus",
+        "Five-center heat",
+        "Night sweats",
+        "Spermatorrhea or scanty menses"
       ]
     },
     {
@@ -3981,6 +4026,13 @@
           "pulse_difference_zh": "皆可見脈細弱",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
+      ],
+      "key_signs_en": [
+        "Palpitations and insomnia",
+        "Profuse dreaming and poor memory",
+        "Poor appetite and fatigue",
+        "Sallow complexion",
+        "Scanty menstruation"
       ]
     },
     {
@@ -4702,7 +4754,14 @@
         "NCBAHM_2026_CH_Outline",
         "https://cloudtcm.com/pattern/150"
       ],
-      "pattern_family": "qi_xue_jin_ye"
+      "pattern_family": "qi_xue_jin_ye",
+      "key_signs_en": [
+        "Fixed stabbing pain, worse with pressure",
+        "Pain worse at night",
+        "Masses/lumps",
+        "Dry, scaly skin",
+        "Purplish lips and tongue"
+      ]
     },
     {
       "id": "pattern.blood_heat",
@@ -4999,6 +5058,13 @@
       "zang_fu": [
         "spleen",
         "lung"
+      ],
+      "key_signs_en": [
+        "Obesity",
+        "Heaviness and lassitude",
+        "Chest oppression and epigastric fullness",
+        "Copious phlegm",
+        "Dizziness"
       ]
     },
     {
@@ -5024,7 +5090,7 @@
       "review_status": "draft",
       "tongue_zh": "舌苔白膩",
       "pulse_zh": "脈弦緊或濡緩",
-      "pattern_family": "channel_bi",
+      "pattern_family": "jing_luo",
       "eight_principles": {
         "interior_exterior": "exterior",
         "cold_heat": "cold",
@@ -5111,7 +5177,7 @@
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃",
       "pulse_zh": "脈滑數",
-      "pattern_family": "channel_bi",
+      "pattern_family": "jing_luo",
       "eight_principles": {
         "interior_exterior": "exterior",
         "cold_heat": "heat",
@@ -5352,6 +5418,24 @@
         "SP9",
         "BL60",
         "SP6"
+      ],
+      "zang_fu": [
+        "bladder",
+        "kidney"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stone_lin",
+          "distinguishing_zh": "熱淋以小便頻急灼痛為主,無砂石排出;石淋兼見腰腹絞痛、尿中夾砂石。",
+          "distinguishing_en": "Heat Lin shows urgent burning urination without gravel; Stone Lin additionally shows colicky flank pain and passage of sand/stones.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.fatigue_lin",
+          "distinguishing_zh": "熱淋為實熱證,起病急,苔黃膩、脈滑數;勞淋為虛證,病程久,遇勞即發,脈沉細無力。",
+          "distinguishing_en": "Heat Lin is an acute excess-heat pattern; Fatigue Lin is a chronic deficiency pattern triggered by exertion, with a deep, thready, weak pulse.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
       ]
     },
     {
@@ -5443,6 +5527,10 @@
         "KI5",
         "BL23",
         "SP9"
+      ],
+      "zang_fu": [
+        "bladder",
+        "kidney"
       ]
     },
     {
@@ -5531,6 +5619,18 @@
         "CV3",
         "BL28",
         "PC6"
+      ],
+      "zang_fu": [
+        "liver",
+        "bladder"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat_lin",
+          "distinguishing_zh": "氣淋(實證)以小便澀滯滴瀝、隨情志加重為特徵,無明顯灼熱感;熱淋以小便灼熱刺痛為核心,屬濕熱。",
+          "distinguishing_en": "Qi Lin (Excess) is distinguished by hesitant dribbling urination worsened by emotional stress, without burning heat; Heat Lin centers on burning, stabbing urination from Damp-Heat.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
       ]
     },
     {
@@ -5621,6 +5721,18 @@
         "BL28",
         "CV3",
         "SP6"
+      ],
+      "zang_fu": [
+        "bladder",
+        "heart"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat_lin",
+          "distinguishing_zh": "血淋(實熱證)兼見尿色鮮紅或夾血塊;熱淋以灼熱刺痛為主,無明顯血尿。",
+          "distinguishing_en": "Blood Lin (Excess Heat) additionally shows bright red urine or clots; Heat Lin centers on burning pain without prominent hematuria.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
       ]
     },
     {
@@ -5713,6 +5825,11 @@
         "SP9",
         "ST40",
         "KI3"
+      ],
+      "zang_fu": [
+        "spleen",
+        "kidney",
+        "bladder"
       ]
     },
     {
@@ -5726,7 +5843,8 @@
         "虛淋"
       ],
       "aliases_en": [
-        "Recurrent Chronic Lin Pattern"
+        "Recurrent Chronic Lin Pattern",
+        "Deficiency Lin Pattern"
       ],
       "review_status": "draft",
       "schema_version": "v1.0",
