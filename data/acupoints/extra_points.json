@@ -5399,46 +5399,227 @@
     "code": "EX-CA5",
     "display_code": "EX-CA5",
     "nameZh": "利尿",
-    "nameEn": "Liniu",
-    "pinyin": "Liniu",
+    "nameEn": "Liniao",
+    "pinyin": "Liniao",
     "meridian": "Extra Points / 經外奇穴",
     "region": "腹部 / Abdominal Region",
-    "location": "下腹部，前正中線上，臍下2.5寸（關元與石門中點）。",
-    "locationEn": "In lower abdomen, on anterior midline, 2.5 cun below umbilicus.",
-    "techniqueNotes": "直刺0.8~1.2寸。可灸。\nPerpendicular 0.8-1.2 cun. Moxa applicable.",
-    "functions": "通利小便，清熱利濕",
-    "functionsEn": "Promotes urination; Clears heat and dampness",
+    "location": "下腹部，前正中線上，臍中下2.5寸。雲端中醫表述為神闕（CV8）至曲骨（CV2）連線的中點；既有卡片另以關元（CV4，臍下3寸）與石門（CV5，臍下2寸）的中點作交叉定位。兩種表述均指向前正中線臍下2.5寸，但後者仍標記為既有定位說明。",
+    "locationEn": "On the lower abdomen, on the anterior midline, 2.5 cun inferior to the umbilicus. CloudTCM describes it as the midpoint of the line from Shenque (CV8) to Qugu (CV2). The legacy card additionally cross-locates it midway between Guanyuan (CV4, 3 cun below the umbilicus) and Shimen (CV5, 2 cun below); both descriptions point to the 2.5-cun midline level, while the latter remains labeled as legacy wording.",
+    "cunMeasurement": "前正中線，臍中下2.5寸；雲端中醫以神闕（CV8）至曲骨（CV2）連線中點表述。既有卡片的關元（CV4）與石門（CV5）中點說明予以保留，但本輪未取得其具名課本頁碼。",
+    "anatomyZh": "穴位在下腹部前正中線體表。雲端中醫僅概述深部鄰近膀胱與小腸，沒有提供皮膚、皮下組織、腹白線／腹直肌鞘、腹膜與臟器的逐層解剖，也沒有依膀胱充盈度或不同體型調整的安全邊界。此解剖缺口不可用來源所列1～1.5寸刺深自行補齊。",
+    "anatomyEn": "The point lies on the lower anterior abdominal midline. CloudTCM only gives a general statement that the bladder and small intestine are nearby at depth; it does not provide layered skin, subcutaneous, linea-alba/rectus-sheath, peritoneal, or visceral anatomy, nor safety boundaries adjusted for bladder filling or body habitus. The listed 1-1.5-cun depth cannot be used to invent those missing anatomical safeguards.",
+    "techniqueNotes": "雲端中醫精確利尿穴頁：直刺1～1.5寸，針感可向會陰或下腹部放散；可配合艾灸，但未列灸法與劑量。既有卡片另列直刺0.8～1.2寸與『可灸』，本輪未取得具名課本頁碼。先前批次加入的直刺0.3～0.8寸與點刺出血，未獲 Board、課件、eLotus、American Dragon 或精確 CloudTCM 頁支持，不列為可執行方法。\nCloudTCM's exact Liniao page lists perpendicular insertion 1-1.5 cun, with sensation possibly radiating toward the perineum or lower abdomen, and states that moxibustion may be combined without supplying a method or dose. The legacy card separately lists perpendicular insertion 0.8-1.2 cun and 'moxa applicable,' pending an edition/page citation. The previously bulk-added perpendicular 0.3-0.8-cun and bloodletting instruction is unsupported by the Board, curriculum, eLotus, American Dragon, or the exact CloudTCM page and is not presented as an executable method.",
+    "acumethodZh": "雲端中醫的具名數值為直刺1～1.5寸，並描述酸脹感可向會陰或下腹部放散。因其未提供逐層解剖、膀胱充盈條件、體型調整、進針層確認或停止規則，本卡只記錄來源內容，不把該數值擴寫成完整安全操作方案。舊卡0.8～1.2寸與批次值0.3～0.8寸分開保留於來源差異，不合併成新範圍。",
+    "acumethodEn": "CloudTCM's named value is perpendicular insertion 1-1.5 cun, with soreness or distention possibly radiating toward the perineum or lower abdomen. Because it supplies no layered anatomy, bladder-filling condition, body-habitus adjustment, layer confirmation, or stopping criteria, the card records the source statement without expanding it into a complete safety protocol. The legacy 0.8-1.2-cun value and the bulk-added 0.3-0.8-cun value remain separate source variants and are not merged into a new range.",
+    "moxaZh": "雲端中醫只說可配合艾灸；既有卡片亦寫『可灸』。四個核心來源均未提供本穴灸法類型、壯數／分鐘數、艾條距離、皮膚保護、熱傷害停止規則、療程頻率或孕期灸法條文，因此不補數字。",
+    "moxaEn": "CloudTCM only states that moxibustion may be combined, and the legacy card likewise says that moxa is applicable. None of the four core source layers supplies a point-specific moxa type, cone/minute dose, stick distance, skin protection, thermal-injury stopping rule, treatment frequency, or pregnancy protocol; no number is added.",
+    "functions": "通利小便；清熱利濕；調節下焦氣化；調和腸腑止瀉",
+    "functionsEn": "Promotes urination; Clears Heat and drains Dampness; Regulates Lower Jiao Qi transformation; Harmonizes the intestines and relieves diarrhea",
+    "functionsZhList": [
+      "通利小便（既有表述，與雲端中醫利尿／促進水液代謝內容一致）",
+      "清熱利濕（既有表述，雲端中醫明列清熱利濕）",
+      "調節下焦氣化（雲端中醫整理性功效）",
+      "調和腸腑止瀉（雲端中醫依腹痛、泄瀉與痢疾主治整理）"
+    ],
+    "functionsEnList": [
+      "Promotes urination (legacy wording consistent with CloudTCM's urination and water-metabolism content)",
+      "Clears Heat and drains Dampness (legacy wording explicitly paralleled by CloudTCM)",
+      "Regulates Lower Jiao Qi transformation (CloudTCM editorial action)",
+      "Harmonizes the intestines and relieves diarrhea (CloudTCM editorial action based on abdominal pain, diarrhea, and dysentery indications)"
+    ],
+    "pointIdentityZh": [
+      "下腹部前正中線經外奇穴",
+      "未列入 NCBAHM 2026 ACPL Appendix A 經外奇穴重點清單",
+      "本庫穩定代碼為 EX-CA5；本輪四個核心來源均未核實其國際通用代碼",
+      "標準無聲調拼音為 Liniao；既有 Liniu 已作拼音校正，不改中文名、code 或 id"
+    ],
+    "pointIdentityEn": [
+      "Extra point on the lower anterior abdominal midline",
+      "Not listed in the NCBAHM 2026 ACPL Appendix A priority extra-point list",
+      "The database's immutable code is EX-CA5; no international universal code was verified from the four core source layers in this review",
+      "The standard toneless pinyin is Liniao; legacy Liniu was corrected without changing the Chinese name, code, or id"
+    ],
+    "exam_star": 0,
+    "exam_importance": "利尿未列入 NCBAHM 2026 Appendix A 明列經外奇穴重點，且本地課件無專條。複習時重點是臍下2.5寸前正中線、下焦水液與腸道兩組主治，以及不同刺深均須保留來源標籤。",
+    "exam_importance_en": "Liniao is not named in the NCBAHM 2026 Appendix A priority extra-point list and has no dedicated local curriculum entry. Study the 2.5-cun-below-umbilicus midline location, its urinary/lower-jiao and intestinal indication groups, and the need to keep conflicting depths source-labeled.",
+    "exam_pearl": "利尿的定位是臍下2.5寸前正中線；CloudTCM 精確頁的直刺1～1.5寸不能與舊卡0.8～1.2寸或批次0.3～0.8寸合併。點刺出血目前沒有精確來源支持。",
+    "exam_pearl_en": "Liniao is on the anterior midline 2.5 cun below the umbilicus. CloudTCM's exact-page perpendicular depth of 1-1.5 cun must not be merged with the legacy 0.8-1.2 cun or bulk-added 0.3-0.8 cun. No exact source currently supports bloodletting.",
     "patterns": [
       "小便不利",
-      "尿殘留",
+      "尿瀦留",
       "尿路感染",
-      "水腫"
+      "水腫",
+      "淋證",
+      "血尿",
+      "腎炎",
+      "腹痛",
+      "泄瀉",
+      "痢疾",
+      "下焦濕熱腹脹"
     ],
     "patternsEn": [
       "Dysuria",
       "Urinary retention",
-      "UTI",
-      "Edema"
+      "Urinary tract infection",
+      "Edema",
+      "Lin syndrome",
+      "Hematuria",
+      "Nephritis",
+      "Abdominal pain",
+      "Diarrhea",
+      "Dysentery",
+      "Lower-Jiao Damp-Heat with abdominal distention"
     ],
-    "cautions": "孕婦慎用。針刺前宜排空膀胱。",
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "利尿通淋",
+      "清熱利濕",
+      "調節下焦氣化",
+      "調腸止瀉"
+    ],
+    "action_tags_en": [
+      "Promote Urination and Relieve Lin Syndrome",
+      "Clear Heat and Drain Dampness",
+      "Regulate Lower Jiao Qi Transformation",
+      "Regulate the Intestines and Relieve Diarrhea"
+    ],
+    "disease_tags_zh": [
+      "尿瀦留",
+      "小便不利",
+      "水腫",
+      "血尿",
+      "泄瀉"
+    ],
+    "disease_tags_en": [
+      "Urinary Retention",
+      "Dysuria",
+      "Edema",
+      "Hematuria",
+      "Diarrhea"
+    ],
+    "cautions": "【下腹深部安全缺口】雲端中醫提及深部鄰近膀胱與小腸並列直刺1～1.5寸，但沒有逐層解剖、膀胱充盈條件、體型調整、進針層確認或停止規則；兩項資訊不可自行拼成完整安全方案。【刺深分歧】CloudTCM 1～1.5寸、舊卡0.8～1.2寸、批次0.3～0.8寸須分開，不可平均或擴大；批次點刺出血無精確來源支持。【膀胱】舊卡『針刺前宜排空膀胱』是重要但尚未取得具名頁碼的安全敘述，予以保留並標示未核實，不得因 CloudTCM 未述膀胱狀態而反推可在充盈時操作。【孕期】舊卡『孕婦慎用』保留為未核實舊值；Board、課件、eLotus、AD 與精確 CloudTCM 頁均未提供本穴孕期條文，來源沉默不等於安全許可。【艾灸】只查到『可配合艾灸』，沒有劑量與熱傷害防護細節。",
+    "cautionsEn": [
+      "Lower-abdominal deep-safety gap: CloudTCM mentions the bladder and small intestine nearby at depth and lists perpendicular insertion 1-1.5 cun, but supplies no layered anatomy, bladder-filling condition, body-habitus adjustment, layer confirmation, or stopping criteria. These two statements cannot be combined into an invented complete safety protocol.",
+      "Depth discrepancy: CloudTCM's 1-1.5 cun, the legacy card's 0.8-1.2 cun, and the bulk-added 0.3-0.8 cun must remain separate rather than averaged or broadened. No exact source supports the bulk-added bloodletting method.",
+      "Bladder: the legacy instruction to empty the bladder before needling is important but still lacks an edition/page citation. It is retained as unverified legacy safety content; CloudTCM's silence about bladder status must not be interpreted as permission to needle with a full bladder.",
+      "Pregnancy: the legacy 'use caution in pregnancy' statement is retained as unverified. The Board, curriculum, eLotus, American Dragon, and exact CloudTCM page provide no point-specific pregnancy instruction; source silence is not permission.",
+      "Moxa: only a general statement that moxibustion may be combined was found; no dose or thermal-injury safeguards were supplied."
+    ],
+    "acuTags": [
+      "腹部",
+      "泌尿系統",
+      "下焦濕熱",
+      "腸道"
+    ],
+    "combinePointsZh": "【水腫；雲端中醫】配陰陵泉（SP9）、三陰交（SP6），來源解釋為健脾利濕。【尿瀦留；雲端中醫】配中極（CV3）、膀胱俞（BL28），來源解釋為助膀胱氣化、通利小便。【泄瀉；雲端中醫】配天樞（ST25）、上巨虛（ST37），來源解釋為調理腸腑、止瀉。eLotus 與 AD 均無本穴精確條目，故沒有把其他穴位的配伍移植進來。",
+    "combinePointsEn": "For edema (CloudTCM), combine with Yinlingquan (SP9) and Sanyinjiao (SP6), explained by the source as strengthening the Spleen and draining Dampness. For urinary retention (CloudTCM), combine with Zhongji (CV3) and Pangguangshu (BL28) to assist Bladder Qi transformation and promote urination. For diarrhea (CloudTCM), combine with Tianshu (ST25) and Shangjuxu (ST37) to regulate the intestines and relieve diarrhea. Because eLotus and American Dragon have no exact Liniao entry, no combination was transferred from a different point.",
+    "clinical_pearls": "雲端中醫把利尿的內容分成泌尿、腸道與下焦濕熱三組，較舊卡只有小便不利、尿瀦留、尿路感染與水腫更完整；新增的淋證、血尿、腎炎、腹痛、泄瀉、痢疾與腹脹均保留 CloudTCM 來源標籤。拼音由 Liniu 校正為 Liniao。eLotus 與 American Dragon 目前只能留下索引查無紀錄，等待 Ting 借到具名教材後補 edition/page。",
+    "clinical_pearls_en": "CloudTCM organizes Liniao into urinary, intestinal, and Lower-Jiao Damp-Heat groups, expanding the legacy card's dysuria, urinary retention, UTI, and edema content. Added Lin syndrome, hematuria, nephritis, abdominal pain, diarrhea, dysentery, and abdominal distention remain explicitly CloudTCM-sourced. The pinyin was corrected from Liniu to Liniao. eLotus and American Dragon currently contribute documented index-level absences only; an edition/page citation can be added if Ting supplies a named textbook.",
+    "nameIntroZh": "『利尿』直指其通利小便的主要用途。標準無聲調拼音為 Liniao；CloudTCM 題名為『利尿穴』，並列止瀉、血清、關元上三個別名。",
+    "nameIntroEn": "Liniao literally describes promoting urination, its principal named use. The standard toneless pinyin is Liniao. CloudTCM titles the entry Liniao Point and lists Zhixie, Xueqing, and Guanyuanshang as aliases.",
+    "otherNamesZh": [
+      "止瀉（雲端中醫）",
+      "血清（雲端中醫）",
+      "關元上（雲端中醫）"
+    ],
+    "otherNamesEn": [
+      "Zhixie (CloudTCM alias)",
+      "Xueqing (CloudTCM alias)",
+      "Guanyuanshang (CloudTCM alias)"
+    ],
+    "evidence": "四層查核：NCBAHM 2026 ACPL Appendix A 未列 Liniao；curriculum/acupoints 以利尿、利尿穴、Liniu、Liniao、EX-CA5 與 Ex-CA8 搜尋均無專條。eLotus 現行 Traditional Points List 以 Liniao、Liniu 與 Li Niao 搜尋無命中，未找到可核讀專頁。American Dragon 拼音索引以 Liniao 與 Liniu 搜尋無命中，未找到精確 AD 專頁；Tongbian 為另一穴，不移植內容。CloudTCM 精確詞典頁 dic/7681 提供別名、臍下2.5寸前正中線定位、泌尿／腸道／下焦濕熱主治、直刺1～1.5寸與針感方向、可配合艾灸、四項整理性功效及三組配穴。舊卡直刺0.8～1.2寸、排空膀胱與孕期慎用保留為未核實舊值；批次直刺0.3～0.8寸與點刺出血不再列為可執行技法。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://cloudtcm.com/dic/7681",
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list",
+      "https://www.americandragon.com/PointsIndex2.html"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 利尿 EX-CA5",
-        "labelEn": "Extra Point · Liniu EX-CA5",
-        "url": "https://cloudtcm.com/acupoint",
+        "labelZh": "雲端中醫 · 利尿穴精確詞典頁",
+        "labelEn": "CloudTCM · Exact Liniao Point Dictionary Entry",
+        "url": "https://cloudtcm.com/dic/7681",
         "source": "CloudTCM"
+      },
+      {
+        "labelZh": "eLotus · 經外奇穴清單（Liniao 查無專頁）",
+        "labelEn": "eLotus · Extra-point List (No Liniao Detail Page Found)",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list",
+        "source": "MasterTungAcupuncture.org / eLotus source-gap audit"
+      },
+      {
+        "labelZh": "American Dragon 拼音索引 · Liniao 查無專頁",
+        "labelEn": "American Dragon Pinyin Index · No Liniao Detail Page Found",
+        "url": "https://www.americandragon.com/PointsIndex2.html",
+        "source": "American Dragon Index / Source-gap audit"
       }
     ],
     "x": 178,
     "y": 315,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.8 寸，可灸；或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.8 cun; moxibustion applicable, or prick to bleed.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Liniao not listed in the named extra-point priority list"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Liniao entry found in curriculum/acupoints by 利尿, 利尿穴, Liniu, Liniao, EX-CA5, or Ex-CA8 search on 2026-08-08"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list: no Liniao, Liniu, or Li Niao entry found on the current Traditional Points List on 2026-08-08; no exact eLotus detail page verified"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: no Liniao or Liniu entry found in the pinyin index on 2026-08-08; no exact AD detail page verified",
+        "identity guard: Tongbian is a different indexed point and its content was not transferred"
+      ],
+      "location": [
+        "https://cloudtcm.com/dic/7681: on the anterior abdominal midline, 2.5 cun below the umbilicus; midpoint of the Shenque-to-Qugu line",
+        "unverified legacy cross-location retained: midway between Guanyuan CV4 and Shimen CV5"
+      ],
+      "anatomy": [
+        "https://cloudtcm.com/dic/7681: general statement that the bladder and small intestine are nearby at depth",
+        "source-gap note: no layered abdominal-wall, peritoneal/visceral boundary, bladder-filling condition, body-habitus adjustment, layer confirmation, or stopping criteria"
+      ],
+      "technique": [
+        "https://cloudtcm.com/dic/7681: perpendicular insertion 1-1.5 cun; soreness/distention may radiate toward the perineum or lower abdomen",
+        "unverified legacy value: perpendicular insertion 0.8-1.2 cun; no edition/page citation available",
+        "unsupported bulk values removed from executable fields: perpendicular 0.3-0.8 cun or prick to bleed"
+      ],
+      "moxibustion": [
+        "https://cloudtcm.com/dic/7681: moxibustion may be combined, without method or dose",
+        "unverified legacy statement retained: moxa applicable",
+        "source-gap note: no method type, cone/minute dose, heat distance, skin protection, burn stopping rule, frequency, or pregnancy protocol"
+      ],
+      "functions": [
+        "https://cloudtcm.com/dic/7681: regulates Lower Jiao Qi transformation, promotes water metabolism, clears Heat and drains Dampness, and harmonizes the intestines/relieves diarrhea",
+        "legacy actions retained where aligned: promotes urination; clears Heat and drains Dampness"
+      ],
+      "indications": [
+        "https://cloudtcm.com/dic/7681: urinary retention, Lin syndrome/dysuria, hematuria, nephritis, abdominal pain, diarrhea, dysentery, and Lower-Jiao Damp-Heat with dysuria or abdominal distention",
+        "unverified legacy indications retained: urinary tract infection and edema; edema appears in the CloudTCM combination section but not its primary indication list"
+      ],
+      "combinations": [
+        "https://cloudtcm.com/dic/7681: SP9 + SP6 for edema; CV3 + BL28 for urinary retention; ST25 + ST37 for diarrhea",
+        "source-gap note: no exact Liniao entry or combination found in eLotus or American Dragon"
+      ],
+      "cautions": [
+        "https://cloudtcm.com/dic/7681: bladder and small intestine described as nearby at depth, but no procedural safety boundary supplied",
+        "unverified legacy safety statements retained: empty the bladder before needling; use caution in pregnancy",
+        "source-gap note: no point-specific pregnancy statement, bladder-filling protocol, body-habitus adjustment, layered anatomy, stopping rule, or moxa thermal-safety protocol in the four core source layers",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable code: EX-CA5 Liniao",
+        "standard toneless pinyin correction: Liniu -> Liniao",
+        "https://cloudtcm.com/dic/7681: 利尿穴; aliases 止瀉, 血清, 關元上",
+        "source-gap note: no international universal code verified from the Board, curriculum, eLotus list, American Dragon index, or exact CloudTCM page"
+      ],
+      "link_check": [
+        "2026-08-08 exact CloudTCM URL returned a detailed indexed Liniao dictionary result; a subsequent direct re-open cache-missed in the available fetch environment",
+        "2026-08-08 live page opened and searched: eLotus Traditional Points List; no Liniao/Liniu/Li Niao entry",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; no Liniao/Liniu entry"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "雲端中醫精確頁列直刺1～1.5寸，針感可向會陰或下腹部放散，並稱可配合艾灸但未列灸法與劑量。舊卡直刺0.8～1.2寸另列為未核實值；批次直刺0.3～0.8寸與點刺出血未獲精確來源支持。",
+    "needlingEn": "CloudTCM's exact page lists perpendicular insertion 1-1.5 cun, with sensation possibly radiating toward the perineum or lower abdomen, and says moxibustion may be combined without a method or dose. The legacy perpendicular 0.8-1.2-cun value remains separately labeled as unverified; the bulk-added 0.3-0.8-cun and bloodletting methods lack exact-source support.",
     "id": "ex.ca5"
   },
   {
