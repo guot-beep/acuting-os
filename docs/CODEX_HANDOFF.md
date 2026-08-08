@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `417102f` (`feat(acupoints): reconcile Juqueshu source conflicts`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; the occupied Pattern worktree and all unrelated files remained isolated.
+- **Four Layers**: Juqueshu is absent from the NCBAHM Appendix A named focus list, and no dedicated local curriculum entry was found. The exact eLotus page was opened; the American Dragon pinyin index was opened and searched but contains no Juqueshu back-point entry, and the guessed detail URL failed. Exact indexed Yibian, CloudTCM, and MedicalTeaching content supplements the card; direct reopening of those three URLs returned cache/internal errors, which is disclosed.
+- **Identity / Reconciliation**: preserved immutable database identity `EX-B10` / `ex.b10` / 巨闕俞 / Juqueshu. eLotus labels the point Ex-B14 and Yibian labels it EX-B11; the conflict remains source-labeled. AD's CV14 Juque content was not transferred. Added eLotus's English name and Heart Comfort 2 / Return to Youth / Below the Fourth Vertebra aliases.
+- **Content / Safety**: integrated all eLotus actions, indications, technique, retention, moxa, and aliases; added Yibian anatomy and combinations, CloudTCM respiratory/GI additions and spinal-cord warning, and source-labeled MedicalTeaching combinations. The general layer uses upward-oblique 0.5-1.0 cun; Yibian perpendicular 0.3-0.5 cun remains separate. Legacy bloodletting and pregnancy caution lack exact-page support and remain documented but non-executable. Added spinal-canal/cord stopping rules, high-risk gaps, and AHA/ASA cardiac/stroke emergency boundaries.
+- **Measured Counts**: strict/four-source `36/72 → 37/72`; issues `36/72 → 35/72`; generic Cloud URL `12/72 → 11/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, and task-file `git diff --check` passed.
+- **Next**: EX-B11 接骨 (Jiegu); first reconcile its database T12 location/code/name against eLotus, AD pinyin index, and exact Chinese references, then verify fracture claims and thoracolumbar depth/safety.
+
 ## [2026-08-08] Codex Handoff — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `c8e5d4b` (`feat(acupoints): reconcile Yaoqi source variants`).

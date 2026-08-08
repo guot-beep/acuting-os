@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
+
+- **做了什麼**：核對 Board／課件缺口、eLotus Ex-B14、AD 拼音索引缺頁、醫砭 EX-B11、CloudTCM 精確頁與 MedicalTeaching；保留資料庫 `EX-B10`／`ex.b10`，補齊英文名、異名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `36/72 → 37/72`；待修 `36/72 → 35/72`；泛用 Cloud URL `12/72 → 11/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 標 Ex-B14、醫砭標 EX-B11，與本庫 EX-B10 的代碼差異明列而不強行改碼；一般層向上斜刺0.5～1寸，醫砭直刺0.3～0.5寸分列。舊放血與孕婦慎用未獲精確頁支持，不作可執行指令；深刺傷椎管／脊髓及胸痛／中風急症邊界已補入。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）與 `validate-interactions.js` 全通過；內容 commit `417102f`。
+- **已知未解／下一步**：35張待修、11張泛用 Cloud URL；下一張 EX-B11 接骨。American Dragon 未找到巨闕俞專頁，Yibian／CloudTCM／MedicalTeaching 精確 URL 直接重開有 cache/internal error，均已如實記錄；Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
 # 2026-08-08 Codex — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
 
 - **做了什麼**：核對 Board／課件缺口、eLotus Ex-B9、AD M-BW-29／拼音索引、醫砭 EX-B9 與 CDC 癲癇急救；補齊英文名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源，修清原卡亂碼。
