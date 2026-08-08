@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B2 華佗夾脊四源分段與血氣胸安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `2447b22` (`feat(acupoints): refine Huatuojiaji safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`. Pre-existing `js/knowledge.js`, `js/router.js`, Pattern reports, and `curriculum/conditions/*` archive were excluded.
+- **Four Layers**: NCBAHM 2026 Appendix A lists Huatuojiaji. Local `Techniques 3 points.pdf` p.6 and quiz provide M-BW-35, T1–L5 at 0.5 cun, 17 pairs/34 points, regional technique and segment mapping. Exact eLotus Ex-B2 and AD M-BW-35 pages plus the AD pinyin index were opened. CloudTCM exact-name search found no readable dedicated page.
+- **Reconciliation**: preserved the classical 34-point T1–L5 set; AD's C1–C7 extension is labeled as a clinical variant. Curriculum segment boundaries (T1–T3/T4–T6/T7–T9) remain separate from eLotus/AD (T1–T4/T4–T7/T7–T10). Thoracic 0.5–1.0 cun, eLotus lumbar 1.0–1.5 cun, curriculum lumbar 1–2 cun, and curriculum subcutaneous 2–3 cun remain source-specific rather than averaged.
+- **Safety**: added a 2024 point-specific hemopneumothorax case and a regional thoracic CT dangerous-depth study. AD's deeper nerve-root/ligament techniques remain non-general source notes because the page lacks imaging, layer confirmation, body-habitus adjustment, needle-length and stopping rules. Added thoracic warning signs and explicit pregnancy/pediatric/anticoagulation/spine-history gaps without inventing protocols.
+- **Measured Counts**: strict-template/four-source-audited `28/72 → 29/72`; records with issues `44/72 → 43/72`; generic CloudTCM URL remains `15/72`; measurable-method/source-URL/mojibake gaps remain `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, `validate-point-ids` (925 ids), `validate-content-junk`, `node --check app.js`, and task-file `git diff --check` passed.
+- **Next**: EX-B3 胃管下俞（胰俞） / Weiwanxiashu; verify the naming/code variant, thoracolumbar level, organ-depth risk, and any diabetes-related claims before writing.
+
 ## [2026-08-08] Codex Handoff — EX-B1 定喘四源與氣胸安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `fa3b62e` (`feat(acupoints): refine Dingchuan safety`).

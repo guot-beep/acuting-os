@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B2 華佗夾脊四源分段與血氣胸安全修整
+
+- **做了什麼**：整合 Board、課件 p.6／quiz、eLotus Ex-B2、AD M-BW-35／拼音索引，補齊經典34穴身分、課件與網站兩套節段表、分區刺法、別名、主治與逐欄位來源。
+- **數字 before→after**：嚴格模板／四源稽核 `28/72 → 29/72`；待修 `44/72 → 43/72`；泛用 Cloud URL 維持 `15/72`；技法、來源 URL、亂碼缺口均為 `0/72`。
+- **來源與安全**：T1～L5旁開0.5寸、17對34穴為共同核心；AD 的 C1～C7 只列臨床延伸。胸段0.5～1.0寸、eLotus 腰段1.0～1.5寸、課件腰段1～2寸與皮下2～3寸分列。加入華佗夾脊血氣胸病例與胸部CT危險深度研究；AD 深達神經根／韌帶技法只作非一般來源記錄。
+- **驗證**：單穴／全72卡 validator、`build-data`、`validate-data`（947 runtime points）、`validate-interactions`、`validate-point-ids`（925 ids）、`validate-content-junk`、`node --check app.js` 與 task-file `git diff --check` 全通過；內容 commit `2447b22`。
+- **已知未解／下一步**：43張仍待修、15張仍有泛用 Cloud URL；下一張 EX-B3 胃管下俞（胰俞）。跨線 JS、Pattern 與 `curriculum/conditions/*` 檔案未納入。
+
 # 2026-08-08 Codex — EX-B1 定喘四源與氣胸安全修整
 
 - **做了什麼**：整合 Board、課件缺口、eLotus Ex-B1、AD M-BW-1、CCAOM 潔針安全與胸膜頂解剖研究；原始 HTML 核對 AD 四組配穴，補齊嚴格雙語卡片與欄位溯源。
