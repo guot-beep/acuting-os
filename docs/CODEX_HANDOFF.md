@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B3 胃脘下俞名稱、胰俞別名與胸膜安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `33020db` (`feat(acupoints): refine Weiwanxiashu safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`. Pre-existing JS, Pattern reports, and `curriculum/conditions/*` archive were excluded.
+- **Four Layers**: Weiwanxiashu is not named in NCBAHM Appendix A and no dedicated local course entry was found. Exact eLotus Ex-B3 and AD Yishu M-BW-12 pages and AD pinyin index were opened; AD raw HTML was inspected. A 2014 point-specific review and 2020 WHO-located trial protocol supplied supplemental anatomy/technique evidence. CloudTCM exact searches found no readable detail page.
+- **Nomenclature / Content**: corrected the primary Chinese name to national-standard `胃脘下俞（胰俞）`; eLotus's `胃管下俞`, AD's Yishu/Pancreas Hollow/M-BW-12, and literature aliases remain source-labeled. Preserved the T8/1.5-cun core, expanded actions/indications, and retained legacy pancreas wording only as non-standard provenance.
+- **Safety**: the general method is medial-oblique 0.5–0.7 cun. AD's 0.5–1 cun, transverse-oblique 1–1.5 cun, the trial's medial 0.5–0.8 cun, and review's 45–60°/1–1.5-cun method remain separate variants. Legacy perpendicular 0.5–1 cun was removed from execution because AD warns of substantial pneumothorax risk. Cadaver depths were not generalized; the ambiguous AD/historical 100-cone text was not converted into a current dose.
+- **Measured Counts**: strict-template/four-source-audited `29/72 → 30/72`; records with issues `43/72 → 42/72`; generic CloudTCM URL remains `15/72`; measurable-method/source-URL/mojibake gaps remain `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, `validate-point-ids` (925 ids), `validate-content-junk`, `node --check app.js`, and task-file `git diff --check` passed.
+- **Next**: EX-B4 痞根 (Pigen); verify its Board priority status, exact code/location variants, abdominal-mass claims, lumbar-region anatomy, and moxa instructions.
+
 ## [2026-08-08] Codex Handoff — EX-B2 華佗夾脊四源分段與血氣胸安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `2447b22` (`feat(acupoints): refine Huatuojiaji safety`).

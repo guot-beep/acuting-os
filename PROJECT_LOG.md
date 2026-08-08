@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B3 胃脘下俞名稱、胰俞別名與胸膜安全修整
+
+- **做了什麼**：主名校正為國家標準「胃脘下俞（胰俞）」，整合 eLotus Ex-B3、AD Yishu M-BW-12／拼音索引、2014專穴綜述與2020試驗方案；補齊 T8／1.5寸定位、別名、功效、主治、解剖與逐欄位來源。
+- **數字 before→after**：嚴格模板／四源稽核 `29/72 → 30/72`；待修 `43/72 → 42/72`；泛用 Cloud URL 維持 `15/72`；技法、來源 URL、亂碼缺口均為 `0/72`。
+- **來源與安全**：一般層採向脊柱斜刺0.5～0.7寸；AD、試驗方案與綜述的其他深度分列。原卡直刺0.5～1寸因無具名來源且 AD 明警告氣胸風險，退出可執行層。屍體深度不泛化，AD／古籍含糊100壯不轉成現代劑量，糖尿病主治不寫成替代標準照護。
+- **驗證**：單穴／全72卡 validator、`build-data`、`validate-data`（947 runtime points）、`validate-interactions`、`validate-point-ids`（925 ids）、`validate-content-junk`、`node --check app.js` 與 task-file `git diff --check` 全通過；內容 commit `33020db`。
+- **已知未解／下一步**：42張仍待修、15張仍有泛用 Cloud URL；下一張 EX-B4 痞根。跨線 JS、Pattern 與 `curriculum/conditions/*` 檔案未納入。
+
 # 2026-08-08 Codex — EX-B2 華佗夾脊四源分段與血氣胸安全修整
 
 - **做了什麼**：整合 Board、課件 p.6／quiz、eLotus Ex-B2、AD M-BW-35／拼音索引，補齊經典34穴身分、課件與網站兩套節段表、分區刺法、別名、主治與逐欄位來源。
