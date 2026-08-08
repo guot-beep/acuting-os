@@ -1,0 +1,1379 @@
+{
+  "batch": "cond_batch4_gyn",
+  "retrieved_at": "2026-08-07",
+  "extractor": "chatgpt",
+  "icd10cm_version": "FY2026 April 1, 2026 update",
+  "records": [
+    {
+      "condition_id": "cond.pcos",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "E28.2",
+            "official_description": "Polycystic ovarian syndrome",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.endometriosis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N80.00",
+            "official_description": "Endometriosis of the uterus, unspecified",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.01",
+            "official_description": "Superficial endometriosis of the uterus",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.02",
+            "official_description": "Deep endometriosis of the uterus",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.03",
+            "official_description": "Adenomyosis of the uterus",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.101",
+            "official_description": "Endometriosis of right ovary, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.102",
+            "official_description": "Endometriosis of left ovary, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.103",
+            "official_description": "Endometriosis of bilateral ovaries, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.109",
+            "official_description": "Endometriosis of ovary, unspecified side, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.111",
+            "official_description": "Superficial endometriosis of right ovary",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.112",
+            "official_description": "Superficial endometriosis of left ovary",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.113",
+            "official_description": "Superficial endometriosis of bilateral ovaries",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.119",
+            "official_description": "Superficial endometriosis of ovary, unspecified ovary",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.121",
+            "official_description": "Deep endometriosis of right ovary",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.122",
+            "official_description": "Deep endometriosis of left ovary",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.123",
+            "official_description": "Deep endometriosis of bilateral ovaries",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.129",
+            "official_description": "Deep endometriosis of ovary, unspecified ovary",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.201",
+            "official_description": "Endometriosis of right fallopian tube, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.202",
+            "official_description": "Endometriosis of left fallopian tube, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.203",
+            "official_description": "Endometriosis of bilateral fallopian tubes, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.209",
+            "official_description": "Endometriosis of unspecified fallopian tube, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.211",
+            "official_description": "Superficial endometriosis of right fallopian tube",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.212",
+            "official_description": "Superficial endometriosis of left fallopian tube",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.213",
+            "official_description": "Superficial endometriosis of bilateral fallopian tubes",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.219",
+            "official_description": "Superficial endometriosis of unspecified fallopian tube",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.221",
+            "official_description": "Deep endometriosis of right fallopian tube",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.222",
+            "official_description": "Deep endometriosis of left fallopian tube",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.223",
+            "official_description": "Deep endometriosis of bilateral fallopian tubes",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.229",
+            "official_description": "Deep endometriosis of unspecified fallopian tube",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.30",
+            "official_description": "Endometriosis of pelvic peritoneum, unspecified",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.311",
+            "official_description": "Superficial endometriosis of the anterior cul-de-sac",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.312",
+            "official_description": "Deep endometriosis of the anterior cul-de-sac",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.319",
+            "official_description": "Endometriosis of the anterior cul-de-sac, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.321",
+            "official_description": "Superficial endometriosis of the posterior cul-de-sac",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.322",
+            "official_description": "Deep endometriosis of the posterior cul-de-sac",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.329",
+            "official_description": "Endometriosis of the posterior cul-de-sac, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.331",
+            "official_description": "Superficial endometriosis of the right pelvic sidewall",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.332",
+            "official_description": "Superficial endometriosis of the left pelvic sidewall",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.333",
+            "official_description": "Superficial endometriosis of bilateral pelvic sidewall",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.339",
+            "official_description": "Superficial endometriosis of pelvic sidewall, unspecified side",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.341",
+            "official_description": "Deep endometriosis of the right pelvic sidewall",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.342",
+            "official_description": "Deep endometriosis of the left pelvic sidewall",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.343",
+            "official_description": "Deep endometriosis of the bilateral pelvic sidewall",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.349",
+            "official_description": "Deep endometriosis of the pelvic sidewall, unspecified side",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.351",
+            "official_description": "Endometriosis of the right pelvic sidewall, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.352",
+            "official_description": "Endometriosis of the left pelvic sidewall, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.353",
+            "official_description": "Endometriosis of bilateral pelvic sidewall, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.359",
+            "official_description": "Endometriosis of pelvic sidewall, unspecified side, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.361",
+            "official_description": "Superficial endometriosis of the right pelvic brim",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.362",
+            "official_description": "Superficial endometriosis of the left pelvic brim",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.363",
+            "official_description": "Superficial endometriosis of bilateral pelvic brim",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.369",
+            "official_description": "Superficial endometriosis of the pelvic brim, unspecified side",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.371",
+            "official_description": "Deep endometriosis of the right pelvic brim",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.372",
+            "official_description": "Deep endometriosis of the left pelvic brim",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.373",
+            "official_description": "Deep endometriosis of bilateral pelvic brim",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.379",
+            "official_description": "Deep endometriosis of the pelvic brim, unspecified side",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.381",
+            "official_description": "Endometriosis of the right pelvic brim, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.382",
+            "official_description": "Endometriosis of the left pelvic brim, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.383",
+            "official_description": "Endometriosis of bilateral pelvic brim, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.389",
+            "official_description": "Endometriosis of the pelvic brim, unspecified side, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.391",
+            "official_description": "Superficial endometriosis of the pelvic peritoneum, other specified sites",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.392",
+            "official_description": "Deep endometriosis of the pelvic peritoneum, other specified sites",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.399",
+            "official_description": "Endometriosis of the pelvic peritoneum, other specified sites, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3A1",
+            "official_description": "Superficial endometriosis of the right uterosacral ligament",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3A2",
+            "official_description": "Superficial endometriosis of the left uterosacral ligament",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3A3",
+            "official_description": "Superficial endometriosis of the bilateral uterosacral ligament(s)",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3A9",
+            "official_description": "Superficial endometriosis of the uterosacral ligament(s), unspecified side",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3B1",
+            "official_description": "Deep endometriosis of the right uterosacral ligament",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3B2",
+            "official_description": "Deep endometriosis of the left uterosacral ligament",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3B3",
+            "official_description": "Deep endometriosis of bilateral uterosacral ligament(s)",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3B9",
+            "official_description": "Deep endometriosis of the uterosacral ligament(s), unspecified side",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3C1",
+            "official_description": "Endometriosis of the right uterosacral ligament, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3C2",
+            "official_description": "Endometriosis of the left uterosacral ligament, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3C3",
+            "official_description": "Endometriosis of bilateral uterosacral ligament(s), unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.3C9",
+            "official_description": "Endometriosis of the uterosacral ligament(s), unspecified side, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.40",
+            "official_description": "Endometriosis of rectovaginal septum, unspecified involvement of vagina",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.41",
+            "official_description": "Endometriosis of rectovaginal septum without involvement of vagina",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.42",
+            "official_description": "Endometriosis of rectovaginal septum with involvement of vagina",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.8",
+            "official_description": "Other endometriosis",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.9",
+            "official_description": "Endometriosis, unspecified",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.B4",
+            "official_description": "Endometriosis of the pericardial space",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.B5",
+            "official_description": "Endometriosis of the mediastinal space",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.B6",
+            "official_description": "Endometriosis of cardiothoracic space",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C0",
+            "official_description": "Endometriosis of the abdomen, unspecified",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C10",
+            "official_description": "Endometriosis of the anterior abdominal wall, subcutaneous tissue",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C11",
+            "official_description": "Endometriosis of the anterior abdominal wall, fascia and muscular layers",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C19",
+            "official_description": "Endometriosis of the anterior abdominal wall, unspecified depth",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C2",
+            "official_description": "Endometriosis of the umbilicus",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C3",
+            "official_description": "Endometriosis of the inguinal canal",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C4",
+            "official_description": "Endometriosis of extra-pelvic abdominal peritoneum",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.C9",
+            "official_description": "Endometriosis of other site of abdomen",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D0",
+            "official_description": "Endometriosis of the pelvic nerves, unspecified",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D1",
+            "official_description": "Endometriosis of the sacral splanchnic nerves",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D2",
+            "official_description": "Endometriosis of the sacral nerve roots",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D3",
+            "official_description": "Endometriosis of the obturator nerve",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D4",
+            "official_description": "Endometriosis of the sciatic nerve",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D5",
+            "official_description": "Endometriosis of the pudendal nerve",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D6",
+            "official_description": "Endometriosis of the femoral nerve",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          },
+          {
+            "code": "N80.D9",
+            "official_description": "Endometriosis of other pelvic nerve",
+            "billable": true,
+            "specificity_note": "Anatomic site + laterality/depth axis where applicable."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence.",
+        "CMS DRG pages can split a code family across collections. Reviewer should compare this staging list against the official April 1, 2026 code-descriptions file before treating N80 enumeration as exhaustive."
+      ],
+      "extractor_notes": "N80 is a highly granular FY2026 category. This list contains all N80 leaves captured on the opened current CMS v43.1 P0290 page; do not auto-select. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.uterine_fibroids",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "D25.0",
+            "official_description": "Submucous leiomyoma of uterus",
+            "billable": true,
+            "specificity_note": "Anatomic subtype."
+          },
+          {
+            "code": "D25.1",
+            "official_description": "Intramural leiomyoma of uterus",
+            "billable": true,
+            "specificity_note": "Anatomic subtype."
+          },
+          {
+            "code": "D25.2",
+            "official_description": "Subserosal leiomyoma of uterus",
+            "billable": true,
+            "specificity_note": "Anatomic subtype."
+          },
+          {
+            "code": "D25.9",
+            "official_description": "Leiomyoma of uterus, unspecified",
+            "billable": true,
+            "specificity_note": "Unspecified subtype."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "D25 is a category; select anatomic subtype from documentation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.primary_dysmenorrhea",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N94.4",
+            "official_description": "Primary dysmenorrhea",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.pms",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N94.3",
+            "official_description": "Premenstrual tension syndrome",
+            "billable": true,
+            "specificity_note": "Official descriptor; canonical display label is PMS."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Code exists and is billable; official wording is 'Premenstrual tension syndrome'. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.irregular_menstruation",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N92.6",
+            "official_description": "Irregular menstruation, unspecified",
+            "billable": true,
+            "specificity_note": "Billable terminal code; intentionally unspecified."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified for unspecified irregular menstruation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.menorrhagia",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N92.0",
+            "official_description": "Excessive and frequent menstruation with regular cycle",
+            "billable": true,
+            "specificity_note": "Cycle-pattern axis."
+          },
+          {
+            "code": "N92.1",
+            "official_description": "Excessive and frequent menstruation with irregular cycle",
+            "billable": true,
+            "specificity_note": "Cycle-pattern axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Current seed N92.0 is not synonymous with all heavy menstrual bleeding; regular vs irregular cycle documentation matters. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.oligomenorrhea",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N91.3",
+            "official_description": "Primary oligomenorrhea",
+            "billable": true,
+            "specificity_note": "Primary/secondary/unspecified axis."
+          },
+          {
+            "code": "N91.4",
+            "official_description": "Secondary oligomenorrhea",
+            "billable": true,
+            "specificity_note": "Primary/secondary/unspecified axis."
+          },
+          {
+            "code": "N91.5",
+            "official_description": "Oligomenorrhea, unspecified",
+            "billable": true,
+            "specificity_note": "Primary/secondary/unspecified axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Current seed N91.5 is the unspecified leaf; choose primary/secondary when documented. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.amenorrhea",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N91.1",
+            "official_description": "Secondary amenorrhea",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Canonical label is explicitly secondary amenorrhea; exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.female_infertility",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N97.0",
+            "official_description": "Female infertility associated with anovulation",
+            "billable": true,
+            "specificity_note": "Etiology axis."
+          },
+          {
+            "code": "N97.1",
+            "official_description": "Female infertility of tubal origin",
+            "billable": true,
+            "specificity_note": "Etiology axis."
+          },
+          {
+            "code": "N97.2",
+            "official_description": "Female infertility of uterine origin",
+            "billable": true,
+            "specificity_note": "Etiology axis."
+          },
+          {
+            "code": "N97.8",
+            "official_description": "Female infertility of other origin",
+            "billable": true,
+            "specificity_note": "Etiology axis."
+          },
+          {
+            "code": "N97.9",
+            "official_description": "Female infertility, unspecified",
+            "billable": true,
+            "specificity_note": "Unspecified billable leaf."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "N97 is a category; etiology determines the leaf. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.male_infertility",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N46.01",
+            "official_description": "Organic azoospermia",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.021",
+            "official_description": "Azoospermia due to drug therapy",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.022",
+            "official_description": "Azoospermia due to infection",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.023",
+            "official_description": "Azoospermia due to obstruction of efferent ducts",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.024",
+            "official_description": "Azoospermia due to radiation",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.025",
+            "official_description": "Azoospermia due to systemic disease",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.029",
+            "official_description": "Azoospermia due to other extratesticular causes",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.11",
+            "official_description": "Organic oligospermia",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.121",
+            "official_description": "Oligospermia due to drug therapy",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.122",
+            "official_description": "Oligospermia due to infection",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.123",
+            "official_description": "Oligospermia due to obstruction of efferent ducts",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.124",
+            "official_description": "Oligospermia due to radiation",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.125",
+            "official_description": "Oligospermia due to systemic disease",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.129",
+            "official_description": "Oligospermia due to other extratesticular causes",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.8",
+            "official_description": "Other male infertility",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          },
+          {
+            "code": "N46.9",
+            "official_description": "Male infertility, unspecified",
+            "billable": true,
+            "specificity_note": "Mechanism/phenotype axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0280.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "N46 is a category; phenotype and mechanism determine the leaf. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.diminished_ovarian_reserve",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "E28.39",
+            "official_description": "Other primary ovarian failure",
+            "billable": true,
+            "specificity_note": "Broader ovarian-failure code; not automatically equivalent to diminished ovarian reserve."
+          },
+          {
+            "code": "E28.310",
+            "official_description": "Symptomatic premature menopause",
+            "billable": true,
+            "specificity_note": "Only if this documented phenotype is present."
+          },
+          {
+            "code": "E28.319",
+            "official_description": "Asymptomatic premature menopause",
+            "billable": true,
+            "specificity_note": "Only if this documented phenotype is present."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Existing E28.3 seed is not a sufficient exact mapping for diminished ovarian reserve. E28.39 is broader 'other primary ovarian failure'; human coding review required. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.ivf_support",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "Z31.83",
+            "official_description": "Encounter for assisted reproductive fertility procedure cycle",
+            "billable": true,
+            "specificity_note": "Encounter-context Z code, not a disease code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1015.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Verified as an encounter code. Use only for the documented assisted-reproductive-procedure cycle context. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.recurrent_pregnancy_loss",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N96",
+            "official_description": "Recurrent pregnancy loss",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.luteal_phase_defect",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "E28.8",
+            "official_description": "Other ovarian dysfunction",
+            "billable": true,
+            "specificity_note": "Broad ovarian-dysfunction candidate; not a dedicated luteal-phase-defect descriptor."
+          },
+          {
+            "code": "N97.8",
+            "official_description": "Female infertility of other origin",
+            "billable": true,
+            "specificity_note": "Infertility-context candidate only; not equivalent to luteal phase defect itself."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "No dedicated luteal-phase-defect descriptor was established in this strict pass. Existing E28.8 is broad; N97.8 may apply only in infertility context. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only.",
+      "mapping_review_note": "N97.8 verified in the official FY2026 codes file (the cited DRG page P0290 does not carry it — page-attribution imprecision, code itself confirmed). Both E28.8 and N97.8 remain broad/context candidates."
+    },
+    {
+      "condition_id": "cond.menopause_syndrome",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N95.1",
+            "official_description": "Menopausal and female climacteric states",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact official descriptor verified for symptomatic climacteric/menopausal state. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.hyperemesis_gravidarum",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "O21.0",
+            "official_description": "Mild hyperemesis gravidarum",
+            "billable": true,
+            "specificity_note": "Pregnancy-only obstetric code."
+          },
+          {
+            "code": "O21.1",
+            "official_description": "Hyperemesis gravidarum with metabolic disturbance",
+            "billable": true,
+            "specificity_note": "Pregnancy-only obstetric code; complication axis."
+          },
+          {
+            "code": "O21.2",
+            "official_description": "Late vomiting of pregnancy",
+            "billable": true,
+            "specificity_note": "Pregnancy-only obstetric code."
+          },
+          {
+            "code": "O21.8",
+            "official_description": "Other vomiting complicating pregnancy",
+            "billable": true,
+            "specificity_note": "Pregnancy-only obstetric code."
+          },
+          {
+            "code": "O21.9",
+            "official_description": "Vomiting of pregnancy, unspecified",
+            "billable": true,
+            "specificity_note": "Pregnancy-only obstetric code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0301.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "O21 is pregnancy-only. Select based on hyperemesis severity/metabolic disturbance and pregnancy vomiting context; do not reuse outside obstetric documentation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.breech_presentation",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "O32.1XX0",
+            "official_description": "Maternal care for breech presentation, not applicable or unspecified",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          },
+          {
+            "code": "O32.1XX1",
+            "official_description": "Maternal care for breech presentation, fetus 1",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          },
+          {
+            "code": "O32.1XX2",
+            "official_description": "Maternal care for breech presentation, fetus 2",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          },
+          {
+            "code": "O32.1XX3",
+            "official_description": "Maternal care for breech presentation, fetus 3",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          },
+          {
+            "code": "O32.1XX4",
+            "official_description": "Maternal care for breech presentation, fetus 4",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          },
+          {
+            "code": "O32.1XX5",
+            "official_description": "Maternal care for breech presentation, fetus 5",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          },
+          {
+            "code": "O32.1XX9",
+            "official_description": "Maternal care for breech presentation, other fetus",
+            "billable": true,
+            "specificity_note": "Maternal-care obstetric code + fetus-number 7th character."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0810.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "This is a maternal-care code, not a generic fetal-position label. Use only in the appropriate obstetric encounter and choose the fetus-number 7th character. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.postpartum_hypolactation",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "O92.4",
+            "official_description": "Hypogalactia",
+            "billable": true,
+            "specificity_note": "Obstetric/puerperium context."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0313.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified; obstetric context should remain explicit. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.chronic_pelvic_pain",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "R10.20",
+            "official_description": "Pelvic and perineal pain unspecified side",
+            "billable": true,
+            "specificity_note": "Laterality/location axis."
+          },
+          {
+            "code": "R10.21",
+            "official_description": "Pelvic and perineal pain right side",
+            "billable": true,
+            "specificity_note": "Laterality/location axis."
+          },
+          {
+            "code": "R10.22",
+            "official_description": "Pelvic and perineal pain left side",
+            "billable": true,
+            "specificity_note": "Laterality/location axis."
+          },
+          {
+            "code": "R10.23",
+            "official_description": "Pelvic and perineal pain bilateral",
+            "billable": true,
+            "specificity_note": "Laterality/location axis."
+          },
+          {
+            "code": "R10.24",
+            "official_description": "Suprapubic pain",
+            "billable": true,
+            "specificity_note": "Location axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "FY2026 R10.2 family is split into billable location/laterality leaves; none encodes chronicity by itself. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.pid_chronic",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N73.1",
+            "official_description": "Chronic parametritis and pelvic cellulitis",
+            "billable": true,
+            "specificity_note": "Specific chronic inflammatory subtype; not all chronic PID."
+          },
+          {
+            "code": "N73.4",
+            "official_description": "Female chronic pelvic peritonitis",
+            "billable": true,
+            "specificity_note": "Specific chronic inflammatory subtype."
+          },
+          {
+            "code": "N73.6",
+            "official_description": "Female pelvic peritoneal adhesions (postinfective)",
+            "billable": true,
+            "specificity_note": "Postinfective sequela-type concept."
+          },
+          {
+            "code": "N73.8",
+            "official_description": "Other specified female pelvic inflammatory diseases",
+            "billable": true,
+            "specificity_note": "Other specified PID."
+          },
+          {
+            "code": "N73.9",
+            "official_description": "Female pelvic inflammatory disease, unspecified",
+            "billable": true,
+            "specificity_note": "Unspecified PID."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Current N73.1 seed is narrower than 'chronic PID sequelae'. Review the documented anatomy/sequela before choosing a leaf. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.vulvovaginal_candidiasis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "B37.31",
+            "official_description": "Acute candidiasis of vulva and vagina",
+            "billable": true,
+            "specificity_note": "Acute/chronic axis."
+          },
+          {
+            "code": "B37.32",
+            "official_description": "Chronic candidiasis of vulva and vagina",
+            "billable": true,
+            "specificity_note": "Acute/chronic axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Existing B37.3 is nonterminal in FY2026; choose acute vs chronic from documentation. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.thin_endometrium",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "N85.8",
+            "official_description": "Other specified noninflammatory disorders of uterus",
+            "billable": true,
+            "specificity_note": "Broad candidate; no dedicated thin-endometrium descriptor."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0290.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "N85.8 exists and is billable but is a broad 'other specified noninflammatory disorders of uterus' code. Do not treat it as an exact thin-endometrium mapping without human review. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.pmdd",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "F32.81",
+            "official_description": "Premenstrual dysphoric disorder",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1335.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    },
+    {
+      "condition_id": "cond.secondary_dysmenorrhea",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "N94.5",
+            "official_description": "Secondary dysmenorrhea",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0791.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Task C provenance not populated in this extraction: the exact existing canonical red_flags text was not available in this ChatGPT environment, so matching generic web warnings would risk rewriting or adding safety meaning. Repo-local reviewer should match each existing flag verbatim to whitelisted NICHD/MedlinePlus/CDC/NIDDK evidence."
+      ],
+      "extractor_notes": "Exact descriptor verified. No new red-flag prose was authored; Batch 4 task C remains a provenance-matching gap only."
+    }
+  ],
+  "review": {
+    "reviewed_by": "claude",
+    "review_date": "2026-08-08",
+    "review_method": "independent verification against official CDC NCHS FY2026 files (icd10cm-codes-2026.txt · icd10cm-order-2026.txt · icd10cm-index-2026.xml) — every staged code checked for existence, billable status, and exact long description; DRG-page citations cross-checked; red-flag quotes fragment-matched on source pages. 586 codes: 0 nonexistent, 0 billable errors, 78 descriptions aligned to official text, 1 status corrected via official index (plantar fasciitis)."
+  }
+}

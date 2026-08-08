@@ -1,0 +1,2909 @@
+{
+  "batch": "cond_batch2_pain_msk",
+  "retrieved_at": "2026-08-07",
+  "extractor": "chatgpt",
+  "icd10cm_version": "FY2026 April 1, 2026 update",
+  "records": [
+    {
+      "condition_id": "cond.chronic_low_back_pain",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M54.50",
+            "official_description": "Low back pain, unspecified",
+            "billable": true,
+            "specificity_note": "Low-back-pain subtype axis."
+          },
+          {
+            "code": "M54.51",
+            "official_description": "Vertebrogenic low back pain",
+            "billable": true,
+            "specificity_note": "Use only when vertebrogenic etiology is documented."
+          },
+          {
+            "code": "M54.59",
+            "official_description": "Other low back pain",
+            "billable": true,
+            "specificity_note": "Other specified low-back-pain presentation."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1160.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Existing seed M54.5 is nonterminal in current coding practice; the three FY2026 billable leaves above were verified in CMS v43.1."
+    },
+    {
+      "condition_id": "cond.acute_lumbar_sprain",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "S39.012A",
+            "official_description": "Strain of muscle, fascia and tendon of lower back, initial encounter",
+            "billable": true,
+            "specificity_note": "7th-character encounter axis."
+          },
+          {
+            "code": "S39.012D",
+            "official_description": "Strain of muscle, fascia and tendon of lower back, subsequent encounter",
+            "billable": true,
+            "specificity_note": "7th-character encounter axis."
+          },
+          {
+            "code": "S39.012S",
+            "official_description": "Strain of muscle, fascia and tendon of lower back, sequela",
+            "billable": true,
+            "specificity_note": "7th-character encounter axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1666.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Initial and subsequent descriptions were verified on current CMS v43.1 pages; sequela follows the same S39.012 7th-character family. Additional official page for D: https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0970.html"
+    },
+    {
+      "condition_id": "cond.lumbar_disc_herniation",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M51.26",
+            "official_description": "Other intervertebral disc displacement, lumbar region",
+            "billable": true,
+            "specificity_note": "Lumbar anatomic-site branch."
+          },
+          {
+            "code": "M51.27",
+            "official_description": "Other intervertebral disc displacement, lumbosacral region",
+            "billable": true,
+            "specificity_note": "Lumbosacral anatomic-site branch."
+          },
+          {
+            "code": "M51.16",
+            "official_description": "Intervertebral disc disorders with radiculopathy, lumbar region",
+            "billable": true,
+            "specificity_note": "Use only when radiculopathy is documented."
+          },
+          {
+            "code": "M51.17",
+            "official_description": "Intervertebral disc disorders with radiculopathy, lumbosacral region",
+            "billable": true,
+            "specificity_note": "Use only when lumbosacral radiculopathy is documented."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0563.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "The canonical concept 'lumbar disc herniation' does not itself establish radiculopathy; do not auto-select M51.16/17."
+    },
+    {
+      "condition_id": "cond.sciatica",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M54.30",
+            "official_description": "Sciatica, unspecified side",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M54.31",
+            "official_description": "Sciatica, right side",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M54.32",
+            "official_description": "Sciatica, left side",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43-fullcode-cms/fullcode_cms/P0564.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "FY2026 final-release family retains laterality leaves; Fable should re-open the final-release source during acceptance because the clean descriptor page returned by search is the FY2026 final v43 page rather than the later v43.1 DRG page."
+    },
+    {
+      "condition_id": "cond.cervical_spondylosis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M47.12",
+            "official_description": "Other spondylosis with myelopathy, cervical region",
+            "billable": true,
+            "specificity_note": "Neurologic complication axis."
+          },
+          {
+            "code": "M47.22",
+            "official_description": "Other spondylosis with radiculopathy, cervical region",
+            "billable": true,
+            "specificity_note": "Neurologic complication axis."
+          },
+          {
+            "code": "M47.812",
+            "official_description": "Spondylosis without myelopathy or radiculopathy, cervical region",
+            "billable": true,
+            "specificity_note": "Matches the current seed only when neither myelopathy nor radiculopathy is documented."
+          },
+          {
+            "code": "M47.892",
+            "official_description": "Other spondylosis, cervical region",
+            "billable": true,
+            "specificity_note": "Other specified cervical spondylosis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1496.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Current seed M47.812 is billable but semantically narrower than generic cervical spondylosis."
+    },
+    {
+      "condition_id": "cond.neck_pain_stiff",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "M54.2",
+            "official_description": "Cervicalgia",
+            "billable": true,
+            "specificity_note": "Billable symptom code; does not encode traumatic etiology."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43-fullcode-cms/fullcode_cms/P0564.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Code verified. Because the canonical label includes 'acute neck pain / stiff neck', human review should avoid using this symptom code when a specific injury diagnosis is documented."
+    },
+    {
+      "condition_id": "cond.whiplash",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "S13.4XXA",
+            "official_description": "Sprain of ligaments of cervical spine, initial encounter",
+            "billable": true,
+            "specificity_note": "7th-character encounter axis."
+          },
+          {
+            "code": "S13.4XXD",
+            "official_description": "Sprain of ligaments of cervical spine, subsequent encounter",
+            "billable": true,
+            "specificity_note": "7th-character encounter axis."
+          },
+          {
+            "code": "S13.4XXS",
+            "official_description": "Sprain of ligaments of cervical spine, sequela",
+            "billable": true,
+            "specificity_note": "7th-character encounter axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1174.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Whiplash is a clinical label; S13.4XX* is the verified cervical-ligament-sprain family and should not be assumed for every whiplash presentation without documentation."
+    },
+    {
+      "condition_id": "cond.frozen_shoulder",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M75.00",
+            "official_description": "Adhesive capsulitis of unspecified shoulder",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M75.01",
+            "official_description": "Adhesive capsulitis of right shoulder",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M75.02",
+            "official_description": "Adhesive capsulitis of left shoulder",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0677.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Existing M75.0 is a nonterminal family; select laterality from documentation."
+    },
+    {
+      "condition_id": "cond.rotator_cuff",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M75.100",
+            "official_description": "Unspecified rotator cuff tear or rupture of unspecified shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.101",
+            "official_description": "Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.102",
+            "official_description": "Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.110",
+            "official_description": "Incomplete rotator cuff tear or rupture of unspecified shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.111",
+            "official_description": "Incomplete rotator cuff tear or rupture of right shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.112",
+            "official_description": "Incomplete rotator cuff tear or rupture of left shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.120",
+            "official_description": "Complete rotator cuff tear or rupture of unspecified shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.121",
+            "official_description": "Complete rotator cuff tear or rupture of right shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          },
+          {
+            "code": "M75.122",
+            "official_description": "Complete rotator cuff tear or rupture of left shoulder, not specified as traumatic",
+            "billable": true,
+            "specificity_note": "Tear severity + laterality."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0677.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Important semantic issue: current M75.1 family is nontraumatic rotator-cuff tear/rupture, while the canonical label says rotator cuff tendinopathy. Do not treat M75.1 as an exact tendinopathy mapping without human review.",
+      "mapping_review_note": "M75.1x family is nontraumatic TEAR/RUPTURE; canonical label is tendinopathy. mapping_type: related_not_exact — do not promote as exact."
+    },
+    {
+      "condition_id": "cond.lateral_epicondylitis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M77.10",
+            "official_description": "Lateral epicondylitis, unspecified elbow",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M77.11",
+            "official_description": "Lateral epicondylitis, right elbow",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M77.12",
+            "official_description": "Lateral epicondylitis, left elbow",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0677.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Existing M77.1 is a nonterminal family."
+    },
+    {
+      "condition_id": "cond.medial_epicondylitis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M77.00",
+            "official_description": "Medial epicondylitis, unspecified elbow",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M77.01",
+            "official_description": "Medial epicondylitis, right elbow",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M77.02",
+            "official_description": "Medial epicondylitis, left elbow",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0677.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Existing M77.0 is a nonterminal family."
+    },
+    {
+      "condition_id": "cond.carpal_tunnel",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G56.00",
+            "official_description": "Carpal tunnel syndrome, unspecified upper limb",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "G56.01",
+            "official_description": "Carpal tunnel syndrome, right upper limb",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "G56.02",
+            "official_description": "Carpal tunnel syndrome, left upper limb",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "G56.03",
+            "official_description": "Carpal tunnel syndrome, bilateral upper limbs",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1345.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Existing G56.0 is a nonterminal family."
+    },
+    {
+      "condition_id": "cond.de_quervain",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "M65.4",
+            "official_description": "Radial styloid tenosynovitis [de Quervain]",
+            "billable": true,
+            "specificity_note": "Billable terminal code; no laterality encoded."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0564.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Exact FY2026 descriptor verified."
+    },
+    {
+      "condition_id": "cond.trigger_finger",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M65.30",
+            "official_description": "Trigger finger, unspecified finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.311",
+            "official_description": "Trigger thumb, right thumb",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.312",
+            "official_description": "Trigger thumb, left thumb",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.319",
+            "official_description": "Trigger thumb, unspecified thumb",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.321",
+            "official_description": "Trigger finger, right index finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.322",
+            "official_description": "Trigger finger, left index finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.329",
+            "official_description": "Trigger finger, unspecified index finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.331",
+            "official_description": "Trigger finger, right middle finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.332",
+            "official_description": "Trigger finger, left middle finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.339",
+            "official_description": "Trigger finger, unspecified middle finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.341",
+            "official_description": "Trigger finger, right ring finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.342",
+            "official_description": "Trigger finger, left ring finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.349",
+            "official_description": "Trigger finger, unspecified ring finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.351",
+            "official_description": "Trigger finger, right little finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.352",
+            "official_description": "Trigger finger, left little finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          },
+          {
+            "code": "M65.359",
+            "official_description": "Trigger finger, unspecified little finger",
+            "billable": true,
+            "specificity_note": "Digit + laterality axis where specified."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0564.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Existing M65.3 is a family; choose digit and laterality from documentation."
+    },
+    {
+      "condition_id": "cond.knee_osteoarthritis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M17.0",
+            "official_description": "Bilateral primary osteoarthritis of knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.10",
+            "official_description": "Unilateral primary osteoarthritis, unspecified knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.11",
+            "official_description": "Unilateral primary osteoarthritis, right knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.12",
+            "official_description": "Unilateral primary osteoarthritis, left knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.2",
+            "official_description": "Bilateral post-traumatic osteoarthritis of knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.30",
+            "official_description": "Unilateral post-traumatic osteoarthritis, unspecified knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.31",
+            "official_description": "Unilateral post-traumatic osteoarthritis, right knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.32",
+            "official_description": "Unilateral post-traumatic osteoarthritis, left knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.4",
+            "official_description": "Other bilateral secondary osteoarthritis of knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.5",
+            "official_description": "Other unilateral secondary osteoarthritis of knee",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M17.9",
+            "official_description": "Osteoarthritis of knee, unspecified",
+            "billable": true,
+            "specificity_note": "Unspecified billable leaf."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0672.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "M17 is not billable; etiology and laterality determine the leaf."
+    },
+    {
+      "condition_id": "cond.patellofemoral_pain",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M22.2X1",
+            "official_description": "Patellofemoral disorders, right knee",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M22.2X2",
+            "official_description": "Patellofemoral disorders, left knee",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "M22.2X9",
+            "official_description": "Patellofemoral disorders, unspecified knee",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0237.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Official descriptor is broader 'patellofemoral disorders'; do not equate all PFPS presentations with this code family without coding review."
+    },
+    {
+      "condition_id": "cond.meniscus_injury",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "S83.200A",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.200D",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.200S",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.201A",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.201D",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.201S",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.202A",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.202D",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.202S",
+            "official_description": "Bucket-handle tear of unspecified meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.203A",
+            "official_description": "Other tear of unspecified meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.203D",
+            "official_description": "Other tear of unspecified meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.203S",
+            "official_description": "Other tear of unspecified meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.204A",
+            "official_description": "Other tear of unspecified meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.204D",
+            "official_description": "Other tear of unspecified meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.204S",
+            "official_description": "Other tear of unspecified meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.205A",
+            "official_description": "Other tear of unspecified meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.205D",
+            "official_description": "Other tear of unspecified meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.205S",
+            "official_description": "Other tear of unspecified meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.206A",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.206D",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.206S",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.207A",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.207D",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.207S",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.209A",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.209D",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.209S",
+            "official_description": "Unspecified tear of unspecified meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.211A",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.211D",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.211S",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.212A",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.212D",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.212S",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.219A",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.219D",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.219S",
+            "official_description": "Bucket-handle tear of medial meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.221A",
+            "official_description": "Peripheral tear of medial meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.221D",
+            "official_description": "Peripheral tear of medial meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.221S",
+            "official_description": "Peripheral tear of medial meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.222A",
+            "official_description": "Peripheral tear of medial meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.222D",
+            "official_description": "Peripheral tear of medial meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.222S",
+            "official_description": "Peripheral tear of medial meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.229A",
+            "official_description": "Peripheral tear of medial meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.229D",
+            "official_description": "Peripheral tear of medial meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.229S",
+            "official_description": "Peripheral tear of medial meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.231A",
+            "official_description": "Complex tear of medial meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.231D",
+            "official_description": "Complex tear of medial meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.231S",
+            "official_description": "Complex tear of medial meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.232A",
+            "official_description": "Complex tear of medial meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.232D",
+            "official_description": "Complex tear of medial meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.232S",
+            "official_description": "Complex tear of medial meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.239A",
+            "official_description": "Complex tear of medial meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.239D",
+            "official_description": "Complex tear of medial meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.239S",
+            "official_description": "Complex tear of medial meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.241A",
+            "official_description": "Other tear of medial meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.241D",
+            "official_description": "Other tear of medial meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.241S",
+            "official_description": "Other tear of medial meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.242A",
+            "official_description": "Other tear of medial meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.242D",
+            "official_description": "Other tear of medial meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.242S",
+            "official_description": "Other tear of medial meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.249A",
+            "official_description": "Other tear of medial meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.249D",
+            "official_description": "Other tear of medial meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.249S",
+            "official_description": "Other tear of medial meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.251A",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.251D",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.251S",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.252A",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.252D",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.252S",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.259A",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.259D",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.259S",
+            "official_description": "Bucket-handle tear of lateral meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.261A",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.261D",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.261S",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.262A",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.262D",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.262S",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.269A",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.269D",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.269S",
+            "official_description": "Peripheral tear of lateral meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.271A",
+            "official_description": "Complex tear of lateral meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.271D",
+            "official_description": "Complex tear of lateral meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.271S",
+            "official_description": "Complex tear of lateral meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.272A",
+            "official_description": "Complex tear of lateral meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.272D",
+            "official_description": "Complex tear of lateral meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.272S",
+            "official_description": "Complex tear of lateral meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.279A",
+            "official_description": "Complex tear of lateral meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.279D",
+            "official_description": "Complex tear of lateral meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.279S",
+            "official_description": "Complex tear of lateral meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.281A",
+            "official_description": "Other tear of lateral meniscus, current injury, right knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.281D",
+            "official_description": "Other tear of lateral meniscus, current injury, right knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.281S",
+            "official_description": "Other tear of lateral meniscus, current injury, right knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.282A",
+            "official_description": "Other tear of lateral meniscus, current injury, left knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.282D",
+            "official_description": "Other tear of lateral meniscus, current injury, left knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.282S",
+            "official_description": "Other tear of lateral meniscus, current injury, left knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.289A",
+            "official_description": "Other tear of lateral meniscus, current injury, unspecified knee, initial encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.289D",
+            "official_description": "Other tear of lateral meniscus, current injury, unspecified knee, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S83.289S",
+            "official_description": "Other tear of lateral meniscus, current injury, unspecified knee, sequela",
+            "billable": true,
+            "specificity_note": "Tear morphology + knee laterality + 7th-character encounter axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0613.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Current S83.2 seed is far too broad. The staged options use the current CMS meniscus morphology/laterality structure and A/D/S encounter axis. Current CMS manual pages distribute encounter variants across collections; reviewer should mechanically recheck the April code-description file before merge."
+    },
+    {
+      "condition_id": "cond.ankle_sprain",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "S93.401A",
+            "official_description": "Sprain of unspecified ligament of right ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.401D",
+            "official_description": "Sprain of unspecified ligament of right ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.401S",
+            "official_description": "Sprain of unspecified ligament of right ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.402A",
+            "official_description": "Sprain of unspecified ligament of left ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.402D",
+            "official_description": "Sprain of unspecified ligament of left ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.402S",
+            "official_description": "Sprain of unspecified ligament of left ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.409A",
+            "official_description": "Sprain of unspecified ligament of unspecified ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.409D",
+            "official_description": "Sprain of unspecified ligament of unspecified ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.409S",
+            "official_description": "Sprain of unspecified ligament of unspecified ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.411A",
+            "official_description": "Sprain of calcaneofibular ligament of right ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.411D",
+            "official_description": "Sprain of calcaneofibular ligament of right ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.411S",
+            "official_description": "Sprain of calcaneofibular ligament of right ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.412A",
+            "official_description": "Sprain of calcaneofibular ligament of left ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.412D",
+            "official_description": "Sprain of calcaneofibular ligament of left ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.412S",
+            "official_description": "Sprain of calcaneofibular ligament of left ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.419A",
+            "official_description": "Sprain of calcaneofibular ligament of unspecified ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.419D",
+            "official_description": "Sprain of calcaneofibular ligament of unspecified ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.419S",
+            "official_description": "Sprain of calcaneofibular ligament of unspecified ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.421A",
+            "official_description": "Sprain of deltoid ligament of right ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.421D",
+            "official_description": "Sprain of deltoid ligament of right ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.421S",
+            "official_description": "Sprain of deltoid ligament of right ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.422A",
+            "official_description": "Sprain of deltoid ligament of left ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.422D",
+            "official_description": "Sprain of deltoid ligament of left ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.422S",
+            "official_description": "Sprain of deltoid ligament of left ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.429A",
+            "official_description": "Sprain of deltoid ligament of unspecified ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.429D",
+            "official_description": "Sprain of deltoid ligament of unspecified ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.429S",
+            "official_description": "Sprain of deltoid ligament of unspecified ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.431A",
+            "official_description": "Sprain of tibiofibular ligament of right ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.431D",
+            "official_description": "Sprain of tibiofibular ligament of right ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.431S",
+            "official_description": "Sprain of tibiofibular ligament of right ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.432A",
+            "official_description": "Sprain of tibiofibular ligament of left ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.432D",
+            "official_description": "Sprain of tibiofibular ligament of left ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.432S",
+            "official_description": "Sprain of tibiofibular ligament of left ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.439A",
+            "official_description": "Sprain of tibiofibular ligament of unspecified ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.439D",
+            "official_description": "Sprain of tibiofibular ligament of unspecified ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.439S",
+            "official_description": "Sprain of tibiofibular ligament of unspecified ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.491A",
+            "official_description": "Sprain of other ligament of right ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.491D",
+            "official_description": "Sprain of other ligament of right ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.491S",
+            "official_description": "Sprain of other ligament of right ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.492A",
+            "official_description": "Sprain of other ligament of left ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.492D",
+            "official_description": "Sprain of other ligament of left ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.492S",
+            "official_description": "Sprain of other ligament of left ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.499A",
+            "official_description": "Sprain of other ligament of unspecified ankle, initial encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.499D",
+            "official_description": "Sprain of other ligament of unspecified ankle, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          },
+          {
+            "code": "S93.499S",
+            "official_description": "Sprain of other ligament of unspecified ankle, sequela",
+            "billable": true,
+            "specificity_note": "Ligament + laterality + 7th-character encounter axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0707.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Current S93.4 seed is nonterminal. Listed options encode ligament, laterality, and A/D/S encounter. Fable should recheck the full FY2026 code-description file before merge."
+    },
+    {
+      "condition_id": "cond.plantar_fasciitis",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "M72.2",
+            "official_description": "Plantar fascial fibromatosis",
+            "billable": true,
+            "specificity_note": "Official FY2026 alphabetic index maps Fasciitis→plantar→M72.2 (icd10cm-index-2026.xml), but the tabular descriptor is \"Plantar fascial fibromatosis\". mapping_type: index_supported_close_match — human review before crosswalk promotion."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0677.html",
+        "index_evidence": "CDC NCHS icd10cm-index-2026.xml: <title>Fasciitis</title>…<title>plantar</title><code>M72.2</code>"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Tabular descriptor does not read \"plantar fasciitis\"; mapping rests on the official alphabetic index entry. Reviewer decision recorded 2026-08-08."
+      ],
+      "extractor_notes": "Critical mismatch: the opened FY2026 CMS page describes M72.2 as 'Plantar fascial fibromatosis', not plantar fasciitis. No exact plantar-fasciitis code was promoted in this strict pass."
+    },
+    {
+      "condition_id": "cond.achilles_tendinopathy",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M76.60",
+            "official_description": "Achilles tendinitis, unspecified leg",
+            "billable": true,
+            "specificity_note": "Laterality axis; official concept is tendinitis."
+          },
+          {
+            "code": "M76.61",
+            "official_description": "Achilles tendinitis, right leg",
+            "billable": true,
+            "specificity_note": "Laterality axis; official concept is tendinitis."
+          },
+          {
+            "code": "M76.62",
+            "official_description": "Achilles tendinitis, left leg",
+            "billable": true,
+            "specificity_note": "Laterality axis; official concept is tendinitis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0677.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Canonical 'Achilles tendinopathy' is broader than the official Achilles tendinitis leaf family."
+    },
+    {
+      "condition_id": "cond.hip_osteoarthritis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M16.0",
+            "official_description": "Bilateral primary osteoarthritis of hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.10",
+            "official_description": "Unilateral primary osteoarthritis, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.11",
+            "official_description": "Unilateral primary osteoarthritis, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.12",
+            "official_description": "Unilateral primary osteoarthritis, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.2",
+            "official_description": "Bilateral osteoarthritis resulting from hip dysplasia",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.30",
+            "official_description": "Unilateral osteoarthritis resulting from hip dysplasia, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.31",
+            "official_description": "Unilateral osteoarthritis resulting from hip dysplasia, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.32",
+            "official_description": "Unilateral osteoarthritis resulting from hip dysplasia, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.4",
+            "official_description": "Bilateral post-traumatic osteoarthritis of hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.50",
+            "official_description": "Unilateral post-traumatic osteoarthritis, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.51",
+            "official_description": "Unilateral post-traumatic osteoarthritis, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.52",
+            "official_description": "Unilateral post-traumatic osteoarthritis, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.6",
+            "official_description": "Other bilateral secondary osteoarthritis of hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.7",
+            "official_description": "Other unilateral secondary osteoarthritis of hip",
+            "billable": true,
+            "specificity_note": "Etiology + laterality."
+          },
+          {
+            "code": "M16.9",
+            "official_description": "Osteoarthritis of hip, unspecified",
+            "billable": true,
+            "specificity_note": "Unspecified billable leaf."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0672.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "M16 is a category; etiology and laterality determine the leaf."
+    },
+    {
+      "condition_id": "cond.piriformis_syndrome",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G57.00",
+            "official_description": "Lesion of sciatic nerve, unspecified lower limb",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "G57.01",
+            "official_description": "Lesion of sciatic nerve, right lower limb",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "G57.02",
+            "official_description": "Lesion of sciatic nerve, left lower limb",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          },
+          {
+            "code": "G57.03",
+            "official_description": "Lesion of sciatic nerve, bilateral lower limbs",
+            "billable": true,
+            "specificity_note": "Laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1345.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Semantic caution: G57.0* is 'lesion of sciatic nerve', broader/different from the clinical label piriformis syndrome. Treat as candidate family, not automatic exact mapping.",
+      "mapping_review_note": "G57.0x is lesion of sciatic nerve — candidate/context-dependent mapping only, never automatic exact."
+    },
+    {
+      "condition_id": "cond.fibromyalgia",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "M79.7",
+            "official_description": "Fibromyalgia",
+            "billable": true,
+            "specificity_note": "Billable terminal code."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0234.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Exact descriptor verified."
+    },
+    {
+      "condition_id": "cond.myofascial_pain",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M79.10",
+            "official_description": "Myalgia, unspecified site",
+            "billable": true,
+            "specificity_note": "Site axis."
+          },
+          {
+            "code": "M79.11",
+            "official_description": "Myalgia of mastication muscle",
+            "billable": true,
+            "specificity_note": "Site axis."
+          },
+          {
+            "code": "M79.12",
+            "official_description": "Myalgia of auxiliary muscles, head and neck",
+            "billable": true,
+            "specificity_note": "Site axis."
+          },
+          {
+            "code": "M79.18",
+            "official_description": "Myalgia, other site",
+            "billable": true,
+            "specificity_note": "Site axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0234.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Official family is myalgia, not a dedicated 'myofascial pain syndrome' label. Keep mapping context-dependent."
+    },
+    {
+      "condition_id": "cond.tmd",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M26.601",
+            "official_description": "Right temporomandibular joint disorder, unspecified",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.602",
+            "official_description": "Left temporomandibular joint disorder, unspecified",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.603",
+            "official_description": "Bilateral temporomandibular joint disorder, unspecified",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.609",
+            "official_description": "Unspecified temporomandibular joint disorder, unspecified side",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.611",
+            "official_description": "Adhesions and ankylosis of right temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.612",
+            "official_description": "Adhesions and ankylosis of left temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.613",
+            "official_description": "Adhesions and ankylosis of bilateral temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.619",
+            "official_description": "Adhesions and ankylosis of temporomandibular joint, unspecified side",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.621",
+            "official_description": "Arthralgia of right temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.622",
+            "official_description": "Arthralgia of left temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.623",
+            "official_description": "Arthralgia of bilateral temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.629",
+            "official_description": "Arthralgia of temporomandibular joint, unspecified side",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.631",
+            "official_description": "Articular disc disorder of right temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.632",
+            "official_description": "Articular disc disorder of left temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.633",
+            "official_description": "Articular disc disorder of bilateral temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.639",
+            "official_description": "Articular disc disorder of temporomandibular joint, unspecified side",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.641",
+            "official_description": "Arthritis of right temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.642",
+            "official_description": "Arthritis of left temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.643",
+            "official_description": "Arthritis of bilateral temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.649",
+            "official_description": "Arthritis of unspecified temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.651",
+            "official_description": "Arthropathy of right temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.652",
+            "official_description": "Arthropathy of left temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.653",
+            "official_description": "Arthropathy of bilateral temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.659",
+            "official_description": "Arthropathy of unspecified temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          },
+          {
+            "code": "M26.69",
+            "official_description": "Other specified disorders of temporomandibular joint",
+            "billable": true,
+            "specificity_note": "Subtype and/or laterality axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0464.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "M26.6 is a family; subtype and laterality are required for most leaves."
+    },
+    {
+      "condition_id": "cond.tension_headache",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G44.201",
+            "official_description": "Tension-type headache, unspecified, intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.209",
+            "official_description": "Tension-type headache, unspecified, not intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.211",
+            "official_description": "Episodic tension-type headache, intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.219",
+            "official_description": "Episodic tension-type headache, not intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.221",
+            "official_description": "Chronic tension-type headache, intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.229",
+            "official_description": "Chronic tension-type headache, not intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1336.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "G44.2 is nonterminal; select chronicity/intractability from documentation."
+    },
+    {
+      "condition_id": "cond.migraine",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G43.001",
+            "official_description": "Migraine without aura, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.009",
+            "official_description": "Migraine without aura, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.011",
+            "official_description": "Migraine without aura, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.019",
+            "official_description": "Migraine without aura, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.101",
+            "official_description": "Migraine with aura, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.109",
+            "official_description": "Migraine with aura, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.111",
+            "official_description": "Migraine with aura, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.119",
+            "official_description": "Migraine with aura, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.401",
+            "official_description": "Hemiplegic migraine, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.409",
+            "official_description": "Hemiplegic migraine, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.411",
+            "official_description": "Hemiplegic migraine, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.419",
+            "official_description": "Hemiplegic migraine, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.501",
+            "official_description": "Persistent migraine aura without cerebral infarction, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.509",
+            "official_description": "Persistent migraine aura without cerebral infarction, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.511",
+            "official_description": "Persistent migraine aura without cerebral infarction, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.519",
+            "official_description": "Persistent migraine aura without cerebral infarction, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.601",
+            "official_description": "Persistent migraine aura with cerebral infarction, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.609",
+            "official_description": "Persistent migraine aura with cerebral infarction, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.611",
+            "official_description": "Persistent migraine aura with cerebral infarction, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.619",
+            "official_description": "Persistent migraine aura with cerebral infarction, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.701",
+            "official_description": "Chronic migraine without aura, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.709",
+            "official_description": "Chronic migraine without aura, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.711",
+            "official_description": "Chronic migraine without aura, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.719",
+            "official_description": "Chronic migraine without aura, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.801",
+            "official_description": "Other migraine, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.809",
+            "official_description": "Other migraine, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.811",
+            "official_description": "Other migraine, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.819",
+            "official_description": "Other migraine, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.901",
+            "official_description": "Migraine, unspecified, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.909",
+            "official_description": "Migraine, unspecified, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.911",
+            "official_description": "Migraine, unspecified, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.919",
+            "official_description": "Migraine, unspecified, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.E01",
+            "official_description": "Chronic migraine with aura, not intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.E09",
+            "official_description": "Chronic migraine with aura, not intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.E11",
+            "official_description": "Chronic migraine with aura, intractable, with status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          },
+          {
+            "code": "G43.E19",
+            "official_description": "Chronic migraine with aura, intractable, without status migrainosus",
+            "billable": true,
+            "specificity_note": "Migraine type + intractability + status migrainosus axis."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0413.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Generic migraine spans multiple FY2026 families. Major standard phenotype families plus the new chronic-migraine-with-aura G43.E family are staged here; intractability and status migrainosus must come from documentation. Menstrual-migraine branches are intentionally not treated as the default."
+    },
+    {
+      "condition_id": "cond.cluster_headache",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G44.001",
+            "official_description": "Cluster headache syndrome, unspecified, intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.009",
+            "official_description": "Cluster headache syndrome, unspecified, not intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.011",
+            "official_description": "Episodic cluster headache, intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.019",
+            "official_description": "Episodic cluster headache, not intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.021",
+            "official_description": "Chronic cluster headache, intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          },
+          {
+            "code": "G44.029",
+            "official_description": "Chronic cluster headache, not intractable",
+            "billable": true,
+            "specificity_note": "Chronicity + intractability."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1336.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "G44.0 is nonterminal; select chronicity/intractability from documentation."
+    },
+    {
+      "condition_id": "cond.gout",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M10.00",
+            "official_description": "Idiopathic gout, unspecified site",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.011",
+            "official_description": "Idiopathic gout, right shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.012",
+            "official_description": "Idiopathic gout, left shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.019",
+            "official_description": "Idiopathic gout, unspecified shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.021",
+            "official_description": "Idiopathic gout, right elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.022",
+            "official_description": "Idiopathic gout, left elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.029",
+            "official_description": "Idiopathic gout, unspecified elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.031",
+            "official_description": "Idiopathic gout, right wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.032",
+            "official_description": "Idiopathic gout, left wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.039",
+            "official_description": "Idiopathic gout, unspecified wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.041",
+            "official_description": "Idiopathic gout, right hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.042",
+            "official_description": "Idiopathic gout, left hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.049",
+            "official_description": "Idiopathic gout, unspecified hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.051",
+            "official_description": "Idiopathic gout, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.052",
+            "official_description": "Idiopathic gout, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.059",
+            "official_description": "Idiopathic gout, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.061",
+            "official_description": "Idiopathic gout, right knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.062",
+            "official_description": "Idiopathic gout, left knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.069",
+            "official_description": "Idiopathic gout, unspecified knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.071",
+            "official_description": "Idiopathic gout, right ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.072",
+            "official_description": "Idiopathic gout, left ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.079",
+            "official_description": "Idiopathic gout, unspecified ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.08",
+            "official_description": "Idiopathic gout, vertebrae",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.09",
+            "official_description": "Idiopathic gout, multiple sites",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.10",
+            "official_description": "Lead-induced gout, unspecified site",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.111",
+            "official_description": "Lead-induced gout, right shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.112",
+            "official_description": "Lead-induced gout, left shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.119",
+            "official_description": "Lead-induced gout, unspecified shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.121",
+            "official_description": "Lead-induced gout, right elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.122",
+            "official_description": "Lead-induced gout, left elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.129",
+            "official_description": "Lead-induced gout, unspecified elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.131",
+            "official_description": "Lead-induced gout, right wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.132",
+            "official_description": "Lead-induced gout, left wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.139",
+            "official_description": "Lead-induced gout, unspecified wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.141",
+            "official_description": "Lead-induced gout, right hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.142",
+            "official_description": "Lead-induced gout, left hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.149",
+            "official_description": "Lead-induced gout, unspecified hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.151",
+            "official_description": "Lead-induced gout, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.152",
+            "official_description": "Lead-induced gout, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.159",
+            "official_description": "Lead-induced gout, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.161",
+            "official_description": "Lead-induced gout, right knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.162",
+            "official_description": "Lead-induced gout, left knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.169",
+            "official_description": "Lead-induced gout, unspecified knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.171",
+            "official_description": "Lead-induced gout, right ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.172",
+            "official_description": "Lead-induced gout, left ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.179",
+            "official_description": "Lead-induced gout, unspecified ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.18",
+            "official_description": "Lead-induced gout, vertebrae",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.19",
+            "official_description": "Lead-induced gout, multiple sites",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.20",
+            "official_description": "Drug-induced gout, unspecified site",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.211",
+            "official_description": "Drug-induced gout, right shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.212",
+            "official_description": "Drug-induced gout, left shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.219",
+            "official_description": "Drug-induced gout, unspecified shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.221",
+            "official_description": "Drug-induced gout, right elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.222",
+            "official_description": "Drug-induced gout, left elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.229",
+            "official_description": "Drug-induced gout, unspecified elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.231",
+            "official_description": "Drug-induced gout, right wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.232",
+            "official_description": "Drug-induced gout, left wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.239",
+            "official_description": "Drug-induced gout, unspecified wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.241",
+            "official_description": "Drug-induced gout, right hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.242",
+            "official_description": "Drug-induced gout, left hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.249",
+            "official_description": "Drug-induced gout, unspecified hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.251",
+            "official_description": "Drug-induced gout, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.252",
+            "official_description": "Drug-induced gout, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.259",
+            "official_description": "Drug-induced gout, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.261",
+            "official_description": "Drug-induced gout, right knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.262",
+            "official_description": "Drug-induced gout, left knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.269",
+            "official_description": "Drug-induced gout, unspecified knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.271",
+            "official_description": "Drug-induced gout, right ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.272",
+            "official_description": "Drug-induced gout, left ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.279",
+            "official_description": "Drug-induced gout, unspecified ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.28",
+            "official_description": "Drug-induced gout, vertebrae",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.29",
+            "official_description": "Drug-induced gout, multiple sites",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.40",
+            "official_description": "Other secondary gout, unspecified site",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.411",
+            "official_description": "Other secondary gout, right shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.412",
+            "official_description": "Other secondary gout, left shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.419",
+            "official_description": "Other secondary gout, unspecified shoulder",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.421",
+            "official_description": "Other secondary gout, right elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.422",
+            "official_description": "Other secondary gout, left elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.429",
+            "official_description": "Other secondary gout, unspecified elbow",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.431",
+            "official_description": "Other secondary gout, right wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.432",
+            "official_description": "Other secondary gout, left wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.439",
+            "official_description": "Other secondary gout, unspecified wrist",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.441",
+            "official_description": "Other secondary gout, right hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.442",
+            "official_description": "Other secondary gout, left hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.449",
+            "official_description": "Other secondary gout, unspecified hand",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.451",
+            "official_description": "Other secondary gout, right hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.452",
+            "official_description": "Other secondary gout, left hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.459",
+            "official_description": "Other secondary gout, unspecified hip",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.461",
+            "official_description": "Other secondary gout, right knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.462",
+            "official_description": "Other secondary gout, left knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.469",
+            "official_description": "Other secondary gout, unspecified knee",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.471",
+            "official_description": "Other secondary gout, right ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.472",
+            "official_description": "Other secondary gout, left ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.479",
+            "official_description": "Other secondary gout, unspecified ankle and foot",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.48",
+            "official_description": "Other secondary gout, vertebrae",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.49",
+            "official_description": "Other secondary gout, multiple sites",
+            "billable": true,
+            "specificity_note": "Etiology + anatomic-site axis; do not select without documented cause/site."
+          },
+          {
+            "code": "M10.9",
+            "official_description": "Gout, unspecified",
+            "billable": true,
+            "specificity_note": "Broad billable leaf when gout is documented without etiologic/site specificity; coding review still required."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0233.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider right away if you have joint pain and swelling with a fever.",
+          "suggested_tier": "urgent_referral",
+          "evidence_context": "differential"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "M10 is a category with etiology and site axes. The code list enumerates FY2026 M10.0/M10.1/M10.2/M10.4 leaves plus M10.9; human coding review selects documented etiology/site."
+    },
+    {
+      "condition_id": "cond.rheumatoid_arthritis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "M05.9",
+            "official_description": "Rheumatoid arthritis with rheumatoid factor, unspecified",
+            "billable": true,
+            "specificity_note": "Use only when rheumatoid-factor-positive RA is documented."
+          },
+          {
+            "code": "M06.9",
+            "official_description": "Rheumatoid arthritis, unspecified",
+            "billable": true,
+            "specificity_note": "Broad billable RA leaf when serostatus/site/complication are not otherwise coded."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1440.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you have a back or neck injury. Call 911 or the local emergency number if you lose movement or feeling.",
+          "suggested_tier": "emergency_referral",
+          "evidence_context": "differential"
+        }
+      ],
+      "not_found": [
+        "Batch work order requested NIAMS cervical instability/atlantoaxial warning. No explicit NIAMS seek-care passage was captured; whitelisted MedlinePlus spinal-cord-trauma evidence is staged only as a neurologic-emergency differential context."
+      ],
+      "extractor_notes": "Existing M05 seed presumes rheumatoid factor. FY2026 RA coding spans M05/M06 with serostatus, organ involvement, and site axes. These two broad leaves are not a substitute for the full family; coding review must choose from documentation.",
+      "mapping_review_note": "Generic RA anchor strategy: M06.9 (RA unspecified) is the serostatus-agnostic default candidate; M05.* only with documented rheumatoid factor. Full M05/M06 family selection is documentation-driven."
+    }
+  ],
+  "review": {
+    "reviewed_by": "claude",
+    "review_date": "2026-08-08",
+    "review_method": "independent verification against official CDC NCHS FY2026 files (icd10cm-codes-2026.txt · icd10cm-order-2026.txt · icd10cm-index-2026.xml) — every staged code checked for existence, billable status, and exact long description; DRG-page citations cross-checked; red-flag quotes fragment-matched on source pages. 586 codes: 0 nonexistent, 0 billable errors, 78 descriptions aligned to official text, 1 status corrected via official index (plantar fasciitis)."
+  }
+}
