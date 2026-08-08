@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `c8e5d4b` (`feat(acupoints): reconcile Yaoqi source variants`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; Pattern worktree and unrelated files remained isolated.
+- **Four Layers**: Yaoqi is absent from the NCBAHM Appendix A named focus list and no dedicated local curriculum entry was found. Exact eLotus Ex-B9, AD M-BW-29 and its pinyin index were opened. Yibian EX-B9 exact indexed content was read; direct reopening cache-missed. CDC seizure first-aid guidance supplies only the emergency boundary.
+- **Reconciliation**: preserved `EX-B9` / `ex.b9` and all four legacy indications/actions. eLotus/Yibian place the point 2 cun above the coccyx tip, while AD places it below S2; this remains unresolved. The general layer uses eLotus upward subcutaneous 1-2 cun; AD/Yibian 2-2.5 cun remains a longer variant. Legacy perpendicular 0.3-0.8 cun and bloodletting lack exact-page support and remain documented but non-executable.
+- **Content / Safety**: added Yibian sacral vessels/nerves and interictal combination, plus three AD cross-page seizure combinations because Yaoqi's own combination field is blank. Added seizure emergency criteria and explicit pregnancy, pediatric, anticoagulation, sacrococcygeal-history, and moxa-dose gaps; the legacy pregnancy caution is not falsely upgraded to verified contraindication.
+- **Measured Counts**: strict/four-source `35/72 → 36/72`; issues `37/72 → 36/72`; generic Cloud URL remains `12/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947), interactions, point IDs (925), content-junk, app syntax, EX-B9 runtime assertions, bilingual pairing, and task-file diff check passed.
+- **Next**: EX-B10 巨闕俞 (Juejueyu/Juqueyu); verify name/pinyin and code variants, upper-back organ risk, and exact eLotus/AD availability before writing.
+
 ## [2026-08-08] Codex Handoff — EX-B8 十七椎四層、異名與椎管深度衝突修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `2ac77dc` (`feat(acupoints): reconcile Shiqizhui canal safety`).

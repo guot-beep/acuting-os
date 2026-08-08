@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
+
+- **做了什麼**：核對 Board／課件缺口、eLotus Ex-B9、AD M-BW-29／拼音索引、醫砭 EX-B9 與 CDC 癲癇急救；補齊英文名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源，修清原卡亂碼。
+- **數字 before→after**：嚴格模板／四源稽核 `35/72 → 36/72`；待修 `37/72 → 36/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：eLotus／醫砭的尾骨尖上2寸與 AD 的 S2棘突下分列；一般層向上沿皮1～2寸，AD／醫砭2～2.5寸作較長變體。舊直刺0.3～0.8寸、放血與孕婦慎用未獲精確頁支持，只留來源缺口、不作可執行指令；癲癇主治不取代藥物或急救。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B9 runtime assertions、雙語配對與 task-file diff 檢查均通過；內容 commit `c8e5d4b`。
+- **已知未解／下一步**：36張待修、12張泛用 Cloud URL；下一張 EX-B10 巨闕俞。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
 # 2026-08-08 Codex — EX-B8 十七椎四層、異名與椎管深度衝突修整
 
 - **做了什麼**：整合 Board 的 Shiqizhuixue／Shiqizhuixia、本地 checklist／腰痛課件、eLotus Ex-B8、AD M-BW-25／拼音索引與醫砭 EX-B8；保留 `EX-B8`／`ex.b8`，補齊異名、定位、解剖、全部功效主治、配穴、考點、安全與逐欄來源。
