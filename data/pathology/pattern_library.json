@@ -15,11 +15,106 @@
       ],
       "treatment_principle_zh": "補益肺氣",
       "treatment_principle_en": "Tonify lung qi",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LU9",
+        "CV17",
+        "ST36",
+        "BL13",
+        "BL43"
+      ],
+      "typical_formulas": [
+        "formula.bu_fei_tang",
+        "formula.si_jun_zi_tang",
+        "formula.yu_ping_feng_san"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡苔白",
-      "pulse_zh": "脈弱"
+      "pulse_zh": "脈弱",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Weak cough/wheezing",
+        "Shortness of breath, low voice",
+        "Spontaneous sweating, aversion to wind",
+        "Susceptible to catching colds"
+      ],
+      "supporting_signs_zh": [
+        "疲勞",
+        "痰清稀",
+        "面色淡白"
+      ],
+      "supporting_signs_en": [
+        "Exhaustion",
+        "Clear, thin sputum",
+        "Pale complexion"
+      ],
+      "tongue_en": "Pale tongue with white coating",
+      "pulse_en": "Weak pulse",
+      "mechanism_zh": "肺氣虛弱,宣發肅降無力,故咳嗽無力、氣短;肺主皮毛,衛外不固,故自汗、易感冒;肺氣不足,聲門失養,故聲低懶言。",
+      "mechanism_en": "Weakened Lung Qi loses its power to disperse and descend, producing a weak cough and shortness of breath; since the Lung governs the skin and body hair, a weakened defensive (Wei) function leads to spontaneous sweating and susceptibility to colds.",
+      "common_causes_zh": "久咳傷肺、脾虛不能生金、稟賦不足、久病體虛",
+      "common_causes_en": "Chronic cough injuring the Lung, Spleen deficiency failing to generate Lung Qi, congenital weakness, chronic illness",
+      "progression_zh": "肺氣虛可累及脾(肺脾兩虛)或心(心肺氣虛);氣虛及陰,可發展為肺氣陰兩虛。",
+      "progression_en": "Lung Qi Deficiency may involve the Spleen or Heart; if Qi deficiency extends to Yin it can progress to combined Lung Qi and Yin Deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_yin_deficiency",
+          "distinguishing_zh": "肺氣虛以咳嗽無力、痰清稀、自汗為主,無熱象;肺陰虛以乾咳少痰、潮熱盜汗、舌紅少苔為主,屬虛熱。",
+          "distinguishing_en": "Lung Qi Deficiency shows a weak cough with thin sputum and no heat signs; Lung Yin Deficiency shows a dry cough with scant sputum, tidal fever, and night sweats — a deficiency-heat pattern.",
+          "tongue_difference_zh": "氣虛舌淡;陰虛舌紅少苔",
+          "pulse_difference_zh": "氣虛脈弱;陰虛脈細數",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.wind_cold_invading_lung",
+          "distinguishing_zh": "肺氣虛為內傷虛證,病程較久,無表證;風寒犯肺為外感實證,起病急,兼惡寒發熱、脈浮緊等表證。",
+          "distinguishing_en": "Lung Qi Deficiency is a chronic internal-damage deficiency pattern with no exterior signs; Wind-Cold Invading the Lung is an acute exterior excess pattern with chills, fever, and a floating tight pulse.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.lung_yin_deficiency",
@@ -118,7 +213,20 @@
         "NCBAHM_CH_Exam_Content_Outline_2026",
         "https://cloudtcm.com/pattern/lung_yin_xu"
       ],
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_qi_deficiency",
+          "distinguishing_zh": "肺陰虛以乾咳少痰、潮熱盜汗、舌紅少苔為主;肺氣虛以咳嗽無力、痰清稀、自汗為主,無熱象。",
+          "distinguishing_en": "Lung Yin Deficiency shows a dry cough, tidal fever, and night sweats; Lung Qi Deficiency shows a weak cough with thin sputum and no heat signs.",
+          "tongue_difference_zh": "陰虛舌紅少苔;氣虛舌淡",
+          "pulse_difference_zh": "陰虛脈細數;氣虛脈弱",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ]
     },
     {
       "id": "pattern.wind_cold_invading_lung",
@@ -132,11 +240,101 @@
       ],
       "treatment_principle_zh": "辛溫解表，宣肺散寒",
       "treatment_principle_en": "Release the exterior with warm acrid herbs, diffuse the lung",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "GV16",
+        "GB20",
+        "LI4",
+        "LU7",
+        "BL12",
+        "BL13"
+      ],
+      "typical_formulas": [
+        "formula.ma_huang_tang",
+        "formula.xing_su_san",
+        "formula.xiao_qing_long_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔薄白",
-      "pulse_zh": "脈浮緊"
+      "pulse_zh": "脈浮緊",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Pronounced chills, mild fever",
+        "No sweating",
+        "Cough with thin white sputum",
+        "Nasal congestion with clear discharge"
+      ],
+      "supporting_signs_zh": [
+        "頭痛、身痠、頸項緊",
+        "咽癢",
+        "可喘"
+      ],
+      "supporting_signs_en": [
+        "Headache, body aches, stiff neck",
+        "Itchy throat",
+        "Wheezing/dyspnea may occur"
+      ],
+      "tongue_en": "Thin white tongue coating",
+      "pulse_en": "Floating, tight pulse",
+      "mechanism_zh": "風寒外襲,束於肌表,衛陽被遏,故惡寒發熱、無汗、頭身疼痛;風寒犯肺,肺氣失宣,故咳嗽、鼻塞流清涕。",
+      "mechanism_en": "Wind-Cold invades the exterior, binding the surface and obstructing the defensive Yang — producing chills, fever, absence of sweating, and body aches; when it reaches the Lung, Lung Qi loses its dispersing function, producing cough and nasal congestion with clear discharge.",
+      "common_causes_zh": "外感風寒之邪、氣候驟變、衛外不固",
+      "common_causes_en": "External invasion by Wind-Cold, sudden weather change, weakened defensive Qi",
+      "progression_zh": "表邪不解可入裡化熱,轉為風熱犯肺或肺熱證;素體肺虛者易反覆感邪。",
+      "progression_en": "Unresolved exterior pathogens may transform into interior heat, shifting toward Wind-Heat or Lung Heat patterns; those with underlying Lung Qi deficiency are prone to recurrent invasion.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_heat_invading_lung",
+          "distinguishing_zh": "風寒犯肺惡寒重、發熱輕、無汗、痰白清稀、苔薄白、脈浮緊;風熱犯肺發熱重、惡寒輕、有汗、痰黏黃、苔薄黃、脈浮數。",
+          "distinguishing_en": "Wind-Cold shows predominant chills, no sweating, thin white sputum, and a floating tight pulse; Wind-Heat shows predominant fever, sweating, sticky yellow sputum, and a floating rapid pulse.",
+          "tongue_difference_zh": "風寒苔薄白;風熱舌尖紅苔薄黃",
+          "pulse_difference_zh": "風寒脈浮緊;風熱脈浮數",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.wind_heat_invading_lung",
@@ -150,11 +348,104 @@
       ],
       "treatment_principle_zh": "辛涼解表，清宣肺熱",
       "treatment_principle_en": "Release the exterior with cool acrid herbs, clear lung heat",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LI4",
+        "LI11",
+        "LU5",
+        "LU7",
+        "GV14",
+        "BL13"
+      ],
+      "typical_formulas": [
+        "formula.yin_qiao_san",
+        "formula.sang_ju_yin"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌尖紅苔薄黃",
-      "pulse_zh": "脈浮數"
+      "pulse_zh": "脈浮數",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Pronounced fever, mild chills",
+        "Sore, swollen throat",
+        "Cough with yellow sputum",
+        "Thirst"
+      ],
+      "supporting_signs_zh": [
+        "鼻塞、黃涕",
+        "頭痛",
+        "可氣促"
+      ],
+      "supporting_signs_en": [
+        "Nasal obstruction with yellow discharge",
+        "Headache",
+        "Dyspnea/rapid breathing may occur"
+      ],
+      "tongue_en": "Red tip with thin yellow coating",
+      "pulse_en": "Floating, rapid pulse",
+      "mechanism_zh": "風熱外襲,犯及肺衛,故發熱較重、微惡寒、有汗;熱邪上炎,咽喉不利,故咽喉紅腫疼痛;肺失清肅,故咳嗽痰黃黏稠。",
+      "mechanism_en": "Wind-Heat invades the Lung and defensive layer, producing predominant fever with mild chills and sweating; the ascending heat causes a red, swollen, sore throat, while the Lung's clearing/descending function is impaired, producing a cough with sticky yellow sputum.",
+      "common_causes_zh": "外感風熱之邪、季節氣候偏熱、風寒鬱久化熱",
+      "common_causes_en": "External invasion by Wind-Heat, seasonal warm weather, or prolonged Wind-Cold transforming into heat",
+      "progression_zh": "熱邪深入可傳氣分,發展為痰熱壅肺或肺熱壅盛重證。",
+      "progression_en": "If unresolved, the heat can penetrate deeper (Qi level) and progress to Phlegm-Heat Obstructing the Lung or a more severe Lung Heat pattern.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold_invading_lung",
+          "distinguishing_zh": "風熱犯肺發熱重、有汗、痰黃、苔薄黃、脈浮數;風寒犯肺惡寒重、無汗、痰白、苔薄白、脈浮緊。",
+          "distinguishing_en": "Wind-Heat shows predominant fever, sweating, and yellow sputum with a floating rapid pulse; Wind-Cold shows predominant chills, no sweating, and white sputum with a floating tight pulse.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.phlegm_heat_in_lung",
+          "distinguishing_zh": "風熱犯肺為表證初起,病位較淺;痰熱壅肺為熱邪入裡,痰黃稠量多、胸痛喘促,病位在肺臟本身,程度較重。",
+          "distinguishing_en": "Wind-Heat Invading the Lung is an early exterior pattern; Phlegm-Heat Obstructing the Lung is a deeper interior pattern with copious thick yellow sputum, chest pain, and marked dyspnea.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.phlegm_damp_in_lung",
@@ -167,11 +458,102 @@
       ],
       "treatment_principle_zh": "燥濕化痰，宣肺止咳",
       "treatment_principle_en": "Dry damp, transform phlegm, diffuse the lung",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LU9",
+        "CV12",
+        "CV17",
+        "CV22",
+        "ST36",
+        "ST40",
+        "BL13"
+      ],
+      "typical_formulas": [
+        "formula.er_chen_tang",
+        "formula.su_zi_jiang_qi_tang",
+        "formula.ling_gui_zhu_gan_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔白膩",
-      "pulse_zh": "脈滑"
+      "pulse_zh": "脈滑",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung",
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Cough with copious white sputum",
+        "Chest oppression",
+        "Sputum easily expectorated"
+      ],
+      "supporting_signs_zh": [
+        "呼吸困難平臥較甚",
+        "食少、腹脹、水腫",
+        "眩暈、噁心"
+      ],
+      "supporting_signs_en": [
+        "Dyspnea worse lying down",
+        "Poor appetite, abdominal distention, edema may accompany",
+        "Dizziness/nausea may occur"
+      ],
+      "tongue_en": "White, greasy tongue coating",
+      "pulse_en": "Slippery pulse",
+      "mechanism_zh": "脾失健運,水濕內停,聚而成痰,上貯於肺,肺失宣降,故咳嗽痰多、胸悶、喘促;此為「脾為生痰之源,肺為貯痰之器」的典型表現。",
+      "mechanism_en": "Spleen dysfunction allows Dampness to accumulate and condense into Phlegm, which is stored in the Lung and impairs its dispersing/descending function — the classic 'Spleen generates Phlegm, Lung stores it' mechanism, producing a productive cough, chest fullness and dyspnea.",
+      "common_causes_zh": "脾虛生濕、飲食不節、久咳傷肺、外感濕邪",
+      "common_causes_en": "Spleen deficiency generating Dampness, dietary irregularity, chronic cough injuring the Lung, external Damp invasion",
+      "progression_zh": "痰濕鬱久可化熱,轉為痰熱壅肺;反覆發作可致肺脾兩虛。",
+      "progression_en": "Long-stagnant Phlegm-Damp may transform into heat, shifting toward Phlegm-Heat Obstructing the Lung; recurrent episodes can lead to combined Lung-Spleen deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm_heat_in_lung",
+          "distinguishing_zh": "痰濕阻肺痰白清稀量多、苔白膩、脈滑,偏寒濕;痰熱壅肺痰黃稠、苔黃膩、脈滑數,兼見發熱、胸痛,偏熱。",
+          "distinguishing_en": "Phlegm-Damp Obstructing the Lung is a cold-damp pattern with thin white copious sputum and a white greasy coating; Phlegm-Heat Obstructing the Lung is a heat pattern with thick yellow sputum, a yellow greasy coating, fever, and chest pain.",
+          "tongue_difference_zh": "痰濕苔白膩;痰熱苔黃膩",
+          "pulse_difference_zh": "痰濕脈滑;痰熱脈滑數",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.phlegm_heat_in_lung",
@@ -287,7 +669,28 @@
         "NCBAHM_CH_Exam_Content_Outline_2026",
         "https://cloudtcm.com/pattern/spleen_qi_xu"
       ],
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_sinking",
+          "distinguishing_zh": "脾氣虛以食少、腹脹、便溏為主;中氣下陷在此基礎上兼見臟器下垂或墜脹感,是脾氣虛的進一步發展。",
+          "distinguishing_en": "Spleen Qi Deficiency centers on poor appetite, bloating and loose stools; Central Qi Sinking additionally shows organ prolapse or a sinking sensation, representing a further stage.",
+          "tongue_difference_zh": "皆可見舌淡胖有齒痕",
+          "pulse_difference_zh": "脾氣虛脈緩弱;中氣下陷脈濡細",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "脾氣虛無明顯寒象;脾陽虛進一步見脘腹冷痛喜溫、四肢冷、完穀不化。",
+          "distinguishing_en": "Spleen Qi Deficiency lacks cold signs; Spleen Yang Deficiency adds cold epigastric pain relieved by warmth, cold limbs, and undigested food in the stool.",
+          "tongue_difference_zh": "氣虛舌淡胖;陽虛舌淡",
+          "pulse_difference_zh": "氣虛脈緩弱;陽虛脈沉弱",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ]
     },
     {
       "id": "pattern.spleen_yang_deficiency",
@@ -301,11 +704,105 @@
       ],
       "treatment_principle_zh": "溫中健脾",
       "treatment_principle_en": "Warm the middle, fortify the spleen",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV12",
+        "SP3",
+        "SP6",
+        "ST36",
+        "BL20",
+        "BL21"
+      ],
+      "typical_formulas": [
+        "formula.li_zhong_wan",
+        "formula.xiao_jian_zhong_tang",
+        "formula.huang_qi_jian_zhong_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡胖苔白滑",
-      "pulse_zh": "脈沉遲無力"
+      "pulse_zh": "脈沉遲無力",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yang"
+      },
+      "key_signs_en": [
+        "Abdominal pain relieved by warmth and pressure",
+        "Clear, watery diarrhea",
+        "Aversion to cold, cold limbs",
+        "Poor appetite"
+      ],
+      "supporting_signs_zh": [
+        "面色萎黃或淡白",
+        "食後腹脹",
+        "尿清長或水腫傾向"
+      ],
+      "supporting_signs_en": [
+        "Sallow or pale complexion",
+        "Post-meal abdominal distention",
+        "Clear frequent urine or edema tendency"
+      ],
+      "tongue_en": "Pale, swollen tongue with a white, slippery coating",
+      "pulse_en": "Deep, slow, forceless pulse",
+      "mechanism_zh": "脾陽虛衰,失於溫煦運化,寒從中生,故見脘腹冷痛喜溫、四肢冷、完穀不化;陽虛水濕不化,可見水腫、尿清長。",
+      "mechanism_en": "Spleen Yang deficiency loses its warming and transforming function, allowing internal cold to arise — producing cold epigastric pain relieved by warmth, cold limbs, and undigested food in loose stools; failure to transform fluids can cause edema.",
+      "common_causes_zh": "脾氣虛遷延、過食生冷、久病傷陽、命門火衰",
+      "common_causes_en": "Prolonged Spleen Qi Deficiency, excessive raw/cold food, chronic illness injuring Yang, decline of Life Gate Fire",
+      "progression_zh": "多由脾氣虛發展而來;陽虛及腎,可發展為脾腎陽虛。",
+      "progression_en": "Commonly develops from Spleen Qi Deficiency; if it extends to the Kidney it can progress to Spleen-Kidney Yang Deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "脾陽虛在脾氣虛基礎上兼見明顯寒象(冷痛喜溫、四肢冷);脾氣虛無寒象。",
+          "distinguishing_en": "Spleen Yang Deficiency adds overt cold signs to the Spleen Qi Deficiency picture; Spleen Qi Deficiency alone lacks cold signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.spleen_kidney_yang_deficiency",
+          "distinguishing_zh": "脾陽虛病位局限於脾;脾腎陽虛兼見腰膝冷痛痠軟、五更瀉等腎陽虛表現,程度更重。",
+          "distinguishing_en": "Spleen Yang Deficiency is centered on the Spleen; Spleen-Kidney Yang Deficiency additionally shows Kidney Yang signs such as cold low-back pain and early-morning diarrhea, and is more severe.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.spleen_qi_sinking",
@@ -319,11 +816,96 @@
       ],
       "treatment_principle_zh": "補中益氣，升陽舉陷",
       "treatment_principle_en": "Tonify middle qi, raise the sunken",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "GV20",
+        "CV6",
+        "ST36",
+        "SP6",
+        "BL20"
+      ],
+      "typical_formulas": [
+        "formula.bu_zhong_yi_qi_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡苔白",
-      "pulse_zh": "脈弱"
+      "pulse_zh": "脈弱",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Distending, sinking sensation in the epigastrium/abdomen",
+        "Chronic diarrhea with rectal prolapse",
+        "Visceral/organ prolapse",
+        "Shortness of breath and fatigue"
+      ],
+      "supporting_signs_zh": [
+        "面色萎黃",
+        "食後脘腹脹",
+        "四肢倦重"
+      ],
+      "supporting_signs_en": [
+        "Sallow complexion",
+        "Post-meal epigastric distention",
+        "Heavy, tired limbs"
+      ],
+      "tongue_en": "Pale tongue with white coating",
+      "pulse_en": "Weak pulse",
+      "mechanism_zh": "脾氣虛極,升清無力,清陽不升反陷,固攝失職,故見臟器下垂(胃、子宮、脫肛等)或下墜感;脾虛失運,故食少便溏。",
+      "mechanism_en": "Extreme Spleen Qi deficiency loses its power to raise clear Yang; clear Yang sinks instead of rising, and the Spleen's holding function fails — producing organ prolapse (stomach, uterus, rectum) or a sinking sensation, along with poor appetite and loose stools from impaired transformation.",
+      "common_causes_zh": "脾氣虛遷延不癒、勞倦傷脾、產後失於調養、久瀉久痢",
+      "common_causes_en": "Untreated/prolonged Spleen Qi Deficiency, overexertion, inadequate postpartum recovery, chronic diarrhea/dysentery",
+      "progression_zh": "多由脾氣虛發展而來;氣虛及陽,可進一步發展為脾陽虛。",
+      "progression_en": "Commonly develops from Spleen Qi Deficiency; if Qi deficiency extends to Yang it can progress to Spleen Yang Deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "中氣下陷以臟器下垂或下墜感為特徵性表現;脾氣虛無此下陷之象。",
+          "distinguishing_en": "Central Qi Sinking is distinguished by organ prolapse or a sinking sensation, which plain Spleen Qi Deficiency lacks.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.spleen_not_governing_blood",
@@ -337,11 +919,95 @@
       ],
       "treatment_principle_zh": "健脾益氣攝血",
       "treatment_principle_en": "Fortify the spleen, boost qi to contain blood",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV3",
+        "CV6",
+        "SP6",
+        "SP10"
+      ],
+      "typical_formulas": [
+        "formula.gui_pi_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡",
-      "pulse_zh": "脈細弱"
+      "pulse_zh": "脈細弱",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Blood in the stool",
+        "Menorrhagia or uterine bleeding",
+        "Subcutaneous purpura",
+        "Poor appetite and fatigue"
+      ],
+      "supporting_signs_zh": [
+        "眩暈心悸",
+        "鼻衄、尿血等出血傾向",
+        "便溏"
+      ],
+      "supporting_signs_en": [
+        "Dizziness and palpitations may accompany",
+        "Epistaxis/hematuria may occur in context",
+        "Loose stools"
+      ],
+      "tongue_en": "Pale tongue",
+      "pulse_en": "Thready, weak pulse",
+      "mechanism_zh": "脾氣虛弱,統攝血液功能失職,血不循經而外溢,故見各種慢性反覆出血(崩漏、便血、尿血、紫斑等),血色淡質稀,兼見脾氣虛之食少便溏、倦怠等症。",
+      "mechanism_en": "Spleen Qi deficiency impairs the Spleen's function of holding Blood within the vessels, allowing Blood to escape outside its normal pathways — producing chronic, recurrent, pale-and-thin bleeding (uterine bleeding, blood in stool/urine, purpura) alongside the underlying Spleen Qi deficiency signs.",
+      "common_causes_zh": "脾氣虛日久、勞倦傷脾、飲食失調、思慮過度",
+      "common_causes_en": "Prolonged Spleen Qi Deficiency, overexertion, dietary irregularity, excessive mental strain",
+      "progression_zh": "多由脾氣虛發展而來;失血日久可致血虛,甚則氣隨血脫。",
+      "progression_en": "Commonly develops from Spleen Qi Deficiency; prolonged blood loss can produce Blood Deficiency and, in severe cases, Qi collapsing with Blood loss.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "脾不統血在脾氣虛基礎上以慢性反覆出血為特徵性表現;脾氣虛本身無出血傾向。",
+          "distinguishing_en": "Spleen Not Governing Blood is distinguished from plain Spleen Qi Deficiency by its characteristic chronic recurrent bleeding.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -1978,11 +2644,100 @@
       ],
       "treatment_principle_zh": "溫補脾腎",
       "treatment_principle_en": "Warm and supplement spleen and kidney yang",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV4",
+        "CV12",
+        "SP6",
+        "SP9",
+        "ST36",
+        "BL20",
+        "BL23"
+      ],
+      "typical_formulas": [
+        "formula.zhen_wu_tang",
+        "formula.fu_zi_li_zhong_wan"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡胖苔白滑",
-      "pulse_zh": "脈沉遲無力"
+      "pulse_zh": "脈沉遲無力",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "spleen",
+        "kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yang"
+      },
+      "key_signs_en": [
+        "Early-morning (five-watch) diarrhea",
+        "Aversion to cold, cold limbs",
+        "Cold, aching low back and knees",
+        "Undigested food in loose stools, or edema"
+      ],
+      "supporting_signs_zh": [
+        "疲勞乏力",
+        "食少",
+        "小便不利"
+      ],
+      "supporting_signs_en": [
+        "Fatigue and weakness",
+        "Poor appetite",
+        "Dysuria/oliguria"
+      ],
+      "tongue_en": "Pale, swollen tongue with a white, slippery coating",
+      "pulse_en": "Deep, slow, forceless pulse",
+      "mechanism_zh": "脾陽久虛,不能溫養腎陽,或腎陽虛衰不能溫煦脾土,終致脾腎陽氣俱虛,火不暖土,水濕不化,故見畏寒肢冷、五更瀉、水腫、小便不利等。",
+      "mechanism_en": "Prolonged Spleen Yang deficiency fails to nourish Kidney Yang, or primary Kidney Yang decline fails to warm the Spleen — eventually both organs' Yang become deficient, fluids fail to transform, producing cold limbs, early-morning diarrhea, edema, and urinary dysfunction.",
+      "common_causes_zh": "脾陽虛遷延及腎、久病傷陽、年老命門火衰、房勞過度",
+      "common_causes_en": "Prolonged Spleen Yang Deficiency extending to the Kidney, chronic illness injuring Yang, age-related decline of Life Gate Fire, excessive sexual activity",
+      "progression_zh": "多由脾陽虛或腎陽虛單獨發展、日久相互累及而成;陽虛甚者可致陽氣暴脫。",
+      "progression_en": "Commonly develops when isolated Spleen Yang or Kidney Yang deficiency progresses and involves the other organ; severe cases can precipitate Yang collapse.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "脾腎陽虛兼見腰膝冷痛痠軟、夜尿清長等腎陽虛表現;脾陽虛病位局限於脾,無明顯腎系症狀。",
+          "distinguishing_en": "Spleen-Kidney Yang Deficiency adds Kidney Yang signs (cold low-back pain, frequent clear nighttime urination) to the Spleen Yang deficiency picture; Spleen Yang Deficiency alone lacks Kidney-system signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.qi_stagnation_blood_stasis",
