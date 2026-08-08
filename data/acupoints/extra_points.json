@@ -6298,43 +6298,220 @@
     "pinyin": "Pigen",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
-    "location": "腰部，第1腰椎棘突下，旁開3.5寸。",
-    "locationEn": "In lumbar region, 3.5 cun lateral to lower border of L1.",
-    "techniqueNotes": "直刺0.8~1.0寸。可灸。\nPerpendicular 0.8-1.0 cun. Moxa applicable.",
-    "functions": "健脾和胃，消痞散結",
-    "functionsEn": "Strengthens spleen; Disperses lumps and masses",
+    "location": "腰部，第1腰椎（L1）棘突下緣水平，後正中線旁開3.5寸，左右各一穴。eLotus 與 American Dragon 精確頁定位一致；WHO 1991 標準命名資料列為 Pigen Ex-B4。",
+    "locationEn": "In the lumbar region, bilateral, 3.5 cun lateral to the posterior midline at the level of the lower border of the L1 spinous process. The exact eLotus and American Dragon pages agree on this location; the WHO 1991 standard nomenclature lists Pigen as Ex-B4.",
+    "cunMeasurement": "先確認 L1 棘突下緣水平，再由後正中線旁開3.5寸，左右成對。3.5寸使本穴位於外側腰部而非膀胱經第一側線；不能用腎俞 BL23（L2旁開1.5寸）的定位或刺深替代。",
+    "anatomyZh": "四個核心內容層未提供痞根的逐層解剖。依其 L1、旁開3.5寸位置，屬上腰外側軟組織區；不能僅憑穴名或『腰部』判定深層安全。補充區域證據顯示腎臟約跨 T11～L3，且 L1 水平腰部穿刺曾造成腎損傷與腎周血腫；另一上腰椎屍體研究指出 L1～L3 外側進針可能穿及腎臟，骨性遮擋與深度會隨離正中距離及個體而變。這些研究不是 EX-B4 專穴測量，故只作器官風險邊界，不製造痞根專屬安全深度。",
+    "anatomyEn": "The four core content layers provide no Pigen-specific layered anatomy. At L1 and 3.5 cun lateral, the point lies in the lateral upper-lumbar soft-tissue region; neither the name nor the generic label 'lumbar' establishes a safe deep boundary. Supplemental regional evidence places the kidneys approximately from T11 to L3 and documents renal injury/perirenal hematoma after an L1 lumbar puncture. An upper-lumbar cadaver study likewise warns that lateral L1-L3 needling can enter the kidney and that bony protection/depth changes with distance from the midline and individual anatomy. These are not EX-B4-specific measurements and are used only as organ-risk boundaries, not to invent a Pigen-specific safe depth.",
+    "techniqueNotes": "eLotus：直刺0.5～1寸，可灸。American Dragon：①直刺1～1.5寸；②向內斜刺0.8～1寸；③直刺0.5～0.8寸；可灸。現卡舊值直刺0.8～1.2寸並非任一精確頁完整值。一般層採兩頁共同覆蓋且較保守的直刺0.5～0.8寸；eLotus 0.8～1寸上段、AD 內斜0.8～1寸及直刺1～1.5寸分列為來源變體。因精確頁均未給皮膚至腎臟距離、體型調整、骨性接觸、針長或停止規則，AD最深值不升格為一般操作。\neLotus: perpendicular 0.5-1 cun; moxibustion applicable. American Dragon: (1) straight 1-1.5 cun; (2) medial-oblique 0.8-1 cun; and (3) perpendicular 0.5-0.8 cun; moxibustion applicable. The legacy card's perpendicular 0.8-1.2 cun is not a complete value from either exact page. The general layer uses the shared, more conservative perpendicular 0.5-0.8 cun. eLotus's 0.8-1-cun upper segment, AD's medial-oblique 0.8-1 cun, and straight 1-1.5 cun remain source-specific variants. Because neither exact page provides skin-to-kidney distance, body-habitus adjustment, bony-contact guidance, needle length, or stopping rules, AD's deepest value is not promoted to general execution.",
+    "acumethodZh": "一般刺法為直刺0.5～0.8寸。eLotus 可至1寸；AD 另有向內斜刺0.8～1寸與直刺1～1.5寸。方向與深度必須配對保存；上腰部器官邊界未確認時，不得依 AD 最深值自行加深。",
+    "acumethodEn": "The general method is perpendicular insertion 0.5-0.8 cun. eLotus extends to 1 cun; AD separately lists medial-oblique 0.8-1 cun and straight 1-1.5 cun. Direction and depth must remain paired. Without confirming upper-lumbar organ boundaries, AD's deepest value must not be used to justify further advancement.",
+    "moxaZh": "eLotus 與 AD 均只寫可灸，沒有灸法種類、壯數／分鐘數、艾條距離、腰部皮膚保護、療程頻率、熱傷害停止規則或特殊族群條文，因此不補劑量。",
+    "moxaEn": "Both eLotus and AD only state that moxibustion is applicable. Neither supplies a moxa type, cone/minute dose, stick distance, lumbar skin protection, treatment frequency, thermal-injury stopping rule, or special-population protocol; no dose is added.",
+    "functions": "健脾和胃；調暢上、中焦氣機；行氣活血消痞；理氣止痛",
+    "functionsEn": "Strengthens the Spleen and harmonizes the Stomach; Improves Qi flow between the Upper and Middle Burners; Moves Qi and Blood to disperse focal distention/masses; Regulates Qi and relieves pain",
+    "functionsZhList": [
+      "健脾和胃（eLotus 明列）",
+      "調暢上、中焦氣機（AD 明列）",
+      "行氣活血消痞（AD 明列消除局部氣血瘀滯；舊卡『消痞散結』依此保留並校正）",
+      "理氣止痛（eLotus 明列）"
+    ],
+    "functionsEnList": [
+      "Strengthens the Spleen and harmonizes the Stomach (explicit in eLotus)",
+      "Improves Qi flow between the Upper and Middle Burners (explicit in AD)",
+      "Moves Qi and Blood to disperse focal distention/masses (AD explicitly lists eliminating local Qi and Blood stagnation; preserves and refines legacy 'disperse lumps')",
+      "Regulates Qi and relieves pain (explicit in eLotus)"
+    ],
+    "pointIdentityZh": [
+      "L1 棘突下緣水平旁開3.5寸、左右成對的腰部經外奇穴",
+      "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴重點清單",
+      "本庫、WHO 與 eLotus 使用 EX-B4／Ex-B4；American Dragon 使用 M-BW-16",
+      "AD 英文別名 Tumor Root 只是來源譯名，不等於本穴可診斷或治療腫瘤"
+    ],
+    "pointIdentityEn": [
+      "Bilateral lumbar extra point 3.5 cun lateral to the lower border of the L1 spinous process",
+      "Listed in the NCBAHM 2026 ACPL Appendix A priority extra-point list",
+      "The database, WHO, and eLotus use EX-B4/Ex-B4; American Dragon uses M-BW-16",
+      "AD's English alias 'Tumor Root' is a source translation, not a claim that the point diagnoses or treats cancer"
+    ],
+    "exam_star": 0,
+    "exam_importance": "NCBAHM Appendix A 明列 Pigen。應試核心：L1 棘突下旁開3.5寸；健脾和胃、理氣止痛／消痞；主肝脾腫大與腰痛。要分清 eLotus 直刺0.5～1寸與 AD 三種刺法，並記住上腰外側腎臟風險不能靠一個寸數排除。",
+    "exam_importance_en": "Pigen is named in NCBAHM Appendix A. Board-focused recall: 3.5 cun lateral to the lower border of L1; strengthens Spleen/harmonizes Stomach and regulates Qi/relieves pain or focal distention; core indications are hepatosplenomegaly and lumbar pain. Distinguish eLotus perpendicular 0.5-1 cun from AD's three methods, and remember that a single cun value cannot exclude upper-lumbar kidney risk.",
+    "exam_pearl": "『痞根』記 L1 旁開3.5寸，主痞塊／肝脾腫大與腰痛；不是看到腹部腫塊就直接針，也不是『腫瘤根治穴』。",
+    "exam_pearl_en": "Pigen is L1, 3.5 cun lateral, classically associated with focal abdominal masses/hepatosplenomegaly and lumbar pain. It is not permission to needle an undiagnosed mass and is not a 'tumor cure' point.",
     "patterns": [
       "肝脾腫大",
       "痞塊",
       "腰痛",
-      "腸疝氣"
+      "腸疝氣",
+      "胃炎／胃痛",
+      "腸炎",
+      "消化不良",
+      "食物阻滯感",
+      "腎下垂（AD表述）"
     ],
     "patternsEn": [
       "Hepatosplenomegaly",
-      "Abdominal mass",
+      "Focal abdominal mass or distention",
       "Low back pain",
-      "Hernia"
+      "Intestinal hernia (unverified legacy wording)",
+      "Gastritis or stomach pain",
+      "Enteritis",
+      "Indigestion",
+      "Sensation that food will not pass",
+      "Prolapsed kidney / nephroptosis (AD wording)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "健脾和胃",
+      "調暢氣機",
+      "行氣活血",
+      "理氣止痛"
+    ],
+    "action_tags_en": [
+      "Strengthen the Spleen and Harmonize the Stomach",
+      "Regulate Qi Dynamics",
+      "Move Qi and Blood",
+      "Regulate Qi and Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "肝脾腫大",
+      "腹內痞塊",
+      "腰痛",
+      "胃炎",
+      "腸炎"
+    ],
+    "disease_tags_en": [
+      "Hepatosplenomegaly",
+      "Focal Abdominal Mass",
+      "Lumbar Pain",
+      "Gastritis",
+      "Enteritis"
+    ],
+    "cautions": "【上腰部器官風險】痞根在 L1 旁開3.5寸；區域證據顯示腎臟約跨 T11～L3，L1 腰部穿刺曾造成腎損傷與腎周血腫。精確頁沒有痞根皮膚至腎臟距離，不能以『腰部』或固定寸數宣稱安全。【最深值不泛化】一般層採兩頁共同較保守的直刺0.5～0.8寸；eLotus 至1寸、AD 內斜0.8～1寸及直刺1～1.5寸均保留為來源變體。未確認個體解剖、針長、方向、骨性接觸與停止規則時，不執行最深值。【個體與出血風險】上腰椎屍體研究顯示外側距離與個體會改變骨性遮擋；L1腎周血腫病例患者使用抗血小板藥。極瘦、器官位置變異、腎下垂、腎病、單腎、抗凝／抗血小板或出血傾向需另行評估，四源無痞根專屬方案。【術後警訊】針後新發或加劇的側腹／腰腹劇痛、血尿、明顯瘀血、頭暈／昏厥或循環不穩，須立即排除腎臟／腹膜後損傷與出血。【不明腫塊紅旗】肝脾腫大、腹內腫塊、吞嚥／食物通過感異常或不明體重下降須先作醫學診斷；AD 的 Tumor Root 別名不是腫瘤治療證據。【艾灸／特殊族群缺口】兩頁僅稱可灸；無孕期、兒童、脊柱術後、感染、灸量或熱傷害停止規則，來源沉默不等於安全許可。",
+    "cautionsEn": [
+      "Upper-lumbar organ risk: Pigen is 3.5 cun lateral at L1. Regional evidence places the kidneys approximately from T11 to L3 and documents renal injury/perirenal hematoma after an L1 lumbar puncture. The exact pages give no Pigen-specific skin-to-kidney distance; neither the label 'lumbar' nor a fixed cun value proves safety.",
+      "Do not generalize the deepest value: the general layer uses the shared, more conservative perpendicular 0.5-0.8 cun. eLotus to 1 cun, AD medial-oblique 0.8-1 cun, and AD straight 1-1.5 cun remain source variants. The deepest value is not executable without individual anatomy, needle length, direction, bony-contact, and stopping rules.",
+      "Individual/bleeding risk: an upper-lumbar cadaver study found that lateral distance and individual anatomy change bony protection; the L1 perirenal-hematoma case involved antiplatelet therapy. Very thin habitus, organ-position variants, nephroptosis, renal disease, solitary kidney, anticoagulant/antiplatelet use, or bleeding tendency require separate assessment; the four layers provide no Pigen-specific protocol.",
+      "Post-needling warning signs: new or worsening flank/lumbar-abdominal severe pain, hematuria, marked bruising, dizziness/syncope, or circulatory instability require urgent evaluation for renal/retroperitoneal injury or bleeding.",
+      "Undiagnosed-mass red flags: hepatosplenomegaly, an abdominal mass, impaired passage/swallowing sensation, or unexplained weight loss requires medical diagnosis first. AD's alias 'Tumor Root' is not evidence of cancer treatment.",
+      "Moxa/special-population gap: both pages only say moxa is applicable. They provide no point-specific pregnancy, pediatric, prior-spine-surgery, infection, moxa-dose, or thermal stopping protocol; source silence is not permission."
+    ],
+    "acuTags": [
+      "上腰部",
+      "痞塊",
+      "腰痛",
+      "腎臟風險"
+    ],
+    "combinePointsZh": "eLotus 與 American Dragon 精確頁均未列有效配穴；AD 配穴表為空白。現有主治與功效不反推配穴，也不從其他網站搬入未核實的『經典組合』。",
+    "combinePointsEn": "Neither the eLotus nor American Dragon exact page lists a usable combination; AD's combination table is blank. Indications/actions are not reverse-engineered into combinations, and unverified 'classical combinations' from other sites are not imported.",
+    "clinical_pearls": "eLotus 提供 Board 學習核心：L1旁開3.5寸、肝脾腫大與腰痛、健脾和胃／理氣止痛、直刺0.5～1寸及可灸。AD 補入 M-BW-16、Fullness Root／Tumor Root 別名、上中焦氣機與局部氣血瘀滯、胃炎／腸炎／腹內腫塊／腎下垂等主治，以及三種刺法。舊卡『腸疝氣』在兩精確頁未查到，保留並標成未核實；泛用 CloudTCM 目錄連結已移除。",
+    "clinical_pearls_en": "eLotus supplies the board-study core: L1 at 3.5 cun lateral, hepatosplenomegaly and lumbar pain, strengthening Spleen/harmonizing Stomach and regulating Qi/relieving pain, perpendicular 0.5-1 cun, and moxa applicable. AD adds M-BW-16, the aliases Fullness Root/Tumor Root, Upper-Middle Burner Qi and local Qi-Blood stagnation actions, gastritis/enteritis/abdominal mass/nephroptosis indications, and three needling variants. Legacy intestinal hernia was not found on either exact page and remains labeled unverified. The generic CloudTCM directory link was removed.",
+    "nameIntroZh": "『痞根』可譯 Root of Glomus、Root of Lump 或 Lump's Root；AD 另列 Fullness Root、Tumor Root。『痞』是中醫痞滿／痞塊語境，不可直接等同現代惡性腫瘤。",
+    "nameIntroEn": "Pigen is translated as Root of Glomus, Root of Lump, or Lump's Root; AD additionally lists Fullness Root and Tumor Root. The Chinese term pi belongs to the TCM context of focal fullness/mass and must not be equated directly with a modern malignant tumor.",
+    "evidence": "四層查核：NCBAHM 2026 ACPL Appendix A 明列 Pigen；curriculum/acupoints 以中英文名與 EX-B4／M-BW-16 搜尋無專條。eLotus Ex-B4 精確頁提供 L1旁開3.5寸、肝脾腫大／腰痛、健脾和胃／理氣止痛、直刺0.5～1寸與可灸。AD 拼音索引及 M-BW-16 精確頁提供同一定位、三種刺法、上中焦氣機／局部氣血瘀滯、擴充主治與別名；配穴及禁忌欄空白不視為安全證明。WHO 1991標準命名搜尋結果確認 Pigen Ex-B4。補充安全層採 L1 腰部穿刺腎損傷／血腫病例、上腰椎屍體研究及針刺相關腎裂傷病例；均非 EX-B4 專穴測量。CloudTCM 未找到可核讀痞根專頁，原泛用目錄連結已移除。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4",
+      "https://www.americandragon.com/Points/Pigen.html",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/bitstream/handle/10665/207637/Standard_acupuncture_nomenclature_1991_partII_eng.pdf?sequence=1",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838220/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7170390/",
+      "https://pubmed.ncbi.nlm.nih.gov/37020369/"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 痞根 EX-B4",
-        "labelEn": "Extra Point · Pigen EX-B4",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "labelZh": "eLotus · 痞根 Ex-B4 精確頁",
+        "labelEn": "eLotus · Exact Pigen Ex-B4 Page",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 痞根 M-BW-16 精確頁",
+        "labelEn": "American Dragon · Exact Pigen M-BW-16 Page",
+        "url": "https://www.americandragon.com/Points/Pigen.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "區域安全病例 · L1 腰部穿刺後腎損傷與血腫",
+        "labelEn": "Regional Safety Case · Renal Injury and Hematoma after L1 Lumbar Puncture",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838220/",
+        "source": "Clinical Case Reports / PubMed Central; indexed content read, direct open encountered reCAPTCHA"
       }
     ],
     "x": 185,
     "y": 260,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.8-1.2 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.8-1.2 cun; moxibustion applicable.",
-    "cautions": "腰部穴位避開腎臟深刺。",
-    "cautionsEn": "Avoid deep insertion toward kidney region.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Pigen listed in the named extra-point priority list"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Pigen entry found in curriculum/acupoints by 痞根, Pigen, EX-B4, Ex-B4, or M-BW-16 search on 2026-08-08"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Pigen present in the pinyin index and linked to the exact page on 2026-08-08",
+        "https://www.americandragon.com/Points/Pigen.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4 and https://www.americandragon.com/Points/Pigen.html: 3.5 cun lateral at the lower border of the L1 spinous process",
+        "https://iris.who.int/bitstream/handle/10665/207637/Standard_acupuncture_nomenclature_1991_partII_eng.pdf?sequence=1: WHO nomenclature search result lists Pigen Ex-B4"
+      ],
+      "anatomy": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838220/: L1 lumbar trigger-point injection case with renal injury/perirenal hematoma; kidneys described approximately T11-L3; not Pigen-specific",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7170390/: upper-lumbar L1-L3 cadaver study shows kidney-entry risk and changing bony protection with lateral distance; not Pigen-specific",
+        "https://pubmed.ncbi.nlm.nih.gov/37020369/: acupuncture-associated kidney laceration case at lumbar region; not Pigen-specific",
+        "source-gap note: no core source supplies Pigen-specific layered anatomy or skin-to-kidney distance"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4: perpendicular 0.5-1 cun",
+        "https://www.americandragon.com/Points/Pigen.html: straight 1-1.5 cun; medial-oblique 0.8-1 cun; perpendicular 0.5-0.8 cun",
+        "unverified legacy value retained outside executable layer: perpendicular 0.8-1.2 cun",
+        "source-gap note: no point-specific kidney boundary, body-habitus adjustment, needle-length, bony-contact, or stopping rule"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4 and https://www.americandragon.com/Points/Pigen.html: moxibustion applicable, no method or dose",
+        "source-gap note: no moxa type, cone/minute dose, heat distance, skin protection, frequency, stopping rule, or special-population protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4: strengthens Spleen/harmonizes Stomach; regulates Qi/relieves pain",
+        "https://www.americandragon.com/Points/Pigen.html: improves Qi flow between Upper and Middle Burners; eliminates local Qi and Blood stagnation",
+        "legacy disperse lumps/masses retained as indication-derived and reconciled with AD's stagnation action"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4: hepatosplenomegaly and lumbar pain",
+        "https://www.americandragon.com/Points/Pigen.html: liver/spleen enlargement, gastritis, enteritis, abdominal mass, prolapsed kidney, indigestion, food-passage sensation, lumbar pain",
+        "unverified legacy wording retained: intestinal hernia"
+      ],
+      "combinations": [
+        "source-gap note: eLotus lists no combinations and the American Dragon combination table is blank"
+      ],
+      "cautions": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838220/: L1 renal injury/perirenal hematoma after lumbar puncture, with antiplatelet context",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7170390/: regional upper-lumbar cadaver kidney-risk evidence",
+        "https://pubmed.ncbi.nlm.nih.gov/37020369/: regional acupuncture-associated kidney laceration case",
+        "source-gap note: AD contraindications field is blank; no point-specific pregnancy, pediatric, renal-disease, solitary-kidney, anticoagulation, prior-spine-surgery, infection, needle-length, or stopping protocol",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable code: EX-B4 Pigen",
+        "WHO 1991 nomenclature and https://www.mastertungacupuncture.org/acupuncture/traditional/points/pigen-ex-b4: Ex-B4; Root of Glomus/Root of Lump",
+        "https://www.americandragon.com/Points/Pigen.html: M-BW-16; Lump's Root; aliases Fullness Root, Root of Glomus, Tumor Root"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Pigen Ex-B4 page",
+        "2026-08-08 live page opened: American Dragon exact Pigen M-BW-16 page",
+        "2026-08-08 live page opened: American Dragon pinyin index; Pigen entry present",
+        "2026-08-08 WHO exact PDF URL returned an internal fetch error; indexed result identified Pigen Ex-B4",
+        "2026-08-08 supplemental PubMed/PMC exact indexed contents were readable; direct opens encountered reCAPTCHA",
+        "2026-08-08 CloudTCM exact-name searches found no readable dedicated Pigen page; generic directory URL removed"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "一般層採直刺0.5～0.8寸。eLotus 可至1寸；AD 另列向內斜刺0.8～1寸及直刺1～1.5寸。後兩者只作來源變體；在未確認上腰部器官邊界、體型、針長與停止規則前，不依最深值加深。",
+    "needlingEn": "The general layer uses perpendicular insertion 0.5-0.8 cun. eLotus extends to 1 cun; AD separately lists medial-oblique 0.8-1 cun and straight 1-1.5 cun. The latter remain source variants only; do not advance to the deepest value without confirming upper-lumbar organ boundaries, body habitus, needle length, and stopping rules.",
     "id": "ex.b4"
   },
   {
