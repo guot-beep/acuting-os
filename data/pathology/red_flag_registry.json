@@ -10,9 +10,18 @@
   ],
   "created": "2026-08-08",
   "tier_vocabulary": {
-    "emergency_referral": { "zh": "急診轉介", "en": "Emergency referral — stop and send now" },
-    "urgent_referral": { "zh": "儘速就醫", "en": "Urgent medical evaluation (days, not weeks)" },
-    "routine_referral": { "zh": "常規轉介評估", "en": "Routine biomedical evaluation" }
+    "emergency_referral": {
+      "zh": "急診轉介",
+      "en": "Emergency referral — stop and send now"
+    },
+    "urgent_referral": {
+      "zh": "儘速就醫",
+      "en": "Urgent medical evaluation (days, not weeks)"
+    },
+    "routine_referral": {
+      "zh": "常規轉介評估",
+      "en": "Routine biomedical evaluation"
+    }
   },
   "field_definitions": {
     "id": "rf.<entity-slug>.<trigger-slug> — stable forever once written",
@@ -26,5 +35,310 @@
     "review_status": "draft | source_checked | clinically_reviewed",
     "authored_by": "who wrote the record (agent line or owner)"
   },
-  "records": []
+  "records": [
+    {
+      "id": "rf.bells_palsy.unexplained_facial_droop",
+      "entity_id": "cond.bells_palsy",
+      "trigger_zh": "出現顏面下垂或面神經麻痺症狀",
+      "trigger_en": "Unexplained facial droop or facial palsy symptoms",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000773.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Bell palsy",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider right away if your face droops or you have other symptoms of Bell palsy.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.bells_palsy.stroke_differential_screening",
+      "entity_id": "cond.bells_palsy",
+      "trigger_zh": "新發單側顏面下垂時，需即刻評估並排除急性中風（FAST 症狀）",
+      "trigger_en": "New-onset facial droop requires emergency evaluation to rule out acute stroke",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+          "source_org": "CDC",
+          "page_title": "Signs and Symptoms of Stroke",
+          "section": "When to seek emergency help — B.E. F.A.S.T to identify stroke",
+          "quote_en": "F—Face: Ask the person to smile. Does one side of the face droop? T—Time: If you see any of these signs, call 9-1-1 right away.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.stroke_rehab.recurrent_stroke_signs",
+      "entity_id": "cond.stroke_rehab",
+      "trigger_zh": "出現新發或復發之中風症狀（顏面下垂、單側肢體無力、言語不清等）",
+      "trigger_en": "New or recurrent signs of stroke (facial droop, unilateral limb weakness, speech difficulty)",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+          "source_org": "CDC",
+          "page_title": "Signs and Symptoms of Stroke",
+          "section": "When to seek emergency help",
+          "quote_en": "Call 9-1-1 right away if you or someone else has any of these symptoms.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.peripheral_neuropathy.progressive_sensory_motor_loss",
+      "entity_id": "cond.peripheral_neuropathy",
+      "trigger_zh": "身體局部出現運動能力或感覺喪失",
+      "trigger_en": "Loss of movement or sensation in any part of the body",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000750.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Sensorimotor polyneuropathy",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you have loss of movement or feeling in a part of your body.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.diabetic_neuropathy.diabetic_foot_gangrene",
+      "entity_id": "cond.diabetic_neuropathy",
+      "trigger_zh": "足部感染變黑或發臭（疑似壞疽徵兆）",
+      "trigger_en": "Foot infection turning black or foul-smelling (signs of potential gangrene)",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+          "source_org": "NIDDK",
+          "page_title": "Diabetes & Foot Problems",
+          "section": "When should I see my health care provider about foot problems?",
+          "quote_en": "a foot infection that becomes black and smelly—signs you might have gangrene",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.postherpetic_neuralgia.ocular_zoster",
+      "entity_id": "cond.postherpetic_neuralgia",
+      "trigger_zh": "帶狀疱疹波及眼部（眼部帶狀疱疹，恐致永久失明）",
+      "trigger_en": "Herpes zoster involvement of the eye (ocular zoster, risk of permanent blindness)",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000858.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Shingles",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Shingles that affects the eye may lead to permanent blindness if you do not receive emergency medical care.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.parkinsons.recent_falls",
+      "entity_id": "cond.parkinsons",
+      "trigger_zh": "近期頻繁跌倒",
+      "trigger_en": "Recent or recurrent falls",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000394.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Parkinson disease - discharge",
+          "section": "When to Call the Doctor",
+          "quote_en": "Recent falls; Choking or coughing when eating",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.parkinsons.dysphagia_choking",
+      "entity_id": "cond.parkinsons",
+      "trigger_zh": "進食時嗆咳或噎窒",
+      "trigger_en": "Choking or coughing when eating (dysphagia)",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000394.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Parkinson disease - discharge",
+          "section": "When to Call the Doctor",
+          "quote_en": "Recent falls; Choking or coughing when eating",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.multiple_sclerosis.recent_falls",
+      "entity_id": "cond.multiple_sclerosis",
+      "trigger_zh": "近期頻繁跌倒",
+      "trigger_en": "Recent or recurrent falls",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000129.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Multiple sclerosis - discharge",
+          "section": "When to Call the Doctor",
+          "quote_en": "Recent falls; Choking or coughing when eating",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.multiple_sclerosis.dysphagia_choking",
+      "entity_id": "cond.multiple_sclerosis",
+      "trigger_zh": "進食時嗆咳或噎窒",
+      "trigger_en": "Choking or coughing when eating (dysphagia)",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000129.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Multiple sclerosis - discharge",
+          "section": "When to Call the Doctor",
+          "quote_en": "Recent falls; Choking or coughing when eating",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.essential_tremor.new_onset_or_disabling_tremor",
+      "entity_id": "cond.essential_tremor",
+      "trigger_zh": "新出現顫抖或顫抖已嚴重影響日常生活功能",
+      "trigger_en": "New-onset tremor or tremor interfering significantly with daily activities",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000762.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Essential tremor",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "You have a new tremor; Your tremor makes it hard to perform daily activities",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.dizziness_vertigo.focal_neurologic_deficits",
+      "entity_id": "cond.dizziness_vertigo",
+      "trigger_zh": "伴隨肢體無力、無法移動手臂或腿部、視力或言語改變",
+      "trigger_en": "Focal neurological deficits (weakness, paralysis, vision or speech changes)",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000692.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Dizziness and vertigo - aftercare",
+          "section": "When to Call the Doctor",
+          "quote_en": "Weakness; Cannot move an arm or leg; Change in vision or speech; Fainting and losing alertness",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.dizziness_vertigo.syncope_altered_consciousness",
+      "entity_id": "cond.dizziness_vertigo",
+      "trigger_zh": "眩暈伴隨昏厥或警覺性喪失",
+      "trigger_en": "Vertigo accompanied by fainting or loss of alertness",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000692.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Dizziness and vertigo - aftercare",
+          "section": "When to Call the Doctor",
+          "quote_en": "Weakness; Cannot move an arm or leg; Change in vision or speech; Fainting and losing alertness",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.dizziness_vertigo.sudden_gait_ataxia",
+      "entity_id": "cond.dizziness_vertigo",
+      "trigger_zh": "突發步態不穩、頭暈、失去平衡或協調障礙",
+      "trigger_en": "Sudden trouble walking, dizziness, loss of balance, or lack of coordination",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+          "source_org": "CDC",
+          "page_title": "Signs and Symptoms of Stroke",
+          "section": "Signs and symptoms",
+          "quote_en": "Sudden trouble walking, dizziness, loss of balance, or lack of coordination.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.menieres.sudden_sensorineural_hearing_loss",
+      "entity_id": "cond.menieres",
+      "trigger_zh": "伴隨突發性聽力喪失（突發性耳聾），屬醫療急症，需立即就醫鑑別",
+      "trigger_en": "Sudden sensorineural hearing loss requires emergency medical evaluation",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.nidcd.nih.gov/health/sudden-deafness",
+          "source_org": "NIDCD",
+          "page_title": "Sudden Sensorineural Hearing Loss (SSHL)",
+          "section": "Main body",
+          "quote_en": "you should consider sudden deafness symptoms a medical emergency and visit a doctor immediately.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.migraine_vestibular.thunderclap_worst_headache",
+      "entity_id": "cond.migraine_vestibular",
+      "trigger_zh": "經歷人生中最嚴重的頭痛（雷擊樣頭痛）",
+      "trigger_en": "Experiencing the worst headache of your life",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000709.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Migraine",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "You are experiencing the worst headache of your life.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    }
+  ]
 }
