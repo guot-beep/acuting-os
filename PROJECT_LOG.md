@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — 經外奇穴精確來源連結修正
+
+- **做了什麼**：修正所有經外奇穴上方來源按鈕誤套十四經穴網址推導的問題；經外奇穴現在只顯示資料中已核對的 CloudTCM／AD／eLotus 精確頁，不再產生空 CloudTCM URL、AD 首頁或索引頁假按鈕。另清理 EX-B10／EX-B11 當下無法直接開啟的來源按鈕，內容證據仍保留於 `field_sources`。
+- **數字 before→after**：嚴格模板／四源稽核維持 `38/72`；待修維持 `34/72`；泛用 Cloud URL 維持 `10/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 巨闕俞 Ex-B14 與接脊 Ex-B15、接脊 CloudTCM、Kurohon、AHA、Merck、Mayo、CDC 均於本輪實際開啟；AD 索引已確認無 Juqueshu／Jieji／Jiegu 專頁。Yibian／MedicalTeaching 與巨闕俞 CloudTCM 只保留稽核 provenance，不再作可點擊按鈕；兩張卡的本庫代碼與來源代碼已在標籤明示。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）、`validate-interactions.js`、`validate-point-ids.js`（925 ids）、`validate-content-junk.js`、`node --check app.js` 與 `git diff --check` 全通過；修正 commit `f42d00b`。
+- **已知未解／下一步**：34張待修、10張泛用 Cloud URL；下一張 EX-B12 坐骨。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
 # 2026-08-08 Codex — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
 
 - **做了什麼**：將舊卡主名接骨 Jiegu 校正為接脊（接骨）Jieji，保留 `EX-B11`／`ex.b11` 與舊值；核對 Board／課件缺口、eLotus Ex-B15、AD 拼音索引缺頁、CloudTCM、MedicalTeaching、日本考試資料及胸腰交界解剖，補齊全卡與逐欄來源。

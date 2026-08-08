@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — 經外奇穴精確來源連結修正
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `f42d00b` (`fix(acupoints): only show verified extra-point links`).
+- **Root Cause / Fix**: `externalPointLinks()` treated extra-point codes like standard meridian codes. For codes such as `EX-B10` and `EX-B11`, that produced an empty CloudTCM URL and an American Dragon homepage fallback. Extra points now bypass derived URL builders and expose only exact CloudTCM, American Dragon, and eLotus detail pages explicitly present in reviewed record data.
+- **EX-B10 / EX-B11 Link Audit**: live-opened eLotus Juqueshu Ex-B14 and Jieji Ex-B15, CloudTCM Jieji, Kurohon, AHA, Merck, Mayo, CDC, and the American Dragon pinyin index. AD has no Juqueshu/Jieji/Jiegu detail entry. Yibian, MedicalTeaching, and Juqueshu CloudTCM matched indexed content but failed direct opening in this session, so they remain only in `field_sources` provenance and are no longer rendered as clickable card/source links.
+- **Code-label Reconciliation**: clickable eLotus labels now state both stable database identity and source identity: Juqueshu `EX-B10` versus eLotus Ex-B14, and Jieji `EX-B11` versus eLotus Ex-B15. No IDs or source-derived content were rewritten.
+- **Measured Counts**: strict/four-source remains `38/72`; issues remain `34/72`; generic Cloud URL remains `10/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime), `validate-interactions`, `validate-point-ids` (925), `validate-content-junk`, `node --check app.js`, and `git diff --check` passed.
+- **Next**: EX-B12 坐骨 (Zuogu); continue four-layer refinement and live-open every displayed detail URL before commit.
+
 ## [2026-08-08] Codex Handoff — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `1c9de53` (`feat(acupoints): correct Jieji identity and safety`).
