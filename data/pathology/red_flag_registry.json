@@ -339,6 +339,196 @@
       ],
       "review_status": "draft",
       "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.gerd.dysphagia_odynophagia",
+      "entity_id": "cond.gerd",
+      "trigger_zh": "吞嚥困難或吞嚥疼痛",
+      "trigger_en": "Difficulty swallowing or pain while swallowing",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of GER & GERD",
+          "section": "What are the symptoms of GER and GERD?",
+          "quote_en": "persistent vomiting; problems swallowing or pain while swallowing; signs of bleeding in the digestive tract",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.gerd.gi_bleeding_or_persistent_vomiting",
+      "entity_id": "cond.gerd",
+      "trigger_zh": "持續性嘔吐或消化道出血徵兆",
+      "trigger_en": "Persistent vomiting or signs of bleeding in the digestive tract",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of GER & GERD",
+          "section": "What are the symptoms of GER and GERD?",
+          "quote_en": "persistent vomiting; problems swallowing or pain while swallowing; signs of bleeding in the digestive tract",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.chronic_gastritis.gastric_bleeding",
+      "entity_id": "cond.chronic_gastritis",
+      "trigger_zh": "出現胃出血症狀",
+      "trigger_en": "Signs of bleeding in your stomach",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gastritis-gastropathy/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Gastritis & Gastropathy",
+          "section": "What are the symptoms of gastritis and gastropathy?",
+          "quote_en": "If you have symptoms of bleeding in your stomach, seek medical help right away.",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.peptic_ulcer.sudden_severe_abdominal_pain",
+      "entity_id": "cond.peptic_ulcer",
+      "trigger_zh": "突發、劇烈且持續不退的腹痛",
+      "trigger_en": "Sudden, sharp, or severe abdominal pain that doesn't go away",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/peptic-ulcers-stomach-ulcers/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Peptic Ulcers (Stomach Ulcers)",
+          "section": "What are the symptoms of a peptic ulcer?",
+          "quote_en": "sudden, sharp, or severe abdominal pain that doesn’t go away",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.ibs.rectal_bleeding_bloody_stools",
+      "entity_id": "cond.ibs",
+      "trigger_zh": "直腸出血、血便或黑便（瀝青便）",
+      "trigger_en": "Bleeding from rectum, bloody stools, or black tarry stools",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/diagnosis",
+          "source_org": "NIDDK",
+          "page_title": "Diagnosis of Irritable Bowel Syndrome",
+          "section": "How do doctors diagnose IBS?",
+          "quote_en": "anemia; bleeding from your rectum; bloody stools or stools that are black and tarry; weight loss",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.ibs.unexplained_weight_loss_anemia",
+      "entity_id": "cond.ibs",
+      "trigger_zh": "貧血或不明原因體重減輕",
+      "trigger_en": "Anemia or unexplained weight loss",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/diagnosis",
+          "source_org": "NIDDK",
+          "page_title": "Diagnosis of Irritable Bowel Syndrome",
+          "section": "How do doctors diagnose IBS?",
+          "quote_en": "anemia; bleeding from your rectum; bloody stools or stools that are black and tarry; weight loss",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.ibd.severe_heavy_rectal_bleeding",
+      "entity_id": "cond.ibd",
+      "trigger_zh": "嚴重或大量直腸出血（可能需要緊急手術）",
+      "trigger_en": "Severe or heavy rectal bleeding that may require emergency surgery",
+      "tier": "emergency_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/ulcerative-colitis/definition-facts",
+          "source_org": "NIDDK",
+          "page_title": "Definition & Facts of Ulcerative Colitis",
+          "section": "Complications",
+          "quote_en": "severe or heavy rectal bleeding that may require emergency surgery",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.ibd.crohn_severe_pain_fistula_vomiting",
+      "entity_id": "cond.ibd",
+      "trigger_zh": "劇烈腹痛、直腸出血或滲液病灶，或持續超過一天的嘔吐",
+      "trigger_en": "Very bad abdominal pain, rectal bleeding/drainage/sores, or vomiting >24h",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000249.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Crohn disease",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Have very bad abdominal pain; Have rectal bleeding, drainage, or sores; Have nausea and vomiting that lasts for more than a day",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.chronic_constipation.obstruction_signs_fever",
+      "entity_id": "cond.chronic_constipation",
+      "trigger_zh": "無法排氣、嘔吐或發燒",
+      "trigger_en": "Inability to pass gas, vomiting, or fever",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Constipation",
+          "section": "When should I see a doctor?",
+          "quote_en": "inability to pass gas; vomiting; fever",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
+    },
+    {
+      "id": "rf.chronic_diarrhea.bloody_pus_tarry_stools",
+      "entity_id": "cond.chronic_diarrhea",
+      "trigger_zh": "黑便（瀝青便）、便中帶鮮血或膿液",
+      "trigger_en": "Stools that are black and tarry, or contain red blood or pus",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Diarrhea",
+          "section": "When should I seek a doctor's help?",
+          "quote_en": "stools that are black and tarry or contain red blood or pus; symptoms of dehydration",
+          "retrieved_at": "2026-08-07"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "antigravity"
     }
   ]
 }
