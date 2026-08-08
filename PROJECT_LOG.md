@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-CA5 利尿四層來源缺口與安全修整
+
+- **做了什麼**：逐層查核 Board、`curriculum/acupoints/`、eLotus、American Dragon 與 CloudTCM 精確詞典頁，將拼音 `Liniu` 校正為 `Liniao`，補齊嚴格雙語卡片、配穴、別名、來源差異與欄位溯源；保留穩定 `EX-CA5`／`ex.ca5`。
+- **數字 before→after**：嚴格模板／四源稽核 `26/72 → 27/72`；待修 `46/72 → 45/72`；泛用 CloudTCM URL `16/72 → 15/72`；可測量技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：Board、課件、eLotus 清單與 AD 拼音索引均無利尿專條；CloudTCM `dic/7681` 為本輪唯一精確內容頁。分開保留 Cloud 直刺1～1.5寸、舊卡0.8～1.2寸與批次0.3～0.8寸；無來源的點刺出血已退出可執行欄位，排空膀胱與孕期慎用保留為未核實舊值。
+- **驗證**：`validate-extra-point-standard --all`、`build-data`、`validate-data`、`validate-interactions`、生成資料定點核對與 `git diff --check` 均通過；內容 commit `49496de`。
+- **已知未解／下一步**：45 張仍在 worklist，15 張仍有泛用 CloudTCM URL；下一張 EX-B1 定喘。既有 `js/knowledge.js`、`js/router.js`、Pattern 報告與 `curriculum/conditions/*` 壓縮檔未納入本線提交。
+
 # 2026-08-08 Codex — EX-CA4 胃上來源變體嚴格修整
 
 - **做了什麼**：從 American Dragon 拼音索引核對 Weishang／Weishangxue，再整合 Board、課件與 eLotus 精確頁；保留穩定 `EX-CA4`／`ex.ca4`，分開記錄 eLotus Ex-CA7 與 AD 相關條目 Weishangxue N-CA-18。

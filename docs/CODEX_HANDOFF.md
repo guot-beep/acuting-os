@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-CA5 利尿四層來源缺口與安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `49496de` (`feat(acupoints): refine Liniao extra point`).
+- **Files Changed**: `data/acupoints/extra_points.json`, `data/audits/missing_report.json`, and rebuilt `data/generated/app_data.js` / `data/generated/knowledge_data.js`. Pre-existing edits in `js/knowledge.js`, `js/router.js`, `PATTERN_V2_CODEX_CANONICAL_REVIEW.md`, and `curriculum/conditions/Acuting_OS_Pattern_V2_CODEX_Handoff_Batch02-10_2026-08-08.zip` were protected and excluded from the commit.
+- **Scope / Exact Sources**:
+  - NCBAHM 2026 ACPL Appendix A does not list Liniao. `curriculum/acupoints/` has no dedicated entry after 利尿／利尿穴／Liniu／Liniao／EX-CA5／Ex-CA8 searches.
+  - eLotus current Traditional Points List `https://www.mastertungacupuncture.org/acupuncture/traditional/points/list` has no Liniao, Liniu, or Li Niao entry; no exact detail page was claimed.
+  - American Dragon pinyin index `https://www.americandragon.com/PointsIndex2.html` has no Liniao or Liniu entry. Tongbian is a different point and no content was transferred.
+  - CloudTCM exact dictionary URL `https://cloudtcm.com/dic/7681` supplied aliases, the anterior-midline location 2.5 cun below the umbilicus, urinary/intestinal/Lower-Jiao indication groups, perpendicular 1–1.5 cun with sensation direction, general moxa applicability, editorial actions, and three combination groups. The exact URL returned a detailed indexed result; a subsequent direct re-open cache-missed in the available fetch environment, which is recorded in `field_sources.link_check`.
+- **Reconciliation / Safety**:
+  - Corrected the transliteration `Liniu` to standard toneless pinyin `Liniao`; preserved immutable `EX-CA5` / `ex.ca5`. No international universal code was claimed because none was verified from the four core layers.
+  - Kept CloudTCM 1–1.5 cun, legacy 0.8–1.2 cun, and bulk-added 0.3–0.8 cun as separate source variants. The unsupported bulk bloodletting method was removed from executable instructions.
+  - Retained the legacy empty-bladder and pregnancy-caution statements as visibly unverified safety content rather than deleting or upgrading them. Added the missing lower-abdominal layered-anatomy, bladder-filling, body-habitus, stopping-rule, moxa-dose, and thermal-safety boundaries without inventing procedures.
+  - Added paired bilingual identity, exam, anatomy, technique, moxa, actions, indication/tag, caution, alias, combination, clinical-pearl, exact-link, and field-provenance layers. Corrected `尿殘留` to the standard term `尿瀦留` while preserving its English meaning.
+- **Measured Counts**: strict-template/four-source-audited `26/72 → 27/72`; records with issues `46/72 → 45/72`; generic CloudTCM URL `16/72 → 15/72`; measurable-method/source-URL/mojibake gaps remain `0/72`.
+- **Validation**: `validate-extra-point-standard --all`, `build-data`, `validate-data`, `validate-interactions`, targeted generated-data checks, and `git diff --check` passed.
+- **Next**: EX-B1 定喘 (Dingchuan). It is a higher anatomical-risk back/neck point: verify Board/course/eLotus/AD exact pages first, preserve direction/depth variants, and do not infer pleural safety or moxa/pregnancy protocols.
+
 ## [2026-08-08] Codex Handoff — EX-CA4 胃上來源變體嚴格修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `4f566bd` (`feat(acupoints): reconcile Weishang source variants`).
