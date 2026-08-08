@@ -5630,45 +5630,220 @@
     "pinyin": "Dingchuan",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
-    "location": "背部，第7頸椎棘突下（大椎GV14）旁開0.5寸。",
-    "locationEn": "0.5 cun lateral to Dazhui (GV 14).",
-    "techniqueNotes": "直刺0.5~0.8寸。可灸。\nPerpendicular 0.5-0.8 cun. Moxa applicable.",
-    "functions": "宣肺平喘，止咳化痰，通絡止痛",
-    "functionsEn": "Disperses Lung Qi and calms wheezing; Stops cough",
+    "location": "項背交界，第7頸椎棘突下凹陷（大椎 GV14）旁開0.5寸，左右各一穴。eLotus 固定為旁開0.5寸；American Dragon 主列旁開0.5～1寸，另兩條來源表述為旁開0.5寸，故本卡以0.5寸作共同核心，保留 AD 的1寸上限為來源變體。",
+    "locationEn": "At the cervicothoracic junction, bilateral, 0.5 cun lateral to the depression below the C7 spinous process at Dazhui (GV14). eLotus fixes the location at 0.5 cun lateral. American Dragon's first statement gives 0.5-1 cun, while its other two statements give 0.5 cun; this card retains 0.5 cun as the shared core and labels AD's 1-cun upper limit as a source variant.",
+    "cunMeasurement": "先以頸椎伸展時仍保持突出作為 C7 棘突的臨床辨認線索，再取其棘突下大椎（GV14）水平旁開0.5寸。AD 另列0.5～1寸變體；不可把1寸無條件併入 eLotus 的固定0.5寸定位。",
+    "anatomyZh": "穴位位於 C7 棘突下、後正中線旁開的項背交界區。四個核心內容層均未提供本穴皮膚、皮下組織、斜方肌／深層頸背肌、骨性屏障、胸膜頂與椎管的逐層距離。2006 年屍體解剖研究將定喘列入胸膜頂周圍觀察穴，指出依標準定位與方向進針仍須遵守深度界限，但摘要沒有提供定喘專屬安全深度；CCAOM 潔針手冊則記錄中文文獻中定喘曾少見發生氣胸。兩者不能被簡化成『一定安全』或一個通用深度。",
+    "anatomyEn": "The point is at the cervicothoracic junction, lateral to the posterior midline below the C7 spinous process. None of the four core content layers supplies point-specific layer-by-layer distances through skin, subcutaneous tissue, trapezius/deep cervicothoracic muscles, bony barriers, pleural cupula, or spinal canal. A 2006 cadaveric study examined Dingchuan among points around the pleural cupula and warned that standard location/direction still requires a depth limit, but its abstract gives no Dingchuan-specific safe depth. The CCAOM Clean Needle Technique manual separately reports infrequent pneumothorax events at Dingchuan in Chinese literature. These findings cannot be reduced to either 'always safe' or one universal depth.",
+    "techniqueNotes": "eLotus：直刺0.5～0.8寸，可灸。American Dragon：①朝脊柱方向直斜刺0.5～1寸；②直刺0.5～0.8寸；③直刺但針尖略向脊柱0.5～1寸，局部酸脹可延至肩或胸；可灸。現行卡片的『直刺0.5～1寸，或向脊柱方向斜刺0.5～1寸』涵蓋 AD 變體，但不可冒充 eLotus 共識。\neLotus: perpendicular insertion 0.5-0.8 cun; moxibustion applicable. American Dragon: (1) perpendicular-oblique insertion toward the spine, 0.5-1 cun; (2) perpendicular insertion 0.5-0.8 cun; and (3) straight insertion pointed slightly toward the spine, 0.5-1 cun, with local distention/soreness sometimes extending to the shoulders or chest; moxibustion applicable. The current card's perpendicular 0.5-1-cun or spine-directed oblique 0.5-1-cun wording covers the AD variants but must not be presented as eLotus consensus.",
+    "acumethodZh": "來源共同支持直刺0.5～0.8寸；AD 另列朝脊柱方向直斜刺／略向脊柱0.5～1寸。方向與深度必須整組保留：AD 的1寸上限只出現在朝脊柱的表述中，不可轉成向外側或任意方向深刺。四源均未提供骨性接觸、進針層確認、體型調整或椎管側停止規則。",
+    "acumethodEn": "The exact pages share perpendicular insertion 0.5-0.8 cun. American Dragon additionally lists perpendicular-oblique or straight insertion slightly toward the spine, 0.5-1 cun. Direction and depth must remain paired: AD's 1-cun upper limit appears with a spine-directed route and cannot be converted into deep lateral or unrestricted insertion. The four core layers provide no bony-contact, tissue-layer confirmation, body-habitus adjustment, or spinal-canal-side stopping criteria.",
+    "moxaZh": "eLotus 與 American Dragon 均只寫『可灸』，沒有提供灸法種類、壯數／分鐘數、艾條距離、皮膚保護、項背毛髮／衣物防火、熱傷害停止規則、療程頻率或特殊族群條文，因此不補劑量。",
+    "moxaEn": "Both eLotus and American Dragon only state that moxibustion is applicable. Neither supplies a moxa type, cone/minute dose, stick distance, skin protection, fire precautions for hair/clothing at the cervicothoracic junction, thermal-injury stopping rule, treatment frequency, or special-population protocol; no dose is added.",
+    "functions": "宣肺平喘；止咳；祛風解表；化痰；通絡止痛",
+    "functionsEn": "Diffuses Lung Qi and calms wheezing; Stops cough; Expels Exterior Wind; Transforms phlegm; Unblocks the channels and relieves pain",
+    "functionsZhList": [
+      "宣肺平喘（AD 明列宣肺氣、平喘與定喘；eLotus 主治層支持）",
+      "止咳（AD 明列；eLotus 主治層支持）",
+      "祛風解表（AD 明列祛外風）",
+      "化痰（既有表述；兩個精確頁未明列為功效）",
+      "通絡止痛（既有／依頸、肩、背痛主治整理，非精確頁明列功效）"
+    ],
+    "functionsEnList": [
+      "Diffuses Lung Qi and calms wheezing (AD explicitly lists diffusing Lung Qi and calming dyspnea/wheezing/asthma; supported by eLotus indications)",
+      "Stops cough (explicitly listed by AD and supported by eLotus indications)",
+      "Expels Exterior Wind (explicitly listed by AD)",
+      "Transforms phlegm (legacy wording not explicitly listed as an action on either exact page)",
+      "Unblocks the channels and relieves pain (legacy/indication-derived wording based on neck, shoulder, and back pain rather than an explicitly listed exact-page action)"
+    ],
+    "pointIdentityZh": [
+      "項背部左右成對的現代經外奇穴",
+      "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴重點清單",
+      "本庫與 eLotus 使用 EX-B1／Ex-B1；American Dragon 使用 M-BW-1",
+      "AD 明記本穴為現代新增穴，主治核心為哮喘、呼吸困難與急性喘鳴"
+    ],
+    "pointIdentityEn": [
+      "Modern bilateral extra point at the cervicothoracic junction",
+      "Listed in the NCBAHM 2026 ACPL Appendix A priority extra-point list",
+      "The database and eLotus use EX-B1/Ex-B1; American Dragon uses M-BW-1",
+      "AD identifies it as a modern addition whose core use is asthma, dyspnea, and acute wheezing"
+    ],
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 Appendix A 明列定喘。應試核心：C7 棘突下大椎旁開0.5寸、宣肺平喘止咳，以及直刺0.5～0.8寸與 AD 朝脊柱0.5～1寸變體必須分辨；其項背／胸膜安全風險不能只背數字。",
+    "exam_importance_en": "Dingchuan is named in the NCBAHM 2026 Appendix A. Board-focused recall: 0.5 cun lateral to GV14 below C7, diffusion of Lung Qi with calming wheezing/cough, and the distinction between shared perpendicular 0.5-0.8 cun and AD's spine-directed 0.5-1-cun variant. Cervicothoracic/pleural safety cannot be reduced to memorizing a number.",
+    "exam_pearl": "『定喘』即以平喘為名：哮喘、喘鳴、咳嗽是兩個精確頁的最穩定核心。AD 的1寸只隨朝脊柱方向出現；CCAOM 又記錄定喘少見氣胸事件，因此不可把1寸轉成向外深刺。",
+    "exam_pearl_en": "The name Dingchuan directly signals calming wheezing: asthma, wheezing, and cough are the stable core across both exact pages. AD's 1-cun value appears only with a spine-directed route, while the CCAOM manual reports infrequent pneumothorax events at Dingchuan; it must never be converted into deep lateral insertion.",
     "patterns": [
       "哮喘",
+      "喘鳴／呼吸困難",
       "咳嗽氣逆",
       "支氣管炎",
+      "百日咳",
       "落枕",
-      "肩背痛"
+      "肩背痛",
+      "風疹",
+      "蕁麻疹"
     ],
     "patternsEn": [
       "Asthma",
+      "Wheezing or dyspnea",
+      "Cough with rebellious Qi",
+      "Bronchitis",
+      "Pertussis",
+      "Stiff neck",
+      "Shoulder and upper-back pain",
+      "Rubella",
+      "Urticaria"
+    ],
+    "action_tags_zh": [
+      "宣肺平喘",
+      "止咳",
+      "祛外風",
+      "通絡止痛"
+    ],
+    "action_tags_en": [
+      "Diffuse Lung Qi and Calm Wheezing",
+      "Stop Cough",
+      "Expel Exterior Wind",
+      "Unblock the Channels and Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "哮喘",
+      "喘鳴",
+      "咳嗽",
+      "支氣管炎",
+      "頸肩背痛"
+    ],
+    "disease_tags_en": [
+      "Asthma",
+      "Wheezing",
       "Cough",
       "Bronchitis",
-      "Stiff neck",
-      "Shoulder pain"
+      "Neck, Shoulder, and Upper-back Pain"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "cautions": "【方向與深度綁定】共同值為直刺0.5～0.8寸；AD 的0.5～1寸只隨朝脊柱／略向脊柱方向出現。不可將1寸上限改讀為向外側、朝胸廓或任意方向深刺。【氣胸證據不能相消】CCAOM 潔針手冊記錄中文文獻中定喘曾少見發生氣胸；2006屍體研究則指出胸膜頂周圍穴即使按標準定位方向操作，超過界限仍可破壞胸膜，但摘要未給定喘專屬安全深度。不得據其中任何一項宣稱本穴沒有氣胸風險或製造通用深度。【解剖缺口】精確頁未列逐層組織、胸膜頂／椎管距離、不同體型、骨性接觸、針具長度或停止規則。【術後警訊；CCAOM】針後立即或延遲出現呼吸困難／呼吸急促、胸痛、乾咳、發紺或出汗，屬氣胸警訊；手冊要求懷疑臟器穿刺時啟動急救轉送。【高風險因素；CCAOM】肺病、吸菸史、很高瘦、萎縮或肌量流失會縮短表面至肺的距離，必須在操作前評估。【艾灸／特殊族群缺口】兩頁僅稱可灸；四源沒有本穴孕期、兒童或其他特殊族群的點特異操作條文，來源沉默不等於安全許可。",
+    "cautionsEn": [
+      "Direction and depth are inseparable: the shared value is perpendicular 0.5-0.8 cun. AD's 0.5-1-cun value appears only with a toward-the-spine or slightly spine-directed route. The 1-cun upper limit must not be reinterpreted as deep lateral, thorax-directed, or unrestricted insertion.",
+      "Pneumothorax evidence cannot cancel itself out: the CCAOM Clean Needle Technique manual reports infrequent pneumothorax events at Dingchuan in Chinese literature. A 2006 cadaveric study of points around the pleural cupula states that exceeding the limit despite standard location/direction can injure pleura, but its abstract gives no Dingchuan-specific safe depth. Neither finding supports declaring the point risk-free or inventing a universal depth.",
+      "Anatomy gap: the exact pages provide no layered tissues, pleural-cupula/spinal-canal distances, body-habitus adjustments, bony-contact guidance, needle-length rule, or stopping criteria.",
+      "Post-needling warning signs (CCAOM): immediate or delayed dyspnea/tachypnea, chest pain, dry cough, cyanosis, or sweating may indicate pneumothorax; the manual calls for emergency transport when organ puncture is suspected.",
+      "Higher-risk factors (CCAOM): lung disease, smoking history, very tall/thin physique, atrophy, or muscle loss can shorten the surface-to-lung distance and require pre-procedure assessment.",
+      "Moxa/special-population gap: both pages only say moxa is applicable. The four layers provide no point-specific pregnancy, pediatric, or other special-population protocol; source silence is not permission."
+    ],
+    "acuTags": [
+      "項背部",
+      "哮喘",
+      "咳嗽",
+      "氣胸風險"
+    ],
+    "combinePointsZh": "American Dragon 配穴表列四組：① 天突（CV22）配孔最（LU6）治急性哮喘；② 天突（CV22）、大椎（GV14）、豐隆（ST40）治百日咳；③ 風門（BL12）、肺俞（BL13）、合谷（LI4）治支氣管炎；④ 天突（CV22）、璇璣（CV21）、膻中（CV17）、內關（PC6）、豐隆（ST40）治支氣管哮喘。表格欄列已從原始 HTML 逐列核對；eLotus 頁未列配穴。",
+    "combinePointsEn": "American Dragon lists four groups: (1) Tiantu (CV22) with Kongzui (LU6) for acute asthma; (2) Tiantu (CV22), Dazhui (GV14), and Fenglong (ST40) for pertussis; (3) Fengmen (BL12), Feishu (BL13), and Hegu (LI4) for bronchitis; and (4) Tiantu (CV22), Xuanji (CV21), Shanzhong (CV17), Neiguan (PC6), and Fenglong (ST40) for bronchial asthma. The row/column alignment was checked against the page's raw HTML; the eLotus page lists no combinations.",
+    "clinical_pearls": "eLotus 提供最精簡核心：旁開0.5寸、喘咳與頸肩背痛／風疹、直刺0.5～0.8寸及可灸。AD 補入 M-BW-1 身分、0.5～1寸定位變體、朝脊柱刺法與針感、祛外風、蕁麻疹／百日咳／支氣管炎、四組配穴及『現代新增穴』說明。既有『化痰、通絡止痛』保留，但分別標作未明列功效與主治衍生功效。",
+    "clinical_pearls_en": "eLotus supplies the concise core: 0.5 cun lateral, dyspnea/wheezing/cough plus neck-shoulder-back pain and rubella, perpendicular 0.5-0.8 cun, and moxa applicable. AD adds the M-BW-1 identity, a 0.5-1-cun location variant, spine-directed techniques and sensation, expelling Exterior Wind, urticaria/pertussis/bronchitis, four combination groups, and the note that this is a modern addition. Legacy 'transform phlegm' and 'unblock channels/relieve pain' are retained but labeled respectively as not explicitly listed and indication-derived.",
+    "nameIntroZh": "『定喘』意為穩定喘息。eLotus 英譯 Dyspnea Stabilizer、Calm Dyspnea、Stop Wheezing；AD 英譯 Calm Dyspnea，另列 Stopping Asthma、Stop Wheezing，均直接指向本穴的呼吸主治。",
+    "nameIntroEn": "Dingchuan means stabilizing or calming wheezing/dyspnea. eLotus translates it as Dyspnea Stabilizer, Calm Dyspnea, and Stop Wheezing; AD uses Calm Dyspnea with Stopping Asthma and Stop Wheezing, all directly reflecting the respiratory indication core.",
+    "evidence": "四層查核：NCBAHM 2026 ACPL Appendix A 明列 Dingchuan，屬 Board 優先穴；curriculum/acupoints 以定喘、Dingchuan、EX-B1、Ex-B1 搜尋無專條。eLotus 精確 Ex-B1 頁提供旁開GV14 0.5寸、喘咳哮喘、頸強肩背痛、風疹、直刺0.5～0.8寸與可灸。American Dragon 拼音索引可連至 M-BW-1 精確頁，提供0.5～1寸定位變體、三種刺法表述與針感、五項功效、蕁麻疹／支氣管炎／百日咳等主治、四組配穴、別名及現代新增穴說明；禁忌欄空白不視為安全證明。補充安全層：CCAOM 潔針手冊列定喘為中文文獻中少見氣胸事件穴，並提供胸背針刺風險因素與警訊；2006屍體研究指出胸膜頂周圍穴超出標準定位方向的深度界限可損傷胸膜，但摘要未提供定喘專屬數字。CloudTCM 未找到可核讀定喘專頁，不以其他穴提及定喘的文字代替本穴內容。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1",
+      "https://www.americandragon.com/Points/Dingchuan.html",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://www.ccaom.org/images/ccaom/Documents/7th_Edition_Manual_English_June_2017.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/16739850/"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 定喘 EX-B1 (eLotus CORE)",
-        "labelEn": "Extra Point · Dingchuan EX-B1 (eLotus CORE)",
+        "labelZh": "eLotus · 定喘 Ex-B1 精確頁",
+        "labelEn": "eLotus · Exact Dingchuan Ex-B1 Page",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 定喘 M-BW-1 精確頁",
+        "labelEn": "American Dragon · Exact Dingchuan M-BW-1 Page",
+        "url": "https://www.americandragon.com/Points/Dingchuan.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "CCAOM 潔針手冊第7版 · 定喘氣胸安全條目（本輪直接開啟502）",
+        "labelEn": "CCAOM CNT Manual 7th Ed. · Dingchuan Pneumothorax Safety Entry (Direct Open Returned 502 This Review)",
+        "url": "https://www.ccaom.org/images/ccaom/Documents/7th_Edition_Manual_English_June_2017.pdf",
+        "source": "CCAOM / indexed exact PDF; access-gap audit"
       }
     ],
     "x": 180,
     "y": 210,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，或向脊柱方向斜刺 0.5-1.0 寸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun, or oblique insertion toward spine 0.5-1.0 cun.",
-    "cautions": "不可向外側深刺，以免傷及內臟與肺臟造成氣胸。",
-    "cautionsEn": "Avoid deep lateral insertion to prevent pneumothorax or internal organ damage.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Dingchuan listed in the named extra-point priority list"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Dingchuan entry found in curriculum/acupoints by 定喘, Dingchuan, EX-B1, or Ex-B1 search on 2026-08-08"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Dingchuan present in the pinyin index and linked to the exact page on 2026-08-08",
+        "https://www.americandragon.com/Points/Dingchuan.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1: 0.5 cun lateral to GV14",
+        "https://www.americandragon.com/Points/Dingchuan.html: first statement 0.5-1 cun lateral to the C7/GV14 depression; two additional statements specify 0.5 cun lateral"
+      ],
+      "anatomy": [
+        "https://pubmed.ncbi.nlm.nih.gov/16739850/: cadaveric study of pleural-cupula form and surrounding points including Dingchuan; abstract warns that exceeding limits despite standard location/direction can injure pleura but gives no Dingchuan-specific safe depth",
+        "https://www.ccaom.org/images/ccaom/Documents/7th_Edition_Manual_English_June_2017.pdf: Dingchuan reported among infrequent pneumothorax-event points in Chinese literature",
+        "source-gap note: no exact source supplies Dingchuan-specific layered tissue distances, pleural-cupula/spinal-canal boundaries, bony-contact guidance, or body-habitus depth adjustment"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1: perpendicular 0.5-0.8 cun",
+        "https://www.americandragon.com/Points/Dingchuan.html: perpendicular-oblique toward spine 0.5-1 cun; perpendicular 0.5-0.8 cun; straight slightly toward spine 0.5-1 cun with sensation description",
+        "source-gap note: no exact page supplies layer confirmation, bony-contact, needle-length, body-habitus, or stopping rules"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1: moxibustion applicable, no method or dose",
+        "https://www.americandragon.com/Points/Dingchuan.html: moxibustion applicable, no method or dose",
+        "source-gap note: no method type, cone/minute dose, heat distance, skin/fire protection, thermal-injury stopping rule, frequency, or special-population protocol"
+      ],
+      "functions": [
+        "https://www.americandragon.com/Points/Dingchuan.html: calms dyspnea/wheezing/asthma, stops cough, expels Exterior Wind, diffuses Lung Qi",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1: respiratory effects appear in the indication field rather than a separate action field",
+        "unverified legacy wording retained: transforms phlegm; unblocks channels and relieves pain"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1: dyspnea, wheezing, cough, asthma, neck rigidity, shoulder/back pain, rubella",
+        "https://www.americandragon.com/Points/Dingchuan.html: asthma, wheezing, cough, neck stiffness/rigidity, urticaria, upper-back/shoulder pain, bronchitis, pertussis"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Dingchuan.html: CV22+LU6 acute asthma; CV22+GV14+ST40 pertussis; BL12+BL13+LI4 bronchitis; CV22+CV21+CV17+PC6+ST40 bronchial asthma",
+        "2026-08-08 raw HTML table rows inspected to confirm point-group/indication alignment",
+        "source-gap note: no combinations listed on the eLotus detail page"
+      ],
+      "cautions": [
+        "https://www.ccaom.org/images/ccaom/Documents/7th_Edition_Manual_English_June_2017.pdf: infrequent pneumothorax events reported at Dingchuan; regional risk factors and warning symptoms described",
+        "https://pubmed.ncbi.nlm.nih.gov/16739850/: pleural-cupula cadaveric study; no Dingchuan-specific numeric safe depth in the abstract",
+        "direction guard inferred only from exact technique wording: AD's 1-cun upper value remains paired with toward-spine direction and is not generalized laterally",
+        "source-gap note: AD contraindications field is blank; no point-specific pregnancy, pediatric, tissue-layer, needle-length, or stopping protocol in the four core layers",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable code: EX-B1 Dingchuan",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dingchuan-ex-b1: Ex-B1; Dyspnea Stabilizer, Calm Dyspnea, Stop Wheezing",
+        "https://www.americandragon.com/Points/Dingchuan.html: M-BW-1; Calm Dyspnea; aliases Stopping Asthma and Stop Wheezing; modern extra-point note"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Dingchuan Ex-B1 page",
+        "2026-08-08 live page opened and raw HTML table inspected: American Dragon exact Dingchuan M-BW-1 page",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; Dingchuan entry present",
+        "2026-08-08 CCAOM exact PDF content returned in indexed search; direct open returned HTTP 502 in the available fetch environment",
+        "2026-08-08 PubMed exact indexed abstract was read; direct open encountered the site's reCAPTCHA interstitial",
+        "2026-08-08 CloudTCM exact-name searches found no dedicated Dingchuan point page; pages for other points mentioning Dingchuan were not treated as Dingchuan detail evidence"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "共同刺法為直刺0.5～0.8寸。American Dragon 另列朝脊柱方向直斜刺／針尖略向脊柱0.5～1寸，局部酸脹可延至肩或胸。1寸上限不可改讀為向外側或任意方向深刺；來源未提供定喘專屬逐層安全深度。",
+    "needlingEn": "The shared method is perpendicular insertion 0.5-0.8 cun. American Dragon additionally lists perpendicular-oblique or straight insertion slightly toward the spine, 0.5-1 cun, with local soreness/distention possibly extending to the shoulder or chest. The 1-cun upper limit must not be reinterpreted as deep lateral or unrestricted insertion; no source supplies a Dingchuan-specific layer-based safe depth.",
     "id": "ex.b1"
   },
   {
