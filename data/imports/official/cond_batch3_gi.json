@@ -1,0 +1,755 @@
+{
+  "batch": "cond_batch3_gi",
+  "retrieved_at": "2026-08-07",
+  "extractor": "chatgpt",
+  "icd10cm_version": "FY2026 April 1, 2026 update",
+  "records": [
+    {
+      "condition_id": "cond.gerd",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K21.00",
+            "official_description": "Gastro-esophageal reflux disease with esophagitis, without bleeding",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K21.01",
+            "official_description": "Gastro-esophageal reflux disease with esophagitis, with bleeding",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K21.9",
+            "official_description": "Gastro-esophageal reflux disease without esophagitis",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of GER & GERD",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/symptoms-causes",
+          "section": "What are the symptoms of GER and GERD?",
+          "quote_en": "persistent vomiting; problems swallowing or pain while swallowing; signs of bleeding in the digestive tract",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "K21.01 also appears on CMS FY2026 v43.1 P0175: https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0175.html"
+    },
+    {
+      "condition_id": "cond.functional_dyspepsia",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "K30",
+            "official_description": "Functional dyspepsia",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1264.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Batch work order marks this record ICD-only."
+    },
+    {
+      "condition_id": "cond.chronic_gastritis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K29.50",
+            "official_description": "Unspecified chronic gastritis without bleeding",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K29.51",
+            "official_description": "Unspecified chronic gastritis with bleeding",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Gastritis & Gastropathy",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gastritis-gastropathy/symptoms-causes",
+          "section": "What are the symptoms of gastritis and gastropathy?",
+          "quote_en": "If you have symptoms of bleeding in your stomach, seek medical help right away.",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Existing K29.5 is a nonterminal family seed; bleeding status requires a more specific code."
+    },
+    {
+      "condition_id": "cond.peptic_ulcer",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K27.0",
+            "official_description": "Acute peptic ulcer, site unspecified, with hemorrhage",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.1",
+            "official_description": "Acute peptic ulcer, site unspecified, with perforation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.2",
+            "official_description": "Acute peptic ulcer, site unspecified, with both hemorrhage and perforation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.3",
+            "official_description": "Acute peptic ulcer, site unspecified, without hemorrhage or perforation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.4",
+            "official_description": "Chronic or unspecified peptic ulcer, site unspecified, with hemorrhage",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.5",
+            "official_description": "Chronic or unspecified peptic ulcer, site unspecified, with perforation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.6",
+            "official_description": "Chronic or unspecified peptic ulcer, site unspecified, with both hemorrhage and perforation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.7",
+            "official_description": "Chronic peptic ulcer, site unspecified, without hemorrhage or perforation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K27.9",
+            "official_description": "Peptic ulcer, site unspecified, unspecified as acute or chronic, without hemorrhage or perforation",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1428.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Peptic Ulcers (Stomach Ulcers)",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/peptic-ulcers-stomach-ulcers/symptoms-causes",
+          "section": "What are the symptoms of a peptic ulcer?",
+          "quote_en": "sudden, sharp, or severe abdominal pain that doesn’t go away",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "K27 is a category; the listed leaves encode acuity/chronicity and hemorrhage/perforation."
+    },
+    {
+      "condition_id": "cond.ibs",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K58.0",
+            "official_description": "Irritable bowel syndrome with diarrhea",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K58.1",
+            "official_description": "Irritable bowel syndrome with constipation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K58.2",
+            "official_description": "Mixed irritable bowel syndrome",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K58.8",
+            "official_description": "Other irritable bowel syndrome",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K58.9",
+            "official_description": "Irritable bowel syndrome, unspecified",
+            "billable": true,
+            "specificity_note": "FY2026 renamed this leaf; the pre-FY2026 label was \"without diarrhea\"."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1264.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Diagnosis of Irritable Bowel Syndrome",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/diagnosis",
+          "section": "How do doctors diagnose IBS?",
+          "quote_en": "anemia; bleeding from your rectum; bloody stools or stools that are black and tarry; weight loss",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "K58 is a category; symptom subtype should be selected from documentation."
+    },
+    {
+      "condition_id": "cond.ibd",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K50.90",
+            "official_description": "Crohn's disease, unspecified, without complications",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K50.911",
+            "official_description": "Crohn's disease, unspecified, with rectal bleeding",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K50.912",
+            "official_description": "Crohn's disease, unspecified, with intestinal obstruction",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K50.913",
+            "official_description": "Crohn's disease, unspecified, with fistula",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K50.914",
+            "official_description": "Crohn's disease, unspecified, with abscess",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K50.918",
+            "official_description": "Crohn's disease, unspecified, with other complication",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K50.919",
+            "official_description": "Crohn's disease, unspecified, with unspecified complications",
+            "billable": true,
+            "specificity_note": "Unspecified-location subset; location-specific descendants also exist."
+          },
+          {
+            "code": "K51.90",
+            "official_description": "Ulcerative colitis, unspecified, without complications",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          },
+          {
+            "code": "K51.911",
+            "official_description": "Ulcerative colitis, unspecified with rectal bleeding",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          },
+          {
+            "code": "K51.912",
+            "official_description": "Ulcerative colitis, unspecified with intestinal obstruction",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          },
+          {
+            "code": "K51.913",
+            "official_description": "Ulcerative colitis, unspecified with fistula",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          },
+          {
+            "code": "K51.914",
+            "official_description": "Ulcerative colitis, unspecified with abscess",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          },
+          {
+            "code": "K51.918",
+            "official_description": "Ulcerative colitis, unspecified with other complication",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          },
+          {
+            "code": "K51.919",
+            "official_description": "Ulcerative colitis, unspecified with unspecified complications",
+            "billable": true,
+            "specificity_note": "Unspecified-type/location subset; more specific ulcerative-colitis descendants also exist."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1429.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Definition & Facts of Ulcerative Colitis",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/ulcerative-colitis/definition-facts",
+          "section": "Complications",
+          "quote_en": "severe or heavy rectal bleeding that may require emergency surgery",
+          "suggested_tier": "emergency_referral"
+        }
+      ],
+      "not_found": [
+        "The red-flag evidence above is ulcerative-colitis-specific. A separate whitelisted Crohn's-disease emergency/seek-care passage was not captured in this extraction pass."
+      ],
+      "extractor_notes": "K50-K51 are ranges, not single billable codes. The codes[] list intentionally shows only the unspecified-location/type billable subset; the official family has additional location/type-specific descendants. Human coding review must choose based on documented IBD subtype, location, and complication."
+    },
+    {
+      "condition_id": "cond.chronic_constipation",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K59.00",
+            "official_description": "Constipation, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K59.01",
+            "official_description": "Slow transit constipation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K59.02",
+            "official_description": "Outlet dysfunction constipation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K59.03",
+            "official_description": "Drug induced constipation",
+            "billable": true,
+            "specificity_note": "FY2026 broadened the former opioid-induced label to drug induced."
+          },
+          {
+            "code": "K59.04",
+            "official_description": "Chronic idiopathic constipation",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K59.09",
+            "official_description": "Other constipation",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Constipation",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/symptoms-causes",
+          "section": "When should I see a doctor?",
+          "quote_en": "inability to pass gas; vomiting; fever",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Existing K59.0 is a category seed; subtype should be selected from documentation."
+    },
+    {
+      "condition_id": "cond.chronic_diarrhea",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "K59.1",
+            "official_description": "Functional diarrhea",
+            "billable": true,
+            "specificity_note": "Code exists and is terminal in the opened official list, but its official concept is 'Functional diarrhea'; fit with a generic chronic-diarrhea canonical concept requires human mapping review."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Diarrhea",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/symptoms-causes",
+          "section": "When should I seek a doctor's help?",
+          "quote_en": "stools that are black and tarry or contain red blood or pus; symptoms of dehydration",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "ICD existence is verified; semantic exactness of K59.1 for all chronic diarrhea is not asserted."
+    },
+    {
+      "condition_id": "cond.nausea_vomiting",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "R11.0",
+            "official_description": "Nausea",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.10",
+            "official_description": "Vomiting, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.11",
+            "official_description": "Vomiting without nausea",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.12",
+            "official_description": "Projectile vomiting",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.13",
+            "official_description": "Vomiting of fecal matter",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.14",
+            "official_description": "Bilious vomiting",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.15",
+            "official_description": "Cyclical vomiting syndrome unrelated to migraine",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.16",
+            "official_description": "Cannabis hyperemesis syndrome",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "R11.2",
+            "official_description": "Nausea with vomiting, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Nausea and Vomiting",
+          "source_url": "https://medlineplus.gov/nauseaandvomiting.html",
+          "section": "When do I need to see a health care provider for nausea and vomiting?",
+          "quote_en": "Blood in the vomit; Severe abdominal pain; Severe headache and stiff neck; Signs of dehydration",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "R11.13 and R11.15 are also shown on CMS FY2026 v43.1 P0183: https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0183.html"
+    },
+    {
+      "condition_id": "cond.hemorrhoids",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K64.0",
+            "official_description": "First degree hemorrhoids",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.1",
+            "official_description": "Second degree hemorrhoids",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.2",
+            "official_description": "Third degree hemorrhoids",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.3",
+            "official_description": "Fourth degree hemorrhoids",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.4",
+            "official_description": "Residual hemorrhoidal skin tags",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.5",
+            "official_description": "Perianal venous thrombosis",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.8",
+            "official_description": "Other hemorrhoids",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K64.9",
+            "official_description": "Unspecified hemorrhoids",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0183.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Treatment of Hemorrhoids",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/hemorrhoids/treatment",
+          "section": "Seek care right away",
+          "quote_en": "severe anal pain and bleeding from your rectum, particularly with discomfort or pain in your abdomen, diarrhea, or fever.",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "K64 is a category; grade/type determines the terminal code."
+    },
+    {
+      "condition_id": "cond.nafld",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "K76.0",
+            "official_description": "Fatty (change of) liver, not elsewhere classified",
+            "billable": true,
+            "specificity_note": "The official descriptor is broader than the modern NAFLD/MASLD concept; semantic mapping should remain human-reviewed."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0193.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [
+        "Opened NIDDK 'Symptoms & Causes of NAFLD & NASH' (https://www.niddk.nih.gov/health-information/liver-disease/nafld-nash/symptoms-causes); no explicit urgent/emergency/when-to-seek-care section was found."
+      ],
+      "extractor_notes": "ICD code existence is verified. No source-backed red flag was added because the whitelisted NIDDK page did not provide an explicit seek-care warning section."
+    },
+    {
+      "condition_id": "cond.gallbladder_dysfunction",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "K82.8",
+            "official_description": "Other specified diseases of gallbladder",
+            "billable": true,
+            "specificity_note": "The official descriptor is broader than biliary dyskinesia; semantic mapping requires human review."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0194.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Gallstones",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones/symptoms-causes",
+          "section": "Seek care right away for a gallbladder attack",
+          "quote_en": "fever—even a low-grade fever—or chills; yellowish color of your skin or whites of your eyes, called jaundice",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "The red-flag source is gallstone/gallbladder-attack safety context, not biliary-dyskinesia-specific guidance."
+    },
+    {
+      "condition_id": "cond.cinv",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "T45.1X5A",
+            "official_description": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+            "billable": true,
+            "specificity_note": "Adverse-effect code; encounter character must match the episode."
+          },
+          {
+            "code": "T45.1X5D",
+            "official_description": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter",
+            "billable": true,
+            "specificity_note": "Adverse-effect code; encounter character must match the episode."
+          },
+          {
+            "code": "T45.1X5S",
+            "official_description": "Adverse effect of antineoplastic and immunosuppressive drugs, sequela",
+            "billable": true,
+            "specificity_note": "Adverse-effect code; encounter character must match the episode."
+          },
+          {
+            "code": "R11.0",
+            "official_description": "Nausea",
+            "billable": true,
+            "specificity_note": "Symptom code; use only when documentation/coding rules support separate symptom coding."
+          },
+          {
+            "code": "R11.2",
+            "official_description": "Nausea with vomiting, unspecified",
+            "billable": true,
+            "specificity_note": "Symptom code; use only when documentation/coding rules support separate symptom coding."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0819.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "CDC",
+          "page_title": "Watch Out for Fever",
+          "source_url": "https://www.cdc.gov/cancer-preventing-infections/patients/fever.html",
+          "section": "What to know",
+          "quote_en": "If you get a fever during your chemotherapy treatment, it’s a medical emergency.",
+          "suggested_tier": "emergency_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "The seed 'T45.1/R11' is not one code. T45.1X5A appears on CMS FY2026 v43.1 P0819; T45.1X5D on P1009 (https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1009.html); T45.1X5S is present in the v43.1 diagnosis index P1211 (https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1211.html). R11 symptom leaves are on P0182/P0183. Final adverse-effect + manifestation coding sequence requires human coding review."
+    },
+    {
+      "condition_id": "cond.post_op_ileus",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "K91.89",
+            "official_description": "Other postprocedural complications and disorders of digestive system",
+            "billable": true,
+            "specificity_note": "The code exists and is terminal, but its descriptor is broad and does not by itself establish an exact postoperative-ileus mapping."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0183.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Intestinal obstruction and Ileus",
+          "source_url": "https://medlineplus.gov/ency/article/000260.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Cannot pass stool or gas; Have a swollen abdomen; Keep vomiting",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [
+        "No exact FY2026 official descriptor reading 'postoperative ileus' was found on the opened CMS full-code pages. K56.0 ('Paralytic ileus') and K91.89 exist as separate concepts; exact mapping/combination requires human coding review."
+      ],
+      "extractor_notes": "This verifies the repository's existing K91.89 code exists but does not assert it is the sole or exact code for every postoperative ileus case."
+    },
+    {
+      "condition_id": "cond.food_sensitivity",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "K90.41",
+            "official_description": "Non-celiac gluten sensitivity",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "K90.49",
+            "official_description": "Malabsorption due to intolerance, not elsewhere classified",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0182.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Food Allergy",
+          "source_url": "https://medlineplus.gov/foodallergy.html",
+          "section": "What are the symptoms of food allergies?",
+          "quote_en": "This is a medical emergency. Call 911 if someone is having the symptoms of anaphylaxis.",
+          "suggested_tier": "emergency_referral",
+          "evidence_context": "differential"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "The red-flag source is intentionally a food-allergy differential, not food intolerance itself. It is whitelisted by the ingestion SPEC. The work order suggested FDA for allergy-vs-intolerance context, but FDA is not on the SPEC's general red-flag whitelist, so it was not used here."
+    }
+  ],
+  "review": {
+    "reviewed_by": "claude",
+    "review_date": "2026-08-08",
+    "review_method": "independent re-verification: all 27 condition ids resolved against canon; 47/47 urls whitelisted and opened; 25/25 quotes located verbatim on source pages (2 CDC pages via browser, hemorrhoids page has spaced commas in HTML); 92/92 codes located on the cited CMS MS-DRG v43.1 pages (manual lists codes without dots); descriptions cross-checked against official page text."
+  },
+  "corrections_applied": [
+    {
+      "condition_id": "cond.ibs",
+      "field": "icd10cm.codes[K58.9].official_description",
+      "original": "Irritable bowel syndrome without diarrhea",
+      "corrected": "Irritable bowel syndrome, unspecified",
+      "basis": "CMS MS-DRG v43.1 P1264: \"K589 Irritable bowel syndrome, unspecified\""
+    },
+    {
+      "condition_id": "cond.chronic_constipation",
+      "field": "icd10cm.codes[K59.03].official_description",
+      "original": "Opioid-induced constipation",
+      "corrected": "Drug induced constipation",
+      "basis": "CMS MS-DRG v43.1 P0182: \"K5903 Drug induced constipation\""
+    },
+    {
+      "condition_id": "cond.nausea_vomiting",
+      "field": "icd10cm.codes[R11.16].official_description",
+      "original": "Cannabinoid hyperemesis syndrome",
+      "corrected": "Cannabis hyperemesis syndrome",
+      "basis": "CMS MS-DRG v43.1 P0182: \"R1116 Cannabis hyperemesis syndrome\""
+    },
+    {
+      "condition_id": "cond.food_sensitivity",
+      "field": "red_flag_sources[0].evidence_context",
+      "original": "(absent)",
+      "corrected": "differential",
+      "basis": "MedlinePlus quote is food-ALLERGY anaphylaxis context; intolerance itself has no emergency course — trigger must be framed as allergy-differential screening"
+    }
+  ]
+}

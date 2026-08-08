@@ -1,0 +1,421 @@
+{
+  "batch": "cond_batch1_neuro_vertigo",
+  "retrieved_at": "2026-08-07",
+  "extractor": "chatgpt",
+  "icd10cm_version": "FY2026 April 1, 2026 update",
+  "records": [
+    {
+      "condition_id": "cond.bells_palsy",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "G51.0",
+            "official_description": "Bell's palsy",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1345.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Bell palsy",
+          "source_url": "https://medlineplus.gov/ency/article/000773.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider right away if your face droops or you have other symptoms of Bell palsy.",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Red-flag source is the whitelisted MedlinePlus Bell palsy page. It supports prompt medical evaluation; final stroke-vs-Bell-palsy safety wording is for reviewer normalization."
+    },
+    {
+      "condition_id": "cond.stroke_rehab",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "I69.30",
+            "official_description": "Unspecified sequelae of cerebral infarction",
+            "billable": true,
+            "specificity_note": "Representative billable leaf only. I69 is a broad sequela category; final selection depends on the original cerebrovascular event and documented residual deficit. Do not auto-select I69.30."
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0415.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "CDC",
+          "page_title": "Signs and Symptoms of Stroke",
+          "source_url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+          "section": "When to seek emergency help",
+          "quote_en": "Call 9-1-1 right away if you or someone else has any of these symptoms.",
+          "suggested_tier": "emergency_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "I69 needs residual-deficit/event-specific coding. The CDC source is used for recurrent/new stroke warning signs in a post-stroke patient."
+    },
+    {
+      "condition_id": "cond.peripheral_neuropathy",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "G62.9",
+            "official_description": "Polyneuropathy, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1101.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Sensorimotor polyneuropathy",
+          "source_url": "https://medlineplus.gov/ency/article/000750.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you have loss of movement or feeling in a part of your body.",
+          "suggested_tier": "routine_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": ""
+    },
+    {
+      "condition_id": "cond.diabetic_neuropathy",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "E11.42",
+            "official_description": "Type 2 diabetes mellitus with diabetic polyneuropathy",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1345.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Diabetes & Foot Problems",
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+          "section": "When should I see my health care provider about foot problems?",
+          "quote_en": "a foot infection that becomes black and smelly—signs you might have gangrene",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Evidence is for diabetes-related foot complications relevant to diabetic peripheral neuropathy safety screening."
+    },
+    {
+      "condition_id": "cond.trigeminal_neuralgia",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "G50.0",
+            "official_description": "Trigeminal neuralgia",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1345.html"
+      },
+      "red_flag_sources": [],
+      "not_found": [],
+      "extractor_notes": "Batch work order marks this record ICD-only."
+    },
+    {
+      "condition_id": "cond.postherpetic_neuralgia",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "B02.29",
+            "official_description": "Other postherpetic nervous system involvement",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1218.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Shingles",
+          "source_url": "https://medlineplus.gov/ency/article/000858.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Shingles that affects the eye may lead to permanent blindness if you do not receive emergency medical care.",
+          "suggested_tier": "emergency_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "The source supports ocular-zoster emergency context in a patient with shingles/PHN history; it is not a red flag for chronic neuralgia pain itself."
+    },
+    {
+      "condition_id": "cond.parkinsons",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G20.A1",
+            "official_description": "Parkinson's disease without dyskinesia, without mention of fluctuations",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G20.A2",
+            "official_description": "Parkinson's disease without dyskinesia, with fluctuations",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G20.B1",
+            "official_description": "Parkinson's disease with dyskinesia, without mention of fluctuations",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G20.B2",
+            "official_description": "Parkinson's disease with dyskinesia, with fluctuations",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1347.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Parkinson disease - discharge",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000394.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Recent falls; Choking or coughing when eating",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Existing G20 is not a terminal FY2026 code. G20.A/B selection depends on dyskinesia/fluctuation documentation."
+    },
+    {
+      "condition_id": "cond.multiple_sclerosis",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "G35.A",
+            "official_description": "Relapsing-remitting multiple sclerosis",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.B0",
+            "official_description": "Primary progressive multiple sclerosis, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.B1",
+            "official_description": "Active primary progressive multiple sclerosis",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.B2",
+            "official_description": "Non-active primary progressive multiple sclerosis",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.C0",
+            "official_description": "Secondary progressive multiple sclerosis, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.C1",
+            "official_description": "Active secondary progressive multiple sclerosis",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.C2",
+            "official_description": "Non-active secondary progressive multiple sclerosis",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "G35.D",
+            "official_description": "Multiple sclerosis, unspecified",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1343.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Multiple sclerosis - discharge",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000129.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Recent falls; Choking or coughing when eating",
+          "suggested_tier": "urgent_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Existing G35 is no longer the only terminal choice in the FY2026 list; subtype/activity selection requires documentation."
+    },
+    {
+      "condition_id": "cond.essential_tremor",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "G25.0",
+            "official_description": "Essential tremor",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1341.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Essential tremor",
+          "source_url": "https://medlineplus.gov/ency/article/000762.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "You have a new tremor; Your tremor makes it hard to perform daily activities",
+          "suggested_tier": "routine_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": ""
+    },
+    {
+      "condition_id": "cond.dizziness_vertigo",
+      "icd10cm": {
+        "status": "verified",
+        "codes": [
+          {
+            "code": "R42",
+            "official_description": "Dizziness and giddiness",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P1320.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Dizziness and vertigo - aftercare",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000692.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "Weakness; Cannot move an arm or leg; Change in vision or speech; Fainting and losing alertness",
+          "suggested_tier": "emergency_referral"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "Signs and Symptoms of Stroke",
+          "source_url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+          "section": "Signs and symptoms",
+          "quote_en": "Sudden trouble walking, dizziness, loss of balance, or lack of coordination.",
+          "suggested_tier": "emergency_referral"
+        }
+      ],
+      "not_found": [],
+      "extractor_notes": "Two whitelisted sources supplied as required by the work order. No HINTS-specific official passage was used."
+    },
+    {
+      "condition_id": "cond.menieres",
+      "icd10cm": {
+        "status": "needs_more_specific",
+        "codes": [
+          {
+            "code": "H81.01",
+            "official_description": "Meniere's disease, right ear",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "H81.02",
+            "official_description": "Meniere's disease, left ear",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "H81.03",
+            "official_description": "Meniere's disease, bilateral",
+            "billable": true,
+            "specificity_note": ""
+          },
+          {
+            "code": "H81.09",
+            "official_description": "Meniere's disease, unspecified ear",
+            "billable": true,
+            "specificity_note": ""
+          }
+        ],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0092.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "NIDCD",
+          "page_title": "Sudden Sensorineural Hearing Loss (SSHL)",
+          "source_url": "https://www.nidcd.nih.gov/health/sudden-deafness",
+          "section": "Main body",
+          "quote_en": "you should consider sudden deafness symptoms a medical emergency and visit a doctor immediately.",
+          "suggested_tier": "emergency_referral",
+          "evidence_context": "differential"
+        }
+      ],
+      "not_found": [
+        "Opened NIDCD Ménière's Disease page (https://www.nidcd.nih.gov/health/menieres-disease); no explicit urgent/emergency/when-to-seek-care section was found."
+      ],
+      "extractor_notes": "The NIDCD SSHL source supports a sudden-hearing-loss differential in a Ménière-like presentation; it is not routine Ménière management guidance."
+    },
+    {
+      "condition_id": "cond.migraine_vestibular",
+      "icd10cm": {
+        "status": "code_not_found",
+        "codes": [],
+        "source_url": "https://www.cms.gov/icd10m/FY2026-fr-v43.1-fullcode-cms/fullcode_cms/P0413.html"
+      },
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Migraine",
+          "source_url": "https://medlineplus.gov/ency/article/000709.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "You are experiencing the worst headache of your life.",
+          "suggested_tier": "emergency_referral"
+        }
+      ],
+      "not_found": [
+        "No dedicated 'vestibular migraine' named code was found on the opened CMS FY2026 v43.1 migraine full-code page. The G43.82 descendants shown there are menstrual migraine codes, not vestibular migraine."
+      ],
+      "extractor_notes": "Existing seed G43.82 should not be retained as a vestibular-migraine billable code without human coding review. The opened CMS page contains 'Other migraine' leaves (G43.801/.809/.811/.819), but this extraction does not auto-map vestibular migraine to one of them."
+    }
+  ],
+  "review": {
+    "reviewed_by": "claude",
+    "review_date": "2026-08-08",
+    "review_method": "independent re-verification: all 27 condition ids resolved against canon; 47/47 urls whitelisted and opened; 25/25 quotes located verbatim on source pages (2 CDC pages via browser, hemorrhoids page has spaced commas in HTML); 92/92 codes located on the cited CMS MS-DRG v43.1 pages (manual lists codes without dots); descriptions cross-checked against official page text."
+  },
+  "corrections_applied": [
+    {
+      "condition_id": "cond.menieres",
+      "field": "red_flag_sources[0].evidence_context",
+      "original": "(absent)",
+      "corrected": "differential",
+      "basis": "NIDCD SSHL page is sudden-deafness safety context, not Ménière guidance — trigger wording must state the differential"
+    }
+  ]
+}
