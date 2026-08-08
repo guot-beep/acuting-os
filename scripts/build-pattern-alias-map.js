@@ -80,13 +80,37 @@ const canon = readJson("data/config/tcm_pattern_canon.json").records || [];
 const conditions = readJson("data/pathology/condition_canon_shortlist.json").records || [];
 
 // Canonical namespace: registry is the id authority, library must agree.
+// Reject ambiguous active names instead of silently choosing a target; a false
+// alias is an ontology error.
 const canonicalByName = new Map();
-for (const r of [...registry, ...library]) {
-  if (r.name_zh && r.id) {
-    const k = normName(r.name_zh);
-    if (!canonicalByName.has(k)) canonicalByName.set(k, r.id);
+function indexCanonicalName(nameZh, id, source) {
+  if (!nameZh || !id) return;
+  const key = normName(nameZh);
+  const existing = canonicalByName.get(key);
+  if (existing && existing.id !== id) {
+    throw new Error(`Ambiguous canonical Chinese name ${nameZh}: ${existing.id} (${existing.source}) vs ${id} (${source})`);
   }
+  canonicalByName.set(key, { id, source });
 }
+
+for (const r of registry) indexCanonicalName(r.name_zh, r.id, "registry.name_zh");
+for (const r of library) {
+  if (r.review_status === "deprecated") continue;
+  indexCanonicalName(r.name_zh, r.id, "library.name_zh");
+}
+
+// Pattern V2-A Decision Pack §15: exact-identity aliases that also have a
+// legacy pat.* endpoint. Keep this list explicit; not every historical card
+// alias is safe to promote into a legacy identity mapping.
+const APPROVED_LEGACY_ALIAS_TARGETS = new Map([
+  ["pat.濕痰", "pattern.phlegm_damp"],
+]);
+const registryIds = new Set(registry.map((record) => record.id));
+const activeLibraryById = new Map(
+  library
+    .filter((record) => record.review_status !== "deprecated")
+    .map((record) => [record.id, record]),
+);
 
 // How often does each Chinese pattern name actually appear on a condition?
 // The inline tcm_patterns blobs are the raw scrape (no ids) — this is exactly
@@ -129,9 +153,22 @@ for (const rec of canon) {
     continue;
   }
 
+  const approvedAliasTarget = APPROVED_LEGACY_ALIAS_TARGETS.get(rec.id);
+  if (approvedAliasTarget) {
+    const targetRecord = activeLibraryById.get(approvedAliasTarget);
+    if (!registryIds.has(approvedAliasTarget) || !targetRecord) {
+      throw new Error(`Approved alias ${rec.id} has unresolved target ${approvedAliasTarget}`);
+    }
+    if (!(targetRecord.aliases_zh || []).some((alias) => normName(alias) === key)) {
+      throw new Error(`Approved alias ${rec.id} is not present on ${approvedAliasTarget}`);
+    }
+    aliases[rec.id] = approvedAliasTarget;
+    continue;
+  }
+
   const hit = canonicalByName.get(key);
   if (hit) {
-    aliases[rec.id] = hit;
+    aliases[rec.id] = hit.id;
     continue;
   }
 

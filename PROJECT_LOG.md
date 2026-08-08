@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — Pattern V2-0／V2-A frozen counts、V1 加值與 true aliases
+
+- **做了什麼**：在 `codex/pattern-v2` 更正 V1 governance counts；核對 34 個 `ENRICH_EXISTING` ledger concepts（因 B119 展開六淋、B110/G017 重複，實際為 38 個 live IDs），保留 27 張既有完整加值，為其餘 11 張補成對病機／次症與可由既有來源支持的成因或傳變。
+- **數字 before→after**：Registry `69→69`（taxonomy `10→10`、clinical `59→59`）；library raw `62→62`、active `59→59`、deprecated `3→3`、active reconciliation `59/59→59/59`、duplicate IDs `0→0`。
+- **Aliases**：新增 `風寒犯肺`、`脾氣下陷`、`食積`、`濕痰` 四組卡片 alias；另四項因已是 canonical name 或既有 alias 不重複寫入。Legacy map 僅新增已核准的 `pat.濕痰 → pattern.phlegm_damp`，未把其他歷史近義詞升格為 identity。
+- **驗證**：Pattern standard `62/62 clean`、registry、content-junk、ratchet、alias dry-run、build-data、validate-data、interactions、diff check 全通過；final reconciliation `69/59/62/59/3`。Repo-wide encoding validator 仍有既存跨線基線缺陷，本批未修改其所列來源檔。
+- **已知未解／下一步**：V2-B 與所有新 Pattern IDs、relation types/edges、tdis、stage/location/channel endpoints、comparisons 均未開始；等待 Ting 另行批准。
+
 # 2026-08-08 Codex — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 
 - **做了什麼**：整合 Board、課程 checklist、eLotus Ex-B7、AD M-BW-24／拼音索引、醫砭 EX-B7 與中國大百科代碼；補齊定位、解剖、全部功效主治、針灸法、配穴、別名、考點、安全及逐欄來源。

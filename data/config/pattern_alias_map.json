@@ -17,9 +17,9 @@
     "canon_records": 140,
     "canon_unique_ids": 134,
     "canon_duplicate_ids": 6,
-    "canonical_namespace_ids": 63,
-    "mapped": 33,
-    "pending_registration": 69,
+    "canonical_namespace_ids": 72,
+    "mapped": 34,
+    "pending_registration": 68,
     "excluded_formula_patterns": 32
   },
   "aliases": {
@@ -39,6 +39,7 @@
     "pat.脾氣虛": "pattern.spleen_qi_deficiency",
     "pat.心腎不交": "pattern.heart_kidney_not_communicating",
     "pat.肝陽上亢": "pattern.liver_yang_rising",
+    "pat.濕痰": "pattern.phlegm_damp",
     "pat.濕熱": "pattern.damp_heat",
     "pat.脾陽虛": "pattern.spleen_yang_deficiency",
     "pat.腎氣不固": "pattern.kidney_qi_not_firm",
@@ -250,19 +251,6 @@
         "cond.hearing_loss",
         "cond.globus_pharyngitis",
         "cond.cancer_supportive"
-      ]
-    },
-    {
-      "legacy_id": "pat.濕痰",
-      "name_zh": "濕痰",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 5,
-      "example_conditions": [
-        "cond.tension_headache",
-        "cond.cluster_headache",
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough"
       ]
     },
     {

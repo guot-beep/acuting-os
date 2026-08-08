@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — Pattern V2-0／V2-A frozen baseline、V1 enrichment 與 true aliases
+
+- **Branch / Commits**: `codex/pattern-v2`; V2-0 `20ffd8f`; V2-A content and this handoff are isolated from the pre-existing JS and extra-point work.
+- **V2-0**: `DECISIONS.md` now records Registry 69 = 10 taxonomy + 59 clinical, library 62 raw = 59 active + 3 deprecated, and active reconciliation 59/59. Both accepted Pattern V2 review artifacts are preserved; the original ZIP remains untracked and uncommitted.
+- **V2-A Reconciliation**: the accepted ledger has 34 `ENRICH_EXISTING` rows but maps to 38 unique live IDs because B119 expands to six Lin IDs while B110/G017 share one ID. Twenty-seven live cards already had canonical bilingual mechanism/causes/progression/supporting fields and were preserved; 11 missing-field cards received additive bilingual enrichment with their existing accepted sources.
+- **Aliases**: added four exact-identity card aliases: `風寒犯肺`, `脾氣下陷`, `食積`, and `濕痰`. `風熱犯肺`, `痰熱壅肺`, and `脾胃濕熱` were already canonical names; `心脾氣血兩虛` was already a paired alias and its mechanism matched. The legacy map gained only `pat.濕痰 → pattern.phlegm_damp`; broader historical aliases remain pending.
+- **Counts / Validation**: Registry 69, taxonomy 10, clinical 59, library raw 62, active 59, deprecated 3, reconciliation 59/59, duplicate registry/library IDs 0. Pattern standard 62/62 clean; registry, content-junk, ratchet, alias dry-run, build-data, validate-data, interactions, and diff checks passed. The optional repository-wide encoding validator still reports its pre-existing cross-line baseline and is not a V2-A regression.
+- **STOP**: no new Pattern IDs, Six Channels, Four Levels, San Jiao, gynecology/extraordinary-vessel V2 cards, relation types/edges, endpoint namespaces, tdis IDs, or differential comparison objects were created. Await explicit V2-B authorization.
+
 ## [2026-08-08] Codex Handoff — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `9dbb1c2` (`feat(acupoints): reconcile Yaoyan source variants`).

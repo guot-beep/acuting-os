@@ -232,7 +232,45 @@
         "Dry throat",
         "Tidal fever and night sweats",
         "Hoarse voice"
-      ]
+      ],
+      "mechanism_zh": "肺陰虧虛，肺失濡潤與清肅，並可內生虛熱，故見乾咳少痰、咽燥與潮熱盜汗。",
+      "mechanism_en": "Depleted Lung Yin fails to moisten the Lung and support its descending function, while Deficiency-Heat may arise internally, producing a dry scanty cough, dry throat, tidal fever, and night sweats.",
+      "common_causes_zh": "久咳傷陰；熱病後期耗傷津液。",
+      "common_causes_en": "Chronic cough injuring Yin; depletion of fluids during the late stage of a febrile illness.",
+      "progression_zh": "陰液進一步耗傷時，虛熱可加重，午後潮熱、盜汗或痰中帶血可更明顯。",
+      "progression_en": "With further Yin and fluid depletion, Deficiency-Heat may intensify, making afternoon tidal fever, night sweats, or blood-streaked sputum more evident.",
+      "supporting_signs_zh": [
+        "痰中帶血絲",
+        "午後潮熱或五心煩熱",
+        "盜汗或顴紅"
+      ],
+      "supporting_signs_en": [
+        "Blood-streaked sputum",
+        "Afternoon tidal fever or five-center heat",
+        "Night sweats or malar flush"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_Lung_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/lung_yin_xu"
+        ],
+        "common_causes": [
+          "Bastyr_Lung_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/lung_yin_xu"
+        ],
+        "progression": [
+          "Bastyr_Lung_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/lung_yin_xu"
+        ],
+        "supporting_signs": [
+          "Bastyr_Lung_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/lung_yin_xu"
+        ]
+      }
     },
     {
       "id": "pattern.wind_cold_invading_lung",
@@ -340,7 +378,13 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "風寒犯肺"
+      ],
+      "aliases_en": [
+        "Wind-Cold Invading Lung"
+      ]
     },
     {
       "id": "pattern.wind_heat_invading_lung",
@@ -782,7 +826,38 @@
         "Loose stools",
         "Fatigue and weakness",
         "Sallow complexion"
-      ]
+      ],
+      "mechanism_zh": "脾氣虛弱，運化水谷與水濕無力，故見食少、食後腹脹、便溏與倦怠乏力。",
+      "mechanism_en": "Weak Spleen Qi impairs the transportation and transformation of food and fluids, leading to poor appetite, postprandial distension, loose stools, and fatigue.",
+      "progression_zh": "脾氣虛可使水濕停聚而生濕痰，亦可進一步發展為脾陽虛、中氣下陷或脾不統血。",
+      "progression_en": "Spleen Qi Deficiency may allow Dampness and Phlegm to accumulate and may deepen into Spleen Yang Deficiency, Spleen Qi Sinking, or Spleen failing to hold Blood.",
+      "supporting_signs_zh": [
+        "食後腹脹加重",
+        "面色萎黃",
+        "舌體胖或邊有齒痕"
+      ],
+      "supporting_signs_en": [
+        "Abdominal distension worse after eating",
+        "Sallow complexion",
+        "Swollen tongue body or teeth marks at the edges"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_Spleen_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/spleen_qi_xu"
+        ],
+        "progression": [
+          "Bastyr_Spleen_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/spleen_qi_xu"
+        ],
+        "supporting_signs": [
+          "Bastyr_Spleen_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/spleen_qi_xu"
+        ]
+      }
     },
     {
       "id": "pattern.spleen_yang_deficiency",
@@ -997,7 +1072,13 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "脾氣下陷"
+      ],
+      "aliases_en": [
+        "Spleen Qi Sinking"
+      ]
     },
     {
       "id": "pattern.spleen_not_governing_blood",
@@ -1637,7 +1718,13 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "食積"
+      ],
+      "aliases_en": [
+        "Food Accumulation"
+      ]
     },
     {
       "id": "pattern.liver_qi_stagnation",
@@ -2010,7 +2097,35 @@
         "Flushed face and red eyes",
         "Sore, weak low back and knees",
         "Irritability and quick temper"
-      ]
+      ],
+      "mechanism_zh": "肝腎陰血不足於下，不能涵養肝木與制約肝陽，肝陽遂上亢而擾及頭目，形成上實下虛。",
+      "mechanism_en": "Deficient Liver-Kidney Yin or Blood below fails to nourish Wood and restrain Liver Yang, allowing Yang to rise and disturb the head in an upper-excess, lower-deficiency configuration.",
+      "common_causes_zh": "情志所傷；久病耗傷肝腎陰血。",
+      "common_causes_en": "Emotional strain; chronic illness depleting Liver-Kidney Yin or Blood.",
+      "supporting_signs_zh": [
+        "耳鳴如潮",
+        "失眠",
+        "肢體麻木（可見）"
+      ],
+      "supporting_signs_en": [
+        "Tinnitus with a surging quality",
+        "Insomnia",
+        "Possible limb numbness"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "NCBAHM_2026_CH_Outline",
+          "https://cloudtcm.com/pattern/120"
+        ],
+        "common_causes": [
+          "NCBAHM_2026_CH_Outline",
+          "https://cloudtcm.com/pattern/120"
+        ],
+        "supporting_signs": [
+          "NCBAHM_2026_CH_Outline",
+          "https://cloudtcm.com/pattern/120"
+        ]
+      }
     },
     {
       "id": "pattern.liver_wind",
@@ -3467,7 +3582,38 @@
         "Reduced libido",
         "Frequent nighttime urination",
         "Early-morning diarrhea"
-      ]
+      ],
+      "mechanism_zh": "腎陽虧虛、命門火衰，溫煦與氣化失職，故見腰膝酸冷、畏寒肢冷、清長夜尿或水液停聚。",
+      "mechanism_en": "Deficient Kidney Yang and declining Ming Men Fire impair warming and Qi transformation, causing cold weak lumbar and knees, aversion to cold, clear profuse nocturia, or fluid retention.",
+      "progression_zh": "腎陽虛加重時可見水液泛濫，並可能進一步影響脾、心或肺的陽氣與氣化功能。",
+      "progression_en": "As Kidney Yang Deficiency deepens, fluid overflow may appear and the warming or transforming functions of the Spleen, Heart, or Lung may also be affected.",
+      "supporting_signs_zh": [
+        "下肢水腫",
+        "陽痿或早洩",
+        "小便清長、夜尿頻多"
+      ],
+      "supporting_signs_en": [
+        "Edema of the lower limbs",
+        "Erectile dysfunction or premature ejaculation",
+        "Clear profuse urine with frequent nocturia"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_TCM_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/kidney_yang_xu"
+        ],
+        "progression": [
+          "Bastyr_TCM_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/kidney_yang_xu"
+        ],
+        "supporting_signs": [
+          "Bastyr_TCM_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/kidney_yang_xu"
+        ]
+      }
     },
     {
       "id": "pattern.kidney_yin_deficiency",
@@ -3582,7 +3728,38 @@
         "Five-center heat",
         "Night sweats",
         "Spermatorrhea or scanty menses"
-      ]
+      ],
+      "mechanism_zh": "腎陰虧虛，精髓失養且陰不制陽，故見腰膝痠軟、耳鳴眩暈與潮熱盜汗等虛熱表現。",
+      "mechanism_en": "Depleted Kidney Yin fails to nourish Essence and Marrow or restrain Yang, producing weak sore lumbar and knees, tinnitus, dizziness, and Deficiency-Heat signs such as tidal fever and night sweats.",
+      "progression_zh": "腎陰進一步虧耗可發展為虛火，亦可失於滋養肝陰或無力潛制肝陽。",
+      "progression_en": "Further depletion of Kidney Yin may generate Deficiency Fire, fail to nourish Liver Yin, or fail to anchor Liver Yang.",
+      "supporting_signs_zh": [
+        "失眠多夢",
+        "咽乾口燥",
+        "齒搖或髮脫"
+      ],
+      "supporting_signs_en": [
+        "Insomnia with dream-disturbed sleep",
+        "Dry mouth and throat",
+        "Loose teeth or hair loss"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_TCM_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/kidney_yin_xu"
+        ],
+        "progression": [
+          "Bastyr_TCM_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/kidney_yin_xu"
+        ],
+        "supporting_signs": [
+          "Bastyr_TCM_Pathology_Notes_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "https://cloudtcm.com/pattern/kidney_yin_xu"
+        ]
+      }
     },
     {
       "id": "pattern.kidney_essence_deficiency",
@@ -5098,11 +5275,13 @@
       "pinyin": "Tán Shī Nèi Yùn",
       "aliases_zh": [
         "痰濕阻滯",
-        "濕痰內盛"
+        "濕痰內盛",
+        "濕痰"
       ],
       "aliases_en": [
         "Phlegm-Damp Obstruction",
-        "Internal Phlegm-Damp Retention"
+        "Internal Phlegm-Damp Retention",
+        "Damp-Phlegm"
       ],
       "schema_version": "v1.0",
       "zang_fu_ids": [
@@ -5547,7 +5726,41 @@
           "distinguishing_en": "Heat Lin is an acute excess-heat pattern; Fatigue Lin is a chronic deficiency pattern triggered by exertion, with a deep, thready, weak pulse.",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
-      ]
+      ],
+      "mechanism_zh": "濕熱蘊結下焦，膀胱氣化不利，故小便頻急、灼熱刺痛而色黃赤短少。",
+      "mechanism_en": "Damp-Heat accumulating in the Lower Burner obstructs Bladder Qi transformation, causing frequent urgent urination with burning pain and dark, scanty urine.",
+      "common_causes_zh": "過食辛辣油膩或飲酒；外感濕熱下注。",
+      "common_causes_en": "Excessive spicy or greasy food or alcohol; externally contracted Damp-Heat pouring downward.",
+      "supporting_signs_zh": [
+        "口苦口渴",
+        "小腹脹痛拒按",
+        "可伴發熱惡寒"
+      ],
+      "supporting_signs_en": [
+        "Bitter taste and thirst",
+        "Lower abdominal distension and tenderness",
+        "Possible fever and chills"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd",
+          "https://cloudtcm.com/pattern/re_lin"
+        ],
+        "common_causes": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd",
+          "https://cloudtcm.com/pattern/re_lin"
+        ],
+        "supporting_signs": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd",
+          "https://cloudtcm.com/pattern/re_lin"
+        ]
+      }
     },
     {
       "id": "pattern.stone_lin",
@@ -5642,7 +5855,31 @@
       "zang_fu": [
         "bladder",
         "kidney"
-      ]
+      ],
+      "mechanism_zh": "濕熱久蘊下焦，煎熬尿液而凝結為砂石，阻滯尿路則見腰腹絞痛、尿道刺痛或血尿。",
+      "mechanism_en": "Prolonged Damp-Heat in the Lower Burner concentrates urine into sand or stones; obstruction of the urinary passage produces colicky flank-abdominal pain, urethral pain, or hematuria.",
+      "supporting_signs_zh": [
+        "疼痛牽引少腹或陰部",
+        "尿中排出砂石",
+        "尿色紅赤或血尿"
+      ],
+      "supporting_signs_en": [
+        "Pain radiating to the lower abdomen or genitals",
+        "Passage of sand or stones in urine",
+        "Reddish urine or hematuria"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "supporting_signs": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ]
+      }
     },
     {
       "id": "pattern.qi_lin_excess",
@@ -5742,7 +5979,38 @@
           "distinguishing_en": "Qi Lin (Excess) is distinguished by hesitant dribbling urination worsened by emotional stress, without burning heat; Heat Lin centers on burning, stabbing urination from Damp-Heat.",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
-      ]
+      ],
+      "mechanism_zh": "肝氣鬱結，氣機阻滯而使膀胱氣化不暢，故排尿澀滯、滴瀝不暢並隨情志波動加重。",
+      "mechanism_en": "Constrained Liver Qi obstructs Qi movement and Bladder transformation, causing hesitant dribbling urination that worsens with emotional stress.",
+      "common_causes_zh": "情志不遂或壓力使肝氣鬱結。",
+      "common_causes_en": "Emotional constraint or stress leading to Liver Qi stagnation.",
+      "supporting_signs_zh": [
+        "脅肋脹滿",
+        "情志抑鬱或易怒",
+        "排尿不暢隨情志加重"
+      ],
+      "supporting_signs_en": [
+        "Flank and rib-side distension",
+        "Emotional constraint or irritability",
+        "Urinary difficulty aggravated by emotional stress"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "common_causes": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "supporting_signs": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ]
+      }
     },
     {
       "id": "pattern.blood_lin_excess",
@@ -5844,7 +6112,31 @@
           "distinguishing_en": "Blood Lin (Excess Heat) additionally shows bright red urine or clots; Heat Lin centers on burning pain without prominent hematuria.",
           "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         }
-      ]
+      ],
+      "mechanism_zh": "實熱下注膀胱，灼傷血絡並迫血妄行，故見小便熱痛、尿血鮮紅或夾血塊。",
+      "mechanism_en": "Excess Heat pouring into the Bladder injures the Blood collaterals and forces Blood out of its pathways, causing painful hot urination with bright-red blood or clots.",
+      "supporting_signs_zh": [
+        "尿道割痛難忍",
+        "心煩口渴",
+        "小腹脹痛"
+      ],
+      "supporting_signs_en": [
+        "Severe cutting urethral pain",
+        "Irritability and thirst",
+        "Lower abdominal distension and pain"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "supporting_signs": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ]
+      }
     },
     {
       "id": "pattern.cloudy_lin",
@@ -5941,7 +6233,31 @@
         "spleen",
         "kidney",
         "bladder"
-      ]
+      ],
+      "mechanism_zh": "濕熱阻滯下焦，清濁不分，脂液隨小便下泄，故尿液混濁如米泔或浮油如脂膏。",
+      "mechanism_en": "Damp-Heat obstructs the Lower Burner so clear and turbid fluids are not separated and fatty essence spills into the urine, making it milky or greasy.",
+      "supporting_signs_zh": [
+        "小腹沉重",
+        "口黏不渴",
+        "尿道熱澀疼痛"
+      ],
+      "supporting_signs_en": [
+        "Heaviness in the lower abdomen",
+        "Sticky mouth without thirst",
+        "Hot, rough, painful urination"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "supporting_signs": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ]
+      }
     },
     {
       "id": "pattern.fatigue_lin",
@@ -6032,7 +6348,38 @@
         "ST36",
         "KI3",
         "SP6"
-      ]
+      ],
+      "mechanism_zh": "淋證日久耗傷脾腎，正氣虧虛，固攝與氣化無力，故小便淋漓反覆並在勞累後加重。",
+      "mechanism_en": "Chronic Lin depletes Spleen and Kidney Qi so securing and transforming functions weaken, causing recurrent dribbling urination that worsens after exertion.",
+      "common_causes_zh": "淋證久延；勞倦耗傷脾腎。",
+      "common_causes_en": "A prolonged course of Lin; overexertion depleting the Spleen and Kidney.",
+      "supporting_signs_zh": [
+        "腰膝痠軟無力",
+        "神疲乏力、面色少華",
+        "小腹墜脹隱痛"
+      ],
+      "supporting_signs_en": [
+        "Weak sore lumbar and knees",
+        "Fatigue with a sallow complexion",
+        "Bearing-down dull pain in the lower abdomen"
+      ],
+      "field_sources": {
+        "mechanism": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "common_causes": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ],
+        "supporting_signs": [
+          "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+          "NCBAHM_CH_Exam_Content_Outline_2026",
+          "Maciocia_Practice_of_Chinese_Medicine_2nd"
+        ]
+      }
     },
     {
       "id": "pattern.liver_fire_flaring",
