@@ -279,7 +279,7 @@ migration for Ting.
   |---|---|---|---|
   | `cond.*` | 西醫病名 | Biomedical condition — has diagnostic criteria, labs/imaging, an ICD position | **150** ✅ |
   | `tdis.*` | 中醫病名 | TCM disease — a classical illness name defined by a symptom cluster (感冒·咳嗽·喘證·胃痛) | **75** ✅ |
-  | `pattern.*` | 證型 | Syndrome differentiation conclusion — a snapshot of the pathomechanism (肝陽上亢) | **61 registry / 50 library** ✅ |
+  | `pattern.*` | 證型 | Syndrome differentiation conclusion — a snapshot of the pathomechanism (肝陽上亢) | **69 registry (10 taxonomy + 59 clinical) / 62 library raw (59 active + 3 deprecated); active reconciliation 59/59** ✅ |
   | `sym.*` | 症狀/體徵 | Symptom or sign — a single observation (頭痛·口苦·惡寒) | **0 records; vocabulary + template + validator built 2026-08-06** |
 
 - **Ting's framing was right with one correction.** She proposed
@@ -453,13 +453,12 @@ migration for Ting.
   distinction" `differential_patterns` entries that the Pattern V1 workstream
   had added to flag these three pairs for review were removed from both sides
   of each pair — they are resolved, not open questions, as of this decision.
-- **Known residual count discrepancy:** the library file still has 59 raw
-  records (56 active + 3 `deprecated`), not 56, because D6 forbids removing
-  the array entries. "56 canonical Pattern cards" is correct as an
-  **active-record** count; anyone counting `pattern_library.json.records.length`
-  directly will still see 59 until/unless the UI is taught to filter
-  `review_status: "deprecated"` — which was not part of this decision and was
-  not done here.
+- **Frozen Pattern V1 count baseline (verified 2026-08-08):**
+  - Registry = **69**: 10 taxonomy/category + 59 clinical Patterns.
+  - Library = **62 raw**: 59 active + 3 `deprecated` historical records.
+  - Active clinical registry ↔ active library reconciliation = **59/59**.
+  - The raw library count intentionally includes the three deprecated records
+    because D6 forbids removing historical array entries.
 - **Reconsider only if:** a future source directly contradicts treating any
   of these three as the same Pattern as its canonical counterpart — in which
   case un-deprecate and re-differentiate, do not re-delete evidence.
