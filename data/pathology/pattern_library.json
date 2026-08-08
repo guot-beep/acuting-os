@@ -1113,11 +1113,107 @@
       ],
       "treatment_principle_zh": "疏肝解鬱，理氣",
       "treatment_principle_en": "Course the liver, resolve depression, regulate qi",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "GB40",
+        "GB41",
+        "LR3",
+        "LR13",
+        "LR14",
+        "PC6",
+        "SP6"
+      ],
+      "typical_formulas": [
+        "formula.chai_hu_shu_gan_san",
+        "formula.xiao_yao_san",
+        "formula.yue_ju_wan"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔薄白",
-      "pulse_zh": "脈弦"
+      "pulse_zh": "脈弦",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Emotional depression",
+        "Flank/hypochondriac distention and pain",
+        "Frequent sighing",
+        "Sensation of a lump in the throat",
+        "Menstrual irregularity"
+      ],
+      "supporting_signs_zh": [
+        "胸悶",
+        "易怒",
+        "乳房脹痛"
+      ],
+      "supporting_signs_en": [
+        "Chest oppression",
+        "Irritability",
+        "Breast distention"
+      ],
+      "tongue_en": "Thin white tongue coating",
+      "pulse_en": "Wiry pulse",
+      "mechanism_zh": "情志不遂,肝失疏泄,氣機鬱滯,故見脅肋脹痛、胸悶太息;肝氣鬱結,循經上逆或橫逆犯胃犯脾,亦可影響沖任而致月經不調。",
+      "mechanism_en": "Unresolved emotional stress impairs the Liver's function of ensuring the free flow of Qi, causing Qi stagnation — producing hypochondriac distention, chest oppression, and frequent sighing; the stagnant Qi may also invade the Stomach/Spleen or disturb the Chong-Ren vessels, causing menstrual irregularity.",
+      "common_causes_zh": "情志不遂、抑鬱惱怒、長期精神緊張",
+      "common_causes_en": "Unresolved emotional stress, suppressed anger, prolonged psychological tension",
+      "progression_zh": "肝氣鬱結日久化火,可發展為肝火上炎;橫逆犯脾胃,可致肝脾不和或肝胃不和;氣滯日久可致血瘀。",
+      "progression_en": "Prolonged Liver Qi Stagnation can transform into Liver Fire; if it invades the Spleen/Stomach it produces Liver-Spleen or Liver-Stomach Disharmony; prolonged Qi stagnation can also lead to Blood Stasis.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_fire",
+          "distinguishing_zh": "肝氣鬱結以情志抑鬱、脅肋脹痛、脈弦為主,無熱象;肝火上炎兼見頭痛目赤、口苦、舌紅苔黃、脈弦數等實熱表現。",
+          "distinguishing_en": "Liver Qi Stagnation shows depression and hypochondriac distention with a wiry pulse and no heat signs; Liver Fire adds excess-heat signs such as headache, red eyes, and a rapid wiry pulse.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.liver_spleen_disharmony",
+          "distinguishing_zh": "肝氣鬱結病位偏肝;肝脾不和兼見腹脹腹痛、腸鳴便溏等脾虛/脾受克表現。",
+          "distinguishing_en": "Liver Qi Stagnation is centered on the Liver; Liver-Spleen Disharmony additionally shows Spleen signs such as abdominal distention and loose stools.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_fire",
@@ -1131,11 +1227,96 @@
       ],
       "treatment_principle_zh": "清肝瀉火",
       "treatment_principle_en": "Clear liver fire",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR2",
+        "LR3",
+        "GB20",
+        "GV20"
+      ],
+      "typical_formulas": [
+        "formula.long_dan_xie_gan_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃",
-      "pulse_zh": "脈弦數"
+      "pulse_zh": "脈弦數",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Headache with red eyes",
+        "Irritability and quick temper",
+        "Bitter taste and dry throat",
+        "Tinnitus like roaring tides"
+      ],
+      "supporting_signs_zh": [
+        "面紅",
+        "脅肋灼痛",
+        "便秘尿黃"
+      ],
+      "supporting_signs_en": [
+        "Flushed face",
+        "Burning hypochondriac pain",
+        "Constipation and dark urine"
+      ],
+      "tongue_en": "Red tongue with yellow coating",
+      "pulse_en": "Wiry, rapid pulse",
+      "mechanism_zh": "肝氣鬱結日久化火,或情志過極,肝火循經上炎,擾及頭目清竅,故見頭痛目赤、耳鳴如潮;肝火犯及膽經,故口苦;熱盛傷津,故便秘尿黃。",
+      "mechanism_en": "Prolonged Liver Qi Stagnation transforming into Fire, or extreme emotional stress, causes Liver Fire to flare upward along its channel and disturb the head and eyes, producing headache, red eyes, and roaring tinnitus; heat injuring fluids produces constipation and dark urine.",
+      "common_causes_zh": "肝氣鬱結化火、情志過極(大怒)、嗜食辛辣助火",
+      "common_causes_en": "Liver Qi Stagnation transforming into Fire, extreme emotional stress (rage), excessive spicy food fueling fire",
+      "progression_zh": "肝火可犯肺(肝火犯肺,乾咳);熱盛傷陰,可轉為肝陽上亢或肝腎陰虛;熱極動風,可致肝風內動。",
+      "progression_en": "Liver Fire may scorch the Lung; if heat consumes Yin it can shift toward Liver Yang Rising or Liver-Kidney Yin Deficiency; extreme heat can stir internal Wind.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_yang_rising",
+          "distinguishing_zh": "肝火上炎為純實熱證,起病急,舌紅苔黃、脈弦數有力,無下焦虛象;肝陽上亢為本虛標實,兼見腰膝痠軟等肝腎陰虛表現。",
+          "distinguishing_en": "Liver Fire is a pure excess-heat pattern with no lower-body deficiency; Liver Yang Rising is root-deficiency-branch-excess, adding Liver-Kidney Yin deficiency signs like sore knees and low back.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.liver_gallbladder_damp_heat",
+          "distinguishing_zh": "肝火上炎以頭面炎上之熱象為主(頭痛目赤);肝膽濕熱兼見苔黃膩、身目發黃、陰部濕癢等濕邪表現。",
+          "distinguishing_en": "Liver Fire presents heat rising to the head (headache, red eyes); Liver-Gallbladder Damp-Heat additionally shows Dampness signs such as a greasy yellow coating and jaundice.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_yang_rising",
@@ -1241,7 +1422,11 @@
         "NCBAHM_2026_CH_Outline",
         "https://cloudtcm.com/pattern/120"
       ],
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver",
+        "kidney"
+      ]
     },
     {
       "id": "pattern.liver_wind",
@@ -1255,11 +1440,89 @@
       ],
       "treatment_principle_zh": "平肝熄風",
       "treatment_principle_en": "Calm the liver, extinguish wind",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "GB20",
+        "GV20",
+        "LR3",
+        "LR14",
+        "GB34"
+      ],
+      "typical_formulas": [
+        "formula.zhen_gan_xi_feng_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅",
-      "pulse_zh": "脈弦有力"
+      "pulse_zh": "脈弦有力",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Dizziness with a sensation of imminent collapse",
+        "Trembling of the limbs",
+        "Convulsions",
+        "Slurred speech, in severe cases sudden collapse and coma"
+      ],
+      "supporting_signs_zh": [
+        "肢體麻木",
+        "口眼歪斜"
+      ],
+      "supporting_signs_en": [
+        "Limb numbness",
+        "Facial deviation"
+      ],
+      "tongue_en": "Red tongue",
+      "pulse_en": "Wiry, forceful pulse",
+      "mechanism_zh": "肝陽亢逆化風,或熱極生風、血虛生風,風性主動,擾動筋脈清竅,故見眩暈欲仆、肢體震顫抽搐,甚則卒然昏仆、言語不利。",
+      "mechanism_en": "Hyperactive Liver Yang transforming into Wind (or extreme heat / Blood deficiency generating Wind) causes the characteristically mobile nature of Wind to disturb the sinews and clear orifices, producing severe dizziness, tremor, convulsions, and in severe cases sudden collapse with slurred speech.",
+      "common_causes_zh": "肝陽上亢日久、熱邪熾盛、久病血虛筋脈失養、情志過激",
+      "common_causes_en": "Prolonged Liver Yang Rising, intense heat, chronic Blood deficiency failing to nourish the sinews, extreme emotional stress",
+      "progression_zh": "多由肝陽上亢或肝腎陰虛發展而來;風痰上蒙清竅可致中風閉證,為急重症。",
+      "progression_en": "Commonly develops from Liver Yang Rising or Liver-Kidney Yin Deficiency; Wind-Phlegm obstructing the orifices can precipitate a Wind-stroke closed pattern — a critical emergency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_yang_rising",
+          "distinguishing_zh": "肝風內動以震顫抽搐、言語不利等「動」象為特徵性表現;肝陽上亢以眩暈頭脹、面紅為主,無明顯動風之象。",
+          "distinguishing_en": "Liver Wind is distinguished by characteristic Wind signs — tremor, convulsion, dysarthria; Liver Yang Rising shows dizziness and facial flushing without overt Wind movement.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_blood_deficiency",
@@ -1274,11 +1537,105 @@
       ],
       "treatment_principle_zh": "補血養肝",
       "treatment_principle_en": "Nourish blood, supplement the liver",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR3",
+        "CV4",
+        "SP6",
+        "ST36",
+        "BL17",
+        "BL18",
+        "BL20"
+      ],
+      "typical_formulas": [
+        "formula.si_wu_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡",
-      "pulse_zh": "脈細"
+      "pulse_zh": "脈細",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Dizziness",
+        "Blurred vision",
+        "Limb numbness",
+        "Scanty, pale menstruation",
+        "Lusterless nails"
+      ],
+      "supporting_signs_zh": [
+        "面色、唇色淡白",
+        "眼乾、眼前黑花",
+        "易驚、失眠多夢"
+      ],
+      "supporting_signs_en": [
+        "Pale complexion and lips",
+        "Dry eyes, spots before the eyes",
+        "Easily startled, dream-disturbed insomnia"
+      ],
+      "tongue_en": "Pale tongue",
+      "pulse_en": "Thready pulse",
+      "mechanism_zh": "肝藏血,血虛則肝失所養,不能上榮頭目、濡養筋脈與爪甲,故見眩暈視物模糊、肢體麻木、爪甲不榮;沖任失於血養,故月經量少色淡。",
+      "mechanism_en": "The Liver stores Blood; when Blood is deficient the Liver loses nourishment and fails to reach the eyes and sinews — producing dizziness, blurred vision, limb numbness, and lusterless nails, while the Chong-Ren vessels lacking Blood produce scanty, pale menses.",
+      "common_causes_zh": "脾虛生血不足、失血過多、久病耗血、思慮過度",
+      "common_causes_en": "Spleen deficiency impairing Blood production, excessive blood loss, chronic illness consuming Blood, excessive mental strain",
+      "progression_zh": "血虛日久可累及陰,發展為肝陰虛;血不養筋日久可致虛風內動。",
+      "progression_en": "Prolonged Blood deficiency can involve Yin, progressing to Liver Yin Deficiency; sinews deprived of Blood over time can generate deficiency Wind.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_yin_deficiency",
+          "distinguishing_zh": "肝血虛以眩暈、視物模糊、面色唇淡為主,無熱象;肝陰虛兼見五心煩熱、舌紅少苔等虛熱表現。",
+          "distinguishing_en": "Liver Blood Deficiency shows dizziness and pallor without heat signs; Liver Yin Deficiency additionally shows deficiency-heat signs such as five-center heat and a red tongue with little coating.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.liver_wind",
+          "distinguishing_zh": "肝血虛以麻木為主,無震顫抽搐;血虛日久筋脈失養,可進一步發展為虛風內動(震顫)。",
+          "distinguishing_en": "Liver Blood Deficiency shows numbness without tremor; if prolonged it can progress to deficiency-type internal Wind with tremor.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_yin_deficiency",
@@ -1292,11 +1649,102 @@
       ],
       "treatment_principle_zh": "滋陰養肝",
       "treatment_principle_en": "Enrich yin, nourish the liver",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "KI3",
+        "LR3",
+        "BL18",
+        "BL23"
+      ],
+      "typical_formulas": [
+        "formula.yi_guan_jian"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈弦細數"
+      "pulse_zh": "脈弦細數",
+      "zang_fu": [
+        "liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "key_signs_en": [
+        "Dry, gritty eyes",
+        "Dull hypochondriac pain",
+        "Five-center heat",
+        "Dizziness"
+      ],
+      "supporting_signs_zh": [
+        "視物模糊",
+        "耳鳴",
+        "咽乾口渴",
+        "盜汗"
+      ],
+      "supporting_signs_en": [
+        "Blurred vision",
+        "Tinnitus",
+        "Dry throat and thirst",
+        "Night sweats"
+      ],
+      "tongue_en": "Red tongue with little coating",
+      "pulse_en": "Thready, wiry, rapid pulse",
+      "mechanism_zh": "肝陰不足,不能濡養頭目筋脈,虛熱內生,故見兩目乾澀、脅肋隱痛、眩暈;陰虛生內熱,故五心煩熱。",
+      "mechanism_en": "Liver Yin deficiency fails to moisten the eyes and sinews, allowing deficiency heat to arise internally — producing dry gritty eyes, dull hypochondriac pain, dizziness, and five-center heat.",
+      "common_causes_zh": "肝血虛日久傷陰、久病傷陰、熱病後期傷津、情志化火暗耗肝陰",
+      "common_causes_en": "Prolonged Liver Blood deficiency injuring Yin, chronic illness, late-stage febrile disease consuming fluids, emotional fire quietly consuming Liver Yin",
+      "progression_zh": "肝陰虛日久,水不涵木,可發展為肝陽上亢;下汲腎陰,可致肝腎陰虛。",
+      "progression_en": "Prolonged Liver Yin Deficiency can fail to restrain Liver Yang, progressing to Liver Yang Rising; if it draws on Kidney Yin it can lead to Liver-Kidney Yin Deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_blood_deficiency",
+          "distinguishing_zh": "肝陰虛見五心煩熱、舌紅少苔等虛熱之象;肝血虛以面色唇淡、無熱象為主。",
+          "distinguishing_en": "Liver Yin Deficiency shows deficiency-heat signs; Liver Blood Deficiency shows pallor without heat signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.liver_yang_rising",
+          "distinguishing_zh": "肝陰虛病位局限於肝,無明顯陽亢上擾之象;肝陽上亢在肝腎陰虛基礎上兼見頭目脹痛、面紅等陽亢表現。",
+          "distinguishing_en": "Liver Yin Deficiency alone lacks overt Yang-rising signs; Liver Yang Rising adds distending headache and facial flushing on top of the underlying Yin deficiency.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -1309,11 +1757,93 @@
       ],
       "treatment_principle_zh": "暖肝散寒，行氣止痛",
       "treatment_principle_en": "Warm the liver, dispel cold, move qi",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR1",
+        "CV4",
+        "SP6"
+      ],
+      "typical_formulas": [
+        "formula.tian_tai_wu_yao_san"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔白滑",
-      "pulse_zh": "脈沉弦或遲"
+      "pulse_zh": "脈沉弦或遲",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Cold, distending, dragging pain in the lower abdomen radiating to the testicle",
+        "Relieved by warmth",
+        "Worse with cold"
+      ],
+      "supporting_signs_zh": [
+        "四肢冷、畏寒",
+        "陰囊冷痛收縮",
+        "脅痛"
+      ],
+      "supporting_signs_en": [
+        "Cold limbs, aversion to cold",
+        "Cold scrotal pain/contraction",
+        "Hypochondriac pain may occur"
+      ],
+      "tongue_en": "Pale tongue with white, greasy coating",
+      "pulse_en": "Deep, wiry pulse, or slow, or deep-tight",
+      "mechanism_zh": "寒邪侵襲肝經,凝滯氣血,肝脈循少腹絡陰器,故見少腹牽引睪丸墜脹冷痛,得溫則減、遇寒加重。",
+      "mechanism_en": "Cold pathogen invades the Liver channel and congeals Qi and Blood; since the Liver channel traverses the lower abdomen and genitals, this produces cold, distending, dragging testicular/lower-abdominal pain that is relieved by warmth and aggravated by cold.",
+      "common_causes_zh": "感受寒邪、久居寒濕之地、過食生冷",
+      "common_causes_en": "Exposure to Cold pathogen, prolonged residence in cold-damp environments, excessive raw/cold food",
+      "progression_zh": "寒邪鬱久可化熱;素體陽虛者易反覆發作。",
+      "progression_en": "Prolonged Cold stagnation may transform into heat; those with underlying Yang deficiency are prone to recurrence.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "寒滯肝脈以少腹睪丸冷痛、得溫則減為特徵,屬寒實證;肝氣鬱結以情志抑鬱、脅肋脹痛為主,無明顯寒象。",
+          "distinguishing_en": "Cold Stagnation in the Liver Channel is a cold-excess pattern with cold testicular/lower-abdominal pain relieved by warmth; Liver Qi Stagnation centers on emotional depression and hypochondriac distention without cold signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_gallbladder_damp_heat",
@@ -1327,11 +1857,105 @@
       ],
       "treatment_principle_zh": "清利肝膽濕熱",
       "treatment_principle_en": "Clear and drain liver-gallbladder damp-heat",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "GV9",
+        "GB24",
+        "GB34",
+        "LR14",
+        "SP9",
+        "BL18",
+        "BL19"
+      ],
+      "typical_formulas": [
+        "formula.long_dan_xie_gan_tang",
+        "formula.yin_chen_hao_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈弦滑數"
+      "pulse_zh": "脈弦滑數",
+      "zang_fu": [
+        "liver",
+        "gallbladder"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Hypochondriac distention and pain",
+        "Bitter taste",
+        "Yellowing of the body and eyes",
+        "Genital dampness/itching or foul yellow discharge"
+      ],
+      "supporting_signs_zh": [
+        "噁心嘔吐酸苦水",
+        "尿黃短赤",
+        "腹脹"
+      ],
+      "supporting_signs_en": [
+        "Nausea, vomiting sour-bitter fluid",
+        "Scant, dark urine",
+        "Abdominal distention"
+      ],
+      "tongue_en": "Red tongue with yellow, greasy coating",
+      "pulse_en": "Wiry, rapid or slippery, rapid pulse",
+      "mechanism_zh": "濕熱蘊結肝膽,疏泄失常,故脅肋脹痛、口苦;膽汁不循常道,外溢肌膚,故身目發黃;濕熱下注,循肝經至陰部,故見帶下黃臭、陰部濕癢。",
+      "mechanism_en": "Damp-Heat accumulates in the Liver and Gallbladder, impairing the free flow of Qi and bile — producing hypochondriac pain, bitter taste, and jaundice when bile overflows to the skin; Damp-Heat descending along the Liver channel to the genitals produces foul yellow discharge and itching.",
+      "common_causes_zh": "嗜食肥甘厚膩、外感濕熱之邪、情志不遂化火夾濕",
+      "common_causes_en": "Excessive rich/greasy food, external Damp-Heat invasion, emotional stress transforming into fire combined with Dampness",
+      "progression_zh": "濕熱鬱久可致黃疸加重或積聚(癥瘕);濕熱下注日久可致帶下病、陰癢反覆。",
+      "progression_en": "Prolonged Damp-Heat can worsen jaundice or form abdominal masses; prolonged lower-burner involvement can cause recurrent vaginal discharge/itching.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_fire",
+          "distinguishing_zh": "肝膽濕熱兼見苔黃膩、身目發黃等濕邪表現;肝火上炎以頭面炎上之熱象(頭痛目赤)為主,無濕象。",
+          "distinguishing_en": "Liver-Gallbladder Damp-Heat shows Dampness signs (greasy coating, jaundice); Liver Fire shows pure heat rising to the head without Dampness.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.damp_heat_lower_burner",
+          "distinguishing_zh": "肝膽濕熱病位偏上中焦(脅肋、口苦、黃疸);下焦濕熱病位偏下焦(尿頻尿痛、帶下),二者可同時並見。",
+          "distinguishing_en": "Liver-Gallbladder Damp-Heat is centered on the upper/middle burner (hypochondrium, jaundice); Lower-Burner Damp-Heat is centered on the lower burner (urinary/genital signs) — the two may coexist.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.heart_qi_deficiency",
@@ -3695,6 +4319,17 @@
         "ST44",
         "ST36",
         "SP6"
+      ],
+      "zang_fu": [
+        "liver"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_fire",
+          "distinguishing_zh": "pattern.liver_fire 與本記錄同為「肝火上炎」,是庫中並存的兩筆記錄,臨床表現高度重疊;鑑別時以既有卡片個別脈絡為準,避免混用。",
+          "distinguishing_en": "pattern.liver_fire and this record both encode 肝火上炎 (Liver Fire Flaming/Flaring Upward) as separate canonical IDs with heavily overlapping presentation. Treat as parallel canonical entries pending review rather than merging.",
+          "source": "AcuTing internal note — flagged for review, not a clinical distinction"
+        }
       ]
     },
     {
@@ -3789,6 +4424,17 @@
         "LR3",
         "GB34",
         "PC7"
+      ],
+      "zang_fu": [
+        "liver"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_wind",
+          "distinguishing_zh": "pattern.liver_wind 與本記錄同為「肝風內動」,是庫中並存的兩筆記錄,臨床表現高度重疊;鑑別時以既有卡片個別脈絡為準,避免混用。",
+          "distinguishing_en": "pattern.liver_wind and this record both encode 肝風內動 (Internal/Stirring Liver Wind) as separate canonical IDs with heavily overlapping presentation. Treat as parallel canonical entries pending review rather than merging.",
+          "source": "AcuTing internal note — flagged for review, not a clinical distinction"
+        }
       ]
     },
     {
