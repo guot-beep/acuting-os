@@ -5183,43 +5183,216 @@
     "pinyin": "Weishang",
     "meridian": "Extra Points / 經外奇穴",
     "region": "腹部 / Abdominal Region",
-    "location": "上腹部，臍上2寸，前正中線旁開3寸。",
-    "locationEn": "In upper abdomen, 2 cun above umbilicus, 3 cun lateral to anterior midline.",
-    "techniqueNotes": "向下斜刺1.0~1.5寸。\nOblique 1.0-1.5 cun downward.",
-    "functions": "健脾和胃，升提胃氣",
-    "functionsEn": "Strengthens spleen and harmonizes stomach; Elevates stomach Qi",
+    "location": "上腹部，臍中上2寸的水平線上，左右各取一穴。eLotus 定位為距臍中旁開4寸；American Dragon 的 Weishangxue（N-CA-18）頁寫作臍上2寸、距REN-10下脘旁開4寸，並另引旁開2.5寸一說。舊卡旁開3寸未獲本輪精確來源支持，故不把三個數值合併成單一定位。",
+    "locationEn": "On the upper abdomen, on the horizontal level 2 cun superior to the umbilicus, with one point on each side. eLotus locates it 4 cun lateral to the umbilicus. American Dragon's related Weishangxue (N-CA-18) page states 2 cun above the navel and 4 cun lateral to REN-10 Xiawan, while also citing an alternate 2.5-cun lateral location. The legacy card's 3-cun lateral value was not confirmed by an exact source in this review and is not merged with the other measurements.",
+    "cunMeasurement": "共同垂直基準為臍中上2寸。旁開值有分歧：eLotus 4寸；AD Weishangxue 主說4寸、另說2.5寸；舊卡3寸未核實。取穴時必須依所採來源標準，不可把2.5、3、4寸平均或視為等同。",
+    "anatomyZh": "兩穴位於上腹部前外側體表。eLotus 明列皮下進針，AD 明列橫刺，但兩頁均未提供皮膚、皮下組織、腹直肌鞘／腹外斜肌區域、腹膜或腹腔臟器的逐層解剖，也未提供不同體型的安全邊界。2～3寸是沿皮下／橫向的行針長度，不可改讀為垂直刺深。",
+    "anatomyEn": "The paired points lie on the anterolateral upper abdominal surface. eLotus explicitly specifies subcutaneous needling and American Dragon specifies transverse insertion, but neither page provides layered skin, subcutaneous, rectus-sheath/external-oblique-region, peritoneal, or intra-abdominal anatomy, nor body-habitus safety boundaries. The 2-3-cun value is a subcutaneous/transverse needle-travel distance and must not be reinterpreted as perpendicular depth.",
+    "techniqueNotes": "eLotus（Weishang Ex-CA7）：向臍中或天樞（ST25）方向皮下刺2～3寸；艾灸10～15分鐘。American Dragon 的相關 Weishangxue（N-CA-18）頁：向臍中或天樞方向橫刺2～3寸，得氣描述為腹部脹、臍部牽緊與胃部收縮感。舊卡『向下斜刺1.0～1.5寸』本輪未獲 Board、課件、eLotus 或 AD 精確頁支持；批次加入的『直刺0.3～0.8寸、可灸或點刺出血』亦不符合兩個精確頁的針刺方向，故只作未核實舊值記錄。\neLotus (Weishang Ex-CA7): subcutaneous insertion 2-3 cun toward the umbilicus or Tianshu (ST25), with moxa for 10-15 minutes. American Dragon's related Weishangxue (N-CA-18) page: transverse insertion 2-3 cun toward the umbilicus or ST25, with a described sensation of abdominal distention, a tightened umbilical region, and contraction of the Stomach. The legacy downward-oblique 1.0-1.5-cun method was not confirmed by the Board, curriculum, eLotus, or an exact AD page. The bulk-added perpendicular 0.3-0.8-cun, moxa-or-bloodletting instruction also conflicts with the exact pages' needle direction and is retained only as an unverified legacy value.",
+    "acumethodZh": "依 eLotus 與 AD Weishangxue 的共同內容，採皮下／橫刺，朝臍中或天樞（ST25）方向進針2～3寸。此數字是沿腹壁表面的行針距離，不是直刺深度。AD 的得氣描述可記錄觀察，但兩源都沒有提供進針層次確認、停止規則或體型調整。",
+    "acumethodEn": "The shared eLotus/AD method is subcutaneous or transverse insertion 2-3 cun toward the umbilicus or Tianshu (ST25). This measurement is needle travel along the abdominal wall, not perpendicular depth. American Dragon describes the resulting sensation, but neither source provides layer-confirmation, stopping criteria, or body-habitus adjustments.",
+    "moxaZh": "eLotus 列艾灸10～15分鐘，但未交代溫和灸／直接灸、艾條距離、局部皮膚保護、熱傷害停止規則或療程頻率。AD Weishangxue 頁的艾灸與禁忌欄為空，不能用其沉默補足安全細節。",
+    "moxaEn": "eLotus lists moxibustion for 10-15 minutes but does not specify gentle versus direct moxa, moxa-stick distance, local skin protection, thermal-injury stopping rules, or treatment frequency. The American Dragon Weishangxue page has no moxa or contraindication instruction; that silence cannot supply the missing safety details.",
+    "functions": "補中益氣；和胃止痛；健脾和胃；升提胃氣",
+    "functionsEn": "Tonifies the Middle and benefits Qi; Harmonizes the Stomach and relieves pain; Strengthens the Spleen and harmonizes the Stomach; Raises Stomach Qi",
+    "functionsZhList": [
+      "補中益氣（eLotus 明列）",
+      "和胃止痛（eLotus 明列）",
+      "健脾和胃（既有表述；健脾部分本輪未獲精確頁明列）",
+      "升提胃氣（既有／依穴名與胃下垂主治整理，非來源明列功效）"
+    ],
+    "functionsEnList": [
+      "Tonifies the Middle and benefits Qi (explicitly listed by eLotus)",
+      "Harmonizes the Stomach and relieves pain (explicitly listed by eLotus)",
+      "Strengthens the Spleen and harmonizes the Stomach (legacy wording; Spleen strengthening was not explicitly listed on the exact pages reviewed)",
+      "Raises Stomach Qi (legacy/indication-derived wording rather than an explicitly listed source action)"
+    ],
+    "pointIdentityZh": [
+      "腹部經外奇穴；左右兩穴",
+      "未列入 NCBAHM 2026 ACPL Appendix A 經外奇穴重點清單",
+      "本庫穩定代碼為 EX-CA4；eLotus 的 Weishang 使用 Ex-CA7",
+      "AD 拼音索引另列 Weishang 與 Weishangxue；可核讀的 Weishangxue 頁使用 N-CA-18，與 eLotus 內容高度相近但不可無條件視為同一代碼"
+    ],
+    "pointIdentityEn": [
+      "Abdominal extra point; a bilateral pair",
+      "Not listed in the NCBAHM 2026 ACPL Appendix A priority extra-point list",
+      "The database's immutable code is EX-CA4; eLotus codes Weishang as Ex-CA7",
+      "The AD pinyin index separately lists Weishang and Weishangxue; the readable Weishangxue page uses N-CA-18 and closely parallels eLotus content, but the codes are not treated as automatically identical"
+    ],
+    "exam_star": 0,
+    "exam_importance": "胃上不在 NCBAHM 2026 Appendix A 明列重點，亦無本地課件專條。若複習本穴，核心是辨認來源代碼與定位分歧，以及2～3寸屬朝臍／天樞方向的皮下或橫向行針，不是垂直刺深。",
+    "exam_importance_en": "Weishang is not named in the NCBAHM 2026 Appendix A priority list and has no dedicated local curriculum entry. If studied, focus on the source-code/location discrepancies and remember that 2-3 cun describes subcutaneous or transverse travel toward the umbilicus/ST25, not perpendicular depth.",
+    "exam_pearl": "胃上以胃下垂為最一致主治；eLotus 與 AD 相關頁共同支持朝臍中或天樞橫向2～3寸。定位旁開有4寸、2.5寸與未核實舊卡3寸三種，不可混成單一答案。",
+    "exam_pearl_en": "Gastroptosis is the most consistent indication. eLotus and the related AD entry both support 2-3 cun transversely toward the umbilicus or ST25. Lateral locations of 4 cun, an alternate 2.5 cun, and the unverified legacy 3 cun must remain source-specific rather than being merged.",
     "patterns": [
       "胃下垂",
       "胃痛",
       "消化不良",
-      "腹脹"
+      "腹脹",
+      "反酸"
     ],
     "patternsEn": [
       "Gastroptosis",
       "Gastric pain",
       "Indigestion",
-      "Abdominal distension"
+      "Abdominal distension",
+      "Acid reflux"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "補中益氣",
+      "和胃止痛",
+      "健脾和胃",
+      "升提胃氣"
+    ],
+    "action_tags_en": [
+      "Tonify the Middle and Benefit Qi",
+      "Harmonize the Stomach and Relieve Pain",
+      "Strengthen the Spleen and Harmonize the Stomach",
+      "Raise Stomach Qi"
+    ],
+    "disease_tags_zh": [
+      "胃下垂",
+      "胃痛",
+      "腹脹",
+      "反酸",
+      "消化不良"
+    ],
+    "disease_tags_en": [
+      "Gastroptosis",
+      "Stomach Pain",
+      "Abdominal Distention",
+      "Acid Reflux",
+      "Indigestion"
+    ],
+    "cautions": "【方向即安全邊界】eLotus 與 AD 相關頁均指定皮下／橫刺朝臍中或天樞2～3寸；此長度不可改讀為垂直刺深，亦不支持原批次直刺0.3～0.8寸或點刺出血。【定位分歧】eLotus 旁開4寸；AD 主說4寸、另說2.5寸；舊卡3寸未核實。沒有權威裁決前不可平均或任選。【解剖缺口】兩頁都沒有逐層腹壁、腹膜／臟器邊界、不同體型、針具規格、進針層確認或停止規則。【艾灸缺口】eLotus 只列10～15分鐘，沒有灸法種類、熱源距離、皮膚保護或灼傷停止標準。【孕期】舊卡『孕婦慎用』予以保留，但 Board、課件、eLotus 與 AD Weishangxue 頁均未提供本穴孕期針灸條文；來源沉默不等於安全許可。【AD 身分缺口】AD 索引的 Weishang 連結本輪無法開啟；可核讀的是另列的 Weishangxue N-CA-18，故內容以相關條目標示，不冒充已核實的 AD Weishang 專頁。",
+    "cautionsEn": [
+      "Direction is part of the safety boundary: eLotus and the related AD page specify subcutaneous/transverse insertion 2-3 cun toward the umbilicus or ST25. This travel length must not be reinterpreted as perpendicular depth and does not support the bulk-added perpendicular 0.3-0.8-cun or bloodletting method.",
+      "Location discrepancy: eLotus gives 4 cun lateral; AD gives 4 cun with an alternate 2.5-cun statement; the legacy card's 3-cun value is unverified. They must not be averaged or selected without a governing standard.",
+      "Anatomy gap: neither page supplies layered abdominal-wall, peritoneal/visceral boundaries, body-habitus adjustments, needle specifications, layer confirmation, or stopping criteria.",
+      "Moxa gap: eLotus supplies only 10-15 minutes, without method type, heat distance, skin protection, or burn stopping criteria.",
+      "Pregnancy: the legacy 'use caution in pregnancy' statement is retained, but the Board, curriculum, eLotus, and AD Weishangxue page provide no point-specific pregnancy instruction. Source silence is not permission.",
+      "AD identity gap: the index's Weishang link could not be opened in this review. The readable page is the separately listed Weishangxue N-CA-18, so its content is labeled as a related entry rather than misrepresented as a verified AD Weishang page."
+    ],
+    "acuTags": [
+      "腹部",
+      "胃下垂",
+      "胃痛",
+      "消化系統"
+    ],
+    "combinePointsZh": "【胃下垂；American Dragon Weishangxue】AD 表格在胃下垂欄同列『Join to REN-8 Qizhong』、中脘（CV12）、氣海（CV6）、足三里（ST36）。原表的 join 語法沒有交代方向、深度或是否為透刺，不轉寫成可執行針法。【腹脹；American Dragon Weishangxue】AD 另列氣海（CV6）joined to 中極（CV3）；同樣只保留來源原意與主治，不自行補操作程序。",
+    "combinePointsEn": "For gastroptosis (American Dragon Weishangxue), the table lists 'Join to REN-8 Qizhong' together with Zhongwan (CV12), Qihai (CV6), and Zusanli (ST36). Because the source does not explain the direction, depth, or whether 'join' means through-needling, this is not rewritten as an executable procedure. For abdominal distention, AD additionally lists Qihai (CV6) joined to Zhongji (CV3); again, the source wording and indication are retained without inventing technique details.",
+    "clinical_pearls": "eLotus 與 AD Weishangxue 的共同核心是胃下垂、腹脹，以及朝臍中／天樞橫向2～3寸。eLotus 再補胃痛、反酸、補中益氣、和胃止痛與艾灸10～15分鐘；AD 補得氣描述與兩組配穴。消化不良、健脾和胃、升提胃氣、旁開3寸、向下斜刺1～1.5寸與孕期慎用仍屬既有卡片內容，等待具名課本頁碼核實。",
+    "clinical_pearls_en": "The eLotus/AD Weishangxue core is gastroptosis, abdominal distention, and transverse 2-3-cun insertion toward the umbilicus or ST25. eLotus adds stomach pain, acid reflux, tonifying the Middle/benefiting Qi, harmonizing the Stomach/relieving pain, and 10-15 minutes of moxa. AD adds a needling-sensation description and two combination groups. Indigestion, Spleen strengthening, raising Stomach Qi, the 3-cun lateral location, downward-oblique 1.0-1.5-cun method, and pregnancy caution remain legacy content pending a cited textbook page.",
+    "nameIntroZh": "『胃上』指穴位在胃區上腹部並用於胃下垂等病症。eLotus 英譯 Above the Stomach，並列提垂穴（Lift the Sunken Point）為別名；AD 可核讀的相關條目名為 Weishangxue，英譯 Above the Stomach Orifice。",
+    "nameIntroEn": "Weishang refers to an upper-abdominal point used for disorders including gastroptosis. eLotus translates it as Above the Stomach and lists Lift the Sunken Point (Tichuixue) as an alias. The readable related AD entry is named Weishangxue and translated Above the Stomach Orifice.",
+    "otherNamesZh": [
+      "提垂穴（eLotus）"
+    ],
+    "otherNamesEn": [
+      "Lift the Sunken Point (eLotus)"
+    ],
+    "evidence": "四層查核：NCBAHM 2026 Appendix A 未列 Weishang；curriculum/acupoints 以胃上、Weishang、EX-CA4、Ex-CA7、提垂穴與Weishangxue搜尋均無專條（唯一『胃上』命中為肺經循行文字，非穴位證據）。eLotus 精確 Weishang Ex-CA7 頁提供臍上2寸、旁開4寸、補中益氣、和胃止痛、胃下垂／腹脹／胃痛／反酸、向臍或ST25皮下刺2～3寸、艾灸10～15分鐘及提垂穴別名。American Dragon 拼音索引分別列 Weishang 與 Weishangxue；Weishang 連結本輪無法開啟，可核讀的 Weishangxue N-CA-18 頁與本穴核心高度相近，提供主說旁開4寸、另說2.5寸、朝臍或ST25橫刺2～3寸、胃下垂／腹脹、得氣描述及配伍表，但以相關條目標示而非冒充同碼。CloudTCM 搜尋未找到可核讀的胃上專頁，泛用目錄連結已移除。舊卡旁開3寸、向下斜刺1～1.5寸、消化不良、健脾和胃、升提胃氣與孕期慎用均保留為未核實舊值；批次加入的直刺0.3～0.8寸與點刺出血不再列為可執行技法。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+      "https://www.americandragon.com/Points/Weishangxue.html",
+      "https://www.americandragon.com/PointsIndex2.html"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 胃上 EX-CA4",
-        "labelEn": "Extra Point · Weishang EX-CA4",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "labelZh": "eLotus · 胃上 Ex-CA7",
+        "labelEn": "eLotus · Weishang Ex-CA7",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · Weishangxue N-CA-18（相關條目）",
+        "labelEn": "American Dragon · Weishangxue N-CA-18 (Related Entry)",
+        "url": "https://www.americandragon.com/Points/Weishangxue.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "American Dragon 拼音索引 · Weishang 連結缺口稽核",
+        "labelEn": "American Dragon Pinyin Index · Weishang Link-gap Audit",
+        "url": "https://www.americandragon.com/PointsIndex2.html",
+        "source": "American Dragon Index / Source-gap audit"
       }
     ],
     "x": 180,
     "y": 300,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.8 寸，可灸；或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.8 cun; moxibustion applicable, or prick to bleed.",
-    "cautions": "嚴格無菌操作，避免深刺傷及血管或神經。孕婦慎用。",
-    "cautionsEn": "Maintain strict aseptic technique; avoid deep insertion hitting vessels or nerves. Caution in pregnancy.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Weishang not listed in the named extra-point priority list"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Weishang entry found in curriculum/acupoints by 胃上, Weishang, EX-CA4, Ex-CA7, 提垂穴, or Weishangxue search on 2026-08-08; the sole 胃上 hit described channel trajectory, not this point"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: separately lists Weishang and Weishangxue",
+        "source-gap note: the index's Weishang link could not be opened on 2026-08-08; no content was claimed from it",
+        "https://www.americandragon.com/Points/Weishangxue.html: exact readable related entry, N-CA-18"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: 2 cun superior and 4 cun lateral to the umbilicus",
+        "https://www.americandragon.com/Points/Weishangxue.html: 2 cun above the navel and 4 cun lateral to REN-10 Xiawan; alternate source 2.5 cun lateral",
+        "unverified legacy value: 2 cun above the umbilicus and 3 cun lateral"
+      ],
+      "anatomy": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: technique explicitly uses a subcutaneous plane",
+        "https://www.americandragon.com/Points/Weishangxue.html: technique explicitly uses transverse insertion",
+        "source-gap note: neither page provides layered abdominal-wall, peritoneal/visceral, body-habitus, or stopping-boundary anatomy"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: subcutaneous needling toward the umbilicus or ST25, 2-3 cun",
+        "https://www.americandragon.com/Points/Weishangxue.html: transverse insertion toward the umbilicus or ST25, 2-3 cun, with sensation description",
+        "unverified legacy value: downward oblique insertion 1.0-1.5 cun",
+        "unsupported bulk value removed from executable fields: perpendicular 0.3-0.8 cun or prick to bleed"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: moxa for 10-15 minutes",
+        "https://www.americandragon.com/Points/Weishangxue.html: no moxa instruction",
+        "source-gap note: no method type, heat distance, skin protection, burn stopping rule, frequency, or pregnancy protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: tonifies the Middle and benefits Qi; harmonizes the Stomach and relieves pain",
+        "unverified legacy wording retained: strengthens the Spleen and harmonizes the Stomach; raises Stomach Qi"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: stomach prolapse, abdominal distention, stomach pain, acid reflux",
+        "https://www.americandragon.com/Points/Weishangxue.html: prolapsed Stomach and abdominal distention",
+        "unverified legacy indication retained: indigestion"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Weishangxue.html: gastroptosis table lists Join to REN-8 Qizhong with REN-12, REN-6, and ST36; abdominal-distention table lists REN-6 joined to REN-3",
+        "source-gap note: AD does not explain join direction, depth, or whether the wording means through-needling; no executable technique inferred",
+        "source-gap note: no combinations listed on the eLotus detail page"
+      ],
+      "cautions": [
+        "source-gap note: neither exact detail page supplies layered anatomy, body-habitus adjustment, layer confirmation, needle specifications, or stopping criteria",
+        "source-gap note: eLotus's 10-15-minute moxa instruction lacks method type and thermal-safety protocol; AD moxa/contraindication fields are blank",
+        "unverified legacy pregnancy caution retained; no point-specific pregnancy statement found in the Board, curriculum, eLotus, or AD related page",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable code: EX-CA4 Weishang",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7: Ex-CA7 Weishang / Above the Stomach; alias Lift the Sunken Point 提垂穴",
+        "https://www.americandragon.com/Points/Weishangxue.html: N-CA-18 Weishangxue / Above the Stomach Orifice, treated as a related entry rather than an identical verified code",
+        "https://www.americandragon.com/PointsIndex2.html: separate Weishang and Weishangxue index entries"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Weishang Ex-CA7 page",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; separate Weishang and Weishangxue entries present",
+        "2026-08-08 index click attempted: AD Weishang entry did not open in the available fetch environment",
+        "2026-08-08 live page opened: American Dragon exact Weishangxue N-CA-18 related page",
+        "2026-08-08 CloudTCM exact-name searches produced no dedicated Weishang point page; generic directory removed"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "皮下／橫刺，朝臍中或天樞（ST25）方向進針2～3寸；此為沿腹壁的行針長度，不是垂直深度。eLotus 另列艾灸10～15分鐘。舊卡向下斜刺1.0～1.5寸與批次加入的直刺0.3～0.8寸／點刺出血未獲本輪精確來源支持。",
+    "needlingEn": "Subcutaneous/transverse insertion 2-3 cun toward the umbilicus or Tianshu (ST25); this is needle travel along the abdominal wall, not perpendicular depth. eLotus additionally lists moxa for 10-15 minutes. The legacy downward-oblique 1.0-1.5-cun method and the bulk-added perpendicular 0.3-0.8-cun/bloodletting instruction were not supported by the exact sources reviewed.",
     "id": "ex.ca4"
   },
   {
