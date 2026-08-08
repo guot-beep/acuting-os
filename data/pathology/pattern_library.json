@@ -567,11 +567,91 @@
       ],
       "treatment_principle_zh": "清熱化痰，宣肺平喘",
       "treatment_principle_en": "Clear heat, transform phlegm, calm wheezing",
-      "typical_points": [],
+      "typical_points": [
+        "LU5",
+        "LU10",
+        "CV17",
+        "CV22",
+        "BL13"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈滑數"
+      "pulse_zh": "脈滑數",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Cough with coarse, rapid breathing",
+        "Thick, yellow sputum",
+        "Chest pain",
+        "Fever and thirst"
+      ],
+      "supporting_signs_zh": [
+        "喘促",
+        "痰稠難咯",
+        "煩躁"
+      ],
+      "supporting_signs_en": [
+        "Wheezing/dyspnea",
+        "Sticky sputum difficult to expectorate",
+        "Restlessness may accompany"
+      ],
+      "tongue_en": "Red tongue with yellow, greasy coating",
+      "pulse_en": "Slippery, rapid pulse",
+      "mechanism_zh": "痰濁鬱久化熱,或外感熱邪與痰互結,壅塞肺絡,肺失清肅,故見咳嗽氣粗、痰黃稠、胸痛;熱盛傷津,故發熱口渴。",
+      "mechanism_en": "Phlegm stagnating and transforming into heat, or external heat combining with Phlegm, obstructs the Lung collaterals and impairs its clearing/descending function — producing a coarse cough, thick yellow sputum, and chest pain, with fever and thirst from heat consuming fluids.",
+      "common_causes_zh": "痰濕鬱久化熱、外感風熱與痰互結、素體痰盛復感熱邪",
+      "common_causes_en": "Phlegm-Damp stagnating and transforming into heat, external Wind-Heat combining with Phlegm, constitutional Phlegm excess combined with heat invasion",
+      "progression_zh": "多由痰濕阻肺化熱,或風熱犯肺傳裡而成;熱毒熾盛可致肺癰(肺膿瘍)。",
+      "progression_en": "Commonly develops from Phlegm-Damp Obstructing the Lung transforming into heat, or Wind-Heat Invading the Lung penetrating deeper; intense heat-toxin can progress to Lung Abscess.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm_damp_in_lung",
+          "distinguishing_zh": "痰熱壅肺痰黃稠、苔黃膩、脈滑數,兼發熱胸痛,屬熱;痰濕阻肺痰白清稀、苔白膩、脈滑,屬寒濕。",
+          "distinguishing_en": "Phlegm-Heat Obstructing the Lung shows thick yellow sputum with fever and chest pain — a heat pattern; Phlegm-Damp Obstructing the Lung shows thin white sputum — a cold-damp pattern.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.wind_heat_invading_lung",
+          "distinguishing_zh": "痰熱壅肺為熱邪入裡之裡熱證,痰黃稠量多、胸痛喘促;風熱犯肺為表證初起,病位較淺,無明顯胸痛。",
+          "distinguishing_en": "Phlegm-Heat Obstructing the Lung is an interior heat pattern with copious thick sputum and chest pain; Wind-Heat Invading the Lung is an early exterior pattern without chest pain.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.spleen_qi_deficiency",
@@ -3915,11 +3995,101 @@
       ],
       "treatment_principle_zh": "疏肝健脾",
       "treatment_principle_en": "Course the liver, fortify the spleen",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR3",
+        "LR13",
+        "SP6",
+        "ST25",
+        "ST36",
+        "ST37"
+      ],
+      "typical_formulas": [
+        "formula.tong_xie_yao_fang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔白",
-      "pulse_zh": "脈弦緩"
+      "pulse_zh": "脈弦緩",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver",
+        "spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Flank/hypochondriac distention",
+        "Abdominal distention with loose stools",
+        "Worse with emotional upset",
+        "Borborygmus and flatulence"
+      ],
+      "supporting_signs_zh": [
+        "胸悶太息",
+        "情緒抑鬱易怒",
+        "腹瀉可因壓力誘發"
+      ],
+      "supporting_signs_en": [
+        "Chest oppression and sighing",
+        "Depression/irritability",
+        "Stress-triggered diarrhea"
+      ],
+      "tongue_en": "White tongue coating",
+      "pulse_en": "Wiry, moderate pulse",
+      "mechanism_zh": "肝失疏泄,橫逆犯脾,脾失健運,故見脅脹、腹脹便溏、腸鳴矢氣,諸症每因情志波動而加重,是「木旺乘土」的典型表現。",
+      "mechanism_en": "The Liver's impaired free-flow of Qi invades the Spleen horizontally, impairing its transportation function — producing hypochondriac distention, abdominal fullness with loose stools, and borborygmus, all worsened by emotional stress; the classic 'Wood overacting on Earth' mechanism.",
+      "common_causes_zh": "情志不遂、肝氣鬱結犯脾、脾胃素虛易受肝乘",
+      "common_causes_en": "Unresolved emotional stress, Liver Qi Stagnation invading the Spleen, underlying Spleen weakness making it vulnerable to Liver invasion",
+      "progression_zh": "多由肝氣鬱結發展而來;脾虛日久可累及氣血生化,形成氣血兩虛。",
+      "progression_en": "Commonly develops from Liver Qi Stagnation; prolonged Spleen deficiency can impair Qi-Blood production, leading to combined Qi-Blood deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "肝脾不和在肝氣鬱結基礎上兼見腹脹便溏、腸鳴等脾虛/脾受克表現;肝氣鬱結病位偏肝,無明顯脾系症狀。",
+          "distinguishing_en": "Liver-Spleen Disharmony adds Spleen signs (abdominal distention, loose stools, borborygmus) to the Liver Qi Stagnation picture; Liver Qi Stagnation alone is centered on the Liver.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.liver_stomach_disharmony",
+          "distinguishing_zh": "肝脾不和以腹瀉便溏為主要表現;肝胃不和以胃脘脹痛、噯氣吞酸、嘔逆等胃氣上逆表現為主。",
+          "distinguishing_en": "Liver-Spleen Disharmony centers on diarrhea/loose stools; Liver-Stomach Disharmony centers on epigastric pain, belching, and acid reflux from rebellious Stomach Qi.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.liver_stomach_disharmony",
@@ -3933,11 +4103,100 @@
       ],
       "treatment_principle_zh": "疏肝和胃",
       "treatment_principle_en": "Course the liver, harmonize the stomach",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR3",
+        "LR14",
+        "PC6",
+        "CV12",
+        "ST36"
+      ],
+      "typical_formulas": [
+        "formula.chai_hu_shu_gan_san"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌苔薄黃",
-      "pulse_zh": "脈弦"
+      "pulse_zh": "脈弦",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Epigastric and hypochondriac distending pain",
+        "Belching and acid regurgitation",
+        "Worse with emotional upset",
+        "Nausea/vomiting"
+      ],
+      "supporting_signs_zh": [
+        "食慾差",
+        "胸悶太息",
+        "抑鬱易怒"
+      ],
+      "supporting_signs_en": [
+        "Poor appetite",
+        "Chest oppression and sighing",
+        "Depression/irritability"
+      ],
+      "tongue_en": "Thin, yellow tongue coating",
+      "pulse_en": "Wiry pulse",
+      "mechanism_zh": "肝失疏泄,橫逆犯胃,胃失和降,胃氣上逆,故見胃脘脅肋脹痛、噯氣吞酸、嘔逆,諸症每隨情志波動而加重。",
+      "mechanism_en": "The Liver's impaired free-flow of Qi invades the Stomach horizontally, disrupting its descending function and causing rebellious Stomach Qi — producing epigastric and hypochondriac pain, belching, acid regurgitation, and nausea, all worsened by emotional stress.",
+      "common_causes_zh": "情志不遂、肝氣鬱結犯胃、飲食不節加重肝胃不和",
+      "common_causes_en": "Unresolved emotional stress, Liver Qi Stagnation invading the Stomach, dietary irregularity aggravating the disharmony",
+      "progression_zh": "多由肝氣鬱結發展而來;鬱久化火可致肝胃鬱熱;胃失和降日久可傷胃陰。",
+      "progression_en": "Commonly develops from Liver Qi Stagnation; prolonged stagnation can transform into Liver-Stomach heat; chronic impairment can injure Stomach Yin.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_spleen_disharmony",
+          "distinguishing_zh": "肝胃不和以胃脘脹痛、噯氣吞酸、嘔逆為主;肝脾不和以腹脹便溏、腸鳴為主。",
+          "distinguishing_en": "Liver-Stomach Disharmony centers on epigastric pain and acid reflux; Liver-Spleen Disharmony centers on abdominal distention and loose stools.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        },
+        {
+          "pattern_id": "pattern.food_stagnation",
+          "distinguishing_zh": "肝胃不和因情志波動而發,兼脅肋脹痛;食滯胃脘因飲食不節而發,以噯腐吞酸、拒按為特徵,無情志誘因。",
+          "distinguishing_en": "Liver-Stomach Disharmony is triggered by emotional stress and includes flank distention; Food Stagnation is triggered by dietary excess with foul belching and no emotional trigger.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.lung_kidney_yin_deficiency",
@@ -4168,11 +4427,87 @@
       ],
       "treatment_principle_zh": "行氣活血，化瘀止痛",
       "treatment_principle_en": "Move qi, invigorate blood, dispel stasis",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "LR3",
+        "SP6",
+        "SP10",
+        "LI4"
+      ],
+      "typical_formulas": [
+        "formula.xue_fu_zhu_yu_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌暗或有瘀點",
-      "pulse_zh": "脈弦澀"
+      "pulse_zh": "脈弦澀",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Both distending and stabbing pain present",
+        "Fixed pain, worse with pressure",
+        "Emotional depression",
+        "Clotted menstrual blood"
+      ],
+      "supporting_signs_zh": [
+        "胸脅脹悶",
+        "痛經",
+        "面色晦暗"
+      ],
+      "supporting_signs_en": [
+        "Chest/flank oppression",
+        "Dysmenorrhea",
+        "Dull, dark complexion"
+      ],
+      "tongue_en": "Dusky tongue, or with stasis spots",
+      "pulse_en": "Wiry, choppy pulse",
+      "mechanism_zh": "氣為血帥,氣滯則血行不暢,日久血行瘀阻,故先見脹痛(氣滯)後見刺痛固定(血瘀),二者互為因果,常同時並見。",
+      "mechanism_en": "Qi commands the movement of Blood; Qi stagnation impairs Blood flow and, over time, produces Blood Stasis — so distending pain (Qi stagnation) and fixed stabbing pain (Blood Stasis) coexist and reinforce each other.",
+      "common_causes_zh": "情志不遂氣滯日久、外傷、久病入絡",
+      "common_causes_en": "Prolonged emotional stress causing Qi stagnation, trauma, chronic illness entering the collaterals",
+      "progression_zh": "多由肝氣鬱結或情志不遂發展而來;瘀阻日久可形成癥積。",
+      "progression_en": "Commonly develops from Liver Qi Stagnation or unresolved emotional stress; prolonged stasis can form abdominal masses.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "氣滯血瘀在肝氣鬱結基礎上進一步出現刺痛固定、舌暗瘀點;肝氣鬱結以脹痛遊走、脈弦為主,無瘀血之象。",
+          "distinguishing_en": "Qi Stagnation with Blood Stasis adds fixed stabbing pain and a dusky tongue with stasis spots to the Liver Qi Stagnation picture; Liver Qi Stagnation alone shows migrating distending pain without stasis signs.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -4186,11 +4521,91 @@
       ],
       "treatment_principle_zh": "益氣養血",
       "treatment_principle_en": "Boost qi and nourish blood",
-      "typical_points": [],
-      "typical_formulas": [],
+      "typical_points": [
+        "CV6",
+        "SP6",
+        "ST36",
+        "BL17",
+        "BL20"
+      ],
+      "typical_formulas": [
+        "formula.ba_zhen_tang",
+        "formula.ren_shen_yang_rong_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡",
-      "pulse_zh": "脈細弱"
+      "pulse_zh": "脈細弱",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Mental fatigue and lack of strength",
+        "Pale or sallow complexion",
+        "Palpitations and insomnia",
+        "Scanty, pale menstruation"
+      ],
+      "supporting_signs_zh": [
+        "氣短聲低",
+        "食慾差、便溏",
+        "自汗"
+      ],
+      "supporting_signs_en": [
+        "Shortness of breath, weak voice",
+        "Poor appetite, loose stools",
+        "Spontaneous sweating"
+      ],
+      "tongue_en": "Pale tongue",
+      "pulse_en": "Thready, weak pulse",
+      "mechanism_zh": "氣血同源,互根互用。脾氣虛弱,生化乏源,或久病失血,氣隨血耗,終致氣血俱虛,臟腑經脈失養,故見神疲乏力、面色淡白、心悸失眠。",
+      "mechanism_en": "Qi and Blood share a common source and mutually generate each other. Spleen Qi weakness impairs Blood production, or chronic blood loss depletes Qi alongside Blood, eventually leaving both deficient and the organs undernourished — producing fatigue, pallor, palpitations, and insomnia.",
+      "common_causes_zh": "脾胃虛弱生化不足、久病失血、思慮勞倦耗傷氣血",
+      "common_causes_en": "Spleen-Stomach weakness impairing production, chronic blood loss, excessive mental/physical strain consuming Qi and Blood",
+      "progression_zh": "多由脾氣虛、心血虛或失血病證發展而來;氣血兩虛日久可累及陰陽,形成陰陽俱虛。",
+      "progression_en": "Commonly develops from Spleen Qi Deficiency, Heart Blood Deficiency, or blood-loss conditions; prolonged Qi-Blood deficiency can extend to Yin-Yang deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_spleen_deficiency",
+          "distinguishing_zh": "氣血兩虛為全身性氣血俱虛,無明確臟腑定位;心脾兩虛病位明確在心脾,兼見心悸失眠與食少便溏並重。",
+          "distinguishing_en": "Qi and Blood Deficiency is a generalized systemic deficiency without a specific organ location; Heart-Spleen Deficiency is specifically located in the Heart and Spleen with equally prominent palpitations/insomnia and poor appetite/loose stools.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "formulas": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.blood_stasis",
@@ -4287,7 +4702,7 @@
         "NCBAHM_2026_CH_Outline",
         "https://cloudtcm.com/pattern/150"
       ],
-      "pattern_family": "blood_level"
+      "pattern_family": "qi_xue_jin_ye"
     },
     {
       "id": "pattern.blood_heat",
@@ -4301,11 +4716,81 @@
       ],
       "treatment_principle_zh": "清熱涼血",
       "treatment_principle_en": "Clear heat, cool the blood",
-      "typical_points": [],
+      "typical_points": [
+        "SP10",
+        "BL17",
+        "LI11"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌紅絳",
-      "pulse_zh": "脈數"
+      "pulse_zh": "脈數",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Bright red bleeding",
+        "Skin rashes/macules",
+        "Early, heavy menstruation",
+        "Irritability and thirst"
+      ],
+      "supporting_signs_zh": [
+        "發熱",
+        "尿色深黃",
+        "較重可神志不清"
+      ],
+      "supporting_signs_en": [
+        "Fever, sometimes high",
+        "Dark yellow urine",
+        "Confusion/delirium may occur in severe cases"
+      ],
+      "tongue_en": "Deep red or purple-red, dry tongue",
+      "pulse_en": "Rapid pulse, may be thready-rapid",
+      "mechanism_zh": "熱入血分,迫血妄行,血溢脈外,故見出血色鮮紅、皮膚斑疹;熱擾心神,故心煩;熱盛動血甚者可見神昏譫語。",
+      "mechanism_en": "Heat entering the Blood level forces Blood to move recklessly outside the vessels, producing bright red bleeding and skin rashes; heat disturbing the Shen produces irritability, and in severe cases can cause confusion/delirium.",
+      "common_causes_zh": "外感熱邪入血分、情志化火迫血、過食辛辣助熱",
+      "common_causes_en": "External heat pathogen penetrating to the Blood level, emotional fire forcing Blood to move, excessive spicy food fueling heat",
+      "progression_zh": "熱盛動血日久可致陰血兩傷;深入營血可見溫病營血分重症。",
+      "progression_en": "Prolonged Blood Heat can injure both Yin and Blood; deeper penetration can present as a severe Ying/Xue-level warm-disease pattern.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.blood_stasis",
+          "distinguishing_zh": "血熱以出血色鮮紅、舌紅絳、脈數為主,屬熱迫血行;血瘀以刺痛固定、舌紫暗、脈澀為主,屬血行不暢,二者病機不同但可相繼出現。",
+          "distinguishing_en": "Blood Heat shows bright red bleeding with a red tongue and rapid pulse — Heat forcing Blood; Blood Stasis shows fixed stabbing pain with a dusky tongue and choppy pulse — impaired Blood flow. Different mechanisms, though one can follow the other.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)"
+        ]
+      }
     },
     {
       "id": "pattern.damp_heat_lower_burner",
@@ -4528,11 +5013,81 @@
       ],
       "treatment_principle_zh": "祛風散寒除濕，通絡止痛",
       "treatment_principle_en": "Dispel wind-cold-damp, unblock the channels",
-      "typical_points": [],
+      "typical_points": [
+        "LI4",
+        "LI11",
+        "GB34",
+        "SP9",
+        "SP6"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌苔白膩",
-      "pulse_zh": "脈弦緊或濡緩"
+      "pulse_zh": "脈弦緊或濡緩",
+      "pattern_family": "channel_bi",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Joint and muscle pain",
+        "Worse with cold, relieved by warmth",
+        "Migrating pain, or fixed heaviness",
+        "Restricted joint movement"
+      ],
+      "supporting_signs_zh": [
+        "肢體重著",
+        "陰雨天加重"
+      ],
+      "supporting_signs_en": [
+        "Heaviness of the limbs",
+        "Worse in damp/rainy weather"
+      ],
+      "tongue_en": "White, greasy tongue coating",
+      "pulse_en": "Wiry-tight or soggy-moderate pulse",
+      "mechanism_zh": "風寒濕三氣雜至,合而為痺,閉阻經絡氣血,故見關節肌肉疼痛;風邪偏勝則痛處遊走,寒邪偏勝則痛劇、遇寒加重,濕邪偏勝則重著、痛處固定。",
+      "mechanism_en": "Wind, Cold, and Dampness combine to obstruct the channels and Qi-Blood flow, producing joint and muscle pain; a predominance of Wind causes migrating pain, Cold causes severe pain worse with cold, and Dampness causes fixed heaviness.",
+      "common_causes_zh": "居處潮濕、氣候驟變、感受風寒濕邪、體虛衛外不固",
+      "common_causes_en": "Damp living conditions, sudden weather change, exposure to Wind-Cold-Damp, weakened defensive Qi",
+      "progression_zh": "痺證日久不癒,可內傳臟腑(五臟痺);風寒濕痺鬱久可化熱,轉為熱痺。",
+      "progression_en": "Prolonged, unresolved Bi can penetrate to the internal organs (organ Bi); it can also transform into heat, becoming Heat Bi.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat_bi",
+          "distinguishing_zh": "風寒濕痺關節不紅不熱、遇寒加重、苔白膩,屬寒濕;熱痺關節紅腫熱痛、得涼則舒、苔黃,屬熱。",
+          "distinguishing_en": "Wind-Cold-Damp Bi shows joints that are neither red nor hot, worse with cold, with a white greasy coating; Heat Bi shows red, swollen, hot joints relieved by cold, with a yellow coating.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.heat_bi",
@@ -4546,11 +5101,80 @@
       ],
       "treatment_principle_zh": "清熱通絡，祛風除濕",
       "treatment_principle_en": "Clear heat, unblock the channels, dispel wind-damp",
-      "typical_points": [],
+      "typical_points": [
+        "LI11",
+        "LI4",
+        "SP10",
+        "GB34"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃",
-      "pulse_zh": "脈滑數"
+      "pulse_zh": "脈滑數",
+      "pattern_family": "channel_bi",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Red, swollen, hot, painful joints",
+        "Relieved by cold",
+        "Fever and thirst",
+        "Restricted movement"
+      ],
+      "supporting_signs_zh": [
+        "口渴",
+        "小便黃"
+      ],
+      "supporting_signs_en": [
+        "Thirst",
+        "Dark yellow urine may accompany"
+      ],
+      "tongue_en": "Red tongue with yellow coating",
+      "pulse_en": "Slippery, rapid pulse",
+      "mechanism_zh": "風寒濕痺鬱久化熱,或素體陽盛,感邪後從熱化,熱壅經絡關節,氣血壅滯,故見關節紅腫熱痛、得涼則舒。",
+      "mechanism_en": "Wind-Cold-Damp Bi transforming into heat over time, or a constitutionally Yang-excess body transforming an invading pathogen into heat, obstructs the channels and joints with heat — producing red, swollen, hot, painful joints relieved by cold.",
+      "common_causes_zh": "風寒濕痺鬱久化熱、素體陽盛或陰虛內熱、外感熱邪",
+      "common_causes_en": "Prolonged Wind-Cold-Damp Bi transforming into heat, constitutional Yang excess or Yin-deficient internal heat, external heat invasion",
+      "progression_zh": "多由風寒濕痺化熱而來;熱毒熾盛可致關節變形之頑痺重證。",
+      "progression_en": "Commonly develops from Wind-Cold-Damp Bi transforming into heat; intense heat-toxin can progress to a severe, deforming chronic Bi.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_damp_bi",
+          "distinguishing_zh": "熱痺關節紅腫熱痛、得涼則舒、苔黃,屬熱;風寒濕痺關節不紅不熱、遇寒加重、苔白膩,屬寒濕。",
+          "distinguishing_en": "Heat Bi shows red, hot, swollen joints relieved by cold with a yellow coating; Wind-Cold-Damp Bi shows joints that are not red or hot, worse with cold, with a white greasy coating.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.chong_ren_disharmony",
@@ -4564,11 +5188,79 @@
       ],
       "treatment_principle_zh": "調理衝任",
       "treatment_principle_en": "Regulate the Chong and Ren vessels",
-      "typical_points": [],
+      "typical_points": [
+        "CV4",
+        "CV6",
+        "SP6",
+        "SP10"
+      ],
       "typical_formulas": [],
       "review_status": "draft",
       "tongue_zh": "隨兼證而異",
-      "pulse_zh": "脈細或弦"
+      "pulse_zh": "脈細或弦",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_en": [
+        "Irregular menstrual cycle",
+        "Abnormal menstrual volume",
+        "Infertility",
+        "Lower-abdominal symptoms varying with the menstrual cycle"
+      ],
+      "supporting_signs_zh": [
+        "隨兼證而異",
+        "情志或臟腑失調誘發"
+      ],
+      "supporting_signs_en": [
+        "Presentation varies with the underlying concurrent pattern",
+        "Often triggered by emotional or organ-level disharmony"
+      ],
+      "tongue_en": "Varies with the underlying concurrent pattern",
+      "pulse_en": "Thready or wiry pulse",
+      "mechanism_zh": "衝為血海,任主胞胎,衝任二脈與肝、腎、脾關係密切。臟腑氣血失調(肝鬱、脾虛、腎虛等)累及衝任,使其蓄溢失常,故見月經週期紊亂、經量異常、不孕等。此為一組繼發性病機,須辨明背後臟腑根本證候。",
+      "mechanism_en": "The Chong vessel is the 'Sea of Blood' and the Ren vessel governs the uterus/fetus; both are closely tied to the Liver, Kidney, and Spleen. Disharmony of these organs' Qi-Blood (Liver stagnation, Spleen deficiency, Kidney deficiency) disturbs the Chong-Ren vessels' storage and release, producing irregular cycles, abnormal flow, and infertility. This is a secondary mechanism — the underlying organ-level Pattern must be identified.",
+      "common_causes_zh": "肝鬱、脾腎虧虛、多產房勞、情志失調",
+      "common_causes_en": "Liver stagnation, Spleen/Kidney deficiency, multiple pregnancies or excessive sexual activity, emotional disturbance",
+      "progression_zh": "常繼發於肝氣鬱結、脾腎兩虛、氣血兩虛等證;失治日久可致崩漏或不孕。",
+      "progression_en": "Commonly secondary to Liver Qi Stagnation, Spleen-Kidney deficiency, or Qi-Blood deficiency; if untreated it can lead to abnormal uterine bleeding or infertility.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_blood_deficiency",
+          "distinguishing_zh": "衝任失調是月經/生殖系統的功能性病機描述,須結合具體臟腑證候(如氣血兩虛、腎虛)辨證;不應作為獨立終點診斷。",
+          "distinguishing_en": "Chong-Ren Disharmony describes a functional reproductive-system mechanism that must be diagnosed together with the underlying organ pattern (e.g. Qi-Blood Deficiency, Kidney Deficiency) — it should not stand alone as a final diagnosis.",
+          "source": "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        }
+      ],
+      "sources": [
+        "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "supporting_signs": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "tongue": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "pulse": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ],
+        "points": [
+          "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+        ]
+      }
     },
     {
       "id": "pattern.heat_lin",
