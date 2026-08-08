@@ -5854,43 +5854,211 @@
     "pinyin": "Huatuojiaji",
     "meridian": "Extra Points / 經外奇穴",
     "region": "背部 / Back Region",
-    "location": "背腰部，第1胸椎至第5腰椎棘突下，旁開0.5寸，共34穴。",
-    "locationEn": "0.5 cun lateral to spinous processes from T1 to L5, 34 points in total.",
-    "techniqueNotes": "直刺0.5~1.0寸，或斜刺1.0~1.5寸。可灸。\nPerpendicular 0.5-1.0 cun, or oblique 1.0-1.5 cun.",
-    "functions": "調和臟腑，通經活絡，壯腰健脊",
-    "functionsEn": "Harmonizes Zang-Fu; Unblocks channels; Strengthens spine",
+    "location": "經典組位於背腰部，第1胸椎至第5腰椎各棘突下緣旁開0.5寸，左右各17穴，共34穴。課件與 eLotus 均固定旁開0.5寸；American Dragon 主列旁開0.5～1寸，並另述臨床可延伸至 C1～C7。頸椎延伸不計入 EX-B2 經典34穴。",
+    "locationEn": "The classical set consists of 17 bilateral pairs (34 points), 0.5 cun lateral to the lower border of each spinous process from T1 through L5. The curriculum and eLotus fix the lateral distance at 0.5 cun. American Dragon gives 0.5-1 cun and also describes a clinical extension from C1 through C7; that cervical extension is not part of the classical 34-point EX-B2 set.",
+    "cunMeasurement": "先逐節確認 T1～L5 棘突及其下緣，再於同一水平向旁開0.5寸取穴；共17個椎體水平、左右成對。AD 的0.5～1寸與頸椎 C1～C7 屬來源變體，不可無標示併入課件／eLotus 的經典定位。",
+    "anatomyZh": "此為跨越胸椎與腰椎的系列穴，不能用一個深度代表全部節段。四個核心內容層未提供各椎體水平的皮膚、皮下、豎脊肌／多裂肌、椎板、肋骨、胸膜、椎間孔或椎管距離。2024年華佗夾脊針刺後血氣胸病例證明胸段可發生危及生命的胸膜／肺部併發症；胸部CT研究亦顯示皮膚至肺距離受解剖水平、BMI、年齡與體位影響，研究者主張以『危險深度』取代單一『安全深度』概念。該CT研究不是 EX-B2 專穴測量，僅作區域風險證據。",
+    "anatomyEn": "This is a multilevel series spanning thoracic and lumbar regions; one depth cannot represent every segment. The four core content layers do not provide level-specific distances through skin, subcutaneous tissue, erector spinae/multifidus, lamina, ribs, pleura, intervertebral foramina, or spinal canal. A 2024 case report documents life-threatening hemopneumothorax after thoracic Huatuo-Jiaji needling. A thoracic CT study also found that skin-to-lung distance varies with anatomical level, BMI, age, and positioning, and recommended replacing a single 'safe depth' concept with individualized 'dangerous depth.' That CT study was regional rather than EX-B2-specific and is used only as supporting safety evidence.",
+    "techniqueNotes": "課件：直刺或略向脊柱斜刺；胸段0.5～1.0寸，腰段1～2寸，另列皮下刺2～3寸；頁面另有括號／紅字數值但層級關係不清，本卡不自行解讀。eLotus：胸段直刺0.5～1.0寸，腰段直刺1.0～1.5寸，可灸。AD：常規表述包括略向脊柱直斜刺0.5～1寸，以及頸胸0.5～1寸、腰段1～1.5寸；另列達神經根或棘間韌帶方向的較深技法，因缺少影像、逐層確認、體型調整與停止規則，只保留為進階來源記錄，不納入一般可執行刺法。\nCurriculum: perpendicular or slightly oblique toward the spine; thoracic 0.5-1.0 cun, lumbar 1-2 cun, and a separate subcutaneous method of 2-3 cun. Additional bracketed/red values on the page have unclear hierarchy and are not interpreted here. eLotus: perpendicular thoracic 0.5-1.0 cun and lumbar 1.0-1.5 cun; moxibustion applicable. AD includes routine spine-directed 0.5-1-cun wording and cervical/thoracic 0.5-1 cun with lumbar 1-1.5 cun. Its deeper nerve-root and interspinous-ligament approaches lack imaging, layer confirmation, body-habitus adjustment, and stopping rules, so they are retained only as advanced source records and not as generally executable instructions.",
+    "acumethodZh": "一般資料層以課件與 eLotus 的分區值呈現：胸段直刺0.5～1.0寸；腰段 eLotus 為1.0～1.5寸、課件另列1～2寸；可略向脊柱斜刺。課件另列皮下刺2～3寸。AD 的較深神經根／韌帶技法不得從來源文字直接轉成一般操作；任何方向、深度與節段必須成組保存。",
+    "acumethodEn": "The general data layer follows the curriculum/eLotus regional values: thoracic perpendicular 0.5-1.0 cun; lumbar 1.0-1.5 cun in eLotus, with the curriculum separately listing 1-2 cun; a slight oblique direction toward the spine may be used. The curriculum also lists subcutaneous insertion 2-3 cun. AD's deeper nerve-root/ligament techniques are not converted directly into general instructions. Segment, direction, and depth must remain linked.",
+    "moxaZh": "eLotus 與 American Dragon 均只註明可灸，未提供灸法種類、壯數／分鐘數、艾條距離、脊旁皮膚保護、療程頻率、熱傷害停止規則或特殊族群條文；課件頁亦未給灸量，因此不補劑量。",
+    "moxaEn": "eLotus and American Dragon only state that moxibustion is applicable. They provide no moxa type, cone/minute dose, stick distance, paraspinal skin protection, treatment frequency, thermal-injury stopping rule, or special-population protocol; the curriculum page also gives no moxa dose, so none is added.",
+    "functions": "調和五臟六腑；通經活絡止痛；壯腰健脊",
+    "functionsEn": "Regulates and harmonizes the Five Zang and Six Fu; Unblocks the channels and relieves pain; Strengthens the lumbar region and spine",
+    "functionsZhList": [
+      "調和五臟六腑（課件、eLotus、AD 明列）",
+      "通經活絡止痛（既有表述，依局部疼痛、僵硬及四肢主治整理）",
+      "壯腰健脊（既有表述，依腰背及脊柱主治整理）"
+    ],
+    "functionsEnList": [
+      "Regulates and harmonizes the Five Zang and Six Fu (explicit in the curriculum, eLotus, and AD)",
+      "Unblocks the channels and relieves pain (legacy wording organized from local pain, stiffness, and limb indications)",
+      "Strengthens the lumbar region and spine (legacy wording organized from lumbar-back and spinal indications)"
+    ],
+    "pointIdentityZh": [
+      "T1～L5 棘突下旁開0.5寸的17對／34個經典夾脊穴",
+      "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴重點清單",
+      "本庫與 eLotus 使用 EX-B2／Ex-B2；課件與 AD 使用 M-BW-35",
+      "AD 的 C1～C7 頸夾脊為臨床延伸，不屬經典34穴"
+    ],
+    "pointIdentityEn": [
+      "The classical 17 bilateral pairs/34 Jiaji points, 0.5 cun lateral to T1-L5 spinous-process lower borders",
+      "Listed in the NCBAHM 2026 ACPL Appendix A priority extra-point list",
+      "The database and eLotus use EX-B2/Ex-B2; the curriculum and AD use M-BW-35",
+      "AD's C1-C7 cervical Jiaji are a clinical extension, not part of the classical 34-point set"
+    ],
+    "exam_star": 0,
+    "exam_importance": "NCBAHM Appendix A 明列 Huatuojiaji。應試核心：T1～L5、旁開0.5寸、左右17對共34穴、調和五臟六腑；並分清課件與 eLotus／AD 的節段主治邊界不同，胸段另有氣胸／血氣胸風險。",
+    "exam_importance_en": "Huatuojiaji is named in NCBAHM Appendix A. Board-focused recall: T1-L5, 0.5 cun lateral, 17 bilateral pairs/34 points, and regulation of the Five Zang and Six Fu. Keep the curriculum's segment boundaries distinct from eLotus/AD mappings, and recognize thoracic pneumothorax/hemopneumothorax risk.",
+    "exam_pearl": "先背『T1 到 L5，0.5寸，17對34穴』；臟腑節段表不是四源完全一致。胸段與腰段深度不可互換，AD 頸椎延伸也不是經典34穴。",
+    "exam_pearl_en": "First memorize 'T1 through L5, 0.5 cun, 17 pairs/34 points.' The organ-segment tables are not identical across sources. Thoracic and lumbar depths are not interchangeable, and AD's cervical extension is not part of the classical 34.",
     "patterns": [
       "胸腹內臟疾患",
       "腰背痛",
       "脊柱疾病",
-      "神經官能症"
+      "神經官能症",
+      "局部疼痛與僵硬",
+      "四肢疼痛或痿證",
+      "帶狀疱疹（取受累神經節段）"
     ],
     "patternsEn": [
-      "Internal organ disorders",
-      "Low back pain",
+      "Thoracic or abdominal internal-organ disorders",
+      "Low-back pain",
       "Spinal disorders",
-      "Neurosis"
+      "Neurosis (retained legacy term; not explicitly listed on the exact pages)",
+      "Local pain and stiffness",
+      "Limb pain or atrophy disorder",
+      "Herpes zoster (at the affected nerve segment)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "調和臟腑",
+      "通經止痛",
+      "壯腰健脊"
+    ],
+    "action_tags_en": [
+      "Harmonize the Zang-Fu",
+      "Unblock the Channels and Relieve Pain",
+      "Strengthen the Lumbar Region and Spine"
+    ],
+    "disease_tags_zh": [
+      "內臟疾患",
+      "腰背痛",
+      "脊柱疾病",
+      "帶狀疱疹"
+    ],
+    "disease_tags_en": [
+      "Internal-organ Disorders",
+      "Low-back Pain",
+      "Spinal Disorders",
+      "Herpes Zoster"
+    ],
+    "cautions": "【分區刺法】胸段與腰段必須分開：課件／eLotus 胸段0.5～1.0寸；eLotus 腰段1.0～1.5寸，課件另列1～2寸。不可把腰段上限套到胸段。【胸膜風險】2024年病例報告記錄胸段華佗夾脊針刺後危及生命的血氣胸；不可只以『靠近脊柱』或單一寸數宣稱安全。【個體差異】胸部CT研究顯示皮膚至肺距離隨解剖水平、BMI、年齡與體位改變，且最短測值僅0.9 cm；該數字不是 EX-B2 的處方深度，而是反對固定通用安全深度的區域證據。【AD進階技法】AD 所列達神經根或棘間韌帶的較深刺法缺少影像定位、各節段解剖邊界、骨性接觸、體型調整、針長與停止規則，不納入一般可執行方案。【術後警訊】胸段針刺後若出現胸痛、呼吸困難、乾咳、心搏加速、發紺、頭暈或症狀延遲出現，須立即按疑似胸膜／肺損傷轉送評估；不能因初期症狀輕微而排除。【來源缺口】四源未提供本穴孕期、兒童、抗凝／出血風險、脊柱術後、感染、嚴重骨質疏鬆或其他高風險族群的點特異方案；來源沉默不等於安全許可。",
+    "cautionsEn": [
+      "Regional technique must remain separate: the curriculum/eLotus give thoracic 0.5-1.0 cun; eLotus gives lumbar 1.0-1.5 cun, while the curriculum separately lists 1-2 cun. A lumbar upper limit must never be transferred to the thoracic region.",
+      "Pleural risk: a 2024 case report documents life-threatening hemopneumothorax after thoracic Huatuo-Jiaji acupuncture. Neither proximity to the spine nor a single cun value proves safety.",
+      "Individual variation: a thoracic CT study found that skin-to-lung distance changes with anatomical level, BMI, age, and positioning, with a shortest measured distance of 0.9 cm. That value is not an EX-B2 prescription depth; it is regional evidence against a fixed universal safe depth.",
+      "AD advanced techniques: deeper nerve-root or interspinous-ligament approaches lack imaging guidance, level-specific anatomical boundaries, bony-contact rules, body-habitus adjustment, needle-length selection, and stopping criteria, so they are not included as generally executable instructions.",
+      "Post-needling warning signs: chest pain, dyspnea, dry cough, tachycardia, cyanosis, dizziness, or delayed symptoms after thoracic needling require urgent evaluation for pleural/lung injury; mild early symptoms do not exclude it.",
+      "Source gap: the four layers provide no point-specific protocol for pregnancy, children, anticoagulation/bleeding risk, prior spinal surgery, infection, severe osteoporosis, or other high-risk groups. Source silence is not permission."
+    ],
+    "acuTags": [
+      "背腰部",
+      "34穴",
+      "節段取穴",
+      "氣胸風險"
+    ],
+    "combinePointsZh": "eLotus 與 American Dragon 精確頁均未列固定配穴。兩頁以『按受累椎體／神經節段選取相應夾脊穴』作臨床選穴框架；這是節段選穴，不是配穴組合。課件另列帶狀疱疹取受累神經節段。",
+    "combinePointsEn": "Neither the eLotus nor American Dragon exact page lists fixed point combinations. Both frame treatment by selecting Jiaji points at the involved vertebral/nerve segment; this is segmental point selection, not a combination prescription. The curriculum likewise specifies the affected nerve segment for herpes zoster.",
+    "clinical_pearls": "四源共同核心是 T1～L5 的34穴與調和五臟六腑。課件節段表為 T1～T3 肺／上肢、T4～T6 心、T7～T9 肝膽、T10～T12 脾胃、L1～L2 腎、L3～L5 膀胱／大小腸／子宮／下肢；eLotus／AD 則為 T1～T4 肺／上肢、T4～T7 心／胸、T7～T10 肝膽／腹、T10～T12 脾胃／腹，腰段相近。兩套分界重疊且不同，卡片並列保存，不製造假共識。AD 另補頸椎延伸、較廣區域對應與進階刺法；均標為來源變體。",
+    "clinical_pearls_en": "The shared core is the 34-point T1-L5 set and regulation of the Five Zang and Six Fu. The curriculum maps T1-T3 to Lung/upper limbs, T4-T6 to Heart, T7-T9 to Liver/Gallbladder, T10-T12 to Spleen/Stomach, L1-L2 to Kidney, and L3-L5 to Bladder/intestines/uterus/lower limbs. eLotus/AD instead use T1-T4 for Lung/upper limbs, T4-T7 for Heart/chest, T7-T10 for Liver/Gallbladder/abdomen, and T10-T12 for Spleen/Stomach/abdomen, with similar lumbar mappings. Because boundaries overlap and differ, both tables are retained rather than presented as false consensus. AD's cervical extension, broader regional mapping, and advanced techniques remain source-labeled variants.",
+    "nameIntroZh": "華佗夾脊又稱夾脊。課件使用 M-BW-35，英名列 Hua Tuo's Paravertebral Points 及 Hair Clip；eLotus 另列 Hua Tuo's Back Filling Points；AD 另列 Hua Tuo Bilateral Spinal Points。各英名保留為來源別名，不改動主名 Huatuojiaji。",
+    "nameIntroEn": "Huatuojiaji is also called Jiaji. The curriculum uses M-BW-35 and lists Hua Tuo's Paravertebral Points and Hair Clip. eLotus additionally gives Hua Tuo's Back Filling Points, while AD lists Hua Tuo Bilateral Spinal Points. These are retained as source-specific aliases without changing the primary name Huatuojiaji.",
+    "evidence": "四層查核：NCBAHM 2026 ACPL Appendix A 明列 Huatuojiaji；curriculum/acupoints/Techniques 3 points.pdf p.6 提供 M-BW-35 身分、T1～L5旁開0.5寸34穴、胸／腰／皮下刺法、調和五臟六腑與節段主治，Quizzes.md 再確認17對34穴。eLotus Ex-B2 精確頁提供相同核心定位、胸腰分區刺深、可灸及其節段表。American Dragon 拼音索引與 M-BW-35 精確頁提供定位變體、頸椎臨床延伸、多種刺法、臟腑／區域節段表、別名與歷史說明；禁忌欄無內容，不視為安全證明。補充安全層採2024華佗夾脊血氣胸病例與胸部CT危險深度研究；後者不是本穴專屬測量。CloudTCM 未找到可核讀的華佗夾脊專頁。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2",
+      "https://www.americandragon.com/Points/Huatuojiaji.html",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11282970/",
+      "https://www.jstage.jst.go.jp/article/jjsam/61/4/61_4_411/_article/-char/en"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 華佗夾脊 EX-B2 (eLotus CORE)",
-        "labelEn": "Extra Point · Huatuojiaji EX-B2 (eLotus CORE)",
+        "labelZh": "eLotus · 華佗夾脊 Ex-B2 精確頁",
+        "labelEn": "eLotus · Exact Huatuojiaji Ex-B2 Page",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 華佗夾脊 M-BW-35 精確頁",
+        "labelEn": "American Dragon · Exact Huatuojiaji M-BW-35 Page",
+        "url": "https://www.americandragon.com/Points/Huatuojiaji.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "病例報告 · 華佗夾脊針刺後血氣胸",
+        "labelEn": "Case Report · Hemopneumothorax after Huatuo-Jiaji Acupuncture",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11282970/",
+        "source": "Journal of Cardiothoracic Surgery / PubMed Central; direct open encountered reCAPTCHA in this review"
       }
     ],
     "x": 182,
     "y": 240,
-    "review_status": "sourced_checked",
-    "needling": "直刺或斜刺 0.5-1.0 寸。",
-    "needlingEn": "Perpendicular or oblique insertion 0.5-1.0 cun.",
-    "cautions": "胸段脊旁穴位不可向外斜刺過深，以免傷及肺臟。",
-    "cautionsEn": "Do not insert too deep laterally in thoracic region to avoid pneumothorax.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Huatuojiaji listed in the named extra-point priority list"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.pdf p.6: M-BW-35, 34-point location, regional needling values, Five Zang/Six Fu action, segment indications, and herpes-zoster segment selection",
+        "curriculum/acupoints/Techniques 3 Quizzes.md: classic location 0.5 cun bilateral from T1 through L5, 17 pairs/34 points"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Huatuojiaji present in the pinyin index and linked to the exact page on 2026-08-08",
+        "https://www.americandragon.com/Points/Huatuojiaji.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.pdf p.6 and Techniques 3 Quizzes.md: 0.5 cun lateral to lower borders of T1-L5 spinous processes, bilateral, 34 points",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2: 0.5 cun lateral, T1-L5, 34 points",
+        "https://www.americandragon.com/Points/Huatuojiaji.html: 0.5-1 cun variants and a separately labeled C1-C7 clinical extension"
+      ],
+      "anatomy": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11282970/: point-specific case report of life-threatening hemopneumothorax after thoracic Huatuo-Jiaji acupuncture",
+        "https://www.jstage.jst.go.jp/article/jjsam/61/4/61_4_411/_article/-char/en: regional thoracic CT study; skin-to-lung distance varied by anatomical level, BMI, age, and positioning; not EX-B2-specific",
+        "source-gap note: no core source supplies level-specific layered anatomy, pleural/spinal-canal distances, or imaging/palpation boundaries for all T1-L5 points"
+      ],
+      "technique": [
+        "curriculum/acupoints/Techniques 3 points.pdf p.6: perpendicular or slightly oblique toward spine; chest 0.5-1.0 cun, lumbar 1-2 cun, subcutaneous 2-3 cun; additional bracket/red-number hierarchy unresolved and not interpreted",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2: thoracic perpendicular 0.5-1.0 cun; lumbar perpendicular 1.0-1.5 cun",
+        "https://www.americandragon.com/Points/Huatuojiaji.html: routine and advanced technique variants; advanced nerve-root/interspinous-ligament approaches retained as non-general source notes due missing execution safeguards"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2: moxibustion applicable, no method or dose",
+        "https://www.americandragon.com/Points/Huatuojiaji.html: moxibustion applicable, no method or dose",
+        "source-gap note: no moxa type, cone/minute dose, heat distance, skin protection, frequency, stopping rule, or special-population protocol"
+      ],
+      "functions": [
+        "curriculum/acupoints/Techniques 3 points.pdf p.6: regulates the Five Zang and Six Fu",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2 and https://www.americandragon.com/Points/Huatuojiaji.html: regulate and harmonize the Five Zang and Six Fu",
+        "legacy wording retained as indication-derived: unblocks channels/relieves pain; strengthens lumbar region/spine"
+      ],
+      "indications": [
+        "curriculum/acupoints/Techniques 3 points.pdf p.6: T1-T3 Lung/upper limbs; T4-T6 Heart; T7-T9 Liver/Gallbladder; T10-T12 Stomach/Spleen; L1-L2 Kidneys; L3-L5 Bladder/intestines/uterus/lower limbs; herpes zoster at affected nerve segment",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2: T1-T4 Lung/upper limbs; T4-T7 Heart/chest; T7-T10 Liver/Gallbladder/abdomen; T10-T12 Stomach/Spleen/abdomen; L1-L2 Kidneys/lower limbs; L3-L5 Bladder/intestines/uterus/lower limbs; local pain/stiffness",
+        "https://www.americandragon.com/Points/Huatuojiaji.html: segmental and broader regional mappings, local nerve pain/stiffness, internal-organ/spine/adjacent tissue/extremity disorders, and atrophy disorder",
+        "unverified legacy wording retained: 神經官能症 / neurosis"
+      ],
+      "combinations": [
+        "source-gap note: no fixed combinations listed on the eLotus or American Dragon exact page",
+        "segmental selection is retained as a selection principle rather than mislabeled as a combination prescription"
+      ],
+      "cautions": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11282970/: thoracic Huatuo-Jiaji hemopneumothorax case and delayed/serious complication warning",
+        "https://www.jstage.jst.go.jp/article/jjsam/61/4/61_4_411/_article/-char/en: regional thoracic dangerous-depth variability; shortest observed skin-to-lung distance 0.9 cm is not an EX-B2 needling prescription",
+        "source-gap note: AD contraindications field is blank; no point-specific pregnancy, pediatric, anticoagulation, prior-spine-surgery, osteoporosis, infection, needle-length, or stopping protocol in the four core layers",
+        "source silence must not be interpreted as absence of risk"
+      ],
+      "nomenclature": [
+        "database immutable code: EX-B2 Huatuojiaji",
+        "curriculum/acupoints/Techniques 3 points.pdf p.6: M-BW-35; Hua Tuo's Paravertebral Points; Hair Clip",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/huatuojiaji-ex-b2: Ex-B2; Hua Tuo's Paravertebral Points; Hua Tuo's Back Filling Points; alias Jiaji",
+        "https://www.americandragon.com/Points/Huatuojiaji.html: M-BW-35; Hua Tuo Bilateral Spinal Points and Hua Tuo's Back-Filling Points"
+      ],
+      "link_check": [
+        "2026-08-08 live page opened: eLotus exact Huatuojiaji Ex-B2 page",
+        "2026-08-08 live page opened: American Dragon exact Huatuojiaji M-BW-35 page",
+        "2026-08-08 live page opened and searched: American Dragon pinyin index; Huatuojiaji entry present",
+        "2026-08-08 PubMed Central exact URL encountered a reCAPTCHA interstitial; indexed article content and citation were readable",
+        "2026-08-08 live page opened: J-STAGE thoracic CT study",
+        "2026-08-08 CloudTCM exact-name search found no readable dedicated Huatuojiaji page"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "胸段直刺0.5～1.0寸；腰段依 eLotus 直刺1.0～1.5寸，課件另列1～2寸；亦可略向脊柱斜刺。課件另列皮下刺2～3寸。AD 的深達神經根／韌帶技法因缺少安全執行條件，只作進階來源記錄，不納入一般方案。",
+    "needlingEn": "Thoracic perpendicular insertion 0.5-1.0 cun; lumbar perpendicular insertion 1.0-1.5 cun in eLotus, with the curriculum separately listing 1-2 cun; a slight oblique direction toward the spine may also be used. The curriculum separately lists subcutaneous insertion 2-3 cun. AD's deeper nerve-root/ligament methods lack sufficient execution safeguards and remain advanced source notes rather than general instructions.",
     "id": "ex.b2"
   },
   {
