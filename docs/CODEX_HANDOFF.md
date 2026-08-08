@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B6 腰宜四層來源、深斜刺分層與 L4 解剖缺口修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `09b6f4b` (`feat(acupoints): refine Yaoyi source safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; unrelated JS, Pattern reports, and `curriculum/conditions/*` archive excluded.
+- **Four Layers**: Yaoyi is absent from NCBAHM Appendix A and no dedicated local course entry was found. Exact eLotus Ex-B6 was opened; American Dragon's pinyin index has no Yaoyi/Yao Yi and the guessed detail URL was unreadable, so no AD detail page was invented. Encyclopedia of China confirms EX-B6; generic CloudTCM was removed.
+- **Content / Safety**: eLotus supplies L4/3-cun location, Suitable for the Back, lumbar soft-tissue/spasm and gynecologic indications, regulates Qi/harmonizes Middle Jiao, perpendicular 1–1.2 cun, spine-directed 15°/2.5–3 cun, and 15–20-minute moxa. The deep-oblique method remains a high-risk source variant because no layered anatomy, needle length, habitus correction, endpoint, or stopping rule is given. Regional L4 MRI variability is clearly non-point-specific; legacy shallower depths/actions/lower-abdominal pain remain visible as unverified.
+- **Measured Counts**: strict/four-source `32/72 → 33/72`; issues `40/72 → 39/72`; generic Cloud URL `13/72 → 12/72`; measurable/source/mojibake gaps `0/72`.
+- **Validation**: point/all extra validators, `build-data`, `validate-data` (947), `validate-interactions`, `validate-point-ids` (925), `validate-content-junk`, `node --check app.js`, EX-B6 runtime assertions, and task-file `git diff --check` passed.
+- **Next**: EX-B7 腰眼 (Yaoyan); Board-listed and AD-indexed, requiring exact-page reconciliation of L4/3.5-cun location, moxa, lumbar-organ anatomy, and legacy technique.
+
 ## [2026-08-08] Codex Handoff — EX-B5 下極俞／下志室同位異名與椎管安全修整
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `8202f48` (`feat(acupoints): reconcile Xiajishu identity`).

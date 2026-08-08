@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B6 腰宜四層來源、深斜刺分層與 L4 解剖缺口修整
+
+- **做了什麼**：整合 NCBAHM／課件缺口、eLotus Ex-B6、AD 拼音索引缺頁、中國大百科 EX-B6 代碼與 L4 區域 MRI；補齊英文名、定位、功效／主治、成對標籤、針灸法、安全、考點與逐欄來源，移除泛用 Cloud 目錄。
+- **數字 before→after**：嚴格模板／四源稽核 `32/72 → 33/72`；待修 `40/72 → 39/72`；泛用 Cloud URL `13/72 → 12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：eLotus 直刺1～1.2寸與15°向脊柱斜刺2.5～3寸分列；深斜刺因缺逐層解剖、針長、體型修正、終點與停止規則，只作高風險來源變體。L4 MRI 只作非專穴個體差異警示；舊卡較淺深度、疏經通絡／壯腰補腎與小腹痛保留並標未核實。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B6 runtime assertions 與 task-file diff 檢查均通過；內容 commit `09b6f4b`。
+- **已知未解／下一步**：39張待修、12張泛用 Cloud URL；下一張 EX-B7 腰眼。跨線 JS、Pattern 與 `curriculum/conditions/*` 未納入。
+
 # 2026-08-08 Codex — EX-B5 下極俞／下志室同位異名與椎管安全修整
 
 - **做了什麼**：保留本庫下極俞 Xiajishu `EX-B5`／`ex.b5`，明列 WHO／eLotus 下志室 Xiazhishi *Ex-B5 及 eLotus 古籍 Xiajiyu Ex-B13 的同位異名衝突；AD 三拼音均無專頁，移除泛用 Cloud 目錄。
