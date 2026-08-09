@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-UE3 中泉四源、AD 錯鏈與急症邊界精修
+
+- **做了什麼**：只精修 EX-UE3 中泉；整合 Board／課件缺口、eLotus Ex-UE3、AD 索引錯鏈稽核及 AHA／NHLBI／NHS 安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴缺口、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四來源稽核 `41/72 → 42/72`；待修 `31/72 → 30/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口維持 `0/72`。
+- **來源與安全**：AD 的 Zhongchuan 索引項實際錯鏈至 Ganrexue N-BW-8，明列 source gap、不猜網址。舊放血與關節消毒警語降為 unsupported；胸痛／心絞痛、嚴重氣喘、咯血移出 disease tags，只保留來源陳述與急症邊界。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、54欄 canonical/runtime parity、`git diff --check` 均通過；內容 commit `331c075`。
+- **已知未解／下一步**：AD 無可用中泉專頁；四層未提供放血、腕背深層解剖、孕期／兒童／凝血風險與灸量方案。下一張 EX-UE4 中魁；原 dirty 草稿 worktree 與 Pattern／Condition 工作未納入。
+
 # 2026-08-08 Codex — EX-UE2 二白四源、刺深分歧與 AD 配穴表精修
 
 - **做了什麼**：只精修 EX-UE2 二白；整合 Board 明列、課件缺口、eLotus Ex-UE2、AD M-UE-29 與 NIDDK 便血安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴、考點、安全與逐欄來源。

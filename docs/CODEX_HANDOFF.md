@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-UE3 中泉（Zhongquan）AD 錯鏈與胸肺急症邊界
+
+- **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `331c075` (`feat(acupoints): refine Zhongquan extra point`)；未觸碰原 dirty 經外奇穴草稿 worktree、Pattern、Condition 或 `curriculum/conditions/*`。
+- **Four Layers / Exact Links**: NCBAHM Appendix A 未明列 Zhongquan，本地課件無專條。eLotus Ex-UE3、AD 拼音索引、AHA 心肌梗塞警訊、NHLBI 氣喘發作與 NHS 咯血精確頁均於本 session 開啟；四個顯示連結均實際驗證，無 generic CloudTCM。
+- **AD Source Gap / Reconciliation**: 保留穩定 `EX-UE3`／`ex.ue3`／Zhongquan。AD 索引沒有 Zhongquan，只列近似 `Zhongchuan`；實際點擊卻進入另一穴 `Ganrexue N-BW-8` 的空白頁。錯鏈未作中泉來源、未顯示、未猜 URL。eLotus 完整支持 LI5 與 TE4 間定位、功效、七項主治、直刺0.3～0.5寸與可灸。
+- **Safety / Legacy**: 舊點刺出血與關節消毒文字保留但降為 unsupported legacy；無放血、腕背深層解剖、孕期、兒童、凝血風險或灸量方案。胸痛／心絞痛、嚴重氣喘與咯血保留來源陳述，但移出 disease tags 並分別接 AHA、NHLBI、NHS 急症邊界，絕不當作穴位已驗證療效。
+- **Counts / Validation / Next**: strict/four-source `41/72 → 42/72`；issues `31/72 → 30/72`；generic Cloud `9/72`；measurable/source/mojibake gaps `0/72`。extra audit、build、947 runtime、interactions、925 point IDs、content-junk、app syntax、54欄 canonical/runtime parity 與 diff check 均通過。下一張 `EX-UE4 中魁 Zhongkui`。
+
 ## [2026-08-08] Codex Handoff — EX-UE2 二白（Erbai）Board 考點、刺深分歧與 AD 配穴表校正
 
 - **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `038a7e1` (`feat(acupoints): refine Erbai extra point`)；未觸碰原 dirty 經外奇穴草稿 worktree、Pattern、Condition 或 `curriculum/conditions/*`。
