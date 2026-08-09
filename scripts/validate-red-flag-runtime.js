@@ -72,8 +72,6 @@ if (authoredOnly.length < 24) defects.push(`RT7 authored-only fallback ${authore
 if (JSON.stringify(K.redFlagRegistry.records) !== JSON.stringify(registry.records))
   defects.push("RT9 bundled registry differs from source — resolver mutated clinical data");
 
-console.log(`red-flag runtime: ${wiredSrc.length} wired cards · ${refs} refs · ledger ${ledger.supported}/${ledger.not_found}/${ledger.pending_provenance || 0} · authored-only fallback ${authoredOnly.length} · ${defects.length} defects`);
-if (defects.length) { defects.forEach((d) => console.log("  " + d)); process.exit(1); }
 
 // RT10 — unwired runtime fallback must never expose legacy-migration records.
 // Migrated legacy membership becomes visible only after canonical red_flag_refs wiring.
@@ -102,3 +100,14 @@ const checkUnwiredLeakage = (records, namespace) => {
 
 checkUnwiredLeakage(K.conditionCanon.records, "condition");
 checkUnwiredLeakage(K.tdisRegistry.records, "tdis");
+
+console.log(
+  `red-flag runtime: ${wiredSrc.length} wired cards · ${refs} refs · ` +
+  `ledger ${ledger.supported}/${ledger.not_found}/${ledger.pending_provenance || 0} · ` +
+  `authored-only fallback ${authoredOnly.length} · ${defects.length} defects`
+);
+
+if (defects.length) {
+  defects.forEach((d) => console.log("  " + d));
+  process.exit(1);
+}
