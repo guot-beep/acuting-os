@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-UE4 中魁、EX-UE5 大骨空四來源精修；EX-UE6 衝突暫停
+
+- **做了什麼**：以同一 strict-template／four-source workflow 精修 EX-UE4、EX-UE5，逐張補齊雙語定位、解剖與 source gaps、刺灸、功效主治、配穴／缺口、安全、考點及 field-level provenance；exact eLotus／AD links 均於本 session 實際開啟。
+- **數字 before→after**：strict-template／four-source `42/72 → 44/72`；待修 `30/72 → 28/72`；generic Cloud 維持 `9/72`；measurable method、source URL、mojibake gaps 維持 `0/72`。
+- **來源／安全**：中魁的 eLotus 與 AD 灸量、AD 針深分列，legacy 深刺／透刺／放血不升格；大骨空採 eLotus 0.1寸並將 legacy 0.5–0.8寸、5–7壯與橈動脈警語降為 unsupported。兩卡保持 `reviewStatus: draft`，strict/four-source 不等於 clinically verified。
+- **驗證**：extra audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、EX-UE5 canonical/runtime parity 與 `git diff --check` 均通過；content commits `2aafea3`、`51972f9`。
+- **已知未解／下一步**：EX-UE6 legacy 為小指 PIP＋針刺／放血，eLotus 為 DIP＋只灸；AD 只有無內容且無法確認 identity 的 Gukong 頁。依 stop rule 未修改 EX-UE6，下一步需由教材／書本或 Ting 裁決後再續；其他 session dirty files 未觸碰。
+
 # 2026-08-08 Codex — EX-UE3 中泉四源、AD 錯鏈與急症邊界精修
 
 - **做了什麼**：只精修 EX-UE3 中泉；整合 Board／課件缺口、eLotus Ex-UE3、AD 索引錯鏈稽核及 AHA／NHLBI／NHS 安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴缺口、考點、安全與逐欄來源。

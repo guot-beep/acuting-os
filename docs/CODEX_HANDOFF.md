@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-UE4 中魁、EX-UE5 大骨空；EX-UE6 來源衝突暫停
+
+- **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE4 `2aafea3` (`feat(acupoints): refine Zhongkui extra point`)；EX-UE5 `51972f9` (`feat(acupoints): refine Dagukong extra point`)。只修改經外奇穴 canonical、generated bundle、audit 與本批 handoff；未觸碰 Pattern、Condition、`curriculum/conditions/*` 或其他 session dirty files。
+- **EX-UE4 / Exact Sources**: Board Appendix A 未明列、local curriculum 無專條；eLotus Ex-UE4 與 AD `M-UE-16` exact pages 已實際開啟。eLotus 灸3壯、AD 灸3–7壯／溫灸5–15分鐘及直刺0.2–0.3寸分列；legacy 直刺0.3–0.5寸、透刺、點刺出血與5–7壯均保留但未升格。AD 所列妊娠期使用只作來源陳述，不作孕期安全許可。
+- **EX-UE5 / Exact Sources**: Board Appendix A 未明列、local curriculum 無專條；eLotus Ex-UE5 與 AD `M-UE-15` exact pages 已實際開啟。eLotus 直刺0.1寸與兩頁可灸陳述分列；AD 未給針刺深度或灸量。legacy 直刺0.5–0.8寸、灸5–7壯及橈動脈警語均保留為 unsupported／不可執行歷史值。eLotus「拇指遠節與中節指骨間」的解剖命名異常已如實記錄，未改 stable `EX-UE5`／`ex.ue5`。
+- **Stop Condition / EX-UE6**: legacy 小骨空定位在小指 PIP 中點，並列直刺0.3–0.5寸或點刺出血；eLotus exact page 定位於遠節與中節指骨間的 DIP，且明列只灸。AD index 無 Xiaogukong，`Gukong` exact page內容欄全空，不能確認同一穴。此衝突同時影響定位與侵入性技法，依規則未修改 EX-UE6，等待裁決或書本來源。
+- **Counts / Validation / Next**: strict-template／four-source `42/72 → 44/72`；issues `30/72 → 28/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。extra audit、build-data、947 runtime、interactions、925 point IDs、content-junk、app syntax、EX-UE5 canonical/runtime parity 與 diff check 均通過。下一張仍為 `EX-UE6 小骨空 Xiaogukong`，但須先解決 PIP／DIP 與只灸／針刺放血衝突。
+
 ## [2026-08-08] Codex Handoff — EX-UE3 中泉（Zhongquan）AD 錯鏈與胸肺急症邊界
 
 - **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `331c075` (`feat(acupoints): refine Zhongquan extra point`)；未觸碰原 dirty 經外奇穴草稿 worktree、Pattern、Condition 或 `curriculum/conditions/*`。
