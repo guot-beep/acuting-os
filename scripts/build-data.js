@@ -172,11 +172,15 @@ const knowledge = {
 {
   const regRecords = knowledge.redFlagRegistry.records || [];
   const byId = new Map(regRecords.map((r) => [r.id, r]));
-  const byEntity = new Map();
-  for (const r of regRecords) {
-    if (!byEntity.has(r.entity_id)) byEntity.set(r.entity_id, []);
-    byEntity.get(r.entity_id).push(r);
-  }
+const isLegacyMigrationRecord = (r) =>
+  String(r.origin || "").startsWith("legacy_card_migration_");
+
+const fallbackByEntity = new Map();
+for (const r of regRecords) {
+  if (isLegacyMigrationRecord(r)) continue;
+  if (!fallbackByEntity.has(r.entity_id)) fallbackByEntity.set(r.entity_id, []);
+  fallbackByEntity.get(r.entity_id).push(r);
+}
   const resolveWired = (rec) => {
     const flags = rec.red_flag_refs.map((id) => {
       const f = byId.get(id);
@@ -189,7 +193,7 @@ const knowledge = {
     rec.red_flag_record_ids = rec.red_flag_refs.slice();
   };
   const mergeUnwired = (rec) => {
-    const flags = byEntity.get(rec.id);
+    const flags = fallbackByEntity.get(rec.id);
     if (!flags || !flags.length) return;
     const zh = new Set((rec.red_flags_zh || []).map((s) => String(s).trim()));
     const en = new Set((rec.red_flags_en || []).map((s) => String(s).trim()));
