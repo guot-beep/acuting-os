@@ -9700,31 +9700,113 @@
     "code": "EX-UE9",
     "display_code": "EX-UE9",
     "nameZh": "八邪",
-    "nameEn": "Baxie",
+    "nameEn": "Eight Evils",
     "pinyin": "Baxie",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "手背，各指蹼緣後方赤白肉際處，左右共8穴。",
-    "locationEn": "On dorsum of hand, at junction of red/white skin of interdigital webs, 8 points total.",
-    "techniqueNotes": "斜刺0.5~0.8寸，或點刺出血。可灸。\nOblique 0.5-0.8 cun; or prick to bleed.",
-    "functions": "清熱解毒，通絡止痛，消腫",
-    "functionsEn": "Clears heat and detoxifies; Unblocks collaterals; Reduces swelling",
+    "location": "微握拳，手背各指蹼後方赤白肉際、掌骨頭之間凹陷處；每手4穴，雙手共8穴。",
+    "locationEn": "With a loose fist, on the dorsum of the hand at the red-white skin junction behind each interdigital web and between the metacarpal heads; four points per hand, eight total.",
+    "cunMeasurement": "以四個指蹼後方赤白肉際及掌骨頭間凹陷定位，不使用骨度分寸；每手4穴。",
+    "anatomyZh": "位於手背四個指蹼與掌骨頭間的表淺區域。eLotus 與 American Dragon 未提供各蹼間指背／掌側神經血管、伸肌腱分支、骨間肌或皮膚至安全終點的逐點解剖；American Dragon 所述向指端放射的痠脹／電感是來源記載，不等於已驗證的安全終點。",
+    "anatomyEn": "The points occupy superficial dorsal regions behind the four interdigital webs and between the metacarpal heads. eLotus and American Dragon do not provide point-by-point dorsal/palmar digital neurovascular, extensor-slip, interosseous, or skin-to-endpoint anatomy. American Dragon's described distention, soreness, or electric radiation to the fingertips is a source-reported response, not a validated safety endpoint.",
+    "acumethodZh": "eLotus：斜刺0.3～0.5寸，或點刺出血。American Dragon：可沿掌骨方向直刺至1寸；另列直刺0.5～1.0寸，或斜刺0.3～0.5寸／點刺出血。舊卡斜刺0.5～0.8寸及直刺0.5～1.0寸保留為 legacy；不得把不同方向與深度合成單一技法。放血未提供器械、出血量、止血或追蹤規格。",
+    "acumethodEn": "eLotus: oblique insertion 0.3-0.5 cun or prick-to-bleed. American Dragon: straight insertion along the metacarpal up to 1 cun; it also lists perpendicular 0.5-1.0 cun or oblique 0.3-0.5 cun/prick-to-bleed. Legacy oblique 0.5-0.8 cun and perpendicular 0.5-1.0 cun are retained historically; differing directions and depths are not merged into one method. Bloodletting lacks device, blood-quantity, hemostasis, and follow-up parameters.",
+    "moxaZh": "eLotus 與 American Dragon 均記可灸，但未提供壯數、時間、距離、直接／間接法、皮膚保護或停止條件；不自行補數字。",
+    "moxaEn": "Both eLotus and American Dragon state that moxibustion is applicable, but provide no cone count, duration, distance, direct/indirect method, skin protection, or stopping rule; no numeric protocol is inferred.",
+    "techniqueNotes": "eLotus：斜刺0.3～0.5寸，或點刺出血；可灸但無劑量。American Dragon：沿掌骨方向直刺至1寸，或直刺0.5～1.0寸，或斜刺0.3～0.5寸／點刺出血；可灸但無劑量。Legacy 斜刺0.5～0.8寸另列。\neLotus: oblique 0.3-0.5 cun or prick-to-bleed; moxa applicable without dose. American Dragon: straight along the metacarpal up to 1 cun, perpendicular 0.5-1.0 cun, or oblique 0.3-0.5 cun/prick-to-bleed; moxa without dose. Legacy oblique 0.5-0.8 cun remains separate.",
+    "functions": "舒筋通絡，祛風濕，活血，清熱消腫；清熱解毒、通絡止痛（legacy）",
+    "functionsEn": "Relaxes the sinews and opens the channels/collaterals; expels wind-damp, invigorates blood, clears heat, and dissipates swelling; clears heat/resolves toxin and unblocks collaterals to alleviate pain (legacy)",
+    "functionsZhList": [
+      "舒筋通絡",
+      "祛風濕",
+      "活血",
+      "清熱消腫",
+      "清熱解毒（legacy）",
+      "通絡止痛（legacy）"
+    ],
+    "functionsEnList": [
+      "Relaxes the sinews and opens the channels/collaterals",
+      "Expels wind-damp",
+      "Invigorates blood",
+      "Clears heat and dissipates swelling",
+      "Clears heat and resolves toxin (legacy)",
+      "Unblocks collaterals and alleviates pain (legacy)"
+    ],
+    "pointIdentityZh": "本庫穩定代碼 EX-UE9／ex.ue9，八邪 Baxie。NCBAHM Appendix A 明列 Baxie；eLotus 為 Ex-UE9；American Dragon 以 M-UE-22 列 Baxie。外部代碼不同不改本庫 id。",
+    "pointIdentityEn": "Stable database identity: EX-UE9 / ex.ue9, Baxie. NCBAHM Appendix A lists Baxie; eLotus uses Ex-UE9 and American Dragon uses M-UE-22. The differing external code does not change the database ID.",
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 明列八邪。需掌握每手4穴、雙手8穴的指蹼赤白肉際定位，並把斜刺、沿掌骨直刺、點刺出血與無劑量灸法分開記。",
+    "exam_importance_en": "NCBAHM 2026 ACPL Appendix A explicitly lists Baxie. Know the four points per hand/eight total at the web-margin red-white junction, and keep oblique insertion, straight insertion along the metacarpal, prick-to-bleed, and dose-unspecified moxa as separate methods.",
+    "exam_pearl": "『八』指雙手共8穴；放血是來源技法，但來源沒有出血量與止血 protocol，不能因 validator 看見 bloodletting 字樣就當作臨床已驗證。",
+    "exam_pearl_en": "'Eight' means eight points across both hands. Bloodletting is source-reported, but the sources give no blood quantity or hemostasis protocol; validator recognition of the method does not make it clinically verified.",
     "patterns": [
       "手指關節痛",
       "手指麻木",
-      "手背腫痛",
-      "毒蛇咬傷"
+      "手指痙攣／拘急或屈伸不利",
+      "手背紅腫疼痛",
+      "毒蛇咬傷（AD來源主治；急症邊界）"
     ],
     "patternsEn": [
       "Finger joint pain",
       "Finger numbness",
-      "Hand swelling",
-      "Snakebite"
+      "Finger spasm/contracture or impaired movement",
+      "Red, swollen, painful dorsum of hand",
+      "Venomous snakebite (AD source-reported; emergency boundary)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "舒筋通絡",
+      "祛風濕",
+      "活血",
+      "清熱消腫",
+      "清熱解毒（legacy）"
+    ],
+    "action_tags_en": [
+      "relax sinews and open channels/collaterals",
+      "expel wind-damp",
+      "invigorate blood",
+      "clear heat and dissipate swelling",
+      "clear heat and resolve toxin (legacy)"
+    ],
+    "disease_tags_zh": [
+      "手指關節痛",
+      "手指麻木",
+      "手指痙攣／拘急",
+      "手背紅腫疼痛"
+    ],
+    "disease_tags_en": [
+      "finger joint pain",
+      "finger numbness",
+      "finger spasm / contracture",
+      "red swollen painful hand"
+    ],
+    "acuTags": [
+      "extra_point",
+      "upper_extremity",
+      "board_listed",
+      "bloodletting",
+      "technique_conflict",
+      "emergency_boundary"
+    ],
+    "combinePointsZh": "American Dragon 記【手指麻木】八邪配外關（SJ5）。其另記瘧疾以八邪放血，僅保留於來源層，因無 point-specific 放血量與安全 protocol，不作本卡配穴或 disease tag。",
+    "combinePointsEn": "American Dragon pairs Baxie with Waiguan (SJ5) for finger numbness. Its separate note on bleeding Baxie for malaria is retained only in provenance; without point-specific blood quantity and safety parameters, it is not promoted as a card combination or disease tag.",
+    "cautions": "【多套刺法】eLotus 斜刺0.3～0.5寸；AD 另有沿掌骨直刺至1寸、直刺0.5～1.0寸及斜刺0.3～0.5寸；舊斜刺0.5～0.8寸分列，不製造假共識。【局部解剖缺口】來源未給各蹼間神經血管、伸肌腱分支、骨間肌或皮膚至安全終點；向指端放射的痠脹／電感不是已驗證停止規則。【放血缺口】器械、消毒、出血量、止血、感染監測、抗凝／出血風險、孕期與兒童 protocol 均未提供，不得猜。【毒蛇咬傷】AD 所列主治只作來源紀錄；CDC 要求立即急救，不等待症狀，且不可綁止血帶、切割／吸吮或冰敷，本卡不把蛇咬傷當穴位療效證據。【其他重大主治】AD 所列壞疽、發熱病與瘧疾放血只留 provenance，不進 disease tags。",
+    "cautionsEn": "[Multiple techniques] eLotus gives oblique 0.3-0.5 cun; American Dragon separately gives straight insertion along the metacarpal up to 1 cun, perpendicular 0.5-1.0 cun, and oblique 0.3-0.5 cun; legacy oblique 0.5-0.8 cun remains separate, without false consensus. [Local anatomy gap] Sources give no interdigital neurovascular, extensor-slip, interosseous, or skin-to-endpoint detail; fingertip-radiating distention/electric sensation is not a validated stopping rule. [Bloodletting gap] Device, antisepsis, blood quantity, hemostasis, infection monitoring, anticoagulation/bleeding risk, pregnancy, and pediatric protocols are absent and must not be guessed. [Venomous snakebite] The American Dragon indication is source-reported only. CDC calls for immediate emergency care without waiting for symptoms and advises against tourniquets, cutting/suction, or ice; the card does not treat snakebite as acupuncture-efficacy evidence. [Other major claims] American Dragon gangrene, febrile-disease, and malaria-bloodletting claims remain in provenance and are excluded from disease tags.",
+    "clinical_pearls": [
+      "八邪的定位與常見手部主治在 eLotus 與 AD 高度一致；主要差異在刺入方向、深度及 AD 額外主治範圍。",
+      "蛇咬傷、壞疽、發熱病與瘧疾放血不因出現在來源而升格為療效或 disease tag。"
+    ],
+    "clinical_pearls_en": [
+      "eLotus and American Dragon largely agree on location and common hand indications; the main differences are insertion direction/depth and American Dragon's broader indication list.",
+      "Snakebite, gangrene, febrile disease, and malaria bloodletting are not promoted to efficacy claims or disease tags merely because a source lists them."
+    ],
+    "nameIntroZh": "八邪（Baxie，Eight Evils）為雙手指蹼後方共8穴的經外奇穴。本庫保留 EX-UE9／ex.ue9，並把針刺、放血與灸法的來源規格分開呈現。",
+    "nameIntroEn": "Baxie (Eight Evils) comprises eight extra points behind the interdigital webs of both hands. The database preserves EX-UE9 / ex.ue9 and presents source-specific needling, bloodletting, and moxibustion methods separately.",
+    "evidence": "NCBAHM 2026 ACPL Appendix A explicitly lists Baxie; no dedicated local curriculum entry was found. The exact eLotus Ex-UE9 page contributes the eight-point web-margin location, excessive-heat/hand indications, heat/swelling actions, oblique 0.3-0.5-cun or prick-to-bleed methods, and dose-unspecified moxa. The exact American Dragon Baxie page contributes M-UE-22 coding, concordant location, broader sinew/wind-damp/blood/heat actions, multiple needling methods, prick-to-bleed and moxa, the SJ5 combination, and broader indications. Snakebite, gangrene, febrile disease, and malaria bloodletting remain source-reported claims with safety boundaries, not efficacy tags. Legacy 0.5-0.8-cun oblique insertion and toxin/pain language are preserved separately. The CDC snake page supplies emergency first-aid boundaries only.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baxie-ex-ue9"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baxie-ex-ue9",
+      "https://www.americandragon.com/Points/Baxie.html",
+      "https://www.cdc.gov/niosh/outdoor-workers/about/venomous-snakes.html"
     ],
     "visualLinks": [
       {
@@ -9732,15 +9814,85 @@
         "labelEn": "Extra Point · Baxie EX-UE9 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baxie-ex-ue9",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "經外奇穴 · 八邪（American Dragon）",
+        "labelEn": "Extra Point · Baxie (American Dragon)",
+        "url": "https://www.americandragon.com/Points/Baxie.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "毒蛇咬傷緊急處置（CDC）",
+        "labelEn": "Venomous-snake emergency response (CDC)",
+        "url": "https://www.cdc.gov/niosh/outdoor-workers/about/venomous-snakes.html",
+        "source": "CDC / NIOSH"
       }
     ],
     "x": 158,
     "y": 320,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，或斜刺。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun, or oblique insertion.",
-    "cautions": "避開前臂神經幹。",
-    "cautionsEn": "Avoid forearm nerve trunks.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Baxie is explicitly listed"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 八邪, Baxie, Eight Evils, and EX-UE9 under curriculum/board and curriculum/acupoints found the Board listing but no dedicated lesson entry"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baxie-ex-ue9: exact page opened 2026-08-08; Ex-UE9 identity, eight-point location, indications, heat/swelling actions, oblique 0.3-0.5-cun/prick-to-bleed methods, and moxa applicability extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: pinyin index opened 2026-08-08; Baxie exact entry confirmed",
+        "https://www.americandragon.com/Points/Baxie.html: exact page opened and sections expanded 2026-08-08; M-UE-22 code, locations, techniques, actions, indications, SJ5 combination, and malaria note extracted"
+      ],
+      "location": [
+        "eLotus exact page: eight points at dorsal web-margin red-white junction with loose fist",
+        "American Dragon exact page: web spaces/between metacarpal heads/red-white junction; location wording reconciles without changing identity"
+      ],
+      "anatomy": [
+        "source-gap note: no point-by-point digital neurovascular, extensor-slip, interosseous, or skin-to-target endpoint",
+        "American Dragon source response of fingertip-radiating distention/soreness/electric sensation is not promoted to a safety endpoint"
+      ],
+      "technique": [
+        "eLotus exact page: oblique 0.3-0.5 cun or prick-to-bleed",
+        "American Dragon exact page: straight along metacarpal up to 1 cun; perpendicular 0.5-1.0 cun; oblique 0.3-0.5 cun or prick-to-bleed",
+        "legacy oblique 0.5-0.8 cun retained separately"
+      ],
+      "moxibustion": [
+        "eLotus and American Dragon exact pages: moxibustion applicable; no cone count, duration, distance, method, or stopping rule"
+      ],
+      "functions": [
+        "eLotus exact page: clears heat and dissipates swelling",
+        "American Dragon exact page: relaxes sinews, expels wind-damp, invigorates blood, clears heat, dissipates swelling",
+        "legacy clears toxin/unblocks collaterals/alleviates pain retained separately"
+      ],
+      "indications": [
+        "eLotus exact page: excessive heat, finger numbness/spasm/contracture, dorsal-hand redness/swelling",
+        "American Dragon exact page: broad hand pain/numbness/stiffness/swelling/spasm and other indications including snakebite, gangrene, febrile disease, and malaria note",
+        "snakebite, gangrene, febrile disease, and malaria bloodletting excluded from disease tags"
+      ],
+      "combinations": [
+        "American Dragon exact page: Baxie + SJ5 for finger numbness",
+        "American Dragon malaria bloodletting note retained only in provenance because procedural safety parameters are absent"
+      ],
+      "cautions": [
+        "CDC venomous-snakes exact page: seek emergency care immediately; do not wait for symptoms and do not use tourniquet, cutting/suction, or ice; boundary only",
+        "source-gap note: no bloodletting device, antisepsis, quantity, hemostasis, infection-monitoring, anticoagulation, pregnancy, pediatric, or anatomical stop protocol",
+        "legacy forearm-nerve-trunk warning is anatomically mismatched to hand-web locations and is not retained as canonical guidance"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE9 / ex.ue9 / 八邪 / Baxie",
+        "eLotus: Ex-UE9 / Eight Evils",
+        "American Dragon: M-UE-22 Baxie; external code retained without changing database ID"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Baxie exact page",
+        "2026-08-08 live-opened American Dragon pinyin index and Baxie exact page",
+        "2026-08-08 live-opened CDC venomous-snakes exact page; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "eLotus：斜刺0.3～0.5寸或點刺出血。AD：沿掌骨直刺至1寸，或直刺0.5～1.0寸，或斜刺0.3～0.5寸／點刺出血。Legacy 斜刺0.5～0.8寸另列。",
+    "needlingEn": "eLotus: oblique 0.3-0.5 cun or prick-to-bleed. American Dragon: straight along the metacarpal up to 1 cun, perpendicular 0.5-1.0 cun, or oblique 0.3-0.5 cun/prick-to-bleed. Legacy oblique 0.5-0.8 cun remains separate.",
     "id": "ex.ue9"
   },
   {
