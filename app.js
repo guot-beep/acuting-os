@@ -4902,6 +4902,23 @@ function normalizeSoapNote(value) {
     outcomes: String(value.outcomes || ""),
     outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
     outcomeVerdict: OUTCOME_VERDICTS[value.outcomeVerdict] ? value.outcomeVerdict : "",   // LL2
+    // Structured outcome metric proof-of-concept (2026-08-09,
+    // docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md §9 ranked item #2). ONE
+    // {metricId, valueNumber} record per structured metric actually
+    // measured this visit, metricId always a real id from
+    // data/clinical_cases/outcome_metrics.json. Deliberately NOT a fixed
+    // set of named scalar fields (painScore/sleepQuality/...) — the whole
+    // point of this shape is that a future metric is one more entry
+    // through the same setOutcomeMetricValue() upsert helper, not a new
+    // normalizer line + a new form field wired by hand for each one.
+    // outcomeMetricLinks above is UNCHANGED and UNTOUCHED by this: it stays
+    // free text, never auto-parsed into this array (explicit requirement —
+    // "pain 7->4" prose is not a measurement record).
+    outcomeMetrics: Array.isArray(value.outcomeMetrics)
+      ? value.outcomeMetrics
+          .filter((m) => m && typeof m.metricId === "string" && m.metricId && Number.isFinite(Number(m.valueNumber)))
+          .map((m) => ({ metricId: String(m.metricId), valueNumber: Number(m.valueNumber) }))
+      : [],
     // SOAP/Follow-up audit (2026-08-09): nullable, never fabricated. "" (not
     // 0) when absent — matches cases.baselineSeverity's D4-style distinction
     // between "not answered" and "answered zero".
@@ -4915,6 +4932,21 @@ function normalizeSoapNote(value) {
     createdAt: String(value.createdAt || new Date().toISOString()),
     updatedAt: String(value.updatedAt || new Date().toISOString())
   };
+}
+
+// Structured outcome metric proof-of-concept (2026-08-09) — upsert-by-id
+// helpers for the note.outcomeMetrics array. Every future metric field
+// (sleep quality, stress, mood, ...) reads/writes through these same two
+// functions with its own metricId; nothing here is pain-score-specific.
+function getOutcomeMetricValue(list, metricId) {
+  const found = (list || []).find((m) => m.metricId === metricId);
+  return found ? found.valueNumber : "";
+}
+
+function setOutcomeMetricValue(list, metricId, value) {
+  const withoutThisMetric = (list || []).filter((m) => m.metricId !== metricId);
+  if (value === "" || value === null || value === undefined) return withoutThisMetric;
+  return [...withoutThisMetric, { metricId, valueNumber: Number(value) }];
 }
 
 function normalizeStringList(value) {
@@ -5468,6 +5500,7 @@ function renderSoapNoteCard(note) {
         <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
+        ${(() => { const p = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score"); return (p === 0 || p) ? `<div><small>疼痛評分 Pain score</small><span>${escapeHtml(String(p))}/10</span></div>` : ""; })()}
         ${(note.effectDurationDays === 0 || note.effectDurationDays) ? `<div><small>效果維持 Effect duration</small><span>${escapeHtml(String(note.effectDurationDays))} 天 days</span></div>` : ""}
       </div>
       <div class="soap-link-grid">
@@ -5813,6 +5846,7 @@ function openSoapEditor(note = null) {
     outcomes: "",
     outcomeMetricLinks: [],
     outcomeVerdict: "",
+    outcomeMetrics: [],
     effectDurationDays: "",
     referralOrSupervisorQuestion: "",
     followUp: "",
@@ -5825,6 +5859,13 @@ function openSoapEditor(note = null) {
     if (!soapForm.elements[key]) return;
     soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  // Structured outcome metric proof-of-concept: painScore is a UI-only form
+  // field (no soap_notes.painScore key exists — it reads/writes through
+  // data.outcomeMetrics). Not covered by the generic loop above since
+  // "painScore" is never a key on the note object itself.
+  if (soapForm.elements.painScore) {
+    soapForm.elements.painScore.value = getOutcomeMetricValue(data.outcomeMetrics, "metric.pain_score");
+  }
   setupLinkAutocomplete();                                   // CS4: idempotent
   Object.values(linkPickerControllers).forEach((c) => c.sync());  // rebuild chips from hydrated values
   soapDialog.showModal();
@@ -5855,6 +5896,14 @@ function saveSoapFromForm(event) {
     alert("效果維持天數須為 0 以上的整數（可留空）。");
     return;
   }
+  // Structured outcome metric proof-of-concept (metric.pain_score). Reject,
+  // never coerce — a value outside 0-10 is a typo, not a value to clamp.
+  const painScoreRaw = (data.painScore || "").trim();
+  if (painScoreRaw && (!/^\d+$/.test(painScoreRaw) || Number(painScoreRaw) < 0 || Number(painScoreRaw) > 10)) {
+    alert("疼痛評分須為 0–10 的整數（可留空 = 未測量）。");
+    return;
+  }
+  const outcomeMetrics = setOutcomeMetricValue(current?.outcomeMetrics || [], "metric.pain_score", painScoreRaw);
 
   const now = new Date().toISOString();
   const nextNote = normalizeSoapNote({
@@ -5894,6 +5943,7 @@ function saveSoapFromForm(event) {
     outcomes: data.outcomes.trim(),
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     outcomeVerdict: data.outcomeVerdict || "",
+    outcomeMetrics,
     effectDurationDays: effectDurationRaw === "" ? "" : Number(effectDurationRaw),
     referralOrSupervisorQuestion: (data.referralOrSupervisorQuestion || "").trim(),
     followUp: data.followUp.trim(),
