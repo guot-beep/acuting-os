@@ -621,6 +621,7 @@
             <legend><span class="form-section-step">1</span>身分 Identity</legend>
             <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
             <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
+            <label>分類快選 Category quick-pick<select id="caseCategoryQuick"><option value="">—</option><option value="fertility">Fertility 生殖/助孕</option><option value="pain">Pain 疼痛</option><option value="digestive">Digestive 消化</option><option value="sleep">Sleep 睡眠</option><option value="stress_mood">Stress / mood 壓力/情緒</option><option value="respiratory">Respiratory 呼吸系統</option><option value="gynecology">Gynecology 婦科</option><option value="dermatology">Dermatology 皮膚</option><option value="internal_medicine">Internal medicine 內科</option><option value="general">General 一般</option><option value="__other__">Other / custom 其他</option></select></label>
             <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
             <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
             <label>開始日期<input name="startDate" type="date" /></label>
@@ -632,6 +633,7 @@
             <label>出生時性別 Sex at birth<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
             <label>性別認同 Gender identity（選填 optional）<select name="genderIdentity"><option value="">—</option><option value="woman">Woman 女性</option><option value="man">Man 男性</option><option value="nonbinary">Non-binary</option><option value="other">Other</option><option value="unknown">Unknown 不確定</option><option value="prefer_not_to_answer">Prefer not to answer 不願回答</option></select></label>
             <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
+            <label>過敏狀態 Allergy status<select name="allergyStatus"><option value="">—</option><option value="none">No known allergies 無已知過敏</option><option value="has">Has allergies 有過敏史</option><option value="unknown">Unknown 不確定</option></select></label>
             <label>過敏 Allergies<input name="allergies" placeholder="藥物 / 食物 / 暈針" /></label>
             <label class="wide">目前用藥 Current meds<input name="currentMeds" placeholder="西藥 / 補充品" /></label>
             <label class="wide">月經/婦科史 Menstrual &amp; OB-Gyn<textarea name="menstrualObHistory" rows="2" placeholder="初經、週期天數、經量/經色/血塊、經痛、LMP、孕產 G_P_、避孕方式"></textarea></label>

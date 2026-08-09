@@ -100,6 +100,14 @@ CREATE TABLE IF NOT EXISTS cases (
   -- severity number (D4 spirit again). Prose lives alongside it in
   -- chiefComplaint/historyPresent, not replaced by it.
   baseline_severity_0_10 INTEGER CHECK (baseline_severity_0_10 IS NULL OR baseline_severity_0_10 BETWEEN 0 AND 10),
+  -- Initial-intake Phase 2 (2026-08-09). Coarse status paired with the
+  -- existing free-text `allergies` on soap_notes/case forms — not a
+  -- replacement, and the two are never reconciled automatically (no
+  -- inferring "none" from an empty allergies string). "" default, not
+  -- "none": absence of an answer is not the same fact as a confirmed
+  -- negative. The rejected allergies->red_flags fold (localstorage_sqlite_
+  -- mapping.json, unresolved_needs_ting) is untouched by this column.
+  allergy_status TEXT CHECK (allergy_status IS NULL OR allergy_status IN ('none','has','unknown')),
   FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 

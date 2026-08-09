@@ -4844,6 +4844,12 @@ function normalizeClinicalCase(value) {
     chiefComplaint: String(value.chiefComplaint || ""),
     historyPresent: String(value.historyPresent || ""),
     pastHistory: String(value.pastHistory || ""),
+    // Initial-intake Phase 2 (2026-08-09): coarse status paired with the
+    // existing free-text `allergies` detail below — not a replacement, and
+    // not an inference from it. "" (not yet asked) stays distinct from
+    // "unknown" (asked, patient doesn't know), same D4 pattern as elsewhere
+    // in this batch.
+    allergyStatus: String(value.allergyStatus || ""),
     allergies: String(value.allergies || ""),
     currentMeds: String(value.currentMeds || ""),
     menstrualObHistory: String(value.menstrualObHistory || ""),
@@ -5187,8 +5193,8 @@ function formulaPickerOptions() {
   }));
 }
 
-function enhanceLinkField(fieldName, buildOptions) {
-  const textarea = soapForm?.elements?.[fieldName];
+function enhanceLinkField(form, fieldName, buildOptions) {
+  const textarea = form?.elements?.[fieldName];
   if (!textarea || textarea.dataset.pickerReady) return;
   textarea.dataset.pickerReady = "1";
   textarea.hidden = true;
@@ -5347,13 +5353,13 @@ function safetyFlagPickerOptions() {
 }
 
 function setupLinkAutocomplete() {
-  enhanceLinkField("acupointLinks", pointPickerOptions);
-  enhanceLinkField("formulaLinks", formulaPickerOptions);
-  enhanceLinkField("tcmPatternLinks", patternPickerOptions);
-  enhanceLinkField("easternDiseaseLinks", easternDiseasePickerOptions);
-  enhanceLinkField("westernConditionLinks", westernConditionPickerOptions);
-  enhanceLinkField("medicationLinks", medicationPickerOptions);
-  enhanceLinkField("safetyFlagLinks", safetyFlagPickerOptions);
+  enhanceLinkField(soapForm, "acupointLinks", pointPickerOptions);
+  enhanceLinkField(soapForm, "formulaLinks", formulaPickerOptions);
+  enhanceLinkField(soapForm, "tcmPatternLinks", patternPickerOptions);
+  enhanceLinkField(soapForm, "easternDiseaseLinks", easternDiseasePickerOptions);
+  enhanceLinkField(soapForm, "westernConditionLinks", westernConditionPickerOptions);
+  enhanceLinkField(soapForm, "medicationLinks", medicationPickerOptions);
+  enhanceLinkField(soapForm, "safetyFlagLinks", safetyFlagPickerOptions);
   // outcomeMetricLinks stays free text: entries carry values ("pain_score 7->4"),
   // not bare ids — structured outcome entry is the LL-track item (LL2/LL5).
 }
@@ -5555,6 +5561,7 @@ function openCaseEditor(item = null) {
     chiefComplaint: "",
     historyPresent: "",
     pastHistory: "",
+    allergyStatus: "",
     allergies: "",
     currentMeds: "",
     menstrualObHistory: "",
@@ -5575,7 +5582,54 @@ function openCaseEditor(item = null) {
   });
   setCheckboxGroup(caseForm, "raceEthnicity", data.raceEthnicity);
   setCheckboxGroup(caseForm, "previousTreatment", data.previousTreatment);
+  syncCaseCategoryQuickPick(data.caseCategory);                    // Phase 2: quick-select assist, caseCategory itself is still the stored field
+  setupCaseLinkAutocomplete();                                     // Phase 2: idempotent, reuses the SOAP chip-picker mechanism
+  Object.values(linkPickerControllers).forEach((c) => c.sync());   // rebuild chips from the values just hydrated above
   caseDialog.showModal();
+}
+
+// Initial-intake Phase 2 (2026-08-09) — Category quick-pick ----------------
+// docs/CASE_SOAP_FLOW_REVIEW.md's 10 recommended routing tags. This is an
+// ASSIST control only: the stored field is still caseForm.elements.caseCategory
+// (plain text, unchanged shape/schema). Picking a quick option writes into
+// that text field; picking "Other / custom" or typing directly leaves it as
+// free text — old/uncommon categories are never lost or forced into the list.
+const CASE_CATEGORY_QUICK_VALUES = new Set([
+  "fertility", "pain", "digestive", "sleep", "stress_mood",
+  "respiratory", "gynecology", "dermatology", "internal_medicine", "general",
+]);
+
+function syncCaseCategoryQuickPick(currentCaseCategory) {
+  const quick = document.querySelector("#caseCategoryQuick");
+  if (!quick) return;
+  const val = String(currentCaseCategory || "").trim();
+  if (!val) quick.value = "";
+  else if (CASE_CATEGORY_QUICK_VALUES.has(val)) quick.value = val;
+  else quick.value = "__other__";                                  // legacy/custom value — shown as Other, left untouched in the text field
+  if (!quick.dataset.wired) {
+    quick.dataset.wired = "1";
+    quick.addEventListener("change", () => {
+      if (quick.value && quick.value !== "__other__") {
+        caseForm.elements.caseCategory.value = quick.value;
+      } else if (quick.value === "__other__") {
+        caseForm.elements.caseCategory.focus();
+      }
+    });
+  }
+}
+
+// Initial-intake Phase 2 (2026-08-09) — reuse the existing SOAP chip-picker
+// mechanism (enhanceLinkField/CS4) for the three Case-level baseline fields
+// that already hold canonical-id-shaped arrays (westernConditions/
+// easternDiseases/tcmPatterns — same splitList/join("、") shape as the SOAP
+// *Links fields). No new picker logic, no new vocabulary: same option
+// builders SOAP already uses. A legacy value that isn't a canonical id still
+// renders as its own chip (label falls back to the raw string) and is never
+// silently dropped — see docs/CASE_SOAP_FLOW_REVIEW.md's field notes.
+function setupCaseLinkAutocomplete() {
+  enhanceLinkField(caseForm, "westernConditions", westernConditionPickerOptions);
+  enhanceLinkField(caseForm, "easternDiseases", easternDiseasePickerOptions);
+  enhanceLinkField(caseForm, "tcmPatterns", patternPickerOptions);
 }
 
 // Initial-intake minimum dataset (2026-08-09) -------------------------------
@@ -5656,6 +5710,7 @@ function saveCaseFromForm(event) {
     chiefComplaint: data.chiefComplaint.trim(),
     historyPresent: (data.historyPresent || "").trim(),
     pastHistory: (data.pastHistory || "").trim(),
+    allergyStatus: (data.allergyStatus || "").trim(),
     allergies: (data.allergies || "").trim(),
     currentMeds: (data.currentMeds || "").trim(),
     menstrualObHistory: (data.menstrualObHistory || "").trim(),
