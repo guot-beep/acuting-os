@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 32,
+        "records_with_issues": 31,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 9,
-        "strict_template_complete": 40,
-        "four_source_audit_complete": 40,
+        "strict_template_complete": 41,
+        "four_source_audit_complete": 41,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 40/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1; 32/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit. EX-UE1 Zhoujian records the eLotus/AD moxibustion-only agreement, AD M-UE-46 code, exact AD indications, and unsupported legacy needling, bloodletting, and 7-15-cone dose without promoting them to executable consensus. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; the record remains draft."
+        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 41/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE2; 31/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit. EX-UE2 Erbai is Board-listed; it preserves eLotus 0.5-1.0 cun separately from American Dragon's 0.5-1.0 and 0.5-1.5-cun variants, adds the browser-checked AD combination columns, and retains unsupported legacy bloodletting, 0.3-0.5-cun depth, and periosteum warning without promoting them to executable consensus. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; the record remains draft."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue the 72-record restart sequentially from EX-UE2 Erbai. Follow skills/acuting-extra-point-refinement/SKILL.md: integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup; preserve source differences and legacy content; add paired bilingual strict-template fields; record live exact-link checks or explicit source gaps; and add full edition/page-level print citations if Ting supplies borrowed-book pages. Current measured baseline: 40/72 strict-template and four-source-audited records; 32/72 remain and nine still contain a generic CloudTCM directory URL.",
+  "next_recommendation": "Continue the 72-record restart sequentially from EX-UE3 Zhongquan. Follow skills/acuting-extra-point-refinement/SKILL.md: integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup; preserve source differences and legacy content; add paired bilingual strict-template fields; record live exact-link checks or explicit source gaps; and add full edition/page-level print citations if Ting supplies borrowed-book pages. Current measured baseline: 41/72 strict-template and four-source-audited records; 31/72 remain and nine still contain a generic CloudTCM directory URL.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",

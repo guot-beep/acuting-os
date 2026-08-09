@@ -8456,46 +8456,208 @@
     "code": "EX-UE2",
     "display_code": "EX-UE2",
     "nameZh": "二白",
-    "nameEn": "Erbai",
+    "nameEn": "Two Whites",
     "pinyin": "Erbai",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "前臂掌側，腕橫紋上4寸，橈側腕屈肌腱的兩側，一手2穴。",
-    "locationEn": "On palmar aspect of forearm, 4 cun above wrist crease, on both sides of flexor carpi radialis tendon (2 points per arm).",
-    "techniqueNotes": "直刺0.5~1.0寸。可灸。\nPerpendicular 0.5-1.0 cun.",
-    "functions": "調和氣血，升提下陷，清腸止血",
-    "functionsEn": "Harmonizes Qi/blood; Lifts prolapse; Stops bleeding",
+    "location": "前臂掌側，腕橫紋上4寸，橈側腕屈肌腱兩側各一穴，一側前臂共2穴。eLotus 與 American Dragon 均支持此核心定位；AD 另列以 PC7 或掌側腕橫紋為起點的文字變體。",
+    "locationEn": "On the flexor aspect of the forearm, 4 cun proximal to the wrist crease, with one point on each side of the flexor carpi radialis tendon (two points per forearm). eLotus and American Dragon support this core location; AD also records wording variants measured from PC7 or the middle palmar wrist crease.",
+    "cunMeasurement": "腕橫紋上4寸；每側前臂以橈側腕屈肌腱為中心取兩穴。 4 cun proximal to the wrist crease, one point on each side of the flexor carpi radialis tendon on each forearm.",
+    "anatomyZh": "精確頁僅共同指定前臂屈側與橈側腕屈肌腱兩側，未提供皮下層次、血管神經走行、個體體型修正或安全終點。故不可由『肌腱兩側』自行推導更深刺法。",
+    "anatomyEn": "The exact pages identify only the flexor forearm and the two sides of the flexor carpi radialis tendon; they do not supply tissue layers, neurovascular course, body-habitus adjustment, or a safety endpoint. A deeper technique must not be inferred from the phrase 'on both sides of the tendon.'",
+    "acumethodZh": "eLotus：直刺0.5～1.0寸。American Dragon 同時列直刺0.5～1.0寸與垂直刺0.5～1.5寸兩個版本；各來源範圍分開保留，不合併成單一共識。舊卡另有直刺0.3～0.5寸或點刺出血，未獲四層精確來源支持，僅保留為未核實 legacy。",
+    "acumethodEn": "eLotus: perpendicular insertion 0.5-1.0 cun. American Dragon records both straight insertion 0.5-1.0 cun and perpendicular insertion 0.5-1.5 cun as separate variants; the source ranges remain separate rather than being merged into false consensus. Legacy 0.3-0.5-cun insertion or prick-to-bleed lacks support from the four exact layers and is retained only as unverified legacy.",
+    "moxaZh": "eLotus 與 American Dragon 均寫可灸，但未列直接／間接法、壯數、時間、皮膚保護或停止規則；不可自行補數字。",
+    "moxaEn": "Both eLotus and American Dragon state that moxibustion is applicable, but neither gives a direct/indirect method, cone count, duration, skin protection, or stopping rule; no numeric dose is inferred.",
+    "techniqueNotes": "【eLotus】直刺0.5～1.0寸；可灸。\n【American Dragon】直刺0.5～1.0寸；另列垂直刺0.5～1.5寸；可灸。\n【未核實舊值】直刺0.3～0.5寸或點刺出血，不作已驗證規則。\neLotus: perpendicular 0.5-1.0 cun; moxibustion applicable. American Dragon: straight 0.5-1.0 cun and a separate perpendicular 0.5-1.5-cun variant; moxibustion applicable. Unverified legacy: 0.3-0.5 cun or prick to bleed, not treated as a validated rule.",
+    "functions": "益直腸（eLotus）；調和氣血、升提下陷、清腸止血（舊卡）",
+    "functionsEn": "Benefits the rectum (eLotus); harmonizes Qi and blood, raises prolapse, and clears the intestines to stop bleeding (legacy)",
+    "functionsZhList": [
+      "益直腸（eLotus）",
+      "調和氣血（舊卡）",
+      "升提下陷（舊卡）",
+      "清腸止血（舊卡）"
+    ],
+    "functionsEnList": [
+      "Benefits the rectum (eLotus)",
+      "Harmonizes Qi and blood (legacy)",
+      "Raises prolapse (legacy)",
+      "Clears the intestines and stops bleeding (legacy)"
+    ],
+    "pointIdentityZh": [
+      "上肢部經外奇穴；每側前臂2穴",
+      "資料庫穩定代碼 EX-UE2、永久 id ex.ue2",
+      "eLotus 代碼 Ex-UE2，英文名 Two Whites",
+      "American Dragon 使用 M-UE-29，英文名 Two Whites"
+    ],
+    "pointIdentityEn": [
+      "Extra point of the upper extremity; two points on each forearm",
+      "Stable database code EX-UE2 and permanent id ex.ue2",
+      "eLotus code Ex-UE2 and English name Two Whites",
+      "American Dragon code M-UE-29 and English name Two Whites"
+    ],
+    "exam_star": 1,
+    "exam_importance": "NCBAHM Appendix A 明列 Erbai。考點為腕橫紋上4寸、橈側腕屈肌腱兩側各一穴，以及 eLotus／AD 共同支持痔瘡與脫肛；刺深須分開記 eLotus 0.5～1.0寸與 AD 的兩個版本。",
+    "exam_importance_en": "Erbai is explicitly named in NCBAHM Appendix A. Know the location 4 cun proximal to the wrist crease on both sides of the flexor carpi radialis tendon, the shared eLotus/AD indications of hemorrhoids and rectal prolapse, and the source-separated needling ranges.",
+    "exam_pearl": "二白＝每側前臂2穴：腕橫紋上4寸、橈側腕屈肌腱兩側。Board 明列；刺深不可把 eLotus 0.5～1.0寸與 AD 0.5～1.5寸硬合併。",
+    "exam_pearl_en": "Erbai consists of two points on each forearm, 4 cun above the wrist crease on both sides of the flexor carpi radialis tendon. It is Board-listed; do not merge the eLotus 0.5-1.0-cun range with AD's 0.5-1.5-cun variant.",
     "patterns": [
-      "痔瘡",
-      "脫肛",
-      "前臂痛"
+      "痔瘡（eLotus／American Dragon）",
+      "脫肛（eLotus／American Dragon）",
+      "肛門搔癢（American Dragon）",
+      "便血（American Dragon；診斷／急症邊界）",
+      "裏急後重（American Dragon）",
+      "前臂神經痛（American Dragon）"
     ],
     "patternsEn": [
-      "Hemorrhoids",
-      "Rectal prolapse",
-      "Forearm pain"
+      "Hemorrhoids (eLotus/American Dragon)",
+      "Rectal prolapse (eLotus/American Dragon)",
+      "Anal itching (American Dragon)",
+      "Blood in stool (American Dragon; diagnostic/emergency boundary)",
+      "Tenesmus (American Dragon)",
+      "Forearm neuralgia (American Dragon)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【痔瘡脫肛】二白配承山（BL57）、長強（GV1）：清熱止血，升提止痛。",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "益直腸",
+      "調和氣血",
+      "升提下陷",
+      "清腸止血"
+    ],
+    "action_tags_en": [
+      "Benefit the Rectum",
+      "Harmonize Qi and Blood",
+      "Raise Prolapse",
+      "Clear the Intestines and Stop Bleeding"
+    ],
+    "disease_tags_zh": [
+      "痔瘡",
+      "脫肛",
+      "肛門搔癢",
+      "裏急後重",
+      "前臂神經痛"
+    ],
+    "disease_tags_en": [
+      "Hemorrhoids",
+      "Rectal Prolapse",
+      "Anal Itching",
+      "Tenesmus",
+      "Forearm Neuralgia"
+    ],
+    "acuTags": [
+      "Board明列",
+      "前臂每側2穴",
+      "橈側腕屈肌腱",
+      "刺深來源分歧",
+      "舊放血未核實",
+      "AD M-UE-29"
+    ],
+    "combinePointsZh": "【American Dragon：慢性痔瘡】二白配承山（BL57）、長強（GV1）。【American Dragon：脫肛／痔瘡】二白配百會（GV20）、志室（BL52）、長強（GV1）。兩組依 AD 表格欄位逐欄核對；舊卡僅有前一組，未另立功效推論。",
+    "combinePointsEn": "American Dragon—chronic hemorrhoids: Erbai with BL57 (Chengshan) and GV1 (Changqiang). American Dragon—rectal prolapse/hemorrhoids: Erbai with GV20 (Baihui), BL52 (Zhishi), and GV1 (Changqiang). Both groups were checked column by column in the AD table; the legacy card contained only the first group, and no new combination action is inferred.",
+    "cautions": "【刺深分歧】eLotus 為0.5～1.0寸；AD 同頁另列0.5～1.0寸與0.5～1.5寸，不合併成假共識。精確頁未提供個體體型修正、深層解剖或安全終點。【放血缺口】舊點刺出血無精確頁支持，且四層未提供無菌、止血、抗凝／凝血異常或感染控制規則，不執行。【便血邊界】AD 將便血列為主治，但便血不是可自行歸因於痔瘡的療效標籤；NIDDK 指出急性或嚴重消化道出血、黑便、暈厥／頭暈或休克徵象需立即就醫。【特殊族群缺口】四層未提供孕期、兒童或特殊風險族群的專穴方案；來源沉默不是安全許可。舊『避免過深傷及骨膜』缺精確來源與解剖對應，保留為 unsupported legacy，不升格。",
+    "cautionsEn": [
+      "Depth conflict: eLotus gives 0.5-1.0 cun; AD separately records 0.5-1.0 cun and 0.5-1.5 cun on the same page. These are not merged into false consensus, and the exact pages provide no body-habitus adjustment, deep-anatomy description, or safety endpoint.",
+      "Bloodletting gap: legacy prick-to-bleed lacks exact-page support, and the four layers provide no sterility, hemostasis, anticoagulation/coagulopathy, or infection-control protocol; it is not executed.",
+      "Blood-in-stool boundary: AD lists blood in stool as an indication, but this is not treated as an efficacy tag that may be self-attributed to hemorrhoids. NIDDK advises immediate medical help for acute or severe GI bleeding, black/tarry stool, faintness/dizziness, or shock signs.",
+      "Special-population gap: the four layers provide no point-specific pregnancy, pediatric, or other high-risk protocol; source silence is not clearance. The legacy warning about overly deep insertion reaching periosteum lacks an exact source and anatomical correlation and remains unsupported legacy."
+    ],
+    "clinical_pearls": "eLotus 與 AD 對核心定位、痔瘡、脫肛與可灸一致；eLotus 明列『益直腸』，AD 的 Command Functions 欄空白但 Actions 寫治脫肛與痔瘡，並增加肛門搔癢、便血、裏急後重及前臂神經痛。刺深存在同頁版本差異，必須逐來源顯示。",
+    "clinical_pearls_en": "eLotus and AD agree on the core location, hemorrhoids, rectal prolapse, and moxibustion applicability. eLotus explicitly states that the point benefits the rectum. AD's Command Functions field is blank, while its Actions field states treatment of rectal prolapse and hemorrhoids and its indications add anal itching, blood in stool, tenesmus, and forearm neuralgia. Needling depth varies by source/version and must remain source-separated.",
+    "nameIntroZh": "『二白』為成對取穴：每側前臂在橈側腕屈肌腱兩側各一穴；英文標準顯示名採 Two Whites。",
+    "nameIntroEn": "Erbai, 'Two Whites,' is a paired arrangement on each forearm, with one point on either side of the flexor carpi radialis tendon.",
+    "evidence": "四層整合：NCBAHM Appendix A 明列 Erbai；本地 curriculum/acupoints 無二白專條，僅在其他穴位配穴文字中提及。eLotus 精確頁支持 Ex-UE2、腕橫紋上4寸與橈側腕屈肌腱兩側的定位、痔瘡、脫肛、益直腸、直刺0.5～1.0寸及可灸。American Dragon 拼音索引及精確頁支持 M-UE-29、三個定位文字版本、0.5～1.0與0.5～1.5寸兩種刺法、可灸、痔瘡、脫肛、肛癢、便血、裏急後重、前臂神經痛及兩組配穴；其 Command Functions 欄空白。舊調和氣血／升提／清腸止血、0.3～0.5寸、點刺出血與骨膜警語保留證據層級。NIDDK 僅支持便血的醫療評估／急症邊界，不支持穴位療效。\nFour-layer synthesis: NCBAHM Appendix A explicitly names Erbai. No dedicated local curriculum entry was found; it appears only in combination text for other points. The exact eLotus page supports Ex-UE2, the 4-cun/FCR-tendon location, hemorrhoids, rectal prolapse, benefit to the rectum, 0.5-1.0-cun perpendicular needling, and moxibustion. The AD pinyin index and exact page support M-UE-29, three location wordings, separate 0.5-1.0- and 0.5-1.5-cun techniques, moxibustion, hemorrhoids, rectal prolapse, anal itching, blood in stool, tenesmus, forearm neuralgia, and two combination groups; its Command Functions field is blank. Legacy Qi/blood and prolapse/bleeding actions, 0.3-0.5-cun depth, prick-to-bleed, and periosteum warning retain their evidence level. NIDDK supports only the medical-assessment/emergency boundary for GI bleeding, not point efficacy.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erbai-ex-ue2"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erbai-ex-ue2",
+      "https://www.americandragon.com/Points/Erbai.html",
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/gastrointestinal-bleeding/symptoms-causes"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 二白 EX-UE2 (eLotus CORE)",
-        "labelEn": "Extra Point · Erbai EX-UE2 (eLotus CORE)",
+        "labelZh": "eLotus · 二白 Ex-UE2（內容專頁）",
+        "labelEn": "eLotus · Erbai Ex-UE2 (Content Detail)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erbai-ex-ue2",
-        "source": "MasterTungAcupuncture.org / eLotus CORE"
+        "source": "eLotus CORE exact point detail"
+      },
+      {
+        "labelZh": "American Dragon · 二白 M-UE-29（內容專頁）",
+        "labelEn": "American Dragon · Erbai M-UE-29 (Content Detail)",
+        "url": "https://www.americandragon.com/Points/Erbai.html",
+        "source": "American Dragon exact point detail"
+      },
+      {
+        "labelZh": "NIDDK · 消化道出血安全邊界",
+        "labelEn": "NIDDK · GI Bleeding Safety Boundary",
+        "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gastrointestinal-bleeding/symptoms-causes",
+        "source": "NIDDK exact GI-bleeding safety page"
       }
     ],
     "x": 155,
     "y": 285,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.5 寸，或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.5 cun, or prick to bleed.",
-    "cautions": "防止針刺過深傷及骨膜。",
-    "cautionsEn": "Avoid overly deep insertion hitting periosteum.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Erbai is explicitly named"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 二白, Erbai, Two Whites, EX-UE2, and M-UE-29 under curriculum/board and curriculum/acupoints found no dedicated Erbai lesson entry",
+        "curriculum/acupoints references Erbai only in combination text for other points; no technique or safety content was transferred"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erbai-ex-ue2: exact page opened 2026-08-08; Ex-UE2, Two Whites, location, hemorrhoids, rectal prolapse, benefits-rectum action, 0.5-1.0-cun technique, and moxibustion extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Erbai link present and opened 2026-08-08",
+        "https://www.americandragon.com/Points/Erbai.html: exact page opened 2026-08-08; M-UE-29, Two Whites, three location wordings, separate 0.5-1.0- and 0.5-1.5-cun techniques, moxibustion, indications, Actions, and combinations extracted; Command Functions blank",
+        "2026-08-08 browser DOM table audit: BL57+GV1 maps to chronic hemorrhoids; GV20+BL52+GV1 maps to rectal prolapse/hemorrhoids"
+      ],
+      "location": [
+        "eLotus exact Erbai page: flexor forearm, 4 cun above wrist crease, both sides of flexor carpi radialis tendon",
+        "American Dragon exact Erbai page: three wording variants using PC7, middle palmar wrist crease, or wrist crease, consistently 4 cun proximal and two points around flexor carpi radialis"
+      ],
+      "anatomy": [
+        "eLotus and American Dragon exact pages: flexor forearm and flexor carpi radialis tendon surface relationship",
+        "source-gap note: no four-layer exact source supplies tissue layers, neurovascular course, body-habitus adjustment, or a safety endpoint"
+      ],
+      "technique": [
+        "eLotus exact Erbai page: perpendicular 0.5-1.0 cun",
+        "American Dragon exact Erbai page: straight 0.5-1.0 cun and separate perpendicular 0.5-1.5-cun variant",
+        "unverified legacy values: perpendicular 0.3-0.5 cun and prick to bleed; excluded from executable technique"
+      ],
+      "moxibustion": [
+        "eLotus and American Dragon exact Erbai pages: moxibustion applicable, with no dose, duration, direct/indirect method, skin protection, or stopping rule"
+      ],
+      "functions": [
+        "eLotus exact Erbai page: benefits the rectum",
+        "American Dragon exact Erbai page: Command Functions blank; Actions states treatment of rectal prolapse and hemorrhoids",
+        "unverified legacy actions retained: harmonizes Qi/blood, raises prolapse, clears the intestines, and stops bleeding"
+      ],
+      "indications": [
+        "eLotus exact Erbai page: hemorrhoids and rectal prolapse",
+        "American Dragon exact Erbai page: hemorrhoids, rectal prolapse, anal itching, blood in stool, tenesmus, and forearm neuralgia",
+        "blood in stool excluded from disease tags and handled as a diagnostic/emergency boundary"
+      ],
+      "combinations": [
+        "American Dragon exact Erbai page table, browser-checked 2026-08-08: BL57+GV1 for chronic hemorrhoids",
+        "American Dragon exact Erbai page table, browser-checked 2026-08-08: GV20+BL52+GV1 for rectal prolapse/hemorrhoids"
+      ],
+      "cautions": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/gastrointestinal-bleeding/symptoms-causes: exact page opened 2026-08-08; acute/severe GI bleeding, black or tarry stool, dizziness/fainting, and shock signs require urgent medical help",
+        "source-gap note: no point-specific bloodletting, pregnancy, pediatric, anticoagulation/coagulopathy, deep-anatomy, or moxa-dose protocol",
+        "unverified legacy warning about periosteum injury retained as unsupported because no exact source gives the claimed anatomical endpoint"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE2 / ex.ue2 / 二白 / Erbai",
+        "eLotus: Ex-UE2 / Two Whites",
+        "American Dragon: M-UE-29 / Two Whites"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Erbai exact detail page",
+        "2026-08-08 live-opened American Dragon pinyin index and exact Erbai content page",
+        "2026-08-08 live-opened NIDDK GI-bleeding symptoms-and-causes page; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "eLotus：直刺0.5～1.0寸。American Dragon：直刺0.5～1.0寸，另列垂直刺0.5～1.5寸。舊0.3～0.5寸或點刺出血未核實。",
+    "needlingEn": "eLotus: perpendicular 0.5-1.0 cun. American Dragon: straight 0.5-1.0 cun, with a separate perpendicular 0.5-1.5-cun variant. Legacy 0.3-0.5 cun or prick-to-bleed is unverified.",
     "id": "ex.ue2"
   },
   {
