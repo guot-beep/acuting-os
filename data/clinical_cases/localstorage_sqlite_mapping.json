@@ -20,9 +20,9 @@
     "validation": "every destination table.column is asserted to exist in schema.sql before this file is written"
   },
   "counts": {
-    "total_fields": 69,
+    "total_fields": 81,
     "by_status": {
-      "mapped": 63,
+      "mapped": 75,
       "unresolved_needs_ting": 4,
       "no_destination_yet": 2
     }
@@ -110,9 +110,90 @@
       "source_scope": "case",
       "source_field": "sex",
       "destination": "patients.sex_at_birth",
-      "transformation": "RENAME. Confirm the UI field means sex at birth and not gender identity — patients also has gender_identity and pronouns.",
+      "transformation": "RENAME. UI relabelled \"Sex at birth\" 2026-08 to resolve the ambiguity this row used to flag — the field's meaning was already sex at birth, only the label was unclear. genderIdentity below is the separate field this row used to warn was missing.",
       "nullable": true,
       "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "genderIdentity",
+      "destination": "patients.gender_identity",
+      "transformation": "RENAME. Column existed unused since CS3 (2026-07); the UI gained a matching field 2026-08. IMPORTANT TIMING NOTE, not a semantics dispute: the destination is on `patients` (patient-level, correctly — gender identity belongs to the person, not the episode), but the RUNTIME captures it on the *case* object today because no Patient entity is wired yet (see raceEthnicity below for the identical caveat, and known_gaps/patients-entity notes elsewhere in this repo). A migration writing patients.gender_identity from case.genderIdentity is straightforward per-case; the open question is what happens when the SAME real person's second case disagrees with their first — that is the Patient-entity-wiring problem, not an unresolved question about this column.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "raceEthnicity",
+      "destination": "case_race_ethnicity",
+      "transformation": "EXPLODE array of vocabulary ids (data/config/demographic_vocabulary.json) -> one row per id, race_ethnicity_id = the id as-is. Same EXPLODE-list-to-child-table pattern as westernConditions/safetyFlags. Deliberately CASE-scoped in schema.sql already (not a patient-level placeholder awaiting Patient-entity wiring like genderIdentity above) — schema.sql's own comment on case_race_ethnicity calls this the intended shape for now, with a patient-level junction as \"the eventual shape once the Patient entity is wired, not this batch.\" Do NOT flatten into raceEthnicityDetail (see that row) — two different fields, two different destinations, never merged.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "raceEthnicityDetail",
+      "destination": "cases.race_ethnicity_detail",
+      "transformation": "RENAME. Free-text self-description (\"Chinese\", \"Taiwanese\", \"Mexican\"), deliberately never promoted to a controlled id — demographic_vocabulary.json's own notes say that is what keeps the checkbox list from becoming an ever-growing enum. Paired with but independent of raceEthnicity above.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "onsetApprox",
+      "destination": "cases.onset_approx",
+      "transformation": "as-is. Coarse \"YYYY\" / \"YYYY-MM\" / \"YYYY-MM-DD\" / literal \"unknown\" string, D4 coarsen-never-falsify — never a fabricated day.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "chronicity",
+      "destination": "cases.chronicity",
+      "transformation": "as-is. Controlled vocabulary (acute|subacute|chronic|unknown) enforced in the UI, not a schema CHECK constraint — same pattern as cases.status.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "coursePattern",
+      "destination": "cases.course_pattern",
+      "transformation": "as-is. Deliberately a SEPARATE dimension from chronicity, not folded into one enum — schema.sql's own comment: \"an acute flare can be episodic, a chronic condition can be progressive.\" Controlled vocabulary enforced in the UI.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "previousTreatment",
+      "destination": "case_previous_treatment",
+      "transformation": "EXPLODE array of the fixed 11-value UI vocabulary -> one row per value, treatment_type = the value as-is (acupuncture, chinese_herbal_medicine, medication, ...). Same EXPLODE pattern as westernConditions. No separate vocabulary FILE (unlike raceEthnicity) — the list is fixed and short, enforced directly in the UI.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "previousTreatmentNotes",
+      "destination": "cases.previous_treatment_notes",
+      "transformation": "RENAME. Free-text elaboration paired with previousTreatment above — narrative detail the multi-select can't carry, never merged into the structured list.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "baselineSeverity",
+      "destination": "cases.baseline_severity_0_10",
+      "transformation": "Number(). Nullable, 0-10 CHECK already in schema.sql. Blank vs zero preserved distinctly at the runtime layer already (normalizeClinicalCase: `(value.baselineSeverity === 0 || value.baselineSeverity) ? Number(...) : \"\"`) — a migration must write NULL for the empty-string case and 0 (not NULL) for the literal zero case, same distinction the runtime already enforces, not a new rule to invent. Marked transitional in schema.sql pending the sym.*/metric.* structured-measurement identity question, which stays DEFERRED and is not resolved by this mapping.",
+      "nullable": true,
+      "data_loss_risk": "none",
       "status": "mapped"
     },
     {
@@ -158,6 +239,15 @@
       "transformation": "RENAME. case_intake_baseline also has tcm_history; one free-text field feeding one of two columns is a judgement, not a rule.",
       "nullable": true,
       "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "allergyStatus",
+      "destination": "cases.allergy_status",
+      "transformation": "as-is. Coarse status (none|has|unknown) CHECK-constrained already in schema.sql. Paired with but INDEPENDENT of the free-text allergies row below — schema.sql's own comment is explicit that the two are never reconciled automatically: no inferring \"none\" from an empty allergies string, no merging allergies prose into this field. \"\" (unanswered) stays distinct from \"unknown\" (asked, not known) and from \"none\" (asked, confirmed negative) — three different facts, never collapsed.",
+      "nullable": true,
+      "data_loss_risk": "none",
       "status": "mapped"
     },
     {
@@ -432,9 +522,18 @@
     },
     {
       "source_scope": "soap",
+      "source_field": "tcmPatternSelections",
+      "destination": "visit_tcm_patterns",
+      "transformation": "EXPLODE array of {patternId, isPrimary} -> one row per entry: pattern_id = entry.patternId as-is (already canonical), is_primary = entry.isPrimary ? 1 : 0. Added 2026-08 (e30b806) as the AUTHORITATIVE source for this table, including the is_primary column D5's own comment on visit_tcm_patterns already called for (\"one visit -> many TCM patterns, with is_primary\") but that nothing wrote until this field existed. Supersedes tcmPatternLinks below, which is NOT a second source to also migrate — it is a flat DERIVED mirror of this same array's patternIds (no is_primary information), kept only so pre-existing readers of tcmPatternLinks (window.AcuTingCases.usedIn's reverse index, the SOAP card's link row, Last Visit at a Glance's fallback) keep working. A migration must read tcmPatternSelections only; double-writing from both fields would either duplicate every row (same pattern_id from both) or silently drop is_primary (if tcmPatternLinks were used instead). Legacy notes that predate this field (tcmPatternLinks present, tcmPatternSelections absent) have it derived in-memory by normalizeSoapNote with every entry isPrimary:false — same 'never guess the primary' rule as effectDurationDays's conflict handling below, and note this derivation persists back to storage on ANY save touching the case (not just an edit of that specific visit), unlike effectDurationDays's stricter touch-that-note-only migration — worth a script author's attention if the two are assumed to behave identically.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
       "source_field": "tcmPatternLinks",
       "destination": "visit_tcm_patterns",
-      "transformation": "EXPLODE list -> rows. D5 canonical home.",
+      "transformation": "EXPLODE list -> rows. D5 canonical home. SUPERSEDED as the primary migration source by tcmPatternSelections above (2026-08, e30b806) — this field is now a flat DERIVED mirror (patternIds only, no primary/secondary information) kept for backward-compat readers, not an independent fact to also migrate. See tcmPatternSelections's entry for the full reasoning; this row is kept, not deleted, because the column/table destination itself is still correct and this field is still real data for notes that predate the reconciliation.",
       "nullable": null,
       "data_loss_risk": "none",
       "status": "mapped"
@@ -603,6 +702,15 @@
     },
     {
       "source_scope": "soap",
+      "source_field": "referralOrSupervisorQuestion",
+      "destination": "soap_notes.plan_referral_or_supervisor_question",
+      "transformation": "RENAME. Column existed unused in schema.sql before the SOAP audit batch (2026-08) wired a matching UI field to it — same \"column already there, nobody was writing to it\" situation as gender_identity above, not a new column added for this field.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
       "source_field": "followUp",
       "destination": "visits.next_follow_up",
       "transformation": "RENAME",
@@ -656,9 +764,9 @@
       "status": "mapped"
     }
   ],
-  "known_gaps_not_covered_by_this_pass": {
-    "note": "This 2026-08 update was scoped to the structured-outcome mapping only (outcomeMetrics / effectDurationDays / outcomeMetricLinks). These runtime fields exist in normalizeClinicalCase()/normalizeSoapNote() today, verified 2026-08, but have NO entry above yet — not because they were reviewed and are fine, but because documenting them was out of scope for this pass. Listed here so 'not in this file' cannot be misread as 'doesn't exist.'",
-    "case_scope": ["genderIdentity", "raceEthnicity", "raceEthnicityDetail", "onsetApprox", "chronicity", "coursePattern", "previousTreatment", "previousTreatmentNotes", "baselineSeverity", "allergyStatus"],
-    "soap_scope": ["tcmPatternSelections", "referralOrSupervisorQuestion"]
+  "residual_gaps": {
+    "note": "Verified 2026-08 by mechanically diffing every key normalizeClinicalCase()/normalizeSoapNote() actually produce against this file's source_field list (script run inline, not hand-counted): zero runtime fields are currently undocumented. The 12 case/soap fields the previous known_gaps_not_covered_by_this_pass section listed (genderIdentity, raceEthnicity, raceEthnicityDetail, onsetApprox, chronicity, coursePattern, previousTreatment, previousTreatmentNotes, baselineSeverity, allergyStatus, tcmPatternSelections, referralOrSupervisorQuestion) all had real schema.sql destinations already and are now mapped above — none of them were actually 'no destination,' they were just missing an entry, a distinction the prior version of this section did not draw. This note exists to be kept honest, not to be trusted blindly: whoever adds the next normalizeClinicalCase()/normalizeSoapNote() field is the one who makes this stale, and should re-run the same diff before assuming this section still says zero.",
+    "unresolved_needs_ting_still_open": ["case.allergies", "soap.tongueBody", "soap.tongueCoating", "soap.outcomeMetricLinks"],
+    "no_destination_yet_still_open": ["case.currentMeds", "soap.workflowLink"]
   }
 }
