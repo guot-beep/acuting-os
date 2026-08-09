@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 29,
+        "records_with_issues": 28,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 9,
-        "strict_template_complete": 43,
-        "four_source_audit_complete": 43,
+        "strict_template_complete": 44,
+        "four_source_audit_complete": 44,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 43/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE4; 29/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit. EX-UE4 Zhongkui preserves eLotus and American Dragon moxa doses separately, imports AD's 0.2-0.3-cun needling and browser-checked hiccup combination, keeps legacy deeper/penetrating needling and bloodletting non-executable, and treats AD's pregnancy-use note as a source statement rather than safety clearance. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; the record remains draft."
+        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 44/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE5; 28/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit. EX-UE5 Dagukong keeps eLotus perpendicular 0.1 cun separate from American Dragon's instruction to use moxibustion without a needling depth, retains legacy 0.5-0.8-cun needling and 5-7-cone moxa as unsupported non-executable history, and records the source's anomalous thumb phalanx wording without altering the stable database identity. EX-UE6 Xiaogukong is paused for adjudication because the legacy card locates PIP and permits needling or bloodletting while the exact eLotus page locates DIP and states moxibustion only; American Dragon's Gukong page is blank and does not establish identity. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; refined records remain draft."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue the 72-record restart sequentially from EX-UE5 Dagukong. Follow skills/acuting-extra-point-refinement/SKILL.md: integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup; preserve source differences and legacy content; add paired bilingual strict-template fields; record live exact-link checks or explicit source gaps; and add full edition/page-level print citations if Ting supplies borrowed-book pages. Current measured baseline: 43/72 strict-template and four-source-audited records; 29/72 remain and nine still contain a generic CloudTCM directory URL.",
+  "next_recommendation": "Resolve EX-UE6 Xiaogukong's PIP-versus-DIP location conflict and moxibustion-only versus legacy needling/bloodletting conflict before editing the record. The exact eLotus page supports DIP and moxibustion only; American Dragon's indexed Gukong detail page is blank and does not establish Xiaogukong identity. Current measured baseline: 44/72 strict-template and four-source-audited records; 28/72 remain and nine still contain a generic CloudTCM directory URL.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
