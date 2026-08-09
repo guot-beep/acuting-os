@@ -7049,3 +7049,19 @@ html { scroll-padding-top: 92px; }
   background: var(--warn-bg, #fff3e0); color: var(--warn, #a15c00);
 }
 .k-entity-chip.is-unresolved { opacity: .65; }
+
+/* A+ Clinical Safety View (2026-08-09) — structured red-flag rows.
+   Tier labels resolve from the registry's tier_vocabulary at render time;
+   a row without a resolvable tier shows plain warning text, never a
+   downgraded or annotated one. */
+.k-red-flag-list { list-style: none; margin: 0.45rem 0 0; padding: 0; display: grid; gap: 0.35rem; }
+.k-red-flag-item { display: flex; align-items: flex-start; gap: 0.45rem; }
+.k-red-flag-text { color: var(--warn); font-size: 0.8rem; line-height: 1.45; min-width: 0; }
+.k-red-flag-tier {
+  flex: 0 0 auto; padding: 0.05rem 0.5rem; border-radius: 999px;
+  font-size: 0.7rem; font-weight: 700; white-space: nowrap;
+  border: 1px solid transparent; margin-top: 0.05rem;
+}
+.k-red-flag-tier.is-tier-emergency { background: #fdecea; color: #b3261e; border-color: #f5c6c0; }
+.k-red-flag-tier.is-tier-urgent { background: #fff3e0; color: #a15c00; border-color: #f2ddb8; }
+.k-red-flag-tier.is-tier-routine { background: #eef2ee; color: #4a5f52; border-color: #d8e0d8; }

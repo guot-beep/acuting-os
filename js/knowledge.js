@@ -2166,6 +2166,35 @@
     const hasRedFlags = (r) => asList(r.red_flags_zh).length > 0 || asList(r.red_flags_en).length > 0;
     const noFlagBadge = `<span class="k-pill k-pill-warn" title="尚未填入安全警訊">⚠ 無安全警訊</span>`;
 
+    /* A+ Clinical Safety View (2026-08-09). Structured red-flag rows joined
+       from the bundled registry at render time (D13). Membership and ORDER
+       come from the runtime resolver's red_flag_record_ids — never re-scanned
+       here. A row whose id does not resolve, or whose wording does not align
+       with the runtime strings, renders as plain text: a warning can never
+       disappear or gain invented metadata because a join failed. No
+       provenance/status is shown at this layer — not_found is admin
+       semantics, and a record without a tier simply has no badge. Tier labels
+       come ONLY from the registry's tier_vocabulary (the en badge trims the
+       vocabulary string at its own dash/paren; no second label dictionary). */
+    const RF_BY_ID = new Map(((K.redFlagRegistry && K.redFlagRegistry.records) || []).map((r) => [r.id, r]));
+    const RF_TIER_VOCAB = (K.redFlagRegistry && K.redFlagRegistry.tier_vocabulary) || {};
+    const RF_TIER_CLASS = { emergency_referral: "is-tier-emergency", urgent_referral: "is-tier-urgent", routine_referral: "is-tier-routine" };
+    const redFlagRows = (c) => {
+      const zh = asList(c.red_flags_zh), en = asList(c.red_flags_en), ids = asList(c.red_flag_record_ids);
+      const n = Math.max(zh.length, en.length);
+      if (!n) return "";
+      const rows = [];
+      for (let i = 0; i < n; i++) {
+        const text = modeText(zh[i] || en[i] || "", en[i] || zh[i] || "");
+        const f = RF_BY_ID.get(ids[i]);
+        const aligned = f && (f.trigger_zh === zh[i] || (en[i] && f.trigger_en === en[i]));
+        const v = aligned && f.tier ? RF_TIER_VOCAB[f.tier] : null;
+        const badge = v ? `<span class="k-red-flag-tier ${RF_TIER_CLASS[f.tier] || ""}">${esc(modeText(v.zh, String(v.en || "").split(/[—(]/)[0].trim()))}</span>` : "";
+        rows.push(`<li class="k-red-flag-item">${badge}<span class="k-red-flag-text">⚠ ${esc(text)}</span></li>`);
+      }
+      return `<details class="k-condition-flags"><summary>${esc(modeText(`安全警訊 / Red flags (${n})`, `Red flags (${n})`))}</summary><ul class="k-red-flag-list">${rows.join("")}</ul></details>`;
+    };
+
     const conditionSources = (record) => {
       const links = asList(record.source_links).filter((link) =>
         link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
@@ -2421,7 +2450,7 @@
           ${symptomIds.length ? `<div class="k-condition-related"><strong>症狀 <small>Symptoms</small></strong><p class="k-tags">${symptomChips(symptomIds)}</p></div>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
-          ${flags.length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags (${flags.length})</summary><p class="k-flags">⚠ ${flags.slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
+          ${redFlagRows(c)}
           ${conditionSources(c)}${cloudRefBlock(c.id)}
         </article>`;
     }).join("");
