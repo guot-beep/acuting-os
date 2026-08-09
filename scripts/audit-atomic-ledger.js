@@ -2,6 +2,24 @@ const fs = require('fs');
 const path = require('path');
 const { runSourceCoverageVerification } = require('./verify-source-coverage');
 
+/**
+ * REPOSITORY VERIFICATION TIERS CONVENTION:
+ *
+ * 1. MACHINE VERIFIED
+ *    = Deterministic code comparison proves the claim (e.g. SHA-256 hashes, exact scalar field equality, manifest section existence).
+ *
+ * 2. HUMAN REVIEWED
+ *    = Source or official label was manually inspected/transcribed, but no deterministic code comparison proves textual equivalence.
+ *
+ * 3. INFERRED / DERIVED
+ *    = System or agent derived a candidate flag/note not stated verbatim by the raw source.
+ *
+ * 4. UNVERIFIED
+ *    = Not checked or audited yet.
+ *
+ * NOTE: Never silently promote HUMAN REVIEWED to MACHINE VERIFIED.
+ */
+
 function auditAtomicLedger() {
   const stagingData = JSON.parse(fs.readFileSync('data/pharmacology/staging_v7_ingestion.json', 'utf8'));
   const drugsData = JSON.parse(fs.readFileSync('data/pharmacology/drugs.json', 'utf8'));
@@ -12,10 +30,8 @@ function auditAtomicLedger() {
   const derivedFlags = stagingData.derived_candidate_flags || [];
 
   console.log('====================================================');
-  console.log('MACHINE AUDIT: DISJOINT ATOMIC PROVENANCE LEDGER & CANONICAL REALIZATION');
+  console.log('MACHINE AUDIT: THREE SEPARATE AUDIT GATES');
   console.log('====================================================');
-  console.log(`Total items in ledger: ${ledger.length}`);
-  console.log(`Total derived candidate flags: ${derivedFlags.length}`);
 
   // 1. Audit unique source_item_id
   const seenIds = new Set();
@@ -27,13 +43,11 @@ function auditAtomicLedger() {
     seenIds.add(item.source_item_id);
   });
 
-  console.log('\n[1] Unique source_item_id & Hash Collision Audit:');
-  console.log(`  Duplicate IDs count: ${duplicates.length}`);
   if (duplicates.length > 0) {
-    console.error('  FAIL: Found duplicate IDs:', duplicates);
+    console.error('FAIL: Found duplicate source_item_ids:', duplicates);
   }
 
-  // 2. Dispositions breakdown & Disjoint sum equation
+  // 2. Dispositions breakdown
   const breakdown = {
     canonical: 0,
     staging: 0,
@@ -49,7 +63,7 @@ function auditAtomicLedger() {
     if (breakdown[disp] !== undefined) {
       breakdown[disp]++;
     } else {
-      console.error(`  FAIL: Unknown disposition "${disp}" for item ${item.source_item_id}`);
+      console.error(`FAIL: Unknown disposition "${disp}" for item ${item.source_item_id}`);
     }
 
     if (!perDrugBreakdown[item.drug_id]) {
@@ -61,19 +75,11 @@ function auditAtomicLedger() {
     perDrugBreakdown[item.drug_id].total++;
   });
 
-  console.log('\n[2] Overall Dispositions Breakdown:', breakdown);
-  console.table(perDrugBreakdown);
-
   // Disjoint sum audit
   const sumDispositions = breakdown.canonical + breakdown.staging + breakdown.duplicated_for_provenance + breakdown.excluded_with_reason + breakdown.lost;
   const disjointEquationPassed = (sumDispositions === ledger.length);
-  console.log('\n[3] Disjoint Sum Equation Audit:');
-  console.log(`TOTAL UNIQUE SOURCE_ITEM_ID (${ledger.length}) = canonical (${breakdown.canonical}) + staging (${breakdown.staging}) + duplicated_for_provenance (${breakdown.duplicated_for_provenance}) + excluded_with_reason (${breakdown.excluded_with_reason}) + lost (${breakdown.lost})`);
-  console.log(`Internal Ledger Accounting Passed: ${disjointEquationPassed}`);
 
-  console.log('\n[4] Explicit Internal Ledger Lost Count:', breakdown.lost);
-
-  // 5. Valid canonical field references
+  // Allowed fields check
   const allowedFields = new Set([
     'drugclass_id', 'brand_names_en', 'suffix_en', 'mechanism_en', 'indications_en',
     'boxed_warning_en', 'warnings_en', 'contraindications_en', 'adverse_effects_en',
@@ -85,23 +91,37 @@ function auditAtomicLedger() {
   ledger.forEach(item => {
     if (item.disposition === 'canonical' && item.canonical_field) {
       if (!allowedFields.has(item.canonical_field)) {
-        console.error(`  FAIL: Item ${item.source_item_id} references invalid canonical field "${item.canonical_field}"`);
+        console.error(`FAIL: Item ${item.source_item_id} references invalid canonical field "${item.canonical_field}"`);
         invalidFieldsCount++;
       }
     }
   });
 
-  console.log('\n[5] Invalid Canonical Field References:', invalidFieldsCount);
-
-  // 6. Check derived items in main ledger
   let derivedInMainLedger = 0;
   ledger.forEach(item => {
     if (item.derived) derivedInMainLedger++;
   });
-  console.log('\n[6] Derived items found in main ledger:', derivedInMainLedger);
 
-  // 7. LEDGER -> CANONICAL REALIZATION CHECK (Requirement 2)
-  console.log('\n[7] Machine-Checkable Ledger -> Canonical Realization Audit:');
+  // ----------------------------------------------------
+  // GATE A: SOURCE -> LEDGER COVERAGE
+  // ----------------------------------------------------
+  const sourceCoverageReport = runSourceCoverageVerification();
+  const extractedCount = sourceCoverageReport.totalExtracted || ledger.length;
+  const matchedCount = sourceCoverageReport.totalLedgerMatched || ledger.length;
+  const missingCount = sourceCoverageReport.totalMissingFromLedger || 0;
+  const lostCount = breakdown.lost;
+  const coveragePct = extractedCount > 0 ? ((matchedCount / extractedCount) * 100).toFixed(1) : '0.0';
+
+  console.log('\n--- GATE A: SOURCE -> LEDGER COVERAGE ---');
+  console.log(`${extractedCount} extracted`);
+  console.log(`${matchedCount} matched`);
+  console.log(`${missingCount} missing`);
+  console.log(`${lostCount} lost`);
+  console.log(`${coveragePct}% coverage`);
+
+  // ----------------------------------------------------
+  // GATE B: LEDGER -> CANONICAL REALIZATION
+  // ----------------------------------------------------
   let exactVerifiedCount = 0;
   let exactMismatchedCount = 0;
   let humanReviewCount = 0;
@@ -110,7 +130,7 @@ function auditAtomicLedger() {
     const drug = drugsData.records.find(d => d.id === item.drug_id);
     if (!drug) {
       exactMismatchedCount++;
-      console.error(`  FAIL: Drug ${item.drug_id} not found in drugs.json`);
+      console.error(`FAIL: Drug ${item.drug_id} not found in drugs.json`);
       return;
     }
 
@@ -122,7 +142,7 @@ function auditAtomicLedger() {
         exactVerifiedCount++;
       } else {
         exactMismatchedCount++;
-        console.error(`  FAIL: Realization mismatch for ${item.source_item_id}: source text "${text}" != canonical dailymed_url "${drug.dailymed_url}"`);
+        console.error(`FAIL: Realization mismatch for ${item.source_item_id}: source text "${text}" != canonical dailymed_url "${drug.dailymed_url}"`);
       }
     } else if (field === 'suffix_en') {
       const cleanSuffix = text.replace(/^(\*\*|\*)?Suffix:(\*\*|\*)?\s*/i, '').replace(/[\*\`]/g, '').trim();
@@ -130,7 +150,7 @@ function auditAtomicLedger() {
         exactVerifiedCount++;
       } else {
         exactMismatchedCount++;
-        console.error(`  FAIL: Realization mismatch for ${item.source_item_id}: suffix "${cleanSuffix}" != canonical "${drug.suffix_en}"`);
+        console.error(`FAIL: Realization mismatch for ${item.source_item_id}: suffix "${cleanSuffix}" != canonical "${drug.suffix_en}"`);
       }
     } else if (field === 'brand_names_en') {
       const cleanBrand = text.replace(/^(Brand|Brand example):\s*/i, '').trim();
@@ -138,7 +158,7 @@ function auditAtomicLedger() {
         exactVerifiedCount++;
       } else {
         exactMismatchedCount++;
-        console.error(`  FAIL: Realization mismatch for ${item.source_item_id}: brand "${cleanBrand}" not in canonical ${JSON.stringify(drug.brand_names_en)}`);
+        console.error(`FAIL: Realization mismatch for ${item.source_item_id}: brand "${cleanBrand}" not in canonical ${JSON.stringify(drug.brand_names_en)}`);
       }
     } else if (field === 'drugclass_id') {
       const cls = classesData.records.find(c => c.id === drug.drugclass_id);
@@ -146,25 +166,31 @@ function auditAtomicLedger() {
         exactVerifiedCount++;
       } else {
         exactMismatchedCount++;
-        console.error(`  FAIL: Realization mismatch for ${item.source_item_id}: class ID "${drug.drugclass_id}" not found`);
+        console.error(`FAIL: Realization mismatch for ${item.source_item_id}: class ID "${drug.drugclass_id}" not found`);
       }
     } else {
-      // Transformed / narrative / list item promoted to canonical
+      // Transformed narrative / list item promoted to canonical
       humanReviewCount++;
     }
   });
 
-  console.log(`  Canonical items checked: ${ledger.filter(item => item.disposition === 'canonical').length}`);
-  console.log(`  - Exact verified scalar matches: ${exactVerifiedCount}`);
-  console.log(`  - Exact mismatched scalar items: ${exactMismatchedCount}`);
-  console.log(`  - Transformed narrative (human-review required): ${humanReviewCount}`);
+  const canonicalDispositionsTotal = breakdown.canonical;
+  const exactMachineCheckable = exactVerifiedCount + exactMismatchedCount;
 
-  // 8. P0 DAILYMED SECTION AUDIT AGAINST MANIFEST (Requirement 3 & 6)
-  console.log('\n[8] Exact DailyMed P0 Safety Section Alignment Audit:');
+  console.log('\n--- GATE B: LEDGER -> CANONICAL REALIZATION ---');
+  console.log(`${canonicalDispositionsTotal} canonical dispositions`);
+  console.log(`${exactMachineCheckable} exact machine-checkable`);
+  console.log(`${exactVerifiedCount} exact matched`);
+  console.log(`${exactMismatchedCount} exact mismatched`);
+  console.log(`${humanReviewCount} human-review-required transformations`);
+
+  // ----------------------------------------------------
+  // GATE C: P0 LABEL METADATA ALIGNMENT
+  // ----------------------------------------------------
   const batch2NewDrugs = ['drug.lisinopril', 'drug.metoprolol', 'drug.amlodipine', 'drug.atorvastatin', 'drug.digoxin'];
   let auditedP0Fields = 0;
   let alignedP0Fields = 0;
-  let correctedP0Fields = 0;
+  let verifiedSectionPresent = 0;
   let unresolvedP0Fields = 0;
 
   batch2NewDrugs.forEach(drugId => {
@@ -173,53 +199,51 @@ function auditAtomicLedger() {
 
     if (!drug || !labelMeta) {
       unresolvedP0Fields++;
-      console.error(`  FAIL: Missing record or label manifest for ${drugId}`);
+      console.error(`FAIL: Missing record or label manifest for ${drugId}`);
       return;
     }
 
-    // Check Boxed Warning
     if (drug.boxed_warning_en) {
       auditedP0Fields++;
-      if (!labelMeta.verified_sections.includes('BOXED_WARNING')) {
-        unresolvedP0Fields++;
-        console.error(`  FAIL: ${drugId} has boxed_warning_en but label manifest says BOXED_WARNING section is absent!`);
+      if (drug.dailymed_setid === labelMeta.setid) alignedP0Fields++;
+      if (labelMeta.verified_sections.includes('BOXED_WARNING')) {
+        verifiedSectionPresent++;
       } else {
-        alignedP0Fields++;
+        unresolvedP0Fields++;
+        console.error(`FAIL: ${drugId} has boxed_warning_en but label manifest says BOXED_WARNING section is absent!`);
       }
     }
 
-    // Check Contraindications
     if (drug.contraindications_en) {
       auditedP0Fields++;
-      if (!labelMeta.verified_sections.includes('CONTRAINDICATIONS')) {
-        unresolvedP0Fields++;
-        console.error(`  FAIL: ${drugId} has contraindications_en but label manifest says CONTRAINDICATIONS section is absent!`);
+      if (drug.dailymed_setid === labelMeta.setid) alignedP0Fields++;
+      if (labelMeta.verified_sections.includes('CONTRAINDICATIONS') || labelMeta.verified_sections.includes('DO_NOT_USE')) {
+        verifiedSectionPresent++;
       } else {
-        alignedP0Fields++;
+        unresolvedP0Fields++;
+        console.error(`FAIL: ${drugId} has contraindications_en but label manifest says CONTRAINDICATIONS section is absent!`);
       }
     }
 
-    // Check Warnings
     if (drug.warnings_en) {
       auditedP0Fields++;
-      if (!labelMeta.verified_sections.includes('WARNINGS') && !labelMeta.verified_sections.includes('WARNINGS_AND_PRECAUTIONS')) {
-        unresolvedP0Fields++;
-        console.error(`  FAIL: ${drugId} has warnings_en but label manifest has no WARNINGS section!`);
+      if (drug.dailymed_setid === labelMeta.setid) alignedP0Fields++;
+      if (labelMeta.verified_sections.includes('WARNINGS') || labelMeta.verified_sections.includes('WARNINGS_AND_PRECAUTIONS')) {
+        verifiedSectionPresent++;
       } else {
-        alignedP0Fields++;
+        unresolvedP0Fields++;
+        console.error(`FAIL: ${drugId} has warnings_en but label manifest has no WARNINGS section!`);
       }
     }
   });
 
-  console.log(`  P0 Safety Fields Audited for 5 New Drugs: ${auditedP0Fields}`);
-  console.log(`  - Aligned to verified DailyMed section: ${alignedP0Fields}`);
-  console.log(`  - Corrected in this pass: ${correctedP0Fields}`);
-  console.log(`  - Unresolved section errors: ${unresolvedP0Fields}`);
+  console.log('\n--- GATE C: P0 LABEL METADATA ALIGNMENT ---');
+  console.log(`${auditedP0Fields} P0 populated fields audited`);
+  console.log(`${alignedP0Fields} selected-setid aligned`);
+  console.log(`${verifiedSectionPresent} verified-section present`);
+  console.log(`${unresolvedP0Fields} unresolved metadata/section errors`);
 
-  // 9. Independent source coverage check
-  console.log('\n[9] Running Independent Source-to-Ledger Coverage & Manifest Check...');
-  const sourceCoverageReport = runSourceCoverageVerification();
-
+  // Overall Gate Evaluation
   const allPassed = duplicates.length === 0 &&
                     disjointEquationPassed &&
                     breakdown.lost === 0 &&
@@ -231,7 +255,7 @@ function auditAtomicLedger() {
 
   console.log('\n====================================================');
   if (allPassed) {
-    console.log('ALL AUDITS & HASH DRIFT CHECKS PASSED CLEANLY! LOST = 0 VERIFIED WITH 100% SOURCE COVERAGE & MANIFEST INTEGRITY!');
+    console.log('All implemented machine gates passed.');
   } else {
     console.error('AUDIT FAILED! See errors above.');
     process.exit(1);

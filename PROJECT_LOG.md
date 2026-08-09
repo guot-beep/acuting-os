@@ -1,15 +1,17 @@
-# 2026-08-09 Antigravity — Pharmacology Label Alignment & Audit Semantics Pass
+# 2026-08-09 Antigravity — Pharmacology Round 1: Truthful Audit Contract & Three-Gate Machine Auditing
 
 - **做了什麼**：
-  1. **Ledger 與 Canonical 飄移修復**：原始 v7 Markdown 內之舊 Source-pack URL（如 Lisinopril, Metoprolol, Amlodipine, Atorvastatin, Digoxin 舊 setid 連結）忠實保留於 v7 帳簿文字中，處置 (Disposition) 由 `canonical` 調整為 `staging` (provenance-only)，不因後續引用獨立驗證之新 DailyMed URL 而強行標示為 Canonical matches。
-  2. **實作機器可驗證之 Ledger->Canonical 實現度審核**：於 `scripts/audit-atomic-ledger.js` 擴充純純量 (Exact scalar) 與敘述轉化 (Transformed narrative) 分流比對。90 筆 Canonical 處置項目中：33 筆純量 100% 精確匹配（mismatched = 0），57 筆轉化敘述妥善留待人工審核。
-  3. **P0 安全欄位與 DailyMed 標籤完全對齊**：
-     - `drug.metoprolol`: 經比對 `151079c5-6360-45ed-8118-885543d6a4ad` 標籤並無 `#BOXED_WARNING` 區段，突發停藥警告屬於 `5.1 WARNINGS AND PRECAUTIONS`。已移除 `boxed_warning_en/zh`，轉移至 `warnings_en/zh` 並將 `field_sources` 對齊為 `#WARNINGS_AND_PRECAUTIONS`；禁忌對齊為失代償性心衰竭與具調節器病竇症候群。
-     - `drug.atorvastatin`: 禁忌完全對齊目前選定 PLR 標籤 `b687ba81-cb24-bbdf-5dd9-ab0e53dd480b`（急性肝衰竭或失代償性肝硬化）。
-     - `drug.lisinopril`: 禁忌對齊 `ab561d21-7466-4d8b-8d06-291c1d4d82ff`（含 36 小時 neprilysin inhibitor / sacubitril 禁忌與 ACEi 血管神經性水腫病史）。
-     - `drug.amlodipine` & `drug.digoxin`: 禁忌精確對齊官方標籤（Digoxin 包含其他毛地黃製劑過敏史）。
-  4. **DailyMed 標籤標題規範統一**：統一採用 SPL 官方標籤標題格式（如 `"METOPROLOL SUCCINATE TABLET, EXTENDED RELEASE"`），摒棄瀏覽器 HTML Page Title (`"DailyMed - ..."`) 前綴。
-  5. **驗證器硬化與 Manifest**：建立無版權文字之元資料清單 `data/pharmacology/dailymed_verified_labels_manifest.json`，於 `scripts/validate-pharm-standard.js` 實作標籤區段斷言。
+  1. **確立四級驗證層級 (Verification Tiers)**：於程式碼與文件明訂 `MACHINE VERIFIED`（程式碼確定性比對成立）、`HUMAN REVIEWED`（人工核對/抄錄但無法以程式碼純文字比對）、`INFERRED / DERIVED`（推導事實/候選標記）與 `UNVERIFIED`（未審核）。嚴禁將 HUMAN REVIEWED 混淆為 MACHINE VERIFIED。
+  2. **修正 `correctedP0Fields` 機器審核輸出**：移除了原先固定顯示 `Corrected = 1` 之假性機器審核欄位，更正修訂紀錄為 Human-reviewed git-diff 事實。
+  3. **永久拆分三大機器審核分流 (Three Separate Machine Gates)**：
+     - **Gate A (SOURCE -> LEDGER COVERAGE)**: 280 extracted, 280 matched, 0 missing, 0 lost, 100.0% coverage.
+     - **Gate B (LEDGER -> CANONICAL REALIZATION)**: 90 canonical dispositions (33 exact machine-checkable scalar matches, 0 exact mismatched, 57 human-review-required transformations).
+     - **Gate C (P0 LABEL METADATA ALIGNMENT)**: 7 P0 populated fields audited (for 5 new Batch 2 drugs), 7 selected-setid aligned, 7 verified-section present, 0 unresolved metadata/section errors.
+  4. **DailyMed Manifest 清單範疇精確描述**：清單 `dailymed_verified_labels_manifest.json` 包含 19 筆官方標籤元資料紀錄（涵蓋 19 筆藥物：15 筆屬目前 Pilot-1 + Batch-2 來源帳簿範疇，4 筆屬既有可參考 canonical 藥物）。
+  5. **驗證器語義與註解硬化**：於 `scripts/validate-pharm-standard.js` 補充註解，明確指出本驗證器係審核 DailyMed setid 引用與 section 存在性（Metadata Alignment），而非醫學敘述之純文字比對。
+- **機器審核總結**：`All implemented machine gates passed.`（三大機器分流全部獨立通過）。
+- **驗證**：`verify-source-coverage.js` PASS, `audit-atomic-ledger.js` PASS, `test-source-drift-simulation.js` PASS, `validate-pharm-standard.js --worklist` PASS, `build-data.js` PASS, `validate-interactions.js` PASS (108 IDs), `git diff --check` PASS.
+- **STOP**：Round 1 完成，**未開始 Round 2**，亦**未開始 P3**。等待 Ting 審核與指令。��
 - **三分流獨立審核結果**：
   1. **Source -> Ledger 覆蓋**：Extracted 280, Matched 280, Missing 0, Lost 0 (100%)
   2. **Ledger -> Canonical 實現**：Canonical items 90 (Exact matched 33, Mismatched 0, Human-review transformed 57)

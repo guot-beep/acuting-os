@@ -155,7 +155,10 @@ function main() {
         defects.push(`P3 ${where}: drugsystem_ids 必須是陣列,目前是 ${typeof r.drugsystem_ids}`);
       }
 
-      // P0 — the rule this file exists for: label section verification against manifest
+      // P0 — label section verification against metadata manifest.
+      // NOTE: This validator verifies metadata alignment (setid reference and section existence in
+      // data/pharmacology/dailymed_verified_labels_manifest.json). It does NOT perform full-text
+      // machine comparison of medical narrative, which is classified as HUMAN REVIEWED.
       let labelManifestMap = new Map();
       try {
         const manifestPath = path.join(DIR, 'dailymed_verified_labels_manifest.json');
