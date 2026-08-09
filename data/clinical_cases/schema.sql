@@ -296,6 +296,53 @@ CREATE TABLE IF NOT EXISTS visit_outcomes (
   unit TEXT,
   direction TEXT,
   notes TEXT,
+  -- docs/CLINICAL_DATA_FOUNDATION_DESIGN.md §3.2: metric_name has always been a
+  -- free string, not a resolvable id. metric_id is the additive fix — it points
+  -- at outcome_metrics.json's id (e.g. "metric.pain_score") so a metric can be
+  -- looked up instead of string-matched. Nullable and additive on purpose:
+  -- existing rows (all of them, today) have metric_name only, and backfilling
+  -- metric_id is future work, not this column's job.
+  metric_id TEXT,
+  FOREIGN KEY (visit_id) REFERENCES visits(id)
+);
+
+-- docs/CLINICAL_DATA_FOUNDATION_DESIGN.md §3.2 — the one new table that design
+-- calls for, carried over unchanged. Locks in a structured-observation shape
+-- before the D12 additive-only freeze (2026-09-01); the design's own words:
+-- "寧可表先建好空著,也不要凍結後才發現要改型" (better an empty table now than
+-- finding out post-freeze it needs retyping).
+--
+-- This table is EMPTY as of this commit and nothing writes to it yet. It is
+-- schema only, not a feature. In particular:
+--   - sym_id has no seed data to point at. docs/PROPOSAL_A_CLINICAL_MEASUREMENT_LAYER.md
+--     and docs/SYMPTOM_CARD_TEMPLATE.md (Y11-c) resolve a vitals measurement id
+--     through `metric.*` in outcome_metrics.json; CLINICAL_DATA_FOUNDATION_DESIGN
+--     §3.2/§3.3 instead resolves it through `sym.*`, seeded no earlier than
+--     9/05-11 per that doc's own §7 timeline. That fork is UNRESOLVED — flagged
+--     for Ting, not silently picked one way here.
+--   - actual vitals capture for 9/05 clinic use is unaffected either way: it
+--     stays on soap_notes.objective_vitals (free text, landed in bd0729f). This
+--     table is where a structured value goes once the sym_id question is
+--     settled, not a replacement for the free-text field.
+--   - observation_type covers symptom|sign|tongue|pulse|vital_sign|lab_finding|
+--     scale by design (§3.2) — the table is intentionally general so tongue/
+--     pulse structuring later does not need a second near-identical table. No
+--     seeding, UI, or validator work for those types happens in this batch.
+CREATE TABLE IF NOT EXISTS visit_observations (
+  id TEXT PRIMARY KEY,
+  visit_id TEXT NOT NULL,
+  sym_id TEXT,
+  observation_type TEXT,
+  present INTEGER,
+  severity_0_10 INTEGER,
+  laterality TEXT,
+  quality TEXT,
+  timing TEXT,
+  value_number REAL,
+  value_text TEXT,
+  unit TEXT,
+  loinc_code TEXT,
+  notes TEXT,
   FOREIGN KEY (visit_id) REFERENCES visits(id)
 );
 
