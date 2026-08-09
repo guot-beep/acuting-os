@@ -557,6 +557,12 @@ h1 {
 }
 .soap-reflection > label { margin-top: 0.5rem; }
 
+/* effect_duration_days one-fact-one-home reconciliation (2026-08-09): shown
+   only when a note's legacy field and canonical metric disagree. Same
+   amber warning convention as .k-pair-caution/.exam-star-mark--1 elsewhere
+   in this file — deliberately not an error color, this blocks nothing. */
+.metric-conflict-warning { display: block; margin-top: 0.2rem; color: #b45309; font-weight: 600; }
+
 /* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
 .soap-reflection-view {
   margin-top: 0.5rem;

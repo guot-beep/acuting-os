@@ -91,6 +91,20 @@ let learnFromMode = false;
 const NUMERIC_OUTCOME_METRIC_CONFIG = [
   { metricId: "metric.pain_score", min: 0, max: 10, integer: true },
   { metricId: "metric.sleep_hours", min: 0, max: null, integer: false },
+  // "One fact, one home" reconciliation (2026-08-09,
+  // docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md's effect_duration_days duplicate-
+  // capture problem): note.effectDurationDays (SOAP audit batch, a direct
+  // column added before the structured-metric layer existed) and
+  // metric.effect_duration_days are the same clinical fact — "how many
+  // days did the last treatment's effect last," CLINICAL_GRAPH_TRACK.md
+  // CG6's own words. Integer semantics kept unchanged from the existing
+  // direct field (schema.sql's effect_duration_days is INTEGER, the old
+  // form input was step="1") — nothing in outcome_metrics.json's plain
+  // "days" unit argues for allowing half-days, and this batch isn't the
+  // place to change that. legacyField marks this as the one metric with a
+  // pre-existing alternate representation; resolveNumericMetricValue below
+  // is the only place that property is read.
+  { metricId: "metric.effect_duration_days", min: 0, max: null, integer: true, legacyField: "effectDurationDays" },
 ];
 
 // Data-load guard: the app is data-driven; if the generated data file did not
@@ -5042,39 +5056,71 @@ function outcomeMetricShortLabel(metricId) {
   return zh.replace(/[（(][^）)]*[）)]/g, "").trim();
 }
 
+// One-fact-one-home resolution for a metric that may still have a legacy
+// direct-field representation (only metric.effect_duration_days does, via
+// cfg.legacyField). Canonical (outcomeMetrics[]) wins whenever it exists —
+// a deterministic, always-applied rule, not a per-case guess. When BOTH
+// exist and disagree, that is surfaced (conflict:true) rather than the
+// legacy value being silently discarded; when only the legacy field has
+// ever been set (an old note nobody has resaved since this batch), it is
+// read as-is so historical values are never lost or blanked.
+function resolveNumericMetricValue(note, cfg) {
+  const canonical = getOutcomeMetricValue(note.outcomeMetrics, cfg.metricId);
+  const hasCanonical = canonical === 0 || !!canonical;
+  if (!cfg.legacyField) return { value: canonical, hasValue: hasCanonical, conflict: false };
+  const legacy = note[cfg.legacyField];
+  const hasLegacy = legacy === 0 || !!legacy;
+  if (hasCanonical && hasLegacy) {
+    return { value: canonical, hasValue: true, conflict: Number(canonical) !== Number(legacy), legacyValue: legacy };
+  }
+  if (hasCanonical) return { value: canonical, hasValue: true, conflict: false };
+  if (hasLegacy) return { value: legacy, hasValue: true, conflict: false };
+  return { value: "", hasValue: false, conflict: false };
+}
+
 // Renders one <label><input></label> per configured metric into the given
-// container, values pre-filled from `currentMetrics`. Rebuilt every dialog
-// open (like renderRaceEthnicityOptions) — cheap, and always exactly right
-// for whichever note is being edited.
-function renderNumericOutcomeMetricInputs(currentMetrics) {
+// container, values pre-filled from `note` (canonical metric, or the
+// legacy field for the one metric still carrying one — see
+// resolveNumericMetricValue). Rebuilt every dialog open (like
+// renderRaceEthnicityOptions) — cheap, and always exactly right for
+// whichever note is being edited.
+function renderNumericOutcomeMetricInputs(note) {
   const container = document.querySelector("#structuredOutcomeMetrics");
   if (!container) return;
   container.innerHTML = NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
     const def = getOutcomeMetricDef(cfg.metricId);
     const unitNote = def?.unit ? ` <small>${escapeHtml(def.unit)}</small>` : "";
-    const value = getOutcomeMetricValue(currentMetrics, cfg.metricId);
+    const resolved = resolveNumericMetricValue(note, cfg);
     const attrs = [
       `type="number"`,
       `name="${escapeAttribute(cfg.metricId)}"`,
       `min="${cfg.min}"`,
       cfg.max != null ? `max="${cfg.max}"` : "",
       `step="${cfg.integer ? "1" : "any"}"`,
-      `value="${value === 0 || value ? escapeAttribute(String(value)) : ""}"`,
+      `value="${resolved.hasValue ? escapeAttribute(String(resolved.value)) : ""}"`,
       `placeholder="未測量可留空 leave blank if not measured"`,
     ].filter(Boolean).join(" ");
-    return `<label>${escapeHtml(outcomeMetricLabel(cfg.metricId))}${unitNote}<small>${escapeHtml(cfg.metricId)}</small><input ${attrs} /></label>`;
+    const conflictWarning = resolved.conflict
+      ? `<small class="metric-conflict-warning">⚠ 與舊欄位不一致：舊值 ${escapeHtml(String(resolved.legacyValue))}，目前顯示新值 ${escapeHtml(String(resolved.value))}（儲存後舊欄位會清除）。Conflicts with the legacy field — old ${escapeHtml(String(resolved.legacyValue))}, showing new ${escapeHtml(String(resolved.value))}.</small>`
+      : "";
+    return `<label>${escapeHtml(outcomeMetricLabel(cfg.metricId))}${unitNote}<small>${escapeHtml(cfg.metricId)}</small><input ${attrs} />${conflictWarning}</label>`;
   }).join("");
 }
 
 // Config-driven validate-and-set for every configured numeric metric.
 // `formValues` is the plain object saveSoapFromForm already builds from
 // FormData — each metric's input name IS its metricId, so formValues[
-// cfg.metricId] is exactly its raw string. Returns {metrics} on success or
-// {error} on the FIRST invalid field (reject, never clamp) so the caller
-// can alert and abort the save exactly like the two hand-written blocks
-// did.
+// cfg.metricId] is exactly its raw string. Returns {metrics, legacyClears}
+// on success or {error} on the FIRST invalid field (reject, never clamp)
+// so the caller can alert and abort the save exactly like the two
+// hand-written blocks did. legacyClears is {fieldName: ""} for every
+// configured metric that has a legacyField — realizing "one fact, one
+// home" going forward: any save (new or edited) fully migrates that
+// metric to outcomeMetrics[] and blanks the old column, so only notes
+// nobody has touched since this batch still carry a legacy value.
 function computeNumericOutcomeMetrics(formValues, currentMetrics) {
   let metrics = currentMetrics || [];
+  const legacyClears = {};
   for (const cfg of NUMERIC_OUTCOME_METRIC_CONFIG) {
     const raw = String(formValues[cfg.metricId] || "").trim();
     if (raw) {
@@ -5088,22 +5134,28 @@ function computeNumericOutcomeMetrics(formValues, currentMetrics) {
       }
     }
     metrics = setOutcomeMetricValue(metrics, cfg.metricId, raw);
+    if (cfg.legacyField) legacyClears[cfg.legacyField] = "";
   }
-  return { metrics };
+  return { metrics, legacyClears };
 }
 
 // Shared display formatter — SOAP card and Last Visit at a Glance both call
-// this instead of each hand-formatting pain/sleep separately. [label,
-// valueText] pairs, one per metric that actually has a value; metrics with
-// no value are omitted (never a fabricated "0").
-function formatNumericOutcomeMetrics(outcomeMetrics) {
+// this instead of each hand-formatting pain/sleep/effect-duration
+// separately. [label, valueText] pairs, one per metric that actually has a
+// value (legacy-only historical notes included, via
+// resolveNumericMetricValue — never a fabricated "0", never a blanked
+// historical value). A conflicting metric shows its resolved (canonical)
+// value with a small ⚠ suffix rather than two rows — "no duplicate rows"
+// — the full explanation lives on the form, where it can actually be acted
+// on.
+function formatNumericOutcomeMetrics(note) {
   return NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
-    const v = getOutcomeMetricValue(outcomeMetrics, cfg.metricId);
-    if (v !== 0 && !v) return null;
+    const resolved = resolveNumericMetricValue(note, cfg);
+    if (!resolved.hasValue) return null;
     const def = getOutcomeMetricDef(cfg.metricId);
-    const valueText = cfg.max != null
-      ? `${v}/${cfg.max}`
-      : `${v}${def?.unit === "hours" ? " h" : (def?.unit ? " " + def.unit : "")}`;
+    const v = resolved.value;
+    const valueText = (cfg.max != null ? `${v}/${cfg.max}` : `${v}${def?.unit === "hours" ? " h" : (def?.unit ? " " + def.unit : "")}`)
+      + (resolved.conflict ? " ⚠" : "");
     return [outcomeMetricLabel(cfg.metricId), valueText];
   }).filter(Boolean);
 }
@@ -5723,8 +5775,7 @@ function renderSoapNoteCard(note) {
         <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
-        ${formatNumericOutcomeMetrics(note.outcomeMetrics).map(([label, val]) => `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
-        ${(note.effectDurationDays === 0 || note.effectDurationDays) ? `<div><small>效果維持 Effect duration</small><span>${escapeHtml(String(note.effectDurationDays))} 天 days</span></div>` : ""}
+        ${formatNumericOutcomeMetrics(note).map(([label, val]) => `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
       </div>
       <div class="soap-link-grid">
         <div><small>Western links</small><span>${escapeHtml(formatNoteList(note.westernConditionLinks))}</span></div>
@@ -6076,8 +6127,7 @@ function renderPreviousVisitPanel(note) {
     ["S 主觀 Subjective", truncateText(note.subjective, 80)],
     ["療效 Outcomes", truncateText(note.outcomes, 80)],
     ["療效判定 Verdict", verdict ? `${verdict.zh} ${verdict.en}` : ""],
-    ...formatNumericOutcomeMetrics(note.outcomeMetrics),
-    ["效果維持 Effect duration", (note.effectDurationDays === 0 || note.effectDurationDays) ? `${note.effectDurationDays} 天 days` : ""],
+    ...formatNumericOutcomeMetrics(note),
     ["證型 Pattern", pattern],
     ["治法 Tx principle", note.treatmentPrinciple || ""],
     ["用穴 Points", formatNoteList(note.acupointLinks, "")],
@@ -6153,7 +6203,10 @@ function openSoapEditor(note = null) {
   // Metadata-driven numeric outcome metrics: one generic render instead of
   // per-metric hydration ifs. Inputs are UI-only (no soap_notes.painScore/
   // sleepHours key exists — they read/write through data.outcomeMetrics).
-  renderNumericOutcomeMetricInputs(data.outcomeMetrics);
+  // Passed the whole `data`, not just data.outcomeMetrics: effect_duration_days
+  // needs data.effectDurationDays too, for the legacy-field fallback/conflict
+  // check (resolveNumericMetricValue).
+  renderNumericOutcomeMetricInputs(data);
   // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
   // tcmPatternSecondary are UI-only form fields, no such keys exist on the
   // note object itself (the note holds tcmPatternSelections instead).
@@ -6192,22 +6245,23 @@ function saveSoapFromForm(event) {
       return;
     }
   }
-  const effectDurationRaw = (data.effectDurationDays || "").trim();
-  if (effectDurationRaw && (!/^\d+$/.test(effectDurationRaw) || Number(effectDurationRaw) < 0)) {
-    alert("效果維持天數須為 0 以上的整數（可留空）。");
-    return;
-  }
   // Metadata-driven numeric outcome metrics (metric.pain_score,
-  // metric.sleep_hours). Reject, never coerce — config-driven per-metric
-  // shape/range check, same rule set the two hand-written blocks enforced
-  // (pain: integer 0-10; sleep: non-negative decimal, no upper bound) but
-  // expressed once in NUMERIC_OUTCOME_METRIC_CONFIG instead of per metric.
+  // metric.sleep_hours, metric.effect_duration_days). Reject, never coerce
+  // — config-driven per-metric shape/range check, same rules the hand-
+  // written blocks enforced (pain: integer 0-10; sleep: non-negative
+  // decimal; effect duration: non-negative integer, same as its old
+  // dedicated block) but expressed once in NUMERIC_OUTCOME_METRIC_CONFIG.
+  // legacyClears realizes "one fact, one home": saving any note blanks
+  // effectDurationDays going forward, because outcomeMetrics[] just became
+  // this save's source of truth for it (merged into normalizeSoapNote()
+  // below — an explicit key always wins over the `...current` spread).
   const numericMetricsResult = computeNumericOutcomeMetrics(data, current?.outcomeMetrics || []);
   if (numericMetricsResult.error) {
     alert(numericMetricsResult.error);
     return;
   }
   const outcomeMetrics = numericMetricsResult.metrics;
+  const legacyMetricClears = numericMetricsResult.legacyClears;
 
   // TCM pattern primary/secondary reconciliation. The excludeValues live
   // filter (setupLinkAutocomplete) already keeps the current primary out of
@@ -6264,7 +6318,7 @@ function saveSoapFromForm(event) {
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     outcomeVerdict: data.outcomeVerdict || "",
     outcomeMetrics,
-    effectDurationDays: effectDurationRaw === "" ? "" : Number(effectDurationRaw),
+    ...legacyMetricClears,
     referralOrSupervisorQuestion: (data.referralOrSupervisorQuestion || "").trim(),
     followUp: data.followUp.trim(),
     differentialConsidered: (data.differentialConsidered || "").trim(),
