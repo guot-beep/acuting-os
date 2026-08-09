@@ -9502,32 +9502,107 @@
     "code": "EX-UE8",
     "display_code": "EX-UE8",
     "nameZh": "外勞宮（落枕穴）",
-    "nameEn": "Wailaogong",
+    "nameEn": "Outer Laogong (Luozhen)",
     "pinyin": "Wailaogong",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
     "location": "手背，第2、3掌骨間，掌指關節後0.5寸處。",
     "locationEn": "On dorsum of hand, between 2nd/3rd metacarpals, 0.5 cun proximal to MCP joint.",
-    "techniqueNotes": "直刺0.5~0.8寸。留針轉動頸部。可灸。\nPerpendicular 0.5-0.8 cun. Move neck.",
-    "functions": "通經活絡，舒筋止痛，利頸",
-    "functionsEn": "Unblocks channels; Relaxes tendons; Benefits neck",
+    "cunMeasurement": "第2、3掌骨間、掌指關節近端0.5寸，以骨間隙與掌指關節為標誌。",
+    "anatomyZh": "位於第2、3掌骨間的手背區。來源未提供皮膚至骨間肌的深度、伸肌腱與手背靜脈／神經血管的精確走向，也未提供以局部痠、痛、麻或向指端傳導作安全終點的判準。舊『前臂神經電擊感』警語與本穴手背定位不相稱，降為 unsupported legacy。",
+    "anatomyEn": "This point lies in the dorsal region between the second and third metacarpals. Sources do not provide skin-to-interosseous depth, exact extensor-tendon or dorsal venous/neurovascular trajectories, or criteria for treating local soreness, pain, numbness, or fingertip radiation as a safe endpoint. The legacy warning about an 'electric forearm nerve sensation' is anatomically mismatched to this dorsal-hand location and is downgraded as unsupported history.",
+    "acumethodZh": "eLotus：直刺0.5～0.8寸。American Dragon 落枕穴 exact page：直刺或斜刺0.5～1.0寸，可有局部痛、痠、麻或向指端傳導。舊卡留針轉動頸部未在 exact pages 找到操作幅度、監測或停止條件，保留為 unsupported legacy。",
+    "acumethodEn": "eLotus: perpendicular insertion 0.5-0.8 cun. The American Dragon Luozhen exact page gives straight or slanted insertion 0.5-1.0 cun and describes local pain, soreness, numbness, or radiation to the fingertips. Legacy retained-needle neck movement lacks verified range, monitoring, and stopping rules on the exact pages and remains unsupported history.",
+    "moxaZh": "eLotus：可灸3～5分鐘；未說明直接／間接法、距離、皮膚保護或停止條件。American Dragon exact page 未提供灸法規格。",
+    "moxaEn": "eLotus: moxibustion for 3-5 minutes; direct/indirect method, distance, skin protection, and stopping rules are not specified. The American Dragon exact page provides no moxibustion protocol.",
+    "techniqueNotes": "eLotus：直刺0.5～0.8寸；灸3～5分鐘。American Dragon 落枕穴：直刺或斜刺0.5～1.0寸。Legacy 留針轉動頸部 unsupported；不把前臂電擊感當安全終點。\neLotus: perpendicular 0.5-0.8 cun; moxa 3-5 minutes. American Dragon Luozhen: straight or slanted 0.5-1.0 cun. Legacy retained-needle neck movement is unsupported; forearm electric sensation is not treated as a safety endpoint.",
+    "functions": "舒筋通絡；調中理氣；通經活絡、止痛利頸（legacy）",
+    "functionsEn": "Relaxes the sinews and opens the channels/collaterals; harmonizes the middle and regulates qi; unblocks the channels, alleviates pain, and benefits the neck (legacy)",
+    "functionsZhList": [
+      "舒筋通絡",
+      "調中理氣",
+      "通經活絡（legacy）",
+      "止痛利頸（legacy）"
+    ],
+    "functionsEnList": [
+      "Relaxes the sinews and opens the channels/collaterals",
+      "Harmonizes the middle and regulates qi",
+      "Unblocks the channels (legacy)",
+      "Alleviates pain and benefits the neck (legacy)"
+    ],
+    "pointIdentityZh": "本庫穩定代碼 EX-UE8／ex.ue8，外勞宮 Wailaogong，並保留落枕穴 Luozhen 別名。NCBAHM Appendix A 明列 Luozhen；eLotus 以 Ex-UE8 列 Wailaogong，且註稱其定位與 Luozhen 相同；American Dragon 以 M-UE-24 列 Luozhen。外部代碼差異不改本庫 id。",
+    "pointIdentityEn": "Stable database identity: EX-UE8 / ex.ue8, Wailaogong, with Luozhen retained as an alias. NCBAHM Appendix A lists Luozhen. eLotus codes Wailaogong as Ex-UE8 and notes the same location as Luozhen, while American Dragon codes Luozhen M-UE-24. External code differences do not change the database ID.",
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 以 Luozhen 名稱明列。考點是外勞宮／落枕穴同位別名關係、手背第2／3掌骨間定位，以及 eLotus 0.5～0.8寸與 American Dragon 0.5～1.0寸兩套刺法。",
+    "exam_importance_en": "NCBAHM 2026 ACPL Appendix A lists the point as Luozhen. Key study issues are the Wailaogong/Luozhen same-location alias relationship, the dorsal second/third intermetacarpal location, and the separate eLotus 0.5-0.8-cun versus American Dragon 0.5-1.0-cun methods.",
+    "exam_pearl": "落枕穴可在 AD 用 Luozhen 找到；不要因 AD 代碼 M-UE-24 或 eLotus 的別名註記而改動本庫 EX-UE8。",
+    "exam_pearl_en": "American Dragon lists this location under Luozhen. Do not change the database's EX-UE8 identity because American Dragon uses M-UE-24 or because eLotus discusses the alias.",
     "patterns": [
       "落枕",
-      "頸椎病",
-      "手指麻木",
-      "手背痛"
+      "頭痛／偏頭痛",
+      "手指麻木、紅腫或屈伸不利",
+      "腹瀉、便溏或消化不良",
+      "手背痛（legacy）",
+      "頸椎病（legacy）"
     ],
     "patternsEn": [
       "Stiff neck",
-      "Cervical spondylosis",
-      "Finger numbness",
-      "Dorsal hand pain"
+      "Headache / migraine",
+      "Finger numbness, redness/swelling, or impaired flexion-extension",
+      "Diarrhea, loose stool, or indigestion",
+      "Dorsal hand pain (legacy)",
+      "Cervical spondylosis (legacy)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【落枕】外勞宮配懸鐘（GB39）、後溪（SI3）：快速緩解落枕痛。",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "舒筋通絡",
+      "調中理氣",
+      "止痛利頸（legacy）"
+    ],
+    "action_tags_en": [
+      "relax sinews and open channels/collaterals",
+      "harmonize the middle and regulate qi",
+      "alleviate pain and benefit the neck (legacy)"
+    ],
+    "disease_tags_zh": [
+      "落枕",
+      "頭痛／偏頭痛",
+      "手指麻木",
+      "腹瀉／消化不良"
+    ],
+    "disease_tags_en": [
+      "stiff neck",
+      "headache / migraine",
+      "finger numbness",
+      "diarrhea / indigestion"
+    ],
+    "acuTags": [
+      "extra_point",
+      "upper_extremity",
+      "board_listed",
+      "alias_code_conflict",
+      "pediatric_boundary"
+    ],
+    "combinePointsZh": "American Dragon 記【落枕】落枕穴配新識（M-HN-29）。舊卡另記外勞宮配懸鐘（GB39）、後溪（SI3）；後者未在本輪 exact pages 核實，保留為 unsupported legacy，不作療效保證。",
+    "combinePointsEn": "American Dragon pairs Luozhen with Xinshi (M-HN-29) for stiff neck. The legacy card separately pairs Wailaogong with Xuanzhong (GB39) and Houxi (SI3); this was not verified on the exact pages and remains unsupported legacy, not an efficacy guarantee.",
+    "cautions": "【刺法差異】eLotus 直刺0.5～0.8寸；American Dragon 直刺或斜刺0.5～1.0寸，分開呈現。【局部安全缺口】來源未給伸肌腱、手背靜脈／神經血管、骨間結構的安全終點；AD 所述向指端傳導感不等於已建立的安全停止規則。【動態技法】舊留針轉頸 unsupported；無幅度、監測或停止 protocol。【舊警語】『前臂神經電擊感』與手背定位不相稱，降為 unsupported，不作指引。【兒科急症邊界】eLotus 所列小兒驚厥、臍風／新生兒破傷風只保留為來源主治紀錄；持續或首次發作、呼吸／清醒困難需急救，新生兒破傷風為須住院的急症，均不作穴位療效或 disease tag。【特殊族群】孕期、兒童及感覺／循環異常者無 point-specific protocol。",
+    "cautionsEn": "[Technique difference] eLotus gives perpendicular 0.5-0.8 cun; American Dragon gives straight or slanted 0.5-1.0 cun, retained separately. [Local safety gap] Sources provide no extensor-tendon, dorsal venous/neurovascular, or interosseous endpoint; American Dragon's fingertip-radiating sensation is not an established stopping rule. [Dynamic method] Legacy retained-needle neck rotation is unsupported, with no range, monitoring, or stop protocol. [Legacy warning] 'Electric forearm nerve sensation' is anatomically mismatched and downgraded, not guidance. [Pediatric emergency boundary] eLotus-listed childhood convulsions and neonatal tetanus are retained only as source-reported indications. Prolonged/first seizures or breathing/waking difficulty require emergency help, and neonatal tetanus requires hospitalization; neither is promoted as efficacy or a disease tag. [Special populations] No point-specific protocol is available for pregnancy, children, or sensory/circulatory impairment.",
+    "clinical_pearls": [
+      "外勞宮與落枕穴在 eLotus 被視為同定位；AD 可用 Luozhen 找到 exact page，但外部編碼不同。",
+      "eLotus 的兒科驚厥與新生兒破傷風主治只進 provenance／clinical boundary，不進 disease tags。"
+    ],
+    "clinical_pearls_en": [
+      "eLotus treats Wailaogong and Luozhen as the same location; the American Dragon exact page is found under Luozhen but uses a different external code.",
+      "eLotus pediatric convulsion and neonatal-tetanus indications remain in provenance/clinical boundaries and are excluded from disease tags."
+    ],
+    "nameIntroZh": "外勞宮（Wailaogong，Outer Laogong）為手背經外奇穴，亦稱落枕穴 Luozhen。本庫保留 EX-UE8／ex.ue8，外部別名與編碼差異另列。",
+    "nameIntroEn": "Wailaogong (Outer Laogong) is a dorsal-hand extra point also called Luozhen. The database preserves EX-UE8 / ex.ue8 while recording external alias and coding differences separately.",
+    "evidence": "NCBAHM 2026 ACPL Appendix A lists Luozhen, and no dedicated local curriculum entry was found. The exact eLotus Ex-UE8 page supplies location, hand/neck/head/GI indications, channel/sinew and middle-jiao actions, perpendicular 0.5-0.8-cun insertion, 3-5-minute moxa, and the note that Wailaogong and Luozhen share a location. The exact American Dragon Luozhen page supplies M-UE-24 coding, matching location, straight/slanted 0.5-1.0-cun insertion, stiff-neck/migraine and other indications, and an M-HN-29 Xinshi combination. eLotus pediatric convulsion and neonatal-tetanus claims are retained only in provenance and emergency boundaries. Legacy cervical spondylosis, dorsal hand pain, neck-movement technique, GB39/SI3 combination, and forearm-electric-sensation warning remain at unsupported or lower evidence levels.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/wailaogong-ex-ue8"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/wailaogong-ex-ue8",
+      "https://www.americandragon.com/Points/Luozhen.html",
+      "https://www.cdc.gov/tetanus/hcp/clinical-signs/index.html",
+      "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
     ],
     "visualLinks": [
       {
@@ -9535,15 +9610,90 @@
         "labelEn": "Extra Point · Wailaogong EX-UE8 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/wailaogong-ex-ue8",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "經外奇穴 · 落枕穴（American Dragon）",
+        "labelEn": "Extra Point · Luozhen (American Dragon)",
+        "url": "https://www.americandragon.com/Points/Luozhen.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "破傷風臨床急症資訊（CDC）",
+        "labelEn": "Tetanus clinical emergency information (CDC)",
+        "url": "https://www.cdc.gov/tetanus/hcp/clinical-signs/index.html",
+        "source": "CDC"
+      },
+      {
+        "labelZh": "癲癇發作急救與求救條件（CDC）",
+        "labelEn": "Seizure first aid and emergency criteria (CDC)",
+        "url": "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html",
+        "source": "CDC"
       }
     ],
     "x": 157,
     "y": 318,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun; moxibustion applicable.",
-    "cautions": "前臂針刺注意神經電擊感。",
-    "cautionsEn": "Note nerve sensation in forearm.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Luozhen is explicitly listed"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 外勞宮, Wailaogong, 落枕穴, Luozhen, and EX-UE8 under curriculum/board and curriculum/acupoints found the Board alias but no dedicated lesson entry"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/wailaogong-ex-ue8: exact page opened 2026-08-08; Ex-UE8 identity, aliases, location, actions, indications, perpendicular 0.5-0.8-cun method, and moxa 3-5 minutes extracted",
+        "eLotus note: Wailaogong Ex-UE8 and Luozhen are described at the same location"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: pinyin index opened 2026-08-08; Wailaogong absent and Luozhen present",
+        "https://www.americandragon.com/Points/Luozhen.html: exact page opened 2026-08-08; M-UE-24 code, matching location, technique, indications, and Xinshi combination extracted"
+      ],
+      "location": [
+        "eLotus and American Dragon exact pages: dorsum of hand between metacarpals 2/3, 0.5 cun proximal to MCP joint"
+      ],
+      "anatomy": [
+        "source-gap note: no exact-page detail for extensor tendons, dorsal venous/neurovascular structures, interosseous endpoint, or skin-to-target depth",
+        "legacy forearm electric-sensation warning is anatomically mismatched to the dorsal-hand location"
+      ],
+      "technique": [
+        "eLotus exact page: perpendicular 0.5-0.8 cun",
+        "American Dragon exact page: straight or slanted 0.5-1.0 cun; local pain/soreness/numbness or radiation to fingertips described",
+        "legacy retained-needle neck movement lacks verified parameters and is unsupported"
+      ],
+      "moxibustion": [
+        "eLotus exact page: moxibustion 3-5 minutes; no direct/indirect method, distance, skin protection, or stopping rule"
+      ],
+      "functions": [
+        "eLotus exact page: relaxes sinews/opens channels and collaterals; harmonizes the middle/regulates qi",
+        "legacy channel-unblocking, pain-relieving, and neck-benefiting language retained separately"
+      ],
+      "indications": [
+        "eLotus exact page: hand/finger numbness, redness/swelling, impaired flexion-extension, neck pain, headache, diarrhea/loose stool/indigestion, childhood convulsions, neonatal tetanus, pediatric indigestion",
+        "American Dragon exact page: stiff neck, migraine, stomachache, sore throat, shoulder/arm pain",
+        "pediatric convulsion and neonatal-tetanus claims retained only in provenance and emergency boundaries"
+      ],
+      "combinations": [
+        "American Dragon exact page: Luozhen + M-HN-29 Xinshi for stiff neck",
+        "unverified legacy: Wailaogong + GB39 + SI3"
+      ],
+      "cautions": [
+        "CDC tetanus exact page: tetanus is an emergency requiring hospitalization; boundary only",
+        "CDC seizure-first-aid exact page: emergency criteria include seizure over 5 minutes, repeated seizure, breathing/waking difficulty, injury, or first seizure; boundary only",
+        "source-gap note: no local anatomical stop rule, dynamic-neck-movement protocol, pregnancy, pediatric-needling, sensory-loss, or circulation protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE8 / ex.ue8 / 外勞宮 / Wailaogong, alias 落枕穴 / Luozhen",
+        "eLotus: Ex-UE8 Wailaogong and same-location Luozhen note",
+        "American Dragon: M-UE-24 Luozhen; external code retained without changing database ID"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Wailaogong exact page",
+        "2026-08-08 live-opened American Dragon pinyin index and Luozhen exact page",
+        "2026-08-08 live-opened CDC tetanus and seizure-first-aid exact pages; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "eLotus：直刺0.5～0.8寸。American Dragon 落枕穴：直刺或斜刺0.5～1.0寸。舊留針轉頸 unsupported。",
+    "needlingEn": "eLotus: perpendicular 0.5-0.8 cun. American Dragon Luozhen: straight or slanted 0.5-1.0 cun. Legacy retained-needle neck movement is unsupported.",
     "id": "ex.ue8"
   },
   {
