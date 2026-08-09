@@ -1,7 +1,7 @@
 {
-  "purpose": "Formal 1:1 Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a unique source_item_id and exactly one primary disposition.",
+  "purpose": "Formal 1:1 Content-Hashed Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a stable content-hashed source_item_id and exactly one primary disposition.",
   "audited_at": "2026-08-09",
-  "schema_mode": "atomic_provenance_ledger_v3",
+  "schema_mode": "stable_content_hashed_atomic_ledger_v4",
   "disposition_definitions": {
     "canonical": "Primary disposition is represented in canonical data/pharmacology/drugs.json",
     "staging": "Primary disposition is preserved in staging data (unmapped board/clinical impact bullets)",
@@ -11,7 +11,7 @@
   },
   "ledger": [
     {
-      "source_item_id": "warfarin.identity.001",
+      "source_item_id": "warfarin.identity.f7098649",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -23,7 +23,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.identity.002",
+      "source_item_id": "warfarin.identity.c70e9671",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -35,7 +35,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.003",
+      "source_item_id": "warfarin.board.8f6e1ed4",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -47,7 +47,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.004",
+      "source_item_id": "warfarin.board.593952b9",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -59,7 +59,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.005",
+      "source_item_id": "warfarin.board.c6d790b3",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -71,7 +71,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.006",
+      "source_item_id": "warfarin.board.6ae82e25",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -83,7 +83,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.007",
+      "source_item_id": "warfarin.board.aa2bc573",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -95,7 +95,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.008",
+      "source_item_id": "warfarin.board.fa492c37",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -107,7 +107,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.009",
+      "source_item_id": "warfarin.board.9d40482a",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -119,7 +119,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.010",
+      "source_item_id": "warfarin.board.b428da1d",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -131,7 +131,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.board_exam_.011",
+      "source_item_id": "warfarin.board.d8b8251d",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -143,7 +143,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.mechanism.012",
+      "source_item_id": "warfarin.mechanism.f1c2bab2",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Mechanism",
@@ -155,7 +155,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.main_uses.013",
+      "source_item_id": "warfarin.uses.6d3e37aa",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -167,7 +167,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact_flags.014",
+      "source_item_id": "warfarin.flag.cb06ea29",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -179,7 +179,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact_flags.015",
+      "source_item_id": "warfarin.flag.278fef18",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -191,7 +191,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact_flags.016",
+      "source_item_id": "warfarin.flag.bede54b8",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -203,7 +203,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact.017",
+      "source_item_id": "warfarin.impact.2ac57fbd",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -215,7 +215,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact.018",
+      "source_item_id": "warfarin.impact.9503fc7d",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -227,7 +227,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact.019",
+      "source_item_id": "warfarin.impact.2042818b",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -239,7 +239,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.clinical_impact.020",
+      "source_item_id": "warfarin.impact.969d2d19",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -251,7 +251,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.boxed_warning.021",
+      "source_item_id": "warfarin.safety.5d4c3cf3",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Boxed warning",
@@ -263,7 +263,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.major_safety_points.022",
+      "source_item_id": "warfarin.safety.095ba44a",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Major safety points",
@@ -275,7 +275,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.major_safety_points.023",
+      "source_item_id": "warfarin.safety.91f77e6c",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Major safety points",
@@ -287,7 +287,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.major_safety_points.024",
+      "source_item_id": "warfarin.safety.b1b24f86",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Major safety points",
@@ -299,7 +299,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.herb_supplement_interaction.025",
+      "source_item_id": "warfarin.herb_int.aafe040f",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -311,7 +311,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.herb_supplement_interaction.026",
+      "source_item_id": "warfarin.herb_int.f4f055c4",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -323,7 +323,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.herb_supplement_interaction.027",
+      "source_item_id": "warfarin.herb_int.1e34d8a7",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -335,7 +335,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.herb_supplement_interaction.028",
+      "source_item_id": "warfarin.herb_int.81646790",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -347,7 +347,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.herb_supplement_interaction.029",
+      "source_item_id": "warfarin.herb_int.c4347065",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -359,7 +359,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.acupuncture_relevance.030",
+      "source_item_id": "warfarin.acu.b499bb39",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Acupuncture relevance",
@@ -371,7 +371,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.acupuncture_relevance.031",
+      "source_item_id": "warfarin.acu.7adb4526",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Acupuncture relevance",
@@ -383,7 +383,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.acupuncture_relevance.032",
+      "source_item_id": "warfarin.acu.722d4d76",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Acupuncture relevance",
@@ -395,7 +395,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.monitoring.033",
+      "source_item_id": "warfarin.monitoring.ca2030cc",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Monitoring",
@@ -407,7 +407,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.034",
+      "source_item_id": "warfarin.sources.26540431",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -419,7 +419,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.035",
+      "source_item_id": "warfarin.sources.bc5d754b",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -431,7 +431,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.036",
+      "source_item_id": "warfarin.sources.af4872e2",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -443,7 +443,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.037",
+      "source_item_id": "warfarin.sources.b98c58dc",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -455,7 +455,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.038",
+      "source_item_id": "warfarin.sources.864ff873",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -467,7 +467,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.039",
+      "source_item_id": "warfarin.sources.94c352f3",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -479,7 +479,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.040",
+      "source_item_id": "warfarin.sources.b5c28f64",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -491,7 +491,7 @@
       "derived": false
     },
     {
-      "source_item_id": "warfarin.current_official_sources.041",
+      "source_item_id": "warfarin.sources.799580c0",
       "drug_id": "drug.warfarin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Current official sources",
@@ -503,7 +503,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.identity.001",
+      "source_item_id": "apixaban.identity.7875f8cd",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -515,7 +515,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.identity.002",
+      "source_item_id": "apixaban.identity.6e9db3ae",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -527,7 +527,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.board_exam_.003",
+      "source_item_id": "apixaban.board.a4d05e75",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -539,7 +539,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.board_exam_.004",
+      "source_item_id": "apixaban.board.23d556b6",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -551,7 +551,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.board_exam_.005",
+      "source_item_id": "apixaban.board.c5caf2e6",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -563,7 +563,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.board_exam_.006",
+      "source_item_id": "apixaban.board.9b2149d4",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -575,7 +575,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.board_exam_.007",
+      "source_item_id": "apixaban.board.1d1adaa6",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -587,7 +587,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.mechanism.008",
+      "source_item_id": "apixaban.mechanism.ba3c7f17",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Mechanism",
@@ -599,7 +599,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.main_uses.009",
+      "source_item_id": "apixaban.uses.402aaaf2",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -611,7 +611,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.main_uses.010",
+      "source_item_id": "apixaban.uses.836f775d",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -623,7 +623,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.main_uses.011",
+      "source_item_id": "apixaban.uses.fd8c8fb6",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -635,7 +635,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.main_uses.012",
+      "source_item_id": "apixaban.uses.18a07e82",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -647,7 +647,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.main_uses.013",
+      "source_item_id": "apixaban.uses.1bef0067",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -659,7 +659,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.clinical_impact_flags.014",
+      "source_item_id": "apixaban.flag.ec13ead7",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -671,7 +671,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.clinical_impact_flags.015",
+      "source_item_id": "apixaban.flag.3bbdccd0",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -683,7 +683,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.clinical_impact.016",
+      "source_item_id": "apixaban.impact.a7fd9da4",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -695,7 +695,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.clinical_impact.017",
+      "source_item_id": "apixaban.impact.bab881c3",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -707,7 +707,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.clinical_impact.018",
+      "source_item_id": "apixaban.impact.c9f89566",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -719,7 +719,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.boxed_warning.019",
+      "source_item_id": "apixaban.safety.c8e71e79",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Boxed warning",
@@ -731,7 +731,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.boxed_warning.020",
+      "source_item_id": "apixaban.safety.c5e0f75b",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Boxed warning",
@@ -743,7 +743,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.boxed_warning.021",
+      "source_item_id": "apixaban.safety.a9f43d1d",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Boxed warning",
@@ -755,7 +755,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.herb_supplement_interaction.022",
+      "source_item_id": "apixaban.herb_int.d229a4c3",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -767,7 +767,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.herb_supplement_interaction.023",
+      "source_item_id": "apixaban.herb_int.93ecfa25",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -779,7 +779,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.herb_supplement_interaction.024",
+      "source_item_id": "apixaban.herb_int.17118e7d",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -791,7 +791,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.herb_supplement_interaction.025",
+      "source_item_id": "apixaban.herb_int.ccfb59a0",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -803,7 +803,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.acupuncture_relevance.026",
+      "source_item_id": "apixaban.acu.028e2be3",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Acupuncture relevance",
@@ -815,7 +815,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.official_source.027",
+      "source_item_id": "apixaban.sources.6d10094d",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Official source",
@@ -827,7 +827,7 @@
       "derived": false
     },
     {
-      "source_item_id": "apixaban.official_source.028",
+      "source_item_id": "apixaban.sources.88b96881",
       "drug_id": "drug.apixaban",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Official source",
@@ -839,7 +839,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.identity.001",
+      "source_item_id": "clopidogrel.identity.b77e642c",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -851,7 +851,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.identity.002",
+      "source_item_id": "clopidogrel.identity.0f31a7c5",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -863,7 +863,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.board_exam_.003",
+      "source_item_id": "clopidogrel.board.feeb9b5e",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -875,7 +875,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.board_exam_.004",
+      "source_item_id": "clopidogrel.board.3a7b79a1",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -887,7 +887,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.board_exam_.005",
+      "source_item_id": "clopidogrel.board.74035d0d",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -899,7 +899,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.board_exam_.006",
+      "source_item_id": "clopidogrel.board.053ebcba",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -911,7 +911,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.board_exam_.007",
+      "source_item_id": "clopidogrel.board.b73950ac",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -923,7 +923,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.mechanism.008",
+      "source_item_id": "clopidogrel.mechanism.bda02b95",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Mechanism",
@@ -935,7 +935,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.main_uses.009",
+      "source_item_id": "clopidogrel.uses.734d938e",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Main uses",
@@ -947,7 +947,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.clinical_impact_flags.010",
+      "source_item_id": "clopidogrel.flag.0acaa9ba",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -959,7 +959,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.clinical_impact.011",
+      "source_item_id": "clopidogrel.impact.6da7d727",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -971,7 +971,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.clinical_impact.012",
+      "source_item_id": "clopidogrel.impact.fafd7db2",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact",
@@ -983,7 +983,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.safety.013",
+      "source_item_id": "clopidogrel.safety.599b4065",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Safety",
@@ -995,7 +995,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.herb_supplement_interaction.014",
+      "source_item_id": "clopidogrel.herb_int.036a08ef",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Herb / Supplement Interaction",
@@ -1007,7 +1007,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.acupuncture_relevance.015",
+      "source_item_id": "clopidogrel.acu.265910b7",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Acupuncture relevance",
@@ -1019,7 +1019,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.official_source.016",
+      "source_item_id": "clopidogrel.sources.86cfb1f8",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Official source",
@@ -1031,7 +1031,7 @@
       "derived": false
     },
     {
-      "source_item_id": "clopidogrel.official_source.017",
+      "source_item_id": "clopidogrel.sources.e9798c82",
       "drug_id": "drug.clopidogrel",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Official source",
@@ -1043,7 +1043,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.identity.001",
+      "source_item_id": "aspirin.identity.7777b4e1",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -1055,7 +1055,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.board_exam_.002",
+      "source_item_id": "aspirin.board.e5b61179",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1067,7 +1067,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.board_exam_.003",
+      "source_item_id": "aspirin.board.efe7984c",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1079,7 +1079,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.board_exam_.004",
+      "source_item_id": "aspirin.board.6259e5de",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1091,7 +1091,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.board_exam_.005",
+      "source_item_id": "aspirin.board.efdcf7b6",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1103,7 +1103,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.board_exam_.006",
+      "source_item_id": "aspirin.board.2e883d35",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1115,7 +1115,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.clinical_impact_flags.007",
+      "source_item_id": "aspirin.flag.c9ad86ab",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -1127,7 +1127,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.clinical_impact_flags.008",
+      "source_item_id": "aspirin.flag.e6117017",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -1139,7 +1139,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.clinical_impact_flags.009",
+      "source_item_id": "aspirin.flag.407c2adb",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -1151,7 +1151,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.integrative_interaction.010",
+      "source_item_id": "aspirin.herb_int.93a72db6",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Integrative interaction",
@@ -1163,7 +1163,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.source_status.011",
+      "source_item_id": "aspirin.sources.63e9c7c5",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Source status",
@@ -1175,7 +1175,7 @@
       "derived": false
     },
     {
-      "source_item_id": "aspirin.source_status.012",
+      "source_item_id": "aspirin.sources.4c56dbec",
       "drug_id": "drug.aspirin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Source status",
@@ -1187,7 +1187,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.identity.001",
+      "source_item_id": "enoxaparin.identity.23f364bb",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Identity",
@@ -1199,7 +1199,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.board_exam_.002",
+      "source_item_id": "enoxaparin.board.5d360b9e",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1211,7 +1211,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.board_exam_.003",
+      "source_item_id": "enoxaparin.board.98aa4bdb",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1223,7 +1223,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.board_exam_.004",
+      "source_item_id": "enoxaparin.board.a2d24d46",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "BOARD EXAM ★",
@@ -1235,7 +1235,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.clinical_impact_flags.005",
+      "source_item_id": "enoxaparin.flag.9a58e804",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Clinical Impact -> Flags",
@@ -1247,7 +1247,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.acupuncture_relevance.006",
+      "source_item_id": "enoxaparin.acu.f96df6d4",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Acupuncture relevance",
@@ -1259,7 +1259,7 @@
       "derived": false
     },
     {
-      "source_item_id": "enoxaparin.source_status.007",
+      "source_item_id": "enoxaparin.sources.f91f5896",
       "drug_id": "drug.enoxaparin",
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
       "source_section": "Source status",
@@ -1271,7 +1271,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.identity.001",
+      "source_item_id": "losartan.identity.ddde2a3f",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Identity",
@@ -1283,7 +1283,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.identity.002",
+      "source_item_id": "losartan.identity.6d8bd172",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Identity",
@@ -1295,7 +1295,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.board_exam_.003",
+      "source_item_id": "losartan.board.b5e04f56",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1307,7 +1307,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.board_exam_.004",
+      "source_item_id": "losartan.board.4b2aca3f",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1319,7 +1319,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.board_exam_.005",
+      "source_item_id": "losartan.board.37fbf16d",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1331,7 +1331,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.board_exam_.006",
+      "source_item_id": "losartan.board.c85b52fe",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1343,7 +1343,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.board_exam_.007",
+      "source_item_id": "losartan.board.1f6f470c",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1355,7 +1355,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.board_exam_.008",
+      "source_item_id": "losartan.board.a2997518",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1367,7 +1367,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.clinical_impact.009",
+      "source_item_id": "losartan.impact.34499c0a",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1379,7 +1379,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.clinical_impact.010",
+      "source_item_id": "losartan.impact.200f42b6",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1391,7 +1391,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.clinical_impact.011",
+      "source_item_id": "losartan.impact.a1bc8915",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1403,7 +1403,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.clinical_impact.012",
+      "source_item_id": "losartan.impact.e30fd30e",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1415,7 +1415,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.clinical_impact.013",
+      "source_item_id": "losartan.impact.a69ffa8e",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1427,7 +1427,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.exact_interaction_anchors.014",
+      "source_item_id": "losartan.item.7d12b5e2",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Exact interaction anchors",
@@ -1439,7 +1439,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.exact_interaction_anchors.015",
+      "source_item_id": "losartan.item.16167f95",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Exact interaction anchors",
@@ -1451,7 +1451,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.exact_interaction_anchors.016",
+      "source_item_id": "losartan.item.392e5e51",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Exact interaction anchors",
@@ -1463,7 +1463,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.exact_interaction_anchors.017",
+      "source_item_id": "losartan.item.fe556896",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Exact interaction anchors",
@@ -1475,7 +1475,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.acupuncture_relevance.018",
+      "source_item_id": "losartan.acu.018b3957",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Acupuncture relevance",
@@ -1487,7 +1487,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.official_source.019",
+      "source_item_id": "losartan.sources.df86b8c0",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Official source",
@@ -1499,7 +1499,7 @@
       "derived": false
     },
     {
-      "source_item_id": "losartan.official_source.020",
+      "source_item_id": "losartan.sources.9b11a07e",
       "drug_id": "drug.losartan",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Official source",
@@ -1511,7 +1511,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.identity.001",
+      "source_item_id": "hydrochlorothiazide.identity.133827ba",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Identity",
@@ -1523,7 +1523,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.002",
+      "source_item_id": "hydrochlorothiazide.board.4ff3e4c2",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1535,7 +1535,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.003",
+      "source_item_id": "hydrochlorothiazide.board.11b983d6",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1547,7 +1547,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.004",
+      "source_item_id": "hydrochlorothiazide.board.8c6d8df3",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1559,7 +1559,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.005",
+      "source_item_id": "hydrochlorothiazide.board.dc77b31f",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1571,7 +1571,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.006",
+      "source_item_id": "hydrochlorothiazide.board.b6de86b5",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1583,7 +1583,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.007",
+      "source_item_id": "hydrochlorothiazide.board.29651553",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1595,7 +1595,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.008",
+      "source_item_id": "hydrochlorothiazide.board.b98d031c",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1607,7 +1607,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.board_exam_.009",
+      "source_item_id": "hydrochlorothiazide.board.492648b2",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "BOARD EXAM ★★★",
@@ -1619,7 +1619,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.clinical_impact.010",
+      "source_item_id": "hydrochlorothiazide.impact.6c4c4a6e",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1631,7 +1631,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.clinical_impact.011",
+      "source_item_id": "hydrochlorothiazide.impact.f9a04e47",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1643,7 +1643,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.clinical_impact.012",
+      "source_item_id": "hydrochlorothiazide.impact.57c5dded",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1655,7 +1655,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.clinical_impact.013",
+      "source_item_id": "hydrochlorothiazide.impact.3f2bc4c1",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1667,7 +1667,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.clinical_impact.014",
+      "source_item_id": "hydrochlorothiazide.impact.925b1a65",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Clinical Impact",
@@ -1679,7 +1679,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.interaction_anchors.015",
+      "source_item_id": "hydrochlorothiazide.item.d092433c",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Interaction anchors",
@@ -1691,7 +1691,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.interaction_anchors.016",
+      "source_item_id": "hydrochlorothiazide.item.3a995171",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Interaction anchors",
@@ -1703,7 +1703,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.acupuncture_relevance.017",
+      "source_item_id": "hydrochlorothiazide.acu.99ad05b7",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Acupuncture relevance",
@@ -1715,7 +1715,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.official_source.018",
+      "source_item_id": "hydrochlorothiazide.sources.070b991d",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Official source",
@@ -1727,7 +1727,7 @@
       "derived": false
     },
     {
-      "source_item_id": "hydrochlorothiazide.official_source.019",
+      "source_item_id": "hydrochlorothiazide.sources.89a1c4d2",
       "drug_id": "drug.hydrochlorothiazide",
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
       "source_section": "Official source",

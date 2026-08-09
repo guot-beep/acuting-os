@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
+const manifestPath = 'data/pharmacology/v7_source_manifest.json';
 const f02Path = 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md';
 const f15Path = 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md';
 
@@ -21,10 +23,55 @@ function normalizeText(str) {
     .trim();
 }
 
+function verifySourceManifest() {
+  if (!fs.existsSync(manifestPath)) {
+    console.error(`FATAL: Source manifest file missing at ${manifestPath}`);
+    return { passed: false, reason: 'MANIFEST_MISSING' };
+  }
+
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  const results = [];
+
+  for (const src of manifest.sources || []) {
+    const p = src.logical_source_path;
+    if (!fs.existsSync(p)) {
+      console.error(`FATAL: Required source file missing locally: ${p}`);
+      console.error(`Requirement: ${src.source_availability_requirement}`);
+      return { passed: false, reason: `FILE_MISSING: ${p}` };
+    }
+
+    const buf = fs.readFileSync(p);
+    const actualSha = crypto.createHash('sha256').update(buf).digest('hex');
+    const actualSize = buf.length;
+
+    if (actualSha !== src.sha256) {
+      console.error(`FATAL SOURCE DRIFT: SHA-256 mismatch for ${p}`);
+      console.error(`  Expected: ${src.sha256}`);
+      console.error(`  Actual:   ${actualSha}`);
+      return { passed: false, reason: `SOURCE_DRIFT_SHA: ${p}` };
+    }
+
+    if (actualSize !== src.byte_size) {
+      console.error(`FATAL SOURCE DRIFT: Byte size mismatch for ${p}`);
+      console.error(`  Expected: ${src.byte_size}`);
+      console.error(`  Actual:   ${actualSize}`);
+      return { passed: false, reason: `SOURCE_DRIFT_SIZE: ${p}` };
+    }
+
+    results.push({ path: p, sha256: actualSha, size: actualSize, status: 'MATCH' });
+  }
+
+  return { passed: true, manifest, results };
+}
+
 function extractSourceMedicalFacts(drugId) {
   const filePath = (drugId === 'drug.losartan' || drugId === 'drug.hydrochlorothiazide') 
     ? f15Path
     : f02Path;
+
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Local source file not found: ${filePath}. Please unzip curriculum/pharm/AcuTing_Pharm_Master_Extraction_v7.zip into curriculum/pharm/v7_extracted/`);
+  }
 
   const content = fs.readFileSync(filePath, 'utf8');
   const lines = content.split('\n');
@@ -138,6 +185,19 @@ const pilotIds = [
 ];
 
 function runSourceCoverageVerification() {
+  const manifestVerification = verifySourceManifest();
+  if (!manifestVerification.passed) {
+    return {
+      passed: false,
+      reason: manifestVerification.reason,
+      totalExtracted: 0,
+      totalLedgerMatched: 0,
+      totalMissingFromLedger: -1,
+      totalLedgerNotFoundInSource: -1,
+      totalDuplicateCoverage: -1
+    };
+  }
+
   const stagingData = JSON.parse(fs.readFileSync('data/pharmacology/staging_v7_ingestion.json', 'utf8'));
   const ledger = stagingData.ledger || [];
 
@@ -153,6 +213,7 @@ function runSourceCoverageVerification() {
   });
 
   const report = {
+    manifestVerification,
     perDrug: {},
     totalExtracted: 0,
     totalLedgerMatched: 0,
@@ -207,6 +268,12 @@ function runSourceCoverageVerification() {
   });
 
   report.totalDuplicateCoverage = report.duplicateCoverageItems.length;
+  report.passed = (
+    manifestVerification.passed &&
+    report.totalMissingFromLedger === 0 &&
+    report.totalLedgerNotFoundInSource === 0 &&
+    report.totalDuplicateCoverage === 0
+  );
 
   return report;
 }
@@ -216,6 +283,11 @@ if (require.main === module) {
   console.log('INDEPENDENT SOURCE-TO-LEDGER COVERAGE VERIFIER');
   console.log('====================================================');
   const rep = runSourceCoverageVerification();
+  if (!rep.passed) {
+    console.error(`\nFATAL: Verification failed! Reason: ${rep.reason || 'Coverage incomplete'}`);
+    process.exit(1);
+  }
+
   console.table(rep.perDrug);
   console.log('\nTotal Source Extracted Atomic Items:', rep.totalExtracted);
   console.log('Total Ledger Matched:', rep.totalLedgerMatched);
@@ -223,24 +295,9 @@ if (require.main === module) {
   console.log('Ledger Items Not Found in Source:', rep.totalLedgerNotFoundInSource);
   console.log('Duplicate Source Coverage:', rep.totalDuplicateCoverage);
 
-  if (rep.missingItems.length > 0) {
-    console.log('\n--- MISSING ITEMS FROM LEDGER ---');
-    rep.missingItems.forEach(m => console.log(`[${m.drugId}] (${m.item.source_section}) -> "${m.item.source_text}"`));
-  }
-
-  if (rep.notFoundLedgerItems.length > 0) {
-    console.log('\n--- LEDGER ITEMS NOT FOUND IN SOURCE ---');
-    rep.notFoundLedgerItems.forEach(n => console.log(`[${n.drug_id}] ${n.source_item_id} -> "${n.source_text}"`));
-  }
-
-  if (rep.totalMissingFromLedger === 0 && rep.totalLedgerNotFoundInSource === 0 && rep.totalDuplicateCoverage === 0) {
-    console.log('\n====================================================');
-    console.log('SOURCE COVERAGE VERIFICATION PASSED 100%! ZERO MISSING!');
-    console.log('====================================================');
-  } else {
-    console.error('\nFAIL: Source coverage incomplete!');
-    process.exit(1);
-  }
+  console.log('\n====================================================');
+  console.log('MANIFEST HASH CHECK & SOURCE COVERAGE PASSED 100%!');
+  console.log('====================================================');
 }
 
-module.exports = { runSourceCoverageVerification, extractSourceMedicalFacts };
+module.exports = { runSourceCoverageVerification, verifySourceManifest, extractSourceMedicalFacts, normalizeText };

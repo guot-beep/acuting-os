@@ -1,6 +1,24 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { extractSourceMedicalFacts } = require('./verify-source-coverage');
+
+function normalizeText(str) {
+  if (!str) return '';
+  return str
+    .replace(/\*\*/g, '')
+    .replace(/\*/g, '')
+    .replace(/__/g, '')
+    .replace(/`/g, '')
+    .replace(/^[-+*]\s+/, '')
+    .replace(/^\d+\.\s+/, '')
+    .replace(/”/g, '"')
+    .replace(/“/g, '"')
+    .replace(/’/g, "'")
+    .replace(/→/g, '->')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 const pilotIds = [
   'drug.warfarin',
@@ -12,7 +30,23 @@ const pilotIds = [
   'drug.hydrochlorothiazide'
 ];
 
-function determineDispositionAndFields(drugId, srcItem, index) {
+function getSectionCode(sec) {
+  const normSec = sec.toLowerCase();
+  if (normSec.includes('identity')) return 'identity';
+  if (normSec.includes('board')) return 'board';
+  if (normSec.includes('mechanism')) return 'mechanism';
+  if (normSec.includes('main use')) return 'uses';
+  if (normSec.includes('flag')) return 'flag';
+  if (normSec.includes('clinical impact')) return 'impact';
+  if (normSec.includes('boxed warning') || normSec.includes('safety')) return 'safety';
+  if (normSec.includes('herb') || normSec.includes('integrative')) return 'herb_int';
+  if (normSec.includes('acupuncture')) return 'acu';
+  if (normSec.includes('monitoring')) return 'monitoring';
+  if (normSec.includes('source')) return 'sources';
+  return 'item';
+}
+
+function determineDispositionAndFields(drugId, srcItem) {
   const norm = srcItem.normalized_text;
   const sec = srcItem.source_section;
 
@@ -118,26 +152,39 @@ function determineDispositionAndFields(drugId, srcItem, index) {
     if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8c868894-667e-4a51-906a-838d63e420ba')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
   }
 
-  // Default to staging for unmapped narrative/bullets
+  // Default to staging
   const stagingField = sec.includes('Flags') ? 'source_declared_flags' : (sec.includes('BOARD') || sec.includes('Official') ? 'source_board_items' : 'source_clinical_impact_statements');
   return { disposition: 'staging', canonical_field: null, staging_field: stagingField };
 }
 
 function buildFullAtomicLedger() {
   const ledger = [];
-  const drugCounts = {};
+  const seenHashes = new Map();
 
   pilotIds.forEach(drugId => {
     const rawFacts = extractSourceMedicalFacts(drugId);
     const prefix = drugId.replace('drug.', '');
-    drugCounts[prefix] = 1;
 
     rawFacts.forEach(src => {
-      const idxStr = String(drugCounts[prefix]++).padStart(3, '0');
-      const itemType = src.source_section.toLowerCase().replace(/[^a-z0-9]+/g, '_');
-      const itemId = `${prefix}.${itemType}.${idxStr}`;
+      const secCode = getSectionCode(src.source_section);
+      const normSec = normalizeText(src.source_section);
+      const normText = normalizeText(src.source_text);
 
-      const { disposition, canonical_field, staging_field } = determineDispositionAndFields(drugId, src, idxStr);
+      const hashInput = `${drugId}|${normSec}|${normText}`;
+      const fullHash = crypto.createHash('sha256').update(hashInput).digest('hex').slice(0, 8);
+
+      let itemId = `${prefix}.${secCode}.${fullHash}`;
+
+      if (seenHashes.has(itemId)) {
+        const count = seenHashes.get(itemId) + 1;
+        seenHashes.set(itemId, count);
+        itemId = `${itemId}_${count}`;
+      } else {
+        seenHashes.set(itemId, 1);
+      }
+
+      const itemType = src.source_section.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+      const { disposition, canonical_field, staging_field } = determineDispositionAndFields(drugId, src);
 
       ledger.push({
         source_item_id: itemId,
@@ -186,9 +233,9 @@ function buildFullAtomicLedger() {
   ];
 
   const stagingStore = {
-    purpose: 'Formal 1:1 Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a unique source_item_id and exactly one primary disposition.',
+    purpose: 'Formal 1:1 Content-Hashed Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a stable content-hashed source_item_id and exactly one primary disposition.',
     audited_at: '2026-08-09',
-    schema_mode: 'atomic_provenance_ledger_v3',
+    schema_mode: 'stable_content_hashed_atomic_ledger_v4',
     disposition_definitions: {
       canonical: 'Primary disposition is represented in canonical data/pharmacology/drugs.json',
       staging: 'Primary disposition is preserved in staging data (unmapped board/clinical impact bullets)',
@@ -201,7 +248,7 @@ function buildFullAtomicLedger() {
   };
 
   fs.writeFileSync('data/pharmacology/staging_v7_ingestion.json', JSON.stringify(stagingStore, null, 2) + '\n');
-  console.log(`Successfully generated 100% source-matched atomic provenance ledger with ${ledger.length} items!`);
+  console.log(`Successfully generated stable content-hashed atomic provenance ledger with ${ledger.length} items!`);
 }
 
 if (require.main === module) {

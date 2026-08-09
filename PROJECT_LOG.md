@@ -1,11 +1,14 @@
-# 2026-08-09 Antigravity — Source Coverage Verifier & Disjoint Ledger Final Gate (7 drugs)
+# 2026-08-09 Antigravity — Pipeline Hardening: Source Manifest & Content-Hashed Stable IDs (7 drugs)
 
-- **做了什麼**：實作獨立的原始檔對帳驗證器（Independent Source-to-Ledger Coverage Verifier, `scripts/verify-source-coverage.js`），直接以 7 筆 Pilot 藥物在 v7 原始 Markdown（`02_...md` 與 `15_...md`）中的實際段落文字為輸入，自動抽取每項原子級醫學事實、比較子項、Declared Flag、警告與 DailyMed 連結，並與 `data/pharmacology/staging_v7_ingestion.json` 的 `source_item_id` 逐筆進行 1:1 雙向核對；將該獨立驗證器整合至 `scripts/audit-atomic-ledger.js` 機器檢查中，確保僅在「內部帳簿公式平衡」與「獨立來源覆蓋驗證 100% 通過」雙重成立時方能宣告 LOST = 0。
+- **做了什麼**：完成 Pilot 1 的兩項 Pipeline 硬化機制：
+  1. **來源可再現性與 Manifest**：明確記錄 `curriculum/pharm/v7_extracted/` 原始 Markdown 為本機解壓之專屬教材檔（Local-only unzipped study pack），未 commit 至 Git 歷史以維護教材授權與隱私；建立 `data/pharmacology/v7_source_manifest.json` 清單（含檔名、SHA-256、byte size、原子項目數、`tracked_in_repo: false` 與本機備置要求）；於 `scripts/verify-source-coverage.js` 實作 SHA-256 計算與飄移防護，原始檔缺失或內容變更即強制中斷。
+  2. **穩定內容哈希 ID**：淘汰原有的全域流水號 ID 策略，全面改用與位置無關的內容哈希穩定 ID 格式 `${drug}.${section}.${hash8}`（基於 SHA-256(`drug_id|section|normText`)）；若同一段落出現完全相同的重複事實，則加註 `_1`, `_2` 防碰撞。即使原始 Bullet 順序調整，相同事實之 ID 保持 100% 穩定不變。
 - **雙重審核結果**：
-  1. **內部帳簿對帳**：`TOTAL UNIQUE SOURCE_ITEM_ID (144) = canonical (72) + staging (68) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`，公式 100% 平衡，主處置無重複計算。
-  2. **獨立來源覆蓋**：抽取 v7 原始原子級項目 `144` 項，Ledger 匹配 `144` 項，**遺漏項目 Missing = 0**，**無源項目 Not Found = 0**，**重複覆蓋 Duplicate = 0**。
-- **驗證**：`node scripts/audit-atomic-ledger.js` 雙重審核 PASS、`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通過、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；本機 dev-server http://127.0.0.1:8361 正常運行。
-- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未修改 canonical `drugs.json`；未擴充 canonical schema；未修改驗證器語意。
+  1. **Manifest 與飄移防護**：SHA-256 驗證通過；模擬竄改測試證明單位元組修改成功觸發 `SOURCE_DRIFT_SHA` 強制退回。
+  2. **內部帳簿對帳**：`TOTAL UNIQUE SOURCE_ITEM_ID (144) = canonical (72) + staging (68) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`，公式 100% 平衡。
+  3. **獨立來源覆蓋**：抽取 v7 原始原子級項目 `144` 項，Ledger 匹配 `144` 項，**Missing = 0**, **Not Found = 0**, **Duplicate = 0**。所有 144 項 100% 保留覆蓋。
+- **驗證**：`node scripts/verify-source-coverage.js` PASS、`node scripts/audit-atomic-ledger.js` 雙審核 PASS、`validate-pharm-standard.js --worklist` PASS、`build-data.js` PASS、`validate-interactions.js` PASS（107 IDs）、`git diff --check` PASS；本機 dev-server http://127.0.0.1:8361 正常運行。
+- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未修改 canonical `drugs.json`；未擴充 canonical schema。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 
