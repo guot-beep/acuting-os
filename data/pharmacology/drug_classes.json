@@ -649,6 +649,776 @@
       "sources": [
         "course:extracted_classes"
       ]
+    },
+    {
+      "id": "drugclass.beta2_agonists",
+      "name_en": "Beta-2 Selective Adrenergic Agonists",
+      "name_zh": "Beta-2 選擇性腎上腺素受體致劑",
+      "drugsystem_ids": [
+        "drugsystem.respiratory",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta2_adrenergic",
+      "suffix_en": "-terol",
+      "mechanism_overview_en": "Selectively stimulate beta-2 adrenergic receptors in bronchial smooth muscle, causing bronchodilation.",
+      "mechanism_overview_zh": "選擇性刺激支氣管平滑肌 beta-2 受體，引起支氣管擴張。",
+      "indications_en": [
+        "Asthma",
+        "COPD",
+        "Bronchospasm"
+      ],
+      "indications_zh": [
+        "氣喘",
+        "慢性阻塞性肺病",
+        "支氣管痙攣"
+      ],
+      "indication_condition_ids": [
+        "cond.asthma",
+        "cond.copd"
+      ],
+      "shared_adverse_effects_en": [
+        "Tremor",
+        "Tachycardia",
+        "Palpitations",
+        "Hypokalemia at high doses"
+      ],
+      "shared_adverse_effects_zh": [
+        "震顫",
+        "心跳過速",
+        "心悸",
+        "高劑量引致低血鉀"
+      ],
+      "class_warnings_en": [
+        "Risk of paradoxical bronchospasm; overreliance on short-acting agents indicates poor asthma control."
+      ],
+      "class_warnings_zh": [
+        "反常性支氣管痙攣風險；過度依賴短效劑型代表氣喘控制不良。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to formulation components."
+      ],
+      "class_contraindications_zh": [
+        "對製劑成分過敏。"
+      ],
+      "board_high_yield_en": "Suffix -terol. Beta-2 = lungs. SABA rescue inhaler (albuterol) for acute bronchospasm. Tremor & tachycardia adverse effects.",
+      "board_high_yield_zh": "字尾 -terol。Beta-2 作用於肺部。SABA 救急吸入劑 (albuterol) 用於急性支氣管痙攣。副作用為震顫與心律過速。",
+      "prototype_drug_id": "drug.albuterol",
+      "representative_drug_ids": [
+        "drug.albuterol"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:07_PHARM_BATCH_P6_INFECTIOUS_RESP_GI.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.anticholinergics",
+      "name_en": "Anticholinergic / Antimuscarinic Agents",
+      "name_zh": "抗膽鹼 / 抗毒蕈鹼藥物",
+      "drugsystem_ids": [
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.muscarinic_receptors",
+      "suffix_en": "-tropium / -amine",
+      "mechanism_overview_en": "Competitively block muscarinic acetylcholine receptors, inhibiting parasympathetic impulses.",
+      "mechanism_overview_zh": "競爭性阻斷毒蕈鹼型乙醯膽鹼受體，抑制副交感神經傳導。",
+      "indications_en": [
+        "Bradycardia",
+        "Organophosphate poisoning",
+        "Mydriasis",
+        "COPD"
+      ],
+      "indications_zh": [
+        "心跳過緩",
+        "有機磷農藥中毒",
+        "散瞳",
+        "慢性阻塞性肺病"
+      ],
+      "indication_condition_ids": [
+        "cond.copd"
+      ],
+      "shared_adverse_effects_en": [
+        "Dry mouth",
+        "Blurred vision",
+        "Urinary retention",
+        "Constipation",
+        "Tachycardia",
+        "Confusion"
+      ],
+      "shared_adverse_effects_zh": [
+        "口乾",
+        "視力模糊",
+        "尿滯留",
+        "便秘",
+        "心跳過速",
+        "譫妄意識混亂"
+      ],
+      "class_warnings_en": [
+        "Anticholinergic toxicity toxidrome; caution in elderly and patients with prostatic hyperplasia."
+      ],
+      "class_warnings_zh": [
+        "抗膽鹼毒性症候群；老年人及攝護腺肥大患者慎用。"
+      ],
+      "class_contraindications_en": [
+        "Closed-angle glaucoma",
+        "Uncontrolled tachyarrhythmias"
+      ],
+      "class_contraindications_zh": [
+        "閉角型青光眼",
+        "未控制的心律過速"
+      ],
+      "board_high_yield_en": "Classic toxidrome: 'Blind as a bat, mad as a hatter, red as a beet, hot as a hare, dry as a bone'. Atropine is prototype.",
+      "board_high_yield_zh": "經典中毒口訣：盲如蝙蝠、瘋如帽匠、紅如甜菜、熱如野兔、乾如枯骨。阿托品為代表藥。",
+      "prototype_drug_id": "drug.atropine",
+      "representative_drug_ids": [
+        "drug.atropine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.alpha1_blockers",
+      "name_en": "Alpha-1 Selective Adrenergic Receptor Blockers",
+      "name_zh": "Alpha-1 選擇性腎上腺素受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.alpha1_adrenergic",
+      "suffix_en": "-osin",
+      "mechanism_overview_en": "Selectively inhibit alpha-1 adrenergic receptors, relaxing vascular smooth muscle and prostatic smooth muscle.",
+      "mechanism_overview_zh": "選擇性抑制 alpha-1 腎上腺素受體，使血管平滑肌與攝護腺平滑肌鬆弛。",
+      "indications_en": [
+        "Hypertension",
+        "Benign Prostatic Hyperplasia (BPH)",
+        "PTSD-associated nightmares (prazosin)"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "良性攝護腺肥大",
+        "PTSD 創傷後壓力症夢魘 (prazosin)"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.bph",
+        "cond.ptsd"
+      ],
+      "shared_adverse_effects_en": [
+        "First-dose syncope",
+        "Orthostatic hypotension",
+        "Nasal congestion",
+        "Dizziness",
+        "Reflex tachycardia"
+      ],
+      "shared_adverse_effects_zh": [
+        "首劑暈厥",
+        "姿勢性低血壓",
+        "鼻塞",
+        "頭暈",
+        "反射性心跳過速"
+      ],
+      "class_warnings_en": [
+        "First-dose effect: severe orthostatic hypotension and syncope after initial dose. Take at bedtime."
+      ],
+      "class_warnings_zh": [
+        "首劑效應：初始給藥後易發生嚴重姿勢性低血壓與暈厥。建議睡前服藥。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to alpha-1 blockers."
+      ],
+      "class_contraindications_zh": [
+        "對 alpha-1 阻斷劑過敏。"
+      ],
+      "board_high_yield_en": "Suffix -osin. Alpha-1 = vascular constriction. Prazosin cause first-dose syncope; tamsulosin selective for prostate BPH.",
+      "board_high_yield_zh": "字尾 -osin。Alpha-1 主導血管收縮。Prazosin 引起首劑暈厥；tamsulosin 具攝護腺選擇性用於 BPH。",
+      "prototype_drug_id": "drug.prazosin",
+      "representative_drug_ids": [
+        "drug.prazosin"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.nonselective_beta_blockers",
+      "name_en": "Non-Selective Beta-1 and Beta-2 Adrenergic Blockers",
+      "name_zh": "非選擇性 Beta-1 及 Beta-2 腎上腺素受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "suffix_en": "-lol",
+      "mechanism_overview_en": "Block both beta-1 (cardiac) and beta-2 (bronchial/vascular) adrenergic receptors.",
+      "mechanism_overview_zh": "同時阻斷 beta-1 (心臟) 與 beta-2 (支氣管/血管) 腎上腺素受體。",
+      "indications_en": [
+        "Hypertension",
+        "Angina",
+        "Migraine prophylaxis",
+        "Essential tremor",
+        "Thyroid storm"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "偏頭痛預防",
+        "原發性顫抖症",
+        "甲狀腺風暴"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.migraine",
+        "cond.essential_tremor",
+        "cond.hyperthyroidism"
+      ],
+      "shared_adverse_effects_en": [
+        "Bronchospasm",
+        "Bradycardia",
+        "Cold extremities",
+        "Fatigue",
+        "Masking hypoglycemia"
+      ],
+      "shared_adverse_effects_zh": [
+        "支氣管痙攣",
+        "心跳過緩",
+        "四肢冰冷",
+        "疲勞",
+        "掩蓋低血糖徵象"
+      ],
+      "class_warnings_en": [
+        "Contraindicated in asthma and severe COPD due to beta-2 blockade induced bronchospasm; abrupt withdrawal boxed warning."
+      ],
+      "class_warnings_zh": [
+        "氣喘及嚴重 COPD 患者禁忌（Beta-2 阻斷引致支氣管痙攣）；突發停藥黑框警告。"
+      ],
+      "class_contraindications_en": [
+        "Asthma",
+        "COPD",
+        "Severe bradycardia",
+        "2nd/3rd degree AV block"
+      ],
+      "class_contraindications_zh": [
+        "氣喘",
+        "慢性阻塞性肺病",
+        "嚴重心跳過緩",
+        "二度/三度房室傳導阻滯"
+      ],
+      "board_high_yield_en": "Propranolol is prototype. Nonselective beta-blockade causes bronchospasm -> DO NOT use in asthmatics. Migraine & essential tremor uses.",
+      "board_high_yield_zh": "Propranolol 為代表藥。非選擇性阻斷導致支氣管痙攣 -> 氣喘患者禁用。亦用於偏頭痛預防與原發性顫抖症。",
+      "prototype_drug_id": "drug.propranolol",
+      "representative_drug_ids": [
+        "drug.propranolol"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.central_alpha2_agonists",
+      "name_en": "Central Alpha-2 Adrenergic Receptor Agonists",
+      "name_zh": "中樞 Alpha-2 腎上腺素受體致劑",
+      "drugsystem_ids": [
+        "drugsystem.autonomic_nervous_system",
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.alpha2_adrenergic",
+      "suffix_en": "-dine",
+      "mechanism_overview_en": "Stimulate presynaptic alpha-2 receptors in the brainstem, decreasing central sympathetic outflow.",
+      "mechanism_overview_zh": "刺激腦幹突觸前 alpha-2 受體，降低中樞交感神經衝動輸出。",
+      "indications_en": [
+        "Hypertension",
+        "ADHD",
+        "Opioid withdrawal management"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "注意力不足過動症",
+        "鴉片類戒斷輔助"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.adhd"
+      ],
+      "shared_adverse_effects_en": [
+        "Rebound hypertensive crisis",
+        "Severe dry mouth",
+        "Sedation",
+        "Bradycardia"
+      ],
+      "shared_adverse_effects_zh": [
+        "反彈性高血壓危機",
+        "嚴重口乾",
+        "鎮靜嗜睡",
+        "心跳過緩"
+      ],
+      "class_warnings_en": [
+        "Abrupt discontinuation causes severe rebound hypertension due to rapid surge in catecholamines."
+      ],
+      "class_warnings_zh": [
+        "突然停藥會因兒茶酚胺劇增而引致嚴重反彈性高血壓。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to formulation components."
+      ],
+      "class_contraindications_zh": [
+        "對製劑成分過敏。"
+      ],
+      "board_high_yield_en": "Clonidine central sympatholytic. Reduces sympathetic outflow. WARNING: Abrupt withdrawal = rebound hypertensive crisis.",
+      "board_high_yield_zh": "Clonidine 為中樞交感抑制劑。降低交感輸出。警告：突發停藥導致反彈性高血壓危機。",
+      "prototype_drug_id": "drug.clonidine",
+      "representative_drug_ids": [
+        "drug.clonidine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.alcohol_deterrents",
+      "name_en": "Aldehyde Dehydrogenase Inhibitors / Alcohol Deterrents",
+      "name_zh": "乙醛脫氫酶抑制劑 / 戒酒輔助藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.aldehyde_dehydrogenase",
+      "suffix_en": null,
+      "mechanism_overview_en": "Inhibit aldehyde dehydrogenase, preventing metabolism of acetaldehyde to acetic acid after ethanol intake.",
+      "mechanism_overview_zh": "抑制乙醛脫氫酶，阻斷乙醇代謝中間產物乙醛轉化為乙酸。",
+      "indications_en": [
+        "Alcohol dependence / Alcohol use disorder"
+      ],
+      "indications_zh": [
+        "酒精依賴 / 酒精使用障礙"
+      ],
+      "indication_condition_ids": [
+        "cond.alcohol_use"
+      ],
+      "shared_adverse_effects_en": [
+        "Disulfiram-alcohol reaction (flushing, nausea, vomiting, throbbing headache, hypotension)",
+        "Hepatotoxicity"
+      ],
+      "shared_adverse_effects_zh": [
+        "雙硫崙-酒精反應 (面部潮紅、噁心、嘔吐、劇烈頭痛、低血壓)",
+        "肝臟毒性"
+      ],
+      "class_warnings_en": [
+        "Boxed warning: Never administer to patient who is intoxicated or without their full consent and knowledge."
+      ],
+      "class_warnings_zh": [
+        "黑框警告：絕不可在患者醉酒或未知情同意下給藥。"
+      ],
+      "class_contraindications_en": [
+        "Severe myocardial disease",
+        "Use of alcohol or alcohol-containing products",
+        "Metronidazole co-administration"
+      ],
+      "class_contraindications_zh": [
+        "嚴重心肌疾病",
+        "使用酒精或含酒精製品",
+        "併用 Metronidazole"
+      ],
+      "board_high_yield_en": "Disulfiram blocks ALDH -> acetaldehyde accumulation. Causes severe flushing/nausea with alcohol. Also metronidazole disulfiram-like reaction.",
+      "board_high_yield_zh": "Disulfiram 阻斷 ALDH -> 乙醛蓄積。飲酒引起嚴重潮紅噁心。Metronidazole 亦具雙硫崙樣反應。",
+      "prototype_drug_id": "drug.disulfiram",
+      "representative_drug_ids": [
+        "drug.disulfiram"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:16_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_B.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.hydantoin_antiseizure",
+      "name_en": "Hydantoin Antiseizure Agents",
+      "name_zh": "乙內醯脲類抗癲癇藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.voltage_gated_sodium_channels",
+      "suffix_en": "-toin",
+      "mechanism_overview_en": "Block voltage-gated sodium channels, stabilizing neuronal membranes and inhibiting seizure spread.",
+      "mechanism_overview_zh": "阻斷電壓門控鈉離子通道，穩定神經元膜並抑制癲癇發作擴散。",
+      "indications_en": [
+        "Tonic-clonic seizures",
+        "Focal (partial) seizures",
+        "Status epilepticus"
+      ],
+      "indications_zh": [
+        "強直陣攣性發作 (大發作)",
+        "局灶性 (部分性) 發作",
+        "癲癇重積狀態"
+      ],
+      "shared_adverse_effects_en": [
+        "Gingival hyperplasia",
+        "Nystagmus",
+        "Ataxia",
+        "Hirsutism",
+        "Megaloblastic anemia",
+        "SJS/TEN"
+      ],
+      "shared_adverse_effects_zh": [
+        "齒齦增生",
+        "眼球震顫",
+        "共濟失調",
+        "多毛症",
+        "巨幼紅血球性貧血",
+        "史蒂芬斯-強森症候群"
+      ],
+      "class_warnings_en": [
+        "Boxed warning for IV infusion rate (hypotension & arrhythmia risk); strong CYP450 inducer; non-linear saturation kinetics."
+      ],
+      "class_warnings_zh": [
+        "靜脈注射速率黑框警告 (低血壓與心律不整風險)；強效 CYP450 誘導劑；非線性飽和動力學。"
+      ],
+      "class_contraindications_en": [
+        "Sinus bradycardia",
+        "2nd/3rd degree SA/AV block",
+        "Hypersensitivity"
+      ],
+      "class_contraindications_zh": [
+        "竇性心跳過緩",
+        "二度/三度竇房或房室傳導阻滯",
+        "過敏"
+      ],
+      "board_high_yield_en": "Phenytoin is prototype. Zero-order saturation kinetics. Classic adverse effect triad: Gingival hyperplasia, nystagmus, ataxia. INEFFECTIVE for absence seizures.",
+      "board_high_yield_zh": "Phenytoin 為代表藥。零級飽和動力學。經典副作用三聯徵：齒齦增生、眼球震顫、共濟失調。對失神發作無效。",
+      "prototype_drug_id": "drug.phenytoin",
+      "representative_drug_ids": [
+        "drug.phenytoin"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.iminostilbene_antiseizure",
+      "name_en": "Iminostilbene Antiseizure Agents",
+      "name_zh": "亞胺茋類抗癲癇藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.voltage_gated_sodium_channels",
+      "suffix_en": "-zepine",
+      "mechanism_overview_en": "Block voltage-dependent sodium channels, reducing repetitive neuronal firing.",
+      "mechanism_overview_zh": "阻斷電壓依賴性鈉離子通道，減少高頻重複神經放電。",
+      "indications_en": [
+        "Partial seizures",
+        "Generalized tonic-clonic seizures",
+        "Trigeminal neuralgia",
+        "Bipolar disorder mania"
+      ],
+      "indications_zh": [
+        "部分性發作",
+        "全體強直陣攣性發作",
+        "三叉神經痛",
+        "雙相情緒障礙躁期"
+      ],
+      "indication_condition_ids": [
+        "cond.trigeminal_neuralgia"
+      ],
+      "shared_adverse_effects_en": [
+        "Diplopia",
+        "Ataxia",
+        "Hyponatremia / SIADH",
+        "Leukopenia",
+        "SJS/TEN skin rash"
+      ],
+      "shared_adverse_effects_zh": [
+        "複視",
+        "共濟失調",
+        "低血鈉 / SIADH",
+        "白血球減少",
+        "史蒂芬斯-強森症候群皮疹"
+      ],
+      "class_warnings_en": [
+        "Boxed warnings: Aplastic anemia & agranulocytosis; Serious dermatologic reactions (HLA-B*1502 screening required). Potent CYP3A4 auto-inducer."
+      ],
+      "class_warnings_zh": [
+        "黑框警告：再生不良性貧血與顆粒性白血球缺乏症；嚴重皮膚反應 (HLA-B*1502 篩檢)。強效 CYP3A4 自體誘導劑。"
+      ],
+      "class_contraindications_en": [
+        "Bone marrow depression",
+        "Co-administration with MAOIs"
+      ],
+      "class_contraindications_zh": [
+        "骨髓抑制病史",
+        "併用 MAO 抑制劑"
+      ],
+      "board_high_yield_en": "Carbamazepine 1st line for trigeminal neuralgia. Aplastic anemia boxed warning. Auto-induces CYP metabolism. Test HLA-B*1502 in Asians.",
+      "board_high_yield_zh": "Carbamazepine 為三叉神經痛首選。再生不良性貧血黑框警告。自體誘導 CYP 代謝。亞洲人須篩檢 HLA-B*1502。",
+      "prototype_drug_id": "drug.carbamazepine",
+      "representative_drug_ids": [
+        "drug.carbamazepine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.succinimide_antiseizure",
+      "name_en": "Succinimide Antiseizure Agents",
+      "name_zh": "琥珀醯亞胺類抗失神癲癇藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.t_type_calcium_channels",
+      "suffix_en": "-suximide",
+      "mechanism_overview_en": "Block T-type voltage-gated calcium channels in thalamic neurons, suppressing 3-Hz spike-and-wave discharges.",
+      "mechanism_overview_zh": "阻斷丘腦神經元 T 型電壓門控鈣通道，抑制 3-Hz 棘慢波異常放電。",
+      "indications_en": [
+        "Absence (petit mal) seizures"
+      ],
+      "indications_zh": [
+        "失神發作 (小發作)"
+      ],
+      "shared_adverse_effects_en": [
+        "Nausea / Vomiting",
+        "Abdominal distress",
+        "Drowsiness",
+        "Headache",
+        "Blood dyscrasias"
+      ],
+      "shared_adverse_effects_zh": [
+        "噁心 / 嘔吐",
+        "腹部不適",
+        "嗜睡",
+        "頭痛",
+        "血液疾患"
+      ],
+      "class_warnings_en": [
+        "Risk of serious blood dyscrasias and SJS/TEN."
+      ],
+      "class_warnings_zh": [
+        "嚴重血液疾病與史蒂芬斯-強森症候群風險。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to succinimides."
+      ],
+      "class_contraindications_zh": [
+        "對琥珀醯亞胺類過敏。"
+      ],
+      "board_high_yield_en": "Ethosuximide is PROTOTYPE for absence (petit mal) seizures ('EFG - Ethosuximide for Absence'). Blocks thalamic T-type Ca channels.",
+      "board_high_yield_zh": "Ethosuximide 為失神 (小發作) 癲癇代表藥 (口訣 'EFG - Ethosuximide for Petit Mal')。阻斷丘腦 T 型鈣通道。",
+      "prototype_drug_id": "drug.ethosuximide",
+      "representative_drug_ids": [
+        "drug.ethosuximide"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.gabapentinoids",
+      "name_en": "Gabapentinoids (Alpha-2-Delta Calcium Channel Ligands)",
+      "name_zh": "加巴噴丁類藥物 (Alpha-2-Delta 鈣通道配體)",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.alpha2_delta_calcium_channels",
+      "suffix_en": "-gabin / -pentin",
+      "mechanism_overview_en": "Bind to the alpha-2-delta subunit of voltage-gated calcium channels in the CNS, decreasing excitatory neurotransmitter release.",
+      "mechanism_overview_zh": "結合至中樞電壓門控鈣通道 alpha-2-delta 亞基，減少興奮性神經傳遞物質釋放。",
+      "indications_en": [
+        "Postherpetic neuralgia",
+        "Neuropathic pain",
+        "Adjunctive therapy for partial seizures",
+        "Fibromyalgia"
+      ],
+      "indications_zh": [
+        "帶狀皰疹後神經痛",
+        "神經病理性疼痛",
+        "部分性發作輔助治療",
+        "纖維肌痛症"
+      ],
+      "indication_condition_ids": [
+        "cond.postherpetic_neuralgia",
+        "cond.peripheral_neuropathy",
+        "cond.fibromyalgia"
+      ],
+      "shared_adverse_effects_en": [
+        "Sedation / Somnolence",
+        "Dizziness",
+        "Peripheral edema",
+        "Ataxia",
+        "Weight gain"
+      ],
+      "shared_adverse_effects_zh": [
+        "鎮靜 / 嗜睡",
+        "頭暈",
+        "周邊水腫",
+        "共濟失調",
+        "體重增加"
+      ],
+      "class_warnings_en": [
+        "Risk of severe respiratory depression when co-administered with opioids or CNS depressants."
+      ],
+      "class_warnings_zh": [
+        "與鴉片類或中樞抑制劑併用時具嚴重呼吸抑制風險。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to formulation components."
+      ],
+      "class_contraindications_zh": [
+        "對成分過敏。"
+      ],
+      "board_high_yield_en": "Gabapentin & pregabalin. Structurally related to GABA but DO NOT bind GABA receptors. Primary use is neuropathic pain & postherpetic neuralgia.",
+      "board_high_yield_zh": "Gabapentin 與 pregabalin。結構與 GABA 相似但不結合 GABA 受體。主用於神經痛與帶狀皰疹後神經痛。",
+      "prototype_drug_id": "drug.gabapentin",
+      "representative_drug_ids": [
+        "drug.gabapentin"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:05_PHARM_BATCH_P4_PAIN_NSAID_OPIOID.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.dopamine_precursors",
+      "name_en": "Dopamine Precursors & Decarboxylase Inhibitor Combinations",
+      "name_zh": "多巴胺前驅物與去羧酶抑制劑複方藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.dopamine_receptors",
+      "suffix_en": null,
+      "mechanism_overview_en": "Levodopa crosses the BBB and converts to dopamine; carbidopa inhibits peripheral dopa decarboxylase to prevent peripheral metabolism.",
+      "mechanism_overview_zh": "左旋多巴通過血腦障壁轉化為多巴胺；卡比多巴抑制外周多巴去羧酶，防止外周代謝並降低副作用。",
+      "indications_en": [
+        "Parkinson's disease",
+        "Post-encephalitic parkinsonism"
+      ],
+      "indications_zh": [
+        "帕金森氏症",
+        "腦炎後帕金森氏症候群"
+      ],
+      "indication_condition_ids": [
+        "cond.parkinsons"
+      ],
+      "shared_adverse_effects_en": [
+        "Dyskinesia",
+        "On-off motor fluctuations",
+        "Nausea",
+        "Orthostatic hypotension",
+        "Hallucinations",
+        "Dark urine/sweat"
+      ],
+      "shared_adverse_effects_zh": [
+        "運動障礙 (Dyskinesia)",
+        "開關現象 (On-off phenomenon)",
+        "噁心",
+        "姿勢性低血壓",
+        "幻覺",
+        "尿液/汗液深色化"
+      ],
+      "class_warnings_en": [
+        "Long-term therapy produces motor fluctuations (wearing-off and on-off phenomenon). Contraindicated with nonselective MAOIs."
+      ],
+      "class_warnings_zh": [
+        "長期治療引發運動波動現象（藥效消退與開關現象）。非選擇性 MAOI 併用禁忌。"
+      ],
+      "class_contraindications_en": [
+        "Co-administration with nonselective MAOIs",
+        "Narrow-angle glaucoma",
+        "Suspicious undiagnosed skin lesions (melanoma)"
+      ],
+      "class_contraindications_zh": [
+        "併用非選擇性 MAOI",
+        "閉角型青光眼",
+        "未確診的疑似黑素瘤皮膚病變"
+      ],
+      "board_high_yield_en": "Levodopa + Carbidopa (Sinemet) is 1st line for Parkinson's. Carbidopa prevents peripheral L-dopa breakdown. Long-term use -> 'on-off' dyskinesia.",
+      "board_high_yield_zh": "Levodopa + Carbidopa (Sinemet) 為帕金森氏症首選。Carbidopa 阻止外周 L-dopa 破壞。長期使用導致『開關』運動障礙。",
+      "prototype_drug_id": "drug.carbidopa_levodopa",
+      "representative_drug_ids": [
+        "drug.carbidopa_levodopa"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.mao_inhibitors",
+      "name_en": "Monoamine Oxidase Inhibitors (MAOIs)",
+      "name_zh": "單胺氧化酶抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.monoamine_oxidase",
+      "suffix_en": "-giline / -zine",
+      "mechanism_overview_en": "Inhibit monoamine oxidase enzymes (MAO-A and/or MAO-B), preventing breakdown of norepinephrine, serotonin, and dopamine.",
+      "mechanism_overview_zh": "抑制單胺氧化酶 (MAO-A 及/或 MAO-B)，阻止正腎上腺素、血清素及多巴胺降解。",
+      "indications_en": [
+        "Atypical / Treatment-resistant depression",
+        "Parkinson's disease (MAO-B selective agents like selegiline)"
+      ],
+      "indications_zh": [
+        "非典型 / 難治性憂鬱症",
+        "帕金森氏症 (MAO-B 選擇性劑如 selegiline)"
+      ],
+      "indication_condition_ids": [
+        "cond.depression",
+        "cond.parkinsons"
+      ],
+      "shared_adverse_effects_en": [
+        "Hypertensive crisis (with tyramine)",
+        "Serotonin syndrome (with SSRIs/SNRIs)",
+        "Orthostatic hypotension",
+        "Weight gain",
+        "Insomnia"
+      ],
+      "shared_adverse_effects_zh": [
+        "高血壓危機 (併用含酪胺食物)",
+        "血清素症候群 (併用 SSRI/SNRI)",
+        "姿勢性低血壓",
+        "體重增加",
+        "失眠"
+      ],
+      "class_warnings_en": [
+        "Boxed warning: Suicidality in children/young adults. Dietary tyramine restriction required for nonselective MAOIs to avoid fatal hypertensive crisis. 14-day washout period."
+      ],
+      "class_warnings_zh": [
+        "黑框警告：青少年自殺風險。非選擇性 MAOI 須嚴格限制飲食酪胺以防致命高血壓危機。換藥須 14 天洗脫期。"
+      ],
+      "class_contraindications_en": [
+        "Co-administration with SSRIs, SNRIs, meperidine, dextromethorphan, or sympathomimetics",
+        "Pheochromocytoma"
+      ],
+      "class_contraindications_zh": [
+        "併用 SSRI、SNRI、Meperidine、Dextromethorphan 或交感神經刺激劑",
+        "嗜鉻細胞腫"
+      ],
+      "board_high_yield_en": "Phenelzine is nonselective prototype. Tyramine food reaction -> severe hypertensive crisis ('cheese reaction'). Requires 14-day washout before SSRIs.",
+      "board_high_yield_zh": "Phenelzine 為非選擇性代表藥。酪胺食物反應 -> 嚴重高血壓危機 ('乳酪效應')。使用 SSRI 前須 14 天洗脫期。",
+      "prototype_drug_id": "drug.phenelzine",
+      "representative_drug_ids": [
+        "drug.phenelzine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft"
     }
   ]
 }

@@ -1832,6 +1832,1819 @@
       },
       "review_status": "draft",
       "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drug.albuterol",
+      "name_en": "Albuterol",
+      "name_zh": "沙丁胺醇",
+      "brand_names_en": [
+        "ProAir HFA",
+        "Ventolin HFA",
+        "Proventil HFA"
+      ],
+      "drugclass_id": "drugclass.beta2_agonists",
+      "subclass_en": "Short-Acting Beta-2 Adrenergic Agonist (SABA)",
+      "drugsystem_ids": [
+        "drugsystem.respiratory",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta2_adrenergic",
+      "rxnorm_rxcui": "435",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-terol",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Selectively stimulates beta-2 adrenergic receptors in bronchial smooth muscle, activating adenylate cyclase, increasing intracellular cAMP, and producing bronchodilation.",
+      "mechanism_zh": "選擇性刺激支氣管平滑肌 beta-2 腎上腺素受體，活化腺苷酸環化酶，提高胞內 cAMP 濃度，引致支氣管平滑肌鬆弛。",
+      "pharmacodynamics_summary_en": "Rapid-onset bronchodilation relieving acute bronchospasm within 5-15 minutes.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 5-15 minutes (inhalation); Peak effect: 0.5-2 hours; Duration: 2-6 hours.",
+        "metabolism_en": "Extensively metabolized in the liver to inactive albuterol 4'-O-sulfate.",
+        "elimination_en": "Renal excretion (80-100% of dose excreted in urine over 72 hours)."
+      },
+      "indications_en": [
+        "Treatment or prevention of bronchospasm in patients 4 years of age and older with reversible obstructive airway disease",
+        "Prevention of exercise-induced bronchospasm"
+      ],
+      "indications_zh": [
+        "治療或預防 4 歲及以上可逆性阻塞性呼吸道疾病患者之支氣管痙攣",
+        "預防運動誘發性支氣管痙攣"
+      ],
+      "indication_condition_ids": [
+        "cond.asthma",
+        "cond.copd"
+      ],
+      "adverse_effects_en": [
+        "Tremor",
+        "Nervousness",
+        "Tachycardia",
+        "Palpitations",
+        "Dizziness",
+        "Headache"
+      ],
+      "adverse_effects_zh": [
+        "震顫",
+        "緊張感",
+        "心跳過速",
+        "心悸",
+        "頭暈",
+        "頭痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Paradoxical bronchospasm",
+        "Hypokalemia",
+        "Significant cardiovascular effects"
+      ],
+      "serious_adverse_effects_zh": [
+        "反常性支氣管痙攣",
+        "低血鉀",
+        "顯著心血管影響"
+      ],
+      "warnings_en": [
+        "Paradoxical bronchospasm: Discontinue albuterol immediately if paradoxical bronchospasm occurs.",
+        "Cardiovascular effects: May produce significant tachycardia, blood pressure changes, and ECG changes."
+      ],
+      "warnings_zh": [
+        "反常性支氣管痙攣：若發生反常性支氣管痙攣應立即停用沙丁胺醇。",
+        "心血管影響：可能引起顯著心跳過速、血壓變化及心電圖改變。"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to albuterol or any formulation components."
+      ],
+      "contraindications_zh": [
+        "對沙丁胺醇或任何製劑成分過敏。"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Use only if potential benefit outweighs risk to fetus.",
+      "pregnancy_lactation_zh": "懷孕級別 C。僅在潛在益處大於對胎兒風險時使用。",
+      "renal_considerations_en": "No dosage adjustment necessary; monitor in severe renal impairment.",
+      "hepatic_considerations_en": "No specific dosage adjustment reported.",
+      "monitoring_requirements_en": "Monitor lung function (FEV1/peak flow), heart rate, blood pressure, serum potassium, and frequency of rescue inhaler use.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.nonselective_beta_blockers",
+          "with_label_en": "Non-Selective Beta Blockers (e.g. Propranolol)",
+          "interaction_en": "Beta blockers block the bronchodilatory effect of albuterol and may produce severe bronchospasm in asthmatics.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "cough_side_effect",
+        "bradycardia"
+      ],
+      "tcm_relation_note_zh": "Albuterol 為急救哮喘吸入劑（SABA）。中醫診治肺氣虛哮喘或痰熱平喘時，須詢問患者救急吸入劑使用頻率；頻繁使用代表氣喘未控制，不可逕行停用西藥吸入劑。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Albuterol = A (Acute) B (Bronchodilator) U (Urgent) T (Tremor side effect). SABA rescue inhaler.",
+      "mnemonic_zh": "Albuterol = 急性 (Acute) 支氣管擴張劑 (Bronchodilator) 救急 (Urgent) 震顫 (Tremor)。SABA 救急吸入劑。",
+      "classic_association_en": "SABA rescue inhaler -> Rapid bronchodilation & tremor/tachycardia side effects",
+      "classic_association_zh": "SABA 救急吸入劑 -> 快速支氣管擴張與震顫/心急副作用",
+      "exam_trap_en": "Frequent albuterol use indicates worsening asthma control requiring stepped-up controller therapy (ICS); nonselective beta-blockers block albuterol and trigger fatal bronchospasm.",
+      "exam_trap_zh": "頻繁使用沙丁胺醇代表氣喘控制惡化，須升級控制藥物 (ICS)；非選擇性 beta 阻斷劑會阻斷沙丁胺醇並誘發致命性支氣管痙攣。",
+      "board_high_yield_en": "Prototype SABA. Rapid bronchodilation via beta-2 stimulation. First-line acute asthma rescue. Major adverse effect: Tremor & tachycardia.",
+      "dailymed_setid": "e8f49811-9a74-4bf8-b570-07bf656f4d54",
+      "dailymed_label_title": "ALBUTEROL SULFATE INHALATION AEROSOL",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e8f49811-9a74-4bf8-b570-07bf656f4d54",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.atropine",
+      "name_en": "Atropine",
+      "name_zh": "阿托品",
+      "brand_names_en": [
+        "AtroPen",
+        "Isopto Atropine"
+      ],
+      "drugclass_id": "drugclass.anticholinergics",
+      "subclass_en": "Non-Selective Antimuscarinic Anticholinergic Agent",
+      "drugsystem_ids": [
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.muscarinic_receptors",
+      "rxnorm_rxcui": "1223",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-pine",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Competitive antagonist of acetylcholine at central and peripheral muscarinic receptors (M1-M5), blocking parasympathetic neuro-effector sites.",
+      "mechanism_zh": "中樞與周邊毒蕈鹼型受體 (M1-M5) 之競爭性乙醯膽鹼拮抗劑，阻斷副交感神經效應器部位。",
+      "pharmacodynamics_summary_en": "Increases heart rate, decreases salivary/bronchial secretions, relaxes GI smooth muscle, causes mydriasis & cycloplegia.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: Immediate (IV), 30 minutes (IM); Duration: 4 hours (parenteral), 7-14 days (topical ophthalmic cycloplegia).",
+        "metabolism_en": "Partially metabolized by hepatic hydrolysis to tropic acid and tropine.",
+        "elimination_en": "Renal excretion (30-50% excreted unchanged in urine)."
+      },
+      "indications_en": [
+        "Temporary blockade of severe bradycardia and bradyarrhythmias",
+        "Antidote for organophosphorus nerve agent or insecticide poisoning and muscarinic mushroom poisoning",
+        "Preoperative medication to reduce salivary and respiratory secretions"
+      ],
+      "indications_zh": [
+        "嚴重心跳過緩與緩慢型心律不整之暫時性阻斷",
+        "有機磷神經毒劑/農藥中毒及毒蕈鹼型毒菇中毒之解毒劑",
+        "術前用藥以減少唾液及呼吸道分泌物"
+      ],
+      "indication_condition_ids": [],
+      "adverse_effects_en": [
+        "Dry mouth",
+        "Blurred vision",
+        "Urinary retention",
+        "Constipation",
+        "Tachycardia",
+        "Anhidrosis"
+      ],
+      "adverse_effects_zh": [
+        "口乾",
+        "視力模糊",
+        "尿滯留",
+        "便秘",
+        "心跳過速",
+        "無汗症"
+      ],
+      "serious_adverse_effects_en": [
+        "Anticholinergic psychosis / delirium",
+        "Hyperthermia",
+        "Closed-angle glaucoma precipitation"
+      ],
+      "serious_adverse_effects_zh": [
+        "抗膽鹼精神病 / 譫妄",
+        "高熱",
+        "誘發閉角型青光眼急性發作"
+      ],
+      "warnings_en": [
+        "Anticholinergic delirium & hyperthermia: Caution in high ambient temperatures due to inhibited sweating.",
+        "Ophthalmic: May precipitate acute angle-closure glaucoma in susceptible individuals."
+      ],
+      "warnings_zh": [
+        "抗膽鹼譫妄與高熱：高溫環境下因發汗受抑制須特別慎用。",
+        "眼科警語：易感人群中可能誘發急性閉角型青光眼發作。"
+      ],
+      "contraindications_en": [
+        "Closed-angle glaucoma",
+        "Severe ulcerative colitis or toxic megacolon",
+        "Obstructive uropathy / severe prostatic hyperplasia",
+        "Uncontrolled tachyarrhythmias"
+      ],
+      "contraindications_zh": [
+        "閉角型青光眼",
+        "嚴重潰瘍性結腸炎或毒性巨結腸症",
+        "阻塞性尿路疾病 / 嚴重攝護腺肥大",
+        "未控制的心律過速"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Crosses placenta; may cause fetal tachycardia.",
+      "pregnancy_lactation_zh": "懷孕級別 C。通過胎盤；可能引起胎兒心跳過速。",
+      "renal_considerations_en": "Use caution in renal impairment due to reduced clearance.",
+      "hepatic_considerations_en": "No specific dosage adjustment guidelines reported.",
+      "monitoring_requirements_en": "Monitor heart rate, blood pressure, pupil size, body temperature, urinary output, and bowel sounds.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.anticholinergics",
+          "with_label_en": "Other Anticholinergics / Antihistamines",
+          "interaction_en": "Additive anticholinergic effects leading to severe urinary retention, severe constipation, or confusion.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "sedation_dizziness",
+        "bradycardia"
+      ],
+      "tcm_relation_note_zh": "Atropine 具強烈「燥濕昂陽」之抗膽鹼作用（口乾、無汗、瞳孔散大、心跳加快）。針灸治療胃腸痙攣或心跳過緩時，若患者已接受阿托品，切勿將藥物所致之口乾舌紅目赤誤診為陰虛火旺或實熱證。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Atropine toxidrome: Blind as a bat (mydriasis), Mad as a hatter (delirium), Red as a beet (flushing), Hot as a hare (hyperthermia), Dry as a bone (anhidrosis/dry mouth).",
+      "mnemonic_zh": "阿托品中毒口訣：盲如蝙蝠（散瞳）、瘋如帽匠（譫妄）、紅如甜菜（潮紅）、熱如野兔（高熱）、乾如枯骨（無汗口乾）。",
+      "classic_association_en": "Atropine -> Antimuscarinic prototype & Organophosphate poisoning antidote",
+      "classic_association_zh": "阿托品 -> 抗毒蕈鹼代表藥與有機磷農藥中毒解毒劑",
+      "exam_trap_en": "Atropine treats cholinergic DUMBBELSS toxidrome from organophosphate poisoning, but is ABSOLUTELY CONTRAINDICATED in closed-angle glaucoma.",
+      "exam_trap_zh": "阿托品用於救治有機磷中毒之副交感 DUMBBELSS 症候群，但對閉角型青光眼患者為絕對禁忌。",
+      "board_high_yield_en": "Prototype antimuscarinic agent. Antidote for organophosphate poisoning & muscarinic mushrooms. Causes pupillary dilation, dry mouth, tachycardia, urinary retention. CI in closed-angle glaucoma.",
+      "dailymed_setid": "2f87a8b4-825e-4c7b-9457-3a13063f25c7",
+      "dailymed_label_title": "ATROPINE SULFATE INJECTION",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f87a8b4-825e-4c7b-9457-3a13063f25c7",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.prazosin",
+      "name_en": "Prazosin",
+      "name_zh": "哌唑嗪",
+      "brand_names_en": [
+        "Minipress"
+      ],
+      "drugclass_id": "drugclass.alpha1_blockers",
+      "subclass_en": "Quinazoline Alpha-1 Selective Adrenergic Receptor Blocker",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.alpha1_adrenergic",
+      "rxnorm_rxcui": "8629",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-osin",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Selectively inhibits post-synaptic alpha-1 adrenergic receptors, causing peripheral vasodilation of vascular smooth muscle and decreasing peripheral vascular resistance.",
+      "mechanism_zh": "選擇性抑制突觸後 alpha-1 腎上腺素受體，引起外周血管平滑肌舒張並降低外周血管阻力。",
+      "pharmacodynamics_summary_en": "Reduces standing and supine blood pressure without causing significant reflex tachycardia during long-term therapy.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 2 hours; Peak effect: 1-3 hours; Duration: 10-24 hours.",
+        "metabolism_en": "Extensively metabolized in the liver via demethylation and conjugation.",
+        "elimination_en": "Biliary/fecal excretion (90%), renal excretion (<10%)."
+      },
+      "indications_en": [
+        "Treatment of hypertension alone or in combination with other antihypertensive agents",
+        "Off-label: PTSD-associated trauma nightmares and sleep disruption"
+      ],
+      "indications_zh": [
+        "單獨或聯合其他降壓藥治療高血壓",
+        "仿單外用途：PTSD 創傷後壓力症相關創傷夢魘與睡眠障礙"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.ptsd"
+      ],
+      "common_offlabel_uses_en": [
+        "PTSD-associated nightmares and hyperarousal sleep disruption"
+      ],
+      "common_offlabel_uses_zh": [
+        "PTSD 創傷性夢魘與過度警覺睡眠障礙"
+      ],
+      "adverse_effects_en": [
+        "First-dose syncope",
+        "Dizziness",
+        "Headache",
+        "Drowsiness",
+        "Palpitations",
+        "Nasal congestion"
+      ],
+      "adverse_effects_zh": [
+        "首劑暈厥",
+        "頭暈",
+        "頭痛",
+        "嗜睡",
+        "心悸",
+        "鼻塞"
+      ],
+      "serious_adverse_effects_en": [
+        "Severe orthostatic hypotension & syncope",
+        "Priapism"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重姿勢性低血壓與暈厥",
+        "陰莖異常勃起 (Priapism)"
+      ],
+      "warnings_en": [
+        "First-dose effect: Severe orthostatic hypotension with syncope may occur within 30-90 minutes of initial dose. Advise taking at bedtime.",
+        "Intraoperative Floppy Iris Syndrome (IFIS) during cataract surgery."
+      ],
+      "warnings_zh": [
+        "首劑效應：初始服藥 30-90 分鐘內易發生嚴重姿勢性低血壓與暈厥。建議睡前服藥。",
+        "白內障手術中可能引致術中虹膜鬆弛症候群 (IFIS)。"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to prazosin or other quinazolines."
+      ],
+      "contraindications_zh": [
+        "對哌唑嗪或其他喹唑啉類成分過敏。"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Excreted in human milk in small amounts.",
+      "pregnancy_lactation_zh": "懷孕級別 C。少量分泌至母乳中。",
+      "renal_considerations_en": "Initiate at lowest dose in renal impairment due to increased sensitivity.",
+      "hepatic_considerations_en": "Reduce dose in hepatic impairment due to decreased drug clearance.",
+      "monitoring_requirements_en": "Monitor blood pressure (sitting and standing) especially after initial dose and dosage increases.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.pde5_inhibitors",
+          "with_label_en": "PDE-5 Inhibitors (e.g. Sildenafil)",
+          "interaction_en": "Additive blood pressure lowering effect resulting in symptomatic hypotension.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "orthostatic_hypotension",
+        "sedation_dizziness"
+      ],
+      "tcm_relation_note_zh": "Prazosin 具強烈降壓與首劑暈厥效應。針灸治療高血壓、失眠或 PTSD 時，患者起立移步須特別注意姿勢性低血壓（中醫頭暈目眩、清陽不升），防範起立暈倒跌傷。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Prazosin = P (PTSD nightmares) R (Relax vascular smooth muscle) A (Alpha-1 selective) Z (Zzz... take at bedtime for first-dose syncope).",
+      "mnemonic_zh": "Prazosin = P (PTSD 噩夢) R (舒張血管) A (Alpha-1 選擇性) Z (睡前服藥防首劑暈厥)。",
+      "classic_association_en": "Prazosin -> Alpha-1 blocker prototype & first-dose syncope / PTSD nightmares",
+      "classic_association_zh": "哌唑嗪 -> Alpha-1 阻斷劑代表藥、首劑暈厥與 PTSD 噩夢",
+      "exam_trap_en": "Prazosin causes first-dose syncope/orthostatic hypotension (mitigated by bedtime dosing); also uniquely used off-label for PTSD nightmares.",
+      "exam_trap_zh": "Prazosin 會引起首劑暈厥與姿勢性低血壓（睡前給藥可減輕）；臨床上亦獨特仿單外用於 PTSD 噩夢。",
+      "board_high_yield_en": "Prototype alpha-1 blocker (-osin). Causes vasodilation & first-dose syncope (take at bedtime). Off-label first-choice for PTSD nightmares.",
+      "dailymed_setid": "e8c33a90-8451-401d-b659-c2901cf1a58b",
+      "dailymed_label_title": "PRAZOSIN HYDROCHLORIDE CAPSULE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e8c33a90-8451-401d-b659-c2901cf1a58b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.propranolol",
+      "name_en": "Propranolol",
+      "name_zh": "普萘洛爾",
+      "brand_names_en": [
+        "Inderal LA",
+        "InnoPran XL"
+      ],
+      "drugclass_id": "drugclass.nonselective_beta_blockers",
+      "subclass_en": "Non-Selective Beta-1 and Beta-2 Adrenergic Blocker",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "rxnorm_rxcui": "8787",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-lol",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Non-selectively antagonizes beta-1 (cardiac) and beta-2 (bronchial and vascular) adrenergic receptors, competing with sympathomimetic neurotransmitters.",
+      "mechanism_zh": "非選擇性拮抗 beta-1 (心臟) 與 beta-2 (支氣管及血管) 腎上腺素受體，競爭性阻斷交感神經傳導。",
+      "pharmacodynamics_summary_en": "Reduces heart rate, cardiac output, blood pressure, and myocardial oxygen demand; inhibits glycogenolysis; causes bronchoconstriction.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 1-2 hours (oral); Duration: 6-12 hours (immediate-release), 24 hours (LA).",
+        "metabolism_en": "Extensive hepatic first-pass metabolism via CYP2D6 and CYP1A2.",
+        "elimination_en": "Renal clearance of metabolites (<1% excreted unchanged)."
+      },
+      "indications_en": [
+        "Hypertension and Angina Pectoris due to coronary atherosclerosis",
+        "Migraine headache prophylaxis",
+        "Essential tremor management",
+        "Thyroid storm / Thyrotoxicosis symptom management",
+        "Hypertrophic subaortic stenosis and Pheochromocytoma adjunctive therapy"
+      ],
+      "indications_zh": [
+        "高血壓與冠狀動脈硬化引致之心絞痛",
+        "偏頭痛發作之預防",
+        "原發性顫抖症之控制",
+        "甲狀腺風暴 / 甲狀腺毒症症狀控制",
+        "肥厚性亞主動脈狹窄與嗜鉻細胞腫之輔助治療"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.migraine",
+        "cond.essential_tremor",
+        "cond.hyperthyroidism"
+      ],
+      "adverse_effects_en": [
+        "Bradycardia",
+        "Bronchospasm",
+        "Cold extremities",
+        "Fatigue",
+        "Depression",
+        "Sleep disturbances / Vivid dreams"
+      ],
+      "adverse_effects_zh": [
+        "心跳過緩",
+        "支氣管痙攣",
+        "四肢冰冷",
+        "疲勞",
+        "抑鬱情緒",
+        "睡眠障礙 / 多夢"
+      ],
+      "serious_adverse_effects_en": [
+        "Severe bronchospasm",
+        "Heart block / Heart failure exacerbation",
+        "Abrupt withdrawal rebound ischemia / MI"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重支氣管痙攣",
+        "心臟傳導阻滯 / 心衰竭惡化",
+        "突發停藥反彈性缺血 / 心肌梗塞"
+      ],
+      "boxed_warning_en": "Cardiac Ischemia after Abrupt Discontinuation: Do not abruptly discontinue propranolol. Taper dosage gradually over 1-2 weeks to avoid rebound angina, arrhythmias, or MI.",
+      "boxed_warning_zh": "突發停藥後心髒缺血黑框警告：切勿突然停用普萘洛爾。應於 1-2 週內逐漸減量，以避免反彈性心絞痛、心律不整或心肌梗塞。",
+      "warnings_en": [
+        "Bronchospastic disease: Contraindicated in asthma and COPD due to blockade of beta-2 mediated bronchodilation.",
+        "Masking hypoglycemia: May mask hypoglycemia-induced tachycardia in diabetic patients."
+      ],
+      "warnings_zh": [
+        "支氣管痙攣性疾病：氣喘及 COPD 患者禁忌（阻斷 beta-2 介導之支氣管擴張）。",
+        "掩蓋低血糖：可能掩蓋糖尿病患者低血糖所致之心跳過速。"
+      ],
+      "contraindications_en": [
+        "Asthma, COPD, or history of severe bronchospasm",
+        "Sinus bradycardia, 2nd or 3rd degree AV block, cardiogenic shock",
+        "Decompensated heart failure"
+      ],
+      "contraindications_zh": [
+        "氣喘、COPD 或嚴重支氣管痙攣病史",
+        "竇性心跳過緩、二度或三度房室傳導阻滯、心源性休克",
+        "失代償性心衰竭"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. May cause intrauterine growth restriction, neonatal bradycardia, and hypoglycemia.",
+      "pregnancy_lactation_zh": "懷孕級別 C。可能造成胎兒宮內生長遲緩、新生兒心跳過緩與低血糖。",
+      "renal_considerations_en": "Use caution in renal impairment; clearance may be reduced.",
+      "hepatic_considerations_en": "Bioavailability increased in hepatic impairment due to reduced first-pass metabolism; reduce dose.",
+      "monitoring_requirements_en": "Monitor heart rate, blood pressure, ECG, blood glucose in diabetics, and respiratory status.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.beta2_agonists",
+          "with_label_en": "Beta-2 Agonists (e.g. Albuterol)",
+          "interaction_en": "Propranolol antagonizes the bronchodilatory effects of beta-2 agonists, precipitating severe bronchospasm.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "bradycardia",
+        "orthostatic_hypotension",
+        "masking_hypoglycemia"
+      ],
+      "tcm_relation_note_zh": "Propranolol 為非選擇性 beta 阻斷劑。氣喘患者絕對禁用（Beta-2 阻斷引發致命喘息）。針灸治療偏頭痛或原發性顫抖時，須注意其鎮靜、心跳過緩與四肢冰冷（中醫陽氣不達四末、手足厥冷）副作用。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Propranolol = P (Prevent Migraine) R (Restricts Bronchi - DO NOT give in Asthma) O (Original Non-selective Beta Blocker) P (Prostatitis/Essential Tremor).",
+      "mnemonic_zh": "Propranolol = 預防偏頭痛 (Prevent Migraine) 緊縮支氣管 (氣喘禁用) 原創非選擇性 (Original Non-selective) 原發性顫抖 (Essential Tremor)。",
+      "classic_association_en": "Propranolol -> Nonselective beta blocker prototype & asthma contraindication / migraine prophylaxis",
+      "classic_association_zh": "普萘洛爾 -> 非選擇性 beta 阻斷劑代表藥、氣喘禁忌與偏頭痛預防",
+      "exam_trap_en": "Propranolol is NONSELECTIVE (blocks beta-1 & beta-2), so it is ABSOLUTELY CONTRAINDICATED in asthma; it also uniquely prevents migraines & treats essential tremor.",
+      "exam_trap_zh": "普萘洛爾為非選擇性（阻斷 beta-1 與 beta-2），故氣喘患者絕對禁忌；臨床亦用於預防偏頭痛與治療原發性顫抖。",
+      "board_high_yield_en": "Prototype nonselective beta blocker (-lol). Contraindicated in asthma & COPD due to beta-2 bronchospasm. High yield for migraine prophylaxis & essential tremor.",
+      "dailymed_setid": "92a83216-9289-4d69-a1b7-d1a1b1d7d111",
+      "dailymed_label_title": "PROPRANOLOL HYDROCHLORIDE TABLET",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=92a83216-9289-4d69-a1b7-d1a1b1d7d111",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#BOXED_WARNING"
+        ],
+        "indications_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.clonidine",
+      "name_en": "Clonidine",
+      "name_zh": "可樂定",
+      "brand_names_en": [
+        "Catapres",
+        "Kapvay"
+      ],
+      "drugclass_id": "drugclass.central_alpha2_agonists",
+      "subclass_en": "Central Alpha-2 Adrenergic Agonist Sympatholytic",
+      "drugsystem_ids": [
+        "drugsystem.autonomic_nervous_system",
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.alpha2_adrenergic",
+      "rxnorm_rxcui": "2599",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-dine",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Stimulates presynaptic alpha-2 adrenergic receptors in the vasomotor center of the brainstem, reducing central sympathetic outflow and decreasing peripheral vascular resistance.",
+      "mechanism_zh": "刺激腦幹血管運動中心突觸前 alpha-2 腎上腺素受體，降低中樞交感神經衝動輸出並降低外周血管阻力。",
+      "pharmacodynamics_summary_en": "Decreases blood pressure, heart rate, and plasma renin activity; produces CNS sedation.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 30-60 minutes (oral); Peak effect: 3-5 hours; Duration: 6-12 hours (tablets), 7 days (transdermal patch).",
+        "metabolism_en": "Metabolized by the liver (~50%).",
+        "elimination_en": "Renal excretion (40-60% excreted unchanged in urine)."
+      },
+      "indications_en": [
+        "Treatment of hypertension alone or in combination with other antihypertensives",
+        "Treatment of ADHD in pediatric patients (Kapvay extended-release formulation)",
+        "Off-label: Opioid withdrawal management, Tourette syndrome"
+      ],
+      "indications_zh": [
+        "單獨或聯合其他降壓藥治療高血壓",
+        "兒科患者注意力不足過動症 (ADHD) 治療 (Kapvay 緩釋劑型)",
+        "仿單外用途：鴉片類戒斷輔助、妥瑞氏症候群"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.adhd"
+      ],
+      "common_offlabel_uses_en": [
+        "Opioid withdrawal syndrome management",
+        "Tourette syndrome tic reduction"
+      ],
+      "common_offlabel_uses_zh": [
+        "鴉片類戒斷症候群控制",
+        "妥瑞氏症抽動症狀減輕"
+      ],
+      "adverse_effects_en": [
+        "Dry mouth",
+        "Sedation / Drowsiness",
+        "Dizziness",
+        "Constipation",
+        "Bradycardia"
+      ],
+      "adverse_effects_zh": [
+        "口乾",
+        "鎮靜 / 嗜睡",
+        "頭暈",
+        "便秘",
+        "心跳過緩"
+      ],
+      "serious_adverse_effects_en": [
+        "Rebound hypertensive crisis",
+        "Severe bradycardia / AV block",
+        "CNS depression"
+      ],
+      "serious_adverse_effects_zh": [
+        "反彈性高血壓危機",
+        "嚴重心跳過緩 / 房室傳導阻滯",
+        "中樞神經抑制"
+      ],
+      "warnings_en": [
+        "Rebound Hypertension: Abrupt discontinuation can cause severe rebound hypertension, tachycardia, and catecholamine surge. Taper dosage gradually over 2-4 days.",
+        "Sedation & CNS depression: Caution when operating machinery or co-administered with alcohol."
+      ],
+      "warnings_zh": [
+        "反彈性高血壓：突然停藥引致嚴重反彈性高血壓、心率過速及兒茶酚胺劇增。應於 2-4 天內逐漸減量。",
+        "鎮靜與中樞抑制：操作機械或與酒精併用時須特別注意。"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to clonidine or patch components."
+      ],
+      "contraindications_zh": [
+        "對可樂定或貼片成分過敏。"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Excreted in human milk; use caution in nursing mothers.",
+      "pregnancy_lactation_zh": "懷孕級別 C。分泌至母乳中；哺乳期婦女慎用。",
+      "renal_considerations_en": "Reduce dose and adjust frequency in renal impairment.",
+      "hepatic_considerations_en": "No specific dosage adjustment provided; monitor clinical response.",
+      "monitoring_requirements_en": "Monitor blood pressure, heart rate, level of sedation, and signs of rebound hypertension.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.antihypertensives",
+          "with_label_en": "Beta Blockers (e.g. Propranolol)",
+          "interaction_en": "Co-administration may exacerbate rebound hypertension if clonidine is abruptly withdrawn while beta blocker is continued.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "bradycardia",
+        "sedation_dizziness",
+        "orthostatic_hypotension"
+      ],
+      "tcm_relation_note_zh": "Clonidine 具強烈中樞交感抑制作用（口乾、鎮靜、心跳過緩）。患者若欲停用 clonidine，必須告知其不可突發停藥，否則會引發中樞交感暴衝之「反彈性高血壓危機」（中醫肝陽暴亢、風陽上擾），具腦卒中風險。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Clonidine = C (Central Alpha-2 agonist) L (Lowers BP & HR) O (Opioid withdrawal helper) N (No abrupt stopping -> Rebound hypertension).",
+      "mnemonic_zh": "Clonidine = 中樞 Alpha-2 致劑 (Central Alpha-2) 降低血壓心率 (Lowers BP) 鴉片戒斷輔助 (Opioid helper) 切勿突停 (No abrupt stopping -> 反彈高血壓)。",
+      "classic_association_en": "Clonidine -> Central alpha-2 agonist & rebound hypertensive crisis warning / ADHD formulation",
+      "classic_association_zh": "可樂定 -> 中樞 alpha-2 致劑、反彈高血壓危機警語與 ADHD 劑型",
+      "exam_trap_en": "Abruptly stopping clonidine causes a severe REBOUND HYPERTENSIVE CRISIS; Kapvay is the ER formulation approved for ADHD.",
+      "exam_trap_zh": "突然停用可樂定會引發嚴重反彈性高血壓危機；Kapvay 為其核准用於 ADHD 的緩釋劑型。",
+      "board_high_yield_en": "Prototype central alpha-2 agonist sympatholytic. Decreases sympathetic outflow. Used for hypertension, ADHD (Kapvay), opioid withdrawal. WARNING: Abrupt stop -> Rebound hypertensive crisis.",
+      "dailymed_setid": "3d64b1f4-3456-4c4c-b841-3b7c891f1a1a",
+      "dailymed_label_title": "CLONIDINE HYDROCHLORIDE TABLET",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3d64b1f4-3456-4c4c-b841-3b7c891f1a1a",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.disulfiram",
+      "name_en": "Disulfiram",
+      "name_zh": "雙硫崙",
+      "brand_names_en": [
+        "Antabuse"
+      ],
+      "drugclass_id": "drugclass.alcohol_deterrents",
+      "subclass_en": "Aldehyde Dehydrogenase Inhibitor Alcohol Deterrent",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.aldehyde_dehydrogenase",
+      "rxnorm_rxcui": "3568",
+      "rx_otc_status": "Rx",
+      "suffix_en": null,
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Irreversibly inhibits hepatic aldehyde dehydrogenase (ALDH), blocking oxidation of alcohol-derived acetaldehyde to acetic acid and causing toxic accumulation of acetaldehyde.",
+      "mechanism_zh": "不可逆性抑制肝臟乙醛脫氫酶 (ALDH)，阻斷酒精代謝中間物乙醛氧化為乙酸，引致乙醛毒性蓄積。",
+      "pharmacodynamics_summary_en": "Ingestion of even small amounts of alcohol produces a severe disulfiram-alcohol reaction within 5-10 minutes.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 12 hours (full enzymatic inhibition); Duration: 1-2 weeks after last dose due to slow synthesis of new ALDH.",
+        "metabolism_en": "Metabolized in the liver to diethyldithiocarbamate and carbon disulfide.",
+        "elimination_en": "Excreted via lungs (carbon disulfide) and urine."
+      },
+      "indications_en": [
+        "Aid in the management of selected chronic alcoholic patients who want to remain in a state of enforced sobriety"
+      ],
+      "indications_zh": [
+        "輔助管理自願保持強制戒酒狀態之選擇性慢性酒精依賴患者"
+      ],
+      "indication_condition_ids": [
+        "cond.alcohol_use"
+      ],
+      "adverse_effects_en": [
+        "Drowsiness",
+        "Fatigue",
+        "Garlic or metallic taste",
+        "Acneiform skin eruption",
+        "Mild headache"
+      ],
+      "adverse_effects_zh": [
+        "嗜睡",
+        "疲勞",
+        "大蒜味或金屬味口氣",
+        "痤瘡樣皮疹",
+        "輕度頭痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Severe disulfiram-alcohol reaction (cardiovascular collapse, arrhythmias, shock)",
+        "Hepatotoxicity / Fulminant hepatic failure",
+        "Optic neuritis / Peripheral neuropathy"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重雙硫崙-酒精反應 (心血管崩潰、心律不整、休克)",
+        "肝臟毒性 / 暴發性肝衰竭",
+        "視神經炎 / 周邊神經病變"
+      ],
+      "boxed_warning_en": "Never administer disulfiram to a patient when they are intoxicated or without their full knowledge and consent. The physician must instruct relatives accordingly.",
+      "boxed_warning_zh": "絕不可在患者處於醉酒狀態或未具完全知情同意下給予雙硫崙。醫師須對家屬進行相應衛教指示。",
+      "warnings_en": [
+        "Disulfiram-Alcohol Reaction: Occurs with ingestion of any ethanol (including mouthwash, sauces, cough syrups, or rubbing alcohol). Reactions can be fatal.",
+        "Hepatotoxicity: Hepatic failure resulting in transplantation or death has been reported. Perform baseline and periodic LFTs."
+      ],
+      "warnings_zh": [
+        "雙硫崙-酒精反應：攝取任何乙醇（含漱口水、醬汁、止咳糖漿或擦拭酒精）均可觸發，嚴重可致死。",
+        "肝毒性：已有肝衰竭導致肝移植或死亡案例報告。須檢測基線及定期肝功能。"
+      ],
+      "contraindications_en": [
+        "Severe myocardial disease or coronary occlusion",
+        "Psychoses",
+        "Hypersensitivity to disulfiram or rubber derivatives",
+        "Concurrent or recent ingestion of alcohol, paraldehyde, or metronidazole"
+      ],
+      "contraindications_zh": [
+        "嚴重心肌疾病或冠狀動脈阻塞",
+        "精神病病史",
+        "對雙硫崙或橡膠衍生物過敏",
+        "併用或近期攝取酒精、三聚乙醛或 Metronidazole"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Safety in pregnancy has not been established.",
+      "pregnancy_lactation_zh": "懷孕級別 C。孕期安全性尚未確立。",
+      "renal_considerations_en": "Use caution in renal failure; no specific dosage adjustment provided.",
+      "hepatic_considerations_en": "Contraindicated in severe hepatic impairment or baseline active hepatitis. Monitor LFTs.",
+      "monitoring_requirements_en": "Monitor baseline LFTs, CBC, serum chemistry, and signs of disulfiram-alcohol reaction.",
+      "drug_interactions_graded": [
+        {
+          "with": "drug.metronidazole",
+          "with_label_en": "Metronidazole",
+          "interaction_en": "Combined use produces acute psychosis and confusion due to combined ALDH and central toxicity.",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "sedation_dizziness",
+        "glucose_effects"
+      ],
+      "tcm_relation_note_zh": "Disulfiram 阻斷乙醛脫氫酶。酒精擦拭塗抹、含酒藥膳（如黃酒泡服或藥酒外敷）在服藥患者均可誘發致命「雙硫崙反應」（面赤、頭痛、喘促、心悸，中醫氣血逆亂、火毒上攻）。治療期間絕對禁用含酒精中藥外用或內服。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Disulfiram = D (Deterrent for alcohol) I (Inhibits ALDH) S (Severe flushing reaction) U (Unsafe with metronidazole).",
+      "mnemonic_zh": "Disulfiram = 戒酒工具 (Deterrent) 抑制 ALDH (Inhibits ALDH) 嚴重潮紅反應 (Severe flushing) 併用 metronidazole 不安全 (Unsafe)。",
+      "classic_association_en": "Disulfiram -> ALDH inhibitor & disulfiram-alcohol reaction (flushing/nausea)",
+      "classic_association_zh": "雙硫崙 -> ALDH 抑制劑與雙硫崙-酒精反應 (潮紅/噁心)",
+      "exam_trap_en": "Disulfiram blocks ALDH leading to acetaldehyde accumulation; metronidazole also causes a disulfiram-like reaction when taken with alcohol.",
+      "exam_trap_zh": "Disulfiram 阻斷 ALDH 導致乙醛蓄積；Metronidazole 併用酒精時亦會引發雙硫崙樣反應。",
+      "board_high_yield_en": "Prototype alcohol deterrent. Irreversibly blocks ALDH -> toxic acetaldehyde accumulation upon ethanol consumption. Boxed warning against secret administration. Contraindicated with metronidazole.",
+      "dailymed_setid": "4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+      "dailymed_label_title": "DISULFIRAM TABLET",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#BOXED_WARNING"
+        ],
+        "indications_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.phenytoin",
+      "name_en": "Phenytoin",
+      "name_zh": "苯妥英",
+      "brand_names_en": [
+        "Dilantin",
+        "Phenytek"
+      ],
+      "drugclass_id": "drugclass.hydantoin_antiseizure",
+      "subclass_en": "Hydantoin Anticonvulsant",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.voltage_gated_sodium_channels",
+      "rxnorm_rxcui": "8183",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-toin",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Promotes sodium efflux or decreases sodium influx by stabilizing the inactivated state of voltage-gated neuronal sodium channels, suppressing high-frequency repetitive firing.",
+      "mechanism_zh": "藉由穩定電壓門控神經元鈉離子通道之失活狀態促進鈉外流或減少鈉內流，抑制高頻重複性放電。",
+      "pharmacodynamics_summary_en": "Exhibits non-linear Michaelis-Menten saturation kinetics at therapeutic concentrations (small dose increase can lead to toxicity).",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 0.5-1 hour (IV); Peak: 1.5-3 hours (oral prompt), 4-12 hours (extended); Duration: 24 hours.",
+        "metabolism_en": "Extensively metabolized by hepatic CYP2C9 and CYP2C19 (saturable zero-order kinetics).",
+        "elimination_en": "Renal clearance of metabolites (<5% excreted unchanged)."
+      },
+      "indications_en": [
+        "Treatment of generalized tonic-clonic (grand mal) and focal (partial) seizures",
+        "Prevention and treatment of seizures during or following neurosurgery",
+        "Intravenous: Control of status epilepticus"
+      ],
+      "indications_zh": [
+        "全體強直陣攣性發作 (大發作) 及局灶性 (部分性) 發作之治療",
+        "神經外科手術中或術後癲癇發作之預防與治療",
+        "靜脈注射：癲癇重積狀態之控制"
+      ],
+      "indication_condition_ids": [],
+      "adverse_effects_en": [
+        "Gingival hyperplasia",
+        "Nystagmus",
+        "Ataxia",
+        "Hirsutism",
+        "Dizziness",
+        "Somnolence",
+        "Megaloblastic anemia"
+      ],
+      "adverse_effects_zh": [
+        "齒齦增生",
+        "眼球震顫",
+        "共濟失調",
+        "多毛症",
+        "頭暈",
+        "嗜睡",
+        "巨幼紅血球性貧血"
+      ],
+      "serious_adverse_effects_en": [
+        "Stevens-Johnson syndrome (SJS) / TEN",
+        "IV Purple Glove Syndrome",
+        "Aplastic anemia / Leukopenia",
+        "Hepatotoxicity"
+      ],
+      "serious_adverse_effects_zh": [
+        "史蒂芬斯-強森症候群 (SJS) / TEN",
+        "靜脈注射紫手症候群",
+        "再生不良性貧血 / 白血球減少",
+        "肝毒性"
+      ],
+      "boxed_warning_en": "Intravenous Administration Rate: Do not exceed IV infusion rate of 50 mg/min in adults due to severe risk of hypotension and cardiac arrhythmias. Careful cardiac monitoring is required.",
+      "boxed_warning_zh": "靜脈給藥速率黑框警告：成人靜脈滴註速率不得超過 50 mg/min，否則具嚴重低血壓與心律不整風險。須密切進行心電圖與心臟監測。",
+      "warnings_en": [
+        "Serious Dermatologic Reactions: SJS/TEN risk. Discontinue at first sign of rash.",
+        "CYP Enzyme Induction: Potent inducer of CYP3A4, CYP2C9, and P-glycoprotein, reducing efficacy of oral contraceptives, warfarin, and corticosteroids."
+      ],
+      "warnings_zh": [
+        "嚴重皮膚反應：SJS/TEN 風險。出現皮疹徵兆應立即停藥。",
+        "CYP 酵素誘導：強效 CYP3A4、CYP2C9 及 P-gp 誘導劑，降低口服避孕藥、華法林與類固醇療效。"
+      ],
+      "contraindications_en": [
+        "Sinus bradycardia, sinoatrial block, 2nd or 3rd degree AV block",
+        "Stokes-Adams syndrome",
+        "Hypersensitivity to phenytoin or other hydantoins"
+      ],
+      "contraindications_zh": [
+        "竇性心跳過緩、竇房阻滯、二度或三度房室傳導阻滯",
+        "斯托克氏-亞當斯症候群 (Stokes-Adams)",
+        "對苯妥英或其他乙內醯脲類過敏"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category D. Fetal hydantoin syndrome (craniofacial abnormalities, hypoplastic nails, microcephaly).",
+      "pregnancy_lactation_zh": "懷孕級別 D。胎兒苯妥英症候群（顱顏畸形、指甲發育不全、小頭畸形）。",
+      "renal_considerations_en": "Unbound free fraction of phenytoin is increased in uremia; monitor free phenytoin levels.",
+      "hepatic_considerations_en": "Saturable hepatic clearance reduced in liver disease; monitor free therapeutic levels.",
+      "monitoring_requirements_en": "Monitor serum phenytoin total levels (10-20 mcg/mL) & free levels (1-2 mcg/mL), LFTs, CBC, ECG during IV, and oral hygiene/gums.",
+      "drug_interactions_graded": [
+        {
+          "with": "drug.warfarin",
+          "with_label_en": "Warfarin",
+          "interaction_en": "Phenytoin induces CYP metabolism of warfarin (decreasing INR) but may initially displace warfarin from plasma proteins (increasing bleeding).",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "sedation_dizziness",
+        "bleeding_risk"
+      ],
+      "tcm_relation_note_zh": "Phenytoin 為強效抗癲癇藥。具經典副作用「齒齦增生」（Gingival hyperplasia）與眼震。中醫口腔診察或針灸治療痛證時，切勿將苯妥英所致之齒齦腫脹發炎誤診為胃火上炎或牙疳，並須保持良好口腔衛生。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Phenytoin toxicity = PHENYTOIN: P-450 inducer, Hirsutism, Enlarged gums (Gingival hyperplasia), Nystagmus, Yellow-brown skin, Teratogenic, Osteomalacia, Interference with folate (anemia), Neuropathy.",
+      "mnemonic_zh": "Phenytoin 毒性口訣 PHENYTOIN：P-450 誘導劑、多毛症、齒齦增生、眼球震顫、皮膚色素沉著、致畸胎性、骨質軟化、干擾葉酸（貧血）、神經病變。",
+      "classic_association_en": "Phenytoin -> Hydantoin sodium channel blocker & zero-order kinetics / gingival hyperplasia",
+      "classic_association_zh": "苯妥英 -> 乙內醯脲類鈉通道阻斷劑、零級動力學與齒齦增生",
+      "exam_trap_en": "Phenytoin exhibits zero-order saturation kinetics (small dose change -> large level jump); classic toxicity triad = Gingival hyperplasia + Nystagmus + Ataxia. INEFFECTIVE for absence seizures.",
+      "exam_trap_zh": "苯妥英具零級飽和動力學（小劑量增加引致血藥濃度暴升）；經典毒性三聯徵 = 齒齦增生 + 眼球震顫 + 共濟失調。對失神發作無效。",
+      "board_high_yield_en": "Prototype hydantoin anticonvulsant. Blocks Na channels. Zero-order saturation kinetics. Classic adverse effects: Gingival hyperplasia, nystagmus, ataxia, hirsutism, folate deficiency. Black box warning for IV rate.",
+      "dailymed_setid": "6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+      "dailymed_label_title": "DILANTIN (PHENYTOIN SODIUM) CAPSULE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#BOXED_WARNING"
+        ],
+        "indications_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.carbamazepine",
+      "name_en": "Carbamazepine",
+      "name_zh": "卡馬西平",
+      "brand_names_en": [
+        "Tegretol",
+        "Carbatrol",
+        "Equetro"
+      ],
+      "drugclass_id": "drugclass.iminostilbene_antiseizure",
+      "subclass_en": "Iminostilbene Anticonvulsant",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.voltage_gated_sodium_channels",
+      "rxnorm_rxcui": "2002",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-zepine",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Blocks voltage-gated sodium channels in presynaptic neuronal membranes, depressing synaptic transmission and inhibiting repetitive high-frequency discharge.",
+      "mechanism_zh": "阻斷突觸前神經元膜電壓門控鈉離子通道，抑制突觸傳遞並阻斷高頻重複放電。",
+      "pharmacodynamics_summary_en": "Potent anticonvulsant and specific antineuralgic action for trigeminal neuralgia; induces its own hepatic metabolism (auto-induction).",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: Slow and variable (several days for steady state); Peak: 4-12 hours; Duration: 24 hours.",
+        "metabolism_en": "Extensively metabolized by CYP3A4 to active carbamazepine-10,11-epoxide; exhibits auto-induction.",
+        "elimination_en": "Renal excretion (72%) and fecal excretion (28%)."
+      },
+      "indications_en": [
+        "Treatment of partial seizures with complex symptomatology, generalized tonic-clonic seizures, and mixed seizure patterns",
+        "Treatment of pain associated with true trigeminal neuralgia and glossopharyngeal neuralgia",
+        "Treatment of acute manic and mixed episodes associated with Bipolar I disorder"
+      ],
+      "indications_zh": [
+        "治療具複雜症狀之部分性發作、全體強直陣攣性發作及混合型癲癇發作",
+        "治療真正三叉神經痛與舌咽神經痛引致之劇烈疼痛",
+        "治療雙相 I 型障礙之急性躁狂與混合發作"
+      ],
+      "indication_condition_ids": [
+        "cond.trigeminal_neuralgia"
+      ],
+      "adverse_effects_en": [
+        "Dizziness",
+        "Drowsiness",
+        "Unsteadiness",
+        "Nausea",
+        "Vomiting",
+        "Diplopia",
+        "Hyponatremia"
+      ],
+      "adverse_effects_zh": [
+        "頭暈",
+        "嗜睡",
+        "步態不穩",
+        "噁心",
+        "嘔吐",
+        "複視",
+        "低血鈉"
+      ],
+      "serious_adverse_effects_en": [
+        "Aplastic anemia and agranulocytosis",
+        "Toxic Epidermal Necrolysis (TEN) / SJS",
+        "SIADH with severe hyponatremia",
+        "Hepatotoxicity"
+      ],
+      "serious_adverse_effects_zh": [
+        "再生不良性貧血與顆粒性白血球缺乏症",
+        "毒性表皮壞死鬆解症 (TEN) / SJS",
+        "SIADH 抗利尿激素分泌異常引致嚴重低血鈉",
+        "肝毒性"
+      ],
+      "boxed_warning_en": "1. Aplastic Anemia & Agranulocytosis: Risk 5-8 times higher than general population. Obtain baseline CBC. 2. Serious Dermatologic Reactions: SJS/TEN risk significantly heightened in patients carrying HLA-B*1502 allele (common in Asian ancestry). Test for HLA-B*1502 before initiating therapy.",
+      "boxed_warning_zh": "1. 再生不良性貧血與顆粒性白血球缺乏症：風險高出一般人群 5-8 倍。須檢測基線全血球計數。2. 嚴重皮膚反應：攜帶 HLA-B*1502 基因型（亞洲血統常見）患者 SJS/TEN 風險顯著升高。開始治療前須進行 HLA-B*1502 基因檢測。",
+      "warnings_en": [
+        "HLA-B*1502 Screening: Strongly recommended in Asian ancestry patients prior to drug initiation.",
+        "CYP3A4 Auto-Induction: Induces its own metabolism, decreasing serum half-life over first 3-5 weeks of therapy."
+      ],
+      "warnings_zh": [
+        "HLA-B*1502 基因篩檢：強烈建議亞洲血統患者於開始用藥前篩檢。",
+        "CYP3A4 自體誘導：會自體誘導自身的肝臟代謝，於用藥前 3-5 週內使半衰期逐漸縮短。"
+      ],
+      "contraindications_en": [
+        "History of bone marrow depression",
+        "Hypersensitivity to carbamazepine or tricyclic compounds",
+        "Co-administration with or within 14 days of MAOIs"
+      ],
+      "contraindications_zh": [
+        "骨髓抑制病史",
+        "對卡馬西平或三環類化合物過敏",
+        "併用或 14 天內曾使用 MAO 抑制劑"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category D. Causes major congenital malformations (neural tube defects / spina bifida).",
+      "pregnancy_lactation_zh": "懷孕級別 D。造成重大先天性畸形（神經管缺陷 / 脊柱裂）。",
+      "renal_considerations_en": "Monitor renal function and serum sodium; clearance may be altered.",
+      "hepatic_considerations_en": "Contraindicated in active severe hepatic disease; baseline and periodic LFTs required.",
+      "monitoring_requirements_en": "Monitor baseline CBC & platelet count, LFTs, serum sodium, HLA-B*1502 status, and therapeutic levels (4-12 mcg/mL).",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.oral_contraceptives",
+          "with_label_en": "Oral Contraceptives",
+          "interaction_en": "Carbamazepine induces CYP3A4 metabolism of hormonal contraceptives, leading to contraceptive failure.",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "sedation_dizziness",
+        "electrolyte_hypokalemia"
+      ],
+      "tcm_relation_note_zh": "Carbamazepine 為三叉神經痛（中醫面痛、頭風）首選西藥。具經典黑框警告「再生不良性貧血」與 HLA-B*1502 基因型史蒂芬斯-強森症候群（SJS）毒性。中醫診治三叉神經痛患者，須詢問基因篩檢與全血球複查狀況。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Carbamazepine = C (CYP inducer / Auto-induction) A (Aplastic anemia boxed warning) R (Rash SJS HLA-B*1502) B (Bipolar & Trigeminal neuralgia).",
+      "mnemonic_zh": "Carbamazepine = CYP 誘導劑 (Auto-induction) 再生不良性貧血黑框警告 (Aplastic anemia) 亞洲人皮疹 SJS HLA-B*1502 基因檢測 三叉神經痛與雙相情感障礙 (Bipolar)。",
+      "classic_association_en": "Carbamazepine -> Trigeminal neuralgia 1st line & HLA-B*1502 SJS boxed warning",
+      "classic_association_zh": "卡馬西平 -> 三叉神經痛首選與 HLA-B*1502 基因型 SJS 黑框警告",
+      "exam_trap_en": "Carbamazepine is 1st line for TRIGEMINAL NEURALGIA; causes auto-induction of its own metabolism; requires HLA-B*1502 testing in Asians due to fatal SJS risk.",
+      "exam_trap_zh": "卡馬西平為三叉神經痛首選藥；具自體誘導代謝特性；因致命 SJS 風險，亞洲患者用藥前須檢測 HLA-B*1502 基因。",
+      "board_high_yield_en": "Prototype iminostilbene sodium channel blocker. 1st line for trigeminal neuralgia. Boxed warnings for aplastic anemia/agranulocytosis & SJS/TEN (HLA-B*1502 screening in Asians). Potent CYP auto-inducer.",
+      "dailymed_setid": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "dailymed_label_title": "TEGRETOL (CARBAMAZEPINE) TABLET",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#BOXED_WARNING"
+        ],
+        "indications_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.ethosuximide",
+      "name_en": "Ethosuximide",
+      "name_zh": "乙琥胺",
+      "brand_names_en": [
+        "Zarontin"
+      ],
+      "drugclass_id": "drugclass.succinimide_antiseizure",
+      "subclass_en": "Succinimide Anticonvulsant",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.t_type_calcium_channels",
+      "rxnorm_rxcui": "4181",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-suximide",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Selectively depresses low-threshold T-type voltage-gated calcium currents in thalamic relay neurons, reducing 3-Hz spike-and-wave rhythmicity.",
+      "mechanism_zh": "選擇性抑制丘腦中繼神經元低閾值 T 型電壓門控鈣電流，降低 3-Hz 棘慢波節律性放電。",
+      "pharmacodynamics_summary_en": "Specific efficacy for control of absence (petit mal) seizures without activity against tonic-clonic seizures.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: Peak plasma concentration in 1-4 hours; Steady state in 4-7 days; Duration: 24-60 hours (long half-life).",
+        "metabolism_en": "Extensively metabolized by hepatic CYP3A4 to inactive metabolites.",
+        "elimination_en": "Renal clearance (20% excreted unchanged in urine)."
+      },
+      "indications_en": [
+        "Control of absence (petit mal) epilepsy"
+      ],
+      "indications_zh": [
+        "失神 (小發作) 癲癇之控制"
+      ],
+      "indication_condition_ids": [],
+      "adverse_effects_en": [
+        "Nausea",
+        "Vomiting",
+        "Abdominal distress",
+        "Anorexia",
+        "Drowsiness",
+        "Dizziness",
+        "Headache"
+      ],
+      "adverse_effects_zh": [
+        "噁心",
+        "嘔吐",
+        "腹部不適",
+        "食慾不振",
+        "嗜睡",
+        "頭暈",
+        "頭痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Blood dyscrasias (agranulocytosis, aplastic anemia)",
+        "Stevens-Johnson syndrome",
+        "Systemic lupus erythematosus reactivation"
+      ],
+      "serious_adverse_effects_zh": [
+        "血液疾病 (顆粒性白血球缺乏症、再生不良性貧血)",
+        "史蒂芬斯-強森症候群",
+        "全身性紅斑性狼瘡復發"
+      ],
+      "warnings_en": [
+        "Blood dyscrasias: Fatal blood dyscrasias have been reported. Perform periodic blood cell counts.",
+        "Abrupt withdrawal: May precipitate absence status epilepticus."
+      ],
+      "warnings_zh": [
+        "血液疾病：已有致命性血液疾病報告。須定期複查血球計數。",
+        "突發停藥：突然停藥可能誘發失神癲癇重積狀態。"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to succinimides."
+      ],
+      "contraindications_zh": [
+        "對琥珀醯亞胺類化合物過敏。"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Crosses placenta; use only if clearly needed.",
+      "pregnancy_lactation_zh": "懷孕級別 C。通過胎盤；僅於明確需要時使用。",
+      "renal_considerations_en": "Use caution in renal impairment; monitor therapeutic blood levels.",
+      "hepatic_considerations_en": "Use caution in hepatic impairment; baseline and periodic LFTs recommended.",
+      "monitoring_requirements_en": "Monitor therapeutic plasma levels (40-100 mcg/mL), CBC, renal & liver function.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.hydantoin_antiseizure",
+          "with_label_en": "Phenytoin",
+          "interaction_en": "Ethosuximide may alter phenytoin serum concentrations.",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "tcm_relation_note_zh": "Ethosuximide 為兒童失神發作（小發作，中醫癇證、瞬目呆視）專一首選藥。特定作用於丘腦 T 型鈣通道。臨床常見消化道不適與嗜睡，須注意監測全血球計數。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "EFG = Ethosuximide For Grand... NO! Ethosuximide For 'G-Petit' (Petit mal / Absence seizures). T-type calcium channel blocker.",
+      "mnemonic_zh": "EFG 口訣 = Ethosuximide 代表藥，專用於 Petit mal (失神小發作)。阻斷 T 型鈣通道。",
+      "classic_association_en": "Ethosuximide -> Absence (petit mal) seizure 1st choice & T-type calcium channel blocker",
+      "classic_association_zh": "乙琥胺 -> 失神 (小發作) 癲癇首選與 T 型鈣通道阻斷劑",
+      "exam_trap_en": "Ethosuximide is 1st line for ABSENCE SEIZURES ONLY (blocks T-type Ca channels in thalamus); it has NO activity against tonic-clonic seizures.",
+      "exam_trap_zh": "乙琥胺僅用於失神發作（阻斷丘腦 T 型鈣通道）；對大發作（強直陣攣發作）無效。",
+      "board_high_yield_en": "Prototype succinimide anticonvulsant. 1st-line drug for absence (petit mal) seizures. Specifically blocks T-type Ca channels in thalamic relay neurons. Adverse effect: GI distress & blood dyscrasias.",
+      "dailymed_setid": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "dailymed_label_title": "ZARONTIN (ETHOSUXIMIDE) CAPSULE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.gabapentin",
+      "name_en": "Gabapentin",
+      "name_zh": "加巴噴丁",
+      "brand_names_en": [
+        "Neurontin",
+        "Gralise"
+      ],
+      "drugclass_id": "drugclass.gabapentinoids",
+      "subclass_en": "Gabapentinoid Alpha-2-Delta Calcium Channel Ligand",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.alpha2_delta_calcium_channels",
+      "rxnorm_rxcui": "25480",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-pentin",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "High-affinity binding to the auxiliary alpha-2-delta-1 subunit of voltage-gated calcium channels in the CNS, inhibiting presynaptic calcium influx and glutamate/substance P release.",
+      "mechanism_zh": "高親和力結合至中樞電壓門控鈣通道之 alpha-2-delta-1 輔助亞基，抑制突觸前鈣內流與興奮性遞質 (谷氨酸/P物質) 釋放。",
+      "pharmacodynamics_summary_en": "Structurally related to GABA but does not bind GABA-A or GABA-B receptors and does not inhibit GABA uptake.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 2-3 hours; Peak: 2-3 hours; Duration: 8 hours (requires t.i.d. dosing).",
+        "metabolism_en": "Not metabolized in humans (0% hepatic metabolism).",
+        "elimination_en": "Renal excretion unchanged (100%); clearance directly proportional to CrCl."
+      },
+      "indications_en": [
+        "Management of postherpetic neuralgia in adults",
+        "Adjunctive therapy in the treatment of partial-onset seizures with or without secondary generalization"
+      ],
+      "indications_zh": [
+        "成人帶狀皰疹後神經痛之控制",
+        "部分性發作 (伴或不伴二次全身化) 癲癇之輔助治療"
+      ],
+      "indication_condition_ids": [
+        "cond.postherpetic_neuralgia",
+        "cond.peripheral_neuropathy"
+      ],
+      "common_offlabel_uses_en": [
+        "Diabetic peripheral neuropathy",
+        "Fibromyalgia",
+        "Restless legs syndrome",
+        "Chronic neuropathic pain"
+      ],
+      "common_offlabel_uses_zh": [
+        "糖尿病周邊神經病變",
+        "纖維肌痛症",
+        "不寧腿症候群",
+        "慢性神經病理性疼痛"
+      ],
+      "adverse_effects_en": [
+        "Dizziness",
+        "Somnolence / Drowsiness",
+        "Peripheral edema",
+        "Ataxia",
+        "Fatigue"
+      ],
+      "adverse_effects_zh": [
+        "頭暈",
+        "嗜睡",
+        "周邊水腫",
+        "共濟失調",
+        "疲勞"
+      ],
+      "serious_adverse_effects_en": [
+        "Severe respiratory depression (with opioids)",
+        "Anaphylaxis and angioedema",
+        "Suicidal ideation"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重呼吸抑制 (併用鴉片類時)",
+        "過敏性休克與血管水腫",
+        "自殺意念"
+      ],
+      "warnings_en": [
+        "Respiratory Depression: Serious, life-threatening respiratory depression may occur when used with opioids or in elderly/renal impairment patients.",
+        "Abrupt Discontinuation: Taper over at least 1 week to avoid withdrawal precipitation of status epilepticus."
+      ],
+      "warnings_zh": [
+        "呼吸抑制：與鴉片類併用或於老年/腎功能不全患者使用時可能引致致命性呼吸抑制。",
+        "突發停藥：須於至少 1 週內逐漸減量，以防戒斷誘發癲癇重積狀態。"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to gabapentin or formulation ingredients."
+      ],
+      "contraindications_zh": [
+        "對加巴噴丁或製劑成分過敏。"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Excreted in human milk; use caution.",
+      "pregnancy_lactation_zh": "懷孕級別 C。分泌至母乳中；慎用。",
+      "renal_considerations_en": "Mandatory dosage reduction based on creatinine clearance (CrCl < 60 mL/min). Supplemental dose required post-hemodialysis.",
+      "hepatic_considerations_en": "No dosage adjustment required (drug is not metabolized by the liver).",
+      "monitoring_requirements_en": "Monitor renal function (CrCl), sedation, dizziness, peripheral edema, and respiratory status when combined with opioids.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.opioids",
+          "with_label_en": "Opioids (e.g. Morphine, Oxycodone)",
+          "interaction_en": "Co-administration increases gabapentin AUC and risk of severe CNS/respiratory depression.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "tcm_relation_note_zh": "Gabapentin 為神經痛門診極常見西藥（帶狀皰疹後神經痛、糖尿病神經病變，中醫脅痛、痺證、絡病）。副作用以頭暈、嗜睡、雙下肢水腫（中醫水濕停聚、脾腎陽虛水腫）最常見，須依腎功能 (CrCl) 嚴格調整劑量。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Gabapentin = G (GABA structural analog) A (Alpha-2-delta calcium channel subunit) B (Binds Ca channel, NOT GABA receptor) A (Analgesic for neuropathic pain).",
+      "mnemonic_zh": "Gabapentin = GABA 結構類似物 (GABA analog) 結合 Alpha-2-delta 鈣通道亞基 治療神經痛 (Analgesic for neuropathic pain)。",
+      "classic_association_en": "Gabapentin -> Postherpetic neuralgia & alpha-2-delta Ca channel subunit ligand / sedation & peripheral edema",
+      "classic_association_zh": "加巴噴丁 -> 帶狀皰疹後神經痛、alpha-2-delta 鈣通道亞基配體、鎮靜嗜睡與周邊水腫",
+      "exam_trap_en": "Gabapentin is structurally derived from GABA, but DOES NOT bind GABA receptors; its primary clinical use is NEUROPATHIC PAIN (postherpetic neuralgia). Dosage MUST be reduced in renal impairment.",
+      "exam_trap_zh": "加巴噴丁結構源自 GABA，但不結合 GABA 受體；臨床主要用於神經病理性疼痛（帶狀皰疹後神經痛）。腎功能不全患者必須減量。",
+      "board_high_yield_en": "Prototype gabapentinoid. Binds alpha-2-delta Ca channel subunit. 1st line for postherpetic neuralgia & neuropathic pain. Unmetabolized (100% renal excretion; reduce dose in renal impairment). Side effects: Dizziness, sedation, peripheral edema.",
+      "dailymed_setid": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      "dailymed_label_title": "NEURONTIN (GABAPENTIN) CAPSULE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.carbidopa_levodopa",
+      "name_en": "Carbidopa / Levodopa",
+      "name_zh": "卡比多巴 / 左旋多巴",
+      "brand_names_en": [
+        "Sinemet",
+        "Rytary",
+        "Duopa"
+      ],
+      "drugclass_id": "drugclass.dopamine_precursors",
+      "subclass_en": "Dopamine Precursor and Peripheral DOPA Decarboxylase Inhibitor Combination",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.dopamine_receptors",
+      "rxnorm_rxcui": "2368",
+      "rx_otc_status": "Rx",
+      "suffix_en": null,
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Levodopa crosses the blood-brain barrier and is decarboxylated to dopamine in the striatum; carbidopa inhibits peripheral aromatic L-amino acid decarboxylase, preventing peripheral conversion of levodopa to dopamine.",
+      "mechanism_zh": "左旋多巴穿過血腦障壁於紋狀體去羧化為多巴胺；卡比多巴抑制外周芳香族 L-胺基酸去羧酶，阻斷外周左旋多巴轉化為多巴胺並減少噁心等外周副作用。",
+      "pharmacodynamics_summary_en": "Replenishes depleted striatal dopamine stores in Parkinson's disease; carbidopa increases brain levodopa delivery 3- to 4-fold.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 30 minutes (immediate release); Peak: 0.5-2 hours; Duration: 3-5 hours.",
+        "metabolism_en": "Levodopa is decarboxylated by central dopa decarboxylase to active dopamine; carbidopa is not significantly metabolized in CNS.",
+        "elimination_en": "Renal clearance of dopamine metabolites (homovanillic acid/HVA)."
+      },
+      "indications_en": [
+        "Treatment of Parkinson's disease, post-encephalitic parkinsonism, and symptomatic parkinsonism"
+      ],
+      "indications_zh": [
+        "治療帕金森氏症、腦炎後帕金森氏症候群及症狀性帕金森氏症候群"
+      ],
+      "indication_condition_ids": [
+        "cond.parkinsons"
+      ],
+      "adverse_effects_en": [
+        "Dyskinesia",
+        "Nausea",
+        "Orthostatic hypotension",
+        "Dizziness",
+        "Hallucinations",
+        "Dark sweat/urine"
+      ],
+      "adverse_effects_zh": [
+        "不自主運動 (Dyskinesia)",
+        "噁心",
+        "姿勢性低血壓",
+        "頭暈",
+        "幻覺",
+        "汗液/尿液變深色"
+      ],
+      "serious_adverse_effects_en": [
+        "On-off motor fluctuations",
+        "Neuroleptic Malignant Syndrome (NMS) upon sudden withdrawal",
+        "Severe psychosis / Impulse control disorders"
+      ],
+      "serious_adverse_effects_zh": [
+        "開關現象 (On-off motor fluctuations)",
+        "突發停藥引致抗精神病藥惡性症候群 (NMS)",
+        "嚴重精神病 / 衝動控制障礙"
+      ],
+      "warnings_en": [
+        "Motor Fluctuations: Long-term treatment leads to 'wearing-off' and unpredictable 'on-off' motor fluctuations.",
+        "MAOI Interaction: Concomitant nonselective MAOI use may cause severe hypertensive crisis; discontinue MAOIs 14 days prior."
+      ],
+      "warnings_zh": [
+        "運動波動現象：長期用藥引致藥效遞減 (Wearing-off) 及不可預測之『開關現象』。",
+        "MAOI 交互作用：併用非選擇性 MAOI 可造成嚴重高血壓危機；停用 MAOI 須達 14 天。"
+      ],
+      "contraindications_en": [
+        "Concomitant use of nonselective monoamine oxidase (MAO) inhibitors within 14 days",
+        "Narrow-angle glaucoma",
+        "Suspicious undiagnosed skin lesions or history of melanoma"
+      ],
+      "contraindications_zh": [
+        "14 天內併用非選擇性單胺氧化酶 (MAOI) 抑制劑",
+        "閉角型青光眼",
+        "疑似未確診之皮膚病變或黑色素瘤病史"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Inhibits prolactin secretion; caution in nursing mothers.",
+      "pregnancy_lactation_zh": "懷孕級別 C。抑制催乳素分泌；哺乳期慎用。",
+      "renal_considerations_en": "No specific dosage adjustment provided; monitor for enhanced adverse effects.",
+      "hepatic_considerations_en": "Use caution in severe hepatic impairment.",
+      "monitoring_requirements_en": "Monitor motor function, dyskinesias, blood pressure, mental status/psychosis, and skin examination for melanoma.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.mao_inhibitors",
+          "with_label_en": "Nonselective MAO Inhibitors (e.g. Phenelzine)",
+          "interaction_en": "Severe, potentially fatal hypertensive crisis due to massive accumulation of catecholamines.",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "orthostatic_hypotension",
+        "sedation_dizziness"
+      ],
+      "tcm_relation_note_zh": "Carbidopa/Levodopa (Sinemet) 為帕金森氏症（中醫顫證、顫振）金標準。Levodopa 補充多巴胺，Carbidopa 抑制外周去羧酶減輕噁心。長期服藥易出現「開關現象」（動靜轉換障礙、藥效波動）與舞蹈樣不自主運動（中醫肝風內動），診察針灸時須記錄服藥時間點與動作開關狀態。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Sinemet = Carbidopa 'Carries' Levodopa across BBB by blocking peripheral decarboxylase; stops 'Nausea' from peripheral dopamine.",
+      "mnemonic_zh": "Sinemet = Carbidopa 護送 (Carries) Levodopa 穿越血腦障壁，阻斷外周去羧酶，防止外周多巴胺引致噁心 (Nausea)。",
+      "classic_association_en": "Carbidopa/Levodopa -> Parkinson's disease 1st line & peripheral dopa decarboxylase inhibition / on-off phenomenon",
+      "classic_association_zh": "卡比多巴/左旋多巴 -> 帕金森氏症首選、外周多巴去羧酶抑制與開關現象",
+      "exam_trap_en": "Levodopa crosses the BBB; Carbidopa DOES NOT cross BBB (specifically inhibits peripheral decarboxylase to reduce peripheral nausea); long-term use leads to 'on-off' dyskinesia.",
+      "exam_trap_zh": "Levodopa 可穿過血腦障壁；Carbidopa 不過血腦障壁（專一抑制外周去羧酶以降低外周噁心）；長期使用引致『開關』運動障礙。",
+      "board_high_yield_en": "Gold standard for Parkinson's disease. Levodopa = dopamine precursor (crosses BBB). Carbidopa = peripheral dopa decarboxylase inhibitor (does not cross BBB; increases CNS levodopa 3-4x & reduces peripheral nausea). Side effects: Dyskinesias, on-off phenomenon, orthostatic hypotension.",
+      "dailymed_setid": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "dailymed_label_title": "SINEMET (CARBIDOPA AND LEVODOPA) TABLET",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "indications_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
+    },
+    {
+      "id": "drug.phenelzine",
+      "name_en": "Phenelzine",
+      "name_zh": "苯乙肼",
+      "brand_names_en": [
+        "Nardil"
+      ],
+      "drugclass_id": "drugclass.mao_inhibitors",
+      "subclass_en": "Non-Selective Irreversible Monoamine Oxidase Inhibitor (MAOI)",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.monoamine_oxidase",
+      "rxnorm_rxcui": "8123",
+      "rx_otc_status": "Rx",
+      "suffix_en": "-zine",
+      "verification_status": "machine_verified",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_priority_pack",
+      "mechanism_en": "Irreversibly and non-selectively inhibits monoamine oxidase (MAO-A and MAO-B) enzymes, increasing endogenous concentrations of epinephrine, norepinephrine, serotonin, and dopamine in the CNS.",
+      "mechanism_zh": "不可逆性非選擇性抑制單胺氧化酶 (MAO-A 及 MAO-B)，提高中樞神經系統內腎上腺素、正腎上腺素、血清素及多巴胺濃度。",
+      "pharmacodynamics_summary_en": "Antidepressant and anxiolytic efficacy in refractory/atypical depression; enzyme recovery requires up to 2 weeks after drug cessation.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 2-6 weeks for full antidepressant therapeutic effect; Duration: 10-14 days after discontinuation due to irreversible enzyme inhibition.",
+        "metabolism_en": "Extensively metabolized by hepatic acetylation (slow vs fast acetylator phenotype).",
+        "elimination_en": "Renal clearance of metabolites."
+      },
+      "indications_en": [
+        "Treatment of major depressive disorder in patients who have failed to respond to other antidepressants (atypical or treatment-resistant depression)"
+      ],
+      "indications_zh": [
+        "治療對其他抗憂鬱藥無效之重度憂鬱症患者 (非典型或難治性憂鬱症)"
+      ],
+      "indication_condition_ids": [
+        "cond.depression"
+      ],
+      "adverse_effects_en": [
+        "Orthostatic hypotension",
+        "Dizziness",
+        "Drowsiness",
+        "Dry mouth",
+        "Sexual dysfunction",
+        "Weight gain"
+      ],
+      "adverse_effects_zh": [
+        "姿勢性低血壓",
+        "頭暈",
+        "嗜睡",
+        "口乾",
+        "性功能障礙",
+        "體重增加"
+      ],
+      "serious_adverse_effects_en": [
+        "Fatal Hypertensive Crisis (Tyramine reaction)",
+        "Serotonin Syndrome (with SSRIs/SNRIs)",
+        "Hepatotoxicity"
+      ],
+      "serious_adverse_effects_zh": [
+        "致命性高血壓危機 (酪胺飲食反應)",
+        "血清素症候群 (併用 SSRI/SNRI)",
+        "肝毒性"
+      ],
+      "boxed_warning_en": "Suicidality and Antidepressant Drugs: Increased risk of suicidal thinking and behavior in children, adolescents, and young adults (aged 18-24) taking antidepressants for MDD.",
+      "boxed_warning_zh": "自殺傾向與抗憂鬱藥黑框警告：兒童、青少年及青年 (18-24歲) 服用抗憂鬱藥治療 MDD 時，自殺意念與行為風險增加。",
+      "warnings_en": [
+        "Hypertensive Crisis & Tyramine Foods: Ingestion of tyramine-rich foods (aged cheeses, red wine, cured meats, yeast extracts) can trigger fatal hypertensive crisis. Maintain dietary restriction for 2 weeks after stopping phenelzine.",
+        "Serotonin Syndrome & Washout: 14-day washout period required before starting another antidepressant (5 weeks for fluoxetine)."
+      ],
+      "warnings_zh": [
+        "高血壓危機與酪胺食物：攝取富含酪胺食物（乳酪、紅酒、臘肉、酵母萃取物）可誘發致命高血壓危機。停藥後 2 週內須維持飲食限制。",
+        "血清素症候群與洗脫期：換用其他抗憂鬱藥前須嚴格遵守 14 天洗脫期（Fluoxetine 須 5 週）。"
+      ],
+      "contraindications_en": [
+        "Pheochromocytoma",
+        "Congestive heart failure or severe renal disease",
+        "Concomitant use of sympathomimetics, SSRIs, SNRIs, TCAs, meperidine, dextromethorphan, or tyramine-rich foods",
+        "Severe hepatic impairment"
+      ],
+      "contraindications_zh": [
+        "嗜鉻細胞腫",
+        "充血性心衰竭或嚴重腎臟疾病",
+        "併用交感神經刺激劑、SSRI、SNRI、TCA、Meperidine、Dextromethorphan 或富含酪胺食物",
+        "嚴重肝功能受損"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Category C. Safety in pregnancy and lactation has not been established.",
+      "pregnancy_lactation_zh": "懷孕級別 C。孕期及哺乳期安全性尚未確立。",
+      "renal_considerations_en": "Contraindicated in severe renal disease or renal failure.",
+      "hepatic_considerations_en": "Contraindicated in severe liver disease or abnormal LFTs.",
+      "monitoring_requirements_en": "Monitor blood pressure frequently (for orthostatic hypotension or hypertensive crisis), suicidal ideation, LFTs, and adherence to tyramine-restricted diet.",
+      "drug_interactions_graded": [
+        {
+          "with": "drugclass.ssri",
+          "with_label_en": "SSRIs (e.g. Fluoxetine, Sertraline)",
+          "interaction_en": "Potentially fatal Serotonin Syndrome characterized by hyperthermia, rigidity, myoclonus, autonomic instability, and mental status changes.",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "integrative_clinical_flags": [
+        "orthostatic_hypotension",
+        "sedation_dizziness"
+      ],
+      "tcm_relation_note_zh": "Phenelzine 為非選擇性不可逆 MAOI 抗憂鬱藥。具經典「乳酪效應」（Tyramine 飲食反應引致致命高血壓危機，中醫肝陽暴亢、中風厥逆）。飲食禁忌：陳年乳酪、紅酒、醃肉、發酵豆製品。換用中藥或西藥抗憂鬱劑前須嚴格遵守 14 天洗脫期。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Phenelzine (Nardil) = NO Tyramine (cheese effect -> hypertensive crisis), NO SSRIs (serotonin syndrome), Need 14-day Washout.",
+      "mnemonic_zh": "Phenelzine (Nardil) 口訣：NO 酪胺食物（乳酪效應 -> 高血壓危機）、NO SSRIs（血清素症候群）、Need 14天洗脫期。",
+      "classic_association_en": "Phenelzine -> Nonselective MAOI & tyramine food hypertensive crisis / 14-day washout rule",
+      "classic_association_zh": "苯乙肼 -> 非選擇性 MAOI、酪胺食物高血壓危機與 14 天洗脫期規則",
+      "exam_trap_en": "Phenelzine is a nonselective MAOI; ingestion of tyramine (aged cheese, wine) causes severe HYPERTENSIVE CRISIS ('cheese effect'); requires 14-day washout before starting SSRIs.",
+      "exam_trap_zh": "苯乙肼為非選擇性 MAOI；攝取酪胺食物（乳酪、紅酒）會引發嚴重高血壓危機（『乳酪效應』）；換用 SSRI 前須 14 天洗脫期。",
+      "board_high_yield_en": "Prototype nonselective irreversible MAOI. Used for treatment-resistant atypical depression. Fatal hypertensive crisis with tyramine-containing foods. Fatal Serotonin Syndrome with SSRIs/meperidine. 14-day washout period required.",
+      "dailymed_setid": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+      "dailymed_label_title": "NARDIL (PHENELZINE SULFATE) TABLET",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#BOXED_WARNING"
+        ],
+        "indications_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#USE_IN_SPECIFIC_POPULATIONS"
+        ]
+      }
     }
   ]
 }

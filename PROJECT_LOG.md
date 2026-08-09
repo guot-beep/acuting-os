@@ -1,5 +1,24 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Bastyr Week 1–2 Priority Pack (First Batch: 12 Priority Drugs)
+- **What was done:** Completed first execution batch of Bastyr Week 1–2 Back-to-School Priority Pack. Built 12 finely reference-quality drug cards (albuterol, atropine, prazosin, propranolol, clonidine, disulfiram, phenytoin, carbamazepine, ethosuximide, gabapentin, carbidopa_levodopa, phenelzine) and 12 supporting drug class cards in drug_classes.json. Integrated official DailyMed setids & verified label metadata for all 12 cards. Added separated Bastyr high-yield education layer (mnemonics, classic associations, exam traps, must-know summaries) and integrative medicine flags. Updated systems (5), targets (26), classes (29), and drugs (33).
+- **Numbers (before -> after):**
+  - Canonical drugs total: 21 -> 33.
+  - Drug classes total: 17 -> 29.
+  - Drug targets total: 16 -> 26.
+  - Drug systems total: 2 -> 5.
+  - Graph integrity blocking defects: 0 -> 0 (PASS).
+- **Verification Results:**
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** sym.* symptom namespace currently 0 records in taxonomy (documented limitation).
+- **Next Step:** Awaiting Ting authorization before proceeding to remaining Week 1-2 medications.
+
 ## 2026-08-09 Antigravity — Bounded Pharmacology Foundation Hardening Pass
 - **What was done:** Completed bounded Pharmacology Foundation Hardening pass. Reconciled Master Card schema contract across docs/PHARM_CARD_TEMPLATE.md, scripts/validate-pharm-standard.js, data/pharmacology/*.json, and js/knowledge.js. Repaired Condition namespace defect by migrating related_condition_ids to indication_condition_ids using locked cond.* namespace. Removed invalid condition link from drug.warfarin. Downgraded AI-authored records from human_reviewed to machine_verified. Expanded validate-pharm-standard.js to audit full 6-layer Pharmacology graph integrity (class->system, class->target, class->drugs, reverse consistency, duplicate IDs, safety source provenance, controlled integrative flags). Added machine-derived Foundation Graph Audit output.
 - **Numbers (before -> after):**
