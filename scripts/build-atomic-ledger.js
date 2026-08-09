@@ -1,1352 +1,211 @@
 const fs = require('fs');
+const path = require('path');
+const { extractSourceMedicalFacts } = require('./verify-source-coverage');
 
-const ledger = [
-  // ====================================
-  // 1. WARFARIN (drug.warfarin)
-  // ====================================
-  {
-    source_item_id: 'warfarin.identity.class',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Class: Vitamin K antagonist anticoagulant',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.identity.brand',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Brand example: Coumadin (historical/common brand recognition)',
-    source_item_type: 'identity_brand',
-    disposition: 'canonical',
-    canonical_field: 'brand_names_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Vitamin K antagonist.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.002',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Narrow therapeutic window; INR monitoring is a classic association.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'classic_association_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.003',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Major/fatal bleeding is the central toxicity.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'boxed_warning_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.004',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Diet, drugs, and supplements can alter anticoagulant effect.',
-    source_item_type: 'board_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.005',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Course mnemonic associates warfarin with "warfare against Vitamin K."',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.compare.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★ -> Classic comparison',
-    source_text: 'Warfarin: vitamin K pathway + INR monitoring.',
-    source_item_type: 'board_compare_bullet',
-    disposition: 'duplicated_for_provenance',
-    canonical_field: 'classic_association_en',
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.compare.002',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★ -> Classic comparison',
-    source_text: 'DOAC Xa inhibitors: -xaban; no routine INR titration.',
-    source_item_type: 'board_compare_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.compare.003',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★ -> Classic comparison',
-    source_text: 'Antiplatelet drugs such as clopidogrel act on platelets, not vitamin K-dependent coagulation factors.',
-    source_item_type: 'board_compare_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.board.provenance.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★ -> Course provenance',
-    source_text: 'Course provenance: Pharmacology Summary.md, cardiovascular/anticoagulant section around L398-L405.',
-    source_item_type: 'provenance_note',
-    disposition: 'canonical',
-    canonical_field: 'field_sources',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.mechanism.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Mechanism',
-    source_text: 'Reduces functional vitamin K-dependent coagulation-factor synthesis by antagonizing vitamin K recycling.',
-    source_item_type: 'mechanism',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.main_use.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Main uses',
-    source_text: 'Current label includes prevention/treatment of venous thromboembolism and prevention of thromboembolic complications in selected atrial fibrillation/valve contexts; also certain post-MI risk-reduction uses.',
-    source_item_type: 'main_use',
-    disposition: 'canonical',
-    canonical_field: 'indications_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.flag.bleeding_risk',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'bleeding_risk',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.flag.fall_risk',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'fall_risk',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.flag.lactation_relevance',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'lactation_relevance',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.clinical_impact.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Bleeding/bruising: high clinical relevance.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.clinical_impact.002',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Lab interpretation: INR is essential to therapy management.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.clinical_impact.003',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Falls/trauma matter more because occult or overt bleeding can be more consequential.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.clinical_impact.004',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Sudden diet/supplement changes can matter.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.boxed_warning.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Boxed warning',
-    source_text: 'Current label has a boxed warning for major/fatal bleeding risk and stresses regular INR monitoring.',
-    source_item_type: 'boxed_warning',
-    disposition: 'canonical',
-    canonical_field: 'boxed_warning_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.acupuncture.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Do not interpret bruising or bleeding tendency without considering anticoagulant therapy.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'canonical',
-    canonical_field: 'tcm_relation_note_zh',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.acupuncture.002',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Medication use should be visible before needling intensity/depth decisions.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.acupuncture.003',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Acupuncture card should present a bleeding-risk prompt, not a universal "no acupuncture" rule.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'warfarin.monitoring.001',
-    drug_id: 'drug.warfarin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Monitoring',
-    source_text: 'INR / clinical bleeding assessment per prescribing team.',
-    source_item_type: 'monitoring',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-
-  // ====================================
-  // 2. APIXABAN (drug.apixaban)
-  // ====================================
-  {
-    source_item_id: 'apixaban.identity.class',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Class: Direct factor Xa inhibitor (DOAC)',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.identity.brand',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Brand: Eliquis',
-    source_item_type: 'identity_brand',
-    disposition: 'canonical',
-    canonical_field: 'brand_names_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.board.001',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: '-xaban -> factor Xa inhibitor.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.board.002',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Main clinical danger: bleeding.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'warnings_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.board.003',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Do not abruptly discontinue without appropriate anticoagulation planning: current label warns of increased thrombotic risk.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'boxed_warning_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.board.004',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Neuraxial/spinal procedures carry spinal/epidural hematoma risk.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'exam_trap_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.board.005',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Mnemonic from course logic: XABAN -> Xa.',
-    source_item_type: 'board_bullet',
-    disposition: 'duplicated_for_provenance',
-    canonical_field: 'mnemonic_en',
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.mechanism.001',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Mechanism',
-    source_text: 'Direct inhibition of factor Xa reduces thrombin generation and clot formation.',
-    source_item_type: 'mechanism',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.main_use.001',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Main uses',
-    source_text: 'Stroke/systemic embolism risk reduction in nonvalvular atrial fibrillation; DVT prophylaxis after hip/knee replacement; DVT/PE treatment and recurrence reduction.',
-    source_item_type: 'main_use',
-    disposition: 'canonical',
-    canonical_field: 'indications_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.flag.bleeding_risk',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'bleeding_risk',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.flag.thrombosis_if_stopped',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'thrombosis_if_stopped',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.clinical_impact.001',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Bleeding/bruising risk.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.clinical_impact.002',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Stopping anticoagulation prematurely can expose the patient to thrombotic risk.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.clinical_impact.003',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Any planned neuraxial procedure has a specific label warning.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.acupuncture.001',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Display bleeding_risk. Ask about unusual bruising/bleeding and co-use of other anticoagulant/antiplatelet agents.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'apixaban.acupuncture.002',
-    drug_id: 'drug.apixaban',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Do not tell patients to hold prescribed anticoagulation for acupuncture.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-
-  // ====================================
-  // 3. CLOPIDOGREL (drug.clopidogrel)
-  // ====================================
-  {
-    source_item_id: 'clopidogrel.identity.class',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Class: P2Y12 platelet inhibitor / antiplatelet',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.identity.brand',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Brand: Plavix',
-    source_item_type: 'identity_brand',
-    disposition: 'canonical',
-    canonical_field: 'brand_names_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.board.001',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Antiplatelet, not the same mechanism as warfarin/DOACs.',
-    source_item_type: 'board_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.board.002',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Course mnemonic: P in clopidogrel / aspirin -> platelets.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.board.003',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Requires metabolic activation, especially through CYP2C19.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'boxed_warning_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.board.004',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Current boxed warning focuses on reduced antiplatelet effect in CYP2C19 poor metabolizers.',
-    source_item_type: 'board_bullet',
-    disposition: 'duplicated_for_provenance',
-    canonical_field: 'boxed_warning_en',
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.board.005',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Bleeding remains a major clinical safety concern.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'warnings_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.mechanism.001',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Mechanism',
-    source_text: 'Prodrug converted to an active metabolite that inhibits platelet P2Y12 signaling and platelet aggregation.',
-    source_item_type: 'mechanism',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.main_use.001',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Main uses',
-    source_text: 'Acute coronary syndrome and secondary prevention settings after recent MI/stroke or established peripheral arterial disease.',
-    source_item_type: 'main_use',
-    disposition: 'canonical',
-    canonical_field: 'indications_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.flag.bleeding_risk',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'bleeding_risk',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.clinical_impact.001',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Bruising/bleeding may be medication related.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.clinical_impact.002',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact',
-    source_text: 'Genetics/drug interactions affecting CYP2C19 may reduce efficacy.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'clopidogrel.acupuncture.001',
-    drug_id: 'drug.clopidogrel',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Visible antiplatelet flag; adjust clinical caution to actual bleeding history and overall hemostatic context rather than applying an automatic ban.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-
-  // ====================================
-  // 4. ASPIRIN (drug.aspirin)
-  // ====================================
-  {
-    source_item_id: 'aspirin.identity.class',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Class: NSAID; antiplatelet at low doses',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.board.001',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'One drug can appear under more than one Board lens.',
-    source_item_type: 'board_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.board.002',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'NSAID: prostaglandin/COX pathway, pain/inflammation.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.board.003',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Low-dose use: antiplatelet context.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.board.004',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Course emphasizes gastric irritation/erosion, hemorrhage, renal injury, and Reye syndrome risk in children with viral illness.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'exam_trap_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.board.005',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Compare with acetaminophen: analgesic/antipyretic but not a classic anti-inflammatory NSAID.',
-    source_item_type: 'board_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.flag.bleeding_risk',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'bleeding_risk',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.flag.gi_bleeding',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'gi_bleeding',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.flag.renal_dose_relevance',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'renal_dose_relevance',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.integrative.001',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Integrative interaction',
-    source_text: 'High-value card because patients commonly combine aspirin with fish oil, supplements, or herbs.',
-    source_item_type: 'integrative_note',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'aspirin.integrative.002',
-    drug_id: 'drug.aspirin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Integrative interaction',
-    source_text: 'Each interaction must be graded by evidence; "blood-moving" alone is not proof of a clinically significant interaction.',
-    source_item_type: 'integrative_note',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-
-  // ====================================
-  // 5. ENOXAPARIN (drug.enoxaparin)
-  // ====================================
-  {
-    source_item_id: 'enoxaparin.identity.class',
-    drug_id: 'drug.enoxaparin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Identity',
-    source_text: 'Class: Low-molecular-weight heparin',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'enoxaparin.board.001',
-    drug_id: 'drug.enoxaparin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Injectable anticoagulant; distinguish from oral warfarin and oral DOACs.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'enoxaparin.board.002',
-    drug_id: 'drug.enoxaparin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Major practical issue: bleeding.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'warnings_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'enoxaparin.board.003',
-    drug_id: 'drug.enoxaparin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'BOARD EXAM ★',
-    source_text: 'Often appears in perioperative, thromboembolism, pregnancy/fertility or recurrent-loss medical contexts when prescribed.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'indications_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'enoxaparin.flag.bleeding_risk',
-    drug_id: 'drug.enoxaparin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'bleeding_risk',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'enoxaparin.acupuncture.001',
-    drug_id: 'drug.enoxaparin',
-    source_file: 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Medication should trigger a bleeding/bruising review and awareness of injection-site bruising.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-
-  // ====================================
-  // 6. LOSARTAN (drug.losartan)
-  // ====================================
-  {
-    source_item_id: 'losartan.identity.class',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Identity',
-    source_text: 'Class: angiotensin II receptor blocker (ARB)',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.identity.suffix',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Identity',
-    source_text: 'Suffix: -sartan',
-    source_item_type: 'identity_suffix',
-    disposition: 'canonical',
-    canonical_field: 'suffix_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.board.001',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: '-SARTAN -> ARB.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.board.002',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Blocks angiotensin II receptor signaling.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.board.003',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Think: hypertension, diabetic nephropathy context, hyperkalemia, renal function, hypotension.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'indications_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.board.004',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Current label has boxed warning for fetal toxicity.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'boxed_warning_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.board.005',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Compare ACE inhibitor -pril: ARB avoids ACE inhibition but still shares RAS-related potassium, renal and pregnancy issues.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'exam_trap_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.board.provenance.001',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★ -> Course provenance',
-    source_text: 'Course provenance: the course uses valsartan as the ARB prototype and explicitly links -sartan with hyperkalemia. Losartan appears mainly in the legacy pregnancy-category table. Do not treat the old pregnancy letter as current data.',
-    source_item_type: 'provenance_note',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.flag.hyperkalemia',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'hyperkalemia',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.flag.orthostatic_hypotension',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'orthostatic_hypotension',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.flag.renal_dose_relevance',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'renal_dose_relevance',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.flag.fetal_toxicity',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'fetal_toxicity',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.clinical_impact.001',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'dizziness;',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'canonical',
-    canonical_field: 'adverse_effects_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.clinical_impact.002',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'low BP, especially with volume depletion;',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'canonical',
-    canonical_field: 'warnings_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.clinical_impact.003',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'renal function deterioration;',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'canonical',
-    canonical_field: 'warnings_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.clinical_impact.004',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'elevated potassium.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'canonical',
-    canonical_field: 'adverse_effects_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'losartan.acupuncture.001',
-    drug_id: 'drug.losartan',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'If a patient with dizziness or weakness is taking losartan plus a diuretic, Clinical Impact should surface BP/volume/electrolyte context before the symptoms are assigned entirely to a TCM deficiency pattern.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'canonical',
-    canonical_field: 'tcm_relation_note_zh',
-    staging_field: null,
-    derived: false
-  },
-
-  // ====================================
-  // 7. HYDROCHLOROTHIAZIDE (drug.hydrochlorothiazide)
-  // ====================================
-  {
-    source_item_id: 'hctz.identity.class',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Identity',
-    source_text: 'Class: thiazide diuretic',
-    source_item_type: 'identity_class',
-    disposition: 'canonical',
-    canonical_field: 'drugclass_id',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.001',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Thiazide diuretic.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mechanism_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.002',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Course mnemonic: "See No Evil" and the high-yield association with secondary angle-closure glaucoma.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'mnemonic_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.003',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★',
-    source_text: 'Classic electrolyte associations: hypokalemia, hyponatremia and other volume/electrolyte changes.',
-    source_item_type: 'board_bullet',
-    disposition: 'canonical',
-    canonical_field: 'classic_association_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.compare.furosemide',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★ -> Compare',
-    source_text: 'furosemide -> loop, stronger diuresis, ototoxicity association;',
-    source_item_type: 'board_compare_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.compare.spironolactone',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★ -> Compare',
-    source_text: 'spironolactone -> potassium-sparing, hyperkalemia;',
-    source_item_type: 'board_compare_bullet',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.compare.hctz',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★ -> Compare',
-    source_text: 'HCTZ -> thiazide, hypokalemia/hyponatremia.',
-    source_item_type: 'board_compare_bullet',
-    disposition: 'duplicated_for_provenance',
-    canonical_field: 'classic_association_en',
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.board.provenance.001',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'BOARD EXAM ★★★ -> Course provenance',
-    source_text: 'Course provenance: Pharmacology Summary.md around L401; detailed diuretic material also exists in Pharm+OM+Winter+2019+W5-diuretics.md.',
-    source_item_type: 'provenance_note',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_board_items',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.flag.fluid_depletion',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'fluid_depletion',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.flag.hypokalemia',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'hypokalemia',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.flag.hyponatremia',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'hyponatremia',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.flag.orthostatic_hypotension',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'orthostatic_hypotension',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.flag.visual_red_flag',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Flags',
-    source_text: 'visual_red_flag',
-    source_item_type: 'source_declared_flag',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_declared_flags',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.clinical_impact.001',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'cramps / weakness;',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.clinical_impact.002',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'dizziness / hypotension;',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.clinical_impact.003',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'confusion in electrolyte disturbance;',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.clinical_impact.004',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Clinical Impact -> Potential contribution',
-    source_text: 'acute eye pain / visual change in secondary angle-closure glaucoma.',
-    source_item_type: 'clinical_impact_statement',
-    disposition: 'canonical',
-    canonical_field: 'exam_trap_en',
-    staging_field: null,
-    derived: false
-  },
-  {
-    source_item_id: 'hctz.acupuncture.001',
-    drug_id: 'drug.hydrochlorothiazide',
-    source_file: 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md',
-    source_section: 'Acupuncture relevance',
-    source_text: 'Leg cramps, fatigue, weakness and dizziness are exactly the kind of symptoms that can be over-attributed to Qi/Blood deficiency if medication/electrolyte effects are not visible.',
-    source_item_type: 'acupuncture_relevance',
-    disposition: 'staging',
-    canonical_field: null,
-    staging_field: 'source_clinical_impact_statements',
-    derived: false
-  }
+const pilotIds = [
+  'drug.warfarin',
+  'drug.apixaban',
+  'drug.clopidogrel',
+  'drug.aspirin',
+  'drug.enoxaparin',
+  'drug.losartan',
+  'drug.hydrochlorothiazide'
 ];
 
-const derivedCandidateFlags = [
-  {
-    derived_item_id: 'derived.flag.warfarin.inr_lab_relevance',
-    drug_id: 'drug.warfarin',
-    flag: 'inr_lab_relevance',
-    derived: true,
-    reason: 'Inferred from INR monitoring clinical statements in source narrative.'
-  },
-  {
-    derived_item_id: 'derived.flag.warfarin.drug_herb_interaction_concern',
-    drug_id: 'drug.warfarin',
-    flag: 'drug_herb_interaction_concern',
-    derived: true,
-    reason: 'Inferred from St. John’s wort / Ginseng interaction notes in source narrative.'
-  },
-  {
-    derived_item_id: 'derived.flag.clopidogrel.cyp2c19_metabolizer_relevance',
-    drug_id: 'drug.clopidogrel',
-    flag: 'cyp2c19_metabolizer_relevance',
-    derived: true,
-    reason: 'Inferred from CYP2C19 poor metabolizer boxed warning in source narrative.'
-  },
-  {
-    derived_item_id: 'derived.flag.enoxaparin.injection_site_bruising',
-    drug_id: 'drug.enoxaparin',
-    flag: 'injection_site_bruising',
-    derived: true,
-    reason: 'Inferred from injection-site review note in acupuncture relevance section.'
+function determineDispositionAndFields(drugId, srcItem, index) {
+  const norm = srcItem.normalized_text;
+  const sec = srcItem.source_section;
+
+  // Identity
+  if (sec === 'Identity') {
+    if (norm.startsWith('Class:')) {
+      return { disposition: 'canonical', canonical_field: 'drugclass_id', staging_field: null };
+    }
+    if (norm.startsWith('Brand') || norm.startsWith('Brand example:')) {
+      return { disposition: 'canonical', canonical_field: 'brand_names_en', staging_field: null };
+    }
+    if (norm.startsWith('Suffix:')) {
+      return { disposition: 'canonical', canonical_field: 'suffix_en', staging_field: null };
+    }
   }
-];
 
-const stagingStore = {
-  purpose: 'Formal 1:1 Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a unique source_item_id and exactly one primary disposition.',
-  audited_at: '2026-08-09',
-  schema_mode: 'atomic_provenance_ledger_v3',
-  disposition_definitions: {
-    canonical: 'Primary disposition is represented in canonical data/pharmacology/drugs.json',
-    staging: 'Primary disposition is preserved in staging data (unmapped board/clinical impact bullets)',
-    duplicated_for_provenance: 'Item is represented in canonical data BUT also preserved in staging for full provenance review (disjoint; does not double-count in sum)',
-    excluded_with_reason: 'Source item is structural metadata or legacy classification excluded with explicit reason',
-    lost: 'Source item was lost during ingestion (must equal 0)'
-  },
-  ledger,
-  derived_candidate_flags: derivedCandidateFlags
-};
+  // Declared Flags
+  if (sec.includes('Flags')) {
+    return { disposition: 'staging', canonical_field: null, staging_field: 'source_declared_flags' };
+  }
 
-fs.writeFileSync('data/pharmacology/staging_v7_ingestion.json', JSON.stringify(stagingStore, null, 2) + '\n');
-console.log('Successfully written formal atomic provenance ledger! Total items:', ledger.length);
+  // Drug-specific canonical rules
+  if (drugId === 'drug.warfarin') {
+    if (norm === 'Vitamin K antagonist.') return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Narrow therapeutic window; INR monitoring')) return { disposition: 'canonical', canonical_field: 'classic_association_en', staging_field: null };
+    if (norm.includes('Major/fatal bleeding is the central toxicity.')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('warfare against Vitamin K.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Warfarin: vitamin K pathway + INR monitoring.')) return { disposition: 'duplicated_for_provenance', canonical_field: 'classic_association_en', staging_field: 'source_board_items' };
+    if (norm.includes('Course provenance:')) return { disposition: 'canonical', canonical_field: 'field_sources', staging_field: null };
+    if (norm.startsWith('Reduces functional vitamin K-dependent')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.startsWith('Current label includes prevention/treatment of venous')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.startsWith('Current label has a boxed warning for major/fatal bleeding')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('St. John’s wort:') || norm.includes('St. Johns wort:')) return { disposition: 'canonical', canonical_field: 'herb_drug_interactions_en', staging_field: null };
+    if (norm.includes('Asian ginseng:')) return { disposition: 'canonical', canonical_field: 'herb_drug_interactions_en', staging_field: null };
+    if (norm.includes('Vitamin K supplements')) return { disposition: 'canonical', canonical_field: 'herb_drug_interactions_en', staging_field: null };
+    if (norm.includes('Do not interpret bruising or bleeding tendency without considering')) return { disposition: 'canonical', canonical_field: 'tcm_relation_note_zh', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=558b7a0d-5490-4c1b-802e-3ab3f1efe760')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+    if (norm.startsWith('https://')) return { disposition: 'canonical', canonical_field: 'field_sources', staging_field: null };
+  }
+
+  if (drugId === 'drug.apixaban') {
+    if (norm.includes('-xaban -> factor Xa inhibitor.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Main clinical danger: bleeding.')) return { disposition: 'canonical', canonical_field: 'warnings_en', staging_field: null };
+    if (norm.includes('Do not abruptly discontinue without appropriate anticoagulation planning')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('Neuraxial/spinal procedures carry spinal/epidural hematoma risk.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('Mnemonic from course logic: XABAN -> Xa.')) return { disposition: 'duplicated_for_provenance', canonical_field: 'mnemonic_en', staging_field: 'source_board_items' };
+    if (norm.startsWith('Direct inhibition of factor Xa reduces')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('stroke/systemic embolism risk reduction in nonvalvular atrial fibrillation;') || norm.includes('DVT prophylaxis after hip/knee replacement;')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('premature discontinuation increases thrombotic-event risk;') || norm.includes('spinal/epidural hematoma can occur around neuraxial')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.clopidogrel') {
+    if (norm.includes('P in clopidogrel / aspirin')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Requires metabolic activation, especially through CYP2C19.')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('Current boxed warning focuses on reduced antiplatelet effect in CYP2C19')) return { disposition: 'duplicated_for_provenance', canonical_field: 'boxed_warning_en', staging_field: 'source_board_items' };
+    if (norm.includes('Bleeding remains a major clinical safety concern.')) return { disposition: 'canonical', canonical_field: 'warnings_en', staging_field: null };
+    if (norm.startsWith('Prodrug converted to an active metabolite')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.startsWith('Current label includes acute coronary syndrome')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('active pathological bleeding and hypersensitivity; warnings include bleeding')) return { disposition: 'canonical', canonical_field: 'contraindications_en', staging_field: null };
+    if (norm.includes('https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=55530ff3-5ce4-120f-e054-00144ff8d46c')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.aspirin') {
+    if (norm.includes('NSAID: prostaglandin/COX pathway, pain/inflammation.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Low-dose use: antiplatelet context.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Reye syndrome risk in children with viral illness.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('Course provenance:')) return { disposition: 'canonical', canonical_field: 'field_sources', staging_field: null };
+  }
+
+  if (drugId === 'drug.enoxaparin') {
+    if (norm.includes('Injectable anticoagulant; distinguish from oral warfarin')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Major practical issue: bleeding.')) return { disposition: 'canonical', canonical_field: 'warnings_en', staging_field: null };
+    if (norm.includes('Often appears in perioperative, thromboembolism')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+  }
+
+  if (drugId === 'drug.losartan') {
+    if (norm.includes('-SARTAN -> ARB.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Blocks angiotensin II receptor signaling.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Think: hypertension, diabetic nephropathy context')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Current label has boxed warning for fetal toxicity.')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('Compare ACE inhibitor -pril:')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm === 'dizziness;') return { disposition: 'canonical', canonical_field: 'adverse_effects_en', staging_field: null };
+    if (norm === 'low BP, especially with volume depletion;') return { disposition: 'canonical', canonical_field: 'warnings_en', staging_field: null };
+    if (norm === 'renal function deterioration;') return { disposition: 'canonical', canonical_field: 'warnings_en', staging_field: null };
+    if (norm === 'elevated potassium.') return { disposition: 'canonical', canonical_field: 'adverse_effects_en', staging_field: null };
+    if (norm.includes('Potassium-increasing agents')) return { disposition: 'canonical', canonical_field: 'drug_interactions_en', staging_field: null };
+    if (norm.includes('Lithium -> lithium toxicity risk.')) return { disposition: 'canonical', canonical_field: 'drug_interactions_en', staging_field: null };
+    if (norm.includes('NSAIDs / COX-2 inhibitors')) return { disposition: 'canonical', canonical_field: 'drug_interactions_en', staging_field: null };
+    if (norm.includes('Dual RAS blockade')) return { disposition: 'canonical', canonical_field: 'drug_interactions_en', staging_field: null };
+    if (norm.includes('If a patient with dizziness or weakness is taking losartan plus a diuretic')) return { disposition: 'canonical', canonical_field: 'tcm_relation_note_zh', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9501dfaa-c8cf-46d6-8bec-936c4fd8fe03&version=1')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.hydrochlorothiazide') {
+    if (norm === 'Thiazide diuretic.') return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('"See No Evil" and the high-yield association with secondary angle-closure glaucoma.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Classic electrolyte associations: hypokalemia, hyponatremia')) return { disposition: 'canonical', canonical_field: 'classic_association_en', staging_field: null };
+    if (norm.includes('HCTZ -> thiazide, hypokalemia/hyponatremia.')) return { disposition: 'duplicated_for_provenance', canonical_field: 'classic_association_en', staging_field: 'source_board_items' };
+    if (norm.includes('acute eye pain / visual change in secondary angle-closure glaucoma.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('digitalis/digoxin toxicity')) return { disposition: 'canonical', canonical_field: 'drug_interactions_en', staging_field: null };
+    if (norm.includes('Lithium + thiazide/diuretic therapy')) return { disposition: 'canonical', canonical_field: 'drug_interactions_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8c868894-667e-4a51-906a-838d63e420ba')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  // Default to staging for unmapped narrative/bullets
+  const stagingField = sec.includes('Flags') ? 'source_declared_flags' : (sec.includes('BOARD') || sec.includes('Official') ? 'source_board_items' : 'source_clinical_impact_statements');
+  return { disposition: 'staging', canonical_field: null, staging_field: stagingField };
+}
+
+function buildFullAtomicLedger() {
+  const ledger = [];
+  const drugCounts = {};
+
+  pilotIds.forEach(drugId => {
+    const rawFacts = extractSourceMedicalFacts(drugId);
+    const prefix = drugId.replace('drug.', '');
+    drugCounts[prefix] = 1;
+
+    rawFacts.forEach(src => {
+      const idxStr = String(drugCounts[prefix]++).padStart(3, '0');
+      const itemType = src.source_section.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+      const itemId = `${prefix}.${itemType}.${idxStr}`;
+
+      const { disposition, canonical_field, staging_field } = determineDispositionAndFields(drugId, src, idxStr);
+
+      ledger.push({
+        source_item_id: itemId,
+        drug_id: drugId,
+        source_file: src.source_file,
+        source_section: src.source_section,
+        source_text: src.source_text,
+        source_item_type: itemType,
+        disposition,
+        canonical_field,
+        staging_field,
+        derived: false
+      });
+    });
+  });
+
+  const derivedCandidateFlags = [
+    {
+      derived_item_id: 'derived.flag.warfarin.inr_lab_relevance',
+      drug_id: 'drug.warfarin',
+      flag: 'inr_lab_relevance',
+      derived: true,
+      reason: 'Inferred from INR monitoring clinical statements in source narrative.'
+    },
+    {
+      derived_item_id: 'derived.flag.warfarin.drug_herb_interaction_concern',
+      drug_id: 'drug.warfarin',
+      flag: 'drug_herb_interaction_concern',
+      derived: true,
+      reason: 'Inferred from St. Johns wort / Ginseng interaction notes in source narrative.'
+    },
+    {
+      derived_item_id: 'derived.flag.clopidogrel.cyp2c19_metabolizer_relevance',
+      drug_id: 'drug.clopidogrel',
+      flag: 'cyp2c19_metabolizer_relevance',
+      derived: true,
+      reason: 'Inferred from CYP2C19 poor metabolizer boxed warning in source narrative.'
+    },
+    {
+      derived_item_id: 'derived.flag.enoxaparin.injection_site_bruising',
+      drug_id: 'drug.enoxaparin',
+      flag: 'injection_site_bruising',
+      derived: true,
+      reason: 'Inferred from injection-site review note in acupuncture relevance section.'
+    }
+  ];
+
+  const stagingStore = {
+    purpose: 'Formal 1:1 Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a unique source_item_id and exactly one primary disposition.',
+    audited_at: '2026-08-09',
+    schema_mode: 'atomic_provenance_ledger_v3',
+    disposition_definitions: {
+      canonical: 'Primary disposition is represented in canonical data/pharmacology/drugs.json',
+      staging: 'Primary disposition is preserved in staging data (unmapped board/clinical impact bullets)',
+      duplicated_for_provenance: 'Item is represented in canonical data BUT also preserved in staging for full provenance review (disjoint; does not double-count in sum)',
+      excluded_with_reason: 'Source item is structural metadata or legacy classification excluded with explicit reason',
+      lost: 'Source item was lost during ingestion (must equal 0)'
+    },
+    ledger,
+    derived_candidate_flags: derivedCandidateFlags
+  };
+
+  fs.writeFileSync('data/pharmacology/staging_v7_ingestion.json', JSON.stringify(stagingStore, null, 2) + '\n');
+  console.log(`Successfully generated 100% source-matched atomic provenance ledger with ${ledger.length} items!`);
+}
+
+if (require.main === module) {
+  buildFullAtomicLedger();
+}
+
+module.exports = { buildFullAtomicLedger };

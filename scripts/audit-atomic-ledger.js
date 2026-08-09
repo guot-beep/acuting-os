@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { runSourceCoverageVerification } = require('./verify-source-coverage');
 
 const stagingData = JSON.parse(fs.readFileSync('data/pharmacology/staging_v7_ingestion.json', 'utf8'));
 const ledger = stagingData.ledger || [];
@@ -58,17 +59,18 @@ console.table(perDrugStats);
 const sumDispositions = dispositionsBreakdown.canonical + dispositionsBreakdown.staging + dispositionsBreakdown.duplicated_for_provenance + dispositionsBreakdown.excluded_with_reason + dispositionsBreakdown.lost;
 console.log('\n[3] Disjoint Sum Equation Audit:');
 console.log(`TOTAL UNIQUE SOURCE_ITEM_ID (${ledger.length}) = canonical (${dispositionsBreakdown.canonical}) + staging (${dispositionsBreakdown.staging}) + duplicated_for_provenance (${dispositionsBreakdown.duplicated_for_provenance}) + excluded_with_reason (${dispositionsBreakdown.excluded_with_reason}) + lost (${dispositionsBreakdown.lost})`);
-console.log('Sum equation holds 100%:', sumDispositions === ledger.length);
+const internalAccountingPassed = (sumDispositions === ledger.length);
+console.log('Internal Ledger Accounting Passed:', internalAccountingPassed);
 
-if (sumDispositions !== ledger.length) {
+if (!internalAccountingPassed) {
   console.error('FAIL: Disjoint sum equation does not balance!');
   process.exit(1);
 }
 
 // Assertion 4: Lost Count Explicitly 0
-console.log('\n[4] Explicit Lost Count:', dispositionsBreakdown.lost);
+console.log('\n[4] Explicit Internal Ledger Lost Count:', dispositionsBreakdown.lost);
 if (dispositionsBreakdown.lost !== 0) {
-  console.error('FAIL: Lost count is non-zero!');
+  console.error('FAIL: Internal ledger lost count is non-zero!');
   process.exit(1);
 }
 
@@ -110,6 +112,29 @@ if (derivedInLedger.length > 0) {
   process.exit(1);
 }
 
-console.log('\n====================================================');
-console.log('ALL MACHINE AUDIT ASSERTIONS PASSED CLEANLY! LOST = 0');
-console.log('====================================================');
+// Assertion 7: Independent Source Coverage Verification
+console.log('\n[7] Running Independent Source-to-Ledger Coverage Verifier...');
+const coverageReport = runSourceCoverageVerification();
+
+const sourceCoveragePassed = (
+  coverageReport.totalMissingFromLedger === 0 &&
+  coverageReport.totalLedgerNotFoundInSource === 0 &&
+  coverageReport.totalDuplicateCoverage === 0
+);
+
+console.log('Source Coverage Passed:', sourceCoveragePassed);
+
+if (!sourceCoveragePassed) {
+  console.error('\nFAIL: Independent source coverage verification failed!');
+  console.error(`Missing from ledger: ${coverageReport.totalMissingFromLedger}, Ledger not found in source: ${coverageReport.totalLedgerNotFoundInSource}, Duplicate coverage: ${coverageReport.totalDuplicateCoverage}`);
+  process.exit(1);
+}
+
+if (internalAccountingPassed && sourceCoveragePassed) {
+  console.log('\n====================================================');
+  console.log('BOTH AUDITS PASSED CLEANLY! LOST = 0 VERIFIED WITH 100% SOURCE COVERAGE!');
+  console.log('====================================================');
+} else {
+  console.error('\nFAIL: Cannot claim LOST = 0!');
+  process.exit(1);
+}

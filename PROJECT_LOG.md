@@ -1,10 +1,10 @@
-# 2026-08-09 Antigravity — Disjoint Atomic Provenance Ledger Fix (7 drugs)
+# 2026-08-09 Antigravity — Source Coverage Verifier & Disjoint Ledger Final Gate (7 drugs)
 
-- **做了什麼**：建立嚴格不相交（Disjoint）的原子級來源項目帳簿（Disjoint Atomic Provenance Ledger, v3）於 `data/pharmacology/staging_v7_ingestion.json`；為 7 筆 Pilot 藥物之 v7 原始 MD 中每一個原子級文字 bullet、子標題事實、比較子項目、Declared Flag、機轉與適應症建立唯一的穩定 ID（如 `warfarin.board.001`, `hctz.board.compare.furosemide`）；每筆來源項目僅指定**唯一主處置（primary disposition）**：`canonical`, `staging`, `duplicated_for_provenance`, `excluded_with_reason`, 或 `lost`；推導標籤使用 `derived: true` 獨立存放，絕不計入來源原子項目總數。
-- **數學公式與驗證**：
-  `TOTAL UNIQUE SOURCE_ITEM_ID (106) = canonical (51) + staging (51) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`
-  經 `scripts/audit-atomic-ledger.js` 機器檢查：ID 零重複、公式 100% 平衡、Canonical 欄位引用全部合規、**真實 LOST 數嚴格等於 0**。
-- **驗證**：`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通過、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；本機 dev-server http://127.0.0.1:8361 正常運行。
+- **做了什麼**：實作獨立的原始檔對帳驗證器（Independent Source-to-Ledger Coverage Verifier, `scripts/verify-source-coverage.js`），直接以 7 筆 Pilot 藥物在 v7 原始 Markdown（`02_...md` 與 `15_...md`）中的實際段落文字為輸入，自動抽取每項原子級醫學事實、比較子項、Declared Flag、警告與 DailyMed 連結，並與 `data/pharmacology/staging_v7_ingestion.json` 的 `source_item_id` 逐筆進行 1:1 雙向核對；將該獨立驗證器整合至 `scripts/audit-atomic-ledger.js` 機器檢查中，確保僅在「內部帳簿公式平衡」與「獨立來源覆蓋驗證 100% 通過」雙重成立時方能宣告 LOST = 0。
+- **雙重審核結果**：
+  1. **內部帳簿對帳**：`TOTAL UNIQUE SOURCE_ITEM_ID (144) = canonical (72) + staging (68) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`，公式 100% 平衡，主處置無重複計算。
+  2. **獨立來源覆蓋**：抽取 v7 原始原子級項目 `144` 項，Ledger 匹配 `144` 項，**遺漏項目 Missing = 0**，**無源項目 Not Found = 0**，**重複覆蓋 Duplicate = 0**。
+- **驗證**：`node scripts/audit-atomic-ledger.js` 雙重審核 PASS、`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通過、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；本機 dev-server http://127.0.0.1:8361 正常運行。
 - **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未修改 canonical `drugs.json`；未擴充 canonical schema；未修改驗證器語意。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
