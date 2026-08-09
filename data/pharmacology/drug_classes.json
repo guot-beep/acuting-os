@@ -378,6 +378,146 @@
       ],
       "review_status": "draft",
       "authored_by": "v7_ingestion_pilot"
+    },
+    {
+      "id": "drugclass.ace_inhibitors",
+      "name_en": "Angiotensin-converting enzyme (ACE) inhibitors",
+      "name_zh": "血管緊張素轉換酶抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.ace",
+      "suffix_en": "-pril",
+      "mechanism_overview_en": "Inhibit angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing bradykinin degradation.",
+      "mechanism_overview_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少緩激肽分解。",
+      "indications_en": [
+        "Hypertension",
+        "Heart failure",
+        "Diabetic nephropathy"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心衰竭",
+        "糖尿病腎病變"
+      ],
+      "representative_drug_ids": [
+        "drug.lisinopril"
+      ],
+      "prototype_drug_id": "drug.lisinopril",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugclass.beta_blockers",
+      "name_en": "Beta-adrenergic receptor blockers (Beta blockers)",
+      "name_zh": "Beta 受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "suffix_en": "-olol",
+      "mechanism_overview_en": "Block beta-adrenergic receptors, reducing heart rate, myocardial contractility, and renin secretion.",
+      "mechanism_overview_zh": "阻斷 beta 腎上腺素受體，降低心跳率、心肌收縮力與腎素分泌。",
+      "indications_en": [
+        "Hypertension",
+        "Angina pectoris",
+        "Heart failure",
+        "Post-myocardial infarction"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "心衰竭",
+        "心肌梗塞後"
+      ],
+      "representative_drug_ids": [
+        "drug.metoprolol"
+      ],
+      "prototype_drug_id": "drug.metoprolol",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugclass.dhp_ccbs",
+      "name_en": "Dihydropyridine calcium channel blockers (DHP CCBs)",
+      "name_zh": "二氫吡啶類鈣離子通道阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.l_type_calcium_channel",
+      "suffix_en": "-dipine",
+      "mechanism_overview_en": "Inhibit L-type calcium channels in vascular smooth muscle, causing peripheral arterial vasodilation.",
+      "mechanism_overview_zh": "抑制血管平滑肌 L 型鈣通道，引起周邊動脈血管擴張。",
+      "indications_en": [
+        "Hypertension",
+        "Chronic stable angina"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "慢性穩定型心絞痛"
+      ],
+      "representative_drug_ids": [
+        "drug.amlodipine"
+      ],
+      "prototype_drug_id": "drug.amlodipine",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugclass.statins",
+      "name_en": "HMG-CoA reductase inhibitors (Statins)",
+      "name_zh": "HMG-CoA 還原酶抑制劑 (他汀類)",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.hmg_coa_reductase",
+      "suffix_en": "-vastatin",
+      "mechanism_overview_en": "Inhibit HMG-CoA reductase, the rate-limiting enzyme in cholesterol synthesis, upregulating hepatic LDL receptors.",
+      "mechanism_overview_zh": "抑制膽固醇合成關鍵酶 HMG-CoA 還原酶，上調肝臟 LDL 受體。",
+      "indications_en": [
+        "Hyperlipidemia",
+        "Cardiovascular disease risk reduction"
+      ],
+      "indications_zh": [
+        "高脂血症",
+        "心血管疾病風險降低"
+      ],
+      "representative_drug_ids": [
+        "drug.atorvastatin"
+      ],
+      "prototype_drug_id": "drug.atorvastatin",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugclass.cardiac_glycosides",
+      "name_en": "Cardiac glycosides",
+      "name_zh": "強心苷類",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.na_k_atpase",
+      "mechanism_overview_en": "Inhibit Na+/K+-ATPase pump in cardiomyocytes, increasing intracellular sodium and secondary calcium influx to enhance contractility.",
+      "mechanism_overview_zh": "抑制心肌細胞 Na+/K+-ATPase 泵，增加細胞內鈉與次級鈣流入以增強收縮力。",
+      "indications_en": [
+        "Heart failure",
+        "Atrial fibrillation rate control"
+      ],
+      "indications_zh": [
+        "心衰竭",
+        "心房顫動心室率控制"
+      ],
+      "representative_drug_ids": [
+        "drug.digoxin"
+      ],
+      "prototype_drug_id": "drug.digoxin",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
     }
   ]
 }

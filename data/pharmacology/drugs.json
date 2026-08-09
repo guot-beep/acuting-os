@@ -1,6 +1,6 @@
 {
   "dataset": "pharm_drugs",
-  "policy": "L4 單藥(成分層)。禁忌/黑框/交互作用課件為 0,必須引用官方標籤(validate-pharm-standard P0)。查不到就留空 —— 誠實的來源缺口優於編造。產品層不建卡,只記引用的 setid。",
+  "policy": "L4 單藥(成分層)。禁忌/黑框/交互作用課件為 0,骨幹引用官方標籤(validate-pharm-standard P0)。查不到就留空 —— 誠實的來源缺口優於編造。產品層不建卡,只記引用的 setid。",
   "created": "2026-08-06",
   "records": [
     {
@@ -186,6 +186,9 @@
         ]
       },
       "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
+      "dailymed_setid": "b119ed8a-289a-46c5-9778-6b07e4c061c4",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b119ed8a-289a-46c5-9778-6b07e4c061c4",
+      "dailymed_url_kind": "verified_exact",
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06"
@@ -324,7 +327,7 @@
         "大範圍區域阻斷或腰椎阻斷麻醉",
         "惡性高血壓"
       ],
-      "acupuncture_note_zh": "禁忌明列「有無法控制出血風險的操作」—— 這一條直接涵蓋侵入性針刺的判斷。臨床上必須先確認 INR 與最近一次抽血日期。標籤未針對針灸給數值門檻,不要自行設一個。",
+      "acupuncture_note_zh": "禁忌明列「有無法控制出血風險的操作」—— 這一條直接涵蓋侵入性針刺的判斷。臨床上必須先確認 INR 與最近一次抽血日期。標籤未針對針刺給數值門檻,不要自行設一個。",
       "board_priority": "high",
       "prototype_drug": true,
       "dailymed_setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
@@ -912,6 +915,7 @@
       "drugclass_id": "drugclass.factor_xa_inhibitors",
       "drugtarget_id": "drugtarget.factor_xa",
       "suffix_en": "-xaban",
+      "rxnorm_rxcui": "1114195",
       "board_priority": "high",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
@@ -943,7 +947,19 @@
         ]
       },
       "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
-      "monitoring_note_zh": "無常規凝血監測指標 —— 不像 warfarin 有 INR。判斷依據是腎功能、劑量與末次服藥時間。"
+      "monitoring_note_zh": "無常規凝血監測指標 —— 不像 warfarin 有 INR。判斷依據是腎功能、劑量與末次服藥時間。",
+      "indications_en": [
+        "Reduction of risk of stroke and systemic embolism in nonvalvular atrial fibrillation",
+        "Treatment of deep vein thrombosis (DVT) and pulmonary embolism (PE)",
+        "Prophylaxis of DVT following hip or knee replacement surgery"
+      ],
+      "indications_zh": [
+        "非瓣膜性心房顫動患者降低中風與全身性栓塞風險",
+        "深層靜脈血栓 (DVT) 及肺栓塞 (PE) 之治療",
+        "髖關節或膝關節置換術後深層靜脈血栓預防"
+      ],
+      "mnemonic_en": "-XABAN indicates Factor Xa inhibitor.",
+      "exam_trap_en": "DOAC Xa inhibitors (-xaban) do not require routine INR monitoring, but carry spinal/epidural hematoma risk during neuraxial procedures."
     },
     {
       "id": "drug.dabigatran",
@@ -1361,6 +1377,274 @@
           "dailymed:losartan:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03"
         ]
       }
+    },
+    {
+      "id": "drug.lisinopril",
+      "name_en": "Lisinopril",
+      "name_zh": "李斯諾普",
+      "brand_names_en": [
+        "Zestril",
+        "Prinivil"
+      ],
+      "drugclass_id": "drugclass.ace_inhibitors",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.ace",
+      "rxnorm_rxcui": "6448",
+      "suffix_en": "-pril",
+      "mechanism_en": "Inhibits angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing aldosterone secretion.",
+      "mechanism_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少醛固酮分泌。",
+      "indications_en": [
+        "Hypertension",
+        "Heart failure",
+        "Reduction of mortality in hemodynamically stable patients within 24 hours of acute myocardial infarction"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心衰竭",
+        "急性心肌梗塞 24 小時內血流動力學穩定患者之死亡率降低"
+      ],
+      "boxed_warning_en": "Fetal Toxicity: Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. Discontinue as soon as possible when pregnancy is detected.",
+      "boxed_warning_zh": "胎兒毒性：直接作用於腎素-血管緊張素系統的藥物會對發育中的胎兒造成傷害甚至死亡。一旦發現懷孕，應儘速停藥。",
+      "contraindications_en": [
+        "History of angioedema related to previous ACE inhibitor treatment",
+        "Hereditary or idiopathic angioedema",
+        "Concomitant use with aliskiren in patients with diabetes"
+      ],
+      "contraindications_zh": [
+        "曾對 ACE 抑制劑治療產生血管神經性水腫病史",
+        "遺傳性或特發性血管神經性水腫",
+        "糖尿病患者禁止聯合使用阿利吉崙 (aliskiren)"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "-PRIL indicates ACE inhibitor. Think: cough, hyperkalemia, angioedema, and fetal toxicity.",
+      "exam_trap_en": "Dry cough and angioedema are classic ACE inhibitor adverse effects due to bradykinin accumulation; fetal toxicity is a boxed warning.",
+      "exam_trap_zh": "乾咳與血管神經性水腫是 ACEi 因緩激肽積聚導致的經典不良反應；胎兒毒性為黑框警告。",
+      "classic_association_en": "ACE inhibitor (-pril) -> Dry cough & Angioedema & Fetal toxicity boxed warning",
+      "dailymed_setid": "0b58e778-8318-47c3-b4e0-79ea7c89f5bc",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0b58e778-8318-47c3-b4e0-79ea7c89f5bc",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:0b58e778-8318-47c3-b4e0-79ea7c89f5bc#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:0b58e778-8318-47c3-b4e0-79ea7c89f5bc#CONTRAINDICATIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drug.metoprolol",
+      "name_en": "Metoprolol",
+      "name_zh": "美托洛爾",
+      "brand_names_en": [
+        "Lopressor",
+        "Toprol-XL"
+      ],
+      "drugclass_id": "drugclass.beta_blockers",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "rxnorm_rxcui": "6918",
+      "suffix_en": "-olol",
+      "mechanism_en": "Selective beta-1 adrenergic receptor blocker, reducing heart rate, cardiac output, and blood pressure.",
+      "mechanism_zh": "選擇性 beta-1 腎上腺素受體阻斷劑，降低心跳率、心輸出量與血壓。",
+      "indications_en": [
+        "Hypertension",
+        "Angina pectoris",
+        "Heart failure"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "心衰竭"
+      ],
+      "boxed_warning_en": "Ischemic Heart Disease: Abrupt cessation of therapy can exacerbate angina and lead to myocardial infarction. When discontinuing long-term therapy, dosage should be gradually reduced over 1 to 2 weeks.",
+      "boxed_warning_zh": "缺血性心臟病：突發停藥可能加重心絞痛並導致心肌梗塞。長期治療停藥時應在 1 至 2 週內逐漸減量。",
+      "contraindications_en": [
+        "Severe bradycardia",
+        "Second- or third-degree heart block",
+        "Cardiogenic shock",
+        "Sick sinus syndrome",
+        "Overt cardiac failure"
+      ],
+      "contraindications_zh": [
+        "嚴重心跳過緩",
+        "二度或三度房室傳導阻滯",
+        "心源性休克",
+        "病竇症候群",
+        "顯著心臟衰竭"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "-OLOL indicates Beta blocker. Think: bradycardia, bronchospasm risk, masking hypoglycemia, and abrupt withdrawal danger.",
+      "exam_trap_en": "Abrupt withdrawal of metoprolol can trigger severe rebound angina or MI; beta-1 selectivity is lost at higher doses.",
+      "exam_trap_zh": "突發停用美托洛爾可能引發嚴重反彈性心絞痛或心肌梗塞；在高劑量下會失去 beta-1 選擇性。",
+      "classic_association_en": "Beta blocker (-olol) -> Bradycardia & Abrupt withdrawal rebound angina risk",
+      "dailymed_setid": "0d29ae67-f418-4780-b210-91c68f9a2e61",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0d29ae67-f418-4780-b210-91c68f9a2e61",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:0d29ae67-f418-4780-b210-91c68f9a2e61#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:0d29ae67-f418-4780-b210-91c68f9a2e61#CONTRAINDICATIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drug.amlodipine",
+      "name_en": "Amlodipine",
+      "name_zh": "氨氯地平",
+      "brand_names_en": [
+        "Norvasc"
+      ],
+      "drugclass_id": "drugclass.dhp_ccbs",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.l_type_calcium_channel",
+      "rxnorm_rxcui": "17767",
+      "suffix_en": "-dipine",
+      "mechanism_en": "Dihydropyridine calcium channel blocker that inhibits influx of calcium ions into vascular smooth muscle and cardiac muscle, causing peripheral arterial vasodilation.",
+      "mechanism_zh": "二氫吡啶類鈣通道阻斷劑，抑制鈣離子流入血管平滑肌與心肌，引起周邊動脈血管擴張。",
+      "indications_en": [
+        "Hypertension",
+        "Coronary artery disease (chronic stable angina, vasospastic angina)"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "冠狀動脈疾病 (慢性穩定型心絞痛、血管痙攣型心絞痛)"
+      ],
+      "contraindications_en": [
+        "Known sensitivity to amlodipine or any of its components"
+      ],
+      "contraindications_zh": [
+        "對氨氯地平或其任何成分過敏"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "-DIPINE indicates DHP CCB. Think: peripheral edema, flushing, dizziness, and arterial vasodilation.",
+      "exam_trap_en": "DHP CCBs like amlodipine cause peripheral edema and reflex tachycardia rather than heart block (unlike non-DHP verapamil/diltiazem).",
+      "exam_trap_zh": "DHP CCB 如氨氯地平主要造成周邊水腫與反射性心跳過速，而非房室傳導阻滯（與 non-DHP 如 verapamil/diltiazem 不同）。",
+      "classic_association_en": "DHP CCB (-dipine) -> Peripheral edema & Vasodilation",
+      "dailymed_setid": "1e7f603c-8367-4e67-a0c6-3023fb182283",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1e7f603c-8367-4e67-a0c6-3023fb182283",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:1e7f603c-8367-4e67-a0c6-3023fb182283#CONTRAINDICATIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drug.atorvastatin",
+      "name_en": "Atorvastatin",
+      "name_zh": "阿托伐他汀",
+      "brand_names_en": [
+        "Lipitor"
+      ],
+      "drugclass_id": "drugclass.statins",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.hmg_coa_reductase",
+      "rxnorm_rxcui": "83367",
+      "suffix_en": "-vastatin",
+      "mechanism_en": "Selective, competitive inhibitor of HMG-CoA reductase, the rate-limiting enzyme in cholesterol biosynthesis.",
+      "mechanism_zh": "選擇性、競爭性 HMG-CoA 還原酶抑制劑，阻斷膽固醇生物合成的速控酶。",
+      "indications_en": [
+        "Hyperlipidemia",
+        "Prevention of cardiovascular disease in high-risk patients"
+      ],
+      "indications_zh": [
+        "高脂血症",
+        "高風險患者心血管疾病之預防"
+      ],
+      "contraindications_en": [
+        "Active liver disease",
+        "Unexplained persistent elevations of serum transaminases",
+        "Hypersensitivity to any component"
+      ],
+      "contraindications_zh": [
+        "活動性肝臟疾病",
+        "不明原因的持續性血清轉氨酶升高",
+        "對任何成分過敏"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "-VASTATIN indicates Statin. Think: myopathy/rhabdomyolysis, LFT monitoring, and HMG-CoA reductase inhibition.",
+      "exam_trap_en": "Myopathy and rhabdomyolysis risk increases significantly when statins are combined with fibrates, niacin, or strong CYP3A4 inhibitors.",
+      "exam_trap_zh": "當他汀類與纖維酸類 (fibrates)、菸鹼酸或強效 CYP3A4 抑制劑併用時，肌病變與橫紋肌溶解症風險顯著增加。",
+      "classic_association_en": "Statin (-vastatin) -> Myopathy / Rhabdomyolysis risk & LFT elevation",
+      "dailymed_setid": "8a3a2e37-f0b0-4f51-b847-1936c7e16348",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8a3a2e37-f0b0-4f51-b847-1936c7e16348",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:8a3a2e37-f0b0-4f51-b847-1936c7e16348#CONTRAINDICATIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drug.digoxin",
+      "name_en": "Digoxin",
+      "name_zh": "地高辛",
+      "brand_names_en": [
+        "Lanoxin"
+      ],
+      "drugclass_id": "drugclass.cardiac_glycosides",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.na_k_atpase",
+      "rxnorm_rxcui": "3407",
+      "mechanism_en": "Inhibits membrane Na+/K+-ATPase, leading to increased intracellular calcium concentration, positive inotropy, and increased vagal tone.",
+      "mechanism_zh": "抑制細胞膜 Na+/K+-ATPase，導致細胞內鈣離子濃度增加，發揮正性肌力作用並提高迷走神經張力。",
+      "indications_en": [
+        "Heart failure",
+        "Atrial fibrillation rate control"
+      ],
+      "indications_zh": [
+        "心衰竭",
+        "心房顫動心室率控制"
+      ],
+      "contraindications_en": [
+        "Ventricular fibrillation",
+        "Known hypersensitivity to digoxin"
+      ],
+      "contraindications_zh": [
+        "心室顫動",
+        "對地高辛過敏"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Digoxin = Narrow therapeutic index + Yellow-green visual halos + Hypokalemia exacerbates toxicity.",
+      "exam_trap_en": "Hypokalemia (e.g. from loop or thiazide diuretics) increases digoxin binding to Na+/K+-ATPase and markedly enhances digoxin toxicity.",
+      "exam_trap_zh": "低血鉀（如來自袢利尿劑或 thiazide）會增加地高辛與 Na+/K+-ATPase 的結合，顯著增強地高辛毒性。",
+      "classic_association_en": "Digoxin -> Narrow therapeutic index & Visual halos & Hypokalemia toxicity trap",
+      "dailymed_setid": "8e3768b4-82a1-4328-98e3-471ffb471412",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8e3768b4-82a1-4328-98e3-471ffb471412",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:8e3768b4-82a1-4328-98e3-471ffb471412#CONTRAINDICATIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
     }
   ]
 }

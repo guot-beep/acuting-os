@@ -109,6 +109,51 @@
       "description_zh": "偶聯 G 蛋白受體，介導血管收縮與醛固酮釋放。",
       "review_status": "draft",
       "authored_by": "v7_ingestion_pilot"
+    },
+    {
+      "id": "drugtarget.ace",
+      "name_en": "Angiotensin-converting enzyme (ACE)",
+      "name_zh": "血管緊張素轉換酶",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "enzyme",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.beta1_adrenergic",
+      "name_en": "Beta-1 adrenergic receptor",
+      "name_zh": "Beta-1 腎上腺素受體",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "receptor",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.l_type_calcium_channel",
+      "name_en": "L-type voltage-gated calcium channel",
+      "name_zh": "L 型電位依存性鈣離子通道",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "ion_channel",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.hmg_coa_reductase",
+      "name_en": "HMG-CoA reductase",
+      "name_zh": "HMG-CoA 還原酶",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "enzyme",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.na_k_atpase",
+      "name_en": "Sodium-potassium adenosine triphosphatase (Na+/K+-ATPase)",
+      "name_zh": "鈉鉀三磷酸腺苷酶 (Na+/K+-ATPase)",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "transporter_pump",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
     }
   ]
 }

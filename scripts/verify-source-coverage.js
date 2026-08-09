@@ -4,7 +4,28 @@ const crypto = require('crypto');
 
 const manifestPath = 'data/pharmacology/v7_source_manifest.json';
 const f02Path = 'curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md';
+const f03Path = 'curriculum/pharm/v7_extracted/03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md';
 const f15Path = 'curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md';
+
+const all15DrugIds = [
+  // Pilot 1 (7 drugs)
+  'drug.warfarin',
+  'drug.apixaban',
+  'drug.clopidogrel',
+  'drug.aspirin',
+  'drug.enoxaparin',
+  'drug.losartan',
+  'drug.hydrochlorothiazide',
+  // Batch 2 (8 drugs)
+  'drug.rivaroxaban',
+  'drug.lisinopril',
+  'drug.metoprolol',
+  'drug.amlodipine',
+  'drug.atorvastatin',
+  'drug.digoxin',
+  'drug.furosemide',
+  'drug.spironolactone'
+];
 
 function normalizeText(str) {
   if (!str) return '';
@@ -64,10 +85,18 @@ function verifySourceManifest() {
   return { passed: true, manifest, results };
 }
 
+function getSourceFilePathForDrug(drugId) {
+  if (drugId === 'drug.losartan' || drugId === 'drug.hydrochlorothiazide') {
+    return f15Path;
+  }
+  if (['drug.lisinopril', 'drug.metoprolol', 'drug.amlodipine', 'drug.atorvastatin', 'drug.digoxin', 'drug.furosemide', 'drug.spironolactone'].includes(drugId)) {
+    return f03Path;
+  }
+  return f02Path;
+}
+
 function extractSourceMedicalFacts(drugId) {
-  const filePath = (drugId === 'drug.losartan' || drugId === 'drug.hydrochlorothiazide') 
-    ? f15Path
-    : f02Path;
+  const filePath = getSourceFilePathForDrug(drugId);
 
   if (!fs.existsSync(filePath)) {
     throw new Error(`Local source file not found: ${filePath}. Please unzip curriculum/pharm/AcuTing_Pharm_Master_Extraction_v7.zip into curriculum/pharm/v7_extracted/`);
@@ -174,16 +203,6 @@ function extractSourceMedicalFacts(drugId) {
   return items;
 }
 
-const pilotIds = [
-  'drug.warfarin',
-  'drug.apixaban',
-  'drug.clopidogrel',
-  'drug.aspirin',
-  'drug.enoxaparin',
-  'drug.losartan',
-  'drug.hydrochlorothiazide'
-];
-
 function runSourceCoverageVerification() {
   const manifestVerification = verifySourceManifest();
   if (!manifestVerification.passed) {
@@ -227,7 +246,7 @@ function runSourceCoverageVerification() {
 
   const matchedLedgerIds = new Set();
 
-  pilotIds.forEach(drugId => {
+  all15DrugIds.forEach(drugId => {
     const extractedItems = extractSourceMedicalFacts(drugId);
     let matchedCount = 0;
     let missingCount = 0;
@@ -280,11 +299,15 @@ function runSourceCoverageVerification() {
 
 if (require.main === module) {
   console.log('====================================================');
-  console.log('INDEPENDENT SOURCE-TO-LEDGER COVERAGE VERIFIER');
+  console.log('INDEPENDENT SOURCE-TO-LEDGER COVERAGE VERIFIER (15 DRUGS)');
   console.log('====================================================');
   const rep = runSourceCoverageVerification();
   if (!rep.passed) {
     console.error(`\nFATAL: Verification failed! Reason: ${rep.reason || 'Coverage incomplete'}`);
+    if (rep.missingItems.length > 0) {
+      console.log('\n--- MISSING ITEMS FROM LEDGER ---');
+      rep.missingItems.forEach(m => console.log(`[${m.drugId}] (${m.item.source_section}) -> "${m.item.source_text}"`));
+    }
     process.exit(1);
   }
 
@@ -300,4 +323,4 @@ if (require.main === module) {
   console.log('====================================================');
 }
 
-module.exports = { runSourceCoverageVerification, verifySourceManifest, extractSourceMedicalFacts, normalizeText };
+module.exports = { runSourceCoverageVerification, verifySourceManifest, extractSourceMedicalFacts, normalizeText, all15DrugIds };

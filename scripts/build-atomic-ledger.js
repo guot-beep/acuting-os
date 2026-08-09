@@ -1,34 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { extractSourceMedicalFacts } = require('./verify-source-coverage');
-
-function normalizeText(str) {
-  if (!str) return '';
-  return str
-    .replace(/\*\*/g, '')
-    .replace(/\*/g, '')
-    .replace(/__/g, '')
-    .replace(/`/g, '')
-    .replace(/^[-+*]\s+/, '')
-    .replace(/^\d+\.\s+/, '')
-    .replace(/”/g, '"')
-    .replace(/“/g, '"')
-    .replace(/’/g, "'")
-    .replace(/→/g, '->')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-const pilotIds = [
-  'drug.warfarin',
-  'drug.apixaban',
-  'drug.clopidogrel',
-  'drug.aspirin',
-  'drug.enoxaparin',
-  'drug.losartan',
-  'drug.hydrochlorothiazide'
-];
+const { extractSourceMedicalFacts, normalizeText, all15DrugIds } = require('./verify-source-coverage');
 
 function getSectionCode(sec) {
   const normSec = sec.toLowerCase();
@@ -68,7 +41,7 @@ function determineDispositionAndFields(drugId, srcItem) {
     return { disposition: 'staging', canonical_field: null, staging_field: 'source_declared_flags' };
   }
 
-  // Drug-specific canonical rules
+  // Pilot 1 rules
   if (drugId === 'drug.warfarin') {
     if (norm === 'Vitamin K antagonist.') return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
     if (norm.includes('Narrow therapeutic window; INR monitoring')) return { disposition: 'canonical', canonical_field: 'classic_association_en', staging_field: null };
@@ -152,6 +125,72 @@ function determineDispositionAndFields(drugId, srcItem) {
     if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8c868894-667e-4a51-906a-838d63e420ba')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
   }
 
+  // Batch 2 canonical rules
+  if (drugId === 'drug.rivaroxaban') {
+    if (norm.includes('-xaban -> factor Xa inhibitor.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Direct factor Xa inhibitor.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Stroke prevention in nonvalvular AF; DVT/PE treatment and prophylaxis.')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Current label has boxed warnings for premature discontinuation')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=481b7802-5093-43e7-bbd9-1532197eb6e6')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.lisinopril') {
+    if (norm.includes('-pril -> ACE inhibitor.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Inhibits ACE (angiotensin-converting enzyme).')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Think: hypertension, heart failure, post-MI context.')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Current label has a boxed warning for fetal toxicity.')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('Dry cough & angioedema are classic exam topics.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0b58e778-8318-47c3-b4e0-79ea7c89f5bc')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.metoprolol') {
+    if (norm.includes('-olol -> beta-blocker.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Selective beta-1 adrenergic receptor blocker.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Think: hypertension, angina, heart failure, post-MI.')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Current label has a boxed warning against abrupt cessation')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('Bradycardia & masking hypoglycemia signs.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0d29ae67-f418-4780-b210-91c68f9a2e61')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.amlodipine') {
+    if (norm.includes('-dipine -> dihydropyridine CCB.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Dihydropyridine calcium channel blocker.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Think: hypertension, chronic stable angina, vasospastic angina.')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Peripheral edema is the key classic adverse effect.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1e7f603c-8367-4e67-a0c6-3023fb182283')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.atorvastatin') {
+    if (norm.includes('-vastatin -> statin (HMG-CoA reductase inhibitor).')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Competitive inhibition of HMG-CoA reductase.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Think: hyperlipidemia, cardiovascular event risk reduction.')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Myopathy/rhabdomyolysis & LFT monitoring.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8a3a2e37-f0b0-4f51-b847-1936c7e16348')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.digoxin') {
+    if (norm.includes('Cardiac glycoside.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Inhibits Na+/K+-ATPase pump.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Think: heart failure, atrial fibrillation rate control.')) return { disposition: 'canonical', canonical_field: 'indications_en', staging_field: null };
+    if (norm.includes('Narrow therapeutic window; visual halos & hypokalemia toxicity trap.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8e3768b4-82a1-4328-98e3-471ffb471412')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.furosemide') {
+    if (norm.includes('Loop diuretic.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Fast & Furious in the Loop.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Inhibits NKCC2 in thick ascending limb.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('Hypokalemia & ototoxicity risk.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+    if (norm.includes('Current label has a boxed warning for profound diuresis')) return { disposition: 'canonical', canonical_field: 'boxed_warning_en', staging_field: null };
+    if (norm.includes('https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7cdcd001-ab4b-4210-a455-2e17a7bc4972')) return { disposition: 'canonical', canonical_field: 'dailymed_url', staging_field: null };
+  }
+
+  if (drugId === 'drug.spironolactone') {
+    if (norm.includes('Potassium-sparing diuretic / aldosterone antagonist.')) return { disposition: 'canonical', canonical_field: 'mechanism_en', staging_field: null };
+    if (norm.includes('-actone -> potassium-sparing.')) return { disposition: 'canonical', canonical_field: 'mnemonic_en', staging_field: null };
+    if (norm.includes('Hyperkalemia & gynecomastia risk.')) return { disposition: 'canonical', canonical_field: 'exam_trap_en', staging_field: null };
+  }
+
   // Default to staging
   const stagingField = sec.includes('Flags') ? 'source_declared_flags' : (sec.includes('BOARD') || sec.includes('Official') ? 'source_board_items' : 'source_clinical_impact_statements');
   return { disposition: 'staging', canonical_field: null, staging_field: stagingField };
@@ -159,9 +198,9 @@ function determineDispositionAndFields(drugId, srcItem) {
 
 function buildFullAtomicLedger() {
   const ledger = [];
-  const seenHashes = new Map();
+  const seenHashes = new Map(); // itemId -> { drugId, normSec, normText, count }
 
-  pilotIds.forEach(drugId => {
+  all15DrugIds.forEach(drugId => {
     const rawFacts = extractSourceMedicalFacts(drugId);
     const prefix = drugId.replace('drug.', '');
 
@@ -173,14 +212,20 @@ function buildFullAtomicLedger() {
       const hashInput = `${drugId}|${normSec}|${normText}`;
       const fullHash = crypto.createHash('sha256').update(hashInput).digest('hex').slice(0, 8);
 
-      let itemId = `${prefix}.${secCode}.${fullHash}`;
+      const baseItemId = `${prefix}.${secCode}.${fullHash}`;
 
-      if (seenHashes.has(itemId)) {
-        const count = seenHashes.get(itemId) + 1;
-        seenHashes.set(itemId, count);
-        itemId = `${itemId}_${count}`;
+      let itemId = baseItemId;
+      if (seenHashes.has(baseItemId)) {
+        const existing = seenHashes.get(baseItemId);
+        // Check if true hash collision (different input text producing same hash)
+        if (existing.drugId !== drugId || existing.normSec !== normSec || existing.normText !== normText) {
+          throw new Error(`FATAL HASH COLLISION DETECTED! Base ID ${baseItemId} collided between different inputs!`);
+        }
+        // Legitimate duplicate occurrence in same section
+        existing.count += 1;
+        itemId = `${baseItemId}_${existing.count}`;
       } else {
-        seenHashes.set(itemId, 1);
+        seenHashes.set(baseItemId, { drugId, normSec, normText, count: 1 });
       }
 
       const itemType = src.source_section.toLowerCase().replace(/[^a-z0-9]+/g, '_');
@@ -229,11 +274,25 @@ function buildFullAtomicLedger() {
       flag: 'injection_site_bruising',
       derived: true,
       reason: 'Inferred from injection-site review note in acupuncture relevance section.'
+    },
+    {
+      derived_item_id: 'derived.flag.lisinopril.bradykinin_cough_relevance',
+      drug_id: 'drug.lisinopril',
+      flag: 'bradykinin_cough_relevance',
+      derived: true,
+      reason: 'Inferred from dry cough adverse effect notes in source narrative.'
+    },
+    {
+      derived_item_id: 'derived.flag.metoprolol.rebound_angina_warning',
+      drug_id: 'drug.metoprolol',
+      flag: 'rebound_angina_warning',
+      derived: true,
+      reason: 'Inferred from abrupt cessation boxed warning in source narrative.'
     }
   ];
 
   const stagingStore = {
-    purpose: 'Formal 1:1 Content-Hashed Atomic Provenance Ledger for Pilot 1 (7 drugs). Every extracted source atomic item has a stable content-hashed source_item_id and exactly one primary disposition.',
+    purpose: 'Formal 1:1 Content-Hashed Atomic Provenance Ledger for Pilot 1 + Batch 2 (15 drugs). Every extracted source atomic item has a stable content-hashed source_item_id and exactly one primary disposition.',
     audited_at: '2026-08-09',
     schema_mode: 'stable_content_hashed_atomic_ledger_v4',
     disposition_definitions: {
@@ -248,7 +307,7 @@ function buildFullAtomicLedger() {
   };
 
   fs.writeFileSync('data/pharmacology/staging_v7_ingestion.json', JSON.stringify(stagingStore, null, 2) + '\n');
-  console.log(`Successfully generated stable content-hashed atomic provenance ledger with ${ledger.length} items!`);
+  console.log(`Successfully generated stable content-hashed atomic provenance ledger with ${ledger.length} items across 15 drugs!`);
 }
 
 if (require.main === module) {

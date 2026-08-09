@@ -1,14 +1,17 @@
-# 2026-08-09 Antigravity — Pipeline Hardening: Source Manifest & Content-Hashed Stable IDs (7 drugs)
+# 2026-08-09 Antigravity — Pharmacology Batch 2 Ingestion (8 drugs) & Pipeline Verification
 
-- **做了什麼**：完成 Pilot 1 的兩項 Pipeline 硬化機制：
-  1. **來源可再現性與 Manifest**：明確記錄 `curriculum/pharm/v7_extracted/` 原始 Markdown 為本機解壓之專屬教材檔（Local-only unzipped study pack），未 commit 至 Git 歷史以維護教材授權與隱私；建立 `data/pharmacology/v7_source_manifest.json` 清單（含檔名、SHA-256、byte size、原子項目數、`tracked_in_repo: false` 與本機備置要求）；於 `scripts/verify-source-coverage.js` 實作 SHA-256 計算與飄移防護，原始檔缺失或內容變更即強制中斷。
-  2. **穩定內容哈希 ID**：淘汰原有的全域流水號 ID 策略，全面改用與位置無關的內容哈希穩定 ID 格式 `${drug}.${section}.${hash8}`（基於 SHA-256(`drug_id|section|normText`)）；若同一段落出現完全相同的重複事實，則加註 `_1`, `_2` 防碰撞。即使原始 Bullet 順序調整，相同事實之 ID 保持 100% 穩定不變。
-- **雙重審核結果**：
-  1. **Manifest 與飄移防護**：SHA-256 驗證通過；模擬竄改測試證明單位元組修改成功觸發 `SOURCE_DRIFT_SHA` 強制退回。
-  2. **內部帳簿對帳**：`TOTAL UNIQUE SOURCE_ITEM_ID (144) = canonical (72) + staging (68) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`，公式 100% 平衡。
-  3. **獨立來源覆蓋**：抽取 v7 原始原子級項目 `144` 項，Ledger 匹配 `144` 項，**Missing = 0**, **Not Found = 0**, **Duplicate = 0**。所有 144 項 100% 保留覆蓋。
-- **驗證**：`node scripts/verify-source-coverage.js` PASS、`node scripts/audit-atomic-ledger.js` 雙審核 PASS、`validate-pharm-standard.js --worklist` PASS、`build-data.js` PASS、`validate-interactions.js` PASS（107 IDs）、`git diff --check` PASS；本機 dev-server http://127.0.0.1:8361 正常運行。
-- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未修改 canonical `drugs.json`；未擴充 canonical schema。
+- **做了什麼**：
+  1. **Sync 與 Preflight 修正**：成功 rebase `origin/codex/pattern-v2` 至 `197b423`（保留 Sonnet 臨床與 SOAP 成果）；更新聲明為專案/來源包 policy ("Project/source-pack policy for this pharmacology ingestion keeps these raw course-derived extraction files local-only")；commit 確定性飄移測試腳本 `scripts/test-source-drift-simulation.js`；新增真哈希碰撞斷言 (`throw Error`)。
+  2. **Manifest 擴充**：加入 `03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md` (SHA-256 `c086...f743`, 126 items) 並納入 `drug.rivaroxaban` (10 items)，Manifest 涵蓋 3 大原始 Markdown 檔案與 15 筆藥物。
+  3. **Batch 2 藥物匯入 (8 筆)**：
+     - 豐富既有 3 筆：`drug.rivaroxaban`, `drug.furosemide`, `drug.spironolactone`（增量豐富，完整保留 DailyMed 官方標籤與既有豐富欄位）。
+     - 新建 5 筆：`drug.lisinopril`, `drug.metoprolol`, `drug.amlodipine`, `drug.atorvastatin`, `drug.digoxin`（明確分類與 RxCUI；Metoprolol 保持成分層級，產品/劑型特異細節妥善保留於 Staging）。
+     - 分類拓樸新增 5 筆 L3 class（`ace_inhibitors`, `beta_blockers`, `dhp_ccbs`, `statins`, `cardiac_glycosides`）與 5 筆 L2 target。Canonical 藥物數由 16 筆增至 21 筆。
+- **帳簿對帳與雙重審核結果**：
+  1. **內部帳簿對帳**：`TOTAL UNIQUE SOURCE_ITEM_ID (280) = canonical (90) + staging (186) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`，100% 嚴格平衡。
+  2. **獨立來源覆蓋**：抽取 15 筆藥物之原子級醫學事實 `280` 項，Ledger 匹配 `280` 項，**Missing = 0**, **Not Found = 0**, **Duplicate = 0**。**LOST = 0 經雙重審核無誤**。
+- **驗證**：`verify-source-coverage.js` PASS (280 items, 100%)、`audit-atomic-ledger.js` 雙審核 PASS、`test-source-drift-simulation.js` PASS、`validate-pharm-standard.js --worklist` PASS (21 drugs, 17 classes, 0 blocking)、`build-data.js` PASS、`validate-interactions.js` PASS (108 IDs)、`git diff --check` PASS；Browser QA 模擬與 dev-server (http://127.0.0.1:8361/#ws/pharm) 正常運行，卡片搜尋、分類篩選、DailyMed 連結與 SOAP 藥物關聯皆正常。
+- **已知未解／STOP**：依據 Ting 指令，停止於 Batch 2 (8 筆藥物)，未開始 P3；未新增未經批准之 canonical 欄位。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 

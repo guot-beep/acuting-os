@@ -1,10 +1,10 @@
 {
-  "manifest_version": "1.0",
+  "manifest_version": "1.1",
   "created_at": "2026-08-09",
-  "scope": "Pilot 1 (7 drugs: drug.warfarin, drug.apixaban, drug.clopidogrel, drug.aspirin, drug.enoxaparin, drug.losartan, drug.hydrochlorothiazide)",
+  "scope": "Pilot 1 + Batch 2 (15 drugs: drug.warfarin, drug.apixaban, drug.clopidogrel, drug.aspirin, drug.enoxaparin, drug.losartan, drug.hydrochlorothiazide, drug.rivaroxaban, drug.lisinopril, drug.metoprolol, drug.amlodipine, drug.atorvastatin, drug.digoxin, drug.furosemide, drug.spironolactone)",
   "repository_policy": {
     "tracked_in_repo": false,
-    "policy_description": "Raw TCM curriculum Markdown files in curriculum/pharm/v7_extracted/ are extracted working materials from AcuTing_Pharm_Master_Extraction_v7.zip. They contain unreleased study materials and are kept local-only / untracked in git to preserve content licensing & privacy.",
+    "policy_description": "Project/source-pack policy for this pharmacology ingestion keeps these raw course-derived extraction files local-only. Raw TCM curriculum Markdown files in curriculum/pharm/v7_extracted/ are extracted working materials from AcuTing_Pharm_Master_Extraction_v7.zip.",
     "reproducibility_note": "A clean git clone alone will not contain the raw v7 extracted Markdown files. Independent source coverage verification requires unzipping curriculum/pharm/AcuTing_Pharm_Master_Extraction_v7.zip into curriculum/pharm/v7_extracted/ locally."
   },
   "sources": [
@@ -17,9 +17,27 @@
         "drug.apixaban",
         "drug.clopidogrel",
         "drug.aspirin",
-        "drug.enoxaparin"
+        "drug.enoxaparin",
+        "drug.rivaroxaban"
       ],
-      "extracted_atomic_item_count": 105,
+      "extracted_atomic_item_count": 115,
+      "tracked_in_repo": false,
+      "source_availability_requirement": "Unzip curriculum/pharm/AcuTing_Pharm_Master_Extraction_v7.zip into curriculum/pharm/v7_extracted/"
+    },
+    {
+      "logical_source_path": "curriculum/pharm/v7_extracted/03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md",
+      "sha256": "c0867d38cda5a28871ef11b487b78dec5bc59c7b0fde710b22c941185972f743",
+      "byte_size": 10289,
+      "in_scope_drugs": [
+        "drug.lisinopril",
+        "drug.metoprolol",
+        "drug.amlodipine",
+        "drug.atorvastatin",
+        "drug.digoxin",
+        "drug.furosemide",
+        "drug.spironolactone"
+      ],
+      "extracted_atomic_item_count": 126,
       "tracked_in_repo": false,
       "source_availability_requirement": "Unzip curriculum/pharm/AcuTing_Pharm_Master_Extraction_v7.zip into curriculum/pharm/v7_extracted/"
     },
