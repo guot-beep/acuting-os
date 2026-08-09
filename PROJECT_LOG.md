@@ -1,10 +1,12 @@
-# 2026-08-09 Antigravity — Sync + Pharmacology router fix
+# 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 
-- **做了什麼**：將本地 `pattern-v2-implementation` 從 `55c2a42` fast-forward 到 `origin/codex/pattern-v2` 的 `63f0896`（+72 files, 48K 行）；重新 `build-data.js`；診斷並修復西藥（Pharmacology）頁面無法顯示的問題。
-- **數字 before→after**：local HEAD `55c2a42→63f0896→a0a850d`（修復 commit）；`router.js` WORKSPACES 陣列 `10→11` entries。
-- **Pharmacology 根因**：`js/router.js` 第 18 行 WORKSPACES 白名單缺少 `"pharm"`，導致 `#ws/pharm` 永遠 fallback 到 home。index.html 的 `<section data-workspace="pharm">` 與 nav `data-ws="pharm"` 都存在，但 router 從未放行。
-- **驗證**：`validate-interactions.js` 通過（0 warnings/0 failures）、`git diff --check` 通過；dev-server 已運行於 :8361。
-- **已知未解**：`#pharmRecords` 容器目前為空——pharm workspace 的藥物卡片渲染器尚未實作（`knowledge.js` 沒有對應的 host binding），這是功能待建，不是 bug。
+- **做了什麼**：將 `pattern-v2-implementation` rebase 同步至 `origin/codex/pattern-v2` 最新 commit `8ecc96b`（含 Last Visit at a Glance）；保留並完修西藥（Pharmacology）頁面：於 `js/router.js` 加入 `pharm` 工作區，並在 `js/knowledge.js` 實作簡潔的 Pharmacology list/card 渲染器與藥物分類篩選 / 關鍵字搜尋。
+- **數字 before→after**：local HEAD `ddbb6cc` → rebase `8ecc96b` + 3 repair commits (`d547f60` router fix, `f5793ad` pharm renderer, 本 log commit)；西藥卡片可選/可搜尋渲染數量：`0` → `15` 筆 (`pharmDrugs`)，藥物分類 `11` 類 (`pharmDrugClasses`)。
+- **Pharmacology 修復詳情**：
+  1. 路由：`js/router.js` 第 18 行 `WORKSPACES` 補上 `"pharm"`。
+  2. 渲染：`js/knowledge.js` 於 `#pharmRecords` 實作 `renderPharmCards()`，從 `globalThis.ACUTING_KNOWLEDGE.pharmDrugs` 渲染 15 張藥物卡片（包含英文/中文名、商品名、分類名、機轉、適應症、黑框警告、禁忌症、考點提示、DailyMed 連結），並支援分類下拉選單與搜尋列。
+- **驗證**：`validate-interactions.js` 通過（107 IDs, 0 warnings/0 failures）、`node -c js/knowledge.js` 通過、`git diff --check` 通過；本機 dev-server 運行於 http://127.0.0.1:8361。
+- **已知未解／下一步**：無。西藥頁面已可手動 QA 與導覽。未進行大卡片重設計或新藥物資料填寫。
 
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
