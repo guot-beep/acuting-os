@@ -1565,35 +1565,51 @@
     return String(value).split("||").map(categoryModeLabel).join(" / ");
   }
 
-  function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn, descMap) {
+  function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn, descMap, classResolver) {
     const container = el(containerId);
     const select = el(selectId);
     if (!container || !select) return;
 
-    const zhOf = (raw) => String(raw).split("/")[0].trim();
-    const enOf = (raw) => String(raw).split("/").slice(1).join("/").trim();
-
     const counts = new Map();
     records.forEach((r) => { const c = categoryFn(r); if (c) counts.set(c, (counts.get(c) || 0) + 1); });
 
-    // group raw labels by 中文 name; merge when English suffixes don't disagree
-    const groups = new Map();
-    for (const raw of counts.keys()) {
-      const zh = zhOf(raw);
-      if (!groups.has(zh)) groups.set(zh, []);
-      groups.get(zh).push(raw);
-    }
     const chips = [];
-    for (const [zh, raws] of groups) {
-      const ens = [...new Set(raws.map(enOf).filter(Boolean))];
-      if (ens.length <= 1) {
-        chips.push({
-          value: raws.join("||"),
-          zh, en: ens[0] || "",
-          count: raws.reduce((s, r) => s + counts.get(r), 0)
-        });
-      } else {
-        raws.forEach((raw) => chips.push({ value: raw, zh, en: enOf(raw), count: counts.get(raw) }));
+    if (classResolver) {
+      for (const [raw, count] of counts.entries()) {
+        const resolved = classResolver(raw);
+        let zh = "";
+        let en = "";
+        if (!resolved || (!resolved.name_zh && !resolved.name_en)) {
+          console.error(`[DATA INTEGRITY DEFECT] Drug Class "${raw}" has no resolvable name_zh or name_en in drug_classes.json!`);
+          zh = `[DATA INTEGRITY DEFECT: ${raw}]`;
+          en = "";
+        } else {
+          zh = resolved.name_zh || "";
+          en = resolved.name_en || "";
+        }
+        chips.push({ value: raw, zh, en, count });
+      }
+    } else {
+      // group raw labels by 中文 name; merge when English suffixes don't disagree
+      const zhOf = (raw) => String(raw).split("/")[0].trim();
+      const enOf = (raw) => String(raw).split("/").slice(1).join("/").trim();
+      const groups = new Map();
+      for (const raw of counts.keys()) {
+        const zh = zhOf(raw);
+        if (!groups.has(zh)) groups.set(zh, []);
+        groups.get(zh).push(raw);
+      }
+      for (const [zh, raws] of groups) {
+        const ens = [...new Set(raws.map(enOf).filter(Boolean))];
+        if (ens.length <= 1) {
+          chips.push({
+            value: raws.join("||"),
+            zh, en: ens[0] || "",
+            count: raws.reduce((s, r) => s + counts.get(r), 0)
+          });
+        } else {
+          raws.forEach((raw) => chips.push({ value: raw, zh, en: enOf(raw), count: counts.get(raw) }));
+        }
       }
     }
     chips.sort((a, b) => b.count - a.count || a.zh.localeCompare(b.zh));
@@ -1926,7 +1942,14 @@
     const pharmClassById = new Map(pharmClasses.map((c) => [c.id, c]));
     const pharmClassName = (d) => {
       const cls = pharmClassById.get(d.drugclass_id);
-      return cls ? displayLabel(cls.name_zh, cls.name_en, d.drugclass_id) : (d.drugclass_id || "");
+      if (!cls || (!cls.name_zh && !cls.name_en)) {
+        console.error(`[DATA INTEGRITY DEFECT] Drug "${d.id}" references unresolvable drugclass_id "${d.drugclass_id}"`);
+        return `[DATA INTEGRITY DEFECT: ${d.drugclass_id}]`;
+      }
+      return modeText(
+        cls.name_zh ? `${cls.name_zh}${cls.name_en ? ` (${cls.name_en})` : ""}` : cls.name_en,
+        cls.name_en ? `${cls.name_en}${cls.name_zh ? ` (${cls.name_zh})` : ""}` : cls.name_zh
+      );
     };
     const pharmClassCategories = [...new Set(pharmDrugs.map((d) => d.drugclass_id).filter(Boolean))].sort();
 
@@ -1966,7 +1989,11 @@
           <option value="">All classes</option>
           ${pharmClassCategories.map((cid) => {
             const cls = pharmClassById.get(cid);
-            const label = cls ? displayLabel(cls.name_zh, cls.name_en, cid) : cid;
+            if (!cls || (!cls.name_zh && !cls.name_en)) {
+              console.error(`[DATA INTEGRITY DEFECT] Unresolved drug class ID: ${cid}`);
+              return `<option value="${esc(cid)}">[DATA INTEGRITY DEFECT: ${esc(cid)}]</option>`;
+            }
+            const label = `${cls.name_zh || ""}${cls.name_en ? ` (${cls.name_en})` : ""}`;
             return `<option value="${esc(cid)}">${esc(label)}</option>`;
           }).join("")}
         </select>
@@ -1998,17 +2025,37 @@
         return classHit && (!q || text.includes(q));
       });
       const summary = el("pharmCategorySummary");
-      if (summary) summary.textContent = `${categorySummaryLabel(classId)} · ${hit.length}`;
+      if (summary) {
+        let label = "";
+        if (!classId) {
+          label = modeText("全部 All", "All");
+        } else {
+          const cls = pharmClassById.get(classId);
+          if (!cls || (!cls.name_zh && !cls.name_en)) {
+            console.error(`[DATA INTEGRITY DEFECT] Unresolved classId in summary: ${classId}`);
+            label = `[DATA INTEGRITY DEFECT: ${classId}]`;
+          } else {
+            label = modeText(
+              cls.name_zh ? `${cls.name_zh}${cls.name_en ? ` (${cls.name_en})` : ""}` : cls.name_en,
+              cls.name_en ? `${cls.name_en}${cls.name_zh ? ` (${cls.name_zh})` : ""}` : cls.name_zh
+            );
+          }
+        }
+        summary.textContent = `${label} · ${hit.length}`;
+      }
       el("pharmGrid").innerHTML = renderPharmCards(hit) || `<p class="k-missing">${esc(modeText("沒有符合的西藥 / No matching medications.", "No matching medications."))}</p>`;
     };
     el("pharmFilter").addEventListener("input", updatePharmGrid);
     el("pharmCategoryFilter").addEventListener("change", updatePharmGrid);
     document.addEventListener("acuting:content-mode", updatePharmGrid);
-    buildCategoryChips("pharmCatChips", "pharmCategoryFilter", pharmDrugs, (d) => d.drugclass_id, updatePharmGrid,
-      Object.fromEntries(pharmClassCategories.map((cid) => {
-        const cls = pharmClassById.get(cid);
-        return [cid, cls ? displayLabel(cls.name_zh, cls.name_en, cid) : cid];
-      }))
+    buildCategoryChips(
+      "pharmCatChips",
+      "pharmCategoryFilter",
+      pharmDrugs,
+      (d) => d.drugclass_id,
+      updatePharmGrid,
+      null,
+      (cid) => pharmClassById.get(cid)
     );
 
     let pharmLangMode = "zh";

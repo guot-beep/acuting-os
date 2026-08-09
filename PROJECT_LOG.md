@@ -1,5 +1,21 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Pharmacology Class Filter Canonical Label Resolution & Data Defect Guard
+- **What was done:** Enforced strict canonical label resolution for Pharmacology Class Filters in UI renderer and validator. Raw canonical IDs (e.g., drugclass.loop_diuretics) are never displayed to users. Class filters resolve through data/pharmacology/drug_classes.json rendering Chinese primary label on first line, English secondary label on second line, and count badge on right. Unresolvable class references report [DATA INTEGRITY DEFECT: id] rather than prettifying raw slugs. Added class name integrity check in validate-pharm-standard.js.
+- **Numbers (before -> after):**
+  - Displayed raw class slugs in UI filter: >0 -> 0 (100% resolved through drug_classes.json).
+  - Data integrity defect reporting for unresolvable class IDs: Active in validator and UI.
+- **Verification Results:**
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** None.
+- **Next Step:** PHARMACOLOGY CONTENT INGESTION BATCH 3 (Awaiting user authorization).
+
 ## 2026-08-09 Antigravity — Pharmacology Master Card Architecture & Big Card UI Framework
 - **What was done:** Implemented complete Pharmacology Master Card schema & renderer framework in AcuTing OS. Extended drugs.json and drug_classes.json schema to support Identity (Rx/OTC, schedule), Core Pharmacology (PK/PD), Clinical Uses, Safety (boxed warning, CI, warnings, adverse, populations), Graded Drug/Herb Interactions, Integrative Clinical Flags (bleeding risk, bradycardia, etc.), and Board Exam High-Yield Layer (mnemonics, traps, classic associations). Built Pharmacology Drug Detail Big Card Modal (openPharmBigCardModal) & Drug Class Big Card Modal (openPharmClassModal) with bilingual ZH/EN support in js/knowledge.js. Populated 3 reference implementation cards (drug.metoprolol, drug.warfarin, drug.lisinopril) and 2 reference class cards (drugclass.beta1_selective_blockers, drugclass.ace_inhibitors).
 - **Numbers (before -> after):**

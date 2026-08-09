@@ -142,6 +142,12 @@ function main() {
         defects.push(`P1 ${where}: id 不符 ${ID_PATTERNS[kind]}`);
       }
 
+      if (kind === 'classes') {
+        if (!len(r.name_zh) || !len(r.name_en)) {
+          defects.push(`P2 ${where}: 缺必要名稱 name_zh 或 name_en —— 藥物分類必須具備中英文雙語名稱`);
+        }
+      }
+
       if (kind !== 'drugs') return;
 
       // P2 — required identity fields
