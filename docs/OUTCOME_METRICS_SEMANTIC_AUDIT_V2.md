@@ -88,11 +88,27 @@ Config shape in use today:
 
 ## 3. Special semantic questions, answered from the actual vocabulary
 
+**A note on what `unit` does and doesn't prove (correction, 2026-08).** An
+earlier version of this section repeatedly read `unit` as if it settled
+integer-vs-decimal by itself. It doesn't. `unit` is a reliable vocabulary
+fact for the *kind and range of quantity* — that `"0-10"` is a bounded
+0–10 scale, that `"minutes"`/`"days"` is a duration, that `"mm"` is a
+physical measurement. Whether values within that shape must be whole
+numbers or may carry decimals is a separate call, not encoded in the unit
+string itself — `"days"` alone doesn't forbid decimals and `"mm"` alone
+doesn't require them. Below, where an answer says a range or quantity kind
+is "confirmed by `unit`," that confirms the vocabulary fact only; the
+accompanying integer/decimal choice is stated as an explicit AcuTing
+clinical/UI convention layered on top, for the reason given in each case.
+This note changes no classification — every type/int-or-decimal/min/max
+call in §2 and the recommendation in §8 are unchanged; only how they're
+justified below is corrected.
+
 **1–5. Are sleep_quality, stress_level, mood, energy_level, bloating all truly 0–10 scales?**
-Yes, confirmed directly from each record's `unit` field (`"0-10"`, not inherited from the prior report). All five also have a defined `direction_good` (increase/decrease, never "individualized"), meaning — unlike sleep_hours or bowel_frequency — there's a universal "which way is better" for these, same shape as `pain_score` exactly. No correction needed here; the earlier report's assumption on this specific group happened to be right.
+Yes — the 0–10 range itself is confirmed directly from each record's `unit` field (`"0-10"`, not inherited from the prior report), a vocabulary fact. All five also have a defined `direction_good` (increase/decrease, never "individualized"), meaning — unlike sleep_hours or bowel_frequency — there's a universal "which way is better" for these, same shape as `pain_score` exactly. Whole-number entry within that 0–10 range (no `7.5` scores) is not something `"0-10"` proves on its own; it is an explicit AcuTing convention applied uniformly to every subjective 0–10 scale in this vocabulary — the same convention `pain_score` already uses. No correction needed to the range/shape classification here; the earlier report's assumption on this specific group happened to be right.
 
 **6. sleep_onset_minutes — decimal or integer?**
-Integer. Clinically this is estimated in whole minutes ("about 20 minutes," not "20.4 minutes") — nobody times sleep onset with sub-minute precision. `unit: "minutes"` supports whole-unit reporting; nothing argues for decimals. Type D, same shape as `effect_duration_days`.
+`unit: "minutes"` confirms this is a duration (vocabulary fact); it does not by itself rule out decimals. Whole-minute entry is proposed as the AcuTing convention here because that matches how it's actually estimated clinically ("about 20 minutes," not "20.4 minutes") — nobody times sleep onset with sub-minute precision. Type D, same shape as `effect_duration_days`.
 
 **7. night_wakings — integer count? How should 0 behave?**
 Integer count, confirmed by `unit: "count_per_night"` — a tally, decimals are meaningless (there is no such thing as 2.5 wakings). Zero is a real, desirable, trackable answer ("slept through the night") — not "not measured." No natural upper bound; not inventing one.
@@ -101,16 +117,16 @@ Integer count, confirmed by `unit: "count_per_night"` — a tally, decimals are 
 Yes. `unit: "count_per_week"` is explicitly a count. Unlike night_wakings, `direction_good` here is `"individualized"` — there is no universal "more/fewer is better," bowel frequency varies by person, so the runtime should never imply a target. No cap invented, per instruction — a very high or very low weekly count is exactly the kind of value this field exists to record honestly.
 
 **9. cycle_length — whole days or decimal days?**
-Whole days. Menstrual cycles are conventionally counted in whole calendar days (day 1 = first day of bleeding to the next day 1) — clinical and TCM charting practice alike uses integers. Type D.
+`unit: "days"` confirms this is a duration (vocabulary fact); it does not by itself say whole days only. Whole days is proposed as the AcuTing convention here, matching how menstrual cycles are conventionally counted in whole calendar days (day 1 = first day of bleeding to the next day 1) in both clinical and TCM charting practice. Type D.
 
 **10. bleeding_days — whole days or decimal days?**
-Whole days, same convention as cycle_length. Type D.
+Same as cycle_length: `unit: "days"` confirms duration, not granularity. Whole days proposed as the same convention. Type D.
 
 **11. endometrial_lining — should decimals like 7.5 be preserved?**
-Yes. Endometrial thickness on ultrasound is conventionally reported to one decimal place (e.g. "7.5mm") — this is standard clinical/sonographic precision, not incidental. Type F, decimal.
+`unit: "mm"` confirms this is a physical measurement (vocabulary fact); it does not by itself mandate decimal precision. Decimal entry (e.g. `7.5`) is proposed as the AcuTing convention here for a real clinical-practice reason, not because the unit string requires it: endometrial thickness on ultrasound is conventionally reported to one decimal place. Type F, decimal.
 
 **12. follicle_size — should decimals be preserved?**
-Yes, same reasoning — dominant follicle measurements are conventionally reported with decimal precision (e.g. "18.5mm"). Type F, decimal.
+Same as endometrial_lining: `unit: "mm"` confirms measurement, not decimal-vs-integer. Decimal entry proposed as the same convention, for the same kind of reason — dominant follicle measurements are conventionally reported with decimal precision (e.g. "18.5mm"). Type F, decimal.
 
 **13. effect_duration_days — does the existing integer decision remain consistent?**
 Yes, confirmed, unchanged. It sits in the same type D bucket as sleep_onset_minutes/cycle_length/bleeding_days — all four are "elapsed time in whole units," and none of the other three arguments for allowing decimals apply to any of them either. The 1a3a426 decision was correct and this fuller audit reinforces it rather than revising it.

@@ -105,7 +105,55 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   // pre-existing alternate representation; resolveNumericMetricValue below
   // is the only place that property is read.
   { metricId: "metric.effect_duration_days", min: 0, max: null, integer: true, legacyField: "effectDurationDays" },
+  // Batch 2 (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md §8, approved
+  // as-is). All four share outcome_metrics.json's unit:"0-10" — that string
+  // is a vocabulary fact and gives the RANGE (0 to 10), but it does not by
+  // itself say whether entries within that range must be whole numbers; the
+  // audit doc was corrected to stop implying it did. Whole-number entry for
+  // every subjective 0-10 scale is an explicit AcuTing UI convention
+  // (approved this batch, applies to pain_score above too), not something
+  // "0-10" encodes on its own.
+  { metricId: "metric.stress_level", min: 0, max: 10, integer: true },
+  { metricId: "metric.mood", min: 0, max: 10, integer: true },
+  { metricId: "metric.energy_level", min: 0, max: 10, integer: true },
+  { metricId: "metric.sleep_quality", min: 0, max: 10, integer: true },
 ];
+
+// Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
+// §7 — "worthwhile before more metrics," recommended there, implemented
+// here alongside this batch's new entries as suggested). Catches a
+// typo'd/nonexistent metricId in the array above the moment the page loads,
+// before it could ever reach a save — every entry here is a hand-typed
+// string a developer could mistype, unlike an entry inside a saved note's
+// outcomeMetrics[], which this check never looks at and never touches.
+// Deliberately narrow: checks ONLY this config array, not any note's actual
+// data. A metric recorded in the past and later removed from this config
+// (deprecated, or simply not yet re-added) must keep loading and
+// displaying exactly as it already does via resolveNumericMetricValue's
+// existing blank/legacy handling — "not currently configured" is never
+// "invalid," and this check must never suggest otherwise. console.error
+// only, never alert() — a config typo is a developer-facing bug to catch in
+// QA, not something a clinician using the app should ever see a popup
+// about. Runs once, synchronously, immediately after the array above:
+// index.html loads data/generated/knowledge_data.js (which sets
+// globalThis.ACUTING_KNOWLEDGE) before app.js, so getOutcomeMetricDef has
+// real data to check against from the very first line of this file — no
+// deferral to page-load events needed. A correctly-configured array (the
+// only state this repo should ever ship) produces zero console output.
+// Guarded on the vocabulary actually being loaded: scripts/validate-data.js
+// evaluates this whole file in a bare `new Function()` sandbox with no
+// index.html <script> tags, so globalThis.ACUTING_KNOWLEDGE is never set
+// there and every metricId would otherwise resolve to null regardless of
+// whether it's a real typo — that's an unloaded-vocabulary condition, not a
+// typo, and this check must not conflate the two. Only run the per-entry
+// scan once outcomeMetrics.records actually has rows to check against.
+if ((globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || []).length > 0) {
+  NUMERIC_OUTCOME_METRIC_CONFIG.forEach((cfg) => {
+    if (!getOutcomeMetricDef(cfg.metricId)) {
+      console.error(`NUMERIC_OUTCOME_METRIC_CONFIG: "${cfg.metricId}" does not resolve to a record in data/clinical_cases/outcome_metrics.json — check for a typo.`);
+    }
+  });
+}
 
 // Data-load guard: the app is data-driven; if the generated data file did not
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
