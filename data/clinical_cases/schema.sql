@@ -300,6 +300,17 @@ CREATE TABLE IF NOT EXISTS soap_notes (
   plan_follow_up TEXT,
   plan_referral_or_supervisor_question TEXT,
   plan_safety_cautions TEXT,
+  -- SOAP/Follow-up audit (2026-08-09, docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md).
+  -- Ting named this specifically (CLINICAL_GRAPH_TRACK.md CG6: "決定療程間隔
+  -- 的依據,現有 12 個 metric 完全沒有覆蓋。優先補這一個") — how many days
+  -- the LAST treatment's effect lasted, asked at THIS visit. The general
+  -- structured-outcome layer (visit_outcomes wired into runtime) does not
+  -- exist yet, so this is a direct column, same reasoning and shape as
+  -- cases.baseline_severity_0_10: nullable, transitional, bypasses the
+  -- layer it will eventually belong to rather than waiting on it and
+  -- losing the value in the meantime. metric.effect_duration_days
+  -- (outcome_metrics.json) is the eventual canonical id.
+  effect_duration_days INTEGER CHECK (effect_duration_days IS NULL OR effect_duration_days >= 0),
   created_at TEXT,
   updated_at TEXT,
   FOREIGN KEY (visit_id) REFERENCES visits(id)

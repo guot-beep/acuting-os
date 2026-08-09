@@ -4902,6 +4902,11 @@ function normalizeSoapNote(value) {
     outcomes: String(value.outcomes || ""),
     outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
     outcomeVerdict: OUTCOME_VERDICTS[value.outcomeVerdict] ? value.outcomeVerdict : "",   // LL2
+    // SOAP/Follow-up audit (2026-08-09): nullable, never fabricated. "" (not
+    // 0) when absent — matches cases.baselineSeverity's D4-style distinction
+    // between "not answered" and "answered zero".
+    effectDurationDays: (value.effectDurationDays === 0 || value.effectDurationDays) ? Number(value.effectDurationDays) : "",
+    referralOrSupervisorQuestion: String(value.referralOrSupervisorQuestion || ""),
     followUp: String(value.followUp || ""),
     // LL1 按語: optional structured reflection (Learning Loop track)
     differentialConsidered: String(value.differentialConsidered || ""),
@@ -5463,6 +5468,7 @@ function renderSoapNoteCard(note) {
         <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
+        ${(note.effectDurationDays === 0 || note.effectDurationDays) ? `<div><small>效果維持 Effect duration</small><span>${escapeHtml(String(note.effectDurationDays))} 天 days</span></div>` : ""}
       </div>
       <div class="soap-link-grid">
         <div><small>Western links</small><span>${escapeHtml(formatNoteList(note.westernConditionLinks))}</span></div>
@@ -5471,6 +5477,10 @@ function renderSoapNoteCard(note) {
         <div><small>Safety links</small><span>${escapeHtml(formatNoteList(note.safetyFlagLinks))}</span></div>
         <div class="wide"><small>Treatment record links</small><span>${escapeHtml(formatNoteList(linkedRecords))}</span></div>
       </div>
+      ${(note.referralOrSupervisorQuestion) ? `
+      <div class="tcm-dx-row">
+        <div class="wide"><small>轉介/督導問題 Referral / supervisor question</small><span>${escapeHtml(note.referralOrSupervisorQuestion)}</span></div>
+      </div>` : ""}
       ${(note.differentialConsidered || note.reflection || note.ifIneffectivePlan) ? `
       <div class="soap-reflection-view">
         ${note.differentialConsidered ? `<div><small>鑑別考量 Differential</small><span>${escapeHtml(note.differentialConsidered)}</span></div>` : ""}
@@ -5803,6 +5813,8 @@ function openSoapEditor(note = null) {
     outcomes: "",
     outcomeMetricLinks: [],
     outcomeVerdict: "",
+    effectDurationDays: "",
+    referralOrSupervisorQuestion: "",
     followUp: "",
     differentialConsidered: "",
     reflection: "",
@@ -5824,6 +5836,26 @@ function saveSoapFromForm(event) {
   if (!activeCase) return;
   const data = Object.fromEntries(new FormData(soapForm).entries());
   const current = activeCase.soapNotes.find((note) => note.id === editingSoapId);
+
+  // SOAP/Follow-up audit (2026-08-09): visit numbers are meant to be unique
+  // per case (the timeline, "上次" comparisons, and CG8's future Baseline/
+  // Today columns all key off visitNumber). The field has always been a
+  // plain editable number with no check — same class of gap as the
+  // patientCode duplicate guard already had before it was added.
+  const visitNumberRaw = (data.visitNumber || "").trim();
+  if (visitNumberRaw) {
+    const dupe = activeCase.soapNotes.find((note) => note.id !== editingSoapId && String(note.visitNumber) === visitNumberRaw);
+    if (dupe) {
+      alert(`Visit #${visitNumberRaw} 在這個病例裡已經用過了（${dupe.visitDate || "無日期"}）。請確認就診次數。`);
+      return;
+    }
+  }
+  const effectDurationRaw = (data.effectDurationDays || "").trim();
+  if (effectDurationRaw && (!/^\d+$/.test(effectDurationRaw) || Number(effectDurationRaw) < 0)) {
+    alert("效果維持天數須為 0 以上的整數（可留空）。");
+    return;
+  }
+
   const now = new Date().toISOString();
   const nextNote = normalizeSoapNote({
     ...(current || {}),
@@ -5862,6 +5894,8 @@ function saveSoapFromForm(event) {
     outcomes: data.outcomes.trim(),
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     outcomeVerdict: data.outcomeVerdict || "",
+    effectDurationDays: effectDurationRaw === "" ? "" : Number(effectDurationRaw),
+    referralOrSupervisorQuestion: (data.referralOrSupervisorQuestion || "").trim(),
     followUp: data.followUp.trim(),
     differentialConsidered: (data.differentialConsidered || "").trim(),
     reflection: (data.reflection || "").trim(),

@@ -753,6 +753,7 @@
             <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
             <label class="wide">醫囑 Advice（生活/飲食/運動）<textarea name="advice" rows="2" placeholder="作息、飲食宜忌、運動、情緒調攝"></textarea></label>
             <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
+            <label class="wide">轉介/督導問題 Referral / supervisor question<textarea name="referralOrSupervisorQuestion" rows="2" placeholder="需要轉介、或想問督導的問題"></textarea></label>
           </fieldset>
 
           <fieldset class="form-section soap-outcome">
@@ -766,6 +767,7 @@
               <option value="lost_followup">失訪 Lost to follow-up</option>
             </select></label>
             <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
+            <label>上次療效維持天數 Effect duration (days)<input name="effectDurationDays" type="number" min="0" step="1" placeholder="決定下次療程間隔 leave blank if not applicable" /></label>
             <details class="soap-reflection wide">
               <summary>臨床推理 / 按語（選填）</summary>
               <label class="wide">鑑別考量 Differential considered<textarea name="differentialConsidered" rows="2" placeholder="這次還考慮了哪些證型/診斷、為什麼排除"></textarea></label>
