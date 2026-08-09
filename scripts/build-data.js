@@ -153,17 +153,42 @@ const knowledge = {
   redFlagRegistry: readJson("data/pathology/red_flag_registry.json"),
 };
 
-// Derive registry triggers into the cards' red_flags_zh/_en — IN THE BUNDLE
-// ONLY (D13: derive, never write back to source files). Legacy inline strings
-// stay; dedup means a migrated trigger never renders twice. red_flag_record_ids
-// gives the future Case/Visit safety screen stable per-flag identity.
+// Runtime red-flag resolver — IN THE BUNDLE ONLY (D13: derive, never write
+// back to source files). Two explicit paths, never blended (2026-08-08):
+//
+//   WIRED   a card with red_flag_refs resolves EXACTLY those ids, in that
+//           order. Ref membership is the canonical wiring authority — a
+//           future authored registry record on the same entity must NOT leak
+//           into presentation without a wiring decision. A dangling ref or
+//           ownership mismatch ABORTS the build: broken wiring must never
+//           produce a plausible bundle. The anti-drift validator guarantees
+//           the expansion equals the card's inline arrays byte-for-byte, so
+//           swapping the source of truth changes nothing on screen.
+//
+//   UNWIRED compatibility fallback: entity_id scan, the pre-wiring merge.
+//           This is what keeps authored-only safety presentations (24
+//           conditions today, plus any future tdis records) alive until
+//           their own wiring round.
 {
+  const regRecords = knowledge.redFlagRegistry.records || [];
+  const byId = new Map(regRecords.map((r) => [r.id, r]));
   const byEntity = new Map();
-  for (const r of (knowledge.redFlagRegistry.records || [])) {
+  for (const r of regRecords) {
     if (!byEntity.has(r.entity_id)) byEntity.set(r.entity_id, []);
     byEntity.get(r.entity_id).push(r);
   }
-  const mergeFlags = (rec) => {
+  const resolveWired = (rec) => {
+    const flags = rec.red_flag_refs.map((id) => {
+      const f = byId.get(id);
+      if (!f) throw new Error(`build-data: ${rec.id} red_flag_refs has dangling id ${id}`);
+      if (f.entity_id !== rec.id) throw new Error(`build-data: ${rec.id} ref ${id} belongs to ${f.entity_id}`);
+      return f;
+    });
+    rec.red_flags_zh = flags.map((f) => f.trigger_zh);
+    rec.red_flags_en = flags.map((f) => f.trigger_en);
+    rec.red_flag_record_ids = rec.red_flag_refs.slice();
+  };
+  const mergeUnwired = (rec) => {
     const flags = byEntity.get(rec.id);
     if (!flags || !flags.length) return;
     const zh = new Set((rec.red_flags_zh || []).map((s) => String(s).trim()));
@@ -176,8 +201,11 @@ const knowledge = {
     }
     rec.red_flag_record_ids = flags.map((f) => f.id);
   };
-  (knowledge.conditionCanon.records || []).forEach(mergeFlags);
-  (knowledge.tdisRegistry.records || []).forEach(mergeFlags);
+  for (const rec of (knowledge.conditionCanon.records || [])) {
+    if (Array.isArray(rec.red_flag_refs) && rec.red_flag_refs.length) resolveWired(rec);
+    else mergeUnwired(rec);
+  }
+  (knowledge.tdisRegistry.records || []).forEach(mergeUnwired);
 }
 // Deterministic banner — see the app_data.js note above.
 const kBody = "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n";
