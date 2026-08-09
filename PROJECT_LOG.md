@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-UE2 二白四源、刺深分歧與 AD 配穴表精修
+
+- **做了什麼**：只精修 EX-UE2 二白；整合 Board 明列、課件缺口、eLotus Ex-UE2、AD M-UE-29 與 NIDDK 便血安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四來源稽核 `40/72 → 41/72`；待修 `32/72 → 31/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口維持 `0/72`。
+- **來源與安全**：eLotus 0.5～1.0寸、AD 0.5～1.0寸與0.5～1.5寸分列；AD 兩組配穴以實際表格欄位核對。舊0.3～0.5寸、點刺出血、骨膜警語降為 unsupported；便血只保留來源陳述與 NIDDK 急症邊界，不作療效標籤。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、54欄 canonical/runtime parity、ID/code uniqueness、`git diff --check` 均通過；內容 commit `038a7e1`。
+- **已知未解／下一步**：四層未提供放血安全規程、深層解剖、孕期／兒童／凝血風險與灸量；下一張 EX-UE3 中泉。原 dirty 經外奇穴草稿 worktree 與 Pattern／Condition 工作未納入。
+
 # 2026-08-08 Codex — EX-UE1 肘尖四源、兩源只灸與 AD 內容校正
 
 - **做了什麼**：從 EX-B12 已完成的 `39/72` 接續，只精修 EX-UE1 肘尖；整合 Board／課件缺口、eLotus Ex-UE1、AD M-UE-46 與 NIDDK 急症邊界，補齊雙語定位、解剖缺口、刺灸、安全、功效主治、配穴缺口、考點與逐欄來源。

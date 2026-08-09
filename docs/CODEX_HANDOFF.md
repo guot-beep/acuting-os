@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-UE2 二白（Erbai）Board 考點、刺深分歧與 AD 配穴表校正
+
+- **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `038a7e1` (`feat(acupoints): refine Erbai extra point`)；未觸碰原 dirty 經外奇穴草稿 worktree、Pattern、Condition 或 `curriculum/conditions/*`。
+- **Four Layers / Exact Links**: NCBAHM Appendix A 明列 Erbai；本地課件無二白專條，僅在他穴配伍中提名。eLotus Ex-UE2、AD 拼音索引與 `https://www.americandragon.com/Points/Erbai.html`、NIDDK GI bleeding 精確頁均於本 session 開啟；三個顯示連結均實際驗證，無 generic CloudTCM。
+- **Reconciliation**: 保留穩定 `EX-UE2`／`ex.ue2`，另記 AD `M-UE-29`。eLotus 的直刺0.5～1.0寸與 AD 同頁的0.5～1.0寸、0.5～1.5寸版本分列，不合併成假共識。AD 不是 identity-only：已吸收其定位變體、Actions、六項主治及兩組配穴；配穴表以 browser DOM 逐欄確認 BL57+GV1 對慢性痔瘡、GV20+BL52+GV1 對脫肛／痔瘡。
+- **Safety / Legacy**: 舊直刺0.3～0.5寸、點刺出血與「避免過深傷及骨膜」均保留但降為 unsupported legacy；精確頁未給放血、深層解剖、孕期、兒童、凝血風險或灸量方案。AD 的便血主治不收入 disease tags；NIDDK 只支持急性／嚴重 GI bleeding、黑便、暈厥與休克徵象的醫療邊界，不支持穴位療效。
+- **Counts / Validation / Next**: strict/four-source `40/72 → 41/72`；issues `32/72 → 31/72`；generic Cloud `9/72`；measurable/source/mojibake gaps `0/72`。extra audit、build、947 runtime、interactions、925 point IDs、content-junk、app syntax、54欄 canonical/runtime parity、ID/code uniqueness 與 diff check 均通過。下一張 `EX-UE3 中泉 Zhongquan`。
+
 ## [2026-08-08] Codex Handoff — EX-UE1 肘尖（Zhoujian）兩源只灸與 legacy 技法降級
 
 - **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `8801c10` (`feat(acupoints): refine Zhoujian extra point`). 原 `codex/extra-points-2026-08-07` dirty worktree 的 EX-UE1～EX-UE4 草稿完整保留、未清理或覆蓋；本 branch 從已推送 `b92ac65` 乾淨建立。
