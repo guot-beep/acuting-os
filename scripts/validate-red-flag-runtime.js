@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * validate-red-flag-runtime.js — the generated bundle's red-flag resolver
- * checks (RT-RF1…RT-RF7, RT-RF9; 2026-08-08). RT-RF8 (deterministic rebuild)
+ * checks (RT-RF1…RT-RF9, RT-RF10; 2026-08-08). RT-RF8 (deterministic rebuild)
  * is proven by the double-build in the migration turn and by CI's
  * generated-data-current gate.
  *
@@ -17,6 +17,7 @@
  *   RT7 authored-only fallback coverage does not drop below 24 conditions
  *   RT9 the bundle's embedded registry is semantically identical to the
  *       source registry file (resolver must not mutate clinical data)
+ *   RT10 unwired condition/TDIS fallback contains zero legacy-migration records
  */
 const fs = require("fs");
 const path = require("path");
@@ -71,5 +72,42 @@ if (authoredOnly.length < 24) defects.push(`RT7 authored-only fallback ${authore
 if (JSON.stringify(K.redFlagRegistry.records) !== JSON.stringify(registry.records))
   defects.push("RT9 bundled registry differs from source — resolver mutated clinical data");
 
-console.log(`red-flag runtime: ${wiredSrc.length} wired cards · ${refs} refs · ledger ${ledger.supported}/${ledger.not_found}/${ledger.pending_provenance || 0} · authored-only fallback ${authoredOnly.length} · ${defects.length} defects`);
-if (defects.length) { defects.forEach((d) => console.log("  " + d)); process.exit(1); }
+
+// RT10 — unwired runtime fallback must never expose legacy-migration records.
+// Migrated legacy membership becomes visible only after canonical red_flag_refs wiring.
+const isLegacyMigrationRecord = (r) =>
+  String(r.origin || "").startsWith("legacy_card_migration_");
+
+const checkUnwiredLeakage = (records, namespace) => {
+  for (const rec of records || []) {
+    if (Array.isArray(rec.red_flag_refs) && rec.red_flag_refs.length) continue;
+
+    for (const id of rec.red_flag_record_ids || []) {
+      const flag = regById.get(id);
+      if (!flag) {
+        defects.push(`RT10 ${namespace} ${rec.id}: runtime id ${id} missing from registry`);
+        continue;
+      }
+
+      if (isLegacyMigrationRecord(flag)) {
+        defects.push(
+          `RT10 ${namespace} ${rec.id}: unwired legacy-migration record leaked into runtime (${id}, origin ${flag.origin})`
+        );
+      }
+    }
+  }
+};
+
+checkUnwiredLeakage(K.conditionCanon.records, "condition");
+checkUnwiredLeakage(K.tdisRegistry.records, "tdis");
+
+console.log(
+  `red-flag runtime: ${wiredSrc.length} wired cards · ${refs} refs · ` +
+  `ledger ${ledger.supported}/${ledger.not_found}/${ledger.pending_provenance || 0} · ` +
+  `authored-only fallback ${authoredOnly.length} · ${defects.length} defects`
+);
+
+if (defects.length) {
+  defects.forEach((d) => console.log("  " + d));
+  process.exit(1);
+}
