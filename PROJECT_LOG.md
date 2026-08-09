@@ -1,3 +1,11 @@
+# 2026-08-09 Antigravity — Sync + Pharmacology router fix
+
+- **做了什麼**：將本地 `pattern-v2-implementation` 從 `55c2a42` fast-forward 到 `origin/codex/pattern-v2` 的 `63f0896`（+72 files, 48K 行）；重新 `build-data.js`；診斷並修復西藥（Pharmacology）頁面無法顯示的問題。
+- **數字 before→after**：local HEAD `55c2a42→63f0896→a0a850d`（修復 commit）；`router.js` WORKSPACES 陣列 `10→11` entries。
+- **Pharmacology 根因**：`js/router.js` 第 18 行 WORKSPACES 白名單缺少 `"pharm"`，導致 `#ws/pharm` 永遠 fallback 到 home。index.html 的 `<section data-workspace="pharm">` 與 nav `data-ws="pharm"` 都存在，但 router 從未放行。
+- **驗證**：`validate-interactions.js` 通過（0 warnings/0 failures）、`git diff --check` 通過；dev-server 已運行於 :8361。
+- **已知未解**：`#pharmRecords` 容器目前為空——pharm workspace 的藥物卡片渲染器尚未實作（`knowledge.js` 沒有對應的 host binding），這是功能待建，不是 bug。
+
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
 - **做了什麼**：保留既有 Pattern V2-B／V2-C canonical payload，補齊 Pattern preview／big-card 對 canonical `key_signs_*`、`supporting_signs_*`、`mechanism_*`、`common_causes_*`、`progression_*`、舌脈、八綱、structured differentials、aliases、treatment links 與真實 `sources`／`field_sources` 的相容呈現及搜尋；移除 renderer 的虛構預設來源 fallback。
