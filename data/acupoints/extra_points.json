@@ -10098,31 +10098,110 @@
     "code": "EX-UE11",
     "display_code": "EX-UE11",
     "nameZh": "十宣",
-    "nameEn": "Shixuan",
+    "nameEn": "Ten Diffusions",
     "pinyin": "Shixuan",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "手十指尖端，距指甲遊離緣0.1寸，共10穴。",
-    "locationEn": "Tips of 10 fingers, 0.1 cun distal to fingernail margin.",
-    "techniqueNotes": "三稜針點刺出血。\nPrick to bleed with lancet.",
-    "functions": "清熱開竅，醒神急救，回陽救逆",
-    "functionsEn": "Clears heat and opens orifices; Restores consciousness",
+    "location": "雙手十指尖端，距指甲約0.1寸，共10穴。eLotus 與 American Dragon 均使用此定位。",
+    "locationEn": "At the tips of the ten fingers, approximately 0.1 cun from the nails, for ten points in total. eLotus and American Dragon use the same location.",
+    "cunMeasurement": "以每一指尖距指甲約0.1寸為定位標誌；此0.1寸是定位距離，不是自動等同刺入深度。",
+    "anatomyZh": "位於十指末端、近指甲區。兩 exact pages 未提供指腹、甲床／甲基質、末節指骨、指神經血管或皮膚至安全終點的逐指解剖；舊『避開肱動脈與神經』與指尖定位明顯不相稱，降為 unsupported legacy。",
+    "anatomyEn": "The points lie at the distal fingertips near the nails. The exact pages provide no digit-specific anatomy for pulp, nail bed/matrix, distal phalanx, digital neurovascular structures, or skin-to-endpoint depth. The legacy warning to avoid the brachial artery and nerves is anatomically mismatched to fingertip locations and is downgraded as unsupported history.",
+    "acumethodZh": "eLotus：淺刺0.1～0.2寸，或點刺出血。American Dragon：同列淺刺0.1～0.2寸或點刺出血。舊卡三稜針器械名稱無 exact-page 支持，保留為 unverified legacy；舊直刺0.5～1.0寸遠深於兩頁數值，排除於 canonical technique。",
+    "acumethodEn": "eLotus: superficial puncture 0.1-0.2 cun or prick-to-bleed. American Dragon gives the same superficial 0.1-0.2-cun or prick-to-bleed options. The legacy three-edged-needle device lacks exact-page support and remains unverified history; legacy perpendicular 0.5-1.0 cun is far deeper than both exact pages and is excluded from canonical technique.",
+    "moxaZh": "American Dragon 記點刺出血後可接續灸法，但未提供壯數、時間、距離、直接／間接法、皮膚保護或停止規則；eLotus 未列灸法。不可把 AD 的條件式陳述擴張為無條件『可灸』。",
+    "moxaEn": "American Dragon states that prick-to-bleed may be followed by moxibustion but gives no cone count, duration, distance, direct/indirect method, skin protection, or stopping rule. eLotus lists no moxa. The conditional American Dragon statement must not be expanded into unconditional 'moxibustion applicable.'",
+    "techniqueNotes": "eLotus／AD：淺刺0.1～0.2寸，或點刺出血。AD 另記放血後可接灸，但無灸量。Legacy 三稜針與直刺0.5～1.0寸 unsupported；放血量、止血與感染監測均未提供。\neLotus/AD: superficial puncture 0.1-0.2 cun or prick-to-bleed. AD additionally permits post-bleeding moxa without a dose. Legacy three-edged needle and 0.5-1.0-cun insertion are unsupported; blood quantity, hemostasis, and infection monitoring are absent.",
+    "functions": "開竅醒神，清熱，息風；回陽救逆（legacy）",
+    "functionsEn": "Opens the orifices and revives consciousness; drains heat; pacifies/expels wind; restores yang and rescues collapse (legacy)",
+    "functionsZhList": [
+      "開竅",
+      "醒神",
+      "清熱",
+      "息風",
+      "回陽救逆（legacy）"
+    ],
+    "functionsEnList": [
+      "Opens the orifices",
+      "Revives consciousness",
+      "Drains heat",
+      "Pacifies/expels wind",
+      "Restores yang and rescues collapse (legacy)"
+    ],
+    "pointIdentityZh": "本庫穩定代碼 EX-UE11／ex.ue11，十宣 Shixuan。NCBAHM Appendix A 明列 Shixuan；eLotus 為 Ex-UE11，American Dragon 為 M-UE-1。外部代碼差異不改本庫 id。",
+    "pointIdentityEn": "Stable database identity: EX-UE11 / ex.ue11, Shixuan. NCBAHM Appendix A lists Shixuan; eLotus codes it Ex-UE11 and American Dragon M-UE-1. The external code difference does not change the database ID.",
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 明列十宣。考點是十指尖、距甲約0.1寸、淺刺0.1～0.2寸或點刺出血；來源雖列多種昏迷／中風／高熱急症，但卡片必須同步顯示緊急醫療邊界。",
+    "exam_importance_en": "NCBAHM 2026 ACPL Appendix A explicitly lists Shixuan. Know the ten fingertip points about 0.1 cun from the nails and the superficial 0.1-0.2-cun or prick-to-bleed methods. Although sources list coma, stroke, and febrile emergencies, the card must show emergency-care boundaries alongside those claims.",
+    "exam_pearl": "定位0.1寸與刺深0.1～0.2寸是兩個不同數字；舊0.5～1.0寸深刺不可沿用。十宣常被列作急救穴，但『來源列主治』不等於可以延誤 EMS。",
+    "exam_pearl_en": "The 0.1-cun location distance and 0.1-0.2-cun insertion depth are distinct values; legacy 0.5-1.0-cun deep insertion is not retained. Shixuan is often listed as an emergency point, but a source indication never justifies delaying EMS.",
     "patterns": [
-      "昏迷急救",
-      "中暑",
-      "高熱驚厥",
-      "中風昏倒"
+      "昏迷／暈厥／休克（來源主治；急症邊界）",
+      "中暑／熱射病（來源主治；急症邊界）",
+      "高熱驚厥／癲癇（來源主治；急症邊界）",
+      "中風／卒中昏倒（來源主治；急症邊界）",
+      "急性扁桃體炎／咽喉腫痛",
+      "指尖麻木或疼痛"
     ],
     "patternsEn": [
-      "Coma emergency",
-      "Heatstroke",
-      "High fever convulsion",
-      "Stroke coma"
+      "Coma, fainting, or shock (source-reported; emergency boundary)",
+      "Heatstroke / severe heat illness (source-reported; emergency boundary)",
+      "Febrile convulsion / epilepsy (source-reported; emergency boundary)",
+      "Stroke / apoplexy with collapse (source-reported; emergency boundary)",
+      "Acute tonsillitis / sore swollen throat",
+      "Fingertip numbness or pain"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "開竅",
+      "醒神",
+      "清熱",
+      "息風",
+      "回陽救逆（legacy）"
+    ],
+    "action_tags_en": [
+      "open the orifices",
+      "revive consciousness",
+      "drain heat",
+      "pacify wind",
+      "restore yang and rescue collapse (legacy)"
+    ],
+    "disease_tags_zh": [
+      "急性扁桃體炎／咽喉腫痛",
+      "指尖麻木或疼痛"
+    ],
+    "disease_tags_en": [
+      "acute tonsillitis / sore swollen throat",
+      "fingertip numbness or pain"
+    ],
+    "acuTags": [
+      "extra_point",
+      "upper_extremity",
+      "board_listed",
+      "bloodletting",
+      "emergency_boundary"
+    ],
+    "combinePointsZh": "American Dragon 記【高熱所致熱衰竭】十宣配大椎（GV14）、耳尖（M-HN-10）；表格欄位已核對。此配穴只保留為來源記載，不取代熱射病快速降溫與 EMS。",
+    "combinePointsEn": "American Dragon pairs Shixuan with Dazhui (GV14) and Erjian (M-HN-10) for heat exhaustion due to high fever; the table columns were checked. This remains a source-reported combination and does not replace rapid cooling and EMS for heatstroke.",
+    "cautions": "【深度】兩 exact pages 僅支持淺刺0.1～0.2寸或點刺出血；舊直刺0.5～1.0寸 unsupported，不執行。【指尖解剖缺口】未給甲床／甲基質、指腹、末節指骨或指神經血管安全終點；舊肱動脈警語與定位不相稱。【放血缺口】器械、每穴出血量、十穴是否全做、無菌、止血、包紮、感染監測、抗凝／出血風險與兒童 protocol 未提供。【灸法】只有 AD 條件式『放血後可灸』且無任何劑量／皮膚保護，不作一般可灸規則。【急症】疑似中風應立即撥打911；熱射病需立即 EMS 與快速降溫；發作超過5分鐘、反覆發作、呼吸／清醒困難或首次發作需911。上述只作 emergency boundary，不是穴位療效證據。",
+    "cautionsEn": "[Depth] Both exact pages support only superficial 0.1-0.2-cun puncture or prick-to-bleed; legacy perpendicular 0.5-1.0 cun is unsupported and non-executable. [Fingertip anatomy gap] No nail-bed/matrix, pulp, distal-phalanx, or digital-neurovascular endpoint is given; the legacy brachial-artery warning is anatomically mismatched. [Bloodletting gap] Device, per-point blood quantity, whether all ten points are treated, asepsis, hemostasis, dressing, infection monitoring, anticoagulation/bleeding risk, and pediatric protocols are absent. [Moxa] Only American Dragon conditionally allows post-bleeding moxa and gives no dose or skin protection; this is not general permission. [Emergencies] Suspected stroke requires immediate 911 activation; heatstroke requires EMS and rapid cooling; seizures over 5 minutes, repeated seizures, breathing/waking difficulty, or a first seizure require 911. These are emergency boundaries, not acupuncture-efficacy evidence.",
+    "clinical_pearls": [
+      "eLotus 與 AD 對十指尖定位、0.1～0.2寸淺刺／放血及開竅清熱息風高度一致；AD 額外列條件式放血後灸法。",
+      "急救主治保留來源層，但 stroke、heatstroke、seizure 的 EMS 邊界必須比療效主張更醒目。"
+    ],
+    "clinical_pearls_en": [
+      "eLotus and American Dragon closely agree on fingertip location, superficial 0.1-0.2-cun/prick-to-bleed methods, and orifice/heat/wind actions; American Dragon additionally lists conditional post-bleeding moxa.",
+      "Emergency indications remain in provenance, but EMS boundaries for stroke, heatstroke, and seizures must be more prominent than efficacy claims."
+    ],
+    "nameIntroZh": "十宣（Shixuan，Ten Diffusions）為雙手十指尖共10穴的經外奇穴。本庫保留 EX-UE11／ex.ue11，並將淺刺／放血技法與急症邊界同時呈現。",
+    "nameIntroEn": "Shixuan (Ten Diffusions) comprises ten extra points at the fingertips of both hands. The database preserves EX-UE11 / ex.ue11 and presents the superficial puncture/bloodletting methods together with emergency boundaries.",
+    "evidence": "NCBAHM 2026 ACPL Appendix A explicitly lists Shixuan; no dedicated local curriculum lesson was found. The exact eLotus Ex-UE11 page contributes location, acute neurologic/febrile/throat/fingertip indications, orifice/consciousness/heat/wind actions, and superficial 0.1-0.2-cun or prick-to-bleed techniques. The exact American Dragon M-UE-1 page substantially concurs, adds a conditional post-bleeding moxa statement and a checked GV14/M-HN-10 combination, and lists broader acute indications. Legacy three-edged-needle wording, 0.5-1.0-cun deep insertion, unconditional moxa, and brachial-artery warning are unsupported or anatomically mismatched. CDC stroke, heat-illness, and seizure pages supply emergency boundaries only, not evidence of acupuncture efficacy.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shixuan-ex-ue11"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shixuan-ex-ue11",
+      "https://www.americandragon.com/Points/Shixuan.html",
+      "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+      "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+      "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
     ],
     "visualLinks": [
       {
@@ -10130,15 +10209,95 @@
         "labelEn": "Extra Point · Shixuan EX-UE11 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shixuan-ex-ue11",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "經外奇穴 · 十宣（American Dragon）",
+        "labelEn": "Extra Point · Shixuan (American Dragon)",
+        "url": "https://www.americandragon.com/Points/Shixuan.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "中風辨識與緊急求助（CDC）",
+        "labelEn": "Stroke recognition and emergency response (CDC)",
+        "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+        "source": "CDC"
+      },
+      {
+        "labelZh": "熱射病辨識與急救（CDC）",
+        "labelEn": "Heatstroke recognition and first aid (CDC)",
+        "url": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+        "source": "CDC / NIOSH"
+      },
+      {
+        "labelZh": "癲癇發作急救與911條件（CDC）",
+        "labelEn": "Seizure first aid and 911 criteria (CDC)",
+        "url": "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html",
+        "source": "CDC"
       }
     ],
     "x": 158,
     "y": 325,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun; moxibustion applicable.",
-    "cautions": "避開肱動脈與神經。",
-    "cautionsEn": "Avoid brachial artery and nerves.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Shixuan is explicitly listed"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 十宣, Shixuan, Ten Diffusions, and EX-UE11 under curriculum/board and curriculum/acupoints found the Board listing but no dedicated lesson entry"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shixuan-ex-ue11: exact page opened 2026-08-08; Ex-UE11 identity, location, indications, actions, and superficial 0.1-0.2-cun/prick-to-bleed techniques extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: pinyin index opened 2026-08-08; Shixuan exact entry confirmed",
+        "https://www.americandragon.com/Points/Shixuan.html: exact page opened 2026-08-08; M-UE-1 code, aliases, location, techniques, actions, indications, notes, and combination table extracted"
+      ],
+      "location": [
+        "eLotus and American Dragon exact pages: tips of ten fingers, approximately 0.1 cun from nails"
+      ],
+      "anatomy": [
+        "source-gap note: no digit-specific pulp, nail-bed/matrix, distal-phalanx, digital neurovascular, or skin-to-target endpoint",
+        "legacy brachial-artery warning is anatomically mismatched to fingertip locations"
+      ],
+      "technique": [
+        "eLotus and American Dragon exact pages: superficial puncture 0.1-0.2 cun or prick-to-bleed",
+        "legacy three-edged needle and perpendicular 0.5-1.0 cun lack exact support; deep value excluded"
+      ],
+      "moxibustion": [
+        "American Dragon exact page: prick-to-bleed may be followed by moxibustion; no dose, distance, method, skin protection, or stopping rule",
+        "eLotus exact page: no moxibustion method stated"
+      ],
+      "functions": [
+        "eLotus and American Dragon exact pages: opens orifices, revives consciousness, drains heat, expels/pacifies wind",
+        "legacy restores yang/rescues collapse retained at lower evidence level"
+      ],
+      "indications": [
+        "eLotus exact page: apoplexy, coma, epilepsy, high fever, infantile convulsion, acute tonsillitis, fingertip numbness",
+        "American Dragon exact page: broader acute neurologic, heat, shock, throat, GI, psychiatric, and fingertip indications",
+        "stroke, coma/shock, heatstroke, and seizures retained as source claims with emergency boundaries and excluded from disease tags"
+      ],
+      "combinations": [
+        "American Dragon table checked 2026-08-08: GV14 Dazhui + M-HN-10 Erjian for heat exhaustion due to high fever"
+      ],
+      "cautions": [
+        "CDC stroke exact page: sudden focal neurologic signs require immediate 911 activation; boundary only",
+        "CDC heat-illness exact page: heatstroke requires emergency medical care and rapid cooling; boundary only",
+        "CDC seizure-first-aid exact page: call 911 for >5 minutes, repeated seizure, breathing/waking difficulty, injury, water event, first seizure, pregnancy, or diabetes with loss of consciousness; boundary only",
+        "source-gap note: no bloodletting device/quantity/hemostasis/infection-monitoring, pediatric, anticoagulation, pregnancy, or moxa-safety protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE11 / ex.ue11 / 十宣 / Shixuan",
+        "eLotus: Ex-UE11 / Ten Declarations / Ten Diffusions",
+        "American Dragon: M-UE-1 / Ten Diffusions, aliases Ten Declarations/Ten Drainings/Ten Spreadings"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Shixuan exact page",
+        "2026-08-08 live-opened American Dragon pinyin index and Shixuan exact page",
+        "2026-08-08 live-opened CDC stroke, heat-illness, and seizure-first-aid exact pages; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "淺刺0.1～0.2寸，或點刺出血。AD 另記放血後可接灸但無灸量；舊直刺0.5～1.0寸 unsupported。",
+    "needlingEn": "Superficial puncture 0.1-0.2 cun or prick-to-bleed. American Dragon additionally permits post-bleeding moxa without a dose; legacy 0.5-1.0-cun insertion is unsupported.",
     "id": "ex.ue11"
   },
   {
