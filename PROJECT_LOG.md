@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — gyn_fertility Condition canonical fill 第二批 15 張
+
+- **做了什麼**：在隔離 branch 實填男性不育、卵巢儲備下降、IVF 支持、復發性流產、黃體期缺陷、更年期、妊娠劇吐、臀位、產後缺乳、慢性骨盆痛、慢性 PID、外陰陰道念珠菌病、薄型子宮內膜、PMDD、繼發性痛經；補齊成對 pathology／etiology、結構化 risk factors／acupuncture scope、`field_sources` 與 canonical `sources`，未修改 Pattern 或 renderer JS。
+- **數字 before→after**：`gyn_fertility` clean `10/25 → 25/25`、blocking defects `58 → 0`；全庫 Condition clean `10/150 → 25/150`、blocking defects `522 → 462`。實際 canonical record diff 僅上述 15 IDs，既有 ID、red flags、related patterns 均未退化。
+- **來源與缺口**：逐張核對 Board scope、local curriculum、具名 biomedical sources、American Dragon／CloudTCM exact pages；12/15 明記至少一項 exact-source gap，未用相似疾病 URL 代替；更年期、妊娠劇吐、產後缺乳具 local + AD + Cloud exact sources。
+- **驗證**：`build-data` 通過；25/25 gyn raw canonical ↔ generated bundle 逐欄一致，generic Cloud／錯置替代 URL／中文問號亂碼均 0；Condition scoped、relations、red-flag wiring/registry、data、interactions、content-junk、Pattern standard/registry、JS syntax、`git diff --check` 通過。`validate-condition-sources.js` 仍因 test DOM fixture 缺 `dxTypeBar` 於來源斷言前失敗，記為 tooling defect。
+- **已知未解／下一步**：舊 Condition renderer 只讀 summary、關聯、red flags、legacy `source_links` 與 Cloud map，尚未讀 canonical pathology、etiology、risk factors、acupuncture scope、`field_sources`、`sources`、`related_patterns`。下一步是獨立 Condition UI integration；本批不開始其他 125 張。
+
 # 2026-08-08 Codex — gyn_fertility Condition canonical fill 第一批 10 張
 
 - **做了什麼**：在獨立 `codex/condition-gyn-fill-2026-08-08` worktree 實填 PCOS、子宮內膜異位、子宮肌瘤、原發性痛經、PMS、月經不調、月經過多、月經過少、繼發性閉經、女性不孕；替換錯置／共用長文，補成對 `etiology`、`western_pathology`、結構化 `risk_factors`、`acupuncture_scope`、`field_sources` 與精確來源。
