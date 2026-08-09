@@ -141,6 +141,25 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
 ];
 
+// Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
+// not beside renderOutcomeTrackingPanel further down — for the same TDZ
+// reason NUMERIC_OUTCOME_METRIC_CONFIG lives up here instead of near the
+// functions that use it: render() runs synchronously at top-level page-load
+// time and can reach renderOutcomeTrackingPanel on first load if a case is
+// already selected, which is before this file's later `const` declarations
+// would otherwise have initialized. direction_good is displayed verbatim as
+// vocabulary metadata (what the record says), never turned into a computed
+// verdict — no "higher/lower is better," no color. individualized/
+// contextual get the exact same neutral treatment as increase/decrease,
+// which is what specifically keeps bowel_frequency (individualized) from
+// reading as "more is better."
+const OUTCOME_DIRECTION_HINT_LABELS = {
+  increase: "方向：遞增 direction: increase",
+  decrease: "方向：遞減 direction: decrease",
+  individualized: "方向：因人而異 direction: individualized",
+  contextual: "方向：視情境 direction: contextual",
+};
+
 // Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
 // §7 — "worthwhile before more metrics," recommended there, implemented
 // here alongside this batch's new entries as suggested). Catches a
@@ -5209,6 +5228,20 @@ function computeNumericOutcomeMetrics(formValues, currentMetrics) {
   return { metrics, legacyClears };
 }
 
+// Single-value display formatter (2026-08, Outcome Tracking v1 extraction —
+// byte-identical to formatNumericOutcomeMetrics's old inline expression,
+// pulled out only so the new Baseline/Today columns below can render a
+// value exactly the same way the SOAP card already does, instead of a
+// second hand-written copy of "bounded shows /max, unbounded shows its
+// unit string" that could silently drift from this one over time).
+function formatMetricNumberDisplay(cfg, value) {
+  const def = getOutcomeMetricDef(cfg.metricId);
+  if (cfg.max != null) return `${value}/${cfg.max}`;
+  if (def?.unit === "hours") return `${value} h`;
+  if (def?.unit) return `${value} ${def.unit}`;
+  return `${value}`;
+}
+
 // Shared display formatter — SOAP card and Last Visit at a Glance both call
 // this instead of each hand-formatting pain/sleep/effect-duration
 // separately. [label, valueText] pairs, one per metric that actually has a
@@ -5222,12 +5255,134 @@ function formatNumericOutcomeMetrics(note) {
   return NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
     const resolved = resolveNumericMetricValue(note, cfg);
     if (!resolved.hasValue) return null;
-    const def = getOutcomeMetricDef(cfg.metricId);
-    const v = resolved.value;
-    const valueText = (cfg.max != null ? `${v}/${cfg.max}` : `${v}${def?.unit === "hours" ? " h" : (def?.unit ? " " + def.unit : "")}`)
-      + (resolved.conflict ? " ⚠" : "");
+    const valueText = formatMetricNumberDisplay(cfg, resolved.value) + (resolved.conflict ? " ⚠" : "");
     return [outcomeMetricLabel(cfg.metricId), valueText];
   }).filter(Boolean);
+}
+
+// Outcome Tracking v1 (2026-08, CG8 — docs/CLINICAL_GRAPH_TRACK.md §3):
+// Baseline / Today / Change / Trend, read-only and fully derived from
+// existing note.outcomeMetrics[] data. No new persisted field, no schema
+// change, no chart, no trend snapshot stored anywhere.
+//
+// Case-scoped, per CG8's own wording ("該病程首診值,不是該病人首診值"):
+// Baseline is THIS case's chronologically first visit, Today is THIS
+// case's chronologically latest visit. If visit 1 didn't measure a metric,
+// baseline for that metric is permanently "—" for this case — never
+// silently backfilled from a later visit, and never carried forward from
+// any other case even if it shares a patientCode.
+//
+// No LOCF anywhere: Today reads only the latest visit's own resolved
+// value; if the latest visit didn't measure the metric, Today is "—", full
+// stop, even if an earlier visit had a value.
+//
+// Trend is the CG8 first-phase contract exactly: ↑/↓/→ per consecutive
+// transition in the MEASURED sequence only (unmeasured visits are skipped
+// when building that sequence, never given a fabricated arrow), no color,
+// no "improved/worsened" wording — direction_good varies per metric
+// (increase/decrease/individualized/contextual) and some are explicitly
+// individualized (bowel_frequency), so an arrow here is describing numeric
+// movement only, not a verdict.
+function computeOutcomeTrackingRows(item) {
+  const chronological = [...(item.soapNotes || [])].sort((a, b) => {
+    const dateCompare = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
+    if (dateCompare) return dateCompare;
+    return Number(a.visitNumber || 0) - Number(b.visitNumber || 0);
+  });
+  if (!chronological.length) return [];
+
+  const firstNote = chronological[0];
+  const latestNote = chronological[chronological.length - 1];
+
+  return NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
+    // Row visibility rule: show this metric only if it was measured on AT
+    // LEAST ONE visit anywhere in the case — otherwise this would be an
+    // 11-row wall of dashes on every new case. This is independent of
+    // whether baseline/today specifically have a value (they can still be
+    // "—" individually below even when the row is shown).
+    const measured = chronological
+      .map((note) => resolveNumericMetricValue(note, cfg))
+      .filter((r) => r.hasValue)
+      .map((r) => Number(r.value));
+    if (!measured.length) return null;
+
+    const baselineResolved = resolveNumericMetricValue(firstNote, cfg);
+    const todayResolved = resolveNumericMetricValue(latestNote, cfg);
+    const baseline = baselineResolved.hasValue ? Number(baselineResolved.value) : null;
+    const today = todayResolved.hasValue ? Number(todayResolved.value) : null;
+    // Floating-point cleanup only (e.g. 7.3 - 6.1 artifacts) — never a
+    // clinical rounding decision; sleep_hours is the only decimal metric
+    // today and this preserves whatever precision was actually entered.
+    const change = (baseline != null && today != null) ? Math.round((today - baseline) * 1e6) / 1e6 : null;
+
+    // One transition per consecutive pair in the measured-only sequence.
+    // A single-visit case (or a metric measured on only one visit) has
+    // measured.length === 1 → trend stays null → displayed as "—", per
+    // CG8's "fewer than 2 measured observations" rule.
+    let trend = null;
+    if (measured.length >= 2) {
+      trend = measured.slice(1).map((v, i) => {
+        const prev = measured[i];
+        if (v > prev) return "↑";
+        if (v < prev) return "↓";
+        return "→";
+      }).join("");
+    }
+
+    return { cfg, baseline, today, change, trend };
+  }).filter(Boolean);
+}
+
+function renderOutcomeTrackingPanel(item) {
+  const rows = computeOutcomeTrackingRows(item);
+  if (!rows.length) {
+    return `
+      <div class="timeline-head">
+        <strong>Outcome Tracking</strong>
+      </div>
+      <div class="case-empty">尚無結構化 outcome 數值。No structured numeric outcome metrics recorded in this case yet.</div>
+    `;
+  }
+  const fmt = (cfg, value) => (value == null ? "—" : formatMetricNumberDisplay(cfg, value));
+  const fmtChange = (value) => {
+    if (value == null) return "—";
+    if (value > 0) return `+${value}`;
+    return `${value}`;
+  };
+  return `
+    <div class="timeline-head">
+      <strong>Outcome Tracking</strong>
+      <small class="timeline-date">Baseline = 本病程首診 · Today = 本病程最新一診 · ${rows.length} 項有記錄</small>
+    </div>
+    <div class="outcome-tracking-wrap">
+      <table class="outcome-tracking-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Baseline</th>
+            <th>Today</th>
+            <th>Change</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map((row) => {
+            const def = getOutcomeMetricDef(row.cfg.metricId);
+            const directionHint = def?.direction_good && OUTCOME_DIRECTION_HINT_LABELS[def.direction_good]
+              ? `<small class="direction-hint">${escapeHtml(OUTCOME_DIRECTION_HINT_LABELS[def.direction_good])}</small>`
+              : "";
+            return `<tr>
+              <td>${escapeHtml(outcomeMetricLabel(row.cfg.metricId))}${directionHint}</td>
+              <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
+              <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
+              <td>${escapeHtml(fmtChange(row.change))}</td>
+              <td>${escapeHtml(row.trend || "—")}</td>
+            </tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
 }
 
 function normalizeStringList(value) {
@@ -5462,6 +5617,7 @@ function renderClinicalCaseDetail(item) {
       <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
+    ${renderOutcomeTrackingPanel(item)}
     ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>

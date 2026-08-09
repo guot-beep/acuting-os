@@ -1,7 +1,26 @@
 # Outcome Metrics Semantic Audit v2 — Numeric Shape / Clinical Meaning / UI Wiring Readiness
 
-Written: 2026-08 (Claude, at Ting's request). Status: **AUDIT + DESIGN ONLY.**
-No metric wired, no code changed, no schema changed.
+Written: 2026-08 (Claude, at Ting's request). Original status at the time
+this document was written: **AUDIT + DESIGN ONLY — no metric wired, no code
+changed, no schema changed.** That was true on the day this was written; it
+is no longer the current state.
+
+**Status update (2026-08, correction):** the historical audit below is
+unchanged and its reasoning still holds — this note only corrects the
+"nothing is wired yet" framing, which the runtime has since passed.
+Implementation proceeded in three batches after this document's
+recommendation in §8: `metric.stress_level`/`metric.mood`/
+`metric.energy_level`/`metric.sleep_quality` (commit `c16099b`), then
+`metric.bloating`/`metric.sleep_onset_minutes`/`metric.night_wakings`/
+`metric.bowel_frequency` (commit `360691d`). **Current wired numeric
+metrics: 11 of the 22 total vocabulary definitions.** Full lineage:
+`63f0896` (pain_score) → `eda9819` (sleep_hours) → `1a3a426`
+(effect_duration_days, reconciled from a legacy field) → `c16099b` (batch
+2, four 0–10 scales) → `360691d` (batch 3, four mixed-shape metrics) →
+whatever commit accompanies Outcome Tracking v1 (see
+`docs/CLINICAL_OUTCOMES_HANDOFF.md`, which supersedes this note as the
+single up-to-date status source — read that file for current state,
+read this file for the numeric-shape reasoning behind each metric).
 
 Supersedes the coarse classification in `docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md`
 §9/§7 for numeric-shape purposes — that pass grouped everything non-0–10 as
@@ -20,16 +39,29 @@ Read together with: `app.js` `NUMERIC_OUTCOME_METRIC_CONFIG` /
 
 ## 0. What's already wired
 
-Three metrics, proven end-to-end (create/save/reload/edit/multi-visit/
-multi-case, all verified live in-browser across four commits):
+Historical note: at the time this section was first written, only three
+metrics were wired (the table below, first three rows). **That is stale —
+see the status update at the top of this document.** Eleven are wired now,
+all proven end-to-end (create/save/reload/edit/multi-visit/multi-case,
+verified live in-browser, each in its own commit):
 
 | metric_id | commit |
 |---|---|
 | `metric.pain_score` | 63f0896 |
 | `metric.sleep_hours` | eda9819 |
 | `metric.effect_duration_days` | 1a3a426 (reconciled from a pre-existing legacy field) |
+| `metric.stress_level` | c16099b |
+| `metric.mood` | c16099b |
+| `metric.energy_level` | c16099b |
+| `metric.sleep_quality` | c16099b |
+| `metric.bloating` | 360691d |
+| `metric.sleep_onset_minutes` | 360691d |
+| `metric.night_wakings` | 360691d |
+| `metric.bowel_frequency` | 360691d |
 
-Config shape in use today:
+Config shape in use today (unchanged since this document was written —
+every metric above fits it with zero extension, confirming the §6
+prediction held):
 ```js
 { metricId, min, max, integer, legacyField? }
 ```

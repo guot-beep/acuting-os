@@ -563,6 +563,31 @@ h1 {
    in this file — deliberately not an error color, this blocks nothing. */
 .metric-conflict-warning { display: block; margin-top: 0.2rem; color: #b45309; font-weight: 600; }
 
+/* Outcome Tracking v1 (2026-08, CG8): Baseline/Today/Change/Trend, read-only,
+   case-level summary. Same light-palette convention as .clinical-mini-grid
+   above (this section has no dark-mode branch anywhere in this file — see
+   the note near the bottom of this file explaining why one was never added).
+   .outcome-tracking-wrap only exists so a case with several tracked metrics
+   scrolls horizontally on narrow screens instead of squeezing the table. */
+.outcome-tracking-wrap { overflow-x: auto; margin: 0.75rem 0; }
+.outcome-tracking-table { border-collapse: collapse; width: 100%; min-width: 480px; }
+.outcome-tracking-table th,
+.outcome-tracking-table td {
+  border-bottom: 1px solid #e0e6e5;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.86rem;
+}
+.outcome-tracking-table thead th {
+  background: #f8faf9;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.outcome-tracking-table tbody td:first-child { color: #20383b; font-weight: 700; }
+.outcome-tracking-table .direction-hint { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 500; margin-top: 0.15rem; }
+
 /* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
 .soap-reflection-view {
   margin-top: 0.5rem;
