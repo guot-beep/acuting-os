@@ -1,3 +1,10 @@
+# 2026-08-09 Antigravity — Pharmacology Pilot Ingestion (7 drugs)
+
+- **做了什麼**：執行受控的 Pharmacology Pilot Ingestion Batch（共 7 筆藥物：`warfarin`, `apixaban`, `clopidogrel`, `aspirin`, `enoxaparin`, `losartan`, `hydrochlorothiazide`）；6 筆既有卡片採 Additive-only 增補，1 筆新增卡片（`drug.losartan`）；擴充 `drug_classes.json` (`drugclass.arbs`) 與 `drug_targets.json` (`drugtarget.at1_receptor`)；將未核准的 schema 提案欄位（`board_high_yield_*`, `clinical_impact_*`）暫存於 `data/pharmacology/staging_v7_ingestion.json`，確保數據 **LOST 數為 0**。
+- **數字 before→after**：`drugs.json` `15` → `16` 筆；`drug_classes.json` `11` → `12` 筆；`drug_targets.json` `10` → `11` 筆；`knowledge_data.js` 藥物總數 `15` → `16` 筆；7 筆藥物 Preserved Content: Canonical `146` 項 + Staging `42` 項 = `188` 項，**LOST = 0**。
+- **驗證**：`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通过、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；dev-server http://127.0.0.1:8361 正常運行，SOAP picker 可正確解析全部 7 筆藥物。
+- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物，未開始第 8 筆；未擴充 canonical schema；未修改驗證器語意。
+
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 
 - **做了什麼**：將 `pattern-v2-implementation` rebase 同步至 `origin/codex/pattern-v2` 最新 commit `8ecc96b`（含 Last Visit at a Glance）；保留並完修西藥（Pharmacology）頁面：於 `js/router.js` 加入 `pharm` 工作區，並在 `js/knowledge.js` 實作簡潔的 Pharmacology list/card 渲染器與藥物分類篩選 / 關鍵字搜尋。

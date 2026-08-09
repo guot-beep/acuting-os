@@ -1,0 +1,118 @@
+{
+  "purpose": "Staging store for source v7 clinical impact & board high yield content that cannot fit the current flat schema without schema expansion approval.",
+  "ingested_at": "2026-08-09",
+  "records": {
+    "drug.warfarin": {
+      "unmapped_board_high_yield_en": [
+        "drug.warfarin: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.warfarin: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    },
+    "drug.apixaban": {
+      "unmapped_board_high_yield_en": [
+        "drug.apixaban: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.apixaban: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    },
+    "drug.clopidogrel": {
+      "unmapped_board_high_yield_en": [
+        "drug.clopidogrel: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.clopidogrel: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    },
+    "drug.aspirin": {
+      "unmapped_board_high_yield_en": [
+        "drug.aspirin: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.aspirin: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    },
+    "drug.enoxaparin": {
+      "unmapped_board_high_yield_en": [
+        "drug.enoxaparin: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.enoxaparin: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    },
+    "drug.losartan": {
+      "unmapped_board_high_yield_en": [
+        "drug.losartan: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.losartan: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    },
+    "drug.hydrochlorothiazide": {
+      "unmapped_board_high_yield_en": [
+        "drug.hydrochlorothiazide: board summary bullets extracted from source pack v7"
+      ],
+      "unmapped_clinical_impact": {
+        "clinical_impact_en": [
+          "drug.hydrochlorothiazide: clinical impact and symptom confounder statements from source pack v7"
+        ],
+        "clinical_impact_flags": [
+          "bleeding_risk",
+          "hypokalemia",
+          "orthostatic_hypotension",
+          "renal_dose_relevance"
+        ]
+      }
+    }
+  }
+}

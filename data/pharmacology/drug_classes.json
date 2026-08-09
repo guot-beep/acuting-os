@@ -354,6 +354,30 @@
         "drugsystem.cardiovascular_renal"
       ],
       "review_status": "draft"
+    },
+    {
+      "id": "drugclass.arbs",
+      "name_en": "Angiotensin II receptor blockers (ARBs)",
+      "name_zh": "血管緊張素 II 受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.at1_receptor",
+      "suffix_en": "-sartan",
+      "mechanism_overview_en": "Selectively block angiotensin II binding to AT1 receptors, preventing vasoconstriction and aldosterone secretion.",
+      "mechanism_overview_zh": "選擇性阻斷血管緊張素 II 與 AT1 受體結合，抑制血管收縮與醛固酮分泌。",
+      "indications_en": [
+        "Hypertension",
+        "Diabetic nephropathy",
+        "Heart failure"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "糖尿病腎病變",
+        "心衰竭"
+      ],
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_pilot"
     }
   ]
 }
