@@ -9003,6 +9003,810 @@
       "tongue_en": "Red tongue with little or no coating",
       "pulse_zh": "脈細數",
       "pulse_en": "Thready rapid pulse"
+    },
+    {
+      "id": "pattern.cold_phlegm_obstructing_lung",
+      "name_zh": "寒痰阻肺",
+      "name_en": "Cold-Phlegm Obstructing Lung",
+      "pinyin": "Han Tan Zu Fei",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "secondary_family": "qi_xue_jin_ye",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [
+        "lung"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "寒與痰相結壅阻於肺，肺氣宣降失常，故咳嗽、痰白清稀或泡沫量多，並見寒象。",
+      "mechanism_en": "Cold combines with Phlegm and obstructs the Lung, impairing Lung diffusion and descent and producing cough with copious white, clear, thin, or frothy sputum together with Cold signs.",
+      "key_signs_zh": [
+        "咳嗽痰多",
+        "痰色白而清稀或呈泡沫",
+        "胸部痞悶或呼吸不利",
+        "畏寒肢冷",
+        "口不渴或喜溫飲"
+      ],
+      "key_signs_en": [
+        "Cough with copious sputum",
+        "White, clear, thin, or frothy sputum",
+        "Chest oppression or impaired breathing",
+        "Aversion to cold and cold limbs",
+        "Absence of thirst or preference for warm drinks"
+      ],
+      "treatment_principle_zh": "溫肺散寒，化痰降逆",
+      "treatment_principle_en": "Warm the Lung, disperse Cold, transform Phlegm, and restore descending",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm_damp_in_lung",
+          "distinguishing_zh": "痰濕阻肺以痰多黏濁、胸悶困重為主；寒痰阻肺的痰更清稀白滑，並有明顯畏寒、肢冷與喜溫。",
+          "distinguishing_en": "Phlegm-Damp in the Lung centers on copious sticky sputum, oppression, and heaviness; Cold-Phlegm has clearer, thinner white sputum with marked cold limbs, aversion to cold, and preference for warmth.",
+          "source": "curriculum/conditions/TCM Pathology 1 & 2 notes.md"
+        },
+        {
+          "pattern_id": "pattern.phlegm_heat_in_lung",
+          "distinguishing_zh": "痰熱壅肺見黃稠痰、口渴、舌紅苔黃膩、脈滑數；寒痰阻肺則見白清稀痰、寒象、舌淡苔白滑、脈滑遲。",
+          "distinguishing_en": "Phlegm-Heat in the Lung has thick yellow sputum, thirst, a red tongue with yellow greasy coating, and a slippery rapid pulse; Cold-Phlegm has clear white thin sputum, Cold signs, a pale tongue with white slippery coating, and a slippery slow pulse.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/phlegm-heat"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+        "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product",
+        "https://www.meandqi.com/knowledge-base/patterns/phlegm-heat"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product"
+        ],
+        "treatment_principle": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md"
+        ],
+        "differentiation": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/phlegm-heat"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md"
+        ]
+      },
+      "tongue_zh": "舌淡，苔白滑或白膩",
+      "tongue_en": "Pale tongue with a white slippery or greasy coating",
+      "pulse_zh": "脈沉滑遲",
+      "pulse_en": "Deep, slippery, slow pulse"
+    },
+    {
+      "id": "pattern.wind_phlegm",
+      "name_zh": "風痰",
+      "name_en": "Wind-Phlegm",
+      "pinyin": "Feng Tan",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "qi_xue_jin_ye",
+      "secondary_family": "bing_yin",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": null,
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "zang_fu": [],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "痰濁與內風相搏，風動而痰隨之上擾或窜絡，使清竅、經絡或竅竅受阻，故以眩暈、震顫、麻木、口眼偏斜或突發運動異常為特徵。",
+      "mechanism_en": "Phlegm combines with internal Wind; Wind movement carries Phlegm upward or into the channels and orifices, producing dizziness, tremor, numbness, facial deviation, or other sudden movement-related manifestations.",
+      "key_signs_zh": [
+        "眩暈或頭重昏蒙",
+        "肢體震顫或抽搐",
+        "肢體麻木",
+        "口眼偏斜或言語不利",
+        "症狀突發、變動或具動風特徵"
+      ],
+      "key_signs_en": [
+        "Dizziness or a heavy clouded head",
+        "Limb tremor or convulsion",
+        "Numbness of the limbs",
+        "Facial deviation or impaired speech",
+        "Sudden, shifting, or movement-related manifestations"
+      ],
+      "treatment_principle_zh": "化痰息風，通絡開竅",
+      "treatment_principle_en": "Transform Phlegm, extinguish Wind, open the channels, and clear the orifices as appropriate",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm_damp",
+          "distinguishing_zh": "痰濕以痰多、胸悶、身重、納差為主；風痰以眩暈、震顫、麻木、偏斜等動風或經絡表現為高價值鑑別點。",
+          "distinguishing_en": "Phlegm-Damp centers on sputum, chest oppression, heaviness, and poor appetite; Wind-Phlegm is distinguished by dizziness, tremor, numbness, deviation, and other Wind or channel manifestations.",
+          "source": "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product"
+        },
+        {
+          "pattern_id": "pattern.liver_wind",
+          "distinguishing_zh": "肝風以動風現象為核心；風痰除動風外，還要有痰濁證據，如頭重昏蒙、麻木、膩苔或滑脈。",
+          "distinguishing_en": "Liver Wind is defined by Wind movement; Wind-Phlegm additionally requires evidence of Phlegm such as a clouded heavy head, numbness, a greasy coating, or a slippery pulse.",
+          "source": "curriculum/conditions/TCM Pathology 1 & 2 notes.md; https://www.meandqi.com/knowledge-base/patterns/phlegm"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+        "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product",
+        "https://www.meandqi.com/knowledge-base/patterns/phlegm"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/concepts/phlegm-as-a-pathological-product"
+        ],
+        "differentiation": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/phlegm"
+        ],
+        "tongue": [
+          "https://www.meandqi.com/knowledge-base/patterns/phlegm"
+        ],
+        "pulse": [
+          "https://www.meandqi.com/knowledge-base/patterns/phlegm"
+        ]
+      },
+      "tongue_zh": "苔膩或黏膩",
+      "tongue_en": "Greasy or sticky tongue coating",
+      "pulse_zh": "脈滑，可兼弦",
+      "pulse_en": "Slippery pulse, possibly wiry"
+    },
+    {
+      "id": "pattern.summerheat_dampness",
+      "name_zh": "暑濕",
+      "name_en": "Summerheat-Dampness",
+      "pinyin": "Shu Shi",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "bing_yin",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": null,
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "spleen",
+        "stomach"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "盛夏暑熱與濕邪相合，暑熱逼津而濕邪困阻中焦與氣機，故熱象與身重、胸脸痞悶、納呆惡心等濕象並見。",
+      "mechanism_en": "Summerheat combines with Dampness in hot, humid conditions; Heat pressures fluids while Dampness encumbers the middle burner and Qi movement, producing Heat signs together with heaviness, oppression, poor appetite, and nausea.",
+      "key_signs_zh": [
+        "發熱或身熱不揚",
+        "身體沉重倦怠，頭重如裹",
+        "胸脸痞悶",
+        "納呆惡心",
+        "口渴但飲水不多"
+      ],
+      "key_signs_en": [
+        "Fever or Heat constrained by Dampness",
+        "Heavy fatigued body and a swathed heavy head",
+        "Chest and epigastric oppression",
+        "Poor appetite and nausea",
+        "Thirst with little desire to drink"
+      ],
+      "treatment_principle_zh": "清解暑熱，芳化或滲利濕邪，和中理氣",
+      "treatment_principle_en": "Clear Summerheat, transform or drain Dampness, and harmonize the middle burner",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.damp_heat_spleen_stomach",
+          "distinguishing_zh": "脾胃濕熱是定位中焦的臟腑證；暑濕需有暑季或炎熱潮濕暴露的病因背景，並兼暑熱特徵。",
+          "distinguishing_en": "Spleen-Stomach Damp-Heat is a Zang-Fu pattern localized to the middle burner; Summerheat-Dampness requires a summer or hot-humid etiologic context with Summerheat features.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        },
+        {
+          "pattern_id": "pattern.wind_heat",
+          "distinguishing_zh": "風熱以發熱、微惡風、咽痛、脈浮數為主；暑濕的身重、頭重、胸脸痞悶、納呆與濡脈更突出。",
+          "distinguishing_en": "Wind-Heat centers on fever, mild aversion to wind, sore throat, and a floating rapid pulse; Summerheat-Dampness is marked by heaviness, a swathed head, chest-epigastric oppression, poor appetite, and a soggy pulse.",
+          "source": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+        "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        ],
+        "key_signs": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        ],
+        "differentiation": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        ],
+        "tongue": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        ],
+        "pulse": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
+        ]
+      },
+      "tongue_zh": "舌紅，苔黃膩或白黃相兼而膩",
+      "tongue_en": "Red tongue with a yellow greasy or mixed white-yellow greasy coating",
+      "pulse_zh": "脈濡數",
+      "pulse_en": "Soggy rapid pulse"
+    },
+    {
+      "id": "pattern.warm_dryness_attacking_lung",
+      "name_zh": "溫燥犯肺",
+      "name_en": "Warm-Dryness Attacking Lung",
+      "pinyin": "Wen Zao Fan Fei",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "bing_yin",
+      "secondary_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "lung"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "初秋餘熱與燥邪相合外襲肺衛，燥傷肺津並使肺失宣降，故乾咳、痰少難咯、鼻咽乾燥，並見較明顯溫熱象。",
+      "mechanism_en": "In early autumn, residual warmth combines with Dryness and attacks the Lung and defensive level; Dryness damages Lung fluids and impairs diffusion and descent, causing dry cough and dry airways with Warm-Heat signs.",
+      "key_signs_zh": [
+        "乾咳或痰少黏稠難咯",
+        "鼻乾、咽乾或咽痛",
+        "口渴喜冷飲",
+        "發熱較著，惡寒較輕",
+        "痰中可帶血絲"
+      ],
+      "key_signs_en": [
+        "Dry cough or scant sticky difficult sputum",
+        "Dry nose and dry or sore throat",
+        "Thirst with preference for cold drinks",
+        "More prominent fever with milder chills",
+        "Sputum may be blood-streaked"
+      ],
+      "treatment_principle_zh": "辛涼透表，清宣肺熱，潤燥生津",
+      "treatment_principle_en": "Gently release the exterior with cool acrid methods, clear and diffuse Lung Heat, and moisten Dryness to generate fluids",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.cool_dryness_attacking_lung",
+          "distinguishing_zh": "溫燥以發熱、口渴、咽痛、舌尖紅、苔薄黃乾與脈浮數為主；涼燥則惡寒較著、不渴或渴少，苔白乾、脈浮緊。",
+          "distinguishing_en": "Warm-Dryness has more fever, thirst, sore throat, a red tip with a thin yellow dry coat, and a floating rapid pulse; Cool-Dryness has stronger chills, little thirst, a white dry coat, and a floating tight pulse.",
+          "source": "curriculum/conditions/TCM Pathology 1 & 2 notes.md; https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        },
+        {
+          "pattern_id": "pattern.wind_heat_invading_lung",
+          "distinguishing_zh": "風熱犯肺可見咽痛與咳嗽，但溫燥犯肺以鼻咽乾燥、乾咳或痰少黏難咯與乾苔為核心。",
+          "distinguishing_en": "Wind-Heat may also cause sore throat and cough, but Warm-Dryness is defined by dry nose and throat, dry cough or scant sticky sputum, and a dry tongue coating.",
+          "source": "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM patterns/Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md",
+        "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+        "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen",
+        "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md",
+          "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+        ],
+        "differentiation": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+        ]
+      },
+      "tongue_zh": "舌尖紅，苔薄黃而乾",
+      "tongue_en": "Red tongue tip with a thin yellow dry coating",
+      "pulse_zh": "脈浮數",
+      "pulse_en": "Floating rapid pulse"
+    },
+    {
+      "id": "pattern.cool_dryness_attacking_lung",
+      "name_zh": "涼燥犯肺",
+      "name_en": "Cool-Dryness Attacking Lung",
+      "pinyin": "Liang Zao Fan Fei",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "bing_yin",
+      "secondary_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [
+        "lung"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "深秋涼邪與燥邪相合外襲肺衛，涼邪束表，燥邪傷津，肺失宣降，故惡寒無汗與鼻咽乾、乾咳痰少並見。",
+      "mechanism_en": "In late autumn, Coolness combines with Dryness and attacks the Lung and defensive level; Coolness constrains the exterior while Dryness damages fluids and impairs Lung diffusion and descent.",
+      "key_signs_zh": [
+        "惡寒較著，發熱較輕",
+        "無汗",
+        "乾咳，痰少或黏滯難咯",
+        "鼻乾、咽乾",
+        "口不渴或渴不多"
+      ],
+      "key_signs_en": [
+        "Stronger chills with milder fever",
+        "Absence of sweating",
+        "Dry cough with scant or sticky difficult sputum",
+        "Dry nose and throat",
+        "No thirst or only slight thirst"
+      ],
+      "treatment_principle_zh": "辛溫解表，宣肺潤燥",
+      "treatment_principle_en": "Gently warm and release the exterior, diffuse the Lung, and moisten Dryness",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.warm_dryness_attacking_lung",
+          "distinguishing_zh": "涼燥以惡寒、無汗、不渴或渴少、苔白乾、脈浮緊為主；溫燥則發熱與口渴較著，舌尖紅、苔薄黃乾、脈浮數。",
+          "distinguishing_en": "Cool-Dryness has stronger chills, no sweating, little thirst, a white dry coat, and a floating tight pulse; Warm-Dryness has more fever and thirst, a red tip with thin yellow dry coat, and a floating rapid pulse.",
+          "source": "curriculum/conditions/TCM Pathology 1 & 2 notes.md; https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        },
+        {
+          "pattern_id": "pattern.wind_cold_invading_lung",
+          "distinguishing_zh": "風寒犯肺常見清稀鼻涕與白稀痰，苔薄白而潤；涼燥犯肺以鼻咽乾、乾咳痰少與乾苔為鑑別重點。",
+          "distinguishing_en": "Wind-Cold commonly has copious clear nasal discharge, thin white sputum, and a moist white coat; Cool-Dryness is distinguished by dry nose and throat, dry cough with scant sputum, and a dry coating.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM patterns/Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md",
+        "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+        "https://www.meandqi.com/knowledge-base/patterns/dry-cold",
+        "https://www.meandqi.com/knowledge-base/concepts/dryness-as-a-pathogen"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md",
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ],
+        "differentiation": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM Pathology 1 & 2 notes.md",
+          "https://www.meandqi.com/knowledge-base/patterns/dry-cold"
+        ]
+      },
+      "tongue_zh": "舌淡或淡紅，苔薄白而乾",
+      "tongue_en": "Pale or pale-red tongue with a thin white dry coating",
+      "pulse_zh": "脈浮緊",
+      "pulse_en": "Floating tight pulse"
+    },
+    {
+      "id": "pattern.mixed_cold_heat",
+      "name_zh": "寒熱錯雜",
+      "name_en": "Mixed Cold and Heat",
+      "pinyin": "Han Re Cuo Za",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "ba_gang",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": null,
+        "cold_heat": null,
+        "deficiency_excess": null,
+        "yin_yang": null
+      },
+      "zang_fu": [],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "病程中寒與熱的真實病理狀態同時存在，可分居上下、表裏或不同臟腑部位，因而出現相互矛盾的寒熱表現。",
+      "mechanism_en": "Genuine Cold and genuine Heat coexist in the same disease process, potentially in different upper-lower, exterior-interior, or organ locations, producing clinically contradictory Cold and Heat manifestations.",
+      "key_signs_zh": [
+        "寒象與熱象同時存在",
+        "可見上熱下寒或上寒下熱",
+        "可見表寒裏熱或表熱裏寒",
+        "寒熱表現分屬不同部位或病理層次"
+      ],
+      "key_signs_en": [
+        "Simultaneous genuine Cold and Heat manifestations",
+        "Possible upper Heat with lower Cold or upper Cold with lower Heat",
+        "Possible exterior Cold with interior Heat or exterior Heat with interior Cold",
+        "Cold and Heat findings belong to different locations or pathologic layers"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.exterior_cold_interior_heat",
+          "distinguishing_zh": "寒熱錯雜是一般八綱複合 identity；表寒裏熱明確要求寒在表、熱在裏的特定空間分佈。",
+          "distinguishing_en": "Mixed Cold and Heat is the general Eight-Principle compound identity; Exterior Cold with Interior Heat requires the specific distribution of Cold at the exterior and Heat in the interior.",
+          "source": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        },
+        {
+          "pattern_id": "pattern.true_cold_false_heat",
+          "distinguishing_zh": "寒熱錯雜中寒、熱皆為真實病理狀態；真寒假熱只有寒為本質，熱象是假象。",
+          "distinguishing_en": "In Mixed Cold and Heat, both Cold and Heat are genuine; in True Cold with False Heat, Cold is the true nature and the Heat appearance is deceptive.",
+          "source": "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+        "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "mechanism": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "key_signs": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "differentiation": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+        ]
+      }
+    },
+    {
+      "id": "pattern.exterior_cold_interior_heat",
+      "name_zh": "表寒裏熱",
+      "name_en": "Exterior Cold with Interior Heat",
+      "pinyin": "Biao Han Li Re",
+      "aliases_zh": [
+        "外寒裏熱"
+      ],
+      "aliases_en": [
+        "External Cold with Internal Heat"
+      ],
+      "pattern_family": "ba_gang",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": null,
+        "cold_heat": null,
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "zang_fu": [],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "風寒束表，腠理閉鬱，而裏熱已存或郁而化熱；外寒遏制與內熱壅滯同時存在。",
+      "mechanism_en": "Wind-Cold constrains the exterior and closes the pores while Interior Heat is already present or develops from constraint, so external Cold signs coexist with genuine internal Heat signs.",
+      "key_signs_zh": [
+        "惡寒、發熱並見",
+        "無汗、頭身疼痛",
+        "煩躁或胸悶",
+        "口渴喜冷飲",
+        "可見咽痛、黃痰、便結或尿黃"
+      ],
+      "key_signs_en": [
+        "Concurrent aversion to cold and fever",
+        "Absence of sweating with headache and body aches",
+        "Restlessness or chest oppression",
+        "Thirst with preference for cold drinks",
+        "Possible sore throat, yellow sputum, constipation, or dark urine"
+      ],
+      "treatment_principle_zh": "解表散寒，兼清裏熱",
+      "treatment_principle_en": "Release Exterior Cold while clearing Interior Heat",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold",
+          "distinguishing_zh": "單純風寒以惡寒、無汗、身痛、清稀分泌物與白潤苔為主，不見煩渴、黃痰、便結或尿黃等裏熱證據。",
+          "distinguishing_en": "Simple Wind-Cold has chills, no sweating, body aches, clear discharges, and a white moist coat without the restlessness, thirst, yellow sputum, constipation, or dark urine that establish Interior Heat.",
+          "source": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        },
+        {
+          "pattern_id": "pattern.mixed_cold_heat",
+          "distinguishing_zh": "表寒裏熱是寒熱錯雜的特定型，病位分佈已鎖定為表寒與裏熱；一般寒熱錯雜不預設此分佈。",
+          "distinguishing_en": "Exterior Cold with Interior Heat is a specific Mixed Cold-Heat distribution; generic Mixed Cold and Heat does not prespecify where the two qualities are located.",
+          "source": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+        "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "mechanism": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+        ],
+        "key_signs": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+        ],
+        "differentiation": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+        ],
+        "tongue": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+        ],
+        "pulse": [
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf",
+          "https://www.meandqi.com/knowledge-base/patterns/exterior-cold-invading-with-interior-heat-from-stagnation"
+        ]
+      },
+      "tongue_zh": "舌紅，苔薄白或黃白相兼",
+      "tongue_en": "Red tongue with a thin white or mixed white-yellow coating",
+      "pulse_zh": "脈浮緊，可兼數",
+      "pulse_en": "Floating tight pulse, possibly also rapid"
+    },
+    {
+      "id": "pattern.true_cold_false_heat",
+      "name_zh": "真寒假熱",
+      "name_en": "True Cold with False Heat",
+      "pinyin": "Zhen Han Jia Re",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "ba_gang",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": null,
+        "yin_yang": null
+      },
+      "zang_fu": [],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "裏寒極盛或陽氣衰微，使陽氣浮越於外，以致真實寒證之上出現面紅、發熱感、煩躁或口渴等假熱表現。",
+      "mechanism_en": "Severe Interior Cold or failing Yang forces Yang outward, so deceptive Heat appearances such as flushed cheeks, subjective fever, agitation, or thirst overlay genuine Cold signs.",
+      "key_signs_zh": [
+        "手足厥冷或胸腹觸之冷",
+        "小便清長",
+        "下利清穀或大便溏泄",
+        "面頠浮紅或自覺發熱但喜覆衣被",
+        "口渴但喜熱飲"
+      ],
+      "key_signs_en": [
+        "Reversal-cold hands and feet or a chest and abdomen cold to touch",
+        "Profuse clear urine",
+        "Diarrhea with undigested food or loose stool",
+        "Floating malar flush or subjective fever while still desiring covers",
+        "Thirst with preference for hot water"
+      ],
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.mixed_cold_heat",
+          "distinguishing_zh": "真寒假熱只有寒為真實病性，熱象是陽氣浮越的假象；寒熱錯雜則是真寒與真熱同時存在。",
+          "distinguishing_en": "True Cold with False Heat has genuine Cold with deceptive Heat appearances; Mixed Cold and Heat contains genuine Cold and genuine Heat at the same time.",
+          "source": "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+        },
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "腎陽虛是定位腎系的虛寒證，不必出現假熱；真寒假熱是八綱對病性真假的判定，其面紅、發熱感或口渴不代表真熱。",
+          "distinguishing_en": "Kidney Yang Deficiency is organ-specific deficiency-Cold and does not require false Heat; True Cold with False Heat is an Eight-Principle judgment about deceptive Heat appearances over a Cold nature.",
+          "source": "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md; https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1",
+        "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+        ],
+        "mechanism": [
+          "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1",
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "key_signs": [
+          "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1",
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "differentiation": [
+          "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1",
+          "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        ],
+        "tongue": [
+          "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf?sequence=1"
+        ]
+      },
+      "tongue_zh": "舌淡，苔白",
+      "tongue_en": "Pale tongue with a white coating"
+    },
+    {
+      "id": "pattern.wind_cold_damp_bi",
+      "name_zh": "風寒濕痹",
+      "name_en": "Wind-Cold-Damp Bi",
+      "pinyin": "Feng Han Shi Bi",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "jing_luo",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "cold",
+        "deficiency_excess": "excess",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "風、寒、濕邪合而侵襲經絡與關節，氣血運行受阻，故出現疼痛、僵硬、沉重與活動受限；三邪偏盛不同，疼痛可偏遊走、劇烈或固定重著。",
+      "mechanism_en": "Wind, Cold, and Dampness invade the channels and joints and obstruct Qi and Blood movement, causing pain, stiffness, heaviness, and restricted movement; the dominant pathogen shapes whether pain is moving, severe, or fixed and heavy.",
+      "key_signs_zh": [
+        "關節或肌肉疼痛",
+        "僵硬、沉重與活動受限",
+        "疼痛遇寒、潮濕或陰雨加重",
+        "得溫則減",
+        "患處通常不紅不熱"
+      ],
+      "key_signs_en": [
+        "Joint or muscle pain",
+        "Stiffness, heaviness, and restricted movement",
+        "Pain worsened by cold, damp, or rainy weather",
+        "Pain relieved by warmth",
+        "Affected areas are usually not red or hot"
+      ],
+      "treatment_principle_zh": "祛風散寒，除濕通絡，止痛",
+      "treatment_principle_en": "Dispel Wind, scatter Cold, eliminate Dampness, open the channels, and relieve pain",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_damp_bi",
+          "distinguishing_zh": "風濕痹阻以遊走疼痛、沉重與活動不利為主；風寒濕痹更明確要求寒性疼痛特徵，即遇寒加重、得溫則減。",
+          "distinguishing_en": "Wind-Damp Bi centers on moving pain, heaviness, and impaired movement; Wind-Cold-Damp Bi explicitly requires Cold-type pain that worsens with cold and improves with warmth.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/wind-cold-damp"
+        },
+        {
+          "pattern_id": "pattern.heat_bi",
+          "distinguishing_zh": "熱痹以關節紅、腫、熱、痛，觸之灼熱，遇熱加重為主；風寒濕痹多不紅不熱，遇寒濕加重、得溫痛減。",
+          "distinguishing_en": "Heat Bi has red, swollen, hot, painful joints that worsen with heat; Wind-Cold-Damp Bi is usually not red or hot, worsens with cold-damp exposure, and improves with warmth.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/painful-obstruction-with-wind-cold-damp"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://www.meandqi.com/knowledge-base/patterns/wind-cold-damp",
+        "https://www.meandqi.com/knowledge-base/patterns/painful-obstruction-with-wind-cold-damp"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/conditions/TCM patterns/Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "https://www.meandqi.com/knowledge-base/patterns/wind-cold-damp"
+        ],
+        "key_signs": [
+          "https://www.meandqi.com/knowledge-base/patterns/wind-cold-damp",
+          "https://www.meandqi.com/knowledge-base/patterns/painful-obstruction-with-wind-cold-damp"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/patterns/wind-cold-damp"
+        ],
+        "differentiation": [
+          "https://www.meandqi.com/knowledge-base/patterns/wind-cold-damp",
+          "https://www.meandqi.com/knowledge-base/patterns/painful-obstruction-with-wind-cold-damp"
+        ],
+        "tongue": [
+          "https://www.meandqi.com/knowledge-base/patterns/painful-obstruction-with-wind-cold-damp"
+        ],
+        "pulse": [
+          "https://www.meandqi.com/knowledge-base/patterns/painful-obstruction-with-wind-cold-damp"
+        ]
+      },
+      "tongue_zh": "舌淡，苔白膩",
+      "tongue_en": "Pale tongue with a white greasy coating",
+      "pulse_zh": "脈遲或緊",
+      "pulse_en": "Slow or tight pulse"
     }
   ]
 }

@@ -584,7 +584,9 @@
         "pattern.phlegm_heat_in_lung",
         "pattern.phlegm_misting_heart",
         "pattern.phlegm_fire_disturbing_heart",
-        "pattern.phlegm_heat_obstructing_heart_orifices"
+        "pattern.phlegm_heat_obstructing_heart_orifices",
+        "pattern.cold_phlegm_obstructing_lung",
+        "pattern.wind_phlegm"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "qi_xue_jin_ye",
@@ -1405,6 +1407,138 @@
       "system": "zang_fu",
       "system_zh": "臟腑辨證",
       "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.cold_phlegm_obstructing_lung",
+      "name_zh": "寒痰阻肺",
+      "name_en": "Cold-Phlegm Obstructing Lung",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.wind_phlegm",
+      "name_zh": "風痰",
+      "name_en": "Wind-Phlegm",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm"
+      ],
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；作為風與痰相合的臨床機制 hub，不把 channel expressions 展開為新 ID。"
+    },
+    {
+      "id": "pattern.summerheat_dampness",
+      "name_zh": "暑濕",
+      "name_en": "Summerheat-Dampness",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "bing_yin",
+      "system_zh": "病因辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；暑熱與濕邪相合之季節性病因證。"
+    },
+    {
+      "id": "pattern.warm_dryness_attacking_lung",
+      "name_zh": "溫燥犯肺",
+      "name_en": "Warm-Dryness Attacking Lung",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "bing_yin",
+      "system_zh": "病因辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；以溫燥外襲、燥傷肺津為核心。"
+    },
+    {
+      "id": "pattern.cool_dryness_attacking_lung",
+      "name_zh": "涼燥犯肺",
+      "name_en": "Cool-Dryness Attacking Lung",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "bing_yin",
+      "system_zh": "病因辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；以涼燥外襲、燥傷肺津兼表寒為核心。"
+    },
+    {
+      "id": "pattern.mixed_cold_heat",
+      "name_zh": "寒熱錯雜",
+      "name_en": "Mixed Cold and Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；為一般八綱寒熱錯雜 identity，不與未來的厥陰寒熱錯雜合併。"
+    },
+    {
+      "id": "pattern.exterior_cold_interior_heat",
+      "name_zh": "表寒裏熱",
+      "name_en": "Exterior Cold with Interior Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；表寒與裏熱同時存在的八綱複合證。"
+    },
+    {
+      "id": "pattern.true_cold_false_heat",
+      "name_zh": "真寒假熱",
+      "name_en": "True Cold with False Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；真寒為本，外見假熱，不可以表面熱象誤判為熱證。"
+    },
+    {
+      "id": "pattern.wind_cold_damp_bi",
+      "name_zh": "風寒濕痹",
+      "name_en": "Wind-Cold-Damp Bi",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "jing_luo",
+      "system_zh": "經絡辨證",
+      "registration_note_zh": "Pattern V2-C 登錄：正典身份經 Final Canonical Decision Pack 核准；保留與風濕痹阻、熱痹的鑑別邊界。"
     }
   ]
 }

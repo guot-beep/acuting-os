@@ -17,9 +17,9 @@
     "canon_records": 140,
     "canon_unique_ids": 134,
     "canon_duplicate_ids": 6,
-    "canonical_namespace_ids": 92,
-    "mapped": 41,
-    "pending_registration": 61,
+    "canonical_namespace_ids": 101,
+    "mapped": 42,
+    "pending_registration": 60,
     "excluded_formula_patterns": 32
   },
   "aliases": {
@@ -56,6 +56,7 @@
     "pat.脾胃濕熱": "pattern.damp_heat_spleen_stomach",
     "pat.肝腎陰虛": "pattern.liver_kidney_yin_deficiency",
     "pat.心陽虛": "pattern.heart_yang_deficiency",
+    "pat.風寒濕痹": "pattern.wind_cold_damp_bi",
     "pat.肝陰虛": "pattern.liver_yin_deficiency",
     "pat.脾不統血": "pattern.spleen_not_governing_blood",
     "pat.胃陰虛": "pattern.stomach_yin_deficiency",
@@ -504,15 +505,6 @@
       "used_by_condition_blobs": 1,
       "example_conditions": [
         "cond.trigeminal_neuralgia"
-      ]
-    },
-    {
-      "legacy_id": "pat.風寒濕痹",
-      "name_zh": "風寒濕痹",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.knee_osteoarthritis"
       ]
     },
     {

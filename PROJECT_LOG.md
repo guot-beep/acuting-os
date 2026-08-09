@@ -3117,3 +3117,10 @@ Current repo state as of this log:
 - Validation: full build/data/interaction/ID/content checks PASS; first custom runtime assertion used the wrong capitalization and was rerun with the actual string, then PASS.
 - Validator baseline is intentionally now 1/72 strict-template complete and 1/72 four-source-audit complete; 71 records return to the worklist rather than inheriting the earlier narrow 48/72 issue count.
 - Validation PASS: live source/link checks, four-row functions render, exact hero-link behavior, build-data, extra audit, validate-data (769 runtime), interactions, point IDs, content-junk, app syntax, JSON parse, and diff check.
+# 2026-08-08 Codex — Pattern V2-C pathogen, Dryness, and selected mechanisms
+
+- **做了什麼**：新增 9 個經 Final Canonical Decision Pack 核准的 `pattern.*` identity；只同步 `pattern.phlegm` 的必要雙向 membership，並以現有 alias builder 對應 `pat.風寒濕痹`。
+- **數字 before→after**：Registry `89→98`（taxonomy `10→10`、clinical `79→88`）；library raw `82→91`、active `79→88`、deprecated `3→3`；active reconciliation `79/79→88/88`，duplicate IDs `0→0`。
+- **來源與空欄**：9/9 有 identity/mechanism/key-sign/differential provenance；tongue `8/9`、pulse `7/9`。寒熱錯雜無單一通用舌脈，真寒假熱脈象未寫；9/9 formulas/points 留空，未將來源情境詞彙伪造為 live ID links。
+- **驗證**：Pattern standard/registry、ratchet、alias dry-run、build-data determinism、validate-data、interactions、content-junk、relations、reconciliation、endpoint/bilingual/focused-encoding audit 通過。`validate-relation-registry` 僅保留既有 `edge.pattern_differentials` R4；全庫 encoding debt 非本批回歸。
+- **STOP**：V2-D／六經、衛氣營血、三焦、婦科、奇經、relation types/edges 與 endpoint namespaces 均未開始。

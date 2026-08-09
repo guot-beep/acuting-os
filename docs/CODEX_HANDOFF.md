@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — Pattern V2-C pathogen, Dryness, and selected mechanisms
+
+- **Branch / Scope**: `codex/pattern-v2`; V2-B.1 provenance commit `d2f9234`; V2-C adds exactly nine approved identities and does not begin V2-D.
+- **IDs**: `pattern.cold_phlegm_obstructing_lung`, `pattern.wind_phlegm`, `pattern.summerheat_dampness`, `pattern.warm_dryness_attacking_lung`, `pattern.cool_dryness_attacking_lung`, `pattern.mixed_cold_heat`, `pattern.exterior_cold_interior_heat`, `pattern.true_cold_false_heat`, `pattern.wind_cold_damp_bi`.
+- **Counts**: Registry `89→98`, taxonomy `10→10`, clinical `79→88`; library raw `82→91`, active `79→88`, deprecated `3→3`; active reconciliation `79/79→88/88`; duplicate registry/library IDs remain 0.
+- **Provenance / Deliberate Gaps**: all nine cards have field-level identity, mechanism, key-sign, and differentiation sources. Tongue is supported for 8/9 and pulse for 7/9. Generic Mixed Cold and Heat has no universal tongue/pulse or treatment field; True Cold with False Heat has no pulse or treatment field. Formula and point arrays remain empty for all nine because contextual source wording was not promoted to live links.
+- **Validation**: Pattern standard 91/91 clean, Pattern registry PASS, ratchet Pattern defects 0, alias dry-run PASS, deterministic build-data PASS, validate-data/interactions/content-junk/relations PASS, exact `98/10/88/91/88/3` reconciliation PASS, focused encoding and all new differential endpoints PASS. Existing `edge.pattern_differentials` R4 and repository-wide encoding debt are unchanged and were not repaired.
+- **STOP**: no Six Channels, Four Levels, San Jiao V2, gynecology, extraordinary-vessel work, relation types/edges, or endpoint namespaces were started.
+
 ## [2026-08-08] Codex Handoff — Pattern V2-0／V2-A frozen baseline、V1 enrichment 與 true aliases
 
 - **Branch / Commits**: `codex/pattern-v2`; V2-0 `20ffd8f`; V2-A content and this handoff are isolated from the pre-existing JS and extra-point work.
