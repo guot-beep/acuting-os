@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-UE1 肘尖（Zhoujian）兩源只灸與 legacy 技法降級
+
+- **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `8801c10` (`feat(acupoints): refine Zhoujian extra point`). 原 `codex/extra-points-2026-08-07` dirty worktree 的 EX-UE1～EX-UE4 草稿完整保留、未清理或覆蓋；本 branch 從已推送 `b92ac65` 乾淨建立。
+- **Four Layers / Exact Links**: NCBAHM Appendix A 未明列 Zhoujian，本地課件無專條。eLotus Ex-UE1、AD 拼音索引與 `https://www.americandragon.com/Points/Zhoujian.html` 均於本 session 開啟；另開啟 NIDDK appendicitis 精確頁，只作舊腸癰的急症邊界。三個顯示連結均實際開啟，無 generic CloudTCM。
+- **Reconciliation**: eLotus／AD 對鷹嘴尖定位與「只灸」一致；保留本庫 `EX-UE1`／`ex.ue1`，另記 AD `M-UE-46`。AD 內容頁實際列有瘰癧、化膿性癰腫與淋巴結炎，只有 Command Functions／Actions 空白；未沿用先前草稿的「AD identity-only」錯判。
+- **Safety / Legacy**: 舊直刺0.3～0.5寸、點刺出血、直接灸7～15壯及手指消毒文字均保留但降為 unsupported legacy，不與兩頁的「只灸」製造假共識。舊腸癰不升格為闌尾炎療效；孕期、兒童、感覺障礙、皮膚脆弱、抗凝／凝血異常與灸法停止規則均保留 source gap。
+- **Counts / Validation / Next**: strict/four-source `39/72 → 40/72`；issues `33/72 → 32/72`；generic Cloud `9/72`；measurable/source/mojibake gaps `0/72`。extra audit、build、947 runtime、interactions、925 point IDs、content-junk、app syntax、24欄 canonical/runtime parity 與 diff check 通過。下一張 `EX-UE2 二白 Erbai`。
+
 ## [2026-08-08] Codex Handoff — EX-B12 坐骨（Zuogu）四層修整
 
 - **Branch / Content Commits**: `codex/extra-points-2026-08-07` / `49f9830` (`feat(acupoints): refine Zuogu extra point`) plus QA correction `583ab9e` (`fix(acupoints): keep Zuogu paralysis as red flag`).

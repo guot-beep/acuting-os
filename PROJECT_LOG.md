@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-UE1 肘尖四源、兩源只灸與 AD 內容校正
+
+- **做了什麼**：從 EX-B12 已完成的 `39/72` 接續，只精修 EX-UE1 肘尖；整合 Board／課件缺口、eLotus Ex-UE1、AD M-UE-46 與 NIDDK 急症邊界，補齊雙語定位、解剖缺口、刺灸、安全、功效主治、配穴缺口、考點與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `39/72 → 40/72`；待修 `33/72 → 32/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus／AD 對鷹嘴尖與「只灸」一致；AD 精確頁實有瘰癧、化膿性癰腫、淋巴結炎，只有功效欄空白。舊直刺0.3～0.5寸、放血、直接灸7～15壯不升格；舊腸癰只保留為 NIDDK 支持的闌尾炎急症邊界。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、24欄 canonical/runtime parity、`git diff --check` 全通過；內容 commit `8801c10`。
+- **已知未解／下一步**：四層未提供灸法劑量／停止規則、孕期、兒童與凝血風險方案；下一張 EX-UE2 二白。既有 dirty 經外奇穴草稿 worktree 與 Pattern／Condition 工作均未納入。
+
 # 2026-08-08 Codex — EX-B12 坐骨定位衝突、深臀安全與精確連結修整
 
 - **做了什麼**：按四層工作流重整 EX-B12 坐骨；保留 `EX-B12`／`ex.b12`，補齊中英文定位、解剖、刺灸法、功效主治、配穴、考點、安全與逐欄來源，並把卡片可點來源收斂為已實際開啟的 American Dragon 坐骨精確頁。
