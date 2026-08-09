@@ -1,5 +1,23 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Bounded Pharmacology Foundation Patch & Negative Test Suite
+- **What was done:** Completed bounded Pharmacology Foundation Patch resolving 4 source/verification contract defects. Removed course: from OFFICIAL_SOURCE regex so lecture notes cannot satisfy official-label safety gates. Enforced mandatory field-level provenance field_sources[field] for all safety fields (disallowing generic card-level sources fallback). Added blocking validator rule rejecting deprecated overdose_toxicity_notes_en. Refined verification status enum (unverified, machine_metadata_verified, human_reviewed) and enforced mandatory human reviewer provenance (reviewed_by and reviewed_at). Built automated negative test suite (scripts/test-pharm-negative-cases.js) verifying Negative Tests A-E.
+- **Numbers (before -> after):**
+  - Negative Tests A-E: 0/5 -> 5/5 PASSED (100%).
+  - Machine_verified self-promotions: 33 -> 0 (migrated to truthful machine_metadata_verified).
+  - Field-level safety missing provenance: 0 -> 0 (PASS).
+- **Verification Results:**
+  - test-pharm-negative-cases.js: ALL 5 NEGATIVE TESTS PASSED.
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** sym.* symptom namespace currently 0 records in taxonomy (documented limitation).
+- **Next Step:** Awaiting Ting authorization before proceeding to Bastyr Week 1-2 Priority Pack.
+
 ## 2026-08-09 Antigravity — Bastyr Week 1–2 Priority Pack (First Batch: 12 Priority Drugs)
 - **What was done:** Completed first execution batch of Bastyr Week 1–2 Back-to-School Priority Pack. Built 12 finely reference-quality drug cards (albuterol, atropine, prazosin, propranolol, clonidine, disulfiram, phenytoin, carbamazepine, ethosuximide, gabapentin, carbidopa_levodopa, phenelzine) and 12 supporting drug class cards in drug_classes.json. Integrated official DailyMed setids & verified label metadata for all 12 cards. Added separated Bastyr high-yield education layer (mnemonics, classic associations, exam traps, must-know summaries) and integrative medicine flags. Updated systems (5), targets (26), classes (29), and drugs (33).
 - **Numbers (before -> after):**

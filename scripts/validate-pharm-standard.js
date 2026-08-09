@@ -25,7 +25,7 @@ const SAFETY_OFFICIAL_ONLY = [
   'class_contraindications_en', 'class_contraindications_zh',
   'drug_interactions_en', 'drug_interactions_zh',
   'pregnancy_lactation_en', 'pregnancy_lactation_zh',
-  'overdose_en', 'overdose_toxicity_notes_en',
+  'overdose_en',
   'herb_drug_interactions_en', 'herb_drug_interactions_zh',
 ];
 const SAFETY_SOURCED = [
@@ -39,7 +39,8 @@ const SAFETY_SOURCED = [
   'monitoring_requirements_en',
 ];
 
-const OFFICIAL_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed|course):/i;
+// OFFICIAL_SOURCE must NOT include course:, instructor-note:, board-outline:, textbook:
+const OFFICIAL_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed):/i;
 const ANY_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed|course|instructor-note|board-outline|textbook|systematic-review):/i;
 
 const ID_PATTERNS = {
@@ -89,12 +90,9 @@ const INTEGRATIVE_CLINICAL_FLAGS = new Set([
 ]);
 
 const VERIFICATION_STATUSES = new Set([
-  'framework_ready',
-  'source_identified',
-  'partially_populated',
-  'machine_verified',
+  'unverified',
+  'machine_metadata_verified',
   'human_reviewed',
-  'draft',
 ]);
 
 const load = (name) => {
@@ -251,12 +249,13 @@ function main() {
       metrics.unresolvedCondLinks++;
     }
 
-    // Safety fields source check for classes
+    // Safety fields MUST use FIELD-LEVEL provenance (c.field_sources[f]), NOT generic c.sources!
     const checkClassSafety = (f, re, label) => {
       if (!len(c[f])) return;
-      const srcs = (c.field_sources || {})[f] || c.sources;
+      const srcKey = f.endsWith('_zh') ? f.replace(/_zh$/, '_en') : f;
+      const srcs = (c.field_sources || {})[f] || (c.field_sources || {})[srcKey];
       if (!Array.isArray(srcs) || !srcs.length) {
-        defects.push(`P0 ${where}.${f}: 類別安全欄位有內容但沒有 field_sources 或 sources —— 標明來源或留空`);
+        defects.push(`P0 ${where}.${f}: 類別安全欄位有內容但沒有專屬 field_sources [${f}] —— 通用 sources 不得作為安全欄位證明`);
         metrics.safetyMissingProvenance++;
         return;
       }
@@ -265,7 +264,7 @@ function main() {
         metrics.safetyMissingProvenance++;
       }
     };
-    ['class_contraindications_en', 'class_contraindications_zh'].forEach((f) => checkClassSafety(f, OFFICIAL_SOURCE, '官方標籤/課程'));
+    ['class_contraindications_en', 'class_contraindications_zh'].forEach((f) => checkClassSafety(f, OFFICIAL_SOURCE, '官方標籤'));
     ['class_warnings_en', 'class_warnings_zh', 'shared_adverse_effects_en', 'shared_adverse_effects_zh'].forEach((f) => checkClassSafety(f, ANY_SOURCE, '具名來源'));
   });
 
@@ -283,6 +282,11 @@ function main() {
 
     if (r.drugsystem_ids !== undefined && !Array.isArray(r.drugsystem_ids)) {
       defects.push(`P3 ${where}: drugsystem_ids 必須是陣列,目前是 ${typeof r.drugsystem_ids}`);
+    }
+
+    // Deprecated overdose_toxicity_notes_en blocking check
+    if ('overdose_toxicity_notes_en' in r) {
+      defects.push(`P2 ${where}: overdose_toxicity_notes_en 為已作廢欄位，請遷移至 overdose_en`);
     }
 
     // Check forward links
@@ -362,9 +366,14 @@ function main() {
         defects.push(`P4 ${where}.verification_status: 「${r.verification_status}」不在允許範圍 ${[...VERIFICATION_STATUSES].join('/')}`);
         metrics.invalidVerificationStates++;
       }
-      if (r.verification_status === 'human_reviewed' && r.authored_by && r.authored_by.startsWith('v7_ingestion')) {
-        defects.push(`P0 ${where}.verification_status: 自動腳本生成資料不得標註為 human_reviewed —— 降級為 machine_verified 或 partially_populated`);
-        metrics.invalidVerificationStates++;
+      if (r.verification_status === 'human_reviewed') {
+        if (!r.reviewed_by || !r.reviewed_at) {
+          defects.push(`P0 ${where}.verification_status: 標註為 human_reviewed 但缺少 reviewed_by 或 reviewed_at 審核者資訊`);
+          metrics.invalidVerificationStates++;
+        } else if (typeof r.reviewed_by === 'string' && /^(v7_ingestion|claude|antigravity|codex|chatgpt|ai_agent|script)/i.test(r.reviewed_by)) {
+          defects.push(`P0 ${where}.verification_status: AI/腳本（${r.reviewed_by}）不得作為人類審核者 reviewed_by`);
+          metrics.invalidVerificationStates++;
+        }
       }
     }
 
@@ -395,9 +404,9 @@ function main() {
     const checkSourced = (f, re, label) => {
       if (!len(r[f])) return;
       const srcKey = f.endsWith('_zh') ? f.replace(/_zh$/, '_en') : f;
-      const srcs = (r.field_sources || {})[f] || (r.field_sources || {})[srcKey] || r.sources;
+      const srcs = (r.field_sources || {})[f] || (r.field_sources || {})[srcKey];
       if (!Array.isArray(srcs) || !srcs.length) {
-        defects.push(`P0 ${where}.${f}: 安全欄位有內容但沒有 field_sources —— 標明來源或留空`);
+        defects.push(`P0 ${where}.${f}: 安全欄位有內容但沒有專屬 field_sources [${f}] —— 通用 sources 不得作為安全欄位證明`);
         metrics.safetyMissingProvenance++;
         return;
       }

@@ -279,7 +279,8 @@
       "review_status": "draft",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.p2y12_inhibitors",
@@ -300,7 +301,8 @@
       "review_status": "draft",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.factor_xa_inhibitors",
@@ -348,7 +350,8 @@
       "review_status": "draft",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.cox_antiplatelet",
@@ -367,7 +370,8 @@
       "review_status": "draft",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.heparins",
@@ -386,7 +390,8 @@
       "review_status": "draft",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.arbs",
@@ -413,7 +418,8 @@
       "authored_by": "v7_ingestion_pilot",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.ace_inhibitors",
@@ -483,7 +489,18 @@
       ],
       "sources": [
         "course:02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md"
-      ]
+      ],
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.beta1_selective_blockers",
@@ -559,7 +576,18 @@
       ],
       "sources": [
         "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md"
-      ]
+      ],
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.dhp_ccbs",
@@ -589,7 +617,8 @@
       "authored_by": "v7_ingestion_batch2",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.statins",
@@ -619,7 +648,8 @@
       "authored_by": "v7_ingestion_batch2",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.cardiac_glycosides",
@@ -648,7 +678,8 @@
       "authored_by": "v7_ingestion_batch2",
       "sources": [
         "course:extracted_classes"
-      ]
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.beta2_agonists",
@@ -710,7 +741,18 @@
       "sources": [
         "course:07_PHARM_BATCH_P6_INFECTIOUS_RESP_GI.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.anticholinergics",
@@ -778,7 +820,18 @@
       "sources": [
         "course:Bastyr_Pharm_W1_Autonomic"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.alpha1_blockers",
@@ -843,7 +896,18 @@
       "sources": [
         "course:Bastyr_Pharm_W1_Autonomic"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.nonselective_beta_blockers",
@@ -919,7 +983,18 @@
       "sources": [
         "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.central_alpha2_agonists",
@@ -981,7 +1056,18 @@
       "sources": [
         "course:Bastyr_Pharm_W1_Autonomic"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.alcohol_deterrents",
@@ -1037,7 +1123,18 @@
       "sources": [
         "course:16_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_B.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.hydantoin_antiseizure",
@@ -1102,7 +1199,18 @@
       "sources": [
         "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.iminostilbene_antiseizure",
@@ -1168,7 +1276,18 @@
       "sources": [
         "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.succinimide_antiseizure",
@@ -1223,7 +1342,18 @@
       "sources": [
         "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.gabapentinoids",
@@ -1289,7 +1419,18 @@
       "sources": [
         "course:05_PHARM_BATCH_P4_PAIN_NSAID_OPIOID.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.dopamine_precursors",
@@ -1355,7 +1496,18 @@
       "sources": [
         "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     },
     {
       "id": "drugclass.mao_inhibitors",
@@ -1418,7 +1570,18 @@
       "sources": [
         "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     }
   ]
 }
