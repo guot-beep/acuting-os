@@ -9899,31 +9899,115 @@
     "code": "EX-UE10",
     "display_code": "EX-UE10",
     "nameZh": "四縫",
-    "nameEn": "Sifeng",
+    "nameEn": "Four Seams",
     "pinyin": "Sifeng",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "手掌面，第2~5指近端指關節橫紋中央。",
-    "locationEn": "On palmar surface, midpoint of PIP crease of 2nd-5th fingers.",
-    "techniqueNotes": "三稜針點刺，擠出黃白色液體。禁灸。\nPrick with lancet, squeeze yellow fluid.",
-    "functions": "消食化積，健脾和胃，消疳",
-    "functionsEn": "Resolves food accumulation; Strengthens spleen; Eliminates Gan syndrome",
+    "location": "手掌面，食指、中指、無名指與小指近端指間關節（PIP）屈側橫紋中央；AD 補充以屈指時最明顯的橫紋為準。",
+    "locationEn": "On the palmar surface, at the midpoint of the proximal interphalangeal (PIP) flexion creases of the index, middle, ring, and little fingers. American Dragon specifies the crease that is most prominent on flexion.",
+    "cunMeasurement": "以第2～5指 PIP 屈側最明顯橫紋中央定位，不另用骨度分寸。",
+    "anatomyZh": "定位在第2～5指 PIP 屈側橫紋。eLotus 與 American Dragon 未提供皮膚、指腹、屈肌腱／腱鞘、關節囊與指神經血管的逐指層次或安全終點；『擠出黃白色黏液』是來源技法描述，不等於組織層次或成功／停止判準。",
+    "anatomyEn": "The points lie at the palmar PIP creases of digits 2-5. eLotus and American Dragon provide no digit-specific layers or endpoints for skin, pulp, flexor tendon/sheath, joint capsule, or digital neurovascular structures. Expressing yellowish viscous fluid is a source-described method, not an anatomical layer or validated success/stopping criterion.",
+    "acumethodZh": "eLotus：點刺使出血，或局部擠出少量黃白色黏液。American Dragon：點刺出血，或針刺後擠出少量黃白色黏液，並註即使沒有液體流出亦可。兩頁都未給針具規格、刺入深度、每穴出血／擠液量、處理穴數、止血或追蹤。舊『三稜針』器械名稱保留為 unverified legacy，不升格為 canonical 器械。",
+    "acumethodEn": "eLotus: prick to cause bleeding or express a small amount of yellowish viscous fluid locally. American Dragon: prick to bleed, or needle and then express a small amount of yellowish viscous fluid, noting that the method may still be used if no fluid appears. Neither page specifies device, insertion depth, per-point blood/fluid quantity, number of points treated, hemostasis, or follow-up. The legacy 'three-edged needle' device remains unverified history and is not promoted as the canonical instrument.",
+    "moxaZh": "eLotus 與 American Dragon exact pages 均未提供四縫灸法。舊卡同時出現『禁灸』與『可灸』互相矛盾的 legacy 值；兩者均無精確來源支持，不進 canonical technique，也不自行判定可灸或禁灸。",
+    "moxaEn": "Neither the eLotus nor American Dragon exact page supplies a Sifeng moxibustion method. The legacy card contains mutually contradictory 'moxibustion prohibited' and 'moxibustion applicable' values; neither has exact-source support, so neither enters canonical technique and no permission/prohibition is inferred.",
+    "techniqueNotes": "Canonical source record：點刺出血，或針刺／點刺後擠出少量黃白色黏液；無核實深度、器械、每穴量或止血 protocol。Legacy 三稜針、禁灸及可灸互相矛盾且 unsupported。\nCanonical source record: prick to bleed, or needle/prick and express a small amount of yellowish viscous fluid; no verified depth, device, per-point quantity, or hemostasis protocol. Legacy three-edged needle and contradictory moxa prohibition/permission are unsupported.",
+    "functions": "健脾，消積；祛風、除濕、促進消化；和胃、消疳（legacy）",
+    "functionsEn": "Strengthens the Spleen and dissipates accumulation; expels wind, resolves dampness, and promotes digestion; harmonizes the Stomach and eliminates Gan syndrome (legacy)",
+    "functionsZhList": [
+      "健脾",
+      "消積",
+      "祛風",
+      "除濕",
+      "促進消化",
+      "和胃消疳（legacy）"
+    ],
+    "functionsEnList": [
+      "Strengthens the Spleen",
+      "Dissipates accumulation",
+      "Expels wind",
+      "Resolves dampness",
+      "Promotes digestion",
+      "Harmonizes the Stomach and eliminates Gan syndrome (legacy)"
+    ],
+    "pointIdentityZh": "本庫穩定代碼 EX-UE10／ex.ue10，四縫 Sifeng。NCBAHM Appendix A 明列 Sifeng；eLotus 為 Ex-UE10，American Dragon 為 M-UE-9。外部代碼差異不改本庫 id。",
+    "pointIdentityEn": "Stable database identity: EX-UE10 / ex.ue10, Sifeng. NCBAHM Appendix A lists Sifeng; eLotus codes it Ex-UE10 and American Dragon M-UE-9. The external code difference does not change the database ID.",
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 明列四縫。考點是第2～5指 PIP 屈側橫紋中央及兒童消化／疳積主治；侵入性技法只能記為來源所述點刺／擠少量黏液，不補猜深度與放血量。",
+    "exam_importance_en": "NCBAHM 2026 ACPL Appendix A explicitly lists Sifeng. Know the palmar PIP-crease midpoints of digits 2-5 and the pediatric digestive/malnutrition indications. Record the invasive method only as source-described pricking/expression of a small amount of fluid; do not invent depth or bleeding quantity.",
+    "exam_pearl": "四縫在四個非拇指的 PIP 屈側橫紋；『擠出黃白色液體』是來源技法，不是必須達成的安全終點。舊可灸／禁灸互相打架，兩者都不升格。",
+    "exam_pearl_en": "Sifeng lies at the palmar PIP creases of the four non-thumb digits. Expressing yellowish fluid is a source-described method, not a mandatory safety endpoint. Conflicting legacy moxa permission/prohibition is not promoted.",
     "patterns": [
-      "小兒疳積",
-      "消化不良",
-      "百日咳",
-      "蛔蟲症"
+      "小兒疳積／營養不良",
+      "小兒消化不良",
+      "小兒腹瀉",
+      "手指關節炎",
+      "百日咳（來源主治；感染／呼吸邊界）",
+      "腸道蛔蟲（來源主治；不作單獨治療證據）"
     ],
     "patternsEn": [
-      "Childhood malnutrition",
-      "Indigestion",
-      "Whooping cough",
-      "Ascariasis"
+      "Childhood Gan syndrome / malnutrition",
+      "Childhood indigestion",
+      "Childhood diarrhea",
+      "Finger arthritis",
+      "Pertussis (source-reported; infection/respiratory boundary)",
+      "Intestinal roundworms (source-reported; not standalone-treatment evidence)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "健脾",
+      "消積",
+      "祛風",
+      "除濕",
+      "助消化"
+    ],
+    "action_tags_en": [
+      "strengthen the Spleen",
+      "dissipate accumulation",
+      "expel wind",
+      "resolve dampness",
+      "promote digestion"
+    ],
+    "disease_tags_zh": [
+      "小兒疳積／營養不良",
+      "小兒消化不良",
+      "小兒腹瀉",
+      "手指關節炎"
+    ],
+    "disease_tags_en": [
+      "childhood Gan syndrome / malnutrition",
+      "childhood indigestion",
+      "childhood diarrhea",
+      "finger arthritis"
+    ],
+    "acuTags": [
+      "extra_point",
+      "upper_extremity",
+      "board_listed",
+      "pediatric",
+      "bloodletting",
+      "moxa_source_conflict"
+    ],
+    "combinePointsZh": "American Dragon 記兩組：【百日咳】四縫配內關（PC6）、合谷（LI4）；【小兒消化不良】四縫配內關（PC6）、合谷（LI4）、足三里（ST36）。配穴表已按欄位核對，但不取代百日咳的感染與呼吸評估。",
+    "combinePointsEn": "American Dragon lists two combinations: for pertussis, Sifeng with Neiguan (PC6) and Hegu (LI4); for infantile indigestion, Sifeng with Neiguan (PC6), Hegu (LI4), and Zusanli (ST36). The table columns were checked, but the combination does not replace infection or respiratory assessment for pertussis.",
+    "cautions": "【兒童侵入性技法】兩 exact pages 僅記點刺出血／擠少量黃白色黏液，未給針具、深度、每穴量、總穴數、無菌、止血、包紮、感染監測或何時停止擠壓；不得猜。【局部解剖缺口】未給屈肌腱／腱鞘、關節囊與指神經血管安全終點。【灸法衝突】舊『禁灸』與『可灸』互相矛盾且均無 exact support，兩者皆不執行為 canonical 規則。【特殊族群】嬰幼兒年齡下限、抗凝／出血異常、免疫低下、感覺異常與孕期均無 point-specific protocol。【百日咳邊界】來源列百日咳不等於穴位療效已驗證；嬰兒可能不咳而出現呼吸暫停、發紺或呼吸困難，CDC 建議呼吸困難立即就醫。",
+    "cautionsEn": "[Pediatric invasive method] The exact pages only state prick-to-bleed/express a small amount of yellowish viscous fluid and give no device, depth, per-point quantity, total point count, asepsis, hemostasis, dressing, infection monitoring, or stopping rule; none may be guessed. [Local anatomy gap] No flexor tendon/sheath, joint-capsule, or digital neurovascular endpoint is supplied. [Moxa conflict] Legacy 'prohibited' and 'applicable' values contradict each other and lack exact support; neither is executable canonical guidance. [Special populations] No point-specific protocol covers infant age thresholds, anticoagulation/bleeding disorders, immunosuppression, sensory impairment, or pregnancy. [Pertussis boundary] A source listing is not verified acupuncture efficacy. Infants may have apnea, cyanosis, or breathing difficulty without a typical cough; CDC advises immediate care for breathing difficulty.",
+    "clinical_pearls": [
+      "eLotus 與 AD 對定位、兒童消化主治及點刺／擠液方法高度一致；AD 額外列手指關節炎、蛔蟲與小兒腹瀉。",
+      "兒童卡的高品質重點是保留來源技法，同時讓所有缺失的器械、量、止血與感染控制保持可見。"
+    ],
+    "clinical_pearls_en": [
+      "eLotus and American Dragon closely agree on location, pediatric digestive indications, and pricking/fluid-expression methods; American Dragon additionally lists finger arthritis, roundworms, and childhood diarrhea.",
+      "For a pediatric card, quality means retaining the source method while keeping absent device, quantity, hemostasis, and infection-control parameters visible."
+    ],
+    "nameIntroZh": "四縫（Sifeng，Four Seams）為第2～5指掌側 PIP 橫紋的經外奇穴。本庫保留 EX-UE10／ex.ue10，並將兒童點刺／擠液技法與未解安全參數分開呈現。",
+    "nameIntroEn": "Sifeng (Four Seams) is an extra-point group at the palmar PIP creases of digits 2-5. The database preserves EX-UE10 / ex.ue10 and separates the pediatric pricking/fluid-expression method from unresolved safety parameters.",
+    "evidence": "NCBAHM 2026 ACPL Appendix A explicitly lists Sifeng; no dedicated local curriculum lesson was found. The exact eLotus Ex-UE10 page contributes location, childhood malnutrition/indigestion and pertussis indications, Spleen/accumulation actions, and prick-to-bleed or small-fluid-expression technique. The exact American Dragon M-UE-9 page adds the flexion-crease clarification, wind/damp/digestion actions, finger arthritis, roundworms and childhood diarrhea indications, and two checked combinations. Both exact pages omit moxa; the legacy card's contradictory prohibited/applicable moxa values and unverified three-edged-needle label remain excluded from canonical technique. CDC pertussis guidance supplies an infant respiratory boundary only, not acupuncture-efficacy evidence.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sifeng-ex-ue10"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sifeng-ex-ue10",
+      "https://www.americandragon.com/Points/Sifeng.html",
+      "https://www.cdc.gov/pertussis/signs-symptoms/index.html"
     ],
     "visualLinks": [
       {
@@ -9931,15 +10015,83 @@
         "labelEn": "Extra Point · Sifeng EX-UE10 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sifeng-ex-ue10",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "經外奇穴 · 四縫（American Dragon）",
+        "labelEn": "Extra Point · Sifeng (American Dragon)",
+        "url": "https://www.americandragon.com/Points/Sifeng.html",
+        "source": "American Dragon"
+      },
+      {
+        "labelZh": "百日咳症狀與嬰兒呼吸警訊（CDC）",
+        "labelEn": "Pertussis symptoms and infant breathing warnings (CDC)",
+        "url": "https://www.cdc.gov/pertussis/signs-symptoms/index.html",
+        "source": "CDC"
       }
     ],
     "x": 158,
     "y": 322,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.5-1.0 寸，可灸。",
-    "needlingEn": "Perpendicular insertion 0.5-1.0 cun; moxibustion applicable.",
-    "cautions": "注意肘關節安全位置。",
-    "cautionsEn": "Ensure safe positioning around elbow joint.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Sifeng is explicitly listed"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 四縫, Sifeng, Four Seams, and EX-UE10 under curriculum/board and curriculum/acupoints found the Board listing but no dedicated lesson entry"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sifeng-ex-ue10: exact page opened 2026-08-08; Ex-UE10 identity, location, indications, actions, and prick-to-bleed/fluid-expression methods extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: pinyin index opened 2026-08-08; Sifeng exact entry confirmed",
+        "https://www.americandragon.com/Points/Sifeng.html: exact page opened 2026-08-08; M-UE-9 code, location clarification, techniques, actions, indications, notes, and combination table extracted"
+      ],
+      "location": [
+        "eLotus exact page: palmar midpoint of PIP transverse creases of index, middle, ring, and little fingers",
+        "American Dragon exact page: same location; use the crease most prominent on flexion when two creases are present"
+      ],
+      "anatomy": [
+        "source-gap note: no digit-specific skin, pulp, flexor tendon/sheath, joint-capsule, digital neurovascular, or safe-endpoint detail"
+      ],
+      "technique": [
+        "eLotus exact page: prick to bleed or express a small amount of yellowish viscous fluid locally",
+        "American Dragon exact page: prick to bleed or needle then express a small amount of yellowish viscous fluid; may be used even if no fluid appears",
+        "source-gap note: no device, depth, per-point quantity, total point count, hemostasis, or follow-up; legacy three-edged-needle label unverified"
+      ],
+      "moxibustion": [
+        "eLotus and American Dragon exact pages: no moxibustion method supplied",
+        "contradictory legacy 'moxa prohibited' and 'moxa applicable' values both unsupported and excluded from canonical technique"
+      ],
+      "functions": [
+        "eLotus exact page: strengthens the Spleen and dissipates accumulation",
+        "American Dragon exact page: expels wind, resolves dampness, promotes digestion",
+        "legacy harmonizes the Stomach/eliminates Gan syndrome retained at lower evidence level"
+      ],
+      "indications": [
+        "eLotus exact page: malnutrition/indigestion syndrome in children and pertussis",
+        "American Dragon exact page: childhood malnutrition/indigestion, pertussis, finger arthritis, intestinal roundworms, childhood diarrhea",
+        "pertussis and roundworms retained as source-reported claims with medical boundaries, not standalone efficacy tags"
+      ],
+      "combinations": [
+        "American Dragon table checked 2026-08-08: PC6 + LI4 for pertussis; PC6 + LI4 + ST36 for infantile indigestion"
+      ],
+      "cautions": [
+        "CDC pertussis exact page: infants may have apnea/cyanosis or breathing difficulty and immediate care is advised for breathing difficulty; boundary only",
+        "source-gap note: no pediatric age threshold, device, asepsis, hemostasis, infection monitoring, anticoagulation/bleeding-disorder, immunosuppression, sensory, or pregnancy protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE10 / ex.ue10 / 四縫 / Sifeng",
+        "eLotus: Ex-UE10 / Four Seams",
+        "American Dragon: M-UE-9 / Four Seams / Four Cracks"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Sifeng exact page",
+        "2026-08-08 live-opened American Dragon pinyin index and Sifeng exact page",
+        "2026-08-08 live-opened CDC pertussis exact page; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "點刺出血，或針刺／點刺後擠出少量黃白色黏液；exact pages 未給刺深、器械、每穴量或止血 protocol。",
+    "needlingEn": "Prick to bleed, or needle/prick and express a small amount of yellowish viscous fluid; exact pages give no depth, device, per-point quantity, or hemostasis protocol.",
     "id": "ex.ue10"
   },
   {
