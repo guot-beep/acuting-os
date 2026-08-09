@@ -67,7 +67,10 @@
           "course:Pharmacology Summary#L399-L400"
         ]
       },
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.thiazide_diuretics",
@@ -136,7 +139,10 @@
           "course:Pharmacology Summary#L401-L402"
         ]
       },
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.potassium_sparing_diuretics",
@@ -165,7 +171,10 @@
         ]
       },
       "review_status": "draft",
-      "gap_note_zh": "課件對本類的機轉敘述較少,site_of_action 與 shared_adverse_effects 待官方標籤補。"
+      "gap_note_zh": "課件對本類的機轉敘述較少,site_of_action 與 shared_adverse_effects 待官方標籤補。",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.carbonic_anhydrase_inhibitors",
@@ -220,7 +229,10 @@
         ]
       },
       "adverse_effect_note_zh": "課件標明這些副作用見於「慢性使用」(chronic use)。",
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.osmotic_diuretics",
@@ -245,7 +257,10 @@
         ]
       },
       "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意留 null,不是待補。",
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.vitamin_k_antagonists",
@@ -261,7 +276,10 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.p2y12_inhibitors",
@@ -279,7 +297,10 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.factor_xa_inhibitors",
@@ -305,7 +326,10 @@
           "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#BOXED_WARNING",
           "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#BOXED_WARNING"
         ]
-      }
+      },
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.direct_thrombin_inhibitors",
@@ -321,7 +345,10 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.cox_antiplatelet",
@@ -337,7 +364,10 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.heparins",
@@ -353,7 +383,10 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.arbs",
@@ -377,7 +410,10 @@
         "心衰竭"
       ],
       "review_status": "draft",
-      "authored_by": "v7_ingestion_pilot"
+      "authored_by": "v7_ingestion_pilot",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.ace_inhibitors",
@@ -434,16 +470,20 @@
       "board_high_yield_zh": "字尾 -pril。抑制緩激肽降解 -> 乾咳與血管水腫。胎兒毒性黑框警告。第二型糖尿病腎病變具腎臟保護作用。",
       "differentiating_notes_en": "Unlike ARBs (-sartan), ACE inhibitors inhibit bradykinin breakdown causing dry cough in ~10-20% of patients.",
       "differentiating_notes_zh": "與 ARB (-sartan) 不同，ACE 抑制劑會抑制緩激肽分解，約 10-20% 患者出現乾咳。",
-      "related_condition_ids": [
-        "condition.hypertension"
-      ],
       "representative_drug_ids": [
         "drug.lisinopril"
       ],
       "prototype_drug_id": "drug.lisinopril",
       "board_priority": "high",
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.heart_failure"
+      ],
+      "sources": [
+        "course:02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md"
+      ]
     },
     {
       "id": "drugclass.beta1_selective_blockers",
@@ -506,16 +546,20 @@
       "board_high_yield_zh": "字尾 -olol。心臟選擇性 (beta-1)，氣喘/COPD 患者較非選擇性安全。突發停藥引起反彈性缺血。",
       "differentiating_notes_en": "Metoprolol succinate, bisoprolol, and carvedilol are the 3 beta-blockers proven to reduce mortality in heart failure.",
       "differentiating_notes_zh": "美托洛爾琥珀酸鹽、比索洛爾與卡維地洛為實證可降低心衰竭死亡率的三種 beta 阻斷劑。",
-      "related_condition_ids": [
-        "condition.hypertension"
-      ],
       "representative_drug_ids": [
         "drug.metoprolol"
       ],
       "prototype_drug_id": "drug.metoprolol",
       "board_priority": "high",
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.heart_failure"
+      ],
+      "sources": [
+        "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md"
+      ]
     },
     {
       "id": "drugclass.dhp_ccbs",
@@ -542,7 +586,10 @@
       "prototype_drug_id": "drug.amlodipine",
       "board_priority": "high",
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.statins",
@@ -569,7 +616,10 @@
       "prototype_drug_id": "drug.atorvastatin",
       "board_priority": "high",
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.cardiac_glycosides",
@@ -595,7 +645,10 @@
       "prototype_drug_id": "drug.digoxin",
       "board_priority": "high",
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "sources": [
+        "course:extracted_classes"
+      ]
     }
   ]
 }

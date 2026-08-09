@@ -307,7 +307,7 @@
       "drugtarget_id": "drugtarget.vkorc1",
       "rxnorm_rxcui": "11289",
       "rx_otc_status": "Rx",
-      "verification_status": "human_reviewed",
+      "verification_status": "machine_verified",
       "mechanism_en": "Inhibits vitamin K epoxide reductase (VKORC1), depleting functional vitamin K and reducing hepatic synthesis of coagulation factors II, VII, IX, and X, as well as anticoagulant proteins C and S.",
       "mechanism_zh": "抑制維生素 K 環氧化物還原酶 (VKORC1)，耗竭功能性維生素 K 並降低肝臟凝血因子 II、VII、IX、X 及抗凝血蛋白 C 與 S 之合成。",
       "pharmacokinetics": {
@@ -317,16 +317,11 @@
       },
       "indications_en": [
         "Prophylaxis and treatment of venous thrombosis and pulmonary embolism",
-        "Prophylaxis and treatment of thromboembolic complications associated with atrial fibrillation and/or cardiac valve replacement",
-        "Reduction in the risk of death, recurrent MI, and thromboembolic events post-MI"
+        "Prophylaxis and treatment of thromboembolic complications associated with atrial fibrillation and/or cardiac valve replacement"
       ],
       "indications_zh": [
-        "靜脈血栓與肺栓塞之預防與治療",
-        "心房顫動及/或心臟瓣膜置換相關血栓栓塞併發症之預防與治療",
-        "降低心肌梗塞後死亡、復發性心肌梗塞及血栓栓塞事件之風險"
-      ],
-      "related_condition_ids": [
-        "condition.hypertension"
+        "靜脈血栓與肺塞栓之預防及治療",
+        "心房顫動及／或心臟瓣膜置換相關血栓塞栓併發症之預防與治療"
       ],
       "adverse_effects_en": [
         "Bleeding",
@@ -382,11 +377,11 @@
       "tcm_relation_note_zh": "使用華法林患者如有皮膚易瘀斑、齒齦出血、尿血或黑便，應立即評估 INR 並排除嚴重出血風險，切勿單純診斷為血熱妄行或脾不統血。",
       "board_priority": "high",
       "prototype_drug": true,
-      "mnemonic_en": "WARFARIN = Warfare against Vitamin K; Monitor INR (Target 2-3); Antidote Vitamin K1 / Kcentra.",
+      "mnemonic_en": "Warfare against Vitamin K: Vitamin K antagonist requiring strict INR monitoring.",
       "mnemonic_zh": "WARFARIN = 對抗維生素 K；監測 INR（目標 2-3）；解毒劑為維生素 K1 或四因子凝血因子濃縮物。",
-      "classic_association_en": "Vitamin K antagonist prototype -> Narrow therapeutic index, INR monitoring, & bleeding risk boxed warning",
+      "classic_association_en": "Warfarin -> Vitamin K antagonist -> INR monitoring & Bleeding risk",
       "classic_association_zh": "維生素 K 抗衡劑原型 -> 狹窄治療窗口、INR 監測與黑框出血警告",
-      "exam_trap_en": "Warfarin initially causes a transient hypercoagulable state due to rapid depletion of Protein C (risk of skin necrosis); bridge with heparin during initiation.",
+      "exam_trap_en": "Warfarin has a narrow therapeutic index; diet (vitamin K rich foods), drugs, and herbs alter INR. Bleeding is the major fatal toxicity.",
       "exam_trap_zh": "華法林初始用藥因蛋白 C 快速耗竭可致短暫高凝狀態（皮壞死風險）；初始階段須以肝素進行橋接治療。",
       "board_high_yield_en": "VKA prototype. Inhibits VKORC1. Reversal: Vitamin K1 (slow), Kcentra/PCC or FFP (immediate). CYP2C9 interactions (Amiodarone increases INR; St. John's Wort decreases INR).",
       "dailymed_setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
@@ -405,6 +400,12 @@
         ],
         "pregnancy_lactation_en": [
           "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#ADVERSE_REACTIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#PRECAUTIONS"
         ]
       },
       "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。仍待補:機轉、孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
@@ -710,18 +711,7 @@
           "herb_card_status_zh": "藥庫無此卡(屬補充品)"
         }
       ],
-      "herb_drug_interaction_note_zh": "以上七種全部是華法林標籤自己指名的,不是推論。標籤未逐一給機轉與方向,所以本層只記錄「標籤指名」這個事實 —— 要寫成臨床建議需再查 NCCIH 或原始文獻,不可從這一筆推導。中醫常用而標籤未提及的藥(丹參、當歸等)目前為 unknown,尚未查證,不列入以免看起來像已排除。",
-      "indications_en": [
-        "Prophylaxis and treatment of venous thrombosis and pulmonary embolism",
-        "Prophylaxis and treatment of thromboembolic complications associated with atrial fibrillation and/or cardiac valve replacement"
-      ],
-      "indications_zh": [
-        "靜脈血栓與肺塞栓之預防及治療",
-        "心房顫動及／或心臟瓣膜置換相關血栓塞栓併發症之預防與治療"
-      ],
-      "mnemonic_en": "Warfare against Vitamin K: Vitamin K antagonist requiring strict INR monitoring.",
-      "exam_trap_en": "Warfarin has a narrow therapeutic index; diet (vitamin K rich foods), drugs, and herbs alter INR. Bleeding is the major fatal toxicity.",
-      "classic_association_en": "Warfarin -> Vitamin K antagonist -> INR monitoring & Bleeding risk"
+      "herb_drug_interaction_note_zh": "以上七種全部是華法林標籤自己指名的,不是推論。標籤未逐一給機轉與方向,所以本層只記錄「標籤指名」這個事實 —— 要寫成臨床建議需再查 NCCIH 或原始文獻,不可從這一筆推導。中醫常用而標籤未提及的藥(丹參、當歸等)目前為 unknown,尚未查證,不列入以免看起來像已排除。"
     },
     {
       "id": "drug.clopidogrel",
@@ -1458,7 +1448,7 @@
       "rxnorm_rxcui": "6448",
       "rx_otc_status": "Rx",
       "suffix_en": "-pril",
-      "verification_status": "human_reviewed",
+      "verification_status": "machine_verified",
       "mechanism_en": "Inhibits angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing aldosterone secretion.",
       "mechanism_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少醛固酮分泌。",
       "pharmacokinetics": {
@@ -1475,9 +1465,6 @@
         "高血壓",
         "心衰竭",
         "急性心肌梗塞 24 小時內血流動力學穩定患者之死亡率降低"
-      ],
-      "related_condition_ids": [
-        "condition.hypertension"
       ],
       "adverse_effects_en": [
         "Dry cough",
@@ -1547,10 +1534,23 @@
         ],
         "pregnancy_lactation_en": [
           "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#ADVERSE_REACTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#PRECAUTIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#PRECAUTIONS"
         ]
       },
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.heart_failure"
+      ]
     },
     {
       "id": "drug.metoprolol",
@@ -1569,7 +1569,7 @@
       "rxnorm_rxcui": "6918",
       "rx_otc_status": "Rx",
       "suffix_en": "-olol",
-      "verification_status": "human_reviewed",
+      "verification_status": "machine_verified",
       "mechanism_en": "Selective beta-1 adrenergic receptor blocker, reducing heart rate, cardiac output, and blood pressure.",
       "mechanism_zh": "選擇性 beta-1 腎上腺素受體阻斷劑，降低心跳率、心輸出量與血壓。",
       "pharmacodynamics_summary_en": "Competitive inhibition of beta-1 receptors in cardiac tissue decreases chronotropic and inotropic activity.",
@@ -1587,9 +1587,6 @@
         "高血壓",
         "心絞痛",
         "穩定具症狀之心衰竭（美托洛爾琥珀酸鹽緩釋劑型）"
-      ],
-      "related_condition_ids": [
-        "condition.hypertension"
       ],
       "adverse_effects_en": [
         "Bradycardia",
@@ -1668,10 +1665,26 @@
         ],
         "pregnancy_lactation_en": [
           "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#ADVERSE_REACTIONS"
+        ],
+        "renal_considerations_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#PRECAUTIONS"
+        ],
+        "hepatic_considerations_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#PRECAUTIONS"
+        ],
+        "monitoring_requirements_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#PRECAUTIONS"
         ]
       },
       "review_status": "draft",
-      "authored_by": "v7_ingestion_batch2"
+      "authored_by": "v7_ingestion_batch2",
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.heart_failure"
+      ]
     },
     {
       "id": "drug.amlodipine",

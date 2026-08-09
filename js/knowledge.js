@@ -2158,7 +2158,7 @@
 
       const indications = isEn ? asArr(d.indications_en) : asArr(d.indications_zh);
       const offlabel = isEn ? asArr(d.common_offlabel_uses_en) : asArr(d.common_offlabel_uses_zh);
-      const relConditions = asArr(d.related_condition_ids);
+      const relConditions = asArr(d.indication_condition_ids || d.related_condition_ids);
 
       const boxed = isEn ? (d.boxed_warning_en || d.boxed_warning_zh) : (d.boxed_warning_zh || d.boxed_warning_en);
       const contraindications = isEn ? asArr(d.contraindications_en) : asArr(d.contraindications_zh);

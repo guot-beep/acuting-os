@@ -119,7 +119,8 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 | `drugtarget_id` | — | L2 |
 | `site_of_action_en/zh` | CLINICAL PHARMACOLOGY | 課件 |
 | `physiologic_effect_en/zh` | CLINICAL PHARMACOLOGY | 課件 |
-| `onset_duration_en` | CLINICAL PHARMACOLOGY | 標籤 |
+| `pharmacodynamics_summary_en/zh` | CLINICAL PHARMACOLOGY | 課件/標籤 |
+| `pharmacokinetics` | CLINICAL PHARMACOLOGY | `{ onset_duration_en, metabolism_en, elimination_en }` 物件 |
 | `route_en` | DOSAGE AND ADMINISTRATION | 標籤 |
 
 ### C · 臨床用途
@@ -127,12 +128,12 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 | 欄位 | 對應 SPL |
 |---|---|
 | `indications_en` · `indications_zh` | INDICATIONS AND USAGE |
-| `indication_condition_ids` | — （連到 `cond.*`,見 §1.2） |
-| `off_label_en` | — （**必須標明是仿單外**） |
+| `indication_condition_ids` | — （**唯一官方病名連結欄位**，連到 `cond.*`；舊 `related_condition_ids` 已作廢） |
+| `common_offlabel_uses_en/zh` | — （**常見仿單外用途**，必須標明為 off-label） |
 
 ### D · 安全 ⚠️ 受 §0 約束
 
-**以下每一欄都必須有 `verified_exact` 官方標籤來源,否則驗證器 FAIL。**
+**以下每一欄都必須有 `verified_exact` 官方標籤來源或具名來源,否則驗證器 FAIL。**
 
 | 欄位 | 對應 SPL |
 |---|---|
@@ -141,20 +142,26 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 | `warnings_en/zh` | WARNINGS |
 | `precautions_en/zh` | PRECAUTIONS |
 | `adverse_effects_en/zh` | ADVERSE REACTIONS |
+| `serious_adverse_effects_en/zh` | ADVERSE REACTIONS（嚴重/致命不良反應） |
 | `adverse_effect_ids` | —（連到 `cond.*` / `sym.*`） |
-| `drug_interactions_en/zh` | DRUG INTERACTIONS(PLR)或 PRECAUTIONS(舊格式) |
-| `overdose_en` | OVERDOSAGE |
-| `pregnancy_lactation_en` | USE IN SPECIFIC POPULATIONS / PRECAUTIONS |
+| `drug_interactions_en/zh` · `drug_interactions_graded` | DRUG INTERACTIONS(PLR)或 PRECAUTIONS(舊格式) |
+| `overdose_en` | OVERDOSAGE（**唯一規範欄位**，禁止誤用 `overdose_toxicity_notes_en` 規避稽核） |
+| `pregnancy_lactation_en/zh` | USE IN SPECIFIC POPULATIONS / PRECAUTIONS |
+| `renal_considerations_en` | USE IN SPECIFIC POPULATIONS / PRECAUTIONS（腎功能安全考量） |
+| `hepatic_considerations_en` | USE IN SPECIFIC POPULATIONS / PRECAUTIONS（肝功能安全考量） |
+| `monitoring_requirements_en` | PRECAUTIONS / DOSAGE AND ADMINISTRATION（臨床監測需求） |
 
 ### E · 整合醫學（你的差異化,也是最危險的一欄）
 
 | 欄位 | 規則 |
 |---|---|
-| `herb_drug_interactions_zh/en` | **每一條都要來源。** NCCIH / PubMed / 標籤 |
+| `herb_drug_interactions_zh/en` · `herb_drug_interactions_graded` | **每一條都要來源。** NCCIH / PubMed / 標籤 |
+| `integrative_clinical_flags` | **受控臨床安全旗標詞彙** (`bleeding_risk`, `bradycardia`, `orthostatic_hypotension`, `sedation_dizziness`, `photosensitivity`, `immunosuppression`, `infection_risk`, `bone_health`, `glucose_effects`, `masking_hypoglycemia`, `electrolyte_hyperkalemia`, `electrolyte_hypokalemia`, `procedural_safety`, `cough_side_effect`, `angioedema_risk`) |
+| `tcm_relation_note_zh` | **憲法紅線 9:不准建立中西醫一對一等同** |
+| `acupuncture_note_zh` | 針灸臨床診察與穴位處方安全提示 |
 | `related_herb_ids` | 連 `herb.*` |
 | `related_formula_ids` | 連 `formula.*` |
 | `related_pattern_ids` | 連 `pattern.*` |
-| `tcm_relation_note_zh` | **憲法紅線 9:不准建立中西醫一對一等同** |
 
 ⚠️ **中西藥交互作用是全庫最容易編出「聽起來很合理」內容的欄位。**
 你會在診所裡相信它。沒有具名來源就留空。
@@ -164,13 +171,19 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 | 欄位 | 例 |
 |---|---|
 | `board_priority` | high / medium / low |
-| `prototype_drug` | 是否為該類代表藥 |
-| `mnemonic_en` | 「Fast & Furious in the Loop」「3 Peeing Monkeys」 |
+| `prototype_drug` | 是否為該類代表藥 (boolean) |
+| `mnemonic_en/zh` | 「Fast & Furious in the Loop」「3 Peeing Monkeys」 |
 | `exam_trap_en/zh` | 袢/thiazide 低血鉀 vs 保鉀利尿劑高血鉀 |
-| `classic_association_en` | Loop diuretic → hypokalemia |
+| `classic_association_en/zh` | Loop diuretic → hypokalemia |
+| `board_high_yield_en/zh` | 國考高頻必考核心整理 |
 
-**`mnemonic_en` 是 ChatGPT 沒提但你課件裡最多的東西** ——
-那是你實際拿來考試的工具,逐字照抄,不要改寫(跟方歌同理:改一個字就不好記)。
+### G · 驗證狀態與審核軌跡
+
+| 欄位 | 值與規則 |
+|---|---|
+| `verification_status` | `framework_ready` / `source_identified` / `partially_populated` / `machine_verified` / `human_reviewed` / `draft`<br>⚠️ **AI/腳本生成內容絕不得標註為 `human_reviewed`** |
+| `review_status` | `draft` / `rv1_passed` / `canonical` |
+| `authored_by` | 標示建立者或腳本版本 |
 
 ### G · 外部連結（規格見 `PHARM_SOURCE_TIERS.md`）
 

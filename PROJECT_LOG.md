@@ -1,5 +1,23 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Bounded Pharmacology Foundation Hardening Pass
+- **What was done:** Completed bounded Pharmacology Foundation Hardening pass. Reconciled Master Card schema contract across docs/PHARM_CARD_TEMPLATE.md, scripts/validate-pharm-standard.js, data/pharmacology/*.json, and js/knowledge.js. Repaired Condition namespace defect by migrating related_condition_ids to indication_condition_ids using locked cond.* namespace. Removed invalid condition link from drug.warfarin. Downgraded AI-authored records from human_reviewed to machine_verified. Expanded validate-pharm-standard.js to audit full 6-layer Pharmacology graph integrity (class->system, class->target, class->drugs, reverse consistency, duplicate IDs, safety source provenance, controlled integrative flags). Added machine-derived Foundation Graph Audit output.
+- **Numbers (before -> after):**
+  - Unresolved cond.* links: 5 -> 0.
+  - AI-authored records self-promoted to human_reviewed: 3 -> 0 (downgraded to machine_verified).
+  - Graph integrity blocking defects: 48 -> 0.
+  - Full Graph Audit: systems 2, targets 16, classes 17, drugs 21, duplicate IDs 0, reverse mismatches 0, safety missing provenance 0.
+- **Verification Results:**
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** sym.* symptom namespace currently 0 records in taxonomy (documented limitation).
+- **Next Step:** PHARMACOLOGY CONTENT INGESTION BATCH 3 (Awaiting user authorization).
+
 ## 2026-08-09 Antigravity — Pharmacology Class Filter Canonical Label Resolution & Data Defect Guard
 - **What was done:** Enforced strict canonical label resolution for Pharmacology Class Filters in UI renderer and validator. Raw canonical IDs (e.g., drugclass.loop_diuretics) are never displayed to users. Class filters resolve through data/pharmacology/drug_classes.json rendering Chinese primary label on first line, English secondary label on second line, and count badge on right. Unresolvable class references report [DATA INTEGRITY DEFECT: id] rather than prettifying raw slugs. Added class name integrity check in validate-pharm-standard.js.
 - **Numbers (before -> after):**
