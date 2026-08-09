@@ -4878,6 +4878,11 @@ function normalizeSoapNote(value) {
     tongueCoating: String(value.tongueCoating || ""),
     pulse: String(value.pulse || ""),
     vitals: String(value.vitals || ""),
+    // tcmPattern is UNCHANGED — same key, same free-text meaning it has
+    // always had. Relabelled in the UI as "TCM diagnosis notes" now that
+    // tcmPatternSelections below is the structured primary/secondary source,
+    // but the field itself is neither renamed nor auto-populated. Legacy
+    // prose here is never touched, never parsed, never destroyed.
     tcmPattern: String(value.tcmPattern || ""),
     pathomechanism: String(value.pathomechanism || ""),
     treatmentPrinciple: String(value.treatmentPrinciple || ""),
@@ -4885,6 +4890,33 @@ function normalizeSoapNote(value) {
     advice: String(value.advice || ""),
     westernConditionLinks: normalizeStringList(value.westernConditionLinks),
     easternDiseaseLinks: normalizeStringList(value.easternDiseaseLinks),
+    // TCM pattern primary/secondary reconciliation (2026-08-09). Maps
+    // directly onto visit_tcm_patterns(pattern_id, is_primary) — one array
+    // entry per future row, no schema change needed. Distinct name from
+    // BOTH tcmPattern (free text, unrelated shape) and the CASE-level
+    // case.tcmPatterns (plain string[] of pattern labels, a different level
+    // of the object tree entirely) — reusing either name here would recreate
+    // the exact ambiguity this batch exists to resolve.
+    //
+    // Presence-vs-absence matters: an explicit [] (the field was touched by
+    // the new UI and left empty) is respected as-is. Only a genuinely ABSENT
+    // key (value.tcmPatternSelections === undefined — i.e. this note has
+    // never been through the new UI) falls back to deriving from the legacy
+    // tcmPatternLinks list, with EVERY derived entry isPrimary:false. No
+    // primary is ever guessed — an old multi-pattern note that never
+    // recorded which was primary keeps that uncertainty (docs/
+    // SOAP_FOLLOWUP_TRACKING_AUDIT.md's own instruction).
+    tcmPatternSelections: Array.isArray(value.tcmPatternSelections)
+      ? value.tcmPatternSelections
+          .filter((e) => e && typeof e.patternId === "string" && e.patternId)
+          .map((e) => ({ patternId: String(e.patternId), isPrimary: !!e.isPrimary }))
+      : normalizeStringList(value.tcmPatternLinks).map((id) => ({ patternId: id, isPrimary: false })),
+    // Kept for every existing reader that resolves patterns off this flat
+    // list (window.AcuTingCases.usedIn's reverse index, the SOAP card's
+    // "Pattern links" row, Last Visit at a Glance's fallback) — now DERIVED
+    // from tcmPatternSelections on every save (see saveSoapFromForm) rather
+    // than typed into its own form field. The field itself, and every
+    // existing reader of it, is otherwise untouched.
     tcmPatternLinks: normalizeStringList(value.tcmPatternLinks),
     safetyFlagLinks: normalizeStringList(value.safetyFlagLinks),
     subjective: String(value.subjective || ""),
@@ -4957,6 +4989,21 @@ function normalizeStringList(value) {
 function formatNoteList(value, fallback = "未連結") {
   const list = normalizeStringList(value);
   return list.length ? list.join("、") : fallback;
+}
+
+// TCM pattern primary/secondary reconciliation: compact display for
+// tcmPatternSelections, shared by the SOAP card view and Last Visit at a
+// Glance. Ids shown raw, not resolved to names — same convention every
+// other link field (acupointLinks, formulaLinks, ...) already uses in these
+// summary views.
+function formatPatternSelections(selections) {
+  const list = selections || [];
+  const primary = list.find((e) => e.isPrimary);
+  const secondary = list.filter((e) => !e.isPrimary);
+  const parts = [];
+  if (primary) parts.push(`★ ${primary.patternId}`);
+  if (secondary.length) parts.push(`+ ${secondary.map((e) => e.patternId).join("、")}`);
+  return parts.join("  ");
 }
 
 function createId(prefix) {
@@ -5230,11 +5277,27 @@ function formulaPickerOptions() {
   }));
 }
 
-function enhanceLinkField(form, fieldName, buildOptions) {
+// TCM pattern primary/secondary reconciliation (2026-08-09,
+// docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md §9 ranked item #1). Three optional
+// behaviors added for the primary/secondary pattern pickers, all opt-in via
+// `opts` so every existing call (acupointLinks, formulaLinks, ...) is
+// unaffected:
+//   single         one chip only; picking a new one replaces it (does not
+//                  destroy it — see opts.onPick below).
+//   onPick(v, old) fires only in single mode when the value actually
+//                  changes. Lets the caller decide what happens to the
+//                  displaced value instead of silently dropping it.
+//   excludeValues  fn returning ids to hide from this field's own search
+//                  results — used so the secondary picker can't offer
+//                  whatever the primary picker currently holds.
+function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
   const textarea = form?.elements?.[fieldName];
   if (!textarea || textarea.dataset.pickerReady) return;
   textarea.dataset.pickerReady = "1";
   textarea.hidden = true;
+  const single = !!opts.single;
+  const onPick = typeof opts.onPick === "function" ? opts.onPick : null;
+  const excludeValues = typeof opts.excludeValues === "function" ? opts.excludeValues : () => [];
 
   const wrap = document.createElement("div");
   wrap.className = "link-picker";
@@ -5282,7 +5345,13 @@ function enhanceLinkField(form, fieldName, buildOptions) {
   }
   function closeMenu() { menu.hidden = true; activeIndex = -1; }
   function addValue(v) {
-    setValues([...getValues(), v]);
+    if (single) {
+      const old = getValues()[0] || null;
+      setValues([v]);
+      if (onPick && old !== v) onPick(v, old);
+    } else {
+      setValues([...getValues(), v]);
+    }
     input.value = "";
     closeMenu();
     input.focus();
@@ -5292,8 +5361,9 @@ function enhanceLinkField(form, fieldName, buildOptions) {
     const q = input.value.trim().toLowerCase();
     const qCompact = q.replace(/\s+/g, "");
     const chosen = new Set(getValues());
+    const excluded = new Set(excludeValues());
     const matches = !q ? [] : options
-      .filter((o) => !chosen.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
+      .filter((o) => !chosen.has(o.value) && !excluded.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
       .slice(0, 8);
     if (!matches.length) { closeMenu(); return; }
     menu.innerHTML = "";
@@ -5323,6 +5393,8 @@ function enhanceLinkField(form, fieldName, buildOptions) {
 
   linkPickerControllers[fieldName] = {
     sync() { ensureOptions(); renderChips(getValues()); input.value = ""; closeMenu(); },
+    getValues,
+    setValues,
   };
 }
 
@@ -5392,7 +5464,30 @@ function safetyFlagPickerOptions() {
 function setupLinkAutocomplete() {
   enhanceLinkField(soapForm, "acupointLinks", pointPickerOptions);
   enhanceLinkField(soapForm, "formulaLinks", formulaPickerOptions);
-  enhanceLinkField(soapForm, "tcmPatternLinks", patternPickerOptions);
+  // Primary/secondary TCM pattern reconciliation replaces the old single
+  // multi-select tcmPatternLinks field. tcmPatternPrimary is set up FIRST —
+  // its onPick closure reads linkPickerControllers.tcmPatternSecondary at
+  // CLICK time, not at setup time, so definition order here only matters
+  // in that tcmPatternSecondary must exist by the time a user can actually
+  // click anything, which the very next line guarantees.
+  enhanceLinkField(soapForm, "tcmPatternPrimary", patternPickerOptions, {
+    single: true,
+    onPick: (newId, oldId) => {
+      const secondary = linkPickerControllers.tcmPatternSecondary;
+      if (!secondary) return;
+      let vals = secondary.getValues();
+      // Demote: the displaced primary is not destroyed, it drops to secondary
+      // (unless it's already there, or there was no previous primary).
+      if (oldId && oldId !== newId && !vals.includes(oldId)) vals = [...vals, oldId];
+      // Promote: if the newly-picked primary was already listed as
+      // secondary, remove it there — a pattern is never both at once.
+      vals = vals.filter((v) => v !== newId);
+      secondary.setValues(vals);
+    },
+  });
+  enhanceLinkField(soapForm, "tcmPatternSecondary", patternPickerOptions, {
+    excludeValues: () => linkPickerControllers.tcmPatternPrimary?.getValues() || [],
+  });
   enhanceLinkField(soapForm, "easternDiseaseLinks", easternDiseasePickerOptions);
   enhanceLinkField(soapForm, "westernConditionLinks", westernConditionPickerOptions);
   enhanceLinkField(soapForm, "medicationLinks", medicationPickerOptions);
@@ -5488,9 +5583,10 @@ function renderSoapNoteCard(note) {
         <div><small>舌苔 Coating</small><span>${escapeHtml(note.tongueCoating || "—")}</span></div>
         <div><small>脈象 Pulse</small><span>${escapeHtml(note.pulse || "—")}</span></div>
       </div>` : ""}
-      ${(note.tcmPattern || note.pathomechanism || note.treatmentPrinciple) ? `
+      ${(note.tcmPatternSelections?.length || note.tcmPattern || note.pathomechanism || note.treatmentPrinciple) ? `
       <div class="tcm-dx-row">
-        <div><small>證型 Pattern</small><span>${escapeHtml(note.tcmPattern || "—")}</span></div>
+        ${note.tcmPatternSelections?.length ? `<div><small>證型 Pattern</small><span>${escapeHtml(formatPatternSelections(note.tcmPatternSelections))}</span></div>` : ""}
+        ${note.tcmPattern ? `<div><small>證型/病機記錄 Dx notes</small><span>${escapeHtml(note.tcmPattern)}</span></div>` : ""}
         <div><small>病機 Pathomechanism</small><span>${escapeHtml(note.pathomechanism || "—")}</span></div>
         <div><small>治法 Tx principle</small><span>${escapeHtml(note.treatmentPrinciple || "—")}</span></div>
       </div>` : ""}
@@ -5848,7 +5944,7 @@ function renderPreviousVisitPanel(note) {
   }
   const verdict = OUTCOME_VERDICTS[note.outcomeVerdict];
   const pain = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score");
-  const pattern = note.tcmPattern || formatNoteList(note.tcmPatternLinks, "");
+  const pattern = formatPatternSelections(note.tcmPatternSelections) || note.tcmPattern || "";
   const cells = [
     ["就診 Visit", [note.visitNumber ? `Visit ${note.visitNumber}` : "", note.visitDate].filter(Boolean).join(" · ") || "—"],
     ["S 主觀 Subjective", truncateText(note.subjective, 80)],
@@ -5898,6 +5994,7 @@ function openSoapEditor(note = null) {
     westernConditionLinks: [],
     easternDiseaseLinks: [],
     tcmPatternLinks: [],
+    tcmPatternSelections: [],
     safetyFlagLinks: [],
     subjective: "",
     objective: "",
@@ -5933,6 +6030,19 @@ function openSoapEditor(note = null) {
   // "painScore" is never a key on the note object itself.
   if (soapForm.elements.painScore) {
     soapForm.elements.painScore.value = getOutcomeMetricValue(data.outcomeMetrics, "metric.pain_score");
+  }
+  // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
+  // tcmPatternSecondary are UI-only form fields, no such keys exist on the
+  // note object itself (the note holds tcmPatternSelections instead).
+  if (soapForm.elements.tcmPatternPrimary) {
+    const primaryEntry = (data.tcmPatternSelections || []).find((e) => e.isPrimary);
+    soapForm.elements.tcmPatternPrimary.value = primaryEntry ? primaryEntry.patternId : "";
+  }
+  if (soapForm.elements.tcmPatternSecondary) {
+    soapForm.elements.tcmPatternSecondary.value = (data.tcmPatternSelections || [])
+      .filter((e) => !e.isPrimary)
+      .map((e) => e.patternId)
+      .join("、");
   }
   setupLinkAutocomplete();                                   // CS4: idempotent
   Object.values(linkPickerControllers).forEach((c) => c.sync());  // rebuild chips from hydrated values
@@ -5973,6 +6083,21 @@ function saveSoapFromForm(event) {
   }
   const outcomeMetrics = setOutcomeMetricValue(current?.outcomeMetrics || [], "metric.pain_score", painScoreRaw);
 
+  // TCM pattern primary/secondary reconciliation. The excludeValues live
+  // filter (setupLinkAutocomplete) already keeps the current primary out of
+  // the secondary picker's search results, but this is the save-time
+  // backstop that guarantees the invariant regardless of how the two
+  // textareas actually ended up — "a pattern is never both at once" holds
+  // even if something bypassed the live UI.
+  const tcmPrimaryId = (data.tcmPatternPrimary || "").trim();
+  const tcmSecondaryIds = splitList(data.tcmPatternSecondary || "").filter((id) => id && id !== tcmPrimaryId);
+  const tcmPatternSelections = [
+    ...(tcmPrimaryId ? [{ patternId: tcmPrimaryId, isPrimary: true }] : []),
+    ...tcmSecondaryIds.map((id) => ({ patternId: id, isPrimary: false })),
+  ];
+  // Derived, not typed — see the tcmPatternLinks comment in normalizeSoapNote.
+  const tcmPatternLinksDerived = tcmPatternSelections.map((e) => e.patternId);
+
   const now = new Date().toISOString();
   const nextNote = normalizeSoapNote({
     ...(current || {}),
@@ -5994,7 +6119,8 @@ function saveSoapFromForm(event) {
     advice: (data.advice || "").trim(),
     westernConditionLinks: splitList(data.westernConditionLinks),
     easternDiseaseLinks: splitList(data.easternDiseaseLinks),
-    tcmPatternLinks: splitList(data.tcmPatternLinks),
+    tcmPatternSelections,
+    tcmPatternLinks: tcmPatternLinksDerived,
     safetyFlagLinks: splitList(data.safetyFlagLinks),
     subjective: data.subjective.trim(),
     objective: data.objective.trim(),
