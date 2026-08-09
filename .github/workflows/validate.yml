@@ -64,6 +64,22 @@ jobs:
       - name: no scraped junk in content arrays
         run: node scripts/validate-content-junk.js
 
+      # Condition safety layer.
+      # These validators are currently zero-defect and must remain blocking.
+      - name: red-flag registry
+        run: node scripts/validate-red-flag-registry.js
+
+      - name: batch 4 gyn legacy migration ledger
+        run: node scripts/validate-gyn-legacy-migration.js
+
+      - name: batch 1-3 legacy migration ledger
+        run: node scripts/validate-b123-legacy-migration.js
+
+      - name: canonical red-flag wiring
+        run: node scripts/validate-red-flag-wiring.js
+
+      - name: FY2026 ICD crosswalk mappings
+        run: node scripts/validate-crosswalk-mappings.js
       - name: acupoint card standard
         run: node scripts/validate-acupoint-standard.js
 
