@@ -8664,49 +8664,221 @@
     "code": "EX-UE3",
     "display_code": "EX-UE3",
     "nameZh": "中泉",
-    "nameEn": "Zhongquan",
+    "nameEn": "Middle Spring",
     "pinyin": "Zhongquan",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "腕背側橫紋中，陽溪（LI5）與陽池（TE4）之間凹陷處。",
-    "locationEn": "On dorsal wrist crease, in depression between Yangxi (LI 5) and Yangchi (TE 4).",
-    "techniqueNotes": "直刺0.3~0.5寸。可灸。\nPerpendicular 0.3-0.5 cun.",
-    "functions": "理氣寬胸，和胃止痛",
-    "functionsEn": "Regulates Qi and unbinds chest; Harmonizes stomach",
+    "location": "腕背橫紋上，陽溪（LI5）與陽池（TE4）之間的凹陷中。eLotus 精確頁支持此定位；Board 與本地課件無專條，AD 索引的近似拼音項目錯鏈至另一穴，不能作定位佐證。",
+    "locationEn": "On the dorsal wrist crease, in the depression between LI5 (Yangxi) and TE4 (Yangchi). The exact eLotus page supports this location; the Board outline and local curriculum have no dedicated entry, while AD's near-matching index item mislinks to a different point and cannot corroborate the location.",
+    "cunMeasurement": "本穴以腕背橫紋及 LI5、TE4 兩穴之間的凹陷定位，不另用寸量。 Located by the dorsal wrist crease and the depression between LI5 and TE4, without an additional cun measurement.",
+    "anatomyZh": "精確穴位頁僅提供腕背橫紋、LI5 與 TE4 的表面定位關係，未描述肌腱、關節囊、血管神經、皮膚至關節深度或體型修正；不得自行由鄰近關節推論深刺安全範圍。",
+    "anatomyEn": "The exact point page supplies only the surface relationship to the dorsal wrist crease, LI5, and TE4. It does not describe tendons, joint capsule, neurovascular structures, skin-to-joint depth, or body-habitus adjustment; a safe deeper range must not be inferred from proximity to the wrist joint.",
+    "acumethodZh": "eLotus：直刺0.3～0.5寸。舊卡的直刺深度相同，但另加『點刺出血』；放血未獲 Board、課件、eLotus 或可用 AD 精確頁支持，僅保留為未核實 legacy，不作可執行技法。",
+    "acumethodEn": "eLotus: perpendicular insertion 0.3-0.5 cun. The legacy card carries the same insertion depth but adds prick-to-bleed; bloodletting is unsupported by the Board layer, curriculum, eLotus, or a usable AD exact page and remains unverified legacy rather than an executable method.",
+    "moxaZh": "eLotus 寫可灸，但未列直接／間接法、壯數、時間、皮膚保護或停止規則；不可自行補數字。",
+    "moxaEn": "eLotus states that moxibustion is applicable but gives no direct/indirect method, cone count, duration, skin protection, or stopping rule; no numeric dose is inferred.",
+    "techniqueNotes": "【eLotus 精確頁】直刺0.3～0.5寸；可灸，灸量與方法未提供。\n【未核實舊值】點刺出血；四層無放血安全規程，不作已驗證規則。\nExact eLotus page: perpendicular 0.3-0.5 cun; moxibustion applicable, with no moxa dose or method. Unverified legacy: prick to bleed; no four-layer bloodletting protocol exists, so it is not treated as validated.",
+    "functions": "寬胸理氣、和胃止痛（eLotus）",
+    "functionsEn": "Opens the chest and regulates Qi; harmonizes the Stomach and relieves pain (eLotus)",
+    "functionsZhList": [
+      "寬胸（eLotus）",
+      "理氣（eLotus）",
+      "和胃（eLotus）",
+      "止痛（eLotus）"
+    ],
+    "functionsEnList": [
+      "Opens the chest (eLotus)",
+      "Regulates Qi (eLotus)",
+      "Harmonizes the Stomach (eLotus)",
+      "Relieves pain (eLotus)"
+    ],
+    "pointIdentityZh": [
+      "上肢部經外奇穴",
+      "資料庫穩定代碼 EX-UE3、永久 id ex.ue3",
+      "eLotus 使用 Ex-UE3、Middle Spring",
+      "American Dragon 索引無 Zhongquan；其 Zhongchuan 項錯鏈至 Ganrexue N-BW-8，不能視為中泉內容頁"
+    ],
+    "pointIdentityEn": [
+      "Extra point of the upper extremity",
+      "Stable database code EX-UE3 and permanent id ex.ue3",
+      "eLotus uses Ex-UE3 and Middle Spring",
+      "American Dragon has no Zhongquan index item; its Zhongchuan entry mislinks to Ganrexue N-BW-8 and is not a usable Zhongquan detail page"
+    ],
+    "exam_star": 0,
+    "exam_importance": "NCBAHM Appendix A 未明列 Zhongquan。複習核心為腕背橫紋、LI5 與 TE4 之間凹陷，eLotus 直刺0.3～0.5寸，以及胸痛、氣喘、咯血只可作來源主治陳述並必須附急症邊界。",
+    "exam_importance_en": "Zhongquan is not explicitly named in NCBAHM Appendix A. Review the depression on the dorsal wrist crease between LI5 and TE4, eLotus's 0.3-0.5-cun perpendicular technique, and the rule that chest pain, asthma, and hemoptysis are source-listed indications requiring emergency boundaries rather than efficacy assumptions.",
+    "exam_pearl": "中泉在 LI5 與 TE4 之間；eLotus 直刺0.3～0.5寸。AD 索引的 Zhongchuan 錯鏈 Ganrexue，不能假裝有 AD 專頁。",
+    "exam_pearl_en": "Zhongquan lies between LI5 and TE4; eLotus gives 0.3-0.5-cun perpendicular insertion. AD's Zhongchuan index item mislinks to Ganrexue and is not an AD Zhongquan detail page.",
     "patterns": [
-      "心痛",
-      "胸悶",
-      "嘔吐",
-      "胃痛",
-      "腕關節痛"
+      "胸脅脹痛（eLotus；急症邊界）",
+      "咳嗽（eLotus）",
+      "氣喘（eLotus；急症邊界）",
+      "心絞痛（eLotus；急症邊界）",
+      "胃痛（eLotus）",
+      "咯血（eLotus；急症邊界）",
+      "掌心熱（eLotus）",
+      "嘔吐（舊卡）",
+      "腕關節痛（舊卡）"
     ],
     "patternsEn": [
-      "Cardiac pain",
-      "Chest oppression",
-      "Vomiting",
-      "Gastric pain",
-      "Wrist pain"
+      "Chest and hypochondriac distention and pain (eLotus; emergency boundary)",
+      "Cough (eLotus)",
+      "Asthma (eLotus; emergency boundary)",
+      "Angina (eLotus; emergency boundary)",
+      "Gastric pain (eLotus)",
+      "Coughing up blood (eLotus; emergency boundary)",
+      "Heat sensation in the palm (eLotus)",
+      "Vomiting (legacy)",
+      "Wrist joint pain (legacy)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "寬胸",
+      "理氣",
+      "和胃",
+      "止痛"
+    ],
+    "action_tags_en": [
+      "Open the Chest",
+      "Regulate Qi",
+      "Harmonize the Stomach",
+      "Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "咳嗽",
+      "胃痛",
+      "掌心熱",
+      "嘔吐",
+      "腕關節痛"
+    ],
+    "disease_tags_en": [
+      "Cough",
+      "Gastric Pain",
+      "Heat Sensation in the Palm",
+      "Vomiting",
+      "Wrist Joint Pain"
+    ],
+    "acuTags": [
+      "非Board明列",
+      "LI5與TE4之間",
+      "直刺0.3至0.5寸",
+      "胸痛急症邊界",
+      "咯血急症邊界",
+      "AD索引錯鏈"
+    ],
+    "combinePointsZh": "eLotus 精確頁未列中泉專屬配穴；AD 的 Zhongchuan 索引項錯鏈至另一穴且無可用內容，舊卡亦無配穴。不得從 LI5、TE4、胸痛或胃痛的其他組方移植成中泉配伍。",
+    "combinePointsEn": "The exact eLotus page gives no Zhongquan-specific combination. AD's Zhongchuan index item mislinks to a different point and provides no usable content, and the legacy card has no combination. Combinations involving LI5, TE4, chest pain, or gastric pain are not transferred to Zhongquan.",
+    "cautions": "【腕背刺法】唯一可用精確穴位頁為 eLotus 直刺0.3～0.5寸；該頁未提供肌腱／關節囊／血管神經層次、體型修正或安全終點，不能自行加深。【放血缺口】舊點刺出血與『關節部位注意消毒』未獲精確頁支持，且缺無菌、止血、抗凝／凝血異常與感染控制規程；保留為 unsupported legacy，不執行。【胸痛／心絞痛】AHA 指出胸部壓迫、擠壓、飽脹或疼痛，尤其伴呼吸短促、冷汗、噁心或頭暈，應立即呼叫急救；穴位主治不取代急性冠脈評估。【氣喘】NHLBI 指出嚴重發作或緩解藥後仍呼吸困難需急診／急救。【咯血】NHS 指出即使少量血痰也需儘快評估；量多或合併呼吸困難、心搏很快、胸／上背痛需立即急診。【特殊族群缺口】四層未提供孕期、兒童或其他高風險專穴方案；來源沉默不是安全許可。",
+    "cautionsEn": [
+      "Dorsal-wrist technique: the only usable exact point page is eLotus at 0.3-0.5 cun perpendicular. It provides no tendon, joint-capsule, neurovascular, body-habitus, or safety-endpoint detail, so a deeper method is not inferred.",
+      "Bloodletting gap: legacy prick-to-bleed and the generic joint-sterility warning lack exact-page support and provide no sterility, hemostasis, anticoagulation/coagulopathy, or infection-control protocol. They remain unsupported legacy and are not executed.",
+      "Chest pain/angina: AHA advises emergency activation for heart-attack warning signs such as pressure, squeezing, fullness, or pain in the chest, especially with shortness of breath, cold sweat, nausea, or lightheadedness. A point indication does not replace acute coronary evaluation.",
+      "Asthma: NHLBI advises emergency evaluation when an attack is serious or breathing remains very hard despite reliever medicine.",
+      "Hemoptysis: NHS advises prompt assessment even for small flecks of blood and immediate emergency care for more than a few spots or when accompanied by breathing difficulty, a very fast heartbeat, or chest/upper-back pain.",
+      "Special-population gap: the four layers provide no point-specific pregnancy, pediatric, or other high-risk protocol; source silence is not clearance."
+    ],
+    "clinical_pearls": "eLotus 是本輪唯一可用的中泉內容專頁，完整支持定位、四項功效、七項主治、0.3～0.5寸與可灸。American Dragon 索引列 Zhongchuan 而非 Zhongquan，且點擊後進入空白的 Ganrexue N-BW-8 頁；此站內錯鏈明列為 source gap，不猜另一個 URL。",
+    "clinical_pearls_en": "eLotus is the only usable Zhongquan content page in this audit and supports the location, four actions, seven indications, 0.3-0.5-cun technique, and moxibustion. American Dragon indexes Zhongchuan rather than Zhongquan, and clicking it opens the blank Ganrexue N-BW-8 page. This site-level mislink is documented as a source gap rather than repaired with a guessed URL.",
+    "nameIntroZh": "『中泉』英文意譯 Middle Spring；本庫穩定拼音採 Zhongquan。AD 索引的 Zhongchuan 僅作錯鏈稽核紀錄，不改本庫名稱或代碼。",
+    "nameIntroEn": "Zhongquan means 'Middle Spring.' The database retains the stable pinyin Zhongquan; AD's indexed Zhongchuan is documented only as a mislink audit and does not change the database name or code.",
+    "evidence": "四層整合：NCBAHM Appendix A 未明列 Zhongquan，本地 curriculum/board 與 curriculum/acupoints 搜尋無專條。eLotus 精確頁支持 Ex-UE3／Middle Spring、LI5 與 TE4 之間定位、寬胸理氣、和胃止痛、胸脅脹痛、咳嗽、氣喘、心絞痛、胃痛、咯血、掌心熱、直刺0.3～0.5寸與可灸。American Dragon 索引無 Zhongquan；其 Zhongchuan 項實際連到空白 Ganrexue N-BW-8 頁，故記為 AD exact-page gap，不吸收內容也不猜 URL。舊嘔吐、腕痛、點刺出血與關節消毒警語保留證據層級。AHA、NHLBI、NHS 只支持胸痛、嚴重氣喘與咯血的急症邊界，不支持穴位療效。\nFour-layer synthesis: NCBAHM Appendix A does not explicitly name Zhongquan, and no dedicated local curriculum entry was found. The exact eLotus page supports Ex-UE3/Middle Spring, the LI5-to-TE4 location, chest/Qi and Stomach/pain actions, seven indications, 0.3-0.5-cun perpendicular needling, and moxibustion. American Dragon has no Zhongquan index item; its Zhongchuan item opens a blank Ganrexue N-BW-8 page, so AD remains an exact-page gap and no content or guessed URL is used. Legacy vomiting, wrist pain, bloodletting, and joint-sterility wording retain their evidence level. AHA, NHLBI, and NHS support only emergency boundaries for chest pain, severe asthma, and hemoptysis, not point efficacy.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhongquan-ex-ue3"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhongquan-ex-ue3",
+      "https://www.heart.org/en/health-topics/heart-attack/warning-signs-of-a-heart-attack",
+      "https://www.nhlbi.nih.gov/health/asthma/attacks",
+      "https://www.nhs.uk/symptoms/coughing-up-blood/"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 中泉 EX-UE3 (eLotus CORE)",
-        "labelEn": "Extra Point · Zhongquan EX-UE3 (eLotus CORE)",
+        "labelZh": "eLotus · 中泉 Ex-UE3（內容專頁）",
+        "labelEn": "eLotus · Zhongquan Ex-UE3 (Content Detail)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhongquan-ex-ue3",
-        "source": "MasterTungAcupuncture.org / eLotus CORE"
+        "source": "eLotus CORE exact point detail"
+      },
+      {
+        "labelZh": "AHA · 心肌梗塞警訊",
+        "labelEn": "AHA · Heart Attack Warning Signs",
+        "url": "https://www.heart.org/en/health-topics/heart-attack/warning-signs-of-a-heart-attack",
+        "source": "American Heart Association exact safety page"
+      },
+      {
+        "labelZh": "NHLBI · 氣喘發作急症邊界",
+        "labelEn": "NHLBI · Asthma Attack Emergency Boundary",
+        "url": "https://www.nhlbi.nih.gov/health/asthma/attacks",
+        "source": "NHLBI exact asthma-attack safety page"
+      },
+      {
+        "labelZh": "NHS · 咯血急症邊界",
+        "labelEn": "NHS · Coughing-up-blood Emergency Boundary",
+        "url": "https://www.nhs.uk/symptoms/coughing-up-blood/",
+        "source": "NHS exact hemoptysis safety page"
       }
     ],
     "x": 155,
     "y": 305,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.5 寸，或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.5 cun, or prick to bleed.",
-    "cautions": "關節部位注意消毒。",
-    "cautionsEn": "Ensure sterile technique near joints.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Zhongquan is absent from the named focus list",
+        "scope note: Appendix A states the exam is not exclusively limited to the named list"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 中泉, Zhongquan, Zhongchuan, Middle Spring, and EX-UE3 under curriculum/board and curriculum/acupoints found no dedicated entry",
+        "source-gap note: no content was transferred from LI5, TE4, chest-pain, asthma, or gastric-pain lessons"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhongquan-ex-ue3: exact page opened 2026-08-08; Ex-UE3, Middle Spring, location, actions, indications, 0.3-0.5-cun technique, and moxibustion extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: live-opened 2026-08-08; no Zhongquan entry; near-match Zhongchuan is present",
+        "2026-08-08 browser audit: clicking the Zhongchuan index entry opens https://www.americandragon.com/Points/Ganrexue.html, whose body identifies GANREXUE N-BW-8 and contains blank clinical fields",
+        "source-gap note: no usable AD Zhongquan exact page was found; the mislinked Ganrexue page is not displayed or used as a source, and no URL was guessed"
+      ],
+      "location": [
+        "eLotus exact Zhongquan page: depression between LI5 Yangxi and TE4/TH4 Yangchi"
+      ],
+      "anatomy": [
+        "eLotus exact Zhongquan page: dorsal-wrist surface relationship between LI5 and TE4",
+        "source-gap note: no usable exact source supplies tendons, joint capsule, neurovascular structures, skin-to-joint depth, body-habitus adjustment, or a safety endpoint"
+      ],
+      "technique": [
+        "eLotus exact Zhongquan page: perpendicular 0.3-0.5 cun",
+        "unverified legacy value: prick to bleed; excluded from executable technique"
+      ],
+      "moxibustion": [
+        "eLotus exact Zhongquan page: moxibustion applicable, with no dose, duration, direct/indirect method, skin protection, or stopping rule"
+      ],
+      "functions": [
+        "eLotus exact Zhongquan page: opens the chest, regulates Qi, harmonizes the Stomach, and relieves pain"
+      ],
+      "indications": [
+        "eLotus exact Zhongquan page: chest and hypochondriac distention/pain, cough, asthma, angina, gastric pain, spitting of blood, and heat sensation in the palm",
+        "unverified legacy additions retained: vomiting and wrist joint pain",
+        "angina, asthma, and coughing up blood remain source-listed claims with explicit emergency boundaries and are excluded from disease tags"
+      ],
+      "combinations": [
+        "source-gap note: no Zhongquan-specific combination found in the usable exact eLotus page, AD audit, local curriculum, or legacy card"
+      ],
+      "cautions": [
+        "https://www.heart.org/en/health-topics/heart-attack/warning-signs-of-a-heart-attack: exact page opened 2026-08-08; heart-attack warning signs require calling emergency services",
+        "https://www.nhlbi.nih.gov/health/asthma/attacks: exact page opened 2026-08-08; serious asthma attacks or persistent severe breathing difficulty require emergency care",
+        "https://www.nhs.uk/symptoms/coughing-up-blood/: exact page opened 2026-08-08; blood in sputum needs prompt assessment and larger amounts or cardiopulmonary symptoms require emergency care",
+        "source-gap note: no point-specific bloodletting, pregnancy, pediatric, anticoagulation/coagulopathy, deep-anatomy, or moxa-dose protocol",
+        "unverified legacy joint-sterility warning retained as unsupported because it supplies no executable sterile-technique protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE3 / ex.ue3 / 中泉 / Zhongquan",
+        "eLotus: Ex-UE3 / Zhongquan / Middle Spring",
+        "American Dragon index near-match: Zhongchuan, mislinked to Ganrexue N-BW-8; not adopted"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Zhongquan exact detail page",
+        "2026-08-08 live-opened American Dragon pinyin index and followed its Zhongchuan mislink to Ganrexue; no AD point link displayed",
+        "2026-08-08 live-opened exact AHA, NHLBI, and NHS safety pages; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "eLotus：直刺0.3～0.5寸。舊點刺出血無精確頁支持，僅作 legacy 記錄。",
+    "needlingEn": "eLotus: perpendicular insertion 0.3-0.5 cun. Legacy prick-to-bleed lacks exact-page support and is retained only as legacy.",
     "id": "ex.ue3"
   },
   {
