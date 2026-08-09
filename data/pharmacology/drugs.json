@@ -150,6 +150,7 @@
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
       "dailymed_setid": "b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
+      "dailymed_label_title": "HYDROCHLOROTHIAZIDE TABLET [REMEDYREPACK INC.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
       "dailymed_url_kind": "verified_exact",
       "classic_association_en": "HCTZ -> Thiazide -> Hypokalemia & Hyponatremia & Angle-closure glaucoma risk"
@@ -187,7 +188,7 @@
       },
       "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
       "dailymed_setid": "b119ed8a-289a-46c5-9778-6b07e4c061c4",
-      "dailymed_label_title": "DailyMed - SPIRONOLACTONE tablet, coated",
+      "dailymed_label_title": "SPIRONOLACTONE TABLET, COATED",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b119ed8a-289a-46c5-9778-6b07e4c061c4",
       "dailymed_url_kind": "verified_exact",
       "review_status": "draft",
@@ -1410,12 +1411,14 @@
       "boxed_warning_en": "Fetal Toxicity: Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. Discontinue as soon as possible when pregnancy is detected.",
       "boxed_warning_zh": "胎兒毒性：直接作用於腎素-血管緊張素系統的藥物會對發育中的胎兒造成傷害甚至死亡。一旦發現懷孕，應儘速停藥。",
       "contraindications_en": [
-        "History of angioedema related to previous ACE inhibitor treatment",
+        "Concomitant use or administration within 36 hours of switching to or from a neprilysin inhibitor (e.g., sacubitril/valsartan)",
+        "History of angioedema or hypersensitivity related to previous treatment with an angiotensin-converting enzyme (ACE) inhibitor",
         "Hereditary or idiopathic angioedema",
         "Concomitant use with aliskiren in patients with diabetes"
       ],
       "contraindications_zh": [
-        "曾對 ACE 抑制劑治療產生血管神經性水腫病史",
+        "禁止併用腦啡肽酶抑制劑（如 sacubitril/valsartan）或於換藥前後 36 小時內給藥",
+        "曾對血管緊張素轉換酶 (ACE) 抑制劑治療產生血管神經性水腫或過敏病史",
         "遺傳性或特發性血管神經性水腫",
         "糖尿病患者禁止聯合使用阿利吉崙 (aliskiren)"
       ],
@@ -1426,7 +1429,7 @@
       "exam_trap_zh": "乾咳與血管神經性水腫是 ACEi 因緩激肽積聚導致的經典不良反應；胎兒毒性為黑框警告。",
       "classic_association_en": "ACE inhibitor (-pril) -> Dry cough & Angioedema & Fetal toxicity boxed warning",
       "dailymed_setid": "ab561d21-7466-4d8b-8d06-291c1d4d82ff",
-      "dailymed_label_title": "DailyMed - LISINOPRIL tablet",
+      "dailymed_label_title": "LISINOPRIL TABLET",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab561d21-7466-4d8b-8d06-291c1d4d82ff",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
@@ -1467,21 +1470,27 @@
         "心絞痛",
         "穩定具症狀之心衰竭（美托洛爾琥珀酸鹽緩釋劑型）"
       ],
-      "boxed_warning_en": "Ischemic Heart Disease: Abrupt cessation of therapy can exacerbate angina and lead to myocardial infarction. When discontinuing long-term therapy, dosage should be gradually reduced over 1 to 2 weeks.",
-      "boxed_warning_zh": "缺血性心臟病：突發停藥可能加重心絞痛並導致心肌梗塞。長期治療停藥時應在 1 至 2 週內逐漸減量。",
+      "warnings_en": [
+        "Abrupt Cessation: Abrupt cessation of therapy can exacerbate angina and lead to myocardial infarction. When discontinuing long-term therapy, dosage should be gradually reduced over 1 to 2 weeks."
+      ],
+      "warnings_zh": [
+        "突發停藥：突發停用美托洛爾可能加重心絞痛並導致心肌梗塞。長期治療停藥時應在 1 至 2 週內逐漸減量。"
+      ],
       "contraindications_en": [
         "Severe bradycardia",
         "Second- or third-degree heart block",
         "Cardiogenic shock",
-        "Sick sinus syndrome",
-        "Overt cardiac failure"
+        "Decompensated heart failure",
+        "Sick sinus syndrome (unless a permanent pacemaker is in place)",
+        "Hypersensitivity to metoprolol or any component of the product"
       ],
       "contraindications_zh": [
         "嚴重心跳過緩",
         "二度或三度房室傳導阻滯",
         "心源性休克",
-        "病竇症候群",
-        "顯著心臟衰竭"
+        "失代償性心臟衰竭",
+        "病竇症候群（除非已植入永久性心律調節器）",
+        "對美托洛爾或產品任何成分過敏"
       ],
       "board_priority": "high",
       "prototype_drug": true,
@@ -1490,12 +1499,12 @@
       "exam_trap_zh": "突發停用美托洛爾可能引發嚴重反彈性心絞痛或心肌梗塞；在高劑量下會失去 beta-1 選擇性。",
       "classic_association_en": "Beta-1 selective blocker (-olol) -> Bradycardia & Abrupt withdrawal rebound angina risk",
       "dailymed_setid": "151079c5-6360-45ed-8118-885543d6a4ad",
-      "dailymed_label_title": "DailyMed - METOPROLOL SUCCINATE tablet, extended release",
+      "dailymed_label_title": "METOPROLOL SUCCINATE TABLET, EXTENDED RELEASE",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
-        "boxed_warning_en": [
-          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#BOXED_WARNING"
+        "warnings_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#WARNINGS_AND_PRECAUTIONS"
         ],
         "contraindications_en": [
           "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#CONTRAINDICATIONS"
@@ -1541,7 +1550,7 @@
       "exam_trap_zh": "DHP CCB 如氨氯地平主要造成周邊水腫與反射性心跳過速，而非房室傳導阻滯（與 non-DHP 如 verapamil/diltiazem 不同）。",
       "classic_association_en": "DHP CCB (-dipine) -> Peripheral edema & Vasodilation",
       "dailymed_setid": "5467eee5-1519-7859-e063-6294a90afed1",
-      "dailymed_label_title": "DailyMed - AMLODIPINE BESYLATE tablet",
+      "dailymed_label_title": "AMLODIPINE BESYLATE TABLET",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5467eee5-1519-7859-e063-6294a90afed1",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
@@ -1577,14 +1586,12 @@
         "高風險患者心血管疾病之預防"
       ],
       "contraindications_en": [
-        "Active liver disease",
-        "Unexplained persistent elevations of serum transaminases",
-        "Hypersensitivity to any component"
+        "Acute liver failure or decompensated cirrhosis",
+        "Hypersensitivity to atorvastatin or any excipients in the product"
       ],
       "contraindications_zh": [
-        "活動性肝臟疾病",
-        "不明原因的持續性血清轉氨酶升高",
-        "對任何成分過敏"
+        "急性肝臟衰竭或失代償性肝硬化",
+        "對阿托伐他汀或產品任何賦形劑過敏"
       ],
       "board_priority": "high",
       "prototype_drug": true,
@@ -1593,7 +1600,7 @@
       "exam_trap_zh": "當他汀類與纖維酸類 (fibrates)、菸鹼酸或強效 CYP3A4 抑制劑併用時，肌病變與橫紋肌溶解症風險顯著增加。",
       "classic_association_en": "Statin (-vastatin) -> Myopathy / Rhabdomyolysis risk & LFT elevation",
       "dailymed_setid": "b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
-      "dailymed_label_title": "DailyMed - ATORVASTATIN CALCIUM tablet, film coated",
+      "dailymed_label_title": "ATORVASTATIN CALCIUM TABLET, FILM COATED",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
@@ -1629,11 +1636,11 @@
       ],
       "contraindications_en": [
         "Ventricular fibrillation",
-        "Known hypersensitivity to digoxin"
+        "Known hypersensitivity to digoxin or other digitalis preparations"
       ],
       "contraindications_zh": [
         "心室顫動",
-        "對地高辛過敏"
+        "對地高辛或其它毛地黃製劑已知過敏"
       ],
       "board_priority": "high",
       "prototype_drug": true,
@@ -1642,7 +1649,7 @@
       "exam_trap_zh": "低血鉀（如來自袢利尿劑或 thiazide）會增加地高辛與 Na+/K+-ATPase 的結合，顯著增強地高辛毒性。",
       "classic_association_en": "Digoxin -> Narrow therapeutic index & Visual halos & Hypokalemia toxicity trap",
       "dailymed_setid": "dbc0bc24-f250-47e8-8d10-6aef551823d7",
-      "dailymed_label_title": "DailyMed - DIGOXIN tablet",
+      "dailymed_label_title": "DIGOXIN TABLET",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dbc0bc24-f250-47e8-8d10-6aef551823d7",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {

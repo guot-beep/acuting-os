@@ -1,15 +1,21 @@
-# 2026-08-09 Antigravity — Pharmacology Canonical Corrections, DailyMed Titles & Beta-1 Taxonomy Reconcile
+# 2026-08-09 Antigravity — Pharmacology Label Alignment & Audit Semantics Pass
 
 - **做了什麼**：
-  1. **Metoprolol 產品特異性修訂**：將成分級 `drug.metoprolol` 適應症明確限定為 `"Stable symptomatic heart failure (metoprolol succinate extended-release formulation)"` / `"穩定具症狀之心衰竭（美托洛爾琥珀酸鹽緩釋劑型）"`，避免將劑型特異適應症誤讀為全成分通用適應症。
-  2. **DailyMed 官方標籤標題審核**：針對 Batch 2 全部新藥與補充藥物補齊 exact `dailymed_label_title`（如 `"DailyMed - METOPROLOL SUCCINATE tablet, extended release"`, `"DailyMed - LISINOPRIL tablet"`, `"DailyMed - AMLODIPINE BESYLATE tablet"`, `"DailyMed - ATORVASTATIN CALCIUM tablet, film coated"`, `"DailyMed - DIGOXIN tablet"`, `"DailyMed - SPIRONOLACTONE tablet, coated"`）。
-  3. **Beta-1 選擇性阻斷劑分類名修正**：將原過度寬泛之 `drugclass.beta_blockers` 重構更名為 `drugclass.beta1_selective_blockers`（"Beta-1 selective adrenergic receptor blockers"），精確對應 `drugtarget.beta1_adrenergic` 與 prototype `drug.metoprolol`；全庫與測試無殘留舊 Class ID。
-  4. **既有藥物變更真實統計**：
-     - 處理之既有藥物（3 筆）：`drug.rivaroxaban`, `drug.spironolactone`, `drug.furosemide`
-     - Canonical 欄位實質變更（2 筆）：`drug.rivaroxaban`（適應症/記憶法/考題陷阱/RxCUI 擴充）、`drug.spironolactone`（補齊 DailyMed setid/url/title）
-     - Provenance-only / Canonical 零變更（1 筆）：`drug.furosemide`（`drugs.json` canonical 內容 0 變更；24 項來源原子事實完整存入 staging 帳簿）。
-- **驗證**：`verify-source-coverage.js` PASS (280 items, 100%)、`audit-atomic-ledger.js` PASS、`test-source-drift-simulation.js` PASS、`validate-pharm-standard.js --worklist` PASS (21 drugs, 17 classes, 0 blocking)、`build-data.js` PASS、`validate-interactions.js` PASS (108 IDs)、`git diff --check` PASS；Browser QA 模擬 http://127.0.0.1:8361/#ws/pharm 正常，Metoprolol 搜尋與 Beta-1 選擇性分類篩選無重複、無無效選項。
-- **STOP**：已依指令完成 3 項修訂與報告修正，**未開始 P3**。
+  1. **Ledger 與 Canonical 飄移修復**：原始 v7 Markdown 內之舊 Source-pack URL（如 Lisinopril, Metoprolol, Amlodipine, Atorvastatin, Digoxin 舊 setid 連結）忠實保留於 v7 帳簿文字中，處置 (Disposition) 由 `canonical` 調整為 `staging` (provenance-only)，不因後續引用獨立驗證之新 DailyMed URL 而強行標示為 Canonical matches。
+  2. **實作機器可驗證之 Ledger->Canonical 實現度審核**：於 `scripts/audit-atomic-ledger.js` 擴充純純量 (Exact scalar) 與敘述轉化 (Transformed narrative) 分流比對。90 筆 Canonical 處置項目中：33 筆純量 100% 精確匹配（mismatched = 0），57 筆轉化敘述妥善留待人工審核。
+  3. **P0 安全欄位與 DailyMed 標籤完全對齊**：
+     - `drug.metoprolol`: 經比對 `151079c5-6360-45ed-8118-885543d6a4ad` 標籤並無 `#BOXED_WARNING` 區段，突發停藥警告屬於 `5.1 WARNINGS AND PRECAUTIONS`。已移除 `boxed_warning_en/zh`，轉移至 `warnings_en/zh` 並將 `field_sources` 對齊為 `#WARNINGS_AND_PRECAUTIONS`；禁忌對齊為失代償性心衰竭與具調節器病竇症候群。
+     - `drug.atorvastatin`: 禁忌完全對齊目前選定 PLR 標籤 `b687ba81-cb24-bbdf-5dd9-ab0e53dd480b`（急性肝衰竭或失代償性肝硬化）。
+     - `drug.lisinopril`: 禁忌對齊 `ab561d21-7466-4d8b-8d06-291c1d4d82ff`（含 36 小時 neprilysin inhibitor / sacubitril 禁忌與 ACEi 血管神經性水腫病史）。
+     - `drug.amlodipine` & `drug.digoxin`: 禁忌精確對齊官方標籤（Digoxin 包含其他毛地黃製劑過敏史）。
+  4. **DailyMed 標籤標題規範統一**：統一採用 SPL 官方標籤標題格式（如 `"METOPROLOL SUCCINATE TABLET, EXTENDED RELEASE"`），摒棄瀏覽器 HTML Page Title (`"DailyMed - ..."`) 前綴。
+  5. **驗證器硬化與 Manifest**：建立無版權文字之元資料清單 `data/pharmacology/dailymed_verified_labels_manifest.json`，於 `scripts/validate-pharm-standard.js` 實作標籤區段斷言。
+- **三分流獨立審核結果**：
+  1. **Source -> Ledger 覆蓋**：Extracted 280, Matched 280, Missing 0, Lost 0 (100%)
+  2. **Ledger -> Canonical 實現**：Canonical items 90 (Exact matched 33, Mismatched 0, Human-review transformed 57)
+  3. **P0 DailyMed Section 對齊**：5 大新藥 7 項 P0 欄位（Aligned 7, Corrected 1, Unresolved 0）
+- **驗證**：`verify-source-coverage.js` PASS, `audit-atomic-ledger.js` PASS, `test-source-drift-simulation.js` PASS, `validate-pharm-standard.js --worklist` PASS (0 blocking), `build-data.js` PASS, `validate-interactions.js` PASS (108 IDs), `git diff --check` PASS; Browser QA 模擬 http://127.0.0.1:8361/#ws/pharm 正常。
+- **STOP**：已依指令完成標籤對齊與審核語義硬化，**未開始 P3**。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 

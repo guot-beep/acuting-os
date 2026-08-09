@@ -4,7 +4,7 @@
   "schema_mode": "stable_content_hashed_atomic_ledger_v4",
   "disposition_definitions": {
     "canonical": "Primary disposition is represented in canonical data/pharmacology/drugs.json",
-    "staging": "Primary disposition is preserved in staging data (unmapped board/clinical impact bullets)",
+    "staging": "Primary disposition is preserved in staging data (unmapped board/clinical impact bullets or replaced source-pack URLs)",
     "duplicated_for_provenance": "Item is represented in canonical data BUT also preserved in staging for full provenance review (disjoint; does not double-count in sum)",
     "excluded_with_reason": "Source item is structural metadata or legacy classification excluded with explicit reason",
     "lost": "Source item was lost during ingestion (must equal 0)"
@@ -425,9 +425,9 @@
       "source_section": "Current official sources",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=558b7a0d-5490-4c1b-802e-3ab3f1efe760",
       "source_item_type": "current_official_sources",
-      "disposition": "canonical",
-      "canonical_field": "dailymed_url",
-      "staging_field": null,
+      "disposition": "staging",
+      "canonical_field": null,
+      "staging_field": "source_board_items",
       "derived": false
     },
     {
@@ -449,9 +449,9 @@
       "source_section": "Current official sources",
       "source_text": "https://www.nccih.nih.gov/health/providers/digest/herb-drug-interactions/",
       "source_item_type": "current_official_sources",
-      "disposition": "canonical",
-      "canonical_field": "field_sources",
-      "staging_field": null,
+      "disposition": "staging",
+      "canonical_field": null,
+      "staging_field": "source_clinical_impact_statements",
       "derived": false
     },
     {
@@ -473,9 +473,9 @@
       "source_section": "Current official sources",
       "source_text": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
       "source_item_type": "current_official_sources",
-      "disposition": "canonical",
-      "canonical_field": "field_sources",
-      "staging_field": null,
+      "disposition": "staging",
+      "canonical_field": null,
+      "staging_field": "source_clinical_impact_statements",
       "derived": false
     },
     {
@@ -497,9 +497,9 @@
       "source_section": "Current official sources",
       "source_text": "https://www.ncbi.nlm.nih.gov/sites/books/NBK501137/",
       "source_item_type": "current_official_sources",
-      "disposition": "canonical",
-      "canonical_field": "field_sources",
-      "staging_field": null,
+      "disposition": "staging",
+      "canonical_field": null,
+      "staging_field": "source_clinical_impact_statements",
       "derived": false
     },
     {
@@ -1037,9 +1037,9 @@
       "source_section": "Official source",
       "source_text": "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=55530ff3-5ce4-120f-e054-00144ff8d46c",
       "source_item_type": "official_source",
-      "disposition": "canonical",
-      "canonical_field": "dailymed_url",
-      "staging_field": null,
+      "disposition": "staging",
+      "canonical_field": null,
+      "staging_field": "source_board_items",
       "derived": false
     },
     {
@@ -1733,9 +1733,9 @@
       "source_section": "Official source",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8c868894-667e-4a51-906a-838d63e420ba",
       "source_item_type": "official_source",
-      "disposition": "canonical",
-      "canonical_field": "dailymed_url",
-      "staging_field": null,
+      "disposition": "staging",
+      "canonical_field": null,
+      "staging_field": "source_board_items",
       "derived": false
     },
     {
@@ -2081,9 +2081,9 @@
       "source_section": "Official source",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab561d21-7466-4d8b-8d06-291c1d4d82ff",
       "source_item_type": "official_source",
-      "disposition": "staging",
-      "canonical_field": null,
-      "staging_field": "source_board_items",
+      "disposition": "canonical",
+      "canonical_field": "dailymed_url",
+      "staging_field": null,
       "derived": false
     },
     {
@@ -2333,9 +2333,9 @@
       "source_section": "Official source",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
       "source_item_type": "official_source",
-      "disposition": "staging",
-      "canonical_field": null,
-      "staging_field": "source_board_items",
+      "disposition": "canonical",
+      "canonical_field": "dailymed_url",
+      "staging_field": null,
       "derived": false
     },
     {
@@ -2465,9 +2465,9 @@
       "source_section": "Official source",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5467eee5-1519-7859-e063-6294a90afed1",
       "source_item_type": "official_source",
-      "disposition": "staging",
-      "canonical_field": null,
-      "staging_field": "source_board_items",
+      "disposition": "canonical",
+      "canonical_field": "dailymed_url",
+      "staging_field": null,
       "derived": false
     },
     {
@@ -2669,9 +2669,9 @@
       "source_section": "Official sources",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
       "source_item_type": "official_sources",
-      "disposition": "staging",
-      "canonical_field": null,
-      "staging_field": "source_board_items",
+      "disposition": "canonical",
+      "canonical_field": "dailymed_url",
+      "staging_field": null,
       "derived": false
     },
     {
@@ -2885,9 +2885,9 @@
       "source_section": "Official sources",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dbc0bc24-f250-47e8-8d10-6aef551823d7",
       "source_item_type": "official_sources",
-      "disposition": "staging",
-      "canonical_field": null,
-      "staging_field": "source_board_items",
+      "disposition": "canonical",
+      "canonical_field": "dailymed_url",
+      "staging_field": null,
       "derived": false
     },
     {
@@ -3353,9 +3353,9 @@
       "source_section": "Official source",
       "source_text": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b119ed8a-289a-46c5-9778-6b07e4c061c4",
       "source_item_type": "official_source",
-      "disposition": "staging",
-      "canonical_field": null,
-      "staging_field": "source_board_items",
+      "disposition": "canonical",
+      "canonical_field": "dailymed_url",
+      "staging_field": null,
       "derived": false
     },
     {
@@ -3412,7 +3412,7 @@
       "drug_id": "drug.metoprolol",
       "flag": "rebound_angina_warning",
       "derived": true,
-      "reason": "Inferred from abrupt cessation boxed warning in source narrative."
+      "reason": "Inferred from abrupt cessation warning in source narrative."
     }
   ]
 }

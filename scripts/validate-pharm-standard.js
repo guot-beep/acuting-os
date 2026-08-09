@@ -155,7 +155,16 @@ function main() {
         defects.push(`P3 ${where}: drugsystem_ids 必須是陣列,目前是 ${typeof r.drugsystem_ids}`);
       }
 
-      // P0 — the rule this file exists for
+      // P0 — the rule this file exists for: label section verification against manifest
+      let labelManifestMap = new Map();
+      try {
+        const manifestPath = path.join(DIR, 'dailymed_verified_labels_manifest.json');
+        if (fs.existsSync(manifestPath)) {
+          const mData = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          (mData.labels || []).forEach(l => labelManifestMap.set(l.drug_id, l));
+        }
+      } catch (e) {}
+
       const checkSourced = (f, re, label) => {
         if (!len(r[f])) return;
         const srcs = (r.field_sources || {})[f];
@@ -165,6 +174,23 @@ function main() {
         }
         if (!srcs.some((s) => re.test(String(s)))) {
           defects.push(`P0 ${where}.${f}: 來源沒有一個是${label}（${srcs.join(', ')}）`);
+        }
+        // Manifest section verification
+        const labelMeta = labelManifestMap.get(r.id);
+        if (labelMeta && r.dailymed_setid) {
+          srcs.forEach(s => {
+            if (typeof s === 'string' && s.startsWith('dailymed:')) {
+              if (!s.includes(r.dailymed_setid)) {
+                defects.push(`P0 ${where}.${f}: field_source setid mismatch! Source "${s}" does not match drug dailymed_setid "${r.dailymed_setid}"`);
+              }
+            }
+          });
+          if (f === 'boxed_warning_en' && !labelMeta.verified_sections.includes('BOXED_WARNING')) {
+            defects.push(`P0 ${where}.${f}: boxed_warning_en present but verified label manifest indicates BOXED_WARNING section is absent!`);
+          }
+          if (f === 'contraindications_en' && !labelMeta.verified_sections.includes('CONTRAINDICATIONS') && !labelMeta.verified_sections.includes('DO_NOT_USE')) {
+            defects.push(`P0 ${where}.${f}: contraindications_en present but verified label manifest indicates CONTRAINDICATIONS section is absent!`);
+          }
         }
       };
       SAFETY_OFFICIAL_ONLY.forEach((f) => checkSourced(f, OFFICIAL_SOURCE, '官方標籤'));
