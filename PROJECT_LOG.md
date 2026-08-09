@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-UE10 四縫、EX-UE11 十宣精修；EX-UE12 臂中衝突暫停
+
+- **做了什麼**：完成 EX-UE10、EX-UE11 strict-template／four-source card fill；逐頁核對 Board、local curriculum、eLotus、American Dragon，補齊雙語定位、技法、安全、主治／功效、配穴、考點、exact links 與 field-level provenance，並保留 unsupported legacy 的證據層級。
+- **數字 before→after**：嚴格模板／四來源稽核 `48/72 → 50/72`；待修 `24/72 → 22/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。
+- **來源與安全**：四縫不猜點刺器械、出液量、止血或灸法；十宣將淺刺、放血與 AD 的條件式後續灸法分列，重大急症僅作 clinical boundary。EX-UE12 出現掌側／外側／背側定位及1.0–1.2寸／貫穿肢體但不透皮／legacy 多套刺深、灸與放血的實質衝突，未擅自選邊。
+- **驗證**：extra-point audit、build-data、runtime data、interactions、point IDs、content-junk、Pattern registry／standard、JS syntax、canonical↔generated parity 與 `git diff --check` 依本批完整驗證執行；內容 commits `1fcc9f0`、`4dcf882`。
+- **已知未解／下一步**：依 Ting 的 pause 規則停在 EX-UE12 臂中，等待定位與侵入式技法裁決；未觸碰 dirty 主工作樹、Pattern、Condition 或 `curriculum/conditions/*`。
+
 # 2026-08-08 Codex — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
 
 - **做了什麼**：依 Ting 裁決完成 EX-UE6，並連續精修 EX-UE7～EX-UE9；逐張補齊雙語定位、解剖與 source gaps、來源分層刺灸／放血、功效主治、配穴、安全、考點、exact links 與 field-level provenance，stable code／id 全部維持。

@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-UE10 四縫、EX-UE11 十宣；EX-UE12 臂中定位與技法衝突暫停
+
+- **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE10 `1fcc9f0`、EX-UE11 `4dcf882`。只處理獨立經外奇穴 worktree 的 canonical、generated、audit 與 handoff；未觸碰 dirty 主工作樹、Pattern、Condition 或 `curriculum/conditions/*`。
+- **EX-UE10 / EX-UE11**: 四縫整合 Board 明列、課件缺口、eLotus Ex-UE10 與 AD Sifeng 精確頁；canonical 採點刺後擠出少量液體的來源原意，但不猜器械、出液量、止血或灸法規則，舊三稜針、刺深與互相矛盾的禁灸／可灸陳述均降為 unsupported。十宣整合 Board 明列、課件缺口、eLotus Ex-UE11 與 AD Shixuan 精確頁；淺刺0.1–0.2寸、點刺出血、AD「放血後可灸」分列，舊0.5–1.0寸與三稜針降為 unsupported。卒中、熱病／中暑與癲癇只保留來源陳述和急症邊界，不升格為療效標籤。
+- **Stop Condition / EX-UE12**: legacy 定位為前臂掌側、腕肘中點兩筋間；eLotus 為前臂外側、腕肘中點橈尺骨間；AD 為前臂背側、腕肘中點橈尺骨間。eLotus 直刺1.0–1.2寸且可灸；AD 描述直刺貫穿肢體但不透對側皮膚、無數值深度；legacy 又列0.5–1.0寸／0.3–0.8寸、灸與點刺出血。此為實質定位及侵入式安全衝突，依 Ting 規則未修改 EX-UE12 或後續穴位。
+- **Counts / Validation**: strict-template／four-source `48/72 → 50/72`；issues `24/72 → 22/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。完整 validator、canonical↔runtime parity、JS syntax 與 diff check 結果記於本批 rebuild commit；strict/four-source 仍只代表模板、provenance、來源與 exact-link 稽核，不是獨立臨床驗證，兩張均維持 draft。
+- **Next**: 仍為 `EX-UE12 臂中 Bizhong`，需 Ting 或可核對的書本來源裁決 canonical 掌側／外側／背側定位與可執行技法後再續；22張待修、9張仍有 generic CloudTCM。
+
 ## [2026-08-08] Codex Handoff — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
 
 - **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE6 `35e8f75`、EX-UE7 `56c54d8`、EX-UE8 `eb73941`、EX-UE9 `381d3ca`；audit/runtime rebuild `014a62c`。只處理經外奇穴 canonical、generated bundle、audit 與 handoff，未觸碰 Pattern、Condition、`curriculum/conditions/*` 或原 dirty 主工作樹。
