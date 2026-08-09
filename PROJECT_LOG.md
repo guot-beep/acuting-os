@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
+
+- **做了什麼**：依 Ting 裁決完成 EX-UE6，並連續精修 EX-UE7～EX-UE9；逐張補齊雙語定位、解剖與 source gaps、來源分層刺灸／放血、功效主治、配穴、安全、考點、exact links 與 field-level provenance，stable code／id 全部維持。
+- **數字 before→after**：strict-template／four-source `44/72 → 48/72`；待修 `28/72 → 24/72`；generic Cloud 維持 `9/72`；measurable method、source URL、mojibake gaps 維持 `0/72`。
+- **來源／安全**：小骨空採 PIP＋只灸，eLotus DIP 明列衝突，AD Gukong 排除；腰痛點定位／刺深變體不硬合併；外勞宮的兒科驚厥／新生兒破傷風及八邪的蛇咬傷等重大主治只留 provenance／emergency boundary。所有 legacy 侵入性數字若無 exact source 均保留但降級，不升格為 canonical 規則。
+- **驗證**：extra audit、build-data、validate-data（947 runtime）、interactions、point IDs（925）、content-junk、Pattern registry／standard、app syntax、EX-UE6～EX-UE9 canonical↔runtime parity 與 `git diff --check` 均通過；content commits `35e8f75`、`56c54d8`、`eb73941`、`381d3ca`，audit/runtime commit `014a62c`。
+- **已知未解／下一步**：仍有24張待修與9張 generic Cloud URL；下一張 `EX-UE10 四縫 Sifeng`，須以完整深度模式處理兒童點刺／擠液、現有針灸衝突、放血與感染控制。未觸碰 Pattern、Condition、`curriculum/conditions/*` 或原 dirty 主工作樹。
+
 # 2026-08-08 Codex — EX-UE4 中魁、EX-UE5 大骨空四來源精修；EX-UE6 衝突暫停
 
 - **做了什麼**：以同一 strict-template／four-source workflow 精修 EX-UE4、EX-UE5，逐張補齊雙語定位、解剖與 source gaps、刺灸、功效主治、配穴／缺口、安全、考點及 field-level provenance；exact eLotus／AD links 均於本 session 實際開啟。

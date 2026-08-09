@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
+
+- **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE6 `35e8f75`、EX-UE7 `56c54d8`、EX-UE8 `eb73941`、EX-UE9 `381d3ca`；audit/runtime rebuild `014a62c`。只處理經外奇穴 canonical、generated bundle、audit 與 handoff，未觸碰 Pattern、Condition、`curriculum/conditions/*` 或原 dirty 主工作樹。
+- **EX-UE6 / Ting Adjudication**: canonical 定位採小指 PIP；eLotus DIP 保留為 `source_conflict`／alternate location。Canonical technique 為只灸；legacy 直刺0.3～0.5寸、點刺出血及灸5～7壯均降為 unsupported／不可執行。AD Gukong 不作 Xiaogukong 證據，stable `EX-UE6`／`ex.ue6` 未改。
+- **EX-UE7–EX-UE9 / Reconciliation**: 腰痛點將 eLotus 中點直刺0.5～1.0寸、AD Yaotong 1／3 掌骨基底向腕斜刺1～1.5寸及 legacy 技法分列；外勞宮保留 Luozhen 同位別名與 AD `M-UE-24` 外部編碼，兒童驚厥／新生兒破傷風只留 provenance 與急症邊界；八邪將 eLotus／AD 多套針刺、放血與無劑量灸法分列，蛇咬傷、壞疽、發熱病與瘧疾不升格為 efficacy／disease tags。
+- **Counts / Validation**: strict-template／four-source `44/72 → 48/72`；issues `28/72 → 24/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。extra audit、build-data、validate-data（947 runtime）、interactions、point IDs（925）、content-junk、Pattern registry／standard、app syntax、四張 canonical↔runtime parity 與 `git diff --check` 均通過。Strict/four-source 只代表模板、provenance、來源與 exact-link 稽核完成，不代表獨立臨床驗證；四張皆維持 draft。
+- **Next**: `EX-UE10 四縫 Sifeng`。需完整深度模式核對小兒點刺／擠液技法、現有針刺與灸法欄位矛盾、放血／感染控制與兒童安全；不得猜器械、出血量、止血、禁灸或特殊族群數值。Audit ledger 已同步為 48 complete／24 remaining／generic Cloud 9／next EX-UE10。
+
 ## [2026-08-08] Codex Handoff — EX-UE4 中魁、EX-UE5 大骨空；EX-UE6 來源衝突暫停
 
 - **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE4 `2aafea3` (`feat(acupoints): refine Zhongkui extra point`)；EX-UE5 `51972f9` (`feat(acupoints): refine Dagukong extra point`)。只修改經外奇穴 canonical、generated bundle、audit 與本批 handoff；未觸碰 Pattern、Condition、`curriculum/conditions/*` 或其他 session dirty files。
