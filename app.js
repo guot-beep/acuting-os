@@ -62,6 +62,37 @@ const OUTCOME_VERDICTS = {
 const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
 let learnFromMode = false;
 
+// Metadata-driven numeric outcome metric config (2026-08-09) — prototype
+// covering exactly the two metrics already proven (metric.pain_score,
+// metric.sleep_hours). Declared here, near OUTCOME_VERDICTS, rather than
+// beside the functions that use it (getOutcomeMetricDef etc., further down
+// near normalizeSoapNote): the bottom of this file calls render() at
+// top-level page-load time (line ~1036, before any case dialog even opens),
+// and render() can synchronously reach renderSoapNoteCard ->
+// formatNumericOutcomeMetrics on first load if a case with SOAP notes is
+// already selected. A `const` has no hoisting the way a function
+// declaration does — declaring it after that render() call throws
+// "Cannot access before initialization" the moment a real case loads.
+//
+// Deliberately NOT added to data/clinical_cases/outcome_metrics.json.
+// That file is the canonical clinical vocabulary — id/name/label/category/
+// unit/direction_good, meaning worth having independent of any UI. min/max/
+// integer-vs-decimal are form-rendering constraints with no clinical
+// meaning: they answer "what does an HTML input allow," not "what does
+// this measurement mean." Mixing them into the vocabulary would (a) let a
+// UI tweak edit a file that is supposed to be clinical content, and (b)
+// make every future non-numeric metric (bbt_pattern is text, adverse_
+// reaction is text) carry irrelevant numeric-only keys. Smallest clean
+// design: a short array literal, label/unit still looked up from
+// outcome_metrics.json (never duplicated) so there is exactly one place
+// either can drift. getOutcomeMetricDef/renderNumericOutcomeMetricInputs/
+// computeNumericOutcomeMetrics/formatNumericOutcomeMetrics (the functions
+// that consume this) live further down, near normalizeSoapNote.
+const NUMERIC_OUTCOME_METRIC_CONFIG = [
+  { metricId: "metric.pain_score", min: 0, max: 10, integer: true },
+  { metricId: "metric.sleep_hours", min: 0, max: null, integer: false },
+];
+
 // Data-load guard: the app is data-driven; if the generated data file did not
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
 // silently degrading to placeholder-only content.
@@ -4981,6 +5012,102 @@ function setOutcomeMetricValue(list, metricId, value) {
   return [...withoutThisMetric, { metricId, valueNumber: Number(value) }];
 }
 
+// Metadata-driven numeric outcome metric renderer (2026-08-09) — prototype
+// covering exactly the two metrics already proven in 63f0896/eda9819
+// (metric.pain_score, metric.sleep_hours). Removes the per-metric
+// hydration/validation/display code that pattern would have repeated 20
+// more times. NUMERIC_OUTCOME_METRIC_CONFIG itself is declared near
+// OUTCOME_VERDICTS at the top of the file (TDZ: render() runs at top-level
+// page-load time, before this point in the file) — see that declaration's
+// comment for why the config lives in JS rather than
+// data/clinical_cases/outcome_metrics.json.
+function getOutcomeMetricDef(metricId) {
+  const records = globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || [];
+  return records.find((r) => r.id === metricId) || null;
+}
+
+function outcomeMetricLabel(metricId) {
+  const def = getOutcomeMetricDef(metricId);
+  if (!def) return metricId;
+  return modeText(`${def.label_zh || def.name} ${def.label_en || ""}`.trim(), def.label_en || def.name);
+}
+
+// Chinese-only label minus its own parenthetical explanation (pain_score's
+// label_zh is "疼痛(0 無痛 / 10 最痛)") — for validation-error sentences,
+// which state the range themselves and have always been Chinese-only here
+// (matches every other alert() in this file, bilingual or not).
+function outcomeMetricShortLabel(metricId) {
+  const def = getOutcomeMetricDef(metricId);
+  const zh = def ? (def.label_zh || def.name) : metricId;
+  return zh.replace(/[（(][^）)]*[）)]/g, "").trim();
+}
+
+// Renders one <label><input></label> per configured metric into the given
+// container, values pre-filled from `currentMetrics`. Rebuilt every dialog
+// open (like renderRaceEthnicityOptions) — cheap, and always exactly right
+// for whichever note is being edited.
+function renderNumericOutcomeMetricInputs(currentMetrics) {
+  const container = document.querySelector("#structuredOutcomeMetrics");
+  if (!container) return;
+  container.innerHTML = NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
+    const def = getOutcomeMetricDef(cfg.metricId);
+    const unitNote = def?.unit ? ` <small>${escapeHtml(def.unit)}</small>` : "";
+    const value = getOutcomeMetricValue(currentMetrics, cfg.metricId);
+    const attrs = [
+      `type="number"`,
+      `name="${escapeAttribute(cfg.metricId)}"`,
+      `min="${cfg.min}"`,
+      cfg.max != null ? `max="${cfg.max}"` : "",
+      `step="${cfg.integer ? "1" : "any"}"`,
+      `value="${value === 0 || value ? escapeAttribute(String(value)) : ""}"`,
+      `placeholder="未測量可留空 leave blank if not measured"`,
+    ].filter(Boolean).join(" ");
+    return `<label>${escapeHtml(outcomeMetricLabel(cfg.metricId))}${unitNote}<small>${escapeHtml(cfg.metricId)}</small><input ${attrs} /></label>`;
+  }).join("");
+}
+
+// Config-driven validate-and-set for every configured numeric metric.
+// `formValues` is the plain object saveSoapFromForm already builds from
+// FormData — each metric's input name IS its metricId, so formValues[
+// cfg.metricId] is exactly its raw string. Returns {metrics} on success or
+// {error} on the FIRST invalid field (reject, never clamp) so the caller
+// can alert and abort the save exactly like the two hand-written blocks
+// did.
+function computeNumericOutcomeMetrics(formValues, currentMetrics) {
+  let metrics = currentMetrics || [];
+  for (const cfg of NUMERIC_OUTCOME_METRIC_CONFIG) {
+    const raw = String(formValues[cfg.metricId] || "").trim();
+    if (raw) {
+      const shapeOk = cfg.integer ? /^\d+$/.test(raw) : /^\d+(\.\d+)?$/.test(raw);
+      const num = Number(raw);
+      const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
+      if (!shapeOk || !rangeOk) {
+        const rangeText = cfg.max != null ? `${cfg.min}–${cfg.max}` : `${cfg.min} 以上`;
+        const shapeText = cfg.integer ? "整數" : "數字，可含小數";
+        return { error: `${outcomeMetricShortLabel(cfg.metricId)}須為 ${rangeText} 的${shapeText}（可留空 = 未測量）。` };
+      }
+    }
+    metrics = setOutcomeMetricValue(metrics, cfg.metricId, raw);
+  }
+  return { metrics };
+}
+
+// Shared display formatter — SOAP card and Last Visit at a Glance both call
+// this instead of each hand-formatting pain/sleep separately. [label,
+// valueText] pairs, one per metric that actually has a value; metrics with
+// no value are omitted (never a fabricated "0").
+function formatNumericOutcomeMetrics(outcomeMetrics) {
+  return NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
+    const v = getOutcomeMetricValue(outcomeMetrics, cfg.metricId);
+    if (v !== 0 && !v) return null;
+    const def = getOutcomeMetricDef(cfg.metricId);
+    const valueText = cfg.max != null
+      ? `${v}/${cfg.max}`
+      : `${v}${def?.unit === "hours" ? " h" : (def?.unit ? " " + def.unit : "")}`;
+    return [outcomeMetricLabel(cfg.metricId), valueText];
+  }).filter(Boolean);
+}
+
 function normalizeStringList(value) {
   if (Array.isArray(value)) return value.map((item) => String(item).trim()).filter(Boolean);
   return splitList(String(value || ""));
@@ -5596,8 +5723,7 @@ function renderSoapNoteCard(note) {
         <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
-        ${(() => { const p = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score"); return (p === 0 || p) ? `<div><small>疼痛評分 Pain score</small><span>${escapeHtml(String(p))}/10</span></div>` : ""; })()}
-        ${(() => { const s = getOutcomeMetricValue(note.outcomeMetrics, "metric.sleep_hours"); return (s === 0 || s) ? `<div><small>睡眠 Sleep</small><span>${escapeHtml(String(s))} h</span></div>` : ""; })()}
+        ${formatNumericOutcomeMetrics(note.outcomeMetrics).map(([label, val]) => `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
         ${(note.effectDurationDays === 0 || note.effectDurationDays) ? `<div><small>效果維持 Effect duration</small><span>${escapeHtml(String(note.effectDurationDays))} 天 days</span></div>` : ""}
       </div>
       <div class="soap-link-grid">
@@ -5944,16 +6070,13 @@ function renderPreviousVisitPanel(note) {
     return;
   }
   const verdict = OUTCOME_VERDICTS[note.outcomeVerdict];
-  const pain = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score");
-  const sleepHours = getOutcomeMetricValue(note.outcomeMetrics, "metric.sleep_hours");
   const pattern = formatPatternSelections(note.tcmPatternSelections) || note.tcmPattern || "";
   const cells = [
     ["就診 Visit", [note.visitNumber ? `Visit ${note.visitNumber}` : "", note.visitDate].filter(Boolean).join(" · ") || "—"],
     ["S 主觀 Subjective", truncateText(note.subjective, 80)],
     ["療效 Outcomes", truncateText(note.outcomes, 80)],
     ["療效判定 Verdict", verdict ? `${verdict.zh} ${verdict.en}` : ""],
-    ["疼痛評分 Pain score", (pain === 0 || pain) ? `${pain}/10` : ""],
-    ["睡眠 Sleep", (sleepHours === 0 || sleepHours) ? `${sleepHours} h` : ""],
+    ...formatNumericOutcomeMetrics(note.outcomeMetrics),
     ["效果維持 Effect duration", (note.effectDurationDays === 0 || note.effectDurationDays) ? `${note.effectDurationDays} 天 days` : ""],
     ["證型 Pattern", pattern],
     ["治法 Tx principle", note.treatmentPrinciple || ""],
@@ -6027,20 +6150,10 @@ function openSoapEditor(note = null) {
     if (!soapForm.elements[key]) return;
     soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
-  // Structured outcome metric proof-of-concept: painScore is a UI-only form
-  // field (no soap_notes.painScore key exists — it reads/writes through
-  // data.outcomeMetrics). Not covered by the generic loop above since
-  // "painScore" is never a key on the note object itself.
-  if (soapForm.elements.painScore) {
-    soapForm.elements.painScore.value = getOutcomeMetricValue(data.outcomeMetrics, "metric.pain_score");
-  }
-  // Second structured metric (2026-08-09) — same helper, same array, proves
-  // the shape isn't pain-score-specific. Different numeric semantics on
-  // purpose: decimals allowed (sleep_hours), no upper bound, vs pain_score's
-  // integer 0-10.
-  if (soapForm.elements.sleepHours) {
-    soapForm.elements.sleepHours.value = getOutcomeMetricValue(data.outcomeMetrics, "metric.sleep_hours");
-  }
+  // Metadata-driven numeric outcome metrics: one generic render instead of
+  // per-metric hydration ifs. Inputs are UI-only (no soap_notes.painScore/
+  // sleepHours key exists — they read/write through data.outcomeMetrics).
+  renderNumericOutcomeMetricInputs(data.outcomeMetrics);
   // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
   // tcmPatternSecondary are UI-only form fields, no such keys exist on the
   // note object itself (the note holds tcmPatternSelections instead).
@@ -6084,25 +6197,17 @@ function saveSoapFromForm(event) {
     alert("效果維持天數須為 0 以上的整數（可留空）。");
     return;
   }
-  // Structured outcome metrics (metric.pain_score, metric.sleep_hours).
-  // Reject, never coerce — an out-of-range or malformed value is a typo,
-  // not a value to clamp. Two different numeric shapes on purpose: pain
-  // score integer 0-10, sleep hours a non-negative decimal with no upper
-  // bound (outcome_metrics.json's own definition: unit "hours", no
-  // integer-only constraint) — same two-line validate-then-set pattern
-  // either way, chained through the same setOutcomeMetricValue().
-  const painScoreRaw = (data.painScore || "").trim();
-  if (painScoreRaw && (!/^\d+$/.test(painScoreRaw) || Number(painScoreRaw) < 0 || Number(painScoreRaw) > 10)) {
-    alert("疼痛評分須為 0–10 的整數（可留空 = 未測量）。");
+  // Metadata-driven numeric outcome metrics (metric.pain_score,
+  // metric.sleep_hours). Reject, never coerce — config-driven per-metric
+  // shape/range check, same rule set the two hand-written blocks enforced
+  // (pain: integer 0-10; sleep: non-negative decimal, no upper bound) but
+  // expressed once in NUMERIC_OUTCOME_METRIC_CONFIG instead of per metric.
+  const numericMetricsResult = computeNumericOutcomeMetrics(data, current?.outcomeMetrics || []);
+  if (numericMetricsResult.error) {
+    alert(numericMetricsResult.error);
     return;
   }
-  const sleepHoursRaw = (data.sleepHours || "").trim();
-  if (sleepHoursRaw && (!/^\d+(\.\d+)?$/.test(sleepHoursRaw) || Number(sleepHoursRaw) < 0)) {
-    alert("睡眠時數須為 0 以上的數字，可含小數（可留空 = 未測量）。");
-    return;
-  }
-  let outcomeMetrics = setOutcomeMetricValue(current?.outcomeMetrics || [], "metric.pain_score", painScoreRaw);
-  outcomeMetrics = setOutcomeMetricValue(outcomeMetrics, "metric.sleep_hours", sleepHoursRaw);
+  const outcomeMetrics = numericMetricsResult.metrics;
 
   // TCM pattern primary/secondary reconciliation. The excludeValues live
   // filter (setupLinkAutocomplete) already keeps the current primary out of
