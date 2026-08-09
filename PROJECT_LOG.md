@@ -1,9 +1,9 @@
-# 2026-08-09 Antigravity — Pharmacology Pilot Ingestion (7 drugs)
+# 2026-08-09 Antigravity — Pilot Staging Fidelity Audit Correction (7 drugs)
 
-- **做了什麼**：執行受控的 Pharmacology Pilot Ingestion Batch（共 7 筆藥物：`warfarin`, `apixaban`, `clopidogrel`, `aspirin`, `enoxaparin`, `losartan`, `hydrochlorothiazide`）；6 筆既有卡片採 Additive-only 增補，1 筆新增卡片（`drug.losartan`）；擴充 `drug_classes.json` (`drugclass.arbs`) 與 `drug_targets.json` (`drugtarget.at1_receptor`)；將未核准的 schema 提案欄位（`board_high_yield_*`, `clinical_impact_*`）暫存於 `data/pharmacology/staging_v7_ingestion.json`，確保數據 **LOST 數為 0**。
-- **數字 before→after**：`drugs.json` `15` → `16` 筆；`drug_classes.json` `11` → `12` 筆；`drug_targets.json` `10` → `11` 筆；`knowledge_data.js` 藥物總數 `15` → `16` 筆；7 筆藥物 Preserved Content: Canonical `146` 項 + Staging `42` 項 = `188` 項，**LOST = 0**。
-- **驗證**：`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通过、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；dev-server http://127.0.0.1:8361 正常運行，SOAP picker 可正確解析全部 7 筆藥物。
-- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物，未開始第 8 筆；未擴充 canonical schema；未修改驗證器語意。
+- **做了什麼**：執行受控 Pilot Ingestion 的 Staging 忠實度校正審核（Pilot Staging Fidelity Audit Correction）；將 `data/pharmacology/staging_v7_ingestion.json` 中的預設占位符（pointers）全部替換為 v7 抽取檔中的 **100% 逐字原貌 source content**（含未映射之 Board bullets 與 Clinical Impact 臨床敘述）；移除複製貼上的通用標籤，還原為每種藥物專屬的真實 v7 臨床標籤（如 Warfarin 的 `inr_lab_relevance`, `drug_herb_interaction_concern`；Apixaban 的 `thrombosis_if_stopped`；Losartan 的 `fetal_toxicity`；HCTZ 的 `visual_red_flag`）。
+- **數字 before→after**：`staging_v7_ingestion.json` 占位符 `14` 條 → **真實逐字來源內容 `58` 條** (Board `24` 條 + Clinical Impact 敘述 `16` 條 + Drug-specific flags `18` 個)；7 筆藥物 Preserved Content: Canonical `146` 項 + Staging `58` 項 = `204` 項，**真正實現 LOST = 0**。
+- **驗證**：`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通過、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；本機 dev-server http://127.0.0.1:8361 正常運行。
+- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未擴充 canonical schema；未修改驗證器語意。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 
