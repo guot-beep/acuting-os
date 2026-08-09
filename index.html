@@ -629,18 +629,45 @@
           <fieldset class="form-section">
             <legend><span class="form-section-step">2</span>背景 Background<small>穩定不變的底子，通常只填一次</small></legend>
             <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
-            <label>性別 Sex<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
+            <label>出生時性別 Sex at birth<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
+            <label>性別認同 Gender identity（選填 optional）<select name="genderIdentity"><option value="">—</option><option value="woman">Woman 女性</option><option value="man">Man 男性</option><option value="nonbinary">Non-binary</option><option value="other">Other</option><option value="unknown">Unknown 不確定</option><option value="prefer_not_to_answer">Prefer not to answer 不願回答</option></select></label>
             <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
             <label>過敏 Allergies<input name="allergies" placeholder="藥物 / 食物 / 暈針" /></label>
             <label class="wide">目前用藥 Current meds<input name="currentMeds" placeholder="西藥 / 補充品" /></label>
             <label class="wide">月經/婦科史 Menstrual &amp; OB-Gyn<textarea name="menstrualObHistory" rows="2" placeholder="初經、週期天數、經量/經色/血塊、經痛、LMP、孕產 G_P_、避孕方式"></textarea></label>
             <label class="wide">生活習慣 Lifestyle<textarea name="lifestyle" rows="2" placeholder="睡眠、飲食、壓力、運動、菸酒、咖啡因"></textarea></label>
+            <div class="wide">
+              <p class="race-ethnicity-title">種族/族裔 Race and/or ethnicity — 自填、可複選 self-reported, select all that apply</p>
+              <div id="raceEthnicityOptions" class="checkbox-group" role="group" aria-label="Race and/or ethnicity"></div>
+            </div>
+            <label class="wide">詳細身分認同（選填）Detailed identity / self-description (optional)<input name="raceEthnicityDetail" placeholder="e.g. Chinese, Taiwanese, Korean, Filipino, Mexican, Iranian…" /></label>
           </fieldset>
 
           <fieldset class="form-section">
             <legend><span class="form-section-step">3</span>主訴與病史 Presenting problem</legend>
             <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
+            <label>大約發病時間 Approx. onset<input name="onsetApprox" placeholder="YYYY / YYYY-MM / YYYY-MM-DD / unknown" /></label>
+            <label>病程 Chronicity<select name="chronicity"><option value="">—</option><option value="acute">Acute 急性</option><option value="subacute">Subacute 亞急性</option><option value="chronic">Chronic 慢性</option><option value="unknown">Unknown 不確定</option></select></label>
+            <label>病程型態 Course pattern<select name="coursePattern"><option value="">—</option><option value="continuous">Continuous 持續</option><option value="intermittent">Intermittent 間歇</option><option value="episodic">Episodic 陣發</option><option value="recurrent">Recurrent 反覆發作</option><option value="progressive">Progressive 漸進惡化</option><option value="improving">Improving 漸好轉</option><option value="stable">Stable 穩定</option><option value="unknown">Unknown 不確定</option></select></label>
+            <label>初診基準嚴重度（暫時欄位）Baseline severity 0–10 (transitional)<input name="baselineSeverity" type="number" min="0" max="10" step="1" placeholder="不適用可留空 leave blank if not applicable" /></label>
             <label class="wide">現病史 History of present illness<textarea name="historyPresent" rows="3" placeholder="發病時間、經過、誘因、加重/緩解因素、伴隨症狀"></textarea></label>
+            <div class="wide">
+              <p class="race-ethnicity-title">先前治療 Previous treatment tried for this complaint — 可複選 select all that apply</p>
+              <div class="checkbox-group" role="group" aria-label="Previous treatment tried">
+                <label><input type="checkbox" name="previousTreatment" value="acupuncture" />Acupuncture 針灸</label>
+                <label><input type="checkbox" name="previousTreatment" value="chinese_herbal_medicine" />Chinese herbal medicine 中藥</label>
+                <label><input type="checkbox" name="previousTreatment" value="medication" />Medication 西藥</label>
+                <label><input type="checkbox" name="previousTreatment" value="physical_therapy" />Physical therapy 物理治療</label>
+                <label><input type="checkbox" name="previousTreatment" value="chiropractic_manual_therapy" />Chiropractic / manual therapy 整脊/徒手治療</label>
+                <label><input type="checkbox" name="previousTreatment" value="massage_bodywork" />Massage / bodywork 按摩</label>
+                <label><input type="checkbox" name="previousTreatment" value="injection_procedure" />Injection / procedure 注射/處置</label>
+                <label><input type="checkbox" name="previousTreatment" value="surgery" />Surgery 手術</label>
+                <label><input type="checkbox" name="previousTreatment" value="other" />Other 其他</label>
+                <label><input type="checkbox" name="previousTreatment" value="none" />None 無</label>
+                <label><input type="checkbox" name="previousTreatment" value="unknown" />Unknown 不確定</label>
+              </div>
+            </div>
+            <label class="wide">先前治療備註 Previous treatment notes<textarea name="previousTreatmentNotes" rows="2" placeholder="例：物理治療 6 週、稍有改善後停滯"></textarea></label>
             <label class="wide">既往史 Past medical history<textarea name="pastHistory" rows="2" placeholder="慢性病、手術、家族史"></textarea></label>
           </fieldset>
 

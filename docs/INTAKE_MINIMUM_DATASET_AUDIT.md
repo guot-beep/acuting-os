@@ -266,3 +266,76 @@ None of the five MUST fields are safety-relevant in the Phase-1 sense
 blocker this audit names is **permanent, not urgent**: every day of real (or
 synthetic/informal) intake recorded without these fields is intake that
 cannot be backfilled later with the same reliability.
+
+---
+
+## 5. Implementation — 2026-08-09
+
+Ting settled all five §4 decisions the same day; implemented immediately
+after, same session. What shipped, field by field:
+
+| Field | Runtime (case object) | Schema destination | UI |
+|---|---|---|---|
+| Race/ethnicity | `raceEthnicity: string[]` (vocabulary ids) | `case_race_ethnicity(case_id, race_ethnicity_id)` — one row per selection, same EXPLODE-to-child-table shape as `westernConditions`/`safetyFlags` | Checkboxes rendered at runtime from `data/config/demographic_vocabulary.json` (bundled as `ACUTING_KNOWLEDGE.demographicVocabulary`) — not hard-coded, so the vocabulary can grow without a code change |
+| Detailed identity | `raceEthnicityDetail: string` | `cases.race_ethnicity_detail` | free text, paired with the checkboxes, never promoted to a vocabulary id |
+| Sex at birth | `sex` (unchanged key/values) | `patients.sex_at_birth` (unchanged) | relabelled "出生時性別 Sex at birth" — copy-only fix, no data change |
+| Gender identity | `genderIdentity: string` | `patients.gender_identity` (column already existed, unused since CS3) | new optional select: woman/man/non-binary/other/unknown/prefer not to answer, plus the default `—` (not yet answered) |
+| Approx onset | `onsetApprox: string` | `cases.onset_approx` | free-text-shaped input, validated against `YYYY \| YYYY-MM \| YYYY-MM-DD \| unknown` on save |
+| Chronicity | `chronicity: string` | `cases.chronicity` | select: acute/subacute/chronic/unknown |
+| Course pattern | `coursePattern: string` | `cases.course_pattern` | select: continuous/intermittent/episodic/recurrent/progressive/improving/stable/unknown |
+| Previous treatment | `previousTreatment: string[]` | `case_previous_treatment(case_id, treatment_type)` — same EXPLODE shape | 11 fixed checkboxes (no vocabulary file — closed, stable list) |
+| Previous treatment notes | `previousTreatmentNotes: string` | `cases.previous_treatment_notes` | free text |
+| Baseline severity | `baselineSeverity: number \| ""` | `cases.baseline_severity_0_10 INTEGER CHECK (... BETWEEN 0 AND 10)` | number input, min 0 max 10, labelled "transitional", explicitly optional |
+
+**Backward compatibility.** `normalizeClinicalCase()` defaults every new field
+to `""` / `[]` when absent — never fabricated, D4 spirit. Verified live: a
+case object seeded to look exactly like it would have before this batch
+(no new keys at all) loaded with zero console errors, opened cleanly in the
+editor with every new field showing its blank/unchecked default, and could
+be edited and saved without disturbing its other fields.
+
+**Persistence, verified end to end** (one synthetic intake, not a template):
+multi-select race/ethnicity (2 of 9 checked) + detail text, gender identity,
+approx onset, chronicity, course pattern, previous treatment (2 of 11
+checked) + notes, and baseline severity were all filled, saved, and survived
+a real `location.reload()` — in-memory state matched `localStorage` by exact
+JSON comparison both times. Reopened the same case in the editor after
+reload: every checkbox restored to its exact saved checked/unchecked state
+(not just non-empty — the *specific* selections), every select and text
+field showed its saved value. Edited (changed severity 6→8, swapped one
+race/ethnicity selection, swapped one previous-treatment selection), saved
+again, reloaded again — the edit persisted, the fields not touched in the
+edit were untouched. No field was lost at any step.
+
+**Validation guards, confirmed live.** An out-of-format `onsetApprox`
+("March 2026") was rejected with the Chinese alert and the dialog stayed
+open — nothing was saved. An out-of-range `baselineSeverity` (15) was also
+rejected before reaching `normalizeClinicalCase` — via the input's native
+`min`/`max` HTML5 constraint rather than the custom alert (the custom
+0–10 check in `saveCaseFromForm` is a second line of defense that only a
+programmatic bypass of the native constraint would ever reach). Both paths
+land on the same outcome: invalid data never gets saved.
+
+**Tooling note on how this was verified.** The Browser pane's simulated
+mouse `left_click` / keyboard `key` actions were not reliably reaching the
+page this session (`computer{action:"screenshot"}` also failed —
+"pane not displayed, not compositing frames" — a session-level rendering
+constraint, not an app bug). `computer{action:"type"}` and the `form_input`
+tool (which targets elements by reference rather than pixel coordinates)
+worked reliably throughout and were used for all field entry. Checkbox
+toggles and one dialog-open step used a dispatched `element.click()` —
+a real, trusted DOM click event, the same code path a mouse click takes,
+just not routed through pixel-coordinate simulation. This constrains the
+*mouse-precision* half of this session's UI testing, not the *application
+logic* half: every save, reload, and persistence check exercised the app's
+real `saveCaseFromForm` / `normalizeClinicalCase` / `localStorage` code,
+unmodified.
+
+**Files touched:** `data/config/demographic_vocabulary.json` (new),
+`scripts/build-data.js` (bundles it), `data/clinical_cases/schema.sql`
+(additive columns + two new junction tables), `index.html` (`#caseForm`),
+`styles.css` (`.checkbox-group`, `.race-ethnicity-title`), `app.js`
+(`normalizeClinicalCase`, `openCaseEditor`, `saveCaseFromForm`, plus new
+`renderRaceEthnicityOptions`/`setCheckboxGroup` helpers),
+`docs/CLINICAL_DATA_FOUNDATION_DESIGN.md` §0/§3.1 (decision supersedes the
+original two-field race/ethnicity and single-enum course proposals).

@@ -2198,6 +2198,39 @@ label {
   background: #34d399;
 }
 
+/* Initial-intake minimum dataset (2026-08-09): race/ethnicity + previous-
+   treatment multi-select checkboxes. `label` is `display:grid` globally
+   (stacks a wrapped control above its text), which reads fine for text
+   inputs but stacks a checkbox above its own label — this scopes an
+   inline-flex override to just these two groups. */
+.checkbox-group {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+  color: var(--text, inherit);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.race-ethnicity-title {
+  grid-column: 1 / -1;
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
 .dialog-actions {
   grid-template-columns: auto 1fr auto auto;
   display: grid;

@@ -1,0 +1,17 @@
+{
+  "dataset": "Self-reported demographic vocabulary — race/ethnicity",
+  "version": "2026-08-09.1",
+  "status": "starter_set",
+  "notes": "Combined 'race and/or ethnicity, select all that apply' question, aligned with the 2024 OMB SPD 15 direction (single combined question, adds Middle Eastern or North African as its own category) rather than two separate legacy Race + Ethnicity dropdowns. Decided 2026-08-09 — see docs/INTAKE_MINIMUM_DATASET_AUDIT.md. Self-report ONLY: never inferred from name, language, appearance, country, or diagnosis (D4 spirit — coarsen, never falsify, extended to demographics). Ids are opaque and immutable once used (same rule as the D2/D6 id ledgers elsewhere in this repo) — this list may grow, entries are never renamed or removed. This vocabulary intentionally stops at the 7 minimum SPD 15 categories plus unknown/prefer_not_to_answer; finer self-identification (e.g. Taiwanese, Korean, Filipino, Mexican, Iranian) belongs in the paired free-text detail field on the case, not as new hard-coded ids here — that is what keeps this a controlled vocabulary instead of an ever-growing enum a validator has to chase.",
+  "race_ethnicity": [
+    { "id": "reth.american_indian_alaska_native", "label_zh": "美洲原住民或阿拉斯加原住民", "label_en": "American Indian or Alaska Native" },
+    { "id": "reth.asian", "label_zh": "亞裔", "label_en": "Asian" },
+    { "id": "reth.black_african_american", "label_zh": "黑人或非裔美國人", "label_en": "Black or African American" },
+    { "id": "reth.hispanic_latino", "label_zh": "西語裔或拉丁裔", "label_en": "Hispanic or Latino" },
+    { "id": "reth.middle_eastern_north_african", "label_zh": "中東或北非裔", "label_en": "Middle Eastern or North African" },
+    { "id": "reth.native_hawaiian_pacific_islander", "label_zh": "夏威夷原住民或太平洋島民", "label_en": "Native Hawaiian or Pacific Islander" },
+    { "id": "reth.white", "label_zh": "白人", "label_en": "White" },
+    { "id": "reth.unknown", "label_zh": "未知", "label_en": "Unknown" },
+    { "id": "reth.prefer_not_to_answer", "label_zh": "不願回答", "label_en": "Prefer not to answer" }
+  ]
+}

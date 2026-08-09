@@ -151,6 +151,12 @@ const knowledge = {
   // Structured safety layer (2026-08-08). Canonical red flags live here as
   // records with tier + evidence; the card arrays below are presentation.
   redFlagRegistry: readJson("data/pathology/red_flag_registry.json"),
+  // Initial-intake minimum dataset (2026-08-09). Self-reported race/ethnicity
+  // checkboxes are rendered from this list at runtime — see
+  // docs/INTAKE_MINIMUM_DATASET_AUDIT.md — instead of being hard-coded into
+  // the case form, so the vocabulary can grow without touching index.html or
+  // app.js again.
+  demographicVocabulary: readJson("data/config/demographic_vocabulary.json"),
 };
 
 // Runtime red-flag resolver — IN THE BUNDLE ONLY (D13: derive, never write

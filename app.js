@@ -4825,6 +4825,20 @@ function normalizeClinicalCase(value) {
     birthYear: value.birthYear ? Number(value.birthYear) : "",
     birthYearMonth: String(value.birthYearMonth || ""),
     sex: String(value.sex || ""),
+    // Initial-intake minimum dataset (2026-08-09, docs/INTAKE_MINIMUM_DATASET_AUDIT.md).
+    // All nullable/optional-by-default: an older case loaded without these
+    // keys gets "" / [] here, never a fabricated value (D4 spirit).
+    genderIdentity: String(value.genderIdentity || ""),
+    raceEthnicity: Array.isArray(value.raceEthnicity) ? value.raceEthnicity.map(String) : splitList(String(value.raceEthnicity || "")),
+    raceEthnicityDetail: String(value.raceEthnicityDetail || ""),
+    onsetApprox: String(value.onsetApprox || ""),
+    chronicity: String(value.chronicity || ""),
+    coursePattern: String(value.coursePattern || ""),
+    previousTreatment: Array.isArray(value.previousTreatment) ? value.previousTreatment.map(String) : splitList(String(value.previousTreatment || "")),
+    previousTreatmentNotes: String(value.previousTreatmentNotes || ""),
+    // Transitional (§7, same doc): nullable 0-10, never coerced to 0. Kept as
+    // "" (not 0) when absent so "not answered" and "scored zero" stay distinct.
+    baselineSeverity: (value.baselineSeverity === 0 || value.baselineSeverity) ? Number(value.baselineSeverity) : "",
     occupation: String(value.occupation || ""),
     goals: String(value.goals || ""),
     chiefComplaint: String(value.chiefComplaint || ""),
@@ -5527,6 +5541,15 @@ function openCaseEditor(item = null) {
     birthYear: "",
     birthYearMonth: "",
     sex: "",
+    genderIdentity: "",
+    raceEthnicity: [],
+    raceEthnicityDetail: "",
+    onsetApprox: "",
+    chronicity: "",
+    coursePattern: "",
+    previousTreatment: [],
+    previousTreatmentNotes: "",
+    baselineSeverity: "",
     occupation: "",
     goals: "",
     chiefComplaint: "",
@@ -5543,16 +5566,69 @@ function openCaseEditor(item = null) {
     summary: ""
   };
   const data = { ...fallback, ...(item || {}) };
+  renderRaceEthnicityOptions();                                    // build checkboxes from the bundled vocabulary before hydrating
+  const CHECKBOX_GROUP_FIELDS = new Set(["raceEthnicity", "previousTreatment"]);
   Object.entries(data).forEach(([key, value]) => {
+    if (CHECKBOX_GROUP_FIELDS.has(key)) return;                    // handled below — RadioNodeList.value is meaningless for checkboxes
     if (!caseForm.elements[key]) return;
     caseForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  setCheckboxGroup(caseForm, "raceEthnicity", data.raceEthnicity);
+  setCheckboxGroup(caseForm, "previousTreatment", data.previousTreatment);
   caseDialog.showModal();
 }
 
+// Initial-intake minimum dataset (2026-08-09) -------------------------------
+// Race/ethnicity checkboxes are rendered from data/config/demographic_vocabulary.json
+// (bundled as ACUTING_KNOWLEDGE.demographicVocabulary) instead of being
+// hard-coded in index.html, so the vocabulary can grow without a code change.
+// Idempotent: safe to call every time the case dialog opens.
+function renderRaceEthnicityOptions() {
+  const container = document.querySelector("#raceEthnicityOptions");
+  if (!container) return;
+  const options = globalThis.ACUTING_KNOWLEDGE?.demographicVocabulary?.race_ethnicity || [];
+  container.innerHTML = options.map((opt) => {
+    const label = modeText(`${opt.label_zh} ${opt.label_en}`, opt.label_en);
+    return `<label><input type="checkbox" name="raceEthnicity" value="${opt.id}" />${label}</label>`;
+  }).join("");
+}
+
+// Checkbox groups (repeated <input> sharing one `name`) don't hydrate through
+// the generic `form.elements[key].value = ...` loop above — RadioNodeList's
+// value setter is only meaningful for radio buttons. This checks the boxes
+// whose value is in `values`; every other box in the group is explicitly
+// unchecked so re-opening the dialog on a different case never leaks a
+// previous case's selections into the group.
+function setCheckboxGroup(form, name, values) {
+  const wanted = new Set((values || []).map(String));
+  form.querySelectorAll(`input[type="checkbox"][name="${name}"]`).forEach((cb) => {
+    cb.checked = wanted.has(cb.value);
+  });
+}
+
+// Initial-intake minimum dataset (2026-08-09): "" (not yet answered) and the
+// literal word "unknown" (asked, not known) are kept distinct on purpose —
+// both are legitimate, neither is a format error. D4: coarsen, never falsify.
+const ONSET_APPROX_RE = /^(\d{4}(-\d{2}(-\d{2})?)?|unknown)$/i;
+
 function saveCaseFromForm(event) {
   event.preventDefault();
-  const data = Object.fromEntries(new FormData(caseForm).entries());
+  const formData = new FormData(caseForm);
+  const data = Object.fromEntries(formData.entries());
+  const raceEthnicity = formData.getAll("raceEthnicity");
+  const previousTreatment = formData.getAll("previousTreatment");
+
+  const onsetApprox = (data.onsetApprox || "").trim();
+  if (onsetApprox && !ONSET_APPROX_RE.test(onsetApprox)) {
+    alert("大約發病時間格式須為 YYYY、YYYY-MM、YYYY-MM-DD 或 unknown（可留空）。");
+    return;
+  }
+  const baselineSeverityRaw = (data.baselineSeverity || "").trim();
+  if (baselineSeverityRaw && (!/^\d+$/.test(baselineSeverityRaw) || Number(baselineSeverityRaw) < 0 || Number(baselineSeverityRaw) > 10)) {
+    alert("初診基準嚴重度須為 0–10 的整數（可留空）。");
+    return;
+  }
+
   const now = new Date().toISOString();
   const current = clinicalCases.find((item) => item.id === editingCaseId);
   const nextCase = normalizeClinicalCase({
@@ -5566,6 +5642,15 @@ function saveCaseFromForm(event) {
     birthYearMonth: (data.birthYearMonth || "").trim(),
     birthYear: (data.birthYearMonth ? Number(String(data.birthYearMonth).slice(0, 4)) : data.birthYear),
     sex: (data.sex || "").trim(),
+    genderIdentity: (data.genderIdentity || "").trim(),
+    raceEthnicity,
+    raceEthnicityDetail: (data.raceEthnicityDetail || "").trim(),
+    onsetApprox,
+    chronicity: (data.chronicity || "").trim(),
+    coursePattern: (data.coursePattern || "").trim(),
+    previousTreatment,
+    previousTreatmentNotes: (data.previousTreatmentNotes || "").trim(),
+    baselineSeverity: baselineSeverityRaw === "" ? "" : Number(baselineSeverityRaw),
     occupation: (data.occupation || "").trim(),
     goals: (data.goals || "").trim(),
     chiefComplaint: data.chiefComplaint.trim(),

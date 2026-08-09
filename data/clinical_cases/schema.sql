@@ -23,7 +23,16 @@ CREATE TABLE IF NOT EXISTS patients (
   -- is coarse by construction, which is stronger than any CHECK. Coarsen, never
   -- falsify (D4): an unknown month stays NULL rather than being filled with 1.
   birth_month INTEGER CHECK (birth_month IS NULL OR birth_month BETWEEN 1 AND 12),
+  -- localStorage case.sex, relabelled "Sex at birth" in the UI 2026-08-09 —
+  -- the label was ambiguous (this column vs gender_identity below) before
+  -- that; the stored values and this column's meaning did not change.
   sex_at_birth TEXT,
+  -- Column existed unused since CS3; the UI gained a matching "Gender
+  -- identity" field 2026-08-09 (optional, separate from sex_at_birth per
+  -- D4 — sex at birth is the clinically load-bearing field, gender identity
+  -- is not a restatement of it). Same case-level-not-patient-level caveat as
+  -- race_ethnicity on `cases` above: written today via case.genderIdentity,
+  -- not yet through a wired Patient entity.
   gender_identity TEXT,
   pronouns TEXT,
   occupation_context TEXT,
@@ -47,7 +56,77 @@ CREATE TABLE IF NOT EXISTS cases (
   summary_en TEXT,
   created_at TEXT,
   updated_at TEXT,
+  -- Initial-intake minimum dataset (2026-08-09) — docs/INTAKE_MINIMUM_DATASET_AUDIT.md.
+  -- All additive/nullable. Captured at CASE level today, not patient level:
+  -- the runtime has no wired Patient entity yet (patients.* below stays
+  -- unused by app.js), so the same real person opening a second case would
+  -- re-answer these and could drift. That is a named, deferred problem, not
+  -- solved here — see the patients-entity comment further down.
+  --
+  -- onset_approx: coarse "YYYY", "YYYY-MM", exact "YYYY-MM-DD", or the literal
+  -- string "unknown" — never a fabricated day (D4: coarsen, never falsify).
+  -- historyPresent (case_intake_baseline.history_present_illness once
+  -- migrated) stays the free-text HPI; this is the structured sibling, not a
+  -- replacement.
+  onset_approx TEXT,
+  -- Two independent dimensions, not one overloaded enum — an acute flare can
+  -- be episodic, a chronic condition can be progressive, and collapsing them
+  -- loses exactly the axis a treatment-response analysis needs.
+  --   chronicity:     acute | subacute | chronic | unknown
+  --   course_pattern: continuous | intermittent | episodic | recurrent |
+  --                   progressive | improving | stable | unknown
+  -- Vocabularies enforced in the UI (index.html #caseForm), not by a CHECK
+  -- constraint — consistent with how `status` above is already handled.
+  chronicity TEXT,
+  course_pattern TEXT,
+  -- previous_treatment (multi-select) explodes into case_previous_treatment
+  -- below, same EXPLODE-list-to-child-table pattern already used for
+  -- westernConditions/easternDiseases/tcmPatterns/safetyFlags
+  -- (data/clinical_cases/localstorage_sqlite_mapping.json). This column
+  -- holds only the free-text elaboration that multi-select can't carry.
+  previous_treatment_notes TEXT,
+  -- race_ethnicity (multi-select) explodes into case_race_ethnicity below,
+  -- same reason. This column is the paired free-text self-description —
+  -- "Chinese", "Taiwanese", "Mexican" — deliberately never promoted to a
+  -- controlled id (data/config/demographic_vocabulary.json's own notes: that
+  -- is what keeps the checkbox list from becoming an ever-growing enum).
+  race_ethnicity_detail TEXT,
+  -- Transitional. The sym.*-vs-metric.* identity question for structured
+  -- measurements stays DEFERRED (visit_observations above) — this is NOT
+  -- that layer. It exists because a first-visit severity number is
+  -- unrecoverable once the visit has passed, and waiting for that ontology
+  -- fight to resolve would silently lose it. 0-10 only, nullable: never
+  -- required, never fabricated when a condition has no sensible single
+  -- severity number (D4 spirit again). Prose lives alongside it in
+  -- chiefComplaint/historyPresent, not replaced by it.
+  baseline_severity_0_10 INTEGER CHECK (baseline_severity_0_10 IS NULL OR baseline_severity_0_10 BETWEEN 0 AND 10),
   FOREIGN KEY (patient_id) REFERENCES patients(id)
+);
+
+-- Race/ethnicity: self-reported, multi-select, 2024 OMB SPD 15-aligned
+-- combined question (data/config/demographic_vocabulary.json). One row per
+-- selected id. At CASE level today (see the cases-table comment above for
+-- why) — a junction on patient_id is the eventual shape once the Patient
+-- entity is wired, not this batch.
+CREATE TABLE IF NOT EXISTS case_race_ethnicity (
+  case_id TEXT NOT NULL,
+  race_ethnicity_id TEXT NOT NULL,
+  PRIMARY KEY (case_id, race_ethnicity_id),
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
+-- Previous treatment tried for the presenting problem, multi-select against a
+-- small closed vocabulary enforced in the UI (not a separate vocabulary
+-- file — the list is fixed and short, unlike race/ethnicity). Purpose is
+-- treatment-naive vs previously-treated grouping for future treatment-
+-- response analysis, per docs/INTAKE_MINIMUM_DATASET_AUDIT.md. Deliberately
+-- NOT a treatment-history subsystem: no dates, no outcomes, no per-treatment
+-- detail beyond the free-text previous_treatment_notes column on cases.
+CREATE TABLE IF NOT EXISTS case_previous_treatment (
+  case_id TEXT NOT NULL,
+  treatment_type TEXT NOT NULL,
+  PRIMARY KEY (case_id, treatment_type),
+  FOREIGN KEY (case_id) REFERENCES cases(id)
 );
 
 CREATE TABLE IF NOT EXISTS case_intake_baseline (
