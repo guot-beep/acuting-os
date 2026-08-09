@@ -32,8 +32,6 @@
         "肝硬化",
         "腎臟疾病"
       ],
-      "boxed_warning_en": "Furosemide tablets are a potent diuretic which, if given in excessive amounts, can lead to a profound diuresis with water and electrolyte depletion. Therefore, careful medical supervision is required and dose and dose schedule must be adjusted to the individual patient needs.",
-      "boxed_warning_zh": "呋塞米為強效利尿劑,劑量過大可導致大量利尿並造成水分與電解質耗竭。因此必須謹慎醫療監控,劑量與給藥間隔須依個別病人需求調整。",
       "contraindications_en": [
         "Anuria",
         "History of hypersensitivity to furosemide"
@@ -83,9 +81,6 @@
         "adverse_effects_en": [
           "course:W5-diuretics#L222-L224"
         ],
-        "boxed_warning_en": [
-          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNING"
-        ],
         "contraindications_en": [
           "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#CONTRAINDICATIONS"
         ],
@@ -94,11 +89,20 @@
         ],
         "exam_trap_en": [
           "course:Pharmacology Summary#L399"
+        ],
+        "warnings_en": [
+          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNINGS"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06"
+      "updated_at": "2026-08-06",
+      "warnings_en": [
+        "Profound Diuresis Warning: Furosemide tablets are a potent diuretic which, if given in excessive amounts, can lead to a profound diuresis with water and electrolyte depletion. Therefore, careful medical supervision is required and dose and dose schedule must be adjusted to the individual patient needs."
+      ],
+      "warnings_zh": [
+        "強效利尿警語：呋塞米為強效利尿劑,劑量過大可導致大量利尿並造成水分與電解質耗竭。因此必須謹慎醫療監控,劑量與給藥間隔須依個別病人需求調整。"
+      ]
     },
     {
       "id": "drug.hydrochlorothiazide",
@@ -253,7 +257,11 @@
       "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06"
+      "updated_at": "2026-08-06",
+      "dailymed_setid": "268db224-d5db-457c-86bc-972c9fe07917",
+      "dailymed_label_title": "ACETAZOLAMIDE TABLET [PD-RX PHARMACEUTICALS, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=268db224-d5db-457c-86bc-972c9fe07917",
+      "dailymed_url_kind": "verified_exact"
     },
     {
       "id": "drug.mannitol",
@@ -290,7 +298,11 @@
       "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06"
+      "updated_at": "2026-08-06",
+      "dailymed_setid": "5b44e248-4b7b-4777-954a-921c7b309944",
+      "dailymed_label_title": "SORBITOL-MANNITOL (SORBITOL AND MANNITOL) IRRIGANT [ICU MEDICAL INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5b44e248-4b7b-4777-954a-921c7b309944",
+      "dailymed_url_kind": "verified_exact"
     },
     {
       "id": "drug.warfarin",
@@ -1650,8 +1662,8 @@
       "exam_trap_zh": "突發停用美托洛爾可能引發嚴重反彈性心絞痛或心肌梗塞；在高劑量下會失去 beta-1 選擇性。",
       "board_high_yield_en": "Beta-1 selective prototype (Metoprolol succinate for HF, tartrate for acute BP/angina). Abrupt withdrawal causes rebound tachycardia/angina.",
       "dailymed_setid": "151079c5-6360-45ed-8118-885543d6a4ad",
-      "dailymed_label_title": "METOPROLOL SUCCINATE TABLET, EXTENDED RELEASE",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
+      "dailymed_label_title": "TOPROL XL (METOPROLOL SUCCINATE) TABLET, EXTENDED RELEASE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "warnings_en": [
@@ -1915,8 +1927,8 @@
       "contraindications_zh": [
         "對沙丁胺醇或任何製劑成分過敏。"
       ],
-      "pregnancy_lactation_en": "Pregnancy Category C. Use only if potential benefit outweighs risk to fetus.",
-      "pregnancy_lactation_zh": "懷孕級別 C。僅在潛在益處大於對胎兒風險時使用。",
+      "pregnancy_lactation_en": "Risk Summary: There are no adequate and well-controlled studies of albuterol sulfate in pregnant women. Albuterol should be used during pregnancy only if the potential benefit justifies the potential risk to the fetus.",
+      "pregnancy_lactation_zh": "風險摘要：目前尚無針對孕婦使用沙丁胺醇的充分對照研究。孕期僅在潛在益處大於對胎兒潛在風險時方可使用。",
       "renal_considerations_en": "No dosage adjustment necessary; monitor in severe renal impairment.",
       "hepatic_considerations_en": "No specific dosage adjustment reported.",
       "monitoring_requirements_en": "Monitor lung function (FEV1/peak flow), heart rate, blood pressure, serum potassium, and frequency of rescue inhaler use.",
@@ -1933,7 +1945,7 @@
       ],
       "integrative_clinical_flags": [
         "cough_side_effect",
-        "bradycardia"
+        "tachycardia"
       ],
       "tcm_relation_note_zh": "Albuterol 為急救哮喘吸入劑（SABA）。中醫診治肺氣虛哮喘或痰熱平喘時，須詢問患者救急吸入劑使用頻率；頻繁使用代表氣喘未控制，不可逕行停用西藥吸入劑。",
       "board_priority": "high",
@@ -1945,37 +1957,37 @@
       "exam_trap_en": "Frequent albuterol use indicates worsening asthma control requiring stepped-up controller therapy (ICS); nonselective beta-blockers block albuterol and trigger fatal bronchospasm.",
       "exam_trap_zh": "頻繁使用沙丁胺醇代表氣喘控制惡化，須升級控制藥物 (ICS)；非選擇性 beta 阻斷劑會阻斷沙丁胺醇並誘發致命性支氣管痙攣。",
       "board_high_yield_en": "Prototype SABA. Rapid bronchodilation via beta-2 stimulation. First-line acute asthma rescue. Major adverse effect: Tremor & tachycardia.",
-      "dailymed_setid": "e8f49811-9a74-4bf8-b570-07bf656f4d54",
-      "dailymed_label_title": "ALBUTEROL SULFATE INHALATION AEROSOL",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e8f49811-9a74-4bf8-b570-07bf656f4d54",
+      "dailymed_setid": "583c6408-45cc-9121-e063-6294a90afcc4",
+      "dailymed_label_title": "DESCRIPTION",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=583c6408-45cc-9121-e063-6294a90afcc4",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#INDICATIONS_AND_USAGE"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#CONTRAINDICATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#ADVERSE_REACTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:e8f49811-9a74-4bf8-b570-07bf656f4d54#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -2045,24 +2057,20 @@
         "誘發閉角型青光眼急性發作"
       ],
       "warnings_en": [
-        "Anticholinergic delirium & hyperthermia: Caution in high ambient temperatures due to inhibited sweating.",
-        "Ophthalmic: May precipitate acute angle-closure glaucoma in susceptible individuals."
+        "Risk of precipitating acute angle-closure glaucoma in patients with narrow anterior chamber angles.",
+        "Caution in urinary retention, prostatic hypertrophy, and severe ulcerative colitis due to antimuscarinic blockade.",
+        "Anticholinergic psychosis and severe hyperthermia risk in high ambient temperatures."
       ],
       "warnings_zh": [
-        "抗膽鹼譫妄與高熱：高溫環境下因發汗受抑制須特別慎用。",
-        "眼科警語：易感人群中可能誘發急性閉角型青光眼發作。"
+        "房角狹窄患者具誘發急性閉角型青光眼之風險。",
+        "因抗毒蕈鹼阻斷作用，攝護腺肥大、尿滯留及嚴重潰瘍性結腸炎患者慎用。",
+        "高溫環境下具抗膽鹼精神病與嚴重高熱風險。"
       ],
       "contraindications_en": [
-        "Closed-angle glaucoma",
-        "Severe ulcerative colitis or toxic megacolon",
-        "Obstructive uropathy / severe prostatic hyperplasia",
-        "Uncontrolled tachyarrhythmias"
+        "Hypersensitivity to atropine sulfate or any component of the formulation."
       ],
       "contraindications_zh": [
-        "閉角型青光眼",
-        "嚴重潰瘍性結腸炎或毒性巨結腸症",
-        "阻塞性尿路疾病 / 嚴重攝護腺肥大",
-        "未控制的心律過速"
+        "對硫酸阿托品或其任何配方成分過敏。"
       ],
       "pregnancy_lactation_en": "Pregnancy Category C. Crosses placenta; may cause fetal tachycardia.",
       "pregnancy_lactation_zh": "懷孕級別 C。通過胎盤；可能引起胎兒心跳過速。",
@@ -2094,37 +2102,37 @@
       "exam_trap_en": "Atropine treats cholinergic DUMBBELSS toxidrome from organophosphate poisoning, but is ABSOLUTELY CONTRAINDICATED in closed-angle glaucoma.",
       "exam_trap_zh": "阿托品用於救治有機磷中毒之副交感 DUMBBELSS 症候群，但對閉角型青光眼患者為絕對禁忌。",
       "board_high_yield_en": "Prototype antimuscarinic agent. Antidote for organophosphate poisoning & muscarinic mushrooms. Causes pupillary dilation, dry mouth, tachycardia, urinary retention. CI in closed-angle glaucoma.",
-      "dailymed_setid": "2f87a8b4-825e-4c7b-9457-3a13063f25c7",
-      "dailymed_label_title": "ATROPINE SULFATE INJECTION",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f87a8b4-825e-4c7b-9457-3a13063f25c7",
+      "dailymed_setid": "a116af5c-ba4c-408c-9a02-4bc33772aa8d",
+      "dailymed_label_title": "1 INDICATIONS AND USAGE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a116af5c-ba4c-408c-9a02-4bc33772aa8d",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#INDICATIONS_AND_USAGE"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#CONTRAINDICATIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#ADVERSE_REACTIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:2f87a8b4-825e-4c7b-9457-3a13063f25c7#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -2242,37 +2250,37 @@
       "exam_trap_en": "Prazosin causes first-dose syncope/orthostatic hypotension (mitigated by bedtime dosing); also uniquely used off-label for PTSD nightmares.",
       "exam_trap_zh": "Prazosin 會引起首劑暈厥與姿勢性低血壓（睡前給藥可減輕）；臨床上亦獨特仿單外用於 PTSD 噩夢。",
       "board_high_yield_en": "Prototype alpha-1 blocker (-osin). Causes vasodilation & first-dose syncope (take at bedtime). Off-label first-choice for PTSD nightmares.",
-      "dailymed_setid": "e8c33a90-8451-401d-b659-c2901cf1a58b",
-      "dailymed_label_title": "PRAZOSIN HYDROCHLORIDE CAPSULE",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e8c33a90-8451-401d-b659-c2901cf1a58b",
+      "dailymed_setid": "2f86fc8e-71c1-4749-b67e-86d86cf1d984",
+      "dailymed_label_title": "DESCRIPTION",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f86fc8e-71c1-4749-b67e-86d86cf1d984",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#INDICATIONS_AND_USAGE"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#CONTRAINDICATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#ADVERSE_REACTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:e8c33a90-8451-401d-b659-c2901cf1a58b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -2351,13 +2359,13 @@
         "心臟傳導阻滯 / 心衰竭惡化",
         "突發停藥反彈性缺血 / 心肌梗塞"
       ],
-      "boxed_warning_en": "Cardiac Ischemia after Abrupt Discontinuation: Do not abruptly discontinue propranolol. Taper dosage gradually over 1-2 weeks to avoid rebound angina, arrhythmias, or MI.",
-      "boxed_warning_zh": "突發停藥後心髒缺血黑框警告：切勿突然停用普萘洛爾。應於 1-2 週內逐漸減量，以避免反彈性心絞痛、心律不整或心肌梗塞。",
       "warnings_en": [
+        "Abrupt Discontinuation: Taper dosage gradually over 1-2 weeks to avoid rebound angina or MI.",
         "Bronchospastic disease: Contraindicated in asthma and COPD due to blockade of beta-2 mediated bronchodilation.",
         "Masking hypoglycemia: May mask hypoglycemia-induced tachycardia in diabetic patients."
       ],
       "warnings_zh": [
+        "突發停藥：應於 1-2 週內逐漸減量，以避免反彈性心絞痛或心肌梗塞。",
         "支氣管痙攣性疾病：氣喘及 COPD 患者禁忌（阻斷 beta-2 介導之支氣管擴張）。",
         "掩蓋低血糖：可能掩蓋糖尿病患者低血糖所致之心跳過速。"
       ],
@@ -2402,40 +2410,37 @@
       "exam_trap_en": "Propranolol is NONSELECTIVE (blocks beta-1 & beta-2), so it is ABSOLUTELY CONTRAINDICATED in asthma; it also uniquely prevents migraines & treats essential tremor.",
       "exam_trap_zh": "普萘洛爾為非選擇性（阻斷 beta-1 與 beta-2），故氣喘患者絕對禁忌；臨床亦用於預防偏頭痛與治療原發性顫抖。",
       "board_high_yield_en": "Prototype nonselective beta blocker (-lol). Contraindicated in asthma & COPD due to beta-2 bronchospasm. High yield for migraine prophylaxis & essential tremor.",
-      "dailymed_setid": "92a83216-9289-4d69-a1b7-d1a1b1d7d111",
-      "dailymed_label_title": "PROPRANOLOL HYDROCHLORIDE TABLET",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=92a83216-9289-4d69-a1b7-d1a1b1d7d111",
+      "dailymed_setid": "1cd914b6-b250-4b11-8404-41db3589361e",
+      "dailymed_label_title": "DESCRIPTION",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1cd914b6-b250-4b11-8404-41db3589361e",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
-        "boxed_warning_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#BOXED_WARNING"
-        ],
         "indications_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#INDICATIONS_AND_USAGE"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#CONTRAINDICATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#ADVERSE_REACTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:92a83216-9289-4d69-a1b7-d1a1b1d7d111#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -2559,37 +2564,37 @@
       "exam_trap_en": "Abruptly stopping clonidine causes a severe REBOUND HYPERTENSIVE CRISIS; Kapvay is the ER formulation approved for ADHD.",
       "exam_trap_zh": "突然停用可樂定會引發嚴重反彈性高血壓危機；Kapvay 為其核准用於 ADHD 的緩釋劑型。",
       "board_high_yield_en": "Prototype central alpha-2 agonist sympatholytic. Decreases sympathetic outflow. Used for hypertension, ADHD (Kapvay), opioid withdrawal. WARNING: Abrupt stop -> Rebound hypertensive crisis.",
-      "dailymed_setid": "3d64b1f4-3456-4c4c-b841-3b7c891f1a1a",
-      "dailymed_label_title": "CLONIDINE HYDROCHLORIDE TABLET",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3d64b1f4-3456-4c4c-b841-3b7c891f1a1a",
+      "dailymed_setid": "8171776a-dd14-4dcc-8860-3c27d8ea9504",
+      "dailymed_label_title": "CLONIDINE HYDROCHLORIDE TABLETS, USP",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8171776a-dd14-4dcc-8860-3c27d8ea9504",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#INDICATIONS_AND_USAGE"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#CONTRAINDICATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#ADVERSE_REACTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:3d64b1f4-3456-4c4c-b841-3b7c891f1a1a#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -2705,40 +2710,40 @@
       "exam_trap_en": "Disulfiram blocks ALDH leading to acetaldehyde accumulation; metronidazole also causes a disulfiram-like reaction when taken with alcohol.",
       "exam_trap_zh": "Disulfiram 阻斷 ALDH 導致乙醛蓄積；Metronidazole 併用酒精時亦會引發雙硫崙樣反應。",
       "board_high_yield_en": "Prototype alcohol deterrent. Irreversibly blocks ALDH -> toxic acetaldehyde accumulation upon ethanol consumption. Boxed warning against secret administration. Contraindicated with metronidazole.",
-      "dailymed_setid": "4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
-      "dailymed_label_title": "DISULFIRAM TABLET",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+      "dailymed_setid": "d3832a1a-a140-49c1-a7df-134fa81341e3",
+      "dailymed_label_title": "IMPORTANT MEDICAL INFORMATION PATIENT CARD",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d3832a1a-a140-49c1-a7df-134fa81341e3",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "boxed_warning_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#BOXED_WARNING"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#BOXED_WARNING"
         ],
         "indications_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#INDICATIONS_AND_USAGE"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#CONTRAINDICATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#ADVERSE_REACTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -2811,8 +2816,6 @@
         "再生不良性貧血 / 白血球減少",
         "肝毒性"
       ],
-      "boxed_warning_en": "Intravenous Administration Rate: Do not exceed IV infusion rate of 50 mg/min in adults due to severe risk of hypotension and cardiac arrhythmias. Careful cardiac monitoring is required.",
-      "boxed_warning_zh": "靜脈給藥速率黑框警告：成人靜脈滴註速率不得超過 50 mg/min，否則具嚴重低血壓與心律不整風險。須密切進行心電圖與心臟監測。",
       "warnings_en": [
         "Serious Dermatologic Reactions: SJS/TEN risk. Discontinue at first sign of rash.",
         "CYP Enzyme Induction: Potent inducer of CYP3A4, CYP2C9, and P-glycoprotein, reducing efficacy of oral contraceptives, warfarin, and corticosteroids."
@@ -2861,40 +2864,37 @@
       "exam_trap_en": "Phenytoin exhibits zero-order saturation kinetics (small dose change -> large level jump); classic toxicity triad = Gingival hyperplasia + Nystagmus + Ataxia. INEFFECTIVE for absence seizures.",
       "exam_trap_zh": "苯妥英具零級飽和動力學（小劑量增加引致血藥濃度暴升）；經典毒性三聯徵 = 齒齦增生 + 眼球震顫 + 共濟失調。對失神發作無效。",
       "board_high_yield_en": "Prototype hydantoin anticonvulsant. Blocks Na channels. Zero-order saturation kinetics. Classic adverse effects: Gingival hyperplasia, nystagmus, ataxia, hirsutism, folate deficiency. Black box warning for IV rate.",
-      "dailymed_setid": "6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
-      "dailymed_label_title": "DILANTIN (PHENYTOIN SODIUM) CAPSULE",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+      "dailymed_setid": "ef4e97a7-cd18-47a9-a016-2eca5481a87e",
+      "dailymed_label_title": "1 INDICATIONS AND USAGE",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ef4e97a7-cd18-47a9-a016-2eca5481a87e",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
-        "boxed_warning_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#BOXED_WARNING"
-        ],
         "indications_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#INDICATIONS_AND_USAGE"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#CONTRAINDICATIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#ADVERSE_REACTIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -3020,40 +3020,40 @@
       "exam_trap_en": "Carbamazepine is 1st line for TRIGEMINAL NEURALGIA; causes auto-induction of its own metabolism; requires HLA-B*1502 testing in Asians due to fatal SJS risk.",
       "exam_trap_zh": "卡馬西平為三叉神經痛首選藥；具自體誘導代謝特性；因致命 SJS 風險，亞洲患者用藥前須檢測 HLA-B*1502 基因。",
       "board_high_yield_en": "Prototype iminostilbene sodium channel blocker. 1st line for trigeminal neuralgia. Boxed warnings for aplastic anemia/agranulocytosis & SJS/TEN (HLA-B*1502 screening in Asians). Potent CYP auto-inducer.",
-      "dailymed_setid": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-      "dailymed_label_title": "TEGRETOL (CARBAMAZEPINE) TABLET",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "dailymed_setid": "52cf3ba9-0a7c-4809-830e-af93d1532726",
+      "dailymed_label_title": "Anaphylaxis and Angioedema",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52cf3ba9-0a7c-4809-830e-af93d1532726",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "boxed_warning_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#BOXED_WARNING"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#BOXED_WARNING"
         ],
         "indications_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#INDICATIONS_AND_USAGE"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#CONTRAINDICATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#ADVERSE_REACTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -3162,37 +3162,37 @@
       "exam_trap_en": "Ethosuximide is 1st line for ABSENCE SEIZURES ONLY (blocks T-type Ca channels in thalamus); it has NO activity against tonic-clonic seizures.",
       "exam_trap_zh": "乙琥胺僅用於失神發作（阻斷丘腦 T 型鈣通道）；對大發作（強直陣攣發作）無效。",
       "board_high_yield_en": "Prototype succinimide anticonvulsant. 1st-line drug for absence (petit mal) seizures. Specifically blocks T-type Ca channels in thalamic relay neurons. Adverse effect: GI distress & blood dyscrasias.",
-      "dailymed_setid": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-      "dailymed_label_title": "ZARONTIN (ETHOSUXIMIDE) CAPSULE",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "dailymed_setid": "19c924c2-f558-4c78-9277-2d7e0df2f505",
+      "dailymed_label_title": "DESCRIPTION",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=19c924c2-f558-4c78-9277-2d7e0df2f505",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#INDICATIONS_AND_USAGE"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#CONTRAINDICATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#ADVERSE_REACTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -3315,37 +3315,37 @@
       "exam_trap_en": "Gabapentin is structurally derived from GABA, but DOES NOT bind GABA receptors; its primary clinical use is NEUROPATHIC PAIN (postherpetic neuralgia). Dosage MUST be reduced in renal impairment.",
       "exam_trap_zh": "加巴噴丁結構源自 GABA，但不結合 GABA 受體；臨床主要用於神經病理性疼痛（帶狀皰疹後神經痛）。腎功能不全患者必須減量。",
       "board_high_yield_en": "Prototype gabapentinoid. Binds alpha-2-delta Ca channel subunit. 1st line for postherpetic neuralgia & neuropathic pain. Unmetabolized (100% renal excretion; reduce dose in renal impairment). Side effects: Dizziness, sedation, peripheral edema.",
-      "dailymed_setid": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
-      "dailymed_label_title": "NEURONTIN (GABAPENTIN) CAPSULE",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      "dailymed_setid": "507bf6d0-e7a2-413d-9848-cd2445a1411d",
+      "dailymed_label_title": "2.1 Dosage for Postherpetic Neuralgia",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=507bf6d0-e7a2-413d-9848-cd2445a1411d",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#INDICATIONS_AND_USAGE"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#CONTRAINDICATIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#ADVERSE_REACTIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -3461,37 +3461,37 @@
       "exam_trap_en": "Levodopa crosses the BBB; Carbidopa DOES NOT cross BBB (specifically inhibits peripheral decarboxylase to reduce peripheral nausea); long-term use leads to 'on-off' dyskinesia.",
       "exam_trap_zh": "Levodopa 可穿過血腦障壁；Carbidopa 不過血腦障壁（專一抑制外周去羧酶以降低外周噁心）；長期使用引致『開關』運動障礙。",
       "board_high_yield_en": "Gold standard for Parkinson's disease. Levodopa = dopamine precursor (crosses BBB). Carbidopa = peripheral dopa decarboxylase inhibitor (does not cross BBB; increases CNS levodopa 3-4x & reduces peripheral nausea). Side effects: Dyskinesias, on-off phenomenon, orthostatic hypotension.",
-      "dailymed_setid": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-      "dailymed_label_title": "SINEMET (CARBIDOPA AND LEVODOPA) TABLET",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "dailymed_setid": "4ace5274-b6cf-414c-b9c0-f60e28a9cea5",
+      "dailymed_label_title": "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4ace5274-b6cf-414c-b9c0-f60e28a9cea5",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "indications_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#INDICATIONS_AND_USAGE"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#CONTRAINDICATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#ADVERSE_REACTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     },
@@ -3609,40 +3609,40 @@
       "exam_trap_en": "Phenelzine is a nonselective MAOI; ingestion of tyramine (aged cheese, wine) causes severe HYPERTENSIVE CRISIS ('cheese effect'); requires 14-day washout before starting SSRIs.",
       "exam_trap_zh": "苯乙肼為非選擇性 MAOI；攝取酪胺食物（乳酪、紅酒）會引發嚴重高血壓危機（『乳酪效應』）；換用 SSRI 前須 14 天洗脫期。",
       "board_high_yield_en": "Prototype nonselective irreversible MAOI. Used for treatment-resistant atypical depression. Fatal hypertensive crisis with tyramine-containing foods. Fatal Serotonin Syndrome with SSRIs/meperidine. 14-day washout period required.",
-      "dailymed_setid": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
-      "dailymed_label_title": "NARDIL (PHENELZINE SULFATE) TABLET",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+      "dailymed_setid": "fa041652-fdde-4794-a8d2-279dd309e075",
+      "dailymed_label_title": "Suicidality and Antidepressant Drugs",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fa041652-fdde-4794-a8d2-279dd309e075",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "boxed_warning_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#BOXED_WARNING"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#BOXED_WARNING"
         ],
         "indications_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#INDICATIONS_AND_USAGE"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#INDICATIONS_AND_USAGE"
         ],
         "contraindications_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#CONTRAINDICATIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#ADVERSE_REACTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
         ],
         "renal_considerations_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#USE_IN_SPECIFIC_POPULATIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#USE_IN_SPECIFIC_POPULATIONS"
         ]
       }
     }

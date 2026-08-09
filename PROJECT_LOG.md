@@ -1,5 +1,23 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Priority Pack Source-Integrity Repair & Real DailyMed API Verification
+- **What was done:** Completed comprehensive Source-Integrity Repair for the Priority Pack. Queried NLM DailyMed REST API to fetch real, authoritative SetIDs, product titles, and SPL section XML evidence for all 13 priority drugs (12 new cards + 1 enhanced metoprolol card). Saved API evidence artifact in data/pharmacology/dailymed_api_responses.json. Reconciled medical claims field-by-field against selected SPL labels (removed unbacked boxed warnings for atropine/albuterol/prazosin/clonidine/ethosuximide/gabapentin/sinemet, updated atropine contraindications to hypersensitivity, modernized albuterol PLR pregnancy summary, and extended controlled vocabulary to support tachycardia). Added DailyMed API evidence cross-validation to validate-pharm-standard.js and built source integrity test suite (scripts/test-pharm-source-integrity-negative-cases.js).
+- **Numbers (before -> after):**
+  - Synthetic SetIDs: 12 -> 0 (100% replaced with real NLM DailyMed API verified SetIDs).
+  - Source Integrity Tests (1-8): 0/8 -> 8/8 PASSED (100%).
+  - Standard validator blocking defects: 0 -> 0 (PASS).
+- **Verification Results:**
+  - test-pharm-source-integrity-negative-cases.js: ALL 8 TESTS PASSED (Negative Tests 1-7 + Positive Test 8).
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** sym.* symptom namespace currently 0 records in taxonomy (documented limitation).
+- **Next Step:** Awaiting Ting authorization before proceeding to remaining Week 1-2 Priority Pack drugs.
+
 ## 2026-08-09 Antigravity — Bounded Pharmacology Foundation Patch & Negative Test Suite
 - **What was done:** Completed bounded Pharmacology Foundation Patch resolving 4 source/verification contract defects. Removed course: from OFFICIAL_SOURCE regex so lecture notes cannot satisfy official-label safety gates. Enforced mandatory field-level provenance field_sources[field] for all safety fields (disallowing generic card-level sources fallback). Added blocking validator rule rejecting deprecated overdose_toxicity_notes_en. Refined verification status enum (unverified, machine_metadata_verified, human_reviewed) and enforced mandatory human reviewer provenance (reviewed_by and reviewed_at). Built automated negative test suite (scripts/test-pharm-negative-cases.js) verifying Negative Tests A-E.
 - **Numbers (before -> after):**

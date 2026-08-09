@@ -74,6 +74,7 @@ const BILINGUAL_PAIRS = [
 const INTEGRATIVE_CLINICAL_FLAGS = new Set([
   'bleeding_risk',
   'bradycardia',
+  'tachycardia',
   'orthostatic_hypotension',
   'sedation_dizziness',
   'photosensitivity',
@@ -166,6 +167,16 @@ function main() {
     safetyMissingProvenance: 0,
     unknownIntegrativeFlags: 0,
   };
+
+  // Load DailyMed API evidence map
+  const verifiedApiMap = new Map();
+  try {
+    const apiRespPath = path.join(DIR, 'dailymed_api_responses.json');
+    if (fs.existsSync(apiRespPath)) {
+      const apiArr = JSON.parse(fs.readFileSync(apiRespPath, 'utf8'));
+      (Array.isArray(apiArr) ? apiArr : []).forEach(item => verifiedApiMap.set(item.drug_id, item));
+    }
+  } catch (e) {}
 
   // 0. Check missing registries
   Object.entries(known).forEach(([name, reg]) => {
@@ -391,15 +402,15 @@ function main() {
       }
     }
 
-    // Label Section & Safety Source Validation
-    let labelManifestMap = new Map();
-    try {
-      const manifestPath = path.join(DIR, 'dailymed_verified_labels_manifest.json');
-      if (fs.existsSync(manifestPath)) {
-        const mData = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-        (mData.labels || []).forEach(l => labelManifestMap.set(l.drug_id, l));
+    // DailyMed External API Evidence Cross-Validation
+    if (r.dailymed_setid) {
+      const ev = verifiedApiMap.get(r.id);
+      if (!ev) {
+        defects.push(`P0 ${where}.dailymed_setid: SetID 「${r.dailymed_setid}」未在 verified DailyMed API responses (dailymed_api_responses.json) 中找到驗證記錄！`);
+      } else if (ev.setid !== r.dailymed_setid) {
+        defects.push(`P0 ${where}.dailymed_setid: 藥物 setid 「${r.dailymed_setid}」與 API 驗證記錄 「${ev.setid}」不相符！`);
       }
-    } catch (e) {}
+    }
 
     const checkSourced = (f, re, label) => {
       if (!len(r[f])) return;
@@ -414,8 +425,8 @@ function main() {
         defects.push(`P0 ${where}.${f}: 來源沒有一個是${label}（${srcs.join(', ')}）`);
         metrics.safetyMissingProvenance++;
       }
-      const labelMeta = labelManifestMap.get(r.id);
-      if (labelMeta && r.dailymed_setid) {
+      const ev = verifiedApiMap.get(r.id);
+      if (ev && r.dailymed_setid) {
         srcs.forEach(s => {
           if (typeof s === 'string' && s.startsWith('dailymed:')) {
             if (!s.includes(r.dailymed_setid)) {
@@ -423,11 +434,11 @@ function main() {
             }
           }
         });
-        if (f === 'boxed_warning_en' && !labelMeta.verified_sections.includes('BOXED_WARNING')) {
-          defects.push(`P0 ${where}.${f}: boxed_warning_en present but verified label manifest indicates BOXED_WARNING section is absent!`);
+        if (f === 'boxed_warning_en' && !ev.verified_sections.includes('BOXED_WARNING')) {
+          defects.push(`P0 ${where}.${f}: boxed_warning_en present but verified DailyMed API evidence indicates BOXED_WARNING section is absent!`);
         }
-        if (f === 'contraindications_en' && !labelMeta.verified_sections.includes('CONTRAINDICATIONS') && !labelMeta.verified_sections.includes('DO_NOT_USE')) {
-          defects.push(`P0 ${where}.${f}: contraindications_en present but verified label manifest indicates CONTRAINDICATIONS section is absent!`);
+        if (f === 'contraindications_en' && !ev.verified_sections.includes('CONTRAINDICATIONS') && !ev.verified_sections.includes('DO_NOT_USE')) {
+          defects.push(`P0 ${where}.${f}: contraindications_en present but verified DailyMed API evidence indicates CONTRAINDICATIONS section is absent!`);
         }
       }
     };

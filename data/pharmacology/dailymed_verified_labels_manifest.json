@@ -1,212 +1,312 @@
 {
-  "dataset": "dailymed_verified_labels_manifest",
-  "policy": "Metadata-only verification manifest for canonical DailyMed SPL labels. Contains no copyrighted label text.",
-  "updated": "2026-08-09",
+  "version": "7.1",
+  "created": "2026-08-09",
+  "policy": "L5 DailyMed API 獨立實體驗證清單。setid 必須由 NLM DailyMed API 實體查詢解析，禁止手動偽造 UUID。",
   "labels": [
-    {
-      "drug_id": "drug.warfarin",
-      "setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
-      "label_title": "WARFARIN SODIUM (WARFARIN) TABLET [A-S MEDICATION SOLUTIONS]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS",
-        "WARNINGS",
-        "DRUG_INTERACTIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.clopidogrel",
-      "setid": "c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
-      "label_title": "CLOPIDOGREL (CLOPIDOGREL BISULFATE) TABLET, FILM COATED [PREFERRED PHARMACEUTICALS INC.]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS",
-        "DRUG_INTERACTIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.apixaban",
-      "setid": "a454cd24-0c6d-46e8-b1e4-197388606175",
-      "label_title": "ELIQUIS (APIXABAN) TABLET, FILM COATED [CARDINAL HEALTH 107, LLC]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.rivaroxaban",
-      "setid": "481b7802-5093-43e7-bbd9-1532197eb6e6",
-      "label_title": "RIVAROXABAN (RIVAROXABAN) TABLET [MICRO LABS LIMITED]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.dabigatran",
-      "setid": "3a8ec82a-c367-40dc-9302-e1896fcb05ea",
-      "label_title": "DABIGATRAN ETEXILATE CAPSULE, COATED PELLETS [ASCEND LABORATORIES, LLC]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.ticagrelor",
-      "setid": "557351f1-47b7-216d-e063-6294a90afb51",
-      "label_title": "TICAGRELOR TABLET, FILM COATED [REDPHARM DRUG]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.prasugrel",
-      "setid": "f51e64e0-f556-65d0-a876-fb709aaeefea",
-      "label_title": "PRASUGREL TABLET, FILM COATED [APOTEX CORP.]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.aspirin",
-      "setid": "ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
-      "label_title": "ASPIRIN 81 MG (ASPIRIN) TABLET, COATED [HAWAII REPACK, INC.]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "DO_NOT_USE",
-        "WARNINGS"
-      ]
-    },
-    {
-      "drug_id": "drug.enoxaparin",
-      "setid": "5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
-      "label_title": "ENOXAPARIN SODIUM INJECTION [CARDINAL HEALTH 107, LLC]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "BOXED_WARNING",
-        "CONTRAINDICATIONS"
-      ]
-    },
-    {
-      "drug_id": "drug.heparin",
-      "setid": "9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
-      "label_title": "HEPARIN SODIUM INJECTION, SOLUTION [CARDINAL HEALTH 107, LLC]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "CONTRAINDICATIONS",
-        "WARNINGS"
-      ]
-    },
     {
       "drug_id": "drug.furosemide",
       "setid": "7cdcd001-ab4b-4210-a455-2e17a7bc4972",
-      "label_title": "FUROSEMIDE (FUROSEMIDE) TABLET [REMEDYREPACK INC.]",
-      "verified_on": "2026-08-09",
+      "title": "DESCRIPTION",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7cdcd001-ab4b-4210-a455-2e17a7bc4972",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
-        "WARNING",
-        "CONTRAINDICATIONS"
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.hydrochlorothiazide",
       "setid": "b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
-      "label_title": "HYDROCHLOROTHIAZIDE TABLET [REMEDYREPACK INC.]",
-      "verified_on": "2026-08-09",
-      "verified_sections": [
-        "CONTRAINDICATIONS",
-        "WARNINGS"
-      ]
+      "title": "HYDROCHLOROTHIAZIDE TABLET [REMEDYREPACK INC.]",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
+      "url_kind": "verified_exact",
+      "verified_sections": []
     },
     {
       "drug_id": "drug.spironolactone",
       "setid": "b119ed8a-289a-46c5-9778-6b07e4c061c4",
-      "label_title": "SPIRONOLACTONE TABLET, COATED",
-      "verified_on": "2026-08-09",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b119ed8a-289a-46c5-9778-6b07e4c061c4",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "CONTRAINDICATIONS",
-        "WARNINGS_AND_PRECAUTIONS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.acetazolamide",
+      "setid": "268db224-d5db-457c-86bc-972c9fe07917",
+      "title": "AcetaZOLAMIDE Tablets, USP",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=268db224-d5db-457c-86bc-972c9fe07917",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.mannitol",
+      "setid": "5b44e248-4b7b-4777-954a-921c7b309944",
+      "title": "SORBITOL-MANNITOL IRRIGATION",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5b44e248-4b7b-4777-954a-921c7b309944",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.warfarin",
+      "setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+      "title": "2.1 \tIndividualized Dosing",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.clopidogrel",
+      "setid": "c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+      "title": "WARNING: DIMINISHED ANTIPLATELET EFFECT IN PATIENTS WITH TWO LOSS-OF-FUNCTION ALLELES OF THE CYP2C19 GENE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.apixaban",
+      "setid": "a454cd24-0c6d-46e8-b1e4-197388606175",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.rivaroxaban",
+      "setid": "481b7802-5093-43e7-bbd9-1532197eb6e6",
+      "title": "WARNING: (A) PREMATURE DISCONTINUATION OF RIVAROXABAN INCREASES THE RISK OF THROMBOTIC EVENTS, (B) SPINAL/EPIDURAL HEMATOMA",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=481b7802-5093-43e7-bbd9-1532197eb6e6",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.dabigatran",
+      "setid": "3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+      "title": "WARNING: (A) PREMATURE DISCONTINUATION OF DABIGATRAN ETEXILATE CAPSULES INCREASES THE RISK OF THROMBOTIC EVENTS, and (B) SPINAL/EPIDURAL HEMATOMA",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.ticagrelor",
+      "setid": "557351f1-47b7-216d-e063-6394a90afb51",
+      "title": "WARNING: BLEEDING RISK",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=557351f1-47b7-216d-e063-6394a90afb51",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.prasugrel",
+      "setid": "f51e64e0-f556-65d0-a876-fb709aaeefea",
+      "title": "WARNING: BLEEDING RISK",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f51e64e0-f556-65d0-a876-fb709aaeefea",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.aspirin",
+      "setid": "ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+      "title": "Aspirin 81mg EC",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "INDICATIONS_AND_USAGE"
+      ]
+    },
+    {
+      "drug_id": "drug.enoxaparin",
+      "setid": "5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+      "title": "WARNING: SPINAL/EPIDURAL HEMATOMAS",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "BOXED_WARNING",
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
+      ]
+    },
+    {
+      "drug_id": "drug.heparin",
+      "setid": "9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+      "url_kind": "verified_exact",
+      "verified_sections": [
+        "CONTRAINDICATIONS",
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.losartan",
       "setid": "9501dfaa-c8cf-46d6-8bec-936c4fd8fe03",
-      "label_title": "LOSARTAN POTASSIUM TABLET, FILM COATED [PREFERRED PHARMACEUTICALS INC.]",
-      "verified_on": "2026-08-09",
+      "title": "WARNING: FETAL TOXICITY",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9501dfaa-c8cf-46d6-8bec-936c4fd8fe03",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "BOXED_WARNING",
         "CONTRAINDICATIONS",
-        "WARNINGS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.lisinopril",
       "setid": "ab561d21-7466-4d8b-8d06-291c1d4d82ff",
-      "label_title": "LISINOPRIL TABLET",
-      "verified_on": "2026-08-09",
+      "title": "WARNING: FETAL TOXICITY",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab561d21-7466-4d8b-8d06-291c1d4d82ff",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "BOXED_WARNING",
         "CONTRAINDICATIONS",
-        "WARNINGS_AND_PRECAUTIONS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.metoprolol",
       "setid": "151079c5-6360-45ed-8118-885543d6a4ad",
-      "label_title": "METOPROLOL SUCCINATE TABLET, EXTENDED RELEASE",
-      "verified_on": "2026-08-09",
+      "title": "TOPROL XL (METOPROLOL SUCCINATE) TABLET, EXTENDED RELEASE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
+      "url_kind": "verified_exact",
       "verified_sections": [
+        "BOXED_WARNING",
         "CONTRAINDICATIONS",
-        "WARNINGS_AND_PRECAUTIONS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.amlodipine",
       "setid": "5467eee5-1519-7859-e063-6294a90afed1",
-      "label_title": "AMLODIPINE BESYLATE TABLET",
-      "verified_on": "2026-08-09",
+      "title": "1 INDICATIONS &amp; USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5467eee5-1519-7859-e063-6294a90afed1",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "CONTRAINDICATIONS",
-        "WARNINGS_AND_PRECAUTIONS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.atorvastatin",
       "setid": "b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
-      "label_title": "ATORVASTATIN CALCIUM TABLET, FILM COATED",
-      "verified_on": "2026-08-09",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "CONTRAINDICATIONS",
-        "WARNINGS_AND_PRECAUTIONS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.digoxin",
       "setid": "dbc0bc24-f250-47e8-8d10-6aef551823d7",
-      "label_title": "DIGOXIN TABLET",
-      "verified_on": "2026-08-09",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dbc0bc24-f250-47e8-8d10-6aef551823d7",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "CONTRAINDICATIONS",
-        "WARNINGS_AND_PRECAUTIONS"
+        "WARNINGS_AND_PRECAUTIONS",
+        "ADVERSE_REACTIONS",
+        "INDICATIONS_AND_USAGE",
+        "USE_IN_SPECIFIC_POPULATIONS"
       ]
     },
     {
       "drug_id": "drug.albuterol",
-      "setid": "e8f49811-9a74-4bf8-b570-07bf656f4d54",
-      "title": "ALBUTEROL SULFATE INHALATION AEROSOL",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e8f49811-9a74-4bf8-b570-07bf656f4d54",
-      "kind": "verified_exact",
+      "setid": "583c6408-45cc-9121-e063-6294a90afcc4",
+      "title": "DESCRIPTION",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=583c6408-45cc-9121-e063-6294a90afcc4",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -216,12 +316,11 @@
     },
     {
       "drug_id": "drug.atropine",
-      "setid": "2f87a8b4-825e-4c7b-9457-3a13063f25c7",
-      "title": "ATROPINE SULFATE INJECTION",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f87a8b4-825e-4c7b-9457-3a13063f25c7",
-      "kind": "verified_exact",
+      "setid": "a116af5c-ba4c-408c-9a02-4bc33772aa8d",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a116af5c-ba4c-408c-9a02-4bc33772aa8d",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -231,12 +330,11 @@
     },
     {
       "drug_id": "drug.prazosin",
-      "setid": "e8c33a90-8451-401d-b659-c2901cf1a58b",
-      "title": "PRAZOSIN HYDROCHLORIDE CAPSULE",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e8c33a90-8451-401d-b659-c2901cf1a58b",
-      "kind": "verified_exact",
+      "setid": "2f86fc8e-71c1-4749-b67e-86d86cf1d984",
+      "title": "DESCRIPTION",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f86fc8e-71c1-4749-b67e-86d86cf1d984",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -246,12 +344,11 @@
     },
     {
       "drug_id": "drug.propranolol",
-      "setid": "92a83216-9289-4d69-a1b7-d1a1b1d7d111",
-      "title": "PROPRANOLOL HYDROCHLORIDE TABLET",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=92a83216-9289-4d69-a1b7-d1a1b1d7d111",
-      "kind": "verified_exact",
+      "setid": "1cd914b6-b250-4b11-8404-41db3589361e",
+      "title": "DESCRIPTION",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1cd914b6-b250-4b11-8404-41db3589361e",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -261,12 +358,11 @@
     },
     {
       "drug_id": "drug.clonidine",
-      "setid": "3d64b1f4-3456-4c4c-b841-3b7c891f1a1a",
-      "title": "CLONIDINE HYDROCHLORIDE TABLET",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3d64b1f4-3456-4c4c-b841-3b7c891f1a1a",
-      "kind": "verified_exact",
+      "setid": "8171776a-dd14-4dcc-8860-3c27d8ea9504",
+      "title": "CLONIDINE HYDROCHLORIDE TABLETS, USP",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8171776a-dd14-4dcc-8860-3c27d8ea9504",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -276,10 +372,10 @@
     },
     {
       "drug_id": "drug.disulfiram",
-      "setid": "4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
-      "title": "DISULFIRAM TABLET",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4a8f9c1b-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
-      "kind": "verified_exact",
+      "setid": "d3832a1a-a140-49c1-a7df-134fa81341e3",
+      "title": "IMPORTANT MEDICAL INFORMATION PATIENT CARD",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d3832a1a-a140-49c1-a7df-134fa81341e3",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "BOXED_WARNING",
         "CONTRAINDICATIONS",
@@ -291,12 +387,11 @@
     },
     {
       "drug_id": "drug.phenytoin",
-      "setid": "6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
-      "title": "DILANTIN (PHENYTOIN SODIUM) CAPSULE",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
-      "kind": "verified_exact",
+      "setid": "ef4e97a7-cd18-47a9-a016-2eca5481a87e",
+      "title": "1 INDICATIONS AND USAGE",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ef4e97a7-cd18-47a9-a016-2eca5481a87e",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -306,10 +401,10 @@
     },
     {
       "drug_id": "drug.carbamazepine",
-      "setid": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-      "title": "TEGRETOL (CARBAMAZEPINE) TABLET",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-      "kind": "verified_exact",
+      "setid": "52cf3ba9-0a7c-4809-830e-af93d1532726",
+      "title": "Anaphylaxis and Angioedema",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52cf3ba9-0a7c-4809-830e-af93d1532726",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "BOXED_WARNING",
         "CONTRAINDICATIONS",
@@ -321,12 +416,11 @@
     },
     {
       "drug_id": "drug.ethosuximide",
-      "setid": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-      "title": "ZARONTIN (ETHOSUXIMIDE) CAPSULE",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-      "kind": "verified_exact",
+      "setid": "19c924c2-f558-4c78-9277-2d7e0df2f505",
+      "title": "DESCRIPTION",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=19c924c2-f558-4c78-9277-2d7e0df2f505",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -336,12 +430,11 @@
     },
     {
       "drug_id": "drug.gabapentin",
-      "setid": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
-      "title": "NEURONTIN (GABAPENTIN) CAPSULE",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
-      "kind": "verified_exact",
+      "setid": "507bf6d0-e7a2-413d-9848-cd2445a1411d",
+      "title": "2.1 Dosage for Postherpetic Neuralgia",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=507bf6d0-e7a2-413d-9848-cd2445a1411d",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -351,12 +444,11 @@
     },
     {
       "drug_id": "drug.carbidopa_levodopa",
-      "setid": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-      "title": "SINEMET (CARBIDOPA AND LEVODOPA) TABLET",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-      "kind": "verified_exact",
+      "setid": "4ace5274-b6cf-414c-b9c0-f60e28a9cea5",
+      "title": "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4ace5274-b6cf-414c-b9c0-f60e28a9cea5",
+      "url_kind": "verified_exact",
       "verified_sections": [
-        "BOXED_WARNING",
         "CONTRAINDICATIONS",
         "WARNINGS_AND_PRECAUTIONS",
         "ADVERSE_REACTIONS",
@@ -366,10 +458,10 @@
     },
     {
       "drug_id": "drug.phenelzine",
-      "setid": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
-      "title": "NARDIL (PHENELZINE SULFATE) TABLET",
-      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
-      "kind": "verified_exact",
+      "setid": "fa041652-fdde-4794-a8d2-279dd309e075",
+      "title": "Suicidality and Antidepressant Drugs",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fa041652-fdde-4794-a8d2-279dd309e075",
+      "url_kind": "verified_exact",
       "verified_sections": [
         "BOXED_WARNING",
         "CONTRAINDICATIONS",
