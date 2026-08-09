@@ -5534,7 +5534,13 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/9070"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.chronic_low_back_pain.legacy01",
+        "rf.chronic_low_back_pain.legacy02",
+        "rf.chronic_low_back_pain.legacy03",
+        "rf.chronic_low_back_pain.legacy04"
+      ]
     },
     {
       "id": "cond.acute_lumbar_sprain",
@@ -5602,7 +5608,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.acute_lumbar_sprain.legacy01",
+        "rf.acute_lumbar_sprain.legacy02",
+        "rf.acute_lumbar_sprain.legacy03"
+      ]
     },
     {
       "id": "cond.lumbar_disc_herniation",
@@ -6067,6 +6078,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/9101"
+      ],
+      "red_flag_refs": [
+        "rf.lumbar_disc_herniation.legacy01",
+        "rf.lumbar_disc_herniation.legacy02",
+        "rf.lumbar_disc_herniation.legacy03"
       ]
     },
     {
@@ -6513,6 +6529,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/58"
+      ],
+      "red_flag_refs": [
+        "rf.sciatica.legacy01",
+        "rf.sciatica.legacy02",
+        "rf.sciatica.legacy03"
       ]
     },
     {
@@ -6847,6 +6868,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/9092"
+      ],
+      "red_flag_refs": [
+        "rf.cervical_spondylosis.legacy01",
+        "rf.cervical_spondylosis.legacy02",
+        "rf.cervical_spondylosis.legacy03"
       ]
     },
     {
@@ -6915,7 +6941,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.neck_pain_stiff.legacy01",
+        "rf.neck_pain_stiff.legacy02",
+        "rf.neck_pain_stiff.legacy03"
+      ]
     },
     {
       "id": "cond.whiplash",
@@ -6982,7 +7013,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.whiplash.legacy01",
+        "rf.whiplash.legacy02",
+        "rf.whiplash.legacy03"
+      ]
     },
     {
       "id": "cond.frozen_shoulder",
@@ -7336,6 +7372,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/267"
+      ],
+      "red_flag_refs": [
+        "rf.frozen_shoulder.legacy01",
+        "rf.frozen_shoulder.legacy02",
+        "rf.frozen_shoulder.legacy03"
       ]
     },
     {
@@ -7405,7 +7446,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.rotator_cuff.legacy01",
+        "rf.rotator_cuff.legacy02",
+        "rf.rotator_cuff.legacy03"
+      ]
     },
     {
       "id": "cond.lateral_epicondylitis",
@@ -7474,7 +7520,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.lateral_epicondylitis.legacy01",
+        "rf.lateral_epicondylitis.legacy02",
+        "rf.lateral_epicondylitis.legacy03"
+      ]
     },
     {
       "id": "cond.medial_epicondylitis",
@@ -7541,7 +7592,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.medial_epicondylitis.legacy01",
+        "rf.medial_epicondylitis.legacy02",
+        "rf.medial_epicondylitis.legacy03"
+      ]
     },
     {
       "id": "cond.carpal_tunnel",
@@ -7611,7 +7667,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.carpal_tunnel.legacy01",
+        "rf.carpal_tunnel.legacy02",
+        "rf.carpal_tunnel.legacy03"
+      ]
     },
     {
       "id": "cond.de_quervain",
@@ -7989,6 +8050,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92507"
+      ],
+      "red_flag_refs": [
+        "rf.de_quervain.legacy01",
+        "rf.de_quervain.legacy02",
+        "rf.de_quervain.legacy03"
       ]
     },
     {
@@ -8369,6 +8435,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/9750"
+      ],
+      "red_flag_refs": [
+        "rf.trigger_finger.legacy01",
+        "rf.trigger_finger.legacy02",
+        "rf.trigger_finger.legacy03"
       ]
     },
     {
@@ -8787,6 +8858,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1946"
+      ],
+      "red_flag_refs": [
+        "rf.knee_osteoarthritis.legacy01",
+        "rf.knee_osteoarthritis.legacy02",
+        "rf.knee_osteoarthritis.legacy03"
       ]
     },
     {
@@ -9119,6 +9195,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92511"
+      ],
+      "red_flag_refs": [
+        "rf.patellofemoral_pain.legacy01",
+        "rf.patellofemoral_pain.legacy02",
+        "rf.patellofemoral_pain.legacy03"
       ]
     },
     {
@@ -9186,7 +9267,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.meniscus_injury.legacy01",
+        "rf.meniscus_injury.legacy02",
+        "rf.meniscus_injury.legacy03"
+      ]
     },
     {
       "id": "cond.ankle_sprain",
@@ -9478,6 +9564,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92254"
+      ],
+      "red_flag_refs": [
+        "rf.ankle_sprain.legacy01",
+        "rf.ankle_sprain.legacy02",
+        "rf.ankle_sprain.legacy03"
       ]
     },
     {
@@ -9818,6 +9909,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92257"
+      ],
+      "red_flag_refs": [
+        "rf.plantar_fasciitis.legacy01",
+        "rf.plantar_fasciitis.legacy02",
+        "rf.plantar_fasciitis.legacy03"
       ]
     },
     {
@@ -9886,7 +9982,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.achilles_tendinopathy.legacy01",
+        "rf.achilles_tendinopathy.legacy02",
+        "rf.achilles_tendinopathy.legacy03"
+      ]
     },
     {
       "id": "cond.hip_osteoarthritis",
@@ -9955,7 +10056,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.hip_osteoarthritis.legacy01",
+        "rf.hip_osteoarthritis.legacy02",
+        "rf.hip_osteoarthritis.legacy03"
+      ]
     },
     {
       "id": "cond.piriformis_syndrome",
@@ -10023,7 +10129,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.piriformis_syndrome.legacy01",
+        "rf.piriformis_syndrome.legacy02",
+        "rf.piriformis_syndrome.legacy03"
+      ]
     },
     {
       "id": "cond.fibromyalgia",
@@ -10301,6 +10412,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/10578"
+      ],
+      "red_flag_refs": [
+        "rf.fibromyalgia.legacy01",
+        "rf.fibromyalgia.legacy02",
+        "rf.fibromyalgia.legacy03"
       ]
     },
     {
@@ -10659,6 +10775,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92683"
+      ],
+      "red_flag_refs": [
+        "rf.myofascial_pain.legacy01",
+        "rf.myofascial_pain.legacy02",
+        "rf.myofascial_pain.legacy03"
       ]
     },
     {
@@ -10967,6 +11088,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/8371"
+      ],
+      "red_flag_refs": [
+        "rf.tmd.legacy01",
+        "rf.tmd.legacy02",
+        "rf.tmd.legacy03"
       ]
     },
     {
@@ -11536,6 +11662,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/28716"
+      ],
+      "red_flag_refs": [
+        "rf.tension_headache.legacy01",
+        "rf.tension_headache.legacy02",
+        "rf.tension_headache.legacy03"
       ]
     },
     {
@@ -11876,6 +12007,12 @@
       ],
       "sign_symptom_ids": [
         "sym.headache"
+      ],
+      "red_flag_refs": [
+        "rf.migraine.legacy01",
+        "rf.migraine.legacy02",
+        "rf.migraine.legacy03",
+        "rf.migraine.legacy04"
       ]
     },
     {
@@ -12444,6 +12581,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/28716"
+      ],
+      "red_flag_refs": [
+        "rf.cluster_headache.legacy01",
+        "rf.cluster_headache.legacy02",
+        "rf.cluster_headache.legacy03"
       ]
     },
     {
@@ -12971,7 +13113,17 @@
         "https://cloudtcm.com/disease/tcm/28325",
         "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.functional_dyspepsia.legacy01",
+        "rf.functional_dyspepsia.legacy02",
+        "rf.functional_dyspepsia.legacy03",
+        "rf.functional_dyspepsia.legacy04",
+        "rf.functional_dyspepsia.legacy05",
+        "rf.functional_dyspepsia.legacy06",
+        "rf.functional_dyspepsia.legacy07",
+        "rf.functional_dyspepsia.legacy08"
+      ]
     },
     {
       "id": "cond.chronic_gastritis",
@@ -19108,7 +19260,10 @@
         "https://cloudtcm.com/disease/tcm/36",
         "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.trigeminal_neuralgia.legacy01"
+      ]
     },
     {
       "id": "cond.postherpetic_neuralgia",
