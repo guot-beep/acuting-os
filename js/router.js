@@ -15,7 +15,7 @@
  * This file deliberately does not touch app.js internals.
  */
 (function () {
-  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "condition", "comparison", "cases", "quality", "sources"];
+  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "pharm", "condition", "comparison", "cases", "quality", "sources"];
   const DEFAULT_WS = "home";
   const sections = Array.from(document.querySelectorAll("section[data-workspace]"));
   const navLinks = Array.from(document.querySelectorAll(".workspace-nav a[data-ws]"));
