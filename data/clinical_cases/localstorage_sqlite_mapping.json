@@ -2,12 +2,17 @@
   "dataset": "localStorage (acuting-clinical-cases-v1) -> data/clinical_cases/schema.sql field mapping",
   "status": "design_only__migration_script_NOT_implemented",
   "created": "2026-08-06",
+  "updated": "2026-08-09",
+  "changelog": [
+    "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered."
+  ],
   "policy": [
     "This file is a DESIGN, not a migration. No script reads it yet. It exists so the mapping is reviewable before it is executable — the H2 migration is a one-shot over real clinical data (D12), and a mapping decided inside a script is a mapping nobody reviewed.",
     "Entries with status unresolved_needs_ting MUST NOT be resolved by a migration author. Each one destroys or fabricates clinical meaning, and Ting rejected the obvious merge for all three in 2026-08.",
     "no_destination_yet means the field has real clinical value but no column. It is NOT the same as intentionally_not_migrated, and a migration must fail loudly rather than drop these.",
-    "Regenerate rather than hand-edit: this file is emitted from app.js's normalizers and validated against schema.sql, so a destination column that does not exist cannot be written into it.",
-    "Language slots: the app stores single-language free text while the schema has _zh/_en pairs. Everything lands in the _zh slot with _en NULL. That is a labelling assumption, not a translation — flagged as low risk on each affected row."
+    "Regenerate rather than hand-edit: this file is emitted from app.js's normalizers and validated against schema.sql, so a destination column that does not exist cannot be written into it. (No such generator script currently exists in scripts/ — this 2026-08 update was hand-edited against that same discipline: every destination named below was checked against the live schema.sql before being written.)",
+    "Language slots: the app stores single-language free text while the schema has _zh/_en pairs. Everything lands in the _zh slot with _en NULL. That is a labelling assumption, not a translation — flagged as low risk on each affected row.",
+    "Legacy-shadowed field precedence (added 2026-08, first case: effectDurationDays/metric.effect_duration_days): when a runtime field has been superseded by a canonical structured representation but the old field is kept for backward compatibility, the OLD field's own mapping entry must say so explicitly (never just silently reuse its original 'mapped' framing as if nothing changed) and must state the exact precedence rule the runtime uses — canonical wins when present, legacy is read only when canonical is absent, and disagreement between the two must be flagged by any migration/audit pass, not silently resolved. A migration script must implement the SAME precedence the runtime already implements, not invent a new one."
   ],
   "generated_from": {
     "source_of_truth_fields": "app.js — normalizeClinicalCase() and normalizeSoapNote()",
@@ -15,9 +20,9 @@
     "validation": "every destination table.column is asserted to exist in schema.sql before this file is written"
   },
   "counts": {
-    "total_fields": 67,
+    "total_fields": 69,
     "by_status": {
-      "mapped": 61,
+      "mapped": 63,
       "unresolved_needs_ting": 4,
       "no_destination_yet": 2
     }
@@ -564,7 +569,7 @@
       "source_scope": "soap",
       "source_field": "outcomeMetricLinks",
       "destination": "(UNRESOLVED)",
-      "transformation": "These are metric ids with NO recorded values. Writing them as visit_outcomes rows was proposed and REJECTED by Ting (2026-08): a row with metric_name and null value reads as a measured outcome that was never measured.",
+      "transformation": "These are metric ids with NO recorded values — free text, e.g. \"pain_score 7->4\" as a string inside one textarea, not a list of real measurements. Writing them as visit_outcomes rows was proposed and REJECTED by Ting (2026-08): a row with metric_name and null value reads as a measured outcome that was never measured. NOT to be confused with the separate outcomeMetrics field below (added 2026-08) — similar name, opposite semantics: outcomeMetrics holds REAL {metricId, valueNumber} pairs and IS mapped below; this field is still exactly what it always was, unresolved narrative that this batch left untouched on purpose.",
       "nullable": null,
       "data_loss_risk": "high",
       "status": "unresolved_needs_ting"
@@ -576,6 +581,24 @@
       "transformation": "as-is (LL2)",
       "nullable": true,
       "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "outcomeMetrics",
+      "destination": "visit_outcomes",
+      "transformation": "EXPLODE array -> one row per entry (added 2026-08: 63f0896 proved the shape on metric.pain_score, eda9819 added metric.sleep_hours, a1348b5 built the metadata-driven renderer, 1a3a426 folded metric.effect_duration_days in). Per entry: value_number = entry.valueNumber (already a real number, never a string to parse). metric_id (visit_outcomes' nullable additive column) = entry.metricId as-is — already a canonical id, e.g. \"metric.pain_score\", no resolution needed. metric_name (NOT NULL on visit_outcomes, see the note on that column in schema.sql) is NOT carried on the runtime entry at all and must be resolved at migration time: look up entry.metricId in data/clinical_cases/outcome_metrics.json and take that record's `name` field (e.g. \"pain_score\"). unit is resolved the same way, from the same record's `unit` field (e.g. \"0-10\", \"hours\", \"days\") — also not stored per-entry, so the unit can never drift from the vocabulary the way a copied-at-save-time string could. A migration must fail loudly, not silently null metric_name, if entry.metricId does not resolve to a real outcome_metrics.json record — the runtime never validates that at save time (normalizeSoapNote only checks metricId is a non-empty string and valueNumber is finite), so a migration script is the first place that check can happen. Blank/unmeasured metrics create NO row: setOutcomeMetricValue() removes an entry from the array entirely when its value is cleared rather than ever writing a null placeholder, so there is nothing in this array for a migration to accidentally turn into a measured-but-empty row.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "effectDurationDays",
+      "destination": "soap_notes.effect_duration_days",
+      "transformation": "MIGRATION-SOURCE-ONLY FALLBACK as of 2026-08 (1a3a426) — not an actively-authored field anymore, though the column and the runtime key both still exist. The canonical value for this same clinical fact (\"how many days did the last treatment's effect last\") now lives in outcomeMetrics as metric.effect_duration_days (see that entry, which is where a migration should read this fact from FIRST). computeNumericOutcomeMetrics() blanks this field on every save going forward (new or edited note) — 'one fact, one home' realized at touch-time, not in bulk — so only notes nobody has resaved since 1a3a426 shipped still carry a real value here. Precedence a migration MUST use, because it is the precedence the runtime already uses: prefer outcomeMetrics' metric.effect_duration_days for the visit; read this column ONLY when that visit's outcomeMetrics has no such entry. If BOTH exist for the same visit and disagree, that is a genuine conflict the runtime itself does not silently resolve (it shows the canonical value with a visible on-screen warning, never discards the legacy one) — a migration/audit pass must flag such rows for review rather than picking a value unilaterally, per this file's legacy-shadowed-field policy above.",
+      "nullable": true,
+      "data_loss_risk": "medium",
       "status": "mapped"
     },
     {
@@ -632,5 +655,10 @@
       "data_loss_risk": "none",
       "status": "mapped"
     }
-  ]
+  ],
+  "known_gaps_not_covered_by_this_pass": {
+    "note": "This 2026-08 update was scoped to the structured-outcome mapping only (outcomeMetrics / effectDurationDays / outcomeMetricLinks). These runtime fields exist in normalizeClinicalCase()/normalizeSoapNote() today, verified 2026-08, but have NO entry above yet — not because they were reviewed and are fine, but because documenting them was out of scope for this pass. Listed here so 'not in this file' cannot be misread as 'doesn't exist.'",
+    "case_scope": ["genderIdentity", "raceEthnicity", "raceEthnicityDetail", "onsetApprox", "chronicity", "coursePattern", "previousTreatment", "previousTreatmentNotes", "baselineSeverity", "allergyStatus"],
+    "soap_scope": ["tcmPatternSelections", "referralOrSupervisorQuestion"]
+  }
 }
