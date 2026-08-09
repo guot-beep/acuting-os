@@ -84,7 +84,8 @@ for (const rec of canon.records) {
 }
 const expect = {
   legacy_card_migration_batch4: { cards: 25, refs: 96, supported: 83, not_found: 13, pending_provenance: 0 },
-  legacy_card_migration_batch123: { cards: 30, refs: 95, supported: 0, not_found: 0, pending_provenance: 95 },
+  // Task C accepted 2026-08-08: the batch123 ledger is now 68/27/0.
+  legacy_card_migration_batch123: { cards: 30, refs: 95, supported: 68, not_found: 27, pending_provenance: 0 },
 };
 for (const [origin, e] of Object.entries(expect)) {
   const t = tally[origin] || { cards: new Set(), refs: 0, supported: 0, not_found: 0, pending_provenance: 0 };

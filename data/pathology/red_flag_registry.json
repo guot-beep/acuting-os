@@ -3682,1330 +3682,2661 @@
       "entity_id": "cond.trigeminal_neuralgia",
       "trigger_zh": "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估",
       "trigger_en": "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch1",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.nidcr.nih.gov/health-info/trigeminal-neuralgia",
+          "source_org": "NIDCR",
+          "page_title": "Trigeminal Neuralgia",
+          "section": "Diagnosis",
+          "quote_en": "If no dental cause can be found, the dentist may suggest you visit your primary care doctor.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估",
+          "supports_flag_en": "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003027.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Face pain",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Pain is persistent, unexplained, or accompanied by other unexplained symptoms. Contact your primary provider.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估",
+          "supports_flag_en": "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.chronic_low_back_pain.legacy01",
       "entity_id": "cond.chronic_low_back_pain",
       "trigger_zh": "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
       "trigger_en": "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
+          "supports_flag_en": "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
+          "supports_flag_en": "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.chronic_low_back_pain.legacy02",
       "entity_id": "cond.chronic_low_back_pain",
       "trigger_zh": "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
       "trigger_en": "Night pain, weight loss, cancer history → rule out metastasis or tumour",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
+          "supports_flag_en": "Night pain, weight loss, cancer history → rule out metastasis or tumour"
+        },
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "section": "Other Medical Conditions",
+          "quote_en": "Tumors, in rare cases, that develop on the spine or other areas of the back.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
+          "supports_flag_en": "Night pain, weight loss, cancer history → rule out metastasis or tumour"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.chronic_low_back_pain.legacy03",
       "entity_id": "cond.chronic_low_back_pain",
       "trigger_zh": "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
       "trigger_en": "Fever, IV drug use, immunosuppression → rule out spinal infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000437.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Osteomyelitis",
+          "section": "Causes",
+          "quote_en": "Use of injected illicit drugs; Weakened immune system.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
+          "supports_flag_en": "Fever, IV drug use, immunosuppression → rule out spinal infection"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000437.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Osteomyelitis",
+          "section": "Symptoms",
+          "quote_en": "Bone pain; Fever and chills; Local swelling, redness, and warmth.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
+          "supports_flag_en": "Fever, IV drug use, immunosuppression → rule out spinal infection"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.chronic_low_back_pain.legacy04",
       "entity_id": "cond.chronic_low_back_pain",
       "trigger_zh": "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折",
       "trigger_en": "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折",
+          "supports_flag_en": "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture"
+        },
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "section": "Other Medical Conditions",
+          "quote_en": "Osteoporosis, which can lead to painful fractures of the vertebrae.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折",
+          "supports_flag_en": "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.acute_lumbar_sprain.legacy01",
       "entity_id": "cond.acute_lumbar_sprain",
       "trigger_zh": "下肢放射痛或麻木無力 → 考慮神經根受壓而非單純拉傷",
       "trigger_en": "Radiating leg pain or numbness/weakness → consider nerve root involvement, not simple strain",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "section": "Mechanical/Structural Problems",
+          "quote_en": "Herniated or ruptured discs: an event causing a disc to compress and irritate nearby nerves.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "下肢放射痛或麻木無力 → 考慮神經根受壓而非單純拉傷",
+          "supports_flag_en": "Radiating leg pain or numbness/weakness → consider nerve root involvement, not simple strain"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.acute_lumbar_sprain.legacy02",
       "entity_id": "cond.acute_lumbar_sprain",
       "trigger_zh": "馬尾徵象（鞍麻、失禁）→ 急診",
       "trigger_en": "Cauda equina signs (saddle numbness, incontinence) → emergency",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "馬尾徵象（鞍麻、失禁）→ 急診",
+          "supports_flag_en": "Cauda equina signs (saddle numbness, incontinence) → emergency"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "馬尾徵象（鞍麻、失禁）→ 急診",
+          "supports_flag_en": "Cauda equina signs (saddle numbness, incontinence) → emergency"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.acute_lumbar_sprain.legacy03",
       "entity_id": "cond.acute_lumbar_sprain",
       "trigger_zh": "外傷後劇痛無法負重 → 排除骨折",
       "trigger_en": "Severe pain unable to bear weight after trauma → rule out fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://www.niams.nih.gov/health-topics/back-pain\",\"https://medlineplus.gov/ency/article/007493.htm\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.lumbar_disc_herniation.legacy01",
       "entity_id": "cond.lumbar_disc_herniation",
       "trigger_zh": "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
       "trigger_en": "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
+          "supports_flag_en": "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
+          "supports_flag_en": "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.lumbar_disc_herniation.legacy02",
       "entity_id": "cond.lumbar_disc_herniation",
       "trigger_zh": "進行性足下垂或明顯肌力下降 → 神經外科評估",
       "trigger_en": "Progressive foot drop or marked weakness → neurosurgical assessment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "進行性足下垂或明顯肌力下降 → 神經外科評估",
+          "supports_flag_en": "Progressive foot drop or marked weakness → neurosurgical assessment"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.lumbar_disc_herniation.legacy03",
       "entity_id": "cond.lumbar_disc_herniation",
       "trigger_zh": "發燒或癌症病史 → 排除感染或腫瘤",
       "trigger_en": "Fever or cancer history → rule out infection or tumour",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒或癌症病史 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever or cancer history → rule out infection or tumour"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Could your pain be caused by cancer or infection in your spine?",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒或癌症病史 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever or cancer history → rule out infection or tumour"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.sciatica.legacy01",
       "entity_id": "cond.sciatica",
       "trigger_zh": "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
       "trigger_en": "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
+          "supports_flag_en": "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
+          "supports_flag_en": "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.sciatica.legacy02",
       "entity_id": "cond.sciatica",
       "trigger_zh": "進行性足下垂或明顯肌力下降 → 需影像與神經外科評估",
       "trigger_en": "Progressive foot drop or marked motor loss → needs imaging and neurosurgical assessment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "進行性足下垂或明顯肌力下降 → 需影像與神經外科評估",
+          "supports_flag_en": "Progressive foot drop or marked motor loss → needs imaging and neurosurgical assessment"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.sciatica.legacy03",
       "entity_id": "cond.sciatica",
       "trigger_zh": "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染",
       "trigger_en": "Night pain with weight loss, fever, or cancer history → rule out tumour or infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000686.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Sciatica",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Unexplained fever with back pain; Weakness or numbness in your buttocks, thigh, leg, or pelvis; Loss of control of urine or stool.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染",
+          "supports_flag_en": "Night pain with weight loss, fever, or cancer history → rule out tumour or infection"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000686.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Sciatica",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Pain that is worse when you lie down, or awakens you at night; You have been losing weight unintentionally.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染",
+          "supports_flag_en": "Night pain with weight loss, fever, or cancer history → rule out tumour or infection"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.cervical_spondylosis.legacy01",
       "entity_id": "cond.cervical_spondylosis",
       "trigger_zh": "步態不穩、手部精細動作變差、Hoffmann/Babinski 陽性 → 脊髓病變，需影像與轉介",
       "trigger_en": "Unsteady gait, clumsy hands, positive Hoffmann/Babinski → cervical myelopathy, image and refer",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/000436.htm\",\"https://medlineplus.gov/ency/article/003025.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.cervical_spondylosis.legacy02",
       "entity_id": "cond.cervical_spondylosis",
       "trigger_zh": "進行性上肢無力或萎縮 → 神經根/脊髓受壓",
       "trigger_en": "Progressive arm weakness or wasting → root/cord compression",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000436.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Cervical spondylosis",
+          "section": "Exams and Tests",
+          "quote_en": "Weakness of your shoulders and arms or loss of feeling can be signs of damage to certain nerve roots or to the spinal cord.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "進行性上肢無力或萎縮 → 神經根/脊髓受壓",
+          "supports_flag_en": "Progressive arm weakness or wasting → root/cord compression"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.cervical_spondylosis.legacy03",
       "entity_id": "cond.cervical_spondylosis",
       "trigger_zh": "發燒、體重減輕 → 排除感染或腫瘤",
       "trigger_en": "Fever, weight loss → rule out infection or tumour",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "section": "Causes",
+          "quote_en": "Infection of the spine (osteomyelitis, diskitis, abscess); Cancer that involves the spine.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒、體重減輕 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever, weight loss → rule out infection or tumour"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001289.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Cancer",
+          "section": "Symptoms",
+          "quote_en": "The following symptoms may occur with cancer; Fever; Pain; Weight loss",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒、體重減輕 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever, weight loss → rule out infection or tumour"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.neck_pain_stiff.legacy01",
       "entity_id": "cond.neck_pain_stiff",
       "trigger_zh": "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
       "trigger_en": "Fever with neck stiffness and photophobia → rule out meningitis (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "section": "Symptoms / When to seek emergency care",
+          "quote_en": "Common meningitis symptoms include Fever, Headache, Stiff neck. There are often other symptoms, such as Photophobia.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis (emergency)"
+        },
+        {
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "section": "When to seek emergency care",
+          "quote_en": "Anyone with symptoms of meningitis should see a healthcare provider right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis (emergency)"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.neck_pain_stiff.legacy02",
       "entity_id": "cond.neck_pain_stiff",
       "trigger_zh": "外傷後頸痛 → 排除骨折或韌帶損傷，勿貿然活動",
       "trigger_en": "Neck pain after trauma → rule out fracture or ligament injury, do not force motion",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "section": "Causes",
+          "quote_en": "Accidents or falls can cause severe neck injuries, such as vertebral fractures, whiplash, blood vessel injury, and even paralysis.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後頸痛 → 排除骨折或韌帶損傷，勿貿然活動",
+          "supports_flag_en": "Neck pain after trauma → rule out fracture or ligament injury, do not force motion"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.neck_pain_stiff.legacy03",
       "entity_id": "cond.neck_pain_stiff",
       "trigger_zh": "上肢放射麻木無力 → 考慮神經根病變",
       "trigger_en": "Radiating arm numbness/weakness → consider radiculopathy",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "section": "Considerations",
+          "quote_en": "If neck pain involves compression of your nerves, you may feel numbness, tingling, or weakness in your arm or hand.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "上肢放射麻木無力 → 考慮神經根病變",
+          "supports_flag_en": "Radiating arm numbness/weakness → consider radiculopathy"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.whiplash.legacy01",
       "entity_id": "cond.whiplash",
       "trigger_zh": "中線骨性壓痛、麻木無力、意識改變（加拿大頸椎準則陽性）→ 影像排除骨折/脫位",
       "trigger_en": "Midline bony tenderness, numbness/weakness, altered consciousness (positive Canadian C-spine rule) → image to exclude fracture/dislocation",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003025.htm\",\"https://medlineplus.gov/ency/patientinstructions/000802.htm\",\"https://medlineplus.gov/ency/article/001066.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.whiplash.legacy02",
       "entity_id": "cond.whiplash",
       "trigger_zh": "進行性神經症狀 → 神經外科評估",
       "trigger_en": "Progressive neurological symptoms → neurosurgical assessment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003025.htm\",\"https://medlineplus.gov/ency/patientinstructions/000802.htm\",\"https://medlineplus.gov/ency/article/001066.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.whiplash.legacy03",
       "entity_id": "cond.whiplash",
       "trigger_zh": "劇烈頭痛或吞嚥、發聲異常 → 排除血管損傷",
       "trigger_en": "Severe headache or swallowing/voice change → rule out vascular injury",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003025.htm\",\"https://medlineplus.gov/ency/patientinstructions/000802.htm\",\"https://medlineplus.gov/ency/article/001066.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.frozen_shoulder.legacy01",
       "entity_id": "cond.frozen_shoulder",
       "trigger_zh": "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
       "trigger_en": "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "section": "When should I see a health care provider for shoulder pain?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
+          "supports_flag_en": "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture"
+        },
+        {
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "section": "What are rotator cuff injuries?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
+          "supports_flag_en": "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.frozen_shoulder.legacy02",
       "entity_id": "cond.frozen_shoulder",
       "trigger_zh": "夜間痛合併體重減輕或發燒 → 排除感染或腫瘤",
       "trigger_en": "Night pain with weight loss or fever → rule out infection or tumour",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/000455.htm\",\"https://medlineplus.gov/ency/article/000438.htm\",\"https://medlineplus.gov/ency/article/003171.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.frozen_shoulder.legacy03",
       "entity_id": "cond.frozen_shoulder",
       "trigger_zh": "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩",
       "trigger_en": "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000455.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Frozen shoulder",
+          "section": "Symptoms",
+          "quote_en": "The main symptoms of a frozen shoulder are: Pain; Decreased motion of the shoulder; Stiffness.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩",
+          "supports_flag_en": "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "section": "ROTATOR CUFF TEARS",
+          "quote_en": "Right after the injury, you will likely have weakness of the shoulder and arm. It may be hard to move your shoulder or raise your arm above the shoulder.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩",
+          "supports_flag_en": "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.rotator_cuff.legacy01",
       "entity_id": "cond.rotator_cuff",
       "trigger_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
       "trigger_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "section": "When should I see a health care provider for shoulder pain?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+          "supports_flag_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer"
+        },
+        {
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "section": "What are rotator cuff injuries?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+          "supports_flag_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "section": "ROTATOR CUFF TEARS",
+          "quote_en": "Right after the injury, you will likely have weakness of the shoulder and arm. It may be hard to move your shoulder or raise your arm above the shoulder.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+          "supports_flag_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.rotator_cuff.legacy02",
       "entity_id": "cond.rotator_cuff",
       "trigger_zh": "合併頸部放射痛或手麻 → 排除頸神經根病變",
       "trigger_en": "With radiating neck pain or hand numbness → rule out cervical radiculopathy",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "section": "Symptoms",
+          "quote_en": "If the pain goes down the arm to the elbow and hand, this may indicate a pinched nerve in the neck.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "合併頸部放射痛或手麻 → 排除頸神經根病變",
+          "supports_flag_en": "With radiating neck pain or hand numbness → rule out cervical radiculopathy"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "section": "Considerations",
+          "quote_en": "If neck pain involves compression of your nerves, you may feel numbness, tingling, or weakness in your arm or hand.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "合併頸部放射痛或手麻 → 排除頸神經根病變",
+          "supports_flag_en": "With radiating neck pain or hand numbness → rule out cervical radiculopathy"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.rotator_cuff.legacy03",
       "entity_id": "cond.rotator_cuff",
       "trigger_zh": "夜間痛合併發燒 → 排除感染",
       "trigger_en": "Night pain with fever → rule out infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "section": "Symptoms",
+          "quote_en": "Rotator cuff tendon tears often cause pain at night.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛合併發燒 → 排除感染",
+          "supports_flag_en": "Night pain with fever → rule out infection"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003171.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Shoulder pain",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you have: Shoulder pain with a fever, swelling, or redness.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛合併發燒 → 排除感染",
+          "supports_flag_en": "Night pain with fever → rule out infection"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "section": "Considerations",
+          "quote_en": "An infection in the joint can cause swelling, pain, and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "夜間痛合併發燒 → 排除感染",
+          "supports_flag_en": "Night pain with fever → rule out infection"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.lateral_epicondylitis.legacy01",
       "entity_id": "cond.lateral_epicondylitis",
       "trigger_zh": "外上髁腫脹發熱 → 排除感染或發炎性關節病",
       "trigger_en": "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "section": "Considerations",
+          "quote_en": "Many different types of arthritis may cause swelling, redness, or warmth around the joint.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外上髁腫脹發熱 → 排除感染或發炎性關節病",
+          "supports_flag_en": "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "section": "Considerations",
+          "quote_en": "An infection in the joint can cause swelling, pain, and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外上髁腫脹發熱 → 排除感染或發炎性關節病",
+          "supports_flag_en": "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.lateral_epicondylitis.legacy02",
       "entity_id": "cond.lateral_epicondylitis",
       "trigger_zh": "合併手麻或無力 → 排除橈神經（後骨間神經）夾擠",
       "trigger_en": "With hand numbness or weakness → rule out radial (posterior interosseous) nerve entrapment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003172.htm\",\"https://medlineplus.gov/ency/article/000790.htm\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.lateral_epicondylitis.legacy03",
       "entity_id": "cond.lateral_epicondylitis",
       "trigger_zh": "外傷後劇痛 → 排除撕脫性骨折",
       "trigger_en": "Severe pain after trauma → rule out avulsion fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003172.htm\",\"https://medlineplus.gov/ency/article/000790.htm\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.medial_epicondylitis.legacy01",
       "entity_id": "cond.medial_epicondylitis",
       "trigger_zh": "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
       "trigger_en": "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000789.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Ulnar nerve dysfunction",
+          "section": "Causes / Symptoms",
+          "quote_en": "When the nerve is compressed in the elbow, a problem called cubital tunnel syndrome may result.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
+          "supports_flag_en": "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000789.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Ulnar nerve dysfunction",
+          "section": "Symptoms",
+          "quote_en": "Abnormal sensations in the little finger and part of the ring finger; Weakness, loss of coordination of the fingers.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
+          "supports_flag_en": "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.medial_epicondylitis.legacy02",
       "entity_id": "cond.medial_epicondylitis",
       "trigger_zh": "紅熱腫脹 → 排除感染",
       "trigger_en": "Redness, warmth, swelling → rule out infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "section": "Considerations",
+          "quote_en": "Many different types of arthritis may cause swelling, redness, or warmth around the joint.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infection"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "section": "Considerations",
+          "quote_en": "An infection in the joint can cause swelling, pain, and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infection"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.medial_epicondylitis.legacy03",
       "entity_id": "cond.medial_epicondylitis",
       "trigger_zh": "外傷後劇痛 → 排除撕脫性骨折",
       "trigger_en": "Severe pain after trauma → rule out avulsion fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003172.htm\",\"https://medlineplus.gov/ency/article/000789.htm\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.carpal_tunnel.legacy01",
       "entity_id": "cond.carpal_tunnel",
       "trigger_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
       "trigger_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Carpal tunnel syndrome",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+          "supports_flag_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Carpal tunnel syndrome",
+          "section": "Exams and Tests",
+          "quote_en": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+          "supports_flag_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Carpal tunnel syndrome",
+          "section": "SURGERY",
+          "quote_en": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+          "supports_flag_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.carpal_tunnel.legacy02",
       "entity_id": "cond.carpal_tunnel",
       "trigger_zh": "雙側合併全身症狀 → 排除甲狀腺低下、類風濕、澱粉樣變",
       "trigger_en": "Bilateral with systemic symptoms → rule out hypothyroidism, rheumatoid arthritis, amyloidosis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/genetics/condition/carpal-tunnel-syndrome/",
+          "source_org": "MedlinePlus Genetics",
+          "page_title": "Carpal tunnel syndrome",
+          "section": "Causes",
+          "quote_en": "carpal tunnel syndrome can be a feature of many disorders, including obesity, alcohol use disorder, rheumatoid arthritis, type 1 diabetes, type 2 diabetes, hypothyroidism",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "雙側合併全身症狀 → 排除甲狀腺低下、類風濕、澱粉樣變",
+          "supports_flag_en": "Bilateral with systemic symptoms → rule out hypothyroidism, rheumatoid arthritis, amyloidosis"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.carpal_tunnel.legacy03",
       "entity_id": "cond.carpal_tunnel",
       "trigger_zh": "外傷後急性腫脹麻木 → 排除急性腕隧道症候群（急症）",
       "trigger_en": "Acute swelling and numbness after trauma → rule out acute carpal tunnel syndrome (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/000433.htm\",\"https://medlineplus.gov/genetics/condition/carpal-tunnel-syndrome/\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.de_quervain.legacy01",
       "entity_id": "cond.de_quervain",
       "trigger_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
       "trigger_en": "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "section": "Symptoms",
+          "quote_en": "Fever, swelling, and redness may indicate an infection.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "section": "Causes / Treatment",
+          "quote_en": "An infected cut to the hands or wrists that causes infectious tenosynovitis may be an emergency requiring surgery.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.de_quervain.legacy02",
       "entity_id": "cond.de_quervain",
       "trigger_zh": "合併麻木 → 排除橈神經淺支刺激",
       "trigger_en": "With numbness → rule out superficial radial nerve irritation",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/001242.htm\",\"https://medlineplus.gov/ency/article/000790.htm\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.de_quervain.legacy03",
       "entity_id": "cond.de_quervain",
       "trigger_zh": "外傷後劇痛 → 排除橈骨莖突骨折",
       "trigger_en": "Severe pain after trauma → rule out radial styloid fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/001242.htm\",\"https://medlineplus.gov/ency/article/000790.htm\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.trigger_finger.legacy01",
       "entity_id": "cond.trigger_finger",
       "trigger_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
       "trigger_en": "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "section": "Symptoms",
+          "quote_en": "Fever, swelling, and redness may indicate an infection.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "section": "Causes / Treatment",
+          "quote_en": "An infected cut to the hands or wrists that causes infectious tenosynovitis may be an emergency requiring surgery.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.trigger_finger.legacy02",
       "entity_id": "cond.trigger_finger",
       "trigger_zh": "外傷後鎖住 → 排除肌腱斷裂或異物",
       "trigger_en": "Locking after trauma → rule out tendon rupture or foreign body",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/patientinstructions/000565.htm\",\"https://medlineplus.gov/ency/article/001242.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.trigger_finger.legacy03",
       "entity_id": "cond.trigger_finger",
       "trigger_zh": "多指同時受累 → 考慮糖尿病、類風濕等全身病因",
       "trigger_en": "Multiple fingers involved → consider systemic causes such as diabetes or rheumatoid arthritis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000565.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Trigger finger",
+          "section": "About Trigger Finger",
+          "quote_en": "It is more common in people who: are over 45 years old; are female; have diabetes, rheumatoid arthritis, or gout",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "多指同時受累 → 考慮糖尿病、類風濕等全身病因",
+          "supports_flag_en": "Multiple fingers involved → consider systemic causes such as diabetes or rheumatoid arthritis"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.knee_osteoarthritis.legacy01",
       "entity_id": "cond.knee_osteoarthritis",
       "trigger_zh": "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
       "trigger_en": "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
+          "supports_flag_en": "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003261.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Joint pain",
+          "section": "Treatment",
+          "quote_en": "Antibiotics and often surgical drainage, in case of infection (usually requires hospitalization).",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
+          "supports_flag_en": "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.knee_osteoarthritis.legacy02",
       "entity_id": "cond.knee_osteoarthritis",
       "trigger_zh": "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
       "trigger_en": "Locking or gross instability after trauma → rule out meniscal or ligament injury",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003187.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Knee pain",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if; Your knee buckles, clicks, or locks.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
+          "supports_flag_en": "Locking or gross instability after trauma → rule out meniscal or ligament injury"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007361.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Knee MRI scan",
+          "section": "Why the Test is Performed",
+          "quote_en": "Signs of damage to the knee muscle, meniscus, cartilage, or ligaments; Instability of the knee.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
+          "supports_flag_en": "Locking or gross instability after trauma → rule out meniscal or ligament injury"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.knee_osteoarthritis.legacy03",
       "entity_id": "cond.knee_osteoarthritis",
       "trigger_zh": "晨僵超過一小時、多關節對稱 → 排除類風濕性關節炎",
       "trigger_en": "Morning stiffness over an hour, symmetric polyarthritis → rule out rheumatoid arthritis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://magazine.medlineplus.gov/article/rheumatoid-arthritis-understanding-a-difficult-joint-disease",
+          "source_org": "NIH MedlinePlus Magazine",
+          "page_title": "Rheumatoid arthritis: Understanding a difficult joint disease",
+          "section": "Symptoms",
+          "quote_en": "Symmetric swollen joints; Pain and stiffness that lasts for more than 30 minutes in the morning or after a long rest.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "晨僵超過一小時、多關節對稱 → 排除類風濕性關節炎",
+          "supports_flag_en": "Morning stiffness over an hour, symmetric polyarthritis → rule out rheumatoid arthritis"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.patellofemoral_pain.legacy01",
       "entity_id": "cond.patellofemoral_pain",
       "trigger_zh": "關節腫脹積液 → 排除關節內損傷（半月板、軟骨）",
       "trigger_en": "Joint effusion → rule out intra-articular injury (meniscus, cartilage)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007361.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Knee MRI scan",
+          "section": "Why the Test is Performed",
+          "quote_en": "Signs of damage to the knee muscle, meniscus, cartilage, or ligaments; Instability of the knee.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "關節腫脹積液 → 排除關節內損傷（半月板、軟骨）",
+          "supports_flag_en": "Joint effusion → rule out intra-articular injury (meniscus, cartilage)"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.patellofemoral_pain.legacy02",
       "entity_id": "cond.patellofemoral_pain",
       "trigger_zh": "鎖住或打軟 → 排除半月板或韌帶問題",
       "trigger_en": "Locking or giving way → rule out meniscal or ligament problem",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003187.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Knee pain",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if; Your knee buckles, clicks, or locks.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "鎖住或打軟 → 排除半月板或韌帶問題",
+          "supports_flag_en": "Locking or giving way → rule out meniscal or ligament problem"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007361.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Knee MRI scan",
+          "section": "Why the Test is Performed",
+          "quote_en": "Signs of damage to the knee muscle, meniscus, cartilage, or ligaments; Instability of the knee.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "鎖住或打軟 → 排除半月板或韌帶問題",
+          "supports_flag_en": "Locking or giving way → rule out meniscal or ligament problem"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.patellofemoral_pain.legacy03",
       "entity_id": "cond.patellofemoral_pain",
       "trigger_zh": "紅熱發燒 → 排除感染性關節炎",
       "trigger_en": "Red, hot joint with fever → rule out septic arthritis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱發燒 → 排除感染性關節炎",
+          "supports_flag_en": "Red, hot joint with fever → rule out septic arthritis"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.meniscus_injury.legacy01",
       "entity_id": "cond.meniscus_injury",
       "trigger_zh": "真正鎖住無法伸直 → 桶柄狀撕裂，需轉介評估",
       "trigger_en": "True locking with inability to extend → bucket-handle tear, refer for assessment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/patientinstructions/000684.htm\",\"https://medlineplus.gov/ency/patientinstructions/000681.htm\",\"https://medlineplus.gov/ency/article/007361.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.meniscus_injury.legacy02",
       "entity_id": "cond.meniscus_injury",
       "trigger_zh": "外傷後大量積血（數小時內腫脹）→ 排除韌帶斷裂或骨軟骨骨折",
       "trigger_en": "Large haemarthrosis (swelling within hours) after trauma → rule out ligament rupture or osteochondral fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/patientinstructions/000684.htm\",\"https://medlineplus.gov/ency/patientinstructions/000681.htm\",\"https://medlineplus.gov/ency/article/007361.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.meniscus_injury.legacy03",
       "entity_id": "cond.meniscus_injury",
       "trigger_zh": "紅熱發燒 → 排除感染",
       "trigger_en": "Red, hot joint with fever → rule out infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱發燒 → 排除感染",
+          "supports_flag_en": "Red, hot joint with fever → rule out infection"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.ankle_sprain.legacy01",
       "entity_id": "cond.ankle_sprain",
       "trigger_zh": "受傷後無法負重四步且骨性壓痛（Ottawa 踝準則陽性）→ 需 X 光排除骨折",
       "trigger_en": "Unable to take four steps and bony tenderness (positive Ottawa ankle rules) → X-ray to exclude fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/patientinstructions/000574.htm\",\"https://medlineplus.gov/ankleinjuriesanddisorders.html\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.ankle_sprain.legacy02",
       "entity_id": "cond.ankle_sprain",
       "trigger_zh": "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
       "trigger_en": "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Ankle sprain - aftercare",
+          "section": "More about Your Injury",
+          "quote_en": "Some ankle sprains may become chronic (long-lasting). If this happens to you, your ankle may continue to be: painful and swollen; weak or giving way easily",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
+          "supports_flag_en": "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Ankle sprain - aftercare",
+          "section": "More about Your Injury",
+          "quote_en": "Some ankle sprains may become chronic (long-lasting). If this happens to you, your ankle may continue to be: painful and swollen; weak or giving way easily",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
+          "supports_flag_en": "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.ankle_sprain.legacy03",
       "entity_id": "cond.ankle_sprain",
       "trigger_zh": "近端腓骨壓痛 → 排除 Maisonneuve 骨折",
       "trigger_en": "Proximal fibular tenderness → rule out Maisonneuve fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/patientinstructions/000574.htm\",\"https://medlineplus.gov/ankleinjuriesanddisorders.html\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.plantar_fasciitis.legacy01",
       "entity_id": "cond.plantar_fasciitis",
       "trigger_zh": "夜間痛或休息痛、外傷後無法負重 → 排除跟骨應力性骨折",
       "trigger_en": "Night or rest pain, or inability to bear weight after trauma → rule out calcaneal stress fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/000792.htm\",\"https://www.niams.nih.gov/health-topics/ankylosing-spondylitis\",\"https://medlineplus.gov/fractures.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.plantar_fasciitis.legacy02",
       "entity_id": "cond.plantar_fasciitis",
       "trigger_zh": "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
       "trigger_en": "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/reactive-arthritis",
+          "source_org": "NIAMS",
+          "page_title": "Reactive Arthritis",
+          "section": "Symptoms",
+          "quote_en": "Pain in the heel or foot pain is a sign of enthesitis.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
+          "supports_flag_en": "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)"
+        },
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/ankylosing-spondylitis",
+          "source_org": "NIAMS",
+          "page_title": "Ankylosing Spondylitis",
+          "section": "Overview / Symptoms",
+          "quote_en": "pain, stiffness, and inflammation in other joints, such as the ribs, shoulders, knees, or feet",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
+          "supports_flag_en": "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.plantar_fasciitis.legacy03",
       "entity_id": "cond.plantar_fasciitis",
       "trigger_zh": "足底麻木或灼痛 → 考慮神經夾擠而非筋膜炎",
       "trigger_en": "Plantar numbness or burning → consider nerve entrapment rather than fasciitis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000792.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Tarsal tunnel syndrome",
+          "section": "Symptoms",
+          "quote_en": "Sensation changes in the bottom of the foot and toes, including burning sensation, numbness, tingling, or other abnormal sensation.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "足底麻木或灼痛 → 考慮神經夾擠而非筋膜炎",
+          "supports_flag_en": "Plantar numbness or burning → consider nerve entrapment rather than fasciitis"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.achilles_tendinopathy.legacy01",
       "entity_id": "cond.achilles_tendinopathy",
       "trigger_zh": "突發後跟「被踢」感、無法墊腳、Thompson 測試陽性 → 跟腱斷裂，需轉介",
       "trigger_en": "Sudden 'kicked in the heel' sensation, inability to push off, positive Thompson test → Achilles rupture, refer",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/patientinstructions/000546.htm\",\"https://medlineplus.gov/ency/patientinstructions/000836.htm\",\"https://medlineplus.gov/druginfo/meds/a697040.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.achilles_tendinopathy.legacy02",
       "entity_id": "cond.achilles_tendinopathy",
       "trigger_zh": "紅熱腫脹合併發燒 → 排除感染",
       "trigger_en": "Redness, warmth and swelling with fever → rule out infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "section": "Symptoms",
+          "quote_en": "Fever, swelling, and redness may indicate an infection.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱腫脹合併發燒 → 排除感染",
+          "supports_flag_en": "Redness, warmth and swelling with fever → rule out infection"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.achilles_tendinopathy.legacy03",
       "entity_id": "cond.achilles_tendinopathy",
       "trigger_zh": "使用氟喹諾酮類抗生素 → 肌腱斷裂風險升高，須警覺",
       "trigger_en": "On fluoroquinolone antibiotics → heightened rupture risk, stay alert",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/druginfo/meds/a697040.html",
+          "source_org": "MedlinePlus Drug Information",
+          "page_title": "Levofloxacin",
+          "section": "IMPORTANT WARNING",
+          "quote_en": "taking levofloxacin increases the risk that you will develop tendinitis (swelling of a fibrous tissue that connects a bone to a muscle) or have a tendon rupture",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "使用氟喹諾酮類抗生素 → 肌腱斷裂風險升高，須警覺",
+          "supports_flag_en": "On fluoroquinolone antibiotics → heightened rupture risk, stay alert"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.hip_osteoarthritis.legacy01",
       "entity_id": "cond.hip_osteoarthritis",
       "trigger_zh": "休息痛、夜間痛、體重減輕 → 排除腫瘤或感染",
       "trigger_en": "Rest or night pain with weight loss → rule out tumour or infection",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/003179.htm\",\"https://medlineplus.gov/ency/article/007260.htm\",\"https://medlineplus.gov/ency/article/003261.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.hip_osteoarthritis.legacy02",
       "entity_id": "cond.hip_osteoarthritis",
       "trigger_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
       "trigger_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003179.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Hip pain",
+          "section": "Causes / When to Contact a Medical Professional",
+          "quote_en": "Hip fractures -- can cause sudden and acute hip pain; Osteonecrosis of the hip (necrosis from loss of blood supply to the bone)",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+          "supports_flag_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/007260.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Osteonecrosis",
+          "section": "Causes",
+          "quote_en": "The following are possible causes: using oral or intravenous steroids; excessive alcohol use",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+          "supports_flag_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/003179.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Hip pain",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Hip fractures -- can cause sudden and acute hip pain; Osteonecrosis of the hip (necrosis from loss of blood supply to the bone)",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+          "supports_flag_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.hip_osteoarthritis.legacy03",
       "entity_id": "cond.hip_osteoarthritis",
       "trigger_zh": "紅熱發燒 → 排除化膿性關節炎",
       "trigger_en": "Red, hot joint with fever → rule out septic arthritis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "紅熱發燒 → 排除化膿性關節炎",
+          "supports_flag_en": "Red, hot joint with fever → rule out septic arthritis"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.piriformis_syndrome.legacy01",
       "entity_id": "cond.piriformis_syndrome",
       "trigger_zh": "腰痛合併皮節分布麻木無力 → 優先排除腰椎神經根病變",
       "trigger_en": "Back pain with dermatomal numbness/weakness → first rule out lumbar radiculopathy",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "section": "Mechanical/Structural Problems",
+          "quote_en": "Herniated or ruptured discs: an event causing a disc to compress and irritate nearby nerves.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "腰痛合併皮節分布麻木無力 → 優先排除腰椎神經根病變",
+          "supports_flag_en": "Back pain with dermatomal numbness/weakness → first rule out lumbar radiculopathy"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.piriformis_syndrome.legacy02",
       "entity_id": "cond.piriformis_syndrome",
       "trigger_zh": "馬尾徵象 → 急診",
       "trigger_en": "Cauda equina signs → emergency",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "馬尾徵象 → 急診",
+          "supports_flag_en": "Cauda equina signs → emergency"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.piriformis_syndrome.legacy03",
       "entity_id": "cond.piriformis_syndrome",
       "trigger_zh": "夜間痛、體重減輕 → 排除骨盆腫瘤",
       "trigger_en": "Night pain, weight loss → rule out pelvic tumour",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/000686.htm\",\"https://www.niams.nih.gov/health-topics/back-pain\",\"https://medlineplus.gov/ency/article/003261.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.fibromyalgia.legacy01",
       "entity_id": "cond.fibromyalgia",
       "trigger_zh": "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
       "trigger_en": "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia/diagnosis-treatment-and-steps-to-take",
+          "source_org": "NIAMS",
+          "page_title": "Fibromyalgia: Diagnosis, Treatment, and Steps to Take",
+          "section": "Diagnosis of Fibromyalgia",
+          "quote_en": "Doctors typically try to rule out other causes for your symptoms.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
+          "supports_flag_en": "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease"
+        },
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia/diagnosis-treatment-and-steps-to-take",
+          "source_org": "NIAMS",
+          "page_title": "Fibromyalgia: Diagnosis, Treatment, and Steps to Take",
+          "section": "Diagnosis of Fibromyalgia",
+          "quote_en": "Your doctor will examine your joints to see if you may have another condition, such as rheumatoid arthritis or systemic lupus erythematosus.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
+          "supports_flag_en": "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.fibromyalgia.legacy02",
       "entity_id": "cond.fibromyalgia",
       "trigger_zh": "近端無力、肌酵素升高 → 排除肌炎",
       "trigger_en": "Proximal weakness with raised muscle enzymes → rule out myositis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000428.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Polymyositis - adult",
+          "section": "Symptoms / Exams and Tests",
+          "quote_en": "Muscle weakness in the shoulders and hips; Tests may include; serum CPK (creatine phosphokinase)",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "近端無力、肌酵素升高 → 排除肌炎",
+          "supports_flag_en": "Proximal weakness with raised muscle enzymes → rule out myositis"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.fibromyalgia.legacy03",
       "entity_id": "cond.fibromyalgia",
       "trigger_zh": "局部固定痛而非廣泛痛 → 重新考慮結構性病因",
       "trigger_en": "Fixed focal pain rather than widespread → reconsider a structural cause",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://www.niams.nih.gov/health-topics/fibromyalgia\",\"https://www.niams.nih.gov/health-topics/fibromyalgia/diagnosis-treatment-and-steps-to-take\",\"https://medlineplus.gov/ency/article/000428.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.myofascial_pain.legacy01",
       "entity_id": "cond.myofascial_pain",
       "trigger_zh": "合併全身廣泛壓痛、疲勞、睡眠障礙 → 考慮纖維肌痛而非局部肌筋膜痛",
       "trigger_en": "Widespread tenderness, fatigue and sleep disturbance → consider fibromyalgia rather than localised myofascial pain",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia",
+          "source_org": "NIAMS",
+          "page_title": "Fibromyalgia",
+          "section": "Overview",
+          "quote_en": "a chronic (long-lasting) disorder that causes pain and tenderness throughout the body, as well as fatigue and trouble sleeping",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "合併全身廣泛壓痛、疲勞、睡眠障礙 → 考慮纖維肌痛而非局部肌筋膜痛",
+          "supports_flag_en": "Widespread tenderness, fatigue and sleep disturbance → consider fibromyalgia rather than localised myofascial pain"
+        }
+      ],
+      "tier": "routine_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.myofascial_pain.legacy02",
       "entity_id": "cond.myofascial_pain",
       "trigger_zh": "發燒、體重減輕 → 排除感染或腫瘤",
       "trigger_en": "Fever, weight loss → rule out infection or tumour",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://www.niams.nih.gov/health-topics/fibromyalgia\",\"https://www.niams.nih.gov/health-topics/back-pain\",\"https://medlineplus.gov/ency/article/002267.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.myofascial_pain.legacy03",
       "entity_id": "cond.myofascial_pain",
       "trigger_zh": "進行性神經症狀 → 排除神經根或脊髓病變",
       "trigger_en": "Progressive neurological symptoms → rule out radiculopathy or myelopathy",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://www.niams.nih.gov/health-topics/fibromyalgia\",\"https://www.niams.nih.gov/health-topics/back-pain\",\"https://medlineplus.gov/ency/article/002267.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.tmd.legacy01",
       "entity_id": "cond.tmd",
       "trigger_zh": "顎關節鎖死無法開口/閉口 → 需轉介",
       "trigger_en": "Jaw locked open or closed → refer",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "section": "Symptoms",
+          "quote_en": "Inability to close the mouth; Locked jaw or jaw that protrudes forward.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "顎關節鎖死無法開口/閉口 → 需轉介",
+          "supports_flag_en": "Jaw locked open or closed → refer"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "section": "First Aid",
+          "quote_en": "A person with a broken or dislocated jaw needs medical attention right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "顎關節鎖死無法開口/閉口 → 需轉介",
+          "supports_flag_en": "Jaw locked open or closed → refer"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.tmd.legacy02",
       "entity_id": "cond.tmd",
       "trigger_zh": "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
       "trigger_en": "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "section": "Causes / Symptoms",
+          "quote_en": "The most common cause of a broken or dislocated jaw is injury to the face.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
+          "supports_flag_en": "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "section": "First Aid",
+          "quote_en": "The most common cause of a broken or dislocated jaw is injury to the face.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
+          "supports_flag_en": "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.tmd.legacy03",
       "entity_id": "cond.tmd",
       "trigger_zh": "進行性面部麻木無力 → 排除神經或腫瘤病因",
       "trigger_en": "Progressive facial numbness/weakness → rule out neurological or tumour cause",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://www.nidcr.nih.gov/health-info/tmd\",\"https://medlineplus.gov/ency/article/000019.htm\",\"https://medlineplus.gov/jawinjuriesanddisorders.html\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.tension_headache.legacy01",
       "entity_id": "cond.tension_headache",
       "trigger_zh": "霹靂性（瞬間達最強）頭痛 → 排除蛛網膜下腔出血（急症）",
       "trigger_en": "Thunderclap (instant maximal) headache → rule out subarachnoid haemorrhage (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000701.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Subarachnoid hemorrhage",
+          "section": "Symptoms",
+          "quote_en": "The main symptom is a severe headache that starts suddenly (often called thunderclap headache).",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "霹靂性（瞬間達最強）頭痛 → 排除蛛網膜下腔出血（急症）",
+          "supports_flag_en": "Thunderclap (instant maximal) headache → rule out subarachnoid haemorrhage (emergency)"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.tension_headache.legacy02",
       "entity_id": "cond.tension_headache",
       "trigger_zh": "發燒合併頸僵、畏光 → 排除腦膜炎",
       "trigger_en": "Fever with neck stiffness and photophobia → rule out meningitis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "section": "Symptoms / When to seek emergency care",
+          "quote_en": "Common meningitis symptoms include Fever, Headache, Stiff neck. There are often other symptoms, such as Photophobia.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒合併頸僵、畏光 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis"
+        },
+        {
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "section": "When to seek emergency care",
+          "quote_en": "Anyone with symptoms of meningitis should see a healthcare provider right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒合併頸僵、畏光 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.tension_headache.legacy03",
       "entity_id": "cond.tension_headache",
       "trigger_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
       "trigger_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "section": "Other causes",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.migraine.legacy01",
       "entity_id": "cond.migraine",
       "trigger_zh": "霹靂性頭痛 → 排除蛛網膜下腔出血（急症）",
       "trigger_en": "Thunderclap headache → rule out subarachnoid haemorrhage (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000701.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Subarachnoid hemorrhage",
+          "section": "Symptoms",
+          "quote_en": "The main symptom is a severe headache that starts suddenly (often called thunderclap headache).",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "霹靂性頭痛 → 排除蛛網膜下腔出血（急症）",
+          "supports_flag_en": "Thunderclap headache → rule out subarachnoid haemorrhage (emergency)"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.migraine.legacy02",
       "entity_id": "cond.migraine",
       "trigger_zh": "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
       "trigger_en": "Marked change in pattern, progressive worsening, persistent deficit → image",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
+          "supports_flag_en": "Marked change in pattern, progressive worsening, persistent deficit → image"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
+          "supports_flag_en": "Marked change in pattern, progressive worsening, persistent deficit → image"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.migraine.legacy03",
       "entity_id": "cond.migraine",
       "trigger_zh": "發燒合併頸僵 → 排除腦膜炎",
       "trigger_en": "Fever with neck stiffness → rule out meningitis",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "section": "Symptoms / When to seek emergency care",
+          "quote_en": "Common meningitis symptoms include Fever, Headache, Stiff neck. There are often other symptoms, such as Photophobia.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒合併頸僵 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness → rule out meningitis"
+        },
+        {
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "section": "When to seek emergency care",
+          "quote_en": "Anyone with symptoms of meningitis should see a healthcare provider right away.",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "發燒合併頸僵 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness → rule out meningitis"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.migraine.legacy04",
       "entity_id": "cond.migraine",
       "trigger_zh": "先兆持續逾一小時或每次同側 → 需進一步評估",
       "trigger_en": "Aura lasting over an hour or always the same side → needs further assessment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://www.ninds.nih.gov/Disorders/All-Disorders/Migraine-Information-Page\",\"https://medlineplus.gov/ency/patientinstructions/000424.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.cluster_headache.legacy01",
       "entity_id": "cond.cluster_headache",
       "trigger_zh": "首次發作或型態改變 → 影像排除次發性病因（如海綿竇病灶）",
       "trigger_en": "First-ever attack or change in pattern → image to exclude a secondary cause (e.g. cavernous sinus lesion)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "not_found",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
       "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "notes": "Whitelisted provenance search RAN (Task C, accepted 2026-08-08) and found no whole-claim official support. Pages checked: [\"https://medlineplus.gov/ency/article/000786.htm\",\"https://medlineplus.gov/ency/patientinstructions/000424.htm\"]. Human provenance backlog — do not delete, do not invent.",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.cluster_headache.legacy02",
       "entity_id": "cond.cluster_headache",
       "trigger_zh": "霹靂性頭痛 → 排除出血（急症）",
       "trigger_en": "Thunderclap headache → rule out haemorrhage (emergency)",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000701.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Subarachnoid hemorrhage",
+          "section": "Symptoms",
+          "quote_en": "The main symptom is a severe headache that starts suddenly (often called thunderclap headache).",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "霹靂性頭痛 → 排除出血（急症）",
+          "supports_flag_en": "Thunderclap headache → rule out haemorrhage (emergency)"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.cluster_headache.legacy03",
       "entity_id": "cond.cluster_headache",
       "trigger_zh": "持續神經缺損 → 進一步評估",
       "trigger_en": "Persistent neurological deficit → further assessment",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch2",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000786.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Cluster headache",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Call 911 or the local emergency number if; You have speech, vision, or movement problems",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "持續神經缺損 → 進一步評估",
+          "supports_flag_en": "Persistent neurological deficit → further assessment"
+        }
+      ],
+      "tier": "emergency_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy01",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "胸、下顎、頸部或手臂疼痛",
       "trigger_en": "Pain in the chest, jaw, neck, or arm",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "pain in your chest, jaw, neck, or arm",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "胸、下顎、頸部或手臂疼痛",
+          "supports_flag_en": "Pain in the chest, jaw, neck, or arm"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy02",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "吞嚥困難或吞嚥疼痛",
       "trigger_en": "Difficulty or pain with swallowing",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "difficulty swallowing or painful swallowing",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "吞嚥困難或吞嚥疼痛",
+          "supports_flag_en": "Difficulty or pain with swallowing"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy03",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "頻繁嘔吐或嘔血",
       "trigger_en": "Frequent vomiting or bloody vomit",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "frequent vomiting; bloody vomit",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "頻繁嘔吐或嘔血",
+          "supports_flag_en": "Frequent vomiting or bloody vomit"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy04",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "嚴重且持續的腹痛",
       "trigger_en": "Severe and constant abdominal pain",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "severe and constant pain in your abdomen",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "嚴重且持續的腹痛",
+          "supports_flag_en": "Severe and constant abdominal pain"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy05",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "呼吸困難",
       "trigger_en": "Shortness of breath",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "shortness of breath",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "呼吸困難",
+          "supports_flag_en": "Shortness of breath"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy06",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "非刻意體重減輕或食慾喪失",
       "trigger_en": "Unintentional weight loss or loss of appetite",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "weight loss without trying or loss of appetite",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "非刻意體重減輕或食慾喪失",
+          "supports_flag_en": "Unintentional weight loss or loss of appetite"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy07",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "眼睛或皮膚發黃",
       "trigger_en": "Yellowing of the eyes or skin",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "yellowing of your eyes or skin",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "眼睛或皮膚發黃",
+          "supports_flag_en": "Yellowing of the eyes or skin"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     },
     {
       "id": "rf.functional_dyspepsia.legacy08",
       "entity_id": "cond.functional_dyspepsia",
       "trigger_zh": "黑色柏油樣糞便",
       "trigger_en": "Black, tarry stools",
-      "provenance_status": "pending_provenance",
+      "provenance_status": "supported",
       "origin": "legacy_card_migration_batch123",
       "source_batch": "batch3",
       "migrated_from": "data/imports/official/b123_existing_red_flags_export.json",
       "review_status": "draft",
       "authored_by": "migration:claude",
-      "evidence": [],
-      "notes": "Legacy clinical flag from the card; whitelisted provenance search has NOT yet been run (pending_provenance ≠ not_found). Queue for a Task-C-style pass before any supported/not_found verdict."
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "black, tarlike stools",
+          "retrieved_at": "2026-08-08",
+          "supports_flag_zh": "黑色柏油樣糞便",
+          "supports_flag_en": "Black, tarry stools"
+        }
+      ],
+      "tier": "urgent_referral",
+      "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
+      "provenance_review": "task_c_accepted_2026-08-08"
     }
   ]
 }

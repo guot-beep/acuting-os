@@ -1,0 +1,2032 @@
+{
+  "dataset": "b123_task_c_provenance_supplement",
+  "purpose": "Task C provenance supplement for the 95 frozen Batch 1–3 legacy red flags. No red flag wording was rewritten, added, or deleted. Each supported evidence item carries supports_red_flag_id; insufficient whole-claim support is recorded as not_found with pages checked.",
+  "input_manifest": "data/imports/official/b123_task_c_manifest.json",
+  "input_manifest_commit": "1419914",
+  "wiring_baseline_commit": "8f897ce",
+  "retrieved_at": "2026-08-08",
+  "extractor": "chatgpt-gpt-5.6-sol",
+  "rules": {
+    "allowed_red_flag_sources": [
+      "MedlinePlus",
+      "NINDS",
+      "NIDDK",
+      "NHLBI",
+      "NIAMS",
+      "NICHD",
+      "NIDCD",
+      "NIDCR",
+      "CDC",
+      "FDA/DailyMed for medication-related warnings"
+    ],
+    "verbatim_quote_max_words": 40,
+    "whole_claim_support_required": true,
+    "legacy_wording_frozen": true,
+    "not_found_means": "whitelisted search performed but no adequate direct whole-claim support found"
+  },
+  "stats": {
+    "conditions": 30,
+    "flags_total": 95,
+    "supported_flags": 68,
+    "not_found_flags": 27,
+    "evidence_entries": 110,
+    "batch1_flags": 1,
+    "batch2_flags": 86,
+    "batch3_flags": 8
+  },
+  "records": [
+    {
+      "condition_id": "cond.trigeminal_neuralgia",
+      "source_batch": "batch1",
+      "red_flag_sources": [
+        {
+          "source_org": "NIDCR",
+          "page_title": "Trigeminal Neuralgia",
+          "source_url": "https://www.nidcr.nih.gov/health-info/trigeminal-neuralgia",
+          "section": "Diagnosis",
+          "quote_en": "If no dental cause can be found, the dentist may suggest you visit your primary care doctor.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.trigeminal_neuralgia.legacy01",
+          "supports_flag_zh": "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估",
+          "supports_flag_en": "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Face pain",
+          "source_url": "https://medlineplus.gov/ency/article/003027.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Pain is persistent, unexplained, or accompanied by other unexplained symptoms. Contact your primary provider.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.trigeminal_neuralgia.legacy01",
+          "supports_flag_zh": "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估",
+          "supports_flag_en": "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.chronic_low_back_pain",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy01",
+          "supports_flag_zh": "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
+          "supports_flag_en": "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy01",
+          "supports_flag_zh": "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
+          "supports_flag_en": "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy02",
+          "supports_flag_zh": "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
+          "supports_flag_en": "Night pain, weight loss, cancer history → rule out metastasis or tumour"
+        },
+        {
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "section": "Other Medical Conditions",
+          "quote_en": "Tumors, in rare cases, that develop on the spine or other areas of the back.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy02",
+          "supports_flag_zh": "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
+          "supports_flag_en": "Night pain, weight loss, cancer history → rule out metastasis or tumour"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Osteomyelitis",
+          "source_url": "https://medlineplus.gov/ency/article/000437.htm",
+          "section": "Causes",
+          "quote_en": "Use of injected illicit drugs; Weakened immune system.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy03",
+          "supports_flag_zh": "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
+          "supports_flag_en": "Fever, IV drug use, immunosuppression → rule out spinal infection"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Osteomyelitis",
+          "source_url": "https://medlineplus.gov/ency/article/000437.htm",
+          "section": "Symptoms",
+          "quote_en": "Bone pain; Fever and chills; Local swelling, redness, and warmth.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy03",
+          "supports_flag_zh": "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
+          "supports_flag_en": "Fever, IV drug use, immunosuppression → rule out spinal infection"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy04",
+          "supports_flag_zh": "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折",
+          "supports_flag_en": "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture"
+        },
+        {
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "section": "Other Medical Conditions",
+          "quote_en": "Osteoporosis, which can lead to painful fractures of the vertebrae.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.chronic_low_back_pain.legacy04",
+          "supports_flag_zh": "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折",
+          "supports_flag_en": "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.acute_lumbar_sprain",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "section": "Mechanical/Structural Problems",
+          "quote_en": "Herniated or ruptured discs: an event causing a disc to compress and irritate nearby nerves.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.acute_lumbar_sprain.legacy01",
+          "supports_flag_zh": "下肢放射痛或麻木無力 → 考慮神經根受壓而非單純拉傷",
+          "supports_flag_en": "Radiating leg pain or numbness/weakness → consider nerve root involvement, not simple strain"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.acute_lumbar_sprain.legacy02",
+          "supports_flag_zh": "馬尾徵象（鞍麻、失禁）→ 急診",
+          "supports_flag_en": "Cauda equina signs (saddle numbness, incontinence) → emergency"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.acute_lumbar_sprain.legacy02",
+          "supports_flag_zh": "馬尾徵象（鞍麻、失禁）→ 急診",
+          "supports_flag_en": "Cauda equina signs (saddle numbness, incontinence) → emergency"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.acute_lumbar_sprain.legacy03",
+          "text_zh": "外傷後劇痛無法負重 → 排除骨折",
+          "text_en": "Severe pain unable to bear weight after trauma → rule out fracture",
+          "pages_checked": [
+            "https://www.niams.nih.gov/health-topics/back-pain",
+            "https://medlineplus.gov/ency/article/007493.htm",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "Official pages support trauma/fracture red flags, but not the frozen combination of severe post-traumatic lumbar pain plus inability to bear weight as a fracture rule."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.lumbar_disc_herniation",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.lumbar_disc_herniation.legacy01",
+          "supports_flag_zh": "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
+          "supports_flag_en": "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.lumbar_disc_herniation.legacy01",
+          "supports_flag_zh": "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
+          "supports_flag_en": "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.lumbar_disc_herniation.legacy02",
+          "supports_flag_zh": "進行性足下垂或明顯肌力下降 → 神經外科評估",
+          "supports_flag_en": "Progressive foot drop or marked weakness → neurosurgical assessment"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.lumbar_disc_herniation.legacy03",
+          "supports_flag_zh": "發燒或癌症病史 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever or cancer history → rule out infection or tumour"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Could your pain be caused by cancer or infection in your spine?",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.lumbar_disc_herniation.legacy03",
+          "supports_flag_zh": "發燒或癌症病史 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever or cancer history → rule out infection or tumour"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.sciatica",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.sciatica.legacy01",
+          "supports_flag_zh": "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
+          "supports_flag_en": "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Loss of normal bowel and bladder control; Numbness; Weakness, paralysis.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.sciatica.legacy01",
+          "supports_flag_zh": "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
+          "supports_flag_en": "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "MRI and low back pain",
+          "source_url": "https://medlineplus.gov/ency/article/007493.htm",
+          "section": "DANGER SIGNS AND BACK PAIN",
+          "quote_en": "Fever; History of cancer; Recent serious fall or injury; Leg that is numb or weak and it is getting worse.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.sciatica.legacy02",
+          "supports_flag_zh": "進行性足下垂或明顯肌力下降 → 需影像與神經外科評估",
+          "supports_flag_en": "Progressive foot drop or marked motor loss → needs imaging and neurosurgical assessment"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Sciatica",
+          "source_url": "https://medlineplus.gov/ency/article/000686.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Unexplained fever with back pain; Weakness or numbness in your buttocks, thigh, leg, or pelvis; Loss of control of urine or stool.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.sciatica.legacy03",
+          "supports_flag_zh": "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染",
+          "supports_flag_en": "Night pain with weight loss, fever, or cancer history → rule out tumour or infection"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Sciatica",
+          "source_url": "https://medlineplus.gov/ency/article/000686.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Pain that is worse when you lie down, or awakens you at night; You have been losing weight unintentionally.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.sciatica.legacy03",
+          "supports_flag_zh": "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染",
+          "supports_flag_en": "Night pain with weight loss, fever, or cancer history → rule out tumour or infection"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.cervical_spondylosis",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Cervical spondylosis",
+          "source_url": "https://medlineplus.gov/ency/article/000436.htm",
+          "section": "Exams and Tests",
+          "quote_en": "Weakness of your shoulders and arms or loss of feeling can be signs of damage to certain nerve roots or to the spinal cord.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.cervical_spondylosis.legacy02",
+          "supports_flag_zh": "進行性上肢無力或萎縮 → 神經根/脊髓受壓",
+          "supports_flag_en": "Progressive arm weakness or wasting → root/cord compression"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "section": "Causes",
+          "quote_en": "Infection of the spine (osteomyelitis, diskitis, abscess); Cancer that involves the spine.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.cervical_spondylosis.legacy03",
+          "supports_flag_zh": "發燒、體重減輕 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever, weight loss → rule out infection or tumour"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Cancer",
+          "source_url": "https://medlineplus.gov/ency/article/001289.htm",
+          "section": "Symptoms",
+          "quote_en": "The following symptoms may occur with cancer; Fever; Pain; Weight loss",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.cervical_spondylosis.legacy03",
+          "supports_flag_zh": "發燒、體重減輕 → 排除感染或腫瘤",
+          "supports_flag_en": "Fever, weight loss → rule out infection or tumour"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.cervical_spondylosis.legacy01",
+          "text_zh": "步態不穩、手部精細動作變差、Hoffmann/Babinski 陽性 → 脊髓病變，需影像與轉介",
+          "text_en": "Unsteady gait, clumsy hands, positive Hoffmann/Babinski → cervical myelopathy, image and refer",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/000436.htm",
+            "https://medlineplus.gov/ency/article/003025.htm"
+          ],
+          "reason": "Official cervical-spondylosis pages support balance loss and cord/root deficits, but did not directly support the Hoffmann/Babinski-positive rule plus imaging/referral wording as written."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.neck_pain_stiff",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "section": "Symptoms / When to seek emergency care",
+          "quote_en": "Common meningitis symptoms include Fever, Headache, Stiff neck. There are often other symptoms, such as Photophobia.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.neck_pain_stiff.legacy01",
+          "supports_flag_zh": "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis (emergency)"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "section": "When to seek emergency care",
+          "quote_en": "Anyone with symptoms of meningitis should see a healthcare provider right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.neck_pain_stiff.legacy01",
+          "supports_flag_zh": "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "section": "Causes",
+          "quote_en": "Accidents or falls can cause severe neck injuries, such as vertebral fractures, whiplash, blood vessel injury, and even paralysis.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.neck_pain_stiff.legacy02",
+          "supports_flag_zh": "外傷後頸痛 → 排除骨折或韌帶損傷，勿貿然活動",
+          "supports_flag_en": "Neck pain after trauma → rule out fracture or ligament injury, do not force motion"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "section": "Considerations",
+          "quote_en": "If neck pain involves compression of your nerves, you may feel numbness, tingling, or weakness in your arm or hand.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.neck_pain_stiff.legacy03",
+          "supports_flag_zh": "上肢放射麻木無力 → 考慮神經根病變",
+          "supports_flag_en": "Radiating arm numbness/weakness → consider radiculopathy"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.whiplash",
+      "source_batch": "batch2",
+      "red_flag_sources": [],
+      "not_found": [
+        {
+          "red_flag_id": "rf.whiplash.legacy01",
+          "text_zh": "中線骨性壓痛、麻木無力、意識改變（加拿大頸椎準則陽性）→ 影像排除骨折/脫位",
+          "text_en": "Midline bony tenderness, numbness/weakness, altered consciousness (positive Canadian C-spine rule) → image to exclude fracture/dislocation",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003025.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000802.htm",
+            "https://medlineplus.gov/ency/article/001066.htm"
+          ],
+          "reason": "No whitelisted page checked directly stated the Canadian C-spine rule criteria in the frozen wording."
+        },
+        {
+          "red_flag_id": "rf.whiplash.legacy02",
+          "text_zh": "進行性神經症狀 → 神經外科評估",
+          "text_en": "Progressive neurological symptoms → neurosurgical assessment",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003025.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000802.htm",
+            "https://medlineplus.gov/ency/article/001066.htm"
+          ],
+          "reason": "Official pages support urgent evaluation of neurologic deficits after neck injury, but not the specific neurosurgical-assessment instruction as written."
+        },
+        {
+          "red_flag_id": "rf.whiplash.legacy03",
+          "text_zh": "劇烈頭痛或吞嚥、發聲異常 → 排除血管損傷",
+          "text_en": "Severe headache or swallowing/voice change → rule out vascular injury",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003025.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000802.htm",
+            "https://medlineplus.gov/ency/article/001066.htm"
+          ],
+          "reason": "Official neck pages mention vascular injury after trauma, but did not directly link severe headache or swallowing/voice change to vascular injury as written."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.frozen_shoulder",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "section": "When should I see a health care provider for shoulder pain?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.frozen_shoulder.legacy01",
+          "supports_flag_zh": "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
+          "supports_flag_en": "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "section": "What are rotator cuff injuries?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.frozen_shoulder.legacy01",
+          "supports_flag_zh": "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
+          "supports_flag_en": "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Frozen shoulder",
+          "source_url": "https://medlineplus.gov/ency/article/000455.htm",
+          "section": "Symptoms",
+          "quote_en": "The main symptoms of a frozen shoulder are: Pain; Decreased motion of the shoulder; Stiffness.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.frozen_shoulder.legacy03",
+          "supports_flag_zh": "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩",
+          "supports_flag_en": "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "section": "ROTATOR CUFF TEARS",
+          "quote_en": "Right after the injury, you will likely have weakness of the shoulder and arm. It may be hard to move your shoulder or raise your arm above the shoulder.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.frozen_shoulder.legacy03",
+          "supports_flag_zh": "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩",
+          "supports_flag_en": "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.frozen_shoulder.legacy02",
+          "text_zh": "夜間痛合併體重減輕或發燒 → 排除感染或腫瘤",
+          "text_en": "Night pain with weight loss or fever → rule out infection or tumour",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/000455.htm",
+            "https://medlineplus.gov/ency/article/000438.htm",
+            "https://medlineplus.gov/ency/article/003171.htm"
+          ],
+          "reason": "Official shoulder pages support fever as concerning and cancer/infection as possible causes, but did not directly support this specific night-pain + weight-loss/fever differential rule."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.rotator_cuff",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "section": "When should I see a health care provider for shoulder pain?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy01",
+          "supports_flag_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+          "supports_flag_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator Cuff Injuries",
+          "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+          "section": "What are rotator cuff injuries?",
+          "quote_en": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy01",
+          "supports_flag_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+          "supports_flag_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "section": "ROTATOR CUFF TEARS",
+          "quote_en": "Right after the injury, you will likely have weakness of the shoulder and arm. It may be hard to move your shoulder or raise your arm above the shoulder.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy01",
+          "supports_flag_zh": "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+          "supports_flag_en": "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "section": "Symptoms",
+          "quote_en": "If the pain goes down the arm to the elbow and hand, this may indicate a pinched nerve in the neck.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy02",
+          "supports_flag_zh": "合併頸部放射痛或手麻 → 排除頸神經根病變",
+          "supports_flag_en": "With radiating neck pain or hand numbness → rule out cervical radiculopathy"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Neck pain",
+          "source_url": "https://medlineplus.gov/ency/article/003025.htm",
+          "section": "Considerations",
+          "quote_en": "If neck pain involves compression of your nerves, you may feel numbness, tingling, or weakness in your arm or hand.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy02",
+          "supports_flag_zh": "合併頸部放射痛或手麻 → 排除頸神經根病變",
+          "supports_flag_en": "With radiating neck pain or hand numbness → rule out cervical radiculopathy"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Rotator cuff problems",
+          "source_url": "https://medlineplus.gov/ency/article/000438.htm",
+          "section": "Symptoms",
+          "quote_en": "Rotator cuff tendon tears often cause pain at night.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy03",
+          "supports_flag_zh": "夜間痛合併發燒 → 排除感染",
+          "supports_flag_en": "Night pain with fever → rule out infection"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Shoulder pain",
+          "source_url": "https://medlineplus.gov/ency/article/003171.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you have: Shoulder pain with a fever, swelling, or redness.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy03",
+          "supports_flag_zh": "夜間痛合併發燒 → 排除感染",
+          "supports_flag_en": "Night pain with fever → rule out infection"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "section": "Considerations",
+          "quote_en": "An infection in the joint can cause swelling, pain, and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.rotator_cuff.legacy03",
+          "supports_flag_zh": "夜間痛合併發燒 → 排除感染",
+          "supports_flag_en": "Night pain with fever → rule out infection"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.lateral_epicondylitis",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "section": "Considerations",
+          "quote_en": "Many different types of arthritis may cause swelling, redness, or warmth around the joint.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.lateral_epicondylitis.legacy01",
+          "supports_flag_zh": "外上髁腫脹發熱 → 排除感染或發炎性關節病",
+          "supports_flag_en": "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "section": "Considerations",
+          "quote_en": "An infection in the joint can cause swelling, pain, and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.lateral_epicondylitis.legacy01",
+          "supports_flag_zh": "外上髁腫脹發熱 → 排除感染或發炎性關節病",
+          "supports_flag_en": "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.lateral_epicondylitis.legacy02",
+          "text_zh": "合併手麻或無力 → 排除橈神經（後骨間神經）夾擠",
+          "text_en": "With hand numbness or weakness → rule out radial (posterior interosseous) nerve entrapment",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003172.htm",
+            "https://medlineplus.gov/ency/article/000790.htm",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "Radial neuropathy pages support hand sensory/motor symptoms, but not posterior interosseous entrapment from this frozen presentation."
+        },
+        {
+          "red_flag_id": "rf.lateral_epicondylitis.legacy03",
+          "text_zh": "外傷後劇痛 → 排除撕脫性骨折",
+          "text_en": "Severe pain after trauma → rule out avulsion fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003172.htm",
+            "https://medlineplus.gov/ency/article/000790.htm",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "No whitelisted page checked directly supported avulsion fracture as the specific differential for severe post-traumatic lateral epicondyle pain."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.medial_epicondylitis",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ulnar nerve dysfunction",
+          "source_url": "https://medlineplus.gov/ency/article/000789.htm",
+          "section": "Causes / Symptoms",
+          "quote_en": "When the nerve is compressed in the elbow, a problem called cubital tunnel syndrome may result.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.medial_epicondylitis.legacy01",
+          "supports_flag_zh": "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
+          "supports_flag_en": "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ulnar nerve dysfunction",
+          "source_url": "https://medlineplus.gov/ency/article/000789.htm",
+          "section": "Symptoms",
+          "quote_en": "Abnormal sensations in the little finger and part of the ring finger; Weakness, loss of coordination of the fingers.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.medial_epicondylitis.legacy01",
+          "supports_flag_zh": "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
+          "supports_flag_en": "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "section": "Considerations",
+          "quote_en": "Many different types of arthritis may cause swelling, redness, or warmth around the joint.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.medial_epicondylitis.legacy02",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infection"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint swelling",
+          "source_url": "https://medlineplus.gov/ency/article/003262.htm",
+          "section": "Considerations",
+          "quote_en": "An infection in the joint can cause swelling, pain, and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.medial_epicondylitis.legacy02",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infection"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.medial_epicondylitis.legacy03",
+          "text_zh": "外傷後劇痛 → 排除撕脫性骨折",
+          "text_en": "Severe pain after trauma → rule out avulsion fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003172.htm",
+            "https://medlineplus.gov/ency/article/000789.htm",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "No whitelisted page checked directly supported avulsion fracture as the specific differential for severe post-traumatic medial epicondyle pain."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.carpal_tunnel",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Carpal tunnel syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.carpal_tunnel.legacy01",
+          "supports_flag_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+          "supports_flag_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Carpal tunnel syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+          "section": "Exams and Tests",
+          "quote_en": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.carpal_tunnel.legacy01",
+          "supports_flag_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+          "supports_flag_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Carpal tunnel syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+          "section": "SURGERY",
+          "quote_en": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.carpal_tunnel.legacy01",
+          "supports_flag_zh": "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+          "supports_flag_en": "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release"
+        },
+        {
+          "source_org": "MedlinePlus Genetics",
+          "page_title": "Carpal tunnel syndrome",
+          "source_url": "https://medlineplus.gov/genetics/condition/carpal-tunnel-syndrome/",
+          "section": "Causes",
+          "quote_en": "carpal tunnel syndrome can be a feature of many disorders, including obesity, alcohol use disorder, rheumatoid arthritis, type 1 diabetes, type 2 diabetes, hypothyroidism",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.carpal_tunnel.legacy02",
+          "supports_flag_zh": "雙側合併全身症狀 → 排除甲狀腺低下、類風濕、澱粉樣變",
+          "supports_flag_en": "Bilateral with systemic symptoms → rule out hypothyroidism, rheumatoid arthritis, amyloidosis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.carpal_tunnel.legacy03",
+          "text_zh": "外傷後急性腫脹麻木 → 排除急性腕隧道症候群（急症）",
+          "text_en": "Acute swelling and numbness after trauma → rule out acute carpal tunnel syndrome (emergency)",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/000433.htm",
+            "https://medlineplus.gov/genetics/condition/carpal-tunnel-syndrome/"
+          ],
+          "reason": "Official CTS pages support trauma as a contributor, but did not directly support acute post-traumatic carpal tunnel syndrome as an emergency in the frozen wording."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.de_quervain",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "section": "Symptoms",
+          "quote_en": "Fever, swelling, and redness may indicate an infection.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.de_quervain.legacy01",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "section": "Causes / Treatment",
+          "quote_en": "An infected cut to the hands or wrists that causes infectious tenosynovitis may be an emergency requiring surgery.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.de_quervain.legacy01",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.de_quervain.legacy02",
+          "text_zh": "合併麻木 → 排除橈神經淺支刺激",
+          "text_en": "With numbness → rule out superficial radial nerve irritation",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/001242.htm",
+            "https://medlineplus.gov/ency/article/000790.htm",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "Radial neuropathy pages did not directly support superficial radial nerve irritation as the differential for numbness in this De Quervain context."
+        },
+        {
+          "red_flag_id": "rf.de_quervain.legacy03",
+          "text_zh": "外傷後劇痛 → 排除橈骨莖突骨折",
+          "text_en": "Severe pain after trauma → rule out radial styloid fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/001242.htm",
+            "https://medlineplus.gov/ency/article/000790.htm",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "No whitelisted page checked directly supported radial styloid fracture as the specific differential in the frozen wording."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.trigger_finger",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "section": "Symptoms",
+          "quote_en": "Fever, swelling, and redness may indicate an infection.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.trigger_finger.legacy01",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "section": "Causes / Treatment",
+          "quote_en": "An infected cut to the hands or wrists that causes infectious tenosynovitis may be an emergency requiring surgery.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.trigger_finger.legacy01",
+          "supports_flag_zh": "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+          "supports_flag_en": "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Trigger finger",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000565.htm",
+          "section": "About Trigger Finger",
+          "quote_en": "It is more common in people who: are over 45 years old; are female; have diabetes, rheumatoid arthritis, or gout",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.trigger_finger.legacy03",
+          "supports_flag_zh": "多指同時受累 → 考慮糖尿病、類風濕等全身病因",
+          "supports_flag_en": "Multiple fingers involved → consider systemic causes such as diabetes or rheumatoid arthritis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.trigger_finger.legacy02",
+          "text_zh": "外傷後鎖住 → 排除肌腱斷裂或異物",
+          "text_en": "Locking after trauma → rule out tendon rupture or foreign body",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/patientinstructions/000565.htm",
+            "https://medlineplus.gov/ency/article/001242.htm"
+          ],
+          "reason": "Official trigger-finger/tenosynovitis pages did not directly support post-traumatic locking as a rule to exclude tendon rupture or foreign body."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.knee_osteoarthritis",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.knee_osteoarthritis.legacy01",
+          "supports_flag_zh": "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
+          "supports_flag_en": "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Joint pain",
+          "source_url": "https://medlineplus.gov/ency/article/003261.htm",
+          "section": "Treatment",
+          "quote_en": "Antibiotics and often surgical drainage, in case of infection (usually requires hospitalization).",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.knee_osteoarthritis.legacy01",
+          "supports_flag_zh": "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
+          "supports_flag_en": "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Knee pain",
+          "source_url": "https://medlineplus.gov/ency/article/003187.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if; Your knee buckles, clicks, or locks.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.knee_osteoarthritis.legacy02",
+          "supports_flag_zh": "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
+          "supports_flag_en": "Locking or gross instability after trauma → rule out meniscal or ligament injury"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Knee MRI scan",
+          "source_url": "https://medlineplus.gov/ency/article/007361.htm",
+          "section": "Why the Test is Performed",
+          "quote_en": "Signs of damage to the knee muscle, meniscus, cartilage, or ligaments; Instability of the knee.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.knee_osteoarthritis.legacy02",
+          "supports_flag_zh": "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
+          "supports_flag_en": "Locking or gross instability after trauma → rule out meniscal or ligament injury"
+        },
+        {
+          "source_org": "NIH MedlinePlus Magazine",
+          "page_title": "Rheumatoid arthritis: Understanding a difficult joint disease",
+          "source_url": "https://magazine.medlineplus.gov/article/rheumatoid-arthritis-understanding-a-difficult-joint-disease",
+          "section": "Symptoms",
+          "quote_en": "Symmetric swollen joints; Pain and stiffness that lasts for more than 30 minutes in the morning or after a long rest.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.knee_osteoarthritis.legacy03",
+          "supports_flag_zh": "晨僵超過一小時、多關節對稱 → 排除類風濕性關節炎",
+          "supports_flag_en": "Morning stiffness over an hour, symmetric polyarthritis → rule out rheumatoid arthritis"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.patellofemoral_pain",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Knee MRI scan",
+          "source_url": "https://medlineplus.gov/ency/article/007361.htm",
+          "section": "Why the Test is Performed",
+          "quote_en": "Signs of damage to the knee muscle, meniscus, cartilage, or ligaments; Instability of the knee.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.patellofemoral_pain.legacy01",
+          "supports_flag_zh": "關節腫脹積液 → 排除關節內損傷（半月板、軟骨）",
+          "supports_flag_en": "Joint effusion → rule out intra-articular injury (meniscus, cartilage)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Knee pain",
+          "source_url": "https://medlineplus.gov/ency/article/003187.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if; Your knee buckles, clicks, or locks.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.patellofemoral_pain.legacy02",
+          "supports_flag_zh": "鎖住或打軟 → 排除半月板或韌帶問題",
+          "supports_flag_en": "Locking or giving way → rule out meniscal or ligament problem"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Knee MRI scan",
+          "source_url": "https://medlineplus.gov/ency/article/007361.htm",
+          "section": "Why the Test is Performed",
+          "quote_en": "Signs of damage to the knee muscle, meniscus, cartilage, or ligaments; Instability of the knee.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.patellofemoral_pain.legacy02",
+          "supports_flag_zh": "鎖住或打軟 → 排除半月板或韌帶問題",
+          "supports_flag_en": "Locking or giving way → rule out meniscal or ligament problem"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.patellofemoral_pain.legacy03",
+          "supports_flag_zh": "紅熱發燒 → 排除感染性關節炎",
+          "supports_flag_en": "Red, hot joint with fever → rule out septic arthritis"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.meniscus_injury",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.meniscus_injury.legacy03",
+          "supports_flag_zh": "紅熱發燒 → 排除感染",
+          "supports_flag_en": "Red, hot joint with fever → rule out infection"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.meniscus_injury.legacy01",
+          "text_zh": "真正鎖住無法伸直 → 桶柄狀撕裂，需轉介評估",
+          "text_en": "True locking with inability to extend → bucket-handle tear, refer for assessment",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/patientinstructions/000684.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000681.htm",
+            "https://medlineplus.gov/ency/article/007361.htm"
+          ],
+          "reason": "Official meniscus pages support true locking and inability to straighten, but did not directly identify bucket-handle tear in the whitelisted text checked."
+        },
+        {
+          "red_flag_id": "rf.meniscus_injury.legacy02",
+          "text_zh": "外傷後大量積血（數小時內腫脹）→ 排除韌帶斷裂或骨軟骨骨折",
+          "text_en": "Large haemarthrosis (swelling within hours) after trauma → rule out ligament rupture or osteochondral fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/patientinstructions/000684.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000681.htm",
+            "https://medlineplus.gov/ency/article/007361.htm"
+          ],
+          "reason": "Official ACL pages support swelling within hours after ligament injury, but did not directly support large haemarthrosis plus the ligament-rupture/osteochondral-fracture differential as written."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.ankle_sprain",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ankle sprain - aftercare",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+          "section": "More about Your Injury",
+          "quote_en": "Some ankle sprains may become chronic (long-lasting). If this happens to you, your ankle may continue to be: painful and swollen; weak or giving way easily",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.ankle_sprain.legacy02",
+          "supports_flag_zh": "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
+          "supports_flag_en": "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Ankle sprain - aftercare",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+          "section": "More about Your Injury",
+          "quote_en": "Some ankle sprains may become chronic (long-lasting). If this happens to you, your ankle may continue to be: painful and swollen; weak or giving way easily",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.ankle_sprain.legacy02",
+          "supports_flag_zh": "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
+          "supports_flag_en": "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.ankle_sprain.legacy01",
+          "text_zh": "受傷後無法負重四步且骨性壓痛（Ottawa 踝準則陽性）→ 需 X 光排除骨折",
+          "text_en": "Unable to take four steps and bony tenderness (positive Ottawa ankle rules) → X-ray to exclude fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+            "https://medlineplus.gov/ankleinjuriesanddisorders.html",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "No whitelisted page checked directly stated the Ottawa ankle rule four-step + bony-tenderness criteria."
+        },
+        {
+          "red_flag_id": "rf.ankle_sprain.legacy03",
+          "text_zh": "近端腓骨壓痛 → 排除 Maisonneuve 骨折",
+          "text_en": "Proximal fibular tenderness → rule out Maisonneuve fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+            "https://medlineplus.gov/ankleinjuriesanddisorders.html",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "No whitelisted page checked directly stated proximal fibular tenderness as a Maisonneuve-fracture rule."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.plantar_fasciitis",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "NIAMS",
+          "page_title": "Reactive Arthritis",
+          "source_url": "https://www.niams.nih.gov/health-topics/reactive-arthritis",
+          "section": "Symptoms",
+          "quote_en": "Pain in the heel or foot pain is a sign of enthesitis.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.plantar_fasciitis.legacy02",
+          "supports_flag_zh": "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
+          "supports_flag_en": "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)"
+        },
+        {
+          "source_org": "NIAMS",
+          "page_title": "Ankylosing Spondylitis",
+          "source_url": "https://www.niams.nih.gov/health-topics/ankylosing-spondylitis",
+          "section": "Overview / Symptoms",
+          "quote_en": "pain, stiffness, and inflammation in other joints, such as the ribs, shoulders, knees, or feet",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.plantar_fasciitis.legacy02",
+          "supports_flag_zh": "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
+          "supports_flag_en": "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Tarsal tunnel syndrome",
+          "source_url": "https://medlineplus.gov/ency/article/000792.htm",
+          "section": "Symptoms",
+          "quote_en": "Sensation changes in the bottom of the foot and toes, including burning sensation, numbness, tingling, or other abnormal sensation.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.plantar_fasciitis.legacy03",
+          "supports_flag_zh": "足底麻木或灼痛 → 考慮神經夾擠而非筋膜炎",
+          "supports_flag_en": "Plantar numbness or burning → consider nerve entrapment rather than fasciitis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.plantar_fasciitis.legacy01",
+          "text_zh": "夜間痛或休息痛、外傷後無法負重 → 排除跟骨應力性骨折",
+          "text_en": "Night or rest pain, or inability to bear weight after trauma → rule out calcaneal stress fracture",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/000792.htm",
+            "https://www.niams.nih.gov/health-topics/ankylosing-spondylitis",
+            "https://medlineplus.gov/fractures.html"
+          ],
+          "reason": "Official fracture/foot pages did not directly support this specific night/rest pain or post-traumatic non-weight-bearing rule for calcaneal stress fracture."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.achilles_tendinopathy",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Tenosynovitis",
+          "source_url": "https://medlineplus.gov/ency/article/001242.htm",
+          "section": "Symptoms",
+          "quote_en": "Fever, swelling, and redness may indicate an infection.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.achilles_tendinopathy.legacy02",
+          "supports_flag_zh": "紅熱腫脹合併發燒 → 排除感染",
+          "supports_flag_en": "Redness, warmth and swelling with fever → rule out infection"
+        },
+        {
+          "source_org": "MedlinePlus Drug Information",
+          "page_title": "Levofloxacin",
+          "source_url": "https://medlineplus.gov/druginfo/meds/a697040.html",
+          "section": "IMPORTANT WARNING",
+          "quote_en": "taking levofloxacin increases the risk that you will develop tendinitis (swelling of a fibrous tissue that connects a bone to a muscle) or have a tendon rupture",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.achilles_tendinopathy.legacy03",
+          "supports_flag_zh": "使用氟喹諾酮類抗生素 → 肌腱斷裂風險升高，須警覺",
+          "supports_flag_en": "On fluoroquinolone antibiotics → heightened rupture risk, stay alert"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.achilles_tendinopathy.legacy01",
+          "text_zh": "突發後跟「被踢」感、無法墊腳、Thompson 測試陽性 → 跟腱斷裂，需轉介",
+          "text_en": "Sudden 'kicked in the heel' sensation, inability to push off, positive Thompson test → Achilles rupture, refer",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/patientinstructions/000546.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000836.htm",
+            "https://medlineplus.gov/druginfo/meds/a697040.html"
+          ],
+          "reason": "Official Achilles pages support the kicked-in-the-heel sensation and inability to stand on toes, but did not state the Thompson-test criterion in the frozen claim."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.hip_osteoarthritis",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Hip pain",
+          "source_url": "https://medlineplus.gov/ency/article/003179.htm",
+          "section": "Causes / When to Contact a Medical Professional",
+          "quote_en": "Hip fractures -- can cause sudden and acute hip pain; Osteonecrosis of the hip (necrosis from loss of blood supply to the bone)",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.hip_osteoarthritis.legacy02",
+          "supports_flag_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+          "supports_flag_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Osteonecrosis",
+          "source_url": "https://medlineplus.gov/ency/article/007260.htm",
+          "section": "Causes",
+          "quote_en": "The following are possible causes: using oral or intravenous steroids; excessive alcohol use",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.hip_osteoarthritis.legacy02",
+          "supports_flag_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+          "supports_flag_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Hip pain",
+          "source_url": "https://medlineplus.gov/ency/article/003179.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Hip fractures -- can cause sudden and acute hip pain; Osteonecrosis of the hip (necrosis from loss of blood supply to the bone)",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.hip_osteoarthritis.legacy02",
+          "supports_flag_zh": "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+          "supports_flag_en": "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Infectious Arthritis",
+          "source_url": "https://medlineplus.gov/infectiousarthritis.html",
+          "section": "Summary",
+          "quote_en": "Symptoms of infectious arthritis include: Intense pain in the joint; Joint redness and swelling; Chills and fever.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.hip_osteoarthritis.legacy03",
+          "supports_flag_zh": "紅熱發燒 → 排除化膿性關節炎",
+          "supports_flag_en": "Red, hot joint with fever → rule out septic arthritis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.hip_osteoarthritis.legacy01",
+          "text_zh": "休息痛、夜間痛、體重減輕 → 排除腫瘤或感染",
+          "text_en": "Rest or night pain with weight loss → rule out tumour or infection",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/003179.htm",
+            "https://medlineplus.gov/ency/article/007260.htm",
+            "https://medlineplus.gov/ency/article/003261.htm"
+          ],
+          "reason": "Official hip/joint pages did not directly support the frozen rest/night pain + weight-loss rule to exclude hip tumor or infection."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.piriformis_syndrome",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "NIAMS",
+          "page_title": "Back Pain",
+          "source_url": "https://www.niams.nih.gov/health-topics/back-pain",
+          "section": "Mechanical/Structural Problems",
+          "quote_en": "Herniated or ruptured discs: an event causing a disc to compress and irritate nearby nerves.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.piriformis_syndrome.legacy01",
+          "supports_flag_zh": "腰痛合併皮節分布麻木無力 → 優先排除腰椎神經根病變",
+          "supports_flag_en": "Back pain with dermatomal numbness/weakness → first rule out lumbar radiculopathy"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Spinal cord trauma",
+          "source_url": "https://medlineplus.gov/ency/article/001066.htm",
+          "section": "Symptoms",
+          "quote_en": "Many SCIs and cauda equina syndrome cases are emergencies and need surgery right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.piriformis_syndrome.legacy02",
+          "supports_flag_zh": "馬尾徵象 → 急診",
+          "supports_flag_en": "Cauda equina signs → emergency"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.piriformis_syndrome.legacy03",
+          "text_zh": "夜間痛、體重減輕 → 排除骨盆腫瘤",
+          "text_en": "Night pain, weight loss → rule out pelvic tumour",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/000686.htm",
+            "https://www.niams.nih.gov/health-topics/back-pain",
+            "https://medlineplus.gov/ency/article/003261.htm"
+          ],
+          "reason": "Official pages support night pain/weight loss as general warning features, but did not directly support pelvic tumor as the specific differential in this piriformis context."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.fibromyalgia",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "NIAMS",
+          "page_title": "Fibromyalgia: Diagnosis, Treatment, and Steps to Take",
+          "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia/diagnosis-treatment-and-steps-to-take",
+          "section": "Diagnosis of Fibromyalgia",
+          "quote_en": "Doctors typically try to rule out other causes for your symptoms.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.fibromyalgia.legacy01",
+          "supports_flag_zh": "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
+          "supports_flag_en": "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease"
+        },
+        {
+          "source_org": "NIAMS",
+          "page_title": "Fibromyalgia: Diagnosis, Treatment, and Steps to Take",
+          "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia/diagnosis-treatment-and-steps-to-take",
+          "section": "Diagnosis of Fibromyalgia",
+          "quote_en": "Your doctor will examine your joints to see if you may have another condition, such as rheumatoid arthritis or systemic lupus erythematosus.",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.fibromyalgia.legacy01",
+          "supports_flag_zh": "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
+          "supports_flag_en": "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Polymyositis - adult",
+          "source_url": "https://medlineplus.gov/ency/article/000428.htm",
+          "section": "Symptoms / Exams and Tests",
+          "quote_en": "Muscle weakness in the shoulders and hips; Tests may include; serum CPK (creatine phosphokinase)",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.fibromyalgia.legacy02",
+          "supports_flag_zh": "近端無力、肌酵素升高 → 排除肌炎",
+          "supports_flag_en": "Proximal weakness with raised muscle enzymes → rule out myositis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.fibromyalgia.legacy03",
+          "text_zh": "局部固定痛而非廣泛痛 → 重新考慮結構性病因",
+          "text_en": "Fixed focal pain rather than widespread → reconsider a structural cause",
+          "pages_checked": [
+            "https://www.niams.nih.gov/health-topics/fibromyalgia",
+            "https://www.niams.nih.gov/health-topics/fibromyalgia/diagnosis-treatment-and-steps-to-take",
+            "https://medlineplus.gov/ency/article/000428.htm"
+          ],
+          "reason": "NIAMS defines fibromyalgia as widespread pain, but did not directly state that fixed focal pain should be treated as a structural cause."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.myofascial_pain",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "NIAMS",
+          "page_title": "Fibromyalgia",
+          "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia",
+          "section": "Overview",
+          "quote_en": "a chronic (long-lasting) disorder that causes pain and tenderness throughout the body, as well as fatigue and trouble sleeping",
+          "suggested_tier": "routine_referral",
+          "supports_red_flag_id": "rf.myofascial_pain.legacy01",
+          "supports_flag_zh": "合併全身廣泛壓痛、疲勞、睡眠障礙 → 考慮纖維肌痛而非局部肌筋膜痛",
+          "supports_flag_en": "Widespread tenderness, fatigue and sleep disturbance → consider fibromyalgia rather than localised myofascial pain"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.myofascial_pain.legacy02",
+          "text_zh": "發燒、體重減輕 → 排除感染或腫瘤",
+          "text_en": "Fever, weight loss → rule out infection or tumour",
+          "pages_checked": [
+            "https://www.niams.nih.gov/health-topics/fibromyalgia",
+            "https://www.niams.nih.gov/health-topics/back-pain",
+            "https://medlineplus.gov/ency/article/002267.htm"
+          ],
+          "reason": "General fever/weight-loss warning pages were found, but not a direct myofascial-pain rule to exclude infection or tumor as written."
+        },
+        {
+          "red_flag_id": "rf.myofascial_pain.legacy03",
+          "text_zh": "進行性神經症狀 → 排除神經根或脊髓病變",
+          "text_en": "Progressive neurological symptoms → rule out radiculopathy or myelopathy",
+          "pages_checked": [
+            "https://www.niams.nih.gov/health-topics/fibromyalgia",
+            "https://www.niams.nih.gov/health-topics/back-pain",
+            "https://medlineplus.gov/ency/article/002267.htm"
+          ],
+          "reason": "Official neurologic pages support progressive deficits, but not this direct myofascial-pain → radiculopathy/myelopathy differential rule as written."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.tmd",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "section": "Symptoms",
+          "quote_en": "Inability to close the mouth; Locked jaw or jaw that protrudes forward.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tmd.legacy01",
+          "supports_flag_zh": "顎關節鎖死無法開口/閉口 → 需轉介",
+          "supports_flag_en": "Jaw locked open or closed → refer"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "section": "First Aid",
+          "quote_en": "A person with a broken or dislocated jaw needs medical attention right away.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tmd.legacy01",
+          "supports_flag_zh": "顎關節鎖死無法開口/閉口 → 需轉介",
+          "supports_flag_en": "Jaw locked open or closed → refer"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "section": "Causes / Symptoms",
+          "quote_en": "The most common cause of a broken or dislocated jaw is injury to the face.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tmd.legacy02",
+          "supports_flag_zh": "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
+          "supports_flag_en": "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Broken or dislocated jaw",
+          "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+          "section": "First Aid",
+          "quote_en": "The most common cause of a broken or dislocated jaw is injury to the face.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tmd.legacy02",
+          "supports_flag_zh": "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
+          "supports_flag_en": "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.tmd.legacy03",
+          "text_zh": "進行性面部麻木無力 → 排除神經或腫瘤病因",
+          "text_en": "Progressive facial numbness/weakness → rule out neurological or tumour cause",
+          "pages_checked": [
+            "https://www.nidcr.nih.gov/health-info/tmd",
+            "https://medlineplus.gov/ency/article/000019.htm",
+            "https://medlineplus.gov/jawinjuriesanddisorders.html"
+          ],
+          "reason": "Jaw/TMD pages checked did not directly support progressive facial numbness/weakness as a neurologic-or-tumor rule in the frozen wording."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.tension_headache",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Subarachnoid hemorrhage",
+          "source_url": "https://medlineplus.gov/ency/article/000701.htm",
+          "section": "Symptoms",
+          "quote_en": "The main symptom is a severe headache that starts suddenly (often called thunderclap headache).",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy01",
+          "supports_flag_zh": "霹靂性（瞬間達最強）頭痛 → 排除蛛網膜下腔出血（急症）",
+          "supports_flag_en": "Thunderclap (instant maximal) headache → rule out subarachnoid haemorrhage (emergency)"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "section": "Symptoms / When to seek emergency care",
+          "quote_en": "Common meningitis symptoms include Fever, Headache, Stiff neck. There are often other symptoms, such as Photophobia.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy02",
+          "supports_flag_zh": "發燒合併頸僵、畏光 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "section": "When to seek emergency care",
+          "quote_en": "Anyone with symptoms of meningitis should see a healthcare provider right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy02",
+          "supports_flag_zh": "發燒合併頸僵、畏光 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness and photophobia → rule out meningitis"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy03",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy03",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy03",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "section": "Other causes",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.tension_headache.legacy03",
+          "supports_flag_zh": "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高",
+          "supports_flag_en": "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+        }
+      ],
+      "not_found": []
+    },
+    {
+      "condition_id": "cond.migraine",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Subarachnoid hemorrhage",
+          "source_url": "https://medlineplus.gov/ency/article/000701.htm",
+          "section": "Symptoms",
+          "quote_en": "The main symptom is a severe headache that starts suddenly (often called thunderclap headache).",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.migraine.legacy01",
+          "supports_flag_zh": "霹靂性頭痛 → 排除蛛網膜下腔出血（急症）",
+          "supports_flag_en": "Thunderclap headache → rule out subarachnoid haemorrhage (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.migraine.legacy02",
+          "supports_flag_zh": "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
+          "supports_flag_en": "Marked change in pattern, progressive worsening, persistent deficit → image"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Headaches - danger signs",
+          "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+          "section": "When to Call the Doctor",
+          "quote_en": "You have a history of headaches but they have changed in pattern or intensity.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.migraine.legacy02",
+          "supports_flag_zh": "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
+          "supports_flag_en": "Marked change in pattern, progressive worsening, persistent deficit → image"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "section": "Symptoms / When to seek emergency care",
+          "quote_en": "Common meningitis symptoms include Fever, Headache, Stiff neck. There are often other symptoms, such as Photophobia.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.migraine.legacy03",
+          "supports_flag_zh": "發燒合併頸僵 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness → rule out meningitis"
+        },
+        {
+          "source_org": "CDC",
+          "page_title": "About Meningitis",
+          "source_url": "https://www.cdc.gov/meningitis/about/index.html",
+          "section": "When to seek emergency care",
+          "quote_en": "Anyone with symptoms of meningitis should see a healthcare provider right away.",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.migraine.legacy03",
+          "supports_flag_zh": "發燒合併頸僵 → 排除腦膜炎",
+          "supports_flag_en": "Fever with neck stiffness → rule out meningitis"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.migraine.legacy04",
+          "text_zh": "先兆持續逾一小時或每次同側 → 需進一步評估",
+          "text_en": "Aura lasting over an hour or always the same side → needs further assessment",
+          "pages_checked": [
+            "https://www.ninds.nih.gov/Disorders/All-Disorders/Migraine-Information-Page",
+            "https://medlineplus.gov/ency/patientinstructions/000424.htm"
+          ],
+          "reason": "NINDS states aura usually lasts no more than an hour, but no whitelisted page checked supported the additional “always the same side” referral criterion; whole frozen claim therefore remains unsupported."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.cluster_headache",
+      "source_batch": "batch2",
+      "red_flag_sources": [
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Subarachnoid hemorrhage",
+          "source_url": "https://medlineplus.gov/ency/article/000701.htm",
+          "section": "Symptoms",
+          "quote_en": "The main symptom is a severe headache that starts suddenly (often called thunderclap headache).",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.cluster_headache.legacy02",
+          "supports_flag_zh": "霹靂性頭痛 → 排除出血（急症）",
+          "supports_flag_en": "Thunderclap headache → rule out haemorrhage (emergency)"
+        },
+        {
+          "source_org": "MedlinePlus",
+          "page_title": "Cluster headache",
+          "source_url": "https://medlineplus.gov/ency/article/000786.htm",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Call 911 or the local emergency number if; You have speech, vision, or movement problems",
+          "suggested_tier": "emergency_referral",
+          "supports_red_flag_id": "rf.cluster_headache.legacy03",
+          "supports_flag_zh": "持續神經缺損 → 進一步評估",
+          "supports_flag_en": "Persistent neurological deficit → further assessment"
+        }
+      ],
+      "not_found": [
+        {
+          "red_flag_id": "rf.cluster_headache.legacy01",
+          "text_zh": "首次發作或型態改變 → 影像排除次發性病因（如海綿竇病灶）",
+          "text_en": "First-ever attack or change in pattern → image to exclude a secondary cause (e.g. cavernous sinus lesion)",
+          "pages_checked": [
+            "https://medlineplus.gov/ency/article/000786.htm",
+            "https://medlineplus.gov/ency/patientinstructions/000424.htm"
+          ],
+          "reason": "MedlinePlus supports pattern change as a reason to contact a provider, but did not directly support first-ever attack plus imaging for a secondary cause/cavernous sinus lesion as written."
+        }
+      ]
+    },
+    {
+      "condition_id": "cond.functional_dyspepsia",
+      "source_batch": "batch3",
+      "red_flag_sources": [
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "pain in your chest, jaw, neck, or arm",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy01",
+          "supports_flag_zh": "胸、下顎、頸部或手臂疼痛",
+          "supports_flag_en": "Pain in the chest, jaw, neck, or arm"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "difficulty swallowing or painful swallowing",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy02",
+          "supports_flag_zh": "吞嚥困難或吞嚥疼痛",
+          "supports_flag_en": "Difficulty or pain with swallowing"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "frequent vomiting; bloody vomit",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy03",
+          "supports_flag_zh": "頻繁嘔吐或嘔血",
+          "supports_flag_en": "Frequent vomiting or bloody vomit"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "severe and constant pain in your abdomen",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy04",
+          "supports_flag_zh": "嚴重且持續的腹痛",
+          "supports_flag_en": "Severe and constant abdominal pain"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "shortness of breath",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy05",
+          "supports_flag_zh": "呼吸困難",
+          "supports_flag_en": "Shortness of breath"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "weight loss without trying or loss of appetite",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy06",
+          "supports_flag_zh": "非刻意體重減輕或食慾喪失",
+          "supports_flag_en": "Unintentional weight loss or loss of appetite"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "yellowing of your eyes or skin",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy07",
+          "supports_flag_zh": "眼睛或皮膚發黃",
+          "supports_flag_en": "Yellowing of the eyes or skin"
+        },
+        {
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Indigestion",
+          "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes",
+          "section": "When should I seek help from a doctor?",
+          "quote_en": "black, tarlike stools",
+          "suggested_tier": "urgent_referral",
+          "supports_red_flag_id": "rf.functional_dyspepsia.legacy08",
+          "supports_flag_zh": "黑色柏油樣糞便",
+          "supports_flag_en": "Black, tarry stools"
+        }
+      ],
+      "not_found": []
+    }
+  ],
+  "review": {
+    "reviewed_by": "claude",
+    "review_date": "2026-08-08",
+    "method": "independent: 95/95 flags accounted (68 supported + 27 not_found, zero double-classification); all supports_red_flag_id resolve; 41 urls whitelisted (magazine.medlineplus.gov accepted as medlineplus.gov subdomain), all opened (CDC meningitis via browser); 110 quotes fragment-verified — 92 verbatim as delivered, 18 corrected to true page verbatim (splices/elisions; zero fabrication found anywhere); 0 quotes over 40 words; whole-claim support reviewed per flag incl. the named specialty rules — all 8 honestly not_found rather than propped up with generic pages; 27 not_found kept.",
+    "corrections": [
+      {
+        "red_flag_id": "rf.frozen_shoulder.legacy01",
+        "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+        "field": "quote_en",
+        "original": "If your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+        "corrected": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.frozen_shoulder.legacy01",
+        "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+        "field": "quote_en",
+        "original": "A tear may go part way through a tendon (partial tear) or all the way through (full tear).",
+        "corrected": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.rotator_cuff.legacy01",
+        "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+        "field": "quote_en",
+        "original": "If your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+        "corrected": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.rotator_cuff.legacy01",
+        "source_url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+        "field": "quote_en",
+        "original": "A tear may go part way through a tendon (partial tear) or all the way through (full tear).",
+        "corrected": "If you your arm feels weak right after a sudden injury to your shoulder, see your provider as soon as possible.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.carpal_tunnel.legacy01",
+        "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+        "field": "quote_en",
+        "original": "Contact your provider if there seems to be a loss of muscle bulk around your fingers, or your fingers lose more and more feeling.",
+        "corrected": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.carpal_tunnel.legacy01",
+        "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+        "field": "quote_en",
+        "original": "Nerve conduction velocity (a test to see how fast electrical signals move through a nerve).",
+        "corrected": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.carpal_tunnel.legacy01",
+        "source_url": "https://medlineplus.gov/ency/article/000433.htm",
+        "field": "quote_en",
+        "original": "Carpal tunnel release is a surgical procedure that cuts into the ligament that is pressing on the nerve.",
+        "corrected": "there seems to be a loss of muscle bulk around your fingers; Your fingers lose more and more feeling",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.carpal_tunnel.legacy02",
+        "source_url": "https://medlineplus.gov/genetics/condition/carpal-tunnel-syndrome/",
+        "field": "quote_en",
+        "original": "Carpal tunnel syndrome can be a feature of many disorders, including rheumatoid arthritis, hypothyroidism, and transthyretin amyloidosis.",
+        "corrected": "carpal tunnel syndrome can be a feature of many disorders, including obesity, alcohol use disorder, rheumatoid arthritis, type 1 diabetes, type 2 diabetes, hypothyroidism",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.trigger_finger.legacy03",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000565.htm",
+        "field": "quote_en",
+        "original": "It is more common in people who have diabetes, rheumatoid arthritis, or gout. You can have more than one trigger finger.",
+        "corrected": "It is more common in people who: are over 45 years old; are female; have diabetes, rheumatoid arthritis, or gout",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.ankle_sprain.legacy02",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+        "field": "quote_en",
+        "original": "Grade III sprains: Your ligaments are fully torn.",
+        "corrected": "Some ankle sprains may become chronic (long-lasting). If this happens to you, your ankle may continue to be: painful and swollen; weak or giving way easily",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.ankle_sprain.legacy02",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000574.htm",
+        "field": "quote_en",
+        "original": "Some ankle sprains may become chronic. If this happens, your ankle may continue to be weak or giving way easily.",
+        "corrected": "Some ankle sprains may become chronic (long-lasting). If this happens to you, your ankle may continue to be: painful and swollen; weak or giving way easily",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.plantar_fasciitis.legacy02",
+        "source_url": "https://www.niams.nih.gov/health-topics/ankylosing-spondylitis",
+        "field": "quote_en",
+        "original": "It may also affect peripheral joints like the knees, ankles, and hips; other joints such as the ribs, shoulders, knees, or feet may be inflamed.",
+        "corrected": "pain, stiffness, and inflammation in other joints, such as the ribs, shoulders, knees, or feet",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.achilles_tendinopathy.legacy03",
+        "source_url": "https://medlineplus.gov/druginfo/meds/a697040.html",
+        "field": "quote_en",
+        "original": "Taking levofloxacin increases the risk that you will develop tendinitis or have a tendon rupture. These problems may affect tendons in the back of your ankle.",
+        "corrected": "taking levofloxacin increases the risk that you will develop tendinitis (swelling of a fibrous tissue that connects a bone to a muscle) or have a tendon rupture",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.hip_osteoarthritis.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/003179.htm",
+        "field": "quote_en",
+        "original": "Hip fractures can cause sudden and acute hip pain; hip pain may also be caused by osteonecrosis of the hip.",
+        "corrected": "Hip fractures -- can cause sudden and acute hip pain; Osteonecrosis of the hip (necrosis from loss of blood supply to the bone)",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.hip_osteoarthritis.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/003179.htm",
+        "field": "quote_en",
+        "original": "You are unable to move your hip or bear any weight on your leg.",
+        "corrected": "Hip fractures -- can cause sudden and acute hip pain; Osteonecrosis of the hip (necrosis from loss of blood supply to the bone)",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.hip_osteoarthritis.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/007260.htm",
+        "field": "quote_en",
+        "original": "Possible causes include using oral or intravenous steroids and excessive alcohol use.",
+        "corrected": "The following are possible causes: using oral or intravenous steroids; excessive alcohol use",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.fibromyalgia.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/000428.htm",
+        "field": "quote_en",
+        "original": "Muscle weakness in the shoulders and hips; Tests may include serum CPK (creatine phosphokinase).",
+        "corrected": "Muscle weakness in the shoulders and hips; Tests may include: serum CPK (creatine phosphokinase)",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.myofascial_pain.legacy01",
+        "source_url": "https://www.niams.nih.gov/health-topics/fibromyalgia",
+        "field": "quote_en",
+        "original": "Fibromyalgia causes pain and tenderness throughout the body, as well as fatigue and trouble sleeping.",
+        "corrected": "a chronic (long-lasting) disorder that causes pain and tenderness throughout the body, as well as fatigue and trouble sleeping",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.tmd.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+        "field": "quote_en",
+        "original": "The most common cause of a broken or dislocated jaw is injury to the face. Symptoms include misaligned teeth or jaw.",
+        "corrected": "The most common cause of a broken or dislocated jaw is injury to the face.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.tmd.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/000019.htm",
+        "field": "quote_en",
+        "original": "A person with a broken or dislocated jaw needs medical attention right away.",
+        "corrected": "The most common cause of a broken or dislocated jaw is injury to the face.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.tension_headache.legacy03",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+        "field": "quote_en",
+        "original": "You just started getting headaches, especially if you are older than 50.",
+        "corrected": "You have a history of headaches but they have changed in pattern or intensity.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.tension_headache.legacy03",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+        "field": "quote_en",
+        "original": "Your headache gets worse over 24 hours; your headaches have changed in pattern or intensity.",
+        "corrected": "You have a history of headaches but they have changed in pattern or intensity.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.tension_headache.legacy03",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+        "field": "quote_en",
+        "original": "You also have slurred speech, a change in vision, problems moving your arms or legs, loss of balance, confusion, or memory loss with your headache.",
+        "corrected": "You have a history of headaches but they have changed in pattern or intensity.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.tension_headache.legacy03",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+        "field": "quote_en",
+        "original": "Other causes of headaches that should be checked right away include brain tumor and buildup of pressure inside the skull.",
+        "corrected": "You have a history of headaches but they have changed in pattern or intensity.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.migraine.legacy02",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+        "field": "quote_en",
+        "original": "Your headache gets worse over 24 hours; your headaches have changed in pattern or intensity.",
+        "corrected": "You have a history of headaches but they have changed in pattern or intensity.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.migraine.legacy02",
+        "source_url": "https://medlineplus.gov/ency/patientinstructions/000424.htm",
+        "field": "quote_en",
+        "original": "You also have slurred speech, a change in vision, problems moving your arms or legs, loss of balance, confusion, or memory loss with your headache.",
+        "corrected": "You have a history of headaches but they have changed in pattern or intensity.",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.cluster_headache.legacy03",
+        "source_url": "https://medlineplus.gov/ency/article/000786.htm",
+        "field": "quote_en",
+        "original": "Call 911 if you have speech, vision, or movement problems or loss of balance, or if a headache starts suddenly.",
+        "corrected": "Call 911 or the local emergency number if; You have speech, vision, or movement problems",
+        "basis": "replaced with true page verbatim (splice/elision in the delivered quote); same page, same claim"
+      },
+      {
+        "red_flag_id": "rf.functional_dyspepsia.legacy01",
+        "field": "supports_flag_en",
+        "original": "Pain in chest, jaw, neck, or arm",
+        "corrected": "Pain in the chest, jaw, neck, or arm",
+        "basis": "aligned to frozen manifest text"
+      },
+      {
+        "red_flag_id": "rf.cervical_spondylosis.legacy03",
+        "source_url": "https://medlineplus.gov/ency/article/001289.htm",
+        "field": "quote_en",
+        "original": "The following symptoms may occur with cancer: Fever; Pain; Weight loss.",
+        "corrected": "The following symptoms may occur with cancer; Fever; Pain; Weight loss",
+        "basis": "colon-composite split into standalone verbatim fragments"
+      },
+      {
+        "red_flag_id": "rf.knee_osteoarthritis.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/003187.htm",
+        "field": "quote_en",
+        "original": "Contact your provider if: Your knee buckles, clicks, or locks.",
+        "corrected": "Contact your provider if; Your knee buckles, clicks, or locks.",
+        "basis": "colon-composite split into standalone verbatim fragments"
+      },
+      {
+        "red_flag_id": "rf.patellofemoral_pain.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/003187.htm",
+        "field": "quote_en",
+        "original": "Contact your provider if: Your knee buckles, clicks, or locks.",
+        "corrected": "Contact your provider if; Your knee buckles, clicks, or locks.",
+        "basis": "colon-composite split into standalone verbatim fragments"
+      },
+      {
+        "red_flag_id": "rf.fibromyalgia.legacy02",
+        "source_url": "https://medlineplus.gov/ency/article/000428.htm",
+        "field": "quote_en",
+        "original": "Muscle weakness in the shoulders and hips; Tests may include: serum CPK (creatine phosphokinase)",
+        "corrected": "Muscle weakness in the shoulders and hips; Tests may include; serum CPK (creatine phosphokinase)",
+        "basis": "colon-composite split into standalone verbatim fragments"
+      }
+    ]
+  }
+}

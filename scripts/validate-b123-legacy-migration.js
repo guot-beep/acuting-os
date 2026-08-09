@@ -54,13 +54,20 @@ if (b123.length !== expected) defects.push(`B1 stray batch123 records: ${b123.le
 const ids = registry.records.map((r) => r.id);
 if (new Set(ids).size !== ids.length) defects.push("B4 duplicate id in registry");
 
-// B5 + B6 + B7
+// B5 + B6 + B7. B6 expectations updated after the accepted Task C pass
+// (2026-08-08): the search HAS now run, so the honest ledger is exactly
+// 68 supported / 27 not_found / 0 pending. supported requires evidence;
+// not_found requires none; pending may no longer exist in this batch.
 for (const r of b123) {
   if (!canonIds.has(r.entity_id)) defects.push(`B5 orphan ${r.id}`);
-  if (r.provenance_status !== "pending_provenance") defects.push(`B6 ${r.id}: status "${r.provenance_status}" — batch123 has had NO provenance search; not_found/supported are both lies here`);
-  if ((r.evidence || []).length) defects.push(`B6 ${r.id}: pending_provenance with evidence`);
+  if (r.provenance_status === "supported" && !(r.evidence || []).length) defects.push(`B6 ${r.id}: supported without evidence`);
+  if (r.provenance_status === "not_found" && (r.evidence || []).length) defects.push(`B6 ${r.id}: not_found with evidence`);
+  if (r.provenance_status === "pending_provenance") defects.push(`B6 ${r.id}: still pending after the accepted Task C ledger`);
   for (const e of r.evidence || []) if (e.supports_flag_zh !== r.trigger_zh) defects.push(`B7 ${r.id}: evidence not full-text linked`);
 }
+const supB = b123.filter((r) => r.provenance_status === "supported").length;
+const nfB = b123.filter((r) => r.provenance_status === "not_found").length;
+if (supB !== 68 || nfB !== 27) defects.push(`B6 ledger ${supB}/${nfB}, accepted 68/27`);
 
 // B8
 const authored = registry.records.filter((r) => !/\.legacy\d+$/.test(r.id));
