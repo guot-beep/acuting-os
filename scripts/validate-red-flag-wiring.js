@@ -48,9 +48,15 @@ for (const rec of canon.records) {
 
 // CW-RF1 coverage for the migrated batch: every entity that has legacy
 // registry records must be wired, and ref counts must match.
+// Wiring is per-batch staged rollout: only batches whose WIRING round has run
+// must be wired. Batch 4 is wired (8fa4d55); batch123 legacy records exist
+// without refs BY DESIGN until their own wiring round — requiring refs for
+// them here would force the wiring this round explicitly forbids.
+const WIRED_ORIGINS = new Set(["legacy_card_migration_batch4"]);
 const legacyByEntity = new Map();
 for (const r of registry.records) {
   if (!/^rf\.[a-z0-9_]+\.legacy\d+$/.test(r.id)) continue;
+  if (!WIRED_ORIGINS.has(r.origin)) continue;
   legacyByEntity.set(r.entity_id, (legacyByEntity.get(r.entity_id) || 0) + 1);
 }
 for (const [entity, count] of legacyByEntity) {

@@ -1,0 +1,497 @@
+{
+  "dataset": "b123_existing_red_flags_export",
+  "purpose": "EXACT existing legacy red_flags for the 30 Batch 1-3 conditions that carry inline flags, frozen as the authoritative ordinal source for registry migration (same architecture as the gyn export). Wording and order are the compatibility contract — never edited here.",
+  "exported": "2026-08-08",
+  "records": [
+    {
+      "condition_id": "cond.trigeminal_neuralgia",
+      "source_batch": "batch1",
+      "name_zh": "三叉神經痛",
+      "name_en": "Trigeminal Neuralgia",
+      "red_flags_zh": [
+        "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估"
+      ],
+      "red_flags_en": [
+        "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"
+      ]
+    },
+    {
+      "condition_id": "cond.chronic_low_back_pain",
+      "source_batch": "batch2",
+      "name_zh": "慢性下背痛",
+      "name_en": "Chronic Low Back Pain",
+      "red_flags_zh": [
+        "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
+        "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
+        "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
+        "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折"
+      ],
+      "red_flags_en": [
+        "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency",
+        "Night pain, weight loss, cancer history → rule out metastasis or tumour",
+        "Fever, IV drug use, immunosuppression → rule out spinal infection",
+        "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture"
+      ]
+    },
+    {
+      "condition_id": "cond.acute_lumbar_sprain",
+      "source_batch": "batch2",
+      "name_zh": "急性腰扭傷",
+      "name_en": "Acute Lumbar Sprain",
+      "red_flags_zh": [
+        "下肢放射痛或麻木無力 → 考慮神經根受壓而非單純拉傷",
+        "馬尾徵象（鞍麻、失禁）→ 急診",
+        "外傷後劇痛無法負重 → 排除骨折"
+      ],
+      "red_flags_en": [
+        "Radiating leg pain or numbness/weakness → consider nerve root involvement, not simple strain",
+        "Cauda equina signs (saddle numbness, incontinence) → emergency",
+        "Severe pain unable to bear weight after trauma → rule out fracture"
+      ]
+    },
+    {
+      "condition_id": "cond.lumbar_disc_herniation",
+      "source_batch": "batch2",
+      "name_zh": "腰椎椎間盤突出",
+      "name_en": "Lumbar Disc Herniation",
+      "red_flags_zh": [
+        "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
+        "進行性足下垂或明顯肌力下降 → 神經外科評估",
+        "發燒或癌症病史 → 排除感染或腫瘤"
+      ],
+      "red_flags_en": [
+        "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery",
+        "Progressive foot drop or marked weakness → neurosurgical assessment",
+        "Fever or cancer history → rule out infection or tumour"
+      ]
+    },
+    {
+      "condition_id": "cond.sciatica",
+      "source_batch": "batch2",
+      "name_zh": "坐骨神經痛",
+      "name_en": "Sciatica",
+      "red_flags_zh": [
+        "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
+        "進行性足下垂或明顯肌力下降 → 需影像與神經外科評估",
+        "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染"
+      ],
+      "red_flags_en": [
+        "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral",
+        "Progressive foot drop or marked motor loss → needs imaging and neurosurgical assessment",
+        "Night pain with weight loss, fever, or cancer history → rule out tumour or infection"
+      ]
+    },
+    {
+      "condition_id": "cond.cervical_spondylosis",
+      "source_batch": "batch2",
+      "name_zh": "頸椎病",
+      "name_en": "Cervical Spondylosis",
+      "red_flags_zh": [
+        "步態不穩、手部精細動作變差、Hoffmann/Babinski 陽性 → 脊髓病變，需影像與轉介",
+        "進行性上肢無力或萎縮 → 神經根/脊髓受壓",
+        "發燒、體重減輕 → 排除感染或腫瘤"
+      ],
+      "red_flags_en": [
+        "Unsteady gait, clumsy hands, positive Hoffmann/Babinski → cervical myelopathy, image and refer",
+        "Progressive arm weakness or wasting → root/cord compression",
+        "Fever, weight loss → rule out infection or tumour"
+      ]
+    },
+    {
+      "condition_id": "cond.neck_pain_stiff",
+      "source_batch": "batch2",
+      "name_zh": "急性頸痛／落枕",
+      "name_en": "Acute Neck Pain / Stiff Neck",
+      "red_flags_zh": [
+        "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
+        "外傷後頸痛 → 排除骨折或韌帶損傷，勿貿然活動",
+        "上肢放射麻木無力 → 考慮神經根病變"
+      ],
+      "red_flags_en": [
+        "Fever with neck stiffness and photophobia → rule out meningitis (emergency)",
+        "Neck pain after trauma → rule out fracture or ligament injury, do not force motion",
+        "Radiating arm numbness/weakness → consider radiculopathy"
+      ]
+    },
+    {
+      "condition_id": "cond.whiplash",
+      "source_batch": "batch2",
+      "name_zh": "揮鞭式頸部損傷（文件情境）",
+      "name_en": "Whiplash-Associated Disorder (context)",
+      "red_flags_zh": [
+        "中線骨性壓痛、麻木無力、意識改變（加拿大頸椎準則陽性）→ 影像排除骨折/脫位",
+        "進行性神經症狀 → 神經外科評估",
+        "劇烈頭痛或吞嚥、發聲異常 → 排除血管損傷"
+      ],
+      "red_flags_en": [
+        "Midline bony tenderness, numbness/weakness, altered consciousness (positive Canadian C-spine rule) → image to exclude fracture/dislocation",
+        "Progressive neurological symptoms → neurosurgical assessment",
+        "Severe headache or swallowing/voice change → rule out vascular injury"
+      ]
+    },
+    {
+      "condition_id": "cond.frozen_shoulder",
+      "source_batch": "batch2",
+      "name_zh": "五十肩／冷凍肩",
+      "name_en": "Frozen Shoulder (Adhesive Capsulitis)",
+      "red_flags_zh": [
+        "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
+        "夜間痛合併體重減輕或發燒 → 排除感染或腫瘤",
+        "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩"
+      ],
+      "red_flags_en": [
+        "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture",
+        "Night pain with weight loss or fever → rule out infection or tumour",
+        "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis"
+      ]
+    },
+    {
+      "condition_id": "cond.rotator_cuff",
+      "source_batch": "batch2",
+      "name_zh": "旋轉肌袖肌腱病變",
+      "name_en": "Rotator Cuff Tendinopathy",
+      "red_flags_zh": [
+        "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+        "合併頸部放射痛或手麻 → 排除頸神經根病變",
+        "夜間痛合併發燒 → 排除感染"
+      ],
+      "red_flags_en": [
+        "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer",
+        "With radiating neck pain or hand numbness → rule out cervical radiculopathy",
+        "Night pain with fever → rule out infection"
+      ]
+    },
+    {
+      "condition_id": "cond.lateral_epicondylitis",
+      "source_batch": "batch2",
+      "name_zh": "網球肘",
+      "name_en": "Lateral Epicondylitis (Tennis Elbow)",
+      "red_flags_zh": [
+        "外上髁腫脹發熱 → 排除感染或發炎性關節病",
+        "合併手麻或無力 → 排除橈神經（後骨間神經）夾擠",
+        "外傷後劇痛 → 排除撕脫性骨折"
+      ],
+      "red_flags_en": [
+        "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy",
+        "With hand numbness or weakness → rule out radial (posterior interosseous) nerve entrapment",
+        "Severe pain after trauma → rule out avulsion fracture"
+      ]
+    },
+    {
+      "condition_id": "cond.medial_epicondylitis",
+      "source_batch": "batch2",
+      "name_zh": "高爾夫球肘",
+      "name_en": "Medial Epicondylitis (Golfer's Elbow)",
+      "red_flags_zh": [
+        "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
+        "紅熱腫脹 → 排除感染",
+        "外傷後劇痛 → 排除撕脫性骨折"
+      ],
+      "red_flags_en": [
+        "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement",
+        "Redness, warmth, swelling → rule out infection",
+        "Severe pain after trauma → rule out avulsion fracture"
+      ]
+    },
+    {
+      "condition_id": "cond.carpal_tunnel",
+      "source_batch": "batch2",
+      "name_zh": "腕隧道症候群",
+      "name_en": "Carpal Tunnel Syndrome",
+      "red_flags_zh": [
+        "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+        "雙側合併全身症狀 → 排除甲狀腺低下、類風濕、澱粉樣變",
+        "外傷後急性腫脹麻木 → 排除急性腕隧道症候群（急症）"
+      ],
+      "red_flags_en": [
+        "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release",
+        "Bilateral with systemic symptoms → rule out hypothyroidism, rheumatoid arthritis, amyloidosis",
+        "Acute swelling and numbness after trauma → rule out acute carpal tunnel syndrome (emergency)"
+      ]
+    },
+    {
+      "condition_id": "cond.de_quervain",
+      "source_batch": "batch2",
+      "name_zh": "媽媽手（狹窄性腱鞘炎）",
+      "name_en": "De Quervain Tenosynovitis",
+      "red_flags_zh": [
+        "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+        "合併麻木 → 排除橈神經淺支刺激",
+        "外傷後劇痛 → 排除橈骨莖突骨折"
+      ],
+      "red_flags_en": [
+        "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)",
+        "With numbness → rule out superficial radial nerve irritation",
+        "Severe pain after trauma → rule out radial styloid fracture"
+      ]
+    },
+    {
+      "condition_id": "cond.trigger_finger",
+      "source_batch": "batch2",
+      "name_zh": "扳機指",
+      "name_en": "Trigger Finger",
+      "red_flags_zh": [
+        "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+        "外傷後鎖住 → 排除肌腱斷裂或異物",
+        "多指同時受累 → 考慮糖尿病、類風濕等全身病因"
+      ],
+      "red_flags_en": [
+        "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)",
+        "Locking after trauma → rule out tendon rupture or foreign body",
+        "Multiple fingers involved → consider systemic causes such as diabetes or rheumatoid arthritis"
+      ]
+    },
+    {
+      "condition_id": "cond.knee_osteoarthritis",
+      "source_batch": "batch2",
+      "name_zh": "膝骨關節炎",
+      "name_en": "Knee Osteoarthritis",
+      "red_flags_zh": [
+        "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
+        "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
+        "晨僵超過一小時、多關節對稱 → 排除類風濕性關節炎"
+      ],
+      "red_flags_en": [
+        "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)",
+        "Locking or gross instability after trauma → rule out meniscal or ligament injury",
+        "Morning stiffness over an hour, symmetric polyarthritis → rule out rheumatoid arthritis"
+      ]
+    },
+    {
+      "condition_id": "cond.patellofemoral_pain",
+      "source_batch": "batch2",
+      "name_zh": "髕股疼痛症候群",
+      "name_en": "Patellofemoral Pain Syndrome",
+      "red_flags_zh": [
+        "關節腫脹積液 → 排除關節內損傷（半月板、軟骨）",
+        "鎖住或打軟 → 排除半月板或韌帶問題",
+        "紅熱發燒 → 排除感染性關節炎"
+      ],
+      "red_flags_en": [
+        "Joint effusion → rule out intra-articular injury (meniscus, cartilage)",
+        "Locking or giving way → rule out meniscal or ligament problem",
+        "Red, hot joint with fever → rule out septic arthritis"
+      ]
+    },
+    {
+      "condition_id": "cond.meniscus_injury",
+      "source_batch": "batch2",
+      "name_zh": "半月板損傷（文件情境）",
+      "name_en": "Meniscus Injury (context)",
+      "red_flags_zh": [
+        "真正鎖住無法伸直 → 桶柄狀撕裂，需轉介評估",
+        "外傷後大量積血（數小時內腫脹）→ 排除韌帶斷裂或骨軟骨骨折",
+        "紅熱發燒 → 排除感染"
+      ],
+      "red_flags_en": [
+        "True locking with inability to extend → bucket-handle tear, refer for assessment",
+        "Large haemarthrosis (swelling within hours) after trauma → rule out ligament rupture or osteochondral fracture",
+        "Red, hot joint with fever → rule out infection"
+      ]
+    },
+    {
+      "condition_id": "cond.ankle_sprain",
+      "source_batch": "batch2",
+      "name_zh": "踝關節扭傷",
+      "name_en": "Ankle Sprain",
+      "red_flags_zh": [
+        "受傷後無法負重四步且骨性壓痛（Ottawa 踝準則陽性）→ 需 X 光排除骨折",
+        "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
+        "近端腓骨壓痛 → 排除 Maisonneuve 骨折"
+      ],
+      "red_flags_en": [
+        "Unable to take four steps and bony tenderness (positive Ottawa ankle rules) → X-ray to exclude fracture",
+        "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability",
+        "Proximal fibular tenderness → rule out Maisonneuve fracture"
+      ]
+    },
+    {
+      "condition_id": "cond.plantar_fasciitis",
+      "source_batch": "batch2",
+      "name_zh": "足底筋膜炎",
+      "name_en": "Plantar Fasciitis",
+      "red_flags_zh": [
+        "夜間痛或休息痛、外傷後無法負重 → 排除跟骨應力性骨折",
+        "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
+        "足底麻木或灼痛 → 考慮神經夾擠而非筋膜炎"
+      ],
+      "red_flags_en": [
+        "Night or rest pain, or inability to bear weight after trauma → rule out calcaneal stress fracture",
+        "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)",
+        "Plantar numbness or burning → consider nerve entrapment rather than fasciitis"
+      ]
+    },
+    {
+      "condition_id": "cond.achilles_tendinopathy",
+      "source_batch": "batch2",
+      "name_zh": "阿基里斯腱病變",
+      "name_en": "Achilles Tendinopathy",
+      "red_flags_zh": [
+        "突發後跟「被踢」感、無法墊腳、Thompson 測試陽性 → 跟腱斷裂，需轉介",
+        "紅熱腫脹合併發燒 → 排除感染",
+        "使用氟喹諾酮類抗生素 → 肌腱斷裂風險升高，須警覺"
+      ],
+      "red_flags_en": [
+        "Sudden 'kicked in the heel' sensation, inability to push off, positive Thompson test → Achilles rupture, refer",
+        "Redness, warmth and swelling with fever → rule out infection",
+        "On fluoroquinolone antibiotics → heightened rupture risk, stay alert"
+      ]
+    },
+    {
+      "condition_id": "cond.hip_osteoarthritis",
+      "source_batch": "batch2",
+      "name_zh": "髖骨關節炎",
+      "name_en": "Hip Osteoarthritis",
+      "red_flags_zh": [
+        "休息痛、夜間痛、體重減輕 → 排除腫瘤或感染",
+        "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+        "紅熱發燒 → 排除化膿性關節炎"
+      ],
+      "red_flags_en": [
+        "Rest or night pain with weight loss → rule out tumour or infection",
+        "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture",
+        "Red, hot joint with fever → rule out septic arthritis"
+      ]
+    },
+    {
+      "condition_id": "cond.piriformis_syndrome",
+      "source_batch": "batch2",
+      "name_zh": "梨狀肌症候群",
+      "name_en": "Piriformis Syndrome",
+      "red_flags_zh": [
+        "腰痛合併皮節分布麻木無力 → 優先排除腰椎神經根病變",
+        "馬尾徵象 → 急診",
+        "夜間痛、體重減輕 → 排除骨盆腫瘤"
+      ],
+      "red_flags_en": [
+        "Back pain with dermatomal numbness/weakness → first rule out lumbar radiculopathy",
+        "Cauda equina signs → emergency",
+        "Night pain, weight loss → rule out pelvic tumour"
+      ]
+    },
+    {
+      "condition_id": "cond.fibromyalgia",
+      "source_batch": "batch2",
+      "name_zh": "纖維肌痛症",
+      "name_en": "Fibromyalgia",
+      "red_flags_zh": [
+        "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
+        "近端無力、肌酵素升高 → 排除肌炎",
+        "局部固定痛而非廣泛痛 → 重新考慮結構性病因"
+      ],
+      "red_flags_en": [
+        "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease",
+        "Proximal weakness with raised muscle enzymes → rule out myositis",
+        "Fixed focal pain rather than widespread → reconsider a structural cause"
+      ]
+    },
+    {
+      "condition_id": "cond.myofascial_pain",
+      "source_batch": "batch2",
+      "name_zh": "肌筋膜疼痛症候群",
+      "name_en": "Myofascial Pain Syndrome",
+      "red_flags_zh": [
+        "合併全身廣泛壓痛、疲勞、睡眠障礙 → 考慮纖維肌痛而非局部肌筋膜痛",
+        "發燒、體重減輕 → 排除感染或腫瘤",
+        "進行性神經症狀 → 排除神經根或脊髓病變"
+      ],
+      "red_flags_en": [
+        "Widespread tenderness, fatigue and sleep disturbance → consider fibromyalgia rather than localised myofascial pain",
+        "Fever, weight loss → rule out infection or tumour",
+        "Progressive neurological symptoms → rule out radiculopathy or myelopathy"
+      ]
+    },
+    {
+      "condition_id": "cond.tmd",
+      "source_batch": "batch2",
+      "name_zh": "顳顎關節障礙",
+      "name_en": "Temporomandibular Disorder",
+      "red_flags_zh": [
+        "顎關節鎖死無法開口/閉口 → 需轉介",
+        "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
+        "進行性面部麻木無力 → 排除神經或腫瘤病因"
+      ],
+      "red_flags_en": [
+        "Jaw locked open or closed → refer",
+        "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation",
+        "Progressive facial numbness/weakness → rule out neurological or tumour cause"
+      ]
+    },
+    {
+      "condition_id": "cond.tension_headache",
+      "source_batch": "batch2",
+      "name_zh": "緊張型頭痛",
+      "name_en": "Tension-Type Headache",
+      "red_flags_zh": [
+        "霹靂性（瞬間達最強）頭痛 → 排除蛛網膜下腔出血（急症）",
+        "發燒合併頸僵、畏光 → 排除腦膜炎",
+        "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高"
+      ],
+      "red_flags_en": [
+        "Thunderclap (instant maximal) headache → rule out subarachnoid haemorrhage (emergency)",
+        "Fever with neck stiffness and photophobia → rule out meningitis",
+        "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+      ]
+    },
+    {
+      "condition_id": "cond.migraine",
+      "source_batch": "batch2",
+      "name_zh": "偏頭痛",
+      "name_en": "Migraine",
+      "red_flags_zh": [
+        "霹靂性頭痛 → 排除蛛網膜下腔出血（急症）",
+        "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
+        "發燒合併頸僵 → 排除腦膜炎",
+        "先兆持續逾一小時或每次同側 → 需進一步評估"
+      ],
+      "red_flags_en": [
+        "Thunderclap headache → rule out subarachnoid haemorrhage (emergency)",
+        "Marked change in pattern, progressive worsening, persistent deficit → image",
+        "Fever with neck stiffness → rule out meningitis",
+        "Aura lasting over an hour or always the same side → needs further assessment"
+      ]
+    },
+    {
+      "condition_id": "cond.cluster_headache",
+      "source_batch": "batch2",
+      "name_zh": "叢發性頭痛（文件情境）",
+      "name_en": "Cluster Headache (context)",
+      "red_flags_zh": [
+        "首次發作或型態改變 → 影像排除次發性病因（如海綿竇病灶）",
+        "霹靂性頭痛 → 排除出血（急症）",
+        "持續神經缺損 → 進一步評估"
+      ],
+      "red_flags_en": [
+        "First-ever attack or change in pattern → image to exclude a secondary cause (e.g. cavernous sinus lesion)",
+        "Thunderclap headache → rule out haemorrhage (emergency)",
+        "Persistent neurological deficit → further assessment"
+      ]
+    },
+    {
+      "condition_id": "cond.functional_dyspepsia",
+      "source_batch": "batch3",
+      "name_zh": "功能性消化不良",
+      "name_en": "Functional Dyspepsia",
+      "red_flags_zh": [
+        "胸、下顎、頸部或手臂疼痛",
+        "吞嚥困難或吞嚥疼痛",
+        "頻繁嘔吐或嘔血",
+        "嚴重且持續的腹痛",
+        "呼吸困難",
+        "非刻意體重減輕或食慾喪失",
+        "眼睛或皮膚發黃",
+        "黑色柏油樣糞便"
+      ],
+      "red_flags_en": [
+        "Pain in the chest, jaw, neck, or arm",
+        "Difficulty or pain with swallowing",
+        "Frequent vomiting or bloody vomit",
+        "Severe and constant abdominal pain",
+        "Shortness of breath",
+        "Unintentional weight loss or loss of appetite",
+        "Yellowing of the eyes or skin",
+        "Black, tarry stools"
+      ]
+    }
+  ]
+}

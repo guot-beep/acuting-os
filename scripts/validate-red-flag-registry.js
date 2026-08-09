@@ -48,9 +48,12 @@ for (const r of records) {
   // the registry records honestly that no whitelisted source was located.
   // Only那一類 is exempt from tier + evidence — authored records still may
   // not be written without a source.
-  const isLegacyNotFound = r.provenance_status === "not_found" && /^legacy_card_migration/.test(String(r.origin || ""));
+  // pending_provenance (Batch 1-3, 2026-08-08) is a THIRD state and must not
+  // be conflated: not_found = a search ran and found nothing;
+  // pending_provenance = the search has not been run yet.
+  const isLegacyNotFound = (r.provenance_status === "not_found" || r.provenance_status === "pending_provenance") && /^legacy_card_migration/.test(String(r.origin || ""));
   if (!isLegacyNotFound && !tiers.has(r.tier)) add("RF4", `tier "${r.tier}" not in tier_vocabulary (${[...tiers].join(" | ")})`);
-  if (isLegacyNotFound && (r.evidence || []).length) add("RF5", "not_found record carries evidence — status and ledger disagree");
+  if (isLegacyNotFound && (r.evidence || []).length) add("RF5", `${r.provenance_status} record carries evidence — status and ledger disagree`);
 
   const evidence = Array.isArray(r.evidence) ? r.evidence : [];
   const usable = evidence.filter((e) => /^https:\/\//.test(String(e && e.source_url || "")));

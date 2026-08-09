@@ -26,7 +26,10 @@ const registry = readJson("data/pathology/red_flag_registry.json");
 const canonIds = new Set(readJson("data/pathology/condition_canon_shortlist.json").records.map((r) => r.id));
 const xwIds = new Set(readJson("data/interop/condition_crosswalk.json").records.map((r) => r.condition_id));
 
-const legacy = registry.records.filter((r) => /^rf\.[a-z0-9_]+\.legacy\d+$/.test(r.id));
+// Scope: THIS validator owns the Batch 4 gyn migration only. Other batches'
+// legacy records (origin legacy_card_migration_batch123, 2026-08-08) have
+// their own validator; counting them here would corrupt the 83/13 ledger.
+const legacy = registry.records.filter((r) => /^rf\.[a-z0-9_]+\.legacy\d+$/.test(r.id) && r.origin === "legacy_card_migration_batch4");
 const byKey = new Map(legacy.map((r) => [r.entity_id + "|" + r.trigger_zh, r]));
 const defects = [];
 
