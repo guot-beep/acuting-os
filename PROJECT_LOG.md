@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — gyn_fertility Condition canonical fill 第一批 10 張
+
+- **做了什麼**：在獨立 `codex/condition-gyn-fill-2026-08-08` worktree 實填 PCOS、子宮內膜異位、子宮肌瘤、原發性痛經、PMS、月經不調、月經過多、月經過少、繼發性閉經、女性不孕；替換錯置／共用長文，補成對 `etiology`、`western_pathology`、結構化 `risk_factors`、`acupuncture_scope`、`field_sources` 與精確來源。
+- **數字 before→after**：`gyn_fertility` clean `1/25 → 10/25`；blocking defects `89 → 58`（剩餘皆在未填的 15 張）；全庫 `etiology_en` 與 `western_pathology_en` 各自缺失 `146/150 → 140/150`（原本已有英文的 4 張也在本批，因此本批淨減 6）。
+- **來源與安全**：依 Board scope、`curriculum/conditions` Tier-1、CloudTCM／American Dragon exact pages 及具名 biomedical sources；PCOS、endometriosis、primary dysmenorrhea 未找到精確 CloudTCM 頁，明記 source gap 且未借用相似病名 URL。女性不孕課件的下腹部 `2–3 cun` 因缺穴位個別解剖支持，明確不採納為可執行技法。
+- **驗證**：`build-data` 通過；10 張 raw canonical ↔ generated bundle 18 欄逐欄一致；relations、red-flag wiring/registry、data、interactions、content-junk、Pattern validators、syntax、`git diff --check` 通過。`validate-condition-sources.js` 因其 DOM stub 缺少現行 `dxTypeBar` 而在未執行來源斷言前失敗，相關 script／renderer 本批未修改。
+- **已知未解／下一步**：本機實際預覽確認 Condition renderer 目前只顯示 `summary_zh`、關聯、red flags 與舊 `source_links`／Cloud map；尚未讀取本批新增的 pathology、etiology、risk factors、acupuncture scope、`field_sources` 或 canonical `sources`。依隔離規則未修改 Pattern agent 正在處理的 `js/knowledge.js`；下一批為其餘 15 張，但先停在本批 checkpoint。
+
 # 2026-08-08 Codex — Pattern V2-0／V2-A frozen counts、V1 加值與 true aliases
 
 - **做了什麼**：在 `codex/pattern-v2` 更正 V1 governance counts；核對 34 個 `ENRICH_EXISTING` ledger concepts（因 B119 展開六淋、B110/G017 重複，實際為 38 個 live IDs），保留 27 張既有完整加值，為其餘 11 張補成對病機／次症與可由既有來源支持的成因或傳變。
