@@ -1,142 +1,216 @@
 {
-  "purpose": "Exact, unsummarized staging store for v7 source content (Board bullets, Clinical Impact statements, and exact drug-specific clinical flags) that cannot fit the current canonical flat schema without schema expansion.",
+  "purpose": "Final staging semantics store for Pilot 1 (7 drugs). Holds 100% verbatim source atomic bullets, exact source-declared flags, agent-derived candidate flags, and canonical consumption references.",
   "audited_at": "2026-08-09",
-  "policy": "Fidelity audit correction: zero placeholders, zero generic flag copy-pasting, exact source text preservation.",
+  "schema_mode": "atomic_provenance_accounting_v2",
   "records": {
     "drug.warfarin": {
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
-      "unmapped_board_high_yield_en": [
-        "Vitamin K antagonist requiring strict INR monitoring.",
+      "source_board_items": [
+        "Vitamin K antagonist.",
+        "Narrow therapeutic window; INR monitoring is a classic association.",
         "Major/fatal bleeding is the central toxicity.",
         "Diet, drugs, and supplements can alter anticoagulant effect.",
-        "Classic comparison: Warfarin (vitamin K pathway + INR monitoring) vs DOAC Xa inhibitors (-xaban; no routine INR titration) vs antiplatelets (clopidogrel on platelets)."
+        "Course mnemonic associates warfarin with warfare against Vitamin K.",
+        "Warfarin: vitamin K pathway + INR monitoring.",
+        "DOAC Xa inhibitors: -xaban; no routine INR titration.",
+        "Antiplatelet drugs such as clopidogrel act on platelets, not vitamin K-dependent coagulation factors.",
+        "Course provenance: Pharmacology Summary.md, cardiovascular/anticoagulant section around L398-L405."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "Bleeding or bruising reported by the patient may be medication related.",
-          "Changes in diet, supplements, or new medications can alter anticoagulant effect.",
-          "Patients taking warfarin require monitoring of INR values.",
-          "Acupuncture relevance: Do not interpret bruising or bleeding tendency without considering anticoagulant therapy; present a bleeding-risk prompt."
-        ],
-        "clinical_impact_flags": [
-          "bleeding_risk",
-          "inr_lab_relevance",
-          "drug_herb_interaction_concern"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "Bleeding/bruising: high clinical relevance.",
+        "Lab interpretation: INR is essential to therapy management.",
+        "Falls/trauma matter more because occult or overt bleeding can be more consequential.",
+        "Sudden diet/supplement changes can matter.",
+        "Do not interpret bruising or bleeding tendency without considering anticoagulant therapy.",
+        "Medication use should be visible before needling intensity/depth decisions.",
+        "Acupuncture card should present a bleeding-risk prompt, not a universal no acupuncture rule.",
+        "INR / clinical bleeding assessment per prescribing team."
+      ],
+      "source_declared_flags": [
+        "bleeding_risk",
+        "fall_risk",
+        "lactation_relevance"
+      ],
+      "derived_candidate_flags": [
+        "inr_lab_relevance",
+        "drug_herb_interaction_concern"
+      ],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Reduces functional vitamin K-dependent coagulation-factor synthesis.",
+        "Indications: Venous thromboembolism, pulmonary embolism, atrial fibrillation, cardiac valve replacement.",
+        "Boxed warning: Major/fatal bleeding risk and regular INR monitoring stressed.",
+        "Mnemonic: Warfare against Vitamin K.",
+        "Classic association: Warfarin -> Vitamin K antagonist -> INR monitoring & Bleeding risk."
+      ]
     },
     "drug.apixaban": {
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
-      "unmapped_board_high_yield_en": [
+      "source_board_items": [
         "-xaban -> factor Xa inhibitor.",
+        "Main clinical danger: bleeding.",
         "Do not abruptly discontinue without appropriate anticoagulation planning: current label warns of increased thrombotic risk.",
-        "Neuraxial/spinal procedures carry spinal/epidural hematoma risk."
+        "Neuraxial/spinal procedures carry spinal/epidural hematoma risk.",
+        "Mnemonic from course logic: XABAN -> Xa."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "Bleeding/bruising risk.",
-          "Stopping anticoagulation prematurely can expose the patient to thrombotic risk.",
-          "Any planned neuraxial procedure has a specific label warning."
-        ],
-        "clinical_impact_flags": [
-          "bleeding_risk",
-          "thrombosis_if_stopped"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "Bleeding/bruising risk.",
+        "Stopping anticoagulation prematurely can expose the patient to thrombotic risk.",
+        "Any planned neuraxial procedure has a specific label warning.",
+        "Display bleeding_risk. Ask about unusual bruising/bleeding and co-use of other anticoagulant/antiplatelet agents.",
+        "Do not tell patients to hold prescribed anticoagulation for acupuncture."
+      ],
+      "source_declared_flags": [
+        "bleeding_risk",
+        "thrombosis_if_stopped"
+      ],
+      "derived_candidate_flags": [],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Direct inhibition of factor Xa reduces thrombin generation.",
+        "Indications: Nonvalvular AF stroke reduction, DVT prophylaxis, DVT/PE treatment.",
+        "Boxed warning: Premature discontinuation thrombotic risk & neuraxial hematoma risk.",
+        "Mnemonic: -XABAN indicates Factor Xa inhibitor.",
+        "Exam trap: Routine INR not required, but spinal/epidural hematoma warning applies."
+      ]
     },
     "drug.clopidogrel": {
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
-      "unmapped_board_high_yield_en": [
-        "P2Y12 platelet inhibitor antiplatelet (P in clopidogrel/aspirin -> platelets).",
-        "Requires metabolic activation through CYP2C19; boxed warning on reduced effect in CYP2C19 poor metabolizers.",
+      "source_board_items": [
+        "Antiplatelet, not the same mechanism as warfarin/DOACs.",
+        "Course mnemonic: P in clopidogrel / aspirin -> platelets.",
+        "Requires metabolic activation, especially through CYP2C19.",
+        "Current boxed warning focuses on reduced antiplatelet effect in CYP2C19 poor metabolizers.",
         "Bleeding remains a major clinical safety concern."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "Bruising/bleeding may be medication related.",
-          "Genetics/drug interactions affecting CYP2C19 may reduce efficacy."
-        ],
-        "clinical_impact_flags": [
-          "bleeding_risk"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "Bruising/bleeding may be medication related.",
+        "Genetics/drug interactions affecting CYP2C19 may reduce efficacy.",
+        "Visible antiplatelet flag; adjust clinical caution to actual bleeding history and overall hemostatic context rather than applying an automatic ban."
+      ],
+      "source_declared_flags": [
+        "bleeding_risk"
+      ],
+      "derived_candidate_flags": [
+        "cyp2c19_metabolizer_relevance"
+      ],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Prodrug converted to active metabolite that inhibits P2Y12 ADP receptors.",
+        "Indications: Acute coronary syndrome, recent MI, recent stroke, PAD.",
+        "Boxed warning: Reduced antiplatelet effect in CYP2C19 poor metabolizers.",
+        "Mnemonic: Clopidogrel blocks P2Y12 ADP receptors on platelets.",
+        "Classic association: Clopidogrel -> P2Y12 ADP receptor inhibitor -> Antiplatelet effect."
+      ]
     },
     "drug.aspirin": {
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
-      "unmapped_board_high_yield_en": [
-        "Dual lens: NSAID (prostaglandin/COX pathway, pain/inflammation) and low-dose antiplatelet.",
+      "source_board_items": [
+        "One drug can appear under more than one Board lens.",
+        "NSAID: prostaglandin/COX pathway, pain/inflammation.",
+        "Low-dose use: antiplatelet context.",
         "Course emphasizes gastric irritation/erosion, hemorrhage, renal injury, and Reye syndrome risk in children with viral illness.",
         "Compare with acetaminophen: analgesic/antipyretic but not a classic anti-inflammatory NSAID."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "High-value card because patients commonly combine aspirin with fish oil, supplements, or herbs.",
-          "Each interaction must be graded by evidence; blood-moving alone is not proof of a clinically significant interaction."
-        ],
-        "clinical_impact_flags": [
-          "bleeding_risk",
-          "gi_bleeding",
-          "renal_dose_relevance"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "High-value card because patients commonly combine aspirin with fish oil, supplements, or herbs.",
+        "Each interaction must be graded by evidence; blood-moving alone is not proof of a clinically significant interaction."
+      ],
+      "source_declared_flags": [
+        "bleeding_risk",
+        "gi_bleeding",
+        "renal_dose_relevance"
+      ],
+      "derived_candidate_flags": [],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Irreversible inhibition of COX-1.",
+        "Indications: Analgesia, antipyresis, anti-inflammatory, ACS, TIA, stroke.",
+        "Mnemonic: Irreversible COX-1 inhibitor antiplatelet.",
+        "Exam trap: Reye syndrome risk in children/teens with viral illness."
+      ]
     },
     "drug.enoxaparin": {
       "source_file": "curriculum/pharm/v7_extracted/02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md",
-      "unmapped_board_high_yield_en": [
-        "Injectable Low-Molecular-Weight Heparin (LMWH); distinguish from oral warfarin and DOACs.",
-        "Appears in perioperative, thromboembolism, pregnancy/fertility or recurrent-loss medical contexts."
+      "source_board_items": [
+        "Injectable anticoagulant; distinguish from oral warfarin and oral DOACs.",
+        "Major practical issue: bleeding.",
+        "Often appears in perioperative, thromboembolism, pregnancy/fertility or recurrent-loss medical contexts when prescribed."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "Medication should trigger a bleeding/bruising review and awareness of injection-site bruising."
-        ],
-        "clinical_impact_flags": [
-          "bleeding_risk"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "Medication should trigger a bleeding/bruising review and awareness of injection-site bruising."
+      ],
+      "source_declared_flags": [
+        "bleeding_risk"
+      ],
+      "derived_candidate_flags": [
+        "injection_site_bruising"
+      ],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Low-Molecular-Weight Heparin (LMWH).",
+        "Indications: DVT prophylaxis and treatment, unstable angina/non-Q-wave MI.",
+        "Mnemonic: Low Molecular Weight Heparin (LMWH).",
+        "Exam trap: Monitored via anti-Factor Xa levels, NOT routine aPTT."
+      ]
     },
     "drug.losartan": {
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
-      "unmapped_board_high_yield_en": [
-        "-SARTAN -> ARB. Blocks angiotensin II receptor signaling.",
-        "Hypertension, diabetic nephropathy context, hyperkalemia, renal function, hypotension.",
-        "Boxed warning for fetal toxicity.",
-        "Compare ACE inhibitor -pril: ARB avoids ACE inhibition cough but shares RAS-related potassium, renal and pregnancy issues."
+      "source_board_items": [
+        "-SARTAN -> ARB.",
+        "Blocks angiotensin II receptor signaling.",
+        "Think: hypertension, diabetic nephropathy context, hyperkalemia, renal function, hypotension.",
+        "Current label has boxed warning for fetal toxicity.",
+        "Compare ACE inhibitor -pril: ARB avoids ACE inhibition but still shares RAS-related potassium, renal and pregnancy issues.",
+        "Course provenance: the course uses valsartan as the ARB prototype and explicitly links -sartan with hyperkalemia. Losartan appears mainly in the legacy pregnancy-category table."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "Dizziness, low BP (especially with volume depletion), renal function deterioration, and elevated potassium.",
-          "Acupuncture relevance: Surface BP/volume/electrolyte context before symptoms like dizziness or weakness are assigned entirely to a TCM deficiency pattern."
-        ],
-        "clinical_impact_flags": [
-          "hyperkalemia",
-          "orthostatic_hypotension",
-          "renal_dose_relevance",
-          "fetal_toxicity"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "Potential medication contribution: dizziness;",
+        "Potential medication contribution: low BP, especially with volume depletion;",
+        "Potential medication contribution: renal function deterioration;",
+        "Potential medication contribution: elevated potassium.",
+        "If a patient with dizziness or weakness is taking losartan plus a diuretic, Clinical Impact should surface BP/volume/electrolyte context before symptoms are assigned entirely to a TCM deficiency pattern."
+      ],
+      "source_declared_flags": [
+        "hyperkalemia",
+        "orthostatic_hypotension",
+        "renal_dose_relevance",
+        "fetal_toxicity"
+      ],
+      "derived_candidate_flags": [],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Selectively blocks angiotensin II binding to AT1 receptors.",
+        "Indications: Hypertension, Diabetic nephropathy, Stroke risk reduction.",
+        "Boxed warning: Fetal toxicity (injury and death to developing fetus).",
+        "Mnemonic: -SARTAN indicates ARB. Think: hypertension, diabetic nephropathy, hyperkalemia, and fetal toxicity.",
+        "Exam trap: ARBs avoid ACEi cough but share fetal toxicity & hyperkalemia risk."
+      ]
     },
     "drug.hydrochlorothiazide": {
       "source_file": "curriculum/pharm/v7_extracted/15_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_A.md",
-      "unmapped_board_high_yield_en": [
+      "source_board_items": [
         "Thiazide diuretic.",
-        "Course mnemonic: See No Evil and high-yield association with secondary angle-closure glaucoma.",
-        "Classic electrolyte associations: hypokalemia, hyponatremia and volume changes.",
-        "Compare: furosemide (loop, stronger diuresis, ototoxicity) vs spironolactone (potassium-sparing, hyperkalemia) vs HCTZ (thiazide, hypokalemia/hyponatremia)."
+        "Course mnemonic: See No Evil and the high-yield association with secondary angle-closure glaucoma.",
+        "Classic electrolyte associations: hypokalemia, hyponatremia and other volume/electrolyte changes.",
+        "Compare: furosemide -> loop, stronger diuresis, ototoxicity association; spironolactone -> potassium-sparing, hyperkalemia; HCTZ -> thiazide, hypokalemia/hyponatremia.",
+        "Course provenance: Pharmacology Summary.md around L401; detailed diuretic material also exists in Pharm+OM+Winter+2019+W5-diuretics.md."
       ],
-      "unmapped_clinical_impact": {
-        "clinical_impact_en": [
-          "Cramps / weakness, dizziness / hypotension, confusion in electrolyte disturbance, acute eye pain / visual change in secondary angle-closure glaucoma.",
-          "Acupuncture relevance: Leg cramps, fatigue, weakness and dizziness can be over-attributed to Qi/Blood deficiency if medication/electrolyte effects are not visible."
-        ],
-        "clinical_impact_flags": [
-          "fluid_depletion",
-          "hypokalemia",
-          "hyponatremia",
-          "orthostatic_hypotension",
-          "visual_red_flag"
-        ]
-      }
+      "source_clinical_impact_statements": [
+        "Potential medication contribution: cramps / weakness;",
+        "Potential medication contribution: dizziness / hypotension;",
+        "Potential medication contribution: confusion in electrolyte disturbance;",
+        "Potential medication contribution: acute eye pain / visual change in secondary angle-closure glaucoma.",
+        "Leg cramps, fatigue, weakness and dizziness are exactly the kind of symptoms that can be over-attributed to Qi/Blood deficiency if medication/electrolyte effects are not visible."
+      ],
+      "source_declared_flags": [
+        "fluid_depletion",
+        "hypokalemia",
+        "hyponatremia",
+        "orthostatic_hypotension",
+        "visual_red_flag"
+      ],
+      "derived_candidate_flags": [],
+      "canonicalized_or_consumed_source_items": [
+        "Mechanism: Thiazide diuretic inhibiting NaCl reabsorption in distal convoluted tubule.",
+        "Indications: Hypertension, Edema.",
+        "Mnemonic: Thiazide diuretic. See No Evil -> secondary angle-closure glaucoma & hypokalemia/hyponatremia.",
+        "Exam trap: Hypokalemia, hyponatremia, hyperuricemia (gout flare), and rare acute myopia/secondary angle-closure glaucoma."
+      ]
     }
   }
 }

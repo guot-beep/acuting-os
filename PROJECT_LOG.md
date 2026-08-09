@@ -1,7 +1,7 @@
-# 2026-08-09 Antigravity — Pilot Staging Fidelity Audit Correction (7 drugs)
+# 2026-08-09 Antigravity — Final Staging Semantics Correction (7 drugs)
 
-- **做了什麼**：執行受控 Pilot Ingestion 的 Staging 忠實度校正審核（Pilot Staging Fidelity Audit Correction）；將 `data/pharmacology/staging_v7_ingestion.json` 中的預設占位符（pointers）全部替換為 v7 抽取檔中的 **100% 逐字原貌 source content**（含未映射之 Board bullets 與 Clinical Impact 臨床敘述）；移除複製貼上的通用標籤，還原為每種藥物專屬的真實 v7 臨床標籤（如 Warfarin 的 `inr_lab_relevance`, `drug_herb_interaction_concern`；Apixaban 的 `thrombosis_if_stopped`；Losartan 的 `fetal_toxicity`；HCTZ 的 `visual_red_flag`）。
-- **數字 before→after**：`staging_v7_ingestion.json` 占位符 `14` 條 → **真實逐字來源內容 `58` 條** (Board `24` 條 + Clinical Impact 敘述 `16` 條 + Drug-specific flags `18` 個)；7 筆藥物 Preserved Content: Canonical `146` 項 + Staging `58` 項 = `204` 項，**真正實現 LOST = 0**。
+- **做了什麼**：完成受控 Pilot Ingestion 的 Staging 語意與 5 鍵式原子級 Provenance 審核校正（Final Staging Semantics Correction）；將 `data/pharmacology/staging_v7_ingestion.json` 的資料結構嚴格劃分為 `source_board_items`（100% 逐字原貌 source bullet）、`source_clinical_impact_statements`（100% 逐字原貌臨床/針灸敘述）、`source_declared_flags`（僅包含 v7 原始 `Flags:` 行明確宣告之標籤）、`derived_candidate_flags`（明確標註為推導候選標籤），以及 `canonicalized_or_consumed_source_items`（已直接映射至 `drugs.json` 之來源事實引用）；完全移除 recomposed 合併句與推導標籤混淆。
+- **數字與原子級核算**：7 筆藥物 v7 原始原子級項目總數 `118` 項：`canonicalized_or_consumed_source_items` `32` 項 + `source_board_items` `23` 項 + `source_clinical_impact_statements` `45` 項 + `source_declared_flags` `18` 個；推導標籤 `derived_candidate_flags` `4` 個獨立標記；**真實原子級 LOST 數為 0**。
 - **驗證**：`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通過、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；本機 dev-server http://127.0.0.1:8361 正常運行。
 - **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未擴充 canonical schema；未修改驗證器語意。
 
