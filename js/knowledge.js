@@ -412,7 +412,7 @@
   }
 
   if (!K) {
-    ["formulaRecords", "herbRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
+    ["formulaRecords", "herbRecords", "pharmRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
       if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
@@ -1916,6 +1916,100 @@
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
     });
+  }
+
+  // ---- Pharmacology (西藥) --------------------------------------------------
+  const pharmHost = el("pharmRecords");
+  if (pharmHost) {
+    const pharmDrugs = (K.pharmDrugs && K.pharmDrugs.records) || [];
+    const pharmClasses = (K.pharmDrugClasses && K.pharmDrugClasses.records) || [];
+    const pharmClassById = new Map(pharmClasses.map((c) => [c.id, c]));
+    const pharmClassName = (d) => {
+      const cls = pharmClassById.get(d.drugclass_id);
+      return cls ? displayLabel(cls.name_zh, cls.name_en, d.drugclass_id) : (d.drugclass_id || "");
+    };
+    const pharmClassCategories = [...new Set(pharmDrugs.map((d) => d.drugclass_id).filter(Boolean))].sort();
+
+    const renderPharmCards = (list) => list.map((d) => {
+      const brands = (d.brand_names_en || []).slice(0, 3);
+      const indications = (d.indications_en || []).slice(0, 3);
+      const contraindications = (d.contraindications_en || []).slice(0, 2);
+      const hasBoxed = !!(d.boxed_warning_en || d.boxed_warning_zh);
+      return `
+        <article class="k-card k-pharm-card" data-record-id="${esc(d.id)}">
+          <header>
+            <strong>${esc(d.name_en || d.id)}${d.name_zh ? ` <small>${esc(d.name_zh)}</small>` : ""}</strong>
+            ${d.prototype_drug ? '<span class="k-status k-status-prototype">prototype</span>' : ""}
+            ${statusPill(d.review_status)}
+          </header>
+          ${brands.length ? `<p class="k-en" style="color:#38bdf8;">${esc(brands.join(" / "))}</p>` : ""}
+          <p class="k-meta">${esc(pharmClassName(d))}</p>
+          ${d.mechanism_en ? `<p class="k-meta" style="font-style:italic;">${esc(modeText(d.mechanism_zh || d.mechanism_en, d.mechanism_en))}</p>` : ""}
+          ${indications.length ? `<p class="k-meta">${esc(modeText("適應症：", "Indications: "))}${esc(indications.join("; "))}</p>` : ""}
+          ${hasBoxed ? `<p class="k-flags" style="color:#f87171;">⚠ ${esc(modeText("黑框警告", "Boxed Warning"))}</p>` : ""}
+          ${contraindications.length ? `<p class="k-flags">${esc(modeText("禁忌：", "CI: "))}${esc(contraindications.join("; "))}</p>` : ""}
+          ${d.exam_trap_en ? `<p class="k-meta" style="color:#fbbf24;">💡 ${esc(modeText(d.exam_trap_zh || d.exam_trap_en, d.exam_trap_en))}</p>` : ""}
+          ${d.dailymed_url ? `<a href="${esc(d.dailymed_url)}" target="_blank" rel="noopener" class="k-source-link" style="font-size:0.82em;">DailyMed ↗</a>` : ""}
+        </article>`;
+    }).join("");
+
+    pharmHost.innerHTML = `
+      <div class="k-toolbar k-toolbar--single">
+        <input type="search" id="pharmFilter" placeholder="${esc(modeText("搜尋西藥、品牌、機轉、適應症… Search drug, brand, mechanism, indication...", "Search drugs, brands, mechanisms, indications..."))}" class="k-filter" />
+      </div>
+      <details class="k-category-drawer">
+        <summary>
+          <span><span class="i18n-zh">藥物分類篩選 </span><span class="i18n-en">Class filters</span></span>
+          <small id="pharmCategorySummary">${esc(modeText("全部 All", "All"))} · ${pharmDrugs.length}</small>
+        </summary>
+        <select id="pharmCategoryFilter" class="k-filter">
+          <option value="">All classes</option>
+          ${pharmClassCategories.map((cid) => {
+            const cls = pharmClassById.get(cid);
+            const label = cls ? displayLabel(cls.name_zh, cls.name_en, cid) : cid;
+            return `<option value="${esc(cid)}">${esc(label)}</option>`;
+          }).join("")}
+        </select>
+        <div class="cat-chips" id="pharmCatChips" aria-label="西藥分類篩選"></div>
+      </details>
+      <div class="k-grid" id="pharmGrid">${renderPharmCards(pharmDrugs)}</div>`;
+
+    const updatePharmGrid = () => {
+      const q = el("pharmFilter").value.trim().toLowerCase();
+      const classId = el("pharmCategoryFilter").value;
+      const hit = pharmDrugs.filter((d) => {
+        const classHit = !classId || d.drugclass_id === classId;
+        const text = [
+          d.id,
+          d.name_en,
+          d.name_zh,
+          ...(d.brand_names_en || []),
+          d.drugclass_id,
+          d.mechanism_en,
+          d.mechanism_zh,
+          ...(d.indications_en || []),
+          ...(d.indications_zh || []),
+          ...(d.contraindications_en || []),
+          d.exam_trap_en,
+          d.exam_trap_zh,
+          d.mnemonic_en,
+          d.classic_association_en,
+        ].join(" ").toLowerCase();
+        return classHit && (!q || text.includes(q));
+      });
+      const summary = el("pharmCategorySummary");
+      if (summary) summary.textContent = `${categorySummaryLabel(classId)} · ${hit.length}`;
+      el("pharmGrid").innerHTML = renderPharmCards(hit) || `<p class="k-missing">${esc(modeText("沒有符合的西藥 / No matching medications.", "No matching medications."))}</p>`;
+    };
+    el("pharmFilter").addEventListener("input", updatePharmGrid);
+    el("pharmCategoryFilter").addEventListener("change", updatePharmGrid);
+    document.addEventListener("acuting:content-mode", updatePharmGrid);
+    buildCategoryChips("pharmCatChips", "pharmCategoryFilter", pharmDrugs, (d) => d.drugclass_id, updatePharmGrid,
+      Object.fromEntries(pharmClassCategories.map((cid) => {
+        const cls = pharmClassById.get(cid);
+        return [cid, cls ? displayLabel(cls.name_zh, cls.name_en, cid) : cid];
+      }))
+    );
   }
 
   // ---- Comparisons ---------------------------------------------------------
