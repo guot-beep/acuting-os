@@ -8258,45 +8258,198 @@
     "code": "EX-UE1",
     "display_code": "EX-UE1",
     "nameZh": "肘尖",
-    "nameEn": "Zhoujian",
+    "nameEn": "Elbow Tip",
     "pinyin": "Zhoujian",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "肘部，屈肘，尺骨鷹嘴的尖端。",
-    "locationEn": "At tip of olecranon of ulna when elbow is flexed.",
-    "techniqueNotes": "艾炷直接灸7~15壯。\nDirect moxibustion 7-15 cones.",
-    "functions": "消腫散結，解毒",
-    "functionsEn": "Reduces swelling and dissipates nodules; Resolves toxins",
+    "location": "屈肘，在尺骨鷹嘴最高點；eLotus 與 American Dragon 的精確頁定位一致。",
+    "locationEn": "With the elbow flexed, at the highest prominence of the ulnar olecranon; the exact eLotus and American Dragon pages agree on this landmark.",
+    "cunMeasurement": "本穴以尺骨鷹嘴骨性標誌取穴，不使用寸量。 This point is located by the olecranon bony landmark rather than a cun measurement.",
+    "anatomyZh": "表面標誌為尺骨鷹嘴尖端。四層精確來源未提供皮下層次、鷹嘴滑囊厚度、皮膚至骨膜距離或體型修正；因此不把骨性標誌推論成可針刺深度。",
+    "anatomyEn": "The surface landmark is the tip of the ulnar olecranon. The exact four-layer sources provide no tissue-layer description, olecranon-bursa thickness, skin-to-periosteum distance, or body-habitus adjustment; the bony landmark is therefore not converted into an inferred needling depth.",
+    "acumethodZh": "eLotus 與 American Dragon 精確頁均明列『只灸』。舊卡另有直刺0.3～0.5寸或點刺出血，與兩個精確頁不一致且缺乏精確來源支持，僅保留為未核實 legacy，不作可執行技法。",
+    "acumethodEn": "The exact eLotus and American Dragon pages both state moxibustion only. Legacy perpendicular insertion of 0.3-0.5 cun or prick-to-bleed differs from both exact pages and lacks exact-source support; it is retained only as unverified legacy, not as an executable method.",
+    "moxaZh": "eLotus 與 American Dragon：只灸，但均未列直接／間接法、壯數、留灸時間、皮膚保護或停止規則。舊卡『艾炷直接灸7～15壯』無精確來源支持，不與兩頁的『只灸』合併成劑量共識。",
+    "moxaEn": "eLotus and American Dragon: moxibustion only, without direct/indirect method, cone count, duration, skin protection, or stopping rule. The legacy instruction of 7-15 direct moxa cones lacks exact-source support and is not merged into a consensus dose.",
+    "techniqueNotes": "【eLotus／American Dragon 精確頁】只灸；劑量與方法未提供。\n【未核實舊值】直接灸7～15壯；直刺0.3～0.5寸或點刺出血。以上舊值不作已驗證規則。\nExact eLotus/American Dragon pages: moxibustion only, with no dose or method supplied. Unverified legacy: 7-15 direct cones, perpendicular insertion 0.3-0.5 cun, or prick to bleed; these are not treated as validated rules.",
+    "functions": "化痰、消腫（eLotus）；散結、解毒（舊卡）",
+    "functionsEn": "Transforms phlegm and dissipates swelling (eLotus); dissipates nodules and resolves toxicity (legacy)",
+    "functionsZhList": [
+      "化痰（eLotus）",
+      "消腫（eLotus）",
+      "散結（舊卡）",
+      "解毒（舊卡）"
+    ],
+    "functionsEnList": [
+      "Transforms phlegm (eLotus)",
+      "Dissipates swelling (eLotus)",
+      "Dissipates nodules (legacy)",
+      "Resolves toxicity (legacy)"
+    ],
+    "pointIdentityZh": [
+      "上肢部經外奇穴",
+      "資料庫穩定代碼 EX-UE1、永久 id ex.ue1",
+      "eLotus 代碼 Ex-UE1，與本庫序列一致",
+      "American Dragon 使用 M-UE-46，並以 Elbow's Tip 為英文名"
+    ],
+    "pointIdentityEn": [
+      "Extra point of the upper extremity",
+      "Stable database code EX-UE1 and permanent id ex.ue1",
+      "eLotus code Ex-UE1 aligns with the database sequence",
+      "American Dragon uses M-UE-46 and the English name Elbow's Tip"
+    ],
+    "exam_star": 0,
+    "exam_importance": "非 NCBAHM Appendix A 明列穴；本地課件無肘尖專條。複習重點是鷹嘴尖定位、eLotus／AD 共同『只灸』，以及不可把舊針刺、放血或7～15壯寫成已核實共識。",
+    "exam_importance_en": "Not explicitly named in NCBAHM Appendix A, with no dedicated local curriculum entry. Review the olecranon-tip location, the shared eLotus/AD moxibustion-only instruction, and why legacy needling, bloodletting, or 7-15 cones cannot be presented as verified consensus.",
+    "exam_pearl": "肘尖＝屈肘取尺骨鷹嘴尖。eLotus 與 AD 均只列灸法；舊7～15壯、直刺與放血均未獲精確頁支持。",
+    "exam_pearl_en": "Zhoujian is located at the olecranon tip with the elbow flexed. Both eLotus and AD list moxibustion only; legacy 7-15 cones, needling, and bloodletting lack exact-page support.",
     "patterns": [
-      "癰疽",
-      "頸部淋巴結腫大",
-      "腸癰"
+      "瘰癧（eLotus／American Dragon）",
+      "化膿性癰腫（American Dragon）",
+      "淋巴結炎（American Dragon）"
     ],
     "patternsEn": [
-      "Carbuncle",
-      "Cervical lymphadenopathy",
-      "Appendicitis"
+      "Scrofula (eLotus/American Dragon)",
+      "Abscessed carbuncle (American Dragon)",
+      "Lymphadenitis (American Dragon)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "化痰",
+      "消腫",
+      "散結",
+      "解毒"
+    ],
+    "action_tags_en": [
+      "Transform Phlegm",
+      "Dissipate Swelling",
+      "Dissipate Nodules",
+      "Resolve Toxicity"
+    ],
+    "disease_tags_zh": [
+      "瘰癧",
+      "化膿性癰腫",
+      "淋巴結炎"
+    ],
+    "disease_tags_en": [
+      "Scrofula",
+      "Abscessed Carbuncle",
+      "Lymphadenitis"
+    ],
+    "acuTags": [
+      "非Board明列",
+      "尺骨鷹嘴",
+      "兩源只灸",
+      "灸量缺口",
+      "舊放血未核實",
+      "AD M-UE-46"
+    ],
+    "combinePointsZh": "四層精確來源未提供肘尖專屬配穴。舊卡亦無配穴內容；不以其他穴位治療瘰癧、癰腫或腸癰的組方移植到本穴。",
+    "combinePointsEn": "The exact four-layer sources provide no Zhoujian-specific combination. The legacy card also has no combination content; combinations for scrofula, carbuncles, or intestinal abscess involving other points are not transferred to this point.",
+    "cautions": "【灸法邊界】eLotus 與 AD 均只寫『只灸』，沒有直接／間接法、壯數、皮膚保護、熱傷害停止規則或兒童方案；舊7～15壯不得升格為可執行劑量。【針刺／放血衝突】舊直刺0.3～0.5寸與點刺出血和兩個精確頁不一致，且無精確頁支持，不執行也不合併；舊『注意手指清潔消毒』所指技法不清，不能取代放血安全規範。【急症邊界】舊『腸癰』不等同已證實的闌尾炎療效；NIDDK 將疑似闌尾炎列為需立即處理的醫療急症。【特殊族群缺口】四層未提供孕期、兒童、感覺障礙、皮膚脆弱、抗凝／凝血異常的專穴方案；來源沉默不是安全許可。",
+    "cautionsEn": [
+      "Moxa boundary: eLotus and AD only state moxibustion only and supply no direct/indirect method, cone count, skin protection, thermal-injury stopping rule, or pediatric protocol; the legacy 7-15-cone dose is not promoted to an executable instruction.",
+      "Needling/bloodletting conflict: legacy 0.3-0.5-cun needling and prick-to-bleed differ from both exact pages and lack exact-page support; they are neither executed nor merged. The legacy finger-sanitation note is technique-ambiguous and cannot substitute for a bloodletting safety protocol.",
+      "Emergency boundary: the legacy term intestinal abscess is not treated as evidence for appendicitis efficacy; NIDDK identifies suspected appendicitis as a medical emergency requiring immediate care.",
+      "Special-population gap: the four layers provide no point-specific protocol for pregnancy, children, sensory impairment, fragile skin, anticoagulation, or coagulopathy; source silence is not clearance."
+    ],
+    "clinical_pearls": "eLotus 與 American Dragon 精確頁都支持鷹嘴尖定位、瘰癧與『只灸』；eLotus 另列化痰消腫，AD 另列化膿性癰腫與淋巴結炎，但 AD 的 Command Functions／Actions 欄空白。舊腸癰不收入療效標籤，只保留在 NIDDK 支持的急症邊界。",
+    "clinical_pearls_en": "The exact eLotus and American Dragon pages both support the olecranon-tip location, scrofula, and moxibustion only. eLotus additionally lists phlegm transformation and swelling dissipation; AD additionally lists abscessed carbuncle and lymphadenitis, while its Command Functions and Actions fields are blank. Legacy intestinal abscess is excluded from efficacy tags and retained only at the NIDDK-supported emergency boundary.",
+    "nameIntroZh": "『肘尖』即肘後最突出的尺骨鷹嘴尖；英文主名採 eLotus 的 Elbow Tip，AD 作 Elbow's Tip。",
+    "nameIntroEn": "Zhoujian means the pointed tip of the elbow, the prominent ulnar olecranon; the primary English name follows eLotus's Elbow Tip, while AD uses Elbow's Tip.",
+    "evidence": "四層整合：肘尖不在 NCBAHM Appendix A 明列清單，本地 curriculum/acupoints 無專條。eLotus 精確頁支持 Ex-UE1、鷹嘴尖定位、瘰癧、化痰消腫與只灸。AD 拼音索引及 Zhoujian 精確頁支持 M-UE-46、同一定位、只灸、瘰癧、化膿性癰腫與淋巴結炎；其功效欄空白。舊散結解毒、腸癰、直接灸7～15壯、直刺0.3～0.5寸、放血與手指消毒警語均保留證據層級；NIDDK 僅支持闌尾炎急症邊界，不支持本穴療效。\nFour-layer synthesis: Zhoujian is not explicitly named in NCBAHM Appendix A, and no dedicated curriculum entry was found. The exact eLotus page supports Ex-UE1, the olecranon-tip location, scrofula, phlegm transformation, swelling dissipation, and moxibustion only. The AD pinyin index and exact Zhoujian page support M-UE-46, the same location, moxibustion only, scrofula, abscessed carbuncle, and lymphadenitis; its action fields are blank. Legacy nodule/toxicity actions, intestinal abscess, 7-15 direct cones, 0.3-0.5-cun needling, bloodletting, and finger-sanitation wording retain their evidence level; NIDDK supports only the appendicitis emergency boundary, not point efficacy.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhoujian-ex-ue1"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhoujian-ex-ue1",
+      "https://www.americandragon.com/Points/Zhoujian.html",
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/appendicitis/symptoms-causes"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 肘尖 EX-UE1 (eLotus CORE)",
-        "labelEn": "Extra Point · Zhoujian EX-UE1 (eLotus CORE)",
+        "labelZh": "eLotus · 肘尖 Ex-UE1（內容專頁）",
+        "labelEn": "eLotus · Zhoujian Ex-UE1 (Content Detail)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhoujian-ex-ue1",
-        "source": "MasterTungAcupuncture.org / eLotus CORE"
+        "source": "eLotus CORE exact point detail"
+      },
+      {
+        "labelZh": "American Dragon · 肘尖 M-UE-46（內容專頁）",
+        "labelEn": "American Dragon · Zhoujian M-UE-46 (Content Detail)",
+        "url": "https://www.americandragon.com/Points/Zhoujian.html",
+        "source": "American Dragon exact point detail"
+      },
+      {
+        "labelZh": "NIDDK · 闌尾炎急症邊界",
+        "labelEn": "NIDDK · Appendicitis Emergency Boundary",
+        "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/appendicitis/symptoms-causes",
+        "source": "NIDDK exact appendicitis safety page"
       }
     ],
     "x": 155,
     "y": 290,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.5 寸，或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.5 cun, or prick to bleed.",
-    "cautions": "注意手指清潔消毒。",
-    "cautionsEn": "Maintain finger sanitation.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Zhoujian is absent from the named focus list",
+        "scope note: Appendix A states the exam is not exclusively limited to the named list"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 肘尖, Zhoujian, Elbow Tip, EX-UE1, and M-UE-46 under curriculum/board and curriculum/acupoints found no dedicated entry",
+        "source-gap note: no curriculum content was transferred from other elbow or swelling points"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zhoujian-ex-ue1: exact page opened 2026-08-08; Ex-UE1, Elbow Tip, location, scrofula, actions, and moxibustion-only technique extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Zhoujian link present and opened 2026-08-08",
+        "https://www.americandragon.com/Points/Zhoujian.html: exact page opened 2026-08-08; M-UE-46, Elbow's Tip, location, moxibustion-only technique, scrofula, abscessed carbuncle, and lymphadenitis extracted; Command Functions and Actions blank"
+      ],
+      "location": [
+        "eLotus exact Zhoujian page: top of the ulnar olecranon with elbow flexed",
+        "American Dragon exact Zhoujian page: prominence of the olecranon with elbow flexed"
+      ],
+      "anatomy": [
+        "eLotus and American Dragon exact Zhoujian pages: ulnar olecranon surface landmark",
+        "source-gap note: no exact four-layer page supplies tissue layers, bursa thickness, skin-to-periosteum distance, or body-habitus adjustment"
+      ],
+      "technique": [
+        "eLotus exact Zhoujian page: moxibustion only",
+        "American Dragon exact Zhoujian page: moxibustion only",
+        "unverified legacy values: perpendicular 0.3-0.5 cun and prick to bleed; differ from exact-page methods and are excluded from executable technique"
+      ],
+      "moxibustion": [
+        "eLotus and American Dragon exact Zhoujian pages: moxibustion only, no dose or method",
+        "unverified legacy value: direct moxibustion 7-15 cones; not merged"
+      ],
+      "functions": [
+        "eLotus exact Zhoujian page: transforms phlegm and dissipates swelling",
+        "American Dragon exact Zhoujian page: Command Functions and Actions blank",
+        "unverified legacy actions retained: dissipates nodules and resolves toxicity"
+      ],
+      "indications": [
+        "eLotus exact Zhoujian page: scrofula",
+        "American Dragon exact Zhoujian page: scrofula, abscessed carbuncle, and lymphadenitis",
+        "legacy intestinal abscess excluded from efficacy tags and handled as an appendicitis emergency boundary"
+      ],
+      "combinations": [
+        "source-gap note: no Zhoujian-specific combination found in the four exact layers or legacy card"
+      ],
+      "cautions": [
+        "eLotus and American Dragon exact Zhoujian pages: moxibustion only but no dose, skin-protection, or stopping rule",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/appendicitis/symptoms-causes: exact page opened 2026-08-08; suspected appendicitis is a medical emergency requiring immediate care",
+        "source-gap note: no point-specific pregnancy, pediatric, sensory-impairment, fragile-skin, anticoagulation, coagulopathy, bloodletting, or moxa-dose protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE1 / ex.ue1 / 肘尖 / Zhoujian",
+        "eLotus: Ex-UE1 / Elbow Tip",
+        "American Dragon: M-UE-46 / Elbow's Tip"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Zhoujian exact detail page",
+        "2026-08-08 live-opened American Dragon pinyin index and exact Zhoujian content page",
+        "2026-08-08 live-opened NIDDK appendicitis symptoms-and-causes page; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "eLotus／American Dragon：只灸。舊直刺0.3～0.5寸或點刺出血無精確頁支持，僅作 legacy 記錄。",
+    "needlingEn": "eLotus/American Dragon: moxibustion only. Legacy 0.3-0.5-cun needling or prick-to-bleed lacks exact-page support and is retained only as legacy.",
     "id": "ex.ue1"
   },
   {
