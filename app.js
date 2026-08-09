@@ -117,6 +117,28 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   { metricId: "metric.mood", min: 0, max: 10, integer: true },
   { metricId: "metric.energy_level", min: 0, max: 10, integer: true },
   { metricId: "metric.sleep_quality", min: 0, max: 10, integer: true },
+  // Batch 3 (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md §8 deferred
+  // list, approved this batch). Deliberately mixed shapes, not four more
+  // 0-10 clones — proves the generic renderer across bounded scale (A),
+  // integer duration (D), and integer count (C) in one pass, same {min,
+  // max, integer} shape with zero new properties either way.
+  //   bloating: same bounded 0-10 whole-number AcuTing convention as
+  //     stress_level/mood/energy_level/sleep_quality above.
+  //   sleep_onset_minutes: unbounded (max: null) nonnegative whole-minute
+  //     duration — unit:"minutes" is the vocabulary fact (a duration);
+  //     whole-minute entry is the AcuTing convention, not something
+  //     "minutes" proves by itself. Same shape as effect_duration_days.
+  //   night_wakings: unbounded nonnegative integer count — unit:
+  //     "count_per_night" is a tally, decimals are meaningless. 0 is a
+  //     real value (slept through), not "not measured."
+  //   bowel_frequency: unbounded nonnegative integer count — unit:
+  //     "count_per_week". direction_good is "individualized" in
+  //     outcome_metrics.json; this config makes no higher/lower-is-better
+  //     claim, and formatNumericOutcomeMetrics below must not either.
+  { metricId: "metric.bloating", min: 0, max: 10, integer: true },
+  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true },
+  { metricId: "metric.night_wakings", min: 0, max: null, integer: true },
+  { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
 ];
 
 // Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
