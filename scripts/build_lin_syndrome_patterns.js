@@ -14,8 +14,8 @@ const linPatterns = [
     name_zh: "熱淋",
     name_en: "Heat Lin (Damp-Heat Bladder Pattern)",
     pinyin: "Rè Lín",
-    aliases_zh: ["膀胱濕熱證", "熱淋證"],
-    aliases_en: ["Heat Dysuria Pattern", "Bladder Damp-Heat Lin"],
+    aliases_zh: ["熱淋證"],
+    aliases_en: ["Heat Dysuria Pattern"],
 
     status: "draft",
     review_status: "draft",
