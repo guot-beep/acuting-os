@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — EX-B12 坐骨（Zuogu）四層修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `49f9830` (`feat(acupoints): refine Zuogu extra point`).
+- **Files Changed**: `data/acupoints/extra_points.json`, `data/audits/missing_report.json`, and rebuilt `data/generated/app_data.js` / `data/generated/knowledge_data.js`; the occupied Pattern worktree and `curriculum/conditions/*` remained isolated.
+- **Four Layers / Links**: Zuogu is not explicitly named in NCBAHM Appendix A and has no dedicated local curriculum entry. The eLotus production index opened but contains no Zuogu／坐骨 entry. The exact American Dragon page `https://www.americandragon.com/Points/Zuogu.html` opened and is the card's only rendered source link; the AD pinyin index, sciatica page, and UB36 page were also checked for identity and combinations. No generic CloudTCM link remains on EX-B12.
+- **Identity / Reconciliation**: preserved immutable database `EX-B12` / `ex.b12`. AD's live body uses `N-BW-17`, while its search-title metadata uses `M-BW-17`; AD spells the English name `Ischeum`, while the card uses standard anatomical `Ischium` and records the source spelling. The legacy greater-trochanter-to-sacral-hiatus thirds location and AD greater-trochanter-to-coccyx midpoint-minus-1-cun location remain explicitly unreconciled.
+- **Content / Safety**: imported AD's straight 2–3-cun technique, sensation, sciatica/lower-limb-paralysis indications, and exact combinations without converting blank AD Actions into invented functions. Legacy 1.5–2.5-cun, 0.3–0.8-cun, bloodletting, moxa, actions, and gluteal-pain content remain visible with evidence labels. Added deep-gluteal sciatic-nerve boundaries, distal-electric-sensation caution, cauda-equina red flags, and explicit pregnancy/pediatric/coagulation/body-habitus/source gaps; no universal safe depth or stopping rule was invented.
+- **Measured Counts**: strict/four-source `38/72 → 39/72`; issues `34/72 → 33/72`; generic Cloud URL `10/72 → 9/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime), `validate-interactions`, `validate-point-ids` (925 ids), `validate-content-junk`, `node --check app.js`, EX-B12 runtime assertions, and `git diff --check` passed.
+- **Next**: EX-UE1 肘尖 (Zhoujian); continue one-point-at-a-time four-layer refinement and live-open every rendered source link.
+
 ## [2026-08-08] Codex Handoff — 經外奇穴精確來源連結修正
 
 - **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `f42d00b` (`fix(acupoints): only show verified extra-point links`).

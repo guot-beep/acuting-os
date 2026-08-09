@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — EX-B12 坐骨定位衝突、深臀安全與精確連結修整
+
+- **做了什麼**：按四層工作流重整 EX-B12 坐骨；保留 `EX-B12`／`ex.b12`，補齊中英文定位、解剖、刺灸法、功效主治、配穴、考點、安全與逐欄來源，並把卡片可點來源收斂為已實際開啟的 American Dragon 坐骨精確頁。
+- **數字 before→after**：嚴格模板／四源稽核 `38/72 → 39/72`；待修 `34/72 → 33/72`；泛用 Cloud URL `10/72 → 9/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：Board 與本地課件無坐骨專條；eLotus production 索引無 Zuogu／坐骨項目；AD 精確頁正文使用 `N-BW-17`、搜尋標題顯示 `M-BW-17`，本卡如實保留站內差異。舊卡「大轉子—骶骨角三等分」與 AD「大轉子—尾骨中點下1寸」、舊深度與 AD 直刺2～3寸均分列，不硬合併；深臀坐骨神經、神經紅旗與特殊族群證據缺口已補入。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）、`validate-interactions.js`、`validate-point-ids.js`（925 ids）、`validate-content-junk.js`、`node --check app.js`、EX-B12 runtime assertions 與 `git diff --check` 全通過；內容 commit `49f9830`。
+- **已知未解／下一步**：33張待修、9張泛用 Cloud URL；下一張 EX-UE1 肘尖。eLotus 無專頁，AD 未給安全終點、體型修正、孕期／兒童方案；舊點刺出血與可灸僅保留為未核實歷史值。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
 # 2026-08-08 Codex — 經外奇穴精確來源連結修正
 
 - **做了什麼**：修正所有經外奇穴上方來源按鈕誤套十四經穴網址推導的問題；經外奇穴現在只顯示資料中已核對的 CloudTCM／AD／eLotus 精確頁，不再產生空 CloudTCM URL、AD 首頁或索引頁假按鈕。另清理 EX-B10／EX-B11 當下無法直接開啟的來源按鈕，內容證據仍保留於 `field_sources`。
