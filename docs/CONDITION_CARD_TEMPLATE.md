@@ -132,6 +132,7 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 | `etiology_zh` / `etiology_en` | 病因病機 |
 | **`risk_factors_zh` / `risk_factors_en`** | **危險因子(2026-08-06 新增,見 §5.5)** |
 | **`red_flags_zh` / `red_flags_en`** | **安全,見 §5** |
+| **`red_flag_refs`** | **紅旗 registry 引用(2026-08-08 新增,選填)。存 `rf.*` 穩定 id 陣列,順序 = 卡上 red_flags 的凍結順序。registry(`data/pathology/red_flag_registry.json`)是 provenance/身分/生命週期的正本;已 wiring 的卡,legacy 陣列是相容鏡像,`validate-red-flag-wiring.js` 強制兩者逐字逐序一致 —— 只改其中一邊 = CI 失敗。目前僅 Batch 4 婦科 25 張已 wiring,其他卡等各自的 registry migration。** |
 | **`acupuncture_scope_zh` / `acupuncture_scope_en`** | **針灸範圍與共同照護(2026-08-06 新增,見 §5.6)** |
 | `classical_references_zh` / `classical_references_en` | 古籍出處 |
 

@@ -104,6 +104,10 @@ const RELATION_FIELDS = new Set([
   // after migration. New content must use sign_symptom_ids.
   "sign_symptom_ids", "related_tcm_symptoms",
   "herb_formulas", "acupoint_protocols", "medication_links", "workflow_links",
+  // Added 2026-08-08 (template §3): ordered rf.* ids referencing the red-flag
+  // registry. Optional — only batches whose registry migration is done carry
+  // it. Wiring consistency is validate-red-flag-wiring.js's job, not C8's.
+  "red_flag_refs",
 ]);
 const PROVENANCE_FIELDS = new Set([
   "sources", "field_sources", "source_type", "fetched_at", "content_source",

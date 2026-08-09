@@ -249,6 +249,13 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1543"
+      ],
+      "red_flag_refs": [
+        "rf.pcos.legacy01",
+        "rf.pcos.legacy02",
+        "rf.pcos.legacy03",
+        "rf.pcos.legacy04",
+        "rf.pcos.legacy05"
       ]
     },
     {
@@ -720,6 +727,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.endometriosis.legacy01",
+        "rf.endometriosis.legacy02",
+        "rf.endometriosis.legacy03",
+        "rf.endometriosis.legacy04"
       ]
     },
     {
@@ -849,6 +862,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/32"
+      ],
+      "red_flag_refs": [
+        "rf.uterine_fibroids.legacy01",
+        "rf.uterine_fibroids.legacy02",
+        "rf.uterine_fibroids.legacy03",
+        "rf.uterine_fibroids.legacy04"
       ]
     },
     {
@@ -1319,6 +1338,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.primary_dysmenorrhea.legacy01",
+        "rf.primary_dysmenorrhea.legacy02",
+        "rf.primary_dysmenorrhea.legacy03",
+        "rf.primary_dysmenorrhea.legacy04"
       ]
     },
     {
@@ -1787,6 +1812,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.pms.legacy01",
+        "rf.pms.legacy02",
+        "rf.pms.legacy03"
       ]
     },
     {
@@ -2260,6 +2290,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.irregular_menstruation.legacy01",
+        "rf.irregular_menstruation.legacy02",
+        "rf.irregular_menstruation.legacy03",
+        "rf.irregular_menstruation.legacy04"
       ]
     },
     {
@@ -2327,7 +2363,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.menorrhagia.legacy01",
+        "rf.menorrhagia.legacy02",
+        "rf.menorrhagia.legacy03",
+        "rf.menorrhagia.legacy04"
+      ]
     },
     {
       "id": "cond.oligomenorrhea",
@@ -2572,6 +2614,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1543"
+      ],
+      "red_flag_refs": [
+        "rf.oligomenorrhea.legacy01",
+        "rf.oligomenorrhea.legacy02",
+        "rf.oligomenorrhea.legacy03",
+        "rf.oligomenorrhea.legacy04"
       ]
     },
     {
@@ -2639,7 +2687,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.amenorrhea.legacy01",
+        "rf.amenorrhea.legacy02",
+        "rf.amenorrhea.legacy03",
+        "rf.amenorrhea.legacy04"
+      ]
     },
     {
       "id": "cond.female_infertility",
@@ -3110,6 +3164,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.female_infertility.legacy01",
+        "rf.female_infertility.legacy02",
+        "rf.female_infertility.legacy03",
+        "rf.female_infertility.legacy04"
       ]
     },
     {
@@ -3415,6 +3475,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1496"
+      ],
+      "red_flag_refs": [
+        "rf.male_infertility.legacy01",
+        "rf.male_infertility.legacy02",
+        "rf.male_infertility.legacy03",
+        "rf.male_infertility.legacy04"
       ]
     },
     {
@@ -3480,7 +3546,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.diminished_ovarian_reserve.legacy01",
+        "rf.diminished_ovarian_reserve.legacy02",
+        "rf.diminished_ovarian_reserve.legacy03"
+      ]
     },
     {
       "id": "cond.ivf_support",
@@ -3547,7 +3618,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.ivf_support.legacy01",
+        "rf.ivf_support.legacy02",
+        "rf.ivf_support.legacy03",
+        "rf.ivf_support.legacy04"
+      ]
     },
     {
       "id": "cond.recurrent_pregnancy_loss",
@@ -4017,6 +4094,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.recurrent_pregnancy_loss.legacy01",
+        "rf.recurrent_pregnancy_loss.legacy02",
+        "rf.recurrent_pregnancy_loss.legacy03",
+        "rf.recurrent_pregnancy_loss.legacy04"
       ]
     },
     {
@@ -4081,7 +4164,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.luteal_phase_defect.legacy01",
+        "rf.luteal_phase_defect.legacy02",
+        "rf.luteal_phase_defect.legacy03"
+      ]
     },
     {
       "id": "cond.menopause_syndrome",
@@ -4148,7 +4236,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.menopause_syndrome.legacy01",
+        "rf.menopause_syndrome.legacy02",
+        "rf.menopause_syndrome.legacy03",
+        "rf.menopause_syndrome.legacy04"
+      ]
     },
     {
       "id": "cond.hyperemesis_gravidarum",
@@ -4213,7 +4307,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.hyperemesis_gravidarum.legacy01",
+        "rf.hyperemesis_gravidarum.legacy02",
+        "rf.hyperemesis_gravidarum.legacy03",
+        "rf.hyperemesis_gravidarum.legacy04"
+      ]
     },
     {
       "id": "cond.breech_presentation",
@@ -4278,7 +4378,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.breech_presentation.legacy01",
+        "rf.breech_presentation.legacy02",
+        "rf.breech_presentation.legacy03",
+        "rf.breech_presentation.legacy04"
+      ]
     },
     {
       "id": "cond.postpartum_hypolactation",
@@ -4343,7 +4449,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.postpartum_hypolactation.legacy01",
+        "rf.postpartum_hypolactation.legacy02",
+        "rf.postpartum_hypolactation.legacy03",
+        "rf.postpartum_hypolactation.legacy04"
+      ]
     },
     {
       "id": "cond.chronic_pelvic_pain",
@@ -4813,6 +4925,12 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11"
+      ],
+      "red_flag_refs": [
+        "rf.chronic_pelvic_pain.legacy01",
+        "rf.chronic_pelvic_pain.legacy02",
+        "rf.chronic_pelvic_pain.legacy03",
+        "rf.chronic_pelvic_pain.legacy04"
       ]
     },
     {
@@ -4879,7 +4997,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.pid_chronic.legacy01",
+        "rf.pid_chronic.legacy02",
+        "rf.pid_chronic.legacy03",
+        "rf.pid_chronic.legacy04"
+      ]
     },
     {
       "id": "cond.vulvovaginal_candidiasis",
@@ -4944,7 +5068,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.vulvovaginal_candidiasis.legacy01",
+        "rf.vulvovaginal_candidiasis.legacy02",
+        "rf.vulvovaginal_candidiasis.legacy03",
+        "rf.vulvovaginal_candidiasis.legacy04"
+      ]
     },
     {
       "id": "cond.thin_endometrium",
@@ -5184,6 +5314,11 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1543"
+      ],
+      "red_flag_refs": [
+        "rf.thin_endometrium.legacy01",
+        "rf.thin_endometrium.legacy02",
+        "rf.thin_endometrium.legacy03"
       ]
     },
     {
@@ -5249,7 +5384,12 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.pmdd.legacy01",
+        "rf.pmdd.legacy02",
+        "rf.pmdd.legacy03"
+      ]
     },
     {
       "id": "cond.secondary_dysmenorrhea",
@@ -5315,7 +5455,13 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flag_refs": [
+        "rf.secondary_dysmenorrhea.legacy01",
+        "rf.secondary_dysmenorrhea.legacy02",
+        "rf.secondary_dysmenorrhea.legacy03",
+        "rf.secondary_dysmenorrhea.legacy04"
+      ]
     },
     {
       "id": "cond.chronic_low_back_pain",
