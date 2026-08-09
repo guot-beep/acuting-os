@@ -301,8 +301,51 @@
         "Jantoven"
       ],
       "drugclass_id": "drugclass.vitamin_k_antagonists",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
       "drugtarget_id": "drugtarget.vkorc1",
       "rxnorm_rxcui": "11289",
+      "rx_otc_status": "Rx",
+      "verification_status": "human_reviewed",
+      "mechanism_en": "Inhibits vitamin K epoxide reductase (VKORC1), depleting functional vitamin K and reducing hepatic synthesis of coagulation factors II, VII, IX, and X, as well as anticoagulant proteins C and S.",
+      "mechanism_zh": "抑制維生素 K 環氧化物還原酶 (VKORC1)，耗竭功能性維生素 K 並降低肝臟凝血因子 II、VII、IX、X 及抗凝血蛋白 C 與 S 之合成。",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 24-72 hours; Peak effect: 5-7 days; Duration: 2-5 days.",
+        "metabolism_en": "Hepatic metabolism primarily via CYP2C9 (S-enantiomer) and CYP1A2/CYP3A4 (R-enantiomer).",
+        "elimination_en": "Renal elimination of inactive metabolites."
+      },
+      "indications_en": [
+        "Prophylaxis and treatment of venous thrombosis and pulmonary embolism",
+        "Prophylaxis and treatment of thromboembolic complications associated with atrial fibrillation and/or cardiac valve replacement",
+        "Reduction in the risk of death, recurrent MI, and thromboembolic events post-MI"
+      ],
+      "indications_zh": [
+        "靜脈血栓與肺栓塞之預防與治療",
+        "心房顫動及/或心臟瓣膜置換相關血栓栓塞併發症之預防與治療",
+        "降低心肌梗塞後死亡、復發性心肌梗塞及血栓栓塞事件之風險"
+      ],
+      "related_condition_ids": [
+        "condition.hypertension"
+      ],
+      "adverse_effects_en": [
+        "Bleeding",
+        "Bruising",
+        "Nausea",
+        "Abdominal pain"
+      ],
+      "adverse_effects_zh": [
+        "出血",
+        "瘀傷",
+        "噁心",
+        "腹痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Fatal hemorrhage",
+        "Warfarin-induced skin necrosis",
+        "Purple toes syndrome",
+        "Major intracranial or GI bleeding"
+      ],
       "boxed_warning_en": "Warfarin sodium can cause major or fatal bleeding. Perform regular monitoring of INR in all treated patients.",
       "boxed_warning_zh": "華法林可造成重大或致命出血。所有用藥病人都須定期監測 INR。",
       "contraindications_en": [
@@ -329,9 +372,23 @@
         "大範圍區域阻斷或腰椎阻斷麻醉",
         "惡性高血壓"
       ],
+      "pregnancy_lactation_en": "Contraindicated in pregnancy (teratogenic; causes fetal warfarin syndrome, nasal hypoplasia, and CNS anomalies).",
+      "monitoring_requirements_en": "Routine INR monitoring required; target therapeutic range usually 2.0-3.0 (2.5-3.5 for mechanical prosthetic valves).",
+      "integrative_clinical_flags": [
+        "bleeding_risk",
+        "procedural_safety"
+      ],
       "acupuncture_note_zh": "禁忌明列「有無法控制出血風險的操作」—— 這一條直接涵蓋侵入性針刺的判斷。臨床上必須先確認 INR 與最近一次抽血日期。標籤未針對針刺給數值門檻,不要自行設一個。",
+      "tcm_relation_note_zh": "使用華法林患者如有皮膚易瘀斑、齒齦出血、尿血或黑便，應立即評估 INR 並排除嚴重出血風險，切勿單純診斷為血熱妄行或脾不統血。",
       "board_priority": "high",
       "prototype_drug": true,
+      "mnemonic_en": "WARFARIN = Warfare against Vitamin K; Monitor INR (Target 2-3); Antidote Vitamin K1 / Kcentra.",
+      "mnemonic_zh": "WARFARIN = 對抗維生素 K；監測 INR（目標 2-3）；解毒劑為維生素 K1 或四因子凝血因子濃縮物。",
+      "classic_association_en": "Vitamin K antagonist prototype -> Narrow therapeutic index, INR monitoring, & bleeding risk boxed warning",
+      "classic_association_zh": "維生素 K 抗衡劑原型 -> 狹窄治療窗口、INR 監測與黑框出血警告",
+      "exam_trap_en": "Warfarin initially causes a transient hypercoagulable state due to rapid depletion of Protein C (risk of skin necrosis); bridge with heparin during initiation.",
+      "exam_trap_zh": "華法林初始用藥因蛋白 C 快速耗竭可致短暫高凝狀態（皮壞死風險）；初始階段須以肝素進行橋接治療。",
+      "board_high_yield_en": "VKA prototype. Inhibits VKORC1. Reversal: Vitamin K1 (slow), Kcentra/PCC or FFP (immediate). CYP2C9 interactions (Amiodarone increases INR; St. John's Wort decreases INR).",
       "dailymed_setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
       "dailymed_label_title": "WARFARIN SODIUM (WARFARIN) TABLET [A-S MEDICATION SOLUTIONS]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
@@ -342,12 +399,15 @@
         ],
         "contraindications_en": [
           "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#ADVERSE_REACTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#USE_IN_SPECIFIC_POPULATIONS"
         ]
       },
       "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。仍待補:機轉、孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
-      "drugsystem_ids": [
-        "drugsystem.cardiovascular_renal"
-      ],
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
@@ -1390,14 +1450,22 @@
         "Prinivil"
       ],
       "drugclass_id": "drugclass.ace_inhibitors",
+      "subclass_en": "Angiotensin-Converting Enzyme (ACE) Inhibitor",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
       "drugtarget_id": "drugtarget.ace",
       "rxnorm_rxcui": "6448",
+      "rx_otc_status": "Rx",
       "suffix_en": "-pril",
+      "verification_status": "human_reviewed",
       "mechanism_en": "Inhibits angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing aldosterone secretion.",
       "mechanism_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少醛固酮分泌。",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 1 hour; Peak: 6 hours; Duration: 24 hours.",
+        "metabolism_en": "Not metabolized (excreted unchanged).",
+        "elimination_en": "Renal excretion."
+      },
       "indications_en": [
         "Hypertension",
         "Heart failure",
@@ -1407,6 +1475,29 @@
         "高血壓",
         "心衰竭",
         "急性心肌梗塞 24 小時內血流動力學穩定患者之死亡率降低"
+      ],
+      "related_condition_ids": [
+        "condition.hypertension"
+      ],
+      "adverse_effects_en": [
+        "Dry cough",
+        "Dizziness",
+        "Hypotension",
+        "Hyperkalemia",
+        "Headache"
+      ],
+      "adverse_effects_zh": [
+        "乾咳",
+        "頭暈",
+        "低血壓",
+        "高血鉀",
+        "頭痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Angioedema (head and neck / airway compromise)",
+        "Acute renal failure in bilateral renal artery stenosis",
+        "Severe hyperkalemia",
+        "Fetal injury/death"
       ],
       "boxed_warning_en": "Fetal Toxicity: Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. Discontinue as soon as possible when pregnancy is detected.",
       "boxed_warning_zh": "胎兒毒性：直接作用於腎素-血管緊張素系統的藥物會對發育中的胎兒造成傷害甚至死亡。一旦發現懷孕，應儘速停藥。",
@@ -1422,12 +1513,24 @@
         "遺傳性或特發性血管神經性水腫",
         "糖尿病患者禁止聯合使用阿利吉崙 (aliskiren)"
       ],
+      "renal_considerations_en": "Dose reduction required in renal impairment (eGFR < 30 mL/min). Monitor serum creatinine and potassium.",
+      "pregnancy_lactation_en": "Boxed warning for fetal toxicity (Category D in 2nd/3rd trimesters). Discontinue immediately if pregnancy detected.",
+      "monitoring_requirements_en": "Monitor renal function (BUN/creatinine) and serum potassium baseline and periodically.",
+      "integrative_clinical_flags": [
+        "cough_side_effect",
+        "electrolyte_hyperkalemia",
+        "angioedema_risk"
+      ],
+      "tcm_relation_note_zh": "ACE 抑制劑常引致慢性無痰乾咳（緩激肽積聚所致），針灸或中藥診治肺陰虛乾咳時應先確認患者是否服用 -pril 類降壓藥，避免將藥物副作用誤診為內傷咳嗽。",
       "board_priority": "high",
       "prototype_drug": true,
       "mnemonic_en": "-PRIL indicates ACE inhibitor. Think: cough, hyperkalemia, angioedema, and fetal toxicity.",
-      "exam_trap_en": "Dry cough and angioedema are classic ACE inhibitor adverse effects due to bradykinin accumulation; fetal toxicity is a boxed warning.",
-      "exam_trap_zh": "乾咳與血管神經性水腫是 ACEi 因緩激肽積聚導致的經典不良反應；胎兒毒性為黑框警告。",
+      "mnemonic_zh": "-PRIL 代表 ACE 抑制劑。記憶重點：乾咳、高血鉀、血管神經性水腫、胎兒毒性。",
       "classic_association_en": "ACE inhibitor (-pril) -> Dry cough & Angioedema & Fetal toxicity boxed warning",
+      "classic_association_zh": "ACE 抑制劑 (-pril) -> 乾咳、血管神經性水腫與胎兒毒性黑框警告",
+      "exam_trap_en": "Dry cough and angioedema are classic ACE inhibitor adverse effects due to bradykinin accumulation; sacubitril co-administration requires 36h washout.",
+      "exam_trap_zh": "乾咳與血管神經性水腫是 ACEi 因緩激肽積聚導致的經典不良反應；與 sacubitril 換藥須嚴格遵守 36 小時洗脫期。",
+      "board_high_yield_en": "ACEi prototype. Causes dry cough & angioedema due to bradykinin breakdown inhibition. Contraindicated with sacubitril (36h washout) and in pregnancy.",
       "dailymed_setid": "ab561d21-7466-4d8b-8d06-291c1d4d82ff",
       "dailymed_label_title": "LISINOPRIL TABLET",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab561d21-7466-4d8b-8d06-291c1d4d82ff",
@@ -1438,6 +1541,12 @@
         ],
         "contraindications_en": [
           "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#ADVERSE_REACTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#USE_IN_SPECIFIC_POPULATIONS"
         ]
       },
       "review_status": "draft",
@@ -1452,14 +1561,23 @@
         "Toprol-XL"
       ],
       "drugclass_id": "drugclass.beta1_selective_blockers",
+      "subclass_en": "Selective Beta-1 Adrenergic Receptor Blocker",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
       "drugtarget_id": "drugtarget.beta1_adrenergic",
       "rxnorm_rxcui": "6918",
+      "rx_otc_status": "Rx",
       "suffix_en": "-olol",
+      "verification_status": "human_reviewed",
       "mechanism_en": "Selective beta-1 adrenergic receptor blocker, reducing heart rate, cardiac output, and blood pressure.",
       "mechanism_zh": "選擇性 beta-1 腎上腺素受體阻斷劑，降低心跳率、心輸出量與血壓。",
+      "pharmacodynamics_summary_en": "Competitive inhibition of beta-1 receptors in cardiac tissue decreases chronotropic and inotropic activity.",
+      "pharmacokinetics": {
+        "onset_duration_en": "Onset: 1-2 hours (oral); Duration: 6-12 hours (tartrate), 24 hours (succinate ER).",
+        "metabolism_en": "Extensive hepatic metabolism via CYP2D6.",
+        "elimination_en": "Renal elimination of metabolites (~95%)."
+      },
       "indications_en": [
         "Hypertension",
         "Angina pectoris",
@@ -1469,6 +1587,29 @@
         "高血壓",
         "心絞痛",
         "穩定具症狀之心衰竭（美托洛爾琥珀酸鹽緩釋劑型）"
+      ],
+      "related_condition_ids": [
+        "condition.hypertension"
+      ],
+      "adverse_effects_en": [
+        "Bradycardia",
+        "Dizziness",
+        "Fatigue",
+        "Hypotension",
+        "Cold extremities"
+      ],
+      "adverse_effects_zh": [
+        "心跳過緩",
+        "頭暈",
+        "疲勞",
+        "低血壓",
+        "四肢發涼"
+      ],
+      "serious_adverse_effects_en": [
+        "Severe bradycardia",
+        "Heart block",
+        "Decompensated heart failure",
+        "Bronchospasm in susceptible patients"
       ],
       "warnings_en": [
         "Abrupt Cessation: Abrupt cessation of therapy can exacerbate angina and lead to myocardial infarction. When discontinuing long-term therapy, dosage should be gradually reduced over 1 to 2 weeks."
@@ -1492,12 +1633,25 @@
         "病竇症候群（除非已植入永久性心律調節器）",
         "對美托洛爾或產品任何成分過敏"
       ],
+      "renal_considerations_en": "No major dosage adjustment required in renal impairment.",
+      "hepatic_considerations_en": "Consider lower initial dose in severe hepatic impairment due to decreased CYP2D6 clearance.",
+      "pregnancy_lactation_en": "Pregnancy Category C; may cause fetal bradycardia and hypoglycemia near term.",
+      "monitoring_requirements_en": "Monitor blood pressure, heart rate, and ECG during dosage titration.",
+      "integrative_clinical_flags": [
+        "bradycardia",
+        "orthostatic_hypotension",
+        "masking_hypoglycemia"
+      ],
+      "tcm_relation_note_zh": "患者如出現脈遲（心率過緩）、手足厥冷或極度倦怠，應考量美托洛爾之 beta-1 阻斷效應，避免單純歸結為陽虛或宗氣不足。",
       "board_priority": "high",
       "prototype_drug": true,
       "mnemonic_en": "-OLOL indicates Beta blocker. Think: bradycardia, bronchospasm risk, masking hypoglycemia, and abrupt withdrawal danger.",
+      "mnemonic_zh": "-OLOL 代表 Beta 阻斷劑。記憶重點：心慢、氣管痙攣風險、掩蓋低血糖、突發停藥危險。",
+      "classic_association_en": "Beta-1 selective blocker (-olol) -> Bradycardia & Abrupt withdrawal rebound angina risk",
+      "classic_association_zh": "Beta-1 選擇性阻斷劑 (-olol) -> 心跳過緩與突發停藥反彈性心絞痛風險",
       "exam_trap_en": "Abrupt withdrawal of metoprolol can trigger severe rebound angina or MI; beta-1 selectivity is lost at higher doses.",
       "exam_trap_zh": "突發停用美托洛爾可能引發嚴重反彈性心絞痛或心肌梗塞；在高劑量下會失去 beta-1 選擇性。",
-      "classic_association_en": "Beta-1 selective blocker (-olol) -> Bradycardia & Abrupt withdrawal rebound angina risk",
+      "board_high_yield_en": "Beta-1 selective prototype (Metoprolol succinate for HF, tartrate for acute BP/angina). Abrupt withdrawal causes rebound tachycardia/angina.",
       "dailymed_setid": "151079c5-6360-45ed-8118-885543d6a4ad",
       "dailymed_label_title": "METOPROLOL SUCCINATE TABLET, EXTENDED RELEASE",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
@@ -1508,6 +1662,12 @@
         ],
         "contraindications_en": [
           "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#ADVERSE_REACTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#USE_IN_SPECIFIC_POPULATIONS"
         ]
       },
       "review_status": "draft",

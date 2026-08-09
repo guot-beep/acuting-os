@@ -1,3 +1,22 @@
+# AcuTing OS Project Log
+
+## 2026-08-09 Antigravity — Pharmacology Master Card Architecture & Big Card UI Framework
+- **What was done:** Implemented complete Pharmacology Master Card schema & renderer framework in AcuTing OS. Extended drugs.json and drug_classes.json schema to support Identity (Rx/OTC, schedule), Core Pharmacology (PK/PD), Clinical Uses, Safety (boxed warning, CI, warnings, adverse, populations), Graded Drug/Herb Interactions, Integrative Clinical Flags (bleeding risk, bradycardia, etc.), and Board Exam High-Yield Layer (mnemonics, traps, classic associations). Built Pharmacology Drug Detail Big Card Modal (openPharmBigCardModal) & Drug Class Big Card Modal (openPharmClassModal) with bilingual ZH/EN support in js/knowledge.js. Populated 3 reference implementation cards (drug.metoprolol, drug.warfarin, drug.lisinopril) and 2 reference class cards (drugclass.beta1_selective_blockers, drugclass.ace_inhibitors).
+- **Numbers (before -> after):**
+  - Canonical drug cards: 21 -> 21 (100% backward compatible, 0 broken records).
+  - Seed Master Card reference cards: 0 -> 3 (drug.metoprolol, drug.warfarin, drug.lisinopril).
+  - Master Drug Class reference cards: 0 -> 2 (drugclass.beta1_selective_blockers, drugclass.ace_inhibitors).
+- **Verification Results:**
+  - verify-source-coverage.js: 15 pilot/batch-2 drugs extracted 280 atomic items, 280 matched, 0 missing, 0 lost (100% PASS).
+  - audit-atomic-ledger.js: Gate A 280/280 (100%), Gate B 90 dispositions (33 exact matched, 57 human-review), Gate C 7/7 P0 label fields aligned (100% PASS).
+  - test-source-drift-simulation.js: SHA-256 drift protection gate simulation PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking errors, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** None.
+- **Next Step:** PHARMACOLOGY CONTENT INGESTION BATCH 3 (Wait for user authorization before ingesting Batch 3 drugs).
+
 # 2026-08-09 Antigravity — Pharmacology Round 1: Truthful Audit Contract & Three-Gate Machine Auditing
 
 - **做了什麼**：
@@ -11,7 +30,7 @@
   5. **驗證器語義與註解硬化**：於 `scripts/validate-pharm-standard.js` 補充註解，明確指出本驗證器係審核 DailyMed setid 引用與 section 存在性（Metadata Alignment），而非醫學敘述之純文字比對。
 - **機器審核總結**：`All implemented machine gates passed.`（三大機器分流全部獨立通過）。
 - **驗證**：`verify-source-coverage.js` PASS, `audit-atomic-ledger.js` PASS, `test-source-drift-simulation.js` PASS, `validate-pharm-standard.js --worklist` PASS, `build-data.js` PASS, `validate-interactions.js` PASS (108 IDs), `git diff --check` PASS.
-- **STOP**：Round 1 完成，**未開始 Round 2**，亦**未開始 P3**。等待 Ting 審核與指令。��
+- **STOP**：Round 1 完成，**未開始 Round 2**，亦**未開始 P3**。等待 Ting 審核與指令。��
 - **三分流獨立審核結果**：
   1. **Source -> Ledger 覆蓋**：Extracted 280, Matched 280, Missing 0, Lost 0 (100%)
   2. **Ledger -> Canonical 實現**：Canonical items 90 (Exact matched 33, Mismatched 0, Human-review transformed 57)

@@ -2010,6 +2010,324 @@
         return [cid, cls ? displayLabel(cls.name_zh, cls.name_en, cid) : cid];
       }))
     );
+
+    let pharmLangMode = "zh";
+
+    function openPharmClassModal(clsRec, langMode = pharmLangMode) {
+      let modal = document.getElementById("pharmClassModalOverlay");
+      if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "pharmClassModalOverlay";
+        modal.className = "k-modal-overlay";
+        document.body.appendChild(modal);
+      }
+      const isEn = langMode === "en";
+      const asArr = (v) => (Array.isArray(v) ? v.filter(Boolean) : (v ? [v] : []));
+
+      const name = isEn ? (clsRec.name_en || clsRec.id) : (clsRec.name_zh || clsRec.name_en);
+      const subname = isEn ? clsRec.name_zh : clsRec.name_en;
+      const mech = isEn ? (clsRec.mechanism_overview_en || clsRec.mechanism_overview_zh) : (clsRec.mechanism_overview_zh || clsRec.mechanism_overview_en);
+      const indications = isEn ? asArr(clsRec.indications_en) : asArr(clsRec.indications_zh);
+      const sharedAdverse = isEn ? asArr(clsRec.shared_adverse_effects_en) : asArr(clsRec.shared_adverse_effects_zh);
+      const classWarnings = isEn ? asArr(clsRec.class_warnings_en) : asArr(clsRec.class_warnings_zh);
+      const classCI = isEn ? asArr(clsRec.class_contraindications_en) : asArr(clsRec.class_contraindications_zh);
+      const highYield = isEn ? (clsRec.board_high_yield_en || clsRec.board_high_yield_zh) : (clsRec.board_high_yield_zh || clsRec.board_high_yield_en);
+      const diff = isEn ? (clsRec.differentiating_notes_en || clsRec.differentiating_notes_zh) : (clsRec.differentiating_notes_zh || clsRec.differentiating_notes_en);
+
+      modal.innerHTML = `
+        <div class="k-big-card" role="dialog" aria-modal="true" style="border-top: 5px solid #8b5cf6;">
+          <button type="button" class="k-big-card-close" id="pharmClassModalCloseBtn" aria-label="Close">&times;</button>
+
+          <div class="k-big-card-header">
+            <h2 class="k-big-card-title">${esc(name)} ${subname ? `<small>${esc(subname)}</small>` : ""}</h2>
+            <p class="k-meta">Drug Class ID: <code>${esc(clsRec.id)}</code> ${clsRec.suffix_en ? ` · Suffix: <code>${esc(clsRec.suffix_en)}</code>` : ""}</p>
+          </div>
+
+          ${highYield ? `
+            <div class="k-big-card-section" style="background:#f3e8ff;border:1px solid #c084fc;border-radius:8px;padding:0.8rem;margin-bottom:1rem;">
+              <strong style="color:#6b21a8;">⭐ ${isEn ? "Class High-Yield Summary:" : "藥族高頻考點："}</strong> ${esc(highYield)}
+            </div>
+          ` : ""}
+
+          ${mech ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Class Mechanism of Action" : "類別作用機轉 Mechanism Overview"}</h3>
+              <p>${esc(mech)}</p>
+            </div>
+          ` : ""}
+
+          ${indications.length ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Common Indications" : "共同適應症 Common Indications"}</h3>
+              <ul>${indications.map(i => `<li>${esc(i)}</li>`).join("")}</ul>
+            </div>
+          ` : ""}
+
+          ${(sharedAdverse.length || classWarnings.length || classCI.length) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Shared Safety & Contraindications" : "共享安全性與禁忌 Shared Safety"}</h3>
+              ${classCI.length ? `<p><strong style="color:#dc2626;">🚫 ${isEn ? "Class Contraindications:" : "類別禁忌症："}</strong></p><ul>${classCI.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
+              ${classWarnings.length ? `<p><strong style="color:#d97706;">⚠️ ${isEn ? "Class Warnings:" : "類別警語："}</strong></p><ul>${classWarnings.map(w => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}
+              ${sharedAdverse.length ? `<p><strong>🤢 ${isEn ? "Shared Adverse Effects:" : "共享不良反應："}</strong> ${sharedAdverse.map(esc).join(" · ")}</p>` : ""}
+            </div>
+          ` : ""}
+
+          ${diff ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Differentiating Characteristics" : "族群內部鑑別特徵 Differentiating Notes"}</h3>
+              <p>${esc(diff)}</p>
+            </div>
+          ` : ""}
+        </div>
+      `;
+
+      modal.classList.add("is-open");
+      document.getElementById("pharmClassModalCloseBtn")?.addEventListener("click", () => modal.classList.remove("is-open"));
+      modal.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("is-open"); });
+    }
+
+    function openPharmBigCardModal(d, langMode = pharmLangMode) {
+      let modal = document.getElementById("pharmDetailModalOverlay");
+      if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "pharmDetailModalOverlay";
+        modal.className = "k-modal-overlay";
+        document.body.appendChild(modal);
+      }
+
+      pharmLangMode = langMode;
+      const isEn = langMode === "en";
+      const asArr = (v) => (Array.isArray(v) ? v.filter(Boolean) : (v ? [v] : []));
+
+      const brands = asArr(d.brand_names_en);
+      const cls = K.pharmDrugClasses && K.pharmDrugClasses.records ? K.pharmDrugClasses.records.find(c => c.id === d.drugclass_id) : null;
+      const clsLabel = cls ? displayLabel(cls.name_zh, cls.name_en, d.drugclass_id) : (d.drugclass_id || "");
+
+      const hasBoard = d.prototype_drug || d.mnemonic_en || d.mnemonic_zh || d.classic_association_en || d.classic_association_zh || d.exam_trap_en || d.exam_trap_zh || d.board_high_yield_en || d.board_high_yield_zh;
+
+      const mech = isEn ? (d.mechanism_en || d.mechanism_zh) : (d.mechanism_zh || d.mechanism_en);
+      const pd = isEn ? (d.pharmacodynamics_summary_en || d.pharmacodynamics_summary_zh) : (d.pharmacodynamics_summary_zh || d.pharmacodynamics_summary_en);
+      const pk = d.pharmacokinetics || {};
+
+      const indications = isEn ? asArr(d.indications_en) : asArr(d.indications_zh);
+      const offlabel = isEn ? asArr(d.common_offlabel_uses_en) : asArr(d.common_offlabel_uses_zh);
+      const relConditions = asArr(d.related_condition_ids);
+
+      const boxed = isEn ? (d.boxed_warning_en || d.boxed_warning_zh) : (d.boxed_warning_zh || d.boxed_warning_en);
+      const contraindications = isEn ? asArr(d.contraindications_en) : asArr(d.contraindications_zh);
+      const warnings = isEn ? asArr(d.warnings_en) : asArr(d.warnings_zh);
+      const adverseEffects = isEn ? asArr(d.adverse_effects_en) : asArr(d.adverse_effects_zh);
+      const seriousAdverse = isEn ? asArr(d.serious_adverse_effects_en) : asArr(d.serious_adverse_effects_zh);
+      const preg = isEn ? (d.pregnancy_lactation_en || d.pregnancy_lactation_zh) : (d.pregnancy_lactation_zh || d.pregnancy_lactation_en);
+      const renal = isEn ? (d.renal_considerations_en || d.renal_considerations_zh) : (d.renal_considerations_zh || d.renal_considerations_en);
+      const hepatic = isEn ? (d.hepatic_considerations_en || d.hepatic_considerations_zh) : (d.hepatic_considerations_zh || d.hepatic_considerations_en);
+      const monitor = isEn ? (d.monitoring_requirements_en || d.monitoring_requirements_zh) : (d.monitoring_requirements_zh || d.monitoring_requirements_en);
+
+      const drugIntGraded = asArr(d.drug_interactions_graded);
+      const herbIntGraded = asArr(d.herb_drug_interactions_graded);
+      const herbIntText = isEn ? (d.herb_drug_interactions_en || d.herb_drug_interactions_zh) : (d.herb_drug_interactions_zh || d.herb_drug_interactions_en);
+
+      const flags = asArr(d.integrative_clinical_flags);
+      const tcmNote = isEn ? (d.tcm_relation_note_zh || d.acupuncture_note_zh) : (d.tcm_relation_note_zh || d.acupuncture_note_zh);
+
+      const fieldSourceRows = Object.entries(d.field_sources || {}).map(([f, vals]) => [f, asArr(vals)]).filter(([, vals]) => vals.length);
+
+      modal.innerHTML = `
+        <div class="k-big-card" role="dialog" aria-modal="true" style="border-top: 5px solid #0284c7;">
+          <button type="button" class="k-big-card-close" id="pharmModalCloseBtn" aria-label="Close">&times;</button>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e5dccb; padding-bottom: 0.6rem;">
+            <div id="pharmCardLangSwitcher" class="k-cloud-disease-categories" style="margin: 0;">
+              <button type="button" class="${!isEn ? 'is-active' : ''}" data-modal-lang="zh">🇹🇼 中文大卡</button>
+              <button type="button" class="${isEn ? 'is-active' : ''}" data-modal-lang="en">🇺🇸 English Card</button>
+            </div>
+            <div>
+              ${d.rx_otc_status ? `<span class="k-status" style="background:#e0f2fe;color:#0369a1;margin-right:4px;">${esc(d.rx_otc_status)}</span>` : ""}
+              <span class="k-status k-status-draft">${esc(d.verification_status || d.review_status || "draft")}</span>
+            </div>
+          </div>
+
+          <div class="k-big-card-header">
+            <h2 class="k-big-card-title">
+              ${esc(d.name_en || d.id)}
+              ${d.name_zh ? `<small style="font-size:0.7em;color:#475569;"> ${esc(d.name_zh)}</small>` : ""}
+              ${d.prototype_drug ? `<span class="k-status k-status-prototype" style="font-size:0.5em;vertical-align:middle;margin-left:6px;">PROTOTYPE</span>` : ""}
+            </h2>
+            ${brands.length ? `<p style="color:#0284c7;font-weight:600;margin:0.2rem 0;">${isEn ? "Brand names:" : "商品名："}${esc(brands.join(" / "))}</p>` : ""}
+            <p class="k-meta">
+              ID: <code>${esc(d.id)}</code>
+              ${clsLabel ? ` · <strong>${isEn ? "Class:" : "分類："}</strong><button type="button" class="k-entity-chip" data-open-class="${esc(d.drugclass_id)}" style="background:none;border:none;color:#0284c7;cursor:pointer;text-decoration:underline;padding:0;">${esc(clsLabel)}</button>` : ""}
+              ${d.subclass_en ? ` (${esc(d.subclass_en)})` : ""}
+              ${d.rxnorm_rxcui ? ` · RxNorm: <code>${esc(d.rxnorm_rxcui)}</code>` : ""}
+            </p>
+          </div>
+
+          ${hasBoard ? `
+            <div class="k-big-card-section" style="background:#fffbe6;border:1px solid #f59e0b;border-radius:10px;padding:1rem;margin-bottom:1.2rem;">
+              <h3 style="color:#b45309;margin-top:0;display:flex;align-items:center;gap:6px;">
+                ⭐ ${isEn ? "NCBAHM / Board Exam High-Yield Layer" : "國考高頻考點與助記 Board Exam High-Yield"}
+              </h3>
+              ${d.mnemonic_en || d.mnemonic_zh ? `<p style="margin:0.4rem 0;"><strong>💡 ${isEn ? "Mnemonic:" : "記憶口訣："}</strong> ${esc(isEn ? (d.mnemonic_en || d.mnemonic_zh) : (d.mnemonic_zh || d.mnemonic_en))}</p>` : ""}
+              ${d.classic_association_en || d.classic_association_zh ? `<p style="margin:0.4rem 0;"><strong>🎯 ${isEn ? "Classic Association:" : "經典聯想："}</strong> ${esc(isEn ? (d.classic_association_en || d.classic_association_zh) : (d.classic_association_zh || d.classic_association_en))}</p>` : ""}
+              ${d.exam_trap_en || d.exam_trap_zh ? `<p style="margin:0.4rem 0;color:#9a3412;"><strong>⚠️ ${isEn ? "Exam Trap / Pitfall:" : "考題陷阱："}</strong> ${esc(isEn ? (d.exam_trap_en || d.exam_trap_zh) : (d.exam_trap_zh || d.exam_trap_en))}</p>` : ""}
+              ${d.board_high_yield_en || d.board_high_yield_zh ? `<p style="margin:0.4rem 0;"><strong>📌 ${isEn ? "Must-Know Summary:" : "必考核心："}</strong> ${esc(isEn ? (d.board_high_yield_en || d.board_high_yield_zh) : (d.board_high_yield_zh || d.board_high_yield_en))}</p>` : ""}
+            </div>
+          ` : ""}
+
+          ${(mech || pd || pk.onset_duration_en || pk.metabolism_en || pk.elimination_en) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Core Pharmacology" : "核心藥理作用 Core Pharmacology"}</h3>
+              ${mech ? `<p><strong>⚙️ ${isEn ? "Mechanism of Action:" : "作用機轉："}</strong> ${esc(mech)}</p>` : ""}
+              ${pd ? `<p><strong>⚡ ${isEn ? "Pharmacodynamics:" : "藥效學概論："}</strong> ${esc(pd)}</p>` : ""}
+              ${(pk.onset_duration_en || pk.metabolism_en || pk.elimination_en) ? `
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.6rem 0.8rem;border-radius:6px;font-size:0.92em;margin-top:0.4rem;">
+                  <strong>📊 ${isEn ? "Pharmacokinetics (PK):" : "藥物動力學 (PK)："}</strong>
+                  ${pk.onset_duration_en ? `<div>• ${isEn ? "Onset & Duration:" : "起效與作用時間："} ${esc(pk.onset_duration_en)}</div>` : ""}
+                  ${pk.metabolism_en ? `<div>• ${isEn ? "Metabolism:" : "代謝途徑："} ${esc(pk.metabolism_en)}</div>` : ""}
+                  ${pk.elimination_en ? `<div>• ${isEn ? "Elimination:" : "排泄途徑："} ${esc(pk.elimination_en)}</div>` : ""}
+                </div>
+              ` : ""}
+            </div>
+          ` : ""}
+
+          ${(indications.length || offlabel.length || relConditions.length) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Clinical Indications & Conditions" : "臨床適應症與相關疾病 Clinical Uses"}</h3>
+              ${indications.length ? `<p><strong>📋 ${isEn ? "Approved Indications:" : "核准適應症："}</strong></p><ul>${indications.map(i => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}
+              ${offlabel.length ? `<p><strong>🔍 ${isEn ? "Off-Label Uses:" : "常見仿單外使用 (Off-Label)："}</strong></p><ul>${offlabel.map(i => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}
+              ${relConditions.length ? `<p><strong>🏥 ${isEn ? "Related Conditions:" : "關聯西醫疾病："}</strong> ${relConditions.map(cid => `<span class="k-tag">${esc(cid)}</span>`).join(" ")}</p>` : ""}
+            </div>
+          ` : ""}
+
+          <div class="k-big-card-section">
+            <h3>${isEn ? "Safety, Warnings & Precautions" : "安全性、黑框警告與禁忌 Safety & Warnings"}</h3>
+
+            ${boxed ? `
+              <div class="k-red-flag-box" style="background:#fef2f2;border:1px solid #f87171;color:#991b1b;padding:0.8rem;border-radius:8px;margin-bottom:0.8rem;">
+                <strong>⚠ ${isEn ? "BOXED WARNING:" : "黑框警告 BOXED WARNING："}</strong> ${esc(boxed)}
+              </div>
+            ` : ""}
+
+            ${contraindications.length ? `
+              <p><strong style="color:#dc2626;">🚫 ${isEn ? "Contraindications:" : "禁忌症 Contraindications："}</strong></p>
+              <ul style="color:#b91c1c;">${contraindications.map(c => `<li>${esc(c)}</li>`).join("")}</ul>
+            ` : ""}
+
+            ${warnings.length ? `
+              <p><strong style="color:#d97706;">⚠️ ${isEn ? "Warnings & Precautions:" : "警語與注意事項 Warnings & Precautions："}</strong></p>
+              <ul>${warnings.map(w => `<li>${esc(w)}</li>`).join("")}</ul>
+            ` : ""}
+
+            ${adverseEffects.length ? `
+              <p><strong>🤢 ${isEn ? "Common Adverse Effects:" : "常見不良反應 Adverse Effects："}</strong> ${adverseEffects.map(esc).join(" · ")}</p>
+            ` : ""}
+
+            ${seriousAdverse.length ? `
+              <p><strong style="color:#991b1b;">🚨 ${isEn ? "Serious Adverse Reactions:" : "嚴重不良反應 Serious Adverse Reactions："}</strong> ${seriousAdverse.map(esc).join(" · ")}</p>
+            ` : ""}
+
+            ${(preg || renal || hepatic || monitor) ? `
+              <div style="background:#f1f5f9;border:1px solid #cbd5e1;padding:0.6rem 0.8rem;border-radius:6px;font-size:0.92em;margin-top:0.6rem;">
+                <strong>👥 ${isEn ? "Special Population & Safety Considerations:" : "特殊族群與器官安全考量："}</strong>
+                ${preg ? `<div>• <strong>${isEn ? "Pregnancy / Lactation:" : "孕期與哺乳："}</strong> ${esc(preg)}</div>` : ""}
+                ${renal ? `<div>• <strong>${isEn ? "Renal Considerations:" : "腎功能考量："}</strong> ${esc(renal)}</div>` : ""}
+                ${hepatic ? `<div>• <strong>${isEn ? "Hepatic Considerations:" : "肝功能考量："}</strong> ${esc(hepatic)}</div>` : ""}
+                ${monitor ? `<div>• <strong>${isEn ? "Monitoring Requirements:" : "臨床監測需求："}</strong> ${esc(monitor)}</div>` : ""}
+              </div>
+            ` : ""}
+          </div>
+
+          ${(drugIntGraded.length || herbIntGraded.length || herbIntText) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "Interactions (Drug & Herb)" : "藥物與中草藥交互作用 Interactions"}</h3>
+
+              ${drugIntGraded.length ? `
+                <p><strong>💊 ${isEn ? "Drug-Drug Interactions:" : "西藥交互作用 (Graded DDI)："}</strong></p>
+                <ul>
+                  ${drugIntGraded.map(item => `
+                    <li>
+                      <strong>${esc(item.with_label_en || item.with)}</strong>: ${esc(isEn ? (item.effect_en || item.interaction_en) : (item.effect_zh || item.effect_en || item.interaction_en))}
+                      ${item.evidence ? `<span class="k-tag" style="font-size:0.8em;background:#f3e8ff;color:#6b21a8;">${esc(item.evidence)}</span>` : ""}
+                    </li>
+                  `).join("")}
+                </ul>
+              ` : ""}
+
+              ${herbIntGraded.length ? `
+                <p><strong>🌿 ${isEn ? "Herb/Supplement Interactions (Graded):" : "中草藥/補充劑交互作用 (Graded Herb Interaction)："}</strong></p>
+                <ul>
+                  ${herbIntGraded.map(item => `
+                    <li>
+                      <strong>${esc(item.with_label_en || item.with)}</strong>: ${esc(isEn ? (item.effect_en || item.interaction_en) : (item.effect_zh || item.effect_en || item.interaction_en))}
+                      ${item.evidence ? `<span class="k-tag" style="font-size:0.8em;background:#fef3c7;color:#92400e;">${esc(item.evidence)}</span>` : ""}
+                    </li>
+                  `).join("")}
+                </ul>
+              ` : (herbIntText ? `<p><strong>🌿 ${isEn ? "Herb/Supplement Interactions:" : "中草藥/補充劑交互作用："}</strong> ${esc(herbIntText)}</p>` : "")}
+          </div>
+        ` : ""}
+
+          ${(flags.length || tcmNote) ? `
+            <div class="k-big-card-section" style="border-left:4px solid #10b981;padding-left:0.8rem;background:#f0fdf4;border-radius:4px;">
+              <h3 style="color:#047857;margin-top:0;">🧘 ${isEn ? "Acupuncture & Integrative Clinical Relevance" : "針灸與整合門診臨床相關性 Acupuncture & TCM Relevance"}</h3>
+
+              ${flags.length ? `
+                <div style="margin-bottom:0.6rem;display:flex;flex-wrap:wrap;gap:6px;">
+                  ${flags.map(f => `<span class="k-tag" style="background:#d1fae5;color:#065f46;font-weight:600;">⚠️ ${esc(f.replace(/_/g, " "))}</span>`).join("")}
+                </div>
+              ` : ""}
+
+              ${tcmNote ? `<p style="margin:0.2rem 0;color:#064e3b;"><strong>【針灸/中醫診察提示】</strong> ${esc(tcmNote)}</p>` : ""}
+            </div>
+          ` : ""}
+
+          <div class="k-big-card-section">
+            <h3>${isEn ? "Sources & Provenance" : "資料來源與稽核軌跡 Sources & Provenance"}</h3>
+            ${d.dailymed_url ? `<p>📄 <strong>FDA / DailyMed Official Label:</strong> <a href="${esc(d.dailymed_url)}" target="_blank" rel="noopener" class="k-source-link">${esc(d.dailymed_label_title || "DailyMed Label")} ↗</a> (SetID: <code>${esc(d.dailymed_setid || "")}</code>)</p>` : ""}
+            ${fieldSourceRows.length ? `
+              <details class="k-condition-flags">
+                <summary>${isEn ? "Field-level sources provenance" : "逐欄來源 Provenance"} (${fieldSourceRows.length})</summary>
+                ${fieldSourceRows.map(([field, values]) => `<p><strong>${esc(field)}:</strong> ${values.map(v => `<code>${esc(v)}</code>`).join(" · ")}</p>`).join("")}
+              </details>
+            ` : ""}
+          </div>
+        </div>
+      `;
+
+      modal.classList.add("is-open");
+
+      document.getElementById("pharmCardLangSwitcher")?.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-modal-lang]");
+        if (!btn) return;
+        openPharmBigCardModal(d, btn.dataset.modalLang);
+      });
+
+      document.getElementById("pharmModalCloseBtn")?.addEventListener("click", () => {
+        modal.classList.remove("is-open");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("is-open");
+      });
+
+      modal.querySelectorAll("[data-open-class]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const cid = e.currentTarget.dataset.openClass;
+          const clsRec = K.pharmDrugClasses?.records?.find(c => c.id === cid);
+          if (clsRec) openPharmClassModal(clsRec, langMode);
+        });
+      });
+    }
+
+    pharmHost.addEventListener("click", (e) => {
+      const card = e.target.closest(".k-pharm-card");
+      if (!card) return;
+      if (e.target.closest("a")) return;
+      const recordId = card.dataset.recordId;
+      const drug = pharmDrugs.find((d) => d.id === recordId);
+      if (drug) {
+        openPharmBigCardModal(drug);
+      }
+    });
   }
 
   // ---- Comparisons ---------------------------------------------------------

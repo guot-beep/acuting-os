@@ -400,6 +400,43 @@
         "心衰竭",
         "糖尿病腎病變"
       ],
+      "shared_adverse_effects_en": [
+        "Dry cough",
+        "Hyperkalemia",
+        "Hypotension",
+        "Angioedema"
+      ],
+      "shared_adverse_effects_zh": [
+        "乾咳",
+        "高血鉀",
+        "低血壓",
+        "血管神經性水腫"
+      ],
+      "class_warnings_en": [
+        "Boxed warning for fetal toxicity during pregnancy",
+        "36-hour washout required when switching to/from Sacubitril/Valsartan"
+      ],
+      "class_warnings_zh": [
+        "懷孕期胎兒毒性黑框警告",
+        "與 Sacubitril/Valsartan 互換需 36 小時洗脫期"
+      ],
+      "class_contraindications_en": [
+        "Pregnancy",
+        "History of ACEi-associated angioedema",
+        "Concomitant Sacubitril/Valsartan"
+      ],
+      "class_contraindications_zh": [
+        "懷孕",
+        "ACEi 相關血管神經性水腫病史",
+        "併用 Sacubitril/Valsartan"
+      ],
+      "board_high_yield_en": "Suffix -pril. Inhibits bradykinin degradation -> Dry cough & Angioedema. Fetal toxicity boxed warning. Renal protective in T2D nephropathy.",
+      "board_high_yield_zh": "字尾 -pril。抑制緩激肽降解 -> 乾咳與血管水腫。胎兒毒性黑框警告。第二型糖尿病腎病變具腎臟保護作用。",
+      "differentiating_notes_en": "Unlike ARBs (-sartan), ACE inhibitors inhibit bradykinin breakdown causing dry cough in ~10-20% of patients.",
+      "differentiating_notes_zh": "與 ARB (-sartan) 不同，ACE 抑制劑會抑制緩激肽分解，約 10-20% 患者出現乾咳。",
+      "related_condition_ids": [
+        "condition.hypertension"
+      ],
       "representative_drug_ids": [
         "drug.lisinopril"
       ],
@@ -430,6 +467,47 @@
         "心絞痛",
         "心衰竭",
         "心肌梗塞後"
+      ],
+      "shared_adverse_effects_en": [
+        "Bradycardia",
+        "Hypotension",
+        "Fatigue",
+        "Cold extremities",
+        "Masked hypoglycemia signs"
+      ],
+      "shared_adverse_effects_zh": [
+        "心跳過緩",
+        "低血壓",
+        "疲勞",
+        "四肢發涼",
+        "掩蓋低血糖徵象"
+      ],
+      "class_warnings_en": [
+        "Boxed warning against abrupt discontinuation (rebound angina/MI risk)",
+        "Beta-1 selectivity is dose-dependent and lost at high doses"
+      ],
+      "class_warnings_zh": [
+        "突發停藥黑框警告（反彈性心絞痛/心肌梗塞風險）",
+        "Beta-1 選擇性具劑量依賴性，高劑量下會喪失"
+      ],
+      "class_contraindications_en": [
+        "Severe bradycardia",
+        "2nd or 3rd degree AV block",
+        "Cardiogenic shock",
+        "Decompensated heart failure"
+      ],
+      "class_contraindications_zh": [
+        "嚴重心跳過緩",
+        "二度或三度房室傳導阻滯",
+        "心源性休克",
+        "失代償性心衰竭"
+      ],
+      "board_high_yield_en": "Suffix -olol. Selective for heart (beta-1), preferred in asthma/COPD over nonselective blockers. Abrupt cessation causes rebound ischemia.",
+      "board_high_yield_zh": "字尾 -olol。心臟選擇性 (beta-1)，氣喘/COPD 患者較非選擇性安全。突發停藥引起反彈性缺血。",
+      "differentiating_notes_en": "Metoprolol succinate, bisoprolol, and carvedilol are the 3 beta-blockers proven to reduce mortality in heart failure.",
+      "differentiating_notes_zh": "美托洛爾琥珀酸鹽、比索洛爾與卡維地洛為實證可降低心衰竭死亡率的三種 beta 阻斷劑。",
+      "related_condition_ids": [
+        "condition.hypertension"
       ],
       "representative_drug_ids": [
         "drug.metoprolol"
