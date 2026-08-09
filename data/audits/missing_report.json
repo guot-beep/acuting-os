@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 28,
+        "records_with_issues": 24,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 9,
-        "strict_template_complete": 44,
-        "four_source_audit_complete": 44,
+        "strict_template_complete": 48,
+        "four_source_audit_complete": 48,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 44/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE5; 28/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit. EX-UE5 Dagukong keeps eLotus perpendicular 0.1 cun separate from American Dragon's instruction to use moxibustion without a needling depth, retains legacy 0.5-0.8-cun needling and 5-7-cone moxa as unsupported non-executable history, and records the source's anomalous thumb phalanx wording without altering the stable database identity. EX-UE6 Xiaogukong is paused for adjudication because the legacy card locates PIP and permits needling or bloodletting while the exact eLotus page locates DIP and states moxibustion only; American Dragon's Gukong page is blank and does not establish identity. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; refined records remain draft."
+        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 48/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE9; 24/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit when each record is refined. EX-UE6 Xiaogukong now follows Ting's adjudication: PIP is canonical, eLotus DIP remains a documented alternate/source conflict, canonical technique is moxibustion only, legacy needling/bloodletting is unsupported, and American Dragon Gukong is not used as evidence. EX-UE7 separates eLotus midpoint needling from American Dragon Yaotong 1/3 metacarpal-base variants. EX-UE8 preserves Wailaogong/Luozhen alias and external-code differences while keeping pediatric emergencies as boundaries only. EX-UE9 separates needling and bloodletting methods and treats snakebite as an emergency boundary rather than efficacy evidence. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; refined records remain draft."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Resolve EX-UE6 Xiaogukong's PIP-versus-DIP location conflict and moxibustion-only versus legacy needling/bloodletting conflict before editing the record. The exact eLotus page supports DIP and moxibustion only; American Dragon's indexed Gukong detail page is blank and does not establish Xiaogukong identity. Current measured baseline: 44/72 strict-template and four-source-audited records; 28/72 remain and nine still contain a generic CloudTCM directory URL.",
+  "next_recommendation": "Continue with EX-UE10 Sifeng. Current measured baseline: 48/72 strict-template and four-source-audited records; 24/72 remain and nine still contain a generic CloudTCM directory URL. Sifeng requires full-depth review because the legacy card specifies pediatric prick-to-express-fluid technique, contains conflicting needling/moxa fields, and needs exact bloodletting, pediatric, and infection-control source boundaries without guessed procedural values.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
