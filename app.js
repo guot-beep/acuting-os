@@ -5597,6 +5597,7 @@ function renderSoapNoteCard(note) {
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
         ${(() => { const p = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score"); return (p === 0 || p) ? `<div><small>疼痛評分 Pain score</small><span>${escapeHtml(String(p))}/10</span></div>` : ""; })()}
+        ${(() => { const s = getOutcomeMetricValue(note.outcomeMetrics, "metric.sleep_hours"); return (s === 0 || s) ? `<div><small>睡眠 Sleep</small><span>${escapeHtml(String(s))} h</span></div>` : ""; })()}
         ${(note.effectDurationDays === 0 || note.effectDurationDays) ? `<div><small>效果維持 Effect duration</small><span>${escapeHtml(String(note.effectDurationDays))} 天 days</span></div>` : ""}
       </div>
       <div class="soap-link-grid">
@@ -5944,6 +5945,7 @@ function renderPreviousVisitPanel(note) {
   }
   const verdict = OUTCOME_VERDICTS[note.outcomeVerdict];
   const pain = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score");
+  const sleepHours = getOutcomeMetricValue(note.outcomeMetrics, "metric.sleep_hours");
   const pattern = formatPatternSelections(note.tcmPatternSelections) || note.tcmPattern || "";
   const cells = [
     ["就診 Visit", [note.visitNumber ? `Visit ${note.visitNumber}` : "", note.visitDate].filter(Boolean).join(" · ") || "—"],
@@ -5951,6 +5953,7 @@ function renderPreviousVisitPanel(note) {
     ["療效 Outcomes", truncateText(note.outcomes, 80)],
     ["療效判定 Verdict", verdict ? `${verdict.zh} ${verdict.en}` : ""],
     ["疼痛評分 Pain score", (pain === 0 || pain) ? `${pain}/10` : ""],
+    ["睡眠 Sleep", (sleepHours === 0 || sleepHours) ? `${sleepHours} h` : ""],
     ["效果維持 Effect duration", (note.effectDurationDays === 0 || note.effectDurationDays) ? `${note.effectDurationDays} 天 days` : ""],
     ["證型 Pattern", pattern],
     ["治法 Tx principle", note.treatmentPrinciple || ""],
@@ -6031,6 +6034,13 @@ function openSoapEditor(note = null) {
   if (soapForm.elements.painScore) {
     soapForm.elements.painScore.value = getOutcomeMetricValue(data.outcomeMetrics, "metric.pain_score");
   }
+  // Second structured metric (2026-08-09) — same helper, same array, proves
+  // the shape isn't pain-score-specific. Different numeric semantics on
+  // purpose: decimals allowed (sleep_hours), no upper bound, vs pain_score's
+  // integer 0-10.
+  if (soapForm.elements.sleepHours) {
+    soapForm.elements.sleepHours.value = getOutcomeMetricValue(data.outcomeMetrics, "metric.sleep_hours");
+  }
   // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
   // tcmPatternSecondary are UI-only form fields, no such keys exist on the
   // note object itself (the note holds tcmPatternSelections instead).
@@ -6074,14 +6084,25 @@ function saveSoapFromForm(event) {
     alert("效果維持天數須為 0 以上的整數（可留空）。");
     return;
   }
-  // Structured outcome metric proof-of-concept (metric.pain_score). Reject,
-  // never coerce — a value outside 0-10 is a typo, not a value to clamp.
+  // Structured outcome metrics (metric.pain_score, metric.sleep_hours).
+  // Reject, never coerce — an out-of-range or malformed value is a typo,
+  // not a value to clamp. Two different numeric shapes on purpose: pain
+  // score integer 0-10, sleep hours a non-negative decimal with no upper
+  // bound (outcome_metrics.json's own definition: unit "hours", no
+  // integer-only constraint) — same two-line validate-then-set pattern
+  // either way, chained through the same setOutcomeMetricValue().
   const painScoreRaw = (data.painScore || "").trim();
   if (painScoreRaw && (!/^\d+$/.test(painScoreRaw) || Number(painScoreRaw) < 0 || Number(painScoreRaw) > 10)) {
     alert("疼痛評分須為 0–10 的整數（可留空 = 未測量）。");
     return;
   }
-  const outcomeMetrics = setOutcomeMetricValue(current?.outcomeMetrics || [], "metric.pain_score", painScoreRaw);
+  const sleepHoursRaw = (data.sleepHours || "").trim();
+  if (sleepHoursRaw && (!/^\d+(\.\d+)?$/.test(sleepHoursRaw) || Number(sleepHoursRaw) < 0)) {
+    alert("睡眠時數須為 0 以上的數字，可含小數（可留空 = 未測量）。");
+    return;
+  }
+  let outcomeMetrics = setOutcomeMetricValue(current?.outcomeMetrics || [], "metric.pain_score", painScoreRaw);
+  outcomeMetrics = setOutcomeMetricValue(outcomeMetrics, "metric.sleep_hours", sleepHoursRaw);
 
   // TCM pattern primary/secondary reconciliation. The excludeValues live
   // filter (setupLinkAutocomplete) already keeps the current primary out of
