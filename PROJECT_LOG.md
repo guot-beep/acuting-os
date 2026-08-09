@@ -1,9 +1,11 @@
-# 2026-08-09 Antigravity — Final Staging Semantics Correction (7 drugs)
+# 2026-08-09 Antigravity — Disjoint Atomic Provenance Ledger Fix (7 drugs)
 
-- **做了什麼**：完成受控 Pilot Ingestion 的 Staging 語意與 5 鍵式原子級 Provenance 審核校正（Final Staging Semantics Correction）；將 `data/pharmacology/staging_v7_ingestion.json` 的資料結構嚴格劃分為 `source_board_items`（100% 逐字原貌 source bullet）、`source_clinical_impact_statements`（100% 逐字原貌臨床/針灸敘述）、`source_declared_flags`（僅包含 v7 原始 `Flags:` 行明確宣告之標籤）、`derived_candidate_flags`（明確標註為推導候選標籤），以及 `canonicalized_or_consumed_source_items`（已直接映射至 `drugs.json` 之來源事實引用）；完全移除 recomposed 合併句與推導標籤混淆。
-- **數字與原子級核算**：7 筆藥物 v7 原始原子級項目總數 `118` 項：`canonicalized_or_consumed_source_items` `32` 項 + `source_board_items` `23` 項 + `source_clinical_impact_statements` `45` 項 + `source_declared_flags` `18` 個；推導標籤 `derived_candidate_flags` `4` 個獨立標記；**真實原子級 LOST 數為 0**。
+- **做了什麼**：建立嚴格不相交（Disjoint）的原子級來源項目帳簿（Disjoint Atomic Provenance Ledger, v3）於 `data/pharmacology/staging_v7_ingestion.json`；為 7 筆 Pilot 藥物之 v7 原始 MD 中每一個原子級文字 bullet、子標題事實、比較子項目、Declared Flag、機轉與適應症建立唯一的穩定 ID（如 `warfarin.board.001`, `hctz.board.compare.furosemide`）；每筆來源項目僅指定**唯一主處置（primary disposition）**：`canonical`, `staging`, `duplicated_for_provenance`, `excluded_with_reason`, 或 `lost`；推導標籤使用 `derived: true` 獨立存放，絕不計入來源原子項目總數。
+- **數學公式與驗證**：
+  `TOTAL UNIQUE SOURCE_ITEM_ID (106) = canonical (51) + staging (51) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`
+  經 `scripts/audit-atomic-ledger.js` 機器檢查：ID 零重複、公式 100% 平衡、Canonical 欄位引用全部合規、**真實 LOST 數嚴格等於 0**。
 - **驗證**：`validate-pharm-standard.js --worklist` 通過（PASS, 0 阻擋問題, 0 提醒）、`build-data.js` 通過、`validate-interactions.js` 通過（107 IDs）、`git diff --check` 通過；本機 dev-server http://127.0.0.1:8361 正常運行。
-- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未擴充 canonical schema；未修改驗證器語意。
+- **已知未解／STOP**：依據 Ting 指令，停止於第 7 筆藥物校正，未開始第 8 筆；未修改 canonical `drugs.json`；未擴充 canonical schema；未修改驗證器語意。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 
