@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 24,
+        "records_with_issues": 22,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 9,
-        "strict_template_complete": 48,
-        "four_source_audit_complete": 48,
+        "strict_template_complete": 50,
+        "four_source_audit_complete": 50,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 48/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE9; 24/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit when each record is refined. EX-UE6 Xiaogukong now follows Ting's adjudication: PIP is canonical, eLotus DIP remains a documented alternate/source conflict, canonical technique is moxibustion only, legacy needling/bloodletting is unsupported, and American Dragon Gukong is not used as evidence. EX-UE7 separates eLotus midpoint needling from American Dragon Yaotong 1/3 metacarpal-base variants. EX-UE8 preserves Wailaogong/Luozhen alias and external-code differences while keeping pediatric emergencies as boundaries only. EX-UE9 separates needling and bloodletting methods and treats snakebite as an emergency boundary rather than efficacy evidence. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; refined records remain draft."
+        "note": "Ting's full four-source card contract covers Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link checks, safety, combinations, and field-level provenance. The current validator measures 50/72 strict-template and four-source-audited records: EX-HN1 through EX-HN22, EX-CA1 through EX-CA5, EX-B1 through EX-B12, and EX-UE1 through EX-UE11; 22/72 remain on the worklist. All 72 retain a measurable needling, bloodletting, or moxibustion method. Nine records still contain a generic CloudTCM directory URL and require replacement or an explicit source-gap audit when each record is refined. EX-UE10 Sifeng preserves the exact prick-and-express technique without guessing device, volume, hemostasis, or moxa rules; unsupported legacy three-edged-needle, needling-depth, and contradictory moxa statements remain downgraded. EX-UE11 Shixuan separates superficial 0.1-0.2 cun needling, prick-to-bleed, and American Dragon's conditional post-bleeding moxa statement; unsupported legacy 0.5-1.0 cun and three-edged-needle values remain downgraded. Work is paused before EX-UE12 Bizhong because legacy palmar, eLotus lateral, and American Dragon dorsal forearm locations conflict, while their invasive techniques also differ materially. Strict/four-source completion measures template, provenance, source audit, and exact-link completion, not independent clinical verification; refined records remain draft."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue with EX-UE10 Sifeng. Current measured baseline: 48/72 strict-template and four-source-audited records; 24/72 remain and nine still contain a generic CloudTCM directory URL. Sifeng requires full-depth review because the legacy card specifies pediatric prick-to-express-fluid technique, contains conflicting needling/moxa fields, and needs exact bloodletting, pediatric, and infection-control source boundaries without guessed procedural values.",
+  "next_recommendation": "PAUSE at EX-UE12 Bizhong pending Ting or print-source adjudication. Current measured baseline: 50/72 strict-template and four-source-audited records; 22/72 remain and nine still contain a generic CloudTCM directory URL. The legacy card places Bizhong on the palmar forearm between two tendons, eLotus places it on the lateral forearm between radius and ulna, and American Dragon places it on the dorsal forearm between radius and ulna. Technique also conflicts: eLotus gives perpendicular 1.0-1.2 cun with moxa applicable, American Dragon describes straight insertion through the limb without penetrating the opposite skin and gives no numeric depth, while legacy fields give different numeric ranges plus moxa and prick-to-bleed. Do not select a canonical location or executable technique without adjudication.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
