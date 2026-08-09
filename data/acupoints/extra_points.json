@@ -9139,29 +9139,99 @@
     "code": "EX-UE6",
     "display_code": "EX-UE6",
     "nameZh": "小骨空",
-    "nameEn": "Xiaogukong",
+    "nameEn": "Lesser Bone Hollow",
     "pinyin": "Xiaogukong",
     "meridian": "Extra Points / 經外奇穴",
     "region": "上肢部 / Upper Extremity",
-    "location": "手背，小指近端指骨間關節橫紋中央。",
-    "locationEn": "On dorsum of little finger, midpoint of proximal interphalangeal joint crease.",
-    "techniqueNotes": "灸5~7壯。\nMoxibustion 5-7 cones.",
-    "functions": "清熱明目，消腫止痛",
-    "functionsEn": "Clears heat and brightens eyes; Relieves pain",
+    "location": "Canonical 定位（Ting 2026-08-08 裁決）：手背，小指近端指間關節（PIP）背側橫紋中央。eLotus Ex-UE6 另定位於遠端指間關節（DIP；遠節與中節指骨間）中央，列為 alternate location／source conflict，不與 PIP 合併成假共識。",
+    "locationEn": "Canonical location (Ting adjudication, 2026-08-08): on the dorsal little finger, at the midpoint of the proximal interphalangeal (PIP) joint crease. eLotus Ex-UE6 instead places the point at the distal interphalangeal (DIP) joint, between the distal and middle phalanges; this is retained as an alternate location/source conflict and is not merged into a false consensus.",
+    "cunMeasurement": "以小指 PIP 背側橫紋中央為 canonical 關節標誌，不使用骨度分寸；eLotus alternate 為 DIP 中央。",
+    "anatomyZh": "Canonical PIP 標誌位於小指近端指間關節背側，表層為皮膚與皮下組織，深部鄰近伸肌裝置及關節囊。四層來源未提供皮膚至關節深度、指背神經血管走向、伸肌腱或關節囊安全終點；且 eLotus 的 DIP alternate 代表另一解剖層面，操作前不得混用定位。",
+    "anatomyEn": "The canonical PIP landmark is on the dorsal proximal interphalangeal joint of the little finger, with skin and subcutaneous tissue superficial to the extensor apparatus and joint capsule. The four-source set does not provide skin-to-joint depth, dorsal digital neurovascular course, or extensor-tendon/joint-capsule safety endpoints. The eLotus DIP alternate represents a different anatomical level and must not be interchanged with the PIP location.",
+    "acumethodZh": "Canonical 技法：不針刺、不點刺放血；只灸。eLotus exact page 明列 moxibustion only。舊卡直刺0.3～0.5寸與點刺出血均為 unsupported legacy，保留於證據層但不進可執行技法。",
+    "acumethodEn": "Canonical technique: no needling and no prick-to-bleed; moxibustion only. The exact eLotus page explicitly states moxibustion only. Legacy perpendicular insertion 0.3-0.5 cun and prick-to-bleed are retained as unsupported history but excluded from executable technique.",
+    "moxaZh": "只灸。eLotus 未給壯數、時間、距離或直接／間接灸法。舊卡灸5～7壯保留為未核實 legacy 值，不作 canonical 劑量；皮膚保護與停止條件仍為 source gap。",
+    "moxaEn": "Moxibustion only. eLotus gives no cone count, duration, distance, or direct/indirect method. The legacy 5-7-cone value is retained as unverified history and is not a canonical dose; skin-protection and stopping criteria remain source gaps.",
+    "techniqueNotes": "Canonical：PIP 定位，只灸；無已核實灸量。eLotus：DIP alternate，只灸。Legacy：直刺0.3～0.5寸、點刺出血及灸5～7壯均 unsupported／不可執行。\nCanonical: PIP location and moxibustion only, with no verified dose. eLotus: DIP alternate and moxibustion only. Legacy needling, bloodletting, and 5-7 cones are unsupported/non-executable.",
+    "functions": "益目，止痛；清熱明目、消腫止痛（legacy）",
+    "functionsEn": "Benefits the eyes and alleviates pain; clears heat/brightens the eyes and reduces swelling/alleviates pain (legacy)",
+    "functionsZhList": [
+      "益目",
+      "止痛",
+      "清熱明目（legacy）",
+      "消腫止痛（legacy）"
+    ],
+    "functionsEnList": [
+      "Benefits the eyes",
+      "Alleviates pain",
+      "Clears heat and brightens the eyes (legacy)",
+      "Reduces swelling and alleviates pain (legacy)"
+    ],
+    "pointIdentityZh": "本庫穩定代碼 EX-UE6／ex.ue6，小骨空 Xiaogukong。Canonical 定位依 Ting 2026-08-08 裁決採 PIP；eLotus Ex-UE6 的 DIP 定位保留為 source_conflict／alternate location。American Dragon 拼音索引無 Xiaogukong；索引中的 Gukong 不作本穴證據。",
+    "pointIdentityEn": "Stable database identity: EX-UE6 / ex.ue6, Xiaogukong. Per Ting's 2026-08-08 adjudication, the canonical location is PIP; the eLotus Ex-UE6 DIP location is retained as a source conflict/alternate location. The American Dragon pinyin index has no Xiaogukong entry, and its Gukong entry is not used as evidence for this point.",
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 未明列 Xiaogukong。考點是辨識 PIP canonical 與 eLotus DIP alternate 的 documented conflict，並記住本卡 canonical 技法為只灸。",
+    "exam_importance_en": "Xiaogukong is not explicitly listed in the NCBAHM 2026 ACPL Appendix A. The key study issue is the documented PIP-canonical versus eLotus-DIP alternate-location conflict and the card's moxibustion-only canonical technique.",
+    "exam_pearl": "定位先問『PIP 還是 DIP』：本庫採 PIP，eLotus DIP 不刪但必須標衝突。技法只灸；舊針刺與放血不能當作已核實規則。",
+    "exam_pearl_en": "First ask whether the source uses PIP or DIP: this database uses PIP, while the eLotus DIP location remains visible as a conflict. Technique is moxibustion only; legacy needling and bloodletting are not verified rules.",
     "patterns": [
-      "目赤腫痛",
-      "白翳",
-      "咽喉腫痛",
-      "耳聾"
+      "眼疾／目赤腫痛",
+      "耳聾",
+      "手指關節痛",
+      "白翳（legacy；不窄化為翼狀胬肉）",
+      "咽喉腫痛（legacy）"
     ],
     "patternsEn": [
-      "Red swollen eyes",
-      "Pterygium",
-      "Sore throat",
-      "Deafness"
+      "Eye disorders / red swollen eyes",
+      "Deafness",
+      "Finger joint pain",
+      "Baiyi (legacy; not narrowed to pterygium)",
+      "Sore and swollen throat (legacy)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "益目",
+      "止痛",
+      "清熱（legacy）",
+      "消腫（legacy）"
+    ],
+    "action_tags_en": [
+      "benefit eyes",
+      "alleviate pain",
+      "clear heat (legacy)",
+      "reduce swelling (legacy)"
+    ],
+    "disease_tags_zh": [
+      "眼疾",
+      "耳聾",
+      "手指關節痛"
+    ],
+    "disease_tags_en": [
+      "eye disorders",
+      "deafness",
+      "finger joint pain"
+    ],
+    "acuTags": [
+      "extra_point",
+      "upper_extremity",
+      "moxibustion_only",
+      "location_conflict"
+    ],
+    "combinePointsZh": "四層來源與 legacy 卡均未提供小骨空 point-specific 配穴；不借用大骨空、Gukong 或其他眼疾穴位配伍。",
+    "combinePointsEn": "The four-source set and legacy card provide no Xiaogukong-specific combination; combinations from Dagukong, Gukong, or other eye points are not borrowed.",
+    "cautions": "【定位衝突】Canonical 採 PIP；eLotus 為 DIP alternate，兩者不可混用。【技法邊界】只灸；舊直刺0.3～0.5寸與點刺出血 unsupported，不執行。【局部安全缺口】來源未給伸肌裝置、關節囊、指背神經血管或皮膚至關節的安全終點。【灸法缺口】無壯數、時間、距離、直接／間接法、皮膚保護或停止規則；舊5～7壯不升格。【特殊族群】孕期、兒童、感覺障礙、皮膚脆弱及循環不良者均無 point-specific protocol，source silence 不等於安全。",
+    "cautionsEn": "[Location conflict] Canonical location is PIP; eLotus gives a DIP alternate, and the two must not be interchanged. [Technique boundary] Moxibustion only; legacy 0.3-0.5-cun needling and prick-to-bleed are unsupported and non-executable. [Local safety gap] Sources provide no endpoint for the extensor apparatus, joint capsule, dorsal digital nerves/vessels, or skin-to-joint depth. [Moxa gap] No cone count, duration, distance, direct/indirect method, skin protection, or stopping rule is supplied; legacy 5-7 cones are not promoted. [Special populations] There is no point-specific protocol for pregnancy, children, sensory loss, fragile skin, or impaired circulation; source silence is not proof of safety.",
+    "clinical_pearls": [
+      "本卡最重要的不是把 PIP 與 DIP 平均化，而是讓操作者先辨認所採標準；canonical PIP 與 eLotus DIP alternate 必須同時可見。",
+      "eLotus 支持眼疾、耳聾、手指關節痛與只灸；舊白翳、咽喉腫痛、清熱消腫與數字技法保留但證據層級較低。"
+    ],
+    "clinical_pearls_en": [
+      "The key is not to average PIP and DIP, but to identify the selected standard before treatment; canonical PIP and the eLotus DIP alternate must both remain visible.",
+      "eLotus supports eye disorders, deafness, hand-joint pain, and moxibustion only; legacy Baiyi, throat swelling, heat/swelling actions, and numeric techniques remain at a lower evidence level."
+    ],
+    "nameIntroZh": "小骨空（Xiǎogǔkōng，Lesser Bone Hollow）為小指背側經外奇穴。本庫保留 EX-UE6／ex.ue6，並明列 PIP canonical 與 eLotus DIP alternate 的定位衝突。",
+    "nameIntroEn": "Xiaogukong (Lesser Bone Hollow) is an extra point on the dorsal little finger. The database preserves EX-UE6 / ex.ue6 and explicitly records the conflict between the canonical PIP and eLotus DIP alternate locations.",
+    "evidence": "NCBAHM 2026 ACPL Appendix A does not explicitly list Xiaogukong, and no dedicated local curriculum entry was found. Ting's 2026-08-08 adjudication selects the PIP midpoint as the canonical location based on multiple traditional/standardized sources while requiring the eLotus DIP location to remain as a documented alternate/source conflict. The exact eLotus Ex-UE6 page contributes the DIP location, eye disorders, deafness, hand-joint pain, eye/pain applications, and moxibustion-only technique. American Dragon's pinyin index has no Xiaogukong entry; per Ting, Gukong is not treated as Xiaogukong evidence. Legacy PIP needling, bloodletting, 5-7-cone moxa, throat/Baiyi indications, and heat/swelling functions are preserved with unsupported labels rather than promoted.",
+    "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiaogukong-ex-ue6"
     ],
@@ -9175,11 +9245,66 @@
     ],
     "x": 160,
     "y": 312,
-    "review_status": "sourced_checked",
-    "needling": "直刺 0.3-0.5 寸，或點刺出血。",
-    "needlingEn": "Perpendicular insertion 0.3-0.5 cun, or prick to bleed.",
-    "cautions": "注意清潔消毒。",
-    "cautionsEn": "Ensure strict disinfection.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A p.5: Xiaogukong is absent from the named focus list",
+        "scope note: Appendix A is not an exclusive exam limit"
+      ],
+      "curriculum": [
+        "2026-08-08 search for 小骨空, Xiaogukong, Lesser Bone Hollow, and EX-UE6 under curriculum/board and curriculum/acupoints found no dedicated entry"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiaogukong-ex-ue6: exact page opened 2026-08-08; Ex-UE6, DIP location, indications, applications, and moxibustion-only technique extracted"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: pinyin index live-opened 2026-08-08; Xiaogukong absent and Gukong present",
+        "Ting directive 2026-08-08: do not treat American Dragon Gukong as Xiaogukong evidence"
+      ],
+      "location": [
+        "Ting adjudication 2026-08-08: canonical location is the dorsal little-finger PIP midpoint, based on multiple traditional/standardized sources",
+        "eLotus exact Xiaogukong page: alternate DIP midpoint between distal and middle phalanges; retained as source_conflict"
+      ],
+      "anatomy": [
+        "canonical landmark: dorsal little-finger PIP; eLotus alternate landmark: dorsal little-finger DIP",
+        "source-gap note: no exact-page detail for extensor apparatus, joint capsule, dorsal digital neurovascular structures, or skin-to-joint depth"
+      ],
+      "technique": [
+        "eLotus exact Xiaogukong page: moxibustion only",
+        "Ting adjudication 2026-08-08: canonical technique is moxibustion only",
+        "unverified legacy 0.3-0.5-cun perpendicular needling and prick-to-bleed excluded from executable technique"
+      ],
+      "moxibustion": [
+        "eLotus exact page: moxibustion only; no dose, duration, distance, or method",
+        "unverified legacy 5-7 cones retained but not promoted"
+      ],
+      "functions": [
+        "eLotus exact page: benefits eyes and alleviates pain",
+        "unverified legacy: clears heat, brightens eyes, reduces swelling, and alleviates pain"
+      ],
+      "indications": [
+        "eLotus exact page: eye disorders, deafness, and hand joint pain",
+        "legacy red swollen eyes, Baiyi, and sore/swollen throat retained; Baiyi not narrowed to pterygium"
+      ],
+      "combinations": [
+        "source-gap note: no Xiaogukong-specific combination in eLotus, American Dragon, local curriculum, or legacy card"
+      ],
+      "cautions": [
+        "Ting adjudication and eLotus exact page: moxibustion-only boundary; legacy needling/bloodletting unsupported",
+        "source-gap note: no point-specific moxa dose/stopping rule, joint/tendon/neurovascular endpoint, pregnancy, pediatric, sensory-loss, skin-fragility, or circulation protocol"
+      ],
+      "nomenclature": [
+        "database immutable identity: EX-UE6 / ex.ue6 / 小骨空 / Xiaogukong",
+        "eLotus: Ex-UE6 / Lesser Bone Hollow",
+        "American Dragon: no Xiaogukong entry; Gukong excluded by Ting directive"
+      ],
+      "link_check": [
+        "2026-08-08 live-opened eLotus Xiaogukong exact detail page",
+        "2026-08-08 live-opened American Dragon pinyin index and confirmed no Xiaogukong entry; no generic CloudTCM URL used"
+      ]
+    },
+    "review_status": "draft",
+    "needling": "不針刺、不點刺出血；canonical 只灸。舊直刺0.3～0.5寸與點刺出血為 unsupported legacy，不執行。",
+    "needlingEn": "No needling and no prick-to-bleed; canonical technique is moxibustion only. Legacy 0.3-0.5-cun needling and prick-to-bleed are unsupported and non-executable.",
     "id": "ex.ue6"
   },
   {
