@@ -77,7 +77,10 @@ jobs:
 
       - name: canonical red-flag wiring
         run: node scripts/validate-red-flag-wiring.js
-
+        
+      - name: runtime red-flag resolver
+        run: node scripts/validate-red-flag-runtime.js
+        
       - name: FY2026 ICD crosswalk mappings
         run: node scripts/validate-crosswalk-mappings.js
         
