@@ -1,17 +1,15 @@
-# 2026-08-09 Antigravity — Pharmacology Batch 2 Ingestion (8 drugs) & Pipeline Verification
+# 2026-08-09 Antigravity — Pharmacology Canonical Corrections, DailyMed Titles & Beta-1 Taxonomy Reconcile
 
 - **做了什麼**：
-  1. **Sync 與 Preflight 修正**：成功 rebase `origin/codex/pattern-v2` 至 `197b423`（保留 Sonnet 臨床與 SOAP 成果）；更新聲明為專案/來源包 policy ("Project/source-pack policy for this pharmacology ingestion keeps these raw course-derived extraction files local-only")；commit 確定性飄移測試腳本 `scripts/test-source-drift-simulation.js`；新增真哈希碰撞斷言 (`throw Error`)。
-  2. **Manifest 擴充**：加入 `03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md` (SHA-256 `c086...f743`, 126 items) 並納入 `drug.rivaroxaban` (10 items)，Manifest 涵蓋 3 大原始 Markdown 檔案與 15 筆藥物。
-  3. **Batch 2 藥物匯入 (8 筆)**：
-     - 豐富既有 3 筆：`drug.rivaroxaban`, `drug.furosemide`, `drug.spironolactone`（增量豐富，完整保留 DailyMed 官方標籤與既有豐富欄位）。
-     - 新建 5 筆：`drug.lisinopril`, `drug.metoprolol`, `drug.amlodipine`, `drug.atorvastatin`, `drug.digoxin`（明確分類與 RxCUI；Metoprolol 保持成分層級，產品/劑型特異細節妥善保留於 Staging）。
-     - 分類拓樸新增 5 筆 L3 class（`ace_inhibitors`, `beta_blockers`, `dhp_ccbs`, `statins`, `cardiac_glycosides`）與 5 筆 L2 target。Canonical 藥物數由 16 筆增至 21 筆。
-- **帳簿對帳與雙重審核結果**：
-  1. **內部帳簿對帳**：`TOTAL UNIQUE SOURCE_ITEM_ID (280) = canonical (90) + staging (186) + duplicated_for_provenance (4) + excluded_with_reason (0) + lost (0)`，100% 嚴格平衡。
-  2. **獨立來源覆蓋**：抽取 15 筆藥物之原子級醫學事實 `280` 項，Ledger 匹配 `280` 項，**Missing = 0**, **Not Found = 0**, **Duplicate = 0**。**LOST = 0 經雙重審核無誤**。
-- **驗證**：`verify-source-coverage.js` PASS (280 items, 100%)、`audit-atomic-ledger.js` 雙審核 PASS、`test-source-drift-simulation.js` PASS、`validate-pharm-standard.js --worklist` PASS (21 drugs, 17 classes, 0 blocking)、`build-data.js` PASS、`validate-interactions.js` PASS (108 IDs)、`git diff --check` PASS；Browser QA 模擬與 dev-server (http://127.0.0.1:8361/#ws/pharm) 正常運行，卡片搜尋、分類篩選、DailyMed 連結與 SOAP 藥物關聯皆正常。
-- **已知未解／STOP**：依據 Ting 指令，停止於 Batch 2 (8 筆藥物)，未開始 P3；未新增未經批准之 canonical 欄位。
+  1. **Metoprolol 產品特異性修訂**：將成分級 `drug.metoprolol` 適應症明確限定為 `"Stable symptomatic heart failure (metoprolol succinate extended-release formulation)"` / `"穩定具症狀之心衰竭（美托洛爾琥珀酸鹽緩釋劑型）"`，避免將劑型特異適應症誤讀為全成分通用適應症。
+  2. **DailyMed 官方標籤標題審核**：針對 Batch 2 全部新藥與補充藥物補齊 exact `dailymed_label_title`（如 `"DailyMed - METOPROLOL SUCCINATE tablet, extended release"`, `"DailyMed - LISINOPRIL tablet"`, `"DailyMed - AMLODIPINE BESYLATE tablet"`, `"DailyMed - ATORVASTATIN CALCIUM tablet, film coated"`, `"DailyMed - DIGOXIN tablet"`, `"DailyMed - SPIRONOLACTONE tablet, coated"`）。
+  3. **Beta-1 選擇性阻斷劑分類名修正**：將原過度寬泛之 `drugclass.beta_blockers` 重構更名為 `drugclass.beta1_selective_blockers`（"Beta-1 selective adrenergic receptor blockers"），精確對應 `drugtarget.beta1_adrenergic` 與 prototype `drug.metoprolol`；全庫與測試無殘留舊 Class ID。
+  4. **既有藥物變更真實統計**：
+     - 處理之既有藥物（3 筆）：`drug.rivaroxaban`, `drug.spironolactone`, `drug.furosemide`
+     - Canonical 欄位實質變更（2 筆）：`drug.rivaroxaban`（適應症/記憶法/考題陷阱/RxCUI 擴充）、`drug.spironolactone`（補齊 DailyMed setid/url/title）
+     - Provenance-only / Canonical 零變更（1 筆）：`drug.furosemide`（`drugs.json` canonical 內容 0 變更；24 項來源原子事實完整存入 staging 帳簿）。
+- **驗證**：`verify-source-coverage.js` PASS (280 items, 100%)、`audit-atomic-ledger.js` PASS、`test-source-drift-simulation.js` PASS、`validate-pharm-standard.js --worklist` PASS (21 drugs, 17 classes, 0 blocking)、`build-data.js` PASS、`validate-interactions.js` PASS (108 IDs)、`git diff --check` PASS；Browser QA 模擬 http://127.0.0.1:8361/#ws/pharm 正常，Metoprolol 搜尋與 Beta-1 選擇性分類篩選無重複、無無效選項。
+- **STOP**：已依指令完成 3 項修訂與報告修正，**未開始 P3**。
 
 # 2026-08-09 Antigravity — Sync (8ecc96b) + Pharmacology router & renderer repair
 

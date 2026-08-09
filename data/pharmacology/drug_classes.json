@@ -365,7 +365,7 @@
       "drugtarget_id": "drugtarget.at1_receptor",
       "suffix_en": "-sartan",
       "mechanism_overview_en": "Selectively block angiotensin II binding to AT1 receptors, preventing vasoconstriction and aldosterone secretion.",
-      "mechanism_overview_zh": "選擇性阻斷血管緊張素 II 與 AT1 受體結合，抑制血管收縮與醛固酮分泌。",
+      "mechanism_overview_zh": "選擇性阻斷血管緊張素 II 與 AT1 受體結合，抑制血管收縮與醛固酮釋放。",
       "indications_en": [
         "Hypertension",
         "Diabetic nephropathy",
@@ -388,8 +388,8 @@
       ],
       "drugtarget_id": "drugtarget.ace",
       "suffix_en": "-pril",
-      "mechanism_overview_en": "Inhibit angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing bradykinin degradation.",
-      "mechanism_overview_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少緩激肽分解。",
+      "mechanism_overview_en": "Inhibit angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing aldosterone secretion.",
+      "mechanism_overview_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少醛固酮分泌。",
       "indications_en": [
         "Hypertension",
         "Heart failure",
@@ -409,16 +409,16 @@
       "authored_by": "v7_ingestion_batch2"
     },
     {
-      "id": "drugclass.beta_blockers",
-      "name_en": "Beta-adrenergic receptor blockers (Beta blockers)",
-      "name_zh": "Beta 受體阻斷劑",
+      "id": "drugclass.beta1_selective_blockers",
+      "name_en": "Beta-1 selective adrenergic receptor blockers (Beta-1 selective blockers)",
+      "name_zh": "Beta-1 選擇性受體阻斷劑",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
       "drugtarget_id": "drugtarget.beta1_adrenergic",
       "suffix_en": "-olol",
-      "mechanism_overview_en": "Block beta-adrenergic receptors, reducing heart rate, myocardial contractility, and renin secretion.",
-      "mechanism_overview_zh": "阻斷 beta 腎上腺素受體，降低心跳率、心肌收縮力與腎素分泌。",
+      "mechanism_overview_en": "Selectively block beta-1 adrenergic receptors in cardiac tissue, reducing heart rate, myocardial contractility, and blood pressure.",
+      "mechanism_overview_zh": "選擇性阻斷心肌組織 beta-1 腎上腺素受體，降低心跳率、心肌收縮力與血壓。",
       "indications_en": [
         "Hypertension",
         "Angina pectoris",
@@ -483,7 +483,7 @@
       ],
       "indications_zh": [
         "高脂血症",
-        "心血管疾病風險降低"
+        "高風險患者心血管疾病之預防"
       ],
       "representative_drug_ids": [
         "drug.atorvastatin"

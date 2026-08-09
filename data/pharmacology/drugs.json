@@ -187,6 +187,7 @@
       },
       "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
       "dailymed_setid": "b119ed8a-289a-46c5-9778-6b07e4c061c4",
+      "dailymed_label_title": "DailyMed - SPIRONOLACTONE tablet, coated",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b119ed8a-289a-46c5-9778-6b07e4c061c4",
       "dailymed_url_kind": "verified_exact",
       "review_status": "draft",
@@ -1356,6 +1357,7 @@
       "classic_association_en": "ARB (-sartan) -> Hyperkalemia & Fetal toxicity boxed warning",
       "tcm_relation_note_zh": "服藥患者若出現頭暈、疲倦或血壓過低，需考量血管收縮素受體阻斷劑造成之血容量或電解質變化，避免單純歸咎於氣血兩虛。",
       "dailymed_setid": "9501dfaa-c8cf-46d6-8bec-936c4fd8fe03",
+      "dailymed_label_title": "LOSARTAN POTASSIUM TABLET, FILM COATED [PREFERRED PHARMACEUTICALS INC.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9501dfaa-c8cf-46d6-8bec-936c4fd8fe03",
       "dailymed_url_kind": "verified_exact",
       "review_status": "draft",
@@ -1423,15 +1425,16 @@
       "exam_trap_en": "Dry cough and angioedema are classic ACE inhibitor adverse effects due to bradykinin accumulation; fetal toxicity is a boxed warning.",
       "exam_trap_zh": "乾咳與血管神經性水腫是 ACEi 因緩激肽積聚導致的經典不良反應；胎兒毒性為黑框警告。",
       "classic_association_en": "ACE inhibitor (-pril) -> Dry cough & Angioedema & Fetal toxicity boxed warning",
-      "dailymed_setid": "0b58e778-8318-47c3-b4e0-79ea7c89f5bc",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0b58e778-8318-47c3-b4e0-79ea7c89f5bc",
+      "dailymed_setid": "ab561d21-7466-4d8b-8d06-291c1d4d82ff",
+      "dailymed_label_title": "DailyMed - LISINOPRIL tablet",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab561d21-7466-4d8b-8d06-291c1d4d82ff",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "boxed_warning_en": [
-          "dailymed:0b58e778-8318-47c3-b4e0-79ea7c89f5bc#BOXED_WARNING"
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#BOXED_WARNING"
         ],
         "contraindications_en": [
-          "dailymed:0b58e778-8318-47c3-b4e0-79ea7c89f5bc#CONTRAINDICATIONS"
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#CONTRAINDICATIONS"
         ]
       },
       "review_status": "draft",
@@ -1445,7 +1448,7 @@
         "Lopressor",
         "Toprol-XL"
       ],
-      "drugclass_id": "drugclass.beta_blockers",
+      "drugclass_id": "drugclass.beta1_selective_blockers",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
@@ -1457,12 +1460,12 @@
       "indications_en": [
         "Hypertension",
         "Angina pectoris",
-        "Heart failure"
+        "Stable symptomatic heart failure (metoprolol succinate extended-release formulation)"
       ],
       "indications_zh": [
         "高血壓",
         "心絞痛",
-        "心衰竭"
+        "穩定具症狀之心衰竭（美托洛爾琥珀酸鹽緩釋劑型）"
       ],
       "boxed_warning_en": "Ischemic Heart Disease: Abrupt cessation of therapy can exacerbate angina and lead to myocardial infarction. When discontinuing long-term therapy, dosage should be gradually reduced over 1 to 2 weeks.",
       "boxed_warning_zh": "缺血性心臟病：突發停藥可能加重心絞痛並導致心肌梗塞。長期治療停藥時應在 1 至 2 週內逐漸減量。",
@@ -1485,16 +1488,17 @@
       "mnemonic_en": "-OLOL indicates Beta blocker. Think: bradycardia, bronchospasm risk, masking hypoglycemia, and abrupt withdrawal danger.",
       "exam_trap_en": "Abrupt withdrawal of metoprolol can trigger severe rebound angina or MI; beta-1 selectivity is lost at higher doses.",
       "exam_trap_zh": "突發停用美托洛爾可能引發嚴重反彈性心絞痛或心肌梗塞；在高劑量下會失去 beta-1 選擇性。",
-      "classic_association_en": "Beta blocker (-olol) -> Bradycardia & Abrupt withdrawal rebound angina risk",
-      "dailymed_setid": "0d29ae67-f418-4780-b210-91c68f9a2e61",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0d29ae67-f418-4780-b210-91c68f9a2e61",
+      "classic_association_en": "Beta-1 selective blocker (-olol) -> Bradycardia & Abrupt withdrawal rebound angina risk",
+      "dailymed_setid": "151079c5-6360-45ed-8118-885543d6a4ad",
+      "dailymed_label_title": "DailyMed - METOPROLOL SUCCINATE tablet, extended release",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=151079c5-6360-45ed-8118-885543d6a4ad",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "boxed_warning_en": [
-          "dailymed:0d29ae67-f418-4780-b210-91c68f9a2e61#BOXED_WARNING"
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#BOXED_WARNING"
         ],
         "contraindications_en": [
-          "dailymed:0d29ae67-f418-4780-b210-91c68f9a2e61#CONTRAINDICATIONS"
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#CONTRAINDICATIONS"
         ]
       },
       "review_status": "draft",
@@ -1536,12 +1540,13 @@
       "exam_trap_en": "DHP CCBs like amlodipine cause peripheral edema and reflex tachycardia rather than heart block (unlike non-DHP verapamil/diltiazem).",
       "exam_trap_zh": "DHP CCB 如氨氯地平主要造成周邊水腫與反射性心跳過速，而非房室傳導阻滯（與 non-DHP 如 verapamil/diltiazem 不同）。",
       "classic_association_en": "DHP CCB (-dipine) -> Peripheral edema & Vasodilation",
-      "dailymed_setid": "1e7f603c-8367-4e67-a0c6-3023fb182283",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1e7f603c-8367-4e67-a0c6-3023fb182283",
+      "dailymed_setid": "5467eee5-1519-7859-e063-6294a90afed1",
+      "dailymed_label_title": "DailyMed - AMLODIPINE BESYLATE tablet",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5467eee5-1519-7859-e063-6294a90afed1",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "contraindications_en": [
-          "dailymed:1e7f603c-8367-4e67-a0c6-3023fb182283#CONTRAINDICATIONS"
+          "dailymed:5467eee5-1519-7859-e063-6294a90afed1#CONTRAINDICATIONS"
         ]
       },
       "review_status": "draft",
@@ -1587,12 +1592,13 @@
       "exam_trap_en": "Myopathy and rhabdomyolysis risk increases significantly when statins are combined with fibrates, niacin, or strong CYP3A4 inhibitors.",
       "exam_trap_zh": "當他汀類與纖維酸類 (fibrates)、菸鹼酸或強效 CYP3A4 抑制劑併用時，肌病變與橫紋肌溶解症風險顯著增加。",
       "classic_association_en": "Statin (-vastatin) -> Myopathy / Rhabdomyolysis risk & LFT elevation",
-      "dailymed_setid": "8a3a2e37-f0b0-4f51-b847-1936c7e16348",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8a3a2e37-f0b0-4f51-b847-1936c7e16348",
+      "dailymed_setid": "b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
+      "dailymed_label_title": "DailyMed - ATORVASTATIN CALCIUM tablet, film coated",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b687ba81-cb24-bbdf-5dd9-ab0e53dd480b",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "contraindications_en": [
-          "dailymed:8a3a2e37-f0b0-4f51-b847-1936c7e16348#CONTRAINDICATIONS"
+          "dailymed:b687ba81-cb24-bbdf-5dd9-ab0e53dd480b#CONTRAINDICATIONS"
         ]
       },
       "review_status": "draft",
@@ -1635,12 +1641,13 @@
       "exam_trap_en": "Hypokalemia (e.g. from loop or thiazide diuretics) increases digoxin binding to Na+/K+-ATPase and markedly enhances digoxin toxicity.",
       "exam_trap_zh": "低血鉀（如來自袢利尿劑或 thiazide）會增加地高辛與 Na+/K+-ATPase 的結合，顯著增強地高辛毒性。",
       "classic_association_en": "Digoxin -> Narrow therapeutic index & Visual halos & Hypokalemia toxicity trap",
-      "dailymed_setid": "8e3768b4-82a1-4328-98e3-471ffb471412",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8e3768b4-82a1-4328-98e3-471ffb471412",
+      "dailymed_setid": "dbc0bc24-f250-47e8-8d10-6aef551823d7",
+      "dailymed_label_title": "DailyMed - DIGOXIN tablet",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dbc0bc24-f250-47e8-8d10-6aef551823d7",
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "contraindications_en": [
-          "dailymed:8e3768b4-82a1-4328-98e3-471ffb471412#CONTRAINDICATIONS"
+          "dailymed:dbc0bc24-f250-47e8-8d10-6aef551823d7#CONTRAINDICATIONS"
         ]
       },
       "review_status": "draft",
