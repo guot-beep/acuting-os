@@ -1,5 +1,25 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Pharm Source-Integrity Cleanup Patch
+- **What was done:** Completed bounded Pharm Source-Integrity Cleanup Patch. (1) Repaired/replaced 48 stale synthetic SetID citations across 24 drug/class cards inside interaction sources and provenance arrays. (2) Added interaction-source DailyMed SetID validation to validate-pharm-standard.js. (3) Corrected section-title contamination in dailymed_label_title across all 33 cards with authentic SPL document titles from NLM DailyMed REST API. (4) Enriched data/pharmacology/dailymed_api_responses.json with active_ingredient, route, labeler, published_date, source_endpoint, and retrieved_date. (5) Added true ingredient identity validation (matching exact active ingredients against canonical drug IDs). (6) Expanded test suite to 10 semantically-named source-integrity tests.
+- **Numbers (before -> after):**
+  - Stale Synthetic Citations: 48 -> 0 (100% repaired).
+  - Cards Affected: 24.
+  - Label Titles Contaminated with Section Headings: 33 -> 0.
+  - Source Integrity Tests: 8/8 -> 10/10 PASSED (100%).
+  - Standard validator blocking defects: 0 -> 0 (PASS).
+- **Verification Results:**
+  - test-pharm-source-integrity-negative-cases.js: ALL 10 TESTS PASSED.
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** sym.* symptom namespace currently 0 records in taxonomy (documented limitation).
+- **Next Step:** Awaiting Ting authorization before proceeding to additional Week 1-2 Priority Pack drugs.
+
 ## 2026-08-09 Antigravity — Priority Pack Source-Integrity Repair & Real DailyMed API Verification
 - **What was done:** Completed comprehensive Source-Integrity Repair for the Priority Pack. Queried NLM DailyMed REST API to fetch real, authoritative SetIDs, product titles, and SPL section XML evidence for all 13 priority drugs (12 new cards + 1 enhanced metoprolol card). Saved API evidence artifact in data/pharmacology/dailymed_api_responses.json. Reconciled medical claims field-by-field against selected SPL labels (removed unbacked boxed warnings for atropine/albuterol/prazosin/clonidine/ethosuximide/gabapentin/sinemet, updated atropine contraindications to hypersensitivity, modernized albuterol PLR pregnancy summary, and extended controlled vocabulary to support tachycardia). Added DailyMed API evidence cross-validation to validate-pharm-standard.js and built source integrity test suite (scripts/test-pharm-source-integrity-negative-cases.js).
 - **Numbers (before -> after):**

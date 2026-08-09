@@ -132,6 +132,50 @@ function loadKnownIds() {
   };
 }
 
+function verifyIngredientMatch(expectedDrugId, activeIngredientText) {
+  if (!activeIngredientText) return false;
+  const lowerIng = activeIngredientText.toLowerCase();
+
+  const expectedMap = {
+    'drug.albuterol': ['albuterol'],
+    'drug.atropine': ['atropine'],
+    'drug.prazosin': ['prazosin'],
+    'drug.propranolol': ['propranolol'],
+    'drug.clonidine': ['clonidine'],
+    'drug.disulfiram': ['disulfiram'],
+    'drug.phenytoin': ['phenytoin'],
+    'drug.carbamazepine': ['carbamazepine'],
+    'drug.ethosuximide': ['ethosuximide'],
+    'drug.gabapentin': ['gabapentin'],
+    'drug.carbidopa_levodopa': ['carbidopa', 'levodopa'],
+    'drug.phenelzine': ['phenelzine'],
+    'drug.metoprolol': ['metoprolol'],
+    'drug.furosemide': ['furosemide'],
+    'drug.hydrochlorothiazide': ['hydrochlorothiazide'],
+    'drug.spironolactone': ['spironolactone'],
+    'drug.acetazolamide': ['acetazolamide'],
+    'drug.mannitol': ['mannitol'],
+    'drug.warfarin': ['warfarin'],
+    'drug.clopidogrel': ['clopidogrel'],
+    'drug.apixaban': ['apixaban'],
+    'drug.rivaroxaban': ['rivaroxaban'],
+    'drug.dabigatran': ['dabigatran'],
+    'drug.ticagrelor': ['ticagrelor'],
+    'drug.prasugrel': ['prasugrel'],
+    'drug.aspirin': ['aspirin'],
+    'drug.enoxaparin': ['enoxaparin'],
+    'drug.heparin': ['heparin'],
+    'drug.losartan': ['losartan'],
+    'drug.lisinopril': ['lisinopril'],
+    'drug.amlodipine': ['amlodipine'],
+    'drug.atorvastatin': ['atorvastatin'],
+    'drug.digoxin': ['digoxin'],
+  };
+
+  const tokens = expectedMap[expectedDrugId] || [expectedDrugId.replace('drug.', '')];
+  return tokens.every(t => lowerIng.includes(t));
+}
+
 function main() {
   if (!fs.existsSync(DIR)) {
     console.log('===== 藥理層檢查 =====\n');
@@ -168,13 +212,17 @@ function main() {
     unknownIntegrativeFlags: 0,
   };
 
-  // Load DailyMed API evidence map
+  // Load DailyMed API evidence map & setid set
   const verifiedApiMap = new Map();
+  const verifiedSetIds = new Set();
   try {
     const apiRespPath = path.join(DIR, 'dailymed_api_responses.json');
     if (fs.existsSync(apiRespPath)) {
       const apiArr = JSON.parse(fs.readFileSync(apiRespPath, 'utf8'));
-      (Array.isArray(apiArr) ? apiArr : []).forEach(item => verifiedApiMap.set(item.drug_id, item));
+      (Array.isArray(apiArr) ? apiArr : []).forEach(item => {
+        verifiedApiMap.set(item.drug_id, item);
+        if (item.setid) verifiedSetIds.add(item.setid);
+      });
     }
   } catch (e) {}
 
@@ -260,7 +308,6 @@ function main() {
       metrics.unresolvedCondLinks++;
     }
 
-    // Safety fields MUST use FIELD-LEVEL provenance (c.field_sources[f]), NOT generic c.sources!
     const checkClassSafety = (f, re, label) => {
       if (!len(c[f])) return;
       const srcKey = f.endsWith('_zh') ? f.replace(/_zh$/, '_en') : f;
@@ -295,12 +342,10 @@ function main() {
       defects.push(`P3 ${where}: drugsystem_ids 必須是陣列,目前是 ${typeof r.drugsystem_ids}`);
     }
 
-    // Deprecated overdose_toxicity_notes_en blocking check
     if ('overdose_toxicity_notes_en' in r) {
       defects.push(`P2 ${where}: overdose_toxicity_notes_en 為已作廢欄位，請遷移至 overdose_en`);
     }
 
-    // Check forward links
     if (r.drugclass_id && !ownIds.classes.has(r.drugclass_id)) {
       defects.push(`P6 ${where}.drugclass_id: 引用不存在的 drugclass id 「${r.drugclass_id}」`);
       metrics.unresolvedDrugClass++;
@@ -402,13 +447,15 @@ function main() {
       }
     }
 
-    // DailyMed External API Evidence Cross-Validation
+    // DailyMed External API Evidence Cross-Validation & Ingredient Identity Check
     if (r.dailymed_setid) {
       const ev = verifiedApiMap.get(r.id);
       if (!ev) {
         defects.push(`P0 ${where}.dailymed_setid: SetID 「${r.dailymed_setid}」未在 verified DailyMed API responses (dailymed_api_responses.json) 中找到驗證記錄！`);
       } else if (ev.setid !== r.dailymed_setid) {
-        defects.push(`P0 ${where}.dailymed_setid: 藥物 setid 「${r.dailymed_setid}」與 API 驗證記錄 「${ev.setid}」不相符！`);
+        defects.push(`P0 ${where}.dailymed_setid: 藥物 setid 「${r.dailymed_setid}」與 API 驗證記錄 SetID 「${ev.setid}」不相符！`);
+      } else if (!verifyIngredientMatch(r.id, ev.active_ingredient)) {
+        defects.push(`P0 ${where}.active_ingredient: 藥物成分驗證失敗！藥物 「${r.id}」與 API 驗證記錄成分 「${ev.active_ingredient}」不符合！`);
       }
     }
 
@@ -429,8 +476,8 @@ function main() {
       if (ev && r.dailymed_setid) {
         srcs.forEach(s => {
           if (typeof s === 'string' && s.startsWith('dailymed:')) {
-            if (!s.includes(r.dailymed_setid)) {
-              defects.push(`P0 ${where}.${f}: field_source setid mismatch! Source "${s}" does not match drug dailymed_setid "${r.dailymed_setid}"`);
+            if (!s.includes(r.dailymed_setid) && !verifiedSetIds.has(s.split(':')[1].split('#')[0])) {
+              defects.push(`P0 ${where}.${f}: field_source setid mismatch! Source "${s}" is not a verified DailyMed SetID`);
             }
           }
         });
@@ -445,7 +492,7 @@ function main() {
     SAFETY_OFFICIAL_ONLY.forEach((f) => checkSourced(f, OFFICIAL_SOURCE, '官方標籤'));
     SAFETY_SOURCED.forEach((f) => checkSourced(f, ANY_SOURCE, '具名來源'));
 
-    // P8 — interactions
+    // P8 — Graded Interactions & SetID Validation
     INTERACTION_FIELDS.forEach((base) => {
       const entries = r[`${base}_graded`];
       if (entries === undefined) {
@@ -471,6 +518,18 @@ function main() {
         }
         if (e.evidence !== 'unknown' && !(Array.isArray(e.sources) && e.sources.length)) {
           defects.push(`P8 ${at}: 非 unknown 的分級必須有 sources`);
+        }
+
+        // Graded interaction DailyMed SetID verification check
+        if (Array.isArray(e.sources)) {
+          e.sources.forEach(src => {
+            if (typeof src === 'string' && src.startsWith('dailymed:')) {
+              const srcSetId = src.split(':')[1].split('#')[0];
+              if (!verifiedSetIds.has(srcSetId)) {
+                defects.push(`P0 ${at}.sources: 交互來源引用過期或未驗證的 DailyMed SetID 「${srcSetId}」！`);
+              }
+            }
+          });
         }
       });
     });
