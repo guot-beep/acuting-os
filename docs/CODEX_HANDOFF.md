@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-08] Codex Handoff — Pattern V2 renderer safe checkpoint
+
+- **Branch / Scope**: `codex/pattern-v2`; finalizes the renderer base for the already-committed V2-B/V2-C data only. No new Pattern identity or V2-D content was created.
+- **Renderer**: Pattern preview and bilingual big-card rendering now consumes canonical key/supporting signs, mechanism, common causes, progression, tongue/pulse, Eight Principles, aliases, structured differentials, treatment links, `sources`, and `field_sources`. The fabricated default provenance fallback was removed.
+- **Counts / Reconciliation**: registry `98` = taxonomy `10` + clinical `88`; library raw `91` = active `88` + deprecated `3`; active reconciliation `88/88`; duplicate registry/library IDs `0/0`; source JSON and generated Pattern library/registry are deeply equal.
+- **Validation**: deterministic build-data unchanged; Pattern standard `91/91 clean`, registry, alias dry-run, ratchet Pattern defects `0`, validate-data, interactions, content-junk, relations, JS syntax, diff check, and a live headless-Edge Pattern modal `11/11` DOM assertion set passed.
+- **Excluded / Known Note**: unrelated Pharmacology hunks in `js/knowledge.js`, `js/router.js`, and the curriculum ZIP are not part of this checkpoint. Existing `edge.pattern_differentials` R4 object-vs-id tooling disagreement remains unchanged; V2-D was not started.
+
 ## [2026-08-08] Codex Handoff — Pattern V2-C pathogen, Dryness, and selected mechanisms
 
 - **Branch / Scope**: `codex/pattern-v2`; V2-B.1 provenance commit `d2f9234`; V2-C adds exactly nine approved identities and does not begin V2-D.

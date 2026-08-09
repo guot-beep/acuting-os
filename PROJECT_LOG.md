@@ -1,3 +1,11 @@
+# 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
+
+- **做了什麼**：保留既有 Pattern V2-B／V2-C canonical payload，補齊 Pattern preview／big-card 對 canonical `key_signs_*`、`supporting_signs_*`、`mechanism_*`、`common_causes_*`、`progression_*`、舌脈、八綱、structured differentials、aliases、treatment links 與真實 `sources`／`field_sources` 的相容呈現及搜尋；移除 renderer 的虛構預設來源 fallback。
+- **數字與 reconciliation**：Registry `98`（taxonomy `10`、clinical `88`）；library raw `91`、active `88`、deprecated `3`；active reconciliation `88/88`；duplicate registry/library IDs `0/0`；raw canonical 與 generated Pattern library/registry 深比較相等。
+- **Runtime UI**：headless Edge 實際開啟 `pattern.cold_phlegm_obstructing_lung`，preview 與中英文 modal 的名稱、主症、舌脈、病機、八綱、structured differential、來源及逐欄 provenance `11/11` assertions 通過。
+- **驗證**：deterministic `build-data`（knowledge bundle SHA-256 前後相同）、Pattern standard `91/91 clean`、Pattern registry、alias dry-run、ratchet Pattern defects `0`、validate-data、interactions、content-junk、relations、JS syntax、`git diff --check` 均通過。
+- **已知未解／STOP**：`validate-relation-registry` 仍只有既存 `edge.pattern_differentials` R4 object-vs-id tooling disagreement，本批未改 relation registry／validator／schema；Pharmacology 的 `js/knowledge.js` hunks、`js/router.js` 與 curriculum ZIP 排除；未開始 V2-D。
+
 # 2026-08-08 Codex — Pattern V2-0／V2-A frozen counts、V1 加值與 true aliases
 
 - **做了什麼**：在 `codex/pattern-v2` 更正 V1 governance counts；核對 34 個 `ENRICH_EXISTING` ledger concepts（因 B119 展開六淋、B110/G017 重複，實際為 38 個 live IDs），保留 27 張既有完整加值，為其餘 11 張補成對病機／次症與可由既有來源支持的成因或傳變。

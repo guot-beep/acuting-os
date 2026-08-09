@@ -2053,6 +2053,13 @@
     // offered as something to browse or search into.
     const patternRecords = ((K.patternLibrary && K.patternLibrary.records) || [])
       .filter((p) => p.review_status !== "deprecated");
+    const patternRecordById = new Map(patternRecords.map((pattern) => [pattern.id, pattern]));
+    const conditionPatternLabel = (id) => {
+      const pattern = patternRecordById.get(id);
+      return pattern
+        ? [pattern.name_zh, pattern.name_en, pattern.id].filter(Boolean).join(" / ")
+        : id;
+    };
 
     const cloudCounts = (K.cloudtcmRefMap && K.cloudtcmRefMap.counts) || {};
     const cloudNote = modeText(
@@ -2065,6 +2072,75 @@
     const condCategoryById = new Map(condCategories.map((c) => [c.id, c]));
     const tdisTaxonomy = (K.tcmDiseaseTaxonomy && K.tcmDiseaseTaxonomy.categories) || [];
     const patternFamilies = (K.patternFamilyVocabulary && K.patternFamilyVocabulary.records) || [];
+    const patternFamilyById = new Map(patternFamilies.map((family) => [family.id, family]));
+
+    const firstNonEmptyList = (...candidates) => {
+      for (const candidate of candidates) {
+        const values = asList(candidate).filter((value) => value !== null && value !== undefined && String(value).trim());
+        if (values.length) return values;
+      }
+      return [];
+    };
+
+    const patternFamilyLabel = (pattern, isEn) => {
+      const familyId = pattern.pattern_family || pattern.pattern_category || "";
+      const family = patternFamilyById.get(familyId);
+      if (!family) return familyId;
+      return isEn
+        ? (family.name_en || family.name_zh || familyId)
+        : (family.name_zh || family.name_en || familyId);
+    };
+
+    const patternEightPrincipleLabels = (pattern, isEn) => {
+      const valueLabels = {
+        interior: ["裏", "Interior"],
+        exterior: ["表", "Exterior"],
+        cold: ["寒", "Cold"],
+        heat: ["熱", "Heat"],
+        neutral: ["寒熱未定", "Cold/Heat undetermined"],
+        deficiency: ["虛", "Deficiency"],
+        excess: ["實", "Excess"],
+        mixed: ["虛實夾雜", "Mixed Deficiency and Excess"],
+        yin: ["陰", "Yin"],
+        yang: ["陽", "Yang"]
+      };
+      const principles = pattern.eight_principles || {};
+      return [
+        principles.interior_exterior,
+        principles.cold_heat,
+        principles.deficiency_excess,
+        principles.yin_yang
+      ].filter(Boolean).map((value) => {
+        const labels = valueLabels[value];
+        return labels ? labels[isEn ? 1 : 0] : value;
+      });
+    };
+
+    const patternSourceReference = (source) => {
+      const value = String(source || "").trim();
+      if (!value) return "";
+      if (/^https?:\/\//i.test(value)) {
+        return `<a href="${esc(value)}" target="_blank" rel="noopener noreferrer">${esc(value)}</a>`;
+      }
+      return `<span>${esc(value)}</span>`;
+    };
+
+    const patternFieldSourceLabel = (field, isEn) => {
+      const labels = {
+        identity: ["身分", "Identity"],
+        mechanism: ["病機", "Pathomechanism"],
+        common_causes: ["常見病因", "Common causes"],
+        progression: ["演變", "Progression"],
+        key_signs: ["主症", "Key signs"],
+        supporting_signs: ["兼症", "Supporting signs"],
+        differentiation: ["鑑別", "Differentiation"],
+        treatment_principle: ["治則", "Treatment principle"],
+        tongue: ["舌象", "Tongue"],
+        pulse: ["脈象", "Pulse"]
+      };
+      const pair = labels[field];
+      return pair ? pair[isEn ? 1 : 0] : field.replaceAll("_", " ");
+    };
 
     // CloudTCM keeps no classification of its own (Ting 2026-08-06). Its exact
     // source pages and diagrams attach to whichever canonical record they
@@ -2116,20 +2192,32 @@
 
       const isEn = langMode === "en";
       const manifests = isEn
-        ? (p.key_manifestations_en || p.key_manifestations_zh || [])
-        : (p.key_manifestations_zh || p.key_signs_zh || []);
+        ? firstNonEmptyList(p.key_manifestations_en, p.key_signs_en, p.key_manifestations_zh, p.key_signs_zh)
+        : firstNonEmptyList(p.key_manifestations_zh, p.key_signs_zh, p.key_manifestations_en, p.key_signs_en);
+
+      const supportingSigns = isEn
+        ? firstNonEmptyList(p.supporting_signs_en, p.supporting_signs_zh)
+        : firstNonEmptyList(p.supporting_signs_zh, p.supporting_signs_en);
 
       const tongueText = isEn
-        ? (p.tongue_preview?.en || p.tongue || "—")
-        : (p.tongue_preview?.zh || p.tongue || "—");
+        ? (p.tongue_preview?.en || p.tongue_en || p.tongue || p.tongue_zh || "—")
+        : (p.tongue_preview?.zh || p.tongue_zh || p.tongue || p.tongue_en || "—");
 
       const pulseText = isEn
-        ? (p.pulse_preview?.en || p.pulse || "—")
-        : (p.pulse_preview?.zh || p.pulse || "—");
+        ? (p.pulse_preview?.en || p.pulse_en || p.pulse || p.pulse_zh || "—")
+        : (p.pulse_preview?.zh || p.pulse_zh || p.pulse || p.pulse_en || "—");
 
       const summaryText = isEn
-        ? (p.short_summary_en || p.short_summary_zh || "")
-        : (p.short_summary_zh || p.short_summary_en || "");
+        ? (p.short_summary_en || p.mechanism_en || p.short_summary_zh || p.mechanism_zh || "")
+        : (p.short_summary_zh || p.mechanism_zh || p.short_summary_en || p.mechanism_en || "");
+
+      const commonCausesText = isEn
+        ? (p.common_causes_en || p.etiology_en || p.common_causes_zh || p.etiology_zh || "")
+        : (p.common_causes_zh || p.etiology_zh || p.common_causes_en || p.etiology_en || "");
+
+      const progressionText = isEn
+        ? (p.progression_en || p.progression_zh || "")
+        : (p.progression_zh || p.progression_en || "");
 
       const diffText = isEn
         ? (p.differentiation_preview_en || p.differentiation_preview_zh || "")
@@ -2139,9 +2227,18 @@
         ? (p.treatment_principle_en || p.treatment_principle_zh || "")
         : (p.treatment_principle_zh || p.treatment_principle_en || "");
 
-      const formulas = p.primary_formula_ids || p.typical_formulas || [];
-      const points = p.primary_acupoint_ids || p.typical_points || [];
-      const conditions = p.related_biomedical_condition_ids || [];
+      const formulas = firstNonEmptyList(p.primary_formula_ids, p.typical_formulas);
+      const points = firstNonEmptyList(p.primary_acupoint_ids, p.typical_points);
+      const conditions = firstNonEmptyList(p.related_biomedical_condition_ids);
+      const aliases = isEn
+        ? firstNonEmptyList(p.aliases_en, p.aliases_zh)
+        : firstNonEmptyList(p.aliases_zh, p.aliases_en);
+      const eightPrinciples = patternEightPrincipleLabels(p, isEn);
+      const structuredDifferentials = asList(p.differential_patterns).filter((item) => item && item.pattern_id);
+      const sourceList = firstNonEmptyList(p.sources, p.source_ids);
+      const fieldSourceRows = Object.entries(p.field_sources || {})
+        .map(([field, values]) => [field, asList(values).filter(Boolean)])
+        .filter(([, values]) => values.length);
 
       modal.innerHTML = `
         <div class="k-big-card" role="dialog" aria-modal="true">
@@ -2158,20 +2255,23 @@
 
           <div class="k-big-card-header">
             <h2 class="k-big-card-title">${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)} ${p.pinyin ? `(${esc(p.pinyin)})` : ""}</small></h2>
-            <p class="k-meta">ID: <code>${esc(p.id)}</code> · ${esc(p.pattern_category || p.pattern_family || "zang_fu")} ${p.eight_principles ? ` · ${esc(p.eight_principles.excess_deficiency || "")} · ${esc(p.eight_principles.heat_cold || "")}` : ""}</p>
+            <p class="k-meta">ID: <code>${esc(p.id)}</code>${patternFamilyLabel(p, isEn) ? ` · ${esc(patternFamilyLabel(p, isEn))}` : ""}${eightPrinciples.length ? ` · ${eightPrinciples.map(esc).join(" · ")}` : ""}</p>
+            ${aliases.length ? `<p class="k-tags"><strong>${isEn ? "Aliases:" : "別名："}</strong> ${aliases.map((alias) => `<span class="k-tag">${esc(alias)}</span>`).join("")}</p>` : ""}
           </div>
 
           <!-- 1. 病因與病理機轉 -->
           <div class="k-big-card-section">
             <h3>${isEn ? "1. Etiology & Pathomechanism" : "1. 病因與病理機轉 Etiology & Pathomechanism"}</h3>
             ${summaryText ? `<p><strong>${isEn ? "[Pathomechanism]" : "【核心病機】"}</strong> ${esc(summaryText)}</p>` : ""}
-            ${(p.etiology_zh && !isEn) ? `<p><strong>【病因背景】</strong> ${esc(p.etiology_zh)}</p>` : ""}
+            ${commonCausesText ? `<p><strong>${isEn ? "[Common Causes]" : "【常見病因】"}</strong> ${esc(commonCausesText)}</p>` : ""}
+            ${progressionText ? `<p><strong>${isEn ? "[Progression]" : "【演變】"}</strong> ${esc(progressionText)}</p>` : ""}
           </div>
 
           <!-- 2. 系統化臨床表現 -->
           <div class="k-big-card-section">
             <h3>${isEn ? "2. Clinical Manifestations" : "2. 系統化臨床表現 Clinical Manifestations"}</h3>
             ${manifests.length ? `<p><strong>${isEn ? "【Key Signs & Symptoms】" : "【主症表現 Key Signs】"}</strong> ${manifests.map(m => esc(m)).join(" · ")}</p>` : ""}
+            ${supportingSigns.length ? `<p><strong>${isEn ? "【Supporting Signs】" : "【兼症 Supporting Signs】"}</strong> ${supportingSigns.map(m => esc(m)).join(" · ")}</p>` : ""}
             <ul>
               <li><strong>👅 ${isEn ? "Tongue" : "舌象 Tongue"}：</strong> ${esc(tongueText)}</li>
               <li><strong>💓 ${isEn ? "Pulse" : "脈象 Pulse"}：</strong> ${esc(pulseText)}</li>
@@ -2179,10 +2279,30 @@
           </div>
 
           <!-- 3. 辨證要點與國考考點 -->
-          ${(diffText || principleText || p.exam_pearls_zh) ? `
+          ${(diffText || structuredDifferentials.length || principleText || p.exam_pearls_zh) ? `
             <div class="k-big-card-section">
               <h3>${isEn ? "3. Differential & Treatment Principles" : "3. 辨證要點與國考考點 Differential & Exam Pearls"}</h3>
               ${diffText ? `<p><strong>${isEn ? "[Differentiation]" : "【辨證要點】"}</strong> ${esc(diffText)}</p>` : ""}
+              ${structuredDifferentials.length ? `<div class="k-pattern-differentials">
+                ${structuredDifferentials.map((item) => {
+                  const distinguishing = isEn
+                    ? (item.distinguishing_en || item.distinguishing_zh || "")
+                    : (item.distinguishing_zh || item.distinguishing_en || "");
+                  const tongueDifference = isEn
+                    ? (item.tongue_difference_en || item.tongue_difference_zh || "")
+                    : (item.tongue_difference_zh || item.tongue_difference_en || "");
+                  const pulseDifference = isEn
+                    ? (item.pulse_difference_en || item.pulse_difference_zh || "")
+                    : (item.pulse_difference_zh || item.pulse_difference_en || "");
+                  return `<article class="k-condition-related">
+                    <strong>${esc(conditionPatternLabel(item.pattern_id))}</strong>
+                    ${distinguishing ? `<p>${esc(distinguishing)}</p>` : ""}
+                    ${tongueDifference ? `<p><strong>${isEn ? "Tongue:" : "舌象："}</strong> ${esc(tongueDifference)}</p>` : ""}
+                    ${pulseDifference ? `<p><strong>${isEn ? "Pulse:" : "脈象："}</strong> ${esc(pulseDifference)}</p>` : ""}
+                    ${item.source ? `<small>${isEn ? "Source:" : "來源："} ${patternSourceReference(item.source)}</small>` : ""}
+                  </article>`;
+                }).join("")}
+              </div>` : ""}
               ${principleText ? `<p><strong>${isEn ? "[Treatment Principle]" : "【治則治法】"}</strong> ${esc(principleText)}</p>` : ""}
               ${(!isEn && p.exam_pearls_zh) ? `<p><strong>💡 考點提示：</strong> ${esc(p.exam_pearls_zh)}</p>` : ""}
             </div>
@@ -2208,11 +2328,15 @@
             </div>
           ` : ""}
 
-          <!-- 6. 出處標註 -->
-          <div class="k-big-card-section">
+          <!-- 6. 出處標註：只顯示卡片實際保存的 provenance，不製造預設來源。 -->
+          ${(sourceList.length || fieldSourceRows.length) ? `<div class="k-big-card-section">
             <h3>${isEn ? "6. Sources & Provenance" : "6. 資料來源 Sources & Provenance"}</h3>
-            <p>${(p.source_ids || ["NCBAHM CH Content Outline 2026", "CloudTCM"]).map(esc).join(" · ")}</p>
-          </div>
+            ${sourceList.length ? `<ul class="k-source-links">${sourceList.map((source) => `<li>${patternSourceReference(source)}</li>`).join("")}</ul>` : ""}
+            ${fieldSourceRows.length ? `<details class="k-condition-flags">
+              <summary>${isEn ? "Field-level provenance" : "逐欄來源"} (${fieldSourceRows.length})</summary>
+              ${fieldSourceRows.map(([field, values]) => `<p><strong>${esc(patternFieldSourceLabel(field, isEn))}：</strong> ${values.map(patternSourceReference).join(" · ")}</p>`).join("")}
+            </details>` : ""}
+          </div>` : ""}
         </div>
       `;
       modal.classList.add("is-open");
@@ -2236,16 +2360,16 @@
     const renderPatternCard = (p, langMode = patternLangMode) => {
       const isEn = langMode === "en";
       const manifests = isEn
-        ? (p.key_manifestations_en || p.key_manifestations_zh || [])
-        : (p.key_manifestations_zh || p.key_signs_zh || []);
+        ? firstNonEmptyList(p.key_manifestations_en, p.key_signs_en, p.key_manifestations_zh, p.key_signs_zh)
+        : firstNonEmptyList(p.key_manifestations_zh, p.key_signs_zh, p.key_manifestations_en, p.key_signs_en);
 
       const tongueText = isEn
-        ? (p.tongue_preview?.en || p.tongue || "—")
-        : (p.tongue_preview?.zh || p.tongue || "—");
+        ? (p.tongue_preview?.en || p.tongue_en || p.tongue || p.tongue_zh || "—")
+        : (p.tongue_preview?.zh || p.tongue_zh || p.tongue || p.tongue_en || "—");
 
       const pulseText = isEn
-        ? (p.pulse_preview?.en || p.pulse || "—")
-        : (p.pulse_preview?.zh || p.pulse || "—");
+        ? (p.pulse_preview?.en || p.pulse_en || p.pulse || p.pulse_zh || "—")
+        : (p.pulse_preview?.zh || p.pulse_zh || p.pulse || p.pulse_en || "—");
 
       return `
         <article class="k-card k-pattern-card" data-record-id="${esc(p.id)}">
@@ -2386,8 +2510,17 @@
     const dxMatches = (record, q) => !q || [
       record.id, record.name_zh, record.name_en, record.pinyin, record.icd_hint,
       ...asList(record.aliases_zh), ...asList(record.aliases_en),
-      ...asList(record.key_signs_zh), ...asList(record.key_manifestations_zh),
+      ...asList(record.key_signs_zh), ...asList(record.key_signs_en), ...asList(record.key_manifestations_zh),
       ...asList(record.key_manifestations_en),
+      ...asList(record.supporting_signs_zh), ...asList(record.supporting_signs_en),
+      record.mechanism_zh, record.mechanism_en, record.common_causes_zh, record.common_causes_en,
+      record.progression_zh, record.progression_en, record.tongue_zh, record.tongue_en, record.pulse_zh, record.pulse_en,
+      record.treatment_principle_zh, record.treatment_principle_en,
+      ...asList(record.differential_patterns).flatMap((item) => [
+        item && item.pattern_id,
+        item && item.distinguishing_zh,
+        item && item.distinguishing_en
+      ]),
       ...asList(record.related_tcm_symptoms).flatMap((i) => [i.name_zh, i.name_en]),
     ].filter(Boolean).join(" ").toLowerCase().includes(q);
 
