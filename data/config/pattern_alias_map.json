@@ -17,9 +17,9 @@
     "canon_records": 140,
     "canon_unique_ids": 134,
     "canon_duplicate_ids": 6,
-    "canonical_namespace_ids": 72,
-    "mapped": 34,
-    "pending_registration": 68,
+    "canonical_namespace_ids": 92,
+    "mapped": 41,
+    "pending_registration": 61,
     "excluded_formula_patterns": 32
   },
   "aliases": {
@@ -38,17 +38,23 @@
     "pat.寒凝肝脈": "pattern.cold_stagnation_liver_channel",
     "pat.脾氣虛": "pattern.spleen_qi_deficiency",
     "pat.心腎不交": "pattern.heart_kidney_not_communicating",
+    "pat.腎氣虛": "pattern.kidney_qi_deficiency",
     "pat.肝陽上亢": "pattern.liver_yang_rising",
     "pat.濕痰": "pattern.phlegm_damp",
+    "pat.腎陽虛水泛": "pattern.kidney_yang_deficiency_water_flooding",
+    "pat.膀胱濕熱": "pattern.bladder_damp_heat",
     "pat.濕熱": "pattern.damp_heat",
     "pat.脾陽虛": "pattern.spleen_yang_deficiency",
     "pat.腎氣不固": "pattern.kidney_qi_not_firm",
+    "pat.肝火犯肺": "pattern.liver_fire_scorching_lung",
     "pat.血瘀": "pattern.blood_stasis",
     "pat.氣虛": "pattern.qi_deficiency",
     "pat.肝胃不和": "pattern.liver_stomach_disharmony",
+    "pat.大腸濕熱": "pattern.large_intestine_damp_heat",
     "pat.心血虛": "pattern.heart_blood_deficiency",
     "pat.腎不納氣": "pattern.kidney_not_grasping_qi",
     "pat.脾胃濕熱": "pattern.damp_heat_spleen_stomach",
+    "pat.肝腎陰虛": "pattern.liver_kidney_yin_deficiency",
     "pat.心陽虛": "pattern.heart_yang_deficiency",
     "pat.肝陰虛": "pattern.liver_yin_deficiency",
     "pat.脾不統血": "pattern.spleen_not_governing_blood",
@@ -56,6 +62,7 @@
     "pat.胃熱": "pattern.stomach_heat",
     "pat.心陰虛": "pattern.heart_yin_deficiency",
     "pat.肺氣虛": "pattern.lung_qi_deficiency",
+    "pat.膀胱虛寒": "pattern.bladder_deficiency_cold",
     "pat.陰虛": "pattern.yin_deficiency"
   },
   "pending_registration": [
@@ -215,32 +222,6 @@
       ]
     },
     {
-      "legacy_id": "pat.腎氣虛",
-      "name_zh": "腎氣虛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 5,
-      "example_conditions": [
-        "cond.lumbar_disc_herniation",
-        "cond.tension_headache",
-        "cond.cluster_headache",
-        "cond.overactive_bladder",
-        "cond.nocturnal_enuresis"
-      ]
-    },
-    {
-      "legacy_id": "pat.腎陽虛水泛",
-      "name_zh": "腎陽虛水泛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 5,
-      "example_conditions": [
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough",
-        "cond.hypothyroidism",
-        "cond.nocturnal_enuresis"
-      ]
-    },
-    {
       "legacy_id": "pat.痰氣互結",
       "name_zh": "痰氣互結",
       "aliases_zh": [],
@@ -303,39 +284,6 @@
       ]
     },
     {
-      "legacy_id": "pat.膀胱濕熱",
-      "name_zh": "膀胱濕熱",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 4,
-      "example_conditions": [
-        "cond.recurrent_uti",
-        "cond.overactive_bladder",
-        "cond.bph",
-        "cond.chronic_prostatitis"
-      ]
-    },
-    {
-      "legacy_id": "pat.肝火犯肺",
-      "name_zh": "肝火犯肺",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 3,
-      "example_conditions": [
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough"
-      ]
-    },
-    {
-      "legacy_id": "pat.大腸濕熱",
-      "name_zh": "大腸濕熱",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 2,
-      "example_conditions": [
-        "cond.chronic_diarrhea",
-        "cond.hemorrhoids"
-      ]
-    },
-    {
       "legacy_id": "pat.心火旺盛",
       "name_zh": "心火旺盛",
       "aliases_zh": [],
@@ -373,16 +321,6 @@
       "example_conditions": [
         "cond.eczema",
         "cond.urticaria"
-      ]
-    },
-    {
-      "legacy_id": "pat.肝腎陰虛",
-      "name_zh": "肝腎陰虛證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 2,
-      "example_conditions": [
-        "cond.hypertension",
-        "cond.dry_eye"
       ]
     },
     {
@@ -719,15 +657,6 @@
       "used_by_condition_blobs": 1,
       "example_conditions": [
         "cond.trigeminal_neuralgia"
-      ]
-    },
-    {
-      "legacy_id": "pat.膀胱虛寒",
-      "name_zh": "膀胱虛寒",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.nocturnal_enuresis"
       ]
     },
     {

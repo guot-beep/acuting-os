@@ -15,7 +15,8 @@
       "classified_by": "bing_xing",
       "members": [
         "pattern.liver_blood_deficiency",
-        "pattern.heart_blood_deficiency"
+        "pattern.heart_blood_deficiency",
+        "pattern.heart_liver_blood_deficiency"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "qi_xue_jin_ye",
@@ -90,7 +91,9 @@
       "members": [
         "pattern.damp_heat_lower_burner",
         "pattern.damp_heat_spleen_stomach",
-        "pattern.liver_gallbladder_damp_heat"
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.large_intestine_damp_heat",
+        "pattern.bladder_damp_heat"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "bing_yin",
@@ -139,7 +142,9 @@
       "members": [
         "pattern.liver_fire",
         "pattern.heart_fire",
-        "pattern.stomach_fire"
+        "pattern.stomach_fire",
+        "pattern.phlegm_fire_disturbing_heart",
+        "pattern.liver_fire_scorching_lung"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "ba_gang",
@@ -280,7 +285,14 @@
       "classified_by": "bing_xing",
       "members": [
         "pattern.blood_heat",
-        "pattern.stomach_heat"
+        "pattern.stomach_heat",
+        "pattern.phlegm_fire_disturbing_heart",
+        "pattern.phlegm_heat_obstructing_heart_orifices",
+        "pattern.small_intestine_excess_heat",
+        "pattern.large_intestine_excess_heat",
+        "pattern.large_intestine_damp_heat",
+        "pattern.bladder_damp_heat",
+        "pattern.liver_fire_scorching_lung"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "ba_gang",
@@ -313,7 +325,12 @@
         "pattern.kidney_yin_deficiency",
         "pattern.kidney_essence_deficiency",
         "pattern.kidney_qi_not_firm",
-        "pattern.kidney_not_grasping_qi"
+        "pattern.kidney_not_grasping_qi",
+        "pattern.kidney_qi_deficiency",
+        "pattern.kidney_yang_deficiency_water_flooding",
+        "pattern.lung_kidney_qi_deficiency",
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.heart_kidney_yin_deficiency"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "zang_fu",
@@ -565,7 +582,9 @@
         "pattern.phlegm_damp",
         "pattern.phlegm_damp_in_lung",
         "pattern.phlegm_heat_in_lung",
-        "pattern.phlegm_misting_heart"
+        "pattern.phlegm_misting_heart",
+        "pattern.phlegm_fire_disturbing_heart",
+        "pattern.phlegm_heat_obstructing_heart_orifices"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "qi_xue_jin_ye",
@@ -656,7 +675,14 @@
       "members": [
         "pattern.spleen_qi_deficiency",
         "pattern.lung_qi_deficiency",
-        "pattern.heart_qi_deficiency"
+        "pattern.heart_qi_deficiency",
+        "pattern.stomach_qi_deficiency",
+        "pattern.gallbladder_qi_deficiency",
+        "pattern.kidney_qi_deficiency",
+        "pattern.lung_spleen_qi_deficiency",
+        "pattern.heart_lung_qi_deficiency",
+        "pattern.lung_kidney_qi_deficiency",
+        "pattern.heart_gallbladder_qi_deficiency"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "qi_xue_jin_ye",
@@ -865,7 +891,8 @@
         "pattern.kidney_yang_deficiency",
         "pattern.spleen_yang_deficiency",
         "pattern.heart_yang_deficiency",
-        "pattern.spleen_kidney_yang_deficiency"
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.kidney_yang_deficiency_water_flooding"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "ba_gang",
@@ -886,7 +913,9 @@
         "pattern.lung_yin_deficiency",
         "pattern.heart_yin_deficiency",
         "pattern.stomach_yin_deficiency",
-        "pattern.liver_yin_deficiency"
+        "pattern.liver_yin_deficiency",
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.heart_kidney_yin_deficiency"
       ],
       "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
       "system": "ba_gang",
@@ -1031,6 +1060,351 @@
       "system": "zang_fu",
       "system_zh": "臟腑辨證",
       "registration_note_zh": "2026-08-08 補登:此證型在 pattern_library.json 已有完整 V1 內容(已由 Pattern V1 專案補齊分類/病機/鑑別/方穴/來源),但先前未登記進 pattern_registry.json,違反 D10「registry 為 id 權威」。本次補登,不改動既有 library 內容,亦不變更 id。"
+    },
+    {
+      "id": "pattern.phlegm_fire_disturbing_heart",
+      "name_zh": "痰火擾心",
+      "name_en": "Phlegm-Fire Disturbing Heart",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm",
+        "pattern.fire",
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.phlegm_heat_obstructing_heart_orifices",
+      "name_zh": "痰熱蒙閉心竅",
+      "name_en": "Phlegm-Heat Obstructing Heart Orifices",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm",
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.small_intestine_excess_heat",
+      "name_zh": "小腸實熱",
+      "name_en": "Small Intestine Excess Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.large_intestine_excess_heat",
+      "name_zh": "大腸實熱",
+      "name_en": "Large Intestine Excess Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.large_intestine_fluid_deficiency",
+      "name_zh": "大腸津虧",
+      "name_en": "Large Intestine Fluid Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.large_intestine_damp_heat",
+      "name_zh": "大腸濕熱",
+      "name_en": "Large Intestine Damp-Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.damp_heat",
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.stomach_qi_deficiency",
+      "name_zh": "胃氣虛",
+      "name_en": "Stomach Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.gallbladder_qi_deficiency",
+      "name_zh": "膽氣虛",
+      "name_en": "Gallbladder Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.kidney_qi_deficiency",
+      "name_zh": "腎氣虛",
+      "name_en": "Kidney Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.kidney_yang_deficiency_water_flooding",
+      "name_zh": "腎陽虛水泛",
+      "name_en": "Kidney Yang Deficiency with Water Flooding",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.yang_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.bladder_damp_heat",
+      "name_zh": "膀胱濕熱",
+      "name_en": "Bladder Damp-Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.damp_heat",
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.bladder_deficiency_cold",
+      "name_zh": "膀胱虛寒",
+      "name_en": "Bladder Deficiency-Cold",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.lung_spleen_qi_deficiency",
+      "name_zh": "肺脾氣虛",
+      "name_en": "Lung-Spleen Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.heart_lung_qi_deficiency",
+      "name_zh": "心肺氣虛",
+      "name_en": "Heart-Lung Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.lung_kidney_qi_deficiency",
+      "name_zh": "肺腎氣虛",
+      "name_en": "Lung-Kidney Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.heart_liver_blood_deficiency",
+      "name_zh": "心肝血虛",
+      "name_en": "Heart-Liver Blood Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.blood_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.heart_gallbladder_qi_deficiency",
+      "name_zh": "心膽氣虛",
+      "name_en": "Heart-Gallbladder Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.liver_kidney_yin_deficiency",
+      "name_zh": "肝腎陰虛",
+      "name_en": "Liver-Kidney Yin Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.yin_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.liver_fire_scorching_lung",
+      "name_zh": "肝火犯肺",
+      "name_en": "Liver Fire Scorching Lung",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.fire",
+        "pattern.heat"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
+    },
+    {
+      "id": "pattern.heart_kidney_yin_deficiency",
+      "name_zh": "心腎陰虛",
+      "name_en": "Heart-Kidney Yin Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "used_by_cases": 0,
+      "review_status": "draft",
+      "source_type": "pattern_v2_final_canonical_decision_pack_2026_08_08",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.yin_deficiency"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "registration_note_zh": "Pattern V2-B 登錄：正典身份經 Final Canonical Decision Pack 核准；臨床欄位依具名來源建立。"
     }
   ]
 }

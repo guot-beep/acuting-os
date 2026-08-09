@@ -7068,6 +7068,1941 @@
         ]
       },
       "review_status": "draft"
+    },
+    {
+      "id": "pattern.phlegm_fire_disturbing_heart",
+      "name_zh": "痰火擾心",
+      "name_en": "Phlegm-Fire Disturbing Heart",
+      "pinyin": "Tan Huo Rao Xin",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "heart"
+      ],
+      "qi_blood_fluid": [
+        "phlegm"
+      ],
+      "mechanism_zh": "痰濁蒙阻心神，火熱又擾動神明，形成痰與火並見的心神失常。",
+      "mechanism_en": "Phlegm obstructs clear Heart-Shen function while Fire agitates the mind, producing a combined Phlegm-Heat disturbance.",
+      "key_signs_zh": [
+        "煩躁不安",
+        "失眠多夢",
+        "心悸易驚",
+        "胸悶",
+        "口苦",
+        "較重時可見神志擾亂"
+      ],
+      "key_signs_en": [
+        "Agitation and restlessness",
+        "Insomnia with profuse dreams",
+        "Palpitations and easy startling",
+        "Chest oppression",
+        "Bitter taste",
+        "Severe presentations may include disturbed mental state"
+      ],
+      "treatment_principle_zh": "清心瀉火，化痰安神",
+      "treatment_principle_en": "Clear Heart Fire, transform Phlegm, and calm the Shen",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_fire",
+          "distinguishing_zh": "心火亢盛有明顯火熱與心神不寧，但缺少痰象及黃膩苔。",
+          "distinguishing_en": "Heart Fire has marked Heat and Shen agitation but lacks prominent Phlegm signs and a greasy yellow coating.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06"
+        },
+        {
+          "pattern_id": "pattern.phlegm_misting_heart",
+          "distinguishing_zh": "痰迷心竅以痰濁蒙蔽、神識昏蒙為主，熱象與躁擾較少。",
+          "distinguishing_en": "Phlegm Misting Heart centers on turbid obstruction and clouded consciousness, with fewer Heat and agitation signs.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+        "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+        "https://www.americandragon.com/conditions/Insanity.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+          "https://www.americandragon.com/conditions/Insanity.html"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+          "https://www.americandragon.com/conditions/Insanity.html"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+          "https://www.americandragon.com/conditions/Insanity.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+          "https://www.americandragon.com/conditions/Insanity.html"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+          "https://www.americandragon.com/conditions/Insanity.html"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H06",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §痰火擾心",
+          "https://www.americandragon.com/conditions/Insanity.html"
+        ]
+      },
+      "secondary_family": "qi_xue_jin_ye",
+      "tongue_zh": "舌紅或舌尖紅，苔黃膩",
+      "tongue_en": "Red tongue or red tip with a yellow greasy coating",
+      "pulse_zh": "脈滑數有力，可兼弦",
+      "pulse_en": "Slippery, rapid, forceful pulse; may also be wiry"
+    },
+    {
+      "id": "pattern.phlegm_heat_obstructing_heart_orifices",
+      "name_zh": "痰熱蒙閉心竅",
+      "name_en": "Phlegm-Heat Obstructing Heart Orifices",
+      "pinyin": "Tan Re Meng Bi Xin Qiao",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "heart"
+      ],
+      "qi_blood_fluid": [
+        "phlegm"
+      ],
+      "mechanism_zh": "痰熱互結，蒙閉心竅，使神明失清；熱盛時可兼發熱與躁擾。",
+      "mechanism_en": "Phlegm and Heat bind together and obstruct the Heart orifices, clouding consciousness; stronger Heat may add fever and agitation.",
+      "key_signs_zh": [
+        "神識昏蒙或意識不清",
+        "精神錯亂或譫語",
+        "煩躁",
+        "發熱或其他熱象",
+        "胸悶痰多"
+      ],
+      "key_signs_en": [
+        "Clouded or impaired consciousness",
+        "Confusion or delirious speech",
+        "Agitation",
+        "Fever or other Heat signs",
+        "Chest oppression with Phlegm signs"
+      ],
+      "treatment_principle_zh": "清熱化痰，開竅醒神",
+      "treatment_principle_en": "Clear Heat, transform Phlegm, and open the orifices to restore consciousness",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm_misting_heart",
+          "distinguishing_zh": "痰迷心竅偏寒或無明顯熱象；本證有舌紅、苔黃膩、脈滑數等痰熱表現。",
+          "distinguishing_en": "Phlegm Misting Heart lacks prominent Heat; this pattern adds a red tongue, greasy yellow coat, and slippery rapid pulse.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07"
+        },
+        {
+          "pattern_id": "pattern.phlegm_fire_disturbing_heart",
+          "distinguishing_zh": "痰火擾心以躁狂、失眠及心神擾動為主；本證以心竅閉阻、意識受損為核心。",
+          "distinguishing_en": "Phlegm-Fire Disturbing Heart centers on agitation and insomnia; this pattern centers on orifice obstruction and impaired consciousness.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+        "https://www.americandragon.com/conditions/Epilepsy.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+          "https://www.americandragon.com/conditions/Epilepsy.html"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+          "https://www.americandragon.com/conditions/Epilepsy.html"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+          "https://www.americandragon.com/conditions/Epilepsy.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+          "https://www.americandragon.com/conditions/Epilepsy.html"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+          "https://www.americandragon.com/conditions/Epilepsy.html"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H07 hot subtype",
+          "https://www.americandragon.com/conditions/Epilepsy.html"
+        ]
+      },
+      "secondary_family": "qi_xue_jin_ye",
+      "tongue_zh": "舌紅，苔黃膩",
+      "tongue_en": "Red tongue with a yellow greasy coating",
+      "pulse_zh": "脈滑數",
+      "pulse_en": "Slippery, rapid pulse"
+    },
+    {
+      "id": "pattern.small_intestine_excess_heat",
+      "name_zh": "小腸實熱",
+      "name_en": "Small Intestine Excess Heat",
+      "pinyin": "Xiao Chang Shi Re",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "small_intestine"
+      ],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "小腸實熱內盛，泌別清濁與水液通調受阻；心火下移時可同見口舌生瘡與心煩。",
+      "mechanism_en": "Excess Heat in the Small Intestine disrupts separation of clear from turbid and fluid passage; when Heart Fire transfers downward, mouth sores and irritability may accompany it.",
+      "key_signs_zh": [
+        "小便短赤",
+        "小便澀痛",
+        "口渴",
+        "心煩",
+        "可見口舌生瘡"
+      ],
+      "key_signs_en": [
+        "Scanty dark urine",
+        "Painful difficult urination",
+        "Thirst",
+        "Irritability",
+        "Mouth or tongue sores may occur"
+      ],
+      "treatment_principle_zh": "清心瀉小腸實熱，利尿通淋",
+      "treatment_principle_en": "Clear Heart and Small Intestine Heat and promote urination",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_fire",
+          "distinguishing_zh": "心火亢盛以口舌瘡、失眠煩躁為主；小腸實熱以短赤澀痛的小便表現更突出。",
+          "distinguishing_en": "Heart Fire centers on mouth sores and Shen agitation; Small Intestine Excess Heat has more prominent scanty, dark, painful urination.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08"
+        },
+        {
+          "pattern_id": "pattern.heat_lin",
+          "distinguishing_zh": "熱淋是淋證表現，以尿頻尿急灼痛為核心；小腸實熱可伴心火下移的口舌與心煩表現。",
+          "distinguishing_en": "Heat Lin is a dysuria syndrome centered on frequency, urgency, and burning pain; Small Intestine Excess Heat may include Heart-Fire mouth and irritability signs.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+        "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §H08",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
+        ]
+      },
+      "tongue_zh": "舌紅，苔黃",
+      "tongue_en": "Red tongue with a yellow coating",
+      "pulse_zh": "脈數",
+      "pulse_en": "Rapid pulse"
+    },
+    {
+      "id": "pattern.large_intestine_excess_heat",
+      "name_zh": "大腸實熱",
+      "name_en": "Large Intestine Excess Heat",
+      "pinyin": "Da Chang Shi Re",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "large_intestine"
+      ],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "實熱壅結大腸，灼傷津液並阻礙傳導，故大便乾硬難下並見腹滿熱象。",
+      "mechanism_en": "Excess Heat binds in the Large Intestine, consumes fluids, and obstructs conduction, causing dry hard stool, abdominal fullness, and marked Heat signs.",
+      "key_signs_zh": [
+        "大便乾硬或便秘",
+        "腹部脹滿疼痛",
+        "口渴",
+        "身熱",
+        "排便困難"
+      ],
+      "key_signs_en": [
+        "Dry hard stool or constipation",
+        "Abdominal fullness and pain",
+        "Thirst",
+        "Fever or pronounced Heat",
+        "Difficult defecation"
+      ],
+      "treatment_principle_zh": "清瀉大腸實熱，通腑泄熱",
+      "treatment_principle_en": "Clear and purge Large Intestine Heat and unblock the bowel",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "胃熱以上腹灼熱、消穀善飢或口臭為主；大腸實熱以燥屎、便秘與腹滿為核心。",
+          "distinguishing_en": "Stomach Heat centers on epigastric burning, strong appetite, or bad breath; Large Intestine Excess Heat centers on dry stool, constipation, and abdominal fullness.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        },
+        {
+          "pattern_id": "pattern.large_intestine_fluid_deficiency",
+          "distinguishing_zh": "大腸實熱有較強實熱與脈實有力；大腸津虧以津少腸燥、虛性便秘為主。",
+          "distinguishing_en": "Large Intestine Excess Heat has forceful Heat signs; Large Intestine Fluid Deficiency is a deficiency dryness pattern with inadequate intestinal fluids.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§LI01-LI02"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+        "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI01",
+          "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
+        ]
+      },
+      "tongue_zh": "舌紅，苔黃乾",
+      "tongue_en": "Red tongue with a dry yellow coating",
+      "pulse_zh": "脈洪數或實數",
+      "pulse_en": "Full rapid or forceful rapid pulse"
+    },
+    {
+      "id": "pattern.large_intestine_fluid_deficiency",
+      "name_zh": "大腸津虧",
+      "name_en": "Large Intestine Fluid Deficiency",
+      "pinyin": "Da Chang Jin Kui",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [
+        "large_intestine"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "大腸津液不足，腸道失於濡潤，糞便因而乾燥並難以排出。",
+      "mechanism_en": "Insufficient fluids fail to moisten the Large Intestine, leaving stool dry and difficult to pass.",
+      "key_signs_zh": [
+        "大便乾燥",
+        "便秘",
+        "排便費力",
+        "口咽或皮膚乾燥",
+        "常見於年老、產後或久病之後"
+      ],
+      "key_signs_en": [
+        "Dry stool",
+        "Constipation",
+        "Straining or difficult defecation",
+        "Dry mouth, throat, or skin",
+        "Often seen after aging, childbirth, or chronic illness"
+      ],
+      "treatment_principle_zh": "養津潤腸，通便",
+      "treatment_principle_en": "Nourish fluids, moisten the intestines, and facilitate defecation",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.large_intestine_excess_heat",
+          "distinguishing_zh": "大腸實熱兼見強烈口渴、腹滿拒按、苔黃乾與實數脈；津虧以乾燥與虛象為主。",
+          "distinguishing_en": "Large Intestine Excess Heat adds strong thirst, resistant abdominal fullness, a dry yellow coat, and a forceful rapid pulse; fluid deficiency centers on dryness and deficiency.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§LI01-LI02"
+        },
+        {
+          "pattern_id": "pattern.stomach_yin_deficiency",
+          "distinguishing_zh": "胃陰虛以胃脘隱痛、飢不欲食、乾嘔為主；大腸津虧以乾便難下為核心。",
+          "distinguishing_en": "Stomach Yin Deficiency centers on epigastric discomfort, hunger without desire to eat, and dry retching; Large Intestine Fluid Deficiency centers on dry difficult stool.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02",
+        "https://cloudtcm.com/formula/222"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02",
+          "https://cloudtcm.com/formula/222"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02",
+          "https://cloudtcm.com/formula/222"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02",
+          "https://cloudtcm.com/formula/222"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02",
+          "https://cloudtcm.com/formula/222"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI02",
+          "https://cloudtcm.com/formula/222"
+        ]
+      },
+      "secondary_family": "qi_xue_jin_ye",
+      "tongue_zh": "舌乾",
+      "tongue_en": "Dry tongue"
+    },
+    {
+      "id": "pattern.large_intestine_damp_heat",
+      "name_zh": "大腸濕熱",
+      "name_en": "Large Intestine Damp-Heat",
+      "pinyin": "Da Chang Shi Re",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "large_intestine"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "濕熱蘊結大腸，阻滯腑氣並擾亂傳導，使糞便黏滯臭穢而下利不爽。",
+      "mechanism_en": "Damp-Heat lodges in the Large Intestine, obstructing bowel Qi and disturbing conduction, producing foul sticky stool, diarrhea, and incomplete evacuation.",
+      "key_signs_zh": [
+        "腹瀉或痢疾樣便",
+        "裏急後重",
+        "腹痛",
+        "大便臭穢",
+        "肛門灼熱",
+        "口渴但飲水不多"
+      ],
+      "key_signs_en": [
+        "Diarrhea or dysenteric stool",
+        "Urgency and tenesmus",
+        "Abdominal pain",
+        "Foul-smelling stool",
+        "Burning anus",
+        "Thirst without a strong desire to drink"
+      ],
+      "treatment_principle_zh": "清熱化濕，調氣和腸",
+      "treatment_principle_en": "Clear Heat, resolve Dampness, regulate Qi, and harmonize the intestines",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.damp_heat_spleen_stomach",
+          "distinguishing_zh": "脾胃濕熱以上腹痞滿、噁心、納差與身重為主；大腸濕熱以下利、裏急後重及肛門灼熱為主。",
+          "distinguishing_en": "Spleen-Stomach Damp-Heat centers on epigastric fullness, nausea, poor appetite, and heaviness; Large Intestine Damp-Heat centers on diarrhea, tenesmus, and anal burning.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§LI03, SP06"
+        },
+        {
+          "pattern_id": "pattern.bladder_damp_heat",
+          "distinguishing_zh": "大腸濕熱定位於腸道及大便；膀胱濕熱定位於尿頻、尿急與小便灼痛。",
+          "distinguishing_en": "Large Intestine Damp-Heat is localized to bowel and stool signs; Bladder Damp-Heat is localized to urinary frequency, urgency, and burning pain.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§LI03, BL01"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+        "https://cloudtcm.com/formula/119"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+          "https://cloudtcm.com/formula/119"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+          "https://cloudtcm.com/formula/119"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+          "https://cloudtcm.com/formula/119"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+          "https://cloudtcm.com/formula/119"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+          "https://cloudtcm.com/formula/119"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §LI03",
+          "https://cloudtcm.com/formula/119"
+        ]
+      },
+      "secondary_family": "bing_yin",
+      "tongue_zh": "舌紅，苔黃膩",
+      "tongue_en": "Red tongue with a yellow greasy coating",
+      "pulse_zh": "脈滑數",
+      "pulse_en": "Slippery, rapid pulse"
+    },
+    {
+      "id": "pattern.stomach_qi_deficiency",
+      "name_zh": "胃氣虛",
+      "name_en": "Stomach Qi Deficiency",
+      "pinyin": "Wei Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "stomach"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "胃氣不足，受納與和降功能減弱，故納少、早飽，並可因胃失和降而噁心。",
+      "mechanism_en": "Deficient Stomach Qi weakens reception and descending, causing poor appetite, early satiety, and a tendency to nausea.",
+      "key_signs_zh": [
+        "食慾不振",
+        "早飽",
+        "胃脘虛弱不適",
+        "食後疲倦",
+        "噁心或欲吐"
+      ],
+      "key_signs_en": [
+        "Poor appetite",
+        "Early satiety",
+        "Weak or uncomfortable epigastric sensation",
+        "Fatigue after eating",
+        "Nausea or tendency to vomit"
+      ],
+      "treatment_principle_zh": "補益胃氣，和胃降逆",
+      "treatment_principle_en": "Tonify Stomach Qi, harmonize the Stomach, and restore descending",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "脾氣虛以運化失職、便溏與身重較突出；胃氣虛以受納不足、早飽與噁心較突出。",
+          "distinguishing_en": "Spleen Qi Deficiency has more impaired transportation, loose stool, and heaviness; Stomach Qi Deficiency has more impaired reception, early satiety, and nausea.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01"
+        },
+        {
+          "pattern_id": "pattern.stomach_yin_deficiency",
+          "distinguishing_zh": "胃陰虛見口乾、飢不欲食、舌紅少苔；胃氣虛以氣虛乏力、舌淡脈弱為主。",
+          "distinguishing_en": "Stomach Yin Deficiency adds dryness, hunger without desire to eat, and a red peeled tongue; Stomach Qi Deficiency centers on fatigue with a pale tongue and weak pulse.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+        "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+        "https://www.americandragon.com/conditions/Weakness.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+          "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+          "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+          "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+          "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+          "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §ST01",
+          "curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md §胃氣虛",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ]
+      },
+      "tongue_zh": "舌淡",
+      "tongue_en": "Pale tongue",
+      "pulse_zh": "脈弱",
+      "pulse_en": "Weak pulse"
+    },
+    {
+      "id": "pattern.gallbladder_qi_deficiency",
+      "name_zh": "膽氣虛",
+      "name_en": "Gallbladder Qi Deficiency",
+      "pinyin": "Dan Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "gallbladder"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "膽氣不足，決斷失司，並使心神缺乏安定與果決，故見膽怯、易驚與猶豫不決。",
+      "mechanism_en": "Deficient Gallbladder Qi impairs decisiveness and fails to provide steadiness to the Shen, producing timidity, easy startling, and indecision.",
+      "key_signs_zh": [
+        "膽怯",
+        "易驚",
+        "猶豫不決",
+        "睡眠不安或多夢",
+        "焦慮恐懼"
+      ],
+      "key_signs_en": [
+        "Timidity",
+        "Easy startling",
+        "Indecisiveness",
+        "Restless or dream-disturbed sleep",
+        "Anxiety or fearfulness"
+      ],
+      "treatment_principle_zh": "補益膽氣，安神定志",
+      "treatment_principle_en": "Support Gallbladder Qi, calm the Shen, and strengthen resolve",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_gallbladder_qi_deficiency",
+          "distinguishing_zh": "單純膽氣虛以膽怯、易驚與決斷不足為主；心膽氣虛另有明顯心悸與心氣不足表現。",
+          "distinguishing_en": "Gallbladder Qi Deficiency centers on timidity, startling, and indecision; Heart-Gallbladder Qi Deficiency additionally has prominent palpitations and Heart Qi signs.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01; WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        },
+        {
+          "pattern_id": "pattern.heart_qi_deficiency",
+          "distinguishing_zh": "心氣虛以心悸、氣短、自汗與勞則加重為主；膽氣虛以膽怯、易驚及決斷不足為主。",
+          "distinguishing_en": "Heart Qi Deficiency centers on palpitations, breathlessness, sweating, and exertional worsening; Gallbladder Qi Deficiency centers on timidity, startling, and impaired decisiveness.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01",
+        "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ]
+      }
+    },
+    {
+      "id": "pattern.kidney_qi_deficiency",
+      "name_zh": "腎氣虛",
+      "name_en": "Kidney Qi Deficiency",
+      "pinyin": "Shen Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "kidney"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "腎氣不足，對腰膝、下元及膀胱固攝與氣化的支持減弱，形成腎系氣虛的基礎證候。",
+      "mechanism_en": "Deficient Kidney Qi weakens support of the low back, lower source, and Bladder containment and transformation, forming the foundational Kidney Qi deficiency pattern.",
+      "key_signs_zh": [
+        "腰膝痠軟",
+        "疲倦乏力",
+        "小便頻數",
+        "尿液控制力弱",
+        "生殖或性功能虛弱可見"
+      ],
+      "key_signs_en": [
+        "Sore weak low back and knees",
+        "Fatigue and weakness",
+        "Frequent urination",
+        "Weak urinary control",
+        "Reproductive or sexual weakness may occur"
+      ],
+      "treatment_principle_zh": "補益腎氣",
+      "treatment_principle_en": "Tonify Kidney Qi",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_qi_not_firm",
+          "distinguishing_zh": "腎氣不固是固攝失職較突出的窄型，見尿失禁、遺精或帶下；腎氣虛是較廣的基礎證候。",
+          "distinguishing_en": "Kidney Qi Not Firm is the narrower containment-failure subtype with leakage; Kidney Qi Deficiency is the broader foundational pattern.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§KI01-KI02; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        },
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "腎陽虛在腎氣虛基礎上兼見畏寒肢冷、水腫及舌淡胖濕等寒象。",
+          "distinguishing_en": "Kidney Yang Deficiency adds cold limbs, aversion to cold, edema, and a pale swollen wet tongue to the Kidney Qi deficiency picture.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§KI01, KI03"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+        "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+        "https://www.americandragon.com/conditions/KidneyFailure.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §腎氣虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html"
+        ]
+      },
+      "tongue_zh": "舌淡",
+      "tongue_en": "Pale tongue",
+      "pulse_zh": "脈沉弱，尺部尤弱",
+      "pulse_en": "Deep weak pulse, especially at the chi positions"
+    },
+    {
+      "id": "pattern.kidney_yang_deficiency_water_flooding",
+      "name_zh": "腎陽虛水泛",
+      "name_en": "Kidney Yang Deficiency with Water Flooding",
+      "pinyin": "Shen Yang Xu Shui Fan",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "kidney"
+      ],
+      "qi_blood_fluid": [
+        "qi",
+        "fluid"
+      ],
+      "mechanism_zh": "腎陽虛衰，氣化水液無力，水濕停聚泛溢，故見水腫與小便不利；水氣上凌時可影響肺或心。",
+      "mechanism_en": "Deficient Kidney Yang fails to transform fluids, allowing Water to accumulate and overflow as edema and impaired urination; upward flooding may affect the Lung or Heart.",
+      "key_signs_zh": [
+        "水腫",
+        "小便短少或水液代謝不利",
+        "畏寒肢冷",
+        "腰膝痠軟",
+        "身體沉重",
+        "水氣上泛時可見氣短或心悸"
+      ],
+      "key_signs_en": [
+        "Edema",
+        "Scanty urine or impaired fluid metabolism",
+        "Aversion to cold and cold limbs",
+        "Sore weak low back and knees",
+        "Heaviness",
+        "Dyspnea or palpitations may occur when Water floods upward"
+      ],
+      "treatment_principle_zh": "溫補腎陽，化氣行水",
+      "treatment_principle_en": "Warm and tonify Kidney Yang, transform Qi, and move retained Water",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "一般腎陽虛可有寒象與尿頻；水泛型以明顯水腫、小便不利及水氣上凌為辨識核心。",
+          "distinguishing_en": "General Kidney Yang Deficiency has Cold and urinary signs; the Water-Flooding subtype is defined by marked edema, impaired urination, and possible upward flooding.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§KI03, KI08"
+        },
+        {
+          "pattern_id": "pattern.spleen_kidney_yang_deficiency",
+          "distinguishing_zh": "脾腎陽虛兼見納差、腹脹、便溏等脾陽不振；腎陽虛水泛以腎系寒象與水腫泛溢為主。",
+          "distinguishing_en": "Spleen-Kidney Yang Deficiency adds poor appetite, abdominal distension, and loose stool; Kidney Yang Deficiency with Water Flooding centers on Kidney Cold and overflowing edema.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+        "https://cloudtcm.com/formula/180"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+          "https://cloudtcm.com/formula/180"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+          "https://cloudtcm.com/formula/180"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+          "https://cloudtcm.com/formula/180"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+          "https://cloudtcm.com/formula/180"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+          "https://cloudtcm.com/formula/180"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08",
+          "https://cloudtcm.com/formula/180"
+        ]
+      },
+      "tongue_zh": "舌淡胖濕",
+      "tongue_en": "Pale swollen wet tongue",
+      "pulse_zh": "脈沉弱遲",
+      "pulse_en": "Deep weak slow pulse"
+    },
+    {
+      "id": "pattern.bladder_damp_heat",
+      "name_zh": "膀胱濕熱",
+      "name_en": "Bladder Damp-Heat",
+      "pinyin": "Pang Guang Shi Re",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "bladder"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "濕熱蘊結膀胱，阻礙氣化與水道通行，故小便頻急、灼痛、色黃而短少。",
+      "mechanism_en": "Damp-Heat accumulates in the Bladder and obstructs Qi transformation and water passages, causing frequent urgent burning urination with dark scanty urine.",
+      "key_signs_zh": [
+        "小便頻數急迫",
+        "小便灼熱疼痛",
+        "尿色黃赤短少",
+        "尿液混濁",
+        "小腹不適"
+      ],
+      "key_signs_en": [
+        "Frequent urgent urination",
+        "Burning painful urination",
+        "Dark scanty urine",
+        "Cloudy urine",
+        "Lower abdominal discomfort"
+      ],
+      "treatment_principle_zh": "清熱利濕，通利膀胱",
+      "treatment_principle_en": "Clear Heat, resolve Dampness, and open the Bladder water passages",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat_lin",
+          "distinguishing_zh": "膀胱濕熱是臟腑辨證 identity；熱淋是以尿頻、尿急、灼痛為核心的淋證表現，兩者高度重疊但不是 exact identity。",
+          "distinguishing_en": "Bladder Damp-Heat is a Zang-Fu pattern identity; Heat Lin is a dysuria syndrome presentation. They overlap strongly but are not exact identities.",
+          "source": "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        },
+        {
+          "pattern_id": "pattern.damp_heat_lower_burner",
+          "distinguishing_zh": "下焦濕熱是涵蓋泌尿、生殖與下焦病位的較廣機制；膀胱濕熱明確定位膀胱氣化與小便異常。",
+          "distinguishing_en": "Lower-Burner Damp-Heat is a broader lower-burner mechanism; Bladder Damp-Heat is specifically localized to Bladder transformation and urinary signs.",
+          "source": "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+        "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+        "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+          "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+          "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+          "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+          "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+          "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL01",
+          "curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md §膀胱濕熱",
+          "https://www.sacredlotus.com/go/diagnosis-chinese-medicine/get/zang-fu-bladder-patterns-tcm"
+        ]
+      },
+      "secondary_family": "bing_yin",
+      "tongue_zh": "舌紅，苔黃膩",
+      "tongue_en": "Red tongue with a yellow greasy coating",
+      "pulse_zh": "脈滑數，尺部可兼弦",
+      "pulse_en": "Slippery rapid pulse, possibly wiry at the chi position"
+    },
+    {
+      "id": "pattern.bladder_deficiency_cold",
+      "name_zh": "膀胱虛寒",
+      "name_en": "Bladder Deficiency-Cold",
+      "pinyin": "Pang Guang Xu Han",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "bladder"
+      ],
+      "qi_blood_fluid": [
+        "qi",
+        "fluid"
+      ],
+      "mechanism_zh": "膀胱氣化虛弱而寒象內盛，水液約束與排泄失調，故尿清頻數、夜尿或漏尿。",
+      "mechanism_en": "Deficient and Cold Bladder Qi transformation disrupts containment and excretion of fluids, causing frequent clear urination, nocturia, or leakage.",
+      "key_signs_zh": [
+        "小便清長頻數",
+        "夜尿",
+        "尿液失禁或漏尿",
+        "下腹寒冷",
+        "排尿無力可見"
+      ],
+      "key_signs_en": [
+        "Frequent copious clear urination",
+        "Nocturia",
+        "Urinary incontinence or leakage",
+        "Cold sensation in the lower abdomen",
+        "Weak urination may occur"
+      ],
+      "treatment_principle_zh": "溫補腎與膀胱氣化，固攝小便",
+      "treatment_principle_en": "Warm and support Kidney-Bladder Qi transformation and secure urination",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_qi_not_firm",
+          "distinguishing_zh": "腎氣不固以腎系固攝失職為主；膀胱虛寒更強調膀胱氣化虛弱及下腹寒象。",
+          "distinguishing_en": "Kidney Qi Not Firm centers on Kidney containment failure; Bladder Deficiency-Cold emphasizes weak Bladder transformation and lower-abdominal Cold.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02; WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        },
+        {
+          "pattern_id": "pattern.bladder_damp_heat",
+          "distinguishing_zh": "膀胱虛寒尿清、無灼痛且有寒象；膀胱濕熱尿黃赤、灼痛並見黃膩苔與滑數脈。",
+          "distinguishing_en": "Bladder Deficiency-Cold has clear urine without burning and shows Cold; Bladder Damp-Heat has dark burning urine with a greasy yellow coat and slippery rapid pulse.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§BL01-BL02"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+        "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "key_signs": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "treatment_principle": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "tongue": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ],
+        "pulse": [
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §BL02",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        ]
+      },
+      "tongue_zh": "舌淡濕",
+      "tongue_en": "Pale wet tongue",
+      "pulse_zh": "脈沉弱遲",
+      "pulse_en": "Deep weak slow pulse"
+    },
+    {
+      "id": "pattern.lung_spleen_qi_deficiency",
+      "name_zh": "肺脾氣虛",
+      "name_en": "Lung-Spleen Qi Deficiency",
+      "pinyin": "Fei Pi Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "lung",
+        "spleen"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "脾氣虛則生化與運化不足，肺失所養；肺脾兩虛使呼吸宣降與飲食運化同時減弱。",
+      "mechanism_en": "Deficient Spleen Qi weakens transformation and the supply of Qi to the Lung; combined Lung-Spleen deficiency impairs both respiration and digestion.",
+      "key_signs_zh": [
+        "咳嗽無力或氣短",
+        "聲音低弱",
+        "食慾不振",
+        "便溏",
+        "疲倦乏力",
+        "易感冒"
+      ],
+      "key_signs_en": [
+        "Weak cough or shortness of breath",
+        "Weak low voice",
+        "Poor appetite",
+        "Loose stool",
+        "Fatigue and weakness",
+        "Susceptibility to colds"
+      ],
+      "treatment_principle_zh": "補益肺脾之氣",
+      "treatment_principle_en": "Tonify Lung and Spleen Qi",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_qi_deficiency",
+          "distinguishing_zh": "肺脾氣虛除肺氣虛的咳喘、聲低外，另有納差、便溏等脾氣虛表現。",
+          "distinguishing_en": "Lung-Spleen Qi Deficiency adds poor appetite and loose stool to the weak cough and low voice of Lung Qi Deficiency.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency"
+        },
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "肺脾氣虛除脾氣虛的納差、便溏外，另有咳嗽、氣短與易感冒等肺氣虛表現。",
+          "distinguishing_en": "Lung-Spleen Qi Deficiency adds cough, breathlessness, and susceptibility to colds to the digestive signs of Spleen Qi Deficiency.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "key_signs": [
+          "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "https://www.meandqi.com/knowledge-base/patterns/spleen-and-lung-qi-deficiency",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ]
+      }
+    },
+    {
+      "id": "pattern.heart_lung_qi_deficiency",
+      "name_zh": "心肺氣虛",
+      "name_en": "Heart-Lung Qi Deficiency",
+      "pinyin": "Xin Fei Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "heart",
+        "lung"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "心氣不足則鼓動血脈無力，肺氣不足則宣降與呼吸無力；心肺同虛使胸中宗氣功能減弱。",
+      "mechanism_en": "Deficient Heart Qi weakens propulsion of Blood, while deficient Lung Qi weakens respiration and diffusion; together they impair the functional Qi of the chest.",
+      "key_signs_zh": [
+        "心悸",
+        "氣短或喘",
+        "咳嗽聲低無力",
+        "胸悶",
+        "自汗",
+        "勞累後加重"
+      ],
+      "key_signs_en": [
+        "Palpitations",
+        "Shortness of breath or wheezing",
+        "Soft weak cough",
+        "Chest oppression",
+        "Spontaneous sweating",
+        "Worse with exertion"
+      ],
+      "treatment_principle_zh": "補益心肺之氣",
+      "treatment_principle_en": "Tonify Heart and Lung Qi",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_qi_deficiency",
+          "distinguishing_zh": "心肺氣虛除心悸、自汗外，另有咳嗽、氣短與聲低等肺氣虛表現。",
+          "distinguishing_en": "Heart-Lung Qi Deficiency adds cough, breathlessness, and weak voice to the palpitations and sweating of Heart Qi Deficiency.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛"
+        },
+        {
+          "pattern_id": "pattern.lung_qi_deficiency",
+          "distinguishing_zh": "心肺氣虛除咳喘與聲低外，另有心悸與胸中不適等心氣不足表現。",
+          "distinguishing_en": "Heart-Lung Qi Deficiency adds palpitations and Heart-related chest symptoms to the weak cough and breathlessness of Lung Qi Deficiency.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+        "https://americandragon.com/conditions/Dyspnea.html",
+        "https://americandragon.com/conditions/Bronchitis.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+          "https://americandragon.com/conditions/Dyspnea.html",
+          "https://americandragon.com/conditions/Bronchitis.html"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+          "https://americandragon.com/conditions/Dyspnea.html",
+          "https://americandragon.com/conditions/Bronchitis.html"
+        ],
+        "treatment_principle": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+          "https://americandragon.com/conditions/Dyspnea.html",
+          "https://americandragon.com/conditions/Bronchitis.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+          "https://americandragon.com/conditions/Dyspnea.html",
+          "https://americandragon.com/conditions/Bronchitis.html"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+          "https://americandragon.com/conditions/Dyspnea.html",
+          "https://americandragon.com/conditions/Bronchitis.html"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心肺氣虛",
+          "https://americandragon.com/conditions/Dyspnea.html",
+          "https://americandragon.com/conditions/Bronchitis.html"
+        ]
+      },
+      "tongue_zh": "舌淡，苔薄白",
+      "tongue_en": "Pale tongue with a thin white coating",
+      "pulse_zh": "脈弱或細弱",
+      "pulse_en": "Weak or thready-weak pulse"
+    },
+    {
+      "id": "pattern.lung_kidney_qi_deficiency",
+      "name_zh": "肺腎氣虛",
+      "name_en": "Lung-Kidney Qi Deficiency",
+      "pinyin": "Fei Shen Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "lung",
+        "kidney"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "肺氣不足使呼吸宣降無力，腎氣不足使納氣與下元支持減弱，形成肺腎共同的氣虛軸。",
+      "mechanism_en": "Deficient Lung Qi weakens respiration and descending, while deficient Kidney Qi weakens reception of Qi and lower-source support, producing a combined Lung-Kidney Qi deficiency axis.",
+      "key_signs_zh": [
+        "久咳或氣短",
+        "呼吸無力",
+        "活動後加重",
+        "腰膝痠軟",
+        "疲倦乏力"
+      ],
+      "key_signs_en": [
+        "Chronic cough or shortness of breath",
+        "Weak breathing",
+        "Worse with exertion",
+        "Sore weak low back and knees",
+        "Fatigue and weakness"
+      ],
+      "treatment_principle_zh": "補益肺腎之氣，助肺腎協同納氣",
+      "treatment_principle_en": "Tonify Lung and Kidney Qi and support their coordination in respiration",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_not_grasping_qi",
+          "distinguishing_zh": "腎不納氣是以吸氣困難、呼多吸少為核心的較窄功能失常；肺腎氣虛是同時涵蓋兩臟氣虛表現的較廣 identity。",
+          "distinguishing_en": "Kidney Not Grasping Qi is the narrower functional failure centered on difficulty inhaling; Lung-Kidney Qi Deficiency is the broader combined-organ deficiency identity.",
+          "source": "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md; Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)"
+        },
+        {
+          "pattern_id": "pattern.lung_qi_deficiency",
+          "distinguishing_zh": "肺腎氣虛除肺氣虛表現外，兼見腰膝痠軟等腎氣不足徵象。",
+          "distinguishing_en": "Lung-Kidney Qi Deficiency adds Kidney Qi signs such as sore weak low back and knees to the Lung Qi deficiency picture.",
+          "source": "Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "key_signs": [
+          "Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "treatment_principle": [
+          "Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "Integrated traditional Chinese and Western medicine guideline for COPD (Journal of Evidence-Based Medicine, DOI 10.1111/jebm.12578)",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ]
+      }
+    },
+    {
+      "id": "pattern.heart_liver_blood_deficiency",
+      "name_zh": "心肝血虛",
+      "name_en": "Heart-Liver Blood Deficiency",
+      "pinyin": "Xin Gan Xue Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [
+        "heart",
+        "liver"
+      ],
+      "qi_blood_fluid": [
+        "blood"
+      ],
+      "mechanism_zh": "心血不足使心神失養，肝血不足使目、筋與衝任失養；兩臟血虛表現同時存在。",
+      "mechanism_en": "Deficient Heart Blood fails to nourish the Shen, while deficient Liver Blood fails to nourish the eyes, sinews, and menstrual function; both organ-specific clusters coexist.",
+      "key_signs_zh": [
+        "心悸",
+        "失眠多夢",
+        "眩暈",
+        "視物模糊或眼乾",
+        "肢體麻木或筋脈失養",
+        "月經量少可見"
+      ],
+      "key_signs_en": [
+        "Palpitations",
+        "Insomnia with profuse dreams",
+        "Dizziness",
+        "Blurred or dry eyes",
+        "Limb numbness or undernourished sinews",
+        "Scanty menstruation may occur"
+      ],
+      "treatment_principle_zh": "養心血，補肝血",
+      "treatment_principle_en": "Nourish Heart Blood and Liver Blood",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_blood_deficiency",
+          "distinguishing_zh": "心肝血虛除心悸失眠外，另有眼乾、視物模糊、筋脈或月經失養等肝血虛表現。",
+          "distinguishing_en": "Heart-Liver Blood Deficiency adds eye, sinew, or menstrual Liver Blood signs to the palpitations and insomnia of Heart Blood Deficiency.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency"
+        },
+        {
+          "pattern_id": "pattern.liver_blood_deficiency",
+          "distinguishing_zh": "心肝血虛除肝血虛的眼與筋脈表現外，另有心悸、失眠等心血不足表現。",
+          "distinguishing_en": "Heart-Liver Blood Deficiency adds palpitations and insomnia from Heart Blood deficiency to the eye and sinew signs of Liver Blood Deficiency.",
+          "source": "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency",
+        "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "key_signs": [
+          "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "treatment_principle": [
+          "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "https://www.meandqi.com/knowledge-base/patterns/liver-and-heart-blood-deficiency",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §8 combined-pattern inventory"
+        ]
+      }
+    },
+    {
+      "id": "pattern.heart_gallbladder_qi_deficiency",
+      "name_zh": "心膽氣虛",
+      "name_en": "Heart-Gallbladder Qi Deficiency",
+      "pinyin": "Xin Dan Qi Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "heart",
+        "gallbladder"
+      ],
+      "qi_blood_fluid": [
+        "qi"
+      ],
+      "mechanism_zh": "心氣與膽氣皆虛，心神失養而膽失決斷，故心悸、易驚、膽怯與不寐並見。",
+      "mechanism_en": "Deficient Heart and Gallbladder Qi leave the Shen unsupported and decisiveness weakened, producing palpitations, easy startling, timidity, and disturbed sleep.",
+      "key_signs_zh": [
+        "心悸",
+        "膽怯易驚",
+        "猶豫不決",
+        "失眠多夢",
+        "焦慮不安"
+      ],
+      "key_signs_en": [
+        "Palpitations",
+        "Timidity and easy startling",
+        "Indecisiveness",
+        "Insomnia with profuse dreams",
+        "Anxiety and uneasiness"
+      ],
+      "treatment_principle_zh": "補益心膽之氣，安神定志",
+      "treatment_principle_en": "Tonify Heart and Gallbladder Qi, calm the Shen, and strengthen resolve",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.gallbladder_qi_deficiency",
+          "distinguishing_zh": "心膽氣虛有明顯心悸與心神失養；單純膽氣虛以膽怯、易驚與決斷不足為主。",
+          "distinguishing_en": "Heart-Gallbladder Qi Deficiency includes prominent palpitations and Heart-Shen deficiency; Gallbladder Qi Deficiency centers on timidity, startling, and indecision.",
+          "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §GB01; WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        },
+        {
+          "pattern_id": "pattern.heart_qi_deficiency",
+          "distinguishing_zh": "心氣虛以心悸、氣短、自汗為主；心膽氣虛另有膽怯、易驚及決斷不足。",
+          "distinguishing_en": "Heart Qi Deficiency centers on palpitations, breathlessness, and sweating; Heart-Gallbladder Qi Deficiency adds timidity, startling, and impaired decisiveness.",
+          "source": "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+        "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§GB01, 8 combined-pattern inventory"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§GB01, 8 combined-pattern inventory"
+        ],
+        "key_signs": [
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§GB01, 8 combined-pattern inventory"
+        ],
+        "treatment_principle": [
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§GB01, 8 combined-pattern inventory"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "WHO International Standard Terminologies on Traditional Chinese Medicine (2022), https://iris.who.int/handle/10665/352306",
+          "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§GB01, 8 combined-pattern inventory"
+        ]
+      }
+    },
+    {
+      "id": "pattern.liver_kidney_yin_deficiency",
+      "name_zh": "肝腎陰虛",
+      "name_en": "Liver-Kidney Yin Deficiency",
+      "pinyin": "Gan Shen Yin Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [
+        "liver",
+        "kidney"
+      ],
+      "qi_blood_fluid": [
+        "yin"
+      ],
+      "mechanism_zh": "肝腎陰液同源而互相滋養；兩者俱虛時，目、筋、腰膝與耳竅失養，並可出現虛熱。",
+      "mechanism_en": "Liver and Kidney Yin share a common source and mutually nourish each other; combined deficiency deprives the eyes, sinews, low back, knees, and ears of nourishment and may produce deficiency Heat.",
+      "key_signs_zh": [
+        "眩暈耳鳴",
+        "眼乾或視物模糊",
+        "腰膝痠軟",
+        "五心煩熱或低熱",
+        "盜汗",
+        "咽乾"
+      ],
+      "key_signs_en": [
+        "Dizziness and tinnitus",
+        "Dry or blurred eyes",
+        "Sore weak low back and knees",
+        "Five-center Heat or low-grade fever",
+        "Night sweats",
+        "Dry throat"
+      ],
+      "treatment_principle_zh": "滋補肝腎之陰",
+      "treatment_principle_en": "Nourish Liver and Kidney Yin",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_yin_deficiency",
+          "distinguishing_zh": "肝腎陰虛除眼乾、筋脈失養外，兼見腰膝痠軟、耳鳴等腎陰虛表現。",
+          "distinguishing_en": "Liver-Kidney Yin Deficiency adds sore low back and knees and tinnitus to the eye and sinew signs of Liver Yin Deficiency.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛"
+        },
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "肝腎陰虛除腰膝痠軟與耳鳴外，兼見眼乾、視物模糊等肝陰不足表現。",
+          "distinguishing_en": "Liver-Kidney Yin Deficiency adds dry or blurred eyes and other Liver Yin signs to the low-back and tinnitus signs of Kidney Yin Deficiency.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+        "https://www.americandragon.com/conditions/KidneyFailure.html",
+        "https://www.americandragon.com/conditions/Neurasthenia.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html",
+          "https://www.americandragon.com/conditions/Neurasthenia.html"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html",
+          "https://www.americandragon.com/conditions/Neurasthenia.html"
+        ],
+        "treatment_principle": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html",
+          "https://www.americandragon.com/conditions/Neurasthenia.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html",
+          "https://www.americandragon.com/conditions/Neurasthenia.html"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html",
+          "https://www.americandragon.com/conditions/Neurasthenia.html"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛",
+          "https://www.americandragon.com/conditions/KidneyFailure.html",
+          "https://www.americandragon.com/conditions/Neurasthenia.html"
+        ]
+      },
+      "tongue_zh": "舌紅，少苔或無苔",
+      "tongue_en": "Red tongue with little or no coating",
+      "pulse_zh": "脈細數，可兼弦",
+      "pulse_en": "Thready rapid pulse, possibly wiry"
+    },
+    {
+      "id": "pattern.liver_fire_scorching_lung",
+      "name_zh": "肝火犯肺",
+      "name_en": "Liver Fire Scorching Lung",
+      "pinyin": "Gan Huo Fan Fei",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "liver",
+        "lung"
+      ],
+      "qi_blood_fluid": [],
+      "mechanism_zh": "肝火上逆犯肺，肺失清肅下降，故咳嗽劇烈並隨情志或怒氣加重。",
+      "mechanism_en": "Liver Fire rebels upward and scorches the Lung, impairing Lung clearing and descending and causing forceful cough worsened by anger or emotional upset.",
+      "key_signs_zh": [
+        "陣發性劇烈乾咳，怒則加重",
+        "痰少黏難咯或痰中帶血",
+        "胸脅疼痛",
+        "面紅目赤",
+        "口苦咽乾",
+        "急躁易怒"
+      ],
+      "key_signs_en": [
+        "Severe paroxysmal dry cough worsened by anger",
+        "Scant sticky difficult sputum or blood-streaked sputum",
+        "Chest and hypochondriac pain",
+        "Red face and eyes",
+        "Bitter taste and dry throat",
+        "Irritability and quick temper"
+      ],
+      "treatment_principle_zh": "清肝瀉火，清肺降逆",
+      "treatment_principle_en": "Clear Liver Fire, clear the Lung, and restore descending",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_fire",
+          "distinguishing_zh": "肝火犯肺除肝火上炎表現外，以咳嗽、痰少或痰血等肺失肅降為核心。",
+          "distinguishing_en": "Liver Fire Scorching Lung adds cough, scant sputum, or blood-streaked sputum from impaired Lung descending to the Liver Fire picture.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺"
+        },
+        {
+          "pattern_id": "pattern.phlegm_heat_in_lung",
+          "distinguishing_zh": "痰熱壅肺以痰黃稠量多、胸悶為主；肝火犯肺多為情志誘發的乾咳或少痰，兼口苦脅痛。",
+          "distinguishing_en": "Phlegm-Heat in the Lung centers on copious thick yellow sputum and chest oppression; Liver Fire Scorching Lung is often emotion-triggered, dry or scant-phlegm cough with bitter taste and hypochondriac pain.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+        "https://americandragon.com/conditions/Cough.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+          "https://americandragon.com/conditions/Cough.html"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+          "https://americandragon.com/conditions/Cough.html"
+        ],
+        "treatment_principle": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+          "https://americandragon.com/conditions/Cough.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+          "https://americandragon.com/conditions/Cough.html"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+          "https://americandragon.com/conditions/Cough.html"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺",
+          "https://americandragon.com/conditions/Cough.html"
+        ]
+      },
+      "tongue_zh": "舌邊尖紅或紅乾，苔薄黃或厚黃",
+      "tongue_en": "Red edges and tip or a red dry tongue, with a thin or thick yellow coating",
+      "pulse_zh": "脈弦數或滑數",
+      "pulse_en": "Wiry rapid or slippery rapid pulse"
+    },
+    {
+      "id": "pattern.heart_kidney_yin_deficiency",
+      "name_zh": "心腎陰虛",
+      "name_en": "Heart-Kidney Yin Deficiency",
+      "pinyin": "Xin Shen Yin Xu",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin"
+      },
+      "zang_fu": [
+        "heart",
+        "kidney"
+      ],
+      "qi_blood_fluid": [
+        "yin"
+      ],
+      "mechanism_zh": "心陰與腎陰同虧，心神失養而腎水不足，虛熱內擾，故失眠心悸與腰膝、耳竅等腎陰虛表現並見。",
+      "mechanism_en": "Combined Heart and Kidney Yin deficiency deprives the Shen of nourishment and leaves Kidney Water insufficient, allowing deficiency Heat to disturb the Heart while Kidney Yin signs coexist.",
+      "key_signs_zh": [
+        "失眠多夢",
+        "心悸易驚",
+        "眩暈耳鳴",
+        "腰膝痠軟",
+        "潮熱盜汗",
+        "口乾顴紅"
+      ],
+      "key_signs_en": [
+        "Insomnia with profuse dreams",
+        "Palpitations and easy startling",
+        "Dizziness and tinnitus",
+        "Sore weak low back and knees",
+        "Tidal fever and night sweats",
+        "Dry mouth and malar flush"
+      ],
+      "treatment_principle_zh": "滋養心腎之陰，清虛熱，安神",
+      "treatment_principle_en": "Nourish Heart and Kidney Yin, clear deficiency Heat, and calm the Shen",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_kidney_not_communicating",
+          "distinguishing_zh": "心腎陰虛明確要求心陰、腎陰兩組不足與虛熱並見；心腎不交是較廣的功能失和概念，不能視為 exact identity。",
+          "distinguishing_en": "Heart-Kidney Yin Deficiency requires combined Heart and Kidney Yin deficiency with deficiency Heat; Heart-Kidney Not Communicating is a broader functional disharmony and is not an exact identity.",
+          "source": "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        },
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "心腎陰虛除腎陰虛的腰膝痠軟、耳鳴與虛熱外，另有心悸、失眠多夢等心陰失養表現。",
+          "distinguishing_en": "Heart-Kidney Yin Deficiency adds palpitations and dream-disturbed insomnia from Heart Yin deficiency to the Kidney Yin deficiency picture.",
+          "source": "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛; https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency"
+        }
+      ],
+      "typical_formulas": [],
+      "typical_points": [],
+      "sources": [
+        "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+        "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+        "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+        "https://www.americandragon.com/conditions/Weakness.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
+        ],
+        "mechanism": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+          "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "key_signs": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+          "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "treatment_principle": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+          "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "differentiation": [
+          "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+          "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "tongue": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+          "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ],
+        "pulse": [
+          "curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md §心腎陰虛",
+          "https://www.meandqi.com/knowledge-base/patterns/heart-and-kidney-yin-deficiency",
+          "https://www.americandragon.com/conditions/Weakness.html"
+        ]
+      },
+      "tongue_zh": "舌紅，少苔或無苔",
+      "tongue_en": "Red tongue with little or no coating",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thready rapid pulse"
     }
   ]
 }
