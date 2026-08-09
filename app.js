@@ -5802,6 +5802,73 @@ function deleteCurrentCase() {
   render();
 }
 
+// Last Visit at a Glance (2026-08-09, docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md
+// §9 ranked item #3) — read-only reference only, never a data source. No new
+// storage: derived entirely from the case's existing soapNotes each time the
+// dialog opens.
+//
+// Ordering matches renderClinicalCaseDetail's own sort (visitDate then
+// visitNumber) so "previous" here means the same thing the SOAP Timeline
+// already shows, just ascending instead of descending.
+//
+//   - New visit (currentNoteId null): previous = the most recent existing
+//     visit in the case.
+//   - Editing visit N: previous = the visit immediately before N in
+//     chronological order — never N itself, never whatever happens to be
+//     newest in the case if that isn't N's actual predecessor.
+//   - Editing the earliest visit, or no visits yet: null (no previous).
+function findPreviousSoapNote(soapNotes, currentNoteId) {
+  const chrono = [...(soapNotes || [])].sort((a, b) => {
+    const d = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
+    if (d) return d;
+    return Number(a.visitNumber || 0) - Number(b.visitNumber || 0);
+  });
+  if (!currentNoteId) return chrono[chrono.length - 1] || null;
+  const idx = chrono.findIndex((n) => n.id === currentNoteId);
+  if (idx <= 0) return null;
+  return chrono[idx - 1];
+}
+
+function truncateText(text, maxLen) {
+  const s = String(text || "").trim();
+  if (!s) return "";
+  return s.length > maxLen ? s.slice(0, maxLen).trim() + "…" : s;
+}
+
+// Compact, read-only. Deliberately does NOT render the whole previous SOAP —
+// only the fields worth glancing at before writing today's note. Every row
+// except "Visit" is omitted when empty, so a sparse previous visit renders a
+// short panel rather than a wall of "—".
+function renderPreviousVisitPanel(note) {
+  const container = document.querySelector("#previousVisitPanel");
+  if (!container) return;
+  if (!note) {
+    container.innerHTML = `<p class="case-empty" style="margin:0;">尚無上一次就診紀錄 No previous visit yet.</p>`;
+    return;
+  }
+  const verdict = OUTCOME_VERDICTS[note.outcomeVerdict];
+  const pain = getOutcomeMetricValue(note.outcomeMetrics, "metric.pain_score");
+  const pattern = note.tcmPattern || formatNoteList(note.tcmPatternLinks, "");
+  const cells = [
+    ["就診 Visit", [note.visitNumber ? `Visit ${note.visitNumber}` : "", note.visitDate].filter(Boolean).join(" · ") || "—"],
+    ["S 主觀 Subjective", truncateText(note.subjective, 80)],
+    ["療效 Outcomes", truncateText(note.outcomes, 80)],
+    ["療效判定 Verdict", verdict ? `${verdict.zh} ${verdict.en}` : ""],
+    ["疼痛評分 Pain score", (pain === 0 || pain) ? `${pain}/10` : ""],
+    ["效果維持 Effect duration", (note.effectDurationDays === 0 || note.effectDurationDays) ? `${note.effectDurationDays} 天 days` : ""],
+    ["證型 Pattern", pattern],
+    ["治法 Tx principle", note.treatmentPrinciple || ""],
+    ["用穴 Points", formatNoteList(note.acupointLinks, "")],
+    ["方藥 Formula", formatNoteList(note.formulaLinks, "")],
+    ["手法 Modalities", note.modalities || ""],
+    ["醫囑 Advice", truncateText(note.advice, 60)],
+    ["下次計畫 Follow-up", truncateText(note.followUp, 60)],
+  ].filter(([, value]) => value);
+  container.innerHTML = `<div class="clinical-mini-grid">${cells.map(([label, value]) =>
+    `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(value)}</span></div>`
+  ).join("")}</div>`;
+}
+
 function openSoapEditor(note = null) {
   const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
   if (!activeCase) {
@@ -5811,6 +5878,7 @@ function openSoapEditor(note = null) {
   editingSoapId = note?.id || null;
   document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
   deleteSoapBtn.hidden = !note;
+  renderPreviousVisitPanel(findPreviousSoapNote(activeCase.soapNotes, editingSoapId));
   const fallback = {
     visitDate: new Date().toISOString().slice(0, 10),
     visitNumber: activeCase.soapNotes.length + 1,

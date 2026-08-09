@@ -703,6 +703,11 @@
           <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
         <div class="form-grid soap-form-grid">
+          <fieldset class="form-section soap-previous-visit">
+            <legend><span class="form-section-step">«</span>上次就診 Previous visit<small>參考用，不會自動帶入 reference only, never auto-filled or copied</small></legend>
+            <div id="previousVisitPanel" class="wide"></div>
+          </fieldset>
+
           <fieldset class="form-section">
             <legend><span class="form-section-step">1</span>就診脈絡 Visit context</legend>
             <label>Visit date<input name="visitDate" type="date" /></label>
