@@ -39,7 +39,6 @@ const SAFETY_SOURCED = [
   'monitoring_requirements_en',
 ];
 
-// OFFICIAL_SOURCE must NOT include course:, instructor-note:, board-outline:, textbook:
 const OFFICIAL_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed):/i;
 const ANY_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed|course|instructor-note|board-outline|textbook|systematic-review):/i;
 
@@ -132,9 +131,19 @@ function loadKnownIds() {
   };
 }
 
-function verifyIngredientMatch(expectedDrugId, activeIngredientText) {
+// Strict Normalized Ingredient Identity Model
+function normalizeIngredient(str) {
+  if (!str) return '';
+  return str.toLowerCase()
+    .replace(/sulfate|hydrochloride|succinate|sodium|tartrate|potassium|maleate|phosphate|mesylate|besylate/g, '')
+    .replace(/aerosol|metered|solution|drops|capsule|tablet|injection|extended release|film coated|oral/g, '')
+    .replace(/[^a-z\s\/]/g, '')
+    .trim();
+}
+
+function verifyStrictIngredientMatch(expectedDrugId, activeIngredientText) {
   if (!activeIngredientText) return false;
-  const lowerIng = activeIngredientText.toLowerCase();
+  const normActive = normalizeIngredient(activeIngredientText);
 
   const expectedMap = {
     'drug.albuterol': ['albuterol'],
@@ -172,8 +181,19 @@ function verifyIngredientMatch(expectedDrugId, activeIngredientText) {
     'drug.digoxin': ['digoxin'],
   };
 
-  const tokens = expectedMap[expectedDrugId] || [expectedDrugId.replace('drug.', '')];
-  return tokens.every(t => lowerIng.includes(t));
+  const expectedTokens = expectedMap[expectedDrugId] || [expectedDrugId.replace('drug.', '')];
+
+  // Require ALL expected ingredients to be present in active ingredient
+  const allPresent = expectedTokens.every(tok => normActive.includes(tok));
+  if (!allPresent) return false;
+
+  // Strict check: active ingredient must not contain unrelated extra active moieties (e.g. Metformin)
+  const forbiddenExtra = ['metformin', 'rosiglitazone', 'glimepiride', 'benazepril', 'irbesartan'];
+  if (forbiddenExtra.some(f => normActive.includes(f))) {
+    return false;
+  }
+
+  return true;
 }
 
 function main() {
@@ -212,17 +232,29 @@ function main() {
     unknownIntegrativeFlags: 0,
   };
 
-  // Load DailyMed API evidence map & setid set
+  // Load DailyMed API evidence map
   const verifiedApiMap = new Map();
-  const verifiedSetIds = new Set();
+  const verifiedSetIdSectionsMap = new Map();
   try {
     const apiRespPath = path.join(DIR, 'dailymed_api_responses.json');
     if (fs.existsSync(apiRespPath)) {
       const apiArr = JSON.parse(fs.readFileSync(apiRespPath, 'utf8'));
       (Array.isArray(apiArr) ? apiArr : []).forEach(item => {
         verifiedApiMap.set(item.drug_id, item);
-        if (item.setid) verifiedSetIds.add(item.setid);
+        if (item.setid) {
+          verifiedSetIdSectionsMap.set(item.setid, new Set(item.verified_sections || []));
+        }
       });
+    }
+  } catch (e) {}
+
+  // Load MedlinePlus verified evidence map
+  const medlinePlusMap = new Map();
+  try {
+    const mlpPath = path.join(DIR, 'medlineplus_verified_links.json');
+    if (fs.existsSync(mlpPath)) {
+      const mlpArr = JSON.parse(fs.readFileSync(mlpPath, 'utf8'));
+      (Array.isArray(mlpArr) ? mlpArr : []).forEach(item => medlinePlusMap.set(item.drug_id, item));
     }
   } catch (e) {}
 
@@ -447,15 +479,40 @@ function main() {
       }
     }
 
-    // DailyMed External API Evidence Cross-Validation & Ingredient Identity Check
+    // DailyMed External API Evidence Cross-Validation & Strict Ingredient Identity Check
     if (r.dailymed_setid) {
       const ev = verifiedApiMap.get(r.id);
       if (!ev) {
         defects.push(`P0 ${where}.dailymed_setid: SetID 「${r.dailymed_setid}」未在 verified DailyMed API responses (dailymed_api_responses.json) 中找到驗證記錄！`);
       } else if (ev.setid !== r.dailymed_setid) {
         defects.push(`P0 ${where}.dailymed_setid: 藥物 setid 「${r.dailymed_setid}」與 API 驗證記錄 SetID 「${ev.setid}」不相符！`);
-      } else if (!verifyIngredientMatch(r.id, ev.active_ingredient)) {
-        defects.push(`P0 ${where}.active_ingredient: 藥物成分驗證失敗！藥物 「${r.id}」與 API 驗證記錄成分 「${ev.active_ingredient}」不符合！`);
+      } else if (!verifyStrictIngredientMatch(r.id, ev.active_ingredient)) {
+        defects.push(`P0 ${where}.active_ingredient: 藥物成分嚴格驗證失敗！藥物 「${r.id}」與 API 驗證記錄成分 「${ev.active_ingredient}」不符合！`);
+      }
+    }
+
+    // MedlinePlus External Link Validation
+    if (r.medlineplus_url_kind) {
+      if (!URL_KINDS.has(r.medlineplus_url_kind)) {
+        defects.push(`P4 ${where}.medlineplus_url_kind: 值 「${r.medlineplus_url_kind}」不在允許範圍 ${[...URL_KINDS].join('/')}`);
+      }
+      if (r.medlineplus_url_kind === 'verified_exact') {
+        if (!r.medlineplus_url || !r.medlineplus_url.includes('/druginfo/meds/a6')) {
+          defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_exact 但缺少合法的 MedlinePlus 專屬頁 URL (/druginfo/meds/a6*.html)`);
+        }
+        if (!r.medlineplus_title || !r.medlineplus_verified_on) {
+          defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_exact 但缺少 medlineplus_title 或 medlineplus_verified_on 驗證佐證！`);
+        }
+        const mlpEv = medlinePlusMap.get(r.id);
+        if (!mlpEv || mlpEv.medlineplus_url_kind !== 'verified_exact') {
+          defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_exact 但未在 medlineplus_verified_links.json 中找到佐證記錄！`);
+        } else if (mlpEv.medlineplus_url !== r.medlineplus_url) {
+          defects.push(`P0 ${where}.medlineplus_url: 專屬頁面 URL 「${r.medlineplus_url}」與驗證佐證 URL 「${mlpEv.medlineplus_url}」不符合！`);
+        }
+      } else if (r.medlineplus_url_kind === 'verified_none') {
+        if (r.medlineplus_url && r.medlineplus_url.includes('/druginfo/meds/a6')) {
+          defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_none 但提供專屬頁面 URL`);
+        }
       }
     }
 
@@ -476,8 +533,14 @@ function main() {
       if (ev && r.dailymed_setid) {
         srcs.forEach(s => {
           if (typeof s === 'string' && s.startsWith('dailymed:')) {
-            if (!s.includes(r.dailymed_setid) && !verifiedSetIds.has(s.split(':')[1].split('#')[0])) {
-              defects.push(`P0 ${where}.${f}: field_source setid mismatch! Source "${s}" is not a verified DailyMed SetID`);
+            const parts = s.split(':')[1].split('#');
+            const setid = parts[0];
+            const sec = parts[1];
+            if (!setid || setid !== r.dailymed_setid) {
+              defects.push(`P0 ${where}.${f}: field_source setid mismatch! Source "${s}" does not match drug setid "${r.dailymed_setid}"`);
+            }
+            if (sec && !ev.verified_sections.includes(sec)) {
+              defects.push(`P0 ${where}.${f}: field_source section mismatch! Cited section "${sec}" in "${s}" is not in verified section inventory for setid "${setid}"`);
             }
           }
         });
@@ -492,7 +555,7 @@ function main() {
     SAFETY_OFFICIAL_ONLY.forEach((f) => checkSourced(f, OFFICIAL_SOURCE, '官方標籤'));
     SAFETY_SOURCED.forEach((f) => checkSourced(f, ANY_SOURCE, '具名來源'));
 
-    // P8 — Graded Interactions & SetID Validation
+    // P8 — Graded Interactions & SetID / Section Validation
     INTERACTION_FIELDS.forEach((base) => {
       const entries = r[`${base}_graded`];
       if (entries === undefined) {
@@ -520,13 +583,18 @@ function main() {
           defects.push(`P8 ${at}: 非 unknown 的分級必須有 sources`);
         }
 
-        // Graded interaction DailyMed SetID verification check
+        // Graded interaction DailyMed SetID & Section verification check
         if (Array.isArray(e.sources)) {
           e.sources.forEach(src => {
             if (typeof src === 'string' && src.startsWith('dailymed:')) {
-              const srcSetId = src.split(':')[1].split('#')[0];
-              if (!verifiedSetIds.has(srcSetId)) {
+              const parts = src.split(':')[1].split('#');
+              const srcSetId = parts[0];
+              const sec = parts[1];
+              const secSet = verifiedSetIdSectionsMap.get(srcSetId);
+              if (!secSet) {
                 defects.push(`P0 ${at}.sources: 交互來源引用過期或未驗證的 DailyMed SetID 「${srcSetId}」！`);
+              } else if (sec && !secSet.has(sec)) {
+                defects.push(`P0 ${at}.sources: 交互來源引用的 SetID 「${srcSetId}」不包含該區段 「${sec}」！`);
               }
             }
           });

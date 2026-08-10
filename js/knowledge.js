@@ -2329,10 +2329,32 @@
           ` : ""}
 
           <div class="k-big-card-section">
-            <h3>${isEn ? "Sources & Provenance" : "資料來源與稽核軌跡 Sources & Provenance"}</h3>
-            ${d.dailymed_url ? `<p>📄 <strong>FDA / DailyMed Official Label:</strong> <a href="${esc(d.dailymed_url)}" target="_blank" rel="noopener" class="k-source-link">${esc(d.dailymed_label_title || "DailyMed Label")} ↗</a> (SetID: <code>${esc(d.dailymed_setid || "")}</code>)</p>` : ""}
+            <h3>${isEn ? "External Resources & Label Evidence" : "外部資源與標籤證據 External Resources & Label Evidence"}</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+              ${d.medlineplus_url && d.medlineplus_url_kind !== 'verified_none' ? `
+                <a href="${esc(d.medlineplus_url)}" target="_blank" rel="noopener" class="k-source-link" style="display:inline-flex;align-items:center;gap:6px;background:#0284c7;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.88em;">
+                  📖 <strong>${isEn ? "Drug Information" : "藥物說明"}</strong> (MedlinePlus) ↗
+                </a>
+              ` : ""}
+              ${d.dailymed_url ? `
+                <a href="${esc(d.dailymed_url)}" target="_blank" rel="noopener" class="k-source-link" style="display:inline-flex;align-items:center;gap:6px;background:#0f766e;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.88em;">
+                  🏛️ <strong>${isEn ? "Official Drug Label" : "官方藥品標籤"}</strong> (DailyMed) ↗
+                </a>
+              ` : ""}
+              ${d.drugs_fda_url && d.drugs_fda_url_kind === 'verified_exact' ? `
+                <a href="${esc(d.drugs_fda_url)}" target="_blank" rel="noopener" class="k-source-link" style="display:inline-flex;align-items:center;gap:6px;background:#475569;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.88em;">
+                  ✅ <strong>${isEn ? "FDA Approval Info" : "FDA 核准資料"}</strong> (Drugs@FDA) ↗
+                </a>
+              ` : ""}
+              ${d.medication_guide_url && d.medication_guide_url_kind === 'verified_exact' ? `
+                <a href="${esc(d.medication_guide_url)}" target="_blank" rel="noopener" class="k-source-link" style="display:inline-flex;align-items:center;gap:6px;background:#475569;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.88em;">
+                  👤 <strong>${isEn ? "Medication Guide" : "用藥指南"}</strong> ↗
+                </a>
+              ` : ""}
+            </div>
+            ${d.dailymed_url ? `<p style="margin-top:10px;font-size:0.85em;color:#64748b;">📄 <strong>FDA / DailyMed Official Label:</strong> ${esc(d.dailymed_label_title || "DailyMed Label")} (SetID: <code>${esc(d.dailymed_setid || "")}</code>)</p>` : ""}
             ${fieldSourceRows.length ? `
-              <details class="k-condition-flags">
+              <details class="k-condition-flags" style="margin-top:8px;">
                 <summary>${isEn ? "Field-level sources provenance" : "逐欄來源 Provenance"} (${fieldSourceRows.length})</summary>
                 ${fieldSourceRows.map(([field, values]) => `<p><strong>${esc(field)}:</strong> ${values.map(v => `<code>${esc(v)}</code>`).join(" · ")}</p>`).join("")}
               </details>

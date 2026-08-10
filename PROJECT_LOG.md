@@ -1,6 +1,28 @@
 # AcuTing OS Project Log
 
-## 2026-08-09 Antigravity — Pharm Source-Integrity Cleanup Patch
+## 2026-08-09 Antigravity — Pharm External Resource UX + MedlinePlus Verified Link Pass
+- **What was done:** Completed bounded Pharm External Resource UX + MedlinePlus Pass. (1) Fetched and parsed all 26 official NLM MedlinePlus A-Z index pages (`drug_Aa.html`..`drug_Za.html`), extracting 2,050 unique consumer drug information URLs. (2) Audited and mapped all 33 canonical drugs against official MedlinePlus index: 32 drugs resolved to exact MedlinePlus consumer pages (`verified_exact`), 1 parenteral drug (`drug.mannitol`) documented as `verified_none` with explicit reason. (3) Updated schema and records in `drugs.json`, `docs/PHARM_CARD_TEMPLATE.md`, `js/knowledge.js`, `scripts/validate-pharm-standard.js`, and generated bundles. (4) Reconciled DailyMed evidence metadata (`metadata_endpoint`, `spl_xml_endpoint`, `label_published_date`, `retrieved_date`), strict normalized ingredient identity matching, and exact SPL section citations. (5) Built UI resource hierarchy (1. MedlinePlus 📖, 2. DailyMed 🏛️, 3. Drugs@FDA ✅, 4. Medication Guide 👤). (6) Expanded test suite to 10 Part 9 tests (A through J).
+- **Numbers (before -> after):**
+  - Canonical Drugs Audited: 33/33.
+  - MedlinePlus `verified_exact`: 0 -> 32.
+  - MedlinePlus `verified_none`: 0 -> 1 (`drug.mannitol`).
+  - Unresolved / Guessed URLs: 0.
+  - DailyMed Endpoint/Date Metadata: 100% enriched across 33 drugs.
+  - Section Citations Reconciled: 100% matched to verified SPL XML section inventory.
+  - Part 9 Tests (A-J): 10/10 PASSED (100%).
+  - Validator blocking defects: 0 -> 0 (PASS).
+- **Verification Results:**
+  - test-pharm-source-integrity-negative-cases.js: ALL 10 TESTS (A-J) PASSED.
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** None. Inventory remains strictly fixed at drugs: 33, classes: 29, targets: 26, systems: 5.
+- **Next Step:** STOP. Awaiting Ting authorization before proceeding to remaining Week 1-2 Priority Pack drugs.
+
 - **What was done:** Completed bounded Pharm Source-Integrity Cleanup Patch. (1) Repaired/replaced 48 stale synthetic SetID citations across 24 drug/class cards inside interaction sources and provenance arrays. (2) Added interaction-source DailyMed SetID validation to validate-pharm-standard.js. (3) Corrected section-title contamination in dailymed_label_title across all 33 cards with authentic SPL document titles from NLM DailyMed REST API. (4) Enriched data/pharmacology/dailymed_api_responses.json with active_ingredient, route, labeler, published_date, source_endpoint, and retrieved_date. (5) Added true ingredient identity validation (matching exact active ingredients against canonical drug IDs). (6) Expanded test suite to 10 semantically-named source-integrity tests.
 - **Numbers (before -> after):**
   - Stale Synthetic Citations: 48 -> 0 (100% repaired).

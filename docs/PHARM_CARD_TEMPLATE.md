@@ -185,7 +185,13 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 | `review_status` | `draft` / `rv1_passed` / `canonical` |
 | `authored_by` | 標示建立者或腳本版本 |
 
-### G · 外部連結（規格見 `PHARM_SOURCE_TIERS.md`）
+### G · 外部連結與使用者閱讀資源（規格見 `PHARM_SOURCE_TIERS.md`）
+
+藥物 Big Card 外部資源呈現階層（User Interface Order）：
+1. 📖 **藥物說明 / Drug Information** (`medlineplus_url`, `medlineplus_url_kind`, `medlineplus_title`, `medlineplus_verified_on`) —— 人類可讀主要閱讀資源
+2. 🏛️ **官方藥品標籤 / Official Drug Label** (`dailymed_url`, `dailymed_url_kind`, `dailymed_label_title`, `dailymed_setid`) —— 官方標籤證據骨幹
+3. ✅ **FDA 核准資料 / FDA Approval Information** (`drugs_fda_url`, `drugs_fda_url_kind`) —— 經實體驗證之 FDA 申請記錄
+4. 👤 **用藥指南 / Medication Guide** (`medication_guide_url`, `medication_guide_url_kind`) —— 經實體驗證之 FDA 臨床用藥指南
 
 每個 URL 欄位**必須**配一個 `*_url_kind`:
 
@@ -193,14 +199,14 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 |---|---|
 | `verified_exact` | 實際打開過,確認是這個藥的專屬頁 |
 | `derived_search` | 由藥名產生的搜尋連結 —— 有用,但不算查過 |
-| `verified_none` | 查過了,該站沒有這個藥 |
+| `verified_none` | 查過了,該站沒有這個藥（例如純注射劑無 MedlinePlus 病人說明頁） |
 
-**實測（2026-08-06）**:
+**實測（2026-08-09）**:
 
 ```
 RxNav        furosemide → RXCUI 4603                      derivable
 DailyMed     API 可取 setid → 專屬頁                       lookup（可腳本化）
-MedlinePlus  furosemide → /meds/a682858.html              lookup（不可推導）
+MedlinePlus  furosemide → /druginfo/meds/a682858.html     lookup（不可推導，受驗證約束）
 ```
 
 `a682858` 與 "furosemide" 無任何可推導關係。**自動產生 MedlinePlus URL = 編造。**
