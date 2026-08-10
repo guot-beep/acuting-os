@@ -2332,8 +2332,8 @@
             <h3>${isEn ? "External Resources & Label Evidence" : "外部資源與標籤證據 External Resources & Label Evidence"}</h3>
             <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
               ${d.medlineplus_url && d.medlineplus_url_kind !== 'verified_none' ? `
-                <a href="${esc(d.medlineplus_url)}" target="_blank" rel="noopener" class="k-source-link" style="display:inline-flex;align-items:center;gap:6px;background:#0284c7;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.88em;">
-                  📖 <strong>${isEn ? "Drug Information" : "藥物說明"}</strong> (MedlinePlus) ↗
+                <a href="${esc(d.medlineplus_url)}" target="_blank" rel="noopener" class="k-source-link" style="display:inline-flex;align-items:center;gap:6px;background:${d.medlineplus_scope === 'formulation_partial' ? '#d97706' : '#0284c7'};color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.88em;">
+                  📖 <strong>${isEn ? "Drug Info" : "藥物說明"}</strong> (MedlinePlus${d.medlineplus_scope === 'formulation_partial' ? ` - ${esc(d.medlineplus_title || 'Partial Scope')} ⚠️` : ''}) ↗
                 </a>
               ` : ""}
               ${d.dailymed_url ? `

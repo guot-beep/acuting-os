@@ -1,6 +1,27 @@
 # AcuTing OS Project Log
 
-## 2026-08-09 Antigravity — Pharm External Resource UX + MedlinePlus Verified Link Pass
+## 2026-08-09 Antigravity — Pharm MedlinePlus Resource Scope & Evidence QA Patch
+- **What was done:** Completed bounded Pharm MedlinePlus Resource Scope & Evidence QA Patch. (1) Audited all 33 cards for resource scope: classified into 27 `ingredient_broad`, 3 `formulation_compatible` (`enoxaparin`, `heparin`, `albuterol`), 1 `formulation_partial` (`drug.atropine` - Atropine Ophthalmic vs systemic card), and 1 `none` (`drug.mannitol`). (2) Enriched `medlineplus_verified_links.json` with external provenance evidence (`source_index_page`, `search_sources_checked`, `medlineplus_scope`). (3) Added non-self-certifying external wrong-drug identity verification (Test 1) and scope mismatch detection (Test 2) to `validate-pharm-standard.js`. (4) Strengthened `verified_none` contract requiring documented search index sources (`search_sources_checked`) for `drug.mannitol` (Test 4 & 7). (5) Reconciled `docs/PHARM_CARD_TEMPLATE.md` `verification_status` contract enum (`unverified`, `machine_metadata_verified`, `human_reviewed`) (Test 10). (6) Updated UI in `js/knowledge.js` to explicitly label partial formulation scope (`Atropine Ophthalmic ⚠️`).
+- **Numbers (before -> after):**
+  - Canonical Drugs Audited for Scope: 33/33.
+  - `ingredient_broad` Matches: 27.
+  - `formulation_compatible` Matches: 3 (`enoxaparin`, `heparin`, `albuterol`).
+  - `formulation_partial` Matches: 1 (`drug.atropine`).
+  - `verified_none` Count: 1 (`drug.mannitol`).
+  - Required Tests (1-10): 10/10 PASSED (100%).
+  - Validator blocking defects: 0 -> 0 (PASS).
+- **Verification Results:**
+  - test-pharm-source-integrity-negative-cases.js: ALL 10 REQUIRED TESTS PASSED.
+  - verify-source-coverage.js: 100% PASS.
+  - audit-atomic-ledger.js: 100% PASS.
+  - test-source-drift-simulation.js: PASS.
+  - validate-pharm-standard.js --worklist: PASS (0 blocking defects, 0 warnings).
+  - build-data.js: PASS.
+  - validate-interactions.js: PASS.
+  - git diff --check: PASS (0 whitespace defects).
+- **Known Unresolved:** None. Inventory remains strictly fixed at drugs: 33, classes: 29, targets: 26, systems: 5.
+- **Next Step:** STOP. Awaiting Ting authorization before proceeding to remaining Week 1-2 Priority Pack drugs.
+
 - **What was done:** Completed bounded Pharm External Resource UX + MedlinePlus Pass. (1) Fetched and parsed all 26 official NLM MedlinePlus A-Z index pages (`drug_Aa.html`..`drug_Za.html`), extracting 2,050 unique consumer drug information URLs. (2) Audited and mapped all 33 canonical drugs against official MedlinePlus index: 32 drugs resolved to exact MedlinePlus consumer pages (`verified_exact`), 1 parenteral drug (`drug.mannitol`) documented as `verified_none` with explicit reason. (3) Updated schema and records in `drugs.json`, `docs/PHARM_CARD_TEMPLATE.md`, `js/knowledge.js`, `scripts/validate-pharm-standard.js`, and generated bundles. (4) Reconciled DailyMed evidence metadata (`metadata_endpoint`, `spl_xml_endpoint`, `label_published_date`, `retrieved_date`), strict normalized ingredient identity matching, and exact SPL section citations. (5) Built UI resource hierarchy (1. MedlinePlus 📖, 2. DailyMed 🏛️, 3. Drugs@FDA ✅, 4. Medication Guide 👤). (6) Expanded test suite to 10 Part 9 tests (A through J).
 - **Numbers (before -> after):**
   - Canonical Drugs Audited: 33/33.

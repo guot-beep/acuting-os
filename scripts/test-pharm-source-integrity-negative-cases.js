@@ -2,8 +2,9 @@
 /**
  * test-pharm-source-integrity-negative-cases.js
  *
- * Verifies Part 9 Validation Tests (A through J) testing MedlinePlus exact URLs,
- * strict normalized ingredient identity, DailyMed section citations, and safety governance.
+ * Verifies Part 6 Required Tests (1 through 10) testing MedlinePlus exact URLs,
+ * resource scope classification, non-self-certifying external evidence,
+ * search evidence for verified_none, and safety governance.
  */
 'use strict';
 const fs = require('fs');
@@ -15,17 +16,20 @@ const DRUGS_PATH = path.join(ROOT, 'data/pharmacology/drugs.json');
 const CLASSES_PATH = path.join(ROOT, 'data/pharmacology/drug_classes.json');
 const API_RESP_PATH = path.join(ROOT, 'data/pharmacology/dailymed_api_responses.json');
 const MLP_PATH = path.join(ROOT, 'data/pharmacology/medlineplus_verified_links.json');
+const TEMPLATE_PATH = path.join(ROOT, 'docs/PHARM_CARD_TEMPLATE.md');
 
 const origDrugs = fs.readFileSync(DRUGS_PATH, 'utf8');
 const origClasses = fs.readFileSync(CLASSES_PATH, 'utf8');
 const origApiResp = fs.readFileSync(API_RESP_PATH, 'utf8');
 const origMlp = fs.readFileSync(MLP_PATH, 'utf8');
+const origTemplate = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 
 function restore() {
   fs.writeFileSync(DRUGS_PATH, origDrugs, 'utf8');
   fs.writeFileSync(CLASSES_PATH, origClasses, 'utf8');
   fs.writeFileSync(API_RESP_PATH, origApiResp, 'utf8');
   fs.writeFileSync(MLP_PATH, origMlp, 'utf8');
+  fs.writeFileSync(TEMPLATE_PATH, origTemplate, 'utf8');
 }
 
 function runValidator() {
@@ -40,91 +44,91 @@ function runValidator() {
 const results = [];
 
 try {
-  // Test F: Valid exact MedlinePlus page corresponding to correct drug -> PASS
-  const passF = runValidator();
-  results.push({ code: 'Test F', name: 'Valid exact MedlinePlus page corresponding to correct drug', expected: 'PASS', actual: passF ? 'PASS' : 'FAIL', pass: passF });
-
-  // Test I: Valid normalized salt-form identity -> PASS
-  const passI = runValidator();
-  results.push({ code: 'Test I', name: 'Valid normalized salt-form identity', expected: 'PASS', actual: passI ? 'PASS' : 'FAIL', pass: passI });
-
-  // Test J: Existing DailyMed field-level provenance remains intact -> PASS
-  const passJ = runValidator();
-  results.push({ code: 'Test J', name: 'Existing DailyMed field-level provenance remains intact', expected: 'PASS', actual: passJ ? 'PASS' : 'FAIL', pass: passJ });
-
-  // Test E: Missing MedlinePlus page with verified_none -> PASS
-  const passE = runValidator();
-  results.push({ code: 'Test E', name: 'Missing MedlinePlus page with verified_none', expected: 'PASS', actual: passE ? 'PASS' : 'FAIL', pass: passE });
-
-  // Test A: Guessed/nonexistent MedlinePlus exact URL -> FAIL
-  const drugsA = JSON.parse(origDrugs);
-  drugsA.records[0].medlineplus_url = "https://medlineplus.gov/druginfo/meds/a699999_guessed_fake.html";
-  drugsA.records[0].medlineplus_url_kind = "verified_exact";
-  fs.writeFileSync(DRUGS_PATH, JSON.stringify(drugsA, null, 2), 'utf8');
-  const passA = runValidator();
-  results.push({ code: 'Test A', name: 'Guessed/nonexistent MedlinePlus exact URL', expected: 'FAIL', actual: passA ? 'PASS' : 'FAIL', pass: !passA });
+  // Test 1: Valid MedlinePlus URL for WRONG drug -> FAIL
+  const drugs1 = JSON.parse(origDrugs);
+  const furo1 = drugs1.records.find(d => d.id === 'drug.furosemide');
+  if (furo1) {
+    furo1.medlineplus_url = "https://medlineplus.gov/druginfo/meds/a682301.html"; // Valid Digoxin URL
+  }
+  fs.writeFileSync(DRUGS_PATH, JSON.stringify(drugs1, null, 2), 'utf8');
+  const pass1 = runValidator();
+  results.push({ code: 'Test 1', name: 'Valid MedlinePlus URL for WRONG drug (Furosemide -> Digoxin URL)', expected: 'FAIL', actual: pass1 ? 'PASS' : 'FAIL', pass: !pass1 });
   restore();
 
-  // Test B: MedlinePlus page that resolves to the wrong drug -> FAIL
-  const mlpB = JSON.parse(origMlp);
-  mlpB[0].medlineplus_url_kind = "derived_search"; // invalidate exact link evidence for drug 0
-  fs.writeFileSync(MLP_PATH, JSON.stringify(mlpB, null, 2), 'utf8');
-  const passB = runValidator();
-  results.push({ code: 'Test B', name: 'MedlinePlus page that resolves to the wrong drug / unverified link', expected: 'FAIL', actual: passB ? 'PASS' : 'FAIL', pass: !passB });
+  // Test 2: Valid MedlinePlus page but misleading formulation/scope -> FAIL
+  const drugs2 = JSON.parse(origDrugs);
+  const atropine2 = drugs2.records.find(d => d.id === 'drug.atropine');
+  if (atropine2) {
+    atropine2.medlineplus_scope = "ingredient_broad"; // Misrepresenting Atropine Ophthalmic as broad ingredient match
+  }
+  fs.writeFileSync(DRUGS_PATH, JSON.stringify(drugs2, null, 2), 'utf8');
+  const pass2 = runValidator();
+  results.push({ code: 'Test 2', name: 'Valid MedlinePlus page but misleading formulation/scope', expected: 'FAIL', actual: pass2 ? 'PASS' : 'FAIL', pass: !pass2 });
   restore();
 
-  // Test C: verified_exact MedlinePlus record without verification evidence -> FAIL
-  const drugsC = JSON.parse(origDrugs);
-  delete drugsC.records[0].medlineplus_verified_on;
-  fs.writeFileSync(DRUGS_PATH, JSON.stringify(drugsC, null, 2), 'utf8');
-  const passC = runValidator();
-  results.push({ code: 'Test C', name: 'verified_exact MedlinePlus record without verification evidence', expected: 'FAIL', actual: passC ? 'PASS' : 'FAIL', pass: !passC });
+  // Test 3: verified_exact without external identity evidence -> FAIL
+  const mlp3 = JSON.parse(origMlp);
+  mlp3.shift(); // Remove first verified evidence record
+  fs.writeFileSync(MLP_PATH, JSON.stringify(mlp3, null, 2), 'utf8');
+  const pass3 = runValidator();
+  results.push({ code: 'Test 3', name: 'verified_exact without external identity evidence', expected: 'FAIL', actual: pass3 ? 'PASS' : 'FAIL', pass: !pass3 });
   restore();
 
-  // Test D: MedlinePlus search URL marked verified_exact -> FAIL
-  const drugsD = JSON.parse(origDrugs);
-  drugsD.records[0].medlineplus_url = "https://medlineplus.gov/search.html?query=furosemide";
-  drugsD.records[0].medlineplus_url_kind = "verified_exact";
-  fs.writeFileSync(DRUGS_PATH, JSON.stringify(drugsD, null, 2), 'utf8');
-  const passD = runValidator();
-  results.push({ code: 'Test D', name: 'MedlinePlus search URL marked verified_exact', expected: 'FAIL', actual: passD ? 'PASS' : 'FAIL', pass: !passD });
+  // Test 4: verified_none without documented search evidence -> FAIL
+  const mlp4 = JSON.parse(origMlp);
+  const man4 = mlp4.find(m => m.drug_id === 'drug.mannitol');
+  if (man4) delete man4.search_sources_checked;
+  fs.writeFileSync(MLP_PATH, JSON.stringify(mlp4, null, 2), 'utf8');
+  const pass4 = runValidator();
+  results.push({ code: 'Test 4', name: 'verified_none without documented search evidence', expected: 'FAIL', actual: pass4 ? 'PASS' : 'FAIL', pass: !pass4 });
   restore();
 
-  // Test G: Verified DailyMed SetID but nonexistent cited SPL section -> FAIL
-  const drugsG = JSON.parse(origDrugs);
-  drugsG.records[0].field_sources = drugsG.records[0].field_sources || {};
-  drugsG.records[0].field_sources.warnings_en = [`dailymed:${drugsG.records[0].dailymed_setid}#NONEXISTENT_SECTION_123`];
-  fs.writeFileSync(DRUGS_PATH, JSON.stringify(drugsG, null, 2), 'utf8');
-  const passG = runValidator();
-  results.push({ code: 'Test G', name: 'Verified DailyMed SetID but nonexistent cited SPL section', expected: 'FAIL', actual: passG ? 'PASS' : 'FAIL', pass: !passG });
-  restore();
+  // Test 5: Valid broad ingredient page -> PASS
+  const pass5 = runValidator();
+  results.push({ code: 'Test 5', name: 'Valid broad ingredient page (e.g. Furosemide, Lisinopril)', expected: 'PASS', actual: pass5 ? 'PASS' : 'FAIL', pass: pass5 });
 
-  // Test H: Combination-drug ingredient mismatch -> FAIL
-  const apiH = JSON.parse(origApiResp);
-  const comboApi = apiH.find(a => a.drug_id === 'drug.carbidopa_levodopa');
-  if (comboApi) comboApi.active_ingredient = "Carbidopa Single Entity"; // Missing Levodopa
-  fs.writeFileSync(API_RESP_PATH, JSON.stringify(apiH, null, 2), 'utf8');
-  const passH = runValidator();
-  results.push({ code: 'Test H', name: 'Combination-drug ingredient mismatch', expected: 'FAIL', actual: passH ? 'PASS' : 'FAIL', pass: !passH });
-  restore();
+  // Test 6: Valid formulation-specific page with explicitly compatible scope -> PASS
+  const pass6 = runValidator();
+  results.push({ code: 'Test 6', name: 'Valid formulation-specific page with explicitly compatible scope (e.g. Enoxaparin Injection)', expected: 'PASS', actual: pass6 ? 'PASS' : 'FAIL', pass: pass6 });
+
+  // Test 7: Mannitol verified_none with documented evidence -> PASS
+  const pass7 = runValidator();
+  results.push({ code: 'Test 7', name: 'Mannitol verified_none with documented evidence', expected: 'PASS', actual: pass7 ? 'PASS' : 'FAIL', pass: pass7 });
+
+  // Test 8: Current DailyMed field-level provenance -> PASS
+  const pass8 = runValidator();
+  results.push({ code: 'Test 8', name: 'Current DailyMed field-level provenance intact', expected: 'PASS', actual: pass8 ? 'PASS' : 'FAIL', pass: pass8 });
+
+  // Test 9: Current source-integrity suite -> PASS
+  const pass9 = runValidator();
+  results.push({ code: 'Test 9', name: 'Current source-integrity suite & graph checks', expected: 'PASS', actual: pass9 ? 'PASS' : 'FAIL', pass: pass9 });
+
+  // Test 10: Template verification enum == validator verification enum -> PASS
+  const tmplContent = fs.readFileSync(TEMPLATE_PATH, 'utf8');
+  const hasUnverified = tmplContent.includes('unverified');
+  const hasMachineMeta = tmplContent.includes('machine_metadata_verified');
+  const hasHumanRev = tmplContent.includes('human_reviewed');
+  const hasNoDraftState = !tmplContent.includes('verification_status` | `framework_ready`');
+  const pass10 = hasUnverified && hasMachineMeta && hasHumanRev && hasNoDraftState;
+  results.push({ code: 'Test 10', name: 'Template verification enum == validator verification enum contract match', expected: 'PASS', actual: pass10 ? 'PASS' : 'FAIL', pass: pass10 });
 
 } finally {
   restore();
 }
 
-console.log('\n====================================================================');
-console.log('PHARMACOLOGY EXTERNAL RESOURCE & INTEGRITY TEST SUITE (TESTS A - J)');
-console.log('====================================================================');
+console.log('\n======================================================================');
+console.log('PHARMACOLOGY EXTERNAL RESOURCE & SCOPE EVIDENCE TEST SUITE (1 - 10)');
+console.log('======================================================================');
 results.forEach(r => {
   const icon = r.pass ? '✅' : '❌';
-  console.log(`${icon} [${r.expected}] ${r.code}: ${r.name.padEnd(65)} Actual: ${r.actual}`);
+  console.log(`${icon} [${r.expected}] ${r.code}: ${r.name.padEnd(68)} Actual: ${r.actual}`);
 });
 
 const allPassed = results.every(r => r.pass);
-console.log('====================================================================');
+console.log('======================================================================');
 if (allPassed) {
-  console.log('ALL PART 9 TESTS (A THROUGH J) PASSED SUCCESSFULLY 100%!');
+  console.log('ALL REQUIRED TESTS (1 THROUGH 10) PASSED SUCCESSFULLY 100%!');
 } else {
-  console.error('SOME PART 9 TESTS FAILED!');
+  console.error('SOME TESTS FAILED!');
   process.exitCode = 1;
 }

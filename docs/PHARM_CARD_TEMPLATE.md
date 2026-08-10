@@ -181,7 +181,7 @@ PLR 新格式(`4 CONTRAINDICATIONS` / `5 WARNINGS AND PRECAUTIONS` /
 
 | 欄位 | 值與規則 |
 |---|---|
-| `verification_status` | `framework_ready` / `source_identified` / `partially_populated` / `machine_verified` / `human_reviewed` / `draft`<br>⚠️ **AI/腳本生成內容絕不得標註為 `human_reviewed`** |
+| `verification_status` | `unverified` / `machine_metadata_verified` / `human_reviewed`<br>⚠️ **AI/腳本生成內容絕不得標註為 `human_reviewed`；標註 `human_reviewed` 時必填 `reviewed_by`（必須為真實人類）與 `reviewed_at`** |
 | `review_status` | `draft` / `rv1_passed` / `canonical` |
 | `authored_by` | 標示建立者或腳本版本 |
 

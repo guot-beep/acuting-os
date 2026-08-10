@@ -50,6 +50,7 @@ const ID_PATTERNS = {
 };
 
 const URL_KINDS = new Set(['verified_exact', 'derived_search', 'verified_none']);
+const MLP_SCOPES = new Set(['ingredient_broad', 'formulation_compatible', 'formulation_partial', 'none']);
 
 const INTERACTION_GRADES = new Set([
   'documented_clinical',
@@ -250,11 +251,17 @@ function main() {
 
   // Load MedlinePlus verified evidence map
   const medlinePlusMap = new Map();
+  const medlinePlusUrlToDrugMap = new Map();
   try {
     const mlpPath = path.join(DIR, 'medlineplus_verified_links.json');
     if (fs.existsSync(mlpPath)) {
       const mlpArr = JSON.parse(fs.readFileSync(mlpPath, 'utf8'));
-      (Array.isArray(mlpArr) ? mlpArr : []).forEach(item => medlinePlusMap.set(item.drug_id, item));
+      (Array.isArray(mlpArr) ? mlpArr : []).forEach(item => {
+        medlinePlusMap.set(item.drug_id, item);
+        if (item.medlineplus_url) {
+          medlinePlusUrlToDrugMap.set(item.medlineplus_url, item);
+        }
+      });
     }
   } catch (e) {}
 
@@ -491,7 +498,11 @@ function main() {
       }
     }
 
-    // MedlinePlus External Link Validation
+    // MedlinePlus Scope & External Link Verification
+    if (r.medlineplus_scope && !MLP_SCOPES.has(r.medlineplus_scope)) {
+      defects.push(`P4 ${where}.medlineplus_scope: 值 「${r.medlineplus_scope}」不在允許範圍 ${[...MLP_SCOPES].join('/')}`);
+    }
+
     if (r.medlineplus_url_kind) {
       if (!URL_KINDS.has(r.medlineplus_url_kind)) {
         defects.push(`P4 ${where}.medlineplus_url_kind: 值 「${r.medlineplus_url_kind}」不在允許範圍 ${[...URL_KINDS].join('/')}`);
@@ -503,15 +514,59 @@ function main() {
         if (!r.medlineplus_title || !r.medlineplus_verified_on) {
           defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_exact 但缺少 medlineplus_title 或 medlineplus_verified_on 驗證佐證！`);
         }
+
+        // Lookup evidence in medlineplus_verified_links.json
         const mlpEv = medlinePlusMap.get(r.id);
         if (!mlpEv || mlpEv.medlineplus_url_kind !== 'verified_exact') {
           defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_exact 但未在 medlineplus_verified_links.json 中找到佐證記錄！`);
-        } else if (mlpEv.medlineplus_url !== r.medlineplus_url) {
-          defects.push(`P0 ${where}.medlineplus_url: 專屬頁面 URL 「${r.medlineplus_url}」與驗證佐證 URL 「${mlpEv.medlineplus_url}」不符合！`);
+        } else {
+          // Verify URL exact match
+          if (mlpEv.medlineplus_url !== r.medlineplus_url) {
+            defects.push(`P0 ${where}.medlineplus_url: 專屬頁面 URL 「${r.medlineplus_url}」與驗證佐證 URL 「${mlpEv.medlineplus_url}」不符合！`);
+          }
+          // Verify scope match against audited evidence
+          if (mlpEv.medlineplus_scope && mlpEv.medlineplus_scope !== r.medlineplus_scope) {
+            defects.push(`P0 ${where}.medlineplus_scope: 資源範疇 「${r.medlineplus_scope}」與審核佐證範疇 「${mlpEv.medlineplus_scope}」不不符合！`);
+          }
+          // Verify NON-SELF-CERTIFYING External Identity Match (Wrong-Drug Identity Protection)
+          const targetOwner = medlinePlusUrlToDrugMap.get(r.medlineplus_url);
+          if (targetOwner && targetOwner.drug_id !== r.id) {
+            defects.push(`P0 ${where}.medlineplus_url: 錯誤藥物身分驗證失敗！URL 「${r.medlineplus_url}」屬於 「${targetOwner.drug_id}」（${targetOwner.medlineplus_title}），不得指定給 「${r.id}」！`);
+          }
+          // Verify Title Ingredient Alignment
+          const normTitle = (r.medlineplus_title || '').toLowerCase();
+          const normName = (r.name_en || '').toLowerCase();
+          const nameTokens = normName.split(/[\s\/]+/);
+          const hasNameMatch = nameTokens.some(tok => tok.length > 3 && normTitle.includes(tok));
+          if (!hasNameMatch) {
+            defects.push(`P0 ${where}.medlineplus_title: 頁面標題 「${r.medlineplus_title}」與藥物學名 「${r.name_en}」身分不吻合！`);
+          }
+          // Verify source_index_page evidence
+          if (!mlpEv.source_index_page || !mlpEv.source_index_page.includes('https://medlineplus.gov/druginfo/drug_')) {
+            defects.push(`P0 ${where}.medlineplus_url: 缺少外部 MedlinePlus 索引頁來源佐證 (source_index_page)！`);
+          }
         }
       } else if (r.medlineplus_url_kind === 'verified_none') {
         if (r.medlineplus_url && r.medlineplus_url.includes('/druginfo/meds/a6')) {
           defects.push(`P0 ${where}.medlineplus_url: 標註為 verified_none 但提供專屬頁面 URL`);
+        }
+        if (r.medlineplus_scope !== 'none') {
+          defects.push(`P0 ${where}.medlineplus_scope: 標註為 verified_none 時 medlineplus_scope 必須為 none！`);
+        }
+        // Strengthened verified_none requirement: evidence record + unresolved_reason + search_sources_checked
+        const mlpEv = medlinePlusMap.get(r.id);
+        if (!mlpEv || mlpEv.medlineplus_url_kind !== 'verified_none') {
+          defects.push(`P0 ${where}.medlineplus_url_kind: 標註為 verified_none 但未在 medlineplus_verified_links.json 中找到 verified_none 記錄！`);
+        } else {
+          if (!mlpEv.medlineplus_verified_on) {
+            defects.push(`P0 ${where}.medlineplus_url_kind: verified_none 缺少 medlineplus_verified_on 驗證日期！`);
+          }
+          if (!mlpEv.unresolved_reason || !mlpEv.unresolved_reason.trim()) {
+            defects.push(`P0 ${where}.medlineplus_url_kind: verified_none 缺少 unresolved_reason 原因說明！`);
+          }
+          if (!Array.isArray(mlpEv.search_sources_checked) || mlpEv.search_sources_checked.length === 0) {
+            defects.push(`P0 ${where}.medlineplus_url_kind: verified_none 缺少 search_sources_checked 搜尋與索引檢查佐證！`);
+          }
         }
       }
     }
