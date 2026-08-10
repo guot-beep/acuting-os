@@ -1582,6 +1582,228 @@
           "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
         ]
       }
+    },
+    {
+      "id": "drugclass.glp1_receptor_agonists",
+      "name_en": "GLP-1 receptor agonists",
+      "name_zh": "升糖素樣胜肽-1 受體促效劑",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.glp1_receptor",
+      "suffix_en": "-glutide",
+      "mechanism_overview_en": "Activate GLP-1 receptors to stimulate glucose-dependent insulin secretion, suppress glucagon, slow gastric emptying, and reduce appetite. Also have cardiovascular and renal protective effects.",
+      "mechanism_overview_zh": "激活GLP-1受體，促進葡萄糖依賴性胰島素分泌，抑制升糖素，延緩胃排空，降低食慾。亦有心血管與腎臟保護效果。",
+      "site_of_action_en": "Pancreatic beta cells, gut, brain",
+      "site_of_action_zh": "胰臟β細胞、腸道、腦部",
+      "indications_en": [
+        "Type 2 diabetes mellitus (glycemic control)",
+        "Reduction of major cardiovascular events in selected patients",
+        "Chronic weight management (product-dependent)"
+      ],
+      "indications_zh": [
+        "第二型糖尿病血糖控制",
+        "降低特定患者主要心血管事件風險",
+        "慢性體重管理（依產品適應症）"
+      ],
+      "shared_adverse_effects_en": [
+        "Nausea, vomiting, diarrhea (very common)",
+        "Delayed gastric emptying",
+        "Pancreatitis (serious, monitor symptoms)",
+        "Gallbladder disease",
+        "Thyroid C-cell tumor (boxed warning in Ozempic label; contraindicated in MTC/MEN2 history)"
+      ],
+      "shared_adverse_effects_zh": [
+        "噁心、嘔吐、腹瀉（非常常見）",
+        "胃排空延遲",
+        "胰臟炎（嚴重，監測症狀）",
+        "膽囊疾病",
+        "甲狀腺C細胞腫瘤（Ozempic黑框警語；MTC/MEN2病史禁用）"
+      ],
+      "representative_drug_ids": [
+        "drug.semaglutide"
+      ],
+      "prototype_drug_id": "drug.semaglutide",
+      "sources": [
+        "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+        "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.thyroid_hormones",
+      "name_en": "Thyroid hormone replacements",
+      "name_zh": "甲狀腺素替代藥",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.thyroid_hormone_receptor",
+      "suffix_en": null,
+      "mechanism_overview_en": "Exogenous thyroid hormone (T4) binds nuclear thyroid hormone receptors, restoring euthyroid metabolic state. Excess T4 is peripherally converted to active T3.",
+      "mechanism_overview_zh": "外源性甲狀腺素（T4）結合核內甲狀腺素受體，恢復正常甲狀腺功能代謝狀態。過量T4在周邊組織轉化為活性T3。",
+      "site_of_action_en": "Nuclear thyroid hormone receptors in heart, liver, bone, pituitary",
+      "site_of_action_zh": "心臟、肝臟、骨骼、腦垂體的核內甲狀腺素受體",
+      "indications_en": [
+        "Hypothyroidism (primary and secondary)",
+        "Thyroid-stimulating hormone suppression in selected thyroid conditions"
+      ],
+      "indications_zh": [
+        "甲狀腺功能低下（原發性與繼發性）",
+        "特定甲狀腺疾病的促甲狀腺素抑制"
+      ],
+      "shared_adverse_effects_en": [
+        "Tachycardia, palpitations (overdose / excess)",
+        "Tremor, heat intolerance (overdose)",
+        "Bone loss with prolonged excess",
+        "Boxed warning: not for use in obesity or weight loss"
+      ],
+      "shared_adverse_effects_zh": [
+        "心跳過速、心悸（過量）",
+        "顫抖、耐熱能力下降（過量）",
+        "長期過量導致骨質流失",
+        "黑框警語：不得用於肥胖或減重"
+      ],
+      "representative_drug_ids": [
+        "drug.levothyroxine"
+      ],
+      "prototype_drug_id": "drug.levothyroxine",
+      "sources": [
+        "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+        "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.systemic_glucocorticoids",
+      "name_en": "Systemic glucocorticoids",
+      "name_zh": "全身性糖皮質激素",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.glucocorticoid_receptor",
+      "suffix_en": "-sone / -olone",
+      "mechanism_overview_en": "Bind intracellular glucocorticoid receptors, translocate to nucleus, and modulate gene transcription producing broad anti-inflammatory and immunosuppressive effects; also exert metabolic, cardiovascular, and CNS effects.",
+      "mechanism_overview_zh": "結合細胞內糖皮質激素受體，轉位至細胞核調節基因轉錄，產生廣泛的抗炎與免疫抑制效果；同時有代謝、心血管及中樞神經系統效應。",
+      "site_of_action_en": "Ubiquitous intracellular glucocorticoid receptors",
+      "site_of_action_zh": "全身細胞內糖皮質激素受體",
+      "indications_en": [
+        "Inflammatory and autoimmune conditions",
+        "Allergic reactions",
+        "Adrenal insufficiency replacement therapy",
+        "Organ transplant rejection prophylaxis"
+      ],
+      "indications_zh": [
+        "炎症與自體免疫疾病",
+        "過敏反應",
+        "腎上腺功能不全替代療法",
+        "器官移植排斥預防"
+      ],
+      "shared_adverse_effects_en": [
+        "Hyperglycemia",
+        "Immunosuppression and increased infection susceptibility",
+        "Osteoporosis (long-term use)",
+        "Fluid and sodium retention",
+        "Mood and sleep changes",
+        "Adrenal suppression with chronic use"
+      ],
+      "shared_adverse_effects_zh": [
+        "高血糖",
+        "免疫抑制，增加感染風險",
+        "骨質疏鬆（長期使用）",
+        "液體與鈉瀦留",
+        "情緒與睡眠改變",
+        "長期使用導致腎上腺抑制"
+      ],
+      "representative_drug_ids": [
+        "drug.prednisone"
+      ],
+      "prototype_drug_id": "drug.prednisone",
+      "sources": [
+        "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+        "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.nondhp_ccbs",
+      "name_en": "Non-dihydropyridine calcium channel blockers (Non-DHP CCBs)",
+      "name_zh": "非二氫吡啶類鈣通道阻滯劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.l_type_calcium_channel",
+      "suffix_en": null,
+      "mechanism_overview_en": "Block L-type voltage-gated calcium channels in cardiac and vascular smooth muscle, but with greater effect on cardiac conduction (AV node) and heart rate than dihydropyridines. Reduce HR, slow AV conduction, and reduce contractility.",
+      "mechanism_overview_zh": "阻斷心臟與血管平滑肌L型電壓門控鈣通道，但對心臟傳導（房室結）與心率的影響大於二氫吡啶類。降低心率、延緩房室傳導、減少心肌收縮力。",
+      "site_of_action_en": "L-type calcium channels in sinoatrial and atrioventricular nodes, cardiac muscle, and vascular smooth muscle",
+      "site_of_action_zh": "竇房結與房室結、心肌、血管平滑肌的L型鈣通道",
+      "indications_en": [
+        "Hypertension",
+        "Angina pectoris",
+        "Supraventricular tachyarrhythmias (rate control)",
+        "Atrial fibrillation/flutter rate control"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "上心室心動過速（頻率控制）",
+        "心房顫動/撲動的頻率控制"
+      ],
+      "shared_adverse_effects_en": [
+        "Bradycardia and heart block (high-yield: dangerous in combination with beta-blockers)",
+        "Hypotension",
+        "Constipation (especially verapamil)",
+        "Peripheral edema"
+      ],
+      "shared_adverse_effects_zh": [
+        "心跳過緩與心臟傳導阻滯（高度重要：與β阻斷劑合用有危險）",
+        "低血壓",
+        "便秘（尤其是維拉帕米）",
+        "周邊水腫"
+      ],
+      "representative_drug_ids": [
+        "drug.diltiazem"
+      ],
+      "prototype_drug_id": "drug.diltiazem",
+      "sources": [
+        "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md",
+        "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
     }
   ]
 }

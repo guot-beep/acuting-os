@@ -224,6 +224,51 @@
       "name_zh": "單胺氧化酶 (MAO-A / MAO-B)",
       "gene_symbol": "MAOA / MAOB",
       "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.glp1_receptor",
+      "name_en": "Glucagon-like peptide-1 (GLP-1) receptor",
+      "name_zh": "升糖素樣胜肽-1 受體",
+      "location_en": "Pancreatic beta cells, gut, brain",
+      "location_zh": "胰臟β細胞、腸道、腦部",
+      "mechanism_note_en": "Activation of GLP-1 receptor stimulates glucose-dependent insulin secretion, suppresses glucagon, slows gastric emptying, and reduces appetite.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.thyroid_hormone_receptor",
+      "name_en": "Thyroid hormone receptor (TR-alpha / TR-beta)",
+      "name_zh": "甲狀腺素受體 (TR-alpha / TR-beta)",
+      "location_en": "Cell nucleus; widespread in heart, liver, pituitary, bone",
+      "location_zh": "細胞核；廣泛分布於心臟、肝臟、腦垂體、骨骼",
+      "mechanism_note_en": "Exogenous T4 binds thyroid hormone receptors, restoring euthyroid physiology in hypothyroid patients. Excess produces hyperthyroid-like adverse effects.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.glucocorticoid_receptor",
+      "name_en": "Glucocorticoid receptor (GR / NR3C1)",
+      "name_zh": "糖皮質激素受體 (GR / NR3C1)",
+      "location_en": "Cytoplasm of virtually all nucleated cells",
+      "location_zh": "幾乎所有有核細胞的細胞質",
+      "mechanism_note_en": "Glucocorticoids bind intracellular GR, translocate to nucleus, and modulate gene transcription—broadly suppressing inflammation and immune response, with wide metabolic, endocrine, and CNS effects.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
     }
   ]
 }

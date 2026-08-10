@@ -3808,6 +3808,760 @@
       "medlineplus_title": "Phenelzine",
       "medlineplus_verified_on": "2026-08-09",
       "medlineplus_scope": "ingredient_broad"
+    },
+    {
+      "id": "drug.levothyroxine",
+      "name_en": "Levothyroxine",
+      "name_zh": "左旋甲狀腺素",
+      "brand_names_en": [
+        "Synthroid",
+        "Levoxyl",
+        "Tirosint"
+      ],
+      "drugclass_id": "drugclass.thyroid_hormones",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.thyroid_hormone_receptor",
+      "rxnorm_rxcui": "10582",
+      "mechanism_en": "Synthetic T4 (L-thyroxine). Replaces or supplements endogenous thyroid hormone. Peripheral deiodination converts T4 to active T3. Binds nuclear thyroid hormone receptors and regulates gene expression involved in metabolism, growth, and development.",
+      "mechanism_zh": "合成T4（左旋甲狀腺素）。替代或補充內源性甲狀腺素。周邊脫碘酶將T4轉化為活性T3。與核內甲狀腺素受體結合，調節代謝、生長及發育相關基因表達。",
+      "indications_en": [
+        "Hypothyroidism: replacement or supplemental therapy",
+        "Pituitary thyroid-stimulating hormone suppression (as adjunct to surgery and radioiodine therapy in selected thyroid conditions)"
+      ],
+      "indications_zh": [
+        "甲狀腺功能低下：替代或補充治療",
+        "腦垂體促甲狀腺素抑制（特定甲狀腺疾病術後及放射碘治療的輔助）"
+      ],
+      "contraindications_en": [
+        "Uncorrected adrenal insufficiency",
+        "Acute myocardial infarction",
+        "Known hypersensitivity to levothyroxine or any inactive ingredient"
+      ],
+      "contraindications_zh": [
+        "未矯正的腎上腺功能不全",
+        "急性心肌梗塞",
+        "已知對左旋甲狀腺素或任何非活性成分過敏"
+      ],
+      "warnings_en": [
+        "BOXED WARNING: Thyroid hormones, including levothyroxine, should not be used for the treatment of obesity or weight loss. Doses within or above the normal range may produce serious or life-threatening toxic effects particularly when given with sympathomimetic amines."
+      ],
+      "warnings_zh": [
+        "黑框警語：包括左旋甲狀腺素在內的甲狀腺素不得用於治療肥胖或減重。在正常或超出正常範圍的劑量，尤其與擬交感神經胺合用時，可能產生嚴重或威脅生命的毒性效應。"
+      ],
+      "adverse_effects_en": [
+        "Symptoms of hyperthyroidism when over-replaced: palpitations, tachycardia, anxiety, insomnia, heat intolerance, weight loss",
+        "Bone loss with prolonged supraphysiologic doses",
+        "Atrial fibrillation in older patients with excess doses"
+      ],
+      "adverse_effects_zh": [
+        "替代過量出現甲狀腺功能亢進症狀：心悸、心跳過速、焦慮、失眠、耐熱能力下降、體重減輕",
+        "長期超生理劑量導致骨質流失",
+        "老年患者過量使用可能出現心房顫動"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Levo = Left = T4, peripherally converts to active T3. TSH feedback is the monitoring anchor.",
+      "classic_association_en": "Levothyroxine -> Synthroid -> T4 replacement -> Monitor TSH -> Absorption interactions (Ca, Fe, food)",
+      "exam_trap_en": "Multiple drugs (calcium, iron, antacids) and food reduce levothyroxine absorption. Take on empty stomach. Pregnancy may require dose increase. Old pregnancy category A (in course) is NOT current FDA labeling.",
+      "exam_trap_zh": "多種藥物（鈣、鐵、制酸劑）及食物降低左旋甲狀腺素吸收。應空腹服用。懷孕可能需要增加劑量。課件的妊娠類別A已是過時分類，非現行FDA標示。",
+      "clinical_use_note_zh": "考試層：T4替代療法原型藥、黑框警語（不得用於減重）、TSH監測、多重吸收交互作用。課件來源 P3 Endocrine；黑框來自 DailyMed。",
+      "field_sources": {
+        "mechanism_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#BOXED_WARNING"
+        ],
+        "adverse_effects_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "42a26f8a-dc67-42e4-abb0-d2602afb1b7d",
+      "dailymed_label_title": "LEVOTHYROXINE SODIUM tablet [Asclemed USA, Inc.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=42a26f8a-dc67-42e4-abb0-d2602afb1b7d",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a682461.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Levothyroxine",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "ingredient_broad"
+    },
+    {
+      "id": "drug.prednisone",
+      "name_en": "Prednisone",
+      "name_zh": "潑尼松",
+      "brand_names_en": [
+        "Deltasone",
+        "Rayos"
+      ],
+      "drugclass_id": "drugclass.systemic_glucocorticoids",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.glucocorticoid_receptor",
+      "rxnorm_rxcui": "8640",
+      "mechanism_en": "Prodrug converted to active prednisolone in the liver. Binds intracellular glucocorticoid receptors, translocates to nucleus, and modulates gene transcription — broadly suppressing inflammatory cytokines and immune response; also produces metabolic, cardiovascular, and CNS effects.",
+      "mechanism_zh": "前驅藥，在肝臟轉化為活性的潑尼龍（prednisolone）。結合細胞內糖皮質激素受體，轉位至細胞核調節基因轉錄—廣泛抑制炎症細胞因子與免疫反應；同時有代謝、心血管及中樞神經系統效應。",
+      "indications_en": [
+        "Inflammatory and autoimmune disorders (numerous)",
+        "Allergic conditions",
+        "Dermatologic diseases",
+        "Respiratory diseases including asthma",
+        "Hematologic disorders",
+        "Certain neoplastic conditions (adjunct)",
+        "Adrenal insufficiency (replacement)"
+      ],
+      "indications_zh": [
+        "炎症與自體免疫疾患（多種）",
+        "過敏性疾病",
+        "皮膚疾病",
+        "呼吸疾病，包括氣喘",
+        "血液疾患",
+        "特定腫瘤疾病（輔助）",
+        "腎上腺功能不全（替代）"
+      ],
+      "contraindications_en": [
+        "Systemic fungal infections",
+        "Known hypersensitivity to components of the formulation"
+      ],
+      "contraindications_zh": [
+        "全身性真菌感染",
+        "對製劑成分已知過敏"
+      ],
+      "warnings_en": [
+        "Infection risk: corticosteroids may mask signs of infection and increase susceptibility. Disseminated infection risk with live vaccines and immunosuppressed patients.",
+        "Adrenal suppression: abrupt withdrawal after prolonged use can cause adrenal crisis.",
+        "Psychiatric effects: euphoria, insomnia, mood changes, severe depression, and psychotic manifestations may occur.",
+        "Musculoskeletal: corticosteroid myopathy and osteoporosis with prolonged use.",
+        "Endocrine: hyperglycemia and worsening diabetes control."
+      ],
+      "warnings_zh": [
+        "感染風險：皮質類固醇可能掩蓋感染徵象並增加易感性。活疫苗及免疫抑制患者有播散性感染風險。",
+        "腎上腺抑制：長期使用後突然停藥可能引發腎上腺危象。",
+        "精神症狀：可能出現欣快感、失眠、情緒變化、嚴重憂鬱及精神病症狀。",
+        "肌肉骨骼：長期使用導致皮質類固醇肌病及骨質疏鬆。",
+        "內分泌：高血糖及糖尿病控制惡化。"
+      ],
+      "adverse_effects_en": [
+        "Hyperglycemia",
+        "Increased appetite / weight gain",
+        "Fluid retention / edema",
+        "Mood changes, insomnia, euphoria",
+        "Osteoporosis (long-term)",
+        "Myopathy (proximal muscle weakness)",
+        "Skin thinning, striae",
+        "Increased susceptibility to infection",
+        "Cataracts and glaucoma with prolonged use"
+      ],
+      "adverse_effects_zh": [
+        "高血糖",
+        "食慾增加/體重增加",
+        "液體瀦留/水腫",
+        "情緒改變、失眠、欣快感",
+        "骨質疏鬆（長期）",
+        "肌病（近端肌肉無力）",
+        "皮膚萎縮、妊娠紋",
+        "感染易感性增加",
+        "長期使用導致白內障與青光眼"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "PREDNISONE multi-system: Glucose up, Infection up, Bones down, Mood up then down",
+      "classic_association_en": "Systemic glucocorticoid -> anti-inflammatory prototype -> multi-system adverse effects -> adrenal suppression on abrupt withdrawal",
+      "exam_trap_en": "Do not stop abruptly after prolonged use — adrenal crisis risk. Glucose can rise significantly even in non-diabetics. Old pregnancy category C/D wording in older courses is not current FDA labeling.",
+      "exam_trap_zh": "長期使用後不得突然停藥——有腎上腺危象風險。即使是非糖尿病患者也可能出現明顯血糖升高。舊課件的妊娠類別C/D是過時分類，非現行FDA標示。",
+      "clinical_use_note_zh": "考試層：全身性糖皮質激素原型藥、多系統不良反應、腎上腺抑制/戒斷風險。課件來源 P3 Endocrine；禁忌與警語來自 DailyMed。",
+      "integrative_clinical_flags": [
+        "immunosuppression",
+        "infection_risk",
+        "glucose_effects",
+        "bone_health"
+      ],
+      "field_sources": {
+        "mechanism_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#ADVERSE_REACTIONS",
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "d6df3295-3118-49af-be05-b1fab0d4adaa",
+      "dailymed_label_title": "PREDNISONE TABLETS, USP, 5 MG [Hikma Pharmaceuticals]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d6df3295-3118-49af-be05-b1fab0d4adaa",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a601102.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Prednisone",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "ingredient_broad"
+    },
+    {
+      "id": "drug.semaglutide",
+      "name_en": "Semaglutide",
+      "name_zh": "司美格魯肽",
+      "brand_names_en": [
+        "Ozempic (injection, SC, T2DM/CV/CKD)",
+        "Wegovy (injection, SC, weight management)",
+        "Rybelsus (oral tablet, T2DM)"
+      ],
+      "drugclass_id": "drugclass.glp1_receptor_agonists",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.glp1_receptor",
+      "rxnorm_rxcui": "2200732",
+      "mechanism_en": "GLP-1 receptor agonist. Activates GLP-1 receptors to stimulate glucose-dependent insulin secretion, suppress glucagon release, slow gastric emptying, and reduce appetite. Also reduces hepatic glucose output. Has cardiovascular and renal protective effects independent of glucose lowering.",
+      "mechanism_zh": "GLP-1受體促效劑。激活GLP-1受體，促進葡萄糖依賴性胰島素分泌，抑制升糖素釋放，延緩胃排空，降低食慾。亦減少肝臟葡萄糖輸出。具有獨立於降糖作用的心血管與腎臟保護效果。",
+      "indications_en": [
+        "Type 2 diabetes mellitus: glycemic control in adults (Ozempic/Rybelsus)",
+        "Reduction of major cardiovascular events in adults with T2DM + established CVD (Ozempic)",
+        "Reduction of CV and kidney outcomes in adults with T2DM + CKD (Ozempic)",
+        "Chronic weight management: BMI ≥30 or ≥27 with weight-related comorbidity (Wegovy)"
+      ],
+      "indications_zh": [
+        "第二型糖尿病成人血糖控制（Ozempic/Rybelsus）",
+        "T2DM合併確診心血管疾病成人的主要心血管事件降低（Ozempic）",
+        "T2DM合併CKD成人的心血管與腎臟預後降低（Ozempic）",
+        "慢性體重管理：BMI≥30或≥27合併體重相關共病（Wegovy）"
+      ],
+      "contraindications_en": [
+        "Personal or family history of medullary thyroid carcinoma (MTC)",
+        "Multiple endocrine neoplasia syndrome type 2 (MEN2)",
+        "Known serious hypersensitivity to semaglutide or excipients"
+      ],
+      "contraindications_zh": [
+        "個人或家族性甲狀腺髓樣癌（MTC）病史",
+        "第二型多發性內分泌腺瘤症（MEN2）",
+        "已知對司美格魯肽或賦形劑嚴重過敏"
+      ],
+      "warnings_en": [
+        "BOXED WARNING (Ozempic): Risk of thyroid C-cell tumors. Contraindicated in patients with personal/family history of MTC or MEN2. Human relevance unknown.",
+        "Pancreatitis: Discontinue if suspected.",
+        "Hypoglycemia: Risk increases when combined with insulin or insulin secretagogue.",
+        "Acute gallbladder disease: Increased rate reported.",
+        "Acute kidney injury: Monitor renal function with severe GI adverse reactions.",
+        "Peri-procedural aspiration risk: Delay gastric emptying may increase risk. Follow current procedural team guidance."
+      ],
+      "warnings_zh": [
+        "黑框警語（Ozempic）：甲狀腺C細胞腫瘤風險。MTC或MEN2個人/家族病史患者禁用。人體相關性未知。",
+        "胰臟炎：若疑似應停藥。",
+        "低血糖：與胰島素或胰島素促分泌劑合用時風險增加。",
+        "急性膽囊疾病：報告發生率增加。",
+        "急性腎損傷：嚴重胃腸道不良反應時應監測腎功能。",
+        "圍術期吸入風險：胃排空延遲可能增加風險，應遵循手術團隊現行指引。"
+      ],
+      "adverse_effects_en": [
+        "Nausea, vomiting, diarrhea, abdominal pain (very common)",
+        "Constipation",
+        "Decreased appetite",
+        "Injection site reactions (SC forms)"
+      ],
+      "adverse_effects_zh": [
+        "噁心、嘔吐、腹瀉、腹痛（非常常見）",
+        "便秘",
+        "食慾下降",
+        "注射部位反應（皮下劑型）"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Sema-GLUTIDE = GLP-1 = Glucose-dependent, Lowers appetite, Protects heart",
+      "classic_association_en": "GLP-1 agonist -> Ozempic/Wegovy -> nausea very common -> MTC boxed warning -> delays gastric emptying (peri-procedure risk)",
+      "exam_trap_en": "Product matters: Ozempic ≠ Wegovy ≠ Rybelsus. GLP-1s delay gastric emptying — anesthesia/procedure planning must account for this. Discontinue ≥ 2 months before planned pregnancy (long washout).",
+      "exam_trap_zh": "產品有別：Ozempic≠Wegovy≠Rybelsus。GLP-1類藥物延緩胃排空——麻醉/手術計劃須考量此點。計劃懷孕前至少2個月停藥（半衰期長）。",
+      "clinical_use_note_zh": "考試層：GLP-1受體促效劑原型藥、MTC黑框、噁心高發、胃排空延遲/圍術期風險。課件來源 P3 Endocrine；黑框來自 DailyMed Ozempic 標籤。",
+      "integrative_clinical_flags": [
+        "glucose_effects",
+        "procedural_safety"
+      ],
+      "field_sources": {
+        "mechanism_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#BOXED_WARNING",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79",
+      "dailymed_label_title": "OZEMPIC- semaglutide injection, solution [Novo Nordisk]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=adec4fd2-6858-4c99-91d4-531f5f2a2d79",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a618008.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Semaglutide Injection",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "formulation_compatible"
+    },
+    {
+      "id": "drug.rosuvastatin",
+      "name_en": "Rosuvastatin",
+      "name_zh": "瑞舒伐他汀",
+      "brand_names_en": [
+        "Crestor",
+        "Ezallor"
+      ],
+      "drugclass_id": "drugclass.statins",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.hmg_coa_reductase",
+      "rxnorm_rxcui": "301542",
+      "suffix_en": "-statin",
+      "mechanism_en": "HMG-CoA reductase inhibitor (statin). Competitively inhibits HMG-CoA reductase, the rate-limiting step in cholesterol biosynthesis. Reduces hepatic cholesterol synthesis, upregulates LDL receptors, and lowers circulating LDL-C.",
+      "mechanism_zh": "HMG-CoA還原酶抑制劑（他汀類）。競爭性抑制膽固醇合成限速步驟HMG-CoA還原酶。降低肝臟膽固醇合成，上調LDL受體，降低循環LDL膽固醇。",
+      "indications_en": [
+        "Primary hyperlipidemia and mixed dyslipidemia: reduction of LDL-C, total cholesterol, ApoB, TG; increase of HDL-C",
+        "Hypertriglyceridemia",
+        "Primary dysbetalipoproteinemia",
+        "Homozygous familial hypercholesterolemia",
+        "Reduction of cardiovascular risk in patients without clinically evident coronary artery disease (JUPITER trial indication)"
+      ],
+      "indications_zh": [
+        "原發性高脂血症與混合性血脂異常：降低LDL-C、總膽固醇、ApoB、TG；升高HDL-C",
+        "高三酸甘油酯血症",
+        "原發性異常β脂蛋白血症",
+        "純合子家族性高膽固醇血症",
+        "無明顯冠狀動脈疾病患者的心血管風險降低（JUPITER試驗適應症）"
+      ],
+      "contraindications_en": [
+        "Active liver disease, including unexplained persistent elevations of hepatic transaminases",
+        "Pregnancy",
+        "Breastfeeding",
+        "Known hypersensitivity to rosuvastatin or its components",
+        "Concomitant cyclosporine use (for Crestor)"
+      ],
+      "contraindications_zh": [
+        "活動性肝病，包括原因不明的持續性肝轉氨酶升高",
+        "妊娠",
+        "哺乳",
+        "已知對瑞舒伐他汀或其成分過敏",
+        "合用環孢素（Crestor製劑）"
+      ],
+      "warnings_en": [
+        "Myopathy and rhabdomyolysis: risk increases with higher doses, Asian patients, renal impairment, hypothyroidism, and interacting drugs. Instruct patients to report unexplained muscle pain/weakness/tenderness.",
+        "Liver enzyme elevations: rare; consider discontinuation for persistent significant elevations.",
+        "Endocrine: may cause elevated blood glucose levels; weigh against cardiovascular benefit."
+      ],
+      "warnings_zh": [
+        "肌病與橫紋肌溶解：高劑量、亞裔患者、腎功能損害、甲狀腺功能低下及交互作用藥物時風險增加。指導患者回報原因不明的肌肉疼痛/無力/壓痛。",
+        "肝酶升高：罕見；持續顯著升高時考慮停藥。",
+        "內分泌：可能導致血糖升高；需與心血管獲益進行評估。"
+      ],
+      "adverse_effects_en": [
+        "Myalgia (muscle pain/aches)",
+        "Headache",
+        "Abdominal pain",
+        "Nausea",
+        "Rhabdomyolysis (rare but serious)",
+        "Liver enzyme elevations"
+      ],
+      "adverse_effects_zh": [
+        "肌痛（肌肉疼痛/酸痛）",
+        "頭痛",
+        "腹痛",
+        "噁心",
+        "橫紋肌溶解（罕見但嚴重）",
+        "肝酶升高"
+      ],
+      "board_priority": "high",
+      "prototype_drug": false,
+      "mnemonic_en": "Rosuva = Crestor. More potent than atorvastatin per mg. Still same class toxicity: myopathy/rhabdo.",
+      "classic_association_en": "High-intensity statin -> Crestor -> compare atorvastatin for potency -> same myopathy risk class",
+      "exam_trap_en": "Legacy statin pregnancy category X is NOT current FDA labeling. Contraindicated in pregnancy. Myopathy risk increases with renal impairment and interacting drugs (especially CYP interactions different from atorvastatin).",
+      "exam_trap_zh": "舊課件他汀類妊娠類別X非現行FDA標示，但妊娠仍屬禁忌。腎功能損害與交互作用藥物（與阿托伐他汀的CYP交互作用特性不同）會增加肌病風險。",
+      "field_sources": {
+        "mechanism_en": [
+          "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md",
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "d58f1f63-4bb6-413c-9730-ded3e8078618",
+      "dailymed_label_title": "ROSUVASTATIN CALCIUM tablet, film coated",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d58f1f63-4bb6-413c-9730-ded3e8078618",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a603033.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Rosuvastatin",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "ingredient_broad"
+    },
+    {
+      "id": "drug.diltiazem",
+      "name_en": "Diltiazem",
+      "name_zh": "地爾硫卓",
+      "brand_names_en": [
+        "Cardizem",
+        "Tiazac",
+        "Cartia XT"
+      ],
+      "drugclass_id": "drugclass.nondhp_ccbs",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.l_type_calcium_channel",
+      "rxnorm_rxcui": "3443",
+      "suffix_en": null,
+      "mechanism_en": "Non-dihydropyridine calcium channel blocker (benzothiazepine subclass). Blocks L-type voltage-gated calcium channels in cardiac and vascular smooth muscle. Slows sinoatrial and atrioventricular nodal conduction, reduces heart rate, decreases myocardial contractility, and dilates coronary and peripheral vasculature.",
+      "mechanism_zh": "非二氫吡啶類鈣通道阻滯劑（苯并噻氮卓亞類）。阻斷心臟與血管平滑肌L型電壓門控鈣通道。延緩竇房結與房室結傳導，降低心率，減少心肌收縮力，擴張冠狀動脈與周邊血管。",
+      "indications_en": [
+        "Chronic stable angina",
+        "Angina due to coronary artery spasm",
+        "Hypertension (extended-release forms)",
+        "Supraventricular tachyarrhythmias: rate control of atrial fibrillation/flutter (IV form); paroxysmal supraventricular tachycardia (IV form)"
+      ],
+      "indications_zh": [
+        "慢性穩定型心絞痛",
+        "冠狀動脈痙攣引起的心絞痛",
+        "高血壓（緩釋劑型）",
+        "室上性心動過速：心房顫動/撲動的心率控制（靜脈劑型）；陣發性室上性心動過速（靜脈劑型）"
+      ],
+      "contraindications_en": [
+        "Sick sinus syndrome (except with functioning pacemaker)",
+        "Second- or third-degree AV block (except with functioning pacemaker)",
+        "Severe hypotension (systolic < 90 mmHg)",
+        "Acute myocardial infarction with pulmonary congestion",
+        "Concomitant IV beta-blockers"
+      ],
+      "contraindications_zh": [
+        "病竇症候群（有功能心律器除外）",
+        "二度或三度房室傳導阻滯（有功能心律器除外）",
+        "嚴重低血壓（收縮壓<90 mmHg）",
+        "伴肺充血的急性心肌梗塞",
+        "禁止與靜脈注射β阻斷劑合用"
+      ],
+      "warnings_en": [
+        "Cardiac conduction abnormalities: can cause bradycardia and AV block — monitor ECG.",
+        "Heart failure: use with caution; can worsen systolic heart failure.",
+        "Hypotension.",
+        "Drug interactions: inhibits CYP3A4; multiple significant interactions including cyclosporine, simvastatin."
+      ],
+      "warnings_zh": [
+        "心臟傳導異常：可能引起心跳過緩與房室傳導阻滯——監測心電圖。",
+        "心衰竭：謹慎使用；可能加重收縮性心衰竭。",
+        "低血壓。",
+        "藥物交互作用：抑制CYP3A4；與環孢素、辛伐他汀等多種藥物有顯著交互作用。"
+      ],
+      "adverse_effects_en": [
+        "Bradycardia",
+        "AV block",
+        "Peripheral edema",
+        "Hypotension",
+        "Constipation",
+        "Dizziness, headache"
+      ],
+      "adverse_effects_zh": [
+        "心跳過緩",
+        "房室傳導阻滯",
+        "周邊水腫",
+        "低血壓",
+        "便秘",
+        "頭暈、頭痛"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Dilt-IAZ-em = non-DHP CCB. Contrasts with amlodipine: Diltiazem SLOWS the heart, Amlodipine OPENS the vessels.",
+      "classic_association_en": "Non-DHP CCB -> rate control AF/flutter -> do NOT combine IV with IV beta-blocker (fatal bradycardia/AV block risk)",
+      "exam_trap_en": "Do NOT combine IV diltiazem with IV beta-blockers — risk of severe bradycardia and AV block. CYP3A4 inhibitor — numerous drug interactions. Different from dihydropyridine CCBs: diltiazem significantly slows HR.",
+      "exam_trap_zh": "靜脈地爾硫卓不得與靜脈β阻斷劑合用——有嚴重心跳過緩與房室傳導阻滯風險。CYP3A4抑制劑——多種藥物交互作用。與二氫吡啶類CCB不同：地爾硫卓明顯降低心率。",
+      "field_sources": {
+        "mechanism_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "196fc367-330e-4d15-b1d6-084ad3f97ae7",
+      "dailymed_label_title": "DILTIAZEM HYDROCHLORIDE tablet [ScieGen Pharmaceuticals, Inc.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=196fc367-330e-4d15-b1d6-084ad3f97ae7",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a684027.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Diltiazem",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "ingredient_broad"
+    },
+    {
+      "id": "drug.atenolol",
+      "name_en": "Atenolol",
+      "name_zh": "阿替洛爾",
+      "brand_names_en": [
+        "Tenormin"
+      ],
+      "drugclass_id": "drugclass.beta1_selective_blockers",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "rxnorm_rxcui": "1202",
+      "suffix_en": "-olol",
+      "mechanism_en": "Selective beta-1 adrenergic receptor blocker (cardioselective). Competitively blocks catecholamine stimulation of cardiac beta-1 receptors, reducing heart rate, myocardial contractility, and AV conduction velocity. Reduces systemic blood pressure and myocardial oxygen demand.",
+      "mechanism_zh": "選擇性β1腎上腺素受體阻斷劑（心臟選擇性）。競爭性阻斷兒茶酚胺對心臟β1受體的刺激，降低心率、心肌收縮力及房室傳導速度。降低全身血壓與心肌需氧量。",
+      "indications_en": [
+        "Hypertension",
+        "Angina pectoris",
+        "Acute myocardial infarction (to reduce cardiovascular mortality)"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "急性心肌梗塞（降低心血管死亡率）"
+      ],
+      "contraindications_en": [
+        "Sinus bradycardia",
+        "Greater than first-degree AV block (without functioning pacemaker)",
+        "Cardiogenic shock",
+        "Overt cardiac failure",
+        "Known hypersensitivity to atenolol"
+      ],
+      "contraindications_zh": [
+        "竇性心跳過緩",
+        "一度以上房室傳導阻滯（無功能心律器）",
+        "心原性休克",
+        "明顯心衰竭",
+        "已知對阿替洛爾過敏"
+      ],
+      "warnings_en": [
+        "Abrupt cessation: can precipitate angina, myocardial infarction, or arrhythmia — taper when discontinuing.",
+        "Bronchospasm: beta-1 selectivity is relative; use with extreme caution in reactive airway disease.",
+        "Heart failure: can precipitate overt cardiac failure — use with extreme care.",
+        "Hypoglycemia: may mask tachycardia and other signs of hypoglycemia.",
+        "Renal impairment: atenolol is renally excreted; dose adjustment required in renal impairment."
+      ],
+      "warnings_zh": [
+        "突然停藥：可能誘發心絞痛、心肌梗塞或心律不整——停藥時應逐漸減量。",
+        "支氣管痙攣：β1選擇性為相對選擇性；反應性氣道疾病患者應極度謹慎使用。",
+        "心衰竭：可能誘發明顯心衰竭——需極度謹慎使用。",
+        "低血糖：可能掩蓋低血糖的心跳過速及其他症狀。",
+        "腎功能損害：阿替洛爾由腎臟排泄；腎功能損害時需調整劑量。"
+      ],
+      "adverse_effects_en": [
+        "Bradycardia",
+        "Hypotension",
+        "Fatigue, dizziness",
+        "Cold extremities",
+        "Wheezing / bronchospasm (in susceptible individuals)",
+        "Depression"
+      ],
+      "adverse_effects_zh": [
+        "心跳過緩",
+        "低血壓",
+        "疲勞、頭暈",
+        "肢端冰冷",
+        "喘鳴/支氣管痙攣（易感個體）",
+        "憂鬱"
+      ],
+      "board_priority": "high",
+      "prototype_drug": false,
+      "mnemonic_en": "Atenolol = -olol = beta blocker. ATEN = 'a ten' = beta-1 selective at ten. Compare: metoprolol vs atenolol (both beta-1 selective, different PK/renal vs hepatic)",
+      "classic_association_en": "Beta-1 selective blocker -> hypertension/angina -> renal clearance (contrast metoprolol which is hepatic) -> taper on discontinuation",
+      "exam_trap_en": "Do NOT stop abruptly — angina rebound risk. Beta-1 selectivity is NOT absolute — still can cause bronchospasm at higher doses. Atenolol is renally cleared; different from metoprolol (hepatic).",
+      "exam_trap_zh": "不得突然停藥——心絞痛反彈風險。β1選擇性為相對選擇性——高劑量仍可能引起支氣管痙攣。阿替洛爾由腎臟清除，不同於美托洛爾（肝臟清除）。",
+      "field_sources": {
+        "mechanism_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "4ca8dd77-cdac-41fe-a742-b1b32551203b",
+      "dailymed_label_title": "ATENOLOL tablet",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4ca8dd77-cdac-41fe-a742-b1b32551203b",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a684031.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Atenolol",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "ingredient_broad"
+    },
+    {
+      "id": "drug.carvedilol",
+      "name_en": "Carvedilol",
+      "name_zh": "卡維地洛",
+      "brand_names_en": [
+        "Coreg",
+        "Coreg CR"
+      ],
+      "drugclass_id": "drugclass.nonselective_beta_blockers",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "rxnorm_rxcui": "20352",
+      "suffix_en": "-ilol",
+      "mechanism_en": "Non-selective beta-adrenergic receptor blocker with additional alpha-1 adrenergic blocking activity. Blocks beta-1, beta-2, and alpha-1 receptors. The combined beta + alpha blockade produces vasodilation (unlike pure beta-blockers), reduces heart rate, and decreases systemic vascular resistance.",
+      "mechanism_zh": "非選擇性β腎上腺素受體阻斷劑，同時具有額外的α1腎上腺素阻斷活性。阻斷β1、β2及α1受體。β+α聯合阻斷產生血管舒張效果（不同於純β阻斷劑），降低心率，減少全身血管阻力。",
+      "indications_en": [
+        "Mild to severe chronic heart failure of ischemic or cardiomyopathic origin (to reduce cardiovascular mortality and hospitalizations)",
+        "Left ventricular dysfunction following myocardial infarction",
+        "Hypertension"
+      ],
+      "indications_zh": [
+        "缺血性或心肌病性輕至重度慢性心衰竭（降低心血管死亡率與住院率）",
+        "心肌梗塞後左心室功能不全",
+        "高血壓"
+      ],
+      "contraindications_en": [
+        "Bronchial asthma or related bronchospastic conditions",
+        "Second- or third-degree AV block without functioning pacemaker",
+        "Sick sinus syndrome without functioning pacemaker",
+        "Cardiogenic shock or decompensated heart failure requiring IV inotropic therapy",
+        "Severe bradycardia"
+      ],
+      "contraindications_zh": [
+        "支氣管哮喘或相關支氣管痙攣疾病",
+        "無功能心律器的二度或三度房室傳導阻滯",
+        "無功能心律器的病竇症候群",
+        "心原性休克或需靜脈正性肌力藥物的失代償性心衰竭",
+        "嚴重心跳過緩"
+      ],
+      "warnings_en": [
+        "Abrupt cessation: angina, MI, and arrhythmia can occur — taper gradually.",
+        "Bradycardia and hypotension: monitor; may require dose reduction.",
+        "Worsening heart failure: initiate at low doses with gradual up-titration; monitor for fluid retention.",
+        "Non-selective: blocks beta-2 — can cause significant bronchospasm in reactive airway disease. CONTRAINDICATED in bronchial asthma.",
+        "Hypoglycemia masking: can mask tachycardia of hypoglycemia."
+      ],
+      "warnings_zh": [
+        "突然停藥：可能出現心絞痛、心肌梗塞及心律不整——應逐漸減量。",
+        "心跳過緩與低血壓：監測；可能需要減量。",
+        "心衰竭惡化：從低劑量開始緩慢滴定；監測液體瀦留。",
+        "非選擇性：阻斷β2受體——反應性氣道疾病患者可能引起明顯支氣管痙攣。支氣管哮喘禁忌。",
+        "低血糖掩蓋：可能掩蓋低血糖引起的心跳過速。"
+      ],
+      "adverse_effects_en": [
+        "Dizziness, hypotension (especially postural)",
+        "Bradycardia",
+        "Fatigue, weakness",
+        "Worsening heart failure / peripheral edema",
+        "Bronchospasm (in susceptible patients)",
+        "Weight gain"
+      ],
+      "adverse_effects_zh": [
+        "頭暈、低血壓（尤其是體位性低血壓）",
+        "心跳過緩",
+        "疲勞、虛弱",
+        "心衰竭惡化/周邊水腫",
+        "支氣管痙攣（易感患者）",
+        "體重增加"
+      ],
+      "board_priority": "high",
+      "prototype_drug": false,
+      "mnemonic_en": "CARVEdilol = CARdiac protection + VEssel dilation (alpha-1 block). Non-selective + alpha = vasodilation unlike pure beta-blockers.",
+      "classic_association_en": "Non-selective beta + alpha-1 blocker -> heart failure mortality reduction -> vasodilation distinguishes from pure beta-blockers -> asthma CONTRAINDICATED",
+      "exam_trap_en": "Carvedilol blocks alpha-1 too (vasodilation = less reflex tachycardia than pure alpha-1 blockers). CONTRAINDICATED in asthma (blocks beta-2). Heart failure: start low, go slow — avoid rapid up-titration.",
+      "exam_trap_zh": "卡維地洛也阻斷α1受體（血管舒張 = 比純α1阻斷劑反射性心動過速少）。哮喘禁忌（阻斷β2）。心衰竭：從低劑量開始，緩慢滴定——避免快速增量。",
+      "field_sources": {
+        "mechanism_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-09",
+      "dailymed_setid": "32098c09-7580-4975-a3e1-31b619c04c69",
+      "dailymed_label_title": "CARVEDILOL tablet, film coated [Zydus Pharmaceuticals USA Inc.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=32098c09-7580-4975-a3e1-31b619c04c69",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a697042.html",
+      "medlineplus_url_kind": "verified_exact",
+      "medlineplus_title": "Carvedilol",
+      "medlineplus_verified_on": "2026-08-09",
+      "medlineplus_scope": "ingredient_broad"
     }
   ]
 }

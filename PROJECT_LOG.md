@@ -1,5 +1,20 @@
 # AcuTing OS Project Log
 
+## 2026-08-09 Antigravity — Pharm Bastyr Week 1–2 Priority Pack Batch 1
+- **What was done:** Executed Batch 1 of Bastyr Week 1-2 Priority Pack under frozen validator rules. Integrated 7 new medications (`levothyroxine`, `prednisone`, `semaglutide`, `rosuvastatin`, `diltiazem`, `atenolol`, `carvedilol`) with verified DailyMed SetIDs, exact MedlinePlus URLs, verified API response records, and new drug classes/targets. `drug.metformin` was temporarily excluded because the frozen validator `forbiddenExtra` set contains `'metformin'`.
+- **Numbers (before -> after):**
+  - Canonical Drugs: 33 -> 40 (+7).
+  - Drug Classes: 29 -> 33 (+4).
+  - Drug Targets: 26 -> 29 (+3).
+  - Systems: 5 -> 5 (+0).
+  - MedlinePlus Scope counts: `ingredient_broad`: 34, `formulation_compatible`: 4, `formulation_partial`: 1, `none`: 1.
+- **Verification Results:**
+  - `scripts/validate-pharm-standard.js`: PASS (0 blocking defects, 0 warnings).
+  - `scripts/build-data.js`: PASS (0 errors).
+  - `scripts/validate-interactions.js`: PASS (0 failures, 0 warnings).
+- **Known Unresolved:** `drug.metformin` requires Ting authorization for a validator patch to resolve the `'metformin'` keyword in `forbiddenExtra`.
+- **Next Step:** STOP. Awaiting Ting independent review and authorization for the next batch or validator patch.
+
 ## 2026-08-09 Antigravity — Pharm MedlinePlus Resource Scope & Evidence QA Patch
 - **What was done:** Completed bounded Pharm MedlinePlus Resource Scope & Evidence QA Patch. (1) Audited all 33 cards for resource scope: classified into 27 `ingredient_broad`, 3 `formulation_compatible` (`enoxaparin`, `heparin`, `albuterol`), 1 `formulation_partial` (`drug.atropine` - Atropine Ophthalmic vs systemic card), and 1 `none` (`drug.mannitol`). (2) Enriched `medlineplus_verified_links.json` with external provenance evidence (`source_index_page`, `search_sources_checked`, `medlineplus_scope`). (3) Added non-self-certifying external wrong-drug identity verification (Test 1) and scope mismatch detection (Test 2) to `validate-pharm-standard.js`. (4) Strengthened `verified_none` contract requiring documented search index sources (`search_sources_checked`) for `drug.mannitol` (Test 4 & 7). (5) Reconciled `docs/PHARM_CARD_TEMPLATE.md` `verification_status` contract enum (`unverified`, `machine_metadata_verified`, `human_reviewed`) (Test 10). (6) Updated UI in `js/knowledge.js` to explicitly label partial formulation scope (`Atropine Ophthalmic ⚠️`).
 - **Numbers (before -> after):**
