@@ -161,4 +161,117 @@ node scripts/validate-relations.js
   Relation validation passed (sign_symptom_ids / sources all resolve)
 ```
 
-(Commit 2 section appended after that commit lands — see below.)
+### Commit 2 — neuro/vestibular group + carpal_tunnel/restless_legs C10 fixes (8 records)
+
+`cond.tension_headache` (additive only: `aliases_zh/en` + `sign_symptom_ids`
+expanded to `sym.neck_pain`/`sym.shoulder_pain`; `western_pathology_zh/en`
+deliberately NOT touched — see C10 boundary note above), `cond.carpal_tunnel`
+(C10 boilerplate `etiology_zh`/`western_pathology_zh` REPLACED with real
+SOL-sourced content + bilingual `_en` added; `risk_factors`/`acupuncture_scope`/
+`sources`/`field_sources`/`sign_symptom_ids` added — existing `summary`/
+`western_context`/`red_flags` from a prior orthopedic batch left untouched),
+`cond.peripheral_neuropathy` (field_sources added, sign_symptom_ids 1→4),
+`cond.epilepsy` (field_sources added, sign_symptom_ids added — `relations`
+maturity criterion now met honestly via sign_symptom_ids, NOT via a forced
+`related_patterns`/`tdis.*` link from the unreviewed tcm_pathogenesis seed),
+`cond.bppv` (full skeleton build), `cond.menieres` (risk_factors — previously
+empty arrays — + sources + field_sources added; sign_symptom_ids expanded with
+`sym.hearing_loss`; existing real non-boilerplate content untouched),
+`cond.restless_legs` (C10 boilerplate `etiology_zh`/`western_pathology_zh`
+REPLACED with real SOL-sourced content + bilingual `_en` added; full build of
+everything else — summary/western_context/risk_factors/red_flags/
+acupuncture_scope/sign_symptom_ids/sources/field_sources, all previously
+absent), `cond.vestibular_neuritis` (full skeleton build).
+
+**Judgment call — C10 replacement authorization for `carpal_tunnel` and
+`restless_legs`**: both records carried the identical 56-way-shared generic
+boilerplate in `etiology_zh`/`western_pathology_zh`
+("正氣不足，臟腑功能失調，氣血津液運化不利。" / "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。").
+`docs/research_packs/COND_C5_LEDGER.md` treats this class of defect as
+"Skipped — owned by the untangle pass" for its own (translation-only) scope.
+This batch is different in kind: `COND_INGESTION_LEDGER.md` documents the same
+detail-batch series REPEATEDLY replacing this exact class of boilerplate with
+real sourced content when directly enriching a record (`cond.influenza`,
+`cond.menieres`, `cond.osteoporosis`, `cond.acute_bronchitis` — quote: "C10
+boilerplate replaced per validator's own authorization"). Since
+`carpal_tunnel`/`restless_legs` are this batch's own assigned targets (not
+incidental touches), the same precedent was applied. `cond.tension_headache`
+was NOT touched the same way because it is not resolvable by simple
+replacement — its shared text is a real (if broadly-scoped) article duplicated
+across `tension_headache`/`cluster_headache`/`migraine`/`migraine_vestibular`
+(4-way, per COND_C5_LEDGER), not a single-line generic stub with no specific
+home; disentangling which card the content actually belongs to needs the
+dedicated untangle pass, not a detail-batch call.
+
+**Judgment call — `cond.pulmonary_hypertension` name/scope mismatch**: flagged
+above (row 5) for Ting; content written as general PH per icd_hint/name_en,
+`name_zh` (PAH-specific) left untouched.
+
+**Judgment call — `cond.epilepsy` relations**: added `sign_symptom_ids` only to
+close the "relations" maturity gap honestly; did NOT add `related_patterns` or
+`related_eastern_diseases` from the tcm_pathogenesis seed, which explicitly
+warns "與中醫「癇病」可有臨床重疊但不自動等同" (constitution redline 9 — no
+uncertain-as-certain, no West=TCM equivalence).
+
+Validation trail:
+
+```
+node scripts/build-data.js                         PASS
+node scripts/validate-condition-standard.js
+  blocking: 294 -> 285  BETTER (-9)
+    C4  43 -> 42  (-1: cond.restless_legs — was draft+content, no red_flags;
+        now has red_flags)
+    C5  124 -> 120  (-4: carpal_tunnel etiology_en + western_pathology_en,
+        restless_legs etiology_en + western_pathology_en, all now paired)
+    C10 127 -> 123  (-4: carpal_tunnel + restless_legs etiology_zh +
+        western_pathology_zh no longer match the 56-way boilerplate)
+  N4 skeleton-count: 289 -> 287 (-2: bppv, vestibular_neuritis)
+node scripts/check-validation-ratchet.js --update
+  conditions 294 -> 285  BETTER  PASS — baseline updated (ratchet only ever
+  allows downward movement; locked in per the script's own recommendation)
+node scripts/validate-content-junk.js
+  PASS — no scraped header tokens (1 pre-existing formula-layer WARN, unrelated)
+node scripts/validate-relations.js
+  Relation validation passed (sign_symptom_ids / sources all resolve)
+```
+
+## Batch totals (both commits, 15 records)
+
+- **0 new `cond.*` records created.**
+- **full_detail_count** (live audit, `node scripts/audit-cr010-condition-detail-maturity.js`):
+  **65 → 77** (+12; the other 3 of the 15 — tension_headache, trigeminal_neuralgia,
+  bells_palsy — were already FULL_DETAIL_CANDIDATE pre-batch, deepened not promoted).
+  All 15 targeted conditions now score FULL_DETAIL_CANDIDATE.
+  partial_count 91→85 (-6), skeleton_count 349→343 (-6), arithmetic checks:
+  91-6=85 ✓, 349-6=343 ✓, 65+12=77 ✓.
+- **Overall condition-layer blocking defects**: 294 → 285 (net **-9**, better —
+  not just flat/neutral, a genuine improvement from the authorized C10 fixes).
+- **sign_symptom_ids added/expanded**: 11 of 15 records (all except
+  `cond.trigeminal_neuralgia` — no genuine match — and 3 that already had full
+  coverage from the SOL text before this batch: none; every record received at
+  least a documented decision).
+- **Sources used this batch**: NHLBI (bronchiectasis, pulmonary hypertension),
+  CDC (TB, influenza, RSV + RSV risk-group pages), NIDCD (BPPV, Ménière's,
+  vestibular neuritis, balance disorders), NINDS (carpal tunnel via peripheral
+  neuropathy page + PMC review, restless legs + PMC review), AAOS OrthoInfo
+  (carpal tunnel), PMC/NCBI literature reviews (BPPV risk factors, RLS iron/
+  augmentation literature, vestibular neuritis StatPearls, CTS risk factors) —
+  used only where the institute overview page lacked risk-factor granularity,
+  same standard as Batch 01's NIDDK-family sourcing.
+- **`acupuncture_scope.evidence`**: `unknown` for all 15 — no acupuncture-
+  specific efficacy guideline was located in this session's live research for
+  any of the 15 conditions; matches the existing honest convention already
+  used elsewhere in this dataset (never inflated to `guideline`/`course`
+  without a real citation).
+- **P-4 pattern adjudication** (external_wind_damp CREATE_CANONICAL
+  recommendation): not actioned — out of scope for a condition-detail batch,
+  flagged above for a separate pattern-registry decision.
+- **Missing staging asset**: `data/research_staging/cr010_source_reuse_map_batch02_SOL.json`
+  (referenced in the pack's own manifest/README) does not exist on disk —
+  flagged, not actioned.
+
+## Next batch
+
+`remaining_detail_slots_to_300` per the live audit after this batch: **235 → 223**
+(-12). This batch's 15 conditions are cleared from the CR-010 Common-300 detail
+queue. `full_detail_count` 65 → 77 (target: 300).

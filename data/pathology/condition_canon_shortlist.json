@@ -8667,8 +8667,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "重複性手腕動作或負荷（含使用震動工具）、妊娠、糖尿病、類風濕性關節炎、甲狀腺功能低下及肥胖等全身性因素可增加腕隧道內壓力，提高罹病風險；女性風險高於男性。",
+      "western_pathology_zh": "腕隧道內壓力增加壓迫正中神經，導致感覺與運動纖維功能受損。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8705,7 +8705,156 @@
         "rf.carpal_tunnel.legacy01",
         "rf.carpal_tunnel.legacy02",
         "rf.carpal_tunnel.legacy03"
-      ]
+      ],
+      "etiology_en": "Repetitive wrist motion or loading (including vibrating tools), pregnancy, diabetes, rheumatoid arthritis, hypothyroidism, and obesity are systemic factors that raise carpal tunnel pressure and increase risk; women are at higher risk than men.",
+      "western_pathology_en": "Raised pressure within the carpal tunnel compresses the median nerve and impairs sensory and motor fiber function.",
+      "risk_factors_zh": [
+        {
+          "factor": "重複性手腕動作或負荷（含使用震動工具）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "糖尿病",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "甲狀腺功能低下",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Repetitive wrist motion or loading (including vibrating tools)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "Diabetes",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "Hypothyroidism",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        },
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為輕度至中度症狀（未達持續肌萎縮或明顯運動功能缺損）之輔助照護，需同時處理誘發負荷與夜間副木等基礎治療",
+        "precautions": "治療前確認是否已有大魚際肌萎縮或持續性麻木等進行性徵象；避免延誤神經傳導檢查與手術評估的適當時機",
+        "co_management": "與病人的骨科／神經科醫師聯絡確認神經傳導檢查結果與是否已符合手術減壓適應症，不建議病人以針灸取代必要的手術評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NINDS 與相關文獻整理）",
+        "note": "尚未於本次查證中確認腕隧道症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for mild-to-moderate symptoms (without persistent thenar wasting or clear motor deficit) alongside basic treatment such as reducing provoking load and night splinting",
+        "precautions": "Confirm before treatment whether progressive signs such as thenar wasting or persistent numbness are present; avoid delaying nerve conduction studies and surgical evaluation when indicated",
+        "co_management": "Contact the patient's orthopedist/neurologist to confirm nerve conduction study results and whether surgical decompression criteria are met; do not let acupuncture substitute for necessary surgical evaluation",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from NINDS and related literature)",
+        "note": "No systematic-review source for carpal tunnel syndrome acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sources": [
+        "NINDS/NIH — Peripheral Neuropathy: https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
+        "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC): https://pmc.ncbi.nlm.nih.gov/articles/PMC7164699/",
+        "AAOS OrthoInfo — Carpal Tunnel Syndrome: https://orthoinfo.aaos.org/en/diseases--conditions/carpal-tunnel-syndrome/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "sign_symptom_ids": [
+        "sym.numbness",
+        "sym.weakness",
+        "sym.muscle_atrophy"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "AAOS OrthoInfo — Carpal Tunnel Syndrome"
+        ],
+        "summary_en": [
+          "AAOS OrthoInfo — Carpal Tunnel Syndrome"
+        ],
+        "western_context_zh": [
+          "AAOS OrthoInfo — Carpal Tunnel Syndrome"
+        ],
+        "western_context_en": [
+          "AAOS OrthoInfo — Carpal Tunnel Syndrome"
+        ],
+        "etiology_zh": [
+          "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        ],
+        "etiology_en": [
+          "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        ],
+        "western_pathology_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "western_pathology_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "risk_factors_zh": [
+          "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        ],
+        "risk_factors_en": [
+          "NIH/NCBI — Carpal Tunnel Syndrome: A Review of Literature (PMC)"
+        ],
+        "red_flags_zh": [
+          "AAOS OrthoInfo — Carpal Tunnel Syndrome"
+        ],
+        "red_flags_en": [
+          "AAOS OrthoInfo — Carpal Tunnel Syndrome"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      }
     },
     {
       "id": "cond.de_quervain",
@@ -13078,7 +13227,9 @@
         ]
       },
       "sign_symptom_ids": [
-        "sym.headache"
+        "sym.headache",
+        "sym.neck_pain",
+        "sym.shoulder_pain"
       ],
       "etiology_en": "Commonly arises from unresolved emotional stress and liver qi stagnation, impairing the free flow of qi so clear yang fails to ascend; or from prolonged sitting and overexertion impairing the movement of qi and blood, leaving the sinews of the neck and shoulders undernourished and tight. In protracted cases with combined qi-blood deficiency, a dull, persistent headache may result.",
       "risk_factors_zh": [
@@ -13148,7 +13299,15 @@
         "evidence": "guideline",
         "source": "curriculum/conditions course handouts + AcuTing OS synthesis (per ICHD-3 and standard neurology references)",
         "note": "Some systematic reviews support acupuncture as a tension-type headache prevention option, with moderate evidence grade"
-      }
+      },
+      "aliases_zh": [
+        "壓力性頭痛",
+        "肌肉收縮性頭痛"
+      ],
+      "aliases_en": [
+        "Stress Headache",
+        "Muscle Contraction Headache"
+      ]
     },
     {
       "id": "cond.migraine",
@@ -19840,8 +19999,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "鐵缺乏、腎衰竭、妊娠、周邊神經病變及部分藥物可能誘發或加重症狀；約半數病例有家族史，提示遺傳因子參與。",
+      "western_pathology_zh": "腦內鐵調節與多巴胺相關神經迴路異常，被認為與不寧腿症候群的動作驅力及不適感有關。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -19873,7 +20032,198 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "etiology_en": "Iron deficiency, renal failure, pregnancy, peripheral neuropathy, and certain medications can trigger or worsen symptoms; a family history is present in roughly half of cases, suggesting a genetic contribution.",
+      "western_pathology_en": "Altered brain iron regulation and dopaminergic circuitry are thought to underlie the urge-to-move and dysesthesia of restless legs syndrome.",
+      "summary_zh": "不寧腿症候群是以休息時出現難以抗拒的移動腿部衝動與不適感為核心、活動後暫時改善且夜間較重的神經／睡眠相關疾病。",
+      "summary_en": "Restless legs syndrome is a neurologic and sleep-related disorder marked by an irresistible urge to move the legs with unpleasant sensations at rest, temporary relief with movement, and evening/night predominance.",
+      "western_context_zh": "臨床定位：不寧腿症候群為臨床診斷，須與周邊神經病變、靜坐不能（akathisia）、夜間腿抽筋等類似表現區分；症狀可為原發性或續發於鐵缺乏、腎衰竭、妊娠等可逆因子。\n\n臨床表現：休息時出現移動腿部的強烈衝動，伴隨爬行、拉扯、痠痛或其他不適感；活動可暫時緩解；傍晚或夜間較明顯；常干擾入睡與睡眠維持。\n\n重要特徵：症狀有明顯晝夜節律（傍晚夜間加重）；鐵缺乏為重要且可逆的誘發因子；長期多巴胺類藥物治療可能出現症狀反常惡化（augmentation）。\n\n診斷方法：主要為臨床診斷，沒有單一確診檢驗；評估病史、藥物與家族史；血液檢查評估鐵狀態、腎功能或其他可逆原因；必要時鑑別睡眠呼吸中止、周邊神經病變等。\n\n鑑別診斷：周邊神經病變、夜間腿抽筋、靜坐不能、姿勢性下肢不適、周邊血管疾病。\n\n西醫治療：先處理鐵缺乏與可逆誘因；規律睡眠、適度運動並減少可能惡化因素；中重度症狀依個案選擇藥物或裝置治療；長期多巴胺類治療需注意 augmentation。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Restless legs syndrome is a clinical diagnosis that must be distinguished from peripheral neuropathy, akathisia, and nocturnal leg cramps; it may be primary or secondary to reversible factors such as iron deficiency, renal failure, or pregnancy.\n\nClinical presentation: A strong urge to move the legs at rest, with creeping, pulling, aching, or other unpleasant sensations; temporary relief with movement; worse in the evening or night; commonly disrupts sleep onset and maintenance.\n\nKey features: Symptoms show a marked circadian pattern (worse evening/night); iron deficiency is an important and reversible trigger; long-term dopaminergic treatment can cause paradoxical worsening (augmentation).\n\nDiagnostic approach: Primarily a clinical diagnosis without a single confirmatory test; review history, medications, and family history; blood testing for iron status, kidney disease, or other reversible factors; differentiate sleep apnea, neuropathy, and mimics when appropriate.\n\nDifferential diagnosis: Peripheral neuropathy, nocturnal leg cramps, akathisia, positional leg discomfort, peripheral vascular disease.\n\nWestern treatment: Correct iron deficiency and other reversible contributors first; support regular sleep, moderate activity, and reduction of aggravating factors; use medication or device therapy for moderate-to-severe symptoms as appropriate; monitor for augmentation with long-term dopaminergic treatment.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "血清鐵蛋白偏低／鐵缺乏",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        },
+        {
+          "factor": "慢性腎臟病，尤其透析患者",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        },
+        {
+          "factor": "妊娠，尤其第三孕期",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        },
+        {
+          "factor": "一級親屬有不寧腿症候群病史（家族史見於約半數病例）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        },
+        {
+          "factor": "特定藥物（如部分抗憂鬱藥、抗組織胺）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Restless Legs Syndrome"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Low serum ferritin / iron deficiency",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        },
+        {
+          "factor": "Chronic kidney disease, especially dialysis patients",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        },
+        {
+          "factor": "Pregnancy, especially the third trimester",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        },
+        {
+          "factor": "First-degree relative with restless legs syndrome (family history in roughly half of cases)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        },
+        {
+          "factor": "Certain medications (e.g., some antidepressants, antihistamines)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Restless Legs Syndrome"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "症狀合併顯著貧血徵象（如蒼白、心悸、呼吸急促）",
+          "urgency_level": "routine",
+          "recommended_action": "安排血液檢查評估鐵狀態與貧血原因",
+          "rationale": "鐵缺乏為重要且可逆的誘發因子，需釐清潛在原因（如出血）",
+          "source": "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        },
+        {
+          "finding": "長期使用多巴胺促效劑後症狀提前發作、加劇或擴及其他部位（augmentation）",
+          "urgency_level": "urgent",
+          "recommended_action": "轉介原開藥醫師重新評估治療方案，勿自行調整劑量",
+          "rationale": "屬多巴胺促效劑已知的藥物性併發症，需專科調整，貿然停藥可能有反彈效應",
+          "source": "NIH/NCBI — Exploring the Causes of Augmentation in Restless Legs Syndrome (PMC)"
+        },
+        {
+          "finding": "症狀嚴重干擾睡眠、日常功能或合併情緒低落",
+          "urgency_level": "routine",
+          "recommended_action": "轉介評估治療",
+          "rationale": "提示中重度疾病需要藥物或裝置治療介入",
+          "source": "NINDS — Restless Legs Syndrome"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Symptoms with significant signs of anemia (e.g., pallor, palpitations, dyspnea)",
+          "urgency_level": "routine",
+          "recommended_action": "Arrange blood testing for iron status and cause of anemia",
+          "rationale": "Iron deficiency is an important and reversible trigger; the underlying cause (e.g., bleeding) needs to be clarified",
+          "source": "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        },
+        {
+          "finding": "Symptoms starting earlier, worsening, or spreading to new body parts after long-term dopamine agonist use (augmentation)",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer back to the prescribing physician for treatment reassessment; do not adjust the dose independently",
+          "rationale": "A known iatrogenic complication of dopamine agonists requiring specialist adjustment; abrupt discontinuation can cause rebound effects",
+          "source": "NIH/NCBI — Exploring the Causes of Augmentation in Restless Legs Syndrome (PMC)"
+        },
+        {
+          "finding": "Symptoms severely disrupting sleep, daily function, or accompanied by low mood",
+          "urgency_level": "routine",
+          "recommended_action": "Refer for treatment evaluation",
+          "rationale": "Suggests moderate-to-severe disease requiring medication or device therapy",
+          "source": "NINDS — Restless Legs Syndrome"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為症狀管理與睡眠品質之輔助照護，需同時處理可逆誘因（如鐵缺乏）之醫療評估",
+        "precautions": "治療前確認病人是否正接受多巴胺促效劑治療；避免對已有 augmentation 徵象的病人做出療效保證",
+        "co_management": "若病人血清鐵蛋白偏低、有腎臟病或正在服用多巴胺促效劑，與其主治醫師聯絡確認檢查與用藥進度，不建議病人自行調整或停用多巴胺類藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NINDS 臨床資料整理）",
+        "note": "尚未於本次查證中確認不寧腿症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for symptom management and sleep quality, alongside medical evaluation of reversible triggers such as iron deficiency",
+        "precautions": "Confirm before treatment whether the patient is on dopamine agonist therapy; avoid promising efficacy to patients already showing signs of augmentation",
+        "co_management": "If the patient has low serum ferritin, kidney disease, or is taking a dopamine agonist, contact their treating physician to confirm workup and medication status; never advise the patient to independently adjust or stop dopaminergic medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from NINDS clinical materials)",
+        "note": "No systematic-review source for restless legs syndrome acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.insomnia"
+      ],
+      "sources": [
+        "NINDS/NIH — Restless Legs Syndrome: https://www.ninds.nih.gov/health-information/disorders/restless-legs-syndrome",
+        "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC): https://pmc.ncbi.nlm.nih.gov/articles/PMC6989584/",
+        "NIH/NCBI — Exploring the Causes of Augmentation in Restless Legs Syndrome (PMC): https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10571710/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NINDS — Restless Legs Syndrome"
+        ],
+        "summary_en": [
+          "NINDS — Restless Legs Syndrome"
+        ],
+        "etiology_zh": [
+          "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        ],
+        "etiology_en": [
+          "NIH/NCBI — Restless Legs Syndrome: Causes and Consequences (PMC)"
+        ],
+        "western_pathology_zh": [
+          "NINDS — Restless Legs Syndrome"
+        ],
+        "western_pathology_en": [
+          "NINDS — Restless Legs Syndrome"
+        ],
+        "western_context_zh": [
+          "NINDS — Restless Legs Syndrome"
+        ],
+        "western_context_en": [
+          "NINDS — Restless Legs Syndrome"
+        ],
+        "risk_factors_zh": [
+          "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        ],
+        "risk_factors_en": [
+          "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        ],
+        "red_flags_zh": [
+          "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        ],
+        "red_flags_en": [
+          "NINDS — Restless Legs Syndrome + NIH/NCBI PMC review"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      },
+      "content_source": [
+        "ninds_overview",
+        "research_pack_cr010_batch02"
+      ],
+      "source_status": "draft_pending_ting_review",
+      "source_type": "sourced_research_pack"
     },
     {
       "id": "cond.circadian_disorder",
@@ -24373,7 +24723,10 @@
         "note": "No acupuncture-specific efficacy guideline for peripheral neuropathy was located; this is a scope-of-practice caution"
       },
       "sign_symptom_ids": [
-        "sym.numbness"
+        "sym.numbness",
+        "sym.weakness",
+        "sym.muscle_atrophy",
+        "sym.muscle_cramp"
       ],
       "sources": [
         "NINDS — Peripheral Neuropathy: https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
@@ -24384,7 +24737,51 @@
         "nih_ninds_overview",
         "research_pack_batch_g_neurology"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "summary_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "summary_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "etiology_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "etiology_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "western_pathology_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "western_pathology_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "western_context_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "western_context_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "risk_factors_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "risk_factors_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "red_flags_zh": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "red_flags_en": [
+          "NINDS — Peripheral Neuropathy"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch G Neurology"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch G Neurology"
+        ]
+      }
     },
     {
       "id": "cond.diabetic_neuropathy",
@@ -25278,8 +25675,46 @@
       "summary_en": "Ménière disease is an inner-ear disorder causing episodic vertigo with fluctuating sensorineural hearing loss, tinnitus and aural fullness.",
       "western_context_zh": "臨床定位：與良性陣發性姿勢性眩暈（BPPV）、前庭神經炎及非特異性頭暈不同。\n\n臨床表現：自發性眩暈發作、波動性聽力損失、耳鳴與耳脹感，多為單側。\n\n重要特徵：眩暈合併聽覺症狀、典型發作 20 分鐘至數小時、聽力檢測可記錄損失、可能出現跌倒發作。\n\n診斷方法：耳鼻喉科病史與聽力檢測；影像可用於排除其他病因。確診須符合典型眩暈發作合併記錄之聽力損失與聽覺症狀。\n\n鑑別診斷：BPPV、前庭性偏頭痛、前庭神經炎、突發性感音神經性聽力損失、聽神經瘤。\n\n西醫治療：飲食／行為調整、症狀藥物、前庭復健，難治個案可考慮鼓室內注射或手術治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
       "western_context_en": "Clinical definition: It is distinct from BPPV, vestibular neuritis and nonspecific dizziness.\n\nClinical presentation: Spontaneous vertigo attacks, fluctuating hearing loss, tinnitus and ear fullness, often unilateral.\n\nKey features: vertigo + auditory symptoms, episodes typically 20 min to hours in definite criteria, hearing test documents loss, drop attacks possible.\n\nDiagnostic approach: ENT history and audiometry; imaging may exclude other causes. Definite disease requires characteristic vertigo episodes plus documented hearing loss and auditory symptoms.\n\nDifferential diagnosis: BPPV, vestibular migraine, vestibular neuritis, SSHL, acoustic neuroma.\n\nWestern treatment: Diet/behavior changes, symptom medicines, vestibular rehab and selected intratympanic or surgical therapies for refractory disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
-      "risk_factors_zh": [],
-      "risk_factors_en": [],
+      "risk_factors_zh": [
+        {
+          "factor": "偏頭痛病史或血管收縮相關體質",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "factor": "家族史（部分病例呈現家族聚集）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "factor": "自體免疫反應或病毒感染病史（理論相關，機轉未完全確立）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — Ménière's Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "History of migraine or vasoconstriction-related predisposition",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "factor": "Family history (some cases cluster in families)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "factor": "History of autoimmune reaction or viral infection (theorized association, mechanism not fully established)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — Ménière's Disease"
+        }
+      ],
       "red_flags_zh": [
         {
           "finding": "新發局部神經學缺損",
@@ -25344,13 +25779,62 @@
       },
       "sign_symptom_ids": [
         "sym.tinnitus",
-        "sym.vertigo"
+        "sym.vertigo",
+        "sym.hearing_loss"
       ],
       "content_source": [
         "nih_nidcd_overview",
         "research_pack_batch_l_ent_ophthalmic_emergencies"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "sources": [
+        "NIDCD/NIH — Ménière's Disease: https://www.nidcd.nih.gov/health/menieres-disease",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "summary_en": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "etiology_zh": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "etiology_en": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "western_pathology_zh": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "western_pathology_en": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "western_context_zh": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "western_context_en": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "risk_factors_zh": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "risk_factors_en": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "red_flags_zh": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "red_flags_en": [
+          "NIDCD — Ménière's Disease"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies"
+        ]
+      }
     },
     {
       "id": "cond.migraine_vestibular",
@@ -41115,7 +41599,55 @@
         "ncbahm_biomedicine_appendix_a",
         "research_pack_batch_g_neurology"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "summary_zh": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "summary_en": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "etiology_zh": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "etiology_en": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "western_pathology_zh": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "western_pathology_en": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "western_context_zh": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "western_context_en": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "risk_factors_zh": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "risk_factors_en": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "red_flags_zh": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "red_flags_en": [
+          "NINDS — Epilepsy and Seizures"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch G Neurology"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch G Neurology"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.altered_consciousness",
+        "sym.fatigue"
+      ]
     },
     {
       "id": "cond.guillain_barre_syndrome",
@@ -49084,8 +49616,206 @@
       "icd_hint": "H81.10",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "BPPV 是常見周邊前庭疾病，由特定頭位改變誘發短暫而強烈的旋轉性眩暈。",
+      "summary_en": "BPPV is a common peripheral vestibular disorder causing brief, intense vertigo triggered by specific changes in head position.",
+      "western_pathology_zh": "耳石自橢圓囊脫落進入半規管後，頭位改變造成異常內淋巴動力與錯誤前庭訊號，產生眩暈與位置性眼震。",
+      "western_pathology_en": "Dislodged otoconia enter a semicircular canal, so head movement creates abnormal endolymphatic forces and erroneous vestibular signals, producing vertigo and positional nystagmus.",
+      "western_context_zh": "臨床定位：BPPV 是最常見的周邊前庭疾病之一，屬良性但可顯著影響生活品質與跌倒風險；需與中樞性眩暈及其他周邊前庭疾病區分。\n\n臨床表現：特定頭位誘發短暫旋轉感；翻身、抬頭或低頭常是誘因；發作間可接近正常；持續性神經缺損、嚴重步態異常、複視或新發頭痛需排除中樞原因。\n\n重要特徵：眩暈通常短暫（數秒至一分鐘內），由特定頭位誘發而非自發持續性；Dix-Hallpike 陽性伴典型位置性眼震可確診。\n\n診斷方法：病史與位置誘發檢查；Dix-Hallpike 等測試依疑似半規管選用；觀察典型位置性眼震；非典型或有神經紅旗時進一步神經／影像評估。\n\n鑑別診斷：前庭神經炎、梅尼爾氏症、中樞性陣發性位置性眩暈（少見但需警覺）、姿勢性低血壓。\n\n西醫治療：以耳石復位術為主要治療，如 Epley maneuver；必要時重複復位；處理跌倒風險與短期活動安全；症狀型態改變時重新評估診斷。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: BPPV is one of the most common peripheral vestibular disorders; benign but can significantly affect quality of life and fall risk. Must be distinguished from central vertigo and other peripheral vestibular disorders.\n\nClinical presentation: Brief spinning triggered by specific head positions; rolling in bed, looking up, or bending may trigger attacks; near-normal intervals between attacks; persistent neurologic deficit, severe gait abnormality, diplopia, or new headache requires evaluation for central causes.\n\nKey features: Vertigo is typically brief (seconds to under a minute), triggered by specific head positions rather than spontaneous and sustained; a positive Dix-Hallpike with characteristic positional nystagmus confirms diagnosis.\n\nDiagnostic approach: History and positional provocation testing; Dix-Hallpike or other maneuvers according to suspected canal; observe characteristic positional nystagmus; further neurologic/imaging evaluation for atypical presentations or red flags.\n\nDifferential diagnosis: Vestibular neuritis, Ménière's disease, central paroxysmal positional vertigo (rare but must stay alert to it), orthostatic hypotension.\n\nWestern treatment: Canalith-repositioning maneuvers such as the Epley maneuver are primary treatment; repeat repositioning when needed; address fall risk and short-term activity safety; reassess if the symptom pattern changes.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增加（好發於 50–70 歲，耳石膜隨年齡退化）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "頭部外傷病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "骨質疏鬆或骨密度偏低",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "維生素 D 缺乏",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "偏頭痛病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "久臥床",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age (most common in the 50-70 age group; age-related otolithic membrane degeneration)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "History of head trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "Osteoporosis or low bone density",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "Vitamin D deficiency",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "History of migraine",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        },
+        {
+          "factor": "Prolonged bed rest",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC)"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "持續性（非陣發性）神經缺損或嚴重步態異常",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診神經科／急診評估",
+          "rationale": "提示中樞性病因而非典型 BPPV",
+          "source": "CR-010 pack diagnostic signs + NIDCD — Balance Disorders"
+        },
+        {
+          "finding": "複視或新發劇烈頭痛",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診神經科／急診評估",
+          "rationale": "非典型 BPPV 表現，需排除中樞性病因",
+          "source": "CR-010 pack diagnostic signs + NIDCD — Balance Disorders"
+        },
+        {
+          "finding": "頭位誘發之外，眩暈呈自發性持續狀態",
+          "urgency_level": "routine",
+          "recommended_action": "重新評估診斷，考慮其他前庭或中樞疾病",
+          "rationale": "不符合 BPPV 短暫陣發性位置誘發的典型型態",
+          "source": "CR-010 pack diagnostic signs"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Persistent (non-episodic) neurologic deficit or severe gait abnormality",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate referral to neurology/emergency evaluation",
+          "rationale": "Suggests a central cause rather than typical BPPV",
+          "source": "CR-010 pack diagnostic signs + NIDCD — Balance Disorders"
+        },
+        {
+          "finding": "Diplopia or new severe headache",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate referral to neurology/emergency evaluation",
+          "rationale": "Atypical for BPPV; central causes must be excluded",
+          "source": "CR-010 pack diagnostic signs + NIDCD — Balance Disorders"
+        },
+        {
+          "finding": "Vertigo that is spontaneous and sustained rather than positionally triggered",
+          "urgency_level": "routine",
+          "recommended_action": "Reassess diagnosis; consider other vestibular or central disorders",
+          "rationale": "Does not fit BPPV's typical brief, position-triggered pattern",
+          "source": "CR-010 pack diagnostic signs"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "確診 BPPV 且已完成或正在接受耳石復位術者，可作為伴隨症狀（如頸部緊繃、焦慮）之輔助照護；不能取代復位術作為主要治療",
+        "precautions": "治療前確認診斷是否典型（陣發性、位置誘發、發作間正常）；出現持續性神經缺損等中樞警訊時避免僅以針灸處理",
+        "co_management": "與病人的耳鼻喉科／神經科醫師聯絡確認復位術治療進度與是否需重複復位",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NIDCD 臨床資料整理）",
+        "note": "尚未於本次查證中確認 BPPV 針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "For patients diagnosed with BPPV who have completed or are undergoing canalith-repositioning treatment, may serve as adjunctive care for accompanying symptoms (e.g., neck tension, anxiety); cannot replace repositioning maneuvers as primary treatment",
+        "precautions": "Confirm the presentation is typical (episodic, position-triggered, normal between attacks) before treatment; do not manage with acupuncture alone if persistent neurologic deficit or other central red flags are present",
+        "co_management": "Contact the patient's ENT/neurologist to confirm repositioning treatment progress and whether repeat repositioning is needed",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from NIDCD clinical materials)",
+        "note": "No systematic-review source for BPPV acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.vertigo"
+      ],
+      "sources": [
+        "NIDCD/NIH — Balance Disorders: https://www.nidcd.nih.gov/health/balance-disorders",
+        "NIDCD/NIH — BPPV glossary: https://www.nidcd.nih.gov/glossary/benign-paroxysmal-positional-vertigo-bppv",
+        "NIDCD/NIH — Epley maneuver: https://www.nidcd.nih.gov/glossary/epley-maneuver",
+        "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC): https://pmc.ncbi.nlm.nih.gov/articles/PMC7324663/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDCD — Balance Disorders / BPPV glossary"
+        ],
+        "summary_en": [
+          "NIDCD — Balance Disorders / BPPV glossary"
+        ],
+        "western_pathology_zh": [
+          "NIDCD — Balance Disorders"
+        ],
+        "western_pathology_en": [
+          "NIDCD — Balance Disorders"
+        ],
+        "western_context_zh": [
+          "NIDCD — Balance Disorders / Epley maneuver"
+        ],
+        "western_context_en": [
+          "NIDCD — Balance Disorders / Epley maneuver"
+        ],
+        "risk_factors_zh": [
+          "NIH/NCBI — Risk Factors for the Occurrence of BPPV (PMC)"
+        ],
+        "risk_factors_en": [
+          "NIH/NCBI — Risk Factors for the Occurrence of BPPV (PMC)"
+        ],
+        "red_flags_zh": [
+          "CR-010 pack diagnostic signs + NIDCD — Balance Disorders"
+        ],
+        "red_flags_en": [
+          "CR-010 pack diagnostic signs + NIDCD — Balance Disorders"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      },
+      "content_source": [
+        "nidcd_overview",
+        "research_pack_cr010_batch02"
+      ],
+      "source_status": "draft_pending_ting_review",
+      "source_type": "sourced_research_pack"
     },
     {
       "id": "cond.vestibular_neuritis",
@@ -49096,8 +49826,158 @@
       "icd_hint": "H81.2",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "前庭神經炎是急性周邊前庭症候群的重要原因，典型造成持續性眩暈、噁心與步態不穩，但通常沒有新的聽力下降。",
+      "summary_en": "Vestibular neuritis is an important cause of acute peripheral vestibular syndrome, typically producing sustained vertigo, nausea, and gait imbalance without new hearing loss.",
+      "western_pathology_zh": "推測為前庭神經急性功能障礙，常被認為與發炎或感染後機轉相關；需與腦幹／小腦中風等中樞急症鑑別。",
+      "western_pathology_en": "It reflects acute vestibular nerve dysfunction, often considered inflammatory or post-infectious; central emergencies such as brainstem or cerebellar stroke must be distinguished.",
+      "western_context_zh": "臨床定位：前庭神經炎是急性周邊前庭症候群的重要病因，屬排除性診斷，須優先排除腦幹／小腦中風等中樞急症。\n\n臨床表現：突然出現持續數小時至數天的旋轉性眩暈；噁心、嘔吐與步態不穩；頭動會使症狀惡化但不是僅特定姿勢短暫誘發；新的聽力下降提示其他診斷；局灶神經缺損或嚴重中樞徵象需急查中風。\n\n重要特徵：持續性（非陣發性）眩暈，與 BPPV 的陣發性位置誘發不同；HINTS 床邊檢查（頭脈衝、眼震、偏斜試驗）由受訓臨床人員操作有助鑑別中樞與周邊病因。\n\n診斷方法：完整神經與前庭檢查；眼震與頭脈衝等床邊檢查需由受訓臨床人員解讀；非典型或有中樞紅旗時安排腦部影像；必要時做聽力檢查協助鑑別。\n\n鑑別診斷：腦幹或小腦中風（急症，優先排除）、迷路炎（合併聽力下降）、梅尼爾氏症、BPPV。\n\n西醫治療：急性期支持性處理噁心與眩暈；避免長期使用前庭抑制藥造成代償延遲；早期依耐受度進行前庭復健；診斷不確定或有中樞紅旗時優先急症評估。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Vestibular neuritis is an important cause of acute peripheral vestibular syndrome and is a diagnosis of exclusion; brainstem/cerebellar stroke and other central emergencies must be excluded first.\n\nClinical presentation: Sudden sustained vertigo lasting hours to days; nausea, vomiting, and gait imbalance; head motion worsens symptoms but attacks are not limited to brief positional triggers; new hearing loss suggests an alternate diagnosis; focal neurologic signs or central features require urgent stroke evaluation.\n\nKey features: Sustained (non-episodic) vertigo, unlike BPPV's episodic positional triggering; bedside HINTS testing (head impulse, nystagmus, test of skew) by a trained clinician helps distinguish central from peripheral causes.\n\nDiagnostic approach: Complete neurologic and vestibular examination; bedside nystagmus/head-impulse findings require trained interpretation; brain imaging for atypical or central red-flag presentations; audiometry when needed to clarify the differential.\n\nDifferential diagnosis: Brainstem or cerebellar stroke (emergency, exclude first), labyrinthitis (with hearing loss), Ménière's disease, BPPV.\n\nWestern treatment: Supportively manage acute nausea and vertigo; avoid prolonged vestibular suppression that can delay compensation; begin vestibular rehabilitation as tolerated; prioritize urgent evaluation when diagnosis is uncertain or central red flags are present.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期病毒性上呼吸道感染（感冒、流感等）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        },
+        {
+          "factor": "中耳炎、乳突病變或內耳手術病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent viral upper-respiratory infection (cold, flu, etc.)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        },
+        {
+          "factor": "History of otitis media, mastoid disease, or inner-ear surgery",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "局灶神經缺損或嚴重中樞徵象（如複視、構音障礙、肢體無力、步態嚴重失調）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診排除中風",
+          "rationale": "急性持續性眩暈合併中樞徵象需優先排除腦幹或小腦中風",
+          "source": "CR-010 pack diagnostic signs + HINTS 文獻"
+        },
+        {
+          "finding": "新發聽力下降",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診耳鼻喉科／神經科評估",
+          "rationale": "前庭神經炎典型不合併新聽力下降，出現時提示其他診斷（如迷路炎）",
+          "source": "CR-010 pack diagnostic signs"
+        },
+        {
+          "finding": "診斷不確定或表現不典型",
+          "urgency_level": "urgent",
+          "recommended_action": "優先安排急症或專科評估",
+          "rationale": "急性持續性眩暈的中樞與周邊鑑別具高風險，不確定時應優先排除中樞急症",
+          "source": "CR-010 pack treatment principles"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Focal neurologic deficit or severe central features (e.g., diplopia, dysarthria, limb weakness, severe gait ataxia)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care to exclude stroke",
+          "rationale": "Acute sustained vertigo with central features requires priority exclusion of brainstem or cerebellar stroke",
+          "source": "CR-010 pack diagnostic signs + HINTS literature"
+        },
+        {
+          "finding": "New hearing loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to ENT/neurology for evaluation",
+          "rationale": "Vestibular neuritis typically does not include new hearing loss; its presence suggests an alternate diagnosis (e.g., labyrinthitis)",
+          "source": "CR-010 pack diagnostic signs"
+        },
+        {
+          "finding": "Uncertain diagnosis or atypical presentation",
+          "urgency_level": "urgent",
+          "recommended_action": "Prioritize emergency or specialist evaluation",
+          "rationale": "The central-vs-peripheral distinction in acute sustained vertigo is high-stakes; when uncertain, exclude central emergencies first",
+          "source": "CR-010 pack treatment principles"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已由醫療團隊排除中樞急症、確診前庭神經炎者，可於亞急性期後作為前庭復健之輔助照護",
+        "precautions": "急性期（持續性眩暈合併噁心嘔吐）應優先醫療評估，不應以針灸延誤中風排除；避免對診斷不確定者做出治療承諾",
+        "co_management": "與病人的神經科／耳鼻喉科醫師聯絡確認診斷是否底定與前庭復健進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NIDCD 臨床資料整理）",
+        "note": "尚未於本次查證中確認前庭神經炎針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "For patients whose central emergencies have been excluded by the medical team and vestibular neuritis confirmed, may serve as adjunctive care for vestibular rehabilitation in the subacute phase",
+        "precautions": "The acute phase (sustained vertigo with nausea/vomiting) should be prioritized for medical evaluation; do not let acupuncture delay stroke exclusion; avoid making treatment commitments when the diagnosis is uncertain",
+        "co_management": "Contact the patient's neurologist/ENT physician to confirm whether the diagnosis is settled and vestibular rehabilitation progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from NIDCD clinical materials)",
+        "note": "No systematic-review source for vestibular neuritis acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.vertigo",
+        "sym.nausea",
+        "sym.vomiting"
+      ],
+      "sources": [
+        "NIDCD/NIH — Balance Disorders: https://www.nidcd.nih.gov/health/balance-disorders",
+        "NIH/NCBI — Vestibular Neuronitis (StatPearls): https://www.ncbi.nlm.nih.gov/books/NBK549866/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDCD — Balance Disorders"
+        ],
+        "summary_en": [
+          "NIDCD — Balance Disorders"
+        ],
+        "western_pathology_zh": [
+          "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        ],
+        "western_pathology_en": [
+          "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        ],
+        "western_context_zh": [
+          "NIDCD — Balance Disorders + HINTS literature"
+        ],
+        "western_context_en": [
+          "NIDCD — Balance Disorders + HINTS literature"
+        ],
+        "risk_factors_zh": [
+          "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        ],
+        "risk_factors_en": [
+          "NIH/NCBI — Vestibular Neuronitis (StatPearls)"
+        ],
+        "red_flags_zh": [
+          "CR-010 pack diagnostic signs + HINTS literature"
+        ],
+        "red_flags_en": [
+          "CR-010 pack diagnostic signs + HINTS literature"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      },
+      "content_source": [
+        "nidcd_overview",
+        "research_pack_cr010_batch02"
+      ],
+      "source_status": "draft_pending_ting_review",
+      "source_type": "sourced_research_pack"
     },
     {
       "id": "cond.acute_ischemic_stroke",
