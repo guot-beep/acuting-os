@@ -11,8 +11,13 @@
 - **其他線(tdis/sym/pattern/supp/drug/…)越多越好**:優先建立**完整架構
   與卡片框架(skeleton)**,讓病例先找得到索引;內容之後有時間再補深。
   skeleton 卡照各線模板的 skeleton 標準與 review_status 誠實標記,絕不假裝有內容。
-- SOL:CR-010(conditions→300 delta 清單)尚未收到 —— 請優先交付,
-  187 張現有 id 清單以 data/pathology/condition_canon_shortlist.json 為準,只送 delta。
+- **SOL 佇列序列化(2026-08-11 Ting 裁定:一次只做一個系列,不並行多系列)**:
+  1. **現在只做 CR-010**:conditions 常用-300 detail 素材(現有 id 以
+     data/pathology/condition_canon_shortlist.json 為準,只送 delta;
+     Fable 的 COND_300_CANDIDATE_LIST_v0.md 可参考但你的清單為權威)。
+  2. CR-010 交付後才開 CR-014(immunosuppressant 藥類 + supp ledger 缺口)。
+  3. 之後才是 CR-013(CHM-CARE 逐項驗證)。
+  未輪到的系列不要動;有疑問寫 AI_REVIEW_FEEDBACK.md 問,不要自行展開新系列。
 
 ## HANDOFF #17 — Pharm 證據鏈修復(Ting 核准 #1/#2)
 
