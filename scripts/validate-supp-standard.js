@@ -40,6 +40,34 @@ for (const r of records) {
     if (!n.note_en) fail(`${id}: key_safety_notes[${i}] empty note_en`);
   }
   if (r.evidence_snapshot_en && !(r.evidence_source && r.evidence_source.url)) fail(`${id}: evidence snapshot present but evidence_source.url missing`);
+
+  // interaction_focus(模板規則 7,2026-08-11 追認):形狀 + status 詞彙。
+  const IF_CLASSES = ["anticoagulant", "immunosuppressant", "thyroid"];
+  const IF_STATUS = new Set(["known_concern", "possible_concern", "component_dependent", "no_specific_flag_in_source", "insufficient_data"]);
+  if (r.interaction_focus) {
+    const cls = r.interaction_focus.classes || {};
+    for (const c of IF_CLASSES) {
+      if (!cls[c]) { fail(`${id}: interaction_focus missing class "${c}"`); continue; }
+      if (!IF_STATUS.has(cls[c].status)) fail(`${id}: interaction_focus.${c}.status "${cls[c].status}" not in vocabulary`);
+    }
+  }
+
+  // maturity 升級條件(模板規則 1,2026-08-11 Ting 授權)— 機器面。
+  // core/clinical_ready 未達標即 FAIL;skeleton 無額外要求。
+  if (r.maturity === "core" || r.maturity === "clinical_ready") {
+    if (!r.typical_dose_range_en || !(r.dose_source && r.dose_source.url && r.dose_source.verified)) fail(`${id}: maturity=${r.maturity} requires dose range + verified dose_source (url + verified date)`);
+    if (!r.interaction_focus) fail(`${id}: maturity=${r.maturity} requires interaction_focus`);
+    if (!(r.key_safety_notes || []).length) fail(`${id}: maturity=${r.maturity} requires >=1 sourced key_safety_note`);
+    if (!r.evidence_snapshot_en) fail(`${id}: maturity=${r.maturity} requires evidence_snapshot_en`);
+  }
+  if (r.maturity === "clinical_ready") {
+    if (!r.patient_education_zh || !r.patient_education_en) fail(`${id}: clinical_ready requires bilingual patient_education`);
+    if (r.review_status === "skeleton_unreviewed") fail(`${id}: clinical_ready incompatible with review_status skeleton_unreviewed`);
+    for (const c of ["anticoagulant", "immunosuppressant", "thyroid"]) {
+      const cell = r.interaction_focus?.classes?.[c];
+      if (cell && cell.status === "known_concern" && !cell.note_en) fail(`${id}: clinical_ready requires note_en on known_concern cell "${c}"`);
+    }
+  }
   // 樣板句偵測(粗篩):同一句 evidence 在 ≥3 筆出現即警告。
 }
 const evCounts = new Map();
