@@ -50,13 +50,20 @@ quarantine 擋 `curriculum/`、`data/imports/`、`docs/`、`clinical/`、`cases/
 4. 看最新 build log:必須出現 `dist/ ready: N files` 這一行,才代表 build
    真的跑了。
 
-## 分支落地策略(Phase A 定案)
+## 分支落地策略(2026-08-11 修訂 — SOL 抓到過期假設)
 
-- `origin/main` 是 `codex/pattern-v2` 的祖先(已驗證)→ 落地 = fast-forward
-  `git push origin HEAD:main`,**無 merge、無 knowledge.js 被整包覆寫的風險**
-  (那個教訓來自反向 merge,不是 fast-forward)。
-- 只在里程碑邊界落地:validators 全 PASS + 該里程碑該審的審完(Phase B 之後
-  第一次落地前,先過 Codex schema audit)。
+- ~~`origin/main` 是 `codex/pattern-v2` 的祖先~~ **此假設已失效**:2026-08-11
+  main 曾獨立前進(ca2c45b9),已由 d6356e6 merge 整合回 Clinical branch。
+- **鐵則:ancestry 不是常數,是每次落地當下必須重新驗證的事實。**
+  落地前必跑:`git fetch origin main && git merge-base --is-ancestor origin/main HEAD`
+  —— 非祖先就先整合(merge main 進 branch、解衝突、重跑全套驗證),
+  **絕不把 `git push HEAD:main` 當固定程序盲推**。
+- 落地 gate(231-commit 級分支的最低門檻,SOL 2026-08-11 建議採納):
+  clinical invariants PASS · C2b rehearsal 全綠 · content/build validators
+  照 ratchet · build-site PHI quarantine PASS · GitHub Actions 該 commit
+  有綠燈 combined status(現況:validate.yml 存在但最新 head 無 run —— 落地
+  前必須先讓 CI 真的跑起來)· ancestry 當下重驗。
+- 只在里程碑邊界落地:validators 全 PASS + 該里程碑該審的審完。
 - 落地前 `git status` 必須乾淨確認:未提交的 js/ 藥理 WIP 與 curriculum/
   刪除檔**永遠不在落地內容裡**(它們本來就只在工作樹,不在 commit 裡)。
 - Production 部署跟著 `main`;sprint 期間 `codex/pattern-v2` 只出 preview。
