@@ -2,6 +2,20 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #15 — 優化計畫主項全數落地(v0/原型)+ 四線併發
+
+- CURRENT STATE: Fable / codex/pattern-v2 f1d8f96 / OPTIMIZATION_PLAN 主項完成度:A ✓(27 metrics 含 PGIC)、P0.5 ✓、P3-lite ✓、B ✓(泳道圖)、C ✓(evidence debt)、P2 ✓(readiness 徽章 v0);唯 P1 診前手機頁尚未做(入口方案待定)
+- COMPLETED(本段):
+  - **CARE_READINESS_MAP_v0.md(726f773)**:CARE 2013 31 行 + STRICTA 13 行 = 44 資料點對映;CHM-CARE 專屬項發 CR-013 給 SOL 驗證(delta 單,引原文條號)
+  - **P2 徽章(5330e6b)**:computeCareReadiness 可判定子集(CARE 18 基項 + 有針刺才計 STRICTA 2a-2g;AE 無列 = partial 永不 ok,D4);瀏覽器實測空 case 3%/QA case 14%/0 console error
+  - **泳道圖(f1d8f96)**:SVG 多泳道 —— top-4 metrics 折線+值、exposure 事件條(D4 粗化日期空心點、停用條止於末事件)、AE 嚴重度標記;<2 個不同日期不顯示。合成資料驗證 4 lanes/4 dots/1 bar/1 AE
+- IN PROGRESS: 四線併發 —— Sonnet×3(cond F-I、sym Batch D 心肺缺口、tdis Batch A:T10 搬移 28 + 高價值 20-25 卡辨證分型)+ Opus×1(supp 36 卡 interaction 驗證)
+- RISKS: QA fixtures 全同日期 → 泳道圖在 preview store 看不到,真實病例(多次就診)才會出現 —— 不是 bug,是資料形狀
+- NEXT: P1 診前手機頁契約設計(patient_prompt_zh/en 已備妥 27 metrics);合併四線批次後續派 cond J-N、sym E、tdis B
+- ROUTING: Codex 照佇列 R8;SOL 收 CR-013 + 續 CR-010
+
+---
+
 ## HANDOFF #14 — 學術欄位批次 + Cond B-E 合併 + Evidence Debt
 
 - CURRENT STATE: Fable / codex/pattern-v2 / 優化主項連發中;兩個 Sonnet 批次在跑(cond F-I、sym Batch D 心肺血管缺口)
