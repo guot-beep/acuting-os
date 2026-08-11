@@ -58,6 +58,14 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
 | Batch H — GI/Liver | `cond.bowel_obstruction` → `cond.bowel_obstruction` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `obstruction`/`腸阻塞`/`腸梗阻` — zero matches |
 | Batch H — GI/Liver | `cond.cirrhosis` → `cond.cirrhosis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `cirrhosis`/`肝硬化` — zero matches |
 | Batch H — GI/Liver | `cond.viral_hepatitis` → `cond.viral_hepatitis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `hepatitis`/`肝炎` — zero matches. Pack flags `NEAR_DUPLICATE_NEEDS_DECISION` (parent vs HBV/HCV-specific subtype) — kept as parent/navigational card, no type-specific child records exist yet, same pattern as `cond.ibd` above. |
+| Batch I — Autoimmune/MSK/Derm/Genetic (`13_WESTERN_CONDITION_RESEARCH_BATCH_I_AUTOIMMUNE_MSK_DERM_GENETIC.md`) | `cond.rheumatoid_arthritis` → `cond.rheumatoid_arthritis` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "類風濕性關節炎（文件情境）"`). Real unique CloudTCM content (`etiology_zh`/`western_pathology_zh`) covers the broader arthritis/痹證 family, not RA-specific — left untouched (§0), added a condensed `etiology_en`/`western_pathology_en` translation that explicitly notes it is shared arthritis-family content, not RA-only pathophysiology. Cleaned stale name suffix. |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.systemic_lupus_erythematosus` → `cond.systemic_lupus_erythematosus` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `lupus`/`狼瘡` — zero matches |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.myasthenia_gravis` → `cond.myasthenia_gravis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `myasthenia`/`重症肌無力` — zero matches |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.psoriasis` → `cond.psoriasis` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "乾癬／銀屑病（文件情境）"`). Real unique CloudTCM classical-text content (白疕 essay) left untouched, condensed `etiology_en`/`western_pathology_en` added. Cleaned stale name suffix. |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.gout` → `cond.gout` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "痛風（文件情境）"`). C10 boilerplate `etiology_zh`/`western_pathology_zh` replaced per validator's own authorization (same ruling as prior batches). Cleaned stale name suffix. |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.osteoporosis` → `cond.osteoporosis` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "骨質疏鬆（文件情境）"`). C10 boilerplate replaced per validator's own authorization. Cleaned stale name suffix. |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.fibromyalgia` → `cond.fibromyalgia` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact id/name match, already carried real content (summary, western_context, real CloudTCM etiology_zh/western_pathology_zh essay). **`red_flags_zh`/`red_flags_en` deliberately left untouched** — wired to `data/pathology/red_flag_registry.json` via `red_flag_refs: ["rf.fibromyalgia.legacy01/02/03"]` (3 entries, more than the single-entry wiring seen on `cond.trigeminal_neuralgia` in Batch G — confirms wiring is not limited to 1-flag records). Added condensed `etiology_en`/`western_pathology_en` translations of the existing real essay, plus risk_factors/acupuncture_scope/sign_symptom_ids. |
+| Batch I — Autoimmune/MSK/Derm/Genetic | `cond.ehlers_danlos_syndrome` → `cond.ehlers_danlos_syndrome` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `ehlers`/`danlos`/`埃勒斯`/`hypermobil` — zero matches |
 
 ## Notes for the next ingest AI
 
@@ -278,3 +286,47 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
   documented in the Batch F notes — worth writing alias pairs LAST in the
   patch object and double-checking lengths before running the validator,
   not after.
+
+## Batch I (2026-08-11) — additional notes for the next ingest AI, and sprint close-out
+
+- **The `aliases_zh`/`aliases_en` pitfall recurred AGAIN, 4x** this batch
+  (`cond.rheumatoid_arthritis`, `cond.ehlers_danlos_syndrome`,
+  `cond.myasthenia_gravis`, `cond.psoriasis` — the last one was the
+  *reverse* direction, `aliases_zh` filled with `aliases_en` empty), despite
+  being flagged in both the Batch F and Batch H notes. **Recommendation for
+  whoever owns the next content batch of any kind**: write a tiny self-check
+  script that walks every record in the batch's patch/record objects and
+  asserts `(aliases_zh||[]).length === (aliases_en||[]).length` (and ideally
+  the same for every other array-pair field) BEFORE running the full
+  validator — this class of defect is 100% mechanically preventable and has
+  now cost 4 separate fix-and-rerun cycles across F/H/I.
+- **Also caught a length-mismatch the validator does NOT flag**:
+  `cond.systemic_lupus_erythematosus` was drafted with `aliases_zh: ["紅斑性狼瘡"]`
+  (1 entry) vs `aliases_en: ["SLE", "Lupus"]` (2 entries) — both non-empty,
+  so `validate-condition-standard.js`'s C5/C9 checks (which only test
+  presence, not length equality) do not catch this. Fixed by hand per
+  template §6 ("`_en` 陣列長度必須等於 `_zh`"), which is a written rule with
+  no automated enforcement for this specific field. Worth a dedicated
+  small validator check in a future scripts/ change (Claude's territory,
+  not this batch's).
+- **`red_flag_refs` wiring is more common than expected**: 2 of the 4
+  batches (F–I) hit an already-wired record (`cond.trigeminal_neuralgia` in
+  G, `cond.fibromyalgia` in I) — always check for `red_flag_refs` on any
+  EXISTING_ENRICH target before touching `red_flags_zh`/`red_flags_en`.
+
+### Sprint close-out (Batches F–I, 2026-08-11)
+
+- Branch `codex/cond-enrich-f-i`, cut from `origin/codex/pattern-v2` tip
+  (`9ebd671`, confirmed ancestor).
+- `data/pathology/condition_canon_shortlist.json`: 170 → 187 records
+  (17 NEW_CANDIDATE, 15 EXISTING_ENRICH across F/G/H/I).
+- `check-validation-ratchet.js` conditions defect count: 539 (committed
+  baseline) → 481 after Batch I, monotonically improving batch over batch
+  (526 → 509 → 499 → 481). No regressions at any commit.
+- One pre-existing cross-contamination flagged, not fixed (out of this
+  sprint's scope): `cond.asthma` × `cond.post_covid` share verbatim
+  `etiology_zh`/`western_pathology_zh` — see Batch F notes above.
+- One scope-broadening judgment call flagged for Fable/Ting review:
+  `cond.chronic_gastritis` renamed/broadened to cover the pack's generic
+  "gastritis/gastropathy" concept — see Batch H notes above.
+- Not pushed (per task instructions — branch left for review).
