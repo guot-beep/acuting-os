@@ -11,14 +11,224 @@
       "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
       "key_manifestation_ids": [
         "sym.fever"
-      ]
+      ],
+      "definition_zh": "感冒是外邪侵襲肺衛，以鼻塞流涕、噴嚏、頭痛、惡寒發熱、全身不適為主要表現的常見外感病，四時皆可發生，尤以冬春季節多見，有一定傳染性。",
+      "definition_en": "Gan Mao (TCM Common Cold) is an externally-contracted disorder in which a pathogen invades the Lung and the defensive (Wei) level, presenting with nasal congestion, sneezing, headache, aversion to cold with fever, and general malaise. It occurs year-round, is most common in winter and spring, and can be mildly contagious.",
+      "etiology_zh": "外因為風邪夾寒、熱、暑濕等當令之氣侵襲體表衛分；內因為衛外功能不固，多見於肺脾氣虛之人、起居失宜、氣候驟變或過度勞累之後。",
+      "etiology_en": "The external cause is invasion of the exterior Wei level by Wind combined with seasonal Cold, Heat, or Summerheat-Dampness. The internal predisposition is a poorly consolidated defensive Qi, most often in those with underlying Lung-Spleen Qi deficiency, irregular routines, sudden weather change, or overexertion.",
+      "pathomechanism_zh": "風邪襲表，首犯肺衛：衛陽被遏則惡寒，正邪相爭於表則發熱，肺氣失宣則鼻塞、噴嚏、咳嗽。素體虛弱者衛外不固，易反覆感邪、纏綿難癒，除風寒、風熱、暑濕三大常見類型外，尚有氣虛感冒、陰虛感冒等體虛夾外邪的類型，惟現行 pattern.* 詞彙表暫未收錄對應的專用證型 id。",
+      "pathomechanism_en": "Wind pathogens attack the exterior, first invading the Lung-Wei level: obstruction of defensive Yang produces aversion to cold, the struggle between correct and pathogenic Qi at the exterior produces fever, and loss of the Lung's dispersing function produces nasal congestion, sneezing, and cough. In those with an underlying vacuity, a poorly consolidated Wei Qi allows repeated, protracted invasion. Beyond the three common Wind-Cold / Wind-Heat / Summerheat-Damp types, textbooks also describe Qi-deficiency and Yin-deficiency cold types (vacuity complicated by an external pathogen), though the current pattern.* vocabulary has no dedicated id for these compound types yet.",
+      "key_manifestations_zh": [
+        "鼻塞流涕",
+        "噴嚏",
+        "惡寒發熱",
+        "頭痛",
+        "全身痠痛",
+        "咽癢或咽痛"
+      ],
+      "key_manifestations_en": [
+        "Nasal congestion and discharge",
+        "Sneezing",
+        "Aversion to cold with fever",
+        "Headache",
+        "Generalized body aches",
+        "Itchy or sore throat"
+      ],
+      "disease_location_zh": "病位在肺、衛表；體虛易感者涉及脾。",
+      "disease_location_en": "Disease location is the Lung and the exterior Wei level; the Spleen is involved in those prone to recurrent invasion from underlying vacuity.",
+      "related_patterns": [
+        "pattern.wind_cold",
+        "pattern.wind_heat",
+        "pattern.summerheat_dampness"
+      ],
+      "treatment_principle_zh": "疏風解表為總則：風寒證辛溫解表，風熱證辛涼解表，暑濕證清暑祛濕解表；體虛感冒者兼顧扶正。",
+      "treatment_principle_en": "The overall principle is to disperse Wind and release the exterior: acrid-warm release for Wind-Cold, acrid-cool release for Wind-Heat, and clearing Summerheat with Dampness resolution for Summerheat-Damp presentations; vacuity-type colds additionally require supporting the correct Qi.",
+      "red_flags_zh": [
+        {
+          "finding": "高燒不退（≧3天）或反覆發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速回診評估，考慮續發性細菌感染",
+          "rationale": "可能為鼻竇炎、中耳炎、肺炎等細菌性併發症，而非單純病毒性感冒",
+          "source": "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        },
+        {
+          "finding": "呼吸困難、突發胸痛或腹痛、意識混亂、劇烈嘔吐不止",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診或撥打當地緊急號碼",
+          "rationale": "提示肺炎或其他心肺、神經系統急症，已超出單純感冒範圍",
+          "source": "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        },
+        {
+          "finding": "症狀10天以上未改善，或好轉後又惡化",
+          "urgency_level": "same_day",
+          "recommended_action": "儘快回診評估",
+          "rationale": "提示續發感染或非單純病毒性上呼吸道感染",
+          "source": "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever that persists ≥3 days, or recurring fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt follow-up evaluation, consider secondary bacterial infection",
+          "rationale": "May indicate sinusitis, otitis media, pneumonia, or another bacterial complication rather than a simple viral cold",
+          "source": "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        },
+        {
+          "finding": "Difficulty breathing, sudden chest or abdominal pain, confusion, or severe unremitting vomiting",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Suggests pneumonia or another cardiopulmonary/neurologic emergency beyond a simple cold",
+          "source": "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        },
+        {
+          "finding": "Symptoms not improving after 10+ days, or improving then worsening again",
+          "urgency_level": "same_day",
+          "recommended_action": "Prompt follow-up",
+          "rationale": "Suggests a secondary infection rather than a simple viral URI",
+          "source": "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "MedlinePlus - How to treat the common cold at home (https://medlineplus.gov/ency/patientinstructions/000466.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ke_sou",
       "name_zh": "咳嗽",
       "pinyin": "Kesou",
       "name_en": "Cough",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
+      "definition_zh": "咳嗽是肺失宣降、肺氣上逆所致，以咳嗽咳痰為主症的病證，可因外感或內傷引起，是肺系疾病最常見的主症之一。",
+      "definition_en": "Ke Sou (Cough) is a disease caused by the Lung losing its dispersing-descending function so that Lung Qi rebels upward, presenting mainly with coughing and expectoration. It may arise from external contraction or internal damage and is one of the most common presentations in Lung-system disease.",
+      "etiology_zh": "外感者為六淫（風寒、風熱、燥邪等）侵襲肺系；內傷者為他臟功能失調犯肺，如脾失健運聚濕生痰、肝火犯肺、肺陰虧虛等。",
+      "etiology_en": "External-contraction cough arises when one of the six pathogenic factors (Wind-Cold, Wind-Heat, Dryness, etc.) invades the Lung system. Internal-damage cough arises when dysfunction of another organ affects the Lung — for example, Spleen failing to transform fluids and generating Phlegm, Liver Fire invading the Lung, or Lung Yin depletion.",
+      "pathomechanism_zh": "肺為嬌臟，主宣發肅降；外邪襲肺或痰濁、肝火內擾，皆令肺氣壅遏、失於宣降而上逆作咳。久咳可傷肺氣、肺陰，或反覆感邪，遷延難癒。",
+      "pathomechanism_en": "The Lung is a delicate organ governing dispersal and descent. Whether from an external pathogen attacking the Lung, or internal Phlegm-turbidity or Liver Fire disturbing it, the result is Lung Qi obstruction and loss of the descending function, producing rebellious cough. Chronic cough can injure Lung Qi or Lung Yin, or predispose to recurrent external invasion with a protracted course.",
+      "key_manifestations_zh": [
+        "咳嗽",
+        "咳痰（性狀因證而異）",
+        "咽癢或咽痛",
+        "胸悶",
+        "遇風冷或異味誘發加重"
+      ],
+      "key_manifestations_en": [
+        "Cough",
+        "Expectoration (character varies by pattern)",
+        "Itchy or sore throat",
+        "Chest oppression",
+        "Aggravated by wind, cold, or strong odors"
+      ],
+      "disease_location_zh": "病位在肺，與脾、肝、腎密切相關。",
+      "disease_location_en": "Disease location is the Lung, closely related to the Spleen, Liver, and Kidney.",
+      "related_patterns": [
+        "pattern.lung_yin_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.wind_cold_invading_lung",
+        "pattern.wind_heat_invading_lung",
+        "pattern.phlegm_heat_in_lung",
+        "pattern.liver_fire_scorching_lung"
+      ],
+      "treatment_principle_zh": "外感咳嗽以疏風宣肺為主，隨寒熱燥濕加減；內傷咳嗽當辨臟腑虛實，健脾化痰、清肝瀉肺或滋陰潤肺。",
+      "treatment_principle_en": "External-contraction cough is primarily treated by dispersing Wind and diffusing the Lung, modified for cold, heat, or dryness; internal-damage cough requires differentiating the affected organ and its vacuity/excess status — fortifying the Spleen to transform Phlegm, clearing the Liver and draining the Lung, or nourishing Yin to moisten the Lung.",
+      "red_flags_zh": [
+        {
+          "finding": "咳血（咳痰帶血或大量咯血）",
+          "urgency_level": "urgent",
+          "recommended_action": "任何咳血都應儘速就醫評估；大量咯血、合併胸痛、頭暈或發燒須立即就醫",
+          "rationale": "咳血可能提示肺癌、肺結核、支氣管擴張或肺栓塞等嚴重疾病",
+          "source": "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        },
+        {
+          "finding": "呼吸困難、吸氣時高音調喘鳴聲（stridor）、突發劇烈咳嗽",
+          "urgency_level": "emergency",
+          "recommended_action": "撥打119或立即急診",
+          "rationale": "提示氣道阻塞或嚴重呼吸道急症",
+          "source": "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        },
+        {
+          "finding": "咳嗽超過10-14天不癒、發燒、不明原因體重減輕或夜間盜汗",
+          "urgency_level": "same_day",
+          "recommended_action": "儘快就醫評估，排除細菌感染或肺結核",
+          "rationale": "持續咳嗽合併體重減輕、夜汗為肺結核警訊；發燒提示細菌性感染",
+          "source": "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Coughing up blood (blood-streaked sputum or frank hemoptysis)",
+          "urgency_level": "urgent",
+          "recommended_action": "Contact a provider any time you cough up blood; seek immediate care for large amounts of blood or if accompanied by chest pain, dizziness, or fever",
+          "rationale": "May indicate lung cancer, tuberculosis, bronchiectasis, or pulmonary embolism",
+          "source": "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        },
+        {
+          "finding": "Shortness of breath, high-pitched sound on inhaling (stridor), or a violent cough that begins rapidly",
+          "urgency_level": "emergency",
+          "recommended_action": "Call emergency services or seek immediate care",
+          "rationale": "Suggests airway obstruction or a severe respiratory emergency",
+          "source": "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        },
+        {
+          "finding": "Cough lasting longer than 10-14 days, fever, unintentional weight loss, or night sweats",
+          "urgency_level": "same_day",
+          "recommended_action": "Prompt evaluation to rule out bacterial infection or tuberculosis",
+          "rationale": "Persistent cough with weight loss and night sweats is a TB warning sign; fever suggests bacterial infection",
+          "source": "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reused related_tcm_disease_ids back-link from pattern.lung_yin_deficiency (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus - Cough (https://medlineplus.gov/ency/article/003072.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xiao_bing",
@@ -60,7 +270,127 @@
       "name_zh": "胃痛",
       "pinyin": "Weitong",
       "name_en": "Stomach Pain",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "胃痛是以上腹胃脘部近心窩處疼痛為主症的病證，常兼見脹滿、噯氣、泛酸、噁心嘔吐等症。",
+      "definition_en": "Wei Tong (Stomach Pain) is a disease characterized primarily by pain in the epigastric region near the xiphoid, often accompanied by distension, belching, acid regurgitation, nausea, and vomiting.",
+      "etiology_zh": "多因飲食不節（過飢過飽、嗜食生冷辛辣）、情志不遂（肝氣犯胃）、外感寒邪內客於胃，或脾胃素虛所致。",
+      "etiology_en": "Commonly caused by dietary irregularity (over-eating, fasting, or excessive cold/raw or spicy food), emotional stress (Liver Qi invading the Stomach), external Cold lodging in the Stomach, or an underlying Spleen-Stomach vacuity.",
+      "pathomechanism_zh": "胃主受納、以通降為順；飲食積滯、肝氣橫逆犯胃,或寒邪客胃,皆令胃氣壅滯、不通則痛;久病傷及脾胃陽氣或胃陰,則轉為虛證,不榮則痛。",
+      "pathomechanism_en": "The Stomach governs intake and functions best when its Qi descends freely. Food stagnation, Liver Qi invading the Stomach, or Cold lodging in the Stomach all cause Stomach Qi to become obstructed — \"no free flow, hence pain.\" Chronic disease injuring Spleen-Stomach Yang or Stomach Yin shifts the pattern toward vacuity — \"no nourishment, hence pain.\"",
+      "key_manifestations_zh": [
+        "胃脘疼痛（脹痛、刺痛或隱痛，隨證不同）",
+        "脘腹脹滿",
+        "噯氣或泛酸",
+        "食慾不振",
+        "疼痛與飲食、情緒相關"
+      ],
+      "key_manifestations_en": [
+        "Epigastric pain (distending, stabbing, or dull, depending on pattern)",
+        "Epigastric fullness/distension",
+        "Belching or acid regurgitation",
+        "Poor appetite",
+        "Pain related to diet or emotional state"
+      ],
+      "disease_location_zh": "病位在胃，與肝、脾關係密切。",
+      "disease_location_en": "Disease location is the Stomach, closely related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.food_stagnation",
+        "pattern.stomach_heat",
+        "pattern.stomach_fire",
+        "pattern.blood_stasis",
+        "pattern.spleen_yang_deficiency",
+        "pattern.stomach_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以理氣和胃止痛為總則：肝氣犯胃者疏肝理氣，食滯者消食導滯，胃熱者清熱和胃，血瘀者活血化瘀，脾胃虛寒者溫中健脾，胃陰虧虛者養陰益胃。",
+      "treatment_principle_en": "The overall principle is to regulate Qi, harmonize the Stomach, and stop pain: for Liver Qi invading the Stomach, soothe the Liver and regulate Qi; for food stagnation, disperse food and guide out stagnation; for Stomach Heat, clear Heat and harmonize the Stomach; for Blood stasis, invigorate Blood; for Spleen-Stomach Yang deficiency, warm the Middle and fortify the Spleen; for Stomach Yin deficiency, nourish Yin and benefit the Stomach.",
+      "red_flags_zh": [
+        {
+          "finding": "胸、下顎、頸部或手臂疼痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除心臟事件（如心肌梗塞）偽裝成上腹痛",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy01)"
+        },
+        {
+          "finding": "頻繁嘔吐或嘔血、黑色柏油樣糞便",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示消化道出血",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia / cond.chronic_gastritis (rf.functional_dyspepsia.legacy03/08, rf.chronic_gastritis.gastric_bleeding)"
+        },
+        {
+          "finding": "突發、劇烈且持續不退的腹痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "須排除消化性潰瘍穿孔等急腹症",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.peptic_ulcer (rf.peptic_ulcer.sudden_severe_abdominal_pain)"
+        },
+        {
+          "finding": "非刻意體重減輕、吞嚥困難或疼痛、眼睛或皮膚發黃",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除惡性腫瘤、食道病變或膽道阻塞",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy02/06/07)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Pain in the chest, jaw, neck, or arm",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out a cardiac event (e.g., myocardial infarction) masquerading as epigastric pain",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy01)"
+        },
+        {
+          "finding": "Frequent vomiting or bloody vomit, black tarry stools",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Suggests gastrointestinal bleeding",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia / cond.chronic_gastritis (rf.functional_dyspepsia.legacy03/08, rf.chronic_gastritis.gastric_bleeding)"
+        },
+        {
+          "finding": "Sudden, sharp, or severe abdominal pain that doesn't go away",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Must rule out an acute abdomen such as a perforated peptic ulcer",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.peptic_ulcer (rf.peptic_ulcer.sudden_severe_abdominal_pain)"
+        },
+        {
+          "finding": "Unintentional weight loss, difficulty or pain swallowing, or yellowing of the eyes or skin",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out malignancy, esophageal disease, or biliary obstruction",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy02/06/07)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia, cond.chronic_gastritis, cond.peptic_ulcer"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia, cond.chronic_gastritis, cond.peptic_ulcer"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.pi_man",
@@ -74,7 +404,111 @@
       "name_zh": "嘔吐",
       "pinyin": "Outu",
       "name_en": "Vomiting",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "嘔吐是胃失和降、胃氣上逆，迫使胃內容物從口而出的病證，嘔與吐常同時出現，故並稱。",
+      "definition_en": "Ou Tu (Vomiting) is a disease in which the Stomach loses its harmonious descending function and Stomach Qi rebels upward, forcing stomach contents out through the mouth. Retching (Ou) and vomiting (Tu) usually occur together, hence the combined name.",
+      "etiology_zh": "多因外邪犯胃、飲食不節（暴飲暴食、誤食不潔）、情志不遂肝氣犯胃，或脾胃虛寒、胃陰不足所致。",
+      "etiology_en": "Commonly caused by an external pathogen attacking the Stomach, dietary irregularity (overeating or ingesting contaminated food), emotional stress with Liver Qi invading the Stomach, or an underlying Spleen-Stomach Cold-vacuity or Stomach Yin insufficiency.",
+      "pathomechanism_zh": "胃以降為和；外邪、食滯、肝氣或痰飲皆可壅遏胃氣，使胃失和降、上逆而嘔；脾胃陽虛者運化無力，胃陰不足者失於濡潤，皆可致胃氣上逆。",
+      "pathomechanism_en": "The Stomach's normal function depends on downward movement. An external pathogen, food stagnation, Liver Qi, or Phlegm-fluids can all obstruct Stomach Qi so it loses its descending function and rebels upward as vomiting. Spleen-Stomach Yang deficiency weakens transportation, and Stomach Yin insufficiency deprives the Stomach of moistening — both can likewise drive Stomach Qi to rebel.",
+      "key_manifestations_zh": [
+        "嘔吐（新病多急，久病多緩）",
+        "噁心",
+        "脘腹脹悶",
+        "食入即吐或朝食暮吐",
+        "可伴腹瀉或發熱（外邪犯胃者）"
+      ],
+      "key_manifestations_en": [
+        "Vomiting (acute in new-onset cases, gradual in chronic cases)",
+        "Nausea",
+        "Epigastric fullness and oppression",
+        "Vomiting immediately after eating, or delayed vomiting",
+        "May accompany diarrhea or fever when an external pathogen is involved"
+      ],
+      "disease_location_zh": "病位在胃，與肝、脾關係密切。",
+      "disease_location_en": "Disease location is the Stomach, closely related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.food_stagnation",
+        "pattern.phlegm_damp",
+        "pattern.spleen_yang_deficiency",
+        "pattern.stomach_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以和胃降逆止嘔為總則：外邪犯胃者疏邪解表、和中止嘔，食滯者消食化滯，肝氣犯胃者疏肝和胃，脾胃虛寒者溫中健脾，胃陰不足者滋陰養胃。",
+      "treatment_principle_en": "The overall principle is to harmonize the Stomach, redirect rebellious Qi downward, and stop vomiting: for an external pathogen, disperse the pathogen and harmonize the Middle; for food stagnation, disperse food and resolve stagnation; for Liver Qi invading the Stomach, soothe the Liver and harmonize the Stomach; for Spleen-Stomach Yang deficiency, warm the Middle and fortify the Spleen; for Stomach Yin insufficiency, nourish Yin and the Stomach.",
+      "red_flags_zh": [
+        {
+          "finding": "嘔吐物帶血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示上消化道出血",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting (rf.nausea_vomiting.hematemesis)"
+        },
+        {
+          "finding": "劇烈頭痛伴隨頸部僵硬",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除腦膜炎或顱內壓升高",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting (rf.nausea_vomiting.severe_headache_stiff_neck)"
+        },
+        {
+          "finding": "劇烈腹痛或出現脫水徵兆（口乾、尿少、頭暈）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除急腹症或評估脫水嚴重度",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting (rf.nausea_vomiting.severe_abdominal_pain_or_dehydration)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Blood in the vomit",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Suggests upper gastrointestinal bleeding",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting (rf.nausea_vomiting.hematemesis)"
+        },
+        {
+          "finding": "Severe headache and stiff neck",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out meningitis or raised intracranial pressure",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting (rf.nausea_vomiting.severe_headache_stiff_neck)"
+        },
+        {
+          "finding": "Severe abdominal pain or signs of dehydration",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out an acute abdomen or assess dehydration severity",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting (rf.nausea_vomiting.severe_abdominal_pain_or_dehydration)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.nausea_vomiting"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.tun_suan",
@@ -95,14 +529,225 @@
       "name_zh": "泄瀉",
       "pinyin": "Xiexie",
       "name_en": "Diarrhea",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "泄瀉是以大便次數增多、糞質稀溏甚則如水樣為主症的病證，古人以大便溏薄勢緩者為泄、暴注下迫者為瀉，現多合稱。",
+      "definition_en": "Xie Xie (Diarrhea) is a disease characterized by increased stool frequency with loose or watery stools. Classically, gradual loose stools were called Xie and sudden forceful watery discharge was called Xie (瀉); the two are now usually combined under one name.",
+      "etiology_zh": "多因感受外邪（寒濕、濕熱）、飲食不節或不潔、情志失調（肝氣乘脾），或脾胃虛弱、命門火衰（腎陽虛）所致。",
+      "etiology_en": "Commonly caused by external pathogens (Cold-Damp or Damp-Heat), dietary irregularity or contaminated food, emotional disturbance (Liver Qi overacting on the Spleen), or an underlying Spleen-Stomach weakness or Kidney Yang (Gate of Vitality Fire) deficiency.",
+      "pathomechanism_zh": "脾主運化、喜燥惡濕；濕邪困脾、食滯腸胃或肝木乘土，皆令脾失健運、水穀不化、清濁不分而下趨大腸作瀉；久瀉傷及脾腎陽氣，則轉為虛寒久瀉。",
+      "pathomechanism_en": "The Spleen governs transportation and transformation and prefers dryness over dampness. Whether Dampness encumbers the Spleen, food stagnates in the intestines, or the Liver (Wood) overacts on the Spleen (Earth), the Spleen loses its transporting function, food and fluids go untransformed, clear and turbid fail to separate, and the mixture pours down into the large intestine as diarrhea. Chronic diarrhea injures Spleen-Kidney Yang, shifting the pattern to a chronic Cold-vacuity type.",
+      "key_manifestations_zh": [
+        "大便次數增多、質稀或如水樣",
+        "腹痛腸鳴",
+        "可伴脘腹脹悶、食慾不振",
+        "情緒緊張時發作或加重（肝鬱乘脾者）",
+        "久瀉者黎明前腹瀉（五更瀉，腎陽虛）"
+      ],
+      "key_manifestations_en": [
+        "Increased stool frequency, loose or watery",
+        "Abdominal pain with borborygmus",
+        "May accompany epigastric fullness and poor appetite",
+        "Triggered or worsened by emotional stress (Liver-Spleen disharmony)",
+        "Pre-dawn diarrhea in chronic cases (\"fifth-watch diarrhea,\" Kidney Yang deficiency)"
+      ],
+      "disease_location_zh": "病位在脾胃、大小腸，與肝、腎相關。",
+      "disease_location_en": "Disease location is the Spleen-Stomach and intestines, related to the Liver and Kidney.",
+      "related_patterns": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.cold_damp_encumbering_spleen",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.food_stagnation",
+        "pattern.liver_spleen_disharmony",
+        "pattern.spleen_kidney_yang_deficiency"
+      ],
+      "treatment_principle_zh": "以運脾化濕為總則：寒濕者溫化寒濕，濕熱者清熱利濕，食滯者消食導滯，肝鬱乘脾者抑肝扶脾，脾腎陽虛者溫補脾腎、固澀止瀉。",
+      "treatment_principle_en": "The overall principle is to fortify Spleen transportation and resolve Dampness: for Cold-Damp, warm and transform it; for Damp-Heat, clear Heat and disinhibit Dampness; for food stagnation, disperse food and guide out stagnation; for Liver-Spleen disharmony, restrain the Liver and support the Spleen; for Spleen-Kidney Yang deficiency, warmly tonify Spleen and Kidney with astringing formulas.",
+      "red_flags_zh": [
+        {
+          "finding": "黑便（瀝青便）、便中帶鮮血或膿液",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示消化道出血或發炎性腸道疾病",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_diarrhea / cond.ibs (rf.chronic_diarrhea.bloody_pus_tarry_stools, rf.ibs.rectal_bleeding_bloody_stools)"
+        },
+        {
+          "finding": "出現脫水症狀（口乾、尿少、頭暈、心悸）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估，必要時補液",
+          "rationale": "嚴重腹瀉合併脫水可致電解質失衡",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_diarrhea (rf.chronic_diarrhea.dehydration_signs)"
+        },
+        {
+          "finding": "嚴重或大量直腸出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診，可能需緊急手術",
+          "rationale": "提示發炎性腸道疾病急性重症發作",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.ibd (rf.ibd.severe_heavy_rectal_bleeding)"
+        },
+        {
+          "finding": "貧血或不明原因體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除大腸腫瘤或發炎性腸道疾病",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.ibs (rf.ibs.weight_loss_anemia)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Black tarry stools, or stools containing red blood or pus",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Suggests gastrointestinal bleeding or inflammatory bowel disease",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_diarrhea / cond.ibs (rf.chronic_diarrhea.bloody_pus_tarry_stools, rf.ibs.rectal_bleeding_bloody_stools)"
+        },
+        {
+          "finding": "Signs of dehydration (dry mouth, low urine output, dizziness, palpitations)",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt evaluation and rehydration if needed",
+          "rationale": "Severe diarrhea with dehydration can cause electrolyte imbalance",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_diarrhea (rf.chronic_diarrhea.dehydration_signs)"
+        },
+        {
+          "finding": "Severe or heavy rectal bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care, may require emergency surgery",
+          "rationale": "Suggests a severe acute flare of inflammatory bowel disease",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.ibd (rf.ibd.severe_heavy_rectal_bleeding)"
+        },
+        {
+          "finding": "Anemia or unexplained weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out colorectal tumor or inflammatory bowel disease",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.ibs (rf.ibs.weight_loss_anemia)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.chronic_diarrhea, cond.ibd, cond.ibs"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.spleen_qi_deficiency related_tcm_disease_ids includes tdis.xie_xie (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.chronic_diarrhea, cond.ibd, cond.ibs"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bian_mi",
       "name_zh": "便秘",
       "pinyin": "Bianmi",
       "name_en": "Constipation",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "便秘是以大便秘結不通、排便間隔延長，或糞質乾硬、排出艱難為主症的病證。",
+      "definition_en": "Bian Mi (Constipation) is a disease characterized by infrequent, difficult, or incomplete bowel movements with hard, dry stool.",
+      "etiology_zh": "多因飲食不節（辛熱厚味、飲水過少）、情志不遂（肝鬱氣滯）、年老體虛（氣血陰陽不足）或久坐少動所致。",
+      "etiology_en": "Commonly caused by dietary factors (excessive spicy/rich food, insufficient fluid intake), emotional disturbance (Liver Qi stagnation), advancing age with underlying vacuity (Qi, Blood, Yin, or Yang deficiency), or a sedentary lifestyle.",
+      "pathomechanism_zh": "大腸主傳導，以通為用；燥熱內結、氣機鬱滯，皆令大腸傳導失司、糟粕內停而秘結；氣血陰陽虧虛者，則腸道失於濡潤或推動無力，亦致大便艱澀。",
+      "pathomechanism_en": "The large intestine governs conveyance and functions best when unobstructed. Internal Dryness-Heat binding or Qi stagnation both impair the large intestine's conveying function, causing waste to accumulate and stools to bind. In Qi, Blood, Yin, or Yang deficiency, the intestines lack moistening or propulsive force, likewise producing difficult defecation.",
+      "key_manifestations_zh": [
+        "大便秘結、排便間隔延長",
+        "糞質乾硬難下",
+        "腹脹或腹部隱痛",
+        "排便費力、便後仍覺不盡",
+        "可伴口臭、面色無華（虛證）"
+      ],
+      "key_manifestations_en": [
+        "Infrequent, bound bowel movements",
+        "Hard, dry stool that is difficult to pass",
+        "Abdominal distension or dull discomfort",
+        "Straining with a sense of incomplete evacuation",
+        "May accompany bad breath or a sallow complexion in vacuity patterns"
+      ],
+      "disease_location_zh": "病位在大腸，與脾、胃、肺、肝、腎相關。",
+      "disease_location_en": "Disease location is the large intestine, related to the Spleen, Stomach, Lung, Liver, and Kidney.",
+      "related_patterns": [
+        "pattern.large_intestine_excess_heat",
+        "pattern.liver_qi_stagnation",
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_deficiency",
+        "pattern.large_intestine_fluid_deficiency",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "treatment_principle_zh": "以通下為法，隨證而異：熱秘者瀉熱通便，氣秘者順氣導滯，氣虛者益氣潤腸，血虛陰虧者養血滋陰潤腸，陽虛者溫陽通便，切忌一味攻下傷正。",
+      "treatment_principle_en": "The overall principle is to unblock the bowel, adapted to the pattern: for Heat constipation, drain Heat to free the stool; for Qi constipation, regulate Qi to resolve stagnation; for Qi deficiency, boost Qi to moisten the intestines; for Blood/Yin deficiency, nourish Blood and Yin to moisten the intestines; for Yang deficiency, warm Yang to unblock the bowel — avoiding indiscriminate purgation that would injure the correct Qi.",
+      "red_flags_zh": [
+        {
+          "finding": "無法排氣、嘔吐或發燒",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "須排除腸阻塞",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_constipation (rf.chronic_constipation.cannot_pass_gas_vomiting_fever)"
+        },
+        {
+          "finding": "便中帶血、黑便，或不明原因體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除大腸腫瘤或消化道出血，尤其新發於中老年者",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.ibs (rf.ibs.rectal_bleeding_bloody_stools, rf.ibs.weight_loss_anemia)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Inability to pass gas, vomiting, or fever",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Must rule out bowel obstruction",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_constipation (rf.chronic_constipation.cannot_pass_gas_vomiting_fever)"
+        },
+        {
+          "finding": "Blood in the stool, black stools, or unexplained weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out colorectal tumor or GI bleeding, especially with new onset in middle-aged/older adults",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.ibs (rf.ibs.rectal_bleeding_bloody_stools, rf.ibs.weight_loss_anemia)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.chronic_constipation, cond.ibs"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.chronic_constipation, cond.ibs"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.fu_tong",
@@ -140,21 +785,341 @@
       "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
       "key_manifestation_ids": [
         "sym.headache"
-      ]
+      ],
+      "definition_zh": "頭痛是以頭部疼痛為主要表現的病證，病因複雜，可單獨出現，亦可見於多種急慢性疾病過程中，須先鑑別是否為外感或內傷所致。",
+      "definition_en": "Tou Tong (Headache) is a disease characterized primarily by head pain. Its causes are complex; it may occur alone or as part of many acute and chronic illnesses, and must first be differentiated as external-contraction or internal-damage in origin.",
+      "etiology_zh": "外感頭痛多因風邪夾寒、熱、濕侵襲；內傷頭痛多因肝陽上亢、肝火上炎、痰濁上蒙、瘀血阻絡，或氣血虧虛、腎精不足、清竅失養所致。",
+      "etiology_en": "External-contraction headache is usually caused by Wind combined with Cold, Heat, or Dampness invading upward. Internal-damage headache is usually caused by Liver Yang rising, Liver Fire flaring upward, Phlegm-turbidity clouding the head, Blood stasis obstructing the network vessels, or Qi-Blood/Kidney Essence deficiency failing to nourish the clear orifices.",
+      "pathomechanism_zh": "頭為諸陽之會、清竅所在，凡外邪上擾清竅，或內傷病理產物（風、火、痰、瘀）循經上犯，或精血不足不能上榮，皆可致頭部脈絡失和而痛。",
+      "pathomechanism_en": "The head is where all the Yang channels converge and houses the clear orifices. Whether an external pathogen disturbs the clear orifices from above, or an internal pathological product (Wind, Fire, Phlegm, or stasis) travels upward along the channels, or Essence and Blood are insufficient to nourish the head, the network vessels of the head lose their harmony and pain results.",
+      "key_manifestations_zh": [
+        "頭部脹痛、跳痛或刺痛",
+        "疼痛部位固定或遊走",
+        "隨情緒、月經、疲勞誘發或加重",
+        "可伴頭暈、目脹",
+        "反覆發作"
+      ],
+      "key_manifestations_en": [
+        "Distending, throbbing, or stabbing head pain",
+        "Fixed or migratory pain location",
+        "Triggered or worsened by emotion, menstruation, or fatigue",
+        "May accompany dizziness or eye distension",
+        "Recurrent episodes"
+      ],
+      "disease_location_zh": "病位在頭，與肝、脾、腎關係密切；久痛入絡者及血瘀。",
+      "disease_location_en": "Disease location is the head, closely related to the Liver, Spleen, and Kidney; chronic pain that enters the network vessels involves Blood stasis.",
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.liver_yang_rising",
+        "pattern.liver_wind",
+        "pattern.liver_fire_flaring",
+        "pattern.liver_wind_stirring",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "外感頭痛以疏風為主，隨寒熱濕邪加減；內傷頭痛當平肝潛陽、清肝瀉火、化痰、活血通絡或補益氣血腎精，隨證而治。",
+      "treatment_principle_en": "External-contraction headache is treated mainly by dispersing Wind, modified for accompanying Cold, Heat, or Dampness. Internal-damage headache requires calming the Liver and subduing Yang, clearing Liver Fire, transforming Phlegm, invigorating Blood to unblock the network vessels, or tonifying Qi-Blood and Kidney Essence, according to the pattern.",
+      "red_flags_zh": [
+        {
+          "finding": "霹靂性頭痛（數秒至數分鐘內達最劇烈程度）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診，排除蛛網膜下腔出血",
+          "rationale": "典型蛛網膜下腔出血或其他顱內出血表現",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.migraine / cond.tension_headache (rf.migraine.legacy01, rf.tension_headache.legacy01)"
+        },
+        {
+          "finding": "發燒合併頸部僵硬、畏光",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診，排除腦膜炎",
+          "rationale": "腦膜炎典型三聯徵之一",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tension_headache (rf.tension_headache.legacy02)"
+        },
+        {
+          "finding": "50歲以上新發頭痛、漸進性惡化、伴神經缺損或晨間嘔吐",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速安排影像學檢查",
+          "rationale": "須排除顱內腫瘤或顱內壓升高",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tension_headache (rf.tension_headache.legacy03)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Thunderclap headache (reaching maximal intensity within seconds to minutes)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation to rule out subarachnoid hemorrhage",
+          "rationale": "Classic presentation of SAH or other intracranial hemorrhage",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.migraine / cond.tension_headache (rf.migraine.legacy01, rf.tension_headache.legacy01)"
+        },
+        {
+          "finding": "Fever with neck stiffness and photophobia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation to rule out meningitis",
+          "rationale": "Part of the classic meningitis triad",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tension_headache (rf.tension_headache.legacy02)"
+        },
+        {
+          "finding": "New headache onset over age 50, progressively worsening, with focal deficit or morning vomiting",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt imaging work-up",
+          "rationale": "Must exclude intracranial tumor or raised intracranial pressure",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tension_headache (rf.tension_headache.legacy03)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.migraine, cond.tension_headache, cond.cluster_headache"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.liver_fire / liver_yang_rising / liver_wind / liver_fire_flaring / liver_wind_stirring related_tcm_disease_ids includes tdis.tou_tong (data/pathology/pattern_library.json, pattern_registry.json)"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.migraine, cond.tension_headache, cond.cluster_headache"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xuan_yun",
       "name_zh": "眩暈",
       "pinyin": "Xuanyun",
       "name_en": "Dizziness",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "眩暈是以頭暈目眩、視物旋轉或站立不穩為主要表現的病證，輕者閉目可止，重者如坐舟車，甚則暈仆。",
+      "definition_en": "Xuan Yun (Dizziness) is a disease characterized by dizziness, blurred or spinning vision, or unsteadiness. Mild cases resolve on closing the eyes; severe cases feel like being on a boat or vehicle, and the most severe may cause collapse.",
+      "etiology_zh": "多因情志不遂、肝陽偏亢；或飲食不節、脾失健運、痰濕內生；或久病體虛、氣血不足；或年老腎虧、精髓不充所致。",
+      "etiology_en": "Commonly caused by emotional stress leading to Liver Yang hyperactivity; or an improper diet impairing Spleen transportation and generating internal Phlegm-Dampness; or chronic illness with Qi-Blood deficiency; or aging with Kidney depletion and insufficient Marrow.",
+      "pathomechanism_zh": "肝陽上亢、肝風內動,擾動清空;或痰濕中阻,清陽不升;或氣血虧虛,清竅失養;或腎精不足,髓海空虛,皆可發為眩暈。",
+      "pathomechanism_en": "Whether from Liver Yang rising and Liver Wind stirring internally to disturb the clear space of the head, Phlegm-Dampness obstructing the Middle so clear Yang fails to ascend, Qi-Blood deficiency failing to nourish the clear orifices, or Kidney Essence deficiency leaving the Sea of Marrow empty — any of these mechanisms can produce dizziness.",
+      "key_manifestations_zh": [
+        "頭暈目眩",
+        "視物旋轉或天旋地轉感",
+        "站立不穩",
+        "可伴噁心嘔吐",
+        "勞累或情緒波動誘發加重"
+      ],
+      "key_manifestations_en": [
+        "Dizziness with blurred vision",
+        "Sensation of spinning or the room spinning",
+        "Unsteadiness on standing",
+        "May accompany nausea and vomiting",
+        "Triggered or worsened by exertion or emotional upset"
+      ],
+      "disease_location_zh": "病位在清竅（頭），與肝、脾、腎關係最為密切。",
+      "disease_location_en": "Disease location is the clear orifices (head), most closely related to the Liver, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.liver_yang_rising",
+        "pattern.liver_wind",
+        "pattern.kidney_yin_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.liver_fire_flaring",
+        "pattern.liver_wind_stirring"
+      ],
+      "treatment_principle_zh": "肝陽上亢者平肝潛陽；痰濕中阻者化痰祛濕、健脾和胃；氣血虧虛者補益氣血；腎精不足者補腎填精。",
+      "treatment_principle_en": "For Liver Yang rising, calm the Liver and subdue Yang; for Phlegm-Dampness obstructing the Middle, transform Phlegm and resolve Dampness while fortifying the Spleen and harmonizing the Stomach; for Qi-Blood deficiency, tonify Qi and Blood; for Kidney Essence deficiency, tonify the Kidney and replenish Essence.",
+      "red_flags_zh": [
+        {
+          "finding": "伴隨肢體無力、無法移動手臂或腿部、視力或言語改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診，撥打當地緊急號碼",
+          "rationale": "提示中風或TIA，屬醫療急症",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo (rf.dizziness_vertigo.weakness_vision_speech_changes)"
+        },
+        {
+          "finding": "眩暈伴隨昏厥或警覺性喪失",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "可能提示嚴重心律不整或中樞神經系統病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo (rf.dizziness_vertigo.syncope_altered_consciousness)"
+        },
+        {
+          "finding": "突發步態不穩、失去平衡或協調障礙",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "小腦或腦幹中風的典型表現",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo (rf.dizziness_vertigo.sudden_gait_ataxia)"
+        },
+        {
+          "finding": "伴隨突發性聽力喪失（突發性耳聾）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫鑑別",
+          "rationale": "屬醫療急症，需儘速排查內耳血管或神經病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menieres (rf.menieres.sudden_sensorineural_hearing_loss)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Accompanied by weakness, inability to move an arm or leg, or a change in vision or speech",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Suggests stroke or TIA, a medical emergency",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo (rf.dizziness_vertigo.weakness_vision_speech_changes)"
+        },
+        {
+          "finding": "Vertigo with fainting or loss of alertness",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "May indicate serious arrhythmia or central nervous system pathology",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo (rf.dizziness_vertigo.syncope_altered_consciousness)"
+        },
+        {
+          "finding": "Sudden trouble walking, loss of balance, or lack of coordination",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Classic presentation of cerebellar or brainstem stroke",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo (rf.dizziness_vertigo.sudden_gait_ataxia)"
+        },
+        {
+          "finding": "Accompanied by sudden sensorineural hearing loss",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "A medical emergency requiring prompt work-up of inner-ear vascular or neural pathology",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menieres (rf.menieres.sudden_sensorineural_hearing_loss)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo, cond.menieres, cond.migraine_vestibular"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: related_tcm_disease_ids includes tdis.xuan_yun on pattern.liver_fire / liver_yang_rising / liver_wind / kidney_yin_deficiency / phlegm_damp / liver_fire_flaring / liver_wind_stirring (data/pathology/pattern_library.json, pattern_registry.json)"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.dizziness_vertigo, cond.menieres, cond.migraine_vestibular"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.zhong_feng",
       "name_zh": "中風",
       "pinyin": "Zhongfeng",
       "name_en": "Wind-Stroke",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "中風是以突然昏仆、不省人事，伴口眼喎斜、半身不遂、言語謇澀，或不經昏仆僅見半身不遂等為主要表現的病證，起病急驟，變化迅速，與自然界善行數變之風邪特性相似，故名中風。",
+      "definition_en": "Zhong Feng (Wind-Stroke Disease) is characterized by sudden collapse with loss of consciousness, deviation of the eyes and mouth, hemiplegia, and slurred speech — or hemiplegia without collapse. Onset is abrupt and the course changes rapidly, resembling the mobile, changeable nature of Wind, hence the name.",
+      "etiology_zh": "多因平素肝腎陰虛、氣血衰少，加以憂思惱怒、飲食不節、勞逸失度或氣候驟變誘發，以致氣血逆亂，直沖犯腦。",
+      "etiology_en": "Usually arises in those with an underlying Liver-Kidney Yin deficiency and Qi-Blood decline, precipitated by worry, anger, dietary irregularity, over-exertion or excessive rest, or sudden weather change, causing Qi and Blood to rebel chaotically upward and rush directly into the brain.",
+      "pathomechanism_zh": "肝腎陰虛則肝陽偏亢,陽亢化風,風火相煽,夾痰夾瘀,上蒙清竅、竄擾經絡,發為中風;病位深淺分中經絡（無神志改變）與中臟腑（神昏），中臟腑又分閉證、脫證。",
+      "pathomechanism_en": "Liver-Kidney Yin deficiency allows Liver Yang to become hyperactive; hyperactive Yang transforms into Wind, Wind and Fire fan each other, and combined with Phlegm and stasis they cloud the clear orifices above and disrupt the channels — producing stroke. By depth, this is classified as channel-network involvement (no altered consciousness) versus organ involvement (coma), the latter further divided into closed (excess, blockage) and desertion (collapse, deficiency) patterns.",
+      "key_manifestations_zh": [
+        "突然半身不遂",
+        "口眼喎斜",
+        "言語謇澀或不能言",
+        "神志不清（重症）",
+        "偏身麻木或感覺異常"
+      ],
+      "key_manifestations_en": [
+        "Sudden hemiplegia (weakness on one side)",
+        "Deviation of the eyes and mouth",
+        "Slurred speech or inability to speak",
+        "Altered consciousness (severe cases)",
+        "Numbness or abnormal sensation on one side of the body"
+      ],
+      "disease_location_zh": "病位在腦，與心、肝、腎、脾密切相關。",
+      "disease_location_en": "Disease location is the brain, closely related to the Heart, Liver, Kidney, and Spleen.",
+      "related_patterns": [
+        "pattern.liver_wind",
+        "pattern.liver_wind_stirring",
+        "pattern.liver_yang_rising",
+        "pattern.phlegm_misting_heart",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "treatment_principle_zh": "急性期以醒神開竅、平肝熄風、化痰通腑或活血通絡為主，閉證開竅、脫證固脫；恢復期著重益氣活血、滋補肝腎。中風為急症，中醫治療須在完成西醫急性期評估與處置後配合介入，不可延誤送醫。",
+      "treatment_principle_en": "In the acute phase, treatment focuses on reviving consciousness and opening the orifices, calming the Liver and extinguishing Wind, transforming Phlegm and freeing the bowels, or invigorating Blood to unblock the network vessels — opening the orifices in closed patterns, securing collapse in desertion patterns. In the recovery phase, the focus shifts to boosting Qi, invigorating Blood, and nourishing the Liver and Kidney. Stroke is a medical emergency; TCM treatment must follow, not delay, emergency biomedical assessment and treatment.",
+      "red_flags_zh": [
+        {
+          "finding": "突發臉部下垂、單側手臂無力或無法舉起、言語不清或說話困難（FAST徵象）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119，記錄症狀開始時間，儘速送醫",
+          "rationale": "中風的典型警訊，時間就是腦組織（time is brain），越早送醫治療效果越好",
+          "source": "MedlinePlus - Stroke (https://medlineplus.gov/ency/article/000726.htm); MedlinePlus FAST infographic"
+        },
+        {
+          "finding": "出現新發或復發之中風症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119或急診",
+          "rationale": "提示復發性中風，需即刻評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.stroke_rehab (rf.stroke_rehab.recurrent_stroke_signs)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden facial droop, one-sided arm weakness or inability to raise it, or slurred/difficult speech (FAST signs)",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 immediately, note the time symptoms started, and get to a hospital as fast as possible",
+          "rationale": "Classic stroke warning signs — \"time is brain,\" earlier treatment gives better outcomes",
+          "source": "MedlinePlus - Stroke (https://medlineplus.gov/ency/article/000726.htm); MedlinePlus FAST infographic"
+        },
+        {
+          "finding": "New or recurrent signs of stroke",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 or seek emergency care immediately",
+          "rationale": "Suggests a recurrent stroke requiring immediate evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.stroke_rehab (rf.stroke_rehab.recurrent_stroke_signs)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Stroke (https://medlineplus.gov/ency/article/000726.htm)",
+        "reused from data/pathology/red_flag_registry.json entity cond.stroke_rehab"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.liver_wind / liver_wind_stirring related_tcm_disease_ids includes tdis.zhong_feng (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus - Stroke (https://medlineplus.gov/ency/article/000726.htm)",
+          "reused from data/pathology/red_flag_registry.json entity cond.stroke_rehab"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.mian_tan",
@@ -175,14 +1140,216 @@
       "name_zh": "不寐",
       "pinyin": "Bumei",
       "name_en": "Insomnia",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "不寐是以經常不能獲得正常睡眠為主症的病證，輕者入睡困難或睡而易醒，重者徹夜不眠。",
+      "definition_en": "Bu Mei (Insomnia) is a disease characterized by a persistent inability to obtain normal sleep. Mild cases show difficulty falling asleep or easy waking; severe cases have no sleep at all through the night.",
+      "etiology_zh": "多因情志不遂（肝鬱化火）、思慮勞倦傷及心脾、稟賦不足或久病心腎不交，或飲食不節、痰熱內擾所致。",
+      "etiology_en": "Commonly caused by emotional disturbance (Liver constraint transforming into Fire), excessive worry or overwork injuring the Heart and Spleen, constitutional weakness or chronic illness disrupting Heart-Kidney communication, or dietary irregularity with internal Phlegm-Heat disturbance.",
+      "pathomechanism_zh": "心藏神，神安則寐；心火亢盛、痰熱擾心，或心腎不交、水火失濟，或心脾兩虛、神失所養，皆令心神不安而不寐。",
+      "pathomechanism_en": "The Heart houses the Shen (spirit); when the Shen is settled, sleep follows. Whether from Heart Fire blazing, Phlegm-Heat disturbing the Heart, Heart-Kidney failing to communicate so Water and Fire lose their balance, or Heart-Spleen dual deficiency leaving the Shen unnourished — all these mechanisms unsettle the Heart Shen and produce insomnia.",
+      "key_manifestations_zh": [
+        "入睡困難",
+        "睡而易醒或醒後難再入睡",
+        "多夢",
+        "晨起精神不振、日間疲倦",
+        "可伴心悸、健忘、煩躁"
+      ],
+      "key_manifestations_en": [
+        "Difficulty falling asleep",
+        "Easy waking or difficulty returning to sleep",
+        "Excessive dreaming",
+        "Poor morning alertness and daytime fatigue",
+        "May accompany palpitations, poor memory, or irritability"
+      ],
+      "disease_location_zh": "病位在心，與肝、脾、腎關係密切。",
+      "disease_location_en": "Disease location is the Heart, closely related to the Liver, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.heart_kidney_not_communicating",
+        "pattern.heart_spleen_deficiency",
+        "pattern.insomnia_heart_kidney_disharmony",
+        "pattern.heart_fire",
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_gallbladder_qi_deficiency"
+      ],
+      "treatment_principle_zh": "以補虛瀉實、調整陰陽、安神定志為總則：心腎不交者交通心腎，心脾兩虛者補益心脾，肝鬱化火者疏肝瀉火，痰熱擾心者清化痰熱。",
+      "treatment_principle_en": "The overall principle is to supplement vacuity, drain excess, regulate Yin-Yang balance, and calm the Shen: for Heart-Kidney disharmony, restore communication between Heart and Kidney; for Heart-Spleen deficiency, tonify both; for Liver constraint transforming Fire, soothe the Liver and drain Fire; for Phlegm-Heat disturbing the Heart, clear and transform Phlegm-Heat.",
+      "red_flags_zh": [
+        {
+          "finding": "出現傷害自己或他人的念頭，或曾計畫、嘗試自傷",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打988自殺與危機專線，或撥打119／前往急診",
+          "rationale": "失眠常為憂鬱症就醫的首發症狀，須立即篩查自殺風險",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm); MedlinePlus - Insomnia (https://medlineplus.gov/ency/article/000805.htm)"
+        },
+        {
+          "finding": "失眠已成為持續困擾、影響日間功能",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "MedlinePlus建議失眠已成為問題時應諮詢醫療人員，並排查憂鬱症等共病",
+          "source": "MedlinePlus - Insomnia (https://medlineplus.gov/ency/article/000805.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Thoughts of harming self or others, or a plan or attempt to self-harm",
+          "urgency_level": "emergency",
+          "recommended_action": "Call or text 988 (Suicide & Crisis Lifeline) immediately, or call 911 / go to the emergency room",
+          "rationale": "Insomnia is often the symptom that first brings people with depression to seek medical help; suicide risk must be screened immediately",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm); MedlinePlus - Insomnia (https://medlineplus.gov/ency/article/000805.htm)"
+        },
+        {
+          "finding": "Insomnia has become an ongoing problem affecting daytime function",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "MedlinePlus advises contacting a provider once insomnia becomes a problem, and screening for comorbid depression",
+          "source": "MedlinePlus - Insomnia (https://medlineplus.gov/ency/article/000805.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Insomnia (https://medlineplus.gov/ency/article/000805.htm)",
+        "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.heart_kidney_not_communicating / heart_spleen_deficiency / insomnia_heart_kidney_disharmony related_tcm_disease_ids includes tdis.shi_mian (colloquial alias for insomnia; treated as the same clinical entity as tdis.bu_mei, data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus - Insomnia (https://medlineplus.gov/ency/article/000805.htm)",
+          "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xin_ji",
       "name_zh": "心悸",
       "pinyin": "Xinji",
       "name_en": "Palpitations",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "心悸是患者自覺心中悸動不安、驚惕不寧，甚則不能自主的病證，可呈陣發性或持續性。",
+      "definition_en": "Xin Ji (Palpitations) is a disease in which the patient subjectively feels the heart pounding, racing, or fluttering in an unsettled way, sometimes to the point of being unable to control it. It may be paroxysmal or continuous.",
+      "etiology_zh": "多因體虛久病（心之氣血陰陽不足）、驚恐惱怒、飲食勞倦，或痰飲、瘀血內阻心脈所致。",
+      "etiology_en": "Commonly caused by chronic illness or constitutional weakness (deficiency of Heart Qi, Blood, Yin, or Yang), fright or anger, dietary and physical overexertion, or internal Phlegm-fluids or Blood stasis obstructing the Heart vessels.",
+      "pathomechanism_zh": "心主血脈、藏神；心之氣血陰陽虧虛則心失所養,或痰飲、瘀血阻遏心脈、擾動心神,皆令心動失常而悸。",
+      "pathomechanism_en": "The Heart governs the blood vessels and houses the Shen. Deficiency of Heart Qi, Blood, Yin, or Yang leaves the Heart unnourished; alternatively, Phlegm-fluids or Blood stasis obstructing the Heart vessels disturbs the Heart Shen — either mechanism disrupts the normal heartbeat and produces palpitations.",
+      "key_manifestations_zh": [
+        "自覺心跳異常（快、慢或不規則）",
+        "心慌不安、驚惕",
+        "可伴胸悶、氣短",
+        "勞累、情緒激動時誘發或加重",
+        "重者伴頭暈、乏力"
+      ],
+      "key_manifestations_en": [
+        "Subjective awareness of an abnormal heartbeat (fast, slow, or irregular)",
+        "A fluttering, unsettled sensation with fright",
+        "May accompany chest oppression or shortness of breath",
+        "Triggered or worsened by exertion or emotional excitement",
+        "Severe cases accompanied by dizziness or weakness"
+      ],
+      "disease_location_zh": "病位在心，與肝、脾、腎關係密切。",
+      "disease_location_en": "Disease location is the Heart, closely related to the Liver, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.heart_qi_deficiency",
+        "pattern.heart_yang_deficiency",
+        "pattern.heart_blood_deficiency",
+        "pattern.heart_yin_deficiency",
+        "pattern.heart_fire",
+        "pattern.blood_stasis",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.heart_spleen_deficiency"
+      ],
+      "treatment_principle_zh": "以補虛瀉實、養心安神為總則：氣血陰陽虧虛者隨證補益，痰飲、瘀血內阻者化痰、活血並安神定悸。",
+      "treatment_principle_en": "The overall principle is to supplement vacuity, drain excess, and nourish the Heart to calm the Shen: for Qi, Blood, Yin, or Yang deficiency, tonify accordingly; for Phlegm-fluid or Blood stasis obstruction, transform Phlegm or invigorate Blood while calming the Shen and settling the palpitations.",
+      "red_flags_zh": [
+        {
+          "finding": "意識喪失、胸痛、呼吸困難、異常出汗、頭暈或暈厥前兆",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119或急診就醫",
+          "rationale": "可能提示危險性心律不整或急性心臟事件",
+          "source": "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        },
+        {
+          "finding": "心跳每分鐘超過100下（非運動、焦慮或發燒所致）、頻繁早期收縮（每分鐘6次以上或連續3次以上）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除心律不整",
+          "source": "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        },
+        {
+          "finding": "首次出現心悸，或型態與過去明顯不同",
+          "urgency_level": "same_day",
+          "recommended_action": "儘快就醫評估",
+          "rationale": "新發或型態改變之心悸須排除心臟結構或節律病變",
+          "source": "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Loss of consciousness, chest pain, shortness of breath, unusual sweating, dizziness, or lightheadedness",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 or seek emergency care immediately",
+          "rationale": "May indicate a dangerous arrhythmia or acute cardiac event",
+          "source": "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        },
+        {
+          "finding": "Heart rate over 100 bpm without exercise, anxiety, or fever; or frequent extra beats (more than 6/minute or in groups of 3+)",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out arrhythmia",
+          "source": "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        },
+        {
+          "finding": "First-ever palpitations, or a pattern clearly different from before",
+          "urgency_level": "same_day",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "New-onset or changed-pattern palpitations must rule out structural or rhythm disease",
+          "source": "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.heart_kidney_not_communicating / heart_spleen_deficiency related_tcm_disease_ids includes tdis.xin_ji (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus - Heart Palpitations (https://medlineplus.gov/ency/article/003081.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xiong_bi",
@@ -196,7 +1363,113 @@
       "name_zh": "鬱證",
       "pinyin": "Yuzheng",
       "name_en": "Depression Pattern Disease",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+      "definition_zh": "鬱證是因情志不遂、氣機鬱滯所致，以心情抑鬱、情緒不寧、胸脅脹滿疼痛，或易怒善哭、咽中如有異物梗塞等為主要表現的病證。",
+      "definition_en": "Yu Zheng (Depression Pattern Disease) arises from emotional frustration and Qi stagnation, presenting mainly with depressed mood, emotional unease, chest and rib-side distension and pain, or irritability with a tendency to cry, or a sensation of something obstructing the throat.",
+      "etiology_zh": "多因情志所傷（憂思、惱怒、悲哀）、素體肝旺或稟賦不足，日久氣鬱化火、化痰，或耗傷心脾氣血、肝腎之陰所致。",
+      "etiology_en": "Commonly caused by emotional injury (worry, anger, grief), a constitutionally hyperactive Liver, or constitutional weakness. Over time, Qi stagnation may transform into Fire or generate Phlegm, or may exhaust Heart-Spleen Qi-Blood or Liver-Kidney Yin.",
+      "pathomechanism_zh": "肝主疏泄；情志不遂則肝氣鬱結,氣機失於條達;鬱久化火則見急躁易怒,鬱結成痰則見咽中梗塞（梅核氣）,病久耗傷心脾則心神失養,累及肝腎則陰虛火旺。",
+      "pathomechanism_en": "The Liver governs the free flow of Qi. Emotional frustration causes Liver Qi to bind and stagnate, so Qi fails to move smoothly. Prolonged stagnation transforming into Fire produces irritability and a short temper; stagnation congealing into Phlegm produces a throat-obstruction sensation (Plum-Pit Qi); prolonged illness exhausting the Heart and Spleen leaves the Shen unnourished; and involvement of the Liver and Kidney produces Yin deficiency with Fire flaring.",
+      "key_manifestations_zh": [
+        "情緒抑鬱、悶悶不樂",
+        "胸脅脹滿或走竄疼痛",
+        "善太息（喜歎氣）",
+        "咽中如有異物梗塞（梅核氣）",
+        "急躁易怒或易哭善悲",
+        "失眠、健忘"
+      ],
+      "key_manifestations_en": [
+        "Depressed mood, feeling low-spirited",
+        "Chest and rib-side distension or migrating pain",
+        "Frequent sighing",
+        "Sensation of something obstructing the throat (Plum-Pit Qi)",
+        "Irritability with a short temper, or a tendency toward sadness and crying",
+        "Insomnia, poor memory"
+      ],
+      "disease_location_zh": "病位主要在肝，與心、脾、腎相關。",
+      "disease_location_en": "Disease location is primarily the Liver, related to the Heart, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.liver_fire",
+        "pattern.heart_spleen_deficiency",
+        "pattern.heart_kidney_yin_deficiency",
+        "pattern.phlegm_fire_disturbing_heart"
+      ],
+      "treatment_principle_zh": "以疏肝理氣解鬱為主要治法，隨證兼以清肝瀉火、化痰散結、健脾養心或滋養肝腎。",
+      "treatment_principle_en": "The primary treatment method is to soothe the Liver, regulate Qi, and resolve constraint; depending on the pattern this is combined with clearing Liver Fire, transforming Phlegm and dissipating binds, fortifying the Spleen and nourishing the Heart, or nourishing the Liver and Kidney.",
+      "red_flags_zh": [
+        {
+          "finding": "出現傷害自己或他人的想法、計畫或行為",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打988自殺與危機專線或119，或前往急診；若已發生自傷行為應立即撥打119並陪同在旁",
+          "rationale": "自殺意念與行為是精神科急症，須立即介入",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        },
+        {
+          "finding": "出現與外界無關之幻聽等精神病症狀",
+          "urgency_level": "same_day",
+          "recommended_action": "儘快聯絡醫療人員",
+          "rationale": "提示合併精神病性特徵，需專科評估",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        },
+        {
+          "finding": "情緒困擾已明顯影響工作、學業或家庭功能",
+          "urgency_level": "routine",
+          "recommended_action": "建議儘速就醫評估",
+          "rationale": "應在問題出現早期即尋求治療",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Thoughts, plans, or actions of harming self or others",
+          "urgency_level": "emergency",
+          "recommended_action": "Call or text 988 (Suicide & Crisis Lifeline) or 911 immediately, or go to the emergency room; if self-harm has already occurred, call 911 and stay with the person",
+          "rationale": "Suicidal ideation and behavior are psychiatric emergencies requiring immediate intervention",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        },
+        {
+          "finding": "Hallucinations unrelated to external stimuli",
+          "urgency_level": "same_day",
+          "recommended_action": "Contact a healthcare provider promptly",
+          "rationale": "Suggests depression with psychotic features requiring specialist evaluation",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        },
+        {
+          "finding": "Emotional distress clearly impairing work, school, or family function",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend prompt medical evaluation",
+          "rationale": "Treatment should be sought at the earliest sign of a problem",
+          "source": "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "MedlinePlus - Major Depression (https://medlineplus.gov/ency/article/000945.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.zang_zao",
@@ -225,14 +1498,192 @@
       "name_zh": "消渴",
       "pinyin": "Xiaoke",
       "name_en": "Wasting-Thirst",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+      "definition_zh": "消渴是以多飲、多食、多尿、形體消瘦，或尿有甜味為主要表現的病證，古代依偏重上、中、下三消分類。",
+      "definition_en": "Xiao Ke (Wasting-Thirst Disease) is characterized primarily by excessive thirst, excessive hunger, excessive urination, and wasting/emaciation, sometimes with sweet-tasting urine. Classically it is divided into Upper, Middle, and Lower Wasting according to predominant symptom.",
+      "etiology_zh": "多因飲食不節（嗜食肥甘）、情志失調、稟賦不足，或勞欲過度，日久導致陰津虧耗、燥熱內生。",
+      "etiology_en": "Commonly caused by dietary irregularity (excessive rich, sweet food), emotional disturbance, constitutional weakness, or overexertion/excessive sexual activity, which over time leads to depletion of Yin fluids and internal Dryness-Heat.",
+      "pathomechanism_zh": "陰虛為本、燥熱為標：肺熱津傷則口渴多飲（上消），胃熱熾盛則多食易饑（中消），腎陰虧虛、固攝失司則尿多而甜（下消）；病久陰損及陽，可見陰陽兩虛。",
+      "pathomechanism_en": "Yin deficiency is the root and Dryness-Heat the branch: Lung Heat injuring fluids produces thirst with excessive drinking (Upper Wasting); Stomach Heat blazing produces excessive hunger and easy hunger (Middle Wasting); Kidney Yin deficiency with failed securing produces excessive, sweet urine (Lower Wasting). With prolonged illness, Yin damage can extend to Yang, producing combined Yin-Yang deficiency.",
+      "key_manifestations_zh": [
+        "多飲、口渴",
+        "多食、易饑",
+        "多尿、尿有甜味",
+        "形體消瘦",
+        "神疲乏力"
+      ],
+      "key_manifestations_en": [
+        "Excessive thirst and drinking",
+        "Excessive hunger, easily hungry",
+        "Excessive urination, sweet-tasting urine",
+        "Wasting/emaciation",
+        "Fatigue and lack of strength"
+      ],
+      "disease_location_zh": "病位在肺、胃、腎，尤以腎為關鍵。",
+      "disease_location_en": "Disease location is the Lung, Stomach, and Kidney, with the Kidney being the key organ.",
+      "related_patterns": [
+        "pattern.stomach_heat",
+        "pattern.stomach_fire",
+        "pattern.kidney_yin_deficiency",
+        "pattern.yin_deficiency"
+      ],
+      "treatment_principle_zh": "以滋陰清熱為基本治法：上消清肺潤燥，中消清胃瀉火，下消滋陰補腎；陰陽兩虛者陰陽並補。消渴需與西醫糖尿病密切配合監測血糖，不可僅以中藥替代降糖治療。",
+      "treatment_principle_en": "The basic treatment method is to nourish Yin and clear Heat: for Upper Wasting, clear the Lung and moisten Dryness; for Middle Wasting, clear the Stomach and drain Fire; for Lower Wasting, nourish Yin and tonify the Kidney; combined Yin-Yang deficiency requires tonifying both. Xiao Ke requires close coordination with biomedical diabetes monitoring — TCM should not replace glucose-lowering treatment.",
+      "red_flags_zh": [
+        {
+          "finding": "意識改變、深快呼吸、噁心嘔吐、腹痛、呼氣有果香味",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診或撥打119",
+          "rationale": "提示糖尿病酮酸中毒（DKA），為致命性糖尿病急症",
+          "source": "MedlinePlus - Diabetic Ketoacidosis (https://medlineplus.gov/ency/article/000320.htm)"
+        },
+        {
+          "finding": "快速體重減輕、極度口渴、頻尿持續一天以上",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估血糖",
+          "rationale": "可能為第一型糖尿病或血糖控制急遽惡化的表現",
+          "source": "MedlinePlus - Diabetic Ketoacidosis (https://medlineplus.gov/ency/article/000320.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Altered consciousness, deep rapid breathing, nausea/vomiting, abdominal pain, fruity-smelling breath",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately or call 911",
+          "rationale": "Suggests diabetic ketoacidosis (DKA), a life-threatening diabetes emergency",
+          "source": "MedlinePlus - Diabetic Ketoacidosis (https://medlineplus.gov/ency/article/000320.htm)"
+        },
+        {
+          "finding": "Rapid weight loss, extreme thirst, frequent urination lasting more than a day",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt blood glucose evaluation",
+          "rationale": "May indicate new-onset type 1 diabetes or acutely worsening glycemic control",
+          "source": "MedlinePlus - Diabetic Ketoacidosis (https://medlineplus.gov/ency/article/000320.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Diabetic Ketoacidosis (https://medlineplus.gov/ency/article/000320.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "MedlinePlus - Diabetic Ketoacidosis (https://medlineplus.gov/ency/article/000320.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.han_zheng",
       "name_zh": "汗證",
       "pinyin": "Hanzheng",
       "name_en": "Sweating Disorders",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+      "definition_zh": "汗證是指由於陰陽失調、腠理不固所致汗液外泄失常的病證，不因外界環境或運動、衣被過厚等因素而汗出者，白晝汗出稱自汗，睡中汗出、醒後即止稱盜汗。",
+      "definition_en": "Han Zheng (Sweating Disorders) refers to abnormal, excessive sweating due to Yin-Yang disharmony and an unconsolidated exterior (striae), not explained by environment, exercise, or heavy clothing. Daytime sweating is called Spontaneous Sweating (Zi Han); sweating during sleep that stops on waking is called Night Sweating (Dao Han).",
+      "etiology_zh": "自汗多因肺氣不足、衛表不固；盜汗多因陰虛內熱、迫津外泄；亦可因邪熱鬱蒸或心血不足所致。",
+      "etiology_en": "Spontaneous sweating is most often due to Lung Qi deficiency with an unconsolidated defensive exterior. Night sweating is most often due to internal Yin-deficiency Heat forcing fluids outward. Both can also arise from pathogenic Heat steaming internally, or from Heart Blood insufficiency.",
+      "pathomechanism_zh": "肺氣虛則衛外不固、腠理疏鬆，津液外泄而自汗；陰虛內熱者虛火迫津外泄，睡則衛陽入裡、肌表不固而盜汗，醒則衛陽復出於表而汗止。",
+      "pathomechanism_en": "Lung Qi deficiency leaves the defensive exterior unconsolidated and the striae loose, so fluids leak outward as spontaneous sweat. In Yin deficiency with internal Heat, deficiency-fire forces fluids outward; during sleep, defensive Yang withdraws inward and the exterior is unguarded, producing night sweats, which stop on waking as defensive Yang returns to the exterior.",
+      "key_manifestations_zh": [
+        "白晝汗出，動則尤甚（自汗）",
+        "睡中汗出、醒後汗止（盜汗）",
+        "汗出部位可局限或全身",
+        "可伴倦怠乏力（自汗）或五心煩熱、口乾（盜汗）",
+        "反覆發作"
+      ],
+      "key_manifestations_en": [
+        "Daytime sweating, worse with exertion (Spontaneous Sweating)",
+        "Sweating during sleep that stops on waking (Night Sweating)",
+        "Sweating may be localized or generalized",
+        "May accompany fatigue (Spontaneous Sweating type) or five-center heat and dry mouth (Night Sweating type)",
+        "Recurrent pattern"
+      ],
+      "disease_location_zh": "病位在肺衛、心，與腎陰不足相關（盜汗）。",
+      "disease_location_en": "Disease location is the Lung-Wei level and Heart, related to Kidney Yin insufficiency in Night Sweating.",
+      "related_patterns": [
+        "pattern.lung_qi_deficiency",
+        "pattern.heart_blood_deficiency",
+        "pattern.yin_deficiency",
+        "pattern.damp_heat"
+      ],
+      "treatment_principle_zh": "自汗者益氣固表止汗，盜汗者滋陰降火斂汗，兼心血不足者養血安神，濕熱鬱蒸者清熱化濕。",
+      "treatment_principle_en": "For Spontaneous Sweating, boost Qi and consolidate the exterior to stop sweating; for Night Sweating, nourish Yin and downbear Fire while astringing sweat; where Heart Blood insufficiency coexists, nourish Blood and calm the Shen; for Damp-Heat steaming internally, clear Heat and transform Dampness.",
+      "red_flags_zh": [
+        {
+          "finding": "大量出汗合併胸痛、心跳急促而強、發燒或呼吸困難",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "可能提示心臟疾病、甲狀腺功能亢進或感染",
+          "source": "MedlinePlus - Sweating (https://medlineplus.gov/ency/article/003218.htm)"
+        },
+        {
+          "finding": "夜間盜汗合併不明原因體重減輕、淋巴結腫大",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "須排除淋巴瘤、結核病等全身性疾病",
+          "source": "MedlinePlus - Sweating (https://medlineplus.gov/ency/article/003218.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Heavy sweating with chest pain, rapid pounding heartbeat, fever, or shortness of breath",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "May indicate cardiac disease, hyperthyroidism, or infection",
+          "source": "MedlinePlus - Sweating (https://medlineplus.gov/ency/article/003218.htm)"
+        },
+        {
+          "finding": "Night sweats with unexplained weight loss or enlarged lymph nodes",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Must rule out lymphoma, tuberculosis, or another systemic disease",
+          "source": "MedlinePlus - Sweating (https://medlineplus.gov/ency/article/003218.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Sweating (https://medlineplus.gov/ency/article/003218.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "MedlinePlus - Sweating (https://medlineplus.gov/ency/article/003218.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xu_lao",
@@ -260,7 +1711,99 @@
       "name_zh": "淋證",
       "pinyin": "Linzheng",
       "name_en": "Strangury",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "definition_zh": "淋證是以小便頻數、淋漓澀痛、小腹拘急引痛為主症的病證，依主症兼夾不同分為熱淋、石淋、氣淋、血淋、膏淋、勞淋六類。",
+      "definition_en": "Lin Zheng (Strangury) is a disease characterized by frequent, dribbling, painful urination with lower abdominal tension and referred pain. It is classically divided into six types by predominant feature: Heat Lin, Stone Lin, Qi Lin, Blood Lin, Cloudy (Chyluria) Lin, and Fatigue Lin.",
+      "etiology_zh": "多因濕熱下注膀胱，或情志失調氣滯膀胱，或砂石內結，或久病脾腎兩虛、膀胱氣化無力所致。",
+      "etiology_en": "Commonly caused by Damp-Heat pouring down into the Bladder, emotional disturbance causing Qi stagnation in the Bladder, internal formation of stone/gravel, or chronic illness with Spleen-Kidney dual deficiency weakening Bladder Qi transformation.",
+      "pathomechanism_zh": "膀胱主藏津液、司氣化；濕熱蘊結膀胱則氣化失司、水道不利而為熱淋；砂石內結、氣滯血瘀者亦阻遏水道；久病脾腎兩虛則膀胱氣化無力、淋證遇勞即發，稱勞淋。",
+      "pathomechanism_en": "The Bladder stores fluids and governs Qi transformation. Damp-Heat accumulating in the Bladder impairs Qi transformation and obstructs the waterways, producing Heat Lin. Internal stone formation or Qi stagnation with Blood stasis likewise obstructs the waterways. Chronic Spleen-Kidney dual deficiency weakens Bladder Qi transformation so the condition flares with exertion — termed Fatigue Lin.",
+      "key_manifestations_zh": [
+        "小便頻數、短澀",
+        "排尿灼熱刺痛",
+        "小腹拘急疼痛，或引腰腹",
+        "尿中夾砂石（石淋）或血（血淋）或混濁如膏（膏淋）",
+        "遇勞即發或加重（勞淋）"
+      ],
+      "key_manifestations_en": [
+        "Frequent, scant, hesitant urination",
+        "Burning, stabbing pain on urination",
+        "Lower abdominal tension and pain, sometimes radiating to the back",
+        "Gravel in the urine (Stone Lin), blood (Blood Lin), or cloudy discharge (Cloudy/Chyluria Lin)",
+        "Triggered or worsened by exertion (Fatigue Lin)"
+      ],
+      "disease_location_zh": "病位在腎與膀胱，與肝、脾相關。",
+      "disease_location_en": "Disease location is the Kidney and Bladder, related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.heat_lin",
+        "pattern.stone_lin",
+        "pattern.qi_lin_excess",
+        "pattern.blood_lin_excess",
+        "pattern.cloudy_lin",
+        "pattern.fatigue_lin"
+      ],
+      "treatment_principle_zh": "以清熱利濕通淋為基本治法：熱淋清熱瀉火，石淋排石通淋，氣淋理氣，血淋涼血止血，膏淋分清泌濁，勞淋補脾益腎。",
+      "treatment_principle_en": "The basic treatment method is to clear Heat, disinhibit Dampness, and free the strangury: for Heat Lin, clear Heat and drain Fire; for Stone Lin, expel stones and free the strangury; for Qi Lin, regulate Qi; for Blood Lin, cool the Blood and stop bleeding; for Cloudy Lin, separate the clear from the turbid; for Fatigue Lin, tonify the Spleen and Kidney.",
+      "red_flags_zh": [
+        {
+          "finding": "發燒、後背或側腹疼痛、寒顫、嘔吐",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示腎盂腎炎（上泌尿道感染），須立即就醫",
+          "source": "MedlinePlus - Urinary Tract Infection - Adults (https://medlineplus.gov/ency/article/000521.htm)"
+        },
+        {
+          "finding": "抗生素治療後淋證症狀短期內復發",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速回診評估",
+          "rationale": "提示治療不完全或抗藥性感染",
+          "source": "MedlinePlus - Urinary Tract Infection - Adults (https://medlineplus.gov/ency/article/000521.htm)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever, back or side pain, chills, vomiting",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Suggests pyelonephritis (upper urinary tract infection) requiring immediate care",
+          "source": "MedlinePlus - Urinary Tract Infection - Adults (https://medlineplus.gov/ency/article/000521.htm)"
+        },
+        {
+          "finding": "Symptoms recur shortly after antibiotic treatment",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt follow-up evaluation",
+          "rationale": "Suggests incomplete treatment or a resistant infection",
+          "source": "MedlinePlus - Urinary Tract Infection - Adults (https://medlineplus.gov/ency/article/000521.htm)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Urinary Tract Infection - Adults (https://medlineplus.gov/ency/article/000521.htm)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.heat_lin / stone_lin / qi_lin_excess / blood_lin_excess / cloudy_lin / fatigue_lin related_tcm_disease_ids includes tdis.lin_zheng (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus - Urinary Tract Infection - Adults (https://medlineplus.gov/ency/article/000521.htm)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.long_bi",
@@ -312,14 +1855,222 @@
       "name_zh": "腰痛",
       "pinyin": "Yaotong",
       "name_en": "Lumbar Pain",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "definition_zh": "腰痛是以腰部一側或兩側疼痛為主症的病證，可急性發作亦可反覆遷延，是內科、傷科皆常見的病證。",
+      "definition_en": "Yao Tong (Lumbar Pain) is a disease characterized by pain in one or both sides of the lower back. It may present acutely or as a recurrent, chronic complaint, and is common in both internal medicine and orthopedic-traumatology practice.",
+      "etiology_zh": "多因外感風寒濕邪、跌仆閃挫、久坐久立勞損，或年老腎虧所致；腎為腰之府，腎虛為腰痛的重要內因。",
+      "etiology_en": "Commonly caused by external Wind-Cold-Damp invasion, trauma or a sudden wrenching strain, chronic strain from prolonged sitting or standing, or age-related Kidney depletion. The Kidney \"resides\" in the lower back, making Kidney vacuity a key internal cause of lumbar pain.",
+      "pathomechanism_zh": "腎虛則腰府失養、隱隱作痛;寒濕、濕熱之邪痺阻腰部經脈,或跌仆傷絡、瘀血阻滯,皆令腰部氣血不通而痛,不榮則痛與不通則痛可並見。",
+      "pathomechanism_en": "Kidney vacuity leaves the lumbar region unnourished, producing a dull, lingering ache. Cold-Damp or Damp-Heat obstructing the lumbar channels, or trauma injuring the network vessels with Blood stasis, obstruct the local flow of Qi and Blood and cause pain — the two mechanisms of \"lack of nourishment\" and \"lack of free flow\" may coexist.",
+      "key_manifestations_zh": [
+        "腰部一側或兩側疼痛",
+        "痠痛、脹痛、刺痛或冷痛（隨證不同）",
+        "勞累後加重、休息可緩解（腎虛型）",
+        "陰雨天或受寒加重（寒濕型）",
+        "痛處固定、夜間加重（瘀血型）"
+      ],
+      "key_manifestations_en": [
+        "Pain in one or both sides of the lower back",
+        "Aching, distending, stabbing, or cold pain (varies by pattern)",
+        "Worsened by exertion, relieved by rest (Kidney-vacuity type)",
+        "Worsened by rainy weather or cold exposure (Cold-Damp type)",
+        "Fixed location, worse at night (Blood-stasis type)"
+      ],
+      "disease_location_zh": "病位在腰部經絡，與腎關係最密切。",
+      "disease_location_en": "Disease location is the lumbar channels, most closely related to the Kidney.",
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.blood_stasis",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "treatment_principle_zh": "腎虛者補腎為主（陽虛溫補、陰虛滋補），寒濕者溫經散寒除濕，濕熱者清熱利濕，瘀血者活血化瘀通絡。",
+      "treatment_principle_en": "For Kidney vacuity, tonify the Kidney (warmly for Yang deficiency, nourishingly for Yin deficiency); for Cold-Damp, warm the channels and dispel Cold-Damp; for Damp-Heat, clear Heat and disinhibit Dampness; for Blood stasis, invigorate Blood and unblock the network vessels.",
+      "red_flags_zh": [
+        {
+          "finding": "鞍區麻木、大小便失禁或滯留、雙下肢無力",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診，考慮馬尾症候群",
+          "rationale": "馬尾症候群為外科急症，延誤治療可致永久性神經損傷",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.sciatica / cond.lumbar_disc_herniation (rf.sciatica.legacy01, rf.lumbar_disc_herniation.legacy01)"
+        },
+        {
+          "finding": "夜間痛、體重減輕、癌症病史，或發燒、靜脈藥癮、免疫低下病史",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速安排影像評估",
+          "rationale": "須排除腫瘤轉移或脊椎感染",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_low_back_pain (rf.chronic_low_back_pain.legacy02, rf.chronic_low_back_pain.legacy03)"
+        },
+        {
+          "finding": "重大外傷後劇痛，或骨質疏鬆長者輕微外力後腰痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫排除骨折",
+          "rationale": "須排除壓迫性骨折",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_low_back_pain (rf.chronic_low_back_pain.legacy04)"
+        },
+        {
+          "finding": "進行性足下垂或明顯肌力下降",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速神經外科評估",
+          "rationale": "提示神經根受壓迫惡化",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.sciatica / cond.lumbar_disc_herniation (rf.sciatica.legacy02, rf.lumbar_disc_herniation.legacy02)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Saddle numbness, bowel/bladder incontinence or retention, bilateral leg weakness",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately, consider cauda equina syndrome",
+          "rationale": "Cauda equina syndrome is a surgical emergency — delayed treatment can cause permanent nerve damage",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.sciatica / cond.lumbar_disc_herniation (rf.sciatica.legacy01, rf.lumbar_disc_herniation.legacy01)"
+        },
+        {
+          "finding": "Night pain, weight loss, cancer history, or fever/IV drug use/immunosuppression history",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt imaging work-up",
+          "rationale": "Must rule out metastatic tumor or spinal infection",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_low_back_pain (rf.chronic_low_back_pain.legacy02, rf.chronic_low_back_pain.legacy03)"
+        },
+        {
+          "finding": "Severe pain after major trauma, or lumbar pain after minor force in an osteoporotic elderly patient",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt evaluation to rule out fracture",
+          "rationale": "Must rule out a compression fracture",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.chronic_low_back_pain (rf.chronic_low_back_pain.legacy04)"
+        },
+        {
+          "finding": "Progressive foot drop or marked motor weakness",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt neurosurgical evaluation",
+          "rationale": "Suggests worsening nerve root compression",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.sciatica / cond.lumbar_disc_herniation (rf.sciatica.legacy02, rf.lumbar_disc_herniation.legacy02)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.chronic_low_back_pain, cond.acute_lumbar_sprain, cond.lumbar_disc_herniation, cond.sciatica"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.kidney_yang_deficiency / kidney_yin_deficiency related_tcm_disease_ids includes tdis.yao_tong (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.chronic_low_back_pain, cond.acute_lumbar_sprain, cond.lumbar_disc_herniation, cond.sciatica"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bi_zheng",
       "name_zh": "痺證",
       "pinyin": "Bizheng",
       "name_en": "Bi Syndrome (Painful Obstruction)",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+      "definition_zh": "痺證是因風、寒、濕、熱等外邪侵襲肢體、經絡、關節，導致氣血運行不暢，出現肌肉、筋骨、關節疼痛、麻木、重著、屈伸不利，甚則關節腫大變形的病證。",
+      "definition_en": "Bi Zheng (Bi Syndrome / Painful Obstruction) results from Wind, Cold, Damp, or Heat pathogens invading the limbs, channels, and joints, obstructing the flow of Qi and Blood and producing pain, numbness, heaviness, and restricted movement of muscles, sinews, bones, and joints, with severe cases showing joint swelling and deformity.",
+      "etiology_zh": "多因居處潮濕、氣候寒冷、涉水冒雨、汗出當風，正氣不足、腠理疏鬆，風寒濕熱之邪乘虛侵入肢體經絡所致。",
+      "etiology_en": "Commonly caused by living in a damp environment, exposure to cold weather, wading through water or being caught in rain, or sweating and then being exposed to wind — when the correct Qi is insufficient and the striae are loose, Wind, Cold, Damp, or Heat pathogens take advantage to invade the limbs and channels.",
+      "pathomechanism_zh": "外邪侵襲肢體經絡,阻遏氣血運行,不通則痛;風邪偏盛則痛處遊走（行痺）,寒邪偏盛則痛劇而定處（痛痺）,濕邪偏盛則重著腫脹（著痺）,熱邪偏盛則紅腫灼痛（熱痺）;病久邪留關節,痰瘀互結,可致關節腫大變形。",
+      "pathomechanism_en": "External pathogens invading the limb channels obstruct the flow of Qi and Blood — \"no free flow, hence pain.\" A predominance of Wind produces migratory pain (Wandering Bi); a predominance of Cold produces severe fixed pain (Painful Bi); a predominance of Dampness produces heaviness and swelling (Fixed Bi); a predominance of Heat produces redness, swelling, and burning pain (Heat Bi). Chronic retention of the pathogen in the joints, with Phlegm and stasis intertwining, can lead to joint swelling and deformity.",
+      "key_manifestations_zh": [
+        "肢體關節疼痛",
+        "關節腫脹或屈伸不利",
+        "肌膚麻木、重著感",
+        "疼痛遊走不定或固定不移（隨證不同）",
+        "遇寒或陰雨天加重（寒濕型）"
+      ],
+      "key_manifestations_en": [
+        "Limb and joint pain",
+        "Joint swelling or restricted flexion/extension",
+        "Numbness or a heavy sensation in the skin/muscles",
+        "Migratory or fixed pain (varies by pattern)",
+        "Worsened by cold or rainy weather (Cold-Damp type)"
+      ],
+      "disease_location_zh": "病位在肢體、經絡、關節，與肝、脾、腎相關（久痺傷及肝腎）。",
+      "disease_location_en": "Disease location is the limbs, channels, and joints, related to the Liver, Spleen, and Kidney (chronic Bi injures the Liver and Kidney).",
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.wind_cold_damp_bi",
+        "pattern.heat_bi",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "以祛風散寒、除濕清熱、通經活絡為總則，隨風、寒、濕、熱偏盛加減；久痺兼顧補益肝腎、化痰祛瘀。",
+      "treatment_principle_en": "The overall principle is to dispel Wind, disperse Cold, eliminate Dampness, clear Heat, and unblock the channels — modified according to which pathogen predominates. Chronic Bi additionally requires tonifying the Liver and Kidney while transforming Phlegm and dispelling stasis.",
+      "red_flags_zh": [
+        {
+          "finding": "單一關節突然紅、腫、熱、劇痛，合併發燒、寒顫，且該關節無法活動",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "須排除化膿性（感染性）關節炎，屬醫療急症，延誤治療可致永久關節損傷",
+          "source": "MedlinePlus - Infectious Arthritis (https://medlineplus.gov/infectiousarthritis.html)"
+        },
+        {
+          "finding": "關節劇痛快速發作",
+          "urgency_level": "same_day",
+          "recommended_action": "儘快就醫評估",
+          "rationale": "及早治療可減少關節損傷",
+          "source": "MedlinePlus - Infectious Arthritis (https://medlineplus.gov/infectiousarthritis.html)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden red, swollen, hot, severely painful single joint with fever/chills and inability to move the joint",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department or call for an ambulance immediately",
+          "rationale": "Must rule out septic (infectious) arthritis, a medical emergency — delayed treatment can cause permanent joint damage",
+          "source": "MedlinePlus - Infectious Arthritis (https://medlineplus.gov/infectiousarthritis.html)"
+        },
+        {
+          "finding": "Rapid-onset severe joint pain",
+          "urgency_level": "same_day",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Early treatment reduces joint damage",
+          "source": "MedlinePlus - Infectious Arthritis (https://medlineplus.gov/infectiousarthritis.html)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus - Infectious Arthritis (https://medlineplus.gov/infectiousarthritis.html)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.blood_stasis related_tcm_disease_ids includes tdis.bi_zheng (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus - Infectious Arthritis (https://medlineplus.gov/infectiousarthritis.html)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_medlineplus_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.wei_zheng",
@@ -354,7 +2105,126 @@
       "name_zh": "痛經",
       "pinyin": "Tongjing",
       "name_en": "Dysmenorrhea",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "痛經是指婦女正值經期或行經前後，出現週期性小腹疼痛，或痛引腰骶，甚則劇痛暈厥的病證。",
+      "definition_en": "Tong Jing (Dysmenorrhea) refers to cyclical lower abdominal pain occurring during, or just before/after, menstruation, sometimes radiating to the lower back and sacrum, with severe cases causing fainting.",
+      "etiology_zh": "多因情志不遂、肝氣鬱結，經期感寒飲冷、寒濕凝滯，或素體氣血虛弱、肝腎虧損，以致沖任、胞宮氣血運行不暢或失於濡養。",
+      "etiology_en": "Commonly caused by emotional stress with Liver Qi stagnation; exposure to cold or cold drinks during menstruation causing Cold-Damp congelation; or an underlying Qi-Blood weakness or Liver-Kidney deficiency, resulting in impaired flow or insufficient nourishment of the Chong-Ren vessels and uterus.",
+      "pathomechanism_zh": "經前經期氣血下注沖任、胞宮，若氣滯血瘀或寒凝血瘀，則經血運行不暢，不通則痛;若氣血虛弱、肝腎虧損，胞宮失於濡養，則不榮則痛。",
+      "pathomechanism_en": "Around and during menstruation, Qi and Blood pour down into the Chong-Ren vessels and uterus. If Qi stagnation and Blood stasis, or Cold congealing the Blood, obstruct this flow, pain results from lack of free flow. If Qi-Blood is weak or the Liver-Kidney is deficient, the uterus is left unnourished, and pain results from lack of nourishment.",
+      "key_manifestations_zh": [
+        "經期或經前後小腹疼痛",
+        "疼痛呈週期性，與月經同步",
+        "可痛引腰骶",
+        "經量、經色、經質異常（隨證不同）",
+        "重者伴噁心嘔吐、冷汗淋漓甚則暈厥"
+      ],
+      "key_manifestations_en": [
+        "Lower abdominal pain during or around menstruation",
+        "Cyclical pain synchronized with the menstrual cycle",
+        "May radiate to the lower back and sacrum",
+        "Abnormal flow volume, color, or consistency (varies by pattern)",
+        "Severe cases with nausea, vomiting, cold sweating, or fainting"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與肝、腎關係密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, closely related to the Liver and Kidney.",
+      "related_patterns": [
+        "pattern.blood_stasis",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.damp_heat_lower_burner",
+        "pattern.qi_blood_deficiency",
+        "pattern.liver_kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以調理沖任氣血為總則：氣滯血瘀者理氣活血化瘀，寒凝者溫經散寒，濕熱者清熱除濕化瘀，氣血虛弱者益氣養血，肝腎虧損者滋補肝腎。",
+      "treatment_principle_en": "The overall principle is to regulate Qi and Blood in the Chong-Ren vessels: for Qi stagnation with Blood stasis, regulate Qi and invigorate Blood; for Cold congelation, warm the channels and dispel Cold; for Damp-Heat, clear Heat, eliminate Dampness, and resolve stasis; for Qi-Blood weakness, tonify Qi and nourish Blood; for Liver-Kidney deficiency, nourish the Liver and Kidney.",
+      "red_flags_zh": [
+        {
+          "finding": "疑似懷孕合併劇痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "須排除異位妊娠",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea (rf.primary_dysmenorrhea.legacy03)"
+        },
+        {
+          "finding": "劇痛合併異常出血或疑似懷孕",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診排除急症",
+          "rationale": "須排除異位妊娠、卵巢扭轉等急腹症",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.secondary_dysmenorrhea (rf.secondary_dysmenorrhea.legacy03)"
+        },
+        {
+          "finding": "發燒、異常分泌物",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示骨盆腔感染",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea / cond.secondary_dysmenorrhea (rf.primary_dysmenorrhea.legacy02, rf.secondary_dysmenorrhea.legacy02)"
+        },
+        {
+          "finding": "成年後才新發之痛經，或疼痛型態改變、止痛無效且進行性加重",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "須排除子宮內膜異位症等次發性病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea / cond.secondary_dysmenorrhea (rf.primary_dysmenorrhea.legacy01/04, rf.secondary_dysmenorrhea.legacy01)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Possible pregnancy with severe pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Must rule out ectopic pregnancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea (rf.primary_dysmenorrhea.legacy03)"
+        },
+        {
+          "finding": "Severe pain with abnormal bleeding or possible pregnancy",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care to rule out an acute cause",
+          "rationale": "Must rule out ectopic pregnancy, ovarian torsion, or another acute abdomen",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.secondary_dysmenorrhea (rf.secondary_dysmenorrhea.legacy03)"
+        },
+        {
+          "finding": "Fever or abnormal discharge",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Suggests pelvic infection",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea / cond.secondary_dysmenorrhea (rf.primary_dysmenorrhea.legacy02, rf.secondary_dysmenorrhea.legacy02)"
+        },
+        {
+          "finding": "New-onset dysmenorrhea in adulthood, or a change in pain pattern that is analgesia-resistant and progressively worsening",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Must rule out secondary causes such as endometriosis",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea / cond.secondary_dysmenorrhea (rf.primary_dysmenorrhea.legacy01/04, rf.secondary_dysmenorrhea.legacy01)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea, cond.secondary_dysmenorrhea"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.blood_stasis related_tcm_disease_ids includes tdis.tong_jing (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.primary_dysmenorrhea, cond.secondary_dysmenorrhea"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yue_jing_xian_qi",
@@ -403,7 +2273,96 @@
       "name_zh": "帶下病",
       "pinyin": "Daixiabing",
       "name_en": "Vaginal Discharge Disease",
-      "taxonomy_id": "tdx.gynecology_obstetrics.leukorrhea_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.leukorrhea_disorders",
+      "definition_zh": "帶下病是指帶下量明顯增多，色、質、氣味異常，或伴全身、局部症狀的病證；生理性帶下濡潤陰道不屬病態，須加以鑑別。",
+      "definition_en": "Dai Xia Bing (Vaginal Discharge Disease) refers to a marked increase in vaginal discharge with abnormal color, consistency, or odor, sometimes with systemic or local symptoms. Physiologic discharge that simply moistens the vagina is not pathological and must be differentiated.",
+      "etiology_zh": "多因脾虛失運、水濕內停，腎陽不足、失於封藏，或濕熱、濕毒下注，損傷任、帶二脈所致。",
+      "etiology_en": "Commonly caused by Spleen vacuity impairing transportation with internal fluid retention, Kidney Yang insufficiency failing to secure and store, or Damp-Heat/damp-toxin pouring downward, injuring the Ren and Dai vessels.",
+      "pathomechanism_zh": "帶脈失約、任脈不固則帶下滑脫；脾虛濕盛者濕濁下注，腎陽虛者失於封藏固澀，濕熱下注者穢濁與濕熱相結，皆令帶下異常。",
+      "pathomechanism_en": "When the Dai (Girdle) vessel loses its restraining function and the Ren vessel is not secure, discharge leaks abnormally. In Spleen vacuity with Dampness excess, turbid Dampness pours downward; in Kidney Yang deficiency, the securing-and-astringing function fails; in Damp-Heat pouring downward, turbid filth combines with Damp-Heat — each mechanism produces abnormal discharge.",
+      "key_manifestations_zh": [
+        "帶下量明顯增多",
+        "色白質稀（脾腎陽虛）或色黃質稠、氣味臭穢（濕熱）",
+        "可伴陰部搔癢、灼熱",
+        "腰痠、神疲（脾腎陽虛型）",
+        "反覆發作或纏綿難癒"
+      ],
+      "key_manifestations_en": [
+        "Marked increase in discharge volume",
+        "White and thin (Spleen-Kidney Yang deficiency) or yellow, thick, and malodorous (Damp-Heat)",
+        "May accompany vulvar itching or a burning sensation",
+        "Lower back soreness and fatigue (Spleen-Kidney Yang deficiency type)",
+        "Recurrent or protracted course"
+      ],
+      "disease_location_zh": "病位在任、帶二脈及胞宮，與脾、腎關係最密切。",
+      "disease_location_en": "Disease location is the Ren and Dai vessels and the uterus, most closely related to the Spleen and Kidney.",
+      "related_patterns": [
+        "pattern.cold_damp_encumbering_spleen",
+        "pattern.kidney_yang_deficiency",
+        "pattern.damp_heat_lower_burner",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以健脾、益腎、清熱除濕、固澀止帶為總則：脾虛濕盛者健脾化濕，腎陽虛者溫腎固澀，濕熱下注者清熱利濕止帶。",
+      "treatment_principle_en": "The overall principle is to fortify the Spleen, tonify the Kidney, clear Heat, eliminate Dampness, and astringe to stop the discharge: for Spleen vacuity with Dampness excess, fortify the Spleen and transform Dampness; for Kidney Yang deficiency, warm the Kidney and astringe; for Damp-Heat pouring downward, clear Heat and disinhibit Dampness.",
+      "red_flags_zh": [
+        {
+          "finding": "發燒、劇烈骨盆腔痛與異常分泌物",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫，可能需即時處理",
+          "rationale": "提示骨盆腔感染急性發作或膿瘍",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.pid_chronic (rf.pid_chronic.legacy01)"
+        },
+        {
+          "finding": "疑似異位妊娠（尤其有輸卵管損傷史）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "曾有骨盆腔感染者異位妊娠風險升高",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.pid_chronic (rf.pid_chronic.legacy02)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever, severe pelvic pain, and abnormal discharge",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek urgent care, may require immediate treatment",
+          "rationale": "Suggests an acute flare of pelvic infection or abscess",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.pid_chronic (rf.pid_chronic.legacy01)"
+        },
+        {
+          "finding": "Suspected ectopic pregnancy (especially with a history of tubal damage)",
+          "urgency_level": "urgent",
+          "recommended_action": "Prompt medical evaluation",
+          "rationale": "Prior pelvic infection raises ectopic pregnancy risk",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.pid_chronic (rf.pid_chronic.legacy02)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.pid_chronic"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.pid_chronic"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bu_yun",
