@@ -45638,8 +45638,261 @@
       "icd_hint": "K57.9",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "憩室病是結腸壁形成囊狀突出（憩室）；當憩室造成症狀、出血、發炎或其他併發症時稱為憩室病，其中因憩室發炎所致者稱為憩室炎。",
+      "summary_en": "Diverticular disease refers to sac-like outpouchings (diverticula) in the colon wall; when diverticula cause symptoms, bleeding, inflammation, or other complications the condition is called diverticular disease, and inflammation of diverticula is specifically termed diverticulitis.",
+      "western_pathology_zh": "憩室由結腸壁薄弱處向外突出形成，好發於乙狀結腸；當憩室出血、發炎、穿孔、形成膿瘍或瘻管，或造成腸道阻塞時便產生臨床症狀與併發症。低纖維高紅肉飲食、活動量不足、肥胖、吸菸與部分藥物（如 NSAIDs、類固醇）可能增加發炎或併發症風險；結腸腔內滯留的細菌或糞便、腸道菌相改變、結締組織／肌肉／神經功能異常及免疫失調也在研究中，確切機轉尚未完全釐清。",
+      "western_pathology_en": "Diverticula are outpouchings that form at weak points in the colon wall, most often in the sigmoid colon; symptoms and complications arise when diverticula bleed, become inflamed, perforate, form an abscess or fistula, or cause obstruction. A diet low in fiber and high in red meat, lack of physical activity, obesity, smoking, and certain medicines (e.g., NSAIDs, steroids) may raise the risk of inflammation or complications; trapped bacteria or stool within the colon, microbiome changes, abnormalities of connective tissue/muscle/nerves in the colon wall, and immune dysfunction are also under investigation, and the exact mechanism is not fully established.",
+      "western_context_zh": "臨床定位：無症狀憩室症、有症狀的憩室病與發炎性的憩室炎是連續的臨床狀態，並非同一件事；本卡涵蓋憩室病與憩室炎。\n\n臨床表現：下腹痛或絞痛，常在左下腹；可有便祕、腹瀉或腹脹；憩室炎常出現較明顯的局部腹痛，可伴發燒、畏寒、噁心或嘔吐；直腸出血、發燒、腹膜刺激徵（反彈痛、腹部僵硬）或全身性不適提示併發症風險。\n\n重要特徵：好發於乙狀結腸；多數憩室終生無症狀；憩室炎需與單純憩室症狀區分；出血可為急性大量出血；並非每位單純性憩室炎患者都必須使用抗生素。\n\n診斷方法：病史與腹部理學檢查；視情況安排血液與糞便檢查；依臨床表現使用電腦斷層、超音波或核磁共振；急性問題處理後以大腸鏡確認病變並排除其他疾病，亦可用於處理憩室出血。\n\n鑑別診斷：大腸激躁症、發炎性腸道疾病、大腸癌、缺血性腸炎、婦科疾病、泌尿道感染。\n\n西醫治療：依慢性症狀、急性單純性憩室炎或併發症分層治療；部分單純性憩室炎可保守處理並門診追蹤；重症、膿瘍、穿孔、瘻管或阻塞可能需住院、影像導引引流、內視鏡止血或手術；長期以足量纖維飲食與生活型態調整降低復發風險。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Asymptomatic diverticulosis, symptomatic diverticular disease, and diverticulitis (inflammation) form a clinical continuum rather than one single state; this card covers diverticular disease and diverticulitis.\n\nClinical presentation: Lower abdominal pain or cramping, often left-sided; constipation, diarrhea, or bloating may occur; diverticulitis tends to cause more localized pain and may include fever, chills, nausea, or vomiting; rectal bleeding, fever, peritoneal signs (rebound tenderness, guarding), or systemic illness suggest a complication.\n\nKey features: most common in the sigmoid colon; most diverticula remain asymptomatic for life; diverticulitis must be distinguished from uncomplicated diverticular symptoms; bleeding can be acute and substantial; not every patient with uncomplicated diverticulitis requires antibiotics.\n\nDiagnostic approach: History and abdominal exam; blood and stool testing as indicated; CT, ultrasound, or MRI depending on presentation; colonoscopy after the acute episode resolves to confirm findings and exclude other disease, which can also address diverticular bleeding.\n\nDifferential diagnosis: irritable bowel syndrome, inflammatory bowel disease, colorectal cancer, ischemic colitis, gynecologic disease, urinary tract infection.\n\nWestern treatment: Management is stratified by chronic symptoms, uncomplicated acute diverticulitis, or complications; some uncomplicated diverticulitis can be managed conservatively with outpatient follow-up; severe disease, abscess, perforation, fistula, or obstruction may require hospitalization, image-guided drainage, endoscopic hemostasis, or surgery; long-term adequate-fiber diet and lifestyle changes reduce recurrence risk.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "低纖維、高紅肉飲食",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "活動量不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "使用 NSAIDs 或類固醇類藥物",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "特定基因體質",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "年齡增加（尤其 65 歲以上）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Diet low in fiber and high in red meat",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "Lack of physical activity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "Use of NSAIDs or steroid medicines",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "Certain genetic predisposition",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "factor": "Increasing age (especially 65+)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "持續劇烈腹痛合併腹部僵硬或反彈痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示可能穿孔或腹膜炎",
+          "source": "NIDDK Diverticular Disease"
+        },
+        {
+          "finding": "大量直腸出血合併頭暈、心搏過速或血行動力學不穩定",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示憩室大量出血",
+          "source": "NIDDK Diverticular Disease"
+        },
+        {
+          "finding": "發燒、畏寒合併局部腹痛加劇",
+          "urgency_level": "same_day",
+          "recommended_action": "當日轉診評估",
+          "rationale": "提示憩室炎或膿瘍形成",
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "finding": "持續嘔吐、無法進食或腹脹進行性加劇",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "提示可能腸阻塞",
+          "source": "NIDDK Diverticular Disease"
+        },
+        {
+          "finding": "反覆或持續性直腸出血（非大量）",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診腸胃科評估",
+          "rationale": "需大腸鏡排除其他病灶並定位出血",
+          "source": "NIDDK Diagnosis of Diverticular Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Persistent severe abdominal pain with rigidity or rebound tenderness",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests possible perforation or peritonitis",
+          "source": "NIDDK Diverticular Disease"
+        },
+        {
+          "finding": "Large-volume rectal bleeding with dizziness, tachycardia, or hemodynamic instability",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests significant diverticular bleeding",
+          "source": "NIDDK Diverticular Disease"
+        },
+        {
+          "finding": "Fever and chills with worsening localized abdominal pain",
+          "urgency_level": "same_day",
+          "recommended_action": "Same-day referral for evaluation",
+          "rationale": "Suggests diverticulitis or abscess formation",
+          "source": "NIDDK Symptoms & Causes of Diverticular Disease"
+        },
+        {
+          "finding": "Persistent vomiting, inability to tolerate oral intake, or progressive bloating",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Suggests possible bowel obstruction",
+          "source": "NIDDK Diverticular Disease"
+        },
+        {
+          "finding": "Recurrent or ongoing (non-massive) rectal bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to gastroenterology",
+          "rationale": "Colonoscopy needed to localize bleeding and exclude other lesions",
+          "source": "NIDDK Diagnosis of Diverticular Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已確診且無急性發炎或出血徵象的憩室病，可作為腹脹、排便型態調整等症狀的輔助照護",
+        "precautions": "急性憩室炎發作期、疑似穿孔、膿瘍或腸阻塞時不可延誤外科／腸胃科評估；急性發炎期腹部穴位深刺需格外謹慎",
+        "co_management": "與病人的腸胃科醫師聯絡確認急性期是否已排除併發症、抗生素或住院治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "尚未查到專屬於憩室病的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for bloating and bowel-habit symptoms in confirmed diverticular disease with no signs of acute inflammation or bleeding",
+        "precautions": "Never delay surgical/GI evaluation during an acute diverticulitis flare or suspected perforation, abscess, or obstruction; deep abdominal needling requires extra caution during acute inflammation",
+        "co_management": "Contact the patient's gastroenterologist to confirm the acute episode has been cleared of complications, and check antibiotic/hospitalization status",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "No acupuncture-specific efficacy guideline for diverticular disease was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_pain",
+        "sym.abdominal_bloating",
+        "sym.constipation",
+        "sym.diarrhea",
+        "sym.bloody_stool",
+        "sym.fever"
+      ],
+      "sources": [
+        "NIDDK — Diverticular Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis",
+        "NIDDK — Symptoms & Causes of Diverticular Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis/symptoms-causes",
+        "NIDDK — Diagnosis of Diverticular Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis/diagnosis",
+        "NIDDK — Treatment for Diverticular Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK — Diverticular Disease"
+        ],
+        "summary_en": [
+          "NIDDK — Diverticular Disease"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — Symptoms & Causes of Diverticular Disease"
+        ],
+        "western_pathology_en": [
+          "NIDDK — Symptoms & Causes of Diverticular Disease"
+        ],
+        "western_context_zh": [
+          "NIDDK — Diverticular Disease",
+          "NIDDK — Diagnosis of Diverticular Disease",
+          "NIDDK — Treatment for Diverticular Disease",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "western_context_en": [
+          "NIDDK — Diverticular Disease",
+          "NIDDK — Diagnosis of Diverticular Disease",
+          "NIDDK — Treatment for Diverticular Disease",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Symptoms & Causes of Diverticular Disease"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Symptoms & Causes of Diverticular Disease"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Diverticular Disease",
+          "NIDDK — Symptoms & Causes of Diverticular Disease",
+          "NIDDK — Diagnosis of Diverticular Disease"
+        ],
+        "red_flags_en": [
+          "NIDDK — Diverticular Disease",
+          "NIDDK — Symptoms & Causes of Diverticular Disease",
+          "NIDDK — Diagnosis of Diverticular Disease"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ]
+      },
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_cr010_condition_detail_batch01_sol"
+      ],
+      "source_type": "sourced_research_pack",
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.anal_fissure",
@@ -45662,8 +45915,239 @@
       "icd_hint": "K90.0",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "乳糜瀉是在遺傳易感族群中由飲食麩質觸發的免疫介導疾病，可損傷小腸黏膜，產生腸胃道及腸外表現。",
+      "summary_en": "Celiac disease is an immune-mediated disease triggered by dietary gluten in genetically susceptible people; it can damage the small-intestinal lining and produce both gastrointestinal and extra-intestinal manifestations.",
+      "western_pathology_zh": "麩質暴露在帶有 HLA-DQ2 或 HLA-DQ8 基因型的個體中引發異常免疫反應，攻擊並損傷小腸黏膜絨毛，造成絨毛萎縮、吸收不良、營養缺乏與全身性表現。約 95% 乳糜瀉患者帶有 HLA-DQ2，其餘多帶 HLA-DQ8；然而這兩種基因型在一般族群相當常見（約三分之一美國人口帶有其一），僅其中一小部分會發病，顯示其他基因與環境因子（如嬰幼兒期麩質攝取量、腸道感染、腸道菌相改變）也參與致病機轉。",
+      "western_pathology_en": "Gluten exposure triggers an abnormal immune response in people carrying HLA-DQ2 or HLA-DQ8, which attacks and damages the small-intestinal villi, causing villous atrophy, malabsorption, nutrient deficiencies, and systemic manifestations. About 95% of people with celiac disease carry HLA-DQ2 and most of the rest carry HLA-DQ8; however these gene variants are common in the general population (up to one-third of the US population carries one), and only a small fraction of carriers develop disease — indicating other genetic and environmental factors (such as gluten intake in early childhood, digestive-tract infections, and microbiome changes) also contribute.",
+      "western_context_zh": "臨床定位：乳糜瀉是免疫介導疾病，不是食物過敏，也不是單純的麩質敏感；未經診斷或未嚴格治療可造成長期腸道與腸外併發症。\n\n臨床表現：腹瀉、腹脹、腹痛等腸胃症狀；體重減輕或兒童生長遲緩；腸外表現可包括缺鐵性貧血、骨骼問題、疱疹樣皮膚炎、口腔／牙齒琺瑯質缺損或神經症狀（頭痛、癲癇、平衡障礙）；部分患者僅有腸外表現或無症狀；單靠症狀不足以確診。\n\n重要特徵：約 95% 患者帶有 HLA-DQ2、其餘多帶 HLA-DQ8，但帶因不等於發病；兒童可有生長遲緩、發育遲緩、青春期延遲；小腸黏膜損傷可繼發乳糖不耐；長期未治療與不孕、流產等生殖問題相關。\n\n診斷方法：血清學檢測，常以組織轉麩醯胺酸酶 IgA（tTG-IgA）並評估 IgA 總量狀態；有適應症時以小腸切片確認診斷；診斷檢測應在患者仍攝取麩質時完成，否則可能偽陰性；特定情況可用基因檢測（HLA-DQ2/DQ8）協助排除診斷。\n\n鑑別診斷：大腸激躁症、發炎性腸道疾病、乳糖不耐症、小腸細菌過度增生、其他吸收不良症候群。\n\n西醫治療：終身嚴格無麩質飲食是唯一治療；由營養師協助辨識隱藏麩質來源並維持營養完整；評估與矯正鐵、鈣、維生素 D 等營養缺乏並追蹤黏膜恢復；症狀持續時重新評估是否仍有麩質暴露、其他共病診斷或難治型乳糜瀉。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Celiac disease is immune-mediated, not a food allergy and not the same as non-celiac gluten sensitivity; undiagnosed or inadequately treated disease can cause long-term intestinal and extra-intestinal complications.\n\nClinical presentation: GI symptoms such as diarrhea, bloating, and abdominal pain; weight loss or growth faltering in children; extra-intestinal manifestations can include iron-deficiency anemia, bone problems, dermatitis herpetiformis, dental enamel defects, or neurologic symptoms (headache, seizures, balance problems); some patients have only extra-intestinal findings or are asymptomatic; symptoms alone are not sufficient for diagnosis.\n\nKey features: about 95% of patients carry HLA-DQ2 and most of the rest HLA-DQ8, but carrying the gene does not mean disease will develop; children may show growth faltering, developmental delay, or delayed puberty; small-intestinal mucosal damage can cause secondary lactose intolerance; long-standing untreated disease is associated with infertility and miscarriage.\n\nDiagnostic approach: Serologic testing, typically tTG-IgA with assessment of total IgA status; small-bowel biopsy to confirm when indicated; diagnostic testing should be completed while the patient is still eating gluten, or results may be falsely negative; genetic testing (HLA-DQ2/DQ8) can help rule out the diagnosis in selected situations.\n\nDifferential diagnosis: irritable bowel syndrome, inflammatory bowel disease, lactose intolerance, small intestinal bacterial overgrowth, other malabsorptive syndromes.\n\nWestern treatment: Lifelong strict gluten-free diet is the only treatment; a dietitian helps identify hidden gluten sources and maintain nutritional adequacy; nutrient deficiencies (iron, calcium, vitamin D, etc.) are assessed and corrected, and mucosal recovery is followed; persistent symptoms prompt reassessment for ongoing gluten exposure, other diagnoses, or refractory celiac disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "帶有 HLA-DQ2 或 HLA-DQ8 基因型",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "一等親屬患有乳糜瀉（家族史）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "嬰幼兒期攝取較多麩質（於基因易感者）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "幼年期感染次數較多或特定腸道感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "合併第一型糖尿病或其他自體免疫疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Carrying HLA-DQ2 or HLA-DQ8",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "First-degree relative with celiac disease (family history)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "Higher gluten intake in early childhood (in genetically susceptible children)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "More frequent infections or certain digestive-tract infections in early life",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "factor": "Coexisting type 1 diabetes or other autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "兒童生長遲緩或體重不增合併慢性腹瀉",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診腸胃科評估",
+          "rationale": "提示未診斷乳糜瀉或嚴重吸收不良，需及早介入",
+          "source": "NIDDK Celiac Disease"
+        },
+        {
+          "finding": "明顯體重減輕、低白蛋白等嚴重營養不良徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "提示嚴重吸收不良",
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "finding": "癲癇、明顯平衡障礙或周邊神經病變",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診神經科／腸胃科共同評估",
+          "rationale": "可能為乳糜瀉相關神經系統併發症",
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "finding": "嚴格無麩質飲食後症狀仍持續或惡化",
+          "urgency_level": "routine",
+          "recommended_action": "轉診原診治醫師重新評估",
+          "rationale": "提示可能仍有麩質暴露、其他共病或難治型乳糜瀉",
+          "source": "NIDDK Treatment for Celiac Disease"
+        },
+        {
+          "finding": "疱疹樣皮膚炎合併劇烈搔癢或大面積皮損",
+          "urgency_level": "routine",
+          "recommended_action": "轉診皮膚科／腸胃科",
+          "rationale": "為乳糜瀉特異性皮膚表現",
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Growth faltering or failure to gain weight in children with chronic diarrhea",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to gastroenterology",
+          "rationale": "Suggests undiagnosed celiac disease or significant malabsorption needing prompt evaluation",
+          "source": "NIDDK Celiac Disease"
+        },
+        {
+          "finding": "Signs of severe malnutrition (marked weight loss, low albumin)",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Suggests severe malabsorption",
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "finding": "Seizures, marked balance problems, or peripheral neuropathy",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for joint neurology/GI evaluation",
+          "rationale": "May be a celiac-related neurologic complication",
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        },
+        {
+          "finding": "Symptoms persist or worsen on a strict gluten-free diet",
+          "urgency_level": "routine",
+          "recommended_action": "Refer back to treating clinician for reassessment",
+          "rationale": "Suggests ongoing gluten exposure, another comorbid diagnosis, or refractory celiac disease",
+          "source": "NIDDK Treatment for Celiac Disease"
+        },
+        {
+          "finding": "Dermatitis herpetiformis with severe itching or extensive skin lesions",
+          "urgency_level": "routine",
+          "recommended_action": "Refer to dermatology/gastroenterology",
+          "rationale": "A celiac-specific skin manifestation",
+          "source": "NIDDK Symptoms & Causes of Celiac Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已確診並採行無麩質飲食後的腸胃不適或全身症狀，可作為輔助照護",
+        "precautions": "不可以針灸取代無麩質飲食；急性嚴重吸收不良或不明原因體重下降應優先轉診",
+        "co_management": "與病人的腸胃科醫師及營養師聯絡確認診斷、飲食依從性與營養缺乏矯正進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "尚未查到專屬於乳糜瀉的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for GI or systemic symptoms in diagnosed celiac disease that is already on a gluten-free diet",
+        "precautions": "Acupuncture must not replace a gluten-free diet; acute severe malabsorption or unexplained weight loss should be referred first",
+        "co_management": "Contact the patient's gastroenterologist and dietitian to confirm diagnosis, dietary adherence, and correction of nutrient deficiencies",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "No acupuncture-specific efficacy guideline for celiac disease was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.diarrhea",
+        "sym.abdominal_bloating",
+        "sym.abdominal_pain",
+        "sym.wasting",
+        "sym.fatigue"
+      ],
+      "sources": [
+        "NIDDK — Celiac Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease",
+        "NIDDK — Symptoms & Causes of Celiac Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease/symptoms-causes",
+        "NIDDK — Diagnosis of Celiac Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease/diagnosis",
+        "NIDDK — Celiac Disease Tests for Health Care Professionals: https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/digestive-diseases/celiac-disease-health-care-professionals",
+        "NIDDK — Treatment for Celiac Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK — Celiac Disease"
+        ],
+        "summary_en": [
+          "NIDDK — Celiac Disease"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — Symptoms & Causes of Celiac Disease"
+        ],
+        "western_pathology_en": [
+          "NIDDK — Symptoms & Causes of Celiac Disease"
+        ],
+        "western_context_zh": [
+          "NIDDK — Celiac Disease",
+          "NIDDK — Diagnosis of Celiac Disease",
+          "NIDDK — Celiac Disease Tests for Health Care Professionals",
+          "NIDDK — Treatment for Celiac Disease",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "western_context_en": [
+          "NIDDK — Celiac Disease",
+          "NIDDK — Diagnosis of Celiac Disease",
+          "NIDDK — Celiac Disease Tests for Health Care Professionals",
+          "NIDDK — Treatment for Celiac Disease",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Symptoms & Causes of Celiac Disease"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Symptoms & Causes of Celiac Disease"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Celiac Disease",
+          "NIDDK — Symptoms & Causes of Celiac Disease",
+          "NIDDK — Treatment for Celiac Disease"
+        ],
+        "red_flags_en": [
+          "NIDDK — Celiac Disease",
+          "NIDDK — Symptoms & Causes of Celiac Disease",
+          "NIDDK — Treatment for Celiac Disease"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ]
+      },
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_cr010_condition_detail_batch01_sol"
+      ],
+      "source_type": "sourced_research_pack",
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.lactose_intolerance",
@@ -45674,8 +46158,209 @@
       "icd_hint": "E73.9",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "乳糖不耐是因乳糖吸收不良，攝取乳糖後出現消化症狀；單純乳糖吸收不良而無症狀不等於乳糖不耐。",
+      "summary_en": "Lactose intolerance is the occurrence of digestive symptoms after consuming lactose, caused by lactose malabsorption; lactose malabsorption without symptoms alone does not equal lactose intolerance.",
+      "western_pathology_zh": "小腸乳糖酶活性不足（乳糖酶缺乏）使乳糖無法完全消化；未吸收的乳糖進入結腸後被細菌發酵，並增加腸腔滲透負荷，因而產生脹氣、腹痛與腹瀉。乳糖吸收不良在全球約影響三分之二人口，但並非所有吸收不良者都會出現症狀。乳糖酶缺乏可能是原發性（隨年齡自然下降，具族群差異）或續發性（因小腸疾病或損傷造成，如乳糜瀉、克隆氏症、腸道感染或手術後）。",
+      "western_pathology_en": "Insufficient small-intestinal lactase activity (lactase deficiency) prevents complete digestion of lactose; undigested lactose passes into the colon, is fermented by bacteria, and increases the osmotic load in the bowel lumen, producing gas, cramping, and diarrhea. Lactose malabsorption affects roughly two-thirds of the world's population, but not everyone with malabsorption develops symptoms. Lactase deficiency may be primary (a natural age-related decline that varies by ancestry) or secondary (caused by small-intestinal disease or injury such as celiac disease, Crohn's disease, intestinal infection, or bowel surgery).",
+      "western_context_zh": "臨床定位：乳糖不耐是乳糖吸收不良合併症狀，須與牛奶蛋白過敏區分——過敏牽涉免疫機轉且可有全身性反應，乳糖不耐是消化酵素不足的問題。\n\n臨床表現：攝取乳糖後出現腹脹、腹瀉、排氣增加、噁心、腹痛或腸鳴；症狀程度依乳糖攝取量與個人耐受度而異，通常於攝取後數十分鐘至數小時內出現。\n\n重要特徵：美國境內非裔、美洲原住民、亞裔與拉丁裔族群乳糖吸收不良比例較高，歐洲裔族群最低；原發性乳糖酶缺乏隨年齡增加而更常見；續發性乳糖酶缺乏來自小腸疾病或損傷，原發病因處理後可能改善。\n\n診斷方法：病史確認症狀與乳糖攝取的時間關係；減少乳糖飲食試驗可協助評估；需要確認診斷時可使用氫氣呼氣試驗；症狀持續、不典型或合併體重減輕、血便等表現時，須評估其他腸胃疾病。\n\n鑑別診斷：牛奶蛋白過敏、乳糜瀉、大腸激躁症、發炎性腸道疾病、小腸細菌過度增生。\n\n西醫治療：依個人耐受度調整乳糖攝取，不應一律假設必須完全避免乳製品；乳糖酶補充產品可幫助部分患者；避免乳製品時應留意鈣、維生素 D 與整體營養是否足夠；若為續發性且原發小腸疾病可逆，應治療原發病因，症狀可能隨之改善。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對（含原發性與續發性乳糖不耐之區分）。",
+      "western_context_en": "Clinical definition: Lactose intolerance is lactose malabsorption plus symptoms, and should be distinguished from milk protein allergy — allergy involves an immune mechanism and can cause systemic reactions, whereas lactose intolerance is a digestive-enzyme insufficiency.\n\nClinical presentation: Bloating, diarrhea, increased gas, nausea, abdominal pain, or borborygmi after consuming lactose; symptom severity varies with the amount of lactose consumed and individual tolerance, usually appearing within tens of minutes to a few hours after intake.\n\nKey features: in the US, African American, American Indian, Asian American, and Hispanic/Latino populations have higher rates of lactose malabsorption; malabsorption is least common in people of European ancestry; primary lactase deficiency becomes more common with age; secondary lactase deficiency results from small-intestinal disease or injury and may improve once the underlying condition is treated.\n\nDiagnostic approach: History confirming the temporal relationship between symptoms and lactose intake; a trial of reduced lactose intake can help with assessment; a hydrogen breath test can be used when confirmation is needed; persistent or atypical symptoms, or symptoms with weight loss or bloody stool, warrant evaluation for other GI conditions.\n\nDifferential diagnosis: milk protein allergy, celiac disease, irritable bowel syndrome, inflammatory bowel disease, small intestinal bacterial overgrowth.\n\nWestern treatment: Lactose intake is adjusted to individual tolerance; complete avoidance of dairy should not be assumed necessary for everyone; lactase enzyme products can help some patients; when dairy is avoided, adequate calcium, vitamin D, and overall nutrition should be monitored; if lactose intolerance is secondary to a reversible small-intestinal condition, treating the underlying cause may improve symptoms.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding (including the distinction between primary and secondary lactose intolerance).",
+      "risk_factors_zh": [
+        {
+          "factor": "非裔、美洲原住民、亞裔或拉丁裔血統",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Lactose Intolerance Definition & Facts"
+        },
+        {
+          "factor": "年齡增加（原發性乳糖酶隨年齡自然下降）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Lactose Intolerance Definition & Facts"
+        },
+        {
+          "factor": "合併小腸疾病或損傷（如乳糜瀉、克隆氏症、腸道感染、腸道手術後）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Treatment for Lactose Intolerance"
+        },
+        {
+          "factor": "歐洲裔血統",
+          "direction": "decreases",
+          "modifiable": false,
+          "source": "NIDDK Lactose Intolerance Definition & Facts"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "African American, American Indian, Asian American, or Hispanic/Latino ancestry",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Lactose Intolerance Definition & Facts"
+        },
+        {
+          "factor": "Increasing age (primary lactase activity naturally declines with age)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Lactose Intolerance Definition & Facts"
+        },
+        {
+          "factor": "Coexisting small-intestinal disease or injury (e.g., celiac disease, Crohn's disease, intestinal infection, bowel surgery)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Treatment for Lactose Intolerance"
+        },
+        {
+          "factor": "European ancestry",
+          "direction": "decreases",
+          "modifiable": false,
+          "source": "NIDDK Lactose Intolerance Definition & Facts"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "血便或持續夜間腹瀉",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診腸胃科評估",
+          "rationale": "不符合單純乳糖不耐，須排除發炎性腸道疾病等",
+          "source": "NIDDK Lactose Intolerance"
+        },
+        {
+          "finding": "非預期體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "提示可能為其他消化道疾病而非單純乳糖不耐",
+          "source": "NIDDK Lactose Intolerance"
+        },
+        {
+          "finding": "嚴格限制乳糖攝取後症狀仍未改善",
+          "urgency_level": "routine",
+          "recommended_action": "轉診重新評估診斷",
+          "rationale": "提示可能非單純乳糖不耐或合併其他疾病",
+          "source": "NIDDK Treatment for Lactose Intolerance"
+        },
+        {
+          "finding": "兒童生長遲緩合併慢性腹瀉",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診小兒腸胃科",
+          "rationale": "提示可能為乳糜瀉或其他吸收不良而非單純乳糖不耐",
+          "source": "NIDDK Lactose Intolerance"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Bloody stool or persistent nocturnal diarrhea",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to gastroenterology",
+          "rationale": "Not consistent with simple lactose intolerance; must exclude inflammatory bowel disease and other conditions",
+          "source": "NIDDK Lactose Intolerance"
+        },
+        {
+          "finding": "Unintentional weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Suggests another GI disease rather than lactose intolerance alone",
+          "source": "NIDDK Lactose Intolerance"
+        },
+        {
+          "finding": "Symptoms persist despite strict lactose restriction",
+          "urgency_level": "routine",
+          "recommended_action": "Refer for diagnostic reassessment",
+          "rationale": "Suggests the diagnosis may not be simple lactose intolerance, or another condition coexists",
+          "source": "NIDDK Treatment for Lactose Intolerance"
+        },
+        {
+          "finding": "Growth faltering in children with chronic diarrhea",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to pediatric gastroenterology",
+          "rationale": "Suggests celiac disease or another malabsorptive condition rather than simple lactose intolerance",
+          "source": "NIDDK Lactose Intolerance"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已確認診斷且已排除其他腸胃疾病的乳糖不耐相關脹氣、腹瀉等症狀，可作為飲食調整之外的輔助照護",
+        "precautions": "不可以針灸替代飲食調整或乳糖酶補充；症狀不典型或合併紅旗徵象時，應先排除其他腸胃疾病再開始療程",
+        "co_management": "與病人的腸胃科醫師或家庭醫師聯絡確認診斷基礎與是否需進一步檢查",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "尚未查到專屬於乳糖不耐的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care alongside dietary adjustment for bloating/diarrhea in confirmed lactose intolerance with other GI disease excluded",
+        "precautions": "Acupuncture must not replace dietary adjustment or lactase supplementation; atypical presentations or red-flag findings should be worked up before starting a course of treatment",
+        "co_management": "Contact the patient's gastroenterologist or primary care physician to confirm the diagnostic basis and whether further testing is needed",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "No acupuncture-specific efficacy guideline for lactose intolerance was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_bloating",
+        "sym.diarrhea",
+        "sym.abdominal_pain",
+        "sym.nausea"
+      ],
+      "sources": [
+        "NIDDK — Lactose Intolerance: https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance",
+        "NIDDK — Definition & Facts for Lactose Intolerance: https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance/definition-facts",
+        "NIDDK — Treatment for Lactose Intolerance: https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance/treatment",
+        "NIDDK — Eating, Diet, & Nutrition for Lactose Intolerance: https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance/eating-diet-nutrition",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK — Lactose Intolerance"
+        ],
+        "summary_en": [
+          "NIDDK — Lactose Intolerance"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — Lactose Intolerance"
+        ],
+        "western_pathology_en": [
+          "NIDDK — Lactose Intolerance"
+        ],
+        "western_context_zh": [
+          "NIDDK — Lactose Intolerance",
+          "NIDDK — Definition & Facts for Lactose Intolerance",
+          "NIDDK — Treatment for Lactose Intolerance",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "western_context_en": [
+          "NIDDK — Lactose Intolerance",
+          "NIDDK — Definition & Facts for Lactose Intolerance",
+          "NIDDK — Treatment for Lactose Intolerance",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Definition & Facts for Lactose Intolerance",
+          "NIDDK — Treatment for Lactose Intolerance"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Definition & Facts for Lactose Intolerance",
+          "NIDDK — Treatment for Lactose Intolerance"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Lactose Intolerance",
+          "NIDDK — Treatment for Lactose Intolerance"
+        ],
+        "red_flags_en": [
+          "NIDDK — Lactose Intolerance",
+          "NIDDK — Treatment for Lactose Intolerance"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ]
+      },
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_cr010_condition_detail_batch01_sol"
+      ],
+      "source_type": "sourced_research_pack",
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.crohn_disease",
@@ -45810,8 +46495,261 @@
       "icd_hint": "B18.1",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "慢性B型肝炎是B型肝炎病毒（HBV）感染持續超過六個月，可造成進行性肝損傷，並增加肝硬化與肝癌風險；多數患者早期可能無症狀。",
+      "summary_en": "Chronic hepatitis B is persistent hepatitis B virus (HBV) infection lasting more than six months; it can cause progressive liver damage and increases the risk of cirrhosis and liver cancer, and many patients are asymptomatic in earlier stages.",
+      "western_pathology_zh": "HBV 感染肝細胞後，肝損傷主要來自宿主免疫系統對受感染肝細胞的攻擊，而非病毒直接的細胞毒性；持續的病毒複製與免疫反應可造成慢性壞死性發炎與進行性纖維化，長期可演變為肝硬化。嬰幼兒期感染較成人感染更容易演變為慢性感染。慢性 HBV 可經血液、體液（含性接觸）及母嬰垂直傳染散布；免疫抑制狀態下潛伏感染可能再活化。",
+      "western_pathology_en": "After HBV infects hepatocytes, most of the liver injury comes from the host immune system attacking infected liver cells rather than direct viral cytotoxicity; ongoing viral replication and the immune response can cause chronic necroinflammation and progressive fibrosis, which over time can lead to cirrhosis. Infection acquired in infancy or early childhood is far more likely to become chronic than infection acquired as an adult. Chronic HBV spreads through blood, body fluids (including sexual contact), and perinatal (mother-to-child) transmission; latent infection can reactivate under immunosuppression.",
+      "western_context_zh": "臨床定位：本卡聚焦慢性B型肝炎（感染持續逾六個月）；急性B肝感染多為自限性，但可能演變為慢性，尤其在嬰幼兒期感染者。\n\n臨床表現：許多慢性感染者長期無症狀；可出現疲倦、食慾下降、噁心、腹部不適（尤其右上腹脅痛）、深色尿液或黃疸；慢性病常先因肝功能檢驗異常或肝硬化併發症（腹水、靜脈曲張出血、肝性腦病）而被發現；急性感染期可有較明顯的疲倦、發燒、關節或腹部疼痛、噁心嘔吐、食慾不振與黃疸。\n\n重要特徵：嬰幼兒期感染者最容易演變為慢性；高風險族群包括母親帶原之新生兒、共用針具者、多重性伴侶或性傳染病史者、HIV 感染者、洗腎患者、醫療工作者職業暴露、監獄環境及來自高盛行地區者；慢性感染增加肝硬化、肝衰竭與肝細胞癌風險；免疫低下狀態下可能有B肝再活化。\n\n診斷方法：以 HBV 血清學檢查（HBsAg、anti-HBs、anti-HBc 等）判定感染狀態與是否為慢性；慢性感染以 HBV DNA 病毒量與肝功能（ALT/AST、膽紅素）評估病毒活性與肝損傷程度；依情況安排影像或非侵入性纖維化評估（如彈性影像）；慢性感染需依風險定期評估肝硬化與肝細胞癌篩檢（如甲型胎兒蛋白、腹部超音波）。\n\n鑑別診斷：其他病毒性肝炎（A、C、D、E 型）、酒精相關肝病、藥物引起的肝損傷、自體免疫性肝炎、代謝功能障礙相關脂肪肝病。\n\n西醫治療：並非每位慢性 B 肝患者都需要抗病毒治療，需依病毒量、肝功能與肝纖維化程度決定；已造成或可能造成肝損傷之慢性 HBV，抗病毒治療（如核苷／核苷酸類似物）可降低疾病進展與併發症風險；需長期監測病毒量、肝功能、肝硬化與肝細胞癌風險；急性感染多以支持性治療為主，重症需專科處理；B型肝炎可經疫苗預防，母親帶原之新生兒需接受出生後預防措施。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對（急性與慢性B型肝炎編碼不同）。",
+      "western_context_en": "Clinical definition: This card focuses on chronic hepatitis B (infection persisting beyond six months); acute HBV infection is usually self-limited but can become chronic, especially when acquired in infancy or early childhood.\n\nClinical presentation: Many people with chronic infection are asymptomatic for years; fatigue, decreased appetite, nausea, abdominal discomfort (especially right-upper-quadrant/hypochondriac pain), dark urine, or jaundice can occur; chronic disease is often first discovered through abnormal liver tests or complications of cirrhosis (ascites, variceal bleeding, hepatic encephalopathy); acute infection can present more prominently with fatigue, fever, joint or abdominal pain, nausea/vomiting, poor appetite, and jaundice.\n\nKey features: infection acquired in infancy is most likely to become chronic; high-risk groups include infants born to HBV-positive mothers, people who inject drugs or share needles, those with multiple sexual partners or an STD history, people with HIV, dialysis patients, healthcare workers with occupational exposure, incarcerated individuals, and people from regions where hepatitis B is prevalent; chronic infection increases the risk of cirrhosis, liver failure, and hepatocellular carcinoma; reactivation can occur under immunosuppression.\n\nDiagnostic approach: HBV serology (HBsAg, anti-HBs, anti-HBc, etc.) establishes infection status and chronicity; HBV DNA viral load and liver tests (ALT/AST, bilirubin) assess viral activity and liver injury in chronic infection; imaging or noninvasive fibrosis assessment (e.g., elastography) as indicated; chronic infection warrants periodic risk-based screening for cirrhosis and hepatocellular carcinoma (e.g., AFP, abdominal ultrasound).\n\nDifferential diagnosis: other viral hepatitis (A, C, D, E), alcohol-related liver disease, drug-induced liver injury, autoimmune hepatitis, metabolic dysfunction-associated fatty liver disease.\n\nWestern treatment: Not every patient with chronic HBV needs antiviral therapy; the decision depends on viral load, liver function, and degree of fibrosis; antiviral therapy (e.g., nucleos(t)ide analogues) reduces the risk of disease progression and complications when chronic HBV has caused or is likely to cause liver damage; long-term monitoring of viral load, liver function, and cirrhosis/hepatocellular carcinoma risk is required; acute infection is mostly managed with supportive care, with specialist management for severe cases; hepatitis B is vaccine-preventable, and infants born to HBV-positive mothers require postnatal prophylaxis.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding (acute and chronic hepatitis B have distinct codes).",
+      "risk_factors_zh": [
+        {
+          "factor": "母親HBV帶原經母嬰垂直傳染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "共用針具或未篩檢血液／體液暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "多重性伴侶或性傳染病史",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "HIV 感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "洗腎治療",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "醫療工作職業暴露（針扎等）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "來自B型肝炎高盛行地區",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "接種B型肝炎疫苗",
+          "direction": "decreases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Perinatal transmission from an HBV-positive mother",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "Sharing needles or exposure to unscreened blood/body fluids",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "Multiple sexual partners or history of an STD",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "HIV infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "Kidney dialysis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "Occupational exposure in healthcare work (e.g., needle stick)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "Coming from a region where hepatitis B is prevalent",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "factor": "Hepatitis B vaccination",
+          "direction": "decreases",
+          "modifiable": true,
+          "source": "NIDDK Hepatitis B"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "意識混亂、嗜睡或明顯認知改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示肝性腦病或急性肝衰竭",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "急性重度黃疸合併凝血功能異常或出血傾向",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示急性肝衰竭",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "腹水、下肢水腫，或嘔血、解黑便",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診肝膽腸胃科評估",
+          "rationale": "提示肝硬化失代償或食道靜脈曲張出血",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "已知慢性B肝患者出現新發腹部腫塊、體重急速下降或肝功能急速惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估肝細胞癌可能性",
+          "rationale": "慢性B肝增加肝癌風險",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "接受免疫抑制劑或化療前未經B肝篩查",
+          "urgency_level": "urgent",
+          "recommended_action": "治療前應篩查並照會肝膽科評估再活化風險",
+          "rationale": "免疫抑制可能誘發B肝再活化及爆發性肝炎",
+          "source": "NIDDK Hepatitis B"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Confusion, drowsiness, or marked cognitive change",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests hepatic encephalopathy or acute liver failure",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "Severe acute jaundice with coagulopathy or bleeding tendency",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests acute liver failure",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "Ascites, leg edema, hematemesis, or melena",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to hepatology/gastroenterology",
+          "rationale": "Suggests decompensated cirrhosis or variceal bleeding",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "New abdominal mass, rapid weight loss, or rapidly worsening liver tests in a known chronic HBV patient",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for hepatocellular carcinoma workup",
+          "rationale": "Chronic HBV increases liver cancer risk",
+          "source": "NIDDK Hepatitis B"
+        },
+        {
+          "finding": "Starting immunosuppressive therapy or chemotherapy without prior HBV screening",
+          "urgency_level": "urgent",
+          "recommended_action": "Screen before treatment and involve hepatology to assess reactivation risk",
+          "rationale": "Immunosuppression can trigger HBV reactivation and fulminant hepatitis",
+          "source": "NIDDK Hepatitis B"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已確診且肝功能穩定、無失代償徵象的慢性B型肝炎，可作為疲倦、消化不良等症狀的輔助照護",
+        "precautions": "不可以針灸延誤或取代抗病毒治療評估；失代償肝硬化、凝血功能異常或血小板低下患者，深刺與特定部位刺法需格外謹慎並確認出血風險",
+        "co_management": "與病人的肝膽腸胃科醫師聯絡確認病毒量、抗病毒治療計畫與肝硬化／肝癌篩檢進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "尚未查到專屬於B型肝炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for fatigue and digestive discomfort in confirmed chronic hepatitis B that is stable, with no signs of decompensation",
+        "precautions": "Acupuncture must not delay or replace antiviral-treatment evaluation; in decompensated cirrhosis, coagulopathy, or thrombocytopenia, deep needling and site-specific technique require extra caution and bleeding-risk confirmation",
+        "co_management": "Contact the patient's hepatologist/gastroenterologist to confirm viral load, antiviral treatment plan, and cirrhosis/HCC screening status",
+        "evidence": "unknown",
+        "source": "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)",
+        "note": "No acupuncture-specific efficacy guideline for hepatitis B was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.jaundice",
+        "sym.fatigue",
+        "sym.poor_appetite",
+        "sym.hypochondriac_pain",
+        "sym.nausea"
+      ],
+      "sources": [
+        "NIDDK — Hepatitis B: https://www.niddk.nih.gov/health-information/liver-disease/viral-hepatitis/hepatitis-b",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK — Hepatitis B"
+        ],
+        "summary_en": [
+          "NIDDK — Hepatitis B"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — Hepatitis B"
+        ],
+        "western_pathology_en": [
+          "NIDDK — Hepatitis B"
+        ],
+        "western_context_zh": [
+          "NIDDK — Hepatitis B",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "western_context_en": [
+          "NIDDK — Hepatitis B",
+          "CDC/NCHS ICD-10-CM"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Hepatitis B"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Hepatitis B"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Hepatitis B"
+        ],
+        "red_flags_en": [
+          "NIDDK — Hepatitis B"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS CR-010 Common-300 Detail Batch 01 (SOL prefetch, NIDDK-derived)"
+        ]
+      },
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_cr010_condition_detail_batch01_sol"
+      ],
+      "source_type": "sourced_research_pack",
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.chronic_hepatitis_c",
