@@ -98,6 +98,177 @@
       "location_en": "Plasma",
       "location_zh": "血漿",
       "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.at1_receptor",
+      "name_en": "Angiotensin II type 1 (AT1) receptor",
+      "name_zh": "血管緊張素 II 第一型受體",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "receptor",
+      "description_en": "G-protein-coupled receptor mediating vasoconstriction and aldosterone release.",
+      "description_zh": "偶聯 G 蛋白受體，介導血管收縮與醛固酮釋放。",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_pilot"
+    },
+    {
+      "id": "drugtarget.ace",
+      "name_en": "Angiotensin-converting enzyme (ACE)",
+      "name_zh": "血管緊張素轉換酶",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "enzyme",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.beta1_adrenergic",
+      "name_en": "Beta-1 adrenergic receptor",
+      "name_zh": "Beta-1 腎上腺素受體",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "receptor",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.l_type_calcium_channel",
+      "name_en": "L-type voltage-gated calcium channel",
+      "name_zh": "L 型電位依存性鈣離子通道",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "ion_channel",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.hmg_coa_reductase",
+      "name_en": "HMG-CoA reductase",
+      "name_zh": "HMG-CoA 還原酶",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "enzyme",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.na_k_atpase",
+      "name_en": "Sodium-potassium adenosine triphosphatase (Na+/K+-ATPase)",
+      "name_zh": "鈉鉀三磷酸腺苷酶 (Na+/K+-ATPase)",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "transporter_pump",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.beta2_adrenergic",
+      "name_en": "Beta-2 Adrenergic Receptor",
+      "name_zh": "Beta-2 腎上腺素受體",
+      "gene_symbol": "ADRB2",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.alpha1_adrenergic",
+      "name_en": "Alpha-1 Adrenergic Receptor",
+      "name_zh": "Alpha-1 腎上腺素受體",
+      "gene_symbol": "ADRA1A",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.alpha2_adrenergic",
+      "name_en": "Alpha-2 Adrenergic Receptor",
+      "name_zh": "Alpha-2 腎上腺素受體",
+      "gene_symbol": "ADRA2A",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.muscarinic_receptors",
+      "name_en": "Muscarinic Acetylcholine Receptors",
+      "name_zh": "毒蕈鹼型乙醯膽鹼受體 (M1-M5)",
+      "gene_symbol": "CHRM1-5",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.aldehyde_dehydrogenase",
+      "name_en": "Aldehyde Dehydrogenase (ALDH)",
+      "name_zh": "乙醛脫氫酶",
+      "gene_symbol": "ALDH2",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.voltage_gated_sodium_channels",
+      "name_en": "Voltage-Gated Sodium Channels",
+      "name_zh": "電壓門控鈉離子通道",
+      "gene_symbol": "SCN1A",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.t_type_calcium_channels",
+      "name_en": "T-Type Voltage-Gated Calcium Channels",
+      "name_zh": "T 型電壓門控鈣離子通道",
+      "gene_symbol": "CACNA1G",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.alpha2_delta_calcium_channels",
+      "name_en": "Voltage-Gated Calcium Channel Alpha-2-Delta Subunit",
+      "name_zh": "電壓門控鈣通道 Alpha-2-Delta 亞基",
+      "gene_symbol": "CACNA2D1",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.dopamine_receptors",
+      "name_en": "Dopamine Receptors & Precursors",
+      "name_zh": "多巴胺受體與前驅物",
+      "gene_symbol": "DRD2",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.monoamine_oxidase",
+      "name_en": "Monoamine Oxidase (MAO-A / MAO-B)",
+      "name_zh": "單胺氧化酶 (MAO-A / MAO-B)",
+      "gene_symbol": "MAOA / MAOB",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.glp1_receptor",
+      "name_en": "Glucagon-like peptide-1 (GLP-1) receptor",
+      "name_zh": "升糖素樣胜肽-1 受體",
+      "location_en": "Pancreatic beta cells, gut, brain",
+      "location_zh": "胰臟β細胞、腸道、腦部",
+      "mechanism_note_en": "Activation of GLP-1 receptor stimulates glucose-dependent insulin secretion, suppresses glucagon, slows gastric emptying, and reduces appetite.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.thyroid_hormone_receptor",
+      "name_en": "Thyroid hormone receptor (TR-alpha / TR-beta)",
+      "name_zh": "甲狀腺素受體 (TR-alpha / TR-beta)",
+      "location_en": "Cell nucleus; widespread in heart, liver, pituitary, bone",
+      "location_zh": "細胞核；廣泛分布於心臟、肝臟、腦垂體、骨骼",
+      "mechanism_note_en": "Exogenous T4 binds thyroid hormone receptors, restoring euthyroid physiology in hypothyroid patients. Excess produces hyperthyroid-like adverse effects.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.glucocorticoid_receptor",
+      "name_en": "Glucocorticoid receptor (GR / NR3C1)",
+      "name_zh": "糖皮質激素受體 (GR / NR3C1)",
+      "location_en": "Cytoplasm of virtually all nucleated cells",
+      "location_zh": "幾乎所有有核細胞的細胞質",
+      "mechanism_note_en": "Glucocorticoids bind intracellular GR, translocate to nucleus, and modulate gene transcription—broadly suppressing inflammation and immune response, with wide metabolic, endocrine, and CNS effects.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
     }
   ]
 }

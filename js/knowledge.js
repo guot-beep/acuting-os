@@ -412,7 +412,7 @@
   }
 
   if (!K) {
-    ["formulaRecords", "herbRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
+    ["formulaRecords", "herbRecords", "pharmRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
       if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
@@ -421,6 +421,11 @@
 
   const formulas = (K.formulas && K.formulas.records) || [];
   const herbs = (K.herbs && K.herbs.records) || [];
+  // 藥理四層。分類/標的/系統各自成表,單藥卡要靠它們把 id 換成名字 ——
+  // 少帶一個,卡片上就會出現 drugclass.loop_diuretics 這種字串。
+  const pharmDrugs = (K.pharmDrugs && K.pharmDrugs.records) || [];
+  const pharmClassById = new Map(((K.pharmDrugClasses && K.pharmDrugClasses.records) || []).map((c) => [c.id, c]));
+  const pharmTargetById = new Map(((K.pharmDrugTargets && K.pharmDrugTargets.records) || []).map((t) => [t.id, t]));
   const formulaById = new Map(formulas.map((record) => [record.id, record]));
   const herbById = new Map(herbs.map((record) => [record.id, record]));
 
@@ -1915,6 +1920,95 @@
     herbHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
+    });
+  }
+
+  // ---- Pharmacology --------------------------------------------------------
+  // Same shape as the herb list on purpose: search box, category drawer, chips.
+  // The category axis is the drug class, since that is how the course teaches
+  // it and how the board asks about it.
+  const pharmHost = el("pharmRecords");
+  if (pharmHost) {
+    /* Returns the combined "中文 / English" form rather than one language.
+     * buildCategoryChips splits on "/" to build a bilingual chip, the way
+     * formula categories already work (補益劑 / Tonify). Returning modeText()
+     * here gave it a single language frozen at render time, so the chips
+     * stayed Chinese while the rest of the page switched to English. */
+    const classLabelOf = (d) => {
+      const c = pharmClassById.get(d.drugclass_id);
+      if (!c) return d.drugclass_id || "uncategorized";
+      const zh = c.name_zh || "";
+      const en = c.name_en || "";
+      return zh && en ? `${zh} / ${en}` : (zh || en);
+    };
+    const classNameOf = classLabelOf;
+    const classes = [...new Set(pharmDrugs.map(classNameOf).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+    const renderPharm = (list) => list.map((d) => {
+      const target = pharmTargetById.get(d.drugtarget_id);
+      // A gap_note is the honest state of a field nobody could source yet, so
+      // it is shown rather than hidden — the card should not read as complete.
+      const gap = usableText(d.gap_note_zh);
+      return `
+        <article class="k-card k-pharm-card" data-record-id="${esc(d.id)}">
+          <header>
+            <strong>${esc(d.name_zh || d.name_en)} <small>${esc(d.name_en || "")}</small></strong>
+            ${statusPill(d.review_status)}
+          </header>
+          ${d.brand_names_en && d.brand_names_en.length ? `<p class="k-en">${esc(d.brand_names_en.join(" / "))}</p>` : ""}
+          <p class="k-meta">${esc(classNameOf(d))}${d.suffix_en ? ` · <code>${esc(d.suffix_en)}</code>` : ""}</p>
+          ${target ? `<p class="k-meta">${esc(modeText("作用標的：", "Target: "))}${esc(modeText(target.name_zh || target.name_en, target.name_en || target.name_zh))}</p>` : ""}
+          ${usableText(d.mechanism_zh) || usableText(d.mechanism_en) ? `<p class="k-meta">${esc(modeText(d.mechanism_zh || d.mechanism_en, d.mechanism_en || d.mechanism_zh))}</p>` : ""}
+          ${d.mnemonic_en ? `<p class="k-tags"><span class="k-chip k-chip--mnemonic">${esc(d.mnemonic_en)}</span></p>` : ""}
+          ${d.exam_trap_zh || d.exam_trap_en ? `<p class="k-flags">⚠️ ${esc(modeText(d.exam_trap_zh || d.exam_trap_en, d.exam_trap_en || d.exam_trap_zh))}</p>` : ""}
+          ${gap ? `<p class="k-meta k-pharm-gap">${esc(gap)}</p>` : ""}
+          <p class="k-meta">${esc(modeText("草稿 · 禁忌與交互作用引用官方標籤", "draft · contraindications and interactions cite the official label"))}</p>
+          <button type="button" class="k-open-detail" data-detail-kind="pharm" data-detail-id="${esc(d.id)}">${esc(modeText("查看西藥卡", "Open drug card"))}</button>
+        </article>`;
+    }).join("");
+
+    pharmHost.innerHTML = `
+      <div class="k-toolbar k-toolbar--single">
+        <input type="search" id="pharmFilter" placeholder="${esc(modeText("搜尋藥名、分類、機轉、適應症、記憶法… Search drug, class, mechanism, indication...", "Search drugs, class, mechanism, indications, mnemonics..."))}" class="k-filter" />
+      </div>
+      <details class="k-category-drawer">
+        <summary>
+          <span><span class="i18n-zh">分類篩選 </span><span class="i18n-en">Category filters</span></span>
+          <small id="pharmCategorySummary">${esc(modeText("全部 All", "All"))} · ${pharmDrugs.length}</small>
+        </summary>
+        <select id="pharmCategoryFilter" class="k-filter">
+          <option value="">All classes</option>
+          ${classes.map((c) => `<option value="${esc(c)}">${esc(c)}</option>`).join("")}
+        </select>
+        <div class="cat-chips" id="pharmCatChips" aria-label="西藥分類篩選"></div>
+      </details>
+      <div class="k-grid" id="pharmGrid">${renderPharm(pharmDrugs)}</div>`;
+
+    const updatePharmGrid = () => {
+      const q = el("pharmFilter").value.trim().toLowerCase();
+      const category = el("pharmCategoryFilter").value;
+      const hit = pharmDrugs.filter((d) => {
+        const categoryHit = !category || category.split("||").includes(classNameOf(d));
+        const text = [
+          d.id, d.name_zh, d.name_en, d.suffix_en, d.rxnorm_rxcui,
+          classNameOf(d), d.mechanism_zh, d.mechanism_en, d.mnemonic_en,
+          ...asList(d.brand_names_en),
+          ...asList(d.indications_zh), ...asList(d.indications_en),
+          ...asList(d.contraindications_zh), ...asList(d.adverse_effects_zh)
+        ].filter(Boolean).join(" ").toLowerCase();
+        return categoryHit && (!q || text.includes(q));
+      });
+      const summary = el("pharmCategorySummary");
+      if (summary) summary.textContent = `${categorySummaryLabel(category)} · ${hit.length}`;
+      el("pharmGrid").innerHTML = renderPharm(hit) || '<p class="k-missing">沒有符合的西藥 / No matching drugs.</p>';
+    };
+    el("pharmFilter").addEventListener("input", updatePharmGrid);
+    el("pharmCategoryFilter").addEventListener("change", updatePharmGrid);
+    document.addEventListener("acuting:content-mode", updatePharmGrid);
+    buildCategoryChips("pharmCatChips", "pharmCategoryFilter", pharmDrugs, classNameOf, updatePharmGrid);
+    pharmHost.addEventListener("click", (event) => {
+      const button = event.target.closest('[data-detail-kind="pharm"][data-detail-id]');
+      if (button) openKnowledgeDetail("pharm", button.dataset.detailId);
     });
   }
 

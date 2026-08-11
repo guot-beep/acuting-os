@@ -3349,3 +3349,9 @@ Current repo state as of this log:
 - 亮點判斷(抽查認可):supp.ginkgo 不連 herb.yin_xing(葉萃取 vs 白果種子,herb 卡自己的 exam_pearl 佐證);curcumin→jiang_huang、asian_ginseng→ren_shen 連結正確。
 - 實作者回報的 taxonomy 缺口:staging 用了非詞彙的 other_bioactives(melatonin/glucosamine/chondroitin 被塞進勉強類)——列入詞彙表 v2 待議(可能加 category)。
 - validate-supp-standard 36 筆 0 defects;build/ratchet/content-junk 全綠。並行:Sonnet#1 sym 卡持續、Codex C2B-R4 持續、SOL 優化提案回覆中。
+
+# 2026-08-11 Fable — Antigravity 西藥成果整合進 local index(Ting 反映「沒融入」)
+
+- **調查**:成果卡在 acuting-antigravity worktree 的 pattern-v2-implementation 分支(8 個 pharm commits),從未併入主線;主線只差 UI(js WIP 未提交)。真實成色:40 drugs/33 classes/29 targets/5 systems **全為 draft 骨架**——0 來源、0 禁忌、0 不良反應,truth-verification 閘門建好但無已驗內容;中文名有錯(如 lisinopril→「李斯諾普」,應為賴諾普利)。
+- **整合**:採納資料檔+4 支 pharm 驗證/測試腳本(檔案級 adoption,不 git-merge——遵守 knowledge.js 覆寫教訓);正式提交擱置多日的 pharm UI WIP(knowledge.js +96/router.js +2)。live:pharm workspace 40 卡渲染、bundle 40/33/29、0 console errors、validate-pharm PASS、ratchet 無回歸。
+- **待辦(Sonnet 批次)**:40 個中文名逐一審校 + 用其 DailyMed/MedlinePlus manifests 把 draft 填成 verified(來源逐欄)。在 UI 上 draft 卡誠實顯示 status pill 與 gap note——這正是該 WIP 自己的設計。
