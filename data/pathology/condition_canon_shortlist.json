@@ -16817,8 +16817,8 @@
       "review_status": "draft",
       "fetched_at": "2026-07-23T07:46:06.137Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「鬱證」「驚悸」「不寐」論。情志不遂,肝失條達,氣機鬱滯為起點——胸脅苦滿、太息頻頻;鬱久化火,上擾心神,煩躁不寧、寐差易驚;思慮過度,暗耗心脾,氣血生化不足,心神失養——憂思愈甚愈虛,愈虛愈憂,是為循環;腎陰虧虛者,水不濟火,心腎不交,虛煩不得眠;痰熱內擾者,驚惕胸悶、苔黃膩。虛實常互見:肝鬱化火為標,心脾腎之虛為本。治分疏肝解鬱、清火化痰、補益心脾、交通心腎諸法,隨證主次。",
+      "western_pathology_zh": "廣泛性焦慮的核心是對多領域事務不成比例、難以控制的擔憂,伴肌肉緊繃、坐立不安、易疲倦、注意力渙散與睡眠障礙。神經迴路層面:杏仁核為中心的威脅偵測系統過度活化,而內側前額葉的下行調控不足——「煞車失靈的警報器」;自主神經長期偏向交感,故心悸、出汗、腸胃不適等軀體症狀突出。神經傳導物質涉及 GABA(苯二氮平類作用點)、血清素與去甲腎上腺素;遺傳易感與早期逆境經驗共同塑形。與憂鬱症高度共病;甲狀腺功能亢進、心律不整、藥物(咖啡因、氣管擴張劑)可擬似焦慮——軀體排除是評估的一環。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -16851,9 +16851,44 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/319"
+        "https://cloudtcm.com/disease/tcm/319",
+        "https://medlineplus.gov/anxiety.html"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from constraint (yu zheng), fright palpitations, and insomnia. Emotional frustration blocks the liver's free-coursing and constrains the qi dynamic — chest and flank oppression, frequent sighing — the starting point; prolonged constraint transforms into fire that harasses the heart-spirit upward — restlessness, poor sleep, easy startling; excessive worry silently consumes heart and spleen, generation of qi and blood falls short, and the spirit loses nourishment — the more the worry, the deeper the deficiency, and the deeper the deficiency, the worse the worry: a loop; where kidney yin is depleted, water fails to temper fire and heart and kidney lose communication — empty vexation without sleep; where phlegm-heat harasses within — startling, chest oppression, yellow greasy coat. Deficiency and excess interweave: liver constraint transforming into fire at the branch, heart-spleen-kidney deficiency at the root. Methods divide among coursing the liver, clearing fire and transforming phlegm, supplementing heart and spleen, and joining heart and kidney, weighted by pattern.",
+      "western_pathology_en": "Generalized anxiety centers on disproportionate, hard-to-control worry across life domains, with muscle tension, restlessness, fatigability, poor concentration, and disturbed sleep. At circuit level, the amygdala-centered threat-detection system runs overactive while medial prefrontal top-down regulation runs short — an alarm with failing brakes; the autonomic system tilts chronically sympathetic, which is why palpitations, sweating, and gut symptoms are so prominent. Neurotransmission involves GABA (the benzodiazepine site), serotonin, and norepinephrine; genetic susceptibility and early adversity shape the risk together. Comorbidity with depression is high; hyperthyroidism, arrhythmia, and drugs (caffeine, bronchodilators) can mimic anxiety — somatic exclusion is part of the work-up.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(鬱證/驚悸/不寐門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(鬱證/驚悸/不寐門)"
+        ],
+        "western_pathology_zh": [
+          "NIMH — 焦慮症通說",
+          "MedlinePlus — Anxiety (https://medlineplus.gov/anxiety.html)"
+        ],
+        "western_pathology_en": [
+          "NIMH — 焦慮症通說",
+          "MedlinePlus — Anxiety (https://medlineplus.gov/anxiety.html)"
+        ]
+      }
     },
     {
       "id": "cond.depression",
@@ -17187,8 +17222,8 @@
         "pattern.phlegm_misting_heart"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「驚悸」「奔豚」論——奔豚氣「從少腹起,上衝咽喉,發作欲死,復還止」(《金匱要略》),與恐慌發作氣自下衝、瀕死感、發過即止的形態驚人相合。病機:「驚則氣亂,恐則氣下」——猝受驚恐,心氣逆亂;心膽氣虛者,觸事易驚,發作後惕惕不安;腎氣虛於下,水寒之氣挾衝脈上逆凌心,即奔豚之象;陰虛火旺、痰火擾心者,發時心悸煩熱。發作期平衝降逆、鎮驚安神,緩解期補益心膽腎、固其本——本虛(心膽腎)標實(氣逆痰火)之判是辨證軸。",
+      "western_pathology_zh": "恐慌症的單位事件是恐慌發作:數分鐘內衝頂的強烈恐懼,伴心悸、胸悶、呼吸困難、頭暈、出汗、瀕死感或失控感——一場突發的自主神經風暴;恐慌「症」則是反覆發作加上對再發作的持續預期焦慮與迴避行為(嚴重者發展為懼曠症)。機轉假說:腦幹對二氧化碳與窒息訊號的化學敏感性過高(「窒息假警報」理論——過度換氣與二氧化碳激發試驗的證據)、藍斑去甲腎上腺素系統不穩定、恐懼迴路條件化。發作本身良性但極似急症——首次發作須排除心肌梗塞、心律不整、氣胸、甲亢、低血糖;確診後的衛教(「這不會致死」)本身就有治療效果。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17220,7 +17255,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from fright palpitations and ben tun (running piglet) — the qi that \"rises from the lower abdomen, surges to the throat, feels like dying, then subsides and stops\" (Jin Gui Yao Lue), astonishingly congruent with a panic attack's surge from below, sense of death, and complete remission after the episode. Mechanism: \"fright throws qi into chaos; fear makes qi descend\" — sudden terror deranges heart qi; in those with heart-gallbladder qi deficiency, any stimulus startles and post-attack apprehension lingers; where kidney qi is weak below, cold-water qi rides the Chong mai upward to assault the heart — the running-piglet image itself; yin deficiency with flaring fire or phlegm-fire harassing the heart gives hot, agitated palpitations at attack. During attacks: calm the surging, downbear rebellion, settle fright, quiet the spirit; between attacks: supplement heart, gallbladder, and kidney to secure the root — the deficiency-root/excess-branch split is the axis of differentiation.",
+      "western_pathology_en": "The unit event of panic disorder is the panic attack: intense fear peaking within minutes, with palpitations, chest tightness, dyspnea, dizziness, sweating, and a sense of dying or losing control — a sudden autonomic storm. The disorder is recurrent attacks plus persistent anticipatory anxiety and avoidance (at the severe end, agoraphobia). Mechanistic hypotheses: brainstem chemosensitivity to carbon dioxide and suffocation signals set too high (the \"false suffocation alarm\" theory, supported by hyperventilation and CO2-challenge findings), an unstable locus coeruleus noradrenergic system, and conditioned fear circuitry. The attack itself is benign yet mimics emergencies — a first attack warrants excluding myocardial infarction, arrhythmia, pneumothorax, hyperthyroidism, and hypoglycemia; after diagnosis, the education that \"this cannot kill you\" is itself therapeutic.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(驚悸門;《金匱要略》奔豚氣)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(驚悸門;《金匱要略》奔豚氣)"
+        ],
+        "western_pathology_zh": [
+          "NIMH — 恐慌症通說(CO2 化學敏感性假說)",
+          "MedlinePlus — Panic Disorder (https://medlineplus.gov/panicdisorder.html)"
+        ],
+        "western_pathology_en": [
+          "NIMH — 恐慌症通說(CO2 化學敏感性假說)",
+          "MedlinePlus — Panic Disorder (https://medlineplus.gov/panicdisorder.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/panicdisorder.html"
+      ]
     },
     {
       "id": "cond.ptsd",
@@ -17239,8 +17311,8 @@
         "pattern.phlegm_misting_heart"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「驚恐」「鬱證」「不寐」論。暴受驚駭,「驚則氣亂、恐則氣下」,心腎兩傷:心藏神,驚亂則神不守舍——惡夢紛紜、觸境驚惕;腎藏志而主恐,恐傷腎則志怯不寧。神魂不安日久,肝失疏泄,氣機鬱滯,鬱而化火,煩躁易怒;氣滯血瘀者,病程膠著,胸悶痛有定處,舌黯——「久病入絡」於情志病同樣適用。心膽氣虛為底盤者,微觸即驚。治分鎮驚安神、疏肝解鬱、活血化瘀、補益心腎,分期而施;情志之病仍需情志之治,針藥為輔翼——此與心理治療為主軸的西醫共識同向。",
+      "western_pathology_zh": "創傷後壓力症是恐懼記憶處理的失敗:創傷記憶未經正常消退與整合,以侵入方式反覆重現。四大症狀群:再體驗(闖入回憶、惡夢、瞬間重歷)、迴避(人事物與內在感受)、認知與情緒的負性改變、警覺過高(易驚、失眠、易怒)。神經生物學:杏仁核過度反應+內側前額葉抑制不足+海馬體積與功能改變(情境記憶編碼受損,使創傷記憶「去情境化」——安全環境中被觸發);HPA 軸調節異常(皮質醇回饋增敏的獨特型態)。並非人人暴露即病——創傷劑量、既往創傷史、社會支持缺乏是主要風險調節因子;共病憂鬱、物質使用、慢性疼痛極常見。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17272,7 +17344,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from fright-fear, constraint, and insomnia. Violent terror — \"fright deranges qi, fear sends it downward\" — wounds heart and kidney both: the heart stores the spirit, and deranged fright leaves the spirit unhoused — teeming nightmares, startling at reminders; the kidney stores the will and governs fear, so injured kidney leaves the will timid and unquiet. As spirit and ethereal soul stay unsettled, the liver loses coursing, qi constrains and transforms into fire — irritable agitation; with qi stagnation and blood stasis the course turns glue-like, with fixed chest oppression and a dusky tongue — \"long illness enters the collaterals\" applies to emotional disease too. On a base of heart-gallbladder qi deficiency, the slightest touch startles. Methods divide among settling fright and quieting spirit, coursing the liver, invigorating blood, and supplementing heart and kidney, staged over the course; disease of the emotions still needs treatment through the emotions, with needles and herbs as the supporting wings — pointing the same way as biomedicine's psychotherapy-first consensus.",
+      "western_pathology_en": "PTSD is a failure of fear-memory processing: the traumatic memory, never normally extinguished and integrated, keeps returning intrusively. Four symptom clusters: re-experiencing (intrusions, nightmares, flashbacks), avoidance (of reminders and inner states), negative alterations of cognition and mood, and hyperarousal (startle, insomnia, irritability). Neurobiology: an over-reactive amygdala, insufficient medial prefrontal inhibition, and altered hippocampal volume and function (impaired contextual encoding \"de-contextualizes\" the trauma memory, so safe settings can trigger it); HPA-axis regulation is abnormal in a distinctive enhanced-feedback pattern. Not everyone exposed falls ill — trauma dose, prior trauma history, and lacking social support are the chief risk modifiers; comorbid depression, substance use, and chronic pain are very common.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(驚悸/鬱證門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(驚悸/鬱證門)"
+        ],
+        "western_pathology_zh": [
+          "NIMH/VA — 創傷後壓力症通說",
+          "MedlinePlus — Post-Traumatic Stress Disorder (https://medlineplus.gov/posttraumaticstressdisorder.html)"
+        ],
+        "western_pathology_en": [
+          "NIMH/VA — 創傷後壓力症通說",
+          "MedlinePlus — Post-Traumatic Stress Disorder (https://medlineplus.gov/posttraumaticstressdisorder.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/posttraumaticstressdisorder.html"
+      ]
     },
     {
       "id": "cond.adhd",
@@ -17289,8 +17398,8 @@
         "pattern.liver_yang_rising"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫兒科依「臟躁」「健忘」「多動」論,總綱是「陰靜不足,陽動有餘」。先天稟賦不足,腎精虧虛,髓海不充——神不安宅,志不能定,注意難以持久;心脾兩虛,氣血不足,神失所養——神思渙散,作業拖延,記憶不牢;陰虛陽亢,水不涵木,肝陽偏旺——動而多言,衝動難制,性急易怒;痰熱內擾者,躁動不寧、寐差。「動」責之肝陽與痰熱,「不專」責之心脾腎之虛——虛實兩綱下的組合即臨床分型。治以滋腎養心、健脾益氣為本,平肝潛陽、清化痰熱為標,配合行為教養——藥針之外,起居有常本身即是「養陰」。",
+      "western_pathology_zh": "注意力不足過動症是神經發展障礙:不專注與過動-衝動兩維症狀,起病於發展期,跨情境存在並造成功能損害。神經生物學核心是前額葉-紋狀體迴路的多巴胺與去甲腎上腺素訊號不足——執行功能(工作記憶、抑制控制、時間管理)與獎賞延遲處理受損,「知道該做而啟動不了」是典型體驗;興奮劑類藥物增強兒茶酚胺傳遞即針對此。遺傳度在精神疾患中名列前茅;早產低出生體重、孕期菸酒暴露是環境風險。相當比例症狀延續至成年(以不專注與內在不寧為主);共病學習障礙、對立行為、焦慮憂鬱常見——「不乖」的標籤延誤診斷是最常見的照護失敗。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17322,7 +17431,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese pediatrics reasons from visceral agitation, poor memory, and hyperactivity, under the governing formula \"yin stillness insufficient, yang motion excessive.\" Constitutional insufficiency with kidney essence depletion leaves the sea of marrow unfilled — the spirit is unhoused, the will unsettled, attention cannot hold; heart-spleen dual deficiency with insufficient qi and blood leaves the spirit unnourished — scattered thought, procrastinated work, loose memory; yin deficiency with yang ascendancy, water failing to moisten wood so liver yang runs high — restless motion and chatter, impulses hard to check, quick temper; phlegm-heat harassing within gives agitation and poor sleep. \"Motion\" is charged to liver yang and phlegm-heat, \"inattention\" to deficiency of heart, spleen, and kidney — combinations under these two headings are the clinical subtypes. Treatment enriches kidney and nourishes heart, fortifies spleen and boosts qi at the root, calms the liver and clears phlegm-heat at the branch, alongside behavioral guidance — beyond needle and herb, regular daily rhythm is itself \"nourishing yin.\"",
+      "western_pathology_en": "ADHD is a neurodevelopmental disorder: symptoms along two dimensions — inattention and hyperactivity-impulsivity — beginning in the developmental period, present across settings, and impairing function. The neurobiological core is insufficient dopamine and norepinephrine signaling in prefrontal-striatal circuits — executive functions (working memory, inhibitory control, time management) and delayed-reward processing are impaired, and \"knowing what to do but unable to start\" is the signature experience; stimulant medications enhance catecholamine transmission at exactly this point. Heritability ranks among the highest in psychiatry; prematurity, low birth weight, and prenatal tobacco and alcohol exposure are environmental risks. A substantial share of symptoms persists into adulthood (inattention and inner restlessness dominating); comorbid learning disorders, oppositionality, anxiety, and depression are common — and the \"naughty child\" label delaying diagnosis is the most frequent failure of care.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫兒科學教材通說(多動/健忘門)"
+        ],
+        "etiology_en": [
+          "中醫兒科學教材通說(多動/健忘門)"
+        ],
+        "western_pathology_zh": [
+          "NIMH/AAP — 注意力不足過動症通說",
+          "MedlinePlus — ADHD (https://medlineplus.gov/attentiondeficithyperactivitydisorder.html)"
+        ],
+        "western_pathology_en": [
+          "NIMH/AAP — 注意力不足過動症通說",
+          "MedlinePlus — ADHD (https://medlineplus.gov/attentiondeficithyperactivitydisorder.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/attentiondeficithyperactivitydisorder.html"
+      ]
     },
     {
       "id": "cond.stress_burnout",
@@ -17340,8 +17486,8 @@
         "pattern.heart_spleen_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫置於「虛勞」與「鬱證」之交界。「勞則氣耗」「思則氣結」——長期勞倦思慮,先耗心脾:氣血暗損,神疲乏力、寐差健忘、納減;肝鬱氣滯與之並行:責任糾結,情志不暢,胸脅悶脹、太息易怒;久則由氣及陰、由脾及腎——腎精漸虧,腰酸耳鳴、晨起不振,陰陽俱損者畏寒與虛熱交見。此病是「漸耗」之象:非一日之損,亦非一日可復;治以補益心脾、益氣養血為基,疏肝解鬱為輔,及腎者填精固本——而節勞、寐足、有時有節,即是最根本的「補」。",
+      "western_pathology_zh": "過勞不是正式醫學診斷——國際疾病分類將其定位為「職業現象」:長期工作壓力未獲妥善管理的結果,三個維度是能量耗竭、對工作的心理距離或憤世態度、專業效能感下降。生理基礎是慢性壓力反應:HPA 軸與交感系統長期活化,皮質醇節律紊亂,睡眠結構受損,發炎指標偏高,免疫與代謝隨之受累——「壓力荷爾蒙的長期洪水」侵蝕本應急用的系統。它與憂鬱症有重疊但不等同(境遇特異性是鑑別線索);軀體表現(頭痛、腸胃不適、血壓上升、易感染)常是就醫主訴。恢復依賴負荷-恢復平衡的重建:睡眠、邊界、運動與社會支持——單靠意志力撐過去正是致病邏輯的延續。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17373,7 +17519,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine places burnout at the border of deficiency-taxation (xu lao) and constraint. \"Taxation consumes qi; worry knots it\" — prolonged toil and rumination first drain heart and spleen: qi and blood are silently spent — exhaustion of spirit, poor sleep, forgetfulness, reduced appetite; liver constraint runs alongside: duties knotted, emotions uncoursed — chest and flank oppression, sighing, irritability; with time the damage moves from qi to yin and from spleen to kidney — kidney essence dwindles, with lumbar soreness, tinnitus, mornings without lift, and in dual yin-yang injury, chills alternating with deficient heat. This is the image of gradual depletion: not one day's damage, nor one day's repair. Treatment rests on supplementing heart and spleen and boosting qi-blood, assisted by coursing the liver, and where the kidney is reached, replenishing essence to secure the root — while measured work, sufficient sleep, and rhythm in daily life are themselves the most fundamental \"tonic.\"",
+      "western_pathology_en": "Burnout is not a formal medical diagnosis — the ICD frames it as an \"occupational phenomenon\": the result of chronic workplace stress not successfully managed, in three dimensions — energy depletion, mental distance or cynicism toward work, and reduced professional efficacy. The physiological substrate is the chronic stress response: long-running HPA-axis and sympathetic activation, disordered cortisol rhythm, degraded sleep architecture, elevated inflammatory markers, and downstream immune and metabolic strain — a standing flood of stress hormones eroding systems built for emergencies. It overlaps depression without equaling it (situational specificity is the discriminating clue); somatic complaints — headache, gut upset, rising blood pressure, frequent infections — are often the presenting problem. Recovery depends on rebuilding the load-recovery balance: sleep, boundaries, exercise, and social support — powering through on willpower is the disease logic itself, continued.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(虛勞/鬱證門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(虛勞/鬱證門)"
+        ],
+        "western_pathology_zh": [
+          "WHO ICD-11 — 職業現象定位;壓力生理通說",
+          "MedlinePlus — Stress (https://medlineplus.gov/stress.html)"
+        ],
+        "western_pathology_en": [
+          "WHO ICD-11 — 職業現象定位;壓力生理通說",
+          "MedlinePlus — Stress (https://medlineplus.gov/stress.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/stress.html"
+      ]
     },
     {
       "id": "cond.chronic_fatigue",
@@ -17391,8 +17574,8 @@
         "pattern.liver_qi_stagnation"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「虛勞」,而課件的分層很關鍵:非純虛——外感之後「餘邪未清」與正虛並存。餘邪留戀少陽,寒熱往來、胸脅苦滿、脈弦;或滯於陽明,身熱心煩。正虛之層:脾氣虛——四肢困倦、納呆便溏,「脾主四肢肌肉」,勞動後倦怠之象與此最合;腎虛——精虧則腦轉耳鳴、腰膝酸軟,晨起不振;肝鬱——久病情志抑鬱,加重氣機不暢;兼痰濕者頭重如裹。「虛不受補」是此病常見陷阱:餘邪未清而峻補,反致纏綿——先清透餘邪、再緩緩補益,分階施治是課件與臨床的共同結論。",
+      "western_pathology_zh": "慢性疲勞症候群(肌痛性腦脊髓炎)的定義性特徵:持續超過六個月、休息不能緩解的重度疲勞,加上「勞動後倦怠」——體力或腦力活動後症狀不成比例地惡化,可延遲一兩天出現、持續數日,這是與一般疲勞和憂鬱的關鍵區分;伴認知困難(腦霧)、無恢復感的睡眠、直立不耐。課件指其常於病毒感染後起病(EB 病毒、HHV-6 為代表),機轉研究指向免疫調節異常、自主神經失衡與細胞能量代謝受損,但尚無確立的單一機轉與生物標記——診斷仍靠症狀標準加排除(甲狀腺、貧血、睡眠呼吸中止、憂鬱等)。照護核心是節律管理(pacing)——在能量包絡內活動,避免推撞-崩潰循環;分級運動療法的證據與爭議並存,勞動後倦怠明顯者不宜強推。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17424,7 +17607,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's deficiency-taxation (xu lao) — but the handout's layering is the key point: not pure deficiency, rather \"residual pathogen unresolved\" after an external contraction coexisting with upright deficiency. The lingering evil may rest in Shaoyang — alternating chills and fever, chest-flank oppression, wiry pulse — or lodge in Yangming with body heat and vexation. The deficient layer: spleen qi deficiency — heavy weary limbs, poor appetite, loose stools; \"the spleen governs the four limbs and flesh,\" the closest match to post-exertional malaise; kidney deficiency — essence depletion with dizzy head, tinnitus, sore lumbar and knees, mornings without lift; liver constraint — long illness with depressed mood worsening the qi dynamic; phlegm-damp adds a head wrapped in cloth. \"Deficiency that cannot accept tonics\" is this disease's standing trap: heavy tonification before the residual evil clears only entrenches it — vent the residual first, then supplement slowly, in stages: the shared conclusion of handout and clinic.",
+      "western_pathology_en": "The defining features of chronic fatigue syndrome (myalgic encephalomyelitis): severe fatigue persisting beyond six months and unrelieved by rest, plus post-exertional malaise — a disproportionate worsening after physical or mental activity, often delayed a day or two and lasting days, the key discriminator from ordinary fatigue and from depression; with cognitive difficulty (brain fog), unrefreshing sleep, and orthostatic intolerance. The handout notes onset commonly follows viral infection (Epstein-Barr virus and HHV-6 the exemplars); research points to immune dysregulation, autonomic imbalance, and impaired cellular energy metabolism, but no single mechanism or biomarker is established — diagnosis rests on symptom criteria plus exclusion (thyroid disease, anemia, sleep apnea, depression, and others). The core of care is pacing — activity within the energy envelope, avoiding push-crash cycles; graded exercise therapy carries both evidence and controversy, and should not be forced where post-exertional malaise is marked.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/7 Chronic Fatigue Symdrome.docx(Tier-1 課堂 handout,餘邪+正虛分層)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/7 Chronic Fatigue Symdrome.docx(Tier-1 課堂 handout,餘邪+正虛分層)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/7 Chronic Fatigue Symdrome.docx(Tier-1 課堂 handout,EBV/HHV-6)",
+          "CDC — ME/CFS 通說(勞動後倦怠、pacing)",
+          "MedlinePlus — Chronic Fatigue Syndrome (https://medlineplus.gov/chronicfatiguesyndrome.html)"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/7 Chronic Fatigue Symdrome.docx(Tier-1 課堂 handout,EBV/HHV-6)",
+          "CDC — ME/CFS 通說(勞動後倦怠、pacing)",
+          "MedlinePlus — Chronic Fatigue Syndrome (https://medlineplus.gov/chronicfatiguesyndrome.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/chronicfatiguesyndrome.html"
+      ]
     },
     {
       "id": "cond.restless_legs",
@@ -17442,8 +17664,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「血痺」「痿證」邊緣與「不寐」論之,古籍「胫酸」「腳悗」之描述亦近。病機軸心是陰血不足、筋脈失養而虛風內動於下:「肝藏血,血舍魂」,夜臥血歸於肝,四末所得益少——入夜症作、動則暫舒,正是血不榮筋、得動則氣血暫行之象。肝腎陰虛為本者,腰酸耳鳴並見;脾虛生化乏源者,倦怠納少;兼血瘀者,痠脹刺痛、膚色黯滯;孕晚期血聚養胎、產婦失血,皆奪血於下,故易發——與西醫缺鐵線索平行。治重養血柔肝、滋補肝腎,佐活血通絡;此病「補血即是熄風」。",
+      "western_pathology_zh": "不寧腿症候群的診斷四要件:難以抗拒的動腿衝動(常伴深部不適感)、靜止時出現或加重、活動後緩解、傍晚夜間加重——晝夜節律性是其生物學印記。機轉的兩條主線:中樞鐵利用障礙——腦脊髓液與黑質鐵含量偏低(血清鐵蛋白可正常),鐵是酪氨酸羥化酶的輔因子,由此連向第二條——多巴胺訊號的晝夜失調。續發性原因務必篩查:缺鐵(鐵蛋白偏低即值得補)、慢性腎衰、妊娠第三期、藥物(抗組織胺、多數抗憂鬱劑、止吐劑多巴胺拮抗類)。與睡眠期週期性肢動高度相關,是慢性失眠的可治原因;長期多巴胺促效劑有症狀增強(augmentation)風險——起始治療先查鐵是共識。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17475,7 +17697,41 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from blood bi, the margin of wei (atrophy) disorder, and insomnia; classical descriptions of \"aching shins\" come close. The mechanistic axis is insufficient yin-blood leaving the sinews unnourished, with deficiency wind stirring below: \"the liver stores blood, and blood houses the ethereal soul\" — at night blood returns to the liver and the extremities receive less, so symptoms rise at nightfall and ease briefly with movement: blood failing to nourish sinew, with qi and blood moving only while stirred. Where liver-kidney yin deficiency is the root, lumbar soreness and tinnitus accompany; where spleen deficiency starves the source, weariness and small appetite; with blood stasis added, aching-distending stabbing and dusky skin. Late pregnancy gathers blood to nourish the fetus and childbirth spends it — both rob blood from below, hence the susceptibility, parallel to biomedicine's iron clue. Treatment stresses nourishing blood and softening the liver, enriching liver and kidney, assisted by invigorating the collaterals — in this disease, \"to supplement blood is to extinguish wind.\"",
+      "western_pathology_en": "Restless legs syndrome has four diagnostic essentials: an irresistible urge to move the legs (usually with deep discomfort), onset or worsening at rest, relief with movement, and evening-night worsening — the circadian signature is its biological stamp. Two mechanistic mainlines: impaired central iron utilization — cerebrospinal fluid and substantia nigra iron run low (serum ferritin can be normal), and iron is a cofactor of tyrosine hydroxylase, which leads to the second line — circadian dysregulation of dopamine signaling. Secondary causes must be screened: iron deficiency (a low-ish ferritin already merits repletion), chronic renal failure, third-trimester pregnancy, and drugs (antihistamines, most antidepressants, dopamine-blocking antiemetics). It is tightly linked to periodic limb movements of sleep and is a treatable cause of chronic insomnia; long-term dopamine agonists risk augmentation — checking iron before starting treatment is the consensus.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(血痺/不寐門,依病機推證)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(血痺/不寐門,依病機推證)"
+        ],
+        "western_pathology_zh": [
+          "NINDS/AASM — 不寧腿症候群通說(中樞鐵-多巴胺軸)",
+          "MedlinePlus — Restless Legs Syndrome (https://medlineplus.gov/restlesslegssyndrome.html)"
+        ],
+        "western_pathology_en": [
+          "NINDS/AASM — 不寧腿症候群通說(中樞鐵-多巴胺軸)",
+          "MedlinePlus — Restless Legs Syndrome (https://medlineplus.gov/restlesslegssyndrome.html)"
+        ]
+      }
     },
     {
       "id": "cond.circadian_disorder",
@@ -17885,8 +18141,8 @@
         "pattern.phlegm_heat_in_lung"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫視菸草為辛溫燥熱之品:「菸為辛熱之魁」,久吸燻灼肺道,耗傷肺陰,釀痰生熱——戒前之體,多是肺陰不足兼痰熱內蘊。戒斷期的病機重心轉至肝與心神:所嗜驟斷,肝失疏泄,氣機鬱滯——煩躁易怒、胸悶太息;心神失於所倚,虛煩不寧、寐差;脾胃之氣乍蘇,納增而易生濕滯,體重之增即此。治以清肺潤燥化痰為底,疏肝解鬱、寧心安神為主軸,佐健脾化濕;耳穴與體針即循此設計(療效證據屬治療層)。渴求隨情境而發,正合「肝隨境動」——避境與調肝並行。",
+      "western_pathology_zh": "戒菸輔助的對象不是疾病而是依賴與戒斷過程。尼古丁作用於中腦邊緣系統的 α4β2 菸鹼受體,觸發多巴胺釋放——吸入後數秒即達腦,快進快出的藥物動力學正是高成癮性的來源;長期使用受體上調,停用即現戒斷:煩躁、焦慮、注意渙散、食慾增加與強烈渴求,於數日達峰、數週漸緩,但情境線索(飯後、咖啡、壓力)觸發的渴求可持續數月——複吸多發生於此。實證輔助:尼古丁替代、varenicline、bupropion 與行為支持,合併使用成功率最高;體重增加與情緒波動是可預告的過渡現象。任何年齡戒菸都有健康獲益——這句話本身就是最有證據的衛教。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17918,7 +18174,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine classes tobacco as acrid, warm, dry, and hot: \"tobacco heads the acrid-hot class\" — long smoking scorches the lung passages, wears lung yin, and brews phlegm-heat, so the pre-quit constitution is typically lung-yin deficiency with phlegm-heat within. In withdrawal the mechanism's weight shifts to the liver and the heart-spirit: the craved substance cut off abruptly, the liver loses coursing and qi constrains — irritability, chest oppression, sighing; the spirit loses its accustomed prop — empty restlessness and poor sleep; as the spleen-stomach qi reawakens, appetite grows and damp stagnation follows — the familiar weight gain. Treatment lays clearing the lung and moistening dryness beneath, makes coursing the liver and quieting the spirit the axis, and assists with fortifying the spleen and transforming damp; ear and body acupuncture protocols are designed along exactly these lines (efficacy evidence belongs to the treatment layer). Craving that fires with situations fits \"the liver moves with circumstance\" — avoiding cues and regulating the liver proceed together.",
+      "western_pathology_en": "Smoking-cessation support addresses not a disease but a dependence and its withdrawal. Nicotine acts on α4β2 nicotinic receptors in the mesolimbic system, triggering dopamine release — reaching the brain within seconds of a puff, and that fast-in-fast-out pharmacokinetics is precisely the engine of addictiveness; chronic use upregulates receptors, so cessation unmasks withdrawal: irritability, anxiety, scattered attention, increased appetite, and intense craving, peaking within days and easing over weeks — while cue-triggered craving (after meals, with coffee, under stress) can persist for months, where most relapse happens. Evidence-based aids: nicotine replacement, varenicline, bupropion, and behavioral support, with combinations most successful; weight gain and mood swings are transition phenomena worth predicting aloud. Quitting benefits health at any age — that sentence itself is the best-evidenced education.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(依藥性與鬱證病機推證)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(依藥性與鬱證病機推證)"
+        ],
+        "western_pathology_zh": [
+          "USPHS — 戒菸臨床指引通說(藥理與戒斷時程)",
+          "MedlinePlus — Quitting Smoking (https://medlineplus.gov/quittingsmoking.html)"
+        ],
+        "western_pathology_en": [
+          "USPHS — 戒菸臨床指引通說(藥理與戒斷時程)",
+          "MedlinePlus — Quitting Smoking (https://medlineplus.gov/quittingsmoking.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/quittingsmoking.html"
+      ]
     },
     {
       "id": "cond.somatic_symptom",
@@ -17936,8 +18229,8 @@
         "pattern.heart_yin_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「鬱證」論,「百合病」「臟躁」之象亦通——「意欲食復不能食,常默默,欲臥不能臥,欲行不能行……如有神靈者,身形如和」(《金匱要略》百合病),諸症游移而查體如常,與此病之象千年相照。病機:情志不遂,氣機鬱滯為軸——肝鬱不舒,氣滯於胸脅脘腹,悶脹走竄諸症由生;鬱久化火,擾動心神,則健康之慮愈盛;思慮傷脾,運化失司,症狀繫於腸胃;心陰不足、神失所養者,悲憂善慮、症隨情轉。「症狀隨情志消長」是辨證之錨。治以疏肝解鬱為軸,養心安神、健脾和中隨證;醫者恆常之關係本身,即中醫「移情易性」之治。",
+      "western_pathology_zh": "身體症狀障礙的診斷重心是 DSM-5 的轉向:不再要求「醫學無法解釋」,而看患者對症狀的反應——與症狀嚴重度不成比例的持續思慮、對健康的高度焦慮、投入過多時間精力;症狀本身可以有或沒有器質基礎。機轉理解:中樞對內感受訊號的放大(同樣的內臟訊號被更強地感知與威脅化)、注意偏向與災難化解讀的認知迴路、早期經驗與依附型態的塑形;與焦慮憂鬱高度共病。照護的實證要點:單一固定的主責醫師、規律而非按需的回診、認可症狀真實性(「痛是真的」)同時避免重複檢查——反覆檢查不僅無效,且會強化疾病焦慮,是這個病最常見的醫源性加重。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -17969,7 +18262,41 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from constraint (yu zheng), with the images of lily disease (bai he bing) and visceral agitation equally apt — \"wishing to eat yet unable to eat, silent and withdrawn, wishing to lie down yet unable to lie, wishing to walk yet unable to walk … as if possessed, yet the body appears well\" (Jin Gui Yao Lue on lily disease): wandering complaints with an unremarkable examination, mirroring this disorder across a millennium. Mechanism: emotional frustration constraining the qi dynamic is the axis — liver constraint lodges qi in chest, flanks, and abdomen, breeding the oppressive, distending, wandering complaints; long constraint transforms into fire that stirs the heart-spirit, and health worry swells; worry wounds the spleen and transport falters, tying symptoms to the gut; with heart yin insufficient and the spirit unnourished, sorrow and rumination follow, symptoms turning with mood. \"Symptoms waxing and waning with the emotions\" anchors the differentiation. Treatment pivots on coursing the liver and resolving constraint, nourishing the heart and fortifying the spleen by pattern — and the steady clinician relationship is itself the classical cure of \"shifting emotion and changing disposition.\"",
+      "western_pathology_en": "The diagnostic center of somatic symptom disorder is DSM-5's pivot: no longer \"medically unexplained,\" but the patient's response to symptoms — persistent thoughts disproportionate to severity, high health anxiety, and excessive time and energy devoted; the symptoms themselves may or may not have an organic basis. Mechanistic understanding: central amplification of interoceptive signals (the same visceral input perceived more intensely and read as threat), cognitive loops of attentional bias and catastrophizing, and shaping by early experience and attachment style; comorbidity with anxiety and depression is high. Evidence-based care essentials: one consistent responsible clinician, regular rather than on-demand visits, validating the symptoms' reality (\"the pain is real\") while avoiding repeated testing — re-investigation not only fails to reassure but reinforces illness anxiety, this disorder's commonest iatrogenic aggravation.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(鬱證門;《金匱要略》百合病)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(鬱證門;《金匱要略》百合病)"
+        ],
+        "western_pathology_zh": [
+          "DSM-5 通說(診斷重心轉向反應而非無法解釋)",
+          "MedlinePlus — Mental Disorders (https://medlineplus.gov/mentaldisorders.html)"
+        ],
+        "western_pathology_en": [
+          "DSM-5 通說(診斷重心轉向反應而非無法解釋)",
+          "MedlinePlus — Mental Disorders (https://medlineplus.gov/mentaldisorders.html)"
+        ]
+      }
     },
     {
       "id": "cond.poor_memory",
@@ -17986,8 +18313,8 @@
         "pattern.phlegm_misting_heart"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「健忘」。《內經》「腎主骨生髓,腦為髓之海」——腎精虧虛,髓海不足,是年老善忘之本:記近事難而遠事尚存,兼腰酸耳鳴;心脾兩虛——思慮勞倦,暗耗氣血,神失所養:健忘與心悸失眠、食少倦怠並見,勞心之人多此型;痰濁蒙竅——形盛痰多,清陽不升,頭重如裹而善忘;瘀血阻絡——久病或外傷之後,腦絡失榮,健忘而舌黯。虛者十之七八:補腎填精、養心健脾為主軸,化痰開竅、活血通絡隨證——年高精衰之忘為生理之漸,驟然之忘與日進之忘,則須警其為病。",
+      "western_pathology_zh": "記憶力減退是症狀情境,評估軸是三分:正常年齡相關遺忘(找詞變慢、提示能想起、不影響功能)、輕度認知障礙(客觀測驗低於同齡常模但日常功能保留——其中遺忘型有較高失智轉化率,但相當比例維持穩定甚至回復)、失智前驅。第一要務是可逆原因的篩查:憂鬱(假性失智——「不知道」多於錯答、抱怨多於掩飾)、甲狀腺功能低下、維生素 B12 缺乏、睡眠呼吸中止、藥物(抗膽鹼類、苯二氮平、鴉片類)、酗酒、慢性壓力與睡眠剝奪。主觀抱怨與客觀表現的落差本身有意義:自己焦慮而測驗正常者多屬情緒與注意問題;家屬察覺而本人否認者更需警惕退化性病程。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18019,7 +18346,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's jian wang (poor memory). The Inner Classic teaches \"the kidney governs bone and engenders marrow; the brain is the sea of marrow\" — kidney essence depletion leaving the marrow sea unfilled is the root of elderly forgetfulness: recent events slip while the distant past holds, with lumbar soreness and tinnitus; heart-spleen dual deficiency — rumination and toil silently spend qi and blood and the spirit goes unnourished: forgetfulness with palpitations, insomnia, poor appetite, and weariness, the pattern of brain-workers; turbid phlegm clouding the orifices — a stout, phlegm-rich habitus where clear yang fails to rise, the head heavy as if wrapped; blood stasis obstructing the collaterals — after long illness or trauma, the brain's collaterals lose nourishment, with a dusky tongue. Deficiency accounts for the great majority: tonifying kidney essence and nourishing heart-spleen is the axis, with phlegm-transforming, orifice-opening, and blood-invigorating methods by pattern — the slow forgetting of advanced age is a physiological gradient, but abrupt or steadily progressive forgetting must be suspected as disease.",
+      "western_pathology_en": "Memory decline is a symptom context whose evaluation axis is threefold: normal age-related forgetting (slower word-finding, retrieval with cues, function intact), mild cognitive impairment (objective scores below age norms with daily function preserved — the amnestic type converts to dementia at higher rates, yet a substantial share stays stable or reverts), and prodromal dementia. The first duty is screening reversible causes: depression (pseudodementia — \"don't know\" answers over wrong answers, complaints over concealment), hypothyroidism, vitamin B12 deficiency, sleep apnea, medications (anticholinergics, benzodiazepines, opioids), alcohol excess, chronic stress and sleep deprivation. The gap between subjective complaint and objective performance is itself informative: the worried patient who tests normal usually has a mood-attention problem; the patient whose family notices while they deny warrants more concern for a degenerative course.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(健忘門;《內經》髓海之論)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(健忘門;《內經》髓海之論)"
+        ],
+        "western_pathology_zh": [
+          "NIA — 認知老化與輕度認知障礙通說;可逆原因篩查為臨床通說",
+          "MedlinePlus — Memory (https://medlineplus.gov/memory.html)"
+        ],
+        "western_pathology_en": [
+          "NIA — 認知老化與輕度認知障礙通說;可逆原因篩查為臨床通說",
+          "MedlinePlus — Memory (https://medlineplus.gov/memory.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/memory.html"
+      ]
     },
     {
       "id": "cond.alcohol_use",
@@ -18035,8 +18399,8 @@
         "pattern.phlegm_damp"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫論酒,性辛甘大熱,其氣慓悍——「酒為濕熱之最」。久飲之害循三焦而布:濕熱蘊脾胃,納呆嘔惡、脘痞;熏蒸肝膽,脅痛口苦、目黃(酒疸之屬);久則傷肝體,氣滯血瘀,漸成癥積(肝硬化之象);濕熱釀痰,蒙蔽心竅,神識昏亂。耗傷之層:酒性燥烈,劫傷陰血,肝腎俱損——手顫、健忘、痿弱,即陰傷風動、精虧髓減之象。戒斷期驟失所依,肝風內動兼心神浮越——震顫、驚惕、不寐,重者神昏譫語,正合「風火痰擾神」之急候。治分兩程:清利濕熱、化痰醒神以安其標,滋養肝腎陰血以復其本;而「斷酒」本身,是一切治法的前提。",
+      "western_pathology_zh": "酒精使用問題的藥理軸:急性期增強 GABA-A 抑制、拮抗 NMDA 麩胺酸傳導——鎮靜、去抑制、判斷受損;長期使用觸發神經適應,GABA 下調、NMDA 上調,形成耐受;驟停時失衡反轉為過度興奮——戒斷症候群從震顫焦慮失眠,到癲癇發作,重者震顫譫妄(意識混亂、幻覺、自主神經風暴,有死亡率,是內科急症);獎賞迴路的長期重塑造成渴求與復發傾向。全身損害譜廣:肝(脂肪肝-肝炎-硬化)、胰、心肌、周邊神經、小腦,與硫胺素缺乏之 Wernicke-Korsakoff 症候群;致癌性確立(口咽、食道、肝、乳)。戒斷處置與長期復發預防是兩個不同的醫療問題——重度使用者驟然自行斷酒有真實風險,須醫療監督。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18068,7 +18432,41 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reads alcohol as acrid-sweet and greatly hot, its qi fierce — \"liquor is the extreme of damp-heat.\" Long drinking spreads its harm through the three burners: damp-heat smolders in spleen-stomach — poor appetite, nausea, epigastric glomus; steams liver and gallbladder — flank pain, bitter mouth, yellowed eyes (the liquor-jaundice class); with time it wounds the liver's substance, qi stagnates and blood congeals, gradually forming accumulations (the cirrhosis image); damp-heat brews phlegm that clouds the heart's orifices — confused spirit. The depletion layer: alcohol's scorching nature plunders yin-blood, injuring liver and kidney both — tremor, forgetfulness, weakness: yin injured with wind stirring, essence short and marrow reduced. In withdrawal, the accustomed prop suddenly gone, liver wind stirs within while the heart-spirit floats loose — trembling, startling, sleeplessness, and in the severe, clouded spirit with delirious speech: the acute picture of \"wind, fire, and phlegm harassing the spirit.\" Treatment runs in two stages: clear damp-heat and transform phlegm to settle the branch, then enrich liver-kidney yin-blood to restore the root — and stopping the drink is itself the precondition of every method.",
+      "western_pathology_en": "The pharmacological axis of alcohol-use problems: acutely, alcohol enhances GABA-A inhibition and antagonizes NMDA glutamate transmission — sedation, disinhibition, impaired judgment; chronic use triggers neuroadaptation — GABA down, NMDA up — building tolerance; abrupt cessation flips the imbalance into hyperexcitation — withdrawal running from tremor, anxiety, and insomnia to seizures and, at the severe end, delirium tremens (confusion, hallucinations, autonomic storm, with real mortality — a medical emergency); long-term remodeling of reward circuitry drives craving and relapse. The systemic damage spectrum is broad: liver (steatosis-hepatitis-cirrhosis), pancreas, myocardium, peripheral nerves, cerebellum, and thiamine-deficient Wernicke-Korsakoff syndrome; carcinogenicity is established (oropharynx, esophagus, liver, breast). Managing withdrawal and preventing long-term relapse are two different medical problems — and unsupervised abrupt cessation in heavy users carries genuine risk, requiring medical oversight.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(酒傷/黃疸/積聚門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(酒傷/黃疸/積聚門)"
+        ],
+        "western_pathology_zh": [
+          "NIAAA — 酒精使用障礙通說(GABA/NMDA 神經適應、戒斷風險)",
+          "MedlinePlus — Alcohol Use Disorder (https://medlineplus.gov/alcoholusedisorderaud.html)"
+        ],
+        "western_pathology_en": [
+          "NIAAA — 酒精使用障礙通說(GABA/NMDA 神經適應、戒斷風險)",
+          "MedlinePlus — Alcohol Use Disorder (https://medlineplus.gov/alcoholusedisorderaud.html)"
+        ]
+      }
     },
     {
       "id": "cond.eating_disorder",
@@ -18085,8 +18483,8 @@
         "pattern.stomach_heat"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫無專名,依「鬱證」與脾胃病合論,「不能食」「善食而瘦」諸條可參。病機:情志失調為引——體像之慮,思慮糾結,「思則氣結」,肝鬱乘脾;脾胃受制,納運失常:拒食者胃氣受遏,納呆食少;暴食者肝鬱化火,消穀善飢,食後復吐則胃氣上逆。久之由標及本:氣血生化告竭,形瘦骨立、經閉髮枯——「有胃氣則生,無胃氣則死」,此病之危正在胃氣將絕;陰竭陽微者,四肢厥冷、脈微欲絕,已屬危候。治則以顧護胃氣為第一義,緩緩建中,不可驟補峻攻;疏肝解鬱、養心安神與之並行——然此病須身心與營養共治,針藥居輔位,危重者屬急症轉介之列。",
+      "western_pathology_zh": "飲食失調是精神疾患中軀體死亡率最高的一群。神經性厭食:能量攝取持續受限致顯著低體重,伴強烈怕胖與體像扭曲;飢餓的內分泌全面代償——下視丘性閉經、低 T3 症候群、皮質醇升高、骨量流失、心搏過緩與 QT 延長(猝死風險所在);再餵食症候群(磷酸鹽驟降)是恢復期最危險的醫療陷阱。神經性暴食:反覆暴食加代償行為(催吐、瀉劑、過度運動),電解質紊亂(低鉀)與牙蝕是軀體線索。嗜食症:暴食無代償,與肥胖代謝共病相連。發病是遺傳易感(雙生子研究支持)、完美主義與焦慮特質、社會體像壓力與節食行為的交互——節食常是入口而非解方。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18118,7 +18516,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine has no dedicated name; it is reasoned jointly through constraint (yu zheng) and spleen-stomach disease, with classical lines on \"inability to eat\" and \"eating well yet wasting\" as reference. Mechanism: emotional disturbance is the trigger — body-image worry knots the thoughts, \"worry knots qi,\" and liver constraint overrides the spleen; the spleen-stomach is held down and intake and transport derange: in food refusal, stomach qi is suppressed — no appetite, little food; in bingeing, liver constraint transforms into fire that consumes grain and hungers quickly, and vomiting after eating is stomach qi rebelling. With time the branch reaches the root: generation of qi and blood runs dry — wasted frame, ceased menses, withered hair. \"With stomach qi there is life; without it, death\" — this disease's danger lies exactly in stomach qi failing; where yin is exhausted and yang faint — cold limbs, a pulse barely there — the state is already critical. Treatment holds guarding stomach qi as its first duty, rebuilding the middle slowly, never abrupt tonification or attack; coursing the liver and quieting the spirit proceed alongside — but this disease demands combined psychological and nutritional care, with needle and herb in the supporting seat, and the critically ill belong to emergency referral.",
+      "western_pathology_en": "Eating disorders carry the highest somatic mortality in psychiatry. Anorexia nervosa: sustained energy restriction producing significant underweight, with intense fear of weight gain and distorted body image; starvation triggers global endocrine compensation — hypothalamic amenorrhea, low-T3 syndrome, raised cortisol, bone loss, bradycardia and QT prolongation (where sudden death hides); refeeding syndrome (abrupt phosphate fall) is the most dangerous medical trap of recovery. Bulimia nervosa: recurrent binges with compensation (vomiting, laxatives, over-exercise); electrolyte derangement (hypokalemia) and dental erosion are the somatic clues. Binge-eating disorder: bingeing without compensation, linked to obesity and metabolic comorbidity. Onset is the interplay of genetic susceptibility (twin-supported), perfectionistic-anxious traits, sociocultural body pressure, and dieting behavior — dieting is usually the doorway, not the remedy.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(鬱證/納呆門,依病機推證)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(鬱證/納呆門,依病機推證)"
+        ],
+        "western_pathology_zh": [
+          "NIMH/APA — 飲食失調通說(軀體併發症、再餵食症候群)",
+          "MedlinePlus — Eating Disorders (https://medlineplus.gov/eatingdisorders.html)"
+        ],
+        "western_pathology_en": [
+          "NIMH/APA — 飲食失調通說(軀體併發症、再餵食症候群)",
+          "MedlinePlus — Eating Disorders (https://medlineplus.gov/eatingdisorders.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/eatingdisorders.html"
+      ]
     },
     {
       "id": "cond.common_cold",
@@ -18135,8 +18570,8 @@
         "pattern.lung_qi_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「感冒」「傷風」。衛外不固,風邪乘虛襲表——風為百病之長,常挾寒挾熱挾濕而入:風寒束表,惡寒重發熱輕、無汗、清涕、脈浮緊;風熱犯衛,發熱重惡寒輕、咽痛、黃涕、脈浮數;暑濕當令(夏月),身熱不揚、頭重胸悶。肺主皮毛,邪客肌表則肺衛失宣——鼻塞流涕咳嗽諸症皆宣降失司之象。體虛感冒另立一格:氣虛者衛弱,感邪頻仍、纏綿難癒;陰虛者感後易化熱傷津。治以解表達邪為要,辨寒熱而異其法;「虛人感冒」扶正解表並行,不可峻汗再傷其表。",
+      "western_pathology_zh": "感冒是最常見的急性上呼吸道病毒感染,鼻病毒為首(尚有冠狀、副流感、呼吸道融合、腺病毒等多種),飛沫與接觸(手-鼻眼)傳播。症狀不是病毒破壞的直接結果,而主要是宿主發炎反應:病毒感染鼻咽上皮後,緩激肽與細胞激素引起血管通透與腺體分泌——鼻塞、流涕、噴嚏、咽痛、輕咳,約一週餘自限;鼻涕由清轉稠轉黃綠是病程常態,不是細菌感染指標。抗生素無效且有害是最需要反覆傳達的一句;須警覺的轉折:症狀十天不癒或好轉後再惡化(續發鼻竇炎、中耳炎)、高燒、呼吸困難——由自限病走向併發症的分界。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18171,6 +18606,43 @@
       "entity_type": "biomedical_condition",
       "sign_symptom_ids": [
         "sym.fever"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's gan mao — wind invasion. When defensive qi fails to secure the exterior, wind exploits the gap — wind, \"chief of the hundred diseases,\" enters carrying cold, heat, or damp: wind-cold fettering the exterior — chills heavy, fever light, no sweat, clear discharge, floating-tight pulse; wind-heat assailing the defense — fever heavy, chills light, sore throat, yellow discharge, floating-rapid pulse; summerheat-damp in season — smoldering heat, heavy head, chest oppression. The lung governs skin and body hair, so a pathogen lodged at the surface un-diffuses lung defense — congestion, discharge, and cough are all failures of diffusing and descending. Deficient-host colds stand apart: the qi-deficient have weak defense — frequent, lingering colds; the yin-deficient transform to heat and injure fluids after contraction. Treatment centers on releasing the exterior and expelling the evil, methods split by cold versus heat; in the deficient, support the upright while releasing — never drastic sweating that would wound the exterior further.",
+      "western_pathology_en": "The common cold is the most frequent acute viral upper respiratory infection — rhinoviruses first (with coronaviruses, parainfluenza, RSV, adenoviruses among many), spread by droplets and contact (hand to nose and eye). Symptoms are less direct viral damage than host inflammatory response: after the virus infects nasopharyngeal epithelium, bradykinin and cytokines drive vascular permeability and glandular secretion — congestion, runny nose, sneezing, sore throat, mild cough, self-limiting over a week or so; nasal discharge turning thick and yellow-green is the normal course, not a marker of bacterial infection. That antibiotics do not help and do harm is the sentence most worth repeating; the turns to watch: symptoms past ten days or worsening after improvement (secondary sinusitis, otitis media), high fever, breathing difficulty — the boundary where a self-limited illness becomes complication.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(感冒門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(感冒門)"
+        ],
+        "western_pathology_zh": [
+          "CDC — 感冒通說(病毒學、抗生素無效)",
+          "MedlinePlus — Common Cold (https://medlineplus.gov/commoncold.html)"
+        ],
+        "western_pathology_en": [
+          "CDC — 感冒通說(病毒學、抗生素無效)",
+          "MedlinePlus — Common Cold (https://medlineplus.gov/commoncold.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/commoncold.html"
       ]
     },
     {
@@ -18186,8 +18658,8 @@
         "pattern.wind_heat_invading_lung"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「時行感冒」,其重者近於溫病之列。與四時感冒之異,古人已明言:「時行者,非其時而有其氣」——疫癘之氣挾時邪流行,發病急驟、症狀相類、沿門闔戶而傳,正是流行之象。病機:疫邪襲表,衛陽被遏,故驟起高熱惡寒、周身酸楚;邪熱燔灼,傳變迅速——由衛入氣,高熱煩渴;熱毒壅肺,咳喘胸悶(肺炎之象);逆傳心包者神昏——溫病傳變之律於此可徵。年老體弱、正氣先虛者,邪易深陷。治法初起辛涼解表為主(時邪多從熱化),入氣清氣泄熱,壅肺者清熱宣肺平喘;預防層面,「避其毒氣」與「正氣存內,邪不可干」並舉——疫苗之理,古訓已含其半。",
+      "western_pathology_zh": "流感由流感病毒 A、B 型引起,與感冒的差異在病勢:突發高燒、明顯肌痛頭痛、乾咳與衰竭感,全身症狀重於局部卡他。病毒學是流行病學的鑰匙:表面抗原血凝素與神經胺酸酶的點突變(抗原漂移)使病毒逐年小改——季節性流行與年年更新疫苗之由;A 型基因節段重組(抗原轉換)可產生人群普遍無免疫的新亞型——大流行之源。傳播以飛沫為主,潛伏短、排毒早。多數自限,但併發症有明確高風險群:老年、幼兒、孕婦、慢性心肺腎病與免疫低下——病毒性肺炎、續發細菌性肺炎(金黃色葡萄球菌、肺炎鏈球菌)、心肌炎、腦病;抗病毒藥於發病早期使用獲益最大。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18219,7 +18691,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's \"seasonal epidemic cold\" (shi xing gan mao), whose severe form borders warm disease. The ancients already named what sets it apart from ordinary four-season colds: \"epidemic qi is qi arriving out of its season\" — pestilential qi rides the seasonal pathogen, abrupt in onset, alike in symptoms, spreading household to household: the very image of an epidemic. Mechanism: the epidemic evil strikes the exterior and pins down defensive yang — hence sudden high fever with chills and whole-body aching; the pathogenic heat blazes and transmutes fast — from defense into the qi level with high fever and thirst; heat toxin congesting the lung brings cough, wheeze, and chest oppression (the pneumonia image); reverse transmission into the pericardium clouds the spirit — warm-disease transmission written out in sequence. In the old, weak, and already-deficient, the evil sinks deep easily. Treatment begins with acrid-cool exterior release (seasonal evils mostly transform toward heat), clears qi-level heat as it enters, and clears-diffuses the lung when congested; for prevention, \"avoid the toxic qi\" stands beside \"with upright qi within, no evil can invade\" — half the logic of vaccination is already in the old maxim.",
+      "western_pathology_en": "Influenza is caused by influenza A and B viruses; what separates it from the common cold is momentum — abrupt high fever, marked myalgia and headache, dry cough, prostration, systemic symptoms outweighing local catarrh. The virology is the key to its epidemiology: point mutations of surface antigens hemagglutinin and neuraminidase (antigenic drift) remodel the virus a little each year — hence seasonal epidemics and annually updated vaccines; reassortment of influenza A's segmented genome (antigenic shift) can spawn subtypes to which populations carry no immunity — the source of pandemics. Spread is chiefly droplet, incubation short, shedding early. Most cases self-limit, but complications concentrate in defined risk groups — the elderly, young children, pregnancy, chronic heart, lung, and kidney disease, the immunocompromised: primary viral pneumonia, secondary bacterial pneumonia (Staphylococcus aureus, pneumococcus), myocarditis, encephalopathy; antivirals help most when started early.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(感冒/時行感冒門;溫病學傳變通說)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(感冒/時行感冒門;溫病學傳變通說)"
+        ],
+        "western_pathology_zh": [
+          "CDC/WHO — 流感通說(抗原漂移/轉換、高風險群)",
+          "MedlinePlus — Flu (https://medlineplus.gov/flu.html)"
+        ],
+        "western_pathology_en": [
+          "CDC/WHO — 流感通說(抗原漂移/轉換、高風險群)",
+          "MedlinePlus — Flu (https://medlineplus.gov/flu.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/flu.html"
+      ]
     },
     {
       "id": "cond.allergic_rhinitis",
@@ -18295,8 +18804,8 @@
         "pattern.spleen_qi_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「鼻淵」——「鼻淵者,濁涕下不止也」(《素問》),以濁涕長流如泉下滲而名。病機三線:肺氣虛寒——肺開竅於鼻,肺虛則宣降無力,邪滯鼻竅,涕白量多、遇寒加重;膽經鬱熱——膽熱循經上蒸於腦,「膽移熱於腦,則辛頞鼻淵」,涕黃濁而腥、頭脹口苦;脾虛濕蘊——脾失健運,濕濁內生,上泛鼻竅,涕濁纏綿、頭重如裹、經久不癒——慢性遷延之象與此最合。虛實常互轉:熱鬱久而傷氣,氣虛又易停濕。治分溫肺散寒、清泄膽熱、健脾滲濕,佐以芳香通竅;病久入絡者兼活血。",
+      "western_pathology_zh": "慢性鼻竇炎指鼻竇黏膜發炎持續十二週以上,核心症狀四項:鼻塞、鼻漏(前流或後滴)、面部脹痛、嗅覺減退。病理不是「感染沒好」那麼簡單,而是黏膜發炎的慢性化:竇口鼻道複合體阻塞→通氣引流受阻→黏液纖毛清除失能→分泌物滯留與微生物膜形成,互為因果成環。表型二分有治療意義:伴鼻息肉型多為第2型發炎(嗜酸性球、IL-4/5/13 主導),常合併氣喘與阿斯匹靈加重性呼吸道疾病,對類固醇反應好、易復發,生物製劑的適應症在此;不伴息肉型發炎譜較雜。過敏、纖毛功能障礙、免疫缺損是背景因素;齒源性感染與真菌球是單側病變須排除的特殊型——單側症狀本身是影像檢查的指徵。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18328,7 +18837,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's bi yuan — \"nasal deep-source: turbid discharge descending without cease\" (Su Wen), named for turbid discharge seeping like a spring. Three mechanistic lines: lung qi deficient and cold — the lung opens into the nose, and a weak lung cannot diffuse and descend, so the evil lodges in the nasal orifice: copious white discharge, worse in cold; gallbladder-channel constrained heat — gallbladder heat steams upward along its channel to the head, \"when the gallbladder shifts heat to the brain, there is acrid nose-bridge and bi yuan\": yellow, turbid, fishy discharge with head distension and bitter mouth; spleen deficiency with damp accumulation — failed transport breeds damp turbidity that floods up into the nose: turbid lingering discharge, head heavy as if wrapped, unhealed for years — the closest match to the chronic protracted course. Deficiency and excess interconvert: long-constrained heat wounds qi, and deficient qi in turn retains damp. Methods divide among warming the lung and scattering cold, clearing and draining gallbladder heat, and fortifying the spleen and percolating damp, assisted by aromatic orifice-openers; where long disease enters the collaterals, add blood-invigoration.",
+      "western_pathology_en": "Chronic sinusitis is sinonasal mucosal inflammation persisting twelve weeks or more, with four cardinal symptoms: obstruction, discharge (anterior or postnasal), facial pressure-pain, and reduced smell. The pathology is not simply \"an infection that never cleared\" but chronified mucosal inflammation: ostiomeatal complex obstruction → blocked ventilation and drainage → failed mucociliary clearance → retained secretions and biofilm formation, each feeding the next in a loop. The phenotype split matters for treatment: the polyp-bearing form is mostly type-2 inflammation (eosinophils, IL-4/5/13 dominant), often joined by asthma and aspirin-exacerbated respiratory disease, steroid-responsive but relapse-prone — where biologics have their indication; the polyp-free form is inflammatorily mixed. Allergy, ciliary dysfunction, and immune deficiency sit in the background; odontogenic infection and fungus balls are the special unilateral forms to exclude — unilateral symptoms are themselves an indication for imaging.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(鼻淵門;《素問·氣厥論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(鼻淵門;《素問·氣厥論》)"
+        ],
+        "western_pathology_zh": [
+          "AAO-HNS/EPOS — 慢性鼻竇炎通說(12週定義、表型二分)",
+          "MedlinePlus — Sinusitis (https://medlineplus.gov/sinusitis.html)"
+        ],
+        "western_pathology_en": [
+          "AAO-HNS/EPOS — 慢性鼻竇炎通說(12週定義、表型二分)",
+          "MedlinePlus — Sinusitis (https://medlineplus.gov/sinusitis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/sinusitis.html"
+      ]
     },
     {
       "id": "cond.asthma",
@@ -20393,8 +20939,8 @@
         "pattern.phlegm_heat_in_lung"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「咳嗽」之外感門。「五臟六腑皆令人咳,非獨肺也」,而外感咳嗽責在肺衛:風邪挾寒襲肺——肺失宣肅,咳嗽聲重、痰白清稀、鼻塞流清涕;風熱犯肺——咳痰黃稠、咽痛口渴;風燥傷肺(秋令)——乾咳無痰、咽癢如刺。表證解後咳猶不止者,是「餘邪戀肺、肺氣不清」——氣道高反應期之象,中醫謂宣降未復,治以疏風宣肺、斂潤並施,不可見咳止咳、過投寒涼收澀而閉門留寇。素體肺脾氣虛者,外感屢作、咳久難斷,治兼益氣固表——此又通於「治咳不獨治肺」之訓。",
+      "western_pathology_zh": "急性支氣管炎是支氣管黏膜的急性發炎,九成以上為病毒(流感、副流感、呼吸道融合、冠狀、鼻病毒),細菌僅佔小部分(百日咳是值得單獨記住的可治原因——陣發性咳嗽超過兩週伴吸氣哮鳴或咳後嘔吐者須想到)。病理:病毒損傷氣道上皮→發炎與黏液分泌增加→氣道高反應性——這解釋了最困擾病人的事實:咳嗽平均持續二至三週,痰由白轉黃綠仍屬病程常態,不是轉細菌感染的證據,抗生素對此病無益。臨床任務其實是排除:肺炎(發燒、呼吸急促、局部囉音、血氧下降)、氣喘與慢性阻塞性肺病急性發作、心衰咳嗽。咳久不癒者再想:感染後咳嗽、鼻涕倒流、胃食道逆流、氣喘變型咳。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -20426,7 +20972,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's externally-contracted cough. \"All five zang and six fu can make one cough, not the lung alone\" — yet external cough is charged to the lung and its defense: wind carrying cold assails the lung — diffusing and descending fail, cough heavy-voiced, sputum white and thin, nose blocked with clear discharge; wind-heat invades the lung — sputum yellow and thick, sore throat, thirst; wind-dryness wounds the lung (autumn) — dry cough without sputum, throat itching like a prickle. When cough outlasts the resolved exterior, that is \"residual evil lingering in the lung, lung qi unclarified\" — the airway-hyperresponsive phase; Chinese medicine calls it diffusing-descending not yet restored, treated by coursing wind and diffusing the lung with gentle moistening and restraint together — never suppressing cough on sight nor over-dosing cold astringents that would \"shut the door and keep the thief.\" In those with constitutional lung-spleen qi deficiency, contractions recur and cough drags on — treatment adds boosting qi and securing the exterior, returning to the teaching that \"treating cough is never treating the lung alone.\"",
+      "western_pathology_en": "Acute bronchitis is acute inflammation of the bronchial mucosa, over ninety percent viral (influenza, parainfluenza, RSV, coronaviruses, rhinoviruses), with bacteria a small minority (pertussis is the treatable cause worth remembering separately — paroxysmal cough beyond two weeks with inspiratory whoop or post-tussive vomiting should raise it). Pathology: viral injury to airway epithelium → inflammation and increased mucus → airway hyperresponsiveness — which explains the fact that troubles patients most: cough averages two to three weeks, and sputum turning from white to yellow-green is normal course, not evidence of bacterial conversion; antibiotics do not help this disease. The real clinical task is exclusion: pneumonia (fever, tachypnea, focal crackles, falling saturation), asthma and COPD exacerbations, and heart-failure cough. For cough that will not settle, think again: post-infectious cough, postnasal drip, reflux, cough-variant asthma.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(咳嗽門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(咳嗽門)"
+        ],
+        "western_pathology_zh": [
+          "ACP/CDC — 急性支氣管炎通說(病毒為主、抗生素無益、百日咳警覺)",
+          "MedlinePlus — Acute Bronchitis (https://medlineplus.gov/acutebronchitis.html)"
+        ],
+        "western_pathology_en": [
+          "ACP/CDC — 急性支氣管炎通說(病毒為主、抗生素無益、百日咳警覺)",
+          "MedlinePlus — Acute Bronchitis (https://medlineplus.gov/acutebronchitis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/acutebronchitis.html"
+      ]
     },
     {
       "id": "cond.sleep_apnea",
@@ -20443,8 +21026,8 @@
         "pattern.spleen_qi_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「鼾眠」,《諸病源候論》已立候:「鼾眠者,眠裏喉咽間有聲也……其有肥人眠作聲者,但肥人氣血沉厚,迫隘喉間,澀而不利亦作聲。」——肥人氣道迫隘之觀察,與今之解剖理解遙相印證。病機:痰濕壅盛為軸——形肥痰厚,壅塞咽喉氣道,肺氣出入不利;脾虛生痰為其源——脾失健運,聚濕成痰,上貯於肺;腎虛不納——腎主納氣,腎虛則氣浮於上、呼吸表淺,夜甚於晝;久則痰瘀互結,清陽不升——晝日昏沉嗜睡、頭重健忘,正是「清氣不升、濁氣不降」之象。治重健脾化痰、降氣利咽,腎虛者納氣歸元;而減重即是「治痰之本」——兩醫學於此完全同途。",
+      "western_pathology_zh": "阻塞性睡眠呼吸中止是睡眠中上氣道反覆塌陷:清醒時咽部擴張肌的代償張力入睡後撤除,解剖上狹窄的氣道(肥胖之咽周脂肪、大頸圍、扁桃體肥大、下頜後縮)隨吸氣負壓塌陷——打鼾、氣流受限、呼吸暫停、微覺醒張力恢復,一夜循環數十至數百次。兩條損害鏈:間歇性缺氧-再氧合(氧化壓力、交感活化、發炎)與睡眠碎裂(深睡與快速動眼睡眠被剝奪)——日間嗜睡、晨間頭痛、認知遲鈍、情緒惡化由此而來;長期後果:高血壓(尤其難治型)、心房顫動、代謝惡化、車禍風險。呼吸中止低通氣指數量化嚴重度;篩查線索簡單得不成比例:鼾聲、目擊呼吸暫停、頸圍、日間嗜睡——問診就能抓到的病,漏診率卻高。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -20476,7 +21059,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's han mian (snoring sleep) — the Zhu Bing Yuan Hou Lun already gave it a syndrome entry: \"snoring sleep is sound in the throat during sleep … in the obese it sounds because their qi and blood are heavy and thick, pressing the throat narrow, so passage is rough and unfree\" — an observation of the obese, narrowed airway echoing today's anatomy across fourteen centuries. Mechanism: exuberant phlegm-damp is the axis — a stout habitus with thick phlegm congesting the pharyngeal airway, obstructing the lung's qi in and out; spleen deficiency generating phlegm is its source — failed transport gathers damp into phlegm stored up in the lung; kidney failing to grasp qi — the kidney governs reception of qi, and in its deficiency qi floats shallow above, worse by night; with time phlegm and stasis interlock and clear yang cannot rise — daytime torpor, heavy head, forgetfulness: \"clear qi not ascending, turbid qi not descending\" made visible. Treatment stresses fortifying the spleen, transforming phlegm, downbearing qi, and disinhibiting the throat, with qi-grasping restoration where the kidney is weak; and weight loss is itself \"treating the root of phlegm\" — the two medicines walk one road here.",
+      "western_pathology_en": "Obstructive sleep apnea is recurrent collapse of the upper airway in sleep: the compensatory tone of pharyngeal dilator muscles present in wakefulness withdraws with sleep onset, and an anatomically narrow airway (peripharyngeal fat of obesity, large neck, tonsillar hypertrophy, retrognathia) collapses under inspiratory negative pressure — snoring, flow limitation, apnea, then a micro-arousal restores tone, cycling tens to hundreds of times a night. Two damage chains: intermittent hypoxia-reoxygenation (oxidative stress, sympathetic activation, inflammation) and sleep fragmentation (deep and REM sleep stripped away) — hence daytime sleepiness, morning headache, cognitive dulling, and mood deterioration; long-term consequences include hypertension (especially resistant), atrial fibrillation, metabolic worsening, and crash risk. The apnea-hypopnea index quantifies severity; the screening clues are disproportionately simple — snoring, witnessed apneas, neck circumference, daytime sleepiness — a disease history-taking can catch, yet under-diagnosis stays high.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(鼾眠;《諸病源候論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(鼾眠;《諸病源候論》)"
+        ],
+        "western_pathology_zh": [
+          "AASM — 阻塞性睡眠呼吸中止通說",
+          "MedlinePlus — Sleep Apnea (https://medlineplus.gov/sleepapnea.html)"
+        ],
+        "western_pathology_en": [
+          "AASM — 阻塞性睡眠呼吸中止通說",
+          "MedlinePlus — Sleep Apnea (https://medlineplus.gov/sleepapnea.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/sleepapnea.html"
+      ]
     },
     {
       "id": "cond.bells_palsy",
