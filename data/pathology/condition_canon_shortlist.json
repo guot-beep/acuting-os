@@ -248,7 +248,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1543"
+        "https://cloudtcm.com/disease/tcm/1543",
+        "https://www.nichd.nih.gov/health/topics/pcos"
       ],
       "red_flag_refs": [
         "rf.pcos.legacy01",
@@ -256,7 +257,80 @@
         "rf.pcos.legacy03",
         "rf.pcos.legacy04",
         "rf.pcos.legacy05"
-      ]
+      ],
+      "field_sources": {
+        "risk_factors_zh": [
+          "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        ],
+        "risk_factors_en": [
+          "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NICHD-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NICHD-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.irregular_menses"
+      ],
+      "risk_factors_zh": [
+        {
+          "factor": "PCOS 家族史／遺傳變異",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        },
+        {
+          "factor": "胰島素阻抗",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        },
+        {
+          "factor": "過重或肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Family history of PCOS / genetic variants",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        },
+        {
+          "factor": "Insulin resistance",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        },
+        {
+          "factor": "Overweight or obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NICHD — Polycystic Ovary Syndrome (PCOS)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為月經週期調節與代謝症狀管理之輔助照護，需在婦科／生殖內分泌評估之後進行",
+        "precautions": "不孕與急性骨盆腔劇痛不屬單獨針灸處理範圍，須先確認排除卵巢囊腫扭轉、異位妊娠等急症",
+        "co_management": "與病人的婦產科／生殖醫學醫師聯絡確認診斷與治療進度，不建議病人自行停用排卵誘導藥物、口服避孕藥或胰島素敏感化劑",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 NICHD 臨床資料整理）",
+        "note": "尚未查到專屬於 PCOS 針灸療效的臨床指引等級證據，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support cycle regulation and metabolic-symptom management as adjunctive care, after gynecologic/reproductive-endocrine evaluation",
+        "precautions": "Infertility and acute pelvic pain are outside acupuncture-alone scope; confirm ovarian torsion or ectopic pregnancy have been excluded first",
+        "co_management": "Contact the patient's OB/GYN or reproductive endocrinologist to confirm diagnosis and treatment status; do not advise the patient to stop ovulation-induction agents, oral contraceptives, or insulin sensitizers",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from NICHD clinical materials)",
+        "note": "No guideline-grade evidence specific to acupuncture for PCOS was located; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.endometriosis",
@@ -5767,8 +5841,6 @@
       "acupoint_protocols": [],
       "fetched_at": "2026-07-23T07:45:58.710Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -5795,7 +5867,8 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/9070"
+        "https://cloudtcm.com/disease/tcm/9070",
+        "https://www.ninds.nih.gov/health-information/patient-caregiver-education/fact-sheets/low-back-pain-fact-sheet"
       ],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
@@ -5803,7 +5876,134 @@
         "rf.chronic_low_back_pain.legacy02",
         "rf.chronic_low_back_pain.legacy03",
         "rf.chronic_low_back_pain.legacy04"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "etiology_zh",
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。",
+          "reason": "Verbatim-shared boilerplate sentence duplicated across 57 other cond.* records (\"正氣不足，臟腑功能失調，氣血津液運化不利。\") — not condition-specific content, violates constitution redline 6 (no template sentences). Replaced with condition-specific TCM etiology for chronic low back pain.",
+          "moved_at": "2026-08-11"
+        },
+        {
+          "original_field": "western_pathology_zh",
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+          "reason": "Verbatim-shared boilerplate sentence duplicated across 57 other cond.* records (\"相關系統功能障礙及發炎或代謝異常導致的臨床症狀。\") — not condition-specific content. Replaced with condition-specific Western pathology sourced to NINDS.",
+          "moved_at": "2026-08-11"
+        }
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "western_pathology_zh": [
+          "NINDS — Low Back Pain Fact Sheet"
+        ],
+        "western_pathology_en": [
+          "NINDS — Low Back Pain Fact Sheet"
+        ],
+        "risk_factors_zh": [
+          "NINDS — Low Back Pain Fact Sheet"
+        ],
+        "risk_factors_en": [
+          "NINDS — Low Back Pain Fact Sheet"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NINDS-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NINDS-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.low_back_pain"
+      ],
+      "etiology_zh": "多因勞損傷腎，腎氣虧虛，腰府失養；或感受風寒濕邪，痹阻經絡，氣血運行不暢；或跌撲閃挫，氣滯血瘀，不通則痛。久病纏綿者常見腎虛與血瘀夾雜。",
+      "etiology_en": "Commonly caused by chronic strain injuring the kidney, leading to kidney qi deficiency and undernourishment of the lower back; or by invasion of wind-cold-damp obstructing the channels and impairing the flow of qi and blood; or by an old fall, twist, or sprain causing qi stagnation and blood stasis (\"no free flow, hence pain\"). In protracted cases, kidney deficiency and blood stasis are often intertwined.",
+      "western_pathology_zh": "多數慢性下背痛為非特異性，找不到單一明確結構病灶；與椎間盤退化、椎旁肌肉及韌帶失衡、脊椎小面關節退化等因素相關，中樞敏感化與心理社會因素（恐懼逃避行為、憂鬱、工作滿意度）在慢性化過程中扮演重要角色。",
+      "western_pathology_en": "Most chronic low back pain is non-specific, without a single clear structural lesion; it relates to factors such as disc degeneration, imbalance of paraspinal muscles and ligaments, and facet joint degeneration. Central sensitization and psychosocial factors (fear-avoidance behavior, depression, job satisfaction) play a significant role in the transition to chronicity.",
+      "risk_factors_zh": [
+        {
+          "factor": "先前下背痛發作史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "吸菸（降低脊椎血流，促進椎間盤退化）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "從事需搬運重物或長時間坐姿的工作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "心理社會因素（工作壓力、憂鬱、對疼痛的恐懼逃避信念）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Prior episode of low back pain",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "Smoking (reduces spinal blood flow, promotes disc degeneration)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "Occupation involving heavy lifting or prolonged sitting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        },
+        {
+          "factor": "Psychosocial factors (work stress, depression, fear-avoidance beliefs about pain)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Low Back Pain Fact Sheet"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "多項指引將針灸列為慢性非特異性下背痛之非藥物治療選項之一，可作為疼痛管理及功能維持之輔助",
+        "precautions": "治療前確認已排除紅旗症狀（見紅旗欄位）；委中、腎俞等深層腰部穴位施針深度須考量病人體型與體位安全",
+        "co_management": "與病人的疼痛科／骨科／物理治療師聯絡，鼓勵維持活動而非臥床休息",
+        "evidence": "guideline",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 AAOS OrthoInfo 及標準脊椎醫學文獻）",
+        "note": "多國臨床指引（如英國 NICE）將針灸列為慢性下背痛選項之一，惟各國指引立場不一致，需以當地指引為準"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Several guidelines list acupuncture as one non-pharmacologic option for chronic non-specific low back pain, usable as adjunctive pain management and to support continued function",
+        "precautions": "Confirm red-flag features have been excluded before treatment (see red flags); needling depth at deep lumbar points (BL40, BL23) must account for patient body habitus and positioning safety",
+        "co_management": "Stay in contact with the patient's pain specialist/orthopedist/physical therapist; encourage staying active rather than bed rest",
+        "evidence": "guideline",
+        "source": "curriculum/conditions course handouts + AcuTing OS synthesis (per AAOS OrthoInfo and standard spine-medicine references)",
+        "note": "Multiple national guidelines (e.g., UK NICE) list acupuncture as an option for chronic low back pain, though guideline positions vary by country; defer to local guidance"
+      }
     },
     {
       "id": "cond.acute_lumbar_sprain",
@@ -8824,8 +9024,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "",
-      "western_pathology_zh": "",
+      "etiology_zh": "多因年老體衰，肝腎虧虛，筋骨失養，兼感風寒濕邪痹阻經絡；或勞損日久，氣滯血瘀，經脈不通。肝主筋、腎主骨，肝腎不足則筋骨退變加速，故本病以肝腎虧虛為本、風寒濕與瘀血為標。",
+      "western_pathology_zh": "膝關節軟骨進行性磨損退化，伴隨軟骨下骨硬化、骨贅（骨刺）增生及滑膜輕度發炎，導致關節間隙變窄、活動時疼痛及僵硬。危險因子包括年齡、肥胖、既往關節損傷及力線不良。",
       "tcm_patterns": [
         {
           "pattern_zh": "肝腎不足",
@@ -9204,7 +9404,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1946"
+        "https://cloudtcm.com/disease/tcm/1946",
+        "https://www.niams.nih.gov/health-topics/osteoarthritis"
       ],
       "red_flag_refs": [
         "rf.knee_osteoarthritis.legacy01",
@@ -9224,7 +9425,130 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "western_pathology_zh": [
+          "NIAMS — Osteoarthritis"
+        ],
+        "western_pathology_en": [
+          "NIAMS — Osteoarthritis"
+        ],
+        "risk_factors_zh": [
+          "NIAMS — Osteoarthritis"
+        ],
+        "risk_factors_en": [
+          "NIAMS — Osteoarthritis"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NIAMS-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NIAMS-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.knee_pain"
+      ],
+      "etiology_en": "Commonly arises from aging and constitutional decline with liver-kidney deficiency leaving the sinews and bones undernourished, compounded by invasion of wind-cold-damp obstructing the channels; or from prolonged strain leading to qi stagnation and blood stasis obstructing the vessels. Since the liver governs the sinews and the kidney governs the bones, liver-kidney deficiency accelerates degeneration of sinew and bone — this condition is rooted in liver-kidney deficiency, with wind-cold-damp and blood stasis as the manifestation.",
+      "western_pathology_en": "Progressive wear and degeneration of knee cartilage, accompanied by subchondral bone sclerosis, osteophyte (bone spur) formation, and mild synovial inflammation, leading to joint-space narrowing, activity-related pain, and stiffness. Risk factors include age, obesity, prior joint injury, and malalignment.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "過重或肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "既往關節損傷或手術史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "關節重複性過度使用（特定職業或運動）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "關節發育不良或力線異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "Overweight or obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "History of joint injury or surgery",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "Repetitive joint overuse (certain occupations or sports)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "Joints that did not form correctly, or malalignment",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        },
+        {
+          "factor": "Family history",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Osteoarthritis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "多項指引將針灸列為膝骨關節炎疼痛管理之非藥物選項之一，可作為運動治療與減重之輔助",
+        "precautions": "犢鼻、內外膝眼等膝周穴位施針前評估關節腫脹及積液狀況；急性紅腫熱痛須先排除感染或痛風再行針灸",
+        "co_management": "與病人的骨科／復健科醫師聯絡，末期病人考慮置換手術者仍可討論輔助性疼痛管理角色",
+        "evidence": "guideline",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 AAOS OrthoInfo 及 NIAMS 臨床資料）",
+        "note": "美國風濕病學會（ACR）等指引對針灸治療膝骨關節炎持有條件式建議，證據等級中等"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Several guidelines list acupuncture as one non-pharmacologic option for knee osteoarthritis pain management, usable alongside exercise therapy and weight loss",
+        "precautions": "Assess joint swelling and effusion before needling peri-patellar points (ST35, medial/lateral eyes); acute red/hot/severely painful joints require infection or gout to be excluded before acupuncture",
+        "co_management": "Stay in contact with the patient's orthopedist/rehabilitation physician; adjunctive pain-management can still be discussed for patients considering joint replacement",
+        "evidence": "guideline",
+        "source": "curriculum/conditions course handouts + AcuTing OS synthesis (per AAOS OrthoInfo and NIAMS clinical materials)",
+        "note": "Guidelines such as the American College of Rheumatology (ACR) give a conditional recommendation for acupuncture in knee osteoarthritis, with moderate evidence grade"
+      }
     },
     {
       "id": "cond.patellofemoral_pain",
@@ -11628,7 +11952,7 @@
         "standard_neurology_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "",
+      "etiology_zh": "多因情志不遂、肝氣鬱結，氣機不暢，清陽不升；或久坐勞倦、氣血運行不暢，頸肩部經筋失於濡養而拘急疼痛；病程日久，氣血兩虛者亦可見頭部隱痛、綿綿不休。",
       "western_pathology_zh": "頭痛是相當常見的症狀，幾乎每個人都曾經頭痛過，頭部不論前、中、後，側邊都有可能出現疼痛，出現機率相當高，女性大於男性。\n\n現代醫學將頭痛區分為兩大類，找不到特殊疾病所引起的頭痛，稱為「原發性頭痛」。其他疾病所導致的頭痛，稱之為「次發性頭痛」。\n\n原發性頭痛又可分為「壓力性頭痛」、「偏頭痛」、「叢發性頭痛」三種類型：\n\n壓力性頭痛：這是最常見的頭痛，佔所有頭痛患者的80%。常見從後頸部開始延伸至後腦勺，嚴重時也可能痛到頭頂、太陽穴等處，此類型頭痛多與情緒緊張、肌肉緊繃有關。\n\n偏頭痛：偏頭痛主要與腦部神經傳導物質失衡，導致腦部血管收縮有關，是相當複雜的一種頭痛。\n\n叢發性頭痛：這種頭痛的密集於一側「眼眶周圍」或「顳側」，是較為少見的一種頭痛，多見於男性。\n\n造成頭痛的實在太多了，例如：肌肉拉扯、發炎、外傷、血管病變、代謝異常、藥物副作用、顱內疾患、五官或顱神經引起的各種頭痛。當一位病人去找醫師治療頭痛，這位醫師比病人頭更痛。\n\n造成「原發性頭痛」原因不明確，可能與頭頸部的肌肉酸痛、腦內血管或神經細胞出現異常有關。像這種原因不明的症狀，最適合中醫的概念，畢竟這個問題也困擾了過去所有的中國人。",
       "tcm_patterns": [
         {
@@ -12174,7 +12498,99 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch. (western_pathology_zh on this record is separately C10-shared-verbatim boilerplate — out of scope for this batch, left untouched for the C10/batch-2 pass.)",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "risk_factors_zh": [
+          "Standard neurology literature (ICHD-3)"
+        ],
+        "risk_factors_en": [
+          "Standard neurology literature (ICHD-3)"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — ICHD-3-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — ICHD-3-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.headache"
+      ],
+      "etiology_en": "Commonly arises from unresolved emotional stress and liver qi stagnation, impairing the free flow of qi so clear yang fails to ascend; or from prolonged sitting and overexertion impairing the movement of qi and blood, leaving the sinews of the neck and shoulders undernourished and tight. In protracted cases with combined qi-blood deficiency, a dull, persistent headache may result.",
+      "risk_factors_zh": [
+        {
+          "factor": "壓力",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "標準神經科文獻（ICHD-3 相關臨床描述）"
+        },
+        {
+          "factor": "姿勢不良或頸肩肌肉緊繃",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "標準神經科文獻（ICHD-3 相關臨床描述）"
+        },
+        {
+          "factor": "睡眠不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "標準神經科文獻（ICHD-3 相關臨床描述）"
+        },
+        {
+          "factor": "止痛藥過度使用（可致藥物過度使用性頭痛，形成惡性循環）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "標準神經科文獻（ICHD-3 相關臨床描述）"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Stress",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "Standard neurology literature (ICHD-3 clinical description)"
+        },
+        {
+          "factor": "Poor posture or neck/shoulder muscle tension",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "Standard neurology literature (ICHD-3 clinical description)"
+        },
+        {
+          "factor": "Insufficient sleep",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "Standard neurology literature (ICHD-3 clinical description)"
+        },
+        {
+          "factor": "Analgesic overuse (can cause medication-overuse headache, a self-perpetuating cycle)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "Standard neurology literature (ICHD-3 clinical description)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為緊張型頭痛發作頻率與強度管理之常規輔助照護，臨床上為針灸文獻中證據相對充足的頭痛類型之一",
+        "precautions": "頸肩部穴位施針前評估肌肉緊繃程度與活動範圍，避免過度手法刺激急性肌肉痙攣處",
+        "co_management": "已使用止痛藥逾每週兩至三次者，建議與病人的神經科／家醫科醫師討論藥物過度使用性頭痛風險",
+        "evidence": "guideline",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 ICHD-3 及標準神經科文獻）",
+        "note": "部分系統性回顧支持針灸作為緊張型頭痛之預防選項，證據等級中等"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as routine adjunctive care for managing tension-type headache frequency and severity; this is among the headache types with relatively more supportive acupuncture literature",
+        "precautions": "Assess neck/shoulder muscle tension and range of motion before needling; avoid overly forceful technique over acutely spasmed muscle",
+        "co_management": "For patients using analgesics more than two to three times weekly, discuss medication-overuse headache risk with their neurologist/primary care physician",
+        "evidence": "guideline",
+        "source": "curriculum/conditions course handouts + AcuTing OS synthesis (per ICHD-3 and standard neurology references)",
+        "note": "Some systematic reviews support acupuncture as a tension-type headache prevention option, with moderate evidence grade"
+      }
     },
     {
       "id": "cond.migraine",
@@ -12213,7 +12629,7 @@
         "standard_neurology_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "",
+      "etiology_zh": "肝陽上亢、肝火上炎為偏頭痛最常見病機，多因情志不遂、肝氣鬱結化火，上擾清竅；風痰上擾者，多與脾失健運、痰濁內生、風痰隨肝陽上逆有關；久病入絡則見瘀血阻滯，頭痛痛處固定、刺痛不移。",
       "western_pathology_zh": "「偏頭痛」就是指頭部的某一邊在痛。而現代醫學指的偏頭痛，是一系列症候群的其中一個症狀，它具有許多的特徵，女性比男性要多出2-3倍。\n\n現代醫學對於偏頭痛的研究相當深入，除了局部、持續且反覆發作的嚴重頭痛，並伴有自主神經系統的相關症狀，劃分為許多種類型。\n\n約有60%的偏頭痛患者，會在頭痛發作幾小時前甚至幾天前出現先兆，所以是可以被預知的，包含：情緒變化、易怒、憂鬱、疲倦、頸部肌肉僵硬、便秘或腹瀉...等等。\n\n在頭痛發作之前或發作之時會出現「視覺干擾」，眼睛出現閃光逐漸擴大形成偏盲。一定比例的人，手掌或手臂一側會出現刺痛，之後擴散至同一側的口鼻區域，同時肌肉麻木，有些人還會言語錯亂、眩暈，甚至肢體協調困難。\n\n典型的偏頭痛通常是單側的，常常是突然間發生沒有預兆。它也可能是「雙側」性的，並伴有頸部疼痛，時間通常持續4-72小時。發作時通常伴有眩暈(天旋地轉)、噁心嘔吐、疲勞、鼻塞、腹瀉、尿頻、害怕光線與聲音、嗅覺敏感與意識模糊。\n\n偏頭痛是相當難以被治癒的疼痛\n\n偏頭痛的影響可能會持續好幾天，會感到疲勞或「宿醉」的感覺，除了頭痛之外，還出現認知難度、消化道症狀、情緒變化和虛弱無力的情況。\n\n現代醫學治療偏頭痛，通常就只能使用止痛藥，例如：普拿疼、阿斯匹靈、非類固醇抗炎藥物...等等。嚴重的人必須肌肉或靜脈注射其他止痛、止吐藥物。\n\n偏頭痛的原因至今仍沒有確切答案，對現代醫學而言是個謎，依然只能歸類於環境因、壓力或遺傳因素所導致的。\n\n然而，這種原因成謎的症狀，最適合從中醫理論來解釋，從上面的所有偏頭痛症狀，登可以輕易地從中醫的經絡理論來理解。如果一個人長期偏頭痛不癒，從中醫理論來加以預防養生，成功的機率會是很高的！[@ad:1]",
       "tcm_patterns": [
         {
@@ -12510,7 +12926,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/13850"
+        "https://cloudtcm.com/disease/tcm/13850",
+        "https://www.ninds.nih.gov/Disorders/All-Disorders/Migraine-Information-Page"
       ],
       "sign_symptom_ids": [
         "sym.headache"
@@ -12528,7 +12945,108 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch. (western_pathology_zh on this record is separately C10-shared-verbatim boilerplate — out of scope for this batch, left untouched for the C10/batch-2 pass.)",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "risk_factors_zh": [
+          "NINDS — Migraine Information Page"
+        ],
+        "risk_factors_en": [
+          "NINDS — Migraine Information Page"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — ICHD-3 / NINDS-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — ICHD-3 / NINDS-derived"
+        ]
+      },
+      "etiology_en": "Liver yang rising and liver fire flaring upward are the most common mechanisms in migraine, typically arising from unresolved emotional stress and liver qi stagnation transforming into fire that disturbs the clear orifices above. Wind-phlegm disturbance relates to spleen dysfunction generating internal turbid phlegm, which rises together with liver yang. In long-standing disease the channels become obstructed by blood stasis, producing a fixed, stabbing headache.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性（雌激素波動相關）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "偏頭痛家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "睡眠不足或睡眠型態改變",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "壓力",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "特定食物或酒精誘因",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Migraine Information Page"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex (linked to estrogen fluctuation)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "Family history of migraine",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "Insufficient sleep or changed sleep pattern",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "Stress",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Migraine Information Page"
+        },
+        {
+          "factor": "Specific food or alcohol triggers",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS — Migraine Information Page"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為發作頻率與強度管理之輔助照護，需先由神經科排除紅旗症狀（見紅旗欄位）並確立偏頭痛診斷",
+        "precautions": "先兆期間或發作極期避免過度刺激性手法；合併服用抗凝血藥物者注意頭皮出血風險",
+        "co_management": "與病人的神經科醫師聯絡，不建議病人自行停用預防性藥物（如評估中的 CGRP 拮抗劑類藥物）",
+        "evidence": "guideline",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 ICHD-3 及標準神經科文獻）",
+        "note": "部分臨床指引將針灸列為偏頭痛預防性選項之一，證據等級因研究設計而異，此處採謹慎標示"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support attack-frequency and severity management as adjunctive care, after neurology has excluded red-flag features and confirmed the migraine diagnosis",
+        "precautions": "Avoid overly stimulating technique during aura or peak attack; note scalp-bleeding risk in patients on anticoagulants",
+        "co_management": "Stay in contact with the patient's neurologist; do not advise the patient to stop preventive medication (e.g., CGRP-antagonist class agents under evaluation)",
+        "evidence": "guideline",
+        "source": "curriculum/conditions course handouts + AcuTing OS synthesis (per ICHD-3 and standard neurology references)",
+        "note": "Some clinical guidelines list acupuncture as a migraine-prevention option; evidence grade varies by study design, graded conservatively here"
+      }
     },
     {
       "id": "cond.cluster_headache",
@@ -13797,9 +14315,219 @@
       "fetched_at": "2026-07-23T07:46:03.395Z",
       "source_type": "sourced_cloudtcm_record",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1670"
+        "https://cloudtcm.com/disease/tcm/1670",
+        "https://medlineplus.gov/gerd.html",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus — GERD"
+        ],
+        "summary_en": [
+          "MedlinePlus — GERD"
+        ],
+        "western_context_zh": [
+          "MedlinePlus — GERD"
+        ],
+        "western_context_en": [
+          "MedlinePlus — GERD"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — GERD"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — GERD"
+        ],
+        "red_flags_zh": [
+          "MedlinePlus — GERD",
+          "NIDDK — Indigestion (Dyspepsia)"
+        ],
+        "red_flags_en": [
+          "MedlinePlus — GERD",
+          "NIDDK — Indigestion (Dyspepsia)"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum GI course handouts"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum GI course handouts"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.reflux",
+        "sym.regurgitation"
+      ],
+      "summary_zh": "胃食道逆流是胃內容物反覆逆流進入食道所引起的疾病，若火燒心、反酸等症狀每週發生兩次以上，或已造成食道黏膜損傷，即符合診斷。診斷多依症狀，警示症狀出現時以內視鏡確認食道發炎程度。",
+      "summary_en": "GERD occurs when stomach contents repeatedly flow back into the esophagus; it is diagnosed when heartburn and regurgitation occur two or more times a week, or when the esophageal lining has been damaged. Diagnosis is usually clinical, with endoscopy reserved for alarm features.",
+      "western_context_zh": "治療首選生活型態調整（避免誘發食物、睡前三小時內不進食、抬高床頭、減重、戒菸酒），藥物以氫離子幫浦阻斷劑（PPI）或H2阻斷劑為主。症狀持續或出現警示症狀，需轉診腸胃科安排內視鏡。",
+      "western_context_en": "First-line treatment is lifestyle modification (avoiding trigger foods, not eating within three hours of bedtime, elevating the head of the bed, weight loss, and stopping alcohol/tobacco); medication is usually a proton pump inhibitor or H2 blocker. Persistent symptoms or alarm features warrant gastroenterology referral for endoscopy.",
+      "risk_factors_zh": [
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "裂孔疝氣",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "懷孕",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "吸菸／使用菸草",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "飲酒",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "餐後三小時內臥床",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "Hiatal hernia",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "Smoking or tobacco use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "Alcohol use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "factor": "Lying down within three hours after eating",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — GERD"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "吞嚥困難或吞嚥疼痛",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診腸胃科安排內視鏡，評估食道狹窄或惡性病灶",
+          "rationale": "屬警示症狀，須排除食道結構病變",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "finding": "嘔血或解黑色柏油便",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示上消化道出血",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "finding": "非刻意體重減輕或食慾喪失",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診腸胃科評估惡性病灶",
+          "rationale": "屬警示症狀",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "finding": "胸痛合併呼吸困難，或下巴、手臂疼痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診排除心臟病",
+          "rationale": "可能為心臟病而非單純逆流，MedlinePlus 明列此為立即就醫指徵",
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "finding": "50 歲以上新發逆流症狀",
+          "urgency_level": "same_day",
+          "recommended_action": "及早轉診腸胃科評估",
+          "rationale": "新發年齡層惡性風險上升",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Difficulty or pain swallowing (dysphagia/odynophagia)",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to gastroenterology for endoscopy to evaluate stricture or malignancy",
+          "rationale": "Alarm feature requiring exclusion of structural esophageal disease",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "finding": "Vomiting blood or black, tarry stools",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Suggests upper GI bleeding",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "finding": "Unintentional weight loss or loss of appetite",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to gastroenterology to evaluate for malignancy",
+          "rationale": "Alarm feature",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "finding": "Chest pain with shortness of breath, or jaw/arm pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately to rule out cardiac cause",
+          "rationale": "May indicate a heart problem rather than simple reflux",
+          "source": "MedlinePlus — GERD"
+        },
+        {
+          "finding": "New-onset reflux symptoms after age 50",
+          "urgency_level": "same_day",
+          "recommended_action": "Early gastroenterology referral",
+          "rationale": "Malignancy risk rises with new-onset age",
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為症狀緩解與生活品質改善的輔助照護，前提是已由腸胃科排除警示症狀與結構病變",
+        "precautions": "中脘、上脘等上腹部穴位避免飽食後立即深刺；長期服用 PPI 者留意骨質疏鬆與跌倒風險評估",
+        "co_management": "與病人的腸胃科醫師聯絡確認診斷與內視鏡結果，不建議病人自行停用 PPI（驟停有反彈性胃酸分泌過多風險）",
+        "evidence": "course",
+        "source": "curriculum/conditions GI 課程講義 + AcuTing OS 整理",
+        "note": "尚未查到專屬於 GERD 針灸療效的臨床指引等級證據，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May be used as adjunctive symptom relief and quality-of-life support, after gastroenterology has excluded alarm features and structural disease",
+        "precautions": "Avoid deep needling of upper-abdominal points (CV12/CV13) immediately after a full meal; in patients on long-term PPI therapy, note osteoporosis and fall-risk considerations",
+        "co_management": "Contact the patient's gastroenterologist to confirm diagnosis and endoscopy findings; do not advise the patient to stop PPI therapy abruptly (risk of rebound acid hypersecretion)",
+        "evidence": "course",
+        "source": "curriculum/conditions GI course handouts + AcuTing OS synthesis",
+        "note": "No dedicated acupuncture-efficacy guideline for GERD was located; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.functional_dyspepsia",
@@ -13903,7 +14631,8 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/149",
         "https://cloudtcm.com/disease/tcm/28325",
-        "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia"
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia/symptoms-causes"
       ],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
@@ -13915,7 +14644,104 @@
         "rf.functional_dyspepsia.legacy06",
         "rf.functional_dyspepsia.legacy07",
         "rf.functional_dyspepsia.legacy08"
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "NIDDK — Indigestion (Dyspepsia)"
+        ],
+        "western_context_en": [
+          "NIDDK — Indigestion (Dyspepsia)"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Indigestion (Dyspepsia)"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Indigestion (Dyspepsia)"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum GI course handouts"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum GI course handouts"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.epigastric_pain",
+        "sym.early_satiety",
+        "sym.abdominal_bloating",
+        "sym.belching",
+        "sym.nausea"
+      ],
+      "western_context_zh": "診斷屬排除性診斷，先以警示症狀篩檢是否需內視鏡；無警示症狀之年輕病人可先經驗性治療（PPI 或幽門螺旋桿菌檢測治療）。治療包含飲食調整（少量多餐、避免高脂食物）、抑酸藥物及必要時之促動力藥物或抗焦慮藥物。",
+      "western_context_en": "Diagnosis is one of exclusion; alarm features are first screened to decide whether endoscopy is needed. Younger patients without alarm features may start empirical treatment (PPI, or test-and-treat for H. pylori). Management includes dietary adjustment (smaller, more frequent meals; avoiding high-fat foods), acid-suppressing medication, and prokinetic or anti-anxiety medication when indicated.",
+      "risk_factors_zh": [
+        {
+          "factor": "幽門螺旋桿菌感染",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "factor": "焦慮或憂鬱等心理因素",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "factor": "特定食物或飲料誘發症狀",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "factor": "特定藥物使用（如 NSAID）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Helicobacter pylori infection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "factor": "Psychological factors such as anxiety or depression",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "factor": "Certain foods or drinks triggering symptoms",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        },
+        {
+          "factor": "Certain medications (e.g., NSAIDs)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Indigestion (Dyspepsia)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為功能性消化不良症狀（上腹痛、早飽、腹脹）緩解之輔助照護，前提是已排除警示症狀",
+        "precautions": "中脘等上腹部穴位避免飽食後立即深刺；焦慮共病病人可評估身心整合照護",
+        "co_management": "與病人的腸胃科／精神科醫師聯絡，不建議病人自行停用抑酸藥物或抗焦慮藥物",
+        "evidence": "course",
+        "source": "curriculum/conditions GI 課程講義 + AcuTing OS 整理",
+        "note": "部分小型臨床試驗支持針灸輔助改善功能性消化不良症狀，證據等級尚未達正式指引層級"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support relief of functional dyspepsia symptoms (epigastric pain, early satiety, bloating) as adjunctive care, after alarm features have been excluded",
+        "precautions": "Avoid deep needling of upper-abdominal points (CV12) immediately after a full meal; patients with comorbid anxiety may benefit from an integrated mind-body approach",
+        "co_management": "Stay in contact with the patient's gastroenterologist/psychiatrist; do not advise the patient to stop acid-suppressing or anti-anxiety medication",
+        "evidence": "course",
+        "source": "curriculum/conditions GI course handouts + AcuTing OS synthesis",
+        "note": "Some small clinical trials support adjunctive acupuncture for functional dyspepsia symptoms, but evidence has not reached formal guideline grade"
+      }
     },
     {
       "id": "cond.chronic_gastritis",
@@ -16755,9 +17581,206 @@
       "fetched_at": "2026-07-23T07:46:04.861Z",
       "source_type": "sourced_cloudtcm_record",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1666"
+        "https://cloudtcm.com/disease/tcm/1666",
+        "https://medlineplus.gov/insomnia.html",
+        "https://medlineplus.gov/sleepdisorders.html"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus — Insomnia"
+        ],
+        "summary_en": [
+          "MedlinePlus — Insomnia"
+        ],
+        "western_context_zh": [
+          "MedlinePlus — Insomnia",
+          "MedlinePlus — Sleep Disorders"
+        ],
+        "western_context_en": [
+          "MedlinePlus — Insomnia",
+          "MedlinePlus — Sleep Disorders"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — Insomnia"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — Insomnia"
+        ],
+        "red_flags_zh": [
+          "MedlinePlus — Insomnia",
+          "MedlinePlus — Sleep Disorders"
+        ],
+        "red_flags_en": [
+          "MedlinePlus — Insomnia",
+          "MedlinePlus — Sleep Disorders"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum course handouts"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum course handouts"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.insomnia"
+      ],
+      "summary_zh": "失眠是常見的睡眠障礙，表現為入睡困難、無法維持睡眠，或兩者兼有，導致睡眠量不足或品質不佳。可分為急性（短期）或慢性（持續逾三個月，每週至少三晚）。",
+      "summary_en": "Insomnia is a common sleep disorder involving trouble falling asleep, staying asleep, or both, resulting in insufficient or poor-quality sleep. It may be acute (short-term) or chronic (lasting over three months, at least three nights a week).",
+      "western_context_zh": "評估先排除次發性病因（睡眠呼吸中止、不寧腿症候群、憂鬱焦慮、藥物或咖啡因、甲狀腺功能異常）。首選治療為認知行為治療（CBT-I）與睡眠衛生調整；藥物為短期輔助，避免長期依賴。",
+      "western_context_en": "Evaluation first excludes secondary causes (sleep apnea, restless legs syndrome, depression/anxiety, medication or caffeine effects, thyroid dysfunction). First-line treatment is cognitive behavioral therapy for insomnia (CBT-I) and sleep-hygiene changes; medication is a short-term adjunct, avoiding long-term dependence.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "壓力或情緒困擾（焦慮、憂鬱）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "不規律作息或輪班工作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "咖啡因、酒精或尼古丁使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "慢性疼痛或慢性病共病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Insomnia"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "Stress or emotional distress (anxiety, depression)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "Irregular schedule or shift work",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "Caffeine, alcohol, or nicotine use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "factor": "Chronic pain or chronic disease comorbidity",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Insomnia"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "併有自殺意念或重度憂鬱症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即轉介精神科／急診評估",
+          "rationale": "失眠常與憂鬱共病，須優先排除自傷風險",
+          "source": "MedlinePlus — Insomnia（睡眠障礙與情緒疾病關聯章節）"
+        },
+        {
+          "finding": "併有目擊呼吸暫停、嚴重打鼾、白天嗜睡影響駕駛安全",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診睡眠中心安排多項睡眠生理檢查",
+          "rationale": "提示阻塞性睡眠呼吸中止，未處理有心血管風險",
+          "source": "MedlinePlus — Sleep Disorders"
+        },
+        {
+          "finding": "服用新藥物或物質使用後新發失眠",
+          "urgency_level": "routine",
+          "recommended_action": "檢視用藥並轉診原開藥醫師評估",
+          "rationale": "藥物／物質為常見可逆病因",
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "finding": "下肢不適合併難以抑制想活動下肢的衝動，夜間加重",
+          "urgency_level": "routine",
+          "recommended_action": "轉診評估不寧腿症候群",
+          "rationale": "可逆的次發病因，治療方向不同",
+          "source": "MedlinePlus — Sleep Disorders"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Suicidal ideation or severe depressive symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate psychiatric/emergency referral",
+          "rationale": "Insomnia frequently co-occurs with depression; self-harm risk must be excluded first",
+          "source": "MedlinePlus — Insomnia (link to mood disorders)"
+        },
+        {
+          "finding": "Witnessed apnea, loud snoring, or daytime sleepiness affecting driving safety",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to a sleep center for polysomnography",
+          "rationale": "Suggests obstructive sleep apnea, which carries cardiovascular risk if untreated",
+          "source": "MedlinePlus — Sleep Disorders"
+        },
+        {
+          "finding": "New-onset insomnia after starting a new medication or substance",
+          "urgency_level": "routine",
+          "recommended_action": "Review medications and refer back to the prescribing clinician",
+          "rationale": "Medication/substance effect is a common reversible cause",
+          "source": "MedlinePlus — Insomnia"
+        },
+        {
+          "finding": "Uncomfortable urge to move the legs, worse at night",
+          "urgency_level": "routine",
+          "recommended_action": "Refer to evaluate for restless legs syndrome",
+          "rationale": "A reversible secondary cause requiring a different treatment approach",
+          "source": "MedlinePlus — Sleep Disorders"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為原發性失眠或次發性失眠共病症狀之輔助改善，需先排除阻塞性睡眠呼吸中止與重度精神科急症",
+        "precautions": "睡前介入避免過度刺激性手法；百會、安眠等頭部穴位施針前確認病人無出血傾向或抗凝血藥物近期調整",
+        "co_management": "與原開立安眠藥物之醫師聯絡，不建議病人自行減停處方藥物",
+        "evidence": "course",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理",
+        "note": "尚未查到專屬於失眠針灸療效的系統性回顧等級證據，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support primary insomnia or insomnia comorbid with another condition, after obstructive sleep apnea and acute psychiatric emergencies are excluded",
+        "precautions": "Avoid overly stimulating techniques close to bedtime; before needling scalp points (GV20, EX-HN16) confirm no bleeding tendency or recent anticoagulant changes",
+        "co_management": "Contact the prescribing clinician for any hypnotic medication; do not advise the patient to self-taper prescribed sleep medication",
+        "evidence": "course",
+        "source": "curriculum/conditions course handouts + AcuTing OS synthesis",
+        "note": "No systematic-review-grade evidence specific to acupuncture for insomnia was located; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.anxiety",
@@ -19061,9 +20084,181 @@
       "fetched_at": "2026-07-23T07:46:07.362Z",
       "source_type": "sourced_cloudtcm_record",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/280"
+        "https://cloudtcm.com/disease/tcm/280",
+        "https://magazine.medlineplus.gov/article/what-triggers-seasonal-allergies",
+        "https://medlineplus.gov/ency/article/000844.htm"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus — Allergic Rhinitis"
+        ],
+        "summary_en": [
+          "MedlinePlus — Allergic Rhinitis"
+        ],
+        "western_context_zh": [
+          "MedlinePlus — Allergic Rhinitis"
+        ],
+        "western_context_en": [
+          "MedlinePlus — Allergic Rhinitis"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — Allergic Rhinitis",
+          "NIH MedlinePlus Magazine — What triggers seasonal allergies?"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — Allergic Rhinitis",
+          "NIH MedlinePlus Magazine — What triggers seasonal allergies?"
+        ],
+        "red_flags_zh": [
+          "MedlinePlus — Anaphylaxis"
+        ],
+        "red_flags_en": [
+          "MedlinePlus — Anaphylaxis"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum course handouts"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — curriculum course handouts"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.nasal_congestion",
+        "sym.sneezing"
+      ],
+      "summary_zh": "過敏性鼻炎是接觸過敏原（如花粉、塵蟎、動物皮屑）後引發的鼻黏膜 IgE 媒介型過敏反應，症狀為流清水鼻涕、鼻癢、打噴嚏及鼻塞，可分季節性（花粉相關）與常年性。",
+      "summary_en": "Allergic rhinitis is an IgE-mediated allergic response of the nasal mucosa triggered by allergens such as pollen, dust mites, or animal dander, causing watery rhinorrhea, nasal/eye itching, sneezing, and congestion. It may be seasonal (pollen-related, \"hay fever\") or perennial.",
+      "western_context_zh": "診斷多依病史與症狀型態；治療首選鼻用類固醇噴劑（規律使用需 2 週以上見效）合併口服抗組織胺，並儘量避免已知過敏原。症狀嚴重或藥物反應不佳者可考慮過敏原檢測與免疫治療。",
+      "western_context_en": "Diagnosis is usually based on history and symptom pattern. First-line treatment is an intranasal corticosteroid spray (needs 2+ weeks of regular use for full effect) combined with an oral antihistamine, with allergen avoidance where feasible. Allergy testing and immunotherapy are options for severe or refractory cases.",
+      "risk_factors_zh": [
+        {
+          "factor": "個人或家族過敏史（氣喘、異位性皮膚炎、過敏性鼻炎）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Allergic Rhinitis"
+        },
+        {
+          "factor": "居家塵蟎、寵物皮屑暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Allergic Rhinitis"
+        },
+        {
+          "factor": "花粉季節暴露（乾燥、多風天氣花粉量升高）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH MedlinePlus Magazine — What triggers seasonal allergies?"
+        },
+        {
+          "factor": "菸害暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Allergic Rhinitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Personal or family history of atopy (asthma, atopic dermatitis, allergic rhinitis)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Allergic Rhinitis"
+        },
+        {
+          "factor": "Household dust mite or pet dander exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Allergic Rhinitis"
+        },
+        {
+          "factor": "Pollen-season exposure (hot, dry, windy days raise pollen counts)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIH MedlinePlus Magazine — What triggers seasonal allergies?"
+        },
+        {
+          "factor": "Tobacco smoke exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Allergic Rhinitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "單側鼻塞、單側血絲鼻涕或鼻出血",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診耳鼻喉科排除鼻腔腫瘤或結構病灶",
+          "rationale": "過敏性鼻炎通常雙側對稱，單側表現須排除其他病因",
+          "source": "標準耳鼻喉科警示症狀原則"
+        },
+        {
+          "finding": "完全嗅覺喪失或持續單側症狀不緩解",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診耳鼻喉科影像評估",
+          "rationale": "非典型過敏性鼻炎表現",
+          "source": "標準耳鼻喉科警示症狀原則"
+        },
+        {
+          "finding": "頭部外傷後清澈鼻水（疑似腦脊髓液鼻漏）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "須排除顱底骨折併腦脊髓液滲漏",
+          "source": "標準耳鼻喉科警示症狀原則"
+        },
+        {
+          "finding": "使用過敏原免疫治療後出現喘鳴、呼吸困難或全身蕁麻疹",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診（疑似過敏性休克）",
+          "rationale": "過敏反應可能進展為全身性過敏性休克",
+          "source": "MedlinePlus — Anaphylaxis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Unilateral nasal obstruction, blood-tinged discharge, or epistaxis",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to ENT to rule out nasal tumor or structural lesion",
+          "rationale": "Allergic rhinitis is usually bilateral and symmetric; unilateral presentation needs another explanation",
+          "source": "Standard ENT alarm-feature principles"
+        },
+        {
+          "finding": "Complete anosmia or persistent unilateral symptoms not resolving",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to ENT for imaging evaluation",
+          "rationale": "Atypical for allergic rhinitis",
+          "source": "Standard ENT alarm-feature principles"
+        },
+        {
+          "finding": "Clear watery nasal discharge after head trauma (possible CSF leak)",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Must rule out skull-base fracture with CSF rhinorrhea",
+          "source": "Standard ENT alarm-feature principles"
+        },
+        {
+          "finding": "Wheeze, dyspnea, or generalized hives after allergen immunotherapy",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately (possible anaphylaxis)",
+          "rationale": "Allergic reactions can progress to systemic anaphylaxis",
+          "source": "MedlinePlus — Anaphylaxis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為季節性／常年性過敏性鼻炎症狀緩解之輔助照護",
+        "precautions": "迎香、印堂等面部穴位施針力道宜輕，鼻黏膜急性發炎腫脹期避免過度刺激；接受免疫治療病人須留意治療當日全身反應風險",
+        "co_management": "與病人的過敏免疫科／耳鼻喉科醫師聯絡，不建議病人自行停用免疫治療或處方鼻用類固醇",
+        "evidence": "course",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理",
+        "note": "已有部分臨床試驗支持針灸輔助改善過敏性鼻炎症狀，惟證據等級尚未達正式指引層級，此處採保守標示"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support symptom relief for seasonal or perennial allergic rhinitis as adjunctive care",
+        "precautions": "Use light technique at facial points (LI20, EX-HN3) during acute mucosal swelling; be aware of same-day systemic-reaction risk in patients on allergen immunotherapy",
+        "co_management": "Stay in contact with the patient's allergist/ENT; do not advise the patient to stop immunotherapy or prescribed nasal steroids",
+        "evidence": "course",
+        "source": "curriculum/conditions course handouts + AcuTing OS synthesis",
+        "note": "Some clinical trials support adjunctive acupuncture for allergic rhinitis symptoms, but evidence has not reached formal guideline grade; graded conservatively here"
+      }
     },
     {
       "id": "cond.chronic_sinusitis",
@@ -23474,9 +24669,163 @@
         "陰陵泉 (SP9)"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/253"
+        "https://cloudtcm.com/disease/tcm/253",
+        "https://www.niams.nih.gov/health-topics/atopic-dermatitis"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "summary_en": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "western_context_zh": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "western_context_en": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "risk_factors_zh": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "risk_factors_en": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "red_flags_zh": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "red_flags_en": [
+          "NIAMS — Atopic Dermatitis"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NIAMS-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NIAMS-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.pruritus"
+      ],
+      "summary_zh": "異位性皮膚炎（濕疹）是慢性反覆發作的發炎性皮膚病，與皮膚屏障功能異常及免疫系統過度活化有關，特徵為劇烈搔癢、乾燥及多形性皮疹，常合併過敏性鼻炎、氣喘等其他過敏性疾病。",
+      "summary_en": "Atopic dermatitis (eczema) is a chronic, relapsing inflammatory skin disease linked to impaired skin-barrier function and immune overactivity, characterized by intense itching, dryness, and polymorphic rash. It often coexists with other atopic conditions such as allergic rhinitis and asthma.",
+      "western_context_zh": "治療核心為皮膚屏障修復（規律保濕）與避免誘因（刺激性肥皂、香精、過度出汗、已知過敏原），發作期以外用類固醇或非類固醇抗發炎藥膏控制；中重度病人可考慮全身性免疫調節治療。",
+      "western_context_en": "Core treatment is skin-barrier repair (regular moisturizing) and trigger avoidance (irritant soaps, fragrances, excessive sweating, known allergens), with topical corticosteroids or non-steroidal anti-inflammatory ointments during flares. Moderate-to-severe disease may warrant systemic immunomodulatory therapy.",
+      "risk_factors_zh": [
+        {
+          "factor": "異位性疾病家族史（異位性皮膚炎、過敏、氣喘）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "factor": "皮膚屏障相關基因變異",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "factor": "環境暴露（乾燥空氣、過度流汗、特定肥皂或香精）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "factor": "菸害暴露與部分空氣污染物",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Atopic Dermatitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Family history of atopic disease (atopic dermatitis, allergies, asthma)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "factor": "Genetic variants affecting the skin barrier",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "factor": "Environmental exposures (dry air, excessive sweating, certain soaps/fragrances)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "factor": "Tobacco smoke and certain air pollutant exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS — Atopic Dermatitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "皮疹突然出現大量疼痛性水泡合併發燒，尤其原有濕疹病灶上",
+          "urgency_level": "emergency",
+          "recommended_action": "立即轉診皮膚科／急診",
+          "rationale": "疑似疱疹性濕疹（eczema herpeticum），為皮膚科急症，需儘速抗病毒治療",
+          "source": "NIAMS — Atopic Dermatitis（皮膚感染併發症章節）"
+        },
+        {
+          "finding": "病灶擴大、化膿、明顯紅腫熱合併發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估細菌性皮膚感染",
+          "rationale": "濕疹皮膚屏障受損易併發細菌感染",
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "finding": "大範圍皮膚脫屑合併畏寒、心搏過速（疑似紅皮症）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "紅皮症可致體液及體溫調節失衡，屬皮膚科急症",
+          "source": "標準皮膚科警示症狀原則"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden crop of painful blisters with fever, especially over existing eczema patches",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate dermatology/emergency referral",
+          "rationale": "Possible eczema herpeticum, a dermatologic emergency requiring prompt antiviral therapy",
+          "source": "NIAMS — Atopic Dermatitis (skin infection complications)"
+        },
+        {
+          "finding": "Spreading, oozing, markedly red/warm/swollen lesion with fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to evaluate for bacterial skin infection",
+          "rationale": "Impaired skin barrier in eczema predisposes to bacterial superinfection",
+          "source": "NIAMS — Atopic Dermatitis"
+        },
+        {
+          "finding": "Widespread skin peeling with chills and tachycardia (possible erythroderma)",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Erythroderma can disrupt fluid and temperature regulation and is a dermatologic emergency",
+          "source": "Standard dermatology alarm-feature principles"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為搔癢緩解與生活品質改善之輔助照護，急性感染期不屬針灸處理範圍",
+        "precautions": "破損、滲液或疑似感染之皮膚病灶避免直接針刺；劇烈搔抓部位注意感染控制",
+        "co_management": "與病人的皮膚科醫師聯絡，不建議病人自行停用外用類固醇或全身性免疫調節藥物",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 NIAMS 臨床資料整理）",
+        "note": "尚未查到專屬於異位性皮膚炎針灸療效的臨床指引等級證據"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support pruritus relief and quality of life as adjunctive care; acute infection is outside acupuncture-alone scope",
+        "precautions": "Avoid direct needling of broken, weeping, or apparently infected lesions; monitor infection control at heavily scratched sites",
+        "co_management": "Stay in contact with the patient's dermatologist; do not advise the patient to stop topical corticosteroids or systemic immunomodulatory therapy",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from NIAMS clinical materials)",
+        "note": "No guideline-grade evidence specific to acupuncture for atopic dermatitis was located"
+      }
     },
     {
       "id": "cond.urticaria",
@@ -23535,9 +24884,185 @@
         }
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/971"
+        "https://cloudtcm.com/disease/tcm/971",
+        "https://medlineplus.gov/hives.html",
+        "https://medlineplus.gov/ency/article/000844.htm",
+        "https://medlineplus.gov/ency/article/000846.htm"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus — Hives"
+        ],
+        "summary_en": [
+          "MedlinePlus — Hives"
+        ],
+        "western_context_zh": [
+          "MedlinePlus — Hives"
+        ],
+        "western_context_en": [
+          "MedlinePlus — Hives"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — Hives",
+          "MedlinePlus — Allergic reactions"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — Hives",
+          "MedlinePlus — Allergic reactions"
+        ],
+        "red_flags_zh": [
+          "MedlinePlus — Anaphylaxis",
+          "MedlinePlus — Angioedema",
+          "MedlinePlus — Hives"
+        ],
+        "red_flags_en": [
+          "MedlinePlus — Anaphylaxis",
+          "MedlinePlus — Angioedema",
+          "MedlinePlus — Hives"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — MedlinePlus-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — MedlinePlus-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.pruritus"
+      ],
+      "summary_zh": "蕁麻疹是肥大細胞釋放組織胺等介質引起的皮膚小血管擴張及滲透性增加，表現為突發、劇癢的風團，單一風團通常在 24 小時內消退；病程逾六週稱為慢性蕁麻疹。",
+      "summary_en": "Urticaria (hives) results from mast-cell release of histamine and other mediators causing dilation and increased permeability of small skin blood vessels, producing sudden, intensely itchy wheals that typically resolve within 24 hours each. Disease lasting over six weeks is termed chronic urticaria.",
+      "western_context_zh": "多數急性蕁麻疹與過敏反應或感染有關，治療以避免誘因及口服抗組織胺為主。慢性蕁麻疹病因常不明，需排除自體免疫、感染或藥物因素，並可能需轉診過敏免疫科。",
+      "western_context_en": "Most acute urticaria relates to an allergic reaction or infection, and treatment centers on trigger avoidance plus oral antihistamines. Chronic urticaria often has no identifiable cause and requires excluding autoimmune, infectious, or drug factors, sometimes with allergy/immunology referral.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期過敏原暴露（食物、藥物、昆蟲叮咬）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Allergic reactions"
+        },
+        {
+          "factor": "近期感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Hives"
+        },
+        {
+          "factor": "自體免疫疾病共病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Hives"
+        },
+        {
+          "factor": "特定藥物使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Hives"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent allergen exposure (food, medication, insect sting)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Allergic reactions"
+        },
+        {
+          "factor": "Recent infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Hives"
+        },
+        {
+          "factor": "Comorbid autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Hives"
+        },
+        {
+          "factor": "Certain medications",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Hives"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嘴唇、舌頭或喉嚨腫脹，合併聲音沙啞或呼吸喘鳴",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打急救電話／送急診，若有備用腎上腺素筆立即使用",
+          "rationale": "疑似血管性水腫合併呼吸道阻塞，為過敏性休克警訊",
+          "source": "MedlinePlus — Anaphylaxis; MedlinePlus — Angioedema"
+        },
+        {
+          "finding": "全身性蕁麻疹合併呼吸困難、頭暈或意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "疑似全身性過敏性休克",
+          "source": "MedlinePlus — Anaphylaxis"
+        },
+        {
+          "finding": "單一風團持續超過 24 小時不退，或消退後留下瘀斑、疼痛感（非單純癢感）",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診皮膚科評估蕁麻疹血管炎",
+          "rationale": "非典型蕁麻疹病程，需切片排除血管炎",
+          "source": "MedlinePlus — Hives"
+        },
+        {
+          "finding": "蕁麻疹合併發燒、關節痛或不明原因體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估潛在全身性疾病",
+          "rationale": "可能提示自體免疫或全身性疾病",
+          "source": "MedlinePlus — Hives"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Swelling of lips, tongue, or throat with hoarse voice or stridor",
+          "urgency_level": "emergency",
+          "recommended_action": "Call emergency services/ED immediately; use rescue epinephrine if available",
+          "rationale": "Possible angioedema with airway compromise, a warning sign of anaphylaxis",
+          "source": "MedlinePlus — Anaphylaxis; MedlinePlus — Angioedema"
+        },
+        {
+          "finding": "Widespread hives with shortness of breath, dizziness, or altered consciousness",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Possible systemic anaphylaxis",
+          "source": "MedlinePlus — Anaphylaxis"
+        },
+        {
+          "finding": "Individual wheal persisting beyond 24 hours, or leaving bruising/pain rather than simple itch after resolving",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to dermatology to evaluate for urticarial vasculitis",
+          "rationale": "Atypical course requiring biopsy to exclude vasculitis",
+          "source": "MedlinePlus — Hives"
+        },
+        {
+          "finding": "Hives with fever, joint pain, or unexplained weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to evaluate for underlying systemic disease",
+          "rationale": "May indicate autoimmune or systemic disease",
+          "source": "MedlinePlus — Hives"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為慢性蕁麻疹搔癢緩解之輔助照護；急性過敏反應不屬針灸處理範圍",
+        "precautions": "急性風團發作部位避免直接針刺；曾有過敏性休克病史者治療前確認誘因是否已排除",
+        "co_management": "與病人的過敏免疫科／皮膚科醫師聯絡，不建議病人自行停用抗組織胺或緊急用腎上腺素筆",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 MedlinePlus 臨床資料整理）",
+        "note": "尚未查到專屬於蕁麻疹針灸療效的臨床指引等級證據"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support pruritus relief in chronic urticaria as adjunctive care; acute allergic reactions are outside acupuncture-alone scope",
+        "precautions": "Avoid direct needling over active wheals; in patients with a history of anaphylaxis, confirm triggers have been addressed before treatment",
+        "co_management": "Stay in contact with the patient's allergist/dermatologist; do not advise the patient to stop antihistamines or discontinue carrying rescue epinephrine",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from MedlinePlus clinical materials)",
+        "note": "No guideline-grade evidence specific to acupuncture for urticaria was located"
+      }
     },
     {
       "id": "cond.acne",
@@ -24653,9 +26178,207 @@
         "金匱腎氣丸"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/88"
+        "https://cloudtcm.com/disease/tcm/88",
+        "https://www.niddk.nih.gov/health-information/diabetes/overview/risk-factors-type-2-diabetes",
+        "https://www.niddk.nih.gov/health-information/diabetes/overview/symptoms-causes"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK — Diabetes Overview"
+        ],
+        "summary_en": [
+          "NIDDK — Diabetes Overview"
+        ],
+        "western_context_zh": [
+          "NIDDK — Diabetes Overview"
+        ],
+        "western_context_en": [
+          "NIDDK — Diabetes Overview"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Risk Factors for Type 2 Diabetes"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Risk Factors for Type 2 Diabetes"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Symptoms & Causes of Diabetes",
+          "NIDDK — Diabetes Overview"
+        ],
+        "red_flags_en": [
+          "NIDDK — Symptoms & Causes of Diabetes",
+          "NIDDK — Diabetes Overview"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NIDDK-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NIDDK-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.excessive_thirst",
+        "sym.urinary_frequency",
+        "sym.fatigue",
+        "sym.blurred_vision"
+      ],
+      "summary_zh": "第二型糖尿病是胰島素阻抗合併胰島素分泌相對不足所致的慢性高血糖代謝疾病，多起病於成年，與體重過重、身體活動不足密切相關；許多患者早期無症狀，經血糖篩檢發現。",
+      "summary_en": "Type 2 diabetes is a chronic hyperglycemic metabolic disease caused by insulin resistance combined with relatively insufficient insulin secretion, typically adult-onset and closely linked to excess weight and physical inactivity. Many patients are asymptomatic early on and are identified by glucose screening.",
+      "western_context_zh": "診斷依血糖與糖化血色素（HbA1c）標準。治療以生活型態調整（飲食、運動、減重）為基礎，配合口服降血糖藥或胰島素；需長期規律監測血糖、腎功能與眼底，並留意足部照護。",
+      "western_context_en": "Diagnosis is based on blood glucose and HbA1c criteria. Treatment is built on lifestyle modification (diet, exercise, weight management), combined with oral hypoglycemic agents or insulin as needed; requires ongoing monitoring of glucose, kidney function, and retinal health, plus foot care.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡 35 歲以上",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "過重或肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "身體活動不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "吸菸（含電子菸）或二手菸暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "妊娠糖尿病史或曾產下體重逾 4 公斤（9 磅）新生兒",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "糖尿病家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Diabetes Overview"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Age 35 or older",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "Overweight or obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "Physical inactivity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "Smoking (including e-cigarettes) or secondhand smoke exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "History of gestational diabetes or giving birth to a baby over 9 lb",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Risk Factors for Type 2 Diabetes"
+        },
+        {
+          "factor": "Family history of diabetes",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Diabetes Overview"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "極度口渴多尿合併噁心嘔吐、腹痛、深快呼吸或意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "疑似糖尿病酮酸中毒或高滲透壓高血糖狀態",
+          "source": "NIDDK — Symptoms & Causes of Diabetes"
+        },
+        {
+          "finding": "血糖過低症狀（冒冷汗、心悸、意識混亂、癲癇）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即補糖並視情況送急診",
+          "rationale": "重度低血糖可致意識喪失甚至生命危險",
+          "source": "NIDDK — Diabetes Overview"
+        },
+        {
+          "finding": "足部傷口不癒合、變色或感覺異常",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診傷口照護／足科評估",
+          "rationale": "糖尿病足部併發症有截肢風險",
+          "source": "NIDDK — Diabetes Overview"
+        },
+        {
+          "finding": "視力急遽模糊或視野缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診眼科評估視網膜病變",
+          "rationale": "糖尿病視網膜病變為可致失明之併發症",
+          "source": "NIDDK — Diabetes Overview"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Extreme thirst and urination with nausea, vomiting, abdominal pain, rapid deep breathing, or altered consciousness",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Possible diabetic ketoacidosis or hyperosmolar hyperglycemic state",
+          "source": "NIDDK — Symptoms & Causes of Diabetes"
+        },
+        {
+          "finding": "Symptoms of hypoglycemia (cold sweat, palpitations, confusion, seizure)",
+          "urgency_level": "emergency",
+          "recommended_action": "Treat with glucose immediately and consider emergency care",
+          "rationale": "Severe hypoglycemia can cause loss of consciousness and is life-threatening",
+          "source": "NIDDK — Diabetes Overview"
+        },
+        {
+          "finding": "Non-healing foot wound, discoloration, or altered sensation",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for wound care/podiatry evaluation",
+          "rationale": "Diabetic foot complications carry amputation risk",
+          "source": "NIDDK — Diabetes Overview"
+        },
+        {
+          "finding": "Rapid blurring of vision or visual field loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to ophthalmology for retinopathy evaluation",
+          "rationale": "Diabetic retinopathy can cause blindness",
+          "source": "NIDDK — Diabetes Overview"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為血糖管理生活型態介入之輔助，以及糖尿病周邊神經病變等併發症症狀之輔助照護，不可取代藥物或胰島素治療",
+        "precautions": "周邊神經病變病人足部感覺可能減退，施針深度與部位須格外謹慎；下肢傷口未癒合處避免針刺",
+        "co_management": "與病人的內分泌科／家醫科醫師聯絡，不建議病人自行調整降血糖藥物或胰島素劑量",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 NIDDK 臨床資料整理）",
+        "note": "降血糖藥物調整涉及血糖控制安全，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support lifestyle-based glycemic management and adjunctive relief of complications such as diabetic peripheral neuropathy; cannot replace medication or insulin",
+        "precautions": "Patients with peripheral neuropathy may have reduced foot sensation, requiring extra care with needling depth and site; avoid needling over unhealed lower-limb wounds",
+        "co_management": "Stay in contact with the patient's endocrinologist/primary care physician; do not advise the patient to adjust hypoglycemic medication or insulin dosing on their own",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from NIDDK clinical materials)",
+        "note": "Adjusting glucose-lowering medication involves glycemic safety; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.metabolic_syndrome",
@@ -25817,9 +27540,213 @@
       "fetched_at": "2026-07-23T07:45:15.368Z",
       "source_type": "sourced_cloudtcm_record",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/296"
+        "https://cloudtcm.com/disease/tcm/296",
+        "https://www.nhlbi.nih.gov/health/high-blood-pressure",
+        "https://www.nhlbi.nih.gov/news/2023/beyond-salt-research-highlights-underappreciated-sources-high-blood-pressure"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI — High Blood Pressure"
+        ],
+        "summary_en": [
+          "NHLBI — High Blood Pressure"
+        ],
+        "western_context_zh": [
+          "NHLBI — High Blood Pressure"
+        ],
+        "western_context_en": [
+          "NHLBI — High Blood Pressure"
+        ],
+        "risk_factors_zh": [
+          "NHLBI — High Blood Pressure",
+          "NHLBI — Beyond salt"
+        ],
+        "risk_factors_en": [
+          "NHLBI — High Blood Pressure",
+          "NHLBI — Beyond salt"
+        ],
+        "red_flags_zh": [
+          "NHLBI — High Blood Pressure"
+        ],
+        "red_flags_en": [
+          "NHLBI — High Blood Pressure"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NHLBI-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NHLBI-derived"
+        ]
+      },
+      "summary_zh": "原發性高血壓是體循環動脈血壓持續升高（多數指引以收縮壓 ≥130 mmHg 或舒張壓 ≥80 mmHg 為異常門檻，各家標準略有差異）且找不到單一可逆病因的慢性病，是心臟病、中風與腎臟病的主要可改變風險因子。",
+      "summary_en": "Essential (primary) hypertension is chronic, persistently elevated systemic arterial blood pressure without a single identifiable reversible cause (thresholds vary slightly by guideline, commonly systolic ≥130 mmHg or diastolic ≥80 mmHg). It is a leading modifiable risk factor for heart disease, stroke, and kidney disease.",
+      "western_context_zh": "多數患者無症狀，經常規篩檢發現。治療結合生活型態調整（減鈉、規律運動、限酒、減重、戒菸）與降壓藥物（利尿劑、ACEI/ARB、鈣離子阻斷劑等）。血壓控制需長期規律追蹤，不宜自行調整或停藥。",
+      "western_context_en": "Most patients are asymptomatic and are identified through routine screening. Treatment combines lifestyle modification (sodium reduction, regular exercise, limiting alcohol, weight loss, smoking cessation) with antihypertensive medication (diuretics, ACEI/ARB, calcium channel blockers, etc.). Blood pressure control requires long-term regular follow-up; medication should not be self-adjusted or stopped.",
+      "risk_factors_zh": [
+        {
+          "factor": "高鈉飲食",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "過量飲酒",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "身體活動不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "家族史／遺傳",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "睡眠呼吸中止症",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Beyond salt: underappreciated sources of high blood pressure"
+        },
+        {
+          "factor": "特定藥物（如減充血劑）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Beyond salt: underappreciated sources of high blood pressure"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "High-sodium diet",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "Excessive alcohol intake",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "Physical inactivity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "Family history/genetics",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "factor": "Sleep apnea",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Beyond salt: underappreciated sources of high blood pressure"
+        },
+        {
+          "factor": "Certain medications (e.g., decongestants)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Beyond salt: underappreciated sources of high blood pressure"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "血壓劇烈升高合併胸痛、呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "疑似高血壓急症併急性心臟或肺部損傷",
+          "source": "NHLBI — High Blood Pressure（併發症與病理生理章節）"
+        },
+        {
+          "finding": "血壓劇烈升高合併嚴重頭痛、視力改變或意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "疑似高血壓腦病變或出血性中風",
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "finding": "血壓劇烈升高合併言語不清或單側肢體無力",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診（疑似中風）",
+          "rationale": "高血壓為中風主要可改變危險因子",
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "finding": "已知高血壓病人血壓突然、明顯高於平時基準",
+          "urgency_level": "same_day",
+          "recommended_action": "當日回診評估用藥與誘因",
+          "rationale": "須排除藥物中斷、誘發物質或新發併發症",
+          "source": "NHLBI — High Blood Pressure"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severely elevated blood pressure with chest pain or shortness of breath",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Possible hypertensive emergency with acute cardiac or pulmonary injury",
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "finding": "Severely elevated blood pressure with severe headache, vision changes, or altered consciousness",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately",
+          "rationale": "Possible hypertensive encephalopathy or hemorrhagic stroke",
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "finding": "Severely elevated blood pressure with slurred speech or unilateral weakness",
+          "urgency_level": "emergency",
+          "recommended_action": "Emergency department immediately (possible stroke)",
+          "rationale": "Hypertension is the leading modifiable stroke risk factor",
+          "source": "NHLBI — High Blood Pressure"
+        },
+        {
+          "finding": "Known hypertensive patient with a sudden reading well above their usual baseline",
+          "urgency_level": "same_day",
+          "recommended_action": "Same-day review of medication adherence and triggers",
+          "rationale": "Must exclude medication interruption, precipitating substances, or a new complication",
+          "source": "NHLBI — High Blood Pressure"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為血壓管理與相關症狀（如緊張、頭脹）之輔助照護，不可取代降壓藥物治療",
+        "precautions": "血壓極度不穩定或近期出現急症警訊時，暫緩針灸並優先轉診；治療前應測量並記錄當次血壓",
+        "co_management": "與病人的心臟科／家醫科醫師聯絡，絕不建議病人自行減量或停用降壓藥物",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 NHLBI 臨床資料整理）",
+        "note": "降壓藥物之驟停有反彈性高血壓風險，此為執業範圍謹慎建議，非正式針灸療效指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support blood pressure management and related symptoms (tension, head fullness) as adjunctive care; cannot replace antihypertensive medication",
+        "precautions": "Defer acupuncture and refer promptly if blood pressure is severely unstable or emergency warning signs are present; measure and record blood pressure before each session",
+        "co_management": "Stay in contact with the patient's cardiologist/primary care physician; never advise the patient to reduce or stop antihypertensive medication on their own",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from NHLBI clinical materials)",
+        "note": "Abrupt discontinuation of antihypertensives carries rebound-hypertension risk; this is a scope-of-practice caution, not a formal acupuncture-efficacy guideline"
+      }
     },
     {
       "id": "cond.hypotension",
@@ -29780,9 +31707,177 @@
       "fetched_at": "2026-07-23T07:45:16.685Z",
       "source_type": "sourced_cloudtcm_record",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/40"
+        "https://cloudtcm.com/disease/tcm/40",
+        "https://www.nidcd.nih.gov/health/tinnitus"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "summary_en": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "western_context_zh": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "western_context_en": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "risk_factors_zh": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "risk_factors_en": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "red_flags_zh": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "red_flags_en": [
+          "NIDCD — What Is Tinnitus?"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NIDCD-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NIDCD-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.tinnitus"
+      ],
+      "summary_zh": "耳鳴是聽覺系統在無外界對應聲源時產生的主觀聲音感覺，常見描述為鈴聲、嗡嗡聲、嘶聲或咻咻聲，本身是症狀而非疾病，代表聽覺路徑（耳朵、聽神經或腦部聽覺處理區）某處出現異常。",
+      "summary_en": "Tinnitus is the subjective perception of sound without a corresponding external source, commonly described as ringing, buzzing, hissing, or roaring. It is a symptom rather than a disease, signaling that something is amiss somewhere along the auditory pathway (ear, auditory nerve, or brain).",
+      "western_context_zh": "評估先由病史與耳鏡檢查排除耳垢阻塞或中耳感染，必要時轉診耳鼻喉科或聽力師安排聽力檢查。多數慢性耳鳴無法根治，處理著重共病管理（噪音暴露、睡眠、焦慮）與聲音治療、認知行為治療等因應策略。",
+      "western_context_en": "Evaluation starts with history and otoscopy to rule out earwax impaction or middle-ear infection, with ENT or audiology referral for hearing testing as indicated. Most chronic tinnitus cannot be cured; management focuses on addressing contributing factors (noise exposure, sleep, anxiety) and coping strategies such as sound therapy and cognitive behavioral therapy.",
+      "risk_factors_zh": [
+        {
+          "factor": "噪音暴露（職場、演唱會等）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "factor": "聽力損失",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "factor": "耳垢阻塞或中耳感染",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDCD — What Is Tinnitus?"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Noise exposure (workplace, concerts, etc.)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "factor": "Hearing loss",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "factor": "Earwax impaction or middle-ear infection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDCD — What Is Tinnitus?"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "搏動性耳鳴（隨心跳節律出現）",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診耳鼻喉科安排影像檢查",
+          "rationale": "可能與血管異常有關，NIDCD 明列此為安排影像檢查之指徵",
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "finding": "單側耳鳴合併同側聽力急速下降（數小時至三日內）",
+          "urgency_level": "emergency",
+          "recommended_action": "72 小時內轉診耳鼻喉科急症評估",
+          "rationale": "疑似突發性感音神經性聽力損失，treatment window 有時效性",
+          "source": "NIDCD — Health Topics（Sudden Sensorineural Hearing Loss）"
+        },
+        {
+          "finding": "單側耳鳴合併不對稱聽力損失或平衡障礙",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診安排聽力檢查與影像評估",
+          "rationale": "須排除聽神經瘤等後顱窩病灶",
+          "source": "標準耳鼻喉科警示症狀原則"
+        },
+        {
+          "finding": "頭部外傷後新發耳鳴",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "須排除顳骨骨折或內耳損傷",
+          "source": "標準耳鼻喉科警示症狀原則"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Pulsatile tinnitus (synchronized with heartbeat)",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to ENT for imaging",
+          "rationale": "May indicate a vascular abnormality; NIDCD specifically notes imaging is ordered especially when tinnitus pulsates",
+          "source": "NIDCD — What Is Tinnitus?"
+        },
+        {
+          "finding": "Unilateral tinnitus with rapid same-side hearing loss (hours to three days)",
+          "urgency_level": "emergency",
+          "recommended_action": "Refer to ENT for emergency evaluation within 72 hours",
+          "rationale": "Possible sudden sensorineural hearing loss; the treatment window is time-sensitive",
+          "source": "NIDCD — Health Topics (Sudden Sensorineural Hearing Loss)"
+        },
+        {
+          "finding": "Unilateral tinnitus with asymmetric hearing loss or balance disturbance",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for audiometry and imaging evaluation",
+          "rationale": "Must exclude a posterior fossa lesion such as acoustic neuroma",
+          "source": "Standard ENT alarm-feature principles"
+        },
+        {
+          "finding": "New-onset tinnitus after head trauma",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude temporal bone fracture or inner-ear injury",
+          "source": "Standard ENT alarm-feature principles"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為慢性非搏動性耳鳴之輔助症狀緩解，前提是已由耳鼻喉科排除可逆病因與急症",
+        "precautions": "聽宮、耳門、聽會等耳周穴位施針角度與深度須格外謹慎，避免傷及外耳道",
+        "co_management": "與病人的耳鼻喉科／聽力師聯絡，突發性聽力損失須優先轉診而非先行針灸處理",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 NIDCD 臨床資料整理）",
+        "note": "尚未查到專屬於耳鳴針灸療效的臨床指引等級證據"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support chronic non-pulsatile tinnitus symptom relief, after ENT has excluded reversible causes and emergencies",
+        "precautions": "Needling angle and depth at peri-auricular points (SI19, TE21, GB2) require particular care to avoid injuring the external auditory canal",
+        "co_management": "Stay in contact with the patient's ENT/audiologist; sudden hearing loss should be referred urgently rather than treated with acupuncture first",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from NIDCD clinical materials)",
+        "note": "No guideline-grade evidence specific to acupuncture for tinnitus was located"
+      }
     },
     {
       "id": "cond.hearing_loss",
@@ -30315,9 +32410,188 @@
         "石斛夜光丸"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/14813"
+        "https://cloudtcm.com/disease/tcm/14813",
+        "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/dry-eye",
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye/causes-dry-eye"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "field_sources": {
+        "summary_zh": [
+          "National Eye Institute — Dry Eye"
+        ],
+        "summary_en": [
+          "National Eye Institute — Dry Eye"
+        ],
+        "western_context_zh": [
+          "National Eye Institute — Causes of Dry Eye"
+        ],
+        "western_context_en": [
+          "National Eye Institute — Causes of Dry Eye"
+        ],
+        "risk_factors_zh": [
+          "National Eye Institute — Causes of Dry Eye"
+        ],
+        "risk_factors_en": [
+          "National Eye Institute — Causes of Dry Eye"
+        ],
+        "red_flags_zh": [
+          "AcuTing OS synthesis — standard ophthalmology alarm-feature principles"
+        ],
+        "red_flags_en": [
+          "AcuTing OS synthesis — standard ophthalmology alarm-feature principles"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — NEI-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — NEI-derived"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.dry_eyes"
+      ],
+      "summary_zh": "乾眼症是淚液分泌不足或淚液品質不穩定，導致淚膜無法有效潤滑眼表所引起的疾病，是最常見的眼科疾病之一，好發於 50 歲以上族群，可造成不適及視覺功能受影響。",
+      "summary_en": "Dry eye occurs when the eyes don't produce enough tears or the tears are unstable, so the tear film fails to properly lubricate the ocular surface. It is one of the most common eye conditions, primarily affecting adults over 50, and can cause discomfort and impaired vision.",
+      "western_context_zh": "評估需排查藥物因素（感冒藥、抗憂鬱劑、降血壓藥可能為誘因）、共病（糖尿病、甲狀腺疾病、自體免疫疾病）及環境因素（長時間螢幕使用、雷射屈光手術後）。治療以人工淚液、環境調整為主，中重度需眼科評估處方藥物或淚點塞。",
+      "western_context_en": "Evaluation should screen for contributing medications (cold remedies, antidepressants, and blood-pressure medicines can be triggers), comorbidities (diabetes, thyroid disease, autoimmune disease), and environmental factors (prolonged screen time, post-refractive surgery). Treatment centers on artificial tears and environmental modification, with ophthalmology evaluation for prescription therapy or punctal plugs in moderate-to-severe disease.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡 50 歲以上",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "特定藥物（感冒藥、抗憂鬱劑、降血壓藥等）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "共病（糖尿病、甲狀腺疾病、自體免疫疾病）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "雷射眼科手術病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "長時間螢幕使用（減少眨眼頻率）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Age 50 or older",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "Certain medications (cold remedies, antidepressants, blood-pressure medicines)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "Comorbidities (diabetes, thyroid disease, autoimmune disease)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "History of laser eye surgery",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        },
+        {
+          "factor": "Prolonged screen time (reduced blink rate)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "National Eye Institute — Causes of Dry Eye"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "眼睛劇痛合併畏光及視力下降",
+          "urgency_level": "emergency",
+          "recommended_action": "立即轉診眼科排除角膜潰瘍或角膜炎",
+          "rationale": "疑似角膜感染或損傷，延誤治療有視力損害風險",
+          "source": "標準眼科警示症狀原則"
+        },
+        {
+          "finding": "配戴隱形眼鏡者出現紅眼、疼痛及分泌物",
+          "urgency_level": "urgent",
+          "recommended_action": "當日轉診眼科",
+          "rationale": "隱形眼鏡使用者角膜感染風險較高",
+          "source": "標準眼科警示症狀原則"
+        },
+        {
+          "finding": "突發視力改變",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診眼科評估",
+          "rationale": "非乾眼症典型表現，需排除其他眼科急症",
+          "source": "標準眼科警示症狀原則"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe eye pain with photophobia and decreased vision",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate ophthalmology referral to rule out corneal ulcer or keratitis",
+          "rationale": "Possible corneal infection or injury; delayed treatment risks vision loss",
+          "source": "Standard ophthalmology alarm-feature principles"
+        },
+        {
+          "finding": "Contact lens wearer with red, painful eye and discharge",
+          "urgency_level": "urgent",
+          "recommended_action": "Same-day ophthalmology referral",
+          "rationale": "Contact lens wearers have elevated risk of microbial keratitis",
+          "source": "Standard ophthalmology alarm-feature principles"
+        },
+        {
+          "finding": "Sudden change in vision",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to ophthalmology for evaluation",
+          "rationale": "Atypical for simple dry eye; must exclude other ocular emergencies",
+          "source": "Standard ophthalmology alarm-feature principles"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為輕中度乾眼症狀緩解之輔助照護",
+        "precautions": "睛明、攢竹等眼周穴位施針角度需格外謹慎，避免傷及眼球；避免於急性紅眼或疑似感染時針刺眼周",
+        "co_management": "與病人的眼科醫師聯絡，長期使用人工淚液或處方藥物不建議自行停用",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack（依 National Eye Institute 臨床資料整理）",
+        "note": "尚未查到專屬於乾眼症針灸療效的臨床指引等級證據"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support relief of mild-to-moderate dry eye symptoms as adjunctive care",
+        "precautions": "Needling angle at peri-orbital points (BL1, BL2) requires particular care to avoid globe injury; avoid needling near the eye during acute redness or suspected infection",
+        "co_management": "Stay in contact with the patient's ophthalmologist; do not advise stopping long-term artificial tears or prescription therapy without medical guidance",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack (compiled from National Eye Institute clinical materials)",
+        "note": "No guideline-grade evidence specific to acupuncture for dry eye was located"
+      }
     },
     {
       "id": "cond.eye_strain",
