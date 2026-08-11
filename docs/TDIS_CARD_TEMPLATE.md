@@ -231,3 +231,11 @@ node scripts/validate-tdis-standard.js --worklist --taxonomy tdx.gynecology_obst
 擷取日期**(`field_sources` 或本線等價欄位;格式參照 pharm 線
 `dailymed:<setid>#<SECTION>` 的可機器解析精神)。無來源的欄位誠實留空。
 新產卡即遵守;舊卡不回溯強制,由各線驗證器與 ratchet 自然收斂。
+
+## T4 與骨架層(2026-08-11,鏡像 CONDITION 模板「C4 與骨架層」)
+
+純骨架卡(`review_status: "skeleton"` 且無任何內容欄:definition/etiology/
+pathomechanism/manifestations/related_patterns/classical_source/red_flags)
+不主張內容 → T4 改計 N4(note,不阻擋)。一旦加入任何內容欄位,T4 立即
+全力適用 —— 「有定義但沒紅旗」正是 T4 要抓的狀態(眩暈底下藏中風)。
+骨架卡必含:id/雙語名/pinyin/taxonomy_id/aliases(成對)/review_status。

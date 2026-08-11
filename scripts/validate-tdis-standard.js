@@ -163,9 +163,22 @@ for (const rec of scope) {
   // T3
   if (rec.id && !ID_RE.test(rec.id)) add("T3", `"${rec.id}" is not tdis.<ascii_slug>`);
 
-  // T4 — safety
+  // T4 — safety.
+  // Skeleton-tier carve-out (2026-08-11, mirrors validate-condition-standard
+  // C4 / template "C4 與骨架層", Ting's uncapped-skeleton ruling): a pure
+  // skeleton (review_status "skeleton" AND zero content fields) claims no
+  // content, so T4 defers to an N4 note. ANY content field re-arms T4 fully —
+  // a tdis card WITH a definition but no red flags is exactly the dangerous
+  // state (眩暈 hides stroke).
+  const TDIS_CONTENT_FIELDS = ["definition_zh", "definition_en", "etiology_zh", "etiology_en",
+    "pathomechanism_zh", "pathomechanism_en", "key_manifestations_zh", "key_manifestations_en",
+    "related_patterns", "classical_source"];
+  const isPureSkeleton = rec.review_status === "skeleton"
+    && TDIS_CONTENT_FIELDS.every((f) => isEmpty(rec[f]))
+    && isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en);
   if (isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en)) {
-    add("T4", "no red_flags_zh and no red_flags_en — a 中醫 disease name is what the patient arrives with; the danger under it is biomedical");
+    if (isPureSkeleton) notes.push({ code: "N4", id, detail: "skeleton index slot (no content claimed) — T4 deferred until any content field lands" });
+    else add("T4", "no red_flags_zh and no red_flags_en — a 中醫 disease name is what the patient arrives with; the danger under it is biomedical");
   }
 
   // T5 / T7 / T9 — bilingual
