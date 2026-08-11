@@ -2,29 +2,16 @@
 
 ## ⚡ NEXT TASK(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
 
-### C2B-R3 — Gate#1–3 修正覆核(你 e5d6158 審計的解除條件已全數回應)
+### C2B-R4 — P3 artifacts 覆核 + batch 3 UI 審計(P4 final GO 的前置)
 
-Endpoint:`e5d6158^..cbeff22`(origin/codex/pattern-v2,先 pull)。
-背景與完整脈絡:`docs/AI_WORK_HANDOFF.md` HANDOFF #6。
+Endpoint:codex/pattern-v2 最新(先 pull;含 P3 writer 47478f8 與 batch 3 324242a)。
 
-1. **R8 兩個 false negative**:已改結構化比對 `store.exposureHistoryExtends()`
-   (逐 index event id + canonical payload 相等,append 只准接尾),R8 CLI 與
-   app merge guard 同源。用你自己的兩個反例覆測:`evt-1→evt-10` 與 same-id
-   payload rewrite 應 `2/2` 被擋,合法 append 仍 PASS。
-2. **Coverage 無牙綠燈**:`data/clinical_cases/sample_export_fixture.json`
-   (app-export shape、全虛構)進預設掃描 + coverage=0 即 FAIL 斷言。
-   確認 K 系列 DATE_FIELDS 新增的 camelCase 豁免不含任何生日類欄位。
-3. **migrate-c2b**:`Buffer.byteLength`(你的中文 fixture 應報 893)、
-   needsReview 落 `null`、`--adjudications`+journal、duplicate/collision
-   fail closed(exit 非 0)。
-4. **範圍澄清**:`ee00856`(import persist 前 R1–R7 gate)與 `ef1b58b`
-   (validate.yml 兩個 clinical blocking steps)在你上輪 endpoint 之後,
-   請一併納入。
-5. 硬邊界不變:33 真實病例只讀;假資料測後清理;不 push main;不碰
-   curriculum/ 與藥理 WIP。
-6. 結論寫 `AI_REVIEW_FEEDBACK.md` 最上方(三 gate 各 PASS/FAIL);若全 PASS,
-   發布你上輪保留的真實病例 preflight/migration 執行條件(真機執行仍=
-   Ting 在場 + 你最終 GO 雙鑰)。commit(逐路徑)+ push。
+1. **P3 writer**(js/clinical-store.js):executeMigration/verifyStaging/switchPointer/rollbackMigration —— 覆核你 P3.1-P3.4 規格:白名單雙 key、v1 永不寫(rehearsal shim 對 v1 write 直接 throw)、hash 不符拒絕、冪等 0/0/0、pointer 只在 verify 綠後切、tamper 拒絕、rollback 白名單刪除。
+2. **Rehearsal 重跑**(scripts/rehearse-c2b.js):自建假 fixture 跑一遍;再對 raw snapshot 的「隔離副本」跑(絕不接觸瀏覽器)。Fable 宣稱:fixture 10/10、2-case 與 33-case 副本 PASS —— 視為未驗證,重測。
+3. **Batch 3 UI**(env exposures panel):所有寫入是否只經 createExposure/applyExposureChange;certainty_changed 空 note 是否確實中止(D17 §6)。
+4. **Preflight 覆核**:scripts/preflight-c2b.js 的 repo-out 拒絕;PROJECT_LOG 記錄的 P0-P2 數字與 backup 檔案 hash 對帳(backup 在 %USERPROFILE%AcuTing-backupspre-c2b,只讀)。
+5. **正本定案知悉**:Edge file:// = canonical(2 cases);preview 33 = QA 歸檔。P4 條件請以 Edge store 為目標撰寫。
+6. 結論寫 AI_REVIEW_FEEDBACK.md 最上方:P3 各項 PASS/FAIL + 若全 PASS 發布 **P4 final GO 條件**(真機執行 = Ting 在場)。commit(逐路徑)+ push。硬邊界照舊。
 
 ---
 
