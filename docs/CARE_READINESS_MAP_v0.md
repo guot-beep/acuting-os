@@ -73,6 +73,19 @@ CHM-CARE 專屬項目待 SOL 對原文逐項驗證(CR-013)後才升 v1。**
 - 本表 v0 共 A:31 行 + B:13 行 = 44 個資料點;CHM-CARE 驗證後合併進來
   (SOL 的 61 項權威清單 = 本表的驗證與擴充目標,CR-013)。
 
+## 草稿產生器(v1,2026-08-11)
+
+`scripts/generate-care-draft.js` 依本表 A 節順序(Title→Keywords→Abstract
+skeleton→Intro→Patient info→Clinical findings→Timeline→Diagnostic
+assessment→Interventions→Follow-up/outcomes→Discussion skeleton→Patient
+perspective→Consent)產生 CARE 2013 markdown 草稿,任一診有進針資料時附加
+STRICTA 2010 節。缺值一律輸出 `〔缺:<CARE item> — <field>〕`,絕不省略;
+`publicationConsent !== "granted"` 一律加 ⚠️ 發表同意警示;patientCode 只留在
+可移除的標頭註解,正文稱「本案病人」;birthYear 只出年齡層(如 40-49歲)。
+用法:`node scripts/generate-care-draft.js <cases-export.json> --case <caseId>
+[--out draft.md] [--lang zh|en|both]`;`--self-test` 對
+`data/clinical_cases/sample_export_fixture.json` 跑內建斷言。
+
 ## CONTENT_REQUEST
 
 ```yaml
