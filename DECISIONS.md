@@ -503,6 +503,40 @@ migration for Ting.
 - **Reconsider only if:** never. A second medication namespace after 9/5 is a
   migration of real clinical records.
 
+## D17 — Clinical Data Capture V2 namespaces and model rules  · LOCKED (2026-08-10, Ting, final low-token checkpoint)
+
+Context: `docs/CLINICAL_DATA_CAPTURE_V2_DIRECTION_2026-08-10.md` (direction) and
+`docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md` (repo reconciliation).
+
+1. **New canonical namespaces** — exactly `supp.*` (supplements — **NOT `suppl.*`**,
+   overriding the V2 direction doc's §6 spelling), `life.*` (lifestyle factors),
+   `exposure.*` (environmental/toxic exposures), `adverse_event.*`, `modality.*`.
+   Examples: `supp.vitamin_d3`, `supp.coq10`, `supp.magnesium`, `supp.creatine`.
+   No variants (`suppl.*`, `supplement.*`, `ae.*`) — the namespace IS the type (D11).
+2. **Medications** — reconfirms D15: new identities are `drug.*`; `med.*` records are
+   NEVER destructively deleted — legacy/migration aliases toward `drug.*` via
+   `medication_alias_map.json`. Migration gate: after it, new real Clinical Visits
+   must not create new `med.*` references.
+3. **`sym.*` and `metric.*` are NOT competing namespaces.** `sym.*` = symptom/clinical
+   finding; `metric.*` = measurement instrument or tracked value.
+   (sym.headache ↔ metric.pain_score; sym.insomnia ↔ metric.sleep_quality +
+   metric.sleep_duration_hours.) Visit observations must let a symptom/finding
+   optionally link to one or more measurements. Never collapse one into the other.
+   This resolves the sym_id fork flagged in `data/clinical_cases/schema.sql`.
+4. **Visit TCM pattern roles** — MVP supports `primary` | `secondary`; schema stays
+   future-compatible with `root` | `branch` (reserved, not blocked). Visit pattern
+   records eventually support `confidence`.
+5. **One coherent exposure timeline** — Patient/Case baseline exposure and Visit-level
+   changes belong to ONE longitudinal model that can reconstruct the timeline
+   (baseline coffee 3 cups/day + Visit #4 "changed to 1 cup/day"). Applies to
+   `drug.*`, `supp.*`, `life.*`, `exposure.*`. Never two disconnected systems.
+6. **Observation ≠ interpretation** — lifestyle/exposure data is observed behavior;
+   it never auto-converts into a TCM diagnosis or pattern, and suspected exposure
+   never becomes confirmed poisoning. Pattern conclusions are entered only by the
+   practitioner at Case/Visit level.
+- **Reconsider only if:** never merge the namespaces or auto-diagnose; naming spelling
+  is final once the first `supp.*` record is issued (D1).
+
 ---
 
 ## Sequencing (from the review) — do the painful things NOW

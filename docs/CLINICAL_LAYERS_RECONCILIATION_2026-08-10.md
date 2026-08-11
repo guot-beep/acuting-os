@@ -5,8 +5,13 @@ Ting approved a new direction set — full text in
 handoff file). This doc reconciles it against the repo as of `388c947`.
 **No code changed in this checkpoint — design only.**
 
-> Naming note: the chat summary said `supp.*`; the V2 direction doc says `suppl.*`.
-> This reconciliation follows the V2 doc (`suppl.*`) — D15 must lock one spelling.
+> **2026-08-10 evening update — Ting locked the open calls (recorded as D17 in DECISIONS.md; med→drug was already D15):**
+> canonical supplement namespace is **`supp.*`** (NOT `suppl.*` as the V2 direction
+> doc's §6 spelled it — this reconciliation has been updated to `supp.*` throughout);
+> `drug.*` is canonical for medications with `med.*` kept as non-deleted legacy
+> aliases; `sym.*` and `metric.*` are complementary, not competing; visit pattern
+> roles are primary|secondary for MVP (root|branch reserved); baseline + visit-level
+> exposure changes must form ONE reconstructable timeline.
 
 ---
 
@@ -56,9 +61,15 @@ handoff file). This doc reconciles it against the repo as of `388c947`.
    (12 fertility seeds, `data/medications/`, wired to the app and
    `visit_western_medications`) vs `drug.*` (`data/pharmacology/`, the card track).
    `medication_alias_map.json` exists but canonicalization is undecided.
-4. **Structured observations** — `visit_observations` table exists but is empty and the
-   `sym_id` fork (metric.* vs sym.*) is unresolved (flagged in schema.sql, waiting on
-   Ting).
+4. **Structured observations** — `visit_observations` table exists but is empty. The
+   `sym_id` fork flagged in schema.sql is now RESOLVED (D17): `sym.*` = symptom/
+   clinical finding, `metric.*` = measurement instrument/tracked value — different
+   concepts, neither collapses into the other. `visit_observations.sym_id` stays
+   sym.*; a symptom may optionally link to one or more measurements
+   (e.g. sym.insomnia → metric.sleep_quality + metric.sleep_duration_hours), which
+   `visit_outcomes.metric_id` rows already carry — an optional additive
+   `related_sym_id` on `visit_outcomes` (or a link table) makes the association
+   explicit. Design note only; no DDL tonight.
 5. **Capture UI** — chip pickers exist for points/herbs/formulas/patterns; medications
    fall back to `name_text`; supplements/lifestyle/exposures have no capture path.
 6. **Differential vs working patterns (V2 §4)** — `visit_tcm_patterns` has `is_primary`
@@ -68,7 +79,7 @@ handoff file). This doc reconciles it against the repo as of `388c947`.
 
 ## C. MISSING
 
-- **`suppl.*`** — no supplement namespace, records, categories, template, or validator
+- **`supp.*`** — no supplement namespace, records, categories, template, or validator
   anywhere. Planned categories: vitamins, minerals, botanical extracts, fatty acids,
   probiotics, coenzymes/antioxidants, performance, multi-ingredient.
 - **`life.*`** — only `case_intake_baseline.lifestyle_notes` free text. No structured
@@ -89,19 +100,22 @@ handoff file). This doc reconciles it against the repo as of `388c947`.
 1. **D12 freeze 2026-09-01** — new tables/columns should land BEFORE 9/01. Additive
    changes stay legal after, but a wrong shape post-freeze is permanent. The schema's
    own rule: 寧可表先建好空著.
-2. **`med.*` vs `drug.*`** — direction 2 names `drug.` canonical, but the wired runtime
-   writes `med.*`. Every visit row written with `med.*` after 9/05 becomes a permanent
-   alias. Decide before the freeze; keep `med.*` as aliases via the existing alias map,
-   never a rename (D12).
+2. **`med.*` vs `drug.*`** — DECIDED (existing D15 of 2026-08-06, reconfirmed by Ting 2026-08-10): `drug.*` is canonical for new medication
+   identities. `med.*` records are NEVER destructively deleted — they are legacy
+   compatibility/migration aliases mapping toward `drug.*` via
+   `medication_alias_map.json`. Migration gate: after it, new real Clinical Visits
+   must not create new `med.*` references. Until the gate lands, `med.*` writes are
+   tolerated and alias-resolvable.
 3. **Typed relations must be additive** — existing edge arrays are consumed by
    validators and CG4. Types arrive as a NEW registered field/attribute in
    relation_registry (D13), never by retyping arrays in place.
-4. **`sym_id` fork blocks reuse** — until metric.* vs sym.* is settled,
-   `visit_observations` can't safely absorb lifestyle/vitals; hence the separate
-   lifestyle table in E3 rather than overloading it.
+4. ~~`sym_id` fork~~ — RESOLVED by D17: sym.* and metric.* are complementary (see B4).
+   The separate lifestyle table in E3 stays — lifestyle factors are behaviors, not
+   symptoms, and still don't belong in `visit_observations`.
 5. **Namespace proliferation** — D11's "namespace IS the type" is diagnostic-side; the
-   four new namespaces are fine but need a locked decision (E8) so agents don't invent
-   variants (`supp.*`, `supplement.*`, `ae.*`).
+   new namespaces are now LOCKED by D17 (`supp.*` — NOT `suppl.*` — plus `life.*`,
+   `exposure.*`, `adverse_event.*`, `modality.*`) so agents must not invent variants
+   (`suppl.*`, `supplement.*`, `ae.*`).
 6. **Scope: 26 days to 9/5** — MVP is *capture*, not taxonomy completeness. Vocabulary
    seeds stay at dozens of entries, not hundreds. No dashboards (direction 9).
 
@@ -110,8 +124,15 @@ handoff file). This doc reconciles it against the repo as of `388c947`.
 All case-level (no wired Patient entity yet — same caveat as intake; D4 coarse dates
 throughout; free text always allowed beside the ID).
 
+> **Timeline principle (D17, Ting):** long-term baseline exposure and Visit-level
+> changes belong to ONE coherent longitudinal model — baseline "coffee 3 cups/day"
+> plus Visit #4 "changed to 1 cup/day" must reconstruct the full timeline. Applies to
+> `drug.*`, `supp.*`, `life.*`, `exposure.*`. Concretely: E1/E2 ledger rows are the
+> baseline+state, and per-visit changes reference the SAME ledger row
+> (`change_since_last` + visit ids) — never a disconnected second system.
+
 1. **`case_agent_exposures`** — the longitudinal ledger (directions 3+5):
-   `agent_type` ('drug'|'supplement'), `agent_id` (drug.*/suppl.*, nullable),
+   `agent_type` ('drug'|'supplement'), `agent_id` (drug.*/supp.*, nullable),
    `name_text`, `dose_text`, `frequency_text`, `route`, `start_approx`, `stop_approx`,
    `status` ('current'|'stopped'|'prn'|'unknown'), `adherence_note`,
    `info_source` ('patient_reported'|'records'), `first_noted_visit_id`,
@@ -133,9 +154,11 @@ throughout; free text always allowed beside the ID).
    `name_text`, `severity` ('mild'|'moderate'|'severe'),
    `onset_text`, `resolution_status` ('resolved'|'resolving'|'ongoing'|'unknown'),
    `resolved_date`, `notes`.
-5. **Working-pattern model (V2 §4)** — additive columns on `visit_tcm_patterns`:
-   `role` ('primary'|'secondary'|'root'|'branch', nullable — `is_primary` stays and is
-   never removed) and `confidence`; plus new table `visit_pattern_differentials`
+5. **Working-pattern model (V2 §4, roles locked by D17)** — additive columns on
+   `visit_tcm_patterns`: `role` (MVP supports 'primary'|'secondary'; 'root'|'branch'
+   reserved in the vocabulary for later, no CHECK constraint blocking them;
+   `is_primary` stays and is never removed) and `confidence` (eventually supported;
+   column lands now, UI later); plus new table `visit_pattern_differentials`
    (`visit_id`, `pattern_id`, `ruled_out` 0/1, `note`) for candidates considered.
 6. **Vocabulary seeds** in `data/config/` (each ≤30 entries, build-data wired):
    `supplement_category_vocabulary.json`, `lifestyle_factor_vocabulary.json`
@@ -146,24 +169,32 @@ throughout; free text always allowed beside the ID).
 7. **relation_registry doc note** — reserve `relation_type` enum
    (associated_with | may_present_as | differential_candidate | commonly_seen_with)
    as a future edge attribute. Doc-only now; implementation belongs to Pattern V2-D.
-8. **D15 draft for Ting to lock** — (a) five new namespaces exactly `suppl.*`,
-   `life.*`, `exposure.*`, `adverse_event.*`, `modality.*`; (b) `drug.*` canonical,
-   `med.*` retained as aliases via `medication_alias_map.json`; (c) rule: lifestyle/
-   exposure data is observed behavior — it never auto-converts into a TCM diagnosis
-   or pattern (V2 §9), and suspected exposure never becomes confirmed poisoning
-   (V2 §10); pattern conclusions are entered only by the practitioner at Case/Visit
-   level.
+8. **D17 — LOCKED by Ting 2026-08-10 evening** (recorded in DECISIONS.md): (a) new
+   namespaces exactly `supp.*`, `life.*`, `exposure.*`, `adverse_event.*`,
+   `modality.*`; (b) `drug.*` canonical, `med.*` never deleted — legacy aliases via
+   `medication_alias_map.json`, migration gate after which new Visits create no new
+   `med.*` refs; (c) sym.*/metric.* complementary, optional symptom→measurement
+   links; (d) visit pattern roles primary|secondary MVP, root|branch reserved,
+   confidence eventually; (e) one coherent exposure timeline; (f) lifestyle/exposure
+   is observed behavior — never auto-converts into a TCM diagnosis or pattern (V2
+   §9), suspected exposure never becomes confirmed poisoning (V2 §10).
 
-## F. Next-week implementation order (8/11–8/17)
+## F. Next implementation cycle order (starts after Claude quota reset)
 
-1. **Mon–Tue** — D15 decision with Ting; one DDL commit adding the four new tables +
-   the `visit_tcm_patterns` columns (empty, validators untouched); push immediately.
-2. **Tue–Wed** — vocabulary seeds (E6) + build-data wiring; suppl.* category skeleton
+> ⚠️ **Working-tree warning for the next agent:** ~40 pre-existing deleted
+> `curriculum/` files sit in the dirty working tree. They are OUT OF SCOPE — do not
+> restore, stage, commit, or modify them, and NEVER use `git add -A` in this repo;
+> stage files by explicit path only.
+
+1. **First** — additive Clinical schema/DDL commit (NOT content-card expansion): the
+   four new tables + `visit_tcm_patterns` columns (empty, validators untouched);
+   push immediately.
+2. **Then** — vocabulary seeds (E6) + build-data wiring; supp.* category skeleton
    in the Pharmacology workspace (visible beside drug.*, separate namespace;
    V2 §6 seed list: vitamin D, B12, folate, CoQ10, omega-3, magnesium, zinc, etc.).
-3. **Wed–Thu** — smallest capture UI: visit-form entry for the agent ledger
+3. **Then** — smallest capture UI: visit-form entry for the agent ledger
    (current meds/supps with status) and adverse-event quick-add.
-4. **Fri** — walk ONE full fake case end-to-end (intake → visit → export), the gap
+4. **Then** — walk ONE full fake case end-to-end (intake → visit → export), the gap
    PLAN_TO_2026-09-05 already names: 「你從未走過一次完整流程」.
 5. **Explicitly deferred** — typed-relation implementation (Pattern V2-D track),
    supplement card content fills, med.*→drug.* data migration, dashboards, any

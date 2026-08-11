@@ -3154,3 +3154,11 @@ Current repo state as of this log:
 - **對帳結論**:ALREADY = D11 四命名空間非 1:1、Case/Visit 層辨證表、SOAP 旁掛 canonical ID、L1–L6 藥理骨架、日期/隔離/outcome 架構。PARTIAL = 關係無類型語意、用藥為逐次快照非縱向帳、`med.*` vs `drug.*` 並存、`visit_observations` 空表 + sym_id 分叉、visit 證型無 role/confidence。MISSING = `suppl.*`/`life.*`/`exposure.*`/`adverse_event.*`/`modality.*` 五個命名空間與四張新表。
 - **風險**:D12 凍結 2026-09-01 —— 新表必須在 9/01 前落地;`supp.*` vs `suppl.*` 拼法、med→drug 正名、sym_id 分叉,三項都等 Ting 在 D15 拍板。
 - **STOP**:未建表、未種詞彙、未動 UI、未動 relation_registry;下一步順序寫在對帳文件 §F。
+
+# 2026-08-10 Claude — D17 locked: V2 命名空間與模型規則(docs-only 收尾 checkpoint)
+
+- **做了什麼**:記錄 Ting 當晚拍板的決定為 **D17**(DECISIONS.md),同步更新對帳文件;零程式碼、零 data、零 DDL。
+- **D17 內容**:(1) 補充劑命名空間定案 **`supp.*`**(不是 V2 方向文件 §6 寫的 `suppl.*`);連同 `life.*` / `exposure.*` / `adverse_event.*` / `modality.*`。(2) 藥物重申 D15:`drug.*` 正典,`med.*` 永不刪除、走 alias,migration gate 之後新 Visit 不得再產生 `med.*`。(3) `sym.*` 與 `metric.*` 是互補不是競爭 —— 症狀可選連結一或多個量測;schema.sql 裡的 sym_id 分叉就此解決。(4) Visit 證型 role:MVP 支援 primary|secondary,root|branch 保留;confidence 之後補。(5) baseline 與 Visit 變化必須是同一條可重建的縱向時間線(drug/supp/life/exposure 全適用)。(6) 生活型態/暴露是觀察值,永不自動轉成證型;suspected 暴露永不自動變 confirmed。
+- **⚠️ 給下一個 agent 的工作樹警告**:工作樹裡有約 40 個先前就被刪除的 `curriculum/` 檔案,**不在範圍內** —— 不要 restore、不要 stage、不要 commit、不要動它們;**永遠不要用 `git add -A`**,一律逐檔路徑 stage。
+- **下一個實作週期**(Claude quota 重置後開始):第一步是 **additive Clinical schema/DDL**(四張新表 + visit_tcm_patterns 欄位,空表落地),不是知識卡內容擴充。順序在對帳文件 §F。
+- **STOP**:本 checkpoint 到此為止。
