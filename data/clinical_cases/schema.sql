@@ -108,6 +108,15 @@ CREATE TABLE IF NOT EXISTS cases (
   -- negative. The rejected allergies->red_flags fold (localstorage_sqlite_
   -- mapping.json, unresolved_needs_ting) is untouched by this column.
   allergy_status TEXT CHECK (allergy_status IS NULL OR allergy_status IN ('none','has','unknown')),
+  -- Publication consent (academic-readiness batch, pre-9/01 freeze). CARE
+  -- requires informed consent for a case REPORT; recorded here at case level
+  -- because consent is per-story, not per-person — the same patient can
+  -- consent for one condition and decline another. NULL = never asked (the
+  -- default for every pre-existing case; consent is NEVER fabricated,
+  -- D4). This is consent to publish a de-identified case report — not
+  -- treatment consent, which is outside this system's scope.
+  publication_consent TEXT CHECK (publication_consent IS NULL OR publication_consent IN ('granted','declined','pending')),
+  publication_consent_date TEXT,
   FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
@@ -219,6 +228,22 @@ CREATE TABLE IF NOT EXISTS visits (
   reflection_differential_considered TEXT,
   reflection_note TEXT,
   reflection_if_ineffective_plan TEXT,
+  -- STRICTA 2010 item 2 needling parameters, VISIT level (academic-readiness
+  -- batch, pre-9/01 freeze). visit_acupuncture below carries the per-POINT
+  -- detail (needle_depth, technique, e_stim per point); the app today
+  -- captures one value per visit, and these columns mirror that flat shape
+  -- 1:1 (localStorage needleCount/needleDepthText/deqiResponse/
+  -- needleStimulation/needleTypeText). If per-point capture arrives later,
+  -- these stay as the visit-level summary — no falsifying fan-out of a
+  -- visit-level answer into per-point rows (D4 spirit).
+  needle_count INTEGER CHECK (needle_count IS NULL OR needle_count >= 0),
+  needle_depth_text TEXT,
+  deqi_response TEXT,        -- obtained | partial | not_obtained | not_sought
+  needle_stimulation TEXT,   -- manual | electro | none
+  needle_type_text TEXT,     -- gauge×length + material/brand, free text per STRICTA 2g
+  -- CARE item 12: the patient's own perspective on this visit/episode,
+  -- verbatim or paraphrased — never the practitioner's assessment restated.
+  patient_perspective TEXT,
   created_at TEXT,
   updated_at TEXT,
   FOREIGN KEY (case_id) REFERENCES cases(id)

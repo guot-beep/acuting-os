@@ -431,6 +431,27 @@
       },
       "patient_prompt_zh": "",
       "patient_prompt_en": ""
+    },
+    {
+      "id": "metric.pgic",
+      "name": "pgic",
+      "label_zh": "整體改變感受 PGIC(1 大幅改善 / 4 沒變 / 7 大幅惡化)",
+      "label_en": "Patient Global Impression of Change (1 very much improved / 4 no change / 7 very much worse)",
+      "category": "global",
+      "unit": "1-7",
+      "direction_good": "decrease",
+      "scale": {
+        "min": 1,
+        "max": 7
+      },
+      "instrument_en": "PGIC 7-point scale (1 very much improved, 2 much improved, 3 minimally improved, 4 no change, 5 minimally worse, 6 much worse, 7 very much worse)",
+      "interpretation_en": "IMMPACT-recommended global outcome for chronic pain trials; 1-2 is usually treated as a clinically important response. Single-item, anchor-worded — record the patient's own rating, not the practitioner's impression.",
+      "source": {
+        "name": "Dworkin et al. IMMPACT recommendations (J Pain 2008); PGIC derived from Guy W (ed), ECDEU Assessment Manual, CGIC.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18055266/"
+      },
+      "patient_prompt_zh": "跟開始治療前比,你覺得整體狀況:1=大幅改善、2=明顯改善、3=稍微改善、4=沒有改變、5=稍微惡化、6=明顯惡化、7=大幅惡化",
+      "patient_prompt_en": "Compared with before you started treatment, overall you feel: 1 = very much improved, 2 = much improved, 3 = minimally improved, 4 = no change, 5 = minimally worse, 6 = much worse, 7 = very much worse."
     }
   ]
 }

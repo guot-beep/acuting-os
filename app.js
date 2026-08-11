@@ -139,6 +139,15 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true },
   { metricId: "metric.night_wakings", min: 0, max: null, integer: true },
   { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
+  // Academic-readiness batch (2026-08, pre-9/01 freeze): PGIC — the
+  // IMMPACT-recommended single-item global outcome. 1-7 whole-number
+  // anchor scale where the ANCHORS carry the meaning (1 very much
+  // improved … 4 no change … 7 very much worse) — min is 1, not 0,
+  // because 0 has no anchor on this instrument; entering it is a data
+  // error, not a lower bound clamp. Registry record metric.pgic
+  // introduces category "global" (IMMPACT's own domain name for this
+  // instrument class).
+  { metricId: "metric.pgic", min: 1, max: 7, integer: true },
 ];
 
 // Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
@@ -5012,6 +5021,14 @@ function normalizeClinicalCase(value) {
     baselineSeverity: (value.baselineSeverity === 0 || value.baselineSeverity) ? Number(value.baselineSeverity) : "",
     occupation: String(value.occupation || ""),
     goals: String(value.goals || ""),
+    // Publication consent (academic-readiness batch, pre-9/01 freeze; CARE
+    // requires informed consent BEFORE a case report can be written). Case-
+    // level, D4-style: "" = never asked (the default for every existing
+    // case — consent is NEVER fabricated), 'granted'|'declined'|'pending' =
+    // asked, with the date the answer was given. This records consent to
+    // publish a de-identified case report; it is not treatment consent.
+    publicationConsent: String(value.publicationConsent || ""),
+    publicationConsentDate: String(value.publicationConsentDate || ""),
     chiefComplaint: String(value.chiefComplaint || ""),
     historyPresent: String(value.historyPresent || ""),
     pastHistory: String(value.pastHistory || ""),
@@ -5233,6 +5250,23 @@ function normalizeSoapNote(value) {
     acupointLinks: normalizeStringList(value.acupointLinks),
     retentionMinutes: value.retentionMinutes ? Number(value.retentionMinutes) : "",
     technique: String(value.technique || ""),
+    // STRICTA 2010 item 2 needling parameters (academic-readiness batch,
+    // pre-9/01 freeze). Flat scalars beside the needling fields that already
+    // existed (pointsUsed/acupointLinks = 2b, retentionMinutes = 2f,
+    // technique = free text) — these five complete the checklist: 2a needle
+    // count, 2c depth, 2d response sought (de qi), 2e stimulation, 2g needle
+    // type/size. "" = not recorded (D4: distinct from zero/none — a visit
+    // with no needling keeps "" everywhere, it does not claim needleCount 0).
+    // deqiResponse vocabulary: ''|'obtained'|'partial'|'not_obtained'|
+    // 'not_sought'; needleStimulation: ''|'manual'|'electro'|'none'. Free-
+    // text where STRICTA itself is free-text (depth varies per point; type
+    // is gauge×length+material). No form fields yet — carried like
+    // tcmPatternSelections.note until the UI grows them.
+    needleCount: (value.needleCount === 0 || value.needleCount) ? Number(value.needleCount) : "",
+    needleDepthText: String(value.needleDepthText || ""),
+    deqiResponse: String(value.deqiResponse || ""),
+    needleStimulation: String(value.needleStimulation || ""),
+    needleTypeText: String(value.needleTypeText || ""),
     formulaHerbs: String(value.formulaHerbs || ""),
     formulaLinks: normalizeStringList(value.formulaLinks),
     westernMeds: String(value.westernMeds || ""),
@@ -5311,6 +5345,12 @@ function normalizeSoapNote(value) {
     effectDurationDays: (value.effectDurationDays === 0 || value.effectDurationDays) ? Number(value.effectDurationDays) : "",
     referralOrSupervisorQuestion: String(value.referralOrSupervisorQuestion || ""),
     followUp: String(value.followUp || ""),
+    // CARE checklist item 12 — the patient's own words on how they are doing
+    // and what the episode means to them, captured per visit. This is the
+    // PATIENT's perspective verbatim/paraphrased, never the practitioner's
+    // assessment restated (that lives in assessment above). Academic-
+    // readiness batch, pre-9/01 freeze; no form field yet.
+    patientPerspective: String(value.patientPerspective || ""),
     // LL1 按語: optional structured reflection (Learning Loop track)
     differentialConsidered: String(value.differentialConsidered || ""),
     reflection: String(value.reflection || ""),

@@ -625,6 +625,60 @@
     },
     {
       "source_scope": "soap",
+      "source_field": "needleCount",
+      "destination": "visits.needle_count",
+      "transformation": "Number() or NULL. STRICTA 2a, visit-level — deliberately NOT fanned out to visit_acupuncture rows (see schema.sql visits comment).",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "needleDepthText",
+      "destination": "visits.needle_depth_text",
+      "transformation": "Direct copy. STRICTA 2c, visit-level free text; per-point visit_acupuncture.needle_depth is a separate future layer.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "deqiResponse",
+      "destination": "visits.deqi_response",
+      "transformation": "Direct copy. STRICTA 2d vocabulary: obtained | partial | not_obtained | not_sought; '' -> NULL.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "needleStimulation",
+      "destination": "visits.needle_stimulation",
+      "transformation": "Direct copy. STRICTA 2e vocabulary: manual | electro | none; '' -> NULL.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "needleTypeText",
+      "destination": "visits.needle_type_text",
+      "transformation": "Direct copy. STRICTA 2g free text (gauge×length + material/brand).",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "patientPerspective",
+      "destination": "visits.patient_perspective",
+      "transformation": "Direct copy. CARE item 12 — patient's own words, never the practitioner's assessment restated.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
       "source_field": "formulaHerbs",
       "destination": "visit_formulas.formula_name_text",
       "transformation": "EXPLODE free text -> rows.",
