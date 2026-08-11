@@ -17,9 +17,9 @@
     "canon_records": 140,
     "canon_unique_ids": 134,
     "canon_duplicate_ids": 6,
-    "canonical_namespace_ids": 101,
-    "mapped": 42,
-    "pending_registration": 60,
+    "canonical_namespace_ids": 128,
+    "mapped": 46,
+    "pending_registration": 56,
     "excluded_formula_patterns": 32
   },
   "aliases": {
@@ -31,17 +31,21 @@
     "pat.脾腎陽虛": "pattern.spleen_kidney_yang_deficiency",
     "pat.下焦濕熱": "pattern.damp_heat_lower_burner",
     "pat.腎陰虛": "pattern.kidney_yin_deficiency",
+    "pat.外感風寒": "pattern.wind_cold",
     "pat.腎精不足": "pattern.kidney_essence_deficiency",
     "pat.肝血虛": "pattern.liver_blood_deficiency",
+    "pat.脾胃氣虛": "pattern.spleen_qi_deficiency",
     "pat.肝火上炎": "pattern.liver_fire",
     "pat.血虛": "pattern.blood_deficiency",
     "pat.寒凝肝脈": "pattern.cold_stagnation_liver_channel",
+    "pat.外感風熱": "pattern.wind_heat",
     "pat.脾氣虛": "pattern.spleen_qi_deficiency",
     "pat.心腎不交": "pattern.heart_kidney_not_communicating",
     "pat.腎氣虛": "pattern.kidney_qi_deficiency",
     "pat.肝陽上亢": "pattern.liver_yang_rising",
     "pat.濕痰": "pattern.phlegm_damp",
     "pat.腎陽虛水泛": "pattern.kidney_yang_deficiency_water_flooding",
+    "pat.少陰寒化": "pattern.shao_yin_cold_transformation",
     "pat.膀胱濕熱": "pattern.bladder_damp_heat",
     "pat.濕熱": "pattern.damp_heat",
     "pat.脾陽虛": "pattern.spleen_yang_deficiency",
@@ -116,22 +120,6 @@
       ]
     },
     {
-      "legacy_id": "pat.外感風寒",
-      "name_zh": "外感風寒",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 10,
-      "example_conditions": [
-        "cond.lumbar_disc_herniation",
-        "cond.fibromyalgia",
-        "cond.tension_headache",
-        "cond.cluster_headache",
-        "cond.rheumatoid_arthritis",
-        "cond.asthma",
-        "cond.copd",
-        "cond.chronic_cough"
-      ]
-    },
-    {
       "legacy_id": "pat.脾虛濕困",
       "name_zh": "脾虛濕困",
       "aliases_zh": [],
@@ -145,22 +133,6 @@
         "cond.copd",
         "cond.chronic_cough",
         "cond.post_viral_cough"
-      ]
-    },
-    {
-      "legacy_id": "pat.脾胃氣虛",
-      "name_zh": "脾胃氣虛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 9,
-      "example_conditions": [
-        "cond.endometriosis",
-        "cond.primary_dysmenorrhea",
-        "cond.pms",
-        "cond.irregular_menstruation",
-        "cond.female_infertility",
-        "cond.recurrent_pregnancy_loss",
-        "cond.chronic_pelvic_pain",
-        "cond.peptic_ulcer"
       ]
     },
     {
@@ -209,20 +181,6 @@
       ]
     },
     {
-      "legacy_id": "pat.外感風熱",
-      "name_zh": "外感風熱",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 6,
-      "example_conditions": [
-        "cond.tension_headache",
-        "cond.cluster_headache",
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough",
-        "cond.hearing_loss"
-      ]
-    },
-    {
       "legacy_id": "pat.痰氣互結",
       "name_zh": "痰氣互結",
       "aliases_zh": [],
@@ -245,18 +203,6 @@
         "cond.copd",
         "cond.chronic_cough",
         "cond.post_viral_cough",
-        "cond.post_covid"
-      ]
-    },
-    {
-      "legacy_id": "pat.少陰寒化",
-      "name_zh": "少陰寒化證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 4,
-      "example_conditions": [
-        "cond.rheumatoid_arthritis",
-        "cond.circadian_disorder",
-        "cond.asthma",
         "cond.post_covid"
       ]
     },

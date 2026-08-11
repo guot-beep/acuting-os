@@ -104,6 +104,10 @@ for (const r of library) {
 // alias is safe to promote into a legacy identity mapping.
 const APPROVED_LEGACY_ALIAS_TARGETS = new Map([
   ["pat.濕痰", "pattern.phlegm_damp"],
+  // P-3 (2026-08-11): verified against library.aliases_zh, assertion below re-checks on every run.
+  ["pat.外感風寒", "pattern.wind_cold"],
+  ["pat.脾胃氣虛", "pattern.spleen_qi_deficiency"],
+  ["pat.外感風熱", "pattern.wind_heat"],
 ]);
 const registryIds = new Set(registry.map((record) => record.id));
 const activeLibraryById = new Map(

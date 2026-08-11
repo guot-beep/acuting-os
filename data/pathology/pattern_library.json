@@ -25,7 +25,8 @@
       "typical_formulas": [
         "formula.bu_fei_tang",
         "formula.si_jun_zi_tang",
-        "formula.yu_ping_feng_san"
+        "formula.yu_ping_feng_san",
+        "formula.liu_jun_zi_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌淡苔白",
@@ -114,7 +115,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.肺氣虛"
+      ]
     },
     {
       "id": "pattern.lung_yin_deficiency",
@@ -724,7 +728,9 @@
       ],
       "typical_formulas": [
         "formula.si_jun_zi_tang",
-        "formula.shen_ling_bai_zhu_san"
+        "formula.shen_ling_bai_zhu_san",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.gui_pi_tang"
       ],
       "review_status": "draft",
       "entity_type": "tcm_pattern",
@@ -857,7 +863,11 @@
           "NCBAHM_CH_Exam_Content_Outline_2026",
           "https://cloudtcm.com/pattern/spleen_qi_xu"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.脾胃氣虛",
+        "pat.脾氣虛"
+      ]
     },
     {
       "id": "pattern.spleen_yang_deficiency",
@@ -969,7 +979,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.脾陽虛"
+      ]
     },
     {
       "id": "pattern.spleen_qi_sinking",
@@ -1180,7 +1193,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.脾不統血"
+      ]
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -1279,7 +1295,10 @@
         "differentiation": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.脾胃濕熱"
+      ]
     },
     {
       "id": "pattern.cold_damp_encumbering_spleen",
@@ -1413,7 +1432,8 @@
         "ST45"
       ],
       "typical_formulas": [
-        "formula.qing_wei_san"
+        "formula.qing_wei_san",
+        "formula.huang_lian_jie_du_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌紅苔黃",
@@ -1507,7 +1527,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/05_AD_PATTERN_STOMACH_MIDDLE_JIAO.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.胃熱"
+      ]
     },
     {
       "id": "pattern.stomach_yin_deficiency",
@@ -1529,7 +1552,8 @@
         "BL21"
       ],
       "typical_formulas": [
-        "formula.sha_shen_mai_men_dong_tang"
+        "formula.sha_shen_mai_men_dong_tang",
+        "formula.mai_men_dong_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌紅少苔",
@@ -1610,7 +1634,10 @@
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
       },
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "legacy_ids": [
+        "pat.胃陰虛"
+      ]
     },
     {
       "id": "pattern.food_stagnation",
@@ -1751,7 +1778,8 @@
       "typical_formulas": [
         "formula.chai_hu_shu_gan_san",
         "formula.xiao_yao_san",
-        "formula.yue_ju_wan"
+        "formula.yue_ju_wan",
+        "formula.jia_wei_xiao_yao_san"
       ],
       "review_status": "draft",
       "tongue_zh": "舌苔薄白",
@@ -1839,7 +1867,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.肝氣鬱結"
+      ]
     },
     {
       "id": "pattern.liver_fire",
@@ -1980,7 +2011,10 @@
         "眩暈",
         "頭痛"
       ],
-      "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點（來自已退役 pattern.liver_fire_flaring，高血壓/眩暈頭痛專題匯入）：代表方龍膽瀉肝湯。主穴：LR2 行間、LI4 合谷、LI11 曲池、GB20 風池、GV20 百會、ST44 內庭。"
+      "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點（來自已退役 pattern.liver_fire_flaring，高血壓/眩暈頭痛專題匯入）：代表方龍膽瀉肝湯。主穴：LR2 行間、LI4 合谷、LI11 曲池、GB20 風池、GV20 百會、ST44 內庭。",
+      "legacy_ids": [
+        "pat.肝火上炎"
+      ]
     },
     {
       "id": "pattern.liver_yang_rising",
@@ -2125,7 +2159,10 @@
           "NCBAHM_2026_CH_Outline",
           "https://cloudtcm.com/pattern/120"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.肝陽上亢"
+      ]
     },
     {
       "id": "pattern.liver_wind",
@@ -2373,7 +2410,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.肝血虛"
+      ]
     },
     {
       "id": "pattern.liver_yin_deficiency",
@@ -2394,7 +2434,8 @@
         "BL23"
       ],
       "typical_formulas": [
-        "formula.yi_guan_jian"
+        "formula.yi_guan_jian",
+        "formula.shao_yao_gan_cao_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌紅少苔",
@@ -2483,7 +2524,10 @@
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
       },
-      "pattern_family": "zang_fu"
+      "pattern_family": "zang_fu",
+      "legacy_ids": [
+        "pat.肝陰虛"
+      ]
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -2502,7 +2546,8 @@
         "SP6"
       ],
       "typical_formulas": [
-        "formula.tian_tai_wu_yao_san"
+        "formula.tian_tai_wu_yao_san",
+        "formula.wu_zhu_yu_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌苔白滑",
@@ -2582,7 +2627,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.寒凝肝脈"
+      ]
     },
     {
       "id": "pattern.liver_gallbladder_damp_heat",
@@ -2928,7 +2976,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.心陽虛"
+      ]
     },
     {
       "id": "pattern.heart_blood_deficiency",
@@ -3050,7 +3101,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.心血虛"
+      ]
     },
     {
       "id": "pattern.heart_yin_deficiency",
@@ -3171,7 +3225,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.心陰虛"
+      ]
     },
     {
       "id": "pattern.heart_fire",
@@ -3613,7 +3670,10 @@
           "NCBAHM_CH_Exam_Content_Outline_2026",
           "https://cloudtcm.com/pattern/kidney_yang_xu"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.腎陽虛"
+      ]
     },
     {
       "id": "pattern.kidney_yin_deficiency",
@@ -3636,7 +3696,8 @@
         "RN4"
       ],
       "typical_formulas": [
-        "formula.liu_wei_di_huang_wan"
+        "formula.liu_wei_di_huang_wan",
+        "formula.zhi_bai_di_huang_wan"
       ],
       "review_status": "draft",
       "entity_type": "tcm_pattern",
@@ -3759,7 +3820,10 @@
           "NCBAHM_CH_Exam_Content_Outline_2026",
           "https://cloudtcm.com/pattern/kidney_yin_xu"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.腎陰虛"
+      ]
     },
     {
       "id": "pattern.kidney_essence_deficiency",
@@ -3871,7 +3935,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.腎精不足"
+      ]
     },
     {
       "id": "pattern.kidney_qi_not_firm",
@@ -3964,7 +4031,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.腎氣不固"
+      ]
     },
     {
       "id": "pattern.kidney_not_grasping_qi",
@@ -3985,7 +4055,9 @@
         "BL13",
         "BL23"
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.su_zi_jiang_qi_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌淡",
       "pulse_zh": "脈沉弱",
@@ -4062,7 +4134,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.腎不納氣"
+      ]
     },
     {
       "id": "pattern.heart_kidney_not_communicating",
@@ -4205,7 +4280,10 @@
         "黃連阿膠湯",
         "不寐"
       ],
-      "exam_pearls_zh": "Bastyr Insomnia Therapeutics & NCCAOM 考點（來自已退役 pattern.insomnia_heart_kidney_disharmony）：代表方黃連阿膠湯或交泰丸（交泰丸尚未登記入方劑庫）。主穴：HT7 神門、KI3 太溪、SP6 三陰交、EX-HN16 安眠。"
+      "exam_pearls_zh": "Bastyr Insomnia Therapeutics & NCCAOM 考點（來自已退役 pattern.insomnia_heart_kidney_disharmony）：代表方黃連阿膠湯或交泰丸（交泰丸尚未登記入方劑庫）。主穴：HT7 神門、KI3 太溪、SP6 三陰交、EX-HN16 安眠。",
+      "legacy_ids": [
+        "pat.心腎不交"
+      ]
     },
     {
       "id": "pattern.heart_spleen_deficiency",
@@ -4321,6 +4399,9 @@
         "Poor appetite and fatigue",
         "Sallow complexion",
         "Scanty menstruation"
+      ],
+      "legacy_ids": [
+        "pat.心脾兩虛"
       ]
     },
     {
@@ -4536,7 +4617,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.肝胃不和"
+      ]
     },
     {
       "id": "pattern.lung_kidney_yin_deficiency",
@@ -4753,7 +4837,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/02_AD_PATTERN_SPLEEN_LUNG.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.脾腎陽虛"
+      ]
     },
     {
       "id": "pattern.qi_stagnation_blood_stasis",
@@ -4774,7 +4861,8 @@
         "LI4"
       ],
       "typical_formulas": [
-        "formula.xue_fu_zhu_yu_tang"
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.tao_hong_si_wu_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌暗或有瘀點",
@@ -4847,7 +4935,10 @@
         "points": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.氣滯血瘀"
+      ]
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -4945,7 +5036,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/06_AD_PATTERN_QI_BLOOD_PHLEGM_DAMP.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.氣血兩虛"
+      ]
     },
     {
       "id": "pattern.blood_stasis",
@@ -5049,6 +5143,9 @@
         "Masses/lumps",
         "Dry, scaly skin",
         "Purplish lips and tongue"
+      ],
+      "legacy_ids": [
+        "pat.血瘀"
       ]
     },
     {
@@ -5244,7 +5341,10 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/04_AD_PATTERN_KIDNEY_BLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.下焦濕熱"
+      ]
     },
     {
       "id": "pattern.phlegm_damp",
@@ -5355,6 +5455,9 @@
         "Chest oppression and epigastric fullness",
         "Copious phlegm",
         "Dizziness"
+      ],
+      "legacy_ids": [
+        "pat.濕痰"
       ]
     },
     {
@@ -6932,7 +7035,10 @@
           "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
         ]
       },
-      "review_status": "draft"
+      "review_status": "draft",
+      "legacy_ids": [
+        "pat.外感風寒"
+      ]
     },
     {
       "id": "pattern.wind_heat",
@@ -7067,7 +7173,10 @@
           "Acuting_OS_Pattern_V1_Canonical_Gap_Pack_StomachFire_WindCold_WindHeat_2026-08-08.md (ChatGPT canonical gap pack, source-backed synthesis of Bastyr/NCBAHM/AD course material)"
         ]
       },
-      "review_status": "draft"
+      "review_status": "draft",
+      "legacy_ids": [
+        "pat.外感風熱"
+      ]
     },
     {
       "id": "pattern.phlegm_fire_disturbing_heart",
@@ -7607,7 +7716,9 @@
           "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§LI03, BL01"
         }
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.ge_gen_huang_qin_huang_lian_tang"
+      ],
       "typical_points": [],
       "sources": [
         "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
@@ -7648,7 +7759,10 @@
       "tongue_zh": "舌紅，苔黃膩",
       "tongue_en": "Red tongue with a yellow greasy coating",
       "pulse_zh": "脈滑數",
-      "pulse_en": "Slippery, rapid pulse"
+      "pulse_en": "Slippery, rapid pulse",
+      "legacy_ids": [
+        "pat.大腸濕熱"
+      ]
     },
     {
       "id": "pattern.stomach_qi_deficiency",
@@ -7938,7 +8052,10 @@
       "tongue_zh": "舌淡",
       "tongue_en": "Pale tongue",
       "pulse_zh": "脈沉弱，尺部尤弱",
-      "pulse_en": "Deep weak pulse, especially at the chi positions"
+      "pulse_en": "Deep weak pulse, especially at the chi positions",
+      "legacy_ids": [
+        "pat.腎氣虛"
+      ]
     },
     {
       "id": "pattern.kidney_yang_deficiency_water_flooding",
@@ -7997,7 +8114,9 @@
           "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §KI08; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
         }
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.zhen_wu_tang"
+      ],
       "typical_points": [],
       "sources": [
         "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
@@ -8037,7 +8156,10 @@
       "tongue_zh": "舌淡胖濕",
       "tongue_en": "Pale swollen wet tongue",
       "pulse_zh": "脈沉弱遲",
-      "pulse_en": "Deep weak slow pulse"
+      "pulse_en": "Deep weak slow pulse",
+      "legacy_ids": [
+        "pat.腎陽虛水泛"
+      ]
     },
     {
       "id": "pattern.bladder_damp_heat",
@@ -8093,7 +8215,9 @@
           "source": "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
         }
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.ba_zheng_san"
+      ],
       "typical_points": [],
       "sources": [
         "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
@@ -8141,7 +8265,10 @@
       "tongue_zh": "舌紅，苔黃膩",
       "tongue_en": "Red tongue with a yellow greasy coating",
       "pulse_zh": "脈滑數，尺部可兼弦",
-      "pulse_en": "Slippery rapid pulse, possibly wiry at the chi position"
+      "pulse_en": "Slippery rapid pulse, possibly wiry at the chi position",
+      "legacy_ids": [
+        "pat.膀胱濕熱"
+      ]
     },
     {
       "id": "pattern.bladder_deficiency_cold",
@@ -8198,7 +8325,9 @@
           "source": "Acuting_OS_TCM_Pattern_Expansion_Research_Pack_v0.3_Batch03_ZangFu_2026-08-08.md §§BL01-BL02"
         }
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.suo_quan_wan"
+      ],
       "typical_points": [],
       "sources": [
         "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
@@ -8238,7 +8367,10 @@
       "tongue_zh": "舌淡濕",
       "tongue_en": "Pale wet tongue",
       "pulse_zh": "脈沉弱遲",
-      "pulse_en": "Deep weak slow pulse"
+      "pulse_en": "Deep weak slow pulse",
+      "legacy_ids": [
+        "pat.膀胱虛寒"
+      ]
     },
     {
       "id": "pattern.lung_spleen_qi_deficiency",
@@ -8752,7 +8884,9 @@
           "source": "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝腎陰虛"
         }
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.qi_ju_di_huang_wan"
+      ],
       "typical_points": [],
       "sources": [
         "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
@@ -8799,7 +8933,10 @@
       "tongue_zh": "舌紅，少苔或無苔",
       "tongue_en": "Red tongue with little or no coating",
       "pulse_zh": "脈細數，可兼弦",
-      "pulse_en": "Thready rapid pulse, possibly wiry"
+      "pulse_en": "Thready rapid pulse, possibly wiry",
+      "legacy_ids": [
+        "pat.肝腎陰虛"
+      ]
     },
     {
       "id": "pattern.liver_fire_scorching_lung",
@@ -8856,7 +8993,9 @@
           "source": "curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md §肝火犯肺; Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md"
         }
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.long_dan_xie_gan_tang"
+      ],
       "typical_points": [],
       "sources": [
         "Acuting_OS_Pattern_V2_Final_Canonical_Decision_Pack_2026-08-08.md",
@@ -8896,7 +9035,10 @@
       "tongue_zh": "舌邊尖紅或紅乾，苔薄黃或厚黃",
       "tongue_en": "Red edges and tip or a red dry tongue, with a thin or thick yellow coating",
       "pulse_zh": "脈弦數或滑數",
-      "pulse_en": "Wiry rapid or slippery rapid pulse"
+      "pulse_en": "Wiry rapid or slippery rapid pulse",
+      "legacy_ids": [
+        "pat.肝火犯肺"
+      ]
     },
     {
       "id": "pattern.heart_kidney_yin_deficiency",
@@ -9806,7 +9948,10 @@
       "tongue_zh": "舌淡，苔白膩",
       "tongue_en": "Pale tongue with a white greasy coating",
       "pulse_zh": "脈遲或緊",
-      "pulse_en": "Slow or tight pulse"
+      "pulse_en": "Slow or tight pulse",
+      "legacy_ids": [
+        "pat.風寒濕痹"
+      ]
     },
     {
       "id": "pattern.qi_deficiency",
@@ -9896,7 +10041,10 @@
         "points": [
           "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.氣虛"
+      ]
     },
     {
       "id": "pattern.blood_deficiency",
@@ -9986,7 +10134,10 @@
         "points": [
           "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.血虛"
+      ]
     },
     {
       "id": "pattern.yin_deficiency",
@@ -10039,7 +10190,8 @@
       "treatment_principle_zh": "滋陰",
       "treatment_principle_en": "Nourish yin",
       "typical_formulas": [
-        "formula.liu_wei_di_huang_wan"
+        "formula.liu_wei_di_huang_wan",
+        "formula.zhi_bai_di_huang_wan"
       ],
       "typical_points": [
         "KI3",
@@ -10074,7 +10226,10 @@
         "points": [
           "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.陰虛"
+      ]
     },
     {
       "id": "pattern.yang_deficiency",
@@ -10391,7 +10546,8 @@
       "treatment_principle_zh": "清熱利濕",
       "treatment_principle_en": "Clear heat and disinhibit dampness",
       "typical_formulas": [
-        "formula.gan_lu_xiao_du_dan"
+        "formula.gan_lu_xiao_du_dan",
+        "formula.er_miao_san"
       ],
       "typical_points": [
         "SP9",
@@ -10426,7 +10582,10 @@
         "points": [
           "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.濕熱"
+      ]
     },
     {
       "id": "pattern.phlegm",
@@ -11245,7 +11404,10 @@
         "points": [
           "針灸學 教材通用(經絡辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "legacy_ids": [
+        "pat.少陰寒化"
+      ]
     },
     {
       "id": "pattern.shao_yin_heat_transformation",
