@@ -3363,3 +3363,9 @@ Current repo state as of this log:
 - **調查**:成果卡在 acuting-antigravity worktree 的 pattern-v2-implementation 分支(8 個 pharm commits),從未併入主線;主線只差 UI(js WIP 未提交)。真實成色:40 drugs/33 classes/29 targets/5 systems **全為 draft 骨架**——0 來源、0 禁忌、0 不良反應,truth-verification 閘門建好但無已驗內容;中文名有錯(如 lisinopril→「李斯諾普」,應為賴諾普利)。
 - **整合**:採納資料檔+4 支 pharm 驗證/測試腳本(檔案級 adoption,不 git-merge——遵守 knowledge.js 覆寫教訓);正式提交擱置多日的 pharm UI WIP(knowledge.js +96/router.js +2)。live:pharm workspace 40 卡渲染、bundle 40/33/29、0 console errors、validate-pharm PASS、ratchet 無回歸。
 - **待辦(Sonnet 批次)**:40 個中文名逐一審校 + 用其 DailyMed/MedlinePlus manifests 把 draft 填成 verified(來源逐欄)。在 UI 上 draft 卡誠實顯示 status pill 與 gap note——這正是該 WIP 自己的設計。
+
+# 2026-08-11 Fable — 資產盤點糾偏(Ting 抓到重複下單)+ 訂單三修
+
+- Ting 指正:下單前未盤點既有資產。實查結果:CR-011 全重複(pack 02 即 tdis 完整度審查+75 條)、CR-010 半重複(pack 01+71 已有 93 條 masterlist 與 board 殘缺 189 行)、CR-012 大半重複(Pattern Batch02-10 zip 內 Batch04/07/08 已含婦科/衝任/奇經/辨證系統研究)。已向 SOL 三度修正:CR-011 取消、CR-010 縮為「補到 300 的 delta 清單」、CR-012 縮為「V2-D Final Canonical Decision Pack」。
+- 跨倉盤點另發現:pattern-v2-implementation 分支較主線 +44k 行(含 731 行完整版 validate-pharm-standard——主線現用的是舊小版,**待對帳採納**);antigravity worktree 有 curriculum/pharm/v7_extracted 未入庫。
+- 已請 SOL 出「最新版 manifest」→ 將建 docs/RESEARCH_ASSET_INDEX.md,之後任何下單先查索引(教訓已入長期記憶)。
