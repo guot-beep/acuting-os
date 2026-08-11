@@ -27369,7 +27369,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/203"
-      ]
+      ],
+      "red_flags_zh": [
+        "發燒、腰痛、嘔吐 → 腎盂腎炎，急件處置——孕婦與糖尿病患尤急（急症）",
+        "感染治癒後血尿仍持續 → 膀胱癌排除（尤其吸菸、四十歲以上）",
+        "男性泌尿道感染 → 結構性原因評估，非單純抗生素了事",
+        "妊娠期菌尿 → 即使無症狀也治療——早產風險",
+        "反覆發作 → 結石、殘尿、結構異常影像評估"
+      ],
+      "red_flags_en": [
+        "Fever, flank pain, vomiting → pyelonephritis, urgent management — most urgent in pregnancy and diabetes (emergency)",
+        "Hematuria persisting after infection clears → exclude bladder cancer (especially smokers, over forty)",
+        "UTI in a man → structural evaluation, never antibiotics alone",
+        "Bacteriuria in pregnancy → treat even without symptoms — preterm-birth risk",
+        "Recurrent episodes → imaging for stones, residual urine, structural anomaly"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AUA/EAU 反覆泌尿道感染通說；curriculum/conditions/1.2 Lin syndrome handout 轉介精神"
+        ],
+        "red_flags_en": [
+          "AUA/EAU 反覆泌尿道感染通說；curriculum/conditions/1.2 Lin syndrome handout 轉介精神"
+        ]
+      }
     },
     {
       "id": "cond.interstitial_cystitis",
@@ -27456,10 +27478,28 @@
         "western_pathology_en": [
           "AUA — 間質性膀胱炎/膀胱疼痛症候群通說(GAG 層、Hunner 亞型)",
           "MedlinePlus — Interstitial Cystitis (https://medlineplus.gov/interstitialcystitis.html)"
+        ],
+        "red_flags_zh": [
+          "AUA 間質性膀胱炎診療通說（血尿=膀胱鏡）"
+        ],
+        "red_flags_en": [
+          "AUA 間質性膀胱炎診療通說（血尿=膀胱鏡）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/interstitialcystitis.html"
+      ],
+      "red_flags_zh": [
+        "血尿 → 膀胱鏡不可省——腫瘤排除",
+        "發燒加膿尿 → 感染性病程，另途處置",
+        "症狀型態驟變 → 重新評估，勿一律歸因舊診斷",
+        "骨盆腫塊或不明體重減輕 → 影像檢查"
+      ],
+      "red_flags_en": [
+        "Hematuria → cystoscopy is not optional — exclude malignancy",
+        "Fever with pyuria → an infectious course, managed on another track",
+        "Abrupt change in symptom pattern → re-evaluate rather than defaulting to the old diagnosis",
+        "Pelvic mass or unexplained weight loss → imaging"
       ]
     },
     {
@@ -27841,7 +27881,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/28507"
-      ]
+      ],
+      "red_flags_zh": [
+        "血尿 → 腫瘤排除先於膀胱過動標籤",
+        "伴下肢無力、鞍區麻木、背痛 → 神經性膀胱——馬尾症候群屬急症（急症）",
+        "殘尿量高之溢流性失禁 → 尿滯留鑑別，處置相反",
+        "男性合併排尿費力 → 攝護腺評估",
+        "老人使用抗膽鹼藥 → 認知副作用盤點"
+      ],
+      "red_flags_en": [
+        "Hematuria → tumor exclusion before any overactive-bladder label",
+        "With leg weakness, saddle numbness, back pain → neurogenic bladder — cauda equina is an emergency (emergency)",
+        "Overflow incontinence with high residual → differentiate retention; management is the opposite",
+        "In men with straining → prostate evaluation",
+        "Anticholinergics in the elderly → inventory cognitive side effects"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AUA/ICS 膀胱過動症評估通說"
+        ],
+        "red_flags_en": [
+          "AUA/ICS 膀胱過動症評估通說"
+        ]
+      }
     },
     {
       "id": "cond.urinary_retention",
@@ -27926,10 +27988,30 @@
         "western_pathology_en": [
           "AUA — 尿滯留通說(逼尿肌無力/協同失調、殘尿分層)",
           "MedlinePlus — Urinary Retention (https://medlineplus.gov/urinaryretention.html)"
+        ],
+        "red_flags_zh": [
+          "AUA 尿滯留處置通說；馬尾症候群為急診通說"
+        ],
+        "red_flags_en": [
+          "AUA 尿滯留處置通說；馬尾症候群為急診通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/urinaryretention.html"
+      ],
+      "red_flags_zh": [
+        "完全無法排尿伴下腹脹痛 → 急診導尿（急症）",
+        "伴鞍區麻木、下肢無力、劇烈背痛 → 馬尾症候群，手術時限（急症）",
+        "發燒加滯留 → 感染性（急性攝護腺炎等），急治",
+        "血尿加滯留 → 血塊阻塞或腫瘤",
+        "慢性滯留 → 腎功能與腎水腫追查，導尿保護上尿路"
+      ],
+      "red_flags_en": [
+        "Complete inability to void with painful distension → emergency catheterization (emergency)",
+        "With saddle numbness, leg weakness, severe back pain → cauda equina syndrome, surgical clock running (emergency)",
+        "Fever with retention → infectious cause (acute prostatitis and others), urgent treatment",
+        "Hematuria with retention → clot obstruction or tumor",
+        "Chronic retention → track renal function and hydronephrosis; catheterization protects the upper tract"
       ]
     },
     {
@@ -28178,7 +28260,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/873"
-      ]
+      ],
+      "red_flags_zh": [
+        "急性尿滯留 → 急診導尿（急症）",
+        "血尿 → 膀胱癌／腎癌排除——攝護腺肥大不是血尿的預設解釋",
+        "骨痛、體重減輕伴排尿症狀 → 攝護腺癌轉移警訊",
+        "反覆感染、膀胱結石、腎水腫 → 手術評估線",
+        "攝護腺癌篩查（PSA/肛診） → 按年齡與風險與醫師討論"
+      ],
+      "red_flags_en": [
+        "Acute urinary retention → emergency catheterization (emergency)",
+        "Hematuria → exclude bladder/renal cancer — BPH is never the default explanation for blood",
+        "Bone pain and weight loss with urinary symptoms → warning of metastatic prostate cancer",
+        "Recurrent infection, bladder stones, hydronephrosis → the surgical-evaluation line",
+        "Prostate-cancer screening (PSA/DRE) → discuss by age and risk with the physician"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AUA BPH 診療通說；curriculum/conditions/1.1 BPH handout 轉介精神"
+        ],
+        "red_flags_en": [
+          "AUA BPH 診療通說；curriculum/conditions/1.1 BPH handout 轉介精神"
+        ]
+      }
     },
     {
       "id": "cond.chronic_prostatitis",
@@ -28464,8 +28568,26 @@
         "western_pathology_en": [
           "NIH 分類/AUA — 慢性攝護腺炎通說(III 型 CP/CPPS、UPOINT)",
           "MedlinePlus — Prostate Diseases (https://medlineplus.gov/prostatediseases.html)"
+        ],
+        "red_flags_zh": [
+          "NIH/AUA 攝護腺炎通說（急性細菌性禁按摩）"
+        ],
+        "red_flags_en": [
+          "NIH/AUA 攝護腺炎通說（急性細菌性禁按摩）"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "高燒寒顫、會陰劇痛、排尿困難 → 急性細菌性攝護腺炎——禁攝護腺按摩，急治（急症）",
+        "尿滯留 → 導尿處置（方式由專科決定）",
+        "血精、硬結、年齡風險因子 → 腫瘤排除",
+        "症狀頑固合併情緒低落 → 慢性疼痛之身心共治"
+      ],
+      "red_flags_en": [
+        "High fever with chills, severe perineal pain, difficult voiding → acute bacterial prostatitis — no prostate massage, urgent treatment (emergency)",
+        "Urinary retention → catheter management (method decided by the specialist)",
+        "Hematospermia, induration, age-related risk → tumor exclusion",
+        "Refractory symptoms with low mood → mind-body co-management of chronic pain"
+      ]
     },
     {
       "id": "cond.erectile_dysfunction",
@@ -28755,7 +28877,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1496"
-      ]
+      ],
+      "red_flags_zh": [
+        "新發勃起功能障礙是心血管疾病的前哨（常先於冠心病數年） → 心血管風險全面評估——本卡最重要的一條",
+        "服用硝酸鹽類藥物者禁用 PDE5 抑制劑 → 併用可致致命性低血壓——用藥安全紅線",
+        "藥物後勃起持續超過四小時 → 陰莖異常勃起，急診（組織壞死時限）（急症）",
+        "骨盆外傷後突發、會陰麻木 → 神經血管急件",
+        "性慾低下、睪丸萎縮、乳房發育 → 性腺低下之內分泌評估"
+      ],
+      "red_flags_en": [
+        "New erectile dysfunction is a sentinel of cardiovascular disease (often years before coronary events) → full cardiovascular risk assessment — this card's most important line",
+        "PDE5 inhibitors are forbidden with nitrates → the combination can cause fatal hypotension — a medication-safety red line",
+        "Erection lasting over four hours after medication → priapism, emergency care (tissue-necrosis clock) (emergency)",
+        "Sudden onset after pelvic trauma, or perineal numbness → urgent neurovascular referral",
+        "Low libido, testicular atrophy, gynecomastia → endocrine evaluation for hypogonadism"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AUA/ESC 勃起功能障礙與心血管風險通說；curriculum/conditions/2.2 Impotence handout 轉介精神"
+        ],
+        "red_flags_en": [
+          "AUA/ESC 勃起功能障礙與心血管風險通說；curriculum/conditions/2.2 Impotence handout 轉介精神"
+        ]
+      }
     },
     {
       "id": "cond.nocturnal_enuresis",
@@ -28990,7 +29134,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/28508"
-      ]
+      ],
+      "red_flags_zh": [
+        "已乾床半年以上的兒童再發尿床 → 續發性遺尿——糖尿病、感染、便秘、心理壓力或受虐逐項查",
+        "日間同時有頻尿急尿濕褲 → 膀胱功能障礙評估，非單純夜遺尿",
+        "打鼾合併遺尿 → 睡眠呼吸中止關聯，耳鼻喉評估",
+        "多渴多尿 → 糖尿病／尿崩症排除",
+        "成人新發夜間遺尿 → 神經、攝護腺、心衰評估——不是「長不大」"
+      ],
+      "red_flags_en": [
+        "Bedwetting returning after six-plus dry months in a child → secondary enuresis — work through diabetes, infection, constipation, psychological stress or abuse",
+        "Daytime frequency, urgency, and wetting alongside → bladder-dysfunction evaluation, not simple enuresis",
+        "Snoring with enuresis → the sleep-apnea link, ENT evaluation",
+        "Polydipsia and polyuria → exclude diabetes mellitus/insipidus",
+        "New adult nocturnal enuresis → neurological, prostate, and heart-failure evaluation — not 'immaturity'"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ICCS 兒童遺尿通說；curriculum/conditions/NOC_ENU handout 轉介精神"
+        ],
+        "red_flags_en": [
+          "ICCS 兒童遺尿通說；curriculum/conditions/NOC_ENU handout 轉介精神"
+        ]
+      }
     },
     {
       "id": "cond.tinnitus",
@@ -29050,7 +29216,29 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/40"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "單側耳鳴合併單側聽力下降 → 聽神經瘤排除（MRI）",
+        "搏動性耳鳴（與心跳同步） → 血管性病因影像評估",
+        "突發聽損伴耳鳴 → 突發性耳聾——類固醇時間窗，耳科急件（急症級）",
+        "伴眩暈耳脹 → 梅尼爾氏／前庭排查",
+        "嚴重失眠憂鬱共病 → 身心共治，耳鳴災難化是可治的"
+      ],
+      "red_flags_en": [
+        "Unilateral tinnitus with unilateral hearing loss → exclude vestibular schwannoma (MRI)",
+        "Pulsatile tinnitus (synchronous with heartbeat) → imaging for vascular causes",
+        "Sudden hearing loss with tinnitus → sudden sensorineural deafness — the steroid window, urgent otology (emergency-level)",
+        "With vertigo and aural fullness → Ménière's/vestibular work-up",
+        "Severe comorbid insomnia and depression → mind-body co-management; tinnitus catastrophizing is treatable"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAO-HNS 耳鳴指引紅旗通說（單側、搏動性、突發）"
+        ],
+        "red_flags_en": [
+          "AAO-HNS 耳鳴指引紅旗通說（單側、搏動性、突發）"
+        ]
+      }
     },
     {
       "id": "cond.hearing_loss",
@@ -29522,7 +29710,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/86"
-      ]
+      ],
+      "red_flags_zh": [
+        "突發感音神經性聽損 → 耳科急症——類固醇治療有時間窗（急症）",
+        "單側進行性聽損伴耳鳴 → 聽神經瘤 MRI",
+        "糖尿病老人耳痛流膿不癒、面癱 → 惡性外耳道炎（急症）",
+        "兒童語言發展遲緩 → 聽力篩查即刻安排",
+        "使用耳毒性藥物（氨基糖苷類、順鉑）中 → 聽力監測"
+      ],
+      "red_flags_en": [
+        "Sudden sensorineural hearing loss → otologic emergency — steroid treatment has a time window (emergency)",
+        "Progressive unilateral loss with tinnitus → MRI for vestibular schwannoma",
+        "Unrelenting ear pain and discharge with facial palsy in an elderly diabetic → malignant otitis externa (emergency)",
+        "Delayed speech development in a child → arrange hearing screening at once",
+        "On ototoxic drugs (aminoglycosides, cisplatin) → audiometric monitoring"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAO-HNS 突發性聽損指引通說"
+        ],
+        "red_flags_en": [
+          "AAO-HNS 突發性聽損指引通說"
+        ]
+      }
     },
     {
       "id": "cond.dry_eye",
@@ -29569,7 +29779,29 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/14813"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "突發眼痛、視力下降、劇烈畏光 → 角膜潰瘍／虹彩炎排除，眼科當日（急症級）",
+        "隱形眼鏡配戴者紅痛 → 感染性角膜炎（急症）",
+        "合併口乾、關節痛 → 修格蘭氏症候群系統評估",
+        "面癱後眼瞼閉合不全 → 暴露性角膜炎防護",
+        "長期人工淚液無效 → 眼科再評估（瞼板腺、藥物性）"
+      ],
+      "red_flags_en": [
+        "Sudden eye pain, falling vision, severe photophobia → exclude corneal ulcer/iritis, same-day ophthalmology (emergency-level)",
+        "Red painful eye in a contact-lens wearer → infectious keratitis (emergency)",
+        "With dry mouth and joint pain → systemic evaluation for Sjögren syndrome",
+        "Incomplete lid closure after facial palsy → protect against exposure keratopathy",
+        "Chronic artificial tears without relief → ophthalmology re-evaluation (meibomian, drug-induced)"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAO 乾眼與角膜紅旗通說"
+        ],
+        "red_flags_en": [
+          "AAO 乾眼與角膜紅旗通說"
+        ]
+      }
     },
     {
       "id": "cond.eye_strain",
@@ -29835,7 +30067,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92969"
-      ]
+      ],
+      "red_flags_zh": [
+        "突發視力模糊、視野缺損、閃光與飛蚊驟增 → 視網膜剝離等急症排除（急症）",
+        "眼痛頭痛伴噁心、燈周虹視 → 急性閉角性青光眼（急症）",
+        "新發複視 → 神經科評估",
+        "兒童瞇眼歪頭視物 → 屈光不正與斜視檢查",
+        "四十歲後定期眼壓與視神經檢查 → 青光眼無症狀期唯一防線"
+      ],
+      "red_flags_en": [
+        "Sudden blur, field defect, flashes with a shower of floaters → exclude retinal detachment and other emergencies (emergency)",
+        "Eye pain and headache with nausea and halos around lights → acute angle-closure glaucoma (emergency)",
+        "New double vision → neurology evaluation",
+        "A child squinting or tilting the head to see → refraction and strabismus exam",
+        "Regular pressure and optic-nerve checks after forty → the only defense in glaucoma's silent phase"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAO 視覺症狀紅旗通說（RD、青光眼急症）"
+        ],
+        "red_flags_en": [
+          "AAO 視覺症狀紅旗通說（RD、青光眼急症）"
+        ]
+      }
     },
     {
       "id": "cond.globus_pharyngitis",
@@ -29991,7 +30245,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/92954"
-      ]
+      ],
+      "red_flags_zh": [
+        "吞嚥困難（固體卡住感、進行性）或吞嚥疼痛 → 內視鏡排除食道腫瘤——梅核氣不伴吞嚥困難，一旦伴隨就不是梅核氣",
+        "聲音嘶啞超過三週 → 喉鏡檢查",
+        "頸部腫塊 → 影像與細胞學",
+        "體重減輕 → 急查",
+        "進食嗆咳 → 吞嚥功能評估"
+      ],
+      "red_flags_en": [
+        "Dysphagia (progressive food sticking) or odynophagia → endoscopy to exclude esophageal tumor — globus never includes dysphagia; once present, it is not globus",
+        "Hoarseness beyond three weeks → laryngoscopy",
+        "A neck mass → imaging and cytology",
+        "Weight loss → urgent work-up",
+        "Choking on meals → swallowing evaluation"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAO-HNS/消化科通說（globus 與吞嚥困難之分界）"
+        ],
+        "red_flags_en": [
+          "AAO-HNS/消化科通說（globus 與吞嚥困難之分界）"
+        ]
+      }
     },
     {
       "id": "cond.aphthous_ulcers",
@@ -30308,7 +30584,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1522"
-      ]
+      ],
+      "red_flags_zh": [
+        "單一潰瘍超過三週不癒 → 口腔癌排除（切片）——本卡最重要的一條",
+        "合併生殖器潰瘍、眼炎 → 貝賽特氏病評估",
+        "伴慢性腹瀉、體重減輕 → 發炎性腸道疾病／乳糜瀉關聯",
+        "大範圍潰瘍加發燒、皮疹、眼唇糜爛 → 重症藥物反應前驅，急診（急症）",
+        "反覆發作 → 缺鐵、B12、葉酸篩查"
+      ],
+      "red_flags_en": [
+        "A single ulcer unhealed beyond three weeks → exclude oral cancer (biopsy) — this card's most important line",
+        "With genital ulcers and ocular inflammation → evaluate Behçet disease",
+        "With chronic diarrhea and weight loss → the IBD/celiac association",
+        "Widespread ulceration with fever, rash, eye and lip erosion → prodrome of severe drug reaction, emergency care (emergency)",
+        "Recurrent crops → screen iron, B12, folate"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "口腔醫學通說（3週不癒=切片）"
+        ],
+        "red_flags_en": [
+          "口腔醫學通說（3週不癒=切片）"
+        ]
+      }
     },
     {
       "id": "cond.post_covid",
@@ -30807,8 +31105,28 @@
         ],
         "western_pathology_en": [
           "WHO/CDC — 長新冠工作定義與機轉假說通說"
+        ],
+        "red_flags_zh": [
+          "WHO/CDC 長新冠照護通說（器質排除先行、PEM/pacing）"
+        ],
+        "red_flags_en": [
+          "WHO/CDC 長新冠照護通說（器質排除先行、PEM/pacing）"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "勞動時胸痛、暈厥、血氧下降 → 心肌炎、肺栓塞等器質併發症排除——先於任何復健計畫（急症級）",
+        "直立時心搏過速、暈厥前兆 → 自主神經評估，漸進式復健",
+        "新發局部神經徵 → 神經科評估",
+        "情緒低落、自殺意念 → 身心共治（急症級篩問）",
+        "勞動後症狀崩塌（PEM） → 節律管理，勿強推分級運動"
+      ],
+      "red_flags_en": [
+        "Exertional chest pain, syncope, falling saturation → exclude myocarditis, pulmonary embolism, and other organic complications — before any rehabilitation plan (emergency-level)",
+        "Orthostatic tachycardia and presyncope → autonomic evaluation, graded-gentle rehabilitation",
+        "New focal neurological signs → neurology evaluation",
+        "Low mood or suicidal ideation → mind-body co-management (emergency-level screening)",
+        "Post-exertional symptom crashes (PEM) → pacing; do not force graded exercise"
+      ]
     },
     {
       "id": "cond.chronic_allergies",
@@ -30936,7 +31254,27 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/971"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "曾有過敏性休克 → 腎上腺素自動注射器隨身與過敏原確認——預防即急救（急症預防）",
+        "共病氣喘控制惡化 → 上下氣道同治",
+        "單側鼻症狀、血涕 → 腫瘤排除",
+        "免疫治療注射後全身反應 → 僅於具急救準備之醫療場所執行"
+      ],
+      "red_flags_en": [
+        "History of anaphylaxis → carry an epinephrine auto-injector and confirm the allergen — prevention is the emergency care (emergency prevention)",
+        "Deteriorating comorbid asthma control → treat upper and lower airway together",
+        "Unilateral nasal symptoms or bloody discharge → tumor exclusion",
+        "Systemic reactions after immunotherapy injections → administer only where resuscitation is ready"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAAAI/EAACI 過敏照護通說"
+        ],
+        "red_flags_en": [
+          "AAAAI/EAACI 過敏照護通說"
+        ]
+      }
     },
     {
       "id": "cond.cancer_supportive",
@@ -31252,7 +31590,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1659"
-      ]
+      ],
+      "red_flags_zh": [
+        "化療期間發燒（嗜中性白血球低下期） → 發燒性嗜中性球低下症——小時級急症，立即急診（急症）",
+        "新發背痛加下肢無力或大小便異常 → 脊髓壓迫——時限性癱瘓風險（急症）",
+        "頭痛、嘔吐、意識改變 → 腦轉移／顱內壓升高（急症）",
+        "呼吸困難加面頸腫脹 → 上腔靜脈症候群（急症）",
+        "血小板或白血球低下期之針灸 → 治療前查血象——出血與感染風險是本卡輔助定位的安全前提"
+      ],
+      "red_flags_en": [
+        "Fever during chemotherapy (in the neutropenic window) → febrile neutropenia — an hours-scale emergency, immediate emergency care (emergency)",
+        "New back pain with leg weakness or bowel/bladder change → cord compression — time-limited paralysis risk (emergency)",
+        "Headache, vomiting, altered consciousness → brain metastasis / raised intracranial pressure (emergency)",
+        "Dyspnea with face and neck swelling → superior vena cava syndrome (emergency)",
+        "Acupuncture during thrombocytopenia or leukopenia → check blood counts first — bleeding and infection risk is the safety precondition of this card's adjunctive role"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "NCCN/ASCO 腫瘤急症通說（FN、脊髓壓迫、SVC）;腫瘤患者針灸安全通說（血象）"
+        ],
+        "red_flags_en": [
+          "NCCN/ASCO 腫瘤急症通說（FN、脊髓壓迫、SVC）;腫瘤患者針灸安全通說（血象）"
+        ]
+      }
     }
   ]
 }
