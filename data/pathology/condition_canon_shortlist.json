@@ -20891,13 +20891,69 @@
       },
       "sign_symptom_ids": [
         "sym.fever",
-        "sym.cough"
+        "sym.cough",
+        "sym.chills",
+        "sym.sore_throat",
+        "sym.nasal_congestion",
+        "sym.headache",
+        "sym.fatigue"
       ],
       "content_source": [
         "cdc_overview",
         "research_pack_batch_m_infectious_disease"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "sources": [
+        "CDC — About Influenza: https://www.cdc.gov/flu/about/index.html",
+        "CDC — Clinical Signs and Symptoms of Influenza: https://www.cdc.gov/flu/hcp/clinical-signs/index.html",
+        "CDC — Diagnosis for Flu: https://www.cdc.gov/flu/testing/index.html",
+        "CDC — Treatment of Flu: https://www.cdc.gov/flu/treatment/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "CDC — Clinical Signs and Symptoms of Influenza"
+        ],
+        "summary_en": [
+          "CDC — Clinical Signs and Symptoms of Influenza"
+        ],
+        "etiology_zh": [
+          "CDC — About Influenza"
+        ],
+        "etiology_en": [
+          "CDC — About Influenza"
+        ],
+        "western_pathology_zh": [
+          "CDC — About Influenza"
+        ],
+        "western_pathology_en": [
+          "CDC — About Influenza"
+        ],
+        "western_context_zh": [
+          "CDC — Clinical Signs and Symptoms of Influenza / Diagnosis for Flu / Treatment of Flu"
+        ],
+        "western_context_en": [
+          "CDC — Clinical Signs and Symptoms of Influenza / Diagnosis for Flu / Treatment of Flu"
+        ],
+        "risk_factors_zh": [
+          "CDC — About Influenza"
+        ],
+        "risk_factors_en": [
+          "CDC — About Influenza"
+        ],
+        "red_flags_zh": [
+          "CDC — About Influenza"
+        ],
+        "red_flags_en": [
+          "CDC — About Influenza"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease"
+        ]
+      }
     },
     {
       "id": "cond.allergic_rhinitis",
@@ -24074,7 +24130,10 @@
         "acupuncture_scope_en": [
           "MedlinePlus — Bell palsy"
         ]
-      }
+      },
+      "sign_symptom_ids": [
+        "sym.facial_deviation"
+      ]
     },
     {
       "id": "cond.stroke_rehab",
@@ -44622,7 +44681,13 @@
         "note": "No acupuncture-specific efficacy guideline for active TB was located; this is a scope-of-practice caution"
       },
       "sign_symptom_ids": [
-        "sym.cough"
+        "sym.cough",
+        "sym.chest_pain",
+        "sym.hemoptysis",
+        "sym.fever",
+        "sym.night_sweats",
+        "sym.wasting",
+        "sym.fatigue"
       ],
       "related_eastern_diseases": [],
       "related_patterns": [],
@@ -44636,7 +44701,51 @@
         "cdc_overview",
         "research_pack_batch_m_infectious_disease"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "summary_zh": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "summary_en": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "etiology_zh": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "etiology_en": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "western_pathology_zh": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "western_pathology_en": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "western_context_zh": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "western_context_en": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "risk_factors_zh": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "risk_factors_en": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "red_flags_zh": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "red_flags_en": [
+          "CDC — Clinical Overview of Tuberculosis Disease"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease"
+        ]
+      }
     },
     {
       "id": "cond.lyme_disease",
@@ -48064,8 +48173,212 @@
       "icd_hint": "J47.9",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "支氣管擴張症是支氣管長期異常擴張與氣道損傷的慢性肺部疾病，常形成黏液滯留、反覆感染與進一步氣道損傷的循環。",
+      "summary_en": "Bronchiectasis is a chronic lung disorder with permanently damaged and widened airways, promoting mucus retention, recurrent infection, and further airway injury.",
+      "western_pathology_zh": "氣道結構損傷使清除分泌物能力下降；黏液滯留、感染與發炎彼此促進，逐步加重氣道破壞。",
+      "western_pathology_en": "Structural airway injury impairs mucus clearance. Retained secretions, infection, and inflammation reinforce one another and can drive progressive airway damage.",
+      "western_context_zh": "臨床定位：支氣管擴張症為結構性氣道疾病，需與慢性阻塞性肺病、氣喘等其他慢性呼吸道疾病區分；診斷後應積極尋找可治療的原發原因。\n\n臨床表現：持續或每日咳嗽、大量痰液、反覆呼吸道感染或急性惡化、呼吸困難、喘鳴或胸痛；咳血需評估嚴重度與來源。\n\n重要特徵：黏液滯留—感染—發炎彼此促進形成惡性循環；需系統性尋找可矯正病因（如免疫缺損、纖毛功能障礙、感染後遺症）。\n\n診斷方法：詳細病史與肺部檢查；胸部電腦斷層確認支氣管擴張；痰液培養或其他感染評估；肺功能檢查；依情況尋找免疫、感染、遺傳或其他原發原因。\n\n鑑別診斷：慢性阻塞性肺病、氣喘、肺結核後遺症、原發性纖毛運動障礙、囊性纖維化。\n\n西醫治療：治療原發原因與肺部感染；促進氣道清除與排痰；降低急性惡化與併發症；特定患者需氧療、介入或手術評估。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Bronchiectasis is a structural airway disease that must be distinguished from other chronic respiratory diseases such as COPD and asthma; an underlying treatable cause should be actively sought after diagnosis.\n\nClinical presentation: Persistent or daily cough, large-volume sputum production, recurrent respiratory infections or exacerbations, dyspnea, wheeze or chest pain; hemoptysis requires assessment of severity and source.\n\nKey features: Mucus retention, infection and inflammation reinforce one another in a vicious cycle; a systematic search for correctable causes (immune deficiency, ciliary dysfunction, post-infectious sequelae) is warranted.\n\nDiagnostic approach: Detailed history and lung examination; chest CT to confirm bronchiectatic change; sputum culture or other infection evaluation; pulmonary function testing; etiologic workup for immune, infectious, genetic, or other causes when indicated.\n\nDifferential diagnosis: COPD, asthma, post-tuberculous sequelae, primary ciliary dyskinesia, cystic fibrosis.\n\nWestern treatment: Treat underlying causes and pulmonary infections; improve airway clearance and mucus removal; reduce exacerbations and complications; selected patients may require oxygen, procedures, or surgical evaluation.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "囊性纖維化（美國約半數支氣管擴張症病例的病因）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "原發性纖毛運動障礙等纖毛功能異常疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "免疫系統疾病（如常見變異性免疫缺乏症、HIV 感染）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "慢性或反覆肺部感染造成氣道壁損傷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "結締組織疾病（類風濕性關節炎、修格蘭氏症候群、克隆氏症）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Cystic fibrosis (causes almost half of bronchiectasis cases in the US)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "Primary ciliary dyskinesia and other ciliary dysfunction disorders",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "Immune system disorders (e.g., common variable immunodeficiency, HIV infection)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "Chronic or repeated lung infections causing airway wall damage",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        },
+        {
+          "factor": "Connective tissue disease (rheumatoid arthritis, Sjögren's syndrome, Crohn's disease)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "大量咳血或咳血合併呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能危及生命的呼吸道出血",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        },
+        {
+          "finding": "呼吸困難惡化或血氧不足徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "提示急性惡化或呼吸功能代償失調",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        },
+        {
+          "finding": "高燒合併全身狀況惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "慢性氣道疾病患者感染惡化可能迅速進展為肺炎或敗血症",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        },
+        {
+          "finding": "體重減輕或兒童生長遲滯",
+          "urgency_level": "routine",
+          "recommended_action": "安排追蹤評估潛在病因",
+          "rationale": "可能提示疾病控制不佳或需要重新評估原發病因",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Massive hemoptysis or hemoptysis with dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Potentially life-threatening airway bleeding",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        },
+        {
+          "finding": "Worsening dyspnea or signs of hypoxia",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Suggests acute exacerbation or respiratory decompensation",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        },
+        {
+          "finding": "High fever with worsening general condition",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Infection can progress rapidly to pneumonia or sepsis in chronic airway disease",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        },
+        {
+          "finding": "Weight loss or slowed growth in children",
+          "urgency_level": "routine",
+          "recommended_action": "Schedule follow-up evaluation for underlying cause",
+          "rationale": "May indicate poor disease control or need to reassess the underlying cause",
+          "source": "NHLBI — Bronchiectasis - Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為慢性氣道症狀（咳嗽、疲倦、生活品質）管理之輔助照護，不能替代抗生素治療或氣道廓清訓練",
+        "precautions": "需評估病人呼吸功能與感染狀態；咳血或急性惡化期避免耽誤醫療評估",
+        "co_management": "與病人的呼吸專科醫師聯絡確認感染控制與氣道廓清治療進度，不建議病人自行停止抗生素或氣道廓清療程",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NHLBI 臨床資料整理）",
+        "note": "尚未查到專屬於支氣管擴張症的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for chronic airway symptoms (cough, fatigue, quality of life); cannot replace antibiotic therapy or airway-clearance training",
+        "precautions": "Assess respiratory function and infectious status; avoid delaying medical evaluation during hemoptysis or acute exacerbation",
+        "co_management": "Contact the patient's pulmonologist to confirm infection-control and airway-clearance treatment progress; never advise the patient to independently stop antibiotics or airway-clearance therapy",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from NHLBI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for bronchiectasis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.cough",
+        "sym.hemoptysis",
+        "sym.shortness_of_breath",
+        "sym.chest_pain",
+        "sym.wheezing"
+      ],
+      "sources": [
+        "NHLBI/NIH — Bronchiectasis - Symptoms: https://www.nhlbi.nih.gov/health/bronchiectasis/symptoms",
+        "NHLBI/NIH — Bronchiectasis - Diagnosis: https://www.nhlbi.nih.gov/health/bronchiectasis/diagnosis",
+        "NHLBI/NIH — Bronchiectasis - Treatment: https://www.nhlbi.nih.gov/health/bronchiectasis/treatment",
+        "NHLBI/NIH — Bronchiectasis - Causes and Risk Factors: https://www.nhlbi.nih.gov/health/bronchiectasis/causes",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI — Bronchiectasis - What Is"
+        ],
+        "summary_en": [
+          "NHLBI — Bronchiectasis - What Is"
+        ],
+        "western_pathology_zh": [
+          "NHLBI — Bronchiectasis - What Is"
+        ],
+        "western_pathology_en": [
+          "NHLBI — Bronchiectasis - What Is"
+        ],
+        "western_context_zh": [
+          "NHLBI — Bronchiectasis - Symptoms/Diagnosis/Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI — Bronchiectasis - Symptoms/Diagnosis/Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        ],
+        "risk_factors_en": [
+          "NHLBI — Bronchiectasis - Causes and Risk Factors"
+        ],
+        "red_flags_zh": [
+          "NHLBI — Bronchiectasis - Symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI — Bronchiectasis - Symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      },
+      "content_source": [
+        "nhlbi_overview",
+        "research_pack_cr010_batch02"
+      ],
+      "source_status": "draft_pending_ting_review",
+      "source_type": "sourced_research_pack"
     },
     {
       "id": "cond.interstitial_lung_disease",
@@ -48128,8 +48441,216 @@
       "icd_hint": "B97.4",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "RSV 是常見呼吸道病毒，通常造成類感冒症狀，但嬰幼兒、高齡者與特定高風險成人可能發展為嚴重下呼吸道疾病。",
+      "summary_en": "RSV is a common respiratory virus that usually causes cold-like illness but can cause severe lower-respiratory disease in infants, older adults, and people with certain risk factors.",
+      "western_pathology_zh": "病毒感染呼吸道，可造成上呼吸道疾病，也可向下發展為細支氣管炎或肺炎，並可能誘發既有氣喘、COPD 或心衰竭惡化。",
+      "western_pathology_en": "RSV infects the respiratory tract, causing upper-respiratory illness or progressing to bronchiolitis or pneumonia, and can exacerbate conditions such as asthma, COPD, or heart failure.",
+      "western_context_zh": "臨床定位：多數 RSV 感染為自限性上呼吸道疾病，但嬰幼兒、高齡者與特定高風險成人可能發展為嚴重下呼吸道疾病（細支氣管炎、肺炎），並可能誘發既有氣喘、慢性阻塞性肺病或心衰竭惡化。\n\n臨床表現：流鼻水、鼻塞、咳嗽、打噴嚏；發燒、喘鳴、食慾下降；高風險成人可能呼吸困難或出現肺炎；嬰兒可僅有活動下降、易怒或呼吸困難。\n\n重要特徵：症狀缺乏特異性，難以單憑臨床表現與其他呼吸道病毒區分；嬰兒與高風險成人為重症與住院的主要族群。\n\n診斷方法：症狀缺乏特異性；NAAT/PCR 可高敏感度確認 RSV；抗原檢測亦可使用但通常敏感度較低。\n\n鑑別診斷：流行性感冒、其他呼吸道病毒感染（如 COVID-19）、細菌性肺炎、氣喘或慢性阻塞性肺病急性惡化。\n\n西醫治療：多數感染以支持性照護為主；維持水分並處理發燒或疼痛；嚴重呼吸困難或脫水需升級照護；高風險族群預防依現行 CDC 免疫建議。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Most RSV infections are self-limited upper-respiratory illness, but infants, older adults, and certain high-risk adults may develop severe lower-respiratory disease (bronchiolitis, pneumonia), and RSV can exacerbate existing asthma, COPD, or heart failure.\n\nClinical presentation: Rhinorrhea, congestion, cough, and sneezing; fever, wheezing, and decreased appetite; high-risk adults may develop dyspnea or pneumonia; infants may show only decreased activity, irritability, or breathing difficulty.\n\nKey features: Symptoms are nonspecific and hard to distinguish clinically from other respiratory viruses; infants and high-risk adults account for most severe disease and hospitalization.\n\nDiagnostic approach: Clinical symptoms are nonspecific; NAAT/PCR can sensitively confirm RSV; antigen testing is also available but generally less sensitive.\n\nDifferential diagnosis: Influenza, other respiratory viral infections (e.g., COVID-19), bacterial pneumonia, asthma or COPD exacerbation.\n\nWestern treatment: Supportive care for most infections; maintain hydration and manage fever or discomfort; escalate care for severe breathing difficulty or dehydration; prevention in risk groups follows current CDC immunization guidance.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "早產兒或六個月以下嬰兒",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — RSV in Infants and Young Children"
+        },
+        {
+          "factor": "慢性肺病或先天性心臟病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — RSV in Infants and Young Children / RSV in Adults"
+        },
+        {
+          "factor": "免疫功能低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — People at Increased Risk for Severe Respiratory Illnesses"
+        },
+        {
+          "factor": "65 歲以上高齡，尤其安養機構住民",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — RSV in Adults"
+        },
+        {
+          "factor": "未接種現行建議之 RSV 相關疫苗或預防性抗體",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — RSV Vaccine recommendations"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Premature birth or infants under six months",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — RSV in Infants and Young Children"
+        },
+        {
+          "factor": "Chronic lung disease or congenital heart disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — RSV in Infants and Young Children / RSV in Adults"
+        },
+        {
+          "factor": "Weakened immune system",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — People at Increased Risk for Severe Respiratory Illnesses"
+        },
+        {
+          "factor": "Age 65 and older, especially nursing-home residents",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — RSV in Adults"
+        },
+        {
+          "factor": "Not vaccinated with currently recommended RSV vaccine or preventive antibody",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — RSV Vaccine recommendations"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嬰兒呼吸暫停或明顯呼吸困難、發紺",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "呼吸暫停為 RSV 已知嚴重且可能致命的併發症",
+          "source": "CDC — RSV in Infants and Young Children"
+        },
+        {
+          "finding": "嬰兒活動力明顯下降、餵食量減少合併嗜睡",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "極幼齡嬰兒可能僅表現活動力下降與呼吸困難，須及早評估",
+          "source": "CDC — RSV in Infants and Young Children"
+        },
+        {
+          "finding": "高風險成人（心肺疾病、免疫低下、安養機構住民）呼吸困難或病情惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "高風險族群可能快速進展為肺炎或呼吸衰竭",
+          "source": "CDC — RSV in Adults"
+        },
+        {
+          "finding": "脫水徵象（尿量減少、哭無淚、嗜睡）",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "幼兒與高齡者脫水可能快速惡化",
+          "source": "CDC — Symptoms and Care of RSV"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Apnea in an infant, or marked breathing difficulty/cyanosis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Apnea is a known severe and potentially life-threatening RSV complication",
+          "source": "CDC — RSV in Infants and Young Children"
+        },
+        {
+          "finding": "Markedly decreased activity or feeding with lethargy in an infant",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Very young infants may present only with decreased activity and breathing difficulty and need prompt evaluation",
+          "source": "CDC — RSV in Infants and Young Children"
+        },
+        {
+          "finding": "High-risk adult (cardiopulmonary disease, immunocompromise, nursing-home resident) with dyspnea or worsening illness",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "High-risk patients can progress quickly to pneumonia or respiratory failure",
+          "source": "CDC — RSV in Adults"
+        },
+        {
+          "finding": "Signs of dehydration (reduced urine output, no tears, lethargy)",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Dehydration can worsen quickly in young children and older adults",
+          "source": "CDC — Symptoms and Care of RSV"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不建議在未評估感染管制風險前提供常規面對面針灸治療急性傳染性呼吸道疾病；高風險族群（嬰幼兒、高齡、免疫低下）不應以針灸延誤必要醫療照護",
+        "precautions": "嬰幼兒與高風險成人出現呼吸困難、脫水或病情惡化徵象時應優先轉介醫療評估，不應僅以針灸處理",
+        "co_management": "若病人屬高風險族群或病情有惡化徵象，與其主治醫師聯絡確認照護進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於 RSV 感染的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not provide routine in-person acupuncture for acute contagious respiratory illness without assessing infection-control risk; do not let acupuncture delay necessary medical care for high-risk groups (infants, older adults, immunocompromised)",
+        "precautions": "Prioritize medical referral for infants and high-risk adults with dyspnea, dehydration, or worsening illness rather than managing with acupuncture alone",
+        "co_management": "If the patient is high-risk or shows signs of deterioration, contact their treating physician to confirm care status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for RSV infection was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.nasal_congestion",
+        "sym.cough",
+        "sym.sneezing",
+        "sym.fever",
+        "sym.wheezing",
+        "sym.poor_appetite",
+        "sym.shortness_of_breath"
+      ],
+      "sources": [
+        "CDC — Symptoms and Care of RSV: https://www.cdc.gov/rsv/symptoms/index.html",
+        "CDC — Diagnostic Testing for RSV: https://www.cdc.gov/rsv/hcp/clinical-overview/diagnostic-testing.html",
+        "CDC — Clinical Overview of RSV: https://www.cdc.gov/rsv/hcp/clinical-overview/",
+        "CDC — RSV in Infants and Young Children: https://www.cdc.gov/rsv/infants-young-children/index.html",
+        "CDC — RSV in Adults: https://www.cdc.gov/rsv/adults/index.html",
+        "CDC — People at Increased Risk for Severe Respiratory Illnesses: https://www.cdc.gov/respiratory-viruses/risk-factors/index.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "CDC — Clinical Overview of RSV"
+        ],
+        "summary_en": [
+          "CDC — Clinical Overview of RSV"
+        ],
+        "western_pathology_zh": [
+          "CDC — Clinical Overview of RSV"
+        ],
+        "western_pathology_en": [
+          "CDC — Clinical Overview of RSV"
+        ],
+        "western_context_zh": [
+          "CDC — Symptoms and Care of RSV / Diagnostic Testing for RSV"
+        ],
+        "western_context_en": [
+          "CDC — Symptoms and Care of RSV / Diagnostic Testing for RSV"
+        ],
+        "risk_factors_zh": [
+          "CDC — RSV in Infants and Young Children / RSV in Adults / People at Increased Risk"
+        ],
+        "risk_factors_en": [
+          "CDC — RSV in Infants and Young Children / RSV in Adults / People at Increased Risk"
+        ],
+        "red_flags_zh": [
+          "CDC — RSV in Infants and Young Children / RSV in Adults / Symptoms and Care of RSV"
+        ],
+        "red_flags_en": [
+          "CDC — RSV in Infants and Young Children / RSV in Adults / Symptoms and Care of RSV"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      },
+      "content_source": [
+        "cdc_overview",
+        "research_pack_cr010_batch02"
+      ],
+      "source_status": "draft_pending_ting_review",
+      "source_type": "sourced_research_pack"
     },
     {
       "id": "cond.pulmonary_hypertension",
@@ -48140,8 +48661,227 @@
       "icd_hint": "I27.20",
       "aliases_zh": [],
       "aliases_en": [],
-      "review_status": "skeleton",
-      "authored_by": "model_draft"
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "肺高壓是肺血管壓力異常升高的一組疾病，可增加右心負荷並最終造成右心功能受損。",
+      "summary_en": "Pulmonary hypertension is a group of disorders characterized by abnormally elevated pressure in pulmonary blood vessels, increasing right-heart workload and potentially causing right-heart dysfunction.",
+      "western_pathology_zh": "不同病因可透過肺動脈病變、左心疾病、肺病／缺氧、慢性血栓或多重機轉增加肺血管阻力與壓力。",
+      "western_pathology_en": "Pulmonary vascular disease, left-heart disease, lung disease/hypoxia, chronic thromboembolic obstruction, or multifactorial mechanisms can raise pulmonary vascular resistance and pressure.",
+      "western_context_zh": "臨床定位：肺高壓依世界衛生組織分類分為多組（如肺動脈高壓、左心疾病相關、肺病或缺氧相關、慢性血栓栓塞性、及多重機轉），病因與治療方向依分類不同而異。\n\n臨床表現：活動時呼吸困難、疲倦與無力、胸痛、頭暈或暈厥、腿部或腹部水腫；咳血屬高警訊表現。\n\n重要特徵：早期症狀常僅於運動時出現而被忽略；確診與分類需血流動力學評估；右心負荷增加是共同病理生理終點。\n\n診斷方法：心臟超音波作初步評估；右心導管為確診與血流動力學分類的重要工具；心電圖、胸部影像、肺功能與血液檢查；依病因評估慢性血栓、左心或肺部疾病。\n\n鑑別診斷：左心衰竭、慢性阻塞性肺病或其他肺實質疾病、慢性血栓栓塞性肺病、瓣膜性心臟病。\n\n西醫治療：治療取決於肺高壓類型與病因；特定肺動脈高壓患者使用肺血管標靶藥物；依情況使用氧療、利尿或其他支持療法；慢性血栓型可考慮手術或介入治療；進展性或重症需專科追蹤。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對；本卡涵蓋肺高壓整體概念，肺動脈高壓為其中一種 WHO 分類。",
+      "western_context_en": "Clinical definition: Pulmonary hypertension is classified by the WHO into several groups (e.g., pulmonary arterial hypertension, left-heart disease-related, lung disease/hypoxia-related, chronic thromboembolic, and multifactorial), with cause and treatment differing by group.\n\nClinical presentation: Exertional dyspnea, fatigue and weakness, chest pain, lightheadedness or syncope, leg or abdominal edema; hemoptysis is a concerning feature.\n\nKey features: Early symptoms often appear only with exertion and may be overlooked; diagnosis and classification require hemodynamic assessment; increased right-heart workload is the shared pathophysiologic endpoint.\n\nDiagnostic approach: Echocardiography for initial assessment; right-heart catheterization is central to confirmation and hemodynamic classification; ECG, chest imaging, pulmonary function, and blood tests; etiologic evaluation for chronic thromboembolism, left-heart, or lung disease.\n\nDifferential diagnosis: Left heart failure, COPD or other parenchymal lung disease, chronic thromboembolic pulmonary disease, valvular heart disease.\n\nWestern treatment: Treatment depends on PH group and cause; targeted pulmonary-vascular therapy for selected pulmonary arterial hypertension patients; oxygen, diuretics, or other supportive therapies as indicated; surgery or intervention for selected chronic thromboembolic disease; specialist follow-up for progressive or severe disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding; this card covers pulmonary hypertension broadly, with pulmonary arterial hypertension as one WHO subgroup.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "石綿暴露或特定寄生蟲感染",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "特定遺傳疾病（唐氏症、先天性心臟病、高雪氏症）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "吸菸與非法藥物使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "特定化療或抗憂鬱藥物",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "Asbestos exposure or certain parasitic infections",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "Certain genetic disorders (Down syndrome, congenital heart disease, Gaucher disease)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "Smoking and illegal drug use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        },
+        {
+          "factor": "Certain cancer or depression medications",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "胸痛合併呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示心肌梗塞或肺栓塞等急症",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        },
+        {
+          "finding": "暈厥或近乎暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示嚴重血流動力學不穩定與右心負荷過重",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        },
+        {
+          "finding": "咳血",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "屬肺高壓的高警訊表現",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        },
+        {
+          "finding": "腿部或腹部水腫合併呼吸困難惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "可能提示右心功能失代償",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Chest pain with shortness of breath",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency medical care immediately",
+          "rationale": "May indicate heart attack or pulmonary embolism",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        },
+        {
+          "finding": "Syncope or near-syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests severe hemodynamic instability and right-heart overload",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        },
+        {
+          "finding": "Hemoptysis",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "A concerning feature of pulmonary hypertension",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        },
+        {
+          "finding": "Leg or abdominal edema with worsening dyspnea",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "May indicate right-heart decompensation",
+          "source": "NHLBI — Pulmonary Hypertension - Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為已確診並穩定接受治療病人的疲倦、生活品質等症狀輔助照護，不能替代肺血管標靶藥物或血流動力學監測",
+        "precautions": "治療前確認病人心肺功能穩定狀態；胸痛、暈厥或呼吸困難惡化應優先轉介醫療評估，不應以針灸延誤",
+        "co_management": "與病人的心肺專科醫師聯絡確認診斷分類與用藥進度，不建議病人自行調整肺血管標靶藥物或利尿劑",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NHLBI 臨床資料整理）",
+        "note": "尚未查到專屬於肺高壓的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for fatigue and quality of life in diagnosed, stably treated patients; cannot replace targeted pulmonary-vascular therapy or hemodynamic monitoring",
+        "precautions": "Confirm stable cardiopulmonary status before treating; chest pain, syncope, or worsening dyspnea should be referred for medical evaluation without delay",
+        "co_management": "Contact the patient's cardiopulmonary specialist to confirm PH classification and medication status; never advise the patient to independently adjust targeted pulmonary-vascular therapy or diuretics",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02 (compiled from NHLBI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for pulmonary hypertension was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.shortness_of_breath",
+        "sym.fatigue",
+        "sym.chest_pain",
+        "sym.dizziness",
+        "sym.syncope",
+        "sym.edema",
+        "sym.hemoptysis"
+      ],
+      "sources": [
+        "NHLBI/NIH — Pulmonary Hypertension - What Is: https://www.nhlbi.nih.gov/health/pulmonary-hypertension",
+        "NHLBI/NIH — Pulmonary Hypertension - Diagnosis: https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis",
+        "NHLBI/NIH — Pulmonary Hypertension - Treatment: https://www.nhlbi.nih.gov/health/pulmonary-hypertension/treatment",
+        "NHLBI/NIH — Pulmonary Hypertension - Causes and Risk Factors: https://www.nhlbi.nih.gov/health/pulmonary-hypertension/causes",
+        "NHLBI/NIH — Pulmonary Hypertension - Symptoms: https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI — Pulmonary Hypertension - What Is"
+        ],
+        "summary_en": [
+          "NHLBI — Pulmonary Hypertension - What Is"
+        ],
+        "western_pathology_zh": [
+          "NHLBI — Pulmonary Hypertension - What Is"
+        ],
+        "western_pathology_en": [
+          "NHLBI — Pulmonary Hypertension - What Is"
+        ],
+        "western_context_zh": [
+          "NHLBI — Pulmonary Hypertension - Symptoms/Diagnosis/Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI — Pulmonary Hypertension - Symptoms/Diagnosis/Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        ],
+        "risk_factors_en": [
+          "NHLBI — Pulmonary Hypertension - Causes and Risk Factors"
+        ],
+        "red_flags_zh": [
+          "NHLBI — Pulmonary Hypertension - Symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI — Pulmonary Hypertension - Symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+        ]
+      },
+      "content_source": [
+        "nhlbi_overview",
+        "research_pack_cr010_batch02"
+      ],
+      "source_status": "draft_pending_ting_review",
+      "source_type": "sourced_research_pack"
     },
     {
       "id": "cond.emphysema",
