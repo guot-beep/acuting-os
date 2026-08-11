@@ -319,7 +319,8 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
 - Branch `codex/cond-enrich-f-i`, cut from `origin/codex/pattern-v2` tip
   (`9ebd671`, confirmed ancestor).
 - `data/pathology/condition_canon_shortlist.json`: 170 → 187 records
-  (17 NEW_CANDIDATE, 15 EXISTING_ENRICH across F/G/H/I).
+  (17 NEW_CANDIDATE, 17 EXISTING_ENRICH across F/G/H/I — 8+8+10+8=34
+  concepts total, matching the pack's own per-batch concept counts).
 - `check-validation-ratchet.js` conditions defect count: 539 (committed
   baseline) → 481 after Batch I, monotonically improving batch over batch
   (526 → 509 → 499 → 481). No regressions at any commit.
