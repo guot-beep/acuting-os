@@ -148,6 +148,16 @@ const APPROVED_LEGACY_ALIAS_TARGETS = new Map([
   ["pat.痰濕中阻", "pattern.phlegm_damp"],
   ["pat.肝血瘀滯", "pattern.qi_stagnation_blood_stasis"],
   ["pat.肝腎不足", "pattern.liver_kidney_yin_deficiency"],
+  // Ting Trio (2026-08-11), docs/research_packs/PATTERN_TING_TRIO_LEDGER.md:
+  // 2 consolidation rulings, each merging a non-canonical-name legacy id into
+  // a new card whose canonical name_zh is the OTHER (higher-usage) legacy
+  // name. The higher-usage legacy id (pat.脾胃陽虛 / pat.脾虛濕困) is an exact
+  // name match against the new card and resolves automatically via
+  // canonicalByName — only the non-canonical-name half needs an explicit
+  // entry here. aliases_zh appended to each target card first, assertion
+  // below re-verifies on every run.
+  ["pat.脾胃虛寒", "pattern.spleen_stomach_yang_deficiency"],
+  ["pat.脾虛濕阻", "pattern.spleen_deficiency_damp_encumbrance"],
 ]);
 const registryIds = new Set(registry.map((record) => record.id));
 const activeLibraryById = new Map(

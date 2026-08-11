@@ -15160,6 +15160,376 @@
       ],
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.spleen_stomach_yang_deficiency",
+      "name_zh": "脾胃陽虛",
+      "name_en": "Spleen-Stomach Yang Deficiency",
+      "pinyin": "Pi Wei Yang Xu",
+      "aliases_zh": [
+        "脾胃虛寒證"
+      ],
+      "aliases_en": [
+        "Spleen-Stomach Cold from Deficiency"
+      ],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yang"
+      },
+      "zang_fu": [
+        "spleen",
+        "stomach"
+      ],
+      "key_signs_zh": [
+        "脘腹冷痛，喜溫喜按",
+        "食少納呆，食後脹滿",
+        "大便溏薄，甚則完穀不化",
+        "四肢不溫，畏寒"
+      ],
+      "key_signs_en": [
+        "Cold epigastric/abdominal pain relieved by warmth and pressure",
+        "Poor appetite, worse abdominal distention after eating",
+        "Loose stools, in severe cases undigested food in the stool",
+        "Cold limbs, aversion to cold"
+      ],
+      "supporting_signs_zh": [
+        "神疲乏力",
+        "口泛清水",
+        "面色㿠白"
+      ],
+      "supporting_signs_en": [
+        "Fatigue and lack of energy",
+        "Regurgitation of clear watery fluid",
+        "Pale, bright-white complexion"
+      ],
+      "tongue_zh": "舌淡胖苔白滑",
+      "tongue_en": "Pale, swollen tongue with a white, slippery coating",
+      "pulse_zh": "脈沉遲無力",
+      "pulse_en": "Deep, slow, forceless pulse",
+      "mechanism_zh": "脾胃陽氣俱虛，中焦失於溫煦，運化與受納皆弱，寒從中生，故見脘腹冷痛喜溫喜按、食少便溏；陽虛不能溫養四肢，故四肢不溫、畏寒。",
+      "mechanism_en": "Combined Yang deficiency of the Spleen and Stomach deprives the middle burner of warmth, weakening both transportation-transformation and reception-decomposition — internal Cold arises, producing cold epigastric/abdominal pain relieved by warmth and pressure, poor appetite, and loose stools; Yang deficiency also fails to warm the limbs, causing cold extremities and aversion to cold.",
+      "common_causes_zh": "飲食生冷不節、脾胃氣虛遷延失治、素體陽虛、過用寒涼藥物",
+      "common_causes_en": "Excessive raw/cold food, untreated prolonged Spleen-Stomach Qi Deficiency, constitutional Yang deficiency, overuse of cold/cooling medicinals",
+      "progression_zh": "多由脾胃氣虛或脾陽虛、胃陽虛單獨發展、陽虛及胃或及脾而成；日久陽損及腎，可發展為脾腎陽虛。",
+      "progression_en": "Commonly develops when Spleen-Stomach Qi Deficiency, or an isolated Spleen Yang or Stomach Yang deficiency, progresses to involve both organs; prolonged Yang injury extending to the Kidney can progress to Spleen-Kidney Yang Deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "脾胃陽虛病位兼及胃，胃陽不足見食少納呆、胃脘冷痛更顯；脾陽虛以運化失職為主，胃納尚可，病位局限於脾。",
+          "distinguishing_en": "Spleen-Stomach Yang Deficiency involves the Stomach as well — poor appetite and cold epigastric pain are more prominent; Spleen Yang Deficiency alone centers on impaired transportation-transformation with relatively preserved appetite and is confined to the Spleen.",
+          "tongue_difference_zh": "兩者皆可見舌淡胖苔白滑",
+          "pulse_difference_zh": "脾胃陽虛脈沉遲無力；脾陽虛脈沉遲或緩弱",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.spleen_kidney_yang_deficiency",
+          "distinguishing_zh": "脾胃陽虛病位局限中焦，無腰膝冷痛、五更瀉等下焦腎陽虛表現；脾腎陽虛兼見腰膝痠冷、五更泄瀉，病情更重。",
+          "distinguishing_en": "Spleen-Stomach Yang Deficiency is confined to the middle burner without lower-body Kidney Yang signs; Spleen-Kidney Yang Deficiency additionally shows cold, aching low back and knees and early-morning diarrhea, and is more severe.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "溫中健脾，溫胃散寒",
+      "treatment_principle_en": "Warm the middle and fortify the Spleen, warm the Stomach and dispel Cold",
+      "typical_formulas": [
+        "formula.li_zhong_wan",
+        "formula.fu_zi_li_zhong_wan",
+        "formula.huang_qi_jian_zhong_tang"
+      ],
+      "typical_points": [
+        "CV12",
+        "CV4",
+        "ST36",
+        "SP3",
+        "SP6",
+        "BL20",
+        "BL21"
+      ],
+      "point_rationale_zh": "中脘、足三里健運中焦、溫養胃氣；太白、脾俞健脾益氣；關元、胃俞溫補脾胃之陽；三陰交健脾助運。",
+      "point_rationale_en": "CV12 (Zhongwan) and ST36 (Zusanli) fortify and warm the middle burner and Stomach Qi; SP3 (Taibai) and BL20 (Pishu) tonify Spleen Qi; CV4 (Guanyuan) and BL21 (Weishu) warm and supplement Spleen-Stomach Yang; SP6 (Sanyinjiao) assists Spleen transportation.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, consolidation proposal for 脾胃陽虛+脾胃虛寒)",
+        "docs/research_packs/PATTERN_TING_TRIO_LEDGER.md (Ting 2026-08-11 ruling: approved consolidation, executed)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "supporting_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+          "canon formula_zh for pat.脾胃陽虛+pat.脾胃虛寒 was 腎著湯/黃芪建中湯; 腎著湯 absent from data/herbs/formulas.json (not absorbed); 黃芪建中湯 resolved exactly to formula.huang_qi_jian_zhong_tang; formula.li_zhong_wan/formula.fu_zi_li_zhong_wan added as the standard 理中湯類 textbook formulas for this exact combined Spleen-Stomach Yang deficiency pattern per task instruction"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.脾胃陽虛",
+        "pat.脾胃虛寒"
+      ]
+    },
+    {
+      "id": "pattern.spleen_deficiency_damp_encumbrance",
+      "name_zh": "脾虛濕困",
+      "name_en": "Spleen Deficiency with Dampness Encumbrance",
+      "pinyin": "Pi Xu Shi Kun",
+      "aliases_zh": [
+        "脾虛濕阻證"
+      ],
+      "aliases_en": [
+        "Spleen Deficiency with Damp Obstruction"
+      ],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "spleen"
+      ],
+      "key_signs_zh": [
+        "脘腹痞悶，食少納呆",
+        "大便溏薄，黏滯不爽",
+        "肢體困重，倦怠嗜臥",
+        "頭重如裹"
+      ],
+      "key_signs_en": [
+        "Epigastric/abdominal oppression and fullness, poor appetite",
+        "Loose, sticky stools that feel incomplete",
+        "Heaviness and lethargy of the limbs, drowsiness",
+        "Head feels heavy as if wrapped"
+      ],
+      "supporting_signs_zh": [
+        "脘腹脹滿",
+        "口黏不渴",
+        "女子帶下量多質稀"
+      ],
+      "supporting_signs_en": [
+        "Epigastric/abdominal distention",
+        "Sticky mouth without thirst",
+        "Copious, thin vaginal discharge in women"
+      ],
+      "tongue_zh": "舌淡胖，邊有齒痕，苔白膩",
+      "tongue_en": "Pale, swollen tongue with tooth marks at the edges and a white, greasy coating",
+      "pulse_zh": "脈濡緩",
+      "pulse_en": "Soggy, moderate pulse",
+      "mechanism_zh": "脾氣虛弱，運化水濕無力，濕邪內生，困阻脾陽，脾為濕困則運化更加失職，故見脘腹痞悶、食少便溏、肢體困重、頭重如裹，虛實互為因果。",
+      "mechanism_en": "Weak Spleen Qi fails to transform fluids, allowing internal Dampness to form; the Dampness in turn encumbers Spleen Yang and further impairs transportation-transformation — producing epigastric fullness, poor appetite, loose stools, limb heaviness, and a head that feels wrapped. Deficiency and the resulting excess (Dampness) perpetuate each other.",
+      "common_causes_zh": "脾氣虛遷延、飲食不節嗜食肥甘、久居潮濕之地、過勞傷脾",
+      "common_causes_en": "Prolonged Spleen Qi Deficiency, dietary irregularity with excessive greasy/sweet food, prolonged residence in damp environments, overwork injuring the Spleen",
+      "progression_zh": "多由脾氣虛發展而來；濕困日久傷陽，可轉為脾陽虛或寒濕困脾；濕鬱化熱，可轉為脾胃濕熱。",
+      "progression_en": "Commonly develops from Spleen Qi Deficiency; prolonged Dampness encumbrance can injure Yang and shift toward Spleen Yang Deficiency or Cold-Damp Encumbering the Spleen; stagnant Dampness can transform into Heat, shifting toward Damp-Heat in Spleen-Stomach.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "脾虛濕困在脾氣虛基礎上兼見頭身困重、苔白膩等濕邪內盛表現；脾氣虛以食少、便溏、乏力為主，濕象不顯，苔多薄白。",
+          "distinguishing_en": "Spleen Deficiency with Dampness Encumbrance adds pronounced Dampness signs (heaviness of the head/body, greasy white coating) to the Spleen Qi Deficiency picture; Spleen Qi Deficiency alone shows poor appetite, loose stools, and fatigue without notable Dampness signs, and a thin white coating.",
+          "tongue_difference_zh": "脾虛濕困舌苔白膩；脾氣虛舌苔多薄白",
+          "pulse_difference_zh": "脾虛濕困脈濡緩；脾氣虛脈緩弱",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.cold_damp_encumbering_spleen",
+          "distinguishing_zh": "脾虛濕困以脾氣虛為本、濕困為標，起病較緩，兼見倦怠乏力等虛象；寒濕困脾多因外感寒濕或過食生冷，起病較急，以濕邪困阻為主，虛象不顯，屬實證。",
+          "distinguishing_en": "Spleen Deficiency with Dampness Encumbrance is rooted in Spleen Qi Deficiency with Dampness as the secondary complication, develops gradually, and shows deficiency signs like fatigue; Cold-Damp Encumbering the Spleen usually follows external Cold-Damp invasion or excessive raw/cold food, has a more acute onset, and is Damp-dominant without prominent deficiency signs — a predominantly excess pattern.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "健脾益氣，化濕運中",
+      "treatment_principle_en": "Tonify Spleen Qi, transform Dampness, and revitalize the middle burner",
+      "typical_formulas": [
+        "formula.shen_ling_bai_zhu_san",
+        "formula.ping_wei_san"
+      ],
+      "typical_points": [
+        "SP9",
+        "SP6",
+        "ST36",
+        "CV12",
+        "BL20",
+        "BL21",
+        "SP3"
+      ],
+      "point_rationale_zh": "陰陵泉為化濕要穴；三陰交、足三里健脾助運；中脘、脾俞、胃俞、太白健脾益氣，標本同治。",
+      "point_rationale_en": "SP9 (Yinlingquan) is the principal point for transforming Dampness; SP6 (Sanyinjiao) and ST36 (Zusanli) fortify the Spleen and assist transportation; CV12 (Zhongwan), BL20 (Pishu), BL21 (Weishu), and SP3 (Taibai) tonify Spleen Qi — treating root and branch together.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, consolidation proposal for 脾虛濕困+脾虛濕阻)",
+        "docs/research_packs/PATTERN_TING_TRIO_LEDGER.md (Ting 2026-08-11 ruling: approved consolidation, executed)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "supporting_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+          "canon formula_zh for pat.脾虛濕困 was 平胃散, pat.脾虛濕阻 was 參苓白朮散; both resolve exactly to formula.ping_wei_san and formula.shen_ling_bai_zhu_san — 參苓白朮散 promoted primary per task instruction (脾虛濕困→參苓白朮散類)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.脾虛濕困",
+        "pat.脾虛濕阻"
+      ]
+    },
+    {
+      "id": "pattern.liver_depression_transforming_fire",
+      "name_zh": "肝鬱化火",
+      "name_en": "Liver Depression Transforming into Fire",
+      "pinyin": "Gan Yu Hua Huo",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "pattern_family": "zang_fu",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "liver"
+      ],
+      "key_signs_zh": [
+        "急躁易怒，胸脅脹痛灼熱",
+        "口苦咽乾",
+        "頭痛目赤",
+        "便秘尿黃"
+      ],
+      "key_signs_en": [
+        "Irritability and quick temper, burning distending pain in the chest/hypochondrium",
+        "Bitter taste and dry throat",
+        "Headache with red eyes",
+        "Constipation and dark urine"
+      ],
+      "supporting_signs_zh": [
+        "失眠多夢",
+        "面紅耳赤",
+        "嘈雜吞酸"
+      ],
+      "supporting_signs_en": [
+        "Insomnia with excessive dreaming",
+        "Flushed face and ears",
+        "Vague epigastric discomfort (cao za) with acid regurgitation"
+      ],
+      "tongue_zh": "舌紅苔薄黃",
+      "tongue_en": "Red tongue with a thin yellow coating",
+      "pulse_zh": "脈弦數",
+      "pulse_en": "Wiry, rapid pulse",
+      "mechanism_zh": "肝氣鬱結，氣有餘便是火，鬱久化火，火性炎上，故見急躁易怒、頭痛目赤、口苦咽乾；肝火內熾，灼傷津液，故便秘尿黃、舌紅苔黃、脈弦數，是肝氣鬱結進一步化熱的過渡階段，臨床有其自身一套主症與治則（疏肝瀉火），非僅為連結兩證的圖譜關係。",
+      "mechanism_en": "Liver Qi Stagnation, when prolonged, transforms into Fire (\"excess Qi becomes Fire\") — the Fire flares upward, producing irritability, headache, red eyes, and a bitter dry throat; internal Fire scorches fluids, causing constipation and dark urine, a red tongue with yellow coating, and a wiry rapid pulse. This is the transitional stage between Liver Qi Stagnation and full Liver Fire, but is taught with its own symptom set and treatment principle (course and drain the Liver) rather than being a bare graph link between the two.",
+      "common_causes_zh": "肝氣鬱結日久不解、情志過極、素體陽盛、嗜食辛辣",
+      "common_causes_en": "Prolonged unresolved Liver Qi Stagnation, extreme emotional stress, constitutional Yang excess, excessive spicy food",
+      "progression_zh": "由肝氣鬱結進一步發展而來；火勢日盛可轉為肝火上炎；熱盛傷陰可轉為肝陽上亢或肝腎陰虛；熱極動風可致肝風內動。",
+      "progression_en": "Develops as a further stage of Liver Qi Stagnation; if the Fire intensifies it can become full Liver Fire Flaming Upward; if Heat consumes Yin it can shift toward Liver Yang Rising or Liver-Kidney Yin Deficiency; extreme Heat can stir internal Wind.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "肝鬱化火在肝氣鬱結基礎上兼見明顯熱象（口苦、便秘尿黃、舌紅苔黃、脈弦數）；肝氣鬱結以情志抑鬱、脅肋脹痛為主，無熱象，舌苔薄白。",
+          "distinguishing_en": "Liver Depression Transforming into Fire adds clear Heat signs (bitter taste, constipation, dark urine, red tongue with yellow coating, wiry rapid pulse) to the Liver Qi Stagnation picture; Liver Qi Stagnation alone shows depression and hypochondriac distention without Heat signs, with a thin white coating.",
+          "tongue_difference_zh": "化火舌紅苔黃；氣鬱舌苔薄白",
+          "pulse_difference_zh": "化火脈弦數；氣鬱脈弦",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.liver_fire",
+          "distinguishing_zh": "肝鬱化火仍以情志誘因為主，鬱怒交作，熱勢較輕，屬過渡階段；肝火上炎為純實熱證，起病急，熱勢重，頭痛目赤、耳鳴如潮、脈弦數有力更甚。",
+          "distinguishing_en": "Liver Depression Transforming into Fire is still driven mainly by emotional triggers, with alternating stagnation and irritability and a relatively milder Heat intensity — a transitional stage; Liver Fire Flaming Upward is a pure excess-Heat pattern with acute onset and more severe Heat manifestations (splitting headache, roaring tinnitus, a forceful wiry rapid pulse).",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "疏肝解鬱，清肝瀉火",
+      "treatment_principle_en": "Course the Liver and resolve depression, clear Liver Heat and drain Fire",
+      "typical_formulas": [
+        "formula.jia_wei_xiao_yao_san"
+      ],
+      "typical_points": [
+        "LR2",
+        "LR3",
+        "LR14",
+        "GB34",
+        "LI4",
+        "SP6"
+      ],
+      "point_rationale_zh": "行間、太衝清瀉肝火；期門疏肝理氣；陽陵泉、合谷助清熱疏泄；三陰交養血柔肝，防清瀉太過傷陰。",
+      "point_rationale_en": "LR2 (Xingjian) and LR3 (Taichong) clear and drain Liver Fire; LR14 (Qimen) courses Liver Qi; GB34 (Yanglingquan) and LI4 (Hegu) assist in clearing Heat and promoting free flow; SP6 (Sanyinjiao) nourishes Blood and softens the Liver, guarding against Yin injury from excessive draining.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 3 (originally GRAPH_ONLY, flagged borderline for a second look)",
+        "docs/research_packs/PATTERN_TING_TRIO_LEDGER.md (Ting 2026-08-11 ruling: overrides the GRAPH_ONLY recommendation — clinically taught with its own symptom/treatment-principle set — builds full card)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "supporting_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+          "canon formula_zh for pat.肝鬱化火 was 龍膽瀉肝湯 (a pure excess-fire formula more suited to pattern.liver_fire); task instruction specifies 丹梔逍遙散類 for this card — 丹梔逍遙散 is a well-known name variant of formula.jia_wei_xiao_yao_san (Xiao Yao San + Mu Dan Pi + Zhi Zi, same formula, not string-identical), resolved against data/herbs/formulas.json"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.肝鬱化火"
+      ]
     }
   ]
 }

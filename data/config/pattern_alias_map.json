@@ -18,9 +18,9 @@
     "canon_records": 140,
     "canon_unique_ids": 134,
     "canon_duplicate_ids": 6,
-    "canonical_namespace_ids": 128,
-    "mapped": 67,
-    "pending_registration": 34,
+    "canonical_namespace_ids": 153,
+    "mapped": 94,
+    "pending_registration": 7,
     "excluded_formula_patterns": 32,
     "retired_as_import_artifact": 3
   },
@@ -32,8 +32,10 @@
     "pat.心脾兩虛": "pattern.heart_spleen_deficiency",
     "pat.脾腎陽虛": "pattern.spleen_kidney_yang_deficiency",
     "pat.下焦濕熱": "pattern.damp_heat_lower_burner",
+    "pat.脾胃陽虛": "pattern.spleen_stomach_yang_deficiency",
     "pat.腎陰虛": "pattern.kidney_yin_deficiency",
     "pat.肝脾不調": "pattern.liver_spleen_disharmony",
+    "pat.脾虛濕困": "pattern.spleen_deficiency_damp_encumbrance",
     "pat.外感風寒": "pattern.wind_cold",
     "pat.腎精不足": "pattern.kidney_essence_deficiency",
     "pat.肝血虛": "pattern.liver_blood_deficiency",
@@ -43,13 +45,16 @@
     "pat.寒凝肝脈": "pattern.cold_stagnation_liver_channel",
     "pat.肝血瘀滯": "pattern.qi_stagnation_blood_stasis",
     "pat.肝腎不足": "pattern.liver_kidney_yin_deficiency",
+    "pat.痰瘀互結": "pattern.phlegm_stasis_binding",
     "pat.外感風熱": "pattern.wind_heat",
     "pat.脾氣虛": "pattern.spleen_qi_deficiency",
     "pat.心腎不交": "pattern.heart_kidney_not_communicating",
     "pat.腎氣虛": "pattern.kidney_qi_deficiency",
     "pat.肝陽上亢": "pattern.liver_yang_rising",
     "pat.濕痰": "pattern.phlegm_damp",
+    "pat.痰氣互結": "pattern.phlegm_qi_binding",
     "pat.腎陽虛水泛": "pattern.kidney_yang_deficiency_water_flooding",
+    "pat.水飲內停": "pattern.water_fluid_retention",
     "pat.少陰寒化": "pattern.shao_yin_cold_transformation",
     "pat.食傷脾胃": "pattern.food_stagnation",
     "pat.膀胱濕熱": "pattern.bladder_damp_heat",
@@ -60,10 +65,12 @@
     "pat.血瘀": "pattern.blood_stasis",
     "pat.氣虛": "pattern.qi_deficiency",
     "pat.肝胃不和": "pattern.liver_stomach_disharmony",
+    "pat.心胃火盛": "pattern.heart_stomach_fire",
     "pat.大腸濕熱": "pattern.large_intestine_damp_heat",
     "pat.心血虛": "pattern.heart_blood_deficiency",
     "pat.心火旺盛": "pattern.heart_fire",
     "pat.腎不納氣": "pattern.kidney_not_grasping_qi",
+    "pat.血虛風燥": "pattern.blood_deficiency_wind_dryness",
     "pat.濕熱瀰漫三焦": "pattern.san_jiao_damp_heat",
     "pat.脾胃濕熱": "pattern.damp_heat_spleen_stomach",
     "pat.肝腎陰虛": "pattern.liver_kidney_yin_deficiency",
@@ -73,43 +80,47 @@
     "pat.風寒濕痹": "pattern.wind_cold_damp_bi",
     "pat.肝陰虛": "pattern.liver_yin_deficiency",
     "pat.脾不統血": "pattern.spleen_not_governing_blood",
+    "pat.膽熱犯胃": "pattern.gallbladder_heat_invading_stomach",
+    "pat.脾胃虛寒": "pattern.spleen_stomach_yang_deficiency",
+    "pat.脾虛濕阻": "pattern.spleen_deficiency_damp_encumbrance",
     "pat.肝胃氣滯": "pattern.liver_stomach_disharmony",
+    "pat.肝火犯胃": "pattern.liver_fire_invading_stomach",
     "pat.胃陰虛": "pattern.stomach_yin_deficiency",
     "pat.肝鬱脾虛": "pattern.liver_spleen_disharmony",
     "pat.脾胃虛弱": "pattern.spleen_qi_deficiency",
+    "pat.熱秘": "pattern.heat_constipation",
+    "pat.氣秘": "pattern.qi_constipation",
+    "pat.虛秘": "pattern.deficiency_constipation",
+    "pat.胃寒": "pattern.stomach_cold",
     "pat.胃熱": "pattern.stomach_heat",
+    "pat.陰虛火旺": "pattern.yin_deficiency_fire_flaring",
+    "pat.肝鬱化火": "pattern.liver_depression_transforming_fire",
     "pat.少陰陰虛火旺": "pattern.shao_yin_heat_transformation",
+    "pat.熱擾胸膈": "pattern.heat_disturbing_chest_diaphragm",
+    "pat.肺氣虛寒": "pattern.lung_qi_deficiency_cold",
     "pat.脾氣虛弱": "pattern.spleen_qi_deficiency",
+    "pat.風寒襲絡": "pattern.wind_cold_invading_collaterals",
     "pat.氣血虛弱": "pattern.qi_blood_deficiency",
     "pat.瘀血阻絡": "pattern.blood_stasis",
     "pat.痰濕中阻": "pattern.phlegm_damp",
+    "pat.濕熱浸淫": "pattern.damp_heat_skin_invasion",
     "pat.風熱相搏": "pattern.wind_heat",
+    "pat.肺熱壅盛": "pattern.lung_heat_excess",
+    "pat.熱毒熾盛": "pattern.heat_toxin_blazing",
+    "pat.肺胃燥熱": "pattern.lung_stomach_dryness_heat",
     "pat.腎陰虧虛": "pattern.kidney_yin_deficiency",
+    "pat.水氣凌心": "pattern.water_qi_attacking_heart",
+    "pat.脾約": "pattern.spleen_constriction",
     "pat.心陰虛": "pattern.heart_yin_deficiency",
     "pat.肺氣虛": "pattern.lung_qi_deficiency",
     "pat.膀胱虛寒": "pattern.bladder_deficiency_cold",
     "pat.肝膽火盛": "pattern.liver_fire",
     "pat.腎精虧虛": "pattern.kidney_essence_deficiency",
     "pat.陰虛": "pattern.yin_deficiency",
+    "pat.氣陰兩虛": "pattern.qi_yin_deficiency",
     "pat.清陽不升": "pattern.spleen_qi_sinking"
   },
   "pending_registration": [
-    {
-      "legacy_id": "pat.脾胃陽虛",
-      "name_zh": "脾胃陽虛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 15,
-      "example_conditions": [
-        "cond.lumbar_disc_herniation",
-        "cond.myofascial_pain",
-        "cond.migraine",
-        "cond.chronic_gastritis",
-        "cond.peptic_ulcer",
-        "cond.circadian_disorder",
-        "cond.copd",
-        "cond.chronic_cough"
-      ]
-    },
     {
       "legacy_id": "pat.外感風濕",
       "name_zh": "外感風濕",
@@ -127,50 +138,6 @@
       ]
     },
     {
-      "legacy_id": "pat.脾虛濕困",
-      "name_zh": "脾虛濕困",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 10,
-      "example_conditions": [
-        "cond.male_infertility",
-        "cond.sciatica",
-        "cond.myofascial_pain",
-        "cond.tmd",
-        "cond.chronic_diarrhea",
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough"
-      ]
-    },
-    {
-      "legacy_id": "pat.痰瘀互結",
-      "name_zh": "痰瘀互結",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 7,
-      "example_conditions": [
-        "cond.lumbar_disc_herniation",
-        "cond.fibromyalgia",
-        "cond.hemorrhoids",
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough",
-        "cond.herpes_zoster"
-      ]
-    },
-    {
-      "legacy_id": "pat.痰氣互結",
-      "name_zh": "痰氣互結",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 5,
-      "example_conditions": [
-        "cond.nausea_vomiting",
-        "cond.depression",
-        "cond.hearing_loss",
-        "cond.globus_pharyngitis",
-        "cond.cancer_supportive"
-      ]
-    },
-    {
       "legacy_id": "pat.燥氣傷肺",
       "name_zh": "燥氣傷肺",
       "aliases_zh": [],
@@ -181,48 +148,6 @@
         "cond.chronic_cough",
         "cond.post_viral_cough",
         "cond.post_covid"
-      ]
-    },
-    {
-      "legacy_id": "pat.水飲內停",
-      "name_zh": "水飲內停",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 4,
-      "example_conditions": [
-        "cond.lumbar_disc_herniation",
-        "cond.copd",
-        "cond.chronic_cough",
-        "cond.post_viral_cough"
-      ]
-    },
-    {
-      "legacy_id": "pat.心胃火盛",
-      "name_zh": "心胃火盛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 2,
-      "example_conditions": [
-        "cond.chronic_gastritis",
-        "cond.aphthous_ulcers"
-      ]
-    },
-    {
-      "legacy_id": "pat.血虛風燥",
-      "name_zh": "血虛風燥證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 2,
-      "example_conditions": [
-        "cond.eczema",
-        "cond.urticaria"
-      ]
-    },
-    {
-      "legacy_id": "pat.陰虛火旺",
-      "name_zh": "陰虛火旺證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 2,
-      "example_conditions": [
-        "cond.insomnia",
-        "cond.globus_pharyngitis"
       ]
     },
     {
@@ -244,75 +169,12 @@
       ]
     },
     {
-      "legacy_id": "pat.水氣凌心",
-      "name_zh": "水氣凌心",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.hypothyroidism"
-      ]
-    },
-    {
-      "legacy_id": "pat.肝火犯胃",
-      "name_zh": "肝火犯胃",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.peptic_ulcer"
-      ]
-    },
-    {
-      "legacy_id": "pat.肝鬱化火",
-      "name_zh": "肝鬱化火證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.insomnia"
-      ]
-    },
-    {
       "legacy_id": "pat.肝鬱血虛",
       "name_zh": "肝鬱血虛",
       "aliases_zh": [],
       "used_by_condition_blobs": 1,
       "example_conditions": [
         "cond.uterine_fibroids"
-      ]
-    },
-    {
-      "legacy_id": "pat.肺胃燥熱",
-      "name_zh": "肺胃燥熱證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.t2dm"
-      ]
-    },
-    {
-      "legacy_id": "pat.肺氣虛寒",
-      "name_zh": "肺氣虛寒證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.allergic_rhinitis"
-      ]
-    },
-    {
-      "legacy_id": "pat.肺熱壅盛",
-      "name_zh": "肺熱壅盛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.acne"
-      ]
-    },
-    {
-      "legacy_id": "pat.胃寒",
-      "name_zh": "胃寒",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.nausea_vomiting"
       ]
     },
     {
@@ -325,120 +187,12 @@
       ]
     },
     {
-      "legacy_id": "pat.風寒襲絡",
-      "name_zh": "風寒襲絡證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.bells_palsy"
-      ]
-    },
-    {
-      "legacy_id": "pat.氣秘",
-      "name_zh": "氣秘證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.chronic_constipation"
-      ]
-    },
-    {
-      "legacy_id": "pat.氣陰兩虛",
-      "name_zh": "氣陰兩虛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.aphthous_ulcers"
-      ]
-    },
-    {
-      "legacy_id": "pat.脾約",
-      "name_zh": "脾約證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.hypothyroidism"
-      ]
-    },
-    {
-      "legacy_id": "pat.脾胃虛寒",
-      "name_zh": "脾胃虛寒證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.gerd"
-      ]
-    },
-    {
-      "legacy_id": "pat.脾虛濕阻",
-      "name_zh": "脾虛濕阻證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.functional_dyspepsia"
-      ]
-    },
-    {
-      "legacy_id": "pat.虛秘",
-      "name_zh": "虛秘證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.chronic_constipation"
-      ]
-    },
-    {
       "legacy_id": "pat.溼熱鬱滯經絡",
       "name_zh": "溼熱鬱滯經絡證",
       "aliases_zh": [],
       "used_by_condition_blobs": 1,
       "example_conditions": [
         "cond.peptic_ulcer"
-      ]
-    },
-    {
-      "legacy_id": "pat.熱毒熾盛",
-      "name_zh": "熱毒熾盛",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.acne"
-      ]
-    },
-    {
-      "legacy_id": "pat.熱秘",
-      "name_zh": "熱秘證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.chronic_constipation"
-      ]
-    },
-    {
-      "legacy_id": "pat.熱擾胸膈",
-      "name_zh": "熱擾胸膈",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.circadian_disorder"
-      ]
-    },
-    {
-      "legacy_id": "pat.濕熱浸淫",
-      "name_zh": "濕熱浸淫證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.eczema"
-      ]
-    },
-    {
-      "legacy_id": "pat.膽熱犯胃",
-      "name_zh": "膽熱犯胃證",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 1,
-      "example_conditions": [
-        "cond.gerd"
       ]
     }
   ],
