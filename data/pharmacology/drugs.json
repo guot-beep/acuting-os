@@ -91,7 +91,7 @@
           "course:Pharmacology Summary#L399"
         ],
         "warnings_en": [
-          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNINGS"
         ]
       },
       "review_status": "draft",
@@ -451,6 +451,30 @@
         ],
         "indications_en": [
           "course:W5-diuretics#L28-L29"
+        ],
+        "adverse_effects_en": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#ADVERSE_REACTIONS"
+        ],
+        "adverse_effects_zh": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#ADVERSE_REACTIONS"
+        ],
+        "contraindications_en": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#CONTRAINDICATIONS"
+        ],
+        "contraindications_zh": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#CONTRAINDICATIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#MECHANISM_OF_ACTION"
+        ],
+        "site_of_action_zh": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_zh": [
+          "dailymed:0d914965-7001-45cb-ba51-d7c5964b05bc#MECHANISM_OF_ACTION"
         ]
       },
       "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意為 null。",
@@ -458,15 +482,27 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "dailymed_setid": "5b44e248-4b7b-4777-954a-921c7b309944",
-      "dailymed_label_title": "SORBITOL-MANNITOL (SORBITOL AND MANNITOL) IRRIGANT [ICU MEDICAL INC.]",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5b44e248-4b7b-4777-954a-921c7b309944",
+      "dailymed_setid": "0d914965-7001-45cb-ba51-d7c5964b05bc",
+      "dailymed_label_title": "OSMITROL (MANNITOL) INJECTION, SOLUTION [BAXTER HEALTHCARE COMPANY]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0d914965-7001-45cb-ba51-d7c5964b05bc",
       "dailymed_url_kind": "verified_exact",
       "medlineplus_url": null,
       "medlineplus_url_kind": "verified_none",
       "medlineplus_title": null,
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "none"
+      "medlineplus_scope": "none",
+      "supersedes_setid": "5b44e248-4b7b-4777-954a-921c7b309944",
+      "setid_fix_note": "2026-08-11: prior setid pointed to a sorbitol-mannitol UROLOGIC IRRIGATION label (wrong clinical role, flagged by pharm enrich batch); replaced with OSMITROL (Baxter) IV injection label after live fetch verification.",
+      "dailymed_label_format": "PLR",
+      "dailymed_fetched_at": "2026-08-11",
+      "contraindications_en": "Known hypersensitivity to mannitol; anuria; severe hypovolemia; pre-existing severe pulmonary vascular congestion or pulmonary edema; active intracranial bleeding except during craniotomy (OSMITROL label §4).",
+      "contraindications_zh": "對 mannitol 過敏;無尿;重度血容量不足;既存重度肺血管鬱血或肺水腫;活動性顱內出血(開顱手術中除外)(OSMITROL 標籤 §4)。",
+      "adverse_effects_en": "Hypersensitivity reactions (incl. cardiac arrest, anaphylaxis, hypotension, dyspnea); renal failure (acute kidney injury, osmotic nephrosis, azotemia, anuria); CNS toxicity (coma, seizures); fluid/electrolyte disturbances; infusion-site reactions (OSMITROL label §6, voluntary-report frequency caveat applies).",
+      "adverse_effects_zh": "過敏反應(含心搏停止、全身性過敏、低血壓、呼吸困難);腎衰竭(急性腎損傷、滲透性腎病、氮血症、無尿);中樞神經毒性(昏迷、癲癇發作);體液與電解質失衡;輸注部位反應(OSMITROL 標籤 §6,自發通報頻率限制適用)。",
+      "site_of_action_en": "Renal tubules (glomerular filtrate osmolarity); extracellular fluid compartment.",
+      "site_of_action_zh": "腎小管(腎絲球濾液滲透壓);細胞外液腔室。",
+      "physiologic_effect_en": "Osmotic diuresis; redistribution of intracellular water to extracellular/vascular space; lowered intracranial and intraocular pressure.",
+      "physiologic_effect_zh": "滲透性利尿;細胞內水分重新分布至細胞外/血管腔;顱內壓與眼內壓下降。"
     },
     {
       "id": "drug.warfarin",
@@ -2641,7 +2677,7 @@
           "interaction_en": "Beta blockers block the bronchodilatory effect of albuterol and may produce severe bronchospasm in asthmatics.",
           "evidence": "pharmacodynamic",
           "sources": [
-            "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#PRECAUTIONS"
           ]
         }
       ],
@@ -2671,25 +2707,25 @@
           "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#PRECAUTIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#PRECAUTIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#PRECAUTIONS"
         ],
         "site_of_action_en": [
           "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#MECHANISM_OF_ACTION"
@@ -2966,7 +3002,7 @@
           "interaction_en": "Additive blood pressure lowering effect resulting in symptomatic hypotension.",
           "evidence": "pharmacodynamic",
           "sources": [
-            "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -2996,25 +3032,25 @@
           "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#PREGNANCY"
         ],
         "monitoring_requirements_en": [
-          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#PREGNANCY"
         ],
         "hepatic_considerations_en": [
-          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#PREGNANCY"
         ],
         "site_of_action_en": [
           "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#CLINICAL_PHARMACOLOGY"
@@ -3141,7 +3177,7 @@
           "interaction_en": "Propranolol antagonizes the bronchodilatory effects of beta-2 agonists, precipitating severe bronchospasm.",
           "evidence": "pharmacodynamic",
           "sources": [
-            "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -3172,25 +3208,25 @@
           "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#PREGNANCY"
         ],
         "monitoring_requirements_en": [
-          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#PREGNANCY"
         ],
         "hepatic_considerations_en": [
-          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#PREGNANCY"
         ],
         "site_of_action_en": [
           "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#CLINICAL_PHARMACOLOGY"
@@ -3311,7 +3347,7 @@
           "interaction_en": "Co-administration may exacerbate rebound hypertension if clonidine is abruptly withdrawn while beta blocker is continued.",
           "evidence": "pharmacodynamic",
           "sources": [
-            "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -3342,25 +3378,25 @@
           "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#PREGNANCY"
         ],
         "monitoring_requirements_en": [
-          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#PREGNANCY"
         ],
         "hepatic_considerations_en": [
-          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#PREGNANCY"
         ],
         "site_of_action_en": [
           "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#CLINICAL_PHARMACOLOGY"
@@ -3474,7 +3510,7 @@
           "interaction_en": "Combined use produces acute psychosis and confusion due to combined ALDH and central toxicity.",
           "evidence": "documented_clinical",
           "sources": [
-            "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -3507,25 +3543,25 @@
           "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#PREGNANCY"
         ],
         "monitoring_requirements_en": [
-          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#PREGNANCY"
         ],
         "hepatic_considerations_en": [
-          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#PREGNANCY"
         ],
         "site_of_action_en": [
           "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#CLINICAL_PHARMACOLOGY"
@@ -3816,7 +3852,7 @@
           "interaction_en": "Carbamazepine induces CYP3A4 metabolism of hormonal contraceptives, leading to contraceptive failure.",
           "evidence": "pharmacokinetic",
           "sources": [
-            "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -3849,25 +3885,25 @@
           "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#PREGNANCY"
         ],
         "monitoring_requirements_en": [
-          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#PREGNANCY"
         ],
         "hepatic_considerations_en": [
-          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#PREGNANCY"
         ],
         "physiologic_effect_en": [
           "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#MECHANISM_OF_ACTION"
@@ -3970,7 +4006,7 @@
           "interaction_en": "Ethosuximide may alter phenytoin serum concentrations.",
           "evidence": "pharmacokinetic",
           "sources": [
-            "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -3999,25 +4035,25 @@
           "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#PREGNANCY"
         ],
         "monitoring_requirements_en": [
-          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#PREGNANCY"
         ],
         "hepatic_considerations_en": [
-          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#PREGNANCY"
         ],
         "site_of_action_en": [
           "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#CLINICAL_PHARMACOLOGY"
@@ -4300,7 +4336,7 @@
           "interaction_en": "Severe, potentially fatal hypertensive crisis due to massive accumulation of catecholamines.",
           "evidence": "pharmacodynamic",
           "sources": [
-            "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#PRECAUTIONS"
           ]
         }
       ],
@@ -4330,25 +4366,25 @@
           "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#PRECAUTIONS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#PRECAUTIONS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#USE_IN_SPECIFIC_POPULATIONS"
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#PRECAUTIONS"
         ],
         "site_of_action_en": [
           "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#CLINICAL_PHARMACOLOGY"
@@ -4464,7 +4500,7 @@
           "interaction_en": "Potentially fatal Serotonin Syndrome characterized by hyperthermia, rigidity, myoclonus, autonomic instability, and mental status changes.",
           "evidence": "documented_clinical",
           "sources": [
-            "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+            "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#DRUG_INTERACTIONS"
           ]
         }
       ],
@@ -4497,25 +4533,25 @@
           "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#ADVERSE_REACTIONS"
         ],
         "serious_adverse_effects_en": [
-          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS"
         ],
         "pregnancy_lactation_en": [
-          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS"
         ],
         "monitoring_requirements_en": [
-          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS"
         ],
         "renal_considerations_en": [
-          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS"
         ],
         "hepatic_considerations_en": [
-          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS"
         ],
         "site_of_action_en": [
           "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#CLINICAL_PHARMACOLOGY"
@@ -4728,7 +4764,7 @@
       "field_sources": {
         "mechanism_en": [
           "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
-          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#DESCRIPTION"
         ],
         "indications_en": [
           "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#INDICATIONS_AND_USAGE"
@@ -4737,7 +4773,7 @@
           "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#ADVERSE_REACTIONS",
@@ -5091,7 +5127,7 @@
           "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#ADVERSE_REACTIONS"
@@ -5200,7 +5236,7 @@
       "exam_trap_zh": "不得突然停藥——心絞痛反彈風險。β1選擇性為相對選擇性——高劑量仍可能引起支氣管痙攣。阿替洛爾由腎臟清除，不同於美托洛爾（肝臟清除）。",
       "field_sources": {
         "mechanism_en": [
-          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#MECHANISM_OF_ACTION"
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#CLINICAL_PHARMACOLOGY"
         ],
         "indications_en": [
           "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#INDICATIONS_AND_USAGE"
@@ -5209,7 +5245,7 @@
           "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#WARNINGS"
         ],
         "adverse_effects_en": [
           "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#ADVERSE_REACTIONS"
