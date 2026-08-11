@@ -3218,3 +3218,9 @@ Current repo state as of this log:
 - **C2a 實作**:`store.derivePatientsFromCases()` 純函式(零持久化、零遷移、零真實資料風險):按 patientCode 群組、8 個 demographics 欄位取 updatedAt 最新非空值、相異值全記 conflicts(衍生層記錄分歧不消滅分歧,D4)。
 - **驗證**:node 單元測試(群組/latest-wins/conflict 記錄/無 code 跳過/caseIds 排序)全過;live 對 33 個真實 case 衍生 33 patients、0 無 code、0 衝突、零寫入。
 - **C2b(需 gate)**:patients 落盤、guard 語意改為「同 code 多 case 需確認」、case 建立 patient picker、case→patient 抬升遷移(真實資料遷移 = 不可逆,需 Ting 核准 + Codex audit 先行)。
+
+# 2026-08-11 Fable — C2b 核准入檔 + Codex 審計簡報
+
+- Ting 核准 C2b(patients 落盤 + guard 語意 + picker + 真實資料抬升遷移),前置條件 = Codex 對 Phase B→C2a 全段審計給 GO。
+- 簡報:`docs/CODEX_AUDIT_BRIEF_PHASE_B_TO_C2A.md`(10 檢查項含檔案級 export 走查與 C2b 遷移計畫審查;硬邊界:33 真實病例只讀)。
+- Codex GO 前,Fable/Sonnet 不動 C2b;可並行的只有不依賴 Patient 所有權的 Phase D 備料。
