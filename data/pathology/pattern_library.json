@@ -9807,6 +9807,876 @@
       "tongue_en": "Pale tongue with a white greasy coating",
       "pulse_zh": "脈遲或緊",
       "pulse_en": "Slow or tight pulse"
+    },
+    {
+      "id": "pattern.qi_deficiency",
+      "name_zh": "氣虛",
+      "name_en": "Qi Deficiency",
+      "key_signs_zh": [
+        "少氣懶言",
+        "神疲乏力",
+        "自汗",
+        "活動後諸症加重"
+      ],
+      "key_signs_en": [
+        "Shortness of breath, reluctance to speak",
+        "Fatigue and lack of strength",
+        "Spontaneous sweating",
+        "All symptoms worsen with exertion"
+      ],
+      "tongue_zh": "舌淡苔白",
+      "tongue_en": "Pale tongue with a white coating",
+      "pulse_zh": "脈虛弱",
+      "pulse_en": "Weak, forceless pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "mechanism_zh": "元氣不足,臟腑機能活動減退,推動、固攝、氣化功能皆弱。此為上位分類,實際臨床須辨明是哪一臟腑之氣虛(肺氣虛、脾氣虛、心氣虛等,見各下位證型卡),本卡描述的是各型共有的氣虛總象。",
+      "mechanism_en": "Insufficient original qi weakens the propelling, containing, and transforming functions shared by all organs. This is a category-level node: the clinical diagnosis must specify which organ's qi is deficient (Lung/Spleen/Heart Qi Deficiency etc., see the individual pattern cards) -- this card describes the presentation common to all of them.",
+      "common_causes_zh": "先天稟賦不足、飲食失調化源不足、勞倦過度耗氣、久病傷氣",
+      "common_causes_en": "Congenital insufficiency, poor diet failing to generate qi, overexertion depleting qi, chronic illness consuming qi",
+      "progression_zh": "氣虛日久,氣損及陽可發展為陽虛;氣不生血可致氣血兩虛;氣虛不攝可致自汗、崩漏、臟器下垂等不固之症。",
+      "progression_en": "Prolonged Qi Deficiency can progress to Yang Deficiency (qi depletion reaching yang); qi failing to generate blood can lead to combined Qi-Blood Deficiency; qi's failure to contain can cause spontaneous sweating, abnormal bleeding, or organ prolapse.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yang_deficiency",
+          "distinguishing_zh": "氣虛以乏力、氣短、自汗為主,無明顯寒象;陽虛在氣虛基礎上兼見畏寒肢冷、小便清長等寒象,是氣虛的進一步發展。",
+          "distinguishing_en": "Qi Deficiency centers on fatigue, shortness of breath, and spontaneous sweating without cold signs; Yang Deficiency adds cold signs (aversion to cold, cold limbs, clear copious urine) on top of qi deficiency -- a further stage.",
+          "tongue_difference_zh": "氣虛舌淡苔白;陽虛舌淡胖",
+          "pulse_difference_zh": "氣虛脈虛弱;陽虛脈沉遲無力",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "本卡(氣虛)是不分臟腑的總綱;脾氣虛是氣虛在脾之定位,兼見食少、腹脹、便溏等運化失職的特定表現。",
+          "distinguishing_en": "This card is the un-localized general category; Spleen Qi Deficiency is qi deficiency located in the Spleen specifically, adding poor appetite, abdominal distension, and loose stools from impaired transformation-transportation.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "補氣",
+      "treatment_principle_en": "Tonify qi",
+      "typical_formulas": [
+        "formula.si_jun_zi_tang"
+      ],
+      "typical_points": [
+        "CV6",
+        "CV4",
+        "ST36",
+        "BL20"
+      ],
+      "point_rationale_zh": "氣海、關元培補元氣;足三里健運脾胃、後天化氣之源;脾俞助運化以資氣生。",
+      "point_rationale_en": "CV6 and CV4 nourish original qi; ST36 strengthens Spleen-Stomach transformation, the postnatal source of qi; BL20 supports the Spleen to generate qi.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.blood_deficiency",
+      "name_zh": "血虛",
+      "name_en": "Blood Deficiency",
+      "key_signs_zh": [
+        "面色萎黃或蒼白",
+        "脣甲色淡",
+        "頭暈眼花",
+        "心悸失眠"
+      ],
+      "key_signs_en": [
+        "Sallow or pale complexion",
+        "Pale lips and nails",
+        "Dizziness and blurred vision",
+        "Palpitations and insomnia"
+      ],
+      "tongue_zh": "舌淡",
+      "tongue_en": "Pale tongue",
+      "pulse_zh": "脈細",
+      "pulse_en": "Thin pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "mechanism_zh": "血液虧虛,臟腑、經脈、官竅失於濡養。為上位分類,臨床常見心血虛、肝血虛等定位證型(見各下位卡),本卡述其共有總象。",
+      "mechanism_en": "Insufficient blood fails to nourish the organs, channels, and sensory orifices. A category-level node -- the common clinical forms are Heart Blood Deficiency, Liver Blood Deficiency etc. (see individual cards); this card describes the shared presentation.",
+      "common_causes_zh": "失血過多、脾胃虛弱化源不足、久病暗耗營血、思慮過度暗耗心血",
+      "common_causes_en": "Excessive blood loss, Spleen-Stomach weakness failing to generate blood, chronic illness silently consuming nutritive blood, excessive overthinking depleting Heart blood",
+      "progression_zh": "血虛可致氣虛(血不化氣、血不載氣);血虛生風可見肌膚瘙癢、震顫(血虛風燥);婦女血虛可致月經量少、閉經。",
+      "progression_en": "Blood Deficiency can lead to Qi Deficiency (blood fails to generate/carry qi); Blood Deficiency can generate internal wind, causing itching or tremor (Blood Deficiency with Wind); in women it can cause scanty menstruation or amenorrhea.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_deficiency",
+          "distinguishing_zh": "血虛以面色/脣甲淡白、頭暈眼花、心悸為主症;氣虛以乏力氣短、自汗為主症,較少明顯面色/脣甲色淡。氣血常相兼,但主症側重不同。",
+          "distinguishing_en": "Blood Deficiency centers on a pale complexion/lips/nails, dizziness, and palpitations; Qi Deficiency centers on fatigue, shortness of breath, and spontaneous sweating with less pallor. The two often coexist but the leading signs differ.",
+          "tongue_difference_zh": "血虛舌淡而質地可正常;氣虛舌淡兼胖或苔白偏厚",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.yin_deficiency",
+          "distinguishing_zh": "血虛無熱象;陰虛有虛熱象(五心煩熱、潮熱盜汗、舌紅少苔),二者皆可見瘦弱、失眠,但陰虛偏熱、血虛偏淡白無熱。",
+          "distinguishing_en": "Blood Deficiency shows no heat signs; Yin Deficiency shows deficiency-heat signs (five-center heat, tidal fever, night sweats, red tongue with scant coating). Both can show emaciation and insomnia, but Yin Deficiency runs hot while Blood Deficiency stays pale without heat.",
+          "pulse_difference_zh": "血虛脈細;陰虛脈細數",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "補血",
+      "treatment_principle_en": "Tonify blood",
+      "typical_formulas": [
+        "formula.si_wu_tang"
+      ],
+      "typical_points": [
+        "SP6",
+        "SP10",
+        "ST36",
+        "BL17"
+      ],
+      "point_rationale_zh": "三陰交、血海調補肝脾以生血;足三里健脾助化源;膈俞為血會,養血和血。",
+      "point_rationale_en": "SP6 and SP10 regulate Liver-Spleen to generate blood; ST36 strengthens the Spleen as blood's source; BL17, the Hui-Meeting point of blood, nourishes and harmonizes blood.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yin_deficiency",
+      "name_zh": "陰虛",
+      "name_en": "Yin Deficiency",
+      "key_signs_zh": [
+        "五心煩熱",
+        "潮熱盜汗",
+        "口燥咽乾",
+        "顴紅"
+      ],
+      "key_signs_en": [
+        "Five-center heat (palms, soles, chest)",
+        "Tidal fever and night sweats",
+        "Dry mouth and throat",
+        "Malar flushing"
+      ],
+      "tongue_zh": "舌紅少苔或無苔",
+      "tongue_en": "Red tongue with scant or no coating",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thin, rapid pulse",
+      "pattern_family": "ba_gang",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "hot",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin_deficiency"
+      },
+      "mechanism_zh": "陰液虧虛,不能制陽,虛熱內生。為八綱層級的上位分類,臨床常定位為腎陰虛、肺陰虛、肝陰虛等(見各下位卡)。",
+      "mechanism_en": "Depleted yin fluids fail to restrain yang, generating deficiency-heat internally. A category-level node at the Eight-Principles tier -- clinically usually localized as Kidney/Lung/Liver Yin Deficiency etc. (see individual cards).",
+      "common_causes_zh": "久病傷陰、熱病後期傷津、房勞過度、五志化火暗耗陰液",
+      "common_causes_en": "Chronic illness injuring yin, heat disease in its later stage consuming fluids, excessive sexual activity, emotional fire silently consuming yin fluids",
+      "progression_zh": "陰虛日久陰損及陽,可成陰陽兩虛;陰虛動風可見手足蠕動、震顫(虛風內動)。",
+      "progression_en": "Prolonged Yin Deficiency can deplete yang as well, becoming combined Yin-Yang Deficiency; Yin Deficiency can generate internal wind, causing wriggling movements or tremor of the hands and feet.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yang_deficiency",
+          "distinguishing_zh": "陰虛屬虛熱(五心煩熱、潮熱盜汗、舌紅少苔);陽虛屬虛寒(畏寒肢冷、舌淡胖、脈沉遲),寒熱屬性相反,不會同見於同一分型。",
+          "distinguishing_en": "Yin Deficiency is deficiency-heat (five-center heat, tidal fever, red tongue with scant coating); Yang Deficiency is deficiency-cold (aversion to cold, cold limbs, pale swollen tongue, deep slow pulse) -- opposite thermal natures.",
+          "pulse_difference_zh": "陰虛脈細數;陽虛脈沉遲無力",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "本卡(陰虛)為不分臟腑的總綱;腎陰虛是陰虛在腎之定位,兼見腰膝酸軟、耳鳴遺精等腎系特定表現。",
+          "distinguishing_en": "This card is the un-localized general category; Kidney Yin Deficiency is yin deficiency located in the Kidney specifically, adding lower-back/knee weakness, tinnitus, and seminal emission.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "滋陰",
+      "treatment_principle_en": "Nourish yin",
+      "typical_formulas": [
+        "formula.liu_wei_di_huang_wan"
+      ],
+      "typical_points": [
+        "KI3",
+        "SP6",
+        "KI6"
+      ],
+      "point_rationale_zh": "太谿、照海滋補腎陰;三陰交滋養肝脾腎三陰。",
+      "point_rationale_en": "KI3 and KI6 nourish Kidney yin; SP6 nourishes the three Yin channels of Liver, Spleen and Kidney.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yang_deficiency",
+      "name_zh": "陽虛",
+      "name_en": "Yang Deficiency",
+      "key_signs_zh": [
+        "畏寒肢冷",
+        "腰膝冷痛",
+        "小便清長",
+        "大便溏薄"
+      ],
+      "key_signs_en": [
+        "Aversion to cold, cold limbs",
+        "Cold, aching lower back and knees",
+        "Clear, copious urination",
+        "Loose, watery stools"
+      ],
+      "tongue_zh": "舌淡胖苔白",
+      "tongue_en": "Pale, swollen tongue with a white coating",
+      "pulse_zh": "脈沉遲無力",
+      "pulse_en": "Deep, slow, forceless pulse",
+      "pattern_family": "ba_gang",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yang_deficiency"
+      },
+      "mechanism_zh": "陽氣虛衰,溫煦氣化功能減退,陰寒內生。為八綱層級的上位分類,臨床常定位為腎陽虛、脾陽虛、心陽虛等(見各下位卡)。",
+      "mechanism_en": "Weakened yang qi loses its warming and transforming power, generating internal cold. A category-level node at the Eight-Principles tier -- clinically usually localized as Kidney/Spleen/Heart Yang Deficiency etc. (see individual cards).",
+      "common_causes_zh": "素體陽虛、久病傷陽、寒涼藥物或飲食損傷陽氣、年老命火漸衰",
+      "common_causes_en": "Constitutional yang weakness, chronic illness injuring yang, cold-natured medicine or diet damaging yang qi, gradual decline of Ming-Men fire with age",
+      "progression_zh": "陽虛進一步衰竭可致亡陽(大汗淋漓、四肢厥冷、脈微欲絕);陽虛不能化氣行水可致水腫、痰飲(陽虛水泛)。",
+      "progression_en": "Severe further decline of Yang Deficiency can lead to Yang Collapse (profuse sweating, cold limbs, faint pulse); Yang's failure to transform and move water can cause edema or phlegm-fluid retention.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_deficiency",
+          "distinguishing_zh": "陽虛在氣虛基礎上兼有明顯寒象(畏寒肢冷、小便清長);氣虛無明顯寒象,僅乏力氣短自汗。陽虛可視為氣虛之進一步發展(氣損及陽)。",
+          "distinguishing_en": "Yang Deficiency adds clear cold signs (aversion to cold, cold limbs, clear urine) on top of qi deficiency; Qi Deficiency alone shows no such cold signs. Yang Deficiency can be seen as a further stage of Qi Deficiency.",
+          "tongue_difference_zh": "氣虛舌淡苔白;陽虛舌淡胖",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.true_cold_false_heat",
+          "distinguishing_zh": "陽虛脈沉遲無力,寒象直接可見,無假熱表現;若陽虛進一步發展至陽氣被格拒於外,可見面赤、煩躁等假熱之象而實為真寒假熱,是本證重篤階段的變局,不可誤判為熱證而用寒涼。",
+          "distinguishing_en": "Yang Deficiency shows a deep, slow, forceless pulse with directly visible cold signs and no false-heat display; if Yang Deficiency progresses to the point that yang is repelled outward, a false-heat appearance (flushed face, agitation) can emerge while the root remains cold -- a severe-stage variant of this pattern, not to be mistaken for a heat pattern and treated with cooling herbs.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "溫陽",
+      "treatment_principle_en": "Warm yang",
+      "typical_formulas": [
+        "formula.jin_gui_shen_qi_wan"
+      ],
+      "typical_points": [
+        "CV4",
+        "CV6",
+        "GV4",
+        "BL23"
+      ],
+      "point_rationale_zh": "關元、氣海、命門、腎俞溫補腎陽、培補元陽,多配合灸法。",
+      "point_rationale_en": "CV4, CV6, GV4 and BL23 warm and tonify Kidney/original yang, often combined with moxibustion.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.heat",
+      "name_zh": "熱",
+      "name_en": "Heat",
+      "key_signs_zh": [
+        "發熱",
+        "口渴喜冷飲",
+        "面紅目赤",
+        "煩躁"
+      ],
+      "key_signs_en": [
+        "Fever",
+        "Thirst with preference for cold drinks",
+        "Red face and eyes",
+        "Restlessness and agitation"
+      ],
+      "tongue_zh": "舌紅苔黃",
+      "tongue_en": "Red tongue with a yellow coating",
+      "pulse_zh": "脈數",
+      "pulse_en": "Rapid pulse",
+      "pattern_family": "ba_gang",
+      "eight_principles": {
+        "interior_exterior": null,
+        "cold_heat": "hot",
+        "deficiency_excess": null,
+        "yin_yang": null
+      },
+      "mechanism_zh": "陽熱偏盛或陰不制陽,機能活動亢奮。八綱寒熱一級分類,可為外感實熱(邪熱熾盛)或內傷虛熱(陰虛生熱),須再辨表裡虛實方能定治法。",
+      "mechanism_en": "Excess yang heat, or yin's failure to restrain yang, drives hyperactive bodily function. The primary Cold-Heat axis of the Eight Principles; can be exterior excess heat (an invading pathogen) or interior deficiency heat (yin deficiency generating heat) -- exterior/interior and deficiency/excess must be further differentiated to set treatment.",
+      "common_causes_zh": "外感熱邪、五志過極化火、過食辛辣助熱、陰虛不能制陽而生內熱",
+      "common_causes_en": "Invasion by a heat pathogen, extreme emotions transforming into fire, excessive spicy/hot food, yin deficiency failing to restrain yang and generating internal heat",
+      "progression_zh": "熱盛可傷津動血動風(高熱動風、熱迫血妄行);熱極可生寒(真熱假寒,格陽於外)。",
+      "progression_en": "Extreme heat can injure fluids, force blood to move recklessly, or generate wind (high fever causing convulsions, heat forcing bleeding); at its extreme, heat can produce a false-cold appearance (true heat, false cold with yang repelled outward).",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.fire",
+          "distinguishing_zh": "熱證多瀰漫全身、病勢相對緩和持續;火證是熱之極,病位較局限於某一臟腑並見上炎化毒之象(口舌生瘡、齒齦腫痛、甚則吐衄),病勢更急更重。",
+          "distinguishing_en": "Heat tends to be diffuse and sustained; Fire is heat at its extreme, more localized to one organ with flaring/toxic signs (mouth ulcers, swollen gums, even bleeding) -- a more acute, severe presentation.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.yin_deficiency",
+          "distinguishing_zh": "此卡多指實熱(邪盛);陰虛之熱為虛熱,以午後潮熱、盜汗、舌紅少苔為特徵,無外感表證,病程較久。",
+          "distinguishing_en": "This card usually denotes excess heat (pathogen predominance); Yin Deficiency heat is deficiency-heat, marked by afternoon tidal fever, night sweats, and a red tongue with scant coating, without exterior signs, and a chronic course.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清熱",
+      "treatment_principle_en": "Clear heat",
+      "typical_formulas": [
+        "formula.bai_hu_tang"
+      ],
+      "typical_points": [
+        "LI11",
+        "GV14",
+        "LI4"
+      ],
+      "point_rationale_zh": "曲池、大椎清瀉熱邪;合谷助解表退熱。",
+      "point_rationale_en": "LI11 and GV14 clear and drain heat; LI4 assists in releasing the exterior and reducing fever.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.fire",
+      "name_zh": "火",
+      "name_en": "Fire",
+      "key_signs_zh": [
+        "面紅目赤",
+        "口舌生瘡",
+        "齒齦腫痛",
+        "便秘尿赤"
+      ],
+      "key_signs_en": [
+        "Red face and eyes",
+        "Mouth and tongue ulcers",
+        "Swollen, painful gums",
+        "Constipation with dark urine"
+      ],
+      "tongue_zh": "舌紅苔黃,甚則舌尖紅赤起刺",
+      "tongue_en": "Red tongue with a yellow coating, in severe cases red, prickled tongue tip",
+      "pulse_zh": "脈弦數或洪數",
+      "pulse_en": "Wiry-rapid or surging-rapid pulse",
+      "pattern_family": "ba_gang",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "hot",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "mechanism_zh": "陽熱亢盛已極,火性炎上、易生風動血、易灼傷津液,多局限於某一臟腑並見化毒之象。",
+      "mechanism_en": "Yang heat at its extreme; fire's nature is to flare upward, readily generates wind, forces blood to move, and scorches fluids -- usually localized to a specific organ with toxic-heat signs.",
+      "common_causes_zh": "五志過極化火(尤怒、思)、外感邪氣入裡化火、臟腑陽熱素盛、過食辛辣厚味助火",
+      "common_causes_en": "Extreme emotions transforming into fire (especially anger, overthinking), an exterior pathogen entering the interior and transforming into fire, constitutional organ-heat, excessive spicy/rich food fueling fire",
+      "progression_zh": "火盛動風可見高熱抽搐;火迫血妄行可見吐血衄血;火毒熾盛可成癰瘍。",
+      "progression_en": "Extreme fire can generate wind, causing high fever and convulsions; fire forcing blood recklessly can cause vomiting/nosebleeds; extreme fire-toxin can become an abscess.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat",
+          "distinguishing_zh": "火證病位較局限(某一臟腑)且病勢更急更重,常見上炎化毒之象;熱證病位較瀰漫、程度相對輕緩。",
+          "distinguishing_en": "Fire is more localized (one organ) and more acute/severe, typically with flaring/toxic signs; Heat is more diffuse and comparatively milder.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.yin_deficiency",
+          "distinguishing_zh": "此卡為實火;陰虛所致者為虛火(陰虛火旺),兩者皆有紅赤之象,但實火起病急、脈洪數有力,虛火起病緩、脈細數無力兼潮熱盜汗。",
+          "distinguishing_en": "This card is excess fire; fire from Yin Deficiency is deficiency-fire (Yin Deficiency with Effulgent Fire) -- both show redness, but excess fire is acute with a forceful surging-rapid pulse, while deficiency fire is gradual with a thin-rapid forceless pulse plus tidal fever and night sweats.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "瀉火",
+      "treatment_principle_en": "Drain fire",
+      "typical_formulas": [
+        "formula.huang_lian_jie_du_tang"
+      ],
+      "typical_points": [
+        "LI11",
+        "PC8",
+        "LR2"
+      ],
+      "point_rationale_zh": "曲池瀉熱;勞宮清心火;行間瀉肝火,依所在臟腑選穴。",
+      "point_rationale_en": "LI11 drains heat; PC8 clears Heart fire; LR2 drains Liver fire -- points are selected by the organ involved.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.damp_heat",
+      "name_zh": "濕熱",
+      "name_en": "Damp-Heat",
+      "key_signs_zh": [
+        "身熱不揚",
+        "頭身困重",
+        "胸悶脘痞",
+        "口苦黏膩",
+        "小便黃赤"
+      ],
+      "key_signs_en": [
+        "Fever that does not spike clearly (lingering low fever)",
+        "Heavy, sluggish head and body",
+        "Chest and epigastric fullness/oppression",
+        "Bitter, sticky taste in the mouth",
+        "Dark, scanty urine"
+      ],
+      "tongue_zh": "舌紅苔黃膩",
+      "tongue_en": "Red tongue with a greasy yellow coating",
+      "pulse_zh": "脈濡數或滑數",
+      "pulse_en": "Soggy-rapid or slippery-rapid pulse",
+      "pattern_family": "bing_yin",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "hot",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "mechanism_zh": "濕與熱相合,如油入麵,膠著難解,阻遏氣機升降。為病因辨證上位分類,臨床常再定位為肝膽濕熱、脾胃濕熱、下焦濕熱等(見各下位卡)。",
+      "mechanism_en": "Dampness and heat combine like oil mixed into flour -- tightly bound and hard to separate, obstructing the movement of qi. A category-level node in etiological pattern differentiation; clinically usually further localized as Liver-Gallbladder, Spleen-Stomach, or Lower-Jiao Damp-Heat etc. (see individual cards).",
+      "common_causes_zh": "外感濕熱之邪、飲食肥甘厚膩釀濕化熱、脾失健運濕邪內生鬱久化熱、久居潮濕炎熱之地",
+      "common_causes_en": "Invasion by an exterior damp-heat pathogen, rich/greasy food generating damp that transforms into heat, Spleen dysfunction generating internal dampness that stagnates into heat, long residence in a hot, humid climate",
+      "progression_zh": "濕熱蘊結可依部位傳變為肝膽濕熱、脾胃濕熱、下焦濕熱、大腸濕熱等;濕熱久羈可傷陰,形成濕熱傷陰的虛實夾雜證。",
+      "progression_en": "Damp-Heat accumulation can localize by site into Liver-Gallbladder, Spleen-Stomach, Lower-Jiao, or Large-Intestine Damp-Heat etc.; prolonged Damp-Heat can injure yin, producing a mixed deficiency-excess pattern.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm",
+          "distinguishing_zh": "濕熱以身重、脘痞、苔黃膩、小便黃赤為主,病邪彌散;痰證以咳痰、喉間痰核、脈滑為主,病邪凝聚成形。二者可相兼(痰熱)。",
+          "distinguishing_en": "Damp-Heat centers on heaviness, epigastric fullness, a greasy-yellow coating, and dark urine -- a diffuse pathogen; Phlegm centers on coughing up sputum, throat lumps, and a slippery pulse -- a pathogen condensed into a substantial form. The two can combine (Phlegm-Heat).",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.heat",
+          "distinguishing_zh": "熱證單純見發熱、口渴、脈數,無苔膩、頭身困重、胸悶脘痞等濕象;濕熱兼有濕邪重濁黏滯的特徵。",
+          "distinguishing_en": "Heat alone shows fever, thirst, and a rapid pulse without the dampness signs of a greasy coating, heavy body, or chest/epigastric fullness; Damp-Heat additionally carries dampness's heavy, turbid, sticky character.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清熱利濕",
+      "treatment_principle_en": "Clear heat and disinhibit dampness",
+      "typical_formulas": [
+        "formula.gan_lu_xiao_du_dan"
+      ],
+      "typical_points": [
+        "SP9",
+        "SP6",
+        "ST36"
+      ],
+      "point_rationale_zh": "陰陵泉清利濕熱;三陰交健脾化濕;足三里助脾胃運化以絕生濕之源。",
+      "point_rationale_en": "SP9 clears and disinhibits damp-heat; SP6 strengthens the Spleen and transforms dampness; ST36 supports Spleen-Stomach transformation to cut off the source of dampness.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.phlegm",
+      "name_zh": "痰",
+      "name_en": "Phlegm",
+      "key_signs_zh": [
+        "咳嗽痰多",
+        "胸悶",
+        "頭暈目眩",
+        "喉間痰核或肢體麻木"
+      ],
+      "key_signs_en": [
+        "Cough with copious sputum",
+        "Chest oppression",
+        "Dizziness and blurred vision",
+        "Throat lumps or numbness of the limbs"
+      ],
+      "tongue_zh": "苔膩",
+      "tongue_en": "Greasy tongue coating",
+      "pulse_zh": "脈滑",
+      "pulse_en": "Slippery pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": null,
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "mechanism_zh": "津液代謝失常,凝聚成痰,隨氣升降流竄全身,可停於肺、胃、經絡、清竅等處而見不同兼證。為上位分類,臨床常再定位為痰濕阻肺、痰迷心竅等(見各下位卡)。",
+      "mechanism_en": "Disordered fluid metabolism condenses into phlegm, which follows qi's rise and fall to travel throughout the body, lodging in the Lung, Stomach, channels, or sensory orifices with different accompanying signs. A category-level node; clinically further localized as Phlegm-Damp Obstructing the Lung, Phlegm Misting the Mind's Portals etc. (see individual cards).",
+      "common_causes_zh": "脾失健運水濕不化、肺失宣降津液停聚、腎陽不足氣化失司、飲食失節嗜食肥甘",
+      "common_causes_en": "Spleen dysfunction failing to transform water-damp, Lung's loss of dispersing-descending causing fluid stagnation, insufficient Kidney yang impairing qi transformation, unregulated diet with excess rich food",
+      "progression_zh": "痰阻氣機可致痰氣互結(梅核氣);痰鬱化熱成痰熱;痰蒙清竅可致神昏、癲癇;痰瘀互結可成癥積。",
+      "progression_en": "Phlegm obstructing qi movement can become Phlegm-Qi Binding (plum-pit qi); phlegm stagnation can transform into Phlegm-Heat; phlegm misting the sensory orifices can cause loss of consciousness or epilepsy; phlegm combined with stasis can form masses.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.damp_heat",
+          "distinguishing_zh": "痰為津液凝聚成形之邪,質稠,可隨氣流竄至喉間、經絡、清竅;濕熱為瀰漫彌散之邪,以身重、苔膩、小便黃赤為主,無成形痰核。",
+          "distinguishing_en": "Phlegm is a condensed, substantial pathogen (thick in quality) that can travel to the throat, channels, or sensory orifices; Damp-Heat is a diffuse pathogen marked by heaviness, a greasy coating, and dark urine, without a formed phlegm-lump.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "痰以咳吐痰涎、苔膩脈滑為主,是有形之邪;氣滯(以肝氣鬱結為代表)以脹悶竄痛、脈弦為主,是無形氣機不暢,兩者常互為因果(氣滯生痰、痰阻氣機)。",
+          "distinguishing_en": "Phlegm is marked by coughing up sputum, a greasy coating, and a slippery pulse -- a substantial pathogen; Qi Stagnation (represented by Liver Qi Stagnation) is marked by distension, oppression, and wandering pain with a wiry pulse -- an intangible blockage of qi movement. The two often cause each other.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "化痰",
+      "treatment_principle_en": "Transform phlegm",
+      "typical_formulas": [
+        "formula.er_chen_tang"
+      ],
+      "typical_points": [
+        "ST40",
+        "SP9",
+        "CV12"
+      ],
+      "point_rationale_zh": "豐隆為化痰要穴;陰陵泉健脾利濕絕痰源;中脘理氣和胃助運化。",
+      "point_rationale_en": "ST40 is the key point for transforming phlegm; SP9 strengthens the Spleen and drains dampness to cut off phlegm's source; CV12 regulates qi and harmonizes the Stomach to aid transformation.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.wind_external",
+      "name_zh": "外風",
+      "name_en": "Wind External",
+      "key_signs_zh": [
+        "惡風發熱",
+        "汗出",
+        "頭痛",
+        "肢體遊走性疼痛或皮膚瘙癢"
+      ],
+      "key_signs_en": [
+        "Aversion to wind with fever",
+        "Sweating",
+        "Headache",
+        "Wandering limb pain or itchy skin"
+      ],
+      "tongue_zh": "舌苔薄白",
+      "tongue_en": "Thin white tongue coating",
+      "pulse_zh": "脈浮",
+      "pulse_en": "Floating pulse",
+      "pattern_family": "bing_yin",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": null,
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "mechanism_zh": "風邪輕揚開泄、善行數變,客於肌表或經絡,腠理疏鬆而汗出惡風。為病因辨證上位分類,常與寒、熱、濕邪相兼(風寒、風熱、風濕),單純外風少見,臨床多見其兼夾證(見各下位卡)。",
+      "mechanism_en": "Wind is light, floating, and dispersing, and changes rapidly; it lodges in the exterior or the channels, loosening the pores and causing sweating with aversion to wind. A category-level node in etiological differentiation; wind rarely presents alone and is usually combined with cold, heat, or dampness (Wind-Cold, Wind-Heat, Wind-Damp etc.; see individual cards).",
+      "common_causes_zh": "外感風邪,常兼夾寒、熱、濕邪同時侵襲肌表或經絡",
+      "common_causes_en": "Invasion by an exterior wind pathogen, usually combined with cold, heat, or dampness attacking the exterior or channels simultaneously",
+      "progression_zh": "外風可與寒濕熱相合為風寒、風熱、風濕表證;風邪不解可由表入裡,或引動內風。",
+      "progression_en": "External Wind can combine with cold, dampness, or heat to form Wind-Cold, Wind-Heat, or Wind-Damp exterior patterns; unresolved wind can move from the exterior to the interior, or stir internal wind.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold_invading_lung",
+          "distinguishing_zh": "本卡(外風)是不分兼夾的總綱;風寒犯肺是外風兼寒邪、侵犯肺系的具體證型,兼見惡寒重、無汗、脈浮緊。",
+          "distinguishing_en": "This card is the un-combined general category; Wind-Cold Invading the Lung is external wind combined with cold specifically attacking the Lung system, adding pronounced chills, no sweating, and a floating tight pulse.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.liver_wind",
+          "distinguishing_zh": "外風有惡風發熱等表證,脈浮;內風(以肝風內動為代表)無表證,以眩暈、震顫、抽搐、麻木為主,多屬內傷雜病。",
+          "distinguishing_en": "External Wind shows exterior signs (aversion to wind, fever) with a floating pulse; Internal Wind (represented by Liver Wind Stirring) shows no exterior signs and centers on dizziness, tremor, convulsion, or numbness -- an internal-damage pattern.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "疏風解表",
+      "treatment_principle_en": "Disperse wind and release the exterior",
+      "typical_formulas": [
+        "formula.jing_fang_bai_du_san"
+      ],
+      "typical_points": [
+        "GB20",
+        "LI4",
+        "BL12"
+      ],
+      "point_rationale_zh": "風池為祛風要穴;合谷解表;風門疏散風邪。",
+      "point_rationale_en": "GB20 is the key point for dispelling wind; LI4 releases the exterior; BL12 (Wind Gate) disperses wind.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.kidney_deficiency",
+      "name_zh": "腎虛",
+      "name_en": "Kidney Deficiency",
+      "key_signs_zh": [
+        "腰膝酸軟",
+        "耳鳴耳聾",
+        "精神萎靡",
+        "齒搖髮脫",
+        "夜尿頻多"
+      ],
+      "key_signs_en": [
+        "Sore, weak lower back and knees",
+        "Tinnitus or hearing loss",
+        "Listlessness and low spirit",
+        "Loose teeth and hair loss",
+        "Frequent nighttime urination"
+      ],
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": null,
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "mechanism_zh": "腎為先天之本,藏精、主水、主納氣、主骨生髓。腎虛則精氣不足,可偏於陰、陽、氣、精之虛而見不同兼證(腎陰虛偏熱、腎陽虛偏寒、腎氣虛以固攝無力為主、腎精虧虛以生長生殖遲緩早衰為主)。本卡舌脈刻意留空——腎陰虛與腎陽虛的舌脈方向相反(前者舌紅少苔脈細數,後者舌淡胖脈沉遲),寫死一種舌脈會誤導臨床辨證,須先辨陰陽氣精再定舌脈與治法(見各下位卡)。",
+      "mechanism_en": "The Kidney is the congenital root, storing essence, governing water, receiving qi, and generating marrow/bone. Kidney Deficiency can lean toward yin, yang, qi, or essence deficiency, each with a different presentation (Kidney Yin Deficiency runs hot, Kidney Yang Deficiency runs cold, Kidney Qi Deficiency centers on failure to contain, Kidney Essence Deficiency centers on delayed growth/reproduction or premature aging). This card deliberately leaves tongue/pulse blank -- Kidney Yin and Kidney Yang Deficiency have opposite tongue/pulse directions (red tongue with scant coating and thin-rapid pulse vs. pale swollen tongue and deep-slow pulse); fixing one would mislead diagnosis. Yin/yang/qi/essence must be differentiated first (see individual cards).",
+      "common_causes_zh": "稟賦不足、房勞過度、久病傷腎、年老腎氣自衰",
+      "common_causes_en": "Congenital insufficiency, excessive sexual activity, chronic illness injuring the Kidney, natural decline of Kidney qi with age",
+      "progression_zh": "腎虛日久可陰陽俱虛(腎陰陽兩虛);可累及他臟成脾腎陽虛、肝腎陰虛、心腎不交等。",
+      "progression_en": "Prolonged Kidney Deficiency can become combined Yin-Yang Deficiency; it can also involve other organs, becoming Spleen-Kidney Yang Deficiency, Liver-Kidney Yin Deficiency, or Heart-Kidney Disharmony.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "腎陰虛在本卡共有表現外,兼見五心煩熱、顴紅盜汗、舌紅少苔、脈細數,屬虛熱一系。",
+          "distinguishing_en": "Kidney Yin Deficiency adds, on top of this card's shared signs, five-center heat, malar flushing, night sweats, a red tongue with scant coating, and a thin-rapid pulse -- the deficiency-heat branch.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency",
+          "distinguishing_zh": "腎陽虛在本卡共有表現外,兼見畏寒肢冷、面色㿠白、舌淡胖、脈沉遲,屬虛寒一系,與腎陰虛寒熱屬性相反。",
+          "distinguishing_en": "Kidney Yang Deficiency adds chills, cold limbs, a pale/bright-white complexion, a pale swollen tongue, and a deep-slow pulse -- the deficiency-cold branch, thermally opposite to Kidney Yin Deficiency.",
+          "source": "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "補腎(依偏陰、陽、氣、精選滋陰、溫陽、益氣、填精之法,見各下位卡)",
+      "treatment_principle_en": "Tonify the Kidney (the specific method -- nourish yin, warm yang, boost qi, or fill essence -- depends on which aspect is deficient; see individual cards)",
+      "typical_points": [
+        "KI3",
+        "BL23",
+        "CV4"
+      ],
+      "point_rationale_zh": "太谿為腎經原穴,腎俞、關元補益腎氣,通治各型腎虛的基礎配穴,具體方藥須依下位證型選用。",
+      "point_rationale_en": "KI3 is the Kidney channel's Yuan-Source point; BL23 and CV4 tonify Kidney qi -- a base point set usable across Kidney Deficiency subtypes, while the formula must be chosen per the specific subtype.",
+      "sources": [
+        "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)",
+        "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫診斷學 教材通用(證候鑑別章節,課程層級引用)"
+        ],
+        "points": [
+          "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
+        ]
+      }
     }
   ]
 }
