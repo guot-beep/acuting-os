@@ -340,3 +340,82 @@ CHM 課程包寫「No substitutions」，AD 方劑卡卻列了四種替代藥—
 5. **既有 `herb.bai_ji_li` 的別名陣列本來就不對齊**：`aliases_zh` 3 筆 vs
    `aliases_en` 4 筆。這是本次動工前就有的，驗證器不檢查 aliases 所以沒被抓到。
    **沒有動它**——修法是刪一筆英文或補一筆中文別名，兩者都需要判斷，且不在派工範圍。
+
+---
+
+## 5. 深化批次（`codex/herb-partial-deepen`，自 `codex/pattern-v2` aa97af1 開出，2026-08-11）
+
+派工單：對 Batch 2（13 味食材/賦形）+ Batch 3（15 味礦物/動物/廢用）共 28 張
+`card_grade: "partial"` 卡逐一重新搜尋 `curriculum/herbs/*.md`（第 0-3 節建卡時
+主要查的是 `curriculum/formulas/*.md` 的方劑組成表與 THP，這次改成逐檔查真正的
+中藥學課本章節），找有沒有被漏掉的單味藥專論；並對 5 張「拒絕近親移植」卡
+（犀角/龍齒/珍珠母/山羊角/炮薑）另外針對性重查一次。
+
+### 5.1 逐檔搜尋方法
+
+寫了一個關鍵字掃描腳本（中文名 + 拼音 + 拉丁名三種寫法），對
+`curriculum/herbs/` 下全部 30 個 `.md` 檔跑 28 味藥的關鍵字比對，列出每味藥
+命中的檔案清單，再逐一開檔核讀命中段落是不是「這一味藥自己的專論」（而不是
+只是被別的藥當配伍/替代提到一次）。`Materia Medica Abbbreviated.md`（及其
+`materia_medica_abbreviated_chenoweth.md` 副本）是 OCR 壓平的四欄講義，
+比對時特別注意欄位邊界——只採用「這味藥自己的標題」下方、到「下一個藥名
+標題」之前的段落，跨欄誤讀的風險逐卡寫進 `source_citations.scope`（例如
+穿山甲條目下一欄 Tu Bie Chong 的「Contraindicated: pregnancy」沒有被誤植）。
+
+### 5.2 五張拒絕移植卡的結果
+
+| id | 原判斷 | 深化結果 |
+|---|---|---|
+| `herb.shan_yang_jiao` 山羊角 | 只有替代藥身分，無專論 | **反轉**：`Materia Medica Abbbreviated.md` p.38（[29] Extinguish Wind）找到自己的獨立條目——`Cornu Naemorhedis / Salty, Cold [LV]`，條目本身即寫「效同羚羊角、力較緩、需 2–3 倍劑量」（這是來源自身的比較敘述，非本卡代為推論）。性味歸經、功效已補齊。 |
+| `herb.zhen_zhu_mu` 珍珠母 | 無專論，只有拼音拉丁表 | **反轉**：同一份講義同頁找到獨立條目（緊接「珍珠」條目之後另立標題，未與珍珠混同）——`Sweet, Salty, Cold [HT, LV]`，另有清肝明目、外用收斂止癢、制酸止痛等功效，用量 15–30g 打碎先煎（與方中 21–30g／10–45g 互相印證），並帶現代藥理「WM: ST, muscle relaxer」。性味歸經、功效、`modern_functions_zh/en` 均已補齊。 |
+| `herb.pao_jiang` 炮薑 | （任務單誤植為「性味歸經留空」） | **原本就不是空的**：F12 建卡當時已在 `MM2_Module 4_Warm_Interior_Herbs-1.md` 找到炮薑自己的獨立段落（苦澀溫、肝脾經，與乾薑明顯不同），性味歸經從一開始就填好。本次深化只在 `Herbs_that_Stop_Bleeding.md` 補到兩則具體配伍（配艾葉；配黨參、黃芪治月經過多），加了新引用，未動性味歸經。 |
+| `herb.xi_jiao` 犀角 | 無專論，留空 | **維持留空**：逐檔搜尋 curriculum/herbs/ 全部 30 檔 + THP 4th ed.（RHINOCEROTIS 檢索無結果），犀角仍只以「被水牛角替代的對象」身分出現，查無自己的性味歸經段落。留空判斷正確，已在卡片補記本次搜尋結論。 |
+| `herb.long_chi` 龍齒 | 無專論，留空 | **維持留空**：同上方法逐檔搜尋 + THP（DENTIS MASTODI 無結果），龍齒僅見拼音拉丁對照表一行與珍珠母丸組成行。留空判斷正確，已在卡片補記本次搜尋結論。 |
+
+### 5.3 額外找到的 2 張非清單卡（同一份講義的副產品）
+
+搜尋山羊角/珍珠母時，同一份 `Materia Medica Abbbreviated.md` 在其他章節
+也給了另外兩味原本判定「無專論」的卡自己的獨立條目：
+
+| id | 原判斷 | 深化結果 |
+|---|---|---|
+| `herb.han_shui_shi` 寒水石 | 只有 Chenoweth 索引分類標記 [3][CD]，無完整性味 | 清熱瀉火章找到獨立條目——`Calcitum / (Cd) Acrid, Salty [HT, ST, KD]`，另補利咽（咽痛目赤灼熱）與外用清熱消腫（燙傷/瘡瘍/口瘡）兩則主治。 |
+| `herb.chuan_shan_jia` 穿山甲 | 只有分類標記 [18][C]，無完整性味 | 活血化瘀章（Blood Regulating）找到獨立條目——`Salty, Cool [LV & ST]`，另補風寒濕痺關節痛（配獨活、羌活、川芎）一則主治；保育類廢用、替代藥王不留行等既有禁忌結論不變、未刪動。 |
+
+### 5.4 其餘 21 張卡
+
+逐一以相同方法搜尋（食材/賦形類：石榴皮、天葵子、化橘紅、糯稻根、白酒、
+黃酒、雞子黃、綠茶、梨皮、棕櫚皮、豬脊髓、小麥、竹葉；礦物/動物/廢用類：
+胡黃連、龜板膠、安息香、罌粟殼、青木香、硝石、金箔、銀箔），**均查無新增
+的獨立專論**——命中的段落全部是配伍提及（如「竹葉」命中的其實是「淡竹葉」
+的配伍句）或既有來源的重複。維持原留空判斷，未動性味歸經／現代藥理／禁忌，
+符合「查不到就不填」。
+
+### 5.5 card_grade
+
+28 張全部維持 `"partial"`。深化沒有補出任何一筆新禁忌症，template 級要求的
+`contraindications_zh` 門檻沒有任何一張因本批次跨過，故無任何升級——這是刻意
+的，不為了湊格而編禁忌。
+
+### 5.6 完整性核對
+
+- `git diff` 字串長度核對（逐欄位、逐卡）：28 張卡 0 筆欄位變短、0 筆陣列變短。
+- `_zh`/`_en` 陣列長度核對（7 張實際改動的卡 × 9 組成對欄位）：全數 1:1 對齊。
+- `card_grade` 前後比對：0 筆變動。
+- 只動了 7 張卡的實質內容（`shan_yang_jiao`、`zhen_zhu_mu`、`han_shui_shi`、
+  `chuan_shan_jia`、`xi_jiao`、`long_chi`、`pao_jiang`），另外 21 張搜尋後
+  確認無新來源、未寫入任何欄位。
+
+### 5.7 驗證器結果（本批次後）
+
+| 指令 | 結果 |
+|---|---|
+| `node scripts/build-data.js` | 成功，`herbs: 358`（不變） |
+| `node scripts/validate-herb-standard.js` | `PASS — no structural defects.` |
+| `node scripts/check-validation-ratchet.js` | `PASS — no regressions.` |
+| `node scripts/validate-content-junk.js` | `PASS`（既有 1 則 WARN 為方劑劑量共用句，與本批次無關） |
+| `node scripts/validate-relations.js` | `Relation validation passed.` |
+| `node scripts/validate-formula-standard.js --all \| grep -c F12` | `3`（不變，本批次未動 composition 連結） |
+
+分支：`codex/herb-partial-deepen`（自 `codex/pattern-v2` aa97af1 開出）。
+本批次只 commit，未 push。
