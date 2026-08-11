@@ -564,3 +564,23 @@ NEVER hand-typed (type 逍遙 / xiaoyao / XYS → pick → store
 integrity from "caught after the fact" into physically-impossible-to-break,
 and it is what makes recording every practice case low-friction enough to
 actually sustain for three years. Then: "copy from last visit" pre-fill.
+
+## D18(PROPOSED,待 Ting 裁定)— SQLite 時程正式修訂
+
+**背景**:上方「One semester before clinic」段將 localStorage→SQLite 遷移
+deadline 訂在開診前假期。實際 2026-08 的工程順序是:C2b Patient 遷移鏈
+(8 輪審計)+ 可逆 export/import + 每日備份紀律優先;SQLite 未動。
+三年藍圖(2026-08-11)把 SQLite 排在 12-24m。INDEPENDENT_AUDIT_2026-08-11
+正確指出:這是對本檔既有決策的**未記錄偏離**。本條就是那份記錄。
+
+**提案**:正式修訂為 —— 9/5 前不做 SQLite;條件觸發制:病例量 ≥50、或
+多裝置需求出現、或 localStorage 容量壓力實測浮現,三者任一即啟動遷移
+(照 C2b 同款 plan→shadow→verify→pointer→rollback 流程;
+localstorage_sqlite_mapping.json 持續逐欄維護是本提案的前提紀律)。
+
+**理由**:(1) 開診前最後三週的風險預算應花在已知高風險面(C2b runtime
+契約、日常寫入路徑防護),不是引入新儲存引擎;(2) localStorage +
+fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料安全;
+(3) mapping 檔的維護讓延後不增加未來遷移成本。
+
+**Ting 裁定**:☐ 接受修訂 ☐ 維持原時程(開診前假期完成 SQLite)
