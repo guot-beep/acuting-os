@@ -1,0 +1,66 @@
+{
+  "status": "RESEARCH STAGING / NOT CANONICAL",
+  "batch": "CR-005",
+  "map": [
+    {
+      "candidate": "metric.sleep_duration_hours",
+      "canonical_target": "metric.sleep_hours",
+      "action": "alias_to_existing",
+      "reason": "same semantic concept; preserve one longitudinal series"
+    },
+    {
+      "candidate": "metric.sleep_onset_latency_min",
+      "canonical_target": "metric.sleep_onset_minutes",
+      "action": "alias_to_existing",
+      "reason": "same measurement concept and unit"
+    },
+    {
+      "candidate": "metric.night_awakenings",
+      "canonical_target": "metric.night_wakings",
+      "action": "alias_to_existing",
+      "reason": "same count concept"
+    },
+    {
+      "candidate": "metric.bowel_movements_per_week",
+      "canonical_target": "metric.bowel_frequency",
+      "action": "alias_to_existing",
+      "reason": "same bowel frequency concept; canonical unit/period should be defined by existing metric"
+    },
+    {
+      "candidate": "metric.pain_score",
+      "canonical_target": "metric.pain_score",
+      "action": "use_existing",
+      "reason": "exact existing"
+    },
+    {
+      "candidate": "metric.sleep_quality",
+      "canonical_target": "metric.sleep_quality",
+      "action": "use_existing",
+      "reason": "exact existing"
+    },
+    {
+      "candidate": "metric.fatigue_score",
+      "canonical_target": "metric.fatigue_score",
+      "action": "candidate_new",
+      "reason": "no supplied existing equivalent; generic 0–10 longitudinal score"
+    },
+    {
+      "candidate": "metric.stool_form_bristol",
+      "canonical_target": "metric.stool_form_bristol",
+      "action": "candidate_new",
+      "reason": "ordinal stool-form measurement distinct from bowel frequency"
+    },
+    {
+      "candidate": "metric.hot_flash_count_day",
+      "canonical_target": "metric.hot_flash_count_day",
+      "action": "candidate_new",
+      "reason": "frequency endpoint distinct from generic symptom severity"
+    },
+    {
+      "candidate": "metric.range_of_motion_deg",
+      "canonical_target": "metric.range_of_motion_deg",
+      "action": "candidate_new_needs_metadata",
+      "reason": "requires joint/movement/side metadata to be clinically interpretable"
+    }
+  ]
+}

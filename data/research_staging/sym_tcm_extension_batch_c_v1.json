@@ -1,0 +1,490 @@
+{
+  "status": "RESEARCH STAGING / NOT CANONICAL",
+  "batch": "CR-004",
+  "records": [
+    {
+      "id": "sym.spontaneous_sweating",
+      "name_zh": "自汗",
+      "name_en": "Spontaneous/excessive sweating",
+      "tradition": "both",
+      "western_term": "excessive sweating / hyperhidrosis",
+      "body_region": "systemic",
+      "red_flags": [
+        {
+          "note": "Sweating at rest or without expected heat/exertion has biomedical correlates; evaluate secondary causes if new/persistent.",
+          "sources": [
+            {
+              "source_key": "sweat",
+              "url": "https://medlineplus.gov/sweat.html"
+            },
+            {
+              "source_key": "hyperhidrosis",
+              "url": "https://medlineplus.gov/ency/article/007259.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.night_sweats",
+      "name_zh": "盜汗",
+      "name_en": "Night sweats",
+      "tradition": "both",
+      "western_term": "night sweats",
+      "body_region": "systemic",
+      "red_flags": [
+        {
+          "note": "Persistent drenching night sweats with fever, cough, weight loss, lymphadenopathy or other systemic symptoms need medical evaluation; active TB can include night sweats.",
+          "sources": [
+            {
+              "source_key": "tb",
+              "url": "https://www.cdc.gov/tb/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.bitter_taste",
+      "name_zh": "口苦",
+      "name_en": "Bitter taste",
+      "tradition": "both",
+      "western_term": "dysgeusia / altered taste",
+      "body_region": "ears_nose_throat",
+      "red_flags": [
+        {
+          "note": "Persistent new taste disturbance is a biomedical symptom; review medications, oral/dental disease, smell disorders and neurologic/systemic context.",
+          "sources": [
+            {
+              "source_key": "taste",
+              "url": "https://medlineplus.gov/ency/article/003050.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.dry_mouth",
+      "name_zh": "口乾",
+      "name_en": "Dry mouth",
+      "tradition": "both",
+      "western_term": "xerostomia",
+      "body_region": "ears_nose_throat",
+      "red_flags": [
+        {
+          "note": "Persistent xerostomia can reflect medication effects, Sjögren syndrome, diabetes, salivary disease or treatment effects; dysphagia/dehydration/infection increase concern.",
+          "sources": [
+            {
+              "source_key": "drymouth",
+              "url": "https://medlineplus.gov/drymouth.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.excessive_thirst",
+      "name_zh": "口渴",
+      "name_en": "Excessive thirst",
+      "tradition": "both",
+      "western_term": "polydipsia / excessive thirst",
+      "body_region": "systemic",
+      "red_flags": [
+        {
+          "note": "Marked persistent thirst with polyuria, dehydration, altered mental status, vomiting or metabolic symptoms warrants medical evaluation.",
+          "sources": [
+            {
+              "source_key": "drymouth",
+              "url": "https://medlineplus.gov/drymouth.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.aversion_to_cold",
+      "name_zh": "畏寒",
+      "name_en": "Cold intolerance / aversion to cold",
+      "tradition": "both",
+      "western_term": "cold intolerance",
+      "body_region": "systemic",
+      "red_flags": [
+        {
+          "note": "Persistent cold intolerance may occur with anemia, hypothyroidism, vascular disease or chronic illness; sudden systemic deterioration requires broader evaluation.",
+          "sources": [
+            {
+              "source_key": "cold",
+              "url": "https://medlineplus.gov/ency/article/003095.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.chills",
+      "name_zh": "惡寒 / 寒戰",
+      "name_en": "Chills",
+      "tradition": "both",
+      "western_term": "chills / shivering",
+      "body_region": "systemic",
+      "red_flags": [
+        {
+          "note": "Chills with high fever, confusion, stiff neck, dyspnea, abdominal pain or urinary burning/frequency require prompt assessment.",
+          "sources": [
+            {
+              "source_key": "chills",
+              "url": "https://medlineplus.gov/ency/article/003091.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.heat_intolerance",
+      "name_zh": "畏熱",
+      "name_en": "Heat intolerance",
+      "tradition": "both",
+      "western_term": "heat intolerance",
+      "body_region": "systemic",
+      "red_flags": [
+        {
+          "note": "Acute overheating with confusion, collapse or very high body temperature is an emergency; chronic heat intolerance can have endocrine/medication causes.",
+          "sources": [
+            {
+              "source_key": "heat",
+              "url": "https://medlineplus.gov/ency/article/003094.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.cold_extremities",
+      "name_zh": "四肢冰冷",
+      "name_en": "Cold extremities",
+      "tradition": "both",
+      "western_term": "cold hands/feet / peripheral coldness",
+      "body_region": "musculoskeletal",
+      "red_flags": [
+        {
+          "note": "New unilateral cold/pale/painful limb, absent pulse, severe numbness or weakness can indicate vascular or neurologic emergency.",
+          "sources": [
+            {
+              "source_key": "cold",
+              "url": "https://medlineplus.gov/ency/article/003095.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.urinary_frequency",
+      "name_zh": "小便頻數",
+      "name_en": "Urinary frequency",
+      "tradition": "both",
+      "western_term": "urinary frequency",
+      "body_region": "urogenital",
+      "red_flags": [
+        {
+          "note": "Frequency with fever, flank pain, dysuria, hematuria, pregnancy, severe thirst or systemic illness needs medical evaluation.",
+          "sources": [
+            {
+              "source_key": "urinary",
+              "url": "https://medlineplus.gov/ency/article/003140.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.nocturia",
+      "name_zh": "夜尿",
+      "name_en": "Nocturia",
+      "tradition": "both",
+      "western_term": "nocturia",
+      "body_region": "urogenital",
+      "red_flags": [
+        {
+          "note": "New/worsening nocturia can reflect urinary, metabolic, cardiovascular or sleep disorders; assess context rather than treating it as a TCM-only finding.",
+          "sources": [
+            {
+              "source_key": "urinary",
+              "url": "https://medlineplus.gov/ency/article/003140.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.dysuria",
+      "name_zh": "小便灼熱 / 尿痛",
+      "name_en": "Dysuria",
+      "tradition": "both",
+      "western_term": "dysuria",
+      "body_region": "urogenital",
+      "red_flags": [
+        {
+          "note": "Dysuria with fever, flank pain, vomiting, pregnancy, gross hematuria or systemic illness is higher risk.",
+          "sources": [
+            {
+              "source_key": "urinary",
+              "url": "https://medlineplus.gov/ency/article/003140.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.scanty_urination",
+      "name_zh": "小便短少",
+      "name_en": "Low urine output",
+      "tradition": "both",
+      "western_term": "oliguria / decreased urination",
+      "body_region": "urogenital",
+      "red_flags": [
+        {
+          "note": "Markedly decreased urine output with dehydration, edema, dyspnea, hypotension or acute illness may indicate serious renal/hemodynamic disease.",
+          "sources": [
+            {
+              "source_key": "urinary",
+              "url": "https://medlineplus.gov/ency/article/003140.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.amenorrhea",
+      "name_zh": "閉經",
+      "name_en": "Amenorrhea",
+      "tradition": "both",
+      "western_term": "amenorrhea",
+      "body_region": "gyn_repro",
+      "red_flags": [
+        {
+          "note": "Pregnancy must be considered where applicable; primary amenorrhea after expected pubertal development or secondary amenorrhea with systemic symptoms warrants evaluation.",
+          "sources": [
+            {
+              "source_key": "amenorrhea",
+              "url": "https://www.medlineplus.gov/ency/article/001218.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.irregular_menses",
+      "name_zh": "月經不調",
+      "name_en": "Irregular menses",
+      "tradition": "both",
+      "western_term": "irregular menstrual periods",
+      "body_region": "gyn_repro",
+      "red_flags": [
+        {
+          "note": "Pregnancy, heavy/prolonged bleeding, syncope, severe pelvic pain or endocrine/systemic symptoms increase urgency.",
+          "sources": [
+            {
+              "source_key": "amenorrhea",
+              "url": "https://www.medlineplus.gov/ency/article/001218.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.loose_stool",
+      "name_zh": "便溏",
+      "name_en": "Loose stool",
+      "tradition": "both",
+      "western_term": "loose stool / diarrhea spectrum",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Loose stools with blood/black stool, severe dehydration, high fever, severe pain or persistent vomiting need prompt assessment.",
+          "sources": [
+            {
+              "source_key": "diarrhea",
+              "url": "https://medlineplus.gov/diarrhea.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.undigested_food_stool",
+      "name_zh": "完穀不化",
+      "name_en": "Visible undigested food in stool",
+      "tradition": "both",
+      "western_term": "undigested food particles in stool",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Occasional visible food fragments can be benign; persistent change with weight loss, greasy stool, blood, severe diarrhea or malabsorption features needs evaluation.",
+          "sources": [
+            {
+              "source_key": "diarrhea",
+              "url": "https://medlineplus.gov/diarrhea.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.dry_hard_stool",
+      "name_zh": "大便乾結",
+      "name_en": "Dry/hard stool",
+      "tradition": "both",
+      "western_term": "hard dry stool / constipation",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Constipation with severe abdominal distension/pain, vomiting, inability to pass gas, blood/black stool or systemic illness is concerning.",
+          "sources": [
+            {
+              "source_key": "constipation",
+              "url": "https://medlineplus.gov/constipation.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.irritability",
+      "name_zh": "煩躁 / 易怒",
+      "name_en": "Irritability",
+      "tradition": "both",
+      "western_term": "irritability",
+      "body_region": "sleep_energy_mood",
+      "red_flags": [
+        {
+          "note": "Abrupt severe behavioral change with confusion, mania/psychosis, suicidality, intoxication/withdrawal or neurologic signs requires urgent assessment.",
+          "sources": [
+            {
+              "source_key": "heat",
+              "url": "https://medlineplus.gov/ency/article/003094.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.restlessness",
+      "name_zh": "煩躁不安",
+      "name_en": "Restlessness",
+      "tradition": "both",
+      "western_term": "restlessness / agitation",
+      "body_region": "sleep_energy_mood",
+      "red_flags": [
+        {
+          "note": "New severe agitation with altered mental status, fever, intoxication/withdrawal, neurologic deficits or danger to self/others is urgent.",
+          "sources": [
+            {
+              "source_key": "heat",
+              "url": "https://medlineplus.gov/ency/article/003094.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.dream_disturbed_sleep",
+      "name_zh": "多夢",
+      "name_en": "Dream-disturbed sleep",
+      "tradition": "both",
+      "western_term": "disturbing/vivid dreams with sleep disruption",
+      "body_region": "sleep_energy_mood",
+      "red_flags": [
+        {
+          "note": "Persistent sleep disruption should be assessed for medication/substance effects, trauma/nightmares and sleep disorders; acute dangerous impairment is higher risk.",
+          "sources": [
+            {
+              "source_key": "heat",
+              "url": "https://medlineplus.gov/ency/article/003094.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.sighing",
+      "name_zh": "善太息",
+      "name_en": "Frequent sighing",
+      "tradition": "both",
+      "western_term": "frequent sighing / deep breaths",
+      "body_region": "respiratory",
+      "red_flags": [
+        {
+          "note": "Frequent sighing may occur with stress or dysfunctional breathing, but chest pain, hypoxia, severe dyspnea or syncope requires urgent evaluation.",
+          "sources": [
+            {
+              "source_key": "heat",
+              "url": "https://medlineplus.gov/ency/article/003094.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.globus_sensation",
+      "name_zh": "梅核氣 / 咽中異物感",
+      "name_en": "Globus sensation",
+      "tradition": "both",
+      "western_term": "globus pharyngeus",
+      "body_region": "ears_nose_throat",
+      "red_flags": [
+        {
+          "note": "Progressive dysphagia, odynophagia, weight loss, neck mass, bleeding or airway symptoms are alarm features.",
+          "sources": [
+            {
+              "source_key": "drymouth",
+              "url": "https://medlineplus.gov/drymouth.html"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.chest_tightness",
+      "name_zh": "胸悶",
+      "name_en": "Chest tightness",
+      "tradition": "both",
+      "western_term": "chest tightness / chest pressure",
+      "body_region": "chest_cardio",
+      "red_flags": [
+        {
+          "note": "New/severe chest pressure or tightness with dyspnea, sweating, nausea, syncope or radiation should be treated as potentially emergent.",
+          "sources": [
+            {
+              "source_key": "heat",
+              "url": "https://medlineplus.gov/ency/article/003094.htm"
+            }
+          ]
+        }
+      ],
+      "status": "research_staging_not_canonical"
+    }
+  ]
+}

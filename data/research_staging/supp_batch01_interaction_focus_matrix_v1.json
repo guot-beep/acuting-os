@@ -1,0 +1,138 @@
+{
+  "status": "RESEARCH STAGING / NOT CANONICAL",
+  "batch": "CR-006",
+  "semantics": {
+    "known_concern": "supported concern requiring medication-context review",
+    "no_specific_flag_in_primary_source": "not a claim of no interaction",
+    "insufficient_data": "evidence insufficient; must not be normalized to none",
+    "component_dependent": "multi-ingredient product requires ingredient-level review"
+  },
+  "records": [
+    {
+      "id": "supp.vitamin_d3",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Thiazide diuretics can raise hypercalcemia risk; review other drugs affecting vitamin D/calcium."
+    },
+    {
+      "id": "supp.b_complex",
+      "anticoagulant_flag": "component_dependent",
+      "immunosuppressant_flag": "component_dependent",
+      "thyroid_med_flag": "component_dependent",
+      "note": "Must review B6/niacin/folate/B12 amounts separately; do not apply one class-wide interaction conclusion."
+    },
+    {
+      "id": "supp.b12",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Metformin and acid suppressants can contribute to low B12 status."
+    },
+    {
+      "id": "supp.folate",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "known_concern_antifolate_drugs",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Antifolate and some antiseizure drugs are more relevant than these three focus classes."
+    },
+    {
+      "id": "supp.coq10",
+      "anticoagulant_flag": "known_concern_warfarin",
+      "immunosuppressant_flag": "insufficient_data",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Potential reduction of warfarin effect; monitor anticoagulation clinically."
+    },
+    {
+      "id": "supp.ginkgo",
+      "anticoagulant_flag": "known_concern_bleeding",
+      "immunosuppressant_flag": "insufficient_data",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Bleeding interaction concern with anticoagulant/antiplatelet therapy."
+    },
+    {
+      "id": "supp.curcumin",
+      "anticoagulant_flag": "possible_bleeding_concern",
+      "immunosuppressant_flag": "insufficient_data",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Bleeding/antiplatelet concern is plausible; piperine-containing products can alter drug exposure."
+    },
+    {
+      "id": "supp.lutein",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Combination products may introduce separate interactions."
+    },
+    {
+      "id": "supp.multivitamin",
+      "anticoagulant_flag": "known_concern_if_vitamin_k",
+      "immunosuppressant_flag": "component_dependent",
+      "thyroid_med_flag": "known_concern_if_calcium_iron",
+      "note": "Vitamin K can affect warfarin; calcium/iron can impair levothyroxine absorption."
+    },
+    {
+      "id": "supp.calcium",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "known_absorption_concern",
+      "note": "Separate calcium and levothyroxine per medication guidance."
+    },
+    {
+      "id": "supp.magnesium",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "possible_absorption_timing_concern",
+      "note": "Strongest established timing interactions are with selected antibiotics/bisphosphonates; thyroid timing should be checked against exact product/medication guidance."
+    },
+    {
+      "id": "supp.zinc",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Key interactions: quinolone/tetracycline antibiotics and penicillamine."
+    },
+    {
+      "id": "supp.creatine",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Renal disease/complex medical context more relevant than these three focus classes."
+    },
+    {
+      "id": "supp.nad_plus",
+      "anticoagulant_flag": "insufficient_data",
+      "immunosuppressant_flag": "insufficient_data",
+      "thyroid_med_flag": "insufficient_data",
+      "note": "Do not convert sparse interaction evidence to 'none'."
+    },
+    {
+      "id": "supp.nr",
+      "anticoagulant_flag": "insufficient_data",
+      "immunosuppressant_flag": "insufficient_data",
+      "thyroid_med_flag": "insufficient_data",
+      "note": "Short-term human safety data do not establish broad drug-interaction absence."
+    },
+    {
+      "id": "supp.nmn",
+      "anticoagulant_flag": "insufficient_data",
+      "immunosuppressant_flag": "insufficient_data",
+      "thyroid_med_flag": "insufficient_data",
+      "note": "Long-term and interaction evidence remains limited."
+    },
+    {
+      "id": "supp.omega_3",
+      "anticoagulant_flag": "dose_dependent_bleeding_review",
+      "immunosuppressant_flag": "no_specific_flag_in_primary_source",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "High-dose use warrants anticoagulant/antiplatelet review; also note atrial fibrillation signal in some high-dose trials."
+    },
+    {
+      "id": "supp.probiotics",
+      "anticoagulant_flag": "no_specific_flag_in_primary_source",
+      "immunosuppressant_flag": "known_host_risk_if_severely_immunocompromised",
+      "thyroid_med_flag": "no_specific_flag_in_primary_source",
+      "note": "Serious infections are rare but reported in vulnerable hosts; immunosuppression is a safety-context flag."
+    }
+  ]
+}
