@@ -3204,3 +3204,10 @@ Current repo state as of this log:
 - `js/clinical-store.js`:storage seam(load/persist 兩處委派 + 直讀 fallback)、`applyExposureChange()` append-only 唯一寫入路徑(回應審計 B-1「靠紀律」缺口的機器強制面)、四個軌跡/現況查詢助手。normalize 留 app.js(契約層),store 零 DOM 依賴可 node 測。
 - 驗證:node 單元測試 5 項全過;live 33 real cases 無恙、0 errors;build-site 16 files;遷移路徑補記入 MIGRATION_LOCALSTORAGE_TO_SQLITE.md(未來換後端=setBackend,UI 零改動)。
 - 下一步:Phase D UI → Sonnet(契約已鎖);Phase C2 Patient wiring → Fable(高風險,完成即 Codex audit)。
+
+# 2026-08-11 Fable — Phase D batch 1 落地 + SOL Phase C 三項全解 + Cloudflare 停在認證邊界
+
+- **Phase D batch 1(ba8b1bd,Sonnet 實作、Fable 審)**:用藥/補充劑 ledger UI(清單+timeline、新增 dialog、改劑量/頻率/停用/確認未變),全部寫入走 applyExposureChange。live:3/3 事件、33/33 真實病例、0 errors。
+- **SOL 三項**:①歷史時間戳不合成(normalizer `|| ""`)②createExposure API 強制初始事件 + initial_recorded 語意(「已在使用」勾選)+ legacy events=[] 不回填 ③34→33 = Phase B 計數含 case_d17test 測試病例的回報錯誤,非資料遺失(33 id 全列、52 SOAP 不變、store 無 delete 路徑)。
+- **Cloudflare**:本機 Windows ARM64,workerd 不支援 → wrangler 完全不能跑;本機零憑證。停在唯一授權邊界:Ting 建 API token(Workers Builds Configuration: Edit + Workers Scripts: Edit)以 CLOUDFLARE_API_TOKEN 提供,其後 trigger 修復+main build+smoke test 全自動。DEPLOY 文件已更正(trigger 自帶 build command 為正道)。
+- **下一步**:Phase C2 Patient wiring(Fable,高風險,設計先行,完成即 Codex audit)。

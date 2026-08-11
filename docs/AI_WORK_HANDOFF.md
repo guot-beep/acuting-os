@@ -2,6 +2,50 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #4 — Phase D batch 1 + SOL Phase C 三項全解 + Cloudflare 認證邊界
+
+### CURRENT STATE
+- agent/model: Fable(審核+修正)+ Sonnet(batch 1 實作);branch `codex/pattern-v2`;HEAD `ba8b1bd` + 本 commit
+- REVIEW_ACKNOWLEDGED: **yes**(SOL Phase C review 三項,經 Ting 轉達)
+
+### RESPONSE_TO_REVIEW(SOL 三項,全解,commit `ba8b1bd`)
+1. **時間戳**:normalizer 兩處 `createdAt || new Date()` 改為 `|| ""` ——
+   歷史缺失時間戳保持缺失;只有 applyExposureChange 寫入路徑蓋新戳。
+2. **初始事件**:新增 `store.createExposure()`(API 層強制第一筆事件 =
+   started|initial_recorded;夾帶 events 會被剝除,實測);新增
+   `initial_recorded` 語意(intake 時已在用 ≠ started,表單有「已在使用」勾選);
+   legacy events=[] 誠實保留,絕不回填。
+3. **34→33 查明**:34 = 33 真實 + 1 個 `case_d17test` 測試病例(Phase B 首次
+   round-trip 測試在清理前計數,回報時誤標為「34 legacy」)。證據:現存 33 個
+   id 全列(見 git blame 本檔)、0 測試殘留、52 SOAP 總數不變、store 無任何
+   delete 路徑。**是回報錯誤,不是資料遺失。**
+- Phase D batch 1(Sonnet):ledger UI 全走 applyExposureChange(Fable 逐段審過);
+  live 測 3/3 事件、33/33 病例、0 errors;build-site 16 files。
+- Sonnet 另發現:persist 會把 normalize 後的完整 shape 回寫(77KB→123KB,
+  純 default 欄位膨脹,無內容損失)——屬 pre-existing 行為,列 Codex 確認項。
+
+### CLOUDFLARE(獨立軌,停在認證邊界)
+- 本機 = Windows ARM64:wrangler/workerd 不支援(whoami/login 都不能跑),
+  且本機零 Cloudflare 憑證 → Step 1 本地 deploy 不可行,**這不是可繞過的問題**。
+- 唯一需要 Ting 的單一動作:建 API token(Workers Builds Configuration: Edit +
+  Workers Scripts: Edit),以 `CLOUDFLARE_API_TOKEN` 環境變數提供。之後
+  trigger 修復 + main production build + smoke test 全部可經 REST API 自主完成。
+- DEPLOY_CLOUDFLARE.md 已更正(trigger 必須自帶 build command;jsonc 是第二保險)。
+
+### NEXT INTENDED TASK
+**Phase C2:Patient 實體 wiring(Fable,高風險里程碑)**——SOL 路由確認的順序。
+設計先行(case→patient 抬升的資料遷移是本 sprint 最危險變更),完成即 Codex audit。
+
+### ROUTING RECOMMENDATION
+- Fable 留:C2 Patient wiring 設計+實作
+- Sonnet 接:C2 之後的 Phase D 主力(SOAP 內 lifestyle/adverse-event 列;
+  不依賴 Patient 所有權的部分可先備)
+- Codex 審:B 檢查表 + persist 膨脹行為確認 + createExposure 不變量
+- Antigravity:待 supp 卡模板;Opus review needed: no
+- SOL:Cloudflare token 一到就通知(經 feedback 檔),我接手 API 修復
+
+---
+
 ## HANDOFF 2026-08-12 #3 — Phase C 完成(薄 repository 層)
 
 ### CURRENT STATE

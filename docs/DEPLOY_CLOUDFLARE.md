@@ -20,7 +20,25 @@ wrangler 在每次 `deploy`/`dev` 前自動先跑 build.command——管線由 r
 quarantine 擋 `curriculum/`、`data/imports/`、`docs/`、`clinical/`、`cases/`,
 **絕不允許改成發佈 repo root**(897 檔案/137MB,含版權課件與 39MB 超限檔)。
 
-## Ting 要在 Dashboard 核對的四件事
+## 2026-08 更正與補充(SOL review + 本機實測)
+
+1. **更正**:git-connected Workers Builds 的 build 命令必須設定在 **Workers
+   Builds trigger 本身**(build command = `node scripts/build-site.js`,deploy
+   command = `npx wrangler deploy`,root = repo root),不能只依賴
+   wrangler.jsonc 的 `build.command`。jsonc 那份保留作為第二道保險
+   (`wrangler deploy` 在任何環境都會先跑它),但 trigger 設定是正道。
+2. **本機部署不可行(硬限制)**:這台機器是 Windows ARM64,wrangler 依賴的
+   workerd 沒有 win32-arm64 版,連 `wrangler whoami`/`login` 都無法執行。
+   所以 production 部署的唯一路徑 = git-connected Workers Builds(在
+   Cloudflare 的 Linux runner 上執行,不受本機限制)。
+3. **本機亦無任何 Cloudflare 憑證**(無 env token、無 cached OAuth)。
+   要讓 AI 自主修 trigger + 觸發 main 的 production build,Ting 需要做
+   **一件事**:建立一個 API token(dash.cloudflare.com → My Profile →
+   API Tokens → Create)権限:Account / **Workers Builds Configuration:
+   Edit** + **Workers Scripts: Edit**,以環境變數 `CLOUDFLARE_API_TOKEN`
+   提供(絕不寫進 repo)。有 token 後其餘全部可經 REST API 自動完成。
+
+## Ting 要在 Dashboard 核對的四件事(無 token 時的手動 fallback)
 
 1. **Workers & Pages → acuting-os → Settings → Builds**:
    Production branch = `main`。
