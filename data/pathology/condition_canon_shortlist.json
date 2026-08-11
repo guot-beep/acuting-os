@@ -2492,8 +2492,8 @@
       ],
       "western_context_zh": "常以補鐵、荷爾蒙或非荷爾蒙藥物減少出血，並針對結構性病因處理；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with iron repletion, hormonal or non-hormonal agents to reduce bleeding, and treatment of structural causes. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫經量過多屬「月經過多」,暴下不止與淋漓不淨則入「崩漏」門。課堂綱要歸病機為三:血熱——實熱擾動血海,迫血妄行,或陰虛內熱、虛火內灼血海;氣虛——脾虛不能統血,或值青春期、更年期腎氣未充/漸衰,衝任失於固攝;衝任損傷——墮胎、產後、手術金刃傷絡,或寒邪客宮、情志失調致氣滯血瘀,瘀血不去,新血不得歸經而妄行。崩與漏互相轉化:暴崩耗氣則轉為漏,久漏氣陷又可復崩。",
+      "western_pathology_zh": "月經過多的現代分類採 FIGO 的 PALM-COEIN 架構,分結構性與非結構性兩組。結構性:子宮內膜息肉、子宮腺肌症、子宮平滑肌瘤(黏膜下型出血最著)、內膜惡性病變或非典型增生。非結構性:凝血功能異常(青春期大量經血須想到類血友病等遺傳性凝血病)、排卵障礙(無孕酮對抗的雌激素刺激使內膜增厚後不規則大量剝落,常見於青春期與圍絕經期)、內膜局部止血機制異常(纖溶過度、前列腺素比例失衡)、醫源性(抗凝血劑、銅環)。失血量長期超過補償能力則進展為缺鐵性貧血——這是評估嚴重度的實質指標。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -2531,6 +2531,45 @@
         "rf.menorrhagia.legacy02",
         "rf.menorrhagia.legacy03",
         "rf.menorrhagia.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Excessive menstrual volume is \"profuse menstruation\" in Chinese medicine; sudden flooding or persistent trickling enters the beng-lou (flooding and spotting) category. The course outline gives three mechanisms: blood heat — excess heat agitating the sea of blood and forcing it to move recklessly, or yin-deficiency internal heat scorching it from within; qi deficiency — the spleen failing to manage blood, or kidney qi not yet full (puberty) or declining (menopause) so the Chong and Ren fail to secure; and damage to the Chong and Ren — injury from abortion, childbirth, or surgery, or cold lodging in the uterus and emotional disturbance producing qi stagnation and blood stasis, where retained static blood keeps fresh blood from returning to its channels. Beng and lou convert into each other: flooding exhausts qi and becomes spotting; prolonged spotting sinks qi and can flood again.",
+      "western_pathology_en": "Modern classification of heavy menstrual bleeding uses FIGO's PALM-COEIN framework, splitting structural from non-structural causes. Structural: endometrial polyps, adenomyosis, leiomyomas (submucosal fibroids bleed most), and endometrial malignancy or atypical hyperplasia. Non-structural: coagulopathy (heavy menses from menarche should raise inherited bleeding disorders such as von Willebrand disease), ovulatory dysfunction (estrogen unopposed by progesterone thickens the endometrium, which then sheds irregularly and heavily — typical of adolescence and perimenopause), primary endometrial hemostatic disturbance (excess fibrinolysis, imbalanced prostaglandins), and iatrogenic causes (anticoagulants, copper IUD). When loss chronically outruns compensation, iron-deficiency anemia develops — the practical index of severity.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/U_BLEED.DOC(Tier-1 課堂 handout,Beng Lou 病機)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/U_BLEED.DOC(Tier-1 課堂 handout,Beng Lou 病機)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/U_BLEED.DOC(Tier-1 課堂 handout,西醫病因段)",
+          "FIGO PALM-COEIN 分類通說",
+          "MedlinePlus — Vaginal Bleeding (https://medlineplus.gov/vaginalbleeding.html)"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/U_BLEED.DOC(Tier-1 課堂 handout,西醫病因段)",
+          "FIGO PALM-COEIN 分類通說",
+          "MedlinePlus — Vaginal Bleeding (https://medlineplus.gov/vaginalbleeding.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/vaginalbleeding.html"
       ]
     },
     {
@@ -2816,8 +2855,8 @@
       ],
       "western_context_zh": "處置依病因，可能包含矯正泌乳素或甲狀腺異常、荷爾蒙補充、營養與體重恢復；此為文件對照用語，非治療指示。",
       "western_context_en": "Management is cause-specific and may include correcting prolactin or thyroid abnormalities, hormonal support, and nutritional/weight restoration. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「閉經」古稱「經閉」「女子不月」。課堂綱要提挈三綱:血滯——氣滯血瘀(情志抑鬱,氣不行血)、寒凝(經期產後感寒,血為寒凝)、痰濕阻滯(肥盛痰多,壅塞胞脈),經隧不通,經血不得下行;血枯——肝腎不足(先天稟賦弱、早婚多產傷精血)、氣血虛弱(脾胃虛弱化源不足、大病失血),血海空虛,無血可下;衝任損傷——墮胎手術傷宮,胞脈受損。虛實之辨為綱中之綱:實者通之,虛者補之,誤攻虛證則犯虛虛之戒。",
+      "western_pathology_zh": "閉經分原發與續發。原發性閉經(至相應年齡仍未初經)最常見原因是青春期延遲,其餘為性腺發育不全(如透納症候群)、苗勒管發育異常(先天無子宮或陰道、處女膜閉鎖等出口阻塞)與下視丘-垂體因素。續發性閉經(既往有經,停經三個月以上)首先必須排除妊娠;其後常見:功能性下視丘性閉經(體重驟降、神經性厭食、過度運動、壓力抑制 GnRH 脈衝)、高泌乳素血症(泌乳素抑制 GnRH,垂體腺瘤與藥物均可致)、多囊性卵巢症候群、早發性卵巢功能不全、甲狀腺疾病,以及宮腔沾黏(搔刮或感染後內膜瘢痕,即 Asherman 症候群)。定位思路是沿下視丘-垂體-卵巢-子宮軸逐層檢查。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -2855,6 +2894,43 @@
         "rf.amenorrhea.legacy02",
         "rf.amenorrhea.legacy03",
         "rf.amenorrhea.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Amenorrhea (jing bi, \"a woman without monthlies\") is outlined in class under three headings: blood obstruction — qi stagnation with blood stasis (emotional depression, qi failing to move blood), cold congealing (cold contracted during menses or postpartum freezing the blood), and phlegm-damp obstruction (a full, phlegm-rich habitus clogging the uterine vessels), so the menstrual pathways are blocked and blood cannot descend; blood exhaustion — liver-kidney insufficiency (weak constitution, early marriage and repeated childbearing depleting essence and blood) and qi-blood deficiency (a weak production source or major illness and blood loss), so the sea of blood is empty and there is no blood to shed; and damage to the Chong and Ren — uterine injury from terminations and procedures. The deficiency-excess distinction rules the whole differentiation: unblock the excess, replenish the deficient — attacking a deficiency pattern violates the injunction against depleting the depleted.",
+      "western_pathology_en": "Amenorrhea divides into primary and secondary. Primary amenorrhea (no menarche by the expected age) is most often delayed puberty; other causes are gonadal dysgenesis (e.g., Turner syndrome), Müllerian anomalies (congenital absence of uterus or vagina, outflow obstruction such as imperforate hymen), and hypothalamic-pituitary disorders. Secondary amenorrhea (established menses absent for three months or more) must first exclude pregnancy; common causes then include functional hypothalamic amenorrhea (rapid weight loss, anorexia nervosa, over-exercise, and stress suppressing GnRH pulsatility), hyperprolactinemia (prolactin suppresses GnRH; pituitary adenomas and medications both cause it), polycystic ovary syndrome, primary ovarian insufficiency, thyroid disease, and intrauterine adhesions (endometrial scarring after curettage or infection — Asherman's syndrome). The diagnostic logic works level by level down the hypothalamic-pituitary-ovarian-uterine axis.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/AMENO.DOC(Tier-1 課堂 handout)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/AMENO.DOC(Tier-1 課堂 handout)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/AMENO.DOC(Tier-1 課堂 handout,西醫病因段)",
+          "MedlinePlus — Menstruation (https://medlineplus.gov/menstruation.html)"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/AMENO.DOC(Tier-1 課堂 handout,西醫病因段)",
+          "MedlinePlus — Menstruation (https://medlineplus.gov/menstruation.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/menstruation.html"
       ]
     },
     {
@@ -3749,8 +3825,8 @@
       ],
       "western_context_zh": "常於生殖醫療脈絡中討論卵巢刺激方案調整、生育時效與可行選項；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly discussed within reproductive care regarding stimulation-protocol adjustment, fertility timing, and available options. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫視卵巢儲備下降為「腎精虧虛、天癸漸竭」之候,可對應「月經過少」「經水早斷」「不孕」諸門。腎藏精,主生殖,「七七任脈虛,太衝脈衰少,天癸竭」——本屬四十九歲前後的生理進程,提前出現即是腎精先衰:先天稟賦不足,或久病勞倦、手術金刃損傷腎氣;精血同源,腎精虧則血海漸涸,經量日少、週期漸亂。兼夾:肝鬱——求子心切,情志鬱結,疏泄失常,加速經亂;脾虛——化源不足,精血無以滋養。治則以補腎填精為本,佐養血疏肝健脾,非旦夕之功。",
+      "western_pathology_zh": "卵巢儲備功能下降指卵母細胞的數量與品質低於同齡預期。卵巢的原始卵泡庫存在胎兒期即已定數,出生後只耗不增——每個週期募集一批竇卵泡,絕大多數閉鎖凋亡;庫存隨年齡持續下降,品質(染色體分離的準確性)同步劣化。臨床以抗苗勒氏管荷爾蒙(AMH)、竇卵泡計數(AFC)與基礎 FSH 評估儲備。加速耗竭的因素:遺傳(FMR1 前突變、X 染色體異常)、醫源性(化療——尤其烷化劑、骨盆放療、卵巢手術)、自體免疫性卵巢炎、吸菸。它與早發性卵巢功能不全是同一連續譜的不同階段;儲備指標預測的是對刺激的反應與可取卵數,而非自然受孕的絕對機率。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -3787,6 +3863,43 @@
         "rf.diminished_ovarian_reserve.legacy01",
         "rf.diminished_ovarian_reserve.legacy02",
         "rf.diminished_ovarian_reserve.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reads diminished ovarian reserve as \"kidney essence depletion with tiangui waning early,\" mapping onto scanty menstruation, premature cessation of menses, and infertility. The kidney stores essence and governs reproduction: \"at seven sevens the Ren mai is deficient, the Chong mai declines, tiangui is exhausted\" — a physiological arc of about age forty-nine, so its early arrival is premature decline of kidney essence: constitutional insufficiency, or kidney qi injured by chronic illness, overwork, or surgery. Essence and blood share one source; as kidney essence dwindles, the sea of blood gradually dries — flow lightens and cycles derange. Complications: liver constraint (the strain of trying to conceive knots the emotions and disturbs free-coursing, hastening derangement) and spleen deficiency (an inadequate production source leaves essence and blood unreplenished). Treatment rests on tonifying the kidney and replenishing essence, assisted by nourishing blood, soothing the liver, and fortifying the spleen — never quick work.",
+      "western_pathology_en": "Diminished ovarian reserve means oocyte quantity and quality below age-expected norms. The primordial follicle pool is fixed in fetal life and only spent thereafter — each cycle recruits a cohort of antral follicles, nearly all of which undergo atresia; the stock declines continuously with age while quality (fidelity of chromosome segregation) degrades in parallel. Reserve is assessed clinically with anti-Müllerian hormone (AMH), antral follicle count (AFC), and basal FSH. Accelerated depletion comes from genetics (FMR1 premutation, X-chromosome abnormalities), iatrogenic injury (chemotherapy — alkylating agents especially — pelvic radiation, ovarian surgery), autoimmune oophoritis, and smoking. It sits on the same continuum as primary ovarian insufficiency at a later stage; reserve markers predict response to stimulation and oocyte yield, not the absolute chance of natural conception.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫婦科學教材通說(《素問·上古天真論》七七之數;月經過少/不孕門)"
+        ],
+        "etiology_en": [
+          "中醫婦科學教材通說(《素問·上古天真論》七七之數;月經過少/不孕門)"
+        ],
+        "western_pathology_zh": [
+          "ASRM — 卵巢儲備評估通說",
+          "MedlinePlus — Infertility (https://medlineplus.gov/infertility.html)"
+        ],
+        "western_pathology_en": [
+          "ASRM — 卵巢儲備評估通說",
+          "MedlinePlus — Infertility (https://medlineplus.gov/infertility.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/infertility.html"
       ]
     },
     {
@@ -3821,8 +3934,8 @@
       ],
       "western_context_zh": "輔助照護在生殖團隊的療程計畫下進行，紀錄用語不取代生殖醫療處置；此為文件對照用語，非治療指示。",
       "western_context_en": "Adjunctive care proceeds under the reproductive team's cycle plan; documentation does not replace reproductive medical management. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫視試管療程的各階段為不同的調治目標,病機依個人辨證,常見底盤是腎虛(儲備與反應不足)、肝鬱(長期求子與療程壓力,氣機鬱結)、血瘀與痰濕(胞脈欠暢)。分期思路:刺激取卵期重滋腎填精養血,助卵泡發育;移植前後重調衝任、暖胞宮、安神定志;等待驗孕期重疏肝以緩焦慮。此欄位僅述病機分期框架,療效宣稱與具體取穴屬治療層,依該卡各自的證據分級處理。",
+      "western_pathology_zh": "試管嬰兒支持不是疾病,而是圍繞輔助生殖療程的照護情境。療程生理:以促性腺激素進行控制性卵巢刺激,使多枚卵泡同步發育,並用 GnRH 促效劑或拮抗劑防止提前的 LH 高峰;成熟後取卵,體外受精(常規或單一精蟲顯微注射),胚胎培養至分裂期或囊胚期後移植。取卵過程抽吸顆粒細胞連帶削弱黃體功能,故移植後需外源性黃體支持。週期結果取決於年齡、卵巢反應、胚胎品質與內膜容受性;卵巢過度刺激症候群是刺激期最需警覺的併發症。針灸介入即嵌在這些節點之間,須知道患者處於療程哪一階段。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -3860,6 +3973,43 @@
         "rf.ivf_support.legacy02",
         "rf.ivf_support.legacy03",
         "rf.ivf_support.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine treats the phases of an IVF cycle as distinct regulation targets, with mechanisms following the individual's pattern; the usual substrate is kidney deficiency (reserve and response falling short), liver constraint (the long strain of seeking a child plus the protocol itself knotting the qi dynamic), and blood stasis or phlegm-damp (uterine vessels not running smoothly). By phase: during stimulation and retrieval, enrich kidney essence and nourish blood to support follicular growth; around transfer, regulate the Chong and Ren, warm the uterus, and settle the spirit; during the wait for the pregnancy test, course the liver to ease anxiety. This field states only the pathomechanism framework by phase — efficacy claims and point selection belong to the treatment layer under its own evidence grading.",
+      "western_pathology_en": "IVF support is not a disease but a care context wrapped around an assisted-reproduction cycle. The cycle's physiology: controlled ovarian stimulation with gonadotropins matures multiple follicles in parallel while a GnRH agonist or antagonist prevents a premature LH surge; oocytes are retrieved at maturity, fertilized in vitro (conventionally or by ICSI), and embryos are cultured to cleavage or blastocyst stage before transfer. Retrieval aspirates granulosa cells and thereby weakens corpus luteum function, so exogenous luteal support follows transfer. Outcomes hinge on age, ovarian response, embryo quality, and endometrial receptivity; ovarian hyperstimulation syndrome is the complication to watch during stimulation. Acupuncture care slots between these fixed points — knowing which phase the patient is in is prerequisite to working safely.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫婦科學教材通說(不孕門病機,分期調治為中西結合婦科通行框架)"
+        ],
+        "etiology_en": [
+          "中醫婦科學教材通說(不孕門病機,分期調治為中西結合婦科通行框架)"
+        ],
+        "western_pathology_zh": [
+          "ASRM/SART — 輔助生殖療程患者資訊通說",
+          "MedlinePlus — Assisted Reproductive Technology (https://medlineplus.gov/assistedreproductivetechnology.html)"
+        ],
+        "western_pathology_en": [
+          "ASRM/SART — 輔助生殖療程患者資訊通說",
+          "MedlinePlus — Assisted Reproductive Technology (https://medlineplus.gov/assistedreproductivetechnology.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/assistedreproductivetechnology.html"
       ]
     },
     {
@@ -4404,8 +4554,8 @@
       ],
       "western_context_zh": "常於生育脈絡中討論黃體支持與潛在內分泌因素之矯正；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly discussed within fertility care regarding luteal support and correction of underlying endocrine factors. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫對應的意象是「腎陽虛,衝任失於溫煦」:排卵後基礎體溫的高溫相,中西結合婦科視為陽氣升騰之候——高溫相過短、爬升遲緩、波動不穩,即腎陽不足、命門火衰之象,胞宮失溫,胎元難繫。兼證:脾腎兩虛(氣血生化與溫煦俱弱)、肝鬱(疏泄失常,排卵與黃體轉化俱受累)、陰血不足(高溫相雖立而滋養乏源)。治重溫補腎陽、健脾養血,經後滋陰以立基,排卵後溫陽以固之——分期論治即由此病機推出。",
+      "western_pathology_zh": "黃體功能不足的概念是:排卵後黃體分泌孕酮不足或黃體期過短,子宮內膜的分泌期轉化不完全,著床窗與胚胎發育不同步,從而影響受孕與早期妊娠維持。其上游多是卵泡期的延續問題——卵泡發育欠佳、FSH/LH 脈衝異常,黃體本是排卵後卵泡的轉化產物;高泌乳素血症、甲狀腺功能異常與運動性下視丘抑制亦可致之。須誠實標註的爭議:作為獨立不孕病因,它缺乏可重現的診斷金標準——內膜活檢時相判讀與單次孕酮測值的重現性均差,這是文獻中的公開結論,不是本卡的立場。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4442,7 +4592,39 @@
         "rf.luteal_phase_defect.legacy01",
         "rf.luteal_phase_defect.legacy02",
         "rf.luteal_phase_defect.legacy03"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "The corresponding Chinese-medicine image is \"kidney yang deficiency, the Chong and Ren losing warmth\": integrative gynecology reads the post-ovulatory high phase of the basal body temperature curve as the ascent of yang qi — a shortened, slow-climbing, or unstable high phase is the sign of insufficient kidney yang and fading mingmen fire, the uterus unwarmed and the fetal origin hard to tether. Accompanying patterns: spleen-kidney dual deficiency (generation of qi-blood and warming both weak), liver constraint (disturbed free-coursing dragging on both ovulation and luteal transformation), and insufficient yin-blood (the high phase stands but lacks material support). Treatment emphasizes warming kidney yang and fortifying spleen and blood — enriching yin after menses to lay the base, warming yang after ovulation to secure it; staged treatment falls directly out of this mechanism.",
+      "western_pathology_en": "The concept of luteal phase defect: after ovulation the corpus luteum secretes insufficient progesterone, or the luteal phase is too short, so secretory transformation of the endometrium is incomplete and the implantation window falls out of sync with embryo development, compromising conception and early pregnancy maintenance. Upstream it is usually a carry-over of follicular-phase trouble — poor follicle development and abnormal FSH/LH pulsatility, the corpus luteum being nothing more than the transformed post-ovulatory follicle; hyperprolactinemia, thyroid dysfunction, and exercise-induced hypothalamic suppression also produce it. The controversy must be stated honestly: as a free-standing infertility diagnosis it lacks a reproducible gold standard — endometrial-biopsy dating and single progesterone draws both reproduce poorly. That is the published literature's conclusion, not this card's position.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫婦科學教材通說(腎陽虛/胎元不固門;基礎體溫分期為中西結合婦科通行讀法)"
+        ],
+        "etiology_en": [
+          "中醫婦科學教材通說(腎陽虛/胎元不固門;基礎體溫分期為中西結合婦科通行讀法)"
+        ],
+        "western_pathology_zh": [
+          "ASRM 委員會意見 — 黃體期缺陷之診斷重現性爭議(通說)"
+        ],
+        "western_pathology_en": [
+          "ASRM 委員會意見 — 黃體期缺陷之診斷重現性爭議(通說)"
+        ]
+      }
     },
     {
       "id": "cond.menopause_syndrome",
@@ -4476,8 +4658,8 @@
       ],
       "western_context_zh": "依症狀與風險，處置可涵蓋生活型態、非荷爾蒙藥物或荷爾蒙療法及局部治療；此為文件對照用語，非治療指示。",
       "western_context_en": "Depending on symptoms and risk, management may include lifestyle measures, non-hormonal agents, hormone therapy, and local treatments. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「絕經前後諸證」。課堂綱要點出總病機:腎氣漸衰,天癸將竭,衝任虛損,陰陽失於平秘。分兩綱:腎陰虛——精血不足,虛火上炎,見潮熱盜汗、五心煩熱、心煩失眠、耳鳴健忘;腎陽虛——命門火衰,見畏寒肢冷、浮腫便溏、腰膝冷痛。臨床常陰陽兩虛互見,並累及他臟:心腎不交而失眠怔忡,肝腎陰虛、肝陽偏亢而眩暈易怒,脾腎陽虛而納呆浮腫。同一根源(腎衰於下)開出不同枝葉,辨證重在分清陰陽主次。",
+      "western_pathology_zh": "更年期症候群的底層是卵巢卵泡庫存耗竭:卵泡對促性腺激素的反應下降,雌激素分泌先劇烈波動後持續走低,抑制素減少使 FSH 升高——圍絕經期的荷爾蒙特徵是「波動」而非平穩下降,症狀也因此起伏。血管舒縮症狀(潮熱、盜汗)與下視丘體溫調節中樞的調定域變窄有關,雌激素撤退改變其中血清素與去甲腎上腺素訊號;泌尿生殖道黏膜萎縮致乾澀、性交痛與反覆泌尿道感染;雌激素對骨的保護消失後骨量流失加速,血脂組成亦向不利方向移動。情緒與睡眠症狀是荷爾蒙波動、潮熱夜擾與中年心理社會壓力的疊加,不宜單歸一因。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4515,6 +4697,43 @@
         "rf.menopause_syndrome.legacy02",
         "rf.menopause_syndrome.legacy03",
         "rf.menopause_syndrome.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine calls this \"the various disorders around cessation of menses.\" The course outline names the governing mechanism: kidney qi declining, tiangui about to be exhausted, the Chong and Ren depleted, and yin and yang losing their mutual containment. Two headings follow: kidney yin deficiency — essence and blood insufficient, deficiency fire flaring upward, with hot flashes, night sweats, five-center heat, restless insomnia, tinnitus, and forgetfulness; kidney yang deficiency — mingmen fire fading, with cold intolerance, cold limbs, edema, loose stools, and cold aching lumbar and knees. Clinically the two often coexist, and other organs are drawn in: heart and kidney failing to communicate (insomnia, palpitations), liver-kidney yin deficiency with ascendant liver yang (dizziness, irritability), spleen-kidney yang deficiency (poor appetite, edema). One root — the kidney waning below — puts out different branches; differentiation turns on which of yin or yang leads.",
+      "western_pathology_en": "Menopausal syndrome rests on depletion of the ovarian follicle pool: remaining follicles respond less to gonadotropins, estrogen output swings violently before settling low, and falling inhibin lets FSH rise — the perimenopausal hormonal signature is fluctuation rather than smooth decline, and symptoms fluctuate with it. Vasomotor symptoms (hot flashes, night sweats) relate to a narrowed thermoneutral zone in the hypothalamic thermoregulatory center, its serotonin and norepinephrine signaling altered by estrogen withdrawal; urogenital mucosal atrophy brings dryness, dyspareunia, and recurrent urinary infections; with estrogen's skeletal protection gone, bone loss accelerates, and the lipid profile shifts unfavorably. Mood and sleep symptoms are the sum of hormonal flux, flash-broken nights, and midlife psychosocial load — not attributable to any single cause.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/MENOP.DOC(Tier-1 課堂 handout)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/MENOP.DOC(Tier-1 課堂 handout)"
+        ],
+        "western_pathology_zh": [
+          "NIA/ACOG — 更年期生理通說",
+          "MedlinePlus — Menopause (https://medlineplus.gov/menopause.html)"
+        ],
+        "western_pathology_en": [
+          "NIA/ACOG — 更年期生理通說",
+          "MedlinePlus — Menopause (https://medlineplus.gov/menopause.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/menopause.html"
       ]
     },
     {
@@ -4547,8 +4766,8 @@
       ],
       "western_context_zh": "常以補液、止吐與營養支持處理，嚴重時需住院；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with rehydration, antiemetics, and nutritional support; severe cases may need admission. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「妊娠惡阻」。課堂綱要提挈病機:孕後血聚於下以養胎,衝脈之氣偏盛,循經上逆犯胃,胃失和降——「衝氣上逆,胃失和降」八字是總綱。分兩綱:脾胃虛弱——中氣素虛,衝氣挾胃氣上逆,嘔吐清涎、納呆倦怠;肝胃不和——孕後陰血下注養胎,肝血愈虛而肝氣愈旺,橫逆犯胃,嘔吐酸苦、脅脹噯氣。兼夾痰濕內停者嘔吐痰涎。嘔甚傷津耗氣,可轉為氣陰兩傷之重證,與西醫脫水酮症的進程相互對照。",
+      "western_pathology_zh": "妊娠劇吐是妊娠噁心嘔吐光譜的重端:持續嘔吐導致脫水、電解質紊亂(低鉀、低鈉)、酮症與體重明顯下降,而一般晨吐若體重仍增加、無脫水即不屬之——課堂講義同樣以此為分界。機轉與絨毛膜促性腺激素(hCG)的時程高度吻合:症狀高峰與 hCG 高峰重疊,多胎妊娠與葡萄胎更重;hCG 與 TSH 受體交叉反應可致一過性甲狀腺功能亢進。近年遺傳學研究把胎盤來源的 GDF15 及其受體訊號推上主要候選機轉。不可補正的嚴重脫水與硫胺素缺乏可致 Wernicke 腦病——這是本卡紅旗層的依據之一。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4586,7 +4805,41 @@
         "rf.hyperemesis_gravidarum.legacy02",
         "rf.hyperemesis_gravidarum.legacy03",
         "rf.hyperemesis_gravidarum.legacy04"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine calls this ren shen e zu (pregnancy obstruction). The course outline states the mechanism: after conception, blood gathers below to nourish the fetus, the qi of the Chong mai grows relatively exuberant and rebels upward along its channel into the stomach, and the stomach loses its harmonious descent — \"Chong qi rebelling upward, stomach losing its descent\" is the whole formula. Two headings: spleen-stomach deficiency — middle qi constitutionally weak, Chong qi dragging stomach qi upward, with vomiting of clear fluid, poor appetite, and fatigue; liver-stomach disharmony — yin-blood pours down to nourish the fetus, liver blood grows emptier while liver qi grows more forceful and invades the stomach crosswise, with sour-bitter vomiting, flank distension, and belching. Cases complicated by retained phlegm-damp vomit phlegmy drool. Severe vomiting wounds fluids and exhausts qi, converting into the serious pattern of dual qi-yin damage — running parallel to the biomedical course of dehydration and ketosis.",
+      "western_pathology_en": "Hyperemesis gravidarum is the severe end of the nausea-and-vomiting-of-pregnancy spectrum: persistent vomiting produces dehydration, electrolyte derangement (hypokalemia, hyponatremia), ketosis, and marked weight loss — whereas ordinary morning sickness with continued weight gain and no dehydration does not qualify, the same boundary the course handout draws. The mechanism tracks the time-course of human chorionic gonadotropin closely: symptom peak overlaps the hCG peak, and multiple gestation and molar pregnancy run worse; hCG cross-reacting with the TSH receptor can cause transient hyperthyroidism. Recent genetics has pushed placental GDF15 and its receptor signaling forward as a leading candidate mechanism. Uncorrected severe dehydration and thiamine deficiency can precipitate Wernicke encephalopathy — one basis of this card's red-flag layer.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/MORNING.DOC(Tier-1 課堂 handout)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/MORNING.DOC(Tier-1 課堂 handout)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/MORNING.DOC(Tier-1 課堂 handout,西醫段)",
+          "ACOG — 妊娠噁心嘔吐臨床通說"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/MORNING.DOC(Tier-1 課堂 handout,西醫段)",
+          "ACOG — 妊娠噁心嘔吐臨床通說"
+        ]
+      }
     },
     {
       "id": "cond.breech_presentation",
@@ -4618,8 +4871,8 @@
       ],
       "western_context_zh": "產科依孕週與情況評估外轉術或剖腹產等分娩計畫；此為文件對照用語，非治療指示。",
       "western_context_en": "Obstetric care assesses external cephalic version or delivery planning such as cesarean by gestation and circumstances. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫古籍以「胎位不正」論之,病機著眼於「胎失所繫、氣機失運」:氣血虛弱——母體氣虛,無力運轉胎體,胎氣乏助;氣滯——情志不舒或久坐少動,胞宮氣機失於宣暢,胎轉受阻。整體觀是胎兒轉動賴母體氣血充盈流暢,故調治以益氣養血、理氣行滯為思路,並以灸法溫通(至陰為代表)助胎自轉——此處僅述病機定位,療效證據依治療層分級。",
+      "western_pathology_zh": "臀位指妊娠後期胎兒縱軸與母體一致但以臀或足為先露部。妊娠中期臀位很常見,多數胎兒在32至36週間自行轉為頭位,故「臀位」作為問題主要指36週後仍未轉正者。持續臀位的相關因素:早產(尚未來得及轉)、羊水過多或過少(轉動空間過大或不足)、多胎、子宮畸形或肌瘤限制空間、前置胎盤、胎兒異常與臍帶過短。足月臀位陰道分娩伴隨臍帶脫垂與後出頭困難的風險,是外倒轉術與剖腹產討論的臨床背景;中醫的介入窗口(灸至陰)也定位在自轉仍可能的週數區間。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4657,7 +4910,39 @@
         "rf.breech_presentation.legacy02",
         "rf.breech_presentation.legacy03",
         "rf.breech_presentation.legacy04"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Classical Chinese medicine files this under \"malposition of the fetus,\" reading the mechanism as \"the fetus losing its anchorage, the qi dynamic losing its motion\": qi-blood deficiency — the mother's qi too weak to power the fetus's turning, fetal qi unassisted; and qi stagnation — emotional constraint or prolonged sitting leaving the uterine qi dynamic uncoursed, obstructing version. The organizing idea is that fetal turning depends on abundant, free-flowing maternal qi and blood; regulation therefore proceeds by boosting qi, nourishing blood, and moving stagnant qi, with warming moxibustion (BL67 as the representative point) to assist spontaneous version — only the mechanism is stated here; efficacy evidence is graded at the treatment layer.",
+      "western_pathology_en": "Breech presentation means the fetal long axis aligns with the mother's but the buttocks or feet lead. Mid-pregnancy breech is common and most fetuses turn head-down between 32 and 36 weeks, so breech-as-a-problem chiefly means persistence past 36 weeks. Factors associated with persistence: prematurity (no time yet to turn), polyhydramnios or oligohydramnios (too much or too little room to rotate), multiple gestation, uterine anomalies or fibroids constraining space, placenta previa, fetal anomalies, and a short cord. Term breech vaginal delivery carries risks of cord prolapse and entrapment of the after-coming head — the clinical backdrop for external cephalic version and cesarean discussions; the Chinese-medicine intervention window (moxibustion at BL67) is likewise placed in the weeks when spontaneous version remains possible.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫婦科學教材通說(胎位不正門)"
+        ],
+        "etiology_en": [
+          "中醫婦科學教材通說(胎位不正門)"
+        ],
+        "western_pathology_zh": [
+          "ACOG/RCOG — 臀位與外倒轉術臨床通說"
+        ],
+        "western_pathology_en": [
+          "ACOG/RCOG — 臀位與外倒轉術臨床通說"
+        ]
+      }
     },
     {
       "id": "cond.postpartum_hypolactation",
@@ -4689,8 +4974,8 @@
       ],
       "western_context_zh": "常以哺乳指導、增加有效吸吮與整體支持處理，必要時評估潛在病因；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with lactation guidance, increasing effective feeding, and whole-person support, evaluating underlying causes when needed. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「缺乳」「乳汁不行」。課堂綱要歸因三端:素體脾胃虛弱、產時失血過多、情志抑鬱。分兩綱,虛實立判:氣血虛弱(虛)——乳汁為氣血所化,脾胃虛則化源不足,失血多則無乳可化,乳房柔軟不脹、乳汁清稀量少;肝鬱氣滯(實)——產後情志不遂,肝失疏泄,乳絡不暢,乳房脹硬而痛、乳汁不下——「有而不通」與「無所化生」是兩條相反的病機路線,對應通乳與補養兩套相反治法,誤補實證則壅,誤通虛證則竭。",
+      "western_pathology_zh": "泌乳不足的生理鏈條:泌乳素(垂體前葉,受吸吮刺激分泌)驅動腺泡產乳,催產素(垂體後葉)驅動排乳反射;產後胎盤娩出、孕酮驟降是泌乳啟動的開關,而其後乳汁供應主要由「移出多少、產多少」的局部回饋維持。因此供應不足最常見的原因在哺乳管理:含接不良、餵養頻次不足、過早補配方奶使移出減少,供應隨之下調。器質性原因較少但須辨認:乳腺腺體組織發育不足、乳房手術傷及腺體或導管、胎盤殘留(孕酮持續抑制泌乳第二期啟動)、席漢氏症候群(產後大出血致垂體壞死)、甲狀腺功能低下;壓力與疼痛抑制催產素排乳反射,乳汁「有而出不來」,常被誤判為不足。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4728,6 +5013,43 @@
         "rf.postpartum_hypolactation.legacy02",
         "rf.postpartum_hypolactation.legacy03",
         "rf.postpartum_hypolactation.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's que ru (scanty milk) / ru zhi bu xing (milk not flowing). The course outline gives three causes: constitutional spleen-stomach weakness, profuse blood loss at delivery, and mental depression. Two headings split cleanly by deficiency and excess: qi-blood deficiency (deficient) — milk is transformed from qi and blood, so a weak spleen-stomach starves the source and heavy blood loss leaves nothing to transform, with soft undistended breasts and thin, scant milk; liver constraint with qi stagnation (excess) — postpartum emotional frustration impairs free-coursing, the milk collaterals run unsmoothly, the breasts distend hard and painful and the milk will not descend. \"Present but blocked\" and \"nothing generated\" are opposite mechanisms commanding opposite methods — unblocking versus replenishing; tonifying an excess congests it, draining a deficiency exhausts it.",
+      "western_pathology_en": "The physiological chain of lactation: prolactin (anterior pituitary, released with suckling) drives alveolar milk synthesis, oxytocin (posterior pituitary) drives the let-down reflex; delivery of the placenta and the abrupt progesterone fall switch lactation on, after which supply is governed mainly by local feedback — what is removed is what gets made. Insufficient supply therefore most often traces to breastfeeding management: poor latch, infrequent feeds, and early formula supplementation reduce removal and supply down-regulates to match. Organic causes are rarer but must be recognized: insufficient glandular tissue, breast surgery damaging glands or ducts, retained placenta (persistent progesterone blocking secretory activation), Sheehan's syndrome (pituitary necrosis after postpartum hemorrhage), and hypothyroidism; stress and pain inhibit the oxytocin let-down, so milk is present but will not flow — commonly misread as low supply.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/INSUFF_L.DOC(Tier-1 課堂 handout)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/INSUFF_L.DOC(Tier-1 課堂 handout)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/INSUFF_L.DOC(Tier-1 課堂 handout,Western Prospect 段)",
+          "MedlinePlus — Breastfeeding (https://medlineplus.gov/breastfeeding.html)"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/INSUFF_L.DOC(Tier-1 課堂 handout,Western Prospect 段)",
+          "MedlinePlus — Breastfeeding (https://medlineplus.gov/breastfeeding.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/breastfeeding.html"
       ]
     },
     {
@@ -5274,8 +5596,8 @@
       ],
       "western_context_zh": "急性感染以抗生素處理，慢性後遺常需疼痛管理與生育相關評估；此為文件對照用語，非治療指示。",
       "western_context_en": "Acute infection is treated with antibiotics; chronic sequelae often need pain management and fertility-related evaluation. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫按表現歸「婦人腹痛」「帶下病」「癥瘕」「不孕」諸門。病機主線是「濕熱餘邪未盡,與血搏結成瘀」:急性期濕熱毒邪客於胞宮胞脈,治不徹底則餘邪留戀;濕性黏滯,熱與血結,久而氣滯血瘀,少腹刺痛固定、帶下黃稠;寒濕凝滯者痛得溫則減;病久正氣耗傷,轉為正虛邪戀——氣虛、腎虛與濕瘀並存,纏綿難已。虛實夾雜是這個病的常態,清利與扶正的比重隨階段消長。",
+      "western_pathology_zh": "慢性骨盆腔炎指急性骨盆腔炎的後遺狀態與其反覆低度發作。急性期是下生殖道病原上行感染子宮內膜、輸卵管與骨盆腹膜——披衣菌與淋球菌是代表性起始病原,但實際多為包含陰道厭氧菌的多微生物感染;披衣菌感染常症狀輕微甚至無症狀,靜默進展是它危險之處。發炎癒合的代價是結構破壞:輸卵管纖毛毀損與管腔瘢痕造成阻塞與輸卵管積水,骨盆沾黏形成——由此而來三大後遺:不孕、異位妊娠風險上升、慢性骨盆痛。肝周圍沾黏(Fitz-Hugh-Curtis 症候群)是特徵性的上腹延伸表現。每再發作一次,生育力損失即再疊加一層。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -5313,6 +5635,43 @@
         "rf.pid_chronic.legacy02",
         "rf.pid_chronic.legacy03",
         "rf.pid_chronic.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "By presentation Chinese medicine files this under women's abdominal pain, vaginal-discharge disease, zheng-jia masses, and infertility. The mainline mechanism is \"residual damp-heat unexpelled, binding with blood into stasis\": in the acute phase damp-heat toxin lodges in the uterus and its vessels, and incomplete treatment leaves lingering evil; damp is sticky and lingering, heat binds with blood, and over time qi stagnates and blood congeals — fixed stabbing lower-abdominal pain with thick yellow discharge; where cold-damp congeals instead, warmth relieves the pain. Long disease wears down right qi, converting to \"deficient zheng with lingering evil\" — qi and kidney deficiency coexisting with damp and stasis, protracted and stubborn. Mixed deficiency-excess is this disease's normal state; the ratio of clearing-draining to supporting the upright shifts with the stage.",
+      "western_pathology_en": "Chronic PID is the sequela state of acute pelvic inflammatory disease and its recurrent low-grade flares. The acute event is ascending infection from the lower genital tract to the endometrium, tubes, and pelvic peritoneum — Chlamydia trachomatis and Neisseria gonorrhoeae are the index initiators, though most cases are polymicrobial with vaginal anaerobes; chlamydial infection is often mild or silent, and that silent progression is precisely its danger. Healing exacts a structural price: destroyed tubal cilia and luminal scarring produce occlusion and hydrosalpinx, and pelvic adhesions form — hence the three sequelae of infertility, raised ectopic-pregnancy risk, and chronic pelvic pain. Perihepatic adhesions (Fitz-Hugh-Curtis syndrome) are the characteristic upper-abdominal extension. Each recurrence stacks another layer of fertility loss.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫婦科學教材通說(婦人腹痛/帶下/癥瘕門)"
+        ],
+        "etiology_en": [
+          "中醫婦科學教材通說(婦人腹痛/帶下/癥瘕門)"
+        ],
+        "western_pathology_zh": [
+          "CDC — 骨盆腔炎臨床通說",
+          "MedlinePlus — Pelvic Inflammatory Disease (https://medlineplus.gov/pelvicinflammatorydisease.html)"
+        ],
+        "western_pathology_en": [
+          "CDC — 骨盆腔炎臨床通說",
+          "MedlinePlus — Pelvic Inflammatory Disease (https://medlineplus.gov/pelvicinflammatorydisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/pelvicinflammatorydisease.html"
       ]
     },
     {
@@ -5345,8 +5704,8 @@
       ],
       "western_context_zh": "常以抗黴菌藥物處理並處置誘因；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with antifungal agents and addressing contributors. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「帶下色白質稠、陰部搔癢」歸「帶下病」「陰癢」門。課堂綱要指帶下之因有飲食不節、腎氣虛而帶脈失約、肝氣久鬱;本病病機以濕為軸:脾虛濕盛——脾失健運,濕濁下注任帶,帶下量多色白;濕鬱化熱、濕熱下注——帶下轉黃、陰癢灼熱,肝經濕熱者兼煩躁口苦;腎虛帶脈失約——帶下清稀綿綿,腰酸。反覆發作者多脾腎兩虛為本、濕邪留戀為標,與西醫「宿主平衡失守則常在菌作亂」的圖像相合。",
+      "western_pathology_zh": "外陰陰道念珠菌感染由念珠菌屬過度增殖引起,白色念珠菌占絕大多數,非白色株(如光滑念珠菌)少見但對常規唑類藥反應差。念珠菌本是許多女性陰道的常在菌,發病不是「感染新病原」而是菌相與宿主平衡被打破:抗生素清除乳酸桿菌後失去競爭抑制、雌激素升高(妊娠、口服避孕藥)增加上皮肝醣供菌利用、糖尿病血糖控制不良、免疫抑制狀態。典型表現為外陰搔癢灼熱、白色凝乳狀分泌物、陰道酸鹼值正常——後者是與細菌性陰道病及滴蟲的鑑別點。一年內發作四次以上定義為復發型,須考慮培養鑑定菌種而非反覆經驗性用藥。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -5384,6 +5743,45 @@
         "rf.vulvovaginal_candidiasis.legacy02",
         "rf.vulvovaginal_candidiasis.legacy03",
         "rf.vulvovaginal_candidiasis.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "By its thick white discharge and vulvar itching, Chinese medicine files this under vaginal-discharge disease (dai xia) and pudendal itching. The course outline attributes discharge disease to improper diet, kidney qi deficiency loosening the Dai mai, and long-standing liver qi constraint; the mechanism here pivots on damp: spleen deficiency with exuberant damp — the spleen failing to transport lets turbid damp pour down into the Ren and Dai mai, with copious white discharge; damp constrained into heat pouring downward — discharge turning yellow with burning itch, and liver-channel damp-heat adding irritability and bitter taste; kidney deficiency with an unsecured Dai mai — thin, unending discharge with lumbar soreness. Recurrent cases mostly rest on spleen-kidney deficiency as the root with lingering damp as the branch — matching the biomedical picture of resident flora running riot once host equilibrium fails.",
+      "western_pathology_en": "Vulvovaginal candidiasis results from overgrowth of Candida species — Candida albicans in the large majority, with non-albicans species (e.g., C. glabrata) uncommon but poorly responsive to standard azoles. Candida is normal flora in many women's vaginas, so disease is not acquisition of a new pathogen but a broken equilibrium between flora and host: antibiotics clearing lactobacilli remove competitive suppression, elevated estrogen (pregnancy, oral contraceptives) enriches epithelial glycogen for the yeast to use, poorly controlled diabetes, and immunosuppression. The typical picture is vulvar itching and burning with white curd-like discharge at a normal vaginal pH — the pH being the discriminator against bacterial vaginosis and trichomoniasis. Four or more episodes in a year defines the recurrent form, which warrants culture and species identification rather than repeated empirical dosing.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/LEUKO.DOC(Tier-1 課堂 handout,帶下病因)",
+          "中醫婦科學教材通說(帶下/陰癢門)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/LEUKO.DOC(Tier-1 課堂 handout,帶下病因)",
+          "中醫婦科學教材通說(帶下/陰癢門)"
+        ],
+        "western_pathology_zh": [
+          "CDC — 陰道念珠菌感染臨床通說",
+          "MedlinePlus — Vaginal Yeast Infections (https://medlineplus.gov/yeastinfections.html)"
+        ],
+        "western_pathology_en": [
+          "CDC — 陰道念珠菌感染臨床通說",
+          "MedlinePlus — Vaginal Yeast Infections (https://medlineplus.gov/yeastinfections.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/yeastinfections.html"
       ]
     },
     {
@@ -5695,8 +6093,8 @@
       ],
       "western_context_zh": "常以血清素類藥物、荷爾蒙處置與心理支持處理；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with serotonergic agents, hormonal approaches, and psychological support. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫無此病名,屬「經行情志異常」重症,與「臟躁」意象相通。病機仍以經前陰血下注、肝失所養為軸,而情志症狀的深重提示三線並病:肝鬱化火——煩躁易怒、面赤失眠,火擾心神;心脾兩虛——思慮勞倦傷心脾,經前血愈虛,神失所養而悲傷欲哭、恍惚倦怠,即甘麥大棗湯所主臟躁之象;腎陰虛、肝陽亢——腰膝酸軟、頭痛眩暈並見。週期性是辨證之錨:症狀隨經淨陰血漸復而自解,提示血虛為底、鬱火為標,治重養血柔肝、清火安神,分經前經後施治。",
+      "western_pathology_zh": "經前不悅症是經前症候群光譜的重端,以情緒症狀為核心(顯著的情緒不穩、易怒、憂鬱、焦慮),黃體期出現、經後緩解,且損害功能;診斷要求前瞻性記錄至少兩個週期,因為回溯性自評高估週期鎖定性。機轉與經前症候群同一框架而程度更深:卵巢類固醇濃度正常,異常在中樞反應——孕酮代謝物 allopregnanolone 對 GABA-A 受體的作用在敏感個體引起矛盾性情緒失穩;血清素系統參與明確,黃體期間歇給予血清素再回收抑制劑即能起效是其藥理旁證;細胞層面研究顯示患者對性類固醇的基因表達反應異於對照,提示體質性敏感。抑制排卵可使症狀消失,再暴露則復發。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -5733,6 +6131,43 @@
         "rf.pmdd.legacy01",
         "rf.pmdd.legacy02",
         "rf.pmdd.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine has no name for PMDD; it is the severe grade of \"menstrual emotional disorder,\" sharing imagery with zang zao (visceral agitation). The axis is still premenstrual yin-blood pouring downward and the liver losing nourishment, but the depth of the affective symptoms points to three concurrent lines: liver constraint transforming into fire — irritability, flushed face, insomnia, fire harassing the heart-spirit; heart-spleen dual deficiency — worry and overwork wound heart and spleen, blood grows emptier before menses and the unnourished spirit brings weepiness and dazed exhaustion, the very zang zao picture governed by Gan Mai Da Zao Tang; and kidney yin deficiency with ascendant liver yang — sore lumbar and knees with headache and dizziness. Cyclicity anchors the differentiation: symptoms self-resolve as yin-blood refills after menses, marking blood deficiency as the base and constrained fire as the branch; treatment stresses nourishing blood, softening the liver, clearing fire, and calming the spirit, staged before and after menses.",
+      "western_pathology_en": "PMDD is the severe end of the premenstrual spectrum, centered on affective symptoms — marked lability, irritability, depressed mood, anxiety — arising in the luteal phase, remitting after menses, and impairing function; diagnosis requires prospective ratings across at least two cycles because retrospective self-report overstates cycle-locking. The mechanism shares the PMS framework at greater depth: ovarian steroid levels are normal and the abnormality lies in central response — the progesterone metabolite allopregnanolone acting on GABA-A receptors produces paradoxical mood destabilization in sensitive individuals; serotonergic involvement is well established, the efficacy of luteal-phase-only serotonin reuptake inhibitors being the pharmacological corroboration; cellular studies show gene-expression responses to sex steroids that differ from controls, pointing to a constitutional sensitivity. Suppressing ovulation abolishes symptoms; re-exposure brings them back.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫婦科學教材通說(經行情志異常/臟躁門)"
+        ],
+        "etiology_en": [
+          "中醫婦科學教材通說(經行情志異常/臟躁門)"
+        ],
+        "western_pathology_zh": [
+          "NIMH/ACOG — 經前不悅症研究通說(黃體期 SSRI、排卵抑制試驗)",
+          "MedlinePlus — Premenstrual Syndrome (https://medlineplus.gov/premenstrualsyndrome.html)"
+        ],
+        "western_pathology_en": [
+          "NIMH/ACOG — 經前不悅症研究通說(黃體期 SSRI、排卵抑制試驗)",
+          "MedlinePlus — Premenstrual Syndrome (https://medlineplus.gov/premenstrualsyndrome.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/premenstrualsyndrome.html"
       ]
     },
     {
@@ -5766,8 +6201,8 @@
       ],
       "western_context_zh": "處置以治療潛在病因為主，並輔以疼痛管理；此為文件對照用語，非治療指示。",
       "western_context_en": "Management targets the underlying cause with adjunctive pain control. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫不分原發續發,同入「經行腹痛」,但續發性痛經的病機重心明顯偏「瘀」與「積」:瘀血內結——離經之血或術後留瘀,結於胞宮胞脈,痛如錐刺、位置固定、隨週期進行性加重,積久成癥瘕(與內異症、肌瘤的意象相合);濕熱瘀結——濕熱與血搏結(與慢性盆腔炎相應),痛伴帶下黃稠;寒凝血瘀——沉寒痼冷,凝滯胞脈。「久痛入絡、久病成癥」概括其進行性——這正是它與原發性(經後自解、不留積損)的分野;純虛證在續發性痛經反屬少見。",
+      "western_pathology_zh": "續發性痛經指由骨盆器質病變引起的經期疼痛,與原發性痛經的鑑別是臨床第一步。課堂講義列出的常見基礎病:子宮內膜異位症(最常見)、骨盆腔炎與其沾黏、子宮肌瘤、子宮腺肌症、子宮內避孕器、子宮息肉,以及流產與異位妊娠等急性事件;少見者如阻塞性生殖道畸形。指向續發性的臨床線索:初經多年後新發、疼痛逐週期進行性加重、止痛藥與避孕藥反應差、疼痛延伸至非經期或伴性交痛、經量異常。其疼痛機轉即基礎病變自身的機轉——異位內膜的週期性出血發炎、肌瘤或腺肌症的子宮壁張力、沾黏牽拉——故治療的靶是基礎病,不是「痛經」二字。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -5805,6 +6240,45 @@
         "rf.secondary_dysmenorrhea.legacy02",
         "rf.secondary_dysmenorrhea.legacy03",
         "rf.secondary_dysmenorrhea.legacy04"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine does not split primary from secondary — both are jing xing fu tong — but the mechanism of secondary dysmenorrhea leans unmistakably toward stasis and accumulation: static blood binding internally — blood that left its channels, or stasis retained after procedures, knots in the uterus and its vessels, with awl-like fixed pain worsening cycle by cycle and accumulating over time into zheng-jia masses (the very image of endometriosis and fibroids); damp-heat binding with stasis — damp-heat contending with blood (corresponding to chronic pelvic inflammation), pain with thick yellow discharge; cold congealing with blood stasis — deep-seated chronic cold freezing the uterine vessels. \"Long pain enters the collaterals; long disease forms masses\" captures its progressive nature — exactly what divides it from primary dysmenorrhea (which resolves after each period and leaves no accumulating damage); purely deficient patterns are uncommon here.",
+      "western_pathology_en": "Secondary dysmenorrhea is menstrual pain caused by pelvic organic disease, and separating it from primary dysmenorrhea is the first clinical step. The course handout lists the usual underlying conditions: endometriosis (most common), pelvic inflammatory disease and its adhesions, uterine fibroids, adenomyosis, intrauterine devices, uterine polyps, and acute events such as miscarriage and ectopic pregnancy; obstructive genital-tract anomalies are rare additions. Clues pointing to secondary disease: new onset years after menarche, pain worsening cycle by cycle, poor response to analgesics and oral contraceptives, pain extending beyond menses or with dyspareunia, and abnormal flow. The pain mechanism is the underlying lesion's own mechanism — cyclic bleeding and inflammation of ectopic endometrium, wall tension from fibroids or adenomyosis, traction from adhesions — so treatment targets the underlying disease, not the word \"dysmenorrhea.\"",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/DYSMENO.DOC(Tier-1 課堂 handout)",
+          "中醫婦科學教材通說(痛經/癥瘕門)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/DYSMENO.DOC(Tier-1 課堂 handout)",
+          "中醫婦科學教材通說(痛經/癥瘕門)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/DYSMENO.DOC(Tier-1 課堂 handout,續發性段)",
+          "MedlinePlus — Period Pain (https://medlineplus.gov/periodpain.html)"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/DYSMENO.DOC(Tier-1 課堂 handout,續發性段)",
+          "MedlinePlus — Period Pain (https://medlineplus.gov/periodpain.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/periodpain.html"
       ]
     },
     {
