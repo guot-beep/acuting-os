@@ -3230,3 +3230,9 @@ Current repo state as of this log:
 - Token 生效後 API 實查:production = main `47026e5` 逐檔 MATCH、HTTP 200,健康;今天 5 個 wrangler 版本上傳(guotingru 身分、未 promote)非本機所為,待 Ting 確認來源。
 - 根因:Worker 從未 git-connected(Builds API 無任何 trigger)。剩一步 Ting 互動動作:Dashboard Connect GitHub(main/build-site/wrangler deploy/root)。細節在 DEPLOY_CLOUDFLARE.md。
 - Codex 審計進行中;C2b 等 GO。
+
+# 2026-08-11 Fable — Cloudflare 收尾:Connect 完成,驗證 push 觸發管線
+
+- 更正:08-11 的 5 個 wrangler 版本上傳是 **Ting 本人**所為(非 Codex/SOL),無安全疑慮。
+- Ting 已在 Dashboard 完成 GitHub Connect(官方文件確認 Builds 設定僅 Dashboard 可操作,無公開 API——先前 API 探測 12000 是預期行為)。
+- 本 commit 兼作管線驗證觸發:push 後 Workers Builds 應對 codex/pattern-v2 產生 preview 版本(versions API 可查),production 只在 main 更新時觸發(等 Codex GO 後首次落地時驗證)。
