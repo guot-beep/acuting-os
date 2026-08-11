@@ -15,6 +15,10 @@
 - **新增 minimum-shape 對抗**：`1/4 PASS · 3/4 FAIL`。`patients` wrong-type 被擋；missing `journal`、`pending_patient_codes` wrong-type、`schema_version!=2` 均回 `ok:true` 並覆寫 active。
 - **資料邊界**：真 clinical store 讀／寫=`0/0`；全部使用 process-local fake backend／fake app handler，temp harness 清理。
 
+### 六軸收斂結論
+
+- Patient↔Case integrity=`PASS`；revision/order=`PASS`；restore=`FAIL`（minimum active-envelope shape fail-open）；race=`PASS`；rollback=`PASS`；pointer switch=`PASS`。本輪只有 restore 軸存在新實質 blocker，不重審已綠項。
+
 ### G1/G2 指定 gate
 
 1. **G1 PASS**：non-null corrupt JSON 回 `REJECTED_UNCHANGED`，原 bytes、pointer 不動，candidate 清除。
@@ -31,12 +35,19 @@
 
 - 官方 runtime rehearsal=`56/56 PASS`，但 R12-F2 仍只有 `save()` overflow 測試；`syncPendingPatients()` 的 MAX_SAFE overflow 只在獨立 harness 被驗為 PASS。把 sync rejection + staging exact unchanged 加入官方 blocking suite，避免「兩 writer 均受保護」只靠人工回放。
 
+### main integration 與 CI trigger 調查
+
+- `git merge-base --is-ancestor ca2c45b9 HEAD` exit=`0`；`main@ca2c45b9` 已由 merge `d6356e6` 納入，整合後上述本地 suites 重跑結果不變。
+- 2026-08-11 read-only GitHub API：`codex/pattern-v2` `protected=false`；該 branch Actions runs=`0`；latest remote head 的 status contexts=`0`（combined state 顯示 pending 是因無 contexts，不是正在跑）。
+- `.github/workflows/validate.yml` 觸發條件是 `pull_request`、`push` 僅 `[main]`、`workflow_dispatch`。因此直接 push `codex/pattern-v2` 不會觸發 validate，latest head 無 run 是 workflow 設定的結果，不是 runner 漏報。
+- **Landing CI 前置**：H1 修正後，須對 exact candidate SHA 建 PR 觸發 validate，或由授權者 manual dispatch；三 jobs 全綠且 SHA 對得上才可視為 CI gate。branch 未保護且無 required contexts，不能把「可直接 push」誤當 CI 綠燈。
+
 ### 回歸數字
 
 - 官方 fake suites：pointer runtime=`31/31 PASS`；runtime restore=`56/56 PASS`；C2b rehearsal=`30/30 PASS`。
 - Clinical：invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K-series=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions failures=`0`；app/store syntax=`2/2`。
 - Standard validators=`9 exit 0 / 3 exit 1`；紅燈仍為 `validate-herb-canon`、`validate-naming`、`validate-encoding` 資料基線，與本輪 Clinical diff 無交集。
-- **下一 gate**：H1 全 minimum-shape variants 與 sync-overflow test 入庫後排 R15。此前禁止真機 shadow write、pointer switch 與 runtime restore，即使 Ting 在場與 Edge `file://` raw full hash 相符亦不例外。
+- **收斂下一步**：不另開 R15。R14 的 H1 variants 與 sync-overflow blocking test 修正後，只覆測本 blocker + 全套 regression；若六軸與 exact-SHA CI 全綠，直接進 P4 rehearsal。此前禁止真機 shadow write、pointer switch 與 runtime restore，即使 Ting 在場與 Edge `file://` raw full hash 相符亦不例外。
 
 ---
 

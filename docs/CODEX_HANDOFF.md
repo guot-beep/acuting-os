@@ -5,8 +5,9 @@
 - **Gate**：reviewed `3d4ca4f..3c3f60f`；R9/R10/R11/R12/R13=`9/9 · 8/8 · 5/5 · 6/6 · 3/3 PASS`，new minimum-shape extras=`1/4 PASS · 3/4 FAIL`。
 - **Primary blocker**：active shape guard 只驗 cases/patients arrays；missing journal、pending wrong-type、schema_version!=2 仍可 `ok:true` 覆寫 active。
 - **Required H1**：non-null active 共用完整 minimum-envelope validator；任一 shape 缺口皆 `REJECTED_UNCHANGED`，disaster repair 另走 Ting 授權。官方 suite另補 sync overflow。
-- **Evidence**：official pointer/runtime/C2b=`31/31 · 56/56 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
-- **Boundary / next**：真 store 讀／寫=`0/0`，fake harness 已清理；H1 variants 與 sync-overflow blocking test 後排 R15，期間禁止 shadow write／pointer switch／runtime restore。
+- **Six axes / evidence**：Patient↔Case/revision/race/rollback/pointer=`PASS`，restore=`FAIL`；official pointer/runtime/C2b=`31/31 · 56/56 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；standard `9/3`。
+- **Integration / CI**：`main@ca2c45b9` ancestry exit `0`；GitHub API 顯示 branch unprotected、runs `0`、contexts `0`。validate 只由 PR、main push、manual dispatch 觸發；candidate exact SHA 必取得 CI green。
+- **Boundary / convergence**：真 store 讀／寫=`0/0`，fake harness 已清理；不開 R15，H1 修正後覆測 blocker+regression，六軸與 CI 綠則直接進 P4 rehearsal；此前禁止 shadow write／pointer switch／runtime restore。
 
 ---
 

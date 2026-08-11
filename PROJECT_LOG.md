@@ -2,9 +2,9 @@
 
 - **範圍**：覆核 `3d4ca4f..3c3f60f`；R9/R10/R11/R12/R13=`9/9 · 8/8 · 5/5 · 6/6 · 3/3 PASS`，new extras=`1/4 PASS · 3/4 FAIL`，未發布 P4。
 - **阻斷**：active guard 只驗 cases/patients；missing journal、pending wrong-type、schema_version!=2 均回 `ok:true` 覆寫 active。
-- **修復 gate**：non-null active 共用 minimum-envelope validator，全 shape variants fail-closed；disaster repair 另走 Ting 授權。官方 suite另補 sync overflow。
-- **回歸**：official pointer/runtime/C2b=`31/31 · 56/56 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
-- **邊界／下一步**：真 store 讀／寫=`0/0`，temp fake harness 清理；H1 variants 與 sync-overflow blocking test 後排 R15，期間禁止真機 shadow write／pointer switch／runtime restore。
+- **六軸／修復 gate**：Patient↔Case/revision/race/rollback/pointer=`PASS`、restore=`FAIL`；non-null active 共用 minimum-envelope validator，全 shape variants fail-closed；官方 suite另補 sync overflow。
+- **回歸**：official pointer/runtime/C2b=`31/31 · 56/56 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`；main ancestry exit `0`。
+- **CI／收斂**：branch unprotected、Actions runs `0`、contexts `0`；validate 不在 pattern branch push 觸發。不開 R15；H1 後覆測+exact-SHA CI 綠即進 P4 rehearsal。真 store `0/0`，期間禁止真機 restore/switch。
 
 # 2026-08-11 Codex — C2B-R13 active-envelope integrity audit（NO-GO）
 
