@@ -1,3 +1,11 @@
+# 2026-08-11 Claude — C4 安全線歸零:71 張無紅旗卡全數補齊(batches 7–9)
+
+- **做了什麼**:C4(無紅旗)71 卡分三批補齊,每卡 3–5 條結構化雙語紅旗。批次七(commit `0971fa6`,28 卡)pain_msk 2 + gi 1 + psych_sleep 15 + respiratory 10;批次八(commit `2c38c83`,26 卡)derm 8 + endo_metabolic 10 + cardio 8;批次九(commit `c10178f`,17 卡)uro_renal 8 + ent_eye 6 + immune_misc 3。**格式跟既有 55 卡的 legacy 字串陣列慣例**(「發現 → 行動(急症)」),非模板 §5 五欄物件——registry 結構化版仍只屬 Batch 4 婦科 25 卡,本批**未動 red_flag_refs/registry wiring**(validate-red-flag-wiring 範圍不變)。zh/en 逐條成對、長度相等;來源入 field_sources(ACR/EULAR、AASLD、AASM、GINA、GOLD、ACCP、ADA、ATA、AHA/ACC/ESC、AAD、AAO、AAO-HNS、AUA、NCCN/ASCO 等指引級通說;1 Palpitation、1.1 BPH、1.2 Lin、2.2 Impotence、NOC_ENU、7 CFS 課件標「轉介精神」)。
+- **內容原則**:每條=具體發現→具體行動,急症標記;各卡有自己的「最重要一條」(如 erectile_dysfunction 之心血管前哨與硝酸鹽禁忌、cancer_supportive 之發燒性嗜中性球低下與針灸前查血象、hpa_dysregulation 之 Addison 危象排除、cad 之抗血小板不可自停)。腳本 assert:紅旗欄原為空、不在 registry、zh/en 等長——凡已有內容者不覆蓋。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):**C4 71 → 0(全 150 卡皆有紅旗)**;全檔 188 → **117**(C5 116、C9 1);乾淨卡 73→**92**。ratchet baseline 鎖 117。三批皆 content-junk PASS、`git diff --check` 乾淨、build-data 已跑、HEAD 深比較=派工清單且無欄位被覆蓋。自抓兩處自產垃圾:t2dm zh 條漏入英文字「symptoms」、batch 5 曾漏入西里爾字——寫入前自校再度證明必要。
+- **本日總結**(一日四線):condition 檔全檔缺陷 **553 → 117**(C10 189→0、C4 71→0、C5 292→116),乾淨卡 1→92。
+- **已知未解/下一步**:(1) **C5 116(58 卡)是最後一座山**——多為 summary/context 與六張家卡長文的 _en 缺;家卡 CloudTCM 敘事宜先修語氣再譯;(2) C9 1 筆待查;(3) 本批紅旗為 model_draft 草稿,**臨床判斷內容,Ting 逐卡過目後才算數**(憲法:新內容 draft 直接上、Ting 在 app 裡審);(4) 未來若 red_flag registry migration 擴到全庫,本批 legacy 陣列即為 wiring 的原文基礎。
+
 # 2026-08-11 Claude — C10 全庫歸零:最後 7 張誤置長文卡 untangle(batch 6)
 
 - **做了什麼**(commit `961f869`,7 卡):C10 殘餘的批次一型誤置長文全數處理。post_covid(氣喘文→家卡 asthma)、copd + post_viral_cough(咳嗽文→家卡 chronic_cough)、heart_failure(心律不整文→家卡 palpitations)、chronic_prostatitis(BPH 文→家卡 bph)、cluster_headache + migraine_vestibular(頭痛通論/偏頭痛文→家卡 tension_headache / migraine)。家卡六張(asthma、chronic_cough、palpitations、bph、tension_headache、migraine)保留原文未動,腳本 assert 家卡持有後才封存。
