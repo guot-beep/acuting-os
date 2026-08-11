@@ -235,35 +235,522 @@
       "name_zh": "哮病",
       "pinyin": "Xiaobing",
       "name_en": "Wheezing Disease",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
+      "definition_zh": "哮病是一種反覆發作的痰鳴氣喘病證，以喉中哮鳴有聲、呼吸急促困難，甚則張口抬肩、不能平臥為特徵，多與宿痰內伏、外邪引動有關。",
+      "definition_en": "Xiao Bing (Wheezing Disease) is a recurrent disease characterized by phlegm-rattling and dyspnea, marked by wheezing sounds in the throat and rapid, labored breathing, with severe cases showing mouth agape, shoulders raised, and inability to lie flat; it is closely tied to latent phlegm stirred by external triggers.",
+      "etiology_zh": "主因痰飲內伏於肺，遇外感、飲食、情志、勞倦等誘因觸動而發；素體肺、脾、腎虛損，痰飲難化，伏藏於肺為發病的夙根。",
+      "etiology_en": "Mainly caused by latent Phlegm-Rheum concealed in the Lung, triggered by external contraction, diet, emotion, or overexertion; constitutional Lung-Spleen-Kidney deficiency prevents the Phlegm-Rheum from being transformed, and this latent Phlegm is the root predisposition for the disease.",
+      "pathomechanism_zh": "痰伏於肺，遇誘因觸動，痰隨氣升，氣因痰阻，相互搏結，壅塞氣道，肺失宣降，發為哮鳴氣喘；久發不已，肺脾腎俱虛，轉為虛哮或哮喘並見。",
+      "pathomechanism_en": "Phlegm latent in the Lung is stirred by a trigger; Phlegm rises with Qi while Qi is obstructed by Phlegm, the two binding together to block the airway and impair the Lung's dispersal and descent, producing wheezing and dyspnea. With prolonged recurrence the Lung, Spleen, and Kidney all become deficient, and the pattern may shift toward deficiency-type wheezing or combine with dyspnea pattern disease.",
+      "key_manifestations_zh": [
+        "喉中哮鳴有聲，呼吸急促",
+        "胸悶如塞",
+        "甚則張口抬肩，不能平臥",
+        "痰質粘稠或稀薄，咳吐不爽",
+        "反覆發作，遇誘因即發",
+        "緩解期可如常人或見肺脾腎虛象"
+      ],
+      "key_manifestations_en": [
+        "Wheezing sounds in the throat with rapid breathing",
+        "Chest oppression as if blocked",
+        "Severe cases: mouth agape, shoulders raised, unable to lie flat",
+        "Sputum thick-sticky or thin, difficult to expectorate",
+        "Recurrent attacks triggered by exposures",
+        "Between attacks may appear normal or show Lung-Spleen-Kidney deficiency signs"
+      ],
+      "disease_location_zh": "病位主要在肺,與脾、腎關係密切。",
+      "disease_location_en": "Disease location is mainly the Lung, closely related to the Spleen and Kidney.",
+      "related_patterns": [
+        "pattern.phlegm_heat_in_lung",
+        "pattern.cold_phlegm_obstructing_lung",
+        "pattern.lung_kidney_qi_deficiency",
+        "pattern.kidney_not_grasping_qi"
+      ],
+      "treatment_principle_zh": "發時攻邪治標,祛痰利氣,寒哮溫肺散寒化痰,熱哮清熱化痰宣肺;平時扶正治本,補肺健脾益腎,分別調補肺脾腎。",
+      "treatment_principle_en": "During attacks, attack the pathogen to treat the branch: expel Phlegm and regulate Qi, warming the Lung and dispersing Cold for cold-type wheezing, clearing Heat and transforming Phlegm for heat-type wheezing. Between attacks, support upright Qi to treat the root: tonify Lung, strengthen Spleen, and benefit Kidney as indicated.",
+      "red_flags_zh": [
+        {
+          "finding": "講話或走動都因呼吸困難而變得吃力",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119/送急診",
+          "rationale": "重度氣喘發作徵象",
+          "source": "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "嘴唇或指甲發紺（發青發灰），或意識混亂、反應變差",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "缺氧及嚴重發作徵象",
+          "source": "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "使用速效緩解藥物後症狀未改善",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119/送急診",
+          "rationale": "治療無效顯示嚴重發作，需緊急醫療處置",
+          "source": "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Trouble walking or talking because it is so hard to breathe",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 / go to emergency department immediately",
+          "rationale": "Sign of a severe asthma attack",
+          "source": "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Lips or fingernails blue or gray, or confused / less responsive than usual",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately",
+          "rationale": "Signs of hypoxia and severe attack",
+          "source": "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Symptoms do not improve after using quick-relief/rescue medicine",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 / go to emergency department immediately",
+          "rationale": "Treatment failure indicates a severe attack requiring emergency care",
+          "source": "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus \"Asthma attacks\" patient instructions"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist in data/pathology/pattern_library.json/pattern_registry.json; no related_tcm_disease_ids canonical back-link found for tdis.xiao_bing"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Asthma attacks\" (medlineplus.gov/ency/patientinstructions/000062.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.chuan_zheng",
       "name_zh": "喘證",
       "pinyin": "Chuanzheng",
       "name_en": "Dyspnea Pattern Disease",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
+      "definition_zh": "喘證是以呼吸急促、甚則張口抬肩、鼻煽、不能平臥為主要表現的病證，可由多種急慢性肺系及其他臟腑疾病引起，較哮病範圍更廣，不一定伴喉中哮鳴聲。",
+      "definition_en": "Chuan Zheng (Dyspnea Pattern Disease) is characterized by rapid, labored breathing, with severe cases showing mouth agape, shoulders raised, flaring nostrils, and inability to lie flat; it may arise from many acute and chronic Lung-system and other organ diseases, is broader in scope than Xiao Bing, and does not necessarily involve audible wheezing.",
+      "etiology_zh": "外感風寒、風熱、痰濁壅肺；內傷者多因肺氣不足、脾失健運、腎不納氣，或水飲、瘀血犯肺。",
+      "etiology_en": "External contraction of Wind-Cold, Wind-Heat, or Phlegm-turbidity obstructing the Lung; internal-damage cases are usually due to Lung Qi insufficiency, Spleen failing to transport, Kidney failing to grasp Qi, or Water-Rheum and Blood stasis invading the Lung.",
+      "pathomechanism_zh": "肺為氣之主，腎為氣之根；外邪、痰濁、水飲壅塞肺氣，肺失宣降則喘；久病肺脾腎俱虛，腎失攝納，氣不歸元，則喘促益甚，動則尤甚。",
+      "pathomechanism_en": "The Lung governs Qi and the Kidney is the root of Qi. External pathogens, Phlegm-turbidity, or Water-Rheum obstruct Lung Qi and impair its dispersal and descent, producing dyspnea. With chronic disease the Lung, Spleen, and Kidney all become deficient; the Kidney loses its grasping function so Qi fails to return to its root, worsening the dyspnea, especially on exertion.",
+      "key_manifestations_zh": [
+        "呼吸急促，甚則張口抬肩",
+        "不能平臥，動則喘甚",
+        "或伴咳嗽、咯痰",
+        "虛喘者呼多吸少，氣不得續",
+        "實喘者聲高氣粗，痰鳴漉漉"
+      ],
+      "key_manifestations_en": [
+        "Rapid, labored breathing, severe cases with mouth agape and shoulders raised",
+        "Unable to lie flat, worse with exertion",
+        "May accompany cough with sputum",
+        "Deficiency-type: exhalation predominates over inhalation, breath cannot be sustained",
+        "Excess-type: loud, coarse breathing with rattling phlegm sounds"
+      ],
+      "disease_location_zh": "病位主要在肺、腎，亦與心、肝相關；久喘及心則見心悸、唇甲青紫。",
+      "disease_location_en": "Disease location is mainly the Lung and Kidney, also related to the Heart and Liver; chronic dyspnea affecting the Heart presents with palpitations and cyanotic lips/nails.",
+      "related_patterns": [
+        "pattern.phlegm_heat_in_lung",
+        "pattern.cold_phlegm_obstructing_lung",
+        "pattern.lung_kidney_qi_deficiency",
+        "pattern.kidney_not_grasping_qi"
+      ],
+      "treatment_principle_zh": "實喘祛邪利氣，分寒熱化痰；虛喘培補攝納，補肺、健脾、益腎，分清標本虛實，虛實夾雜者當標本兼顧。",
+      "treatment_principle_en": "Excess-type dyspnea: expel the pathogen and regulate Qi, transforming Phlegm according to Cold or Heat. Deficiency-type dyspnea: tonify and consolidate the grasping function via tonifying Lung, strengthening Spleen, and benefiting Kidney. Distinguish root from branch and excess from deficiency; mixed presentations require treating both.",
+      "red_flags_zh": [
+        {
+          "finding": "突然發生的呼吸困難，嚴重影響呼吸甚至說話",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診/撥打119",
+          "rationale": "可能為急性心衰竭、肺栓塞或氣道阻塞",
+          "source": "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "呼吸困難合併胸部不適、疼痛或壓迫感（心絞痛症狀）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫評估心臟疾病",
+          "rationale": "可能合併急性冠心症候群",
+          "source": "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "稍微活動或靜息時即感呼吸困難，或夜間喘醒需坐起呼吸",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示心衰竭或嚴重肺部疾病",
+          "source": "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Breathing difficulty comes on suddenly or seriously interferes with breathing and even talking",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department / call 911 immediately",
+          "rationale": "May indicate acute heart failure, pulmonary embolism, or airway obstruction",
+          "source": "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Breathing difficulty with chest discomfort, pain, or pressure (angina symptoms)",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate evaluation for cardiac disease",
+          "rationale": "May co-occur with acute coronary syndrome",
+          "source": "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Shortness of breath after only slight activity or at rest, or waking at night needing to sit up to breathe",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests heart failure or serious lung disease",
+          "source": "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus \"Breathing difficulty\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.chuan_zheng"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Breathing difficulty\" (medlineplus.gov/ency/article/003075.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bi_qiu",
       "name_zh": "鼻鼽",
       "pinyin": "Biqiu",
       "name_en": "Allergic Rhinorrhea",
-      "taxonomy_id": "tdx.ent.nose"
+      "taxonomy_id": "tdx.ent.nose",
+      "definition_zh": "鼻鼽是以突發和反覆發作的鼻癢、噴嚏、大量清涕、鼻塞為主要表現的鼻病，多因肺、脾、腎虛損，衛表不固，風邪乘虛侵襲鼻竅所致。",
+      "definition_en": "Bi Qiu (Allergic Rhinorrhea) is a nasal disease characterized by sudden, recurrent nasal itching, sneezing, profuse clear discharge, and nasal congestion, usually due to Lung-Spleen-Kidney deficiency and an unconsolidated defensive exterior allowing Wind to invade the nasal orifice.",
+      "etiology_zh": "稟賦不耐，肺氣虛弱，衛表不固，風寒異氣乘虛而入；或脾氣虛弱，肺失濡養；或腎陽不足，攝納無權，鼻竅失於溫煦。",
+      "etiology_en": "Constitutional intolerance with Lung Qi weakness and an unconsolidated defensive exterior allows Wind-Cold or allergenic influences to invade; or Spleen Qi weakness fails to nourish the Lung; or Kidney Yang insufficiency loses its grasping/warming function, leaving the nasal orifice without warmth.",
+      "pathomechanism_zh": "肺開竅於鼻，肺氣虛則衛外不固，風邪易犯清竅，邪正相搏，鼻竅壅塞，津液不能布散反從鼻竅溢出而為清涕；病久及脾腎，則反覆難癒。",
+      "pathomechanism_en": "The Lung opens into the nose; Lung Qi deficiency weakens the defensive exterior, allowing Wind to easily invade the clear orifice. The struggle between pathogen and upright Qi obstructs the nasal passage, and fluids that fail to be distributed normally leak out as clear discharge. Chronic disease extends to the Spleen and Kidney, producing a recurrent, difficult-to-resolve course.",
+      "key_manifestations_zh": [
+        "鼻癢、噴嚏連作",
+        "鼻塞、大量清稀鼻涕",
+        "遇冷風、異味或晨起即發",
+        "可伴目癢、咽癢",
+        "反覆發作，緩解期如常人"
+      ],
+      "key_manifestations_en": [
+        "Nasal itching with successive sneezing",
+        "Nasal congestion with copious thin clear discharge",
+        "Triggered by cold wind, odors, or on waking",
+        "May accompany itchy eyes or throat",
+        "Recurrent episodes; asymptomatic between attacks"
+      ],
+      "disease_location_zh": "病位在肺、鼻，與脾、腎關係密切。",
+      "disease_location_en": "Disease location is the Lung and nose, closely related to the Spleen and Kidney.",
+      "related_patterns": [
+        "pattern.lung_qi_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "treatment_principle_zh": "治宜溫肺散寒、益氣固表，或健脾益氣，或溫補腎陽，標本兼治，緩解期以扶正固本為主。",
+      "treatment_principle_en": "Treatment warms the Lung and disperses Cold while tonifying Qi to consolidate the exterior, or strengthens the Spleen and tonifies Qi, or warmly tonifies Kidney Yang, treating root and branch together; between attacks, focus on supporting upright Qi and consolidating the root.",
+      "red_flags_zh": [
+        {
+          "finding": "嚴重鼻過敏症狀持續影響日常生活",
+          "urgency_level": "routine",
+          "recommended_action": "安排耳鼻喉科或過敏科評估",
+          "rationale": "需排除氣喘等共病並評估是否需免疫治療",
+          "source": "MedlinePlus \"Allergic rhinitis\" (medlineplus.gov/ency/article/000813.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "曾經有效的治療方式不再有效，或症狀對治療完全無反應",
+          "urgency_level": "routine",
+          "recommended_action": "回診調整治療方案",
+          "rationale": "提示需重新評估診斷，或合併鼻竇炎等併發症",
+          "source": "MedlinePlus \"Allergic rhinitis\" (medlineplus.gov/ency/article/000813.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe hay fever symptoms persistently affecting daily life",
+          "urgency_level": "routine",
+          "recommended_action": "Arrange ENT or allergy specialist evaluation",
+          "rationale": "Need to rule out comorbid asthma and assess for immunotherapy",
+          "source": "MedlinePlus \"Allergic rhinitis\" (medlineplus.gov/ency/article/000813.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Treatment that once worked no longer works, or symptoms do not respond to treatment",
+          "urgency_level": "routine",
+          "recommended_action": "Return for treatment plan review",
+          "rationale": "Suggests need to reassess diagnosis or check for complications such as sinusitis",
+          "source": "MedlinePlus \"Allergic rhinitis\" (medlineplus.gov/ency/article/000813.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Allergic rhinitis\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.bi_qiu"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Allergic rhinitis\" (medlineplus.gov/ency/article/000813.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bi_yuan",
       "name_zh": "鼻淵",
       "pinyin": "Biyuan",
       "name_en": "Deep-Source Nasal Congestion",
-      "taxonomy_id": "tdx.ent.nose"
+      "taxonomy_id": "tdx.ent.nose",
+      "definition_zh": "鼻淵是以鼻塞、鼻涕量多、色黃質稠、有臭味，伴頭痛、嗅覺減退為主要表現的鼻病，多因外邪犯肺、膽經鬱熱、脾胃濕熱上蒸鼻竅所致。",
+      "definition_en": "Bi Yuan (Deep-Source Nasal Congestion / sinusitis) is a nasal disease characterized by nasal congestion, profuse thick yellow malodorous discharge, headache, and diminished sense of smell, usually due to external pathogens invading the Lung, Gallbladder-channel depressive heat, or Spleen-Stomach Damp-Heat steaming up to the nasal orifice.",
+      "etiology_zh": "外感風寒風熱失於表散，鬱而化熱；或膽經濕熱、脾胃濕熱循經上犯鼻竅；久病肺脾氣虛，邪毒滯留鼻竅。",
+      "etiology_en": "External Wind-Cold or Wind-Heat that fails to be dispersed at the exterior turns into depressive Heat; or Gallbladder-channel or Spleen-Stomach Damp-Heat travels along the channel to invade the nasal orifice; chronic disease causes Lung-Spleen Qi deficiency, allowing pathogenic toxin to linger in the nose.",
+      "pathomechanism_zh": "邪熱蘊結鼻竅，灼傷鼻膜，腐液成涕，故涕黃濁腥臭；久病傷及肺脾之氣，清陽不升，邪毒稽留，則反覆纏綿難癒。",
+      "pathomechanism_en": "Pathogenic Heat accumulates in the nasal orifice and scorches the nasal membrane, putrefying fluids into discharge, producing thick yellow malodorous mucus. Chronic disease injures Lung and Spleen Qi so clear Yang fails to ascend, and lingering pathogenic toxin causes a stubborn, recurrent course.",
+      "key_manifestations_zh": [
+        "鼻塞持續",
+        "膿涕量多，色黃綠，質稠有臭味",
+        "頭痛，前額或顴部脹痛",
+        "嗅覺減退",
+        "可伴發熱、咽痛"
+      ],
+      "key_manifestations_en": [
+        "Persistent nasal congestion",
+        "Copious thick, yellow-green, malodorous discharge",
+        "Headache with frontal or malar distending pain",
+        "Diminished sense of smell",
+        "May accompany fever or sore throat"
+      ],
+      "disease_location_zh": "病位在鼻竅，與肺、膽、脾胃相關。",
+      "disease_location_en": "Disease location is the nasal orifice, related to the Lung, Gallbladder, and Spleen-Stomach.",
+      "related_patterns": [
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.wind_heat_invading_lung",
+        "pattern.lung_qi_deficiency"
+      ],
+      "treatment_principle_zh": "初起疏風清熱、宣肺通竅；膽熱、濕熱者清膽瀉熱或清脾瀉熱；久病肺脾氣虛者益氣固表、通利鼻竅，標本兼顧。",
+      "treatment_principle_en": "Early stage: disperse Wind, clear Heat, and open the nasal orifice via Lung dispersal. Gallbladder-Heat or Damp-Heat patterns: clear Gallbladder or Spleen Heat. Chronic Lung-Spleen Qi deficiency: tonify Qi to consolidate the exterior and open the nasal passage, addressing root and branch together.",
+      "red_flags_zh": [
+        {
+          "finding": "症狀持續超過10-14天，或感冒在7天後反而惡化",
+          "urgency_level": "routine",
+          "recommended_action": "安排門診評估是否需抗生素治療",
+          "rationale": "提示可能為細菌性鼻竇炎",
+          "source": "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "鼻竇炎病程中出現視力變化，或眼周紅腫",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "提示眶周蜂窩性組織炎、腦膜炎、腦膿瘍等罕見但嚴重併發症",
+          "source": "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "劇烈頭痛且一般止痛藥無法緩解，合併發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫，必要時安排影像學檢查",
+          "rationale": "須排除顱內併發症",
+          "source": "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Symptoms last longer than 10-14 days, or a cold gets worse after 7 days",
+          "urgency_level": "routine",
+          "recommended_action": "Arrange outpatient evaluation for possible antibiotic treatment",
+          "rationale": "Suggests possible bacterial sinusitis",
+          "source": "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Changes in vision during a sinus infection, or redness/swelling around the eye",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately",
+          "rationale": "Suggests rare but serious complications such as orbital cellulitis, meningitis, or brain abscess",
+          "source": "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Severe headache not relieved by over-the-counter pain medicine, with fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt evaluation, imaging if needed",
+          "rationale": "Must rule out intracranial complications",
+          "source": "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Sinusitis\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.bi_yuan"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Sinusitis\" (medlineplus.gov/ency/article/000647.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ru_e",
       "name_zh": "乳蛾",
       "pinyin": "Ru'e",
       "name_en": "Tonsillar Swelling",
-      "taxonomy_id": "tdx.ent.throat"
+      "taxonomy_id": "tdx.ent.throat",
+      "definition_zh": "乳蛾是以咽部兩側喉核（扁桃體）紅腫疼痛、吞嚥不利為主要表現的咽喉病，多因外感風熱邪毒，或肺胃積熱上攻咽喉所致。",
+      "definition_en": "Ru E (Tonsillar Swelling) is a throat disease characterized by redness, swelling, and pain of the tonsils on both sides of the throat with difficulty swallowing, usually due to external Wind-Heat toxin or Lung-Stomach accumulated Heat attacking the throat.",
+      "etiology_zh": "外感風熱邪毒，從口鼻而入，侵犯咽喉；或恣食辛辣炙煿，肺胃積熱，循經上攻喉核；反覆發作者多屬肺腎陰虛，虛火上炎。",
+      "etiology_en": "External Wind-Heat toxin enters through the mouth and nose to invade the throat; or excessive consumption of spicy, fried, roasted food generates Lung-Stomach accumulated Heat that travels up the channel to attack the tonsils; recurrent cases are usually due to Lung-Kidney Yin deficiency with deficient Fire flaring upward.",
+      "pathomechanism_zh": "風熱邪毒或肺胃之熱循經上壅咽喉，搏結喉核，氣血壅滯，化腐成膿，故見喉核紅腫疼痛，甚則潰爛化膿；久病陰傷，虛火上炎，則反覆發作。",
+      "pathomechanism_en": "Wind-Heat toxin or Lung-Stomach Heat travels up the channel to congest the throat and bind at the tonsils; Qi and Blood stagnate and putrefy into pus, producing redness, swelling, and pain, with severe cases showing ulceration and suppuration. Chronic disease injures Yin, and deficient Fire flaring upward causes recurrent attacks.",
+      "key_manifestations_zh": [
+        "咽痛，吞嚥時加劇",
+        "喉核紅腫，甚則有黃白膿點",
+        "發熱、惡寒",
+        "頸部臖核腫痛",
+        "反覆發作者可見咽乾、喉核肥大"
+      ],
+      "key_manifestations_en": [
+        "Sore throat, worse on swallowing",
+        "Red, swollen tonsils, severe cases with yellow-white purulent spots",
+        "Fever and aversion to cold",
+        "Swollen, tender cervical lymph nodes",
+        "Recurrent cases: dry throat and enlarged tonsils"
+      ],
+      "disease_location_zh": "病位在喉核（扁桃體），與肺、胃、腎相關。",
+      "disease_location_en": "Disease location is the tonsils, related to the Lung, Stomach, and Kidney.",
+      "related_patterns": [
+        "pattern.wind_heat_invading_lung",
+        "pattern.stomach_heat",
+        "pattern.lung_kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "風熱外襲者疏風清熱、利咽消腫；肺胃熱盛者清熱解毒、瀉火利咽；陰虛火旺反覆發作者滋陰降火、利咽散結。",
+      "treatment_principle_en": "Wind-Heat invasion: disperse Wind and clear Heat to benefit the throat and reduce swelling. Lung-Stomach Heat excess: clear Heat and resolve toxin, drain Fire and benefit the throat. Recurrent Yin-deficiency Fire-flaring cases: nourish Yin and downbear Fire, benefit the throat and dissipate nodulation.",
+      "red_flags_zh": [
+        {
+          "finding": "呼吸困難、出現高調喘鳴聲（stridor），或呼吸時肋間肌肉凹陷",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診，可能需緊急處置呼吸道",
+          "rationale": "腫脹組織可能阻塞呼吸道，屬致命急症",
+          "source": "MedlinePlus \"Peritonsillar abscess\" (medlineplus.gov/ency/article/000986.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "吞嚥困難、頸部轉動困難、口水直流（無法吞嚥自身唾液）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示扁桃體周圍膿瘍形成，可能危及呼吸道",
+          "source": "MedlinePlus \"Peritonsillar abscess\" (medlineplus.gov/ency/article/000986.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Breathing trouble with high-pitched breathing sounds (stridor), or retraction of the muscles between the ribs when breathing",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately; airway management may be needed",
+          "rationale": "Swollen tissue can block the airway, a life-threatening emergency",
+          "source": "MedlinePlus \"Peritonsillar abscess\" (medlineplus.gov/ency/article/000986.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Difficulty swallowing, difficulty turning the head, or drooling (unable to swallow own saliva)",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately",
+          "rationale": "Suggests peritonsillar abscess formation with potential airway compromise",
+          "source": "MedlinePlus \"Peritonsillar abscess\" (medlineplus.gov/ency/article/000986.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Peritonsillar abscess\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.ru_e"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Peritonsillar abscess\" (medlineplus.gov/ency/article/000986.htm), retrieved 2026-08-11 — cited as the airway-emergency complication of tonsillitis"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.wei_tong",
@@ -397,7 +884,124 @@
       "name_zh": "痞滿",
       "pinyin": "Piman",
       "name_en": "Glomus and Fullness",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "痞滿是以自覺胃脘部痞塞、脹滿不舒，按之柔軟、壓之無痛、視之無脹形為主要表現的病證，多因脾胃升降失常、氣機壅滯所致。",
+      "definition_en": "Pi Man (Glomus and Fullness) is characterized by a subjective sensation of fullness and blockage in the epigastrium, soft on palpation, non-tender, and without visible distension, usually due to disordered Spleen-Stomach ascent/descent and Qi stagnation.",
+      "etiology_zh": "飲食不節、情志失調、脾胃虛弱、外邪內陷，均可致中焦氣機阻滯；或因誤下傷中，脾胃受損，升降失司。",
+      "etiology_en": "Dietary irregularity, emotional disturbance, Spleen-Stomach weakness, or an external pathogen sinking inward can all obstruct middle-burner Qi movement; or improper purgation injures the middle, damaging the Spleen-Stomach and disrupting ascent/descent.",
+      "pathomechanism_zh": "脾胃為氣機升降之樞紐，凡食滯、痰濕、氣鬱、寒熱錯雜或脾胃虛弱，皆可致清陽不升、濁陰不降，壅塞於中，發為痞滿。",
+      "pathomechanism_en": "The Spleen and Stomach are the pivot of Qi ascent and descent. Food stagnation, Phlegm-Damp, Qi depression, mixed Cold-Heat, or Spleen-Stomach weakness can all prevent clear Yang from ascending and turbid Yin from descending, causing obstruction in the middle and producing glomus and fullness.",
+      "key_manifestations_zh": [
+        "胃脘痞塞不舒，脹滿",
+        "按之柔軟不痛",
+        "食後加重",
+        "可伴噯氣、納呆",
+        "情緒或飲食失調時誘發加重"
+      ],
+      "key_manifestations_en": [
+        "Epigastric blockage and fullness discomfort",
+        "Soft, non-tender on palpation",
+        "Worsens after eating",
+        "May accompany belching or poor appetite",
+        "Triggered or worsened by emotional or dietary irregularity"
+      ],
+      "disease_location_zh": "病位在胃，與肝、脾密切相關。",
+      "disease_location_en": "Disease location is the Stomach, closely related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.food_stagnation",
+        "pattern.liver_qi_stagnation",
+        "pattern.spleen_qi_deficiency",
+        "pattern.mixed_cold_heat"
+      ],
+      "treatment_principle_zh": "實痞消食導滯、疏肝理氣、清熱化濕；虛痞健脾益氣、辛開苦降；寒熱錯雜者辛開苦降並用。",
+      "treatment_principle_en": "Excess-type glomus: reduce food stagnation, soothe the Liver and regulate Qi, clear Heat and transform Dampness. Deficiency-type glomus: strengthen the Spleen and tonify Qi, using pungent-opening/bitter-descending methods. Mixed Cold-Heat: combine pungent-opening and bitter-descending methods.",
+      "red_flags_zh": [
+        {
+          "finding": "胸、下顎、頸部或手臂疼痛",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "儘速就醫評估心臟疾病",
+          "rationale": "上腹部不適可能為心臟疾病的非典型表現",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy01), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        },
+        {
+          "finding": "吞嚥困難或吞嚥疼痛",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "轉診腸胃科安排內視鏡檢查",
+          "rationale": "需排除食道或胃部器質性病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy02), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        },
+        {
+          "finding": "眼睛或皮膚發黃",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "儘速就醫檢查肝膽功能",
+          "rationale": "提示肝膽系統病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy07), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        },
+        {
+          "finding": "黑色柏油樣糞便，或頻繁嘔吐、嘔血",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "立即就醫，評估消化道出血",
+          "rationale": "提示上消化道出血",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy08, legacy03), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Pain in the chest, jaw, neck, or arm",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Seek prompt evaluation for cardiac disease",
+          "rationale": "Epigastric discomfort can be an atypical presentation of cardiac disease",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy01), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        },
+        {
+          "finding": "Difficulty or pain with swallowing",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Refer to gastroenterology for endoscopy",
+          "rationale": "Must rule out structural esophageal or gastric disease",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy02), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        },
+        {
+          "finding": "Yellowing of the eyes or skin",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Seek prompt evaluation of liver and biliary function",
+          "rationale": "Suggests hepatobiliary disease",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy07), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        },
+        {
+          "finding": "Black, tarry stools, or frequent vomiting / bloody vomit",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Seek immediate care to evaluate for GI bleeding",
+          "rationale": "Suggests upper gastrointestinal bleeding",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (rf.functional_dyspepsia.legacy08, legacy03), original evidence NIDDK \"Symptoms & Causes of Indigestion\", retrieved 2026-08-08"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.pi_man"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.functional_dyspepsia (closest biomedical analog: 痞滿/glomus maps to functional dyspepsia)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ou_tu",
@@ -515,14 +1119,190 @@
       "name_zh": "吞酸",
       "pinyin": "Tunsuan",
       "name_en": "Acid Regurgitation",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "吞酸是以酸水上泛，甚則酸水刺喉、口中泛酸為主要表現的病證，多因肝胃不和、胃失和降，或脾胃虛寒、濕濁上泛所致。",
+      "definition_en": "Tun Suan (Acid Regurgitation) is characterized by acid fluid rising up, with severe cases irritating the throat and a sour taste in the mouth, usually due to Liver-Stomach disharmony with Stomach failing to descend, or Spleen-Stomach Cold-deficiency with turbid Dampness rising.",
+      "etiology_zh": "情志不遂，肝氣犯胃，肝胃鬱熱；或飲食不節，脾胃損傷，寒濕內生，濁氣上逆。",
+      "etiology_en": "Emotional frustration causes Liver Qi to invade the Stomach, producing Liver-Stomach depressive Heat; or dietary irregularity injures the Spleen-Stomach, generating internal Cold-Damp with turbid Qi rebelling upward.",
+      "pathomechanism_zh": "肝鬱化熱，橫逆犯胃，胃失和降，胃氣挾酸上逆則吞酸嘈雜；脾胃虛寒者運化失司，濕濁內停，隨胃氣上泛則泛吐清水酸水。",
+      "pathomechanism_en": "Liver depression transforms into Heat and invades the Stomach transversely; the Stomach loses its harmonious descent, and Stomach Qi carrying acid rebels upward, producing acid regurgitation and gnawing hunger sensation. In Spleen-Stomach Cold-deficiency, transportation fails, internal Damp-turbidity accumulates, and rises with Stomach Qi to produce watery, sour regurgitation.",
+      "key_manifestations_zh": [
+        "泛酸，或嘈雜似饑",
+        "胸骨後或胃脘部灼熱感",
+        "噯氣、噁心",
+        "夜臥或飽食後加重",
+        "可伴胸悶脅痛"
+      ],
+      "key_manifestations_en": [
+        "Acid regurgitation, or gnawing hunger-like sensation",
+        "Retrosternal or epigastric burning sensation",
+        "Belching and nausea",
+        "Worsens lying down at night or after a full meal",
+        "May accompany chest oppression and rib-side pain"
+      ],
+      "disease_location_zh": "病位在胃，與肝、脾相關。",
+      "disease_location_en": "Disease location is the Stomach, related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.stomach_heat",
+        "pattern.stomach_fire",
+        "pattern.cold_damp_encumbering_spleen"
+      ],
+      "treatment_principle_zh": "肝胃鬱熱者疏肝泄熱、和胃降逆；脾胃虛寒者溫中健脾、和胃制酸。",
+      "treatment_principle_en": "Liver-Stomach depressive Heat: soothe the Liver and drain Heat, harmonize the Stomach and downbear rebellious Qi. Spleen-Stomach Cold-deficiency: warm the middle and strengthen the Spleen, harmonize the Stomach and restrain acid.",
+      "red_flags_zh": [
+        {
+          "finding": "吞嚥困難或吞嚥疼痛",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "轉診腸胃科安排內視鏡檢查",
+          "rationale": "需排除食道狹窄、食道炎或惡性病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.gerd (rf.gerd.dysphagia_odynophagia), original evidence NIDDK \"Symptoms & Causes of GER & GERD\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "持續性嘔吐，或有消化道出血徵兆",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "立即就醫評估",
+          "rationale": "提示嚴重食道炎、潰瘍或消化道出血",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.gerd (rf.gerd.gi_bleeding_or_persistent_vomiting), original evidence NIDDK \"Symptoms & Causes of GER & GERD\", retrieved 2026-08-07"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Difficulty swallowing or pain while swallowing",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Refer to gastroenterology for endoscopy",
+          "rationale": "Must rule out esophageal stricture, esophagitis, or malignancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.gerd (rf.gerd.dysphagia_odynophagia), original evidence NIDDK \"Symptoms & Causes of GER & GERD\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "Persistent vomiting or signs of bleeding in the digestive tract",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Seek immediate medical evaluation",
+          "rationale": "Suggests severe esophagitis, ulceration, or GI bleeding",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.gerd (rf.gerd.gi_bleeding_or_persistent_vomiting), original evidence NIDDK \"Symptoms & Causes of GER & GERD\", retrieved 2026-08-07"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "reused from data/pathology/red_flag_registry.json entity cond.gerd"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.tun_suan"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.gerd (closest biomedical analog: 吞酸/acid regurgitation maps to GERD)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.e_ni",
       "name_zh": "呃逆",
       "pinyin": "Eni",
       "name_en": "Hiccup",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "呃逆是以氣逆上衝，喉間呃呃連聲，聲短而頻，不能自止為主要表現的病證，多因胃氣上逆動膈所致。",
+      "definition_en": "E Ni (Hiccup) is characterized by Qi rebelling upward with short, frequent hiccupping sounds in the throat that cannot be controlled, usually due to Stomach Qi rebelling upward and disturbing the diaphragm.",
+      "etiology_zh": "飲食不節（過食生冷、辛熱）、情志不遂、正氣虧虛、久病體弱，皆可致胃失和降，氣逆動膈。",
+      "etiology_en": "Dietary irregularity (excess raw-cold or spicy-hot food), emotional frustration, upright Qi deficiency, or chronic debility can all cause the Stomach to lose its harmonious descent, with Qi rebelling to disturb the diaphragm.",
+      "pathomechanism_zh": "胃居膈下，胃氣以降為順；凡寒邪、熱邪、氣鬱、痰阻或正虛，皆可致胃氣上逆，挾膈間之氣上衝喉間而發呃逆；久病重病見呃逆不止者，多屬胃氣將絕之危候。",
+      "pathomechanism_en": "The Stomach sits below the diaphragm and its Qi normally descends. Cold, Heat, Qi depression, Phlegm obstruction, or upright-Qi deficiency can all cause Stomach Qi to rebel upward, carrying diaphragmatic Qi up to the throat and producing hiccup. In severe chronic illness, unrelenting hiccup is often a critical sign that Stomach Qi is about to be exhausted.",
+      "key_manifestations_zh": [
+        "喉間呃呃連聲，聲短而頻",
+        "不能自主控制",
+        "可因飲食、情緒或受寒誘發",
+        "輕者偶發自止，重者晝夜不停"
+      ],
+      "key_manifestations_en": [
+        "Short, frequent hiccupping sounds in the throat",
+        "Cannot be voluntarily controlled",
+        "May be triggered by diet, emotion, or cold exposure",
+        "Mild cases self-resolve; severe cases persist day and night"
+      ],
+      "disease_location_zh": "病位在膈，病變關鍵臟腑為胃，與肝、腎相關。",
+      "disease_location_en": "Disease location is the diaphragm, with the Stomach as the key organ, related to the Liver and Kidney.",
+      "related_patterns": [
+        "pattern.stomach_fire",
+        "pattern.liver_qi_stagnation",
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.stomach_yin_deficiency"
+      ],
+      "treatment_principle_zh": "治療總以和胃降逆為原則，實證分辨寒熱氣鬱而治，虛證分辨陰陽兩虛而補，危重病中出現呃逆不止者尤需重視。",
+      "treatment_principle_en": "Overall treatment harmonizes the Stomach and downbears rebellious Qi; excess patterns are treated according to Cold, Heat, or Qi depression, deficiency patterns according to Yin or Yang deficiency. Unrelenting hiccup in critically ill patients warrants particular clinical attention.",
+      "red_flags_zh": [
+        {
+          "finding": "呃逆持續超過48小時，或反覆發作成為慢性呃逆",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫檢查潛在病因",
+          "rationale": "持續呃逆可能提示神經系統疾病、代謝異常、胸腹腔疾病或惡性腫瘤等器質性病因",
+          "source": "MedlinePlus \"Hiccups\" (medlineplus.gov/hiccups.html), retrieved 2026-08-11"
+        },
+        {
+          "finding": "慢性呃逆影響睡眠、進食、飲水或說話",
+          "urgency_level": "routine",
+          "recommended_action": "安排門診評估",
+          "rationale": "提示需醫療介入處理",
+          "source": "MedlinePlus \"Hiccups\" (medlineplus.gov/hiccups.html), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hiccups lasting longer than 48 hours, or chronic recurrent hiccups",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation for underlying cause",
+          "rationale": "Persistent hiccups may indicate a nervous system disorder, metabolic imbalance, thoracic/abdominal disease, or malignancy",
+          "source": "MedlinePlus \"Hiccups\" (medlineplus.gov/hiccups.html), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Chronic hiccups interfering with sleep, eating, drinking, or talking",
+          "urgency_level": "routine",
+          "recommended_action": "Arrange outpatient evaluation",
+          "rationale": "Indicates need for medical intervention",
+          "source": "MedlinePlus \"Hiccups\" (medlineplus.gov/hiccups.html), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Hiccups\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.e_ni"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Hiccups\" (medlineplus.gov/hiccups.html), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xie_xie",
@@ -754,28 +1534,392 @@
       "name_zh": "腹痛",
       "pinyin": "Futong",
       "name_en": "Abdominal Pain",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+      "definition_zh": "腹痛是以胃脘以下、恥骨毛際以上部位發生疼痛為主要表現的病證，病因廣泛，可涉及多個臟腑及氣血津液病變。",
+      "definition_en": "Fu Tong (Abdominal Pain) is characterized by pain located below the epigastrium and above the pubic hairline; its causes are broad and may involve multiple organs and Qi-Blood-Fluid pathology.",
+      "etiology_zh": "外感寒邪、飲食不節、情志失調、蟲積內停、瘀血阻滯，或臟腑虛寒、氣血不足，皆可致腹部經脈氣血運行不暢。",
+      "etiology_en": "External Cold invasion, dietary irregularity, emotional disturbance, internal parasite accumulation, Blood stasis obstruction, or organ Cold-deficiency and Qi-Blood insufficiency can all impede the free flow of Qi and Blood in the abdominal channels.",
+      "pathomechanism_zh": "腹部為足三陰、足少陽、陽明、任脈及沖脈循行之處，凡邪氣壅滯、氣血運行不暢，「不通則痛」；或臟腑虛寒、氣血虧虛，經脈失於溫養，「不榮則痛」。",
+      "pathomechanism_en": "The abdomen is traversed by the three Foot Yin channels, Foot Shaoyang, Yangming, the Conception Vessel, and the Penetrating Vessel. Pathogenic Qi stagnation obstructing free flow produces \"pain due to obstruction\"; organ Cold-deficiency and Qi-Blood insufficiency depriving the channels of warmth and nourishment produces \"pain due to malnourishment.\"",
+      "key_manifestations_zh": [
+        "腹部疼痛，性質可為脹痛、絞痛、刺痛或隱痛",
+        "疼痛部位可固定或遊走",
+        "可伴腹脹、腸鳴、便秘或泄瀉",
+        "遇寒、飲食或情緒誘發加重"
+      ],
+      "key_manifestations_en": [
+        "Abdominal pain, which may be distending, cramping, stabbing, or dull",
+        "Pain location may be fixed or migratory",
+        "May accompany abdominal distension, borborygmus, constipation, or diarrhea",
+        "Triggered or worsened by cold, diet, or emotion"
+      ],
+      "disease_location_zh": "病位在腹，涉及脾、胃、肝、膽、腸等臟腑。",
+      "disease_location_en": "Disease location is the abdomen, involving the Spleen, Stomach, Liver, Gallbladder, and Intestines.",
+      "related_patterns": [
+        "pattern.food_stagnation",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.liver_qi_stagnation",
+        "pattern.spleen_yang_deficiency",
+        "pattern.damp_heat_spleen_stomach"
+      ],
+      "treatment_principle_zh": "實證以「通」為法，分寒熱虛實，消食導滯、行氣活血、清熱化濕；虛證以溫中補虛、緩急止痛為主，虛中夾實者當攻補兼施。",
+      "treatment_principle_en": "Excess patterns follow the principle of \"unblocking,\" differentiated by Cold/Heat/deficiency/excess: reduce food stagnation, move Qi and Blood, clear Heat and transform Dampness. Deficiency patterns focus on warming the middle, tonifying deficiency, and relieving spasm to stop pain; mixed deficiency-excess presentations require both attack and tonification.",
+      "red_flags_zh": [
+        {
+          "finding": "右下腹疼痛，呈突發性且進行性加劇，伴噁心、發燒或壓痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診，不要自行開車前往",
+          "rationale": "典型闌尾炎表現，延誤治療可能導致穿孔、腹膜炎、敗血症；風險隨發病48小時後上升",
+          "source": "MedlinePlus \"Appendicitis\" (medlineplus.gov/appendicitis.html), retrieved 2026-08-11"
+        },
+        {
+          "finding": "身體任何部位突發劇烈疼痛",
+          "urgency_level": "emergency",
+          "recommended_action": "撥打119或立即送急診",
+          "rationale": "屬於一般急症警訊",
+          "source": "MedlinePlus \"Recognizing medical emergencies\" (medlineplus.gov/ency/article/001927.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Lower right abdominal pain, sudden onset and progressively worsening, with nausea, fever, or tenderness",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately; do not drive yourself",
+          "rationale": "Classic presentation of appendicitis; delayed treatment risks rupture, peritonitis, and sepsis, with risk rising after 48 hours",
+          "source": "MedlinePlus \"Appendicitis\" (medlineplus.gov/appendicitis.html), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Sudden, severe pain anywhere in the body",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 or go to the emergency department immediately",
+          "rationale": "General emergency warning sign",
+          "source": "MedlinePlus \"Recognizing medical emergencies\" (medlineplus.gov/ency/article/001927.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Appendicitis\", \"Recognizing medical emergencies\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.fu_tong"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Appendicitis\" (medlineplus.gov/appendicitis.html) + \"Recognizing medical emergencies\" (medlineplus.gov/ency/article/001927.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xie_tong",
       "name_zh": "脅痛",
       "pinyin": "Xietong",
       "name_en": "Hypochondriac Pain",
-      "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
+      "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders",
+      "definition_zh": "脅痛是以一側或兩側脅肋部疼痛為主要表現的病證，病位主要在肝膽，與情志、飲食關係密切。",
+      "definition_en": "Xie Tong (Hypochondriac Pain) is characterized by pain in one or both rib-side (hypochondriac) regions; the disease location is mainly the Liver and Gallbladder, closely related to emotion and diet.",
+      "etiology_zh": "情志不遂，肝氣鬱結；飲食不節，濕熱蘊結肝膽；跌僕閃挫，瘀血停著；或久病體虛，肝陰不足，脈絡失養。",
+      "etiology_en": "Emotional frustration causing Liver Qi stagnation; dietary irregularity generating Damp-Heat accumulation in the Liver and Gallbladder; trauma or sprain causing Blood stasis to lodge; or chronic debility with Liver Yin insufficiency depriving the network vessels of nourishment.",
+      "pathomechanism_zh": "肝主疏泄，喜條達；肝氣鬱結，疏泄失常，氣機阻滯脅絡則脹痛；濕熱蘊結肝膽，氣血壅滯則脅痛拒按；瘀血停滯脅絡，不通則痛，痛有定處；肝陰不足，脈絡失養，則隱痛綿綿。",
+      "pathomechanism_en": "The Liver governs free coursing and favors unimpeded flow. Liver Qi stagnation disrupts this function, obstructing Qi in the rib-side network vessels and causing distending pain. Damp-Heat accumulation in the Liver-Gallbladder congests Qi and Blood, causing pain worse with pressure. Blood stasis lodging in the rib-side vessels causes fixed, unrelenting pain. Liver Yin insufficiency depriving the vessels of nourishment causes a dull, lingering ache.",
+      "key_manifestations_zh": [
+        "一側或兩側脅肋部脹痛或刺痛",
+        "隨情緒波動增減",
+        "可伴口苦、噁心、納呆",
+        "瘀血者痛處固定拒按",
+        "陰虛者痛勢隱隱，伴口乾"
+      ],
+      "key_manifestations_en": [
+        "Distending or stabbing pain in one or both hypochondriac regions",
+        "Fluctuates with emotional state",
+        "May accompany bitter taste, nausea, poor appetite",
+        "Blood stasis type: fixed pain worse with pressure",
+        "Yin deficiency type: dull lingering pain with dry mouth"
+      ],
+      "disease_location_zh": "病位在肝膽，與脾胃相關。",
+      "disease_location_en": "Disease location is the Liver and Gallbladder, related to the Spleen and Stomach.",
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.blood_stasis",
+        "pattern.liver_yin_deficiency"
+      ],
+      "treatment_principle_zh": "肝鬱氣滯者疏肝理氣；濕熱蘊結者清熱利濕；瘀血停著者活血化瘀通絡；肝陰不足者滋陰柔肝。",
+      "treatment_principle_en": "Liver Qi stagnation: soothe the Liver and regulate Qi. Damp-Heat accumulation: clear Heat and drain Dampness. Blood stasis lodging: invigorate Blood, dispel stasis, and unblock the network vessels. Liver Yin insufficiency: nourish Yin and soften the Liver.",
+      "red_flags_zh": [
+        {
+          "finding": "右上腹劇痛合併發燒、噁心嘔吐或黃疸",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫評估膽囊/膽道疾病",
+          "rationale": "提示急性膽囊炎或膽道感染，可能需緊急處置",
+          "source": "MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm — \"Contact your provider if you develop symptoms of cholecystitis\": upper right abdominal pain, fever, nausea, vomiting, jaundice), retrieved 2026-08-11"
+        },
+        {
+          "finding": "脅痛合併皮膚或眼白發黃",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫檢查肝膽功能",
+          "rationale": "提示膽道阻塞或肝膽系統病變",
+          "source": "MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sharp upper right abdominal pain with fever, nausea, vomiting, or jaundice",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate evaluation for gallbladder/biliary disease",
+          "rationale": "Suggests acute cholecystitis or biliary infection, may require urgent intervention",
+          "source": "MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm — \"Contact your provider if you develop symptoms of cholecystitis\"), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Hypochondriac pain with yellowing of the skin or eyes",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt evaluation of liver and biliary function",
+          "rationale": "Suggests biliary obstruction or hepatobiliary disease",
+          "source": "MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Chronic cholecystitis\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.xie_tong"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.huang_dan",
       "name_zh": "黃疸",
       "pinyin": "Huangdan",
       "name_en": "Jaundice",
-      "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
+      "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders",
+      "definition_zh": "黃疸是以目黃、身黃、小便黃為主要表現的病證，因濕邪困遏脾胃、膽液不循常道、外溢肌膚所致。",
+      "definition_en": "Huang Dan (Jaundice) is characterized by yellowing of the eyes, body, and urine, caused by Dampness obstructing the Spleen-Stomach so that bile fails to follow its normal pathway and overflows into the skin.",
+      "etiology_zh": "外感濕熱疫毒，或飲食不節，酒食內傷，或脾胃虛寒，運化失司，均可使濕邪內生，壅遏中焦，膽汁失於疏泄。",
+      "etiology_en": "External contraction of Damp-Heat epidemic toxin, or dietary irregularity with alcohol/food injury, or Spleen-Stomach Cold-deficiency with failed transportation, can all generate internal Dampness that obstructs the middle burner and impairs bile's free flow.",
+      "pathomechanism_zh": "濕邪為病機關鍵，濕熱蘊結中焦，熏蒸肝膽，膽汁不循常道，外溢肌膚則發為陽黃；寒濕困脾，脾陽不振，膽汁為陰寒所凝，溢於肌膚則發為陰黃；黃疸日久不退，或反覆發作，可致積聚、鼓脹。",
+      "pathomechanism_en": "Dampness is the pathomechanistic key. Damp-Heat accumulating in the middle burner steams the Liver-Gallbladder, so bile fails its normal course and overflows into the skin, producing Yang Jaundice. Cold-Damp encumbering the Spleen weakens Spleen Yang; bile congealed by Yin-Cold overflows into the skin, producing Yin Jaundice. Jaundice that fails to resolve or recurs may progress to abdominal masses or distension (積聚/鼓脹).",
+      "key_manifestations_zh": [
+        "目睛黃染，身黃，小便黃赤",
+        "陽黃者黃色鮮明如橘皮色，伴發熱口渴、脅痛",
+        "陰黃者黃色晦暗如煙熏，伴畏寒肢冷、納呆便溏",
+        "可伴皮膚瘙癢"
+      ],
+      "key_manifestations_en": [
+        "Yellowing of the sclerae, body, and reddish-yellow urine",
+        "Yang Jaundice: bright orange-yellow color with fever, thirst, hypochondriac pain",
+        "Yin Jaundice: dull, smoky-yellow color with cold intolerance, cold limbs, poor appetite, loose stool",
+        "May accompany itchy skin"
+      ],
+      "disease_location_zh": "病位在脾、胃、肝、膽。",
+      "disease_location_en": "Disease location is the Spleen, Stomach, Liver, and Gallbladder.",
+      "related_patterns": [
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.cold_damp_encumbering_spleen",
+        "pattern.spleen_yang_deficiency"
+      ],
+      "treatment_principle_zh": "陽黃清熱利濕、佐以通腑；陰黃溫中化濕、健脾和胃；黃疸消退後仍需調理脾胃、疏肝利膽以防復發。",
+      "treatment_principle_en": "Yang Jaundice: clear Heat and drain Dampness, assisted by freeing the bowels. Yin Jaundice: warm the middle and transform Dampness, strengthen the Spleen and harmonize the Stomach. After jaundice resolves, continue regulating the Spleen-Stomach and soothing the Liver-Gallbladder to prevent recurrence.",
+      "red_flags_zh": [
+        {
+          "finding": "出現黃疸",
+          "urgency_level": "routine",
+          "recommended_action": "應盡快聯繫醫療providers",
+          "rationale": "黃疸本身即為就醫指標，需釐清病因",
+          "source": "MedlinePlus \"Jaundice\" (medlineplus.gov/ency/article/000210.htm — \"Contact your provider if you develop jaundice\"), retrieved 2026-08-11"
+        },
+        {
+          "finding": "黃疸合併發燒與劇烈上腹/右上腹持續性疼痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119/送急診",
+          "rationale": "提示急性膽管炎等危及生命的膽道感染",
+          "source": "cross-referenced from MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm, fever + severe RUQ pain + jaundice triad) and gallbladder-emergency literature synthesis, retrieved 2026-08-11"
+        },
+        {
+          "finding": "大便顏色變淺、尿色深黃合併不明原因體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速安排肝膽胰影像學及抽血檢查",
+          "rationale": "提示膽道阻塞或惡性腫瘤（如胰臟癌、膽管癌）可能",
+          "source": "MedlinePlus \"Jaundice\" (medlineplus.gov/ency/article/000210.htm, symptom description: dark urine, pale/clay-colored stools) cross-referenced with MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Development of jaundice",
+          "urgency_level": "routine",
+          "recommended_action": "Contact your provider promptly",
+          "rationale": "Jaundice itself is an indication to seek care and clarify the underlying cause",
+          "source": "MedlinePlus \"Jaundice\" (medlineplus.gov/ency/article/000210.htm — \"Contact your provider if you develop jaundice\"), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Jaundice with fever and severe, persistent upper/right-upper abdominal pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 / go to the emergency department immediately",
+          "rationale": "Suggests acute cholangitis, a life-threatening biliary infection",
+          "source": "cross-referenced from MedlinePlus \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm, fever + severe RUQ pain + jaundice triad) and gallbladder-emergency literature synthesis, retrieved 2026-08-11"
+        },
+        {
+          "finding": "Pale stools and dark urine with unexplained weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Arrange prompt hepatobiliary/pancreatic imaging and blood work",
+          "rationale": "Suggests biliary obstruction or possible malignancy (e.g. pancreatic or bile-duct cancer)",
+          "source": "MedlinePlus \"Jaundice\" (medlineplus.gov/ency/article/000210.htm) cross-referenced with MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Jaundice\", \"Chronic cholecystitis\", \"Weight loss - unintentional\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.huang_dan"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Jaundice\" (medlineplus.gov/ency/article/000210.htm) + \"Chronic cholecystitis\" (medlineplus.gov/ency/article/000217.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.zhi_chuang",
       "name_zh": "痔瘡",
       "pinyin": "Zhichuang",
       "name_en": "Hemorrhoids",
-      "taxonomy_id": "tdx.surgery_dermatology.anorectal_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.anorectal_disorders",
+      "definition_zh": "痔瘡是以肛門直腸末端靜脈叢曲張、腫脹，或伴出血、脫出、疼痛為主要表現的肛腸病證，多因臟腑本虛、大腸氣血運行不暢，兼濕熱下注、風燥傷絡所致。",
+      "definition_en": "Zhi Chuang (Hemorrhoids) is an anorectal disease characterized by varicose, swollen venous plexuses at the anorectal junction, with possible bleeding, prolapse, or pain, usually due to underlying organ deficiency and poor Qi-Blood flow in the Large Intestine, compounded by Damp-Heat pouring downward or Wind-Dryness injuring the vessels.",
+      "etiology_zh": "飲食不節，嗜食辛辣厚味，濕熱內生；久坐久立、久瀉久痢或妊娠，致氣血運行不暢；素體虛弱，中氣下陷，脈絡鬆弛。",
+      "etiology_en": "Dietary irregularity with excess spicy, rich food generating internal Damp-Heat; prolonged sitting/standing, chronic diarrhea/dysentery, or pregnancy impeding Qi-Blood flow; or constitutional weakness with Center Qi sinking and lax vessels.",
+      "pathomechanism_zh": "濕熱下注大腸，壅滯肛門，脈絡損傷，血不循經則便血；氣血瘀滯，脈絡曲張隆起則成痔核；中氣下陷者肛門失於固攝，則痔核脫出。",
+      "pathomechanism_en": "Damp-Heat pouring down into the Large Intestine congests the anus and injures the vessels, causing Blood to leave its pathway and produce bleeding stool. Qi-Blood stagnation causes the vessels to distend and bulge into hemorrhoidal masses. Center Qi sinking leaves the anus unable to hold, causing the hemorrhoidal mass to prolapse.",
+      "key_manifestations_zh": [
+        "便血，色鮮紅，或滴血、噴射狀出血",
+        "肛門腫物脫出，便後可自行回納或需用手托回",
+        "肛門墜脹、疼痛或瘙癢",
+        "久病氣虛者痔核脫出不能回納"
+      ],
+      "key_manifestations_en": [
+        "Bloody stool, bright red, dripping or spurting",
+        "Prolapsed anal mass, self-reducing or requiring manual reduction after defecation",
+        "Anal heaviness, pain, or itching",
+        "Chronic Qi-deficient cases: irreducible prolapse"
+      ],
+      "disease_location_zh": "病位在肛門直腸，與大腸、脾相關。",
+      "disease_location_en": "Disease location is the anorectum, related to the Large Intestine and Spleen.",
+      "related_patterns": [
+        "pattern.large_intestine_damp_heat",
+        "pattern.blood_heat",
+        "pattern.spleen_qi_sinking"
+      ],
+      "treatment_principle_zh": "濕熱下注者清熱利濕、涼血止血；氣虛下陷者補中益氣、昇陽固脫；久病血瘀者兼以活血化瘀。",
+      "treatment_principle_en": "Damp-Heat pouring down: clear Heat and drain Dampness, cool the Blood and stop bleeding. Qi deficiency with sinking: tonify the Center and boost Qi, raise Yang and secure prolapse. Chronic Blood stasis cases: combine with invigorating Blood and dispelling stasis.",
+      "red_flags_zh": [
+        {
+          "finding": "劇烈肛門痛與直腸出血，特別是伴隨腹部不適、腹瀉或發燒",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "立即就醫評估",
+          "rationale": "須排除肛周膿瘍、嵌頓痔或其他急性肛門直腸病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hemorrhoids (rf.hemorrhoids.severe_pain_bleeding_with_systemic_symptoms), original evidence NIDDK \"Treatment of Hemorrhoids\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "即使認為是痔瘡引起的血便，仍應就醫檢查",
+          "urgency_level": "routine",
+          "recommended_action": "安排理學檢查（必要時大腸鏡）",
+          "rationale": "血便不應僅憑症狀自行歸因於痔瘡，須排除大腸直腸癌等器質性病變，尤其45歲以上族群",
+          "source": "MedlinePlus \"Rectal bleeding\" (medlineplus.gov/ency/article/007741.htm — \"You should see your provider and have an exam, even if you think that hemorrhoids are causing the blood in your stool.\"), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe anal pain and rectal bleeding, especially with abdominal discomfort, diarrhea, or fever",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Seek immediate medical evaluation",
+          "rationale": "Must rule out perianal abscess, thrombosed/strangulated hemorrhoid, or other acute anorectal pathology",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hemorrhoids (rf.hemorrhoids.severe_pain_bleeding_with_systemic_symptoms), original evidence NIDDK \"Treatment of Hemorrhoids\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "Bloody stool should be examined by a provider even if hemorrhoids seem to be the cause",
+          "urgency_level": "routine",
+          "recommended_action": "Arrange physical exam (colonoscopy if indicated)",
+          "rationale": "Bleeding should not be self-attributed to hemorrhoids alone; must rule out colorectal cancer, especially in patients over 45",
+          "source": "MedlinePlus \"Rectal bleeding\" (medlineplus.gov/ency/article/007741.htm — \"You should see your provider and have an exam, even if you think that hemorrhoids are causing the blood in your stool.\"), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "reused from data/pathology/red_flag_registry.json entity cond.hemorrhoids",
+        "MedlinePlus \"Rectal bleeding\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.zhi_chuang"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.hemorrhoids (direct match: 痔瘡 = hemorrhoids) + fresh MedlinePlus \"Rectal bleeding\" (medlineplus.gov/ency/article/007741.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.tou_tong",
@@ -1133,7 +2277,108 @@
       "name_zh": "顫證",
       "pinyin": "Chanzheng",
       "name_en": "Tremor Disease",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "顫證是以頭部或肢體不自主地搖動、顫抖為主要表現的病證，多因年老體虛、肝腎陰虧，虛風內動，或痰熱、瘀血阻滯經絡所致。",
+      "definition_en": "Chan Zheng (Tremor Disease) is characterized by involuntary shaking or trembling of the head or limbs, usually due to age-related debility with Liver-Kidney Yin depletion generating internal deficiency Wind, or Phlegm-Heat/Blood stasis obstructing the channels.",
+      "etiology_zh": "年老體衰，肝腎陰虛，精血不足；情志過極，肝陽化風；飲食不節，痰濕內生，鬱久化熱動風；久病入絡，瘀血阻滯。",
+      "etiology_en": "Age-related decline with Liver-Kidney Yin deficiency and Essence-Blood insufficiency; extreme emotion transforming Liver Yang into Wind; dietary irregularity generating internal Phlegm-Damp that stagnates and transforms into Heat, stirring Wind; or chronic disease entering the network vessels with Blood stasis obstruction.",
+      "pathomechanism_zh": "肝主筋、腎主骨，肝腎陰虛則精血不能濡養筋脈，虛風內動而見顫抖；痰熱內蘊，擾動肝風，或瘀血阻滯經絡，氣血運行不暢，筋脈失養，均可發為顫證；病程日久，陰損及陽，甚則出現痴呆、僵直等變證。",
+      "pathomechanism_en": "The Liver governs the sinews and the Kidney governs the bones. Liver-Kidney Yin deficiency leaves Essence-Blood unable to nourish the sinews, and internal deficiency Wind stirs to produce trembling. Internal Phlegm-Heat disturbing Liver Wind, or Blood stasis obstructing the network vessels and impeding Qi-Blood flow, can also deprive the sinews of nourishment and produce tremor. With prolonged course, Yin damage extends to Yang, and severe cases may develop dementia or rigidity as transformed patterns.",
+      "key_manifestations_zh": [
+        "頭部或肢體不自主震顫，靜止時明顯",
+        "可伴肢體僵硬、動作遲緩",
+        "病久可伴表情呆滯、言語不清",
+        "可伴腰膝痠軟、頭暈耳鳴"
+      ],
+      "key_manifestations_en": [
+        "Involuntary tremor of the head or limbs, prominent at rest",
+        "May accompany limb stiffness and slowed movement",
+        "Chronic cases: blank facial expression, slurred speech",
+        "May accompany sore, weak lower back and knees, dizziness, tinnitus"
+      ],
+      "disease_location_zh": "病位在筋脈，與肝、腎、脾相關。",
+      "disease_location_en": "Disease location is the sinews, related to the Liver, Kidney, and Spleen.",
+      "related_patterns": [
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.liver_wind",
+        "pattern.wind_phlegm",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "虛證滋補肝腎、育陰熄風；痰熱動風者清熱化痰、平肝熄風；瘀血阻絡者活血化瘀、疏通經絡；久病虛實夾雜者當標本兼顧。",
+      "treatment_principle_en": "Deficiency patterns: nourish the Liver and Kidney, cultivate Yin and extinguish Wind. Phlegm-Heat stirring Wind: clear Heat and transform Phlegm, calm the Liver and extinguish Wind. Blood stasis obstructing the vessels: invigorate Blood, dispel stasis, and unblock the channels. Chronic mixed deficiency-excess presentations require treating root and branch together.",
+      "red_flags_zh": [
+        {
+          "finding": "近期跌倒",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "回診神經科評估",
+          "rationale": "跌倒風險提示疾病進展或藥物調整需求",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.parkinsons (rf.parkinsons.recent_falls), original evidence MedlinePlus \"Parkinson disease - discharge\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "進食時嗆咳或噎窒",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "回診評估吞嚥功能",
+          "rationale": "提示吞嚥功能受損，有吸入性肺炎風險",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.parkinsons (rf.parkinsons.choking_when_eating), original evidence MedlinePlus \"Parkinson disease - discharge\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "新出現顫抖，或顫抖使日常生活活動變得困難",
+          "urgency_level": "routine_referral",
+          "recommended_action": "安排神經科評估",
+          "rationale": "需鑑別診斷本態性震顫、巴金森氏症或其他神經系統病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.essential_tremor (rf.essential_tremor.new_onset_or_disabling_tremor), original evidence MedlinePlus \"Essential tremor\", retrieved 2026-08-07"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Recent falls",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Return for neurology evaluation",
+          "rationale": "Fall risk suggests disease progression or need for medication adjustment",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.parkinsons (rf.parkinsons.recent_falls), original evidence MedlinePlus \"Parkinson disease - discharge\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "Choking or coughing when eating",
+          "urgency_level": "urgent_referral",
+          "recommended_action": "Return for swallowing function evaluation",
+          "rationale": "Suggests impaired swallowing with aspiration pneumonia risk",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.parkinsons (rf.parkinsons.choking_when_eating), original evidence MedlinePlus \"Parkinson disease - discharge\", retrieved 2026-08-07"
+        },
+        {
+          "finding": "New tremor, or tremor that makes it hard to perform daily activities",
+          "urgency_level": "routine_referral",
+          "recommended_action": "Arrange neurology evaluation",
+          "rationale": "Must differentiate essential tremor, Parkinson disease, or other neurological causes",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.essential_tremor (rf.essential_tremor.new_onset_or_disabling_tremor), original evidence MedlinePlus \"Essential tremor\", retrieved 2026-08-07"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "reused from data/pathology/red_flag_registry.json entity cond.parkinsons, cond.essential_tremor"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.chan_zheng"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.parkinsons + cond.essential_tremor (closest biomedical analogs: 顫證/tremor disease maps to Parkinson disease and essential tremor)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bu_mei",
@@ -1356,7 +2601,110 @@
       "name_zh": "胸痺",
       "pinyin": "Xiongbi",
       "name_en": "Chest Bi",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "胸痺是以胸部悶痛，甚則胸痛徹背、喘息不得臥為主要表現的病證，多因胸陽不振，痰濁、瘀血痺阻心脈所致，相當於現代醫學冠心病心絞痛等範疇。",
+      "definition_en": "Xiong Bi (Chest Bi) is characterized by chest oppression and pain, with severe cases showing pain penetrating to the back and inability to lie flat due to dyspnea; it is usually due to weakened chest Yang allowing Phlegm-turbidity or Blood stasis to obstruct the Heart vessels, roughly corresponding to angina/coronary artery disease in biomedicine.",
+      "etiology_zh": "年老體虛，胸陽不振；情志失調，氣滯血瘀；飲食不節，痰濁內生；寒邪內侵，陰寒凝滯，均可痺阻心脈。",
+      "etiology_en": "Old age and debility weakening chest Yang; emotional disturbance causing Qi stagnation and Blood stasis; dietary irregularity generating internal Phlegm-turbidity; and Cold invasion causing Yin-Cold congealing can all obstruct the Heart vessels.",
+      "pathomechanism_zh": "心主血脈，賴胸陽以溫煦推動；胸陽不足，陰寒、痰濁、瘀血乘虛痺阻心脈，「不通則痛」，故見胸悶胸痛；病情深重者心脈痺阻嚴重，甚則心陽暴脫。",
+      "pathomechanism_en": "The Heart governs the vessels, relying on chest Yang for warmth and propulsion. Insufficient chest Yang allows Yin-Cold, Phlegm-turbidity, or Blood stasis to obstruct the Heart vessels — \"obstruction causing pain\" — producing chest oppression and pain. In severe cases, marked obstruction of the Heart vessels may lead to sudden collapse of Heart Yang.",
+      "key_manifestations_zh": [
+        "胸部悶痛，或刺痛、絞痛",
+        "疼痛可放射至肩背、左臂",
+        "因勞累、寒冷或情緒激動誘發",
+        "休息或含服藥物可緩解",
+        "重者胸痛徹背、喘息不得臥、面色蒼白、冷汗淋漓"
+      ],
+      "key_manifestations_en": [
+        "Chest oppression and pain, or stabbing/cramping pain",
+        "Pain may radiate to shoulder, back, or left arm",
+        "Triggered by exertion, cold, or emotional agitation",
+        "Relieved by rest or sublingual medication",
+        "Severe cases: pain penetrating to the back, dyspnea preventing lying flat, pale complexion, cold sweating"
+      ],
+      "disease_location_zh": "病位在心，與肝、脾、腎相關。",
+      "disease_location_en": "Disease location is the Heart, related to the Liver, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.heart_blood_stasis",
+        "pattern.phlegm_damp",
+        "pattern.heart_yang_deficiency",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "treatment_principle_zh": "發作期以通陽宣痺、活血化瘀、辛溫散寒或豁痰理氣為主，標實為急；緩解期補益心氣、溫補心陽或滋補心陰，標本兼顧。",
+      "treatment_principle_en": "During attacks, prioritize the branch (excess): free Yang and open obstruction, invigorate Blood and dispel stasis, warmly disperse Cold, or resolve Phlegm and regulate Qi. Between attacks, tonify Heart Qi, warmly tonify Heart Yang, or nourish Heart Yin, addressing root and branch together.",
+      "red_flags_zh": [
+        {
+          "finding": "胸部中央出現壓迫感、緊縮感或悶痛，持續數分鐘以上或反覆發作",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119，不要自行開車就醫",
+          "rationale": "典型心肌梗塞表現",
+          "source": "MedlinePlus \"Heart attack\" (medlineplus.gov/ency/article/000063.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "胸痛合併肩、頸、下巴、手臂放射痛，伴冷汗、噁心或呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "心肌梗塞警訊，女性可能以呼吸困難、噁心為主要表現",
+          "source": "MedlinePlus \"Heart attack\" (medlineplus.gov/ency/article/000063.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "已知有心絞痛病史，胸痛持續超過5分鐘未緩解",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119",
+          "rationale": "提示穩定型心絞痛惡化為急性冠心症候群",
+          "source": "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Pressure, tightness, or oppressive pain in the center of the chest lasting several minutes or recurring",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 immediately; do not drive yourself",
+          "rationale": "Classic heart attack presentation",
+          "source": "MedlinePlus \"Heart attack\" (medlineplus.gov/ency/article/000063.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Chest pain radiating to shoulder, neck, jaw, or arm, with cold sweat, nausea, or shortness of breath",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately",
+          "rationale": "Heart attack warning sign; women may present predominantly with dyspnea and nausea",
+          "source": "MedlinePlus \"Heart attack\" (medlineplus.gov/ency/article/000063.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Known angina with chest pain lasting more than 5 minutes without relief",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 immediately",
+          "rationale": "Suggests progression of stable angina to acute coronary syndrome",
+          "source": "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Heart attack\", \"Warning signs and symptoms of heart disease\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.xiong_bi"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Heart attack\" (medlineplus.gov/ency/article/000063.htm) + \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yu_zheng",
@@ -1477,21 +2825,283 @@
       "pinyin": "Zangzao",
       "name_en": "Visceral Agitation",
       "classical_source": "金匱要略·婦人病脈證并治",
-      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders",
+      "definition_zh": "臟躁是以精神恍惚、悲傷欲哭、不能自主，甚則言行失常、呵欠頻作為主要表現的病證，多見於女性，與情志內傷、臟陰不足有關，首載於《金匱要略》。",
+      "definition_en": "Zang Zao (Visceral Agitation) is characterized by mental absent-mindedness, uncontrollable sad weeping, and severe cases with erratic speech/behavior and frequent yawning; it occurs mainly in women and is related to internal emotional damage with Zang-Yin insufficiency; first recorded in the Jin Gui Yao Lue.",
+      "etiology_zh": "情志不遂，憂思過度；素體陰血不足，復加操勞思慮；產後或經期陰血耗傷，臟陰虧虛，心神失養。",
+      "etiology_en": "Emotional frustration with excessive worry and rumination; constitutional Yin-Blood insufficiency compounded by overwork and rumination; or postpartum/menstrual Yin-Blood depletion leading to Zang-Yin deficiency that fails to nourish the Heart-spirit.",
+      "pathomechanism_zh": "五臟陰血不足，尤以心、肝、脾為主，臟陰虧虛則心神失養，虛火內擾，神不守舍，故見悲傷欲哭、不能自主；病程日久，陰虛更甚，則變證叢生。",
+      "pathomechanism_en": "Insufficiency of Yin-Blood in the five Zang organs, especially the Heart, Liver, and Spleen, deprives the Heart-spirit of nourishment; deficiency Fire disturbs internally and the spirit fails to stay housed, producing uncontrollable sad weeping. With a prolonged course, Yin deficiency worsens and transformed patterns proliferate.",
+      "key_manifestations_zh": [
+        "精神恍惚、情緒不穩",
+        "悲傷欲哭，不能自主控制",
+        "呵欠頻作",
+        "心煩失眠",
+        "甚則言行失常、喜怒無常"
+      ],
+      "key_manifestations_en": [
+        "Mental absent-mindedness, emotional instability",
+        "Uncontrollable sad weeping",
+        "Frequent yawning",
+        "Vexation and insomnia",
+        "Severe cases: erratic speech/behavior, unpredictable mood swings"
+      ],
+      "disease_location_zh": "病位在心，與肝、脾相關。",
+      "disease_location_en": "Disease location is the Heart, related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.heart_spleen_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.liver_qi_stagnation"
+      ],
+      "treatment_principle_zh": "治宜甘潤緩急、養心安神，佐以疏肝解鬱；陰虛火旺者滋陰降火；肝鬱明顯者疏肝理氣，甘麥大棗湯為臨床代表方。",
+      "treatment_principle_en": "Treatment uses sweet-moistening herbs to relax urgency and nourish the Heart to calm the spirit, assisted by soothing the Liver and resolving depression; Yin-deficiency Fire-flaring cases nourish Yin and downbear Fire; marked Liver depression cases soothe the Liver and regulate Qi. Gan Mai Da Zao Tang is the classical representative formula.",
+      "red_flags_zh": [
+        {
+          "finding": "出現自傷或自殺意念、計畫或企圖",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打988自殺與危機救助專線或送急診，尋求緊急精神科評估",
+          "rationale": "悲傷欲哭、情緒失控須與重度憂鬱症鑑別，後者可能伴自殺風險",
+          "source": "reused from Batch A ledger: MedlinePlus \"Major Depression\" (medlineplus.gov/ency/article/000945.htm), retrieved 2026-08-11 (988 crisis line)"
+        },
+        {
+          "finding": "言行失常持續加重，或出現幻覺、妄想等精神病性症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速轉診精神科評估",
+          "rationale": "需與器質性精神疾病或重度情感障礙鑑別，避免延誤精神科治療",
+          "source": "reused from Batch A ledger: MedlinePlus \"Major Depression\" (medlineplus.gov/ency/article/000945.htm), retrieved 2026-08-11 — general psychiatric-emergency reasoning extended to psychotic symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Presence of self-harm or suicidal ideation, plan, or attempt",
+          "urgency_level": "emergency",
+          "recommended_action": "Call the 988 Suicide & Crisis Lifeline or go to the emergency department immediately for urgent psychiatric evaluation",
+          "rationale": "Uncontrollable weeping and emotional dysregulation must be differentiated from major depression, which carries suicide risk",
+          "source": "reused from Batch A ledger: MedlinePlus \"Major Depression\" (medlineplus.gov/ency/article/000945.htm), retrieved 2026-08-11 (988 crisis line)"
+        },
+        {
+          "finding": "Progressively worsening erratic speech/behavior, or onset of hallucinations/delusions",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer promptly for psychiatric evaluation",
+          "rationale": "Must be differentiated from organic psychiatric disease or severe mood disorder to avoid delaying psychiatric treatment",
+          "source": "reused from Batch A ledger: MedlinePlus \"Major Depression\" (medlineplus.gov/ency/article/000945.htm), retrieved 2026-08-11 — general psychiatric-emergency reasoning extended to psychotic symptoms"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "reused from Batch A: MedlinePlus \"Major Depression\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.zang_zao"
+        ],
+        "red_flags": [
+          "reused source citation from Batch A ledger: MedlinePlus \"Major Depression\" (medlineplus.gov/ency/article/000945.htm) — reused for the same suicide-risk safety pattern as tdis.yu_zheng in Batch A, since 臟躁/visceral agitation shares emotional-dysregulation differential with depression"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.mei_he_qi",
       "name_zh": "梅核氣",
       "pinyin": "Meiheqi",
       "name_en": "Plum-Pit Qi",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+      "definition_zh": "梅核氣是以自覺咽中有異物梗阻，如梅核堵塞，咯之不出、吞之不下，但不影響進食為主要表現的病證，多因肝氣鬱結、痰氣互結於咽喉所致。",
+      "definition_en": "Mei He Qi (Plum-Pit Qi, globus) is characterized by a subjective sensation of an obstruction in the throat like a plum pit, unable to be coughed out or swallowed down, but without interfering with actual eating; usually due to Liver Qi stagnation with Phlegm-Qi binding in the throat.",
+      "etiology_zh": "情志不遂，肝氣鬱結，氣鬱化痰；或思慮過度，脾失健運，痰濕內生，痰氣循經上逆，結於咽喉。",
+      "etiology_en": "Emotional frustration causing Liver Qi stagnation which transforms into Phlegm; or excessive rumination impairing Spleen transportation, generating internal Phlegm-Damp that travels along the channel and rebels upward to bind in the throat.",
+      "pathomechanism_zh": "肝主疏泄，喜條達；情志不遂則肝氣鬱結，氣機不暢，津液不布，聚而為痰；痰氣互結，循肝經上逆，結於咽喉，故自覺咽中異物梗阻；此病咽部並無器質性阻塞，不影響飲食吞嚥。",
+      "pathomechanism_en": "The Liver governs free coursing and favors unimpeded flow. Emotional frustration causes Liver Qi stagnation, impairing Qi movement so fluids fail to distribute and accumulate as Phlegm. Phlegm and Qi bind together, travel up the Liver channel, and lodge in the throat, producing the subjective sensation of a foreign-body obstruction. There is no actual structural obstruction and swallowing/eating remain unaffected.",
+      "key_manifestations_zh": [
+        "自覺咽中有異物感，如梅核梗阻",
+        "咯之不出、吞之不下",
+        "情緒波動時加重",
+        "不影響正常飲食吞嚥",
+        "可伴胸脅脹悶、噯氣"
+      ],
+      "key_manifestations_en": [
+        "Subjective foreign-body sensation in the throat, like a plum pit",
+        "Cannot be coughed out or swallowed down",
+        "Worsens with emotional fluctuation",
+        "Does not interfere with normal eating and swallowing",
+        "May accompany chest/rib-side distension and belching"
+      ],
+      "disease_location_zh": "病位在咽喉，與肝、脾、肺相關。",
+      "disease_location_en": "Disease location is the throat, related to the Liver, Spleen, and Lung.",
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_damp"
+      ],
+      "treatment_principle_zh": "治宜疏肝解鬱、化痰散結、行氣開鬱，佐以理氣寬胸。",
+      "treatment_principle_en": "Treatment soothes the Liver and resolves depression, transforms Phlegm and dissipates binding, moves Qi and relieves depression, assisted by regulating Qi and opening the chest.",
+      "red_flags_zh": [
+        {
+          "finding": "出現真正的吞嚥困難（食物或液體卡在食道）、體重減輕，或吞嚥時嗆咳、呼吸困難",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速轉診耳鼻喉科或腸胃科，安排內視鏡等檢查排除器質性病變",
+          "rationale": "梅核氣的關鍵鑑別點是「咯之不出、吞之不下但不影響進食」；一旦出現真性吞嚥困難或體重減輕，須排除食道腫瘤等嚴重器質性疾病",
+          "source": "MedlinePlus \"Swallowing problems\" (medlineplus.gov/ency/patientinstructions/000065.htm — \"Contact your provider if: You cough or have fever or shortness of breath. You are losing weight. Your swallowing problems are getting worse\"), retrieved 2026-08-11"
+        },
+        {
+          "finding": "咳嗽、發燒或呼吸困難合併吞嚥不順",
+          "urgency_level": "urgent",
+          "recommended_action": "立即就醫評估",
+          "rationale": "提示吸入性風險或感染，需醫療介入",
+          "source": "MedlinePlus \"Swallowing problems\" (medlineplus.gov/ency/patientinstructions/000065.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "True dysphagia (food or liquid getting stuck in the esophagus), weight loss, or coughing/choking or breathing difficulty when swallowing",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer promptly to ENT or gastroenterology for endoscopy to rule out structural disease",
+          "rationale": "The key differentiator for Plum-Pit Qi is that it does not obstruct actual eating; true dysphagia or weight loss must raise concern for esophageal tumor or other serious structural disease",
+          "source": "MedlinePlus \"Swallowing problems\" (medlineplus.gov/ency/patientinstructions/000065.htm — \"Contact your provider if: You cough or have fever or shortness of breath. You are losing weight. Your swallowing problems are getting worse\"), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Cough, fever, or shortness of breath together with swallowing difficulty",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek immediate medical evaluation",
+          "rationale": "Suggests aspiration risk or infection requiring medical intervention",
+          "source": "MedlinePlus \"Swallowing problems\" (medlineplus.gov/ency/patientinstructions/000065.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Swallowing problems\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.mei_he_qi"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Swallowing problems\" (medlineplus.gov/ency/patientinstructions/000065.htm), retrieved 2026-08-11 — used as the key differential-diagnosis red flag distinguishing Plum-Pit Qi from true dysphagia/esophageal malignancy"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.jian_wang",
       "name_zh": "健忘",
       "pinyin": "Jianwang",
       "name_en": "Poor Memory",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+      "definition_zh": "健忘是以記憶力減退、遇事善忘為主要表現的病證，多因心脾兩虛、腎精不足，或痰瘀阻竅，腦髓失養所致。",
+      "definition_en": "Jian Wang (Poor Memory) is characterized by declining memory and forgetfulness, usually due to Heart-Spleen dual deficiency, Kidney Essence insufficiency, or Phlegm-stasis obstructing the orifices, depriving the brain marrow of nourishment.",
+      "etiology_zh": "思慮過度，勞傷心脾；年老體衰，腎精虧虛；情志不遂，氣鬱痰阻；久病入絡，瘀血阻竅。",
+      "etiology_en": "Excessive rumination taxing the Heart and Spleen; age-related decline with Kidney Essence depletion; emotional frustration causing Qi depression and Phlegm obstruction; or chronic disease entering the network vessels with Blood stasis obstructing the orifices.",
+      "pathomechanism_zh": "心主神明，脾主思，腎主藏精生髓，腦為髓海；凡心脾兩虛，氣血生化不足，不能上榮腦髓；或腎精虧損，髓海失充；或痰濁、瘀血蒙蔽清竅，皆可使神明失聰，發為健忘。",
+      "pathomechanism_en": "The Heart governs the spirit-mind, the Spleen governs thought, and the Kidney stores Essence and generates Marrow, with the brain as the \"Sea of Marrow.\" Heart-Spleen dual deficiency with insufficient Qi-Blood generation failing to nourish the brain marrow, Kidney Essence depletion leaving the Sea of Marrow unfilled, or Phlegm-turbidity/Blood stasis clouding the clear orifices can all impair the spirit-mind and produce forgetfulness.",
+      "key_manifestations_zh": [
+        "記憶力減退，遇事善忘",
+        "心悸、失眠多夢",
+        "可伴神疲乏力、頭暈耳鳴",
+        "痰瘀阻竅者可伴頭重如裹或健忘兼見胸悶"
+      ],
+      "key_manifestations_en": [
+        "Declining memory, forgetfulness",
+        "Palpitations, insomnia with excessive dreaming",
+        "May accompany fatigue, dizziness, tinnitus",
+        "Phlegm-stasis type: may accompany heavy-wrapped head sensation or forgetfulness with chest oppression"
+      ],
+      "disease_location_zh": "病位在腦，與心、脾、腎相關。",
+      "disease_location_en": "Disease location is the brain, related to the Heart, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.heart_spleen_deficiency",
+        "pattern.kidney_essence_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "心脾兩虛者補益心脾、養血安神；腎精虧虛者補腎益精、填髓健腦；痰瘀阻竅者化痰活血、開竅醒神。",
+      "treatment_principle_en": "Heart-Spleen dual deficiency: tonify the Heart and Spleen, nourish Blood and calm the spirit. Kidney Essence depletion: tonify the Kidney and boost Essence, replenish Marrow and strengthen the brain. Phlegm-stasis obstructing the orifices: transform Phlegm and invigorate Blood, open the orifices and revive the spirit.",
+      "red_flags_zh": [
+        {
+          "finding": "突發性意識狀態改變（如異常行為、意識混亂、難以喚醒）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119或送急診",
+          "rationale": "需緊急排除中風、顱內出血、代謝異常等急症，而非單純健忘",
+          "source": "MedlinePlus \"Recognizing medical emergencies\" (medlineplus.gov/ency/article/001927.htm — \"Change in mental status (such as unusual behavior, confusion, difficulty arousing)\"), retrieved 2026-08-11"
+        },
+        {
+          "finding": "記憶減退合併日常生活功能明顯受影響，或短時間內快速惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速轉診神經科/記憶門診評估",
+          "rationale": "需與失智症、輕度認知障礙鑑別，及早診斷可及早介入",
+          "source": "MedlinePlus \"Memory loss\" (medlineplus.gov/ency/article/003257.htm) general guidance synthesis: normal aging does not cause dramatic memory loss; dramatic/rapidly progressive memory loss warrants evaluation, retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden change in mental status (unusual behavior, confusion, difficulty arousing)",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 or go to the emergency department immediately",
+          "rationale": "Must urgently rule out stroke, intracranial hemorrhage, or metabolic emergency rather than assuming simple forgetfulness",
+          "source": "MedlinePlus \"Recognizing medical emergencies\" (medlineplus.gov/ency/article/001927.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Memory decline with significant impact on daily functioning, or rapid worsening over a short time",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer promptly to neurology / memory clinic",
+          "rationale": "Must differentiate from dementia or mild cognitive impairment; early diagnosis allows earlier intervention",
+          "source": "MedlinePlus \"Memory loss\" (medlineplus.gov/ency/article/003257.htm) — normal aging does not cause dramatic memory loss, retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Recognizing medical emergencies\", \"Memory loss\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.jian_wang"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Recognizing medical emergencies\" (medlineplus.gov/ency/article/001927.htm) + \"Memory loss\" (medlineplus.gov/ency/article/003257.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.xiao_ke",
@@ -1690,7 +3300,97 @@
       "name_zh": "虛勞",
       "pinyin": "Xulao",
       "name_en": "Consumptive Deficiency",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+      "definition_zh": "虛勞是以臟腑虧損、氣血陰陽不足為主要病機，以長期虛弱證候為主要表現的多種慢性衰弱性病證的總稱，涉及多個臟腑，病程較長。",
+      "definition_en": "Xu Lao (Consumptive Deficiency) is a general term for a group of chronic debilitating diseases whose core pathomechanism is organ depletion and Qi-Blood-Yin-Yang insufficiency, presenting as long-standing weakness; it involves multiple organs and follows a prolonged course.",
+      "etiology_zh": "先天稟賦不足；後天飲食失調、勞欲過度；大病久病失於調理；情志內傷，日久耗傷氣血陰陽。",
+      "etiology_en": "Congenital constitutional insufficiency; acquired dietary imbalance and overexertion (including excessive sexual activity); major or chronic illness without proper convalescent care; or internal emotional damage gradually depleting Qi, Blood, Yin, and Yang.",
+      "pathomechanism_zh": "五臟虛損，氣血陰陽不足，互相影響，久則由一臟及多臟，由氣及血、及陰陽，形成氣虛、血虛、陰虛、陽虛及其相兼為病的複雜病機，病程遷延難癒。",
+      "pathomechanism_en": "Depletion of the five Zang organs and insufficiency of Qi, Blood, Yin, and Yang mutually interact; over time deficiency spreads from one organ to several, and from Qi to Blood to Yin-Yang, forming complex combined patterns of Qi, Blood, Yin, and Yang deficiency with a protracted, difficult-to-resolve course.",
+      "key_manifestations_zh": [
+        "神疲乏力，少氣懶言",
+        "形體消瘦或虛浮",
+        "面色無華",
+        "自汗或盜汗",
+        "心悸失眠、腰膝痠軟等因證而異的多臟腑虛損表現"
+      ],
+      "key_manifestations_en": [
+        "Fatigue, shortness of breath, reluctance to speak",
+        "Emaciation or puffy weakness",
+        "Lusterless complexion",
+        "Spontaneous or night sweating",
+        "Palpitations, insomnia, sore weak lower back and knees, and other multi-organ deficiency signs that vary by pattern"
+      ],
+      "disease_location_zh": "病位涉及五臟，以脾腎為根本。",
+      "disease_location_en": "Disease location involves all five Zang organs, rooted in the Spleen and Kidney.",
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以補益為基本原則，分辨氣血陰陽虛損，分別益氣、養血、滋陰、溫陽，重視調補脾腎二臟，不可濫補、蠻補。",
+      "treatment_principle_en": "The basic principle is tonification, differentiating Qi, Blood, Yin, and Yang deficiency and tonifying accordingly (boosting Qi, nourishing Blood, nourishing Yin, or warming Yang), with emphasis on regulating and tonifying the Spleen and Kidney; indiscriminate or excessive tonification should be avoided.",
+      "red_flags_zh": [
+        {
+          "finding": "非刻意之下體重減輕超過4.5公斤（10磅）或體重的5%，發生於6-12個月內且原因不明",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫檢查潛在病因",
+          "rationale": "提示可能為惡性腫瘤、慢性感染或內分泌代謝疾病等器質性病因，需與單純虛勞鑑別",
+          "source": "MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "體重減輕合併其他症狀（如發燒、疼痛、出血等）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速安排相關檢查",
+          "rationale": "合併症狀提高器質性疾病的可能性",
+          "source": "MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Unintentional weight loss of more than 10 pounds (4.5 kg) or 5% of body weight over 6-12 months, cause unknown",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation for underlying cause",
+          "rationale": "May indicate malignancy, chronic infection, or endocrine/metabolic disease; must be differentiated from simple consumptive deficiency",
+          "source": "MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Weight loss accompanied by other symptoms (e.g. fever, pain, bleeding)",
+          "urgency_level": "urgent",
+          "recommended_action": "Arrange prompt work-up",
+          "rationale": "Accompanying symptoms raise the likelihood of organic disease",
+          "source": "MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus \"Weight loss - unintentional\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+          "canonical back-link: pattern.spleen_qi_deficiency related_tcm_disease_ids includes tdis.xu_lao (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Weight loss - unintentional\" (medlineplus.gov/ency/article/003107.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.fei_pang",
@@ -1810,7 +3510,108 @@
       "name_zh": "癃閉",
       "pinyin": "Longbi",
       "name_en": "Urinary Retention/Dribbling",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "definition_zh": "癃閉是以小便量少、點滴而出，甚則小便閉塞不通為主要表現的病證，癃者小便不暢、點滴而短少，閉者小便閉塞、點滴不通，二者輕重不同，同屬一類病證。",
+      "definition_en": "Long Bi (Urinary Retention/Dribbling) is characterized by scanty, dribbling urination, with severe cases showing complete urinary blockage; \"Long\" refers to difficult, scanty dribbling urination and \"Bi\" to complete blockage — differing in severity but belonging to the same disease category.",
+      "etiology_zh": "濕熱蘊結膀胱，或肺熱氣壅、脾氣不升、肝鬱氣滯，均可致膀胱氣化不利；腎陽虛衰，命門火衰，亦可致氣化無權；或尿路瘀阻、敗精、砂石阻塞。",
+      "etiology_en": "Damp-Heat accumulating in the Bladder, or Lung Heat congesting Qi, Spleen Qi failing to ascend, or Liver depression Qi stagnation, can all impair Bladder Qi transformation; Kidney Yang decline with weakened Gate of Vitality Fire can also cause loss of Qi-transformation power; or the urinary tract may be obstructed by stasis, degenerated essence, or stones.",
+      "pathomechanism_zh": "膀胱為州都之官，賴腎陽溫煦、肺脾腎三焦氣化方能正常排尿；凡濕熱、氣滯、瘀阻等實邪壅塞，或腎陽虛衰、氣化無權，均可致膀胱氣化功能失常，發為癃閉。",
+      "pathomechanism_en": "The Bladder is the \"official of the regional cities\"; normal urination depends on Kidney Yang warmth and the Qi-transformation of the Lung, Spleen, Kidney, and Triple Burner. Excess pathogens such as Damp-Heat, Qi stagnation, or stasis obstruction, or Kidney Yang decline with loss of Qi-transformation power, can all disrupt Bladder Qi transformation and produce urinary retention.",
+      "key_manifestations_zh": [
+        "小便量少，點滴而下，或小便閉塞不通",
+        "小腹脹滿或疼痛",
+        "可伴腰痛、排尿困難、尿線變細",
+        "虛證者小便無力，伴神疲畏寒"
+      ],
+      "key_manifestations_en": [
+        "Scanty, dribbling urination, or complete urinary blockage",
+        "Lower abdominal distension or pain",
+        "May accompany low back pain, difficulty urinating, thin urine stream",
+        "Deficiency type: weak urine stream with fatigue and cold intolerance"
+      ],
+      "disease_location_zh": "病位在膀胱，與腎、肺、脾、肝相關。",
+      "disease_location_en": "Disease location is the Bladder, related to the Kidney, Lung, Spleen, and Liver.",
+      "related_patterns": [
+        "pattern.bladder_damp_heat",
+        "pattern.liver_qi_stagnation",
+        "pattern.blood_stasis",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "treatment_principle_zh": "實證清熱利濕、行氣活血、通利小便；虛證溫補腎陽、化氣行水；若小便閉塞、脹急難忍者，當先用導尿等法急則治標，再辨證論治。",
+      "treatment_principle_en": "Excess patterns: clear Heat, drain Dampness, move Qi and Blood, and disinhibit urination. Deficiency patterns: warmly tonify Kidney Yang and transform Qi to move water. When retention is severe and distension is unbearable, urgent measures such as catheterization should treat the branch first before pattern-based treatment resumes.",
+      "red_flags_zh": [
+        {
+          "finding": "完全無法排尿",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫，可能需要導尿處置",
+          "rationale": "急性尿滯留可致膀胱過度擴張及腎功能損害",
+          "source": "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "發燒、嘔吐、腰背痛、寒顫，或1-2天內尿量極少",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫",
+          "rationale": "提示尿路感染上行或腎功能受損",
+          "source": "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "尿中帶血、尿液混濁、頻尿急迫或有分泌物",
+          "urgency_level": "routine",
+          "recommended_action": "安排泌尿科評估",
+          "rationale": "需排除感染、結石或攝護腺疾病等病因",
+          "source": "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Complete inability to urinate",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate care; catheterization may be needed",
+          "rationale": "Acute urinary retention can cause bladder overdistension and kidney damage",
+          "source": "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Fever, vomiting, side or back pain, shaking chills, or passing little urine for 1-2 days",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical care",
+          "rationale": "Suggests ascending urinary tract infection or kidney impairment",
+          "source": "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Blood in urine, cloudy urine, urgent/frequent urination, or discharge",
+          "urgency_level": "routine",
+          "recommended_action": "Arrange urology evaluation",
+          "rationale": "Must rule out infection, stones, or prostate disease",
+          "source": "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Urination - difficulty with flow\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.long_bi"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Urination - difficulty with flow\" (medlineplus.gov/ency/article/003143.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.shui_zhong",
@@ -1820,7 +3621,95 @@
       "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
       "key_manifestation_ids": [
         "sym.edema"
-      ]
+      ],
+      "definition_zh": "水腫是體內水液瀦留，泛濫肌膚，引起頭面、眼瞼、四肢、腹背甚至全身浮腫為主要表現的病證，多因肺、脾、腎三臟功能失調，水液代謝障礙所致。",
+      "definition_en": "Shui Zhong (Edema) is characterized by fluid retention overflowing into the skin, causing swelling of the head, face, eyelids, limbs, trunk, or the whole body, usually due to Lung-Spleen-Kidney dysfunction disrupting water metabolism.",
+      "etiology_zh": "外感風邪、瘡毒內犯，肺失通調；飲食不節，脾失健運；久病勞倦，腎失開闔；水濕、瘀血阻滯三焦。",
+      "etiology_en": "External Wind or sore-toxin invading and impairing Lung's regulation of waterways; dietary irregularity impairing Spleen transportation; chronic illness and overexertion impairing Kidney opening-closing function; and Water-Damp or Blood stasis obstructing the Triple Burner.",
+      "pathomechanism_zh": "肺主通調水道，脾主運化水濕，腎主水液氣化，三焦為水液運行的通道；凡風邪襲肺、脾失健運、腎失開闔，均可使水液代謝失常，泛溢肌膚而為水腫；陽水多為外邪犯肺、水濕壅盛之實證，陰水多為脾腎陽虛、水濕內停之虛證。",
+      "pathomechanism_en": "The Lung regulates the waterways, the Spleen transforms and transports water-dampness, and the Kidney governs the Qi-transformation of water fluids, with the Triple Burner as the pathway. Wind invading the Lung, Spleen failing to transport, or Kidney failing its opening-closing can all disrupt water metabolism and cause overflow into the skin as edema. Yang edema is usually an excess pattern from external pathogens invading the Lung with Water-Damp excess; Yin edema is usually a deficiency pattern from Spleen-Kidney Yang deficiency with internal Water-Damp accumulation.",
+      "key_manifestations_zh": [
+        "頭面、眼瞼或下肢浮腫，按之凹陷或隨手而起",
+        "陽水者浮腫先見於眼瞼、頭面，發病急，可伴惡風發熱",
+        "陰水者浮腫先見於下肢，足踝為甚，發病緩，伴腰膝痠冷、神疲乏力",
+        "可伴小便量少"
+      ],
+      "key_manifestations_en": [
+        "Swelling of the head, face, eyelids, or lower limbs, pitting or rebounding on pressure",
+        "Yang edema: swelling first appears in the eyelids/face, acute onset, may accompany wind-aversion and fever",
+        "Yin edema: swelling first appears in the lower limbs/ankles, gradual onset, with cold aching lumbar-knees and fatigue",
+        "May accompany scanty urination"
+      ],
+      "disease_location_zh": "病位在肺、脾、腎，與三焦、膀胱相關。",
+      "disease_location_en": "Disease location is the Lung, Spleen, and Kidney, related to the Triple Burner and Bladder.",
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yang_deficiency_water_flooding",
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.spleen_yang_deficiency"
+      ],
+      "treatment_principle_zh": "陽水以宣肺利水、疏風解表，或清熱利濕為主；陰水以溫腎健脾、化氣利水為主，久病陽損及陰者當陰陽並補。",
+      "treatment_principle_en": "Yang edema: disperse Lung Qi and disinhibit water, disperse Wind and release the exterior, or clear Heat and drain Dampness. Yin edema: warmly tonify the Kidney and strengthen the Spleen, transform Qi and disinhibit water. In chronic disease where Yang deficiency has damaged Yin, tonify both Yin and Yang.",
+      "red_flags_zh": [
+        {
+          "finding": "下肢或腹部水腫持續惡化，合併極度呼吸困難或心跳過快（每分鐘120-150次以上）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119或送急診",
+          "rationale": "提示心衰竭急性惡化或肺水腫",
+          "source": "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "水腫合併明顯體重增加、腹部脹大",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估心、腎、肝功能",
+          "rationale": "提示體液滯留加重，需排查心衰竭、腎病症候群或肝硬化",
+          "source": "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Worsening leg or abdominal edema with extreme shortness of breath or fast heart rate (over 120-150 bpm)",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 or go to the emergency department immediately",
+          "rationale": "Suggests acute heart failure decompensation or pulmonary edema",
+          "source": "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Edema with marked weight gain and abdominal distension",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt evaluation of cardiac, renal, and hepatic function",
+          "rationale": "Suggests worsening fluid retention; must screen for heart failure, nephrotic syndrome, or cirrhosis",
+          "source": "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus \"Warning signs and symptoms of heart disease\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+          "canonical back-link: pattern.kidney_yang_deficiency related_tcm_disease_ids includes tdis.shui_zhong (data/pathology/pattern_library.json)"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Warning signs and symptoms of heart disease\" (medlineplus.gov/ency/patientinstructions/000775.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yi_niao",
@@ -1848,7 +3737,96 @@
       "name_zh": "耳鳴耳聾",
       "pinyin": "Erming Erlong",
       "name_en": "Tinnitus and Deafness",
-      "taxonomy_id": "tdx.ent.ear"
+      "taxonomy_id": "tdx.ent.ear",
+      "definition_zh": "耳鳴耳聾是以自覺耳中鳴響或聽力減退甚至喪失為主要表現的病證，耳鳴為聽覺異常，耳聾為聽覺障礙，二者病因病機相通，常同時或先後出現。",
+      "definition_en": "Er Ming Er Long (Tinnitus and Deafness) is characterized by a subjective ringing sensation in the ear or reduced/lost hearing; tinnitus is auditory disturbance and deafness is hearing impairment, sharing the same etiology and pathomechanism, often appearing together or sequentially.",
+      "etiology_zh": "外感風邪，上壅耳竅；情志不遂，肝火上擾；飲食不節，痰火上蒸；久病體虛，腎精虧損，耳竅失養。",
+      "etiology_en": "External Wind congesting upward into the ear orifice; emotional frustration causing Liver Fire to disturb upward; dietary irregularity generating Phlegm-Fire that steams upward; or chronic debility with Kidney Essence depletion depriving the ear orifice of nourishment.",
+      "pathomechanism_zh": "耳為腎之竅，又為宗脈之所聚；肝膽經脈亦循行於耳；凡風邪、肝火、痰火壅滯清竅，或腎精不足、氣血虛弱不能上榮耳竅，皆可致耳鳴耳聾；暴聾多屬實證，漸聾久聾多屬虛證。",
+      "pathomechanism_en": "The ear is the orifice of the Kidney and the meeting point of the ancestral vessels; the Liver and Gallbladder channels also pass through the ear. Wind, Liver Fire, or Phlegm-Fire congesting the clear orifice, or Kidney Essence insufficiency and Qi-Blood weakness failing to nourish the ear orifice, can all cause tinnitus and deafness. Sudden deafness is usually an excess pattern; gradual or chronic deafness is usually a deficiency pattern.",
+      "key_manifestations_zh": [
+        "耳中鳴響，如蟬鳴或潮聲",
+        "聽力減退或喪失",
+        "實證者耳鳴暴發、聲大如潮，按之不減",
+        "虛證者耳鳴時作時止，聲細如蟬，勞累加重",
+        "可伴眩暈、腰膝痠軟"
+      ],
+      "key_manifestations_en": [
+        "Ringing in the ear, like cicada chirping or tidal roar",
+        "Reduced or lost hearing",
+        "Excess type: sudden loud tinnitus like tidal roar, unrelieved by pressure",
+        "Deficiency type: intermittent faint cicada-like tinnitus, worsened by exertion",
+        "May accompany dizziness and sore, weak lower back and knees"
+      ],
+      "disease_location_zh": "病位在耳，與腎、肝膽相關。",
+      "disease_location_en": "Disease location is the ear, related to the Kidney, Liver, and Gallbladder.",
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.kidney_essence_deficiency",
+        "pattern.liver_yang_rising",
+        "pattern.qi_blood_deficiency"
+      ],
+      "treatment_principle_zh": "實證清肝瀉火、化痰通竅；虛證補腎填精、益氣養血，佐以開竅通絡。",
+      "treatment_principle_en": "Excess patterns: clear the Liver and drain Fire, transform Phlegm and open the orifice. Deficiency patterns: tonify the Kidney and replenish Essence, benefit Qi and nourish Blood, assisted by opening the orifice and unblocking the vessels.",
+      "red_flags_zh": [
+        {
+          "finding": "突發且嚴重的聽力喪失，或突然出現耳鳴",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫，盡快於72小時內至耳鼻喉科評估",
+          "rationale": "突發性感音神經性聽力喪失屬耳科急症，黃金治療期短，延誤恐致永久性聽損",
+          "source": "MedlinePlus \"Hearing loss\" (medlineplus.gov/ency/article/003044.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "聽力喪失合併耳痛，或新出現的頭痛、肢體無力或麻木",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估神經系統病因",
+          "rationale": "可能提示中樞神經系統病變",
+          "source": "MedlinePlus \"Hearing loss\" (medlineplus.gov/ency/article/003044.htm), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden, severe hearing loss, or sudden onset of tinnitus",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate ENT evaluation, ideally within 72 hours",
+          "rationale": "Sudden sensorineural hearing loss is an otologic emergency with a narrow treatment window; delay risks permanent hearing loss",
+          "source": "MedlinePlus \"Hearing loss\" (medlineplus.gov/ency/article/003044.htm), retrieved 2026-08-11"
+        },
+        {
+          "finding": "Hearing loss with ear pain, or new headache, limb weakness, or numbness",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt neurological evaluation",
+          "rationale": "May indicate central nervous system pathology",
+          "source": "MedlinePlus \"Hearing loss\" (medlineplus.gov/ency/article/003044.htm), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Hearing loss\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.er_ming_er_long"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Hearing loss\" (medlineplus.gov/ency/article/003044.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yao_tong",
@@ -2077,7 +4055,82 @@
       "name_zh": "痿證",
       "pinyin": "Weizheng",
       "name_en": "Wei Syndrome (Atrophy-Flaccidity)",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+      "definition_zh": "痿證是以肢體筋脈弛緩、軟弱無力，不能隨意運動，甚則肌肉萎縮為主要表現的病證，病位在筋脈肌肉，與五臟關係密切，尤以肺、脾、肝、腎為要。",
+      "definition_en": "Wei Zheng (Wei Syndrome, Atrophy-Flaccidity) is characterized by flaccid, weak sinews and limbs with loss of voluntary movement, severe cases showing muscle atrophy; the disease location is the sinews and muscles, closely related to all five Zang organs, especially the Lung, Spleen, Liver, and Kidney.",
+      "etiology_zh": "溫熱邪毒傷肺，肺熱葉焦；濕熱浸淫筋脈；脾胃虛弱，精微不布；肝腎虧損，精血不能濡養筋脈。",
+      "etiology_en": "Warm-Heat toxin injuring the Lung and scorching the Lung lobes; Damp-Heat soaking into the sinews; Spleen-Stomach weakness failing to distribute nutrient essence; or Liver-Kidney depletion with Essence-Blood unable to nourish the sinews.",
+      "pathomechanism_zh": "肺主身之皮毛，為水之上源；脾主四肢肌肉；肝主筋，腎主骨生髓；凡邪熱傷肺、濕熱浸淫、脾胃虛弱或肝腎虧損，皆可致精血津液不能濡養筋脈肌肉，「宗筋失養，弛縱不收」而成痿。",
+      "pathomechanism_en": "The Lung governs the body's skin and hair and is the upper source of water; the Spleen governs the limbs and muscles; the Liver governs the sinews and the Kidney governs bones and generates marrow. Pathogenic Heat injuring the Lung, Damp-Heat soaking in, Spleen-Stomach weakness, or Liver-Kidney depletion can all leave Essence, Blood, and fluids unable to nourish the sinews and muscles — \"the governing sinews lose nourishment and become flaccid\" — producing Wei syndrome.",
+      "key_manifestations_zh": [
+        "肢體筋脈弛緩，軟弱無力",
+        "不能隨意運動，甚則肌肉萎縮",
+        "可由下肢開始，漸及上肢",
+        "病情進展可見呼吸肌無力",
+        "久病可伴肌肉萎縮、皮膚枯槁"
+      ],
+      "key_manifestations_en": [
+        "Flaccid sinews and limbs, weakness",
+        "Loss of voluntary movement, severe cases with muscle atrophy",
+        "May begin in the lower limbs and progress to the upper limbs",
+        "Progression may involve respiratory muscle weakness",
+        "Chronic cases: muscle atrophy and withered skin"
+      ],
+      "disease_location_zh": "病位在筋脈肌肉，與肺、脾胃、肝腎相關。",
+      "disease_location_en": "Disease location is the sinews and muscles, related to the Lung, Spleen-Stomach, and Liver-Kidney.",
+      "related_patterns": [
+        "pattern.lung_yin_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "treatment_principle_zh": "肺熱津傷者清熱潤肺、養陰生津；濕熱浸淫者清熱利濕、通利筋脈；脾胃虛弱者健脾益氣、補養氣血；肝腎虧損者滋補肝腎、填精益髓；「治痿獨取陽明」為歷代治療要旨。",
+      "treatment_principle_en": "Lung Heat injuring fluids: clear Heat and moisten the Lung, nourish Yin and generate fluids. Damp-Heat soaking in: clear Heat and drain Dampness, unblock the sinews. Spleen-Stomach weakness: strengthen the Spleen and tonify Qi, nourish Qi and Blood. Liver-Kidney depletion: nourish the Liver and Kidney, replenish Essence and Marrow. The classical principle \"to treat Wei, take Yangming alone\" (treating the Stomach-Spleen) has guided treatment across generations.",
+      "red_flags_zh": [
+        {
+          "finding": "下肢無力迅速向上蔓延至軀幹、上肢甚至呼吸肌，或出現呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診，可能需要呼吸器支持",
+          "rationale": "提示格林-巴利症候群等急性上升性麻痺，屬神經科急症，重症可危及呼吸",
+          "source": "MedlinePlus \"Guillain-Barre Syndrome\" (medlineplus.gov/guillainbarresyndrome.html — \"In severe cases, you become almost paralyzed. This is life-threatening. You might need a respirator to breathe.\"), retrieved 2026-08-11"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Lower-limb weakness rapidly ascending to trunk, upper limbs, or respiratory muscles, or onset of breathing difficulty",
+          "urgency_level": "emergency",
+          "recommended_action": "Go to the emergency department immediately; may require ventilatory support",
+          "rationale": "Suggests acute ascending paralysis such as Guillain-Barre syndrome, a neurological emergency that can be life-threatening in severe cases",
+          "source": "MedlinePlus \"Guillain-Barre Syndrome\" (medlineplus.gov/guillainbarresyndrome.html — \"In severe cases, you become almost paralyzed. This is life-threatening. You might need a respirator to breathe.\"), retrieved 2026-08-11"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine textbook standard (中醫內科學統編教材 分型)",
+        "MedlinePlus \"Guillain-Barre Syndrome\""
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "etiology": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine textbook standard"
+        ],
+        "related_patterns": [
+          "reasoned match: pattern.* ids verified to exist; no canonical related_tcm_disease_ids back-link found for tdis.wei_zheng"
+        ],
+        "red_flags": [
+          "MedlinePlus \"Guillain-Barre Syndrome\" (medlineplus.gov/guillainbarresyndrome.html), retrieved 2026-08-11 — only 1 sourced row found; a second red flag for rapid-onset Wei syndrome was not locatable in MedlinePlus at this pass, flagged as a sourcing gap"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_medlineplus",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.jin_shang",
