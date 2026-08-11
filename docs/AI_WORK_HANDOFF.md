@@ -2,6 +2,17 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #7 — 內容請求直送 SOL(Ting 授權的 app 直接通道首次使用)
+
+CONTENT_REQUEST(已於 ChatGPT app「AcuTing OS Git Review」對話直接送達 SOL,納入其第二包 ZIP):
+- CR-001(P0):sym.* 種子研究包 —— 28 候選 × {id, name_zh/en, tradition(both 判準), western_term, body_region(13 選 1), red_flags+來源, related_metric_ids} → SYM_SEED_RESEARCH_BATCH_B_v1
+- CR-002(P1):metric.* 定義包 —— 候選中 repo 未有者,EXACT outcome_metrics shape + 測量慣例+來源 → METRIC_DEFINITIONS_v1
+- CR-003(P1):supp.* 骨架批次一 —— 18 項 × {id, 雙語名, 八分類, common_forms, dose range+來源, 安全/交互(標抗凝/免疫抑制/甲狀腺), evidence snapshot} → SUPP_SKELETON_BATCH_01_v1
+- 驗收:RESEARCH STAGING 標頭、逐筆來源、uncertain 明標、無 PHI;交付=ZIP,Fable 自行至對話框收檔→解壓→驗證→commit(不自動 canonical)
+- SOL 的 4-pack(Patient Wiring/Test Scenario/Selector/Ingestion Contract)已批准同包交付;衝突以 repo schema/DECISIONS 為準
+
+---
+
 ## HANDOFF #6 — Codex 重審(e5d6158)全 gate 回應(REVIEW_ACKNOWLEDGED: yes)
 
 - LAST_CODEX_REVIEW: commit e5d6158(PAUSE / C2b 仍 NO-GO;R8 兩個 false negative、coverage=0 無牙綠燈、source_bytes 非 byte、needsReview 非 null)
