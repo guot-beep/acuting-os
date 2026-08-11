@@ -252,6 +252,17 @@ source             出處
 
 `urgency_level` 是固定的五個值,不要發明新的。
 
+### C4 與骨架層(2026-08-11,Ting 骨架無上限裁定的配套)
+
+C4 的目的:**主張內容的卡不得缺安全資訊**。純骨架卡不主張內容,C4 不適用:
+
+- `review_status: "skeleton"` **且**無任何內容欄位(summary/etiology/
+  western_pathology/western_context/red_flags/risk_factors/acupuncture_scope
+  全部不存在)→ C4 跳過,改計入 **N4 skeleton-count**(note,不阻擋)。
+- 一旦加入**任何一個**內容欄位,C4 立即全力適用 —— 「有一段 summary 但沒
+  紅旗」正是 C4 要抓的狀態。
+- 骨架卡在 UI 上以 review_status 標示;它是索引位,不是內容卡。
+
 ---
 
 ## §5.5 Risk factors 規格(2026-08-06 新增)

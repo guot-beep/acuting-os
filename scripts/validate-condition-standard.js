@@ -242,8 +242,24 @@ for (const rec of scope) {
   // 2026-08-08) is an equally valid home: build-data derives its triggers onto
   // the card, so a registry-covered condition DOES tell the reader when to
   // stop. Inline strings are legacy-authored and still count.
+  //
+  // Skeleton-tier carve-out (2026-08-11, template §5 "C4 與骨架層", Ting's
+  // uncapped-skeleton ruling): C4's target is a card that CLAIMS content but
+  // omits safety. A pure skeleton (review_status "skeleton" AND zero content
+  // fields) claims nothing — it is an index slot. It counts under N4 (note)
+  // instead, so the backlog stays visible without blocking. The moment ANY
+  // content field appears, C4 applies in full — "has a summary but no red
+  // flags" is exactly the state C4 exists to catch.
+  const SKELETON_CONTENT_FIELDS = ["summary_zh", "summary_en", "etiology_zh", "etiology_en",
+    "western_pathology_zh", "western_pathology_en", "western_context_zh", "western_context_en",
+    "risk_factors_zh", "risk_factors_en", "acupuncture_scope_zh", "acupuncture_scope_en",
+    "classical_references_zh", "classical_references_en"];
+  const isPureSkeleton = rec.review_status === "skeleton"
+    && SKELETON_CONTENT_FIELDS.every((f) => isEmpty(rec[f]))
+    && isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en);
   if (isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en) && !RED_FLAG_COVERED.has(rec.id)) {
-    add("C4", "no red_flags_zh / red_flags_en and no red_flag_registry record");
+    if (isPureSkeleton) notes.push({ code: "N4", id, category: cat, detail: "skeleton index slot (no content claimed) — C4 deferred until any content field lands" });
+    else add("C4", "no red_flags_zh / red_flags_en and no red_flag_registry record");
   }
 
   // C11 risk_factors shape (§5.5). Not required — checked only when filled, and
@@ -421,11 +437,21 @@ if (AS_JSON) {
     console.log("");
   }
   if (notes.length) {
-    console.log(`N1  inline tcm_patterns blobs not lifted into related_patterns — ${notes.length} record(s) (note only, does not fail)`);
-    if (WORKLIST) {
-      const shown = SHOW_ALL ? notes : notes.slice(0, 5);
-      shown.forEach((n) => console.log(`    ${n.id}: ${n.detail}`));
-      if (!SHOW_ALL && notes.length > shown.length) console.log(`    … +${notes.length - shown.length} more (--all)`);
+    // per-code note summary (N1 blobs / N2 deprecated field / N4 skeleton slots)
+    const NOTE_LABELS = {
+      N1: "inline tcm_patterns blobs not lifted into related_patterns",
+      N2: "related_tcm_symptoms (deprecated_but_temporarily_accepted)",
+      N4: "skeleton index slots (no content claimed; C4 deferred)",
+    };
+    for (const code of Object.keys(NOTE_LABELS)) {
+      const list = notes.filter((n) => n.code === code);
+      if (!list.length) continue;
+      console.log(`${code}  ${NOTE_LABELS[code]} — ${list.length} record(s) (note only, does not fail)`);
+      if (WORKLIST) {
+        const shown = SHOW_ALL ? list : list.slice(0, 5);
+        shown.forEach((n) => console.log(`    ${n.id}: ${n.detail}`));
+        if (!SHOW_ALL && list.length > shown.length) console.log(`    … +${list.length - shown.length} more (--all)`);
+      }
     }
     console.log("");
   }
