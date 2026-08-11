@@ -13960,8 +13960,26 @@
         "western_pathology_en": [
           "ACR — 痛風通說(NLRP3/IL-1β 機轉、排泄不足為主)",
           "MedlinePlus — Gout (https://medlineplus.gov/gout.html)"
+        ],
+        "red_flags_zh": [
+          "ACR/EULAR 痛風指引紅旗通說；化膿性關節炎鑑別為急診通說"
+        ],
+        "red_flags_en": [
+          "ACR/EULAR 痛風指引紅旗通說；化膿性關節炎鑑別為急診通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "關節紅腫熱痛合併發燒寒顫 → 排除化膿性關節炎，需關節穿刺鑑別——痛風與感染可並存（急症）",
+        "第一次「痛風樣」發作而未經確診 → 先確立診斷（結晶/影像），勿長期經驗性治療",
+        "降尿酸藥使用後出現大範圍皮疹、黏膜病變、發燒 → 嚴重藥物過敏症候群，立即停藥就醫（急症）",
+        "腎功能不全或反覆腎結石 → 尿酸與腎臟共管，用藥劑量調整"
+      ],
+      "red_flags_en": [
+        "Red, hot, swollen joint with fever and chills → rule out septic arthritis; joint aspiration needed — gout and infection can coexist (emergency)",
+        "First 'gout-like' attack without confirmed diagnosis → establish it (crystals/imaging) before long-term empirical treatment",
+        "Widespread rash, mucosal lesions, or fever after starting urate-lowering therapy → severe drug hypersensitivity, stop and seek care immediately (emergency)",
+        "Renal impairment or recurrent kidney stones → co-manage urate and kidney, adjust drug dosing"
+      ]
     },
     {
       "id": "cond.rheumatoid_arthritis",
@@ -14263,7 +14281,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/313"
-      ]
+      ],
+      "red_flags_zh": [
+        "單一關節突發紅腫熱痛加發燒 → 類風濕患者化膿性關節炎風險高，急排感染（急症）",
+        "頸痛合併上肢麻木無力 → 寰樞椎不穩／頸髓壓迫可能，禁止頸部強力手法，先神經影像評估",
+        "新發呼吸困難、乾咳 → 間質性肺病或藥物肺毒性，胸腔評估",
+        "使用免疫抑制劑期間發燒 → 感染就醫閾值放低，當日評估",
+        "眼紅痛、畏光、視力改變 → 鞏膜炎／角膜病變，眼科急件"
+      ],
+      "red_flags_en": [
+        "Sudden red, hot, painful single joint with fever → high septic-arthritis risk in RA, exclude infection urgently (emergency)",
+        "Neck pain with arm numbness or weakness → possible atlantoaxial instability / cervical cord compression; no forceful neck manipulation, imaging first",
+        "New dyspnea or dry cough → interstitial lung disease or drug lung toxicity, chest evaluation",
+        "Fever while on immunosuppressants → lowered threshold for care, same-day assessment",
+        "Red painful eye, photophobia, visual change → scleritis/keratopathy, urgent ophthalmology"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ACR/EULAR 類風濕指引紅旗通說；寰樞椎不穩為手法治療安全通說"
+        ],
+        "red_flags_en": [
+          "ACR/EULAR 類風濕指引紅旗通說；寰樞椎不穩為手法治療安全通說"
+        ]
+      }
     },
     {
       "id": "cond.gerd",
@@ -16414,10 +16454,28 @@
         "western_pathology_en": [
           "NIDDK/AASLD — 脂肪肝通說(MASLD 更名、纖維化分期預後)",
           "MedlinePlus — Fatty Liver Disease (https://medlineplus.gov/fattyliverdisease.html)"
+        ],
+        "red_flags_zh": [
+          "AASLD/EASL 脂肪肝指引紅旗通說（失代償徵、HCC 監測）"
+        ],
+        "red_flags_en": [
+          "AASLD/EASL 脂肪肝指引紅旗通說（失代償徵、HCC 監測）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/fattyliverdisease.html"
+      ],
+      "red_flags_zh": [
+        "黃疸、腹水、嘔血或黑便、意識改變 → 肝硬化失代償／靜脈曲張出血，急診（急症）",
+        "已知進展性纖維化或肝硬化 → 定期肝癌監測（超音波±甲型胎兒蛋白），不可中斷",
+        "快速體重下降合併肌肉流失 → 營養與惡病質評估",
+        "飲酒量須誠實重估——酒精性肝病的處置路徑不同"
+      ],
+      "red_flags_en": [
+        "Jaundice, ascites, hematemesis or melena, altered consciousness → decompensated cirrhosis / variceal bleeding, emergency care (emergency)",
+        "Known advanced fibrosis or cirrhosis → regular HCC surveillance (ultrasound ± AFP), never interrupted",
+        "Rapid weight loss with muscle wasting → nutrition and cachexia assessment",
+        "Alcohol intake must be honestly re-assessed — alcoholic liver disease follows a different pathway"
       ]
     },
     {
@@ -16832,7 +16890,27 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/1666"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "鼾聲大且目擊呼吸暫停、白日嗜睡 → 睡眠呼吸中止評估，失眠治療路徑不同",
+        "合併情緒低落或自殺意念 → 精神科當日評估／危機處置（急症）",
+        "急性起病合併意識混亂、發燒或神經學異常 → 器質性原因急查",
+        "長期鎮靜安眠藥自行加量 → 依賴評估；苯二氮平類不可驟停（戒斷癲癇風險）"
+      ],
+      "red_flags_en": [
+        "Loud snoring with witnessed apneas and daytime sleepiness → evaluate for sleep apnea; its treatment path differs from insomnia",
+        "With depressed mood or suicidal ideation → same-day psychiatric evaluation / crisis management (emergency)",
+        "Acute onset with confusion, fever, or neurological signs → urgent organic work-up",
+        "Self-escalated chronic sedative-hypnotics → dependence assessment; benzodiazepines must not be stopped abruptly (withdrawal-seizure risk)"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AASM 失眠評估通說；苯二氮平戒斷風險為藥物安全通說"
+        ],
+        "red_flags_en": [
+          "AASM 失眠評估通說；苯二氮平戒斷風險為藥物安全通說"
+        ]
+      }
     },
     {
       "id": "cond.anxiety",
@@ -16924,8 +17002,26 @@
         "western_pathology_en": [
           "NIMH — 焦慮症通說",
           "MedlinePlus — Anxiety (https://medlineplus.gov/anxiety.html)"
+        ],
+        "red_flags_zh": [
+          "精神科臨床通說（自殺風險）；軀體擬似焦慮之排除為急診通說"
+        ],
+        "red_flags_en": [
+          "精神科臨床通說（自殺風險）；軀體擬似焦慮之排除為急診通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "自殺意念或計畫 → 危機處置／急診（急症）",
+        "首發胸痛、呼吸困難、暈厥而未經評估 → 先排除心肺急症，再歸因於焦慮",
+        "合併體重減輕、心悸、怕熱手抖 → 甲狀腺功能亢進排除",
+        "咖啡因、氣管擴張劑、興奮劑或酒精藥物戒斷 → 物質相關焦慮盤點"
+      ],
+      "red_flags_en": [
+        "Suicidal ideation or plan → crisis management / emergency care (emergency)",
+        "First-ever chest pain, dyspnea, or syncope not yet evaluated → exclude cardiopulmonary emergencies before attributing to anxiety",
+        "With weight loss, palpitations, heat intolerance, tremor → rule out hyperthyroidism",
+        "Caffeine, bronchodilators, stimulants, or alcohol/drug withdrawal → inventory substance-related anxiety"
+      ]
     },
     {
       "id": "cond.depression",
@@ -17241,7 +17337,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1659"
-      ]
+      ],
+      "red_flags_zh": [
+        "自殺意念、計畫或自傷行為 → 急診／危機轉介（急症）",
+        "妄想、幻覺等精神病性症狀 → 精神科急件",
+        "產後重度情緒低落或傷害嬰兒之念 → 產後憂鬱／產後精神病，急件處置",
+        "曾有躁期或輕躁期 → 雙相疾患：單用抗鬱劑有轉躁風險，精神科主治",
+        "老人新發憂鬱合併認知減退 → 假性失智與器質原因（甲狀腺、B12、腫瘤）並查"
+      ],
+      "red_flags_en": [
+        "Suicidal ideation, plan, or self-harm → emergency care / crisis referral (emergency)",
+        "Psychotic features (delusions, hallucinations) → urgent psychiatry",
+        "Severe postpartum low mood or thoughts of harming the infant → postpartum depression/psychosis, urgent management",
+        "History of mania or hypomania → bipolar disorder: antidepressant monotherapy risks switching, psychiatrist-led care",
+        "New late-life depression with cognitive decline → work up pseudodementia and organic causes (thyroid, B12, tumor) together"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "精神科臨床通說（自殺/精神病性/雙相紅旗）；老年憂鬱評估通說"
+        ],
+        "red_flags_en": [
+          "精神科臨床通說（自殺/精神病性/雙相紅旗）；老年憂鬱評估通說"
+        ]
+      }
     },
     {
       "id": "cond.panic_disorder",
@@ -17325,10 +17443,28 @@
         "western_pathology_en": [
           "NIMH — 恐慌症通說(CO2 化學敏感性假說)",
           "MedlinePlus — Panic Disorder (https://medlineplus.gov/panicdisorder.html)"
+        ],
+        "red_flags_zh": [
+          "急診通說（首發恐慌之器質排除）；精神科臨床通說"
+        ],
+        "red_flags_en": [
+          "急診通說（首發恐慌之器質排除）；精神科臨床通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/panicdisorder.html"
+      ],
+      "red_flags_zh": [
+        "首次發作之胸痛、呼吸困難、暈厥 → 未經評估前先排除心肌梗塞、肺栓塞、氣胸（急症）",
+        "發作伴單側無力、言語不清、複視 → 神經急症，非恐慌（急症）",
+        "心悸持續且與發作分離、伴怕熱體重減輕 → 甲狀腺功能亢進排除",
+        "共病憂鬱之自殺風險 → 主動篩問"
+      ],
+      "red_flags_en": [
+        "Chest pain, dyspnea, or syncope at a first attack → exclude MI, pulmonary embolism, pneumothorax before diagnosis (emergency)",
+        "Attack with unilateral weakness, slurred speech, or double vision → neurological emergency, not panic (emergency)",
+        "Palpitations persisting apart from attacks, with heat intolerance and weight loss → rule out hyperthyroidism",
+        "Suicide risk of comorbid depression → screen actively"
       ]
     },
     {
@@ -17414,10 +17550,28 @@
         "western_pathology_en": [
           "NIMH/VA — 創傷後壓力症通說",
           "MedlinePlus — Post-Traumatic Stress Disorder (https://medlineplus.gov/posttraumaticstressdisorder.html)"
+        ],
+        "red_flags_zh": [
+          "精神科/創傷照護通說（安全優先原則)"
+        ],
+        "red_flags_en": [
+          "精神科/創傷照護通說（安全優先原則)"
         ]
       },
       "sources": [
         "https://medlineplus.gov/posttraumaticstressdisorder.html"
+      ],
+      "red_flags_zh": [
+        "自殺意念或自傷 → 危機處置（急症）",
+        "傷害他人之意念 → 安全評估與通報義務確認",
+        "酒精藥物使用惡化 → 成癮共治，勿單線處理",
+        "家暴或虐待仍在進行 → 安全計畫與通報先於一切治療"
+      ],
+      "red_flags_en": [
+        "Suicidal ideation or self-harm → crisis management (emergency)",
+        "Thoughts of harming others → safety assessment and duty-to-report check",
+        "Worsening alcohol or drug use → treat addiction jointly, never on a single track",
+        "Ongoing domestic violence or abuse → safety planning and reporting precede all treatment"
       ]
     },
     {
@@ -17501,10 +17655,28 @@
         "western_pathology_en": [
           "NIMH/AAP — 注意力不足過動症通說",
           "MedlinePlus — ADHD (https://medlineplus.gov/attentiondeficithyperactivitydisorder.html)"
+        ],
+        "red_flags_zh": [
+          "AAP/NICE ADHD 指引紅旗通說（興奮劑心臟警訊）"
+        ],
+        "red_flags_en": [
+          "AAP/NICE ADHD 指引紅旗通說（興奮劑心臟警訊）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/attentiondeficithyperactivitydisorder.html"
+      ],
+      "red_flags_zh": [
+        "使用興奮劑類藥物後胸痛、暈厥、運動時心悸 → 停藥並心臟評估",
+        "確診前須排除：聽力視力問題、甲狀腺、睡眠疾患、情緒疾患、學習障礙",
+        "共病憂鬱之自殺意念 → 危機處置（急症）",
+        "新發抽動惡化或精神病性症狀 → 專科再評估與用藥檢視"
+      ],
+      "red_flags_en": [
+        "Chest pain, syncope, or exertional palpitations on stimulants → stop the drug and evaluate the heart",
+        "Before diagnosis, exclude: hearing/vision problems, thyroid disease, sleep disorders, mood disorders, learning disability",
+        "Suicidal ideation with comorbid depression → crisis management (emergency)",
+        "New worsening tics or psychotic symptoms → specialist re-evaluation and medication review"
       ]
     },
     {
@@ -17589,10 +17761,28 @@
         "western_pathology_en": [
           "WHO ICD-11 — 職業現象定位;壓力生理通說",
           "MedlinePlus — Stress (https://medlineplus.gov/stress.html)"
+        ],
+        "red_flags_zh": [
+          "WHO 職業現象定位；憂鬱鑑別為精神科通說"
+        ],
+        "red_flags_en": [
+          "WHO 職業現象定位；憂鬱鑑別為精神科通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/stress.html"
+      ],
+      "red_flags_zh": [
+        "自殺意念 → 危機處置（急症）",
+        "症狀擴及所有生活領域且功能喪失 → 憂鬱症正式評估，勿以「過勞」標籤延誤",
+        "胸痛、心悸、暈厥 → 心臟排除後再談壓力",
+        "以酒精藥物助眠紓壓 → 成癮篩查"
+      ],
+      "red_flags_en": [
+        "Suicidal ideation → crisis management (emergency)",
+        "Symptoms spreading to all life domains with lost function → formal depression evaluation; the 'burnout' label must not delay it",
+        "Chest pain, palpitations, syncope → cardiac exclusion before attributing to stress",
+        "Alcohol or drugs for sleep and relief → addiction screening"
       ]
     },
     {
@@ -17679,10 +17869,28 @@
           "curriculum/conditions/7 Chronic Fatigue Symdrome.docx(Tier-1 課堂 handout,EBV/HHV-6)",
           "CDC — ME/CFS 通說(勞動後倦怠、pacing)",
           "MedlinePlus — Chronic Fatigue Syndrome (https://medlineplus.gov/chronicfatiguesyndrome.html)"
+        ],
+        "red_flags_zh": [
+          "CDC ME/CFS 通說（排除性診斷）；curriculum/conditions/7 Chronic Fatigue Symdrome.docx 轉介精神"
+        ],
+        "red_flags_en": [
+          "CDC ME/CFS 通說（排除性診斷）；curriculum/conditions/7 Chronic Fatigue Symdrome.docx 轉介精神"
         ]
       },
       "sources": [
         "https://medlineplus.gov/chronicfatiguesyndrome.html"
+      ],
+      "red_flags_zh": [
+        "疲勞合併體重減輕、發燒盜汗、淋巴結腫大 → 腫瘤與感染排除",
+        "可治原因先查：貧血、甲狀腺、糖尿病、睡眠呼吸中止、憂鬱、藥物",
+        "新發神經學異常（無力、複視、步態不穩） → 神經科評估",
+        "重度臥床不起 → 醫療與照護支持轉介，防壓瘡與失能加深"
+      ],
+      "red_flags_en": [
+        "Fatigue with weight loss, fever, night sweats, lymphadenopathy → exclude malignancy and infection",
+        "Treatable causes first: anemia, thyroid disease, diabetes, sleep apnea, depression, medications",
+        "New neurological signs (weakness, diplopia, unsteady gait) → neurology evaluation",
+        "Severely bedbound → refer for medical and care support; prevent pressure injury and deepening disability"
       ]
     },
     {
@@ -17767,8 +17975,28 @@
         "western_pathology_en": [
           "NINDS/AASM — 不寧腿症候群通說(中樞鐵-多巴胺軸)",
           "MedlinePlus — Restless Legs Syndrome (https://medlineplus.gov/restlesslegssyndrome.html)"
+        ],
+        "red_flags_zh": [
+          "AASM/IRLSSG 不寧腿通說（鐵、augmentation）"
+        ],
+        "red_flags_en": [
+          "AASM/IRLSSG 不寧腿通說（鐵、augmentation）"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "鐵蛋白偏低 → 缺鐵評估與補充——最重要的可治因",
+        "腎功能不全 → 尿毒性不寧腿，腎科共管",
+        "妊娠期新發 → 產科共管，補鐵先於藥物",
+        "白日嗜睡影響駕駛 → 睡眠專科與安全叮嚀",
+        "多巴胺促效劑治療下症狀提早、擴散、加重 → 症狀增強現象，回診調藥勿自行加量"
+      ],
+      "red_flags_en": [
+        "Low-ish ferritin → iron evaluation and repletion — the most important treatable cause",
+        "Renal insufficiency → uremic RLS, co-manage with nephrology",
+        "New onset in pregnancy → obstetric co-management, iron before drugs",
+        "Daytime sleepiness affecting driving → sleep specialist and safety counseling",
+        "Symptoms starting earlier, spreading, worsening on dopamine agonists → augmentation; return for medication adjustment, never self-escalate"
+      ]
     },
     {
       "id": "cond.circadian_disorder",
@@ -18162,7 +18390,27 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1666"
-      ]
+      ],
+      "red_flags_zh": [
+        "嚴重嗜睡下駕駛或操作機械 → 即時安全警告",
+        "輪班工作者反覆事故或近失誤 → 職業醫學評估",
+        "青少年重度睡眠相位延遲合併情緒低落拒學 → 憂鬱共病篩查",
+        "老人睡眠節律驟然崩解合併認知行為改變 → 失智／譫妄評估"
+      ],
+      "red_flags_en": [
+        "Driving or operating machinery under severe sleepiness → immediate safety warning",
+        "Repeated accidents or near-misses in shift workers → occupational medicine evaluation",
+        "Severe adolescent phase delay with low mood and school refusal → screen for comorbid depression",
+        "Abrupt rhythm collapse with cognitive or behavioral change in the elderly → dementia/delirium evaluation"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AASM 晝夜節律疾患通說"
+        ],
+        "red_flags_en": [
+          "AASM 晝夜節律疾患通說"
+        ]
+      }
     },
     {
       "id": "cond.smoking_cessation",
@@ -18244,10 +18492,28 @@
         "western_pathology_en": [
           "USPHS — 戒菸臨床指引通說(藥理與戒斷時程)",
           "MedlinePlus — Quitting Smoking (https://medlineplus.gov/quittingsmoking.html)"
+        ],
+        "red_flags_zh": [
+          "USPSTF 肺癌篩檢通說；戒菸藥物精神警訊為藥物安全通說"
+        ],
+        "red_flags_en": [
+          "USPSTF 肺癌篩檢通說；戒菸藥物精神警訊為藥物安全通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/quittingsmoking.html"
+      ],
+      "red_flags_zh": [
+        "持續咳嗽、咳血、體重減輕 → 肺癌排查——「已戒菸」不豁免篩查",
+        "長菸齡符合低劑量電腦斷層篩檢資格 → 主動轉介",
+        "戒斷期重度憂鬱或自殺意念 → 精神科；戒菸藥（varenicline/bupropion）之異常情緒行為須回診",
+        "戒斷性癲癇不屬尼古丁——出現抽搐即另查原因"
+      ],
+      "red_flags_en": [
+        "Persistent cough, hemoptysis, weight loss → lung cancer work-up — 'already quit' grants no exemption from screening",
+        "Long smoking history meeting low-dose CT criteria → proactive referral",
+        "Severe depression or suicidal ideation in withdrawal → psychiatry; abnormal mood or behavior on varenicline/bupropion warrants return visit",
+        "Seizures are not nicotine withdrawal — convulsions demand a separate cause search"
       ]
     },
     {
@@ -18332,8 +18598,24 @@
         "western_pathology_en": [
           "DSM-5 通說(診斷重心轉向反應而非無法解釋)",
           "MedlinePlus — Mental Disorders (https://medlineplus.gov/mentaldisorders.html)"
+        ],
+        "red_flags_zh": [
+          "DSM-5 身體症狀障礙照護通說"
+        ],
+        "red_flags_en": [
+          "DSM-5 身體症狀障礙照護通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "症狀型態改變或出現新紅旗（體重減輕、發燒、神經徵） → 重新器質評估——此診斷不豁免新症狀的檢查",
+        "共病憂鬱之自殺風險 → 主動篩問",
+        "反覆要求侵入性檢查或手術 → 單一主責醫師協調，防醫源性傷害"
+      ],
+      "red_flags_en": [
+        "Changed symptom pattern or new red flags (weight loss, fever, neurological signs) → renewed organic evaluation — this diagnosis never exempts new symptoms from work-up",
+        "Suicide risk of comorbid depression → screen actively",
+        "Repeated requests for invasive tests or surgery → one coordinating responsible physician, preventing iatrogenic harm"
+      ]
     },
     {
       "id": "cond.poor_memory",
@@ -18416,10 +18698,30 @@
         "western_pathology_en": [
           "NIA — 認知老化與輕度認知障礙通說;可逆原因篩查為臨床通說",
           "MedlinePlus — Memory (https://medlineplus.gov/memory.html)"
+        ],
+        "red_flags_zh": [
+          "神經科認知評估通說（可逆因、快速進展紅旗）"
+        ],
+        "red_flags_en": [
+          "神經科認知評估通說（可逆因、快速進展紅旗）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/memory.html"
+      ],
+      "red_flags_zh": [
+        "數週至數月內快速進展 → 神經科急件——自體免疫腦炎、腫瘤、常壓性水腦等可治因",
+        "伴局部神經徵、步態異常、尿失禁 → 影像檢查（常壓性水腦三聯徵）",
+        "新用抗膽鹼、鎮靜類藥物後出現 → 藥物盤點先於失智標籤",
+        "憂鬱共病 → 假性失智鑑別",
+        "走失或安全事件 → 失智評估與照護計畫啟動"
+      ],
+      "red_flags_en": [
+        "Rapid progression over weeks to months → urgent neurology — treatable causes like autoimmune encephalitis, tumor, normal-pressure hydrocephalus",
+        "With focal signs, gait disorder, urinary incontinence → imaging (the NPH triad)",
+        "Onset after new anticholinergic or sedative drugs → medication inventory before any dementia label",
+        "Comorbid depression → differentiate pseudodementia",
+        "Wandering or safety events → dementia evaluation and care planning"
       ]
     },
     {
@@ -18502,8 +18804,28 @@
         "western_pathology_en": [
           "NIAAA — 酒精使用障礙通說(GABA/NMDA 神經適應、戒斷風險)",
           "MedlinePlus — Alcohol Use Disorder (https://medlineplus.gov/alcoholusedisorderaud.html)"
+        ],
+        "red_flags_zh": [
+          "ASAM/NIAAA 戒斷處置通說；Wernicke 硫胺素為急診通說"
+        ],
+        "red_flags_en": [
+          "ASAM/NIAAA 戒斷處置通說；Wernicke 硫胺素為急診通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "重度使用者驟停後震顫、幻覺、癲癇 → 戒斷譫妄風險，醫療監督下戒斷（急症）",
+        "嘔血、黑便、黃疸、腹水 → 肝硬化失代償／靜脈曲張出血，急診（急症）",
+        "意識混亂、眼震、步態不穩 → Wernicke 腦病，立即硫胺素治療（急症）",
+        "自殺風險顯著升高 → 主動篩問",
+        "妊娠期飲酒 → 產科即時介入"
+      ],
+      "red_flags_en": [
+        "Tremor, hallucinations, or seizures after abrupt cessation in heavy users → delirium tremens risk, medically supervised withdrawal (emergency)",
+        "Hematemesis, melena, jaundice, ascites → decompensated cirrhosis / variceal bleeding, emergency care (emergency)",
+        "Confusion, nystagmus, ataxia → Wernicke encephalopathy, immediate thiamine (emergency)",
+        "Markedly elevated suicide risk → screen actively",
+        "Drinking in pregnancy → immediate obstetric involvement"
+      ]
     },
     {
       "id": "cond.eating_disorder",
@@ -18586,10 +18908,30 @@
         "western_pathology_en": [
           "NIMH/APA — 飲食失調通說(軀體併發症、再餵食症候群)",
           "MedlinePlus — Eating Disorders (https://medlineplus.gov/eatingdisorders.html)"
+        ],
+        "red_flags_zh": [
+          "APA/AED 飲食失調醫療風險通說（再餵食、QT)"
+        ],
+        "red_flags_en": [
+          "APA/AED 飲食失調醫療風險通說（再餵食、QT)"
         ]
       },
       "sources": [
         "https://medlineplus.gov/eatingdisorders.html"
+      ],
+      "red_flags_zh": [
+        "極低體重、心搏過緩、低血壓、低體溫或電解質異常 → 內科住院評估——再餵食症候群與心律風險（急症）",
+        "催吐者低血鉀、心電圖異常 → 急診",
+        "暈厥或胸痛 → QT 延長與心律不整排查",
+        "自殺風險數倍於常人 → 危機篩問",
+        "兒童青少年生長停滯、初經延遲 → 兒科內分泌共治"
+      ],
+      "red_flags_en": [
+        "Very low weight, bradycardia, hypotension, hypothermia, or electrolyte derangement → medical admission — refeeding syndrome and arrhythmia risk (emergency)",
+        "Hypokalemia or ECG changes in purging patients → emergency care",
+        "Syncope or chest pain → work up QT prolongation and arrhythmia",
+        "Suicide risk several-fold above baseline → crisis screening",
+        "Growth arrest or delayed menarche in children and adolescents → joint pediatric-endocrine care"
       ]
     },
     {
@@ -18676,10 +19018,28 @@
         "western_pathology_en": [
           "CDC — 感冒通說(病毒學、抗生素無效)",
           "MedlinePlus — Common Cold (https://medlineplus.gov/commoncold.html)"
+        ],
+        "red_flags_zh": [
+          "CDC 上呼吸道感染照護通說（double worsening)"
+        ],
+        "red_flags_en": [
+          "CDC 上呼吸道感染照護通說（double worsening)"
         ]
       },
       "sources": [
         "https://medlineplus.gov/commoncold.html"
+      ],
+      "red_flags_zh": [
+        "呼吸困難、胸痛、血氧下降 → 肺炎排除（急症）",
+        "症狀超過十天不癒、或好轉後再惡化 → 續發細菌性鼻竇炎／中耳炎評估",
+        "高燒超過三天 → 就醫評估",
+        "老年、孕婦、免疫低下或慢性心肺病者 → 症狀相同、警覺放大"
+      ],
+      "red_flags_en": [
+        "Dyspnea, chest pain, falling oxygen saturation → exclude pneumonia (emergency)",
+        "Symptoms beyond ten days, or worsening after improvement → evaluate secondary bacterial sinusitis / otitis media",
+        "High fever beyond three days → medical evaluation",
+        "Elderly, pregnant, immunocompromised, or chronic cardiopulmonary patients → same symptoms, amplified vigilance"
       ]
     },
     {
@@ -18761,10 +19121,30 @@
         "western_pathology_en": [
           "CDC/WHO — 流感通說(抗原漂移/轉換、高風險群)",
           "MedlinePlus — Flu (https://medlineplus.gov/flu.html)"
+        ],
+        "red_flags_zh": [
+          "CDC/WHO 流感重症警訊通說；Reye 為兒科安全通說"
+        ],
+        "red_flags_en": [
+          "CDC/WHO 流感重症警訊通說；Reye 為兒科安全通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/flu.html"
+      ],
+      "red_flags_zh": [
+        "呼吸困難、胸痛、發紺、血氧下降 → 流感肺炎／重症（急症）",
+        "意識改變、抽搐 → 腦病變，急診（急症）",
+        "高風險群（孕婦、老年、幼兒、慢病、免疫低下）發病 → 早期抗病毒評估（48小時窗）",
+        "退燒後再度高燒惡化 → 續發細菌性肺炎",
+        "兒童流感發燒忌用阿斯匹靈——Reye 症候群風險"
+      ],
+      "red_flags_en": [
+        "Dyspnea, chest pain, cyanosis, falling saturation → influenza pneumonia / severe disease (emergency)",
+        "Altered consciousness, seizures → encephalopathy, emergency care (emergency)",
+        "Illness in high-risk groups (pregnancy, elderly, young children, chronic disease, immunocompromise) → early antiviral evaluation (48-hour window)",
+        "Fever returning after defervescence → secondary bacterial pneumonia",
+        "No aspirin for febrile children with influenza — Reye syndrome risk"
       ]
     },
     {
@@ -18824,7 +19204,27 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/280"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "單側鼻塞、血涕、嗅覺喪失 → 腫瘤／息肉排除——單側症狀即影像指徵",
+        "眼眶周圍紅腫痛、視力改變 → 眼眶蜂窩織炎（急症）",
+        "共病氣喘症狀惡化 → 上下氣道同治",
+        "兒童長期張口呼吸、打鼾、睡眠差 → 腺樣體肥大評估"
+      ],
+      "red_flags_en": [
+        "Unilateral obstruction, bloody discharge, anosmia → exclude tumor/polyp — unilateral symptoms are themselves an imaging indication",
+        "Periorbital redness, swelling, pain, or visual change → orbital cellulitis (emergency)",
+        "Worsening comorbid asthma → treat upper and lower airway together",
+        "Chronic mouth breathing, snoring, poor sleep in a child → evaluate adenoid hypertrophy"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAO-HNS 鼻科紅旗通說（單側症狀）"
+        ],
+        "red_flags_en": [
+          "AAO-HNS 鼻科紅旗通說（單側症狀）"
+        ]
+      }
     },
     {
       "id": "cond.chronic_sinusitis",
@@ -18907,10 +19307,28 @@
         "western_pathology_en": [
           "AAO-HNS/EPOS — 慢性鼻竇炎通說(12週定義、表型二分)",
           "MedlinePlus — Sinusitis (https://medlineplus.gov/sinusitis.html)"
+        ],
+        "red_flags_zh": [
+          "EPOS/AAO-HNS 鼻竇炎併發症紅旗通說"
+        ],
+        "red_flags_en": [
+          "EPOS/AAO-HNS 鼻竇炎併發症紅旗通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/sinusitis.html"
+      ],
+      "red_flags_zh": [
+        "眶周紅腫、視力改變、複視、眼球突出 → 眼眶併發症（急症）",
+        "劇烈頭痛、頸僵、意識改變、局部神經徵 → 顱內併發症（急症）",
+        "單側症狀或血涕 → 腫瘤與真菌球排除，影像檢查",
+        "免疫低下或糖尿病控制不良者面痛、黑色痂皮 → 侵襲性真菌性鼻竇炎（急症）"
+      ],
+      "red_flags_en": [
+        "Periorbital swelling, visual change, diplopia, proptosis → orbital complication (emergency)",
+        "Severe headache, neck stiffness, altered consciousness, focal signs → intracranial complication (emergency)",
+        "Unilateral symptoms or bloody discharge → exclude tumor and fungus ball, imaging",
+        "Facial pain with black eschar in the immunocompromised or poorly controlled diabetic → invasive fungal sinusitis (emergency)"
       ]
     },
     {
@@ -19375,7 +19793,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/2"
-      ]
+      ],
+      "red_flags_zh": [
+        "說話不成句、發紺、意識改變、胸部聽不到喘鳴聲（安靜胸） → 致命性氣喘發作，立即急救（急症）",
+        "急救型吸入劑用量驟增或每週依賴多次 → 控制不良，回診調整控制藥",
+        "夜間因喘醒 → 控制不良指標，回診",
+        "急性發作用藥後仍持續惡化 → 急診，勿在家硬撐",
+        "長期依賴口服類固醇 → 專科評估（生物製劑與共病）"
+      ],
+      "red_flags_en": [
+        "Unable to speak in sentences, cyanosis, altered consciousness, silent chest → life-threatening attack, immediate emergency care (emergency)",
+        "Sharply rising reliever-inhaler use or multiple-times-weekly dependence → poor control, return to adjust controller therapy",
+        "Waking at night wheezing → a poor-control marker, follow up",
+        "An attack still worsening despite medication → emergency department, never ride it out at home",
+        "Chronic oral-steroid dependence → specialist review (biologics and comorbidity)"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "GINA 氣喘急重症警訊通說"
+        ],
+        "red_flags_en": [
+          "GINA 氣喘急重症警訊通說"
+        ]
+      }
     },
     {
       "id": "cond.copd",
@@ -19940,8 +20380,28 @@
         "western_pathology_en": [
           "GOLD — 慢性阻塞性肺病通說(雙軌病理、惡化防治)",
           "MedlinePlus — COPD (https://medlineplus.gov/copd.html)"
+        ],
+        "red_flags_zh": [
+          "GOLD 惡化與共病紅旗通說"
+        ],
+        "red_flags_en": [
+          "GOLD 惡化與共病紅旗通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "急性惡化伴意識改變、發紺、無法平臥 → 呼吸衰竭（急症）",
+        "咳血 → 肺癌排除——此族群為高風險群",
+        "下肢水腫、頸靜脈怒張 → 肺心病評估",
+        "體重快速下降 → 腫瘤與惡病質評估",
+        "一年惡化兩次以上 → 治療升階與復健轉介"
+      ],
+      "red_flags_en": [
+        "Exacerbation with altered consciousness, cyanosis, inability to lie flat → respiratory failure (emergency)",
+        "Hemoptysis → lung cancer exclusion — this is a high-risk population",
+        "Leg edema, jugular distension → evaluate cor pulmonale",
+        "Rapid weight loss → tumor and cachexia assessment",
+        "Two or more exacerbations a year → step up therapy and refer to rehabilitation"
+      ]
     },
     {
       "id": "cond.chronic_cough",
@@ -20469,7 +20929,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/28283"
-      ]
+      ],
+      "red_flags_zh": [
+        "咳血 → 影像與專科急件",
+        "咳嗽合併體重減輕、夜汗、發燒 → 肺癌／結核排除",
+        "進食嗆咳 → 吞嚥功能與吸入性評估",
+        "聲音嘶啞超過三週 → 喉部檢查",
+        "服用 ACE 抑制劑 → 藥物性咳嗽先盤點"
+      ],
+      "red_flags_en": [
+        "Hemoptysis → urgent imaging and specialist referral",
+        "Cough with weight loss, night sweats, fever → exclude lung cancer / tuberculosis",
+        "Choking on food or drink → swallowing and aspiration assessment",
+        "Hoarseness beyond three weeks → laryngeal examination",
+        "On an ACE inhibitor → inventory drug-induced cough first"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ACCP 慢性咳嗽紅旗通說"
+        ],
+        "red_flags_en": [
+          "ACCP 慢性咳嗽紅旗通說"
+        ]
+      }
     },
     {
       "id": "cond.post_viral_cough",
@@ -21033,8 +21515,26 @@
         "western_pathology_en": [
           "ACCP 咳嗽指引通說(亞急性咳嗽 3–8 週、咳嗽高敏感概念)",
           "MedlinePlus — Cough (https://medlineplus.gov/cough.html)"
+        ],
+        "red_flags_zh": [
+          "ACCP 亞急性咳嗽通說；百日咳通報為公衛通說"
+        ],
+        "red_flags_en": [
+          "ACCP 亞急性咳嗽通說；百日咳通報為公衛通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "咳嗽超過八週 → 轉入慢性咳嗽鑑別流程，勿再等待自癒",
+        "陣發性嗆咳伴吸氣哮鳴或咳後嘔吐 → 百日咳，通報與家戶預防",
+        "咳血或體重減輕 → 影像檢查",
+        "發燒再起、膿痰、胸痛 → 肺炎評估"
+      ],
+      "red_flags_en": [
+        "Cough beyond eight weeks → enter the chronic-cough differential, stop waiting for self-resolution",
+        "Paroxysmal choking cough with inspiratory whoop or post-tussive vomiting → pertussis, notify and protect the household",
+        "Hemoptysis or weight loss → imaging",
+        "Returning fever, purulent sputum, chest pain → evaluate pneumonia"
+      ]
     },
     {
       "id": "cond.acute_bronchitis",
@@ -21116,10 +21616,28 @@
         "western_pathology_en": [
           "ACP/CDC — 急性支氣管炎通說(病毒為主、抗生素無益、百日咳警覺)",
           "MedlinePlus — Acute Bronchitis (https://medlineplus.gov/acutebronchitis.html)"
+        ],
+        "red_flags_zh": [
+          "ACP/CDC 急性咳嗽照護通說"
+        ],
+        "red_flags_en": [
+          "ACP/CDC 急性咳嗽照護通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/acutebronchitis.html"
+      ],
+      "red_flags_zh": [
+        "高燒、呼吸急促、局部囉音、血氧下降 → 肺炎鑑別（急症級評估）",
+        "咳血 → 影像檢查",
+        "老年人意識改變加呼吸道症狀 → 非典型肺炎表現，就醫",
+        "症狀超過三週未緩 → 再評估，勿重複「支氣管炎」標籤"
+      ],
+      "red_flags_en": [
+        "High fever, tachypnea, focal crackles, falling saturation → differentiate pneumonia (emergency-level assessment)",
+        "Hemoptysis → imaging",
+        "Confusion plus respiratory symptoms in the elderly → atypical pneumonia presentation, seek care",
+        "Symptoms beyond three weeks → re-evaluate rather than repeat the 'bronchitis' label"
       ]
     },
     {
@@ -21203,10 +21721,30 @@
         "western_pathology_en": [
           "AASM — 阻塞性睡眠呼吸中止通說",
           "MedlinePlus — Sleep Apnea (https://medlineplus.gov/sleepapnea.html)"
+        ],
+        "red_flags_zh": [
+          "AASM 睡眠呼吸中止安全通說（駕駛、麻醉）"
+        ],
+        "red_flags_en": [
+          "AASM 睡眠呼吸中止安全通說（駕駛、麻醉）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/sleepapnea.html"
+      ],
+      "red_flags_zh": [
+        "重度白日嗜睡且需駕駛或操作機械 → 即時安全警告與加速治療",
+        "未治療合併難治性高血壓或心房顫動 → 心臟共管",
+        "夜間心絞痛或醒來喘 → 心臟評估",
+        "病態肥胖、晨間頭痛、日間血氧偏低 → 肥胖低通氣症候群評估",
+        "術前務必告知麻醉團隊——氣道與鎮靜風險"
+      ],
+      "red_flags_en": [
+        "Severe daytime sleepiness with driving or machinery duties → immediate safety warning and expedited treatment",
+        "Untreated with resistant hypertension or atrial fibrillation → cardiac co-management",
+        "Nocturnal angina or waking dyspneic → cardiac evaluation",
+        "Morbid obesity, morning headache, low daytime saturation → evaluate obesity-hypoventilation syndrome",
+        "Always inform the anesthesia team before surgery — airway and sedation risk"
       ]
     },
     {
