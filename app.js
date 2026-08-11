@@ -1893,10 +1893,56 @@ function renderOsStatus() {
   if (caseProgressEl) caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
 }
 
+// Quality-page honesty rebuild (2026-08-11, Ting: 「那個地方很亂很假」).
+// Every number is computed from the LOADED bundle at render time — no
+// hand-written claims. "有內容" per line = the line's own irreplaceable
+// field is non-empty (a card whose key field is blank counts as index-only,
+// exactly how the validators see it). Verification state is only asserted
+// where a real per-record status field exists.
+function renderKnowledgeLineMatrix() {
+  const host = document.getElementById("knowledgeLineMatrix");
+  if (!host) return;
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const recs = (k) => (K[k] && K[k].records) || (Array.isArray(K[k]) ? K[k] : []);
+  const filled = (list, f) => list.filter((r) => { const v = r[f]; return Array.isArray(v) ? v.length : !!v; }).length;
+  const lines = [];
+  const push = (zh, en, list, contentField, statusNote) => {
+    const n = list.length; if (!n) return;
+    const c = contentField ? filled(list, contentField) : n;
+    lines.push({ zh, en, n, c, pct: Math.round((c / n) * 100), note: statusNote });
+  };
+  // 穴位線:記錄集在 app_data(非 bundle),用既有 audit 的真實數字。
+  // 「有內容」對穴位 = source-checked(比 mere presence 嚴格,見
+  // renderDatabaseHealth 的 verified % 註解 — 同一把尺)。
+  const acu = getDataQualityAudit();
+  if (standardChannelAudit?.expectedTotal) {
+    const n = standardChannelAudit.expectedTotal, c = acu.sourceCheckedStandard;
+    lines.push({ zh: "標準穴位", en: "Acupoints", n, c, pct: Math.round((c / n) * 100), note: "分數 = 已源審核(非僅有卡)" });
+  }
+  push("中藥", "Herbs", recs("herbs"), "category", "");
+  push("方劑", "Formulas", recs("formulas"), "composition", "");
+  push("西醫病名", "Conditions", recs("conditionCanon"), "summary_zh", "目標 300;驗證器逐批收斂中");
+  push("中醫病名", "TCM diseases", recs("tdisRegistry"), "definition_zh", "分批加深中");
+  push("證型", "Patterns", recs("patternLibrary"), "key_signs_zh", "");
+  push("症狀", "Symptoms", recs("symptoms"), "definition_zh", "驗證器 0 defects");
+  push("補充劑", "Supplements", recs("supplementRecords"), "evidence_snapshot_en", "全數 skeleton 級;interaction 層已建");
+  push("西藥", "Drugs", recs("pharmDrugs"), "mechanism_zh", "draft;DailyMed 補全中");
+  push("鑑別比較", "Comparisons", recs("comparisons"), "", "");
+  host.innerHTML = lines.map((l) => `
+    <article class="kline-row">
+      <div class="kline-name"><strong>${escapeHtml(l.zh)}</strong><small>${escapeHtml(l.en)}</small></div>
+      <div class="kline-nums"><span class="kline-count">${l.n}</span><small>records</small></div>
+      <div class="kline-bar" role="img" aria-label="${l.pct}% 有內容"><div class="kline-fill" style="width:${l.pct}%"></div></div>
+      <div class="kline-pct">${l.c}/${l.n}<small>有內容 ${l.pct}%</small></div>
+      <div class="kline-note">${escapeHtml(l.note || "")}</div>
+    </article>`).join("");
+}
+
 function renderDatabaseHealth() {
   const audit = getStandardPointAudit();
   const quality = getDataQualityAudit();
   renderProgressMatrix();
+  renderKnowledgeLineMatrix();
   if (auditGeneratedOnEl) auditGeneratedOnEl.textContent = `audit ${standardChannelAudit.generatedOn}`;
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);

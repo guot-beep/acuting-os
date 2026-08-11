@@ -90,9 +90,18 @@
           <div>
             <p class="eyebrow">Build Progress · 數據報告</p>
             <h2>製作進度與品質報告 / Build Progress Report</h2>
-            <p>全庫 <strong>361 個標準穴位已 100% 達成模板級完整度</strong>！本頁呈現系統各模組（穴位、中藥、方劑）的真實進度與品質驗證。數據與檢核結果每日由自動化校對腳本實時更新。</p>
+            <p>本頁所有數字<strong>由目前載入的知識庫即時計算</strong>——不是手寫宣稱。「有卡」不等於「有內容」,「有內容」不等於「已驗證」;下表誠實區分三者。</p>
           </div>
           <span class="data-pill" id="auditGeneratedOn">audit</span>
+        </div>
+        <div class="mini-heading">
+          <strong>全知識線覆蓋 / Knowledge lines(即時計算)</strong>
+          <span>記錄數 = 現在 bundle 裡真的有;有內容 = 關鍵欄位非空;狀態欄寫的是誠實現況。</span>
+        </div>
+        <div id="knowledgeLineMatrix" class="kline-matrix" aria-label="Knowledge line coverage"></div>
+        <div class="mini-heading">
+          <strong>穴位線細項 / Acupoint line detail</strong>
+          <span>以下為穴位線(361 標準 + 董氏 + 耳穴)的細部品質檢核。</span>
         </div>
         <div class="mini-heading">
           <strong>各層進度總表 / Framework · Made · Grade · Verified</strong>
