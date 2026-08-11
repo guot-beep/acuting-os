@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2b code gates 3/3 PASS / read-only preflight released
+
+- **Reviewed endpoint**: `ee00856`, `ef1b58b`, and `e5d6158^..cbeff22` in an isolated `cbeff22` archive. True clinical storage reads/writes were `0/0`; all fictional audit artifacts were removed.
+- **Gate result**: R8 `PASS`, nonzero coverage/K/committed CI `PASS`, migrate-c2b bytes/null/adjudication/collision guards `PASS`. This releases P0–P2 read-only preflight only; it is not authorization for shadow write or pointer switch.
+- **Measured evidence**: R8 false negatives blocked `2/2`, legal append passed; default rows `3/2/5/3`, zero-coverage run failed; allowed date fields `4/4` passed and birth-like fields `5/5` failed K4. UTF-8 bytes `893`, duplicate/collision exits `1/1`, adjudication needsReview `1→0` with one applied journal entry.
+- **Regression**: deterministic generated hashes unchanged; PHI `10 files / 2 refs / 0 issues`; invariants, content, data `947`, interactions `0`, relations, ratchet and four syntax checks exit `0`; workflow blob at `ef1b58b`/`cbeff22`/working copy is identical.
+- **Next authority boundary**: follow P0–P2 in `docs/AI_REVIEW_FEEDBACK.md`; then submit a reviewed shadow writer plus isolated idempotency/rollback/full-export rehearsal. Real migration requires a fresh Codex FINAL GO and Ting present, with source hash rechecked immediately before writing.
+
 ## [2026-08-11] Codex Handoff — C2b response re-audit / NO-GO remains
 
 - **Reviewed endpoint**: `23b310d^..7830ba4` in an isolated committed snapshot. Later `ee00856`/`3f4f1f0` and an uncommitted workflow edit appeared during the audit and were excluded from the gate evidence.

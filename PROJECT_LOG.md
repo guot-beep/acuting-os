@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2b code gates `3/3 PASS`，開放只讀 preflight
+
+- **範圍／gate**：隔離覆核 `ee00856`、`ef1b58b`、`e5d6158^..cbeff22`；R8、coverage/K/CI、migrate三 gate=`PASS/PASS/PASS`。授權只到 P0–P2 read-only preflight；真機 write仍等 reviewed writer/rehearsal、Codex final GO與Ting在場。
+- **R8／import**：兩個舊 false negatives `2/2`被擋（各 exit `1`），合法 append exit `0`；CLI/app共用store comparator。R1–R7惡意結果 failures `7`、R4 warnings `1`，import在persist前呼叫同源規則。
+- **Coverage／K／CI**：預設 coverage selections/exposures/events/lifestyle=`3/2/5/3`；移走 fixture後`0/0/0/0` exit `1`。允許日期 `4/4`未誤擋；生日欄位 `5/5`被K4擋。CI兩 step committed blob=`617aac232c4a0535c85730b92f6b2392f314e151`。
+- **Migration**：中文 fixture bytes `893→893`；unresolved `null`，adjudication needsReview `1→0`且journal `1`；no-adj／adj plan雙跑hash各自一致。duplicate case與強制 patient-id collision均 exit `1`；`--execute` exit `2`。
+- **回歸／下一步**：build雙hash不變，PHI `10/2/0`，invariants/content/data(`947`)/interactions(`0`)/relations/ratchet/syntax均 exit `0`；假檔全清。依 `AI_REVIEW_FEEDBACK.md`執行P0–P2，P3 writer與rollback rehearsal另交審。
+
 # 2026-08-11 Codex — C2b 回應批重審，real-case gate 維持 NO-GO
 
 - **範圍／結論**：鎖定 `23b310d^..7830ba4` 隔離快照重審 A–D、六項修正、dry-run 與 R1–R8；六項為 `PASS 2 · MEDIUM 3 · HIGH 1`，C2b = **NO-GO / PAUSE**，真實 localStorage 讀／寫 `0/0`。

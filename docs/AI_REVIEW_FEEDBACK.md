@@ -6,6 +6,82 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2b code-gate 覆核 — endpoint `cbeff22`
+
+- **REVIEWED_SHA**: `ee00856`（import pre-persist gate）+ `ef1b58b`（committed CI）+ `e5d6158^..cbeff22`；功能 endpoint `cbeff220a1db1045339b248019ff2bd23a00cddd`。
+- **STATUS**: **CONTINUE**
+- **三個 code gate**: **PASS 3/3**。
+- **授權邊界**: **GO — 只准進行 33-case profile 的只讀 preflight**。這不是 case→patient 真機寫入 GO；shadow write、pointer switch 與 migration execute 仍是 **NO-GO**，必須等下列 artifacts 逐項通過、Codex 再給一次明確 final GO，且 Ting 在場。
+- **資料接觸**: 本審只用 `cbeff22` archive 與全虛構 fixtures；真實 localStorage 讀／寫 `0/0`。所有假資料、plan 與隔離 snapshot 已清理。
+
+### Gate 1 — R8 structured append-only comparator：PASS
+
+- 自建反例 `evt-1 → evt-10`：exit `1`，訊息明列 event #0 id changed；前次 false negative 現為 **1/1 被擋**。
+- 自建反例 same-id payload rewrite（`doseText`、`note` 改寫）：exit `1`，訊息明列 payload rewritten in place；前次 false negative 現為 **1/1 被擋**。
+- 合法尾端 append `evt-1 + evt-2`：exit `0`、prefix rows compared `1`。
+- 單一來源成立：實作只在 `js/clinical-store.js::exposureHistoryExtends()`；R8 CLI 與 app merge guard 分別呼叫同一函式。直接呼叫 store 的三結果為 `false/false/true`。
+- `ee00856` 的 R1–R7 pre-persist gate一併覆核：同一 store規則對惡意 fixture回 failures `7`、legacy R4 warnings `1`；`app.js` 在任何 merge/restore選擇及 `persistClinicalCases()` 前先呼叫它。
+
+### Gate 2 — nonzero fixture、coverage assertion、K/CI：PASS
+
+- 預設 invariant掃描：`3 cases · 3 selections · 2 exposures · 5 events · 3 lifestyle rows`，exit `0`。
+- 在隔離 snapshot暫時移走 `sample_export_fixture.json`：coverage變 `0/0/0/0`，assertion exit `1`；fixture隨後原位還原。
+- K系列 baseline：tracked clinical JSON `10`、refs `2`、issues `0`。四個允許日期欄 `visitDate/resolvedDate/createdAt/updatedAt` 放入完整日期仍 exit `0`。
+- 生日欄位反例：`birthDate`、`dateOfBirth`、`birth_date`、`dob`、誤填 full-date 的 `birthYearMonth` 共 `5/5` 被 K4擋，exit `1`；生日類欄位沒有被 DATE_FIELDS豁免。
+- `ef1b58b`、`cbeff22`與目前 working copy的 workflow blob均為 `617aac232c4a0535c85730b92f6b2392f314e151`；workflow含 K-series與 R1–R8兩個 blocking steps，不是本地未提交假象。
+
+### Gate 3 — `migrate-c2b` bytes／null／adjudication／fail-closed：PASS
+
+- 與上輪同一份含中文 fake raw：OS/Node UTF-8 bytes `893`，plan `source_bytes=893`（不再是 `889`）。
+- 未裁決 conflict：`fields.sex=null`、needsReview `1`、adjudicationsApplied `0`；不是空字串。
+- 加 `--adjudications`：`sex="F"`、needsReview `1→0`，adjudicationsApplied `1`，patient/field/value/reason可追；相同 adjudicated input兩份 plan SHA-256均為 `B761C49F5269944AF14ADDCF80BD78DAFB1A4F0289025E97E50E4F28574414C1`。
+- 無 adjudication的兩次 plan SHA-256均為 `E160ECB7DF30865EA16449885A35D0F54517F98F91875520C1BE580E1A26A983`；determinism仍成立。
+- duplicate case id：exit `1`。以 Node preload強制兩個不同 patientCode產生相同 12-hex patient id：exit `1`並要求 widen hash；collision fail-closed路徑可達。
+- `--execute`仍不存在並 exit `2`；本 gate只驗 deterministic plan，沒有偷渡 clinical write path。
+
+### Endpoint regression／範圍
+
+- deterministic build exit `0`，`app_data.js`與`knowledge_data.js` SHA-256前後相同。
+- PHI、invariants、content-junk、data（`947` points）、interactions（failures `0`）、relations、ratchet、app/store/migrate/invariant syntax均 exit `0`；relations只保留既有 warnings。
+- `git diff --check e5d6158^..cbeff22`無輸出；range `11` paths，`curriculum/**=0`、`js/knowledge.js=0`、`js/router.js=0`。
+
+### 已發布的真實病例 preflight／migration 執行條件
+
+#### P0. 開始條件
+
+1. Ting明確指出持有病例的 browser profile與 exact origin；其他 app tabs／裝置停止臨床寫入。記錄 profile、origin、開始時間與操作者。
+2. preflight只讀 `acuting-clinical-cases-v1`；不得先開啟會觸發 persist的流程、不得 normalize raw、不得呼叫 migration writer。33只作定位預期，所有驗收數字由 raw重新計算。
+3. raw、exports、adjudications與報告放 Git外受保護目錄；不得 commit patientCode、case/soap ids、臨床文字或原始檔。
+
+#### P1. raw＋export雙備份與只讀證明
+
+1. 直接擷取 `localStorage.getItem("acuting-clinical-cases-v1")`的 exact UTF-8 bytes，記 SHA-256與 bytes；另做兩次獨立 app export，三檔均不得覆蓋彼此。
+2. 兩次 app export必須 byte hash相同；raw case-key在 preflight前後 SHA-256完全相同。任何差異立即停止，不進 dry-run。
+3. 從 raw（非 normalizer）產生：cases N、SOAP M、case-id／SOAP-id sets、patientCode set、每類 V2 nested rows、每個 exposure的 event id＋canonical payload hash序列、未知欄位清單與 `case_d17test`次數。
+4. 在隔離 origin做 raw/app-export restore drill；逐鍵值、N/M、id sets、nested counts及 canonical hash一致。真實 profile不做 wipe／restore drill。
+
+#### P2. deterministic dry-run與裁決
+
+1. 對同一 raw連跑兩次 `--dry-run --out`；兩份 plan bytes/hash相同，且 `source_sha256`等於 raw SHA、`source_bytes`等於檔案 UTF-8 bytes。
+2. 必須滿足：cases=`N`、SOAP=`M`、patients=`unique(nonblank patientCode)`；blank-code cases、duplicate case ids、duplicate patient ids、hash collision、orphan assignments均 `0`。任一非零即停止。
+3. 九個 Patient欄位逐欄對 raw做 parity；未裁決 conflict必為 `null`。adjudication檔每個 patientCode+field只能一筆、reason不得空、由 Ting逐筆核准；套用後 needsReview `0`、unused adjudications `0`、adjudicationsApplied數量與核准清單相同。
+4. plan只能是資料，不得自行寫 localStorage；保存 dry-run command、Node version、raw/plan/adjudication hashes與逐項 counts供 final review。
+
+#### P3. 真機寫入前的隔離 rehearsal（目前尚未提供 writer，故未達真機執行資格）
+
+1. 另行提交並審核只寫 `acuting-clinical-v2-staging`的 writer：v1 key永不改，journal至少含 migration version、source hash、counts、adjudicationsApplied；全部驗證後才允許單一 pointer切換。
+2. 在隔離 clone實測 shadow write→完整驗證→pointer switch→同 source rerun `creates/updates/deletes=0/0/0`→rollback；rollback後 raw SHA、case/SOAP sets與nested counts回原值。
+3. post-migration export/import必須包含 patients、cases與全部 Clinical V2 rows；isolated round-trip canonical hash相同、unknown field loss `0`、event序列只可 exact或尾端 append。
+4. quota/error/中斷注入不得留下 active pointer指向半成品；rollback只可移除本 migration白名單 keys，v1與雙備份保留到人工驗收後下一個備份週期。
+
+#### P4. final GO與真機當次條件
+
+1. 把 P1/P2/P3 的 hashes、逐項數字、裁決清單與rollback證據交 Codex；只有新的明確 **C2b FINAL GO** 才授權真機 migration write。
+2. 真機當次 Ting必須在場；執行前重新hash raw並與preflight source hash相同。不同即作廢舊 plan，回 P1重跑。
+3. pointer切換後立即按 D 段驗收 N→N、M→M、id sets、9-field parity、orphans/duplicates/conflicts、events、unknown fields及 export round-trip；任一不符即切回 v1並停止，不刪 v1／備份。
+
+目前可進 **P0–P2 只讀 preflight**；P3尚無 reviewed writer／rehearsal artifacts，P4 final GO尚未發布。
+
 ## 2026-08-11 Codex C2b gate 重審 — 回應批 `23b310d` → `7830ba4`
 
 - **REVIEWED_SHA**: `23b310d^..7830ba4`（endpoint `7830ba40dfc01798b41c8bc063ec9617fcbadaba`）
