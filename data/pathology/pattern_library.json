@@ -10677,6 +10677,2124 @@
           "中醫基礎理論 教材通用(氣血津液辨證/八綱辨證/病因辨證章節,課程層級引用)"
         ]
       }
+    },
+    {
+      "id": "pattern.tai_yang_wind_strike",
+      "name_zh": "太陽中風",
+      "name_en": "Tai Yang Wind-Strike",
+      "key_signs_zh": [
+        "發熱",
+        "汗出",
+        "惡風",
+        "頭項強痛"
+      ],
+      "key_signs_en": [
+        "Fever",
+        "Sweating",
+        "Aversion to wind",
+        "Stiff, painful neck and occiput"
+      ],
+      "tongue_zh": "舌淡苔薄白",
+      "tongue_en": "Pale tongue with a thin white coating",
+      "pulse_zh": "脈浮緩",
+      "pulse_en": "Floating, moderate (relaxed) pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "太陽主一身之表,風邪傷衛,衛陽浮盛於外故發熱,衛強營弱、營陰不能內守故汗出,汗出腠理疏故惡風。",
+      "mechanism_en": "Tai Yang governs the body's exterior; wind injures the defensive (Wei) qi, which floats outward causing fever; Wei is strong while Ying (nutritive) qi is weak and cannot hold fluids inward, causing sweating, which loosens the pores and produces aversion to wind.",
+      "common_causes_zh": "外感風邪,腠理疏鬆之體質者尤易罹患",
+      "common_causes_en": "Invasion by an exterior wind pathogen, especially in a person with loose exterior/pores",
+      "progression_zh": "太陽中風失治可傳入陽明或少陽;風邪日久可與寒濕相合。",
+      "progression_en": "If untreated, Tai Yang Wind-Strike can transmit into Yang Ming or Shao Yang; wind can combine with cold or dampness over time.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_cold_damage",
+          "distinguishing_zh": "太陽中風有汗、脈浮緩,衛強營弱;太陽傷寒無汗、脈浮緊,衛閉營鬱。同屬太陽表證但汗之有無、脈之緩緊截然不同,治法一為解肌(桂枝湯)一為發汗(麻黃湯)。",
+          "distinguishing_en": "Tai Yang Wind-Strike has sweating with a floating-moderate pulse (strong Wei, weak Ying); Tai Yang Cold-Damage has no sweating with a floating-tight pulse (Wei sealed, Ying stagnant). Both are Tai Yang exterior patterns but differ sharply in sweating and pulse quality; treatment differs (release the muscle layer vs. induce sweating).",
+          "tongue_difference_zh": "兩者舌象相近,鑑別重點在汗與脈而非舌",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.wei_stage_wind_heat",
+          "distinguishing_zh": "太陽中風為傷寒六經體系的風寒表虛證,惡寒明顯,發熱較輕;衛分風熱為溫病衛氣營血體系的風熱表證,發熱明顯重於惡寒,兼咽紅腫痛、口渴,兩者所屬辨證體系與病邪性質皆不同。",
+          "distinguishing_en": "Tai Yang Wind-Strike is a Wind-Cold exterior-deficiency pattern in the Six-Channel system with pronounced aversion to cold and mild fever; Wei-Stage Wind-Heat is a Wind-Heat exterior pattern in the Four-Levels system with fever more pronounced than chills, plus a red sore throat and thirst -- different systems and different pathogen natures.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "解肌祛風,調和營衛",
+      "treatment_principle_en": "Release the muscle layer, dispel wind, and harmonize Ying and Wei",
+      "typical_formulas": [
+        "formula.gui_zhi_tang"
+      ],
+      "typical_points": [
+        "GV14",
+        "GB20",
+        "SJ5",
+        "LI4"
+      ],
+      "point_rationale_zh": "大椎、風池祛風解表;外關通陽維、助解表;合谷發汗解表力較輕,與桂枝湯解肌之法相應。",
+      "point_rationale_en": "GV14 and GB20 dispel wind and release the exterior; SJ5 (Wai Guan) connects to the Yang Wei vessel and assists exterior release; LI4 offers a milder exterior-releasing action matching Gui Zhi Tang's gentle muscle-layer approach.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.tai_yang_cold_damage",
+      "name_zh": "太陽傷寒",
+      "name_en": "Tai Yang Cold-Damage",
+      "key_signs_zh": [
+        "惡寒發熱",
+        "無汗",
+        "頭身疼痛",
+        "氣喘"
+      ],
+      "key_signs_en": [
+        "Aversion to cold with fever",
+        "No sweating",
+        "Headache and generalized body pain",
+        "Wheezing/panting"
+      ],
+      "tongue_zh": "舌淡苔薄白",
+      "tongue_en": "Pale tongue with a thin white coating",
+      "pulse_zh": "脈浮緊",
+      "pulse_en": "Floating, tight pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "寒邪外束肌表,衛陽被遏,腠理閉塞故無汗而惡寒甚;寒性收引凝滯,經脈氣血運行不暢故頭身疼痛;肺合皮毛,表閉肺氣不宣則氣喘。",
+      "mechanism_en": "Cold binds the exterior, obstructing defensive yang; the pores close, producing no sweating with pronounced chills; cold's contracting nature impedes qi and blood flow in the channels, causing headache and body pain; since the Lung corresponds to the skin, exterior closure impairs Lung qi's dispersal, causing wheezing.",
+      "common_causes_zh": "外感寒邪,腠理緻密之體質者感邪後衛陽被遏更甚",
+      "common_causes_en": "Invasion by an exterior cold pathogen, more pronounced in a person with tight, dense pores where defensive yang is more severely obstructed",
+      "progression_zh": "太陽傷寒失治可內傳陽明化熱成腑實,或內傳少陰成虛寒重症(素體陽虛者)。",
+      "progression_en": "If untreated, Tai Yang Cold-Damage can transmit into Yang Ming and transform into heat/Fu-organ excess, or into Shao Yin as a severe deficiency-cold pattern in a constitutionally yang-deficient person.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_wind_strike",
+          "distinguishing_zh": "見太陽中風卡。",
+          "distinguishing_en": "See the Tai Yang Wind-Strike card.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.shao_yin_cold_transformation",
+          "distinguishing_zh": "太陽傷寒雖惡寒但為表閉之實證,脈浮緊有力,精神尚可;少陰寒化為裡虛寒重證,脈微細,但欲寐、精神萎靡,無頭身疼痛等表證,兩者虛實表裡截然不同,誤汗少陰病可致亡陽。",
+          "distinguishing_en": "Tai Yang Cold-Damage, though chilled, is an exterior-excess pattern with a floating tight forceful pulse and preserved mental clarity; Shao Yin Cold Transformation is a severe interior deficiency-cold pattern with a faint-thin pulse, lethargy, and no exterior body-pain signs -- opposite in excess/deficiency and exterior/interior. Mistakenly inducing sweating in Shao Yin disease can cause yang collapse.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "辛溫發汗,宣肺平喘",
+      "treatment_principle_en": "Induce sweating with warm-acrid herbs, disperse the Lung and calm wheezing",
+      "typical_formulas": [
+        "formula.ma_huang_tang"
+      ],
+      "typical_points": [
+        "GV14",
+        "LU7",
+        "BL12",
+        "LI4"
+      ],
+      "point_rationale_zh": "大椎、風門發汗解表;列缺宣肺利氣;合谷助解表發汗。",
+      "point_rationale_en": "GV14 and BL12 induce sweating and release the exterior; LU7 disperses the Lung and moves qi; LI4 assists exterior release and sweating.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yang_ming_channel_heat",
+      "name_zh": "陽明經證",
+      "name_en": "Yang Ming Channel Heat Pattern",
+      "key_signs_zh": [
+        "壯熱",
+        "大汗出",
+        "大渴引冷飲",
+        "面赤煩躁"
+      ],
+      "key_signs_en": [
+        "High fever",
+        "Profuse sweating",
+        "Intense thirst with preference for cold drinks",
+        "Flushed face and agitation"
+      ],
+      "tongue_zh": "舌紅苔黃燥",
+      "tongue_en": "Red tongue with a dry yellow coating",
+      "pulse_zh": "脈洪大",
+      "pulse_en": "Surging, large pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "邪熱亢盛,充斥陽明經脈而未與腸中糟粕相結,熱迫津液外泄故大汗,熱盛傷津故大渴引飲(仲景「四大證」:大熱、大汗、大渴、脈洪大)。",
+      "mechanism_en": "Intense pathogenic heat fills the Yang Ming channel without yet binding with stool in the intestines; heat forces fluids outward causing profuse sweating; heat injures fluids causing intense thirst (Zhang Zhongjing's classic \"four greats\": great heat, great sweating, great thirst, a great/surging pulse).",
+      "common_causes_zh": "太陽表邪不解,內傳陽明化熱;或溫熱之邪直入氣分",
+      "common_causes_en": "Unresolved Tai Yang exterior pathogen transmitting inward and transforming into Yang Ming heat; or a warm-heat pathogen entering the Qi level directly",
+      "progression_zh": "陽明經證熱與腸中糟粕相結,轉為陽明腑證;熱盛動血動風則傳入營血分。",
+      "progression_en": "Yang Ming Channel Heat can bind with intestinal stool and become Yang Ming Fu-Organ Excess; extreme heat forcing blood or generating wind can transmit into the Ying/Xue levels.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yang_ming_fu_organ_excess",
+          "distinguishing_zh": "陽明經證是無形熱盛,腹部不硬滿拒按,大便不一定閉結;陽明腑證是熱與燥屎互結成有形之實,腹滿硬痛拒按、大便秘結或潮熱譫語。Yang Ming Jing 不是 Yang Ming Fu 的別名——兩者病機層次不同(V2-D 鎖定)。",
+          "distinguishing_en": "Yang Ming Channel Heat is formless heat excess without a hard, tender abdomen and not necessarily constipated; Yang Ming Fu-Organ Excess is heat bound with dry stool into a tangible mass, with a hard tender distended abdomen and constipation or tidal fever with delirium. Yang Ming Jing is NOT an alias of Yang Ming Fu (V2-D Lock).",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.qi_stage_heat",
+          "distinguishing_zh": "陽明經證(傷寒六經體系)與氣分熱(溫病衛氣營血體系)臨床表現相近、同可用白虎湯,但辨證體系與傳變脈絡不同:前者按六經傳變論治,後者按衛氣營血淺深傳變論治。",
+          "distinguishing_en": "Yang Ming Channel Heat (Six-Channel system) and Qi-Stage Heat (Four-Levels system) present similarly and both may use Bai Hu Tang, but belong to different systems with different transmission logic: the former follows Six-Channel progression, the latter follows Wei-Qi-Ying-Xue depth progression.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清熱生津(辛寒清氣)",
+      "treatment_principle_en": "Clear heat and generate fluids (acrid-cold to clear the Qi level)",
+      "typical_formulas": [
+        "formula.bai_hu_tang"
+      ],
+      "typical_points": [
+        "LI11",
+        "ST44",
+        "GV14"
+      ],
+      "point_rationale_zh": "曲池、內庭清瀉陽明經熱;大椎助清熱瀉火。",
+      "point_rationale_en": "LI11 and ST44 clear and drain Yang Ming channel heat; GV14 assists in clearing heat and draining fire.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)",
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yang_ming_fu_organ_excess",
+      "name_zh": "陽明腑證",
+      "name_en": "Yang Ming Fu-Organ Excess Pattern",
+      "key_signs_zh": [
+        "日晡潮熱",
+        "譫語",
+        "腹滿硬痛拒按",
+        "大便秘結或熱結旁流"
+      ],
+      "key_signs_en": [
+        "Tidal fever worse in late afternoon",
+        "Delirious speech",
+        "Hard, painful, distended abdomen worse with pressure",
+        "Constipation, or paradoxical watery discharge around retained stool"
+      ],
+      "tongue_zh": "舌紅苔黃厚而燥,甚則焦黑起刺",
+      "tongue_en": "Red tongue with a thick, dry yellow coating, in severe cases scorched black with prickles",
+      "pulse_zh": "脈沉實有力",
+      "pulse_en": "Deep, substantial, forceful pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "邪熱與腸中糟粕互結成燥屎,腑氣壅滯不通,熱盛神明被擾則譫語,日晡為陽明經氣旺時,正邪相爭故潮熱加重。",
+      "mechanism_en": "Pathogenic heat binds with intestinal stool into a dry mass, obstructing the Fu-organ's qi; heat disturbs the mind causing delirium; late afternoon is when Yang Ming channel qi is most active, so the tidal fever worsens as correct and pathogenic qi contend.",
+      "common_causes_zh": "陽明經證熱盛傷津,腸道失潤,燥屎內結;或素體陽盛,誤用溫燥助熱成實",
+      "common_causes_en": "Yang Ming Channel Heat injuring fluids and drying the intestines, binding into dry stool; or a constitutionally yang-excess person given warming-drying treatment in error, hardening into an excess pattern",
+      "progression_zh": "燥屎不下,熱毒內熾可致熱閉心包、神昏;久延傷陰可致陰竭陽脫。",
+      "progression_en": "If the dry stool is not expelled, heat-toxin can block the Pericardium causing loss of consciousness; prolonged course injuring yin can lead to yin exhaustion and yang collapse.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yang_ming_channel_heat",
+          "distinguishing_zh": "見陽明經證卡。",
+          "distinguishing_en": "See the Yang Ming Channel Heat card.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.heat_entering_pericardium",
+          "distinguishing_zh": "陽明腑證譫語因腸腑燥屎與熱互結、腑氣不通所致,兼腹滿硬痛拒按等腑實見證,攻下燥屎後神志可轉清;熱入心包神昏是熱邪直接內陷心包所致,無腹實見證,攻下無效,須清心開竅。",
+          "distinguishing_en": "Yang Ming Fu-Organ delirium arises from heat bound with dry stool obstructing the bowel, accompanied by a hard, tender, distended abdomen; clearing the stool can restore clarity. Heat Entering the Pericardium causes unconsciousness through heat directly invading the Pericardium with no bowel-excess signs; purgation does not help -- it requires clearing heat and opening the orifices.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "峻下熱結(依燥實輕重分大/小/調胃承氣湯)",
+      "treatment_principle_en": "Vigorously purge heat-bound stool (Da/Xiao/Tiao Wei Cheng Qi Tang graded by severity)",
+      "typical_formulas": [
+        "formula.da_cheng_qi_tang",
+        "formula.xiao_cheng_qi_tang",
+        "formula.tiao_wei_cheng_qi_tang"
+      ],
+      "typical_points": [
+        "ST25",
+        "ST37",
+        "SP15"
+      ],
+      "point_rationale_zh": "天樞、上巨虛通調腸腑、瀉下燥結;大橫助行氣通便。",
+      "point_rationale_en": "ST25 and ST37 regulate the bowel and purge the bound stool; SP15 assists in moving qi to relieve constipation.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.shao_yang_pattern",
+      "name_zh": "少陽證",
+      "name_en": "Shao Yang Pattern",
+      "key_signs_zh": [
+        "往來寒熱",
+        "胸脅苦滿",
+        "默默不欲飲食",
+        "心煩喜嘔",
+        "口苦咽乾目眩"
+      ],
+      "key_signs_en": [
+        "Alternating chills and fever",
+        "Distressing fullness of the chest and hypochondria",
+        "Silent, uninterested in food",
+        "Vexation with a tendency to vomit",
+        "Bitter taste, dry throat, dizziness"
+      ],
+      "tongue_zh": "舌苔薄白或薄黃",
+      "tongue_en": "Thin white or thin yellow tongue coating",
+      "pulse_zh": "脈弦",
+      "pulse_en": "Wiry pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "邪在半表半裡,少陽樞機不利,正邪相爭於表裡之間故往來寒熱;膽經循脅肋,邪郁少陽經氣不暢故胸脅苦滿;膽火上炎則口苦目眩。",
+      "mechanism_en": "The pathogen lodges between the exterior and interior; Shao Yang's pivoting function is impaired, and correct/pathogenic qi contend at that boundary, producing alternating chills and fever; the Gallbladder channel traverses the flanks, so obstructed Shao Yang qi causes chest and hypochondriac fullness; Gallbladder fire flaring upward causes a bitter taste and dizziness.",
+      "common_causes_zh": "太陽病失治或誤治,邪不從表解,內傳少陽,正氣稍虛不能全部驅邪外出",
+      "common_causes_en": "Untreated or mismanaged Tai Yang disease where the pathogen fails to resolve at the exterior and transmits into Shao Yang, with correct qi slightly weakened and unable to fully expel the pathogen",
+      "progression_zh": "少陽證治不當可內傳陽明(少陽陽明合病),或誤下傷正內陷太陰。",
+      "progression_en": "Mismanaged Shao Yang disease can transmit into Yang Ming, or improper purgation can injure correct qi and drive the pathogen into Tai Yin.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_wind_strike",
+          "distinguishing_zh": "太陽病純屬表證,惡寒發熱同時並見,脈浮;少陽證邪在半表半裡,寒熱交替而非同見,脈弦不浮,兼胸脅苦滿等半表半裡特有見證。",
+          "distinguishing_en": "Tai Yang disease is a pure exterior pattern with simultaneous chills and fever and a floating pulse; Shao Yang alternates chills and fever (not simultaneous) with a wiry, non-floating pulse, plus the characteristic chest/flank fullness of the half-exterior-half-interior stage.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.jue_yin_mixed_cold_heat",
+          "distinguishing_zh": "少陽證病勢相對表淺,可和解而愈;厥陰寒熱錯雜病及臟腑陰陽根本,上熱下寒同時並見(而非往來),兼消渴、氣上撞心、食則吐蛔等更深重見證,病勢更深。",
+          "distinguishing_en": "Shao Yang is relatively shallow and resolves with harmonizing treatment; Jue Yin Mixed Cold-Heat reaches the root yin-yang of the organs, with simultaneous (not alternating) upper heat and lower cold, plus more severe signs like intense thirst, qi rushing to the chest, and vomiting after eating -- a deeper-stage pattern.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "和解少陽",
+      "treatment_principle_en": "Harmonize Shao Yang",
+      "typical_formulas": [
+        "formula.xiao_chai_hu_tang"
+      ],
+      "typical_points": [
+        "GB41",
+        "SJ5",
+        "GB34"
+      ],
+      "point_rationale_zh": "足臨泣、外關為少陽經八脈交會配穴,和解樞機;陽陵泉為膽經合穴、筋會,疏泄少陽經氣。",
+      "point_rationale_en": "GB41 and SJ5 form the Shao Yang confluent-point pair, harmonizing the pivot; GB34, the Gallbladder channel's He-Sea point and the Hui-Meeting point of sinews, disperses Shao Yang channel qi.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.tai_yin_deficiency_cold",
+      "name_zh": "太陰虛寒",
+      "name_en": "Tai Yin Deficiency-Cold",
+      "key_signs_zh": [
+        "腹滿而吐",
+        "食不下",
+        "自利益甚",
+        "時腹自痛"
+      ],
+      "key_signs_en": [
+        "Abdominal fullness with vomiting",
+        "Inability to eat",
+        "Worsening spontaneous diarrhea",
+        "Intermittent spontaneous abdominal pain"
+      ],
+      "tongue_zh": "舌淡苔白滑",
+      "tongue_en": "Pale tongue with a white, slippery coating",
+      "pulse_zh": "脈沉緩弱",
+      "pulse_en": "Deep, moderate, weak pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "脾陽虛衰,寒濕內盛,運化失職,升降失常,寒濕阻滯氣機故腹滿,清濁不分故下利,寒性收引時作時止故腹痛時發,口不渴示無熱象。",
+      "mechanism_en": "Weakened Spleen yang allows internal cold-damp to accumulate, impairing transformation-transportation and the normal rise/fall of qi; cold-damp obstructing qi causes abdominal fullness; failure to separate clear from turbid causes diarrhea; cold's contracting nature produces intermittent pain; the absence of thirst confirms no heat.",
+      "common_causes_zh": "太陽或少陽病誤下傷及脾陽,或素體脾陽不足,寒邪直中太陰",
+      "common_causes_en": "Improper purgation of Tai Yang or Shao Yang disease injuring Spleen yang, or a constitutionally Spleen-yang-deficient person directly struck by cold in the Tai Yin stage",
+      "progression_zh": "太陰虛寒進一步發展可傳入少陰,脾腎陽衰成更重之寒化證。",
+      "progression_en": "Tai Yin Deficiency-Cold can progress further into Shao Yin, with combined Spleen-Kidney yang decline becoming a more severe cold-transformation pattern.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yang_ming_fu_organ_excess",
+          "distinguishing_zh": "太陰虛寒為裡虛寒,下利腹痛喜按、口不渴;陽明腑證為裡實熱,便秘腹痛拒按、潮熱譫語、口渴,一虛一實一寒一熱,治法一溫一下,誤用攻下於太陰可致利下不止。",
+          "distinguishing_en": "Tai Yin Deficiency-Cold is interior deficiency-cold, with diarrhea and pain relieved by pressure, no thirst; Yang Ming Fu-Organ Excess is interior excess-heat, with constipation and pain worse with pressure, tidal fever, delirium, and thirst -- opposite in every axis; treatment is warming vs. purging, and purging Tai Yin by mistake can cause unremitting diarrhea.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "太陰虛寒是六經辨證體系下,太陽病誤治或直中導致的脾陽虛寒證,強調病程階段與傳變脈絡;脾陽虛是臟腑辨證下不分傳變來源的一般脾陽不足證,兩者臨床表現高度重疊,差異在辨證體系與病史脈絡。",
+          "distinguishing_en": "Tai Yin Deficiency-Cold, within the Six-Channel system, is Spleen yang-cold arising from mismanaged or direct-strike Tai Yang disease, emphasizing disease stage and transmission history; Spleen Yang Deficiency (Zang-Fu system) is a general Spleen-yang-insufficiency pattern regardless of transmission source. The presentations overlap heavily; the difference is which system and history frames the diagnosis.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "溫中散寒,健脾燥濕",
+      "treatment_principle_en": "Warm the middle, dispel cold, strengthen the Spleen and dry dampness",
+      "typical_formulas": [
+        "formula.li_zhong_wan"
+      ],
+      "typical_points": [
+        "CV12",
+        "ST36",
+        "SP3",
+        "BL20"
+      ],
+      "point_rationale_zh": "中脘、足三里溫中健脾;太白為脾經原穴助運化;脾俞溫補脾陽。",
+      "point_rationale_en": "CV12 and ST36 warm the middle and strengthen the Spleen; SP3, the Spleen channel's Yuan-Source point, aids transformation; BL20 warms and tonifies Spleen yang.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.shao_yin_cold_transformation",
+      "name_zh": "少陰寒化證",
+      "name_en": "Shao Yin Cold Transformation",
+      "key_signs_zh": [
+        "無熱惡寒",
+        "但欲寐",
+        "四肢厥冷",
+        "下利清穀"
+      ],
+      "key_signs_en": [
+        "No fever, aversion to cold",
+        "Drowsy, lying curled up",
+        "Cold limbs",
+        "Diarrhea with undigested food"
+      ],
+      "tongue_zh": "舌淡苔白",
+      "tongue_en": "Pale tongue with a white coating",
+      "pulse_zh": "脈微細",
+      "pulse_en": "Faint, thin pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "心腎陽氣虛衰,陰寒之邪內盛,病及少陰根本,陽氣不能溫煦四末及推動精神故四肢厥冷、精神萎靡但欲寐,火不暖土則下利清穀。",
+      "mechanism_en": "Heart-Kidney yang qi is severely depleted and internal cold-yin predominates, reaching the root of Shao Yin; yang's failure to warm the extremities and animate the spirit causes cold limbs and profound lethargy; Fire's failure to warm Earth causes diarrhea with undigested food.",
+      "common_causes_zh": "素體心腎陽虛,外邪直中少陰;或他經病證失治誤治,陽氣耗竭傳入少陰",
+      "common_causes_en": "Constitutional Heart-Kidney yang deficiency with a pathogen striking Shao Yin directly; or mismanaged disease in another channel exhausting yang and transmitting into Shao Yin",
+      "progression_zh": "少陰寒化證進一步發展可致亡陽厥脫(大汗淋漓、脈微欲絕),為危重急症。",
+      "progression_en": "Shao Yin Cold Transformation can progress to yang collapse (profuse sweating, an almost imperceptible pulse) -- a critical emergency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_cold_damage",
+          "distinguishing_zh": "見太陽傷寒卡。",
+          "distinguishing_en": "See the Tai Yang Cold-Damage card.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.shao_yin_heat_transformation",
+          "distinguishing_zh": "寒化證為陽衰陰盛之虛寒,脈微細、舌淡、但欲寐;熱化證為腎陰虧於下、心火亢於上之虛熱,脈細數、舌紅、心煩不得臥,寒熱屬性相反,同屬少陰但轉歸不同。",
+          "distinguishing_en": "Cold Transformation is deficiency-cold from yang decline with yin excess (faint-thin pulse, pale tongue, lethargy); Heat Transformation is deficiency-heat from Kidney yin deficiency below with Heart fire flaring above (thin-rapid pulse, red tongue, vexation preventing sleep) -- opposite thermal outcomes of the same Shao Yin stage.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "回陽救逆",
+      "treatment_principle_en": "Rescue and restore collapsed yang",
+      "typical_formulas": [
+        "formula.si_ni_tang"
+      ],
+      "typical_points": [
+        "GV4",
+        "CV6",
+        "KI3"
+      ],
+      "point_rationale_zh": "命門、氣海溫補元陽,多配合大劑量灸法;太谿補益腎經根本之氣。",
+      "point_rationale_en": "GV4 and CV6 warm and tonify original yang, typically with heavy moxibustion; KI3 tonifies the root qi of the Kidney channel.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.shao_yin_heat_transformation",
+      "name_zh": "少陰熱化證",
+      "name_en": "Shao Yin Heat Transformation",
+      "key_signs_zh": [
+        "心煩不得臥",
+        "口燥咽乾",
+        "五心煩熱"
+      ],
+      "key_signs_en": [
+        "Vexation preventing sleep",
+        "Dry mouth and throat",
+        "Five-center heat"
+      ],
+      "tongue_zh": "舌紅少苔",
+      "tongue_en": "Red tongue with a scant coating",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thin, rapid pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "少陰腎陰虧虛於下,不能上濟心火,心火獨亢於上,水火不濟(心腎不交),心神被擾故心煩不得臥。",
+      "mechanism_en": "Shao Yin Kidney yin is depleted below and cannot ascend to check Heart fire; Heart fire flares unopposed above -- Water and Fire fail to communicate (Heart-Kidney disharmony) -- disturbing the spirit and preventing sleep.",
+      "common_causes_zh": "素體腎陰不足,邪入少陰從陽化熱;或熱病後期傷及腎陰",
+      "common_causes_en": "Constitutional Kidney yin insufficiency with the pathogen entering Shao Yin and transforming into heat; or a febrile disease in its later stage injuring Kidney yin",
+      "progression_zh": "少陰熱化證日久陰液耗竭可致陰竭陽亢之危候。",
+      "progression_en": "Prolonged Shao Yin Heat Transformation can exhaust yin fluids, leading to a critical state of yin exhaustion with unchecked yang.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.shao_yin_cold_transformation",
+          "distinguishing_zh": "見少陰寒化證卡。",
+          "distinguishing_en": "See the Shao Yin Cold Transformation card.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.yin_deficiency",
+          "distinguishing_zh": "陰虛為不分臟腑的總綱;少陰熱化證特指腎陰虧於下、心火亢於上、心腎不交、心煩不得臥的少陰病特定病機階段,病位病機更精確。",
+          "distinguishing_en": "Yin Deficiency is the un-localized general category; Shao Yin Heat Transformation specifically denotes Kidney yin deficient below with Heart fire flaring above -- Heart-Kidney disharmony with vexation preventing sleep -- a precise Shao Yin-stage mechanism.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "滋陰降火,交通心腎",
+      "treatment_principle_en": "Nourish yin, downbear fire, and connect Heart and Kidney",
+      "typical_formulas": [
+        "formula.huang_lian_e_jiao_tang"
+      ],
+      "typical_points": [
+        "KI6",
+        "HT7",
+        "SP6"
+      ],
+      "point_rationale_zh": "照海滋腎陰、通陰蹻助眠;神門寧心安神;三陰交滋養三陰交通心腎。",
+      "point_rationale_en": "KI6 nourishes Kidney yin and, via the Yin Qiao vessel, aids sleep; HT7 calms the Heart and settles the spirit; SP6 nourishes the three Yin channels and helps connect Heart and Kidney.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.jue_yin_mixed_cold_heat",
+      "name_zh": "厥陰寒熱錯雜",
+      "name_en": "Jue Yin Mixed Cold and Heat",
+      "key_signs_zh": [
+        "消渴",
+        "氣上撞心",
+        "心中疼熱",
+        "飢而不欲食",
+        "食則吐蛔"
+      ],
+      "key_signs_en": [
+        "Intense thirst",
+        "Sensation of qi rushing up to the chest",
+        "Burning pain in the chest",
+        "Hunger without desire to eat",
+        "Vomiting (of roundworm in the classical description) after eating"
+      ],
+      "tongue_zh": "舌淡紅,苔白或黃白相兼",
+      "tongue_en": "Pale-red tongue with a white, or mixed white-and-yellow, coating",
+      "pulse_zh": "脈弦或弦細",
+      "pulse_en": "Wiry, or wiry-thin, pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "厥陰為陰盡陽生之臟,病至厥陰,陰陽對峙、寒熱錯雜、厥熱勝復;上熱(肝胃之熱)與下寒(脾腎之寒)同時並見,是六經傳變的最終、最複雜階段。",
+      "mechanism_en": "Jue Yin is the stage where yin is exhausted and yang begins to regenerate; at this stage, yin and yang confront each other, cold and heat intermix, and cold/heat alternate in dominance. Upper heat (Liver-Stomach) and lower cold (Spleen-Kidney) coexist simultaneously -- the final and most complex stage of Six-Channel transmission.",
+      "common_causes_zh": "傷寒傳經至厥陰,陰陽兩傷;或素體上熱下寒體質者感邪後兩極皆顯",
+      "common_causes_en": "Cold-damage disease transmitting through the channels to reach Jue Yin, injuring both yin and yang; or a constitutionally upper-heat/lower-cold person in whom both poles become apparent after contracting a pathogen",
+      "progression_zh": "厥陰病若陽復太過可轉為熱證;若陰盛陽亡則轉為純陰無陽之死候(厥熱勝復失衡)。",
+      "progression_en": "In Jue Yin disease, if yang recovery overshoots it can turn into a pure heat pattern; if yin overwhelms and yang is lost it becomes a pure-yin, no-yang critical state -- an imbalance of the cold/heat alternation.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.shao_yang_pattern",
+          "distinguishing_zh": "見少陽證卡。",
+          "distinguishing_en": "See the Shao Yang Pattern card.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.tai_yin_deficiency_cold",
+          "distinguishing_zh": "太陰虛寒純屬虛寒,無熱象;厥陰寒熱錯雜為寒熱同時並見(上熱下寒),兼消渴、氣上撞心、心中疼熱等厥陰特有的上熱見證,病機遠比太陰單純虛寒複雜。",
+          "distinguishing_en": "Tai Yin Deficiency-Cold is pure cold with no heat signs; Jue Yin Mixed Cold-Heat shows simultaneous upper heat and lower cold, adding Jue Yin-specific upper-heat signs like intense thirst, qi rushing to the chest, and burning chest pain -- far more complex than Tai Yin's simple cold-deficiency.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "溫臟安蛔,清上溫下,調和寒熱",
+      "treatment_principle_en": "Warm the organ and settle roundworm (classical indication), clear heat above while warming below, harmonize cold and heat",
+      "typical_formulas": [
+        "formula.wu_mei_wan"
+      ],
+      "typical_points": [
+        "LR3",
+        "PC6",
+        "CV12",
+        "ST36"
+      ],
+      "point_rationale_zh": "太衝疏泄肝經、平上逆之氣;內關降逆和胃;中脘、足三里溫中健運,清上溫下並施。",
+      "point_rationale_en": "LR3 disperses the Liver channel and calms upward-rushing qi; PC6 downbears rebellious qi and harmonizes the Stomach; CV12 and ST36 warm and strengthen the middle -- together clearing above while warming below.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.tai_yang_water_accumulation",
+      "name_zh": "太陽蓄水證",
+      "name_en": "Tai Yang Water Accumulation Pattern",
+      "aliases_zh": [
+        "太陽腑水蓄"
+      ],
+      "aliases_en": [
+        "Tai Yang Fu-Organ Water Accumulation"
+      ],
+      "key_signs_zh": [
+        "發熱微惡寒",
+        "小便不利",
+        "少腹滿",
+        "渴欲飲水甚則水入即吐"
+      ],
+      "key_signs_en": [
+        "Fever with mild aversion to cold",
+        "Difficult, scanty urination",
+        "Fullness of the lower abdomen",
+        "Thirst with a desire to drink, in severe cases vomiting immediately after drinking (\"water reversal\")"
+      ],
+      "tongue_zh": "舌苔白滑或白膩",
+      "tongue_en": "White, slippery or white, greasy tongue coating",
+      "pulse_zh": "脈浮或浮數",
+      "pulse_en": "Floating, or floating-rapid, pulse",
+      "pattern_family": "liu_jing",
+      "mechanism_zh": "太陽表邪未解,隨經入腑,膀胱氣化不利,水蓄下焦;水停不化,津液不能上承則渴,水邪犯胃則水入即吐(水逆證)。此為太陽腑證之一,與太陽經證(中風/傷寒)並列而病位由經轉腑。",
+      "mechanism_en": "An unresolved Tai Yang exterior pathogen follows the channel into the Bladder Fu-organ, impairing its qi-transformation; water accumulates in the lower burner; stagnant water fails to generate fluid upward, causing thirst; when the water pathogen attacks the Stomach, drinking is immediately followed by vomiting (\"water reversal\"). This is a Tai Yang Fu-organ pattern, standing alongside the Tai Yang channel patterns (Wind-Strike/Cold-Damage) but with the pathogen having moved from channel to organ.",
+      "common_causes_zh": "太陽中風或傷寒失治,表邪循經入腑,影響膀胱氣化功能",
+      "common_causes_en": "Untreated Tai Yang Wind-Strike or Cold-Damage, with the exterior pathogen following the channel into the organ and disrupting the Bladder's qi-transformation",
+      "progression_zh": "水蓄下焦若進一步與熱結可致蓄血證(少腹硬滿、如狂、小便自利,與蓄水證小便不利相區別);水邪上凌心肺可致心悸、咳喘。",
+      "progression_en": "Water accumulation in the lower burner, if it further binds with heat, can become a Blood Accumulation pattern (hard lower-abdominal fullness, manic-like agitation, but normal urination -- distinguishing it from Water Accumulation's difficult urination); water rising to overwhelm the Heart and Lung can cause palpitations and wheezing.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_wind_strike",
+          "distinguishing_zh": "太陽中風/傷寒為單純表證,無小便不利、少腹滿等裡證;太陽蓄水證在表證基礎上兼見膀胱氣化不利的裡證,病位已由經傳腑。",
+          "distinguishing_en": "Tai Yang Wind-Strike/Cold-Damage are pure exterior patterns without interior signs like difficult urination or lower-abdominal fullness; Tai Yang Water Accumulation adds, on top of exterior signs, the interior sign of impaired Bladder qi-transformation -- the pathogen has moved from channel to organ.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.yang_ming_fu_organ_excess",
+          "distinguishing_zh": "蓄水證病位在膀胱,以小便不利為特徵,大便多如常;陽明腑證病位在腸腑,以大便秘結為特徵,小便多不受影響,兩者所犯腑器不同。",
+          "distinguishing_en": "Water Accumulation is located in the Bladder, characterized by difficult urination with usually normal stool; Yang Ming Fu-Organ Excess is located in the intestines, characterized by constipation with usually unaffected urination -- different Fu-organs are involved.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "化氣利水,兼以解表",
+      "treatment_principle_en": "Transform qi to disinhibit water, with concurrent release of the exterior",
+      "typical_formulas": [
+        "formula.wu_ling_san"
+      ],
+      "typical_points": [
+        "BL28",
+        "SP9",
+        "CV3"
+      ],
+      "point_rationale_zh": "膀胱俞助膀胱氣化;陰陵泉利水滲濕;中極為膀胱募穴,助氣化行水。",
+      "point_rationale_en": "BL28 supports Bladder qi-transformation; SP9 disinhibits water and drains dampness; CV3, the Bladder's Front-Mu point, assists qi-transformation to move water.",
+      "sources": [
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.wei_stage_wind_heat",
+      "name_zh": "衛分風熱",
+      "name_en": "Wei-Stage Wind-Heat",
+      "key_signs_zh": [
+        "發熱微惡風寒",
+        "頭痛",
+        "咽紅腫痛",
+        "咳嗽"
+      ],
+      "key_signs_en": [
+        "Fever with mild aversion to wind/cold",
+        "Headache",
+        "Red, sore, swollen throat",
+        "Cough"
+      ],
+      "tongue_zh": "舌邊尖紅,苔薄白或薄黃",
+      "tongue_en": "Red tongue edges and tip, thin white or thin yellow coating",
+      "pulse_zh": "脈浮數",
+      "pulse_en": "Floating, rapid pulse",
+      "pattern_family": "wei_qi_ying_xue",
+      "mechanism_zh": "溫熱之邪初犯衛表,衛氣被鬱,肺主皮毛與衛分相應,肺氣失宣則咳嗽、咽痛;溫邪屬陽,發熱重於惡寒為其特徵,與傷寒表證之惡寒為主不同。",
+      "mechanism_en": "A warm-heat pathogen first invades the Wei (defensive) exterior level, constraining Wei qi; since the Lung governs the skin/body hair and corresponds to the Wei level, impaired Lung dispersal causes cough and throat pain. Warm pathogens are yang in nature, so fever outweighs chills -- distinct from Cold-Damage exterior patterns where chills predominate.",
+      "common_causes_zh": "外感風熱時邪,多見於春季或氣候溫暖季節",
+      "common_causes_en": "Invasion by a seasonal wind-heat pathogen, most common in spring or warm weather",
+      "progression_zh": "衛分證不解,可順傳氣分(氣分熱)或逆傳心包(熱入心包),溫病傳變較六經傳變迅速。",
+      "progression_en": "An unresolved Wei-stage pattern can transmit forward into the Qi level (Qi-Stage Heat) or transmit inward directly to the Pericardium (Heat Entering the Pericardium) -- Warm-disease transmission is typically faster than Six-Channel transmission.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_wind_strike",
+          "distinguishing_zh": "見太陽中風卡。",
+          "distinguishing_en": "See the Tai Yang Wind-Strike card.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.qi_stage_heat",
+          "distinguishing_zh": "衛分證邪淺在表,病勢輕,兼表證(惡風寒、脈浮);氣分證邪已入裡,里熱熾盛,不惡寒反惡熱,無表證,脈洪大而非浮。",
+          "distinguishing_en": "Wei-stage is shallow and mild, with exterior signs (aversion to wind/cold, floating pulse); Qi-stage means the pathogen has entered the interior with intense heat, no aversion to cold (aversion to heat instead), no exterior signs, and a surging rather than floating pulse.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "辛涼解表,透邪外出",
+      "treatment_principle_en": "Release the exterior with acrid-cool herbs, vent the pathogen outward",
+      "typical_formulas": [
+        "formula.yin_qiao_san",
+        "formula.sang_ju_yin"
+      ],
+      "typical_points": [
+        "LU7",
+        "LI4",
+        "GV14"
+      ],
+      "point_rationale_zh": "列缺宣肺解表;合谷、大椎清熱解表,為風熱表證常用配穴。",
+      "point_rationale_en": "LU7 disperses the Lung and releases the exterior; LI4 and GV14 clear heat and release the exterior -- a standard combination for Wind-Heat exterior patterns.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.qi_stage_heat",
+      "name_zh": "氣分熱",
+      "name_en": "Qi-Stage Heat",
+      "key_signs_zh": [
+        "壯熱不惡寒反惡熱",
+        "大汗",
+        "大渴引冷飲",
+        "面赤心煩"
+      ],
+      "key_signs_en": [
+        "High fever with aversion to heat, not cold",
+        "Profuse sweating",
+        "Intense thirst with preference for cold drinks",
+        "Flushed face and vexation"
+      ],
+      "tongue_zh": "舌紅苔黃燥",
+      "tongue_en": "Red tongue with a dry yellow coating",
+      "pulse_zh": "脈洪大而數",
+      "pulse_en": "Surging, large, rapid pulse",
+      "pattern_family": "wei_qi_ying_xue",
+      "mechanism_zh": "邪熱由衛分入氣分,正邪劇爭,里熱蒸騰於外,熱盛津傷則大渴、大汗;此階段邪熱雖盛但尚未深入血分擾動心神或迫血,是溫病由表入裡的關鍵樞紐。",
+      "mechanism_en": "Pathogenic heat moves from the Wei to the Qi level; correct and pathogenic qi contend fiercely, and interior heat steams outward, injuring fluids and causing intense thirst and profuse sweating. At this stage the heat is intense but has not yet penetrated the Xue level to disturb the spirit or force blood -- a pivotal juncture as Warm disease moves from exterior to interior.",
+      "common_causes_zh": "衛分證不解,邪熱順傳入氣分;或溫熱之邪徑犯氣分",
+      "common_causes_en": "An unresolved Wei-stage pattern with heat transmitting forward into the Qi level; or a warm-heat pathogen directly attacking the Qi level",
+      "progression_zh": "氣分熱不解可深入營分(營分熱),甚則血分(血分熱);氣分熱兼濕則成氣分濕熱。",
+      "progression_en": "Unresolved Qi-Stage Heat can penetrate into the Ying level (Ying-Stage Heat), and further into the Xue level (Xue-Stage Heat); if combined with dampness it becomes Qi-Stage Damp-Heat.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wei_stage_wind_heat",
+          "distinguishing_zh": "見衛分風熱卡。",
+          "distinguishing_en": "See the Wei-Stage Wind-Heat card.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.ying_stage_heat",
+          "distinguishing_zh": "氣分熱邪在氣分,舌紅苔黃燥,神志清楚僅心煩;營分熱邪入更深一層,舌絳而非僅紅,身熱夜甚,心煩不寐甚或時有譫語,已見輕度神志異常。",
+          "distinguishing_en": "Qi-Stage Heat stays at the Qi level, with a red tongue and dry yellow coating and clear consciousness aside from vexation; Ying-Stage Heat is one level deeper, with a crimson (not merely red) tongue, fever worse at night, vexation preventing sleep, and occasional delirium -- early signs of disturbed consciousness.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清氣泄熱",
+      "treatment_principle_en": "Clear the Qi level and drain heat",
+      "typical_formulas": [
+        "formula.bai_hu_tang"
+      ],
+      "typical_points": [
+        "LI11",
+        "ST44",
+        "GV14"
+      ],
+      "point_rationale_zh": "曲池、內庭清瀉氣分邪熱;大椎助退熱。",
+      "point_rationale_en": "LI11 and ST44 clear and drain Qi-level heat; GV14 assists in reducing fever.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.ying_stage_heat",
+      "name_zh": "營分熱",
+      "name_en": "Ying-Stage Heat",
+      "key_signs_zh": [
+        "身熱夜甚",
+        "心煩不寐",
+        "時有譫語",
+        "斑疹隱隱"
+      ],
+      "key_signs_en": [
+        "Fever worse at night",
+        "Vexation preventing sleep",
+        "Occasional delirious speech",
+        "Faint, barely visible rashes"
+      ],
+      "tongue_zh": "舌絳而乾",
+      "tongue_en": "Crimson, dry tongue",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thin, rapid pulse",
+      "pattern_family": "wei_qi_ying_xue",
+      "mechanism_zh": "熱邪由氣分深入營分,營陰受灼,營氣通於心,故心神被擾而見心煩不寐、譫語;夜屬陰,營分屬陰分,邪熱與陰爭則入夜熱勢加重;斑疹隱隱示熱邪已波及血絡但未至外顯。",
+      "mechanism_en": "Heat penetrates from the Qi level into the Ying (nutritive) level, scorching Ying-yin; since Ying qi connects with the Heart, the spirit is disturbed, producing vexation, insomnia, and delirium. Night belongs to yin, and the Ying level is a yin level, so heat contending with yin worsens at night; faint rashes indicate heat has begun to affect the blood vessels without fully surfacing.",
+      "common_causes_zh": "氣分熱不解,邪熱內陷營分;或溫熱之邪徑入營分(逆傳)",
+      "common_causes_en": "Unresolved Qi-Stage Heat sinking inward into the Ying level; or a warm-heat pathogen entering the Ying level directly (reverse transmission)",
+      "progression_zh": "營分熱不解可深入血分(血分熱),迫血妄行;亦可內陷心包(熱入心包)。",
+      "progression_en": "Unresolved Ying-Stage Heat can penetrate into the Xue level (Xue-Stage Heat) and force blood to move recklessly; it can also sink into the Pericardium (Heat Entering the Pericardium).",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_stage_heat",
+          "distinguishing_zh": "見氣分熱卡。",
+          "distinguishing_en": "See the Qi-Stage Heat card.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.xue_stage_heat",
+          "distinguishing_zh": "營分熱斑疹隱隱、舌絳而乾,神志尚有清時;血分熱斑疹透露成片、舌質更深絳或紫暗,兼吐血衄血便血等動血見證,甚則發狂,病更深一層。",
+          "distinguishing_en": "Ying-Stage Heat shows faint, barely visible rashes and a dry crimson tongue with intervals of clarity; Xue-Stage Heat shows fully erupted rashes and an even deeper crimson or purplish tongue, plus active bleeding (vomiting blood, nosebleeds, blood in stool) and even mania -- one level deeper.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清營透熱,養陰生津",
+      "treatment_principle_en": "Clear the Ying level and vent heat outward, nourish yin and generate fluids",
+      "typical_formulas": [
+        "formula.qing_ying_tang"
+      ],
+      "typical_points": [
+        "PC8",
+        "HT7",
+        "SP6"
+      ],
+      "point_rationale_zh": "勞宮清心營之熱;神門寧心安神;三陰交養陰。",
+      "point_rationale_en": "PC8 clears heat from the Heart/Ying level; HT7 calms the Heart and settles the spirit; SP6 nourishes yin.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.xue_stage_heat",
+      "name_zh": "血分熱",
+      "name_en": "Xue-Stage Heat",
+      "key_signs_zh": [
+        "身熱夜甚",
+        "斑疹透露成片",
+        "吐血衄血便血",
+        "甚則發狂"
+      ],
+      "key_signs_en": [
+        "Fever worse at night",
+        "Fully erupted, confluent rashes",
+        "Vomiting blood, nosebleeds, blood in stool",
+        "In severe cases mania"
+      ],
+      "tongue_zh": "舌深絳或紫暗",
+      "tongue_en": "Deep crimson or purplish-dark tongue",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thin, rapid pulse",
+      "pattern_family": "wei_qi_ying_xue",
+      "mechanism_zh": "熱邪深入血分,為衛氣營血傳變最深一層,灼傷血絡、迫血妄行故見各部出血;熱與血結、瘀熱互結則斑疹成片、舌質紫暗;熱擾心神更甚則發狂。",
+      "mechanism_en": "Pathogenic heat penetrates the Xue (Blood) level, the deepest stage of Wei-Qi-Ying-Xue transmission; it scorches the blood vessels and forces blood to move recklessly, causing bleeding from multiple sites; heat binding with blood (heat-stasis) produces confluent rashes and a purplish tongue; more severe disturbance of the spirit causes mania.",
+      "common_causes_zh": "營分熱不解,深入血分;或溫熱邪毒熾盛,徑犯血分",
+      "common_causes_en": "Unresolved Ying-Stage Heat penetrating into the Xue level; or an intense warm-heat toxin directly attacking the Xue level",
+      "progression_zh": "血分熱動血耗血過甚,可致氣隨血脫之危候;血分熱動風可見高熱抽搐(熱極生風)。",
+      "progression_en": "Excessive bleeding and blood consumption from Xue-Stage Heat can lead to qi collapse following blood loss -- a critical state; Xue-Stage Heat generating wind can cause high fever with convulsions (extreme heat generating wind).",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.ying_stage_heat",
+          "distinguishing_zh": "見營分熱卡。",
+          "distinguishing_en": "See the Ying-Stage Heat card.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.blood_heat",
+          "distinguishing_zh": "血分熱是溫病衛氣營血傳變體系中最深、最重的階段性病機,強調由衛而氣而營而血的傳變順序與病程急重;血熱(pattern.blood_heat)是不分傳變階段、泛指血分有熱迫血妄行的一般性病機描述。血分熱 ≠ 一般血熱(V2-D 鎖定)。",
+          "distinguishing_en": "Xue-Stage Heat is the deepest, most severe stage-specific mechanism within the Wei-Qi-Ying-Xue transmission system, emphasizing the Wei-to-Qi-to-Ying-to-Xue sequence and acute severity; generic Blood Heat (pattern.blood_heat) is a stage-independent description of heat in the blood forcing reckless movement. Xue-Stage Heat is NOT the same as generic Blood Heat (V2-D Lock).",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清熱涼血,散血解毒",
+      "treatment_principle_en": "Clear heat, cool the blood, disperse blood stasis and resolve toxin",
+      "typical_formulas": [
+        "formula.xi_jiao_di_huang_tang"
+      ],
+      "typical_points": [
+        "SP10",
+        "LI11",
+        "GV14"
+      ],
+      "point_rationale_zh": "血海清熱涼血;曲池、大椎助瀉血分熱毒。",
+      "point_rationale_en": "SP10 clears heat and cools the blood; LI11 and GV14 assist in draining Xue-level heat-toxin.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.qi_stage_damp_heat",
+      "name_zh": "氣分濕熱",
+      "name_en": "Qi-Stage Damp-Heat",
+      "key_signs_zh": [
+        "身熱不揚",
+        "脘痞嘔惡",
+        "身重肢倦",
+        "口渴不欲多飲"
+      ],
+      "key_signs_en": [
+        "Fever that does not spike clearly (lingering low fever)",
+        "Epigastric fullness with nausea",
+        "Heavy body, weary limbs",
+        "Thirst without desire to drink much"
+      ],
+      "tongue_zh": "舌苔黃膩",
+      "tongue_en": "Greasy yellow tongue coating",
+      "pulse_zh": "脈濡數",
+      "pulse_en": "Soggy, rapid pulse",
+      "pattern_family": "wei_qi_ying_xue",
+      "mechanism_zh": "濕熱之邪蘊結氣分,濕遏熱伏、如油入麵,氣機升降失常;濕邪重濁黏滯,故發熱纏綿、身重肢倦,與單純氣分熱之壯熱大汗不同,病程更長。",
+      "mechanism_en": "Damp-heat accumulates in the Qi level; dampness traps heat like oil mixed into flour, disrupting the rise and fall of qi. Dampness is heavy and sticky, so the fever lingers and the body feels heavy and weary -- unlike pure Qi-Stage Heat's high fever and profuse sweating, and with a longer course.",
+      "common_causes_zh": "外感濕熱之邪(濕溫病);或素體脾虛濕盛,復感溫熱之邪,濕熱相合",
+      "common_causes_en": "Invasion by an exterior damp-heat pathogen (Damp-Warmth disease); or a constitutionally Spleen-deficient, damp-prone person contracting a warm-heat pathogen that combines with the internal dampness",
+      "progression_zh": "氣分濕熱纏綿難解,濕邪化燥可轉為單純氣分熱;濕熱久羈可瀰漫三焦(三焦濕熱)。",
+      "progression_en": "Qi-Stage Damp-Heat is protracted and hard to resolve; if dampness dries out, it can become pure Qi-Stage Heat; prolonged damp-heat can spread to fill the whole San Jiao (San Jiao Damp-Heat).",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_stage_heat",
+          "distinguishing_zh": "單純氣分熱無濕象,舌苔黃燥而非黃膩,壯熱、大渴喜冷飲;氣分濕熱兼濕邪,身重脘痞、苔黃膩、口渴不欲多飲,病程較氣分熱纏綿。",
+          "distinguishing_en": "Pure Qi-Stage Heat has no dampness signs -- a dry (not greasy) yellow coating, high fever, and intense thirst with a preference for cold drinks; Qi-Stage Damp-Heat adds dampness -- a heavy body, epigastric fullness, a greasy yellow coating, and thirst without desire to drink much, with a more protracted course.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.damp_heat",
+          "distinguishing_zh": "此為溫病衛氣營血傳變體系下的氣分階段濕熱,具傳變意義(可進一步入營血或瀰漫三焦);pattern.damp_heat 為病因辨證的泛稱總綱,不特指溫病傳變的哪一階段。",
+          "distinguishing_en": "This is the Qi-stage damp-heat within the Wei-Qi-Ying-Xue transmission system, carrying transmission implications (can progress into Ying/Xue or spread through the San Jiao); pattern.damp_heat (generic) is the un-staged etiological category, not specific to any point in Warm-disease transmission.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清熱化濕",
+      "treatment_principle_en": "Clear heat and transform dampness",
+      "typical_formulas": [
+        "formula.gan_lu_xiao_du_dan"
+      ],
+      "typical_points": [
+        "SP9",
+        "ST36",
+        "CV12"
+      ],
+      "point_rationale_zh": "陰陵泉清利濕熱;足三里、中脘健脾和胃、助濕熱分消。",
+      "point_rationale_en": "SP9 clears and disinhibits damp-heat; ST36 and CV12 strengthen the Spleen and harmonize the Stomach, aiding the dispersal of damp-heat.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.heat_entering_pericardium",
+      "name_zh": "熱入心包",
+      "name_en": "Heat Entering the Pericardium",
+      "key_signs_zh": [
+        "神昏譫語或昏憒不語",
+        "身灼熱",
+        "四肢厥冷",
+        "舌謇肢厥"
+      ],
+      "key_signs_en": [
+        "Loss of consciousness with delirium, or unconsciousness with muteness",
+        "Burning-hot body",
+        "Cold limbs",
+        "Stiff tongue with cold extremities"
+      ],
+      "tongue_zh": "舌絳或舌謇",
+      "tongue_en": "Crimson tongue, or a stiff, difficult-to-move tongue",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thin, rapid pulse",
+      "pattern_family": "wei_qi_ying_xue",
+      "mechanism_zh": "熱邪內陷,閉阻心包,心竅被蒙,神明失主故神昏譫語甚或昏憒不語;熱深厥亦深,陽氣被鬱不能達於四末故四肢厥冷,身卻灼熱(熱厥),是溫病最危急的內陷證候之一。",
+      "mechanism_en": "Pathogenic heat sinks inward and blocks the Pericardium, misting the mind's portal so that the spirit loses its governance, causing loss of consciousness, delirium, or complete unconsciousness with muteness; the deeper the heat, the deeper the reversal -- yang qi is constrained and cannot reach the extremities, causing cold limbs while the body itself burns (\"heat reversal\") -- one of the most critical inward-sinking patterns in Warm disease.",
+      "common_causes_zh": "營分熱或血分熱不解,熱邪逆傳心包;或溫熱邪毒熾盛,徑陷心包(多見於起病急驟的溫毒重症)",
+      "common_causes_en": "Unresolved Ying-Stage or Xue-Stage Heat with reverse transmission into the Pericardium; or an intense warm-heat toxin sinking directly into the Pericardium (typically in acute, severe Warm-toxin disease)",
+      "progression_zh": "熱入心包若不及時開竅醒神,可致陰竭陽脫而死;搶救得當神志可漸轉清。",
+      "progression_en": "If the orifices are not opened and the spirit revived promptly, Heat Entering the Pericardium can lead to yin exhaustion, yang collapse, and death; with proper emergency treatment, consciousness can gradually clear.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.ying_stage_heat",
+          "distinguishing_zh": "見營分熱卡。",
+          "distinguishing_en": "See the Ying-Stage Heat card.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.phlegm_misting_heart",
+          "distinguishing_zh": "熱入心包為溫病熱邪內陷所致,起病急驟,身灼熱明顯,病史多見於外感熱病過程中;痰迷心竅多由痰濁素盛、七情internal所傷,起病相對緩,無身灼熱之外感熱病背景,治法一為清心開竅(涼開),一為豁痰開竅。",
+          "distinguishing_en": "Heat Entering the Pericardium arises from Warm-disease heat sinking inward, with an acute onset, pronounced burning heat, and a history within a febrile-disease course; Phlegm Misting the Heart Orifices usually arises from constitutional phlegm-turbidity or emotional injury, has a more gradual onset, and lacks a febrile-disease background -- treatment is clearing heat and opening the orifices (cooling method) vs. resolving phlegm and opening the orifices.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "清心開竅",
+      "treatment_principle_en": "Clear the Heart and open the sensory orifices",
+      "typical_formulas": [
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "typical_points": [
+        "GV26",
+        "PC6",
+        "KI1"
+      ],
+      "point_rationale_zh": "水溝(人中)為急救醒神要穴;內關開心竅、寧心神;湧泉引熱下行、開竅醒神,急症常配合十宣或井穴點刺放血。",
+      "point_rationale_en": "GV26 (Ren Zhong) is the key emergency point for reviving consciousness; PC6 opens the Heart orifice and calms the spirit; KI1 draws heat downward and helps revive consciousness -- in emergencies often combined with bleeding the Ten Xuan or Well points.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.san_jiao_damp_heat",
+      "name_zh": "三焦濕熱",
+      "name_en": "San Jiao Damp-Heat",
+      "key_signs_zh": [
+        "身熱不揚纏綿難解",
+        "胸悶脘痞腹脹",
+        "頭身困重",
+        "大便溏而不爽",
+        "小便短赤"
+      ],
+      "key_signs_en": [
+        "Lingering, low-grade fever hard to resolve",
+        "Chest and epigastric/abdominal fullness",
+        "Heavy head and body",
+        "Loose, incomplete-feeling stool",
+        "Short, dark urine"
+      ],
+      "tongue_zh": "舌苔黃膩",
+      "tongue_en": "Greasy yellow tongue coating",
+      "pulse_zh": "脈濡數或滑數",
+      "pulse_en": "Soggy-rapid or slippery-rapid pulse",
+      "pattern_family": "san_jiao",
+      "mechanism_zh": "濕熱之邪彌漫上中下三焦,氣機升降出入失常,非局限一焦:上焦肺氣不宣則胸悶,中焦脾胃升降失司則脘痞腹脹便溏,下焦膀胱氣化不利則小便短赤,吳鞠通三焦辨證論濕溫病的核心病機。",
+      "mechanism_en": "Damp-heat spreads to fill the upper, middle, and lower burners, disrupting qi's rise, fall, entry, and exit throughout -- not confined to one burner: impaired Lung dispersal in the upper burner causes chest oppression, disrupted Spleen-Stomach ascent/descent in the middle burner causes epigastric fullness and loose stool, and impaired Bladder qi-transformation in the lower burner causes short dark urine. This is the core mechanism of Damp-Warmth disease as framed by Wu Jutong's San Jiao differentiation.",
+      "common_causes_zh": "外感濕熱時邪,多見於長夏或濕熱氣候;或脾胃素虛,濕邪內生復感溫熱",
+      "common_causes_en": "Invasion by a seasonal damp-heat pathogen, most common in late summer or humid-hot climates; or constitutional Spleen-Stomach weakness generating internal dampness that then combines with an invading warm-heat pathogen",
+      "progression_zh": "濕熱瀰漫三焦纏綿難愈,濕重於熱者病勢遷延,熱重於濕者可化燥傷陰;若濕熱化燥入營血,則轉為溫病衛氣營血體系的營分/血分證。",
+      "progression_en": "San Jiao Damp-Heat is protracted and slow to resolve; if dampness predominates over heat the course drags on, if heat predominates it can dry out and injure yin; if damp-heat transforms into dryness and enters the Ying/Xue levels, it becomes a Wei-Qi-Ying-Xue Ying-stage or Xue-stage pattern.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.damp_heat_lower_burner",
+          "distinguishing_zh": "下焦濕熱局限於膀胱、大腸、胞宮等下焦部位,以淋濁、帶下、泄瀉為主;三焦濕熱瀰漫上中下三部,兼胸悶等上焦見證與脘痞等中焦見證,病位遠較下焦濕熱廣泛。",
+          "distinguishing_en": "Lower-Burner Damp-Heat is confined to the Bladder, Large Intestine, or Uterus in the lower burner, centering on painful urination, turbid discharge, or diarrhea; San Jiao Damp-Heat spreads through all three burners, adding upper-burner signs like chest oppression and middle-burner signs like epigastric fullness -- far more extensive than the lower-burner pattern alone.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.qi_stage_damp_heat",
+          "distinguishing_zh": "氣分濕熱是衛氣營血體系下濕熱蘊結氣分階段的描述,重點在傳變深淺;三焦濕熱是三焦辨證體系下濕熱瀰漫上中下三部位的空間性描述,兩套體系可並用互參但劃分角度不同。",
+          "distinguishing_en": "Qi-Stage Damp-Heat describes damp-heat accumulated at the Qi level within the Wei-Qi-Ying-Xue system, focused on transmission depth; San Jiao Damp-Heat describes damp-heat spread spatially through the upper/middle/lower burners within the San Jiao system -- the two frameworks can be used together but categorize from different angles.",
+          "source": "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "分消走泄,宣暢三焦氣機",
+      "treatment_principle_en": "Disperse and drain through separate pathways, unblock San Jiao qi movement",
+      "typical_formulas": [
+        "formula.san_ren_tang"
+      ],
+      "typical_points": [
+        "SJ6",
+        "SP9",
+        "ST36",
+        "CV9"
+      ],
+      "point_rationale_zh": "支溝疏通三焦氣機;陰陵泉清利下焦濕熱;足三里健運中焦;水分利水消腫,通調三焦水道。",
+      "point_rationale_en": "SJ6 unblocks San Jiao qi movement; SP9 clears lower-burner damp-heat; ST36 strengthens middle-burner transformation; CV9 disinhibits water and regulates the San Jiao waterways.",
+      "sources": [
+        "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "溫病學 教材通用(衛氣營血辨證/三焦辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.chong_ren_deficiency",
+      "name_zh": "衝任虛損",
+      "name_en": "Chong-Ren Deficiency",
+      "key_signs_zh": [
+        "月經量少或閉經",
+        "腰膝酸軟",
+        "頭暈耳鳴",
+        "不孕或胎萎不長"
+      ],
+      "key_signs_en": [
+        "Scanty menstruation or amenorrhea",
+        "Sore, weak lower back and knees",
+        "Dizziness and tinnitus",
+        "Infertility, or a pregnancy that fails to grow"
+      ],
+      "tongue_zh": "舌淡",
+      "tongue_en": "Pale tongue",
+      "pulse_zh": "脈沉細",
+      "pulse_en": "Deep, thin pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "mechanism_zh": "衝為血海,任主胞胎,二脈皆隸屬奇經八脈,同起於胞中,與肝腎精血關係密切;肝腎虧虛,精血不足,不能充養衝任二脈,胞宮失於濡養,故月經量少、不孕、胎萎。",
+      "mechanism_en": "The Chong vessel is the Sea of Blood and the Ren vessel governs the fetus; both belong to the Eight Extraordinary Vessels and originate in the uterus, closely tied to Liver-Kidney essence and blood. Liver-Kidney deficiency with insufficient essence-blood fails to fill the Chong-Ren vessels, leaving the uterus undernourished, causing scanty menses, infertility, or a failing pregnancy.",
+      "common_causes_zh": "先天稟賦不足、房勞多產耗傷精血、久病或年老肝腎漸虧",
+      "common_causes_en": "Congenital insufficiency, multiple pregnancies or excessive sexual activity depleting essence-blood, chronic illness or age-related Liver-Kidney decline",
+      "progression_zh": "衝任虛損日久可致閉經、卵巢早衰;孕後可致胎漏胎動不安或滑胎。",
+      "progression_en": "Prolonged Chong-Ren Deficiency can lead to amenorrhea or premature ovarian decline; during pregnancy it can cause threatened miscarriage or recurrent miscarriage.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_deficiency",
+          "distinguishing_zh": "腎虛為不分系統的總綱;衝任虛損特指腎虛精血不足累及衝任二脈、以月經量少/不孕/胎萎為主症的婦科定位證,病機更聚焦於胞宮生殖功能。",
+          "distinguishing_en": "Kidney Deficiency is the un-localized general category; Chong-Ren Deficiency specifically denotes Kidney essence-blood insufficiency involving the Chong-Ren vessels, centering on scanty menses, infertility, or failing pregnancy -- a gynecology-specific pattern focused on uterine/reproductive function.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.uterus_deficiency_cold",
+          "distinguishing_zh": "衝任虛損以精血不足為主,無明顯寒象;胞宮虛寒在陽氣不足基礎上兼見小腹冷痛喜溫、經行後期等寒象,二者可相兼但主症側重不同。",
+          "distinguishing_en": "Chong-Ren Deficiency centers on essence-blood insufficiency without pronounced cold signs; Uterus Deficiency-Cold adds cold signs (a lower abdomen that is cold and prefers warmth, delayed menstruation) on a background of yang insufficiency. The two can coexist but the leading signs differ.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "補腎益精,調理衝任",
+      "treatment_principle_en": "Tonify the Kidney, replenish essence, and regulate Chong-Ren",
+      "typical_formulas": [
+        "formula.zuo_gui_wan"
+      ],
+      "typical_points": [
+        "SP6",
+        "CV4",
+        "KI3",
+        "ST36"
+      ],
+      "point_rationale_zh": "三陰交、關元補益肝脾腎、調理衝任;太谿補腎益精;足三里助後天化源以資先天。",
+      "point_rationale_en": "SP6 and CV4 tonify Liver-Spleen-Kidney and regulate Chong-Ren; KI3 tonifies the Kidney and replenishes essence; ST36 supports postnatal generation to nourish the congenital root.",
+      "sources": [
+        "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.cold_congealing_uterus",
+      "name_zh": "寒凝胞宮",
+      "name_en": "Cold Congealing the Uterus",
+      "key_signs_zh": [
+        "經行小腹冷痛拒按",
+        "得熱痛減",
+        "經血量少色暗夾血塊",
+        "畏寒肢冷"
+      ],
+      "key_signs_en": [
+        "Cold, distressing lower-abdominal pain during menstruation, worse with pressure",
+        "Pain relieved by warmth",
+        "Scanty, dark menstrual blood with clots",
+        "Aversion to cold, cold limbs"
+      ],
+      "tongue_zh": "舌暗苔白",
+      "tongue_en": "Dark tongue with a white coating",
+      "pulse_zh": "脈沉緊或沉遲",
+      "pulse_en": "Deep-tight or deep-slow pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "mechanism_zh": "寒邪外客,直中胞宮,血得寒則凝,凝滯不通則痛(不通則痛),寒性收引故拒按、得熱則氣血暫通而痛減。此為外寒客犯之實寒,與胞宮虛寒之自身陽氣不足有別。",
+      "mechanism_en": "An external cold pathogen invades the uterus directly; blood congeals when it meets cold, and stagnation causes pain (\"no free flow, hence pain\"); cold's contracting nature makes the pain worse with pressure, while warmth temporarily restores flow and eases the pain. This is excess-type cold from an external pathogen, distinct from Uterus Deficiency-Cold's constitutional yang insufficiency.",
+      "common_causes_zh": "經期產後感受寒邪(涉水、淋雨、久坐濕地、貪食生冷)、胞宮驟感寒邪",
+      "common_causes_en": "Exposure to cold during menstruation or postpartum (wading in water, being caught in rain, sitting on damp ground, excessive cold food/drink), or sudden cold exposure to the uterus",
+      "progression_zh": "寒凝胞宮日久,寒瘀互結可致癥瘕;反覆發作可耗傷陽氣轉為胞宮虛寒。",
+      "progression_en": "Prolonged Cold Congealing the Uterus, with cold and stasis binding together, can form masses; repeated episodes can deplete yang and transform into Uterus Deficiency-Cold.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.uterus_deficiency_cold",
+          "distinguishing_zh": "寒凝胞宮為外寒客於胞宮之實寒,痛勢較劇、拒按,病程可較短、常與經期受寒史相關;胞宮虛寒為陽氣自身不足之虛寒,痛勢綿綿、喜按喜溫,病程較久,無明確受寒誘因。",
+          "distinguishing_en": "Cold Congealing the Uterus is excess-cold from an external pathogen, with more severe pain worse with pressure, often a shorter course tied to a clear history of cold exposure during menstruation; Uterus Deficiency-Cold is deficiency-cold from the body's own yang insufficiency, with a dull, lingering pain relieved by pressure and warmth, a more chronic course, and no clear precipitating cold exposure.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.uterus_blood_stasis",
+          "distinguishing_zh": "寒凝胞宮以冷痛拒按、得熱痛減、畏寒肢冷為特徵,必兼明確寒象;胞宮血瘀不一定兼寒象,以刺痛拒按、血塊排出後痛減為特徵,病機重點在瘀而非寒,兩者常相兼(寒凝致瘀)。",
+          "distinguishing_en": "Cold Congealing the Uterus is marked by cold pain worse with pressure and relieved by warmth, plus clear cold signs (aversion to cold, cold limbs); Uterus Blood Stasis does not necessarily show cold signs, and is marked by stabbing pain worse with pressure that eases once clots pass -- the mechanism centers on stasis, not cold, though the two often coexist (cold congealing causing stasis).",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "溫經散寒,活血止痛",
+      "treatment_principle_en": "Warm the channels, dispel cold, invigorate blood and stop pain",
+      "typical_formulas": [
+        "formula.shao_fu_zhu_yu_tang"
+      ],
+      "typical_points": [
+        "CV4",
+        "SP6",
+        "SP8"
+      ],
+      "point_rationale_zh": "關元溫暖胞宮;三陰交、地機活血調經、緩解疼痛,常配合艾灸增強溫通之力。",
+      "point_rationale_en": "CV4 warms the uterus; SP6 and SP8 invigorate blood and regulate menstruation to relieve pain, often combined with moxibustion to strengthen the warming, unblocking effect.",
+      "sources": [
+        "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.uterus_deficiency_cold",
+      "name_zh": "胞宮虛寒",
+      "name_en": "Uterus Deficiency-Cold",
+      "key_signs_zh": [
+        "小腹冷痛喜按喜溫",
+        "經行後期量少色淡",
+        "腰膝酸冷",
+        "宮寒不孕"
+      ],
+      "key_signs_en": [
+        "Cold, dull lower-abdominal pain relieved by pressure and warmth",
+        "Delayed menstruation, scanty pale flow",
+        "Cold, aching lower back and knees",
+        "Infertility from a cold uterus"
+      ],
+      "tongue_zh": "舌淡苔白",
+      "tongue_en": "Pale tongue with a white coating",
+      "pulse_zh": "脈沉遲無力",
+      "pulse_en": "Deep, slow, forceless pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "mechanism_zh": "腎陽不足,胞宮失於溫煦,陽虛內生寒象,寒性凝滯但因無外邪相搏,故疼痛程度較輕而綿綿不已,喜按喜溫為虛寒之特徵。",
+      "mechanism_en": "Insufficient Kidney yang fails to warm the uterus, generating internal cold from deficiency; since no external pathogen is contending, the pain is milder and dull rather than sharp, and its relief with pressure and warmth marks it as deficiency-cold.",
+      "common_causes_zh": "素體腎陽不足、久病傷陽、年老腎氣漸衰",
+      "common_causes_en": "Constitutional Kidney yang insufficiency, chronic illness injuring yang, age-related decline of Kidney qi",
+      "progression_zh": "胞宮虛寒日久不孕,或孕後易致胎萎、滑胎;可進一步發展為脾腎陽虛。",
+      "progression_en": "Prolonged Uterus Deficiency-Cold can cause infertility, or, once pregnant, a failing pregnancy or recurrent miscarriage; it can progress further into combined Spleen-Kidney Yang Deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.cold_congealing_uterus",
+          "distinguishing_zh": "見寒凝胞宮卡。",
+          "distinguishing_en": "See the Cold Congealing the Uterus card.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.yang_deficiency",
+          "distinguishing_zh": "陽虛為不分臟腑的總綱;胞宮虛寒特指腎陽虛累及胞宮、以宮寒不孕/經行後期為主症的婦科定位證,病機更聚焦於生殖功能。",
+          "distinguishing_en": "Yang Deficiency is the un-localized general category; Uterus Deficiency-Cold specifically denotes Kidney yang deficiency involving the uterus, centering on infertility from cold or delayed menstruation -- a gynecology-specific pattern focused on reproductive function.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "溫腎暖宮",
+      "treatment_principle_en": "Warm the Kidney and warm the uterus",
+      "typical_formulas": [
+        "formula.wen_jing_tang"
+      ],
+      "typical_points": [
+        "CV4",
+        "GV4",
+        "BL23"
+      ],
+      "point_rationale_zh": "關元、命門、腎俞溫補腎陽、暖宮散寒,多配合艾灸。",
+      "point_rationale_en": "CV4, GV4, and BL23 warm and tonify Kidney yang and warm the uterus, typically combined with moxibustion.",
+      "sources": [
+        "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.uterus_blood_stasis",
+      "name_zh": "胞宮血瘀",
+      "name_en": "Blood Stasis in the Uterus",
+      "key_signs_zh": [
+        "經行腹痛拒按",
+        "經色紫暗夾血塊",
+        "血塊排出後痛減",
+        "或見癥瘕"
+      ],
+      "key_signs_en": [
+        "Menstrual abdominal pain worse with pressure",
+        "Dark purple menstrual blood with clots",
+        "Pain relieved once clots pass",
+        "Possible presence of masses"
+      ],
+      "tongue_zh": "舌質紫暗或有瘀點瘀斑",
+      "tongue_en": "Purplish-dark tongue, or one with stasis spots/patches",
+      "pulse_zh": "脈沉澀",
+      "pulse_en": "Deep, choppy pulse",
+      "pattern_family": "qi_xue_jin_ye",
+      "mechanism_zh": "血行不暢,瘀阻胞宮胞脈,不通則痛;瘀血未去,新血難安,故經血色暗夾塊;瘀久不化,可與痰濕互結而成癥瘕。",
+      "mechanism_en": "Impeded blood flow leads to stasis obstructing the uterus and its vessels, causing pain (\"no free flow, hence pain\"); with old stasis unresolved, new blood cannot settle properly, producing dark clotted menstrual blood; prolonged stasis can combine with phlegm-dampness to form masses.",
+      "common_causes_zh": "經期產後餘血未淨、情志不遂氣滯致瘀、寒凝或熱灼致瘀",
+      "common_causes_en": "Residual blood not fully cleared after menstruation or childbirth, emotional stress causing qi stagnation that leads to stasis, or cold-congealing/heat-scorching leading to stasis",
+      "progression_zh": "胞宮血瘀日久可致癥瘕(如子宮肌瘤、卵巢囊腫類病變的中醫對應),或致不孕。",
+      "progression_en": "Prolonged Blood Stasis in the Uterus can form masses (the TCM correlate of conditions such as uterine fibroids or ovarian cysts), or cause infertility.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.cold_congealing_uterus",
+          "distinguishing_zh": "見寒凝胞宮卡。",
+          "distinguishing_en": "See the Cold Congealing the Uterus card.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.qi_stagnation_blood_stasis",
+          "distinguishing_zh": "氣滯血瘀為不分部位的氣血津液辨證總綱;胞宮血瘀特指血瘀定位於胞宮、以經行腹痛夾塊或婦科癥瘕為主症的定位證。",
+          "distinguishing_en": "Qi Stagnation and Blood Stasis is the un-localized general Qi-Blood-Fluids category; Blood Stasis in the Uterus specifically localizes the stasis to the uterus, centering on menstrual pain with clots or gynecological masses.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "活血化瘀,調經止痛",
+      "treatment_principle_en": "Invigorate blood, dispel stasis, regulate menstruation and stop pain",
+      "typical_formulas": [
+        "formula.shao_fu_zhu_yu_tang",
+        "formula.gui_zhi_fu_ling_wan"
+      ],
+      "typical_points": [
+        "SP10",
+        "SP6",
+        "LR3"
+      ],
+      "point_rationale_zh": "血海活血化瘀;三陰交調經止痛;太衝疏肝行氣以助血行。",
+      "point_rationale_en": "SP10 invigorates blood and dispels stasis; SP6 regulates menstruation and stops pain; LR3 disperses the Liver and moves qi to assist blood flow.",
+      "sources": [
+        "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "tongue": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "pulse": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.dai_mai_dysfunction",
+      "name_zh": "帶脈失約",
+      "name_en": "Dai Mai Dysfunction",
+      "aliases_zh": [
+        "帶脈失調"
+      ],
+      "aliases_en": [
+        "Dai Mai Disharmony"
+      ],
+      "key_signs_zh": [
+        "帶下量多質稀",
+        "腰腹酸軟如束帶",
+        "月經崩漏或胎動不安"
+      ],
+      "key_signs_en": [
+        "Copious, thin vaginal discharge",
+        "Sore, weak lower back and abdomen as if bound by a loose belt",
+        "Abnormal uterine bleeding, or a threatened miscarriage"
+      ],
+      "pattern_family": "jing_luo",
+      "mechanism_zh": "帶脈橫行腰腹,環腰一周,狀如束帶,是奇經八脈中唯一橫行的一脈,主約束縱行諸經、固護胞胎、司帶下;帶脈約束無力,諸經失於統攝,故見帶下、崩漏、胎漏諸症。帶脈本身無獨立臟腑歸屬,其功能失常多繼發於脾腎氣虛或肝鬱,本卡描述的是「約束功能失常」這個奇經層面的病機,不等同於引起它的臟腑本病(見鑑別)。",
+      "mechanism_en": "The Dai (Girdle) vessel runs horizontally around the waist -- the only one of the Eight Extraordinary Vessels to run transversely -- and its job is to bind the longitudinally-running channels, secure the fetus, and govern vaginal discharge. When its binding function weakens, the channels it should hold lose their restraint, producing discharge, abnormal bleeding, or threatened miscarriage. The Dai vessel has no independent Zang-Fu organ affiliation of its own; its dysfunction is usually secondary to Spleen-Kidney qi deficiency or Liver constraint. This card describes the extraordinary-vessel-level mechanism of \"loss of binding\" itself, which is not the same as the underlying organ pattern that caused it (see differentiation).",
+      "common_causes_zh": "脾虛濕注帶脈、腎氣不固、肝鬱化火傷及帶脈",
+      "common_causes_en": "Spleen deficiency with dampness pouring into the Dai vessel, Kidney qi failing to secure, or Liver constraint transforming into fire and injuring the Dai vessel",
+      "progression_zh": "帶脈失約日久,脾腎愈虛,帶下可由清稀轉為量多如崩,或反覆胎動不安、滑胎。",
+      "progression_en": "Prolonged Dai Mai Dysfunction further weakens the Spleen and Kidney; discharge can worsen from thin and clear to profuse (flooding-like), or lead to recurrent threatened miscarriage.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.spleen_qi_deficiency",
+          "distinguishing_zh": "脾氣虛是引起帶脈失約最常見的臟腑本病,以食少、腹脹、便溏、乏力等脾運化失職的全身表現為主;帶脈失約是脾虛累及帶脈之後、以帶下量多如束帶感為特異表現的奇經證候,兩者常同時出現但描述層次不同(本病與奇經表現)。",
+          "distinguishing_en": "Spleen Qi Deficiency is the most common underlying organ pattern behind Dai Mai Dysfunction, centering on the Spleen's own systemic signs (poor appetite, distension, loose stools, fatigue); Dai Mai Dysfunction is the extraordinary-vessel-level presentation once Spleen deficiency has spread to the Dai vessel, with the specific sign of copious discharge and a girdle-like sensation. The two commonly co-occur but describe different levels (the root organ pattern vs. the extraordinary-vessel expression).",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.damp_heat_lower_burner",
+          "distinguishing_zh": "帶脈失約(偏氣虛不固者)帶下色白質稀、無臭,兼乏力等虛象;下焦濕熱所致帶下色黃質稠、有臭穢氣、兼陰癢,屬實屬熱,治法一補一清,截然不同。",
+          "distinguishing_en": "Dai Mai Dysfunction (the qi-deficiency-failing-to-secure type) produces white, thin, odorless discharge with deficiency signs like fatigue; Lower-Burner Damp-Heat produces yellow, thick, foul-smelling discharge with vulvar itching -- an excess-heat pattern. Treatment is tonifying vs. clearing -- entirely different.",
+          "source": "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "固攝帶脈(依脾虛/腎虛/肝鬱化火之本病配合健脾、補腎或清肝)",
+      "treatment_principle_en": "Secure and bind the Dai vessel (combined with strengthening the Spleen, tonifying the Kidney, or clearing the Liver depending on the underlying organ pattern)",
+      "typical_formulas": [
+        "formula.wan_dai_tang"
+      ],
+      "typical_points": [
+        "GB41",
+        "SJ5",
+        "GB26"
+      ],
+      "point_rationale_zh": "足臨泣為帶脈之八脈交會穴,與外關相配主治帶脈病候;帶脈穴為局部取穴,直接調理帶脈氣機。",
+      "point_rationale_en": "GB41 is the confluent point of the Dai vessel, paired with SJ5 to treat Dai-vessel disorders per the Eight Confluent Point system; GB26 (Dai Mai point) is a local point directly regulating Dai-vessel qi.",
+      "sources": [
+        "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "formulas": [
+          "中醫婦科學 教材通用(衝任胞宮病機章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yin_qiao_mai_imbalance",
+      "name_zh": "陰蹻脈失調",
+      "name_en": "Yin Qiao Mai Imbalance",
+      "key_signs_zh": [
+        "嗜睡",
+        "下肢內側拘急或屈伸不利",
+        "眼瞼難以睜開"
+      ],
+      "key_signs_en": [
+        "Excessive drowsiness/sleepiness",
+        "Tension or stiffness of the inner leg",
+        "Difficulty keeping the eyelids open"
+      ],
+      "pattern_family": "jing_luo",
+      "mechanism_zh": "陰蹻脈起於足跟內側(照海),循下肢內側、軀幹前側上行至目內眥,與陽蹻脈同司眼瞼開闔與下肢運動,並主宰一身陰陽之蹻捷(蹻,舉、捷之意);《靈樞》論衛氣行於陰則寐,陰蹻脈氣偏盛則多眠嗜睡,陰蹻虛則目不合而不寐。此卡依 V2-D 明鎖規則,不臆造未見於文獻的舌脈,舌脈依所兼臟腑病機而定,不獨立設定。",
+      "mechanism_en": "The Yin Qiao (Yin Heel) vessel arises at the inner heel (KI6), ascends along the inner leg and the front of the trunk to the inner canthus of the eye; together with the Yang Qiao vessel it governs eyelid opening/closing and leg movement, and together they govern the body's agility (\"qiao\" means to lift/be agile). The Ling Shu states that when defensive qi moves through the yin aspect, sleep occurs; when Yin Qiao qi is excessive, drowsiness and excessive sleep result, while Yin Qiao deficiency prevents the eyes from closing (insomnia). Per the V2-D Hard Rule, this card does not invent tongue/pulse signs not established in the source corpus -- tongue/pulse follow whichever organ pattern accompanies it and are not fixed here.",
+      "common_causes_zh": "陰陽蹻脈氣血失衡(陰盛陽衰或反之)、下肢內側經筋受損牽動陰蹻",
+      "common_causes_en": "Imbalance of qi-blood between the Yin and Yang Qiao vessels (Yin excess with Yang decline, or the reverse), or injury to the sinew-channels of the inner leg affecting the Yin Qiao vessel",
+      "progression_zh": "陰蹻脈氣長期失調可反覆影響睡眠節律與下肢活動功能;常與其相表裡的陽蹻脈失調互為消長。",
+      "progression_en": "Prolonged Yin Qiao Mai imbalance can repeatedly disrupt the sleep-wake rhythm and leg mobility; it commonly waxes and wanes in reciprocal relationship with Yang Qiao Mai imbalance.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yang_qiao_mai_imbalance",
+          "distinguishing_zh": "陰蹻主寐,陰蹻脈氣偏盛則多眠嗜睡、偏虛則不寐;陽蹻主寤,陽蹻脈氣偏盛則目張不寐、偏虛則嗜睡,二者陰陽相對,病候方向常相反,須辨清偏盛偏虛而非僅辨陰陽何脈。",
+          "distinguishing_en": "Yin Qiao governs sleep -- excess Yin Qiao qi causes drowsiness/excessive sleep, deficiency causes insomnia; Yang Qiao governs wakefulness -- excess Yang Qiao qi causes wide-open eyes and insomnia, deficiency causes drowsiness. The two vessels are yin-yang counterparts and their symptom directions are often opposite; one must distinguish excess vs. deficiency within each vessel, not merely which vessel is involved.",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.insomnia_heart_kidney_disharmony",
+          "distinguishing_zh": "心腎不交之不寐屬臟腑辨證,病機為腎陰虧於下、心火亢於上,兼五心煩熱、舌紅少苔等明確虛熱見證;陰蹻脈失調屬經絡(奇經)辨證,不必然兼虛熱舌脈,以嗜睡/不寐與下肢內側拘急並見為特異表現,辨證體系不同。",
+          "distinguishing_en": "Heart-Kidney Disharmony insomnia is a Zang-Fu pattern with Kidney yin deficient below and Heart fire flaring above, accompanied by clear deficiency-heat signs (five-center heat, a red tongue with scant coating); Yin Qiao Mai Imbalance is an extraordinary-vessel pattern that does not necessarily carry deficiency-heat signs, and is distinguished by drowsiness/insomnia occurring together with inner-leg tension -- a different diagnostic system.",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "調理陰蹻(依虛實補瀉)",
+      "treatment_principle_en": "Regulate the Yin Qiao vessel (tonify or drain depending on excess/deficiency)",
+      "typical_points": [
+        "KI6",
+        "LU7",
+        "KI8"
+      ],
+      "point_rationale_zh": "照海為陰蹻脈之八脈交會穴,與列缺相配為治療陰蹻病候的常用組合;交信為陰蹻脈之郄穴,可用於急性病候。",
+      "point_rationale_en": "KI6 is the confluent point of the Yin Qiao vessel, paired with LU7 as the standard combination for Yin Qiao disorders; KI8, the Yin Qiao vessel's Xi-Cleft point, can be used for acute presentations.",
+      "sources": [
+        "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yang_qiao_mai_imbalance",
+      "name_zh": "陽蹻脈失調",
+      "name_en": "Yang Qiao Mai Imbalance",
+      "key_signs_zh": [
+        "失眠目張不欲閉",
+        "下肢外側拘急或痿弱",
+        "頭目眩暈"
+      ],
+      "key_signs_en": [
+        "Insomnia with eyes wide open and unwilling to close",
+        "Tension or weakness of the outer leg",
+        "Dizziness"
+      ],
+      "pattern_family": "jing_luo",
+      "mechanism_zh": "陽蹻脈起於足跟外側(申脈),循下肢外側、軀幹側面上行至目內眥與陰蹻脈會合,主司眼瞼開闔與下肢運動,並主一身左右之陽;陽蹻脈氣偏盛則陽氣浮越於外,目張不能閉合而失眠,偏虛則陽氣不能自振而嗜睡。同依 V2-D 明鎖規則,不臆造舌脈。",
+      "mechanism_en": "The Yang Qiao (Yang Heel) vessel arises at the outer heel (BL62), ascends along the outer leg and the side of the trunk to meet the Yin Qiao vessel at the inner canthus of the eye; it governs eyelid opening/closing and leg movement, and governs the body's yang aspect on both sides. Excess Yang Qiao qi causes yang to float outward, keeping the eyes open and preventing sleep; deficiency prevents yang from rousing itself, causing drowsiness. Per the same V2-D Hard Rule, no tongue/pulse is invented here.",
+      "common_causes_zh": "陽蹻陰蹻脈氣失衡、外邪客於陽蹻經筋、情志過極擾動陽氣",
+      "common_causes_en": "Imbalance between the Yang and Yin Qiao vessels, an external pathogen lodging in the Yang Qiao sinew-channel, or extreme emotion disturbing yang qi",
+      "progression_zh": "陽蹻脈氣長期失調可致慢性失眠、頭目眩暈反覆發作。",
+      "progression_en": "Prolonged Yang Qiao Mai imbalance can lead to chronic insomnia and recurrent dizziness.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.yin_qiao_mai_imbalance",
+          "distinguishing_zh": "見陰蹻脈失調卡。",
+          "distinguishing_en": "See the Yin Qiao Mai Imbalance card.",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.liver_yang_rising",
+          "distinguishing_zh": "肝陽上亢之眩暈失眠屬臟腑辨證,病機為肝腎陰虛於下、肝陽亢逆於上,兼頭脹痛、面紅、舌紅、脈弦有力等明確肝陽見證;陽蹻脈失調屬經絡(奇經)辨證,以目張不寐與下肢外側拘急並見為特異表現,不必然兼肝陽上亢的全身徵象。",
+          "distinguishing_en": "Liver Yang Rising dizziness/insomnia is a Zang-Fu pattern with Liver-Kidney yin deficient below and Liver yang rising unchecked above, with clear signs of ascendant Liver yang (distending headache, red face, red tongue, forceful wiry pulse); Yang Qiao Mai Imbalance is an extraordinary-vessel pattern distinguished by wide-open sleepless eyes occurring together with outer-leg tension, without necessarily carrying the systemic signs of Liver yang rising.",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "調理陽蹻(依虛實補瀉)",
+      "treatment_principle_en": "Regulate the Yang Qiao vessel (tonify or drain depending on excess/deficiency)",
+      "typical_points": [
+        "BL62",
+        "SI3",
+        "BL59"
+      ],
+      "point_rationale_zh": "申脈為陽蹻脈之八脈交會穴,與後溪相配為治療陽蹻病候的常用組合;跗陽為陽蹻脈之郄穴,可用於急性病候。",
+      "point_rationale_en": "BL62 is the confluent point of the Yang Qiao vessel, paired with SI3 as the standard combination for Yang Qiao disorders; BL59, the Yang Qiao vessel's Xi-Cleft point, can be used for acute presentations.",
+      "sources": [
+        "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.yang_wei_mai_disharmony",
+      "name_zh": "陽維脈失調",
+      "name_en": "Yang Wei Mai Disharmony",
+      "key_signs_zh": [
+        "惡寒發熱",
+        "頭項強痛",
+        "目眩",
+        "腰痛"
+      ],
+      "key_signs_en": [
+        "Aversion to cold with fever",
+        "Stiff, painful neck and occiput",
+        "Dizziness",
+        "Lower back pain"
+      ],
+      "pattern_family": "jing_luo",
+      "mechanism_zh": "陽維脈維繫聯絡一身諸陽經,主一身之表;《難經》云「陽維為病苦寒熱」,陽維脈氣失調,諸陽經失於維繫協調,可見類似太陽表證之惡寒發熱、頭項強痛,然其病機根源在奇經脈氣本身之失調,而非外邪直接犯表。",
+      "mechanism_en": "The Yang Wei (Yang Linking) vessel connects and coordinates all the yang channels, governing the body's exterior aspect. The Nan Jing states: \"When the Yang Wei is diseased, one suffers chills and fever.\" When Yang Wei qi is disharmonious, the yang channels lose their coordination, producing signs resembling a Tai Yang exterior pattern -- chills, fever, stiff painful neck -- but the root mechanism lies in the extraordinary vessel's own qi disharmony, not a pathogen directly attacking the exterior.",
+      "common_causes_zh": "陽維脈氣血失和、諸陽經失於協調聯繫、情志或勞倦耗傷陽維脈氣",
+      "common_causes_en": "Disharmony of Yang Wei qi-blood, loss of coordination among the yang channels, or emotional strain/overexertion depleting Yang Wei qi",
+      "progression_zh": "陽維脈失調日久可反覆出現類表證之寒熱發作,遇勞或情志刺激加重。",
+      "progression_en": "Prolonged Yang Wei Mai Disharmony can produce recurrent exterior-pattern-like chills and fever, worsened by exertion or emotional triggers.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_external",
+          "distinguishing_zh": "外風為外感風邪直接犯表之實證,起病急、有明確外邪侵襲史,脈浮;陽維脈失調為奇經脈氣本身聯繫協調功能失常,未必有明確外邪誘因,反覆發作,病機層次不同(經絡本病 vs 外感實邪)。",
+          "distinguishing_en": "External Wind is an excess pattern from an exterior wind pathogen directly attacking the surface, with an acute onset, a clear history of pathogen exposure, and a floating pulse; Yang Wei Mai Disharmony is a disorder of the extraordinary vessel's own coordinating function, without necessarily a clear precipitating pathogen, and tends to recur -- a different mechanistic layer (an intrinsic channel disorder vs. an exterior excess invasion).",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.dai_mai_dysfunction",
+          "distinguishing_zh": "陽維主一身之表、聯繫諸陽經,以寒熱、頭項強痛為特徵;帶脈主約束腰腹諸經、固護胞胎,以帶下、腰腹如束、崩漏胎動為特徵,兩者所司功能與病位截然不同。",
+          "distinguishing_en": "Yang Wei governs the body's exterior and connects the yang channels, characterized by chills/fever and neck stiffness; Dai Mai governs binding of the waist-abdomen channels and securing the fetus, characterized by discharge, a girdle-like sensation, and abnormal bleeding or threatened miscarriage -- entirely different functions and locations.",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "調理陽維",
+      "treatment_principle_en": "Regulate the Yang Wei vessel",
+      "typical_points": [
+        "SJ5",
+        "GB41",
+        "GB20",
+        "GB35"
+      ],
+      "point_rationale_zh": "外關為陽維脈之八脈交會穴,與足臨泣相配為治療陽維病候的常用組合;風池疏解頭項不適;陽交為陽維脈之郄穴,可用於急性病候。",
+      "point_rationale_en": "SJ5 is the confluent point of the Yang Wei vessel, paired with GB41 as the standard combination for Yang Wei disorders; GB20 relieves neck/occiput discomfort; GB35, the Yang Wei vessel's Xi-Cleft point, can be used for acute presentations.",
+      "sources": [
+        "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.chong_mai_qi_rebellion",
+      "name_zh": "衝氣上逆",
+      "name_en": "Chong Mai Qi Rebellion",
+      "aliases_zh": [
+        "衝脈氣逆"
+      ],
+      "aliases_en": [
+        "Chong Mai Qi Counterflow"
+      ],
+      "key_signs_zh": [
+        "自覺氣從少腹上衝胸咽",
+        "胸悶心悸",
+        "噁心嘔吐",
+        "發作欲死復如常人"
+      ],
+      "key_signs_en": [
+        "A sensation of qi rushing from the lower abdomen up to the chest and throat",
+        "Chest oppression and palpitations",
+        "Nausea and vomiting",
+        "Episodes so intense they feel life-threatening, then resolving back to normal"
+      ],
+      "pattern_family": "jing_luo",
+      "mechanism_zh": "衝脈起於胞中,為十二經之海,與肝、腎、陽明胃經關係密切,循腹上行至胸中而散;衝脈氣機逆亂,循經上衝,發為「奔豚氣」——仲景所論「氣從少腹上衝心」的經典病候;此卡刻意不設固定舌脈(依 V2-D Hard Rule),因奔豚氣兼證多端(可兼肝鬱化火、心陽虛、腎寒上衝等不同背景),舌脈隨兼證而異。",
+      "mechanism_en": "The Chong vessel arises in the uterus, is the \"Sea of the Twelve Channels,\" and is closely tied to the Liver, Kidney, and the Yang Ming Stomach channel; it ascends along the abdomen and disperses in the chest. When Chong qi becomes disordered and rushes upward along its pathway, it produces \"Running Piglet Qi\" (Ben Tun) -- the classic pattern Zhang Zhongjing described as \"qi rushing from the lower abdomen to the heart.\" This card deliberately sets no fixed tongue/pulse (per the V2-D Hard Rule) because Ben Tun Qi presents against varied backgrounds (Liver constraint transforming into fire, Heart yang deficiency, Kidney cold rushing upward, etc.), and tongue/pulse vary with whichever background pattern is present.",
+      "common_causes_zh": "驚恐傷腎、情志鬱結化火、心陽不足下焦寒氣乘虛上逆",
+      "common_causes_en": "Fright/fear injuring the Kidney, emotional constraint transforming into fire, or Heart yang insufficiency allowing lower-burner cold to rush upward and exploit the deficiency",
+      "progression_zh": "衝氣上逆反覆發作,若兼心陽虛可見心悸怔忡加重;若兼肝鬱化火可見急躁易怒、失眠加重。",
+      "progression_en": "Recurrent Chong Mai Qi Rebellion, if accompanied by Heart yang deficiency, can worsen into pronounced palpitations; if accompanied by Liver constraint transforming into fire, it can worsen into irritability and insomnia.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "肝氣鬱結以脅肋脹悶竄痛、情志抑鬱為主症,病位偏兩脅;衝氣上逆特指氣機沿衝脈自少腹上衝胸咽的發作性特定病候,病位循衝脈路徑,發作性、陣發性是其核心特徵,肝氣鬱結常為其誘因之一但非同一證。",
+          "distinguishing_en": "Liver Qi Stagnation centers on distending, wandering pain in the flanks and emotional depression, located mainly in the hypochondria; Chong Mai Qi Rebellion is a specific episodic pattern of qi rushing from the lower abdomen up to the chest and throat along the Chong vessel's pathway -- its episodic, paroxysmal nature is the defining feature, and Liver Qi Stagnation is often a trigger but not the same pattern.",
+          "source": "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.heart_yang_deficiency",
+          "distinguishing_zh": "心陽虛以心悸、胸悶、畏寒、脈弱為常態持續表現;衝氣上逆(奔豚氣)為陣發性、發作性的氣上衝感,發作間期可如常人,心陽虛欲作奔豚者是二者相兼的特定證型(桂枝加桂湯證),鑑別重點在是否具備陣發性上衝的核心特徵。",
+          "distinguishing_en": "Heart Yang Deficiency presents as a constant, persistent state of palpitations, chest oppression, cold intolerance, and a weak pulse; Chong Mai Qi Rebellion (Ben Tun) is a paroxysmal, episodic sensation of qi rushing upward, with the person appearing normal between episodes. \"Heart Yang Deficiency about to develop Ben Tun\" (the Gui Zhi Jia Gui Tang pattern) is the specific combination of both; the key differentiator is whether the paroxysmal upward-rushing sensation is present.",
+          "source": "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "平衝降逆(依兼證配合疏肝、溫心陽或溫腎)",
+      "treatment_principle_en": "Calm the Chong vessel and downbear rebellious qi (combined with soothing the Liver, warming Heart yang, or warming the Kidney depending on the accompanying pattern)",
+      "typical_points": [
+        "SP4",
+        "PC6",
+        "CV12",
+        "ST25"
+      ],
+      "point_rationale_zh": "公孫為衝脈之八脈交會穴,與內關相配為治療衝脈病候的常用組合;中脘、天樞降逆和胃,緩解上衝所致之噁心嘔吐。",
+      "point_rationale_en": "SP4 is the confluent point of the Chong vessel, paired with PC6 as the standard combination for Chong vessel disorders; CV12 and ST25 downbear rebellious qi and harmonize the Stomach, relieving the nausea and vomiting caused by the upward rush.",
+      "sources": [
+        "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)",
+        "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)",
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)",
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)",
+          "傷寒論/傷寒學 教材通用(六經辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學/奇經八脈考 教材通用(奇經八脈病候章節,課程層級引用)"
+        ]
+      }
+    },
+    {
+      "id": "pattern.channel_qi_blood_obstruction",
+      "name_zh": "經絡氣血痹阻",
+      "name_en": "Qi-Blood Obstruction of the Channels",
+      "key_signs_zh": [
+        "患部疼痛或麻木",
+        "屈伸不利",
+        "局部腫脹或感覺異常"
+      ],
+      "key_signs_en": [
+        "Pain or numbness at the affected site",
+        "Difficulty bending and extending",
+        "Local swelling or abnormal sensation"
+      ],
+      "tongue_zh": "舌質正常或暗",
+      "tongue_en": "Normal or dark tongue body (varies with the accompanying pattern)",
+      "pulse_zh": "脈澀或弦",
+      "pulse_en": "Choppy or wiry pulse",
+      "pattern_family": "jing_luo",
+      "mechanism_zh": "外邪(風寒濕熱)侵襲經絡,或內傷氣滯血瘀波及經絡,致經絡氣血運行不暢,不通則痛;氣血不能濡養局部則麻木不仁(不榮則麻);病位循經脈循行部位分布,是經絡辨證的核心病機描述,凡痹痛麻木皆可見此病機,其成因(風寒濕/氣滯血瘀)則由下位具體證型定位。",
+      "mechanism_en": "An external pathogen (wind, cold, dampness, or heat) invades the channels, or internal qi stagnation and blood stasis extend into them, impeding the flow of qi and blood -- \"no free flow, hence pain.\" When qi and blood cannot nourish the local area, numbness results (\"no nourishment, hence numbness\"). The affected site follows the channel's pathway. This is the core mechanism description within Channel-and-Collateral differentiation; painful-numb conditions in general show this mechanism, while its specific cause (wind-cold-damp, or qi stagnation/blood stasis) is localized by the more specific subordinate pattern.",
+      "common_causes_zh": "外感風寒濕熱之邪客於經絡、外傷跌撲致局部氣血瘀滯、久坐姿勢不當致經氣不暢",
+      "common_causes_en": "Invasion of the channels by external wind, cold, dampness, or heat; local qi-blood stasis from trauma or injury; or prolonged poor posture impeding channel qi flow",
+      "progression_zh": "經絡氣血痹阻日久,氣血運行愈加不暢,可由痹痛發展為肌肉萎縮無力(由痹轉痿);寒濕痹阻日久可化熱成熱痹。",
+      "progression_en": "Prolonged Qi-Blood Obstruction of the Channels increasingly impedes flow, and can progress from painful obstruction to muscle wasting and weakness (Bi transforming into Wei syndrome); prolonged cold-damp obstruction can transform into heat, becoming a Heat Bi pattern.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold_damp_bi",
+          "distinguishing_zh": "經絡氣血痹阻是經絡辨證層級的總機轉描述,凡痹痛麻木皆可見此病機;風寒濕痹是病因辨證下的具體痹證類型,特指風寒濕三邪雜至導致的痹阻,是經絡氣血痹阻眾多成因中最常見的一種,兩者是總綱與具體成因的關係。",
+          "distinguishing_en": "Qi-Blood Obstruction of the Channels is the general channel-level mechanism description; painful-numb conditions in general show it. Wind-Cold-Damp Bi is a specific etiological pattern -- Bi obstruction caused specifically by the three combined pathogens of wind, cold, and dampness -- one of the most common specific causes among many possible causes of channel obstruction. The relationship is general mechanism vs. specific cause.",
+          "source": "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        },
+        {
+          "pattern_id": "pattern.qi_stagnation_blood_stasis",
+          "distinguishing_zh": "氣滯血瘀為氣血津液辨證的全身性病機,可見於任何臟腑或部位;經絡氣血痹阻特指病位明確定位於某經絡循行部位的局部氣血阻滯,強調「循經取穴」的針灸治療思路,兩者可相兼(氣滯血瘀阻於經絡即為此證)。",
+          "distinguishing_en": "Qi Stagnation and Blood Stasis is a systemic Qi-Blood-Fluids mechanism that can appear in any organ or location; Qi-Blood Obstruction of the Channels specifically localizes the qi-blood blockage to a defined channel pathway, emphasizing the acupuncture approach of \"selecting points along the affected channel.\" The two can coexist -- qi stagnation and blood stasis obstructing a channel IS this pattern.",
+          "source": "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        }
+      ],
+      "treatment_principle_zh": "疏通經絡,行氣活血",
+      "treatment_principle_en": "Unblock the channels, move qi and invigorate blood",
+      "typical_formulas": [
+        "formula.shen_tong_zhu_yu_tang"
+      ],
+      "typical_points": [
+        "LI4",
+        "LR3",
+        "GB34"
+      ],
+      "point_rationale_zh": "合谷、太衝(開四關)行氣活血、通調全身氣機;陽陵泉為筋會,舒筋通絡,配合局部阿是穴、循經遠端取穴使用。",
+      "point_rationale_en": "LI4 and LR3 (the \"Four Gates\") move qi and invigorate blood, regulating whole-body qi movement; GB34, the Hui-Meeting point of sinews, relaxes the sinews and unblocks the channels, used together with local Ashi points and distal points along the affected channel.",
+      "sources": [
+        "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ],
+        "tongue": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ],
+        "pulse": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ],
+        "mechanism": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ],
+        "differentiation": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ],
+        "formulas": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ],
+        "points": [
+          "針灸學 教材通用(經絡辨證章節,課程層級引用)"
+        ]
+      }
     }
   ]
 }
