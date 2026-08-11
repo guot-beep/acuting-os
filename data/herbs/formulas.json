@@ -6328,8 +6328,8 @@
           "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
           "is_alternate": false,
-          "role_zh": "佐",
-          "role_en": "Assistant"
+          "role_zh": "使",
+          "role_en": "Envoy"
         },
         {
           "herb_id": "herb.chi_shao",
@@ -6387,7 +6387,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Cimicifuga and Kudzu Decoction",
@@ -6408,7 +6407,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)；curriculum/herbs/方剂学汇总_extracted.md#Table47-48（升麻葛根湯 君臣佐使表，核對甘草角色為使）",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -12388,7 +12387,9 @@
       ],
       "modifications_en": [],
       "modifications_zh": [],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "The pathomechanism of this pattern is deficiency of the righteous Qi combined with excess pathogenic Heat, so the formula simultaneously drains Fire with bitter-cold herbs and enriches Yin with sour-sweet herbs. If the patient's presentation is predominantly deficient with little excess pathogen, this formula is not appropriate."
+      ],
       "contraindications_zh": [
         "本方證的病機是正虛邪實，所以一面用苦寒瀉火，一面以酸甘滋陰。如果體內虛多邪少，則非本方所宜！"
       ],
@@ -12585,6 +12586,9 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_en": [
+          "Claude 逐條忠實翻譯既有 contraindications_zh（未新增主張，2026-08-11 F5 批次）"
         ]
       },
       "cloudtcm_id": 306,
@@ -15785,7 +15789,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Peony Decoction",
@@ -15806,7 +15809,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/herbs/方剂学汇总_extracted.md#Table178（芍藥湯 君臣佐使表，9 味核對一致）",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -16467,7 +16470,11 @@
       "pattern_indications_zh": [
         "溫病後期邪伏陰分證"
       ],
-      "modifications_en": [],
+      "modifications_en": [
+        "Modifications:",
+        "For Yin deficiency with Heat in the Blood: add Sang Ye (Mulberry Leaf), Shou Wu (Fleeceflower Root) and Wu Mei (Mume Fruit) to strengthen the nourishing of Yin and Blood.",
+        "For Heat entering the Blood Chamber with the pathogen binding in the Blood aspect: add Dang Gui Xu (Tangkuei Root Tip), Xin Jiang (madder-red preparation), Dong Bai Wei (Baiwei Root), Yin Hu (Silvery Bupleurum), Di Gu Pi (Lycium Root Bark), fresh Bai Mao Gen (Imperata Rhizome) and Lai Fu Dan (a patent pill) to strengthen clearing Heat, cooling the Blood and dispersing Blood stasis."
+      ],
       "modifications_zh": [
         "加減：",
         "陰虛血熱者：可加桑葉、首烏、烏梅等藥物，增強滋陰養血之功。",
@@ -16654,6 +16661,10 @@
         ],
         "course_level_en": [
           "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "modifications_en": [
+          "Claude 逐條忠實翻譯既有 modifications_zh（未新增主張，2026-08-11 F5 批次）",
+          "CloudTCM 方劑頁——原存於 actions_zh/pattern_indications_zh,2026-08-06 錯層搬移歸位(scripts/curate-misfile-move-batch5.js)"
         ]
       },
       "cloudtcm_id": 567,
@@ -17386,7 +17397,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Tangkuei and Six-Yellow Decoction",
@@ -17407,7 +17417,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/formulas/AD_Selected_Formulas_Name_Herbs_Actions.md#Dang-Gui-Liu-Huang-Tang（9 味，含 AD 原頁面自註：與教科書標準方不同，多牡蠣/浮小麥、少一味黃－此為 AD 原始頁面內容，非本次新增）",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -20006,7 +20016,13 @@
         "陽明腑實證（胃腸熱結）",
         "溫病氣分腸道燥熱證"
       ],
-      "modifications_en": [],
+      "modifications_en": [
+        "Gui Zhi (Cinnamon Twig, add per pattern): acrid, disperses accumulated Blood in the Lower Jiao; combined with Tao Ren it strengthens the effect of invigorating Blood and resolving stasis.",
+        "Tao Ren (Peach Kernel, add per pattern): sweet, relieves acute binding/tension in the lower abdomen; combined with Gui Zhi it strengthens the effect of invigorating Blood and resolving stasis.",
+        "Huang Lian (Coptis Rhizome, add per pattern): clears Heat, dries Dampness, drains Fire and relieves toxicity.",
+        "Xi Jiao (Rhinoceros Horn, add per pattern — a historical classical ingredient; modern practice substitutes Shui Niu Jiao/Water Buffalo Horn): clears Heat, cools the Blood, relieves toxicity and settles fright.",
+        "Note: the dosages above reflect classical usage; modern application must be adjusted to the patient's specific condition. Gui Zhi and Tao Ren are added to treat intense Heat forcing the Blood; Huang Lian and Xi Jiao are added to course the Triple Burner and thoroughly clear the underlying Heat."
+      ],
       "modifications_zh": [
         "桂枝(按病情加減)：辛散下焦蓄血，與桃仁合用可以加強活血化瘀之效。",
         "桃仁(按病情加減)：甘緩解小腹急結，與桂枝合用可以加強活血化瘀之效。",
@@ -20270,6 +20286,10 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md（22 區塊方劑卡）"
+        ],
+        "modifications_en": [
+          "Claude 逐條忠實翻譯既有 modifications_zh（未新增主張，2026-08-11 F5 批次）",
+          "CloudTCM 方劑頁——原存於 actions_zh/pattern_indications_zh,2026-08-06 錯層搬移歸位(scripts/curate-misfile-move-batch2.js)"
         ]
       },
       "cloudtcm_id": 277,
@@ -20926,7 +20946,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Rhubarb and Moutan Decoction",
@@ -20944,7 +20963,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/formulas/AD_Selected_Formulas_Name_Herbs_Actions.md#Da-Huang-Mu-Dan-Tang（5 味核對一致）",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -24123,21 +24142,162 @@
       "pattern_indications_zh": [
         "太陽少陽合病：微惡寒、發熱、肢體酸痛、心下支結、嘔吐、苔薄白、脈弦或浮大。"
       ],
-      "pattern_indications_en": [],
+      "pattern_indications_en": [
+        "Combined Tai Yang–Shao Yang disease: slight aversion to cold, fever, generalized body aches, focal distention/discomfort below the Heart, vomiting, thin white tongue coating, wiry or floating-large pulse."
+      ],
       "composition": [
         {
+          "herb_id": "herb.chai_hu",
           "herb_zh": "柴胡",
+          "name_zh": "柴胡",
+          "herb_en": "Bupleurum Root",
+          "name_en": "Bupleurum Root",
+          "pinyin": "Chai Hu",
           "role_zh": "君",
-          "classical_amount_text": "原典份量",
+          "role_en": "Chief",
+          "decoction_reference_g": "12-24g",
+          "in_formula_zh": "透解少陽之邪，疏泄氣機之鬱滯，為和解少陽之君藥。",
+          "actions_zh": "和解少陽退熱，疏肝解鬱，升舉陽氣。",
+          "in_formula_en": "Chief: vents Shaoyang and moves constrained Qi (from the Xiao Chai Hu Tang base).",
+          "actions_en": "Harmonizes Shaoyang, resolves fever, courses the Liver and raises clear Yang.",
+          "role_reason_zh": "君藥，本方為小柴胡湯與桂枝湯合方，柴胡仍為君藥。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.gui_zhi",
+          "herb_zh": "桂枝",
+          "name_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
+          "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "decoction_reference_g": "3-10g（外感）/9-15g（痹痛）— 藥材通用範圍，課件未列本方專屬劑量",
+          "in_formula_zh": "本方加桂枝湯之君藥而成，解肌發表，兼顧太陽表證未罷。",
+          "actions_zh": "解肌發表，調和營衛，溫通經脈，助陽化氣。",
+          "in_formula_en": "Deputy (added — Gui Zhi Tang's chief herb): releases the muscle layer for the unresolved exterior aspect.",
+          "actions_en": "Releases the muscle layer, harmonizes Ying/Wei and warms the channels.",
+          "role_reason_zh": "本方在小柴胡湯基礎上加桂枝湯君臣藥對（桂枝、芍藥），課件列為「Add chief pair of Gui Zhi Tang」。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.huang_qin",
+          "herb_zh": "黃芩",
+          "name_zh": "黃芩",
+          "herb_en": "Scutellaria Root",
+          "name_en": "Scutellaria Root",
+          "pinyin": "Huang Qin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "健脾和中，調和諸藥。",
-          "in_formula_zh": "健脾和中，調和諸藥。",
-          "actions_zh": "健脾和中，調和諸藥。",
-          "in_formula_en": "Harmonize Shaoyang and Reduce Fever; Course Liver Qi and Relieve Constraint; Raise Clear Yang Qi; Disperse Wind-Heat and Resolve Phlegm",
-          "actions_en": "Harmonize Shaoyang and Reduce Fever; Course Liver Qi and Relieve Constraint; Raise Clear Yang Qi; Disperse Wind-Heat and Resolve Phlegm",
-          "herb_id": "herb.chai_hu"
+          "in_formula_zh": "清泄少陽之熱，與柴胡相配為和解少陽之主要藥對。",
+          "actions_zh": "清熱燥濕，瀉火解毒。",
+          "in_formula_en": "Deputy: clears Shaoyang Heat, paired with Chai Hu (from the Xiao Chai Hu Tang base).",
+          "actions_en": "Clears Heat, dries Dampness and drains Fire.",
+          "role_reason_zh": "臣藥，來自小柴胡湯（課件 Table92）。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.bai_shao",
+          "herb_zh": "芍藥（白芍）",
+          "name_zh": "芍藥（白芍）",
+          "herb_en": "White Peony Root",
+          "name_en": "White Peony Root",
+          "pinyin": "Bai Shao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "decoction_reference_g": "5-30g — 藥材通用範圍，課件未列本方專屬劑量",
+          "in_formula_zh": "本方加桂枝湯之臣藥而成，與桂枝相配調和營衛，緩急止痛。",
+          "actions_zh": "養血調經，斂陰止汗，柔肝止痛，平抑肝陽。",
+          "in_formula_en": "Deputy (added — Gui Zhi Tang's deputy herb): harmonizes Ying/Wei with Gui Zhi and relieves spasm/pain.",
+          "actions_en": "Nourishes Blood, harmonizes Ying/Wei and relieves spasmodic pain.",
+          "role_reason_zh": "與桂枝同為加入的桂枝湯藥對。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.ban_xia",
+          "herb_zh": "半夏",
+          "name_zh": "半夏",
+          "herb_en": "Pinellia Rhizome",
+          "name_en": "Pinellia Rhizome",
+          "pinyin": "Ban Xia",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "9g（炮製品）",
+          "in_formula_zh": "和胃降逆，化痰散結，為小柴胡湯原有佐藥。",
+          "actions_zh": "燥濕化痰，降逆和胃止嘔，消痞散結。",
+          "in_formula_en": "Assistant: harmonizes the Stomach and transforms Phlegm (from the Xiao Chai Hu Tang base).",
+          "actions_en": "Dries Dampness, transforms Phlegm and directs Qi downward.",
+          "role_reason_zh": "佐藥，來自小柴胡湯。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.ren_shen",
+          "herb_zh": "人參",
+          "name_zh": "人參",
+          "herb_en": "Ginseng Root",
+          "name_en": "Ginseng Root",
+          "pinyin": "Ren Shen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "9g（另煎兌服）",
+          "in_formula_zh": "扶正補中，防邪深入，為小柴胡湯原有佐藥。",
+          "actions_zh": "大補元氣，補脾益肺，生津止渴。",
+          "in_formula_en": "Assistant: supports and protects Middle Qi (from the Xiao Chai Hu Tang base).",
+          "actions_en": "Strongly tonifies Qi and supports Spleen/Lung/Heart.",
+          "role_reason_zh": "佐藥，來自小柴胡湯。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.sheng_jiang",
+          "herb_zh": "生薑",
+          "name_zh": "生薑",
+          "herb_en": "Fresh Ginger Root",
+          "name_en": "Fresh Ginger Root",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "1-10g",
+          "in_formula_zh": "溫胃止嘔，助半夏和胃，兼助桂枝解表。",
+          "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
+          "in_formula_en": "Assistant: warms the Stomach and stops nausea, works with Ban Xia; also assists Gui Zhi in releasing the exterior.",
+          "actions_en": "Disperses exterior Cold, warms the Middle and stops vomiting.",
+          "role_reason_zh": "佐藥，來自小柴胡湯，兼助桂枝湯解表。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "herb_zh": "大棗",
+          "name_zh": "大棗",
+          "herb_en": "Jujube",
+          "name_en": "Jujube",
+          "pinyin": "Da Zao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "10-30g（約4枚）",
+          "in_formula_zh": "扶助脾胃，調和營衛。",
+          "actions_zh": "補中益氣，養血安神，緩和藥性。",
+          "in_formula_en": "Assistant: supports Qi and harmonizes the other herbs.",
+          "actions_en": "Tonifies Spleen/Stomach Qi and calms the Spirit.",
+          "role_reason_zh": "佐藥，來自小柴胡湯，兼助桂枝湯調和營衛。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "herb_zh": "炙甘草",
+          "name_zh": "炙甘草",
+          "herb_en": "Honey-fried Licorice Root",
+          "name_en": "Honey-fried Licorice Root",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "decoction_reference_g": "3-9g",
+          "in_formula_zh": "益氣和中，調和諸藥。",
+          "actions_zh": "補脾和胃，益氣復脈。",
+          "in_formula_en": "Envoy: supports Qi and harmonizes the formula (from the Xiao Chai Hu Tang base).",
+          "actions_en": "Tonifies the Middle and harmonizes all the other herbs.",
+          "role_reason_zh": "使藥，來自小柴胡湯（課件標為使藥）。",
+          "is_alternate": false
         }
       ],
       "clinical_use_note": "【柴胡桂枝湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -24155,7 +24315,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Bupleurum and Cinnamon Twig Decoction",
@@ -24178,6 +24337,10 @@
         ],
         "actions_zh": [
           "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+        ],
+        "composition": "curriculum/herbs/方剂学汇总_extracted.md#Table92,94（小柴胡湯君臣佐使表 + 柴胡桂枝湯「加桂枝、芍藥」衍生方說明）；桂枝、芍藥劑量取藥材通用範圍（無獨立課件劑量表，見 field 內註記），非本方專屬古方劑量",
+        "pattern_indications_en": [
+          "Claude 逐條忠實翻譯既有 pattern_indications_zh（未新增主張，2026-08-11 F5 批次）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/170",
@@ -28899,7 +29062,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Aconite Accessory Root Pill to Regulate the Middle",
@@ -28917,7 +29079,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/herbs/方剂学汇总_extracted.md（附子理中丸 = 理中丸 + 附子，課件加減說明），5 味核對一致",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -30310,7 +30472,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Astragalus Decoction to Construct the Middle",
@@ -30328,7 +30489,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/herbs/方剂学汇总_extracted.md（黃耆建中湯 = 小建中湯 + 黃耆9g，課件加減說明），7 味核對一致",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -39739,7 +39900,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -39756,7 +39916,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/formulas/AD_Selected_Formulas_Name_Herbs_Actions.md#Ren-Shen-Yang-Rong-Tang（16 味核對一致）",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -56596,7 +56756,10 @@
       "pattern_indications_zh": [
         "肝血不足、陰虛內熱虛煩失眠證"
       ],
-      "modifications_en": [],
+      "modifications_en": [
+        "Modifications: for vexation and insomnia due to Liver Blood deficiency with pronounced Yin-deficiency internal Heat, combine with Er Zhi Wan or add Sheng Di Huang (Fresh Rehmannia Root), Xuan Shen (Scrophularia Root) and Bai Shao (White Peony Root) to nourish Blood, enrich Yin and clear Heat. If night sweating is marked, add Wu Wei Zi (Schisandra Fruit), Bai Shao and Fu Xiao Mai (Floating Wheat) to calm the Spirit and astringe sweating.",
+        "For more pronounced palpitations, add Long Chi (Fossilized Teeth), Gui Ban (Tortoise Shell) and Zhen Zhu Mu (Mother-of-Pearl) to settle fright and calm the Spirit. For palpitations with dream-disturbed sleep, occasional startled waking, pale tongue and thin wiry pulse due to Heart-Gallbladder Qi deficiency, add Dang Shen (Codonopsis Root) and Long Chi to tonify Qi and settle fright. For depression with marked vexation and insomnia, combine with Gan Mai Da Zao Tang and add Ye Jiao Teng (Polygonum Multiflorum Stem) and He Huan Pi (Albizzia Bark) to soothe the Liver, calm the Spirit and relieve constraint; adding He Huan Hua (Albizzia Flower), Ye Jiao Teng, Shi Chang Pu (Acorus Rhizome) and Yu Jin (Curcuma Tuber) further improves the effect of relieving constraint and calming the Spirit."
+      ],
       "modifications_zh": [
         "加減法：若心煩不眠，屬肝血不足，陰虛內熱較甚者，合二至丸或加生地黃、玄參、白芍等，以養血滋陰清熱。兼見盜汗甚者，加五味子、白芍、浮小麥以安神斂汗。",
         "心悸較重者，加龍齒、龜甲、珍珠母等以鎮驚安神。心悸多夢，時有驚醒，舌淡，脈細弦，屬心膽氣虛者，可加黨參、龍齒以益氣鎮驚。如精神抑鬱，心煩不眠較甚者，可合甘麥大棗湯加夜交藤、合歡皮以緩肝安神解鬱，或加入合歡花、夜交藤、石菖蒲、鬱金等解鬱安神之品，療效更好。"
@@ -56839,6 +57002,10 @@
         ],
         "course_level_en": [
           "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+        ],
+        "modifications_en": [
+          "Claude 逐條忠實翻譯既有 modifications_zh（未新增主張，2026-08-11 F5 批次）",
+          "CloudTCM 方劑頁——原存於 actions_zh/pattern_indications_zh,2026-08-06 錯層搬移歸位(scripts/curate-misfile-move-batch3.js)"
         ]
       },
       "cloudtcm_id": 270,
@@ -59631,18 +59798,72 @@
       ],
       "composition": [
         {
+          "herb_id": "herb.gua_lou",
           "herb_zh": "瓜蔞",
+          "name_zh": "瓜蔞",
+          "herb_en": "Trichosanthes Fruit",
+          "name_en": "Trichosanthes Fruit",
+          "pinyin": "Gua Lou",
           "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "補益氣血，調和諸藥。",
-          "in_formula_zh": "補益氣血，調和諸藥。",
-          "actions_zh": "補益氣血，調和諸藥。",
-          "in_formula_en": "Tonifies Qi and harmonizes ingredients.",
-          "actions_en": "Tonifies Qi and harmonizes ingredients.",
-          "herb_id": "herb.gua_lou"
+          "role_en": "Chief",
+          "decoction_reference_g": "9-15g",
+          "in_formula_zh": "祛痰寬胸，開胸散結，滌痰下氣，為治胸痹要藥。",
+          "actions_zh": "清化熱痰，止咳化痰，清熱瀉火，潤肺，散結。",
+          "in_formula_en": "Chief: expels Phlegm, opens the chest and dissipates clumping (aromatic, sweet, cold).",
+          "actions_en": "Transforms Phlegm-Heat, stops cough, clears Heat, moistens the Lung and dissipates masses.",
+          "role_reason_zh": "君藥，主治胸痹（痰濁閉阻胸陽）。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.xie_bai",
+          "herb_zh": "薤白",
+          "name_zh": "薤白",
+          "herb_en": "Chinese Chive Bulb",
+          "name_en": "Chinese Chive Bulb",
+          "pinyin": "Xie Bai",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "decoction_reference_g": "5-10g",
+          "in_formula_zh": "溫通胸陽，行氣散結，助瓜蔞開胸散結、通陽止痛。",
+          "actions_zh": "溫通陽氣，行氣，散結止痛。",
+          "in_formula_en": "Deputy: warms Yang, moves Qi and disperses clumping (warm, aromatic).",
+          "actions_en": "Warms Yang, moves Qi, disperses clumps and relieves pain.",
+          "role_reason_zh": "臣藥，溫通胸陽以助君藥。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.ban_xia",
+          "herb_zh": "半夏",
+          "name_zh": "半夏",
+          "herb_en": "Pinellia Rhizome",
+          "name_en": "Pinellia Rhizome",
+          "pinyin": "Ban Xia",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "3-15g（僅限炮製品內服）",
+          "in_formula_zh": "本方在瓜蔞薤白白酒湯基礎上加半夏而成，加強燥濕化痰、降逆和胃之力，主治痰濁較重、胸痹疼痛較甚者。",
+          "actions_zh": "燥濕化痰，降逆和胃止嘔，消痞散結。",
+          "in_formula_en": "Assistant (added to the base Gua Lou Xie Bai Bai Jiu Tang): dries Dampness and transforms Phlegm, directs rebellious Qi downward — for more severe Phlegm obstruction with chest pain.",
+          "actions_en": "Dries Dampness, transforms Phlegm, directs rebellious Qi downward and dissolves masses.",
+          "role_reason_zh": "佐藥，此方較瓜蔞薤白白酒湯多此一味，是兩方鑑別的關鍵。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.bai_jiu",
+          "herb_zh": "白酒",
+          "name_zh": "白酒",
+          "herb_en": "White Wine (clear grain spirit, used as decoction vehicle)",
+          "name_en": "White Wine (clear grain spirit, used as decoction vehicle)",
+          "pinyin": "Bai Jiu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "作煎煮介質，非固定劑量；同源基礎方（瓜蔞薤白白酒湯）課件載 30–1,400ml，不能飲酒者可減量或省略",
+          "in_formula_zh": "行氣活血，溫通陽氣，助藥力布散；不勝酒者可酌減或省略。",
+          "actions_zh": "行氣活血、溫通陽氣，作藥引助藥力布散。",
+          "in_formula_en": "Assistant: used as the decoction vehicle to move Qi/Blood and warm Yang; may be reduced or omitted if wine is contraindicated.",
+          "actions_en": "Moves Qi and Blood, warms Yang; used as a decoction vehicle.",
+          "role_reason_zh": "佐藥，與水同煎作為煎煮介質。",
+          "is_alternate": false
         }
       ],
       "clinical_use_note": "【瓜蔞薤白半夏湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -59660,7 +59881,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -59682,7 +59902,8 @@
         ],
         "pattern_indications_zh": [
           "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
-        ]
+        ],
+        "composition": "curriculum/herbs/方剂学汇总_extracted.md#Table413-416（瓜蔞薤白白酒湯基礎方 Table414 + 「加半夏」衍生方說明 Table416）；白酒劑量另見同一課件之瓜蔞薤白白酒湯記載"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/357",
       "cloudtcm_id": 357,
@@ -61135,18 +61356,106 @@
       ],
       "composition": [
         {
-          "herb_zh": "橘皮",
+          "herb_id": "herb.chen_pi",
+          "herb_zh": "橘皮（陳皮）",
+          "name_zh": "橘皮（陳皮）",
+          "herb_en": "Aged Tangerine Peel",
+          "name_en": "Aged Tangerine Peel",
+          "pinyin": "Ju Pi (Chen Pi)",
           "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "健脾和中，調和諸藥。",
-          "in_formula_zh": "健脾和中，調和諸藥。",
-          "actions_zh": "健脾和中，調和諸藥。",
-          "in_formula_en": "Assists formula in releasing exterior and harmonizing Middle Jiao.",
-          "actions_en": "Assists formula in releasing exterior and harmonizing Middle Jiao.",
-          "herb_id": "herb.chen_pi"
+          "role_en": "Chief",
+          "decoction_reference_g": "3-10g",
+          "in_formula_zh": "理氣和胃，降逆止嘔，與竹茹相配一溫一涼，共為君藥。",
+          "actions_zh": "理氣健脾，燥濕化痰，降氣止嘔。",
+          "in_formula_en": "Chief (paired with Zhu Ru): regulates Qi, harmonizes the Stomach and stops hiccough/nausea — warm, paired against Zhu Ru's cold.",
+          "actions_en": "Regulates Qi, strengthens the Spleen, dries Dampness and directs Qi downward.",
+          "role_reason_zh": "君藥之一，與竹茹相配，溫涼並用直達病所。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.zhu_ru",
+          "herb_zh": "竹茹",
+          "name_zh": "竹茹",
+          "herb_en": "Bamboo Shavings",
+          "name_en": "Bamboo Shavings",
+          "pinyin": "Zhu Ru",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "decoction_reference_g": "6-10g",
+          "in_formula_zh": "清胃降逆，止嘔止呃，清熱化痰，與橘皮共為君藥。",
+          "actions_zh": "清化熱痰，清胃熱，止嘔。",
+          "in_formula_en": "Chief (paired with Chen Pi): clears Stomach Heat, calms Stomach Qi and stops hiccough/nausea/vomiting.",
+          "actions_en": "Clears Phlegm-Heat, clears Stomach Heat and stops vomiting.",
+          "role_reason_zh": "君藥之一，清胃熱以降逆。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.ren_shen",
+          "herb_zh": "人參",
+          "name_zh": "人參",
+          "herb_en": "Ginseng Root",
+          "name_en": "Ginseng Root",
+          "pinyin": "Ren Shen",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "decoction_reference_g": "3-9g（另煎兌服）",
+          "in_formula_zh": "補益中氣，生津，扶正以助祛邪。",
+          "actions_zh": "大補元氣，補脾益肺，生津止渴。",
+          "in_formula_en": "Deputy: tonifies Middle Qi and generates fluids.",
+          "actions_en": "Strongly tonifies Qi and supports Spleen/Lung/Heart.",
+          "role_reason_zh": "臣藥，益氣扶正治其本虛（胃虛有熱）。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.sheng_jiang",
+          "herb_zh": "生薑",
+          "name_zh": "生薑",
+          "herb_en": "Fresh Ginger Root",
+          "name_en": "Fresh Ginger Root",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "decoction_reference_g": "1-10g",
+          "in_formula_zh": "溫胃止嘔，與竹茹寒溫並用，助降逆止嘔。",
+          "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
+          "in_formula_en": "Deputy: warms and harmonizes the Stomach, stops nausea/vomiting.",
+          "actions_en": "Warms the Middle, stops vomiting and disperses Cold.",
+          "role_reason_zh": "臣藥，溫中止嘔，制約竹茹之寒。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "herb_zh": "大棗",
+          "name_zh": "大棗",
+          "herb_en": "Jujube",
+          "name_en": "Jujube",
+          "pinyin": "Da Zao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "10-30g（約3-12枚）",
+          "in_formula_zh": "補益脾胃，助人參扶正。",
+          "actions_zh": "補中益氣，養血安神，緩和藥性。",
+          "in_formula_en": "Assistant: tonifies and harmonizes the Middle Jiao.",
+          "actions_en": "Tonifies Spleen/Stomach Qi and calms the Spirit.",
+          "role_reason_zh": "佐藥，助人參補益脾胃。",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.gan_cao",
+          "herb_zh": "甘草",
+          "name_zh": "甘草",
+          "herb_en": "Licorice Root",
+          "name_en": "Licorice Root",
+          "pinyin": "Gan Cao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "decoction_reference_g": "2-10g",
+          "in_formula_zh": "補益脾胃，調和諸藥。",
+          "actions_zh": "補脾益氣，清熱解毒，祛痰止咳。",
+          "in_formula_en": "Assistant: tonifies the Middle and harmonizes the formula.",
+          "actions_en": "Tonifies Spleen Qi and harmonizes the other herbs.",
+          "role_reason_zh": "佐藥，調和諸藥。",
+          "is_alternate": false
         }
       ],
       "clinical_use_note": "【橘皮竹茹湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -61164,7 +61473,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Tangerine Peel and Bamboo Shavings Decoction",
@@ -61190,7 +61498,8 @@
         ],
         "pattern_indications_zh": [
           "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
-        ]
+        ],
+        "composition": "curriculum/herbs/方剂学汇总_extracted.md#Table440-441（橘皮竹茹湯 君臣佐使表）"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/283",
       "cloudtcm_id": 283,
@@ -65059,7 +65368,11 @@
       ],
       "modifications_en": [],
       "modifications_zh": [],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "This formula invigorates the Blood, resolves stasis and reduces masses; use with caution for vaginal bleeding during a normal pregnancy — pregnant and postpartum patients require extra caution. Use only in patients with confirmed Blood stasis.",
+        "For a woman with a pre-existing abdominal mass who later becomes pregnant, this formula may be used beneficially, but dosing should start small and be increased gradually, so as to reduce the mass without harming the fetus.",
+        "Although classical precedent permits use in pregnancy when there is a genuine indication ('having a reason, therefore no harm'), the formula should still be stopped once the condition resolves and not overused. If vaginal bleeding increases, or lower-back soreness and abdominal pain become more severe, this formula is not appropriate and the case should be re-differentiated and treated accordingly."
+      ],
       "contraindications_zh": [
         "本方爲活血化淤消癥之方，如正常妊娠下血者則當慎之，孕婦及產後必須格外小心。僅用於有血瘀者。",
         "如婦人宿有癥病又懷孕者，用本方爲良益之法，但用法應從小晝開始，不知漸加，使之下癥而不傷胎。",
@@ -65180,6 +65493,9 @@
         ],
         "pattern_indications_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+        ],
+        "contraindications_en": [
+          "Claude 逐條忠實翻譯既有 contraindications_zh（未新增主張，2026-08-11 F5 批次）"
         ]
       },
       "cloudtcm_id": 189,
@@ -75392,7 +75708,10 @@
       ],
       "modifications_en": [],
       "modifications_zh": [],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Wen Dan Tang regulates Qi, transforms Phlegm, clears the Gallbladder and harmonizes the Stomach, but is not intended for long-term use. While taking this formula, eat a bland diet and avoid spicy, greasy, raw or cold foods.",
+        "Not appropriate for dizziness, insomnia or palpitations due to Yin deficiency with Blood deficiency."
+      ],
       "contraindications_zh": [
         "溫膽湯具有理氣化痰、清膽和胃的功效，但不宜長期服用。服用本方期間，應注意飲食清淡，避免辛辣刺激、油膩生冷的食物。",
         "對陰虛血少之眩暈、失眠、心悸等不適用"
@@ -75641,6 +75960,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_en": [
+          "Claude 逐條忠實翻譯既有 contraindications_zh（未新增主張，2026-08-11 F5 批次）"
         ]
       },
       "cloudtcm_id": 250,
@@ -82683,7 +83005,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Glehnia and Ophiopogonis Decoction",
@@ -82701,7 +83022,7 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": "curriculum/formulas/AD_Selected_Formulas_Name_Herbs_Actions.md#Sha-Shen-Mai-Men-Dong-Tang（7 味核對一致）",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -93276,7 +93597,9 @@
         "風寒化熱證",
         "溫病氣分肺熱證"
       ],
-      "modifications_en": [],
+      "modifications_en": [
+        "Modifications: for severe Lung Heat with high fever and sweating, increase the dose of Shi Gao (Gypsum) and consider adding Sang Bai Pi (Mulberry Root Bark), Huang Qin (Scutellaria Root) and Zhi Mu (Anemarrhena Rhizome) to clear and drain Lung Heat. For a predominant exterior pathogen with no sweating and aversion to cold, reduce the dose of Shi Gao and consider adding Bo He (Mint), Su Ye (Perilla Leaf) or Sang Ye (Mulberry Leaf) to assist in releasing the exterior and diffusing Lung Qi. For copious phlegm with rapid breathing, add Ting Li Zi (Lepidium Seed) and Pi Pa Ye (Loquat Leaf) to direct Qi downward and transform Phlegm. For thick yellow phlegm with chest oppression, add Gua Lou (Trichosanthes Fruit), Bei Mu (Fritillaria Bulb), Huang Qin and Jie Geng (Platycodon Root) to clear Heat, transform Phlegm and open the chest."
+      ],
       "modifications_zh": [
         "加減法：如果肺熱嚴重，壯熱汗出者，宜加重石膏用量，並酌加桑白皮、黃芩、知母以清泄肺熱；表邪偏重，無汗而惡寒，石膏用量宜減輕，酌加薄荷、蘇葉、桑葉等以助解表宣肺之力；痰多氣急，可加葶藶子、枇杷葉以降氣化痰；痰黃稠而胸悶者，宜加瓜蔞、貝母、黃芩、桔梗以清熱化痰，寬胸利膈。"
       ],
@@ -93540,6 +93863,10 @@
         ],
         "course_level_en": [
           "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md（22 區塊方劑卡）"
+        ],
+        "modifications_en": [
+          "Claude 逐條忠實翻譯既有 modifications_zh（未新增主張，2026-08-11 F5 批次）",
+          "CloudTCM 方劑頁——原存於 actions_zh/pattern_indications_zh,2026-08-06 錯層搬移歸位(scripts/curate-misfile-move-batch3.js)"
         ]
       },
       "cloudtcm_id": 224,
@@ -97574,7 +97901,9 @@
       "pattern_indications_zh": [
         "陽鬱厥逆、肝脾不和脘腹疼痛證"
       ],
-      "modifications_en": [],
+      "modifications_en": [
+        "Related modifications: for cough, add Wu Wei Zi (Schisandra Fruit) and Gan Jiang (Dried Ginger) to warm the Lung, disperse Cold and stop cough. For palpitations, add Gui Zhi (Cinnamon Twig) to warm Heart Yang. For difficult urination, add Fu Ling (Poria) to promote urination. For abdominal pain, add prepared Fu Zi (Aconite Root) to disperse interior Cold. For diarrhea, add Xie Bai (Chinese Chive Bulb) to unblock Yang and disperse clumping. For pronounced Qi constraint, add Xiang Fu (Cyperus Rhizome) and Yu Jin (Curcuma Tuber) to regulate Qi and relieve constraint. For Heat, add Zhi Zi (Gardenia Fruit) and Chuan Lian Zi (Toosendan Fruit) to clear internal Heat."
+      ],
       "modifications_zh": [
         "相關加減法：若咳者，加五味子、乾薑以溫肺散寒止咳。悸者，加桂枝以溫心陽。小便不利者，加茯苓以利小便。腹中痛者，加炮附子以散裡寒。腹瀉者，加薤白以通陽散結。氣鬱甚者，加香附、鬱金以理氣解鬱。有熱者，加梔子、川楝子於以清內熱。"
       ],
@@ -97872,6 +98201,10 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+        ],
+        "modifications_en": [
+          "Claude 逐條忠實翻譯既有 modifications_zh（未新增主張，2026-08-11 F5 批次）",
+          "CloudTCM 方劑頁——原存於 actions_zh/pattern_indications_zh,2026-08-06 錯層搬移歸位(scripts/curate-misfile-move-batch5.js)"
         ]
       },
       "cloudtcm_id": 78,
