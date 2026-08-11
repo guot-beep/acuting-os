@@ -7244,3 +7244,12 @@ html { scroll-padding-top: 92px; }
 .k-red-flag-tier.is-tier-emergency { background: #fdecea; color: #b3261e; border-color: #f5c6c0; }
 .k-red-flag-tier.is-tier-urgent { background: #fff3e0; color: #a15c00; border-color: #f2ddb8; }
 .k-red-flag-tier.is-tier-routine { background: #eef2ee; color: #4a5f52; border-color: #d8e0d8; }
+
+/* P0.5 Visit Brief — 開診第一眼(OPTIMIZATION_PLAN P1 鏈桌面先行) */
+.visit-brief { border: 1px solid var(--line, #2a3242); border-radius: 10px; padding: 10px 12px; margin: 10px 0; background: rgba(80,140,255,.06); }
+.brief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px 14px; margin-top: 6px; }
+.brief-row small { display: block; opacity: .7; }
+.brief-row.brief-good span { color: #4ade80; }
+.brief-row.brief-bad span { color: #f87171; }
+.brief-changes { margin-top: 8px; } .brief-changes small { opacity: .7; margin-right: 6px; }
+.brief-review { margin-top: 8px; color: #fbbf24; font-weight: 600; }

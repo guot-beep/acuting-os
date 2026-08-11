@@ -3369,3 +3369,10 @@ Current repo state as of this log:
 - Ting 指正:下單前未盤點既有資產。實查結果:CR-011 全重複(pack 02 即 tdis 完整度審查+75 條)、CR-010 半重複(pack 01+71 已有 93 條 masterlist 與 board 殘缺 189 行)、CR-012 大半重複(Pattern Batch02-10 zip 內 Batch04/07/08 已含婦科/衝任/奇經/辨證系統研究)。已向 SOL 三度修正:CR-011 取消、CR-010 縮為「補到 300 的 delta 清單」、CR-012 縮為「V2-D Final Canonical Decision Pack」。
 - 跨倉盤點另發現:pattern-v2-implementation 分支較主線 +44k 行(含 731 行完整版 validate-pharm-standard——主線現用的是舊小版,**待對帳採納**);antigravity worktree 有 curriculum/pharm/v7_extracted 未入庫。
 - 已請 SOL 出「最新版 manifest」→ 將建 docs/RESEARCH_ASSET_INDEX.md,之後任何下單先查索引(教訓已入長期記憶)。
+
+# 2026-08-11 Fable — P0.5 Visit Brief 上線 + 資產索引制度化 + SOL 交接包入庫
+
+- **Visit Brief(P0.5,優化主項)**:病例詳情頂部新面板——上次 vs 前次 metric 差值(direction_good 紅綠上色)、本次 ledger 事件(藥/補/暴露變化)、生活型態差值、⚠ REVIEW(未緩解 AE、certainty 晉升)。live 驗證:QA-G 病例 pain 6→4↓ 綠色渲染正確。純讀取衍生,零 schema 變更;P1 手機自填上線後自動更完整。
+- **SOL 交接包(91b3004)**:RESEARCH_ASSET_INDEX(權威/取代/已入庫三態)+ DO_NOT_USE 清單 + Pattern V2-D canonical decision slice(V2-D 連決定都有了——CR-012 歸零)+ 漏收的 CR-004~006(sym TCM 擴充、supp 交互矩陣、metric 別名去重表)。
+- **制度化**:下單前必查 INDEX + 五處盤點寫入 AI_COLLAB_PROTOCOL(Ting 裁定,三方適用)。
+- Fable 主項隊列(自選,狂做模式):P3-lite 月審腳本 → Timeline 泳道圖原型 → CARE readiness(61 項對映採 SOL 既有 spec)→ pharm validator 對帳。

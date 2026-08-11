@@ -33,6 +33,12 @@ RISKS / QUESTIONS · NEXT INTENDED TASK · ROUTING RECOMMENDATION
 
 ## 內容/研究請求
 
+**下單前置(2026-08-11 起,Ting 裁定,對 Fable/SOL/Codex 一體適用):先查**
+`docs/research_packs/RESEARCH_ASSET_INDEX_2026-08-11.md`(權威版本清單)與
+`DO_NOT_USE_SUPERSEDED_ASSETS.md`,再盤五處(本 repo 含 untracked、origin/main、
+pattern-v2-implementation、acuting-antigravity worktree、Downloads)。**只下 delta 單**,
+引用既有檔案路徑。SOL 產出新資產時同步更新 INDEX。
+
 缺醫學、中醫、藥理、補充劑、生活型態、來源等內容時,**不停下來等 Ting 轉信**,
 在 HANDOFF 加結構化請求:
 

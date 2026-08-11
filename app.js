@@ -6354,6 +6354,70 @@ function getFilteredClinicalCases() {
   });
 }
 
+// P0.5 Visit Brief(OPTIMIZATION_PLAN_2026-08 P1 鏈的桌面版,SOL 設計:
+// Pre-Visit Capture → Visit Brief → clinician confirms 的中段先行)。
+// 純讀取衍生 —— 上次 vs 前次的 metric 差、ledger 事件、AE、生活型態變化、
+// ⚠ REVIEW 旗標。零新欄位;手機自填(P1)上線後這面板自動變得更完整。
+function renderVisitBrief(item, notesDesc) {
+  if (!notesDesc.length) return "";
+  const L = notesDesc[0], P = notesDesc[1] || null;
+  const rows = [];
+  // 1. metric 差值(direction_good 上色)
+  const ids = [...new Set([...(L.outcomeMetrics || []), ...((P && P.outcomeMetrics) || [])].map((m) => m.metricId))];
+  for (const id of ids) {
+    const def = getOutcomeMetricDef(id);
+    const lv = (L.outcomeMetrics || []).find((m) => m.metricId === id)?.valueNumber;
+    const pv = P ? (P.outcomeMetrics || []).find((m) => m.metricId === id)?.valueNumber : undefined;
+    if (lv === undefined && pv === undefined) continue;
+    const label = def ? modeText(def.label_zh || def.name, def.label_en || def.name) : id;
+    let delta = "", cls = "";
+    if (lv !== undefined && pv !== undefined && lv !== pv) {
+      const arrow = lv > pv ? "↑" : "↓";
+      const good = def && def.direction_good === "decrease" ? lv < pv : def && def.direction_good === "increase" ? lv > pv : null;
+      cls = good === true ? "brief-good" : good === false ? "brief-bad" : "";
+      delta = `${pv} → ${lv} ${arrow}`;
+    } else {
+      delta = lv !== undefined ? `${pv !== undefined ? pv + " → " : ""}${lv}` : `${pv}(本次未測)`;
+    }
+    rows.push(`<div class="brief-row ${cls}"><small>${escapeHtml(label)}</small><span>${escapeHtml(delta)}</span></div>`);
+  }
+  // 2. 上次就診的 ledger 事件(用藥/補充劑/暴露變化)
+  const changes = [];
+  for (const [arr, kindZh] of [[item.agentExposures || [], ""], [item.environmentalExposures || [], "暴露 "]]) {
+    for (const row of arr) {
+      for (const ev of row.events || []) {
+        if (ev.visitId === L.id) {
+          const name = row.nameText || row.agentId || row.exposureId || "";
+          changes.push(`${kindZh}${name}:${ev.eventType}${ev.doseText ? " → " + ev.doseText : ""}${ev.certainty ? " → " + ev.certainty : ""}`);
+        }
+      }
+    }
+  }
+  // 3. 生活型態差值
+  for (const f of L.lifestyleFactors || []) {
+    const prev = P ? (P.lifestyleFactors || []).find((x) => x.factorId && x.factorId === f.factorId) : null;
+    if (prev && prev.valueNumber !== "" && f.valueNumber !== "" && prev.valueNumber !== f.valueNumber) {
+      changes.push(`${f.factorId.replace("life.", "")}:${prev.valueNumber} → ${f.valueNumber} ${f.unit || ""}`);
+    }
+  }
+  // 4. ⚠ REVIEW:未緩解 AE、certainty 晉升、壞方向大變化
+  const review = [];
+  for (const ae of L.adverseEvents || []) {
+    if (ae.resolutionStatus === "ongoing" || ae.resolutionStatus === "") review.push(`AE 未緩解:${ae.nameText || ae.eventId}`);
+  }
+  for (const row of item.environmentalExposures || []) {
+    for (const ev of row.events || []) if (ev.visitId === L.id && ev.eventType === "certainty_changed") review.push(`暴露確定度變更:${row.nameText || row.exposureId} → ${ev.certainty}`);
+  }
+  if (!rows.length && !changes.length && !review.length) return "";
+  return `
+    <div class="visit-brief">
+      <div class="timeline-head"><strong>Visit Brief · 上次以來</strong><small class="timeline-date">${escapeHtml(L.visitDate || "")}${P ? ` vs ${escapeHtml(P.visitDate || "")}` : "(首診)"}</small></div>
+      ${rows.length ? `<div class="brief-grid">${rows.join("")}</div>` : ""}
+      ${changes.length ? `<div class="brief-changes"><small>變化 Changes</small><span>${changes.map(escapeHtml).join(" · ")}</span></div>` : ""}
+      ${review.length ? `<div class="brief-review">⚠ ${review.map(escapeHtml).join(" · ")}</div>` : ""}
+    </div>`;
+}
+
 function renderClinicalCaseDetail(item) {
   if (!item) {
     caseDetail.innerHTML = `
@@ -6399,6 +6463,7 @@ function renderClinicalCaseDetail(item) {
       <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
+    ${renderVisitBrief(item, notes)}
     ${renderOutcomeTrackingPanel(item)}
     ${renderAgentExposuresPanel(item)}
     ${renderEnvironmentalExposuresPanel(item)}
