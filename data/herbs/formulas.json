@@ -106359,7 +106359,7 @@
     },
     {
       "id": "formula.du_qi_wan",
-      "name_zh": "都气",
+      "name_zh": "都氣丸",
       "name_en": "Capital Qi Pill",
       "pinyin": "Du Qi Wan",
       "board_name_en": "Capital Qi Pill",
@@ -106573,7 +106573,26 @@
         "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
         "Use caution in areas where diseases are predominantly caused by Dampness.",
         "禁用於 Yang Deficiency."
-      ]
+      ],
+      "symptoms_zh": [
+        "哮喘性咳嗽",
+        "喘鳴",
+        "無力",
+        "痰",
+        "氣短",
+        "腰膝痠痛",
+        "虛熱",
+        "口咽乾",
+        "盜汗",
+        "聲音嘶啞",
+        "咳嗽痰少或痰中帶血",
+        "咽痛",
+        "頭暈",
+        "耳鳴",
+        "遺精。"
+      ],
+      "clinical_manifestations_zh": "哮喘性咳嗽、喘鳴、無力、痰、氣短、腰膝痠痛、虛熱、口咽乾、盜汗、聲音嘶啞、咳嗽痰少或痰中帶血、咽痛、頭暈、耳鳴、遺精。",
+      "name_fix_note": "2026-08-11: simplified truncated 都气 -> 都氣丸"
     },
     {
       "id": "formula.er_xian_tang",
@@ -120392,13 +120411,13 @@
       ]
     },
     {
-      "id": "formula.du_qi_wan",
-      "name_zh": "都氣丸",
+      "id": "formula.du_qi_wan_import_stub",
+      "name_zh": "都氣丸(匯入重複殘根)",
       "name_en": "Du Qi Wan",
       "pinyin": "du qi wan",
       "category_id": "category.formulas",
       "category_en": "Formulas",
-      "review_status": "draft",
+      "review_status": "deprecated",
       "public_safe": true,
       "composition": [],
       "symptoms_zh": [
@@ -120541,16 +120560,16 @@
       "contraindications_zh": [
         "陽虛者禁用"
       ],
-      "id_fix_note": "2026-08-11: id was corrupt placeholder \"formula.\" from import; assigned proper id + traditional name + real pinyin (F2 fix). Content untouched."
+      "id_fix_note": "2026-08-11 F2 resolution: this was a duplicate import stub of formula.du_qi_wan (corrupt placeholder id). Content merged into canonical card where its fields were empty; stub deprecated, never deleted (D6)."
     },
     {
-      "id": "formula.fu_yuan_huo_xue_tang",
-      "name_zh": "復元活血湯",
+      "id": "formula.fu_yuan_huo_xue_tang_import_stub",
+      "name_zh": "復元活血湯(匯入重複殘根)",
       "name_en": "Fu Yuan Huo Xue Tang",
       "pinyin": "fu yuan huo xue tang",
       "category_id": "category.formulas",
       "category_en": "Formulas",
-      "review_status": "draft",
+      "review_status": "deprecated",
       "public_safe": true,
       "composition": [],
       "symptoms_zh": [
@@ -120723,7 +120742,7 @@
       "contraindications_zh": [
         "孕婦禁用"
       ],
-      "id_fix_note": "2026-08-11: id was corrupt placeholder \"formula.\" from import; assigned proper id + traditional name + real pinyin (F2 fix). Content untouched."
+      "id_fix_note": "2026-08-11 F2 resolution: this was a duplicate import stub of formula.fu_yuan_huo_xue_tang (corrupt placeholder id). Content merged into canonical card where its fields were empty; stub deprecated, never deleted (D6)."
     }
   ]
 }
