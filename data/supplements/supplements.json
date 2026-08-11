@@ -2190,6 +2190,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Caution with sedatives and in children without clinical guidance; product-content variability against label is a documented concern.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "May help some circadian-timing disorders and jet lag; evidence does not support treating all chronic insomnia as a simple melatonin deficiency.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2266,6 +2291,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "known_theoretical_clinical_concern",
+            "note_en": "NCCIH lists interaction with immunosuppressants; autoimmune disorders warrant clinical review before use."
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_clinical_concern",
+            "note_en": "Can interact with thyroid hormone medications; thyroid disorders warrant clinical review before use."
+          }
+        },
+        "focus_note_en": "Also interacts with sedatives, anticonvulsants and diabetes or blood-pressure medicines; rare liver injury reported; avoid in pregnancy and not advised while breastfeeding.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/ashwagandha"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Some preparations may help stress or insomnia, but studies are small and heterogeneous; benefits should not be generalized across products.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2329,6 +2379,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "possible_concern",
+            "staged_label": "theoretical_concern",
+            "note_en": "Theoretical interaction concern with immunosuppressants; not established in clinical data."
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Allergic reactions can occur and can be severe; possible liver-enzyme drug interactions are not fully resolved.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/echinacea"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "May slightly reduce the chance of catching a cold; evidence that it shortens an established cold is unclear.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2394,6 +2469,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_bleeding_concern",
+            "note_en": "Garlic supplements may increase bleeding risk; perioperative and anticoagulant or antiplatelet review is important."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "GI symptoms and odour are common; raw garlic applied to skin can cause burns.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/garlic"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "May modestly reduce LDL cholesterol, blood pressure, or glucose in some populations, but effects are small and product-dependent.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2465,6 +2565,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "major_known_interaction_warfarin",
+            "note_en": "Induction of drug-metabolizing pathways can reduce warfarin exposure and destabilize anticoagulant control."
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "major_known_interaction_cyclosporine",
+            "note_en": "Can substantially reduce cyclosporine exposure, with transplant-rejection risk."
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-priority interaction outlier: also lowers oral contraceptive, HIV and oncology drug exposure, and serotonergic combinations can cause serious serotonin-related toxicity. Warrants full medication reconciliation rather than a generic herb warning.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "May help some mild-to-moderate depressive symptoms, but interaction burden is unusually high and makes medication reconciliation essential.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2528,6 +2653,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "known_warfarin_case_signal",
+            "note_en": "Warfarin interaction with INR elevation has been reported at case level and should be reviewed."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Shellfish-allergy concern depends on product source and manufacturing rather than on the glucosamine molecule itself.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Substantial research exists, but guidelines disagree and results are inconsistent; product quality/formulation matters.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2581,6 +2731,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "possible_bleeding_or_warfarin_concern",
+            "note_en": "Potential anticoagulant interaction or bleeding concern warrants review, especially in combination products."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Evidence and guideline recommendations are inconsistent; retail products are not necessarily equivalent to pharmaceutical-grade preparations.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "May help pain/function in selected osteoarthritis studies, but results vary and expert guidelines disagree.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2641,6 +2816,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "NAC is also used as a medication in specific clinical settings; supplement and medical-use contexts should not be conflated, and interaction evidence is indication-specific.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Biochemical precursor to glutathione with established medical uses as a drug; supplement evidence for general wellness is much less definitive.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -2706,6 +2906,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Do not extrapolate intravenous or disease-specific research to routine oral supplement use; oral bioavailability varies by formulation.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Important endogenous antioxidant, but evidence that routine oral supplementation produces meaningful clinical outcomes remains formulation- and indication-dependent.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -2775,6 +3000,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "product_dependent_vitamin_k_caffeine_context",
+            "note_en": "Anticoagulant relevance is product-dependent, turning on vitamin K content and caffeine context rather than one class rule."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-dose green tea can reduce nadolol exposure and extract can alter atorvastatin exposure; rare liver injury is reported with concentrated extracts.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/green-tea"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "May modestly affect LDL cholesterol or body weight in some studies; evidence for cancer prevention is inconsistent.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2836,6 +3086,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Raw or unripe berries and some plant parts contain cyanogenic compounds; pregnancy and breastfeeding safety data are insufficient.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/elderberry"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Preliminary evidence suggests possible symptom relief in some upper respiratory infections, but evidence is limited and does not support broad antiviral claims.",
       "evidence_source": {
         "name": "NCCIH",
@@ -2910,6 +3185,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "possible_clotting_interaction",
+            "note_en": "May interfere with blood clotting; anticoagulant or antiplatelet review is warranted."
+          },
+          "immunosuppressant": {
+            "status": "possible_concern",
+            "staged_label": "autoimmune_immunologic_context_flag",
+            "note_en": "May worsen autoimmune disorders; a host-context flag rather than an established drug interaction."
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Insomnia is common and blood sugar may be affected; pregnancy safety is uncertain and some evidence raises concern.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Human evidence is mixed; possible small effects on fatigue or selected metabolic/sexual outcomes, but many trials are small and short.",
       "evidence_source": {
         "name": "NCCIH",
