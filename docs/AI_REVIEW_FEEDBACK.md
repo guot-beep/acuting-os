@@ -6,6 +6,56 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R4 獨立覆核 — endpoint `14d2a60`
+
+- **REVIEWED_SHA**: P3 writer/rehearsal `47478f8`，Batch 3 UI `324242a`，後續 referential fix `dbfd392` 與 export fix `924198e`；branch endpoint `14d2a607a638232103f2d1aa65c880eed008834c`。`924198e..14d2a60` 只新增 supplement data/build/log，未再改 P3／Batch3 實作。
+- **STATUS**: **PAUSE**。
+- **C2b final gate**: **NO-GO**。P3.1=`FAIL`、P3.2=`FAIL`、P3.3=`FAIL`、P3.4=`PASS`；未達「全 PASS」，不發布真機 P4 migration 執行授權，不得對 Edge `file://` 正典做 shadow write、pointer switch 或 case→patient execute。
+- **資料邊界**: 正典與 QA backup 僅做檔案 hash／聚合 counts 只讀對帳；未把 2-case／33-case raw 副本送入 rehearsal，因既定硬邊界是測試一律假資料，不能以 Fable「它們都是 QA」的自述取代授權。自製 fake fixture、VM fixture 與隔離 browser origin 均已清理；隔離 origin 實測回到 `0 cases`。
+
+### P3.1 shadow writer／journal／pointer gate — FAIL
+
+- 正向證據：raw hash mismatch 在任何 write 前拒絕；clean run 只碰 `acuting-clinical-v2-staging`，v1 write shim 為 `0`；竄改 staged case 後首次 `switchPointer()` 被拒且 pointer 不存在；`dbfd392` 另使 cross-wired patientId 反例被拒。
+- 反例：把 `staging.journal.counts.cases` 從 plan 值改成 `999`，`verifyStaging()` 仍回 `ok:true`。目前只驗 journal `source_sha256`，沒有驗 `migration_version/source_bytes/counts/adjudicationsApplied` 與 plan／staging 實體一致；「全部驗證後才切 pointer」因此尚未成立。
+
+### P3.2 完整驗證／冪等／rollback cycle — FAIL
+
+- clean staging 驗證通過；同 source 未竄改重跑回 `creates/updates/deletes=0/0/0`。`dbfd392` 的 wrong-but-existing patient assignment 反例現已被 `cross-wired` 與反向 `caseIds set mismatch` 擋下。
+- 反例一：直接改寫 `patients[0].fields.occupation`，`verifyStaging()` 仍回綠；九個 Patient 欄位、conflicts、needsReview、adjudicationsApplied 尚未對 dry-run plan 做 exact parity。
+- 反例二：在 journal 已竄改但 source hash/version 未變時再呼叫 `executeMigration()`，仍回 `idempotent_noop:true` 與 `0/0/0`。noop 目前不要求 staging 先通過完整 verify，會把壞 staging 靜默當作冪等成功。
+- 官方 `scripts/rehearse-c2b.js` 對自製 2-patient fake fixture 為現行 `12/12 PASS`，但它沒有上述 patient-field、journal-count、tampered-noop 反例；腳本總綠燈不能覆蓋這三個 false negative。
+
+### P3.3 post-migration export→wipe→import — FAIL
+
+- `924198e` 改善了 export 半邊：pointer=`v2` 時會輸出 staging envelope `{schema_version,journal,patients,cases}`，legacy v1 仍輸出 array。
+- import 半邊仍明確把 v2 envelope 降成 `imported.cases`，丟棄 `patients/journal`，再走既有 v1 merge/restore；因此不能在 wipe 後還原完整 v2 world，也沒有 patients+cases canonical hash、unknown-field loss=`0`、event exact/append 的檔案級 round-trip 證據。staging 不存在時 export 還會 fallback 成 `patients:[]`，未 fail closed。
+- `scripts/walkthrough-phase-e.js` 自報 `12/12` 且本審重跑 exit `0`，但其「export→wipe→import」只是記憶體內 `JSON.stringify(cases)`→`JSON.parse()`；沒有檔案、沒有 wipe、沒有 app import，也沒有 Patient layer，不能替代 P3.3。
+
+### P3.4 error／interruption ordering 與 rollback whitelist — PASS
+
+- 自建 fake backend 注入 staging write error：exception、pointer absent、v1 writes=`0`；注入 pointer write error：完整 staging 保留、active pointer absent、v1 writes=`0`。
+- 成功 switch 後 rollback 只移除 staging+pointer 兩 keys；off-list touches=`0`，v1 raw SHA 不變。此項是本審獨立注入結果，不借用 Fable rehearsal 自評。
+
+### Batch 3 environmental exposure UI — PASS
+
+- 新獨立 origin 起始 `0 cases`；UI 建立 1 個虛構 case 與 1 個虛構 environmental exposure，畫面顯示 suspected／ongoing 與 timeline=`1`；清理後重新載入為 `0 cases`。
+- 實作路徑檢查：create 路徑 `createExposure()` 呼叫 `1` 次，change 路徑 `applyExposureChange()` 呼叫 `1` 次，兩函式 direct `.events=`／`.events.push()`／`.events.splice()` 為 `0`。
+- 直接執行目前 `promptEnvironmentalExposureAction()` 的 VM harness：`certainty_changed`+空白 note 時 apply/persist/render=`0/0/0` 且 event 仍 `1`；合法 note 時 apply/persist/render=`1/1/1` 且 event `1→2`、snapshot 改為 confirmed。Batch 3 checks=`7/7`。
+
+### P0–P2 read-only reconciliation
+
+- 正典定案知悉：Edge `file://` backup `5,880 bytes`，raw SHA `54890af4…583acba`，`2 cases / 0 SOAP / 2 unique patient codes`；兩份 app export 各 `6,000 bytes` 且 SHA 同為 `f5c3e444…e7b9c0`。preflight 前後 raw unchanged 的 meta 為 true。
+- 33-case localhost QA archive 是另一檔：`123,007 bytes`，SHA `1c79c0af…d8046`，`33 cases / 52 SOAP / 33 patient codes`。兩 store 不得混作正典。
+- 正典 preflight：blank code、duplicate case id、`case_d17test` 均 `0`；unknown fields=`1`；agent/env exposure與 events、lifestyle、adverse、differential、selection、outcome 全為 `0`。
+- dry-run plans 兩檔各 `1,727 bytes`、file SHA 同為 `0f433355…bf2a89`，source hash/bytes 與 raw 相符；`2 cases / 0 SOAP / 2 patients / 2 assignments`，duplicate patient id、hash collision、orphan assignment、conflict、needsReview、adjudication、manual review 均 `0`；九欄 key set 只有 `1` 種。`preflight-c2b.js` 對 repo-contained `--out` 的自製 fake 測試 exit `1` 且未產生目錄。
+
+### 回到 P4 前必須補齊
+
+1. `verifyStaging()` 必須把 journal、Patient 九欄、conflicts／needsReview／adjudicationsApplied、Case↔Patient assignments 與 deterministic plan 做 exact verification；任何差異均拒絕 pointer。
+2. `executeMigration()` 的同-source noop 必須以完整 verify 為前提；壞 staging 只能 fail closed 或安全重建，不能回 `0/0/0` 綠燈。
+3. 提供真正的 v2 file export→wipe→import：還原 patients+cases+journal，不降級丟棄 Patient；以全假資料證明 canonical hash 相同、unknown loss=`0`、events exact/尾端 append。
+4. 把上述三個反例及 v2 file round-trip 納入 `rehearse-c2b.js`。重新交審後才可能發布 P4 final GO；即使後續 GO，真機當次仍須 Ting 在場、重新比對 Edge `file://` raw hash，任何差異立即回 P1。
+
 ## 2026-08-11 Codex C2b code-gate 覆核 — endpoint `cbeff22`
 
 - **REVIEWED_SHA**: `ee00856`（import pre-persist gate）+ `ef1b58b`（committed CI）+ `e5d6158^..cbeff22`；功能 endpoint `cbeff220a1db1045339b248019ff2bd23a00cddd`。

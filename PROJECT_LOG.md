@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R4 endpoint `14d2a60`，P3=`FAIL/FAIL/FAIL/PASS`
+
+- **Gate**：P3.1 journal verify=`FAIL`；P3.2 full verify/idempotent=`FAIL`；P3.3 v2 file round-trip=`FAIL`；P3.4 error ordering/rollback=`PASS`。C2b final=`NO-GO`，Edge `file://` 不得 shadow write／pointer switch／execute。
+- **反例**：journal counts tamper、Patient field rewrite、tampered-staging noop 共 `0/3` 被擋；`dbfd392` 的 cross-wired assignment 已擋 `1/1`。`924198e` export 已含 v2 envelope，但 import 仍丟 patients/journal；Phase E 所謂 round-trip 僅記憶體 cases stringify/parse。
+- **假資料驗證**：官方 rehearsal 自製 fixture `12/12`；另行 P3/Batch3 harness `17 PASS / 4 FAIL`。Batch3 UI/VM `7/7`，隔離 origin `0→1→0 cases`、event `1→2` 合法 append、空 note writes `0/0/0`；假資料與測試頁已清。
+- **P0–P2 對帳**：正典 `5,880 bytes · 2 cases · 0 SOAP · 2 patients`；export hashes `2/2` 相同；plan files `2/2` 相同，assignments `2`，blank/duplicate/collision/orphan/conflict/review/adjudication均 `0`。33-case/52-SOAP 檔只作 QA archive hash/count 對帳，未送入測試。
+- **下一 gate**：exact plan↔journal/Patient verify、verified-only noop、完整 v2 patients+cases+journal file export→wipe→import，三反例進 rehearsal；再交 Codex，真機仍須 Ting 在場及執行前 raw hash 重驗。
+
 # 2026-08-11 Codex — C2b code gates `3/3 PASS`，開放只讀 preflight
 
 - **範圍／gate**：隔離覆核 `ee00856`、`ef1b58b`、`e5d6158^..cbeff22`；R8、coverage/K/CI、migrate三 gate=`PASS/PASS/PASS`。授權只到 P0–P2 read-only preflight；真機 write仍等 reviewed writer/rehearsal、Codex final GO與Ting在場。

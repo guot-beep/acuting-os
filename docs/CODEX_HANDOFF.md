@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R4 / C2b final NO-GO
+
+- **Reviewed endpoint**: P3 `47478f8` + Batch3 `324242a` + referential fix `dbfd392` + export follow-up `924198e`; branch endpoint `14d2a607a638232103f2d1aa65c880eed008834c` (later supplement-only commits do not alter audited implementation).
+- **P3 result**: P3.1 `FAIL`, P3.2 `FAIL`, P3.3 `FAIL`, P3.4 `PASS`; C2b remains **NO-GO**. Journal-count tamper, Patient-field rewrite, and tampered-staging idempotent noop are `0/3` blocked. Cross-wired patient assignment is now blocked.
+- **Export gap**: v2 export now emits the staging envelope, but import extracts only `cases` and discards `patients/journal`; `walkthrough-phase-e.js` is an in-memory cases stringify/parse, not file export→wipe→import.
+- **Measured evidence**: self-made fake rehearsal `12/12`; independent P3/Batch3 harness `17 PASS / 4 FAIL`; Batch3 UI/VM `7/7` with isolated origin `0→1→0 cases`. P0–P2 backup reconciliation: canonical `2 cases / 0 SOAP / 2 patients`, two export hashes equal, two plan hashes equal, assignments `2`, all blank/duplicate/collision/orphan/conflict/review/adjudication counts `0`.
+- **Next gate**: exact plan↔journal/Patient verification, verified-only idempotent noop, and a full fake-file v2 patients+cases+journal export→wipe→import canonical round-trip. Real Edge `file://` migration remains prohibited until a new Codex FINAL GO with Ting present and a fresh raw-hash match.
+
 ## [2026-08-11] Codex Handoff — C2b code gates 3/3 PASS / read-only preflight released
 
 - **Reviewed endpoint**: `ee00856`, `ef1b58b`, and `e5d6158^..cbeff22` in an isolated `cbeff22` archive. True clinical storage reads/writes were `0/0`; all fictional audit artifacts were removed.
