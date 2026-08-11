@@ -13081,6 +13081,483 @@
           "針灸學 教材通用(經絡辨證章節,課程層級引用)"
         ]
       }
+    },
+    {
+      "id": "pattern.phlegm_stasis_binding",
+      "name_zh": "痰瘀互結",
+      "name_en": "Phlegm-Stasis Binding",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "胸脅或肢體刺痛，痛處固定",
+        "局部腫塊或結節，質硬不移",
+        "痰多黏膩",
+        "肢體麻木或屈伸不利"
+      ],
+      "key_signs_en": [
+        "Stabbing pain in the chest/flank or limbs, fixed in location",
+        "Local masses or nodules, hard and immovable",
+        "Copious sticky phlegm",
+        "Limb numbness or difficulty bending/extending"
+      ],
+      "tongue_zh": "舌質紫暗或有瘀斑，苔膩",
+      "tongue_en": "Dusky-purple tongue body, or with stasis macules; greasy coating",
+      "pulse_zh": "脈弦澀或滑澀",
+      "pulse_en": "Wiry-choppy or slippery-choppy pulse",
+      "mechanism_zh": "痰濁與瘀血互相膠結，同源異物（津血同源，痰因氣滯血阻而生，瘀因痰濁阻遏脈道而成），膠結日久形成癥積、腫塊，阻滯經絡則刺痛不移、麻木不仁，是腫瘤、痹證、胸痹等病日久不癒的常見病理基礎。",
+      "mechanism_en": "Phlegm-turbidity and Blood Stasis congeal together — both arise from disrupted fluid-and-blood metabolism (fluids and blood share a common source): Phlegm forms when Qi stagnation obstructs fluid transformation, and Stasis forms when Phlegm-turbidity itself blocks the vessels. Once bound together long-term they form masses and nodules; when they obstruct the channels, fixed stabbing pain and numbness result. This is a common underlying pathology in chronic Bi-obstruction, chest-Bi, and tumor-type conditions.",
+      "common_causes_zh": "情志不遂氣滯生痰、飲食不節痰濕內生，久病入絡兼夾瘀血、痰瘀互結",
+      "common_causes_en": "Emotional stress causing Qi stagnation and Phlegm formation; dietary irregularity generating internal Phlegm-Damp; chronic illness entering the collaterals with concurrent Blood Stasis, the two binding together",
+      "progression_zh": "多由痰濁或血瘀單一病理因素發展而來，兩者相因為病日久；痰瘀互結日久可形成癥積、瘰癧、乳癖等有形腫塊。",
+      "progression_en": "Commonly develops from an initial single pathology (Phlegm alone or Stasis alone) that, left untreated, mutually aggravates the other; prolonged Phlegm-Stasis binding can form palpable masses such as abdominal masses, scrofula, or breast lumps.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.phlegm_damp",
+          "distinguishing_zh": "痰瘀互結以痛處固定、腫塊質硬、舌質紫暗有瘀斑為特徵；痰濕內蘊以身重困倦、痰多易咯、苔厚膩為主，舌質可正常，無明顯瘀血徵象。",
+          "distinguishing_en": "Phlegm-Stasis Binding features fixed pain, a hard mass, and a dusky-purple tongue with stasis macules; Phlegm-Damp is dominated by heaviness, lethargy, and copious easily-expectorated phlegm with a thick greasy coating — the tongue body itself can be normal, with no stasis signs.",
+          "tongue_difference_zh": "痰瘀互結舌紫暗有瘀斑；痰濕內蘊舌淡胖苔膩",
+          "pulse_difference_zh": "痰瘀互結脈弦澀；痰濕內蘊脈滑",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.qi_stagnation_blood_stasis",
+          "distinguishing_zh": "痰瘀互結必兼痰濁見症（苔膩、痰多、腫塊質軟硬夾雜或有結節）；氣滯血瘀以脹痛與刺痛並見、無明顯痰濁徵象為主，苔多不膩。",
+          "distinguishing_en": "Phlegm-Stasis Binding always carries Phlegm signs (greasy coating, copious phlegm, a mass of mixed soft-hard consistency or nodularity); Qi Stagnation with Blood Stasis shows both distending and stabbing pain without notable Phlegm signs, and the coating is usually not greasy.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "化痰散結，活血化瘀",
+      "treatment_principle_en": "Transform Phlegm and dissipate nodulation, invigorate Blood and dispel Stasis",
+      "typical_formulas": [
+        "formula.shen_tong_zhu_yu_tang"
+      ],
+      "typical_points": [
+        "ST40",
+        "SP10",
+        "SP6",
+        "LR3",
+        "LI4"
+      ],
+      "point_rationale_zh": "豐隆為化痰要穴；血海、三陰交活血調血；太衝配合谷（開四關）行氣以助血行，痰瘀同治。",
+      "point_rationale_en": "ST40 (Fenglong) is the principal point for transforming Phlegm; SP10 (Xuehai) and SP6 (Sanyinjiao) invigorate and regulate Blood; LR3 (Taichong) paired with LI4 (Hegu) — the \"Four Gates\" — moves Qi to assist Blood circulation, treating Phlegm and Stasis together.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.痰瘀互結"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.phlegm_qi_binding",
+      "name_zh": "痰氣互結",
+      "name_en": "Phlegm-Qi Binding",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "咽中如有異物梗阻，咯之不出，嚥之不下",
+        "胸脅脘悶脹滿",
+        "情志抑鬱或善太息",
+        "咳嗽痰多，痰白黏"
+      ],
+      "key_signs_en": [
+        "Sensation of an object lodged in the throat, cannot be coughed up or swallowed down",
+        "Fullness and distension in the chest, flank, and epigastrium",
+        "Emotional depression or frequent sighing",
+        "Cough with copious white sticky phlegm"
+      ],
+      "tongue_zh": "舌苔白膩",
+      "tongue_en": "White greasy tongue coating",
+      "pulse_zh": "脈弦滑",
+      "pulse_en": "Wiry-slippery pulse",
+      "mechanism_zh": "情志不遂，肝氣鬱結，橫逆犯脾，脾失健運則津液不化聚而成痰，痰氣互結於咽喉，阻塞氣機，故見咽中梗阻感（梅核氣）；痰氣上逆犯胃，亦可見噁心噯氣。",
+      "mechanism_en": "Emotional frustration causes Liver Qi stagnation, which invades the Spleen; the Spleen loses its transforming-transporting function and fluids accumulate into Phlegm. Phlegm and Qi bind together in the throat, obstructing the flow of Qi there — producing the classic sensation of a plum pit lodged in the throat (梅核氣, Plum-Pit Qi). When Phlegm-Qi rebels upward and invades the Stomach, nausea and belching can also appear.",
+      "common_causes_zh": "情志不遂、肝鬱氣滯犯脾生痰、飲食不節聚濕成痰",
+      "common_causes_en": "Emotional frustration; Liver-Qi stagnation invading the Spleen and generating Phlegm; dietary irregularity accumulating Dampness into Phlegm",
+      "progression_zh": "多由肝氣鬱結兼脾失健運發展而來；痰氣鬱久可化火，或與瘀血相兼形成痰瘀互結。",
+      "progression_en": "Commonly develops from Liver Qi Stagnation combined with impaired Spleen function; prolonged Phlegm-Qi stagnation can transform into Fire, or combine with Blood Stasis to become Phlegm-Stasis Binding.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "痰氣互結以咽中梗阻感（梅核氣）、苔白膩為特徵性表現；肝氣鬱結以胸脅脹痛、情志抑鬱為主，無咽部異物感及痰濁苔膩之象。",
+          "distinguishing_en": "Phlegm-Qi Binding is characterized by the throat-obstruction sensation of Plum-Pit Qi with a white greasy coating; Liver Qi Stagnation alone shows chest/flank distending pain and emotional depression without the throat-foreign-body sensation or greasy Phlegm coating.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.phlegm_damp",
+          "distinguishing_zh": "痰氣互結病位偏於咽喉胸膈，由氣滯引動痰生，情志因素明顯；痰濕內蘊病位偏於中焦脾胃，以身重、苔厚膩、痰多為主，情志因素不顯著。",
+          "distinguishing_en": "Phlegm-Qi Binding is centered on the throat and chest/diaphragm, arising from Qi stagnation triggering Phlegm formation, with a prominent emotional component; Phlegm-Damp is centered on the Middle Burner Spleen-Stomach, dominated by heaviness, a thick greasy coating, and copious phlegm, without a prominent emotional trigger.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "行氣解鬱，化痰散結",
+      "treatment_principle_en": "Move Qi and resolve stagnation, transform Phlegm and dissipate nodulation",
+      "typical_formulas": [
+        "formula.ban_xia_hou_po_tang",
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "typical_points": [
+        "CV17",
+        "LU7",
+        "KI6",
+        "ST40",
+        "PC6"
+      ],
+      "point_rationale_zh": "膻中為氣會，寬胸理氣；列缺配照海為治療咽喉疾患要穴組合；豐隆化痰；內關寬胸和胃，降逆化痰。",
+      "point_rationale_en": "CV17 (Danzhong), the Hui-Meeting point of Qi, opens the chest and regulates Qi; LU7 (Lieque) paired with KI6 (Zhaohai) is a classic point combination for throat disorders; ST40 (Fenglong) transforms Phlegm; PC6 (Neiguan) opens the chest, harmonizes the Stomach, and directs rebellious Qi downward.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.ban_xia_hou_po_tang added as the classical 梅核氣 (Plum-Pit Qi) formula per standard 方劑學 teaching, alongside formula.xuan_fu_dai_zhe_tang from the sourced canon record (pat.痰氣互結)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.痰氣互結"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.water_fluid_retention",
+      "name_zh": "水飲內停",
+      "name_en": "Water-Fluid Retention",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "脘腹痞悶，水聲漉漉",
+        "頭暈目眩",
+        "小便不利",
+        "嘔吐清水痰涎",
+        "肢體浮腫"
+      ],
+      "key_signs_en": [
+        "Epigastric fullness and oppression, with gurgling water sounds",
+        "Dizziness and vertigo",
+        "Difficult urination",
+        "Vomiting clear water and phlegm-fluid",
+        "Limb edema"
+      ],
+      "tongue_zh": "舌苔白滑或白膩",
+      "tongue_en": "White slippery or white greasy tongue coating",
+      "pulse_zh": "脈弦或沉弦",
+      "pulse_en": "Wiry or deep-wiry pulse",
+      "mechanism_zh": "陽氣不足，氣化失司，水液不歸正化，停聚於中焦或泛溢肌膚，形成水飲；飲停於胃則脘痞嘔吐，飲阻清陽上升則眩暈，飲溢肌膚則浮腫，是痰飲病的一般性病機，較特定六經病位（如太陽蓄水）更為廣泛。",
+      "mechanism_en": "Insufficient Yang Qi fails to transform fluids properly; water that is not properly metabolized accumulates in the Middle Burner or overflows into the flesh, becoming a fluid-retention (Yin/Rheum) pathology. Fluid lodging in the Stomach causes epigastric fullness and vomiting; fluid obstructing the ascent of clear Yang causes dizziness; fluid overflowing the flesh causes edema. This is the general mechanism of internal-medicine Tan-Yin (Phlegm-Fluid) disease, broader than a stage-specific pattern such as Tai-Yang Water Accumulation.",
+      "common_causes_zh": "脾腎陽虛氣化無力、外感寒濕困遏陽氣、飲水過多而脾運不及",
+      "common_causes_en": "Spleen-Kidney Yang deficiency impairing fluid transformation; external Cold-Damp constraining Yang Qi; excessive fluid intake exceeding the Spleen's transporting capacity",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.tai_yang_water_accumulation",
+          "distinguishing_zh": "水飲內停為內科雜病層級的一般性水停病機，見於各種內傷雜病；太陽蓄水證特指傷寒太陽病階段表邪未解、膀胱氣化不利所致，兼有表證（發熱惡寒）及消渴、渴欲飲水水入即吐的特定病史脈絡，兩者是六經分期與雜病病機的關係。",
+          "distinguishing_en": "Water-Fluid Retention is the general internal-medicine water-retention mechanism, seen across many internally-caused conditions; Tai-Yang Water Accumulation is specific to the Tai-Yang stage of Cold-Damage disease, where unresolved exterior pathogen impairs Bladder Qi-transformation, accompanied by exterior signs (fever/chills) and the specific history of thirst with water rejected on drinking. The relationship is Six-Channel staging vs. general internal-medicine mechanism.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "水飲內停以水聲漉漉、嘔吐清水、頭暈目眩等水飲停聚見症為主；脾陽虛以畏寒肢冷、便溏、食少為主，雖同見水濕不化，水飲內停強調「水」的有形停聚，脾陽虛強調陽氣虛衰的全身表現，前者常是後者的病理產物。",
+          "distinguishing_en": "Water-Fluid Retention is dominated by the tangible signs of pooled fluid — gurgling water sounds, vomiting clear water, dizziness; Spleen Yang Deficiency is dominated by cold limbs, loose stool, and reduced appetite. Both involve failure to transform water-damp, but Water-Fluid Retention emphasizes the tangible fluid accumulation while Spleen Yang Deficiency emphasizes systemic Yang decline — the former is often the pathological product of the latter.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "溫陽化飲，健脾利水",
+      "treatment_principle_en": "Warm Yang and transform fluid-retention, strengthen the Spleen and disinhibit water",
+      "typical_formulas": [
+        "formula.wu_ling_san"
+      ],
+      "typical_points": [
+        "CV9",
+        "SP9",
+        "SP6",
+        "ST36",
+        "BL20"
+      ],
+      "point_rationale_zh": "水分利水消腫；陰陵泉為脾經合穴，健脾滲濕之要穴；三陰交、足三里健脾益氣助運化；脾俞培補脾氣以助氣化水濕。",
+      "point_rationale_en": "CV9 (Shuifen) disinhibits water and reduces swelling; SP9 (Yinlingquan), the He-Sea point of the Spleen channel, is the principal point for strengthening the Spleen and draining Dampness; SP6 (Sanyinjiao) and ST36 (Zusanli) strengthen the Spleen and boost Qi to aid transformation-transportation; BL20 (Pishu) tonifies Spleen Qi to assist the transformation of water-dampness.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.水飲內停"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.yin_deficiency_fire_flaring",
+      "name_zh": "陰虛火旺",
+      "name_en": "Yin Deficiency with Effulgent Fire",
+      "pattern_family": "ba_gang",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "deficiency",
+        "yin_yang": "yin_deficiency"
+      },
+      "key_signs_zh": [
+        "五心煩熱，潮熱盜汗",
+        "顴紅，咽乾口燥",
+        "失眠多夢，心煩不寧",
+        "腰膝痠軟"
+      ],
+      "key_signs_en": [
+        "Vexing heat in the five centers, tidal fever with night sweats",
+        "Malar flushing, dry throat and mouth",
+        "Insomnia with excessive dreaming, restlessness",
+        "Aching, weak lower back and knees"
+      ],
+      "tongue_zh": "舌紅少苔或無苔，或有裂紋",
+      "tongue_en": "Red tongue with scanty or absent coating, sometimes with cracks",
+      "pulse_zh": "脈細數",
+      "pulse_en": "Thin, rapid pulse",
+      "mechanism_zh": "陰液虧損，不能制陽，虛陽偏亢化火，虛火內擾則五心煩熱、潮熱盜汗；上擾心神則失眠多夢；火性炎上則顴紅咽乾；是陰虛進一步發展、虛火顯著的階段，較單純陰虛程度更重。",
+      "mechanism_en": "Yin fluids are depleted and can no longer restrain Yang; the resulting relative excess of Yang transforms into internal deficiency-fire. This deficiency-fire disturbing the interior produces the five-palm heat and night sweats with tidal fever; disturbing the Heart spirit above, it produces insomnia and excessive dreaming; because fire flares upward, malar flushing and dry throat appear. This is a further stage of Yin deficiency in which deficiency-fire signs have become prominent, more advanced than bare Yin deficiency.",
+      "common_causes_zh": "久病傷陰、房勞過度耗損腎陰、熱病後期陰液未復",
+      "common_causes_en": "Chronic illness damaging Yin; excessive sexual activity depleting Kidney Yin; unrecovered Yin fluids following a febrile disease",
+      "progression_zh": "多由單純陰虛（如腎陰虛、肺陰虛）發展而來，火熱進一步耗傷陰液可致陰虛加重，形成惡性循環；虛火迫血妄行可致出血。",
+      "progression_en": "Commonly develops from a simple Yin-deficiency pattern (such as Kidney Yin or Lung Yin deficiency); the deficiency-fire further consumes Yin fluid, worsening the deficiency in a self-reinforcing cycle; deficiency-fire forcing Blood to move recklessly can cause bleeding.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yin_deficiency",
+          "distinguishing_zh": "陰虛火旺在腎陰虛基礎上，虛火症狀（五心煩熱、潮熱盜汗、顴紅、脈細數）更為突出、全身性；腎陰虛以腰膝痠軟、耳鳴、遺精等腎之本臟見症為主，虛火症狀相對較輕或不顯著。",
+          "distinguishing_en": "Yin Deficiency with Effulgent Fire builds on Kidney Yin deficiency with more prominent, systemic deficiency-fire signs (five-palm heat, tidal fever with night sweats, malar flush, thin rapid pulse); Kidney Yin Deficiency alone is dominated by lower-back/knee weakness, tinnitus, and seminal emission, with deficiency-fire signs comparatively mild or absent.",
+          "tongue_difference_zh": "陰虛火旺舌紅少苔明顯；腎陰虛舌紅苔少",
+          "pulse_difference_zh": "陰虛火旺脈細數；腎陰虛脈細",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.heart_fire",
+          "distinguishing_zh": "陰虛火旺其火為虛火，由陰液不足所生，舌紅少苔、脈細數，伴明顯陰虛見症；心火亢盛（心火旺盛）為實火，舌紅苔黃、脈數有力，以口舌生瘡、心煩失眠、小便短赤為主，無陰虛之象。",
+          "distinguishing_en": "In Yin Deficiency with Effulgent Fire, the fire is deficiency-fire arising from insufficient Yin fluid — red tongue with scanty coating, thin rapid pulse, alongside clear Yin-deficiency signs; Heart Fire is excess-fire — red tongue with yellow coating, forceful rapid pulse, dominated by mouth ulcers, restlessness/insomnia, and scanty dark urine, without Yin-deficiency signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "滋陰降火",
+      "treatment_principle_en": "Nourish Yin and downbear Fire",
+      "typical_formulas": [
+        "formula.huang_lian_e_jiao_tang",
+        "formula.zhi_bai_di_huang_wan"
+      ],
+      "typical_points": [
+        "KI3",
+        "SP6",
+        "HT6",
+        "KI6"
+      ],
+      "point_rationale_zh": "太谿為腎經原穴，滋補腎陰；三陰交滋補肝脾腎三陰；陰郄為心經郄穴，清心斂汗，善治盜汗；照海滋腎陰、清虛熱，為治療陰虛內熱要穴。",
+      "point_rationale_en": "KI3 (Taixi), the Yuan-Source point of the Kidney channel, nourishes Kidney Yin; SP6 (Sanyinjiao) nourishes the Yin of the Liver, Spleen, and Kidney; HT6 (Yinxi), the Xi-Cleft point of the Heart channel, clears Heart heat and restrains sweating, effective for night sweats; KI6 (Zhaohai) nourishes Kidney Yin and clears deficiency-heat, a principal point for Yin-deficiency internal heat.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.陰虛火旺"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.qi_yin_deficiency",
+      "name_zh": "氣陰兩虛",
+      "name_en": "Qi and Yin Deficiency",
+      "pattern_family": "qi_xue_jin_ye",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "神疲乏力，氣短懶言",
+        "口乾咽燥，渴喜飲水",
+        "自汗與盜汗並見",
+        "舌質淡紅或紅"
+      ],
+      "key_signs_en": [
+        "Fatigue and lack of strength, shortness of breath, disinclined to speak",
+        "Dry mouth and throat, thirst with a desire to drink",
+        "Both spontaneous sweating and night sweats present",
+        "Pale-red or red tongue body"
+      ],
+      "tongue_zh": "舌淡紅少津，或舌紅少苔",
+      "tongue_en": "Pale-red tongue with scanty fluid, or red tongue with scanty coating",
+      "pulse_zh": "脈細弱或細數",
+      "pulse_en": "Thin-weak or thin-rapid pulse",
+      "mechanism_zh": "氣虛與陰虛同時並見，氣虛則神疲乏力、氣短自汗；陰虛則口乾咽燥、盜汗；氣陰互根互生，久病耗氣傷陰，或熱病、汗吐下太過皆可氣陰兩傷，是內科雜病、腫瘤、心血管疾病後期極常見的複合虛證。",
+      "mechanism_en": "Qi deficiency and Yin deficiency present together. Qi deficiency produces fatigue, shortness of breath, and spontaneous sweating; Yin deficiency produces dry mouth/throat and night sweats. Because Qi and Yin are mutually rooted, chronic illness that consumes Qi eventually damages Yin as well (and vice versa); excessive sweating, vomiting, or purging in a febrile disease can also injure both simultaneously. This combined deficiency pattern is extremely common in the later stages of chronic internal-medicine disease, oncology, and cardiovascular disease.",
+      "common_causes_zh": "久病耗氣傷陰、熱病汗出過多、勞倦內傷、消渴日久",
+      "common_causes_en": "Chronic illness consuming both Qi and Yin; excessive sweating during febrile disease; overwork and internal strain; long-standing Wasting-Thirst (diabetes) disease",
+      "progression_zh": "多由單純氣虛或陰虛任何一方發展而來，氣陰兩虛日久，陰損及陽可發展為陰陽兩虛。",
+      "progression_en": "Commonly develops from either a simple Qi-deficiency or Yin-deficiency pattern alone; if Qi-Yin deficiency persists, Yin damage can extend to Yang, progressing to combined Yin-Yang deficiency.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_deficiency",
+          "distinguishing_zh": "氣陰兩虛兼有陰虛見症（口乾咽燥、盜汗、舌紅少津或少苔）；單純氣虛以神疲乏力、氣短自汗為主，口不乾、舌淡苔白，無陰虛徵象。",
+          "distinguishing_en": "Qi-Yin Deficiency additionally carries Yin-deficiency signs (dry mouth/throat, night sweats, red tongue with scanty fluid or coating); simple Qi Deficiency is dominated by fatigue and spontaneous sweating without dry mouth, with a pale tongue and white coating and no Yin-deficiency signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.yin_deficiency",
+          "distinguishing_zh": "氣陰兩虛兼有氣虛見症（神疲乏力、氣短懶言、脈細弱）；單純陰虛以五心煩熱、潮熱盜汗、舌紅少苔、脈細數為主，無明顯氣短乏力之氣虛表現。",
+          "distinguishing_en": "Qi-Yin Deficiency additionally carries Qi-deficiency signs (fatigue, shortness of breath, disinclination to speak, thin-weak pulse); simple Yin Deficiency is dominated by five-palm heat, tidal fever with night sweats, red tongue with scanty coating, and a thin rapid pulse, without notable Qi-deficiency fatigue or breathlessness.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "益氣養陰",
+      "treatment_principle_en": "Boost Qi and nourish Yin",
+      "typical_formulas": [
+        "formula.sheng_mai_san"
+      ],
+      "typical_points": [
+        "ST36",
+        "SP6",
+        "KI3",
+        "LU9",
+        "CV6"
+      ],
+      "point_rationale_zh": "足三里、氣海補益元氣；太淵為肺經原穴、脈之會，益氣養陰；太谿滋腎陰；三陰交兼補肝脾腎三陰，氣陰同調。",
+      "point_rationale_en": "ST36 (Zusanli) and CV6 (Qihai) tonify original Qi; LU9 (Taiyuan), the Yuan-Source point of the Lung channel and the Hui-Meeting point of the Vessels, boosts Qi and nourishes Yin; KI3 (Taixi) nourishes Kidney Yin; SP6 (Sanyinjiao) tonifies the Yin of Liver, Spleen, and Kidney together — regulating Qi and Yin jointly.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.sheng_mai_san (生脈散) used for the sourced canon formula 生脈飲 — same three-herb formula (Ren Shen/Ginseng, Mai Men Dong, Wu Wei Zi) under a 散/飲 dosage-form name variant, per the trad/simp-style name-variant precedent documented in docs/research_packs/PATTERN_P3_LEDGER.md"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.氣陰兩虛"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
