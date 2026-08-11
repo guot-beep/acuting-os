@@ -16825,8 +16825,8 @@
     },
     {
       "id": "cond.asthma",
-      "name_en": "Asthma (adjunctive context)",
-      "name_zh": "氣喘（輔助文件情境）",
+      "name_en": "Asthma",
+      "name_zh": "氣喘／哮喘",
       "category": "respiratory",
       "icd_hint": "J45",
       "related_eastern_diseases": [
@@ -17281,11 +17281,165 @@
       ],
       "classical_references_zh": "《聖濟總錄．傷寒門》：「論曰傷寒喘，其證不一。有邪氣在表，表未解無汗而喘者；有邪氣在裡，汗出不惡寒，腹滿而喘者。有潮熱者。有心下有水而喘者。古人治之，亦各求其本。故在表者當汗，在裡者宜下，至於心下有水而喘，則又當利其小便也。\n\n《症因脈治．喘症論》：「諸經皆令人喘，而多在肺胃二家。喘而咳逆嗽痰者，肺也；喘而嘔吐者，胃也」。\n\n《症因脈治．外感喘》：「暑濕喘逆之症，煩悶口渴，喘息氣粗，多言身重，汗出身仍熟，此暑濕之喘症也」。\n\n《症因脈治．內傷喘》：「食積喘逆之症，胸滿，胃痛腹痛，惡食飽悶，大便或結或溏，上氣喘逆，喘嘔噯氣，此食積喘逆症也」。\n\n《景岳全書．喘促》：「關格之證為喘者，&hellip;其病必虛裡跳動而氣喘不已。此之喘狀多無咳嗽，但覺胸膈舂舂，似脹非脹，似短非短，微勞則喘甚，多言亦喘甚，甚至通身振振，慌張不寧，此必情欲傷陰，以致元氣無根，孤陽離劇候也」。\n\n《醫學正傳．哮喘》：「大抵哮以聲響名，喘以氣息言。夫喘促喉中如水雞聲者，謂之哮；氣促而連屬不能以息者，謂之喘。」\n\n《景岳全書．喘促》謂：「氣喘之病，最為危候，治失其要，鮮不誤人，欲辨之者，亦惟二證而已。所謂二證者，一曰實喘，一曰虛喘也」\n\n《臨證指南醫案．喘》云：「在肺為實，在腎為虛。」",
       "fetched_at": "2026-07-23T07:45:08.462Z",
-      "source_type": "sourced_cloudtcm_record",
+      "source_type": "sourced_research_pack",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/2"
-      ]
+        "https://cloudtcm.com/disease/tcm/2",
+        "NHLBI — Asthma: https://www.nhlbi.nih.gov/health/asthma",
+        "NHLBI — Asthma Treatment and Action Plan: https://www.nhlbi.nih.gov/health/asthma/treatment-action-plan",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "aliases_zh": [
+        "哮病",
+        "哮喘"
+      ],
+      "aliases_en": [
+        "Bronchial Asthma"
+      ],
+      "summary_zh": "氣喘是一種慢性氣道發炎疾病，特徵為可變性氣流阻塞與支氣管過度反應性，導致反覆發作的呼吸道症狀。",
+      "summary_en": "Asthma is a chronic inflammatory airway disease with variable airflow obstruction and bronchial hyperresponsiveness that produces episodic respiratory symptoms.",
+      "western_context_zh": "臨床定位：氣喘不等於喘鳴，也不等同於中醫「哮病」；診斷常需客觀證據支持可變性呼氣氣流受限。\n\n臨床表現：喘鳴、咳嗽、呼吸急促與胸悶為典型表現，症狀可隨時間變化，常在夜間／清晨或接觸誘發因子後加重。\n\n重要特徵：症狀具可變性；氣流阻塞多為可逆／可變；衛教與急救用藥的行動計畫十分重要；嚴重發作可能危及生命。\n\n診斷方法：病史結合肺量計／支氣管擴張劑反應測試（可行時）；尖峰呼氣流速、激發測試或過敏評估可輔助診斷。\n\n鑑別診斷：慢性阻塞性肺病（COPD）、聲帶功能障礙、心衰竭、肺栓塞、氣胸、過敏性休克。\n\n西醫治療：誘發因子控制、含吸入性類固醇的治療方案、緩解藥物，並依嚴重度／控制程度採階梯式控制藥物治療；行動計畫十分重要。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型、急性度與併發症。",
+      "western_context_en": "Clinical definition: Asthma is not synonymous with wheezing or with the TCM disease 哮病 (xiao bing). Objective evidence of variable expiratory airflow limitation is often important for diagnosis.\n\nClinical presentation: Wheeze, cough, shortness of breath and chest tightness are typical; symptoms can vary over time and worsen at night/early morning or with triggers.\n\nKey features: variable symptoms; reversible/variable airflow limitation; an action plan with rescue therapy is important; severe exacerbation can be life-threatening.\n\nDiagnostic approach: History plus spirometry/bronchodilator response when feasible; peak flow, challenge testing or allergy evaluation can support diagnosis.\n\nDifferential diagnosis: COPD, vocal cord dysfunction, heart failure, pulmonary embolism, pneumothorax, anaphylaxis.\n\nWestern treatment: Trigger control, inhaled corticosteroid-containing regimens, reliever therapy and stepwise controller treatment guided by severity/control; written action plans are important.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "western_pathology_en": "Asthma is a common chronic inflammatory airway disease with recurrent cough, chest tightness, wheeze and dyspnea. Causation is complex and generally attributed to a combination of genetic susceptibility and environmental factors including allergens, dust, pollen, infection, climate change, air pollution, smoking, chemical exposures and exercise. Since many cases begin in childhood and are commonly preceded by acute bronchitis in infancy, modern medicine treats airway infection as closely linked to asthma onset. Inhaled anti-inflammatory therapy is the mainstay of control but is not curative, which is why TCM pattern differentiation is used as a complementary explanatory framework for the many organ systems (not lung alone) that can contribute to wheeze.",
+      "etiology_en": "Asthma-like wheezing disorders have been recorded in Chinese medicine for over two millennia, usually termed 哮喘 with many related names. Because the lung is the \"delicate organ\" (嬌臟) intolerant of cold/heat extremes, external pathogens readily provoke attacks; the Huangdi Neijing notes that all five zang and six fu organs, not the lung alone, can cause cough and, by extension, wheeze — which is why asthma pattern differentiation is considered difficult. Major TCM etiological categories condensed from the source record: (1) External cold-damage (wind-cold invading the lung) — Shanghan Lun patterns such as Ma Huang Tang, Xiao Qing Long Tang and Gui Zhi Jia Hou Po Xing Zi Tang, presenting with clear thin sputum, fear of cold, no sweating, floating tight pulse; (2) External wind-heat / exterior-cold-interior-heat — Ma Xing Gan Shi Tang or Ge Gen Huang Qin Huang Lian Tang patterns with thick yellow sputum, fever, thirst, floating rapid pulse; (3) Kidney yang deficiency (kidney failing to grasp qi, kidney-yang deficiency with water flooding) — as cold damage progresses from Taiyang to Shaoyin, kidney yang is injured; presents as fear of cold, shortness of breath with more exhalation than inhalation, low back/knee weakness, deep thin pulse, treated with Su Zi Jiang Qi Tang or, with water overflow (edema, palpitations, dizziness), Zhen Wu Tang; in extremis, large-dose ginseng/aconite or Si Ni Tang is used; (4) Spleen deficiency with phlegm-turbidity obstructing the lung — spleen yang depends on kidney yang, so spleen and kidney deficiency commonly co-occur; dietary irregularity (e.g., cold drinks in summer) can also seed phlegm that triggers winter wheeze; (5) Liver qi stagnation invading the lung — chronic overwork and emotional constraint produce liver qi stagnation that counter-flows to attack the lung, causing more ascending than descending qi and wheeze, alongside irritability, insomnia, palpitations and chest/rib distension; (6) Wind-dryness injuring the lung / combined lung qi-yin deficiency — external dryness combined with qi-yin deficiency produces weak voice, spontaneous sweating, aversion to wind and dry mouth/red tongue, requiring lung-nourishing treatment. The source record notes this is not an exhaustive account and that channel-level qi/blood obstruction in the chest, heart/pericardium channel deficiency and abdominal channel stagnation are also observed contributors in modern meridian-measurement data.",
+      "risk_factors_zh": [
+        {
+          "factor": "個人或一等親過敏／異位性體質病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Asthma"
+        },
+        {
+          "factor": "反覆病毒性呼吸道感染（尤其嬰幼兒期）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Asthma"
+        },
+        {
+          "factor": "吸菸或二手菸暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Asthma"
+        },
+        {
+          "factor": "職業性／環境性過敏原與刺激物暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Asthma"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Personal or first-degree relative history of allergy/atopy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Asthma"
+        },
+        {
+          "factor": "Recurrent viral respiratory infections (especially in early childhood)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Asthma"
+        },
+        {
+          "factor": "Smoking or secondhand smoke exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Asthma"
+        },
+        {
+          "factor": "Occupational/environmental allergen and irritant exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Asthma"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重呼吸困難、無法完整說話",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打急救／送急診",
+          "rationale": "提示重度急性發作，有呼吸衰竭風險",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        },
+        {
+          "finding": "發紺",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "低血氧的徵象",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        },
+        {
+          "finding": "意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能為缺氧或二氧化碳蓄積",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        },
+        {
+          "finding": "對急救藥物反應不佳或體力衰竭",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示發作未受控制，需要醫療介入",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe breathlessness, inability to speak normally",
+          "urgency_level": "emergency",
+          "recommended_action": "Call emergency services / go to ER immediately",
+          "rationale": "Suggests severe acute exacerbation with risk of respiratory failure",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        },
+        {
+          "finding": "Cyanosis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Sign of hypoxemia",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        },
+        {
+          "finding": "Altered mental status",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate hypoxia or hypercapnia",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        },
+        {
+          "finding": "Poor response to rescue medication or exhaustion",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests uncontrolled exacerbation requiring medical intervention",
+          "source": "NHLBI Asthma Treatment and Action Plan"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "穩定期氣喘的症狀輔助照護（可作為控制藥物之外的輔助），不可取代吸入劑或延誤急症治療",
+        "precautions": "治療前確認病人目前吸入劑使用狀況與最近發作史；急性發作或呼吸窘迫時不予針刺，優先轉診",
+        "co_management": "與病人的胸腔科／家醫科醫師聯絡確認控制藥物與行動計畫，不建議病人自行調整或停用吸入劑",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NHLBI 臨床資料整理）",
+        "note": "尚未查到專屬於氣喘的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom support during stable-phase asthma, alongside (not replacing) controller therapy; never delay emergency treatment",
+        "precautions": "Confirm current inhaler use and recent exacerbation history before treating; do not needle during acute exacerbation or respiratory distress — refer instead",
+        "co_management": "Coordinate with the patient's pulmonology/primary care physician on controller therapy and action plan; never advise stopping or altering inhaler use",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NHLBI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for asthma was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.cough",
+        "sym.shortness_of_breath"
+      ],
+      "content_source": [
+        "cloudtcm_record",
+        "nih_nhlbi_overview",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.copd",
@@ -18874,8 +19028,8 @@
     },
     {
       "id": "cond.acute_bronchitis",
-      "name_en": "Acute Bronchitis (context)",
-      "name_zh": "急性支氣管炎（文件情境）",
+      "name_en": "Acute Bronchitis",
+      "name_zh": "急性支氣管炎",
       "category": "respiratory",
       "icd_hint": "J20",
       "related_eastern_diseases": [
@@ -18886,8 +19040,8 @@
         "pattern.phlegm_heat_in_lung"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "多數為病毒感染；刺激物暴露也可能參與致病。單純病毒性支氣管炎一般不需常規使用抗生素。",
+      "western_pathology_zh": "支氣管黏膜發炎增加咳嗽與痰液分泌，不同於肺炎的肺泡感染型態。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18919,12 +19073,163 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "急性支氣管炎是支氣管的短期發炎，多由病毒感染引起，主要表現為咳嗽。",
+      "summary_en": "Acute bronchitis is short-term inflammation of the bronchi, usually caused by viral infection, characterized primarily by cough.",
+      "etiology_en": "Most cases are viral; irritants can contribute. Routine bacterial antibiotics are generally not appropriate for uncomplicated viral bronchitis.",
+      "western_pathology_en": "Bronchial mucosal inflammation increases cough and mucus production without the alveolar infection pattern of pneumonia.",
+      "western_context_zh": "臨床定位：急性支氣管炎與慢性支氣管炎（屬慢性阻塞性肺病的一部分）是不同概念。\n\n臨床表現：咳嗽（可能有痰）、胸部不適、疲勞與輕微全身症狀；可能出現喘鳴。\n\n重要特徵：多為病毒性；咳嗽可能在其他症狀消退後持續；嚴重度／發燒／低血氧時須考慮肺炎；慢性支氣管炎屬不同疾病。\n\n診斷方法：主要依臨床判斷；懷疑肺炎、氣喘／慢性阻塞性肺病或其他疾病時加做檢查／影像。\n\n鑑別診斷：肺炎、氣喘、慢性阻塞性肺病急性惡化、百日咳、COVID／流感、胃食道逆流。\n\n西醫治療：多數病例採支持性照護；若找到其他診斷則針對性治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對病原與亞型。",
+      "western_context_en": "Clinical definition: Acute bronchitis is distinct from chronic bronchitis, which is part of COPD when defined clinically.\n\nClinical presentation: Cough with or without mucus, chest discomfort, fatigue and mild systemic symptoms; wheeze may occur.\n\nKey features: usually viral; cough may persist after other symptoms resolve; pneumonia must be considered when severity/fever/hypoxia suggests it; chronic bronchitis is a different disease.\n\nDiagnostic approach: Primarily clinical; testing/imaging is used when pneumonia, asthma/COPD or other disease is suspected.\n\nDifferential diagnosis: pneumonia, asthma, COPD exacerbation, pertussis, COVID/influenza, GERD.\n\nWestern treatment: Supportive care for most cases; targeted treatment if another diagnosis is found.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期上呼吸道病毒感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "factor": "吸菸或空氣刺激物暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "factor": "季節性群聚環境（如托兒所、學校）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Bronchitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent upper respiratory viral infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "factor": "Smoking or air irritant exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "factor": "Congregate settings (e.g., daycare, school)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Bronchitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "低血氧",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "需排除肺炎或其他下呼吸道疾病",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "明顯呼吸困難",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "超出單純支氣管炎的預期表現",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "高燒或持續發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估是否為肺炎",
+          "rationale": "病毒性支氣管炎通常不會持續高燒",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "咳血",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "需排除其他嚴重病因",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "局部肺炎徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診胸部影像評估",
+          "rationale": "區分支氣管炎與肺炎",
+          "source": "NHLBI Bronchitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hypoxia",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude pneumonia or other lower respiratory disease",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "Significant dyspnea",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Beyond the expected presentation of simple bronchitis",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "High or persistent fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to evaluate for pneumonia",
+          "rationale": "Viral bronchitis does not typically cause sustained high fever",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "Hemoptysis",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude other serious causes",
+          "source": "NHLBI Bronchitis"
+        },
+        {
+          "finding": "Focal pneumonia signs",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for chest imaging evaluation",
+          "rationale": "Distinguishes bronchitis from pneumonia",
+          "source": "NHLBI Bronchitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "病情穩定的咳嗽症狀可作輔助照護",
+        "precautions": "咳嗽持續惡化或合併發燒／呼吸困難需先轉診西醫重新評估",
+        "co_management": "若症狀超過預期病程或惡化，建議轉診家醫科／胸腔科排除肺炎",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NHLBI 臨床資料整理）",
+        "note": "尚未查到專屬於急性支氣管炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Stable symptom support for cough may be reasonable",
+        "precautions": "Prolonged or worsening cough, or cough with fever/dyspnea, needs biomedical reassessment first",
+        "co_management": "Refer to primary care/pulmonology to exclude pneumonia if symptoms exceed the expected course or worsen",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NHLBI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for acute bronchitis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.cough"
+      ],
+      "sources": [
+        "NHLBI — Bronchitis: https://www.nhlbi.nih.gov/health/bronchitis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_nhlbi_overview",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.sleep_apnea",
-      "name_en": "Obstructive Sleep Apnea (context)",
-      "name_zh": "阻塞性睡眠呼吸中止（文件情境）",
+      "name_en": "Obstructive Sleep Apnea (OSA)",
+      "name_zh": "阻塞性睡眠呼吸中止症",
       "category": "respiratory",
       "icd_hint": "G47.33",
       "related_eastern_diseases": [
@@ -18936,8 +19241,8 @@
         "pattern.spleen_qi_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "上呼吸道解剖構造、肥胖、年齡、顱顏因素、酒精／鎮靜劑使用及其他危險因子皆有影響。",
+      "western_pathology_zh": "反覆上呼吸道阻塞造成間歇性低血氧、覺醒反應、交感神經活化及心血管／代謝壓力。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18969,7 +19274,147 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "睡眠呼吸中止症"
+      ],
+      "aliases_en": [
+        "OSA"
+      ],
+      "summary_zh": "阻塞性睡眠呼吸中止症（OSA）是睡眠中反覆發生上呼吸道塌陷，造成氣流減少／中止、血氧異常與睡眠片段化。",
+      "summary_en": "Obstructive sleep apnea (OSA) is recurrent upper-airway collapse during sleep causing intermittent airflow reduction/cessation, oxygen disturbance and sleep fragmentation.",
+      "etiology_en": "Upper-airway anatomy, obesity, age, craniofacial factors, alcohol/sedatives and other risk factors contribute.",
+      "western_pathology_en": "Repeated airway obstruction produces intermittent hypoxemia, arousals, sympathetic activation and cardiovascular/metabolic stress.",
+      "western_context_zh": "臨床定位：OSA 與單純打鼾、中樞型睡眠呼吸中止及失眠是不同的臨床實體。\n\n臨床表現：大聲打鼾、目擊性呼吸暫停／喘息、睡不飽、日間嗜睡、晨間頭痛、口乾與注意力不集中。\n\n重要特徵：睡眠檢查可確立嚴重度；單純打鼾不等於 OSA；日間嗜睡與心血管代謝風險需重視；持續正壓呼吸器（CPAP）為常見有效治療。\n\n診斷方法：睡眠病史與風險評估後，依適應症安排居家睡眠檢測或多項睡眠生理檢查。\n\n鑑別診斷：單純打鼾、中樞型睡眠呼吸中止、失眠、不寧腿症候群、猝睡症。\n\n西醫治療：體重／危險因子管理、正壓呼吸器治療、口腔矯正器、姿勢治療，部分病人依情況考慮手術。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型與併發症。",
+      "western_context_en": "Clinical definition: OSA is distinct from primary snoring, central sleep apnea and insomnia.\n\nClinical presentation: Loud snoring, witnessed apneas/gasping, unrefreshing sleep, daytime sleepiness, morning headache, dry mouth and concentration problems.\n\nKey features: sleep study establishes severity; snoring alone is not OSA; daytime sleepiness and cardiometabolic risk matter; CPAP is common effective therapy.\n\nDiagnostic approach: Sleep history and risk assessment followed by home sleep apnea testing or polysomnography in appropriate patients.\n\nDifferential diagnosis: primary snoring, central sleep apnea, insomnia, restless legs, narcolepsy.\n\nWestern treatment: Weight/risk-factor management, positive airway pressure, oral appliances, positional therapy and selected surgery depending on patient factors.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "factor": "男性、年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "factor": "顱顏結構異常（如下顎後縮）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "factor": "睡前飲酒或使用鎮靜劑",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Sleep Apnea"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "factor": "Male sex, increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "factor": "Craniofacial abnormality (e.g., retrognathia)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "factor": "Alcohol or sedative use before sleep",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Sleep Apnea"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重日間嗜睡合併駕駛風險",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診睡眠科評估，建議暫緩駕駛",
+          "rationale": "嗜睡駕駛有嚴重安全風險",
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "finding": "夜間嚴重低血氧",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診睡眠科／胸腔科評估",
+          "rationale": "可能需要積極的呼吸道治療",
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "finding": "合併心肺併發症（如心律不整、肺高壓徵象）",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診心臟科／胸腔科評估",
+          "rationale": "OSA 與心血管風險密切相關",
+          "source": "NHLBI Sleep Apnea"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe daytime sleepiness with driving risk",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to sleep medicine; advise avoiding driving",
+          "rationale": "Drowsy driving carries serious safety risk",
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "finding": "Marked nocturnal hypoxemia",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to sleep medicine/pulmonology",
+          "rationale": "May require aggressive airway treatment",
+          "source": "NHLBI Sleep Apnea"
+        },
+        {
+          "finding": "Cardiopulmonary complications (e.g., arrhythmia, signs of pulmonary hypertension)",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to cardiology/pulmonology",
+          "rationale": "OSA is closely linked to cardiovascular risk",
+          "source": "NHLBI Sleep Apnea"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為睡眠相關症狀（如疲勞）的輔助照護，不可取代呼吸道治療（如 CPAP）",
+        "precautions": "須詢問 CPAP 使用配合度與日間嗜睡安全性；不應以針灸單獨作為 OSA 的主要治療",
+        "co_management": "與病人的睡眠科／耳鼻喉科醫師聯絡確認呼吸道治療進度，不建議病人自行停用 CPAP",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NHLBI 臨床資料整理）",
+        "note": "尚未查到專屬於 OSA 的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support sleep-related symptoms (e.g., fatigue) but cannot replace airway treatment (e.g., CPAP)",
+        "precautions": "Ask about CPAP adherence and daytime sleepiness safety; acupuncture should not be the primary standalone treatment for OSA",
+        "co_management": "Coordinate with the patient's sleep medicine/ENT physician on airway treatment status; never advise stopping CPAP",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NHLBI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for OSA was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.fatigue",
+        "sym.headache"
+      ],
+      "sources": [
+        "NHLBI — Sleep Apnea: https://www.nhlbi.nih.gov/health/sleep-apnea",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_nhlbi_overview",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.bells_palsy",
@@ -32034,6 +32479,905 @@
       "content_source": [
         "nhlbi_overview",
         "research_pack_batch_e_metabolic_hematology_cardiac"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.chronic_kidney_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "慢性腎臟病",
+      "name_en": "Chronic Kidney Disease (CKD)",
+      "category": "uro_renal",
+      "icd_hint": "N18",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "慢性腎衰竭"
+      ],
+      "aliases_en": [
+        "Chronic Renal Failure",
+        "CKD"
+      ],
+      "summary_zh": "慢性腎臟病是持續三個月以上的腎損傷或腎功能下降，伴隨心血管、代謝與疾病進展風險。",
+      "summary_en": "Chronic kidney disease (CKD) is persistent kidney damage or reduced kidney function lasting more than three months and carrying cardiovascular, metabolic and progression risks.",
+      "etiology_zh": "常見病因包括糖尿病、高血壓、腎絲球疾病、遺傳性腎病、阻塞與反覆腎損傷。",
+      "etiology_en": "Common causes include diabetes, hypertension, glomerular disease, inherited disease, obstruction and recurrent kidney injury.",
+      "western_pathology_zh": "腎元進行性喪失導致過濾能力下降與內分泌／代謝功能紊亂，包括水分、電解質、酸鹼平衡、貧血與骨礦物質相關併發症。",
+      "western_pathology_en": "Progressive nephron loss causes reduced filtration and endocrine/metabolic disturbances, including fluid, electrolyte, acid-base, anemia and mineral-bone complications.",
+      "western_context_zh": "臨床定位：CKD 不是單一次肌酸酐數值異常，分期須結合估算腎絲球過濾率（eGFR）與白蛋白尿等腎損傷證據。\n\n臨床表現：早期常無症狀，後期可能出現疲勞、水腫、皮膚搔癢、噁心、食慾改變、呼吸困難、睡眠問題與排尿變化。\n\n重要特徵：持續超過三個月才符合定義；eGFR 與尿白蛋白為核心檢驗；心血管風險顯著升高；晚期 CKD 影響用藥與處置安全性。\n\n診斷方法：以血清肌酸酐／eGFR 與尿白蛋白肌酸酐比為核心，並依情況加做尿液分析、影像與病因相關檢查。\n\n鑑別診斷：急性腎損傷、脫水導致的暫時性肌酸酐上升、阻塞性尿路病變、心臟／肝臟相關水腫。\n\n西醫治療：治療病因、控制血壓／血糖、依適應症使用腎臟保護藥物、避免腎毒性物質、處理併發症，晚期需規劃腎臟替代治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對分期與病因。",
+      "western_context_en": "Clinical definition: CKD is not a single creatinine result. Staging incorporates estimated GFR and albuminuria/other evidence of kidney damage.\n\nClinical presentation: Often asymptomatic early; later fatigue, edema, pruritus, nausea, appetite change, dyspnea, sleep problems and urinary changes may occur.\n\nKey features: persistence >3 months matters; eGFR and urine albumin are core tests; cardiovascular risk is high; advanced CKD affects medication/procedure safety.\n\nDiagnostic approach: Serum creatinine/eGFR and urine albumin-to-creatinine ratio are central; urinalysis, imaging and cause-specific testing are added as indicated.\n\nDifferential diagnosis: acute kidney injury, dehydration-related transient creatinine rise, obstructive uropathy, heart/liver-related edema.\n\nWestern treatment: Treat cause, control BP/diabetes, use kidney-protective therapies when indicated, avoid nephrotoxins, manage complications and plan renal replacement therapy for kidney failure when necessary.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "糖尿病",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "factor": "高血壓",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "factor": "腎臟病家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "factor": "長期使用腎毒性藥物",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Chronic Kidney Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Diabetes",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "factor": "Hypertension",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "factor": "Family history of kidney disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "factor": "Long-term use of nephrotoxic medications",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Chronic Kidney Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重高血鉀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "有致命性心律不整風險",
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "finding": "肺水腫",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "體液過負荷危及呼吸",
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "finding": "尿毒性腦病變徵象（意識改變）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "腎功能嚴重惡化的危險徵象",
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "finding": "腎功能快速惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診腎臟科評估",
+          "rationale": "需釐清急性合併因素並及早介入",
+          "source": "NIDDK Chronic Kidney Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe hyperkalemia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Risk of life-threatening arrhythmia",
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "finding": "Pulmonary edema",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Fluid overload threatening respiration",
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "finding": "Uremic encephalopathy signs (altered mental status)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Danger sign of severe kidney function decline",
+          "source": "NIDDK Chronic Kidney Disease"
+        },
+        {
+          "finding": "Rapidly worsening kidney function",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to nephrology for evaluation",
+          "rationale": "Needs clarification of acute contributing factors and early intervention",
+          "source": "NIDDK Chronic Kidney Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "穩定期 CKD 病人的症狀輔助照護（如疲勞、睡眠），不可取代腎臟科追蹤或延誤透析評估",
+        "precautions": "評估血壓、抗凝藥物使用、貧血、水腫、透析瘻管與感染風險；不可在透析瘻管處針刺或拔罐，不穩定水腫／感染部位謹慎處理",
+        "co_management": "與病人的腎臟科醫師確認治療計畫與用藥，不建議病人自行調整藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於 CKD 的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom support (e.g., fatigue, sleep) for stable CKD patients; must not replace nephrology follow-up or delay dialysis evaluation",
+        "precautions": "Review blood pressure, anticoagulation, anemia, edema, dialysis access and infection risk; never needle/cup over a dialysis fistula, and treat unstable edema/infected sites cautiously",
+        "co_management": "Coordinate treatment plan and medications with the patient's nephrologist; never advise the patient to independently adjust medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for CKD was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.edema",
+        "sym.fatigue",
+        "sym.pruritus",
+        "sym.nausea",
+        "sym.poor_appetite"
+      ],
+      "sources": [
+        "NIDDK — Chronic Kidney Disease: https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.nephrolithiasis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "腎結石",
+      "name_en": "Kidney Stones (Nephrolithiasis)",
+      "category": "uro_renal",
+      "icd_hint": "N20",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "泌尿道結石"
+      ],
+      "aliases_en": [
+        "Urolithiasis"
+      ],
+      "summary_zh": "腎結石是泌尿道內的固態礦物質／結晶沉積物，可造成腎絞痛、血尿與尿路阻塞。",
+      "summary_en": "Kidney stones are solid mineral/crystal deposits in the urinary tract that can cause renal colic, hematuria and obstruction.",
+      "etiology_zh": "危險因子包括尿量過低、尿液化學成分異常、飲食、代謝性疾病、感染、藥物及遺傳因子，依結石成分而異。",
+      "etiology_en": "Risk reflects low urine volume, urinary chemistry, diet, metabolic disease, infection, medications and genetic factors depending on stone type.",
+      "western_pathology_zh": "結晶形成並聚集成石，遷移進入輸尿管時可能阻塞尿流、升高壓力並造成劇烈絞痛。",
+      "western_pathology_en": "Crystals form and aggregate; migration into the ureter can obstruct urine flow, raise pressure and cause severe colicky pain.",
+      "western_context_zh": "臨床定位：結石疾病涵蓋不同成分與解剖位置；併發感染的阻塞性結石屬高風險急症。\n\n臨床表現：劇烈側腹／背痛並放射至鼠蹊部、血尿、噁心嘔吐與尿急。\n\n重要特徵：絞痛型側腹痛；血尿常見；常用非顯影劑影像檢查；感染合併阻塞屬危險狀態。\n\n診斷方法：尿液分析、血液檢查與影像確認結石／阻塞；反覆發作者可用取出之結石與 24 小時尿液分析指導預防。\n\n鑑別診斷：腎盂腎炎、闌尾炎、主動脈疾病、膽絞痛、肌肉骨骼疼痛、子宮外孕。\n\n西醫治療：止痛、適度輸液、部分病人可用藥物排石治療，阻塞性／大型／複雜結石需泌尿科處置；預防依結石成分而定。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型、急性度與併發症。",
+      "western_context_en": "Clinical definition: Stone disease includes different compositions and anatomical locations; a stone causing infected obstruction is a high-risk emergency state.\n\nClinical presentation: Severe flank/back pain radiating toward the groin, hematuria, nausea/vomiting and urinary urgency can occur.\n\nKey features: colicky flank pain; hematuria common; noncontrast imaging often used; infection plus obstruction is dangerous.\n\nDiagnostic approach: Urinalysis, blood tests and imaging identify stone/obstruction; recovered stones and 24-hour urine can guide prevention in recurrent disease.\n\nDifferential diagnosis: pyelonephritis, appendicitis, aortic disease, biliary colic, musculoskeletal pain, ectopic pregnancy.\n\nWestern treatment: Pain control, hydration as appropriate, medical expulsive therapy in selected cases, and urologic procedures for obstructing/large/complicated stones; prevention is stone-specific.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "飲水量不足／低尿量",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "factor": "既往結石病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "factor": "高鈉／高蛋白飲食",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "factor": "肥胖或代謝症候群",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Stones"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Low fluid intake / low urine volume",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "factor": "Prior stone history",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "factor": "High-sodium / high-protein diet",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "factor": "Obesity or metabolic syndrome",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Stones"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "發燒寒顫合併阻塞",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "阻塞合併感染可迅速演變為敗血症",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "無尿",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能為雙側阻塞或孤腎阻塞",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "孤腎病人急性絞痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "阻塞風險為僅存腎功能，屬急症",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "疼痛／嘔吐無法控制",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診急診或泌尿科評估",
+          "rationale": "需要積極止痛與可能的介入處置",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "懷孕合併疑似腎結石",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診婦產科／泌尿科聯合評估",
+          "rationale": "影像與用藥選擇需考量妊娠安全",
+          "source": "NIDDK Kidney Stones"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever/chills with obstruction",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Obstruction with infection can rapidly progress to sepsis",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "Anuria",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate bilateral obstruction or obstruction of a solitary kidney",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "Acute colic in a patient with a solitary kidney",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Obstruction threatens the only remaining kidney function",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "Uncontrolled pain/vomiting",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to emergency or urology evaluation",
+          "rationale": "Needs aggressive pain control and possible intervention",
+          "source": "NIDDK Kidney Stones"
+        },
+        {
+          "finding": "Pregnancy with suspected kidney stone",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for joint obstetric/urology evaluation",
+          "rationale": "Imaging and medication choices must account for pregnancy safety",
+          "source": "NIDDK Kidney Stones"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "病情穩定的結石相關疼痛可作輔助照護，但不可取代阻塞、感染或血管／腹腔急症的評估",
+        "precautions": "不明原因急性側腹痛未經影像／檢驗排除阻塞或感染前，不應逕行以氣滯或腎虛論治",
+        "co_management": "若懷疑阻塞、感染或結石無法自行排出，轉診泌尿科評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於腎結石的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care may support stable stone-related pain, but must not delay evaluation of obstruction, infection or vascular/abdominal emergencies",
+        "precautions": "Do not treat undiagnosed acute flank pain as simple qi stagnation or kidney deficiency before obstruction/infection are excluded by imaging/labs",
+        "co_management": "Refer to urology when obstruction, infection or a non-passing stone is suspected",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for kidney stones was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.low_back_pain",
+        "sym.hematuria",
+        "sym.nausea",
+        "sym.vomiting"
+      ],
+      "sources": [
+        "NIDDK — Kidney Stones: https://www.niddk.nih.gov/health-information/urologic-diseases/kidney-stones",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.pyelonephritis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "腎盂腎炎（腎臟感染）",
+      "name_en": "Pyelonephritis (Kidney Infection)",
+      "category": "uro_renal",
+      "icd_hint": "N10-N12",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "上泌尿道感染"
+      ],
+      "aliases_en": [
+        "Upper Urinary Tract Infection"
+      ],
+      "summary_zh": "腎盂腎炎是腎臟的感染，通常為細菌性，常由下泌尿道感染上行造成。",
+      "summary_en": "Pyelonephritis is an infection of the kidney, usually bacterial and often ascending from the lower urinary tract.",
+      "etiology_zh": "多數病例源自泌尿道細菌上行至腎臟；阻塞、懷孕、膀胱輸尿管逆流、導尿管與泌尿道結構異常會提高風險。",
+      "etiology_en": "Most cases arise from urinary bacteria ascending to the kidney; obstruction, pregnancy, reflux, catheters and urinary abnormalities can increase risk.",
+      "western_pathology_zh": "細菌感染造成腎組織與集尿系統發炎，可能併發菌血症／敗血症。",
+      "western_pathology_en": "Bacterial infection produces inflammation of renal tissue and collecting system; bacteremia/sepsis can occur.",
+      "western_context_zh": "臨床定位：腎臟感染比單純膀胱炎更為嚴重，可能導致敗血症或腎臟併發症。\n\n臨床表現：發燒寒顫、側腹或背痛、噁心嘔吐與泌尿道症狀常見。\n\n重要特徵：屬上泌尿道感染；發燒合併側腹痛為高辨識度組合；尿液檢驗／培養重要；有敗血症風險。\n\n診斷方法：尿液分析與尿液培養；病情嚴重、表現不典型、反覆發作或疑似阻塞時加做血液檢查與影像。\n\n鑑別診斷：膀胱炎、腎結石、闌尾炎、肌肉骨骼側腹痛、骨盆腔發炎疾病。\n\n西醫治療：依嚴重度與抗藥性風險選擇抗生素及給藥途徑／照護場所，並處理阻塞或結構性病因。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型、急性度與併發症。",
+      "western_context_en": "Clinical definition: Kidney infection is more serious than uncomplicated cystitis and can cause sepsis or renal complications.\n\nClinical presentation: Fever/chills, flank or back pain, nausea/vomiting and urinary symptoms are common.\n\nKey features: upper urinary tract infection; fever plus flank pain is high-yield; urine testing/culture important; sepsis risk.\n\nDiagnostic approach: Urinalysis and urine culture; blood tests and imaging when severe, atypical, recurrent or obstruction is suspected.\n\nDifferential diagnosis: cystitis, nephrolithiasis, appendicitis, musculoskeletal flank pain, pelvic inflammatory disease.\n\nWestern treatment: Antibiotics with route/setting based on severity and resistance risk; address obstruction or structural cause.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性、性行為活躍",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "factor": "懷孕",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "factor": "尿路阻塞或結構異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "factor": "留置導尿管",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Infection"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex, sexually active",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "factor": "Urinary obstruction or structural abnormality",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "factor": "Indwelling catheter",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Kidney Infection"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "敗血症徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "腎盂腎炎可迅速進展為敗血性休克",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "懷孕合併疑似腎盂腎炎",
+          "urgency_level": "emergency",
+          "recommended_action": "立即轉診婦產科／急診",
+          "rationale": "母胎風險高，需立即抗生素治療",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "合併阻塞或結石",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診泌尿科／急診",
+          "rationale": "感染合併阻塞需緊急引流",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "無法耐受口服水分或抗生素",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診住院治療",
+          "rationale": "需靜脈輸液與抗生素",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "免疫功能低下病人",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診積極評估",
+          "rationale": "感染進展風險較高",
+          "source": "NIDDK Kidney Infection"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sepsis features",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Pyelonephritis can rapidly progress to septic shock",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "Pregnancy with suspected pyelonephritis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate referral to obstetrics/emergency",
+          "rationale": "High maternal-fetal risk, requires immediate antibiotics",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "Obstruction or stone present",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate referral to urology/emergency",
+          "rationale": "Infection with obstruction requires urgent drainage",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "Inability to tolerate oral fluids/antibiotics",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for hospitalization",
+          "rationale": "Requires IV fluids and antibiotics",
+          "source": "NIDDK Kidney Infection"
+        },
+        {
+          "finding": "Immunocompromised patient",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for prompt evaluation",
+          "rationale": "Higher risk of infection progression",
+          "source": "NIDDK Kidney Infection"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用於急性發燒性側腹痛的針灸治療；僅可於感染控制且穩定後提供恢復期輔助照護",
+        "precautions": "不可把發燒合併側腹痛視為單純腎虛論治；系統性感染／不穩定期間應暫緩治療",
+        "co_management": "感染控制與抗生素治療期間由西醫主導，執業者應聯絡開藥醫師，不建議病人自行停用抗生素",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於腎盂腎炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable to acute febrile flank pain; adjunctive recovery-phase support only once infection is controlled and the patient is stable",
+        "precautions": "Do not treat febrile flank pain as simple Kidney deficiency; defer treatment during systemic infection/instability",
+        "co_management": "Infection control and antibiotic therapy are led by the treating physician; practitioners must not advise stopping antibiotics",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for pyelonephritis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.fever",
+        "sym.low_back_pain",
+        "sym.nausea",
+        "sym.vomiting",
+        "sym.urinary_urgency"
+      ],
+      "sources": [
+        "NIDDK — Kidney Infection: https://www.niddk.nih.gov/health-information/urologic-diseases/kidney-infection-pyelonephritis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.cystitis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "膀胱炎（下泌尿道感染）",
+      "name_en": "Cystitis (Bladder Infection)",
+      "category": "uro_renal",
+      "icd_hint": "N30",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "急性細菌性膀胱炎"
+      ],
+      "aliases_en": [
+        "Acute Bacterial Cystitis",
+        "Lower UTI"
+      ],
+      "summary_zh": "急性細菌性膀胱炎是膀胱的感染／發炎，會造成下泌尿道症狀。",
+      "summary_en": "Acute bacterial cystitis is infection/inflammation of the bladder causing lower urinary tract symptoms.",
+      "etiology_zh": "多由細菌經尿道上行造成，解剖構造、性行為、停經、懷孕、阻塞與器械操作會影響風險。",
+      "etiology_en": "Usually caused by bacteria ascending through the urethra; risk is influenced by anatomy, sexual activity, menopause, pregnancy, obstruction and instrumentation.",
+      "western_pathology_zh": "細菌定殖引發膀胱黏膜發炎，造成排尿疼痛、尿急與頻尿。",
+      "western_pathology_en": "Bacterial colonization triggers bladder mucosal inflammation, causing dysuria, urgency and frequency.",
+      "western_context_zh": "臨床定位：膀胱炎與無症狀菌尿、腎盂腎炎、性傳染病／尿道炎及間質性膀胱炎／膀胱疼痛症候群是不同的臨床概念（本卡與 `cond.interstitial_cystitis`〔間質性膀胱炎〕、`cond.recurrent_uti`〔反覆泌尿道感染〕為互相獨立但可能重疊的實體，非同一疾病）。\n\n臨床表現：排尿疼痛、頻尿／尿急、恥骨上不適，有時血尿；若合併發燒／側腹痛則提示上泌尿道侵犯。\n\n重要特徵：屬下泌尿道感染；出現全身症狀時須排除腎盂腎炎；懷孕會改變處置方式。\n\n診斷方法：臨床評估搭配尿液分析；複雜或反覆病例加做尿液培養。\n\n鑑別診斷：腎盂腎炎、尿道炎／性傳染病、陰道炎、間質性膀胱炎、腎結石。\n\n西醫治療：細菌性膀胱炎給予適當抗生素並提供支持性照護；反覆／複雜病例需評估病因。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型、急性度與併發症。",
+      "western_context_en": "Clinical definition: Cystitis is distinct from asymptomatic bacteriuria, pyelonephritis, STI/urethritis and interstitial cystitis/bladder pain syndrome — kept as a separate identity from `cond.interstitial_cystitis` and `cond.recurrent_uti` already in canon (overlapping but non-equivalent entities).\n\nClinical presentation: Dysuria, urinary frequency/urgency, suprapubic discomfort and sometimes hematuria; fever/flank pain suggests upper-tract involvement.\n\nKey features: lower UTI; dysuria/frequency/urgency; pyelonephritis must be excluded when systemic symptoms occur; pregnancy changes management.\n\nDiagnostic approach: Clinical assessment plus urinalysis; urine culture in selected/complicated cases.\n\nDifferential diagnosis: pyelonephritis, urethritis/STI, vaginitis, interstitial cystitis, nephrolithiasis.\n\nWestern treatment: Appropriate antibiotics for bacterial cystitis plus supportive care; recurrent/complicated cases need cause evaluation.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性生理構造（尿道較短）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "factor": "性行為",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "factor": "停經後雌激素下降",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "factor": "留置導尿管或器械操作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Bladder Infection"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female anatomy (shorter urethra)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "factor": "Sexual activity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "factor": "Postmenopausal estrogen decline",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "factor": "Indwelling catheter or instrumentation",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Bladder Infection"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "發燒或側腹痛",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估上泌尿道感染",
+          "rationale": "可能提示已進展為腎盂腎炎",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "嘔吐無法服藥",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "口服抗生素治療失敗風險",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "懷孕",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診婦產科評估與治療",
+          "rationale": "未治療的膀胱炎可能上行感染，影響妊娠",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "男性或反覆複雜性感染",
+          "urgency_level": "routine",
+          "recommended_action": "轉診泌尿科評估病因",
+          "rationale": "男性泌尿道感染較不典型，需排除結構性病因",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "尿滯留",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "可能需要導尿或進一步處置",
+          "source": "NIDDK Bladder Infection"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever or flank pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for upper urinary tract infection evaluation",
+          "rationale": "May indicate progression to pyelonephritis",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "Vomiting, unable to take oral medication",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Risk of oral antibiotic treatment failure",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "Pregnancy",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to obstetrics for evaluation and treatment",
+          "rationale": "Untreated cystitis may ascend and affect pregnancy",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "Male sex or recurrent complicated infection",
+          "urgency_level": "routine",
+          "recommended_action": "Refer to urology to evaluate cause",
+          "rationale": "UTI in males is atypical and warrants exclusion of structural cause",
+          "source": "NIDDK Bladder Infection"
+        },
+        {
+          "finding": "Urinary retention",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "May require catheterization or further management",
+          "source": "NIDDK Bladder Infection"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "確診細菌性膀胱炎且已接受抗生素治療者，可作症狀輔助照護；不可以針灸取代抗生素治療已確診感染",
+        "precautions": "發燒或側腹痛須先排除上泌尿道感染；輔助照護不應延誤抗生素起始時間",
+        "co_management": "與開立抗生素之醫師確認治療進度，反覆發作者建議轉診泌尿科查找病因",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於膀胱炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom support once bacterial cystitis is diagnosed and on antibiotics; acupuncture must not replace antibiotics for diagnosed infection",
+        "precautions": "Adjunctive care should not delay antibiotics when infection is diagnosed; fever/flank pain requires upper-tract infection to be excluded first",
+        "co_management": "Coordinate with the prescribing physician on treatment progress; refer recurrent cases to urology for cause evaluation",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for cystitis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.urinary_urgency",
+        "sym.hematuria"
+      ],
+      "sources": [
+        "NIDDK — Bladder Infection (UTI) in Adults: https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-infection-uti-in-adults",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_f_respiratory_renal_sleep"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.pneumonia",
+      "entity_type": "biomedical_condition",
+      "name_zh": "肺炎",
+      "name_en": "Pneumonia",
+      "category": "respiratory",
+      "icd_hint": "J12-J18",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "肺炎是肺泡與周邊組織的感染／發炎，可由細菌、病毒、黴菌或其他病原體造成。",
+      "summary_en": "Pneumonia is infection/inflammation of lung air sacs and surrounding tissue caused by bacteria, viruses, fungi or other pathogens.",
+      "etiology_zh": "常見病因包括細菌與病毒病原體；吸入性肺炎與免疫低下狀態會改變致病菌與風險輪廓。",
+      "etiology_en": "Common causes include bacterial and viral pathogens; aspiration and immunocompromised states alter the pathogen/risk profile.",
+      "western_pathology_zh": "肺泡發炎與滲出液堆積影響氣體交換，並可能引發全身性發炎反應。",
+      "western_pathology_en": "Alveolar inflammation and fluid/cellular exudate impair gas exchange and can provoke systemic inflammatory response.",
+      "western_context_zh": "臨床定位：肺炎屬下呼吸道感染，與急性支氣管炎及單純上呼吸道感染不同。\n\n臨床表現：咳嗽、發燒寒顫、呼吸困難、胸痛、疲勞與痰液可能出現；老年或免疫低下病人表現可能不典型。\n\n重要特徵：屬下呼吸道感染；可能影響氣體交換；影像檢查常有助診斷；嚴重度決定門診或住院照護。\n\n診斷方法：病史／理學檢查、血氧評估，常搭配胸部影像；依嚴重度與情境加做病原學檢測。\n\n鑑別診斷：急性支氣管炎、流感／COVID、氣喘／慢性阻塞性肺病急性惡化、肺栓塞、心衰竭。\n\n西醫治療：依病因與嚴重度給予抗微生物藥物及支持性照護；重症可能需住院與呼吸支持。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對病原、亞型與併發症。",
+      "western_context_en": "Clinical definition: Pneumonia is a lower respiratory infection and is distinct from acute bronchitis and uncomplicated upper respiratory infection.\n\nClinical presentation: Cough, fever/chills, dyspnea, chest pain, fatigue and sputum may occur; older or immunocompromised patients can present atypically.\n\nKey features: lower respiratory infection; gas-exchange impairment possible; imaging often supports diagnosis; severity determines outpatient vs hospital care.\n\nDiagnostic approach: History/exam, oxygen assessment and often chest imaging; microbiologic testing depends on severity and context.\n\nDifferential diagnosis: acute bronchitis, influenza/COVID, asthma/COPD exacerbation, pulmonary embolism, heart failure.\n\nWestern treatment: Cause- and severity-specific antimicrobials when indicated plus supportive care; severe disease may require hospitalization and respiratory support.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "factor": "慢性肺病或心臟病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "factor": "免疫功能低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Pneumonia"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Advanced age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "factor": "Chronic lung or heart disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "factor": "Immunocompromised status",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI Pneumonia"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "低血氧",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示呼吸衰竭風險",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "嚴重呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "重症肺炎的危險徵象",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "意識混亂",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示敗血症或缺氧",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "低血壓",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "敗血性休克警訊",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "無法維持水分攝取",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估住院需求",
+          "rationale": "可能需要靜脈輸液支持",
+          "source": "NHLBI Pneumonia"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hypoxia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests risk of respiratory failure",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "Severe dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Danger sign of severe pneumonia",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "Confusion",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate sepsis or hypoxia",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "Hypotension",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Warning sign of septic shock",
+          "source": "NHLBI Pneumonia"
+        },
+        {
+          "finding": "Inability to maintain hydration",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to assess hospitalization need",
+          "rationale": "May require IV fluid support",
+          "source": "NHLBI Pneumonia"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用於不穩定或低血氧的急性肺炎；恢復期穩定病人可作症狀輔助照護",
+        "precautions": "感染控制與轉診優先於針灸治療；急性期不予治療",
+        "co_management": "與治療中的醫師聯絡確認病情穩定度，不建議病人自行停用抗微生物藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep（依據 NHLBI 臨床資料整理）",
+        "note": "尚未查到專屬於肺炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable to unstable or hypoxic acute pneumonia; adjunctive support only for stable patients in recovery",
+        "precautions": "Infection-control and referral come first; do not treat during the acute unstable phase",
+        "co_management": "Confirm clinical stability with the treating physician; never advise stopping antimicrobial therapy",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep (compiled from NHLBI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for pneumonia was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.cough",
+        "sym.fever",
+        "sym.shortness_of_breath",
+        "sym.fatigue"
+      ],
+      "sources": [
+        "NHLBI — Pneumonia: https://www.nhlbi.nih.gov/health/pneumonia",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_f_respiratory_renal_sleep"
       ],
       "source_status": "draft_pending_ting_review"
     }
