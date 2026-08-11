@@ -841,6 +841,51 @@
       </form>
     </dialog>
 
+    <!-- Phase D batch 3 (docs/SPRINT_2026-08-12_BRIEF.md Phase D task 3):
+         mirror of #agentExposureDialog above, over environmentalExposures[]
+         (D17 §5/§6). The exposureId <select> options are populated in app.js
+         (openEnvironmentalExposureEditor) from ACUTING_KNOWLEDGE.exposureVocabulary
+         — static markup here can't see that data at page load. -->
+    <dialog id="environmentalExposureDialog">
+      <form id="environmentalExposureForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="environmentalExposureDialogTitle" data-mode-text data-bilingual="新增環境/毒性暴露" data-english="Add environmental exposure">新增環境/毒性暴露</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeEnvironmentalExposureDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
+        </div>
+        <div class="form-grid">
+          <fieldset class="form-section">
+            <legend>環境/毒性暴露 Exposure</legend>
+            <label>暴露項目 Exposure<select name="exposureId" id="environmentalExposureSelect"><option value="">—</option></select></label>
+            <label class="wide" id="environmentalExposureNameTextWrap" hidden>名稱 Name（其他 Other 時必填）<input name="nameText" placeholder="e.g. Diesel exhaust" /></label>
+            <label>確定度 Certainty<select name="certainty">
+              <option value="suspected" selected>疑似 Suspected</option>
+              <option value="patient_reported">病人自述 Patient reported</option>
+              <option value="confirmed">已確認 Confirmed</option>
+            </select></label>
+            <label>狀態 Timing<select name="timing">
+              <option value="ongoing">持續中 Ongoing</option>
+              <option value="historical">過去 Historical</option>
+              <option value="unknown" selected>不確定 Unknown</option>
+            </select></label>
+            <label>開始（約）Start (approx)<input name="startApprox" type="month" /></label>
+            <label class="wide">情境 Context<textarea name="contextText" rows="2" placeholder="e.g. 住家附近工廠 / lives near a factory"></textarea></label>
+            <!-- Same intake-honesty rule as agentExposureDialog's 已在使用
+                 checkbox: checked = patient already had this exposure when we
+                 first learned of it (initial_recorded, doesn't fabricate an
+                 onset date); unchecked = exposure is newly starting now
+                 (started). -->
+            <label><input type="checkbox" name="alreadyExists" value="1" /> 已存在(首次記錄) Already present（首次記錄,非新開始）</label>
+            <label class="wide">備註 Note<textarea name="note" rows="2"></textarea></label>
+          </fieldset>
+        </div>
+        <div class="dialog-actions">
+          <span></span>
+          <button class="ghost" type="button" id="cancelEnvironmentalExposureBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="新增" data-english="Add">新增</button>
+        </div>
+      </form>
+    </dialog>
+
     <footer>
       <span data-mode-text data-bilingual="學習用途：本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。" data-english="Study use only: this tool organizes common Traditional Chinese Medicine point and pattern relationships. It does not replace diagnosis or treatment by a qualified healthcare professional. Core locations should be checked against WHO-style standards and professional course materials; web sources support bilingual lookup and comparison."><strong>學習用途：</strong>本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>

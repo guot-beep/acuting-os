@@ -620,6 +620,42 @@ h1 {
 .agent-exposure-timeline li { color: #344044; }
 .agent-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
 
+/* Phase D batch 3: Environmental/toxicity exposures ledger
+   (environmentalExposures[]), case-level. Same light-palette row-card
+   convention as .agent-exposure-row above — kept as its own class family
+   (not reused) because the certainty chip needs its own color language:
+   suspected vs confirmed is a safety-relevant distinction, not just a type
+   label (SPRINT brief §5 — exposures are observations, not diagnoses). */
+.env-exposure-list { display: grid; gap: 0.6rem; margin: 0.75rem 0; }
+.env-exposure-row {
+  background: #f8faf9;
+  border: 1px solid #e0e6e5;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+}
+.env-exposure-head { align-items: center; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.env-exposure-head strong { color: #20383b; font-size: 0.92rem; }
+.env-exposure-chip {
+  background: #eef5f4;
+  border: 1px solid #d7e6e4;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+}
+.env-exposure-chip.certainty-confirmed { background: #fdecec; border-color: #f3c9c9; color: #a3312c; }
+.env-exposure-chip.certainty-suspected { background: #fff6e6; border-color: #f0dfb0; color: #8a6416; }
+.env-exposure-meta { color: var(--muted); display: flex; gap: 0.4rem; font-size: 0.82rem; margin-top: 0.3rem; }
+.env-exposure-meta span { color: #344044; font-weight: 600; }
+.env-exposure-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.env-exposure-actions button { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
+.env-exposure-timeline { margin-top: 0.5rem; font-size: 0.82rem; }
+.env-exposure-timeline summary { color: var(--accent-dark); cursor: pointer; font-weight: 700; }
+.env-exposure-timeline ul { margin: 0.4rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+.env-exposure-timeline li { color: #344044; }
+.env-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
+
 /* Phase D batch 2: visit-level Lifestyle / Adverse events repeatable rows
    inside the SOAP dialog (lifestyleFactors[] / adverseEvents[]). Same
    light-palette row-card convention as .agent-exposure-row above — these

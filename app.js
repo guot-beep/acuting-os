@@ -767,6 +767,8 @@ const soapDialog = document.querySelector("#soapDialog");
 const soapForm = document.querySelector("#soapForm");
 const agentExposureDialog = document.querySelector("#agentExposureDialog");
 const agentExposureForm = document.querySelector("#agentExposureForm");
+const environmentalExposureDialog = document.querySelector("#environmentalExposureDialog");
+const environmentalExposureForm = document.querySelector("#environmentalExposureForm");
 const dialog = document.querySelector("#editDialog");
 const form = document.querySelector("#pointForm");
 const deleteBtn = document.querySelector("#deleteBtn");
@@ -1126,6 +1128,18 @@ document.querySelector("#addAdverseEventRow")?.addEventListener("click", () => {
   document.querySelector("#adverseEventRows")?.insertAdjacentHTML("beforeend", adverseEventRowHtml({}));
 });
 agentExposureForm.addEventListener("submit", saveAgentExposureFromForm);
+// Phase D batch 3: environmental exposures dialog — same wiring shape as the
+// agentExposureDialog block above. The exposureId <select> options are filled
+// in openEnvironmentalExposureEditor (vocab loads later in the file), but
+// this change listener can be attached now: the <select> node itself is
+// static markup, only its innerHTML (the <option> list) is rebuilt per open.
+document.querySelector("#closeEnvironmentalExposureDialog").addEventListener("click", () => environmentalExposureDialog.close());
+document.querySelector("#cancelEnvironmentalExposureBtn").addEventListener("click", () => environmentalExposureDialog.close());
+document.querySelector("#environmentalExposureSelect")?.addEventListener("change", (event) => {
+  const wrap = document.querySelector("#environmentalExposureNameTextWrap");
+  if (wrap) wrap.hidden = event.target.value !== REPEATABLE_ROW_OTHER_VALUE;
+});
+environmentalExposureForm.addEventListener("submit", saveEnvironmentalExposureFromForm);
 modelRotate?.addEventListener("input", () => renderMap(getFilteredPoints()));
 modelReset?.addEventListener("click", () => {
   modelView = "front";
@@ -5972,6 +5986,187 @@ function promptAgentExposureAction(exposureId, eventType) {
   render();
 }
 
+// Phase D batch 3 (docs/SPRINT_2026-08-12_BRIEF.md Phase D task 3): case-level
+// Environmental/toxic exposures ledger UI over environmentalExposures[] — the
+// exact mirror of the Meds & Supplements panel above, over a different vocab
+// and a different pair of independent axes (certainty × timing instead of
+// dose/frequency). Exposures are OBSERVATIONS, never diagnoses: no code path
+// here (or anywhere) may turn an exposure.* row into a pattern/tdis id
+// (SPRINT brief §5). suspected→confirmed is a safety-relevant certainty
+// change, not a status tweak, so promptEnvironmentalExposureAction enforces a
+// REQUIRED note on every certainty_changed event (D17 §6) — the one place
+// this panel's write path is stricter than batch 1's. Write side goes
+// exclusively through AcuTingClinicalStore.createExposure/applyExposureChange
+// — never a direct row/events mutation (audit B-1 invariant).
+const ENV_EXPOSURE_CERTAINTY_LABELS = { suspected: "疑似 Suspected", patient_reported: "病人自述 Patient reported", confirmed: "已確認 Confirmed" };
+const ENV_EXPOSURE_TIMING_LABELS = { ongoing: "持續中 Ongoing", historical: "過去 Historical", unknown: "不確定 Unknown" };
+
+function renderEnvironmentalExposuresPanel(item) {
+  const all = item.environmentalExposures || [];
+  const header = `
+    <div class="timeline-head">
+      <strong>環境/毒性暴露 Environmental exposures</strong>
+      <div class="case-actions"><button class="ghost" type="button" id="addEnvironmentalExposureInline">+ 新增 Add</button></div>
+    </div>
+  `;
+  if (!all.length) {
+    return `${header}<div class="case-empty">尚未記錄環境或毒性暴露。Add suspected or confirmed exposures as they come up.</div>`;
+  }
+  return `${header}<div class="env-exposure-list">${all.map(renderEnvironmentalExposureRow).join("")}</div>`;
+}
+
+function renderEnvironmentalExposureRow(exposure) {
+  const store = window.AcuTingClinicalStore;
+  const timeline = store ? store.getExposureTimeline(exposure) : [...(exposure.events || [])];
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.exposureVocabulary?.records || [];
+  const rec = vocab.find((r) => r.id === exposure.exposureId);
+  const title = rec ? `${rec.name_zh} ${rec.name_en}` : (exposure.nameText || exposure.exposureId || "未命名 Unnamed");
+  const certaintyLabel = ENV_EXPOSURE_CERTAINTY_LABELS[exposure.certainty] || (exposure.certainty || "—");
+  const timingLabel = ENV_EXPOSURE_TIMING_LABELS[exposure.timing] || (exposure.timing || "—");
+  return `
+    <div class="env-exposure-row">
+      <div class="env-exposure-head">
+        <span class="env-exposure-chip certainty-${escapeAttribute(exposure.certainty || "")}">${escapeHtml(certaintyLabel)}</span>
+        <strong>${escapeHtml(title)}</strong>
+        <span class="env-exposure-chip">${escapeHtml(timingLabel)}</span>
+      </div>
+      ${exposure.contextText ? `<div class="env-exposure-meta"><small>情境 Context</small><span>${escapeHtml(exposure.contextText)}</span></div>` : ""}
+      <div class="env-exposure-actions">
+        <button type="button" class="ghost" data-env-exposure-action="certainty_changed" data-exposure-id="${escapeHtml(exposure.id)}">改確定度</button>
+        <button type="button" class="ghost" data-env-exposure-action="timing_changed" data-exposure-id="${escapeHtml(exposure.id)}">改狀態</button>
+        <button type="button" class="ghost" data-env-exposure-action="stopped" data-exposure-id="${escapeHtml(exposure.id)}">已結束</button>
+        <button type="button" class="ghost" data-env-exposure-action="confirmed_unchanged" data-exposure-id="${escapeHtml(exposure.id)}">確認未變</button>
+      </div>
+      <details class="env-exposure-timeline">
+        <summary>時間線 Timeline（${timeline.length}）</summary>
+        ${timeline.length ? `<ul>${timeline.map(renderEnvironmentalExposureEvent).join("")}</ul>` : `<p>尚無事件紀錄 No recorded events yet.</p>`}
+      </details>
+    </div>
+  `;
+}
+
+function renderEnvironmentalExposureEvent(ev) {
+  const head = [ev.eventType, ENV_EXPOSURE_CERTAINTY_LABELS[ev.certainty] || ev.certainty, ENV_EXPOSURE_TIMING_LABELS[ev.timing] || ev.timing].filter(Boolean).join(" · ");
+  const meta = [ev.visitId, ev.effectiveApprox].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(head || ev.eventType)}</strong>${meta ? ` <small>(${escapeHtml(meta)})</small>` : ""}${ev.note ? `<br><small>${escapeHtml(ev.note)}</small>` : ""}</li>`;
+}
+
+function openEnvironmentalExposureEditor() {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) {
+    alert("請先新增或選擇一筆病例。");
+    return;
+  }
+  environmentalExposureForm.reset();
+  // Rebuilt every open (like the lifestyle/adverse row selects) — always
+  // reflects the current exposureVocabulary bundle rather than whatever was
+  // baked into static markup at page load (there is none; see index.html).
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.exposureVocabulary?.records || [];
+  const select = document.querySelector("#environmentalExposureSelect");
+  if (select) select.innerHTML = vocabSelectOptionsHtml(vocab, "");
+  const nameTextWrap = document.querySelector("#environmentalExposureNameTextWrap");
+  if (nameTextWrap) nameTextWrap.hidden = true;
+  environmentalExposureDialog.showModal();
+}
+
+function saveEnvironmentalExposureFromForm(event) {
+  event.preventDefault();
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) return;
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const data = Object.fromEntries(new FormData(environmentalExposureForm).entries());
+  const isOther = data.exposureId === REPEATABLE_ROW_OTHER_VALUE;
+  const exposureId = isOther ? "" : (data.exposureId || "").trim();
+  const nameText = (data.nameText || "").trim();
+  if (!exposureId && !nameText) {
+    alert("請選擇暴露項目，或選擇「其他」並填寫名稱 Name。");
+    return;
+  }
+  const certainty = data.certainty || "suspected";
+  const timing = data.timing || "unknown";
+  // Build the bare ledger row, then apply the initial event through the ONE
+  // authorized write path — certainty/timing land on the snapshot via
+  // applyExposureChange's env branch, never set directly here. Same
+  // started/initial_recorded intake-honesty split as saveAgentExposureFromForm.
+  const startedRow = store.createExposure(
+    { id: createId("envexp"), exposureId, nameText, contextText: (data.contextText || "").trim() },
+    {
+      eventType: data.alreadyExists ? "initial_recorded" : "started",
+      certainty,
+      timing,
+      effectiveApprox: (data.startApprox || "").trim(),
+      note: (data.note || "").trim()
+    },
+    "environmental"
+  );
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    return normalizeClinicalCase({ ...c, environmentalExposures: [...(c.environmentalExposures || []), startedRow], updatedAt: now });
+  });
+  persistClinicalCases();
+  environmentalExposureDialog.close();
+  render();
+}
+
+// Quick record-change actions (改確定度/改狀態/已結束/確認未變) — same
+// prompt()-based minimal-capture pattern as promptAgentExposureAction, with
+// one hard addition: certainty_changed REQUIRES a non-empty note. D17 §6 —
+// suspected→confirmed (or any certainty change) must never happen trace-less;
+// an empty note aborts the whole action rather than silently proceeding.
+function promptEnvironmentalExposureAction(exposureId, eventType) {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  const exposure = activeCase && (activeCase.environmentalExposures || []).find((e) => e.id === exposureId);
+  if (!exposure) return;
+  const event = { eventType };
+  if (eventType === "certainty_changed") {
+    const value = (prompt("新確定度 New certainty（suspected / patient_reported / confirmed）", exposure.certainty || "") || "").trim();
+    if (!value) return;
+    if (!["suspected", "patient_reported", "confirmed"].includes(value)) {
+      alert("確定度必須是 suspected / patient_reported / confirmed 其中一個，已取消。");
+      return;
+    }
+    const note = (prompt("備註（必填 — 例如檢測報告/病歷來源）Note (REQUIRED — e.g. lab result, chart source)", "") || "").trim();
+    if (!note) {
+      alert("改確定度必須附備註，已取消（D17 §6：確定度變更不得無痕發生，尤其 suspected→confirmed）。");
+      return;
+    }
+    event.certainty = value;
+    event.note = note;
+  } else if (eventType === "timing_changed") {
+    const value = (prompt("新狀態 New timing（ongoing / historical / unknown）", exposure.timing || "") || "").trim();
+    if (!value) return;
+    if (!["ongoing", "historical", "unknown"].includes(value)) {
+      alert("狀態必須是 ongoing / historical / unknown 其中一個，已取消。");
+      return;
+    }
+    event.timing = value;
+    event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  } else if (eventType === "stopped") {
+    if (!confirm(`確定將「${exposure.nameText || exposure.exposureId}」標記為已結束？`)) return;
+    const endDate = prompt("結束日期（約，選填）End date (approx, optional)", "");
+    if (endDate === null) return;
+    event.effectiveApprox = endDate.trim();
+    event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  } else if (eventType === "confirmed_unchanged") {
+    if (!confirm("確認這個項目維持現狀（確定度/狀態未變）？")) return;
+    event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  } else {
+    return;
+  }
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    const nextExposures = (c.environmentalExposures || []).map((e) => e.id === exposureId ? store.applyExposureChange(e, event, "environmental") : e);
+    return normalizeClinicalCase({ ...c, environmentalExposures: nextExposures, updatedAt: now });
+  });
+  persistClinicalCases();
+  render();
+}
+
 function normalizeStringList(value) {
   if (Array.isArray(value)) return value.map((item) => String(item).trim()).filter(Boolean);
   return splitList(String(value || ""));
@@ -6206,6 +6401,7 @@ function renderClinicalCaseDetail(item) {
     ${renderCaseTags(item)}
     ${renderOutcomeTrackingPanel(item)}
     ${renderAgentExposuresPanel(item)}
+    ${renderEnvironmentalExposuresPanel(item)}
     ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>
@@ -6225,6 +6421,14 @@ function renderClinicalCaseDetail(item) {
   caseDetail.querySelectorAll("[data-agent-exposure-action]").forEach((button) => {
     button.addEventListener("click", () => {
       promptAgentExposureAction(button.dataset.exposureId, button.dataset.agentExposureAction);
+    });
+  });
+  // Phase D batch 3: Environmental exposures ledger (environmentalExposures[])
+  // — same wiring shape as the Meds & Supplements block above.
+  document.querySelector("#addEnvironmentalExposureInline")?.addEventListener("click", () => openEnvironmentalExposureEditor());
+  caseDetail.querySelectorAll("[data-env-exposure-action]").forEach((button) => {
+    button.addEventListener("click", () => {
+      promptEnvironmentalExposureAction(button.dataset.exposureId, button.dataset.envExposureAction);
     });
   });
   caseDetail.querySelectorAll("[data-edit-soap]").forEach((button) => {
