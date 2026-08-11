@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2b 回應批重審，real-case gate 維持 NO-GO
+
+- **範圍／結論**：鎖定 `23b310d^..7830ba4` 隔離快照重審 A–D、六項修正、dry-run 與 R1–R8；六項為 `PASS 2 · MEDIUM 3 · HIGH 1`，C2b = **NO-GO / PAUSE**，真實 localStorage 讀／寫 `0/0`。
+- **反例數字**：R1–R7 惡意資料 `7/7` 被擋、R4 warning `1`；R8 的 id-prefix collision 與 same-id payload rewrite `0/2` 被擋（兩者錯誤 exit `0`）。committed CI clinical commands `0`；預設 invariant coverage為 selections/exposures/events/lifestyle `0/0/0/0`。
+- **dry-run**：self-test `7/7`；兩 process plan SHA-256同為 `8C03D63C10C3FBD17414A24DFB23A5941B2E7EF8F041E2E33CEFA7801BA93658`；`--execute` exit `2`，無 clinical execute path。Unicode fixture `source_bytes`報 `889`、UTF-8實際 `893`。
+- **快照驗證**：build exit `0`且兩 generated SHA不變；PHI `9 files / 2 refs / 0 issues`；content/data(`947`)/interactions(`0 failures`)/relations/ratchet與四個 JS syntax均 exit `0`。後續 `ee00856`、`3f4f1f0`及未提交 workflow接線未納入 endpoint證據。
+- **下一 gate**：修 R8 structured id+payload-hash comparator、committed import/CI nonzero fixture、bytes/null/adjudication與 stale mapping；以假 clone提交 shadow/idempotency/rollback/full export round-trip證據後再重審，期間不得對33 real cases寫入。
+
 # 2026-08-11 Codex — Clinical V2 Phase B→C2a 獨立審計與 C2b gate
 
 - **範圍／結果**：獨立重查 `994d8b3^..e959ce9` 的 10 項清單；分級 `BLOCKER 1 · HIGH 4 · MEDIUM 3 · LOW 0 · PASS 2`，C2b = **NO-GO / PAUSE**，不得對 33 個真實病例執行 case→patient 抬升。

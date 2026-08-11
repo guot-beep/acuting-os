@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2b response re-audit / NO-GO remains
+
+- **Reviewed endpoint**: `23b310d^..7830ba4` in an isolated committed snapshot. Later `ee00856`/`3f4f1f0` and an uncommitted workflow edit appeared during the audit and were excluded from the gate evidence.
+- **Gate / six fixes**: C2b **NO-GO / PAUSE**; six prior HIGH/MEDIUM responses = `PASS 2 · MEDIUM 3 · HIGH 1`. Timestamp reads and Patient derivation pass; mapping metadata is stale, import/R8 remains rewriteable, role checks are not in `7830ba4` import, and committed CI has no clinical calls.
+- **Adversarial evidence**: R1–R7 rejected `7/7` intended violations plus one legacy-role warning. R8 rejected `0/2` required failures: `evt-1→evt-10` prefix collision and same-id payload rewrite both exited `0`. Default validator coverage is `2 cases` but `0/0/0/0` selections/exposures/events/lifestyle.
+- **Migration scaffold**: self-test `7/7`; two cross-process plan hashes match (`8C03D63…93658`); unknown `--execute` exits `2`, so no clinical execute path exists. UTF-8 `source_bytes` is wrong (`889` reported vs `893` actual), and unresolved fields emit empty string rather than plan-specified null.
+- **Next code gate**: structured event-id + canonical-payload-hash prefix checks shared by import/R8, committed import+CI wiring with nonzero app-export fixture, byte/null/adjudication fixes, current mapping metadata, then fake-clone shadow/idempotency/rollback/full-export evidence before another Codex decision. No write to the 33-case real store.
+
 ## [2026-08-11] Codex Handoff — Clinical V2 Phase B→C2a audit / C2b NO-GO
 
 - **Branch / Reviewed Range**: `codex/pattern-v2`; `994d8b3^..e959ce9`; pulled current remote first. Audit output is at the top of `docs/AI_REVIEW_FEEDBACK.md` with `STATUS: PAUSE`.
