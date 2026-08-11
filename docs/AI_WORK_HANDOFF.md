@@ -2,6 +2,27 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #18 — 知識庫全線里程碑(2026-08-11 晚)
+
+| 線 | 現況 | 驗證 |
+|---|---|---|
+| cond.* | **505**(209 內容層 + 296 骨架 N4)| blocking 持平 425(全為既有債)|
+| tdis.* | **75/75 全內容** | **0 defects(103→0 三批清零)** |
+| pattern.* | registry 125 / library **128**(六經/衛氣營血/奇經 V2-D 全入)| 0 defects |
+| sym.* | **102**(需求驅動:tdis 表現文字排序)| 0 defects |
+| herb.* | **358**(F12 斷鏈 60→3)| PASS |
+| formula.* | blocking 88→**11**(誠實保留:葛根湯誤植等)| ledger 記帳 |
+| supp.* | 36 + interaction_focus 全覆蓋 + maturity 三級標準入驗證器 | PASS 0/0 |
+| drug.* | 40 全 SPL 轉錄 + 證據檔誠實重建 | PASS 0/0 |
+
+- 修復:sym.headache mojibake(головache 混種字,agent 眼讀抓到)
+- 藍圖 R2/R3/R4 落地;R1 等 C2b 後
+- 待 Ting:葛根湯正方來源、反胃別名歸屬、C2b 真機日
+- 待 SOL:CR-010 detail 素材(它已在做)
+- NEXT:cond detail 批(等 CR-010)、tdis 骨架擴充(需先做 T4 版 skeleton 帶出條款)
+
+---
+
 ## TING 裁定(2026-08-11,內容目標澄清 — 對 Fable/Sonnet/SOL/Codex 一體適用)
 
 - **西醫病名(cond.*)雙層目標**(2026-08-11 二次澄清):
