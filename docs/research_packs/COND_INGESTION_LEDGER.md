@@ -487,3 +487,44 @@ Pack file: `16_WESTERN_CONDITION_RESEARCH_BATCH_L_ENT_OPHTHALMIC_EMERGENCIES.md`
   of this batch was clean NEW_CANDIDATE additions rather than boilerplate
   replacement on high-defect existing records). All 6 touched/added records
   are 0-defect.
+
+## Batch M — Infectious Disease (2026-08-11)
+
+Pack file: `17_WESTERN_CONDITION_RESEARCH_BATCH_M_INFECTIOUS.md` (same
+blob-read workaround). 7 concepts.
+
+| candidate_id → canonical id | ruling |
+|---|---|
+| `cond.influenza` → `cond.influenza` | EXISTING_ENRICH — exact id/name match (`name_zh: "流行性感冒（文件情境）"`), C10 boilerplate `etiology_zh`/`western_pathology_zh` replaced per validator's own authorization. Cleaned stale name suffix. |
+| `cond.covid_19` → `cond.covid_19` | NEW_CANDIDATE — exact-scanned `covid`/`新冠` — found `cond.post_covid` ("新冠後症候群"/"Post-COVID Syndrome (Long COVID)"), a distinct post-acute condition, NOT acute COVID-19 infection — ruled non-overlapping per template's non-equivalence rule, same acute-vs-post-acute boundary pattern as Batch L's SSHL/hearing_loss and acute_bacterial_sinusitis/chronic_sinusitis decisions. Differential explicitly cross-referenced in `western_context_*` ("see cond.post_covid"). **Confirmed still-present cross-contamination**: `cond.post_covid`'s `etiology_zh`/`western_pathology_zh` still carry the misfiled asthma essay first flagged in Batch F notes (`cond.asthma`×`cond.post_covid`) — re-verified by direct read this batch, untouched (out of scope; `cond.post_covid` is not this batch's candidate). |
+| `cond.tuberculosis_disease` → `cond.tuberculosis_disease` | NEW_CANDIDATE — exact-scanned `tuberculosis`/`結核` — zero matches |
+| `cond.lyme_disease` → `cond.lyme_disease` | NEW_CANDIDATE — exact-scanned `lyme`/`萊姆病` — zero matches |
+| `cond.hiv_infection` → `cond.hiv_infection` | NEW_CANDIDATE — exact-scanned `hiv`/`愛滋`/`人類免疫缺乏` — zero matches |
+| `cond.herpes_zoster` → `cond.herpes_zoster` | EXISTING_ENRICH — exact id/name match (`name_zh: "帶狀皰疹（急性期）"`), real unique classical-text content (蛇串瘡/纏腰火丹 essay) — left untouched, condensed `etiology_en`/`western_pathology_en` added. Distinct from the pre-existing `cond.postherpetic_neuralgia` (a complication, already separately canonical — no action needed, confirms the acute-episode/complication split was already correctly modeled before this batch). |
+| `cond.syphilis` → `cond.syphilis` | NEW_CANDIDATE — exact-scanned `syphilis`/`梅毒` — zero matches |
+
+### Batch M notes for the next ingest AI
+
+- **Acute-vs-post-acute boundary recurred a third time**: COVID-19 (acute)
+  vs `cond.post_covid` (Long COVID) is the same identity-boundary shape as
+  Batch L's two decisions (SSHL vs chronic hearing_loss; acute bacterial
+  sinusitis vs chronic_sinusitis). This is now a recurring pattern across
+  J–M: a pack candidate naming an acute/emergent state should almost never
+  be merged into an existing card whose real content describes the chronic
+  or post-acute counterpart, even when the search keyword matches exactly.
+- **`cond.post_covid`'s asthma cross-contamination is still unfixed** (3rd
+  confirmation across Batch F → M) — flagging again for whichever future
+  batch's scope actually includes `cond.post_covid` or `cond.asthma` as a
+  candidate; a dedicated content-untangling pass was recommended as far back
+  as Batch F and has not yet been picked up.
+- **`cond.postherpetic_neuralgia` already existed as a correctly-separated
+  complication card** before this batch touched `cond.herpes_zoster` — a
+  positive precedent showing the acute-episode/complication split pattern
+  (see also `cond.chronic_pelvic_pain` vs acute pelvic conditions) was
+  already applied correctly elsewhere in the canon; nothing to fix.
+- Validator state after Batch M commit: `data/pathology/condition_canon_shortlist.json`
+  197 → 202 records (5 NEW_CANDIDATE, 2 EXISTING_ENRICH — matches the pack's
+  own 7-concept count). `check-validation-ratchet.js` conditions defect count:
+  433 (Batch L close) → 425 (BETTER, −8). All 7 touched/added records are
+  0-defect (only N1 informational notes on `cond.influenza`/`cond.herpes_zoster`
+  for unlifted `tcm_patterns` blobs, not blocking).

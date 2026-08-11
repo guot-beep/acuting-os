@@ -18509,8 +18509,8 @@
     },
     {
       "id": "cond.influenza",
-      "name_en": "Influenza (context)",
-      "name_zh": "流行性感冒（文件情境）",
+      "name_en": "Influenza",
+      "name_zh": "流行性感冒",
       "category": "respiratory",
       "icd_hint": "J10-J11",
       "related_eastern_diseases": [
@@ -18520,8 +18520,8 @@
         "pattern.wind_heat_invading_lung"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "季節性流感 A 型與 B 型病毒是大多數人類季節性流行的主要病因。",
+      "western_pathology_zh": "呼吸道上皮感染與宿主發炎反應造成全身性與呼吸道症狀，可能併發次發性細菌性肺炎。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -18553,7 +18553,144 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "流感"
+      ],
+      "aliases_en": [
+        "Flu"
+      ],
+      "etiology_en": "Seasonal influenza A and B viruses cause most human seasonal epidemics.",
+      "western_pathology_en": "Respiratory epithelial infection and host inflammatory response produce systemic and respiratory symptoms; secondary bacterial pneumonia can occur.",
+      "summary_zh": "流行性感冒是由流感病毒引起的傳染性呼吸道疾病，病程範圍從輕症到嚴重肺炎、失代償甚至死亡。",
+      "summary_en": "Influenza is a contagious respiratory illness caused by influenza viruses and ranges from mild disease to severe pneumonia, decompensation and death.",
+      "western_context_zh": "臨床定位：與一般感冒及 COVID-19 不同，症狀重疊，必要時須以檢測區分。\n\n臨床表現：突發發燒畏寒、咳嗽、喉嚨痛、鼻塞流鼻水、肌肉痠痛、頭痛與疲勞；發燒可能缺席。\n\n重要特徵：發病急、全身痠痛與疲勞明顯、高風險／重症患者的抗病毒治療具時效性、疫苗可預防。\n\n診斷方法：臨床情境判斷，並於結果會影響治療／感染管制決策時進行分子或抗原檢測。\n\n鑑別診斷：COVID-19、普通感冒、肺炎、鏈球菌性咽炎。\n\n西醫治療：支持性療法；重症／高風險或部分早期個案使用抗病毒藥物；疫苗接種為預防主軸。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Influenza is distinct from the common cold and COVID-19; symptoms overlap and testing may be needed.\n\nClinical presentation: Abrupt fever/chills, cough, sore throat, runny/stuffy nose, myalgias, headache and fatigue; fever may be absent.\n\nKey features: abrupt onset, systemic aches/fatigue, antivirals time-sensitive for high-risk/severe patients, vaccination preventive.\n\nDiagnostic approach: Clinical context plus molecular/antigen testing when results affect treatment/infection-control decisions.\n\nDifferential diagnosis: COVID-19, common cold, pneumonia, strep pharyngitis.\n\nWestern treatment: Supportive care; antiviral treatment for severe/high-risk or selected early cases; vaccination prevention.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡（幼兒或高齡）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Influenza"
+        },
+        {
+          "factor": "慢性疾病或免疫低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Influenza"
+        },
+        {
+          "factor": "未接種流感疫苗",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Influenza"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Age (young children or older adults)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Influenza"
+        },
+        {
+          "factor": "Chronic illness or immunocompromise",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Influenza"
+        },
+        {
+          "factor": "Not vaccinated against influenza",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Influenza"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "呼吸困難或胸痛",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "可能提示肺炎或其他嚴重併發症",
+          "source": "CDC — About Influenza"
+        },
+        {
+          "finding": "意識混亂",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示嚴重全身性感染",
+          "source": "CDC — About Influenza"
+        },
+        {
+          "finding": "脫水徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "須及時處理避免惡化",
+          "source": "CDC — About Influenza"
+        },
+        {
+          "finding": "缺氧或高風險族群病情惡化",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "高風險族群惡化可能迅速危及生命",
+          "source": "CDC — About Influenza"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Dyspnea or chest pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "May indicate pneumonia or other serious complication",
+          "source": "CDC — About Influenza"
+        },
+        {
+          "finding": "Confusion",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate severe systemic infection",
+          "source": "CDC — About Influenza"
+        },
+        {
+          "finding": "Signs of dehydration",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Requires timely management to prevent worsening",
+          "source": "CDC — About Influenza"
+        },
+        {
+          "finding": "Hypoxia or worsening illness in a high-risk patient",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "High-risk patients can deteriorate rapidly and become life-threatening",
+          "source": "CDC — About Influenza"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不建議在未評估感染管制風險前提供常規面對面針灸治療急性傳染病",
+        "precautions": "應留意呼吸道評估與抗病毒藥物時效性，不應延誤",
+        "co_management": "若病人使用抗病毒藥物，與其開立醫師聯絡確認治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於流感的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not treat contagious acute illness without infection-control judgment",
+        "precautions": "Antivirals and respiratory evaluation should not be delayed",
+        "co_management": "If the patient is on antiviral treatment, contact the prescriber to confirm treatment progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for influenza was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.fever",
+        "sym.cough"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.allergic_rhinitis",
@@ -23838,7 +23975,131 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/56"
-      ]
+      ],
+      "aliases_zh": [
+        "蛇串瘡"
+      ],
+      "aliases_en": [
+        "Shingles"
+      ],
+      "etiology_en": "Condensed translation of the existing classical-text essay: TCM has no ancient term matching 'herpes zoster' precisely but recognized similar presentations under names like 蛇串瘡/纏腰火丹, framing it as externally-contracted toxin combined with liver/gallbladder fire or spleen-stomach damp-heat obstructing the channels — not a line-by-line rendering of the long Chinese essay, which remains the source of record.",
+      "western_pathology_en": "Condensed translation: the essay describes shingles as reactivation of latent varicella-zoster virus in roughly 1 in 3 people over a lifetime, triggered by age, illness or lowered immunity, producing painful vesicular dermatomal rash typically resolving in 2-4 weeks — an entry point for the TCM etiologies described in etiology_zh, not itself a full biomedical VZV mechanism.",
+      "summary_zh": "帶狀皰疹是潛伏水痘帶狀疱疹病毒重新活化，造成通常單側之疼痛性皮節性水泡疹，並可能出現神經／眼部併發症。",
+      "summary_en": "Herpes zoster is reactivation of latent varicella-zoster virus causing a painful usually unilateral dermatomal rash and possible neurologic/ocular complications.",
+      "western_context_zh": "臨床定位：帶狀皰疹是病毒重新活化，不是從他人感染而得；接觸易感者可能造成對方罹患水痘。\n\n臨床表現：疼痛、灼熱／刺痛感，隨後出現群聚皮節性水泡疹；帶狀皰疹後神經痛可能持續存在。\n\n重要特徵：皮節性疼痛性皮疹、帶狀皰疹後神經痛為常見併發症、眼部侵犯威脅視力、疫苗可預防。\n\n診斷方法：通常以臨床診斷為主；非典型個案可進行 PCR 檢測。\n\n鑑別診斷：單純疱疹病毒感染、接觸性皮膚炎、蜂窩性組織炎、皮疹前的神經根病變、昆蟲叮咬。\n\n西醫治療：適當個案及早使用抗病毒藥物、疼痛控制及併發症處置；疫苗可預防疾病與併發症。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Shingles is reactivation, not new acquisition of shingles from another person; exposed susceptible people can develop chickenpox.\n\nClinical presentation: Pain, burning/tingling followed by grouped vesicular dermatomal rash; postherpetic neuralgia can persist.\n\nKey features: dermatomal painful rash, postherpetic neuralgia common complication, ophthalmic involvement threatens vision, vaccination preventive.\n\nDiagnostic approach: Usually clinical; PCR testing when atypical.\n\nDifferential diagnosis: HSV, contact dermatitis, cellulitis, radiculopathy before rash, insect bites.\n\nWestern treatment: Early antiviral therapy for indicated patients, pain control and complication management; vaccination prevents disease/complications.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Shingles"
+        },
+        {
+          "factor": "免疫功能低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Shingles"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Shingles"
+        },
+        {
+          "factor": "Weakened immune function",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Shingles"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "眼部或前額受侵犯",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診眼科",
+          "rationale": "可能威脅視力",
+          "source": "CDC — About Shingles"
+        },
+        {
+          "finding": "皮疹散播全身",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "提示嚴重免疫低下或瀰漫性感染",
+          "source": "CDC — About Shingles"
+        },
+        {
+          "finding": "神經學缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診神經科評估",
+          "rationale": "可能提示神經系統併發症",
+          "source": "CDC — About Shingles"
+        },
+        {
+          "finding": "內臟器官受侵犯徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於嚴重全身性併發症",
+          "source": "CDC — About Shingles"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Eye/forehead involvement",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate ophthalmology referral",
+          "rationale": "Can threaten vision",
+          "source": "CDC — About Shingles"
+        },
+        {
+          "finding": "Disseminated rash",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Suggests severe immunosuppression or disseminated infection",
+          "source": "CDC — About Shingles"
+        },
+        {
+          "finding": "Neurologic deficits",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for neurologic evaluation",
+          "rationale": "May indicate neurologic complications",
+          "source": "CDC — About Shingles"
+        },
+        {
+          "finding": "Signs of visceral involvement",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "A severe systemic complication",
+          "source": "CDC — About Shingles"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為疼痛與皮膚症狀的輔助照護",
+        "precautions": "不得針刺穿過活動性水泡；須採感染管制措施，眼部侵犯須立即轉診眼科",
+        "co_management": "若使用抗病毒藥物治療，與病人的處方醫師聯絡確認治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於帶狀皰疹的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for pain and skin symptoms",
+        "precautions": "Do not needle through active vesicles; use infection-control precautions and urgent ophthalmology for eye involvement",
+        "co_management": "If antiviral treatment is used, contact the prescriber to confirm treatment progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for herpes zoster was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.pruritus"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.alopecia",
@@ -39948,6 +40209,701 @@
       "content_source": [
         "medlineplus_overview",
         "research_pack_batch_l_ent_ophthalmic_emergencies"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.covid_19",
+      "entity_type": "biomedical_condition",
+      "name_zh": "新冠病毒疾病",
+      "name_en": "COVID-19",
+      "category": "respiratory",
+      "icd_hint": "U07.1",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "新冠肺炎"
+      ],
+      "aliases_en": [
+        "Coronavirus Disease 2019"
+      ],
+      "summary_zh": "COVID-19 是 SARS-CoV-2 感染，病程範圍從無症狀感染到嚴重多重器官疾病及急性期後的長新冠。",
+      "summary_en": "COVID-19 is infection caused by SARS-CoV-2, ranging from asymptomatic infection to critical multisystem disease and post-acute Long COVID.",
+      "etiology_zh": "SARS-CoV-2 感染，主要透過呼吸道飛沫傳播。",
+      "etiology_en": "SARS-CoV-2 infection transmitted primarily through respiratory particles.",
+      "western_pathology_zh": "病毒感染與宿主免疫反應影響呼吸道及其他器官系統；重症可造成低血氧性肺炎與血栓發炎併發症。",
+      "western_pathology_en": "Viral infection and host immune response affect respiratory and other organ systems; severe disease can cause hypoxemic pneumonia and thromboinflammatory complications.",
+      "western_context_zh": "臨床定位：與流感症狀重疊，僅憑症狀無法可靠區分兩者；急性感染與「長新冠」（見 cond.post_covid）為不同臨床階段，不應混為一談。\n\n臨床表現：發燒畏寒、咳嗽、呼吸困難、疲勞、喉嚨痛、鼻塞、肌肉痠痛、頭痛、腸胃症狀及味嗅覺改變。\n\n重要特徵：病毒檢測可確診、嚴重度範圍廣、符合條件之高風險門診病人可儘早使用抗病毒藥物、長新冠屬獨立的急性期後狀態。\n\n診斷方法：核酸／抗原病毒檢測，並評估嚴重度。\n\n鑑別診斷：流感、普通感冒、肺炎、肺栓塞、氣喘／慢性阻塞性肺病急性惡化。\n\n西醫治療：低風險輕症以支持性療法為主；符合條件之高風險門診病人使用限時抗病毒藥物，重症依醫院準則處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: COVID-19 and influenza share symptoms but are caused by different viruses and cannot be reliably distinguished by symptoms alone; acute infection and 'Long COVID' (see cond.post_covid) are distinct clinical stages and should not be conflated.\n\nClinical presentation: Fever/chills, cough, dyspnea, fatigue, sore throat, congestion, myalgias, headache, GI symptoms and taste/smell change may occur.\n\nKey features: viral testing confirms, severity spectrum broad, early outpatient antivirals for eligible high-risk patients, Long COVID is separate post-acute condition.\n\nDiagnostic approach: NAAT/PCR or antigen viral testing plus severity evaluation.\n\nDifferential diagnosis: influenza, common cold, pneumonia, PE, asthma/COPD exacerbation.\n\nWestern treatment: Supportive care for low-risk mild disease; time-limited antiviral options for high-risk outpatients and hospital protocols for severe disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "factor": "慢性疾病或免疫低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "factor": "未接種疫苗",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — COVID-19 Clinical Presentation"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "factor": "Chronic illness or immunocompromise",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "factor": "Not vaccinated",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — COVID-19 Clinical Presentation"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "缺氧或嚴重呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於危及生命的呼吸衰竭風險",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "finding": "胸痛",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "須排除心肺併發症",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "finding": "意識混亂",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示嚴重全身性疾病",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "finding": "發紺或高風險族群病情惡化",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "高風險族群惡化可能迅速危及生命",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hypoxia or severe dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Life-threatening respiratory failure risk",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "finding": "Chest pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Must exclude cardiopulmonary complications",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "finding": "Confusion",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate severe systemic illness",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        },
+        {
+          "finding": "Cyanosis or high-risk worsening disease",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "High-risk patients can deteriorate rapidly and become life-threatening",
+          "source": "CDC — COVID-19 Clinical Presentation"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "應以感染管制判斷為前提；輔助症狀照護不得延誤抗病毒藥物適用性評估或急症評估",
+        "precautions": "急性期不建議常規面對面針灸治療活動性傳染病",
+        "co_management": "若使用抗病毒藥物治療，與病人的處方醫師聯絡確認治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於 COVID-19 急性感染的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Respect infection-control and treatment windows; adjunctive symptom care must not delay antiviral eligibility or emergency assessment",
+        "precautions": "Routine in-person acupuncture is not advised for acute active infection",
+        "co_management": "If antiviral treatment is used, contact the prescriber to confirm treatment progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for acute COVID-19 was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.fever",
+        "sym.cough",
+        "sym.shortness_of_breath"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "CDC — COVID-19 Clinical Presentation: https://www.cdc.gov/covid/hcp/clinical-care/covid19-presentation.html",
+        "CDC — COVID-19 Outpatient Treatment: https://www.cdc.gov/covid/hcp/clinical-care/outpatient-treatment.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.tuberculosis_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "活動性結核病",
+      "name_en": "Active Tuberculosis Disease",
+      "category": "respiratory",
+      "icd_hint": "A15-A19",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "肺結核"
+      ],
+      "aliases_en": [
+        "Active TB"
+      ],
+      "summary_zh": "結核病是結核分枝桿菌複合群造成的活動性疾病，最常見於肺部，但可能侵犯幾乎任何器官。",
+      "summary_en": "Tuberculosis disease is active illness caused by Mycobacterium tuberculosis complex, most often pulmonary but potentially affecting nearly any organ.",
+      "etiology_zh": "結核分枝桿菌經由空氣傳播；免疫抑制與特定共病會提高由潛伏感染進展為活動性疾病的機率。",
+      "etiology_en": "Airborne transmission of M. tuberculosis; progression from latent infection is more likely with immunosuppression and certain comorbidities.",
+      "western_pathology_zh": "分枝桿菌逃避／突破免疫圍堵，增殖並造成肉芽腫性組織損傷；肺部疾病可透過空氣傳播病原體。",
+      "western_pathology_en": "Mycobacteria evade/overcome immune containment, multiply and create granulomatous tissue injury; pulmonary disease can transmit organisms through air.",
+      "western_context_zh": "臨床定位：活動性結核病與潛伏結核感染為不同狀態——潛伏感染無症狀且不具傳染性，不應與活動性疾病混淆。\n\n臨床表現：肺結核可出現持續 3 週以上的咳嗽、胸痛、痰／咳血、疲勞、體重減輕、發燒與夜間盜汗。\n\n重要特徵：活動性與潛伏感染須區分、具空氣傳播感染管制意涵、屬於通報疾病、須以痰液／培養／分子檢測評估。\n\n診斷方法：結核血液／皮膚檢測顯示感染但不能單獨診斷活動性疾病；須輔以胸部影像及痰液抹片／培養／分子檢測。\n\n鑑別診斷：肺炎、肺癌、黴菌感染、類肉瘤病、潛伏結核感染。\n\n西醫治療：依公共衛生／臨床指引使用多重抗生素治療；服藥遵從性與抗藥性檢測至為關鍵。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Active TB disease is distinct from latent/inactive TB infection: latent infection causes no symptoms and is not contagious.\n\nClinical presentation: Pulmonary TB can cause cough ≥3 weeks, chest pain, sputum/hemoptysis, fatigue, weight loss, fever and night sweats.\n\nKey features: active vs latent distinction, airborne infection-control implications, reportable disease, sputum/culture/molecular testing.\n\nDiagnostic approach: TB blood/skin test indicates infection but does not alone diagnose active disease; chest imaging and sputum smear/culture/molecular tests evaluate disease.\n\nDifferential diagnosis: pneumonia, lung cancer, fungal infection, sarcoidosis, latent TB.\n\nWestern treatment: Multi-drug antimicrobial therapy under public-health/clinical guidance; adherence and resistance testing are critical.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "免疫抑制（含 HIV 感染）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "factor": "與活動性肺結核病人密切接觸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Immunosuppression (including HIV infection)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "factor": "Close contact with a person with active pulmonary TB",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "疑似傳染性肺結核",
+          "urgency_level": "urgent",
+          "recommended_action": "立即依隔離／公共衛生／醫療路徑處理",
+          "rationale": "空氣傳播疾病，須進行感染管制",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "finding": "咳血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能危及生命",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "finding": "呼吸功能代償失調",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於呼吸急症",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "finding": "中樞神經系統結核症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於嚴重且危及生命的結核形式",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Suspected infectious pulmonary TB",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate isolation/public-health/medical pathway",
+          "rationale": "Airborne disease requiring infection control",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "finding": "Hemoptysis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Potentially life-threatening",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "finding": "Respiratory compromise",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "A respiratory emergency",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        },
+        {
+          "finding": "CNS TB symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "A severe, life-threatening form of TB",
+          "source": "CDC — Clinical Overview of Tuberculosis Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不建議在未有適當感染管制／公共衛生管理前提供常規面對面針灸治療疑似傳染性肺結核",
+        "precautions": "須配合公共衛生通報與隔離規範",
+        "co_management": "與病人的結核病治療團隊聯絡確認服藥遵從性與感染狀態",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於活動性結核病的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not provide routine in-person acupuncture to potentially contagious pulmonary TB without proper infection-control/public-health management",
+        "precautions": "Coordinate with public-health reporting and isolation requirements",
+        "co_management": "Contact the patient's TB treatment team to confirm medication adherence and infectious status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for active TB was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.cough"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "CDC — Clinical Overview of Tuberculosis Disease: https://www.cdc.gov/tb/hcp/clinical-overview/tuberculosis-disease.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.lyme_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "萊姆病",
+      "name_en": "Lyme Disease",
+      "category": "immune_misc",
+      "icd_hint": "A69.2",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "萊姆病是由帶原黑腿蜱傳播的細菌性感染；未治療的感染可侵犯皮膚、關節、心臟與神經系統。",
+      "summary_en": "Lyme disease is a bacterial infection transmitted by infected blacklegged ticks; untreated infection can involve skin, joints, heart and nervous system.",
+      "etiology_zh": "美國主要病原體為伯氏疏螺旋體，少數為 B. mayonii，由硬蜱屬（Ixodes）蜱傳播。",
+      "etiology_en": "In the U.S., mainly Borrelia burgdorferi and rarely B. mayonii transmitted by Ixodes ticks.",
+      "western_pathology_zh": "局部感染可經血液／組織擴散，引發神經、心臟或關節表現。",
+      "western_pathology_en": "Local infection can disseminate through blood/tissues and trigger neurologic, cardiac or joint manifestations.",
+      "western_context_zh": "臨床定位：在適當暴露情境下出現遊走性紅斑可作為臨床診斷依據；單獨的非特異性慢性症狀不足以確立萊姆病診斷。\n\n臨床表現：早期出現發燒、頭痛、疲勞與遊走性紅斑；後期可出現顏面麻痺、腦膜炎／神經根性疼痛、心臟傳導阻滯或關節炎。\n\n重要特徵：蜱媒傳播、遊走性紅斑具高度診斷價值、指定情境下採兩步驟血清學檢測、可能出現神經／心臟併發症。\n\n診斷方法：典型遊走性紅斑可臨床診斷；否則採 CDC 建議之兩步驟血清學檢測並依器官表現評估。\n\n鑑別診斷：造成紅疹的蜂窩性組織炎／癬、其他病因之顏面神經麻痺、病毒性症候群、類風濕性關節炎、其他蜱媒疾病。\n\n西醫治療：依臨床表現選擇適當口服或靜脈抗生素；早期治療可預防多數併發症。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Erythema migrans in an appropriate exposure context can be diagnostic; nonspecific chronic symptoms alone do not establish Lyme disease.\n\nClinical presentation: Fever, headache, fatigue and erythema migrans early; later facial palsy, meningitis/radicular pain, carditis/heart block or arthritis.\n\nKey features: tick-borne, erythema migrans high-yield, two-step serology for indicated testing, neurologic/cardiac complications.\n\nDiagnostic approach: Clinical diagnosis for classic EM; otherwise CDC-recommended two-step serology plus organ-specific evaluation.\n\nDifferential diagnosis: cellulitis/tinea for rash, Bell palsy other causes, viral syndrome, RA, other tick-borne disease.\n\nWestern treatment: Appropriate oral or IV antibiotics based on manifestation; early treatment prevents many complications.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "居住或活動於蜱媒流行地區",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Lyme Disease"
+        },
+        {
+          "factor": "戶外活動未採取防蜱措施",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Lyme Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Living or activity in tick-endemic areas",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Lyme Disease"
+        },
+        {
+          "factor": "Outdoor activity without tick precautions",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Lyme Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "暈厥或心悸合併心臟傳導阻滯",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估心臟功能",
+          "rationale": "可能為萊姆病心臟炎併發症",
+          "source": "CDC — About Lyme Disease"
+        },
+        {
+          "finding": "腦膜炎症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於神經系統急症",
+          "source": "CDC — About Lyme Disease"
+        },
+        {
+          "finding": "嚴重神經學缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診神經科評估",
+          "rationale": "可能提示神經性萊姆病",
+          "source": "CDC — About Lyme Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Syncope/palpitations with heart block",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate cardiac evaluation",
+          "rationale": "May indicate Lyme carditis",
+          "source": "CDC — About Lyme Disease"
+        },
+        {
+          "finding": "Meningitis symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "A neurologic emergency",
+          "source": "CDC — About Lyme Disease"
+        },
+        {
+          "finding": "Severe neurologic deficits",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for neurologic evaluation",
+          "rationale": "May indicate neurologic Lyme disease",
+          "source": "CDC — About Lyme Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不得以中藥或針灸取代抗生素治療",
+        "precautions": "顏面麻痺仍須進行中風鑑別；出現心臟炎症狀須轉診心臟科評估",
+        "co_management": "與病人的處方醫師聯絡確認抗生素治療進度，不建議病人自行停用抗生素",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於萊姆病的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not substitute herbs/acupuncture for antibiotics",
+        "precautions": "Facial palsy still needs stroke differential; carditis symptoms need cardiac evaluation",
+        "co_management": "Contact the patient's prescriber to confirm antibiotic treatment progress; do not advise the patient to stop antibiotics",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for Lyme disease was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.fever"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "CDC — About Lyme Disease: https://www.cdc.gov/lyme/about/index.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.hiv_infection",
+      "entity_type": "biomedical_condition",
+      "name_zh": "人類免疫缺乏病毒感染",
+      "name_en": "HIV Infection",
+      "category": "immune_misc",
+      "icd_hint": "B20",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "愛滋病毒感染"
+      ],
+      "aliases_en": [
+        "HIV"
+      ],
+      "summary_zh": "HIV 是攻擊免疫系統的慢性病毒感染；未治療可能進展為愛滋病，而有效抗反轉錄病毒治療可抑制病毒複製並維持健康。",
+      "summary_en": "HIV is a chronic viral infection that attacks the immune system; untreated infection can progress to AIDS, while effective antiretroviral therapy can suppress viral replication and preserve health.",
+      "etiology_zh": "透過特定體液傳播，包括性行為、血液及垂直傳染。",
+      "etiology_en": "Transmission occurs through specific body fluids, including sexual, blood and perinatal routes.",
+      "western_pathology_zh": "HIV 感染並耗損 CD4 免疫細胞，削弱宿主防禦能力，若未控制則增加伺機性感染風險。",
+      "western_pathology_en": "HIV infects and depletes CD4 immune cells, impairing host defense and increasing opportunistic disease risk when uncontrolled.",
+      "western_context_zh": "臨床定位：HIV 感染與愛滋病（第三期疾病）相關但不可互換，兩者為不同疾病階段。\n\n臨床表現：急性感染可能出現類流感症狀或無症狀；慢性感染可能多年無症狀。\n\n重要特徵：須經檢測才能得知感染狀態、確診者皆建議接受抗反轉錄病毒治療、病毒量受抑制可預防性傳染、伺機性感染風險依免疫狀態而定。\n\n診斷方法：CDC 建議之 HIV 抗原／抗體及補充檢測流程；病毒量與 CD4 用於監測治療與疾病狀態。\n\n鑑別診斷：其他急性病毒性疾病、原發性免疫缺乏、藥物相關血球低下。\n\n西醫治療：確診後開始並持續合併抗反轉錄病毒治療；預防／治療伺機性感染並提供預防性照護。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: HIV infection and AIDS/stage 3 disease are related but not interchangeable identities.\n\nClinical presentation: Acute infection may cause flu-like illness or no symptoms; chronic infection can remain asymptomatic for years.\n\nKey features: testing is required to know status, ART for all diagnosed people, viral suppression prevents sexual transmission, opportunistic risk depends on immune status.\n\nDiagnostic approach: CDC HIV antigen/antibody and supplemental testing algorithms; viral load and CD4 monitor treatment/disease.\n\nDifferential diagnosis: other acute viral illnesses, primary immunodeficiency, medication-related cytopenia.\n\nWestern treatment: Start and maintain combination antiretroviral therapy; prevent/treat opportunistic infections and address preventive care.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "未使用防護措施之高風險性行為",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About HIV"
+        },
+        {
+          "factor": "共用注射器材",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About HIV"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "High-risk sexual activity without protection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About HIV"
+        },
+        {
+          "factor": "Sharing injection equipment",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About HIV"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重伺機性感染徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送醫評估",
+          "rationale": "免疫低下者可能迅速惡化",
+          "source": "CDC — About HIV"
+        },
+        {
+          "finding": "神經學症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診專科評估",
+          "rationale": "可能提示中樞神經系統伺機性感染",
+          "source": "CDC — About HIV"
+        },
+        {
+          "finding": "呼吸功能代償失調",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示嚴重伺機性肺部感染",
+          "source": "CDC — About HIV"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Signs of severe opportunistic infection",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Immunosuppressed patients can deteriorate rapidly",
+          "source": "CDC — About HIV"
+        },
+        {
+          "finding": "Neurologic symptoms",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for specialty evaluation",
+          "rationale": "May indicate CNS opportunistic infection",
+          "source": "CDC — About HIV"
+        },
+        {
+          "finding": "Respiratory compromise",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate severe opportunistic pulmonary infection",
+          "source": "CDC — About HIV"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "應採用標準防護措施；HIV 狀態本身不構成拒絕照護之理由",
+        "precautions": "須考量免疫狀態、神經病變與藥物交互作用",
+        "co_management": "與病人的感染科／愛滋病照護醫師聯絡協調照護，不建議病人自行停用抗反轉錄病毒治療",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於 HIV 感染的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Use standard precautions universally; HIV status alone is not a reason to refuse care",
+        "precautions": "Coordinate around immune status, neuropathy and medication interactions",
+        "co_management": "Contact the patient's infectious-disease/HIV clinician to coordinate care; do not advise the patient to stop antiretroviral therapy",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for HIV infection was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "CDC — About HIV: https://www.cdc.gov/hiv/about/index.html",
+        "CDC — Treating HIV: https://www.cdc.gov/hiv/treatment/index.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.syphilis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "梅毒",
+      "name_en": "Syphilis",
+      "category": "immune_misc",
+      "icd_hint": "A50-A53",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "梅毒是由梅毒螺旋體引起的全身性性傳染疾病，未治療會歷經初期、二期、潛伏期與三期進展。",
+      "summary_en": "Syphilis is a systemic sexually transmitted infection caused by Treponema pallidum that progresses through primary, secondary, latent and tertiary stages if untreated.",
+      "etiology_zh": "透過性行為傳染及懷孕期間垂直傳染；病原體為梅毒螺旋體。",
+      "etiology_en": "Sexual transmission and vertical transmission during pregnancy; caused by T. pallidum.",
+      "western_pathology_zh": "螺旋體全身性擴散並可潛伏存在，之後侵犯神經、心血管及其他組織。",
+      "western_pathology_en": "Spirochetes disseminate systemically and can persist latently, later injuring nervous, cardiovascular and other tissues.",
+      "western_context_zh": "臨床定位：分期決定臨床表現、治療期程與追蹤方式；神經梅毒、眼梅毒與耳梅毒可能發生於任何分期。\n\n臨床表現：初期出現無痛性硬性下疳；二期出現包含掌蹠之皮疹與全身症狀；潛伏期無症狀；三期出現神經／心血管／樹膠腫性病變。\n\n重要特徵：分期性性傳染病、血清學檢測為主、盤尼西林治療可治癒、神經／眼／耳受累可能發生於任何分期。\n\n診斷方法：血清學檢測，特定情況輔以病灶直接檢測；必要時進行腦脊髓液／眼／聽力評估。\n\n鑑別診斷：其他生殖器潰瘍病因、病毒性皮疹、自體免疫性皮疹、其他造成神經／眼部疾病之病因。\n\n西醫治療：依分期／表現選擇盤尼西林療程；性伴侶、懷孕及追蹤檢測須依指引處理。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Stage determines presentation, treatment duration and follow-up; neurosyphilis, ocular syphilis and otosyphilis can occur.\n\nClinical presentation: Primary painless chancre; secondary rash including palms/soles and systemic symptoms; latent asymptomatic; tertiary neurologic/cardiovascular/gummatous disease.\n\nKey features: staged STI, serologic testing, curable with penicillin, neuro/ocular/otic involvement may occur at any stage.\n\nDiagnostic approach: Serologic testing and direct lesion testing in selected cases; CSF/ocular/auditory assessment when indicated.\n\nDifferential diagnosis: other genital ulcers, viral exanthem, autoimmune rash, other causes of neuro/ocular disease.\n\nWestern treatment: Penicillin regimen depends on stage/manifestation; partners, pregnancy and follow-up testing require guideline-directed care.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "未使用防護措施之高風險性行為",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "factor": "懷孕（垂直傳染風險）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Syphilis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "High-risk sexual activity without protection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "factor": "Pregnancy (vertical transmission risk)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Syphilis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "神經學缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估神經梅毒",
+          "rationale": "可能提示神經梅毒",
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "finding": "視力喪失",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診眼科",
+          "rationale": "可能為眼梅毒",
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "finding": "突發性聽力損失",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診耳鼻喉科",
+          "rationale": "可能為耳梅毒",
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "finding": "懷孕合併確診或疑似感染",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診婦產科／感染科",
+          "rationale": "涉及先天性梅毒風險",
+          "source": "CDC — About Syphilis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Neurologic deficits",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for neurosyphilis evaluation",
+          "rationale": "May indicate neurosyphilis",
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "finding": "Vision loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate ophthalmology referral",
+          "rationale": "May be ocular syphilis",
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "finding": "Sudden hearing loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate ENT referral",
+          "rationale": "May be otosyphilis",
+          "source": "CDC — About Syphilis"
+        },
+        {
+          "finding": "Pregnancy with confirmed or suspected infection",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate OB/GYN or infectious-disease referral",
+          "rationale": "Congenital syphilis risk",
+          "source": "CDC — About Syphilis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不得直接治療感染性病灶",
+        "precautions": "須維持性傳染病相關保密原則、轉介與標準防護措施",
+        "co_management": "與病人的處方醫師聯絡確認盤尼西林治療進度，不建議病人自行停用治療",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease（依據 CDC 臨床資料整理）",
+        "note": "尚未查到專屬於梅毒的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not treat infectious lesions directly",
+        "precautions": "Maintain STI confidentiality, referral and standard precautions",
+        "co_management": "Contact the patient's prescriber to confirm penicillin treatment progress; do not advise the patient to stop treatment",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch M Infectious Disease (compiled from CDC clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for syphilis was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "CDC — About Syphilis: https://www.cdc.gov/syphilis/about/index.html",
+        "CDC — Syphilis Treatment Guidelines: https://www.cdc.gov/std/treatment-guidelines/syphilis.htm",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "cdc_overview",
+        "research_pack_batch_m_infectious_disease"
       ],
       "source_status": "draft_pending_ting_review"
     }
