@@ -3320,3 +3320,9 @@ Current repo state as of this log:
 - `scripts/validate-supp-standard.js`:0 records 誠實 PASS(尺先掛牆);id 拼法/雙語/分類詞彙/maturity/有值必有源/樣板句粗篩。
 - outcome_metrics 26 筆(+4:fatigue_score、stool_form_bristol、hot_flash_count_day、range_of_motion_deg;name 正規化 snake_case)。build/ratchet/K 全 PASS。
 - **路由更新(Ting)**:Antigravity 退出批量製卡(不可信,與既有記憶一致);批量卡工作改 Sonnet 5,可多開但以不壓垮本機為度(實務上限 2 並行)。sym Batch B(Sonnet #1)進行中;supp 批次(Sonnet #2)接續派出。
+
+# 2026-08-11 Fable — Phase E 契約級走查腳本(HARD GATE 8)12/12 PASS
+
+- `scripts/walkthrough-phase-e.js`:假病人 A(5 visits:pain 8→7→5→4→3、sleep 5→7、supp 200mg→400mg→stopped、suspected→confirmed 留痕、證型 肝鬱→脾虛 縱向演變不覆寫、一次 AE 含 modality+resolution)+ 假病人 B 隔離對照。驗 12 項:軌跡×2、時間線重建、現況重建、隔離、R1–R7、export round-trip+append-only、AE 完整性 —— 全 PASS。
+- 全部經正規 API 建構(createExposure/applyExposureChange),可重跑、Codex 可獨立執行。瀏覽器級 UI 走查(hard gate 1/2 的 reload/isolation 實測)另排在 9/5 前用 Edge 正本入口做一次人工+自動混合。
+- 並行中:Sonnet#1 sym Batch B、Sonnet#2 supp 36 卡、Codex C2B-R4。
