@@ -2,6 +2,18 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #13 — Sym Batch C 合併 + P3-lite Practice Audit 落地
+
+- CURRENT STATE: Fable / codex/pattern-v2 / sym 合併 460a2a1 + audit 腳本 / 優化主項執行中
+- COMPLETED:
+  - **Sym Batch C 合併**(Sonnet 產、Fable rebase+ff-merge+眼讀抽查):31 新 sym.* 卡,18→49;validate-symptom-standard 49/49 clean 0 defects;ratchet PASS;content-junk PASS;bundle 重建無 diff。命名裁定:反酸/反流 → canonical 反酸(反流入 aliases);癃閉/尿瀦留 → canonical 尿瀦留(癃閉入 aliases)。N3×4 = reflux/regurgitation 共用吞嚥困難紅旗(真實共同臨床事實,留待裁定是否入 generic_red_flag_map)
+  - **P3-lite 月度 Practice Audit**(scripts/practice-audit.js):去識別化聚合報告 —— patients/cases/visits、outcome completion %、療效判定計數、median pain/sleep 首末差、AE rate+by modality、top10 patterns/points/formulas、知識缺口(高使用×無卡,比對 bundle)。CI fixture + 33-case 備份實測輸出正常(19 patients/38 visits/84% completion/median pain -3)
+- IN PROGRESS: cond enrich B-E Sonnet 批次仍在跑;C2B-R8 佇列待 Codex(桌面 app 被佔用,派工延後——佇列檔已在 repo,Ting 說「照佇列」即可)
+- NEXT: Timeline swim-lane 原型(優化清單次項)→ CARE readiness
+- ROUTING: SOL 續 CR-010 delta(conditions→300);Codex 照佇列 R8
+
+---
+
 ## HANDOFF #12 — Codex R7 cleanup gate 修正(REVIEW_ACKNOWLEDGED: yes)
 
 - LAST_CODEX_REVIEW: 5b764d8(P3.1/2/4 PASS;P3.3 FAIL:cleanup 吞錯後仍 ok:true、candidate 殘留)
