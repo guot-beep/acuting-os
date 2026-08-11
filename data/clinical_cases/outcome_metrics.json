@@ -10,7 +10,19 @@
       "label_en": "Pain score (0 none / 10 worst)",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "0–10 Numeric Rating Scale (NRS)",
+      "interpretation_en": "A decrease of about 2 points, or roughly 30%, on the 0–10 scale is commonly cited as the threshold for a clinically meaningful improvement in pain intensity.",
+      "source": {
+        "name": "Farrar JT, Young JP Jr, LaMoreaux L, Werth JL, Poole RM. Clinical importance of changes in chronic pain intensity measured on an 11-point numerical pain rating scale. Pain. 2001;94(2):149-158.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11690728/"
+      },
+      "patient_prompt_zh": "疼痛:過去24小時平均痛多少?0=不痛,10=最痛",
+      "patient_prompt_en": "Pain: On average over the last 24 hours, how bad was your pain? 0 = no pain, 10 = worst pain."
     },
     {
       "id": "metric.sleep_quality",
@@ -19,7 +31,16 @@
       "label_en": "Sleep quality (0 worst / 10 best)",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "increase"
+      "direction_good": "increase",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "0–10 Numeric Rating Scale (NRS)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "睡眠品質:整體來說,這幾天睡得好嗎?0=非常差,10=非常好",
+      "patient_prompt_en": "Sleep quality: Overall, how well have you been sleeping these past few days? 0 = very poor, 10 = very good."
     },
     {
       "id": "metric.sleep_hours",
@@ -28,7 +49,13 @@
       "label_en": "Sleep hours",
       "category": "symptom",
       "unit": "hours",
-      "direction_good": "individualized"
+      "direction_good": "individualized",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "睡眠時數:平均一晚睡幾小時?",
+      "patient_prompt_en": "Sleep hours: On average, how many hours do you sleep per night?"
     },
     {
       "id": "metric.sleep_onset_minutes",
@@ -37,7 +64,16 @@
       "label_en": "Sleep onset latency",
       "category": "symptom",
       "unit": "minutes",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": null,
+      "instrument_en": "self-reported sleep diary (e.g. Consensus Sleep Diary core item: sleep onset latency)",
+      "interpretation_en": "",
+      "source": {
+        "name": "Carney CE, Buysse DJ, Ancoli-Israel S, Edinger JD, Krystal AD, Lichstein KL, Morin CM. The consensus sleep diary: standardizing prospective sleep self-monitoring. Sleep. 2012;35(2):287-302.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
+      },
+      "patient_prompt_zh": "入睡時間:躺下後大約幾分鐘才睡著?",
+      "patient_prompt_en": "Sleep onset: About how many minutes does it take you to fall asleep after lying down?"
     },
     {
       "id": "metric.night_wakings",
@@ -46,7 +82,16 @@
       "label_en": "Night wakings",
       "category": "symptom",
       "unit": "count_per_night",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": null,
+      "instrument_en": "self-reported sleep diary (e.g. Consensus Sleep Diary core item: number of awakenings)",
+      "interpretation_en": "",
+      "source": {
+        "name": "Carney CE, Buysse DJ, Ancoli-Israel S, Edinger JD, Krystal AD, Lichstein KL, Morin CM. The consensus sleep diary: standardizing prospective sleep self-monitoring. Sleep. 2012;35(2):287-302.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
+      },
+      "patient_prompt_zh": "夜醒次數:一個晚上大概醒來幾次?",
+      "patient_prompt_en": "Night wakings: About how many times do you wake up during the night?"
     },
     {
       "id": "metric.stress_level",
@@ -55,7 +100,16 @@
       "label_en": "Stress level (0 none / 10 highest)",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "0–10 Numeric Rating Scale (NRS)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "壓力:最近感覺壓力有多大?0=完全沒有,10=壓力最大",
+      "patient_prompt_en": "Stress: How much stress have you been feeling lately? 0 = none at all, 10 = the most stress possible."
     },
     {
       "id": "metric.mood",
@@ -64,7 +118,16 @@
       "label_en": "Mood (0 worst / 10 best). Kept separate from stress_level: stress is external load, mood is subjective state",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "increase"
+      "direction_good": "increase",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "0–10 Numeric Rating Scale (NRS)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "情緒:最近整體情緒如何?0=非常差,10=非常好",
+      "patient_prompt_en": "Mood: How has your overall mood been lately? 0 = very poor, 10 = very good."
     },
     {
       "id": "metric.energy_level",
@@ -73,7 +136,16 @@
       "label_en": "Energy level (0 worst / 10 best). Fatigue is recorded as a low value here rather than as a separate fatigue metric",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "increase"
+      "direction_good": "increase",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "0–10 Numeric Rating Scale (NRS)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "精神體力:最近精神體力如何?0=非常差(很累),10=非常好(有活力)",
+      "patient_prompt_en": "Energy: How has your energy level been lately? 0 = very poor (exhausted), 10 = very good (energetic)."
     },
     {
       "id": "metric.bloating",
@@ -82,7 +154,16 @@
       "label_en": "Bloating (0 none / 10 worst)",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "0–10 Numeric Rating Scale (NRS)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "腹脹:最近腹脹的程度如何?0=完全不脹,10=脹到最嚴重",
+      "patient_prompt_en": "Bloating: How bad has your bloating been lately? 0 = not at all, 10 = worst possible."
     },
     {
       "id": "metric.bowel_frequency",
@@ -91,7 +172,13 @@
       "label_en": "Bowel movement frequency",
       "category": "symptom",
       "unit": "count_per_week",
-      "direction_good": "individualized"
+      "direction_good": "individualized",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "排便頻率:過去一週大概排便幾次?",
+      "patient_prompt_en": "Bowel movements: About how many times did you have a bowel movement in the past week?"
     },
     {
       "id": "metric.cycle_length",
@@ -100,7 +187,13 @@
       "label_en": "Menstrual cycle length",
       "category": "fertility",
       "unit": "days",
-      "direction_good": "individualized"
+      "direction_good": "individualized",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "月經週期:上次月經到這次月經開始,間隔大約幾天?",
+      "patient_prompt_en": "Cycle length: About how many days from the start of your last period to the start of this one?"
     },
     {
       "id": "metric.bleeding_days",
@@ -109,7 +202,13 @@
       "label_en": "Bleeding days",
       "category": "fertility",
       "unit": "days",
-      "direction_good": "individualized"
+      "direction_good": "individualized",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "經期天數:這次月經流血總共持續幾天?",
+      "patient_prompt_en": "Bleeding days: How many days did the bleeding last this cycle?"
     },
     {
       "id": "metric.menstrual_flow_volume",
@@ -118,7 +217,13 @@
       "label_en": "Menstrual flow volume (scanty / normal / heavy)",
       "category": "fertility",
       "unit": "scanty/normal/heavy",
-      "direction_good": "individualized"
+      "direction_good": "individualized",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "月經量:這次月經量偏少、正常、還是偏多?",
+      "patient_prompt_en": "Flow volume: Was your flow this cycle scanty, normal, or heavy?"
     },
     {
       "id": "metric.menstrual_clots",
@@ -127,7 +232,13 @@
       "label_en": "Menstrual clots (none / small / large)",
       "category": "fertility",
       "unit": "none/small/large",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "血塊:這次月經有血塊嗎?沒有/小血塊/大血塊?",
+      "patient_prompt_en": "Clots: Did you have blood clots this cycle? None / small / large?"
     },
     {
       "id": "metric.ovulation_confirmed",
@@ -136,7 +247,13 @@
       "label_en": "Ovulation confirmed",
       "category": "fertility",
       "unit": "yes/no/unknown",
-      "direction_good": "yes"
+      "direction_good": "yes",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "排卵確認:這個週期有確認排卵嗎?有/沒有/不確定",
+      "patient_prompt_en": "Ovulation: Did you confirm ovulation this cycle? Yes / no / not sure."
     },
     {
       "id": "metric.lh_surge",
@@ -145,7 +262,13 @@
       "label_en": "LH surge test",
       "category": "fertility",
       "unit": "positive/negative/unknown",
-      "direction_good": "contextual"
+      "direction_good": "contextual",
+      "scale": null,
+      "instrument_en": "urine LH ovulation predictor kit (OPK)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "LH 試紙:這個週期驗到 LH 陽性(排卵)了嗎?陽性/陰性/不確定",
+      "patient_prompt_en": "LH surge test: Did you get a positive LH (ovulation) test strip this cycle? Positive / negative / not sure."
     },
     {
       "id": "metric.bbt_pattern",
@@ -154,7 +277,13 @@
       "label_en": "Basal body temperature pattern",
       "category": "fertility",
       "unit": "text",
-      "direction_good": "contextual"
+      "direction_good": "contextual",
+      "scale": null,
+      "instrument_en": "basal body temperature (BBT) charting, oral thermometer taken immediately on waking",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "基礎體溫:這個週期的基礎體溫型態如何(例如是否有明顯升溫)?請簡述",
+      "patient_prompt_en": "Basal body temperature: What did your BBT pattern look like this cycle (e.g. a clear rise)? Brief description."
     },
     {
       "id": "metric.endometrial_lining",
@@ -163,7 +292,13 @@
       "label_en": "Endometrial lining",
       "category": "fertility",
       "unit": "mm",
-      "direction_good": "contextual"
+      "direction_good": "contextual",
+      "scale": null,
+      "instrument_en": "transvaginal ultrasound measurement (mm)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "",
+      "patient_prompt_en": ""
     },
     {
       "id": "metric.follicle_size",
@@ -172,7 +307,13 @@
       "label_en": "Follicle size",
       "category": "fertility",
       "unit": "mm",
-      "direction_good": "contextual"
+      "direction_good": "contextual",
+      "scale": null,
+      "instrument_en": "transvaginal ultrasound measurement (mm)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "",
+      "patient_prompt_en": ""
     },
     {
       "id": "metric.post_treatment_reaction",
@@ -181,7 +322,13 @@
       "label_en": "Post-treatment reaction (post-needling soreness, tiredness, healing reaction). Safety events go to adverse_reaction, not here",
       "category": "treatment_response",
       "unit": "text",
-      "direction_good": "contextual"
+      "direction_good": "contextual",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "治療後反應:上次針灸後有什麼感覺或反應嗎?(痠脹、疲倦、變好等)",
+      "patient_prompt_en": "Post-treatment reaction: Did you notice anything after your last treatment (soreness, tiredness, feeling better, etc.)?"
     },
     {
       "id": "metric.effect_duration_days",
@@ -190,7 +337,13 @@
       "label_en": "Effect duration in days. The basis for setting treatment intervals",
       "category": "treatment_response",
       "unit": "days",
-      "direction_good": "increase"
+      "direction_good": "increase",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "效果維持:上次治療的效果大概維持了幾天?",
+      "patient_prompt_en": "Effect duration: About how many days did the effect from your last treatment last?"
     },
     {
       "id": "metric.adverse_reaction",
@@ -199,7 +352,13 @@
       "label_en": "Adverse reaction",
       "category": "safety",
       "unit": "text",
-      "direction_good": "none"
+      "direction_good": "none",
+      "scale": null,
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "不良反應:治療後有任何不舒服或異常反應嗎?請說明",
+      "patient_prompt_en": "Adverse reaction: Did you have any discomfort or unusual reaction after treatment? Please describe."
     },
     {
       "id": "metric.fatigue_score",
@@ -208,7 +367,16 @@
       "label_en": "Fatigue score (0–10)",
       "category": "symptom",
       "unit": "0-10",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": {
+        "min": 0,
+        "max": 10
+      },
+      "instrument_en": "",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "疲勞:最近整體疲勞程度如何?0=完全不累,10=累到極點",
+      "patient_prompt_en": "Fatigue: How fatigued have you felt lately overall? 0 = not tired at all, 10 = extremely fatigued."
     },
     {
       "id": "metric.stool_form_bristol",
@@ -217,7 +385,19 @@
       "label_en": "Bristol stool form (type 1–7)",
       "category": "symptom",
       "unit": "type 1-7",
-      "direction_good": "range"
+      "direction_good": "range",
+      "scale": {
+        "min": 1,
+        "max": 7
+      },
+      "instrument_en": "Bristol Stool Form Scale (BSFS)",
+      "interpretation_en": "Types 3–4 are generally regarded as the typical/formed range; because both harder (constipation-type) and looser (diarrhea-type) extremes can be clinically relevant, direction is deliberately 'range' rather than higher or lower being better.",
+      "source": {
+        "name": "Lewis SJ, Heaton KW. Stool form scale as a useful guide to intestinal transit time. Scand J Gastroenterol. 1997;32(9):920-924.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9299672/"
+      },
+      "patient_prompt_zh": "糞便型態:最近的糞便比較接近 Bristol 分類的第幾型(1顆粒狀最硬,7水狀最軟)?",
+      "patient_prompt_en": "Stool form: Which Bristol type does your stool most resemble lately (1 = hard lumps, 7 = watery)?"
     },
     {
       "id": "metric.hot_flash_count_day",
@@ -226,7 +406,13 @@
       "label_en": "Hot flash count (episodes/day)",
       "category": "symptom",
       "unit": "episodes/day",
-      "direction_good": "decrease"
+      "direction_good": "decrease",
+      "scale": null,
+      "instrument_en": "daily hot flash / vasomotor symptom diary (episode count)",
+      "interpretation_en": "",
+      "source": null,
+      "patient_prompt_zh": "潮熱次數:最近平均一天發作幾次潮熱?",
+      "patient_prompt_en": "Hot flashes: On average, how many hot flash episodes do you have per day?"
     },
     {
       "id": "metric.range_of_motion_deg",
@@ -235,7 +421,16 @@
       "label_en": "Range of motion (degrees)",
       "category": "function",
       "unit": "degrees",
-      "direction_good": "range"
+      "direction_good": "range",
+      "scale": null,
+      "instrument_en": "goniometry (degrees)",
+      "interpretation_en": "Normal range of motion is joint- and movement-specific (e.g. shoulder abduction vs. knee flexion), so a change in degrees should be interpreted against that specific joint/movement's own expected range rather than one universal threshold.",
+      "source": {
+        "name": "StatPearls (NIH Bookshelf). Goniometer.",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK558985/"
+      },
+      "patient_prompt_zh": "",
+      "patient_prompt_en": ""
     }
   ]
 }
