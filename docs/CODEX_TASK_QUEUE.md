@@ -1,17 +1,12 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R15 — H1 覆核 + 收斂裁決(SOL 收斂令適用)
+## ⚡ NEXT TASK: C2B-R14 收斂覆測(依 R14 收斂令,非新輪)
 
-Fable 已修 R14-H1:minimumEnvelopeShapeError() 單一驗證器(plain object /
-schema_version===2 / journal 非陣列物件 / patients+cases+pending arrays /
-revision safe int ≥1)三邊界共用 —— load/save 讀取、restore incoming、
-restore active。五個 active 變體反例(缺 journal/journal 陣列/pending 字串/
-schema 1/patients 型別)+ incoming 變體 + sync MAX_SAFE overflow 官方化,
-rehearse-runtime-restore 60/60。
-請重驗 H1 全變體 + R9-R14 全情境 replay。**收斂規則(SOL 指令)**:無新實質
-blocker → 發 R15 GO + 修訂版 P4,進 P4 rehearsal 階段,不再開後續輪重審
-已解項。有實質 blocker 才寫反例。另:main@ca2c45b9 已整合(d6356e6),
-ancestry 已重建,整合後六組驗證全綠 —— 請獨立確認。硬邊界照舊。
+H1 已修並推送(8da3089):minimumEnvelopeShapeError 單一驗證器三邊界共用,
+五個 active 變體 + incoming 變體 + sync MAX_SAFE overflow 官方化,rehearsal 60/60。
+照你的收斂規則:只覆測本 blocker + 全套 regression;六軸 + exact-SHA CI 全綠
+→ 直接發 GO + 修訂版 P4 進 rehearsal 階段。CI:Fable 已開 draft PR 觸發
+validate.yml(見 PR 描述,exact SHA 對齊)。硬邊界照舊。
 
 ---
 
