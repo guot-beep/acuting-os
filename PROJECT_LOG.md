@@ -3146,3 +3146,11 @@ Current repo state as of this log:
 - **來源與空欄**：9/9 有 identity/mechanism/key-sign/differential provenance；tongue `8/9`、pulse `7/9`。寒熱錯雜無單一通用舌脈，真寒假熱脈象未寫；9/9 formulas/points 留空，未將來源情境詞彙伪造為 live ID links。
 - **驗證**：Pattern standard/registry、ratchet、alias dry-run、build-data determinism、validate-data、interactions、content-junk、relations、reconciliation、endpoint/bilingual/focused-encoding audit 通過。`validate-relation-registry` 僅保留既有 `edge.pattern_differentials` R4；全庫 encoding debt 非本批回歸。
 - **STOP**：V2-D／六經、衛氣營血、三焦、婦科、奇經、relation types/edges 與 endpoint namespaces 均未開始。
+
+# 2026-08-10 Claude — Clinical Data Capture V2 direction reconciliation (architecture checkpoint, design only)
+
+- **做了什麼**:比對 Ting 核准的 V2 方向(Clinical Data Capture & Longitudinal Analytics)與 `388c947` 現況;只動兩份 docs + 本 log,零程式碼、零 data 變更。
+- **產出**:`docs/CLINICAL_DATA_CAPTURE_V2_DIRECTION_2026-08-10.md`(方向原文入庫)+ `docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md`(A–F 對帳)。
+- **對帳結論**:ALREADY = D11 四命名空間非 1:1、Case/Visit 層辨證表、SOAP 旁掛 canonical ID、L1–L6 藥理骨架、日期/隔離/outcome 架構。PARTIAL = 關係無類型語意、用藥為逐次快照非縱向帳、`med.*` vs `drug.*` 並存、`visit_observations` 空表 + sym_id 分叉、visit 證型無 role/confidence。MISSING = `suppl.*`/`life.*`/`exposure.*`/`adverse_event.*`/`modality.*` 五個命名空間與四張新表。
+- **風險**:D12 凍結 2026-09-01 —— 新表必須在 9/01 前落地;`supp.*` vs `suppl.*` 拼法、med→drug 正名、sym_id 分叉,三項都等 Ting 在 D15 拍板。
+- **STOP**:未建表、未種詞彙、未動 UI、未動 relation_registry;下一步順序寫在對帳文件 §F。
