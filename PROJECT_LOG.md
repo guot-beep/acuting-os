@@ -3211,3 +3211,10 @@ Current repo state as of this log:
 - **SOL 三項**:①歷史時間戳不合成(normalizer `|| ""`)②createExposure API 強制初始事件 + initial_recorded 語意(「已在使用」勾選)+ legacy events=[] 不回填 ③34→33 = Phase B 計數含 case_d17test 測試病例的回報錯誤,非資料遺失(33 id 全列、52 SOAP 不變、store 無 delete 路徑)。
 - **Cloudflare**:本機 Windows ARM64,workerd 不支援 → wrangler 完全不能跑;本機零憑證。停在唯一授權邊界:Ting 建 API token(Workers Builds Configuration: Edit + Workers Scripts: Edit)以 CLOUDFLARE_API_TOKEN 提供,其後 trigger 修復+main build+smoke test 全自動。DEPLOY 文件已更正(trigger 自帶 build command 為正道)。
 - **下一步**:Phase C2 Patient wiring(Fable,高風險,設計先行,完成即 Codex audit)。
+
+# 2026-08-11 Fable — Phase C2a:Patient 衍生層(read-only 安全半邊)
+
+- **調查結論**:app.js:6645 有 patientCode 唯一性 guard(一 code 一 case)→ patientCode 事實上已是 patient 身分鍵、每個 case 都帶 FK。「一 Patient 多 Cases」(V2 §4)目前被 guard 擋住 —— 解除是 C2b 的事。
+- **C2a 實作**:`store.derivePatientsFromCases()` 純函式(零持久化、零遷移、零真實資料風險):按 patientCode 群組、8 個 demographics 欄位取 updatedAt 最新非空值、相異值全記 conflicts(衍生層記錄分歧不消滅分歧,D4)。
+- **驗證**:node 單元測試(群組/latest-wins/conflict 記錄/無 code 跳過/caseIds 排序)全過;live 對 33 個真實 case 衍生 33 patients、0 無 code、0 衝突、零寫入。
+- **C2b(需 gate)**:patients 落盤、guard 語意改為「同 code 多 case 需確認」、case 建立 patient picker、case→patient 抬升遷移(真實資料遷移 = 不可逆,需 Ting 核准 + Codex audit 先行)。

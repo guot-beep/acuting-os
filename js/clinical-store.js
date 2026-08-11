@@ -141,7 +141,38 @@
       .sort((a, b) => a.visitDate.localeCompare(b.visitDate));
   }
 
+  /* ---- Phase C2a:Patient 衍生層(read-only,不落盤) --------------------
+   * 現況:patientCode 在 app 裡有唯一性 guard(一 code 一 case),所以它事實上
+   * 已經是 patient 身分鍵,且每個 case 都帶著它 —— FK 早就存在,只是沒有實體。
+   * C2a 只做「從 cases 衍生 Patient 視圖」的純函式:零持久化、零遷移、零
+   * 真實資料風險。C2b(Codex audit 之後)才做:patients 落盤、多 case 共用
+   * patientCode 的 guard 語意調整、case 建立時的 patient picker。
+   * 衝突原則(D4):同 code 多 case 欄位不一致時,取 updatedAt 最新的非空值,
+   * 但把全部相異值記進 conflicts —— 衍生層記錄分歧,不消滅分歧。 */
+  const PATIENT_FIELDS = ["birthYearMonth", "sex", "genderIdentity", "raceEthnicity", "raceEthnicityDetail", "occupation", "allergyStatus", "allergies"];
+
+  function derivePatientsFromCases(cases) {
+    const byCode = new Map();
+    for (const c of cases || []) {
+      const code = String(c.patientCode || "").trim();
+      if (!code) continue;                      // 無 code 的 case 不屬於任何 patient,誠實跳過
+      if (!byCode.has(code)) byCode.set(code, []);
+      byCode.get(code).push(c);
+    }
+    return [...byCode.entries()].map(([code, group]) => {
+      const sorted = [...group].sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")));
+      const patient = { patientCode: code, caseIds: sorted.map((c) => c.id), caseCount: sorted.length, conflicts: {} };
+      for (const f of PATIENT_FIELDS) {
+        const values = [...new Set(sorted.map((c) => JSON.stringify(c[f] ?? "")).filter((v) => v !== '""' && v !== "[]"))];
+        patient[f] = values.length ? JSON.parse((sorted.find((c) => JSON.stringify(c[f] ?? "") === values[0]) && values[0]) || '""') : "";
+        if (values.length > 1) patient.conflicts[f] = values.map((v) => JSON.parse(v));
+      }
+      return patient;
+    });
+  }
+
   global.AcuTingClinicalStore = {
+    derivePatientsFromCases,
     STORAGE_KEY,
     load,
     save,
