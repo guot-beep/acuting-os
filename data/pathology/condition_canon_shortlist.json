@@ -6203,8 +6203,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "",
-      "western_pathology_zh": "",
+      "etiology_zh": "腰椎間盤退化以腎虛為本，腎主骨生髓，腎氣虧虛則腰府失養、椎間盤失於固攝；加以久坐、勞損或跌撲閃挫，致氣滯血瘀，瘀阻經絡。若復感風寒濕邪，痹阻經絡氣血，則疼痛加劇，並沿足太陽、足少陽經循行放射至下肢，發為腰腿痛。標為寒濕或血瘀，本為腎虛，故臨床須辨明標本緩急，以決定祛邪與補腎之先後。",
+      "western_pathology_zh": "椎間盤髓核因老化含水量下降、纖維環變薄失去彈性，或因外傷、不當搬舉扭轉，使髓核經破裂的纖維環突出，壓迫鄰近神經根（以 L4/5、L5/S1 最常見），產生發炎反應及機械性壓迫，導致下肢放射性疼痛、麻木或無力。年輕男性（20–50 歲）較易因外傷型突出發病，年長者則以退化型為主。",
       "tcm_patterns": [
         {
           "pattern_zh": "外感風寒",
@@ -6630,7 +6630,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/9101"
+        "https://cloudtcm.com/disease/tcm/9101",
+        "AAOS OrthoInfo — Herniated Disk in the Lower Back: https://www.orthoinfo.org/en/diseases--conditions/herniated-disk-in-the-lower-back/"
       ],
       "red_flag_refs": [
         "rf.lumbar_disc_herniation.legacy01",
@@ -6650,7 +6651,115 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "etiology_en": "Lumbar disc degeneration is rooted in kidney deficiency — the kidney governs bone and generates marrow, so kidney-qi deficiency leaves the lower back undernourished and the disc poorly anchored. Prolonged sitting, repetitive strain, or a fall/twist injury then produces qi stagnation and blood stasis obstructing the channels. If wind-cold-damp invades on top of this, channel qi and blood become further obstructed, intensifying pain that radiates down the leg along the Bladder and Gallbladder channel pathways — presenting as combined low-back-and-leg pain (腰腿痛). The root is kidney deficiency; cold-damp or blood stasis is the manifestation, so treatment must distinguish root from branch and their urgency to decide the order of dispelling pathogens versus tonifying the kidney.",
+      "western_pathology_en": "With aging, the water content of the nucleus pulposus falls and the annulus fibrosus thins and stiffens; trauma, improper lifting, or twisting can also rupture the annulus, letting the nucleus pulposus herniate and compress an adjacent nerve root (most often L4/5 or L5/S1), producing both an inflammatory response and mechanical compression that cause radiating leg pain, numbness, or weakness. Younger men (20–50) are more prone to trauma-related herniation, while degenerative herniation predominates with age.",
+      "risk_factors_zh": [
+        {
+          "factor": "男性，20–50 歲風險較高",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "搬舉姿勢不良或搬運時扭轉腰部",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "體重過重",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "長時間坐姿或職業性脊椎震動暴露（如駕駛）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "吸菸（降低椎間盤氧氣供應，加速退化）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Male sex, higher risk age 20–50",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "Improper lifting technique or twisting while lifting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "Excess body weight",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "Extended sitting or occupational vehicular vibration (e.g. driving)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        },
+        {
+          "factor": "Smoking (reduces oxygen supply to the disc, accelerating degeneration)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已排除紅旗徵象、無進行性神經缺損的病人，可作為疼痛與功能恢復的輔助照護，尤其在保守治療的 6–12 週觀察期間",
+        "precautions": "下肢麻木或肌力下降須先確認是否為進行性；委中、環跳、腰陽關等腰臀深層穴位施針須考量深度與病人體位安全，避免加重神經壓迫症狀",
+        "co_management": "與病人的骨科／神經外科醫師聯絡確認影像學與神經學追蹤進度，若出現馬尾症候群徵象立即轉診急診，不得延誤",
+        "evidence": "unknown",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 AAOS OrthoInfo 及標準脊椎醫學文獻）",
+        "note": "英國 NICE NG59（下背痛與坐骨神經痛，2016 年更新）明確建議不將針灸作為下背痛（含坐骨神經痛）的常規治療選項，此為執業範圍謹慎建議而非guideline-endorsed 療效主張；馬尾症候群屬絕對禁忌，須立即轉診"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for pain and functional recovery once red flags and progressive neurologic deficit are excluded, especially during the 6–12 week conservative-care observation window",
+        "precautions": "Confirm whether leg numbness or weakness is progressive before treating; deep lumbar/gluteal points such as BL40 (Weizhong), GB30 (Huantiao) and DU3 (Yaoyangguan) require careful attention to depth and patient positioning to avoid aggravating nerve compression",
+        "co_management": "Coordinate with the patient's orthopedist/neurosurgeon on imaging and neurologic follow-up; refer immediately to emergency care if cauda equina syndrome signs appear — never delay",
+        "evidence": "unknown",
+        "source": "curriculum/conditions course materials + AcuTing OS synthesis (from AAOS OrthoInfo and standard spine literature)",
+        "note": "UK NICE guideline NG59 (Low back pain and sciatica, updated 2016) explicitly recommends AGAINST offering acupuncture as routine treatment for low back pain with or without sciatica; this entry is a scope-of-practice caution, not a claim of guideline-endorsed efficacy. Cauda equina syndrome is an absolute contraindication requiring immediate referral"
+      },
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "western_pathology_zh": [
+          "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        ],
+        "western_pathology_en": [
+          "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        ],
+        "risk_factors_zh": [
+          "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        ],
+        "risk_factors_en": [
+          "AAOS OrthoInfo — Herniated Disk in the Lower Back"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NICE-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NICE-derived"
+        ]
+      }
     },
     {
       "id": "cond.sciatica",
@@ -6687,8 +6796,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "",
-      "western_pathology_zh": "",
+      "etiology_zh": "坐骨神經痛屬中醫「痺證」範疇，病位主要循足太陽膀胱經（臀部、大腿後側、小腿後側）與足少陽膽經（大腿外側、小腿外側）循行。本虛為肝腎精血不足，肝主筋、腎主骨，肝腎虧虛則筋骨失養，經脈易為外邪或勞損所傷；標實為風寒濕邪痹阻經絡，或跌撲努傷、久坐少動致氣滯血瘀，瘀阻經脈，「不通則痛」。疼痛循經放射是本病與一般腰痛辨證的關鍵。",
+      "western_pathology_zh": "坐骨神經為人體最長最粗的神經，起自腰薦神經叢（L4–S3），當其神經根受到壓迫或刺激時（常見原因為腰椎間盤突出、脊椎滑脫、椎管狹窄或梨狀肌症候群），即產生沿神經走行的放射性疼痛、麻木或無力，自臀部經大腿後側延伸至小腿及足部。多數病例可經保守治療緩解，惟需先排除馬尾症候群等急症。",
       "tcm_patterns": [
         {
           "pattern_zh": "小柴胡湯證",
@@ -7095,7 +7204,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/58"
+        "https://cloudtcm.com/disease/tcm/58",
+        "MedlinePlus — Sciatica: https://medlineplus.gov/ency/article/000686.htm"
       ],
       "red_flag_refs": [
         "rf.sciatica.legacy01",
@@ -7115,7 +7225,103 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "etiology_en": "Sciatica falls within the TCM Bi-syndrome (painful obstruction) category, with pain distribution following the Bladder channel (buttock, posterior thigh, posterior calf) and/or the Gallbladder channel (lateral thigh, lateral calf). The root is liver-kidney essence-blood deficiency — the liver governs the sinews and the kidney governs the bone, so liver-kidney deficiency leaves sinews and bone undernourished and the channels vulnerable to external pathogens or strain. The branch is wind-cold-damp obstructing the channels, or qi stagnation and blood stasis from a fall/strain or prolonged sitting, producing pain by the principle 'no free flow, hence pain.' The channel-following radiation of pain is the key differentiating feature from ordinary low back pain.",
+      "western_pathology_en": "The sciatic nerve, the body's longest and thickest nerve, arises from the lumbosacral plexus (L4–S3); when its roots are compressed or irritated — most often from a herniated lumbar disc, spondylolisthesis, spinal stenosis, or piriformis syndrome — radiating pain, numbness, or weakness follows the nerve's course from the buttock down the posterior thigh to the calf and foot. Most cases resolve with conservative treatment, but cauda equina syndrome must first be excluded.",
+      "risk_factors_zh": [
+        {
+          "factor": "男性，好發年齡 30–50 歲",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Sciatica"
+        },
+        {
+          "factor": "久坐或久站等靜態姿勢",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Sciatica"
+        },
+        {
+          "factor": "需反覆彎腰、扭轉或搬運重物的工作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Sciatica"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Sciatica"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Male sex, most common between ages 30 and 50",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Sciatica"
+        },
+        {
+          "factor": "Prolonged sitting or standing",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Sciatica"
+        },
+        {
+          "factor": "Occupations requiring repeated bending, twisting, or heavy lifting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Sciatica"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "MedlinePlus — Sciatica"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已排除紅旗徵象與進行性神經缺損的病人，可作為疼痛緩解與功能恢復之輔助照護",
+        "precautions": "治療前確認鞍區感覺、大小便功能與雙側肌力，排除馬尾症候群前兆；環跳、秩邊等臀部深層穴位施針須注意深度與病人體位，避免傷及坐骨神經本身",
+        "co_management": "與病人的骨科／神經內科醫師聯絡確認病因診斷（椎間盤突出、椎管狹窄或梨狀肌症候群）與影像追蹤進度，出現警訊徵象立即轉診",
+        "evidence": "unknown",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 MedlinePlus 及標準骨科文獻）",
+        "note": "英國 NICE NG59 明確建議不將針灸列為坐骨神經痛的常規治療選項；此為執業範圍謹慎建議，非 guideline-endorsed 療效主張，實際採用須以當地指引與病人共同決策為準"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for pain relief and functional recovery once red flags and progressive neurologic deficit are excluded",
+        "precautions": "Check saddle sensation, bowel/bladder function, and bilateral strength before treating to exclude early cauda equina syndrome; deep gluteal points such as GB30 (Huantiao) and BL54 (Zhibian) require careful attention to depth and positioning to avoid injuring the sciatic nerve itself",
+        "co_management": "Coordinate with the patient's orthopedist/neurologist to confirm the underlying cause (disc herniation, spinal stenosis, or piriformis syndrome) and imaging follow-up; refer immediately if warning signs appear",
+        "evidence": "unknown",
+        "source": "curriculum/conditions course materials + AcuTing OS synthesis (from MedlinePlus and standard orthopedic literature)",
+        "note": "UK NICE guideline NG59 explicitly recommends against offering acupuncture as routine treatment for sciatica; this entry is a scope-of-practice caution, not a claim of guideline-endorsed efficacy — follow local guidance and shared decision-making with the patient"
+      },
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "western_pathology_zh": [
+          "MedlinePlus — Sciatica"
+        ],
+        "western_pathology_en": [
+          "MedlinePlus — Sciatica"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — Sciatica"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — Sciatica"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — MedlinePlus/NICE-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — MedlinePlus/NICE-derived"
+        ]
+      }
     },
     {
       "id": "cond.cervical_spondylosis",
@@ -7152,8 +7358,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "",
-      "western_pathology_zh": "",
+      "etiology_zh": "頸椎病多因肝腎不足、氣血虧虛，復加長期低頭伏案、姿勢不良，致頸部經筋勞損，加以外感風寒濕邪痹阻太陽、少陽經脈，氣血運行不暢，發為頸項僵痛；若肝腎陰虛、肝陽上亢，可見眩暈、頭脹等症；病久氣滯血瘀，瘀阻脈絡，則見肩臂麻木放射。",
+      "western_pathology_zh": "隨年齡增長，頸椎間盤含水量下降、變薄並向外膨出，椎間盤高度減少使軟骨磨損加速，身體代償性增生骨刺（骨質增生），可能使神經孔或椎管狹窄，壓迫神經根或脊髓。多數患者影像有退化性變化卻無症狀；若壓迫神經根則產生頸神經根病變（上肢放射痛麻），若壓迫脊髓則為頸脊髓病變，屬進行性且需及早評估的病灶。",
       "tcm_patterns": [
         {
           "pattern_zh": "外感風濕",
@@ -7448,7 +7654,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/9092"
+        "https://cloudtcm.com/disease/tcm/9092",
+        "AAOS OrthoInfo — Cervical Spondylosis (Arthritis of the Neck): https://www.orthoinfo.org/en/diseases--conditions/cervical-spondylosis-arthritis-of-the-neck/"
       ],
       "red_flag_refs": [
         "rf.cervical_spondylosis.legacy01",
@@ -7468,7 +7675,115 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "etiology_en": "Cervical spondylosis commonly arises from liver-kidney deficiency and qi-blood insufficiency, compounded by prolonged neck flexion (e.g. desk work) and poor posture that strain the neck's sinews and channels; invasion of wind-cold-damp then obstructs the Taiyang and Shaoyang channels, impairing qi-blood flow and producing neck stiffness and pain. When liver-kidney yin deficiency allows liver yang to rise, dizziness and head distension can accompany the neck symptoms. In protracted cases, qi stagnation and blood stasis obstruct the collaterals, producing radiating numbness into the shoulder and arm.",
+      "western_pathology_en": "As the cervical discs age, their water content falls, they thin and begin to bulge; the resulting loss of disc height accelerates cartilage wear, and the body responds by forming bone spurs (osteophytes) that can narrow the neural foramina or spinal canal, compressing a nerve root or the spinal cord. Many people have degenerative changes on imaging without symptoms; when a nerve root is compressed, cervical radiculopathy results (radiating arm pain/numbness), while spinal cord compression produces cervical spondylotic myelopathy — a progressive lesion that needs prompt evaluation.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增長（中老年人盛行率高）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "家族遺傳傾向",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "吸菸（與頸痛風險增加明確相關）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "職業性重複頸部動作或長時間抬頭／低頭工作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "憂鬱或焦慮",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Advancing age (highly prevalent in middle-aged and older adults)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "Genetic predisposition to neck pain/spondylosis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "Smoking (clearly linked to increased neck pain)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "Occupational repetitive neck motion or prolonged overhead/downward work",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        },
+        {
+          "factor": "Depression or anxiety",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Cervical Spondylosis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已排除脊髓病變徵象的頸椎病患者，可作為頸部疼痛與活動度之輔助照護",
+        "precautions": "治療前務必評估步態、手部精細動作與病理反射，排除脊髓病變；風池、天柱等頸部穴位施針須嚴格控制角度與深度，避免傷及椎動脈或脊髓",
+        "co_management": "與病人的骨科／神經外科醫師聯絡確認影像學與神經學追蹤進度；若出現步態不穩或手部精細動作變差等脊髓病變徵象，立即轉診，不得僅以針灸處理",
+        "evidence": "unknown",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 AAOS OrthoInfo 及標準脊椎醫學文獻）",
+        "note": "尚未查到針對頸椎病（結構性頸痛）本身的高階臨床指引明確建議針灸；英國 NICE NG193（慢性原發性疼痛）雖將針灸列入，但該指引明確排除有可辨識結構病因的疼痛，頸椎病不屬其適用範圍。脊髓病變屬針灸禁忌，須優先排除"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for neck pain and range of motion once signs of cervical myelopathy have been excluded",
+        "precautions": "Always assess gait, fine hand movements, and pathological reflexes before treating to rule out myelopathy; neck points such as GB20 (Fengchi) and BL10 (Tianzhu) require strict control of needle angle and depth to avoid the vertebral artery or spinal cord",
+        "co_management": "Coordinate with the patient's orthopedist/neurosurgeon on imaging and neurologic follow-up; refer immediately — do not manage with acupuncture alone — if gait instability or hand clumsiness (myelopathy signs) appear",
+        "evidence": "unknown",
+        "source": "curriculum/conditions course materials + AcuTing OS synthesis (from AAOS OrthoInfo and standard spine literature)",
+        "note": "No high-level clinical guideline specifically endorsing acupuncture for cervical spondylosis (structural neck pain) was located. UK NICE NG193 (chronic primary pain) includes acupuncture, but that guideline explicitly excludes pain with an identifiable structural cause, so cervical spondylosis falls outside its scope. Myelopathy is a contraindication requiring exclusion first"
+      },
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "western_pathology_zh": [
+          "AAOS OrthoInfo — Cervical Spondylosis (Arthritis of the Neck)"
+        ],
+        "western_pathology_en": [
+          "AAOS OrthoInfo — Cervical Spondylosis (Arthritis of the Neck)"
+        ],
+        "risk_factors_zh": [
+          "AAOS OrthoInfo — Cervical Spondylosis (Arthritis of the Neck)"
+        ],
+        "risk_factors_en": [
+          "AAOS OrthoInfo — Cervical Spondylosis (Arthritis of the Neck)"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NICE-derived"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NICE-derived"
+        ]
+      }
     },
     {
       "id": "cond.neck_pain_stiff",
@@ -7650,8 +7965,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "",
-      "western_pathology_zh": "",
+      "etiology_zh": "五十肩中醫稱「肩凝症」、「漏肩風」，好發年過五十、氣血漸衰之人。肝腎精血不足，氣血虧虛，不能濡養肩部筋脈；復加外感風寒濕邪，或勞損、久不活動，痹阻肩部經絡（手三陽經、手三陰經循行所過），氣血運行不暢，不通則痛；病久氣血兩虛，筋脈失於濡養，又兼瘀血阻絡，則肩部活動明顯受限，「不榮則痛」與「不通則痛」並見。",
+      "western_pathology_zh": "冰凍肩確切病因未明，病理特徵為肩關節囊增厚、攣縮，關節內形成緻密沾黏帶（adhesions），滑液減少，使肩關節主動與被動活動角度皆明顯受限。病程可分為疼痛期（凍結期，漸進性疼痛與活動度下降，約 6 週至 9 個月）、僵硬期（冰凍期，疼痛可能減輕但僵硬持續，約 4–6 個月）、緩解期（解凍期，活動度逐漸恢復，約 6 個月至 2 年），整體病程可達 1–3 年。",
       "tcm_patterns": [
         {
           "pattern_zh": "肝腎不足",
@@ -7966,7 +8281,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/267"
+        "https://cloudtcm.com/disease/tcm/267",
+        "AAOS OrthoInfo — Frozen Shoulder: https://www.orthoinfo.org/en/diseases--conditions/frozen-shoulder"
       ],
       "red_flag_refs": [
         "rf.frozen_shoulder.legacy01",
@@ -7986,7 +8302,115 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "etiology_en": "Frozen shoulder corresponds to the TCM patterns 肩凝症 (shoulder-congealing disorder) or 漏肩風 (leaking-shoulder wind), classically affecting people past fifty as qi and blood naturally decline. Liver-kidney essence-blood insufficiency and qi-blood deficiency leave the shoulder's sinews and channels undernourished; invasion of wind-cold-damp, or strain and prolonged immobility, then obstructs the channels crossing the shoulder (the three yang and three yin hand channels), impairing qi-blood flow and producing pain by the principle 'no free flow, hence pain.' In protracted cases, qi-blood deficiency leaves the sinews unnourished while blood stasis further obstructs the collaterals, so marked restriction of shoulder movement reflects both 'no nourishment, hence pain' and 'no free flow, hence pain' together.",
+      "western_pathology_en": "The exact cause of frozen shoulder is not fully understood; pathologically, the shoulder capsule thickens and contracts, dense adhesions form within the joint, and synovial fluid decreases, so that both active and passive range of motion become markedly restricted. The course runs through three phases: freezing (progressive pain and declining motion, roughly 6 weeks to 9 months), frozen (pain may ease but stiffness persists, roughly 4–6 months), and thawing (motion gradually returns, roughly 6 months to 2 years) — the full course can span 1 to 3 years.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡 40–60 歲",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "糖尿病（病程通常更僵硬且更久）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "甲狀腺疾病（功能低下或亢進）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "肩部曾因手術、骨折或外傷而長期制動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Age 40–60",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "Diabetes (typically longer, stiffer course)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "Thyroid disease (hypo- or hyperthyroidism)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        },
+        {
+          "factor": "Prolonged shoulder immobilization after surgery, fracture, or injury",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS OrthoInfo — Frozen Shoulder"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "各病程期（疼痛期、僵硬期、緩解期）皆可作為疼痛緩解與活動度恢復之輔助照護，常與物理治療合併使用",
+        "precautions": "外傷後急性無力或畸形應優先排除旋轉肌撕裂或骨折，非單純冰凍肩；糖尿病或甲狀腺病人病程可能較長，衛教時應說明",
+        "co_management": "與病人的骨科／復健科醫師聯絡確認物理治療與是否安排關節內注射；不建議病人自行判斷病程階段而中斷正規治療",
+        "evidence": "course",
+        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 AAOS OrthoInfo 及 Qin et al. 2023 中醫實證指引）",
+        "note": "2023 年一份中醫實證指引（Journal of Evidence-Based Medicine）將針灸列為冰凍肩處置選項之一，惟屬弱推薦／專家共識層級，非高確定性證據；系統性回顧亦顯示短中期止痛與功能改善證據品質偏低，此為執業範圍謹慎建議而非高階療效保證"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for pain relief and range-of-motion recovery across all phases (freezing, frozen, thawing), commonly combined with physiotherapy",
+        "precautions": "Sudden weakness or deformity after trauma should be worked up for rotator cuff tear or fracture first, not assumed to be simple frozen shoulder; counsel diabetic or thyroid-disease patients that their course may be longer and stiffer",
+        "co_management": "Contact and coordinate with the patient's orthopedist/rehabilitation physician on physiotherapy and whether intra-articular injection is planned; do not let the patient self-assess their phase and abandon standard care",
+        "evidence": "course",
+        "source": "curriculum/conditions course materials + AcuTing OS synthesis (from AAOS OrthoInfo and Qin et al. 2023 TCM evidence-based guideline)",
+        "note": "A 2023 TCM evidence-based guideline (Journal of Evidence-Based Medicine) lists acupuncture as one management option for frozen shoulder, but at a weak/consensus-based recommendation level, not high-certainty evidence; systematic reviews likewise show low-quality evidence for short/mid-term pain and functional improvement. This is a scope-of-practice note, not a strong efficacy guarantee"
+      },
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum TCM pathology course materials"
+        ],
+        "etiology_en": [
+          "curriculum TCM pathology course materials"
+        ],
+        "western_pathology_zh": [
+          "AAOS OrthoInfo — Frozen Shoulder"
+        ],
+        "western_pathology_en": [
+          "AAOS OrthoInfo — Frozen Shoulder"
+        ],
+        "risk_factors_zh": [
+          "AAOS OrthoInfo — Frozen Shoulder"
+        ],
+        "risk_factors_en": [
+          "AAOS OrthoInfo — Frozen Shoulder"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS-derived + Qin et al. 2023 J Evid Based Med"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — AAOS-derived + Qin et al. 2023 J Evid Based Med"
+        ]
+      }
     },
     {
       "id": "cond.rotator_cuff",
