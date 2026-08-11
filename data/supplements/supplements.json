@@ -1125,6 +1125,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Kidney disease and complex medical context are more relevant to review than these three drug classes.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "One of the best-supported sports supplements for repeated high-intensity exercise, strength and power; little value for endurance performance.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1187,6 +1212,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Sparse interaction evidence must not be read as absence of interaction; parenteral NAD+ products are not equivalent to ordinary dietary-supplement use.",
+        "source": {
+          "name": "FDA",
+          "url": "https://www.fda.gov/food/dietary-supplements"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Human evidence for direct NAD+ supplementation is limited; avoid extrapolating benefits observed with NR/NMN or preclinical NAD biology to direct NAD+ products.",
       "evidence_source": {
         "name": "FDA",
@@ -1250,6 +1300,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Short-term human safety at studied doses does not establish broad drug-interaction absence.",
+        "source": {
+          "name": "PubMed Central",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "NR can raise NAD-related biomarkers in humans, but clinically meaningful benefits for aging or disease outcomes remain unproven/condition-specific.",
       "evidence_source": {
         "name": "PubMed Central",
@@ -1314,6 +1389,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Long-term and interaction evidence remains limited; regulatory status and product quality should be re-checked because marketplace status may change.",
+        "source": {
+          "name": "FDA",
+          "url": "https://www.fda.gov/food/dietary-supplements"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Early human trials suggest NMN can affect NAD-related biomarkers, but clinical benefits remain preliminary and should be labeled uncertain.",
       "evidence_source": {
         "name": "FDA",
@@ -1383,6 +1483,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "dose_dependent_bleeding_review",
+            "note_en": "High-dose use warrants anticoagulant or antiplatelet review; clinically significant bleeding risk is usually low at common supplement doses."
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-dose omega-3 may increase atrial fibrillation risk in some cardiovascular trials; fish-oil products are not interchangeable.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "EPA/DHA lower triglycerides at pharmacologic doses; cardiovascular outcome effects depend on formulation, dose, and population, so fish-oil products are not interchangeable.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1447,6 +1572,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "known_host_risk_if_severely_immunocompromised",
+            "note_en": "Serious infections are rare but reported in severely immunocompromised or critically ill hosts; this is a host-risk flag, not a pharmacokinetic interaction."
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "FDA and NCCIH highlight particular concern in premature infants; drug-interaction data are not captured by one class-wide rule across strains.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Some specific formulations show benefit for selected GI/other indications, but effects cannot be generalized across all probiotic strains/products.",
       "evidence_source": {
         "name": "NCCIH",
@@ -1508,6 +1658,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Retinoid medications create additive toxicity concerns, and high-dose preformed vitamin A is teratogenic in pregnancy.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Essential nutrient with established roles in vision, immunity, reproduction, and cellular differentiation; supplementation is primarily indicated when intake/status is inadequate.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1573,6 +1748,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_bleeding_concern_high_dose",
+            "note_en": "High-dose vitamin E can increase bleeding tendency; use caution with anticoagulant or antiplatelet therapy."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-dose antioxidant supplementation can complicate some oncology treatment contexts; coordinate with the oncology team.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Essential antioxidant nutrient; high-dose supplementation has not shown broad preventive benefit and can create safety concerns.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1629,6 +1829,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "major_known_warfarin_interaction",
+            "note_en": "Major interaction with warfarin and related vitamin-K antagonists; intake should be kept consistent and medically coordinated."
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "The absence of an established UL for natural K forms does not remove drug-interaction risk.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Essential for normal coagulation protein activation and bone-related proteins; its clinical importance is strongly tied to anticoagulant management.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1703,6 +1928,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_absorption_interaction",
+            "note_en": "Iron impairs levothyroxine absorption; separate dosing per thyroid-medication guidance."
+          }
+        },
+        "focus_note_en": "Also interacts with several antibiotics; iron overdose is dangerous, especially in children.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Strong evidence for treatment of iron deficiency; routine use without indication can cause harm or obscure the reason for abnormal iron status.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1757,6 +2007,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "thyroid_biology_relevant_but_no_blanket_drug_rule",
+            "note_en": "Selenoproteins participate in thyroid-hormone metabolism, but no blanket thyroid-drug interaction rule is established."
+          }
+        },
+        "focus_note_en": "Chronic excess causes selenosis with hair and nail changes, GI and neurologic symptoms; more is not better.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Essential trace mineral in selenoproteins including antioxidant and thyroid-hormone metabolism pathways; more is not necessarily better.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -1822,6 +2097,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "major_clinical_context_flag",
+            "note_en": "Both deficiency and excess iodine alter thyroid function and can interact with thyroid disease management and thyroid-active drugs."
+          }
+        },
+        "focus_note_en": "Seaweed- and kelp-derived products can have highly variable iodine content.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
       "evidence_snapshot_en": "Essential substrate for thyroid hormone synthesis; supplementation should respect baseline intake and thyroid context.",
       "evidence_source": {
         "name": "NIH ODS",
