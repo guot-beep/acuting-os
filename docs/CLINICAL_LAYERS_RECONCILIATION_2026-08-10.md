@@ -179,6 +179,23 @@ throughout; free text always allowed beside the ID).
    is observed behavior — never auto-converts into a TCM diagnosis or pattern (V2
    §9), suspected exposure never becomes confirmed poisoning (V2 §10).
 
+## F0. Model routing policy for the 8/12 Clinical V2 sprint (Ting, 2026-08-10)
+
+Fable acts as **architecture lead + task router**. Routing:
+
+| Agent | Use for |
+|---|---|
+| **Fable** | schema, architecture, migration, cross-module changes, difficult/high-risk decisions |
+| **Sonnet** | implementation AFTER design is settled: forms, CRUD, UI, tests, routine refactors/integration |
+| **Opus** | only major architecture disagreement or second-opinion review |
+| **Antigravity** | bulk/mechanical content work |
+| **Codex** | independent QA/validation after milestones |
+
+Rules: when a Fable task becomes well-specified and low-risk, hand the implementation
+to Sonnet instead of spending Fable quota. **Never delegate unresolved architecture.**
+This machine has 16 GB RAM — run heavy edit/build/test agents **sequentially**, not in
+parallel.
+
 ## F. Next implementation cycle order (starts after Claude quota reset)
 
 > ⚠️ **Working-tree warning for the next agent:** ~40 pre-existing deleted

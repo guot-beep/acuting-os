@@ -3162,3 +3162,10 @@ Current repo state as of this log:
 - **⚠️ 給下一個 agent 的工作樹警告**:工作樹裡有約 40 個先前就被刪除的 `curriculum/` 檔案,**不在範圍內** —— 不要 restore、不要 stage、不要 commit、不要動它們;**永遠不要用 `git add -A`**,一律逐檔路徑 stage。
 - **下一個實作週期**(Claude quota 重置後開始):第一步是 **additive Clinical schema/DDL**(四張新表 + visit_tcm_patterns 欄位,空表落地),不是知識卡內容擴充。順序在對帳文件 §F。
 - **STOP**:本 checkpoint 到此為止。
+
+# 2026-08-10 Claude — 8/12 sprint 模型分工政策(docs-only)
+
+- **Ting 指示**:8/12 Clinical V2 sprint 由 Fable 擔任 architecture lead + task router。分工:**Fable** = schema/架構/遷移/跨模組/高風險決策;**Sonnet** = 設計定案後的實作(表單、CRUD、UI、測試、例行重構/整合);**Opus** = 僅重大架構分歧或 second opinion;**Antigravity** = 大量機械性內容;**Codex** = 里程碑後獨立 QA/驗證。
+- **規則**:Fable 任務一旦規格明確且低風險,實作交給 Sonnet,不燒 Fable quota;**未定案的架構絕不下放**。本機 16 GB RAM —— 重型 edit/build/test agent 一律**依序執行**,不並行。
+- 政策同步寫入對帳文件 §F0(`docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md`)。工作樹警告不變:`curriculum/` 刪除檔不在範圍,禁 `git add -A`。
+- **STOP**:docs-only checkpoint,無其他變更。
