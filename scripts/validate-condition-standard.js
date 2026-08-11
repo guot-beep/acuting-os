@@ -117,6 +117,10 @@ const PROVENANCE_FIELDS = new Set([
 const RAW_IMPORT_FIELDS = new Set(["tcm_patterns"]);
 
 const APPROVED = new Set([
+  // 3.5.5 import_artifacts (2026-08-11): relocation destination for junk-import
+  // text (blog narratives, ad codes, misfiled essays) — provenance only,
+  // never rendered. See template §3.5.5.
+  "import_artifacts",
   ...CORE_FIELDS, ...CONTENT_FIELDS, ...RELATION_FIELDS,
   ...PROVENANCE_FIELDS, ...RAW_IMPORT_FIELDS,
 ]);

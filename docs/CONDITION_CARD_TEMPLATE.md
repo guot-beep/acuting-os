@@ -190,6 +190,20 @@ gyn_fertility · pain_msk · gi · psych_sleep · respiratory · neuro
 derm · endo_metabolic · cardio · uro_renal · ent_eye · immune_misc
 ```
 
+### 3.5.5 `import_artifacts`(2026-08-11 新增 — 匯入垃圾的搬家目的地)
+
+C5/C10 清查發現大量臨床欄位裡裝的是 CloudTCM **部落格敘事文**(會員見證、
+廣告碼 `[@ad:1]`、樣板結尾句)或**整篇誤植**(heart_failure 裝著心律不整文)。
+這些是匯入殘渣,不是臨床內容 —— 但「只加深不刪除」照字面執行:
+
+- **搬,不刪**:垃圾文整段搬進 `import_artifacts` 陣列
+  (`{original_field, text, reason, moved_at}`),臨床欄位清出來。
+- 誤植文**先搬到正確卡**(該卡對應欄位或其 import_artifacts),再清原欄。
+- 清出的欄位:有源內容補上(R2),或誠實留空(空欄=誠實缺口,C4/C5 正常適用)。
+- **只准處理 ledger 逐筆列名的記錄**(COND_C5_LEDGER / COND_INGESTION_LEDGER),
+  不做通案自由裁量;每筆搬家記 ledger。
+- `import_artifacts` 永不渲染進導覽/內容區;僅 provenance。
+
 ### 3.6 原始匯入(保留,但永不用於導覽)
 
 `tcm_patterns` —— 728 個內嵌 blob(`{pattern_zh, formula_zh, symptoms_zh}`),
