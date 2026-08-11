@@ -1,0 +1,25 @@
+{
+  "pack": "CR-007+ Research Pack",
+  "status": "research_staging_not_canonical",
+  "requests": [
+    "CR-007",
+    "CR-008",
+    "CR-009"
+  ],
+  "counts": {
+    "supplement_batch_02": 18,
+    "symptom_batch_d": 20,
+    "symptom_metric_relations": 20,
+    "supplement_medication_class_relations": 12
+  },
+  "files": [
+    "data/research_staging/clinical_relation_seeds_v1.json",
+    "data/research_staging/supp_skeleton_batch_02_v1.json",
+    "data/research_staging/sym_extension_batch_d_v1.json",
+    "docs/research_packs/00_README_CR007_CR009.md",
+    "docs/research_packs/CLINICAL_RELATION_SEEDS_v1.md",
+    "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md",
+    "docs/research_packs/SYM_EXTENSION_BATCH_D_v1.md"
+  ],
+  "no_phi": true
+}

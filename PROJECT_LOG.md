@@ -3307,3 +3307,9 @@ Current repo state as of this log:
 - scripts/rehearse-c2b.js:完整週期排練(plan→execute→verify→冪等重跑→pointer→tamper 拒絕→rollback→raw byte 不變+白名單外零寫入)。rehearsal shim 對 v1 寫入直接 throw。
 - 排練結果:fixture 10/10 PASS;Edge raw 隔離副本(2 cases)PASS;preview raw 隔離副本(33 cases)PASS。途中修一個測試自身 bug(tamper regex 誤中 counts.cases —— 改為直接竄改 case 欄位,verify 正確拒絕)。
 - P3 交付物齊:writer+rehearsal artifacts,待 Codex P3 覆核 → P4 final GO(真機執行仍 = Ting 在場)。
+
+# 2026-08-11 Fable — SOL Pack 3(CR-007~009)收檔入庫
+
+- Fable 直接於 app 對話收 ZIP(20KB)→ pattern-v2 資料夾(同前兩包)→ 解壓 8 檔:supp 骨架批次二(18)、sym 擴充 Batch D(20)、臨床關係種子(sym→metric 20 條 measured_by + supp→drugclass 審閱關係 12 條 + forbidden_inferences 3 條)+ README/manifest。
+- 驗證:3 JSON 解析 OK、K 系列/content-junk/ratchet 全 PASS。全 NOT CANONICAL;關係種子正好對接未來 relation_registry typed-relation 工作(Pattern V2-D),ingestion 照常走閘門。
+- 累計 staging 庫存:sym 候選 48、metric 新增 4、supp 骨架 36、關係種子 32、test scenarios、selector vocab、Patient wiring pack、ingestion contract 草案。
