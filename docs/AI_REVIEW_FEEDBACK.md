@@ -6,6 +6,42 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R13 F1–F4 獨立覆核 — endpoint `6ee761c`
+
+### 裁決：R13 NO-GO；P4 仍不發布
+
+- **範圍**：`git pull --ff-only` 回 already up to date；覆核 `e7c1a22..6ee761c`。變更只含 `js/clinical-store.js`、`scripts/rehearse-runtime-restore.js`、queue；`app.js` 與其他 Clinical blobs 未漂移。
+- **指定 28 情境**：R9=`9/9 PASS`；R10=`8/8 PASS`；R11=`5/5 PASS`；R12 extras=`6/6 PASS`。F1 四型 active revision、F2 save+sync overflow、F3 真 await race、F4 raw-byte equality 均通過獨立 fake harness。
+- **新增對抗**：`1/3 PASS · 2/3 FAIL`。overflow 拒絕後 caller cases 未被改寫通過；corrupt active raw 與 invalid active envelope shape 仍可被 ordinary runtime restore 覆寫。
+- **資料邊界**：真 clinical store 讀／寫=`0/0`；全部使用 process-local fake backend／fake app handler，temp harness 清理。
+
+### F1–F4 gate 結果
+
+1. **F1 PASS**：active revision 為 string、fraction、negative、unsafe integer 共 `4/4` 被 `REJECTED_UNCHANGED`；active/pointer exact unchanged、candidate absent。
+2. **F2 PASS（實作）**：`save()` 與 `syncPendingPatients()` 在 `MAX_SAFE_INTEGER` 均拒絕，staging bytes 不變；caller case bytes亦不變。
+3. **F3 PASS**：hasher calls `>=1`、race 發生時 restore 未 settled、save 確實將 revision `5→6`；restore 最後拒絕且 newer bytes 保留。
+4. **F4 PASS**：same revision pretty-print 變體被拒，raw byte-identical envelope 才回 `idempotent_noop:true`。
+
+### 新 HIGH — existing active envelope 無法驗證時仍 fail-open
+
+- `js/clinical-store.js:626-628` 讀到 non-null `anchorRaw` 後，JSON parse 失敗會把 `currentEnv` 設為 `null`，後續當作「沒有 active baseline」。反例：pointer=`v2`、staging=`{corrupt-active`、incoming 合法 revision `1`；restore 回 `ok:true`，corrupt raw 被覆寫、pointer 保持 v2。無法判定 incoming 是否較新，也無法執行 append-only。
+- 第二反例：active 是可解析 JSON 且 revision=`99`，但 `cases="not-array"`；incoming revision=`100`。F1 只驗 revision，`verifyRuntimeEnvelope()` 在 `:569` 因 current cases 非 array 跳過 append-only，restore 仍回 `ok:true` 並覆寫 active。
+- 這不是「wipe 後 staging absent」：兩個反例都有 non-null active bytes。普通 restore 不得把「存在但無法驗證」等同「不存在」。若要用備份修復此狀態，須另走 Ting 授權、先保存 corrupt raw 的 disaster-recovery 流程，不能偷渡到一般 import。
+- **Gate G1**：`anchorRaw !== null` 時，parse failure 必須 `REJECTED_UNCHANGED`；parse 成功後 active 至少須滿足 `schema_version===2`、`journal` object、`patients/cases/pending_patient_codes` arrays，以及 present revision 型別規則，否則同樣拒絕。active/pointer exact unchanged、candidate 清除；新增 corrupt JSON、wrong cases type、missing journal、wrong patients/pending type 五型 blocking tests。只有 `anchorRaw===null` 才可走 wipe restore 無基準分支。
+
+### 測試品質補件
+
+- 官方 runtime rehearsal=`50/50 PASS`，但 F2 新增測試只有 `scripts/rehearse-runtime-restore.js:253` 的 `save()` overflow；handoff／queue 宣稱「兩條 writer 的 MAX_SAFE 反例入 suite」不精確。獨立 `syncPendingPatients()` overflow 反例為 PASS，但仍須加入官方 blocking suite，斷言 rejection + staging exact unchanged。
+
+### 回歸數字
+
+- 官方 fake suites：pointer runtime=`31/31 PASS`；runtime restore=`50/50 PASS`；C2b rehearsal=`30/30 PASS`。
+- Clinical：invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K-series=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions failures=`0`；app/store syntax=`2/2`。
+- Standard validators=`9 exit 0 / 3 exit 1`；紅燈仍為 `validate-herb-canon`、`validate-naming`、`validate-encoding` 資料基線，與本輪 Clinical diff 無交集。
+- **下一 gate**：G1 與 sync-overflow blocking test 入庫後排 R14。此前即使 Ting 在場、Edge `file://` raw full hash 相符，也禁止 shadow write、pointer switch 與 runtime restore。
+
+---
+
 ## 2026-08-11 Codex C2B-R12 E1–E5 獨立覆核 — reviewed code `6881f1e`, checkout `1913324`
 
 ### 裁決：R12 NO-GO；P4 真機條件不發布

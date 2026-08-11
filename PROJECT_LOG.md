@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R13 active-envelope integrity audit（NO-GO）
+
+- **範圍**：覆核 `e7c1a22..6ee761c`；R9/R10/R11/R12=`9/9 · 8/8 · 5/5 · 6/6 PASS`，new extras=`1/3 PASS · 2/3 FAIL`，未發布 P4。
+- **阻斷**：non-null corrupt active raw 被當 absent；active revision 合法但 cases shape invalid 時跳過 append-only，ordinary restore 兩型均 `ok:true` 覆寫 active。
+- **修復 gate**：non-null active 必須 parse + minimum envelope shape 全綠，否則 `REJECTED_UNCHANGED`；disaster repair 另走 Ting 授權。官方 suite另補 sync overflow。
+- **回歸**：official pointer/runtime/C2b=`31/31 · 50/50 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
+- **邊界／下一步**：真 store 讀／寫=`0/0`，temp fake harness 清理；G1 五型與 sync-overflow blocking test 後排 R14，期間禁止真機 shadow write／pointer switch／runtime restore。
+
 # 2026-08-11 Codex — C2B-R12 E1–E5 audit（NO-GO）
 
 - **範圍**：覆核 `6cf7782..6881f1e`，目前 HEAD Clinical blobs 相同；R9=`9/9`、R10=`8/8`、R11=`5/5`，new extras=`2/6 PASS · 4/6 FAIL`，未發布 P4。
