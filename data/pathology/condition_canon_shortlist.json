@@ -23068,7 +23068,29 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/253"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "全身潮紅脫屑（紅皮症化） → 皮膚科急件（急症）",
+        "病灶區群聚性疼痛水疱加發燒 → 疱疹性濕疹，抗病毒急治（急症）",
+        "蜂窩織炎徵象（擴散性紅腫熱痛、膿） → 感染處置",
+        "成人單側乳暈頑固「濕疹樣」病變 → 乳房柏哲德氏病排除（切片）",
+        "兒童重度異位性皮膚炎合併生長遲滯 → 專科與營養評估"
+      ],
+      "red_flags_en": [
+        "Generalized redness and scaling (erythroderma) → urgent dermatology (emergency)",
+        "Clustered painful vesicles on lesional skin with fever → eczema herpeticum, urgent antivirals (emergency)",
+        "Cellulitis signs (spreading hot red swelling, pus) → treat infection",
+        "Stubborn unilateral 'eczema-like' areolar lesion in an adult → exclude Paget disease of the breast (biopsy)",
+        "Severe childhood atopic dermatitis with growth faltering → specialist and nutrition review"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAD 異位性皮膚炎併發症通說（紅皮症、疱疹性濕疹）"
+        ],
+        "red_flags_en": [
+          "AAD 異位性皮膚炎併發症通說（紅皮症、疱疹性濕疹）"
+        ]
+      }
     },
     {
       "id": "cond.urticaria",
@@ -23127,7 +23149,27 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/971"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "唇舌咽喉腫脹、呼吸困難、頭暈血壓下降 → 過敏性休克／血管性水腫，立即腎上腺素與急救（急症）",
+        "單一風團持續超過24小時、消退留瘀斑、伴發燒關節痛 → 蕁麻疹性血管炎鑑別（切片）",
+        "慢性（超過六週）反覆發作 → 系統性評估，而非無限加量抗組織胺",
+        "新用藥（抗生素、止痛藥）後發作 → 藥物過敏標記與通報"
+      ],
+      "red_flags_en": [
+        "Lip, tongue, or throat swelling, dyspnea, dizziness with falling pressure → anaphylaxis/angioedema, immediate epinephrine and emergency care (emergency)",
+        "A single wheal lasting over 24 hours, resolving with bruising, with fever and joint pain → differentiate urticarial vasculitis (biopsy)",
+        "Chronic course (beyond six weeks) → systematic evaluation, not endless antihistamine escalation",
+        "Onset after a new drug (antibiotics, analgesics) → flag and report drug allergy"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "EAACI/AAD 蕁麻疹通說；過敏性休克處置為急救通說"
+        ],
+        "red_flags_en": [
+          "EAACI/AAD 蕁麻疹通說；過敏性休克處置為急救通說"
+        ]
+      }
     },
     {
       "id": "cond.acne",
@@ -23323,7 +23365,27 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/19"
-      ]
+      ],
+      "red_flags_zh": [
+        "突發猛爆性痤瘡伴發燒、關節痛 → 猛爆性痤瘡，皮膚科急件",
+        "女性合併多毛、月經失調、聲音低沉 → 高雄激素狀態（多囊、腫瘤）評估",
+        "口服 isotretinoin → 妊娠絕對禁忌（嚴格避孕）與情緒變化監測",
+        "結節囊腫型或瘢痕形成傾向 → 早期積極治療轉介，瘢痕不可逆"
+      ],
+      "red_flags_en": [
+        "Explosive acne with fever and joint pain → acne fulminans, urgent dermatology",
+        "In women, with hirsutism, menstrual disturbance, voice deepening → evaluate hyperandrogenism (PCOS, tumor)",
+        "Oral isotretinoin → absolute pregnancy contraindication (strict contraception) and mood monitoring",
+        "Nodulocystic disease or scarring tendency → early aggressive-treatment referral; scars are irreversible"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAD 痤瘡指引通說（isotretinoin 安全)"
+        ],
+        "red_flags_en": [
+          "AAD 痤瘡指引通說（isotretinoin 安全)"
+        ]
+      }
     },
     {
       "id": "cond.psoriasis",
@@ -23537,7 +23599,27 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/66"
-      ]
+      ],
+      "red_flags_zh": [
+        "全身紅皮症化或廣泛膿疱伴發燒 → 皮膚科急件（急症）",
+        "關節痛、晨僵、指趾腫脹如香腸 → 乾癬性關節炎，風濕科轉介——關節破壞不可逆",
+        "使用生物製劑期間發燒 → 感染閾值放低，速就醫",
+        "心血管與代謝共病篩查 → 乾癬是全身性發炎病，不只皮膚"
+      ],
+      "red_flags_en": [
+        "Erythrodermic conversion or widespread pustules with fever → urgent dermatology (emergency)",
+        "Joint pain, morning stiffness, sausage digits → psoriatic arthritis, rheumatology referral — joint destruction is irreversible",
+        "Fever while on biologics → lowered infection threshold, prompt care",
+        "Screen cardiovascular and metabolic comorbidity → psoriasis is systemic inflammation, not skin alone"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AAD/NPF 乾癬共病與急症通說"
+        ],
+        "red_flags_en": [
+          "AAD/NPF 乾癬共病與急症通說"
+        ]
+      }
     },
     {
       "id": "cond.herpes_zoster",
@@ -23754,7 +23836,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/56"
-      ]
+      ],
+      "red_flags_zh": [
+        "眼支帶狀皰疹或鼻尖病灶（Hutchinson 徵） → 眼科急診——角膜與視力風險（急症）",
+        "耳部皰疹加同側面癱、耳痛 → Ramsay Hunt 症候群，急治（急症）",
+        "皮疹跨越多個皮節或免疫低下患者 → 播散性帶狀皰疹，住院抗病毒",
+        "新發疹於72小時內 → 抗病毒時間窗，即刻轉介",
+        "皮疹癒後疼痛持續 → 帶狀皰疹後神經痛，早期疼痛管理"
+      ],
+      "red_flags_en": [
+        "Ophthalmic zoster or nose-tip lesions (Hutchinson sign) → emergency ophthalmology — cornea and vision at risk (emergency)",
+        "Ear vesicles with ipsilateral facial palsy and otalgia → Ramsay Hunt syndrome, urgent treatment (emergency)",
+        "Rash crossing multiple dermatomes or an immunocompromised host → disseminated zoster, inpatient antivirals",
+        "New rash within 72 hours → the antiviral window, immediate referral",
+        "Pain persisting after rash healing → postherpetic neuralgia, early pain management"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "CDC/AAO 帶狀皰疹紅旗通說（Hutchinson、Ramsay Hunt、72小時窗)"
+        ],
+        "red_flags_en": [
+          "CDC/AAO 帶狀皰疹紅旗通說（Hutchinson、Ramsay Hunt、72小時窗)"
+        ]
+      }
     },
     {
       "id": "cond.alopecia",
@@ -23838,10 +23942,28 @@
         "western_pathology_en": [
           "NIAMS/AAD — 斑禿通說(免疫豁免崩潰、幹細胞保留)",
           "MedlinePlus — Hair Loss (https://medlineplus.gov/hairloss.html)"
+        ],
+        "red_flags_zh": [
+          "AAD 脫髮鑑別通說（瘢痕性脫髮急件）"
+        ],
+        "red_flags_en": [
+          "AAD 脫髮鑑別通說（瘢痕性脫髮急件）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/hairloss.html"
+      ],
+      "red_flags_zh": [
+        "頭皮紅斑、毛囊口消失、鱗屑萎縮 → 瘢痕性脫髮，皮膚科切片——毛囊一毀不可再生，早診斷是唯一窗口",
+        "急速進展之全禿／普禿 → 專科評估",
+        "伴甲狀腺症狀（怕冷、心悸、體重變化） → 功能檢查",
+        "兒童脫屑斷髮病灶 → 頭癬鏡檢（傳染性，須治療接觸者）"
+      ],
+      "red_flags_en": [
+        "Scalp erythema, lost follicular openings, scale and atrophy → scarring alopecia, dermatology biopsy — destroyed follicles never regrow; early diagnosis is the only window",
+        "Rapidly progressing totalis/universalis → specialist evaluation",
+        "With thyroid symptoms (cold intolerance, palpitations, weight change) → function testing",
+        "Scaly patches with broken hairs in a child → tinea capitis microscopy (contagious; treat contacts)"
       ]
     },
     {
@@ -23925,10 +24047,28 @@
         "western_pathology_en": [
           "AAD/NRS — 酒糟通說(神經血管-cathelicidin-蠕形蟎三線)",
           "MedlinePlus — Rosacea (https://medlineplus.gov/rosacea.html)"
+        ],
+        "red_flags_zh": [
+          "AAD/NRS 酒糟通說（眼型、狼瘡鑑別）"
+        ],
+        "red_flags_en": [
+          "AAD/NRS 酒糟通說（眼型、狼瘡鑑別）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/rosacea.html"
+      ],
+      "red_flags_zh": [
+        "眼部異物感、畏光、視力模糊 → 眼型酒糟，眼科評估——角膜併發症",
+        "突發單側面部紅腫熱痛加發燒 → 丹毒／蜂窩織炎，抗生素急治（急症）",
+        "面部紅斑伴關節痛、光敏感、口腔潰瘍 → 紅斑性狼瘡鑑別",
+        "長期外用類固醇後惡化 → 類固醇性酒糟，醫療監督下漸停"
+      ],
+      "red_flags_en": [
+        "Ocular grittiness, photophobia, blurred vision → ocular rosacea, ophthalmology review — corneal complications",
+        "Sudden unilateral hot painful facial swelling with fever → erysipelas/cellulitis, urgent antibiotics (emergency)",
+        "Facial erythema with joint pain, photosensitivity, oral ulcers → differentiate lupus",
+        "Worsening after chronic topical steroids → steroid-induced rosacea, supervised tapering"
       ]
     },
     {
@@ -24013,10 +24153,30 @@
         "western_pathology_en": [
           "AAD/IFSI — 慢性搔癢通說(非組織胺路徑、無疹搔癢鑑別)",
           "MedlinePlus — Itching (https://medlineplus.gov/itching.html)"
+        ],
+        "red_flags_zh": [
+          "AAD/IFSI 慢性搔癢紅旗通說（無疹癢之系統排查）"
+        ],
+        "red_flags_en": [
+          "AAD/IFSI 慢性搔癢紅旗通說（無疹癢之系統排查）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/itching.html"
+      ],
+      "red_flags_zh": [
+        "無疹搔癢合併體重減輕、夜汗、淋巴結腫大 → 淋巴瘤等腫瘤排除",
+        "黃疸、茶色尿、灰白便 → 膽汁鬱積急查",
+        "尿毒、缺鐵、甲狀腺、糖尿病 → 系統性可治因逐項篩查",
+        "夜間加劇之家庭群聚癢、指縫丘疹隧道 → 疥瘡（傳染，全家同治）",
+        "老人頑固搔癢後出現張力性水疱 → 類天疱瘡，切片"
+      ],
+      "red_flags_en": [
+        "Itch without rash plus weight loss, night sweats, lymphadenopathy → exclude lymphoma and other malignancy",
+        "Jaundice, dark urine, pale stools → urgent cholestasis work-up",
+        "Uremia, iron deficiency, thyroid disease, diabetes → screen the treatable systemic causes one by one",
+        "Night-worse itch clustering in a household, finger-web papules and burrows → scabies (contagious; treat the whole household)",
+        "Tense blisters emerging after stubborn elderly itch → bullous pemphigoid, biopsy"
       ]
     },
     {
@@ -24077,7 +24237,29 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/88"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "多渴多尿加嘔吐、腹痛、呼吸深快、意識改變 → 高血糖急症（DKA/HHS），急診（急症）",
+        "低血糖昏迷或已無低血糖警覺 → 用藥緊急調整——駕駛安全同步處理",
+        "足部潰瘍、紅腫、發黑 → 糖尿病足，當日處置——截肢的上游",
+        "突發視力改變或飛蚊驟增 → 眼科急件（增殖性視網膜病變／玻璃體出血）",
+        "神經病變者胸悶倦怠等非典型症狀 → 無痛性心肌缺血警覺"
+      ],
+      "red_flags_en": [
+        "Polyuria and thirst with vomiting, abdominal pain, deep rapid breathing, altered consciousness → hyperglycemic emergency (DKA/HHS), emergency care (emergency)",
+        "Hypoglycemic coma or lost hypoglycemia awareness → urgent medication adjustment — with driving safety addressed in parallel",
+        "Foot ulcer, redness, blackening → diabetic foot, same-day management — the upstream of amputation",
+        "Sudden visual change or a shower of floaters → urgent ophthalmology (proliferative retinopathy / vitreous hemorrhage)",
+        "Atypical chest tightness or fatigue in the neuropathic → vigilance for silent myocardial ischemia"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ADA 糖尿病急症與足部照護通說"
+        ],
+        "red_flags_en": [
+          "ADA 糖尿病急症與足部照護通說"
+        ]
+      }
     },
     {
       "id": "cond.metabolic_syndrome",
@@ -24167,8 +24349,26 @@
         "western_pathology_en": [
           "NHLBI/IDF — 代謝症候群通說(五取三、內臟脂肪-胰島素阻抗)",
           "MedlinePlus — Metabolic Syndrome (https://medlineplus.gov/metabolicsyndrome.html)"
+        ],
+        "red_flags_zh": [
+          "AHA/IDF 代謝症候群風險管理通說"
+        ],
+        "red_flags_en": [
+          "AHA/IDF 代謝症候群風險管理通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "胸痛或勞動性呼吸困難 → 冠心病評估",
+        "空腹血糖持續上升 → 糖尿病確診流程，勿停留在「代謝症候群」標籤",
+        "血壓急升伴頭痛視力模糊 → 高血壓急症流程（急症）",
+        "打鼾與白日嗜睡 → 睡眠呼吸中止篩查"
+      ],
+      "red_flags_en": [
+        "Chest pain or exertional dyspnea → coronary evaluation",
+        "Fasting glucose steadily rising → formal diabetes diagnostic pathway; do not linger on the 'metabolic syndrome' label",
+        "Abrupt blood-pressure surge with headache and blurred vision → hypertensive-emergency pathway (emergency)",
+        "Snoring with daytime sleepiness → sleep-apnea screening"
+      ]
     },
     {
       "id": "cond.hypothyroidism",
@@ -24410,7 +24610,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1373"
-      ]
+      ],
+      "red_flags_zh": [
+        "低體溫、意識遲鈍、心搏過緩（老人、冬季、感染誘發） → 黏液水腫昏迷，死亡率高（急症）",
+        "冠心病患者起始甲狀腺素 → 低劑量慢加——過快誘發心絞痛",
+        "頸部腫塊快速增大、聲啞、吞嚥困難 → 腫瘤排除",
+        "妊娠合併甲低 → 劑量上調與產科內分泌共管——漏治影響胎兒神經發育",
+        "重度憂鬱遲滯樣表現 → 先治甲低，再下精神科結論"
+      ],
+      "red_flags_en": [
+        "Hypothermia, obtundation, bradycardia (elderly, winter, infection-triggered) → myxedema coma, high mortality (emergency)",
+        "Starting levothyroxine in coronary disease → low and slow — rapid titration provokes angina",
+        "Rapidly enlarging neck mass, hoarseness, dysphagia → exclude malignancy",
+        "Hypothyroidism in pregnancy → dose increase and obstetric-endocrine co-management — undertreatment harms fetal neurodevelopment",
+        "Severe depressive-retarded presentation → treat the hypothyroidism before psychiatric conclusions"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ATA 甲狀腺功能低下通說（黏液水腫昏迷、妊娠）"
+        ],
+        "red_flags_en": [
+          "ATA 甲狀腺功能低下通說（黏液水腫昏迷、妊娠）"
+        ]
+      }
     },
     {
       "id": "cond.hyperthyroidism",
@@ -24540,7 +24762,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/1430"
-      ]
+      ],
+      "red_flags_zh": [
+        "高燒、心搏極速、譫妄、嘔吐腹瀉 → 甲狀腺風暴，死亡率高（急症）",
+        "心房顫動 → 心臟共管與中風預防評估",
+        "突眼惡化、複視、視力下降 → 甲狀腺眼病變急件",
+        "抗甲狀腺藥使用中發燒咽痛 → 顆粒性白血球缺乏症，立即驗血並停藥（急症）",
+        "妊娠合併甲亢 → 專科共管（藥物選擇與劑量特殊）"
+      ],
+      "red_flags_en": [
+        "High fever, extreme tachycardia, delirium, vomiting and diarrhea → thyroid storm, high mortality (emergency)",
+        "Atrial fibrillation → cardiac co-management and stroke-prevention assessment",
+        "Worsening proptosis, diplopia, falling vision → urgent thyroid eye disease referral",
+        "Fever and sore throat on antithyroid drugs → agranulocytosis, immediate blood count and drug cessation (emergency)",
+        "Hyperthyroidism in pregnancy → specialist co-management (drug choice and dosing are special)"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ATA 甲亢通說（風暴、agranulocytosis 警訊）"
+        ],
+        "red_flags_en": [
+          "ATA 甲亢通說（風暴、agranulocytosis 警訊）"
+        ]
+      }
     },
     {
       "id": "cond.hashimoto",
@@ -24624,10 +24868,28 @@
         "western_pathology_en": [
           "ATA — 橋本氏甲狀腺炎通說(病程三段、TSH 軸、妊娠劑量)",
           "MedlinePlus — Thyroid Diseases (https://medlineplus.gov/thyroiddiseases.html)"
+        ],
+        "red_flags_zh": [
+          "ATA 橋本氏通說（淋巴瘤、妊娠劑量）"
+        ],
+        "red_flags_en": [
+          "ATA 橋本氏通說（淋巴瘤、妊娠劑量）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/thyroiddiseases.html"
+      ],
+      "red_flags_zh": [
+        "甲狀腺快速腫大、疼痛、聲啞 → 罕見但特異的甲狀腺淋巴瘤排除",
+        "低體溫意識遲鈍心搏過緩 → 黏液水腫昏迷警訊同甲低（急症）",
+        "妊娠 → TSH 目標與劑量即時調整，漏治影響胎兒神經發育",
+        "結節超過一公分 → 超音波與細針穿刺評估"
+      ],
+      "red_flags_en": [
+        "Rapid thyroid enlargement, pain, hoarseness → exclude thyroid lymphoma, rare but characteristic here",
+        "Hypothermia, obtundation, bradycardia → myxedema-coma warning as in hypothyroidism (emergency)",
+        "Pregnancy → immediate TSH-target and dose adjustment; undertreatment harms fetal neurodevelopment",
+        "Nodule over one centimeter → ultrasound and fine-needle evaluation"
       ]
     },
     {
@@ -24718,8 +24980,28 @@
         "western_pathology_en": [
           "NIDDK/AACE — 肥胖通說(能量恆定、調定點、GLP-1)",
           "MedlinePlus — Obesity (https://medlineplus.gov/obesity.html)"
+        ],
+        "red_flags_zh": [
+          "AACE/內分泌學會肥胖評估通說（續發因)"
+        ],
+        "red_flags_en": [
+          "AACE/內分泌學會肥胖評估通說（續發因)"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "打鼾、目擊呼吸暫停、白日嗜睡 → 睡眠呼吸中止檢查",
+        "快速體重增加伴紫紋、近端肌無力、易瘀 → 庫欣氏症候群排除",
+        "近期新增精神科藥、類固醇後體重驟增 → 藥物盤點",
+        "兒童肥胖合併身高成長停滯 → 內分泌評估——單純性肥胖身高通常偏高",
+        "符合減重藥物／手術適應 → 專科轉介時機討論"
+      ],
+      "red_flags_en": [
+        "Snoring, witnessed apneas, daytime sleepiness → sleep-apnea testing",
+        "Rapid weight gain with purple striae, proximal weakness, easy bruising → exclude Cushing syndrome",
+        "Sharp gain after new psychotropics or steroids → medication inventory",
+        "Childhood obesity with stalling height growth → endocrine evaluation — simple obesity usually runs tall",
+        "Meeting criteria for anti-obesity medication or surgery → discuss referral timing"
+      ]
     },
     {
       "id": "cond.dyslipidemia",
@@ -24802,10 +25084,28 @@
         "western_pathology_en": [
           "AHA/ACC/ESC — 血脂通說(LDL 因果三線證據、殘餘脂蛋白)",
           "MedlinePlus — Cholesterol (https://medlineplus.gov/cholesterol.html)"
+        ],
+        "red_flags_zh": [
+          "AHA/ACC 血脂通說（FH 篩查、他汀肌病警訊）"
+        ],
+        "red_flags_en": [
+          "AHA/ACC 血脂通說（FH 篩查、他汀肌病警訊）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/cholesterol.html"
+      ],
+      "red_flags_zh": [
+        "三酸甘油酯極度升高合併腹痛 → 急性胰臟炎風險，急件處置",
+        "肌腱黃色瘤、角膜弓（年輕）、早發心血管家族史 → 家族性高膽固醇血症——啟動全家篩查",
+        "他汀使用中肌痛加茶色尿 → 橫紋肌溶解，停藥急診（急症）",
+        "續發原因先查：甲狀腺低下、腎病症候群、糖尿病、酒精、藥物"
+      ],
+      "red_flags_en": [
+        "Extreme triglyceride elevation with abdominal pain → acute pancreatitis risk, urgent management",
+        "Tendon xanthomas, corneal arcus in the young, premature family cardiovascular history → familial hypercholesterolemia — start family screening",
+        "Muscle pain with tea-colored urine on a statin → rhabdomyolysis, stop the drug and seek emergency care (emergency)",
+        "Secondary causes first: hypothyroidism, nephrotic syndrome, diabetes, alcohol, drugs"
       ]
     },
     {
@@ -24890,10 +25190,30 @@
         "western_pathology_en": [
           "NIAMS/IOF — 骨質疏鬆通說(重塑失衡、DXA、FRAX、防跌)",
           "MedlinePlus — Osteoporosis (https://medlineplus.gov/osteoporosis.html)"
+        ],
+        "red_flags_zh": [
+          "NIAMS/IOF 骨鬆骨折紅旗通說"
+        ],
+        "red_flags_en": [
+          "NIAMS/IOF 骨鬆骨折紅旗通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/osteoporosis.html"
+      ],
+      "red_flags_zh": [
+        "突發背痛、身高變矮、駝背加重 → 椎體壓迫性骨折，影像確認",
+        "髖部疼痛無法負重 → 急診——髖部骨折的死亡率與失能代價極高（急症）",
+        "五十歲前骨折或多發骨折 → 續發原因與多發性骨髓瘤排除",
+        "長期糖皮質激素使用 → 骨保護共管",
+        "跌倒風險與居家防跌 → 與藥物同等重要的處方"
+      ],
+      "red_flags_en": [
+        "Sudden back pain, height loss, worsening kyphosis → vertebral compression fracture, confirm on imaging",
+        "Hip pain with inability to bear weight → emergency care — hip fracture's mortality and disability cost is enormous (emergency)",
+        "Fracture before fifty or multiple fractures → exclude secondary causes and multiple myeloma",
+        "Chronic glucocorticoid use → bone-protection co-management",
+        "Fall risk and home fall-proofing → a prescription as important as the drugs"
       ]
     },
     {
@@ -24977,8 +25297,26 @@
         "western_pathology_en": [
           "內分泌學會聲明(腎上腺疲勞非診斷)+ 慢性壓力皮質醇節律文獻通說",
           "MedlinePlus — Adrenal Gland Disorders (https://medlineplus.gov/adrenalglanddisorders.html)"
+        ],
+        "red_flags_zh": [
+          "內分泌學會聲明與 Addison 危象通說"
+        ],
+        "red_flags_en": [
+          "內分泌學會聲明與 Addison 危象通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "直立性低血壓、皮膚黏膜色素沉著、低鈉、體重減輕 → 真正的腎上腺功能不全（Addison），內分泌急件——腎上腺危象可致命（急症）",
+        "長期外源性類固醇（含來路不明「補充劑」）驟停 → 腎上腺危象風險，醫療監督下漸停",
+        "含腺體萃取物之「腎上腺保健品」 → 主動勸停——外源性皮質醇風險",
+        "重度疲勞 → 睡眠呼吸中止、甲狀腺、貧血、憂鬱逐項排查，勿停在標籤"
+      ],
+      "red_flags_en": [
+        "Orthostatic hypotension, mucocutaneous hyperpigmentation, hyponatremia, weight loss → true adrenal insufficiency (Addison), urgent endocrinology — adrenal crisis kills (emergency)",
+        "Abrupt cessation of chronic exogenous steroids (including unlabeled 'supplements') → adrenal-crisis risk, supervised tapering",
+        "'Adrenal support' products containing glandular extracts → actively advise stopping — exogenous cortisol risk",
+        "Severe fatigue → work through sleep apnea, thyroid, anemia, depression; never stop at the label"
+      ]
     },
     {
       "id": "cond.edema_fluid",
@@ -25064,10 +25402,30 @@
         "western_pathology_en": [
           "內科學通說(特發性水腫排除診斷、利尿劑反彈)",
           "MedlinePlus — Edema (https://medlineplus.gov/edema.html)"
+        ],
+        "red_flags_zh": [
+          "內科水腫鑑別紅旗通說（DVT、心肝腎）"
+        ],
+        "red_flags_en": [
+          "內科水腫鑑別紅旗通說（DVT、心肝腎）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/edema.html"
+      ],
+      "red_flags_zh": [
+        "單側下肢腫痛 → 深部靜脈血栓排除（急症）",
+        "呼吸困難、端坐呼吸、夜間陣發喘 → 心衰竭急查",
+        "泡沫尿、晨起眼瞼腫 → 腎病症候群（尿蛋白）",
+        "腹圍增加、黃疸 → 肝硬化腹水",
+        "自行使用利尿劑 → 反彈性水腫環節，醫療監督下漸停"
+      ],
+      "red_flags_en": [
+        "Unilateral painful leg swelling → exclude deep vein thrombosis (emergency)",
+        "Dyspnea, orthopnea, nocturnal breathlessness → urgent heart-failure work-up",
+        "Foamy urine, morning eyelid puffiness → nephrotic syndrome (proteinuria)",
+        "Growing girth with jaundice → cirrhotic ascites",
+        "Self-medicated diuretics → the rebound-edema loop, supervised withdrawal"
       ]
     },
     {
@@ -25129,7 +25487,29 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/296"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "red_flags_zh": [
+        "血壓急升合併胸痛、神經徵、視力模糊、意識改變 → 高血壓急症（急症）",
+        "突發劇烈撕裂樣胸背痛 → 主動脈剝離（急症）",
+        "年輕起病、難治性、或陣發性伴心悸出汗蒼白 → 續發性高血壓排查（嗜鉻細胞瘤、腎動脈狹窄、原發性醛固酮症）",
+        "妊娠血壓升高伴頭痛、視力變化、蛋白尿 → 子癇前症（急症）",
+        "降壓藥不可因輔助治療而自行停用——所有輔助介入的前提"
+      ],
+      "red_flags_en": [
+        "Pressure surge with chest pain, neurological signs, blurred vision, altered consciousness → hypertensive emergency (emergency)",
+        "Sudden tearing chest-back pain → aortic dissection (emergency)",
+        "Young onset, resistance, or paroxysms with palpitations, sweating, pallor → secondary-hypertension work-up (pheochromocytoma, renal artery stenosis, primary aldosteronism)",
+        "Rising pregnancy blood pressure with headache, visual change, proteinuria → preeclampsia (emergency)",
+        "Antihypertensives are never self-stopped for any adjunctive therapy — the precondition of all supportive care"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "AHA/ESC 高血壓急症與續發性排查通說"
+        ],
+        "red_flags_en": [
+          "AHA/ESC 高血壓急症與續發性排查通說"
+        ]
+      }
     },
     {
       "id": "cond.hypotension",
@@ -25438,7 +25818,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/753"
-      ]
+      ],
+      "red_flags_zh": [
+        "暈厥伴外傷、運動中暈厥、或心悸先兆 → 心因性暈厥排查（急症級）",
+        "直立性低血壓加黑便或嘔血 → 消化道出血（急症）",
+        "新發低血壓加發燒 → 敗血症警覺（急症）",
+        "藥物盤點：降壓藥、利尿劑、攝護腺用藥、抗憂鬱劑",
+        "老人反覆頭暈 → 跌倒風險處置並行"
+      ],
+      "red_flags_en": [
+        "Syncope with injury, during exertion, or heralded by palpitations → work up cardiac syncope (emergency-level)",
+        "Orthostatic hypotension with melena or hematemesis → gastrointestinal bleeding (emergency)",
+        "New hypotension with fever → sepsis vigilance (emergency)",
+        "Medication inventory: antihypertensives, diuretics, prostate drugs, antidepressants",
+        "Recurrent dizziness in the elderly → manage fall risk in parallel"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ESC 暈厥指引紅旗通說"
+        ],
+        "red_flags_en": [
+          "ESC 暈厥指引紅旗通說"
+        ]
+      }
     },
     {
       "id": "cond.palpitations",
@@ -25746,7 +26148,29 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/290"
-      ]
+      ],
+      "red_flags_zh": [
+        "心悸伴暈厥或近暈厥 → 惡性心律不整排查（急症）",
+        "心悸伴胸痛、呼吸困難 → 急診",
+        "持續性快而不規則的心跳 → 心房顫動確認——中風預防是此病的要害",
+        "家族猝死史或運動中發作 → 心臟電生理評估",
+        "甲狀腺亢進、貧血、咖啡因與藥物 → 可逆因先盤點"
+      ],
+      "red_flags_en": [
+        "Palpitations with syncope or near-syncope → work up malignant arrhythmia (emergency)",
+        "Palpitations with chest pain or dyspnea → emergency care",
+        "Sustained fast irregular heartbeat → confirm atrial fibrillation — stroke prevention is the crux",
+        "Family history of sudden death or exertional attacks → electrophysiology evaluation",
+        "Hyperthyroidism, anemia, caffeine, medications → inventory the reversible first"
+      ],
+      "field_sources": {
+        "red_flags_zh": [
+          "ACC/ESC 心悸評估紅旗通說；curriculum/conditions/1 Palpitation.docx 轉介精神"
+        ],
+        "red_flags_en": [
+          "ACC/ESC 心悸評估紅旗通說；curriculum/conditions/1 Palpitation.docx 轉介精神"
+        ]
+      }
     },
     {
       "id": "cond.cad",
@@ -25829,10 +26253,30 @@
         "western_pathology_en": [
           "AHA/ACC — 冠心病通說(斑塊生物學、穩定/急性二路)",
           "MedlinePlus — Coronary Artery Disease (https://medlineplus.gov/coronaryarterydisease.html)"
+        ],
+        "red_flags_zh": [
+          "AHA/ACC 急性冠心症候群警訊通說"
+        ],
+        "red_flags_en": [
+          "AHA/ACC 急性冠心症候群警訊通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/coronaryarterydisease.html"
+      ],
+      "red_flags_zh": [
+        "新發、加劇、或休息時胸痛 → 急性冠心症候群，呼叫救護車（急症）",
+        "胸痛伴冷汗、噁心、放射至臂頷 → 同上，勿自行駕車就醫（急症）",
+        "穩定心絞痛型態改變（更頻繁、更低負荷即發） → 不穩定化，速回診",
+        "抗血小板與他汀不可因任何輔助治療而停用——鐵則",
+        "糖尿病、女性、老年之非典型表現（無痛、僅倦怠氣短） → 警覺放大"
+      ],
+      "red_flags_en": [
+        "New, crescendo, or rest chest pain → acute coronary syndrome, call an ambulance (emergency)",
+        "Chest pain with cold sweat, nausea, arm or jaw radiation → the same; never drive yourself (emergency)",
+        "Changed stable-angina pattern (more frequent, lower threshold) → destabilization, prompt review",
+        "Antiplatelets and statins are never stopped for any adjunctive therapy — iron rule",
+        "Atypical presentations in diabetes, women, the elderly (painless; fatigue and breathlessness only) → amplified vigilance"
       ]
     },
     {
@@ -26178,8 +26622,28 @@
         "western_pathology_en": [
           "AHA/ACC/ESC — 心臟衰竭通說(EF 分型、神經荷爾蒙環)",
           "MedlinePlus — Heart Failure (https://medlineplus.gov/heartfailure.html)"
+        ],
+        "red_flags_zh": [
+          "AHA/ESC 心衰失代償警訊通說"
+        ],
+        "red_flags_en": [
+          "AHA/ESC 心衰失代償警訊通說"
         ]
-      }
+      },
+      "red_flags_zh": [
+        "體重數日內驟增合併腫喘加重 → 失代償，速回診調藥",
+        "端坐呼吸、夜間陣發性呼吸困難惡化 → 急性肺水腫前兆（急症）",
+        "暈厥 → 心律不整排查（急症級）",
+        "血壓偏低、四肢濕冷、尿量減少 → 低灌流狀態（急症）",
+        "每日體重日記與液體管理 → 自我監測的核心，異常即回報"
+      ],
+      "red_flags_en": [
+        "Weight jumping within days with worsening swelling and breathlessness → decompensation, prompt medication adjustment",
+        "Worsening orthopnea or paroxysmal nocturnal dyspnea → impending acute pulmonary edema (emergency)",
+        "Syncope → arrhythmia work-up (emergency-level)",
+        "Low pressure, cold clammy limbs, falling urine output → low-perfusion state (emergency)",
+        "Daily weight diary and fluid management → the core of self-monitoring; report any deviation"
+      ]
     },
     {
       "id": "cond.raynaud",
@@ -26263,10 +26727,28 @@
         "western_pathology_en": [
           "ACR — 雷諾氏現象通說(原發/續發分流、甲摺鏡)",
           "MedlinePlus — Raynaud's Disease (https://medlineplus.gov/raynaudsdisease.html)"
+        ],
+        "red_flags_zh": [
+          "ACR 雷諾續發性警訊通說"
+        ],
+        "red_flags_en": [
+          "ACR 雷諾續發性警訊通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/raynaudsdisease.html"
+      ],
+      "red_flags_zh": [
+        "指端潰瘍、壞疽、或不對稱嚴重發作 → 續發性（硬皮症等結締組織病）排查，風濕科",
+        "單側突發冰冷疼痛蒼白無脈 → 急性動脈阻塞，保肢時限（急症）",
+        "甲摺微血管異常或自體抗體陽性 → 定期風濕科追蹤",
+        "新用藥（乙型阻斷劑、偏頭痛藥）後惡化 → 藥物盤點"
+      ],
+      "red_flags_en": [
+        "Digital ulcers, gangrene, or asymmetric severe attacks → work up secondary disease (systemic sclerosis and other CTD), rheumatology",
+        "Sudden unilateral cold painful pale pulseless limb → acute arterial occlusion, limb-salvage clock running (emergency)",
+        "Abnormal nailfold capillaries or positive autoantibodies → regular rheumatology follow-up",
+        "Worsening after new drugs (beta-blockers, migraine agents) → medication inventory"
       ]
     },
     {
@@ -26350,10 +26832,30 @@
         "western_pathology_en": [
           "SVS/AVF — 慢性靜脈疾病通說(逆流環、皮膚變化分界)",
           "MedlinePlus — Varicose Veins (https://medlineplus.gov/varicoseveins.html)"
+        ],
+        "red_flags_zh": [
+          "SVS/AVF 慢性靜脈疾病紅旗通說"
+        ],
+        "red_flags_en": [
+          "SVS/AVF 慢性靜脈疾病紅旗通說"
         ]
       },
       "sources": [
         "https://medlineplus.gov/varicoseveins.html"
+      ],
+      "red_flags_zh": [
+        "突發單側小腿腫痛 → 深部靜脈血栓排除（急症）",
+        "曲張靜脈破裂出血 → 直接加壓、抬高患肢、急診",
+        "皮膚色素沉著、硬化、濕疹樣變 → 慢性靜脈功能不全進展線，積極治療防潰瘍",
+        "靜脈性潰瘍 → 傷口照護加血管評估",
+        "沿靜脈走行之紅腫痛硬索 → 血栓性淺靜脈炎，評估血栓延伸"
+      ],
+      "red_flags_en": [
+        "Sudden unilateral calf swelling and pain → exclude deep vein thrombosis (emergency)",
+        "Bleeding from a ruptured varix → direct pressure, elevation, emergency care",
+        "Skin pigmentation, induration, eczematous change → the progression line of chronic venous insufficiency; treat actively to prevent ulcer",
+        "Venous ulcer → wound care plus vascular assessment",
+        "A red, tender cord along a vein → superficial thrombophlebitis, assess for extension"
       ]
     },
     {
@@ -26437,10 +26939,30 @@
         "western_pathology_en": [
           "AHA — 周邊動脈疾病通說(ABI、跛行、運動治療)",
           "MedlinePlus — Peripheral Arterial Disease (https://medlineplus.gov/peripheralarterialdisease.html)"
+        ],
+        "red_flags_zh": [
+          "AHA 周邊動脈疾病警訊通說（CLI、急性栓塞）"
+        ],
+        "red_flags_en": [
+          "AHA 周邊動脈疾病警訊通說（CLI、急性栓塞）"
         ]
       },
       "sources": [
         "https://medlineplus.gov/peripheralarterialdisease.html"
+      ],
+      "red_flags_zh": [
+        "間歇性跛行（行走定距離痠痛、休息緩解） → 踝肱指數檢查——周邊動脈疾病同時標記全身動脈硬化",
+        "靜息痛、趾端發黑、潰瘍不癒 → 嚴重肢體缺血，保肢急件（急症）",
+        "突發肢體冰冷疼痛蒼白無脈麻木癱軟 → 急性動脈栓塞（急症）",
+        "糖尿病患足部任何小傷口 → 當日處置",
+        "單純手足冰冷而檢查全陰性 → 安撫與體質調理即可，勿過度醫療化"
+      ],
+      "red_flags_en": [
+        "Intermittent claudication (fixed-distance aching relieved by rest) → ankle-brachial index — PAD flags systemic atherosclerosis at once",
+        "Rest pain, blackening toes, non-healing ulcers → critical limb ischemia, urgent limb salvage (emergency)",
+        "Sudden cold painful pale pulseless numb weak limb → acute arterial embolism (emergency)",
+        "Any small foot wound in diabetes → same-day management",
+        "Merely cold hands and feet with an entirely negative work-up → reassurance and constitutional care; do not over-medicalize"
       ]
     },
     {
