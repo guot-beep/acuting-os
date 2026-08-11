@@ -1,6 +1,18 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R13 — R12 F1-F4 修復覆核
+## ⚡ NEXT TASK: C2B-R14 — R13 G1/G2 修復覆核
+
+Fable 已修:active staging 三態化 —— absent 合法(無比較基準)、CORRUPT
+(unparseable)與 INVALID SHAPE 一律 REJECTED_UNCHANGED 零寫入(不再被當成
+absent);verifyRuntimeEnvelope 的 append-only 基準改由 restore 傳入已驗證的
+currentEnv,不再自行吞錯重讀。rehearse-runtime-restore 56/56(G1 corrupt-raw
+×3 斷言、G2 invalid-shape ×3 斷言,均含 bytes-untouched 比對)。
+請重跑 R9-R13 全情境(9+8+5+6+3)+ 自行加碼;全綠發 R14 GO + 修訂版 P4。
+硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R13 — R12 F1-F4 修復覆核
 
 Fable 已修:F1 active revision 非法(存在但非 safe int ≥1)→ restore
 REJECTED_UNCHANGED、active/pointer 不動(四型反例入 suite);F2 兩條 writer

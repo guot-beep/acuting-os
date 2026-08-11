@@ -499,7 +499,7 @@
    *   4. 若現有 active staging 存在:逐 case 逐 exposure append-only
    *      (exposureHistoryExtends)—— 匯入的備份不得截斷現存歷史。
    *   5. pending_patient_codes 自洽(非空字串、無已存在 patient 的 code)。 */
-  async function verifyRuntimeEnvelope(env, sha256hex) {
+  async function verifyRuntimeEnvelope(env, sha256hex, currentValidated) {
     const failures = [];
     const pendingSet = new Set(env.pending_patient_codes || []);
     const pById = new Map();
@@ -563,9 +563,11 @@
     for (const code of nullFkCodes) {
       if (!pendingNorm.includes(code)) failures.push(`case code "${code}" has null patientId but is MISSING from pending_patient_codes`);
     }
-    // append-only vs 現有 active staging(存在才比;wipe 後還原無比較基準)
-    let current = null;
-    try { current = JSON.parse(readKey(STAGING_KEY) || "null"); } catch { current = null; }
+    // append-only vs 現有 active staging(存在才比;wipe 後還原無比較基準)。
+    // R13-G2:比較基準由呼叫端(restoreV2Envelope)傳入 —— 它已對 active
+    // 做過 corrupt/shape 三態驗證;這裡不再自行吞錯重讀(吞錯 = corrupt
+    // active 被靜默當 absent,append-only 防線形同虛設)。
+    const current = currentValidated;
     if (current && Array.isArray(current.cases)) {
       const newById = new Map(env.cases.map((c) => [c.id, c]));
       for (const oldCase of current.cases) {
@@ -624,8 +626,18 @@
       const isRuntimeEra = incomingRev >= 1;
       // R10-D2 + R11-E2:revision 秩序 —— 讀取當下 active 狀態作為驗證錨。
       const anchorRaw = readKey(STAGING_KEY);   // R11-E1 的 TOCTOU 錨(exact bytes)
+      // R13-G1/G2:active 三態 —— absent(合法,無比較基準)/ CORRUPT
+      // (raw 在但解析失敗)/ 形狀非法。後兩者不得被當成 absent:那會讓
+      // revision 排序與 append-only 驗證失去基準,ordinary restore 就能
+      // 覆寫可能較新的資料。一律拒收、零寫入,先修復 active 再說。
       let currentEnv = null;
-      try { currentEnv = JSON.parse(anchorRaw || "null"); } catch { currentEnv = null; }
+      if (anchorRaw !== null && anchorRaw !== undefined) {
+        try { currentEnv = JSON.parse(anchorRaw); }
+        catch (e) { return fail(["ACTIVE staging exists but is CORRUPT (unparseable: " + e.message + ") — cannot order revisions or verify append-only; repair/rollback the active staging first (restore refused, nothing written)"]); }
+        if (!currentEnv || !Array.isArray(currentEnv.cases) || !Array.isArray(currentEnv.patients)) {
+          return fail(["ACTIVE staging exists but has INVALID SHAPE (cases/patients not arrays) — cannot verify append-only against it; repair the active staging first (restore refused, nothing written)"]);
+        }
+      }
       // R12-F1:active 的 revision 欄位「存在但非法」不得被當成 0(那會讓
       // anti-downgrade 對可能較新的 active 失效)。缺席 = 合法 migration-era;
       // 存在就必須是 safe integer ≥1,否則整個 restore 拒收、active 不動。
@@ -653,7 +665,7 @@
       if (isRuntimeEra) {
         // R9 gate D:runtime-era 走自洽性驗證(R10-D3/D4:含 canonical id
         // 重算與 duplicate code 檢查,故為 async 並需要 sha256)。
-        const v = await verifyRuntimeEnvelope(env, sha256);
+        const v = await verifyRuntimeEnvelope(env, sha256, currentEnv);
         if (!v.ok) return fail(v.failures);
       } else {
         // migration-era(revision 缺/0):原 plan-anchored 路徑,逐字不變。

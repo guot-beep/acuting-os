@@ -263,5 +263,24 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   const rF4b = await S.restoreV2Envelope(JSON.stringify(bF4base), sha);
   assert.strictEqual(rF4b.ok, true); assert.strictEqual(rF4b.idempotent_noop, true); ok("R12-F4: true byte-identical no-op still accepted");
 
+  // === R13 反例(Codex 3d4ca4f)===
+  // R13-G1:corrupt active raw 不得被當成 absent —— restore 必拒、bytes 不動
+  const bG1 = fakeBackend({ [S.STAGING_KEY]: "{corrupt-json", [S.POINTER_KEY]: "v2" });
+  S.setBackend(bG1);
+  const legitG = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: 3 };
+  const rG1 = await S.restoreV2Envelope(JSON.stringify(legitG), sha);
+  assert.strictEqual(rG1.ok, false); ok("R13-G1: corrupt active raw -> restore refused");
+  assert.ok(rG1.failures[0].includes("CORRUPT")); ok("R13-G1: names corruption, not absence");
+  assert.strictEqual(bG1.kv.get(S.STAGING_KEY), "{corrupt-json"); ok("R13-G1: corrupt active bytes untouched");
+
+  // R13-G2:active shape 非法(cases 非陣列)→ 不得跳過 append-only,必拒
+  const badShape = { schema_version: 2, journal: {}, patients: [], cases: "not-an-array", runtime_revision: 1 };
+  const bG2 = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(badShape), [S.POINTER_KEY]: "v2" });
+  S.setBackend(bG2);
+  const rG2 = await S.restoreV2Envelope(JSON.stringify(legitG), sha);
+  assert.strictEqual(rG2.ok, false); ok("R13-G2: invalid-shape active -> restore refused");
+  assert.ok(rG2.failures[0].includes("INVALID SHAPE")); ok("R13-G2: names shape problem");
+  assert.strictEqual(bG2.kv.get(S.STAGING_KEY), JSON.stringify(badShape)); ok("R13-G2: active bytes untouched");
+
   console.log(`\nRUNTIME RESTORE REHEARSAL: ${pass}/${pass} PASS`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });
