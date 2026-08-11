@@ -13127,8 +13127,8 @@
     },
     {
       "id": "cond.chronic_gastritis",
-      "name_en": "Chronic Gastritis (context)",
-      "name_zh": "慢性胃炎（文件情境）",
+      "name_en": "Gastritis / Gastropathy (including Chronic Gastritis)",
+      "name_zh": "胃炎／胃黏膜病變（含慢性胃炎）",
       "category": "gi",
       "icd_hint": "K29.5",
       "related_eastern_diseases": [
@@ -13376,16 +13376,184 @@
       ],
       "classical_references_zh": "《丹溪心法》：「黃連，入痰藥用炒山梔子、黃芩為君，南星、半夏、陳皮為佐，熱多加青黛。&hellip;肥人嘈雜，二陳湯少加撫芎、蒼朮、白朮、炒山梔子。」\n\n《醫學入門．嘈雜》：「心嘈似飢又煩雜。」\n\n《景岳全書．雜證謨》：「總之，嘈雜一證多由脾氣不和，或受傷脾虛而然。所以治此者，不可不先顧脾氣。然古人於此，悉以痰火論治。于恐專用寒涼，則胃氣虛寒不健者，反以日甚，而漸至噁心噯氣，反胃噎膈之類，將由此而起矣。」\n\n《景岳全書．痞滿》：「痞者痞塞不開之謂，滿者脹滿不行之謂。蓋滿則近脹，而痞則不必脹也。所以痞滿一證，大有疑，辨則在虛實二字。凡有邪有滯而痞者，實痞也；無物無滯而痞者，虛痞也。有脹有痛而滿者，實滿也；無脹無痛而滿者，虛滿也。實痞實滿者，可散可消；虛痞虛滿者，非大加溫補不可。此而錯用，多致誤人。」",
       "fetched_at": "2026-07-23T07:46:03.630Z",
-      "source_type": "sourced_cloudtcm_record",
+      "source_type": "sourced_research_pack",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/20451"
-      ]
+        "https://cloudtcm.com/disease/tcm/20451",
+        "NIDDK — Gastritis & Gastropathy: https://www.niddk.nih.gov/health-information/digestive-diseases/gastritis-gastropathy",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "aliases_zh": [
+        "嘈雜",
+        "心嘈"
+      ],
+      "aliases_en": [
+        "Gastropathy"
+      ],
+      "summary_zh": "胃炎是胃黏膜的發炎，胃黏膜病變則是胃黏膜損傷但發炎較輕微或缺乏發炎；本卡涵蓋既有的慢性胃炎內容並擴展至胃炎／胃黏膜病變的整體概念。",
+      "summary_en": "Gastritis is inflammation of the stomach lining; gastropathy is stomach-lining damage with little or no inflammation. This card broadens the existing chronic-gastritis content to the general gastritis/gastropathy concept.",
+      "etiology_en": "Chinese medicine has long recorded epigastric discomfort (\"cao za\" 嘈雜, roughly translated as gnawing/scurrying stomach discomfort) as distinct from pain or bloating — a hunger-like, burning, churning or empty sensation often with belching or acid regurgitation. Classical sources link it to emotional distress (worry, anger), which modern medicine reframes through the brain-gut axis: stress and anxiety amplify gastric sensation without organic pathology (\"gastric neurosis\"). The source record organizes gastric discomfort into major channel/organ patterns: (1) liver-spleen disharmony / liver-stomach disharmony — emotional constraint or irregular routine causes liver qi to counter-flow and invade the stomach, producing belching, acid reflux, nausea, poor appetite, distension and irritability, most common in spring/summer or after several nights of poor sleep; (2) Yangming stomach heat — stomach fire causes a burning/acidic sensation, bad breath, acid regurgitation, constipation, yellow tongue coating, addressed with heat-clearing formulas (San Huang Xie Xin Tang, Zuo Jin Wan); when liver fire is the root cause, treating the liver (Xiao Chai Hu Tang, Si Ni San) is more fundamental; (3) stomach-yang deficiency / cold stomach — more common than heat in modern meridian-measurement data, worsens with cold food/weather, improves with warmth, treated with Li Zhong Tang, An Zhong San or Wu Zhu Yu Tang; (4) mixed cold-heat (\"pi\" 痞 pattern, epigastric fullness without pain) per the Shanghan Lun, treated with Ban Xia Xie Xin Tang; (5) food damage (over-eating, especially around holidays), treated with Bao He Wan. The record emphasizes that lifestyle and emotional regulation are the root treatment alongside pattern-specific herbs.",
+      "western_pathology_en": "Gastric discomfort is a broad, hard-to-define symptom cluster including epigastric ache, indigestion, bloating, belching and acid regurgitation, sometimes with nausea/vomiting. Modern medicine's differential for \"stomach disease\" includes acute gastritis, chronic gastritis, gastric/duodenal ulcer, gastric polyps, gastric stones, benign/malignant gastric tumors, mucosal prolapse and acute gastric dilation/pyloric obstruction. Bacterial infection (streptococcus, staphylococcus, E. coli) affecting the gastric wall can cause acute gastritis. Cases refractory to standard biomedical workup and treatment may benefit from a TCM channel/organ framework as a complementary reference point.",
+      "western_context_zh": "臨床定位：胃炎與胃黏膜病變是不同的病理概念，不應與消化不良或胃食道逆流混為一談。\n\n臨床表現：上腹不適、噁心嘔吐、早飽或無症狀；侵蝕性病變可造成腸胃道出血。\n\n重要特徵：依病因而異；幽門螺旋桿菌與非類固醇消炎藥暴露是高辨識度病因；可能無症狀；出血是併發症之一。\n\n診斷方法：病史、幽門螺旋桿菌檢測、全血球計數，並依適應症加做胃鏡／切片。\n\n鑑別診斷：消化性潰瘍、胃食道逆流、功能性消化不良、胰膽疾病、心臟缺血。\n\n西醫治療：移除／治療病因、適時使用制酸劑、根除幽門螺旋桿菌、處理出血或萎縮等併發症。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對急慢性、病因與併發症。",
+      "western_context_en": "Clinical definition: These are distinct pathological concepts and should not be treated as synonyms for dyspepsia or GERD.\n\nClinical presentation: Upper abdominal discomfort, nausea/vomiting, early satiety or no symptoms; erosive disease can cause GI bleeding.\n\nKey features: cause-specific; H. pylori and NSAID exposure are high-yield; can be asymptomatic; bleeding is a complication.\n\nDiagnostic approach: History, H. pylori testing, CBC and endoscopy/biopsy when indicated.\n\nDifferential diagnosis: peptic ulcer disease, GERD, functional dyspepsia, pancreatobiliary disease, cardiac ischemia.\n\nWestern treatment: Remove/treat cause, acid suppression when appropriate, eradicate H. pylori if present, and manage bleeding/atrophy complications.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review, distinguishing acute/chronic, cause and complications, at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "幽門螺旋桿菌感染",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "factor": "長期使用非類固醇消炎藥",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "factor": "長期飲酒",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "factor": "長期壓力或情緒困擾",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "H. pylori infection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "factor": "Long-term NSAID use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "factor": "Chronic alcohol use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "factor": "Chronic stress or emotional distress",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gastritis & Gastropathy"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "吐血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示活動性上消化道出血",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "黑便",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示上消化道出血",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "血行動力學不穩定症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能為大量出血",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "嚴重持續疼痛",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "需排除潰瘍或其他嚴重病因",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "顯著貧血或體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "需排除慢性出血或惡性病變",
+          "source": "NIDDK Gastritis & Gastropathy"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hematemesis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests active upper GI bleeding",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "Melena",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests upper GI bleeding",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "Hemodynamic instability symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate major bleeding",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "Severe persistent pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude ulcer or other serious cause",
+          "source": "NIDDK Gastritis & Gastropathy"
+        },
+        {
+          "finding": "Significant anemia or weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude chronic bleeding or malignancy",
+          "source": "NIDDK Gastritis & Gastropathy"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已排除紅旗徵象的病人可作症狀輔助照護",
+        "precautions": "治療前排除出血、貧血或體重減輕等警訊；長期非類固醇消炎藥或抗凝藥物使用史需留意",
+        "co_management": "與病人的腸胃科醫師聯絡確認幽門螺旋桿菌治療與內視鏡檢查進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於胃炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom support only after red flags are excluded",
+        "precautions": "NSAID/anticoagulant history matters; exclude bleeding, anemia or weight loss before treating",
+        "co_management": "Contact the patient's gastroenterologist to confirm H. pylori treatment and endoscopy status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for gastritis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.epigastric_pain",
+        "sym.nausea",
+        "sym.vomiting"
+      ],
+      "content_source": [
+        "cloudtcm_record",
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.peptic_ulcer",
-      "name_en": "Peptic Ulcer Disease (context)",
-      "name_zh": "消化性潰瘍（文件情境）",
+      "name_en": "Peptic Ulcer Disease",
+      "name_zh": "消化性潰瘍",
       "category": "gi",
       "icd_hint": "K27",
       "related_eastern_diseases": [
@@ -13811,11 +13979,162 @@
       ],
       "classical_references_zh": "《醫學正傳．胃脘痛》：「古方九種心痛，&hellip;詳其所由，皆在胃脘，而實不在於心。」\n\n《壽世保元》：「胃脘痛者，多是縱恣口腹喜好辛酸，恣飲熱酒煎煿，復食塞涼生冷，朝傷暮損，日積月深，自鬱成積，自積成痰，痰火煎熬，血亦妄行，痰血相雜，妨礙升降，故胃脘疼痛，吞酸噯氣，嘈雜惡心，皆噎膈反胃之漸者也。」\n\n《雜病源流犀燭．胃病》：「胃痛，邪干胃脘病也。胃稟衝和之氣，多氣多血，壯者邪不能干，虛則著而為病，偏寒偏熱，水停食積，皆與真氣相搏而痛。惟肝氣相乘為尤甚，以木性暴，旦正克也。」",
       "fetched_at": "2026-07-23T07:46:04.009Z",
-      "source_type": "sourced_cloudtcm_record",
+      "source_type": "sourced_research_pack",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/28325"
-      ]
+        "https://cloudtcm.com/disease/tcm/28325",
+        "NIDDK — Peptic Ulcers: https://www.niddk.nih.gov/health-information/digestive-diseases/peptic-ulcers-stomach-ulcers",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "aliases_zh": [
+        "胃脘痛"
+      ],
+      "aliases_en": [
+        "Stomach/Duodenal Ulcer"
+      ],
+      "summary_zh": "消化性潰瘍是胃或十二指腸黏膜的開放性潰瘍，最常與幽門螺旋桿菌感染或非類固醇消炎藥暴露有關。",
+      "summary_en": "Peptic ulcer disease is an open sore in the stomach or duodenal lining, most commonly associated with H. pylori infection or NSAID exposure.",
+      "etiology_en": "Epigastric pain (胃脘痛) has been documented in Chinese medicine for millennia, with the Huangdi Neijing locating it \"below the heart\" — hence older texts sometimes group it with cardiac pain (\"heart-abdomen pain\"). Classical categories include deficiency, qi, heat, cold, stasis and food-damage pain. The source record's modern meridian-measurement data reduces this complexity to two dominant patterns: (1) stomach heat — commonly from liver qi stagnation transforming into liver fire that invades the stomach (liver-fire-invading-stomach), seen especially with stress/poor sleep and peaking in spring/summer; presents with epigastric distension/pain, rib pain, chest tightness, poor appetite, bitter/dry mouth, belching, acid reflux or vomiting, constipation, wiry pulse; treated by clearing heat (San Huang Xie Xin Tang, Zuo Jin Wan) or, when liver is the root cause, by treating the liver (Xiao Chai Hu Tang, Si Ni San); (2) stomach cold — more common in modern data than heat, worsens in winter or with cold food, improves with warmth, presents with clear vomiting/watery regurgitation, cold extremities, thin white tongue coating, tight pulse, treated with warming formulas (Li Zhong Tang, Fu Zi Li Zhong Tang, Wu Zhu Yu Tang). Chronic disease of either type can damage stomach yin (dull pain, dry mouth, hunger without appetite, dry stool, red tongue with little coating) or stomach/spleen qi (fatigue, poor appetite). Food stagnation (overeating) and blood stasis (fixed-location pain from prior injury) are additional recognized categories, treated respectively with digestive formulas (Bao He Wan) and blood-moving formulas.",
+      "western_pathology_en": "Peptic ulcer disease is common; epigastric pain refers to the region between the xiphoid process and roughly a palm's width above the umbilicus. The most common modern mechanism is stress and poor lifestyle habits disrupting autonomic regulation, increasing gastric acid secretion and damaging the gastric mucosa to cause erosion/ulceration. Overeating, spoiled food (food poisoning), allergy or specific viral causes can also inflame and ulcerate the mucosa. Associated symptoms include indigestion, bloating, belching, poor appetite, heartburn, bleeding, black stool, nausea, diarrhea, irritability, anemia and fatigue. Long-term antacid use, while common, can carry side effects — supporting a complementary TCM heat/cold framework for prevention.",
+      "western_context_zh": "臨床定位：消化性潰瘍與胃炎及胃食道逆流不同，併發症包括出血、穿孔與胃出口阻塞。\n\n臨床表現：灼熱／啃咬感的上腹痛、噁心或早飽；部分潰瘍以出血為首發表現。\n\n重要特徵：胃或十二指腸潰瘍；幽門螺旋桿菌／非類固醇消炎藥為主要病因；有出血／穿孔風險；高風險族群常需胃鏡評估。\n\n診斷方法：幽門螺旋桿菌檢測、全血球計數，依年齡／風險／紅旗徵象安排上消化道內視鏡；懷疑穿孔時加做影像。\n\n鑑別診斷：胃炎、胃食道逆流、胰臟炎、膽道疾病、胃癌。\n\n西醫治療：制酸治療、根除幽門螺旋桿菌、調整非類固醇消炎藥使用，並以內視鏡／手術處理併發症。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: PUD is distinct from gastritis and GERD; complications include bleeding, perforation and gastric outlet obstruction.\n\nClinical presentation: Burning/gnawing epigastric pain, nausea or early satiety may occur; some ulcers first present with bleeding.\n\nKey features: gastric or duodenal ulcer; H. pylori/NSAIDs are major causes; bleeding/perforation risk; endoscopy often central in high-risk cases.\n\nDiagnostic approach: H. pylori testing, CBC and upper endoscopy based on age/risk/red flags; imaging for suspected perforation.\n\nDifferential diagnosis: gastritis, GERD, pancreatitis, biliary disease, gastric cancer.\n\nWestern treatment: Acid suppression, H. pylori eradication, NSAID modification and endoscopic/surgical management of complications.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "幽門螺旋桿菌感染",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "factor": "長期使用非類固醇消炎藥",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "factor": "重症住院合併壓力性潰瘍風險",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Peptic Ulcers"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "H. pylori infection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "factor": "Long-term NSAID use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "factor": "Critical illness with stress-ulcer risk",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Peptic Ulcers"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "吐血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示活動性上消化道出血",
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "finding": "黑便",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示上消化道出血",
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "finding": "突發劇烈腹痛合併腹部僵硬",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示可能穿孔",
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "finding": "暈厥或血行動力學不穩定",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能為大量出血休克",
+          "source": "NIDDK Peptic Ulcers"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hematemesis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests active upper GI bleeding",
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "finding": "Melena",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests upper GI bleeding",
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "finding": "Sudden severe rigid-abdomen pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests possible perforation",
+          "source": "NIDDK Peptic Ulcers"
+        },
+        {
+          "finding": "Syncope or hemodynamic instability",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate hemorrhagic shock",
+          "source": "NIDDK Peptic Ulcers"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "病情穩定且無活動性出血或穿孔疑慮時可作輔助照護",
+        "precautions": "絕不治療活動性腸胃道出血或疑似穿孔",
+        "co_management": "與病人的腸胃科醫師聯絡確認幽門螺旋桿菌治療與非類固醇消炎藥調整進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於消化性潰瘍的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care only once medically stable, with no active bleeding or suspected perforation",
+        "precautions": "Never treat active GI bleeding or suspected perforation",
+        "co_management": "Contact the patient's gastroenterologist to confirm H. pylori treatment and NSAID modification status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for PUD was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.epigastric_pain"
+      ],
+      "content_source": [
+        "cloudtcm_record",
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.ibs",
@@ -13865,7 +14184,7 @@
         "烏梅丸"
       ],
       "fetched_at": "2026-07-23T07:46:04.600Z",
-      "source_type": "sourced_cloudtcm_record",
+      "source_type": "sourced_research_pack",
       "acupoint_protocols": [
         "天樞 (ST25)",
         "足三里 (ST36)",
@@ -13874,14 +14193,169 @@
         "氣海 (CV6)"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1671"
+        "https://cloudtcm.com/disease/tcm/1671",
+        "NIDDK — IBS: https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "腸易激綜合症"
+      ],
+      "aliases_en": [
+        "IBS"
+      ],
+      "summary_zh": "腸躁症是一種腦腸互動障礙，特徵為反覆腹痛合併排便習慣改變，且無結構性疾病可解釋症狀。",
+      "summary_en": "IBS is a disorder of gut-brain interaction characterized by recurrent abdominal pain associated with altered bowel habits without structural disease explaining the symptoms.",
+      "etiology_en": "Liver-qi stagnation with spleen deficiency, damp-heat internal obstruction, and disordered large-intestine transformation and transport, per the existing CloudTCM-sourced pattern framework.",
+      "western_pathology_en": "Increased bowel sensitivity, dysbiosis of the gut microbiome and disordered brain-gut axis signaling drive recurrent abdominal pain and altered bowel habits.",
+      "western_context_zh": "臨床定位：腸躁症不是發炎性腸道疾病，也不能單純以排除法診斷，須符合症狀型態準則。\n\n臨床表現：腹痛合併便秘、腹瀉或混合型排便型態、脹氣與症狀波動。\n\n重要特徵：屬腦腸互動障礙；有 IBS-C／IBS-D／混合型亞型；警訊症狀提示需考慮其他診斷；發炎性腸道疾病是不同的疾病。\n\n診斷方法：以臨床症狀準則為主，並視情況加做有限檢驗排除乳糜瀉、發炎或其他疾病。\n\n鑑別診斷：發炎性腸道疾病、乳糜瀉、大腸直腸癌、感染、甲狀腺疾病。\n\n西醫治療：飲食策略、依亞型調整纖維攝取、腸道導向藥物、心理／行為治療及症狀導向處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型。",
+      "western_context_en": "Clinical definition: IBS is not inflammatory bowel disease and is not diagnosed solely by exclusion without symptom-pattern criteria.\n\nClinical presentation: Abdominal pain with constipation, diarrhea or mixed bowel pattern, bloating and symptom fluctuation.\n\nKey features: disorder of gut-brain interaction; IBS-C/IBS-D/mixed subtypes; alarm features require alternate diagnosis; IBD is distinct.\n\nDiagnostic approach: Clinical symptom criteria plus limited testing to exclude celiac disease, inflammation or other conditions when indicated.\n\nDifferential diagnosis: IBD, celiac disease, colorectal cancer, infection, thyroid disease.\n\nWestern treatment: Dietary strategies, fiber based on subtype, gut-directed medicines, psychological/behavioral therapies and symptom-specific management.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review, by subtype, at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK IBS"
+        },
+        {
+          "factor": "腸胃道感染病史（感染後 IBS）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK IBS"
+        },
+        {
+          "factor": "慢性壓力或焦慮",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK IBS"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK IBS"
+        },
+        {
+          "factor": "History of GI infection (post-infectious IBS)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK IBS"
+        },
+        {
+          "factor": "Chronic stress or anxiety",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK IBS"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "腸胃道出血",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "非典型 IBS 表現，需排除其他病因",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "非刻意體重減輕",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "警訊症狀，須排除器質性疾病",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "夜間症狀持續加重",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "IBS 症狀通常不會於夜間加重",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "貧血",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "需排除慢性出血",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "大腸直腸癌／發炎性腸道疾病家族史合併新發症狀",
+          "urgency_level": "routine",
+          "recommended_action": "轉診腸胃科評估",
+          "rationale": "家族史提高警訊症狀的重要性",
+          "source": "NIDDK IBS"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "GI bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Atypical for IBS, must exclude other causes",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "Unintentional weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Alarm feature requiring exclusion of organic disease",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "Progressive nocturnal symptoms",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "IBS symptoms typically do not worsen at night",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "Anemia",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude chronic bleeding",
+          "source": "NIDDK IBS"
+        },
+        {
+          "finding": "Family history of colorectal cancer/IBD with new-onset symptoms",
+          "urgency_level": "routine",
+          "recommended_action": "Refer to gastroenterology for evaluation",
+          "rationale": "Family history raises the significance of alarm features",
+          "source": "NIDDK IBS"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "警訊症狀已評估排除後，可作為合理的輔助照護",
+        "precautions": "追蹤排便型態與疼痛變化，不預設單一中醫病機",
+        "co_management": "若出現警訊症狀，轉診腸胃科重新評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於腸躁症的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Reasonable adjunctive symptom role after alarm features are evaluated",
+        "precautions": "Track stool pattern and pain rather than assuming one TCM mechanism",
+        "co_management": "Refer to gastroenterology for re-evaluation if alarm features appear",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for IBS was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_bloating",
+        "sym.constipation",
+        "sym.diarrhea"
+      ],
+      "content_source": [
+        "cloudtcm_record",
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.ibd",
-      "name_en": "Inflammatory Bowel Disease (context)",
-      "name_zh": "發炎性腸道疾病（文件情境）",
+      "name_en": "Inflammatory Bowel Disease (IBD)",
+      "name_zh": "發炎性腸道疾病",
       "category": "gi",
       "icd_hint": "K50-K51",
       "related_eastern_diseases": [
@@ -13894,8 +14368,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "病因為多因子性，涉及免疫失調、遺傳、腸道菌群與環境因子。",
+      "western_pathology_zh": "持續不當的腸道發炎損傷黏膜，克隆氏病可能涉及腸壁深層／穿透性病變並影響腸胃道任何節段。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -13927,7 +14401,164 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "炎症性腸病"
+      ],
+      "aliases_en": [
+        "IBD"
+      ],
+      "summary_zh": "發炎性腸道疾病是一組慢性免疫介導的腸道發炎疾病家族，主要類型為克隆氏病與潰瘍性大腸炎。",
+      "summary_en": "Inflammatory bowel disease is a chronic immune-mediated intestinal inflammatory disease family whose major forms are Crohn disease and ulcerative colitis.",
+      "etiology_en": "Cause is multifactorial, involving immune dysregulation, genetics, microbiome and environmental factors.",
+      "western_pathology_en": "Persistent inappropriate intestinal inflammation damages mucosa and, in Crohn disease, can involve deeper/transmural layers and any GI segment.",
+      "western_context_zh": "臨床定位：發炎性腸道疾病是母概念，須與腸躁症區分；克隆氏病與潰瘍性大腸炎可能需要獨立的子卡片。\n\n臨床表現：腹瀉、腹痛、血便、裡急後重、體重減輕、疲勞與腸道外表現皆可能出現。\n\n重要特徵：克隆氏病與潰瘍性大腸炎不同；發炎性腸道疾病不等於腸躁症；屬慢性反覆性發炎；有出血、阻塞、瘻管、中毒性巨結腸等併發症。\n\n診斷方法：實驗室／糞便發炎指標搭配內視鏡與切片，並以影像檢查排除感染。\n\n鑑別診斷：腸躁症、感染性腸炎、乳糜瀉、缺血性腸炎、大腸直腸癌。\n\n西醫治療：抗發炎、免疫調節與生物製劑／小分子藥物治療；特定併發症或頑固性疾病需手術。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對亞型與併發症。",
+      "western_context_en": "Clinical definition: IBD is a parent identity and must remain distinct from IBS. Crohn disease and ulcerative colitis may warrant separate canonical child cards.\n\nClinical presentation: Diarrhea, abdominal pain, blood in stool, urgency, weight loss, fatigue and extraintestinal manifestations can occur.\n\nKey features: Crohn vs ulcerative colitis; IBD != IBS; chronic relapsing inflammation; bleeding, obstruction/fistula/toxic colitis complications.\n\nDiagnostic approach: Labs/stool inflammatory markers plus endoscopy with biopsy and imaging; infection must be excluded.\n\nDifferential diagnosis: IBS, infectious colitis, celiac disease, ischemic colitis, colorectal cancer.\n\nWestern treatment: Anti-inflammatory, immunomodulatory and biologic/small-molecule therapies; surgery is needed for selected complications or refractory disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review, by subtype and complication, at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "發炎性腸道疾病家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "factor": "吸菸（克隆氏病風險增加，潰瘍性大腸炎風險降低）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "factor": "西式高度加工飲食型態",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Family history of IBD",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "factor": "Smoking (increases Crohn risk, decreases ulcerative colitis risk)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "factor": "Western highly processed dietary pattern",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能危及生命",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "脫水徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "重度腹瀉可造成嚴重脫水",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "中毒性巨結腸徵象（腹脹合併發燒、心跳過快）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬外科急症",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "腹膜炎徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示可能穿孔",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "腸阻塞徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診急診／外科評估",
+          "rationale": "克隆氏病常見併發症",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Can be life-threatening",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "Signs of dehydration",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Severe diarrhea can cause serious dehydration",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "Toxic megacolon signs (distension with fever, tachycardia)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Surgical emergency",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "Peritonitis signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests possible perforation",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        },
+        {
+          "finding": "Obstruction signs",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate referral to emergency/surgery",
+          "rationale": "Common Crohn disease complication",
+          "source": "NIDDK Ulcerative Colitis / Crohn's Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "病情穩定的病人可作輔助照護，尤其是穩定期症狀",
+        "precautions": "須考量免疫抑制治療、貧血、感染風險與目前是否為活動性發作",
+        "co_management": "與病人的腸胃科醫師聯絡確認疾病活動度與免疫調節治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於發炎性腸道疾病的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive only, especially for stable symptoms",
+        "precautions": "Consider immunosuppression, anemia, infection risk and active flare severity",
+        "co_management": "Contact the patient's gastroenterologist to confirm disease activity and immunomodulatory treatment status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for IBD was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.diarrhea",
+        "sym.abdominal_pain"
+      ],
+      "sources": [
+        "NIDDK — Ulcerative Colitis: https://www.niddk.nih.gov/health-information/digestive-diseases/ulcerative-colitis",
+        "NIDDK — Crohn's Disease: https://www.niddk.nih.gov/health-information/digestive-diseases/crohns-disease",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.chronic_constipation",
@@ -34571,6 +35202,1000 @@
         "medlineplus_overview",
         "ncbahm_biomedicine_appendix_a",
         "research_pack_batch_g_neurology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.appendicitis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "闌尾炎",
+      "name_en": "Appendicitis",
+      "category": "gi",
+      "icd_hint": "K35",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "闌尾炎是闌尾的發炎，通常因管腔阻塞造成，是急性腹痛的常見病因，需要緊急評估。",
+      "summary_en": "Appendicitis is inflammation of the appendix, usually from luminal obstruction, and is a common cause of acute abdominal pain requiring urgent evaluation.",
+      "etiology_zh": "淋巴組織腫脹、糞石或其他原因造成的管腔阻塞可誘發發炎與感染。",
+      "etiology_en": "Obstruction by lymphoid swelling, fecal material or other causes can initiate inflammation and infection.",
+      "western_pathology_zh": "管腔阻塞使壓力升高、血流受損並促進細菌增生；可能進展為缺血與穿孔。",
+      "western_pathology_en": "Luminal obstruction increases pressure, impairs blood flow and promotes bacterial overgrowth; ischemia and perforation can follow.",
+      "western_context_zh": "臨床定位：未治療的闌尾炎可能穿孔，造成膿瘍或腹膜炎。\n\n臨床表現：疼痛常始於臍周並轉移至右下腹，伴隨食慾不振、噁心嘔吐與發燒；表現不典型的情況也存在。\n\n重要特徵：屬急腹症；轉移至右下腹為典型但非絕對；有穿孔風險；影像與檢驗有助診斷。\n\n診斷方法：病史／理學檢查、全血球計數／尿液分析，並依年齡／懷孕／臨床情境選擇超音波或電腦斷層。\n\n鑑別診斷：腸胃炎、腎結石、子宮外孕、骨盆腔發炎疾病、卵巢扭轉、克隆氏病。\n\n西醫治療：多數病人以闌尾切除術為標準治療；部分未複雜化病例可在外科／內科指導下以抗生素治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Untreated appendicitis can perforate, causing abscess or peritonitis.\n\nClinical presentation: Pain often begins near the umbilicus and migrates to right lower abdomen, with anorexia, nausea/vomiting and fever; atypical presentations occur.\n\nKey features: acute abdomen; migration to RLQ is classic but not universal; perforation risk; imaging/labs support diagnosis.\n\nDiagnostic approach: History/exam, CBC/urinalysis and ultrasound or CT depending on age/pregnancy/context.\n\nDifferential diagnosis: gastroenteritis, kidney stone, ectopic pregnancy, PID, ovarian torsion, Crohn disease.\n\nWestern treatment: Appendectomy is standard for many patients; selected uncomplicated cases may be managed with antibiotics under surgical/medical guidance.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡 10-30 歲",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "factor": "闌尾管腔阻塞（糞石、淋巴增生）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "factor": "家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Appendicitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Age 10-30 years",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "factor": "Appendiceal luminal obstruction (fecalith, lymphoid hyperplasia)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "factor": "Family history",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Appendicitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "疼痛惡化合併局部性反彈痛／僵硬",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示可能已穿孔或腹膜炎",
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "finding": "高燒",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示感染擴散",
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "finding": "敗血症徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "有生命危險",
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "finding": "懷孕合併疑似闌尾炎",
+          "urgency_level": "emergency",
+          "recommended_action": "立即轉診婦產科／急診",
+          "rationale": "母胎風險高",
+          "source": "NIDDK Appendicitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Worsening localized pain with rebound tenderness/guarding",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests possible perforation or peritonitis",
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "finding": "High fever",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests spreading infection",
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "finding": "Sepsis features",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Life-threatening",
+          "source": "NIDDK Appendicitis"
+        },
+        {
+          "finding": "Pregnancy with suspected appendicitis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate referral to obstetrics/emergency",
+          "rationale": "High maternal-fetal risk",
+          "source": "NIDDK Appendicitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用；未確診的急性右下腹痛不應以氣滯論治延誤轉診",
+        "precautions": "任何急性右下腹痛合併發燒或惡化疼痛應立即轉診，不予針刺治療",
+        "co_management": "疑似闌尾炎時立即轉診急診／外科評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "此為急症識別與轉診原則，非治療建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable; do not treat undiagnosed acute RLQ pain as qi stagnation and delay referral",
+        "precautions": "Any acute RLQ pain with fever or worsening severity requires immediate referral, not needling",
+        "co_management": "Immediately refer to emergency/surgery when appendicitis is suspected",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "This is an emergency-recognition and referral principle, not a treatment recommendation"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_pain",
+        "sym.nausea",
+        "sym.vomiting"
+      ],
+      "sources": [
+        "NIDDK — Appendicitis: https://www.niddk.nih.gov/health-information/digestive-diseases/appendicitis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.acute_pancreatitis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "急性胰臟炎",
+      "name_en": "Acute Pancreatitis",
+      "category": "gi",
+      "icd_hint": "K85",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "急性胰臟炎是胰臟的突發性發炎，病程從自限性疾病到全身性器官衰竭都有可能。",
+      "summary_en": "Acute pancreatitis is sudden inflammation of the pancreas that ranges from self-limited disease to systemic organ failure.",
+      "etiology_zh": "膽結石與飲酒是常見病因；高三酸甘油脂血症、藥物、處置及其他原因也會造成。",
+      "etiology_en": "Gallstones and alcohol are common causes; hypertriglyceridemia, medications, procedures and other causes also occur.",
+      "western_pathology_zh": "消化酵素與發炎路徑的提前活化損傷胰臟組織，並可能引發全身性發炎反應。",
+      "western_pathology_en": "Premature activation of digestive enzymes and inflammatory pathways injures pancreatic tissue and can trigger systemic inflammation.",
+      "western_context_zh": "臨床定位：急性胰臟炎與慢性胰臟炎及非特異性上腹痛不同。\n\n臨床表現：常放射至背部的劇烈上腹痛、噁心嘔吐與壓痛。\n\n重要特徵：急性劇烈上腹痛；脂肪酶有助診斷；膽結石／飲酒為常見病因；器官衰竭定義重症疾病。\n\n診斷方法：典型疼痛合併胰臟酵素升高及／或影像；超音波評估膽結石。\n\n鑑別診斷：消化性潰瘍穿孔、膽絞痛／膽囊炎、心肌梗塞、主動脈疾病、腸道缺血。\n\n西醫治療：住院支持性照護，包括輸液、止痛、營養支持與病因導向治療；膽道阻塞／併發症需處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Acute pancreatitis is distinct from chronic pancreatitis and from nonspecific epigastric pain.\n\nClinical presentation: Severe upper abdominal pain often radiating to the back, nausea/vomiting and tenderness.\n\nKey features: acute severe epigastric pain; lipase supports diagnosis; gallstones/alcohol common; organ failure defines severe disease.\n\nDiagnostic approach: Typical pain plus elevated pancreatic enzymes and/or imaging; ultrasound evaluates gallstones.\n\nDifferential diagnosis: peptic ulcer perforation, biliary colic/cholecystitis, MI, aortic disease, bowel ischemia.\n\nWestern treatment: Hospital supportive care with fluids, analgesia, nutrition and cause-specific management; procedures for biliary obstruction/complications as indicated.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "膽結石",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "factor": "重度飲酒",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "factor": "高三酸甘油脂血症",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Pancreatitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Gallstones",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "factor": "Heavy alcohol use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "factor": "Hypertriglyceridemia",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Pancreatitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "休克",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示重症胰臟炎",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "低血氧",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "重症胰臟炎併發症",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "持續性器官衰竭",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "定義重症胰臟炎，死亡率高",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "敗血症徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能合併感染性壞死",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "膽道阻塞或膽管炎徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "需緊急處置膽道阻塞",
+          "source": "NIDDK Pancreatitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Shock",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests severe pancreatitis",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "Hypoxia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Complication of severe pancreatitis",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "Persistent organ failure",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Defines severe pancreatitis with high mortality",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "Sepsis features",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate infected necrosis",
+          "source": "NIDDK Pancreatitis"
+        },
+        {
+          "finding": "Biliary obstruction or cholangitis signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Requires urgent management of biliary obstruction",
+          "source": "NIDDK Pancreatitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用；急性期嚴重腹痛須優先接受西醫診斷",
+        "precautions": "急性發病期間不予針刺治療",
+        "co_management": "疑似急性胰臟炎時立即轉診急診評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "此為急症識別與轉診原則，非治療建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not a routine acupuncture presentation during acute illness; severe abdominal pain warrants biomedical diagnosis first",
+        "precautions": "Do not needle during the acute phase",
+        "co_management": "Immediately refer to emergency evaluation when acute pancreatitis is suspected",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "This is an emergency-recognition and referral principle, not a treatment recommendation"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_pain",
+        "sym.vomiting"
+      ],
+      "sources": [
+        "NIDDK — Pancreatitis: https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.gallstone_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "膽結石／膽囊疾病",
+      "name_en": "Gallstones / Gallbladder Disease",
+      "category": "gi",
+      "icd_hint": "K80",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "膽石症"
+      ],
+      "aliases_en": [
+        "Cholelithiasis"
+      ],
+      "summary_zh": "膽結石是膽囊內硬化的沉積物，可能無症狀，也可能造成膽絞痛及膽囊炎、膽管炎或胰臟炎等併發症。",
+      "summary_en": "Gallstones are hardened deposits in the gallbladder that may be asymptomatic or cause biliary colic and complications such as cholecystitis, cholangitis or pancreatitis.",
+      "etiology_zh": "結石形成反映膽固醇或色素過飽和、膽囊排空不良及其他危險因子。",
+      "etiology_en": "Stone formation reflects cholesterol or pigment supersaturation, gallbladder stasis and other risk factors.",
+      "western_pathology_zh": "結石間歇性或持續性阻塞膽囊管或總膽管，造成疼痛、發炎或感染。",
+      "western_pathology_en": "A stone intermittently or persistently obstructs the cystic or common bile duct, causing pain, inflammation or infection.",
+      "western_context_zh": "臨床定位：無症狀膽結石、急性膽囊炎與總膽管結石是不同的臨床狀態；本卡與既有的 `cond.gallbladder_dysfunction`（膽道功能障礙／無結石性膽囊功能異常）是不同實體，非同一疾病——膽結石是結構性問題，膽道功能障礙是動力性問題。\n\n臨床表現：進食後右上腹／上腹痛、噁心嘔吐；發燒或黃疸提示併發症。\n\n重要特徵：多數結石無症狀；膽絞痛與膽囊炎需區分；發燒／黃疸會改變緊急程度；超音波為首選檢查。\n\n診斷方法：超音波搭配實驗室檢查；懷疑總膽管疾病時加做核磁共振膽胰管造影或內視鏡逆行性膽胰管造影等影像。\n\n鑑別診斷：消化性疾病、肝炎、胰臟炎、心肌梗塞、右下肺疾病。\n\n西醫治療：無症狀結石可能不需治療；有症狀者常以膽囊切除術治療；總膽管結石／膽管炎視情況以內視鏡逆行性膽胰管造影處理。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Asymptomatic cholelithiasis, acute cholecystitis and common-bile-duct stones are different clinical states and may need separate cards. This card is distinct from the existing `cond.gallbladder_dysfunction` (biliary dyskinesia / functional gallbladder disorder without stones) — gallstones are a structural problem, biliary dyskinesia is a motility problem; not the same entity.\n\nClinical presentation: Right upper abdominal/epigastric pain after meals, nausea/vomiting; fever or jaundice suggests complications.\n\nKey features: many stones asymptomatic; biliary colic vs cholecystitis distinction; fever/jaundice change urgency; ultrasound is first-line.\n\nDiagnostic approach: Ultrasound and labs; MRCP/ERCP or other imaging when common duct disease suspected.\n\nDifferential diagnosis: peptic disease, hepatitis, pancreatitis, MI, right lower-lung disease.\n\nWestern treatment: Asymptomatic stones may need no treatment; symptomatic disease often treated with cholecystectomy; ERCP for duct stones/cholangitis as appropriate.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "factor": "快速減重",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "factor": "懷孕",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Gallstones"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "factor": "Rapid weight loss",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Gallstones"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "發燒",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示膽囊炎或膽管炎",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "黃疸",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示膽道阻塞",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "持續性右上腹痛",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "可能為急性膽囊炎",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "低血壓或意識混亂",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示膽管炎合併敗血症",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "合併胰臟炎症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "膽結石可誘發急性胰臟炎",
+          "source": "NIDDK Gallstones"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests cholecystitis or cholangitis",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "Jaundice",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests biliary obstruction",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "Persistent RUQ pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "May indicate acute cholecystitis",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "Hypotension or confusion",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests cholangitis with sepsis",
+          "source": "NIDDK Gallstones"
+        },
+        {
+          "finding": "Accompanying pancreatitis symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Gallstones can trigger acute pancreatitis",
+          "source": "NIDDK Gallstones"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "已確診且穩定的膽道消化不良可作輔助照護",
+        "precautions": "不可延誤急性膽囊炎或膽管炎的外科／急診評估",
+        "co_management": "與病人的腸胃科／外科醫師聯絡確認膽囊切除或內視鏡治療計畫",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於膽結石的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Stable biliary dyspepsia support only after diagnosis",
+        "precautions": "Do not delay surgical/emergency evaluation of acute cholecystitis or cholangitis",
+        "co_management": "Contact the patient's gastroenterologist/surgeon to confirm cholecystectomy or endoscopic treatment plan",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for gallstone disease was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_pain",
+        "sym.nausea",
+        "sym.vomiting"
+      ],
+      "sources": [
+        "NIDDK — Gallstones: https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.bowel_obstruction",
+      "entity_type": "biomedical_condition",
+      "name_zh": "腸阻塞",
+      "name_en": "Intestinal Obstruction",
+      "category": "gi",
+      "icd_hint": "K56",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "腸梗阻"
+      ],
+      "aliases_en": [
+        "Bowel Obstruction"
+      ],
+      "summary_zh": "腸阻塞是腸道內容物與氣體正常通過受到部分或完全阻礙。",
+      "summary_en": "Intestinal obstruction is partial or complete blockage preventing normal passage of intestinal contents and gas.",
+      "etiology_zh": "沾黏、疝氣、腫瘤、腸扭轉、腸套疊、狹窄及其他機械性病因會造成阻塞；腸阻塞則有功能性病因。",
+      "etiology_en": "Adhesions, hernias, tumors, volvulus, intussusception, strictures and other mechanical causes occur; ileus has functional causes.",
+      "western_pathology_zh": "近端腸道液體／氣體堆積造成腸道擴張，妨礙吸收，並可能損害血流造成缺血／穿孔。",
+      "western_pathology_en": "Proximal accumulation of fluid/gas distends bowel, impairs absorption and can compromise blood flow, causing ischemia/perforation.",
+      "western_context_zh": "臨床定位：機械性阻塞與腸阻塞（麻痺性腸阻塞）或腸道假性阻塞不同，雖然表現可能重疊。\n\n臨床表現：陣發性腹痛、腹脹、嘔吐與無法排氣排便；嚴重度與位置而異。\n\n重要特徵：機械性與功能性阻塞的區分；便秘合併嘔吐／腹脹；絞窄／缺血屬危險；影像檢查為核心。\n\n診斷方法：病史／理學檢查、實驗室檢查及腹部電腦斷層／X光；評估病因與是否有缺血。\n\n鑑別診斷：腸阻塞／假性阻塞、腸胃炎、便秘、闌尾炎、腸繫膜缺血。\n\n西醫治療：腸道休息、靜脈輸液／減壓及病因導向的手術或內視鏡治療；懷疑缺血／穿孔／感染時使用抗生素。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Mechanical obstruction is distinct from ileus or intestinal pseudo-obstruction, though presentations overlap.\n\nClinical presentation: Crampy abdominal pain, distension, vomiting and inability to pass stool/gas; severity/location varies.\n\nKey features: mechanical vs functional distinction; obstipation + vomiting/distension; strangulation/ischemia dangerous; imaging central.\n\nDiagnostic approach: History/exam, labs and abdominal CT/X-ray; evaluate cause and ischemia.\n\nDifferential diagnosis: ileus/pseudo-obstruction, gastroenteritis, constipation, appendicitis, mesenteric ischemia.\n\nWestern treatment: Bowel rest, IV fluids/decompression and cause-specific surgery or endoscopic treatment; antibiotics if ischemia/perforation/infection concern.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "既往腹部手術（沾黏）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "factor": "疝氣病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "factor": "腹腔內腫瘤病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Prior abdominal surgery (adhesions)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "factor": "History of hernia",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "factor": "History of intra-abdominal tumor",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "腹膜炎徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示可能穿孔",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "持續劇烈腹痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示可能絞窄性阻塞",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "發燒合併心跳過快",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示缺血或感染",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "休克徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬外科急症",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "腸胃道出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示腸道缺血或壞死",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Peritonitis signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests possible perforation",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "Continuous severe pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests possible strangulation",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "Fever with tachycardia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests ischemia or infection",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "Shock signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Surgical emergency",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        },
+        {
+          "finding": "GI bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests bowel ischemia or necrosis",
+          "source": "NIDDK Intestinal Pseudo-obstruction (boundary context)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用；急性腸阻塞不應以單純便秘論治",
+        "precautions": "腹脹合併嘔吐、無排氣排便時不予針刺，立即轉診",
+        "co_management": "疑似腸阻塞時立即轉診急診／外科評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "此為急症識別與轉診原則，非治療建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable; do not treat acute obstruction as simple constipation",
+        "precautions": "Do not needle when distension with vomiting and inability to pass stool/gas is present; refer immediately",
+        "co_management": "Immediately refer to emergency/surgery when bowel obstruction is suspected",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "This is an emergency-recognition and referral principle, not a treatment recommendation"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_pain",
+        "sym.vomiting",
+        "sym.constipation"
+      ],
+      "sources": [
+        "NIDDK — Intestinal Pseudo-obstruction (boundary context): https://www.niddk.nih.gov/health-information/digestive-diseases/intestinal-pseudo-obstruction",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.cirrhosis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "肝硬化",
+      "name_en": "Cirrhosis",
+      "category": "gi",
+      "icd_hint": "K74",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "肝硬化是晚期慢性肝臟疤痕化，扭曲肝臟結構並損害肝功能與門靜脈血流。",
+      "summary_en": "Cirrhosis is advanced chronic liver scarring that distorts liver architecture and impairs hepatic function and portal blood flow.",
+      "etiology_zh": "酒精性肝病、慢性 B／C 型肝炎、代謝功能障礙相關脂肪肝病、自體免疫／膽汁淤積性疾病與遺傳性疾病是常見病因。",
+      "etiology_en": "Alcohol-associated liver disease, chronic hepatitis B/C, metabolic dysfunction-associated steatotic liver disease, autoimmune/cholestatic and genetic diseases.",
+      "western_pathology_zh": "反覆肝損傷造成纖維化與結節性再生，導致門脈高壓與肝臟合成／解毒功能喪失。",
+      "western_pathology_en": "Repeated injury causes fibrosis and nodular regeneration, portal hypertension and loss of hepatic synthetic/detoxification function.",
+      "western_context_zh": "臨床定位：肝硬化是許多慢性肝病的最終共同路徑，與單純脂肪肝或急性肝炎不同。\n\n臨床表現：早期可能無症狀，晚期可出現疲勞、黃疸、腹水／水腫、瘀青／出血、皮膚搔癢、意識混亂與食道靜脈曲張出血。\n\n重要特徵：多為不可逆的晚期纖維化；有門脈高壓；失代償表現包括腹水、靜脈曲張出血、肝性腦病；需定期肝癌篩檢。\n\n診斷方法：實驗室檢查、影像／彈性成像及病因評估；部分病人需切片；評估併發症與肝癌風險。\n\n鑑別診斷：急性肝炎、心衰竭相關充血、非肝硬化性門脈高壓、膽道阻塞。\n\n西醫治療：治療病因、避免肝毒性物質／酒精、處理門脈高壓併發症、定期篩檢並評估肝移植適應症。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對病因與代償狀態。",
+      "western_context_en": "Clinical definition: Cirrhosis is the final common pathway of many chronic liver diseases and is distinct from uncomplicated fatty liver or acute hepatitis.\n\nClinical presentation: May be silent until advanced; fatigue, jaundice, ascites/edema, bruising/bleeding, pruritus, confusion and variceal bleeding can occur.\n\nKey features: irreversible advanced fibrosis often; portal hypertension; decompensation: ascites, variceal bleed, encephalopathy; HCC surveillance.\n\nDiagnostic approach: Labs, imaging/elastography and cause evaluation; biopsy selected; assess complications and liver cancer risk.\n\nDifferential diagnosis: acute hepatitis, heart-failure congestion, noncirrhotic portal hypertension, biliary obstruction.\n\nWestern treatment: Treat cause, avoid hepatotoxins/alcohol, manage portal-hypertension complications, surveillance and transplant evaluation for decompensated disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review, by cause and compensation status, at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "長期重度飲酒",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "factor": "慢性 B 型或 C 型肝炎",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "factor": "肥胖合併代謝症候群",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "factor": "自體免疫性肝病病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Cirrhosis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Chronic heavy alcohol use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "factor": "Chronic hepatitis B or C",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "factor": "Obesity with metabolic syndrome",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "factor": "History of autoimmune liver disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Cirrhosis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "吐血或黑便",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示食道靜脈曲張破裂出血",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "意識混亂／肝性腦病",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示肝功能嚴重失代償",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "發燒合併腹水",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示自發性細菌性腹膜炎",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "嚴重黃疸",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診肝膽科評估",
+          "rationale": "提示肝功能明顯惡化",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "休克或急性腎功能惡化",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能為肝腎症候群等重症併發症",
+          "source": "NIDDK Cirrhosis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hematemesis/melena",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests variceal hemorrhage",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "Confusion/encephalopathy",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests severe hepatic decompensation",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "Fever with ascites",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests spontaneous bacterial peritonitis",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "Severe jaundice",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to hepatology for evaluation",
+          "rationale": "Suggests significant worsening of liver function",
+          "source": "NIDDK Cirrhosis"
+        },
+        {
+          "finding": "Shock or acute kidney injury",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate hepatorenal syndrome or other severe complications",
+          "source": "NIDDK Cirrhosis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "代償期穩定病人可作輔助照護",
+        "precautions": "出血風險、血小板低下、腹水、感染與肝性腦病會影響安全性；失代償病人避免強力針法或拔罐",
+        "co_management": "與病人的肝膽科醫師聯絡確認代償狀態與肝移植評估進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於肝硬化的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for stable compensated patients",
+        "precautions": "Bleeding risk, thrombocytopenia, ascites, infection and encephalopathy affect safety. Avoid aggressive needling/cupping in decompensated disease",
+        "co_management": "Contact the patient's hepatologist to confirm compensation status and transplant evaluation progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for cirrhosis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.edema",
+        "sym.pruritus"
+      ],
+      "sources": [
+        "NIDDK — Cirrhosis: https://www.niddk.nih.gov/health-information/liver-disease/cirrhosis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_h_gi_liver"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.viral_hepatitis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "病毒性肝炎",
+      "name_en": "Viral Hepatitis",
+      "category": "gi",
+      "icd_hint": "B15-B19",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "病毒性肝炎是由肝炎病毒造成的肝臟發炎，主要型別 A、B、C、D、E 在傳染途徑、慢性化風險與治療上各有不同。",
+      "summary_en": "Viral hepatitis is liver inflammation caused by hepatitis viruses, with major types A, B, C, D and E differing in transmission, chronicity and treatment.",
+      "etiology_zh": "特定肝炎病毒依型別經糞口、血液／體液、垂直傳染或其他途徑傳播。",
+      "etiology_en": "Specific hepatitis viruses transmitted through fecal-oral, blood/body-fluid, perinatal or other routes depending on type.",
+      "western_pathology_zh": "病毒感染與免疫反應損傷肝細胞；慢性 B／C 型肝炎可進展為纖維化、肝硬化與肝細胞癌。",
+      "western_pathology_en": "Viral infection and immune response injure hepatocytes; chronic HBV/HCV can lead to fibrosis, cirrhosis and hepatocellular carcinoma.",
+      "western_context_zh": "臨床定位：本母概念不應抹除型別特異性；B 型與 C 型肝炎可能慢性化，A 型肝炎通常為急性自限性感染。\n\n臨床表現：可能無症狀，或出現疲勞、噁心、腹部不適、深色尿液與黃疸；慢性病可能長期無症狀。\n\n重要特徵：傳染途徑因型別而異；急慢性區分很重要；B 型／C 型肝炎可能造成肝硬化／肝癌；血清學／病毒核酸檢測依型別而定。\n\n診斷方法：型別特異性血清學與核酸檢測，搭配肝功能評估。\n\n鑑別診斷：藥物引起的肝損傷、自體免疫性肝炎、膽道阻塞、酒精相關肝炎。\n\n西醫治療：依型別而異：多數急性感染以支持性照護為主；慢性 B／C 型肝炎及部分其他情況使用抗病毒藥物；疫苗可預防 A、B 型肝炎。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對型別。",
+      "western_context_en": "Clinical definition: This parent should not erase type-specific disease. Hepatitis B and C can become chronic; hepatitis A usually causes acute self-limited infection.\n\nClinical presentation: May be asymptomatic or cause fatigue, nausea, abdominal discomfort, dark urine and jaundice; chronic disease may remain silent.\n\nKey features: type-specific transmission; acute vs chronic distinction; HBV/HCV can cause cirrhosis/HCC; serology/PCR type-specific.\n\nDiagnostic approach: Type-specific serologic and nucleic-acid tests plus liver enzymes/function assessment.\n\nDifferential diagnosis: drug-induced liver injury, autoimmune hepatitis, biliary obstruction, alcohol-related hepatitis.\n\nWestern treatment: Type-specific: supportive care for many acute infections; antivirals for chronic HBV/HCV and selected other contexts; vaccination prevents A/B.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review, by type, at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "未接種疫苗且暴露於污染食物／水（A、E 型）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "factor": "共用針具或未篩檢血液暴露（B、C 型）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "factor": "母親帶原經垂直傳染（B 型）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Viral Hepatitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Unvaccinated with exposure to contaminated food/water (types A, E)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "factor": "Shared needles or unscreened blood exposure (types B, C)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "factor": "Perinatal transmission from carrier mother (type B)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK Viral Hepatitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "意識混亂",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示急性肝衰竭伴肝性腦病",
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "finding": "凝血功能異常合併出血傾向",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示急性肝衰竭",
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "finding": "嚴重黃疸",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "需評估肝衰竭風險",
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "finding": "低血糖",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示嚴重肝功能喪失",
+          "source": "NIDDK Viral Hepatitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Confusion",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests acute liver failure with encephalopathy",
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "finding": "Coagulopathy with bleeding tendency",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests acute liver failure",
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "finding": "Severe jaundice",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Requires evaluation for liver failure risk",
+          "source": "NIDDK Viral Hepatitis"
+        },
+        {
+          "finding": "Hypoglycemia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests severe loss of liver function",
+          "source": "NIDDK Viral Hepatitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "穩定期慢性病毒性肝炎病人可作輔助照護，須採取標準防護措施",
+        "precautions": "針灸無法清除病毒；須評估出血傾向與肝功能狀態，並落實感控要求",
+        "co_management": "與病人的肝膽科醫師聯絡確認抗病毒治療與肝功能追蹤進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver（依據 NIDDK 臨床資料整理）",
+        "note": "尚未查到專屬於病毒性肝炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care for stable chronic viral hepatitis patients, using standard precautions",
+        "precautions": "Acupuncture does not treat viral clearance. Consider bleeding/liver-function status and infection-control requirements",
+        "co_management": "Contact the patient's hepatologist to confirm antiviral treatment and liver function monitoring status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver (compiled from NIDDK clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for viral hepatitis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.nausea",
+        "sym.poor_appetite"
+      ],
+      "sources": [
+        "NIDDK — Viral Hepatitis: https://www.niddk.nih.gov/health-information/liver-disease/viral-hepatitis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nih_niddk_overview",
+        "research_pack_batch_h_gi_liver"
       ],
       "source_status": "draft_pending_ting_review"
     }
