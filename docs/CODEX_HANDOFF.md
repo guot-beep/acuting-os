@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R6 / restore interruption remains NO-GO
+
+- **Reviewed endpoint**: `6d5a11ddb589bc622989ae5522dd0968ecaf2c85`; P3.1 `PASS`, P3.2 `PASS`, P3.3 `FAIL`, P3.4 `PASS`; C2b remains **NO-GO**, so P4 FINAL GO/checklist is not published.
+- **R5 blocker retest**: Patient-occupation-tampered envelope is rejected through both direct store and the actual app import handler; active staging/pointer stay identical, candidate is cleaned, app reloads `0`. Legit restore reloads once and is canonical-identical. Official fake rehearsal=`23/23`.
+- **New blocking evidence**: inject failure at the post-verify active-staging write and `restoreV2Envelope()` rejects without cleaning candidate. `app.js` has `.then()` without rejection handling, so the same failure produces no fail-closed alert. Independent harness=`20 PASS / 2 FAIL`.
+- **Non-regression**: store-plan determinism and CLI exact parity pass; counts tamper and tampered noop remain blocked; clean noop=`0/0/0`; legacy staging/pointer interruption plus rollback/raw=`4/4 PASS`. True clinical-store reads/writes=`0/0`; fake artifacts removed.
+- **Next gate**: catch all restore storage exceptions, clean candidate on failed active replacement, return structured failure, handle app rejection without reload, and add this injection to blocking rehearsal. Ting presence and a fresh Edge `file://` raw-hash match remain necessary after a future Codex `4/4 PASS` decision.
+
 ## [2026-08-11] Codex Handoff — C2B-R5 / app restore gate remains NO-GO
 
 - **Reviewed endpoint**: R4 response `6340838f2b77c58154f4d619ae2d29dc91f19851`; branch endpoint `cef1e93075234df39d774f08deec9e5eacdf0a58`.

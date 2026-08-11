@@ -6,6 +6,42 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R6 單點獨立覆核 — endpoint `6d5a11d`
+
+- **REVIEWED_SHA**: `6d5a11ddb589bc622989ae5522dd0968ecaf2c85`；審前 `git pull --ff-only origin codex/pattern-v2` 回 `Already up to date`。
+- **STATUS**: **PAUSE**。
+- **C2b final gate**: **NO-GO**。P3.1=`PASS`、P3.2=`PASS`、P3.3=`FAIL`、P3.4=`PASS`；未達 `4/4 PASS`，本輪不發布 P4 FINAL GO 條件或真機當日 checklist，不得對 Edge `file://` 正典做 migration write／pointer switch／v2 restore。
+- **資料邊界**: 真實 clinical store 讀／寫=`0/0`；所有動態測試使用自製虛構 `2 patients / 2 cases` fixture，OS temp fixture 與 repo audit harness 於提交前移除。
+
+### P3.1 plan／journal gate — PASS
+
+- `buildMigrationPlan()` 已在 `js/clinical-store.js` 成為單一來源；同一 fake raw 兩次 plan byte-identical，`migrate-c2b.js --dry-run` 與 store plan exact JSON parity=`1/1`。
+- `journal.counts.cases=999` 反例仍被拒；CLI self-test=`7/7 PASS`，migration syntax=`4/4`。
+
+### P3.2 Patient parity／verified-only noop — PASS
+
+- tampered Patient staging 的同-source noop=`1/1` fail closed；合法同-source rerun 維持 `creates/updates/deletes=0/0/0`。
+- `verifyStaging()` 與 async restore 均委派 `verifyStagingObject()`；Patient deep parity／case assignment 檢查未分叉。
+
+### P3.3 v2 restore 唯一路徑／等價性 — FAIL（HIGH）
+
+- **R5 原阻斷反例已轉綠**：竄改 envelope 的 `patients[0].fields.occupation` 經 direct `restoreV2Envelope()` 與實際 `app.js` import handler 均拒絕；兩路徑 active staging／pointer byte-identical、candidate absent，app reload=`0`。合法 envelope 經 app 路徑成功，reload=`1`、staging canonical identical、candidate absent。
+- 官方全虛構 rehearsal=`23/23 PASS`；6h 與 app 均呼叫同一 `restoreV2Envelope()`。plan source 與驗證核心的單一來源宣稱成立。
+- **仍有 interruption false negative**：在 full verify 後注入 active staging `writeKey()` failure，`restoreV2Envelope()` Promise 直接 reject；active staging／pointer 雖保持原值且 reload=`0`，但 `acuting-clinical-v2-staging-candidate` 留存。實際 app handler 只有 `.then(...)`、沒有 rejection handler，因此沒有失敗 alert，形成 unhandled rejection。獨立 restore interruption assertions=`3 PASS / 2 FAIL`；整體 harness=`20 PASS / 2 FAIL`。
+- 這直接違反 `AI_WORK_HANDOFF.md` HANDOFF #10 的「任何失敗保留原 staging/pointer、清 candidate、不 reload」，也不符合 C2B-R6 的「失敗保留原狀」；不能以正常驗證拒絕 `23/23` 取代 storage-error ordering。
+- **修正 gate**：`restoreV2Envelope()` 必須捕捉 candidate write、plan/hash、active replacement 與 candidate cleanup 的 rejection／exception；active replacement 未成功時 best-effort 清 candidate並回 `{ok:false, failures}`，不得把例外漏到 UI。`app.js` 必須 `await/try-catch` 或補 `.catch()`，顯示 fail-closed alert 且不 reload。rehearsal 加入 active-replacement write failure：active/pointer unchanged、candidate absent、error handled=`4/4`。
+
+### P3.4 原 interruption／rollback gate — PASS
+
+- 原有 staging-write error 與 pointer-write error 各 `1/1` 仍使 pointer absent；rollback 清除 staging／pointer／candidate，fake v1 raw byte-identical，共 `4/4 PASS`。
+- 上述新紅燈歸在 P3.3 restore path 的明示 failure contract；既有 execute→switch→rollback ordering 未回歸。
+
+### 回歸與 P4 狀態
+
+- invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K 系列=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions=`0 failures`。
+- content-junk、data=`947 points`、relations、ratchet 均 exit `0`；build 前後 `app_data.js`／`knowledge_data.js` SHA-256 各自一致。relation 既存 warnings 與本 gate 無關。
+- **P4 未發布**：Ting 在場與 Edge `file://` raw hash 當下重比仍是必要條件，但只有修正上述 restore interruption 並由 Codex 重測 `4/4 PASS` 後，才可能轉為 FINAL GO。
+
 ## 2026-08-11 Codex C2B-R5 獨立覆核 — endpoint `cef1e93`
 
 - **REVIEWED_SHA**: R4 修正 `6340838f2b77c58154f4d619ae2d29dc91f19851`；branch endpoint `cef1e93075234df39d774f08deec9e5eacdf0a58`。`6340838..cef1e93` 為 symptom bundle／queue／plan 更新，未再改 P3 writer 或 import 實作。

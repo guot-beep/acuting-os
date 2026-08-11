@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R6 endpoint `6d5a11d`，P3=`PASS/PASS/FAIL/PASS`
+
+- **Gate**：R5 occupation-tampered envelope 經 direct store＋實際 app import `2/2` 被拒，正常失敗 active/pointer unchanged、candidate absent、reload=`0`；但 restore storage interruption 仍紅，C2b=`NO-GO`，未發布 P4 checklist。
+- **阻斷反例**：full verify 後注入 active staging write failure，Promise reject、candidate 留存；app 只有 `.then` 無 rejection handler，故無 fail-closed alert。restore interruption=`3 PASS / 2 FAIL`，整體獨立 harness=`20 PASS / 2 FAIL`。
+- **其餘 P3**：P3.1 plan deterministic/CLI parity/counts tamper=`PASS`；P3.2 tampered noop／clean `0/0/0`=`PASS`；原 P3.4 staging/pointer error＋rollback/raw=`4/4 PASS`；官方 fake rehearsal=`23/23`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`，build 雙 hash不變；真 store 讀／寫=`0/0`，假 fixture 清理。
+- **下一 gate**：restore 捕捉所有 storage exception、active replacement 失敗時清 candidate並回結構化 failure；app handle rejection、不 reload；把此注入加入 blocking rehearsal，再交 Codex。
+
 # 2026-08-11 Codex — C2B-R5 endpoint `cef1e93`，P3=`PASS/PASS/FAIL/PASS`
 
 - **Gate**：R4 三反例 `3/3` 被擋；P3.1 journal/plan=`PASS`，P3.2 Patient parity/verified noop=`PASS`，P3.3 app v2 restore=`FAIL`，P3.4 interruption/rollback=`PASS`；C2b=`NO-GO`，未發布 P4 真機 checklist。
