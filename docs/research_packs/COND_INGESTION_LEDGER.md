@@ -528,3 +528,86 @@ blob-read workaround). 7 concepts.
   433 (Batch L close) → 425 (BETTER, −8). All 7 touched/added records are
   0-defect (only N1 informational notes on `cond.influenza`/`cond.herpes_zoster`
   for unlifted `tcm_patterns` blobs, not blocking).
+
+## Batch N — Genetic/Oncology (2026-08-11)
+
+Pack file: `18_WESTERN_CONDITION_RESEARCH_BATCH_N_GENETIC_ONCOLOGY.md` (same
+blob-read workaround). 7 concepts — all 7 ruled NEW_CANDIDATE, a first for
+this sprint (Batches J–M each had at least one EXISTING_ENRICH).
+
+| candidate_id → canonical id | ruling |
+|---|---|
+| `cond.down_syndrome` → `cond.down_syndrome` | NEW_CANDIDATE — exact-scanned `down syndrome`/`唐氏症`/`trisomy` — one false-positive hit on `cond.ehlers_danlos_syndrome` traced to its alias `埃唐氏症候群` (an EDS transliteration containing the substring 唐氏症 by coincidence, unrelated to Down syndrome) — confirmed unrelated by reading the full record, zero real matches |
+| `cond.marfan_syndrome` → `cond.marfan_syndrome` | NEW_CANDIDATE — exact-scanned `marfan`/`馬凡氏` — zero matches |
+| `cond.cancer_parent` → `cond.cancer_parent` | NEW_CANDIDATE — exact-scanned `cancer`/`癌症`/`惡性腫瘤`/`malignan` — found `cond.cancer_supportive` ("腫瘤支持照護（輔助文件情境）"/"Cancer Supportive Care"), a distinct complementary concept (symptom/side-effect management for cancer patients, not the disease-family identity/staging card the pack describes) — ruled non-overlapping per template's non-equivalence rule, relationship explicitly noted in `western_context_*` on both directions (references `cond.cancer_supportive` by id and vice versa framing). Kept as a parent/navigational card per the pack's own `NEAR_DUPLICATE_NEEDS_DECISION` framing, explicitly deferring to the site-specific cards in this same batch (breast/prostate/colorectal/lung) rather than absorbing them — same "parent card, real children exist" pattern as `cond.ibd`/`cond.viral_hepatitis` (Batch H) but stronger here since the children were authored in the same batch. |
+| `cond.breast_cancer` → `cond.breast_cancer` | NEW_CANDIDATE — exact-scanned `breast cancer`/`乳癌` — zero matches |
+| `cond.prostate_cancer` → `cond.prostate_cancer` | NEW_CANDIDATE — exact-scanned `prostate cancer`/`攝護腺癌` — zero matches. Explicit non-equivalence note in `western_context_*` against `cond.bph` and `cond.chronic_prostatitis` (both enriched in Batch K) — three distinct uro_renal-family diseases now correctly co-exist without merge. |
+| `cond.colorectal_cancer` → `cond.colorectal_cancer` | NEW_CANDIDATE — exact-scanned `colorectal`/`大腸直腸癌`/`大腸癌` — zero matches. Non-equivalence note against `cond.ibd` (long-standing IBD is a risk factor, not the same disease). |
+| `cond.lung_cancer` → `cond.lung_cancer` | NEW_CANDIDATE — exact-scanned `lung cancer`/`肺癌` — zero matches |
+
+### Batch N notes for the next ingest AI
+
+- **First all-NEW_CANDIDATE batch this sprint** — no boilerplate replacement,
+  no C10 collisions to resolve, no shorter-id resolution. The diff is a pure
+  append (0 deleted lines), confirmed with `git diff | grep '^-' | wc -l`.
+- **One mechanical alias-length slip caught and fixed before commit**:
+  `cond.colorectal_cancer` was drafted with `aliases_zh: ["大腸癌"]` and
+  `aliases_en: []` — the exact class of defect flagged repeatedly since
+  Batch F/H/I. Caught by the validator's C5 check on this run (not by
+  proactive self-check this time — worth re-emphasizing the Batch I
+  recommendation to hand-verify every alias pair's length before the first
+  validator run, not after).
+- **Cross-batch non-equivalence consistency check performed**: `cond.
+  prostate_cancer`'s `western_context_*` explicitly references `cond.bph`
+  and `cond.chronic_prostatitis` (both from Batch K, same sprint) — confirms
+  the three uro_renal prostate-family cards (BPH, prostatitis, cancer) now
+  form a correctly non-overlapping triad rather than accumulating silent
+  redundancy across batches.
+- Validator state after Batch N commit: `data/pathology/condition_canon_shortlist.json`
+  202 → 209 records (7 NEW_CANDIDATE, 0 EXISTING_ENRICH — matches the pack's
+  own 7-concept count). `check-validation-ratchet.js` conditions defect count:
+  425 (Batch M close) → 425 (net zero delta on the raw count, but this is
+  BETTER not flat: 7 fully-clean records were added while the pre-existing
+  481-baseline defect population is unchanged — the ratchet script correctly
+  reports BETTER because it compares against the 481 committed baseline, not
+  batch-to-batch). All 7 new records are 0-defect.
+
+### Sprint close-out (Batches J–N, 2026-08-11)
+
+- Branch `codex/cond-enrich-j-n`, cut from `origin/codex/pattern-v2` tip
+  (`78c370f` "Cond F-I merge finalize", confirmed ancestor).
+- `data/pathology/condition_canon_shortlist.json`: 187 → 209 records
+  (22 NEW_CANDIDATE, 14 EXISTING_ENRICH across J/K/L/M/N — 7+9+6+7+7=36
+  concepts total, matching the pack's own per-batch concept counts).
+- `check-validation-ratchet.js` conditions defect count: 481 (F–I close-out,
+  committed baseline) → 425 after Batch N, monotonically improving batch
+  over batch (458 → 437 → 433 → 425 → 425). No regressions at any commit;
+  the J→K→L→M drops came from a mix of boilerplate replacement on existing
+  records and clean new-record additions, while N's all-new-candidate batch
+  added 7 clean records without moving the raw defect count (still correctly
+  reported BETTER vs the 481 baseline).
+- Two multi-record cross-contamination issues resolved this sprint (7-way
+  月經不調 essay across gyn records in Batch K; 2-way BPH/prostatitis essay
+  swap in Batch K) — larger in scope than any single-pair case fixed in
+  Batches F–I.
+- Recurring cross-contamination flags carried forward, NOT fixed (out of
+  this sprint's scope, for a future content-untangling pass):
+  - `cond.asthma` × `cond.post_covid` (flagged Batch F, re-confirmed Batch M
+    — still present after 3 batches of not being anyone's candidate)
+  - `cond.irregular_menstruation` likely holds the true home for the
+    7-way-shared 月經不調 essay (flagged Batch K)
+  - `cond.male_infertility` holds a duplicate of `cond.erectile_dysfunction`'s
+    real content (flagged Batch K)
+- Two scope-broadening/parent-card judgment calls flagged for Fable/Ting
+  review this sprint: `cond.chronic_prostatitis` renamed/broadened to a
+  parent covering both acute bacterial and chronic prostatitis (Batch K,
+  2nd instance of the pattern after Batch H's `cond.chronic_gastritis`);
+  `cond.cancer_parent` created as an explicit navigational parent alongside
+  4 site-specific child cards authored in the same batch (Batch N).
+- A recurring acute-vs-chronic/post-acute identity-boundary pattern
+  appeared 3 times (SSHL vs `cond.hearing_loss`, Batch L; acute bacterial
+  sinusitis vs `cond.chronic_sinusitis`, Batch L; acute COVID-19 vs
+  `cond.post_covid`, Batch M) — worth naming explicitly in the template or a
+  future DECISIONS entry, since it is now a load-bearing recurring judgment
+  call across two different batches and three different concept pairs.
+- Not pushed (per task instructions — branch left for review).

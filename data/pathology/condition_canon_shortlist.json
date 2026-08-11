@@ -40906,6 +40906,953 @@
         "research_pack_batch_m_infectious_disease"
       ],
       "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.down_syndrome",
+      "entity_type": "biomedical_condition",
+      "name_zh": "唐氏症",
+      "name_en": "Down Syndrome",
+      "category": "immune_misc",
+      "icd_hint": "Q90",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "唐氏症候群"
+      ],
+      "aliases_en": [
+        "Trisomy 21"
+      ],
+      "summary_zh": "唐氏症是由第 21 對染色體多出的染色體物質造成的染色體疾患，伴隨特徵性的發展、認知與多重器官系統健康特徵。",
+      "summary_en": "Down syndrome is a chromosomal condition caused by extra chromosome 21 material and is associated with characteristic developmental, cognitive and multisystem health features.",
+      "etiology_zh": "多出的第 21 對染色體物質，多數源自於隨機的細胞分裂錯誤；部分轉位型病例可能遺傳自帶有平衡性轉位的父母。",
+      "etiology_en": "Extra chromosome 21 material, usually from a random cell-division error; some translocation cases can be inherited from a balanced-translocation parent.",
+      "western_pathology_zh": "基因劑量效應改變腦部、心臟、免疫、內分泌等多系統的發育。",
+      "western_pathology_en": "Gene-dosage effects alter development across brain, heart, immune, endocrine and other systems.",
+      "western_context_zh": "臨床定位：多數病例為第 21 對染色體之三染色體症；也存在轉位型與鑲嵌型。這是一種終身性遺傳疾患，需要個人化的健康監測，不是可以「治癒」的疾病。\n\n臨床表現：程度不一之智能／發展障礙、肌張力低下與特徵性外觀；可能合併先天性心臟病、聽力、視力、甲狀腺、腸胃及血液系統相關疾患。\n\n重要特徵：以第 21 對染色體三染色體症最常見、須多系統健康監測、個體差異大、先天性心臟病／聽力／甲狀腺風險提高。\n\n診斷方法：產前篩檢／診斷性檢測，或出生後染色體分析確診。\n\n鑑別診斷：其他染色體／發展性症候群。\n\n西醫治療：無單一疾病治療方式；依個人狀況提供發展支持與終身各系統的預防／專科照護。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Most cases are trisomy 21 from nondisjunction; translocation and mosaic forms exist. It is not a disease to be 'cured' but a lifelong genetic condition requiring individualized health surveillance.\n\nClinical presentation: Variable intellectual/developmental disability, hypotonia and characteristic physical features; associated congenital heart, hearing, vision, thyroid, GI and hematologic conditions.\n\nKey features: trisomy 21 most common form, multisystem surveillance, wide individual variation, increased congenital heart/hearing/thyroid risks.\n\nDiagnostic approach: Prenatal screening/diagnostic testing or postnatal chromosome analysis confirms diagnosis.\n\nDifferential diagnosis: other chromosomal/developmental syndromes.\n\nWestern treatment: No single disease treatment; developmental supports and condition-specific preventive/specialty care throughout life.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "母親生育年齡較高",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus Genetics — Down syndrome"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Advanced maternal age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus Genetics — Down syndrome"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "急性症狀（依併發之器官系統疾患而定）",
+          "urgency_level": "urgent",
+          "recommended_action": "依相關器官系統病況轉診評估",
+          "rationale": "唐氏症患者的先天性心臟病等共病可能影響急症表現與處置",
+          "source": "MedlinePlus Genetics — Down syndrome"
+        },
+        {
+          "finding": "疑似頸椎不穩定",
+          "urgency_level": "urgent",
+          "recommended_action": "手法或運動治療前先轉診評估",
+          "rationale": "部分個案頸椎不穩定會影響處置安全性",
+          "source": "MedlinePlus Genetics — Down syndrome"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Acute symptoms (per the associated organ-system condition)",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation per the relevant organ-system condition",
+          "rationale": "Congenital heart disease and other comorbidities in Down syndrome can affect emergency presentation and management",
+          "source": "MedlinePlus Genetics — Down syndrome"
+        },
+        {
+          "finding": "Suspected cervical instability",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation before manual therapy or exercise",
+          "rationale": "Cervical instability can affect procedure/exercise safety in some individuals",
+          "source": "MedlinePlus Genetics — Down syndrome"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "提供無障礙、尊重個別差異的照護",
+        "precautions": "治療前確認心臟、頸椎、感覺與溝通需求，不預設刻板印象",
+        "co_management": "與病人的專科照護團隊（心臟科、聽力／視力等）聯絡確認共病狀態",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 MedlinePlus Genetics 臨床資料整理）",
+        "note": "尚未查到專屬於唐氏症的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Provide accessible, respectful individualized care",
+        "precautions": "Confirm cardiac, cervical-spine, sensory and communication needs without stereotyping",
+        "co_management": "Contact the patient's specialty care team (cardiology, hearing/vision, etc.) to confirm comorbidity status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from MedlinePlus Genetics clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for Down syndrome was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "MedlinePlus Genetics — Down syndrome: https://medlineplus.gov/genetics/condition/down-syndrome/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "medlineplus_genetics_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.marfan_syndrome",
+      "entity_type": "biomedical_condition",
+      "name_zh": "馬凡氏症候群",
+      "name_en": "Marfan Syndrome",
+      "category": "immune_misc",
+      "icd_hint": "Q87.4",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "馬凡氏症候群是由 FBN1 基因變異造成的體染色體顯性結締組織疾患，可能影響主動脈、心臟瓣膜、眼睛與骨骼。",
+      "summary_en": "Marfan syndrome is an autosomal-dominant connective-tissue disorder caused by FBN1 variants that can affect the aorta, heart valves, eyes and skeleton.",
+      "etiology_zh": "FBN1 致病性基因變異；部分病例為遺傳，部分為新發突變。",
+      "etiology_en": "Pathogenic variants in FBN1; some cases inherited and others de novo.",
+      "western_pathology_zh": "纖維蛋白-1／微纖維缺陷使結締組織強度減弱，並使生長因子訊號失調。",
+      "western_pathology_en": "Defective fibrillin-1/microfibrils weaken connective tissue and dysregulate growth-factor signaling.",
+      "western_context_zh": "臨床定位：主動脈根部病變與水晶體異位是主要診斷／處置重點特徵，表現型差異極大。\n\n臨床表現：身材高瘦、指趾細長、骨骼變形、水晶體異位／近視、主動脈擴張／動脈瘤與瓣膜疾病。\n\n重要特徵：FBN1 結締組織疾患、主動脈瘤／剝離風險、水晶體異位、體染色體顯性遺傳。\n\n診斷方法：臨床 Ghent 準則、家族史、心血管／眼科評估及基因檢測。\n\n鑑別診斷：Loeys-Dietz 症候群、血管型 Ehlers-Danlos 症候群、同半胱胺酸尿症、家族性胸主動脈瘤。\n\n西醫治療：定期主動脈影像追蹤、血壓／心率管理，並於適當時機進行預防性主動脈手術；眼科／骨科照護。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Aortic-root disease and ectopia lentis are major diagnostic/management features; phenotype varies widely.\n\nClinical presentation: Tall/slender habitus, long digits, skeletal deformity, lens dislocation/myopia, aortic dilation/aneurysm and valve disease.\n\nKey features: FBN1 connective-tissue disorder, aortic aneurysm/dissection risk, ectopia lentis, autosomal dominant.\n\nDiagnostic approach: Clinical Ghent-style criteria, family history, cardiovascular/eye evaluation and genetic testing.\n\nDifferential diagnosis: Loeys-Dietz syndrome, vascular EDS, homocystinuria, familial thoracic aortic aneurysm.\n\nWestern treatment: Regular aortic imaging, blood-pressure/heart-rate management and prophylactic aortic surgery when indicated; eye/skeletal care.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "家族史（體染色體顯性遺傳）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Family history (autosomal dominant)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突發劇烈胸／背／腹痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診評估主動脈剝離／破裂",
+          "rationale": "馬凡氏症候群患者的主動脈風險顯著提高",
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        },
+        {
+          "finding": "暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示急性心血管事件",
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        },
+        {
+          "finding": "神經學症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能與主動脈夾層或其他血管事件相關",
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden severe chest/back/abdominal pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation for aortic dissection/rupture",
+          "rationale": "Marfan patients carry significantly elevated aortic risk",
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        },
+        {
+          "finding": "Syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate an acute cardiovascular event",
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        },
+        {
+          "finding": "Neurologic symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May be associated with aortic dissection or other vascular events",
+          "source": "MedlinePlus Genetics — Marfan syndrome"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "須先了解主動脈尺寸與限制，避免積極手法操作",
+        "precautions": "新發胸／背痛屬於急症範疇，須立即轉診",
+        "co_management": "與病人的心臟科醫師聯絡確認主動脈影像追蹤狀態",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 MedlinePlus Genetics 臨床資料整理）",
+        "note": "尚未查到專屬於馬凡氏症候群的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Know aortic dimensions/restrictions and avoid aggressive manipulation",
+        "precautions": "New chest/back pain is emergency territory",
+        "co_management": "Contact the patient's cardiologist to confirm aortic imaging surveillance status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from MedlinePlus Genetics clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for Marfan syndrome was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "MedlinePlus Genetics — Marfan syndrome: https://medlineplus.gov/genetics/condition/marfan-syndrome/",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "medlineplus_genetics_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.cancer_parent",
+      "entity_type": "biomedical_condition",
+      "name_zh": "癌症／惡性腫瘤（總類）",
+      "name_en": "Cancer / Malignancy (Parent)",
+      "category": "immune_misc",
+      "icd_hint": "C00-C96",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "惡性腫瘤"
+      ],
+      "aliases_en": [
+        "Malignancy"
+      ],
+      "summary_zh": "癌症是一大類疾病的總稱，特徵為異常細胞不受控制地生長、侵犯組織並可能轉移；部位、組織學、分期與生物標記決定其臨床意義。此為總類導覽卡，不取代部位專屬的正典癌症卡片。",
+      "summary_en": "Cancer is a large family of diseases in which abnormal cells grow uncontrollably, invade tissues and may metastasize. Site, histology, stage and biomarkers determine clinical meaning. This is a generic navigational parent card, not a replacement for site-specific canonical cancers.",
+      "etiology_zh": "癌症源自於累積的基因體／表觀基因體變異，受年齡、遺傳易感性、暴露因子、感染及隨機細胞歷程共同影響。",
+      "etiology_en": "Cancer arises from accumulated genomic/epigenomic alterations influenced by age, inherited susceptibility, exposures, infections and random cellular processes.",
+      "western_pathology_zh": "惡性細胞逃脫生長調控、侵犯局部組織、招募血液供應，並可能經淋巴／血流擴散至遠處器官。",
+      "western_pathology_en": "Malignant cells escape growth controls, invade local tissue, recruit blood supply and may spread through lymph/blood to distant organs.",
+      "western_context_zh": "臨床定位：此總類卡用於導覽與跨科共同照護，不應取代部位專屬的正典癌症卡（如乳癌、攝護腺癌、大腸直腸癌、肺癌，見本批次其他卡片）。與 cond.cancer_supportive（腫瘤支持照護）為互補而非等同：後者聚焦症狀／副作用管理，本卡聚焦疾病本身的識別與分期邏輯。\n\n臨床表現：因部位而異；可能出現不明原因持續腫塊、出血、體重減輕、疼痛、器官功能障礙，或篩檢時無症狀發現。\n\n重要特徵：異質性疾病家族、多數診斷需組織病理確認、分期決定預後與治療、治療副作用為重要共同照護議題。\n\n診斷方法：部位專屬之影像／內視鏡／檢驗，多數癌症接續進行組織診斷與分期。\n\n鑑別診斷：良性腫瘤、感染／發炎、部位專屬之類似病灶。\n\n西醫治療：依癌症種類／分期選擇手術、放射治療、全身性治療（細胞毒性、內分泌、標靶、免疫治療）及支持性／緩和照護。\n\n編碼備註：實際 ICD-10-CM 編碼須依部位、組織學及當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: A generic cancer parent is useful for navigation/co-management but should not replace site-specific canonical cancers (breast, prostate, colorectal, lung — see other cards in this batch). Complementary to, not equivalent to, cond.cancer_supportive (cancer supportive care): that card focuses on symptom/side-effect management, this card focuses on identifying and staging the disease itself.\n\nClinical presentation: Varies by site; unexplained persistent masses, bleeding, weight loss, pain, organ dysfunction or no symptoms on screening.\n\nKey features: heterogeneous disease family, biopsy/pathology defines many diagnoses, stage drives prognosis/treatment, treatment adverse effects are major co-management issue.\n\nDiagnostic approach: Site-specific imaging/endoscopy/labs followed by tissue diagnosis in many cancers and staging.\n\nDifferential diagnosis: benign tumors, infection/inflammation, site-specific mimics.\n\nWestern treatment: Surgery, radiation, systemic therapy (cytotoxic, endocrine, targeted, immunotherapy) and supportive/palliative care based on cancer type/stage.\n\nCoding note: exact ICD-10-CM code selection depends on site, histology and the current fiscal-year CDC/NCHS review.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Cancer Types"
+        },
+        {
+          "factor": "遺傳易感性／家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Cancer Types"
+        },
+        {
+          "factor": "菸草使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Cancer Types"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Cancer Types"
+        },
+        {
+          "factor": "Inherited susceptibility / family history",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Cancer Types"
+        },
+        {
+          "factor": "Tobacco use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Cancer Types"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "發燒性嗜中性白血球低下",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於腫瘤急症",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "脊髓壓迫症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "延誤處置可能造成永久性神經功能損傷",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "上腔靜脈症候群徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於腫瘤急症",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "嚴重出血或敗血症徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "危及生命",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "急性神經功能惡化",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能提示顱內轉移或其他急症",
+          "source": "NCI — Symptoms of Cancer"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Febrile neutropenia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "An oncology emergency",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "Spinal cord compression symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Delay can cause permanent neurologic damage",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "Signs of superior vena cava syndrome",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "An oncology emergency",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "Severe bleeding or signs of sepsis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Life-threatening",
+          "source": "NCI — Symptoms of Cancer"
+        },
+        {
+          "finding": "Acute neurologic decline",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "May indicate intracranial metastasis or other emergency",
+          "source": "NCI — Symptoms of Cancer"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "應著重症狀支持、治療副作用意識與腫瘤團隊協調，絕不作為抗癌替代療法",
+        "precautions": "須留意嗜中性白血球低下、血小板低下與抗凝血狀態對針刺安全性的影響",
+        "co_management": "與病人的腫瘤科醫師聯絡確認治療階段與血球數值狀態",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 NCI 臨床資料整理）",
+        "note": "此為總類卡，實際針灸實證應依部位專屬癌症卡片個別查證"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "AcuTing OS should emphasize symptom support, treatment-side-effect awareness and oncology coordination, never anticancer substitution",
+        "precautions": "Watch neutropenia, thrombocytopenia and anticoagulation status for needling safety",
+        "co_management": "Contact the patient's oncologist to confirm treatment phase and blood count status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from NCI clinical materials)",
+        "note": "This is a parent card; site-specific acupuncture evidence should be checked on the individual cancer-type cards"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NCI — Cancer Types: https://www.cancer.gov/types",
+        "NCI — Symptoms of Cancer: https://www.cancer.gov/about-cancer/diagnosis-staging/symptoms",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nci_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.breast_cancer",
+      "entity_type": "biomedical_condition",
+      "name_zh": "乳癌",
+      "name_en": "Breast Cancer",
+      "category": "immune_misc",
+      "icd_hint": "C50",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "乳癌是發生於乳房組織的惡性腫瘤，最常源自導管或小葉上皮，具多種生物學亞型。",
+      "summary_en": "Breast cancer is malignant growth arising in breast tissue, most commonly from ductal or lobular epithelium, with diverse biologic subtypes.",
+      "etiology_zh": "風險反映年齡、性別、遺傳變異／家族史，以及生殖／荷爾蒙與生活型態／暴露因子。",
+      "etiology_en": "Risk reflects age, sex, inherited variants/family history, reproductive/hormonal and lifestyle/exposure factors.",
+      "western_pathology_zh": "惡性乳房細胞侵犯周圍組織，並可能擴散至局部淋巴結及遠處器官。",
+      "western_pathology_en": "Malignant breast cells invade surrounding tissue and can spread to regional nodes and distant organs.",
+      "western_context_zh": "臨床定位：包含原位與侵犯性病灶及分子亞型；良性乳房腫塊不是癌症。\n\n臨床表現：多由篩檢發現；可能出現乳房／腋下腫塊、皮膚／乳頭變化、分泌物或形狀改變。早期病灶可能無症狀。\n\n重要特徵：篩檢可偵測無症狀疾病、組織切片為診斷依據、ER／PR／HER2 生物標記具重要意義、分期／亞型決定治療。\n\n診斷方法：適當之診斷性乳房攝影／超音波／MRI，隨後進行切片與受體／病理檢測；必要時進行分期。\n\n鑑別診斷：纖維腺瘤、囊腫、乳腺炎、良性乳房變化。\n\n西醫治療：依亞型／分期選擇手術、放射治療及全身性內分泌、化療、HER2 標靶或其他標靶／免疫治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Breast cancer includes in-situ and invasive entities and molecular subtypes; benign breast lumps are not cancer.\n\nClinical presentation: Often screen-detected; possible breast/axillary lump, skin/nipple changes, discharge or shape change. Early disease may be asymptomatic.\n\nKey features: screening detects asymptomatic disease, tissue biopsy diagnosis, ER/PR/HER2 biomarkers matter, stage/subtype guide treatment.\n\nDiagnostic approach: Diagnostic mammography/ultrasound/MRI as appropriate followed by biopsy and receptor/pathology testing; staging when indicated.\n\nDifferential diagnosis: fibroadenoma, cyst, mastitis, benign breast change.\n\nWestern treatment: Surgery, radiation and systemic endocrine, chemotherapy, HER2-targeted or other targeted/immunotherapies according to subtype/stage.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性性別",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "factor": "BRCA1／BRCA2 等遺傳變異或家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Breast Cancer"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "factor": "Inherited variants (e.g. BRCA1/BRCA2) or family history",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Breast Cancer"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "發炎性乳房變化（快速紅腫熱）",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診評估",
+          "rationale": "須排除發炎性乳癌等急症表現",
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "finding": "快速進展之腫塊",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診評估",
+          "rationale": "須及早診斷確認性質",
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "finding": "已知癌症合併轉移性／腫瘤急症症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於腫瘤急症",
+          "source": "NCI — Breast Cancer"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Inflammatory breast changes (rapid redness/warmth/swelling)",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate referral for evaluation",
+          "rationale": "Must exclude inflammatory breast cancer and other urgent presentations",
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "finding": "Rapidly progressive mass",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate referral for evaluation",
+          "rationale": "Early diagnosis needed to characterize the mass",
+          "source": "NCI — Breast Cancer"
+        },
+        {
+          "finding": "Known cancer with metastatic/oncologic emergency symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "An oncology emergency",
+          "source": "NCI — Breast Cancer"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅作為症狀／治療副作用的輔助照護",
+        "precautions": "須考量淋巴水腫風險、手術／放射治療範圍、嗜中性白血球低下與抗凝血狀態",
+        "co_management": "與病人的腫瘤科醫師聯絡確認治療階段",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 NCI 臨床資料整理）",
+        "note": "尚未查到專屬於乳癌的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom/side-effect care only",
+        "precautions": "Account for lymphedema, surgery/radiation fields, neutropenia and anticoagulation",
+        "co_management": "Contact the patient's oncologist to confirm treatment phase",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from NCI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for breast cancer was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NCI — Breast Cancer: https://www.cancer.gov/types/breast",
+        "NCI — Breast Cancer Diagnosis: https://www.cancer.gov/types/breast/diagnosis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nci_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.prostate_cancer",
+      "entity_type": "biomedical_condition",
+      "name_zh": "攝護腺癌",
+      "name_en": "Prostate Cancer",
+      "category": "uro_renal",
+      "icd_hint": "C61",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "攝護腺癌是發生於攝護腺的惡性腫瘤，多為腺癌，病程從惰性局限性疾病到轉移性癌症不等。",
+      "summary_en": "Prostate cancer is malignancy arising in the prostate, commonly adenocarcinoma, ranging from indolent localized disease to metastatic cancer.",
+      "etiology_zh": "年齡、家族／遺傳因子及族裔背景影響風險。",
+      "etiology_en": "Age, family/genetic factors and ancestry influence risk.",
+      "western_pathology_zh": "惡性攝護腺上皮細胞可能維持局限，也可能擴散，常見轉移至骨骼與淋巴結。",
+      "western_pathology_en": "Malignant prostate epithelial cells may remain localized or spread, commonly to bone and lymph nodes.",
+      "western_context_zh": "臨床定位：攝護腺癌與良性攝護腺增生（cond.bph）及攝護腺炎（cond.chronic_prostatitis）為不同疾病；泌尿症狀不具特異性，不能用以區分三者。\n\n臨床表現：早期常無症狀；晚期可能出現泌尿症狀、血尿／血精，或持續性骨盆／骨骼疼痛。\n\n重要特徵：多數生長緩慢但具異質性、PSA 本身不具診斷性、切片為確診依據、部分低風險個案適合主動監測。\n\n診斷方法：PSA／肛門指診風險評估、攝護腺 MRI 及切片；依風險程度進行分期影像。\n\n鑑別診斷：良性攝護腺增生、攝護腺炎、泌尿道感染、其他癌症之骨骼轉移。\n\n西醫治療：依分期／風險選擇主動監測、手術、放射治療、雄性素剝奪／荷爾蒙治療及全身性治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Prostate cancer is distinct from BPH and prostatitis; urinary symptoms are not specific.\n\nClinical presentation: Often asymptomatic early; advanced disease may cause urinary symptoms, hematuria/hematospermia or persistent bone/pelvic pain.\n\nKey features: often slow-growing but heterogeneous, PSA is not diagnostic alone, biopsy defines cancer, active surveillance appropriate for selected low-risk disease.\n\nDiagnostic approach: PSA/DRE risk assessment, prostate MRI and biopsy; staging imaging based on risk.\n\nDifferential diagnosis: BPH, prostatitis, UTI, metastatic bone disease from other cancer.\n\nWestern treatment: Active surveillance, surgery, radiation, androgen-deprivation/hormonal therapy and systemic treatments based on stage/risk.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "factor": "家族史／遺傳因子",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "factor": "族裔背景",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Prostate Cancer"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "factor": "Family history / genetic factors",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "factor": "Ancestry",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Prostate Cancer"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "脊髓壓迫症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "已知癌症患者出現此症狀屬於腫瘤急症",
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "finding": "完全性尿路阻塞",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能造成腎功能損傷",
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "finding": "嚴重骨骼疼痛",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "已知癌症患者可能提示骨轉移",
+          "source": "NCI — Prostate Cancer"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Spinal cord compression symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "An oncology emergency in a known cancer patient",
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "finding": "Complete urinary obstruction",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Can cause kidney injury",
+          "source": "NCI — Prostate Cancer"
+        },
+        {
+          "finding": "Severe bone pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "May indicate bone metastasis in a known cancer patient",
+          "source": "NCI — Prostate Cancer"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅作為治療副作用的輔助照護",
+        "precautions": "須考量骨骼健康、泌尿症狀與抗凝血狀態",
+        "co_management": "與病人的腫瘤科醫師聯絡確認治療階段",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 NCI 臨床資料整理）",
+        "note": "尚未查到專屬於攝護腺癌的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive treatment-side-effect support only",
+        "precautions": "Consider bone health, urinary symptoms and anticoagulation",
+        "co_management": "Contact the patient's oncologist to confirm treatment phase",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from NCI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for prostate cancer was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NCI — Prostate Cancer: https://www.cancer.gov/types/prostate",
+        "NCI — Understanding Prostate Changes: https://www.cancer.gov/types/prostate/understanding-prostate-changes",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nci_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.colorectal_cancer",
+      "entity_type": "biomedical_condition",
+      "name_zh": "大腸直腸癌",
+      "name_en": "Colorectal Cancer",
+      "category": "gi",
+      "icd_hint": "C18-C20",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "大腸癌"
+      ],
+      "aliases_en": [
+        "Colon Cancer"
+      ],
+      "summary_zh": "大腸直腸癌是發生於結腸或直腸的惡性腫瘤，多經由前驅性息肉發展而成，預後與分期高度相關。",
+      "summary_en": "Colorectal cancer is malignancy arising in the colon or rectum, often developing through precursor polyps and with outcomes strongly influenced by stage.",
+      "etiology_zh": "年齡、遺傳症候群／家族史、發炎性腸道疾病及生活型態／代謝因子皆有影響。",
+      "etiology_en": "Age, inherited syndromes/family history, IBD and lifestyle/metabolic factors contribute.",
+      "western_pathology_zh": "腺瘤性或鋸齒狀前驅病灶累積分子變異，逐漸進展為侵犯性與轉移性疾病。",
+      "western_pathology_en": "Adenomatous or serrated precursor pathways accumulate molecular alterations, progressing to invasive and metastatic disease.",
+      "western_context_zh": "臨床定位：與 cond.ibd（發炎性腸道疾病）為不同疾病，但長期發炎性腸道疾病是危險因子之一；良性息肉不是癌症。\n\n臨床表現：篩檢可能發現無症狀病灶；可出現血便、排便習慣改變、缺鐵性貧血、腹痛或體重減輕。\n\n重要特徵：篩檢／預防具重要性、息肉為前驅病灶、缺鐵性貧血可為線索、需組織診斷並分期。\n\n診斷方法：大腸鏡併切片；CT／MRI 及腫瘤標記輔助分期與追蹤，非單獨診斷依據。\n\n鑑別診斷：發炎性腸道疾病、痔瘡、憩室疾病、腸躁症、其他消化道出血病因。\n\n西醫治療：手術合併依分期／部位選擇之化學治療、放射治療（尤其直腸個案）及標靶／免疫治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Distinct from cond.ibd (inflammatory bowel disease), though long-standing IBD is a risk factor; benign polyps are not cancer.\n\nClinical presentation: May be asymptomatic on screening; blood in stool, change in bowel habits, iron-deficiency anemia, abdominal pain or weight loss can occur.\n\nKey features: screening/prevention important, polyps precursor, iron-deficiency anemia can be clue, tissue diagnosis + staging.\n\nDiagnostic approach: Colonoscopy with biopsy; CT/MRI and tumor markers support staging/follow-up, not standalone diagnosis.\n\nDifferential diagnosis: IBD, hemorrhoids, diverticular disease, IBS, other GI bleeding causes.\n\nWestern treatment: Surgery plus stage/site-specific chemotherapy, radiation (especially rectal contexts) and targeted/immunotherapy based on tumor features.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增長",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "factor": "遺傳症候群或家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "factor": "長期發炎性腸道疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Colorectal Cancer"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "factor": "Inherited syndromes or family history",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "factor": "Long-standing inflammatory bowel disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Colorectal Cancer"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "腸阻塞徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於外科急症",
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "finding": "疑似腸穿孔",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "危及生命",
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "finding": "大量出血或血流動力學不穩定貧血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "危及生命",
+          "source": "NCI — Colorectal Cancer"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Signs of bowel obstruction",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "A surgical emergency",
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "finding": "Suspected perforation",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Life-threatening",
+          "source": "NCI — Colorectal Cancer"
+        },
+        {
+          "finding": "Major bleeding or hemodynamically significant anemia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Life-threatening",
+          "source": "NCI — Colorectal Cancer"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅作為治療副作用的輔助照護",
+        "precautions": "須考量腸道手術、造口、神經病變、血球低下與感染風險",
+        "co_management": "與病人的腫瘤科醫師聯絡確認治療階段",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 NCI 臨床資料整理）",
+        "note": "尚未查到專屬於大腸直腸癌的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care should account for bowel surgery, ostomy, neuropathy, cytopenias and infection risk",
+        "precautions": "Coordinate around surgical/treatment status",
+        "co_management": "Contact the patient's oncologist to confirm treatment phase",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from NCI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for colorectal cancer was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.abdominal_pain"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NCI — Colorectal Cancer: https://www.cancer.gov/types/colorectal",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nci_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.lung_cancer",
+      "entity_type": "biomedical_condition",
+      "name_zh": "肺癌",
+      "name_en": "Lung Cancer",
+      "category": "respiratory",
+      "icd_hint": "C34",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "肺癌是發生於肺部組織的惡性疾病，主要分為非小細胞肺癌與小細胞肺癌，生物特性與治療方式不同。",
+      "summary_en": "Lung cancer is malignant disease arising in lung tissue, broadly divided into non-small cell and small cell lung cancer with different biology and treatment.",
+      "etiology_zh": "菸草煙霧為主要危險因子；氡氣、職業／環境暴露及遺傳因子亦有影響，非吸菸者也可能罹患肺癌。",
+      "etiology_en": "Tobacco smoke is a major risk factor; radon, occupational/environmental exposures and genetic factors also contribute, and nonsmokers can develop lung cancer.",
+      "western_pathology_zh": "惡性肺部細胞侵犯局部結構，並可能擴散至淋巴結、腦部、骨骼、肝臟等部位。",
+      "western_pathology_en": "Malignant pulmonary cells invade local structures and spread to nodes, brain, bone, liver and other sites.",
+      "western_context_zh": "臨床定位：持續性咳嗽或肺部結節不必然等於肺癌，須以組織學與分期確立診斷。\n\n臨床表現：可能無症狀；持續／改變性咳嗽、咳血、胸痛、呼吸困難、體重減輕、聲音沙啞或反覆肺炎可能出現。\n\n重要特徵：非小細胞肺癌與小細胞肺癌區分、符合條件之高風險族群可進行低劑量電腦斷層篩檢、須切片／分子檢測、有特定轉移型態。\n\n診斷方法：胸部影像後接續組織診斷；分期與分子生物標記檢測指引治療。\n\n鑑別診斷：肺炎、結核病、良性肺結節、慢性阻塞性肺病、其他癌症之肺轉移。\n\n西醫治療：依組織學／分期／生物標記選擇手術、放射治療、化學治療、標靶治療及免疫治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Persistent cough or a lung nodule is not automatically cancer; histology and stage define disease.\n\nClinical presentation: May be asymptomatic; persistent/change in cough, hemoptysis, chest pain, dyspnea, weight loss, hoarseness or recurrent pneumonia can occur.\n\nKey features: NSCLC vs SCLC, screening LDCT for eligible high-risk people, biopsy/molecular testing, metastatic patterns.\n\nDiagnostic approach: Chest imaging followed by tissue diagnosis; staging and molecular biomarker testing guide treatment.\n\nDifferential diagnosis: pneumonia, TB, benign pulmonary nodule, COPD, metastatic cancer.\n\nWestern treatment: Surgery, radiation, chemotherapy, targeted therapy and immunotherapy based on histology/stage/biomarkers.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "菸草使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "factor": "氡氣暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "factor": "職業／環境致癌物暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Lung Cancer"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Tobacco use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "factor": "Radon exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "factor": "Occupational/environmental carcinogen exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — Lung Cancer"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "大量咳血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "危及生命",
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "finding": "嚴重呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "可能危及生命",
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "finding": "上腔靜脈症候群徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "屬於腫瘤急症",
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "finding": "脊髓壓迫或急性神經學轉移症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "延誤處置可能造成永久性神經功能損傷",
+          "source": "NCI — Lung Cancer"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Massive hemoptysis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Life-threatening",
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "finding": "Severe dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Potentially life-threatening",
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "finding": "Signs of SVC syndrome",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "An oncology emergency",
+          "source": "NCI — Lung Cancer"
+        },
+        {
+          "finding": "Spinal cord compression or acute neurologic metastatic symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Delay can cause permanent neurologic damage",
+          "source": "NCI — Lung Cancer"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅作為治療副作用的輔助照護",
+        "precautions": "須考量低血氧、抗凝血狀態、血球低下、放射治療範圍與骨轉移風險",
+        "co_management": "與病人的腫瘤科醫師聯絡確認治療階段",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology（依據 NCI 臨床資料整理）",
+        "note": "尚未查到專屬於肺癌的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom/side-effect care only; consider hypoxia, anticoagulation, cytopenias, radiation fields and metastatic bone risk",
+        "precautions": "Coordinate around treatment status and organ function",
+        "co_management": "Contact the patient's oncologist to confirm treatment phase",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch N Genetic/Oncology (compiled from NCI clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for lung cancer was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.cough",
+        "sym.shortness_of_breath"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NCI — Lung Cancer: https://www.cancer.gov/types/lung",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nci_overview",
+        "research_pack_batch_n_genetic_oncology"
+      ],
+      "source_status": "draft_pending_ting_review"
     }
   ]
 }
