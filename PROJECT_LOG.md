@@ -3251,3 +3251,10 @@ Current repo state as of this log:
 - **batch-2 審核(5e58867,Codex 實作、Fable 審)**:SOAP 生活型態/不良反應列 + 五詞彙入 bundle(8/26/9/8/8)。實查發現實作者遺留假病例 `case_phaseD2_test` 於真實 store(34→33 清理,同時取得持久化證據:coffee 3 cups/day、bruising/mild/resolved,shape 全符)。
 - **批2(本 commit)**:HIGH#6 —— normalizer 讀路徑不再合成 createdAt/updatedAt(""保留),save 站只給全新記錄蓋戳;HIGH#2 —— import 拆 merge(預設,event 序列必須 prefix-extend 否則整包拒絕)/restore(二次確認+先自動下載備份);pattern note 鍵入契約。live 驗證:legacy 戳保持缺失、截短偵測、延伸放行、33 病例、0 errors。
 - **未結**:R1–R5 進 import 前驗證與 CI/ratchet 接線;C2b 等 Codex 重審 GO;藥理 WIP(js/knowledge.js/router.js)仍未提交,不動。
+
+# 2026-08-11 Fable — migrate-c2b.js dry-run scaffold(假資料,無任何 storage 寫入)
+
+- `scripts/migrate-c2b.js`:只有 --dry-run 與 --self-test,execute 模式刻意不存在(等 Codex GO + Ting 在場,屆時走 shadow-key+pointer,見 C2B_MIGRATION_PLAN §B.4)。
+- Determinism 實證:patient id = sha256(patientCode) 純函數、無 Date.now/Math.random;self-test 7/7 PASS;同一 fixture 跨兩個獨立 process 產出 byte-identical plan。
+- Plan 內容:patients(9 欄+conflicts+needsReview)、caseAssignments、blankCodeCases(列出不丟棄)、manualReviewQueue、counts、source_sha256。輸入吃 RAW snapshot,不經 normalizer(Codex §A.4)。
+- 下一步:Codex 重審(計畫+本腳本+dry-run 樣本)→ GO 後才進 preflight/真機。
