@@ -3300,3 +3300,10 @@ Current repo state as of this log:
 - **定案**:9/5 起正典臨床入口 = **Edge + file:// 本機 index.html**(acuting-clinical-cases-v1 於該 origin)。預覽面板(localhost:8361)33 筆經逐筆檢視全為 QA fixtures,歸檔為開發測試資料;不做任何搬移。兩 store 已完整備份(hash 驗證,AcuTing-backups/pre-c2b/2026-08-11_0202/)。
 - **並行**:Sonnet batch 3(環境暴露 UI)於獨立 worktree branch codex/phase-d-batch3 進行中;SOL 正補 CR 系列與下批 research packs,約 5 分鐘後收檔。
 - **P3 開工**:shadow writer + rollback + rehearsal(只寫 staging key、pointer 切換、白名單 rollback;假資料/檔案級排練,不碰真 store)。
+
+# 2026-08-11 Fable — P3 shadow writer + rollback rehearsal 完成(假資料/隔離副本)
+
+- store 新增(白名單寫入:僅 staging+pointer 兩 keys):executeMigration(hash 驗證、冪等 0/0/0、raw 原樣攜帶+additive patientId)、verifyStaging(逐 case 比對、event 序列 exact、orphan/counts)、switchPointer(verify 全綠才准)、rollbackMigration(白名單刪除)。hasher 注入式,store 零依賴。
+- scripts/rehearse-c2b.js:完整週期排練(plan→execute→verify→冪等重跑→pointer→tamper 拒絕→rollback→raw byte 不變+白名單外零寫入)。rehearsal shim 對 v1 寫入直接 throw。
+- 排練結果:fixture 10/10 PASS;Edge raw 隔離副本(2 cases)PASS;preview raw 隔離副本(33 cases)PASS。途中修一個測試自身 bug(tamper regex 誤中 counts.cases —— 改為直接竄改 case 欄位,verify 正確拒絕)。
+- P3 交付物齊:writer+rehearsal artifacts,待 Codex P3 覆核 → P4 final GO(真機執行仍 = Ting 在場)。

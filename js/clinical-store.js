@@ -270,7 +270,106 @@
     });
   }
 
+  /* ---- C2b P3:shadow writer(Codex P3 規格,docs/AI_REVIEW_FEEDBACK.md)----
+   * 鐵律:
+   *   1. v1 key 永不寫。這個區塊唯一可寫的 keys = STAGING_KEY 與 POINTER_KEY
+   *      (白名單,rollback 也只准刪這兩個)。
+   *   2. executeMigration 冪等:staging 已存在且 source_sha256+migration_version
+   *      相同 → 回報 creates/updates/deletes = 0/0/0,不動任何東西。
+   *   3. pointer 只在 verifyStaging 全綠後才准切;任何錯誤/中斷都不會留下
+   *      指向半成品的 pointer(先寫 staging、驗證、最後一步才寫 pointer)。
+   *   4. case 物件從 raw 原樣攜帶(絕不 normalize —— HIGH#6),只additive加
+   *      patientId FK。
+   * hasher 由呼叫端注入(node: crypto;browser: subtle wrapper)—— store 本體
+   * 保持零依賴。 */
+  const STAGING_KEY = "acuting-clinical-v2-staging";
+  const POINTER_KEY = "acuting-clinical-active";
+
+  function executeMigration(rawText, plan, { sha256 }) {
+    const actualHash = sha256(rawText);
+    if (actualHash !== plan.source_sha256) {
+      throw new Error(`executeMigration: raw hash ${actualHash.slice(0, 12)}… does not match plan.source_sha256 — refusing`);
+    }
+    const existing = backend === localStorageBackend ? global.localStorage.getItem(STAGING_KEY) : null;
+    const existingStaging = existing ? JSON.parse(existing) : (backend.readKey ? JSON.parse(backend.readKey(STAGING_KEY) || "null") : null);
+    if (existingStaging && existingStaging.journal &&
+        existingStaging.journal.source_sha256 === plan.source_sha256 &&
+        existingStaging.journal.migration_version === plan.migration_version) {
+      return { creates: 0, updates: 0, deletes: 0, idempotent_noop: true };
+    }
+    const rawCases = JSON.parse(rawText);
+    const pidByCase = new Map(plan.caseAssignments.map((a) => [a.caseId, a.patientId]));
+    const staging = {
+      schema_version: 2,
+      journal: {
+        migration_version: plan.migration_version,
+        source_sha256: plan.source_sha256,
+        source_bytes: plan.source_bytes,
+        counts: plan.counts,
+        adjudicationsApplied: plan.patients.flatMap((p) => (p.adjudicationsApplied || []).map((a) => ({ patientCode: p.patientCode, ...a })))
+      },
+      patients: plan.patients,
+      // raw 原樣 + additive patientId(可為 null:blank-code case 誠實保留)。
+      cases: rawCases.map((c) => ({ ...c, patientId: pidByCase.get(c.id) ?? null }))
+    };
+    writeKey(STAGING_KEY, JSON.stringify(staging));
+    return { creates: staging.patients.length + staging.cases.length, updates: 0, deletes: 0, idempotent_noop: false };
+  }
+
+  function verifyStaging(rawText, { sha256 }) {
+    const staging = JSON.parse(readKey(STAGING_KEY) || "null");
+    const failures = [];
+    if (!staging) return { ok: false, failures: ["staging absent"] };
+    if (staging.journal.source_sha256 !== sha256(rawText)) failures.push("journal hash != raw hash");
+    const rawCases = JSON.parse(rawText);
+    if (staging.cases.length !== rawCases.length) failures.push(`case count ${staging.cases.length} != raw ${rawCases.length}`);
+    const rawById = new Map(rawCases.map((c) => [c.id, c]));
+    for (const c of staging.cases) {
+      const orig = rawById.get(c.id);
+      if (!orig) { failures.push(`staged case ${c.id} not in raw`); continue; }
+      const { patientId, ...rest } = c;
+      if (JSON.stringify(rest) !== JSON.stringify(orig)) failures.push(`case ${c.id} altered beyond patientId`);
+      for (const field of ["agentExposures", "environmentalExposures"]) {
+        (orig[field] || []).forEach((row, i) => {
+          const stagedRow = (c[field] || [])[i];
+          const check = stagedRow ? exposureHistoryExtends(row, stagedRow) : { ok: false, reason: "row missing" };
+          if (!check.ok || (stagedRow.events || []).length !== (row.events || []).length) failures.push(`${c.id}/${field}[${i}]: events not exact`);
+        });
+      }
+    }
+    const nonBlank = new Set(rawCases.map((c) => String(c.patientCode || "").trim()).filter(Boolean));
+    if (staging.patients.length !== nonBlank.size) failures.push(`patients ${staging.patients.length} != unique codes ${nonBlank.size}`);
+    const orphanCases = staging.cases.filter((c) => String(c.patientCode || "").trim() && !staging.patients.some((p) => p.id === c.patientId)).length;
+    if (orphanCases) failures.push(`${orphanCases} orphan case assignments`);
+    return { ok: failures.length === 0, failures };
+  }
+
+  function switchPointer(rawText, hasher) {
+    const v = verifyStaging(rawText, hasher);
+    if (!v.ok) throw new Error("switchPointer refused — verifyStaging failures: " + v.failures.join("; "));
+    writeKey(POINTER_KEY, "v2");
+    return { switched: true };
+  }
+
+  function rollbackMigration() {
+    // 白名單刪除:只碰本 migration 建立的兩個 keys,v1 與其他一切不動。
+    removeKey(POINTER_KEY);
+    removeKey(STAGING_KEY);
+    return { removed: [POINTER_KEY, STAGING_KEY] };
+  }
+
+  // backend 介面擴充(P3 需要 per-key 讀寫;localStorage 版直接對應)。
+  function readKey(k) { return backend.readKey ? backend.readKey(k) : global.localStorage.getItem(k); }
+  function writeKey(k, v) { backend.writeKey ? backend.writeKey(k, v) : global.localStorage.setItem(k, v); }
+  function removeKey(k) { backend.removeKey ? backend.removeKey(k) : global.localStorage.removeItem(k); }
+
   global.AcuTingClinicalStore = {
+    STAGING_KEY,
+    POINTER_KEY,
+    executeMigration,
+    verifyStaging,
+    switchPointer,
+    rollbackMigration,
     derivePatientsFromCases,
     STORAGE_KEY,
     load,
