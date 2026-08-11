@@ -6,6 +6,45 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R5 獨立覆核 — endpoint `cef1e93`
+
+- **REVIEWED_SHA**: R4 修正 `6340838f2b77c58154f4d619ae2d29dc91f19851`；branch endpoint `cef1e93075234df39d774f08deec9e5eacdf0a58`。`6340838..cef1e93` 為 symptom bundle／queue／plan 更新，未再改 P3 writer 或 import 實作。
+- **STATUS**: **PAUSE**。
+- **C2b final gate**: **NO-GO**。P3.1=`PASS`、P3.2=`PASS`、P3.3=`FAIL`、P3.4=`PASS`；因未達 `4/4 PASS`，本輪不發布 P4 FINAL GO 條件或真機當日 checklist。不得對 Edge `file://` 正典做 shadow write、pointer switch、v2 restore 或 case→patient execute。
+- **資料邊界**: 真實 clinical store 讀／寫=`0/0`；測試只用自製虛構 `2 patients / 2 cases` fixture。OS temp fake fixture、6g export 檔與隔離儲存均在 `finally` 清理，repo audit harness 亦於提交前移除。
+
+### P3.1 deterministic-plan／journal／pointer gate — PASS
+
+- R4 必測反例 `journal.counts.cases=999` 被拒，訊息為 `journal.counts != plan.counts`；另獨立竄改 `migration_version`、`source_bytes`、`adjudicationsApplied` 各 `1/1` 被拒，anchorless verify `1/1` 被拒。
+- `switchPointer(rawText, hasher, plan)` 仍以完整 `verifyStaging()` 綠燈為前置；注入 staging write error 與 pointer write error 時 pointer 均不存在。
+
+### P3.2 Patient deep parity／assignments／verified-only noop — PASS
+
+- R4 必測反例 `patients[0].fields.occupation` 改寫被拒，訊息為 `staged patients differ from plan (deep parity)`。
+- tampered-staging 同 source 重跑不再回無牙 `0/0/0`：`executeMigration()` 先重跑完整 verify，再 fail closed。三組 R4 反例合計 `3/3` 被擋。
+- clean 同 source 重跑維持 `creates/updates/deletes=0/0/0`；case→patient assignment 仍逐 case 對 plan，Patient `caseIds` 仍做反向集合核對。
+
+### P3.3 檔案級 v2 export→wipe→import — FAIL（HIGH）
+
+- 正向證據：官方 fake rehearsal 現為 `19/19 PASS`，6g 確實寫入暫存檔、wipe staging+pointer、從檔案讀回完整 envelope、驗證後再切 pointer，殘檔=`0`。另行自製檔案 round-trip 的 full verify、patients+cases canonical hash、unknown-field 保存均 `3/3 PASS`。app 正常 v2 envelope 不再降成 v1 cases，v1 mode 拒絕 v2 envelope，pointer=v2 但 staging 缺失時 export fail closed。
+- **阻斷反例**：在 active-v2 app import，把合法 export 的 `patients[0].fields.occupation` 竄改後匯入，UI 路徑仍接受、直接覆寫 `acuting-clinical-v2-staging` 並 reload，`1/1` false negative。`app.js:7500-7514` 只查 schema/journal/patients 形狀與 confirm，未取得正典 raw/deterministic plan、未呼叫 `AcuTingClinicalStore.verifyStaging()`，且 pointer 已是 v2 時就地覆寫 active staging。
+- 6g 不能覆蓋此風險：`scripts/rehearse-c2b.js` 是自行讀檔後先呼叫 full verify，再 switch pointer；它沒有走 `app.js` 的 import handler，所以 rehearsal 綠燈與實際 UI restore 行為不等價。
+- **修正 gate**：v2 import 不得直接覆寫 active staging。須先寫入非 active candidate，取得並核對原始 v1 raw + 對應 deterministic plan（含 source hash/bytes、journal、Patient deep parity、assignments），呼叫單一來源 `verifyStaging()`；只有驗證全綠才可原子替換 staging／切 pointer。任一失敗必須保留原 active staging、pointer 與畫面狀態，且不得 reload。上述竄改 envelope 必須加入 app-import 路徑的 blocking regression。
+
+### P3.4 interruption ordering／rollback whitelist — PASS
+
+- 獨立注入 staging write error、pointer write error、rollback whitelist/raw preservation 共 `3/3 PASS`；rollback 只移除 pointer+staging，假 v1 raw 與非 migration key 未變。
+
+### 量測與回歸
+
+- 獨立 C2B-R5 harness=`18 PASS / 1 FAIL`；唯一紅燈為 app active-v2 import 的未驗證 Patient 竄改。官方 fake rehearsal=`19/19 PASS`。
+- `validate-clinical-invariants`: `3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K 系列=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`。
+- 五個 migration syntax checks、interactions `0 failures`、content-junk、data `947 points`、relations、ratchet 均 exit `0`。`build-data` 前後 `app_data.js` 與 `knowledge_data.js` SHA-256 各自一致；relation 的既存 skeleton／ICD warnings 未升格為本 gate 阻斷。
+
+### P4 發布狀態
+
+- **未發布**。C2B-R5 明定只有 P3.1–P3.4 全 PASS 才發布 P4 FINAL GO 條件與真機當日 checklist；目前 P3.3 為 FAIL。Ting 在場與 Edge `file://` raw hash 重比仍是必要條件，但不是繞過 P3.3 的充分條件。
+
 ## 2026-08-11 Codex C2B-R4 獨立覆核 — endpoint `14d2a60`
 
 - **REVIEWED_SHA**: P3 writer/rehearsal `47478f8`，Batch 3 UI `324242a`，後續 referential fix `dbfd392` 與 export fix `924198e`；branch endpoint `14d2a607a638232103f2d1aa65c880eed008834c`。`924198e..14d2a60` 只新增 supplement data/build/log，未再改 P3／Batch3 實作。

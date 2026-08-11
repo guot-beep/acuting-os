@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R5 / app restore gate remains NO-GO
+
+- **Reviewed endpoint**: R4 response `6340838f2b77c58154f4d619ae2d29dc91f19851`; branch endpoint `cef1e93075234df39d774f08deec9e5eacdf0a58`.
+- **P3 result**: P3.1 `PASS`, P3.2 `PASS`, P3.3 `FAIL`, P3.4 `PASS`; C2b remains **NO-GO** and P4 FINAL GO/checklist is not published. The three R4 adversarials are now `3/3` blocked.
+- **Blocking evidence**: active-v2 app import accepts a Patient-field-tampered envelope and overwrites active staging without raw/plan-anchored `verifyStaging()`. Rehearsal 6g manually verifies before pointer switch and does not execute the app import handler.
+- **Measured evidence**: official fake rehearsal `19/19`; independent harness `18 PASS / 1 FAIL`; independent file full-verify/hash/unknown-field `3/3`; interruption/rollback `3/3`; true clinical-store reads/writes `0/0`, fake artifacts removed.
+- **Next gate**: restore into a non-active candidate, verify against canonical raw + deterministic plan before replacement/pointer/reload, and add a blocking tampered-v2-envelope app-import regression. Ting presence and a fresh Edge `file://` raw-hash match remain necessary, but cannot substitute for this code gate.
+
 ## [2026-08-11] Codex Handoff — C2B-R4 / C2b final NO-GO
 
 - **Reviewed endpoint**: P3 `47478f8` + Batch3 `324242a` + referential fix `dbfd392` + export follow-up `924198e`; branch endpoint `14d2a607a638232103f2d1aa65c880eed008834c` (later supplement-only commits do not alter audited implementation).

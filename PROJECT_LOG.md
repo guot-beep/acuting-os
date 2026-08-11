@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R5 endpoint `cef1e93`，P3=`PASS/PASS/FAIL/PASS`
+
+- **Gate**：R4 三反例 `3/3` 被擋；P3.1 journal/plan=`PASS`，P3.2 Patient parity/verified noop=`PASS`，P3.3 app v2 restore=`FAIL`，P3.4 interruption/rollback=`PASS`；C2b=`NO-GO`，未發布 P4 真機 checklist。
+- **P3.3 反例**：active-v2 UI import 接受 `patients[0].fields.occupation` 竄改 envelope，直接覆寫 staging+reload，未取 raw/plan、未跑共用 verify；官方 6g 是手動 verify-before-switch，未走 app import handler。
+- **數字**：官方 fake rehearsal `19/19`；獨立 harness `18 PASS / 1 FAIL`；檔案 full-verify/hash/unknown-field `3/3`；P3.4 注入／rollback `3/3`；真 store 讀／寫 `0/0`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`；build 雙 hash 不變，其餘資料／關聯／ratchet gates exit `0`。
+- **下一 gate**：v2 import 先寫非 active candidate，以正典 raw+deterministic plan 做 full verify，失敗不得改 staging/pointer/reload；把 Patient-tampered UI import 加為 blocking regression，再交 Codex。
+
 # 2026-08-11 Codex — C2B-R4 endpoint `14d2a60`，P3=`FAIL/FAIL/FAIL/PASS`
 
 - **Gate**：P3.1 journal verify=`FAIL`；P3.2 full verify/idempotent=`FAIL`；P3.3 v2 file round-trip=`FAIL`；P3.4 error ordering/rollback=`PASS`。C2b final=`NO-GO`，Edge `file://` 不得 shadow write／pointer switch／execute。
