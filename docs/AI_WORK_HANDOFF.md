@@ -1,5 +1,17 @@
 # AI WORK HANDOFF(Claude → SOL)
 
+## HANDOFF #19 — R9 NO-GO 修復進度(gates A-D)
+
+- **A(pointer 三態)✅ 90522d0**:讀取例外/非法值一律 throw、零寫入;反例入 blocking test。
+- **C(race/ID/collision/blank-FK)✅ 90522d0**:syncPendingPatients 改「先算完全部雜湊→重讀最新 envelope→全同步套用」(單執行緒下 lost-update 結構上不可能);canonicalPatientIdOf 與 migration 同鹽共用;collision fail-closed 留 pending;blank code 強制 patientId=null。31/31 測試(18 基礎+12 R9 反例,含 save-during-sync 注入)。
+- **B(9 個呼叫點 commit-on-true)⏳ Sonnet 執行中**(codex/r9-gate-b):snapshot→mutate→persist===true 才 close/render/noteClinicalSave,失敗回滾 in-memory 並保留 editor;瀏覽器故障注入驗證。
+- **D(revision-aware restore)📐 設計定案,Fable 下一段實作**:
+  restoreV2Envelope 分兩型 —— migration-era(runtime_revision 缺/0):現行 plan-anchored 路徑不變;runtime-era(revision ≥1):改驗**自洽性**——journal/schema 形狀、patients↔cases 雙向整合(沿用 verifyStagingObject 的 referential 斷言)、R1-R8 invariants(checkClinicalInvariants)、對現有 staging 的 exposure append-only(exposureHistoryExtends 逐 case)、id/collision、blank→null、counts 自洽 —— **不再要求等同凍結 v1 plan**。新增 blocking rehearsal:switch→新增/編輯→pending sync→export→wipe v2 keys→restore→全量 canonical hash/unknown fields/events exact。
+- 完成 B+D 後排 **Codex R10**(重跑其 9 情境 harness + 新 restore rehearsal)。
+- 同輪已收:審計 UI 批(一碼多病例 confirm、drug.* picker 40 卡)、資料批(亂碼 3 修、junk 驗證器學會 U+FFFD/Cyrillic blocking + 順天堂共用劑量 58 筆 warn)。D18 LOCKED(Ting 接受 SQLite 條件觸發制)。
+
+
+
 ## ⛔ C2b 真機執行凍結(2026-08-11 獨立審計,Fable 已親驗)
 
 docs/INDEPENDENT_AUDIT_2026-08-11.md 發現:**runtime load/save 不看 pointer**
