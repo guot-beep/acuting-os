@@ -137,7 +137,7 @@
       "name_zh": "頭痛",
       "pinyin": "Toutong",
       "name_en": "Headache",
-      "classical_source_hint": "中醫內科學·氣血津液/腦系",
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
       "key_manifestation_ids": [
         "sym.headache"
       ]
@@ -147,28 +147,28 @@
       "name_zh": "眩暈",
       "pinyin": "Xuanyun",
       "name_en": "Dizziness",
-      "classical_source_hint": "中醫內科學·腦系"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
     },
     {
       "id": "tdis.zhong_feng",
       "name_zh": "中風",
       "pinyin": "Zhongfeng",
       "name_en": "Wind-Stroke",
-      "classical_source_hint": "中醫內科學·腦系"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
     },
     {
       "id": "tdis.mian_tan",
       "name_zh": "面癱／口僻",
       "pinyin": "Miantan",
       "name_en": "Facial Paralysis",
-      "classical_source_hint": "針灸治療學"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
     },
     {
       "id": "tdis.chan_zheng",
       "name_zh": "顫證",
       "pinyin": "Chanzheng",
       "name_en": "Tremor Disease",
-      "classical_source_hint": "中醫內科學·腦系"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
     },
     {
       "id": "tdis.bu_mei",
@@ -211,14 +211,14 @@
       "name_zh": "梅核氣",
       "pinyin": "Meiheqi",
       "name_en": "Plum-Pit Qi",
-      "classical_source_hint": "中醫內科學"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
     },
     {
       "id": "tdis.jian_wang",
       "name_zh": "健忘",
       "pinyin": "Jianwang",
       "name_en": "Poor Memory",
-      "classical_source_hint": "中醫內科學·腦系"
+      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
     },
     {
       "id": "tdis.xiao_ke",
@@ -246,7 +246,7 @@
       "name_zh": "肥胖",
       "pinyin": "Feipang",
       "name_en": "Obesity (TCM)",
-      "classical_source_hint": "中醫內科學"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
     },
     {
       "id": "tdis.ying_bing",
@@ -284,7 +284,7 @@
       "name_zh": "遺尿",
       "pinyin": "Yiniao",
       "name_en": "Enuresis",
-      "classical_source_hint": "中醫兒科/內科"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
     },
     {
       "id": "tdis.yi_jing",
@@ -340,14 +340,14 @@
       "name_zh": "落枕",
       "pinyin": "Luozhen",
       "name_en": "Stiff Neck",
-      "classical_source_hint": "針灸治療學"
+      "taxonomy_id": "tdx.orthopedics_traumatology.spinal_disorders"
     },
     {
       "id": "tdis.jian_ning",
       "name_zh": "肩凝症（漏肩風）",
       "pinyin": "Jianning",
       "name_en": "Frozen Shoulder",
-      "classical_source_hint": "針灸治療學"
+      "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders"
     },
     {
       "id": "tdis.tong_jing",
@@ -508,7 +508,7 @@
       "name_zh": "牙痛",
       "pinyin": "Yatong",
       "name_en": "Toothache",
-      "classical_source_hint": "針灸治療學"
+      "taxonomy_id": "tdx.stomatology.general"
     },
     {
       "id": "tdis.mu_yun",
@@ -522,7 +522,7 @@
       "name_zh": "百合病",
       "pinyin": "Baihebing",
       "name_en": "Lily Disease (restless disorder)",
-      "classical_source_hint": "金匱要略",
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
       "classical_source": "金匱要略"
     },
     {
@@ -537,7 +537,7 @@
       "name_zh": "面痛",
       "pinyin": "Miantong",
       "name_en": "Facial Pain",
-      "classical_source_hint": "針灸治療學"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
     }
   ]
 }
