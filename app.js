@@ -4992,6 +4992,60 @@ function normalizeClinicalCase(value) {
     easternDiseases: Array.isArray(value.easternDiseases) ? value.easternDiseases.map(String) : splitList(String(value.easternDiseases || "")),
     tcmPatterns: Array.isArray(value.tcmPatterns) ? value.tcmPatterns.map(String) : splitList(String(value.tcmPatterns || "")),
     safetyFlags: Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : splitList(String(value.safetyFlags || "")),
+    // D17 §5 — ONE longitudinal exposure timeline, CASE level. Each entry is a
+    // ledger ROW ("this patient is/was on this agent"), not a per-visit
+    // snapshot; a follow-up visit that changes a dose updates the SAME entry
+    // (status/changeSinceLast/lastConfirmedVisitId) so the timeline stays
+    // reconstructable. currentMeds free text above is UNTOUCHED — it remains
+    // the prose sibling, never auto-parsed into this array.
+    // agentId namespaces: drug.* (D15) or supp.* (D17 — not suppl.*).
+    // Maps to case_agent_exposures / case_environmental_exposures
+    // (localstorage_sqlite_mapping.json planned_mappings_d17).
+    agentExposures: Array.isArray(value.agentExposures)
+      ? value.agentExposures
+          .filter((e) => e && (e.agentId || e.nameText))
+          .map((e) => ({
+            id: String(e.id || createId("agentexp")),
+            agentType: String(e.agentType || ""),          // 'drug' | 'supplement'
+            agentId: String(e.agentId || ""),
+            nameText: String(e.nameText || ""),
+            doseText: String(e.doseText || ""),
+            frequencyText: String(e.frequencyText || ""),
+            route: String(e.route || ""),
+            startApprox: String(e.startApprox || ""),      // D4 coarse, never fabricated
+            stopApprox: String(e.stopApprox || ""),
+            status: String(e.status || ""),                // 'current'|'stopped'|'prn'|'unknown'
+            indicationText: String(e.indicationText || ""),
+            adherenceNote: String(e.adherenceNote || ""),
+            infoSource: String(e.infoSource || ""),        // 'patient_reported'|'records'
+            firstNotedVisitId: String(e.firstNotedVisitId || ""),
+            lastConfirmedVisitId: String(e.lastConfirmedVisitId || ""),
+            changeSinceLast: String(e.changeSinceLast || ""),
+            changeNote: String(e.changeNote || ""),
+            notes: String(e.notes || "")
+          }))
+      : [],
+    // D17 — environmental/toxic exposures, SEPARATE from lifestyle (an
+    // exposure happens TO the patient). certainty × timing are two
+    // independent axes; 'suspected' is never auto-promoted to 'confirmed'.
+    environmentalExposures: Array.isArray(value.environmentalExposures)
+      ? value.environmentalExposures
+          .filter((e) => e && (e.exposureId || e.nameText))
+          .map((e) => ({
+            id: String(e.id || createId("envexp")),
+            exposureId: String(e.exposureId || ""),        // exposure.*
+            nameText: String(e.nameText || ""),
+            certainty: String(e.certainty || ""),          // 'suspected'|'patient_reported'|'confirmed'
+            timing: String(e.timing || ""),                // 'ongoing'|'historical'|'unknown'
+            startApprox: String(e.startApprox || ""),
+            endApprox: String(e.endApprox || ""),
+            contextText: String(e.contextText || ""),
+            firstNotedVisitId: String(e.firstNotedVisitId || ""),
+            lastConfirmedVisitId: String(e.lastConfirmedVisitId || ""),
+            changeSinceLast: String(e.changeSinceLast || ""),
+            notes: String(e.notes || "")
+          }))
+      : [],
     summary: String(value.summary || ""),
     soapNotes: Array.isArray(value.soapNotes) ? value.soapNotes.map(normalizeSoapNote) : [],
     createdAt: String(value.createdAt || new Date().toISOString()),
@@ -5043,8 +5097,30 @@ function normalizeSoapNote(value) {
     tcmPatternSelections: Array.isArray(value.tcmPatternSelections)
       ? value.tcmPatternSelections
           .filter((e) => e && typeof e.patternId === "string" && e.patternId)
-          .map((e) => ({ patternId: String(e.patternId), isPrimary: !!e.isPrimary }))
-      : normalizeStringList(value.tcmPatternLinks).map((id) => ({ patternId: id, isPrimary: false })),
+          // D17 §4 additions, both additive and never derived: role (MVP
+          // vocabulary primary|secondary; root|branch reserved) and
+          // confidence. role is NOT back-filled from isPrimary here — an old
+          // entry that only recorded isPrimary keeps role:"" (the normalizer
+          // records, it does not infer). Write-time code that SETS role must
+          // keep isPrimary in agreement (role==='primary' ⇔ isPrimary), so
+          // every legacy reader of isPrimary stays correct.
+          .map((e) => ({
+            patternId: String(e.patternId),
+            isPrimary: !!e.isPrimary,
+            role: String(e.role || ""),
+            confidence: String(e.confidence || "")
+          }))
+      : normalizeStringList(value.tcmPatternLinks).map((id) => ({ patternId: id, isPrimary: false, role: "", confidence: "" })),
+    // D17 §4 — differential candidates are NOT working patterns. Patterns the
+    // clinician CONSIDERED this visit (possibly ruled out) live here; adopted
+    // conclusions live in tcmPatternSelections above. Same id in both =
+    // considered, then adopted — legal and meaningful. Maps to
+    // visit_pattern_differentials.
+    patternDifferentials: Array.isArray(value.patternDifferentials)
+      ? value.patternDifferentials
+          .filter((e) => e && typeof e.patternId === "string" && e.patternId)
+          .map((e) => ({ patternId: String(e.patternId), ruledOut: !!e.ruledOut, note: String(e.note || "") }))
+      : [],
     // Kept for every existing reader that resolves patterns off this flat
     // list (window.AcuTingCases.usedIn's reverse index, the SOAP card's
     // "Pattern links" row, Last Visit at a Glance's fallback) — now DERIVED
@@ -5083,11 +5159,59 @@ function normalizeSoapNote(value) {
     outcomeMetrics: Array.isArray(value.outcomeMetrics)
       ? value.outcomeMetrics
           .filter((m) => m && typeof m.metricId === "string" && m.metricId && Number.isFinite(Number(m.valueNumber)))
-          .map((m) => ({ metricId: String(m.metricId), valueNumber: Number(m.valueNumber) }))
+          // relatedSymId (D17 §3): optional symptom anchor for this
+          // measurement — sym.* and metric.* are complementary namespaces,
+          // never competing. "" when the metric has no symptom anchor
+          // (routine vitals) or predates the field. Maps to
+          // visit_outcomes.related_sym_id.
+          .map((m) => ({ metricId: String(m.metricId), valueNumber: Number(m.valueNumber), relatedSymId: String(m.relatedSymId || "") }))
       : [],
     // SOAP/Follow-up audit (2026-08-09): nullable, never fabricated. "" (not
     // 0) when absent — matches cases.baselineSeverity's D4-style distinction
     // between "not answered" and "answered zero".
+    // D17 — per-VISIT observed lifestyle behavior rows (life.*). The
+    // trajectory (sleep 5h → 6h → 7h) IS the rows across visits; "current" is
+    // simply the latest visit's row, never an overwrite of history (V2 §18).
+    // valueNumber nullable "" — "not measured" stays distinct from zero (D4).
+    // HARD RULE (D17 §6): observations only. No code path may derive a
+    // pattern/tdis from these rows — TCM interpretation is typed by the
+    // practitioner in Assessment. Maps to visit_lifestyle_factors.
+    lifestyleFactors: Array.isArray(value.lifestyleFactors)
+      ? value.lifestyleFactors
+          .filter((f) => f && (f.factorId || f.nameText))
+          .map((f) => ({
+            id: String(f.id || createId("lifefac")),
+            factorId: String(f.factorId || ""),            // life.* (hierarchical ok)
+            nameText: String(f.nameText || ""),
+            valueNumber: (f.valueNumber === 0 || f.valueNumber) ? Number(f.valueNumber) : "",
+            unit: String(f.unit || ""),
+            valueText: String(f.valueText || ""),
+            frequencyText: String(f.frequencyText || ""),
+            changeSinceLast: String(f.changeSinceLast || ""),
+            notes: String(f.notes || "")
+          }))
+      : [],
+    // D17 — adverse events / treatment tolerance, linked to the visit where
+    // REPORTED (may be the visit after the causing treatment — onsetText
+    // carries that). Maps to visit_adverse_events.
+    adverseEvents: Array.isArray(value.adverseEvents)
+      ? value.adverseEvents
+          .filter((a) => a && (a.eventId || a.nameText))
+          .map((a) => ({
+            id: String(a.id || createId("advevt")),
+            eventId: String(a.eventId || ""),              // adverse_event.*
+            nameText: String(a.nameText || ""),
+            interventionType: String(a.interventionType || ""),
+            modalityId: String(a.modalityId || ""),        // modality.*
+            interventionRefId: String(a.interventionRefId || ""),
+            severity: String(a.severity || ""),            // 'mild'|'moderate'|'severe'
+            onsetText: String(a.onsetText || ""),
+            status: String(a.status || ""),                // 'patient_reported'|'observed'
+            resolutionStatus: String(a.resolutionStatus || ""),
+            resolvedDate: String(a.resolvedDate || ""),
+            notes: String(a.notes || "")
+          }))
+      : [],
     effectDurationDays: (value.effectDurationDays === 0 || value.effectDurationDays) ? Number(value.effectDurationDays) : "",
     referralOrSupervisorQuestion: String(value.referralOrSupervisorQuestion || ""),
     followUp: String(value.followUp || ""),
@@ -5110,9 +5234,13 @@ function getOutcomeMetricValue(list, metricId) {
 }
 
 function setOutcomeMetricValue(list, metricId, value) {
+  // Preserve relatedSymId (D17 §3) across upserts — rebuilding the entry from
+  // scratch here would silently strip the symptom anchor every time the
+  // number is re-entered.
+  const existing = (list || []).find((m) => m.metricId === metricId);
   const withoutThisMetric = (list || []).filter((m) => m.metricId !== metricId);
   if (value === "" || value === null || value === undefined) return withoutThisMetric;
-  return [...withoutThisMetric, { metricId, valueNumber: Number(value) }];
+  return [...withoutThisMetric, { metricId, valueNumber: Number(value), relatedSymId: String(existing?.relatedSymId || "") }];
 }
 
 // Metadata-driven numeric outcome metric renderer (2026-08-09) — prototype
@@ -6497,9 +6625,17 @@ function saveSoapFromForm(event) {
   // even if something bypassed the live UI.
   const tcmPrimaryId = (data.tcmPatternPrimary || "").trim();
   const tcmSecondaryIds = splitList(data.tcmPatternSecondary || "").filter((id) => id && id !== tcmPrimaryId);
+  // D17 §4: the primary/secondary pickers ARE the role semantics, so role is
+  // recorded from the same source as isPrimary (faithful recording, not
+  // inference) — which also keeps the role⇔isPrimary agreement invariant
+  // automatically. confidence has no form field yet, so it is CARRIED OVER
+  // from the current note's entry for the same patternId rather than being
+  // silently stripped by this rebuild.
+  const priorConfidence = (patternId) =>
+    (current?.tcmPatternSelections || []).find((e) => e.patternId === patternId)?.confidence || "";
   const tcmPatternSelections = [
-    ...(tcmPrimaryId ? [{ patternId: tcmPrimaryId, isPrimary: true }] : []),
-    ...tcmSecondaryIds.map((id) => ({ patternId: id, isPrimary: false })),
+    ...(tcmPrimaryId ? [{ patternId: tcmPrimaryId, isPrimary: true, role: "primary", confidence: priorConfidence(tcmPrimaryId) }] : []),
+    ...tcmSecondaryIds.map((id) => ({ patternId: id, isPrimary: false, role: "secondary", confidence: priorConfidence(id) })),
   ];
   // Derived, not typed — see the tcmPatternLinks comment in normalizeSoapNote.
   const tcmPatternLinksDerived = tcmPatternSelections.map((e) => e.patternId);
