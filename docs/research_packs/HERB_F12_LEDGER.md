@@ -140,6 +140,116 @@ commit 只動兩件事：composition 的 `herb_id`、以及 4 筆真別名。
 
 ---
 
-## 3. 待處理 — 需要建新卡或需要來源確認的字串
+## 3. Batch 2 — 13 張新卡（食材／賦形／課件無專論者為主）
 
-（Batch 2 起逐項填入處置與來源）
+先做了兩份課件全文清查（curriculum/**.md，唯讀），確認每一味到底有沒有來源，
+再決定建卡或連結。**沒有來源的欄位一律留空**，不用他書推補、不寫樣板句。
+
+### 3.1 課件覆蓋度盤點（決定卡片深度的依據）
+
+| 來源等級 | 味 |
+|---|---|
+| **THP 4th ed. 有完整專論**（性味/歸經/功效/用量齊全） | 石榴皮、天葵子、化橘紅 |
+| 只有方劑組成行（無性味歸經） | 糯稻根、白酒、黃酒、雞子黃、梨皮、棕櫚皮、豬脊髓、小麥、竹葉 |
+| 只有課程區塊給了性味 | 綠茶（cold, bitter） |
+
+因此 **13 張卡全部 `card_grade: "partial"`，沒有一張宣稱 template 級**：
+template 級會觸發 E7（禁忌症必填），而這 13 味沒有任何一個來源列出禁忌——
+宣稱 template 就等於逼自己編禁忌。這是刻意的降級，不是漏做。
+
+### 3.2 逐卡處置
+
+| id | 中文 | category | 有來源的欄位 | 刻意留空 |
+|---|---|---|---|---|
+| `herb.shi_liu_pi` | 石榴皮 | 收澀藥 | 性味歸經功效用量（THP） | 禁忌 |
+| `herb.tian_kui_zi` | 天葵子 | 清熱解毒 | 性味歸經功效用量（THP） | 禁忌 |
+| `herb.hua_ju_hong` | 化橘紅 | 理氣藥 | 性味歸經功效用量（THP） | 禁忌 |
+| `herb.nuo_dao_gen` | 糯稻根 | 收澀藥 | 功效、方中 5g | 性味、歸經、禁忌 |
+| `herb.bai_jiu` | 白酒 | （藥引） | 功效、三方用量 | 性味、歸經、禁忌 |
+| `herb.huang_jiu` | 黃酒 | （藥引） | 功效、方中用量 | 性味、歸經、禁忌 |
+| `herb.ji_zi_huang` | 雞子黃 | 補陰藥 | 功效、2 枚、煎服法 | 性味、歸經、禁忌 |
+| `herb.lu_cha` | 綠茶 | 清熱瀉火 | 性味、功效、2–12g | 歸經、禁忌 |
+| `herb.li_pi` | 梨皮 | 止咳平喘 | 功效、1–6g | 性味、歸經、禁忌 |
+| `herb.zong_lu_pi` | 棕櫚皮 | 收斂止血 | 功效、6–10g | 性味、歸經、禁忌 |
+| `herb.zhu_ji_sui` | 豬脊髓 | 補陰藥 | 歸經（督、腎）、功效、25–50g、製法 | 性味、禁忌 |
+| `herb.xiao_mai` | 小麥 | 補氣藥 | 歸經（心）、功效、9–60g | 性味、禁忌 |
+| `herb.zhu_ye` | 竹葉 | 清熱瀉火 | 歸經（心、小腸）、功效、2–15g | 性味、禁忌 |
+
+### 3.3 這批的判斷call（每一個都可能被推翻，理由寫在這裡）
+
+**(a) 白酒／黃酒／雞子黃／豬脊髓／綠茶／梨皮 = 食材或賦形，不是正典本草。**
+卡片 `category_zh` 直接寫「藥引（賦形）」，`clinical_use_note` 第一句就講明
+「這張卡記的是藥引，不是本草專論」。但 `category`（正典欄）必須是分類正典的 32 個
+值之一才能通過 E3，所以掛了最接近的正典分類（酒→溫裡藥）。**正典 category 是為了
+過校驗，不是宣稱課件把酒列為溫裡藥**——這個落差已寫進卡片的 `source_note_zh`。
+如果 Ting 認為正典分類不該被這樣借用，正解是在
+`data/config/herb_category_canon.json` 加一個「藥引／賦形」類，那是改設定檔，
+不在本次派工範圍，所以沒有動。
+
+**(b) 小麥沒有併進浮小麥。** 甘麥大棗湯**同一張課件卡的兩個區塊互相矛盾**：
+AD 表列君藥為小麥（Xiao Mai, 9–60g），Bastyr/Chenoweth 區塊列為浮小麥
+（Fu Xiao Mai, 9–15g）；AD 表又把浮小麥列為小麥的替代藥。而且 AD 把小麥的拉丁名
+寫成 `Fr. Tritici Levis`——那是浮小麥的拉丁名。依憲法「兩源不合就並記」，
+建了獨立的小麥卡並把衝突原文寫進 `cautions_zh`，**沒有替兩邊選一邊**，
+`safety_flags` 標 `source_conflict_unresolved`，等 Ting/RV1 裁決。
+
+**(c) 竹葉沒有併進淡竹葉，也沒有搬淡竹葉的性味。**
+課件 M.M.1 herb list 與 Chenoweth 功效索引把 Zhu Ye 與 Dan Zhu Ye **分列兩條**；
+而竹葉石膏湯的組成資料實際用的是**淡竹葉（君）**，`(Zhu Ye)` 只列為替代藥。
+竹葉自己沒有專論，所以性味留空。**把淡竹葉的「甘淡寒」填進竹葉卡，會做出一張
+看起來完整、其實無來源的假卡**——這正是憲法要擋的東西。
+
+**(d) 「地葵子」是資料端的錯字。** `formula.wu_wei_xiao_du_yin` 的 composition
+寫 `地葵子`，但拼音欄寫 `Tian Kui Zi`、拉丁寫 `Sm. Semiaquilegiae`——正名是**天葵子**。
+`地葵子` 三個字在整個 curriculum/ 查無。危險的是庫裡另有 `herb.di_fu_zi`（地膚子，
+別名「地葵」）與 `herb.dong_kui_zi`（冬葵子，別名「葵子」），三者名字互相干擾。
+處置：建 `herb.tian_kui_zi` 並把該列 `herb_id` 指過去，**沒有改動顯示名「地葵子」**
+（改顯示名等於替 Ting 決定原始資料是錯的）。錯字本身列入下方待辦。
+
+**(e) 豬脊髓的拼音。** 課件寫 `Zhu Ji Shui`，但「髓」的無聲調拼音是 `sui`。
+id 與 `pinyin` 採正字 `Zhu Ji Sui`（憲法八），課件寫法保留在
+`tcm_properties.source_note_zh` 與 ledger，composition 那一列以 `herb_id` 連結。
+
+**(f) 棕櫚炭沒有另建卡**，以炮製變體連回 `herb.zong_lu_pi`，並把「棕櫚炭」
+列入其 `aliases_zh`（十灰散方名的「灰」就是炭，兩者本為一物兩製）。
+
+### 3.4 Batch 2 結果
+
+| 量 | before | after |
+|---|---|---|
+| F12 錯誤行 | 40 | **25** |
+| `validate-formula-standard` blocking 總數 | 68 | **53** |
+| **中藥庫記錄數** | **330** | **343** |
+| `validate-herb-standard` | PASS | PASS |
+| `validate-content-junk` | PASS | PASS |
+| `check-validation-ratchet` | PASS | PASS |
+| `validate-relations` | passed | passed |
+
+`git diff --numstat`：`herb_canon_shortlist.json` **1980 插入 / 0 刪除**（純新增，
+既有 330 筆一個字沒動）；`formulas.json` 13 插入 / 13 刪除（全是 `herb_id` 值變更）。
+
+---
+
+## 4. 待處理 — 送 Ting 決定，本次刻意沒做
+
+以下三項不是「還沒做完」，是**做了會超出派工範圍或需要臨床裁決**：
+
+1. **`碧玉散` 不是單味藥，F12 清不掉。** 蒿芩清膽湯的 composition 有一列
+   `碧玉散`，但課件證實它是**方中方**（滑石:甘草:青黛 = 6:1:1，六一散加青黛的變方）。
+   F12 只接受 `herb_id`，不接受 `formula_id`，所以除非替它建一張假的「單味藥」卡，
+   否則清不掉——**建假卡不做**。正解是驗證器允許 composition 連 formula，或
+   Ting 決定把它拆成三味。列為資料模型缺口。
+2. **兩列 `herb_zh` 是「—」。** `formula.shi_xiao_san`（英文 `Wine or vinegar`）與
+   `formula.tong_qiao_huo_xue_tang`（英文 `Rice Wine`, 250g）。後者指向明確可連黃酒，
+   但**前者「酒或醋」本身就是二選一的敘述**，硬連會替來源做決定。兩列都保留未連，
+   建議 Ting 直接把顯示名補成中文。
+3. **`Jiang Shi`（良附丸，6g）未連。** 課件把英文標為 `Rz. Zingiberis`（＝乾薑），
+   但良附丸的傳統服法是以**薑汁**送服，拼音 `Jiang Shi` 疑為 `Jiang Zhi`（薑汁）之誤。
+   乾薑與生薑是不同的臨床判斷，**查不到確據就不連**（憲法：「查不到」是有價值的答案）。
+4. **`荊芥穗` 目前連回 `herb.jing_jie`**（Batch 1），但 THP 其實有
+   `NEPETAE SPICA 荊芥穗` 獨立專論（性味歸經與荊芥相同，功效多「hemostatic」、
+   用量上限 10g vs 11.5g）。連結不算錯（顯示名保留、可查得到），但更好的做法是
+   另建荊芥穗卡。列為後續加深項，不是缺陷。
+5. **既有 `herb.bai_ji_li` 的別名陣列本來就不對齊**：`aliases_zh` 3 筆 vs
+   `aliases_en` 4 筆。這是本次動工前就有的，驗證器不檢查 aliases 所以沒被抓到。
+   **沒有動它**——修法是刪一筆英文或補一筆中文別名，兩者都需要判斷，且不在派工範圍。

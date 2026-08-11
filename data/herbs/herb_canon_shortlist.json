@@ -80066,6 +80066,1986 @@
           "中華人民共和國藥典（一部）礦物藥項下用量；毒性與炮製禁忌為該類藥通行記載。⚠️ 數字待 Ting 以手邊藥典核對後升級。"
         ]
       }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（真人養臟湯 composition 查無）而建。性味/歸經/功效/用量全部取自 THP 4th ed. 石榴皮專論；課件只在方劑列為罌粟殼的替代藥。THP 未列禁忌，故 contraindications 留空、不宣稱 template 級。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.shi_liu_pi",
+      "name_zh": "石榴皮",
+      "name_en": "Pomegranate Pericarp",
+      "pinyin": "Shi Liu Pi",
+      "pinyin_toned": "Shí Liú Pí",
+      "pharmaceutical_latin": "Granati Pericarpium",
+      "part_used_zh": "乾燥成熟果皮",
+      "part_used_en": "dried ripe pericarp",
+      "category": "收澀藥 / Stabilize and Bind",
+      "category_zh": "收澀藥",
+      "properties_taste_temp": "酸、澀，溫",
+      "taste_temperature_zh": "酸、澀，溫",
+      "channels_zh": [
+        "胃經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "ST Stomach",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "胃經",
+        "大腸經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "酸",
+          "澀"
+        ],
+        "five_flavors_en": [
+          "Sour",
+          "Astringent"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "胃經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "ST Stomach",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "乾燥成熟果皮",
+        "part_used_en": "dried ripe pericarp",
+        "source_note_zh": "性味歸經取自 THP「GRANATI PERICARPIUM 石榴皮」專論：Warm; sour and astringent / Stomach and large intestine meridians。THP 檔為雙欄 OCR 壓平，性味/歸經/用量段落與標題相隔約百行；本卡採用的段落是以「落在前後兩個 monograph 標題之間」判定，尚未對 PDF 逐頁覆核。"
+      },
+      "functions_zh": [
+        "澀腸止瀉",
+        "收斂止血",
+        "驅蟲"
+      ],
+      "actions_en": [
+        "Astringes the intestines and stops diarrhea",
+        "Astringes and stops bleeding",
+        "Expels intestinal parasites"
+      ],
+      "indications_zh": [
+        "久瀉久痢、滑脫不禁（THP：澀腸止瀉）。",
+        "便血、崩漏等出血證（THP：hemostatic）。",
+        "腸道寄生蟲（THP：expel worms）。",
+        "真人養臟湯中，AD 列為炙罌粟殼的替代藥，取其澀腸之力。"
+      ],
+      "indications_en": [
+        "Chronic diarrhea and dysentery with loss of astringency (THP: astringe the intestines and antidiarrheal).",
+        "Bleeding patterns including bloody stool and flooding (THP: hemostatic).",
+        "Intestinal parasites (THP: expel worms).",
+        "In Zhen Ren Yang Zang Tang, American Dragon lists it as a substitute for Zhi Ying Su Ke for its intestine-binding action."
+      ],
+      "condition_tags_zh": [
+        "久瀉",
+        "久痢",
+        "便血",
+        "腸道寄生蟲"
+      ],
+      "condition_tags_en": [
+        "Chronic diarrhea",
+        "Chronic dysentery",
+        "Bloody stool",
+        "Intestinal parasites"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 10,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g（THP）",
+        "formula_dose_g": "真人養臟湯替代用 9–15g（課件 AD 表）",
+        "source_note": "THP 專論用量 3~10g；課件方劑表的 9–15g 是該方中作為替代藥的用量，兩者並記不二選一。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "THP 石榴皮專論未列禁忌與注意事項；本卡不代為填寫，安全欄待課件或 American Dragon 等專業來源補齊。"
+      ],
+      "cautions_en": [
+        "The THP Granati Pericarpium monograph lists no contraindications or cautions; this card does not supply any, and the safety layer awaits coursework or a professional source such as American Dragon."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zhen_ren_yang_zang_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "石榴皮的定位是「酸澀溫」的澀腸藥：久瀉久痢滑脫不禁時用它收，兼能止血、驅蟲。與同方的炙罌粟殼相比，罌粟殼是含阿片生物鹼的管制品，石榴皮是 AD 列出的非管制替代選項——這是真人養臟湯裡兩者被並列的原因。安全欄目前空白，是因為 THP 該條未列禁忌，不是因為它沒有禁忌。",
+      "source_citations": [
+        {
+          "name": "📘 臺灣中藥典第四版（THP 4th ed.）英文版 石榴皮專論",
+          "url": "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "scope": "GRANATI PERICARPIUM 石榴皮：性味（Warm; sour and astringent）、歸經（Stomach and large intestine）、功效（astringe the intestines and antidiarrheal, hemostatic, expel worms）、用量（3~10 g）、基原（Punica granatum L.）"
+        },
+        {
+          "name": "📘 課件 真人養臟湯 formula card",
+          "url": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "scope": "第 099 方 §7 組成表：(Per. Granati) (Shi Liu Pi) (9-15g)，列為 Zhi Ying Su Ke 的替代藥"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "category": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "channels_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（五味消毒飲 composition 查無「地葵子」）而建。「地葵子」在 curriculum/ 全文查無，是資料端的寫法錯誤；正名為天葵子。性味/歸經/功效/用量取自 THP 天葵子專論。拉丁名 AD 作 Sm. Semiaquilegiae（種子）、THP 作 SEMIAQUILEGIAE RADIX（塊根），兩源不合，並記。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.tian_kui_zi",
+      "name_zh": "天葵子",
+      "name_en": "Semiaquilegia Root Tuber",
+      "pinyin": "Tian Kui Zi",
+      "pinyin_toned": "Tiān Kuí Zǐ",
+      "pharmaceutical_latin": "Semiaquilegiae Radix（THP）／Semen Semiaquilegiae（American Dragon，見來源差異）",
+      "part_used_zh": "塊根（THP）；AD 記為種子",
+      "part_used_en": "root tuber (THP); recorded as seed by American Dragon",
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity",
+      "category_zh": "清熱解毒藥",
+      "properties_taste_temp": "苦、甘，寒",
+      "taste_temperature_zh": "苦、甘，寒",
+      "channels_zh": [
+        "肝經",
+        "胃經"
+      ],
+      "channels_en": [
+        "LR Liver",
+        "ST Stomach"
+      ],
+      "channels_entered": [
+        "肝經",
+        "胃經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦",
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Bitter",
+          "Sweet"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "肝經",
+          "胃經"
+        ],
+        "meridian_tropism_en": [
+          "LR Liver",
+          "ST Stomach"
+        ],
+        "part_used_zh": "塊根（THP）",
+        "part_used_en": "root tuber (THP)",
+        "source_note_zh": "性味歸經取自 THP「SEMIAQUILEGIAE RADIX 天葵子」專論：Cold; bitter and sweet / Liver and stomach meridians。THP 檔為雙欄 OCR 壓平，性味/歸經/用量段落與標題相隔約百行；本卡採用的段落是以「落在前後兩個 monograph 標題之間」判定，尚未對 PDF 逐頁覆核。"
+      },
+      "functions_zh": [
+        "清熱解毒",
+        "消腫散結"
+      ],
+      "actions_en": [
+        "Clears Heat and resolves toxicity",
+        "Reduces swelling and disperses nodules"
+      ],
+      "indications_zh": [
+        "熱毒瘡瘍、疔瘡腫毒（課件五味消毒飲：清熱解毒、消腫散結）。",
+        "瘰癧痰核等結塊（THP：remove swelling and disperse stagnation）。"
+      ],
+      "indications_en": [
+        "Heat-toxin sores and deep-rooted boils (Wu Wei Xiao Du Yin card: clears Heat/toxin and reduces nodules/abscesses).",
+        "Scrofula and phlegm nodules (THP: remove swelling and disperse stagnation)."
+      ],
+      "condition_tags_zh": [
+        "疔瘡腫毒",
+        "熱毒瘡瘍",
+        "瘰癧"
+      ],
+      "condition_tags_en": [
+        "Deep-rooted boils",
+        "Heat-toxin sores",
+        "Scrofula"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 9,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "9–15g（THP）",
+        "formula_dose_g": "3–15g（課件五味消毒飲 AD 表）",
+        "source_note": "THP 9~15g 與課件 AD 表 3–15g 下限不同，兩源並記，不擅自二選一。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "THP 天葵子專論未列禁忌與注意事項；本卡不代為填寫，安全欄待補。"
+      ],
+      "cautions_en": [
+        "The THP Semiaquilegiae Radix monograph lists no contraindications or cautions; this card does not supply any and the safety layer is pending."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.wu_wei_xiao_du_yin"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "天葵子是五味消毒飲五味藥的最後一味，功能單純：清熱解毒 + 消腫散結，針對疔瘡腫毒。辨識上要與同方的紫花地丁分開記——兩者都入瘡瘍，天葵子偏散結（瘰癧痰核），歸肝胃。**命名陷阱**：方劑資料把它寫成「地葵子」，而庫裡另有「地膚子」（別名地葵）與「冬葵子」（別名葵子），三者名字互相干擾，開方時務必看拉丁名。拉丁名本身也有來源衝突（AD 種子 vs THP 塊根），採購與核對時要注意。",
+      "source_citations": [
+        {
+          "name": "📘 臺灣中藥典第四版（THP 4th ed.）英文版 天葵子專論",
+          "url": "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "scope": "SEMIAQUILEGIAE RADIX 天葵子：性味（Cold; bitter and sweet）、歸經（Liver and stomach）、功效（clear heat and detoxicate, remove swelling and disperse stagnation）、用量（9~15 g）、基原部位（root tuber）"
+        },
+        {
+          "name": "📘 課件 五味消毒飲 formula card",
+          "url": "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
+          "scope": "第 047 方 §7 組成表：Sm. Semiaquilegiae / Tian Kui Zi / 3-15g / 清熱解毒、消腫散結；composition anchor 亦作 Tian Kui Zi"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "channels_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（厚朴溫中湯 composition 查無）而建。THP 將化橘紅（Citri Maximae Exocarpium, 柚）與橘紅（Citri Exocarpium Rubrum, 橘）分列兩條專論，基原不同，故建獨立卡而非併入 herb.ju_hong。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.hua_ju_hong",
+      "name_zh": "化橘紅",
+      "name_en": "Pummelo Exocarp",
+      "pinyin": "Hua Ju Hong",
+      "pinyin_toned": "Huà Jú Hóng",
+      "pharmaceutical_latin": "Citri Maximae Exocarpium",
+      "part_used_zh": "未成熟或近成熟乾燥外果皮",
+      "part_used_en": "dried exocarp of immature or almost ripe fruit",
+      "category": "理氣藥 / Regulate Qi",
+      "category_zh": "理氣藥",
+      "properties_taste_temp": "辛、苦，溫",
+      "taste_temperature_zh": "辛、苦，溫",
+      "channels_zh": [
+        "肺經",
+        "脾經"
+      ],
+      "channels_en": [
+        "LU Lung",
+        "SP Spleen"
+      ],
+      "channels_entered": [
+        "肺經",
+        "脾經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "辛",
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Pungent",
+          "Bitter"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "肺經",
+          "脾經"
+        ],
+        "meridian_tropism_en": [
+          "LU Lung",
+          "SP Spleen"
+        ],
+        "part_used_zh": "未成熟或近成熟乾燥外果皮",
+        "part_used_en": "dried exocarp of immature or almost ripe fruit",
+        "source_note_zh": "性味歸經取自 THP「CITRI MAXIMAE EXOCARPIUM 化橘紅」專論：Warm; pungent and bitter / Lung and spleen meridians。基原為 Citrus maxima 'Tomentosa' 或 Citrus maxima (Burm.) Merr.。THP 檔為雙欄 OCR 壓平，性味/歸經/用量段落與標題相隔約百行；本卡採用的段落是以「落在前後兩個 monograph 標題之間」判定，尚未對 PDF 逐頁覆核。"
+      },
+      "functions_zh": [
+        "行氣寬中",
+        "燥濕化痰"
+      ],
+      "actions_en": [
+        "Moves Qi and expands the middle",
+        "Dries Dampness and transforms Phlegm"
+      ],
+      "indications_zh": [
+        "濕痰、寒痰咳嗽痰多（THP：dry dampness to resolve phlegm）。",
+        "中焦氣滯、脘腹脹悶（THP：move qi and expand center）。",
+        "厚朴溫中湯中，AD 列為陳皮的替代藥。"
+      ],
+      "indications_en": [
+        "Damp- or Cold-Phlegm cough with copious sputum (THP: dry dampness to resolve phlegm).",
+        "Middle-jiao Qi stagnation with epigastric and abdominal distension (THP: move qi and expand center).",
+        "In Hou Po Wen Zhong Tang, American Dragon lists it as a substitute for Chen Pi."
+      ],
+      "condition_tags_zh": [
+        "濕痰咳嗽",
+        "寒痰",
+        "脘腹脹悶",
+        "中焦氣滯"
+      ],
+      "condition_tags_en": [
+        "Damp-Phlegm cough",
+        "Cold Phlegm",
+        "Epigastric and abdominal distension",
+        "Middle-jiao Qi stagnation"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 10,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g（THP）",
+        "formula_dose_g": "10g（課件厚朴溫中湯 AD 表，作陳皮替代）",
+        "source_note": "THP 專論用量 3~10g；課件方劑表列 10g。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "THP 化橘紅專論未列禁忌與注意事項；本卡不代為填寫，安全欄待補。"
+      ],
+      "cautions_en": [
+        "The THP Citri Maximae Exocarpium monograph lists no contraindications or cautions; this card does not supply any and the safety layer is pending."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.hou_po_wen_zhong_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "化橘紅與橘紅是名字幾乎一樣、基原不同的兩味藥：化橘紅來自柚（Citrus maxima），橘紅來自橘（Citrus reticulata）。THP 給的性味歸經完全相同（辛苦溫、肺脾），差別在功效敘述——化橘紅寫「行氣寬中、燥濕化痰」，橘紅寫「散寒、燥濕、利氣、消痰」。臨床上兩者常互代，但採購與處方核對必須看拉丁名，不能只看中文。課件方劑表把它列為陳皮的替代藥，屬同一路思路（理氣化痰）。",
+      "source_citations": [
+        {
+          "name": "📘 臺灣中藥典第四版（THP 4th ed.）英文版 化橘紅專論",
+          "url": "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "scope": "CITRI MAXIMAE EXOCARPIUM 化橘紅：性味（Warm; pungent and bitter）、歸經（Lung and spleen）、功效（move qi and expand center, dry dampness to resolve phlegm）、用量（3~10 g）、基原（Citrus maxima）"
+        },
+        {
+          "name": "📘 臺灣中藥典第四版（THP 4th ed.）英文版 橘紅專論（對照用）",
+          "url": "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "scope": "CITRI EXOCARPIUM RUBRUM 橘紅：功效作 dissipate cold, dry dampness, promotes qi, resolve phlegm——用以證明兩者為不同 monograph"
+        },
+        {
+          "name": "📘 課件 厚朴溫中湯 formula card",
+          "url": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md",
+          "scope": "組成表：(Exocarpium Citri Grandis) (Hua Ju Hong) (10g)，AD 列為 Chen Pi 替代藥"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "category": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "channels_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md",
+          "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（泰山磐石散 composition 查無）而建。全 curriculum 只有泰山磐石散組成表一行，無性味、歸經、禁忌；THP 無此條。故只填來源支持的功效與用量，其餘留空。待 RV1 補來源。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.nuo_dao_gen",
+      "name_zh": "糯稻根",
+      "name_en": "Glutinous Rice Root",
+      "pinyin": "Nuo Dao Gen",
+      "pinyin_toned": "Nuò Dào Gēn",
+      "pharmaceutical_latin": "Oryzae Glutinosae Radix",
+      "part_used_zh": "根及根莖",
+      "part_used_en": "root and rhizome",
+      "category": "收澀藥 / Stabilize and Bind",
+      "category_zh": "收澀藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "糯稻根鬚"
+      ],
+      "aliases_en": [
+        "Nuo Dao Gen Xu"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "根及根莖",
+        "part_used_en": "root and rhizome",
+        "source_note_zh": "課件僅在泰山磐石散組成表列出一行，未給性味與歸經；THP 4th ed. 無糯稻根專論。性味歸經欄位刻意留空，不以他書推補。"
+      },
+      "functions_zh": [
+        "斂虛汗",
+        "退虛熱"
+      ],
+      "actions_en": [
+        "Astringes deficiency sweating",
+        "Reduces low-grade deficiency fever"
+      ],
+      "indications_zh": [
+        "氣陰不足之虛汗、自汗盜汗（課件泰山磐石散：stops deficiency sweating）。",
+        "虛勞低熱（課件：reduces low-grade fever）。"
+      ],
+      "indications_en": [
+        "Deficiency sweating, spontaneous or night sweats, from Qi/Yin insufficiency (Tai Shan Pan Shi San card: stops deficiency sweating).",
+        "Low-grade fever from deficiency (course card: reduces low-grade fever)."
+      ],
+      "condition_tags_zh": [
+        "虛汗",
+        "自汗",
+        "盜汗",
+        "低熱"
+      ],
+      "condition_tags_en": [
+        "Deficiency sweating",
+        "Spontaneous sweating",
+        "Night sweats",
+        "Low-grade fever"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 5,
+        "max_g": 5,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "課件泰山磐石散列 5g；無獨立專論用量範圍",
+        "source_note": "只有方中用量，沒有單味藥的常用量區間，不代為推估。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件與 THP 皆未提供糯稻根的性味、歸經、禁忌與注意事項；本卡除功效與方中用量外全部留空，待 RV1 補專業來源。"
+      ],
+      "cautions_en": [
+        "Neither the coursework nor the THP supplies nature/flavor, channels, contraindications, or cautions for Nuo Dao Gen; everything except the actions and the in-formula dose is left blank pending RV1."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.taishan_pan_shi_san"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "糯稻根在本庫目前只有一個明確用途：泰山磐石散裡收虛汗、退虛熱。它與浮小麥是同一個思路（穀類來源、斂虛汗、退虛熱），差別在浮小麥有完整專論與 15–30g 的用量區間，糯稻根在現有來源只有方中 5g。要注意的是這張卡的性味歸經是空的——那是因為現有來源真的沒寫，不是漏填；用藥前請自行查專業來源補齊。",
+      "source_citations": [
+        {
+          "name": "📘 課件 泰山磐石散 formula card",
+          "url": "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md",
+          "scope": "第 014 方 §7 組成表：Rx. Oryzae Glutinosae / Nuo Dao Gen / 5g / Stops deficiency sweating and reduces low-grade fever"
+        },
+        {
+          "name": "📘 課件 AD Selected Formulas 彙整",
+          "url": "curriculum/formulas/AD_Selected_Formulas_Name_Herbs_Actions.md",
+          "scope": "同一行組成資料的重複出處"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md",
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（瓜蔞薤白白酒湯、炙甘草湯、膠艾湯 composition 查無）而建。白酒在本庫是「藥引/賦形」而非正典本草單味藥：課件只在方劑組成表列出，全 curriculum 無性味、歸經、劑量區間、禁忌。本卡如實標示其為藥引，不編造單味藥專論。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.bai_jiu",
+      "name_zh": "白酒",
+      "name_en": "White Wine (clear grain spirit used as a formula vehicle)",
+      "pinyin": "Bai Jiu",
+      "pinyin_toned": "Bái Jiǔ",
+      "pharmaceutical_latin": "",
+      "part_used_zh": "酒液（藥引／賦形，非藥材部位）",
+      "part_used_en": "the liquor itself (vehicle/adjuvant, not a plant part)",
+      "category": "溫裡藥 / Warm Interior",
+      "category_zh": "藥引（賦形）",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "米酒"
+      ],
+      "aliases_en": [
+        "Rice Wine"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "酒液",
+        "part_used_en": "the liquor itself",
+        "source_note_zh": "白酒在課件中只以方劑組成/煎服法出現，沒有單味藥的性味歸經段落。category 之所以掛在「溫裡藥」，是為了通過分類正典校驗並反映其溫通行散的用法，不代表課件把它列為正典溫裡藥——真實定位見 category_zh「藥引（賦形）」與本卡說明。"
+      },
+      "functions_zh": [
+        "行氣活血、溫通陽氣",
+        "作藥引，助藥力布散"
+      ],
+      "actions_en": [
+        "Moves Qi and invigorates Blood, warming and unblocking Yang",
+        "Serves as a vehicle that carries and distributes the other herbs"
+      ],
+      "indications_zh": [
+        "瓜蔞薤白白酒湯：胸痺，助薤白通陽散結（課件：Enhances Xie Bai and encourages Yang/Qi circulation）。",
+        "炙甘草湯：煎劑中加酒，助藥力運行（課件：Assists movement/circulation；煎服法記為加米酒）。",
+        "膠艾湯：AD 列酒以增強方劑的活血運行（課件：enhance formula activation/circulation）。"
+      ],
+      "indications_en": [
+        "Gua Lou Xie Bai Bai Jiu Tang for chest Bi, assisting Xie Bai to unblock Yang (course card: enhances Xie Bai and encourages Yang/Qi circulation).",
+        "Zhi Gan Cao Tang, added to the decoction to assist movement (course card: assists movement/circulation; the preparation line specifies rice wine).",
+        "Jiao Ai Tang, where American Dragon lists wine to enhance the formula's activating and circulating effect."
+      ],
+      "condition_tags_zh": [
+        "胸痺",
+        "藥引"
+      ],
+      "condition_tags_en": [
+        "Chest Bi",
+        "Formula vehicle"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "無單味藥常用量；依方而定",
+        "formula_dose_g": "瓜蔞薤白白酒湯 30–1,400ml（課件）；炙甘草湯煎劑加米酒 10ml（課件煎服法）；膠艾湯「3 parts」（課件 AD 表）",
+        "source_note": "全部是方中用量，不是單味藥劑量區間。課件未給白酒的單味藥用量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "白酒是含乙醇的藥引，不是正典本草單味藥；孕婦、肝病、酒精過敏、正在服用會與酒精交互作用之西藥者，其風險課件並未討論，處方前須另查專業來源。",
+        "課件對白酒未列任何禁忌或注意事項；本卡不代為填寫具體風險數字或族群。",
+        "同一味在課件中有 Bai Jiu 與 rice wine 兩種寫法（炙甘草湯煎服法作 rice wine），採購與煎法核對時注意。"
+      ],
+      "cautions_en": [
+        "Bai Jiu is an ethanol-containing vehicle, not a canonical single herb; risks in pregnancy, liver disease, alcohol sensitivity, or with alcohol-interacting medication are not discussed in the coursework and must be checked against a professional source before prescribing.",
+        "The coursework lists no contraindications or cautions for Bai Jiu; this card does not invent specific risk figures or populations.",
+        "The coursework uses both 'Bai Jiu' and 'rice wine' for this vehicle (the Zhi Gan Cao Tang preparation line says rice wine); check when sourcing and decocting."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "alcohol_containing",
+        "not_a_canonical_materia_medica_entry"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.gua_lou_xie_bai_bai_jiu_tang",
+        "formula.zhi_gan_cao_tang",
+        "formula.jiao_ai_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "**這張卡記的是藥引，不是本草專論。** 白酒在課件裡只出現在方劑的組成與煎服法：瓜蔞薤白白酒湯用它助薤白通陽（方名直接帶「白酒」），炙甘草湯與膠艾湯用它助藥力運行。它沒有性味、歸經、單味用量區間，因為現有來源真的沒有給——留空是誠實，不是漏填。臨床上要記得它含乙醇，用藥族群限制（孕婦、肝病、以及與酒精有交互作用的西藥）需另查來源，課件對此一字未提。",
+      "source_citations": [
+        {
+          "name": "📘 課件 瓜蔞薤白白酒湯 formula card",
+          "url": "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+          "scope": "第 108 方 §7：White Wine / Bai Jiu / 30-1,400ml / Enhances Xie Bai and encourages Yang/Qi circulation；課程區塊 Assistant Bai Jiu [White wine] Moves qi, invigorates blood"
+        },
+        {
+          "name": "📘 課件 炙甘草湯 formula card",
+          "url": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "scope": "第 024 方 §7：White Wine / Bai Jiu / not specified / Assists movement/circulation；煎服法作 decoct with 10 ml of rice wine"
+        },
+        {
+          "name": "📘 課件 膠艾湯 formula card",
+          "url": "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
+          "scope": "第 010 方 §7：(White Wine) (Bai Jiu) (3 parts)，AD 列酒以增強方劑活血運行"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（五味消毒飲「溫黃酒」、瓜蔞薤白白酒湯「(黃酒)」composition 查無）而建。黃酒在 curriculum 幾乎沒有獨立條目，只有五味消毒飲的 Jiu 一行與另一味藥條目裡的送服法附註。如實標示為藥引，不編造專論。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.huang_jiu",
+      "name_zh": "黃酒",
+      "name_en": "Yellow Rice Wine (formula vehicle)",
+      "pinyin": "Huang Jiu",
+      "pinyin_toned": "Huáng Jiǔ",
+      "pharmaceutical_latin": "",
+      "part_used_zh": "酒液（藥引／送服賦形）",
+      "part_used_en": "the liquor itself (vehicle for taking the formula)",
+      "category": "溫裡藥 / Warm Interior",
+      "category_zh": "藥引（賦形）",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "溫黃酒"
+      ],
+      "aliases_en": [
+        "Wen Huang Jiu"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "酒液",
+        "part_used_en": "the liquor itself",
+        "source_note_zh": "curriculum 內黃酒只作送服/藥引出現（五味消毒飲組成表的 Jiu，以及另一味藥條目的「with water or Huang Jiu if used in a decoction」）。無性味歸經來源，留空。category 掛「溫裡藥」僅為通過分類正典校驗，真實定位見 category_zh。"
+      },
+      "functions_zh": [
+        "作藥引，助藥力布散與循行"
+      ],
+      "actions_en": [
+        "Serves as a vehicle that promotes circulation and distribution of the formula"
+      ],
+      "indications_zh": [
+        "五味消毒飲：以溫酒送服，助藥力布散（課件：wine as vehicle to promote circulation/distribution）。"
+      ],
+      "indications_en": [
+        "Wu Wei Xiao Du Yin, taken with warm wine to promote circulation and distribution (course card: AD includes wine as vehicle)."
+      ],
+      "condition_tags_zh": [
+        "藥引"
+      ],
+      "condition_tags_en": [
+        "Formula vehicle"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "無單味藥常用量；依方而定",
+        "formula_dose_g": "五味消毒飲 2–3 tbsp（課件 AD 表）",
+        "source_note": "方中送服量，不是單味藥劑量區間。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "黃酒是含乙醇的送服藥引，不是正典本草單味藥；孕婦、肝病、酒精過敏及與酒精交互作用之西藥，課件未討論，須另查專業來源。",
+        "課件對黃酒未列任何禁忌或注意事項；本卡不代為填寫。"
+      ],
+      "cautions_en": [
+        "Huang Jiu is an ethanol-containing vehicle, not a canonical single herb; pregnancy, liver disease, alcohol sensitivity, and alcohol-interacting medication are not discussed in the coursework and must be checked elsewhere.",
+        "The coursework lists no contraindications or cautions for Huang Jiu; this card does not invent any."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "alcohol_containing",
+        "not_a_canonical_materia_medica_entry"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.wu_wei_xiao_du_yin",
+        "formula.gua_lou_xie_bai_bai_jiu_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "**藥引卡，不是本草專論。** 黃酒在課件裡的角色只有一個：送服。五味消毒飲用溫酒送服助藥力布散。要注意資料端的兩個坑：瓜蔞薤白白酒湯的組成把「(黃酒)」的英文標成 (Vinegar)（醋），與黃酒對不上；失笑散的酒/醋那一列則整格寫成「—」。這些是方劑資料的問題，不是本味藥的問題。含乙醇的族群限制課件未提，須另查。",
+      "source_citations": [
+        {
+          "name": "📘 課件 五味消毒飲 formula card",
+          "url": "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
+          "scope": "第 047 方 §7：Wine / Jiu / 2-3 tbsp / AD includes wine as vehicle to promote circulation/distribution"
+        },
+        {
+          "name": "📘 課件 Materia Medica Abbreviated 送服法附註",
+          "url": "curriculum/herbs/Materia Medica Abbbreviated.md",
+          "scope": "「with water or Huang Jiu if used in a decoction」——黃酒作為送服媒介的唯一具名出處"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
+          "curriculum/herbs/Materia Medica Abbbreviated.md"
+        ],
+        "category": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（黃連阿膠湯、大定風珠 composition 查無）而建。雞子黃是食材來源的補陰藥，課件只有方劑組成行與煎服法，無性味歸經與禁忌。如實標示，不編造專論。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.ji_zi_huang",
+      "name_zh": "雞子黃",
+      "name_en": "Chicken Egg Yolk",
+      "pinyin": "Ji Zi Huang",
+      "pinyin_toned": "Jī Zǐ Huáng",
+      "pharmaceutical_latin": "Galli Vitellus Ovi",
+      "part_used_zh": "雞蛋黃（食材來源）",
+      "part_used_en": "hen's egg yolk (food-derived)",
+      "category": "補虛藥 / Tonify Yin",
+      "category_zh": "補陰藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "蛋黃"
+      ],
+      "aliases_en": [
+        "Egg Yolk"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "雞蛋黃",
+        "part_used_en": "hen's egg yolk",
+        "source_note_zh": "課件只在黃連阿膠湯與大定風珠的組成表列出雞子黃（2 yolks），並在煎服法記「stir into strained decoction」。無性味、歸經、禁忌來源，留空。"
+      },
+      "functions_zh": [
+        "滋陰養血",
+        "熄虛風、除煩安神"
+      ],
+      "actions_en": [
+        "Nourishes Yin and Blood",
+        "Extinguishes deficiency Wind and calms irritability"
+      ],
+      "indications_zh": [
+        "大定風珠：陰虛動風，手足瘛瘲（課件：Nourishes Yin/Blood and extinguishes Deficiency Wind）。",
+        "黃連阿膠湯：陰虛火旺、心煩不寐（課件：nourishes Yin/Blood and calms irritability；部分 AD 版本列為選用）。"
+      ],
+      "indications_en": [
+        "Da Ding Feng Zhu for Yin deficiency stirring Wind with trembling of the limbs (course card: nourishes Yin/Blood and extinguishes Deficiency Wind).",
+        "Huang Lian E Jiao Tang for Yin deficiency with blazing Fire, irritability and insomnia (course card: nourishes Yin/Blood and calms irritability; optional in some AD versions)."
+      ],
+      "condition_tags_zh": [
+        "陰虛動風",
+        "心煩不寐",
+        "陰虛火旺"
+      ],
+      "condition_tags_en": [
+        "Yin deficiency stirring Wind",
+        "Irritability and insomnia",
+        "Yin deficiency with blazing Fire"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "課件以「顆」計，非克重：2 枚蛋黃",
+        "formula_dose_g": "大定風珠 2 yolks；黃連阿膠湯 (2 yolks)",
+        "source_note": "課件不用克重計量此味；不代為換算。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "煎服法：藥液濾出後才把蛋黃攪入，不與藥同煎（課件：stir into strained decoction）。",
+        "課件未列雞子黃的禁忌或注意事項；蛋類過敏、生食蛋黃的微生物風險等現代考量課件一字未提，須另查專業來源。"
+      ],
+      "cautions_en": [
+        "Preparation: stir the yolk into the strained decoction rather than decocting it with the herbs (course card: stir into strained decoction).",
+        "The coursework lists no contraindications or cautions; egg allergy and the microbiological risk of raw yolk are not addressed there and must be checked against a professional source."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "food_derived_substance"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.da_ding_feng_zhu",
+        "formula.huang_lian_e_jiao_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "雞子黃是食材來源的血肉有情之品，考點集中在兩個方：大定風珠（滋陰熄虛風）與黃連阿膠湯（滋陰降火除煩）。最容易被考的其實是**煎服法**——蛋黃要等藥液濾出後才攪入，同煎會凝固失效。它的性味歸經在本庫留空，因為課件與 THP 都沒給；用藥前請自行查來源。",
+      "source_citations": [
+        {
+          "name": "📘 課件 大定風珠 formula card",
+          "url": "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "scope": "第 144 方 §7：Chicken Egg Yolks / Ji Zi Huang / 2 yolks / Nourishes Yin/Blood and extinguishes Deficiency Wind"
+        },
+        {
+          "name": "📘 課件 黃連阿膠湯 formula card",
+          "url": "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
+          "scope": "第 049 方 §7：(Egg yolk) (Ji Zi Huang) (2 yolks)，AD 部分版本列為選用"
+        },
+        {
+          "name": "📘 課件 CHM Formulation 2 course package",
+          "url": "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
+          "scope": "煎服法：Ji Zi Huang egg yolk 2 yolks stir into strained decoction"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（川芎茶調散 composition 查無）而建。課件課程區塊給了性味「cold, bitter」，其餘（歸經、禁忌）無來源。方名即帶「茶調」，茶同時是藥味與送服媒介。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.lu_cha",
+      "name_zh": "綠茶",
+      "name_en": "Green Tea",
+      "pinyin": "Lu Cha",
+      "pinyin_toned": "Lǜ Chá",
+      "pharmaceutical_latin": "Camelliae Folium",
+      "part_used_zh": "葉",
+      "part_used_en": "leaf",
+      "category": "清熱藥 / Clear Heat - Drain Fire",
+      "category_zh": "清熱瀉火藥",
+      "properties_taste_temp": "苦，寒",
+      "taste_temperature_zh": "苦，寒",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "茶葉"
+      ],
+      "aliases_en": [
+        "Cha Ye"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Bitter"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "葉",
+        "part_used_en": "leaf",
+        "source_note_zh": "性味取自課件川芎茶調散課程區塊「Green Tea cold, bitter」。歸經課件未給，留空。"
+      },
+      "functions_zh": [
+        "清熱降火",
+        "和胃降逆",
+        "作送服藥引，制諸風藥之升散"
+      ],
+      "actions_en": [
+        "Clears Heat and drains Fire",
+        "Harmonizes the Stomach and directs rebellious Qi downward",
+        "Serves as the traditional vehicle, restraining the upward-dispersing Wind herbs"
+      ],
+      "indications_zh": [
+        "川芎茶調散：以清茶調服，制約方中辛溫升散之風藥，引藥上行而不過亢（課件：tea also serves as the traditional vehicle）。",
+        "胃氣上逆（課件：Harmonizes Stomach, directs rebellious Stomach Qi downward）。",
+        "課件另記其助止瀉（helps diarrhea）。"
+      ],
+      "indications_en": [
+        "Chuan Xiong Cha Tiao San, taken with green tea so the tea restrains the acrid, warm, upward-dispersing Wind herbs (course card: tea also serves as the traditional vehicle).",
+        "Rebellious Stomach Qi (course card: harmonizes Stomach, directs rebellious Stomach Qi downward).",
+        "The coursework also notes it helps diarrhea."
+      ],
+      "condition_tags_zh": [
+        "胃氣上逆",
+        "頭痛",
+        "藥引"
+      ],
+      "condition_tags_en": [
+        "Rebellious Stomach Qi",
+        "Headache",
+        "Formula vehicle"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 2,
+        "max_g": 12,
+        "unit": "g/day",
+        "route": "decoction or infusion as vehicle"
+      },
+      "dosage_g": {
+        "standard_daily_g": "2–12g（課件川芎茶調散 AD 表）",
+        "source_note": "只有方中用量，無單味藥獨立專論區間。課件煎服法：飯後以清茶送服，亦可減量作煎劑。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列綠茶的禁忌與注意事項。本庫 herb.he_tao_ren 的卡片記有 American Dragon「不宜與濃茶同服」的敘述，顯示茶與部分藥material 有配伍顧慮；本卡不代為推廣成通則，待 RV1 以專業來源補齊。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for green tea. The He Tao Ren card in this library records American Dragon's note not to take that herb with strong tea, showing tea has combination concerns with some materials; this card does not generalize that into a rule and leaves the safety layer for RV1."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.chuan_xiong_cha_tiao_san"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "綠茶在川芎茶調散裡不是配角而是方名的一半：「茶調」講的就是用清茶送服。它苦寒下行，作用是**制約**方中一整組辛溫升散的風藥（川芎、羌活、白芷、細辛、荊芥、防風、薄荷），讓藥性上達頭面而不過度升浮。這是「佐制」的典型考點。歸經留空是因為課件只給了性味沒給歸經。",
+      "source_citations": [
+        {
+          "name": "📘 課件 川芎茶調散 formula card",
+          "url": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md",
+          "scope": "第 139 方 §7：Fol. Camelliae / Lu Cha / 2-12g / Harmonizes Stomach, directs rebellious Stomach Qi downward and helps diarrhea; tea also serves as the traditional vehicle；課程區塊 Green Tea cold, bitter；煎服法 taken after meals with green tea"
+        },
+        {
+          "name": "📘 課件 柴胡枳桔湯 加減",
+          "url": "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md",
+          "scope": "加減用藥中列 Lu Cha [Green Tea]，第二處出處"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（桑杏湯 composition 查無）而建。課件只有桑杏湯組成行與君臣佐使區塊，無性味歸經與禁忌。拉丁名課件作 Fr. Pyri（果實），與中文「梨皮」（果皮）不符，已於卡中標出。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.li_pi",
+      "name_zh": "梨皮",
+      "name_en": "Pear Peel",
+      "pinyin": "Li Pi",
+      "pinyin_toned": "Lí Pí",
+      "pharmaceutical_latin": "Pyri Exocarpium（課件記為 Fr. Pyri，見來源差異）",
+      "part_used_zh": "果皮",
+      "part_used_en": "fruit peel",
+      "category": "化痰止咳平喘藥 / Stop Cough and Wheeze",
+      "category_zh": "止咳平喘藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "果皮",
+        "part_used_en": "fruit peel",
+        "source_note_zh": "課件只給功效與用量，未給性味歸經，留空。拉丁名課件寫 Fr. Pyri（果實），但品名是梨皮（果皮），兩者不一致，已在 pharmaceutical_latin 並記。"
+      },
+      "functions_zh": [
+        "潤肺清熱",
+        "生津止渴",
+        "化痰止咳"
+      ],
+      "actions_en": [
+        "Moistens the Lung and clears Heat",
+        "Generates fluids and relieves thirst",
+        "Transforms Phlegm and stops cough"
+      ],
+      "indications_zh": [
+        "外感溫燥、肺燥咳嗽（課件桑杏湯：Moistens Lung, clears Heat and generates fluids）。",
+        "燥熱傷津之口渴咽乾（同上）。",
+        "課件君臣佐使區塊：清熱、潤燥、化痰以止咳（佐藥，3g）。"
+      ],
+      "indications_en": [
+        "Externally contracted warm-dryness with dry Lung cough (Sang Xing Tang card: moistens Lung, clears Heat and generates fluids).",
+        "Thirst and dry throat from dryness-Heat injuring fluids (same source).",
+        "Course hierarchy block: clears Heat, moistens dryness, transforms Phlegm to stop cough (assistant, 3g)."
+      ],
+      "condition_tags_zh": [
+        "溫燥咳嗽",
+        "肺燥",
+        "咽乾口渴"
+      ],
+      "condition_tags_en": [
+        "Warm-dryness cough",
+        "Lung dryness",
+        "Dry throat and thirst"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 1,
+        "max_g": 6,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "1–6g（課件桑杏湯 AD 表）",
+        "formula_dose_g": "桑杏湯君臣佐使區塊列 3g",
+        "source_note": "只有方中用量，無單味藥獨立區間。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列梨皮的禁忌與注意事項；本卡不代為填寫。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Li Pi; this card does not invent any."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.sang_xing_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "梨皮在本庫只出現在桑杏湯，角色是佐藥：溫燥傷肺時清熱潤燥、生津化痰。記憶點是「梨」本身就是潤燥生津的食療代表，入方取其皮。要注意課件把拉丁名寫成 Fr. Pyri（果實）而品名是果皮，這是來源端的不一致，採購時以中文品名為準。性味歸經留空是因為課件真的沒給。",
+      "source_citations": [
+        {
+          "name": "📘 課件 桑杏湯 formula card",
+          "url": "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md",
+          "scope": "第 154 方 §7：Fr. Pyri / Li Pi / 1-6g / Moistens Lung, clears Heat and generates fluids；君臣佐使區塊 Assistant Li Pi 3 Clears heat, moistens dryness, transforms phlegm to stop cough"
+        },
+        {
+          "name": "📘 課件 CHM Formulation 2 course package",
+          "url": "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
+          "scope": "Li Pi 3g，方中用量的第二處出處"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（十灰散「棕櫚皮」、固沖湯「棕櫚炭」composition 查無）而建。課件只有方劑組成行，無性味歸經與禁忌；THP 無棕櫚條。棕櫚炭為本味炒炭品，以 herb_id 連結不另建卡。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.zong_lu_pi",
+      "name_zh": "棕櫚皮",
+      "name_en": "Windmill Palm Petiole",
+      "pinyin": "Zong Lu Pi",
+      "pinyin_toned": "Zōng Lǘ Pí",
+      "pharmaceutical_latin": "Trachycarpi Petiolus",
+      "part_used_zh": "葉柄（多炒炭用）",
+      "part_used_en": "leaf-stalk (usually charred)",
+      "category": "止血藥 / Stop Bleeding",
+      "category_zh": "收斂止血藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "棕櫚炭",
+        "棕板"
+      ],
+      "aliases_en": [
+        "Zong Lu Tan",
+        "Zong Ban"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "葉柄（多炒炭用）",
+        "part_used_en": "leaf-stalk (usually charred)",
+        "source_note_zh": "課件只在十灰散與固沖湯的組成表列出，無性味歸經；THP 4th ed. 查無棕櫚條。留空不推補。"
+      },
+      "functions_zh": [
+        "收斂止血"
+      ],
+      "actions_en": [
+        "Astringes and stops bleeding"
+      ],
+      "indications_zh": [
+        "各種出血證，尤宜炒炭用（課件十灰散：Astringes and stops bleeding, especially when charred）。",
+        "固沖湯以棕櫚炭止崩漏（課件方劑學彙總組成表，6g）。"
+      ],
+      "indications_en": [
+        "Bleeding patterns generally, especially when charred (Shi Hui San card: astringes and stops bleeding, especially when charred).",
+        "Gu Chong Tang uses the charred form for flooding and leaking (方剂学汇总 ingredient table, 6g)."
+      ],
+      "condition_tags_zh": [
+        "出血",
+        "崩漏",
+        "便血"
+      ],
+      "condition_tags_en": [
+        "Bleeding",
+        "Flooding and leaking",
+        "Bloody stool"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 6,
+        "max_g": 10,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "6–10g（課件十灰散 AD 表）",
+        "formula_dose_g": "十灰散 9g（課程區塊）；固沖湯棕櫚炭 6g",
+        "source_note": "只有方中用量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列棕櫚皮的禁忌與注意事項；收斂止血藥用於瘀血未盡之出血時的顧慮，課件於本味未著墨，待 RV1 補來源。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Zong Lu Pi; the usual concern about astringent hemostatics when Blood stasis has not resolved is not stated for this substance in the sources read, and is left for RV1."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.shi_hui_san",
+        "formula.gu_chong_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "棕櫚皮是純粹的收斂止血藥，功效只有一條，且**幾乎一律炒炭用**——十灰散（方名的「灰」就是炭）與固沖湯用的都是炭品。庫中「棕櫚炭」以炮製變體連回本卡，顯示名保留。性味歸經留空是因為課件與 THP 都查無，不是漏填。",
+      "source_citations": [
+        {
+          "name": "📘 課件 十灰散 formula card",
+          "url": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "scope": "第 095 方 §7：Trachycarpi Petiolus / Zong Lu Pi / 6-10g / Astringes and stops bleeding, especially when charred；課程區塊 Zong Lu Pi 9 Astringes to stop bleeding"
+        },
+        {
+          "name": "📘 課件 方劑學彙總 固沖湯組成表",
+          "url": "curriculum/herbs/方剂学汇总_extracted.md",
+          "scope": "固沖湯組成：Zong Lu Tan 6（棕櫚炭形態的出處）"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（大補陰丸 composition 查無）而建。動物來源的血肉有情之品，課件只有組成行與製法。課件把拼音記為「Zhu Ji Shui」，正確無聲調拼音應為 Zhu Ji Sui（髓 suǐ），兩者並記。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.zhu_ji_sui",
+      "name_zh": "豬脊髓",
+      "name_en": "Pig Spinal Cord",
+      "pinyin": "Zhu Ji Sui",
+      "pinyin_toned": "Zhū Jǐ Suǐ",
+      "pharmaceutical_latin": "Sus Medulla Spinalis",
+      "part_used_zh": "豬脊椎骨髓（動物來源）",
+      "part_used_en": "pig vertebral marrow / spinal cord (animal-derived)",
+      "category": "補虛藥 / Tonify Yin",
+      "category_zh": "補陰藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [
+        "督脈",
+        "腎經"
+      ],
+      "channels_en": [
+        "DU Governing Vessel",
+        "KD Kidney"
+      ],
+      "channels_entered": [
+        "督脈",
+        "腎經"
+      ],
+      "aliases_zh": [
+        "豬脊骨髓"
+      ],
+      "aliases_en": [
+        "Pig Marrow"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [
+          "督脈",
+          "腎經"
+        ],
+        "meridian_tropism_en": [
+          "DU Governing Vessel",
+          "KD Kidney"
+        ],
+        "part_used_zh": "豬脊椎骨髓",
+        "part_used_en": "pig vertebral marrow",
+        "source_note_zh": "歸經取自課件大補陰丸 Bastyr/Chenoweth 區塊「Marrow DU, KD」。性味課件未給，留空。課件拼音作 Zhu Ji Shui，本卡主拼音採正確的 Zhu Ji Sui 並把課件寫法保留在 aliases_en。"
+      },
+      "functions_zh": [
+        "填精補髓",
+        "滋陰降火"
+      ],
+      "actions_en": [
+        "Replenishes Jing and fills the marrow",
+        "Enriches Yin and directs Fire downward"
+      ],
+      "indications_zh": [
+        "陰虛火旺、骨蒸潮熱（大補陰丸主治，本味為方中血肉有情之品）。",
+        "精髓不足（課件：strengthening bones/marrow；Bastyr 區塊 Tonifies essence/marrow，並註明 Marrow is between essence & yin）。",
+        "課件另記其涼血（AD lists as cooling Blood）。"
+      ],
+      "indications_en": [
+        "Yin deficiency with blazing Fire and steaming-bone tidal fever (the pattern Da Bu Yin Wan treats; this substance is the animal-derived component).",
+        "Insufficiency of Jing and marrow (course card: strengthening bones/marrow; Bastyr block: tonifies essence/marrow, noting marrow sits between essence and Yin).",
+        "The course card also records American Dragon listing it as cooling the Blood."
+      ],
+      "condition_tags_zh": [
+        "陰虛火旺",
+        "骨蒸潮熱",
+        "精髓不足"
+      ],
+      "condition_tags_en": [
+        "Yin deficiency with blazing Fire",
+        "Steaming-bone tidal fever",
+        "Jing and marrow insufficiency"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 25,
+        "max_g": 50,
+        "unit": "g/day",
+        "route": "cooked with the powdered herbs into pills"
+      },
+      "dosage_g": {
+        "standard_daily_g": "25–50g（課件大補陰丸 AD 表）",
+        "source_note": "製法：藥研末，與豬脊髓同煮，加蜜為丸，每服 6–9g，淡鹽水送下，一日二次（課件）。25–50g 指入丸的原料量，不是每次服用量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "動物來源藥材；課件自己標註為「historical animal-derived source data」，現代處方是否使用、以何替代，課件未交代。",
+        "課件未列本味的禁忌與注意事項；動物組織的來源安全、宗教與素食限制、傳染病風險等現代考量課件一字未提，須另查專業來源。"
+      ],
+      "cautions_en": [
+        "Animal-derived material; the course card itself labels it 'historical animal-derived source data' and does not say whether modern practice still uses it or what substitutes for it.",
+        "The coursework lists no contraindications or cautions; sourcing safety, religious and vegetarian restrictions, and transmissible-disease considerations are not addressed there and must be checked against a professional source."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "animal_derived_substance",
+        "historical_ingredient"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.da_bu_yin_wan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "豬脊髓是大補陰丸裡的血肉有情之品，思路是「以髓填髓」：陰虛火旺、骨蒸潮熱時，熟地黃與龜板滋陰，黃柏知母降火，豬脊髓填精補髓。歸經記督脈與腎，正對「髓」的歸屬。課件自己把它標為歷史性的動物來源資料，現代是否照用並未交代——這一點在臨床與考試敘述上要分開。命名注意：課件拼音寫成 Zhu Ji Shui，正字是 Zhu Ji Sui（髓）。",
+      "source_citations": [
+        {
+          "name": "📘 課件 大補陰丸 formula card",
+          "url": "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md",
+          "scope": "第 175 方 §7：Pig Spinal Cord / Zhu Ji Shui / 25-50g / AD lists as strengthening bones/marrow and cooling Blood; historical animal-derived source data；composition anchor 與製法（cook with pigs' vertebrae marrow, add honey to form into pills, 6-9g doses with salted water, bid）"
+        },
+        {
+          "name": "📘 課件 方劑學彙總 大補陰丸",
+          "url": "curriculum/herbs/方剂学汇总_extracted.md",
+          "scope": "Bastyr/Chenoweth 區塊：Marrow DU, KD Tonifies essence/marrow; [Marrow is between essence & yin]；製法重複出處"
+        },
+        {
+          "name": "📘 課件 Formulations Summary Chart",
+          "url": "curriculum/Formulations Summary Chart.docx.md",
+          "scope": "Marrow ... Tonify Essence"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md"
+        ],
+        "category": [
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（甘麥大棗湯 composition 查無）而建。甘麥大棗湯的兩份課件來源互相衝突：AD 表列 Xiao Mai（9-60g），Bastyr/Chenoweth 區塊列 Fu Xiao Mai 為君（9-15g）。依憲法「兩源不合就並記」，本卡建立小麥並在卡中標出衝突，不擅自二選一，也不與既有 herb.fu_xiao_mai 合併。待 RV1 裁決。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.xiao_mai",
+      "name_zh": "小麥",
+      "name_en": "Wheat",
+      "pinyin": "Xiao Mai",
+      "pinyin_toned": "Xiǎo Mài",
+      "pharmaceutical_latin": "Tritici Fructus（課件 AD 表誤記為 Fr. Tritici Levis，見來源差異）",
+      "part_used_zh": "成熟穎果",
+      "part_used_en": "mature grain",
+      "category": "補虛藥 / Tonify Qi",
+      "category_zh": "補氣藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [
+        "心經"
+      ],
+      "channels_en": [
+        "HT Heart"
+      ],
+      "channels_entered": [
+        "心經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [
+          "心經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart"
+        ],
+        "part_used_zh": "成熟穎果",
+        "part_used_en": "mature grain",
+        "source_note_zh": "課件無小麥的獨立專論，性味留空。歸經取心經：課件甘麥大棗湯 AD 表記其養心氣、除煩，Bastyr 區塊的對應藥（浮小麥）歸經亦為心。浮小麥另有完整專論（涼、甘，心經，15–30g），但那是浮小麥不是小麥，未搬入本卡。"
+      },
+      "functions_zh": [
+        "養心安神、除煩"
+      ],
+      "actions_en": [
+        "Nourishes Heart Qi, calms the Spirit and relieves irritability"
+      ],
+      "indications_zh": [
+        "臟躁：精神恍惚、悲傷欲哭、煩躁不寧、失眠（課件甘麥大棗湯 AD 表：Nourishes Heart Qi and reduces irritability/restlessness/insomnia；AD 記其與甘草、大棗同用治情緒不穩）。"
+      ],
+      "indications_en": [
+        "Zang Zao (visceral agitation) with disorientation, weeping without cause, restlessness and insomnia (Gan Mai Da Zao Tang card: nourishes Heart Qi and reduces irritability/restlessness/insomnia, combined with Gan Cao and Da Zao for emotional instability)."
+      ],
+      "condition_tags_zh": [
+        "臟躁",
+        "心神不寧",
+        "失眠",
+        "情緒不穩"
+      ],
+      "condition_tags_en": [
+        "Zang Zao visceral agitation",
+        "Restless Spirit",
+        "Insomnia",
+        "Emotional instability"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 9,
+        "max_g": 60,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "9–60g（課件甘麥大棗湯 AD 表）",
+        "variant_dose_g": "浮小麥 9–15g（同卡 Bastyr/Chenoweth 區塊，該區塊把君藥記為浮小麥）；浮小麥獨立專論為 15–30g",
+        "source_note": "兩源用量與品名皆不一致，並記不二選一。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "**來源衝突（未裁決）**：甘麥大棗湯同一張課件卡內，AD 表列君藥為小麥（Xiao Mai, 9-60g），Bastyr/Chenoweth 區塊列為浮小麥（Fu Xiao Mai, 9-15g，註 Floating, disabled wheat, more astringent properties）；AD 表另把浮小麥列為小麥的替代藥。兩者是不同藥材，處方前須確認採用哪一版。",
+        "課件 AD 表把小麥的拉丁名寫成 Fr. Tritici Levis（那是浮小麥的拉丁名），疑為資料缺陷。",
+        "課件未列小麥的禁忌與注意事項；浮小麥專論的「外邪或實熱汗出者不用」屬浮小麥，未搬入本卡。"
+      ],
+      "cautions_en": [
+        "**Unresolved source conflict**: within the same Gan Mai Da Zao Tang course card, the AD table gives the chief as Xiao Mai (9-60g) while the Bastyr/Chenoweth block gives Fu Xiao Mai (9-15g, noted as floating, disabled wheat with more astringent properties); the AD table separately lists Fu Xiao Mai as a substitute for Xiao Mai. These are different materials and the version in use must be confirmed before prescribing.",
+        "The AD table records the Latin for Xiao Mai as Fr. Tritici Levis, which is the Latin for Fu Xiao Mai — a likely data defect.",
+        "The coursework lists no contraindications for Xiao Mai; the Fu Xiao Mai monograph's caution (avoid when sweating comes from an exterior pathogen or excess Heat) belongs to Fu Xiao Mai and has not been copied here."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "source_conflict_unresolved"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.gan_mai_da_zao_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "小麥與浮小麥是本庫最容易搞混的一組：**浮小麥**有完整專論（涼、甘、歸心，15–30g，斂虛汗、退虛熱、除煩），主打「虛汗」；**小麥**在現有來源沒有獨立專論，只出現在甘麥大棗湯，主打「臟躁」的養心安神。麻煩的是甘麥大棗湯同一張課件卡的兩個區塊對君藥是小麥還是浮小麥講法不同，而且 AD 把小麥的拉丁名寫成浮小麥的拉丁名。本卡把衝突照實記下，等 Ting/RV1 裁決，沒有替兩邊選一邊。",
+      "source_citations": [
+        {
+          "name": "📘 課件 甘麥大棗湯 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 165 方 §7：AD 表 Fr. Tritici Levis / Xiao Mai / 9-60g / Nourishes Heart Qi and reduces irritability/restlessness/insomnia，及 (Sm. Tritici Levis) (Fu Xiao Mai) (9-60g) 替代藥；Bastyr/Chenoweth 區塊 Chief Fu Xiao Mai 9-15 Sweet, salty, cool; HT"
+        },
+        {
+          "name": "📘 課件 浮小麥專論（對照用，未搬入本卡）",
+          "url": "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md",
+          "scope": "Fu Xiao Mai：Cool, Sweet / Heart / 斂汗退虛熱 / 15–30 g；並附註 Some teaching traditions list Xiao Mai higher, 30–60 g, when used food-therapy style"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "channels_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（竹葉石膏湯 composition 的「(Zhu Ye)」查無）而建。課件 M.M.1 herb list 與 Chenoweth 功效索引把竹葉與淡竹葉列為兩條，但竹葉本身沒有專論、拼音拉丁對照表也沒有它。竹葉石膏湯的組成資料實際採用的是淡竹葉（君），(Zhu Ye) 只列為替代。故本卡只記來源真的支持的內容，不把淡竹葉的專論搬過來。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.zhu_ye",
+      "name_zh": "竹葉",
+      "name_en": "Bamboo Leaf",
+      "pinyin": "Zhu Ye",
+      "pinyin_toned": "Zhú Yè",
+      "pharmaceutical_latin": "Bambusae Folium",
+      "part_used_zh": "葉",
+      "part_used_en": "leaf",
+      "category": "清熱藥 / Clear Heat - Drain Fire",
+      "category_zh": "清熱瀉火藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [
+        "心經",
+        "小腸經"
+      ],
+      "channels_en": [
+        "HT Heart",
+        "SI Small Intestine"
+      ],
+      "channels_entered": [
+        "心經",
+        "小腸經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [
+          "心經",
+          "小腸經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "SI Small Intestine"
+        ],
+        "part_used_zh": "葉",
+        "part_used_en": "leaf",
+        "source_note_zh": "歸經取自 Chenoweth 功效索引「Zhu Ye [3] (HT & SI)」。性味課件對竹葉本身未給（給的是淡竹葉的甘淡寒），故留空，不把淡竹葉的性味搬過來。"
+      },
+      "functions_zh": [
+        "清心除煩",
+        "清熱生津"
+      ],
+      "actions_en": [
+        "Clears Heart Heat and relieves irritability",
+        "Clears Heat and generates fluids"
+      ],
+      "indications_zh": [
+        "熱病後餘熱未清、心煩（竹葉石膏湯證；課件該方組成表把 (Fol. Bambusae) (Zhu Ye) 列為淡竹葉的替代藥，功效同記為清餘熱、除煩、生津）。"
+      ],
+      "indications_en": [
+        "Lingering Heat after a febrile illness with irritability (the Zhu Ye Shi Gao Tang pattern; the course card lists (Fol. Bambusae) (Zhu Ye) as a substitute for Dan Zhu Ye with the same action of clearing lingering Heat, relieving irritability and generating fluids)."
+      ],
+      "condition_tags_zh": [
+        "餘熱未清",
+        "心煩",
+        "熱病後期"
+      ],
+      "condition_tags_en": [
+        "Lingering Heat",
+        "Irritability",
+        "Late stage of febrile disease"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 2,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "2–15g（課件竹葉石膏湯組成表，作淡竹葉的替代）",
+        "source_note": "無竹葉的獨立專論用量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "**與淡竹葉是兩味藥，不可互相取代地填資料**：課件 M.M.1 herb list 與 Chenoweth 功效索引把 Zhu Ye 與 Dan Zhu Ye 分列兩條；竹葉石膏湯的組成資料實際採用淡竹葉（Hb. Lophatheri，君藥），(Zhu Ye)（Fol. Bambusae）僅列為可替代。",
+        "課件無竹葉的專論，性味與禁忌均無來源；本卡不代為填寫。"
+      ],
+      "cautions_en": [
+        "**Zhu Ye and Dan Zhu Ye are two different herbs and their data must not be swapped**: the M.M.1 herb list and the Chenoweth function index list them separately; the Zhu Ye Shi Gao Tang composition actually uses Dan Zhu Ye (Hb. Lophatheri) as chief, with (Zhu Ye) (Fol. Bambusae) listed only as a possible substitute.",
+        "The coursework has no monograph for Zhu Ye; neither nature/flavor nor contraindications have a source, and this card does not invent them."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "easily_confused_with_dan_zhu_ye"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zhu_ye_shi_gao_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "",
+      "clinical_use_note": "**方名叫竹葉石膏湯，但課件的組成資料用的是淡竹葉。** 這是本方最容易失分的地方：Hb. Lophatheri（淡竹葉）是君藥，Fol. Bambusae（竹葉）只列為替代。兩者同走心與小腸、都清心除煩，差別在淡竹葉兼利尿導熱下行（課件記其「best part: 竹葉心」），竹葉偏清上焦熱。本卡的性味留空，是因為課件只給了淡竹葉的甘淡寒，沒有給竹葉本身的——把淡竹葉的性味填進來就會製造一個看起來完整、其實無來源的假資料。",
+      "source_citations": [
+        {
+          "name": "📘 課件 竹葉石膏湯 formula card",
+          "url": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "scope": "第 028 方 §7：Hb. Lophatheri / Dan Zhu Ye（君，2-15g）與 (Fol. Bambusae) / (Zhu Ye)（2-15g，May substitute for Dan Zhu Ye）；composition anchor 兩者並列"
+        },
+        {
+          "name": "📘 課件 M.M.1 中药 1 Herb List",
+          "url": "curriculum/herbs/M.M.1  中药 1  Herb List -NEW.md",
+          "scope": "清熱瀉火藥項下 Zhu Ye 與 Dan Zhu Ye 分列兩條，證明課件視為兩味藥"
+        },
+        {
+          "name": "📘 課件 Chenoweth 功效索引",
+          "url": "curriculum/herbs/herb_functions_chenoweth.md",
+          "scope": "Zhu Ye [3] (HT & SI) 與 Dan Zhu Ye [3] (HT & SI) 分列；本卡歸經取此處"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/M.M.1  中药 1  Herb List -NEW.md",
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "category": [
+          "curriculum/herbs/M.M.1  中药 1  Herb List -NEW.md"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/herb_functions_chenoweth.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "curriculum/herbs/M.M.1  中药 1  Herb List -NEW.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "curriculum/herbs/herb_functions_chenoweth.md"
+        ]
+      },
+      "card_grade": "partial"
     }
   ],
   "batch_summary": {
