@@ -190,6 +190,37 @@ gyn_fertility · pain_msk · gi · psych_sleep · respiratory · neuro
 derm · endo_metabolic · cardio · uro_renal · ent_eye · immune_misc
 ```
 
+### 3.5.5 `import_artifacts`(匯入痕跡封存 — move-not-delete,2026-08-11 新增)
+
+C10 揭露的問題:CloudTCM 匯入時,同一篇部落格敘事被整段貼到多張卡的
+`etiology_*` / `western_pathology_*` 上(例:月經稀少/閉經的長文同時坐在
+PCOS、子宮內膜偏薄卡上)。這種文字**不是該卡的內容,但也不能直接刪**
+(憲法紅線 3:先搬再改)。`import_artifacts` 就是搬完之後的封存位置。
+
+```
+import_artifacts: [
+  {
+    field:       原本被占用的欄位名(etiology_zh / western_pathology_zh …)
+    archived_at: 封存日期(YYYY-MM-DD)
+    reason:      為什麼判定誤置(一句話,要講清楚正文講的是哪個病)
+    belongs_to:  正文所屬的卡 id;純樣板句(紅線 6)填 null
+    source_url:  匯入來源 URL(如 cloudtcm 頁面),沒有就省略
+    text:        被搬走的原文,一字不動
+  }
+]
+```
+
+**規則:**
+
+1. **先確認正文在家卡上存在,才能在誤置卡上封存。** 家卡沒有 = 先把原文
+   補到家卡(它自己的欄位或它的 `import_artifacts`),順序不能反。
+2. 封存後,原欄位**必須**換上這張卡自己的、有來源的內容 —— 封存不是清空的
+   藉口,空欄位照樣是 C5/缺陷。
+3. `import_artifacts` 與 `tcm_patterns` 同級:**純 provenance,永不渲染、
+   永不導覽、永不翻譯**。驗證器把它列入 approved(不觸發 C8),但 C5/C9/C10
+   一律不看它的內部。
+4. 封存記錄**永不刪除**(D6 同樣適用於痕跡)。
+
 ### 3.6 原始匯入(保留,但永不用於導覽)
 
 `tcm_patterns` —— 728 個內嵌 blob(`{pattern_zh, formula_zh, symptoms_zh}`),
