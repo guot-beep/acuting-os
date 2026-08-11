@@ -21283,8 +21283,8 @@
     },
     {
       "id": "cond.hashimoto",
-      "name_en": "Hashimoto Thyroiditis (context)",
-      "name_zh": "橋本氏甲狀腺炎（文件情境）",
+      "name_en": "Hashimoto Thyroiditis",
+      "name_zh": "橋本氏甲狀腺炎",
       "category": "endo_metabolic",
       "icd_hint": "E06.3",
       "related_eastern_diseases": [
@@ -21297,8 +21297,8 @@
         "pattern.phlegm_damp"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "橋本氏甲狀腺炎並非所有甲狀腺功能低下的同義詞，其他造成甲狀腺激素缺乏的病因仍屬於獨立的生醫實體。自體免疫易感性、家族病史與環境因子皆可能參與致病；甲狀腺標的抗體與免疫細胞浸潤會隨時間損害甲狀腺組織。",
+      "western_pathology_zh": "慢性免疫媒介性甲狀腺損傷會降低甲狀腺激素的生成能力。病程較早期可能出現甲狀腺腫大，長期病程後則可能出現腺體萎縮。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21330,7 +21330,192 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "自體免疫性甲狀腺炎",
+        "慢性淋巴球性甲狀腺炎"
+      ],
+      "aliases_en": [
+        "Hashimoto Disease",
+        "Chronic Lymphocytic Thyroiditis"
+      ],
+      "summary_zh": "橋本氏病是一種自體免疫性甲狀腺炎，常導致甲狀腺組織進行性受損並演變為甲狀腺功能低下。疾病早期可能沒有症狀，部分患者甚至會出現短暫的甲狀腺功能亢進期。",
+      "summary_en": "Hashimoto disease is autoimmune thyroiditis that commonly causes progressive thyroid damage and hypothyroidism. Early disease may be asymptomatic and some patients can have a transient hyperthyroid phase.",
+      "etiology_en": "Hashimoto thyroiditis is not synonymous with all hypothyroidism. Other causes of thyroid hormone deficiency remain separate biomedical identities. Autoimmune susceptibility, family history and environmental factors contribute; thyroid-directed antibodies and immune-cell infiltration damage thyroid tissue over time.",
+      "western_pathology_en": "Chronic immune-mediated thyroid injury reduces hormone-producing capacity. Thyroid enlargement can occur earlier in the course, while gland atrophy can occur after prolonged disease.",
+      "western_context_zh": "臨床表現：症狀多反映甲狀腺功能低下，可能包含疲勞、體重增加、怕冷、便秘、皮膚／毛髮乾燥、肌肉或關節症狀、月經／生育力改變與心跳減慢。部分患者初期並無症狀。\n\n重要特徵：屬於自體免疫性甲狀腺炎；可能演變為甲狀腺功能低下；甲狀腺過氧化酶抗體（TPO抗體）常支持自體免疫病因；橋本氏病不等於所有甲狀腺功能低下狀態；甲狀腺結構會隨病程改變。\n\n診斷方法：診斷依據病史／理學檢查，配合甲狀腺血液檢查（包含TSH與T4）及甲狀腺過氧化酶抗體。當抗體為陰性或仍有結構性問題待釐清時，可加做超音波。\n\n鑑別診斷：非自體免疫性甲狀腺功能低下、產後／亞急性甲狀腺炎、藥物或碘相關作用、腦垂體疾病，以及其他造成疲勞、便秘與體重改變的非甲狀腺病因。\n\n西醫治療：已發展為甲狀腺功能低下的患者通常以levothyroxine補充治療並以甲狀腺檢查追蹤；尚未出現低下症狀的患者可能僅需觀察，不必然立即用藥。\n\n編碼備註：橋本氏甲狀腺炎與甲狀腺功能低下屬於不同編碼實體，不應自動以低下症編碼取代橋本氏病編碼，反之亦然；實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM。",
+      "western_context_en": "Clinical presentation: Symptoms often reflect hypothyroidism and may include fatigue, weight gain, cold intolerance, constipation, dry skin/hair, muscle or joint symptoms, menstrual/fertility changes and slowed heart rate. Some patients are initially asymptomatic.\n\nKey features: autoimmune thyroiditis; can progress to hypothyroidism; TPO antibodies commonly support the autoimmune etiology; Hashimoto disease is not the same as every hypothyroid state; thyroid structure can change over time.\n\nDiagnostic approach: Diagnosis uses history/exam and thyroid blood tests including TSH and T4 plus thyroid peroxidase antibodies. Ultrasound may help when antibodies are negative or structural thyroid questions remain.\n\nDifferential diagnosis: non-autoimmune hypothyroidism, postpartum/subacute thyroiditis, medication or iodine effects, pituitary disease, and non-thyroid causes of fatigue, constipation and weight change.\n\nWestern treatment: Patients who develop hypothyroidism are commonly treated with levothyroxine and monitored with thyroid testing. Patients without hypothyroidism may be monitored rather than automatically treated.\n\nCoding note: Hashimoto thyroiditis and hypothyroidism are different coding identities; do not automatically use a hypothyroidism code as the Hashimoto identity or vice versa — verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "factor": "自體免疫疾病家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "factor": "本身已有其他自體免疫疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hashimoto's Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "factor": "Family history of autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "factor": "Existing other autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hashimoto's Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "意識改變併嚴重未治療之甲狀腺功能低下失代償",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能代表黏液水腫昏迷等致命併發症",
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "finding": "低體溫",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為嚴重甲狀腺功能低下失代償的徵象",
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "finding": "嚴重心搏過緩",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能導致心肺功能不穩定",
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "finding": "心肺功能不穩定徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "代表器官灌流或氣體交換受到嚴重影響",
+          "source": "NIDDK - Hashimoto's Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Altered mental status with severe untreated hypothyroid decompensation",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May indicate myxedema coma or other life-threatening complications",
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "finding": "Hypothermia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A sign of severe hypothyroid decompensation",
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "finding": "Severe bradycardia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Can cause cardiopulmonary instability",
+          "source": "NIDDK - Hashimoto's Disease"
+        },
+        {
+          "finding": "Cardiorespiratory instability",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Indicates severely impaired perfusion or gas exchange",
+          "source": "NIDDK - Hashimoto's Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為疲勞、關節或情緒等症狀的輔助照護，不可取代甲狀腺素補充治療",
+        "precautions": "須注意藥物服用時間與吸收交互作用（例如空腹服藥）、懷孕狀態，以及甲狀腺檢查追蹤情形；症狀突然改變應重新評估生醫狀況",
+        "co_management": "若病人甲狀腺檢查數值或症狀出現變化，應聯絡其內分泌科或主治醫師確認評估與用藥調整進度，執業者不得建議病人自行調整或停用甲狀腺素",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine（依據NIDDK臨床資料整理）",
+        "note": "此欄為執業範圍謹慎建議，尚未查到專屬於橋本氏甲狀腺炎的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Can be adjunctive for symptoms but must not replace thyroid hormone when indicated",
+        "precautions": "Medication timing/absorption interactions (e.g., fasting dosing), pregnancy status, and thyroid lab follow-up are clinically important; abrupt symptom change warrants biomedical reassessment",
+        "co_management": "If the patient's thyroid labs or symptoms change, contact their endocrinologist or physician to confirm evaluation and medication-adjustment status; practitioners must not advise the patient to independently adjust or stop thyroid hormone",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)",
+        "note": "This is a scope-of-practice caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for Hashimoto thyroiditis was located"
+      },
+      "sign_symptom_ids": [
+        "sym.fatigue",
+        "sym.constipation"
+      ],
+      "sources": [
+        "NCBAHM 2026 Appendix A (Board scope anchor)",
+        "NIDDK - Hashimoto's Disease: https://www.niddk.nih.gov/health-information/endocrine-diseases/hashimotos-disease",
+        "NIDDK - Hypothyroidism: https://www.niddk.nih.gov/health-information/endocrine-diseases/hypothyroidism"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "summary_en": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "etiology_zh": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "etiology_en": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "western_pathology_zh": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "western_pathology_en": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "western_context_zh": [
+          "NIDDK - Hashimoto's Disease",
+          "NIDDK - Hypothyroidism"
+        ],
+        "western_context_en": [
+          "NIDDK - Hashimoto's Disease",
+          "NIDDK - Hypothyroidism"
+        ],
+        "risk_factors_zh": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "risk_factors_en": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "red_flags_zh": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "red_flags_en": [
+          "NIDDK - Hashimoto's Disease"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine（依據NIDDK臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)"
+        ]
+      }
     },
     {
       "id": "cond.obesity",
@@ -28056,6 +28241,426 @@
         "nih_nhlbi_overview",
         "ncbahm_biomedicine_appendix_a",
         "research_pack_batch_b_cardio_autonomic"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.addison_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "愛迪生氏病／原發性腎上腺功能不全",
+      "name_en": "Addison Disease / Primary Adrenal Insufficiency",
+      "category": "endo_metabolic",
+      "icd_hint": "E27",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "原發性腎上腺皮質功能不全"
+      ],
+      "aliases_en": [
+        "Primary Adrenal Insufficiency"
+      ],
+      "summary_zh": "愛迪生氏病是原發性腎上腺功能不全，由腎上腺衰竭所導致，造成皮質醇分泌不足，且通常同時有醛固酮分泌不足。",
+      "summary_en": "Addison disease is primary adrenal insufficiency caused by failure of the adrenal glands, resulting in inadequate cortisol production and often inadequate aldosterone production.",
+      "etiology_zh": "自體免疫性腎上腺破壞是主要病因之一。感染、出血、浸潤性疾病及其他造成腎上腺損傷的原因也可能導致原發性腎上腺功能不全。愛迪生氏病應與續發性／第三型腎上腺功能不全（包括長期使用外源性皮質類固醇後戒斷所致的抑制）區分清楚。",
+      "etiology_en": "Autoimmune adrenal destruction is a major cause. Infection, hemorrhage, infiltrative disease and other forms of adrenal injury can also cause primary adrenal insufficiency. Addison disease should be distinguished from secondary/tertiary adrenal insufficiency, including suppression caused by prolonged exogenous corticosteroid exposure and withdrawal.",
+      "western_pathology_zh": "皮質醇缺乏會損害生理性壓力反應、血糖調節與血管恆定。原發性腎上腺衰竭時，醛固酮缺乏可能造成鈉流失、容積耗竭與鉀離子升高。",
+      "western_pathology_en": "Cortisol deficiency impairs the physiologic stress response, glucose regulation and vascular homeostasis. In primary adrenal failure, aldosterone deficiency can contribute to sodium loss, volume depletion and potassium elevation.",
+      "western_context_zh": "臨床表現：症狀可能逐漸出現，包含疲勞、肌肉無力、食慾下降、體重減輕與腹痛。原發性腎上腺功能不全也可能出現皮膚色素沉著與嗜鹽現象。急性失代償可能表現為「腎上腺危象」。\n\n重要特徵：屬於原發性腎上腺衰竭；皮質醇缺乏；常合併醛固酮缺乏；皮膚色素沉著有助區分原發性與中樞性疾病；壓力／疾病可誘發危象。\n\n診斷方法：血液檢查用以確認腎上腺功能不全並協助區分類型。NIDDK指出ACTH刺激試驗是最常用的診斷檢查。抗體檢測、腎上腺電腦斷層或腦垂體核磁共振可用於釐清病因。\n\n鑑別診斷：續發性／第三型腎上腺功能不全、糖皮質類固醇戒斷、敗血症、脫水、急性腸胃疾病、低血糖，以及其他造成低血壓／電解質異常的病因。\n\n西醫治療：治療以補充缺乏的荷爾蒙為主，通常包含糖皮質類固醇，若醛固酮缺乏則加上礦物皮質類固醇。重大疾病／手術時需要「壓力劑量」調整。腎上腺危象須立即給予腸胃道外皮質類固醇，並補充輸液與葡萄糖／電解質支持。\n\n編碼備註：確切編碼依愛迪生氏病與其他腎上腺功能不全之區分，以及是否合併危象而定，實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM。",
+      "western_context_en": "Clinical presentation: Symptoms may develop gradually and include fatigue, muscle weakness, reduced appetite, weight loss and abdominal pain. Primary adrenal insufficiency can also cause hyperpigmentation and salt craving. Acute decompensation can present as adrenal crisis.\n\nKey features: primary adrenal failure; cortisol deficiency; aldosterone deficiency often present; hyperpigmentation can support primary rather than central disease; stress/illness can precipitate crisis.\n\nDiagnostic approach: Blood testing confirms adrenal insufficiency and helps distinguish type. NIDDK describes the ACTH stimulation test as the most commonly used diagnostic test. Antibody testing, adrenal CT or pituitary MRI may be used to determine the cause.\n\nDifferential diagnosis: secondary/tertiary adrenal insufficiency, glucocorticoid withdrawal, sepsis, dehydration, acute GI illness, hypoglycemia, and other causes of hypotension/electrolyte abnormality.\n\nWestern treatment: Treatment replaces deficient hormones, usually glucocorticoid and, when aldosterone is deficient, mineralocorticoid. Stress dosing is required for significant illness/surgery. Adrenal crisis requires immediate parenteral corticosteroid plus fluid and glucose/electrolyte support.\n\nCoding note: Exact coding depends on Addison disease versus other adrenal insufficiency and whether crisis is present — verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "自體免疫性腎上腺炎或其他自體免疫疾病病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "factor": "腎上腺感染、出血或浸潤性疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "factor": "重大疾病、手術或創傷時未調整壓力劑量",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "History of autoimmune adrenalitis or other autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "factor": "Adrenal infection, hemorrhage, or infiltrative disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "factor": "Missed stress-dose adjustment during major illness, surgery, or trauma",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重虛弱併嘔吐／腹瀉",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為腎上腺危象的典型表現，屬致命狀況",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "finding": "低血壓",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "反映嚴重皮質醇／醛固酮缺乏造成的循環不穩定",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "finding": "意識混亂或喪失意識",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示腎上腺危象已影響腦部灌流",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "finding": "嚴重腹痛／背痛／腿痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "已知腎上腺功能不全病人出現此症狀需視為危象警訊",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe weakness with vomiting/diarrhea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Classic presentation of life-threatening adrenal crisis",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "finding": "Hypotension",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Reflects circulatory instability from severe cortisol/aldosterone deficiency",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "finding": "Confusion or loss of consciousness",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests adrenal crisis is affecting cerebral perfusion",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        },
+        {
+          "finding": "Severe abdominal/back/leg pain in a known adrenal insufficiency patient",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must be treated as a crisis warning sign in this population",
+          "source": "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅可作為病情穩定病人的輔助性症狀照護，不可取代荷爾蒙補充治療或壓力劑量規劃",
+        "precautions": "嘔吐導致無法口服類固醇、嚴重疾病或出現腎上腺危象症狀時須立即轉介西醫，不得以針灸延誤處置",
+        "co_management": "須聯絡病人的內分泌科或主治醫師確認評估與壓力劑量調整進度，執業者絕不可建議病人自行調整或停用皮質類固醇",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine（依據NIDDK臨床資料整理）",
+        "note": "此欄為執業範圍謹慎建議，尚未查到專屬於愛迪生氏病的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom care only for stable patients — not a replacement for hormone replacement or stress-dose planning",
+        "precautions": "Vomiting that prevents oral steroid intake, severe illness or adrenal-crisis symptoms require urgent medical management; acupuncture must not delay it",
+        "co_management": "Contact the patient's endocrinologist or physician to confirm evaluation and stress-dose adjustment status; practitioners must never advise the patient to independently adjust or stop corticosteroids",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)",
+        "note": "This is a scope-of-practice caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for Addison disease was located"
+      },
+      "sign_symptom_ids": [
+        "sym.fatigue",
+        "sym.nausea"
+      ],
+      "sources": [
+        "NCBAHM 2026 Appendix A - adrenal disorders (Board scope anchor)",
+        "NIDDK - Adrenal Insufficiency & Addison's Disease: https://www.niddk.nih.gov/health-information/endocrine-diseases/adrenal-insufficiency-addisons-disease",
+        "NIDDK - Diagnosis of Adrenal Insufficiency & Addison's Disease: https://www.niddk.nih.gov/health-information/endocrine-diseases/adrenal-insufficiency-addisons-disease/diagnosis",
+        "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease: https://www.niddk.nih.gov/health-information/endocrine-diseases/adrenal-insufficiency-addisons-disease/treatment"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "summary_en": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "etiology_zh": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "etiology_en": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "western_pathology_zh": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "western_pathology_en": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "western_context_zh": [
+          "NIDDK - Diagnosis of Adrenal Insufficiency & Addison's Disease",
+          "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease"
+        ],
+        "western_context_en": [
+          "NIDDK - Diagnosis of Adrenal Insufficiency & Addison's Disease",
+          "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease"
+        ],
+        "risk_factors_zh": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease",
+          "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease"
+        ],
+        "risk_factors_en": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease",
+          "NIDDK - Treatment of Adrenal Insufficiency & Addison's Disease"
+        ],
+        "red_flags_zh": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "red_flags_en": [
+          "NIDDK - Adrenal Insufficiency & Addison's Disease"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine（依據NIDDK臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_c_endocrine"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.graves_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "葛瑞夫茲病",
+      "name_en": "Graves Disease",
+      "category": "endo_metabolic",
+      "icd_hint": "E05",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "葛瑞夫茲病是一種自體免疫性疾病，甲狀腺刺激抗體驅動甲狀腺激素過度生成，通常造成甲狀腺功能亢進。",
+      "summary_en": "Graves disease is an autoimmune disorder in which thyroid-stimulating antibodies drive excessive thyroid hormone production and commonly cause hyperthyroidism.",
+      "etiology_zh": "葛瑞夫茲病並非所有甲狀腺功能亢進的同義詞，而是一種帶有特定抗體表現、瀰漫性甲狀腺刺激，有時合併眼部或皮膚表現的自體免疫病因。遺傳易感性與環境因子皆有影響；甲狀腺刺激免疫球蛋白活化TSH受體，驅動甲狀腺激素過度生成。",
+      "etiology_en": "Graves disease is not synonymous with every form of hyperthyroidism. It is an autoimmune cause with characteristic antibody findings, diffuse thyroid stimulation and sometimes eye or skin manifestations. Genetic susceptibility and environmental factors contribute; thyroid-stimulating immunoglobulins activate the TSH receptor and drive excess hormone production.",
+      "western_pathology_zh": "TSH受體受到刺激會增加甲狀腺激素的合成與釋放，加速代謝與心血管活動。自體免疫發炎也可能影響眼眶組織，較少見時亦可影響皮膚。",
+      "western_pathology_en": "TSH-receptor stimulation increases thyroid hormone synthesis and release, accelerating metabolic and cardiovascular activity. Autoimmune inflammation can also affect orbital tissues and, less commonly, skin.",
+      "western_context_zh": "臨床表現：可能出現食慾正常或增加卻體重下降、心跳快速或不規則、怕熱、多汗、手抖、焦慮／易怒、失眠、疲倦、排便次數增加與甲狀腺腫大。葛瑞夫茲眼病可能造成眼睛刺激感、眼球突出或複視。\n\n重要特徵：屬於自體免疫性甲狀腺機能亢進；TSI／TRAb抗體支持病因判斷；可能出現瀰漫性甲狀腺腫；眼病是葛瑞夫茲病特有的相關表現；甲狀腺機能亢進的症狀本身不足以單獨確立葛瑞夫茲病的診斷。\n\n診斷方法：診斷結合甲狀腺激素與TSH檢測，並須有證據支持葛瑞夫茲病為病因。可依情境使用TSI抗體檢測、放射碘攝取／掃描或都卜勒超音波。懷孕會改變檢查選擇。\n\n鑑別診斷：毒性甲狀腺結節、甲狀腺炎、外源性甲狀腺素過量、碘相關甲狀腺機能亢進，以及其他造成心搏過速／體重減輕／手抖的病因。\n\n西醫治療：治療可能包含乙型阻斷劑控制症狀、抗甲狀腺藥物、放射碘或手術，依病人情況而定。葛瑞夫茲眼病可能需要另外處置。\n\n編碼備註：葛瑞夫茲病／甲狀腺毒症編碼會依併發症（如甲狀腺風暴、眼病）而異，實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，不應套用單一通用編碼。",
+      "western_context_en": "Clinical presentation: Possible features include weight loss despite appetite, rapid or irregular heartbeat, heat intolerance, sweating, tremor, anxiety/irritability, insomnia, fatigue, frequent bowel movements and goiter. Graves eye disease can cause eye irritation, proptosis or diplopia.\n\nKey features: autoimmune hyperthyroidism; TSI/TRAb support etiology; diffuse goiter may occur; ophthalmopathy is a distinctive Graves association; hyperthyroid symptoms are not specific enough to establish Graves alone.\n\nDiagnostic approach: Diagnosis uses thyroid hormone and TSH testing plus evidence that Graves is the cause. TSI antibody testing, radioactive iodine uptake/scan or Doppler ultrasound may be used depending context. Pregnancy changes test choice.\n\nDifferential diagnosis: toxic thyroid nodules, thyroiditis, exogenous thyroid hormone excess, iodine-related hyperthyroidism, and other causes of tachycardia / weight loss / tremor.\n\nWestern treatment: Treatment may include beta blockers for symptom control, antithyroid medication, radioiodine or surgery depending patient context. Graves eye disease can require separate management.\n\nCoding note: Graves/thyrotoxicosis coding varies with complication such as crisis and eye disease — verify active fiscal-year CDC/NCHS ICD-10-CM at the time of coding rather than assigning a universal code.",
+      "risk_factors_zh": [
+        {
+          "factor": "遺傳易感性／家族自體免疫病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Graves' Disease"
+        },
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Graves' Disease"
+        },
+        {
+          "factor": "吸菸（與葛瑞夫茲眼病風險相關）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK - Graves' Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Genetic susceptibility / family history of autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Graves' Disease"
+        },
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Graves' Disease"
+        },
+        {
+          "factor": "Smoking (associated with Graves eye disease risk)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK - Graves' Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重失代償性甲狀腺毒症／甲狀腺風暴",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為致命的甲狀腺機能亢進急症",
+          "source": "NIDDK - Graves' Disease"
+        },
+        {
+          "finding": "嚴重心搏過速性心律不整",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能導致血流動力學不穩定",
+          "source": "NIDDK - Hyperthyroidism"
+        },
+        {
+          "finding": "胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "需排除心臟缺血或心臟衰竭相關表現",
+          "source": "NIDDK - Hyperthyroidism"
+        },
+        {
+          "finding": "心臟衰竭症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "甲狀腺毒症可誘發或加重心臟衰竭",
+          "source": "NIDDK - Hyperthyroidism"
+        },
+        {
+          "finding": "急性視力威脅性眼病",
+          "urgency_level": "urgent",
+          "recommended_action": "立即轉診眼科／急診評估",
+          "rationale": "葛瑞夫茲眼病可能快速惡化並威脅視力",
+          "source": "NIDDK - Graves' Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe decompensated thyrotoxicosis / thyroid storm",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A life-threatening hyperthyroid emergency",
+          "source": "NIDDK - Graves' Disease"
+        },
+        {
+          "finding": "Serious tachyarrhythmia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Can cause hemodynamic instability",
+          "source": "NIDDK - Hyperthyroidism"
+        },
+        {
+          "finding": "Chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must exclude cardiac ischemia or heart-failure presentation",
+          "source": "NIDDK - Hyperthyroidism"
+        },
+        {
+          "finding": "Heart failure symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Thyrotoxicosis can precipitate or worsen heart failure",
+          "source": "NIDDK - Hyperthyroidism"
+        },
+        {
+          "finding": "Acute vision-threatening eye disease",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate ophthalmology/emergency referral",
+          "rationale": "Graves eye disease can worsen rapidly and threaten vision",
+          "source": "NIDDK - Graves' Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅作為輔助性照護，不可延誤生化診斷或治療",
+        "precautions": "嚴重心律不整、甲狀腺風暴、嚴重眼病或懷孕相關風險須優先由西醫評估，不應僅以中醫證型解讀症狀",
+        "co_management": "須聯絡病人的內分泌科或主治醫師確認評估與治療進度，執業者不得建議病人自行調整或停用抗甲狀腺藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine（依據NIDDK臨床資料整理）",
+        "note": "此欄為執業範圍謹慎建議，尚未查到專屬於葛瑞夫茲病的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive only. It must not delay biochemical diagnosis or treatment",
+        "precautions": "Severe tachyarrhythmia, thyroid storm, serious eye disease or pregnancy-related risk require priority biomedical evaluation and must not be interpreted only through a TCM pattern",
+        "co_management": "Contact the patient's endocrinologist or physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust or stop antithyroid medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)",
+        "note": "This is a scope-of-practice caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for Graves disease was located"
+      },
+      "sign_symptom_ids": [
+        "sym.insomnia",
+        "sym.fatigue",
+        "sym.palpitations"
+      ],
+      "sources": [
+        "NCBAHM 2026 Appendix A - thyroid disorders (Board scope anchor)",
+        "NIDDK - Graves' Disease: https://www.niddk.nih.gov/health-information/endocrine-diseases/graves-disease",
+        "NIDDK - Hyperthyroidism: https://www.niddk.nih.gov/health-information/endocrine-diseases/hyperthyroidism"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK - Graves' Disease"
+        ],
+        "summary_en": [
+          "NIDDK - Graves' Disease"
+        ],
+        "etiology_zh": [
+          "NIDDK - Graves' Disease"
+        ],
+        "etiology_en": [
+          "NIDDK - Graves' Disease"
+        ],
+        "western_pathology_zh": [
+          "NIDDK - Graves' Disease"
+        ],
+        "western_pathology_en": [
+          "NIDDK - Graves' Disease"
+        ],
+        "western_context_zh": [
+          "NIDDK - Graves' Disease",
+          "NIDDK - Hyperthyroidism"
+        ],
+        "western_context_en": [
+          "NIDDK - Graves' Disease",
+          "NIDDK - Hyperthyroidism"
+        ],
+        "risk_factors_zh": [
+          "NIDDK - Graves' Disease"
+        ],
+        "risk_factors_en": [
+          "NIDDK - Graves' Disease"
+        ],
+        "red_flags_zh": [
+          "NIDDK - Graves' Disease",
+          "NIDDK - Hyperthyroidism"
+        ],
+        "red_flags_en": [
+          "NIDDK - Graves' Disease",
+          "NIDDK - Hyperthyroidism"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine（依據NIDDK臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "niddk_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_c_endocrine"
       ],
       "source_status": "draft_pending_ting_review"
     }
