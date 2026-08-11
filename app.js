@@ -7420,11 +7420,26 @@ function deleteCurrentSoap() {
 }
 
 function exportClinicalCases() {
-  const blob = new Blob([JSON.stringify(clinicalCases, null, 2)], { type: "application/json" });
+  // Codex C2B-R4 finding (P3.3): after the C2b pointer switch the world is
+  // {patients + cases + all V2 rows}, and an export that only serializes
+  // clinicalCases[] would silently drop the patients layer from every backup.
+  // Pre-switch (pointer absent/v1) the legacy array export stays byte-stable
+  // so existing backups and the import round-trip keep working unchanged.
+  const pointer = localStorage.getItem("acuting-clinical-active");
+  let payload;
+  if (pointer === "v2") {
+    const staging = JSON.parse(localStorage.getItem(AcuTingClinicalStore.STAGING_KEY) || "null");
+    // staging carries schema_version/journal/patients/cases — export the whole
+    // envelope; a v2 restore needs all of it (P3.3 round-trip requirement).
+    payload = staging ?? { schema_version: 2, patients: [], cases: clinicalCases };
+  } else {
+    payload = clinicalCases;
+  }
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `acuting-clinical-cases-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = `acuting-clinical-${pointer === "v2" ? "v2" : "cases"}-${new Date().toISOString().slice(0, 10)}.json`;
   link.click();
   URL.revokeObjectURL(url);
   markCasesBackedUp();   // CS1: reset backup age + save counter
@@ -7472,7 +7487,15 @@ function importClinicalCases(event) {
   const reader = new FileReader();
   reader.onload = () => {
     try {
-      const imported = JSON.parse(reader.result);
+      let imported = JSON.parse(reader.result);
+      // P3.3 companion: accept the v2 export envelope {schema_version:2,
+      // patients, cases} as well as the legacy bare array. Pre-switch, the
+      // envelope's cases[] feed the same merge/restore flow below; full v2
+      // restore (patients + pointer) is deliberately part of the P4-gated
+      // migration tooling, not this import path.
+      if (imported && !Array.isArray(imported) && imported.schema_version === 2 && Array.isArray(imported.cases)) {
+        imported = imported.cases;
+      }
       if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
       const incoming = imported.map(normalizeClinicalCase);
       // Codex spec §4.5: import 在 persist 前先驗不變量,不以 silent
