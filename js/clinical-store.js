@@ -462,6 +462,75 @@
   /* Codex R5 修正 gate:v2 匯入唯一認可路徑 —— 非 active candidate → 以
    * 「當下 v1 raw + 重建的 deterministic plan」做完整 verifyStaging → 全綠才
    * 原子替換 active staging。任何失敗:active staging/pointer 原封不動。 */
+  /* R9 gate D:runtime-era envelope(runtime_revision ≥ 1)的自洽性驗證。
+   * 切換後的合法備份含 runtime 新增/編輯的病例,「等同凍結 v1 plan」在
+   * 定義上不可能成立 —— 改驗自身完整性,標準不降:
+   *   1. patients↔cases 雙向 referential integrity(與 verifyStagingObject
+   *      同款斷言:nonblank code → patientId 存在且 code 相符;blank →
+   *      null;patient.caseIds 與反向指集合完全相等;patient id 唯一)。
+   *   2. case id 唯一。
+   *   3. R1-R7 臨床不變量(checkClinicalInvariants)。
+   *   4. 若現有 active staging 存在:逐 case 逐 exposure append-only
+   *      (exposureHistoryExtends)—— 匯入的備份不得截斷現存歷史。
+   *   5. pending_patient_codes 自洽(非空字串、無已存在 patient 的 code)。 */
+  function verifyRuntimeEnvelope(env) {
+    const failures = [];
+    const pById = new Map();
+    for (const p of env.patients) {
+      if (pById.has(p.id)) failures.push(`duplicate patient id ${p.id}`);
+      pById.set(p.id, p);
+    }
+    const caseIds = new Set();
+    const casesByPatient = new Map();
+    for (const c of env.cases) {
+      if (caseIds.has(c.id)) failures.push(`duplicate case id ${c.id}`);
+      caseIds.add(c.id);
+      const code = String(c.patientCode || "").trim();
+      if (!code) {
+        if (c.patientId !== null && c.patientId !== undefined) failures.push(`case ${c.id}: blank patientCode but patientId "${c.patientId}" (must be null)`);
+        continue;
+      }
+      if (!c.patientId || !pById.has(c.patientId)) { failures.push(`case ${c.id}: patientId "${c.patientId}" does not resolve`); continue; }
+      if (pById.get(c.patientId).patientCode !== code) failures.push(`case ${c.id}: patientCode "${code}" != patient ${c.patientId} code "${pById.get(c.patientId).patientCode}"`);
+      if (!casesByPatient.has(c.patientId)) casesByPatient.set(c.patientId, new Set());
+      casesByPatient.get(c.patientId).add(c.id);
+    }
+    for (const p of env.patients) {
+      const expected = casesByPatient.get(p.id) || new Set();
+      const actual = new Set(p.caseIds || []);
+      if (expected.size !== actual.size || [...expected].some((id) => !actual.has(id))) {
+        failures.push(`patient ${p.id}: caseIds ${JSON.stringify([...actual].sort())} != cases pointing to it ${JSON.stringify([...expected].sort())}`);
+      }
+    }
+    const inv = checkClinicalInvariants(env.cases);
+    for (const f of inv.failures || []) failures.push(`invariant: ${typeof f === "string" ? f : JSON.stringify(f)}`);
+    for (const code of env.pending_patient_codes || []) {
+      if (!String(code || "").trim()) failures.push("pending_patient_codes contains blank code");
+      else if (env.patients.some((p) => p.patientCode === code)) failures.push(`pending code "${code}" already has a patient`);
+    }
+    // append-only vs 現有 active staging(存在才比;wipe 後還原無比較基準)
+    let current = null;
+    try { current = JSON.parse(readKey(STAGING_KEY) || "null"); } catch { current = null; }
+    if (current && Array.isArray(current.cases)) {
+      const newById = new Map(env.cases.map((c) => [c.id, c]));
+      for (const oldCase of current.cases) {
+        const newCase = newById.get(oldCase.id);
+        if (!newCase) { failures.push(`case ${oldCase.id} present in current staging but missing from imported envelope (history truncation)`); continue; }
+        for (const kind of ["agentExposures", "environmentalExposures"]) {
+          const oldRows = oldCase[kind] || [];
+          const newRows = new Map((newCase[kind] || []).map((r) => [r.id, r]));
+          for (const oldRow of oldRows) {
+            const newRow = newRows.get(oldRow.id);
+            if (!newRow) { failures.push(`case ${oldCase.id} ${kind} row ${oldRow.id} missing from import (append-only violated)`); continue; }
+            const ext = exposureHistoryExtends(oldRow, newRow);
+            if (!ext.ok) failures.push(`case ${oldCase.id} ${kind} row ${oldRow.id}: ${ext.reason}`);
+          }
+        }
+      }
+    }
+    return { ok: failures.length === 0, failures };
+  }
+
   async function restoreV2Envelope(envelopeText, sha256) {
     // Codex R6 修正 gate:本函式的失敗契約是「絕不讓例外外洩」——任何
     // rejection/exception(含 candidate write、plan/hash、active 替換、
@@ -488,25 +557,41 @@
       if (!(env && env.schema_version === 2 && env.journal && Array.isArray(env.patients) && Array.isArray(env.cases))) {
         return fail(["envelope missing schema_version/journal/patients/cases"]);
       }
-      const rawText = backend.read();
-      if (rawText === null) return fail(["v1 raw store absent — cannot anchor verification"]);
       try { writeKey(CANDIDATE_KEY, JSON.stringify(env)); }
       catch (e) { return fail(["candidate write failed: " + e.message]); }
-      let plan;
-      try { plan = await buildMigrationPlan(rawText, env.journal.adjudicationsApplied || [], sha256); }
-      catch (e) { return fail(["plan rebuild failed: " + e.message]); }
-      let rawHash;
-      try { rawHash = await sha256(rawText); }
-      catch (e) { return fail(["hashing failed: " + e.message]); }
-      const v = verifyStagingObject(env, rawText, rawHash, plan);
-      if (!v.ok) return fail(v.failures);
+      const isRuntimeEra = Number(env.runtime_revision || 0) >= 1;
+      if (isRuntimeEra) {
+        // R9 gate D:runtime-era 走自洽性驗證(見 verifyRuntimeEnvelope)。
+        const v = verifyRuntimeEnvelope(env);
+        if (!v.ok) return fail(v.failures);
+      } else {
+        // migration-era(revision 缺/0):原 plan-anchored 路徑,逐字不變。
+        const rawText = backend.read();
+        if (rawText === null) return fail(["v1 raw store absent — cannot anchor verification"]);
+        let plan;
+        try { plan = await buildMigrationPlan(rawText, env.journal.adjudicationsApplied || [], sha256); }
+        catch (e) { return fail(["plan rebuild failed: " + e.message]); }
+        let rawHash;
+        try { rawHash = await sha256(rawText); }
+        catch (e) { return fail(["hashing failed: " + e.message]); }
+        const v = verifyStagingObject(env, rawText, rawHash, plan);
+        if (!v.ok) return fail(v.failures);
+      }
       // 順序是 gate 本體:cleanup 先行且必須確認成功,active 替換才准發生
       // (Codex R7)。cleanup 失敗 → active 原封不動地 fail closed。
       const c = cleanupCandidate();
       if (!c.ok) return { ok: false, failures: ["candidate cleanup failed before active swap — active staging/pointer untouched: " + c.error] };
       try { writeKey(STAGING_KEY, JSON.stringify(env)); }   // 單一 setItem = 原子替換
       catch (e) { return { ok: false, failures: ["active staging replacement failed — original staging/pointer untouched: " + e.message] }; }
-      return { ok: true, patients: env.patients.length, cases: env.cases.length };
+      // R9 gate D:runtime-era envelope 的存在本身即證明 active world = v2
+      // (revision 只可能由切換後的 save 產生)。wipe 後還原若不補 pointer,
+      // load 會靜默讀 v1 —— 正是 R9 §5 要堵的分叉。migration-era 不動 pointer
+      // (切換是 P4 儀式的事,不是 restore 的事)。
+      if (isRuntimeEra) {
+        try { writeKey(POINTER_KEY, "v2"); }
+        catch (e) { return { ok: false, failures: ["staging restored but POINTER write failed — run switchPointer manually before any save: " + e.message] }; }
+      }
+      return { ok: true, patients: env.patients.length, cases: env.cases.length, runtime_era: isRuntimeEra };
     } catch (e) {
       return fail(["unexpected restore failure: " + (e && e.message || String(e))]);
     }
@@ -659,6 +744,7 @@
     save,
     syncPendingPatients,
     activeIsV2,
+    verifyRuntimeEnvelope,
     setBackend(b) { backend = b; },       // SQLite/D1 adapter 的插入點
     checkClinicalInvariants,
     canonicalEventPayload,

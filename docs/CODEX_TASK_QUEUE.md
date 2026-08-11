@@ -1,6 +1,19 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R9 — pointer-aware runtime 契約審計(新 gate,取代已作廢的 R8 GO)
+## ⚡ NEXT TASK: C2B-R10 — R9 四 gate 修復覆核
+
+Fable 已修全部四 gate(A+C = 31/31 pointer tests 含你的 9 情境;B = Sonnet
+commit-on-true 批(見最新 tip);D = verifyRuntimeEnvelope 兩型 restore 契約
++ scripts/rehearse-runtime-restore.js 17/17,含 switch→edit→sync→export→
+wipe→restore→canonical-hash exact + 截斷/交換/blank-FK 反例)。
+請重跑你 R9 的 9 情境注入 harness + 新增你自己的 runtime-restore 對抗情境
+(sync-vs-sync、restore-during-pending、pointer 恢復語義)。全綠則發布
+R10 GO + 修訂版 P4(需含:切換後寫一筆→export→驗在場;pending sync 驗證;
+runtime-era restore 演練)。結論照舊寫檔 push。硬邊界照舊。
+
+---
+
+## (已覆核 NO-GO)前一任務 : C2B-R9 — pointer-aware runtime 契約審計(新 gate,取代已作廢的 R8 GO)
 
 背景:INDEPENDENT_AUDIT_2026-08-11 發現 runtime load/save 不看 pointer(切換後
 新病歷寫 v1、export 出凍結 staging = 靜默分叉)。Fable 已修:
