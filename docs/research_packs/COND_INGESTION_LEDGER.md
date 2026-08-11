@@ -48,6 +48,16 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
 | Batch G — Neurology | `cond.multiple_sclerosis` → `cond.multiple_sclerosis` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "多發性硬化症（輔助文件情境）"`). C10 boilerplate replaced per validator's own authorization. Cleaned stale name suffix, added sign_symptom_ids (`sym.fatigue`, `sym.numbness`, `sym.blurred_vision`). |
 | Batch G — Neurology | `cond.guillain_barre_syndrome` → `cond.guillain_barre_syndrome` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `guillain`/`格林`/`巴利` — zero matches |
 | Batch G — Neurology | `cond.cauda_equina_syndrome` → `cond.cauda_equina_syndrome` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `cauda equina`/`馬尾` — zero matches. `cond.urinary_retention` exists (non-obstructive retention) but is a distinct symptom-level entity, not this emergency syndrome — no merge, no relation field available to link them (prose-only note in `western_context_*`). |
+| Batch H — GI/Liver (`12_WESTERN_CONDITION_RESEARCH_BATCH_H_GI_LIVER.md`) | `cond.appendicitis` → `cond.appendicitis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `appendic`/`闌尾` — zero matches |
+| Batch H — GI/Liver | `cond.gastritis` → `cond.chronic_gastritis` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact-scan found the pack's generic "Gastritis/Gastropathy" concept already covered in canon under `cond.chronic_gastritis` (`name_zh: "慢性胃炎（文件情境）"`), which carries real unique CloudTCM content that is actually generic gastric-discomfort/嘈雜 material, not chronic-specific. **Scope judgment**: broadened `name_zh`/`name_en` to "胃炎／胃黏膜病變（含慢性胃炎）" / "Gastritis / Gastropathy (including Chronic Gastritis)" rather than create a separate acute/generic card, since (a) no acute-gastritis-specific card exists to conflict with, (b) the existing content itself doesn't distinguish acute/chronic, and (c) creating a near-duplicate generic card next to a chronic-specific one would violate the template's non-equivalence rule in the other direction (splitting one real concept into two ids). Real `etiology_zh`/`western_pathology_zh` (huge classical essay) left untouched; added condensed-but-faithful `etiology_en`/`western_pathology_en` (not line-by-line, source is very long) plus all missing structured fields. Flagging this scope-broadening decision explicitly for Fable/Ting review — it is a judgment call, not a mechanical exact-match. |
+| Batch H — GI/Liver | `cond.peptic_ulcer_disease` → `cond.peptic_ulcer` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact-scan found the concept already in canon under a shorter id (`cond.peptic_ulcer`, `name_zh: "消化性潰瘍（文件情境）"`) vs the pack's candidate_id `cond.peptic_ulcer_disease` — resolved to existing id (D1). Real unique CloudTCM classical-text content (etiology_zh/western_pathology_zh, huge essay on 胃脘痛) left untouched; added condensed `etiology_en`/`western_pathology_en` translations plus missing structured fields. Cleaned stale name suffix. |
+| Batch H — GI/Liver | `cond.irritable_bowel_syndrome` → `cond.ibs` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact-scan found the concept already in canon under a shorter id (`cond.ibs`, `name_zh: "腸躁症"`, already real content not boilerplate) vs the pack's candidate_id `cond.irritable_bowel_syndrome` — resolved to existing id. Added `etiology_en`/`western_pathology_en` translations of the existing real (concise) zh content plus missing structured fields. |
+| Batch H — GI/Liver | `cond.inflammatory_bowel_disease` → `cond.ibd` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact-scan found the concept already in canon under a shorter id (`cond.ibd`, `name_zh: "發炎性腸道疾病（文件情境）"`) vs the pack's candidate_id `cond.inflammatory_bowel_disease`. C10 boilerplate `etiology_zh`/`western_pathology_zh` replaced per validator's own authorization (same ruling as prior batches). Pack flags `NEAR_DUPLICATE_NEEDS_DECISION` (parent vs Crohn/UC-specific subtype) — kept as parent/navigational card since no Crohn- or UC-specific child records exist in canon yet; `western_context_*` documents this explicitly, same pattern as `cond.valvular_heart_disease` (Batch E) and `cond.peripheral_neuropathy` (Batch G). |
+| Batch H — GI/Liver | `cond.acute_pancreatitis` → `cond.acute_pancreatitis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `pancreat`/`胰臟`/`胰腺` — zero matches |
+| Batch H — GI/Liver | `cond.gallstone_disease` → `cond.gallstone_disease` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `gallstone`/`膽結石`/`cholelithiasis` — zero matches. Found `cond.gallbladder_dysfunction` ("膽道功能障礙（文件情境）" / "Biliary Dyskinesia / Gallbladder Dysfunction") but ruled non-overlapping per template's non-equivalence principle: gallstones are a structural problem, biliary dyskinesia is a functional/motility disorder without stones — different entities, documented as a differential note in `western_context_*`, not merged. |
+| Batch H — GI/Liver | `cond.bowel_obstruction` → `cond.bowel_obstruction` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `obstruction`/`腸阻塞`/`腸梗阻` — zero matches |
+| Batch H — GI/Liver | `cond.cirrhosis` → `cond.cirrhosis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `cirrhosis`/`肝硬化` — zero matches |
+| Batch H — GI/Liver | `cond.viral_hepatitis` → `cond.viral_hepatitis` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `hepatitis`/`肝炎` — zero matches. Pack flags `NEAR_DUPLICATE_NEEDS_DECISION` (parent vs HBV/HCV-specific subtype) — kept as parent/navigational card, no type-specific child records exist yet, same pattern as `cond.ibd` above. |
 
 ## Notes for the next ingest AI
 
@@ -234,3 +244,37 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
   specific child) — no merge, relationship carried in prose only, following
   the same pattern as `cond.hashimoto`/`cond.hypothyroidism` and
   `cond.valvular_heart_disease` from earlier batches.
+
+## Batch H (2026-08-11) — additional notes for the next ingest AI
+
+- **Scope-broadening judgment call flagged for review**: `cond.gastritis`
+  (pack candidate) resolved to the existing `cond.chronic_gastritis`, and
+  its name was broadened from "慢性胃炎" to "胃炎／胃黏膜病變（含慢性胃炎）"
+  to match the pack's generic scope. This is different from the usual
+  "candidate_id resolves to a shorter existing id" pattern (Batch F/G) —
+  here the *scope* of the existing card was widened, not just the id
+  matched. Rationale: the existing card's real content never actually
+  distinguished acute from chronic, so narrowing was already fictional;
+  but this is a judgment call, not a mechanical exact-match, and is called
+  out explicitly in the Batch H row above for Fable/Ting to review.
+- **Real long-essay content gets condensed (not line-by-line) `_en`
+  translation, same as Batch F's `cond.asthma`**: `cond.chronic_gastritis`
+  and `cond.peptic_ulcer` both carry multi-thousand-character classical-
+  text essays in `etiology_zh`. Producing a faithful condensed English
+  summary (preserving the named TCM pattern categories and formulas) rather
+  than translating every sentence keeps the batch tractable while still
+  being real translation, not boilerplate — same approach as asthma in
+  Batch F.
+- **Two more `NEAR_DUPLICATE_NEEDS_DECISION` parent-card rulings** (same
+  shape as `cond.valvular_heart_disease` in Batch E and
+  `cond.peripheral_neuropathy` in Batch G): `cond.ibd` and
+  `cond.viral_hepatitis` were both kept as parent/navigational cards with
+  no Crohn/UC or HBV/HCV type-specific child records yet. Check for this
+  same shape before ruling identity on any future "disease family" pack
+  candidate (autoimmune subtypes, cancer types, etc. likely to recur in
+  Batch I/J).
+- **`aliases_zh`/`aliases_en` length-mismatch pitfall recurred 3x this
+  batch** (`cond.ibs`, `cond.ibd`, `cond.peptic_ulcer`) despite being
+  documented in the Batch F notes — worth writing alias pairs LAST in the
+  patch object and double-checking lengths before running the validator,
+  not after.
