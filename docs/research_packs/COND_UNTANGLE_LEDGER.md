@@ -103,8 +103,149 @@ validate-relations: Relation validation passed. (unchanged link counts)
 
 `node scripts/build-data.js` ran clean before validation, no errors.
 
-## Item 2 — misfiled essays (commit B, cross-record moves; see follow-up commit)
+## Item 2 — misfiled essays (commit B)
 
 Four named cross-contamination flags from `COND_INGESTION_LEDGER.md`, each
-resolved per the task's move-first-then-clear procedure. Documented in full
-after commit B lands (see below in this same file, appended).
+resolved per the task's move-first-then-clear procedure (destination write
+happens in the same in-memory pass before any field is cleared — verified by
+script structure, not just intent). Where the destination record already
+holds real content in the same field, the moved text goes into the
+*destination's* `import_artifacts` (with an added `original_record` key on
+the artifact object, since the base `{original_field, text, reason,
+moved_at}` shape has no way to say "this came from a different record" —
+additive, does not remove any of the four required keys). Where the shared
+text is a wider fan-out with one clear true-home record, the redundant
+copies are archived locally (each duplicate's own `import_artifacts`,
+pointing at the true home in its `reason` prose) rather than piling multiple
+byte-identical copies onto the true-home record.
+
+### 2a. `cond.heart_failure` → `cond.palpitations` (arrhythmia misfile)
+
+`cond.heart_failure.western_pathology_zh` (765 chars) is cardiac-arrhythmia
+(心律不整) CloudTCM blog content, near-identical to
+`cond.palpitations.western_pathology_zh` (same essay, differs by one
+OCR-artifact character: 一鐘 vs 一分鐘) — flagged in `COND_C5_LEDGER.md` as
+an outright misfile. `cond.palpitations`'s own copy of the same essay was
+independently blog-junk (moved to its own `import_artifacts` in commit A,
+item 1). Tested per the task's own rule: even on its true topical home, this
+text is still CloudTCM blog voice (member-anecdote asides, app-download
+plugs, ad embed codes), not template §3.2 clinical prose — so it does **not**
+get restored into `palpitations.western_pathology_zh` as real content; it is
+filed as a second `import_artifacts` entry on `cond.palpitations` (with
+`original_record: "cond.heart_failure"`), and `heart_failure.western_pathology_zh`
+is cleared to `""`. `cond.heart_failure.etiology_zh`/`_en` (real, distinct,
+already bilingual heart-failure content, unrelated to the arrhythmia text)
+was left completely untouched.
+
+### 2b. `cond.asthma` × `cond.post_covid` (shared asthma essay)
+
+Both records carried byte-identical `western_pathology_zh` (456 chars) and
+`etiology_zh` (1921 chars) — confirmed asthma-specific content ("氣喘是常見
+的氣道慢性炎症疾病…") per `COND_INGESTION_LEDGER.md` Batch F's flag.
+`cond.asthma`'s copy is real, complete, and **already bilingual**
+(`western_pathology_en` 763 chars, `etiology_en` 2453 chars — translated in
+an earlier authorized batch) — confirmed true home, left entirely
+untouched, no second judgment applied to content a prior batch already
+vetted. `cond.post_covid`'s copy was untranslated (`_en` empty on both
+fields) — the orphan duplicate. Moved into `cond.post_covid`'s own
+`import_artifacts` (local, not duplicated a second time onto asthma, since
+asthma's copy is byte-identical and already retained), both fields cleared
+to `""`.
+
+### 2c. `cond.male_infertility` → `cond.erectile_dysfunction` (ED misfile)
+
+Both records carried byte-identical `western_pathology_zh` (608 chars) and
+`etiology_zh` (2602 chars) — classical ED terminology (陰器不用/陽事不舉/
+陽萎), confirmed per `COND_INGESTION_LEDGER.md` Batch K's flag.
+`cond.erectile_dysfunction`'s copy is real and already translated (Batch K
+added a condensed `_en`) — true home, left untouched.
+`cond.male_infertility`'s copy (untranslated, `_en` empty on both fields) —
+confirmed-off-topic duplicate — moved into
+`cond.erectile_dysfunction.import_artifacts` (destination-occupied branch,
+`original_record: "cond.male_infertility"` on each entry), both fields
+cleared to `""` on `cond.male_infertility`.
+
+### 2d. The 7-way 月經不調 (irregular menstruation) essay — remaining 5-way
+
+`COND_INGESTION_LEDGER.md` Batch K already replaced `cond.endometriosis` and
+`cond.primary_dysmenorrhea`'s copies with condition-specific real content,
+leaving 5 records sharing the essay verbatim in both
+`western_pathology_zh` (484 chars) and `etiology_zh` (3912 chars):
+`cond.pms`, `cond.irregular_menstruation`, `cond.female_infertility`,
+`cond.recurrent_pregnancy_loss`, `cond.chronic_pelvic_pain`. True home per
+the ledger's own title-match analysis: `cond.irregular_menstruation` —
+confirmed independently by that record already carrying full, real,
+**already-bilingual** content (`western_pathology_en` 1738 chars,
+`etiology_en` 11119 chars — its own distinct, much longer essay; only the
+`_zh` values happened to byte-match the shared essay in the other 4 records'
+copies before this move, and are unaffected/untouched by this commit). The
+other 4 records' copies are each archived into their own
+`import_artifacts` (local, distributed — not consolidated onto
+`irregular_menstruation`, since that would mean 4 redundant byte-identical
+copies sitting on one record with no local trace on the records that
+actually held the misfile), both fields cleared to `""` on each of the 4.
+
+### Text-volume conservation (item 2 + item 1 combined, whole-dataset)
+
+Global total across all 505 records' `western_pathology_zh` +
+`etiology_zh` + `western_pathology_en` + `etiology_en` + `import_artifacts[].text`:
+**292192 chars before batch 1 → 292192 chars after batch 1 (commits A+B
+combined)** — exact conservation, nothing vanished. Per-record deltas are
+non-zero only where content crossed a record boundary (`cond.heart_failure`
+−765 / `cond.palpitations` +765; `cond.male_infertility` −3210 /
+`cond.erectile_dysfunction` +3210) — every other touched record's own total
+(clinical fields + its own `import_artifacts`) is unchanged, confirming
+same-record moves lost nothing either.
+
+### Validator tail — commit B (item 2 only, cumulative with commit A)
+
+```
+validate-condition-standard — data/pathology/condition_canon_shortlist.json
+scope: all categories · 505 records · 414 clean
+
+C4  NO RED FLAGS (safety) — 51 defect(s) across 51 record(s)
+C5  _zh filled but _en empty — 126 defect(s) across 65 record(s)
+C10  content shared verbatim across records (boilerplate/misfiled) — 129 defect(s) across 67 record(s)
+
+FAIL — 306 blocking defect(s).
+```
+
+Commit B delta: C4 51→51 (flat), C5 139→126 (−13: 1 heart_failure +
+2 post_covid + 2 male_infertility + 8 the-7-way-remainder = 13), C10
+147→129 (−18: asthma/post_covid pair and male_infertility/erectile_dysfunction
+pair fully resolved, and the 7-way-essay's shared-group size shrank from
+5-sharing to 1-owner on both fields — removes those duplicate-pair/group
+C10 hits), total blocking 337→306 (−31).
+
+Cumulative (batch 1, commits A+B vs the branch-tip baseline): C5 203→126
+(−77), C10 147→129 (−18), C4 51→51 (flat, out of scope this batch), total
+blocking 401→306 (**−95**).
+
+```
+validation ratchet — defect counts vs committed baseline
+  BETTER   conditions   401 → 306   (−95)
+  flat     patterns     0 / tdis 0 / symptoms 0 / naming 1
+PASS — no regressions (and something improved; run --update to lock it in).
+```
+
+```
+validate-content-junk: PASS — no scraped header tokens in content arrays.
+validate-relations: Relation validation passed. (unchanged link counts)
+git diff --check: clean, no whitespace errors.
+```
+
+No C8 (unknown field) defects appeared at any point — confirms the
+`import_artifacts` field name is validator-approved per the branch-tip
+commit `010f930`, as expected.
+
+## Explicitly out of scope this batch (left untouched, for the record)
+
+- The 138-field C10 boilerplate bucket (the generic 21/24-char sentences
+  shared by ~57 records, plus the pcos/oligomenorrhea/thin_endometrium and
+  copd/chronic_cough/post_viral_cough C10 groups, plus the 4 headache-group
+  `western_pathology_zh` fields excluded above) — batch 2, needs the
+  source-reuse map per the dispatch instructions.
+- `cond.asthma` and `cond.irregular_menstruation` — confirmed byte-identical
+  to their pre-batch-1 state (untouched), verified programmatically.
+- No content invented anywhere; every cleared field is an honest gap.
+
