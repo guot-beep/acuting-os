@@ -13558,6 +13558,673 @@
       ],
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.blood_deficiency_wind_dryness",
+      "name_zh": "血虛風燥",
+      "name_en": "Blood Deficiency with Wind-Dryness",
+      "pattern_family": "qi_xue_jin_ye",
+      "secondary_family": "bing_yin",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "皮膚乾燥，脫屑，肌膚甲錯",
+        "瘙癢劇烈，夜間尤甚，搔抓不止",
+        "病程遷延，反覆發作",
+        "面色萎黃，頭暈眼花"
+      ],
+      "key_signs_en": [
+        "Dry, scaling skin; skin rough like fish scales in chronic cases",
+        "Severe itching, worse at night, persistent scratching",
+        "Protracted course with repeated flare-ups",
+        "Sallow complexion, dizziness and blurred vision"
+      ],
+      "tongue_zh": "舌淡，苔薄白或少津",
+      "tongue_en": "Pale tongue, thin white coating or scanty fluid",
+      "pulse_zh": "脈細或細澀",
+      "pulse_en": "Thin, or thin-choppy pulse",
+      "mechanism_zh": "久病血虛，或化燥傷陰，營血不足不能濡養肌膚，肌膚失養化燥生風，風燥相搏則皮膚乾燥脫屑、瘙癢不止；血虛生風多見於慢性反覆發作的皮膚病，病程越久，血虛風燥之象越明顯。",
+      "mechanism_en": "Chronic illness depletes Blood, or prolonged Damp-Heat transforms into Dryness and damages Yin; Nutritive Blood becomes insufficient to nourish the skin, which then loses nourishment, develops Dryness, and generates internal Wind. Wind and Dryness contending together produce dry, scaling, unrelenting itch. Blood-deficiency-generated Wind is typically seen in chronic, repeatedly-relapsing skin disease — the longer the course, the more pronounced the Blood-deficiency Wind-Dryness picture.",
+      "common_causes_zh": "久病血虛失養、素體血虛復感風邪、濕熱日久化燥傷陰耗血",
+      "common_causes_en": "Chronic illness leaving Blood deficient and the body unnourished; a constitutionally Blood-deficient person additionally affected by Wind; long-standing Damp-Heat transforming into Dryness and consuming Yin and Blood",
+      "progression_zh": "多由急性濕熱型皮膚病遷延不癒發展而來，或素體血虛復感外邪誘發；日久肌膚失養加重，可反覆發作、纏綿難癒。",
+      "progression_en": "Commonly develops from an acute Damp-Heat-type skin disease that fails to resolve and becomes protracted, or is triggered when external pathogens affect a constitutionally Blood-deficient person; over time the unnourished skin worsens, producing a relapsing, difficult-to-resolve course.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_blood_deficiency",
+          "distinguishing_zh": "血虛風燥以皮膚乾燥瘙癢、肌膚甲錯等外在燥象為突出表現；肝血虛以頭暈眼花、視物模糊、爪甲不榮、月經量少等肝之本臟濡養不足見症為主，無明顯皮膚瘙癢乾燥之風燥表現。",
+          "distinguishing_en": "Blood Deficiency with Wind-Dryness is dominated by outward dryness signs — dry itchy skin, skin rough as fish-scales; Liver Blood Deficiency is dominated by dizziness, blurred vision, unnourished nails, and scanty menstruation reflecting insufficient nourishment of the Liver itself, without the prominent dry-itchy-skin Wind-Dryness presentation.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.damp_heat_skin_invasion",
+          "distinguishing_zh": "血虛風燥病程遷延，皮膚乾燥少津、舌淡脈細，屬虛證；濕熱浸淫起病較急，皮損滲液流滋、舌苔黃膩、脈滑數，屬實證，兩者可從病程新久、皮損乾濕、舌脈虛實鑑別。",
+          "distinguishing_en": "Blood Deficiency with Wind-Dryness has a protracted course with dry, fluid-poor skin, a pale tongue, and a thin pulse — a deficiency pattern; Damp-Heat Invading the Skin has a more acute onset with weeping, exudative lesions, a yellow greasy tongue coating, and a slippery rapid pulse — an excess pattern. The two are distinguished by course duration, lesion dryness vs. wetness, and deficiency-vs-excess tongue/pulse signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "養血潤燥，祛風止癢",
+      "treatment_principle_en": "Nourish Blood and moisten Dryness, dispel Wind and stop itching",
+      "typical_formulas": [
+        "formula.dang_gui_yin_zi"
+      ],
+      "typical_points": [
+        "SP10",
+        "BL17",
+        "LI11",
+        "SP6",
+        "LR3"
+      ],
+      "point_rationale_zh": "血海、膈俞（血會）養血活血；曲池疏風止癢；三陰交滋養肝脾腎之陰血；太衝調肝血，共奏養血祛風之效。",
+      "point_rationale_en": "SP10 (Xuehai) and BL17 (Geshu, the Hui-Meeting point of Blood) nourish and invigorate Blood; LI11 (Quchi) dispels Wind and relieves itching; SP6 (Sanyinjiao) nourishes the Yin-Blood of the Liver, Spleen, and Kidney; LR3 (Taichong) regulates Liver Blood — together nourishing Blood while dispelling Wind.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.血虛風燥"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.heart_stomach_fire",
+      "name_zh": "心胃火盛",
+      "name_en": "Heart-Stomach Fire",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "heart",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "口舌生瘡，潰瘍反覆發作",
+        "口渴喜冷飲，口臭",
+        "心煩失眠，小便短赤",
+        "牙齦腫痛"
+      ],
+      "key_signs_en": [
+        "Mouth and tongue ulcers, recurring sores",
+        "Thirst with a preference for cold drinks, bad breath",
+        "Restlessness and insomnia, scanty dark urine",
+        "Swollen, painful gums"
+      ],
+      "tongue_zh": "舌尖紅赤，或舌紅苔黃厚",
+      "tongue_en": "Red tip of the tongue, or red tongue body with a thick yellow coating",
+      "pulse_zh": "脈滑數或洪數",
+      "pulse_en": "Slippery-rapid or surging-rapid pulse",
+      "mechanism_zh": "心火與胃火相互助長，循經上炎：心開竅於舌，心火上炎則舌尖紅赤、口舌生瘡；胃火循經上攻則牙齦腫痛、口渴喜冷、口臭；心胃火熾，擾動心神則心煩失眠，下移小腸則小便短赤。",
+      "mechanism_en": "Heart Fire and Stomach Fire mutually reinforce each other and flare upward along their channels. The Heart opens into the tongue, so Heart Fire flaring produces a red tongue tip and mouth/tongue ulcers; Stomach Fire ascending along its channel produces swollen painful gums, thirst for cold drinks, and bad breath. The combined blazing of Heart and Stomach Fire disturbs the Heart spirit, causing restlessness and insomnia, and moves down to the Small Intestine, causing scanty dark urine.",
+      "common_causes_zh": "過食辛辣厚味助火、情志化火、外感熱邪內傳心胃",
+      "common_causes_en": "Excessive consumption of spicy, rich foods feeding Fire; emotional stress transforming into Fire; an external heat pathogen transmitting internally to the Heart and Stomach",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_fire",
+          "distinguishing_zh": "心胃火盛兼有胃熱見症（口渴喜冷飲、牙齦腫痛、口臭、苔黃厚）；心火亢盛以口舌生瘡、心煩失眠、小便短赤為主，無明顯牙齦腫痛及胃熱表現。",
+          "distinguishing_en": "Heart-Stomach Fire additionally carries Stomach-heat signs (thirst for cold drinks, swollen painful gums, bad breath, thick yellow coating); Heart Fire alone is dominated by mouth ulcers, restlessness/insomnia, and scanty dark urine, without notable gum swelling or Stomach-heat signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "心胃火盛兼有心火上炎見症（舌尖紅赤、心煩失眠）；胃熱熾盛以牙齦腫痛、口渴喜冷、消穀善飢、口臭為主，舌紅苔黃，無明顯心煩失眠之心火見症。",
+          "distinguishing_en": "Heart-Stomach Fire additionally carries Heart-Fire signs (red tongue tip, restlessness/insomnia); Stomach Heat alone is dominated by swollen painful gums, thirst for cold drinks, rapid hungering, and bad breath, with a red tongue and yellow coating but no notable Heart-Fire restlessness/insomnia.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清心瀉火，清胃降火",
+      "treatment_principle_en": "Clear the Heart and drain Fire, clear the Stomach and downbear Fire",
+      "typical_formulas": [
+        "formula.xie_xin_tang",
+        "formula.dao_chi_san"
+      ],
+      "typical_points": [
+        "HT8",
+        "ST44",
+        "HT7",
+        "LI4"
+      ],
+      "point_rationale_zh": "少府為心經滎穴，清心瀉火；內庭為胃經滎穴，清胃瀉火，兩穴相配為清心胃實火的經典配穴；神門寧心安神；合谷清熱瀉火。",
+      "point_rationale_en": "HT8 (Shaofu), the Ying-Spring point of the Heart channel, clears Heart Fire; ST44 (Neiting), the Ying-Spring point of the Stomach channel, clears Stomach Fire — the two together are a classic pairing for clearing combined Heart-Stomach excess-fire; HT7 (Shenmen) calms the Heart spirit; LI4 (Hegu) clears heat and drains Fire.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.xie_xin_tang (瀉心湯) used as the closest-resolving classical formula for the sourced canon formula 三黃瀉心湯 (San Huang Xie Xin Tang) — same Da Huang/Huang Lian/Huang Qin triple-bitter-cold structure, not string-identical to the formulas.json entry name"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.心胃火盛"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.water_qi_attacking_heart",
+      "name_zh": "水氣凌心",
+      "name_en": "Water-Qi Attacking the Heart",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "heart"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "mixed",
+        "yin_yang": "yang_deficiency"
+      },
+      "key_signs_zh": [
+        "心悸怔忡",
+        "胸悶氣短，平臥困難",
+        "下肢或全身浮腫",
+        "畏寒肢冷"
+      ],
+      "key_signs_en": [
+        "Palpitations, severe fright palpitations",
+        "Chest oppression and shortness of breath, difficulty lying flat",
+        "Edema of the lower limbs or generalized edema",
+        "Aversion to cold, cold limbs"
+      ],
+      "tongue_zh": "舌淡胖，苔白滑",
+      "tongue_en": "Pale, swollen tongue body with a white slippery coating",
+      "pulse_zh": "脈沉弦或結代",
+      "pulse_en": "Deep-wiry pulse, or an irregular (knotted-intermittent) pulse",
+      "mechanism_zh": "心陽不振，不能溫化水飲，水飲上凌於心，水氣搏結則心悸怔忡、胸悶氣短；水飲泛溢肌膚則浮腫；陽虛不能溫煦則畏寒肢冷；是心陽虛衰、水飲內停基礎上的重症階段，常見於心衰。",
+      "mechanism_en": "Heart Yang is weakened and cannot warm-transform fluids; the resulting fluid-retention rises to assail the Heart. Water-Qi contending with the Heart produces palpitations and fright palpitations along with chest oppression and shortness of breath; fluid overflowing into the flesh produces edema; Yang deficiency's failure to warm the body produces aversion to cold and cold limbs. This is a severe-stage development on the basis of Heart Yang deficiency with internal fluid-retention, commonly seen in heart failure.",
+      "common_causes_zh": "心陽久虛、脾腎陽虛水飲內生上犯於心、外感寒濕困遏心陽",
+      "common_causes_en": "Long-standing Heart Yang deficiency; Spleen-Kidney Yang deficiency generating internal fluid-retention that rises to assail the Heart; external Cold-Damp constraining Heart Yang",
+      "progression_zh": "多由心陽虛或脾腎陽虛水飲內停發展而來；水飲上凌日久，心陽更虛，可進一步發展為喘脫等危重證候。",
+      "progression_en": "Commonly develops from Heart Yang deficiency or Spleen-Kidney Yang deficiency with internal fluid-retention; as Water-Qi continues to assail the Heart, Heart Yang becomes further depleted and can progress to critical patterns such as Panting Collapse.",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.kidney_yang_deficiency_water_flooding",
+          "distinguishing_zh": "水氣凌心病位偏重在心，以心悸怔忡、胸悶不能平臥為突出主症；腎陽虛水泛以腰膝冷痛、小便不利、全身浮腫尤以下肢為主，心悸胸悶不顯著，病位偏重在腎與全身水液代謝。",
+          "distinguishing_en": "Water-Qi Attacking the Heart is centered on the Heart, dominated by palpitations and chest oppression with inability to lie flat; Kidney Yang Deficiency with Water Flooding is dominated by cold aching lower back/knees, difficult urination, and generalized edema (especially of the lower limbs), without prominent palpitations or chest oppression — its focus is the Kidney and overall water metabolism.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.spleen_kidney_yang_deficiency",
+          "distinguishing_zh": "水氣凌心已見明顯水飲上凌之象（浮腫、胸悶不能平臥、心悸）；脾腎陽虛以畏寒肢冷、便溏、腰膝冷痛等全身陽虛見症為主，尚未見水飲明顯上凌心胸之重症表現，兩者可相兼並見。",
+          "distinguishing_en": "Water-Qi Attacking the Heart already shows clear signs of fluid assailing the Heart (edema, chest oppression with inability to lie flat, palpitations); Spleen-Kidney Yang Deficiency is dominated by generalized Yang-deficiency signs — aversion to cold, cold limbs, loose stool, cold aching lower back/knees — without yet showing the severe presentation of fluid assailing the chest and Heart. The two patterns can coexist.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "溫陽利水，寧心定悸",
+      "treatment_principle_en": "Warm Yang and disinhibit water, calm the Heart and settle palpitations",
+      "typical_formulas": [
+        "formula.ling_gui_zhu_gan_tang"
+      ],
+      "typical_points": [
+        "CV17",
+        "PC6",
+        "BL15",
+        "CV9",
+        "SP9"
+      ],
+      "point_rationale_zh": "膻中寬胸理氣；內關寧心定悸，為治心悸要穴；心俞培補心陽；水分、陰陵泉利水消腫，溫陽與利水並行。",
+      "point_rationale_en": "CV17 (Danzhong) opens the chest and regulates Qi; PC6 (Neiguan) calms the Heart and settles palpitations, a principal point for palpitation disorders; BL15 (Xinshu) tonifies Heart Yang; CV9 (Shuifen) and SP9 (Yinlingquan) disinhibit water and reduce edema — warming Yang and disinhibiting water together.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.水氣凌心"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.liver_fire_invading_stomach",
+      "name_zh": "肝火犯胃",
+      "name_en": "Liver Fire Invading the Stomach",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "liver",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "脘脅灼痛，痛勢急迫",
+        "泛酸嘈雜，口苦口乾",
+        "急躁易怒",
+        "嘔吐酸苦水"
+      ],
+      "key_signs_en": [
+        "Burning epigastric/flank pain, acute in onset",
+        "Acid regurgitation and stomach discomfort, bitter and dry mouth",
+        "Irritability, prone to anger",
+        "Vomiting sour, bitter fluid"
+      ],
+      "tongue_zh": "舌紅苔黃",
+      "tongue_en": "Red tongue with yellow coating",
+      "pulse_zh": "脈弦數",
+      "pulse_en": "Wiry, rapid pulse",
+      "mechanism_zh": "情志不遂，肝鬱化火，橫逆犯胃，肝胃氣火上逆則脘脅灼痛、泛酸嘈雜；肝火上炎則口苦急躁；胃失和降則嘔吐酸苦。",
+      "mechanism_en": "Emotional frustration causes Liver Qi stagnation to transform into Fire, which then invades the Stomach horizontally. The combined Liver-Stomach Qi and Fire rebelling upward produces burning epigastric/flank pain and acid regurgitation; Liver Fire flaring upward produces a bitter taste and irritability; the Stomach losing its harmonious downward-directing function produces vomiting of sour, bitter fluid.",
+      "common_causes_zh": "情志不遂肝鬱化火、飲食辛辣助熱、素體肝旺",
+      "common_causes_en": "Emotional frustration with Liver stagnation transforming into Fire; spicy food feeding heat; a constitutionally exuberant Liver",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_stomach_disharmony",
+          "distinguishing_zh": "肝火犯胃以脘脅灼痛、泛酸嘈雜、口苦、舌紅苔黃、脈弦數等明顯熱象為特徵；肝胃不和（肝胃氣滯）以脘脅脹痛、噯氣、情志抑鬱為主，舌苔多薄白，無明顯化火之象，兩者是氣滯與化火的輕重層次關係。",
+          "distinguishing_en": "Liver Fire Invading the Stomach is characterized by burning epigastric/flank pain, acid regurgitation, bitter taste, a red tongue with yellow coating, and a wiry rapid pulse — clear heat signs; Liver-Stomach Disharmony (Qi stagnation) is dominated by distending epigastric/flank pain, belching, and emotional depression, usually with a thin white coating and no clear Fire transformation. The two form a mild-stagnation-to-Fire-transformation spectrum.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "肝火犯胃病由肝鬱化火橫逆而來，必兼脅痛、急躁易怒等肝經見症；胃熱熾盛純屬胃腑本身熱盛，以消穀善飢、牙齦腫痛、口渴喜冷為主，無明顯脅痛及情志因素。",
+          "distinguishing_en": "Liver Fire Invading the Stomach arises from Liver-stagnation-transformed Fire invading horizontally, and always carries Liver-channel signs such as flank pain and irritability; Stomach Heat alone is purely excess heat within the Stomach itself, dominated by rapid hungering, swollen painful gums, and thirst for cold drinks, without notable flank pain or an emotional trigger.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清肝瀉火，和胃降逆",
+      "treatment_principle_en": "Clear the Liver and drain Fire, harmonize the Stomach and direct rebellious Qi downward",
+      "typical_formulas": [
+        "formula.zuo_jin_wan"
+      ],
+      "typical_points": [
+        "LR2",
+        "LR3",
+        "ST36",
+        "PC6",
+        "ST44"
+      ],
+      "point_rationale_zh": "行間為肝經滎穴，清瀉肝火；太衝疏肝理氣；內關、足三里和胃降逆止嘔；內庭清胃熱。",
+      "point_rationale_en": "LR2 (Xingjian), the Ying-Spring point of the Liver channel, drains Liver Fire; LR3 (Taichong) courses the Liver and regulates Qi; PC6 (Neiguan) and ST36 (Zusanli) harmonize the Stomach and stop vomiting by directing rebellious Qi downward; ST44 (Neiting) clears Stomach heat.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.肝火犯胃"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.lung_stomach_dryness_heat",
+      "name_zh": "肺胃燥熱",
+      "name_en": "Lung-Stomach Dryness-Heat",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "煩渴多飲，消穀善飢",
+        "口乾舌燥",
+        "皮膚乾燥",
+        "小便頻數量多"
+      ],
+      "key_signs_en": [
+        "Vexing thirst with excessive drinking, rapid hungering",
+        "Dry mouth and tongue",
+        "Dry skin",
+        "Frequent, copious urination"
+      ],
+      "tongue_zh": "舌紅苔黃燥",
+      "tongue_en": "Red tongue with a dry yellow coating",
+      "pulse_zh": "脈洪數",
+      "pulse_en": "Surging, rapid pulse",
+      "mechanism_zh": "肺胃燥熱熾盛，耗傷津液，上灼肺津則煩渴多飲，中灼胃陰則消穀善飢，是消渴病上中二消常見病機，若病久燥熱傷陰，可進一步發展為肺胃陰傷。",
+      "mechanism_en": "Blazing Dryness-Heat in the Lung and Stomach consumes fluids: scorching Lung fluids above produces vexing thirst with excessive drinking, while scorching Stomach Yin in the middle produces rapid hungering. This is the common mechanism of the Upper- and Middle-Wasting stages of Wasting-Thirst (diabetes) disease; if prolonged, the Dryness-Heat further damages Yin and can progress to Lung-Stomach Yin damage.",
+      "common_causes_zh": "素體陰虛燥熱、過食肥甘厚味積熱化燥、情志化火傷津",
+      "common_causes_en": "Constitutional Yin deficiency with Dryness-Heat; excessive rich, sweet food accumulating heat that transforms into Dryness; emotional stress transforming into Fire and damaging fluids",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stomach_yin_deficiency",
+          "distinguishing_zh": "肺胃燥熱以煩渴多飲、消穀善飢、舌紅苔黃燥等燥熱熾盛之實象為主；胃陰虛以饑不欲食、乾嘔呃逆、舌紅少苔或無苔為主，燥熱之實象不顯著，偏向陰虛而非熱盛。",
+          "distinguishing_en": "Lung-Stomach Dryness-Heat is dominated by the excess signs of blazing Dryness-Heat — vexing thirst with excessive drinking, rapid hungering, a red tongue with dry yellow coating; Stomach Yin Deficiency is dominated by hunger without desire to eat, dry retching and hiccup, and a red tongue with scanty or absent coating — the excess Dryness-Heat signs are not prominent, leaning toward deficiency rather than heat-excess.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "肺胃燥熱兼有肺燥見症（口乾、皮膚乾燥、煩渴多飲）；胃熱熾盛以牙齦腫痛、口臭、消穀善飢為主，無明顯肺燥見症，病位偏於胃腑本身。",
+          "distinguishing_en": "Lung-Stomach Dryness-Heat additionally carries Lung-dryness signs (dry mouth, dry skin, vexing thirst with excessive drinking); Stomach Heat alone is dominated by swollen painful gums, bad breath, and rapid hungering, without notable Lung-dryness signs — its focus is the Stomach organ itself.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清胃瀉火，潤肺生津",
+      "treatment_principle_en": "Clear the Stomach and drain Fire, moisten the Lung and generate fluids",
+      "typical_formulas": [
+        "formula.yu_nu_jian"
+      ],
+      "typical_points": [
+        "LU5",
+        "ST44",
+        "SP6",
+        "CV12"
+      ],
+      "point_rationale_zh": "尺澤為肺經合穴，清瀉肺熱；內庭清胃瀉火；中脘和胃；三陰交滋補脾腎之陰，生津止渴。",
+      "point_rationale_en": "LU5 (Chize), the He-Sea point of the Lung channel, drains Lung heat; ST44 (Neiting) clears and drains Stomach Fire; CV12 (Zhongwan) harmonizes the Stomach; SP6 (Sanyinjiao) nourishes Spleen-Kidney Yin, generating fluids and relieving thirst.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.肺胃燥熱"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.lung_qi_deficiency_cold",
+      "name_zh": "肺氣虛寒",
+      "name_en": "Lung Qi Deficiency with Cold",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "鼻塞流清涕，遇冷加重",
+        "噴嚏頻作",
+        "畏風怕冷，自汗",
+        "氣短聲低，語音低微"
+      ],
+      "key_signs_en": [
+        "Nasal congestion with clear discharge, worse with cold exposure",
+        "Frequent sneezing",
+        "Aversion to wind and cold, spontaneous sweating",
+        "Shortness of breath, low weak voice"
+      ],
+      "tongue_zh": "舌淡苔白",
+      "tongue_en": "Pale tongue with white coating",
+      "pulse_zh": "脈弱",
+      "pulse_en": "Weak pulse",
+      "mechanism_zh": "肺氣虛弱，衛外不固，復感寒邪，肺氣虛寒，肅降無權，寒邪凝滯鼻竅則鼻塞流清涕、噴嚏頻作；衛表不固則畏風自汗；是肺氣虛基礎上兼夾寒邪的複合證，較單純肺氣虛多一分寒象。",
+      "mechanism_en": "Lung Qi is weak and fails to secure the exterior; Cold then additionally affects the already Qi-deficient, Cold-natured Lung, which loses its power to direct Qi downward. Cold congealing in the nasal passages produces nasal congestion with clear discharge and frequent sneezing; an unsecured protective (Wei) exterior produces aversion to wind and spontaneous sweating. This is a compound pattern of Cold superimposed on a Lung Qi deficiency base — one degree colder than simple Lung Qi deficiency.",
+      "common_causes_zh": "素體肺氣虛弱、久病耗傷肺氣、反覆感受風寒",
+      "common_causes_en": "Constitutional Lung Qi weakness; chronic illness consuming Lung Qi; repeated exposure to Wind-Cold",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_qi_deficiency",
+          "distinguishing_zh": "肺氣虛寒兼有明顯寒象（鼻流清涕、遇冷加重、畏寒）；單純肺氣虛以咳喘無力、氣短聲低、自汗畏風為主，寒象不突出，涕液不一定清稀量多。",
+          "distinguishing_en": "Lung Qi Deficiency with Cold additionally carries clear Cold signs (clear nasal discharge, worse with cold exposure, aversion to cold); simple Lung Qi Deficiency is dominated by weak cough/wheeze, low-voiced shortness of breath, and spontaneous sweating with wind-aversion, without prominent Cold signs and without necessarily copious clear discharge.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.wind_cold",
+          "distinguishing_zh": "肺氣虛寒為肺氣虛弱基礎上的慢性、反覆發作性寒象，病程遷延、正氣已虛；外感風寒為新感外邪，起病急，兼有惡寒發熱、頭身疼痛等表證，正氣未虛，兩者是虛實與病程新久之別。",
+          "distinguishing_en": "Lung Qi Deficiency with Cold is a chronic, repeatedly-relapsing Cold pattern on a background of Lung Qi weakness, with a protracted course and already-depleted upright Qi; external Wind-Cold is a fresh pathogenic invasion with acute onset, accompanied by exterior signs such as chills/fever and body aches, with upright Qi not yet depleted. The two differ in deficiency-vs-excess and in course duration.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "溫補肺氣，散寒通竅",
+      "treatment_principle_en": "Warmly tonify Lung Qi, dispel Cold and open the nasal passages",
+      "typical_formulas": [
+        "formula.yu_ping_feng_san"
+      ],
+      "typical_points": [
+        "LU9",
+        "LU7",
+        "BL13",
+        "LI20",
+        "GV20"
+      ],
+      "point_rationale_zh": "太淵補益肺氣；列缺為肺經絡穴，善通鼻竅；肺俞培補肺氣；迎香疏散鼻部風寒、通利鼻竅；百會升提陽氣。",
+      "point_rationale_en": "LU9 (Taiyuan) tonifies Lung Qi; LU7 (Lieque), the Luo-Connecting point of the Lung channel, is effective for opening the nasal passages; BL13 (Feishu) tonifies Lung Qi; LI20 (Yingxiang) disperses Wind-Cold from the nasal area and opens the passages; GV20 (Baihui) raises and lifts Yang Qi.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.yu_ping_feng_san used for the sourced canon compound formula 玉屏風散合溫肺止流丹 — 玉屏風散 resolves exactly; 溫肺止流丹 is not present in formulas.json and is not separately absorbed"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.肺氣虛寒"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.damp_heat_skin_invasion",
+      "name_zh": "濕熱浸淫",
+      "name_en": "Damp-Heat Invading the Skin",
+      "pattern_family": "bing_yin",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "皮損潮紅，滲液流滋",
+        "瘙癢劇烈，搔破則滲液更甚",
+        "皮膚灼熱腫脹",
+        "病程遷延，纏綿難癒"
+      ],
+      "key_signs_en": [
+        "Red, flushed skin lesions with weeping exudate",
+        "Severe itching, worse and more exudative after scratching",
+        "Burning, swollen skin",
+        "Protracted, lingering course, difficult to resolve"
+      ],
+      "tongue_zh": "舌紅，苔黃膩",
+      "tongue_en": "Red tongue with a yellow greasy coating",
+      "pulse_zh": "脈滑數",
+      "pulse_en": "Slippery, rapid pulse",
+      "mechanism_zh": "濕熱之邪蘊結肌膚，濕性黏滯、熱性趨下外泄，濕熱浸淫肌膚腠理，故皮損潮紅腫脹、滲液流滋、瘙癢不已；濕邪纏綿故病程遷延反覆，是皮膚科濕疹、皮炎等滲出性皮損最常見的證型，與已建立的臟腑部位濕熱卡（肝膽濕熱、大腸濕熱等）同屬部位性濕熱家族，唯部位在皮膚肌表。",
+      "mechanism_en": "Damp-Heat pathogen accumulates in the skin; Dampness is sticky and lingering while Heat tends to seep outward, and the two together soak into the skin and interstices — producing red, swollen, weeping lesions with unrelenting itch. Because Dampness lingers, the course is protracted and relapsing. This is the most common pattern for exudative skin lesions such as eczema and dermatitis, belonging to the same site-specific Damp-Heat family as the already-canonical organ-located Damp-Heat cards (Liver-Gallbladder Damp-Heat, Large-Intestine Damp-Heat, etc.) — here the site is the skin itself.",
+      "common_causes_zh": "素體濕盛復感熱邪、飲食肥甘助濕生熱、脾失健運濕濁內生鬱而化熱",
+      "common_causes_en": "A constitutionally Damp-predominant person additionally affected by Heat; rich, greasy food feeding Dampness that generates Heat; impaired Spleen transformation generating internal turbid Dampness that stagnates and transforms into Heat",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.blood_deficiency_wind_dryness",
+          "distinguishing_zh": "濕熱浸淫皮損潮紅滲液流滋、苔黃膩，屬濕熱實證，病勢較急；血虛風燥皮膚乾燥脫屑、舌淡少津、脈細，屬血虛之虛證，病程遷延但無滲液，兩者可從皮損乾濕及舌脈虛實截然鑑別。",
+          "distinguishing_en": "Damp-Heat Invading the Skin shows red, weeping, exudative lesions with a yellow greasy coating — a Damp-Heat excess pattern with a more acute course; Blood Deficiency with Wind-Dryness shows dry, scaling skin, a pale tongue with scanty fluid, and a thin pulse — a Blood-deficiency pattern with a protracted course but no exudate. The two are clearly distinguished by lesion dryness-vs-wetness and deficiency-vs-excess tongue/pulse signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.wind_heat",
+          "distinguishing_zh": "濕熱浸淫以皮損滲液流滋、苔黃膩為特徵，濕邪明顯；風熱相搏以皮膚紅疹風團、遊走不定、瘙癢但無明顯滲液，苔多薄黃不膩，兩者可從有無滲液及苔膩與否鑑別。",
+          "distinguishing_en": "Damp-Heat Invading the Skin is characterized by weeping, exudative lesions with a yellow greasy coating — clear Dampness signs; Wind-Heat Contending shows red wheals/rashes that migrate and shift, with itching but no notable exudate, and usually a thin yellow, non-greasy coating. The two are distinguished by presence of exudate and coating greasiness.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清熱利濕，祛風止癢",
+      "treatment_principle_en": "Clear heat and disinhibit Dampness, dispel Wind and stop itching",
+      "typical_formulas": [
+        "formula.xiao_feng_san"
+      ],
+      "typical_points": [
+        "SP9",
+        "SP6",
+        "LI11",
+        "ST44"
+      ],
+      "point_rationale_zh": "陰陵泉為脾經合穴，清利濕熱要穴；曲池清熱疏風止癢；三陰交健脾利濕；內庭清瀉濕熱。",
+      "point_rationale_en": "SP9 (Yinlingquan), the He-Sea point of the Spleen channel, is the principal point for clearing Damp-Heat; LI11 (Quchi) clears heat, dispels Wind, and relieves itching; SP6 (Sanyinjiao) strengthens the Spleen and disinhibits Dampness; ST44 (Neiting) clears and drains Damp-Heat.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.濕熱浸淫"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
