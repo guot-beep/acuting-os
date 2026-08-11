@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R8 / conditional C2b FINAL GO
+
+- **Reviewed endpoint**: cleanup fix `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`; branch endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`. P3.1/P3.2/P3.3/P3.4=`PASS/PASS/PASS/PASS`; **C2b FINAL GO is published subject to the checklist below**.
+- **Cleanup evidence**: persistent remove failure direct+app retries twice, returns structured failure, attempts active write `0`, reloads `0`, active/pointer unchanged. Transient first failure succeeds on retry before one active swap. R5/R6 adversarials remain green.
+- **Measured evidence**: independent fake harness=`25 PASS / 0 FAIL`; official fake rehearsal including 6i/6j=`30/30`; legacy interruption/rollback=`4/4`; true clinical-store reads/writes=`0/0`, fake artifacts removed. Standard regressions are green and generated hashes unchanged.
+- **Authority boundary**: one supervised Edge `file://` migration only, with Ting present. Immediately before writing, live raw full SHA must exactly equal same-day preflight SHA and plan source SHA; N/M come from live raw. Any mismatch, nonzero duplicate/orphan/blank/review count, storage error, or post-switch parity failure revokes GO and requires rollback.
+- **Runbook**: follow the top C2B-R8 P4 checklist in `docs/AI_REVIEW_FEEDBACK.md` sections 0–6. Preserve v1 plus raw/two exports/plan/adjudications through the next backup cycle; never commit identifiable data. `migrate-c2b.js` remains dry-run only—actual write must use the reviewed store sequence, never an invented `--execute` path.
+
 ## [2026-08-11] Codex Handoff — C2B-R7 / cleanup stage remains NO-GO
 
 - **Reviewed endpoint**: R6 fix `7f6137cf9218b5c07ceeab69352f9365c6eb1050`; branch endpoint `23d5228a0d2ff38a271ef27faccdc757b3ad42ea`. P3.1 `PASS`, P3.2 `PASS`, P3.3 `FAIL`, P3.4 `PASS`; P4 FINAL GO/checklist is not published.

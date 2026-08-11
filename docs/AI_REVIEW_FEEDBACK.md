@@ -6,6 +6,82 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R8 單點獨立覆核 — endpoint `7493d03`
+
+- **REVIEWED_SHA**: R7 cleanup 修正 `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`；branch endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`。後續 commits 未再改 migration store／migrate／rehearsal；`app.js` import 區段未變。
+- **STATUS**: **CONTINUE — C2b FINAL GO（條件式）**。
+- **C2b final gate**: **GO**。P3.1=`PASS`、P3.2=`PASS`、P3.3=`PASS`、P3.4=`PASS`。這只授權依下列 P4 checklist 進行一次 Ting 在場的 Edge `file://` case→patient migration；任一前置或驗收不符即自動轉回 **NO-GO**。
+- **資料邊界**: 本審真實 clinical store 讀／寫=`0/0`；只用自製虛構 `2 patients / 2 cases` fixture。OS temp fixture 與 repo audit harness 於提交前移除。真機 N/M 一律取當日 raw，不把歷史 `2` 或 `33` 寫死成預期值。
+
+### P3.1–P3.4 最終數字
+
+- **P3.1 PASS**: store plan deterministic、CLI exact plan parity、`journal.counts.cases=999` 拒絕=`3/3`；CLI self-test=`7/7`，migration syntax=`4/4`。
+- **P3.2 PASS**: tampered noop 拒絕＋clean noop `0/0/0`=`2/2`；R5 occupation-tampered envelope direct/app/state=`3/3`。
+- **P3.3 PASS**: R6 active-replacement interruption direct/app=`4/4`；R7 persistent cleanup failure direct/app 均 retry=`2`、active write attempts=`0`、structured fail、reload=`0`、active/pointer unchanged=`6/6`；transient cleanup 第一次失敗、第二次成功後才 active swap=`1/1`；app `.catch` defense=`1/1`。
+- **P3.4 PASS**: staging-write／pointer-write interruption、rollback migration keys、fake v1 raw byte parity=`4/4`。
+- 獨立 C2B-R8 harness=`25 PASS / 0 FAIL`；官方全虛構 rehearsal（含 6i/6j）=`30/30 PASS`。persistent cleanup fault 無法刪 candidate 時會明示 failure，且 swap 不發生；待 storage 恢復後由 rollback/cleanup 清理 inert candidate。
+
+### 回歸與 reviewed blobs
+
+- invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions=`0 failures`。
+- content-junk、data=`947 points`、relations、ratchet 均 exit `0`；build 前後 `app_data.js`／`knowledge_data.js` SHA-256 各自一致。relation 既存 warnings 與本 gate 無關。
+- 真機當日 migration blobs 必須相符：`js/clinical-store.js=bb46d382191d5ef3bc6505936f185b7c5af10b75`、`app.js=2b4faac2b36d236f6282ef4b41ff0aa8ac5beb99`、`scripts/migrate-c2b.js=fe8614b035a19e449f8a88fabbbdcfb320c4f5cd`、`scripts/rehearse-c2b.js=881b50e51b1ee0b65f6c523af7f11a71df2f4663`（Git blob ids）。任一不同，除非差異經重新審核，否則 NO-GO。
+
+## P4 C2b FINAL GO — 真機當日執行條件
+
+以下每一項都是必要條件，不是建議。執行者只可用已審核的 store 流程 `executeMigration → verifyStaging → same-source noop → switchPointer`；`scripts/migrate-c2b.js` 仍只有 dry-run，禁止把不存在的 `--execute` 當真機入口，也禁止當日臨時改 migration code。
+
+### 0. 人員、環境、停寫
+
+- [ ] Ting 全程在場；先確認唯一正典是當下指定的 Edge profile＋`file://` origin，不混用 localhost／preview／QA archive。
+- [ ] 關閉同 origin 其他 tabs/windows，暫停病例輸入、import、autosave 與任何會寫 clinical localStorage 的操作。
+- [ ] 記錄 branch/commit、上述四個 blob ids、Edge 版本、Node 版本、操作者與開始時間；含 patientCode/id 的產物只存 Git 外備份目錄。
+- [ ] 初始 `acuting-clinical-active` 必須為 absent／`v1`；若已有 v2、staging 或 candidate 殘留，先停下查明，不得覆蓋後繼續。
+
+### 1. 當日 raw＋export 雙備份（pointer 前）
+
+- [ ] 從 `localStorage.getItem("acuting-clinical-cases-v1")` 保存 exact raw UTF-8 bytes；另做兩次獨立 app export，三檔使用不同檔名，存 `%USERPROFILE%\AcuTing-backups\pre-c2b\<timestamp>\` 或其他 Git 外位置。
+- [ ] 對三檔記完整 SHA-256（64 hex）與 bytes；兩次 app export byte hash 必須相同。raw 在 preflight 前後 hash 必須相同；任一差異立即 NO-GO。
+- [ ] `node scripts/preflight-c2b.js <raw.json> --out <git外目錄>`；記 N cases、M SOAP、case-id/SOAP-id/patientCode sets、nested rows/events、unknown fields、`case_d17test` 次數。真實 profile 不做 wipe/restore drill；restore drill只在隔離 origin。
+
+### 2. deterministic plan 與 Ting 裁決
+
+- [ ] 對同一 raw、同一 adjudications 連跑兩次 `migrate-c2b.js --dry-run`；兩份 plan bytes/hash exact match。
+- [ ] raw full SHA=`plan.source_sha256`，raw UTF-8 bytes=`plan.source_bytes`；cases=`N`、SOAP=`M`、patients=`unique(nonblank patientCode)`。
+- [ ] duplicate case ids、patient-id collision、orphan assignments、blank-code cases均須 `0`。任何非零立即 NO-GO。
+- [ ] conflicts／needsReview 若非零，由 Ting 逐筆核准 `{patientCode,field,value,reason}`；重跑後 needsReview=`0`、unused adjudications=`0`，journal `adjudicationsApplied` 與核准清單 exact match。
+
+### 3. 最後一秒 preflight（最重要停損點）
+
+- [ ] 執行寫入前重新從同一 Edge `file://` origin 讀 exact raw，計算完整 SHA-256。
+- [ ] **當下 raw SHA = 當日 preflight raw SHA = dry-run plan.source_sha256**，三者須 64-hex 完全相同；不得只比前綴。若不同，作廢 plan/adjudications，回 P1 重新雙備份、preflight、雙 dry-run；不得繼續。
+- [ ] Ting 口頭確認 N/M、patients、conflicts/adjudications 與 source hash後，才准進 shadow write。
+
+### 4. shadow write、驗證、pointer switch
+
+- [ ] `executeMigration` 只能寫 `acuting-clinical-v2-staging`；v1 raw hash立即重算且必須未變，pointer仍 absent／v1。
+- [ ] 以同一 raw＋deterministic plan 跑 `verifyStaging`：journal version/hash/bytes/counts/adjudications、Patient deep parity、Case↔Patient assignments、case raw parity、events exact 全綠。
+- [ ] 同 source rerun必須 `creates/updates/deletes=0/0/0`；不是即 rollback並 NO-GO。
+- [ ] 在 pointer 前保存 staging envelope 到 Git 外；Ting 再核對 creates/patients/cases/counts。只有全部相符才呼叫 `switchPointer`；不得直接手改 pointer key。
+
+### 5. pointer 後立即驗收
+
+- [ ] cases `N→N`、SOAP `M→M`；case-id、SOAP-id sets exact match；`case_d17test=0`；unknown-field loss=`0`。
+- [ ] patients=`unique(nonblank patientCode)`；duplicate patient ids、hash collision、orphan cases、orphan patients、blank-code cases、unresolved conflicts均 `0`。
+- [ ] 九個 Patient 欄位逐欄與 plan/raw parity；每個 conflict 有來源＋Ting 裁決，`adjudicationsApplied` exact。
+- [ ] 所有 exposure event id＋canonical payload 序列為 exact（當次 migration 不應新增事件）；R8 comparator與 R1–R8 invariants全綠。
+- [ ] app v2 export包含 journal＋patients＋cases；複製到隔離 origin做 file export→wipe→import，full verify、canonical hash相同、unknown loss=`0`。真實 profile禁止 wipe drill。
+- [ ] UI 抽查 Patient picker、同 patient多 case、SOAP timeline與至少一筆 nested/unknown field（若 N 中存在）；console errors=`0`。
+
+### 6. 失敗／rollback 與留存
+
+- [ ] pointer 前任一紅燈：不切 pointer；執行白名單 rollback/cleanup，只移除 candidate／staging／pointer，確認 v1 raw SHA仍等於當日備份。
+- [ ] pointer 後任一紅燈：立即切回 v1／執行 reviewed rollback，停止所有寫入；不得嘗試就地修病例。重開 app確認 v1 N/M/id sets/hash，再保存錯誤證據。
+- [ ] v1 key、raw備份、兩份 app export、plan與 adjudications保留至人工驗收後的下一個備份週期；不得當日刪除。
+- [ ] repo只寫去識別 summary（hash、bytes、counts、PASS/FAIL、rollback與否）；不得 commit patientCode、case/SOAP ids或臨床文字。
+
+**授權句**：當且僅當上述 0–3 全部勾選且 Ting 在場，本審發布 **C2b FINAL GO**，允許一次 shadow write→verify→noop→pointer switch。任何未勾、hash差異、unexpected count、storage error或驗收紅燈都使授權即時失效並回到 NO-GO。
+
 ## 2026-08-11 Codex C2B-R7 單點獨立覆核 — endpoint `23d5228`
 
 - **REVIEWED_SHA**: R6 回應 `7f6137cf9218b5c07ceeab69352f9365c6eb1050`；branch endpoint `23d5228a0d2ff38a271ef27faccdc757b3ad42ea`。`7f6137c..23d5228` 未再改 store／rehearsal／migrate；`app.js` 後續只加 Visit Brief，import handler byte 區段未變。
