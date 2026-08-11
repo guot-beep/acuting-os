@@ -224,3 +224,10 @@ node scripts/validate-tdis-standard.js --worklist --taxonomy tdx.gynecology_obst
 5. **不要跳過 red flags。**(§5)
 6. **不要把 75 筆有名字沒內容回報成「完成」。**(§0)
 7. **拼音不加聲調。**
+
+## R2 Evidence 慣例(2026-08-11,三年藍圖 R2,全線統一)
+
+帶主張的欄位(劑量、安全、療效、機轉、紅旗)必掛 **per-field 來源錨點 +
+擷取日期**(`field_sources` 或本線等價欄位;格式參照 pharm 線
+`dailymed:<setid>#<SECTION>` 的可機器解析精神)。無來源的欄位誠實留空。
+新產卡即遵守;舊卡不回溯強制,由各線驗證器與 ratchet 自然收斂。

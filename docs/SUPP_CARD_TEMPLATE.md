@@ -96,3 +96,10 @@ NIH ODS > Examine.com > Natural Medicines Database > 藥典/官方單張 >
 `case.agentExposures[].agentId = "supp.*"`(D17 §5 ledger)。卡片存在與否
 不阻擋記錄(nameText fallback);卡片建成後 UI 自動可 chip 選。
 **絕不從補充劑使用推論任何診斷/證型**(D17 §6)。
+
+## R2 Evidence 慣例(2026-08-11,三年藍圖 R2,全線統一)
+
+帶主張的欄位(劑量、安全、療效、機轉、紅旗)必掛 **per-field 來源錨點 +
+擷取日期**(`field_sources` 或本線等價欄位;格式參照 pharm 線
+`dailymed:<setid>#<SECTION>` 的可機器解析精神)。無來源的欄位誠實留空。
+新產卡即遵守;舊卡不回溯強制,由各線驗證器與 ratchet 自然收斂。
