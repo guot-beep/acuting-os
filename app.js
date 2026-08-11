@@ -1444,6 +1444,14 @@ function handlePointHashChange() {
 }
 
 function loadClinicalCases() {
+  // Phase C seam (js/clinical-store.js): storage I/O goes through the
+  // repository layer; normalization stays HERE (contract layer, not storage).
+  // The direct-localStorage fallback is not dead code — if the store script
+  // ever fails to load, silently returning [] would let the next save WIPE
+  // every real case. Reading directly is the safe failure mode.
+  if (window.AcuTingClinicalStore) {
+    return AcuTingClinicalStore.load().map(normalizeClinicalCase);
+  }
   const saved = localStorage.getItem(CASE_STORAGE_KEY);
   if (!saved) return [];
   try {
@@ -1455,6 +1463,10 @@ function loadClinicalCases() {
 }
 
 function persistClinicalCases() {
+  if (window.AcuTingClinicalStore) {
+    AcuTingClinicalStore.save(clinicalCases);
+    return;
+  }
   localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
 }
 
