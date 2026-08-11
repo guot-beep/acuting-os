@@ -557,3 +557,253 @@ flags. This closes the tdis enrichment line opened in Batch A. Any further
 work on this file is refinement (deepening `field_sources` provenance,
 resolving the disclosed judgment calls in §1.3, or upgrading
 `review_status` from `draft`), not backfill.
+
+---
+
+# TDIS Enrichment Ledger — Skeleton tier
+
+Branch `codex/tdis-skeleton`, based on `origin/codex/pattern-v2` tip
+`da100ab` ("T4 skeleton-tier carve-out for tdis line"). File touched:
+`data/pathology/tdis_registry.json` (+ `data/generated/knowledge_data.js`
+rebuilt via `build-data.js`) only. `condition_canon_shortlist.json`,
+`symptoms.json`, `pattern_library.json`, `supplements.json`,
+`pharmacology/*`, `curriculum/**` untouched. Two commits: part 1 (`d24c21a`,
++42) and part 2 (`d8107c2`, +42). **75 → 159 (+84).**
+
+## 1. Purpose and scope
+
+Ting's uncapped-skeleton ruling: names first, content on demand. This batch
+adds ~84 classical TCM disease names from 中醫內科學/婦科學/兒科學/外科學/
+五官科學 that were NOT among the existing 75, as pure `review_status:
+"skeleton"` index entries — no content fields, no red flags (T4 correctly
+defers to N4 for these, per the template's own carve-out).
+
+## 2. Conflict found and resolved: `classical_source` on skeleton records
+
+The dispatch instructions asked for `classical_source` "where you genuinely
+know the 典籍." **This directly conflicts with the skeleton exemption
+itself.** Both `docs/TDIS_CARD_TEMPLATE.md` §"T4 與骨架層" and
+`scripts/validate-tdis-standard.js`'s own `TDIS_CONTENT_FIELDS` list name
+`classical_source` as one of the fields that must be **absent** for a
+`review_status: "skeleton"` record to get the T4→N4 exemption:
+
+```js
+const TDIS_CONTENT_FIELDS = ["definition_zh", "definition_en", "etiology_zh", "etiology_en",
+  "pathomechanism_zh", "pathomechanism_en", "key_manifestations_zh", "key_manifestations_en",
+  "related_patterns", "classical_source"];
+const isPureSkeleton = rec.review_status === "skeleton"
+  && TDIS_CONTENT_FIELDS.every((f) => isEmpty(rec[f]))
+  && isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en);
+```
+
+Filling `classical_source` on any of these 84 records would have flipped
+that record from `isPureSkeleton: true` (exempt, N4 note) to
+`isPureSkeleton: false` — re-arming T4, which fails because skeleton records
+carry no `red_flags_zh/en`. Since the dispatch's hard constraint ("blocking
+MUST stay 0") is stated twice and is unambiguous, while the classical-source
+instruction is a soft "where known," **I omitted `classical_source` on all
+84 records** and am flagging the conflict here rather than guessing silently
+through the whole batch (per `docs/AI_CONSTITUTION.md` §3: "規則不清楚、或
+發現規則互相矛盾：停下來問，不要猜著做完一整批"). **Flag for Fable/Ting**:
+either the template's carve-out text should list `classical_source` as
+skeleton-safe (drop it from `TDIS_CONTENT_FIELDS`), or future skeleton
+dispatch instructions should stop asking for it — the two documents
+currently disagree with each other.
+
+## 3. taxonomy_id — enumerated before use, no gaps found
+
+Enumerated all 22 distinct `taxonomy_id` values across the existing 75
+records first (`tdx.internal_medicine.*` ×8 leaves in use,
+`tdx.gynecology_obstetrics.*` ×5 of 6 leaves, `tdx.ent.*` ×3,
+`tdx.orthopedics_traumatology.*` ×2, `tdx.surgery_dermatology.*` ×3 of 5,
+`tdx.ophthalmology.general`, `tdx.stomatology.general`,
+`tdx.andrology.general`), then cross-checked against the full
+`data/config/tcm_disease_taxonomy.json` vocabulary (11 categories, 34
+leaves). **No taxonomy gap** — `tdx.pediatrics.*` (2 leaves) and
+`tdx.internal_medicine.externally_contracted_febrile` already existed in
+the vocabulary but had **zero records** using them before this batch; this
+batch is what first populates them (10+4 pediatric records,
+6 傷寒/溫病/濕溫/瘟疫/中暑/霍亂 records respectively). Also first use of
+`tdx.gynecology_obstetrics.vulvar_vaginal_disorders` (陰挺/陰癢, 2 records)
+and `tdx.surgery_dermatology.sores_abscesses_ulcers` /
+`.other_surgical_disorders` (7+3 records) — all previously-defined,
+previously-unused leaves, not invented ones.
+
+Final per-leaf counts for the 84 new records (all verified against
+`LEAF_IDS` in the validator before writing, script not committed):
+
+```
+tdx.andrology.general                                          1
+tdx.ent.ear                                                     3
+tdx.ent.nose                                                    2
+tdx.ent.throat                                                  2
+tdx.gynecology_obstetrics.menstrual_disorders                   5
+tdx.gynecology_obstetrics.postpartum_disorders                  5
+tdx.gynecology_obstetrics.pregnancy_disorders                   6
+tdx.gynecology_obstetrics.vulvar_vaginal_disorders               2
+tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders  3
+tdx.internal_medicine.channel_limb_neuromuscular                1
+tdx.internal_medicine.externally_contracted_febrile              6
+tdx.internal_medicine.kidney_genitourinary_disorders             1
+tdx.internal_medicine.liver_gallbladder_disorders                3
+tdx.internal_medicine.qi_blood_body                              4
+tdx.internal_medicine.respiratory_system_disorders                3
+tdx.internal_medicine.spleen_stomach_gastrointestinal             2
+tdx.ophthalmology.general                                        5
+tdx.pediatrics.common_miscellaneous_pediatric                   10
+tdx.pediatrics.pediatric_epidemic_infectious                     4
+tdx.stomatology.general                                          1
+tdx.surgery_dermatology.dermatologic_disorders                   4
+tdx.surgery_dermatology.goiters_masses_tumors                    1
+tdx.surgery_dermatology.other_surgical_disorders                 3
+tdx.surgery_dermatology.sores_abscesses_ulcers                   7
+```
+
+## 4. Dedup method
+
+Exact-scan against all 75 existing `id`/`name_zh`/`aliases_zh` values (the
+75 have no `aliases_zh` populated — confirmed by reading the file — so this
+reduced to `id`/`name_zh` only), plus a running set within the 84 new
+records themselves, checked programmatically before any record was written
+(script not committed, run interactively). 0 collisions found — every name
+below is either a distinct disease not covered by the 75, or (where a
+near-relation exists) a genuinely different clinical entity, not a rename:
+
+- 積聚 (new) vs 癥瘕 `tdis.zheng_jia` (existing): 積聚 is general
+  hepatosplenic/abdominal-mass disease (both sexes); 癥瘕 is specifically
+  gynecological. Different diseases, both textbook-distinct.
+- 鼓脹 (new, ascites/liver) vs nothing existing — distinct.
+- 關格 (new) vs 癃閉 `tdis.long_bi` (existing): 癃閉 is urinary retention;
+  關格 is the combined vomiting+anuria (uremic) pattern. Different diseases.
+- 瘰癧 (new, cervical TB lymphadenitis) vs 癭病 `tdis.ying_bing` (existing,
+  goiter/thyroid enlargement). Different anatomical/pathological entities;
+  placed in the same `goiters_masses_tumors` (瘿瘤) leaf since that is the
+  closest fit — 瘰癧 does not have its own leaf.
+- 喉痹 (new, pharyngitis pattern) vs 乳蛾 `tdis.ru_e` (existing, tonsillitis)
+  — distinct 中醫喉科學 chapters.
+- 鼻窒/鼻衄 (new) vs 鼻鼽/鼻淵 `tdis.bi_qiu`/`tdis.bi_yuan` (existing) — four
+  separate 中醫耳鼻喉科學 nasal-disease chapters, no overlap.
+- 耳眩暈/耳瘡/膿耳 (new) vs 耳鳴耳聾 `tdis.er_ming_er_long` (existing,
+  tinnitus/deafness) — distinct chapters (vertigo / external-ear infection /
+  middle-ear infection vs hearing symptoms).
+- 針眼/天行赤眼/白澀症/綠風內障/圓翳內障 (new) vs 目暗昏花 `tdis.mu_yun`
+  (existing, dim/blurred vision) — five distinct 中醫眼科學 chapters.
+- 牙宣 (new, periodontal bleeding) vs 牙痛 `tdis.ya_tong` (existing,
+  toothache) — related but textbook-distinct diseases.
+- 驚風/急驚風/慢驚風: registered all three. 急驚風 and 慢驚風 are not mere
+  證型 subtypes of one disease (unlike e.g. 中風's 中臟腑/中經絡) — they have
+  genuinely different etiology (excess heat/wind-phlegm vs chronic
+  spleen-yang deficiency) and are independently diagnosed in
+  中醫兒科學. 驚風 itself is also used as a standalone clinical/chapter term.
+  Flagged here as a judgment call, not a silent assumption.
+
+## 5. Aliases — only added where genuinely known (8 of 84 records)
+
+`aliases_zh`/`aliases_en` left as `[]`/`[]` on 76 of 84 records rather than
+guessing. Populated only where a real, distinct classical/clinical synonym
+exists (checked for equal array length, T5/T7-safe):
+
+| id | alias_zh | alias_en |
+|---|---|---|
+| tdis.fei_lao | 癆瘵 | Consumption |
+| tdis.xian_bing | 癲癇 | Seizure Disorder |
+| tdis.gu_zhang | 單腹脹 | Solitary Abdominal Distension |
+| tdis.ben_tun_qi | 奔豚 | Running Piglet Disorder |
+| tdis.e_kou_chuang | 雪口 | Oral Moniliasis |
+| tdis.dun_ke | 百日咳 | Pertussis |
+| tdis.luo_li | 老鼠瘡 | Rat Sores (folk name) |
+| tdis.you | 千日瘡 | Verruca Vulgaris |
+
+One naming note for Ting's eyes: `tdis.yin_yang` (陰癢, vulvar pruritus) is
+the mechanically correct toneless pinyin id (癢 → "yang"), but it is
+visually identical to how "Yin-Yang" (陰陽 philosophy) would be written.
+Kept as-is because the pinyin is accurate and D1 forbids inventing a
+non-standard id — but worth a second look before this id gets load-bearing
+consumers, since a future reader skimming ids could misread it.
+
+## 6. Validator tails (verbatim)
+
+Before (inherited from Batch C merge / `da100ab`):
+```
+validate-tdis-standard — data/pathology/tdis_registry.json
+scope: all branches · 75 records · 75 clean
+
+PASS — 0 blocking defects.
+```
+
+After part 1 (`d24c21a`, +42, internal medicine + gynecology):
+```
+validate-tdis-standard — data/pathology/tdis_registry.json
+scope: all branches · 117 records · 117 clean
+
+N4  42 record(s) — skeleton index slot (no content claimed) — T4 deferred until any content field lands (note only)
+N1  42 record(s) — no related_patterns — 辨證分型 is this card's irreplaceable section (note only)
+N2  42 record(s) — index entry only — no definition, etiology, pathomechanism or manifestations (note only)
+
+PASS — 0 blocking defects.
+```
+
+After part 2 (`d8107c2`, +42, pediatrics + surgery/derm + andrology +
+ENT/eye/mouth):
+```
+validate-tdis-standard — data/pathology/tdis_registry.json
+scope: all branches · 159 records · 159 clean
+
+N4  84 record(s) — skeleton index slot (no content claimed) — T4 deferred until any content field lands (note only)
+N1  84 record(s) — no related_patterns — 辨證分型 is this card's irreplaceable section (note only)
+N2  84 record(s) — index entry only — no definition, etiology, pathomechanism or manifestations (note only)
+
+PASS — 0 blocking defects.
+```
+
+**75 → 159 (+84), 0 blocking defects at every step.**
+
+`check-validation-ratchet.js` (after part 2):
+```
+validation ratchet — defect counts vs committed baseline
+
+  flat     conditions   425
+  flat     patterns     0
+  flat     tdis         0
+  flat     symptoms     0
+  flat     naming       1
+
+PASS — no regressions.
+```
+
+`validate-content-junk.js`: `validate-content-junk: PASS — no scraped
+header tokens in content arrays.`
+
+`validate-relations.js`: `Relation validation passed.` (pre-existing
+`comparisons.json`/`condition_crosswalk.json` warnings unrelated to this
+batch, confirmed untouched).
+
+`git diff --check`: clean (no whitespace errors) after both commits.
+
+Full before/after per-field diff against `git show HEAD:data/pathology/
+tdis_registry.json`, run after each commit: **0 changed fields on any
+pre-existing record** (75 checked after part 1, 117 checked after part 2) —
+verified with a script, not committed.
+
+## 7. Records intentionally left out this batch
+
+Considered and deliberately excluded rather than silently dropped:
+
+- **癌病** (Cancer, a modern-edition 中醫內科學 氣血津液 chapter title) —
+  dropped for being closer to a modern textbook addition than a classical
+  病名, out of caution given the dispatch's "standard classical names only"
+  instruction. Flag for review if Ting wants it added.
+- Further 婦科/五官 subtypes not registered as separate ids (e.g. 有頭疽 /
+  無頭疽 under 疽; individual 経行前後諸証 items beyond the 3 registered) —
+  left as textbook subsections under their parent record rather than
+  separately-registered diseases, consistent with how the existing 75
+  handles 中風 (no 中臟腑/中經絡 subtype ids) and 痺證 (no 行痺/痛痺/著痺
+  subtype ids).
+
+## 8. Status
+
+**159 `tdis.*` records total: 75 with full clinical content (Batches A/B/C,
+0 T4), 84 pure skeletons (this batch, N4-exempt).** No content fields were
+added to any of the 84 — per dispatch scope, that is deliberately deferred
+to a future enrichment batch, same pattern as Batches A/B/C did for the
+original 75.
