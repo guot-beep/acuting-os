@@ -23034,8 +23034,8 @@
     },
     {
       "id": "cond.raynaud",
-      "name_en": "Raynaud Phenomenon (context)",
-      "name_zh": "雷諾氏現象（文件情境）",
+      "name_en": "Raynaud Phenomenon",
+      "name_zh": "雷諾現象",
       "category": "cardio",
       "icd_hint": "I73.0",
       "related_eastern_diseases": [
@@ -23048,8 +23048,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "原發性雷諾病並無其他可辨識的致病疾病；續發性雷諾現象則與結締組織疾病或其他疾病相關，具有較高的組織損傷風險。原發性疾病未發現潛在的全身性病因；續發性雷諾現象可能伴隨全身性硬化症、紅斑性狼瘡及其他疾病、藥物或職業暴露而出現。",
+      "western_pathology_zh": "過度的血管收縮會短暫降低手指血流；當血流恢復灌注時，可能出現膚色改變、刺痛感或疼痛。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23081,7 +23081,209 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "雷諾氏症"
+      ],
+      "aliases_en": [
+        "Raynaud's Disease"
+      ],
+      "summary_zh": "雷諾現象是小血管陣發性血管痙攣，通常發生於手指或腳趾，由寒冷或情緒壓力誘發，造成典型的膚色與感覺變化。",
+      "summary_en": "Raynaud phenomenon is episodic vasospasm of small vessels, usually in fingers or toes, triggered by cold or emotional stress and causing characteristic color/sensory changes.",
+      "etiology_en": "Primary Raynaud disease occurs without another causative disorder; secondary Raynaud phenomenon is associated with connective-tissue or other disease and has greater tissue-injury risk. Primary disease has no identified underlying systemic cause. Secondary Raynaud can accompany systemic sclerosis, lupus and other conditions, medications or occupational exposures.",
+      "western_pathology_en": "Exaggerated vasoconstriction transiently reduces digital blood flow; reperfusion can cause color change, tingling or pain.",
+      "western_context_zh": "臨床表現：發作時可能出現手指或腳趾的白／藍／紅色變化、發冷、麻木、刺痛或疼痛；發作通常由寒冷或壓力誘發。\n\n重要特徵：原發性與續發性的區分十分重要；屬於陣發性且與誘發因子相關；甲摺微血管鏡檢有助評估續發性疾病；續發性疾病可能造成潰瘍。\n\n診斷方法：以臨床病史與理學檢查為核心；懷疑續發性疾病時，可使用甲摺微血管鏡檢與自體免疫檢測。\n\n鑑別診斷：肢端發紺、周邊動脈疾病、栓塞性缺血、胸廓出口／血管壓迫症候群、凍傷。\n\n西醫治療：以避免受寒與保暖為基礎，戒菸及特定血管擴張藥物也會使用；續發性疾病的治療則針對潛在病因。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依原發性或續發性型態而定。",
+      "western_context_en": "Clinical presentation: Attacks may cause white/blue/red color change, coldness, numbness, tingling or pain in fingers/toes; episodes are often cold- or stress-triggered.\n\nKey features: primary vs secondary distinction matters; episodic and trigger-linked; nailfold capillaroscopy can help secondary-disease evaluation; secondary disease can ulcerate.\n\nDiagnostic approach: Clinical history and exam are central; nailfold capillaroscopy and autoimmune testing may be used when secondary disease is suspected.\n\nDifferential diagnosis: acrocyanosis, peripheral arterial disease, embolic ischemia, thoracic outlet/vascular compression, cold injury.\n\nWestern treatment: Cold avoidance and warming are foundational; smoking cessation and selected vasodilator medicines are used. Secondary disease treatment targets the cause.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, distinguishing primary from secondary type.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "factor": "寒冷氣候暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "factor": "已有結締組織疾病（如全身性硬化症、紅斑性狼瘡）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "factor": "Cold climate exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "factor": "Existing connective-tissue disease (e.g., systemic sclerosis, lupus)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIAMS - Raynaud's Phenomenon"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "手指潰瘍",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診風濕科或血管專科評估",
+          "rationale": "提示續發性雷諾現象併組織損傷",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "組織壞死或壞疽",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／血管外科評估",
+          "rationale": "已發生嚴重不可逆組織損傷",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "持續性缺血",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診血管專科評估",
+          "rationale": "須排除持續性血管阻塞",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "嚴重單側表現",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "單側表現較不符合典型雙側雷諾現象，須排除局部血管病因",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "合併全身性自體免疫特徵",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診風濕科評估",
+          "rationale": "提示可能為續發性雷諾現象",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Digital ulceration",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to rheumatology or vascular specialist",
+          "rationale": "Suggests secondary Raynaud with tissue injury",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "Tissue necrosis/gangrene",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/vascular surgery evaluation",
+          "rationale": "Severe irreversible tissue damage has occurred",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "Persistent ischemia",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to vascular specialist",
+          "rationale": "Must exclude ongoing vascular obstruction",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "Severe unilateral findings",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Unilateral presentation is less typical of classic bilateral Raynaud and must exclude a local vascular cause",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        },
+        {
+          "finding": "Systemic autoimmune features",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to rheumatology",
+          "rationale": "Suggests possible secondary Raynaud phenomenon",
+          "source": "NIAMS - Raynaud's Phenomenon"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為輔助性照護以改善局部循環與症狀舒適度，不可取代續發性疾病的病因治療",
+        "precautions": "避免在缺血或已潰瘍的手指上進行侵入性局部針刺或拔罐；新發持續性缺血須轉診血管評估",
+        "co_management": "若病人出現潰瘍、壞死或全身性自體免疫特徵，應聯絡其風濕科或主治醫師確認評估進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIAMS臨床資料整理）",
+        "note": "此欄為執業範圍謹慎建議，尚未查到專屬於雷諾現象的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Avoid aggressive local needling/cupping on ischemic or ulcerated digits; new persistent ischemia requires vascular assessment",
+        "precautions": "May be adjunctive for local circulation and comfort but does not replace treatment of the underlying cause of secondary disease",
+        "co_management": "If the patient develops ulceration, necrosis, or systemic autoimmune features, contact their rheumatologist or physician to confirm evaluation status",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIAMS clinical materials)",
+        "note": "This is a scope-of-practice caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for Raynaud phenomenon was located"
+      },
+      "sources": [
+        "NIAMS - Raynaud's Phenomenon: https://www.niams.nih.gov/health-topics/raynauds-phenomenon",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "summary_en": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "etiology_zh": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "etiology_en": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "western_pathology_zh": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "western_pathology_en": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "western_context_zh": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "western_context_en": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "risk_factors_zh": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "risk_factors_en": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "red_flags_zh": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "red_flags_en": [
+          "NIAMS - Raynaud's Phenomenon"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIAMS臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIAMS clinical materials)"
+        ]
+      }
     },
     {
       "id": "cond.varicose_veins",
@@ -30596,6 +30798,1242 @@
         "nhlbi_overview",
         "ncbahm_biomedicine_appendix_a",
         "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.cushing_syndrome",
+      "entity_type": "biomedical_condition",
+      "name_zh": "庫欣症候群",
+      "name_en": "Cushing Syndrome",
+      "category": "endo_metabolic",
+      "icd_hint": "E24",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "庫欣症候群是因長期暴露於過量皮質醇（無論是內源性或糖皮質類固醇治療所致）所造成的臨床狀態。",
+      "summary_en": "Cushing syndrome is the clinical state caused by prolonged exposure to excessive cortisol, whether endogenous or due to glucocorticoid treatment.",
+      "etiology_zh": "病因包含長期／高劑量糖皮質類固醇治療，以及腦垂體、腎上腺或異位性ACTH分泌疾病所造成的內源性皮質醇過量。庫欣症候群範圍比庫欣病更廣——庫欣病專指ACTH分泌性腦垂體腫瘤所致；外源性糖皮質類固醇暴露應視為另一獨立致病路徑。",
+      "etiology_en": "Causes include long-term/high-dose glucocorticoid therapy and endogenous cortisol excess from pituitary, adrenal, or ectopic ACTH-producing disease. The syndrome is broader than Cushing disease, which specifically refers to an ACTH-secreting pituitary cause. Exogenous glucocorticoid exposure must remain a separate causal pathway.",
+      "western_pathology_zh": "慢性皮質醇過量會改變葡萄糖與蛋白質代謝、脂肪分佈、骨骼、皮膚、免疫功能、血壓、情緒與生殖生理。",
+      "western_pathology_en": "Chronic cortisol excess alters glucose and protein metabolism, fat distribution, bone, skin, immune function, blood pressure, mood, and reproductive physiology.",
+      "western_context_zh": "臨床表現：可能出現的特徵包括中心性肥胖、圓形面容、頸背脂肪墊、皮膚變薄／容易瘀傷、紫紋、近端肌肉無力、高血壓、葡萄糖耐受不良、情緒改變、月經改變與骨質疏鬆症。\n\n重要特徵：屬於皮質醇過量症候群；庫欣病是其中一種亞型，並非同義詞；用藥史至關重要；影響多重系統，包含代謝、骨骼與感染風險。\n\n診斷方法：評估結合用藥史與皮質醇過量的生化檢測，確認後再進行ACTH與影像或病因導向檢查。\n\n鑑別診斷：單純性肥胖、代謝症候群、多囊性卵巢症候群、重度憂鬱症／酒精相關的假性庫欣狀態，以及外源性糖皮質類固醇作用。\n\n西醫治療：以治療病因為主：外源性類固醇僅能在醫療指導下逐步減量；內源性疾病可能需要腦垂體／腎上腺手術、放射線治療或皮質醇導向藥物治療。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依已記錄的亞型、急慢性、併發症或病因而定，本研究條目不指派任何精確帳單編碼。",
+      "western_context_en": "Clinical presentation: Possible features include central weight gain, rounded face, dorsocervical fat, thin skin/easy bruising, purple striae, proximal muscle weakness, hypertension, glucose intolerance, mood changes, menstrual changes, and osteoporosis.\n\nKey features: cortisol excess syndrome; Cushing disease is a subtype, not a synonym; medication history is essential; multisystem metabolic/bone/infection effects.\n\nDiagnostic approach: Evaluation uses medication history plus biochemical testing for cortisol excess, then ACTH and imaging/cause-directed testing after biochemical confirmation.\n\nDifferential diagnosis: simple obesity, metabolic syndrome, PCOS, major depression/alcohol-related pseudo-Cushing states, exogenous glucocorticoid effect.\n\nWestern treatment: Treat the cause: taper exogenous steroids only under medical direction; endogenous disease may require pituitary/adrenal surgery, radiation, or cortisol-directed medicines.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, per documented subtype, acuity, complication, or cause — no exact billing code is authorized by this research entry.",
+      "risk_factors_zh": [
+        {
+          "factor": "長期或高劑量糖皮質類固醇治療",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "factor": "腦垂體、腎上腺或異位性ACTH分泌腫瘤",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Cushing's Syndrome"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Long-term or high-dose glucocorticoid therapy",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "factor": "Pituitary, adrenal, or ectopic ACTH-producing tumor",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Cushing's Syndrome"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重感染",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診急診或內分泌科評估",
+          "rationale": "皮質醇過量會抑制免疫反應，感染徵象可能不典型",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "明顯高血糖",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "須排除急性代謝失代償",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "血栓栓塞症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "庫欣症候群病人血栓風險升高",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "精神狀態急遽惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "可能與皮質醇過量或治療相關",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "驟停糖皮質類固醇後出現腎上腺功能不全徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "長期使用外源性類固醇者驟停可誘發腎上腺危象",
+          "source": "NIDDK - Cushing's Syndrome"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe infection",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to emergency or endocrinology evaluation",
+          "rationale": "Cortisol excess suppresses immune response and infection signs may be atypical",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "Marked hyperglycemia",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude acute metabolic decompensation",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "Thromboembolic symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Thrombosis risk is elevated in Cushing syndrome",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "Psychiatric decompensation",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "May relate to cortisol excess or treatment",
+          "source": "NIDDK - Cushing's Syndrome"
+        },
+        {
+          "finding": "Adrenal insufficiency signs after abrupt glucocorticoid withdrawal",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Abrupt withdrawal in long-term exogenous steroid users can precipitate adrenal crisis",
+          "source": "NIDDK - Cushing's Syndrome"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅可作為輔助性症狀照護",
+        "precautions": "不得建議病人驟停類固醇；須留意皮膚脆弱易破、易瘀傷、骨質疏鬆、糖尿病、高血壓、感染與血栓風險",
+        "co_management": "須聯絡病人的內分泌科或主治醫師確認評估與類固醇調整進度，執業者絕不可建議病人自行調整或停用糖皮質類固醇",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIDDK臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於庫欣症候群的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom care only",
+        "precautions": "Do not advise abrupt steroid discontinuation; consider fragile skin, bruising, osteoporosis, diabetes, hypertension, infection and thrombosis risk",
+        "co_management": "Contact the patient's endocrinologist or physician to confirm evaluation and steroid-adjustment status; practitioners must never advise the patient to independently adjust or stop glucocorticoids",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIDDK clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for Cushing syndrome was located"
+      },
+      "sign_symptom_ids": [
+        "sym.weakness"
+      ],
+      "sources": [
+        "NIDDK - Cushing's Syndrome: https://www.niddk.nih.gov/health-information/endocrine-diseases/cushings-syndrome",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "summary_en": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "etiology_zh": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "etiology_en": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "western_pathology_zh": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "western_pathology_en": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "western_context_zh": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "western_context_en": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "risk_factors_zh": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "risk_factors_en": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "red_flags_zh": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "red_flags_en": [
+          "NIDDK - Cushing's Syndrome"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIDDK臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIDDK clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "niddk_overview",
+        "research_pack_batch_e_metabolic_hematology_cardiac"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.type_1_diabetes",
+      "entity_type": "biomedical_condition",
+      "name_zh": "第一型糖尿病",
+      "name_en": "Type 1 Diabetes",
+      "category": "endo_metabolic",
+      "icd_hint": "E10",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "第一型糖尿病是一種自體免疫性疾病，免疫系統破壞胰臟beta細胞，造成嚴重胰島素缺乏，病人須終身依賴外源性胰島素。",
+      "summary_en": "Type 1 diabetes is an autoimmune disease in which immune destruction of pancreatic beta cells causes severe insulin deficiency and lifelong dependence on exogenous insulin.",
+      "etiology_zh": "自體免疫易感性加上環境誘發因子共同致病；免疫系統破壞胰島素生成的beta細胞。",
+      "etiology_en": "Autoimmune susceptibility plus environmental triggers contribute; the immune system destroys insulin-producing beta cells.",
+      "western_pathology_zh": "胰島素缺乏使葡萄糖無法正常被細胞攝取，並促使肝臟葡萄糖輸出增加、脂肪分解與酮體生成；嚴重缺乏可造成糖尿病酮酸中毒（DKA）。",
+      "western_pathology_en": "Insulin deficiency prevents normal glucose uptake and promotes hepatic glucose output, lipolysis and ketone production; severe deficiency can cause DKA.",
+      "western_context_zh": "臨床定位：第一型糖尿病與第二型糖尿病、LADA分型爭議及暫時性高血糖不同；糖尿病酮酸中毒可能是疾病的首發表現。\n\n臨床表現：可能出現多尿、多渴、易餓、疲勞、體重減輕與視力模糊；DKA可能造成噁心、嘔吐、腹痛、脫水、呼吸急促深快與意識改變。\n\n重要特徵：自體免疫性beta細胞破壞；須依賴胰島素；DKA是主要的急症併發症；血糖監測與低血糖安全是核心照護重點。\n\n診斷方法：診斷使用血糖／糖化血色素（A1C）標準，並在型別不確定時加做自體抗體與其他檢測；懷疑DKA時須評估酮體與酸鹼平衡。\n\n鑑別診斷：第二型糖尿病、單基因型糖尿病、續發性糖尿病、壓力性高血糖，以及尿崩症（針對多尿／多渴症狀）。\n\n西醫治療：終身胰島素治療、依情況使用血糖監測／連續血糖監測、營養與活動衛教、低血糖預防、生病期間應對計畫，以及併發症篩檢。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依已記錄的併發症與控制狀態而定。",
+      "western_context_en": "Clinical definition: Type 1 diabetes is distinct from type 2 diabetes, LADA classification questions, and transient hyperglycemia. Diabetic ketoacidosis can be the first presentation.\n\nClinical presentation: Polyuria, polydipsia, hunger, fatigue, weight loss and blurred vision can develop; DKA may cause nausea, vomiting, abdominal pain, dehydration, rapid/deep breathing and altered mental status.\n\nKey features: autoimmune beta-cell destruction; requires insulin; DKA is a major emergency complication; glucose monitoring and hypoglycemia safety are central.\n\nDiagnostic approach: Diagnosis uses glucose/A1C criteria for diabetes plus autoantibodies and other tests when diabetes type is uncertain. Ketones and acid-base testing assess suspected DKA.\n\nDifferential diagnosis: type 2 diabetes, monogenic diabetes, secondary diabetes, stress hyperglycemia, and diabetes insipidus for polyuria/polydipsia.\n\nWestern treatment: Lifelong insulin, glucose monitoring/CGM as appropriate, nutrition/activity education, hypoglycemia prevention, sick-day planning, and complication screening.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, per documented complication and control status.",
+      "risk_factors_zh": [
+        {
+          "factor": "第一型糖尿病家族史或自體免疫易感性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "factor": "特定環境誘發因子（如病毒感染）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Type 1 Diabetes"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Family history of type 1 diabetes or autoimmune susceptibility",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "factor": "Selected environmental triggers (e.g., viral infection)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Type 1 Diabetes"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "糖尿病酮酸中毒症狀（噁心、嘔吐、腹痛、深快呼吸）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "屬於致命的急性代謝併發症",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "嚴重低血糖",
+          "urgency_level": "emergency",
+          "recommended_action": "立即處置並急診評估",
+          "rationale": "可能迅速導致意識喪失或癲癇發作",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能反映嚴重高血糖或低血糖",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "癲癇發作",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能與嚴重血糖不穩定相關",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "脫水或無法安全攝取胰島素／水分",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診急診或內分泌科評估",
+          "rationale": "可能加速代謝失代償",
+          "source": "NIDDK - Type 1 Diabetes"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "DKA symptoms (nausea, vomiting, abdominal pain, rapid/deep breathing)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A life-threatening acute metabolic complication",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "Severe hypoglycemia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate treatment and emergency evaluation",
+          "rationale": "Can rapidly progress to loss of consciousness or seizure",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "Altered mental status",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May reflect severe hyperglycemia or hypoglycemia",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "Seizures",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May relate to severe glucose instability",
+          "source": "NIDDK - Type 1 Diabetes"
+        },
+        {
+          "finding": "Dehydration or inability to safely take insulin/fluids",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to emergency or endocrinology evaluation",
+          "rationale": "Can accelerate metabolic decompensation",
+          "source": "NIDDK - Type 1 Diabetes"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸無法取代胰島素治療",
+        "precautions": "須確認飲食與胰島素時間安排及低血糖風險；糖尿病酮酸中毒或嚴重血糖不穩定時應暫緩治療",
+        "co_management": "須聯絡病人的內分泌科或主治醫師確認評估與治療進度，執業者不得建議病人自行調整胰島素劑量",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIDDK臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於第一型糖尿病的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture cannot replace insulin",
+        "precautions": "Confirm food/insulin timing and hypoglycemia risk; defer treatment in DKA or severe glucose instability",
+        "co_management": "Contact the patient's endocrinologist or physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust insulin dosing",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIDDK clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for type 1 diabetes was located"
+      },
+      "sign_symptom_ids": [
+        "sym.fatigue"
+      ],
+      "sources": [
+        "NIDDK - Type 1 Diabetes: https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "summary_en": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "etiology_zh": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "etiology_en": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "western_pathology_zh": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "western_pathology_en": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "western_context_zh": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "western_context_en": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "risk_factors_zh": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "risk_factors_en": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "red_flags_zh": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "red_flags_en": [
+          "NIDDK - Type 1 Diabetes"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIDDK臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIDDK clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "niddk_overview",
+        "research_pack_batch_e_metabolic_hematology_cardiac"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.polycythemia_vera",
+      "entity_type": "biomedical_condition",
+      "name_zh": "真性紅血球增多症",
+      "name_en": "Polycythemia Vera",
+      "category": "immune_misc",
+      "icd_hint": "D45",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "紅血球增多症（鑑別用）"
+      ],
+      "aliases_en": [
+        "PV",
+        "Erythrocytosis (differential context)"
+      ],
+      "summary_zh": "真性紅血球增多症（PV）是一種慢性骨髓增生性腫瘤，血球（尤其是紅血球）過度生成。廣義的紅血球增多症／多血症範圍更廣，可能為續發性。",
+      "summary_en": "Polycythemia vera (PV) is a chronic myeloproliferative neoplasm with excessive blood-cell production, especially red cells. Generic erythrocytosis/polycythemia is broader and can be secondary.",
+      "etiology_zh": "PV通常與後天性JAK2路徑突變相關，屬於克隆性骨髓疾病；續發性紅血球增多症則有不同病因（如缺氧、紅血球生成素驅動狀態），須另行評估，不應與PV混為一談。",
+      "etiology_en": "PV is usually associated with acquired JAK2-pathway mutations. Secondary erythrocytosis has different causes and needs separate evaluation. Do not treat 'polycythemia' and polycythemia vera as synonyms — PV is a clonal marrow disease.",
+      "western_pathology_zh": "紅血球量擴增會增加血液黏稠度與血栓風險；PV病人也可能出現白血球／血小板異常與骨髓病程演變。",
+      "western_pathology_en": "Expanded red-cell mass increases blood viscosity and thrombosis risk; leukocyte/platelet abnormalities and marrow evolution may also occur in PV.",
+      "western_context_zh": "臨床表現：部分病人無症狀；可能出現頭痛、頭暈、視覺症狀、溫水浴後搔癢、肢端紅痛症、脾臟腫大、血栓或出血。\n\n重要特徵：PV屬於骨髓增生性腫瘤；一般所稱的「紅血球增多症」並非PV的同義詞；血栓與出血是重要併發症；血比容／全血球計數搭配病因評估為核心。\n\n診斷方法：全血球計數／血比容、紅血球生成素濃度、JAK2基因檢測與骨髓評估可能會使用；須同時評估紅血球增多症的續發性病因。\n\n鑑別診斷：因缺氧造成的續發性紅血球增多症、相對性紅血球增多症／脫水，以及其他骨髓增生性腫瘤。\n\n西醫治療：PV的處置可能包含放血治療、抗血小板治療與依風險採用的細胞減量治療；續發性紅血球增多症的治療則針對病因。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依已記錄的亞型、急慢性、併發症或病因而定。",
+      "western_context_en": "Clinical presentation: Some patients are asymptomatic; possible headache, dizziness, visual symptoms, pruritus after warm water, erythromelalgia, splenomegaly, thrombosis or bleeding.\n\nKey features: PV is a myeloproliferative neoplasm; generic erythrocytosis is not a synonym; thrombosis and bleeding are important complications; hematocrit/CBC plus cause evaluation are central.\n\nDiagnostic approach: CBC/hematocrit, erythropoietin level, JAK2 testing and marrow evaluation may be used; secondary causes of erythrocytosis must be assessed.\n\nDifferential diagnosis: secondary erythrocytosis from hypoxia, relative erythrocytosis/dehydration, other myeloproliferative neoplasms.\n\nWestern treatment: PV management may include phlebotomy, antiplatelet therapy and cytoreductive treatment based on risk; secondary erythrocytosis treatment targets the cause.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, per documented subtype, acuity, complication, or cause.",
+      "risk_factors_zh": [
+        {
+          "factor": "後天性JAK2路徑基因突變",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus Genetics - Polycythemia vera"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Acquired JAK2-pathway gene mutation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus Genetics - Polycythemia vera"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "中風／TIA徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "血液黏稠度升高會增加血栓性中風風險",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "心肌梗塞徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "血栓風險升高可誘發急性冠心症",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "深部靜脈血栓／肺栓塞徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "PV病人血栓栓塞風險顯著升高",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "嚴重頭痛併神經學缺損",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "須排除腦血管併發症",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "重大出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "血小板功能異常可能造成出血傾向",
+          "source": "NCI Dictionary - Polycythemia vera"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Stroke/TIA signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Increased blood viscosity raises thrombotic stroke risk",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "MI signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Elevated thrombosis risk can precipitate acute coronary syndrome",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "DVT/PE signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Thromboembolic risk is significantly elevated in PV",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "Severe headache with neurologic deficits",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must exclude cerebrovascular complications",
+          "source": "NCI Dictionary - Polycythemia vera"
+        },
+        {
+          "finding": "Major bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Platelet dysfunction can cause bleeding tendency",
+          "source": "NCI Dictionary - Polycythemia vera"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不得以針灸放血替代醫療性放血治療",
+        "precautions": "須評估血栓與出血風險及抗血栓藥物使用情形",
+        "co_management": "須聯絡病人的血液科或主治醫師確認評估與治療進度，執業者不得建議病人自行調整用藥或以針灸放血取代治療性放血",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NCI/MedlinePlus臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於真性紅血球增多症的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not use bloodletting as a substitute for therapeutic phlebotomy",
+        "precautions": "Review thrombosis/bleeding risk and antithrombotic therapy",
+        "co_management": "Contact the patient's hematologist or physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust medication or substitute acupuncture bloodletting for therapeutic phlebotomy",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NCI/MedlinePlus clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for polycythemia vera was located"
+      },
+      "sign_symptom_ids": [
+        "sym.headache",
+        "sym.dizziness"
+      ],
+      "sources": [
+        "MedlinePlus Genetics - Polycythemia vera: https://medlineplus.gov/genetics/condition/polycythemia-vera/",
+        "NCI Dictionary - Polycythemia vera: https://www.cancer.gov/publications/dictionaries/cancer-terms/def/polycythemia-vera",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus Genetics - Polycythemia vera"
+        ],
+        "summary_en": [
+          "MedlinePlus Genetics - Polycythemia vera"
+        ],
+        "etiology_zh": [
+          "MedlinePlus Genetics - Polycythemia vera"
+        ],
+        "etiology_en": [
+          "MedlinePlus Genetics - Polycythemia vera"
+        ],
+        "western_pathology_zh": [
+          "NCI Dictionary - Polycythemia vera"
+        ],
+        "western_pathology_en": [
+          "NCI Dictionary - Polycythemia vera"
+        ],
+        "western_context_zh": [
+          "NCI Dictionary - Polycythemia vera"
+        ],
+        "western_context_en": [
+          "NCI Dictionary - Polycythemia vera"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus Genetics - Polycythemia vera"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus Genetics - Polycythemia vera"
+        ],
+        "red_flags_zh": [
+          "NCI Dictionary - Polycythemia vera"
+        ],
+        "red_flags_en": [
+          "NCI Dictionary - Polycythemia vera"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NCI/MedlinePlus臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NCI/MedlinePlus clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "medlineplus_genetics",
+        "nci_dictionary",
+        "research_pack_batch_e_metabolic_hematology_cardiac"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.neutropenia",
+      "entity_type": "biomedical_condition",
+      "name_zh": "嗜中性白血球減少症",
+      "name_en": "Neutropenia",
+      "category": "immune_misc",
+      "icd_hint": "D70",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "嗜中性白血球減少症是指嗜中性白血球絕對數量減少，會增加細菌與黴菌感染的易感性；嗜中性球減少的程度愈嚴重或持續愈久，風險愈高。",
+      "summary_en": "Neutropenia is a reduced absolute neutrophil count that increases susceptibility to bacterial and fungal infection, with risk rising as neutropenia becomes more severe or prolonged.",
+      "etiology_zh": "病因包含藥物／化學治療、骨髓疾病、感染、自體免疫疾病、營養缺乏、先天性疾病及其他全身性疾病。",
+      "etiology_en": "Causes include medications/chemotherapy, marrow disorders, infections, autoimmune disease, nutritional deficiency, congenital disorders and other systemic disease.",
+      "western_pathology_zh": "嗜中性白血球數量不足會削弱對抗侵入性細菌與黴菌感染的先天性防禦能力；在嚴重嗜中性球減少的病人中，發燒可能是感染最早、甚至唯一的徵象。",
+      "western_pathology_en": "Reduced neutrophil availability weakens innate defense against invasive bacterial and fungal infection; fever may be the only early sign in severely neutropenic patients.",
+      "western_context_zh": "臨床表現：嗜中性白血球減少本身可能無症狀。感染可能表現為發燒、寒顫、口腔潰瘍、喉嚨痛、咳嗽、泌尿道症狀、皮膚變化或敗血症。\n\n重要特徵：絕對嗜中性球數量（ANC）為關鍵指標；風險取決於嚴重度／持續時間與臨床情境；顯著嗜中性球減少合併發燒屬於時間敏感狀況；病因評估至關重要。\n\n診斷方法：全血球計數含分類計數可確認ANC；依情境可能需要重複計數、藥物回顧、感染／營養評估與骨髓檢查。\n\n鑑別診斷：暫時性病毒性白血球減少、藥物誘發性嗜中性球減少、骨髓衰竭／惡性疾病、自體免疫性嗜中性球減少，以及營養缺乏。\n\n西醫治療：治療病因、於醫療適當時停用致病藥物、及時治療感染，並在特定情況下使用生長因子或其他血液科導向治療。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依已記錄的亞型、急慢性、併發症或病因而定。",
+      "western_context_en": "Clinical presentation: Neutropenia itself may be asymptomatic. Infection can present with fever, chills, mouth sores, sore throat, cough, urinary symptoms, skin changes or sepsis.\n\nKey features: ANC is the key count; risk depends on depth/duration and clinical context; fever in significant neutropenia is time-sensitive; cause evaluation is essential.\n\nDiagnostic approach: CBC with differential establishes ANC; repeated counts, medication review, infection/nutrition studies and bone-marrow evaluation may be required by context.\n\nDifferential diagnosis: transient viral leukopenia, medication-induced neutropenia, marrow failure/malignancy, autoimmune neutropenia, nutritional deficiency.\n\nWestern treatment: Treat the cause, stop offending agents when medically appropriate, treat infections promptly, and use growth-factor or other hematology-directed therapy in selected cases.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, per documented subtype, acuity, complication, or cause.",
+      "risk_factors_zh": [
+        {
+          "factor": "化學治療或骨髓抑制性藥物",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "factor": "骨髓疾病或浸潤性病變",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI Dictionary - Neutropenia"
+        },
+        {
+          "factor": "自體免疫疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI Dictionary - Neutropenia"
+        },
+        {
+          "factor": "營養缺乏",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI Dictionary - Neutropenia"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Chemotherapy or myelosuppressive medication",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "factor": "Marrow disorder or infiltrative disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI Dictionary - Neutropenia"
+        },
+        {
+          "factor": "Autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI Dictionary - Neutropenia"
+        },
+        {
+          "factor": "Nutritional deficiency",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI Dictionary - Neutropenia"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "顯著嗜中性球減少合併發燒",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "屬於發燒性嗜中性球減少症，須即刻評估與治療",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "寒顫",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能提示嚴重感染",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "低血壓",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示敗血症相關循環不穩定",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為敗血症的警訊徵象",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "呼吸困難或其他敗血症特徵",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "須立即排除敗血症進展",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever with significant neutropenia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Febrile neutropenia requires immediate evaluation and treatment",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "Rigors",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May indicate serious infection",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "Hypotension",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests sepsis-related circulatory instability",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "Altered mental status",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A warning sign of sepsis",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        },
+        {
+          "finding": "Dyspnea or other sepsis features",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must immediately exclude progressing sepsis",
+          "source": "NCI - Infection and Neutropenia During Cancer Treatment"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "發燒性嗜中性球減少症或不穩定感染期間應避免治療",
+        "precautions": "須採取嚴格的感染控制措施；血球數與治療相關時須與腫瘤科／血液科協調",
+        "co_management": "須聯絡病人的血液科／腫瘤科醫師確認評估與感染控制進度，執業者不得建議病人自行調整用藥",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NCI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於嗜中性白血球減少症的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Avoid treatment during febrile neutropenia or unstable infection",
+        "precautions": "Use strict infection-control precautions and coordinate with oncology/hematology when counts are treatment-related",
+        "co_management": "Contact the patient's hematologist/oncologist to confirm evaluation and infection-control status; practitioners must not advise the patient to independently adjust medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NCI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for neutropenia was located"
+      },
+      "sign_symptom_ids": [
+        "sym.fever"
+      ],
+      "sources": [
+        "NCI Dictionary - Neutropenia: https://www.cancer.gov/publications/dictionaries/cancer-terms/def/neutropenia",
+        "NCI - Infection and Neutropenia During Cancer Treatment: https://www.cancer.gov/about-cancer/treatment/side-effects/infection",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NCI Dictionary - Neutropenia"
+        ],
+        "summary_en": [
+          "NCI Dictionary - Neutropenia"
+        ],
+        "etiology_zh": [
+          "NCI Dictionary - Neutropenia"
+        ],
+        "etiology_en": [
+          "NCI Dictionary - Neutropenia"
+        ],
+        "western_pathology_zh": [
+          "NCI Dictionary - Neutropenia"
+        ],
+        "western_pathology_en": [
+          "NCI Dictionary - Neutropenia"
+        ],
+        "western_context_zh": [
+          "NCI - Infection and Neutropenia During Cancer Treatment"
+        ],
+        "western_context_en": [
+          "NCI - Infection and Neutropenia During Cancer Treatment"
+        ],
+        "risk_factors_zh": [
+          "NCI - Infection and Neutropenia During Cancer Treatment",
+          "NCI Dictionary - Neutropenia"
+        ],
+        "risk_factors_en": [
+          "NCI - Infection and Neutropenia During Cancer Treatment",
+          "NCI Dictionary - Neutropenia"
+        ],
+        "red_flags_zh": [
+          "NCI - Infection and Neutropenia During Cancer Treatment"
+        ],
+        "red_flags_en": [
+          "NCI - Infection and Neutropenia During Cancer Treatment"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NCI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NCI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nci_dictionary",
+        "nci_overview",
+        "research_pack_batch_e_metabolic_hematology_cardiac"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.hemochromatosis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "血色素沉著症",
+      "name_en": "Hemochromatosis",
+      "category": "endo_metabolic",
+      "icd_hint": "E83.1",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "血鐵沉積症"
+      ],
+      "aliases_en": [
+        "Iron Overload Disease"
+      ],
+      "summary_zh": "血色素沉著症是一種鐵質過度堆積的疾病，可能損害肝臟、心臟、胰臟、關節及其他器官。",
+      "summary_en": "Hemochromatosis is a disorder of excessive iron accumulation that can damage the liver, heart, pancreas, joints and other organs.",
+      "etiology_zh": "遺傳性血色素沉著症是一種基因性鐵質過度調節疾病，通常與HFE基因相關；續發性鐵質過量則可能因反覆輸血或其他疾病造成，屬於不同的病因路徑。",
+      "etiology_en": "Hereditary hemochromatosis is a genetic iron-overload disorder; secondary iron overload from transfusions or other disease is a different cause pathway. Hereditary forms commonly involve HFE-related altered iron regulation; secondary overload can follow repeated transfusion or other conditions.",
+      "western_pathology_zh": "腸道鐵質吸收過量或鐵質負荷增加會提高體內鐵儲存量；沉積的鐵質會促成氧化性組織損傷與纖維化。",
+      "western_pathology_en": "Excess intestinal iron absorption or iron loading raises body iron stores; deposited iron promotes oxidative tissue injury and fibrosis.",
+      "western_context_zh": "臨床表現：疾病早期可能無症狀。可能出現疲勞、關節疼痛、肝功能異常、糖尿病、皮膚色素沉著、心律不整／心肌病變或其他內分泌問題。\n\n重要特徵：屬於鐵質過量狀態，並非一般飲食性高鐵攝取；鐵蛋白與運鐵蛋白飽和度可指引評估；及早治療可預防器官損傷；遺傳性與續發性病因的區分十分重要。\n\n診斷方法：使用鐵質檢查、鐵蛋白／運鐵蛋白飽和度、基因檢測與器官特異性評估；須考慮造成鐵蛋白升高的其他病因。\n\n鑑別診斷：發炎相關的鐵蛋白升高、慢性肝臟疾病、續發性輸血相關鐵質過量，以及其他遺傳性鐵質疾病。\n\n西醫治療：多數遺傳性病例以定期治療性放血為標準治療；無法接受放血或屬於續發性鐵質過量的病人則會選擇螯合治療。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依已記錄的遺傳性／續發性病因與併發症而定。",
+      "western_context_en": "Clinical presentation: May be asymptomatic early. Fatigue, joint pain, liver abnormalities, diabetes, skin pigmentation, arrhythmia/cardiomyopathy, or endocrine problems can occur.\n\nKey features: iron overload, not ordinary high dietary iron; ferritin and transferrin saturation guide evaluation; organ damage is preventable when treated early; genetic vs secondary cause matters.\n\nDiagnostic approach: Iron studies, ferritin/transferrin saturation, genetic testing and organ-specific evaluation are used; alternate causes of elevated ferritin must be considered.\n\nDifferential diagnosis: inflammation-related high ferritin, chronic liver disease, secondary transfusional iron overload, other genetic iron disorders.\n\nWestern treatment: Regular therapeutic phlebotomy is standard for many hereditary cases; chelation is used in selected patients who cannot undergo phlebotomy or have secondary overload.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, per documented hereditary/secondary cause and complications.",
+      "risk_factors_zh": [
+        {
+          "factor": "HFE基因相關遺傳性鐵調節異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "factor": "反覆輸血病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "factor": "血色素沉著症家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hemochromatosis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "HFE-related hereditary iron dysregulation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "factor": "History of repeated blood transfusion",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "factor": "Family history of hemochromatosis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK - Hemochromatosis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "失代償性肝臟疾病徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診肝膽腸胃科或急診評估",
+          "rationale": "提示鐵質沉積已造成嚴重肝損傷",
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "finding": "嚴重心律不整或心臟衰竭",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "鐵質沉積性心肌病變可造成致命心臟併發症",
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "finding": "嚴重高血糖",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診內分泌科或急診評估",
+          "rationale": "可能反映鐵質沉積造成的胰臟損傷",
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "finding": "其他器官衰竭徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估",
+          "rationale": "須排除多重器官鐵質沉積損傷",
+          "source": "NIDDK - Hemochromatosis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Decompensated liver disease signs",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to hepatology/GI or emergency evaluation",
+          "rationale": "Suggests iron deposition has caused severe liver damage",
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "finding": "Serious arrhythmia or heart failure",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Iron-deposition cardiomyopathy can cause life-threatening cardiac complications",
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "finding": "Severe hyperglycemia",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer to endocrinology or emergency evaluation",
+          "rationale": "May reflect iron-related pancreatic damage",
+          "source": "NIDDK - Hemochromatosis"
+        },
+        {
+          "finding": "Other organ failure signs",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation",
+          "rationale": "Must exclude multi-organ iron-deposition damage",
+          "source": "NIDDK - Hemochromatosis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不得將針灸放血與醫療性放血混為一談",
+        "precautions": "須考量肝硬化、糖尿病、心臟疾病與治療狀態",
+        "co_management": "須聯絡病人的肝膽腸胃科或主治醫師確認評估與放血治療進度，執業者不得建議病人自行調整治療",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIDDK臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於血色素沉著症的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not confuse acupuncture bloodletting with medical phlebotomy",
+        "precautions": "Account for cirrhosis, diabetes, cardiac disease and treatment status",
+        "co_management": "Contact the patient's hepatologist/GI specialist or physician to confirm evaluation and phlebotomy treatment status; practitioners must not advise the patient to independently adjust treatment",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIDDK clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for hemochromatosis was located"
+      },
+      "sign_symptom_ids": [
+        "sym.fatigue"
+      ],
+      "sources": [
+        "NIDDK - Hemochromatosis: https://www.niddk.nih.gov/health-information/liver-disease/hemochromatosis",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "summary_en": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "etiology_zh": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "etiology_en": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "western_pathology_zh": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "western_pathology_en": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "western_context_zh": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "western_context_en": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "risk_factors_zh": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "risk_factors_en": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "red_flags_zh": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "red_flags_en": [
+          "NIDDK - Hemochromatosis"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NIDDK臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NIDDK clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "niddk_overview",
+        "research_pack_batch_e_metabolic_hematology_cardiac"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.valvular_heart_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "心臟瓣膜疾病",
+      "name_en": "Valvular Heart Disease",
+      "category": "cardio",
+      "icd_hint": "I34-I39",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "心臟瓣膜疾病包含心臟瓣膜的狹窄、逆流及其他功能障礙，可能改變心內血流並導致心室重塑、心律不整或心臟衰竭。",
+      "summary_en": "Valvular heart disease comprises stenosis, regurgitation and other dysfunction of the heart valves that can alter intracardiac flow and lead to chamber remodeling, arrhythmia or heart failure.",
+      "etiology_zh": "病因包含先天性異常、退化性鈣化、風濕性疾病、感染性心內膜炎、缺血性／乳突肌功能障礙，以及結締組織疾病。此為上位分類概念，主動脈瓣狹窄、二尖瓣逆流等個別瓣膜疾病，依現有正典涵蓋範圍與介面需求，可能值得建立獨立的子記錄。",
+      "etiology_en": "Causes include congenital abnormalities, degenerative calcification, rheumatic disease, infective endocarditis, ischemic/papillary muscle dysfunction and connective-tissue disease. This is a parent condition; aortic stenosis, mitral regurgitation and other valve-specific disorders may deserve separate child identities depending current canonical coverage and UI needs.",
+      "western_pathology_zh": "狹窄會阻礙前向血流；逆流則造成逆向血流與容積負荷過重。長期的壓力／容積負荷可能導致心室或心房重塑並演變為心臟衰竭。",
+      "western_pathology_en": "Stenosis obstructs forward flow; regurgitation causes backward flow and volume overload. Chronic pressure/volume stress can produce ventricular/atrial remodeling and heart failure.",
+      "western_context_zh": "臨床定位：本記錄屬於上位分類。個別瓣膜特異性疾病（如主動脈瓣狹窄、二尖瓣逆流）可能需要依現況再另立子記錄，各自完整記載，再以多對多方式連結，而非把所有瓣膜病理全部併入本記錄。\n\n臨床表現：部分病人無症狀。可能出現呼吸困難、疲勞、胸部不適、心悸、暈厥、水腫或運動耐受不良，依受累瓣膜與嚴重度而異。\n\n重要特徵：屬於帶有瓣膜特異性亞型的上位分類；心雜音提示但不能定義嚴重度；心臟超音波檢查為核心；嚴重瓣膜疾病可能導致心臟衰竭／暈厥。\n\n診斷方法：病史／理學檢查與心臟超音波為核心，依情境可加做心電圖、胸部影像、壓力測試、電腦斷層／核磁共振或心導管檢查。\n\n鑑別診斷：其他病因造成的心臟衰竭、心肌病變、先天性心臟病、心律不整，以及非心因性呼吸困難。\n\n西醫治療：處置依病灶與嚴重度而定，包含觀察追蹤、針對併發症的指引導向藥物治療，以及外科或經導管瓣膜修復／置換。\n\n編碼備註：確切編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，並依已記錄的瓣膜、亞型、急慢性或併發症而定。",
+      "western_context_en": "Clinical definition: This is a parent condition. Aortic stenosis, mitral regurgitation and other valve-specific disorders may deserve separate child identities depending current canonical coverage and UI needs — each fully documented, connected many-to-many, rather than merging all valve pathology into this one record.\n\nClinical presentation: Some patients are asymptomatic. Dyspnea, fatigue, chest discomfort, palpitations, syncope, edema or exercise intolerance can occur depending valve and severity.\n\nKey features: parent category with valve-specific subtypes; murmur suggests but does not define severity; echocardiography is central; severe valve disease can cause HF/syncope.\n\nDiagnostic approach: History/exam and echocardiography are central; ECG, chest imaging, stress testing, CT/MRI or catheterization can add information by context.\n\nDifferential diagnosis: heart failure from other causes, cardiomyopathy, congenital heart disease, arrhythmia, noncardiac dyspnea.\n\nWestern treatment: Observation, guideline-directed medical management of consequences, and valve repair or replacement (surgical or transcatheter) depend on lesion and severity.\n\nCoding note: verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding, per documented valve, subtype, acuity, or complication.",
+      "risk_factors_zh": [
+        {
+          "factor": "先天性瓣膜異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "factor": "退化性鈣化（隨年齡增加）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "factor": "風濕熱病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "factor": "感染性心內膜炎病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Congenital valve abnormality",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "factor": "Degenerative calcification (increases with age)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "factor": "History of rheumatic fever",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "factor": "History of infective endocarditis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Valve Diseases"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "運動誘發性暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能提示重度主動脈瓣狹窄等高風險病灶",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "急性肺水腫",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重急性瓣膜功能失代償",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "嚴重呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能反映重度瓣膜疾病或心臟衰竭",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "須排除心肌缺血或其他急症",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "休克",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重血流動力學代償失調",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "疑似感染性心內膜炎",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為潛在致命的瓣膜感染急症",
+          "source": "NHLBI - Heart Valve Diseases"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Exertional syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Can indicate high-risk lesions such as severe aortic stenosis",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "Acute pulmonary edema",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe acute valvular decompensation",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "Severe dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May reflect severe valve disease or heart failure",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "Chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must exclude myocardial ischemia or other emergencies",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "Shock",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe hemodynamic decompensation",
+          "source": "NHLBI - Heart Valve Diseases"
+        },
+        {
+          "finding": "Suspected infective endocarditis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A potentially life-threatening valve infection emergency",
+          "source": "NHLBI - Heart Valve Diseases"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "病情穩定、已接受西醫管理的病人可接受輔助性照護",
+        "precautions": "新發暈厥、呼吸困難或胸痛須立即轉診心臟評估；抗凝治療或裝置狀態可能改變處置安全性",
+        "co_management": "須聯絡病人的心臟科或主治醫師確認評估與治療進度，執業者不得建議病人自行調整或停用心臟相關藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於心臟瓣膜疾病的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Stable medically managed patients may receive adjunctive care",
+        "precautions": "New syncope, dyspnea or chest pain requires cardiac evaluation; anticoagulation/device status may change procedural safety",
+        "co_management": "Contact the patient's cardiologist or physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust or stop cardiac medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for valvular heart disease was located"
+      },
+      "sign_symptom_ids": [
+        "sym.fatigue",
+        "sym.palpitations",
+        "sym.edema"
+      ],
+      "sources": [
+        "NHLBI - Heart Valve Diseases: https://www.nhlbi.nih.gov/health/heart-valve-diseases",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "summary_en": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "etiology_zh": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "etiology_en": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "western_context_zh": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "western_context_en": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "red_flags_en": [
+          "NHLBI - Heart Valve Diseases"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch E Metabolic/Hematology/Cardiac (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "research_pack_batch_e_metabolic_hematology_cardiac"
       ],
       "source_status": "draft_pending_ting_review"
     }
