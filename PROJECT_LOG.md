@@ -3287,3 +3287,10 @@ Current repo state as of this log:
 - **P0.1 正本確認(Ting)**:真實病例輸入 = **Edge + file:// 本機 index.html**(C:\Projects\acupuncture-point-app\index.html,預設瀏覽器 MSEdgeHTM 佐證)。⚠️ 這與 session 內 localhost:8361 預覽面板所見的 33 cases 是**不同 origin**——正本內容待 raw 擷取後比對,不得假設相同。preflight 計算器已備(`scripts/preflight-c2b.js`,e07791b,拒絕輸出進 repo)。raw 擷取方案:Edge 關閉後以 --remote-debugging-port 重啟 + CDP 只讀 localStorage(Node 內建 WebSocket),待 Ting 給空檔。
 - **SOL 第二包(Fable 直接於 app 對話收檔)**:AcuTing_OS_Tonight_Pack_2(34KB)存至 pattern-v2 資料夾(同第一包),解壓 14 檔:4-pack(Patient Wiring/Test Scenario/Selector Vocab/Ingestion Contract 草案)+ CR-001 sym 種子 28 筆(全 both,含紅旗+來源)+ CR-002 metric 新增 4 筆(fatigue_score/stool_form_bristol/hot_flash_count_day/range_of_motion_deg;與現有 id 重複者已由 SOL 去重)+ CR-003 supp 骨架 18 筆(NAD+/NR/NMN 標 uncertainty)+ manifest。全 JSON 解析 OK、K 系列/content-junk/ratchet 全 PASS。全部 NOT CANONICAL,ingestion 走正常閘門。
 - **Ting 願望入 backlog**:本機網頁存病例(現行 file:// 即是)+ 手機網站(sprint STRETCH 已列 mobile,強度待 9/5 後排)。
+
+# 2026-08-11 Fable — C2b P0–P2 只讀 preflight 完成 + ⚠️ 正本認定翻案
+
+- **P0**:Ting 指定正本 = Edge + file:// 本機 index.html。Edge 136+ 禁止預設 profile 除錯 → 改用「複製 Local Storage leveldb 至暫存 profile」法,對正本零寫入。操作全程 CDP 只讀,結束後 Edge 原樣還原。
+- **P1**:raw 擷取 SHA-256 `54890af4…3acba`、5,880 bytes;前後 raw 完全相同(只讀證明);兩次 app-export 序列化 hash 相同;備份三檔 + 報告存 Git 外(%USERPROFILE%\AcuTing-backups\pre-c2b\)。
+- **P2**:同 raw 兩次 dry-run plan byte-identical;source_sha256/source_bytes 與 raw 相符;blank/duplicate/collision/conflict 全 0。
+- **⚠️ 重大發現**:file:// 正本只有 **2 cases、0 SOAP**(P-2026-001/002,舊 schema 殘留 `case.startDate` unknown field)——與預覽面板(localhost:8361)的 **33 cases/52 SOAP** 是兩份完全不同的資料。研判:近期病例練習(含 08-09 outcome metrics 測試)都發生在預覽面板 profile;file:// 是早期試用殘留。**且兩份都是練習/測試資料——9/5 前不存在真正病人資料。**「正本是哪份、9/5 用哪個入口」待 Ting 裁決後才能定 P3 目標 store。
