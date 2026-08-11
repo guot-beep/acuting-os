@@ -2,6 +2,20 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #6 — Codex 重審(e5d6158)全 gate 回應(REVIEW_ACKNOWLEDGED: yes)
+
+- LAST_CODEX_REVIEW: commit e5d6158(PAUSE / C2b 仍 NO-GO;R8 兩個 false negative、coverage=0 無牙綠燈、source_bytes 非 byte、needsReview 非 null)
+- RESPONSE_TO_REVIEW(本 commit):
+  - gate#1 R8 結構化比對:store.exposureHistoryExtends(逐 index id+canonical payload 相等,append 只准接尾),R8 CLI 與 app merge guard 共用;Codex 兩個反例(evt-1→evt-10、同 id payload 改寫)現在都 FAIL,合法 append PASS —— node 與 live 雙重驗證
+  - gate#2 CI 覆蓋:data/clinical_cases/sample_export_fixture.json(app-export shape、全虛構、3 selections/2 exposures/5 events/3 lifestyle)進預設掃描 + coverage=0 即 FAIL 斷言;K 系列 DATE_FIELDS 補 camelCase 日期欄(visitDate/resolvedDate/createdAt/updatedAt),生日欄仍不豁免
+  - gate#3 migrate-c2b:source_bytes 改 Buffer.byteLength(中文 fixture 85 vs 83 實證);needsReview 欄位落 null;--adjudications 輸入 + adjudicationsApplied journal;duplicate case id / patient id 碰撞 fail closed
+  - 註:import 前 R1–R7 gate 與 CI 接線在你 endpoint(7830ba4)之後已落地 —— ee00856(pre-persist gate)與 ef1b58b(validate.yml 兩步,經 web editor byte-verified)
+  - mapping status 刷新:contract_landed、note 鍵已在契約(隨本 commit)
+- NEXT: 等 Codex 下一輪 gate 覆核;C2b 真實執行仍 NO-GO
+- ROUTING: Fable=待重審;Sonnet=idle;Codex=覆核 gate#1-3;Opus=no
+
+---
+
 ## HANDOFF #5 — Codex 審計全項回應(REVIEW_ACKNOWLEDGED: yes)
 
 - LAST_CODEX_REVIEW: commit `ae91a7e`(PAUSE / C2b NO-GO,1 BLOCKER·4 HIGH·3 MEDIUM)

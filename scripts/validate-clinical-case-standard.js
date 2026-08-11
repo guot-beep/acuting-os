@@ -48,6 +48,11 @@ const DATE_FIELDS = new Set([
   'visit_date', 'next_follow_up', 'date', 'start_date', 'end_date', 'onset_date',
   'updated', 'updated_at', 'created', 'created_at', 'reviewed', 'last_reviewed',
   'fetched_at', 'generated_at', 'parsed_at', 'authored_at',
+  // camelCase twins — the app-export/localStorage shape (now scanned via
+  // sample_export_fixture.json) uses camelCase for the same dates-by-design.
+  // Birth dates stay unexempted in BOTH casings: birthYearMonth is coarse by
+  // construction and a full birthDate field does not exist in the contract.
+  'visitDate', 'resolvedDate', 'createdAt', 'updatedAt',
 ]);
 
 /* Matched against the FIELD the string sits in, never the whole path. Matching

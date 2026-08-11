@@ -7,7 +7,8 @@
     "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered.",
     "2026-08: D17 tables landed in schema.sql (case_agent_exposures, case_environmental_exposures, visit_lifestyle_factors, visit_adverse_events, visit_pattern_differentials) plus visit_tcm_patterns.role/confidence and visit_outcomes.related_sym_id. localStorage-side keys are NOT yet written by the app — see planned_mappings_d17. Mapping entries move from planned to real when the B2 contract lands in normalizeCase/normalizeSoapNote.",
     "2026-08: B-1 audit fix — case_exposure_events append-only history table; agentExposures[].events[] / environmentalExposures[].events[] added to the localStorage contract.",
-    "2026-08: Codex audit HIGH#1 — planned_mappings_d17 expanded to per-column entries; status advanced (B2 contract landed); exposure timestamp rule = preserve-missing; visit_tcm_patterns.note ruled ADD-to-contract (app edit queued behind Codex batch-2 WIP)."
+    "2026-08: Codex audit HIGH#1 — planned_mappings_d17 expanded to per-column entries; status advanced (B2 contract landed); exposure timestamp rule = preserve-missing; visit_tcm_patterns.note ruled ADD-to-contract (app edit queued behind Codex batch-2 WIP).",
+    "2026-08: Codex re-audit gate fixes — note key landed in contract (b90cd7c), status advanced to dry_run_only, R8 structured comparator + CI fixture landed."
   ],
   "policy": [
     "This file is a DESIGN, not a migration. No script reads it yet. It exists so the mapping is reviewable before it is executable — the H2 migration is a one-shot over real clinical data (D12), and a mapping decided inside a script is a mapping nobody reviewed.",
@@ -781,11 +782,11 @@
     ]
   },
   "planned_mappings_d17": {
-    "status": "contract_landed__migration_script_NOT_implemented",
+    "status": "contract_landed__migration_script_dry_run_only",
     "policy": [
       "B2 契約已落地:下列 localStorage keys 已由 normalizeClinicalCase/normalizeSoapNote 正規化並被 UI 寫入。migration script 仍未實作(C2b NO-GO 中)。",
-      "Timestamp 規則(Codex HIGH#1/#6):created_at/updated_at 在 localStorage 端沒有對應值時,migration 寫 NULL —— 保留缺失,絕不在遷移當下補現在時間。normalizer 的讀路徑同樣不合成(app.js 修正排在 Codex batch-2 WIP 之後)。",
-      "visit_tcm_patterns.note 裁決:採 ADD —— tcmPatternSelections[] 追加選填 note 鍵(app.js 編輯佇列中);在落地前,migration 對該欄寫 NULL。"
+      "Timestamp 規則(Codex HIGH#1/#6):created_at/updated_at 在 localStorage 端沒有對應值時,migration 寫 NULL —— 保留缺失,絕不在遷移當下補現在時間。normalizer 的讀路徑同樣不合成(已落地 b90cd7c)。",
+      "visit_tcm_patterns.note 裁決:採 ADD —— tcmPatternSelections[] 追加選填 note 鍵(已落地 b90cd7c);在落地前,migration 對該欄寫 NULL。"
     ],
     "tables": {
       "case_agent_exposures": [
@@ -1136,9 +1137,8 @@
           "note": "must agree with role — validate-clinical-invariants.js R1/R2"
         },
         {
-          "localStorage": ".note (PLANNED — key not in contract yet)",
-          "column": "note",
-          "note": "ruled ADD; NULL until app edit lands"
+          "localStorage": "soapNote.tcmPatternSelections[].note",
+          "column": "note"
         }
       ],
       "visit_outcomes_additions": [

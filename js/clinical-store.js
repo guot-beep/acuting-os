@@ -108,6 +108,31 @@
     return applyExposureChange({ ...rest, events: [] }, initialEvent, kind);
   }
 
+  /* Codex 重審 gate#1:append-only 的結構化比對器 —— 單一來源,R8 CLI 與
+   * app import merge guard 都用這個。舊版把 event id 串成字串再 startsWith,
+   * 產生兩類 false negative:evt-1 → evt-10 被當前綴;同 id 原地改寫 payload
+   * 也放行。這裡改成逐 index 結構相等:before 的每一筆事件,id 與 canonical
+   * payload 都必須與 after 同位置完全一致,新事件只能接在尾端。直接比
+   * canonical JSON 而不是 hash —— 等價且零碰撞。 */
+  function canonicalEventPayload(ev) {
+    const keys = ["eventType", "visitId", "doseText", "frequencyText", "status", "certainty", "timing", "effectiveApprox", "note", "createdAt"];
+    return JSON.stringify(keys.map((k) => [k, String((ev && ev[k]) ?? "")]));
+  }
+
+  function exposureHistoryExtends(beforeRow, afterRow) {
+    const b = beforeRow.events || [], a = afterRow.events || [];
+    if (a.length < b.length) return { ok: false, reason: `history truncated (${b.length} → ${a.length} events)` };
+    for (let i = 0; i < b.length; i++) {
+      if (String(b[i].id || "") !== String(a[i].id || "")) {
+        return { ok: false, reason: `event #${i} id changed ("${b[i].id}" → "${a[i].id}")` };
+      }
+      if (canonicalEventPayload(b[i]) !== canonicalEventPayload(a[i])) {
+        return { ok: false, reason: `event #${i} ("${b[i].id}") payload rewritten in place` };
+      }
+    }
+    return { ok: true };
+  }
+
   /* Clinical 契約不變量(Codex audit §2/§4)——單一來源:
    * scripts/validate-clinical-invariants.js(CI)與 app.js 的 import 前驗證
    * 都呼叫這裡,規則只寫一份。回傳 {failures:[], warnings:[]}。 */
@@ -252,6 +277,8 @@
     save,
     setBackend(b) { backend = b; },       // SQLite/D1 adapter 的插入點
     checkClinicalInvariants,
+    canonicalEventPayload,
+    exposureHistoryExtends,
     createExposure,
     applyExposureChange,
     getCurrentExposures,

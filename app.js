@@ -7238,10 +7238,11 @@ function exportClinicalCases() {
 //   restore — replace-all, for disaster recovery only. Requires an explicit
 //             second confirmation AND auto-downloads a backup of the current
 //             store first, so the pre-restore state is never unrecoverable.
-function exposureEventSeq(row) {
-  return (row.events || []).map((e) => e.id || e.createdAt || e.eventType).join("→");
-}
-
+// Codex re-audit gate#1: the original string startsWith comparison had two
+// false negatives (evt-1 → evt-10 counted as a prefix; same-id payload
+// rewrites passed). The structured per-index comparator lives in the store
+// (single source, shared with the R8 CLI validator) — this wrapper only maps
+// rows and formats messages.
 function findImportHistoryViolations(existingCases, incomingCases) {
   const violations = [];
   const byId = new Map(existingCases.map((c) => [c.id, c]));
@@ -7253,9 +7254,8 @@ function findImportHistoryViolations(existingCases, incomingCases) {
       for (const row of cur[field] || []) {
         const incRow = incRows.get(row.id);
         if (!incRow) { violations.push(`${inc.id}/${field}/${row.id}: exposure row missing from import`); continue; }
-        if (!exposureEventSeq(incRow).startsWith(exposureEventSeq(row))) {
-          violations.push(`${inc.id}/${field}/${row.id}: event history rewritten or truncated`);
-        }
+        const check = AcuTingClinicalStore.exposureHistoryExtends(row, incRow);
+        if (!check.ok) violations.push(`${inc.id}/${field}/${row.id}: ${check.reason}`);
       }
     }
   }

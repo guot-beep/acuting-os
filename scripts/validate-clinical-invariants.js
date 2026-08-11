@@ -52,17 +52,20 @@ function loadCases(file) {
 }
 
 function prefixCheck(beforeFile, afterFile) {
+  // Codex re-audit gate#1: structured per-index comparator from the store —
+  // id AND canonical payload must match at every index, appends only at the
+  // tail. The old delimiter-joined startsWith let evt-1→evt-10 and same-id
+  // payload rewrites through.
   const key = (row) => row.id || `${row.agentId || row.exposureId || row.nameText}`;
-  const seq = (row) => (row.events || []).map((e) => e.id || e.createdAt || e.eventType).join("→");
   let ok = 0;
   for (const [field] of [["agentExposures"], ["environmentalExposures"]]) {
     const beforeRows = new Map();
-    for (const c of loadCases(beforeFile)) for (const r of c[field] || []) beforeRows.set(`${c.id}/${key(r)}`, seq(r));
+    for (const c of loadCases(beforeFile)) for (const r of c[field] || []) beforeRows.set(`${c.id}/${key(r)}`, r);
     for (const c of loadCases(afterFile)) for (const r of c[field] || []) {
       const k = `${c.id}/${key(r)}`;
       if (!beforeRows.has(k)) continue;
-      const b = beforeRows.get(k), a = seq(r);
-      if (!a.startsWith(b)) fail(`${k}: event history is not a prefix-extension — history was rewritten or truncated (R8)`);
+      const check = STORE.exposureHistoryExtends(beforeRows.get(k), r);
+      if (!check.ok) fail(`${k}: ${check.reason} (R8)`);
       else ok++;
       beforeRows.delete(k);
     }
@@ -77,12 +80,18 @@ if (args[0] === "--prefix-check") {
   console.log(`prefix-check ${path.basename(args[1])} → ${path.basename(args[2])}`);
   prefixCheck(args[1], args[2]);
 } else {
-  const targets = args.length ? args : ["data/clinical_cases/sample_deidentified_case.json", "data/clinical_cases/case_template.json"].filter((f) => fs.existsSync(f));
+  const targets = args.length ? args : ["data/clinical_cases/sample_export_fixture.json", "data/clinical_cases/sample_deidentified_case.json", "data/clinical_cases/case_template.json"].filter((f) => fs.existsSync(f));
   for (const file of targets) {
     console.log(path.basename(file));
     for (const c of loadCases(file)) checkCase(c);
   }
   console.log(`checked: ${checked.cases} cases · ${checked.selections} pattern selections · ${checked.exposures} exposures · ${checked.events} events · ${checked.lifestyle} lifestyle rows`);
+  // Codex 重審 gate#2:coverage 為 0 的綠燈是無牙的綠燈(toothless green)。
+  // 預設掃描必須真的碰到五類 rows,否則 CI 直接 FAIL —— sample_export_fixture
+  // .json(app-export shape、全虛構)就是為此存在;誰把它刪了或掏空,這裡擋。
+  if (!args.length && (checked.selections === 0 || checked.exposures === 0 || checked.events === 0 || checked.lifestyle === 0)) {
+    fail(`coverage assertion: default targets exercised 0 rows in at least one category (selections=${checked.selections} exposures=${checked.exposures} events=${checked.events} lifestyle=${checked.lifestyle}) — the invariants gate would be toothless`);
+  }
 }
 console.log(failures ? `FAIL — ${failures} invariant violation(s), ${warnings} warning(s)` : `PASS — 0 violations, ${warnings} warning(s)`);
 process.exit(failures ? 1 : 0);
