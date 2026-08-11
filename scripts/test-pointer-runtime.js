@@ -18,7 +18,7 @@ function fakeBackend(init) {
   };
 }
 const CASES = [{ id: "case.a", patientCode: "P001", soapNotes: [] }, { id: "case.b", patientCode: "P002", soapNotes: [] }];
-const ENV = { journal: { version: "v2" }, patients: [
+const ENV = { schema_version: 2, journal: { version: "v2" }, patients: [
   { id: "patient.abc", patientCode: "P001", caseIds: ["case.a"] },
   { id: "patient.def", patientCode: "P002", caseIds: ["case.b"] },
 ], cases: structuredClone(CASES) };
@@ -87,7 +87,7 @@ const fakeSha = async (s) => Buffer.from(s).toString("hex").padEnd(64, "0");
 
   // R9-C1: ID 與 migration 推導完全一致(同鹽)
   const saltedSha = async (s) => require("crypto").createHash("sha256").update(s).digest("hex");
-  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [], cases: [{ id:"case.x", patientCode:"PX", soapNotes: [] }], pending_patient_codes: ["PX"] }) });
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ schema_version: 2, journal:{}, patients: [], cases: [{ id:"case.x", patientCode:"PX", soapNotes: [] }], pending_patient_codes: ["PX"] }) });
   S.setBackend(b);
   await S.syncPendingPatients(saltedSha);
   const envC = JSON.parse(b.kv.get(S.STAGING_KEY));
@@ -95,7 +95,7 @@ const fakeSha = async (s) => Buffer.from(s).toString("hex").padEnd(64, "0");
   assert.strictEqual(envC.patients[0].id, expected); ok("R9-C1: runtime id === migration derivation (salted)");
 
   // R9-C2: lost-update race —— sync 停在 await 期間插入新 save,新資料不得被覆蓋
-  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [], cases: [{ id:"case.1", patientCode:"PA", soapNotes: [] }], pending_patient_codes: ["PA"] }) });
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ schema_version: 2, journal:{}, patients: [], cases: [{ id:"case.1", patientCode:"PA", soapNotes: [] }], pending_patient_codes: ["PA"] }) });
   S.setBackend(b);
   let release; const gate = new Promise((r) => { release = r; });
   const slowSha = async (s) => { await gate; return require("crypto").createHash("sha256").update(s).digest("hex"); };
@@ -109,7 +109,7 @@ const fakeSha = async (s) => Buffer.from(s).toString("hex").padEnd(64, "0");
   assert.ok(envR.patients.some((p)=>p.patientCode==="PA")); ok("R9-C2: prefetched patient still minted");
 
   // R9-C3: collision fail-closed
-  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [{ id: "patient.aaaaaaaaaaaa", patientCode: "OTHER", caseIds: [] }], cases: [{ id:"case.z", patientCode:"PZ", soapNotes: [] }], pending_patient_codes: ["PZ"] }) });
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ schema_version: 2, journal:{}, patients: [{ id: "patient.aaaaaaaaaaaa", patientCode: "OTHER", caseIds: [] }], cases: [{ id:"case.z", patientCode:"PZ", soapNotes: [] }], pending_patient_codes: ["PZ"] }) });
   S.setBackend(b);
   const collideSha = async () => "aaaaaaaaaaaa".padEnd(64, "a");
   const rc = await S.syncPendingPatients(collideSha);
@@ -119,7 +119,7 @@ const fakeSha = async (s) => Buffer.from(s).toString("hex").padEnd(64, "0");
   assert.strictEqual(envZ.patients.length, 1); ok("R9-C3: no duplicate id written");
 
   // R9-C4: blank code -> patientId 強制 null(stale FK 清除)
-  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [], cases: [], pending_patient_codes: [] }) });
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ schema_version: 2, journal:{}, patients: [], cases: [], pending_patient_codes: [] }) });
   S.setBackend(b);
   S.save([{ id:"case.blank", patientCode:"", patientId:"patient.stale", soapNotes: [] }]);
   const envB = JSON.parse(b.kv.get(S.STAGING_KEY));

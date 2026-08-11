@@ -68,15 +68,28 @@
     }
   }
 
+  /* R14-H1:唯一的 minimum-envelope 形狀驗證器 —— load/save 邊界、restore
+   * 的 incoming、restore 的 active 三處共用同一把尺。任何一項不合格的
+   * envelope 都不得作為讀寫對象或比較基準。 */
+  function minimumEnvelopeShapeError(env) {
+    if (!env || typeof env !== "object" || Array.isArray(env)) return "not a plain object";
+    if (env.schema_version !== 2) return `schema_version is ${JSON.stringify(env.schema_version)} (must be 2)`;
+    if (!env.journal || typeof env.journal !== "object" || Array.isArray(env.journal)) return "journal missing or not a plain object";
+    if (!Array.isArray(env.patients)) return "patients is not an array";
+    if (!Array.isArray(env.cases)) return "cases is not an array";
+    if (env.pending_patient_codes !== undefined && env.pending_patient_codes !== null && !Array.isArray(env.pending_patient_codes)) return "pending_patient_codes present but not an array";
+    if (env.runtime_revision !== undefined && env.runtime_revision !== null
+        && (!Number.isSafeInteger(env.runtime_revision) || env.runtime_revision < 1)) return `runtime_revision invalid (${JSON.stringify(env.runtime_revision)})`;
+    return null;
+  }
+
   function readStagingEnvelopeOrThrow(context) {
     const raw = readKey(STAGING_KEY);
     if (!raw) throw new Error(`clinical-store: pointer=v2 but staging envelope is MISSING (${context}) — refusing v1 fallback to prevent silent fork. Run rollback or restore.`);
     let env;
     try { env = JSON.parse(raw); } catch (e) { throw new Error(`clinical-store: pointer=v2 but staging envelope is CORRUPT (${context}): ${e.message}`); }
-    if (!env || !Array.isArray(env.cases) || !Array.isArray(env.patients)) {
-      throw new Error(`clinical-store: pointer=v2 but staging envelope shape is invalid (${context})`);
-    }
-    assertRevisionShape(env, context);
+    const shapeErr = minimumEnvelopeShapeError(env);
+    if (shapeErr) throw new Error(`clinical-store: pointer=v2 but staging envelope shape is invalid (${context}): ${shapeErr}`);
     return env;
   }
 
@@ -614,8 +627,9 @@
     try {
       let env;
       try { env = JSON.parse(envelopeText); } catch { return fail(["envelope is not valid JSON"]); }
-      if (!(env && env.schema_version === 2 && env.journal && Array.isArray(env.patients) && Array.isArray(env.cases))) {
-        return fail(["envelope missing schema_version/journal/patients/cases"]);
+      const incomingShapeErr = minimumEnvelopeShapeError(env);   // R14-H1:incoming 同一把尺
+      if (incomingShapeErr) {
+        return fail(["incoming envelope shape invalid: " + incomingShapeErr]);
       }
       try { writeKey(CANDIDATE_KEY, JSON.stringify(env)); }
       catch (e) { return fail(["candidate write failed: " + e.message]); }
@@ -634,8 +648,9 @@
       if (anchorRaw !== null && anchorRaw !== undefined) {
         try { currentEnv = JSON.parse(anchorRaw); }
         catch (e) { return fail(["ACTIVE staging exists but is CORRUPT (unparseable: " + e.message + ") — cannot order revisions or verify append-only; repair/rollback the active staging first (restore refused, nothing written)"]); }
-        if (!currentEnv || !Array.isArray(currentEnv.cases) || !Array.isArray(currentEnv.patients)) {
-          return fail(["ACTIVE staging exists but has INVALID SHAPE (cases/patients not arrays) — cannot verify append-only against it; repair the active staging first (restore refused, nothing written)"]);
+        const activeShapeErr = minimumEnvelopeShapeError(currentEnv);   // R14-H1:active 同一把尺
+        if (activeShapeErr) {
+          return fail(["ACTIVE staging exists but has INVALID SHAPE (" + activeShapeErr + ") — cannot verify append-only/order against it; repair the active staging first (restore refused, nothing written)"]);
         }
       }
       // R12-F1:active 的 revision 欄位「存在但非法」不得被當成 0(那會讓

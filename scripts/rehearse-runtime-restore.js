@@ -200,7 +200,7 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.strictEqual(rE3.ok, false); ok("R11-E3: string revision rejected at restore");
   const bE3 = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify(typed) });
   S.setBackend(bE3);
-  assert.throws(() => S.load(), /invalid type/); ok("R11-E3: string revision rejected at load boundary");
+  assert.throws(() => S.load(), /runtime_revision invalid|invalid type/); ok("R11-E3: string revision rejected at load boundary");
 
   // R11-E4:ghost pending code / 漏列 null-FK 皆拒
   S.setBackend(bE);
@@ -281,6 +281,44 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.strictEqual(rG2.ok, false); ok("R13-G2: invalid-shape active -> restore refused");
   assert.ok(rG2.failures[0].includes("INVALID SHAPE")); ok("R13-G2: names shape problem");
   assert.strictEqual(bG2.kv.get(S.STAGING_KEY), JSON.stringify(badShape)); ok("R13-G2: active bytes untouched");
+
+  // === R14 反例(Codex R14 H1)===
+  // H1:active minimum-shape 全變體 —— 缺 journal / journal 為陣列 / pending
+  // 型別錯 / schema_version≠2 / patients 非陣列,一律拒、bytes 不動
+  const legitH = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: 10 };
+  const H1_VARIANTS = [
+    ["missing journal", (e) => { delete e.journal; }],
+    ["journal is array", (e) => { e.journal = []; }],
+    ["pending is string", (e) => { e.pending_patient_codes = "GHOST"; }],
+    ["schema_version 1", (e) => { e.schema_version = 1; }],
+    ["patients wrong type", (e) => { e.patients = "nope"; }],
+  ];
+  for (const [label, mutate] of H1_VARIANTS) {
+    const badActive = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: 9 };
+    mutate(badActive);
+    const bH = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(badActive), [S.POINTER_KEY]: "v2" });
+    S.setBackend(bH);
+    const rH = await S.restoreV2Envelope(JSON.stringify(legitH), sha);
+    assert.strictEqual(rH.ok, false, label);
+    assert.strictEqual(rH.code, "REJECTED_UNCHANGED", label);
+    assert.strictEqual(bH.kv.get(S.STAGING_KEY), JSON.stringify(badActive), label);
+  }
+  ok("R14-H1: five active minimum-shape variants all refused, bytes untouched");
+  // H1-incoming:同一把尺也擋 incoming
+  const bHI = fakeBackend({});
+  S.setBackend(bHI);
+  const noJournal = { schema_version: 2, patients: [], cases: [], runtime_revision: 2 };
+  const rHI = await S.restoreV2Envelope(JSON.stringify(noJournal), sha);
+  assert.strictEqual(rHI.ok, false); ok("R14-H1: incoming missing-journal refused by same validator");
+
+  // R14 補件:syncPendingPatients 的 MAX_SAFE overflow(F2 官方化)
+  const maxSync = { schema_version: 2, journal: {}, patients: [], cases: [{ id:"case.o", patientCode:"PO", patientId: null, soapNotes: [] }], pending_patient_codes: ["PO"], runtime_revision: Number.MAX_SAFE_INTEGER };
+  const bMS = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(maxSync), [S.POINTER_KEY]: "v2" });
+  S.setBackend(bMS);
+  let syncThrew = false;
+  try { await S.syncPendingPatients(sha); } catch (e) { syncThrew = /overflow/.test(e.message); }
+  assert.strictEqual(syncThrew, true); ok("R14: sync at MAX_SAFE revision throws overflow");
+  assert.strictEqual(bMS.kv.get(S.STAGING_KEY), JSON.stringify(maxSync)); ok("R14: staging bytes unchanged after refused sync");
 
   console.log(`\nRUNTIME RESTORE REHEARSAL: ${pass}/${pass} PASS`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });

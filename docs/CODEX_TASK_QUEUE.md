@@ -1,19 +1,17 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R14 — 收斂型終審(SOL 2026-08-11 指令:非無限循環)
+## ⚡ NEXT TASK: C2B-R15 — H1 覆核 + 收斂裁決(SOL 收斂令適用)
 
-**性質**:final adversarial audit。範圍鎖定六軸 ——
-Patient↔Case integrity → revision/order → restore → race → rollback → pointer switch。
-**已知修復全數就位**:R13 G1/G2(corrupt/invalid-shape active 三態)含入,
-rehearse-runtime-restore 56/56、pointer 31/31、C2b rehearsal 30/30。
-**新增必驗**:main@ca2c45b9 已整合(merge d6356e6),請確認整合後全套仍
-50/50+(Fable 的六組平行驗證已全綠、ANCESTRY_OK,請獨立重驗)。
-**收斂規則**:沒有新的實質 blocker 就發 R14 GO + 修訂版 P4(含切換後
-寫入驗證、pending sync 驗證、runtime-era restore 演練),**進 P4 rehearsal
-階段;不再開 R15+ 重審已解項**。有實質 blocker 才照舊寫反例。
-另請確認:codex/pattern-v2 無 branch protection/required checks、latest head
-無 CI run —— 落地 gate 需要 CI 綠燈,請一併檢查 validate.yml 為何未觸發。
-硬邊界照舊。
+Fable 已修 R14-H1:minimumEnvelopeShapeError() 單一驗證器(plain object /
+schema_version===2 / journal 非陣列物件 / patients+cases+pending arrays /
+revision safe int ≥1)三邊界共用 —— load/save 讀取、restore incoming、
+restore active。五個 active 變體反例(缺 journal/journal 陣列/pending 字串/
+schema 1/patients 型別)+ incoming 變體 + sync MAX_SAFE overflow 官方化,
+rehearse-runtime-restore 60/60。
+請重驗 H1 全變體 + R9-R14 全情境 replay。**收斂規則(SOL 指令)**:無新實質
+blocker → 發 R15 GO + 修訂版 P4,進 P4 rehearsal 階段,不再開後續輪重審
+已解項。有實質 blocker 才寫反例。另:main@ca2c45b9 已整合(d6356e6),
+ancestry 已重建,整合後六組驗證全綠 —— 請獨立確認。硬邊界照舊。
 
 ---
 
