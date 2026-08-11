@@ -339,8 +339,29 @@
     }
     const nonBlank = new Set(rawCases.map((c) => String(c.patientCode || "").trim()).filter(Boolean));
     if (staging.patients.length !== nonBlank.size) failures.push(`patients ${staging.patients.length} != unique codes ${nonBlank.size}`);
-    const orphanCases = staging.cases.filter((c) => String(c.patientCode || "").trim() && !staging.patients.some((p) => p.id === c.patientId)).length;
-    if (orphanCases) failures.push(`${orphanCases} orphan case assignments`);
+    // SOL 審查 BLOCKER(2026-08-11):「patientId 存在」不等於「patientId 正確」
+    // —— 兩個 case 的 patientId 互換仍全員存在、無 orphan,舊檢查會放行。
+    // 修正 = 三條 referential assertions + Patient→Case 反向集合相等,
+    // Case↔Patient 兩個方向互相鎖死,交換/錯接/漏接都會被抓。
+    const patientById = new Map(staging.patients.map((p) => [p.id, p]));
+    for (const c of staging.cases) {
+      const code = String(c.patientCode || "").trim();
+      if (code) {
+        if (!c.patientId) { failures.push(`${c.id}: nonblank patientCode but patientId null`); continue; }
+        const p = patientById.get(c.patientId);
+        if (!p) failures.push(`${c.id}: patientId ${c.patientId} not among staged patients`);
+        else if (p.patientCode !== code) failures.push(`${c.id}: cross-wired — patientId belongs to "${p.patientCode}", case says "${code}"`);
+      } else if (c.patientId !== null) {
+        failures.push(`${c.id}: blank patientCode must carry patientId null`);
+      }
+    }
+    for (const p of staging.patients) {
+      const pointing = staging.cases.filter((c) => c.patientId === p.id).map((c) => c.id).sort();
+      const declared = [...(p.caseIds || [])].sort();
+      if (JSON.stringify(pointing) !== JSON.stringify(declared)) {
+        failures.push(`${p.id}: caseIds set mismatch — declared [${declared}] vs actually-pointing [${pointing}]`);
+      }
+    }
     return { ok: failures.length === 0, failures };
   }
 

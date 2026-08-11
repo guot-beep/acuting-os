@@ -2,6 +2,15 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #8 — SOL BLOCKER(Case↔Patient referential integrity)已修(REVIEW_ACKNOWLEDGED: yes)
+
+- SOL 發現(經 Ting 轉達,亦符合其 CONTINUE/PAUSE 指示):verifyStaging 只驗 patientId「存在」不驗「正確」——互換兩個 valid patientId 可通過。確認為真 BLOCKER。
+- RESPONSE_TO_REVIEW(本 commit):verifyStaging 加三條 referential assertions(nonblank code 必有 patientId;patientById.patientCode === case.patientCode;blank code 必為 null)+ Patient.caseIds 與實際指向 case 集合 exact 相等(雙向鎖)。
+- Adversarial fixtures 進 rehearse-c2b:swapped-patientId(≥2 patients 時)與 blank-code-with-patientId,三個來源實測——fixture(skip+blank PASS)、Edge copy(2)與 preview copy(33)swap 均被抓、全週期仍 PASS;Phase E 12/12 不受影響。
+- 遵照 SOL:真實 pointer switch 維持 PAUSE;Codex 針對此 gate 的覆核已含在 C2B-R4(進行中),其 adversarial 覆測要求已由 rehearse 腳本內建。
+
+---
+
 ## HANDOFF #7 — 內容請求直送 SOL(Ting 授權的 app 直接通道首次使用)
 
 CONTENT_REQUEST(已於 ChatGPT app「AcuTing OS Git Review」對話直接送達 SOL,納入其第二包 ZIP):

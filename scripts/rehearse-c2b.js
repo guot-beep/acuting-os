@@ -72,6 +72,36 @@ try { S.switchPointer(rawText, hasher); } catch { refused = true; }
 check("tampered staging refused at switch", refused);
 kv.set(S.STAGING_KEY, stagingBackup);
 
+// 6b. SOL adversarial fixture(2026-08-11 BLOCKER):兩個 valid patientId 互換
+//     必須被 verifyStaging 抓到 —— 「存在」不等於「正確」。需要 ≥2 patients。
+if (plan.counts.patients >= 2) {
+  const st = JSON.parse(kv.get(S.STAGING_KEY));
+  const twoCase = st.cases.filter((c) => c.patientId).slice(0, 2);
+  if (twoCase.length === 2 && twoCase[0].patientId !== twoCase[1].patientId) {
+    const tmp = twoCase[0].patientId; twoCase[0].patientId = twoCase[1].patientId; twoCase[1].patientId = tmp;
+    kv.set(S.STAGING_KEY, JSON.stringify(st));
+    const vSwap = S.verifyStaging(rawText, hasher);
+    check("swapped patientIds caught (SOL adversarial)", !vSwap.ok && vSwap.failures.some((f) => f.includes("cross-wired")));
+    kv.set(S.STAGING_KEY, stagingBackup);
+  } else {
+    check("swapped patientIds caught (SOL adversarial)", false, "could not construct swap — unexpected staging shape");
+  }
+} else {
+  console.log("skip swapped-patientId adversarial (single-patient source)");
+}
+
+// 6c. blank-code case 被塞 patientId 也要抓
+{
+  const st = JSON.parse(kv.get(S.STAGING_KEY));
+  st.cases[0] = { ...st.cases[0] };
+  const origCode = st.cases[0].patientCode, origPid = st.cases[0].patientId;
+  st.cases[0].patientCode = "";
+  kv.set(S.STAGING_KEY, JSON.stringify(st));
+  const vBlank = S.verifyStaging(rawText, hasher);
+  check("blank-code integrity violation caught", !vBlank.ok);
+  kv.set(S.STAGING_KEY, stagingBackup);
+}
+
 // 7. rollback
 const rb = S.rollbackMigration();
 check("rollback removes exactly the whitelist", JSON.stringify(rb.removed.sort()) === JSON.stringify([S.POINTER_KEY, S.STAGING_KEY].sort()));
