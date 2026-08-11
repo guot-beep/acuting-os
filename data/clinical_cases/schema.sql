@@ -707,8 +707,15 @@ CREATE TABLE IF NOT EXISTS case_exposure_events (
   parent_type TEXT NOT NULL,     -- 'agent' | 'environmental'
   parent_id TEXT NOT NULL,       -- case_agent_exposures.id | case_environmental_exposures.id
   visit_id TEXT,                 -- visit where the change was reported (nullable: intake)
-  event_type TEXT NOT NULL,      -- started|stopped|dose_changed|frequency_changed|
-                                 -- status_changed|certainty_changed|timing_changed|confirmed_unchanged
+  event_type TEXT NOT NULL,      -- started|initial_recorded|stopped|dose_changed|
+                                 -- frequency_changed|status_changed|certainty_changed|
+                                 -- timing_changed|confirmed_unchanged
+                                 -- initial_recorded (SOL Phase C item 2): patient was
+                                 -- already on the agent when first learned of —
+                                 -- "started" would falsify an onset we don't know.
+                                 -- Post-D17 new rows MUST carry started|initial_recorded
+                                 -- as their first event (store.createExposure enforces);
+                                 -- legacy rows keep events=[] honestly — never backfilled.
   -- Post-event values — only the fields the event actually changed are set;
   -- the rest stay NULL (absence = "unchanged by this event", never "unknown").
   dose_text TEXT,

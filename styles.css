@@ -588,6 +588,38 @@ h1 {
 .outcome-tracking-table tbody td:first-child { color: #20383b; font-weight: 700; }
 .outcome-tracking-table .direction-hint { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 500; margin-top: 0.15rem; }
 
+/* Phase D batch 1: Meds & Supplements ledger (agentExposures[]), case-level.
+   Same light-palette / .case-actions button conventions as Outcome Tracking
+   and .case-tag above — no dark-mode branch, matching this whole section. */
+.agent-exposure-list { display: grid; gap: 0.6rem; margin: 0.75rem 0; }
+.agent-exposure-row {
+  background: #f8faf9;
+  border: 1px solid #e0e6e5;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+}
+.agent-exposure-head { align-items: center; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.agent-exposure-head strong { color: #20383b; font-size: 0.92rem; }
+.agent-exposure-type-chip {
+  background: #eef5f4;
+  border: 1px solid #d7e6e4;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+}
+.agent-exposure-status { color: var(--muted); font-size: 0.78rem; margin-left: auto; }
+.agent-exposure-meta { color: var(--muted); display: flex; gap: 0.4rem; font-size: 0.82rem; margin-top: 0.3rem; }
+.agent-exposure-meta span { color: #344044; font-weight: 600; }
+.agent-exposure-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.agent-exposure-actions button { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
+.agent-exposure-timeline { margin-top: 0.5rem; font-size: 0.82rem; }
+.agent-exposure-timeline summary { color: var(--accent-dark); cursor: pointer; font-weight: 700; }
+.agent-exposure-timeline ul { margin: 0.4rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+.agent-exposure-timeline li { color: #344044; }
+.agent-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
+
 /* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
 .soap-reflection-view {
   margin-top: 0.5rem;

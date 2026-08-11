@@ -765,6 +765,8 @@ const caseDialog = document.querySelector("#caseDialog");
 const caseForm = document.querySelector("#caseForm");
 const soapDialog = document.querySelector("#soapDialog");
 const soapForm = document.querySelector("#soapForm");
+const agentExposureDialog = document.querySelector("#agentExposureDialog");
+const agentExposureForm = document.querySelector("#agentExposureForm");
 const dialog = document.querySelector("#editDialog");
 const form = document.querySelector("#pointForm");
 const deleteBtn = document.querySelector("#deleteBtn");
@@ -1115,6 +1117,9 @@ document.querySelector("#closeCaseDialog").addEventListener("click", () => caseD
 document.querySelector("#cancelCaseBtn").addEventListener("click", () => caseDialog.close());
 document.querySelector("#closeSoapDialog").addEventListener("click", () => soapDialog.close());
 document.querySelector("#cancelSoapBtn").addEventListener("click", () => soapDialog.close());
+document.querySelector("#closeAgentExposureDialog").addEventListener("click", () => agentExposureDialog.close());
+document.querySelector("#cancelAgentExposureBtn").addEventListener("click", () => agentExposureDialog.close());
+agentExposureForm.addEventListener("submit", saveAgentExposureFromForm);
 modelRotate?.addEventListener("input", () => renderMap(getFilteredPoints()));
 modelReset?.addEventListener("click", () => {
   modelView = "front";
@@ -5056,7 +5061,13 @@ function normalizeClinicalCase(value) {
                     status: String(ev.status || ""),
                     effectiveApprox: String(ev.effectiveApprox || ""),
                     note: String(ev.note || ""),
-                    createdAt: String(ev.createdAt || new Date().toISOString())
+                    // SOL Phase C review item 1: a missing historical timestamp
+                    // stays missing ("") — synthesizing one at load time would
+                    // stamp every legacy event with today's date and destroy
+                    // the very chronology the event layer exists to preserve.
+                    // New events get createdAt from applyExposureChange (the
+                    // write path), never from this read path.
+                    createdAt: String(ev.createdAt || "")
                   }))
               : []
           }))
@@ -5096,7 +5107,8 @@ function normalizeClinicalCase(value) {
                     timing: String(ev.timing || ""),
                     effectiveApprox: String(ev.effectiveApprox || ""),
                     note: String(ev.note || ""),
-                    createdAt: String(ev.createdAt || new Date().toISOString())
+                    // Same rule as agent events: read path never synthesizes.
+                    createdAt: String(ev.createdAt || "")
                   }))
               : []
           }))
@@ -5568,6 +5580,170 @@ function renderOutcomeTrackingPanel(item) {
   `;
 }
 
+// Phase D batch 1 (docs/SPRINT_2026-08-12_BRIEF.md Phase D): case-level Meds &
+// Supplements ledger UI over agentExposures[] (D17 §5 — ONE longitudinal
+// timeline per agent, not a per-visit snapshot). Read side only queries the
+// store's pure helpers (getCurrentExposures/getExposureTimeline); write side
+// (openAgentExposureEditor/saveAgentExposureFromForm/promptAgentExposureAction)
+// goes exclusively through AcuTingClinicalStore.applyExposureChange — never a
+// direct row/events mutation (audit B-1 invariant). Legacy currentMeds /
+// westernMeds / medicationLinks are untouched (M-3: the two tracks coexist).
+const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Supplement" };
+const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
+
+function renderAgentExposuresPanel(item) {
+  const store = window.AcuTingClinicalStore;
+  const all = item.agentExposures || [];
+  const current = store ? store.getCurrentExposures(item) : all.filter((e) => e.status === "current" || e.status === "prn");
+  const currentIds = new Set(current.map((e) => e.id));
+  const ordered = [...current, ...all.filter((e) => !currentIds.has(e.id))];
+  const header = `
+    <div class="timeline-head">
+      <strong>用藥與補充劑 Meds &amp; Supplements</strong>
+      <div class="case-actions"><button class="ghost" type="button" id="addAgentExposureInline">+ 新增 Add</button></div>
+    </div>
+  `;
+  if (!ordered.length) {
+    return `${header}<div class="case-empty">尚未記錄用藥或補充劑。Add current or past drugs/supplements as they come up.</div>`;
+  }
+  return `${header}<div class="agent-exposure-list">${ordered.map(renderAgentExposureRow).join("")}</div>`;
+}
+
+function renderAgentExposureRow(exposure) {
+  const store = window.AcuTingClinicalStore;
+  const timeline = store ? store.getExposureTimeline(exposure) : [...(exposure.events || [])];
+  const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[exposure.agentType] || "—";
+  const statusLabel = AGENT_EXPOSURE_STATUS_LABELS[exposure.status] || (exposure.status || "—");
+  const title = exposure.nameText || exposure.agentId || "未命名 Unnamed";
+  const doseFreq = [exposure.doseText, exposure.frequencyText].filter(Boolean).join(" · ") || "—";
+  return `
+    <div class="agent-exposure-row">
+      <div class="agent-exposure-head">
+        <span class="agent-exposure-type-chip">${escapeHtml(typeLabel)}</span>
+        <strong>${escapeHtml(title)}</strong>
+        <span class="agent-exposure-status">${escapeHtml(statusLabel)}</span>
+      </div>
+      <div class="agent-exposure-meta">
+        <small>劑量/頻率 Dose &amp; freq</small><span>${escapeHtml(doseFreq)}</span>
+      </div>
+      <div class="agent-exposure-actions">
+        <button type="button" class="ghost" data-agent-exposure-action="dose_changed" data-exposure-id="${escapeHtml(exposure.id)}">改劑量</button>
+        <button type="button" class="ghost" data-agent-exposure-action="frequency_changed" data-exposure-id="${escapeHtml(exposure.id)}">改頻率</button>
+        <button type="button" class="ghost" data-agent-exposure-action="stopped" data-exposure-id="${escapeHtml(exposure.id)}">停用</button>
+        <button type="button" class="ghost" data-agent-exposure-action="confirmed_unchanged" data-exposure-id="${escapeHtml(exposure.id)}">確認未變</button>
+      </div>
+      <details class="agent-exposure-timeline">
+        <summary>時間線 Timeline（${timeline.length}）</summary>
+        ${timeline.length ? `<ul>${timeline.map(renderAgentExposureEvent).join("")}</ul>` : `<p>尚無事件紀錄 No recorded events yet.</p>`}
+      </details>
+    </div>
+  `;
+}
+
+function renderAgentExposureEvent(ev) {
+  const head = [ev.eventType, ev.doseText, ev.frequencyText, ev.status].filter(Boolean).join(" · ");
+  const meta = [ev.visitId, ev.effectiveApprox].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(head || ev.eventType)}</strong>${meta ? ` <small>(${escapeHtml(meta)})</small>` : ""}${ev.note ? `<br><small>${escapeHtml(ev.note)}</small>` : ""}</li>`;
+}
+
+function openAgentExposureEditor() {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) {
+    alert("請先新增或選擇一筆病例。");
+    return;
+  }
+  agentExposureForm.reset();
+  agentExposureDialog.showModal();
+}
+
+function saveAgentExposureFromForm(event) {
+  event.preventDefault();
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) return;
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const data = Object.fromEntries(new FormData(agentExposureForm).entries());
+  const agentId = (data.agentId || "").trim();
+  const nameText = (data.nameText || "").trim();
+  if (!data.agentType) {
+    alert("請選擇類型 Type（藥 drug / 補 supplement）。");
+    return;
+  }
+  if (!agentId && !nameText) {
+    alert("請至少填寫 Agent ID 或名稱 Name。");
+    return;
+  }
+  // Build the bare ledger row, then apply the 'started' event through the
+  // ONE authorized write path — the store fills doseText/frequencyText/
+  // status/startApprox from the event, never set directly here.
+  // createExposure enforces the initial-event rule at API level (SOL item 2).
+  // eventType: "started" = the agent actually began around startApprox;
+  // "initial_recorded" = patient was ALREADY on it when we first learned of it
+  // (intake) — started would falsify an onset we don't know. The form's
+  // 已在使用 checkbox picks between them.
+  const startedRow = store.createExposure(
+    { id: createId("agentexp"), agentType: data.agentType, agentId, nameText },
+    {
+      eventType: data.alreadyInUse ? "initial_recorded" : "started",
+      doseText: (data.doseText || "").trim(),
+      frequencyText: (data.frequencyText || "").trim(),
+      status: "current",
+      effectiveApprox: (data.startApprox || "").trim(),
+      note: (data.note || "").trim()
+    },
+    "agent"
+  );
+  startedRow.infoSource = (data.infoSource || "").trim();
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    return normalizeClinicalCase({ ...c, agentExposures: [...(c.agentExposures || []), startedRow], updatedAt: now });
+  });
+  persistClinicalCases();
+  agentExposureDialog.close();
+  render();
+}
+
+// Quick record-change actions (改劑量/改頻率/停用/確認未變) — a `prompt()` is
+// enough for Phase D batch 1's minimal-capture goal; every branch ends in the
+// same applyExposureChange call, never a direct field/events write.
+function promptAgentExposureAction(exposureId, eventType) {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  const exposure = activeCase && (activeCase.agentExposures || []).find((e) => e.id === exposureId);
+  if (!exposure) return;
+  const event = { eventType };
+  if (eventType === "dose_changed") {
+    const value = prompt("新劑量 New dose", exposure.doseText || "");
+    if (value === null) return;
+    event.doseText = value.trim();
+  } else if (eventType === "frequency_changed") {
+    const value = prompt("新頻率 New frequency", exposure.frequencyText || "");
+    if (value === null) return;
+    event.frequencyText = value.trim();
+  } else if (eventType === "stopped") {
+    if (!confirm(`確定將「${exposure.nameText || exposure.agentId}」標記為停用？`)) return;
+    event.status = "stopped";
+    const stopDate = prompt("停用日期（約，選填）Stop date (approx, optional)", "");
+    if (stopDate === null) return;
+    event.effectiveApprox = stopDate.trim();
+  } else if (eventType === "confirmed_unchanged") {
+    if (!confirm("確認這個項目維持現狀（劑量/頻率未變）？")) return;
+  } else {
+    return;
+  }
+  event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    const nextExposures = (c.agentExposures || []).map((e) => e.id === exposureId ? store.applyExposureChange(e, event, "agent") : e);
+    return normalizeClinicalCase({ ...c, agentExposures: nextExposures, updatedAt: now });
+  });
+  persistClinicalCases();
+  render();
+}
+
 function normalizeStringList(value) {
   if (Array.isArray(value)) return value.map((item) => String(item).trim()).filter(Boolean);
   return splitList(String(value || ""));
@@ -5801,6 +5977,7 @@ function renderClinicalCaseDetail(item) {
     </div>
     ${renderCaseTags(item)}
     ${renderOutcomeTrackingPanel(item)}
+    ${renderAgentExposuresPanel(item)}
     ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>
@@ -5813,6 +5990,15 @@ function renderClinicalCaseDetail(item) {
 
   document.querySelector("#editCaseInline").addEventListener("click", () => openCaseEditor(item));
   document.querySelector("#addSoapInline").addEventListener("click", () => openSoapEditor());
+  // Phase D: Meds & Supplements ledger (agentExposures[]) — add button opens
+  // the dialog, row action buttons go through applyExposureChange (the only
+  // authorized ledger-write path, docs/AI_WORK_HANDOFF.md HANDOFF #3).
+  document.querySelector("#addAgentExposureInline")?.addEventListener("click", () => openAgentExposureEditor());
+  caseDetail.querySelectorAll("[data-agent-exposure-action]").forEach((button) => {
+    button.addEventListener("click", () => {
+      promptAgentExposureAction(button.dataset.exposureId, button.dataset.agentExposureAction);
+    });
+  });
   caseDetail.querySelectorAll("[data-edit-soap]").forEach((button) => {
     button.addEventListener("click", () => {
       const note = item.soapNotes.find((entry) => entry.id === button.dataset.editSoap);

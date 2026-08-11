@@ -49,8 +49,13 @@
     return `${prefix}.${Date.now().toString(36)}.${Math.random().toString(36).slice(2, 8)}`;
   }
 
-  const AGENT_EVENT_TYPES = new Set(["started", "stopped", "dose_changed", "frequency_changed", "status_changed", "confirmed_unchanged"]);
-  const ENV_EVENT_TYPES = new Set(["started", "stopped", "certainty_changed", "timing_changed", "confirmed_unchanged"]);
+  /* initial_recorded(SOL Phase C review item 2):intake 當下病人「已經在用」
+   * 的藥/暴露,第一筆事件不是 started(那會謊報開始時間)而是 initial_recorded
+   * ——「我們從這一刻開始知道」。規則:post-D17 新建的 snapshot 必須帶一筆
+   * started 或 initial_recorded 初始事件(createExposure 強制);legacy 資料的
+   * events=[] 保持原樣 —— 那是「完整歷史未被記錄」的誠實標記,絕不回填假事件。 */
+  const AGENT_EVENT_TYPES = new Set(["started", "initial_recorded", "stopped", "dose_changed", "frequency_changed", "status_changed", "confirmed_unchanged"]);
+  const ENV_EVENT_TYPES = new Set(["started", "initial_recorded", "stopped", "certainty_changed", "timing_changed", "confirmed_unchanged"]);
 
   /* 唯一認可的 ledger 變更路徑。
    * exposure:現有 ledger row(agentExposures[] 或 environmentalExposures[] 的
@@ -92,6 +97,17 @@
     return next;
   }
 
+  /* 新 ledger row 的唯一認可建立路徑:強制第一筆事件(started 或
+   * initial_recorded),讓「post-D17 新資料必有事件史」成為 API 保證而不是
+   * UI 紀律。fields 不可帶 events —— 事件只能從 initialEvent 進。 */
+  function createExposure(fields, initialEvent, kind) {
+    if (!initialEvent || (initialEvent.eventType !== "started" && initialEvent.eventType !== "initial_recorded")) {
+      throw new Error('createExposure: initialEvent must be "started" or "initial_recorded"');
+    }
+    const { events, ...rest } = fields || {};
+    return applyExposureChange({ ...rest, events: [] }, initialEvent, kind);
+  }
+
   /* ---- 純查詢助手(Patient Now / Over Time 與 Phase E 走查都吃這些) ---- */
 
   function getCurrentExposures(caseObj) {
@@ -130,6 +146,7 @@
     load,
     save,
     setBackend(b) { backend = b; },       // SQLite/D1 adapter 的插入點
+    createExposure,
     applyExposureChange,
     getCurrentExposures,
     getExposureTimeline,

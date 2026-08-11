@@ -791,6 +791,44 @@
       </form>
     </dialog>
 
+    <dialog id="agentExposureDialog">
+      <form id="agentExposureForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="agentExposureDialogTitle" data-mode-text data-bilingual="新增用藥/補充劑" data-english="Add med / supplement">新增用藥/補充劑</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeAgentExposureDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
+        </div>
+        <div class="form-grid">
+          <fieldset class="form-section">
+            <legend>用藥/補充劑 Agent</legend>
+            <label>類型 Type<select name="agentType" required>
+              <option value="">—</option>
+              <option value="drug">藥 Drug</option>
+              <option value="supplement">補 Supplement</option>
+            </select></label>
+            <label>Agent ID（選填）<input name="agentId" placeholder="drug.* / supp.* 或留空" /></label>
+            <label class="wide">名稱 Name（無 Agent ID 時必填）<input name="nameText" placeholder="e.g. Magnesium glycinate" /></label>
+            <label>劑量 Dose<input name="doseText" placeholder="200 mg" /></label>
+            <label>頻率 Frequency<input name="frequencyText" placeholder="qd / bid / prn" /></label>
+            <label>開始（約）Start (approx)<input name="startApprox" type="month" /></label>
+            <!-- SOL item 2: 勾選 = intake 時已在用(initial_recorded,不謊報
+                 開始時間);不勾 = 真的此時開始用(started)。 -->
+            <label><input type="checkbox" name="alreadyInUse" value="1" /> 已在使用 Already in use（首次記錄,非新開始）</label>
+            <label>來源 Info source<select name="infoSource">
+              <option value="">—</option>
+              <option value="patient_reported">Patient reported 病人自述</option>
+              <option value="records">Records 病歷紀錄</option>
+            </select></label>
+            <label class="wide">備註 Note<textarea name="note" rows="2"></textarea></label>
+          </fieldset>
+        </div>
+        <div class="dialog-actions">
+          <span></span>
+          <button class="ghost" type="button" id="cancelAgentExposureBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="新增" data-english="Add">新增</button>
+        </div>
+      </form>
+    </dialog>
+
     <footer>
       <span data-mode-text data-bilingual="學習用途：本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。" data-english="Study use only: this tool organizes common Traditional Chinese Medicine point and pattern relationships. It does not replace diagnosis or treatment by a qualified healthcare professional. Core locations should be checked against WHO-style standards and professional course materials; web sources support bilingual lookup and comparison."><strong>學習用途：</strong>本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>
