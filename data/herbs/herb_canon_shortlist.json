@@ -82046,6 +82046,2417 @@
         ]
       },
       "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（犀角地黃湯等 6 方 composition 查無）而建。課件無犀角的性味歸經專論，只有方劑組成行；但「瀕危、現代不用、以水牛角代」有多處明確來源，故禁忌欄可據實填寫。性味歸經留空——課件那一行 Bitter, salty, cold HT, LV, ST 是水牛角的，不是犀角的，不得張冠李戴。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.xi_jiao",
+      "name_zh": "犀角",
+      "name_en": "Rhinoceros Horn (obsolete, prohibited)",
+      "pinyin": "Xi Jiao",
+      "pinyin_toned": "Xī Jiǎo",
+      "pharmaceutical_latin": "Rhinocerotis Cornu",
+      "part_used_zh": "角（現代已禁用）",
+      "part_used_en": "horn (prohibited in modern practice)",
+      "category": "清熱藥 / Clear Heat - Cool Blood",
+      "category_zh": "清熱涼血藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "角",
+        "part_used_en": "horn",
+        "source_note_zh": "課件無犀角的單味藥專論。犀角地黃湯與清營湯課程區塊裡的「Bitter, salty, cold / HT, LV, ST」是**水牛角**（Chief Shui Niu Jiao）的性味歸經，不是犀角的，故本卡性味歸經留空，不搬用。"
+      },
+      "functions_zh": [
+        "涼血清熱",
+        "清熱解毒",
+        "止血"
+      ],
+      "actions_en": [
+        "Cools the Blood and clears Heat",
+        "Clears Heat and resolves toxicity",
+        "Stops bleeding"
+      ],
+      "indications_zh": [
+        "血分熱盛、熱入營血之出血與斑疹（課件犀角地黃湯：Cools Blood, clears Heat/toxicity and stops bleeding）。",
+        "熱入營分、身熱夜甚、神昏譫語（課件清營湯：Cools Blood/Ying, clears Heat and toxicity and arrests bleeding）。",
+        "以上為**歷史功效**；現代處方一律以水牛角替代。"
+      ],
+      "indications_en": [
+        "Blood-level Heat with bleeding and maculopapular rash (Xi Jiao Di Huang Tang card: cools Blood, clears Heat/toxicity and stops bleeding).",
+        "Heat entering the Ying level with fever worse at night and clouded spirit (Qing Ying Tang card: cools Blood/Ying, clears Heat and toxicity and arrests bleeding).",
+        "These are the **historical** actions; modern prescribing substitutes Shui Niu Jiao throughout."
+      ],
+      "condition_tags_zh": [
+        "血熱出血",
+        "熱入營血",
+        "斑疹",
+        "神昏譫語"
+      ],
+      "condition_tags_en": [
+        "Blood-Heat bleeding",
+        "Heat entering Ying and Blood",
+        "Maculopapular rash",
+        "Clouded spirit with delirium"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "不適用——現代禁用，不得開立",
+        "historical_formula_dose_g": "犀角地黃湯 1–6g、清營湯 2–9g（課件 AD 表，歷史用量）",
+        "substitute_dose_g": "水牛角 10–120g / 15–120g（AD 替代）；課程區塊 30–120g",
+        "source_note": "歷史用量僅供理解古方比例，不作處方依據。課件 .md 為 PDF 文字層擷取，雙欄版面會交錯錯位；本卡引用的數字使用前應對照原 PDF 覆核。"
+      },
+      "contraindications_zh": [
+        "**現代禁用**：犀為瀕危保育物種，課件明確記載安宮牛黃丸「Rhinoceros horn is obsolete/endangered and not used」、蘇合香丸「Endangered; AD states no longer used」。",
+        "一律以水牛角（Cornu Bubali）替代；課件煎法：水牛角先煎 20 分鐘再下他藥。"
+      ],
+      "contraindications_en": [
+        "**Prohibited in modern practice**: rhinoceros is an endangered protected species; the coursework states for An Gong Niu Huang Wan that rhinoceros horn is obsolete/endangered and not used, and for Su He Xiang Wan that it is endangered and per American Dragon no longer used.",
+        "Substitute Shui Niu Jiao (Cornu Bubali) in every case; the coursework's preparation note is to decoct Shui Niu Jiao 20 minutes before adding the other herbs."
+      ],
+      "cautions_zh": [
+        "NCBAHM Appendix D 廢用物質標記：考綱要求考生知道其歷史功效主治、瀕危/毒性議題，以及正確的替代策略——即「要會答，但不會開」。"
+      ],
+      "cautions_en": [
+        "NCBAHM Appendix D obsolete-substance flag: the outline requires candidates to know the historical actions and indications, the toxicity/endangered-status issue, and the appropriate substitution strategy — it is examinable but not prescribable."
+      ],
+      "safety_flags": [
+        "prohibited_endangered_species",
+        "obsolete_substance",
+        "ncbahm_appendix_d",
+        "substitute_with_shui_niu_jiao"
+      ],
+      "safety_review_pending": false,
+      "related_formulas": [
+        "formula.xi_jiao_di_huang_tang",
+        "formula.qing_ying_tang",
+        "formula.an_gong_niu_huang_wan",
+        "formula.zi_xue_dan",
+        "formula.zhi_bao_dan",
+        "formula.su_he_xiang_wan",
+        "formula.xi_jiao_di_huang_wan"
+      ],
+      "exam_importance": "★ NCBAHM Appendix D 廢用物質。考點是「歷史功效 + 瀕危議題 + 替代策略」三件事一起考。",
+      "exam_pearl": "犀角 = 涼血解毒止血的歷史代表；考試會答，臨床用水牛角。方名還留著犀角，組成已換成水牛角（先煎 20 分鐘）。",
+      "clinical_use_note": "犀角是本庫少數「必須知道、但絕不能開」的藥。它出現在 6 個方（犀角地黃湯、清營湯、安宮牛黃丸、紫雪丹、至寶丹、蘇合香丸），課件每一處都標了瀕危/廢用，並列水牛角為替代。最容易出錯的地方：課程區塊那一行「Bitter, salty, cold, HT/LV/ST」講的是**水牛角**，不是犀角——把它填進犀角的性味欄是典型的張冠李戴，本卡因此把性味歸經留空。替代不是等量代換：水牛角用量高一個數量級（10–120g vs 1–9g），且要先煎 20 分鐘。",
+      "source_citations": [
+        {
+          "name": "📘 課件 犀角地黃湯 formula card",
+          "url": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "scope": "第 030 方 §7：Cornu Rhinocerotis / Xi Jiao / 1-6g / Cools Blood, clears Heat/toxicity and stops bleeding; historical/obsolete ingredient；(Cornu Bubali) (Shui Niu Jiao) (10-120g) AD substitute；§17 NCBAHM Appendix D 廢用物質標記；煎法 shui niu jiao 先煎 20 分鐘"
+        },
+        {
+          "name": "📘 課件 清營湯 formula card",
+          "url": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "scope": "第 029 方 §7：Xi Jiao 2-9g 涼血清熱解毒止血；(Shui Niu Jiao) (15-120g) 替代"
+        },
+        {
+          "name": "📘 課件 安宮牛黃丸／紫雪丹／至寶丹／蘇合香丸 formula cards",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "Rhinoceros horn is obsolete/endangered and not used；Endangered; AD states no longer used"
+        },
+        {
+          "name": "📘 課件 NCBAHM 2026 CH 考綱",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "scope": "Xi Jiao (Rhinocerotis Cornu) 列名；Shui Niu Jiao (Bubali Cornu) 另列"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "category": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（生化湯、少腹逐瘀湯、實脾飲、陽和湯、實脾散 共 5 筆 composition 查無）而建。課件 MM2 溫裡藥有獨立的 Pào Jiāng 段落（副標直寫 Charred Gan Jiang），性味歸經與乾薑不同，且歸在止血藥群，故獨立建卡而非併入 herb.gan_jiang。課件未給炮薑用量。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.pao_jiang",
+      "name_zh": "炮薑",
+      "name_en": "Charred Dried Ginger",
+      "pinyin": "Pao Jiang",
+      "pinyin_toned": "Pào Jiāng",
+      "pharmaceutical_latin": "Zingiberis Rhizoma preparatum",
+      "part_used_zh": "乾薑炒炭",
+      "part_used_en": "dried ginger rhizome, charred",
+      "category": "止血藥 / Stop Bleeding",
+      "category_zh": "溫經止血藥",
+      "properties_taste_temp": "苦、澀，溫",
+      "taste_temperature_zh": "苦、澀，溫",
+      "channels_zh": [
+        "肝經",
+        "脾經"
+      ],
+      "channels_en": [
+        "LR Liver",
+        "SP Spleen"
+      ],
+      "channels_entered": [
+        "肝經",
+        "脾經"
+      ],
+      "aliases_zh": [
+        "黑薑"
+      ],
+      "aliases_en": [
+        "Hei Jiang"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦",
+          "澀"
+        ],
+        "five_flavors_en": [
+          "Bitter",
+          "Astringent"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "肝經",
+          "脾經"
+        ],
+        "meridian_tropism_en": [
+          "LR Liver",
+          "SP Spleen"
+        ],
+        "part_used_zh": "乾薑炒炭",
+        "part_used_en": "dried ginger rhizome, charred",
+        "source_note_zh": "性味歸經取自課件 MM2 溫裡藥 Pào Jiāng 段落：bitter, astringent, and warm / Channels: Liver, Spleen。與同章乾薑（辛熱，脾胃腎心肺）明顯不同，這是炒炭改變藥性的結果。"
+      },
+      "functions_zh": [
+        "溫經止血",
+        "溫中止瀉"
+      ],
+      "actions_en": [
+        "Warms the channels and stops bleeding",
+        "Warms the middle and stops diarrhea"
+      ],
+      "indications_zh": [
+        "虛寒性出血，尤其崩漏、產後惡露不盡（課件：deficiency cold that may present with hemorrhage of various types, especially uterine bleeding）。",
+        "虛寒泄瀉（課件：diarrhea due to deficient cold）。",
+        "生化湯中溫經散寒、助當歸川芎化瘀生新；少腹逐瘀湯溫通下焦。"
+      ],
+      "indications_en": [
+        "Deficiency-Cold bleeding, especially uterine bleeding and incomplete postpartum lochia (course text: deficiency cold that may present with hemorrhage of various types, especially uterine bleeding).",
+        "Diarrhea from deficiency Cold (course text: diarrhea due to deficient cold).",
+        "In Sheng Hua Tang it warms the channels and disperses Cold alongside Dang Gui and Chuan Xiong; in Shao Fu Zhu Yu Tang it warms and unblocks the lower jiao."
+      ],
+      "condition_tags_zh": [
+        "虛寒出血",
+        "崩漏",
+        "產後惡露不盡",
+        "虛寒泄瀉"
+      ],
+      "condition_tags_en": [
+        "Deficiency-Cold bleeding",
+        "Flooding and leaking",
+        "Incomplete postpartum lochia",
+        "Deficiency-Cold diarrhea"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "課件 Pào Jiāng 段落未列用量",
+        "reference_dose_g": "同章乾薑 3–10g（課件）／THP 乾薑 3~9g——供參考，非炮薑用量",
+        "source_note": "課件對炮薑本身沒有給劑量，故不填；不以乾薑劑量頂替。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件 Pào Jiāng 段落未列禁忌與注意事項。同章乾薑的禁忌（陰虛內熱、血熱者忌；孕婦慎用，大劑量可能致流產）**屬乾薑，未搬入本卡**——炒炭已改變藥性（辛熱→苦澀溫），直接套用會失真。",
+        "炮薑與乾薑是課件明列的比較考點（Comparison of Gan Jiang and Pao Jiang），處方與調劑時不可互代。"
+      ],
+      "cautions_en": [
+        "The Pao Jiang section lists no contraindications. The Gan Jiang cautions in the same chapter (contraindicated in interior Heat with Yin deficiency or Heat in the Blood; use with caution in pregnancy, large doses can cause abortion) belong to **Gan Jiang and have not been copied here** — charring changes the profile from acrid-hot to bitter-astringent-warm, so transferring them would misrepresent the herb.",
+        "Pao Jiang versus Gan Jiang is an explicit comparison point in the coursework; they must not be substituted for each other in prescribing or dispensing."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.sheng_hua_tang",
+        "formula.shao_fu_zhu_yu_tang",
+        "formula.shi_pi_yin",
+        "formula.yang_he_tang",
+        "formula.shi_pi_san"
+      ],
+      "exam_importance": "★ 課件明列的比較考點：乾薑 vs 炮薑（Comparison of Gan Jiang and Pao Jiang）。",
+      "exam_pearl": "乾薑辛熱回陽溫中；炮薑炒炭後苦澀溫、只入肝脾，主打「溫經止血」——尤其崩漏與產後出血。看到虛寒 + 出血就想炮薑。",
+      "clinical_use_note": "炮薑就是乾薑炒炭，但課件把它當成功能上另一味藥處理：性味從辛熱變成苦澀溫，歸經從脾胃腎心肺收窄到肝脾，主治從回陽救逆變成溫經止血。記憶線是「炭能止血」——十灰散的灰、荊芥穗炭、棕櫚炭都是同一個道理。它在 5 個方裡出現，生化湯與少腹逐瘀湯是產後/下焦虛寒瘀阻，實脾飲與實脾散是脾腎陽虛水腫，陽和湯是陰疽——共同點都是「寒」。用量欄空著是因為課件對炮薑本身沒給數字，不是漏填；不要拿乾薑的 3–10g 頂替。",
+      "source_citations": [
+        {
+          "name": "📘 課件 MM2 溫裡藥 Pào Jiāng 段落",
+          "url": "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md",
+          "scope": "副標「Charred Gan Jiang」；Properties: bitter, astringent, and warm；Channels: Liver, Spleen；Actions: warms channels and stops bleeding；主治虛寒出血尤其崩漏、虛寒泄瀉；比較表 Pao Jiang stops bleeding；複習題 Comparison of Gan Jiang and Pao Jiang"
+        },
+        {
+          "name": "📘 課件 拼音拉丁對照表",
+          "url": "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "scope": "Pao Jiang | Zingiberis Rhizoma preparatum | rhizome | Charred dried ginger；對照 Gan Jiang | Zingiberis Rhizoma | dried ginger"
+        },
+        {
+          "name": "📘 課件 Chenoweth 功效索引",
+          "url": "curriculum/herbs/Herb Functions.md",
+          "scope": "Pao Jiang 歸在止血群 [15] 且標 [W]（溫），乾薑標 [H]（熱）——分類層級的佐證"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md",
+          "curriculum/herbs/Pinyin & Latin Herb List.md"
+        ],
+        "category": [
+          "curriculum/herbs/Herb Functions.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ],
+        "dosage": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ],
+        "cautions_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（清骨散 composition 查無）而建。課件「08 - Clear Deficient Heat Herbs」與 THP 4th ed. 各有一份完整專論，性味歸經一致（苦寒、肝胃大腸），用量 3-10g（課件）vs 3~15g（THP）並記。與 herb.huang_lian 是不同科屬的兩味藥，課件自己寫 similar to Huang Lian 而非等同。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.hu_huang_lian",
+      "name_zh": "胡黃連",
+      "name_en": "Picrorhiza Rhizome",
+      "pinyin": "Hu Huang Lian",
+      "pinyin_toned": "Hú Huáng Lián",
+      "pharmaceutical_latin": "Picrorhizae Rhizoma（THP 作 Neopicrorhizae Rhizoma）",
+      "part_used_zh": "根莖",
+      "part_used_en": "rhizome",
+      "category": "清熱藥 / Clear Deficiency Heat",
+      "category_zh": "清虛熱藥",
+      "properties_taste_temp": "苦，寒",
+      "taste_temperature_zh": "苦，寒",
+      "channels_zh": [
+        "肝經",
+        "胃經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "LR Liver",
+        "ST Stomach",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "肝經",
+        "胃經",
+        "大腸經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Bitter"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "肝經",
+          "胃經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "LR Liver",
+          "ST Stomach",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "根莖",
+        "part_used_en": "rhizome",
+        "source_note_zh": "課件「08 - Clear Deficient Heat Herbs」：bitter, cold / Liver, Stomach, Large Intestine。THP「NEOPICRORHIZAE RHIZOMA 胡黃連」：Cold; bitter / Liver, stomach, and large intestine meridians。兩源一致。"
+      },
+      "functions_zh": [
+        "退虛熱",
+        "除疳熱",
+        "清濕熱、解毒"
+      ],
+      "actions_en": [
+        "Clears deficiency Heat",
+        "Clears Heat and reduces childhood nutritional impairment (Gan accumulation)",
+        "Drains Damp-Heat and resolves toxicity"
+      ],
+      "indications_zh": [
+        "陰虛發熱、骨蒸潮熱（課件：for yin-deficiency with heat signs；清骨散即此用）。",
+        "小兒疳積發熱，尤其兼腹脹、午後發熱、下痢（課件：most appropriate when accompanied by abdominal distention, afternoon fever, and dysenteric diarrhea）。",
+        "胃腸濕熱之痢疾（課件：similar to Huang Lian），或痔瘡（課件：with goose bile）。",
+        "THP 另記其利水消腫（detoxicate and alleviate edema）。"
+      ],
+      "indications_en": [
+        "Yin-deficiency fever and steaming-bone tidal fever (course text: for yin-deficiency with heat signs; this is its role in Qing Gu San).",
+        "Childhood nutritional impairment with fever, especially with abdominal distention, afternoon fever and dysenteric diarrhea (course text).",
+        "Damp-Heat dysenteric disorder of the Stomach and Intestines (course text: similar to Huang Lian), or hemorrhoids (course text: with goose bile).",
+        "The THP additionally records detoxicating and alleviating edema."
+      ],
+      "condition_tags_zh": [
+        "陰虛發熱",
+        "骨蒸潮熱",
+        "小兒疳積",
+        "濕熱痢疾",
+        "痔瘡"
+      ],
+      "condition_tags_en": [
+        "Yin-deficiency fever",
+        "Steaming-bone tidal fever",
+        "Childhood Gan accumulation",
+        "Damp-Heat dysentery",
+        "Hemorrhoids"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g（課件）／3~15g（THP）",
+        "source_note": "兩源上限不同，並記不二選一。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件與 THP 的胡黃連條目均未列禁忌與注意事項；本卡不代為填寫。苦寒藥常見的脾胃虛寒顧慮，兩源於本味皆未著墨。",
+        "**與黃連是兩味藥**：胡黃連為玄參科 Picrorhiza（清虛熱章），黃連為毛茛科 Coptis（清熱燥濕章）。課件寫「similar to Huang Lian」是比喻，不是等同。"
+      ],
+      "cautions_en": [
+        "Neither the coursework nor the THP lists contraindications or cautions for Hu Huang Lian; this card does not supply any. The usual Spleen-Stomach deficiency-Cold concern for bitter-cold herbs is not stated for this herb in either source.",
+        "**Hu Huang Lian and Huang Lian are two different herbs**: Picrorhiza (clear-deficiency-Heat chapter) versus Coptis (clear-Heat-dry-Damp chapter). The coursework's phrase 'similar to Huang Lian' is a comparison, not an equation."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "easily_confused_with_huang_lian"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.qing_gu_san"
+      ],
+      "exam_importance": "★ 清虛熱章正典藥；清骨散組成。考點是「退虛熱 + 除疳熱」雙軌，以及與黃連的區辨。",
+      "exam_pearl": "胡黃連 = 清虛熱章的黃連。差一個「胡」字，科屬與章節都不同：黃連清實火燥濕，胡黃連退虛熱、除小兒疳熱。清骨散裡取的是退骨蒸。",
+      "clinical_use_note": "胡黃連最容易被當成黃連的變體，其實是玄參科植物，跟毛茛科的黃連完全不同科，課件也分在不同章（胡黃連在清虛熱[7]，黃連在清熱燥濕）。它的兩個主場：一是陰虛骨蒸（清骨散），二是小兒疳積發熱——後者是它跟其他清虛熱藥（青蒿、地骨皮、銀柴胡）最大的差異點，因為它兼能清腸道濕熱，所以疳積合併腹脹下痢時特別對證。禁忌欄空白是因為兩份專論都沒列，不是它沒有。",
+      "source_citations": [
+        {
+          "name": "📘 課件 08 - Clear Deficient Heat Herbs",
+          "url": "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "scope": "Hú Huáng Lián 專論：Rhizoma Picrorhizae / bitter, cold / Liver, Stomach, Large Intestine / 退虛熱、除疳熱、清濕熱解毒 / Dosage: 3-10 grams"
+        },
+        {
+          "name": "📘 臺灣中藥典第四版（THP 4th ed.）英文版 胡黃連專論",
+          "url": "curriculum/herbs/臺灣中藥典第四版英文版.md",
+          "scope": "NEOPICRORHIZAE RHIZOMA：Cold; bitter / Liver, stomach, and large intestine / relieve deficiency heat, relieve malnutrition fever, clear dampness heat, detoxicate and alleviate edema / 3~15 g"
+        },
+        {
+          "name": "📘 課件 Chenoweth 功效索引",
+          "url": "curriculum/herbs/Herb Functions.md",
+          "scope": "Hu Huang Lian [7]（清虛熱章），與黃連分屬不同章——分類層級的區辨佐證"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/臺灣中藥典第四版英文版.md"
+        ],
+        "category": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/臺灣中藥典第四版英文版.md"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/臺灣中藥典第四版英文版.md"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/臺灣中藥典第四版英文版.md"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/臺灣中藥典第四版英文版.md"
+        ],
+        "dosage": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/臺灣中藥典第四版英文版.md"
+        ],
+        "cautions_zh": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/08 - Clear Deficient Heat Herbs-NEW.doc.md",
+          "curriculum/herbs/Herb Functions.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（左歸丸 composition 查無）而建。課件 MM III 補陰藥在 Guī Bǎn 之後另有 Guī Bǎn Jiāo 段落（Identity: Gelatin extract of Guī Bǎn），有自己的用量與煎服法，故獨立建卡。性味歸經取 SPECIAL PREP 表（鹹甘寒、心腎肝），與龜板一致。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.gui_ban_jiao",
+      "name_zh": "龜板膠",
+      "name_en": "Tortoise Plastron Gelatin",
+      "pinyin": "Gui Ban Jiao",
+      "pinyin_toned": "Guī Bǎn Jiāo",
+      "pharmaceutical_latin": "Testudinis Plastri Colla",
+      "part_used_zh": "龜板熬製之膠",
+      "part_used_en": "gelatin rendered from the tortoise plastron",
+      "category": "補虛藥 / Tonify Yin",
+      "category_zh": "補陰藥",
+      "properties_taste_temp": "甘、鹹，寒",
+      "taste_temperature_zh": "甘、鹹，寒",
+      "channels_zh": [
+        "心經",
+        "腎經",
+        "肝經"
+      ],
+      "channels_en": [
+        "HT Heart",
+        "KD Kidney",
+        "LR Liver"
+      ],
+      "channels_entered": [
+        "心經",
+        "腎經",
+        "肝經"
+      ],
+      "aliases_zh": [
+        "龜甲膠"
+      ],
+      "aliases_en": [
+        "Gui Jia Jiao"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘",
+          "鹹"
+        ],
+        "five_flavors_en": [
+          "Sweet",
+          "Salty"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "心經",
+          "腎經",
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "KD Kidney",
+          "LR Liver"
+        ],
+        "part_used_zh": "龜板熬製之膠",
+        "part_used_en": "gelatin rendered from the plastron",
+        "source_note_zh": "性味歸經取自 SPECIAL PREP 表：salty, swt, cold / he, kid, liv，與同表龜板一致。**來源差異**：課件左歸丸方劑卡的課程區塊把龜板膠寫成「Sweet, salty, neutral」（平），與專論的「寒」不合，兩者並記。課件 .md 為 PDF 文字層擷取，雙欄版面會交錯錯位；本卡引用的數字使用前應對照原 PDF 覆核。"
+      },
+      "functions_zh": [
+        "滋陰潛陽",
+        "補血止血",
+        "益腎健骨"
+      ],
+      "actions_en": [
+        "Enriches Yin and anchors rising Yang",
+        "Nourishes Blood and stops bleeding",
+        "Benefits the Kidney and strengthens the bones"
+      ],
+      "indications_zh": [
+        "陰虛陽亢之眩暈耳鳴頭痛（承龜板功效，膠劑滋膩力更強）。",
+        "陰血虧虛之崩漏、虛性出血（課件：Stronger for stopping bleeding / nourishing Blood and Yin）。",
+        "肝腎不足之腰膝痠軟、筋骨痿弱（課件左歸丸：Strong Yin tonic; anchors Yang, benefits Kidney/bones and nourishes Blood）。"
+      ],
+      "indications_en": [
+        "Yin deficiency with ascendant Yang causing dizziness, tinnitus and headache (following the Gui Ban actions, with the gelatin form being richer).",
+        "Flooding, leaking and deficiency bleeding from Yin-Blood depletion (course text: stronger for stopping bleeding and nourishing Blood and Yin).",
+        "Sore weak low back and knees with flaccid sinews and bones from Liver-Kidney insufficiency (Zuo Gui Wan card: strong Yin tonic, anchors Yang, benefits Kidney/bones and nourishes Blood)."
+      ],
+      "condition_tags_zh": [
+        "陰虛陽亢",
+        "崩漏",
+        "虛性出血",
+        "腰膝痠軟",
+        "筋骨痿弱"
+      ],
+      "condition_tags_en": [
+        "Yin deficiency with ascendant Yang",
+        "Flooding and leaking",
+        "Deficiency bleeding",
+        "Sore weak low back and knees",
+        "Flaccid sinews and bones"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 10,
+        "unit": "g/day",
+        "route": "dissolved into the strained decoction (烊化)"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g（課件 MM III）／3–9g（SPECIAL PREP 表）",
+        "formula_dose_g": "左歸丸 12–30g（課件 AD 表）",
+        "source_note": "膠劑用量明顯低於龜板本身（10–30g）。方中用量與單味用量差距大，並記。煎服法：烊化沖入濾好的藥液，不與藥同煎。"
+      },
+      "contraindications_zh": [
+        "孕婦禁用（課件龜板條：Contraindicated in pregnancy）。",
+        "泄瀉、寒濕、虛寒者禁用（課件龜板條：Contraindicated in diarrhea, cold-damp, deficiency cold）。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy (Gui Ban entry: contraindicated in pregnancy).",
+        "Contraindicated in diarrhea, Cold-Damp, and deficiency Cold (Gui Ban entry)."
+      ],
+      "cautions_zh": [
+        "禁忌承自課件的龜板專論（同一基原）；課件的 Guī Bǎn Jiāo 段落本身未另列禁忌。膠劑滋膩，脾虛便溏者更須留意，但這一句課件未明寫，屬臨床通則，使用前請自行核實。"
+      ],
+      "cautions_en": [
+        "The contraindications are carried over from the Gui Ban monograph (same source material); the Gui Ban Jiao section itself lists none separately. Gelatin preparations are cloying and warrant extra care in Spleen deficiency with loose stool, but the coursework does not state this for the gelatin specifically."
+      ],
+      "safety_flags": [
+        "pregnancy_contraindication",
+        "diarrhea_contraindication",
+        "cold_damp_contraindication"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zuo_gui_wan"
+      ],
+      "exam_importance": "★ 課件明列 Exam Pearl：Guī Bǎn Jiāo = heavier Yin + hemostasis。",
+      "exam_pearl": "龜板膠 = 龜板熬成的膠：滋陰更厚、又多了止血。用量反而更小（3–10g vs 龜板 10–30g），且要烊化沖服不同煎。",
+      "clinical_use_note": "龜板膠是龜板的膠劑，課件明寫 Identity: Gelatin extract of Guī Bǎn。三個必記的差別：①力道——滋陰養血更厚重，並多出止血一項；②用量——反而更少（3–10g，龜板 10–30g）；③煎法——烊化沖入濾好的藥液，龜板則是打碎先煎。左歸丸用它配鹿角膠，一陰一陽兩膠並用，是「陰中求陽」的典型結構。注意課件內部有性味衝突：專論與 SPECIAL PREP 表作「寒」，左歸丸課程區塊作「平」，本卡兩者並記未擅自二選一。",
+      "source_citations": [
+        {
+          "name": "📘 課件 MM III 補陰藥 Guī Bǎn Jiāo 段落",
+          "url": "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md",
+          "scope": "Identity: Gelatin extract of Guī Bǎn；Stronger for: Stopping bleeding / Nourishing Blood and Yin；Dosage: 3–10 g, dissolved into strained decoction；Exam Pearl「Guī Bǎn Jiāo = heavier Yin + hemostasis」；同檔 Guī Bǎn 專論之性味歸經與禁忌（孕婦、泄瀉、寒濕、虛寒）"
+        },
+        {
+          "name": "📘 課件 MATERIA MEDICA AND SPECIAL PREP 表",
+          "url": "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "scope": "Gui Ban Jiao / Plastrum testudinus, gelatinum / more yin tonifying than gui ban / 3 to 9 / he,kid,liv / salty,swt,cold"
+        },
+        {
+          "name": "📘 課件 左歸丸 formula card",
+          "url": "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md",
+          "scope": "Colla Plastrum Testudinis / Gui Ban Jiao / 12-30g / Strong Yin tonic; anchors Yang, benefits Kidney/bones and nourishes Blood；課程區塊性味作 Sweet, salty, neutral（與專論的 cold 不合）"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md",
+          "curriculum/herbs/Pinyin & Latin Herb List.md"
+        ],
+        "category": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md",
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md"
+        ],
+        "cautions_zh": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（九仙散「Mi Zhi Ying Su Ke」、真人養臟湯「炙罌粟殼」）而建。課件無專論，只有方劑組成行；明確標 Obsolete/restricted 與 NCBAHM Appendix D。**重要**：全 curriculum 查無任何成癮性/管制藥品字樣，本卡如實記錄「來源未提」而不代為補寫。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.ying_su_ke",
+      "name_zh": "罌粟殼",
+      "name_en": "Poppy Husk (obsolete / restricted)",
+      "pinyin": "Ying Su Ke",
+      "pinyin_toned": "Yīng Sù Ké",
+      "pharmaceutical_latin": "Papaveris Pericarpium",
+      "part_used_zh": "果殼",
+      "part_used_en": "fruit husk",
+      "category": "收澀藥 / Stabilize and Bind",
+      "category_zh": "收澀藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "炙罌粟殼",
+        "蜜炙罌粟殼"
+      ],
+      "aliases_en": [
+        "Zhi Ying Su Ke",
+        "Mi Zhi Ying Su Ke"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "果殼",
+        "part_used_en": "fruit husk",
+        "source_note_zh": "課件沒有罌粟殼的單味藥專論——收澀藥章的速查表（五味子、烏梅、訶子、赤石脂、肉豆蔻、椿根皮、芡實、蓮子…）不含本味。性味歸經無來源，留空。"
+      },
+      "functions_zh": [
+        "斂肺止咳平喘",
+        "澀腸止瀉",
+        "止痛"
+      ],
+      "actions_en": [
+        "Strongly astringes Lung Qi to stop chronic cough and wheezing",
+        "Astringes the intestines and stops diarrhea",
+        "Relieves pain"
+      ],
+      "indications_zh": [
+        "久咳久喘、肺氣耗散（課件九仙散：Strongly astringes Lung Qi to stop chronic cough/wheeze）。",
+        "久瀉久痢、下焦滑脫（課件真人養臟湯：Astringes intestines, stabilizes Lower Jiao and relieves pain）。",
+        "以上為**歷史功效**；課件標明現代已屬廢用/受限物質。"
+      ],
+      "indications_en": [
+        "Chronic cough and wheezing with Lung Qi scattering (Jiu Xian San card: strongly astringes Lung Qi to stop chronic cough/wheeze).",
+        "Chronic diarrhea and dysentery with lower-jiao loss of astringency (Zhen Ren Yang Zang Tang card: astringes intestines, stabilizes Lower Jiao and relieves pain).",
+        "These are the **historical** actions; the coursework marks it obsolete/restricted in modern practice."
+      ],
+      "condition_tags_zh": [
+        "久咳",
+        "久喘",
+        "久瀉",
+        "久痢",
+        "疼痛"
+      ],
+      "condition_tags_en": [
+        "Chronic cough",
+        "Chronic wheezing",
+        "Chronic diarrhea",
+        "Chronic dysentery",
+        "Pain"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "不適用——課件標為廢用/受限物質",
+        "historical_formula_dose_g": "真人養臟湯 6–108g、九仙散 6–240g（課件 AD 表）；CHM 課程包記 6–20g",
+        "source_note": "課件三處用量上限差距極大（20g / 108g / 240g），**不可據以處方**。課件 .md 為 PDF 文字層擷取，雙欄版面會交錯錯位；本卡引用的數字使用前應對照原 PDF 覆核。"
+      },
+      "contraindications_zh": [
+        "**現代廢用/受限**：課件九仙散與真人養臟湯兩張卡都標「Obsolete/restricted substance in modern practice」，並掛 NCBAHM Appendix D 廢用物質標記。",
+        "替代藥（課件 AD 列）：九仙散可用訶子、五倍子、白果；真人養臟湯可用石榴皮。"
+      ],
+      "contraindications_en": [
+        "**Obsolete/restricted in modern practice**: both the Jiu Xian San and Zhen Ren Yang Zang Tang cards mark it an obsolete/restricted substance and carry the NCBAHM Appendix D obsolete-substance flag.",
+        "Substitutes listed by American Dragon: He Zi, Wu Bei Zi or Bai Guo for Jiu Xian San; Shi Liu Pi for Zhen Ren Yang Zang Tang."
+      ],
+      "cautions_zh": [
+        "**來源衝突**：CHM 課程包寫「opium poppy husk - No substitutions」（不可替代），但 AD 的方劑卡列出訶子、五倍子、白果、石榴皮四種替代藥。兩說並記，未擅自二選一。",
+        "**來源缺口（重要）**：本卡建立時以 addict / controlled substance / narcotic / dependen 等字串全文檢索 curriculum/，**查無任何成癮性、依賴性或管制藥品的警語**。罌粟殼含阿片類生物鹼的管制與成癮風險屬臨床常識，但既有教材未寫，本卡依憲法「查不到就回報、不編」不代為填入具體法規或風險敘述——請 Ting 以權威來源補齊後再升級此欄。"
+      ],
+      "cautions_en": [
+        "**Source conflict**: the CHM course package says 'opium poppy husk - No substitutions', while the American Dragon formula cards list He Zi, Wu Bei Zi, Bai Guo and Shi Liu Pi as substitutes. Both are recorded; neither has been chosen.",
+        "**Source gap (important)**: a full-text search of curriculum/ for addict / controlled substance / narcotic / dependen returned **no addiction, dependency, or controlled-substance warning of any kind**. The opiate-alkaloid control and addiction risk of poppy husk is clinical common knowledge, but the existing teaching material does not state it, so per the constitution ('report what you cannot source, do not invent it') this card does not supply specific legal or risk language. Ting should fill this layer from an authoritative source before it is upgraded."
+      ],
+      "safety_flags": [
+        "obsolete_substance",
+        "restricted_substance",
+        "ncbahm_appendix_d",
+        "safety_review_pending",
+        "source_gap_no_addiction_warning"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.jiu_xian_san"
+      ],
+      "exam_importance": "★ NCBAHM Appendix D 廢用物質。考點同犀角：歷史功效主治 + 廢用/毒性議題 + 替代策略。",
+      "exam_pearl": "罌粟殼一味兼收肺與腸：久咳（九仙散）與久瀉（真人養臟湯）都用它「澀」。考試會答，臨床不開；替代記訶子/五倍子/白果（咳）、石榴皮（瀉）。",
+      "clinical_use_note": "罌粟殼是典型「一味藥兩個場」：上收肺氣治久咳久喘（九仙散），下澀腸道治久瀉久痢（真人養臟湯），兼止痛。它跟犀角、穿山甲同屬 NCBAHM Appendix D 的廢用物質，考法一樣——要知道歷史功效、廢用理由、以及替代方案。**這張卡有一個必須讓 Ting 知道的來源缺口**：整套課件對它完全沒有成癮性或管制藥品的警語，只寫 obsolete/restricted。空白是如實反映教材，不是我漏抄；在補上權威來源之前，不要把這張卡當成安全資訊完整的卡使用。",
+      "source_citations": [
+        {
+          "name": "📘 課件 九仙散 formula card",
+          "url": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "scope": "第 098 方 §7：Honey-prepared Pericarpium Papaveris / Mi Zhi Ying Su Ke / 6-240g / Strongly astringes Lung Qi to stop chronic cough/wheeze. Obsolete/restricted substance in modern practice；替代 (He Zi)(30g)、(Wu Bei Zi)(30g)、(Bai Guo)(30g)；§17 NCBAHM Appendix D 標記"
+        },
+        {
+          "name": "📘 課件 真人養臟湯 formula card",
+          "url": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "scope": "第 099 方 §7：Per. Papaveris / Zhi Ying Su Ke / 6-108g / Astringes intestines, stabilizes Lower Jiao and relieves pain. Obsolete/restricted；替代 (Shi Liu Pi)(9-15g)"
+        },
+        {
+          "name": "📘 課件 CHM Formulation 2 course package",
+          "url": "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
+          "scope": "Ying Su Ke 6-20g opium poppy husk - No substitutions；Chief: Zhi Ying Su Ke – astringent that can be used to treat both cough and diarrhea"
+        },
+        {
+          "name": "📘 課件 NCBAHM 2026 CH 考綱",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "scope": "Ying Su Ke (Papaveris Pericarpium) 列名"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "category": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（珍珠母丸、羚角鉤藤湯 composition 查無）而建。與 herb.zhen_zhu（珍珠）是不同藥材：拉丁名、用部、用量都不同（Margarita 0.3–1g vs Margaritiferae Concha usta 21–30g）。課件無珍珠母專論，性味歸經留空。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.zhen_zhu_mu",
+      "name_zh": "珍珠母",
+      "name_en": "Mother-of-Pearl (calcined)",
+      "pinyin": "Zhen Zhu Mu",
+      "pinyin_toned": "Zhēn Zhū Mǔ",
+      "pharmaceutical_latin": "Margaritiferae Concha usta",
+      "part_used_zh": "貝殼（煅）",
+      "part_used_en": "shell (calcined)",
+      "category": "平肝息風藥 / Extinguish Wind",
+      "category_zh": "平肝潛陽藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "貝殼（煅）",
+        "part_used_en": "shell (calcined)",
+        "source_note_zh": "課件無珍珠母專論，只有拼音拉丁對照表一行與兩張方劑卡的組成行；性味歸經無來源，留空。珍珠（Margarita）的「甘鹹寒、心肝」是**珍珠**的，不得搬入。"
+      },
+      "functions_zh": [
+        "平肝潛陽",
+        "安神定驚"
+      ],
+      "actions_en": [
+        "Pacifies the Liver and anchors ascendant Yang",
+        "Calms the Spirit and settles fright"
+      ],
+      "indications_zh": [
+        "肝陽上亢之眩暈（課件珍珠母丸：Anchors Liver Yang and calms Shen; helps dizziness）。",
+        "心神不寧之心悸、失眠（同上：palpitations and insomnia）。",
+        "羚角鉤藤湯中，AD 列為羚羊角的替代藥之一（10–45g）。"
+      ],
+      "indications_en": [
+        "Dizziness from ascendant Liver Yang (Zhen Zhu Mu Wan card: anchors Liver Yang and calms Shen, helps dizziness).",
+        "Palpitations and insomnia from a restless Spirit (same source).",
+        "In Ling Jiao Gou Teng Tang, American Dragon lists it as one substitute for Ling Yang Jiao (10–45g)."
+      ],
+      "condition_tags_zh": [
+        "肝陽上亢",
+        "眩暈",
+        "心悸",
+        "失眠"
+      ],
+      "condition_tags_en": [
+        "Ascendant Liver Yang",
+        "Dizziness",
+        "Palpitations",
+        "Insomnia"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 10,
+        "max_g": 45,
+        "unit": "g/day",
+        "route": "decoction (crush and pre-decoct)"
+      },
+      "dosage_g": {
+        "standard_daily_g": "21–30g（課件珍珠母丸）／10–45g（課件羚角鉤藤湯，作羚羊角替代）",
+        "source_note": "課件無單味藥專論用量，兩處方中用量並記。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列珍珠母的禁忌與注意事項；本卡不代為填寫。",
+        "**與珍珠是兩味藥**：珍珠 Margarita（珠，0.3–1g，多研末）vs 珍珠母 Margaritiferae Concha usta（煅貝殼，21–30g，打碎先煎）。用量差 30 倍，調劑錯了是實質風險。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Zhen Zhu Mu; this card does not supply any.",
+        "**Zhen Zhu and Zhen Zhu Mu are two different materials**: Zhen Zhu is Margarita (the pearl, 0.3–1 g, usually powdered) and Zhen Zhu Mu is Margaritiferae Concha usta (the calcined shell, 21–30 g, crushed and pre-decocted). The doses differ roughly thirtyfold, so a dispensing error here carries real risk."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "easily_confused_with_zhen_zhu"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zhen_zhu_mu_wan",
+        "formula.ling_jiao_gou_teng_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "珍珠母 = 生珍珠的那個殼（煅）。珍珠 0.3–1g 研末安神；珍珠母 21–30g 打碎先煎潛陽。名字差一個字，用量差三十倍。",
+      "clinical_use_note": "珍珠母是育珠貝的殼（煅過），跟珍珠本身是「殼與珠」的關係，不是同一味。它走的是重鎮潛陽路線：肝陽上亢的眩暈、心神不寧的心悸失眠，同時是羚羊角（瀕危）的可用替代之一，這點在羚角鉤藤湯裡很實用。性味歸經留空是因為課件真的沒有珍珠母的專論；把珍珠的「甘鹹寒、心肝」抄過來會做出一張無來源的假卡。臨床最要小心的是用量級距。",
+      "source_citations": [
+        {
+          "name": "📘 課件 珍珠母丸 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 162 方 §7：Concha Margaritaferae Usta / Zhen Zhu Mu / 21-30g / Anchors Liver Yang and calms Shen; helps dizziness, palpitations and insomnia"
+        },
+        {
+          "name": "📘 課件 羚角鉤藤湯 formula card",
+          "url": "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "scope": "第 145 方 §7：(Concha Margaritaferae) (Zhen Zhu Mu) (10-45g)，AD 列為 Ling Yang Jiao 的另一替代藥"
+        },
+        {
+          "name": "📘 課件 拼音拉丁對照表",
+          "url": "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "scope": "Zhen Zhu Mu | Margaritiferae Concha usta | shell | mother-of-pearl"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/Pinyin & Latin Herb List.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/Pinyin & Latin Herb List.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（珍珠母丸 composition 查無）而建。與 herb.long_gu（龍骨）是不同用部：Fossilia Dentis Mastodi（齒）vs Fossilia Ossis Mastodi（骨）。課件無龍齒專論，性味歸經留空，不搬龍骨的。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.long_chi",
+      "name_zh": "龍齒",
+      "name_en": "Fossilized Teeth (Dragon Teeth)",
+      "pinyin": "Long Chi",
+      "pinyin_toned": "Lóng Chǐ",
+      "pharmaceutical_latin": "Fossilia Dentis Mastodi",
+      "part_used_zh": "古代大型哺乳動物化石齒",
+      "part_used_en": "fossilized teeth of large prehistoric mammals",
+      "category": "安神藥 / Calm Spirit",
+      "category_zh": "重鎮安神藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "化石齒",
+        "part_used_en": "fossilized teeth",
+        "source_note_zh": "課件無龍齒專論，只有拼音拉丁對照表一行與珍珠母丸組成行。龍骨的「甘澀平、心肝」是**龍骨**的，不搬入。"
+      },
+      "functions_zh": [
+        "鎮驚安神",
+        "平肝潛陽"
+      ],
+      "actions_en": [
+        "Settles fright and calms the Spirit",
+        "Pacifies the Liver and anchors ascendant Yang"
+      ],
+      "indications_zh": [
+        "心虛不寧之驚悸、焦慮不安（課件珍珠母丸：Anchors floating Yang, calms Liver/Shen and settles anxiety；AD 記其與珍珠母及養心安神種子類同用治心虛煩擾）。",
+        "浮陽不潛之心神浮越。",
+        "課件另記炙甘草湯加減：心悸嚴重時加龍齒、琥珀。"
+      ],
+      "indications_en": [
+        "Fright palpitations and anxiety from Heart deficiency (Zhen Zhu Mu Wan card: anchors floating Yang, calms Liver/Shen and settles anxiety, combined by American Dragon with Zhen Zhu Mu and calming seeds for Heart-deficiency restlessness).",
+        "Spirit floating upward when Yang is not anchored.",
+        "The coursework also records a Zhi Gan Cao Tang modification: add Long Chi and Hu Po for severe palpitations."
+      ],
+      "condition_tags_zh": [
+        "驚悸",
+        "焦慮不安",
+        "失眠",
+        "心神浮越"
+      ],
+      "condition_tags_en": [
+        "Fright palpitations",
+        "Anxiety and restlessness",
+        "Insomnia",
+        "Floating Spirit"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 15,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction (crush and pre-decoct)"
+      },
+      "dosage_g": {
+        "standard_daily_g": "課件珍珠母丸列 15g；無單味藥專論用量區間",
+        "source_note": "只有方中用量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列龍齒的禁忌與注意事項；本卡不代為填寫。龍骨的禁忌（火盛遺精者忌、濕熱或外感者忌）**屬龍骨，未搬入**。",
+        "與龍骨為不同用部（齒 vs 骨），拉丁名不同，調劑不可互代。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Long Chi; this card does not supply any. The Long Gu contraindications (nocturnal emission caused by Fire; Damp-Heat or externally contracted disorders) belong to **Long Gu and have not been copied here**.",
+        "Long Chi and Long Gu are different parts (teeth versus bone) with different Latin names and must not be substituted in dispensing."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "easily_confused_with_long_gu"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zhen_zhu_mu_wan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "龍齒 vs 龍骨：同是化石，齒偏鎮驚安神（心），骨偏收澀固脫（兼澀精止汗）。珍珠母丸用龍齒配珍珠母，一齒一殼都是重鎮。",
+      "clinical_use_note": "龍齒與龍骨常被當成同一味，其實拉丁名就分得很清楚：Fossilia Dentis Mastodi（齒）vs Fossilia Ossis Mastodi（骨）。功能上龍骨是「鎮驚 + 收澀」雙功能（澀精、斂汗、生肌），龍齒在課件裡只見鎮驚安神潛陽這一路，沒有收澀的敘述。珍珠母丸是它的代表方，配珍珠母同用。性味歸經留空是因為課件沒有龍齒的專論；龍骨的甘澀平不能直接借用。",
+      "source_citations": [
+        {
+          "name": "📘 課件 珍珠母丸 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 162 方 §7：Fossilia Dentis Mastodi / Long Chi / 15g / Anchors floating Yang, calms Liver/Shen and settles anxiety"
+        },
+        {
+          "name": "📘 課件 拼音拉丁對照表",
+          "url": "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "scope": "Long Chi | Fossilia Dentis Mastodi | Teeth | Dragon teeth, Fossilized teeth；對照 Long Gu powder | Fossilia Ossis Mastodi | Fossil"
+        },
+        {
+          "name": "📘 課件 炙甘草湯 加減",
+          "url": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+          "scope": "+ long chi, hu po Severe palpitations"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/Pinyin & Latin Herb List.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（蘇合香丸 composition 查無）而建。SPECIAL PREP 表有一行完整資料（性味、歸經、用量、主治）。用量兩源差距極大（0.3–1.5g vs 方中 3–60g），並記。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.an_xi_xiang",
+      "name_zh": "安息香",
+      "name_en": "Benzoin Resin",
+      "pinyin": "An Xi Xiang",
+      "pinyin_toned": "Ān Xī Xiāng",
+      "pharmaceutical_latin": "Benzoinum",
+      "part_used_zh": "樹脂",
+      "part_used_en": "resin",
+      "category": "開竅藥 / Open Orifices",
+      "category_zh": "開竅藥",
+      "properties_taste_temp": "辛、苦，平",
+      "taste_temperature_zh": "辛、苦，平",
+      "channels_zh": [
+        "心經",
+        "脾經",
+        "肝經"
+      ],
+      "channels_en": [
+        "HT Heart",
+        "SP Spleen",
+        "LR Liver"
+      ],
+      "channels_entered": [
+        "心經",
+        "脾經",
+        "肝經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "辛",
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Pungent",
+          "Bitter"
+        ],
+        "four_natures_zh": "平",
+        "four_natures_en": "Neutral",
+        "meridian_tropism_zh": [
+          "心經",
+          "脾經",
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "SP Spleen",
+          "LR Liver"
+        ],
+        "part_used_zh": "樹脂",
+        "part_used_en": "resin",
+        "source_note_zh": "性味歸經取自 SPECIAL PREP 表：acrid, bit, neutral / he, sp, liv。該表為雙欄 PDF 擷取，用量欄顯示為「03 to 1.5」，應為 0.3–1.5g 的擷取瑕疵。課件 .md 為 PDF 文字層擷取，雙欄版面會交錯錯位；本卡引用的數字使用前應對照原 PDF 覆核。"
+      },
+      "functions_zh": [
+        "開竅醒神",
+        "行氣活血止痛",
+        "豁痰"
+      ],
+      "actions_en": [
+        "Opens the orifices and revives the spirit",
+        "Moves Qi and Blood to relieve pain",
+        "Dispels Phlegm"
+      ],
+      "indications_zh": [
+        "神昏譫語或昏迷，兼胸腹疼痛、痞悶（SPECIAL PREP 表：delerium or coma w/chest or abdomen pain/focal distention）。",
+        "蘇合香丸：開竅、豁痰、行氣活血止痛（課件方劑卡）。",
+        "課件另記其助麝香化濁開竅（方劑學彙總：Aid she xiang - Transform turbidity, open Orifices）。"
+      ],
+      "indications_en": [
+        "Delirium or coma with chest or abdominal pain and focal distention (SPECIAL PREP table).",
+        "In Su He Xiang Wan: opens the orifices, resolves Phlegm, moves Qi and Blood and relieves pain (formula card).",
+        "The coursework also records it assisting She Xiang to transform turbidity and open the orifices."
+      ],
+      "condition_tags_zh": [
+        "神昏",
+        "昏迷",
+        "胸腹疼痛",
+        "痰濁蒙竅"
+      ],
+      "condition_tags_en": [
+        "Clouded spirit",
+        "Coma",
+        "Chest and abdominal pain",
+        "Turbid Phlegm veiling the orifices"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 0.3,
+        "max_g": 1.5,
+        "unit": "g/day",
+        "route": "powder, taken alone or with the decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "0.3–1.5g（SPECIAL PREP 表，粉劑）",
+        "formula_dose_g": "蘇合香丸 3–60g（課件 AD 表）；課程區塊 至寶丹 An Xi Xiang 45、蘇合香丸 60",
+        "source_note": "**兩源差距達 40 倍**：單味粉劑 0.3–1.5g vs 方中 3–60g。方中數字多為丸劑原料總量而非每次服用量。處方前必須確認是哪一種計量，不可直接採用。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列安息香的禁忌與注意事項；本卡不代為填寫。",
+        "服法：SPECIAL PREP 表標記為「通常以粉劑單獨服用或配合湯劑沖服」，不入煎。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for An Xi Xiang; this card does not supply any.",
+        "Administration: the SPECIAL PREP table marks it as usually taken as a powder, alone or with the decoction, rather than decocted."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "dose_source_conflict"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.su_he_xiang_wan",
+        "formula.zhi_bao_dan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "安息香 = 辛苦平的樹脂開竅藥，走心脾肝。特徵是「開竅 + 止痛」並見——神昏兼胸腹痛時的選擇；粉劑沖服不入煎。",
+      "clinical_use_note": "安息香是蘇合香丸系統裡的樹脂類開竅藥，跟蘇合香、麝香同組，靠芳香走竄開竅醒神，特點是兼能行氣活血止痛，所以 SPECIAL PREP 表的主治寫成「神昏或昏迷 + 胸腹疼痛痞悶」——這個「昏 + 痛」的組合是它跟其他開竅藥的辨識點。**用量必須小心**：單味粉劑只有 0.3–1.5g，但方劑卡寫 3–60g，那是丸劑的原料總量，兩者不能混用。它不入煎，粉劑沖服。",
+      "source_citations": [
+        {
+          "name": "📘 課件 MATERIA MEDICA AND SPECIAL PREP 表",
+          "url": "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "scope": "An Xi Xiang / Benzoinum / delerium or coma w/chest or abdomen pain/focal distention / 0.3 to 1.5 / he,sp,liv / acrid,bit,neutral / Resin styrax benzoin；符號註記為粉劑單服或配湯劑沖服"
+        },
+        {
+          "name": "📘 課件 蘇合香丸 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 169 方 §7：Benzoinum / An Xi Xiang / 3-60g / Opens Orifices, resolves Phlegm, moves Qi/Blood and relieves pain"
+        },
+        {
+          "name": "📘 課件 方劑學彙總",
+          "url": "curriculum/herbs/方剂学汇总_extracted.md",
+          "scope": "Aid she xiang - Transform turbidity, open Orifices；Aromatically (penetrating) open Orifices"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ],
+        "category": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "dosage": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（復元活血湯「穿山甲」、仙方活命飲「Zhi Chuan Shan Jia」）而建。課件無專論，只有方劑組成行，並明確標為保育類廢用物質、替代藥為王不留行。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.chuan_shan_jia",
+      "name_zh": "穿山甲",
+      "name_en": "Pangolin Scales (obsolete, protected)",
+      "pinyin": "Chuan Shan Jia",
+      "pinyin_toned": "Chuān Shān Jiǎ",
+      "pharmaceutical_latin": "Manitis Squama",
+      "part_used_zh": "鱗片（現代已禁用）",
+      "part_used_en": "scales (prohibited in modern practice)",
+      "category": "活血化瘀藥 / Invigorate Blood",
+      "category_zh": "活血化瘀藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "炮山甲",
+        "炙穿山甲"
+      ],
+      "aliases_en": [
+        "Pao Shan Jia",
+        "Zhi Chuan Shan Jia"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "鱗片",
+        "part_used_en": "scales",
+        "source_note_zh": "課件無穿山甲的單味藥專論；Chenoweth 功效索引只給分類標記（[18] 活血化瘀、[C] 寒）。性味歸經無完整來源，留空。"
+      },
+      "functions_zh": [
+        "通經下乳",
+        "活血消癥、散結",
+        "消腫排膿"
+      ],
+      "actions_en": [
+        "Unblocks the channels and promotes lactation",
+        "Invigorates Blood, disperses masses and dissipates nodules",
+        "Reduces swelling and expels pus"
+      ],
+      "indications_zh": [
+        "血瘀經閉、癥瘕積聚（課件復元活血湯：Historically used to open channels and disperse Blood Stasis）。",
+        "瘡瘍腫毒未潰或膿成不潰（仙方活命飲用炙穿山甲，取其潰堅排膿）。",
+        "以上為**歷史功效**；課件標明現代為保育類廢用物質。"
+      ],
+      "indications_en": [
+        "Blood-stasis amenorrhea and abdominal masses (Fu Yuan Huo Xue Tang card: historically used to open channels and disperse Blood Stasis).",
+        "Sores and toxic swellings that have not ulcerated, or where pus has formed but not discharged (Xian Fang Huo Ming Yin uses the prepared form to break through and expel pus).",
+        "These are the **historical** actions; the coursework marks it an obsolete, protected animal substance in modern practice."
+      ],
+      "condition_tags_zh": [
+        "血瘀經閉",
+        "癥瘕積聚",
+        "瘡瘍腫毒",
+        "乳汁不通"
+      ],
+      "condition_tags_en": [
+        "Blood-stasis amenorrhea",
+        "Abdominal masses",
+        "Sores and toxic swelling",
+        "Insufficient lactation"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "不適用——保育類，現代禁用",
+        "historical_formula_dose_g": "復元活血湯 2–9g（課件 AD 表）；課程區塊 6g",
+        "substitute": "王不留行（課件 CHM 課程包：Chuan Shan Jia -endangered, substituting Wang Bu Liu Xing）",
+        "source_note": "歷史用量僅供理解古方比例。"
+      },
+      "contraindications_zh": [
+        "**現代禁用**：穿山甲為保育類動物，課件標「obsolete/protected animal substance in modern practice」、「Anteater (pangolin) scales [endangered species]」。",
+        "替代藥：王不留行（課件 CHM 課程包明列）。"
+      ],
+      "contraindications_en": [
+        "**Prohibited in modern practice**: the pangolin is a protected species; the coursework marks the substance as obsolete/protected in modern practice and labels it anteater (pangolin) scales [endangered species].",
+        "Substitute: Wang Bu Liu Xing (explicitly named in the CHM course package)."
+      ],
+      "cautions_zh": [
+        "NCBAHM Appendix D 廢用物質標記：考綱要求知道歷史功效主治、瀕危議題與替代策略。課件對「炙穿山甲」這個寫法查無，只見「炮山甲」，兩者皆指炮製品。"
+      ],
+      "cautions_en": [
+        "NCBAHM Appendix D obsolete-substance flag: the outline requires knowing the historical actions and indications, the endangered-status issue, and the substitution strategy. The spelling 'Zhi Chuan Shan Jia' does not appear in the coursework; only 'Pao Shan Jia' does, both denoting the prepared form."
+      ],
+      "safety_flags": [
+        "prohibited_endangered_species",
+        "obsolete_substance",
+        "ncbahm_appendix_d",
+        "substitute_with_wang_bu_liu_xing"
+      ],
+      "safety_review_pending": false,
+      "related_formulas": [
+        "formula.fu_yuan_huo_xue_tang",
+        "formula.xian_fang_huo_ming_yin"
+      ],
+      "exam_importance": "★ NCBAHM Appendix D 廢用物質。考點：歷史功效 + 保育議題 + 替代（王不留行）。",
+      "exam_pearl": "穿山甲善「走竄通透」——通經、下乳、潰堅排膿，什麼堵都能穿。現代禁用，替代記王不留行（同樣主打通經下乳）。",
+      "clinical_use_note": "穿山甲的形象很好記：鱗甲善鑽，所以功效全是「通」——通經絡、通乳汁、通瘡瘍（潰堅排膿）。它與犀角、罌粟殼同為 NCBAHM Appendix D 的廢用物質，考法一致。替代藥王不留行選得很合理，因為兩者最重疊的功能就是通經下乳。命名注意：仙方活命飲的資料寫「Zhi Chuan Shan Jia」，但課件實際只出現「炮山甲 Pao Shan Jia」的寫法，兩者都是炮製品。",
+      "source_citations": [
+        {
+          "name": "📘 課件 復元活血湯 formula card",
+          "url": "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "scope": "第 090 方 §7：Squama Manitis / Chuan Shan Jia / 2-9g / Historically used to open channels and disperse Blood Stasis; obsolete/protected animal substance in modern practice；課程區塊 Assistant Chuan Shan Jia 6 Anteater (pangolin) scales [endangered species]；§17 NCBAHM Appendix D 標記"
+        },
+        {
+          "name": "📘 課件 CHM Formulation 2 course package",
+          "url": "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
+          "scope": "Pao Shan Jia 6g Chuan Shan Jia -endangered, substituting Wang Bu Liu Xing"
+        },
+        {
+          "name": "📘 課件 NCBAHM 2026 CH 考綱",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "scope": "Chuan Shan Jia (Manitis Squama) 列名"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "category": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/herbs/Herb Functions.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（羚角鉤藤湯 composition 查無）而建。課件中山羊角**只以羚羊角的替代藥身分出現**，沒有自己的性味歸經與功效專論。本卡如實記錄此定位，功效欄只寫來源支持的替代關係。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.shan_yang_jiao",
+      "name_zh": "山羊角",
+      "name_en": "Goral Horn (substitute for Ling Yang Jiao)",
+      "pinyin": "Shan Yang Jiao",
+      "pinyin_toned": "Shān Yáng Jiǎo",
+      "pharmaceutical_latin": "Naemorhedis Cornu",
+      "part_used_zh": "角",
+      "part_used_en": "horn",
+      "category": "平肝息風藥 / Extinguish Wind",
+      "category_zh": "平肝息風藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "角",
+        "part_used_en": "horn",
+        "source_note_zh": "課件中山羊角只作為羚羊角的替代藥出現（CHM 課程包、羚角鉤藤湯方劑卡、Herb Functions 索引），沒有獨立專論。羚羊角的「鹹寒、肝心」是**羚羊角**的，不搬入。"
+      },
+      "functions_zh": [
+        "平肝息風、清肝熱（作羚羊角替代）"
+      ],
+      "actions_en": [
+        "Pacifies the Liver and extinguishes Wind, clearing Liver Heat (used as a substitute for Ling Yang Jiao)"
+      ],
+      "indications_zh": [
+        "羚角鉤藤湯證：肝經熱盛動風、高熱驚厥抽搐——課件以山羊角替代瀕危的羚羊角（CHM 課程包：Ling Yang Jiao endangered – substituting Shan Yang Jiao）。"
+      ],
+      "indications_en": [
+        "The Ling Jiao Gou Teng Tang pattern of Liver-channel Heat stirring Wind with high fever and convulsions — the coursework substitutes Shan Yang Jiao for the endangered Ling Yang Jiao (CHM course package: Ling Yang Jiao endangered, substituting Shan Yang Jiao)."
+      ],
+      "condition_tags_zh": [
+        "肝風內動",
+        "高熱驚厥",
+        "抽搐"
+      ],
+      "condition_tags_en": [
+        "Internal Liver Wind",
+        "High fever with convulsions",
+        "Spasms"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 10,
+        "max_g": 45,
+        "unit": "g/day",
+        "route": "decoction (cook separately)"
+      },
+      "dosage_g": {
+        "standard_daily_g": "10–45g（課件羚角鉤藤湯，作替代藥）",
+        "reference": "被替代的羚羊角：煎劑 1–3g、粉劑 0.3–0.5g（課件 MM III）",
+        "source_note": "替代用量比羚羊角高一個數量級，這是替代品普遍的特徵（同水牛角代犀角）。無單味藥專論用量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列山羊角的禁忌與注意事項；本卡不代為填寫。羚羊角的注意事項（虛證慎用）**屬羚羊角，未搬入**。",
+        "本味在課件中沒有獨立專論，只有替代藥身分；性味歸經與完整功效待 RV1 以專業來源補齊。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Shan Yang Jiao; this card does not supply any. The Ling Yang Jiao caution (use cautiously in deficiency conditions) belongs to **Ling Yang Jiao and has not been copied here**.",
+        "This substance has no monograph of its own in the coursework, only its role as a substitute; nature, flavor, channels and the full action profile await RV1 and a professional source."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "substitute_substance"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.ling_jiao_gou_teng_tang"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "羚羊角瀕危，替代選山羊角（10–45g）或珍珠母（10–45g）。替代品用量都比羚羊角（1–3g）高一個數量級。",
+      "clinical_use_note": "山羊角在本庫的身分只有一個：羚羊角的替代品。羚羊角是保育類（Cornu Saigae Tataricae，賽加羚羊），課件在羚角鉤藤湯處明列兩個替代選項——山羊角與珍珠母，用量都是 10–45g，比羚羊角本身的 1–3g 高得多。這張卡刻意只寫替代關係、不寫完整功效，因為課件真的沒有給山羊角自己的性味歸經；把羚羊角的鹹寒肝心抄過來，會讓一個替代品看起來像有獨立研究基礎的正典藥。",
+      "source_citations": [
+        {
+          "name": "📘 課件 CHM Formulation 2 course package",
+          "url": "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
+          "scope": "羚角鉤藤飲：Ling ang Jiao* 4.5g endangered – substituting Shan Yang Jiao"
+        },
+        {
+          "name": "📘 課件 羚角鉤藤湯 formula card",
+          "url": "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "scope": "第 145 方 §7：(Cornu Naemorhedis) (Shan Yang Jiao) (10-45g) AD lists as a substitute for Ling Yang Jiao；同表 Ling Yang Jiao 1-4.5g 標 Endangered/obsolete source ingredient"
+        },
+        {
+          "name": "📘 課件 MM III 息風藥 羚羊角專論（對照用，未搬入）",
+          "url": "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md",
+          "scope": "Ling Yang Jiao：Salty, cold / Liver, Heart / 1–3 g 煎、0.3–0.5 g 粉；Rare and protected animal product (often substituted clinically)"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "category": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+          "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（紫雪丹 composition 查無）而建。課件只有紫雪丹組成行與課程區塊，無性味歸經與禁忌；Chenoweth 索引標 [3] 清熱、[CD] 寒。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.han_shui_shi",
+      "name_zh": "寒水石",
+      "name_en": "Calcite",
+      "pinyin": "Han Shui Shi",
+      "pinyin_toned": "Hán Shuǐ Shí",
+      "pharmaceutical_latin": "Calcitum",
+      "part_used_zh": "礦石",
+      "part_used_en": "mineral",
+      "category": "清熱藥 / Clear Heat - Drain Fire",
+      "category_zh": "清熱瀉火藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "礦石",
+        "part_used_en": "mineral",
+        "source_note_zh": "課件無寒水石專論。Chenoweth 功效索引標 [3]（清熱章）與 [CD]（寒），只夠支持分類與寒性方向，不足以填完整性味歸經，故留空。"
+      },
+      "functions_zh": [
+        "清熱瀉火",
+        "除煩止渴"
+      ],
+      "actions_en": [
+        "Clears Heat and drains Fire",
+        "Relieves irritability and thirst"
+      ],
+      "indications_zh": [
+        "氣分熱盛之高熱、煩躁、口渴（課件紫雪丹：Clears Qi-level Heat/Fire, irritability and thirst；AD 記其與石膏、滑石同用）。",
+        "課件方劑學彙總把它列為紫雪丹君藥：清熱瀉火、導熱下行。"
+      ],
+      "indications_en": [
+        "Qi-level Heat with high fever, irritability and thirst (Zi Xue Dan card: clears Qi-level Heat/Fire, irritability and thirst; American Dragon pairs it with Shi Gao and Hua Shi).",
+        "The 方剂学汇总 ingredient table lists it as a chief in Zi Xue Dan: clear Heat, drain Fire, conduct Heat downward."
+      ],
+      "condition_tags_zh": [
+        "氣分熱盛",
+        "高熱",
+        "煩躁",
+        "口渴"
+      ],
+      "condition_tags_en": [
+        "Qi-level Heat",
+        "High fever",
+        "Irritability",
+        "Thirst"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 6,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction (pre-decoct)"
+      },
+      "dosage_g": {
+        "standard_daily_g": "6–15g（課件紫雪丹 AD 表）",
+        "formula_dose_g": "課程區塊紫雪丹原方 1500（古方丸散原料總量，非每服量）",
+        "source_note": "兩個數字量級完全不同，前者為現代常用量、後者為古方原料總量，不可混用。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列寒水石的禁忌與注意事項；本卡不代為填寫。礦石類大寒藥常見的脾胃虛寒顧慮，課件於本味未著墨。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Han Shui Shi; this card does not supply any. The usual Spleen-Stomach deficiency-Cold concern for very cold mineral substances is not stated for this substance in the sources read."
+      ],
+      "safety_flags": [
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zi_xue_dan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "寒水石在紫雪丹裡與石膏、滑石組成「三大清熱礦石」，主打氣分大熱的高熱煩渴、導熱下行。",
+      "clinical_use_note": "寒水石是紫雪丹的君藥之一，跟石膏、滑石同組，靠礦石的重墜寒涼清氣分大熱、導熱從小便去。它在本庫只出現在紫雪丹一個方。用量欄要特別小心：現代常用量 6–15g，但古方原文寫「1500」，那是丸散劑的原料總量不是每服量——這種量級混淆在開竅類古方裡很常見。性味歸經留空是因為課件只給了分類標記，沒有給完整性味。",
+      "source_citations": [
+        {
+          "name": "📘 課件 紫雪丹 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 167 方 §7：Calcitum / Han Shui Shi / 6-15g / Clears Qi-level Heat/Fire, irritability and thirst; AD combines with Shi Gao/Hua Shi；課程區塊 Han shui shi 1500"
+        },
+        {
+          "name": "📘 課件 方劑學彙總 紫雪丹",
+          "url": "curriculum/herbs/方剂学汇总_extracted.md",
+          "scope": "Chief | Han shui shi | 1500 | Clear heat, drain fire, conduct heat downward"
+        },
+        {
+          "name": "📘 課件 Chenoweth 功效索引",
+          "url": "curriculum/herbs/Herb Functions.md",
+          "scope": "Han Shui Shi [3]（清熱章）、[CD]（寒）——分類與寒性的唯一依據"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/herbs/Herb Functions.md",
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（紫雪丹 composition 查無「Zhi Xiao Shi」）而建。課件只有紫雪丹組成行、毒性段與製法，無性味歸經。與 herb.mang_xiao（芒硝）是不同礦物，未合併。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.xiao_shi",
+      "name_zh": "硝石",
+      "name_en": "Niter (Nitrum)",
+      "pinyin": "Xiao Shi",
+      "pinyin_toned": "Xiāo Shí",
+      "pharmaceutical_latin": "Nitrum",
+      "part_used_zh": "礦物結晶",
+      "part_used_en": "mineral crystal",
+      "category": "瀉下藥 / Drain Downward",
+      "category_zh": "瀉下藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [
+        "制硝石",
+        "焰硝"
+      ],
+      "aliases_en": [
+        "Zhi Xiao Shi",
+        "Yan Xiao"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "礦物結晶",
+        "part_used_en": "mineral crystal",
+        "source_note_zh": "課件無硝石專論，只有紫雪丹的組成行、§17 毒性段與製法。性味歸經無來源，留空。"
+      },
+      "functions_zh": [
+        "利尿通便",
+        "瀉熱散結",
+        "解毒消腫"
+      ],
+      "actions_en": [
+        "Promotes urination and relieves constipation",
+        "Drains Heat and dissipates clumps",
+        "Resolves toxicity and reduces swelling"
+      ],
+      "indications_zh": [
+        "熱結便秘、小便不利（課件紫雪丹：Promotes urination, relieves constipation）。",
+        "熱毒腫痛（課件：resolves toxicity/swelling）。",
+        "課件方劑學彙總列為紫雪丹臣藥：瀉熱散結（配玄參）。"
+      ],
+      "indications_en": [
+        "Heat clumping with constipation and difficult urination (Zi Xue Dan card: promotes urination, relieves constipation).",
+        "Heat-toxin swelling and pain (course card: resolves toxicity/swelling).",
+        "The 方剂学汇总 table lists it as a deputy in Zi Xue Dan: drain Heat, dissipate clumps, with Xuan Shen."
+      ],
+      "condition_tags_zh": [
+        "熱結便秘",
+        "小便不利",
+        "熱毒腫痛"
+      ],
+      "condition_tags_en": [
+        "Heat-clump constipation",
+        "Difficult urination",
+        "Heat-toxin swelling"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {
+        "min_g": 0.9,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "dissolved into the syrup, dried and powdered (per the classical method)"
+      },
+      "dosage_g": {
+        "standard_daily_g": "0.9–15g（課件紫雪丹 AD 表，制硝石）",
+        "formula_dose_g": "課程區塊紫雪丹原方 Xiao shi 96（古方原料總量）",
+        "source_note": "課件製法：與硝石一起收入糖漿，乾燥後研粉。兩個數字量級不同，古方總量不作每服量。"
+      },
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "cautions_zh": [
+        "課件未列硝石的禁忌與注意事項；本卡不代為填寫。孕婦與體虛者使用峻下礦物藥的顧慮，課件於本味未著墨。",
+        "**與芒硝是不同礦物**：硝石 Nitrum（硝酸鹽）vs 芒硝 Mirabilite（硫酸鈉），庫中 herb.mang_xiao 為後者，兩者未合併。"
+      ],
+      "cautions_en": [
+        "The coursework lists no contraindications or cautions for Xiao Shi; this card does not supply any. Concerns about drastic mineral purgatives in pregnancy or in weak patients are not stated for this substance in the sources read.",
+        "**Xiao Shi and Mang Xiao are different minerals**: Nitrum (a nitrate) versus Mirabilite (sodium sulfate); herb.mang_xiao in this library is the latter, and the two have not been merged."
+      ],
+      "safety_flags": [
+        "safety_review_pending",
+        "easily_confused_with_mang_xiao"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zi_xue_dan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "硝石 ≠ 芒硝。硝石 Nitrum（硝酸鹽），芒硝 Mirabilite（硫酸鈉）。紫雪丹裡硝石配玄參瀉熱散結。",
+      "clinical_use_note": "硝石在本庫只出現在紫雪丹，角色是臣藥：瀉熱散結、通利二便，配玄參增強散結。最需要記住的是它跟芒硝**不是同一個東西**——名字只差一個字，礦物成分完全不同（硝酸鹽 vs 硫酸鈉），本庫分成兩筆記錄沒有合併。用量同寒水石的情況：現代量 0.9–15g，古方原文 96 是原料總量。性味歸經留空是因為課件沒給。",
+      "source_citations": [
+        {
+          "name": "📘 課件 紫雪丹 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 167 方 §7：Prepared Nitrum / Zhi Xiao Shi / 0.9-15g / Promotes urination, relieves constipation, resolves toxicity/swelling；§17 毒性段重複同一敘述；課程區塊 Xiao shi 96；製法 and xiao shi into the syrup, which is then dried and powdered"
+        },
+        {
+          "name": "📘 課件 方劑學彙總 紫雪丹",
+          "url": "curriculum/herbs/方剂学汇总_extracted.md",
+          "scope": "Deputy | Xiao shi | 96 | Drain heat, dissipate clumps (+ Xuan Shen)"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/方剂学汇总_extracted.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（紫雪丹 composition 查無）而建。課件把青木香與木香列為相鄰對照兩行，明寫青木香是 generally the incorrect herb、Aristolochia is unsafe/obsolete。無性味歸經專論。馬兜鈴酸的肝腎毒性敘述在課件他處（廣防己、馬兜鈴），本卡以交叉引用方式記錄並標明出處不同味。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.qing_mu_xiang",
+      "name_zh": "青木香",
+      "name_en": "Aristolochia Root (unsafe, obsolete)",
+      "pinyin": "Qing Mu Xiang",
+      "pinyin_toned": "Qīng Mù Xiāng",
+      "pharmaceutical_latin": "Aristolochiae Radix",
+      "part_used_zh": "根（現代已廢用）",
+      "part_used_en": "root (obsolete in modern practice)",
+      "category": "理氣藥 / Regulate Qi",
+      "category_zh": "理氣藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "根",
+        "part_used_en": "root",
+        "source_note_zh": "課件無青木香專論。同方相鄰行的木香（Rx. Aucklandiae，辛苦溫，膽大腸脾胃）是**木香**的資料，AD 明指木香才是正確用藥，青木香資料不得與之混填。"
+      },
+      "functions_zh": [
+        "行氣止痛（歷史功效）"
+      ],
+      "actions_en": [
+        "Moves Qi and relieves pain (historical action)"
+      ],
+      "indications_zh": [
+        "紫雪丹課程區塊記其「促進氣機運行、助開竅」（Promote qi flow, help in opening orifices）。",
+        "以上為**歷史記載**；課件明確標示青木香一般為誤用之品，馬兜鈴屬不安全已廢用。"
+      ],
+      "indications_en": [
+        "The Zi Xue Dan course block records it as promoting Qi flow and helping to open the orifices.",
+        "This is a **historical** record; the coursework explicitly marks Qing Mu Xiang as generally the incorrect herb and Aristolochia as unsafe and obsolete."
+      ],
+      "condition_tags_zh": [
+        "氣滯疼痛"
+      ],
+      "condition_tags_en": [
+        "Qi stagnation pain"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "不適用——課件標為不安全、已廢用",
+        "historical_formula_dose_g": "紫雪丹 1.5–6g（課件 AD 表）；課程區塊 150（古方原料總量）",
+        "source_note": "歷史用量僅供理解古方，不作處方依據。"
+      },
+      "contraindications_zh": [
+        "**不安全、已廢用**：課件紫雪丹卡明寫「AD lists historically and calls it generally the incorrect herb; Aristolochia is unsafe/obsolete」，§17 毒性段重複同一警語。",
+        "正確用藥為木香（Rx. Aucklandiae）——課件明指「AD identifies this as the proper herb」。"
+      ],
+      "contraindications_en": [
+        "**Unsafe and obsolete**: the Zi Xue Dan card states that American Dragon lists it historically and calls it generally the incorrect herb, and that Aristolochia is unsafe/obsolete; the toxicity section repeats the same warning.",
+        "The correct herb is Mu Xiang (Rx. Aucklandiae) — the coursework states American Dragon identifies this as the proper herb."
+      ],
+      "cautions_zh": [
+        "**馬兜鈴酸（交叉引用，非本味的直接敘述）**：課件對青木香本身只寫到「Aristolochia is unsafe/obsolete」，沒有寫出具體器官毒性。同屬其他藥的毒性敘述在課件他處：廣防己「is toxic, and its use should be avoided. The toxic component is aristolochic acid」；馬兜鈴條目附註「[Aristolochic Acid – LV, KD…]」。THP 各條並有「Should not contain aristolochic acid I & aristolochic acid II」的純度條款。本卡如實標明這些敘述**出自同屬其他藥而非青木香條**，不代為推論成本味的具體毒理。",
+        "NCBAHM 2026 考綱的馬兜鈴酸相關列名為關木通、廣防己、馬兜鈴——**青木香不在該清單上**。"
+      ],
+      "cautions_en": [
+        "**Aristolochic acid (cross-reference, not a direct statement about this herb)**: for Qing Mu Xiang itself the coursework only says Aristolochia is unsafe/obsolete, without naming specific organ toxicity. Toxicity statements for other herbs in the same genus appear elsewhere: Guang Fang Ji 'is toxic, and its use should be avoided. The toxic component is aristolochic acid', and the Ma Dou Ling entry carries the note [Aristolochic Acid – LV, KD…]. THP monographs carry purity clauses requiring no aristolochic acid I or II. This card records that these statements come from **other herbs in the genus, not from the Qing Mu Xiang entry**, and does not extrapolate them into specific toxicology for this substance.",
+        "The aristolochic-acid entries on the NCBAHM 2026 outline are Guan Mu Tong, Guang Fang Ji and Ma Dou Ling — **Qing Mu Xiang is not on that list**."
+      ],
+      "safety_flags": [
+        "unsafe_obsolete_substance",
+        "aristolochic_acid_genus",
+        "substitute_with_mu_xiang",
+        "safety_review_pending"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zi_xue_dan"
+      ],
+      "exam_importance": "★ 名稱陷阱題：青木香 ≠ 木香。青木香屬馬兜鈴（Aristolochia），課件標為誤用之品；木香（Aucklandia）才是正品。",
+      "exam_pearl": "差一個「青」字，科屬與安全性完全相反：木香 = Rx. Aucklandiae，正品，行氣止痛；青木香 = Rx. Aristolochiae，馬兜鈴屬，不安全已廢用。",
+      "clinical_use_note": "青木香是本庫最典型的「名稱陷阱」：跟木香只差一個字，卻是馬兜鈴屬植物。課件在紫雪丹的組成表把兩者排成相鄰兩行對照，並直接寫木香才是正品、青木香一般是誤用之品。安全欄要注意本卡的寫法：課件對青木香**本身**只寫到「不安全、已廢用」，沒有寫具體器官毒性；肝腎毒性的字樣出現在同屬的廣防己與馬兜鈴條目。本卡把這個界線標得很清楚，是因為把別味藥的毒理直接掛到這一味上，跟把淡竹葉的性味填給竹葉是同一類錯誤。",
+      "source_citations": [
+        {
+          "name": "📘 課件 紫雪丹 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 167 方 §7 相鄰兩行對照：(Rx. Aristolochiae) (Qing Mu Xiang) (1.5-6g) AD lists historically and calls it generally the incorrect herb; Aristolochia is unsafe/obsolete｜Rx. Aucklandiae / Mu Xiang / 1.5-6g / AD identifies this as the proper herb；§17 毒性段重複；課程區塊 Qing mu xiang 150 Promote qi flow, help in opening orifices"
+        },
+        {
+          "name": "📘 課件 MM2 祛風濕藥 廣防己（同屬毒性，非本味）",
+          "url": "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md",
+          "scope": "Guang Fang Ji is toxic, and its use should be avoided. The toxic component is aristolochic acid"
+        },
+        {
+          "name": "📘 課件 Materia Medica Abbreviated 馬兜鈴（同屬毒性，非本味）",
+          "url": "curriculum/herbs/Materia Medica Abbbreviated.md",
+          "scope": "[Aristolochic Acid – LV, KD…]；馬兜鈴條目的 aristolochic acid 相關敘述"
+        },
+        {
+          "name": "📘 課件 NCBAHM 2026 CH 考綱",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "scope": "馬兜鈴酸相關列名為 Guan Mu Tong、Guang Fang Ji、Ma Dou Ling；青木香不在該清單"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md",
+          "curriculum/herbs/Materia Medica Abbbreviated.md",
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（安宮牛黃丸、紫雪丹、至寶丹 composition 查無）而建。課件只有三張方劑卡的組成行，且都標「歷史來源藥／現代已不用」。無性味歸經。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.jin_bo",
+      "name_zh": "金箔",
+      "name_en": "Gold Foil (historical, no longer used)",
+      "pinyin": "Jin Bo",
+      "pinyin_toned": "Jīn Bó",
+      "pharmaceutical_latin": "Aurum Foliatum",
+      "part_used_zh": "金箔（作丸衣或同服，非本草藥材部位）",
+      "part_used_en": "gold leaf (pill coating or taken with the pill; not a plant/animal drug part)",
+      "category": "安神藥 / Calm Spirit",
+      "category_zh": "重鎮安神藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "金箔",
+        "part_used_en": "gold leaf",
+        "source_note_zh": "課件無金箔專論，只有安宮牛黃丸、紫雪丹、至寶丹三張方劑卡的組成行。性味歸經無來源，留空。"
+      },
+      "functions_zh": [
+        "重鎮安神",
+        "清熱（歷史記載）"
+      ],
+      "actions_en": [
+        "Settles and calms the Spirit by its weight",
+        "Clears Heat (historical record)"
+      ],
+      "indications_zh": [
+        "神昏、驚厥、心神不寧（課件安宮牛黃丸：AD lists for calming/sedating Shen and clearing Heat；至寶丹：calming Shen, sedating Heart and clearing Heat/toxins）。",
+        "至寶丹課程區塊：金銀二箔助硃砂、琥珀加強鎮攝之力（Gold & silver aid zhu sha, hu po in anchoring and sedation effect）。",
+        "以上為**歷史記載**；課件三處分別標「historical source ingredient」「not included in patent」「no longer used」。"
+      ],
+      "indications_en": [
+        "Clouded spirit, convulsions and Spirit restlessness (An Gong Niu Huang Wan card: American Dragon lists it for calming/sedating Shen and clearing Heat; Zhi Bao Dan card: calming Shen, sedating Heart and clearing Heat/toxins).",
+        "The Zhi Bao Dan course block: gold and silver foil assist Zhu Sha and Hu Po in anchoring and sedation.",
+        "These are **historical** records; the three cards mark it respectively as a historical source ingredient, not included in the patent, and no longer used."
+      ],
+      "condition_tags_zh": [
+        "神昏",
+        "驚厥",
+        "心神不寧"
+      ],
+      "condition_tags_en": [
+        "Clouded spirit",
+        "Convulsions",
+        "Restless Spirit"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "不適用——課件標為現代已不用",
+        "historical_formula_dose_g": "安宮牛黃丸 0.5g；紫雪丹 10–30g（並註不含於成藥）；至寶丹 50 張（課件 AD 表）",
+        "source_note": "三方計量單位各異（克 / 張），且至寶丹以「leaves 張」計，不可換算比較。"
+      },
+      "contraindications_zh": [
+        "**現代已不用**：課件至寶丹卡標「notes no longer used」，紫雪丹卡標「notes it is not included in patent」，安宮牛黃丸卡標「historical source ingredient」。"
+      ],
+      "contraindications_en": [
+        "**No longer used in modern practice**: the Zhi Bao Dan card notes it is no longer used, the Zi Xue Dan card notes it is not included in the patent medicine, and the An Gong Niu Huang Wan card marks it a historical source ingredient."
+      ],
+      "cautions_zh": [
+        "課件未列金箔的毒性或注意事項；本卡不代為填寫。"
+      ],
+      "cautions_en": [
+        "The coursework lists no toxicity or cautions for Jin Bo; this card does not supply any."
+      ],
+      "safety_flags": [
+        "obsolete_substance",
+        "safety_review_pending",
+        "not_a_canonical_materia_medica_entry"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan",
+        "formula.zi_xue_dan",
+        "formula.zhi_bao_dan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "金箔銀箔是開竅三寶（安宮、紫雪、至寶）裡的丸衣類重鎮藥，助硃砂琥珀鎮攝。現代成藥已不含。",
+      "clinical_use_note": "金箔在課件裡不是一味有性味歸經的本草，而是開竅三寶（安宮牛黃丸、紫雪丹、至寶丹）裡的重鎮輔助材料，多作丸衣，靠金屬的重墜助硃砂、琥珀鎮攝心神。三張方劑卡都各自標了它現代不用的狀態。用量欄不要試圖比較三方數字——安宮以克計、至寶以「張」計，量綱不同。",
+      "source_citations": [
+        {
+          "name": "📘 課件 安宮牛黃丸 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 166 方 §7：Gold Foil / Jin Bo / .5g / AD lists for calming/sedating Shen and clearing Heat; historical source ingredient"
+        },
+        {
+          "name": "📘 課件 紫雪丹 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 167 方 §7：Gold / Jin Bo / 10-30g / AD lists for sedating Spirit; notes it is not included in patent"
+        },
+        {
+          "name": "📘 課件 至寶丹 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 168 方 §7：Gold Foil / Jin Bo / 50 leaves / notes no longer used；課程區塊 Gold & silver aid zhu sha, hu po in anchoring and sedation effect"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": false,
+      "public_safe": false,
+      "updated_at": "2026-08-11",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "為補 F12（至寶丹 composition 查無）而建。課件只有至寶丹一張方劑卡的組成行，且標「歷史來源藥、現代已不用」。無性味歸經與功效專論。待 RV1。",
+      "source_type": "formula_ingredient_gap_fill",
+      "id": "herb.yin_bo",
+      "name_zh": "銀箔",
+      "name_en": "Silver Foil (historical, no longer used)",
+      "pinyin": "Yin Bo",
+      "pinyin_toned": "Yín Bó",
+      "pharmaceutical_latin": "Argentum Foliatum",
+      "part_used_zh": "銀箔（作丸衣，非本草藥材部位）",
+      "part_used_en": "silver leaf (pill coating; not a plant/animal drug part)",
+      "category": "安神藥 / Calm Spirit",
+      "category_zh": "重鎮安神藥",
+      "properties_taste_temp": "",
+      "taste_temperature_zh": "",
+      "channels_zh": [],
+      "channels_en": [],
+      "aliases_zh": [],
+      "aliases_en": [],
+      "tcm_properties": {
+        "five_flavors_zh": [],
+        "five_flavors_en": [],
+        "four_natures_zh": "",
+        "four_natures_en": "",
+        "meridian_tropism_zh": [],
+        "meridian_tropism_en": [],
+        "part_used_zh": "銀箔",
+        "part_used_en": "silver leaf",
+        "source_note_zh": "課件對銀箔只有至寶丹一行：AD lists as historical ingredient and notes no longer used。性味、歸經、功效均無來源。"
+      },
+      "functions_zh": [
+        "重鎮安神（歷史記載，與金箔並用）"
+      ],
+      "actions_en": [
+        "Settles and calms the Spirit by its weight (historical record, used together with gold foil)"
+      ],
+      "indications_zh": [
+        "至寶丹課程區塊：金銀二箔助硃砂、琥珀加強鎮攝之力（Gold & silver aid zhu sha, hu po in anchoring and sedation effect）。",
+        "課件對銀箔本身未給獨立主治；以上為與金箔並列時的敘述。"
+      ],
+      "indications_en": [
+        "The Zhi Bao Dan course block: gold and silver foil assist Zhu Sha and Hu Po in anchoring and sedation.",
+        "The coursework gives no separate indications for silver foil alone; the above is its description when paired with gold foil."
+      ],
+      "condition_tags_zh": [
+        "神昏",
+        "心神不寧"
+      ],
+      "condition_tags_en": [
+        "Clouded spirit",
+        "Restless Spirit"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_en": [],
+      "dosage": {},
+      "dosage_g": {
+        "standard_daily_g": "不適用——課件標為現代已不用",
+        "historical_formula_dose_g": "至寶丹 50 張（課件 AD 表）",
+        "source_note": "以「張 leaves」計，非重量。"
+      },
+      "contraindications_zh": [
+        "**現代已不用**：課件至寶丹卡標「AD lists as historical ingredient and notes no longer used」。"
+      ],
+      "contraindications_en": [
+        "**No longer used in modern practice**: the Zhi Bao Dan card states American Dragon lists it as a historical ingredient and notes it is no longer used."
+      ],
+      "cautions_zh": [
+        "課件未列銀箔的毒性或注意事項；本卡不代為填寫。本味在課件僅出現於至寶丹一方，資料量比金箔更少。"
+      ],
+      "cautions_en": [
+        "The coursework lists no toxicity or cautions for Yin Bo; this card does not supply any. It appears in only one formula in the coursework, with even less data than gold foil."
+      ],
+      "safety_flags": [
+        "obsolete_substance",
+        "safety_review_pending",
+        "not_a_canonical_materia_medica_entry"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.zhi_bao_dan"
+      ],
+      "exam_importance": "",
+      "exam_pearl": "銀箔只出現在至寶丹，與金箔成對作丸衣重鎮。現代已不用。",
+      "clinical_use_note": "銀箔是本庫資料最薄的一張卡之一：課件裡只有至寶丹一行，並且直接標了現代不用。它與金箔成對出現，共同角色是丸衣與重鎮輔助，助硃砂、琥珀鎮攝心神。除此之外課件沒有給任何性味、歸經或獨立主治——這張卡存在的目的是讓至寶丹的組成能點得開、並如實告訴使用者「這一味的資料就是只有這麼多」。",
+      "source_citations": [
+        {
+          "name": "📘 課件 至寶丹 formula card",
+          "url": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+          "scope": "第 168 方 §7：Silver Foil / Yin Bo / 50 leaves / AD lists as historical ingredient and notes no longer used；課程區塊 Gold & silver aid zhu sha, hu po in anchoring and sedation effect；composition anchor Shui Niu Jiao, (Xi Jiao), Niu Huang, Xiong Huang, Jin Bo, Yin Bo"
+        }
+      ],
+      "source_urls": [],
+      "field_sources": {
+        "identity": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "category": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "functions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "indications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "dosage": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "cautions_zh": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ],
+        "clinical_use_note": [
+          "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
+        ]
+      },
+      "card_grade": "partial"
     }
   ],
   "batch_summary": {
