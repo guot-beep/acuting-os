@@ -13435,6 +13435,4072 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hypochondriac_pain",
+      "name_zh": "脅痛",
+      "name_en": "Hypochondriac (rib-side) pain",
+      "pinyin": "xie tong",
+      "pinyin_toned": "xié tòng",
+      "aliases_zh": [
+        "脇痛",
+        "肋痛",
+        "兩脅疼痛",
+        "季肋部疼痛"
+      ],
+      "aliases_en": [
+        "Flank pain",
+        "Costal margin pain",
+        "Rib-side pain",
+        "Right/left upper quadrant pain"
+      ],
+      "taxonomy_ids": [
+        "sym.pain"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "一側或兩側肋弓下方（季肋部）的疼痛，中醫責之於肝膽經循行所過；西醫則對應右上腹（肝膽）或左上腹（脾臟）區域的體表投影。是主訴，不是診斷——脅痛可見於肝膽疾病、肋間神經痛、帶狀疱疹前驅期等多種病因。",
+      "definition_en": "Pain beneath the costal margin, on one or both sides. In TCM this region is traversed by the Liver and Gallbladder channels; in biomedicine it corresponds to the right upper quadrant (liver/biliary) or left upper quadrant (spleen) surface projection. It is a presenting complaint, not a diagnosis — hypochondriac pain appears in hepatobiliary disease, intercostal neuralgia, and the prodrome of herpes zoster among other causes.",
+      "patient_words_zh": "「肋骨下面脹痛」「一按就痛，深呼吸也痛」「悶悶的，說不上來哪裡」「像被東西頂住」「痛到牽扯後背」",
+      "patient_words_en": "\"Aching under my ribs\", \"hurts when I press on it, and when I take a deep breath\", \"a dull discomfort, hard to pin down\", \"like something's pressing there\", \"the pain pulls through to my back\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "脹屬氣滯 · 刺屬血瘀 · 隱屬虛（肝陰虛）· 灼屬肝膽濕熱"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "右脅多指向肝膽；左脅需排除脾臟；沿肋間放射提示肋間神經或帶狀疱疹"
+        },
+        {
+          "dimension": "性質",
+          "why": "脹痛屬氣滯、刺痛屬血瘀、隱痛屬肝陰虛、灼熱脹痛屬肝膽濕熱"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒波動誘發或加重提示肝氣鬱結；進食油膩後加重提示膽道問題"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "黃疸、發熱、噁心提示膽道/肝臟病變；皮膚出現水泡提示帶狀疱疹；胸悶心悸需排除心因性放射痛"
+        },
+        {
+          "dimension": "緩解",
+          "why": "太息後緩解提示氣滯；按之痛減屬虛，拒按屬實"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性劇痛與慢性反覆脹痛的鑑別方向完全不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Right-sided pain points toward liver/biliary disease; left-sided pain should prompt evaluation of the spleen; a band along one intercostal space suggests intercostal neuralgia or herpes zoster"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Distending = qi stagnation, stabbing = blood stasis, dull/vague = Liver yin deficiency, burning-distending = Liver-Gallbladder damp-heat"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Onset or worsening with emotional upset suggests Liver qi stagnation; worse after fatty meals suggests biliary disease"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Jaundice, fever or nausea suggest hepatobiliary disease; a vesicular skin eruption suggests herpes zoster; chest tightness or palpitations should prompt ruling out a cardiac source of referred pain"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Relief with sighing suggests qi stagnation; better with pressure = deficiency, worse with pressure = excess"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute severe pain and chronic recurrent distension are worked up very differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "脅肋脹痛，隨情緒增減",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "脅肋脹痛，走竄不定，因情志抑鬱或惱怒而發作或加重，胸悶善太息"
+        },
+        {
+          "variant": "脅肋刺痛，痛處固定",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "痛處固定不移、拒按，入夜尤甚，脅下或見痞塊，舌質紫暗或有瘀斑"
+        },
+        {
+          "variant": "脅肋隱痛，悠悠不休",
+          "points_to": [
+            "pattern.liver_yin_deficiency"
+          ],
+          "distinguishing": "脅肋隱痛，勞累加重，兼口燥咽乾、頭暈目眩、五心煩熱"
+        },
+        {
+          "variant": "脅肋脹痛灼熱，口苦",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "脅肋脹痛且有灼熱感，口苦口黏，或見黃疸，小便黃赤，舌苔黃膩"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Distending pain that fluctuates with mood",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Distending, migratory pain under the ribs, brought on or worsened by emotional depression or anger, with chest tightness and frequent sighing"
+        },
+        {
+          "variant": "Fixed stabbing pain",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed, unmoving pain, worse for pressure and worse at night, sometimes a palpable mass under the ribs, dusky or ecchymotic tongue"
+        },
+        {
+          "variant": "Dull, lingering pain",
+          "points_to": [
+            "pattern.liver_yin_deficiency"
+          ],
+          "distinguishing": "Vague continuous pain worse with fatigue, with dry mouth and throat, dizziness and five-center heat"
+        },
+        {
+          "variant": "Burning distending pain with a bitter taste",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "Distending pain with a burning quality, bitter sticky taste in the mouth, sometimes jaundice, dark urine, yellow greasy tongue coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Upper Abdominal Pain\", https://my.clevelandclinic.org/health/symptoms/24736-upper-abdominal-pain, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "合併黑便、吐血 → 排除消化道出血",
+        "合併高燒 → 排除膽囊炎／膽管炎",
+        "合併皮膚鞏膜黃染 → 排除膽道阻塞",
+        "合併頭暈、意識模糊或暈厥 → 排除脾臟破裂等內出血急症",
+        "合併呼吸困難或胸悶 → 需排除心因性放射痛",
+        "劇痛合併腹部膨脹，或用力活動後加劇 → 需立即就醫"
+      ],
+      "red_flags_en": [
+        "Blood in stool or vomit accompanying the pain → rule out gastrointestinal bleeding",
+        "High fever with the pain → rule out cholecystitis/cholangitis",
+        "Jaundice (yellowing of skin/eyes) accompanying the pain → rule out biliary obstruction",
+        "Dizziness, confusion or fainting with the pain → rule out internal bleeding such as splenic rupture",
+        "Trouble breathing or chest tightness with the pain → rule out a cardiac source of referred pain",
+        "Severe pain with visible abdominal swelling, or pain that worsens with exertion → seek care immediately"
+      ],
+      "supporting_measurements": [
+        "metric.pain_score"
+      ],
+      "sources": [
+        "Cleveland Clinic, \"Upper Abdominal Pain\" (https://my.clevelandclinic.org/health/symptoms/24736-upper-abdominal-pain, retrieved 2026-08-11) — regional anatomy and red flags",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 脅痛的病位與辨證分型",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 脅痛章節 + Cleveland Clinic 對右／左上腹區域對應臟器的界定",
+        "red_flags_zh/en": "Cleveland Clinic, Upper Abdominal Pain (2026-08-11 retrieved)",
+        "differentiation_zh/en": "中醫內科學 脅痛辨證分型（肝氣鬱結／瘀血阻絡／肝陰不足／肝膽濕熱）",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score（既有，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.sore_throat",
+      "name_zh": "咽痛",
+      "name_en": "Sore throat",
+      "pinyin": "yan tong",
+      "pinyin_toned": "yān tòng",
+      "aliases_zh": [
+        "喉嚨痛",
+        "咽喉腫痛",
+        "吞嚥疼痛"
+      ],
+      "aliases_en": [
+        "Throat pain",
+        "Pharyngeal pain",
+        "Odynophagia"
+      ],
+      "taxonomy_ids": [
+        "sym.pain",
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "咽部疼痛不適，常在吞嚥時加重，西醫多稱咽炎。是主訴，可見於外感初起、慢性咽炎、扁桃體炎等多種病因，本卡記錄該問什麼、紅旗在哪，不下結論。",
+      "definition_en": "Discomfort or pain in the throat, often worse with swallowing (odynophagia); termed pharyngitis in biomedicine when inflammation is present. A presenting complaint seen in early external contraction, chronic pharyngitis, tonsillitis and more — this card records what to ask and where the red flags are, not a conclusion.",
+      "patient_words_zh": "「吞口水都痛」「喉嚨卡卡的，像有東西」「乾痛、刺痛」「一講話就痛」「痛到耳朵那邊」",
+      "patient_words_en": "\"Hurts even to swallow saliva\", \"feels like something's stuck in there\", \"dry and stinging\", \"hurts when I talk\", \"the pain radiates up to my ear\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "灼痛屬熱 · 乾痛屬陰虛"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "紅腫灼痛屬風熱／肺胃熱盛；乾痛不紅屬陰虛"
+        },
+        {
+          "dimension": "誘因",
+          "why": "受涼後發作提示外感風寒或風熱；熬夜、上火食物後加重提示陰虛或胃熱"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "發熱惡寒提示外感表證；聲音嘶啞、吞嚥困難、流口水需進入紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發數日與反覆慢性咽痛的處置方向不同——慢性者需考慮陰虛或胃食道逆流"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "Red, swollen, burning pain suggests wind-heat or excess Lung/Stomach heat; dry pain without redness suggests yin deficiency"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Onset after cold exposure suggests external wind-cold/wind-heat contraction; worse with late nights or heaty foods suggests yin deficiency or Stomach heat"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever with aversion to cold suggests an exterior pattern; hoarseness, difficulty swallowing or drooling enter the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "A new few-day sore throat and a chronic recurrent one point in different directions — chronic cases warrant considering yin deficiency or reflux"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "咽紅腫痛，發熱惡風",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "咽部紅腫疼痛，吞嚥不利，發熱惡風，咳嗽痰黃，舌尖紅苔薄黃"
+        },
+        {
+          "variant": "咽痛乾癢，惡寒無汗",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "咽部微痛而乾癢，惡寒發熱、無汗、鼻塞流清涕，舌苔薄白"
+        },
+        {
+          "variant": "咽乾灼痛，午後加重",
+          "points_to": [
+            "pattern.lung_yin_deficiency"
+          ],
+          "distinguishing": "咽部乾痛，午後或夜間加重，兼乾咳少痰、手足心熱、舌紅少苔"
+        },
+        {
+          "variant": "咽痛灼熱，口臭便秘",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "咽喉腫痛灼熱，口臭，牙齦腫痛，大便秘結，舌紅苔黃"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Red swollen pain with fever and aversion to wind",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "Red, swollen, painful throat with difficulty swallowing, fever with aversion to wind, cough with yellow phlegm, red tongue tip with thin yellow coating"
+        },
+        {
+          "variant": "Dry itchy pain with aversion to cold, no sweat",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "Mild dry, itchy throat pain, aversion to cold and fever without sweating, nasal congestion with clear discharge, thin white tongue coating"
+        },
+        {
+          "variant": "Dry burning pain, worse in the afternoon",
+          "points_to": [
+            "pattern.lung_yin_deficiency"
+          ],
+          "distinguishing": "Dry painful throat worse in the afternoon or at night, with dry cough and scant phlegm, warm palms and soles, red tongue with little coating"
+        },
+        {
+          "variant": "Burning pain with bad breath and constipation",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "Swollen burning throat pain, bad breath, swollen painful gums, constipation, red tongue with yellow coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus, \"Sore throat\", https://medlineplus.gov/ency/article/000655.htm, retrieved 2026-08-11",
+        "StatPearls/NCBI Bookshelf, \"Peritonsillar Abscess\", https://www.ncbi.nlm.nih.gov/books/NBK519520/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags"
+      ],
+      "red_flags_zh": [
+        "合併呼吸困難 → 立即就醫",
+        "流口水、無法吞嚥口水、聲音悶濁（含物聲）→ 提示扁桃體周膿瘍",
+        "張口困難、單側劇痛、懸雍垂偏移 → 提示扁桃體周膿瘍",
+        "喘鳴聲、身體前傾（三腳架姿勢）、嚴重吞嚥困難但扁桃體未見明顯腫大 → 需視為會厭炎立即處理",
+        "頸部僵硬腫脹，或體溫超過 39°C",
+        "咽痛超過數日未緩解或反覆發作，合併頸部淋巴結腫大或皮疹"
+      ],
+      "red_flags_en": [
+        "Trouble breathing accompanying the sore throat → seek care immediately",
+        "Drooling, inability to swallow secretions, or a muffled \"hot potato\" voice → suggests peritonsillar abscess",
+        "Trismus (difficulty opening the jaw), severe unilateral throat pain, or uvula deviation → suggests peritonsillar abscess",
+        "Stridor, tripod positioning, severe dysphagia without obvious tonsillar swelling → treat as epiglottitis until proven otherwise",
+        "Neck stiffness or swelling, or fever above 39°C/102°F",
+        "Sore throat persisting beyond several days or recurring, with swollen neck lymph nodes or a rash"
+      ],
+      "sources": [
+        "MedlinePlus, Sore throat (https://medlineplus.gov/ency/article/000655.htm, retrieved 2026-08-11)",
+        "StatPearls, Peritonsillar Abscess (https://www.ncbi.nlm.nih.gov/books/NBK519520/, retrieved 2026-08-11)",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 咽痛辨證分型"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "MedlinePlus Sore throat + StatPearls Peritonsillar Abscess (both retrieved 2026-08-11)",
+        "differentiation_zh/en": "中醫內科學 咽痛辨證（風熱／風寒／肺陰虛／胃火）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.throat_itching",
+      "name_zh": "咽癢",
+      "name_en": "Throat itching",
+      "pinyin": "yan yang",
+      "pinyin_toned": "yān yǎng",
+      "aliases_zh": [
+        "喉癢",
+        "咽喉發癢",
+        "喉嚨癢"
+      ],
+      "aliases_en": [
+        "Itchy throat",
+        "Scratchy throat",
+        "Tickly throat"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "咽部搔癢不適，常誘發咳嗽或清嗓，屬刺激性症狀而非診斷。西醫無獨立病名，多歸因於過敏、鼻涕倒流、感染或胃食道逆流刺激咽部。",
+      "definition_en": "A scratchy, tickly sensation in the throat that often provokes coughing or throat-clearing — an irritative symptom rather than a diagnosis. Biomedicine has no dedicated diagnostic entity for it; it is generally attributed to allergy, postnasal drip, infection, or reflux irritating the pharynx.",
+      "patient_words_zh": "「喉嚨癢癢的，一直想咳」「像有東西搔著」「乾癢，講話久了更癢」「一陣一陣的癢」",
+      "patient_words_en": "\"My throat's itchy, I keep wanting to cough\", \"like something's tickling in there\", \"dry and itchy, gets worse the longer I talk\", \"comes in waves\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "咽癢多為正中對稱，側性意義有限"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "接觸過敏原、灰塵或冷空氣誘發提示過敏性；受涼後新發提示外感初起"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "鼻塞流涕、打噴嚏提示鼻源性；胸悶灼熱提示胃食道逆流；若進展為咽喉緊縮、喘鳴需進入紅旗流程"
+        },
+        {
+          "dimension": "時間",
+          "why": "夜間或平躺加重提示鼻涕倒流或胃食道逆流"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性新發與慢性反覆（過敏性鼻炎、逆流）處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Onset with allergen, dust or cold-air exposure suggests an allergic cause; new onset after cold exposure suggests early external contraction"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Nasal congestion and sneezing suggest a nasal source; chest burning suggests reflux; progression to throat tightness or wheezing enters the red-flag pathway"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse at night or lying flat suggests postnasal drip or reflux"
+        },
+        {
+          "dimension": "Course",
+          "why": "New acute itching and chronic recurrent itching (allergic rhinitis, reflux) are worked up differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "咽癢咳嗽，遇風寒發作",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "咽癢即咳，遇風冷加重，鼻塞流清涕，舌苔薄白"
+        },
+        {
+          "variant": "咽癢乾咳，鼻塞黃涕",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "咽癢咳嗽，痰黃或無痰，鼻涕黃濁，咽部微紅，舌紅苔薄黃"
+        },
+        {
+          "variant": "咽癢反覆，遇異味誘發",
+          "points_to": [
+            "pattern.wind_phlegm"
+          ],
+          "distinguishing": "咽癢陣作，遇灰塵、異味、冷空氣即發，喉間似有痰黏著感，反覆難癒"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Itch triggers cough, worse with wind-cold",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "Throat itch immediately triggers cough, worse with wind or cold exposure, nasal congestion with clear discharge, thin white tongue coating"
+        },
+        {
+          "variant": "Itchy dry cough with yellow nasal discharge",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "Itch-triggered cough with yellow or absent phlegm, thick yellow nasal discharge, mildly red throat, red tongue with thin yellow coating"
+        },
+        {
+          "variant": "Recurrent itch triggered by odours",
+          "points_to": [
+            "pattern.wind_phlegm"
+          ],
+          "distinguishing": "Paroxysmal throat itch triggered by dust, strong smells or cold air, a sticky phlegm-like sensation in the throat, recurrent and hard to resolve"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Itchy Throat (Scratchy Throat) Causes & Treatment\", https://my.clevelandclinic.org/health/symptoms/itchy-throat, retrieved 2026-08-11"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "咽癢進展為咽喉緊縮感、吞嚥困難或喘鳴 → 需視為過敏性休克前兆，立即就醫",
+        "合併新發發熱、明顯腫脹或皮疹",
+        "曾有嚴重（過敏性休克）過敏反應病史者，本次咽癢須提高警覺",
+        "持續超過一週未緩解或逐漸加重，儘管已嘗試居家緩解措施"
+      ],
+      "red_flags_en": [
+        "Itching progresses to throat tightness, difficulty swallowing, or wheezing → treat as possible anaphylaxis and seek emergency care",
+        "New fever, significant swelling, or a rash accompanies the itch",
+        "History of a serious (anaphylactic) allergic reaction — treat a new throat itch with heightened caution",
+        "Persists beyond one week or worsens despite self-care"
+      ],
+      "sources": [
+        "Cleveland Clinic, Itchy Throat (https://my.clevelandclinic.org/health/symptoms/itchy-throat, retrieved 2026-08-11)",
+        "中醫內科學 咽癢／喉癢辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Itchy Throat (2026-08-11 retrieved)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.poor_memory",
+      "name_zh": "健忘",
+      "name_en": "Poor memory / forgetfulness",
+      "pinyin": "jian wang",
+      "pinyin_toned": "jiàn wàng",
+      "aliases_zh": [
+        "記憶力減退",
+        "善忘",
+        "容易忘事"
+      ],
+      "aliases_en": [
+        "Forgetfulness",
+        "Memory loss",
+        "Poor recall"
+      ],
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "病人或家屬自覺記憶力較前減退，忘記近期事務、人名或約定，程度超過該年齡的正常遺忘。是主訴，不等於失智症診斷——需先鑑別是否為可逆病因（甲狀腺低下、憂鬱、睡眠障礙、維生素缺乏等）。",
+      "definition_en": "Self- or family-reported decline in the ability to recall recent events, names, or appointments, beyond what is typical for the person's age. A presenting complaint, not a diagnosis of dementia — it first requires ruling out reversible causes (hypothyroidism, depression, sleep disorders, vitamin deficiency, etc.).",
+      "patient_words_zh": "「常常忘記東西放哪」「講到一半忘記要講什麼」「約會常常忘記」「腦袋空空的，想不起來」",
+      "patient_words_en": "\"I keep forgetting where I put things\", \"I lose my train of thought mid-sentence\", \"I keep forgetting appointments\", \"my mind just goes blank\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "病程",
+          "why": "緩慢漸進與突然明顯惡化的鑑別方向不同——後者需優先排除器質性病變"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "兼失眠多夢、心悸提示心脾兩虛；兼腰膝痠軟、耳鳴提示腎精不足；兼情緒低落提示憂鬱相關"
+        },
+        {
+          "dimension": "誘因",
+          "why": "睡眠不足、長期壓力、更年期前後發生，各有不同指向"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "說話時找不到常用詞、完成熟悉工作變慢、在熟悉地方迷路、情緒或行為明顯改變 → 需提高警覺並轉診評估"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Course",
+          "why": "Slow gradual decline versus sudden marked worsening point in different directions — the latter should prompt ruling out an organic cause first"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "With insomnia, dream-disturbed sleep and palpitations suggests Heart-Spleen deficiency; with low back/knee soreness and tinnitus suggests Kidney essence deficiency; with low mood suggests a depression-related cause"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Poor sleep, chronic stress, or onset around menopause each point somewhere different"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Forgetting common words mid-sentence, taking noticeably longer on familiar tasks, getting lost in a familiar place, or a marked change in mood/behaviour → raise concern and warrant referral"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "健忘兼心悸失眠、多夢",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "健忘伴心悸、失眠多夢、食少倦怠、面色萎黃"
+        },
+        {
+          "variant": "健忘兼腰膝痠軟、耳鳴",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "健忘日益加重，兼耳鳴、腰膝痠軟、齒搖髮脫，多見於年長者"
+        },
+        {
+          "variant": "健忘兼情緒抑鬱、胸悶",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "健忘伴情緒低落、胸脅脹悶、善太息，因情志不遂而加重"
+        },
+        {
+          "variant": "健忘兼頭重痰多",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "健忘遲鈍，頭重如裹，胸悶痰多，身重困倦"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Forgetfulness with palpitations, insomnia and dream-disturbed sleep",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "Forgetfulness with palpitations, insomnia with dream-disturbed sleep, poor appetite, fatigue, sallow complexion"
+        },
+        {
+          "variant": "Forgetfulness with weak low back/knees and tinnitus",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Progressively worsening forgetfulness with tinnitus, weak aching low back and knees, loosening teeth and hair loss, mainly in older patients"
+        },
+        {
+          "variant": "Forgetfulness with depressed mood and chest tightness",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Forgetfulness with low mood, chest and rib-side distension, frequent sighing, worse with emotional frustration"
+        },
+        {
+          "variant": "Forgetfulness with heavy head and copious phlegm",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Sluggish forgetfulness, heavy muzzy head, chest fullness with copious phlegm, heavy tired body"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Mayo Clinic, \"Memory loss: When to seek help\" — corroborated via indexed search excerpts of https://www.mayoclinic.org/diseases-conditions/alzheimers-disease/in-depth/memory-loss/art-20046326 (direct fetch blocked by site bot-protection, HTTP 403); not independently confirmed by direct page render, flagged for manual verification"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "說話時常忘記常用詞彙或用詞錯亂",
+        "完成熟悉的日常工作明顯變慢",
+        "把物品放在不合常理的地方（如鑰匙放進冰箱）",
+        "在熟悉的地方走路或開車時迷路",
+        "反覆詢問同樣的資訊",
+        "合併明顯的情緒或行為改變"
+      ],
+      "red_flags_en": [
+        "Forgetting common words when speaking, or word mix-ups",
+        "Taking noticeably longer to complete familiar tasks",
+        "Misplacing items in inappropriate places (e.g. keys in the fridge)",
+        "Getting lost while walking or driving in a familiar area",
+        "Repeatedly asking for the same information",
+        "An unexplained change in mood or behaviour accompanying the memory issue"
+      ],
+      "sources": [
+        "Mayo Clinic, Memory loss: When to seek help — corroborated via search index, direct fetch blocked (2026-08-11), needs manual verification before treating as fully confirmed",
+        "中醫內科學 健忘辨證分型（心脾兩虛／腎精不足／肝鬱／痰濕）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Mayo Clinic memory-loss red flags, sourced via indexed search excerpt only — direct WebFetch returned HTTP 403; flagged, not fabricated"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.orthopnea",
+      "name_zh": "不能平臥",
+      "name_en": "Orthopnea (unable to lie flat)",
+      "pinyin": "bu neng ping wo",
+      "pinyin_toned": "bù néng píng wò",
+      "aliases_zh": [
+        "端坐呼吸",
+        "臥則氣喘",
+        "平臥則喘"
+      ],
+      "aliases_en": [
+        "Orthopnea",
+        "Positional dyspnea",
+        "Difficulty breathing lying flat"
+      ],
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "平躺時出現或加重的呼吸困難，需坐起或墊高才能緩解，西醫稱端坐呼吸（orthopnea），常見於左心衰竭。是主訴，需優先評估心肺功能，不宜當作單純睡姿問題處理。",
+      "definition_en": "Breathlessness that occurs or worsens specifically when lying flat and is relieved by sitting or propping up — termed orthopnea in biomedicine, classically a sign of left-sided heart failure. This is a presenting complaint requiring prompt cardiopulmonary evaluation, not simply a sleeping-position issue.",
+      "patient_words_zh": "「一躺下就喘」「要墊兩三個枕頭才睡得著」「半夜喘醒，要坐起來才舒服」「躺著會咳嗽、胸悶」",
+      "patient_words_en": "\"I get short of breath the moment I lie down\", \"I need two or three pillows to sleep\", \"I wake up gasping and have to sit up\", \"lying down makes me cough and feel tight in the chest\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值（需幾個枕頭），屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "平臥後數分鐘內出現，坐起即緩解，是端坐呼吸的典型模式"
+        },
+        {
+          "dimension": "程度",
+          "why": "需要墊高的枕頭數（一枕、兩枕、三枕）常用作嚴重度的臨床速記"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "胸悶胸痛、心悸、下肢水腫提示心衰；夜間陣發性呼吸困難（睡中喘醒）是相關且更具特異性的紅旗"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發與逐漸加重的端坐呼吸都需要心肺評估，但新發者更急迫"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Onset within minutes of lying flat, relieved by sitting up, is the classic orthopnea pattern"
+        },
+        {
+          "dimension": "Severity",
+          "why": "The number of pillows needed (\"two-pillow\", \"three-pillow\" orthopnea) is a standard clinical shorthand for severity"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Chest tightness or pain, palpitations and leg swelling suggest heart failure; paroxysmal nocturnal dyspnea (waking gasping for air) is a closely related and more specific red flag"
+        },
+        {
+          "dimension": "Course",
+          "why": "Both new-onset and gradually worsening orthopnea need cardiopulmonary evaluation, but new onset is more urgent"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "不能平臥兼心悸、下肢水腫",
+          "points_to": [
+            "pattern.heart_yang_deficiency"
+          ],
+          "distinguishing": "平臥即喘，心悸怔忡，下肢浮腫，畏寒肢冷，唇甲青紫"
+        },
+        {
+          "variant": "不能平臥兼咳喘痰多",
+          "points_to": [
+            "pattern.phlegm_damp_in_lung"
+          ],
+          "distinguishing": "臥則氣喘加重，咳嗽痰多色白質稀，胸悶，喉間痰鳴"
+        },
+        {
+          "variant": "不能平臥兼氣短乏力",
+          "points_to": [
+            "pattern.lung_kidney_qi_deficiency"
+          ],
+          "distinguishing": "動則氣喘，平臥尤甚，氣短乏力，自汗，聲低懶言"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Orthopnea with palpitations and leg swelling",
+          "points_to": [
+            "pattern.heart_yang_deficiency"
+          ],
+          "distinguishing": "Breathless on lying flat, palpitations, leg swelling, aversion to cold with cold limbs, cyanotic lips and nails"
+        },
+        {
+          "variant": "Orthopnea with cough and copious phlegm",
+          "points_to": [
+            "pattern.phlegm_damp_in_lung"
+          ],
+          "distinguishing": "Worse lying flat, cough with copious thin white phlegm, chest fullness, rattling phlegm sounds in the throat"
+        },
+        {
+          "variant": "Orthopnea with shortness of breath and fatigue",
+          "points_to": [
+            "pattern.lung_kidney_qi_deficiency"
+          ],
+          "distinguishing": "Breathless on exertion, worse lying flat, shortness of breath and fatigue, spontaneous sweating, low soft voice"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Orthopnea\", https://my.clevelandclinic.org/health/symptoms/orthopnea, retrieved 2026-08-11",
+        "NCBI Bookshelf (Clinical Methods, 3rd ed.), \"Dyspnea, Orthopnea, and Paroxysmal Nocturnal Dyspnea\", https://www.ncbi.nlm.nih.gov/books/NBK213/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags",
+        "chest_pain_red_flag"
+      ],
+      "red_flags_zh": [
+        "端坐呼吸本身即為心肺疾病（最常見為左心衰竭）的警示徵象，出現即需就醫評估",
+        "合併胸悶或胸痛",
+        "合併喘鳴聲或新發／加重咳嗽",
+        "合併心悸",
+        "需要墊的枕頭數逐漸增加，提示嚴重度惡化",
+        "夜間陣發性呼吸困難（睡夢中喘醒）——與端坐呼吸密切相關但更具特異性的紅旗"
+      ],
+      "red_flags_en": [
+        "Orthopnea itself is a red-flag sign of cardiopulmonary disease, most commonly left-sided heart failure — its presence warrants evaluation on its own",
+        "Accompanying chest tightness or chest pain",
+        "Accompanying wheezing or a new/worsening cough",
+        "Accompanying palpitations",
+        "Needing progressively more pillows to sleep, indicating worsening severity",
+        "Paroxysmal nocturnal dyspnea (waking gasping for breath) — a closely related and more specific red flag pointing to heart failure"
+      ],
+      "sources": [
+        "Cleveland Clinic, Orthopnea (https://my.clevelandclinic.org/health/symptoms/orthopnea, retrieved 2026-08-11)",
+        "NCBI Bookshelf, Dyspnea Orthopnea and PND (https://www.ncbi.nlm.nih.gov/books/NBK213/, retrieved 2026-08-11)",
+        "中醫內科學 喘證／心悸相關端坐呼吸辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Orthopnea + NCBI Bookshelf Clinical Methods ch.35 (both retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.sneezing",
+      "name_zh": "噴嚏",
+      "name_en": "Sneezing",
+      "pinyin": "pen ti",
+      "pinyin_toned": "pēn tì",
+      "aliases_zh": [
+        "打噴嚏",
+        "陣發性噴嚏"
+      ],
+      "aliases_en": [
+        "Paroxysmal sneezing",
+        "Sneezing fits"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "鼻黏膜受刺激後突然、不自主地經鼻和口噴出氣流的反射動作，頻繁或陣發性噴嚏是過敏性鼻炎的典型表現之一。是生理反射兼主訴，本身極少為嚴重疾病的表現。",
+      "definition_en": "A sudden, forceful, involuntary expulsion of air through the nose and mouth triggered by irritation of the nasal mucosa; when frequent or occurring in bouts, it is a hallmark of allergic or non-allergic rhinitis. A physiological reflex and presenting complaint that is rarely, on its own, a sign of serious disease.",
+      "patient_words_zh": "「一直打噴嚏，停不下來」「一接觸灰塵就狂打噴嚏」「早上起床特別容易打噴嚏」",
+      "patient_words_en": "\"I can't stop sneezing\", \"I sneeze in fits whenever I'm around dust\", \"I sneeze a lot right after waking up\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "接觸灰塵、花粉、冷空氣誘發提示過敏性；受涼後新發提示外感風寒初起"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起陣發性噴嚏提示過敏性鼻炎；季節性發作提示花粉相關"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "鼻塞流清涕、目癢提示過敏；發熱、呼吸困難需另外評估"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Triggered by dust, pollen or cold air suggests an allergic cause; new onset after cold exposure suggests early wind-cold contraction"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Paroxysmal sneezing on waking suggests allergic rhinitis; seasonal onset suggests pollen-related triggers"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Nasal congestion with clear discharge and itchy eyes suggest allergy; fever or breathing difficulty warrant separate evaluation"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "噴嚏頻作，遇風冷即發",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "噴嚏連連，鼻塞流清涕，惡寒發熱，遇風冷加重，舌苔薄白"
+        },
+        {
+          "variant": "晨起陣發噴嚏，反覆難癒",
+          "points_to": [
+            "pattern.lung_qi_deficiency"
+          ],
+          "distinguishing": "晨起或遇冷風即陣發噴嚏，鼻流清涕，平素易感冒，氣短自汗"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Frequent sneezing triggered by wind-cold",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "Repeated sneezing, nasal congestion with clear discharge, aversion to cold with fever, worse with wind/cold exposure, thin white tongue coating"
+        },
+        {
+          "variant": "Recurrent paroxysmal sneezing on waking",
+          "points_to": [
+            "pattern.lung_qi_deficiency"
+          ],
+          "distinguishing": "Paroxysmal sneezing on waking or with cold wind, clear nasal discharge, frequent colds, shortness of breath and spontaneous sweating"
+        }
+      ],
+      "safety_review_status": "no_specific_red_flags_identified",
+      "safety_review_sources": [
+        "MedlinePlus Medical Encyclopedia, \"Sneezing\", https://medlineplus.gov/ency/article/003060.htm, retrieved 2026-08-11 — states sneezing is rarely a sign of a serious problem"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [],
+      "red_flags_en": [],
+      "sources": [
+        "MedlinePlus, Sneezing (https://medlineplus.gov/ency/article/003060.htm, retrieved 2026-08-11)",
+        "中醫內科學 鼻鼽相關噴嚏辨證內容"
+      ],
+      "field_sources": {
+        "safety_review_sources": "MedlinePlus explicitly frames isolated sneezing as rarely serious (2026-08-11 retrieved); genuine red-flag content belongs to accompanying fever/dyspnea, not sneezing itself"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.sallow_complexion",
+      "name_zh": "面色無華",
+      "name_en": "Sallow, lusterless complexion",
+      "pinyin": "mian se wu hua",
+      "pinyin_toned": "miàn sè wú huá",
+      "aliases_zh": [
+        "面色萎黃",
+        "面色少華",
+        "臉色暗沉"
+      ],
+      "aliases_en": [
+        "Dull complexion",
+        "Lackluster complexion",
+        "Sallow skin"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "面部膚色晦暗、缺乏光澤，非蒼白（血虛/貧血的白）亦非黃疸（真性黃染），是望診中最常被病人或醫者留意到的整體氣色改變。西醫無專屬病名，多視為貧血、肝病或甲狀腺功能低下等疾病的伴隨表現。",
+      "definition_en": "A dull, lusterless facial skin tone lacking healthy brightness — distinguished from frank pallor (whiteness from reduced perfusion or anemia) and true jaundice (yellowing from bilirubin). Biomedicine has no dedicated diagnostic term for it; it is generally noted as an accompanying sign of anemia, liver disease, or hypothyroidism.",
+      "patient_words_zh": "「氣色不好，人家常問我是不是沒睡好」「臉黃黃的，沒有光澤」「照鏡子覺得臉很暗沉」",
+      "patient_words_en": "\"I look tired all the time, people keep asking if I've been sleeping\", \"my face looks sallow, no glow to it\", \"my complexion looks dull in the mirror\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "面部整體性改變，不分側"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間相關症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "伴隨症",
+          "why": "兼乏力、心悸、頭暈提示血虛／貧血；兼鞏膜黃染、尿色深提示肝膽病變；兼怕冷、體重增加提示甲狀腺功能低下"
+        },
+        {
+          "dimension": "病程",
+          "why": "逐漸出現與短期內明顯變化，鑑別方向不同——後者更需優先排查器質性病變"
+        },
+        {
+          "dimension": "誘因",
+          "why": "產後、經量過多、長期飲食失調等病史提示血虛病機"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Accompanying signs",
+          "why": "With fatigue, palpitations and dizziness suggests blood deficiency/anaemia; with scleral yellowing and dark urine suggests hepatobiliary disease; with cold intolerance and weight gain suggests hypothyroidism"
+        },
+        {
+          "dimension": "Course",
+          "why": "Gradual onset versus a marked recent change point in different directions — the latter warrants prompt evaluation for organic disease"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A history of postpartum blood loss, heavy menstrual bleeding, or long-standing poor diet suggests a blood-deficiency mechanism"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "面色萎黃兼乏力心悸",
+          "points_to": [
+            "pattern.blood_deficiency"
+          ],
+          "distinguishing": "面色萎黃無華，兼頭暈眼花、心悸、爪甲色淡、月經量少色淡"
+        },
+        {
+          "variant": "面色無華兼食少便溏",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "面色萎黃，兼食少納呆、腹脹便溏、倦怠乏力"
+        },
+        {
+          "variant": "面色晦暗兼畏寒肢冷",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "面色晦暗無華，兼畏寒肢冷、腰膝痠軟、夜尿頻多"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sallow complexion with fatigue and palpitations",
+          "points_to": [
+            "pattern.blood_deficiency"
+          ],
+          "distinguishing": "Sallow lusterless complexion with dizziness, palpitations, pale nail beds, scanty pale menstruation"
+        },
+        {
+          "variant": "Sallow complexion with poor appetite and loose stool",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Sallow complexion with poor appetite, abdominal distension, loose stool, fatigue"
+        },
+        {
+          "variant": "Dusky dull complexion with cold intolerance",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Dusky lusterless complexion with cold intolerance and cold limbs, weak aching low back and knees, frequent night urination"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NHS, \"Iron deficiency anaemia\", https://www.nhs.uk/conditions/iron-deficiency-anaemia/, retrieved 2026-08-11 — the term \"sallow\" itself is not a formally defined biomedical sign; red flags below reflect the anaemia/liver/thyroid associations documented at this source, not a dedicated \"sallow complexion\" clinical guideline"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "面色無華合併真性黃疸（鞏膜／皮膚黃染）、深色尿液或淺色糞便 → 提示肝膽病變，需儘速評估",
+        "合併明顯疲倦、呼吸急促、心悸 → 提示貧血，需檢查",
+        "合併不明原因體重減輕、腹部腫脹或意識混亂",
+        "合併怕冷、體重增加、皮膚乾燥 → 提示甲狀腺功能低下"
+      ],
+      "red_flags_en": [
+        "Sallow complexion together with true jaundice (yellowing of sclera/skin), dark urine, or pale stools → suggests liver disease, evaluate promptly",
+        "Together with marked fatigue, shortness of breath, palpitations → suggests anaemia, warrants testing",
+        "Together with unexplained weight loss, abdominal swelling, or confusion",
+        "Together with cold intolerance, weight gain, dry skin → suggests hypothyroidism"
+      ],
+      "sources": [
+        "NHS, Iron deficiency anaemia (https://www.nhs.uk/conditions/iron-deficiency-anaemia/, retrieved 2026-08-11)",
+        "中醫望診 面色理論 —— 中醫診斷學 望色章節"
+      ],
+      "field_sources": {
+        "safety_review_sources": "NHS anaemia page confirms pallor/fatigue linkage; \"sallow\" itself has no dedicated biomedical source found — flagged honestly rather than inventing one (weakest-sourced red flag set in this batch)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.slurred_speech",
+      "name_zh": "言語謇澀",
+      "name_en": "Slurred / impaired speech (dysarthria)",
+      "pinyin": "yan yu jian se",
+      "pinyin_toned": "yán yǔ jiǎn sè",
+      "aliases_zh": [
+        "言語不清",
+        "說話含糊",
+        "口齒不清"
+      ],
+      "aliases_en": [
+        "Dysarthria",
+        "Slurred speech",
+        "Speech impairment"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "因神經或肌肉病變導致唇、舌、下頜、聲帶或呼吸肌協調不良，說話含糊不清、吐字不清，西醫稱構音障礙（dysarthria），與失語症（語言功能受損）不同。是主訴／體徵，突發者需視為中風徵象立即評估。",
+      "definition_en": "A motor speech disorder in which weakness or incoordination of the lips, tongue, jaw, vocal cords, or breathing muscles produces slurred, imprecise or difficult-to-understand speech — termed dysarthria in biomedicine, distinct from aphasia (a language-processing disorder). Sudden onset must be treated as a possible stroke sign requiring immediate evaluation.",
+      "patient_words_zh": "「講話變得含糊」「舌頭不聽使喚」「家人說我講話怪怪的」「咬字咬不清楚」",
+      "patient_words_en": "\"My speech has gone slurry\", \"my tongue doesn't do what I want\", \"my family says I sound different when I talk\", \"I can't enunciate clearly\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality",
+          "diagnostic_note_zh": "常與同側／對側肢體無力併見，側性有定位意義"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "病程",
+          "why": "突發者需視為中風，立即啟動紅旗流程；緩慢進行性者需考慮神經退化性疾病"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併一側面部下垂、單側肢體無力、意識改變 → 立即就醫；合併吞嚥困難需評估誤吸風險"
+        },
+        {
+          "dimension": "誘因",
+          "why": "中風病史、糖尿病、高血壓等血管危險因子提示相關風險"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Course",
+          "why": "Sudden onset must be treated as stroke and enter the red-flag pathway immediately; slow progressive onset suggests a neurodegenerative process"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "One-sided facial droop, one-sided limb weakness, or altered consciousness → seek care immediately; accompanying swallowing difficulty raises aspiration risk"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A history of stroke, diabetes, or hypertension flags vascular risk"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "言語謇澀突發，兼半身不遂",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "言語謇澀或不語，突然發作，兼半身不遂、口眼喎斜，多見於中風"
+        },
+        {
+          "variant": "言語謇澀漸進，兼肢體震顫",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "言語漸漸含糊，動作遲緩，兼肢體震顫、行走不穩，緩慢進行"
+        },
+        {
+          "variant": "言語謇澀兼痰多神呆",
+          "points_to": [
+            "pattern.wind_phlegm"
+          ],
+          "distinguishing": "言語不清，喉間痰鳴，神情呆滯，肢體麻木"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sudden slurred speech with hemiplegia",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Sudden slurred or absent speech with hemiplegia and facial deviation, typical of stroke"
+        },
+        {
+          "variant": "Gradually worsening slurred speech with tremor",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Gradually worsening slurred speech, slowed movement, limb tremor, unsteady gait, slowly progressive"
+        },
+        {
+          "variant": "Slurred speech with copious phlegm and dullness",
+          "points_to": [
+            "pattern.wind_phlegm"
+          ],
+          "distinguishing": "Slurred speech, rattling phlegm sounds in the throat, dull mental affect, limb numbness"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Dysarthria (Slurred Speech): Symptoms, Causes & Treatment\", https://my.clevelandclinic.org/health/diseases/17653-dysarthria, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "突發言語含糊 → 視為中風可能，立即就醫",
+        "合併一側臉部下垂",
+        "合併一側手臂或肢體無力，或雙臂上舉時單側下垂",
+        "合併突發意識混亂、視力改變或劇烈頭痛",
+        "合併肢體協調喪失或步態不穩",
+        "合併吞嚥困難、反覆嗆咳，有吸入性肺炎風險"
+      ],
+      "red_flags_en": [
+        "Sudden onset of slurred speech → treat as possible stroke, seek care immediately",
+        "Accompanying one-sided facial drooping",
+        "Accompanying one-sided arm/limb weakness, or one arm drifting down when both are raised",
+        "Accompanying sudden confusion, vision changes, or severe headache",
+        "Accompanying sudden loss of coordination or unsteady gait",
+        "Accompanying swallowing difficulty or repeated coughing, raising aspiration pneumonia risk"
+      ],
+      "sources": [
+        "Cleveland Clinic, Dysarthria (https://my.clevelandclinic.org/health/diseases/17653-dysarthria, retrieved 2026-08-11)",
+        "中醫內科學 中風／言語謇澀辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Dysarthria, referencing American Stroke Association F.A.S.T. framework (retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.wheezing",
+      "name_zh": "喉中哮鳴",
+      "name_en": "Audible wheeze / rattling breath sounds",
+      "pinyin": "hou zhong xiao ming",
+      "pinyin_toned": "hóu zhōng xiào míng",
+      "aliases_zh": [
+        "痰鳴",
+        "喉中痰鳴漉漉",
+        "喘鳴"
+      ],
+      "aliases_en": [
+        "Wheeze",
+        "Stridor",
+        "Rattling breath sounds"
+      ],
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "呼吸時喉間或胸中發出的異常聲響，不需聽診器即可聞及。西醫依部位再分為哮鳴音（wheeze，下呼吸道，呼氣時明顯）與喘鳴（stridor，上呼吸道／喉部，吸氣時明顯），中醫統稱喉中痰鳴或哮鳴，責之痰阻氣道。",
+      "definition_en": "An abnormal sound heard during breathing, audible without a stethoscope. Biomedicine distinguishes it by airway location — wheeze (lower airway, musical, usually on exhale) versus stridor (upper airway/throat, harsh, usually on inhale) — while TCM groups both under phlegm obstructing the airway.",
+      "patient_words_zh": "「喘的時候喉嚨會咻咻叫」「呼吸有痰音，像拉風箱」「一咳就有咕嚕咕嚕的聲音」",
+      "patient_words_en": "\"My throat whistles when I breathe hard\", \"my breathing sounds rattly, like bellows\", \"there's a gurgling sound whenever I cough\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀（喉／胸腔整體聲響）"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "首次發作、無法解釋的喘鳴需儘速評估；接觸過敏原或蟲咬後發作提示過敏反應"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "明顯呼吸困難、嘴唇發紺、意識改變、無法言語或飲水 → 立即就醫；靜息時喘鳴、合併流口水、快速惡化提示急症"
+        },
+        {
+          "dimension": "病程",
+          "why": "反覆發作而無明確誘因，需要進一步檢查"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "A first-ever or unexplained episode needs prompt evaluation; onset after an insect sting or medication suggests possible anaphylaxis"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Significant breathlessness, blue lips/skin, confusion, or inability to speak or drink normally → seek emergency care; stridor at rest with drooling and rapid worsening suggests an emergency"
+        },
+        {
+          "dimension": "Course",
+          "why": "Recurrent episodes without a clear trigger warrant further workup"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "喉中哮鳴，痰白清稀",
+          "points_to": [
+            "pattern.cold_phlegm_obstructing_lung"
+          ],
+          "distinguishing": "喉中哮鳴如水雞聲，痰白清稀量多，畏寒肢冷，遇冷加重"
+        },
+        {
+          "variant": "喉中哮鳴，痰黃黏稠",
+          "points_to": [
+            "pattern.phlegm_heat_in_lung"
+          ],
+          "distinguishing": "喉中哮鳴聲高，痰黃黏稠難咯，發熱口渴，面赤"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Wheeze with thin white phlegm",
+          "points_to": [
+            "pattern.cold_phlegm_obstructing_lung"
+          ],
+          "distinguishing": "Wheeze like a frog's croak, copious thin white phlegm, aversion to cold with cold limbs, worse with cold exposure"
+        },
+        {
+          "variant": "Wheeze with thick yellow phlegm",
+          "points_to": [
+            "pattern.phlegm_heat_in_lung"
+          ],
+          "distinguishing": "High-pitched wheeze, thick sticky yellow phlegm difficult to expectorate, fever and thirst, flushed face"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus Medical Encyclopedia, \"Wheezing\", https://medlineplus.gov/ency/article/003070.htm, retrieved 2026-08-11",
+        "MedlinePlus Medical Encyclopedia, \"Stridor\", https://medlineplus.gov/ency/article/003074.htm, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags"
+      ],
+      "red_flags_zh": [
+        "首次發作或無法解釋的喘鳴／哮鳴（尤其兒童）需儘速評估",
+        "合併明顯呼吸困難、嘴唇或皮膚發紺、意識混亂",
+        "靜息時仍有喘鳴、迅速惡化，或合併流口水、無法正常言語進食 → 視為急症",
+        "使用胸／頸部輔助肌呼吸（凹陷）",
+        "因蟲咬或藥物誘發的喘鳴 → 需排除過敏性休克",
+        "反覆發作而無明確誘因"
+      ],
+      "red_flags_en": [
+        "First-ever episode or unexplained wheeze/stridor (especially in a child) needs prompt evaluation",
+        "Accompanying significant breathlessness, blue lips/skin, or confusion",
+        "Stridor at rest, rapidly worsening, or with drooling and inability to speak/drink normally → treat as an emergency",
+        "Use of chest/neck accessory muscles to breathe (retractions)",
+        "Wheeze triggered by an insect sting or medication → rule out anaphylaxis",
+        "Recurrent wheeze without a clear explanation"
+      ],
+      "sources": [
+        "MedlinePlus, Wheezing (https://medlineplus.gov/ency/article/003070.htm, retrieved 2026-08-11)",
+        "MedlinePlus, Stridor (https://medlineplus.gov/ency/article/003074.htm, retrieved 2026-08-11)",
+        "中醫內科學 哮證／喘證辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "MedlinePlus Wheezing + Stridor (both retrieved 2026-08-11) — biomedicine splits by airway location, TCM groups both under one term; card notes the split"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.limb_stiffness",
+      "name_zh": "肢體僵硬",
+      "name_en": "Limb/joint stiffness",
+      "pinyin": "zhi ti jiang ying",
+      "pinyin_toned": "zhī tǐ jiāng yìng",
+      "aliases_zh": [
+        "屈伸不利",
+        "關節僵硬",
+        "肢體板滯"
+      ],
+      "aliases_en": [
+        "Joint stiffness",
+        "Rigidity",
+        "Restricted mobility"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "肢體或關節活動時感覺僵滯、不靈活，屈伸受限，非急性外傷所致。西醫依機轉分兩類：關節炎性晨僵（如類風濕關節炎）與帕金森氏症的肌強直（cogwheel/lead-pipe rigidity），兩者鑑別要點不同。",
+      "definition_en": "A sense of stiffness or restricted range of motion in a limb or joint during movement, not from acute injury. Biomedicine recognises two distinct mechanisms mapping to this one complaint: inflammatory morning joint stiffness (as in rheumatoid arthritis) and Parkinsonian rigidity (cogwheel/lead-pipe stiffness) — the two are distinguished by different clinical features.",
+      "patient_words_zh": "「早上起來手指僵僵的，動一動才鬆開」「關節卡卡的，不靈活」「身體變得僵硬，動作變慢」",
+      "patient_words_en": "\"My fingers feel stiff in the morning, they loosen up once I move them\", \"my joints feel stuck, not flexible\", \"my body's gotten stiff and my movements have slowed\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "酸屬虛濕 · 冷屬寒凝"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "晨起僵硬、活動後緩解提示發炎性關節病變；持續性僵硬提示帕金森氏症肌強直"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "晨僵持續 30-60 分鐘以上、活動後緩解，提示發炎性關節炎（如類風濕）而非單純退化性關節炎"
+        },
+        {
+          "dimension": "部位",
+          "why": "小關節（手指、腕）對稱性僵硬提示發炎性關節病；全身性僵硬、伴動作遲緩提示帕金森氏症"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併關節腫脹、發熱、發紅、觸痛 → 需就醫；合併明顯疲倦、發熱或體重減輕；合併面部表情減少、手臂擺動減少提示帕金森氏症"
+        },
+        {
+          "dimension": "病程",
+          "why": "持續超過六週的僵硬需要進一步檢查"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Morning stiffness lasting 30-60+ minutes that eases with activity suggests inflammatory arthritis (e.g. RA) rather than simple degenerative joint disease"
+        },
+        {
+          "dimension": "Location",
+          "why": "Symmetric small-joint (finger, wrist) stiffness suggests inflammatory arthropathy; generalised stiffness with slowed movement suggests parkinsonism"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Joint swelling, warmth, redness or tenderness → see a doctor; marked fatigue, fever, or weight loss; reduced facial expression and reduced arm swing suggest parkinsonism"
+        },
+        {
+          "dimension": "Course",
+          "why": "Stiffness persisting beyond six weeks warrants further investigation"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "肢體僵硬冷痛，遇寒加重",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "肢體關節僵硬冷痛，屈伸不利，遇寒加重，得溫則舒"
+        },
+        {
+          "variant": "肢體僵硬灼熱，關節紅腫",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "肢體關節僵硬，兼紅腫灼熱疼痛，得冷則舒，或有發熱"
+        },
+        {
+          "variant": "肢體僵硬遲緩，兼震顫",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "肢體僵硬，活動遲緩，兼靜止性震顫、表情呆滯，緩慢進行"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Cold, painful stiffness worse with cold exposure",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Cold, painful joint stiffness with restricted movement, worse with cold exposure, better with warmth"
+        },
+        {
+          "variant": "Hot, swollen stiffness",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "Joint stiffness with redness, swelling and burning pain, relieved by cold, sometimes with fever"
+        },
+        {
+          "variant": "Rigid slowed movement with tremor",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Limb rigidity with slowed movement, resting tremor, blank facial expression, slowly progressive"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Parkinsonism\", https://my.clevelandclinic.org/health/diseases/22815-parkinsonism, retrieved 2026-08-11",
+        "Parkinson's Foundation, \"Rigidity\", https://www.parkinson.org/understanding-parkinsons/movement-symptoms/rigidity, retrieved 2026-08-11",
+        "NHS, \"Rheumatoid arthritis - Symptoms\", https://www.nhs.uk/conditions/rheumatoid-arthritis/symptoms/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "晨僵持續超過 30-60 分鐘，尤其手腕、手指等小關節，活動後緩解 → 提示發炎性關節炎，需風濕科評估",
+        "關節僵硬合併腫脹、發熱、發紅或觸痛",
+        "僵硬合併不明原因疲倦、發熱或體重減輕",
+        "肢體僵硬合併動作遲緩、手臂擺動減少、面部表情減少 → 提示帕金森氏症，需神經科評估",
+        "步態明顯惡化或跌倒頻率增加"
+      ],
+      "red_flags_en": [
+        "Morning stiffness lasting 30-60+ minutes, especially in small joints like fingers/wrists, easing with activity → suggests inflammatory arthritis, warrants rheumatology assessment",
+        "Joint stiffness with swelling, warmth, redness or tenderness",
+        "Stiffness with unexplained fatigue, fever, or weight loss",
+        "Limb rigidity with slowed movement, reduced arm swing, and reduced facial expression → suggests parkinsonism, warrants neurology assessment",
+        "Markedly worsening gait or increasing fall frequency"
+      ],
+      "sources": [
+        "Cleveland Clinic, Parkinsonism (https://my.clevelandclinic.org/health/diseases/22815-parkinsonism, retrieved 2026-08-11)",
+        "Parkinson's Foundation, Rigidity (https://www.parkinson.org/understanding-parkinsons/movement-symptoms/rigidity, retrieved 2026-08-11)",
+        "NHS, Rheumatoid arthritis - Symptoms (https://www.nhs.uk/conditions/rheumatoid-arthritis/symptoms/, retrieved 2026-08-11)",
+        "中醫內科學 痹證／顫證辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic + Parkinson's Foundation (rigidity) and NHS RA symptoms page (morning stiffness duration), all directly fetched 2026-08-11 — replaces an earlier unverified Mayo Clinic citation"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.cold_sweating",
+      "name_zh": "冷汗淋漓",
+      "name_en": "Profuse cold sweating",
+      "pinyin": "leng han lin li",
+      "pinyin_toned": "lěng hàn lín lí",
+      "aliases_zh": [
+        "冷汗",
+        "大汗淋漓兼肢冷",
+        "汗出如珠而冷"
+      ],
+      "aliases_en": [
+        "Cold, clammy sweating",
+        "Diaphoresis with cold skin",
+        "Cold sweat"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "大量出汗且皮膚觸之濕冷、蒼白，非因熱或運動所致，西醫稱冷汗（diaphoresis with cold clammy skin），常見於休克、心肌梗塞、低血糖等急重症的伴隨表現，中醫多屬陽氣暴脫的危候。",
+      "definition_en": "Profuse sweating with skin that is cold, clammy and pale to the touch, not from heat or exertion — termed diaphoresis with cold clammy skin in biomedicine, classically accompanying shock, myocardial infarction, hypoglycemia and other acute severe conditions. In TCM it is often a sign of sudden Yang qi collapse.",
+      "patient_words_zh": "「突然冒冷汗，全身濕透」「手腳冰冷還一直流汗」「臉色發白，冷汗直流」",
+      "patient_words_en": "\"Suddenly broke out in a cold sweat, soaked through\", \"my hands and feet are cold but I'm still sweating\", \"went pale and started pouring cold sweat\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "全身性症狀，非局部部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "多為急性發作，非週期性"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "伴隨症",
+          "why": "合併胸痛胸悶提示心肌梗塞可能；合併頭暈或意識喪失；合併噁心嘔吐與皮膚濕冷蒼白；合併呼吸困難需立即就醫"
+        },
+        {
+          "dimension": "病程",
+          "why": "突然發作且伴隨其他急症徵象，須視為危急狀況立即處理，不可拖延觀察"
+        },
+        {
+          "dimension": "誘因",
+          "why": "劇痛、極度恐懼、低血糖、失血後發作，各指向不同機轉"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Accompanying signs",
+          "why": "With chest pain/pressure or palpitations suggests possible heart attack; with dizziness or loss of consciousness; with nausea/vomiting and cold clammy pale skin; with difficulty breathing → seek care immediately"
+        },
+        {
+          "dimension": "Course",
+          "why": "Sudden onset with other acute warning signs must be treated as an emergency, not observed and waited out"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Onset with severe pain, extreme fear, hypoglycemia, or blood loss each points to a different mechanism"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "冷汗淋漓，肢冷脈微",
+          "points_to": [
+            "pattern.heart_yang_deficiency"
+          ],
+          "distinguishing": "冷汗淋漓不止，四肢厥冷，面色蒼白，脈微欲絕，屬陽氣暴脫危候"
+        },
+        {
+          "variant": "冷汗淋漓，兼胸痛胸悶",
+          "points_to": [
+            "pattern.heart_blood_stasis"
+          ],
+          "distinguishing": "冷汗突然出現，兼胸痛徹背、胸悶如窒，唇甲青紫"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Profuse cold sweat with cold limbs and faint pulse",
+          "points_to": [
+            "pattern.heart_yang_deficiency"
+          ],
+          "distinguishing": "Unrelenting cold sweat, cold extremities, pale complexion, faint thready pulse verging on imperceptible — a sign of sudden Yang qi collapse"
+        },
+        {
+          "variant": "Cold sweat with chest pain and tightness",
+          "points_to": [
+            "pattern.heart_blood_stasis"
+          ],
+          "distinguishing": "Sudden cold sweat with chest pain radiating to the back, oppressive chest tightness, cyanotic lips and nails"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Diaphoresis\", https://my.clevelandclinic.org/health/diseases/24496-diaphoresis, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "chest_pain_red_flag",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "冷汗合併胸痛或胸悶、心悸 → 視為可能心肌梗塞，立即就醫",
+        "冷汗合併頭暈或意識喪失（暈厥）",
+        "冷汗合併噁心嘔吐，且皮膚濕冷蒼白",
+        "冷汗合併呼吸困難",
+        "冷汗合併癲癇發作",
+        "冷汗合併四肢冰冷斑駁、呼吸急促、寒顫或意識混亂 → 需排除敗血症"
+      ],
+      "red_flags_en": [
+        "Cold sweat with chest pain/pressure or palpitations → treat as possible heart attack, call emergency services",
+        "Cold sweat with dizziness or loss of consciousness (fainting)",
+        "Cold sweat with nausea/vomiting plus cold, clammy, or pale skin",
+        "Cold sweat with difficulty breathing",
+        "Cold sweat with seizures",
+        "Cold sweat with pale/blotchy cold limbs, rapid breathing, chills, or confusion → rule out sepsis"
+      ],
+      "sources": [
+        "Cleveland Clinic, Diaphoresis (https://my.clevelandclinic.org/health/diseases/24496-diaphoresis, retrieved 2026-08-11)",
+        "中醫內科學 亡陽／脫證相關冷汗辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Diaphoresis (retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.epigastric_fullness",
+      "name_zh": "痞滿",
+      "name_en": "Epigastric fullness / stuffiness",
+      "pinyin": "pi man",
+      "pinyin_toned": "pǐ mǎn",
+      "aliases_zh": [
+        "胃脘痞塞",
+        "上腹脹悶",
+        "心下痞"
+      ],
+      "aliases_en": [
+        "Epigastric stuffiness",
+        "Postprandial fullness",
+        "Sense of blockage in the upper abdomen"
+      ],
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "上腹部（胃脘）自覺脹悶、堵塞感，按之柔軟不痛，與腹脹（脹在全腹或下腹）、胃脘痛（以痛為主）不同。西醫多對應功能性消化不良（餐後不適症候群），需先排除器質性病因。",
+      "definition_en": "A subjective sense of fullness or blockage in the upper abdomen (epigastrium), soft and non-tender on palpation — distinct from generalized/lower abdominal bloating and from epigastric pain where pain is the leading feature. Biomedicine generally maps this to functional dyspepsia (postprandial distress subtype), which first requires excluding structural disease.",
+      "patient_words_zh": "「胃這邊悶悶脹脹的，不算痛」「吃一點就覺得撐」「胃裡好像堵住了」",
+      "patient_words_en": "\"It feels stuffy and full right here in my stomach, not really painful\", \"I feel full after just a few bites\", \"my stomach feels blocked up\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "正中上腹症狀，不分側"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "食後加重提示食積或脾胃虛弱；情緒波動誘發提示肝胃不和"
+        },
+        {
+          "dimension": "性質",
+          "why": "按之柔軟、無壓痛屬痞滿；若拒按有壓痛則需重新考慮是否為胃脘痛"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併不明原因體重減輕、吞嚥困難或疼痛、不明原因貧血、持續嘔吐、可觸及腫塊，需儘速轉診胃鏡檢查"
+        },
+        {
+          "dimension": "病程",
+          "why": "症狀持續三個月以上、六個月前即已出現，符合功能性消化不良的時間框架"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Worse after eating suggests food stagnation or Spleen-Stomach deficiency; triggered by emotional upset suggests Liver-Stomach disharmony"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Soft and non-tender on palpation is typical of fullness; tenderness on palpation should prompt reconsidering epigastric pain instead"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Unintentional weight loss, dysphagia or odynophagia, unexplained anemia, persistent vomiting, or a palpable mass warrant prompt referral for endoscopy"
+        },
+        {
+          "dimension": "Course",
+          "why": "Symptoms present for 3+ months with onset 6+ months earlier fit the functional dyspepsia time frame"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "痞滿食後加重，噯腐吞酸",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "脘腹痞滿，食後加重，噯氣酸腐，不思飲食，或吐不消化食物"
+        },
+        {
+          "variant": "痞滿隱隱，食少倦怠",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "胃脘痞滿，時輕時重，喜按，食少納呆，神疲乏力，大便溏薄"
+        },
+        {
+          "variant": "痞滿脹悶，因情緒誘發",
+          "points_to": [
+            "pattern.liver_stomach_disharmony"
+          ],
+          "distinguishing": "胃脘痞滿，兩脅脹悶，因情志不遂而發作或加重，噯氣頻作"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Fullness worse after eating, with sour belching",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Epigastric fullness worse after eating, sour rotten belching, poor appetite, occasionally vomiting undigested food"
+        },
+        {
+          "variant": "Vague fullness with poor appetite and fatigue",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Epigastric fullness that waxes and wanes, better with pressure, poor appetite, fatigue, loose stool"
+        },
+        {
+          "variant": "Fullness triggered by emotional upset",
+          "points_to": [
+            "pattern.liver_stomach_disharmony"
+          ],
+          "distinguishing": "Epigastric fullness with rib-side distension, worse with emotional frustration, frequent belching"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls/NCBI Bookshelf, \"Functional Dyspepsia\", https://www.ncbi.nlm.nih.gov/books/NBK554563/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "合併不明原因體重減輕",
+        "合併吞嚥困難（dysphagia）或吞嚥疼痛（odynophagia）",
+        "合併不明原因缺鐵性貧血",
+        "合併持續嘔吐",
+        "上腹可觸及腫塊或淋巴結腫大",
+        "有上消化道癌症家族史，或年齡 60 歲以上——依指引建議常規安排胃鏡，不論是否有警示症狀"
+      ],
+      "red_flags_en": [
+        "Accompanying unintentional weight loss",
+        "Accompanying difficulty swallowing (dysphagia) or painful swallowing (odynophagia)",
+        "Accompanying unexplained iron-deficiency anemia",
+        "Accompanying persistent vomiting",
+        "A palpable epigastric mass or lymphadenopathy",
+        "Family history of upper GI cancer, or age 60+ — guidance recommends endoscopy regardless of alarm symptoms"
+      ],
+      "sources": [
+        "StatPearls, Functional Dyspepsia (https://www.ncbi.nlm.nih.gov/books/NBK554563/, retrieved 2026-08-11)",
+        "中醫內科學 痞滿辨證分型（食滯／脾虛／肝胃不和）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "StatPearls Functional Dyspepsia, Rome IV alarm features (retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hemiplegia",
+      "name_zh": "半身不遂",
+      "name_en": "Hemiplegia (one-sided body weakness)",
+      "pinyin": "ban shen bu sui",
+      "pinyin_toned": "bàn shēn bú suì",
+      "aliases_zh": [
+        "偏癱",
+        "半身麻痺",
+        "一側肢體無力"
+      ],
+      "aliases_en": [
+        "Hemiparesis",
+        "One-sided weakness",
+        "Unilateral paralysis"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "身體一側（面、臂、腿）的癱瘓或無力，多因腦部或脊髓病變所致，西醫稱偏癱（hemiplegia）或偏輕癱（hemiparesis）。突然發生者幾乎都是急症，需視為中風處理直至排除。",
+      "definition_en": "Paralysis or weakness affecting only one side of the body — face, arm and/or leg — usually from a brain or spinal cord lesion. Sudden onset is almost always a medical emergency and must be treated as stroke until ruled out.",
+      "patient_words_zh": "「一邊手腳突然沒力氣」「一側身體麻痺、抬不起來」「走路一邊拖著腳」",
+      "patient_words_en": "\"One side of my arm and leg suddenly went weak\", \"one side of my body is numb, I can't lift it\", \"I'm dragging one foot when I walk\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "病程",
+          "why": "突然發作幾乎都是急症，須立即啟動中風流程；緩慢漸進者需考慮其他神經系統病變"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併言語謇澀、口眼喎斜、意識改變、視力改變、平衡失調 → 立即就醫"
+        },
+        {
+          "dimension": "部位",
+          "why": "面、臂、腿受累程度與範圍協助定位病灶"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Course",
+          "why": "Sudden onset is almost always an emergency requiring the stroke pathway; gradual onset suggests a different neurological process"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Slurred speech, facial deviation, altered consciousness, vision change, or loss of balance → seek care immediately"
+        },
+        {
+          "dimension": "Location",
+          "why": "The extent of face/arm/leg involvement helps localise the lesion"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "半身不遂突發，兼神昏",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "半身不遂突然發作，兼神志昏蒙、口眼喎斜、言語謇澀，多見於中風中臟腑"
+        },
+        {
+          "variant": "半身不遂，兼肢體麻木",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "半身不遂，肢體麻木不仁，舌質紫暗或有瘀斑，病程較久"
+        },
+        {
+          "variant": "半身不遂，兼氣短乏力",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "半身不遂日久不復，兼氣短乏力、自汗、面色萎黃，屬中風後氣虛血瘀"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sudden hemiplegia with impaired consciousness",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Sudden-onset hemiplegia with clouded consciousness, facial deviation and slurred speech, typical of stroke affecting the organs"
+        },
+        {
+          "variant": "Hemiplegia with limb numbness",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Hemiplegia with numbness, dusky or ecchymotic tongue, longer disease course"
+        },
+        {
+          "variant": "Hemiplegia with shortness of breath and fatigue",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Hemiplegia persisting without recovery, with shortness of breath, fatigue, spontaneous sweating, sallow complexion — typical of post-stroke qi deficiency with blood stasis"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Hemiplegia\", https://my.clevelandclinic.org/health/symptoms/23542-hemiplegia, retrieved 2026-08-11",
+        "American Stroke Association, \"Stroke Symptoms and Warning Signs\" — corroborated via indexed search excerpts of https://www.stroke.org/en/about-stroke/stroke-symptoms (direct fetch blocked by site bot-protection, HTTP 403); B.E. F.A.S.T. content consistent across independent search results but not independently confirmed by direct page render"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "突然發生一側臉部、手臂或腿部無力 → 視為中風，立即撥打急救電話",
+        "一側臉部下垂，或笑起來不對稱",
+        "雙臂上舉時一側手臂下垂",
+        "合併言語含糊或說話困難",
+        "突然失去平衡或協調能力，或突然視力改變",
+        "半身不遂幾乎都是需要儘速就醫評估的徵象"
+      ],
+      "red_flags_en": [
+        "Sudden onset of one-sided face/arm/leg weakness → treat as stroke, call emergency services immediately",
+        "Face drooping on one side, or an uneven smile",
+        "One arm drifting downward when both are raised",
+        "Accompanying slurred or difficult speech",
+        "Sudden loss of balance/coordination, or sudden vision changes",
+        "Hemiplegia is almost always a reason to seek care as soon as possible"
+      ],
+      "sources": [
+        "Cleveland Clinic, Hemiplegia (https://my.clevelandclinic.org/health/symptoms/23542-hemiplegia, retrieved 2026-08-11)",
+        "American Stroke Association B.E. F.A.S.T. — sourced via search index, direct fetch blocked (2026-08-11), needs manual verification",
+        "中醫內科學 中風／半身不遂辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Hemiplegia (directly fetched) + ASA stroke warning signs (search-index sourced only, flagged for manual verification, 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.facial_deviation",
+      "name_zh": "口眼喎斜",
+      "name_en": "Facial (mouth-eye) deviation / drooping",
+      "pinyin": "kou yan wai xie",
+      "pinyin_toned": "kǒu yǎn wāi xié",
+      "aliases_zh": [
+        "口角歪斜",
+        "面癱",
+        "臉歪嘴斜"
+      ],
+      "aliases_en": [
+        "Facial droop",
+        "Facial asymmetry",
+        "Facial palsy"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "一側面部肌肉無力，導致口角、眼裂不對稱或下垂。西醫鑑別兩大機轉：周邊性（第七對腦神經病變，如貝爾氏麻痺，前額肌肉同側受累）與中樞性（腦血管病變，前額肌肉因雙側皮質支配而不受影響）——前額是否受累是床邊鑑別要點。",
+      "definition_en": "One-sided facial muscle weakness causing asymmetry or drooping of the mouth corner and eye. Biomedicine distinguishes two mechanisms: peripheral (facial/cranial nerve VII lesion, e.g. Bell's palsy — the forehead on the weak side is also affected) versus central (stroke — the forehead is spared due to bilateral cortical innervation). Whether the forehead is affected is the key bedside distinguishing sign.",
+      "patient_words_zh": "「一邊嘴角垂下來」「照鏡子發現臉歪了」「一邊眼睛閉不緊」「喝水會從嘴角漏出來」",
+      "patient_words_en": "\"One side of my mouth is drooping\", \"I noticed my face looks crooked in the mirror\", \"I can't close one eye all the way\", \"water dribbles out of one side of my mouth when I drink\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "前額是否同側受累（皺眉、抬眉是否對稱）是鑑別周邊性（貝爾氏麻痺）與中樞性（中風）的床邊要點"
+        },
+        {
+          "dimension": "病程",
+          "why": "突然發生須立即視為可能中風；醫療指引明確指出不應自行判斷是貝爾氏麻痺還是中風，一律儘速就醫"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併言語喪失、單側肢體無力、失去平衡、視力改變、劇烈頭痛、頸部僵硬、抽搐、突發記憶喪失或人格改變 → 立即撥打急救電話"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Whether the forehead on the same side is affected (symmetric brow-raise or not) is the key bedside distinguisher between peripheral (Bell's palsy) and central (stroke) causes"
+        },
+        {
+          "dimension": "Course",
+          "why": "Sudden onset must be treated as possible stroke immediately; guidance explicitly advises against self-distinguishing Bell's palsy from stroke — seek care right away regardless"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Loss of speech, one-sided limb weakness, loss of balance, vision changes, severe headache, neck stiffness, seizures, sudden memory loss or personality change → call emergency services immediately"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "口眼喎斜突發，前額受累",
+          "points_to": [
+            "pattern.wind_external"
+          ],
+          "distinguishing": "突然口角歪斜，患側額紋消失、眼裂變大、鼓腮漏氣，多因風邪中絡，即周邊性面癱"
+        },
+        {
+          "variant": "口眼喎斜，兼半身不遂",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "口眼喎斜伴半身不遂、言語謇澀，患側額紋不消失（前額不受累），多屬中風中經絡"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sudden facial droop with forehead involvement",
+          "points_to": [
+            "pattern.wind_external"
+          ],
+          "distinguishing": "Sudden facial droop with loss of forehead wrinkles on the affected side, widened palpebral fissure, air leaking when puffing the cheeks — typically wind invading the channel, i.e. peripheral facial palsy"
+        },
+        {
+          "variant": "Facial droop with hemiplegia",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Facial droop with hemiplegia and slurred speech, forehead wrinkles preserved on the affected side (forehead spared) — typically stroke affecting the channels"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Bell's Palsy\", https://my.clevelandclinic.org/health/diseases/5457-bells-palsy, retrieved 2026-08-11",
+        "American Stroke Association B.E. F.A.S.T. materials — corroborated via indexed search excerpts of https://www.stroke.org/en/help-and-support/resource-library/be-fast-materials/be-fast-infographic (direct fetch blocked, HTTP 403); not independently confirmed by direct page render"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "突然出現面部下垂 → 視為中風可能，立即就醫（醫療指引明確不建議自行分辨是貝爾氏麻痺或中風）",
+        "合併言語喪失（失語）",
+        "合併突發視力喪失或複視",
+        "合併突發平衡或協調喪失",
+        "合併劇烈頭痛、頸部僵硬、噁心嘔吐",
+        "合併抽搐、突發記憶喪失或人格／情緒改變",
+        "合併視覺、聽覺、嗅覺、味覺或觸覺任何一種突然喪失"
+      ],
+      "red_flags_en": [
+        "Facial drooping appearing suddenly → treat as possible stroke, seek care immediately (guidance explicitly advises against trying to self-distinguish Bell's palsy from stroke)",
+        "Accompanying loss of speech (aphasia)",
+        "Accompanying sudden vision loss or double vision",
+        "Accompanying sudden loss of balance/coordination",
+        "Accompanying sudden severe headache, neck stiffness, nausea/vomiting",
+        "Accompanying seizures, sudden memory loss, or personality/emotional change",
+        "Sudden loss of any sense (vision, hearing, smell, taste, touch) alongside the facial asymmetry"
+      ],
+      "sources": [
+        "Cleveland Clinic, Bell's Palsy (https://my.clevelandclinic.org/health/diseases/5457-bells-palsy, retrieved 2026-08-11)",
+        "American Stroke Association B.E. F.A.S.T. materials — sourced via search index, direct fetch blocked (2026-08-11), needs manual verification",
+        "中醫內科學 面癱／中風辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Bell's Palsy (directly fetched) + ASA B.E. F.A.S.T. (search-index sourced only, flagged, 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.altered_consciousness",
+      "name_zh": "神志不清",
+      "name_en": "Altered / impaired consciousness",
+      "pinyin": "shen zhi bu qing",
+      "pinyin_toned": "shén zhì bù qīng",
+      "aliases_zh": [
+        "意識模糊",
+        "神識昏蒙",
+        "神昏"
+      ],
+      "aliases_en": [
+        "Altered mental status",
+        "Confusion",
+        "Impaired consciousness"
+      ],
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "病人清醒度（意識水平）或認知內容（定向感、思考、語言）較平時發生改變，西醫稱意識狀態改變（altered mental status），是主訴／體徵而非診斷，需儘速找出病因。",
+      "definition_en": "A change from a person's baseline arousal (wakefulness/alertness) and/or cognitive content (orientation, thought, language) — termed altered mental status in biomedicine. A presenting symptom/sign, not a diagnosis, that requires prompt evaluation to identify the underlying cause.",
+      "patient_words_zh": "（多由家屬代述）「叫他都沒反應」「講話語無倫次」「突然變得很奇怪，認不得人」「昏昏沉沉叫不太醒」",
+      "patient_words_en": "(often reported by family) \"He's not responding when we call him\", \"her speech isn't making sense\", \"he suddenly seemed strange, didn't recognize people\", \"she's drowsy and hard to rouse\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "多為急性發作，非週期性"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值（如 GCS 分數），屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "病程",
+          "why": "突發者需優先排除中風、代謝異常、中毒等急症；緩慢進行者需考慮神經退化性疾病"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併一側肢體無力、言語障礙、劇烈頭痛提示中風；合併高熱、頸部僵硬提示腦膜炎；合併抽搐、胸痛、呼吸困難需立即處理"
+        },
+        {
+          "dimension": "誘因",
+          "why": "頭部外傷、藥物或毒物接觸史、糖尿病病史（低血糖）、感染徵象等提供病因線索"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Course",
+          "why": "Sudden onset should prompt ruling out stroke, metabolic disturbance, or poisoning first; gradual onset suggests a neurodegenerative process"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "One-sided weakness, speech difficulty, severe headache suggest stroke; high fever with neck stiffness suggests meningitis; seizures, chest pain, or breathing difficulty require immediate management"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Head trauma, drug/toxin exposure, a history of diabetes (hypoglycemia), or signs of infection provide etiological clues"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "神志昏蒙，兼半身不遂、口眼喎斜",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "突然神志昏蒙不清，兼半身不遂、口眼喎斜、言語謇澀，多見於中風中臟腑"
+        },
+        {
+          "variant": "神志昏蒙，兼痰壅氣粗",
+          "points_to": [
+            "pattern.phlegm_misting_heart"
+          ],
+          "distinguishing": "神志昏蒙，喉間痰聲漉漉，呼吸氣粗，肢體不溫"
+        },
+        {
+          "variant": "神志昏蒙，高熱煩躁",
+          "points_to": [
+            "pattern.phlegm_fire_disturbing_heart"
+          ],
+          "distinguishing": "神志昏蒙譫語，高熱煩躁，甚則抽搐，舌紅絳"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Clouded consciousness with hemiplegia and facial deviation",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Sudden clouded/impaired consciousness with hemiplegia, facial deviation and slurred speech, typical of stroke affecting the organs"
+        },
+        {
+          "variant": "Clouded consciousness with phlegm-blocked breathing",
+          "points_to": [
+            "pattern.phlegm_misting_heart"
+          ],
+          "distinguishing": "Clouded consciousness with rattling phlegm sounds in the throat, coarse breathing, cold limbs"
+        },
+        {
+          "variant": "Clouded consciousness with high fever and agitation",
+          "points_to": [
+            "pattern.phlegm_fire_disturbing_heart"
+          ],
+          "distinguishing": "Clouded consciousness with delirious speech, high fever and agitation, sometimes convulsions, deep red tongue"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls/NCBI Bookshelf, \"Change in Mental Status\", https://www.ncbi.nlm.nih.gov/books/NBK441973/, retrieved 2026-08-11",
+        "Cleveland Clinic, \"Altered Mental Status (AMS)\", https://my.clevelandclinic.org/health/diseases/23159-altered-mental-status-ams, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "突然意識混亂合併一側肢體無力、言語含糊或劇烈頭痛 → 立即就醫（排除中風）",
+        "意識改變合併高燒與頸部僵硬（排除腦膜炎）",
+        "意識改變合併抽搐、胸痛或呼吸困難",
+        "無法喚醒、不能保護呼吸道（如喪失嘔吐反射）→ 需緊急呼吸道處置",
+        "出現單側瞳孔放大且對光無反應，或血壓上升合併心跳變慢（庫欣氏反應）→ 提示腦疝迫近",
+        "突然定向力喪失、注意力渙散、行為異常（譫妄）本身即為醫療急症"
+      ],
+      "red_flags_en": [
+        "Sudden confusion plus one-sided weakness, slurred speech, or severe headache → seek care immediately (rule out stroke)",
+        "Altered mental status with high fever and stiff neck (rule out meningitis)",
+        "Altered mental status with seizures, chest pain, or trouble breathing",
+        "Cannot be roused, or cannot protect the airway (e.g. absent gag reflex) → emergency airway management needed",
+        "A unilateral dilated, non-reactive pupil, or rising blood pressure with falling heart rate (Cushing reflex) → suggests impending brain herniation",
+        "Sudden disorientation, distractibility, or unusual behaviour (delirium) is itself considered a medical emergency"
+      ],
+      "sources": [
+        "StatPearls, Change in Mental Status (https://www.ncbi.nlm.nih.gov/books/NBK441973/, retrieved 2026-08-11)",
+        "Cleveland Clinic, Altered Mental Status (https://my.clevelandclinic.org/health/diseases/23159-altered-mental-status-ams, retrieved 2026-08-11)",
+        "中醫內科學 神昏／中風中臟腑辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "StatPearls Change in Mental Status + Cleveland Clinic AMS (both retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.jaundice",
+      "name_zh": "黃疸",
+      "name_en": "Jaundice",
+      "pinyin": "huang dan",
+      "pinyin_toned": "huáng dǎn",
+      "aliases_zh": [
+        "目睛黃染",
+        "身目俱黃",
+        "皮膚黃染"
+      ],
+      "aliases_en": [
+        "Yellowing of the sclera (eyes)",
+        "Jaundice of body and eyes",
+        "Yellowing of the skin"
+      ],
+      "taxonomy_ids": [
+        "sym.skin"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "皮膚、黏膜及鞏膜因膽紅素蓪積而呈現黃色，西醫稱黃疸（jaundice/icterus），機轉分肝細胞性、膽道阻塞性與溶血性三大類。中西醫在此症狀上是同一觀察，命名幾乎完全重疊。",
+      "definition_en": "Yellow discoloration of the skin, mucous membranes and sclera caused by bilirubin accumulation — termed jaundice/icterus in biomedicine, classified as hepatocellular, biliary-obstructive, or hemolytic in mechanism. TCM and biomedicine name this exact same observation almost identically.",
+      "patient_words_zh": "「眼白變黃了」「皮膚變黃，尿也變深」「家人說我臉色發黃」",
+      "patient_words_en": "\"The whites of my eyes turned yellow\", \"my skin's gone yellow, and my urine's darker too\", \"my family said my face looks yellow\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "全身性變色，不分側"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值（如膽紅素數值），屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "伴隨症",
+          "why": "合併意識混亂、定向力障礙提示肝性腦病；合併發熱、右上腹痛（夏科氏三聯徵）提示急性膽管炎；合併皮膚搔癢、深色尿、淺色糞便提示膽道阻塞"
+        },
+        {
+          "dimension": "誘因",
+          "why": "近期用藥史、飲酒史、病毒性肝炎接觸史、膽結石病史提供病因線索"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性快速加重（尤其合併發熱腹痛）須視為急症；慢性緩慢出現者仍需完整評估"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Accompanying signs",
+          "why": "Confusion or disorientation suggests hepatic encephalopathy; fever with right-upper-quadrant pain (Charcot's triad) suggests acute cholangitis; itching, dark urine and pale stools suggest biliary obstruction"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Recent medication use, alcohol history, viral hepatitis exposure, or a history of gallstones provides etiological clues"
+        },
+        {
+          "dimension": "Course",
+          "why": "Rapid worsening (especially with fever and abdominal pain) must be treated as an emergency; gradual chronic onset still needs full evaluation"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "黃疸鮮明如橘，兼發熱脅痛",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "身目俱黃，色鮮明如橘皮，兼發熱、脅痛、口苦、小便黃赤，舌苔黃膩"
+        },
+        {
+          "variant": "黃疸晦暗如煙燻，兼畏寒",
+          "points_to": [
+            "pattern.spleen_yang_deficiency"
+          ],
+          "distinguishing": "身目俱黃，色晦暗如煙燻，兼脘腹脹悶、畏寒肢冷、大便溏薄，屬陰黃"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bright orange-yellow jaundice with fever and hypochondriac pain",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "Bright, orange-peel-like jaundice of skin and eyes with fever, hypochondriac pain, bitter taste, dark urine, yellow greasy tongue coating"
+        },
+        {
+          "variant": "Dull, smoky jaundice with cold intolerance",
+          "points_to": [
+            "pattern.spleen_yang_deficiency"
+          ],
+          "distinguishing": "Dull, smoky-yellow discoloration of skin and eyes with epigastric fullness, cold intolerance and cold limbs, loose stool — a \"yin jaundice\" pattern"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NHS, \"Jaundice\", https://www.nhs.uk/conditions/jaundice/, retrieved 2026-08-11",
+        "StatPearls/NCBI Bookshelf, \"Hepatic Encephalopathy\", https://www.ncbi.nlm.nih.gov/books/NBK430869/, retrieved 2026-08-11",
+        "StatPearls/NCBI Bookshelf, \"Cholangitis\", https://www.ncbi.nlm.nih.gov/books/NBK558946/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "liver_disease_review"
+      ],
+      "red_flags_zh": [
+        "黃疸合併意識混亂、定向力障礙 → 提示肝性腦病，屬醫療急症",
+        "黃疸合併發熱與右上腹痛（夏科氏三聯徵）→ 提示急性膽管炎，須緊急抗生素與膽道引流",
+        "任何皮膚或眼白發黃都應儘速就醫評估",
+        "合併皮膚搔癢、深色尿液、淺色（陶土狀）糞便 → 提示膽道阻塞",
+        "既有肝病病史者，黃疸加重、腹部腫脹（腹水）或新發發熱 → 須立即就醫"
+      ],
+      "red_flags_en": [
+        "Jaundice with confusion or disorientation → suggests hepatic encephalopathy, a medical emergency",
+        "Fever with right-upper-quadrant abdominal pain and jaundice (Charcot's triad) → suggests acute cholangitis, needs urgent antibiotics and biliary drainage",
+        "Any yellowing of skin or eyes warrants prompt medical evaluation",
+        "Accompanying itchy skin, dark urine, and pale/clay-coloured stools → suggests biliary obstruction",
+        "In someone with known liver disease, worsening jaundice, increasing abdominal swelling (ascites), or new fever → seek care immediately"
+      ],
+      "sources": [
+        "NHS, Jaundice (https://www.nhs.uk/conditions/jaundice/, retrieved 2026-08-11)",
+        "StatPearls, Hepatic Encephalopathy (https://www.ncbi.nlm.nih.gov/books/NBK430869/, retrieved 2026-08-11)",
+        "StatPearls, Cholangitis (https://www.ncbi.nlm.nih.gov/books/NBK558946/, retrieved 2026-08-11)",
+        "中醫內科學 黃疸辨證分型（陽黃／陰黃）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "NHS Jaundice + StatPearls Hepatic Encephalopathy + StatPearls Cholangitis (all retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.bloody_stool",
+      "name_zh": "便血",
+      "name_en": "Bloody stool / rectal bleeding",
+      "pinyin": "bian xie",
+      "pinyin_toned": "biàn xiě",
+      "aliases_zh": [
+        "血便",
+        "肛門出血",
+        "大便帶血"
+      ],
+      "aliases_en": [
+        "Hematochezia",
+        "Rectal bleeding",
+        "Blood in the stool"
+      ],
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "排便時或糞便中出現肉眼可見的鮮紅或暗紅色血液，西醫稱血便（hematochezia），多數來自下消化道（肛門直腸或結腸），少數為上消化道大量出血所致，需與柏油便（melena，黑便）鑑別。",
+      "definition_en": "Visible red or maroon blood passed with or in the stool — termed hematochezia in biomedicine, most often from a lower gastrointestinal source (anorectal or colonic), occasionally from a brisk upper GI bleed. Distinguished from melena (black, tarry stool).",
+      "patient_words_zh": "「大便有血」「擦屁股衛生紙上有血」「馬桶裡的水變紅了」「大便顏色暗暗的」",
+      "patient_words_en": "\"There's blood in my stool\", \"blood on the toilet paper when I wipe\", \"the water in the toilet bowl turned red\", \"my stool looks dark\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀（腸道整體）"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "鮮紅色多來自肛門直腸；暗紅色需考慮較高位結腸；黑便（柏油便）提示上消化道出血"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併腹痛、不明原因體重減輕、排便習慣改變 → 需排除大腸直腸腫瘤或發炎性腸道疾病；合併頭暈、心悸、冒冷汗 → 提示失血量大，需立即評估"
+        },
+        {
+          "dimension": "病程",
+          "why": "已知痔瘡病史但便血持續未緩解，仍應安排大腸鏡檢查，不可逕自歸因於痔瘡"
+        },
+        {
+          "dimension": "誘因",
+          "why": "曾接受骨盆腔放射治療或手術史，本次便血需特別留意"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "Bright red blood usually comes from the anorectum; darker red suggests a more proximal colonic source; black tarry stool (melena) suggests an upper GI source"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Abdominal pain, unintentional weight loss, or a change in bowel habit → raises concern for colorectal malignancy or inflammatory bowel disease; dizziness, palpitations, cold sweating → suggests significant blood loss, evaluate immediately"
+        },
+        {
+          "dimension": "Course",
+          "why": "Continued bleeding despite a known history of treated hemorrhoids should still prompt colonoscopy rather than being attributed to hemorrhoids by default"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A history of pelvic radiation or pelvic surgery warrants particular attention to a new bleeding episode"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "便血鮮紅，肛門灼熱",
+          "points_to": [
+            "pattern.large_intestine_damp_heat"
+          ],
+          "distinguishing": "便血鮮紅，量較多，肛門灼熱疼痛，大便黏滯不爽，舌苔黃膩"
+        },
+        {
+          "variant": "便血暗紅，先血後便",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "便血色暗淡，先血後便或血便混雜，兼神疲乏力、面色萎黃、食少便溏"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bright red blood with anal burning",
+          "points_to": [
+            "pattern.large_intestine_damp_heat"
+          ],
+          "distinguishing": "Bright red blood in greater amount, burning anal pain, sticky stool, yellow greasy tongue coating"
+        },
+        {
+          "variant": "Dark blood, blood before stool",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "Dull dark blood, blood appearing before the stool or mixed in, with fatigue, sallow complexion, poor appetite, loose stool"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls/NCBI Bookshelf, \"Rectal Bleeding\", https://www.ncbi.nlm.nih.gov/books/NBK563143/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "active_bleeding_medical_review"
+      ],
+      "red_flags_zh": [
+        "便血合併腹痛、不明原因體重減輕或排便習慣改變 → 需排除大腸直腸惡性腫瘤或發炎性腸道疾病",
+        "合併裡急後重、假性腹瀉或排便時疼痛",
+        "曾接受骨盆腔放射治療或手術史，本次便血",
+        "慢性出血已導致明顯貧血",
+        "合併心跳過快、血壓過低等血流動力學不穩定徵象 → 需立即輸液復甦，不可僅作常規轉診",
+        "痔瘡病史已治療但便血持續 → 應安排大腸鏡而非逕自歸因痔瘡"
+      ],
+      "red_flags_en": [
+        "Bleeding with abdominal pain, unintentional weight loss, or a change in bowel habit → raises concern for colorectal malignancy or inflammatory bowel disease",
+        "Accompanying tenesmus, spurious/overflow diarrhea, or painful defecation",
+        "History of pelvic radiation or pelvic surgery with new bleeding",
+        "Chronic bleeding causing significant anemia",
+        "Hemodynamic instability (e.g. tachycardia, hypotension) with rectal bleeding requires immediate resuscitation, not routine referral",
+        "Continued bleeding despite treated/resolved hemorrhoids should prompt colonoscopy rather than default attribution to hemorrhoids"
+      ],
+      "sources": [
+        "StatPearls, Rectal Bleeding (https://www.ncbi.nlm.nih.gov/books/NBK563143/, retrieved 2026-08-11)",
+        "中醫內科學 便血辨證分型（腸道濕熱／脾不統血）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "StatPearls Rectal Bleeding (retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.rectal_prolapse",
+      "name_zh": "肛門腫物脫出",
+      "name_en": "Anal/rectal prolapse or protruding mass",
+      "pinyin": "gang men zhong wu tuo chu",
+      "pinyin_toned": "gāng mén zhǒng wù tuō chū",
+      "aliases_zh": [
+        "痔核脫出",
+        "脫肛",
+        "肛門墜脹脫出"
+      ],
+      "aliases_en": [
+        "Rectal prolapse",
+        "Prolapsed hemorrhoid",
+        "Protruding anal mass"
+      ],
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "排便時或平時肛門有腫物脫出，可能是內痔脫垂或直腸全層脫出（脫肛），西醫依脫出組織的環狀（脫肛）或放射狀（痔瘡）皺褶區分兩者。中醫統稱脫肛或痔核脫出，責之於中氣下陷。",
+      "definition_en": "A mass protruding from the anus during defecation or at rest — either prolapsed hemorrhoidal tissue or full-thickness rectal prolapse. Biomedicine distinguishes them on exam by the fold pattern of the protruding tissue (concentric folds = rectal prolapse, radial folds = hemorrhoids). TCM attributes both to sinking of the middle qi.",
+      "patient_words_zh": "「大便的時候會脫出一塊肉」「肛門有東西掉出來，要用手推回去」「肛門墜脹，好像要掉出來」",
+      "patient_words_en": "\"Something comes out when I have a bowel movement\", \"there's a lump hanging out of my anus, I have to push it back in\", \"a heavy dragging feeling like something's about to fall out\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "固定於肛門部位，非多部位症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "程度",
+          "why": "能否自行回納、需用手推回、或完全無法回納，是嚴重度分級的關鍵問題"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "脫出組織持續在外且無法推回 → 有嵌頓、缺血壞死風險，屬外科急症；合併黏液、糞便或血液滲漏"
+        },
+        {
+          "dimension": "誘因",
+          "why": "久蹲久坐、慢性便秘用力、產後、長期咳嗽等增加腹壓的因素"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併新發或持續便血、排便習慣改變、腹痛，需安排大腸鏡排除更近端病灶"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Severity",
+          "why": "Whether the mass reduces spontaneously, needs manual reduction, or cannot be reduced at all is the key severity question"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Tissue that stays protruded and cannot be reduced → risk of incarceration/strangulation, a surgical emergency; accompanying mucus, stool, or blood leakage"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Prolonged squatting/sitting, chronic constipation with straining, postpartum status, or chronic cough increase intra-abdominal pressure"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "New or ongoing hematochezia, a change in bowel habit, or abdominal pain warrants colonoscopy to exclude a more proximal lesion"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "肛門腫物脫出，需手推回納",
+          "points_to": [
+            "pattern.spleen_qi_sinking"
+          ],
+          "distinguishing": "肛門腫物反覆脫出，勞累或久站久蹲後加重，需用手推回，兼氣短乏力、少氣懶言"
+        },
+        {
+          "variant": "肛門腫物脫出，灼熱腫痛",
+          "points_to": [
+            "pattern.large_intestine_damp_heat"
+          ],
+          "distinguishing": "肛門腫物脫出，兼灼熱腫痛、大便黏滯不爽、肛門墜脹"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Protruding mass requiring manual reduction",
+          "points_to": [
+            "pattern.spleen_qi_sinking"
+          ],
+          "distinguishing": "Recurrent protruding anal mass, worse with exertion or prolonged standing/squatting, requires manual reduction, with shortness of breath and low energy"
+        },
+        {
+          "variant": "Protruding mass with burning swelling",
+          "points_to": [
+            "pattern.large_intestine_damp_heat"
+          ],
+          "distinguishing": "Protruding anal mass with burning, swelling pain, sticky stool, a heavy dragging sensation in the anus"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Rectal Prolapse\", https://my.clevelandclinic.org/health/diseases/14615-rectal-prolapse, retrieved 2026-08-11",
+        "StatPearls/NCBI Bookshelf, \"Rectal Bleeding\", https://www.ncbi.nlm.nih.gov/books/NBK563143/, retrieved 2026-08-11 (used here for the concurrent-hematochezia colonoscopy indication, already fetched for sym.bloody_stool)"
+      ],
+      "safety_flags": [
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "脫出的紅色肉狀組織持續在外、無法推回 → 提示真正的直腸脫出而非單純痔瘡",
+        "脫出組織嵌頓（卡在肛門外無法手動回納）→ 有缺血壞死風險，屬外科急症",
+        "合併黏液、糞便或血液由肛門滲漏",
+        "合併持續排便不盡感或肛門疼痛、搔癢",
+        "合併新發或持續便血、排便習慣改變、腹痛 → 應安排大腸鏡排除更近端病灶，而非僅局部處置"
+      ],
+      "red_flags_en": [
+        "A red, fleshy mass that stays protruded and does not reduce → suggests true rectal prolapse rather than simple hemorrhoids",
+        "Incarceration — prolapsed tissue stuck outside the anus that cannot be manually reduced → risk of strangulation and tissue necrosis, a surgical emergency",
+        "Accompanying leakage of mucus, stool, or blood from the anus",
+        "Accompanying persistent sensation of incomplete evacuation, or anal pain/itching",
+        "New or continued hematochezia, change in bowel habit, or abdominal pain → should prompt colonoscopy to exclude a more proximal lesion, not just local anorectal treatment"
+      ],
+      "sources": [
+        "Cleveland Clinic, Rectal Prolapse (https://my.clevelandclinic.org/health/diseases/14615-rectal-prolapse, retrieved 2026-08-11)",
+        "StatPearls, Rectal Bleeding (https://www.ncbi.nlm.nih.gov/books/NBK563143/, retrieved 2026-08-11)",
+        "中醫內科學 脫肛辨證（中氣下陷／大腸濕熱）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Rectal Prolapse (retrieved 2026-08-11); the associated-hematochezia flag cross-references the already-fetched StatPearls Rectal Bleeding page rather than an unverified PMC review"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.polyarthralgia",
+      "name_zh": "肢體關節疼痛",
+      "name_en": "Generalized joint pain (polyarthralgia)",
+      "pinyin": "zhi ti guan jie teng tong",
+      "pinyin_toned": "zhī tǐ guān jié téng tòng",
+      "aliases_zh": [
+        "多關節疼痛",
+        "遍身關節痛",
+        "周身骨節疼痛"
+      ],
+      "aliases_en": [
+        "Polyarthralgia",
+        "Multiple joint pain",
+        "Generalized arthralgia"
+      ],
+      "taxonomy_ids": [
+        "sym.pain",
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "五個或以上關節同時或先後出現疼痛，不限定於單一關節（與膝痛、肩痛等單一關節症狀不同），西醫稱多關節痛（polyarthralgia），是多種發炎性、感染性、機械性疾病的常見主訴。",
+      "definition_en": "Pain in five or more joints, simultaneously or in sequence — distinct from single-joint complaints like knee pain or shoulder pain. Termed polyarthralgia in biomedicine, a common presenting complaint of many inflammatory, infectious, and mechanical conditions.",
+      "patient_words_zh": "「全身關節都痛，說不出哪一個」「這裡痛好一點，那裡又開始痛」「早上起來渾身關節僵硬又痛」",
+      "patient_words_en": "\"My joints all ache, I can't pin down just one\", \"one joint calms down and another starts hurting\", \"I wake up with my whole body's joints stiff and sore\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "遊走痛屬風痹 · 冷痛屬寒痹 · 重著痛屬濕痹 · 灼痛屬熱痹"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "對稱性小關節（手指、腕）受累合併晨僵 1-3 小時，是發炎性關節炎（如類風濕）的典型模式"
+        },
+        {
+          "dimension": "性質",
+          "why": "遊走不定屬風痹；冷痛遇寒加重屬寒痹；重著痛屬濕痹；紅腫灼痛屬熱痹"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併發熱、體重減輕、疲倦、皮疹、口腔潰瘍或腎功能異常 → 提示系統性自體免疫病；單一關節急性紅腫熱痛需優先排除感染性關節炎（化膿性關節炎為急症）"
+        },
+        {
+          "dimension": "病程",
+          "why": "症狀提示類風濕性關節炎者，應在三週內轉診風濕科評估，及早治療對預後影響大"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Symmetric small-joint (hand/foot) involvement with 1-3 hours of morning stiffness is the classic pattern of inflammatory arthritis (e.g. rheumatoid arthritis)"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Migratory pain suggests wind bi; cold pain worse with cold exposure suggests cold bi; heavy dull pain suggests damp bi; red hot burning pain suggests heat bi"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever, weight loss, malaise, rash, mouth ulcers, or kidney involvement suggest a systemic autoimmune disease; acute single-joint redness/swelling/heat should first prompt ruling out septic arthritis, an emergency"
+        },
+        {
+          "dimension": "Course",
+          "why": "Symptoms suggestive of rheumatoid arthritis should prompt rheumatology referral within 3 weeks — early treatment materially affects outcome"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "關節遊走疼痛，痛無定處",
+          "points_to": [
+            "pattern.wind_damp_bi"
+          ],
+          "distinguishing": "肢體關節遊走性疼痛，痛無定處，兼惡風發熱，苔薄白"
+        },
+        {
+          "variant": "關節冷痛，遇寒加重",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "關節冷痛，痛有定處，遇寒加重，得溫則減，關節屈伸不利"
+        },
+        {
+          "variant": "關節紅腫灼痛",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "關節紅腫灼熱疼痛，得冷則舒，可有發熱、口渴，舌紅苔黃"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Migratory joint pain, no fixed location",
+          "points_to": [
+            "pattern.wind_damp_bi"
+          ],
+          "distinguishing": "Migratory joint pain with no fixed location, with aversion to wind and fever, thin white tongue coating"
+        },
+        {
+          "variant": "Cold joint pain worse with cold exposure",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Cold joint pain in a fixed location, worse with cold exposure, better with warmth, restricted joint movement"
+        },
+        {
+          "variant": "Red, swollen, burning joint pain",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "Red, swollen, burning joint pain relieved by cold, sometimes with fever and thirst, red tongue with yellow coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls/NCBI Bookshelf, \"Polyarticular Arthritis\", https://www.ncbi.nlm.nih.gov/books/NBK537170/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "單一或多個關節突然嚴重腫脹、發熱、疼痛 → 需排除化膿性關節炎（感染性），屬急症",
+        "合併發熱、體重減輕、明顯疲倦或血管炎性皮疹、口腔潰瘍 → 提示系統性自體免疫病或感染，而非單純機械性關節痛",
+        "對稱性小關節（手、足）受累，晨僵持續 1-3 小時 → 典型發炎性關節炎模式，建議三週內轉診風濕科",
+        "合併神經功能障礙"
+      ],
+      "red_flags_en": [
+        "Sudden severe swelling, warmth, and pain in one or more joints → rule out septic (infectious) arthritis, an emergency",
+        "Accompanying fever, weight loss, marked fatigue, vasculitic rash, or mouth ulcers → suggests a systemic autoimmune disease or infection rather than simple mechanical joint pain",
+        "Symmetric small-joint (hand/foot) involvement with 1-3 hours of morning stiffness → classic inflammatory arthritis pattern, guidance recommends rheumatology referral within 3 weeks",
+        "Accompanying neurological impairment"
+      ],
+      "sources": [
+        "StatPearls, Polyarticular Arthritis (https://www.ncbi.nlm.nih.gov/books/NBK537170/, retrieved 2026-08-11)",
+        "中醫內科學 痹證辨證分型（風痹／寒痹／濕痹／熱痹）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "StatPearls Polyarticular Arthritis (retrieved 2026-08-11); the 3-week rheumatology referral point is standard rheumatology practice guidance reflected in the same source's differential-workup framing"
+      },
+      "supporting_measurements": [
+        "metric.pain_score"
+      ],
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.muscle_atrophy",
+      "name_zh": "肌肉萎縮",
+      "name_en": "Muscle atrophy / wasting",
+      "pinyin": "ji rou wei suo",
+      "pinyin_toned": "jī ròu wěi suō",
+      "aliases_zh": [
+        "肌肉消瘦",
+        "肌肉瘦削",
+        "廢用性萎縮"
+      ],
+      "aliases_en": [
+        "Muscle wasting",
+        "Muscular atrophy",
+        "Disuse atrophy"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "肌肉組織體積與力量的減少，西醫依機轉分廢用性（通常可逆）、病理性（老化、飢餓、內分泌疾病）與神經性（神經損傷或病變，通常最嚴重、最不易恢復）三類。是體徵，需先定位機轉再找病因。",
+      "definition_en": "Loss or thinning of muscle tissue with reduced bulk and strength. Biomedicine classifies it as physiologic (disuse, generally reversible), pathologic (aging, starvation, endocrine disease), or neurogenic (nerve injury/disease, generally the most severe and least reversible). A sign requiring the mechanism to be located before the cause is sought.",
+      "patient_words_zh": "「這隻手變細了，沒力氣」「肌肉一直在消瘦」「腿變細了，走路沒力」",
+      "patient_words_en": "\"This arm's gotten thinner, weaker\", \"my muscles keep wasting away\", \"my leg's gotten skinny, no strength when I walk\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "單側明顯較對側細小提示神經性萎縮，需定位病灶"
+        },
+        {
+          "dimension": "病程",
+          "why": "神經性萎縮發展速度通常較廢用性快，且常合併麻木、刺痛或無力"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併步態或平衡問題、言語或吞嚥困難、面部無力、認知功能漸退 → 提示系統性神經退化性疾病，需儘速評估；短期內出現的疼痛性無力提示發炎性肌炎"
+        },
+        {
+          "dimension": "誘因",
+          "why": "長期臥床、石膏固定等廢用病史提供病因線索"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "One limb visibly smaller than the other suggests neurogenic atrophy and warrants localising the lesion"
+        },
+        {
+          "dimension": "Course",
+          "why": "Neurogenic atrophy tends to progress faster than disuse atrophy, and is often accompanied by numbness, tingling or weakness"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Gait/balance problems, speech or swallowing difficulty, facial weakness, or progressive cognitive decline → suggest a systemic neurodegenerative cause, warrants prompt evaluation; a short history of painful weakness suggests inflammatory myositis"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A history of prolonged bed rest or immobilisation (e.g. cast) provides an etiological clue for disuse"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "肌肉萎縮，兼肢體麻木無力",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "肌肉漸進萎縮，肢體軟弱無力，兼麻木、面色萎黃、神疲乏力"
+        },
+        {
+          "variant": "肌肉萎縮，兼腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "肌肉萎縮日久，兼腰膝痠軟、步履不穩、精神委靡，多見於久病或年長者"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Muscle atrophy with limb numbness and weakness",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Progressive muscle atrophy with limb weakness, numbness, sallow complexion, fatigue"
+        },
+        {
+          "variant": "Muscle atrophy with weak low back and knees",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Long-standing muscle atrophy with weak aching low back and knees, unsteady gait, low spirits, mainly in chronic illness or older patients"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Cleveland Clinic, \"Muscle Atrophy\", https://my.clevelandclinic.org/health/diseases/22310-muscle-atrophy, retrieved 2026-08-11",
+        "MedlinePlus Medical Encyclopedia, \"Muscle atrophy\", https://medlineplus.gov/ency/article/003188.htm — search-summary sourced, not independently re-fetched in full this session, flagged for manual verification"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "萎縮發展速度較快，合併患側肢體麻木、刺痛或無力 → 提示神經性病因，需儘速評估",
+        "一側肢體明顯較對側細小（不對稱萎縮）",
+        "合併步態或平衡問題、言語或吞嚥困難、臉部無力，或漸進性認知功能減退 → 提示系統性神經退化性疾病",
+        "短期內（數週至數月）出現的疼痛性無力，成年後新發 → 提示發炎性肌炎，而非單純廢用性萎縮"
+      ],
+      "red_flags_en": [
+        "Rapid-onset atrophy with numbness, tingling, or weakness in the affected limb → suggests a neurogenic cause, warrants prompt evaluation",
+        "One limb visibly smaller than the other (asymmetric wasting)",
+        "Concurrent gait/balance problems, speech or swallowing difficulty, facial weakness, or progressive cognitive decline → suggests a systemic neurodegenerative cause",
+        "A short history (weeks to months) of painful weakness developing in adulthood → suggests inflammatory myositis rather than simple disuse atrophy"
+      ],
+      "sources": [
+        "Cleveland Clinic, Muscle Atrophy (https://my.clevelandclinic.org/health/diseases/22310-muscle-atrophy, retrieved 2026-08-11)",
+        "MedlinePlus, Muscle atrophy — search-summary sourced, needs manual verification (2026-08-11)",
+        "中醫內科學 痿證辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "Cleveland Clinic Muscle Atrophy (directly fetched, 2026-08-11); MedlinePlus supplementary detail flagged as search-summary only"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.flaccid_paralysis",
+      "name_zh": "不能隨意運動",
+      "name_en": "Loss of voluntary movement (flaccid paralysis)",
+      "pinyin": "bu neng sui yi yun dong",
+      "pinyin_toned": "bù néng suí yì yùn dòng",
+      "aliases_zh": [
+        "軟癱",
+        "肢體痿廢",
+        "隨意運動喪失"
+      ],
+      "aliases_en": [
+        "Flaccid paralysis",
+        "Loss of voluntary movement",
+        "Lower motor neuron paralysis"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "自主肌肉活動喪失，伴肌張力降低（鬆軟）與反射減弱或消失，西醫稱鬆弛性麻痺（flaccid paralysis），源於下運動神經元病變，與痙攣性麻痺（上運動神經元病變，肌張力增高、反射亢進）相對。",
+      "definition_en": "Loss of voluntary muscle movement with decreased or absent muscle tone (hypotonia) and decreased or absent reflexes — termed flaccid paralysis in biomedicine, arising from a lower-motor-neuron lesion, as opposed to spastic paralysis (upper-motor-neuron lesion with increased tone and hyperreflexia).",
+      "patient_words_zh": "「這隻手完全動不了，軟軟的」「腿沒力氣抬不起來」「肢體軟弱無力，不聽使喚」",
+      "patient_words_en": "\"This arm just won't move, it's completely limp\", \"my leg has no strength, I can't lift it\", \"my limb feels weak and floppy, it won't do what I tell it\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "病程",
+          "why": "數小時至數日內快速進展的無力，尤其兒童，須視為需通報的緊急狀況"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併呼吸肌無力（呼吸急促、費力）→ 可能需插管，屬最緊急的紅旗；合併顱神經受累（吞嚥、言語、眼球運動障礙）提示氣道風險"
+        },
+        {
+          "dimension": "部位",
+          "why": "受累範圍（單肢、雙側、上升性）協助定位病灶與判斷急迫性"
+        },
+        {
+          "dimension": "性質",
+          "why": "若同時出現肌張力增高、反射亢進，需重新考慮是否為痙攣性而非鬆弛性病變"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Course",
+          "why": "Weakness progressing rapidly over hours to days, especially in a child, must be treated as a reportable emergency"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Respiratory muscle weakness (rapid, laboured breathing) → may need intubation, the most urgent red flag; cranial nerve involvement (swallowing, speech, eye movement) signals airway risk"
+        },
+        {
+          "dimension": "Location",
+          "why": "The extent of involvement (single limb, bilateral, ascending) helps localise the lesion and gauge urgency"
+        },
+        {
+          "dimension": "Quality",
+          "why": "If increased tone or hyperreflexia is also present, reconsider whether this is actually a spastic rather than flaccid process"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "肢體軟弱不能隨意運動，兼皮膚枯槁",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "肢體軟弱，不能隨意運動，皮膚枯槁不澤，氣短懶言，食少便溏"
+        },
+        {
+          "variant": "下肢軟弱突發，兼腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "下肢痿軟無力，不能站立行走，兼腰膝痠軟、頭暈耳鳴"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Flaccid limb weakness with withered skin",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "Flaccid limb weakness, loss of voluntary movement, dry withered skin, shortness of breath, poor appetite, loose stool"
+        },
+        {
+          "variant": "Sudden lower-limb weakness with weak low back and knees",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Flaccid weakness of the lower limbs, unable to stand or walk, with weak aching low back and knees, dizziness and tinnitus"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls/NCBI Bookshelf, \"Acute Flaccid Myelitis\", https://www.ncbi.nlm.nih.gov/books/NBK606127/, retrieved 2026-08-11",
+        "MedlinePlus, \"Paralysis\", https://medlineplus.gov/paralysis.html, retrieved 2026-08-11 — defines regional paralysis patterns but does not itself distinguish flaccid vs. spastic or list red flags; noted explicitly rather than over-extending its content"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "respiratory_red_flags"
+      ],
+      "red_flags_zh": [
+        "呼吸肌無力導致呼吸功能不足 → 可能需插管與呼吸器支持，是最緊急的紅旗",
+        "數小時至數日內快速進展的無力",
+        "突發性肢體無力或癱瘓，尤其兒童 → 需視為需早期辨識與通報的急性鬆弛性脊髓炎",
+        "合併顱神經受累——眼球運動障礙、面部麻痺或延髓（吞嚥／言語）肌肉無力 → 提示氣道風險",
+        "合併肌張力增高、反射亢進 → 應重新考慮病灶定位，而非單純鬆弛性病變"
+      ],
+      "red_flags_en": [
+        "Respiratory muscle weakness causing respiratory insufficiency → may require intubation and ventilatory support, the most urgent red flag",
+        "Weakness progressing rapidly over hours to days",
+        "Sudden-onset limb weakness or paralysis, especially in a child → treat as acute flaccid myelitis, early recognition and reporting are critical",
+        "Cranial nerve involvement — eye movement abnormality, facial palsy, or bulbar (swallowing/speech) muscle weakness → signals airway risk",
+        "Presence of increased tone or hyperreflexia → should prompt reconsidering the lesion localisation rather than assuming a pure flaccid process"
+      ],
+      "sources": [
+        "StatPearls, Acute Flaccid Myelitis (https://www.ncbi.nlm.nih.gov/books/NBK606127/, retrieved 2026-08-11)",
+        "MedlinePlus, Paralysis (https://medlineplus.gov/paralysis.html, retrieved 2026-08-11)",
+        "中醫內科學 痿證辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "StatPearls Acute Flaccid Myelitis (retrieved 2026-08-11); MedlinePlus Paralysis used only for the general definition, not stretched beyond its actual content"
+      },
+      "supporting_measurements": [
+        "metric.range_of_motion_deg"
+      ],
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.withered_skin",
+      "name_zh": "皮膚枯槁",
+      "name_en": "Withered, dry, lusterless skin",
+      "pinyin": "pi fu ku gao",
+      "pinyin_toned": "pí fū kū gǎo",
+      "aliases_zh": [
+        "皮膚乾枯",
+        "肌膚甲錯",
+        "皮膚失潤"
+      ],
+      "aliases_en": [
+        "Skin turgor loss",
+        "Withered skin",
+        "Severe skin dryness"
+      ],
+      "taxonomy_ids": [
+        "sym.skin"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "examiner_observed",
+        "patient_reported"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "皮膚失去正常彈性與光澤，捏起後緩慢回彈（皮膚張力降低），常伴黏膜乾燥，是脫水或嚴重營養不良的重要體徵。中醫稱肌膚甲錯或皮膚枯槁，多責之於精血虧虛、津液不足。",
+      "definition_en": "Skin that has lost its normal elasticity and moisture — \"tenting\" or slow return to shape after being pinched (reduced skin turgor), often with dry mucous membranes. An important bedside sign of dehydration or, in chronic form, malnutrition. Biomedicine decomposes this into skin turgor (a dehydration-severity finding) rather than treating it as one unified named entity.",
+      "patient_words_zh": "「皮膚很乾，摸起來粗粗的」「皮膚沒有彈性，捏起來很久才彈回去」「皮膚乾到會脫屑」",
+      "patient_words_en": "\"My skin's really dry, it feels rough\", \"my skin's lost its bounce, it takes a while to spring back when pinched\", \"my skin's so dry it's flaking\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "全身性表現，不分側"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "伴隨症",
+          "why": "合併口乾黏膜乾燥提示中重度脫水；合併血壓下降、心跳加快（姿勢性低血壓）提示血容量不足；合併意識改變、癲癇提示嚴重電解質失衡"
+        },
+        {
+          "dimension": "誘因",
+          "why": "腹瀉、嘔吐、大量出汗、進食進水不足等病史提供脫水病因線索；長期病重、消瘦提示營養不良"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性快速惡化（如伴隨少尿、意識改變）需立即處理，不可僅囑咐補水觀察"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Accompanying signs",
+          "why": "Dry mucous membranes suggest moderate-to-severe dehydration; falling blood pressure with rising heart rate (orthostatic hypotension) suggests significant volume depletion; altered consciousness or seizures suggest a dangerous electrolyte disturbance"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A history of diarrhea, vomiting, heavy sweating, or poor oral intake provides an etiological clue for dehydration; chronic severe illness with wasting suggests malnutrition"
+        },
+        {
+          "dimension": "Course",
+          "why": "Rapid deterioration (e.g. with oliguria or altered consciousness) needs immediate management, not just advice to rehydrate and observe"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "皮膚枯槁，兼形體消瘦",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "皮膚枯槁失潤，兼形體消瘦、面色萎黃、神疲乏力，多屬久病氣血兩虛"
+        },
+        {
+          "variant": "皮膚枯槁，兼口燥咽乾",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "皮膚乾枯，兼口燥咽乾、五心煩熱、形體消瘦，舌紅少津"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Withered skin with wasting",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Withered, lusterless skin with wasting, sallow complexion, fatigue — typically chronic qi-and-blood deficiency"
+        },
+        {
+          "variant": "Withered skin with dry mouth and throat",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "Withered dry skin with dry mouth and throat, five-center heat, wasting, red tongue with scant fluid"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls/NCBI Bookshelf, \"Adult Dehydration\", https://www.ncbi.nlm.nih.gov/books/NBK555956/, retrieved 2026-08-11 — note: biomedicine formalises this finding as \"skin turgor\" within dehydration grading rather than as a single named \"withered skin\" entity; flagged rather than overstating a unified biomedical term"
+      ],
+      "safety_flags": [
+        "dehydration_review"
+      ],
+      "red_flags_zh": [
+        "皮膚張力降低合併黏膜乾燥 → 提示中重度脫水",
+        "極度低血壓合併皮膚濕冷、灌流不良 → 提示低血容性休克，屬急症",
+        "合併心跳過快與姿勢性低血壓，提示明顯血容量不足",
+        "合併意識混亂、嗜睡或昏迷，尤其合併高血鈉 → 提示危險的電解質失衡",
+        "脫水情境下出現癲癇發作 → 提示嚴重鈉／電解質失衡",
+        "合併少尿／無尿或急性腎損傷徵象"
+      ],
+      "red_flags_en": [
+        "Decreased skin turgor with dry mucous membranes → suggests moderate-to-severe dehydration",
+        "Profound hypotension with cool, moist, poorly perfused skin → suggests hypovolemic shock, an emergency",
+        "Tachycardia with orthostatic hypotension, indicating significant volume depletion",
+        "Confusion, lethargy, or coma — especially with hypernatremia → represents a dangerous electrolyte disturbance",
+        "Seizures in the setting of dehydration signal a critical sodium/electrolyte imbalance",
+        "Oliguria/anuria or signs of acute kidney injury"
+      ],
+      "sources": [
+        "StatPearls, Adult Dehydration (https://www.ncbi.nlm.nih.gov/books/NBK555956/, retrieved 2026-08-11)",
+        "中醫內科學 津液虧虛／精血不足相關肌膚甲錯內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "StatPearls Adult Dehydration (retrieved 2026-08-11); biomedical entity noted as partial/decomposed rather than unified"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hearing_loss",
+      "name_zh": "聽力減退",
+      "name_en": "Hearing loss",
+      "pinyin": "ting li jian tui",
+      "pinyin_toned": "tīng lì jiǎn tuì",
+      "aliases_zh": [
+        "耳聾",
+        "聽力下降",
+        "重聽"
+      ],
+      "aliases_en": [
+        "Deafness",
+        "Reduced hearing",
+        "Hearing impairment"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "聽覺感知能力下降，可為單側或雙側、輕度至重度，西醫依機轉分傳導性（外中耳）、感音神經性（內耳／聽神經）與混合性。中醫稱耳聾或聽力減退，責之於腎開竅於耳。",
+      "definition_en": "A reduction in the ability to perceive sound, ranging from mild to profound, unilateral or bilateral. Biomedicine classifies it by mechanism as conductive (outer/middle ear), sensorineural (inner ear/auditory nerve), or mixed. TCM attributes hearing to the Kidney's opening into the ear.",
+      "patient_words_zh": "「聽不太清楚，要別人講大聲一點」「一邊耳朵聽起來悶悶的」「電視要開很大聲才聽得到」",
+      "patient_words_en": "\"I can't hear well, people have to speak up\", \"one ear sounds muffled\", \"I need the TV really loud to hear it\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值（如分貝數），屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "病程",
+          "why": "突發性或快速進行的聽力減退是最緊急的紅旗，需在 72 小時內轉診耳鼻喉科以爭取恢復機會"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併耳痛、分泌物或出血、單側或搏動性耳鳴（提示血管性病灶）、反覆或慢性頭暈平衡問題 → 需轉診評估"
+        },
+        {
+          "dimension": "誘因",
+          "why": "中耳炎病史、噪音暴露史、家族聽力損失史、耳毒性藥物使用史、頭部外傷史等提供病因線索"
+        },
+        {
+          "dimension": "部位",
+          "why": "雙耳不對稱程度大（>15 分貝差）或言語辨識能力差，需要進一步聽力學檢查"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Course",
+          "why": "Sudden or rapidly progressive hearing loss is the single most urgent red flag — otolaryngology evaluation within 72 hours is needed to preserve the chance of recovery"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Ear pain, discharge or bleeding; unilateral or pulsatile tinnitus (raising concern for a vascular lesion); recurrent or chronic dizziness/balance problems → warrant referral"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A history of ear infection, noise exposure, family history of hearing loss, ototoxic medication use, or head trauma provides etiological clues"
+        },
+        {
+          "dimension": "Location",
+          "why": "Marked asymmetry between ears (>15 dB difference) or poor speech discrimination warrants further audiological testing"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "耳聾突發，兼耳鳴眩暈",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "耳聾突然發生，兼耳鳴如潮、眩暈、面紅目赤、急躁易怒"
+        },
+        {
+          "variant": "聽力漸減，兼腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "聽力漸進減退，兼耳鳴、腰膝痠軟、頭暈健忘，多見於年長者或久病"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sudden hearing loss with tinnitus and dizziness",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Sudden-onset hearing loss with tide-like tinnitus, dizziness, flushed face and red eyes, irritability"
+        },
+        {
+          "variant": "Gradual hearing loss with weak low back and knees",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Gradually progressive hearing loss with tinnitus, weak aching low back and knees, dizziness and forgetfulness, mainly in older patients or chronic illness"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "American Academy of Otolaryngology–Head and Neck Surgery (AAO-HNS), \"Position Statement: Red Flags – Warning of Ear Disease\", https://www.entnet.org/resource/position-statement-red-flags-warning-of-ear-disease/, retrieved 2026-08-11"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "突發或快速進行的聽力減退 → 感音神經性聽力損失需在症狀出現 72 小時內轉診耳鼻喉科評估，以爭取恢復機會",
+        "合併耳痛、分泌物或出血，或耳道內可見異物／血液／膿",
+        "單側或搏動性耳鳴（搏動性尤其需留意血管性病灶）",
+        "合併急性、慢性或反覆性頭暈／平衡問題",
+        "有中耳炎、噪音暴露、家族聽力損失史、結核、梅毒、HIV、梅尼爾氏病、自體免疫病、耳毒性藥物使用、耳硬化症、神經纖維瘤病、柏哲德氏病或頭部外傷史",
+        "雙耳聽力差異明顯（純音平均 >15 分貝）或言語辨識能力差"
+      ],
+      "red_flags_en": [
+        "Sudden or rapidly progressive hearing loss → sudden sensorineural hearing loss needs otolaryngology evaluation within 72 hours of onset to preserve the chance of recovery",
+        "Accompanying ear pain, discharge, or bleeding, or visible blood/pus/foreign body in the canal",
+        "Unilateral or pulsatile tinnitus (pulsatile in particular raises concern for a vascular lesion)",
+        "Accompanying acute, chronic, or recurrent dizziness/balance problems",
+        "History of ear infection, significant noise exposure, family history of hearing loss, TB, syphilis, HIV, Ménière's disease, autoimmune disease, ototoxic medication use, otosclerosis, neurofibromatosis, Paget's disease of bone, or head/ear trauma",
+        "Significant asymmetry between ears (>15 dB pure-tone average difference) or poor speech discrimination"
+      ],
+      "sources": [
+        "AAO-HNS, Position Statement: Red Flags – Warning of Ear Disease (https://www.entnet.org/resource/position-statement-red-flags-warning-of-ear-disease/, retrieved 2026-08-11)",
+        "中醫內科學 耳聾／耳鳴辨證內容"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "AAO-HNS Red Flags position statement (retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.bradykinesia",
+      "name_zh": "動作遲緩",
+      "name_en": "Bradykinesia (slowed movement)",
+      "pinyin": "dong zuo chi huan",
+      "pinyin_toned": "dòng zuò chí huǎn",
+      "aliases_zh": [
+        "行動遲緩",
+        "動作緩慢",
+        "運動遲緩"
+      ],
+      "aliases_en": [
+        "Slowness of movement",
+        "Psychomotor slowing (motor)",
+        "Motor slowing"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "examiner_observed",
+        "patient_reported"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "自主動作的速度、幅度或流暢度下降，重複動作時逐漸變小變慢，西醫視其為帕金森氏症的核心必要徵象（需併有靜止性震顫或肌強直方可臨床診斷）。是體徵而非診斷，本身即是需要神經科評估的指標。",
+      "definition_en": "Slowness of voluntary movement, with reduced amplitude and speed of repetitive movements that progressively fatigue or hesitate. Biomedicine treats bradykinesia as the cardinal, obligatory diagnostic feature of Parkinson's disease (alongside tremor and/or rigidity). A sign rather than a diagnosis — its presence is itself an indicator warranting neurological evaluation.",
+      "patient_words_zh": "「動作變慢了，扣扣子要花好久」「走路小碎步，起步很困難」「表情變少了，家人說我像面具臉」",
+      "patient_words_en": "\"My movements have slowed down, buttoning my shirt takes forever\", \"I shuffle when I walk, it's hard to get started\", \"my expression's gotten flatter, my family says I look like I'm wearing a mask\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "全身性運動症狀，非局部部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality",
+          "diagnostic_note_zh": "帕金森氏症典型從單側開始"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "伴隨症",
+          "why": "合併靜止性震顫或肌強直 → 符合帕金森氏症核心診斷條件；合併面部表情減少、眨眼減少、手臂擺動減少為典型表現"
+        },
+        {
+          "dimension": "程度",
+          "why": "扣鈕扣、切食物、刷牙等精細動作困難是常見的功能性主訴"
+        },
+        {
+          "dimension": "病程",
+          "why": "本卡未找到針對動作遲緩本身的獨立紅旗清單（不同於其他症狀有明確急症升級標準）——動作遲緩本身即是啟動神經科評估的指標，而非等待其他警訊出現"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Accompanying signs",
+          "why": "With resting tremor or rigidity → meets the core diagnostic criteria for Parkinson's disease; reduced facial expression, reduced blinking, and reduced arm swing are typical"
+        },
+        {
+          "dimension": "Severity",
+          "why": "Difficulty with fine motor tasks — buttoning, cutting food, brushing teeth — is a common functional complaint"
+        },
+        {
+          "dimension": "Course",
+          "why": "No dedicated escalation-style red-flag list specific to bradykinesia itself was found (unlike other symptoms with clear emergency criteria) — the presence of bradykinesia is itself the trigger for neurological workup, rather than something to wait on further warning signs for"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "動作遲緩，兼靜止性震顫、肌強直",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "動作遲緩，起步困難，兼靜止性震顫、肌肉強直、表情呆滯，緩慢進行"
+        },
+        {
+          "variant": "動作遲緩，兼神疲懶言",
+          "points_to": [
+            "pattern.qi_deficiency"
+          ],
+          "distinguishing": "動作遲緩乏力，兼神疲懶言、氣短、不耐勞作，無明顯震顫強直"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bradykinesia with resting tremor and rigidity",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Slowed movement with difficulty initiating, resting tremor, muscle rigidity, blank facial expression, slowly progressive"
+        },
+        {
+          "variant": "Bradykinesia with low spirits and reluctance to speak",
+          "points_to": [
+            "pattern.qi_deficiency"
+          ],
+          "distinguishing": "Slowed, weak movement with low spirits, reluctance to speak, shortness of breath, poor exertional tolerance, without notable tremor or rigidity"
+        }
+      ],
+      "safety_review_status": "shared_flags_linked",
+      "safety_review_sources": [
+        "Parkinson's Foundation, \"Bradykinesia (Slowness of Movement)\", https://www.parkinson.org/understanding-parkinsons/movement-symptoms/bradykinesia, retrieved 2026-08-11 — this source frames bradykinesia as a diagnostic hallmark rather than providing an accompanying-feature escalation list; no dedicated red-flag list found this session, so this card references the generic neurologic_red_flags safety_flag rather than inventing symptom-specific red flags without a source"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [],
+      "red_flags_en": [],
+      "sources": [
+        "Parkinson's Foundation, Bradykinesia (https://www.parkinson.org/understanding-parkinsons/movement-symptoms/bradykinesia, retrieved 2026-08-11)",
+        "中醫內科學 顫證辨證內容"
+      ],
+      "field_sources": {
+        "safety_review_sources": "Parkinson's Foundation source frames bradykinesia as diagnostic hallmark, not an escalation-list symptom; honestly using shared_flags_linked -> neurologic_red_flags rather than fabricating a red-flag list the source does not provide"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.wasting",
+      "name_zh": "形體消瘦",
+      "name_en": "Unintentional wasting / emaciation",
+      "pinyin": "xing ti xiao shou",
+      "pinyin_toned": "xíng tǐ xiāo shòu",
+      "aliases_zh": [
+        "身體消瘦",
+        "形瘦",
+        "體重明顯下降"
+      ],
+      "aliases_en": [
+        "Unintentional weight loss",
+        "Emaciation",
+        "Cachexia (as presenting complaint)"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "在未刻意改變飲食或活動量的情況下，體重與形體逐漸明顯減輕。西醫稱非刻意性體重減輕（unintentional weight loss），臨床警戒線為 6-12 個月內減少原體重 5% 以上或 4.5 公斤以上，65 歲以上者尤需重視。是主訴，不等於任何單一診斷。",
+      "definition_en": "A noticeable, unintended loss of body weight and flesh without a deliberate change in diet or activity. Biomedicine terms this unintentional weight loss, clinically flagged at ≥5% of body weight or ≥4.5 kg (10 lb) over 6-12 months, especially concerning in adults over 65. A presenting complaint, not itself a diagnosis.",
+      "patient_words_zh": "「最近瘦了一大圈，衣服都變鬆了」「沒有刻意減肥，體重一直掉」「人一直瘦下去，家人都說我變小了」",
+      "patient_words_en": "\"I've lost a lot of weight recently, my clothes are loose\", \"I haven't been trying to lose weight but it keeps dropping\", \"I keep getting thinner, my family says I've shrunk\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "全身性表現，非局部部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "非時間週期性症狀"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值（體重數字、下降百分比），屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "伴隨症",
+          "why": "合併持續發熱或夜間盜汗、新發或加重疼痛、可觸及腫塊 → 需儘速檢查；合併吞嚥困難或疼痛、明顯疲倦、淋巴結腫大"
+        },
+        {
+          "dimension": "誘因",
+          "why": "食慾、進食量、消化吸收狀況、情緒與睡眠變化提供病因線索"
+        },
+        {
+          "dimension": "病程",
+          "why": "65 歲以上出現非刻意性體重減輕，本身即提高嚴重疾病的機率，需優先評估"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "合併血便或吐血；合併明顯情緒、認知或食慾改變"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Accompanying signs",
+          "why": "Persistent fever or drenching night sweats, new/worsening pain, a palpable mass → needs prompt workup; difficulty or pain swallowing, marked fatigue, swollen lymph nodes"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Appetite, intake volume, digestion/absorption, and mood/sleep changes provide etiological clues"
+        },
+        {
+          "dimension": "Course",
+          "why": "Unintentional weight loss in someone over 65 itself raises the probability of serious disease and warrants priority evaluation"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Blood in stool or vomit; a marked change in mood, cognition, or appetite"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "形體消瘦，兼食少便溏",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "形體日漸消瘦，兼食少納呆、腹脹便溏、神疲乏力、面色萎黃"
+        },
+        {
+          "variant": "形體消瘦，兼多食易饑、口渴",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "形體消瘦，反而多食易饑，兼口渴喜飲、大便秘結、舌紅苔黃"
+        },
+        {
+          "variant": "形體消瘦，兼潮熱盜汗",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "形體日漸消瘦，兼潮熱盜汗、五心煩熱、口燥咽乾，舌紅少苔"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Wasting with poor appetite and loose stool",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Progressive wasting with poor appetite, abdominal distension, loose stool, fatigue, sallow complexion"
+        },
+        {
+          "variant": "Wasting with excessive hunger and thirst",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "Wasting despite excessive hunger and eating, marked thirst, constipation, red tongue with yellow coating"
+        },
+        {
+          "variant": "Wasting with tidal fever and night sweats",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "Progressive wasting with tidal fever and night sweats, five-center heat, dry mouth and throat, red tongue with scant coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus Medical Encyclopedia, \"Weight loss - unintentional\", https://medlineplus.gov/ency/article/003107.htm, retrieved 2026-08-11",
+        "Cleveland Clinic, \"Unexplained Weight Loss\", https://my.clevelandclinic.org/health/symptoms/unexplained-weight-loss, retrieved 2026-08-11"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "非刻意性體重減輕合併持續發熱或夜間盜汗",
+        "合併新發或逐漸加重的疼痛，或可觸及的腫塊／腫塊感",
+        "合併血便、吐血，或持續吞嚥困難／吞嚥疼痛",
+        "合併嚴重或加重的疲倦，或淋巴結腫大",
+        "65 歲以上出現非刻意性體重減輕（年齡本身即提高重症機率）",
+        "合併明顯的情緒、認知或食慾改變"
+      ],
+      "red_flags_en": [
+        "Unintentional weight loss with persistent fever or drenching night sweats",
+        "Accompanying new/worsening pain, or a palpable mass/lump",
+        "Blood in stool or vomit, or persistent difficulty/pain swallowing",
+        "Severe or worsening fatigue, or swollen lymph nodes",
+        "Unintentional weight loss in someone over 65 (age itself raises the probability of serious disease)",
+        "A marked, unexplained change in mood, cognition, or appetite"
+      ],
+      "sources": [
+        "MedlinePlus, Weight loss - unintentional (https://medlineplus.gov/ency/article/003107.htm, retrieved 2026-08-11)",
+        "Cleveland Clinic, Unexplained Weight Loss (https://my.clevelandclinic.org/health/symptoms/unexplained-weight-loss, retrieved 2026-08-11)",
+        "中醫內科學 虛勞辨證分型（脾氣虛／胃火／陰虛）"
+      ],
+      "field_sources": {
+        "red_flags_zh/en": "MedlinePlus Weight loss - unintentional + Cleveland Clinic Unexplained Weight Loss (both retrieved 2026-08-11)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
