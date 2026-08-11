@@ -61,6 +61,21 @@ function normName(s) {
 // blobs instead, and these names stay here as a routing record.
 const TAXONOMY_RESIDUE = new Set(["氣血不和", "臟腑虛弱"]);
 
+// P-4 (2026-08-11), Section 4 of docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md:
+// RETIRE_AS_IMPORT_ARTIFACT ruling for 3 ids. Confirmation only, no new
+// judgment — 氣血不和/臟腑虛弱 reuse the 2026-08-06 Ting-delegated
+// TAXONOMY_RESIDUE decision verbatim (they stay routed through
+// excluded_formula_patterns as before); pat.1 is new here (numeric import
+// junk, was previously falling into pending_registration unflagged). This
+// section exists so the ruling for all 3 is recorded in one place per the
+// P-4 exec task, without moving 氣血不和/臟腑虛弱 out of their existing
+// excluded_formula_patterns home (additive only, not a restructure).
+const RETIRE_AS_IMPORT_ARTIFACT = new Map([
+  ["pat.1", "Numeric placeholder, not a Chinese clinical term — CloudTCM import junk."],
+  ["pat.氣血不和", "CloudTCM catch-all bucket (74 condition_ids attached indiscriminately) — Ting-delegated decision 2026-08-06, reused verbatim: \"not a discriminating clinical pattern, never register.\""],
+  ["pat.臟腑虛弱", "Same catch-all bucket, same 2026-08-06 decision."],
+]);
+
 // D10 rule 5: 方證 is a different diagnostic entity from 證候. The canon's own
 // `kind` field is unreliable (桂枝湯類方 is tagged 證候), so the name is checked
 // too: a formula name followed by 類方 / 方 / 證 is a formula-pattern.
@@ -108,6 +123,31 @@ const APPROVED_LEGACY_ALIAS_TARGETS = new Map([
   ["pat.外感風寒", "pattern.wind_cold"],
   ["pat.脾胃氣虛", "pattern.spleen_qi_deficiency"],
   ["pat.外感風熱", "pattern.wind_heat"],
+  // P-4 (2026-08-11): 21 MAP_TO_EXISTING near-miss aliases, per
+  // docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 2. aliases_zh
+  // appended to each target card first (append-only), assertion below
+  // re-verifies on every run.
+  ["pat.肝脾不調", "pattern.liver_spleen_disharmony"],
+  ["pat.肝鬱脾虛", "pattern.liver_spleen_disharmony"],
+  ["pat.食傷脾胃", "pattern.food_stagnation"],
+  ["pat.心火旺盛", "pattern.heart_fire"],
+  ["pat.心脈瘀阻", "pattern.heart_blood_stasis"],
+  ["pat.脾胃虛弱", "pattern.spleen_qi_deficiency"],
+  ["pat.脾氣虛弱", "pattern.spleen_qi_deficiency"],
+  ["pat.濕熱瀰漫三焦", "pattern.san_jiao_damp_heat"],
+  ["pat.少陰陰虛火旺", "pattern.shao_yin_heat_transformation"],
+  ["pat.血瘀閉阻", "pattern.blood_stasis"],
+  ["pat.瘀血阻絡", "pattern.blood_stasis"],
+  ["pat.肝胃氣滯", "pattern.liver_stomach_disharmony"],
+  ["pat.肝膽火盛", "pattern.liver_fire"],
+  ["pat.風熱相搏", "pattern.wind_heat"],
+  ["pat.氣血虛弱", "pattern.qi_blood_deficiency"],
+  ["pat.清陽不升", "pattern.spleen_qi_sinking"],
+  ["pat.腎陰虧虛", "pattern.kidney_yin_deficiency"],
+  ["pat.腎精虧虛", "pattern.kidney_essence_deficiency"],
+  ["pat.痰濕中阻", "pattern.phlegm_damp"],
+  ["pat.肝血瘀滯", "pattern.qi_stagnation_blood_stasis"],
+  ["pat.肝腎不足", "pattern.liver_kidney_yin_deficiency"],
 ]);
 const registryIds = new Set(registry.map((record) => record.id));
 const activeLibraryById = new Map(
@@ -136,6 +176,7 @@ for (const c of conditions) {
 const aliases = {};
 const pending = [];
 const excluded = [];
+const retired = [];
 const seen = new Set();
 let duplicateIds = 0;
 
@@ -146,6 +187,17 @@ for (const rec of canon) {
 
   const nameZh = rec.name_zh || String(rec.id).replace(/^pat\./, "");
   const key = normName(nameZh);
+
+  const retireRuling = RETIRE_AS_IMPORT_ARTIFACT.get(rec.id);
+  if (retireRuling) {
+    retired.push({ legacy_id: rec.id, name_zh: nameZh, ruling: retireRuling, source: "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md §4" });
+    // pat.1 has no other home (not a taxonomy-residue name, not a formula
+    // pattern) — it would otherwise fall through to pending_registration.
+    // 氣血不和/臟腑虛弱 keep falling through to the pre-existing
+    // TAXONOMY_RESIDUE branch below so excluded_formula_patterns' shape and
+    // count (32) are unchanged — this section is additive, not a restructure.
+    if (rec.id === "pat.1") continue;
+  }
 
   if (isFormulaPattern(rec)) {
     excluded.push({ legacy_id: rec.id, name_zh: nameZh, reason: "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)" });
@@ -199,6 +251,7 @@ const out = {
     "Chinese characters never go in an id (this repo has a documented mojibake history).",
     "pending_registration entries have NO proposed slug on purpose: an English pattern name is terminology that must come from a cited source, not from a model. Register them via skills/acuting-condition-fill.",
     "excluded_formula_patterns are 方證/類方證 — a different diagnostic entity. Do not register them as patterns.",
+    "retired_as_import_artifact: P-4 ruling (2026-08-11) — frozen in the pat.* namespace per constitution Rule 2 (不硬刪記錄), never promoted to pattern.*, never deleted. See docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md §4.",
   ],
   generated_by: "scripts/build-pattern-alias-map.js",
   source_files: {
@@ -214,10 +267,12 @@ const out = {
     mapped: Object.keys(aliases).length,
     pending_registration: pending.length,
     excluded_formula_patterns: excluded.length,
+    retired_as_import_artifact: retired.length,
   },
   aliases,
   pending_registration: pending,
   excluded_formula_patterns: excluded,
+  retired_as_import_artifact: retired,
 };
 
 const WRITE = process.argv.includes("--write");

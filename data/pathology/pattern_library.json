@@ -737,11 +737,15 @@
       "pinyin": "Pí Qì Xū",
       "aliases_zh": [
         "脾胃氣虛",
-        "脾失健運"
+        "脾失健運",
+        "脾胃虛弱",
+        "脾氣虛弱"
       ],
       "aliases_en": [
         "Spleen and Stomach Qi Deficiency",
-        "Impaired Spleen Transformation"
+        "Impaired Spleen Transformation",
+        "Spleen-Stomach Weakness",
+        "Weak Spleen Qi"
       ],
       "schema_version": "v1.0",
       "zang_fu_ids": [
@@ -866,7 +870,9 @@
       },
       "legacy_ids": [
         "pat.脾胃氣虛",
-        "pat.脾氣虛"
+        "pat.脾氣虛",
+        "pat.脾胃虛弱",
+        "pat.脾氣虛弱"
       ]
     },
     {
@@ -1087,10 +1093,15 @@
         ]
       },
       "aliases_zh": [
-        "脾氣下陷"
+        "脾氣下陷",
+        "清陽不升"
       ],
       "aliases_en": [
-        "Spleen Qi Sinking"
+        "Spleen Qi Sinking",
+        "Clear Yang Failing to Ascend"
+      ],
+      "legacy_ids": [
+        "pat.清陽不升"
       ]
     },
     {
@@ -1747,10 +1758,15 @@
         ]
       },
       "aliases_zh": [
-        "食積"
+        "食積",
+        "食傷脾胃"
       ],
       "aliases_en": [
-        "Food Accumulation"
+        "Food Accumulation",
+        "Food Damaging the Spleen and Stomach"
+      ],
+      "legacy_ids": [
+        "pat.食傷脾胃"
       ]
     },
     {
@@ -1990,11 +2006,13 @@
       "pinyin_toned": "Gān Huǒ Shàng Yán",
       "aliases_zh": [
         "肝火亢盛",
-        "肝經實火"
+        "肝經實火",
+        "肝膽火盛"
       ],
       "aliases_en": [
         "Liver Fire Excess",
-        "Flaring Liver Fire"
+        "Flaring Liver Fire",
+        "Exuberant Liver-Gallbladder Fire"
       ],
       "related_tcm_disease_ids": [
         "tdis.xuan_yun",
@@ -2013,7 +2031,8 @@
       ],
       "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點（來自已退役 pattern.liver_fire_flaring，高血壓/眩暈頭痛專題匯入）：代表方龍膽瀉肝湯。主穴：LR2 行間、LI4 合谷、LI11 曲池、GB20 風池、GV20 百會、ST44 內庭。",
       "legacy_ids": [
-        "pat.肝火上炎"
+        "pat.肝火上炎",
+        "pat.肝膽火盛"
       ]
     },
     {
@@ -3335,7 +3354,16 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "心火旺盛"
+      ],
+      "legacy_ids": [
+        "pat.心火旺盛"
+      ],
+      "aliases_en": [
+        "Exuberant Heart Fire"
+      ]
     },
     {
       "id": "pattern.heart_blood_stasis",
@@ -3356,7 +3384,9 @@
         "BL15",
         "CV17"
       ],
-      "typical_formulas": [],
+      "typical_formulas": [
+        "formula.xue_fu_zhu_yu_tang"
+      ],
       "review_status": "draft",
       "tongue_zh": "舌暗或有瘀斑",
       "pulse_zh": "脈澀或結代",
@@ -3430,7 +3460,16 @@
         "points": [
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "心脈瘀阻"
+      ],
+      "legacy_ids": [
+        "pat.心脈瘀阻"
+      ],
+      "aliases_en": [
+        "Heart Vessel Blood Stasis"
+      ]
     },
     {
       "id": "pattern.phlegm_misting_heart",
@@ -3704,11 +3743,13 @@
       "pinyin": "Shèn Yīn Xū",
       "aliases_zh": [
         "腎水不足",
-        "真陰虧損"
+        "真陰虧損",
+        "腎陰虧虛"
       ],
       "aliases_en": [
         "Kidney Yin Depletion",
-        "Kidney Water Deficiency"
+        "Kidney Water Deficiency",
+        "Kidney Yin Deficiency (Depleted)"
       ],
       "schema_version": "v1.0",
       "zang_fu_ids": [
@@ -3822,7 +3863,8 @@
         ]
       },
       "legacy_ids": [
-        "pat.腎陰虛"
+        "pat.腎陰虛",
+        "pat.腎陰虧虛"
       ]
     },
     {
@@ -3937,7 +3979,14 @@
         ]
       },
       "legacy_ids": [
-        "pat.腎精不足"
+        "pat.腎精不足",
+        "pat.腎精虧虛"
+      ],
+      "aliases_zh": [
+        "腎精虧虛"
+      ],
+      "aliases_en": [
+        "Kidney Essence Depletion"
       ]
     },
     {
@@ -4425,7 +4474,8 @@
         "ST37"
       ],
       "typical_formulas": [
-        "formula.tong_xie_yao_fang"
+        "formula.tong_xie_yao_fang",
+        "formula.si_ni_san"
       ],
       "review_status": "draft",
       "tongue_zh": "舌苔白",
@@ -4510,7 +4560,19 @@
           "American Dragon (curriculum/conditions/TCM patterns/ad_batches/03_AD_PATTERN_LIVER_GALLBLADDER.md)",
           "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "肝脾不調",
+        "肝鬱脾虛"
+      ],
+      "legacy_ids": [
+        "pat.肝脾不調",
+        "pat.肝鬱脾虛"
+      ],
+      "aliases_en": [
+        "Liver-Spleen Incoordination",
+        "Liver Depression with Spleen Deficiency"
+      ]
     },
     {
       "id": "pattern.liver_stomach_disharmony",
@@ -4619,7 +4681,14 @@
         ]
       },
       "legacy_ids": [
-        "pat.肝胃不和"
+        "pat.肝胃不和",
+        "pat.肝胃氣滯"
+      ],
+      "aliases_zh": [
+        "肝胃氣滯"
+      ],
+      "aliases_en": [
+        "Liver-Stomach Qi Stagnation"
       ]
     },
     {
@@ -4862,7 +4931,8 @@
       ],
       "typical_formulas": [
         "formula.xue_fu_zhu_yu_tang",
-        "formula.tao_hong_si_wu_tang"
+        "formula.tao_hong_si_wu_tang",
+        "formula.wen_jing_tang"
       ],
       "review_status": "draft",
       "tongue_zh": "舌暗或有瘀點",
@@ -4937,7 +5007,14 @@
         ]
       },
       "legacy_ids": [
-        "pat.氣滯血瘀"
+        "pat.氣滯血瘀",
+        "pat.肝血瘀滯"
+      ],
+      "aliases_zh": [
+        "肝血瘀滯"
+      ],
+      "aliases_en": [
+        "Liver Blood Stasis"
       ]
     },
     {
@@ -5038,7 +5115,14 @@
         ]
       },
       "legacy_ids": [
-        "pat.氣血兩虛"
+        "pat.氣血兩虛",
+        "pat.氣血虛弱"
+      ],
+      "aliases_zh": [
+        "氣血虛弱"
+      ],
+      "aliases_en": [
+        "Qi and Blood Weakness"
       ]
     },
     {
@@ -5063,18 +5147,24 @@
       ],
       "typical_formulas": [
         "formula.xue_fu_zhu_yu_tang",
-        "formula.tao_he_cheng_qi_tang"
+        "formula.tao_he_cheng_qi_tang",
+        "formula.shao_fu_zhu_yu_tang",
+        "formula.tao_hong_si_wu_tang"
       ],
       "review_status": "draft",
       "entity_type": "tcm_pattern",
       "pinyin": "Yū Xuè Nèi Zǔ",
       "aliases_zh": [
         "血瘀證",
-        "血脈瘀阻"
+        "血脈瘀阻",
+        "血瘀閉阻",
+        "瘀血阻絡"
       ],
       "aliases_en": [
         "Blood Stasis Pattern",
-        "Blood Vessel Obstruction"
+        "Blood Vessel Obstruction",
+        "Blood Stasis Obstruction",
+        "Static Blood Obstructing the Collaterals"
       ],
       "schema_version": "v1.0",
       "zang_fu_ids": [
@@ -5145,7 +5235,9 @@
         "Purplish lips and tongue"
       ],
       "legacy_ids": [
-        "pat.血瘀"
+        "pat.血瘀",
+        "pat.血瘀閉阻",
+        "pat.瘀血阻絡"
       ]
     },
     {
@@ -5376,12 +5468,14 @@
       "aliases_zh": [
         "痰濕阻滯",
         "濕痰內盛",
-        "濕痰"
+        "濕痰",
+        "痰濕中阻"
       ],
       "aliases_en": [
         "Phlegm-Damp Obstruction",
         "Internal Phlegm-Damp Retention",
-        "Damp-Phlegm"
+        "Damp-Phlegm",
+        "Phlegm-Damp Obstructing the Middle Burner"
       ],
       "schema_version": "v1.0",
       "zang_fu_ids": [
@@ -5457,7 +5551,8 @@
         "Dizziness"
       ],
       "legacy_ids": [
-        "pat.濕痰"
+        "pat.濕痰",
+        "pat.痰濕中阻"
       ]
     },
     {
@@ -7048,11 +7143,13 @@
       "pinyin_toned": "Fēng Rè",
       "aliases_zh": [
         "外感風熱",
-        "風熱犯表"
+        "風熱犯表",
+        "風熱相搏"
       ],
       "aliases_en": [
         "External Wind-Heat",
-        "Wind-Heat Invading the Exterior"
+        "Wind-Heat Invading the Exterior",
+        "Wind-Heat Contending"
       ],
       "pattern_family": "bing_yin",
       "zang_fu": [
@@ -7127,7 +7224,8 @@
       "typical_formulas": [
         "formula.yin_qiao_san",
         "formula.sang_ju_yin",
-        "formula.ma_xing_shi_gan_tang"
+        "formula.ma_xing_shi_gan_tang",
+        "formula.xiao_feng_san"
       ],
       "typical_points": [
         "GV14",
@@ -7175,7 +7273,8 @@
       },
       "review_status": "draft",
       "legacy_ids": [
-        "pat.外感風熱"
+        "pat.外感風熱",
+        "pat.風熱相搏"
       ]
     },
     {
@@ -8832,8 +8931,12 @@
       "name_zh": "肝腎陰虛",
       "name_en": "Liver-Kidney Yin Deficiency",
       "pinyin": "Gan Shen Yin Xu",
-      "aliases_zh": [],
-      "aliases_en": [],
+      "aliases_zh": [
+        "肝腎不足"
+      ],
+      "aliases_en": [
+        "Liver-Kidney Insufficiency"
+      ],
       "pattern_family": "zang_fu",
       "review_status": "draft",
       "authored_by": "model_draft",
@@ -8885,7 +8988,8 @@
         }
       ],
       "typical_formulas": [
-        "formula.qi_ju_di_huang_wan"
+        "formula.qi_ju_di_huang_wan",
+        "formula.zuo_gui_wan"
       ],
       "typical_points": [],
       "sources": [
@@ -8935,7 +9039,8 @@
       "pulse_zh": "脈細數，可兼弦",
       "pulse_en": "Thready rapid pulse, possibly wiry",
       "legacy_ids": [
-        "pat.肝腎陰虛"
+        "pat.肝腎陰虛",
+        "pat.肝腎不足"
       ]
     },
     {
@@ -11485,7 +11590,16 @@
         "points": [
           "針灸學 教材通用(經絡辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "少陰陰虛火旺"
+      ],
+      "legacy_ids": [
+        "pat.少陰陰虛火旺"
+      ],
+      "aliases_en": [
+        "Shaoyin Yin Deficiency with Effulgent Fire"
+      ]
     },
     {
       "id": "pattern.jue_yin_mixed_cold_heat",
@@ -12183,7 +12297,8 @@
       "treatment_principle_zh": "分消走泄,宣暢三焦氣機",
       "treatment_principle_en": "Disperse and drain through separate pathways, unblock San Jiao qi movement",
       "typical_formulas": [
-        "formula.san_ren_tang"
+        "formula.san_ren_tang",
+        "formula.huang_lian_jie_du_tang"
       ],
       "typical_points": [
         "SJ6",
@@ -12218,7 +12333,16 @@
         "points": [
           "針灸學 教材通用(經絡辨證章節,課程層級引用)"
         ]
-      }
+      },
+      "aliases_zh": [
+        "濕熱瀰漫三焦"
+      ],
+      "legacy_ids": [
+        "pat.濕熱瀰漫三焦"
+      ],
+      "aliases_en": [
+        "Damp-Heat Pervading the Triple Burner"
+      ]
     },
     {
       "id": "pattern.chong_ren_deficiency",
