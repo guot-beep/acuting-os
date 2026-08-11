@@ -6398,6 +6398,80 @@ function getFilteredClinicalCases() {
 // Pre-Visit Capture → Visit Brief → clinician confirms 的中段先行)。
 // 純讀取衍生 —— 上次 vs 前次的 metric 差、ledger 事件、AE、生活型態變化、
 // ⚠ REVIEW 旗標。零新欄位;手機自填(P1)上線後這面板自動變得更完整。
+// P2 Case Report Readiness (2026-08-11, docs/CARE_READINESS_MAP_v0.md).
+// READ-ONLY over existing case/note data — computes which CARE/STRICTA
+// datapoints this case can already prove and which are still gaps. The
+// check list is the JUDGEABLE subset of the v0 map (denominator = what the
+// code can honestly decide from fields; prose-quality rows the map marks △
+// score 0.5 when their field has content). "na" rows (e.g. needling
+// parameters on a case with no needling visits) leave the denominator
+// entirely — an herbal-only case is not penalized for STRICTA items.
+function computeCareReadiness(item, notesDesc) {
+  const notes = notesDesc || [];
+  const any = (fn) => notes.some(fn);
+  const has = (v) => (Array.isArray(v) ? v.length > 0 : (v === 0 ? true : !!v));
+  const st = (ok) => (ok ? "ok" : "missing");
+  const checks = [];
+  const add = (label, status) => { if (status !== "na") checks.push({ label, status }); };
+
+  const demo = [item.sex, item.birthYearMonth || item.birthYear, item.occupation].filter(has).length;
+  add("5a 基本資料", demo >= 3 ? "ok" : demo >= 1 ? "partial" : "missing");
+  add("5b 主訴", st(has(item.chiefComplaint)));
+  add("5c 既往史", st(has(item.pastHistory)));
+  add("5c 生活/心理社會", st(has(item.lifestyle)));
+  add("5c 目前用藥", st(has(item.currentMeds) || has(item.agentExposures)));
+  add("5d 過往治療", st(has(item.previousTreatment) || has(item.previousTreatmentNotes)));
+  add("6 客觀所見", any((n) => has(n.objective)) ? "partial" : "missing");
+  add("7 Timeline(≥2 診)", st(notes.length >= 2));
+  add("8c 診斷(西/中)", (has(item.westernConditions) || has(item.easternDiseases)) && any((n) => has(n.tcmPatternSelections)) ? "ok"
+    : (has(item.westernConditions) || has(item.easternDiseases) || any((n) => has(n.tcmPatternSelections))) ? "partial" : "missing");
+  add("8b 鑑別思路", any((n) => has(n.patternDifferentials) || has(n.differentialConsidered)) ? "ok" : "missing");
+  add("9a 治療內容", st(any((n) => has(n.acupointLinks) || has(n.formulaLinks))));
+  add("9b 方藥細節", any((n) => has(n.formulaHerbs)) || (item.agentExposures || []).some((e) => has(e.doseText)) ? "ok" : "missing");
+  add("9c 治療調整軌跡", st((item.agentExposures || []).some((e) => (e.events || []).length > 1)));
+  add("10a 結構化 outcome", st(any((n) => has(n.outcomeMetrics))));
+  add("10a 療效判定", st(any((n) => has(n.outcomeVerdict))));
+  // AE: rows exist = ok; none recorded is indistinguishable from not-asked → partial, never ok (D4 spirit)
+  add("10d 不良事件", any((n) => has(n.adverseEvents)) ? "ok" : "partial");
+  add("12 病人視角", st(any((n) => has(n.patientPerspective))));
+  add("13 發表同意", item.publicationConsent === "granted" ? "ok" : item.publicationConsent ? "partial" : "missing");
+
+  // STRICTA 2a-2g — only for cases that actually needle
+  const needling = notes.filter((n) => has(n.acupointLinks) || has(n.pointsUsed));
+  if (needling.length) {
+    const frac = (f) => needling.filter(f).length / needling.length;
+    const stFrac = (x) => (x >= 1 ? "ok" : x > 0 ? "partial" : "missing");
+    add("2a 進針數", stFrac(frac((n) => has(n.needleCount))));
+    add("2c 深度", stFrac(frac((n) => has(n.needleDepthText))));
+    add("2d 得氣", stFrac(frac((n) => has(n.deqiResponse))));
+    add("2e 刺激方式", stFrac(frac((n) => has(n.needleStimulation))));
+    add("2f 留針", stFrac(frac((n) => has(n.retentionMinutes))));
+    add("2g 針具", stFrac(frac((n) => has(n.needleTypeText))));
+  }
+
+  const score = checks.reduce((s, c) => s + (c.status === "ok" ? 1 : c.status === "partial" ? 0.5 : 0), 0);
+  return { checks, score, max: checks.length };
+}
+
+function renderCareReadinessPanel(item, notesDesc) {
+  const r = computeCareReadiness(item, notesDesc);
+  if (!r.max) return "";
+  const pct = Math.round((r.score / r.max) * 100);
+  const gaps = r.checks.filter((c) => c.status === "missing");
+  const partials = r.checks.filter((c) => c.status === "partial");
+  return `
+    <div class="care-readiness">
+      <div class="care-readiness-head">
+        <strong>Case Report Readiness</strong>
+        <span class="care-badge ${pct >= 80 ? "care-badge-good" : pct >= 50 ? "care-badge-mid" : "care-badge-low"}">${r.score % 1 ? r.score.toFixed(1) : r.score}/${r.max} · ${pct}%</span>
+        <small>CARE 2013 + STRICTA 2010(v0 對映,docs/CARE_READINESS_MAP_v0.md)</small>
+      </div>
+      ${gaps.length ? `<div class="care-row"><small>○ 缺</small><span>${gaps.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
+      ${partials.length ? `<div class="care-row"><small>△ 部分</small><span>${partials.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
+      ${!gaps.length && !partials.length ? `<div class="care-row"><span>全部資料點齊備 —— 可著手 CARE 草稿。</span></div>` : ""}
+    </div>`;
+}
+
 function renderVisitBrief(item, notesDesc) {
   if (!notesDesc.length) return "";
   const L = notesDesc[0], P = notesDesc[1] || null;
@@ -6504,6 +6578,7 @@ function renderClinicalCaseDetail(item) {
     </div>
     ${renderCaseTags(item)}
     ${renderVisitBrief(item, notes)}
+    ${renderCareReadinessPanel(item, notes)}
     ${renderOutcomeTrackingPanel(item)}
     ${renderAgentExposuresPanel(item)}
     ${renderEnvironmentalExposuresPanel(item)}
