@@ -2,6 +2,31 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #16 — C2b FINAL GO 後續 + supp 治理三件(Ting 裁定已回)
+
+- CURRENT STATE: Codex R8 = **C2b FINAL GO(條件式)**,P4 真機 checklist 在 AI_REVIEW_FEEDBACK.md;等 Ting 選日真機執行。四線卡片併發中。
+- COMPLETED:supp.lutein 來源修復(18f4336,NEI AREDS2 活連結,原 ODS 目錄連結不支持宣稱);SUPP_CARD_TEMPLATE 升級標準制定(skeleton/core/clinical_ready 逐項可機檢,Ting 授權)+ interaction_focus 欄位追認 + patient_education 欄位規格。
+- NEXT(Fable):首頁 UI 專業化 + quality 頁假數據清理(Ting 指示);supp 驗證器教 interaction_focus。
+
+```yaml
+CONTENT_REQUEST:
+  request_id: CR-014
+  entity_id: data/pharmacology/pharm_drugclasses.json + data/supplements/supplements.json
+  type: drug
+  priority: P1
+  needed_for: St John's wort 等關鍵 herb-drug interaction 掛載;Ting 長期追蹤+衛教需求
+  missing:
+    - "immunosuppressant 藥類完全缺席(33 classes 無此類):需 cyclosporine、tacrolimus 至少成類,含 class 定義、代表藥、CYP3A4/P-gp 機轉摘要(來源:FDA label / MedlinePlus)"
+    - "St John's wort × immunosuppressant 的 known_concern 佐證(器官移植排斥案例文獻,經典為 Lancet 2000 cyclosporine 報告)"
+    - "SUPP_VERIFY_LEDGER.md 內 7 個 CONTENT_REQUEST-ready 缺口逐項補來源(該檔已列明每項缺什麼)"
+    - "NMN 劑量宣稱找可引用來源(現僅 PubMed 搜尋 query URL,不合格,劑量已依規留 null)"
+  desired_output: MD source pack(逐項 URL + 支持句摘錄)
+  target_staging_area: docs/research_packs/
+  acceptance: [source-backed, 每 URL 需活著且原文支持該句, no invented claims]
+```
+
+---
+
 ## HANDOFF #15 — 優化計畫主項全數落地(v0/原型)+ 四線併發
 
 - CURRENT STATE: Fable / codex/pattern-v2 f1d8f96 / OPTIMIZATION_PLAN 主項完成度:A ✓(27 metrics 含 PGIC)、P0.5 ✓、P3-lite ✓、B ✓(泳道圖)、C ✓(evidence debt)、P2 ✓(readiness 徽章 v0);唯 P1 診前手機頁尚未做(入口方案待定)
