@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — Clinical V2 Phase B→C2a 獨立審計與 C2b gate
+
+- **範圍／結果**：獨立重查 `994d8b3^..e959ce9` 的 10 項清單；分級 `BLOCKER 1 · HIGH 4 · MEDIUM 3 · LOW 0 · PASS 2`，C2b = **NO-GO / PAUSE**，不得對 33 個真實病例執行 case→patient 抬升。
+- **檔案走查**：隔離 origin 假 case `0→1→0→1→0`；agent/env events `3/3`、life/adverse/differential `1/1/1`、selections/metric `2/1`；兩次 export `7,532 bytes` 且 SHA-256 相同，3 份假資料檔均清理。
+- **主要風險**：mapping exposure timestamps `4` 欄與 pattern note `1` 欄未覆蓋且 status/policy 過期；import 可整包改刪 events；role/isPrimary 反例可匯入；sparse `418→2,636 bytes` 並合成 `4` 個 timestamps；Patient 衍生漏 `birthYear`。
+- **驗證原文摘要**：`build-data exit 0` 且兩個主要 generated SHA 不變；clinical validator `9 files / 2 refs / 0 issues`；content-junk/data(`947`)/interactions(`0 failures`)/relations/ratchet/app+store syntax 均 exit `0`；diff range `21 paths`，forbidden paths `0/0/0`。
+- **已知未解／下一步**：未連上持有 33 real cases 的 browser profile，故 `33 patients / 0 conflicts` 與 `34→33` 未獨立實讀；先依 `docs/AI_REVIEW_FEEDBACK.md` 建 raw+export 雙備份、dry-run/idempotency/shadow-key/rollback/逐欄驗收，再交 Codex 重審 GO。
+
 # 2026-08-09 Claude — Outcome metrics batches 2-3 (8 metrics wired) + Outcome Tracking v1 + session handoff
 
 - **Scope**: three sequential rounds in one session, each committed and pushed separately, ending with this final-round handoff. Numeric outcome metric renderer went from 3 wired metrics to **11 of 22** vocabulary definitions; a new read-only Outcome Tracking panel (Baseline/Today/Change/Trend, CG8) was added on top.

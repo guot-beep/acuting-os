@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — Clinical V2 Phase B→C2a audit / C2b NO-GO
+
+- **Branch / Reviewed Range**: `codex/pattern-v2`; `994d8b3^..e959ce9`; pulled current remote first. Audit output is at the top of `docs/AI_REVIEW_FEEDBACK.md` with `STATUS: PAUSE`.
+- **10-item Result**: `BLOCKER 1 · HIGH 4 · MEDIUM 3 · LOW 0 · PASS 2`; C2b real-case migration is **NO-GO**. The file-level fake-only export→wipe→import path passed with two `7,532-byte` exports and identical SHA-256; isolated case count returned to `0` and three fake artifacts were removed.
+- **Gate Findings**: D17 mapping is stale/coarse and leaves exposure timestamps plus pattern note unmapped; replace-all import can rewrite append-only events; role/isPrimary divergence survives import; sparse normalization fabricates case/soap timestamps used by C2a latest-wins; Patient derivation omits `birthYear` and treats array-order changes as conflicts.
+- **Validation**: isolated `e959ce9` archive — deterministic build hashes unchanged; Clinical `9 files / 2 refs / 0 issues`; content/data/interactions/relations/ratchet and app/store syntax all exit `0`; range has `21` paths and no curriculum, `js/knowledge.js`, or `js/router.js` paths.
+- **Next Gate**: locate the browser/profile holding the 33 real cases for read-only raw counts; produce raw + app-export backups and a restore drill; implement deterministic dry-run/idempotency/shadow-key/rollback plus exact field/id/hash acceptance; then request a fresh Codex GO before any real write.
+
 ## [2026-08-08] Codex Handoff — Pattern V2 renderer safe checkpoint
 
 - **Branch / Scope**: `codex/pattern-v2`; finalizes the renderer base for the already-committed V2-B/V2-C data only. No new Pattern identity or V2-D content was created.
