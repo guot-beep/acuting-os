@@ -8098,7 +8098,14 @@ function importClinicalCases(event) {
         // 也必須可還原 —— 那正是「v2 keys 被清後靠備份復原」的場景;
         // restoreV2Envelope 會做自洽性驗證並自行補回 pointer。
         // migration-era(revision 缺/0)維持原規則:非 v2 世界一律拒絕。
-        const importedIsRuntimeEra = Number(imported.runtime_revision || 0) >= 1;
+        // R11-E3(app 前置):runtime_revision 存在就必須是 safe integer ≥1;
+        // 字串 "2" 這類型別污染在進 store 前擋下,零寫入。
+        if (imported.runtime_revision !== undefined && imported.runtime_revision !== null
+            && (!Number.isSafeInteger(imported.runtime_revision) || imported.runtime_revision < 1)) {
+          alert(`匯入被拒絕:runtime_revision 型別/值非法(${JSON.stringify(imported.runtime_revision)})— 必須是 ≥1 的整數或不存在。未進行任何寫入。`);
+          return;
+        }
+        const importedIsRuntimeEra = Number.isSafeInteger(imported.runtime_revision) && imported.runtime_revision >= 1;
         if (pointer !== "v2" && !importedIsRuntimeEra) {
           alert("匯入被拒絕:這是 v2 備份(含 patients 層),目前系統仍在 v1 模式。v2 還原屬於 migration 工具流程,不能在這裡降級匯入(會丟失 patients/journal)。");
           return;
@@ -8117,6 +8124,11 @@ function importClinicalCases(event) {
           if (res.ok) {
             alert(`v2 staging 驗證通過並已還原(${res.patients} patients / ${res.cases} cases)。頁面將重新載入。`);
             location.reload();
+          } else if (res.code === "INCONSISTENT_STATE") {
+            // R11-E5:部分寫入且回滾失敗 —— 絕不宣稱「未被更動」。顯示實際
+            // 兩鍵狀態、設唯讀保護(擋 persist),要求先匯出後人工修復。
+            clinicalStoreIntegrityError = res.failures.join("; ");
+            alert(`⚠️ 還原進入不一致狀態(部分寫入且回滾失敗)。已啟動唯讀保護,存檔已鎖定。\n實際狀態:\n${res.failures.join("\n")}\n\n請先匯出 localStorage 的 staging 與 pointer 兩鍵內容,再人工修復。`);
           } else {
             alert(`匯入被拒絕 — 驗證失敗(現有資料未被更動):\n\n${res.failures.slice(0, 5).join("\n")}${res.failures.length > 5 ? "\n…" : ""}`);
           }

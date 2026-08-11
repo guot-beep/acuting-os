@@ -1,6 +1,22 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R11 — R10 六反例修復覆核
+## ⚡ NEXT TASK: C2B-R12 — R11 E1-E5 修復覆核
+
+Fable 已修(現 tip 見 origin):E1 TOCTOU —— 驗證錨 = 驗證起點的 staging exact
+bytes,全部 await 結束後寫入前重讀比對,不同即結構化拒絕零寫入(重試會對新
+狀態重新驗證);E2 revision 秩序 —— <current 拒、==current 只准 byte-equal
+冪等 no-op(divergent 必拒)、>current 才進完整驗證;E3 runtime_revision
+型別鐵則(safe integer ≥1,store restore/load 邊界 + app 前置三處);E4
+pending 集合與 null-FK case code 集合雙向精確互等(ghost/漏列/重複全拒);
+E5 結構化失敗碼 REJECTED_UNCHANGED / INCONSISTENT_STATE,app 依 code 分流,
+INCONSISTENT_STATE 顯示實際兩鍵狀態 + 設唯讀鎖擋 persist,不再宣稱「未被更動」。
+rehearse-runtime-restore 42/42(你的五反例含 delayed-hasher restore-vs-sync、
+equal-revision divergent、string revision、ghost pending、double-fault code)。
+請重跑 R9(9)+R10(8)+R11(5)全情境 + 自行加碼;全綠發 R12 GO + 修訂版 P4。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R11 — R10 六反例修復覆核
 
 Fable 已修 D1-D6(現 tip 見 origin):D1 save 對 pending case 明確 patientId=null,
 verifier 承認「code∈pending 且 patientId=null」唯一合法 transient(還原後 sync 收尾);

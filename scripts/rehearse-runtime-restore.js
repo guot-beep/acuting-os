@@ -147,5 +147,70 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.ok(!bF.kv.has(S.STAGING_KEY)); ok("R10-D5: staging rolled back to absent (exact prior state)");
   assert.ok(!bF.kv.has(S.POINTER_KEY)); ok("R10-D5: pointer unchanged");
 
+  // === R11 反例(Codex 6cf7782)===
+  // R11-E1:restore-vs-sync TOCTOU —— 驗證 await 期間 active 被推進,寫入前必拒
+  const bE = fakeBackend({});
+  S.setBackend(bE);
+  const baseEnv = { schema_version: 2, journal: {}, patients: [], cases: [{ id:"case.e1", patientCode:"PE1", soapNotes: [] }], pending_patient_codes: ["PE1"], runtime_revision: 5 };
+  bE.kv.set(S.STAGING_KEY, JSON.stringify(baseEnv));
+  bE.kv.set(S.POINTER_KEY, "v2");
+  const incomingE1 = JSON.parse(JSON.stringify(baseEnv)); incomingE1.runtime_revision = 6; incomingE1.cases[0].caseTitle = "import";
+  let releaseE1; const gateE1 = new Promise((r) => { releaseE1 = r; });
+  const slowShaE1 = async (s) => { await gateE1; return require("crypto").createHash("sha256").update(s).digest("hex"); };
+  const restoreP = S.restoreV2Envelope(JSON.stringify(incomingE1), slowShaE1);
+  S.save([{ id:"case.e1", patientCode:"PE1", soapNotes: [], edited:"during-restore" }]);   // await 期間推進 active(rev 6)
+  releaseE1();
+  const rE1 = await restoreP;
+  assert.strictEqual(rE1.ok, false); ok("R11-E1: TOCTOU refused (active changed during validation)");
+  assert.ok(rE1.failures[0].includes("CHANGED during restore validation")); ok("R11-E1: structured refusal message");
+  assert.strictEqual(JSON.parse(bE.kv.get(S.STAGING_KEY)).cases[0].edited, "during-restore"); ok("R11-E1: newer save preserved, zero overwrite");
+
+  // R11-E2:同 revision 不同內容必拒;byte-equal 冪等 no-op 放行
+  const curE2 = JSON.parse(bE.kv.get(S.STAGING_KEY));
+  const divergent = JSON.parse(JSON.stringify(curE2)); divergent.cases[0].caseTitle = "branch!";
+  const rE2 = await S.restoreV2Envelope(JSON.stringify(divergent), sha);
+  assert.strictEqual(rE2.ok, false); ok("R11-E2: equal-revision divergent payload rejected");
+  const rE2b = await S.restoreV2Envelope(JSON.stringify(curE2), sha);
+  assert.strictEqual(rE2b.ok, true); ok("R11-E2: byte-equal same-revision accepted as no-op");
+  assert.strictEqual(rE2b.idempotent_noop, true); ok("R11-E2: flagged idempotent_noop");
+
+  // R11-E3:runtime_revision 型別污染必拒(store 與 load 邊界)
+  const typed = JSON.parse(bE.kv.get(S.STAGING_KEY)); typed.runtime_revision = "99";
+  const rE3 = await S.restoreV2Envelope(JSON.stringify(typed), sha);
+  assert.strictEqual(rE3.ok, false); ok("R11-E3: string revision rejected at restore");
+  const bE3 = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify(typed) });
+  S.setBackend(bE3);
+  assert.throws(() => S.load(), /invalid type/); ok("R11-E3: string revision rejected at load boundary");
+
+  // R11-E4:ghost pending code / 漏列 null-FK 皆拒
+  S.setBackend(bE);
+  const ghost = JSON.parse(bE.kv.get(S.STAGING_KEY)); ghost.runtime_revision += 1;
+  ghost.pending_patient_codes = [...(ghost.pending_patient_codes||[]), "GHOST-CODE"];
+  const rE4 = await S.restoreV2Envelope(JSON.stringify(ghost), sha);
+  assert.strictEqual(rE4.ok, false); ok("R11-E4: ghost pending code rejected");
+  const omit = JSON.parse(bE.kv.get(S.STAGING_KEY)); omit.runtime_revision += 1;
+  omit.cases.push({ id:"case.omit", patientCode:"P-OMIT", patientId: null, soapNotes: [] });   // null FK 但不進 pending
+  const rE4b = await S.restoreV2Envelope(JSON.stringify(omit), sha);
+  assert.strictEqual(rE4b.ok, false); ok("R11-E4: null-FK case missing from pending rejected");
+
+  // R11-E5:rollback 失敗 → code=INCONSISTENT_STATE;一般拒絕 → REJECTED_UNCHANGED
+  assert.strictEqual(rE4.code, "REJECTED_UNCHANGED"); ok("R11-E5: normal rejection carries REJECTED_UNCHANGED");
+  // 先播一個低 revision 的合法 staging(rollback 才會走 writeKey 而非 removeKey)
+  const seedE5 = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: 1 };
+  const bE5 = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(seedE5) });
+  let stagingWrites = 0;
+  const origWK5 = bE5.writeKey.bind(bE5);
+  bE5.writeKey = (k, v) => {
+    if (k === S.POINTER_KEY) throw new Error("pointer fault");
+    if (k === S.STAGING_KEY) { stagingWrites++; if (stagingWrites >= 2) throw new Error("rollback fault"); }
+    origWK5(k, v);
+  };
+  S.setBackend(bE5);
+  const goodE5 = JSON.parse(bE.kv.get(S.STAGING_KEY));
+  const rE5 = await S.restoreV2Envelope(JSON.stringify(goodE5), sha);
+  assert.strictEqual(rE5.ok, false); ok("R11-E5: double-fault -> ok:false");
+  assert.strictEqual(rE5.code, "INCONSISTENT_STATE"); ok("R11-E5: INCONSISTENT_STATE code surfaced");
+  assert.ok(rE5.failures[0].includes("INCONSISTENT STATE")); ok("R11-E5: honest state description");
+
   console.log(`\nRUNTIME RESTORE REHEARSAL: ${pass}/${pass} PASS`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });
