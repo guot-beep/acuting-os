@@ -3198,3 +3198,9 @@ Current repo state as of this log:
 - **修正**:schema 新增 `case_exposure_events`(append-only,agent|environmental 雙親型);契約 `agentExposures[].events[]` / `environmentalExposures[].events[]`;changelog 改月精度。
 - **驗證數字**:審計情境 live 重建 3/3 事件、歷史劑量 200/400 皆可回溯、晉升 trail 含來源 note、0 console errors、K 系列 exit 0、app.js check PASS。
 - **裁定:PHASE C: SAFE TO PROCEED**(原 HOLD 解除)。Codex 落 main 前仍須獨立複核五點(報告檔尾)+ 事件層 append-only 不變量。
+
+# 2026-08-12 Fable — Phase C 完成:薄 repository 層(af52eb8)
+
+- `js/clinical-store.js`:storage seam(load/persist 兩處委派 + 直讀 fallback)、`applyExposureChange()` append-only 唯一寫入路徑(回應審計 B-1「靠紀律」缺口的機器強制面)、四個軌跡/現況查詢助手。normalize 留 app.js(契約層),store 零 DOM 依賴可 node 測。
+- 驗證:node 單元測試 5 項全過;live 33 real cases 無恙、0 errors;build-site 16 files;遷移路徑補記入 MIGRATION_LOCALSTORAGE_TO_SQLITE.md(未來換後端=setBackend,UI 零改動)。
+- 下一步:Phase D UI → Sonnet(契約已鎖);Phase C2 Patient wiring → Fable(高風險,完成即 Codex audit)。

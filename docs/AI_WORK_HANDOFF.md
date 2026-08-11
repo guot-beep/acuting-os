@@ -2,6 +2,46 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF 2026-08-12 #3 — Phase C 完成(薄 repository 層)
+
+### CURRENT STATE
+- agent/model: Claude Fable 5;branch `codex/pattern-v2`;HEAD `af52eb8`
+- phase: Phase C 完成(依鎖定定義:薄抽象+遷移路徑文件;SQLite 實裝不在 9/5 範圍)
+
+### COMPLETED SINCE LAST HANDOFF
+- `af52eb8`:`js/clinical-store.js`(零 DOM 依賴,node 可測)——
+  storage seam(app.js load/persist 兩處委派,保留直讀 fallback 防清空)、
+  `applyExposureChange()`(ledger 唯一認可變更路徑;append-only 的機器強制面,
+  回應審計「靠紀律」缺口)、軌跡查詢(getOutcomeHistory/getLifestyleHistory/
+  getExposureTimeline/getCurrentExposures,Patient Now/Over Time 與 Phase E 的資料來源)
+- `docs/MIGRATION_LOCALSTORAGE_TO_SQLITE.md` 補 Phase C 記錄:遷移面=兩個 seam
+  呼叫點 + setBackend(adapter)
+- 驗證:node 單元測試(append-only 成立、舊事件不可變、非法 eventType throw、
+  快照隨事件更新、pain 8→5 軌跡);live:兩 seam 走 store、33 個真實病例無恙、
+  0 console errors;build-site 16 files(store 自動入 dist);app.js+store `node --check` PASS
+- 讀 AI_REVIEW_FEEDBACK.md:尚無 SOL review(REVIEW_ACKNOWLEDGED: n/a)
+
+### IN PROGRESS
+- 無半成品。
+
+### RISKS / QUESTIONS
+- UI 目前尚無任何呼叫 applyExposureChange 的表單(Phase D 才有)——invariant
+  已可強制但還沒有消費者
+- Phase C2(Patient wiring)仍未開始,列高風險里程碑
+
+### NEXT INTENDED TASK
+Phase D 最小捕捉 UI —— **建議 ROUTE TO SONNET**(契約全鎖:B2 鍵名 +
+applyExposureChange 為唯一 ledger 寫入路徑 + M-3 雙軌規則)。
+Phase C2 Patient wiring 留 Fable,排在 Phase D 首批之後。
+
+### ROUTING RECOMMENDATION
+- Fable 留:Phase C2 Patient wiring、med→drug 閘門
+- Sonnet 接:Phase D 表單(agent ledger + adverse event quick-add + lifestyle 行)
+- Codex 審:維持 #2 的五點 + 本次 store seam(fallback 行為、applyExposureChange 不變量)
+- Antigravity:不變;Opus review needed: no
+
+---
+
 ## HANDOFF 2026-08-12 #2 — 對抗性審計完成:1 BLOCKER 已修,PHASE C 解除 HOLD
 
 ### CURRENT STATE
