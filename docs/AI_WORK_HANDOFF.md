@@ -2,6 +2,19 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #14 — 學術欄位批次 + Cond B-E 合併 + Evidence Debt
+
+- CURRENT STATE: Fable / codex/pattern-v2 / 優化主項連發中;兩個 Sonnet 批次在跑(cond F-I、sym Batch D 心肺血管缺口)
+- COMPLETED:
+  - **學術 readiness 批次(8d2a753,9/01 凍結前承諾)**:STRICTA 2010 item-2 五欄(needleCount/needleDepthText/deqiResponse/needleStimulation/needleTypeText,visit 層)、CARE item-12 patientPerspective、case 層 publicationConsent(+date,D4:"" = 從未詢問,絕不捏造)、metric.pgic(IMMPACT 1-7,新 category "global")接入 numeric config 即獲表單欄位。schema.sql + mapping 同步 additive。Phase E 12/12、invariants 0 violations、app syntax OK
+  - **Cond B-E 合併(9ebd671)**:Sonnet 產 20 概念(3 enrich + 17 new),conditions 153→170、clean 4→23;ratchet BETTER 577→539(conditions)、220→0(patterns),baseline 已鎖。cond.heart_failure 帶 1 個 pre-existing C5(心律不整內容錯置,依 §0 不刪,待專門搬移批次,可能歸 cond.palpitations)。旗標:DVT↔PE 等 condition↔condition 結構化關聯欄位不存在(只能放 differential 散文)—— 要不要加入 schema 屬架構決定,留給 Ting/9月後
+  - **Evidence Debt 計分(SOL 方向 C)**:scripts/evidence-debt.js —— score = 使用頻率 ×(1+AE同現+interaction缺漏)× 卡片缺漏度;欄位表逐 section 對過 bundle 實形(pattern.* 在 patternLibrary,tcmPatternCanon 是 pat.* 另一群 —— 初版誤用同一欄位表把齊卡判成 100% 缺,已修)。33-case 實測:目前使用中實體無 debt(卡皆齊)
+- IN PROGRESS: Sonnet×2(cond F-I 續批、sym Batch D:dyspnea/chest_pain/syncope/hemoptysis 等 cond 卡指到的註冊表缺口)
+- NEXT: pharm validator 版本調和(impl 分支 731 行版)→ CHM-CARE 61 項對映表(P2 前置)
+- ROUTING: Codex 照佇列 R8(桌面 app 派工被 IME 視窗擋,佇列檔為準);SOL 續 CR-010 delta
+
+---
+
 ## HANDOFF #13 — Sym Batch C 合併 + P3-lite Practice Audit 落地
 
 - CURRENT STATE: Fable / codex/pattern-v2 / sym 合併 460a2a1 + audit 腳本 / 優化主項執行中
