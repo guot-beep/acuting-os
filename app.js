@@ -5022,7 +5022,31 @@ function normalizeClinicalCase(value) {
             lastConfirmedVisitId: String(e.lastConfirmedVisitId || ""),
             changeSinceLast: String(e.changeSinceLast || ""),
             changeNote: String(e.changeNote || ""),
-            notes: String(e.notes || "")
+            notes: String(e.notes || ""),
+            // B-1 fix (docs/AUDIT_PHASE_B_2026-08-12.md): append-only event
+            // history — the ledger fields above are the CURRENT snapshot;
+            // these rows are what make 200mg→400mg→stopped reconstructable.
+            // Write rule (app-enforced, normalizer only records): any change
+            // to the snapshot fields MUST push one event with the NEW values;
+            // events are never edited or removed — corrections are a new
+            // event with a note. Maps to case_exposure_events (parent_type
+            // 'agent'). Absent key on legacy data = [] — legal, means "no
+            // recorded history yet", never fabricated.
+            events: Array.isArray(e.events)
+              ? e.events
+                  .filter((ev) => ev && ev.eventType)
+                  .map((ev) => ({
+                    id: String(ev.id || createId("expevt")),
+                    visitId: String(ev.visitId || ""),
+                    eventType: String(ev.eventType || ""),
+                    doseText: String(ev.doseText || ""),
+                    frequencyText: String(ev.frequencyText || ""),
+                    status: String(ev.status || ""),
+                    effectiveApprox: String(ev.effectiveApprox || ""),
+                    note: String(ev.note || ""),
+                    createdAt: String(ev.createdAt || new Date().toISOString())
+                  }))
+              : []
           }))
       : [],
     // D17 — environmental/toxic exposures, SEPARATE from lifestyle (an
@@ -5043,7 +5067,26 @@ function normalizeClinicalCase(value) {
             firstNotedVisitId: String(e.firstNotedVisitId || ""),
             lastConfirmedVisitId: String(e.lastConfirmedVisitId || ""),
             changeSinceLast: String(e.changeSinceLast || ""),
-            notes: String(e.notes || "")
+            notes: String(e.notes || ""),
+            // B-1/H-1 fix: same append-only event history as agentExposures.
+            // certainty transitions (suspected→confirmed) MUST land here as
+            // certainty_changed events with a source note — closing the
+            // trace-less promotion channel the audit flagged. Maps to
+            // case_exposure_events (parent_type 'environmental').
+            events: Array.isArray(e.events)
+              ? e.events
+                  .filter((ev) => ev && ev.eventType)
+                  .map((ev) => ({
+                    id: String(ev.id || createId("expevt")),
+                    visitId: String(ev.visitId || ""),
+                    eventType: String(ev.eventType || ""),
+                    certainty: String(ev.certainty || ""),
+                    timing: String(ev.timing || ""),
+                    effectiveApprox: String(ev.effectiveApprox || ""),
+                    note: String(ev.note || ""),
+                    createdAt: String(ev.createdAt || new Date().toISOString())
+                  }))
+              : []
           }))
       : [],
     summary: String(value.summary || ""),

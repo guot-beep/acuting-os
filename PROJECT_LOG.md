@@ -3191,3 +3191,10 @@ Current repo state as of this log:
 - 規則要點:每工作區塊前 pull+讀 feedback、比對 SHA 防過期 review;里程碑優先於時鐘、防空 commit 迴圈;高風險里程碑(schema/Patient wiring/migration/export/落 main/Cloudflare prod)過線即等外審;CONTENT_REQUEST YAML 讓 SOL 直接供研究材料進 staging,照常走驗證閘門,不自動成 canon。Ting 只管臨床偏好/不可逆/隱私/優先序。
 - Export/import 完整性(HARD GATE 7)結構驗證:export=全物件序列化、import=`map(normalizeClinicalCase)`(B2 已 live 驗證的同一 normalizer)→ 新鍵不會被備份遺漏;檔案級走查留給 Phase E。
 - 下一步:等 SOL 首輪 review + Codex Phase B audit;之後 Phase C 薄抽象(Fable)。
+
+# 2026-08-12 Fable — Phase B 對抗性審計 + BLOCKER 修正(858e6f0 → 本 commit)
+
+- **審計**(`docs/AUDIT_PHASE_B_2026-08-12.md`,12 項):B-1 BLOCKER = agent/env ledger 就地更新,200mg→400mg→stopped 不可重建,違反 D17 §5;H-1 = certainty 覆寫即無痕晉升;H-2 = B1 的 mapping changelog 全日期命中 K4,K 系列 validator 紅了(不在 CI,原報告未察)。差異點:原 Phase B 報告宣稱「單一時間線」成立——審計證明只有快照半邊成立,事件半邊缺失。
+- **修正**:schema 新增 `case_exposure_events`(append-only,agent|environmental 雙親型);契約 `agentExposures[].events[]` / `environmentalExposures[].events[]`;changelog 改月精度。
+- **驗證數字**:審計情境 live 重建 3/3 事件、歷史劑量 200/400 皆可回溯、晉升 trail 含來源 note、0 console errors、K 系列 exit 0、app.js check PASS。
+- **裁定:PHASE C: SAFE TO PROCEED**(原 HOLD 解除)。Codex 落 main 前仍須獨立複核五點(報告檔尾)+ 事件層 append-only 不變量。

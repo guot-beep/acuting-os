@@ -2,6 +2,41 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF 2026-08-12 #2 — 對抗性審計完成:1 BLOCKER 已修,PHASE C 解除 HOLD
+
+### CURRENT STATE
+- agent/model: Claude Fable 5;branch `codex/pattern-v2`;phase: Phase B 審計+修正完成
+- HEAD: 本 commit(前一實作 commit `858e6f0` 審計報告)
+
+### COMPLETED SINCE LAST HANDOFF
+- `858e6f0` 對抗性審計 `docs/AUDIT_PHASE_B_2026-08-12.md`:12 項檢查,
+  1 BLOCKER(B-1 ledger 就地更新不可重建歷史,違反 D17 §5)、2 HIGH
+  (H-1 certainty 無痕晉升通道;H-2 B1 把 K 系列 PHI validator 弄紅)、3 MEDIUM、2 LOW
+- **RESPONSE_TO_REVIEW(本 commit)**:
+  - B-1/H-1 修正:schema 新增 `case_exposure_events` append-only 事件表
+    (parent_type agent|environmental);契約新增 `agentExposures[].events[]` /
+    `environmentalExposures[].events[]`;寫入規則=改快照必 append 事件,事件永不改刪
+  - H-2 修正:mapping changelog 改月精度 → `validate-clinical-case-standard.js` exit 0
+  - 驗證:live 實測審計指定情境 **200mg→400mg→stopped 3/3 事件保留、兩個歷史劑量
+    皆可重建**;suspected→confirmed 晉升 trail 含來源 note;0 console errors;
+    app.js `node --check` PASS;K 系列 exit 0
+- M-1(role⇔isPrimary validator)、M-3(Phase D 雙軌規則)記入待辦,不擋 Phase C
+
+### RISKS / QUESTIONS
+- 事件層的 append-only 不變量目前靠 app 寫入紀律,無機器強制——Codex 複核重點
+- M-2:relatedSymId 是指向空 sym.* 命名空間的 forward reference,政策待寫明
+
+### NEXT INTENDED TASK
+**PHASE C: SAFE TO PROCEED**(HOLD 解除)——薄 repository 抽象 + 遷移路徑文件。
+開工前照協議 re-check 本檔上方是否有 SOL 新 review。
+
+### ROUTING RECOMMENDATION
+- Fable 留:Phase C;Sonnet 接:Phase D UI(契約含 events[] 寫入規則)、M-1 validator
+- Codex 審:audit 報告結論五點(檔尾)+ B-1 修正的 append-only 驗證
+- Antigravity:不變;Opus review needed: no
+
+---
+
 ## HANDOFF 2026-08-12 #1 — Phase A+B 完成,等 Codex/SOL 審後進 Phase C
 
 ### CURRENT STATE

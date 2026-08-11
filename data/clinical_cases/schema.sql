@@ -684,3 +684,40 @@ CREATE TABLE IF NOT EXISTS visit_adverse_events (
   notes TEXT,
   FOREIGN KEY (visit_id) REFERENCES visits(id)
 );
+
+-- B-1 fix (docs/AUDIT_PHASE_B_2026-08-12.md) — the event half of the
+-- snapshot+event model D17 §5 actually requires. The ledger rows above
+-- (case_agent_exposures / case_environmental_exposures) are CURRENT-STATE
+-- SNAPSHOTS and stay cheap for "Patient Now"; this table is the APPEND-ONLY
+-- history that makes 200mg → 400mg → stopped reconstructable. Rules:
+--   * Any write that changes a ledger row's state MUST append one event row
+--     recording the NEW value(s). The app enforces this at write time; the
+--     audit trail is only as good as that invariant, which is exactly what
+--     Codex must re-verify before landing to main.
+--   * Rows here are never updated or deleted — corrections are a new event
+--     with note. (No UPDATE path may exist in app code.)
+--   * certainty transitions (suspected → confirmed) land here as
+--     certainty_changed events with a source note — the覆寫-without-trace
+--     promotion channel H-1 identified is closed by this table.
+--   * One table for both ledgers (parent_type discriminator) — the event
+--     grammar is identical and two near-identical tables would drift.
+CREATE TABLE IF NOT EXISTS case_exposure_events (
+  id TEXT PRIMARY KEY,
+  case_id TEXT NOT NULL,
+  parent_type TEXT NOT NULL,     -- 'agent' | 'environmental'
+  parent_id TEXT NOT NULL,       -- case_agent_exposures.id | case_environmental_exposures.id
+  visit_id TEXT,                 -- visit where the change was reported (nullable: intake)
+  event_type TEXT NOT NULL,      -- started|stopped|dose_changed|frequency_changed|
+                                 -- status_changed|certainty_changed|timing_changed|confirmed_unchanged
+  -- Post-event values — only the fields the event actually changed are set;
+  -- the rest stay NULL (absence = "unchanged by this event", never "unknown").
+  dose_text TEXT,
+  frequency_text TEXT,
+  status TEXT,
+  certainty TEXT,
+  timing TEXT,
+  effective_approx TEXT,         -- D4 coarse date the change took effect, if known
+  note TEXT,
+  created_at TEXT,
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
