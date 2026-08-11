@@ -1,0 +1,37 @@
+{
+  "pack": "AcuTing_OS_CR010_Common300_Detail_Batch_01",
+  "request_ids": [
+    "CR-010"
+  ],
+  "generated_at": "2026-08-11",
+  "condition_count": 12,
+  "json_parse_validation": "PASS",
+  "status": "research_staging_not_canonical",
+  "files": [
+    {
+      "path": "data/research_staging/cr010_condition_detail_batch01_SOL.json",
+      "bytes": 56982,
+      "sha256": "14deee670ceff5d7446ab0f79aaebed5a9e20b6e32f3243a51361e21c4e62dc4"
+    },
+    {
+      "path": "data/research_staging/cr010_repo_preflight_SOL.json",
+      "bytes": 1849,
+      "sha256": "6017dcb226f3868d095bd3ce69392613ef1abe5d68d86df9d88307e287c723f4"
+    },
+    {
+      "path": "data/research_staging/cr010_source_reuse_map_SOL.json",
+      "bytes": 1415,
+      "sha256": "5d4eb32fe0716f89fa9b3f716b51967b0c1f114b2fffed8d6f5c263cf7af5395"
+    },
+    {
+      "path": "docs/research_packs/00_README_CR010_COMMON300_BATCH01.md",
+      "bytes": 1506,
+      "sha256": "4b4474a6ffcacd15489c86b0362383846a2c6d13e9943cbe324fbe9852abd453"
+    },
+    {
+      "path": "docs/research_packs/CR010_CONDITION_DETAIL_BATCH01_SOL.md",
+      "bytes": 23152,
+      "sha256": "bd43ff3bb01ef1c2d292372621bff502ae0a6145823f4a8ca43de0a56381772d"
+    }
+  ]
+}
