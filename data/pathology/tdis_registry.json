@@ -6216,98 +6216,1445 @@
       "name_zh": "妊娠惡阻",
       "pinyin": "Renshen Ezu",
       "name_en": "Morning Sickness",
-      "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders",
+      "definition_zh": "妊娠惡阻是指妊娠早期出現噁心嘔吐、頭暈厭食，甚則食入即吐的病證，多見於妊娠六至十二週。",
+      "definition_en": "Morning Sickness / Hyperemesis Gravidarum (妊娠惡阻) refers to nausea, vomiting, dizziness, and food aversion in early pregnancy, sometimes with vomiting immediately after eating, most often seen between six and twelve weeks of gestation.",
+      "etiology_zh": "多因素體脾胃虛弱，孕後經血不瀉、沖脈之氣偏盛，胃失和降，上逆作嘔；或肝胃不和，肝氣挾沖氣上逆犯胃；或痰濕素盛，孕後沖氣夾痰濕上逆。",
+      "etiology_en": "Commonly caused by underlying Spleen-Stomach weakness — once pregnant, menstrual Blood no longer descends and Chong-vessel Qi becomes relatively excessive, causing the Stomach to lose its downward-directing function and rebel upward as vomiting; or Liver-Stomach disharmony, with Liver Qi carrying rebellious Chong Qi to invade the Stomach; or underlying Phlegm-Damp excess that, once pregnant, rises together with Chong Qi.",
+      "pathomechanism_zh": "孕後血聚養胎，沖脈氣盛，若脾胃素虛，則沖氣夾胃氣上逆而嘔惡；若肝旺胃弱，肝氣挾沖氣橫逆犯胃，亦致嘔吐；痰濕內盛者，痰濕隨沖氣上逆，阻遏胃氣和降，嘔吐痰涎。",
+      "pathomechanism_en": "Once pregnant, Blood gathers to nourish the fetus and Chong-vessel Qi becomes excessive. If the Spleen-Stomach is underlyingly weak, Chong Qi carries Stomach Qi upward, causing nausea and vomiting. If the Liver is overactive and the Stomach weak, Liver Qi carries rebellious Chong Qi to invade the Stomach, likewise producing vomiting. In those with underlying Phlegm-Damp excess, Phlegm-Damp rises with the Chong Qi and obstructs the Stomach's downward-directing function, producing vomiting of phlegm-laden fluid.",
+      "key_manifestations_zh": [
+        "妊娠早期噁心嘔吐，晨起或食後尤甚",
+        "厭食、惡聞食氣，甚則食入即吐",
+        "神疲肢倦、脘悶不舒（脾胃虛弱者）",
+        "嘔吐酸水或苦水、胸脅脹痛、噯氣嘆息（肝胃不和者）",
+        "嘔吐痰涎、胸悶納呆、口淡（痰濕阻滯者）"
+      ],
+      "key_manifestations_en": [
+        "Nausea and vomiting in early pregnancy, worse in the morning or after eating",
+        "Food aversion and distaste for food odors, sometimes vomiting immediately after eating",
+        "Fatigue, limb weariness, and epigastric discomfort (Spleen-Stomach weakness)",
+        "Vomiting of sour or bitter fluid, chest/hypochondriac distension and pain, belching and sighing (Liver-Stomach disharmony)",
+        "Vomiting of phlegm-laden fluid, chest oppression, poor appetite, and blandness in the mouth (Phlegm-Damp obstruction)"
+      ],
+      "disease_location_zh": "病位在胃，與肝、脾、沖脈關係密切。",
+      "disease_location_en": "Disease location is the Stomach, closely related to the Liver, Spleen, and Chong vessel.",
+      "related_patterns": [
+        "pattern.stomach_qi_deficiency",
+        "pattern.liver_stomach_disharmony",
+        "pattern.phlegm_damp"
+      ],
+      "treatment_principle_zh": "以和胃降逆止嘔為總則，脾胃虛弱者健脾和胃，肝胃不和者疏肝和胃，痰濕阻滯者化痰除濕和胃，均需顧護胎元。",
+      "treatment_principle_en": "The overall principle is to harmonize the Stomach and direct rebellious Qi downward to stop vomiting. For Spleen-Stomach weakness, strengthen the Spleen and harmonize the Stomach; for Liver-Stomach disharmony, soothe the Liver and harmonize the Stomach; for Phlegm-Damp obstruction, transform Phlegm, eliminate Dampness, and harmonize the Stomach — all while safeguarding the fetus.",
+      "red_flags_zh": [
+        {
+          "finding": "無法進食飲水、少尿、明顯脫水或體重明顯下降",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫補液評估",
+          "rationale": "重度妊娠惡阻需醫療補液處理",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy01)"
+        },
+        {
+          "finding": "嘔吐物帶血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需評估出血原因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy02)"
+        },
+        {
+          "finding": "意識混亂、視力改變或步態不穩",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除電解質／維生素缺乏之神經併發症",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy03)"
+        },
+        {
+          "finding": "發燒或腹痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示其他病因，非單純妊娠惡阻",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Inability to keep down food/fluids, reduced urine, marked dehydration, or significant weight loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt care for rehydration",
+          "rationale": "Severe hyperemesis gravidarum requires medical rehydration",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy01)"
+        },
+        {
+          "finding": "Blood in vomit",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Cause of bleeding must be evaluated",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy02)"
+        },
+        {
+          "finding": "Confusion, vision change, or unsteady gait",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out neurologic complications of electrolyte/vitamin deficiency",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy03)"
+        },
+        {
+          "finding": "Fever or abdominal pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests another cause, not simple morning sickness",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (rf.hyperemesis_gravidarum.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.ren_shen_e_zu"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.hyperemesis_gravidarum (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.tai_wei_bu_zheng",
       "name_zh": "胎位不正",
       "pinyin": "Taiwei Buzheng",
       "name_en": "Fetal Malposition",
-      "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders",
+      "definition_zh": "胎位不正是指妊娠三十週後，經檢查確認胎兒在子宮內的姿勢異常（如臀位、橫位），非枕前位的病證。",
+      "definition_en": "Fetal Malposition (胎位不正) refers to an abnormal fetal presentation within the uterus after thirty weeks of gestation — such as breech or transverse lie — confirmed by examination, rather than the normal occiput-anterior position.",
+      "etiology_zh": "中醫文獻對本病專論分型甚少，多從氣血運行、胞宮環境立論：或孕婦氣血虛弱，胎氣不振；或氣機不暢，胎位轉動受限；亦與羊水多寡、子宮形態等因素相關，屬中西醫共同關注之產科病證。",
+      "etiology_en": "Classical TCM literature offers relatively little disease-specific pattern differentiation for this condition; discussion instead centers on Qi-Blood flow and the uterine environment — maternal Qi-Blood weakness with insufficient fetal Qi, or impaired movement of Qi limiting the fetus's ability to turn. It is also related to amniotic fluid volume, uterine shape, and other factors, and is a condition of shared concern between TCM and biomedical obstetrics.",
+      "pathomechanism_zh": "胎兒能否轉為正常胎位，有賴母體氣血充盛、胞宮氣機調暢；氣血虛弱則胎兒轉動無力，氣機不暢則胎位轉動受阻，均可致胎位異常。艾灸至陰穴糾正胎位為傳統外治法，其機轉現代多解釋為溫熱刺激增加胎動、間接促進轉位。",
+      "pathomechanism_en": "Whether the fetus can turn into the normal position depends on abundant maternal Qi-Blood and smooth movement of Qi in the uterus; Qi-Blood weakness leaves the fetus without the vigor to turn, while impaired Qi movement obstructs the turning process, either of which can result in fetal malposition. Moxibustion at BL67 (Zhiyin) to correct fetal position is the traditional external treatment; its mechanism is generally explained in modern terms as warming stimulation increasing fetal movement and indirectly promoting version.",
+      "key_manifestations_zh": [
+        "妊娠三十週後檢查確認非枕前位（如臀位、橫位）",
+        "孕婦本身通常無自覺不適症狀",
+        "部分孕婦可兼見氣血虛弱之全身徵象（神疲乏力、面色少華）",
+        "羊水過多或過少、子宮形態異常者較易發生"
+      ],
+      "key_manifestations_en": [
+        "Examination after thirty weeks confirms a non-occiput-anterior presentation (e.g., breech, transverse)",
+        "The pregnant woman typically has no subjective symptoms from the malposition itself",
+        "Some may show general signs of Qi-Blood weakness (fatigue, dull complexion)",
+        "More common with polyhydramnios/oligohydramnios or an abnormally shaped uterus"
+      ],
+      "disease_location_zh": "病位在胞宮，與母體氣血關係密切；本病以現代影像/觸診確認為主，中醫辨證分型相對簡略。",
+      "disease_location_en": "Disease location is the uterus, closely related to maternal Qi-Blood; this condition is primarily confirmed by modern imaging/palpation, and TCM pattern differentiation is comparatively sparse for it.",
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "treatment_principle_zh": "以艾灸至陰穴為主要外治法糾正胎位，配合補益氣血、調暢氣機以助胎轉；矯正胎位須由產科醫師監測確認，不可僅憑辨證治療延誤處置時機。",
+      "treatment_principle_en": "Moxibustion at BL67 (Zhiyin) is the primary external method to correct fetal position, combined with tonifying Qi-Blood and regulating Qi movement to assist version; correction must be monitored and confirmed by an obstetrician, and pattern-based treatment alone must not delay appropriate obstetric management.",
+      "red_flags_zh": [
+        {
+          "finding": "破水合併臍帶脫垂徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫",
+          "rationale": "屬產科急症",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy01)"
+        },
+        {
+          "finding": "規則宮縮或陰道出血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示早產或產兆",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy02)"
+        },
+        {
+          "finding": "胎動明顯減少",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需即時評估胎兒狀態",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy03)"
+        },
+        {
+          "finding": "任何外轉術（矯正胎位之產科處置）",
+          "urgency_level": "routine",
+          "recommended_action": "均應由產科醫師於監測下執行",
+          "rationale": "外轉術有其操作風險，須專業監測",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Ruptured membranes with signs of cord prolapse",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate care",
+          "rationale": "An obstetric emergency",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy01)"
+        },
+        {
+          "finding": "Regular contractions or vaginal bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests preterm labor or onset of labor",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy02)"
+        },
+        {
+          "finding": "Marked decrease in fetal movement",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Requires prompt evaluation of fetal status",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy03)"
+        },
+        {
+          "finding": "Any external cephalic version (the obstetric procedure to correct position)",
+          "urgency_level": "routine",
+          "recommended_action": "Must be performed by an obstetrician under monitoring",
+          "rationale": "External version carries procedural risk requiring professional monitoring",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (rf.breech_presentation.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "DISCLOSED GAP: 胎位不正 is not a classically pattern-differentiated disease the way most tdis.* entries are — standard treatment (BL67 moxibustion) is applied regardless of 辨證分型, so only 2 loosely-reasoned patterns are offered rather than the usual 3-5; no canonical related_tcm_disease_ids back-link found"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.breech_presentation (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.que_ru",
       "name_zh": "缺乳",
       "pinyin": "Queru",
       "name_en": "Insufficient Lactation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.postpartum_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.postpartum_disorders",
+      "definition_zh": "缺乳是指哺乳期婦女產後乳汁分泌不足或全無，不能滿足嬰兒哺育需求的病證。",
+      "definition_en": "Insufficient Lactation (缺乳) refers to a postpartum breastfeeding woman having inadequate or absent milk production, unable to meet the infant's feeding needs.",
+      "etiology_zh": "多因產時失血過多、氣血虧虛，乳汁化生無源；或情志不遂、肝鬱氣滯，乳絡不通；亦可因體質虛弱、飲食失調，脾胃運化不足。",
+      "etiology_en": "Commonly caused by excessive blood loss during delivery leading to Qi-Blood deficiency with no source to transform into milk; or emotional distress with Liver Qi stagnation obstructing the milk ducts; or underlying constitutional weakness and dietary irregularity with insufficient Spleen-Stomach transportation.",
+      "pathomechanism_zh": "乳汁為氣血所化生，賴脾胃運化水穀精微、肝之疏泄調暢乳絡；氣血虛弱者，化源不足，乳汁生成減少；肝鬱氣滯者，乳絡不通，乳汁雖有生化之源卻不得下達，故乳少或全無。",
+      "pathomechanism_en": "Breast milk is transformed from Qi and Blood, relying on the Spleen-Stomach to transport and transform food essence and the Liver to regulate free-flow of the milk ducts. In Qi-Blood weakness, the source for transformation is insufficient and milk production decreases. In Liver Qi stagnation, the milk ducts are obstructed — milk may be generated but cannot descend, producing scant or absent lactation.",
+      "key_manifestations_zh": [
+        "產後乳汁分泌不足或全無，不能滿足嬰兒需求",
+        "乳房柔軟不脹、乳汁清稀，神疲乏力、面色少華（氣血虛弱者）",
+        "乳房脹硬疼痛、乳汁不暢，情志抑鬱或胸脅脹悶（肝鬱氣滯者）",
+        "食欲不振、大便稀溏等脾胃虛弱之候"
+      ],
+      "key_manifestations_en": [
+        "Postpartum milk production is inadequate or absent, unable to meet the infant's needs",
+        "Soft, non-distended breasts with thin, scant milk; fatigue and dull complexion (Qi-Blood weakness)",
+        "Distended, hard, painful breasts with poor milk flow; depressed mood or chest/hypochondriac fullness (Liver Qi stagnation)",
+        "Poor appetite and loose stool suggesting Spleen-Stomach weakness"
+      ],
+      "disease_location_zh": "病位在乳房、乳絡，與脾、胃、肝關係密切。",
+      "disease_location_en": "Disease location is the breast and milk ducts, closely related to the Spleen, Stomach, and Liver.",
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.liver_qi_stagnation"
+      ],
+      "treatment_principle_zh": "氣血虛弱者補氣養血、佐以通乳，肝鬱氣滯者疏肝解鬱、通絡下乳。",
+      "treatment_principle_en": "For Qi-Blood weakness, tonify Qi and nourish Blood, assisted by promoting milk flow; for Liver Qi stagnation, soothe the Liver, resolve depression, free the ducts, and promote lactation.",
+      "red_flags_zh": [
+        {
+          "finding": "嬰兒體重不增、尿量少或脫水徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速尋求小兒科評估",
+          "rationale": "需小兒科即時評估嬰兒營養狀況",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy01)"
+        },
+        {
+          "finding": "乳房紅腫熱痛合併發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示乳腺炎",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy02)"
+        },
+        {
+          "finding": "產後大量出血或嚴重情緒低落",
+          "urgency_level": "emergency",
+          "recommended_action": "立即醫療／心理評估",
+          "rationale": "需即時醫療／心理評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy03)"
+        },
+        {
+          "finding": "疑似 Sheehan 症候群（產後大出血後無泌乳）",
+          "urgency_level": "urgent",
+          "recommended_action": "建議內分泌評估",
+          "rationale": "需內分泌評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Poor infant weight gain, low urine output, or dehydration signs",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt pediatric evaluation",
+          "rationale": "Urgent pediatric evaluation of infant nutritional status needed",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy01)"
+        },
+        {
+          "finding": "Red, hot, painful breast with fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests mastitis",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy02)"
+        },
+        {
+          "finding": "Postpartum hemorrhage or severe low mood",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate medical/mental-health evaluation",
+          "rationale": "Needs urgent medical/mental-health evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy03)"
+        },
+        {
+          "finding": "Suspected Sheehan syndrome (no lactation after major postpartum hemorrhage)",
+          "urgency_level": "urgent",
+          "recommended_action": "Recommend endocrine evaluation",
+          "rationale": "Needs endocrine evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (rf.postpartum_hypolactation.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.que_ru"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.postpartum_hypolactation (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.jing_duan_qian_hou",
       "name_zh": "絕經前後諸證",
       "pinyin": "Jingduan Qianhou Zhuzheng",
       "name_en": "Perimenopausal Syndrome",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "絕經前後諸證是指婦女絕經前後，出現烘熱汗出、煩躁易怒、心悸失眠、腰膝痠軟等一系列證候的病證，相當於現代醫學更年期症候群。",
+      "definition_en": "Perimenopausal Syndrome (絕經前後諸證) refers to a constellation of symptoms occurring around menopause — hot flashes with sweating, irritability, palpitations, insomnia, and lower back/knee soreness — broadly corresponding to menopausal syndrome in modern medicine.",
+      "etiology_zh": "多因婦女絕經前後腎氣漸衰、天癸將竭，精血不足；腎陰虛者虛火內擾，腎陽虛者溫煦失職；素體體質偏頗、情志失調、產育過多者更易發病。",
+      "etiology_en": "Commonly caused by the natural decline of Kidney Qi and waning Tiangui around menopause, with Essence-Blood insufficiency; in Kidney Yin deficiency, deficient Fire disturbs internally, while in Kidney Yang deficiency, warming function fails. Those with an underlying constitutional imbalance, emotional disturbance, or multiple childbirths are more prone to the condition.",
+      "pathomechanism_zh": "腎為天癸之源，絕經前後腎氣自然衰減，精血漸虧；腎陰虛則虛火上擾，見烘熱汗出、心煩失眠；腎陽虛則溫煦不足，見畏寒肢冷、腰膝痠軟；腎陰陽俱虛或病久及心，可見心腎不交之候。",
+      "pathomechanism_en": "The Kidney is the source of Tiangui; around menopause, Kidney Qi naturally declines and Essence-Blood gradually diminishes. In Kidney Yin deficiency, deficient Fire disturbs upward, producing hot flashes, sweating, vexation, and insomnia. In Kidney Yang deficiency, warming function is insufficient, producing cold aversion, cold limbs, and lower back/knee soreness. When both Kidney Yin and Yang are deficient, or the Heart is affected with prolonged illness, signs of Heart-Kidney disharmony may appear.",
+      "key_manifestations_zh": [
+        "絕經前後出現烘熱汗出、陣發加重",
+        "煩躁易怒或情緒抑鬱、心悸失眠",
+        "腰膝痠軟、頭暈耳鳴",
+        "畏寒肢冷、夜尿頻多（腎陽虛者）",
+        "五心煩熱、口乾便結（腎陰虛者）"
+      ],
+      "key_manifestations_en": [
+        "Hot flashes with sweating around menopause, occurring in paroxysmal episodes",
+        "Irritability or depressed mood, palpitations, and insomnia",
+        "Lower back/knee soreness, dizziness, and tinnitus",
+        "Cold aversion, cold limbs, and frequent nighttime urination (Kidney Yang deficiency)",
+        "Vexing heat in the chest/palms/soles, dry mouth, and constipation (Kidney Yin deficiency)"
+      ],
+      "disease_location_zh": "病位在腎，與心、肝關係密切。",
+      "disease_location_en": "Disease location is the Kidney, closely related to the Heart and Liver.",
+      "related_patterns": [
+        "pattern.kidney_yin_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.liver_kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以補腎為本，腎陰虛者滋腎養陰、佐以潛陽，腎陽虛者溫腎助陽，心腎不交者交通心腎、寧心安神。",
+      "treatment_principle_en": "The base treatment is to tonify the Kidney. For Kidney Yin deficiency, nourish Kidney Yin and assist in subduing Yang; for Kidney Yang deficiency, warm the Kidney and support Yang; for Heart-Kidney disharmony, connect the Heart and Kidney and calm the Spirit.",
+      "red_flags_zh": [
+        {
+          "finding": "任何停經後陰道出血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估子宮內膜",
+          "rationale": "需評估子宮內膜以排除惡性",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy01)"
+        },
+        {
+          "finding": "40歲前即出現更年期症狀",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需評估卵巢早衰",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy02)"
+        },
+        {
+          "finding": "嚴重情緒低落或自殺意念",
+          "urgency_level": "emergency",
+          "recommended_action": "立即心理支持與就醫",
+          "rationale": "需即時心理支持",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy03)"
+        },
+        {
+          "finding": "新發胸痛、嚴重頭痛或神經症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫，不可歸因於更年期",
+          "rationale": "不可歸因於更年期，需即時評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Any postmenopausal vaginal bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt evaluation of the endometrium",
+          "rationale": "Must evaluate the endometrium to exclude malignancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy01)"
+        },
+        {
+          "finding": "Menopausal symptoms before age 40",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Must evaluate for premature ovarian insufficiency",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy02)"
+        },
+        {
+          "finding": "Severe low mood or suicidal ideation",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate mental-health support and medical care",
+          "rationale": "Needs urgent mental-health support",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy03)"
+        },
+        {
+          "finding": "New chest pain, severe headache, or neurologic symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate care; must not be attributed to menopause",
+          "rationale": "Must not be attributed to menopause — evaluate promptly",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (rf.menopause_syndrome.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.jing_duan_qian_hou"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.menopause_syndrome (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.zheng_jia",
       "name_zh": "癥瘕",
       "pinyin": "Zhengjia",
       "name_en": "Abdominal Masses (gyn)",
-      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders",
+      "definition_zh": "癥瘕是指婦女下腹部結塊，或伴脹滿疼痛的病證，聚散無常、推之可移者為「瘕」，固定不移、堅硬難消者為「癥」。",
+      "definition_en": "Zheng-Jia / Abdominal Masses (癥瘕) refers to a mass in the lower abdomen in women, sometimes with distension and pain. A mass that comes and goes and moves when pressed is called \"jia\" (瘕); one that is fixed, hard, and does not disperse is called \"zheng\" (癥).",
+      "etiology_zh": "多因經期產後餘血未淨，感受寒邪，寒凝血瘀；或情志不遂，肝鬱氣滯，氣滯血瘀；或飲食不節，脾失健運，痰濕內生，痰濕與瘀血互結；或濕熱蘊結胞宮，與血搏結。",
+      "etiology_en": "Commonly caused by residual Blood after menstruation or childbirth being exposed to Cold, congealing the Blood into stasis; emotional distress with Liver Qi stagnation leading to Blood stasis; dietary irregularity impairing Spleen transportation and generating internal Phlegm-Damp, which binds with Blood stasis; or Damp-Heat accumulating in the uterus and binding with Blood.",
+      "pathomechanism_zh": "瘀血、痰濕、濕熱等病理產物停滯下腹胞宮，日久互結不散，漸成癥瘕；病初氣滯血瘀，尚聚散無常，故推之可移，稱為「瘕」；病久痰瘀互結、質地漸堅，固定不移，則為「癥」。",
+      "pathomechanism_en": "Pathological products such as Blood stasis, Phlegm-Damp, and Damp-Heat accumulate in the lower abdomen and uterus; over time they bind together and fail to disperse, gradually forming a mass. In the early stage, Qi stagnation with Blood stasis is still inconstant and shifts on palpation — termed \"jia.\" With prolonged illness, Phlegm and stasis intertwine and the mass gradually hardens and becomes fixed — termed \"zheng.\"",
+      "key_manifestations_zh": [
+        "下腹部觸及結塊，或伴脹滿疼痛",
+        "結塊推之可移、時聚時散者為瘕",
+        "結塊固定不移、質硬者為癥",
+        "可伴月經量多、經期延長或經行不暢",
+        "病久可兼見面色晦暗、肌膚甲錯等血瘀之候"
+      ],
+      "key_manifestations_en": [
+        "A palpable mass in the lower abdomen, sometimes with distension and pain",
+        "A mass that moves on palpation and waxes and wanes — \"jia\"",
+        "A fixed, hard mass that does not disperse — \"zheng\"",
+        "May be accompanied by heavy menstrual flow, prolonged periods, or impeded menstrual flow",
+        "Long-standing cases may show a dull complexion and rough, scaly skin from Blood stasis"
+      ],
+      "disease_location_zh": "病位在胞宮、胞脈，與肝、脾關係密切。",
+      "disease_location_en": "Disease location is the uterus and uterine vessels, closely related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.blood_stasis",
+        "pattern.phlegm_damp",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "treatment_principle_zh": "以活血化瘀、消癥散結為基本治法，兼痰濕者化痰除濕，兼濕熱者清熱利濕，均需衰其大半而止，不可過用攻伐傷正。",
+      "treatment_principle_en": "The basic method is to invigorate Blood, resolve stasis, and dissipate the mass. For concurrent Phlegm-Damp, transform Phlegm and eliminate Dampness; for concurrent Damp-Heat, clear Heat and disinhibit Dampness — treatment should reduce the mass by roughly half and then stop, avoiding excessive attacking therapy that damages Righteous Qi.",
+      "red_flags_zh": [
+        {
+          "finding": "嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需即時評估與處理貧血",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy01)"
+        },
+        {
+          "finding": "急性劇痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示肌瘤變性或帶蒂肌瘤扭轉",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy02)"
+        },
+        {
+          "finding": "腫塊快速長大或停經後仍長大",
+          "urgency_level": "urgent",
+          "recommended_action": "建議就醫評估排除惡性",
+          "rationale": "需排除惡性（子宮肉瘤）",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy03)"
+        },
+        {
+          "finding": "壓迫症狀導致排尿或排便困難",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示腫塊壓迫泌尿或腸道",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea)",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Anemia requires prompt evaluation and treatment",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy01)"
+        },
+        {
+          "finding": "Acute severe pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests fibroid degeneration or torsion of a pedunculated fibroid",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy02)"
+        },
+        {
+          "finding": "Rapid growth of the mass, or growth after menopause",
+          "urgency_level": "urgent",
+          "recommended_action": "Recommend medical evaluation to rule out malignancy",
+          "rationale": "Must rule out malignancy (uterine sarcoma)",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy03)"
+        },
+        {
+          "finding": "Mass effect causing urinary or bowel obstruction",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests the mass is compressing the urinary tract or bowel",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (rf.uterine_fibroids.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.zheng_jia"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.uterine_fibroids (direct 1:1 clinical match — uterine fibroids are the archetypal Western correlate of 癥瘕)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yin_zhen",
       "name_zh": "癮疹",
       "pinyin": "Yinzhen",
       "name_en": "Urticaria",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+      "definition_zh": "癮疹是以皮膚突然出現風團、瘙癢劇烈、發無定處、消退迅速不留痕跡為特徵的病證，相當於現代醫學蕁麻疹。",
+      "definition_en": "Urticaria (癮疹) is characterized by the sudden appearance of raised wheals on the skin with intense itching, appearing at no fixed location and resolving quickly without leaving marks; it corresponds to hives/urticaria in modern medicine.",
+      "etiology_zh": "多因稟賦不耐，風寒或風熱之邪客於肌表；或飲食不節，腸胃濕熱內生，鬱於肌膚；或素體血虛，加之外感風邪，血虛生風化燥；亦可因衝任不調，血分伏熱所致。",
+      "etiology_en": "Commonly caused by a constitutional intolerance with Wind-Cold or Wind-Heat lodging in the superficial tissues; dietary irregularity generating internal intestinal Damp-Heat that stagnates in the skin; underlying Blood deficiency combined with external Wind invasion, with Blood deficiency generating Wind and dryness; or Chong-Ren disharmony with latent Heat in the Blood.",
+      "pathomechanism_zh": "風邪善行數變，客於肌表，與氣血相搏，發為風團，此起彼伏；風寒者膚色淡白、遇冷加重，風熱者膚色紅赤、遇熱加重；腸胃濕熱者多兼脘腹疼痛、大便異常；血虛生風者病程遷延、瘙癢夜甚。",
+      "pathomechanism_en": "Wind is prone to swift movement and frequent change; when it lodges in the superficial tissues and contends with Qi and Blood, wheals erupt, appearing and disappearing in succession. In Wind-Cold, the wheals are pale and worsen with cold; in Wind-Heat, they are red and worsen with heat. Intestinal Damp-Heat is often accompanied by abdominal pain and abnormal stool. Blood deficiency generating Wind tends to be protracted, with itching worse at night.",
+      "key_manifestations_zh": [
+        "皮膚突發風團，瘙癢劇烈",
+        "發無定處，此起彼伏，消退後不留痕跡",
+        "風團色白、遇風寒加重（風寒者）",
+        "風團色紅、遇熱加重、口渴心煩（風熱者）",
+        "反覆發作、遷延日久，夜間瘙癢加重（血虛風燥者）"
+      ],
+      "key_manifestations_en": [
+        "Sudden eruption of raised, intensely itchy wheals on the skin",
+        "Appearing at no fixed location, coming and going, resolving without leaving marks",
+        "Pale wheals worsened by wind or cold (Wind-Cold)",
+        "Red wheals worsened by heat, with thirst and vexation (Wind-Heat)",
+        "Recurrent, protracted course with itching worse at night (Blood deficiency generating Wind)"
+      ],
+      "disease_location_zh": "病位在肌膚腠理，與肺、脾、胃、肝關係密切。",
+      "disease_location_en": "Disease location is the skin and interstitial tissue, closely related to the Lung, Spleen, Stomach, and Liver.",
+      "related_patterns": [
+        "pattern.wind_cold",
+        "pattern.wind_heat",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.blood_deficiency"
+      ],
+      "treatment_principle_zh": "以疏風止癢為總則，風寒者辛溫解表散寒，風熱者辛涼透表清熱，腸胃濕熱者清熱利濕通腑，血虛風燥者養血祛風潤燥。",
+      "treatment_principle_en": "The overall principle is to disperse Wind and relieve itching. For Wind-Cold, use acrid-warm methods to release the exterior and dispel Cold; for Wind-Heat, use acrid-cool methods to vent the exterior and clear Heat; for intestinal Damp-Heat, clear Heat, disinhibit Dampness, and free the bowels; for Blood deficiency generating Wind, nourish Blood, dispel Wind, and moisten dryness.",
+      "red_flags_zh": [
+        {
+          "finding": "合併昏厥、呼吸困難、喉頭緊縮感、舌或臉部腫脹、喘鳴",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打119或急診",
+          "rationale": "提示過敏性休克，屬危及生命之急症",
+          "source": "MedlinePlus \"Hives\" (ency/article/000845.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Call 911 or the local emergency number if you have: Fainting, Shortness of breath, Tightness in your throat, Tongue or face swelling, Wheezing\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "With fainting, shortness of breath, throat tightness, tongue/face swelling, or wheezing",
+          "urgency_level": "emergency",
+          "recommended_action": "Call 911 or the local emergency number immediately",
+          "rationale": "Suggests anaphylaxis, a life-threatening emergency",
+          "source": "MedlinePlus \"Hives\" (ency/article/000845.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Call 911 or the local emergency number if you have: Fainting, Shortness of breath, Tightness in your throat, Tongue or face swelling, Wheezing\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Hives (ency/article/000845.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yin_zhen"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Hives (ency/article/000845.htm), retrieved 2026-08-11 — SOURCING GAP DISCLOSED: only the anaphylaxis emergency row is directly sourced from this page; the source page's 'When to Contact a Medical Professional' section otherwise focuses on the same emergency criteria, so only 1 row rather than the usual 2-4"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.shi_chuang",
       "name_zh": "濕瘡",
       "pinyin": "Shichuang",
       "name_en": "Eczema",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+      "definition_zh": "濕瘡是以皮膚潮紅、丘疹、水皰、糜爛滲液、瘙癢劇烈為特徵，反覆發作、易呈慢性化的皮膚病證，相當於現代醫學濕疹／異位性皮膚炎。",
+      "definition_en": "Eczema (濕瘡) is characterized by skin redness, papules, vesicles, oozing erosion, and intense itching, with a tendency to recur and become chronic; it corresponds to eczema/atopic dermatitis in modern medicine.",
+      "etiology_zh": "多因稟賦不耐，飲食不節，脾失健運，濕熱內生；或風濕熱邪外襲肌膚；或病久耗傷陰血，血虛生風化燥，肌膚失養。",
+      "etiology_en": "Commonly caused by a constitutional intolerance combined with dietary irregularity that impairs Spleen transportation and generates internal Damp-Heat; or Wind-Damp-Heat invading the skin from outside; or prolonged illness depleting Yin-Blood, with Blood deficiency generating Wind and dryness that leaves the skin unnourished.",
+      "pathomechanism_zh": "急性期多為濕熱蘊膚，濕熱互結，浸淫肌膚，發為紅斑、水皰、滲液；病久脾虛，濕邪留戀，纏綿難癒；慢性期血虛風燥，肌膚失於濡養，皮膚粗糙肥厚、瘙癢不已。",
+      "pathomechanism_en": "In the acute stage, Damp-Heat commonly accumulates in the skin — Dampness and Heat bind together and soak into the tissue, producing redness, vesicles, and oozing. With prolonged illness, Spleen deficiency allows Dampness to linger, making the condition protracted and difficult to resolve. In the chronic stage, Blood deficiency generates Wind and dryness, the skin loses nourishment, and becomes rough, thickened, and persistently itchy.",
+      "key_manifestations_zh": [
+        "皮膚潮紅、丘疹、水皰，瘙癢劇烈",
+        "搔抓後糜爛滲液、結痂",
+        "急性期皮損鮮紅、滲液較多（濕熱蘊膚者）",
+        "遷延反覆、皮損色暗、可見脾虛食少便溏（脾虛濕蘊者）",
+        "皮膚粗糙肥厚、乾燥脫屑，瘙癢夜甚（血虛風燥者）"
+      ],
+      "key_manifestations_en": [
+        "Skin redness, papules, and vesicles with intense itching",
+        "Oozing erosion and crusting after scratching",
+        "Bright-red lesions with abundant oozing in the acute stage (Damp-Heat accumulating in the skin)",
+        "Protracted, recurrent course with dull-colored lesions, poor appetite, and loose stool (Spleen deficiency with lingering Dampness)",
+        "Rough, thickened, dry, flaking skin with itching worse at night (Blood deficiency generating Wind)"
+      ],
+      "disease_location_zh": "病位在肌膚，與脾、心、肝關係密切。",
+      "disease_location_en": "Disease location is the skin, closely related to the Spleen, Heart, and Liver.",
+      "related_patterns": [
+        "pattern.damp_heat",
+        "pattern.spleen_qi_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.blood_deficiency"
+      ],
+      "treatment_principle_zh": "急性期以清熱利濕、佐以祛風止癢為主，脾虛濕蘊者健脾除濕，血虛風燥者養血潤燥祛風。",
+      "treatment_principle_en": "In the acute stage, clear Heat, disinhibit Dampness, and assist with dispersing Wind to relieve itching; for Spleen deficiency with lingering Dampness, strengthen the Spleen and eliminate Dampness; for Blood deficiency generating Wind, nourish Blood, moisten dryness, and dispel Wind.",
+      "red_flags_zh": [
+        {
+          "finding": "濕瘡經居家照護未見改善",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "居家照護無效需專業評估",
+          "source": "MedlinePlus \"Atopic dermatitis\" (ency/article/000853.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Contact your provider if: Atopic dermatitis does not get better with home care\""
+        },
+        {
+          "finding": "出現感染徵象（如發燒、皮膚紅腫、疼痛加劇）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除皮膚繼發性感染",
+          "source": "MedlinePlus \"Atopic dermatitis\" (ency/article/000853.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have signs of infection (such as fever, redness, or pain)\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Eczema not improving with home care",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Home care failure warrants professional evaluation",
+          "source": "MedlinePlus \"Atopic dermatitis\" (ency/article/000853.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Contact your provider if: Atopic dermatitis does not get better with home care\""
+        },
+        {
+          "finding": "Signs of infection (fever, redness, worsening pain)",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out secondary skin infection",
+          "source": "MedlinePlus \"Atopic dermatitis\" (ency/article/000853.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have signs of infection (such as fever, redness, or pain)\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Atopic dermatitis (ency/article/000853.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.shi_chuang"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Atopic dermatitis (ency/article/000853.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.she_chuan_chuang",
       "name_zh": "蛇串瘡",
       "pinyin": "Shechuanchuang",
       "name_en": "Herpes Zoster",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+      "definition_zh": "蛇串瘡是以皮膚突發集簇性水皰，呈帶狀分布，伴有劇烈神經痛為特徵的病證，多見於單側，相當於現代醫學帶狀疱疹。",
+      "definition_en": "Herpes Zoster (蛇串瘡) is characterized by the sudden eruption of clustered vesicles in a band-like distribution along one side of the body, accompanied by severe neuralgic pain; it corresponds to shingles in modern medicine.",
+      "etiology_zh": "多因情志內傷，肝經鬱熱，火毒外發；或飲食不節，脾失健運，濕熱內蘊，兼感邪毒；病久年老體弱者，氣滯血瘀，脈絡阻滯，疼痛纏綿不已。",
+      "etiology_en": "Commonly caused by internal emotional damage with Liver-channel Heat stagnation, Fire-toxin erupting outward; or dietary irregularity impairing Spleen transportation with internal Damp-Heat accumulation, compounded by pathogenic toxin; in the elderly or debilitated, Qi stagnation and Blood stasis obstruct the channels, causing pain that lingers protractedly.",
+      "pathomechanism_zh": "肝經鬱熱或脾經濕熱蘊阻肌膚，兼感邪毒，濕熱火毒循經外發，發為水皰、灼熱疼痛；病至後期，餘毒未清，氣滯血瘀阻於脈絡，是以水皰消退後仍遺留劇烈神經痛（後遺神經痛）。",
+      "pathomechanism_en": "Liver-channel Heat stagnation or Spleen-channel Damp-Heat accumulates in the skin, and combined with pathogenic toxin, Damp-Heat-Fire-toxin travels along the channel and erupts outward, producing vesicles with burning pain. In the later stage, residual toxin remains uncleared and Qi stagnation with Blood stasis obstructs the channels — this is why severe neuralgic pain (postherpetic neuralgia) can persist after the vesicles have resolved.",
+      "key_manifestations_zh": [
+        "皮膚突發集簇性水皰，呈帶狀單側分布",
+        "皮損處灼熱刺痛，痛感劇烈",
+        "水皰基底紅赤、皰液清亮或稍混濁（肝經鬱熱者）",
+        "皮損色淡、水皰壁鬆弛，可兼食少便溏（脾虛濕蘊者）",
+        "水皰消退後仍遺留局部劇痛（氣滯血瘀，後遺神經痛）"
+      ],
+      "key_manifestations_en": [
+        "Sudden eruption of clustered vesicles in a unilateral band-like distribution",
+        "Burning, stabbing pain at the lesion site, often severe",
+        "Red base with clear or slightly turbid vesicle fluid (Liver-channel Heat stagnation)",
+        "Pale lesions with lax vesicle walls, possibly with poor appetite and loose stool (Spleen deficiency with Damp accumulation)",
+        "Persistent severe localized pain after the vesicles resolve (Qi stagnation with Blood stasis, postherpetic neuralgia)"
+      ],
+      "disease_location_zh": "病位在肌膚，循肝、膽經為主，與脾關係密切。",
+      "disease_location_en": "Disease location is the skin, mainly following the Liver and Gallbladder channels, closely related to the Spleen.",
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.spleen_qi_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "treatment_principle_zh": "初期以清熱利濕解毒為主，肝經鬱熱者清肝瀉火，脾虛濕蘊者健脾利濕，後期氣滯血瘀者活血化瘀、通絡止痛。",
+      "treatment_principle_en": "In the early stage, clear Heat, disinhibit Dampness, and resolve toxin; for Liver-channel Heat stagnation, clear the Liver and drain Fire; for Spleen deficiency with Damp accumulation, strengthen the Spleen and disinhibit Dampness. In the later stage, for Qi stagnation with Blood stasis, invigorate Blood, resolve stasis, free the channels, and relieve pain.",
+      "red_flags_zh": [
+        {
+          "finding": "帶狀疱疹波及眼部（前額、鼻翼周圍出疹）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫，需眼科急會診",
+          "rationale": "眼部帶狀疱疹恐致永久失明",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postherpetic_neuralgia (rf.postherpetic_neuralgia.ocular_zoster)"
+        },
+        {
+          "finding": "免疫功能低下者出現皮疹或皮疹範圍廣泛、跨越身體中線",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "免疫低下者或瀰漫性帶狀疱疹風險較高，需積極處理",
+          "source": "MedlinePlus \"Shingles\" (ency/article/000858.htm), When to Contact a Medical Professional, retrieved 2026-08-11: page advises contacting a provider if you have symptoms of shingles, particularly with a weakened immune system or worsening symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Herpes zoster involving the eye (rash on forehead/around the nose)",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate care with urgent ophthalmology referral",
+          "rationale": "Ocular zoster may lead to permanent blindness",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.postherpetic_neuralgia (rf.postherpetic_neuralgia.ocular_zoster)"
+        },
+        {
+          "finding": "Rash in an immunocompromised patient, or a widespread rash crossing the body midline",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Immunocompromised or disseminated zoster carries higher risk and needs active management",
+          "source": "MedlinePlus \"Shingles\" (ency/article/000858.htm), When to Contact a Medical Professional, retrieved 2026-08-11: advises contacting a provider for shingles symptoms, particularly with a weakened immune system or worsening symptoms"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.postherpetic_neuralgia",
+        "MedlinePlus Shingles (ency/article/000858.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.she_chuan_chuang"
+        ],
+        "red_flags": [
+          "row 1 reused from data/pathology/red_flag_registry.json entity cond.postherpetic_neuralgia (ocular zoster — direct clinical match); row 2 fresh MedlinePlus Shingles (ency/article/000858.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_mixed_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.fen_ci",
       "name_zh": "粉刺",
       "pinyin": "Fenci",
       "name_en": "Acne",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+      "definition_zh": "粉刺是好發於顏面、胸背，以黑頭或白頭粉刺、丘疹、膿皰為特徵的慢性毛囊皮脂腺病證，好發於青春期，相當於現代醫學痤瘡。",
+      "definition_en": "Acne (粉刺) is a chronic disorder of the hair follicles and sebaceous glands, occurring predominantly on the face, chest, and back, and characterized by blackheads/whiteheads, papules, and pustules; it commonly appears during adolescence and corresponds to acne vulgaris in modern medicine.",
+      "etiology_zh": "多因素體血熱偏盛，外感風熱，蘊阻肌膚；或飲食不節，嗜食辛辣肥甘，腸胃濕熱上蒸；或病久痰濕瘀滯，凝結肌膚；女子亦可因沖任不調、內分泌失衡而發。",
+      "etiology_en": "Commonly caused by an underlying constitutional excess of Blood Heat combined with external Wind-Heat accumulating in the skin; dietary irregularity with excessive spicy, greasy food generating intestinal Damp-Heat that steams upward; prolonged illness with Phlegm-Damp and stasis congealing in the skin; in women, it may also arise from Chong-Ren disharmony and hormonal imbalance.",
+      "pathomechanism_zh": "肺經風熱上熏顏面，血熱鬱阻肌膚，發為紅色丘疹；腸胃濕熱循經上蒸顏面，蘊阻毛竅，發為膿皰；病久痰濕與瘀血互結，毛竅阻塞，發為結節、囊腫，纏綿難消。",
+      "pathomechanism_en": "Lung-channel Wind-Heat steams upward to the face, and Blood Heat stagnates in the skin, producing red papules. Intestinal Damp-Heat travels along the channel and steams up to the face, accumulating in the follicular pores and producing pustules. With prolonged illness, Phlegm-Damp and Blood stasis bind together, obstructing the follicular pores and producing nodules and cysts that are protracted and difficult to resolve.",
+      "key_manifestations_zh": [
+        "顏面、胸背散發黑頭或白頭粉刺",
+        "紅色丘疹，可伴瘙癢或輕微疼痛（肺經風熱者）",
+        "膿皰、皮膚油膩，口臭便秘（腸胃濕熱者）",
+        "結節、囊腫，皮損色暗、纏綿難消（痰瘀互結者）",
+        "女子可伴經前加重、月經不調（沖任不調者）"
+      ],
+      "key_manifestations_en": [
+        "Blackheads or whiteheads scattered on the face, chest, and back",
+        "Red papules, possibly with itching or mild pain (Lung-channel Wind-Heat)",
+        "Pustules with oily skin, bad breath, and constipation (intestinal Damp-Heat)",
+        "Nodules and cysts, dull-colored lesions that are protracted and difficult to resolve (Phlegm-stasis binding)",
+        "In women, may worsen premenstrually with menstrual irregularity (Chong-Ren disharmony)"
+      ],
+      "disease_location_zh": "病位在肌膚毛竅，與肺、脾、胃關係密切。",
+      "disease_location_en": "Disease location is the skin and follicular pores, closely related to the Lung, Spleen, and Stomach.",
+      "related_patterns": [
+        "pattern.wind_heat_invading_lung",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.phlegm_damp",
+        "pattern.chong_ren_disharmony"
+      ],
+      "treatment_principle_zh": "肺經風熱者疏風清肺，腸胃濕熱者清熱化濕通腑，痰瘀互結者化痰散結、活血化瘀，沖任不調者調理沖任。",
+      "treatment_principle_en": "For Lung-channel Wind-Heat, disperse Wind and clear the Lung; for intestinal Damp-Heat, clear Heat, transform Dampness, and free the bowels; for Phlegm-stasis binding, transform Phlegm, dissipate the mass, and invigorate Blood to resolve stasis; for Chong-Ren disharmony, regulate the Chong-Ren vessels.",
+      "red_flags_zh": [
+        {
+          "finding": "痤瘡嚴重（紅腫明顯或出現囊腫）",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "嚴重或囊腫型痤瘡需專業處理",
+          "source": "MedlinePlus \"Acne\" (ency/article/000873.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Your acne is very bad (for example, you have a lot of redness around the pimples, or you have cysts)\""
+        },
+        {
+          "finding": "痤瘡痊癒後出現疤痕",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "疤痕形成需及早處理以減少永久性影響",
+          "source": "MedlinePlus \"Acne\" (ency/article/000873.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You develop scars as your acne clears up\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe acne (marked redness around pimples or cysts)",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Severe or cystic acne needs professional management",
+          "source": "MedlinePlus \"Acne\" (ency/article/000873.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Your acne is very bad (for example, you have a lot of redness around the pimples, or you have cysts)\""
+        },
+        {
+          "finding": "Scarring as acne clears",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Scarring should be addressed early to reduce permanent effects",
+          "source": "MedlinePlus \"Acne\" (ency/article/000873.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You develop scars as your acne clears up\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Acne (ency/article/000873.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.fen_ci"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Acne (ency/article/000873.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bai_bi",
       "name_zh": "白疕",
       "pinyin": "Baibi",
       "name_en": "Psoriasis",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+      "definition_zh": "白疕是以皮膚紅斑上覆多層銀白色鱗屑、刮去鱗屑可見薄膜現象及點狀出血為特徵的慢性復發性皮膚病證，相當於現代醫學乾癬（銀屑病）。",
+      "definition_en": "Psoriasis (白疕) is a chronic, relapsing skin disorder characterized by red plaques covered with multiple layers of silvery-white scale; scraping away the scale reveals a thin membrane and pinpoint bleeding (Auspitz sign); it corresponds to psoriasis in modern medicine.",
+      "etiology_zh": "多因素體血熱，復感風熱毒邪，蘊阻肌膚；病久血熱傷陰，陰血虧虛，生風化燥，肌膚失養；或氣血瘀滯，脈絡阻塞；亦可因濕熱蘊阻，兼夾毒邪。",
+      "etiology_en": "Commonly caused by an underlying constitutional Blood Heat combined with external Wind-Heat toxin accumulating in the skin. With prolonged illness, Blood Heat damages Yin, Yin-Blood becomes deficient, and Wind and dryness are generated, leaving the skin unnourished; or Qi-Blood stasis obstructs the channels; or Damp-Heat accumulates, combined with pathogenic toxin.",
+      "pathomechanism_zh": "血熱內蘊，復感外邪，熱毒與血相搏，發於肌膚則見紅斑鱗屑，此為初起多見之候；病久血熱傷陰耗血，血虛生風化燥，肌膚失於濡養，鱗屑增厚、皮膚乾燥；氣血瘀滯者，皮損色暗紅、經久不消。",
+      "pathomechanism_en": "Internal Blood Heat, combined with external pathogenic invasion, causes Heat-toxin to contend with the Blood; when this erupts in the skin, red plaques with scale appear — the pattern most often seen at onset. With prolonged illness, Blood Heat damages Yin and consumes Blood, Blood deficiency generates Wind and dryness, and the skin loses nourishment, becoming thickened with scale and dry. In Qi-Blood stasis, the lesions are dusky red and persist for a long time without resolving.",
+      "key_manifestations_zh": [
+        "皮膚紅斑上覆多層銀白色鱗屑",
+        "刮除鱗屑可見薄膜現象及點狀出血",
+        "皮損鮮紅、迅速擴展，可伴瘙癢灼熱（血熱內蘊者）",
+        "皮損色淡、鱗屑增厚、皮膚乾燥皸裂（血虛風燥者）",
+        "皮損色暗紅、經久不消、可伴關節腫痛（氣血瘀滯者）"
+      ],
+      "key_manifestations_en": [
+        "Red plaques on the skin covered with multiple layers of silvery-white scale",
+        "Scraping away the scale reveals a thin membrane and pinpoint bleeding",
+        "Bright-red, rapidly expanding lesions, possibly with itching and burning (internal Blood Heat)",
+        "Pale lesions with thickened scale and dry, cracked skin (Blood deficiency generating Wind)",
+        "Dusky-red lesions persisting for a long time, possibly with joint swelling and pain (Qi-Blood stasis)"
+      ],
+      "disease_location_zh": "病位在肌膚，與心、肝、脾關係密切。",
+      "disease_location_en": "Disease location is the skin, closely related to the Heart, Liver, and Spleen.",
+      "related_patterns": [
+        "pattern.blood_heat",
+        "pattern.blood_deficiency",
+        "pattern.blood_stasis",
+        "pattern.damp_heat"
+      ],
+      "treatment_principle_zh": "血熱內蘊者清熱涼血解毒，血虛風燥者養血潤燥祛風，氣血瘀滯者活血化瘀通絡，濕熱蘊阻者清熱利濕解毒。",
+      "treatment_principle_en": "For internal Blood Heat, clear Heat, cool the Blood, and resolve toxin; for Blood deficiency generating Wind, nourish Blood, moisten dryness, and dispel Wind; for Qi-Blood stasis, invigorate Blood, resolve stasis, and free the channels; for Damp-Heat accumulation, clear Heat, disinhibit Dampness, and resolve toxin.",
+      "red_flags_zh": [
+        {
+          "finding": "皮疹發作合併關節疼痛或發燒",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需評估是否合併乾癬性關節炎",
+          "source": "MedlinePlus \"Psoriasis\" (ency/article/000434.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Tell your provider if you have joint pain or fever with your psoriasis attacks. If you have symptoms of arthritis, talk to your provider, dermatologist or rheumatologist.\""
+        },
+        {
+          "finding": "嚴重發作，皮疹覆蓋全身或大部分體表",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "廣泛性乾癬發作需及時處理",
+          "source": "MedlinePlus \"Psoriasis\" (ency/article/000434.htm), When to Contact a Medical Professional, retrieved 2026-08-11: advises seeking emergency care for \"a severe outbreak that covers all or most of your body\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Flare with joint pain or fever",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Must evaluate for concurrent psoriatic arthritis",
+          "source": "MedlinePlus \"Psoriasis\" (ency/article/000434.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Tell your provider if you have joint pain or fever with your psoriasis attacks. If you have symptoms of arthritis, talk to your provider, dermatologist or rheumatologist.\""
+        },
+        {
+          "finding": "Severe outbreak covering all or most of the body",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Widespread psoriasis flare needs prompt management",
+          "source": "MedlinePlus \"Psoriasis\" (ency/article/000434.htm), When to Contact a Medical Professional, retrieved 2026-08-11: advises seeking emergency care for \"a severe outbreak that covers all or most of your body\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Psoriasis (ency/article/000434.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.bai_bi"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Psoriasis (ency/article/000434.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.you_feng",
       "name_zh": "油風（斑禿）",
       "pinyin": "Youfeng",
       "name_en": "Alopecia Areata",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+      "definition_zh": "油風是以頭髮突然成片脫落、脫髮處頭皮光滑、無自覺症狀為特徵的病證，俗稱「鬼剃頭」，相當於現代醫學斑禿。",
+      "definition_en": "Alopecia Areata (油風), colloquially called \"ghost shave\" (鬼剃頭), is characterized by sudden patchy hair loss with a smooth, asymptomatic scalp at the bald patch; it corresponds to alopecia areata in modern medicine.",
+      "etiology_zh": "多因情志內傷，肝腎不足，精血虧虛，髮失所養；或血虛生風，風盛血燥，發為脫髮；亦可因氣滯血瘀，脈絡瘀阻，新血不能上榮。",
+      "etiology_en": "Commonly caused by internal emotional damage or Liver-Kidney insufficiency with Essence-Blood depletion, leaving the hair unnourished; or Blood deficiency generating Wind, with Wind excess and Blood dryness producing hair loss; or Qi stagnation and Blood stasis obstructing the channels, so fresh Blood cannot rise to nourish the scalp.",
+      "pathomechanism_zh": "髮為血之餘，賴腎精化生、肝血濡養；肝腎不足、精血虧虛，則髮根失養，突然成片脫落；血虛生風者，風性善行，脫髮呈游走性；氣滯血瘀者，瘀阻髮根脈絡，新血不能上榮於頭，脫髮處光亮如鏡、經久不生。",
+      "pathomechanism_en": "Hair is the \"surplus of Blood,\" relying on Kidney Essence for its generation and Liver Blood for nourishment. When the Liver-Kidney is insufficient and Essence-Blood depleted, the hair roots go unnourished and hair falls out suddenly in patches. In Blood deficiency generating Wind, Wind's tendency to travel produces a shifting pattern of hair loss. In Qi stagnation with Blood stasis, the channels at the hair roots are obstructed and fresh Blood cannot rise to nourish the scalp, leaving the bald patch smooth and shiny, with prolonged failure of regrowth.",
+      "key_manifestations_zh": [
+        "頭髮突然成片脫落，呈圓形或橢圓形",
+        "脫髮處頭皮光滑，無紅腫、無自覺症狀",
+        "可單發或多發，甚則全頭脫落",
+        "頭暈耳鳴、腰膝痠軟（肝腎不足者）",
+        "面色少華、心悸失眠（血虛生風者）"
+      ],
+      "key_manifestations_en": [
+        "Sudden patchy hair loss, round or oval in shape",
+        "Smooth scalp at the bald patch, without redness, swelling, or subjective symptoms",
+        "May be single or multiple patches, or in severe cases total scalp hair loss",
+        "Dizziness, tinnitus, and lower back/knee soreness (Liver-Kidney insufficiency)",
+        "Dull complexion, palpitations, and insomnia (Blood deficiency generating Wind)"
+      ],
+      "disease_location_zh": "病位在頭皮毛髮，與肝、腎關係密切。",
+      "disease_location_en": "Disease location is the scalp and hair, closely related to the Liver and Kidney.",
+      "related_patterns": [
+        "pattern.blood_deficiency",
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "肝腎不足者補益肝腎、養血生髮，血虛生風者養血祛風，氣滯血瘀者活血化瘀、通絡生髮。",
+      "treatment_principle_en": "For Liver-Kidney insufficiency, tonify the Liver and Kidney and nourish Blood to promote hair growth; for Blood deficiency generating Wind, nourish Blood and dispel Wind; for Qi stagnation with Blood stasis, invigorate Blood, resolve stasis, and free the channels to promote regrowth.",
+      "red_flags_zh": [
+        {
+          "finding": "對脫髮情況感到擔憂，或脫髮範圍持續擴大",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需專業評估脫髮原因及嚴重度",
+          "source": "MedlinePlus \"Alopecia areata\" (ency/article/001450.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Contact your provider if you are concerned about hair loss.\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Concern about the extent of hair loss, or an expanding bald patch",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Professional evaluation of the cause and severity of hair loss is needed",
+          "source": "MedlinePlus \"Alopecia areata\" (ency/article/001450.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Contact your provider if you are concerned about hair loss.\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Alopecia areata (ency/article/001450.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.you_feng"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Alopecia areata (ency/article/001450.htm), retrieved 2026-08-11 — SOURCING GAP DISCLOSED: source page's guidance is generic (\"contact your provider if concerned\"); only 1 row sourceable, not the usual 2-4"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.kou_chuang",
       "name_zh": "口瘡",
       "pinyin": "Kouchuang",
       "name_en": "Mouth Ulcers",
-      "taxonomy_id": "tdx.stomatology.general"
+      "taxonomy_id": "tdx.stomatology.general",
+      "definition_zh": "口瘡是以口腔黏膜（頰、舌、齦、唇）出現單個或多個圓形或橢圓形潰瘍、周圍紅暈、灼痛為特徵的病證，易反覆發作，相當於現代醫學復發性口瘡（口腔潰瘍）。",
+      "definition_en": "Mouth Ulcers (口瘡) are characterized by one or more round or oval ulcers on the oral mucosa (cheek, tongue, gums, lips) with a surrounding red halo and burning pain; they tend to recur and correspond to recurrent aphthous ulcers in modern medicine.",
+      "etiology_zh": "多因心脾積熱，火熱上炎，燻灼口舌；或陰虛火旺，虛火上浮；或脾虛濕困，運化失常，濕濁上泛。",
+      "etiology_en": "Commonly caused by accumulated Heat in the Heart and Spleen, with Fire-Heat flaring upward and scorching the mouth and tongue; or Yin deficiency with exuberant Fire, deficient Fire floating upward; or Spleen deficiency with Damp encumbrance, impaired transportation allowing turbid Dampness to rise.",
+      "pathomechanism_zh": "心脾積熱，循經上炎口舌，發為潰瘍，灼痛明顯；陰虛火旺者，虛火上浮，潰瘍反覆遷延，伴口乾咽燥；脾虛濕困者，運化失司，濕濁上泛，潰瘍色淡、周圍不紅、纏綿難癒。",
+      "pathomechanism_en": "Accumulated Heat in the Heart and Spleen travels along the channels and flares upward to the mouth and tongue, producing ulcers with pronounced burning pain. In Yin deficiency with exuberant Fire, deficient Fire floats upward and ulcers recur protractedly, with dry mouth and throat. In Spleen deficiency with Damp encumbrance, transportation fails and turbid Dampness rises, producing pale ulcers without a red halo that are persistent and slow to heal.",
+      "key_manifestations_zh": [
+        "口腔黏膜單個或多個圓形潰瘍，周圍紅暈",
+        "潰瘍灼痛明顯，尤以進食刺激性食物時加劇",
+        "潰瘍色紅、周圍紅腫、口臭便秘（心脾積熱者）",
+        "潰瘍反覆發作，伴五心煩熱、口乾咽燥（陰虛火旺者）",
+        "潰瘍色淡、周圍不紅，纏綿難癒，兼食少便溏（脾虛濕困者）"
+      ],
+      "key_manifestations_en": [
+        "One or more round ulcers on the oral mucosa with a surrounding red halo",
+        "Pronounced burning pain, worsened by eating irritating foods",
+        "Red ulcers with surrounding redness/swelling, bad breath, and constipation (accumulated Heart-Spleen Heat)",
+        "Recurrent ulcers with vexing heat in the chest/palms/soles and dry mouth/throat (Yin deficiency with exuberant Fire)",
+        "Pale ulcers without a red halo, persistent and slow to heal, with poor appetite and loose stool (Spleen deficiency with Damp encumbrance)"
+      ],
+      "disease_location_zh": "病位在口舌黏膜，與心、脾、腎關係密切。",
+      "disease_location_en": "Disease location is the oral mucosa, closely related to the Heart, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.heart_fire",
+        "pattern.stomach_heat",
+        "pattern.heart_kidney_yin_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "treatment_principle_zh": "心脾積熱者清心瀉脾、瀉火解毒，陰虛火旺者滋陰降火，脾虛濕困者健脾化濕。",
+      "treatment_principle_en": "For accumulated Heart-Spleen Heat, clear the Heart, drain the Spleen, and resolve Fire-toxin; for Yin deficiency with exuberant Fire, nourish Yin and lower Fire; for Spleen deficiency with Damp encumbrance, strengthen the Spleen and transform Dampness.",
+      "red_flags_zh": [
+        {
+          "finding": "潰瘍經兩週居家照護仍未癒合或反而惡化",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "持續不癒或惡化需專業評估排除其他病因",
+          "source": "MedlinePlus \"Canker sore\" (ency/article/000998.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"A canker sore or mouth ulcer does not go away after 2 weeks of home care or gets worse.\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Ulcer not healed after two weeks of home care, or worsening",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Persistent or worsening ulcers need professional evaluation to rule out other causes",
+          "source": "MedlinePlus \"Canker sore\" (ency/article/000998.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"A canker sore or mouth ulcer does not go away after 2 weeks of home care or gets worse.\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Canker sore (ency/article/000998.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.kou_chuang"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Canker sore (ency/article/000998.htm), retrieved 2026-08-11 — SOURCING GAP DISCLOSED: only 1 row sourceable from this page's brief 'When to Contact a Medical Professional' section, not the usual 2-4"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ya_tong",
       "name_zh": "牙痛",
       "pinyin": "Yatong",
       "name_en": "Toothache",
-      "taxonomy_id": "tdx.stomatology.general"
+      "taxonomy_id": "tdx.stomatology.general",
+      "definition_zh": "牙痛是以牙齒及牙齦疼痛為主要表現的病證，可由多種牙源性或非牙源性病因引起，是口腔科最常見的症狀之一。",
+      "definition_en": "Toothache (牙痛) refers to pain in the teeth and gums as the primary presentation; it may arise from various dental or non-dental causes and is one of the most common presenting complaints in stomatology.",
+      "etiology_zh": "多因胃火熾盛，循經上炎牙齦；或風熱外襲，客於牙齦脈絡；或腎陰不足，虛火上炎，牙失所養；亦可因蟲蛀牙齒，穢濁蝕齒作痛（此類屬牙體本身病變，非辨證分型範疇）。",
+      "etiology_en": "Commonly caused by blazing Stomach Fire flaring upward along the channel to the gums; external Wind-Heat invading and lodging in the gum vessels; or Kidney Yin insufficiency with deficient Fire flaring upward, leaving the teeth unnourished. It may also result from dental caries eroding the tooth (a structural dental lesion rather than a TCM pattern-differentiation category).",
+      "pathomechanism_zh": "胃火熾盛，循足陽明經上炎，燻灼牙齦，發為劇痛、牙齦紅腫；風熱外襲者，其痛遇風加劇，兼見惡風發熱；腎陰不足者，虛火上炎，牙痛隱隱、牙齒鬆動、齦浮。",
+      "pathomechanism_en": "Blazing Stomach Fire travels upward along the Foot Yangming channel and scorches the gums, producing severe pain with red, swollen gums. In external Wind-Heat invasion, the pain worsens with wind exposure and is accompanied by aversion to wind and fever. In Kidney Yin insufficiency, deficient Fire flares upward, producing a dull, lingering toothache with loose teeth and receding gums.",
+      "key_manifestations_zh": [
+        "牙齒或牙齦疼痛，程度輕重不一",
+        "牙齦紅腫熱痛、口臭便秘（胃火熾盛者）",
+        "疼痛遇風加劇，兼惡風發熱（風熱外襲者）",
+        "牙痛隱隱、牙齒鬆動、齦浮龈萎（腎陰不足者）",
+        "蛀牙或齲齒者疼痛多與冷熱刺激相關"
+      ],
+      "key_manifestations_en": [
+        "Pain in the tooth or gum, of variable intensity",
+        "Red, swollen, hot, painful gums with bad breath and constipation (blazing Stomach Fire)",
+        "Pain worsened by wind exposure, with aversion to wind and fever (external Wind-Heat)",
+        "Dull, lingering toothache with loose teeth and receding gums (Kidney Yin insufficiency)",
+        "Caries-related pain is often triggered by cold or hot stimuli"
+      ],
+      "disease_location_zh": "病位在牙齒、牙齦，與胃、腎關係密切；足陽明胃經循行入齒齦。",
+      "disease_location_en": "Disease location is the tooth and gum, closely related to the Stomach and Kidney; the Foot Yangming Stomach channel travels through the gums.",
+      "related_patterns": [
+        "pattern.stomach_fire",
+        "pattern.wind_heat",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "胃火熾盛者清胃瀉火，風熱外襲者疏風清熱，腎陰不足者滋陰降火；蟲蛀性牙痛須配合牙科治療處理牙體本身病變。",
+      "treatment_principle_en": "For blazing Stomach Fire, clear the Stomach and drain Fire; for external Wind-Heat, disperse Wind and clear Heat; for Kidney Yin insufficiency, nourish Yin and lower Fire. Caries-related toothache requires concurrent dental treatment to address the structural tooth lesion itself.",
+      "red_flags_zh": [
+        {
+          "finding": "劇烈牙痛",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "劇烈疼痛需專業評估處理",
+          "source": "MedlinePlus \"Toothaches\" (ency/article/003067.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have a severe toothache\""
+        },
+        {
+          "finding": "牙痛持續超過一至兩天",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "持續性牙痛需就醫排查病因",
+          "source": "MedlinePlus \"Toothaches\" (ency/article/003067.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have a toothache that lasts longer than a day or two\""
+        },
+        {
+          "finding": "牙痛合併發燒、耳痛或張口疼痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示牙周或齒槽膿腫等感染性病灶",
+          "source": "MedlinePlus \"Toothaches\" (ency/article/003067.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have fever, earache, or pain when opening your mouth wide\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe toothache",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Severe pain needs professional evaluation and management",
+          "source": "MedlinePlus \"Toothaches\" (ency/article/003067.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have a severe toothache\""
+        },
+        {
+          "finding": "Toothache lasting longer than a day or two",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Persistent toothache needs evaluation to identify the cause",
+          "source": "MedlinePlus \"Toothaches\" (ency/article/003067.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have a toothache that lasts longer than a day or two\""
+        },
+        {
+          "finding": "Toothache with fever, earache, or pain on wide mouth opening",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests a periodontal or dental abscess/infectious focus",
+          "source": "MedlinePlus \"Toothaches\" (ency/article/003067.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have fever, earache, or pain when opening your mouth wide\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Toothaches (ency/article/003067.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.ya_tong"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Toothaches (ency/article/003067.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.mu_yun",
       "name_zh": "目暗昏花／視瞻昏渺",
       "pinyin": "Muyun",
       "name_en": "Blurred Vision",
-      "taxonomy_id": "tdx.ophthalmology.general"
+      "taxonomy_id": "tdx.ophthalmology.general",
+      "definition_zh": "目暗昏花（視瞻昏渺）是以視物昏花不清、眼前如蒙薄霧，但眼外觀無明顯異常為特徵的病證，多見於中老年人，相當於現代醫學部分視力減退相關眼病。",
+      "definition_en": "Blurred Vision (目暗昏花／視瞻昏渺) is characterized by dim, unclear vision as if looking through a thin mist, with no obvious external abnormality of the eye; it is most common in middle-aged and older adults and corresponds to a range of vision-impairing eye conditions in modern medicine.",
+      "etiology_zh": "多因肝腎陰虛，精血不能上榮於目；或年老體衰、氣血兩虛，目失濡養；或肝血不足，目竅失於滋養。",
+      "etiology_en": "Commonly caused by Liver-Kidney Yin deficiency, with Essence-Blood unable to rise and nourish the eyes; or age-related decline with Qi-Blood dual deficiency leaving the eyes unnourished; or Liver Blood insufficiency, with the eye orifices losing their nourishment.",
+      "pathomechanism_zh": "目為肝之竅，賴肝腎精血上注以濡養；肝腎陰虛，精血不足，目失濡養，故視物昏花、久視尤甚；氣血兩虛者，清陽不升，目竅失養，亦致視瞻昏渺，兼見神疲乏力。",
+      "pathomechanism_en": "The eye is the orifice of the Liver, relying on Liver-Kidney Essence-Blood rising to nourish it. In Liver-Kidney Yin deficiency, Essence-Blood is insufficient and the eyes lose their nourishment, producing blurred vision that worsens with prolonged use of the eyes. In Qi-Blood dual deficiency, clear Yang fails to ascend and the eye orifices go unnourished, likewise producing dim vision, accompanied by fatigue.",
+      "key_manifestations_zh": [
+        "視物昏花不清，眼前如蒙薄霧",
+        "久視或勞累後視力減退加重",
+        "頭暈耳鳴、腰膝痠軟（肝腎陰虛者）",
+        "神疲乏力、面色少華、心悸（氣血兩虛者）",
+        "眼外觀無明顯紅腫或其他器質性異常"
+      ],
+      "key_manifestations_en": [
+        "Dim, unclear vision as if looking through a thin mist",
+        "Vision worsens with prolonged eye use or fatigue",
+        "Dizziness, tinnitus, and lower back/knee soreness (Liver-Kidney Yin deficiency)",
+        "Fatigue, dull complexion, and palpitations (Qi-Blood dual deficiency)",
+        "No obvious redness, swelling, or other organic abnormality on external examination"
+      ],
+      "disease_location_zh": "病位在目竅，與肝、腎關係最為密切。",
+      "disease_location_en": "Disease location is the eye orifice, most closely related to the Liver and Kidney.",
+      "related_patterns": [
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.liver_blood_deficiency"
+      ],
+      "treatment_principle_zh": "肝腎陰虛者滋補肝腎、養精明目，氣血兩虛者益氣養血、升清明目。",
+      "treatment_principle_en": "For Liver-Kidney Yin deficiency, nourish the Liver and Kidney and tonify Essence to brighten the eyes; for Qi-Blood dual deficiency, tonify Qi, nourish Blood, and raise clear Yang to brighten the eyes.",
+      "red_flags_zh": [
+        {
+          "finding": "突然視力喪失或視力明顯改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫，不可輕忽等待自行改善",
+          "rationale": "突發視力喪失屬眼科急症，需即刻評估",
+          "source": "MedlinePlus \"Blindness and vision loss\" (ency/article/003040.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Sudden vision loss is always an emergency, even if you have not completely lost vision. You should never ignore vision loss, thinking it will get better.\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden vision loss or marked vision change",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate care; do not wait to see if it improves on its own",
+          "rationale": "Sudden vision loss is an ophthalmic emergency requiring immediate evaluation",
+          "source": "MedlinePlus \"Blindness and vision loss\" (ency/article/003040.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Sudden vision loss is always an emergency, even if you have not completely lost vision. You should never ignore vision loss, thinking it will get better.\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Blindness and vision loss (ency/article/003040.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.mu_yun"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Blindness and vision loss (ency/article/003040.htm), retrieved 2026-08-11 — SOURCING GAP DISCLOSED: only 1 row sourceable (the sudden-vision-loss emergency criterion); this source page does not address the gradual, chronic dimming that 目暗昏花 more typically describes, not the usual 2-4 rows"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bai_he_bing",
@@ -6315,21 +7662,304 @@
       "pinyin": "Baihebing",
       "name_en": "Lily Disease (restless disorder)",
       "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
-      "classical_source": "金匱要略"
+      "classical_source": "金匱要略",
+      "definition_zh": "百合病首見於《金匱要略》，是以精神恍惚不定、沉默欲臥又不能臥、欲行又不能行、欲食又不能食、如寒無寒、如熱無熱、口苦、小便赤、脈微數為主症的病證，多因熱病之後餘熱未清、心肺陰虛內熱所致。",
+      "definition_en": "Lily Disease (百合病) first appears in the Jin Gui Yao Lue. It is characterized by a vague, unsettled mental state — wanting to lie down but unable to, wanting to walk but unable to, wanting to eat but unable to — sensations of cold or heat without objective fever or chills, a bitter taste in the mouth, dark urine, and a faint-rapid pulse; it most often follows a febrile illness in which residual Heat is not fully cleared and Heart-Lung Yin deficiency with internal Heat develops.",
+      "etiology_zh": "多因熱病之後餘熱未盡，傷及心肺之陰；或情志不遂、憂思過度，暗耗陰血；素體陰虛之人更易罹患。",
+      "etiology_en": "Commonly caused by residual Heat persisting after a febrile illness that damages Heart-Lung Yin; or emotional distress and excessive worry silently consuming Yin-Blood; those with an underlying Yin-deficient constitution are more susceptible.",
+      "pathomechanism_zh": "心主神明，肺主治節，百脈皆朝於肺；熱病之後陰液受損，心肺陰虛，虛熱內擾，百脈不定，故見精神恍惚、行止不定、飲食難調諸症；病程遷延，時輕時重，症狀多變而客觀檢查無明顯異常。",
+      "pathomechanism_en": "The Heart governs the Spirit and the Lung governs regulation, with the hundred vessels all converging at the Lung. After a febrile illness, fluids are damaged and the Heart-Lung Yin becomes deficient; deficient Heat disturbs internally and unsettles the hundred vessels, producing the vague mental state, indecisive movement, and difficulty with eating described above. The course is often protracted, waxing and waning, with variable symptoms but no notable objective findings.",
+      "key_manifestations_zh": [
+        "精神恍惚不定，欲臥不能臥、欲行不能行、欲食不能食",
+        "如寒無寒、如熱無熱，時而心煩",
+        "口苦、小便赤黃",
+        "脈微數，其他客觀檢查多無明顯異常",
+        "病程遷延、時輕時重"
+      ],
+      "key_manifestations_en": [
+        "A vague, unsettled mental state — wanting to lie down, walk, or eat but unable to follow through",
+        "Sensations resembling cold or heat without objective fever or chills, sometimes with vexation",
+        "Bitter taste in the mouth and dark-yellow urine",
+        "A faint-rapid pulse, with no notable abnormality on other objective examination",
+        "A protracted course that waxes and wanes"
+      ],
+      "disease_location_zh": "病位在心、肺，與陰血虧虛關係密切。",
+      "disease_location_en": "Disease location is the Heart and Lung, closely related to Yin-Blood depletion.",
+      "related_patterns": [
+        "pattern.heart_yin_deficiency",
+        "pattern.lung_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以滋陰清熱、養心潤肺為基本治法，經典代表方為百合地黃湯。",
+      "treatment_principle_en": "The basic method is to nourish Yin, clear Heat, nourish the Heart, and moisten the Lung; the classical representative formula is Bai He Di Huang Tang (Lily Bulb and Rehmannia Decoction).",
+      "red_flags_zh": [
+        {
+          "finding": "情緒低落合併自傷或自殺意念",
+          "urgency_level": "emergency",
+          "recommended_action": "立即尋求心理／精神科協助",
+          "rationale": "百合病之精神恍惚、情志不安需與重度憂鬱症鑑別，兩者共享情緒失調與自我傷害風險",
+          "source": "reused by clinical analogy from data/pathology/tdis_registry.json entity tdis.yu_zheng (Batch A precedent) / MedlinePlus \"Depression\", Get Help, retrieved 2026-08-07 (batch A citation): \"get help right away\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Low mood with self-harm or suicidal ideation",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate psychological/psychiatric help",
+          "rationale": "The unsettled mental state of Lily Disease must be differentiated from major depression, which shares the emotional-dysregulation and self-harm-risk pattern",
+          "source": "reused by clinical analogy from data/pathology/tdis_registry.json entity tdis.yu_zheng (Batch A precedent) / MedlinePlus \"Depression\", Get Help, retrieved 2026-08-07 (batch A citation): \"get help right away\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused by clinical analogy from Batch A's MedlinePlus Depression citation (already used for tdis.yu_zheng / tdis.zang_zao)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "APPROXIMATION DISCLOSED: 百合病's classical 心肺陰虛內熱 mechanism has no single combined pattern.* id in the vocabulary (only separate Heart-Yin and Lung-Yin deficiency ids exist); both are offered as component patterns rather than inventing a compound id. No canonical related_tcm_disease_ids back-link found."
+        ],
+        "red_flags": [
+          "JUDGMENT CALL DISCLOSED: reused Batch A's Major Depression citation by clinical analogy (emotional dysregulation / restless unsettled affect ↔ depression's suicide-risk pattern), same category of judgment call as Batch A's tdis.bu_mei/shi_mian and Batch B's tdis.zang_zao — flagged for Fable/Ting: should 百合病 get its own dedicated red-flag research pass, or is this analogy acceptable long-term?"
+        ]
+      },
+      "source_type": "textbook_standard_plus_analogous_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ma_mu",
       "name_zh": "麻木",
       "pinyin": "Mamu",
       "name_en": "Numbness",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+      "definition_zh": "麻木是以肌膚感覺遲鈍或消失，或如蟲行、蟻走之異常感覺為主症的病證，可發於局部，亦可泛發全身。",
+      "definition_en": "Numbness (麻木) is characterized primarily by diminished or absent skin sensation, or abnormal sensations such as a crawling or tingling feeling; it may be localized or generalized.",
+      "etiology_zh": "多因氣血兩虛，肌膚失於濡養；或氣滯血瘀，脈絡阻滯，氣血不能通達肌膚；或痰濕阻絡，經絡不暢；或肝腎虧虛，精血不能濡養筋脈肌膚。",
+      "etiology_en": "Commonly caused by Qi-Blood dual deficiency leaving the skin unnourished; Qi stagnation with Blood stasis obstructing the channels so Qi-Blood cannot reach the skin; Phlegm-Damp obstructing the channels and impairing their free flow; or Liver-Kidney depletion, with Essence-Blood unable to nourish the sinews and skin.",
+      "pathomechanism_zh": "氣血兩虛者，肌膚失於濡養，故麻木時輕時重、勞累加重；氣滯血瘀或痰濕阻絡者，脈絡阻塞，氣血不能通達，麻木部位較固定，甚則兼見疼痛；肝腎虧虛者，精血不足，筋脈肌膚失養，麻木常伴腰膝痠軟。",
+      "pathomechanism_en": "In Qi-Blood dual deficiency, the skin loses its nourishment, so numbness fluctuates in severity and worsens with exertion. In Qi stagnation with Blood stasis or Phlegm-Damp obstructing the channels, the channels are blocked and Qi-Blood cannot reach the area; the numbness is more fixed in location and may be accompanied by pain. In Liver-Kidney depletion, Essence-Blood insufficiency leaves the sinews and skin unnourished, and numbness is often accompanied by lower back/knee soreness.",
+      "key_manifestations_zh": [
+        "肌膚感覺遲鈍或消失，或如蟲行蟻走感",
+        "神疲乏力、面色少華，勞累後加重（氣血兩虛者）",
+        "麻木部位固定，可兼刺痛，膚色晦暗（氣滯血瘀者）",
+        "麻木兼肢體沉重、頭重如裹（痰濕阻絡者）",
+        "腰膝痠軟、頭暈耳鳴（肝腎虧虛者）"
+      ],
+      "key_manifestations_en": [
+        "Diminished or absent skin sensation, or a crawling/tingling sensation",
+        "Fatigue and dull complexion, worsened by exertion (Qi-Blood dual deficiency)",
+        "Fixed-location numbness, possibly with stabbing pain and a dusky skin tone (Qi stagnation with Blood stasis)",
+        "Numbness with limb heaviness and a sensation of the head being wrapped (Phlegm-Damp obstructing the channels)",
+        "Lower back/knee soreness, dizziness, and tinnitus (Liver-Kidney depletion)"
+      ],
+      "disease_location_zh": "病位在肌膚、經絡，與氣血、肝腎關係密切。",
+      "disease_location_en": "Disease location is the skin and channels, closely related to Qi-Blood and the Liver-Kidney.",
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp",
+        "pattern.liver_kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "氣血兩虛者益氣養血、通絡榮筋，氣滯血瘀者行氣活血、化瘀通絡，痰濕阻絡者化痰除濕通絡，肝腎虧虛者補益肝腎、濡養筋脈。",
+      "treatment_principle_en": "For Qi-Blood dual deficiency, tonify Qi, nourish Blood, and free the channels to nourish the sinews; for Qi stagnation with Blood stasis, move Qi, invigorate Blood, resolve stasis, and free the channels; for Phlegm-Damp obstructing the channels, transform Phlegm, eliminate Dampness, and free the channels; for Liver-Kidney depletion, tonify the Liver and Kidney and nourish the sinews.",
+      "red_flags_zh": [
+        {
+          "finding": "身體局部出現運動能力或感覺喪失",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "運動或感覺喪失需醫療評估病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.peripheral_neuropathy (rf.peripheral_neuropathy.sensory_motor_loss)"
+        },
+        {
+          "finding": "糖尿病患者足部感染變黑或發臭",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "疑似壞疽徵兆",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.diabetic_neuropathy (rf.diabetic_neuropathy.diabetic_foot_gangrene)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Loss of movement or sensation in any part of the body",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Loss of movement or sensation needs medical evaluation of the cause",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.peripheral_neuropathy (rf.peripheral_neuropathy.sensory_motor_loss)"
+        },
+        {
+          "finding": "In diabetic patients, foot infection turning black or foul-smelling",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Signs of potential gangrene",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.diabetic_neuropathy (rf.diabetic_neuropathy.diabetic_foot_gangrene)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entities cond.peripheral_neuropathy, cond.diabetic_neuropathy"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.ma_mu"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entities cond.peripheral_neuropathy, cond.diabetic_neuropathy (direct 1:1 clinical match — numbness is the core symptom of both)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.mian_tong",
       "name_zh": "面痛",
       "pinyin": "Miantong",
       "name_en": "Facial Pain",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+      "definition_zh": "面痛是以顏面部陣發性或持續性疼痛為主症的病證，疼痛性質多樣（刺痛、灼痛、脹痛等），相當於現代醫學三叉神經痛及部分顳顎關節疾患。",
+      "definition_en": "Facial Pain (面痛) is characterized primarily by paroxysmal or persistent pain in the face, with variable pain quality (stabbing, burning, distending); it broadly corresponds to trigeminal neuralgia and some temporomandibular joint disorders in modern medicine.",
+      "etiology_zh": "多因風寒外襲，客於面部經絡；或風熱上擾，燻灼面部經脈；或肝胃火盛，循經上炎；亦可因久病氣血瘀阻，脈絡不通，或陰虛陽亢，虛風上擾。",
+      "etiology_en": "Commonly caused by external Wind-Cold invading and lodging in the facial channels; Wind-Heat disturbing upward and scorching the facial channels; blazing Liver-Stomach Fire flaring upward along the channels; or, with prolonged illness, Qi-Blood stasis obstructing the channels, or Yin deficiency with Yang hyperactivity and deficient Wind disturbing upward.",
+      "pathomechanism_zh": "風寒或風熱之邪侵襲面部經絡，經氣阻滯，不通則痛；肝胃火盛者，火熱循足陽明、足厥陰經上炎，燻灼面部脈絡，發為陣發性劇痛；病久氣血瘀阻，脈絡不通，疼痛纏綿，痛處固定、多呈刺痛。",
+      "pathomechanism_en": "Wind-Cold or Wind-Heat invades the facial channels, obstructing channel Qi and producing pain from lack of free flow. In blazing Liver-Stomach Fire, Fire-Heat travels upward along the Foot Yangming and Foot Jueyin channels and scorches the facial vessels, producing severe paroxysmal pain. With prolonged illness, Qi-Blood stasis obstructs the channels and pain becomes protracted, fixed in location, and typically stabbing in quality.",
+      "key_manifestations_zh": [
+        "顏面部陣發性或持續性疼痛",
+        "疼痛性質多樣，可為刺痛、灼痛或脹痛",
+        "遇風寒誘發或加重、惡寒（風寒外襲者）",
+        "痛勢劇烈、遇熱加重、口渴便秘（肝胃火盛者）",
+        "病程日久、痛處固定不移、夜間加重（氣血瘀阻者）"
+      ],
+      "key_manifestations_en": [
+        "Paroxysmal or persistent pain in the face",
+        "Variable pain quality — stabbing, burning, or distending",
+        "Triggered or worsened by wind/cold exposure, with cold aversion (external Wind-Cold)",
+        "Severe pain worsened by heat, with thirst and constipation (blazing Liver-Stomach Fire)",
+        "Long-standing course with fixed, unchanging pain location, worse at night (Qi-Blood stasis)"
+      ],
+      "disease_location_zh": "病位在顏面經絡，與足陽明胃經、足厥陰肝經關係密切。",
+      "disease_location_en": "Disease location is the facial channels, closely related to the Foot Yangming Stomach channel and the Foot Jueyin Liver channel.",
+      "related_patterns": [
+        "pattern.wind_cold",
+        "pattern.wind_heat",
+        "pattern.liver_fire",
+        "pattern.stomach_fire",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "風寒外襲者祛風散寒、通絡止痛，風熱上擾者疏風清熱，肝胃火盛者清肝瀉胃降火，氣血瘀阻者活血化瘀、通絡止痛。",
+      "treatment_principle_en": "For external Wind-Cold, expel Wind, dispel Cold, and free the channels to relieve pain; for Wind-Heat disturbing upward, disperse Wind and clear Heat; for blazing Liver-Stomach Fire, clear the Liver, drain the Stomach, and lower Fire; for Qi-Blood stasis, invigorate Blood, resolve stasis, and free the channels to relieve pain.",
+      "red_flags_zh": [
+        {
+          "finding": "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需醫療評估排除神經或其他病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.trigeminal_neuralgia (rf.trigeminal_neuralgia.legacy01)"
+        },
+        {
+          "finding": "顎關節鎖死無法開口或閉口",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需醫療處理避免延誤",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tmd (rf.tmd.legacy01)"
+        },
+        {
+          "finding": "外傷後咬合改變或劇痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除下頜骨折或脫位",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tmd (rf.tmd.legacy02)"
+        },
+        {
+          "finding": "進行性面部麻木無力",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需排除神經或腫瘤病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tmd (rf.tmd.legacy03)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Frequent or persistent facial pain, especially when standard painkillers do not help and dental causes have been ruled out",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Needs medical evaluation to rule out neurologic or other causes",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.trigeminal_neuralgia (rf.trigeminal_neuralgia.legacy01)"
+        },
+        {
+          "finding": "Jaw locked open or closed",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Needs medical management to avoid delay",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tmd (rf.tmd.legacy01)"
+        },
+        {
+          "finding": "Bite change or severe pain after trauma",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out mandibular fracture or dislocation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tmd (rf.tmd.legacy02)"
+        },
+        {
+          "finding": "Progressive facial numbness or weakness",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Must rule out neurologic or tumor cause",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.tmd (rf.tmd.legacy03)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entities cond.trigeminal_neuralgia, cond.tmd"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Dermatology / Stomatology / Ophthalmology textbook standard (中醫內科學/中醫婦科學/中醫外科學/中醫五官科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.mian_tong"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entities cond.trigeminal_neuralgia, cond.tmd (direct 1:1 clinical match — both are core Western correlates of 面痛)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
