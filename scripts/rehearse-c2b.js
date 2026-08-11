@@ -166,6 +166,35 @@ await (async () => {
   // 合法 envelope 經同一路徑必須成功(等價性驗證)
   const r2 = await S.restoreV2Envelope(activeBefore, sha256Async);
   check("legit envelope restores via app-import path", r2.ok === true && kv.get(S.STAGING_KEY) === JSON.stringify(JSON.parse(activeBefore)));
+
+  // 6i. Codex R6 注入反例:full verify 之後、active 替換那一筆 writeKey 失敗
+  //     —— 必須 {ok:false}、active/pointer 不變、candidate 清除、例外不外洩。
+  const pointerBefore = kv.get(S.POINTER_KEY);
+  const origWriteKey = S.setBackend, _ = 0;
+  const failingBackend = {
+    read() { return kv.get("acuting-clinical-cases-v1") ?? null; },
+    write() { throw new Error("REHEARSAL VIOLATION: v1 write"); },
+    readKey(k) { return kv.get(k) ?? null; },
+    writeKey(k, v) {
+      if (k === S.STAGING_KEY) throw new Error("injected storage failure on active replacement");
+      touched.push(["write", k]); kv.set(k, v);
+    },
+    removeKey(k) { touched.push(["remove", k]); kv.delete(k); }
+  };
+  S.setBackend(failingBackend);
+  let escaped = false, r3 = null;
+  try { r3 = await S.restoreV2Envelope(activeBefore, sha256Async); } catch { escaped = true; }
+  S.setBackend({
+    read() { return kv.get("acuting-clinical-cases-v1") ?? null; },
+    write() { throw new Error("REHEARSAL VIOLATION: attempted write to v1 case key"); },
+    readKey(k) { return kv.get(k) ?? null; },
+    writeKey(k, v) { touched.push(["write", k]); kv.set(k, v); },
+    removeKey(k) { touched.push(["remove", k]); kv.delete(k); }
+  });
+  check("active-replacement failure returns ok:false (no thrown escape)", escaped === false && r3 && r3.ok === false && r3.failures.some((f) => f.includes("replacement failed")));
+  check("active staging unchanged after injected failure", kv.get(S.STAGING_KEY) === activeBefore);
+  check("pointer unchanged after injected failure", kv.get(S.POINTER_KEY) === pointerBefore);
+  check("candidate absent after injected failure", kv.get(S.CANDIDATE_KEY) === undefined);
 })();
 
 // 7. rollback

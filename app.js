@@ -7520,6 +7520,10 @@ function importClinicalCases(event) {
           } else {
             alert(`匯入被拒絕 — 驗證失敗(現有資料未被更動):\n\n${res.failures.slice(0, 5).join("\n")}${res.failures.length > 5 ? "\n…" : ""}`);
           }
+        }).catch((e) => {
+          // Codex R6:restore 內部已收斂一切例外,這層 .catch 是縱深防禦 ——
+          // 萬一仍有洩漏,fail closed:提示、不 reload、資料未動。
+          alert("匯入失敗(現有資料未被更動):" + (e && e.message || e));
         });
         return;
       }

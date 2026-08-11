@@ -349,24 +349,37 @@
    * 「當下 v1 raw + 重建的 deterministic plan」做完整 verifyStaging → 全綠才
    * 原子替換 active staging。任何失敗:active staging/pointer 原封不動。 */
   async function restoreV2Envelope(envelopeText, sha256) {
-    const fail = (failures) => { removeKey(CANDIDATE_KEY); return { ok: false, failures }; };
-    let env;
-    try { env = JSON.parse(envelopeText); } catch { return fail(["envelope is not valid JSON"]); }
-    if (!(env && env.schema_version === 2 && env.journal && Array.isArray(env.patients) && Array.isArray(env.cases))) {
-      return fail(["envelope missing schema_version/journal/patients/cases"]);
+    // Codex R6 修正 gate:本函式的失敗契約是「絕不讓例外外洩」——任何
+    // rejection/exception(含 candidate write、plan/hash、active 替換、
+    // cleanup 自身)都收斂成 {ok:false, failures},candidate 一律 best-effort
+    // 清除,active staging/pointer 保持原值。呼叫端永遠拿到可顯示的結果。
+    const cleanupCandidate = () => { try { removeKey(CANDIDATE_KEY); } catch { /* best-effort */ } };
+    const fail = (failures) => { cleanupCandidate(); return { ok: false, failures }; };
+    try {
+      let env;
+      try { env = JSON.parse(envelopeText); } catch { return fail(["envelope is not valid JSON"]); }
+      if (!(env && env.schema_version === 2 && env.journal && Array.isArray(env.patients) && Array.isArray(env.cases))) {
+        return fail(["envelope missing schema_version/journal/patients/cases"]);
+      }
+      const rawText = backend.read();
+      if (rawText === null) return fail(["v1 raw store absent — cannot anchor verification"]);
+      try { writeKey(CANDIDATE_KEY, JSON.stringify(env)); }
+      catch (e) { return fail(["candidate write failed: " + e.message]); }
+      let plan;
+      try { plan = await buildMigrationPlan(rawText, env.journal.adjudicationsApplied || [], sha256); }
+      catch (e) { return fail(["plan rebuild failed: " + e.message]); }
+      let rawHash;
+      try { rawHash = await sha256(rawText); }
+      catch (e) { return fail(["hashing failed: " + e.message]); }
+      const v = verifyStagingObject(env, rawText, rawHash, plan);
+      if (!v.ok) return fail(v.failures);
+      try { writeKey(STAGING_KEY, JSON.stringify(env)); }   // 單一 setItem = 原子替換
+      catch (e) { return fail(["active staging replacement failed — original staging/pointer untouched: " + e.message]); }
+      cleanupCandidate();
+      return { ok: true, patients: env.patients.length, cases: env.cases.length };
+    } catch (e) {
+      return fail(["unexpected restore failure: " + (e && e.message || String(e))]);
     }
-    const rawText = backend.read();
-    if (rawText === null) return fail(["v1 raw store absent — cannot anchor verification"]);
-    writeKey(CANDIDATE_KEY, JSON.stringify(env));
-    let plan;
-    try { plan = await buildMigrationPlan(rawText, env.journal.adjudicationsApplied || [], sha256); }
-    catch (e) { return fail(["plan rebuild failed: " + e.message]); }
-    const rawHash = await sha256(rawText);
-    const v = verifyStagingObject(env, rawText, rawHash, plan);
-    if (!v.ok) return fail(v.failures);
-    writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
-    removeKey(CANDIDATE_KEY);
-    return { ok: true, patients: env.patients.length, cases: env.cases.length };
   }
 
   function executeMigration(rawText, plan, { sha256 }) {

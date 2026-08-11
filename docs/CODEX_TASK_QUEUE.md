@@ -2,9 +2,9 @@
 
 ## ⚡ NEXT TASK(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
 
-### C2B-R6 — P3.3 單點覆核(最後一關)
+### C2B-R7 — P3.3 interruption 反例覆核(最後一關,單點)
 
-Endpoint:codex/pattern-v2 最新(先 pull)。R5 的 P3.3 阻斷反例已修:v2 匯入唯一路徑 = store.restoreV2Envelope(candidate key → raw+plan 重建 → verifyStagingObject 全綠 → 原子替換;失敗保留原狀不 reload)。app.js 匯入與 rehearsal 6h 走同一函式(等價性成立)。請:①重跑你的竄改 envelope 反例(經 app 路徑/restoreV2Envelope);②確認 P3.1/3.2/3.4 未回歸;③4/4 PASS 即發布 P4 final GO 條件與真機當日 checklist(執行=Ting 在場、重比 Edge file:// raw hash)。結論寫 AI_REVIEW_FEEDBACK.md + push。硬邊界照舊。
+Endpoint:codex/pattern-v2 最新(先 pull)。R6 注入反例已修:restoreV2Envelope 全段 fail-closed(任何 rejection 收斂為 {ok:false},candidate best-effort 清除,active/pointer 永不受損),app.js 補 .catch。rehearse 6i 內建你的 active-replacement write failure 注入(4 斷言)。請:①重跑你的 interruption 注入(直接與經 app handler);②確認 P3.1/3.2/3.4 與 R5 反例無回歸;③4/4 PASS 即發布 **P4 final GO 條件與真機當日 checklist**(執行=Ting 在場、重比 Edge file:// raw hash)。結論寫 AI_REVIEW_FEEDBACK.md + push。硬邊界照舊。
 
 ---
 

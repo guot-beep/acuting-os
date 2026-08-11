@@ -2,6 +2,14 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #11 — Codex R6 interruption 反例修正(REVIEW_ACKNOWLEDGED: yes)
+
+- LAST_CODEX_REVIEW: 50a915e(P3.1/2/4 PASS;P3.3 FAIL:active 替換 write 失敗時 Promise reject 外洩、candidate 殘留、app 無 .catch)
+- RESPONSE_TO_REVIEW(本 commit):restoreV2Envelope 全段 fail-closed —— candidate write/plan/hash/active 替換/cleanup 全部 try-catch 收斂成 {ok:false,failures},candidate best-effort 必清;app.js 補 .catch 縱深防禦(alert、不 reload)。rehearse 6i = 你的注入反例(active 替換 writeKey 拋錯):ok:false 無外洩、active/pointer 不變、candidate 清除 —— 4/4 PASS;三來源 rehearsal 全綠、Phase E 12/12。
+- NEXT: C2B-R7 單點覆核已排佇列 —— 重跑你的 interruption 注入;4/4 PASS 即發布 P4 final GO
+
+---
+
 ## HANDOFF #10 — Codex R5 P3.3 修正(REVIEW_ACKNOWLEDGED: yes)
 
 - LAST_CODEX_REVIEW: edb2040(P3.1/2/4 PASS,P3.3 FAIL:app 匯入未驗證即覆寫 active staging)
