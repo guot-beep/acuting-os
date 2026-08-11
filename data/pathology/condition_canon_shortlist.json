@@ -6001,10 +6001,14 @@
           "NINDS — Low Back Pain Fact Sheet"
         ],
         "acupuncture_scope_zh": [
-          "AcuTing OS Disease Knowledge Research Pack — AAOS/NINDS-derived"
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NINDS-derived",
+          "ACP 2017 — Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain (Ann Intern Med)",
+          "NICE NG59 — Low back pain and sciatica in over 16s, rec 1.2.8 (verified 2026-08-11)"
         ],
         "acupuncture_scope_en": [
-          "AcuTing OS Disease Knowledge Research Pack — AAOS/NINDS-derived"
+          "AcuTing OS Disease Knowledge Research Pack — AAOS/NINDS-derived",
+          "ACP 2017 — Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain (Ann Intern Med)",
+          "NICE NG59 — Low back pain and sciatica in over 16s, rec 1.2.8 (verified 2026-08-11)"
         ]
       },
       "sign_symptom_ids": [
@@ -6079,20 +6083,20 @@
         }
       ],
       "acupuncture_scope_zh": {
-        "can_treat": "多項指引將針灸列為慢性非特異性下背痛之非藥物治療選項之一，可作為疼痛管理及功能維持之輔助",
+        "can_treat": "美國 ACP 2017 指引將針灸列為慢性下背痛第一線非藥物治療選項之一，可作為疼痛管理及功能維持之輔助（各國指引立場分歧，見 note）",
         "precautions": "治療前確認已排除紅旗症狀（見紅旗欄位）；委中、腎俞等深層腰部穴位施針深度須考量病人體型與體位安全",
         "co_management": "與病人的疼痛科／骨科／物理治療師聯絡，鼓勵維持活動而非臥床休息",
         "evidence": "guideline",
-        "source": "curriculum/conditions 課程講義 + AcuTing OS 整理（依 AAOS OrthoInfo 及標準脊椎醫學文獻）",
-        "note": "多國臨床指引（如英國 NICE）將針灸列為慢性下背痛選項之一，惟各國指引立場不一致，需以當地指引為準"
+        "source": "美國 ACP 2017 臨床實務指引（Qaseem et al., Ann Intern Med）+ 英國 NICE NG59（2026-08-11 查核）+ curriculum/conditions 課程講義",
+        "note": "各國指引立場分歧，不可一概而論：美國 ACP 2017 指引建議慢性下背痛優先採非藥物治療，針灸為選項之一（中等品質證據）；英國 NICE NG59（下背痛與坐骨神經痛，2016 年發布、現行有效）則明確建議不要提供針灸治療下背痛（不論有無坐骨神經痛）（建議 1.2.8），並推翻 2009 年 CG88 的支持立場。NICE NG193（慢性原發性疼痛）雖納入針灸，但下背痛屬 NG59 涵蓋範圍，不適用 NG193。實際採用須依當地指引與病人共同決策"
       },
       "acupuncture_scope_en": {
-        "can_treat": "Several guidelines list acupuncture as one non-pharmacologic option for chronic non-specific low back pain, usable as adjunctive pain management and to support continued function",
+        "can_treat": "The US ACP 2017 guideline lists acupuncture among first-line non-pharmacologic options for chronic low back pain, usable as adjunctive pain management and to support continued function (guideline positions diverge by country — see note)",
         "precautions": "Confirm red-flag features have been excluded before treatment (see red flags); needling depth at deep lumbar points (BL40, BL23) must account for patient body habitus and positioning safety",
         "co_management": "Stay in contact with the patient's pain specialist/orthopedist/physical therapist; encourage staying active rather than bed rest",
         "evidence": "guideline",
-        "source": "curriculum/conditions course handouts + AcuTing OS synthesis (per AAOS OrthoInfo and standard spine-medicine references)",
-        "note": "Multiple national guidelines (e.g., UK NICE) list acupuncture as an option for chronic low back pain, though guideline positions vary by country; defer to local guidance"
+        "source": "US ACP 2017 clinical practice guideline (Qaseem et al., Ann Intern Med) + UK NICE NG59 (verified 2026-08-11) + curriculum/conditions course handouts",
+        "note": "Guideline positions diverge by country and must not be generalized: the US ACP 2017 guideline recommends non-pharmacologic treatment first for chronic low back pain, with acupuncture among the options (moderate-quality evidence); UK NICE guideline NG59 (Low back pain and sciatica in over 16s, 2016, still current) explicitly recommends AGAINST offering acupuncture for low back pain with or without sciatica (rec 1.2.8), reversing the supportive stance of its 2009 predecessor CG88. NICE NG193 (chronic primary pain) includes acupuncture but does not apply here — low back pain falls under NG59. Follow local guidance and shared decision-making"
       }
     },
     {
