@@ -6,6 +6,43 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R12 E1–E5 獨立覆核 — reviewed code `6881f1e`, checkout `1913324`
+
+### 裁決：R12 NO-GO；P4 真機條件不發布
+
+- **範圍證據**：先 `git pull --ff-only`（already up to date）。覆核 `6cf7782..6881f1e`；目前 HEAD `1913324` 的 `js/clinical-store.js`、`app.js`、`scripts/rehearse-runtime-restore.js`、`scripts/test-pointer-runtime.js` 與 `6881f1e` blob 逐一相同，後續 formula／handoff commits 未改 Clinical runtime。
+- **指定覆測**：R9=`9/9 PASS`；R10=`8/8 PASS`；R11 E1–E5=`5/5 PASS`。真實的 delayed restore-vs-sync、equal-revision divergent、string incoming/load、ghost/漏列 pending、double-fault 經 app handler 唯讀鎖均轉綠。
+- **獨立加碼**：`2/6 PASS · 4/6 FAIL`。restore-vs-save 與雙 restore 競態通過；active revision fail-open、MAX_SAFE revision overflow、exact-byte no-op 契約、官方 delayed fixture 有效性未通過。
+- **C2b**：**NO-GO**。不得對真實病例執行 shadow write、active pointer switch 或 runtime restore；先前 P4 條件不構成本輪授權。真 clinical store 讀／寫=`0/0`，全部測試使用記憶體 fake backend。
+
+### 新發現與修復 gates
+
+1. **HIGH — active staging 的非法 `runtime_revision` 被當成 revision 0，restore 可覆寫**
+   - `restoreV2Envelope()` 只對 incoming 呼叫 `assertRevisionShape()`；讀取 active 後以 `Number.isSafeInteger(...) ? value : 0` 計算 `currentRev`。反例：active envelope 含 `runtime_revision:"2"`（`load()` 會 fail-loud），匯入同病例、合法 revision `3` 時卻回 `ok:true` 並覆寫 active。若 active 字串 revision 實際代表較新資料，anti-downgrade 被繞過。
+   - **Gate F1**：active staging 的 revision「缺席」仍可代表剛 switch 的 migration-era；但欄位一旦存在且不是 safe integer `>=1`，restore 必須 `REJECTED_UNCHANGED`、active/pointer exact unchanged、candidate 清除。修復後加入 active string／fraction／negative／unsafe-integer四型反例。
+
+2. **MEDIUM — revision 上界未 fail-closed**
+   - `save()` 與 `syncPendingPatients()` 直接做 `(runtime_revision || 0) + 1`。以 `Number.MAX_SAFE_INTEGER` 為 active revision 呼叫 `save()`，未丟錯且寫入 `9007199254740992`；下一次 `load()` 才因型別契約拒絕，形成一次寫入即自鎖的 staging。
+   - **Gate F2**：兩條 writer 在寫入前計算 `nextRevision`，要求 `Number.isSafeInteger(nextRevision) && nextRevision >= 1`；overflow 時零寫入並回／拋明確錯誤。兩條路徑都加入 blocking test。
+
+3. **MEDIUM — 官方 E1「delayed hasher」fixture 沒有形成 await race**
+   - `scripts/rehearse-runtime-restore.js:154` 的 `baseEnv.patients=[]`；`verifyRuntimeEnvelope()` 只有逐 Patient canonical ID 時呼叫 hasher。因此 `slowShaE1` 實測 calls=`0`，`restoreP` 已跨過驗證後，下一行 `S.save()` 才執行。`42/42` 中該項不是所宣稱的 delayed restore-vs-save 證據。
+   - 獨立混合 fixture（1 linked Patient + 1 pending case）確實卡在 hasher await；await 期間 `syncPendingPatients()` 推進 active 後，restore 回 `REJECTED_UNCHANGED` 且 newer bytes 保留，實作本身為 PASS。
+   - **Gate F3**：官方 E1 fixture 至少含一個 canonical Patient，另以 `hasherCalls>=1`、restore 尚未 settled、競態動作確實發生三斷言防止測試再度空跑；保留 restore-vs-sync 與 restore-vs-save 兩型。
+
+4. **LOW — 「same revision 只准 exact bytes」宣稱與實作不一致**
+   - current 使用 compact JSON，incoming 僅改 pretty-print whitespace；兩者 raw bytes 不同，但 `JSON.stringify(parsedIncoming) === JSON.stringify(parsedCurrent)` 仍回 `ok:true/idempotent_noop:true`。本反例沒有 active write，但不符合佇列的 byte-equal 契約。
+   - **Gate F4**：若契約維持 exact bytes，same-revision no-op 直接比較原始 `envelopeText === anchorRaw`；否則須由 Ting 明確改為 canonical-object equality，並同步修正文案與測試，不能繼續稱 byte-equal。
+
+### 回歸證據
+
+- 官方 fake suites：pointer runtime=`31/31 PASS`；runtime restore=`42/42 PASS`（其中 E1 fixture coverage 缺口如上）；C2b rehearsal=`30/30 PASS`。
+- Clinical：invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K-series=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions failures=`0`；app/store syntax=`2/2`。
+- 佇列 standard validators=`9 exit 0 / 3 exit 1`；紅燈仍為 `validate-herb-canon`、`validate-naming`、`validate-encoding` 的資料基線，與 `6881f1e` Clinical 四個 blobs 無交集，未誤報為全綠。
+- **下一 gate**：F1–F4 修正並把六個加碼情境納入 blocking suite 後排 R13。F1 未綠前，即使 Ting 在場與 Edge `file://` raw full hash相符，仍不得開始 P4。
+
+---
+
 ## 2026-08-11 Codex C2B-R11 D1–D6 獨立覆核 — endpoint `8ad4c16`
 
 - **REVIEWED_SHA**: R10 report `c2797944182261b056c82173f98635a9e4885a3e`；D1–D6／受審 endpoint `8ad4c16d49f4aa33843dbeb2e3d30b75a7b49ba5`。受審 blobs：store=`c00e50d5cd51c41437804727f5470c945032eeb0`、app=`ea3dacb3ae2e0be2478183670f7ba8d1ef1c2173`、runtime rehearsal=`4c9005a6bf4905a1a9569796f83a45da7783aa08`。

@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R12 remains NO-GO
+
+- **Gate**：reviewed `6cf7782..6881f1e`；R9=`9/9`、R10=`8/8`、R11=`5/5`，但 independent extras=`2/6 PASS · 4/6 FAIL`，故不發布 R12 GO／P4。
+- **Primary blocker**：active staging 的 present-but-invalid `runtime_revision` 在 restore 被折算為 `0`；字串 revision active 可被合法 incoming 覆寫，繞過 anti-downgrade。另有 MAX_SAFE overflow、exact-byte 宣稱落差。
+- **Test-quality gap**：官方 E1 fixture `patients=[]`，delayed hasher calls=`0`，其 `42/42` race 項為空跑；獨立 linked+pending 真 await race則 PASS。
+- **Evidence**：official pointer/runtime/C2b=`31/31 · 42/42 · 30/30`；Clinical invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard=`9 exit 0 / 3 exit 1`。
+- **Boundary / next**：真 store 讀／寫=`0/0`；依 `AI_REVIEW_FEEDBACK.md` F1–F4 修復並納入 blocking suite 後排 R13，期間禁止 shadow write／pointer switch／runtime restore。
+
+---
+
 ## [2026-08-11] Codex Handoff — C2B-R11 / restore concurrency remains NO-GO
 
 - **Gate**: reviewed `c279794..8ad4c16`; R9=`9/9 PASS`、R10=`8/8 PASS`，但 new R11=`0/5 PASS · 5/5 FAIL`，C2b=`NO-GO`，P4 未發布。

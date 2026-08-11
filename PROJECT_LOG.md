@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R12 E1–E5 audit（NO-GO）
+
+- **範圍**：覆核 `6cf7782..6881f1e`，目前 HEAD Clinical blobs 相同；R9=`9/9`、R10=`8/8`、R11=`5/5`，new extras=`2/6 PASS · 4/6 FAIL`，未發布 P4。
+- **阻斷**：active staging 非法 revision 被折算 `0`，restore 可覆寫並繞 anti-downgrade；另有 MAX_SAFE overflow、same-revision exact-byte 契約落差。
+- **測試缺口**：官方 E1 `patients=[]`，delayed hasher calls=`0`；獨立 linked+pending restore-vs-sync 與 restore-vs-save 真 await race均 PASS。
+- **回歸**：official pointer/runtime/C2b=`31/31 · 42/42 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
+- **邊界／下一步**：真 store 讀／寫=`0/0`，temp fake harness 清理；依 AI_REVIEW_FEEDBACK F1–F4 修復並進 blocking suite後排 R13，期間禁止真機 shadow write／pointer switch／runtime restore。
+
 # 2026-08-11 Codex — C2B-R11 restore concurrency audit（NO-GO）
 
 - **範圍**：覆核 `c279794..8ad4c16`；R9=`9/9 PASS`、R10=`8/8 PASS`，new R11=`0/5 PASS · 5/5 FAIL`，未發布 GO/P4。
