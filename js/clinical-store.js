@@ -284,6 +284,90 @@
    * 保持零依賴。 */
   const STAGING_KEY = "acuting-clinical-v2-staging";
   const POINTER_KEY = "acuting-clinical-active";
+  const CANDIDATE_KEY = "acuting-clinical-v2-staging-candidate";
+
+  /* Codex C2B-R5 P3.3 修正:plan 生成搬進 store(單一來源)。
+   * migrate-c2b.js 的 CLI 委派這裡;app 的 v2 匯入驗證也用這裡 —— 同一個
+   * deterministic plan,兩個消費者,不可能漂移。sha256 以 async 函式注入
+   * (node 包同步 crypto;browser 用 crypto.subtle)。純函數:無 Date.now、
+   * 無 Math.random,同 source 必得同 plan。 */
+  async function buildMigrationPlan(rawText, adjudications, sha256) {
+    const patientIdOf = async (code) => "patient." + (await sha256("acuting-patient:" + code)).slice(0, 12);
+    const cases = JSON.parse(rawText);
+    if (!Array.isArray(cases)) throw new Error("raw snapshot must be a JSON array of cases");
+    const caseIds = new Set();
+    for (const c of cases) {
+      if (caseIds.has(c.id)) throw new Error(`duplicate case id in source: ${c.id} — migration cannot proceed`);
+      caseIds.add(c.id);
+    }
+    const codeByPid = new Map();
+    for (const c of cases) {
+      const code = String(c.patientCode || "").trim();
+      if (!code) continue;
+      const pid = await patientIdOf(code);
+      if (codeByPid.has(pid) && codeByPid.get(pid) !== code) throw new Error(`patient id collision: "${codeByPid.get(pid)}" and "${code}" both map to ${pid}`);
+      codeByPid.set(pid, code);
+    }
+    const derived = derivePatientsFromCases(cases);
+    const patients = [];
+    for (const p of derived) {
+      const fields = Object.fromEntries(["birthYearMonth", "birthYear", "sex", "genderIdentity", "raceEthnicity", "raceEthnicityDetail", "occupation", "allergyStatus", "allergies"].map((f) => p.needsReview.includes(f) ? [f, null] : [f, p[f]]));
+      const applied = [];
+      for (const adj of adjudications || []) {
+        if (adj.patientCode === p.patientCode && p.needsReview.includes(adj.field)) {
+          fields[adj.field] = adj.value;
+          applied.push({ field: adj.field, value: adj.value, reason: String(adj.reason || "") });
+        }
+      }
+      patients.push({
+        id: await patientIdOf(p.patientCode),
+        patientCode: p.patientCode, caseIds: p.caseIds, caseCount: p.caseCount,
+        fields, conflicts: p.conflicts,
+        needsReview: p.needsReview.filter((f) => !applied.some((a) => a.field === f)),
+        adjudicationsApplied: applied
+      });
+    }
+    const caseAssignments = [];
+    for (const c of cases) {
+      const code = String(c.patientCode || "").trim();
+      caseAssignments.push({ caseId: c.id, patientCode: code, patientId: code ? await patientIdOf(code) : null });
+    }
+    const blankCodeCases = caseAssignments.filter((a) => !a.patientId).map((a) => a.caseId);
+    const reviewQueue = patients.filter((p) => p.needsReview.length || Object.keys(p.conflicts).length);
+    const enc = typeof TextEncoder !== "undefined" ? new TextEncoder().encode(rawText).length : rawText.length;
+    return {
+      migration_version: "c2b-1",
+      source_sha256: await sha256(rawText),
+      source_bytes: enc,
+      counts: { cases: cases.length, soapNotes: cases.reduce((s, c) => s + (Array.isArray(c.soapNotes) ? c.soapNotes.length : 0), 0), patients: patients.length, blankCodeCases: blankCodeCases.length, conflictPatients: reviewQueue.length },
+      patients, caseAssignments, blankCodeCases,
+      manualReviewQueue: reviewQueue.map((p) => ({ patientId: p.id, patientCode: p.patientCode, needsReview: p.needsReview, conflicts: p.conflicts }))
+    };
+  }
+
+  /* Codex R5 修正 gate:v2 匯入唯一認可路徑 —— 非 active candidate → 以
+   * 「當下 v1 raw + 重建的 deterministic plan」做完整 verifyStaging → 全綠才
+   * 原子替換 active staging。任何失敗:active staging/pointer 原封不動。 */
+  async function restoreV2Envelope(envelopeText, sha256) {
+    const fail = (failures) => { removeKey(CANDIDATE_KEY); return { ok: false, failures }; };
+    let env;
+    try { env = JSON.parse(envelopeText); } catch { return fail(["envelope is not valid JSON"]); }
+    if (!(env && env.schema_version === 2 && env.journal && Array.isArray(env.patients) && Array.isArray(env.cases))) {
+      return fail(["envelope missing schema_version/journal/patients/cases"]);
+    }
+    const rawText = backend.read();
+    if (rawText === null) return fail(["v1 raw store absent — cannot anchor verification"]);
+    writeKey(CANDIDATE_KEY, JSON.stringify(env));
+    let plan;
+    try { plan = await buildMigrationPlan(rawText, env.journal.adjudicationsApplied || [], sha256); }
+    catch (e) { return fail(["plan rebuild failed: " + e.message]); }
+    const rawHash = await sha256(rawText);
+    const v = verifyStagingObject(env, rawText, rawHash, plan);
+    if (!v.ok) return fail(v.failures);
+    writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
+    removeKey(CANDIDATE_KEY);
+    return { ok: true, patients: env.patients.length, cases: env.cases.length };
+  }
 
   function executeMigration(rawText, plan, { sha256 }) {
     const actualHash = sha256(rawText);
@@ -322,16 +406,17 @@
     return { creates: staging.patients.length + staging.cases.length, updates: 0, deletes: 0, idempotent_noop: false };
   }
 
-  function verifyStaging(rawText, { sha256 }, plan) {
-    const staging = JSON.parse(readKey(STAGING_KEY) || "null");
+  /* 同步核心:對「記憶體中的 staging 物件」做 plan 錨定全驗證。key 版
+   * verifyStaging 與 async 匯入路徑 restoreV2Envelope 都委派到這裡 ——
+   * 驗證邏輯永遠只有一份(Codex R5:rehearsal 綠燈必須與 UI 行為等價)。 */
+  function verifyStagingObject(staging, rawText, rawHash, plan) {
     const failures = [];
     if (!staging) return { ok: false, failures: ["staging absent"] };
-    if (staging.journal.source_sha256 !== sha256(rawText)) failures.push("journal hash != raw hash");
-    // Codex C2B-R4 P3.1/P3.2 FAIL 修正:verify 必須以 deterministic plan 為錨。
-    // journal 全欄位、patients 全深度、assignments 全對映 —— 任何一項與 plan
-    // 不同即拒絕。plan 是必要參數:沒有錨的驗證就是上一輪被打掉的那種綠燈。
+    if (!staging.journal) return { ok: false, failures: ["staging.journal absent"] };
+    if (staging.journal.source_sha256 !== rawHash) failures.push("journal hash != raw hash");
+    // Codex C2B-R4 P3.1/P3.2 修正:verify 必須以 deterministic plan 為錨。
     if (!plan) return { ok: false, failures: ["verifyStaging requires the deterministic plan as anchor — refusing anchorless verification"] };
-    if (plan.source_sha256 !== sha256(rawText)) failures.push("plan hash != raw hash");
+    if (plan.source_sha256 !== rawHash) failures.push("plan hash != raw hash");
     if (staging.journal.migration_version !== plan.migration_version) failures.push("journal.migration_version != plan");
     if (staging.journal.source_bytes !== plan.source_bytes) failures.push("journal.source_bytes != plan");
     if (JSON.stringify(staging.journal.counts) !== JSON.stringify(plan.counts)) failures.push("journal.counts != plan.counts");
@@ -388,6 +473,12 @@
     return { ok: failures.length === 0, failures };
   }
 
+  // key 版包裝(rehearse/switch 用,同步 hasher)。
+  function verifyStaging(rawText, { sha256 }, plan) {
+    const staging = JSON.parse(readKey(STAGING_KEY) || "null");
+    return verifyStagingObject(staging, rawText, sha256(rawText), plan);
+  }
+
   function switchPointer(rawText, hasher, plan) {
     const v = verifyStaging(rawText, hasher, plan);
     if (!v.ok) throw new Error("switchPointer refused — verifyStaging failures: " + v.failures.join("; "));
@@ -399,7 +490,8 @@
     // 白名單刪除:只碰本 migration 建立的兩個 keys,v1 與其他一切不動。
     removeKey(POINTER_KEY);
     removeKey(STAGING_KEY);
-    return { removed: [POINTER_KEY, STAGING_KEY] };
+    removeKey(CANDIDATE_KEY);
+    return { removed: [POINTER_KEY, STAGING_KEY, CANDIDATE_KEY] };
   }
 
   // backend 介面擴充(P3 需要 per-key 讀寫;localStorage 版直接對應)。
@@ -410,8 +502,12 @@
   global.AcuTingClinicalStore = {
     STAGING_KEY,
     POINTER_KEY,
+    CANDIDATE_KEY,
     executeMigration,
     verifyStaging,
+    verifyStagingObject,
+    buildMigrationPlan,
+    restoreV2Envelope,
     switchPointer,
     rollbackMigration,
     derivePatientsFromCases,

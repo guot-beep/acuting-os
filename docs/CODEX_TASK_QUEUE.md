@@ -2,15 +2,9 @@
 
 ## ⚡ NEXT TASK(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
 
-### C2B-R5 — R4 三 FAIL 修正覆核(P4 final GO 的最後一關)
+### C2B-R6 — P3.3 單點覆核(最後一關)
 
-Endpoint:codex/pattern-v2 最新(先 pull;修正 commit 6340838)。你 R4 的三組反例已全部內建 scripts/rehearse-c2b.js:
-
-1. **P3.1**:verifyStaging 現以 deterministic plan 為必要錨(無錨拒絕);journal 四欄逐項對 plan。覆測你的 counts=999 反例。
-2. **P3.2**:patients 對 plan 深度 parity;assignments 逐 case;noop 前置完整 verify,壞 staging throw(fail closed)。覆測 occupation 竄改與 tampered-noop 反例。
-3. **P3.3**:export 於 staging 缺失時中止;import 對 v2 envelope 不降級(v1 拒收/v2 完整還原);rehearse 6g = 檔案級 export→wipe→import→full verify→canonical hash 相等。請做你自己的檔案級 round-trip(假資料)。
-4. 迴歸:rehearse 全套(fixture/自建 fake)、walkthrough-phase-e、invariants、K 系列。
-5. 結論寫 AI_REVIEW_FEEDBACK.md:P3.1–P3.4 各 PASS/FAIL;若全 PASS,**發布 P4 final GO 條件與真機當日 checklist**(執行 = Ting 在場,目標 = Edge file:// 正典 2-case store)。commit+push。硬邊界照舊(真 store 只讀、假資料清理、不 push main)。
+Endpoint:codex/pattern-v2 最新(先 pull)。R5 的 P3.3 阻斷反例已修:v2 匯入唯一路徑 = store.restoreV2Envelope(candidate key → raw+plan 重建 → verifyStagingObject 全綠 → 原子替換;失敗保留原狀不 reload)。app.js 匯入與 rehearsal 6h 走同一函式(等價性成立)。請:①重跑你的竄改 envelope 反例(經 app 路徑/restoreV2Envelope);②確認 P3.1/3.2/3.4 未回歸;③4/4 PASS 即發布 P4 final GO 條件與真機當日 checklist(執行=Ting 在場、重比 Edge file:// raw hash)。結論寫 AI_REVIEW_FEEDBACK.md + push。硬邊界照舊。
 
 ---
 

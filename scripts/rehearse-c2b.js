@@ -151,15 +151,33 @@ if (plan.counts.patients >= 2) {
   fs.unlinkSync(exportFile);
 }
 
+(async () => {
+// 6h. Codex R5 阻斷反例:竄改過的 envelope 走「app 匯入同一路徑」
+//     (restoreV2Envelope)必須被拒,且 active staging 原封不動。
+await (async () => {
+  const sha256Async = async (t) => sha256(t);
+  const activeBefore = kv.get(S.STAGING_KEY);
+  const tamperedEnv = JSON.parse(activeBefore);
+  tamperedEnv.patients[0] = { ...tamperedEnv.patients[0], fields: { ...tamperedEnv.patients[0].fields, occupation: "ENVELOPE-TAMPERED" } };
+  const r1 = await S.restoreV2Envelope(JSON.stringify(tamperedEnv), sha256Async);
+  check("tampered envelope refused via app-import path (Codex R5)", r1.ok === false && r1.failures.some((f) => f.includes("patients differ")));
+  check("active staging untouched after refused restore", kv.get(S.STAGING_KEY) === activeBefore);
+  check("candidate key cleaned after refusal", kv.get(S.CANDIDATE_KEY) === undefined);
+  // 合法 envelope 經同一路徑必須成功(等價性驗證)
+  const r2 = await S.restoreV2Envelope(activeBefore, sha256Async);
+  check("legit envelope restores via app-import path", r2.ok === true && kv.get(S.STAGING_KEY) === JSON.stringify(JSON.parse(activeBefore)));
+})();
+
 // 7. rollback
 const rb = S.rollbackMigration();
-check("rollback removes exactly the whitelist", JSON.stringify(rb.removed.sort()) === JSON.stringify([S.POINTER_KEY, S.STAGING_KEY].sort()));
+check("rollback removes exactly the whitelist", JSON.stringify(rb.removed.sort()) === JSON.stringify([S.POINTER_KEY, S.STAGING_KEY, S.CANDIDATE_KEY].sort()));
 check("staging+pointer gone after rollback", kv.get(S.STAGING_KEY) === undefined && kv.get(S.POINTER_KEY) === undefined);
 
 // 8. 原 raw 完全未動;所有寫入都在白名單內
 check("v1 raw byte-identical after full cycle", sha256(kv.get("acuting-clinical-cases-v1")) === rawHashBefore);
-const offList = touched.filter(([, k]) => k !== S.STAGING_KEY && k !== S.POINTER_KEY);
+const offList = touched.filter(([, k]) => k !== S.STAGING_KEY && k !== S.POINTER_KEY && k !== S.CANDIDATE_KEY);
 check("zero writes outside whitelist", offList.length === 0, offList.map(([op, k]) => `${op}:${k}`).join(", "));
 
 console.log(failures ? `\nREHEARSAL FAIL — ${failures} failure(s)` : `\nREHEARSAL PASS — full cycle green (${plan.counts.cases} cases → ${plan.counts.patients} patients)`);
 process.exit(failures ? 1 : 0);
+})().catch((e) => { console.error("REHEARSAL CRASH:", e.message); process.exit(1); });

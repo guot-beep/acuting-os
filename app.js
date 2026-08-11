@@ -7503,15 +7503,24 @@ function importClinicalCases(event) {
           alert("匯入被拒絕:這是 v2 備份(含 patients 層),目前系統仍在 v1 模式。v2 還原屬於 migration 工具流程,不能在這裡降級匯入(會丟失 patients/journal)。");
           return;
         }
-        if (!(imported.journal && Array.isArray(imported.patients))) {
-          alert("匯入被拒絕:v2 備份缺 journal/patients——檔案不完整。");
-          return;
-        }
-        const really = window.confirm(`⚠️ v2 完整還原:${imported.patients.length} patients / ${imported.cases.length} cases 將覆蓋現有 staging。確定?`);
+        // Codex C2B-R5 P3.3 gate:唯一認可路徑 restoreV2Envelope —— 寫入
+        // candidate、以「當下 v1 raw + 重建的 deterministic plan」做完整
+        // verifyStaging,全綠才原子替換 active staging;任何失敗保留原
+        // staging/pointer/畫面,不 reload。竄改過的 envelope 在這裡被拒。
+        const really = window.confirm(`⚠️ v2 完整還原:${imported.patients?.length ?? "?"} patients / ${imported.cases.length} cases。將先做完整驗證,通過才會替換。繼續?`);
         if (!really) return;
-        localStorage.setItem(AcuTingClinicalStore.STAGING_KEY, JSON.stringify(imported));
-        alert("v2 staging 已還原。頁面將重新載入。");
-        location.reload();
+        const subtleSha256 = async (text) => {
+          const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+          return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+        };
+        AcuTingClinicalStore.restoreV2Envelope(reader.result, subtleSha256).then((res) => {
+          if (res.ok) {
+            alert(`v2 staging 驗證通過並已還原(${res.patients} patients / ${res.cases} cases)。頁面將重新載入。`);
+            location.reload();
+          } else {
+            alert(`匯入被拒絕 — 驗證失敗(現有資料未被更動):\n\n${res.failures.slice(0, 5).join("\n")}${res.failures.length > 5 ? "\n…" : ""}`);
+          }
+        });
         return;
       }
       if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");

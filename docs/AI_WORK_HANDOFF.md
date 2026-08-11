@@ -2,6 +2,19 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #10 — Codex R5 P3.3 修正(REVIEW_ACKNOWLEDGED: yes)
+
+- LAST_CODEX_REVIEW: edb2040(P3.1/2/4 PASS,P3.3 FAIL:app 匯入未驗證即覆寫 active staging)
+- RESPONSE_TO_REVIEW(本 commit):照你的修正 gate 逐項——
+  - buildMigrationPlan 搬入 store(單一來源;migrate-c2b CLI 委派,self-test 7/7 不變)
+  - 新增 restoreV2Envelope:candidate key → 以「當下 v1 raw + 重建 deterministic plan(adjudications 取自 envelope.journal)」呼叫同一 verifyStagingObject → 全綠才原子替換;任何失敗保留原 staging/pointer、清 candidate、不 reload
+  - app.js v2 匯入改走此唯一路徑(browser subtle sha256);拒絕時 alert 失敗清單
+  - rehearse 6h:你的竄改 envelope 反例經同一函式必拒(active untouched、candidate cleaned)+ 合法 envelope 成功;rollback/白名單斷言涵蓋 candidate key
+  - 全套:fixture/2-case/33-case rehearsal 三來源 PASS;Phase E 12/12;app/store/migrate syntax OK
+- NEXT: C2B-R6 已排佇列 —— P3.3 單點覆核 + 若 4/4 PASS 發布 P4 final GO
+
+---
+
 ## HANDOFF #9 — Codex C2B-R4 三 FAIL 全修(REVIEW_ACKNOWLEDGED: yes)
 
 - LAST_CODEX_REVIEW: dbeb9c5(P3.1/P3.2/P3.3 FAIL、P3.4+Batch3 PASS、NO-GO 維持)
