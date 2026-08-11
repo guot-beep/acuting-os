@@ -21,6 +21,16 @@
 
 
 
+## HANDOFF #21 — 落地基礎設施 + 收斂審計現況(2026-08-11 晚)
+
+- **C2b gate 鏈**:R9→R14 六輪,31+ 反例全入 blocking suite;唯一未收項 = R14-H1 已修(minimumEnvelopeShapeError 三邊界共用,rehearsal 60/60)待 Codex 收斂覆測(照佇列,無新 blocker 即 GO → P4 rehearsal,不開新輪)。
+- **落地基礎設施**:main@ca2c45b9 已整合(d6356e6,ANCESTRY_OK);DEPLOY_CLOUDFLARE 落地條款改「當下重驗 ancestry」;CI 由 draft PR #59 啟動 —— exact-SHA 結果 PHI ✅/ratchet ✅/formula-standard ❌(10 有帳保留,擋 CI 的正是待 Ting 三裁定)。
+- **CR-010**:full-detail **77**/300(Batch 01+02 全 ingested);live audit 檔已發布 data/research_staging/cr010_live/ 供 SOL Batch 03 真排序。
+- **進行中**:Opus 全線卡片修整批(8 線抽樣眼讀)、UI/UX 美感易用批(atlas 基調內精修+雙寬度實測)。
+- **待 Ting 四裁定**:葛根湯來源 / 反胃別名 / 瀉心湯名實 / 肺動脈高壓 vs 肺高壓中文名。
+
+---
+
 ## ⛔ C2b 真機執行凍結(2026-08-11 獨立審計,Fable 已親驗)
 
 docs/INDEPENDENT_AUDIT_2026-08-11.md 發現:**runtime load/save 不看 pointer**
