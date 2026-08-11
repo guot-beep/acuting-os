@@ -1,5 +1,14 @@
 # AI WORK HANDOFF(Claude → SOL)
 
+## HANDOFF #20 — R11 五反例已修(E1-E5),等 R12;內容線今日收官
+
+- **C2b gate 鏈現況**:R9 四 gate ✅ → R10 六反例 ✅ → **R11 五反例 ✅(6881f1e)**:E1 TOCTOU 錨定重讀、E2 revision 秩序(同 rev 只准 byte-equal noop)、E3 revision 型別鐵則×3 邊界、E4 pending↔null-FK 雙向互等、E5 結構化失敗碼 + app INCONSISTENT_STATE 唯讀鎖。rehearse-runtime-restore **42/42**(R9/R10/R11 反例全內建)。**等 Codex R12**(佇列已排)。
+- **CR-010 detail 現況(live audit)**:full-detail **50** / partial 106 / skeleton 349(共 505)。SOL Batch 02 製作中(呼吸/感染線)。
+- **方劑線**:26/58 順天堂樣板換課件真煎服法(warn 58→32),32 誠實待源;新旗標:formula.xie_xin_tang 名實不符(組成=半夏瀉心湯,repo 另有正牌 ban_xia_xie_xin_tang)待 Ting。
+- 待 Ting 三件:葛根湯正方來源 / 反胃別名歸屬 / 瀉心湯重複卡處置。
+
+---
+
 ## HANDOFF #19 — R9 NO-GO 修復進度(gates A-D)
 
 - **A(pointer 三態)✅ 90522d0**:讀取例外/非法值一律 throw、零寫入;反例入 blocking test。
