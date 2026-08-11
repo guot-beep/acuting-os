@@ -2,16 +2,15 @@
 
 ## ⚡ NEXT TASK(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
 
-### C2B-R4 — P3 artifacts 覆核 + batch 3 UI 審計(P4 final GO 的前置)
+### C2B-R5 — R4 三 FAIL 修正覆核(P4 final GO 的最後一關)
 
-Endpoint:codex/pattern-v2 最新(先 pull;含 P3 writer 47478f8 與 batch 3 324242a)。
+Endpoint:codex/pattern-v2 最新(先 pull;修正 commit 6340838)。你 R4 的三組反例已全部內建 scripts/rehearse-c2b.js:
 
-1. **P3 writer**(js/clinical-store.js):executeMigration/verifyStaging/switchPointer/rollbackMigration —— 覆核你 P3.1-P3.4 規格:白名單雙 key、v1 永不寫(rehearsal shim 對 v1 write 直接 throw)、hash 不符拒絕、冪等 0/0/0、pointer 只在 verify 綠後切、tamper 拒絕、rollback 白名單刪除。
-2. **Rehearsal 重跑**(scripts/rehearse-c2b.js):自建假 fixture 跑一遍;再對 raw snapshot 的「隔離副本」跑(絕不接觸瀏覽器)。Fable 宣稱:fixture 10/10、2-case 與 33-case 副本 PASS —— 視為未驗證,重測。
-3. **Batch 3 UI**(env exposures panel):所有寫入是否只經 createExposure/applyExposureChange;certainty_changed 空 note 是否確實中止(D17 §6)。
-4. **Preflight 覆核**:scripts/preflight-c2b.js 的 repo-out 拒絕;PROJECT_LOG 記錄的 P0-P2 數字與 backup 檔案 hash 對帳(backup 在 %USERPROFILE%AcuTing-backupspre-c2b,只讀)。
-5. **正本定案知悉**:Edge file:// = canonical(2 cases);preview 33 = QA 歸檔。P4 條件請以 Edge store 為目標撰寫。
-6. 結論寫 AI_REVIEW_FEEDBACK.md 最上方:P3 各項 PASS/FAIL + 若全 PASS 發布 **P4 final GO 條件**(真機執行 = Ting 在場)。commit(逐路徑)+ push。硬邊界照舊。
+1. **P3.1**:verifyStaging 現以 deterministic plan 為必要錨(無錨拒絕);journal 四欄逐項對 plan。覆測你的 counts=999 反例。
+2. **P3.2**:patients 對 plan 深度 parity;assignments 逐 case;noop 前置完整 verify,壞 staging throw(fail closed)。覆測 occupation 竄改與 tampered-noop 反例。
+3. **P3.3**:export 於 staging 缺失時中止;import 對 v2 envelope 不降級(v1 拒收/v2 完整還原);rehearse 6g = 檔案級 export→wipe→import→full verify→canonical hash 相等。請做你自己的檔案級 round-trip(假資料)。
+4. 迴歸:rehearse 全套(fixture/自建 fake)、walkthrough-phase-e、invariants、K 系列。
+5. 結論寫 AI_REVIEW_FEEDBACK.md:P3.1–P3.4 各 PASS/FAIL;若全 PASS,**發布 P4 final GO 條件與真機當日 checklist**(執行 = Ting 在場,目標 = Edge file:// 正典 2-case store)。commit+push。硬邊界照舊(真 store 只讀、假資料清理、不 push main)。
 
 ---
 
