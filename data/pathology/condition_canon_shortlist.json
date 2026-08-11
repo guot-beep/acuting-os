@@ -22507,8 +22507,8 @@
     },
     {
       "id": "cond.menieres",
-      "name_en": "Ménière's Disease (context)",
-      "name_zh": "梅尼爾氏症（文件情境）",
+      "name_en": "Ménière Disease",
+      "name_zh": "梅尼爾氏症",
       "category": "neuro",
       "icd_hint": "H81.0",
       "related_eastern_diseases": [
@@ -22521,8 +22521,8 @@
         "pattern.kidney_essence_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "確切病因尚不清楚；症狀與內耳內淋巴液調節異常有關。",
+      "western_pathology_zh": "內淋巴水腫干擾耳蝸與前庭神經傳導功能。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -22554,7 +22554,92 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "aliases_zh": [
+        "美尼爾氏症"
+      ],
+      "aliases_en": [
+        "Meniere's Disease"
+      ],
+      "etiology_en": "Exact cause is unclear; symptoms are associated with abnormal inner-ear endolymph/fluid regulation.",
+      "western_pathology_en": "Endolymphatic hydrops disrupts cochlear and vestibular signaling.",
+      "summary_zh": "梅尼爾氏症是一種內耳疾病，特徵為陣發性眩暈合併波動性感音神經性聽力損失、耳鳴與耳脹感。",
+      "summary_en": "Ménière disease is an inner-ear disorder causing episodic vertigo with fluctuating sensorineural hearing loss, tinnitus and aural fullness.",
+      "western_context_zh": "臨床定位：與良性陣發性姿勢性眩暈（BPPV）、前庭神經炎及非特異性頭暈不同。\n\n臨床表現：自發性眩暈發作、波動性聽力損失、耳鳴與耳脹感，多為單側。\n\n重要特徵：眩暈合併聽覺症狀、典型發作 20 分鐘至數小時、聽力檢測可記錄損失、可能出現跌倒發作。\n\n診斷方法：耳鼻喉科病史與聽力檢測；影像可用於排除其他病因。確診須符合典型眩暈發作合併記錄之聽力損失與聽覺症狀。\n\n鑑別診斷：BPPV、前庭性偏頭痛、前庭神經炎、突發性感音神經性聽力損失、聽神經瘤。\n\n西醫治療：飲食／行為調整、症狀藥物、前庭復健，難治個案可考慮鼓室內注射或手術治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: It is distinct from BPPV, vestibular neuritis and nonspecific dizziness.\n\nClinical presentation: Spontaneous vertigo attacks, fluctuating hearing loss, tinnitus and ear fullness, often unilateral.\n\nKey features: vertigo + auditory symptoms, episodes typically 20 min to hours in definite criteria, hearing test documents loss, drop attacks possible.\n\nDiagnostic approach: ENT history and audiometry; imaging may exclude other causes. Definite disease requires characteristic vertigo episodes plus documented hearing loss and auditory symptoms.\n\nDifferential diagnosis: BPPV, vestibular migraine, vestibular neuritis, SSHL, acoustic neuroma.\n\nWestern treatment: Diet/behavior changes, symptom medicines, vestibular rehab and selected intratympanic or surgical therapies for refractory disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [],
+      "risk_factors_en": [],
+      "red_flags_zh": [
+        {
+          "finding": "新發局部神經學缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估中樞病因",
+          "rationale": "須排除中風等中樞性眩暈病因",
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "finding": "突發持續性聽力損失",
+          "urgency_level": "urgent",
+          "recommended_action": "當日轉診耳鼻喉科／急診評估",
+          "rationale": "須排除突發性感音神經性聽力損失",
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "finding": "非典型持續性劇烈眩暈",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診評估其他急症病因",
+          "rationale": "不符合梅尼爾氏症典型陣發性型態",
+          "source": "NIDCD — Ménière's Disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New focal neurologic deficits",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for central-cause evaluation",
+          "rationale": "Must exclude stroke and other central vertigo causes",
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "finding": "Sudden persistent hearing loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Same-day ENT/emergency referral",
+          "rationale": "Must exclude sudden sensorineural hearing loss",
+          "source": "NIDCD — Ménière's Disease"
+        },
+        {
+          "finding": "Atypical continuous severe vertigo",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for evaluation of alternate emergency causes",
+          "rationale": "Does not fit the typical episodic Ménière pattern",
+          "source": "NIDCD — Ménière's Disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為輔助照護，不宣稱治癒",
+        "precautions": "須先篩檢突發性聽力損失與中風樣紅旗症狀",
+        "co_management": "與病人的耳鼻喉科醫師聯絡確認診斷與治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies（依據 NIDCD 臨床資料整理）",
+        "note": "尚未查到專屬於梅尼爾氏症的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive only; do not claim cure",
+        "precautions": "Screen for SSHL and stroke-like red flags first",
+        "co_management": "Contact the patient's ENT physician to confirm diagnosis and treatment progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies (compiled from NIDCD clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for Meniere disease was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.tinnitus",
+        "sym.vertigo"
+      ],
+      "content_source": [
+        "nih_nidcd_overview",
+        "research_pack_batch_l_ent_ophthalmic_emergencies"
+      ],
+      "source_status": "draft_pending_ting_review"
     },
     {
       "id": "cond.migraine_vestibular",
@@ -39314,6 +39399,555 @@
       "content_source": [
         "nih_nichd_overview",
         "research_pack_batch_k_reproductive_gyne_urology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.acute_angle_closure_glaucoma",
+      "entity_type": "biomedical_condition",
+      "name_zh": "急性閉角型青光眼",
+      "name_en": "Acute Angle-Closure Glaucoma",
+      "category": "ent_eye",
+      "icd_hint": "H40.2",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "急性閉角型青光眼是房水外流突然受阻，造成眼內壓急遽升高並威脅視力的眼科急症。",
+      "summary_en": "Acute angle-closure glaucoma is sudden obstruction of aqueous outflow causing a rapid rise in intraocular pressure and threat to vision.",
+      "etiology_zh": "解剖上房角較窄者易感；瞳孔散大或其他誘發因子可促發房角關閉。",
+      "etiology_en": "Anatomically narrow angles predispose; pupillary dilation or other triggers can precipitate closure.",
+      "western_pathology_zh": "虹膜阻塞小樑網引流，使眼內壓急速上升並損傷視神經與眼部結構。",
+      "western_pathology_en": "Iris blocks trabecular drainage, rapidly increasing intraocular pressure and injuring optic nerve/ocular structures.",
+      "western_context_zh": "臨床定位：屬於眼科急症，與慢性隅角開放性青光眼為不同狀態。\n\n臨床表現：劇烈眼痛、紅眼、視力模糊／光暈、頭痛、噁心嘔吐。\n\n重要特徵：眼科急症、眼內壓急速上升、疼痛性紅眼、視力可能快速喪失。\n\n診斷方法：緊急眼科檢查，測量眼內壓並評估房角與視神經。\n\n鑑別診斷：葡萄膜炎、角膜炎、偏頭痛、結膜炎、眼眶蜂窩性組織炎。\n\n西醫治療：快速降眼壓藥物，隨後接受雷射虹膜切開術等眼科處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: It is a medical emergency and distinct from chronic open-angle glaucoma.\n\nClinical presentation: Severe eye pain, red eye, blurred vision/halos, headache, nausea/vomiting.\n\nKey features: ocular emergency, rapid IOP rise, painful red eye, vision loss can occur quickly.\n\nDiagnostic approach: Urgent eye exam with intraocular pressure and angle/optic evaluation.\n\nDifferential diagnosis: uveitis, keratitis, migraine, conjunctivitis, orbital cellulitis.\n\nWestern treatment: Rapid pressure-lowering medication followed by laser iridotomy and other ophthalmic treatment.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "解剖上房角較窄",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Glaucoma"
+        },
+        {
+          "factor": "遠視眼",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Glaucoma"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Anatomically narrow angle",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Glaucoma"
+        },
+        {
+          "factor": "Hyperopia (farsightedness)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Glaucoma"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "劇烈眼痛合併紅眼、噁心與視力模糊",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診／眼科",
+          "rationale": "為眼科急症，延誤可能造成永久性視力喪失",
+          "source": "NEI — Glaucoma"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden intense eye pain with red eye, nausea and blurred vision",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/ophthalmic care",
+          "rationale": "Ocular emergency; delay can cause permanent vision loss",
+          "source": "NEI — Glaucoma"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用——不得於眼周針刺或延誤轉診",
+        "precautions": "任何疑似急性閉角型青光眼徵象須立即轉診，不進行眼周治療",
+        "co_management": "立即轉診眼科／急診",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies（依據 NEI 臨床資料整理）",
+        "note": "此為眼科急症，針灸角色僅限於緊急轉診之後的恢復期輔助照護"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable — do not needle around the eye or delay referral when acute angle closure is possible",
+        "precautions": "Any suspected acute angle-closure glaucoma requires immediate referral, not periocular treatment",
+        "co_management": "Immediate referral to ophthalmology/emergency care",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies (compiled from NEI clinical materials)",
+        "note": "This is an ocular emergency; acupuncture's role is limited to recovery-phase support after emergency referral"
+      },
+      "sign_symptom_ids": [
+        "sym.blurred_vision"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NEI — Glaucoma: https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nih_nei_overview",
+        "research_pack_batch_l_ent_ophthalmic_emergencies"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.retinal_detachment",
+      "entity_type": "biomedical_condition",
+      "name_zh": "視網膜剝離",
+      "name_en": "Retinal Detachment",
+      "category": "ent_eye",
+      "icd_hint": "H33",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "視網膜剝離是視網膜自其正常位置分離的視力威脅急症。",
+      "summary_en": "Retinal detachment occurs when the retina separates from its normal position and is a vision-threatening emergency.",
+      "etiology_zh": "視網膜裂孔、糖尿病牽引、發炎／滲出性疾病、外傷及既往眼科手術皆可能造成不同類型的視網膜剝離。",
+      "etiology_en": "Retinal tears, diabetic traction, inflammatory/exudative disease, trauma and prior eye surgery can cause different types.",
+      "western_pathology_zh": "神經感覺層視網膜自下方支持組織分離，干擾光受器功能並可能造成永久性視力喪失。",
+      "western_pathology_en": "Separation of neurosensory retina from underlying support disrupts photoreceptor function and can cause permanent vision loss.",
+      "western_context_zh": "臨床定位：主要類型包括裂孔性、牽引性與滲出性；玻璃體後脫離為風險因子／鑑別診斷，非相同疾病。\n\n臨床表現：突發新發飛蚊症、閃光感與視野出現陰影／簾幕感；黃斑部剝離時中心視力可能下降。\n\n重要特徵：醫療急症、飛蚊症＋閃光＋簾幕感為高指標性表現、須散瞳檢查、早期手術／雷射可保護視力。\n\n診斷方法：散瞳眼底檢查；必要時輔以眼部超音波或 OCT。\n\n鑑別診斷：玻璃體後脫離、眼性偏頭痛、玻璃體出血、視網膜血管阻塞。\n\n西醫治療：依類型選擇雷射／冷凍治療裂孔，或氣體視網膜固定術、鞏膜扣壓術、玻璃體切除術等處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Major types are rhegmatogenous, tractional and exudative; posterior vitreous detachment is a risk/differential but not the same condition.\n\nClinical presentation: Sudden new floaters, flashes of light and a shadow/curtain over vision; central acuity may decline as macula detaches.\n\nKey features: medical emergency, floaters + flashes + curtain high-yield, dilated exam, early surgery/laser protects vision.\n\nDiagnostic approach: Dilated retinal exam; ocular ultrasound/OCT when needed.\n\nDifferential diagnosis: posterior vitreous detachment, ocular migraine, vitreous hemorrhage, retinal vascular occlusion.\n\nWestern treatment: Laser/cryo for tears and procedures such as pneumatic retinopexy, scleral buckle or vitrectomy for detachment depending type.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "高度近視",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Retinal Detachment"
+        },
+        {
+          "factor": "既往眼科手術或外傷史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Retinal Detachment"
+        },
+        {
+          "factor": "糖尿病視網膜病變",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Retinal Detachment"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "High myopia",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Retinal Detachment"
+        },
+        {
+          "factor": "Prior eye surgery or trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Retinal Detachment"
+        },
+        {
+          "factor": "Diabetic retinopathy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Retinal Detachment"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突發性飛蚊症、閃光或視野簾幕感",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送眼科／急診",
+          "rationale": "延誤處置可能造成永久性視力喪失",
+          "source": "NEI — Retinal Detachment"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden floaters, flashes or visual curtain/shadow",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate ophthalmic/emergency care",
+          "rationale": "Delayed treatment can cause permanent vision loss",
+          "source": "NEI — Retinal Detachment"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用——急性症狀須交由眼科處理",
+        "precautions": "在排除急症病因之前避免眼周治療",
+        "co_management": "立即轉診眼科",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies（依據 NEI 臨床資料整理）",
+        "note": "此為眼科急症，針灸角色僅限於緊急轉診之後的恢復期輔助照護"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable — acute symptoms require ophthalmology, not acupuncture",
+        "precautions": "Avoid ocular-area treatment until emergency causes excluded",
+        "co_management": "Immediate referral to ophthalmology",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies (compiled from NEI clinical materials)",
+        "note": "This is an ocular emergency; acupuncture's role is limited to recovery-phase support after emergency referral"
+      },
+      "sign_symptom_ids": [
+        "sym.blurred_vision"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NEI — Retinal Detachment: https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/retinal-detachment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nih_nei_overview",
+        "research_pack_batch_l_ent_ophthalmic_emergencies"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.sudden_sensorineural_hearing_loss",
+      "entity_type": "biomedical_condition",
+      "name_zh": "突發性感音神經性聽力損失",
+      "name_en": "Sudden Sensorineural Hearing Loss (SSHL)",
+      "category": "ent_eye",
+      "icd_hint": "H91.2",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "突發性耳聾"
+      ],
+      "aliases_en": [
+        "Sudden Deafness"
+      ],
+      "summary_zh": "突發性感音神經性聽力損失是數小時至數天內快速出現、原因不明之內耳聽力損失，多為單側，屬於醫療急症。",
+      "summary_en": "Sudden sensorineural hearing loss (SSHL) is rapid unexplained inner-ear hearing loss developing over hours to a few days, often unilateral, and is a medical emergency.",
+      "etiology_zh": "多數為特發性；感染、自體免疫疾病、循環問題、神經疾病、外傷或耳毒性藥物皆可能為病因。",
+      "etiology_en": "Most cases are idiopathic; infections, autoimmune disease, circulation problems, neurologic disease, trauma or ototoxic drugs can be causes.",
+      "western_pathology_zh": "耳蝸／內耳感覺路徑急性功能障礙，造成快速的感音神經性閾值損失。",
+      "western_pathology_en": "Acute dysfunction of cochlear/inner-ear sensory pathways produces rapid sensorineural threshold loss.",
+      "western_context_zh": "臨床定位：屬於時間敏感的醫療急症，須立即與耳垢／積液造成的傳導性聽力損失及慢性聽力損失區分；與慢性耳鳴／感音神經性聽損（見 cond.hearing_loss）為不同臨床狀態，不應以慢性耳鳴常規處置延誤評估。\n\n臨床表現：常於睡醒時發現的單側突發聽力損失，可合併耳鳴、耳脹感及／或暈眩。\n\n重要特徵：時間敏感急症、多為單側、應於數天內完成聽力檢測、常考慮類固醇治療。\n\n診斷方法：先排除傳導性聽力損失，並進行純音聽力檢測；視情況加做影像／血液檢查尋找病因。\n\n鑑別診斷：耳垢阻塞、中耳炎、梅尼爾氏症、聽神經瘤、腦中風。\n\n西醫治療：適當個案常使用類固醇治療；找到病因時依病因處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: It must be distinguished promptly from conductive loss due to cerumen/fluid and from chronic hearing loss; this is a distinct clinical state from the chronic tinnitus/sensorineural hearing loss picture in cond.hearing_loss and should not be managed with routine chronic-tinnitus care that delays evaluation.\n\nClinical presentation: Sudden unilateral hearing loss, sometimes noticed on waking, with tinnitus, ear fullness and/or dizziness.\n\nKey features: time-sensitive emergency, often unilateral, audiometry within days, steroids commonly considered.\n\nDiagnostic approach: Rule out conductive loss and obtain pure-tone audiometry; additional imaging/labs seek underlying cause.\n\nDifferential diagnosis: cerumen impaction, otitis media, Ménière disease, vestibular schwannoma, stroke.\n\nWestern treatment: Corticosteroid treatment is commonly used when appropriate; cause-specific management if identified.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [],
+      "risk_factors_en": [],
+      "red_flags_zh": [
+        {
+          "finding": "突發單側聽力損失",
+          "urgency_level": "urgent",
+          "recommended_action": "立即醫療／耳鼻喉科評估",
+          "rationale": "屬於時間敏感急症，及早評估與治療影響預後",
+          "source": "NIDCD — Sudden Deafness"
+        },
+        {
+          "finding": "合併局部神經學缺損",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示中樞／血管性病因",
+          "source": "NIDCD — Sudden Deafness"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden unilateral hearing loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical/ENT evaluation",
+          "rationale": "Time-sensitive emergency; early evaluation and treatment affect outcome",
+          "source": "NIDCD — Sudden Deafness"
+        },
+        {
+          "finding": "Associated focal neurologic deficits",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Raises central/vascular concern",
+          "source": "NIDCD — Sudden Deafness"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不適用於初期處置——不得以慢性耳鳴耳聾常規照護取代急症評估",
+        "precautions": "不得將突發性聽力損失標記為慢性耳鳴耳聾而延誤轉診",
+        "co_management": "立即轉診耳鼻喉科／急診",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies（依據 NIDCD 臨床資料整理）",
+        "note": "此為時間敏感急症，針灸角色僅限於緊急轉診之後的恢復期輔助照護"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Not applicable for initial management — do not label sudden hearing loss as chronic tinnitus/hearing loss and begin routine care first",
+        "precautions": "Time-to-evaluation matters; do not delay referral",
+        "co_management": "Immediate referral to ENT/emergency care",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies (compiled from NIDCD clinical materials)",
+        "note": "This is a time-sensitive emergency; acupuncture's role is limited to recovery-phase support after emergency referral"
+      },
+      "sign_symptom_ids": [
+        "sym.tinnitus"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "NIDCD — Sudden Deafness: https://www.nidcd.nih.gov/health/sudden-deafness",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "nih_nidcd_overview",
+        "research_pack_batch_l_ent_ophthalmic_emergencies"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.acute_bacterial_sinusitis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "急性細菌性鼻竇炎",
+      "name_en": "Acute Bacterial Rhinosinusitis",
+      "category": "respiratory",
+      "icd_hint": "J01",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "急性細菌性鼻竇炎是通常繼發於病毒性上呼吸道感染之副鼻竇細菌性感染／發炎，須與病毒性鼻竇炎區分。",
+      "summary_en": "Acute bacterial rhinosinusitis is bacterial infection/inflammation of the paranasal sinuses, usually following a viral URI, and must be distinguished from viral rhinosinusitis.",
+      "etiology_zh": "常見細菌病原體於病毒性上呼吸道感染後或其他易感因子下，感染阻塞發炎的鼻竇。",
+      "etiology_en": "Common bacterial pathogens infect obstructed/inflamed sinuses after viral URI or other predisposition.",
+      "western_pathology_zh": "黏膜水腫阻塞引流，使細菌得以感染並造成壓力與發炎。",
+      "western_pathology_en": "Mucosal edema obstructs drainage, allowing bacterial infection and pressure/inflammation.",
+      "western_context_zh": "臨床定位：與慢性鼻竇炎為不同的臨床狀態（此為急性、通常繼發於病毒感染），也與單純病毒性鼻竇炎不同；單純膿性分泌物不足以證實細菌感染，須依病程與惡化型態判斷。\n\n臨床表現：鼻塞／鼻分泌物、顏面疼痛／壓迫感、嗅覺減退，可能合併發燒。\n\n重要特徵：病毒與細菌鑑別重要、持續／嚴重／雙重惡化型態具意義、眼眶／顱內併發症少見但嚴重、抗生素使用須有選擇性。\n\n診斷方法：多以臨床診斷為主；影像保留於併發症或替代診斷之評估。\n\n鑑別診斷：病毒性上呼吸道感染、過敏性鼻炎、牙源性感染、偏頭痛、慢性鼻竇炎。\n\n西醫治療：症狀治療，並依細菌感染條件／嚴重度選擇性使用抗生素；併發症須緊急處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Distinct from chronic sinusitis (this is acute, usually secondary to viral infection) and from simple viral rhinosinusitis; purulent discharge alone does not prove bacterial infection — duration/severity/worsening pattern guides diagnosis.\n\nClinical presentation: Nasal obstruction/discharge, facial pain/pressure, reduced smell and sometimes fever.\n\nKey features: viral vs bacterial distinction, persistent/severe/double-worsening patterns matter, orbital/intracranial complications rare but serious, antibiotics selective.\n\nDiagnostic approach: Usually clinical; imaging reserved for complications/alternative diagnosis.\n\nDifferential diagnosis: viral URI, allergic rhinitis, dental infection, migraine, chronic rhinosinusitis.\n\nWestern treatment: Symptomatic care and antibiotics when bacterial criteria/severity indicate; treat complications urgently.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期病毒性上呼吸道感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Sinusitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent viral upper respiratory infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Sinusitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "眼眶周圍腫脹或視力改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示眼眶／顱內併發症",
+          "source": "MedlinePlus — Sinusitis"
+        },
+        {
+          "finding": "嚴重頭痛合併神經學徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示顱內併發症",
+          "source": "MedlinePlus — Sinusitis"
+        },
+        {
+          "finding": "高度全身性中毒症狀或免疫低下",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "併發症風險較高",
+          "source": "MedlinePlus — Sinusitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Periorbital swelling or vision change",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests orbital/intracranial complication",
+          "source": "MedlinePlus — Sinusitis"
+        },
+        {
+          "finding": "Severe headache with neurologic findings",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests intracranial complication",
+          "source": "MedlinePlus — Sinusitis"
+        },
+        {
+          "finding": "High systemic toxicity or immunocompromise",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Elevated complication risk",
+          "source": "MedlinePlus — Sinusitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "在排除眼眶／顱內危險徵象後，可作為症狀輔助照護",
+        "precautions": "眼眶周圍腫脹、視力改變或嚴重頭痛須先排除併發症",
+        "co_management": "若使用抗生素治療，與病人的處方醫師聯絡確認治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies（依據 MedlinePlus 臨床資料整理）",
+        "note": "尚未查到專屬於急性細菌性鼻竇炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom care only after dangerous orbital/intracranial features excluded",
+        "precautions": "Periorbital swelling, vision change or severe headache require complication evaluation first",
+        "co_management": "If antibiotics are prescribed, contact the prescriber to confirm treatment progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies (compiled from MedlinePlus clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for acute bacterial rhinosinusitis was located; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.nasal_congestion"
+      ],
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "MedlinePlus — Sinusitis: https://medlineplus.gov/sinusitis.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "medlineplus_overview",
+        "research_pack_batch_l_ent_ophthalmic_emergencies"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.otitis_media",
+      "entity_type": "biomedical_condition",
+      "name_zh": "中耳炎",
+      "name_en": "Otitis Media",
+      "category": "ent_eye",
+      "icd_hint": "H66",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "summary_zh": "中耳炎是中耳的發炎／感染；急性中耳炎與中耳積水為不同狀態。",
+      "summary_en": "Otitis media is inflammation/infection of the middle ear; acute otitis media and otitis media with effusion are distinct.",
+      "etiology_zh": "病毒性上呼吸道感染後常出現耳咽管功能障礙，使中耳積液並可能合併細菌／病毒感染，兒童尤其常見。",
+      "etiology_en": "Eustachian-tube dysfunction after viral URI can permit middle-ear fluid and bacterial/viral infection, especially in children.",
+      "western_pathology_zh": "中耳壓力與積液合併發炎，造成耳痛與傳導性聽力改變。",
+      "western_pathology_en": "Middle-ear pressure/fluid and inflammation cause pain and conductive hearing changes.",
+      "western_context_zh": "臨床定位：中耳疾病與外耳炎及突發性感音神經性聽力損失為不同狀態。\n\n臨床表現：耳痛、發燒、易怒、聽力減退及鼓膜變化；積水可在無急性感染下持續存在。\n\n重要特徵：急性中耳炎與積水須區分、耳鏡檢查為核心、聽力變化多為傳導性、乳突炎併發症少見但嚴重。\n\n診斷方法：耳鏡檢查確認中耳積液／發炎；持續積水或聽力損失須加做聽力檢測。\n\n鑑別診斷：外耳炎、耳垢阻塞、顳顎關節／牙源性疼痛、突發性感音神經性聽力損失、乳突炎。\n\n西醫治療：依年齡、嚴重度與診斷確定性選擇止痛與觀察或抗生素治療；反覆／持續積水個案可考慮中耳通氣管置入。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
+      "western_context_en": "Clinical definition: Middle-ear disease is distinct from otitis externa and sudden sensorineural hearing loss.\n\nClinical presentation: Ear pain, fever, irritability, reduced hearing and tympanic-membrane changes; effusion can persist without acute infection.\n\nKey features: AOM vs effusion, otoscopy central, hearing changes usually conductive, mastoid complications uncommon but serious.\n\nDiagnostic approach: Otoscopy showing middle-ear effusion/inflammation; hearing testing for persistent effusion/loss.\n\nDifferential diagnosis: otitis externa, cerumen, TMJ/dental pain, SSHL, mastoiditis.\n\nWestern treatment: Analgesia and observation or antibiotics based on age/severity/diagnostic certainty; tubes for selected recurrent/persistent disease.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期病毒性上呼吸道感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "factor": "幼童年齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Ear Infections"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent viral upper respiratory infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "factor": "Young childhood age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Ear Infections"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "耳後腫脹",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "提示乳突炎",
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "finding": "嚴重頭痛或神經學徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即送急診",
+          "rationale": "提示顱內併發症",
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "finding": "全身性中毒症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "立即送醫評估",
+          "rationale": "提示嚴重感染",
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "finding": "突發性感音神經性聽力損失型態",
+          "urgency_level": "urgent",
+          "recommended_action": "轉診耳鼻喉科評估",
+          "rationale": "須與傳導性聽力變化區分",
+          "source": "MedlinePlus — Ear Infections"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Postauricular swelling",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Suggests mastoiditis",
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "finding": "Severe headache or neurologic signs",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency care",
+          "rationale": "Suggests intracranial complication",
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "finding": "Toxic systemic illness",
+          "urgency_level": "urgent",
+          "recommended_action": "Immediate medical evaluation",
+          "rationale": "Suggests severe infection",
+          "source": "MedlinePlus — Ear Infections"
+        },
+        {
+          "finding": "Sudden sensorineural-type hearing loss pattern",
+          "urgency_level": "urgent",
+          "recommended_action": "Refer for ENT evaluation",
+          "rationale": "Must be distinguished from conductive hearing change",
+          "source": "MedlinePlus — Ear Infections"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "在排除併發症紅旗後，可作為輔助照護",
+        "precautions": "不得於感染組織上針刺，須留意併發症與突發性聽力損失的鑑別",
+        "co_management": "若使用抗生素治療，與病人的處方醫師聯絡確認治療進度",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies（依據 MedlinePlus 臨床資料整理）",
+        "note": "尚未查到專屬於中耳炎的針灸療效臨床指引，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive care after complication red flags are excluded",
+        "precautions": "Do not needle through infected tissue or delay evaluation for complications/sudden hearing loss",
+        "co_management": "If antibiotics are prescribed, contact the prescriber to confirm treatment progress",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch L ENT/Ophthalmic Emergencies (compiled from MedlinePlus clinical materials)",
+        "note": "No acupuncture-specific efficacy guideline for otitis media was located; this is a scope-of-practice caution"
+      },
+      "related_eastern_diseases": [],
+      "related_patterns": [],
+      "herb_formulas": [],
+      "acupoint_protocols": [],
+      "sources": [
+        "MedlinePlus — Ear Infections: https://medlineplus.gov/earinfections.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+      ],
+      "content_source": [
+        "medlineplus_overview",
+        "research_pack_batch_l_ent_ophthalmic_emergencies"
       ],
       "source_status": "draft_pending_ting_review"
     }

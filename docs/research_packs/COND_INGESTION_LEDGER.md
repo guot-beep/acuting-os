@@ -448,3 +448,42 @@ Pack file: `15_WESTERN_CONDITION_RESEARCH_BATCH_K_REPRODUCTIVE_GYNE_UROLOGY.md`
   0-defect except `cond.erectile_dysfunction`, which carries forward 1
   pre-existing C10 defect (the `cond.male_infertility` cross-contamination
   above, not caused by or fixable within this batch).
+
+## Batch L — ENT/Ophthalmic Emergencies (2026-08-11)
+
+Pack file: `16_WESTERN_CONDITION_RESEARCH_BATCH_L_ENT_OPHTHALMIC_EMERGENCIES.md`
+(same blob-read workaround). 6 concepts.
+
+| candidate_id → canonical id | ruling |
+|---|---|
+| `cond.acute_angle_closure_glaucoma` → `cond.acute_angle_closure_glaucoma` | NEW_CANDIDATE — exact-scanned `glaucoma`/`青光眼`/`angle-closure`/`閉角` — zero matches |
+| `cond.retinal_detachment` → `cond.retinal_detachment` | NEW_CANDIDATE — exact-scanned `retinal detachment`/`視網膜剝離` — zero matches |
+| `cond.sudden_sensorineural_hearing_loss` → `cond.sudden_sensorineural_hearing_loss` | NEW_CANDIDATE — exact-scanned `sensorineural hearing`/`感音神經性`/`sudden deafness` — found `cond.hearing_loss` ("感音神經性聽損（文件情境）"), a real, unique classical-text card about chronic tinnitus/耳鳴 with generic sensorineural hearing loss, NOT the time-sensitive SSHL emergency this pack describes — ruled non-overlapping per template's non-equivalence rule (same acute-vs-chronic boundary logic as Batch D's MI-vs-CAD and TIA-vs-stroke_rehab). Differential noted explicitly in `western_context_*` on both records' relationship (only the new record touched; `cond.hearing_loss` itself untouched, out of scope). |
+| `cond.meniere_disease` → `cond.menieres` | EXISTING_ENRICH — exact-scan found the concept already in canon under a shorter id (`cond.menieres`, `name_zh: "梅尼爾氏症（文件情境）"`) vs the pack's candidate_id `cond.meniere_disease` — resolved to existing id (D1). C10 boilerplate `etiology_zh`/`western_pathology_zh` replaced per validator's own authorization (same ruling as prior batches). Cleaned stale name suffix, added sign_symptom_ids (`sym.tinnitus`, `sym.vertigo`). |
+| `cond.acute_bacterial_sinusitis` → `cond.acute_bacterial_sinusitis` | NEW_CANDIDATE — exact-scanned `sinusitis`/`鼻竇炎` — found `cond.chronic_sinusitis` ("慢性鼻竇炎"/"Chronic Sinusitis"), a distinct chronic entity from the pack's acute-bacterial-rhinosinusitis candidate — ruled non-overlapping per template's non-equivalence rule, same acute-vs-chronic pattern as the SSHL/hearing_loss decision above. `cond.chronic_sinusitis` carries the repo-wide C10 boilerplate on `etiology_zh`/`western_pathology_zh` but was NOT touched — it is not this batch's candidate (§0/工作法: 只做派工單清單上的), flagged below for a future respiratory/ENT batch. |
+| `cond.otitis_media` → `cond.otitis_media` | NEW_CANDIDATE — exact-scanned `otitis media`/`中耳炎` — zero matches |
+
+### Batch L notes for the next ingest AI
+
+- **Acute-vs-chronic identity boundary recurred twice this batch** (SSHL vs
+  `cond.hearing_loss`, acute bacterial sinusitis vs `cond.chronic_sinusitis`)
+  — same underlying pattern as Batch D's MI-vs-CAD and TIA-vs-stroke_rehab:
+  a real pre-existing card covering the chronic/generic form of a condition
+  does NOT absorb the pack's acute/emergency-specific candidate. Always check
+  whether the existing card's content is time-course-specific before ruling
+  EXISTING_ENRICH vs NEW_CANDIDATE on an exact-scan name/topic match — a
+  shared keyword (hearing loss, sinusitis) is not the same clinical entity
+  when one is emergent and the other is chronic.
+- **`cond.chronic_sinusitis` C10 boilerplate flagged, not fixed** — it exact-
+  scan-matched this batch's search terms but was NOT the pack's candidate
+  (which was acute bacterial rhinosinusitis, ruled a separate NEW_CANDIDATE
+  above). Per §0/工作法 (only touch the candidate list's ids), left as-is with
+  its repo-wide C10 boilerplate `etiology_zh`/`western_pathology_zh` intact.
+  A future respiratory or ENT-focused batch should pick this up.
+- Validator state after Batch L commit: `data/pathology/condition_canon_shortlist.json`
+  192 → 197 records (5 NEW_CANDIDATE, 1 EXISTING_ENRICH — matches the pack's
+  own 6-concept count). `check-validation-ratchet.js` conditions defect count:
+  437 (Batch K close) → 433 (BETTER, −4; smaller delta than J/K because most
+  of this batch was clean NEW_CANDIDATE additions rather than boilerplate
+  replacement on high-defect existing records). All 6 touched/added records
+  are 0-defect.
