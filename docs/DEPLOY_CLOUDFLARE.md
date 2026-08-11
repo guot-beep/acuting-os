@@ -60,3 +60,22 @@ quarantine 擋 `curriculum/`、`data/imports/`、`docs/`、`clinical/`、`cases/
 - 落地前 `git status` 必須乾淨確認:未提交的 js/ 藥理 WIP 與 curriculum/
   刪除檔**永遠不在落地內容裡**(它們本來就只在工作樹,不在 commit 裡)。
 - Production 部署跟著 `main`;sprint 期間 `codex/pattern-v2` 只出 preview。
+
+## 2026-08-11 API 實查結果(token 取得後)
+
+- **Production 驗證完成**:live deployment(2026-08-09 03:38 UTC)= 乾淨 main
+  `47026e5` 的 build,逐檔 md5 比對 MATCH(/、app.js、styles.css、
+  js/knowledge.js);HTTP 200。**production 現況健康,無需重部署。**
+- **根因確定**:這個 Worker **從未接上 GitHub**(Workers Builds API 全部
+  12000 Not found = 無任何 trigger/connection)。所謂「部署失敗」不是 build
+  設定漂移,是 git 連接根本不存在——歷來部署都是手動 wrangler。
+- **唯一剩餘的 Ting 動作**(GitHub App 授權天生互動式,API 無法代辦):
+  Dashboard → Workers & Pages → acuting-os → Settings → **Builds → Connect**
+  → 選 `guot-beep/acuting-os`,設:production branch `main`、
+  build command `node scripts/build-site.js`、deploy command
+  `npx wrangler deploy`、root `/`。接好後 push main 即自動建置部署,
+  非 main branch 出 preview 版本。
+- **未解之謎(待 Ting 確認)**:2026-08-11 06:55–07:23 UTC 有 5 個版本
+  (652–656)以 guotingru@gmail.com 身分經 wrangler 上傳(未 promote)。
+  本機跑不了 wrangler,不是這裡做的——若不是 Codex/SOL 在別處代操作,
+  應考慮 roll credentials。

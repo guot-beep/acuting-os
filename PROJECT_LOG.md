@@ -3224,3 +3224,9 @@ Current repo state as of this log:
 - Ting 核准 C2b(patients 落盤 + guard 語意 + picker + 真實資料抬升遷移),前置條件 = Codex 對 Phase B→C2a 全段審計給 GO。
 - 簡報:`docs/CODEX_AUDIT_BRIEF_PHASE_B_TO_C2A.md`(10 檢查項含檔案級 export 走查與 C2b 遷移計畫審查;硬邊界:33 真實病例只讀)。
 - Codex GO 前,Fable/Sonnet 不動 C2b;可並行的只有不依賴 Patient 所有權的 Phase D 備料。
+
+# 2026-08-11 Fable — Cloudflare Step 1 完成(免部署)+ 根因定案
+
+- Token 生效後 API 實查:production = main `47026e5` 逐檔 MATCH、HTTP 200,健康;今天 5 個 wrangler 版本上傳(guotingru 身分、未 promote)非本機所為,待 Ting 確認來源。
+- 根因:Worker 從未 git-connected(Builds API 無任何 trigger)。剩一步 Ting 互動動作:Dashboard Connect GitHub(main/build-site/wrangler deploy/root)。細節在 DEPLOY_CLOUDFLARE.md。
+- Codex 審計進行中;C2b 等 GO。
