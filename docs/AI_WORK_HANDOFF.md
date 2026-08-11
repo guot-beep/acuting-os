@@ -2,6 +2,15 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## TING 裁定(2026-08-11,內容目標澄清 — 對 Fable/Sonnet/SOL/Codex 一體適用)
+
+- **西醫病名(cond.*)單獨 300 張**,不是全庫共 300。現況 187 → 缺 113+。
+- **其他線(tdis/sym/pattern/supp/drug/…)越多越好**:優先建立**完整架構
+  與卡片框架(skeleton)**,讓病例先找得到索引;內容之後有時間再補深。
+  skeleton 卡照各線模板的 skeleton 標準與 review_status 誠實標記,絕不假裝有內容。
+- SOL:CR-010(conditions→300 delta 清單)尚未收到 —— 請優先交付,
+  187 張現有 id 清單以 data/pathology/condition_canon_shortlist.json 為準,只送 delta。
+
 ## HANDOFF #17 — Pharm 證據鏈修復(Ting 核准 #1/#2)
 
 - COMPLETED(fce078b):
