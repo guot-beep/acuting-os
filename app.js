@@ -1891,6 +1891,40 @@ function renderOsStatus() {
   }
   if (caseCountEl) caseCountEl.textContent = String(clinicalCases.length);
   if (caseProgressEl) caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
+  renderHomeQuickGrid();
+}
+
+// Home quick-access tiles (2026-08-11 homepage pass). Counts are computed
+// from the loaded bundle + live case store at every renderOsStatus, same
+// honesty rule as the quality page — no hand-written numbers. The first
+// tile is "continue where you left off": the most recently updated case,
+// the single most common reason to open this app on a clinic day.
+function renderHomeQuickGrid() {
+  const host = document.getElementById("homeQuickGrid");
+  if (!host) return;
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const count = (k) => ((K[k] && K[k].records) || []).length;
+  const en = contentMode === "english";
+  const tiles = [];
+  const last = [...clinicalCases].sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")))[0];
+  if (last) {
+    tiles.push({ href: "#ws/cases", cls: "home-tile--continue", eyebrow: en ? "Continue" : "繼續上次",
+      title: last.caseTitle || last.patientCode || "Case", sub: `${last.soapNotes.length} SOAP · ${(last.updatedAt || "").slice(0, 10)}` });
+  }
+  tiles.push(
+    { href: "#ws/cases", eyebrow: en ? "Cases" : "病例", title: String(clinicalCases.length), sub: en ? "clinical records" : "臨床病歷" },
+    { href: "#ws/acu", eyebrow: en ? "Acupoints" : "穴位", title: String(standardChannelAudit?.expectedTotal || 361), sub: en ? "standard channel" : "標準經穴" },
+    { href: "#ws/formula", eyebrow: en ? "Formulas" : "方劑", title: String(count("formulas")), sub: en ? "with composition" : "含組成加減" },
+    { href: "#ws/herb", eyebrow: en ? "Herbs" : "中藥", title: String(count("herbs")), sub: en ? "materia medica" : "本草" },
+    { href: "#ws/condition", eyebrow: en ? "Conditions" : "病症", title: String(count("conditionCanon")), sub: en ? "western canon" : "西醫病名庫" },
+    { href: "#ws/quality", eyebrow: en ? "Quality" : "品質", title: String(count("symptoms") + count("tdisRegistry")), sub: en ? "sym + TCM disease" : "症狀+中醫病名" }
+  );
+  host.innerHTML = tiles.map((t) => `
+    <a class="home-tile ${t.cls || ""}" href="${t.href}">
+      <small>${escapeHtml(t.eyebrow)}</small>
+      <strong>${escapeHtml(t.title)}</strong>
+      <span>${escapeHtml(t.sub)}</span>
+    </a>`).join("");
 }
 
 // Quality-page honesty rebuild (2026-08-11, Ting: 「那個地方很亂很假」).
