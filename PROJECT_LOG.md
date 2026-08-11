@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R11 restore concurrency audit（NO-GO）
+
+- **範圍**：覆核 `c279794..8ad4c16`；R9=`9/9 PASS`、R10=`8/8 PASS`，new R11=`0/5 PASS · 5/5 FAIL`，未發布 GO/P4。
+- **阻斷**：restore pre-await revision check 可被 pending sync 穿越，實測 active `2→1` 且 pending 復活；另有 equal-revision divergence、string revision、ghost pending、rollback-failure UI 誤稱 unchanged。
+- **官方／回歸**：pointer/runtime/C2b=`31/31 · 28/28 · 30/30`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；真 store 讀／寫=`0/0`。
+- **標準驗證**：`9 exit 0 / 3 exit 1`（既有 herb-canon／naming／encoding，非本輪 docs）；temp fake harness 已清理。
+- **下一步**：依 AI_REVIEW_FEEDBACK E1–E5 加 post-await CAS、revision/pending 型別集合契約與 inconsistent UI 唯讀鎖，五反例進 blocking suite 後排 R12；期間禁止真機 shadow write／pointer switch。
+
 # 2026-08-11 Codex — C2B-R10 four-gate audit（NO-GO）
 
 - **範圍**：覆核 `9c3524e`／`cd621e3`／`cd4e5fb`；A/B/C/D=`PASS/PASS/PASS/FAIL`，未發布 R10 GO 或 P4。

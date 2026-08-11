@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R11 / restore concurrency remains NO-GO
+
+- **Gate**: reviewed `c279794..8ad4c16`; R9=`9/9 PASS`、R10=`8/8 PASS`，但 new R11=`0/5 PASS · 5/5 FAIL`，C2b=`NO-GO`，P4 未發布。
+- **Primary blocker**: restore 在 await hash 前讀 revision；並行 pending sync 將 active `1→2` 後，restore 仍 `ok:true` 覆回 revision `1`、pending/null FK 復活。另有 equal-revision divergent overwrite、string revision、ghost pending、rollback-failure UI 誤稱 unchanged。
+- **Official evidence**: pointer=`31/31`、runtime restore=`28/28`、C2b rehearsal=`30/30`；invariants=`0`、Phase E=`12`、interactions=`0`、syntax=`2/2`。真 clinical store 讀／寫=`0/0`，temp harness 已移除。
+- **Required repairs E1–E5**: post-await revision/bytes CAS；equal revision exact-noop only；safe-integer revision；pending set↔null-FK case set exact；structured inconsistent-state UI + read-only lock。五反例加入 blocking suites 後排 R12。
+- **Boundary**: standard validators=`9 exit 0 / 3 exit 1`（既有 herb-canon/naming/encoding）。R12 前即使 Ting presence/full raw hash/preflight 相符亦不授權真機 migration。
+
 ## [2026-08-11] Codex Handoff — C2B-R10 / gate D remains NO-GO
 
 - **Gate**: reviewed A+C `9c3524e`、D `cd621e3`、B/tip `cd4e5fb`; A/B/C/D=`PASS/PASS/PASS/FAIL`，C2b=`NO-GO`，P4 未發布。

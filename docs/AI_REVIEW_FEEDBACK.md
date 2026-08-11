@@ -6,6 +6,37 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R11 D1–D6 獨立覆核 — endpoint `8ad4c16`
+
+- **REVIEWED_SHA**: R10 report `c2797944182261b056c82173f98635a9e4885a3e`；D1–D6／受審 endpoint `8ad4c16d49f4aa33843dbeb2e3d30b75a7b49ba5`。受審 blobs：store=`c00e50d5cd51c41437804727f5470c945032eeb0`、app=`ea3dacb3ae2e0be2478183670f7ba8d1ef1c2173`、runtime rehearsal=`4c9005a6bf4905a1a9569796f83a45da7783aa08`。
+- **STATUS**: **PAUSE — C2b R11 NO-GO**。R9 replay=`9/9 PASS`、R10 replay=`8/8 PASS`，表示原 D1–D6 指定反例已轉綠；但新增 R11 adversarial=`0/5 PASS · 5/5 FAIL`，含一條可把 active revision `2→1` 的真 lost-update race。故不發布 R11 GO／修訂版 P4，真機 migration 仍禁止。
+- **資料邊界**: 真實 clinical store 讀／寫=`0/0`；全部使用 process-local fake backend／fake app handler。temp harness 已移除，未把任何病例識別碼或內容寫入 repo。
+
+### 原 gate 回放 — PASS
+
+- **R9 `9/9`**：v1 bytes、pointer fault/invalid、v2 whitelist、canonical salted ID、save-during-sync、collision、blank FK、post-switch export/restore 全綠。
+- **R10 `8/8`**：sync-vs-sync、pending restore→sync、revision-0 downgrade、canonical ID rewrite、duplicate patientCode、pointer rollback exact、invalid pointer zero-write、app wipe-import reachability 全綠。
+- 官方 suites：pointer=`31/31 PASS`、runtime restore=`28/28 PASS`；line 67 恆真 assertion 已改為保存 before 後做 active staging byte comparison。
+
+### 新增反例 — FAIL
+
+1. **restore-vs-sync TOCTOU（BLOCKER）**：`restoreV2Envelope()` 在 `js/clinical-store.js:587-591` 先讀 current revision=`1`，接著於 `:596` await canonical hashing。注入 hash gate，await 期間 `syncPendingPatients()` 把 active staging 推進到 revision=`2` 並補妥 Patient；恢復 restore 後仍回 `ok:true`，以 incoming revision=`1` 覆蓋 active，重新引入 pending/null FK。anti-downgrade 只防檢查當刻，未防 validation→swap 之間的變更。
+   - **修復 gate E1**：所有 await 結束後、寫入前重讀 current staging exact bytes/revision；若與 validation anchor 不同即 structured retry/refusal，writes=`0`。或以單一 revision CAS/序列化 restore+sync；加入 delayed-hasher restore-vs-sync blocking test，斷言 final revision 不下降、pending 不復活、resolved Patient/FK 不遺失。
+2. **equal-revision divergent payload（HIGH）**：current revision=`1`，incoming 也為 `1`，但改寫 `caseTitle`；restore 回 `ok:true`。同 revision 在 monotonic journal 中應代表同一 state，否則是 branch/tamper，不能直接替換。
+   - **修復 gate E2**：incoming revision `< current` 拒絕；`== current` 只准 canonical bytes/hash exact 的 idempotent no-op，內容不同必拒；`> current` 才進完整 self-consistency/append-only restore。
+3. **runtime_revision 型別未驗（HIGH）**：JSON string `"2"` 經 `Number()` 被當 runtime-era 接受；下一次 `save()` 的 `(runtime_revision || 0) + 1` 會字串串接成 `"21"`，破壞 revision 語義。
+   - **修復 gate E3**：envelope 與 app pre-route 都要求 `Number.isSafeInteger(runtime_revision) && runtime_revision >= 1`；string、fraction、NaN-like／overflow 一律拒絕，零寫入。
+4. **orphan pending code（MEDIUM）**：在無任何 matching case 時加入 `pending_patient_codes=["GHOST-CODE"]`，restore 回 `ok:true`。目前只驗 pending 非空且尚無 Patient，未驗 pending↔null-FK cases 雙向集合。
+   - **修復 gate E4**：pending normalized code set 必須 exact 等於「nonblank patientCode 且 patientId=null」的 case code set；duplicates、ghost、漏列、已有 Patient 均拒絕。
+5. **rollback-failure UI 說法與狀態矛盾（BLOCKER）**：store 正確回 `POINTER write failed AND staging rollback failed — INCONSISTENT STATE`，但 app `:8121` 仍加前綴「現有資料未被更動」，且未設 `clinicalStoreIntegrityError`／唯讀鎖。使用者可能在 imported staging 已 active 的情況繼續 save，造成第二次覆寫。
+   - **修復 gate E5**：app 依 structured failure code（不要靠字串猜）區分 rejected-unchanged 與 inconsistent；後者必顯示實際兩鍵狀態、設唯讀保護、阻止 persist/reload，要求先 export keys／人工修復。加入 actual handler rollback-failure test，斷言不出現「未被更動」、subsequent save=`0`。
+
+### 回歸與下一 gate
+
+- 既有 C2b rehearsal=`30/30 PASS`；invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E=`12 checks PASS`；interactions failures=`0`；syntax=`2/2`。
+- standard validators=`9 exit 0 / 3 exit 1`；既有 herb-canon／naming／encoding 資料紅燈與本輪 docs-only 審計無檔案交集。
+- **下一 gate**：E1–E5 與五個反例進官方 blocking suites 後排 C2B-R12。即使 Ting 在場、Edge raw full SHA／preflight 全綠，在 R12 全綠前仍不構成 shadow write 或 pointer switch 授權。
+
 ## 2026-08-11 Codex C2B-R10 四 gate 獨立覆核 — endpoint `cd4e5fb`
 
 - **REVIEWED_SHA**: A+C `9c3524e5da075a855dfdff3f9b617ad1479a4ca4`；D `cd621e3e25162279ab9fd228c4ae73f75c7667a6`；B／受審 endpoint `cd4e5fbe6bdbee730dd5920e7869c71db6e40974`。受審 blobs：store=`425b1c40e87991ea18247f00d558a9140e515e59`、app=`299271f27ff1dbb4417886cff95b6805e1934713`、pointer test=`3d4a46c0bbd358f62d7c1276381763afe92a7ada`、runtime restore rehearsal=`90460b2f7e4702bf3941d8184a3810c7817e0cee`。
