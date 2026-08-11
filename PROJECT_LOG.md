@@ -3294,3 +3294,9 @@ Current repo state as of this log:
 - **P1**:raw 擷取 SHA-256 `54890af4…3acba`、5,880 bytes;前後 raw 完全相同(只讀證明);兩次 app-export 序列化 hash 相同;備份三檔 + 報告存 Git 外(%USERPROFILE%\AcuTing-backups\pre-c2b\)。
 - **P2**:同 raw 兩次 dry-run plan byte-identical;source_sha256/source_bytes 與 raw 相符;blank/duplicate/collision/conflict 全 0。
 - **⚠️ 重大發現**:file:// 正本只有 **2 cases、0 SOAP**(P-2026-001/002,舊 schema 殘留 `case.startDate` unknown field)——與預覽面板(localhost:8361)的 **33 cases/52 SOAP** 是兩份完全不同的資料。研判:近期病例練習(含 08-09 outcome metrics 測試)都發生在預覽面板 profile;file:// 是早期試用殘留。**且兩份都是練習/測試資料——9/5 前不存在真正病人資料。**「正本是哪份、9/5 用哪個入口」待 Ting 裁決後才能定 P3 目標 store。
+
+# 2026-08-11 Fable — 正本定案(Ting 授權)+ P3 writer 開工
+
+- **定案**:9/5 起正典臨床入口 = **Edge + file:// 本機 index.html**(acuting-clinical-cases-v1 於該 origin)。預覽面板(localhost:8361)33 筆經逐筆檢視全為 QA fixtures,歸檔為開發測試資料;不做任何搬移。兩 store 已完整備份(hash 驗證,AcuTing-backups/pre-c2b/2026-08-11_0202/)。
+- **並行**:Sonnet batch 3(環境暴露 UI)於獨立 worktree branch codex/phase-d-batch3 進行中;SOL 正補 CR 系列與下批 research packs,約 5 分鐘後收檔。
+- **P3 開工**:shadow writer + rollback + rehearsal(只寫 staging key、pointer 切換、白名單 rollback;假資料/檔案級排練,不碰真 store)。
