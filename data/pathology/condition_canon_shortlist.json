@@ -6322,8 +6322,8 @@
       "acupoint_protocols": [],
       "fetched_at": "2026-07-23T07:45:58.710Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "腰痛首載《內經》,課件提綱:「腰為腎之府」,病位繫於腎,經絡涉足太陽、督、帶脈與肝。實證——寒濕或濕熱外侵,著於腰府;勞損閃挫,氣血瘀滯經絡,「不通則痛」。虛證——稟賦不足、年老久病,腎之精血虧虛,經絡失於溫煦濡養,「不榮則痛」,痛勢綿綿、勞則加重。久痛多虛實夾雜:腎虛為本,寒濕瘀血為標,天氣變化與勞逸失度皆能引動。",
+      "western_pathology_zh": "慢性下背痛絕大多數屬「非特異性」——影像可見的椎間盤退變、小面關節炎、終板變化與疼痛程度相關性差,無症狀者影像異常同樣常見,這是解讀檢查的前提。可辨識的構造來源包括椎間盤源性疼痛、小面關節與薦髂關節病變、神經根壓迫(伴皮節放射);但慢性化的主要驅動不在局部組織,而在中樞敏感化、疼痛相關恐懼與迴避行為、情緒與睡眠共病、工作與社會因素——生物心理社會模式因此是治療框架。評估的第一件事是排除紅旗(腫瘤、感染、骨折、馬尾症候群),其後的重點是維持活動而非臥床。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6350,7 +6350,8 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/9070"
+        "https://cloudtcm.com/disease/tcm/9070",
+        "https://medlineplus.gov/backpain.html"
       ],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
@@ -6358,7 +6359,41 @@
         "rf.chronic_low_back_pain.legacy02",
         "rf.chronic_low_back_pain.legacy03",
         "rf.chronic_low_back_pain.legacy04"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Low back pain (yao tong) is first recorded in the Inner Classic; the course outline anchors it in \"the lumbus is the residence of the kidneys,\" with the Bladder channel, Du, Dai, and Liver involved. Excess patterns: invasion of cold-damp or damp-heat settling in the lumbar region, or overexertion and sprain leaving qi and blood stagnant in channels and collaterals — \"blockage causes pain.\" Deficiency patterns: constitutional weakness, old age, or chronic illness exhausting kidney essence and blood, so the channels lose warmth and nourishment — \"lack of nourishment causes pain,\" a lingering ache worse with exertion. Chronic cases are usually mixed: kidney deficiency at the root with cold-damp and blood stasis at the branch, stirred up by weather shifts and imbalance of work and rest.",
+      "western_pathology_en": "Most chronic low back pain is \"non-specific\": disc degeneration, facet arthropathy, and endplate changes on imaging correlate poorly with pain, and the same findings are common in asymptomatic people — the premise for reading any scan. Identifiable structural sources include discogenic pain, facet and sacroiliac joint disease, and root compression with dermatomal radiation; but chronicity is driven less by local tissue than by central sensitization, pain-related fear and avoidance, mood and sleep comorbidity, and work and social context — hence the biopsychosocial model as the treatment frame. Evaluation starts by excluding red flags (tumor, infection, fracture, cauda equina); after that the priority is staying active rather than bed rest.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/LBP1.doc(Tier-1 課堂 handout)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/LBP1.doc(Tier-1 課堂 handout)"
+        ],
+        "western_pathology_zh": [
+          "NIAMS/ACP — 慢性下背痛臨床通說",
+          "MedlinePlus — Back Pain (https://medlineplus.gov/backpain.html)"
+        ],
+        "western_pathology_en": [
+          "NIAMS/ACP — 慢性下背痛臨床通說",
+          "MedlinePlus — Back Pain (https://medlineplus.gov/backpain.html)"
+        ]
+      }
     },
     {
       "id": "cond.acute_lumbar_sprain",
@@ -6393,8 +6428,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「閃腰」「瘀血腰痛」。驟然閃挫跌撲,經筋脈絡受損,氣血離經,瘀滯於腰府——氣滯則脹痛走竄,血瘀則刺痛固定、拒按,俯仰轉側俱難。傷在足太陽經與督脈所過,經氣閉阻,「不通則痛」。素體腎虛、腰府先弱者,輕微用力即傷,傷後亦難復——新傷以行氣活血為要,不可過早峻補斂邪。",
+      "western_pathology_zh": "急性腰扭傷是搬重、扭轉或彎腰起身時腰部肌肉、筋膜、韌帶或小面關節的急性損傷:纖維被過度牽拉或部分撕裂,局部出血發炎,反射性肌肉痙攣使腰部僵直、動則痛甚——痙攣本是保護反應,但也成為疼痛的第二來源。疼痛多局限於腰部單側或雙側,無下肢皮節放射與神經學缺損(有則須想到椎間盤突出神經根壓迫)。病程多在數週內自限;證據一致的處置方向是短期相對休息後盡早恢復活動,長期臥床反而延緩恢復並增加慢性化風險。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6431,6 +6466,45 @@
         "rf.acute_lumbar_sprain.legacy01",
         "rf.acute_lumbar_sprain.legacy02",
         "rf.acute_lumbar_sprain.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's \"wrenched lumbus\" (shan yao) — stasis-type lumbar pain. A sudden wrench, twist, or fall injures the channel sinews and collaterals; blood leaves its vessels and stagnates in the lumbar region — qi stagnation gives distending, wandering pain, blood stasis gives fixed stabbing pain that refuses pressure, with bending and turning all difficult. The injury lies along the Bladder channel and Du mai, whose channel qi is blocked — \"blockage causes pain.\" Where the kidney is constitutionally weak and the lumbar region unfortified, trivial effort can injure it and recovery is slow — fresh injury calls for moving qi and invigorating blood, not premature heavy tonification that would trap the evil.",
+      "western_pathology_en": "Acute lumbar sprain is an acute injury of the lumbar muscles, fascia, ligaments, or facet joints during lifting, twisting, or straightening from a bend: fibers are overstretched or partially torn, local bleeding and inflammation follow, and reflex muscle spasm locks the back stiff and makes movement sharply painful — the spasm is protective in origin but becomes a second pain source of its own. Pain stays in the low back, one- or two-sided, without dermatomal leg radiation or neurological deficit (their presence should raise disc herniation with root compression). The course is self-limited over weeks in most cases; the consistent evidence points to brief relative rest followed by early return to activity — prolonged bed rest delays recovery and raises the risk of chronicity.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫骨傷科學教材通說(腰部傷筋/瘀血腰痛門)",
+          "curriculum/conditions/LBP1.doc(Tier-1 課堂 handout,勞損外傷段)"
+        ],
+        "etiology_en": [
+          "中醫骨傷科學教材通說(腰部傷筋/瘀血腰痛門)",
+          "curriculum/conditions/LBP1.doc(Tier-1 課堂 handout,勞損外傷段)"
+        ],
+        "western_pathology_zh": [
+          "AAOS/ACP — 急性腰痛臨床通說",
+          "MedlinePlus — Back Injuries (https://medlineplus.gov/backinjuries.html)"
+        ],
+        "western_pathology_en": [
+          "AAOS/ACP — 急性腰痛臨床通說",
+          "MedlinePlus — Back Injuries (https://medlineplus.gov/backinjuries.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/backinjuries.html"
       ]
     },
     {
@@ -7726,8 +7800,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「落枕」。課件指其成因為睡姿失宜、枕頭失度,頸項局部氣血失和,經氣運行受阻;或睡中頸項外露,風寒之邪客於太陽、少陽經脈,寒主收引,經氣痹阻,筋脈拘急——僵痛而頭歪向患側即筋急之象。素體氣血不足、頸筋勞損者易反覆發作;反覆落枕常是頸椎勞損(項痺)之先聲,不可徒視為小恙。",
+      "western_pathology_zh": "落枕型急性頸痛多在晨起發現:一側頸項僵痛、活動受限,頭偏向患側以減輕牽拉。機轉是睡眠姿勢不當或枕頭高度失宜使頸肌(胸鎖乳突肌、提肩胛肌、斜方肌)長時間處於牽拉狀態,局部缺血痙攣;或頸部受涼誘發肌筋膜疼痛;小面關節滑膜嵌頓是另一常見解釋——關節囊滑膜被卡壓引起劇烈保護性痙攣。觸診有壓痛與條索狀痙攣,無紅腫熱;神經學檢查正常。多在數日內自限;超過一週不緩解、反覆發作或伴上肢麻木者,須評估頸椎病等結構性問題——課件同樣以此為轉介線。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -7764,6 +7838,43 @@
         "rf.neck_pain_stiff.legacy01",
         "rf.neck_pain_stiff.legacy02",
         "rf.neck_pain_stiff.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's luo zhen (stiff neck). The handout attributes it to inappropriate sleeping posture or an ill-fitted pillow disturbing the harmony of local qi and blood and obstructing channel qi; or the neck left uncovered in sleep, letting wind-cold lodge in the Taiyang and Shaoyang channels — cold contracts, channel qi is blocked, and the sinews cramp: the stiff pain with the head wried to the affected side is the very image of sinew tension. Those with insufficient qi and blood or strained neck sinews relapse easily; recurrent stiff neck is often the herald of cervical strain (neck bi), not to be dismissed as trivial.",
+      "western_pathology_en": "Stiff-neck-type acute neck pain is usually discovered on waking: one-sided stiffness and pain with restricted motion, the head held toward the affected side to slacken the pull. The mechanism is prolonged muscle stretch from poor sleeping posture or pillow height leaving neck muscles (sternocleidomastoid, levator scapulae, trapezius) ischemic and in spasm; cold exposure triggering myofascial pain; or facet-joint synovial entrapment — capsular synovium pinched in the joint, provoking intense protective spasm. Palpation finds tenderness and cord-like spasm without redness, heat, or swelling; the neurological exam is normal. Most cases settle within days; pain beyond a week despite treatment, frequent recurrence, or arm numbness warrants evaluation for cervical spondylosis and other structural disease — the same referral line the handout draws.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/NECK.DOC(Tier-1 課堂 handout)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/NECK.DOC(Tier-1 課堂 handout)"
+        ],
+        "western_pathology_zh": [
+          "curriculum/conditions/NECK.DOC(Tier-1 課堂 handout,轉介線)",
+          "MedlinePlus — Neck Injuries and Disorders (https://medlineplus.gov/neckinjuriesanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "curriculum/conditions/NECK.DOC(Tier-1 課堂 handout,轉介線)",
+          "MedlinePlus — Neck Injuries and Disorders (https://medlineplus.gov/neckinjuriesanddisorders.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/neckinjuriesanddisorders.html"
       ]
     },
     {
@@ -7798,8 +7909,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「項強」「傷筋」論之。外力驟然牽掣,頸項筋脈受損,血離經脈而為瘀,氣機逆亂,瘀阻太陽少陽經絡——痛而僵、轉側不利。傷後風寒乘虛襲絡則痛勢纏綿;久不復者「久痛入絡」,瘀滯深伏,兼見頭暈健忘者為氣血逆亂未平之象。素體肝腎不足、筋失所養者,同傷而難復——扶正與化瘀通絡並行是後期思路。",
+      "western_pathology_zh": "揮鞭式損傷是頭頸部在追撞等事故中經歷急速「後仰-前甩」的加速-減速機轉,頸部肌肉、韌帶、小面關節囊與椎間盤在瞬間承受超生理負荷。急性期表現為頸痛僵硬、頭痛,可伴眩暈、上肢症狀與注意力困難;影像多無異常——診斷靠病史與排除骨折脫位。多數在數週至數月內恢復,但一部分轉為慢性揮鞭相關障礙;慢性化的預測因子不是影像所見,而是初期疼痛強度、初期失能程度與心理因素(災難化、創傷反應)——這決定了早期衛教與恢復活動比長期頸圈固定更重要。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -7836,7 +7947,41 @@
         "rf.whiplash.legacy01",
         "rf.whiplash.legacy02",
         "rf.whiplash.legacy03"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from \"rigid nape\" and sinew injury. Sudden external force wrenches the neck's sinew vessels; blood leaves its channels and becomes stasis, the qi dynamic is thrown into chaos, and stasis obstructs the Taiyang and Shaoyang channels — pain with stiffness and difficulty turning. Wind-cold invading the weakened collaterals after injury makes the pain linger; where recovery stalls, \"long pain enters the collaterals\" and the stasis lies deep, and accompanying dizziness and poor memory mark qi and blood still in disorder. Those with liver-kidney insufficiency and undernourished sinews recover poorly from the same injury — supporting the upright while transforming stasis and unblocking collaterals is the late-stage strategy.",
+      "western_pathology_en": "Whiplash is an acceleration-deceleration mechanism — the head and neck whipped into rapid extension then flexion in rear-end collisions and similar events — loading neck muscles, ligaments, facet capsules, and discs beyond physiological range in an instant. The acute picture is neck pain and stiffness with headache, sometimes dizziness, arm symptoms, and poor concentration; imaging is usually normal — diagnosis rests on the history plus exclusion of fracture and dislocation. Most people recover over weeks to months, but a fraction develop chronic whiplash-associated disorder; the predictors of chronicity are not imaging findings but initial pain intensity, initial disability, and psychological factors (catastrophizing, traumatic stress) — which is why early education and return to movement matter more than prolonged collar immobilization.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫骨傷科學教材通說(頸部傷筋門)"
+        ],
+        "etiology_en": [
+          "中醫骨傷科學教材通說(頸部傷筋門)"
+        ],
+        "western_pathology_zh": [
+          "骨科/復健醫學通說(揮鞭相關障礙慢性化預測因子)",
+          "MedlinePlus — Neck Injuries and Disorders (https://medlineplus.gov/neckinjuriesanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "骨科/復健醫學通說(揮鞭相關障礙慢性化預測因子)",
+          "MedlinePlus — Neck Injuries and Disorders (https://medlineplus.gov/neckinjuriesanddisorders.html)"
+        ]
+      }
     },
     {
       "id": "cond.frozen_shoulder",
@@ -8231,8 +8376,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「肩痺」「漏肩風」論(課件以五十肩為題,其虛損機轉同樣適用於肩部筋傷):年及五旬,氣血漸衰,肝腎漸虛,筋失所養——退變即虛象;勞作過度或提舉閃挫,傷及肩部經筋,氣血瘀滯;睡臥露肩、感受風寒濕,痺阻肩部手三陽經脈,凝滯不通。虛(肝腎氣血不足)為底,勞損與風寒濕為引,夜間痛甚正合「血虛夜痛、寒凝得溫則減」之象。",
+      "western_pathology_zh": "旋轉肌袖由岡上、岡下、小圓、肩胛下四肌腱組成,其中岡上肌腱最常受累——它通過肩峰下狹窄間隙,止點近端有血供相對缺乏區,年齡相關的肌腱退變因此好發於此。病理是一個譜:肌腱病(膠原紊亂、黏液樣變性,組織學非發炎)→部分撕裂→全層撕裂;肩峰下滑囊炎與夾擠症候群常伴行。典型表現為外展痛弧、過頂活動痛與夜間側臥痛;肌力明顯減退或外傷後急性無力提示撕裂。無症狀撕裂在中老年影像中常見——治療決策看功能與症狀,不看影像單獨所見。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8269,6 +8414,43 @@
         "rf.rotator_cuff.legacy01",
         "rf.rotator_cuff.legacy02",
         "rf.rotator_cuff.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from shoulder bi and \"leaking shoulder wind\" (the handout's frozen-shoulder mechanism of deficiency applies equally to cuff sinew injury): around fifty, qi and blood wane and liver and kidney weaken, leaving the sinews undernourished — degeneration is itself the deficient image; overwork or a lifting wrench injures the shoulder's channel sinews and stagnates qi and blood; sleeping with the shoulder exposed lets wind-cold-damp obstruct the three hand yang channels, congealing them. Deficiency (liver-kidney, qi-blood) is the base, strain and wind-cold-damp the triggers; the worse-at-night pain fits \"blood deficiency aches at night; cold congealing eases with warmth.\"",
+      "western_pathology_en": "The rotator cuff comprises the supraspinatus, infraspinatus, teres minor, and subscapularis tendons; the supraspinatus is most often affected — it threads the narrow subacromial space and has a relatively hypovascular zone near its insertion, so age-related tendon degeneration concentrates there. The pathology is a spectrum: tendinopathy (collagen disarray and mucoid degeneration — histologically not inflammation) → partial-thickness tear → full-thickness tear, with subacromial bursitis and impingement often alongside. The typical picture is a painful arc on abduction, pain with overhead use, and night pain lying on the affected side; marked weakness or acute post-injury loss of strength suggests a tear. Asymptomatic tears are common on imaging in older adults — treatment decisions follow function and symptoms, never the image alone.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/SHOULDER.DOC(Tier-1 課堂 handout,虛損+風寒濕+勞傷機轉)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/SHOULDER.DOC(Tier-1 課堂 handout,虛損+風寒濕+勞傷機轉)"
+        ],
+        "western_pathology_zh": [
+          "AAOS — 旋轉肌袖疾病通說",
+          "MedlinePlus — Rotator Cuff Injuries (https://medlineplus.gov/rotatorcuffinjuries.html)"
+        ],
+        "western_pathology_en": [
+          "AAOS — 旋轉肌袖疾病通說",
+          "MedlinePlus — Rotator Cuff Injuries (https://medlineplus.gov/rotatorcuffinjuries.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/rotatorcuffinjuries.html"
       ]
     },
     {
@@ -8305,8 +8487,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「肘勞」,屬傷筋、經筋病。肘外側為手陽明大腸經筋所過,反覆用力握拽,勞傷經筋,氣血瘀滯局部,「不通則痛」——抗阻與擰絞動作痛甚即經筋受牽之象。勞損日久,氣血耗傷,筋失濡養,勞則復發、休則稍安,轉為「不榮則痛」與瘀滯並存;兼感風寒者遇冷加重。氣血不榮是遷延之本,故後期治重養血榮筋,非獨活血。",
+      "western_pathology_zh": "網球肘是伸腕肌總腱起點(以橈側伸腕短肌為主)在外上髁的過度使用性肌腱病。名為「炎」而組織學並非發炎——鏡下是血管纖維母細胞增生、膠原排列紊亂的退變影像,這解釋了單純消炎思路的侷限。反覆抓握與腕背伸的離心負荷使肌腱微損傷累積超過修復能力;好發於慣用手、四十歲上下、反覆手工作業者。表現為外上髁壓痛、抗阻伸腕與握物時疼痛(擰毛巾、提壺)。自然病程偏良性,多數一年內緩解;類固醇注射短期止痛但復發率高、長期反而不利——負荷管理與漸進離心訓練是主軸。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8343,6 +8525,43 @@
         "rf.lateral_epicondylitis.legacy01",
         "rf.lateral_epicondylitis.legacy02",
         "rf.lateral_epicondylitis.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's zhou lao (elbow strain), a sinew-injury / channel-sinew disorder. The lateral elbow lies on the path of the Hand Yangming channel sinew; repetitive forceful gripping and pulling strain the sinew and stagnate local qi and blood — \"blockage causes pain,\" seen in pain on resisted motion and wringing. As strain wears on, qi and blood are consumed and the sinew loses nourishment — flaring with use, easing with rest — so \"lack of nourishment\" pain coexists with stasis; wind-cold makes it worse in the cold. Undernourished qi and blood is the root of the protracted course, so late treatment stresses nourishing blood to support the sinew, not invigoration alone.",
+      "western_pathology_en": "Tennis elbow is an overuse tendinopathy of the common extensor origin at the lateral epicondyle, chiefly the extensor carpi radialis brevis. Despite the \"-itis\" name the histology is not inflammatory — the microscope shows angiofibroblastic hyperplasia and disorganized collagen, a degenerative picture that explains why purely anti-inflammatory strategies fall short. Repetitive gripping and eccentric wrist-extension loading accumulate microdamage faster than repair; it favors the dominant arm, ages around forty, and repetitive manual work. The picture is lateral epicondyle tenderness with pain on resisted wrist extension and gripping (wringing a towel, lifting a kettle). The natural course is benign, most resolving within a year; corticosteroid injection relieves short-term but raises recurrence and worsens long-term outcomes — load management and progressive eccentric training are the mainstay.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫骨傷科學教材通說(肘部傷筋/肘勞門)"
+        ],
+        "etiology_en": [
+          "中醫骨傷科學教材通說(肘部傷筋/肘勞門)"
+        ],
+        "western_pathology_zh": [
+          "AAOS — 網球肘通說(肌腱退變組織學、類固醇長期證據)",
+          "MedlinePlus — Elbow Injuries and Disorders (https://medlineplus.gov/elbowinjuriesanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "AAOS — 網球肘通說(肌腱退變組織學、類固醇長期證據)",
+          "MedlinePlus — Elbow Injuries and Disorders (https://medlineplus.gov/elbowinjuriesanddisorders.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/elbowinjuriesanddisorders.html"
       ]
     },
     {
@@ -8377,8 +8596,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫同屬「肘勞」傷筋,而病位在肘內側——手少陰、厥陰經筋所過,與網球肘之在陽明者表裡異位。屈腕旋前之勞,傷內側經筋,氣血瘀滯;久勞氣血虧耗,筋失所養,休作有時。內側經筋深處鄰於尺側脈絡,若麻竄入無名指小指,是經筋病及絡、絡氣痹阻之象,病位已非單純筋傷——此與西醫尺神經之辨相合。治同重活血榮筋,兼顧少陰厥陰循行取穴。",
+      "western_pathology_zh": "高爾夫球肘是屈腕旋前肌總腱起點在內上髁的過度使用性肌腱病,機轉與網球肘同屬退變性肌腱病(血管纖維母細胞增生、非發炎),但位置在內側、發生率明顯較低。反覆屈腕、前臂旋前與強力抓握(揮桿、投擲、錘擊、提重)使內側總腱微損傷累積。表現為內上髁壓痛、抗阻屈腕與旋前疼痛。臨床上必須同時檢查兩個毗鄰結構:尺神經在肘管內緊貼內上髁後方——伴無名指小指麻木者是尺神經病變而非單純肌腱問題;肘內側副韌帶——投擲運動員的內側痛須鑑別韌帶損傷。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8415,7 +8634,41 @@
         "rf.medial_epicondylitis.legacy01",
         "rf.medial_epicondylitis.legacy02",
         "rf.medial_epicondylitis.legacy03"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine files this too under zhou lao sinew injury, but the site is the medial elbow — the path of the Hand Shaoyin and Jueyin channel sinews, the interior counterpart to tennis elbow's Yangming location. The strain of repeated wrist flexion and pronation injures the medial channel sinew and stagnates qi and blood; prolonged strain depletes them and the sinew loses nourishment, flaring and remitting with use. Deep to the medial sinew run the ulnar-side collaterals: numbness darting into the ring and little fingers marks the sinew disorder reaching the collaterals with their qi blocked — no longer a simple sinew injury, matching the biomedical ulnar-nerve distinction. Treatment likewise stresses invigorating blood and nourishing sinew, selecting points along the Shaoyin and Jueyin pathways.",
+      "western_pathology_en": "Golfer's elbow is an overuse tendinopathy of the common flexor-pronator origin at the medial epicondyle — the same degenerative tendinopathy mechanism as tennis elbow (angiofibroblastic hyperplasia, not inflammation), but medial and considerably less common. Repetitive wrist flexion, forearm pronation, and forceful grip (golf swings, throwing, hammering, heavy carrying) accumulate microdamage in the common flexor origin. The picture is medial epicondyle tenderness with pain on resisted wrist flexion and pronation. Two neighbors must be examined alongside: the ulnar nerve runs in the cubital tunnel just behind the medial epicondyle — numbness of the ring and little fingers means ulnar neuropathy, not a pure tendon problem; and the ulnar collateral ligament — medial pain in throwing athletes must be distinguished from ligament injury.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫骨傷科學教材通說(肘部傷筋門,依經筋循行辨位)"
+        ],
+        "etiology_en": [
+          "中醫骨傷科學教材通說(肘部傷筋門,依經筋循行辨位)"
+        ],
+        "western_pathology_zh": [
+          "AAOS — 內上髁炎通說(尺神經/內側副韌帶鑑別)",
+          "MedlinePlus — Elbow Injuries and Disorders (https://medlineplus.gov/elbowinjuriesanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "AAOS — 內上髁炎通說(尺神經/內側副韌帶鑑別)",
+          "MedlinePlus — Elbow Injuries and Disorders (https://medlineplus.gov/elbowinjuriesanddisorders.html)"
+        ]
+      }
     },
     {
       "id": "cond.carpal_tunnel",
@@ -8452,8 +8705,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「痺證」「筋痺」「麻木」論。腕部勞作日久,經筋勞傷,氣血瘀滯,絡道受卡——腕為手厥陰心包經所過,大陵正當其位,麻木循經入掌指,與正中神經分布意象相合。「氣不至則麻,血不榮則木」:氣血虛者麻木尤著、夜臥氣血歸藏而症加;痰濕內盛者(妊娠、形肥)濕阻絡道,腫脹壓迫;久病血瘀,絡脈失榮則肌萎——魚際消瘦即榮養不達之象。",
+      "western_pathology_zh": "腕隧道症候群是最常見的神經卡壓症:正中神經在腕橫韌帶下方的狹窄骨纖維通道內受壓,腔內壓升高使神經微循環受阻,先缺血後脫髓鞘,久則軸突損傷。典型症狀是拇、食、中指與無名指橈半側麻木刺痛,夜間麻醒、甩手後緩解——夜間腕屈曲使腔內壓進一步升高所致;晚期見魚際肌萎縮與精細動作笨拙。好發因素:反覆腕部負荷、妊娠(液體滯留)、甲狀腺功能低下、糖尿病、類風濕、肥胖。鑑別須排除頸神經根病(C6)與更近端的正中神經卡壓;肌電圖定位與分級。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8490,6 +8743,43 @@
         "rf.carpal_tunnel.legacy01",
         "rf.carpal_tunnel.legacy02",
         "rf.carpal_tunnel.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from bi syndrome, sinew bi, and numbness. Long wrist labor strains the channel sinews, qi and blood stagnate, and the collateral pathway is pinched — the wrist is where the Hand Jueyin (Pericardium) channel passes, PC7 sitting exactly there, and the numbness running along the channel into palm and fingers matches the median-nerve map. \"Where qi does not arrive there is tingling; where blood does not nourish there is numbness\": in the qi-blood deficient, numbness dominates and worsens at night as qi and blood withdraw inward; in the phlegm-damp replete (pregnancy, stout habitus), damp clogs the collateral pathway and swelling compresses; with chronicity, blood stasis starves the collaterals and muscle withers — the wasted thenar is nourishment failing to arrive.",
+      "western_pathology_en": "Carpal tunnel syndrome is the most common entrapment neuropathy: the median nerve is compressed in the narrow osteofibrous canal beneath the transverse carpal ligament, where raised intracanal pressure chokes the nerve's microcirculation — ischemia first, demyelination next, axonal damage late. The typical picture is numbness and tingling of the thumb, index, middle, and radial half of the ring finger, waking the patient at night and easing with hand-shaking — nocturnal wrist flexion raises canal pressure further; late disease shows thenar atrophy and clumsy fine motion. Predisposing factors: repetitive wrist loading, pregnancy (fluid retention), hypothyroidism, diabetes, rheumatoid arthritis, obesity. The differential must exclude C6 radiculopathy and more proximal median entrapment; electrodiagnostics localize and grade.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痺證/麻木門,依經絡辨位)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痺證/麻木門,依經絡辨位)"
+        ],
+        "western_pathology_zh": [
+          "NINDS — 腕隧道症候群通說",
+          "MedlinePlus — Carpal Tunnel Syndrome (https://medlineplus.gov/carpaltunnelsyndrome.html)"
+        ],
+        "western_pathology_en": [
+          "NINDS — 腕隧道症候群通說",
+          "MedlinePlus — Carpal Tunnel Syndrome (https://medlineplus.gov/carpaltunnelsyndrome.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/carpaltunnelsyndrome.html"
       ]
     },
     {
@@ -10052,8 +10342,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "「膝為筋之府」,中醫依傷筋論。扭轉負重之際,筋傷絡損,瘀血留滯關節,腫痛並作、屈伸不利;瘀阻日久,關節滑利失司,交鎖卡頓為瘀凝筋結之象。「肝主筋、腎主骨」——年壯者多因暴力傷筋,年長者肝腎漸虧,筋膜失養而脆,微力即傷、傷後難復,且多與骨痺(退變)並見。新傷活血化瘀消腫,陳傷補益肝腎、養筋榮絡,兼以通利關節。",
+      "western_pathology_zh": "半月板是膝關節內外側各一的纖維軟骨墊,承擔負荷分散、穩定與潤滑。損傷分兩型,處置邏輯不同:年輕人的急性外傷性撕裂——負重下扭轉(運動急停轉向)撕裂,常伴前十字韌帶損傷,交鎖與明顯積液提示不穩定撕裂型態;中老年的退變性撕裂——軟骨基質隨齡劣化,輕微動作即可撕裂,常與膝骨關節炎並存,影像撕裂在無症狀中老年人相當常見,且多項試驗顯示退變性撕裂關節鏡部分切除相對運動治療獲益有限——這是治療決策的關鍵證據。血供僅及外緣三分之一(紅區),此區撕裂可癒合可縫合;內側白區血供缺如,癒合能力差。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -10090,6 +10380,43 @@
         "rf.meniscus_injury.legacy01",
         "rf.meniscus_injury.legacy02",
         "rf.meniscus_injury.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "\"The knee is the residence of the sinews\" — Chinese medicine reasons from sinew injury. In a loaded twist, sinew and collateral are injured and static blood lodges in the joint: swelling with pain and impaired flexion-extension; as stasis settles, the joint loses its smooth glide — locking and catching are the image of congealed stasis knotting the sinew. \"The liver governs sinews, the kidney governs bone\": in the young the cause is usually violent injury, while in the old liver and kidney wane, the sinew-membranes lose nourishment and turn brittle — trivial force injures them and recovery is slow, usually alongside bone bi (degeneration). Fresh injury: invigorate blood, transform stasis, reduce swelling; old injury: tonify liver and kidney, nourish sinew and collateral, and keep the joint moving freely.",
+      "western_pathology_en": "The menisci are paired fibrocartilage pads of the knee, distributing load, stabilizing, and lubricating. Injury splits into two types with different management logic: acute traumatic tears in the young — twisting under load (pivoting stops in sport), often with ACL injury, where locking and a tense effusion suggest unstable tear patterns; and degenerative tears in middle and older age — the cartilage matrix deteriorates with age so trivial motions can tear it, commonly coexisting with knee osteoarthritis. Imaging tears are common in asymptomatic older adults, and multiple trials show arthroscopic partial meniscectomy adds little over exercise therapy for degenerative tears — the key evidence behind treatment decisions. Blood supply reaches only the outer third (red zone), where tears can heal or be repaired; the inner white zone is avascular and heals poorly.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫骨傷科學教材通說(膝部傷筋門)"
+        ],
+        "etiology_en": [
+          "中醫骨傷科學教材通說(膝部傷筋門)"
+        ],
+        "western_pathology_zh": [
+          "骨科實證通說(退變性撕裂關節鏡 vs 運動治療試驗)",
+          "MedlinePlus — Knee Injuries and Disorders (https://medlineplus.gov/kneeinjuriesanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "骨科實證通說(退變性撕裂關節鏡 vs 運動治療試驗)",
+          "MedlinePlus — Knee Injuries and Disorders (https://medlineplus.gov/kneeinjuriesanddisorders.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/kneeinjuriesanddisorders.html"
       ]
     },
     {
@@ -10767,8 +11094,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "跟腱為足太陽經筋所結,中醫依「傷筋」「筋痺」論。久行久立、負重奔走,勞損經筋,氣血瘀滯於跟——晨起僵痛、動則稍舒,正是氣血得動則行之象。「年四十而陰氣自半」,年長者肝腎漸虧,精血不足,筋失濡養,基質之退變即虛損之形;勞損積微成疾,虛實相因。新傷之際活血通絡,久病則補肝腎、養精血以榮筋,並循太陽經筋取穴;唯灸刺跟腱局部須避開腱體,此屬安全層。",
+      "western_pathology_zh": "阿基里斯腱病變是跟腱的過度使用性退變:負荷驟增(跑量、坡度、重返運動)超過肌腱基質的適應速度,膠原排列紊亂、蛋白聚醣沉積、新生血管與伴行神經長入——組織學同樣是退變而非發炎,「腱炎」之名已被「肌腱病」取代。分兩型,處置不同:中段型(止點上方數公分處梭形增厚壓痛)與止點型(跟骨附著處,常伴跟骨後滑囊與骨刺,離心訓練須改良角度)。晨起僵痛、活動後暖開、過量後次日加重是典型節律。氟喹諾酮類抗生素與跟腱病變及斷裂的相關性為藥物警訊;突發「被踢一腳」感伴無力提示斷裂,屬另一急症。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -10805,7 +11132,41 @@
         "rf.achilles_tendinopathy.legacy01",
         "rf.achilles_tendinopathy.legacy02",
         "rf.achilles_tendinopathy.legacy03"
-      ]
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "The Achilles is a binding of the Foot Taiyang channel sinew; Chinese medicine reasons from sinew injury and sinew bi. Long walking, standing, and loaded running strain the channel sinew and stagnate qi and blood at the heel — morning stiffness that eases with movement is qi and blood flowing once stirred. \"At forty, yin qi is half\" — with age, liver and kidney wane, essence and blood run short, and the sinew loses nourishment: matrix degeneration is the very form of deficiency-damage; strain accumulates grain by grain into disease, deficiency and excess feeding each other. Fresh strain: invigorate blood and unblock collaterals; chronic disease: tonify liver-kidney and nourish essence-blood to support the sinew, selecting points along the Taiyang sinew pathway — needling or moxa at the tendon itself must avoid the tendon body, a safety-layer matter.",
+      "western_pathology_en": "Achilles tendinopathy is overuse degeneration of the Achilles tendon: load rising faster than the tendon matrix can adapt (mileage, hills, return to sport) produces disorganized collagen, proteoglycan deposition, and neovessels with accompanying nerve ingrowth — histologically degeneration again, not inflammation, which is why \"tendinitis\" has given way to \"tendinopathy.\" Two types with different handling: midportion (fusiform thickening and tenderness a few centimeters above the insertion) and insertional (at the calcaneal attachment, often with retrocalcaneal bursitis and spurs, where eccentric training needs modified range). Morning stiffness that warms up with activity and rebounds the day after overload is the typical rhythm. The association of fluoroquinolone antibiotics with tendinopathy and rupture is a standing drug alert; a sudden \"kicked in the heel\" sensation with weakness suggests rupture — a different emergency.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫骨傷科學教材通說(足跟部傷筋門)"
+        ],
+        "etiology_en": [
+          "中醫骨傷科學教材通說(足跟部傷筋門)"
+        ],
+        "western_pathology_zh": [
+          "運動醫學通說(肌腱病組織學、氟喹諾酮警訊)",
+          "MedlinePlus — Heel Injuries and Disorders (https://medlineplus.gov/heelinjuriesanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "運動醫學通說(肌腱病組織學、氟喹諾酮警訊)",
+          "MedlinePlus — Heel Injuries and Disorders (https://medlineplus.gov/heelinjuriesanddisorders.html)"
+        ]
+      }
     },
     {
       "id": "cond.hip_osteoarthritis",
@@ -10841,8 +11202,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「骨痺」「髖痺」。「腎主骨生髓」——年老腎氣漸衰,精虧髓減,骨失所養,是為本;肝血不足,筋失濡養,筋骨同病,屈伸不利。復加勞損負重,氣血瘀滯關節;或風寒濕邪乘虛痺阻,遇寒陰雨加重。本虛標實:肝腎虧虛為本,寒濕瘀血為標——痛久固定如刺者瘀也,重著遇濕甚者濕也,得溫則減者寒也。治則補肝腎、強筋骨為本,散寒除濕、活血通絡為標。",
+      "western_pathology_zh": "髖骨關節炎是全關節疾病:關節軟骨基質降解與軟骨細胞失衡是核心,但軟骨下骨硬化與囊變、骨贅增生、滑膜低度發炎、關節囊攣縮共同參與——「磨損」的機械比喻不完整,發炎與修復失衡是現代理解。危險因子:年齡、發育性髖關節結構異常(髖臼發育不良、股髖夾擠)、既往外傷、重體力負重職業、肥胖、家族史。典型表現:腹股溝或臀深部痛,活動後加重,晨僵短暫;查體以內旋受限最早出現。疼痛程度與影像分級常不平行;疼痛可牽涉至膝——「膝痛查髖」是老規則。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -10879,6 +11240,43 @@
         "rf.hip_osteoarthritis.legacy01",
         "rf.hip_osteoarthritis.legacy02",
         "rf.hip_osteoarthritis.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's bone bi at the hip. \"The kidney governs bone and engenders marrow\" — with age kidney qi declines, essence shrinks and marrow lessens, and bone loses its nourishment: the root. Liver blood insufficiency starves the sinews, so sinew and bone sicken together and flexion-extension falters. Onto this come strain and loading that stagnate qi and blood in the joint, or wind-cold-damp exploiting the deficiency to obstruct it, worse in cold and rain. Root-deficiency with branch-excess: liver-kidney depletion at the root; cold, damp, and blood stasis at the branch — fixed needling pain marks stasis, heaviness worse in damp marks damp, relief with warmth marks cold. Treatment tonifies liver-kidney and strengthens sinew and bone at the root while scattering cold, dispelling damp, and invigorating the collaterals at the branch.",
+      "western_pathology_en": "Hip osteoarthritis is whole-joint disease: degradation of the cartilage matrix and chondrocyte imbalance sit at the core, but subchondral sclerosis and cysts, osteophytes, low-grade synovitis, and capsular contracture all participate — the mechanical \"wear\" metaphor is incomplete; imbalance of inflammation and repair is the modern reading. Risk factors: age, developmental hip morphology (acetabular dysplasia, femoroacetabular impingement), prior injury, heavy manual loading, obesity, family history. The typical picture: groin or deep buttock pain worse after activity with brief morning stiffness; on exam, restricted internal rotation appears earliest. Pain severity and radiographic grade often diverge, and pain may refer to the knee — \"knee pain, examine the hip\" is the old rule.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痺證/骨痺門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痺證/骨痺門)"
+        ],
+        "western_pathology_zh": [
+          "NIAMS/OARSI — 骨關節炎通說",
+          "MedlinePlus — Osteoarthritis (https://medlineplus.gov/osteoarthritis.html)"
+        ],
+        "western_pathology_en": [
+          "NIAMS/OARSI — 骨關節炎通說",
+          "MedlinePlus — Osteoarthritis (https://medlineplus.gov/osteoarthritis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/osteoarthritis.html"
       ]
     },
     {
@@ -10914,8 +11312,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「痺證」「臀股痛」論,循經定於足太陽、少陽之間——臀深痛而下竄大腿後外側,正是二經所過。久坐氣血不行,或閃挫勞損,臀部經筋受傷,氣滯血瘀,筋肉攣急,卡壓經氣,循經竄痛;感受寒濕則攣急更甚,得溫則舒。「經筋為病,痛在所過」——病在筋不在骨,故轉側牽拉誘發而腰部無恙。治重疏筋活血、緩急止痛,循太陽少陽取穴,深刺臀部須知坐骨神經行徑,屬安全層。",
+      "western_pathology_zh": "梨狀肌症候群屬「深臀症候群」:坐骨神經在梨狀肌下方(部分解剖變異中穿行肌腹)受痙攣、肥厚或瘢痕的肌肉刺激壓迫,產生臀深部疼痛與坐骨神經樣下肢放射。誘因:久坐(硬座、錢包壓迫)、跑步與登階的反覆負荷、臀部外傷後瘢痕。表現:臀深壓痛、久坐加重、髖內旋內收牽拉誘發;與腰椎神經根病的鑑別是核心臨床問題——後者有腰部症狀、皮節分布與神經學缺損,影像學價值主要在排除腰椎與骨盆病灶,梨狀肌本身的診斷靠臨床誘發試驗,是排除性診斷。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -10952,6 +11350,43 @@
         "rf.piriformis_syndrome.legacy01",
         "rf.piriformis_syndrome.legacy02",
         "rf.piriformis_syndrome.legacy03"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from bi syndrome and buttock-thigh pain, locating it by channel between Foot Taiyang and Shaoyang — deep gluteal pain darting down the posterolateral thigh is exactly their course. Long sitting stills qi and blood, or a wrench and strain injures the gluteal channel sinews: qi stagnates, blood congeals, the sinew-flesh cramps and pinches the channel qi, and pain shoots along the channel; cold-damp worsens the cramping, warmth eases it. \"When channel sinews sicken, pain follows their path\" — the disease is in sinew, not bone, which is why stretch provokes it while the lumbar spine stays quiet. Treatment stresses coursing the sinews, invigorating blood, and easing cramp to stop pain, with points along Taiyang and Shaoyang; deep gluteal needling must know the sciatic nerve's course — a safety-layer matter.",
+      "western_pathology_en": "Piriformis syndrome belongs to the \"deep gluteal syndrome\" family: the sciatic nerve is irritated or compressed beneath the piriformis (or piercing its belly in anatomical variants) by a spastic, hypertrophied, or scarred muscle, producing deep buttock pain with sciatica-like radiation. Triggers: prolonged sitting (hard seats, a wallet in the pocket), repetitive loading in running and stair work, and scarring after gluteal trauma. The picture: deep gluteal tenderness, worse with sitting, provoked by hip internal-rotation-adduction stretch. Distinguishing it from lumbar radiculopathy is the central clinical question — the latter brings back symptoms, dermatomal distribution, and neurological deficits; imaging serves mainly to exclude lumbar and pelvic lesions, and the diagnosis itself rests on clinical provocation tests as a diagnosis of exclusion.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痺證門,依經筋辨位)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痺證門,依經筋辨位)"
+        ],
+        "western_pathology_zh": [
+          "骨科/復健醫學通說(深臀症候群、排除性診斷)",
+          "MedlinePlus — Sciatica (https://medlineplus.gov/sciatica.html)"
+        ],
+        "western_pathology_en": [
+          "骨科/復健醫學通說(深臀症候群、排除性診斷)",
+          "MedlinePlus — Sciatica (https://medlineplus.gov/sciatica.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/sciatica.html"
       ]
     },
     {
@@ -13424,8 +13859,8 @@
       "acupoint_protocols": [],
       "fetched_at": "2026-07-23T07:46:03.083Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "「痛風」之名見於朱丹溪《格致餘論》,亦屬「歷節」「白虎歷節」——夜半痛劇如虎咬之喻,正合驟發劇痛之象。病機:素體脾腎失運為本——脾失健運則水穀不歸正化,釀生濕濁;腎失分清泌濁,濁毒無從下泄。膏粱厚味、醇酒炙煿助濕生熱,濕熱濁毒流注關節經絡,驟發紅腫熱痛;久則痰瘀濁毒膠結,附骨成核(痛風石之象),內傷脾腎。本虛標實:發作期清熱利濕、通絡止痛,緩解期健脾益腎、泄濁化瘀——與西醫發作期消炎、間歇期降尿酸的分期邏輯平行。",
+      "western_pathology_zh": "痛風的因果鏈條明確:血尿酸長期超過飽和度→尿酸鈉結晶在關節與軟組織沉積→結晶被巨噬細胞吞噬,活化 NLRP3 發炎體,釋放 IL-1β——數小時內爆發的紅腫熱痛即由此而來,第一蹠趾關節最好發(低溫與機械負荷利於結晶)。高尿酸血症九成源於腎臟排泄不足而非生成過多;誘因:嘌呤與果糖攝入、酒精、利尿劑、脫水、腎功能下降。急性發作間歇期結晶仍在沉積,反覆發作後進入慢性痛風石期,侵蝕關節並累及腎。痛風與代謝症候群、高血壓、慢性腎病高度共病——它是全身代謝病在關節的爆發點,不只是關節病。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -13452,9 +13887,44 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1400"
+        "https://cloudtcm.com/disease/tcm/1400",
+        "https://medlineplus.gov/gout.html"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "The name \"gout\" (tong feng) appears in Zhu Danxi's Ge Zhi Yu Lun; it also belongs to li jie — \"white tiger joint-running\" disease, the midnight pain like a tiger's bite matching the abrupt agony exactly. Mechanism: a spleen-kidney transport failure at the root — the spleen failing to transform lets food and drink breed damp turbidity, the kidney failing to separate clear from turbid leaves the turbid toxin no exit. Rich food, liquor, and roasted fare feed damp and heat; damp-heat turbid toxin pours into joints and channels, erupting in red-hot swollen pain; over time phlegm, stasis, and turbid toxin cake together, clinging to bone as nodes (the tophus image) and injuring spleen and kidney within. Root-deficiency, branch-excess: in flares, clear heat, drain damp, unblock collaterals to stop pain; in remission, fortify spleen, boost kidney, discharge turbidity, transform stasis — parallel to biomedicine's flare/anti-inflammatory versus intercritical/urate-lowering staging.",
+      "western_pathology_en": "Gout's causal chain is explicit: serum urate chronically above saturation → monosodium urate crystals deposit in joints and soft tissue → macrophages ingest crystals and activate the NLRP3 inflammasome, releasing IL-1β — hence the red, hot, swollen agony erupting within hours, most often at the first metatarsophalangeal joint (cool temperature and mechanical load favor crystallization). Hyperuricemia is about ninety percent renal underexcretion rather than overproduction; triggers include purine and fructose intake, alcohol, diuretics, dehydration, and declining renal function. Between attacks crystals keep depositing; after repeated flares the chronic tophaceous stage erodes joints and involves the kidney. Gout travels with metabolic syndrome, hypertension, and chronic kidney disease — a systemic metabolic disease detonating in a joint, not merely joint disease.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痺證/痛風門;朱丹溪《格致餘論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痺證/痛風門;朱丹溪《格致餘論》)"
+        ],
+        "western_pathology_zh": [
+          "ACR — 痛風通說(NLRP3/IL-1β 機轉、排泄不足為主)",
+          "MedlinePlus — Gout (https://medlineplus.gov/gout.html)"
+        ],
+        "western_pathology_en": [
+          "ACR — 痛風通說(NLRP3/IL-1β 機轉、排泄不足為主)",
+          "MedlinePlus — Gout (https://medlineplus.gov/gout.html)"
+        ]
+      }
     },
     {
       "id": "cond.rheumatoid_arthritis",
@@ -14712,8 +15182,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依表現歸「久痢」「腸澼」「腹痛」「泄瀉」門。病機:脾虛濕盛為本——脾失健運,濕濁內生;濕鬱化熱,濕熱蘊結大腸,氣血搏結,脂絡受傷,故下痢赤白膿血、裡急後重;病久及腎,脾腎陽虛,五更泄瀉、滑脫不禁;寒熱錯雜者(烏梅丸證之屬)腹痛久利並見。情志失調,肝鬱乘脾,是發作與緩解隨壓力起伏的病機解釋。活動期清熱化濕、調氣行血,緩解期健脾溫腎固本——分期論治與西醫誘導緩解/維持治療的結構相應。",
+      "western_pathology_zh": "發炎性腸道疾病是慢性復發性腸道免疫發炎,兩大類型病理迥異:克隆氏症——口腔至肛門任何節段皆可受累,以迴腸末端最常見,跳躍式分布、全層性發炎,故生瘻管、狹窄與膿瘍;潰瘍性結腸炎——限於結腸,自直腸連續向近端蔓延,發炎限於黏膜與黏膜下層,以血性腹瀉為主。發病是遺傳易感(NOD2 等多基因)、腸道菌相失衡與黏膜免疫失調交互的結果,吸菸對兩型的影響方向相反(加重克隆氏、潰瘍性結腸炎反而較少見於吸菸者——機轉未明的著名流行病學事實)。腸外表現(關節、皮膚、眼、肝膽)與長期結腸炎的癌變監測是照護要點。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -14745,7 +15215,47 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "By presentation Chinese medicine files IBD under chronic dysentery, chang pi (intestinal afflux), abdominal pain, and diarrhea. Mechanism: spleen deficiency with exuberant damp at the root — the spleen failing to transport breeds internal damp turbidity; damp constrained into heat smolders in the large intestine, qi and blood clash, the fatty collaterals are injured — hence red-and-white purulent-bloody stool with tenesmus. Long disease reaches the kidney: spleen-kidney yang deficiency brings fifth-watch diarrhea and unchecked sliding loss; mixed cold-heat cases (the Wu Mei Wan class) join chronic pain and dysentery. Emotional disturbance with the liver constraining and overriding the spleen explains flares tracking stress. Active phase: clear heat, transform damp, regulate qi, move blood; remission: fortify spleen and warm kidney to secure the root — staging that mirrors biomedicine's induction/maintenance structure.",
+      "western_pathology_en": "Inflammatory bowel disease is chronic relapsing immune-mediated gut inflammation in two pathologically distinct forms: Crohn's disease — any segment from mouth to anus, terminal ileum most often, in skip lesions with transmural inflammation, hence fistulas, strictures, and abscesses; ulcerative colitis — confined to the colon, spreading continuously proximally from the rectum, inflammation limited to mucosa and submucosa, dominated by bloody diarrhea. Onset is the interplay of genetic susceptibility (NOD2 among many loci), disturbed gut microbiota, and dysregulated mucosal immunity; smoking pushes the two forms in opposite directions (worsening Crohn's while ulcerative colitis is curiously less common in smokers — a famous unexplained epidemiological fact). Extraintestinal manifestations (joints, skin, eyes, hepatobiliary) and dysplasia surveillance in long-standing colitis are care essentials.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痢疾/泄瀉門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痢疾/泄瀉門)"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — 發炎性腸道疾病通說",
+          "MedlinePlus — Crohn's Disease (https://medlineplus.gov/crohnsdisease.html)",
+          "MedlinePlus — Ulcerative Colitis (https://medlineplus.gov/ulcerativecolitis.html)"
+        ],
+        "western_pathology_en": [
+          "NIDDK — 發炎性腸道疾病通說",
+          "MedlinePlus — Crohn's Disease (https://medlineplus.gov/crohnsdisease.html)",
+          "MedlinePlus — Ulcerative Colitis (https://medlineplus.gov/ulcerativecolitis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/crohnsdisease.html",
+        "https://medlineplus.gov/ulcerativecolitis.html"
+      ]
     },
     {
       "id": "cond.chronic_constipation",
@@ -15801,8 +16311,8 @@
         "pattern.damp_heat_spleen_stomach"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫無此病名,依「脅痛」「積聚」「肥氣」「痰濁」論。病機:過食肥甘,久坐少動,脾失健運——水穀精微不歸正化,聚而為濕,凝而為痰,膏脂內蓄,浸淫於肝;肝失疏泄,氣機鬱滯,痰氣互結於脅下;久則痰瘀互結,漸成積聚(纖維化之象)。本在脾(運化失司),標在痰瘀,樞在肝(疏泄不利)。多無明顯自覺症,或右脅悶脹、身重倦怠、舌苔厚膩——「無症狀而有形」正是痰濁膏脂之性。治重健脾化痰、疏肝消滯,病久佐活血化瘀軟堅。",
+      "western_pathology_zh": "非酒精性脂肪肝(國際命名已更新為代謝功能障礙相關脂肪性肝病)是肝細胞內脂肪過度堆積而無大量飲酒史,核心機轉是胰島素阻抗:脂肪組織脂解失抑制,游離脂肪酸湧入肝臟,肝內脂質新生上調,輸出與氧化不及,三酸甘油酯堆積。疾病是一個譜:單純脂肪變(預後良好)→脂肪肝炎(肝細胞氣球樣變與發炎——脂毒性、氧化壓力、腸-肝軸參與)→纖維化→肝硬化與肝細胞癌;纖維化分期是預後的最強預測指標。它與肥胖、第2型糖尿病、血脂異常互為表裡,心血管疾病是這群患者的首位死因——治療的主軸是減重與代謝共病管理。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -15834,7 +16344,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine has no name for this; it is reasoned through flank pain, accumulations (ji ju), \"fat qi,\" and phlegm turbidity. Mechanism: rich eating and sedentary living defeat the spleen's transport — food essence fails to transform properly, gathering into damp, congealing into phlegm, and fatty turbidity stores up and soaks the liver; the liver loses free-coursing, qi constrains, and phlegm and qi bind beneath the flank; with time phlegm and stasis interlock, gradually forming accumulation (the image of fibrosis). Root in the spleen (failed transport), branch in phlegm and stasis, pivot at the liver (impaired coursing). Most cases have no complaint, or dull right-flank fullness, heavy body, fatigue, and a thick greasy tongue coat — \"formed yet symptomless\" is precisely the nature of turbid phlegm and fat. Treatment stresses fortifying the spleen and transforming phlegm, coursing the liver and dispersing stagnation, adding blood-invigorating and softening methods late.",
+      "western_pathology_en": "Nonalcoholic fatty liver disease (internationally renamed metabolic dysfunction-associated steatotic liver disease) is excess hepatocyte fat without significant alcohol history, and insulin resistance is the core mechanism: disinhibited adipose lipolysis floods the liver with free fatty acids, de novo lipogenesis is upregulated, export and oxidation lag, and triglyceride accumulates. The disease is a spectrum: simple steatosis (benign prognosis) → steatohepatitis (ballooned hepatocytes with inflammation — lipotoxicity, oxidative stress, and the gut-liver axis at work) → fibrosis → cirrhosis and hepatocellular carcinoma; fibrosis stage is the strongest prognostic predictor. It interlocks with obesity, type 2 diabetes, and dyslipidemia, and cardiovascular disease is these patients' leading cause of death — so weight reduction and metabolic comorbidity management anchor treatment.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(脅痛/積聚/痰飲門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(脅痛/積聚/痰飲門)"
+        ],
+        "western_pathology_zh": [
+          "NIDDK/AASLD — 脂肪肝通說(MASLD 更名、纖維化分期預後)",
+          "MedlinePlus — Fatty Liver Disease (https://medlineplus.gov/fattyliverdisease.html)"
+        ],
+        "western_pathology_en": [
+          "NIDDK/AASLD — 脂肪肝通說(MASLD 更名、纖維化分期預後)",
+          "MedlinePlus — Fatty Liver Disease (https://medlineplus.gov/fattyliverdisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/fattyliverdisease.html"
+      ]
     },
     {
       "id": "cond.gallbladder_dysfunction",
@@ -15850,8 +16397,8 @@
         "pattern.liver_qi_stagnation"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「脅痛」「膽脹」。膽為中清之腑,附於肝,司貯泄膽汁,其用全賴肝之疏泄——病機軸心即肝膽疏泄失常:情志不遂,肝氣鬱結,膽失通降,脅痛脘悶、噯氣太息,痛勢隨情緒起伏;過食肥甘,濕熱內生,蘊結肝膽,口苦嘔惡、右脅脹痛;氣鬱日久化火,或久病入絡夾瘀。「餐後痛作」正合食入肝膽當疏而不疏之象。治以疏肝利膽為軸,佐清熱化濕、理氣和胃;情志調攝是防復之本——此病之身心相關,兩醫學圖像一致。",
+      "western_pathology_zh": "膽道功能障礙指無結石而有膽源性疼痛的功能性疾病,主要兩型:膽囊功能障礙——膽囊收縮排空不良,肝膽閃爍造影射出分數偏低,餐後(尤其油膩)右上腹痛而超音波無結石;Oddi 括約肌功能障礙——括約肌張力異常使膽汁胰液排出受阻,膽道型疼痛可伴肝酶或膽管擴張,亦是膽囊切除後疼痛持續的原因之一。機轉涉及膽道平滑肌動力異常、內臟高敏感與腸-膽神經調節失衡,與功能性消化疾病譜相連。診斷是排除性的:先排除結石、微結石與腫瘤;膽囊切除對典型膽囊型有效,但對不典型者獲益不確定——選擇病人比手術本身更關鍵。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -15883,7 +16430,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's flank pain and \"gallbladder distension.\" The gallbladder is the bowel of central clarity, attached to the liver, storing and releasing bile — its function rides entirely on the liver's free-coursing, so the mechanism's axis is disturbed liver-gallbladder coursing: emotional frustration knots liver qi, the gallbladder loses its descent — flank pain with epigastric oppression, belching and sighing, the pain tracking mood; rich fatty food breeds damp-heat that smolders in liver and gallbladder — bitter mouth, nausea, distending right-flank pain; long constraint transforms into fire, or chronic disease enters the collaterals with stasis. Pain after meals fits the image of food arriving when the liver-gallbladder should course but does not. Treatment pivots on coursing the liver and disinhibiting the gallbladder, assisted by clearing heat, transforming damp, and harmonizing the stomach; emotional regulation is the root of prevention — here the mind-body linkage of the two medical pictures coincides.",
+      "western_pathology_en": "Gallbladder dysfunction covers functional biliary pain without stones, in two main forms: gallbladder dyskinesia — impaired contraction and emptying, a low ejection fraction on hepatobiliary scintigraphy, postprandial (especially fatty-meal) right-upper-quadrant pain with a stone-free ultrasound; and sphincter of Oddi dysfunction — abnormal sphincter tone obstructing bile and pancreatic outflow, biliary-type pain sometimes with liver-enzyme rises or duct dilation, and one reason pain persists after cholecystectomy. The mechanism involves biliary smooth-muscle dysmotility, visceral hypersensitivity, and disturbed neuro-biliary regulation, joining the functional GI spectrum. Diagnosis is by exclusion — stones, microlithiasis, and tumors first; cholecystectomy helps typical gallbladder-type cases but benefit is uncertain in atypical ones — patient selection matters more than the operation.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(脅痛/膽脹門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(脅痛/膽脹門)"
+        ],
+        "western_pathology_zh": [
+          "Rome 標準 — 功能性膽道疾病通說",
+          "MedlinePlus — Gallbladder Diseases (https://medlineplus.gov/gallbladderdiseases.html)"
+        ],
+        "western_pathology_en": [
+          "Rome 標準 — 功能性膽道疾病通說",
+          "MedlinePlus — Gallbladder Diseases (https://medlineplus.gov/gallbladderdiseases.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/gallbladderdiseases.html"
+      ]
     },
     {
       "id": "cond.cinv",
@@ -15899,8 +16483,8 @@
         "pattern.stomach_yin_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫視化療藥為攻伐之「藥毒」:毒傷脾胃,運化失司,胃氣不降反升——嘔吐之總病機仍是「胃失和降,氣逆於上」(課件嘔吐綱要同此)。分層:藥毒直傷,胃氣上逆,得藥即吐;脾胃素虛者,中氣受戕更甚,食入即吐、納呆倦怠;久療耗氣傷陰,胃陰虧虛,乾嘔少津;痰濕中阻者嘔吐痰涎、胸脘痞悶。預期性嘔吐屬肝鬱犯胃——未藥先嘔,情志所觸。治重和胃降逆、顧護中氣,扶正以耐攻伐;內關為代表性介入穴(療效證據屬治療層,不在此述)。",
+      "western_pathology_zh": "化療引起的噁心嘔吐有清楚的神經藥理迴路:化療藥損傷腸黏膜使腸嗜鉻細胞釋放血清素,刺激迷走傳入的 5-HT3 受體;藥物與其代謝物同時作用於延髓最後區的化學受體觸發區;訊號匯聚於孤束核與中樞嘔吐模式發生器。急性型(給藥24小時內)以血清素/5-HT3 路徑為主,延遲型(24小時後,順鉑類典型)以 P 物質/NK-1 受體為主——止吐藥組合即按此雙路徑設計。預期性嘔吐是條件反射(進醫院聞到氣味即噁心),一旦形成極難消除,故第一週期就把急性期控制好是最重要的預防。風險分層看藥物致吐性與病人因素(年輕、女性、暈動症史、低飲酒史者風險高)。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -15932,7 +16516,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reads chemotherapy as an attacking \"drug toxin\": the toxin wounds spleen and stomach, transport fails, and stomach qi ascends instead of descending — the governing mechanism of all vomiting, \"the stomach losing harmonious descent, qi rebelling upward\" (the course vomiting outline says the same). Layers: direct toxin injury with stomach qi rebelling — vomiting on dosing; in the constitutionally spleen-stomach weak, middle qi is cut down further — vomiting on eating, no appetite, exhaustion; long courses consume qi and yin — stomach-yin deficiency with dry retching and scant fluids; phlegm-damp obstructing the middle — vomiting phlegmy drool with chest-epigastric oppression. Anticipatory vomiting is liver constraint invading the stomach — retching before the drug, triggered by emotion. Treatment stresses harmonizing the stomach, downbearing rebellion, and guarding middle qi so the patient can withstand the attack; PC6 is the representative intervention point (efficacy evidence belongs to the treatment layer, not here).",
+      "western_pathology_en": "Chemotherapy-induced nausea and vomiting has a well-mapped neuropharmacological circuit: chemotherapy injures gut mucosa, enterochromaffin cells release serotonin onto vagal afferent 5-HT3 receptors; drug and metabolites also act on the chemoreceptor trigger zone in the area postrema; signals converge on the nucleus tractus solitarius and the central pattern generator for emesis. The acute phase (within 24 hours) is serotonin/5-HT3-dominant; the delayed phase (beyond 24 hours, typical of cisplatin) is substance-P/NK-1-dominant — antiemetic combinations are engineered around exactly this dual pathway. Anticipatory vomiting is a conditioned reflex (nausea at the smell of the ward) that is very hard to extinguish once formed, so controlling the acute phase in cycle one is the most important prevention. Risk stratifies by drug emetogenicity and patient factors (younger age, female sex, motion-sickness history, low alcohol history raise risk).",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/4. Vomiting - handout on Canvas.docx(Tier-1 課堂 handout,嘔吐總病機)",
+          "中醫內科學教材通說(嘔吐門)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/4. Vomiting - handout on Canvas.docx(Tier-1 課堂 handout,嘔吐總病機)",
+          "中醫內科學教材通說(嘔吐門)"
+        ],
+        "western_pathology_zh": [
+          "NCI/ASCO — 化療止吐通說(5-HT3/NK-1 雙路徑)",
+          "MedlinePlus — Nausea and Vomiting (https://medlineplus.gov/nauseaandvomiting.html)"
+        ],
+        "western_pathology_en": [
+          "NCI/ASCO — 化療止吐通說(5-HT3/NK-1 雙路徑)",
+          "MedlinePlus — Nausea and Vomiting (https://medlineplus.gov/nauseaandvomiting.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/nauseaandvomiting.html"
+      ]
     },
     {
       "id": "cond.post_op_ileus",
@@ -15949,8 +16572,8 @@
         "pattern.spleen_qi_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫論此,綱在「六腑以通為用,以降為順」:金刃所傷,耗氣動血——氣虛則大腸傳送無力,血瘀則腑氣澀滯;麻醉攻伐,脾胃受抑,運化暫廢;臥床少動,氣機不行。腑氣壅滯於中,濁陰不降,故腹脹、噁心、便閉不轉矢氣——此非燥屎內結之實秘,乃氣虛氣滯為主、虛實夾雜之證,攻下峻劑反傷正氣。治重補氣運脾、理氣通腑,佐活血;早進飲食、早下床即中醫「動則氣行」之理——兩醫學在此完全同向。",
+      "western_pathology_zh": "術後腸麻痺是腹部(及其他)手術後腸蠕動的暫時性停擺:腸道操作觸發腸壁巨噬細胞發炎反應,抑制平滑肌;手術應激活化交感抑制反射弧(內臟傳入-脊髓-交感傳出),抑制蠕動;鴉片類鎮痛藥作用於腸道 μ 受體,雪上加霜。三者疊加,小腸最先恢復、胃次之、結腸最晚——臨床以排氣排便恢復為終點。表現為腹脹、噁心、無排氣;超過預期時程(結腸性通常數日)須與機械性腸阻塞及腹腔併發症鑑別。加速康復外科的多項措施——微創、限制性輸液、減鴉片多模式鎮痛、早期進食與下床——都是針對上述機轉,咀嚼口香糖亦作為假飼刺激被研究。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -15982,7 +16605,39 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's frame here is \"the six bowels function by flowing through; descent is their proper order\": the metal blade's injury consumes qi and stirs blood — with qi deficient the large intestine lacks force to convey, with blood static the bowel qi runs astringed; anesthesia's assault suppresses spleen and stomach, halting transport; bed rest stills the qi dynamic. Bowel qi congests in the middle, turbid yin fails to descend — hence distension, nausea, and closure without passing gas. This is not the excess constipation of dry stool binding within, but a mixed pattern led by qi deficiency and qi stagnation, where drastic purgatives would only wound the upright. Treatment stresses boosting qi and moving the spleen, regulating qi and unblocking the bowels, with blood-invigorating assistance; early feeding and early ambulation are precisely the Chinese principle that \"movement moves qi\" — the two medicines point the same way here.",
+      "western_pathology_en": "Postoperative ileus is a temporary arrest of gut motility after abdominal (and other) surgery: bowel handling triggers an inflammatory response of muscularis macrophages that suppresses smooth muscle; surgical stress activates an inhibitory sympathetic reflex arc (visceral afferent-spinal-sympathetic efferent) that brakes peristalsis; and opioid analgesics acting on intestinal μ receptors compound both. The small bowel recovers first, stomach next, colon last — clinically the endpoint is return of flatus and stool. The picture is distension, nausea, and absent flatus; a course beyond expectation (colonic recovery usually within days) demands differentiation from mechanical obstruction and intra-abdominal complications. Enhanced-recovery measures — minimally invasive access, restrictive fluids, opioid-sparing multimodal analgesia, early feeding and mobilization — each target the mechanisms above; gum chewing has been studied as sham feeding.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(腹脹/便秘門,依六腑以通為用立論)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(腹脹/便秘門,依六腑以通為用立論)"
+        ],
+        "western_pathology_zh": [
+          "ERAS 學會 — 術後腸麻痺與加速康復通說"
+        ],
+        "western_pathology_en": [
+          "ERAS 學會 — 術後腸麻痺與加速康復通說"
+        ]
+      }
     },
     {
       "id": "cond.food_sensitivity",
@@ -15999,8 +16654,8 @@
         "pattern.food_stagnation"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「食滯」「腹痛」「泄瀉」論,病機重心在脾:脾胃素虛,運化無權,特定飲食(乳、麥、生冷肥甘)超其所能,水穀不化,清濁不分,混雜而下——脘腹脹痛、腸鳴泄瀉,量多則發、量少則安,正合「劑量依賴」之象。肝鬱乘脾者,症狀隨情志緊張波動,與腸躁重疊;寒濕困脾者遇生冷即發。此屬「脾虛不運、食滯不化」,非中醫「毒」之概念——治重健脾助運、消食化滯,佐溫中或疏肝隨證;脾運得復,所耐漸廣,不以長期禁絕為務。",
+      "western_pathology_zh": "食物不耐與食物過敏是不同機轉,鑑別是這張卡的臨床核心:過敏是免疫反應(IgE 介導者可致蕁麻疹、血管性水腫乃至過敏性休克,微量即發);不耐是非免疫機轉,症狀劑量依賴、多限於消化道。常見不耐機轉:乳糖酶缺乏——未分解乳糖進入結腸,滲透性腹瀉加細菌發酵產氣;FODMAP 類短鏈可發酵碳水化合物——同理引起脹氣腹瀉,是腸躁症飲食策略的標靶;組織胺不耐(DAO 酶活性不足)與食品添加物反應。乳糜瀉又另當別論——它是麩質觸發的自體免疫腸病,須血清學與切片確診,不可僅憑「吃了不舒服」歸類。自我報告的食物不耐盛行率遠高於客觀證實率,盲測激發才是金標準;長期無依據的剔除飲食有營養風險。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -16032,7 +16687,41 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from food stagnation, abdominal pain, and diarrhea, centering the mechanism on the spleen: a constitutionally weak spleen-stomach lacks transport capacity, so particular foods (dairy, wheat, raw-cold, rich-greasy) exceed what it can transform — grain and water go unprocessed, clear and turbid fail to separate and descend mixed — distending pain, borborygmi, diarrhea, flaring with larger amounts and quiet with small ones, exactly the dose-dependent image. Where liver constraint overrides the spleen, symptoms swing with emotional tension, overlapping irritable bowel; where cold-damp encumbers the spleen, raw-cold food sets it off. This is \"spleen deficiency failing to transport, food stagnating untransformed\" — not a Chinese-medicine notion of \"toxin.\" Treatment stresses fortifying the spleen and aiding transport, dispersing food and transforming stagnation, warming the middle or coursing the liver by pattern; as spleen transport recovers, tolerance widens — permanent prohibition is not the goal.",
+      "western_pathology_en": "Food intolerance and food allergy are different mechanisms, and telling them apart is this card's clinical core: allergy is immune (IgE-mediated forms bring urticaria, angioedema, even anaphylaxis, triggered by trace amounts); intolerance is non-immune, dose-dependent, and mostly confined to the gut. Common intolerance mechanisms: lactase deficiency — undigested lactose reaches the colon, osmotic diarrhea plus bacterial fermentation and gas; FODMAPs, the short-chain fermentable carbohydrates — same physics of bloating and diarrhea, the target of irritable-bowel dietary strategy; histamine intolerance (insufficient DAO activity) and additive reactions. Celiac disease stands apart — a gluten-triggered autoimmune enteropathy requiring serology and biopsy, never to be filed under \"food disagrees with me.\" Self-reported intolerance far outruns objectively confirmed rates — blinded challenge is the gold standard — and long unfounded elimination diets carry nutritional risk.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(食滯/泄瀉門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(食滯/泄瀉門)"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — 乳糖不耐通說;過敏/不耐/乳糜瀉鑑別為臨床通說",
+          "MedlinePlus — Food Allergy (https://medlineplus.gov/foodallergy.html)"
+        ],
+        "western_pathology_en": [
+          "NIDDK — 乳糖不耐通說;過敏/不耐/乳糜瀉鑑別為臨床通說",
+          "MedlinePlus — Food Allergy (https://medlineplus.gov/foodallergy.html)"
+        ]
+      }
     },
     {
       "id": "cond.insomnia",
