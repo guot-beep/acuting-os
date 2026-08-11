@@ -565,7 +565,7 @@ integrity from "caught after the fact" into physically-impossible-to-break,
 and it is what makes recording every practice case low-friction enough to
 actually sustain for three years. Then: "copy from last visit" pre-fill.
 
-## D18(PROPOSED,待 Ting 裁定)— SQLite 時程正式修訂
+## D18 — SQLite 時程正式修訂 · LOCKED(Ting 裁定接受,2026-08-11)
 
 **背景**:上方「One semester before clinic」段將 localStorage→SQLite 遷移
 deadline 訂在開診前假期。實際 2026-08 的工程順序是:C2b Patient 遷移鏈
@@ -583,4 +583,4 @@ localstorage_sqlite_mapping.json 持續逐欄維護是本提案的前提紀律)�
 fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料安全;
 (3) mapping 檔的維護讓延後不增加未來遷移成本。
 
-**Ting 裁定**:☐ 接受修訂 ☐ 維持原時程(開診前假期完成 SQLite)
+**Ting 裁定(2026-08-11)**:✅ 接受修訂 —— 9/5 前不做 SQLite;條件觸發制生效(病例 ≥50 / 多裝置需求 / 容量壓力,任一即啟動)。
