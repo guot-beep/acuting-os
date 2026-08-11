@@ -149,7 +149,25 @@
    * patientCode 的 guard 語意調整、case 建立時的 patient picker。
    * 衝突原則(D4):同 code 多 case 欄位不一致時,取 updatedAt 最新的非空值,
    * 但把全部相異值記進 conflicts —— 衍生層記錄分歧,不消滅分歧。 */
-  const PATIENT_FIELDS = ["birthYearMonth", "sex", "genderIdentity", "raceEthnicity", "raceEthnicityDetail", "occupation", "allergyStatus", "allergies"];
+  /* Codex 審計 HIGH#8 修正(docs/AI_REVIEW_FEEDBACK.md §8):
+   * 1) 補 birthYear —— legacy case 只有 birthYear 沒有 birthYearMonth,漏了它
+   *    抬升時這個值就永久丟失。
+   * 2) set-like 欄位(raceEthnicity)canonicalize 後再比 —— [a,b] 與 [b,a]
+   *    是同一事實,不是 conflict;但 winner 保留原順序,不重排使用者輸入。
+   * 3) conflict entry 帶 {value, caseId, updatedAt} 來源 —— 沒有出處的
+   *    conflict 清單無法人工裁決。
+   * 4) 缺 timestamp 或同 timestamp 時不自動選 winner —— latest-wins 需要
+   *    「latest」真實存在;比不出先後就把欄位留空 + needsReview,輸出人工
+   *    裁決清單,絕不假裝知道答案(D4)。 */
+  const PATIENT_FIELDS = ["birthYearMonth", "birthYear", "sex", "genderIdentity", "raceEthnicity", "raceEthnicityDetail", "occupation", "allergyStatus", "allergies"];
+  const SET_LIKE_FIELDS = new Set(["raceEthnicity"]);
+
+  function canonicalValue(field, raw) {
+    const v = raw ?? "";
+    if (SET_LIKE_FIELDS.has(field) && Array.isArray(v)) return JSON.stringify([...v].map(String).sort());
+    return JSON.stringify(v);
+  }
+  function isEmptyCanonical(cv) { return cv === '""' || cv === "[]" || cv === "0" || cv === "null"; }
 
   function derivePatientsFromCases(cases) {
     const byCode = new Map();
@@ -161,11 +179,26 @@
     }
     return [...byCode.entries()].map(([code, group]) => {
       const sorted = [...group].sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")));
-      const patient = { patientCode: code, caseIds: sorted.map((c) => c.id), caseCount: sorted.length, conflicts: {} };
+      const patient = { patientCode: code, caseIds: sorted.map((c) => c.id), caseCount: sorted.length, conflicts: {}, needsReview: [] };
       for (const f of PATIENT_FIELDS) {
-        const values = [...new Set(sorted.map((c) => JSON.stringify(c[f] ?? "")).filter((v) => v !== '""' && v !== "[]"))];
-        patient[f] = values.length ? JSON.parse((sorted.find((c) => JSON.stringify(c[f] ?? "") === values[0]) && values[0]) || '""') : "";
-        if (values.length > 1) patient.conflicts[f] = values.map((v) => JSON.parse(v));
+        const nonEmpty = sorted
+          .map((c) => ({ caseId: c.id, updatedAt: String(c.updatedAt || ""), value: c[f] ?? "", canonical: canonicalValue(f, c[f]) }))
+          .filter((e) => !isEmptyCanonical(e.canonical));
+        const distinct = [...new Set(nonEmpty.map((e) => e.canonical))];
+        if (distinct.length === 0) { patient[f] = ""; continue; }
+        if (distinct.length === 1) { patient[f] = nonEmpty[0].value; continue; }
+        // 真 conflict:記錄全部來源。
+        patient.conflicts[f] = nonEmpty.map((e) => ({ value: e.value, caseId: e.caseId, updatedAt: e.updatedAt }));
+        const candidates = nonEmpty.filter((e) => e.canonical !== nonEmpty[0].canonical);
+        const top = nonEmpty[0];
+        const rival = candidates[0];
+        // winner 只在「最新那筆有真實 timestamp 且嚴格晚於對手」時成立。
+        if (top.updatedAt && rival && rival.updatedAt && top.updatedAt > rival.updatedAt) {
+          patient[f] = top.value;
+        } else {
+          patient[f] = "";
+          patient.needsReview.push(f);
+        }
       }
       return patient;
     });

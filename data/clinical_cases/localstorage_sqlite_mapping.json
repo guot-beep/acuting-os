@@ -6,7 +6,8 @@
   "changelog": [
     "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered.",
     "2026-08: D17 tables landed in schema.sql (case_agent_exposures, case_environmental_exposures, visit_lifestyle_factors, visit_adverse_events, visit_pattern_differentials) plus visit_tcm_patterns.role/confidence and visit_outcomes.related_sym_id. localStorage-side keys are NOT yet written by the app — see planned_mappings_d17. Mapping entries move from planned to real when the B2 contract lands in normalizeCase/normalizeSoapNote.",
-    "2026-08: B-1 audit fix — case_exposure_events append-only history table; agentExposures[].events[] / environmentalExposures[].events[] added to the localStorage contract."
+    "2026-08: B-1 audit fix — case_exposure_events append-only history table; agentExposures[].events[] / environmentalExposures[].events[] added to the localStorage contract.",
+    "2026-08: Codex audit HIGH#1 — planned_mappings_d17 expanded to per-column entries; status advanced (B2 contract landed); exposure timestamp rule = preserve-missing; visit_tcm_patterns.note ruled ADD-to-contract (app edit queued behind Codex batch-2 WIP)."
   ],
   "policy": [
     "This file is a DESIGN, not a migration. No script reads it yet. It exists so the mapping is reviewable before it is executable — the H2 migration is a one-shot over real clinical data (D12), and a mapping decided inside a script is a mapping nobody reviewed.",
@@ -780,49 +781,372 @@
     ]
   },
   "planned_mappings_d17": {
-    "status": "schema_landed__localStorage_contract_pending",
-    "policy": "These localStorage keys do not exist yet. They are the D17 §E contract names reserved so the B2 normalize-layer batch and this mapping cannot drift. All additive; absence of a key in an old case means [] / \"\" per the existing normalizer rules, never a fabricated value.",
-    "entries": [
-      {
-        "localStorage": "case.agentExposures[]",
-        "table": "case_agent_exposures",
-        "note": "one ledger row per agent (drug.*|supp.*); visit-level change updates the SAME row (change_since_last, last_confirmed_visit_id) — D17 single-timeline rule"
-      },
-      {
-        "localStorage": "case.environmentalExposures[]",
-        "table": "case_environmental_exposures",
-        "note": "certainty x timing are two independent axes; suspected never auto-promotes to confirmed"
-      },
-      {
-        "localStorage": "soapNote.lifestyleFactors[]",
-        "table": "visit_lifestyle_factors",
-        "note": "per-visit observed behavior rows; trajectory = the rows, current = latest row; never derives a pattern"
-      },
-      {
-        "localStorage": "soapNote.adverseEvents[]",
-        "table": "visit_adverse_events",
-        "note": "linked to the visit where reported; modality_id/intervention_ref_id optional sharpeners"
-      },
-      {
-        "localStorage": "soapNote.patternDifferentials[]",
-        "table": "visit_pattern_differentials",
-        "note": "considered-then-ruled-out is preserved; distinct from tcmPatternSelections (working patterns)"
-      },
-      {
-        "localStorage": "soapNote.tcmPatternSelections[].role / .confidence",
-        "table": "visit_tcm_patterns.role / .confidence",
-        "note": "MVP vocabulary primary|secondary; root|branch reserved; is_primary stays and must agree with role at write time"
-      },
-      {
-        "localStorage": "soapNote.outcomeMetrics[].relatedSymId",
-        "table": "visit_outcomes.related_sym_id",
-        "note": "optional symptom anchor for a measurement (D17 §3: sym.* and metric.* complementary)"
-      },
-      {
-        "localStorage": "case.agentExposures[].events[] / case.environmentalExposures[].events[]",
-        "table": "case_exposure_events",
-        "note": "append-only; any snapshot change MUST append one event with the NEW values; no update/delete path may exist (AUDIT_PHASE_B_2026-08-12 B-1)"
-      }
-    ]
+    "status": "contract_landed__migration_script_NOT_implemented",
+    "policy": [
+      "B2 契約已落地:下列 localStorage keys 已由 normalizeClinicalCase/normalizeSoapNote 正規化並被 UI 寫入。migration script 仍未實作(C2b NO-GO 中)。",
+      "Timestamp 規則(Codex HIGH#1/#6):created_at/updated_at 在 localStorage 端沒有對應值時,migration 寫 NULL —— 保留缺失,絕不在遷移當下補現在時間。normalizer 的讀路徑同樣不合成(app.js 修正排在 Codex batch-2 WIP 之後)。",
+      "visit_tcm_patterns.note 裁決:採 ADD —— tcmPatternSelections[] 追加選填 note 鍵(app.js 編輯佇列中);在落地前,migration 對該欄寫 NULL。"
+    ],
+    "tables": {
+      "case_agent_exposures": [
+        {
+          "localStorage": "case.agentExposures[].id",
+          "column": "id"
+        },
+        {
+          "localStorage": "(case.id)",
+          "column": "case_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": ".agentType",
+          "column": "agent_type"
+        },
+        {
+          "localStorage": ".agentId",
+          "column": "agent_id"
+        },
+        {
+          "localStorage": ".nameText",
+          "column": "name_text"
+        },
+        {
+          "localStorage": ".doseText",
+          "column": "dose_text"
+        },
+        {
+          "localStorage": ".frequencyText",
+          "column": "frequency_text"
+        },
+        {
+          "localStorage": ".route",
+          "column": "route"
+        },
+        {
+          "localStorage": ".startApprox",
+          "column": "start_approx"
+        },
+        {
+          "localStorage": ".stopApprox",
+          "column": "stop_approx"
+        },
+        {
+          "localStorage": ".status",
+          "column": "status"
+        },
+        {
+          "localStorage": ".indicationText",
+          "column": "indication_text"
+        },
+        {
+          "localStorage": ".adherenceNote",
+          "column": "adherence_note"
+        },
+        {
+          "localStorage": ".infoSource",
+          "column": "info_source"
+        },
+        {
+          "localStorage": ".firstNotedVisitId",
+          "column": "first_noted_visit_id"
+        },
+        {
+          "localStorage": ".lastConfirmedVisitId",
+          "column": "last_confirmed_visit_id"
+        },
+        {
+          "localStorage": ".changeSinceLast",
+          "column": "change_since_last"
+        },
+        {
+          "localStorage": ".changeNote",
+          "column": "change_note"
+        },
+        {
+          "localStorage": ".notes",
+          "column": "notes"
+        },
+        {
+          "localStorage": "(absent)",
+          "column": "created_at",
+          "note": "NULL when missing — preserve-missing rule"
+        },
+        {
+          "localStorage": "(absent)",
+          "column": "updated_at",
+          "note": "NULL when missing"
+        }
+      ],
+      "case_environmental_exposures": [
+        {
+          "localStorage": "case.environmentalExposures[].id",
+          "column": "id"
+        },
+        {
+          "localStorage": "(case.id)",
+          "column": "case_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": ".exposureId",
+          "column": "exposure_id"
+        },
+        {
+          "localStorage": ".nameText",
+          "column": "name_text"
+        },
+        {
+          "localStorage": ".certainty",
+          "column": "certainty"
+        },
+        {
+          "localStorage": ".timing",
+          "column": "timing"
+        },
+        {
+          "localStorage": ".startApprox",
+          "column": "start_approx"
+        },
+        {
+          "localStorage": ".endApprox",
+          "column": "end_approx"
+        },
+        {
+          "localStorage": ".contextText",
+          "column": "context_text"
+        },
+        {
+          "localStorage": ".firstNotedVisitId",
+          "column": "first_noted_visit_id"
+        },
+        {
+          "localStorage": ".lastConfirmedVisitId",
+          "column": "last_confirmed_visit_id"
+        },
+        {
+          "localStorage": ".changeSinceLast",
+          "column": "change_since_last"
+        },
+        {
+          "localStorage": ".notes",
+          "column": "notes"
+        },
+        {
+          "localStorage": "(absent)",
+          "column": "created_at",
+          "note": "NULL when missing"
+        },
+        {
+          "localStorage": "(absent)",
+          "column": "updated_at",
+          "note": "NULL when missing"
+        }
+      ],
+      "case_exposure_events": [
+        {
+          "localStorage": "…agentExposures[].events[].id / …environmentalExposures[].events[].id",
+          "column": "id"
+        },
+        {
+          "localStorage": "(case.id)",
+          "column": "case_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": "(parent array)",
+          "column": "parent_type",
+          "note": "agent | environmental from which array"
+        },
+        {
+          "localStorage": "(parent row id)",
+          "column": "parent_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": ".visitId",
+          "column": "visit_id"
+        },
+        {
+          "localStorage": ".eventType",
+          "column": "event_type"
+        },
+        {
+          "localStorage": ".doseText (agent only)",
+          "column": "dose_text"
+        },
+        {
+          "localStorage": ".frequencyText (agent only)",
+          "column": "frequency_text"
+        },
+        {
+          "localStorage": ".status (agent only)",
+          "column": "status"
+        },
+        {
+          "localStorage": ".certainty (env only)",
+          "column": "certainty"
+        },
+        {
+          "localStorage": ".timing (env only)",
+          "column": "timing"
+        },
+        {
+          "localStorage": ".effectiveApprox",
+          "column": "effective_approx"
+        },
+        {
+          "localStorage": ".note",
+          "column": "note"
+        },
+        {
+          "localStorage": ".createdAt (\"\" → NULL)",
+          "column": "created_at",
+          "note": "preserve-missing"
+        }
+      ],
+      "visit_lifestyle_factors": [
+        {
+          "localStorage": "soapNote.lifestyleFactors[].id",
+          "column": "id"
+        },
+        {
+          "localStorage": "(soapNote.id)",
+          "column": "visit_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": ".factorId",
+          "column": "factor_id"
+        },
+        {
+          "localStorage": ".nameText",
+          "column": "name_text"
+        },
+        {
+          "localStorage": ".valueNumber (\"\" → NULL)",
+          "column": "value_number"
+        },
+        {
+          "localStorage": ".unit",
+          "column": "unit"
+        },
+        {
+          "localStorage": ".valueText",
+          "column": "value_text"
+        },
+        {
+          "localStorage": ".frequencyText",
+          "column": "frequency_text"
+        },
+        {
+          "localStorage": ".changeSinceLast",
+          "column": "change_since_last"
+        },
+        {
+          "localStorage": ".notes",
+          "column": "notes"
+        }
+      ],
+      "visit_adverse_events": [
+        {
+          "localStorage": "soapNote.adverseEvents[].id",
+          "column": "id"
+        },
+        {
+          "localStorage": "(soapNote.id)",
+          "column": "visit_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": ".eventId",
+          "column": "event_id"
+        },
+        {
+          "localStorage": ".nameText",
+          "column": "name_text"
+        },
+        {
+          "localStorage": ".interventionType",
+          "column": "intervention_type"
+        },
+        {
+          "localStorage": ".modalityId",
+          "column": "modality_id"
+        },
+        {
+          "localStorage": ".interventionRefId",
+          "column": "intervention_ref_id"
+        },
+        {
+          "localStorage": ".severity",
+          "column": "severity"
+        },
+        {
+          "localStorage": ".onsetText",
+          "column": "onset_text"
+        },
+        {
+          "localStorage": ".status",
+          "column": "status"
+        },
+        {
+          "localStorage": ".resolutionStatus",
+          "column": "resolution_status"
+        },
+        {
+          "localStorage": ".resolvedDate",
+          "column": "resolved_date"
+        },
+        {
+          "localStorage": ".notes",
+          "column": "notes"
+        }
+      ],
+      "visit_pattern_differentials": [
+        {
+          "localStorage": "soapNote.patternDifferentials[].patternId",
+          "column": "pattern_id"
+        },
+        {
+          "localStorage": "(soapNote.id)",
+          "column": "visit_id",
+          "note": "parent context"
+        },
+        {
+          "localStorage": ".ruledOut (bool → 0/1)",
+          "column": "ruled_out"
+        },
+        {
+          "localStorage": ".note",
+          "column": "note"
+        }
+      ],
+      "visit_tcm_patterns_additions": [
+        {
+          "localStorage": "soapNote.tcmPatternSelections[].role",
+          "column": "role"
+        },
+        {
+          "localStorage": ".confidence",
+          "column": "confidence"
+        },
+        {
+          "localStorage": ".isPrimary (bool → 0/1)",
+          "column": "is_primary",
+          "note": "must agree with role — validate-clinical-invariants.js R1/R2"
+        },
+        {
+          "localStorage": ".note (PLANNED — key not in contract yet)",
+          "column": "note",
+          "note": "ruled ADD; NULL until app edit lands"
+        }
+      ],
+      "visit_outcomes_additions": [
+        {
+          "localStorage": "soapNote.outcomeMetrics[].relatedSymId",
+          "column": "related_sym_id"
+        }
+      ]
+    }
   }
 }
