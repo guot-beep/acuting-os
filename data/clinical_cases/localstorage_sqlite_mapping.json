@@ -1200,7 +1200,11 @@
           "localStorage": "soapNote.outcomeMetrics[].relatedSymId",
           "column": "related_sym_id"
         }
-      ]
+      ],
+      "case_measurements": {
+        "status": "reserved",
+        "note": "R3 name reservation (ACUTING_OS_3_YEAR_ARCHITECTURE_2026_2029.md): case.measurements[] = non-visit-anchored measurements (self-tracking/wearable/previsit-unconfirmed). Shape = outcomeMetrics row + measuredAt (ISO or D4-coarse) + source (self_report|wearable|previsit|device). Purely additive when implemented; no other feature may claim this key."
+      }
     }
   }
 }

@@ -11,6 +11,14 @@
 - **其他線(tdis/sym/pattern/supp/drug/…)越多越好**:優先建立**完整架構
   與卡片框架(skeleton)**,讓病例先找得到索引;內容之後有時間再補深。
   skeleton 卡照各線模板的 skeleton 標準與 review_status 誠實標記,絕不假裝有內容。
+- **CR 編號消歧義(2026-08-11,SOL 發現撞號)**:repo 是唯一權威 CR 註冊處。
+  **CR-010 = conditions 常用-300 detail 素材 delta**(本檔 + RESEARCH_ASSET_INDEX +
+  DO_NOT_USE_SUPERSEDED 三處一致)。別的對話裡出現過的「CR-010 = User
+  Dashboard & Data Visualization MVP」是**頻道外定義,作廢重編**:該需求
+  改登記為 **CR-015(User Dashboard & DataViz MVP)** —— 且註明其大部分
+  已由 2026-08-11 優化衝刺交付(Visit Brief、Timeline 泳道、Outcome
+  Tracking、quality 頁即時矩陣、首頁磁貼);剩餘缺口待 Ting 點名。
+  今後 CR 編號只在 repo 發放,對話裡先討論、repo 落號才算數。
 - **SOL 佇列序列化(2026-08-11 Ting 裁定:一次只做一個系列,不並行多系列)**:
   1. **現在只做 CR-010**:conditions 常用-300 detail 素材(現有 id 以
      data/pathology/condition_canon_shortlist.json 為準,只送 delta;
