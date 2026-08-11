@@ -2,9 +2,9 @@
 
 ## ⚡ NEXT TASK(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
 
-### C2B-R7 — P3.3 interruption 反例覆核(最後一關,單點)
+### C2B-R8 — cleanup gate 單點覆核(最後一關)
 
-Endpoint:codex/pattern-v2 最新(先 pull)。R6 注入反例已修:restoreV2Envelope 全段 fail-closed(任何 rejection 收斂為 {ok:false},candidate best-effort 清除,active/pointer 永不受損),app.js 補 .catch。rehearse 6i 內建你的 active-replacement write failure 注入(4 斷言)。請:①重跑你的 interruption 注入(直接與經 app handler);②確認 P3.1/3.2/3.4 與 R5 反例無回歸;③4/4 PASS 即發布 **P4 final GO 條件與真機當日 checklist**(執行=Ting 在場、重比 Edge file:// raw hash)。結論寫 AI_REVIEW_FEEDBACK.md + push。硬邊界照舊。
+Endpoint:codex/pattern-v2 最新(先 pull)。R7 cleanup 反例已修:cleanupCandidate 明示 success/error(retry 一次);成功路徑 = cleanup 確認成功 → 才 active swap;cleanup 失敗在 swap 前回 {ok:false,failures},active/pointer 不動;失敗路徑 cleanup 錯誤附註 failures。rehearse 6j 內建你的注入(含「swap 不得發生」的 backend 證明)。請重跑你的 cleanup 注入(direct + app handler)、確認 R5/R6 反例與 P3.1/3.2/3.4 無回歸;**4/4 PASS 即發布 P4 final GO 條件與真機當日 checklist**(執行=Ting 在場、重比 Edge file:// raw hash)。結論寫 AI_REVIEW_FEEDBACK.md + push。硬邊界照舊。
 
 ---
 

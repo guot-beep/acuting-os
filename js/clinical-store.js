@@ -353,8 +353,21 @@
     // rejection/exception(含 candidate write、plan/hash、active 替換、
     // cleanup 自身)都收斂成 {ok:false, failures},candidate 一律 best-effort
     // 清除,active staging/pointer 保持原值。呼叫端永遠拿到可顯示的結果。
-    const cleanupCandidate = () => { try { removeKey(CANDIDATE_KEY); } catch { /* best-effort */ } };
-    const fail = (failures) => { cleanupCandidate(); return { ok: false, failures }; };
+    // Codex R7 修正 gate:cleanup 不是 best-effort 裝飾 —— 它有明示的
+    // success/error 回傳,且在成功路徑上「先清 candidate 並確認成功,才做
+    // active 替換」。允許一次 retry;清不掉就 {ok:false},絕不吞錯回 ok:true。
+    const cleanupCandidate = () => {
+      try { removeKey(CANDIDATE_KEY); return { ok: true }; }
+      catch (e1) {
+        try { removeKey(CANDIDATE_KEY); return { ok: true, retried: true }; }
+        catch (e2) { return { ok: false, error: (e2 && e2.message) || String(e2) }; }
+      }
+    };
+    const fail = (failures) => {
+      const c = cleanupCandidate();
+      if (!c.ok) failures = [...failures, "additionally, candidate cleanup failed: " + c.error];
+      return { ok: false, failures };
+    };
     try {
       let env;
       try { env = JSON.parse(envelopeText); } catch { return fail(["envelope is not valid JSON"]); }
@@ -373,9 +386,12 @@
       catch (e) { return fail(["hashing failed: " + e.message]); }
       const v = verifyStagingObject(env, rawText, rawHash, plan);
       if (!v.ok) return fail(v.failures);
+      // 順序是 gate 本體:cleanup 先行且必須確認成功,active 替換才准發生
+      // (Codex R7)。cleanup 失敗 → active 原封不動地 fail closed。
+      const c = cleanupCandidate();
+      if (!c.ok) return { ok: false, failures: ["candidate cleanup failed before active swap — active staging/pointer untouched: " + c.error] };
       try { writeKey(STAGING_KEY, JSON.stringify(env)); }   // 單一 setItem = 原子替換
-      catch (e) { return fail(["active staging replacement failed — original staging/pointer untouched: " + e.message]); }
-      cleanupCandidate();
+      catch (e) { return { ok: false, failures: ["active staging replacement failed — original staging/pointer untouched: " + e.message] }; }
       return { ok: true, patients: env.patients.length, cases: env.cases.length };
     } catch (e) {
       return fail(["unexpected restore failure: " + (e && e.message || String(e))]);

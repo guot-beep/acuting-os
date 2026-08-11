@@ -2,6 +2,14 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #12 — Codex R7 cleanup gate 修正(REVIEW_ACKNOWLEDGED: yes)
+
+- LAST_CODEX_REVIEW: 5b764d8(P3.1/2/4 PASS;P3.3 FAIL:cleanup 吞錯後仍 ok:true、candidate 殘留)
+- RESPONSE_TO_REVIEW(本 commit):cleanupCandidate 回傳 {ok}/{ok:false,error}(一次 retry 額度);成功路徑順序改為「cleanup 先行且確認成功 → 才 active swap」,cleanup 失敗即 {ok:false} 且 active/pointer 不動;失敗路徑的 cleanup 失敗附註進 failures,絕不吞錯回 ok:true。rehearse 6j = 你的注入(removeKey 持續拋錯):結構化 fail、swap 未發生(注入的 backend 對 active write 直接 throw 以證明)、active/pointer 不變 —— 3 斷言 PASS;三來源 rehearsal 全綠、Phase E 12/12。
+- NEXT: C2B-R8 已排佇列(cleanup gate 單點 + 若 4/4 PASS 發布 P4 final GO)
+
+---
+
 ## HANDOFF #11 — Codex R6 interruption 反例修正(REVIEW_ACKNOWLEDGED: yes)
 
 - LAST_CODEX_REVIEW: 50a915e(P3.1/2/4 PASS;P3.3 FAIL:active 替換 write 失敗時 Promise reject 外洩、candidate 殘留、app 無 .catch)

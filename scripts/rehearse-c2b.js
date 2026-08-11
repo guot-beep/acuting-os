@@ -195,6 +195,40 @@ await (async () => {
   check("active staging unchanged after injected failure", kv.get(S.STAGING_KEY) === activeBefore);
   check("pointer unchanged after injected failure", kv.get(S.POINTER_KEY) === pointerBefore);
   check("candidate absent after injected failure", kv.get(S.CANDIDATE_KEY) === undefined);
+
+  // 6j. Codex R7 注入反例:full verify 後 candidate cleanup(removeKey)持續
+  //     拋錯 —— 必須在 active 替換「之前」回 {ok:false}(結構化、含 cleanup
+  //     字樣)、active/pointer 不變、無外洩。cleanup 有一次 retry 額度,所以
+  //     注入為「永遠拋錯」以測 retry 用盡後的 fail-closed。
+  {
+    const activeB4 = kv.get(S.STAGING_KEY), pointerB4 = kv.get(S.POINTER_KEY);
+    S.setBackend({
+      read() { return kv.get("acuting-clinical-cases-v1") ?? null; },
+      write() { throw new Error("REHEARSAL VIOLATION: v1 write"); },
+      readKey(k) { return kv.get(k) ?? null; },
+      writeKey(k, v) {
+        if (k === S.STAGING_KEY) throw new Error("REHEARSAL VIOLATION: active swap must not happen when cleanup fails");
+        touched.push(["write", k]); kv.set(k, v);
+      },
+      removeKey(k) {
+        if (k === S.CANDIDATE_KEY) throw new Error("injected cleanup failure");
+        touched.push(["remove", k]); kv.delete(k);
+      }
+    });
+    let escaped6j = false, r4 = null;
+    try { r4 = await S.restoreV2Envelope(activeB4, async (t) => sha256(t)); } catch { escaped6j = true; }
+    S.setBackend({
+      read() { return kv.get("acuting-clinical-cases-v1") ?? null; },
+      write() { throw new Error("REHEARSAL VIOLATION: attempted write to v1 case key"); },
+      readKey(k) { return kv.get(k) ?? null; },
+      writeKey(k, v) { touched.push(["write", k]); kv.set(k, v); },
+      removeKey(k) { touched.push(["remove", k]); kv.delete(k); }
+    });
+    check("cleanup failure -> structured ok:false BEFORE active swap (Codex R7)", escaped6j === false && r4 && r4.ok === false && r4.failures.some((f) => f.includes("cleanup failed")));
+    check("active staging unchanged after cleanup failure", kv.get(S.STAGING_KEY) === activeB4);
+    check("pointer unchanged after cleanup failure", kv.get(S.POINTER_KEY) === pointerB4);
+    kv.delete(S.CANDIDATE_KEY);   // 注入使 remove 失效,測後手動清場
+  }
 })();
 
 // 7. rollback
