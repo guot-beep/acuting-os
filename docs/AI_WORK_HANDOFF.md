@@ -4,15 +4,15 @@
 
 ## HANDOFF #5 — Codex 審計全項回應(REVIEW_ACKNOWLEDGED: yes)
 
-- LAST_CODEX_REVIEW: commit (PAUSE / C2b NO-GO,1 BLOCKER·4 HIGH·3 MEDIUM)
+- LAST_CODEX_REVIEW: commit `ae91a7e`(PAUSE / C2b NO-GO,1 BLOCKER·4 HIGH·3 MEDIUM)
 - RESPONSE_TO_REVIEW:
-  - HIGH#8 → (derivation:+birthYear、canonical set compare、conflict 來源、needsReview)
-  - MED#4+HIGH#2 spec →  (R1–R8+--prefix-check)
-  - HIGH#1 →  mapping 逐欄(對照表逐數一致)+ note 裁決 ADD
-  - BLOCKER#9 →  (A–D 全落;C2b 維持 NO-GO 待重審)
-  - HIGH#6 → (讀路徑零合成;save 站僅新記錄蓋戳)
-  - HIGH#2 → (import merge/restore;merge 強制 prefix-extend;restore 雙確認+自動備份)
-  - batch-2 WIP →  審核落地;實作者遺留假病例已清(34→33,證據入 log)
+  - HIGH#8 → `23b310d`(derivation:+birthYear、canonical set compare、conflict 來源、needsReview)
+  - MED#4+HIGH#2 spec → `23b310d` scripts/validate-clinical-invariants.js(R1–R8+--prefix-check)
+  - HIGH#1 → `23b310d` mapping 逐欄(對照表逐數一致)+ note 裁決 ADD
+  - BLOCKER#9 → `23b310d` docs/C2B_MIGRATION_PLAN.md(A–D 全落;C2b 維持 NO-GO 待重審)
+  - HIGH#6 → `b90cd7c`(讀路徑零合成;save 站僅新記錄蓋戳)
+  - HIGH#2 → `b90cd7c`(import merge/restore;merge 強制 prefix-extend;restore 雙確認+自動備份)
+  - batch-2 WIP → `5e58867` 審核落地;實作者遺留假病例已清(34→33,證據入 log)
 - 未結:R1–R5 接進 import 前驗證與 CI/ratchet;MED#7 的 raw backup preflight 屬 C2b 計畫 A 段
 - NEXT: 等 Codex 對計畫+修正重審;期間可做 migrate-c2b.js dry-run(假資料)
 - ROUTING: Fable=migrate-c2b.js;Sonnet=R1–R5 import 接線+CI wiring;Codex=重審;Opus=no
