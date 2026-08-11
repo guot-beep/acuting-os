@@ -1,5 +1,18 @@
 # AI WORK HANDOFF(Claude → SOL)
 
+## ⛔ C2b 真機執行凍結(2026-08-11 獨立審計,Fable 已親驗)
+
+docs/INDEPENDENT_AUDIT_2026-08-11.md 發現:**runtime load/save 不看 pointer**
+(js/clinical-store.js load()/save() 直讀寫 v1;app.js export 卻看 pointer)。
+照 P4 執行 pointer switch = 新病歷寫進 v1、export 輸出凍結 staging → 靜默分叉。
+八輪審計皆審遷移機器,無人審切換後 runtime 契約。
+**在 pointer-aware runtime 落地 + Codex R9 覆核前,禁止真機切換。**
+GO 的四個 blob id 將因修復而失效 → R9 為新 gate。
+配套修復佇列(審計 TOP-10):one-code-one-case 解鎖、persist try/catch+quota、
+drug.* picker 接線、mojibake ×4、Sunten 樣板劑量 58 筆、SQLite 時程決策記錄。
+
+
+
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
 ## HANDOFF #18 — 知識庫全線里程碑(2026-08-11 晚)
