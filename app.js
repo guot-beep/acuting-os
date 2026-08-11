@@ -5121,8 +5121,12 @@ function normalizeClinicalCase(value) {
       : [],
     summary: String(value.summary || ""),
     soapNotes: Array.isArray(value.soapNotes) ? value.soapNotes.map(normalizeSoapNote) : [],
-    createdAt: String(value.createdAt || new Date().toISOString()),
-    updatedAt: String(value.updatedAt || new Date().toISOString())
+    // Codex audit HIGH#6: the READ path never synthesizes timestamps. A legacy
+    // record missing createdAt/updatedAt keeps "" — C2a's latest-wins and the
+    // C2b migration read these fields, and a load-time new Date() would
+    // disguise "unknown age" as "newest". Write sites stamp explicitly.
+    createdAt: String(value.createdAt || ""),
+    updatedAt: String(value.updatedAt || "")
   };
 }
 
@@ -5181,9 +5185,14 @@ function normalizeSoapNote(value) {
             patternId: String(e.patternId),
             isPrimary: !!e.isPrimary,
             role: String(e.role || ""),
-            confidence: String(e.confidence || "")
+            confidence: String(e.confidence || ""),
+            // Codex HIGH#1 ruling: visit_tcm_patterns.note maps to this key
+            // (per-selection clinical note), ADDed to the contract rather than
+            // dropped from the schema. No form field yet — carried like
+            // confidence until the UI grows one.
+            note: String(e.note || "")
           }))
-      : normalizeStringList(value.tcmPatternLinks).map((id) => ({ patternId: id, isPrimary: false, role: "", confidence: "" })),
+      : normalizeStringList(value.tcmPatternLinks).map((id) => ({ patternId: id, isPrimary: false, role: "", confidence: "", note: "" })),
     // D17 §4 — differential candidates are NOT working patterns. Patterns the
     // clinician CONSIDERED this visit (possibly ruled out) live here; adopted
     // conclusions live in tcmPatternSelections above. Same id in both =
@@ -5292,8 +5301,12 @@ function normalizeSoapNote(value) {
     differentialConsidered: String(value.differentialConsidered || ""),
     reflection: String(value.reflection || ""),
     ifIneffectivePlan: String(value.ifIneffectivePlan || ""),
-    createdAt: String(value.createdAt || new Date().toISOString()),
-    updatedAt: String(value.updatedAt || new Date().toISOString())
+    // Codex audit HIGH#6: the READ path never synthesizes timestamps. A legacy
+    // record missing createdAt/updatedAt keeps "" — C2a's latest-wins and the
+    // C2b migration read these fields, and a load-time new Date() would
+    // disguise "unknown age" as "newest". Write sites stamp explicitly.
+    createdAt: String(value.createdAt || ""),
+    updatedAt: String(value.updatedAt || "")
   };
 }
 
@@ -6848,7 +6861,10 @@ function saveCaseFromForm(event) {
     tcmPatterns: splitList(data.tcmPatterns),
     safetyFlags: splitList(data.safetyFlags),
     summary: data.summary.trim(),
-    createdAt: current?.createdAt || now,
+    // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
+    // missing stays missing — stamping edit-time here would falsify creation
+    // time. Only a genuinely NEW record gets createdAt = now.
+    createdAt: current ? String(current.createdAt || "") : now,
     updatedAt: now,
     soapNotes: current?.soapNotes || []
   });
@@ -7108,11 +7124,13 @@ function saveSoapFromForm(event) {
   // automatically. confidence has no form field yet, so it is CARRIED OVER
   // from the current note's entry for the same patternId rather than being
   // silently stripped by this rebuild.
-  const priorConfidence = (patternId) =>
-    (current?.tcmPatternSelections || []).find((e) => e.patternId === patternId)?.confidence || "";
+  const priorSelection = (patternId) =>
+    (current?.tcmPatternSelections || []).find((e) => e.patternId === patternId) || {};
+  const priorConfidence = (patternId) => priorSelection(patternId).confidence || "";
+  const priorNote = (patternId) => priorSelection(patternId).note || "";
   const tcmPatternSelections = [
-    ...(tcmPrimaryId ? [{ patternId: tcmPrimaryId, isPrimary: true, role: "primary", confidence: priorConfidence(tcmPrimaryId) }] : []),
-    ...tcmSecondaryIds.map((id) => ({ patternId: id, isPrimary: false, role: "secondary", confidence: priorConfidence(id) })),
+    ...(tcmPrimaryId ? [{ patternId: tcmPrimaryId, isPrimary: true, role: "primary", confidence: priorConfidence(tcmPrimaryId), note: priorNote(tcmPrimaryId) }] : []),
+    ...tcmSecondaryIds.map((id) => ({ patternId: id, isPrimary: false, role: "secondary", confidence: priorConfidence(id), note: priorNote(id) })),
   ];
   // Derived, not typed — see the tcmPatternLinks comment in normalizeSoapNote.
   const tcmPatternLinksDerived = tcmPatternSelections.map((e) => e.patternId);
@@ -7165,7 +7183,10 @@ function saveSoapFromForm(event) {
     differentialConsidered: (data.differentialConsidered || "").trim(),
     reflection: (data.reflection || "").trim(),
     ifIneffectivePlan: (data.ifIneffectivePlan || "").trim(),
-    createdAt: current?.createdAt || now,
+    // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
+    // missing stays missing — stamping edit-time here would falsify creation
+    // time. Only a genuinely NEW record gets createdAt = now.
+    createdAt: current ? String(current.createdAt || "") : now,
     updatedAt: now
   });
 
@@ -7205,6 +7226,42 @@ function exportClinicalCases() {
   markCasesBackedUp();   // CS1: reset backup age + save counter
 }
 
+// Codex audit HIGH#2: import was a silent replace-all — a hand-edited file
+// could delete cases or rewrite/truncate exposure event history with no
+// trace, which voided the append-only invariant globally. Split into two
+// explicit modes:
+//   merge   — default. Existing cases keep their identity; an incoming case
+//             with a matching id may only EXTEND exposure histories: for every
+//             exposure row present on both sides, the existing event sequence
+//             must be a prefix of the incoming one, else the whole import is
+//             rejected (nothing partially applied). New case ids are added.
+//   restore — replace-all, for disaster recovery only. Requires an explicit
+//             second confirmation AND auto-downloads a backup of the current
+//             store first, so the pre-restore state is never unrecoverable.
+function exposureEventSeq(row) {
+  return (row.events || []).map((e) => e.id || e.createdAt || e.eventType).join("→");
+}
+
+function findImportHistoryViolations(existingCases, incomingCases) {
+  const violations = [];
+  const byId = new Map(existingCases.map((c) => [c.id, c]));
+  for (const inc of incomingCases) {
+    const cur = byId.get(inc.id);
+    if (!cur) continue;
+    for (const field of ["agentExposures", "environmentalExposures"]) {
+      const incRows = new Map((inc[field] || []).map((r) => [r.id, r]));
+      for (const row of cur[field] || []) {
+        const incRow = incRows.get(row.id);
+        if (!incRow) { violations.push(`${inc.id}/${field}/${row.id}: exposure row missing from import`); continue; }
+        if (!exposureEventSeq(incRow).startsWith(exposureEventSeq(row))) {
+          violations.push(`${inc.id}/${field}/${row.id}: event history rewritten or truncated`);
+        }
+      }
+    }
+  }
+  return violations;
+}
+
 function importClinicalCases(event) {
   const file = event.target.files[0];
   if (!file) return;
@@ -7213,7 +7270,33 @@ function importClinicalCases(event) {
     try {
       const imported = JSON.parse(reader.result);
       if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
-      clinicalCases = imported.map(normalizeClinicalCase);
+      const incoming = imported.map(normalizeClinicalCase);
+      // OK = merge(安全預設), Cancel = restore(整包覆蓋)。
+      const restoreMode = !window.confirm(
+        "匯入模式 Import mode:\n\n【確定 OK】= 合併 Merge(安全:保留現有病例,只新增/延伸)\n【取消 Cancel】= 完整還原 Restore(整包覆蓋,僅災難復原用)"
+      );
+      if (!restoreMode) {
+        const violations = findImportHistoryViolations(clinicalCases, incoming);
+        if (violations.length) {
+          alert(`合併被拒絕 Merge rejected — ${violations.length} 筆事件歷史會被改寫/截短:\n\n${violations.slice(0, 5).join("\n")}${violations.length > 5 ? "\n…" : ""}\n\n事件歷史只能延伸,不能改寫(append-only)。若這是刻意的災難復原,請改用 Restore 模式。`);
+          return;
+        }
+        const byId = new Map(clinicalCases.map((c) => [c.id, c]));
+        for (const inc of incoming) byId.set(inc.id, inc);
+        clinicalCases = [...byId.values()];
+      } else {
+        const really = window.confirm(
+          `⚠️ Restore 會以匯入檔完整取代現有 ${clinicalCases.length} 個病例。\n\n目前資料會先自動下載一份備份。確定要覆蓋?`
+        );
+        if (!really) return;
+        const backupBlob = new Blob([JSON.stringify(clinicalCases, null, 2)], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(backupBlob);
+        a.download = `acuting-cases-pre-restore-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.json`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        clinicalCases = incoming;
+      }
       selectedCaseId = clinicalCases[0]?.id || "";
       persistClinicalCases();
       render();

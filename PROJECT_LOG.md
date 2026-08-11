@@ -3244,3 +3244,10 @@ Current repo state as of this log:
 - 更正:08-11 的 5 個 wrangler 版本上傳是 **Ting 本人**所為(非 Codex/SOL),無安全疑慮。
 - Ting 已在 Dashboard 完成 GitHub Connect(官方文件確認 Builds 設定僅 Dashboard 可操作,無公開 API——先前 API 探測 12000 是預期行為)。
 - 本 commit 兼作管線驗證觸發:push 後 Workers Builds 應對 codex/pattern-v2 產生 preview 版本(versions API 可查),production 只在 main 更新時觸發(等 Codex GO 後首次落地時驗證)。
+
+# 2026-08-11 Fable — Codex 審計回應完成(兩批)+ batch-2 審核落地
+
+- **批1(23b310d)**:C2a 衍生修正(HIGH#8:+birthYear、set 欄 canonicalize、conflict 帶來源、缺/同 timestamp 不選 winner→needsReview,5 項迴歸測試過)· `validate-clinical-invariants.js`(R1–R8 含 --prefix-check,good/bad/truncated fixtures 自測 5 類違規全抓)· mapping 逐欄展開(21/15/14/10/13/4 與審計對照表一致;timestamps=preserve-missing;pattern note 裁決=ADD)· `C2B_MIGRATION_PLAN.md`(BLOCKER#9 的 A–D 全落計畫,C2b 仍 NO-GO 等 Codex 重審)。
+- **batch-2 審核(5e58867,Codex 實作、Fable 審)**:SOAP 生活型態/不良反應列 + 五詞彙入 bundle(8/26/9/8/8)。實查發現實作者遺留假病例 `case_phaseD2_test` 於真實 store(34→33 清理,同時取得持久化證據:coffee 3 cups/day、bruising/mild/resolved,shape 全符)。
+- **批2(本 commit)**:HIGH#6 —— normalizer 讀路徑不再合成 createdAt/updatedAt(""保留),save 站只給全新記錄蓋戳;HIGH#2 —— import 拆 merge(預設,event 序列必須 prefix-extend 否則整包拒絕)/restore(二次確認+先自動下載備份);pattern note 鍵入契約。live 驗證:legacy 戳保持缺失、截短偵測、延伸放行、33 病例、0 errors。
+- **未結**:R1–R5 進 import 前驗證與 CI/ratchet 接線;C2b 等 Codex 重審 GO;藥理 WIP(js/knowledge.js/router.js)仍未提交,不動。
