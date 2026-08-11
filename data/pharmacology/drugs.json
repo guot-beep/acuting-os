@@ -150,22 +150,73 @@
         ],
         "exam_trap_en": [
           "course:Pharmacology Summary#L401"
+        ],
+        "contraindications_en": [
+          "dailymed:31a3d1cb-0f52-4818-965d-7584374bb23e#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:31a3d1cb-0f52-4818-965d-7584374bb23e#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:31a3d1cb-0f52-4818-965d-7584374bb23e#CLINICAL_PHARMACOLOGY"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:31a3d1cb-0f52-4818-965d-7584374bb23e#CLINICAL_PHARMACOLOGY"
         ]
       },
-      "gap_note_zh": "禁忌、黑框、交互作用、孕期待補 —— 需 DailyMed setid。課件這四類為 0。",
+      "gap_note_zh": "課件在禁忌/黑框/交互作用/孕期四類為 0。禁忌、不良反應、作用部位與生理效應已於 2026-08-11 自 DailyMed 標籤補入 —— 原 setid b7c9e05f… 的 SPL XML 端點回應 404,已換為同一藥廠 (REMEDYREPACK) 的現行標籤,見 dailymed_api_responses.json 的 supersedes_setid。該標籤無黑框警語區段。交互作用與孕期仍待補。",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
-      "dailymed_setid": "b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
+      "updated_at": "2026-08-11",
+      "dailymed_setid": "31a3d1cb-0f52-4818-965d-7584374bb23e",
       "dailymed_label_title": "HYDROCHLOROTHIAZIDE TABLET [REMEDYREPACK INC.]",
-      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=31a3d1cb-0f52-4818-965d-7584374bb23e",
       "dailymed_url_kind": "verified_exact",
       "classic_association_en": "HCTZ -> Thiazide -> Hypokalemia & Hyponatremia & Angle-closure glaucoma risk",
       "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a682571.html",
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Hydrochlorothiazide",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "dailymed_label_format": "old_format",
+      "contraindications_en": [
+        "Anuria",
+        "Hypersensitivity to this product or to other sulfonamide-derived drugs"
+      ],
+      "contraindications_zh": [
+        "無尿",
+        "對本品或其他磺胺衍生藥物過敏"
+      ],
+      "adverse_effects_en": [
+        "Hypotension, including orthostatic hypotension, which may be aggravated by alcohol, barbiturates, narcotics or antihypertensive drugs",
+        "Electrolyte imbalance, hyperglycemia, glycosuria, and hyperuricemia",
+        "Pancreatitis, intrahepatic cholestatic jaundice, diarrhea, vomiting, cramping, constipation, gastric irritation, nausea, anorexia",
+        "Aplastic anemia, agranulocytosis, leukopenia, hemolytic anemia, thrombocytopenia",
+        "Anaphylactic reactions, necrotizing angiitis, respiratory distress including pneumonitis and pulmonary edema, photosensitivity, fever, urticaria, rash, purpura",
+        "Vertigo, paresthesias, dizziness, headache, restlessness",
+        "Renal failure, renal dysfunction, interstitial nephritis",
+        "Erythema multiforme including Stevens-Johnson syndrome, exfoliative dermatitis including toxic epidermal necrolysis, alopecia",
+        "Transient blurred vision and xanthopsia",
+        "Impotence",
+        "Weakness and muscle spasm"
+      ],
+      "adverse_effects_zh": [
+        "低血壓,包括姿勢性低血壓;酒精、巴比妥類、麻醉性止痛藥或其他降壓藥可能使其加劇",
+        "電解質不平衡、高血糖、糖尿與高尿酸血症",
+        "胰臟炎、肝內膽汁鬱積性黃疸、腹瀉、嘔吐、腹部絞痛、便秘、胃部刺激、噁心、食慾不振",
+        "再生不良性貧血、顆粒球缺乏症、白血球減少、溶血性貧血、血小板減少",
+        "過敏性休克反應、壞死性血管炎、呼吸窘迫(含肺炎與肺水腫)、光敏感、發燒、蕁麻疹、皮疹、紫斑",
+        "眩暈、感覺異常、頭暈、頭痛、躁動不安",
+        "腎衰竭、腎功能異常、間質性腎炎",
+        "多形性紅斑(含史蒂芬強生症候群)、剝脫性皮膚炎(含毒性表皮壞死溶解症)、脫髮",
+        "暫時性視力模糊與黃視症",
+        "陽痿",
+        "虛弱與肌肉痙攣"
+      ],
+      "site_of_action_en": "The distal renal tubular mechanism of electrolyte reabsorption",
+      "site_of_action_zh": "腎遠曲小管的電解質再吸收機制",
+      "physiologic_effect_en": "Increased excretion of sodium and chloride in approximately equivalent amounts, with natriuresis sometimes accompanied by some loss of potassium and bicarbonate; after oral use diuresis begins within 2 hours, peaks at about 4 hours and lasts about 6 to 12 hours. The label states that the mechanism of the antihypertensive effect of thiazides is unknown and that hydrochlorothiazide does not usually affect normal blood pressure.",
+      "physiologic_effect_zh": "使鈉與氯以大致相等的量排出,利鈉的同時可能伴隨部分鉀與碳酸氫根流失;口服後 2 小時內開始利尿,約 4 小時達高峰,持續約 6 至 12 小時。標籤載明 thiazide 類降血壓的作用機轉未明,且本藥通常不影響正常血壓。"
     },
     {
       "id": "drug.spironolactone",
@@ -213,7 +264,7 @@
           "dailymed:b119ed8a-289a-46c5-9778-6b07e4c061c4#MECHANISM_OF_ACTION"
         ]
       },
-      "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
+      "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,考試層內容全部來自 Pharmacology Summary。適應症、禁忌、不良反應、作用部位與生理效應已於 2026-08-11 自 DailyMed 標籤補入;該標籤無黑框警語區段。交互作用與孕期仍待補。",
       "dailymed_setid": "b119ed8a-289a-46c5-9778-6b07e4c061c4",
       "dailymed_label_title": "SPIRONOLACTONE TABLET, COATED",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b119ed8a-289a-46c5-9778-6b07e4c061c4",
@@ -335,7 +386,7 @@
         ]
       },
       "adverse_effect_note_zh": "課件標明這些副作用見於慢性使用。",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
+      "gap_note_zh": "禁忌、作用部位與生理效應已於 2026-08-11 自 DailyMed 標籤補入;該標籤無黑框警語區段(dailymed_api_responses.json 原記載有,實際抓取後不存在)。交互作用與孕期仍待補。",
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
@@ -403,10 +454,10 @@
         ]
       },
       "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意為 null。",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
+      "gap_note_zh": "⚠️ 來源不對藥:本筆記錄的 setid 5b44e248… 是「Sorbitol-Mannitol 泌尿科灌洗液」標籤,標籤首行即為「NOT FOR INJECTION BY USUAL PARENTERAL ROUTES / FOR UROLOGIC IRRIGATION ONLY」,且含 sorbitol 為共同成分。這與本卡要教的靜脈滲透性利尿劑(腦水腫、眼壓)不是同一個臨床角色,因此 2026-08-11 這一批刻意不從該標籤填入禁忌與不良反應 —— 填了會把灌洗液的安全資訊掛到靜脈用藥上。需要 Ting 指定一筆靜脈用 mannitol 的 setid 才能續填。",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "5b44e248-4b7b-4777-954a-921c7b309944",
       "dailymed_label_title": "SORBITOL-MANNITOL (SORBITOL AND MANNITOL) IRRIGANT [ICU MEDICAL INC.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5b44e248-4b7b-4777-954a-921c7b309944",
@@ -539,7 +590,7 @@
           "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CLINICAL_PHARMACOLOGY"
         ]
       },
-      "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。仍待補:機轉、孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
+      "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。作用部位與生理效應已於 2026-08-11 自標籤補入。仍待補:孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
@@ -900,7 +951,7 @@
           "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#PHARMACODYNAMICS"
         ]
       },
-      "gap_note_zh": "交互作用已分級(10 條,全部引用標籤)。植物藥標記為 unknown 並記錄已查來源。仍待補:機轉、不良反應、孕期。",
+      "gap_note_zh": "交互作用已分級(10 條,全部引用標籤)。植物藥標記為 unknown 並記錄已查來源。機轉、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。孕期仍待補。",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
@@ -1096,7 +1147,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "gap_note_zh": "機轉、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。交互作用、腎功能調整、孕期仍待補。",
       "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including ELIQUIS, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
       "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含阿哌沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
       "contraindications_en": [
@@ -1188,7 +1239,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "gap_note_zh": "機轉、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。交互作用、腎功能調整、孕期仍待補。",
       "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including rivaroxaban, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
       "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含利伐沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
       "contraindications_en": [
@@ -1277,7 +1328,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "gap_note_zh": "機轉、適應症、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。交互作用、腎功能調整、孕期仍待補。",
       "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including dabigatran etexilate, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture.",
       "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含達比加群酯)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫。",
       "contraindications_en": [
@@ -1380,7 +1431,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、不良反應、孕期待補。",
+      "gap_note_zh": "機轉、適應症、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。交互作用與孕期仍待補。",
       "boxed_warning_en": "Ticagrelor, like other antiplatelet agents, can cause significant, sometimes fatal bleeding. Do not use in patients with active pathological bleeding or a history of intracranial hemorrhage. Do not start in patients undergoing urgent coronary artery bypass graft surgery (CABG). If possible, manage bleeding without discontinuing ticagrelor: stopping it increases the risk of subsequent cardiovascular events.",
       "boxed_warning_zh": "替格瑞洛如同其他抗血小板藥,可造成顯著、有時致命的出血。活動性病理性出血或有顱內出血病史者不可使用。正接受緊急冠狀動脈繞道手術者不可起始使用。若可能,處理出血時不要停藥 —— 停藥會增加後續心血管事件風險。",
       "contraindications_en": [
@@ -1469,7 +1520,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、不良反應、孕期待補。",
+      "gap_note_zh": "機轉、適應症、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。交互作用與孕期仍待補。",
       "boxed_warning_en": "Prasugrel can cause significant, sometimes fatal, bleeding. Do not use in patients with active pathological bleeding or a history of transient ischemic attack or stroke. Do not start in patients likely to undergo urgent coronary artery bypass graft surgery (CABG).",
       "boxed_warning_zh": "普拉格雷可造成顯著、有時致命的出血。活動性病理性出血或有短暫性腦缺血(TIA)／中風病史者不可使用。可能需接受緊急冠狀動脈繞道手術(CABG)者不可起始使用。",
       "contraindications_en": [
@@ -1557,8 +1608,8 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
-      "gap_note_zh": "交互作用、高劑量 NSAID 角色(P4)待補。低劑量抗血小板與高劑量 NSAID 是同一分子的兩種角色,不要合併。",
+      "updated_at": "2026-08-11",
+      "gap_note_zh": "交互作用、高劑量 NSAID 角色(P4)待補。低劑量抗血小板與高劑量 NSAID 是同一分子的兩種角色,不要合併。⚠️ 2026-08-11 查證:本筆引用的 OTC Drug Facts 標籤沒有 CONTRAINDICATIONS 與 ADVERSE REACTIONS 區段(原 dailymed_api_responses.json 誤記為有),因此 contraindications_en 的來源已改指向實際存在的 Do not use 與 Warnings 區段。機轉與不良反應無法從這張標籤取得,需要一張處方藥標籤或另一具名來源。另請 Ting 裁示:contraindications 第三項「每日飲酒三杯以上」在標籤上屬於胃出血的風險因子,不是 Do not use 條目,是否要移到 warnings。",
       "label_type": "OTC Drug Facts",
       "contraindications_en": [
         "Allergy to aspirin or any other pain reliever/fever reducer",
@@ -1586,10 +1637,11 @@
       "dailymed_url_kind": "verified_exact",
       "field_sources": {
         "contraindications_en": [
-          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#CONTRAINDICATIONS"
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#DO_NOT_USE",
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#WARNINGS"
         ],
         "warnings_en": [
-          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#WARNINGS"
         ]
       },
       "label_format_note_zh": "本筆引用的是 OTC「Drug Facts」格式標籤,不是處方藥的 PLR/舊格式 —— 沒有 BOXED WARNING 區段,對應內容在 Do not use 與 Warnings。欄位對照時要注意,不要因為沒有 boxed_warning 就以為漏查。",
@@ -1629,7 +1681,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "gap_note_zh": "機轉、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入 —— 註:該標籤的 MECHANISM OF ACTION 只有一句話,作用部位是依 PHARMACODYNAMICS 的抗 FXa/抗 FIIa 比值敘述而來。交互作用、腎功能調整、孕期仍待補。",
       "boxed_warning_en": "Epidural or spinal hematomas may occur in patients anticoagulated with low molecular weight heparins (LMWH) or heparinoids who are receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis. Risk is increased by indwelling epidural catheters; concomitant drugs affecting hemostasis such as NSAIDs, platelet inhibitors and other anticoagulants; a history of traumatic or repeated epidural or spinal punctures; and a history of spinal deformity or spinal surgery.",
       "boxed_warning_zh": "使用低分子量肝素或類肝素抗凝、且接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。風險增加因子:留置硬膜外導管;併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑);曾有創傷性或反覆的硬膜外／脊椎穿刺病史;脊椎變形或脊椎手術病史。",
       "contraindications_en": [
@@ -1732,7 +1784,7 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-11",
-      "gap_note_zh": "交互作用、劑量、孕期待補。",
+      "gap_note_zh": "機轉、適應症、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。交互作用、劑量、孕期仍待補。",
       "contraindications_en": [
         "Severe thrombocytopenia",
         "Known hypersensitivity to heparin or pork products",
@@ -4557,11 +4609,17 @@
         ],
         "adverse_effects_en": [
           "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "42a26f8a-dc67-42e4-abb0-d2602afb1b7d",
       "dailymed_label_title": "LEVOTHYROXINE SODIUM tablet [Asclemed USA, Inc.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=42a26f8a-dc67-42e4-abb0-d2602afb1b7d",
@@ -4570,7 +4628,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Levothyroxine",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "Thyroid receptor proteins attached to DNA in the cell nucleus",
+      "site_of_action_zh": "細胞核內附著於 DNA 上的甲狀腺素受體蛋白",
+      "physiologic_effect_en": "Thyroid hormones act through control of DNA transcription and protein synthesis: T3 and T4 diffuse into the nucleus and bind thyroid receptor proteins, and the hormone-nuclear receptor complex activates gene transcription and synthesis of messenger RNA and cytoplasmic proteins. Physiological actions are produced predominantly by T3, approximately 80% of which is derived from T4 by deiodination in peripheral tissues. Oral levothyroxine is a synthetic T4 that exerts the same physiologic effect as endogenous T4, maintaining normal T4 levels where a deficiency is present.",
+      "physiologic_effect_zh": "甲狀腺素透過調控 DNA 轉錄與蛋白質合成發揮作用:T3 與 T4 擴散進入細胞核並結合甲狀腺素受體蛋白,所形成的激素—核受體複合體再啟動基因轉錄與信使 RNA、細胞質蛋白的合成。生理作用主要由 T3 產生,其中約 80% 由 T4 在周邊組織去碘而來。口服 levothyroxine 為合成的 T4,作用與內生性 T4 相同,可在缺乏時維持正常的 T4 濃度。"
     },
     {
       "id": "drug.prednisone",
@@ -4680,11 +4742,14 @@
         "adverse_effects_en": [
           "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#ADVERSE_REACTIONS",
           "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#DESCRIPTION"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "d6df3295-3118-49af-be05-b1fab0d4adaa",
       "dailymed_label_title": "PREDNISONE TABLETS, USP, 5 MG [Hikma Pharmaceuticals]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d6df3295-3118-49af-be05-b1fab0d4adaa",
@@ -4693,7 +4758,9 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Prednisone",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "physiologic_effect_en": "Glucocorticoids cause profound and varied metabolic effects and modify the body's immune responses to diverse stimuli. Naturally occurring glucocorticoids, which also have salt-retaining properties, are used as replacement therapy in adrenocortical deficiency states, while their synthetic analogs are used primarily for their potent anti-inflammatory effects in disorders of many organ systems.",
+      "physiologic_effect_zh": "糖皮質素會造成廣泛而深遠的代謝影響,並改變人體對各種刺激的免疫反應。天然的糖皮質素兼具留鹽作用,用於腎上腺皮質功能不足的補充治療;其合成類似物則主要取其強效抗發炎作用,用於多種器官系統的疾病。"
     },
     {
       "id": "drug.semaglutide",
@@ -4790,11 +4857,18 @@
         ],
         "adverse_effects_en": [
           "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#PHARMACODYNAMICS"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79",
       "dailymed_label_title": "OZEMPIC- semaglutide injection, solution [Novo Nordisk]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=adec4fd2-6858-4c99-91d4-531f5f2a2d79",
@@ -4803,7 +4877,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Semaglutide Injection",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "formulation_compatible"
+      "medlineplus_scope": "formulation_compatible",
+      "site_of_action_en": "The GLP-1 receptor, the target for native GLP-1",
+      "site_of_action_zh": "GLP-1 受體 —— 天然 GLP-1 的作用標的",
+      "physiologic_effect_en": "Semaglutide stimulates insulin secretion and lowers glucagon secretion, both in a glucose-dependent manner, so that insulin secretion is stimulated and glucagon secretion inhibited when blood glucose is high; the mechanism also involves a minor delay in gastric emptying in the early postprandial phase. It lowers fasting and postprandial blood glucose and reduces body weight. The label states the mechanism of kidney-related risk reduction has not been established.",
+      "physiologic_effect_zh": "semaglutide 以葡萄糖依賴的方式促進胰島素分泌並降低升糖素分泌 —— 血糖高時才刺激胰島素、抑制升糖素;其作用另包含在餐後早期輕度延遲胃排空。可降低空腹與餐後血糖並減輕體重。標籤載明其降低腎臟相關風險的機轉尚未確立。"
     },
     {
       "id": "drug.rosuvastatin",

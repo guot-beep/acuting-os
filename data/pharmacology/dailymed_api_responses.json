@@ -285,24 +285,25 @@
   },
   {
     "drug_id": "drug.hydrochlorothiazide",
-    "setid": "b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
+    "setid": "31a3d1cb-0f52-4818-965d-7584374bb23e",
     "title": "HYDROCHLOROTHIAZIDE TABLET [REMEDYREPACK INC.]",
     "active_ingredient": "Hydrochlorothiazide",
     "route": "Oral",
     "labeler": "REMEDYREPACK INC.",
     "verified_sections": [
-      "BOXED_WARNING",
       "CONTRAINDICATIONS",
       "WARNINGS_AND_PRECAUTIONS",
       "ADVERSE_REACTIONS",
       "INDICATIONS_AND_USAGE",
-      "USE_IN_SPECIFIC_POPULATIONS"
+      "DRUG_INTERACTIONS"
     ],
-    "source_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/b7c9e05f-bc2d-4537-b452-fbcbb9f984a9.json",
-    "retrieved_date": "2026-08-09",
-    "metadata_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/b7c9e05f-bc2d-4537-b452-fbcbb9f984a9.json",
-    "spl_xml_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/b7c9e05f-bc2d-4537-b452-fbcbb9f984a9.xml",
-    "label_published_date": "2023-01-01"
+    "source_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/31a3d1cb-0f52-4818-965d-7584374bb23e.json",
+    "retrieved_date": "2026-08-11",
+    "metadata_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/31a3d1cb-0f52-4818-965d-7584374bb23e.json",
+    "spl_xml_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/31a3d1cb-0f52-4818-965d-7584374bb23e.xml",
+    "label_published_date": "2026-08-07",
+    "supersedes_setid": "b7c9e05f-bc2d-4537-b452-fbcbb9f984a9",
+    "supersede_reason": "Previous setid returned HTTP 404 from the SPL XML endpoint on 2026-08-11; replaced with the current label from the same labeler (REMEDYREPACK INC.), single active ingredient hydrochlorothiazide."
   },
   {
     "drug_id": "drug.spironolactone",
@@ -522,18 +523,17 @@
     "route": "Oral",
     "labeler": "REMEDYREPACK INC.",
     "verified_sections": [
-      "BOXED_WARNING",
-      "CONTRAINDICATIONS",
-      "WARNINGS_AND_PRECAUTIONS",
-      "ADVERSE_REACTIONS",
+      "DO_NOT_USE",
+      "WARNINGS",
       "INDICATIONS_AND_USAGE",
-      "USE_IN_SPECIFIC_POPULATIONS"
+      "DOSAGE_AND_ADMINISTRATION"
     ],
     "source_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/ac94cce3-9a39-41de-bb8b-10a5e5b8e83b.json",
     "retrieved_date": "2026-08-09",
     "metadata_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/ac94cce3-9a39-41de-bb8b-10a5e5b8e83b.json",
     "spl_xml_endpoint": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/ac94cce3-9a39-41de-bb8b-10a5e5b8e83b.xml",
-    "label_published_date": "2023-01-01"
+    "label_published_date": "2023-01-01",
+    "label_format_note": "OTC Drug Facts label. Verified 2026-08-11 against the SPL XML: it has no CONTRAINDICATIONS (34070-3), no ADVERSE REACTIONS (34084-4) and no BOXED WARNING (34066-1) section. Contraindication-equivalent content lives in the \"Do not use\" section (50570-1)."
   },
   {
     "drug_id": "drug.enoxaparin",
