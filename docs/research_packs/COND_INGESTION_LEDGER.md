@@ -803,3 +803,69 @@ per the task's ICD-uncertainty instruction.
 still only pre-existing, N4 139/139 = Batch 1's 68 + this batch's 71).
 `check-validation-ratchet.js`: conditions flat at 425, **PASS**.
 `validate-content-junk.js`: PASS. `validate-relations.js`: passed.
+
+## Skeleton tier — Batch 3: derm / endo_metabolic / cardio (2026-08-11)
+
+Same exact-scan method against all 348 records in canon (Batches 1–2 included)
+plus every id drafted earlier in this batch. 80 candidates → **80 NEW, 0
+alias-merged, 0 collisions**.
+
+**Category dedupe notes**:
+
+- `derm` (30): all NEW. Checked against existing `cond.eczema`
+  (atopic-dermatitis-specific), `cond.urticaria`, `cond.acne`,
+  `cond.psoriasis`, `cond.herpes_zoster`, `cond.alopecia` (alopecia
+  areata-specific, distinct from this batch's `cond.androgenetic_alopecia`,
+  a different mechanism — pattern vs patchy hair loss), `cond.rosacea`,
+  `cond.pruritus` — none of the 30 new dermatoses (contact/seborrheic/
+  dyshidrotic/nummular eczema, HSV, onychomycosis, vitiligo, 4 tinea
+  subtypes, scabies, molluscum, warts, lichen planus, prurigo nodularis,
+  pityriasis rosea, seborrheic keratosis, epidermoid cyst, hidradenitis,
+  melasma, cellulitis, impetigo, folliculitis, furuncle/carbuncle, xerosis,
+  hyperhidrosis, stasis dermatitis, drug eruption) overlap. `cond.cellulitis`
+  checked against `cond.giant_cell_arteritis`/immune_misc records — no
+  overlap (different body system).
+- `endo_metabolic` (25): all NEW. Checked against existing `cond.t2dm`,
+  `cond.type_1_diabetes`, `cond.hypothyroidism`, `cond.hyperthyroidism`,
+  `cond.hashimoto`, `cond.graves_disease`, `cond.addison_disease`,
+  `cond.cushing_syndrome`, `cond.hemochromatosis`, `cond.osteoporosis`,
+  `cond.obesity`, `cond.dyslipidemia`, `cond.hpa_dysregulation`,
+  `cond.edema_fluid` — `cond.thyroid_nodule`/`cond.subclinical_hypothyroidism`/
+  `cond.subacute_thyroiditis`/`cond.thyroid_cancer` are distinct thyroid
+  entities from Hashimoto/Graves/generic hypo-hyperthyroidism (nodule vs
+  autoimmune vs neoplastic vs subclinical-lab-only, per template's
+  non-equivalence rule); `cond.hyperuricemia` kept distinct from existing
+  `cond.gout` (pain_msk, Batch 1) — asymptomatic biochemical state vs the
+  clinical disease. `cond.iron_deficiency_anemia`/`cond.thalassemia` kept
+  distinct from existing `cond.anemia` (immune_misc) as etiology-specific
+  children of that generic parent card, same pattern as
+  `cond.diabetic_neuropathy` beside `cond.peripheral_neuropathy`.
+- `cardio` (25): all NEW. Checked against existing `cond.hypertension`,
+  `cond.hypotension`, `cond.palpitations`, `cond.cad`, `cond.heart_failure`,
+  `cond.raynaud`, `cond.varicose_veins`, `cond.poor_circulation`,
+  `cond.pots`, `cond.deep_vein_thrombosis`, `cond.pulmonary_embolism`,
+  `cond.myocardial_infarction`, `cond.angina_pectoris`, `cond.aneurysm`,
+  `cond.valvular_heart_disease` — `cond.aortic_stenosis`/
+  `cond.mitral_regurgitation`/`cond.mitral_valve_prolapse` are added as
+  valve-specific children of the existing `cond.valvular_heart_disease`
+  parent card (Batch E's own explicit framing anticipated these subtype
+  cards, see Batch E notes above — first time they're actually authored).
+  `cond.orthostatic_hypotension` kept distinct from existing `cond.hypotension`
+  (general) and `cond.pots` (a different autonomic mechanism) — three
+  related but non-equivalent low-BP/orthostatic-intolerance entities now
+  coexist correctly. `cond.atherosclerosis` kept distinct from `cond.cad`
+  (the underlying vascular process vs the coronary-specific clinical
+  disease).
+
+**ICD note**: `cond.primary_hyperaldosteronism` code `E26.01` specifies the
+bilateral-adrenal-hyperplasia subtype per ICD-10-CM's own E26.0x split; used
+as the closest standard leaf since the pack candidate did not specify
+unilateral (adenoma, E26.01 vs E26.02) — flagged as a coding-convention
+simplification, not a diagnostic claim.
+
+**Validator state after this batch's insertion**:
+`data/pathology/condition_canon_shortlist.json` 348 → 428 records.
+`validate-condition-standard.js`: 425 blocking defects (flat — C4 51/51
+pre-existing only, N4 219/219 = 68+71+80 across all three batches so far).
+`check-validation-ratchet.js`: conditions flat at 425, **PASS**.
+`validate-content-junk.js`: PASS. `validate-relations.js`: passed.
