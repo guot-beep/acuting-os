@@ -61,8 +61,7 @@ quarantine 擋 `curriculum/`、`data/imports/`、`docs/`、`clinical/`、`cases/
 - 落地 gate(231-commit 級分支的最低門檻,SOL 2026-08-11 建議採納):
   clinical invariants PASS · C2b rehearsal 全綠 · content/build validators
   照 ratchet · build-site PHI quarantine PASS · GitHub Actions 該 commit
-  有綠燈 combined status(現況:validate.yml 存在但最新 head 無 run —— 落地
-  前必須先讓 CI 真的跑起來)· ancestry 當下重驗。
+  有綠燈 combined status(CI 已由 draft PR #59 啟動(2026-08-11,validate.yml 只在 PR/main-push/手動觸發 —— Codex R14 查明)。現況 exact-SHA 結果:PHI 隔離 ✅ / ratchet ✅ / blocking validators ❌ —— 唯一紅步驟 = formula card standard 的 10 個有帳保留(葛根湯誤植待 Ting、樣板殘根待源、F12×3 蓄意)。落地前此 10 項須逐一解決或經 Ting 正式改列 ratchet 制,不得為過 CI 而灌水)· ancestry 當下重驗。
 - 只在里程碑邊界落地:validators 全 PASS + 該里程碑該審的審完。
 - 落地前 `git status` 必須乾淨確認:未提交的 js/ 藥理 WIP 與 curriculum/
   刪除檔**永遠不在落地內容裡**(它們本來就只在工作樹,不在 commit 裡)。
