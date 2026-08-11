@@ -26915,6 +26915,711 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/1659"
       ]
+    },
+    {
+      "id": "cond.anemia",
+      "entity_type": "biomedical_condition",
+      "name_zh": "貧血",
+      "name_en": "Anemia",
+      "category": "immune_misc",
+      "icd_hint": "D64.9",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "貧血是指血液中紅血球數量或血紅蛋白濃度低於正常範圍，使組織獲得的攜氧血液不足。貧血本身是一個症候群，可能由多種不同病因造成，而非單一疾病。",
+      "summary_en": "Anemia is a condition in which the blood carries a lower-than-normal number of healthy red blood cells and/or hemoglobin, reducing oxygen delivery to tissues. It is a syndrome with many possible underlying causes rather than a single disease entity.",
+      "western_context_zh": "臨床定位：貧血應被視為一項「需要找出病因」的檢驗發現，而非診斷終點。主要機轉分類為失血、紅血球生成不足、紅血球破壞增加；紅血球形態（MCV）與網狀紅血球反應有助縮小病因範圍。\n\n臨床表現：常見表現包含疲勞、虛弱、面色蒼白、呼吸急促、頭痛、頭暈或暈厥、畏寒與心律不整。症狀輕重與貧血的嚴重度、病程快慢及共病情況有關；部分患者症狀輕微甚至無症狀。\n\n診斷方法：全血球計數（CBC）為第一線檢查，用以確認貧血存在與基本形態分類（小球性／正常球性／大球性）。依病史與指數，可加做網狀紅血球計數、周邊血抹片、鐵蛋白與鐵代謝檢查、維生素B12／葉酸檢測、腎功能檢查，以及溶血相關檢查。診斷目標是找出病因，而非僅將血紅蛋白數值拉高。\n\n鑑別診斷：缺鐵性貧血、維生素B12／葉酸缺乏、慢性發炎性貧血、腎性貧血、溶血性貧血、骨髓衰竭或浸潤性疾病、遺傳性血紅蛋白病、急性或慢性失血。單純疲勞或頭暈不足以確立貧血診斷。\n\n西醫治療：治療依病因與嚴重度而定，可能包含在證實缺乏時補充營養素、治療出血或潛在疾病、特定情況下使用促紅血球生成治療、嚴重情境下輸血，以及疾病特異性的血液科處置。\n\n編碼備註：貧血涵蓋多個ICD-10-CM家族，通用貧血碼不應在未確認型別／病因前單獨使用；實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM。",
+      "western_context_en": "Clinical framing: Anemia is best treated as a laboratory finding that requires cause evaluation, not a diagnosis in itself. Major mechanistic categories are blood loss, insufficient red-cell production, and increased red-cell destruction; red-cell morphology (MCV) and the reticulocyte response help narrow the cause.\n\nClinical presentation: Possible features include fatigue, weakness, pallor, shortness of breath, headache, dizziness or fainting, chills, and irregular heartbeat. Symptom severity depends on how severe and how quickly the anemia developed, and on comorbidity; some patients are minimally symptomatic.\n\nDiagnostic approach: CBC is the entry test, confirming anemia and giving a basic morphologic category (microcytic / normocytic / macrocytic). Depending on history and indices, further work-up can include reticulocyte count, peripheral smear, ferritin and iron studies, vitamin B12/folate testing, renal function, and hemolysis work-up. The goal is to identify the cause, not simply to raise the hemoglobin value.\n\nDifferential diagnosis: iron deficiency anemia, vitamin B12/folate deficiency, anemia of chronic inflammation, renal anemia, hemolytic anemia, marrow failure or infiltration, inherited hemoglobin disorders, and acute or chronic blood loss. Fatigue and dizziness alone do not establish the diagnosis.\n\nWestern treatment: Management depends on cause and severity, and can include nutrient replacement when a deficiency is confirmed, treatment of bleeding or the underlying disease, selected erythropoiesis-supporting therapy, transfusion in appropriate severe contexts, and disease-specific hematology management.\n\nCoding note: Anemia spans multiple ICD-10-CM families. A generic anemia code should not be assigned without confirming type/cause; verify the active fiscal-year CDC/NCHS ICD-10-CM code at the time of coding.",
+      "western_pathology_zh": "紅血球量與／或血紅蛋白濃度下降，使血液攜氧能力降低。骨髓的代償反應與紅血球指數，有助於區分生成障礙、營養缺乏、失血與破壞增加這四類機轉。針對特定機轉的檢查可評估鐵儲存、維生素B12／葉酸、腎功能、溶血指標與出血來源。",
+      "western_pathology_en": "Reduced red-cell mass and/or hemoglobin concentration lowers the blood's oxygen-carrying capacity. The marrow's compensatory response and red-cell indices help distinguish production failure, nutrient deficiency, blood loss, and increased destruction. Mechanism-directed testing can assess iron stores, B12/folate status, renal function, hemolysis markers, and the source of bleeding.",
+      "etiology_zh": "重要病因路徑包含：急性或慢性失血、缺鐵、維生素B12或葉酸缺乏、慢性腎臟病、慢性發炎性疾病、骨髓疾病、遺傳性血紅蛋白病、溶血、懷孕期鐵需求增加，以及特定藥物／治療相關作用。這裡列的是「這個病怎麼發生」的機轉路徑；「哪些人容易得、問診該問什麼」的危險因子另見下方危險因子段落，兩者不應混為一談。",
+      "etiology_en": "Important cause pathways include acute or chronic blood loss, iron deficiency, vitamin B12 or folate deficiency, chronic kidney disease, chronic inflammatory disease, bone-marrow disease, inherited hemoglobin disorders, hemolysis, pregnancy-related increased iron demand, and selected medication/treatment effects. This list covers mechanism — how the disease happens; who is more likely to get it and what to ask on intake is covered separately under risk factors below, and the two should not be collapsed together.",
+      "risk_factors_zh": [
+        {
+          "factor": "女性、育齡期（月經失血）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "factor": "懷孕",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "慢性腎臟病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "飲食鐵、維生素B12或葉酸攝取不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "慢性發炎性疾病或慢性感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Female sex, reproductive age (menstrual blood loss)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "Chronic kidney disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "Insufficient dietary iron, vitamin B12, or folate intake",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "Chronic inflammatory disease or chronic infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        },
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Anemia Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "貧血合併胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能反映心臟代償失調或急性冠心症共病，需排除心肌缺氧",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "暈厥或近乎暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重血流動力學不穩定或組織供氧不足",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "嚴重呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能代表攜氧能力不足以代償身體需求",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "活動性大量出血（如嘔血、黑便、大量陰道出血）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／緊急轉診",
+          "rationale": "急性失血可迅速惡化為低血容性休克",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "血流動力學不穩定徵象（心搏過速、低血壓等）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "代表組織灌流不足，屬於需要立即處置的急症",
+          "source": "NHLBI - Anemia"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Anemia with chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May reflect cardiac decompensation or comorbid acute coronary disease; myocardial ischemia must be excluded",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "Syncope or near-syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe hemodynamic instability or inadequate tissue oxygen delivery",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "Severe dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May indicate oxygen-carrying capacity insufficient for the body's demand",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "Active major bleeding (e.g., hematemesis, melena, heavy vaginal bleeding)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/urgent referral",
+          "rationale": "Acute blood loss can rapidly progress to hypovolemic shock",
+          "source": "NHLBI - Anemia"
+        },
+        {
+          "finding": "Signs of hemodynamic instability (tachycardia, hypotension)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Indicates inadequate tissue perfusion — an emergency requiring immediate management",
+          "source": "NHLBI - Anemia"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅作為輔助性症狀／支持照護（如疲勞感、整體舒適度），不能作為貧血病因治療或取代西醫評估",
+        "precautions": "若疲勞或頭暈症狀突然改變，應重新評估生醫安全性，不應直接假設為中醫證型轉變；治療前應確認病因已由西醫評估，避免延誤失血、嚴重貧血、骨髓疾病或心肺代償失調的診斷",
+        "co_management": "若患者血紅蛋白數值、出血情形或心肺症狀有變化，應聯絡其主治或血液科醫師確認評估進度，執業者不得逕自建議病人停藥或延後轉診",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology（依據NHLBI臨床資料整理）",
+        "note": "此欄目前為執業範圍謹慎建議，尚未查到專屬於貧血的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Adjunctive symptom/supportive care only (e.g., fatigue, general comfort) — not a treatment for the underlying cause of anemia and not a substitute for medical evaluation",
+        "precautions": "If fatigue or dizziness changes abruptly, reassess biomedical safety rather than assuming a TCM pattern shift; confirm the cause has been medically evaluated before treating, to avoid delaying diagnosis of blood loss, severe anemia, marrow disease, or cardiopulmonary decompensation",
+        "co_management": "If hemoglobin values, bleeding status, or cardiopulmonary symptoms change, contact the patient's physician or hematologist to confirm evaluation status; practitioners must not independently advise the patient to stop medication or delay referral",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for anemia was located"
+      },
+      "related_patterns": [
+        "pattern.blood_deficiency",
+        "pattern.qi_blood_deficiency"
+      ],
+      "sign_symptom_ids": [
+        "sym.fatigue",
+        "sym.dizziness",
+        "sym.headache",
+        "sym.palpitations",
+        "sym.weakness"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Appendix A (Board scope anchor)",
+        "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia",
+        "NHLBI - Anemia Causes and Risk Factors: https://www.nhlbi.nih.gov/health/anemia/causes",
+        "NHLBI - Anemia Diagnosis: https://www.nhlbi.nih.gov/health/anemia/diagnosis",
+        "NHLBI - Anemia Treatment: https://www.nhlbi.nih.gov/health/anemia/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia"
+        ],
+        "summary_en": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia"
+        ],
+        "western_context_zh": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia",
+          "NHLBI - Anemia Diagnosis: https://www.nhlbi.nih.gov/health/anemia/diagnosis",
+          "NHLBI - Anemia Treatment: https://www.nhlbi.nih.gov/health/anemia/treatment",
+          "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+        ],
+        "western_context_en": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia",
+          "NHLBI - Anemia Diagnosis: https://www.nhlbi.nih.gov/health/anemia/diagnosis",
+          "NHLBI - Anemia Treatment: https://www.nhlbi.nih.gov/health/anemia/treatment",
+          "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia"
+        ],
+        "etiology_zh": [
+          "NHLBI - Anemia Causes and Risk Factors: https://www.nhlbi.nih.gov/health/anemia/causes"
+        ],
+        "etiology_en": [
+          "NHLBI - Anemia Causes and Risk Factors: https://www.nhlbi.nih.gov/health/anemia/causes"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Anemia Causes and Risk Factors: https://www.nhlbi.nih.gov/health/anemia/causes"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Anemia Causes and Risk Factors: https://www.nhlbi.nih.gov/health/anemia/causes"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia"
+        ],
+        "red_flags_en": [
+          "NHLBI - Anemia: https://www.nhlbi.nih.gov/health/anemia"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_a_hematology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.thrombocytopenia",
+      "entity_type": "biomedical_condition",
+      "name_zh": "血小板減少症",
+      "name_en": "Thrombocytopenia",
+      "category": "immune_misc",
+      "icd_hint": "D69.6",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "血小板減少症是指血小板數量低於正常範圍。臨床意義差異很大，從無症狀的檢驗偶然發現，到嚴重出血風險都有可能，取決於血小板數值、血小板功能、病因與病人整體臨床情境。",
+      "summary_en": "Thrombocytopenia is a lower-than-normal platelet count. Its clinical significance ranges from an incidental laboratory finding to a serious bleeding risk, depending on the platelet level, platelet function, underlying cause, and the patient's overall clinical context.",
+      "western_context_zh": "臨床定位：血小板是初級止血的關鍵成分。血小板減少症可能反映生成減少、免疫性或非免疫性破壞增加、消耗增加、脾臟隔離扣留、血液稀釋或其他系統性疾病；未考慮機轉之前，診斷並不完整。\n\n臨床表現：可能出現的表現包含瘀點、紫斑、容易瘀青、出血時間延長、流鼻血或牙齦出血、尿液或糞便帶血，以及月經量過多。輕度血小板減少症可能無症狀，僅在全血球計數中被發現。\n\n診斷方法：評估通常包括病史詢問、藥物回顧、理學檢查、全血球計數與周邊血抹片，之後再依懷疑病因做進一步檢查。若懷疑生成障礙或骨髓疾病，可能需要骨髓檢查。\n\n鑑別診斷：免疫性血小板減少症、藥物誘發性血小板減少症、血栓性血小板減少性紫斑症（TTP）／瀰漫性血管內凝血（DIC）等消耗性疾病、骨髓疾病、感染／肝臟疾病、懷孕相關血小板減少症，以及檢驗偽像（假性血小板減少症）需維持在鑑別名單中。\n\n西醫治療：治療依病因與嚴重度而定。部分輕度病例僅需觀察；其他情況可能需要停用可疑藥物、免疫導向治療、促血小板生成治療、嚴重出血或高風險情境下的血小板輸注，或部分慢性疾病選擇性使用脾臟切除術。\n\n編碼備註：血小板減少症有多個病因特異性ICD-10-CM編號；若已有更明確的病因診斷，不應使用「未特定」碼，實際編碼須於個案登錄時核對當年度代碼。",
+      "western_context_en": "Clinical framing: Platelets are essential to primary hemostasis. Thrombocytopenia may reflect decreased production, increased immune or nonimmune destruction, increased consumption, splenic sequestration, dilution, or other systemic disease; the diagnosis is not complete until the mechanism is considered.\n\nClinical presentation: Possible findings include petechiae, purpura, easy bruising, prolonged bleeding, nose or gum bleeding, blood in urine/stool, and heavy menstrual bleeding. Mild thrombocytopenia may be asymptomatic and discovered incidentally on CBC.\n\nDiagnostic approach: Evaluation commonly includes history, medication review, examination, CBC and peripheral smear, followed by cause-directed testing. Bone-marrow evaluation may be used when production disorders or marrow disease are suspected.\n\nDifferential diagnosis: immune thrombocytopenia, drug-induced thrombocytopenia, TTP/DIC and other consumptive states, marrow disease, infection/liver disease, pregnancy-related thrombocytopenia, and laboratory artifact (pseudothrombocytopenia) must remain in the differential.\n\nWestern treatment: Treatment is cause- and severity-specific. Some mild cases are observed. Other cases may require stopping an offending medicine, immune-directed treatment, thrombopoietic therapy, platelet transfusion in selected severe-bleeding/high-risk contexts, or splenectomy in selected chronic disease.\n\nCoding note: Thrombocytopenia has multiple cause-specific ICD-10-CM identities. Unspecified thrombocytopenia should not be used when a more specific documented etiology exists; verify the active fiscal-year code at the time of coding.",
+      "western_pathology_zh": "循環血小板池減少會削弱初級血小板栓的形成。依機轉不同，可能牽涉骨髓生成障礙、免疫媒介的破壞、系統性凝血消耗過程，或脾臟腫大造成的隔離扣留。",
+      "western_pathology_en": "A reduced circulating platelet pool impairs formation of the initial platelet plug. Depending on the mechanism, this can involve marrow production failure, immune-mediated destruction, consumption during systemic coagulation, or sequestration in an enlarged spleen.",
+      "etiology_zh": "重要病因路徑包含：骨髓抑制或衰竭、免疫性破壞、消耗性病程、感染、肝臟／脾臟疾病、懷孕相關狀態、藥物相關血小板減少症，以及其他系統性疾病。",
+      "etiology_en": "Important cause pathways include bone-marrow suppression or failure, immune destruction, consumptive processes, infection, liver/splenic disease, pregnancy-related states, drug-associated thrombocytopenia, and other systemic disease.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期新開始使用已知相關藥物（如部分抗生素、抗痙攣藥、肝素）",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "近期病毒感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "肝臟疾病或脾臟腫大",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "懷孕",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "自體免疫疾病病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recently starting a medication with known association (e.g., certain antibiotics, anticonvulsants, heparin)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "Recent viral infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "Liver disease or splenomegaly",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        },
+        {
+          "factor": "History of autoimmune disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Platelet Disorders"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "出血無法以加壓止住",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重出血風險，需緊急處置",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        },
+        {
+          "finding": "疑似顱內出血的神經學症狀（如劇烈頭痛、意識改變、局部神經缺損）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "顱內出血是血小板減少症最嚴重的致命併發症之一",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        },
+        {
+          "finding": "血流動力學不穩定徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重內出血或休克前期",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        },
+        {
+          "finding": "大量腸胃道或婦科出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／緊急轉診",
+          "rationale": "可能快速導致血容量不足",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Bleeding that will not stop with pressure",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests serious bleeding risk requiring urgent management",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        },
+        {
+          "finding": "Neurologic symptoms concerning for intracranial hemorrhage (e.g., severe headache, altered consciousness, focal deficit)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Intracranial hemorrhage is one of the most serious potentially fatal complications of thrombocytopenia",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        },
+        {
+          "finding": "Signs of hemodynamic compromise",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests major internal bleeding or impending shock",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        },
+        {
+          "finding": "Major GI or gynecologic bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/urgent referral",
+          "rationale": "Can rapidly progress to hypovolemia",
+          "source": "NHLBI - Platelet Disorders Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "此類病人出血風險存在時，針灸不建議作為主要治療；若使用僅能作為輔助性照護，且須先由血液科／主治醫師確認目前出血風險等級",
+        "precautions": "針刺、拔罐、刮痧與放血類手法在出血傾向疾病中需要特別謹慎；程序安全性應依病人實際出血情況與目前檢驗數值決定，不可套用未經驗證的通用血小板數值門檻",
+        "co_management": "治療前應確認病人近期血小板數值與是否服用抗凝血／抗血小板藥物；若病情或用藥有變化，應聯絡開立藥物或追蹤之醫師確認，執業者不得逕自建議病人停藥。",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology（依據NHLBI臨床資料整理）",
+        "note": "血小板減少症的針灸安全門檻應以病人實際檢驗數據與臨床政策為準，而非套用固定數字"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Given bleeding risk, acupuncture is not recommended as primary treatment; if used, it is adjunctive only, and current bleeding-risk status should be confirmed with the hematologist/treating physician first",
+        "precautions": "Needling, cupping, gua sha, and bleeding techniques require special caution in a bleeding-risk disorder; procedure safety should be based on the patient's actual bleeding status and current lab values rather than an unvalidated universal platelet-count threshold",
+        "co_management": "Confirm the patient's recent platelet count and any anticoagulant/antiplatelet medication before treatment. If status or medication changes, contact the prescribing or treating physician — practitioners must not independently advise the patient to stop medication.",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)",
+        "note": "Acupuncture safety thresholds for thrombocytopenia should be based on the patient's actual lab data and clinical policy, not a fixed number"
+      },
+      "related_patterns": [
+        "pattern.spleen_not_governing_blood",
+        "pattern.blood_deficiency"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Appendix A (Board scope anchor)",
+        "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders",
+        "NHLBI - Platelet Disorders Symptoms: https://www.nhlbi.nih.gov/health/platelet-disorders/symptoms",
+        "NHLBI - Platelet Disorders Treatment: https://www.nhlbi.nih.gov/health/platelet-disorders/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "summary_en": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "western_context_zh": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders",
+          "NHLBI - Platelet Disorders Symptoms: https://www.nhlbi.nih.gov/health/platelet-disorders/symptoms",
+          "NHLBI - Platelet Disorders Treatment: https://www.nhlbi.nih.gov/health/platelet-disorders/treatment",
+          "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+        ],
+        "western_context_en": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders",
+          "NHLBI - Platelet Disorders Symptoms: https://www.nhlbi.nih.gov/health/platelet-disorders/symptoms",
+          "NHLBI - Platelet Disorders Treatment: https://www.nhlbi.nih.gov/health/platelet-disorders/treatment",
+          "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "etiology_zh": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "etiology_en": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Platelet Disorders / Thrombocytopenia: https://www.nhlbi.nih.gov/health/platelet-disorders"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Platelet Disorders Symptoms: https://www.nhlbi.nih.gov/health/platelet-disorders/symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI - Platelet Disorders Symptoms: https://www.nhlbi.nih.gov/health/platelet-disorders/symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_a_hematology"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.sickle_cell_disease",
+      "entity_type": "biomedical_condition",
+      "name_zh": "鐮狀細胞疾病",
+      "name_en": "Sickle Cell Disease",
+      "category": "immune_misc",
+      "icd_hint": "D57",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "summary_zh": "鐮狀細胞疾病是一組遺傳性血紅蛋白疾病，異常血紅蛋白會促使紅血球變形為鐮刀狀，進而導致溶血與血管阻塞。此為終生性疾病，且與鐮狀細胞特徵（帶因狀態）是不同的身分，不應混為一談。",
+      "summary_en": "Sickle cell disease is a group of inherited hemoglobin disorders in which abnormal hemoglobin promotes red-cell sickling, hemolysis, and vaso-occlusion. It is a lifelong disease and is a distinct identity from sickle cell trait — the two should never be treated as the same.",
+      "western_context_zh": "臨床定位：不同基因型會造成不同的鐮狀細胞疾病表現型。形狀異常、僵硬的紅血球容易提前破壞，並阻塞小血管的血流，造成慢性貧血、反覆疼痛與漸進性器官損傷。\n\n臨床表現：可能表現包含貧血／疲勞、黃疸、兒童期手足腫痛、反覆血管阻塞性疼痛發作，以及各器官系統特異性併發症。嚴重度因基因型與個人病史差異極大。\n\n診斷方法：診斷以血紅蛋白檢測確立，必要時輔以基因檢測。美國新生兒篩檢是主要的診斷路徑之一，篩檢異常需進一步確認檢測；基因型對於精確疾病身分判定十分重要。\n\n鑑別診斷：鐮狀細胞特徵（帶因狀態）、其他血紅蛋白病、地中海型貧血、其他溶血性貧血病因；急性胸痛、中風症狀或疼痛危象發作時，須依各自情境進行病因特異性鑑別。\n\n西醫治療：治療以血液科為主導，可能包含疾病修飾藥物（如hydroxyurea）、疫苗接種／感染預防、輸血、疼痛控制，以及部分病人選擇具治癒潛力的移植或基因治療。\n\n編碼備註：鐮狀細胞疾病編碼對基因型與目前併發症狀態敏感；不應在未確認基因型與目前併發症狀態前使用單一通用編碼，實際編碼須於個案登錄時核對當年度ICD-10-CM。",
+      "western_context_en": "Clinical framing: Different genotypes produce different sickle cell disease phenotypes. Abnormally shaped, rigid red cells break down prematurely and obstruct small-vessel blood flow, causing chronic anemia, recurrent pain, and progressive organ injury.\n\nClinical presentation: Possible features include anemia/fatigue, jaundice, painful swelling of the hands/feet in children, recurrent vaso-occlusive pain episodes, and organ-specific complications. Severity varies widely with genotype and individual history.\n\nDiagnostic approach: Diagnosis is established with hemoglobin testing and, when needed, genetic testing. Newborn screening is a major diagnostic pathway in the United States; abnormal screens require confirmatory testing, and genotype matters for precise disease identity.\n\nDifferential diagnosis: sickle cell trait, other hemoglobinopathies, thalassemia, other causes of hemolytic anemia; acute chest pain, stroke symptoms, or a pain crisis each require their own situation-specific differential.\n\nWestern treatment: Management is hematology-led and can include disease-modifying medicines such as hydroxyurea, vaccination/infection prevention, transfusion, pain management, and, for selected patients, curative-intent transplant or gene therapy.\n\nCoding note: Sickle cell disease coding is sensitive to genotype and current complication status; a single generic code should not be used without confirming genotype and current complications — verify the active ICD-10-CM code at the time of coding.",
+      "western_pathology_zh": "生理壓力下血紅蛋白發生聚合作用，促使紅血球鐮刀狀變形。反覆溶血造成慢性貧血，血管阻塞則造成缺血性疼痛與器官併發症；疾病會隨時間影響多個器官系統。",
+      "western_pathology_en": "Hemoglobin polymerization under physiologic stress promotes red-cell sickling. Recurrent hemolysis causes chronic anemia, while vaso-occlusion produces ischemic pain and organ complications. The disease affects multiple organ systems over time.",
+      "etiology_zh": "鐮狀細胞疾病為遺傳性疾病。基因型決定疾病表現型；血紅蛋白S可能與另一個異常β珠蛋白基因等位基因共同遺傳。鐮狀細胞特徵須維持為獨立的遺傳狀態，不應作為疾病的別名使用。",
+      "etiology_en": "Sickle cell disease is inherited. Genotype determines the disease form; hemoglobin S may be inherited together with another abnormal beta-globin allele. Sickle cell trait must remain a separate genetic state and should not be treated as an alias of the disease.",
+      "risk_factors_zh": [
+        {
+          "factor": "家族中已知有鐮狀細胞疾病或鐮狀細胞特徵病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Sickle Cell Disease"
+        },
+        {
+          "factor": "特定血緣族群（依NHLBI資料，非洲、地中海、中東、印度及部分西班牙裔血緣族群盛行率較高）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Sickle Cell Disease"
+        },
+        {
+          "factor": "雙親皆帶有鐮狀細胞基因（含鐮狀細胞特徵或疾病）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Sickle Cell Disease"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Family history of sickle cell disease or sickle cell trait",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Sickle Cell Disease"
+        },
+        {
+          "factor": "Ancestry from specific populations (per NHLBI, higher prevalence in African, Mediterranean, Middle Eastern, Indian, and some Hispanic ancestries)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Sickle Cell Disease"
+        },
+        {
+          "factor": "Both parents carrying a sickle cell gene (trait or disease)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Sickle Cell Disease"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重疼痛危象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "血管阻塞性疼痛危象可能合併嚴重併發症，需要緊急鎮痛與評估",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "發燒",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "鐮狀細胞疾病病人感染風險高，發燒可能代表嚴重感染或敗血症前兆",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "胸痛、咳嗽或呼吸困難（疑急性胸症候群）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "急性胸症候群是鐮狀細胞疾病的致命併發症之一",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "中風症狀（如單側無力、言語障礙、面部下垂）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打急救／送急診",
+          "rationale": "鐮狀細胞疾病病人中風風險顯著上升，屬於時間敏感的急症",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "持續性陰莖異常勃起（priapism）",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "延遲處置可能導致永久性功能損傷",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe pain crisis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A vaso-occlusive pain crisis may accompany serious complications and requires urgent analgesia and evaluation",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "Fever",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Patients with sickle cell disease have elevated infection risk; fever may signal serious infection or impending sepsis",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "Chest pain, cough, or dyspnea (possible acute chest syndrome)",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Acute chest syndrome is one of the potentially fatal complications of sickle cell disease",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "Stroke symptoms (e.g., unilateral weakness, speech difficulty, facial droop)",
+          "urgency_level": "emergency",
+          "recommended_action": "Call emergency services / go to the emergency department immediately",
+          "rationale": "Stroke risk is markedly elevated in sickle cell disease and this is a time-sensitive emergency",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        },
+        {
+          "finding": "Prolonged priapism",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Delayed treatment can result in permanent functional damage",
+          "source": "NHLBI - Sickle Cell Disease Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "若使用針灸，僅能作為輔助性照護（如慢性期疼痛管理的輔助手段），急性鐮狀細胞併發症不屬於常規針灸適應情境",
+        "precautions": "治療前須將貧血、感染風險、急性疼痛危象、器官併發症與目前是否接受疾病修飾治療納入考量；急性症狀發作期間不應以針灸取代緊急醫療評估",
+        "co_management": "應與病人的血液科醫療團隊保持聯絡，尤其在疼痛型態改變、出現發燒或新神經學症狀時；執業者不得建議病人自行調整或停止疾病修飾治療（如hydroxyurea）。",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology（依據NHLBI臨床資料整理）",
+        "note": "急性鐮狀細胞併發症非常規針灸適應症；此欄為執業範圍謹慎建議，非療效保證"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "If used, acupuncture is adjunctive only (e.g., supporting chronic-phase pain management) — acute sickle cell complications are not a routine acupuncture indication",
+        "precautions": "Before treatment, account for anemia, infection risk, acute pain crisis, organ complications, and current disease-modifying therapy; acupuncture must not substitute for emergency medical evaluation during an acute episode",
+        "co_management": "Maintain contact with the patient's hematology team, especially if pain pattern changes, fever develops, or new neurologic symptoms appear; practitioners must not advise the patient to adjust or stop disease-modifying therapy (e.g., hydroxyurea) independently.",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)",
+        "note": "Acute sickle cell complications are not a routine acupuncture presentation; this is a scope-of-practice caution, not an efficacy claim"
+      },
+      "related_patterns": [
+        "pattern.blood_deficiency",
+        "pattern.blood_stasis",
+        "pattern.qi_blood_deficiency"
+      ],
+      "sign_symptom_ids": [
+        "sym.fatigue",
+        "sym.weakness"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Appendix A (Board scope anchor)",
+        "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease",
+        "NHLBI - Sickle Cell Disease Symptoms: https://www.nhlbi.nih.gov/health/sickle-cell-disease/symptoms",
+        "NHLBI - Sickle Cell Disease Diagnosis: https://www.nhlbi.nih.gov/health/sickle-cell-disease/diagnosis",
+        "NHLBI - Sickle Cell Disease Treatment: https://www.nhlbi.nih.gov/health/sickle-cell-disease/treatment"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "summary_en": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "western_context_zh": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease",
+          "NHLBI - Sickle Cell Disease Diagnosis: https://www.nhlbi.nih.gov/health/sickle-cell-disease/diagnosis",
+          "NHLBI - Sickle Cell Disease Treatment: https://www.nhlbi.nih.gov/health/sickle-cell-disease/treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease",
+          "NHLBI - Sickle Cell Disease Diagnosis: https://www.nhlbi.nih.gov/health/sickle-cell-disease/diagnosis",
+          "NHLBI - Sickle Cell Disease Treatment: https://www.nhlbi.nih.gov/health/sickle-cell-disease/treatment"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "etiology_zh": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "etiology_en": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Sickle Cell Disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Sickle Cell Disease Symptoms: https://www.nhlbi.nih.gov/health/sickle-cell-disease/symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI - Sickle Cell Disease Symptoms: https://www.nhlbi.nih.gov/health/sickle-cell-disease/symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_a_hematology"
+      ],
+      "source_status": "draft_pending_ting_review"
     }
   ]
 }
