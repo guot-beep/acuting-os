@@ -14225,6 +14225,477 @@
       ],
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.lung_heat_excess",
+      "name_zh": "肺熱壅盛",
+      "name_en": "Excess Lung Heat",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "面部紅腫熱痛，或皮疹紅赤",
+        "咳嗽痰黃",
+        "口渴引飲",
+        "大便乾結"
+      ],
+      "key_signs_en": [
+        "Red, swollen, hot, painful facial lesions, or red skin eruptions",
+        "Cough with yellow phlegm",
+        "Thirst with a desire to drink",
+        "Dry, hard stool"
+      ],
+      "tongue_zh": "舌紅苔黃",
+      "tongue_en": "Red tongue with yellow coating",
+      "pulse_zh": "脈數",
+      "pulse_en": "Rapid pulse",
+      "mechanism_zh": "肺經熱盛，無明顯外感表證亦無明顯痰濁，純屬肺熱熾盛，循經上熏頭面則面部紅腫熱痛（常見於痤瘡）；肺熱下移大腸則大便乾結；與胃熱熾盛結構相似，同為臟腑熱盛的純熱實證。",
+      "mechanism_en": "Heat is exuberant in the Lung channel, with no notable exterior pathogen and no notable Phlegm-turbidity — a pure Lung-heat excess pattern. The heat steaming upward along the channel to the head and face produces red, swollen, hot, painful facial lesions (commonly seen in acne); Lung heat descending to the Large Intestine produces dry, hard stool. This is structurally parallel to excess Stomach Heat — both are pure heat-excess patterns of an organ.",
+      "common_causes_zh": "過食辛辣肥甘助熱、肺經素有蘊熱、外感熱邪未清",
+      "common_causes_en": "Excessive spicy, rich food feeding heat; a constitutional accumulation of heat in the Lung channel; unresolved residual heat from an external pathogen",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_heat",
+          "distinguishing_zh": "肺熱壅盛無明顯表證（不惡寒、不發熱惡風），純屬裏熱熾盛；風熱犯表兼有惡風發熱、咽痛等表證，病位在衛表，兩者為表裏層次之別。",
+          "distinguishing_en": "Excess Lung Heat has no notable exterior signs (no chills, no fever-with-wind-aversion) — it is purely interior heat-excess; Wind-Heat Invading the Exterior carries exterior signs such as fever with wind-aversion and sore throat, its location being the protective (Wei) exterior. The two differ in exterior-vs-interior level.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.phlegm_heat_in_lung",
+          "distinguishing_zh": "肺熱壅盛以面部紅腫熱痛、大便乾結等熱盛見症為主，痰濁不顯；痰熱壅肺以咳嗽痰黃黏稠、胸悶氣促為主，痰濁阻肺之象明顯，兩者可從有無明顯痰濁阻肺見症鑑別。",
+          "distinguishing_en": "Excess Lung Heat is dominated by heat-excess signs — red, swollen, hot, painful facial lesions and dry hard stool — without prominent Phlegm-turbidity; Phlegm-Heat Obstructing the Lung is dominated by cough with thick sticky yellow phlegm and chest oppression with rapid breathing, with clear signs of Phlegm obstructing the Lung. The two are distinguished by the presence or absence of notable Phlegm-obstruction signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清瀉肺熱",
+      "treatment_principle_en": "Clear and drain Lung heat",
+      "typical_formulas": [
+        "formula.xie_bai_san"
+      ],
+      "typical_points": [
+        "LU5",
+        "LU10",
+        "LI11",
+        "ST44"
+      ],
+      "point_rationale_zh": "尺澤清瀉肺熱；魚際為肺經滎穴，善清肺熱；曲池清熱瀉火，常用於皮膚熱毒；內庭清瀉陽明鬱熱，配合治療肺熱兼腸熱之痤瘡。",
+      "point_rationale_en": "LU5 (Chize) drains Lung heat; LU10 (Yuji), the Ying-Spring point of the Lung channel, is effective for clearing Lung heat; LI11 (Quchi) clears heat and drains Fire, commonly used for skin heat-toxin; ST44 (Neiting) clears and drains stagnant Yangming heat, used together for acne with combined Lung and Intestinal heat.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.xie_bai_san (瀉白散) used as the standard textbook Lung-heat-clearing formula for the sourced canon pattern (formula_zh 清上防風湯 is a dermatology-specific variant not present in formulas.json); 瀉白散 is the classical formula this pattern is taught with in 方劑學"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.肺熱壅盛"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.stomach_cold",
+      "name_zh": "胃寒",
+      "name_en": "Stomach Cold",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "cold",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "胃脘冷痛，得溫痛減，遇冷加重",
+        "嘔吐清水，口不渴",
+        "喜熱飲食",
+        "畏寒肢冷"
+      ],
+      "key_signs_en": [
+        "Cold epigastric pain, relieved by warmth, worse with cold exposure",
+        "Vomiting clear water, no thirst",
+        "Preference for warm food and drink",
+        "Aversion to cold, cold limbs"
+      ],
+      "tongue_zh": "舌淡苔白滑",
+      "tongue_en": "Pale tongue with a white slippery coating",
+      "pulse_zh": "脈遲或弦緊",
+      "pulse_en": "Slow, or wiry-tight pulse",
+      "mechanism_zh": "寒邪犯胃或過食生冷，寒凝胃脘，胃氣失和，寒性收引則胃脘冷痛、得溫則減；寒邪犯胃、胃氣上逆則嘔吐清水；是胃的基本證型之一，與胃熱、胃陰虛、胃氣虛並列而寒熱相對。",
+      "mechanism_en": "Cold pathogen affects the Stomach, or excessive raw/cold food intake causes Cold to congeal in the epigastrium, disharmonizing Stomach Qi. Cold's contracting nature produces cold epigastric pain that eases with warmth; Cold affecting the Stomach and causing Qi to rebel upward produces vomiting of clear water. This is one of the basic Stomach patterns, standing opposite excess Stomach Heat alongside Stomach Yin deficiency and Stomach Qi deficiency.",
+      "common_causes_zh": "過食生冷、外感寒邪直中脾胃、素體陽虛復感寒邪",
+      "common_causes_en": "Excessive consumption of raw, cold food; an external Cold pathogen directly striking the Spleen-Stomach; a constitutionally Yang-deficient person additionally affected by Cold",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "胃寒以胃脘冷痛得溫則減、喜熱飲、嘔吐清水為特徵，舌淡苔白滑；胃熱熾盛以胃脘灼痛、消穀善飢、口渴喜冷飲為主，舌紅苔黃，寒熱截然相反。",
+          "distinguishing_en": "Stomach Cold is characterized by cold epigastric pain relieved by warmth, preference for hot drinks, and vomiting clear water, with a pale tongue and white slippery coating; excess Stomach Heat is dominated by burning epigastric pain, rapid hungering, and thirst for cold drinks, with a red tongue and yellow coating — the two are diametrically opposite in cold-vs-heat.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.spleen_yang_deficiency",
+          "distinguishing_zh": "胃寒偏重胃脘局部冷痛，多因外感寒邪或飲食生冷所致，起病可較急；脾陽虛以久病畏寒肢冷、便溏、食少等全身陽虛見症為主，病程遷延，病位偏重全身及脾之運化功能，兩者可相兼並見。",
+          "distinguishing_en": "Stomach Cold is centered on local cold epigastric pain, usually from an external Cold pathogen or raw/cold food, and can have a relatively acute onset; Spleen Yang Deficiency is dominated by chronic, systemic Yang-deficiency signs — aversion to cold, cold limbs, loose stool, reduced appetite — with a protracted course and focus on overall Spleen transformation-transportation function. The two patterns can coexist.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "溫胃散寒",
+      "treatment_principle_en": "Warm the Stomach and dispel Cold",
+      "typical_formulas": [
+        "formula.fu_zi_li_zhong_wan"
+      ],
+      "typical_points": [
+        "CV12",
+        "ST36",
+        "PC6",
+        "BL21"
+      ],
+      "point_rationale_zh": "中脘為胃之募穴，溫中散寒；配足三里、胃俞溫胃止痛；內關和胃降逆止嘔；可加灸法增強溫散寒邪之效。",
+      "point_rationale_en": "CV12 (Zhongwan), the Front-Mu point of the Stomach, warms the Middle and dispels Cold; paired with ST36 (Zusanli) and BL21 (Weishu) to warm the Stomach and stop pain; PC6 (Neiguan) harmonizes the Stomach and stops vomiting by directing rebellious Qi downward; moxibustion can be added to strengthen the warming, Cold-dispelling effect.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.fu_zi_li_zhong_wan (附子理中丸) used for the sourced canon formula 附子理中湯 (Fu Zi Li Zhong Tang) — same formula, 丸/湯 dosage-form name variant"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.胃寒"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.wind_cold_invading_collaterals",
+      "name_zh": "風寒襲絡",
+      "name_en": "Wind-Cold Invading the Collaterals",
+      "pattern_family": "jing_luo",
+      "zang_fu": [],
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": "cold",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "突然口眼喎斜",
+        "患側面部麻木或板滯",
+        "眼瞼閉合不全，流淚",
+        "惡風畏寒"
+      ],
+      "key_signs_en": [
+        "Sudden facial deviation (drooping mouth/eye)",
+        "Numbness or stiff tightness of the affected side of the face",
+        "Incomplete eyelid closure, watery eyes",
+        "Aversion to wind and cold"
+      ],
+      "tongue_zh": "舌淡苔薄白",
+      "tongue_en": "Pale tongue with a thin white coating",
+      "pulse_zh": "脈浮緊或浮緩",
+      "pulse_en": "Floating-tight or floating-moderate pulse",
+      "mechanism_zh": "正氣不足，絡脈空虛，風寒之邪乘虛侵襲面部經絡，氣血痹阻，經筋失於濡養，故突然口眼喎斜、患側面部麻木不仁；是面癱（口僻）最常見的起病證型，病位在陽明、少陽經筋。",
+      "mechanism_en": "Upright Qi is insufficient and the collaterals are empty; Wind-Cold pathogen exploits this vacuity to invade the facial channels. Qi and Blood become obstructed and the sinew-channels lose nourishment, producing sudden facial deviation and numbness on the affected side. This is the most common onset pattern of facial paralysis (口僻), located in the Yangming and Shaoyang sinew-channels.",
+      "common_causes_zh": "正氣不足絡脈空虛、汗出當風、感受風寒之邪",
+      "common_causes_en": "Insufficient upright Qi with empty collaterals; sweating while exposed to wind; contracting a Wind-Cold pathogen",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold",
+          "distinguishing_zh": "風寒襲絡病位局限於頭面部經絡（口眼喎斜、面部麻木）；外感風寒為全身性表證，以惡寒發熱、頭身疼痛、鼻塞流清涕為主，無局部經筋喎斜之特異表現，兩者是病位局部與全身之別。",
+          "distinguishing_en": "Wind-Cold Invading the Collaterals is localized to the facial channels (facial deviation, facial numbness); external Wind-Cold is a systemic exterior pattern dominated by chills/fever, body aches, and nasal congestion with clear discharge, without the specific local sinew-channel deviation. The two differ in local-vs-systemic location.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.wind_cold_damp_bi",
+          "distinguishing_zh": "風寒襲絡特指風寒侵襲頭面部經絡導致口眼喎斜（面癱）；風寒濕痹指風寒濕三邪侵襲肢體關節經絡導致肢節疼痛重著，兩者病位不同（頭面經筋 vs 肢體關節），風寒濕痹另兼濕邪、疼痛沉重感。",
+          "distinguishing_en": "Wind-Cold Invading the Collaterals specifically refers to Wind-Cold invading the facial channels, causing facial deviation (facial paralysis); Wind-Cold-Damp Bi refers to the three combined pathogens invading the channels of the limbs and joints, causing painful heaviness there. The locations differ (facial sinew-channels vs. limb joints), and Wind-Cold-Damp Bi additionally carries Dampness with a sensation of heaviness.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "祛風散寒，溫經通絡",
+      "treatment_principle_en": "Dispel Wind and disperse Cold, warm the channels and unblock the collaterals",
+      "typical_formulas": [
+        "formula.qian_zheng_san"
+      ],
+      "typical_points": [
+        "ST4",
+        "ST6",
+        "LI4",
+        "GB20",
+        "ST36"
+      ],
+      "point_rationale_zh": "地倉、頰車為局部取穴，疏調面部經筋氣血；合谷「面口合谷收」，為治療頭面疾患要穴；風池祛風散寒；足三里補益氣血，扶正以祛邪。",
+      "point_rationale_en": "ST4 (Dicang) and ST6 (Jiache) are local points that regulate Qi and Blood in the facial sinew-channels; LI4 (Hegu) — per the classic mnemonic \"for the face and mouth, take Hegu\" — is a principal point for head-and-face disorders; GB20 (Fengchi) dispels Wind and disperses Cold; ST36 (Zusanli) tonifies Qi and Blood, supporting upright Qi to expel the pathogen.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.qian_zheng_san (牽正散) used for the sourced canon compound formula 牽正散合小續命湯 — 牽正散 resolves exactly and is the classical formula this exact pattern (facial paralysis) is taught with; 小續命湯 is not present in formulas.json and is not separately absorbed"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.風寒襲絡"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.heat_toxin_blazing",
+      "name_zh": "熱毒熾盛",
+      "name_en": "Blazing Heat-Toxin",
+      "pattern_family": "bing_yin",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "皮膚紅腫熱痛，或見膿皰",
+        "局部灼熱，病勢迅猛",
+        "發熱，口渴",
+        "大便乾結，小便短赤"
+      ],
+      "key_signs_en": [
+        "Red, swollen, hot, painful skin, or pustules",
+        "Local burning heat, rapidly progressing",
+        "Fever, thirst",
+        "Dry hard stool, scanty dark urine"
+      ],
+      "tongue_zh": "舌紅絳，苔黃燥",
+      "tongue_en": "Red or crimson tongue body with a dry yellow coating",
+      "pulse_zh": "脈洪數或滑數",
+      "pulse_en": "Surging-rapid or slippery-rapid pulse",
+      "mechanism_zh": "熱邪熾盛，壅聚成毒，毒熱蘊結肌膚則紅腫熱痛、化腐成膿；熱毒熾盛，病勢較單純熱證更為迅猛兇險，易入營血，是皮膚科及感染性疾病常見的重症病機，較單純「熱」或「火」多一分「毒」的腐潰、傳變傾向。",
+      "mechanism_en": "Heat pathogen becomes exuberant and congests into Toxin; toxic heat accumulating in the skin produces redness, swelling, heat, and pain, progressing to suppuration. Blazing Heat-Toxin runs a more rapid and dangerous course than simple Heat patterns and readily penetrates to the Nutritive-Blood level. This is a common severe-stage mechanism in dermatology and infectious disease, distinguished from plain \"Heat\" or \"Fire\" by the added \"Toxin\" tendency toward suppuration and rapid transmutation.",
+      "common_causes_zh": "外感熱毒之邪、過食辛辣肥甘蘊熱成毒、瘡瘍失於清解",
+      "common_causes_en": "Contracting an external heat-toxin pathogen; excessive spicy, rich food accumulating heat that becomes Toxin; a sore or lesion not adequately cleared and resolved",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.lung_heat_excess",
+          "distinguishing_zh": "熱毒熾盛以紅腫熱痛、化膿潰爛等「毒」的腐潰傾向為特徵，病勢兇猛易傳變；肺熱壅盛以面部紅腫熱痛、咳嗽痰黃、大便乾結為主，熱象雖盛但無明顯化膿腐潰及傳變入營血之勢，兩者程度與傳變風險不同。",
+          "distinguishing_en": "Blazing Heat-Toxin is characterized by the suppurative-ulcerative tendency of \"Toxin\" — redness, swelling, heat, pain, and pus formation — with a rapid course prone to transmutation; Excess Lung Heat is dominated by red swollen facial lesions, cough with yellow phlegm, and dry hard stool — heat-excess without notable suppuration or tendency to transmute into the Nutritive-Blood level. The two differ in severity and transmutation risk.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.damp_heat_skin_invasion",
+          "distinguishing_zh": "熱毒熾盛以熱邪為主、化膿腐潰、病勢急迫為特徵，分泌物多為膿性；濕熱浸淫兼有濕邪，以皮損滲液流滋、纏綿難癒、苔黃膩為主，病勢相對緩和，兩者可從有無膿腐及苔膩與否鑑別。",
+          "distinguishing_en": "Blazing Heat-Toxin is Heat-predominant with suppuration and ulceration, an urgent course, and mostly purulent discharge; Damp-Heat Invading the Skin additionally carries Dampness, dominated by weeping exudative lesions, a lingering course, and a yellow greasy coating, with a comparatively milder course. The two are distinguished by the presence of purulent breakdown and coating greasiness.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清熱解毒，涼血消腫",
+      "treatment_principle_en": "Clear heat and resolve Toxin, cool the Blood and reduce swelling",
+      "typical_formulas": [
+        "formula.pu_ji_xiao_du_yin"
+      ],
+      "typical_points": [
+        "LI11",
+        "LI4",
+        "ST44",
+        "SP10",
+        "GV14"
+      ],
+      "point_rationale_zh": "曲池、合谷清熱瀉火解毒；內庭清瀉陽明積熱；血海涼血消腫；大椎為諸陽之會，瀉熱解毒力強。",
+      "point_rationale_en": "LI11 (Quchi) and LI4 (Hegu) clear heat, drain Fire, and resolve Toxin; ST44 (Neiting) clears and drains accumulated Yangming heat; SP10 (Xuehai) cools the Blood and reduces swelling; GV14 (Dazhui), the meeting point of all Yang channels, has a strong effect for draining heat and resolving Toxin.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.熱毒熾盛"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.gallbladder_heat_invading_stomach",
+      "name_zh": "膽熱犯胃",
+      "name_en": "Gallbladder Heat Invading the Stomach",
+      "pattern_family": "zang_fu",
+      "zang_fu": [
+        "gallbladder",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "脘脅脹悶或灼痛",
+        "口苦嘔惡",
+        "泛酸或呃逆",
+        "心煩失眠"
+      ],
+      "key_signs_en": [
+        "Epigastric/flank fullness or burning pain",
+        "Bitter taste, nausea",
+        "Acid regurgitation or hiccup",
+        "Restlessness and insomnia"
+      ],
+      "tongue_zh": "舌紅苔黃膩",
+      "tongue_en": "Red tongue with a yellow greasy coating",
+      "pulse_zh": "脈弦滑數",
+      "pulse_en": "Wiry-slippery-rapid pulse",
+      "mechanism_zh": "膽為中正之官，主決斷，膽氣鬱而化熱，膽熱橫逆犯胃，胃失和降，故脘脅脹悶、口苦嘔惡、泛酸呃逆；膽熱擾動心神則心煩失眠；為肝膽鬱熱進一步橫犯胃腑的複合證型，常見於膽汁反流性胃炎、逆流性食道炎。",
+      "mechanism_en": "The Gallbladder, the official of impartiality governing decision-making, has its Qi stagnate and transform into Heat; this Gallbladder Heat invades the Stomach horizontally, and the Stomach loses its harmonious downward-directing function, producing epigastric/flank fullness, bitter taste, nausea, acid regurgitation, and hiccup. Gallbladder Heat disturbing the Heart spirit produces restlessness and insomnia. This compound pattern arises when Liver-Gallbladder stagnant heat further invades the Stomach organ, commonly seen in bile-reflux gastritis and reflux esophagitis.",
+      "common_causes_zh": "情志不遂肝膽氣鬱化熱、飲食不節助濕生熱",
+      "common_causes_en": "Emotional frustration with Liver-Gallbladder Qi stagnation transforming into Heat; dietary irregularity feeding Dampness that generates Heat",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.liver_fire_invading_stomach",
+          "distinguishing_zh": "膽熱犯胃以口苦嘔惡、泛酸呃逆、苔黃膩為特徵，熱勢夾有痰濕；肝火犯胃以脘脅灼痛急迫、急躁易怒、舌紅苔黃（不膩）為主，火勢更為熾烈，兩者可從苔膩與否及情志見症輕重鑑別。",
+          "distinguishing_en": "Gallbladder Heat Invading the Stomach is characterized by bitter taste, nausea, acid regurgitation, and hiccup with a yellow greasy coating — heat mixed with Phlegm-Damp; Liver Fire Invading the Stomach is dominated by acute burning epigastric/flank pain and marked irritability, with a red tongue and yellow (non-greasy) coating — a more intensely blazing fire. The two are distinguished by coating greasiness and the severity of emotional signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.liver_gallbladder_damp_heat",
+          "distinguishing_zh": "膽熱犯胃病位偏重膽胃，以口苦嘔惡、泛酸呃逆等胃氣上逆見症為突出；肝膽濕熱病位偏重肝膽本身及下焦，以脅肋脹痛、黃疸、陰部濕癢、帶下黃臭等為主症，胃氣上逆並非其核心表現，兩者主症側重不同。",
+          "distinguishing_en": "Gallbladder Heat Invading the Stomach centers on the Gallbladder-Stomach axis, prominently featuring Stomach-Qi-rebellion signs (bitter taste, nausea, acid regurgitation, hiccup); Liver-Gallbladder Damp-Heat centers on the Liver-Gallbladder themselves and the Lower Burner, dominated by flank distending pain, jaundice, genital dampness/itch, and foul yellow vaginal discharge — Stomach-Qi rebellion is not its core presentation. The two differ in which primary symptoms dominate.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清膽和胃，降逆止嘔",
+      "treatment_principle_en": "Clear the Gallbladder and harmonize the Stomach, direct rebellious Qi downward and stop vomiting",
+      "typical_formulas": [
+        "formula.wen_dan_tang"
+      ],
+      "typical_points": [
+        "GB34",
+        "PC6",
+        "ST36",
+        "GB24"
+      ],
+      "point_rationale_zh": "陽陵泉為膽經合穴，利膽和胃；內關和胃降逆止嘔；足三里健脾和胃；日月為膽之募穴，疏泄膽氣。",
+      "point_rationale_en": "GB34 (Yanglingquan), the He-Sea point of the Gallbladder channel, disinhibits the Gallbladder and harmonizes the Stomach; PC6 (Neiguan) harmonizes the Stomach and stops vomiting by directing rebellious Qi downward; ST36 (Zusanli) strengthens the Spleen and harmonizes the Stomach; GB24 (Riyue), the Front-Mu point of the Gallbladder, courses and drains Gallbladder Qi.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.膽熱犯胃"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
