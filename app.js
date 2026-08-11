@@ -7451,10 +7451,23 @@ function saveCaseFromForm(event) {
     return;
   }
 
-  const duplicate = clinicalCases.find((item) => item.patientCode === nextCase.patientCode && item.id !== editingCaseId);
-  if (duplicate) {
-    alert("這個 patient code 已存在，請改用不同代碼。");
-    return;
+  // INDEPENDENT_AUDIT_2026-08-11 #2 / TOP-10 #2: patientCode is a
+  // Patient key, not a Case key (D5) — one patient legitimately opens
+  // multiple cases (a returning patient with a NEW chief complaint). The
+  // old hard block minted a false "already exists, use a different code"
+  // alert that pushed Ting toward inventing a second code for the same
+  // person — patientId = sha256(patientCode) (D1, irreversible), so a
+  // minted code permanently forks that patient's identity going forward.
+  // derivePatientsFromCases() (js/clinical-store.js:310) already groups
+  // cases by patientCode and was built for multi-case-per-code from C2a —
+  // this gate was the only place in app.js still assuming one-code-one-case
+  // (searched: no other patientCode equality check in app.js expects a
+  // single match). Same code, same patient → confirm, don't block.
+  const existingCasesForCode = clinicalCases.filter((item) => item.patientCode === nextCase.patientCode && item.id !== editingCaseId);
+  if (existingCasesForCode.length) {
+    const titles = existingCasesForCode.map((item) => item.caseTitle || item.patientCode).join("、");
+    const proceed = confirm(`此代碼已有 ${existingCasesForCode.length} 筆病例（${titles}）。要為同一位病人開新病例嗎？`);
+    if (!proceed) return;
   }
 
   if (editingCaseId) {
