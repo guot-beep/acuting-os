@@ -742,3 +742,64 @@ C4 51, C5 227/114, C10 147/76, all pre-existing debt, none from this batch).
 `validate-content-junk.js`: PASS. `validate-relations.js`: passed (no
 broken links introduced; skeleton records carry no relation fields to
 validate).
+
+## Skeleton tier — Batch 2: psych_sleep / respiratory / neuro (2026-08-11)
+
+Same method as Batch 1: exact-scanned all ids/name_zh/name_en/aliases now
+in canon (277 records, including Batch 1's own additions) plus every id
+already drafted earlier in this batch before assigning each new id.
+71 candidates → **71 NEW, 0 alias-merged, 0 collisions**.
+
+**Category dedupe notes** (full per-record table omitted for length; ids are
+self-descriptive — see the inserted records for name_zh/name_en/icd_hint):
+
+- `psych_sleep` (25): all NEW. Checked against existing `cond.anxiety`
+  (GAD-specific), `cond.depression` (MDD-specific), `cond.ptsd`, `cond.adhd`,
+  `cond.ocd`, `cond.substance_use_disorder`, `cond.eating_disorder` — none of
+  the 25 new DSM categories (social anxiety, specific phobia, bipolar, SAD,
+  ASD, narcolepsy, sleepwalking, sleep terror, nightmare disorder, adjustment
+  disorder, postpartum depression, BPD, schizophrenia, learning disorder,
+  Tourette, trichotillomania, prolonged grief, agoraphobia, separation
+  anxiety, BDD, hoarding, excoriation, acute stress disorder, dissociative
+  disorder, reactive attachment disorder) overlap an existing card's named
+  diagnosis. `cond.postpartum_depression` checked against
+  `cond.menopause_syndrome`/gyn cards — distinct life-stage mood disorder,
+  no overlap.
+- `respiratory` (20): all NEW. Checked against existing `cond.asthma`,
+  `cond.copd`, `cond.chronic_sinusitis`, `cond.chronic_cough`,
+  `cond.acute_bronchitis`, `cond.sleep_apnea`, `cond.pneumonia`,
+  `cond.pneumothorax` — `cond.chronic_bronchitis`/`cond.emphysema` are
+  COPD's two component phenotypes, kept as distinct child concepts next to
+  the existing `cond.copd` parent card (same parent/child pattern as
+  `cond.ibd`); `cond.central_sleep_apnea` kept distinct from existing
+  `cond.sleep_apnea` (obstructive) per template's non-equivalence rule
+  (different mechanism, both real sleep-medicine diagnoses).
+- `neuro` (26): all NEW. Checked against existing `cond.stroke_rehab`
+  (post-stroke rehab stage, NOT the acute event) — `cond.acute_ischemic_stroke`,
+  `cond.intracerebral_hemorrhage`, `cond.subarachnoid_hemorrhage` are the
+  acute-emergency entities, same acute-vs-chronic/post-acute boundary
+  pattern documented in Batches L/M (SSHL vs hearing_loss, COVID vs
+  post_covid). Checked against existing `cond.trigeminal_neuralgia`,
+  `cond.postherpetic_neuralgia` — `cond.occipital_neuralgia`/
+  `cond.glossopharyngeal_neuralgia` are distinct nerve-specific neuralgias,
+  no overlap. Checked against existing `cond.migraine`/`cond.tension_headache`
+  — `cond.medication_overuse_headache`/`cond.cervicogenic_headache`(Batch 1)/
+  `cond.menstrual_migraine` are distinct recognized headache-medicine
+  diagnoses, not synonyms.
+
+**ICD notes**: `cond.concussion_mtbi` uses `S06.0X0A` (a full 7-character
+ICD-10-CM code including the "initial encounter" 7th character, since
+concussion codes require an encounter-type suffix) rather than a bare
+category code — flagged here as a format difference from this batch's other
+entries, not an error. `cond.menstrual_migraine` uses `G43.829` (migraine,
+unspecified, intractable, without status migrainosus) as the closest
+existing ICD-10-CM leaf; there is no dedicated "menstrual migraine" code in
+ICD-10-CM, so the closest general migraine leaf was used and is noted here
+per the task's ICD-uncertainty instruction.
+
+**Validator state after this batch's insertion**:
+`data/pathology/condition_canon_shortlist.json` 277 → 348 records.
+`validate-condition-standard.js`: 425 blocking defects (flat — C4 51/51
+still only pre-existing, N4 139/139 = Batch 1's 68 + this batch's 71).
+`check-validation-ratchet.js`: conditions flat at 425, **PASS**.
+`validate-content-junk.js`: PASS. `validate-relations.js`: passed.
