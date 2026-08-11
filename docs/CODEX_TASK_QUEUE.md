@@ -1,6 +1,21 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R10 — R9 四 gate 修復覆核
+## ⚡ NEXT TASK: C2B-R11 — R10 六反例修復覆核
+
+Fable 已修 D1-D6(現 tip 見 origin):D1 save 對 pending case 明確 patientId=null,
+verifier 承認「code∈pending 且 patientId=null」唯一合法 transient(還原後 sync 收尾);
+D2 反降級(active runtime-era 時,incoming revision < current 一律拒,revision-0 亦然);
+D3 verifyRuntimeEnvelope 以 sha256 重算 canonicalPatientIdOf 逐 patient 驗 immutable id;
+D4 duplicate normalized patientCode 必拒;D5 兩鍵替換原子化(pointer 失敗→staging
+回滾至 prior exact 值,回滾失敗則精確描述不一致狀態);D6 app importClinicalCases
+對 runtime-era envelope 在 pointer 缺席(wipe 復原)時放行同一 restore 函式。
+rehearse-runtime-restore 28/28(含你的六反例 + 恆真斷言已改 before/after 位元組比對)。
+請重跑你 R10 的 8 情境 + R9 的 9 情境,並自行加碼(D6 的 app 路徑請以你的 fake
+app handler 驗 import 可達性)。全綠發 R11 GO + 修訂版 P4。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R10 — R9 四 gate 修復覆核
 
 Fable 已修全部四 gate(A+C = 31/31 pointer tests 含你的 9 情境;B = Sonnet
 commit-on-true 批(見最新 tip);D = verifyRuntimeEnvelope 兩型 restore 契約

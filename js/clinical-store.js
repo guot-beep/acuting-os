@@ -99,7 +99,10 @@
         if (!code) { c.patientId = null; continue; }
         const p = byCode.get(code);
         if (p) { p.caseIds.push(c.id); c.patientId = p.id; }
-        else pending.add(code);
+        // R10-D1:pending 態的 case 明確 patientId=null(而非殘留舊值/
+        // undefined)—— verifier 承認「code ∈ pending 且 patientId=null」
+        // 為唯一合法 transient,export 出的 pending envelope 才可還原。
+        else { pending.add(code); c.patientId = null; }
       }
       env.pending_patient_codes = [...pending].sort();
       // R9 gate C:runtime revision — 每次寫入遞增;syncPendingPatients 以
@@ -473,12 +476,23 @@
    *   4. 若現有 active staging 存在:逐 case 逐 exposure append-only
    *      (exposureHistoryExtends)—— 匯入的備份不得截斷現存歷史。
    *   5. pending_patient_codes 自洽(非空字串、無已存在 patient 的 code)。 */
-  function verifyRuntimeEnvelope(env) {
+  async function verifyRuntimeEnvelope(env, sha256hex) {
     const failures = [];
+    const pendingSet = new Set(env.pending_patient_codes || []);
     const pById = new Map();
+    const byNormCode = new Map();
     for (const p of env.patients) {
       if (pById.has(p.id)) failures.push(`duplicate patient id ${p.id}`);
       pById.set(p.id, p);
+      // R10-D4:duplicate normalized patientCode = Patient 分裂,必拒。
+      const nc = String(p.patientCode || "").trim();
+      if (byNormCode.has(nc)) failures.push(`duplicate patientCode "${nc}" across patients ${byNormCode.get(nc)} and ${p.id}`);
+      byNormCode.set(nc, p.id);
+      // R10-D3:immutable ID 契約 —— id 必須等於 canonical 推導,竄改必拒。
+      if (sha256hex) {
+        const expected = await canonicalPatientIdOf(nc, sha256hex);
+        if (p.id !== expected) failures.push(`patient ${p.id}: id does not match canonical derivation for code "${nc}" (expected ${expected})`);
+      }
     }
     const caseIds = new Set();
     const casesByPatient = new Map();
@@ -490,7 +504,13 @@
         if (c.patientId !== null && c.patientId !== undefined) failures.push(`case ${c.id}: blank patientCode but patientId "${c.patientId}" (must be null)`);
         continue;
       }
-      if (!c.patientId || !pById.has(c.patientId)) { failures.push(`case ${c.id}: patientId "${c.patientId}" does not resolve`); continue; }
+      // R10-D1:唯一合法 transient —— code 在 pending 清單且 patientId=null
+      // (export 於 sync 前是合法狀態;還原後由 syncPendingPatients 收尾)。
+      if (c.patientId === null || c.patientId === undefined) {
+        if (!pendingSet.has(code)) failures.push(`case ${c.id}: nonblank code "${code}" has null patientId but code is NOT in pending_patient_codes`);
+        continue;
+      }
+      if (!pById.has(c.patientId)) { failures.push(`case ${c.id}: patientId "${c.patientId}" does not resolve`); continue; }
       if (pById.get(c.patientId).patientCode !== code) failures.push(`case ${c.id}: patientCode "${code}" != patient ${c.patientId} code "${pById.get(c.patientId).patientCode}"`);
       if (!casesByPatient.has(c.patientId)) casesByPatient.set(c.patientId, new Set());
       casesByPatient.get(c.patientId).add(c.id);
@@ -560,9 +580,20 @@
       try { writeKey(CANDIDATE_KEY, JSON.stringify(env)); }
       catch (e) { return fail(["candidate write failed: " + e.message]); }
       const isRuntimeEra = Number(env.runtime_revision || 0) >= 1;
+      // R10-D2:反降級 —— 若當前 active world 已是 runtime-era,匯入的
+      // envelope revision 不得低於現值(revision-0 migration 備份會抹掉
+      // 切換後的所有編輯;append-only 檢查也會被 revision-0 分流繞過)。
+      // 災難還原(明知要回舊點)不是這條路 —— 那需要 Ting 授權的獨立流程。
+      let currentEnv = null;
+      try { currentEnv = JSON.parse(readKey(STAGING_KEY) || "null"); } catch { currentEnv = null; }
+      const currentRev = Number(currentEnv && currentEnv.runtime_revision || 0);
+      if (currentRev >= 1 && Number(env.runtime_revision || 0) < currentRev) {
+        return fail([`incoming envelope revision ${Number(env.runtime_revision || 0)} is OLDER than active runtime revision ${currentRev} — refusing downgrade (would erase post-switch edits); disaster-restore requires the authorized rollback flow`]);
+      }
       if (isRuntimeEra) {
-        // R9 gate D:runtime-era 走自洽性驗證(見 verifyRuntimeEnvelope)。
-        const v = verifyRuntimeEnvelope(env);
+        // R9 gate D:runtime-era 走自洽性驗證(R10-D3/D4:含 canonical id
+        // 重算與 duplicate code 檢查,故為 async 並需要 sha256)。
+        const v = await verifyRuntimeEnvelope(env, sha256);
         if (!v.ok) return fail(v.failures);
       } else {
         // migration-era(revision 缺/0):原 plan-anchored 路徑,逐字不變。
@@ -581,15 +612,26 @@
       // (Codex R7)。cleanup 失敗 → active 原封不動地 fail closed。
       const c = cleanupCandidate();
       if (!c.ok) return { ok: false, failures: ["candidate cleanup failed before active swap — active staging/pointer untouched: " + c.error] };
+      // R10-D5:兩鍵替換必須整體成敗一致 —— 先快照兩鍵原值;staging 寫入後
+      // 若 pointer 寫入失敗,回滾 staging 至原值再回報失敗;回滾也失敗才
+      // 回報「狀態不一致」並精確描述兩鍵現值。回 {ok:false} 時呼叫端拿到的
+      // 敘述必須與實際 storage 狀態相符,絕不再有「說沒動、其實動了」。
+      const prevStagingRaw = readKey(STAGING_KEY);   // null = 原本不存在
       try { writeKey(STAGING_KEY, JSON.stringify(env)); }   // 單一 setItem = 原子替換
       catch (e) { return { ok: false, failures: ["active staging replacement failed — original staging/pointer untouched: " + e.message] }; }
-      // R9 gate D:runtime-era envelope 的存在本身即證明 active world = v2
-      // (revision 只可能由切換後的 save 產生)。wipe 後還原若不補 pointer,
-      // load 會靜默讀 v1 —— 正是 R9 §5 要堵的分叉。migration-era 不動 pointer
-      // (切換是 P4 儀式的事,不是 restore 的事)。
       if (isRuntimeEra) {
+        // runtime-era envelope 的存在即證明 active world = v2;wipe 後還原
+        // 不補 pointer,load 會靜默讀 v1(R9 §5 的分叉)。
         try { writeKey(POINTER_KEY, "v2"); }
-        catch (e) { return { ok: false, failures: ["staging restored but POINTER write failed — run switchPointer manually before any save: " + e.message] }; }
+        catch (e) {
+          try {
+            if (prevStagingRaw === null) removeKey(STAGING_KEY);
+            else writeKey(STAGING_KEY, prevStagingRaw);
+            return { ok: false, failures: ["POINTER write failed — staging ROLLED BACK to prior value; storage state unchanged: " + e.message] };
+          } catch (e2) {
+            return { ok: false, failures: ["POINTER write failed AND staging rollback failed — INCONSISTENT STATE: staging now holds the imported envelope, pointer unchanged. Do not save; export both keys and repair manually. (" + e.message + " / " + e2.message + ")"] };
+          }
+        }
       }
       return { ok: true, patients: env.patients.length, cases: env.cases.length, runtime_era: isRuntimeEra };
     } catch (e) {

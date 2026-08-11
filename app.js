@@ -8094,7 +8094,12 @@ function importClinicalCases(event) {
       // envelope into staging; outside the v2 world it is refused outright.
       if (imported && !Array.isArray(imported) && imported.schema_version === 2 && Array.isArray(imported.cases)) {
         const pointer = localStorage.getItem("acuting-clinical-active");
-        if (pointer !== "v2") {
+        // R10-D6:runtime-era 備份(runtime_revision ≥ 1)在 pointer 缺席時
+        // 也必須可還原 —— 那正是「v2 keys 被清後靠備份復原」的場景;
+        // restoreV2Envelope 會做自洽性驗證並自行補回 pointer。
+        // migration-era(revision 缺/0)維持原規則:非 v2 世界一律拒絕。
+        const importedIsRuntimeEra = Number(imported.runtime_revision || 0) >= 1;
+        if (pointer !== "v2" && !importedIsRuntimeEra) {
           alert("匯入被拒絕:這是 v2 備份(含 patients 層),目前系統仍在 v1 模式。v2 還原屬於 migration 工具流程,不能在這裡降級匯入(會丟失 patients/journal)。");
           return;
         }

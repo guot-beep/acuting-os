@@ -59,13 +59,13 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.strictEqual(envBack.cases[0].agentExposures[0].events.length, 2); ok("exposure events exact");
 
   // 3. 反例 A:截斷 exposure 歷史的 import 必拒(現有 staging 在場)
+  const stagingBeforeA = b.kv.get(S.STAGING_KEY);   // R10:before 值先存,before/after 位元組比對(修正恆真斷言)
   const truncated = JSON.parse(exported);
   truncated.cases[0].agentExposures[0].events = truncated.cases[0].agentExposures[0].events.slice(0, 1);
   const rA = await S.restoreV2Envelope(JSON.stringify(truncated), sha);
   assert.strictEqual(rA.ok, false); ok("truncated history import rejected");
   assert.ok(!b.kv.has(S.CANDIDATE_KEY)); ok("candidate cleaned after rejection");
-  assert.strictEqual(b.kv.get(S.STAGING_KEY), b.kv.get(S.STAGING_KEY)); // staging untouched by failed import
-  ok("active staging untouched after rejection");
+  assert.strictEqual(b.kv.get(S.STAGING_KEY), stagingBeforeA); ok("active staging byte-identical after rejection");
 
   // 4. 反例 B:patientId 交換(referential integrity)必拒
   const swapped = JSON.parse(b.kv.get(S.STAGING_KEY));
@@ -91,6 +91,61 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.strictEqual(rM.ok, true); ok("migration-era restore path unchanged");
   assert.ok(!rM.runtime_era); ok("migration-era not classified runtime");
   assert.ok(!b2.kv.has(S.POINTER_KEY)); ok("migration-era restore never touches pointer");
+
+  // === R10 反例(Codex c279794)===
+  // R10-D1:pending 態 export 必須可還原(sync 前的合法 transient)
+  S.setBackend(b);   // 回到主情境(staging 在場)
+  const casesP = S.load();
+  casesP.push({ id: "case.pend", patientCode: "P-PEND", soapNotes: [] });
+  S.save(casesP);                                     // 不 sync — pending 態
+  const pendingExport = b.kv.get(S.STAGING_KEY);
+  assert.ok(JSON.parse(pendingExport).pending_patient_codes.includes("P-PEND"));
+  const bP = fakeBackend({});                          // wipe 世界
+  S.setBackend(bP);
+  const rP = await S.restoreV2Envelope(pendingExport, sha);
+  assert.strictEqual(rP.ok, true); ok("R10-D1: pending-state export restores");
+  const rPs = await S.syncPendingPatients(sha);
+  assert.strictEqual(rPs.created, 1); ok("R10-D1: pending patient minted after restore");
+
+  // R10-D2:revision 降級必拒(active 已是 runtime-era)
+  const activeRev = JSON.parse(bP.kv.get(S.STAGING_KEY)).runtime_revision;
+  const older = JSON.parse(pendingExport);
+  older.runtime_revision = Math.max(0, activeRev - 1);
+  const rD = await S.restoreV2Envelope(JSON.stringify(older), sha);
+  assert.strictEqual(rD.ok, false); ok("R10-D2: older-revision import rejected");
+  assert.ok(rD.failures[0].includes("OLDER")); ok("R10-D2: rejection names downgrade");
+  const migEra = JSON.parse(pendingExport); delete migEra.runtime_revision;
+  const rD0 = await S.restoreV2Envelope(JSON.stringify(migEra), sha);
+  assert.strictEqual(rD0.ok, false); ok("R10-D2: revision-0 cannot overwrite runtime world");
+
+  // R10-D3:canonical patient id 竄改(含 FK 同步改)必拒
+  const tampered = JSON.parse(bP.kv.get(S.STAGING_KEY));
+  tampered.runtime_revision += 1;
+  const victim = tampered.patients[0];
+  const oldId = victim.id; victim.id = "patient.tampered0000".slice(0, 20);
+  for (const c of tampered.cases) if (c.patientId === oldId) c.patientId = victim.id;
+  const rT = await S.restoreV2Envelope(JSON.stringify(tampered), sha);
+  assert.strictEqual(rT.ok, false); ok("R10-D3: tampered canonical id rejected");
+
+  // R10-D4:duplicate patientCode 分裂必拒
+  const dup = JSON.parse(bP.kv.get(S.STAGING_KEY));
+  dup.runtime_revision += 1;
+  if (dup.patients.length >= 2) { dup.patients[1].patientCode = dup.patients[0].patientCode; }
+  else dup.patients.push({ ...dup.patients[0], id: "patient.differentid0" });
+  const rDup = await S.restoreV2Envelope(JSON.stringify(dup), sha);
+  assert.strictEqual(rDup.ok, false); ok("R10-D4: duplicate patientCode rejected");
+
+  // R10-D5:pointer 寫入失敗 → staging 回滾,兩鍵 exact unchanged
+  const goodExport = bP.kv.get(S.STAGING_KEY);
+  const bF = fakeBackend({});
+  const origWK = bF.writeKey.bind(bF);
+  bF.writeKey = (k, v) => { if (k === S.POINTER_KEY) throw new Error("pointer write fault"); origWK(k, v); };
+  S.setBackend(bF);
+  const rF = await S.restoreV2Envelope(goodExport, sha);
+  assert.strictEqual(rF.ok, false); ok("R10-D5: pointer fault -> ok:false");
+  assert.ok(rF.failures[0].includes("ROLLED BACK")); ok("R10-D5: reports rollback");
+  assert.ok(!bF.kv.has(S.STAGING_KEY)); ok("R10-D5: staging rolled back to absent (exact prior state)");
+  assert.ok(!bF.kv.has(S.POINTER_KEY)); ok("R10-D5: pointer unchanged");
 
   console.log(`\nRUNTIME RESTORE REHEARSAL: ${pass}/${pass} PASS`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });
