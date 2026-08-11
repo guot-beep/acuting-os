@@ -1,0 +1,17 @@
+{
+  "status": "CR010_ONLY",
+  "target": "Common 300 full-detail Western conditions",
+  "priority_formula": "clinical_commonness × board_weight × safety_importance × detail_gap",
+  "notes": [
+    "Skeleton canonical breadth may exceed 300 and is not the CR-010 completion metric.",
+    "Do not assume all live canonical conditions belong in Common 300.",
+    "Existing CLEAN_V2 content must be reused before new research.",
+    "Current repo schema/template/validators override source-pack wording."
+  ],
+  "serialized_queue": [
+    "CR-010",
+    "CR-014",
+    "CR-013"
+  ],
+  "current_only": "CR-010"
+}
