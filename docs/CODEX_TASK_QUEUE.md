@@ -1,13 +1,18 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R14 — R13 G1/G2 修復覆核
+## ⚡ NEXT TASK: C2B-R14 — 收斂型終審(SOL 2026-08-11 指令:非無限循環)
 
-Fable 已修:active staging 三態化 —— absent 合法(無比較基準)、CORRUPT
-(unparseable)與 INVALID SHAPE 一律 REJECTED_UNCHANGED 零寫入(不再被當成
-absent);verifyRuntimeEnvelope 的 append-only 基準改由 restore 傳入已驗證的
-currentEnv,不再自行吞錯重讀。rehearse-runtime-restore 56/56(G1 corrupt-raw
-×3 斷言、G2 invalid-shape ×3 斷言,均含 bytes-untouched 比對)。
-請重跑 R9-R13 全情境(9+8+5+6+3)+ 自行加碼;全綠發 R14 GO + 修訂版 P4。
+**性質**:final adversarial audit。範圍鎖定六軸 ——
+Patient↔Case integrity → revision/order → restore → race → rollback → pointer switch。
+**已知修復全數就位**:R13 G1/G2(corrupt/invalid-shape active 三態)含入,
+rehearse-runtime-restore 56/56、pointer 31/31、C2b rehearsal 30/30。
+**新增必驗**:main@ca2c45b9 已整合(merge d6356e6),請確認整合後全套仍
+50/50+(Fable 的六組平行驗證已全綠、ANCESTRY_OK,請獨立重驗)。
+**收斂規則**:沒有新的實質 blocker 就發 R14 GO + 修訂版 P4(含切換後
+寫入驗證、pending sync 驗證、runtime-era restore 演練),**進 P4 rehearsal
+階段;不再開 R15+ 重審已解項**。有實質 blocker 才照舊寫反例。
+另請確認:codex/pattern-v2 無 branch protection/required checks、latest head
+無 CI run —— 落地 gate 需要 CI 綠燈,請一併檢查 validate.yml 為何未觸發。
 硬邊界照舊。
 
 ---

@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R14 remains NO-GO
+
+- **Gate**：reviewed `3d4ca4f..3c3f60f`；R9/R10/R11/R12/R13=`9/9 · 8/8 · 5/5 · 6/6 · 3/3 PASS`，new minimum-shape extras=`1/4 PASS · 3/4 FAIL`。
+- **Primary blocker**：active shape guard 只驗 cases/patients arrays；missing journal、pending wrong-type、schema_version!=2 仍可 `ok:true` 覆寫 active。
+- **Required H1**：non-null active 共用完整 minimum-envelope validator；任一 shape 缺口皆 `REJECTED_UNCHANGED`，disaster repair 另走 Ting 授權。官方 suite另補 sync overflow。
+- **Evidence**：official pointer/runtime/C2b=`31/31 · 56/56 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
+- **Boundary / next**：真 store 讀／寫=`0/0`，fake harness 已清理；H1 variants 與 sync-overflow blocking test 後排 R15，期間禁止 shadow write／pointer switch／runtime restore。
+
+---
+
 ## [2026-08-11] Codex Handoff — C2B-R13 remains NO-GO
 
 - **Gate**：reviewed `e7c1a22..6ee761c`；R9/R10/R11/R12=`9/9 · 8/8 · 5/5 · 6/6 PASS`，new extras=`1/3 PASS · 2/3 FAIL`，不發布 R13 GO／P4。

@@ -6,6 +6,40 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R14 G1/G2 獨立覆核 — Clinical endpoint `3c3f60f`
+
+### 裁決：R14 NO-GO；P4 不發布
+
+- **範圍**：`git pull --ff-only` 回 already up to date；覆核 Clinical fix `3d4ca4f..3c3f60f`。審計期間後續 pattern／condition／landing-doc commits 的 store/app/runtime rehearsal/pointer-test blobs 均與 `3c3f60f` 相同，未漂移 Clinical runtime。
+- **指定 31 情境**：R9=`9/9 PASS`；R10=`8/8 PASS`；R11=`5/5 PASS`；R12=`6/6 PASS`；R13=`3/3 PASS`。corrupt active、cases wrong-type、overflow caller immutability均轉綠。
+- **新增 minimum-shape 對抗**：`1/4 PASS · 3/4 FAIL`。`patients` wrong-type 被擋；missing `journal`、`pending_patient_codes` wrong-type、`schema_version!=2` 均回 `ok:true` 並覆寫 active。
+- **資料邊界**：真 clinical store 讀／寫=`0/0`；全部使用 process-local fake backend／fake app handler，temp harness 清理。
+
+### G1/G2 指定 gate
+
+1. **G1 PASS**：non-null corrupt JSON 回 `REJECTED_UNCHANGED`，原 bytes、pointer 不動，candidate 清除。
+2. **G2 PARTIAL**：`cases` 或 `patients` 非 array 會拒絕，且 append-only baseline 已由 restore 傳入，不再於 verifier 內吞錯重讀；但 active envelope minimum shape 尚未完整驗證。
+
+### 新 HIGH — INVALID SHAPE 只檢查 `cases/patients`
+
+- `js/clinical-store.js:637-639` 的 active shape guard 只要求 `currentEnv` truthy、`cases` array、`patients` array；未檢查 G1 gate 明列的 `schema_version===2`、`journal` object、`pending_patient_codes` array。
+- 三個反例都使用 non-null active、合法 revision `9` 與完整 cases/patients；incoming revision `10` 自洽。分別刪除 `journal`、把 `pending_patient_codes` 改成 string、把 `schema_version` 改成 `1`，ordinary restore 均 `ok:true` 並覆寫 active。這會把 runtime 無法證明為合法 v2 envelope 的資料視為可比較基準。
+- **Gate H1**：active non-null 時須共用單一 minimum-envelope validator，至少驗：plain object、`schema_version===2`、non-array `journal` object、`patients/cases/pending_patient_codes` arrays、present revision safe integer `>=1`。任何一項失敗均 `REJECTED_UNCHANGED`、active/pointer exact unchanged、candidate absent。將 missing journal、journal array/null、wrong pending、wrong schema、wrong patients/cases 全部放入 blocking suite。
+- 若要以備份修復 invalid active，必須另走 Ting 授權的 disaster-recovery 流程並先保存原 raw；普通 file import 不得同時兼任修復模式。
+
+### 測試品質補件仍未入庫
+
+- 官方 runtime rehearsal=`56/56 PASS`，但 R12-F2 仍只有 `save()` overflow 測試；`syncPendingPatients()` 的 MAX_SAFE overflow 只在獨立 harness 被驗為 PASS。把 sync rejection + staging exact unchanged 加入官方 blocking suite，避免「兩 writer 均受保護」只靠人工回放。
+
+### 回歸數字
+
+- 官方 fake suites：pointer runtime=`31/31 PASS`；runtime restore=`56/56 PASS`；C2b rehearsal=`30/30 PASS`。
+- Clinical：invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K-series=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions failures=`0`；app/store syntax=`2/2`。
+- Standard validators=`9 exit 0 / 3 exit 1`；紅燈仍為 `validate-herb-canon`、`validate-naming`、`validate-encoding` 資料基線，與本輪 Clinical diff 無交集。
+- **下一 gate**：H1 全 minimum-shape variants 與 sync-overflow test 入庫後排 R15。此前禁止真機 shadow write、pointer switch 與 runtime restore，即使 Ting 在場與 Edge `file://` raw full hash 相符亦不例外。
+
+---
+
 ## 2026-08-11 Codex C2B-R13 F1–F4 獨立覆核 — endpoint `6ee761c`
 
 ### 裁決：R13 NO-GO；P4 仍不發布
