@@ -6088,11 +6088,14 @@ function saveAgentExposureFromForm(event) {
   );
   startedRow.infoSource = (data.infoSource || "").trim();
   const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((c) => {
     if (c.id !== selectedCaseId) return c;
     return normalizeClinicalCase({ ...c, agentExposures: [...(c.agentExposures || []), startedRow], updatedAt: now });
   });
-  persistClinicalCases();
+  // R9 gate B (docs/AI_REVIEW_FEEDBACK.md §3): commit-on-true — a persist
+  // failure must not close the dialog or render as if the save landed.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   agentExposureDialog.close();
   render();
 }
@@ -6128,12 +6131,14 @@ function promptAgentExposureAction(exposureId, eventType) {
   const store = window.AcuTingClinicalStore;
   if (!store) return;
   const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((c) => {
     if (c.id !== selectedCaseId) return c;
     const nextExposures = (c.agentExposures || []).map((e) => e.id === exposureId ? store.applyExposureChange(e, event, "agent") : e);
     return normalizeClinicalCase({ ...c, agentExposures: nextExposures, updatedAt: now });
   });
-  persistClinicalCases();
+  // R9 gate B: persist failure rolls back the in-memory mutation; no render.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   render();
 }
 
@@ -6252,11 +6257,13 @@ function saveEnvironmentalExposureFromForm(event) {
     "environmental"
   );
   const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((c) => {
     if (c.id !== selectedCaseId) return c;
     return normalizeClinicalCase({ ...c, environmentalExposures: [...(c.environmentalExposures || []), startedRow], updatedAt: now });
   });
-  persistClinicalCases();
+  // R9 gate B: commit-on-true — failure keeps the dialog open with input intact.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   environmentalExposureDialog.close();
   render();
 }
@@ -6309,12 +6316,14 @@ function promptEnvironmentalExposureAction(exposureId, eventType) {
   const store = window.AcuTingClinicalStore;
   if (!store) return;
   const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((c) => {
     if (c.id !== selectedCaseId) return c;
     const nextExposures = (c.environmentalExposures || []).map((e) => e.id === exposureId ? store.applyExposureChange(e, event, "environmental") : e);
     return normalizeClinicalCase({ ...c, environmentalExposures: nextExposures, updatedAt: now });
   });
-  persistClinicalCases();
+  // R9 gate B: persist failure rolls back the in-memory mutation; no render.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   render();
 }
 
@@ -7487,13 +7496,22 @@ function saveCaseFromForm(event) {
     if (!proceed) return;
   }
 
+  const snapshot = structuredClone(clinicalCases);
+  const prevSelectedCaseId = selectedCaseId;
   if (editingCaseId) {
     clinicalCases = clinicalCases.map((item) => item.id === editingCaseId ? nextCase : item);
   } else {
     clinicalCases = [nextCase, ...clinicalCases];
   }
   selectedCaseId = nextCase.id;
-  persistClinicalCases();
+  // R9 gate B: persist failure must not fire noteClinicalSave, close the
+  // dialog, or render — roll clinicalCases/selectedCaseId back and keep the
+  // form's input intact so the user can retry.
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    selectedCaseId = prevSelectedCaseId;
+    return;
+  }
   noteClinicalSave();   // CS1
   caseDialog.close();
   render();
@@ -7503,9 +7521,17 @@ function deleteCurrentCase() {
   if (!editingCaseId) return;
   const item = clinicalCases.find((entry) => entry.id === editingCaseId);
   if (!confirm(`確定刪除 ${item?.patientCode || "這筆病例"}？此動作會刪除其 SOAP notes。`)) return;
+  const snapshot = structuredClone(clinicalCases);
+  const prevSelectedCaseId = selectedCaseId;
   clinicalCases = clinicalCases.filter((entry) => entry.id !== editingCaseId);
   selectedCaseId = clinicalCases[0]?.id || "";
-  persistClinicalCases();
+  // R9 gate B: persist failure restores the deleted case in memory instead
+  // of closing the dialog on an unsaved deletion.
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    selectedCaseId = prevSelectedCaseId;
+    return;
+  }
   caseDialog.close();
   render();
 }
@@ -7957,6 +7983,7 @@ function saveSoapFromForm(event) {
     updatedAt: now
   });
 
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((item) => {
     if (item.id !== selectedCaseId) return item;
     const notes = editingSoapId
@@ -7964,7 +7991,9 @@ function saveSoapFromForm(event) {
       : [...item.soapNotes, nextNote];
     return { ...item, soapNotes: notes, updatedAt: now };
   });
-  persistClinicalCases();
+  // R9 gate B: persist failure must not fire noteClinicalSave, close the
+  // dialog, or render — roll back and keep the form's input intact.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   noteClinicalSave();   // CS1
   soapDialog.close();
   render();
@@ -7973,11 +8002,14 @@ function saveSoapFromForm(event) {
 function deleteCurrentSoap() {
   if (!editingSoapId) return;
   if (!confirm("確定刪除這筆 SOAP note？")) return;
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((item) => {
     if (item.id !== selectedCaseId) return item;
     return { ...item, soapNotes: item.soapNotes.filter((note) => note.id !== editingSoapId), updatedAt: new Date().toISOString() };
   });
-  persistClinicalCases();
+  // R9 gate B: persist failure restores the deleted SOAP note in memory
+  // instead of closing the dialog on an unsaved deletion.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   soapDialog.close();
   render();
 }
@@ -8105,6 +8137,8 @@ function importClinicalCases(event) {
       const restoreMode = !window.confirm(
         "匯入模式 Import mode:\n\n【確定 OK】= 合併 Merge(安全:保留現有病例,只新增/延伸)\n【取消 Cancel】= 完整還原 Restore(整包覆蓋,僅災難復原用)"
       );
+      const snapshot = structuredClone(clinicalCases);
+      const prevSelectedCaseId = selectedCaseId;
       if (!restoreMode) {
         const violations = findImportHistoryViolations(clinicalCases, incoming);
         if (violations.length) {
@@ -8128,7 +8162,13 @@ function importClinicalCases(event) {
         clinicalCases = incoming;
       }
       selectedCaseId = clinicalCases[0]?.id || "";
-      persistClinicalCases();
+      // R9 gate B: persist failure rolls back the merged/restored in-memory
+      // state and skips render — the import must not appear to have applied.
+      if (!persistClinicalCases()) {
+        clinicalCases = snapshot;
+        selectedCaseId = prevSelectedCaseId;
+        return;
+      }
       render();
     } catch {
       alert("匯入失敗：請確認 JSON 是 AcuTing Clinical Cases 陣列格式。");
