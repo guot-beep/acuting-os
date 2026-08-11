@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R10 / gate D remains NO-GO
+
+- **Gate**: reviewed A+C `9c3524e`、D `cd621e3`、B/tip `cd4e5fb`; A/B/C/D=`PASS/PASS/PASS/FAIL`，C2b=`NO-GO`，P4 未發布。
+- **Evidence**: R9 replay=`9/9`；sync-vs-sync=`1/1`；app guarded callers/snapshots=`9/9`；official pointer=`31/31`、runtime restore=`17/17`、C2b rehearsal=`30/30`。真 clinical store 讀／寫=`0/0`，temp harness 已移除。
+- **D counterexamples**: independent runtime adversarial=`2/8 PASS · 6/8 FAIL`：pending export 不可還原、revision-0 降級 active runtime、canonical id rewrite、duplicate patientCode、pointer-write failure 後 active staging 已替換、wipe 後 app import 在 store 前被拒。
+- **Required repairs**: pending export/restore 契約；current+incoming revision monotonic guard；canonical id 與 unique patientCode；staging+pointer failure atomicity；實際 app file recovery entrypoint；把 rehearsal line 67 恆真 assertion 換成 before/after bytes 並納入六反例。
+- **Regression**: invariants `3/3/2/5/3 · 0 violations`、Phase E `12`、interactions `0`、syntax `2/2`；standard validators=`9 exit 0 / 3 exit 1`（既有 herb-canon/naming/encoding）。D1–D6 blocking tests 全綠後再排 R11；Ting presence/full raw hash 目前不授權 migration。
+
 ## [2026-08-11] Codex Handoff — C2B-R9 / pointer-aware runtime NO-GO
 
 - **Gate**: reviewed `5945308..602e075`; checklist 1–5=`PASS/FAIL/FAIL/FAIL/FAIL`，C2b=`NO-GO`。R8 conditional GO remains void；P4 未發布，禁止真實 Edge shadow write／pointer switch。

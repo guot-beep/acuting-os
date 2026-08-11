@@ -6,6 +6,46 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R10 四 gate 獨立覆核 — endpoint `cd4e5fb`
+
+- **REVIEWED_SHA**: A+C `9c3524e5da075a855dfdff3f9b617ad1479a4ca4`；D `cd621e3e25162279ab9fd228c4ae73f75c7667a6`；B／受審 endpoint `cd4e5fbe6bdbee730dd5920e7869c71db6e40974`。受審 blobs：store=`425b1c40e87991ea18247f00d558a9140e515e59`、app=`299271f27ff1dbb4417886cff95b6805e1934713`、pointer test=`3d4a46c0bbd358f62d7c1276381763afe92a7ada`、runtime restore rehearsal=`90460b2f7e4702bf3941d8184a3810c7817e0cee`。
+- **STATUS**: **PAUSE — C2b R10 NO-GO**。A=`PASS`、B=`PASS`、C=`PASS`、D=`FAIL`；四 gate 未全綠，因此不發布 R10 GO，也不發布修訂版 P4。真實 Edge `file://` 的 shadow write／pointer switch／case→patient migration 仍禁止。
+- **資料邊界**: 真實 clinical store 讀／寫=`0/0`；獨立測試全部使用 process-local fake backend／fake app handler。R10 temp harness 已移除，沒有病例內容或 patientCode 寫入 repo。
+
+### Gate A — pointer strict tri-state：PASS
+
+- 重跑 R9 pointer exception load/save、非法 pointer、正常 v1/v2 共 `5/5 PASS`；fault／invalid 時 writes=`0`，v1 frozen bytes 不變。
+- 官方 pointer suite=`31/31 PASS`；獨立 R9 replay 中 A 反例=`2/2 PASS`，未再見 silent downgrade。
+
+### Gate B — 9 個 UI write caller commit-on-true：PASS
+
+- source audit：`persistClinicalCases()` callers=`9`、`if (!persistClinicalCases())` guards=`9`、clinicalCases snapshots=`9`、selectedCaseId rollbacks=`3`。case／SOAP 的 `noteClinicalSave()` 均在 success branch，failure 先 restore snapshot 並 return，dialog close／render 不可達。
+- app/store syntax=`2/2 PASS`。本 repo 沒有提交獨立 browser-fault test artifact，但實作的九條失敗控制流逐一符合 R9 gate B；本輪沒有把 Fable 自述當作額外測試數字。
+
+### Gate C — sync／canonical ID／collision／blank FK：PASS
+
+- 獨立 R9 replay：canonical salted ID、save-during-sync lost update、collision refusal、blank→null=`4/4 PASS`；R9 全九情境=`9/9 PASS`。
+- 新增 sync-vs-sync：兩個 concurrent sync 同時完成 hash 後，只鑄 `1` patient，duplicate=`0`、pending residue=`0`，`1/1 PASS`。重讀後同步 apply 的結構未覆寫較新 save。
+
+### Gate D — two-mode runtime restore：FAIL（BLOCKER）
+
+官方 `rehearse-runtime-restore.js` 輸出 `17/17 PASS`，但獨立生命週期對抗=`2/8 PASS · 6/8 FAIL`；成立反例如下：
+
+1. **合法 pending export 無法還原（BLOCKER）**：public `save()` 產生 `runtime_revision>=1`、`pending_patient_codes=[FAKE-PENDING]` 的合法 transient envelope；app export 可立即下載它，但 restore 以 `patientId undefined does not resolve` 拒絕。store 會輸出自己不能還原的檔案。修復須二選一且同源測試：export 在 pending 非空時明確 await／阻擋，或 runtime verifier 接受「case code 在 pending 且尚無 Patient」的唯一合法 transient，還原後再 sync。
+2. **revision-0 可降級 active runtime world（BLOCKER）**：active staging 已有 runtime edit（revision `1`），匯入原 migration-era envelope（revision `0`）回 `ok:true` 並覆蓋 edit。two-mode 分流只看 incoming revision，未看 current active revision；append-only 保護可被 revision-0 繞過。修復須在 current pointer/staging 為 runtime-era 時拒絕 revision downgrade／missing current cases，除非另有明確、先備份且經 Ting 授權的 disaster-restore 路徑。
+3. **canonical Patient ID 可整套改寫（HIGH）**：把 Patient id 改成 `patient.tampered00` 並同步改 case FK，雙向集合仍自洽，restore 回 `ok:true`。`verifyRuntimeEnvelope()` 未使用傳入的 sha256 重算 `canonicalPatientIdOf(code)`；immutable ID 契約未被驗。
+4. **duplicate patientCode 可分裂 Patient（HIGH）**：兩個不同 Patient id 改成同一 patientCode，並同步改 case code/FK 後 restore 回 `ok:true`。verifier 只擋 duplicate id，未擋 duplicate normalized patientCode，也未核對 id↔code canonical mapping。
+5. **pointer write failure 非原子（BLOCKER）**：runtime restore 先寫 active staging，再寫 pointer；注入 pointer write throw 後回 `{ok:false}`，但 pointer 仍為 `v2`、新 staging 已成 active。呼叫端收到「失敗／資料未動」訊息時資料其實已替換。修復須依 pointer 當下狀態設計可回滾 ordering；任一 failure 要證明 active staging／pointer exact unchanged。
+6. **file-level wipe→app import 不可達（BLOCKER）**：實際 `importClinicalCases()` 在 pointer absent 時於呼叫 store 前直接拒絕；fake handler 的 restore calls=`0`。官方 rehearsal 是直接呼叫 store，不是 app file path，故沒有證明 P4 所需的 file export→wipe→import。app 必須能在嚴格辨識 runtime-era envelope 後走同一 restore 函式，或 P4 明確提供另一個 audited recovery entrypoint。
+
+另：`scripts/rehearse-runtime-restore.js:67` 的「active staging untouched」是 `strictEqual(value, value)`，為恆真 assertion，未保存 before 值，應修為 before/after exact bytes 比對並加入 pointer-write fault。
+
+### 數字、回歸與下一 gate
+
+- 官方：pointer=`31/31 PASS`、runtime restore=`17/17 PASS`、既有 C2b rehearsal=`30/30 PASS`。獨立：R9 replay=`9/9 PASS`、R10 adversarial=`2/8 PASS · 6/8 FAIL`、A/B/C=`PASS/PASS/PASS`、D=`FAIL`。
+- invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E=`12 checks PASS`；interactions failures=`0`；syntax=`2/2`。標準 validators=`9 exit 0 / 3 exit 1`；既有 herb-canon／naming／encoding 資料紅燈與本輪 docs-only 審計無檔案交集。
+- **下一 gate**：修正上述 D1–D6，將六反例與非恆真 before/after assertions 納入 blocking suite，再排 C2B-R11。未達全綠前，Ting 在場、Edge raw full SHA 重比、preflight 全綠仍只是必要條件，不構成 migration 授權。
+
 ## 2026-08-11 Codex C2B-R9 pointer-aware runtime 獨立審計 — endpoint `602e075`
 
 - **REVIEWED_SHA**: freeze `5945308e08c3873842a02e2edb32c43620128f4e`；R9 implementation／受審 endpoint `602e075d65a8f288aadb1de85125e27daf9e96cb`。受審 blobs：`js/clinical-store.js=a281d04e84913db817a7ed763d03fb4ab3697907`、`app.js=a842f440b97fd8362722fefcba9f3357a7bc6cf7`、`scripts/test-pointer-runtime.js=170b191b2d845d2a9c476d13fe6d39680938be5e`。

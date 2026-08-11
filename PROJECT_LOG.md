@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R10 four-gate audit（NO-GO）
+
+- **範圍**：覆核 `9c3524e`／`cd621e3`／`cd4e5fb`；A/B/C/D=`PASS/PASS/PASS/FAIL`，未發布 R10 GO 或 P4。
+- **數字**：R9 replay=`9/9`、R10 adversarial=`2/8 PASS · 6/8 FAIL`；official pointer/runtime/C2b=`31/31 · 17/17 · 30/30`；app guards/snapshots=`9/9`；真 store 讀／寫=`0/0`。
+- **阻斷**：pending export 不可 restore、revision-0 可降級 runtime world、canonical id/unique patientCode 未驗、pointer write failure 回 false 但 staging 已 active、wipe 後 app file import 在 store 前被拒；official rehearsal line 67 為恆真 assertion。
+- **驗證**：sync-vs-sync=`1/1`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；standard validators=`9 exit 0 / 3 exit 1`（既有 herb-canon/naming/encoding）。
+- **下一步**：依 AI_REVIEW_FEEDBACK D1–D6 修復並加入 blocking lifecycle tests 後排 R11；期間即使 Ting 在場且 Edge raw full SHA 相符，仍禁止 shadow write／pointer switch。
+
 # 2026-08-11 Codex — C2B-R9 pointer-aware runtime audit（NO-GO）
 
 - **範圍**：覆核 `5945308..602e075`；R9 checklist 1–5=`PASS/FAIL/FAIL/FAIL/FAIL`，R8 conditional GO 維持作廢，未發布 P4。
