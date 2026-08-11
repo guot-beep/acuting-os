@@ -2270,7 +2270,97 @@
       "name_zh": "面癱／口僻",
       "pinyin": "Miantan",
       "name_en": "Facial Paralysis",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+      "definition_zh": "面癱是以突然口眼歪斜、患側額紋消失、眼瞼閉合不全為主症的病證，多因正氣不足，脈絡空虛，風邪乘虛入中面部經絡所致。",
+      "definition_en": "Facial Paralysis (面癱) is characterized by sudden deviation of the mouth and eyes, loss of forehead wrinkles, and incomplete eyelid closure on the affected side, most often arising when Wind exploits a deficiency of Righteous Qi and an empty channel network to invade the facial channels.",
+      "etiology_zh": "素體正氣不足，脈絡空虛，起居不慎，風寒或風熱之邪乘虛侵襲面部陽明、少陽經絡；或情志不遂、勞倦內傷，氣血運行不暢，筋脈失養。",
+      "etiology_en": "Underlying deficiency of Righteous Qi leaves the channel network empty; careless exposure allows Wind-Cold or Wind-Heat to invade the Yangming and Shaoyang channels of the face while defenses are weak. Emotional strain or overwork may also impair the flow of Qi and Blood, depriving the sinews of nourishment.",
+      "pathomechanism_zh": "風邪夾寒或夾熱侵襲頭面經絡，經氣阻滯，氣血痹阻，筋肉失於濡養，縱緩不收，發為口眼歪斜；病程日久，氣虛血瘀，脈絡瘀阻，則恢復遲緩或留有後遺症。",
+      "pathomechanism_en": "Wind, combined with Cold or Heat, invades the channels of the head and face, obstructing channel Qi and impeding the flow of Qi and Blood; the sinews and muscles lose their nourishment, become slack, and fail to contract, producing the deviated mouth and eyes. In protracted cases, Qi deficiency and Blood stasis obstruct the channels further, slowing recovery or leaving sequelae.",
+      "key_manifestations_zh": [
+        "突然一側口眼歪斜",
+        "患側額紋消失、不能皺眉",
+        "患側眼瞼閉合不全，露睛流淚",
+        "患側鼻唇溝變淺，鼓腮漏氣",
+        "部分患者初起耳後或面部輕微疼痛"
+      ],
+      "key_manifestations_en": [
+        "Sudden deviation of the mouth and eye on one side",
+        "Loss of forehead wrinkles and inability to raise the eyebrow on the affected side",
+        "Incomplete eyelid closure with exposed sclera and tearing",
+        "Flattened nasolabial fold and air leakage when puffing out the cheek",
+        "Mild pain behind the ear or on the face at onset in some patients"
+      ],
+      "disease_location_zh": "病位在頭面經絡，主要涉及手足陽明、手足少陽經筋。",
+      "disease_location_en": "Disease location is the channels of the head and face, primarily involving the sinew channels of the Hand/Foot Yangming and Hand/Foot Shaoyang.",
+      "related_patterns": [
+        "pattern.wind_cold",
+        "pattern.wind_heat",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "早期以祛風通絡為主，風寒者兼溫經散寒，風熱者兼疏風清熱；恢復期及後遺症期以益氣養血、活血通絡為法。",
+      "treatment_principle_en": "In the early stage, expel Wind and free the channels — for Wind-Cold, also warm the channels and dispel Cold; for Wind-Heat, also disperse Wind and clear Heat. In the recovery and sequelae stages, tonify Qi, nourish Blood, and invigorate Blood to free the channels.",
+      "red_flags_zh": [
+        {
+          "finding": "出現顏面下垂或其他面神經麻痺相關症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需醫療專業評估面神經麻痺病因及嚴重度",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.bells_palsy (rf.bells_palsy.facial_droop_symptoms)"
+        },
+        {
+          "finding": "新發單側顏面下垂，尤其伴隨言語不清、單側肢體無力",
+          "urgency_level": "emergency",
+          "recommended_action": "立即撥打急救電話／送急診",
+          "rationale": "需即刻排除急性中風（FAST 篩檢）",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.bells_palsy (rf.bells_palsy.stroke_differential_screening)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Facial droop or other symptoms of facial nerve paralysis",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Facial nerve palsy requires professional assessment of cause and severity",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.bells_palsy (rf.bells_palsy.facial_droop_symptoms)"
+        },
+        {
+          "finding": "New-onset unilateral facial droop, especially with slurred speech or unilateral limb weakness",
+          "urgency_level": "emergency",
+          "recommended_action": "Call emergency services / go to the ER immediately",
+          "rationale": "Must immediately rule out acute stroke (FAST screening)",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.bells_palsy (rf.bells_palsy.stroke_differential_screening)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.bells_palsy"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.mian_tan"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.bells_palsy (direct 1:1 clinical match — facial palsy)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.chan_zheng",
@@ -3397,14 +3487,182 @@
       "name_zh": "肥胖",
       "pinyin": "Feipang",
       "name_en": "Obesity (TCM)",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+      "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+      "definition_zh": "肥胖是指因飲食、勞逸失調或臟腑功能失調，痰濕膏脂內生，體重超過正常標準，並伴有身重乏力、活動不利等表現的病證。",
+      "definition_en": "Obesity (肥胖) in TCM refers to excess accumulation of Phlegm-Damp and fatty turbidity arising from dietary irregularity, imbalance of activity and rest, or organ dysfunction, presenting as body weight above normal standards along with heaviness, fatigue, and reduced ease of movement.",
+      "etiology_zh": "多因飲食不節、嗜食肥甘厚味，或久坐少動、好逸惡勞，或先天稟賦不足、脾腎虛弱，或情志失調、肝鬱氣滯，致使水濕運化失常，痰濕膏脂內聚。",
+      "etiology_en": "Commonly caused by unrestrained eating of rich, greasy foods; prolonged sedentary habits with little exercise; congenital Spleen-Kidney weakness; or emotional disturbance with Liver Qi stagnation — all of which impair the transformation of water-damp and allow Phlegm-Damp and fatty turbidity to accumulate.",
+      "pathomechanism_zh": "脾主運化水濕，脾失健運則水濕停聚、痰濁內生；痰濕日久化熱，或阻遏氣機，或流注肌膚，致形體肥胖；病久及腎，脾腎陽虛，氣化無力，痰濕更甚，形成惡性循環。",
+      "pathomechanism_en": "The Spleen governs the transformation of water-damp; when Spleen transportive function fails, water-damp accumulates and turns into internal Phlegm-turbidity. Over time, Phlegm-Damp may transform into Heat, obstruct the movement of Qi, or infiltrate the flesh, producing obesity. With prolonged illness the Kidney is affected, Spleen-Kidney Yang becomes deficient, Qi transformation weakens, and Phlegm-Damp worsens in a self-perpetuating cycle.",
+      "key_manifestations_zh": [
+        "體重明顯超過正常標準，形體臃腫",
+        "身重困倦，肢體乏力",
+        "胸悶脘痞，或食欲亢進",
+        "動則氣短、汗多",
+        "常兼見大便黏滯或便秘"
+      ],
+      "key_manifestations_en": [
+        "Body weight substantially above normal, with a bulky physique",
+        "Heaviness and lethargy of the body, limb fatigue",
+        "Chest oppression and epigastric fullness, or increased appetite",
+        "Shortness of breath and excessive sweating on exertion",
+        "Often accompanied by sticky stool or constipation"
+      ],
+      "disease_location_zh": "病位主要在脾，與腎、肝、胃密切相關。",
+      "disease_location_en": "Disease location is primarily the Spleen, closely related to the Kidney, Liver, and Stomach.",
+      "related_patterns": [
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.spleen_qi_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.liver_qi_stagnation"
+      ],
+      "treatment_principle_zh": "以化痰祛濕、健脾益氣為基本原則；胃熱濕阻者清胃泄熱化濕，肝鬱氣滯者疏肝理氣，脾腎陽虛者溫補脾腎。",
+      "treatment_principle_en": "The basic principle is to transform Phlegm, eliminate Dampness, and strengthen the Spleen to tonify Qi. For Stomach Heat with Damp obstruction, clear Stomach Heat and eliminate Damp; for Liver Qi stagnation, soothe the Liver and regulate Qi; for Spleen-Kidney Yang deficiency, warmly tonify the Spleen and Kidney.",
+      "red_flags_zh": [
+        {
+          "finding": "合併第二型糖尿病、心臟病、阻塞性睡眠呼吸中止症或其他代謝相關共病之徵象",
+          "urgency_level": "routine",
+          "recommended_action": "建議轉介西醫評估代謝與心肺共病",
+          "rationale": "肥胖顯著增加第二型糖尿病、心臟病、阻塞性睡眠呼吸中止症及部分癌症風險",
+          "source": "MedlinePlus \"Obesity\" (ency/article/007297.htm), Surgery section, retrieved 2026-08-11: \"Arthritis, Asthma, Type 2 diabetes, Gastroesophageal reflux disease (GERD), Heart disease, High blood pressure, Nonalcoholic fatty liver disease, Obstructive sleep apnea, Some cancers, Stroke\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Signs of comorbid type 2 diabetes, heart disease, obstructive sleep apnea, or other metabolic complications",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend referral for biomedical evaluation of metabolic and cardiopulmonary comorbidities",
+          "rationale": "Obesity substantially increases risk of type 2 diabetes, heart disease, obstructive sleep apnea, and some cancers",
+          "source": "MedlinePlus \"Obesity\" (ency/article/007297.htm), Surgery section, retrieved 2026-08-11: \"Arthritis, Asthma, Type 2 diabetes, Gastroesophageal reflux disease (GERD), Heart disease, High blood pressure, Nonalcoholic fatty liver disease, Obstructive sleep apnea, Some cancers, Stroke\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Obesity (ency/article/007297.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.fei_pang"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Obesity (ency/article/007297.htm), retrieved 2026-08-11 — SOURCING GAP DISCLOSED: page has no dedicated 'When to Contact a Medical Professional' section; only 1 row sourceable (comorbidity list under Surgery section), not the usual 2-4"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ying_bing",
       "name_zh": "癭病",
       "pinyin": "Yingbing",
       "name_en": "Goiter Disease",
-      "taxonomy_id": "tdx.surgery_dermatology.goiters_masses_tumors"
+      "taxonomy_id": "tdx.surgery_dermatology.goiters_masses_tumors",
+      "definition_zh": "癭病是以頸前喉結兩旁結塊腫大為主要特徵的病證，包括癭氣、肉癭、石癭等類型，相當於現代醫學甲狀腺腫大相關疾病。",
+      "definition_en": "Goiter Disease (癭病) is characterized by swelling or nodular masses on either side of the laryngeal prominence in the anterior neck; it encompasses several classical subtypes (癭氣/肉癭/石癭) and broadly corresponds to thyroid enlargement disorders in modern medicine.",
+      "etiology_zh": "多因情志不遂，肝氣鬱結，氣機不暢；或飲食失調、水土因素，影響脾胃運化，痰濕內生；氣滯痰凝壅結頸前，久則血行不暢，痰瘀互結。",
+      "etiology_en": "Commonly caused by emotional distress with Liver Qi stagnation and impaired flow of Qi; or dietary irregularity and regional water/soil factors that disturb Spleen-Stomach transportation and generate internal Phlegm-Damp. Qi stagnation and Phlegm congeal in the anterior neck, and with time Blood flow is impeded, so Phlegm and stasis bind together.",
+      "pathomechanism_zh": "肝鬱氣滯為病之始動，氣滯則津液不布，凝聚成痰，痰氣壅結頸前發為癭腫；日久氣滯痰凝化熱，或痰瘀互結，腫塊質地漸硬；病久傷及陰血，可見心肝陰虛之候。",
+      "pathomechanism_en": "Liver Qi stagnation is the initiating mechanism — stagnant Qi fails to distribute fluids, which congeal into Phlegm; Phlegm and Qi bind in the anterior neck to form the goiter. Over time, stagnant Qi and congealed Phlegm may transform into Heat, or Phlegm and stasis intertwine, causing the mass to harden; prolonged illness damages Yin-Blood, producing signs of Heart-Liver Yin deficiency.",
+      "key_manifestations_zh": [
+        "頸前喉結兩旁結塊或腫大，隨吞咽上下移動",
+        "腫塊初起柔軟，日久可漸硬或成結節",
+        "可伴煩躁易怒、心悸多汗（氣鬱化火者）",
+        "或見神疲乏力、頸部壓迫感（氣虛痰凝者）",
+        "病久腫塊質硬、推之不移者，需高度警惕"
+      ],
+      "key_manifestations_en": [
+        "A mass or swelling on either side of the laryngeal prominence that moves up and down with swallowing",
+        "Initially soft, the mass may gradually harden or become nodular over time",
+        "May be accompanied by irritability, easy anger, palpitations, and profuse sweating (Qi stagnation transforming into Fire)",
+        "Or fatigue and a sensation of neck pressure (Qi deficiency with Phlegm congealing)",
+        "A long-standing, hard, immobile mass warrants heightened vigilance"
+      ],
+      "disease_location_zh": "病位在頸前，與肝、脾、心關係密切。",
+      "disease_location_en": "Disease location is the anterior neck, closely related to the Liver, Spleen, and Heart.",
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_damp",
+        "pattern.blood_stasis",
+        "pattern.liver_fire",
+        "pattern.liver_kidney_yin_deficiency"
+      ],
+      "treatment_principle_zh": "以理氣化痰、消癭散結為基本治法；肝火旺盛者清肝瀉火，陰虛者滋陰降火，痰瘀互結者化痰活血軟堅。",
+      "treatment_principle_en": "The basic method is to regulate Qi, transform Phlegm, and dissipate the goiter mass. For Liver Fire, clear the Liver and drain Fire; for Yin deficiency, nourish Yin and lower Fire; for combined Phlegm and stasis, transform Phlegm, invigorate Blood, and soften hardness.",
+      "red_flags_zh": [
+        {
+          "finding": "頸前出現腫塊或其他甲狀腺腫大相關症狀",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估甲狀腺功能與結構",
+          "rationale": "需釐清腫大原因與甲狀腺功能狀態",
+          "source": "MedlinePlus \"Simple goiter\" (ency/article/001178.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Contact your provider if you experience any swelling in the front of your neck or any other symptoms of a goiter.\""
+        },
+        {
+          "finding": "極大癭腫合併呼吸困難（尤其平躺或舉臂時）或吞嚥困難（尤其固體食物）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示腫大甲狀腺壓迫氣管或食道，罕見但屬嚴重併發症",
+          "source": "MedlinePlus \"Simple goiter\" (ency/article/001178.htm), Symptoms section, retrieved 2026-08-11: \"Breathing difficulties (with very large goiters), especially when lying flat on the back or when reaching up with your arms\" / \"Swallowing difficulties, especially with solid food.\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "A mass or swelling in the anterior neck, or other symptoms of goiter",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation of thyroid structure and function",
+          "rationale": "Need to clarify the cause of the swelling and thyroid functional status",
+          "source": "MedlinePlus \"Simple goiter\" (ency/article/001178.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"Contact your provider if you experience any swelling in the front of your neck or any other symptoms of a goiter.\""
+        },
+        {
+          "finding": "Very large goiter with breathing difficulty (especially lying flat or reaching overhead) or swallowing difficulty (especially with solid food)",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests the enlarged thyroid is compressing the trachea or esophagus — rare but a serious complication",
+          "source": "MedlinePlus \"Simple goiter\" (ency/article/001178.htm), Symptoms section, retrieved 2026-08-11: \"Breathing difficulties (with very large goiters)... Swallowing difficulties, especially with solid food.\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Simple goiter (ency/article/001178.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.ying_bing"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Simple goiter (ency/article/001178.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.lin_zheng",
@@ -3716,21 +3974,276 @@
       "name_zh": "遺尿",
       "pinyin": "Yiniao",
       "name_en": "Enuresis",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "definition_zh": "遺尿是指三歲以上小兒或成人於睡眠中不自覺地排尿，醒後方覺的病證，亦稱「尿床」。",
+      "definition_en": "Enuresis (遺尿) refers to involuntary urination during sleep in children over three years of age or in adults, with the person only becoming aware after waking; also known as \"bedwetting.\"",
+      "etiology_zh": "多因先天稟賦不足、腎氣未充或腎氣虛衰，膀胱失於約束；或肺脾氣虛，水道通調失職；或肝經濕熱下注，擾動膀胱氣化。",
+      "etiology_en": "Commonly due to congenital insufficiency with the Kidney Qi not yet full (in children) or Kidney Qi decline (in adults), leaving the Bladder without restraint; or Lung-Spleen Qi deficiency impairing the regulation of water pathways; or Liver-channel Damp-Heat pouring downward and disturbing Bladder Qi transformation.",
+      "pathomechanism_zh": "腎為水臟，主司二便，膀胱與腎相表裡，賴腎氣的溫煦固攝以司開闔；腎氣不足則膀胱失約，睡中遺尿；肺脾氣虛，上虛不能制下，亦致膀胱失約；濕熱下注膀胱，氣化失司，亦可擾動而遺尿。",
+      "pathomechanism_en": "The Kidney is the Water organ governing urination and defecation; the Bladder is exteriorly-interiorly linked with the Kidney and relies on Kidney Qi's warming and consolidating action to control opening and closing. When Kidney Qi is insufficient, the Bladder loses restraint and enuresis occurs during sleep. Lung-Spleen Qi deficiency (\"upper deficiency failing to control the lower\") likewise causes loss of Bladder restraint; Damp-Heat pouring into the Bladder can also disturb Qi transformation and produce enuresis.",
+      "key_manifestations_zh": [
+        "睡眠中不自覺排尿，醒後方知",
+        "可一夜一次或多次，甚則每夜遺尿",
+        "兼見面色蒼白、肢冷畏寒、腰膝痠軟（腎氣不固者）",
+        "兼見神疲乏力、食欲不振、自汗（肺脾氣虛者）",
+        "兼見尿黃、尿味臊臭、性情急躁（肝經濕熱者）"
+      ],
+      "key_manifestations_en": [
+        "Involuntary urination during sleep, noticed only after waking",
+        "May occur once or multiple times per night, or nightly in severe cases",
+        "Pale complexion, cold limbs, aversion to cold, and lower back/knee soreness (Kidney Qi not firm)",
+        "Fatigue, poor appetite, and spontaneous sweating (Lung-Spleen Qi deficiency)",
+        "Dark, strong-smelling urine and irritability (Liver-channel Damp-Heat)"
+      ],
+      "disease_location_zh": "病位在膀胱，與腎、肺、脾、肝關係密切。",
+      "disease_location_en": "Disease location is the Bladder, closely related to the Kidney, Lung, Spleen, and Liver.",
+      "related_patterns": [
+        "pattern.kidney_qi_not_firm",
+        "pattern.lung_spleen_qi_deficiency",
+        "pattern.liver_gallbladder_damp_heat"
+      ],
+      "treatment_principle_zh": "以固攝膀胱為要，腎氣不固者溫腎固攝，肺脾氣虛者補肺健脾、益氣攝尿，肝經濕熱者清肝瀉火利濕。",
+      "treatment_principle_en": "The key is to consolidate and restrain the Bladder. For Kidney Qi not firm, warm the Kidney and consolidate restraint; for Lung-Spleen Qi deficiency, tonify the Lung, strengthen the Spleen, and boost Qi to control urination; for Liver-channel Damp-Heat, clear the Liver, drain Fire, and disinhibit Dampness.",
+      "red_flags_zh": [
+        {
+          "finding": "遺尿或排尿症狀合併發燒、腰背或側腹疼痛、嘔吐或發抖畏寒",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "提示泌尿道感染或腎盂腎炎",
+          "source": "MedlinePlus \"Frequent or urgent urination\" (ency/article/003140.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have fever, back or side pain, vomiting, or shaking chills\""
+        },
+        {
+          "finding": "合併明顯口渴、食慾增加、疲倦或不明原因體重下降",
+          "urgency_level": "routine",
+          "recommended_action": "建議轉介評估血糖及內分泌狀況",
+          "rationale": "需排除糖尿病等代謝性病因",
+          "source": "MedlinePlus \"Frequent or urgent urination\" (ency/article/003140.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have increased thirst or appetite, fatigue, or sudden weight loss\""
+        },
+        {
+          "finding": "尿液帶血或混濁",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除泌尿道感染、結石或其他病理性血尿",
+          "source": "MedlinePlus \"Frequent or urgent urination\" (ency/article/003140.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have bloody or cloudy urine\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Enuresis or urinary symptoms with fever, back/flank pain, vomiting, or shaking chills",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Suggests urinary tract infection or pyelonephritis",
+          "source": "MedlinePlus \"Frequent or urgent urination\" (ency/article/003140.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have fever, back or side pain, vomiting, or shaking chills\""
+        },
+        {
+          "finding": "With marked thirst, increased appetite, fatigue, or unexplained weight loss",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend referral to evaluate blood glucose and endocrine status",
+          "rationale": "Must rule out diabetes and other metabolic causes",
+          "source": "MedlinePlus \"Frequent or urgent urination\" (ency/article/003140.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have increased thirst or appetite, fatigue, or sudden weight loss\""
+        },
+        {
+          "finding": "Bloody or cloudy urine",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out urinary tract infection, stones, or other pathologic hematuria",
+          "source": "MedlinePlus \"Frequent or urgent urination\" (ency/article/003140.htm), When to Contact a Medical Professional, retrieved 2026-08-11: \"You have bloody or cloudy urine\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Frequent or urgent urination (ency/article/003140.htm), retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yi_niao"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Frequent or urgent urination (ency/article/003140.htm), retrieved 2026-08-11"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yi_jing",
       "name_zh": "遺精",
       "pinyin": "Yijing",
       "name_en": "Seminal Emission",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "definition_zh": "遺精是指不因性交而精液頻繁遺泄的病證，有夢而遺者稱「夢遺」，無夢而遺甚至清醒時精液自出者稱「滑精」。",
+      "definition_en": "Seminal Emission (遺精) refers to frequent involuntary discharge of semen without sexual intercourse. When it occurs with dreaming it is called \"dream emission\" (夢遺); when it occurs without dreams, or even while awake, it is called \"slippery emission\" (滑精).",
+      "etiology_zh": "多因君相火旺、擾動精室；或腎氣不固、精關不藏；或濕熱下注，擾動精室；亦可因勞心過度、房事不節，耗傷腎精。",
+      "etiology_en": "Commonly caused by hyperactive Ministerial/Sovereign Fire disturbing the seminal chamber; Kidney Qi not firm with failure of the seminal gate to store; Damp-Heat pouring downward and disturbing the seminal chamber; or excessive mental strain and unrestrained sexual activity depleting Kidney Essence.",
+      "pathomechanism_zh": "腎藏精，肝主疏泄，精室的開闔有賴心腎相交、水火既濟；若心腎不交，相火妄動，擾動精室則夢遺頻作；久病腎虛精關不固，則無夢滑精；濕熱下注，擾動精室，亦可致遺精。",
+      "pathomechanism_en": "The Kidney stores Essence and the Liver governs free-flow; the opening and closing of the seminal chamber depend on the Heart and Kidney communicating, with Water and Fire in balance. When the Heart and Kidney fail to communicate, Ministerial Fire stirs recklessly and disturbs the seminal chamber, producing frequent dream emissions. With prolonged illness, Kidney deficiency loosens the seminal gate, producing emission without dreams. Damp-Heat pouring downward and disturbing the seminal chamber can likewise cause emission.",
+      "key_manifestations_zh": [
+        "有夢而遺精，寐則遺泄",
+        "無夢而遺，甚則清醒時精自滑出",
+        "兼見心煩失眠、頭暈耳鳴、腰膝痠軟",
+        "兼見神疲乏力、面色晄白、畏寒肢冷（腎氣不固者）",
+        "兼見陰囊潮濕、小便黃赤、口苦（濕熱下注者）"
+      ],
+      "key_manifestations_en": [
+        "Emission occurring with dreams during sleep",
+        "Emission without dreams, or even involuntary discharge while awake in severe cases",
+        "Vexation, insomnia, dizziness, tinnitus, and lower back/knee soreness",
+        "Fatigue, pale complexion, and cold aversion with cold limbs (Kidney Qi not firm)",
+        "Scrotal dampness, dark-yellow urine, and bitter taste in the mouth (Damp-Heat pouring downward)"
+      ],
+      "disease_location_zh": "病位在腎，與心、肝關係密切。",
+      "disease_location_en": "Disease location is the Kidney, closely related to the Heart and Liver.",
+      "related_patterns": [
+        "pattern.heart_kidney_not_communicating",
+        "pattern.kidney_qi_not_firm",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "treatment_principle_zh": "心腎不交者交通心腎、清心安神，腎氣不固者補腎固精，濕熱下注者清熱利濕。",
+      "treatment_principle_en": "For Heart-Kidney not communicating, connect the Heart and Kidney and clear the Heart to calm the Spirit; for Kidney Qi not firm, tonify the Kidney and secure the Essence; for Damp-Heat pouring downward, clear Heat and disinhibit Dampness.",
+      "red_flags_zh": [
+        {
+          "finding": "射精時或射精後劇烈不適，合併發燒、寒顫或血尿",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除前列腺炎或泌尿道感染",
+          "source": "MedlinePlus \"Prostate Diseases | Prostatitis | Enlarged Prostate\", retrieved 2026-08-11: \"Blood in your urine or urine that has an unusual smell or color. Fever, chills, or body aches. Great discomfort or pain: While urinating or after ejaculation.\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe discomfort during or after ejaculation, with fever, chills, or blood in urine",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out prostatitis or urinary tract infection",
+          "source": "MedlinePlus \"Prostate Diseases | Prostatitis | Enlarged Prostate\", retrieved 2026-08-11: \"Blood in your urine or urine that has an unusual smell or color. Fever, chills, or body aches. Great discomfort or pain: While urinating or after ejaculation.\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Prostate Diseases, retrieved 2026-08-11"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yi_jing"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Prostate Diseases, retrieved 2026-08-11 — SOURCING GAP DISCLOSED: 遺精/seminal emission has no direct Western-medicine equivalent MedlinePlus topic; only 1 row sourceable via analogous prostatitis/urinary-infection screening, not the usual 2-4"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yang_wei",
       "name_zh": "陽痿",
       "pinyin": "Yangwei",
       "name_en": "Impotence",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "definition_zh": "陽痿是指成年男子性交時，陰莖不能勃起，或勃起不堅，或堅而不能持久，以致不能完成正常性生活的病證。",
+      "definition_en": "Impotence (陽痿) refers to a condition in adult men where the penis fails to become erect during intercourse, or the erection is insufficiently firm, or firm but not sustained, preventing completion of normal sexual activity.",
+      "etiology_zh": "多因房事不節、手淫過度，命門火衰；或思慮傷脾、憂鬱傷肝，情志不遂；或濕熱下注，宗筋弛縱；或驚恐傷腎，腎氣不固。",
+      "etiology_en": "Commonly caused by excessive sexual activity or masturbation depleting Life-Gate Fire; overthinking damaging the Spleen or depression damaging the Liver with unresolved emotion; Damp-Heat pouring downward and slackening the ancestral sinew; or fright damaging the Kidney and unsettling Kidney Qi.",
+      "pathomechanism_zh": "陰莖為宗筋所聚，其勃起有賴腎陽溫煦、肝之疏泄、心神調攝；命門火衰，宗筋失於溫煦，則陽事不舉；肝鬱氣滯，或濕熱下注宗筋，亦可致陽痿；久病及心脾，心脾兩虛，氣血不足，宗筋失養。",
+      "pathomechanism_en": "The penis is where the ancestral sinews converge; erection depends on the warming of Kidney Yang, the free-flow governed by the Liver, and regulation by the Heart-Spirit. When Life-Gate Fire declines, the ancestral sinew loses its warming and fails to rise. Liver Qi stagnation, or Damp-Heat pouring into the ancestral sinew, can likewise cause impotence. With prolonged illness affecting the Heart and Spleen, Heart-Spleen deficiency and Qi-Blood insufficiency leave the ancestral sinew unnourished.",
+      "key_manifestations_zh": [
+        "陰莖不能勃起，或勃起不堅、不能持久",
+        "腰膝痠軟、畏寒肢冷、精神萎靡（命門火衰者）",
+        "情緒抑鬱、胸脅脹悶、興趣減退（肝鬱氣滯者）",
+        "陰囊潮濕臊臭、小便黃赤（濕熱下注者）",
+        "心悸失眠、神疲納差（心脾兩虛者）"
+      ],
+      "key_manifestations_en": [
+        "Inability to achieve erection, or erection that is insufficiently firm or not sustained",
+        "Lower back/knee soreness, cold aversion with cold limbs, and low spirits (Life-Gate Fire decline)",
+        "Depressed mood, chest and hypochondriac fullness, and diminished interest (Liver Qi stagnation)",
+        "Damp, malodorous scrotum and dark-yellow urine (Damp-Heat pouring downward)",
+        "Palpitations, insomnia, fatigue, and poor appetite (Heart-Spleen deficiency)"
+      ],
+      "disease_location_zh": "病位在宗筋，與腎、肝、心、脾關係密切。",
+      "disease_location_en": "Disease location is the ancestral sinew (penis), closely related to the Kidney, Liver, Heart, and Spleen.",
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.damp_heat_lower_burner",
+        "pattern.heart_spleen_deficiency"
+      ],
+      "treatment_principle_zh": "命門火衰者溫腎壯陽，肝鬱氣滯者疏肝解鬱，濕熱下注者清熱利濕，心脾兩虛者補益心脾。",
+      "treatment_principle_en": "For Life-Gate Fire decline, warm the Kidney and strengthen Yang; for Liver Qi stagnation, soothe the Liver and resolve depression; for Damp-Heat pouring downward, clear Heat and disinhibit Dampness; for Heart-Spleen deficiency, tonify the Heart and Spleen.",
+      "red_flags_zh": [
+        {
+          "finding": "勃起功能障礙新發或逐漸加重，尤其合併心血管危險因子",
+          "urgency_level": "routine",
+          "recommended_action": "建議轉介評估心血管及內分泌狀況",
+          "rationale": "勃起功能障礙可能是血管疾病的早期徵象",
+          "source": "MedlinePlus \"Erectile Dysfunction | ED | Impotence\", Summary, retrieved 2026-08-11: \"ED can be a sign of health problems. It may mean your blood vessels are clogged.\""
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New-onset or progressively worsening erectile dysfunction, especially with cardiovascular risk factors",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend referral to evaluate cardiovascular and endocrine status",
+          "rationale": "Erectile dysfunction may be an early sign of vascular disease",
+          "source": "MedlinePlus \"Erectile Dysfunction | ED | Impotence\", Summary, retrieved 2026-08-11: \"ED can be a sign of health problems. It may mean your blood vessels are clogged.\""
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "MedlinePlus Erectile Dysfunction, retrieved 2026-08-11",
+        "canonical back-link: pattern.kidney_yang_deficiency related_tcm_disease_ids includes tdis.yang_wei (data/pathology/pattern_library.json)"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "canonical back-link: pattern.kidney_yang_deficiency related_tcm_disease_ids includes tdis.yang_wei (data/pathology/pattern_library.json); remaining 3 ids are reasoned match"
+        ],
+        "red_flags": [
+          "fresh MedlinePlus Erectile Dysfunction, retrieved 2026-08-11 — SOURCING GAP DISCLOSED: only 1 row sourceable, not the usual 2-4"
+        ]
+      },
+      "source_type": "textbook_standard_plus_fresh_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.er_ming_er_long",
@@ -4137,21 +4650,344 @@
       "name_zh": "筋傷",
       "pinyin": "Jinshang",
       "name_en": "Sinew Injury",
-      "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders"
+      "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders",
+      "definition_zh": "筋傷是指因外力損傷、勞損或感受外邪，導致筋（肌腱、韌帶、關節囊等軟組織）受損，出現局部腫痛、活動受限的病證。",
+      "definition_en": "Sinew Injury (筋傷) refers to damage to the sinews (tendons, ligaments, joint capsules, and other soft tissues) caused by external trauma, overuse strain, or invasion of external pathogens, presenting as localized swelling, pain, and restricted movement.",
+      "etiology_zh": "多因跌仆閃挫、持重用力不當，或勞損積累，損傷筋脈；亦可因久居濕地、感受風寒濕邪，痹阻筋脈。",
+      "etiology_en": "Commonly caused by falls, sprains, or wrenching, or improper force during lifting; may also result from cumulative overuse strain, or from dwelling in damp environments where Wind-Cold-Damp invades and obstructs the sinews and channels.",
+      "pathomechanism_zh": "外傷或勞損使局部經絡受損，氣血運行不暢，瘀血阻滯，不通則痛，發為腫痛；病久氣滯血瘀不去，或風寒濕邪痹阻，可致筋脈失養、屈伸不利；反覆損傷或年老體衰者，肝腎虧虛，筋失所養，更易復發。",
+      "pathomechanism_en": "Trauma or overuse damages the local channels, impeding the flow of Qi and Blood; Blood stasis obstructs the channels, and pain results from lack of free flow, producing swelling and pain. If Qi stagnation and Blood stasis persist, or Wind-Cold-Damp remains lodged, the sinews become unnourished and flexion-extension is impaired. With repeated injury or in the elderly, Liver-Kidney deficiency leaves the sinews unnourished, predisposing to recurrence.",
+      "key_manifestations_zh": [
+        "局部腫脹、疼痛，按之痛甚",
+        "關節或肢體活動受限，屈伸不利",
+        "傷處可見瘀斑、皮下瘀血（急性期）",
+        "慢性者局部酸脹、遇勞加重、遇寒加重",
+        "反覆發作或年老者常兼腰膝痠軟、筋脈拘急"
+      ],
+      "key_manifestations_en": [
+        "Localized swelling and pain, worse with pressure",
+        "Restricted joint or limb movement, difficulty with flexion and extension",
+        "Bruising and subcutaneous hemorrhage at the injury site (acute stage)",
+        "Chronic cases with local aching and distension, worsened by exertion or cold",
+        "Recurrent cases or in the elderly, often accompanied by lower back/knee soreness and sinew tightness"
+      ],
+      "disease_location_zh": "病位在受傷局部之筋脈、關節，與肝、腎關係密切（肝主筋，腎主骨）。",
+      "disease_location_en": "Disease location is the sinews and joints at the site of injury, closely related to the Liver and Kidney (the Liver governs the sinews, the Kidney governs the bones).",
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.blood_stasis",
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.qi_blood_deficiency"
+      ],
+      "treatment_principle_zh": "急性期以活血化瘀、消腫止痛為主；慢性期以舒筋活絡、補益肝腎為法。",
+      "treatment_principle_en": "In the acute stage, invigorate Blood, resolve stasis, reduce swelling, and relieve pain; in the chronic stage, relax the sinews, free the channels, and tonify the Liver and Kidney.",
+      "red_flags_zh": [
+        {
+          "finding": "急性外傷後無法主動活動患肢或明顯畸形",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估，需影像檢查排除肌腱斷裂或骨折",
+          "rationale": "疑全層肌腱撕裂或骨折",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.rotator_cuff / cond.frozen_shoulder (rf.rotator_cuff.legacy01, rf.frozen_shoulder.legacy01)"
+        },
+        {
+          "finding": "患處紅腫發熱合併發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除感染性腱鞘炎或化膿性關節炎",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.de_quervain / cond.trigger_finger (rf.de_quervain.legacy01, rf.trigger_finger.legacy01)"
+        },
+        {
+          "finding": "合併肢體麻木或無力",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需排除周邊神經夾擠或損傷",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.medial_epicondylitis (rf.medial_epicondylitis.legacy01)"
+        },
+        {
+          "finding": "使用氟喹諾酮類抗生素期間出現肌腱疼痛腫脹",
+          "urgency_level": "urgent",
+          "recommended_action": "建議聯繫開立藥物之醫師評估是否停藥",
+          "rationale": "氟喹諾酮類抗生素會增加肌腱炎與肌腱斷裂風險",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.achilles_tendinopathy (rf.achilles_tendinopathy.legacy03)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Cannot actively move the affected limb after acute trauma, or obvious deformity",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt evaluation; imaging needed to rule out tendon rupture or fracture",
+          "rationale": "Suspect full-thickness tendon tear or fracture",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.rotator_cuff / cond.frozen_shoulder (rf.rotator_cuff.legacy01, rf.frozen_shoulder.legacy01)"
+        },
+        {
+          "finding": "Redness, warmth, and swelling of the injured area with fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out infectious tenosynovitis or septic arthritis",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.de_quervain / cond.trigger_finger (rf.de_quervain.legacy01, rf.trigger_finger.legacy01)"
+        },
+        {
+          "finding": "With numbness or weakness of the limb",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Must rule out peripheral nerve entrapment or injury",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.medial_epicondylitis (rf.medial_epicondylitis.legacy01)"
+        },
+        {
+          "finding": "Tendon pain and swelling while taking fluoroquinolone antibiotics",
+          "urgency_level": "urgent",
+          "recommended_action": "Advise contacting the prescribing physician to evaluate discontinuation",
+          "rationale": "Fluoroquinolone antibiotics increase risk of tendinitis and tendon rupture",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.achilles_tendinopathy (rf.achilles_tendinopathy.legacy03)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entities cond.rotator_cuff, cond.frozen_shoulder, cond.de_quervain, cond.trigger_finger, cond.medial_epicondylitis, cond.achilles_tendinopathy"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.jin_shang"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json tendon-injury cluster (cond.rotator_cuff, cond.frozen_shoulder, cond.de_quervain, cond.trigger_finger, cond.medial_epicondylitis, cond.achilles_tendinopathy) — jin_shang is the umbrella TCM category for this whole cluster of Western tendon/soft-tissue diagnoses"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.luo_zhen",
       "name_zh": "落枕",
       "pinyin": "Luozhen",
       "name_en": "Stiff Neck",
-      "taxonomy_id": "tdx.orthopedics_traumatology.spinal_disorders"
+      "taxonomy_id": "tdx.orthopedics_traumatology.spinal_disorders",
+      "definition_zh": "落枕是指因睡姿不當或頸部受風寒，晨起後突發頸項強痛、轉側不利的病證，多能自行或經治療於一至二週內緩解。",
+      "definition_en": "Stiff Neck (落枕) refers to sudden onset of neck pain and stiffness with restricted rotation upon waking, typically caused by an awkward sleeping posture or exposure of the neck to Wind-Cold; it usually resolves spontaneously or with treatment within one to two weeks.",
+      "etiology_zh": "多因睡眠姿勢不當，頸部肌肉長時間受牽拉；或夜臥受風寒侵襲頸項經絡，氣血凝滯；素體氣血不足、頸部經筋失養者更易發作。",
+      "etiology_en": "Commonly caused by an awkward sleeping posture that stretches the neck muscles for a prolonged period, or Wind-Cold invading the neck channels during sleep and causing Qi-Blood to congeal; those with underlying Qi-Blood insufficiency and undernourished neck sinews are more prone to episodes.",
+      "pathomechanism_zh": "頸項經筋因姿勢不當或風寒侵襲，局部氣血運行受阻，經脈拘急，不通則痛，發為頸項強痛、活動受限。",
+      "pathomechanism_en": "The sinew channels of the neck become locally obstructed in Qi-Blood flow due to an awkward posture or Wind-Cold invasion; the channels become tense and contracted, producing pain from lack of free flow, presenting as neck stiffness, pain, and restricted movement.",
+      "key_manifestations_zh": [
+        "晨起突發頸項強痛，多為一側",
+        "頭項轉側活動受限，動則痛甚",
+        "可觸及局部肌肉緊張、壓痛",
+        "疼痛可牽及肩背",
+        "一般無發熱、上肢放射麻木等全身或神經症狀"
+      ],
+      "key_manifestations_en": [
+        "Sudden onset of one-sided neck pain and stiffness upon waking",
+        "Restricted turning of the head and neck, with pain worsened by movement",
+        "Palpable local muscle tension and tenderness",
+        "Pain may radiate to the shoulder and upper back",
+        "Generally no fever or radiating arm numbness/systemic or neurologic symptoms"
+      ],
+      "disease_location_zh": "病位在頸項筋脈，屬太陽、少陽經筋為主。",
+      "disease_location_en": "Disease location is the sinew channels of the neck, mainly involving the Taiyang and Shaoyang sinew channels.",
+      "related_patterns": [
+        "pattern.wind_cold",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "treatment_principle_zh": "以祛風散寒、舒筋活絡、行氣活血為法。",
+      "treatment_principle_en": "The method is to expel Wind, dispel Cold, relax the sinews, free the channels, and move Qi and Blood.",
+      "red_flags_zh": [
+        {
+          "finding": "發燒合併頸部僵硬、畏光",
+          "urgency_level": "emergency",
+          "recommended_action": "立即就醫排除腦膜炎",
+          "rationale": "需排除腦膜炎（急症）",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (rf.neck_pain_stiff.legacy01)"
+        },
+        {
+          "finding": "外傷後頸痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫，勿貿然活動頸部",
+          "rationale": "需排除骨折或韌帶損傷",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (rf.neck_pain_stiff.legacy02)"
+        },
+        {
+          "finding": "上肢放射麻木無力",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需考慮神經根病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (rf.neck_pain_stiff.legacy03)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Fever with neck stiffness and photophobia",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate emergency care to rule out meningitis",
+          "rationale": "Must rule out meningitis (emergency)",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (rf.neck_pain_stiff.legacy01)"
+        },
+        {
+          "finding": "Neck pain after trauma",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation; do not force neck motion",
+          "rationale": "Must rule out fracture or ligament injury",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (rf.neck_pain_stiff.legacy02)"
+        },
+        {
+          "finding": "Radiating arm numbness or weakness",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Consider radiculopathy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (rf.neck_pain_stiff.legacy03)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.luo_zhen"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.neck_pain_stiff (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.jian_ning",
       "name_zh": "肩凝症（漏肩風）",
       "pinyin": "Jianning",
       "name_en": "Frozen Shoulder",
-      "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders"
+      "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders",
+      "definition_zh": "肩凝症又稱漏肩風、五十肩，是以肩部疼痛、活動受限，日久肩部肌肉萎縮、狀如凝結為主症的病證，好發於50歲左右。",
+      "definition_en": "Frozen Shoulder (肩凝症), also called \"leaking-shoulder wind\" (漏肩風) or \"fifty-shoulder\" (五十肩), is characterized by shoulder pain and restricted movement, with muscle atrophy developing over time as if the joint had \"frozen\"; it most often occurs around age 50.",
+      "etiology_zh": "多因年老體衰、氣血漸虧，肩部經脈失養；或勞損外傷，筋脈受損；或睡臥露肩，風寒濕邪乘虛侵襲肩部經絡，痹阻氣血。",
+      "etiology_en": "Commonly caused by advancing age with declining Qi-Blood leaving the shoulder channels unnourished; or overuse strain and trauma damaging the sinews; or sleeping with the shoulder exposed, allowing Wind-Cold-Damp to invade the shoulder channels while defenses are weak and obstruct Qi-Blood flow.",
+      "pathomechanism_zh": "肩部經脈氣血本已漸虛，復感風寒濕邪，或勞損傷及筋脈，致使局部氣血凝滯、經脈痹阻，不通則痛；病久氣血虛損，筋脈失於濡養，則肩部活動日漸受限，肌肉萎縮。",
+      "pathomechanism_en": "With the shoulder channels' Qi-Blood already gradually deficient, further invasion by Wind-Cold-Damp, or strain damaging the sinews, causes local Qi-Blood to congeal and the channels to become obstructed, producing pain from lack of free flow. With prolonged illness, Qi-Blood deficiency leaves the sinews unnourished, so shoulder movement becomes progressively restricted and the muscles atrophy.",
+      "key_manifestations_zh": [
+        "肩部疼痛，夜間或遇冷加重",
+        "肩關節活動範圍逐漸縮小，外展、上舉、後伸受限",
+        "病程日久可見肩部肌肉萎縮",
+        "疼痛可牽及上臂，但一般無手部麻木無力",
+        "病情發展多分為疼痛期、僵硬期、緩解期"
+      ],
+      "key_manifestations_en": [
+        "Shoulder pain, worsened at night or with cold exposure",
+        "Progressively decreasing range of shoulder motion — restricted abduction, elevation, and extension behind the back",
+        "Muscle atrophy of the shoulder in long-standing cases",
+        "Pain may radiate to the upper arm, but generally without hand numbness or weakness",
+        "The course typically passes through painful, stiffening, and resolving stages"
+      ],
+      "disease_location_zh": "病位在肩部經筋，與手三陽經關係密切。",
+      "disease_location_en": "Disease location is the sinew channels of the shoulder, closely related to the three Hand Yang channels.",
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.qi_blood_deficiency"
+      ],
+      "treatment_principle_zh": "早期以祛風散寒除濕、通絡止痛為主，後期以益氣養血、舒筋活絡為法，並配合功能鍛鍊。",
+      "treatment_principle_en": "In the early stage, expel Wind, dispel Cold, eliminate Dampness, and free the channels to relieve pain; in the later stage, tonify Qi, nourish Blood, and relax the sinews to free the channels, combined with functional exercise.",
+      "red_flags_zh": [
+        {
+          "finding": "外傷後突發無力或畸形",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除旋轉肌撕裂或骨折",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (rf.frozen_shoulder.legacy01)"
+        },
+        {
+          "finding": "夜間痛合併體重減輕或發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "建議就醫評估",
+          "rationale": "需排除感染或腫瘤",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (rf.frozen_shoulder.legacy02)"
+        },
+        {
+          "finding": "被動活動不受限卻無力",
+          "urgency_level": "urgent",
+          "recommended_action": "建議就醫評估",
+          "rationale": "可能是旋轉肌問題而非冰凍肩",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (rf.frozen_shoulder.legacy03)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden weakness or deformity after trauma",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out rotator cuff tear or fracture",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (rf.frozen_shoulder.legacy01)"
+        },
+        {
+          "finding": "Night pain with weight loss or fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Must rule out infection or tumor",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (rf.frozen_shoulder.legacy02)"
+        },
+        {
+          "finding": "Full passive range of motion but with weakness",
+          "urgency_level": "urgent",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Likely rotator cuff pathology rather than adhesive capsulitis",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (rf.frozen_shoulder.legacy03)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.jian_ning"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.frozen_shoulder (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.tong_jing",
@@ -4284,42 +5120,749 @@
       "name_zh": "月經先期",
       "pinyin": "Yuejing Xianqi",
       "name_en": "Early Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "月經先期是指月經週期提前七天以上，甚至一月兩至，連續兩個週期以上者。",
+      "definition_en": "Early Menstruation (月經先期) refers to a menstrual cycle that arrives seven or more days earlier than expected, sometimes twice within one month, for two or more consecutive cycles.",
+      "etiology_zh": "多因素體陽盛，或飲食辛辣助熱，血分伏熱，熱迫血行；或憂思傷脾、脾氣虛弱，統攝無權；或稟賦不足、房勞多產,腎氣虛弱,封藏失職。",
+      "etiology_en": "Commonly caused by underlying Yang excess, or spicy/heating foods generating latent Heat in the Blood that forces Blood to move recklessly; or worry and overthinking damaging the Spleen, weakening its governing function over the Blood; or congenital insufficiency and childbearing/sexual strain weakening Kidney Qi and its storing function.",
+      "pathomechanism_zh": "血熱者，熱擾沖任，迫血妄行，故經期提前；氣虛者，脾氣虛弱，統血無權，沖任不固，經血失於制約而先期而至；腎氣虛者，封藏失職，沖任不固，亦致經行提前。",
+      "pathomechanism_en": "In Blood Heat, Heat disturbs the Chong-Ren vessels and forces the Blood to move recklessly, so the period arrives early. In Qi deficiency, weak Spleen Qi fails to govern the Blood, the Chong-Ren vessels lose their consolidation, and menstrual blood is released without restraint, arriving early. In Kidney Qi deficiency, the storing function fails and the Chong-Ren vessels are not secured, likewise causing early arrival.",
+      "key_manifestations_zh": [
+        "月經週期提前七天以上，甚至一月兩至",
+        "經色深紅或紫紅、質稠，量或多或少（血熱者）",
+        "經色淡紅、質稀，神疲肢倦、氣短懶言（氣虛者）",
+        "經量少、色淡黯、腰膝痠軟（腎虛者）",
+        "可伴心煩口渴、小便黃赤（實熱者）"
+      ],
+      "key_manifestations_en": [
+        "Menstrual cycle arriving seven or more days early, sometimes twice within one month",
+        "Deep-red or purplish-red, thick flow, volume variable (Blood Heat)",
+        "Pale-red, thin flow with fatigue, limb weariness, and shortness of breath with reluctance to speak (Qi deficiency)",
+        "Scant, pale-dark flow with lower back/knee soreness (Kidney deficiency)",
+        "May include vexation, thirst, and dark-yellow urine (excess Heat type)"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與脾、腎、肝關係密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, closely related to the Spleen, Kidney, and Liver.",
+      "related_patterns": [
+        "pattern.blood_heat",
+        "pattern.spleen_not_governing_blood",
+        "pattern.kidney_qi_not_firm",
+        "pattern.liver_qi_stagnation"
+      ],
+      "treatment_principle_zh": "血熱者清熱涼血調經，氣虛者補氣攝血調經，腎虛者補腎固沖調經。",
+      "treatment_principle_en": "For Blood Heat, clear Heat, cool the Blood, and regulate menstruation; for Qi deficiency, tonify Qi, secure the Blood, and regulate menstruation; for Kidney deficiency, tonify the Kidney, secure the Chong vessel, and regulate menstruation.",
+      "red_flags_zh": [
+        {
+          "finding": "任何停經後出血需評估子宮內膜",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "可能是子宮內膜病變甚至癌症的早期徵象",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy01)"
+        },
+        {
+          "finding": "大量出血合併貧血症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫處理",
+          "rationale": "大量出血合併貧血需即時處理",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy02)"
+        },
+        {
+          "finding": "疑似懷孕",
+          "urgency_level": "routine",
+          "recommended_action": "建議先行驗孕",
+          "rationale": "月經異常需先排除懷孕",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy03)"
+        },
+        {
+          "finding": "合併泌乳、視野缺損或頭痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除腦下垂體病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Any postmenopausal bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "May be an early sign of endometrial pathology or cancer",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy01)"
+        },
+        {
+          "finding": "Heavy bleeding with anemia symptoms",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical treatment",
+          "rationale": "Heavy bleeding with anemia requires prompt treatment",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy02)"
+        },
+        {
+          "finding": "Possible pregnancy",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend a pregnancy test first",
+          "rationale": "Menstrual irregularity must first rule out pregnancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy03)"
+        },
+        {
+          "finding": "With galactorrhea, visual-field loss, or headache",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out pituitary pathology",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yue_jing_xian_qi"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yue_jing_hou_qi",
       "name_zh": "月經後期",
       "pinyin": "Yuejing Houqi",
       "name_en": "Delayed Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "月經後期是指月經週期延後七天以上，甚至四五十天一行，連續兩個週期以上者。",
+      "definition_en": "Delayed Menstruation (月經後期) refers to a menstrual cycle arriving seven or more days late, sometimes as long as forty to fifty days between periods, for two or more consecutive cycles.",
+      "etiology_zh": "多因經期產後感受寒邪，或過食生冷,寒凝血脈；或素體陽虛,虛寒內生；或營血虧虛,血海不能按時滿溢；或情志不遂,肝鬱氣滯,或痰濕阻滯,血行不暢。",
+      "etiology_en": "Commonly caused by Cold invading during menstruation or postpartum, or excessive consumption of raw/cold food congealing the Blood vessels; underlying Yang deficiency generating internal Cold; Nutritive-Blood insufficiency preventing the Sea of Blood from filling on schedule; or emotional distress with Liver Qi stagnation, or Phlegm-Damp obstruction impeding Blood flow.",
+      "pathomechanism_zh": "寒凝血脈，血行遲滯，血海不能按時滿溢，故經行延後；血虛者，血海空虛，滿溢遲緩，亦致後期；氣滯痰阻者，氣血運行不暢，血海蓄溢失常，經行亦延後。",
+      "pathomechanism_en": "Cold congeals the Blood vessels and slows Blood flow, so the Sea of Blood cannot fill on schedule, delaying the period. In Blood deficiency, the Sea of Blood is empty and fills slowly, likewise delaying menstruation. In Qi stagnation or Phlegm obstruction, the movement of Qi-Blood is impeded and the storing-and-releasing of the Sea of Blood becomes abnormal, also delaying the period.",
+      "key_manifestations_zh": [
+        "月經週期延後七天以上，甚則四五十天一行",
+        "經色暗紅有塊、小腹冷痛拒按或喜溫喜按（寒凝者）",
+        "經量少、色淡、小腹隱痛喜按（血虛者）",
+        "經前乳房脹痛、胸脅脹悶（氣滯者）",
+        "經色淡黯質稠、形體肥胖、帶下量多（痰濕者）"
+      ],
+      "key_manifestations_en": [
+        "Menstrual cycle arriving seven or more days late, sometimes forty to fifty days between periods",
+        "Dark flow with clots, cold lower-abdominal pain worse with pressure or relieved by warmth/pressure (Cold congealing)",
+        "Scant, pale flow with vague lower-abdominal pain relieved by pressure (Blood deficiency)",
+        "Premenstrual breast distension and chest/hypochondriac fullness (Qi stagnation)",
+        "Pale-dark, thick flow with obesity and abundant vaginal discharge (Phlegm-Damp)"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與肝、脾、腎關係密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, closely related to the Liver, Spleen, and Kidney.",
+      "related_patterns": [
+        "pattern.blood_deficiency",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "treatment_principle_zh": "寒凝者溫經散寒調經，血虛者補血調經，氣滯者理氣行滯調經，痰濕者化痰燥濕調經。",
+      "treatment_principle_en": "For Cold congealing, warm the channels, dispel Cold, and regulate menstruation; for Blood deficiency, tonify the Blood and regulate menstruation; for Qi stagnation, regulate Qi, move stagnation, and regulate menstruation; for Phlegm-Damp, transform Phlegm, dry Dampness, and regulate menstruation.",
+      "red_flags_zh": [
+        {
+          "finding": "任何停經後出血需評估子宮內膜",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "可能是子宮內膜病變甚至癌症的早期徵象",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy01)"
+        },
+        {
+          "finding": "大量出血合併貧血症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫處理",
+          "rationale": "大量出血合併貧血需即時處理",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy02)"
+        },
+        {
+          "finding": "疑似懷孕",
+          "urgency_level": "routine",
+          "recommended_action": "建議先行驗孕",
+          "rationale": "月經異常需先排除懷孕",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy03)"
+        },
+        {
+          "finding": "合併泌乳、視野缺損或頭痛",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除腦下垂體病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Any postmenopausal bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "May be an early sign of endometrial pathology or cancer",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy01)"
+        },
+        {
+          "finding": "Heavy bleeding with anemia symptoms",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical treatment",
+          "rationale": "Heavy bleeding with anemia requires prompt treatment",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy02)"
+        },
+        {
+          "finding": "Possible pregnancy",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend a pregnancy test first",
+          "rationale": "Menstrual irregularity must first rule out pregnancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy03)"
+        },
+        {
+          "finding": "With galactorrhea, visual-field loss, or headache",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out pituitary pathology",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (rf.irregular_menstruation.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yue_jing_hou_qi"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.irregular_menstruation (same rows reused for tdis.yue_jing_xian_qi — shared underlying biomedical danger per irregular-cycle-timing cluster)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yue_jing_guo_duo",
       "name_zh": "月經過多",
       "pinyin": "Yuejing Guoduo",
       "name_en": "Heavy Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "月經過多是指月經週期基本正常，但經量明顯多於既往正常經量的病證。",
+      "definition_en": "Heavy Menstruation (月經過多) refers to a condition in which the menstrual cycle length is essentially normal but the volume of flow is markedly greater than the individual's usual normal amount.",
+      "etiology_zh": "多因素體陽盛,血分伏熱,或情志過極化火,熱擾血海,迫血妄行；或飲食勞倦傷脾,氣虛不能攝血；或跌仆閃挫、產育過多,瘀血內停,血不歸經。",
+      "etiology_en": "Commonly caused by underlying Yang excess with latent Heat in the Blood, or extreme emotion transforming into Fire and disturbing the Sea of Blood, forcing the Blood to move recklessly; dietary irregularity or overwork damaging the Spleen so that Qi deficiency cannot govern the Blood; or trauma/strain or multiple childbirths leaving Blood stasis internally, so Blood fails to return to its channels.",
+      "pathomechanism_zh": "血熱迫血妄行，血海不寧，故經行量多；氣虛統攝無權，沖任不固，經血失於制約而量多；瘀血內阻,新血不得歸經,亦致經量增多,且多夾血塊。",
+      "pathomechanism_en": "Blood Heat forces the Blood to move recklessly and disturbs the Sea of Blood, producing heavy flow. Qi deficiency fails to govern the Blood, the Chong-Ren vessels lose consolidation, and menstrual blood is released without restraint, also producing heavy flow. Internal Blood stasis prevents newly-formed Blood from returning to its channels, likewise increasing flow volume, often with clots.",
+      "key_manifestations_zh": [
+        "經量明顯多於既往，經期基本正常",
+        "經色深紅、質稠，煩熱口渴（血熱者）",
+        "經色淡紅、質稀，神疲氣短，經行尤甚（氣虛者）",
+        "經色紫暗有塊、小腹疼痛拒按（血瘀者）",
+        "久病可伴頭暈心悸、面色萎黃等血虛之候"
+      ],
+      "key_manifestations_en": [
+        "Markedly heavier flow than usual, with essentially normal cycle timing",
+        "Deep-red, thick flow with vexing heat and thirst (Blood Heat)",
+        "Pale-red, thin flow with fatigue and shortness of breath worse during menstruation (Qi deficiency)",
+        "Purplish-dark flow with clots and lower-abdominal pain worse with pressure (Blood stasis)",
+        "Long-standing cases may show dizziness, palpitations, and sallow complexion from Blood deficiency"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與脾關係最為密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, most closely related to the Spleen.",
+      "related_patterns": [
+        "pattern.blood_heat",
+        "pattern.spleen_not_governing_blood",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "血熱者清熱涼血止血,氣虛者補氣攝血,血瘀者活血化瘀止血,均需適時佐以固沖止血。",
+      "treatment_principle_en": "For Blood Heat, clear Heat, cool the Blood, and stop bleeding; for Qi deficiency, tonify Qi and secure the Blood; for Blood stasis, invigorate the Blood, resolve stasis, and stop bleeding — all combined as appropriate with securing the Chong vessel to stop bleeding.",
+      "red_flags_zh": [
+        {
+          "finding": "急性大量出血合併血壓下降、心悸、暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "屬急症，需立即就醫",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy01)"
+        },
+        {
+          "finding": "停經後出血或不規則出血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除內膜增生／癌變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy02)"
+        },
+        {
+          "finding": "易瘀青或家族出血病史",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "提示凝血疾病",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy03)"
+        },
+        {
+          "finding": "貧血症狀明顯（極度疲倦、氣短）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需評估貧血嚴重度並處理病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Acute heavy bleeding with hypotension, palpitations, or syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "An emergency requiring immediate medical attention",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy01)"
+        },
+        {
+          "finding": "Postmenopausal or irregular bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out endometrial hyperplasia/carcinoma",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy02)"
+        },
+        {
+          "finding": "Easy bruising or family bleeding history",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Suggests coagulopathy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy03)"
+        },
+        {
+          "finding": "Marked anemia symptoms (severe fatigue, dyspnea)",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must assess anemia severity and treat the underlying cause",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yue_jing_guo_duo"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.yue_jing_guo_shao",
       "name_zh": "月經過少",
       "pinyin": "Yuejing Guoshao",
       "name_en": "Scanty Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "月經過少是指月經週期基本正常，但經量明顯少於既往正常經量，甚或點滴即淨、經期不足二日的病證。",
+      "definition_en": "Scanty Menstruation (月經過少) refers to a condition in which the menstrual cycle length is essentially normal but the flow volume is markedly less than the individual's usual amount, sometimes reduced to spotting or lasting less than two days.",
+      "etiology_zh": "多因先天腎氣不足、房勞多產耗傷腎精，精血同源不足；或大病久病、失血過多，營血虧虛；或痰濕內盛、瘀血內阻，血行不暢，血海滿溢不足。",
+      "etiology_en": "Commonly caused by congenital Kidney Qi insufficiency, or sexual strain/multiple childbirths depleting Kidney Essence (Essence and Blood share a common source); severe or prolonged illness or excessive blood loss depleting Nutritive-Blood; or internal Phlegm-Damp excess or Blood stasis impeding Blood flow so the Sea of Blood cannot fill adequately.",
+      "pathomechanism_zh": "腎精不足，精不化血，血海空虛，故經量減少；營血虧虛，血海不能按時滿溢，經量亦少；痰濕或瘀血阻滯胞脈，血行不暢，血海滿溢不足，亦致經量過少。",
+      "pathomechanism_en": "Kidney Essence insufficiency means Essence cannot transform into Blood, leaving the Sea of Blood empty and producing scanty flow. Nutritive-Blood depletion prevents the Sea of Blood from filling on schedule, likewise reducing flow. Phlegm-Damp or Blood stasis obstructing the uterine vessels impedes Blood flow, so the Sea of Blood fails to fill adequately, also producing scanty flow.",
+      "key_manifestations_zh": [
+        "經量明顯減少，甚或點滴即淨",
+        "經色淡黯、質稀，腰膝痠軟、頭暈耳鳴（腎虛者）",
+        "經色淡、質稀薄，面色蒼白或萎黃、心悸眼花（血虛者）",
+        "經色紫暗有塊、小腹疼痛拒按（血瘀者）",
+        "形體肥胖、帶下量多、經色淡質黏膩（痰濕者）"
+      ],
+      "key_manifestations_en": [
+        "Markedly reduced flow volume, sometimes reduced to spotting",
+        "Pale-dark, thin flow with lower back/knee soreness, dizziness, and tinnitus (Kidney deficiency)",
+        "Pale, thin flow with pale or sallow complexion and palpitations/blurred vision (Blood deficiency)",
+        "Purplish-dark flow with clots and lower-abdominal pain worse with pressure (Blood stasis)",
+        "Obesity, abundant vaginal discharge, and pale, sticky flow (Phlegm-Damp)"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與腎關係最為密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, most closely related to the Kidney.",
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.blood_deficiency",
+        "pattern.blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "treatment_principle_zh": "腎虛者補腎益精養血,血虛者養血益氣調經,血瘀者活血化瘀調經,痰濕者化痰燥濕調經。",
+      "treatment_principle_en": "For Kidney deficiency, tonify the Kidney, boost Essence, and nourish Blood; for Blood deficiency, nourish Blood and boost Qi to regulate menstruation; for Blood stasis, invigorate Blood, resolve stasis, and regulate menstruation; for Phlegm-Damp, transform Phlegm, dry Dampness, and regulate menstruation.",
+      "red_flags_zh": [
+        {
+          "finding": "合併泌乳、頭痛或視野缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除腦下垂體病變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy01)"
+        },
+        {
+          "finding": "近期子宮腔手術後經量驟減",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "提示宮腔沾黏",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy02)"
+        },
+        {
+          "finding": "疑似懷孕",
+          "urgency_level": "routine",
+          "recommended_action": "建議先行驗孕",
+          "rationale": "月經過少需先排除懷孕",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy03)"
+        },
+        {
+          "finding": "顯著體重下降或過度運動",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "有停經傾向風險",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "With galactorrhea, headache, or visual-field loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out pituitary pathology",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy01)"
+        },
+        {
+          "finding": "Sharp drop in flow after recent uterine surgery",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Suggests intrauterine adhesions",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy02)"
+        },
+        {
+          "finding": "Possible pregnancy",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend a pregnancy test first",
+          "rationale": "Scanty menstruation must first rule out pregnancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy03)"
+        },
+        {
+          "finding": "Marked weight loss or over-exercise",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Risk of trending toward amenorrhea",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (rf.oligomenorrhea.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.yue_jing_guo_shao"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.oligomenorrhea (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.beng_lou",
       "name_zh": "崩漏",
       "pinyin": "Benglou",
       "name_en": "Flooding and Trickling",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "崩漏是指經血非時暴下不止或淋漓不盡的病證，來勢急、出血量多者為「崩」，來勢緩、淋漓不斷者為「漏」，二者常相互轉化。",
+      "definition_en": "Flooding and Trickling (崩漏) refers to abnormal uterine bleeding occurring outside the normal cycle, either as a sudden, profuse hemorrhage (\"flooding\", 崩) or a prolonged, dribbling discharge (\"trickling\", 漏); the two often convert into each other.",
+      "etiology_zh": "多因脾氣虛弱,統攝無權；或腎氣虧虛,封藏失職,沖任不固；或血分伏熱、情志化火,熱迫血行；或瘀血內阻,血不歸經。",
+      "etiology_en": "Commonly caused by Spleen Qi weakness failing to govern the Blood; Kidney Qi deficiency with failure of storage and insecurity of the Chong-Ren vessels; latent Blood Heat or emotion transforming into Fire that forces the Blood to move recklessly; or internal Blood stasis preventing Blood from returning to its channels.",
+      "pathomechanism_zh": "脾虛統攝無權，沖任不固，經血非時而下；腎虛封藏失職，沖任失於固攝，亦致崩漏；血熱迫血妄行，或瘀血阻滯、血不歸經，均可致經血暴下或淋漓不盡；三者常互相夾雜、互為因果，病程遷延。",
+      "pathomechanism_en": "Spleen deficiency fails to govern the Blood and the Chong-Ren vessels lose consolidation, so menstrual blood is discharged outside the normal cycle. Kidney deficiency fails at storage and the Chong-Ren vessels lose their consolidating hold, likewise producing flooding/trickling. Blood Heat forcing reckless movement, or Blood stasis obstructing so Blood fails to return to its channels, can each cause sudden hemorrhage or persistent dribbling. The three mechanisms often intermingle and perpetuate each other, prolonging the course of illness.",
+      "key_manifestations_zh": [
+        "經血非時而下，量多如崩，或淋漓不淨如漏",
+        "血色淡紅質稀、神疲氣短（脾虛者）",
+        "血色淡黯、腰膝痠軟、畏寒肢冷（腎虛者）",
+        "血色深紅質稠、心煩口渴（血熱者）",
+        "血色紫暗有塊、小腹疼痛拒按（血瘀者）"
+      ],
+      "key_manifestations_en": [
+        "Menstrual blood discharged outside the normal cycle — either profuse (\"flooding\") or persistently dribbling (\"trickling\")",
+        "Pale-red, thin blood with fatigue and shortness of breath (Spleen deficiency)",
+        "Pale-dark blood with lower back/knee soreness and cold aversion (Kidney deficiency)",
+        "Deep-red, thick blood with vexation and thirst (Blood Heat)",
+        "Purplish-dark blood with clots and lower-abdominal pain worse with pressure (Blood stasis)"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與脾、腎關係最為密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, most closely related to the Spleen and Kidney.",
+      "related_patterns": [
+        "pattern.spleen_not_governing_blood",
+        "pattern.kidney_qi_not_firm",
+        "pattern.blood_heat",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "遵循「急則治標、緩則治本」原則，出血期以塞流止血為先，血止後審因求本，或補脾、或補腎、或清熱、或化瘀以澄源、復舊。",
+      "treatment_principle_en": "Follow the principle of \"treating the branch urgently, the root gradually\" — during active bleeding, prioritize stemming the flow to stop bleeding; once bleeding stops, address the underlying cause by tonifying the Spleen, tonifying the Kidney, clearing Heat, or resolving stasis, to clear the source and restore normal function.",
+      "red_flags_zh": [
+        {
+          "finding": "急性大量出血合併血壓下降、心悸、暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "屬急症，需立即就醫",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy01)"
+        },
+        {
+          "finding": "停經後出血或不規則出血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除內膜增生／癌變",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy02)"
+        },
+        {
+          "finding": "易瘀青或家族出血病史",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "提示凝血疾病",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy03)"
+        },
+        {
+          "finding": "貧血症狀明顯（極度疲倦、氣短）",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需評估貧血嚴重度並處理病因",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Acute heavy bleeding with hypotension, palpitations, or syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "An emergency requiring immediate medical attention",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy01)"
+        },
+        {
+          "finding": "Postmenopausal or irregular bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out endometrial hyperplasia/carcinoma",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy02)"
+        },
+        {
+          "finding": "Easy bruising or family bleeding history",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Suggests coagulopathy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy03)"
+        },
+        {
+          "finding": "Marked anemia symptoms (severe fatigue, dyspnea)",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must assess anemia severity and treat the underlying cause",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (rf.menorrhagia.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.beng_lou"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.menorrhagia (same rows reused for tdis.yue_jing_guo_duo — 崩漏 shares the identical heavy/irregular-bleeding biomedical danger profile)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bi_jing",
       "name_zh": "閉經",
       "pinyin": "Bijing",
       "name_en": "Amenorrhea",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+      "definition_zh": "閉經是指女子年逾十六歲、月經尚未初潮，或月經已行而又中斷達三個月以上（非妊娠、哺乳期）的病證，分為原發性和繼發性兩類。",
+      "definition_en": "Amenorrhea (閉經) refers to either the absence of menarche in a woman over sixteen years of age, or the cessation of previously established menstruation for three or more consecutive months (excluding pregnancy or lactation); classified as primary or secondary.",
+      "etiology_zh": "多因先天腎氣不足、天癸不充；或大病久病、失血傷精,肝腎精血虧虛；或情志不遂,肝鬱氣滯,血行不暢；或痰濕內盛,阻滯胞脈,血海不通。",
+      "etiology_en": "Commonly caused by congenital Kidney Qi insufficiency with inadequate Tiangui; severe/prolonged illness or blood/essence loss depleting Liver-Kidney Essence-Blood; emotional distress with Liver Qi stagnation impeding Blood flow; or internal Phlegm-Damp excess obstructing the uterine vessels and blocking the Sea of Blood.",
+      "pathomechanism_zh": "肝腎精血虧虛,血海空虛,無血可下,故經閉不行(虛證)；氣滯血瘀或痰濕阻滯胞脈,血海壅塞不通,亦致經閉(實證)；虛實常相互轉化或夾雜。",
+      "pathomechanism_en": "Liver-Kidney Essence-Blood depletion leaves the Sea of Blood empty with no Blood to discharge, causing amenorrhea (deficiency pattern). Qi stagnation with Blood stasis, or Phlegm-Damp obstructing the uterine vessels, blocks the Sea of Blood and likewise causes amenorrhea (excess pattern). Deficiency and excess patterns often convert into or intermingle with each other.",
+      "key_manifestations_zh": [
+        "月經停閉三個月以上（除外妊娠哺乳）",
+        "面色蒼白或萎黃、頭暈耳鳴、腰膝痠軟（肝腎精血虧虛者）",
+        "胸脅脹悶、精神抑鬱、少腹脹痛（氣滯血瘀者）",
+        "形體肥胖、胸悶泛惡、帶下量多（痰濕阻滯者）",
+        "原發性閉經者可伴第二性徵發育異常"
+      ],
+      "key_manifestations_en": [
+        "Absence of menstruation for three or more months (excluding pregnancy and lactation)",
+        "Pale or sallow complexion, dizziness, tinnitus, and lower back/knee soreness (Liver-Kidney Essence-Blood deficiency)",
+        "Chest/hypochondriac fullness, depressed mood, and lower-abdominal distension/pain (Qi stagnation with Blood stasis)",
+        "Obesity, chest oppression with nausea, and abundant vaginal discharge (Phlegm-Damp obstruction)",
+        "Primary amenorrhea may be accompanied by abnormal secondary sexual characteristic development"
+      ],
+      "disease_location_zh": "病位在沖任、胞宮，與肝、腎、脾關係密切。",
+      "disease_location_en": "Disease location is the Chong-Ren vessels and uterus, closely related to the Liver, Kidney, and Spleen.",
+      "related_patterns": [
+        "pattern.liver_kidney_yin_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "treatment_principle_zh": "虛證以補腎養肝、益氣養血、充盈血海為主，實證以理氣活血或化痰除濕、通利血海為法。",
+      "treatment_principle_en": "For deficiency patterns, tonify the Kidney, nourish the Liver, boost Qi, and nourish Blood to fill the Sea of Blood; for excess patterns, regulate Qi and invigorate Blood, or transform Phlegm and eliminate Dampness, to free the Sea of Blood.",
+      "red_flags_zh": [
+        {
+          "finding": "首先排除懷孕",
+          "urgency_level": "routine",
+          "recommended_action": "建議先行驗孕",
+          "rationale": "閉經需先排除懷孕",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy01)"
+        },
+        {
+          "finding": "合併泌乳、頭痛或視野缺損",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除腦下垂體腫瘤",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy02)"
+        },
+        {
+          "finding": "潮熱、盜汗與40歲前停經",
+          "urgency_level": "routine",
+          "recommended_action": "建議就醫評估",
+          "rationale": "提示卵巢早衰，需評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy03)"
+        },
+        {
+          "finding": "顯著體重過低或飲食失調",
+          "urgency_level": "routine",
+          "recommended_action": "建議整體醫療評估",
+          "rationale": "需整體醫療評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Rule out pregnancy first",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend a pregnancy test first",
+          "rationale": "Amenorrhea must first rule out pregnancy",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy01)"
+        },
+        {
+          "finding": "With galactorrhea, headache, or visual-field loss",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out a pituitary tumor",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy02)"
+        },
+        {
+          "finding": "Hot flashes, night sweats, and cessation before age 40",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend medical evaluation",
+          "rationale": "Suggests premature ovarian insufficiency — evaluate",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy03)"
+        },
+        {
+          "finding": "Marked underweight or an eating disorder",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend broad medical evaluation",
+          "rationale": "Warrants broad medical evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (rf.amenorrhea.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.bi_jing"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.amenorrhea (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.dai_xia_bing",
@@ -4422,14 +5965,251 @@
       "name_zh": "不孕",
       "pinyin": "Buyun",
       "name_en": "Infertility (female)",
-      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders",
+      "definition_zh": "不孕是指育齡女性婚後同居、配偶生殖功能正常、未避孕一年以上而未能受孕，或曾有孕育史而後間隔兩年以上未避孕仍未再受孕的病證，分為原發性與繼發性不孕。",
+      "definition_en": "Female Infertility (不孕) refers to a woman of reproductive age who, despite cohabiting with a partner of normal reproductive function and not using contraception, fails to conceive after one year or more (primary), or who previously conceived but fails to conceive again after two or more years without contraception (secondary).",
+      "etiology_zh": "多因腎氣不足,沖任失養,不能攝精成孕；或肝鬱氣滯,氣血失調,血海不寧；或痰濕內盛,阻滯胞脈；或瘀血內停,胞脈不通；或濕熱蘊結胞宮,影響攝精成孕。",
+      "etiology_en": "Commonly caused by Kidney Qi insufficiency leaving the Chong-Ren vessels unnourished and unable to receive Essence for conception; Liver Qi stagnation disturbing Qi-Blood harmony and the Sea of Blood; internal Phlegm-Damp excess obstructing the uterine vessels; internal Blood stasis blocking the uterine vessels; or Damp-Heat accumulating in the uterus interfering with conception.",
+      "pathomechanism_zh": "腎主生殖,腎氣充盛、天癸至、任通衝盛,方能攝精成孕；腎虛則沖任失養,胞宮失於溫煦或滋養,難以攝精成孕；肝鬱、痰濕、血瘀、濕熱均可致胞脈胞絡不暢或胞宮內環境失調,影響攝精成孕。",
+      "pathomechanism_en": "The Kidney governs reproduction; only when Kidney Qi is abundant, Tiangui arrives, and the Ren and Chong vessels are open and flourishing can Essence be received for conception. Kidney deficiency leaves the Chong-Ren vessels unnourished and the uterus without adequate warming or nourishment, making conception difficult. Liver stagnation, Phlegm-Damp, Blood stasis, and Damp-Heat can each impede the uterine vessels and connecting channels or disturb the uterine environment, interfering with conception.",
+      "key_manifestations_zh": [
+        "婚後未避孕一年以上未孕，或曾孕後兩年以上未再受孕",
+        "月經後期、量少、腰膝痠軟（腎虛者）",
+        "月經先後不定期、經前乳房脹痛、情志抑鬱（肝鬱者）",
+        "形體肥胖、帶下量多、月經延後（痰濕者）",
+        "經行腹痛、經色紫暗有塊（血瘀者）"
+      ],
+      "key_manifestations_en": [
+        "Failure to conceive after one or more years without contraception, or after two or more years following a previous pregnancy",
+        "Delayed, scanty menstruation with lower back/knee soreness (Kidney deficiency)",
+        "Irregular cycle timing, premenstrual breast distension, and depressed mood (Liver stagnation)",
+        "Obesity, abundant vaginal discharge, and delayed menstruation (Phlegm-Damp)",
+        "Menstrual pain with dark, clotted flow (Blood stasis)"
+      ],
+      "disease_location_zh": "病位在腎、胞宮，與肝、脾關係密切。",
+      "disease_location_en": "Disease location is the Kidney and uterus, closely related to the Liver and Spleen.",
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_damp",
+        "pattern.blood_stasis"
+      ],
+      "treatment_principle_zh": "腎虛者補腎調沖,肝鬱者疏肝解鬱,痰濕者化痰祛濕,血瘀者活血化瘀,均以恢復胞宮胞脈通調、攝精成孕為目標。",
+      "treatment_principle_en": "For Kidney deficiency, tonify the Kidney and regulate the Chong vessel; for Liver stagnation, soothe the Liver and resolve depression; for Phlegm-Damp, transform Phlegm and eliminate Dampness; for Blood stasis, invigorate Blood and resolve stasis — all aiming to restore free flow in the uterus and vessels so Essence can be received for conception.",
+      "red_flags_zh": [
+        {
+          "finding": "劇烈骨盆腔痛或異常出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "需先排除急症與異位妊娠",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy01)"
+        },
+        {
+          "finding": "35歲以上或有卵巢儲備疑慮",
+          "urgency_level": "routine",
+          "recommended_action": "建議及早轉介生殖專科",
+          "rationale": "宜及早轉介生殖專科",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy02)"
+        },
+        {
+          "finding": "已知輸卵管病變、重度內膜異位或無精症",
+          "urgency_level": "routine",
+          "recommended_action": "轉介專科處理",
+          "rationale": "需專科處理",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy03)"
+        },
+        {
+          "finding": "反覆流產史",
+          "urgency_level": "routine",
+          "recommended_action": "建議另作評估",
+          "rationale": "需另作評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe pelvic pain or abnormal bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "Must rule out acute causes and ectopic pregnancy first",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy01)"
+        },
+        {
+          "finding": "Age ≥35 or ovarian-reserve concerns",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend early referral to reproductive medicine",
+          "rationale": "Refer to reproductive medicine early",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy02)"
+        },
+        {
+          "finding": "Known tubal disease, severe endometriosis, or azoospermia",
+          "urgency_level": "routine",
+          "recommended_action": "Refer to specialist care",
+          "rationale": "Needs specialist care",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy03)"
+        },
+        {
+          "finding": "History of recurrent pregnancy loss",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend separate evaluation",
+          "rationale": "Warrants separate evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (rf.female_infertility.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.female_infertility"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.bu_yun"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.female_infertility (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.bu_yu",
       "name_zh": "不育",
       "pinyin": "Buyu",
       "name_en": "Infertility (male)",
-      "taxonomy_id": "tdx.andrology.general"
+      "taxonomy_id": "tdx.andrology.general",
+      "definition_zh": "不育是指男子與配偶同居一年以上、未採取避孕措施而未能使配偶受孕的病證，多因精液異常或性功能障礙所致。",
+      "definition_en": "Male Infertility (不育) refers to a man's inability to impregnate his partner after one year or more of cohabitation without contraception, most often due to abnormal semen parameters or sexual dysfunction.",
+      "etiology_zh": "多因先天稟賦不足、腎精虧虛,精少精弱；或濕熱下注,擾動精室,精液異常；或情志不遂,肝鬱氣滯,或恐懼傷腎,影響生育功能；或久坐濕熱環境、嗜煙酒等不良習慣耗傷腎精。",
+      "etiology_en": "Commonly caused by congenital insufficiency with Kidney Essence deficiency, producing scant or weak sperm; Damp-Heat pouring downward and disturbing the seminal chamber, causing abnormal semen; emotional distress with Liver Qi stagnation, or fright damaging the Kidney and affecting reproductive function; or prolonged exposure to hot/damp environments and habits such as smoking and alcohol that deplete Kidney Essence.",
+      "pathomechanism_zh": "腎藏精，主生殖，腎精虧虛則精少精弱、生育無力；濕熱下注,擾動精室,精液質量受損；肝鬱氣滯,氣血失調,亦可影響性功能與生育；諸因日久均可耗傷腎之精氣,病情纏綿難癒。",
+      "pathomechanism_en": "The Kidney stores Essence and governs reproduction; Kidney Essence deficiency produces scant, weak sperm and impaired fertility. Damp-Heat pouring downward disturbs the seminal chamber and damages semen quality. Liver Qi stagnation disturbing Qi-Blood harmony can likewise affect sexual function and fertility. Each of these mechanisms, if prolonged, further depletes Kidney Essence-Qi, making the condition protracted and difficult to resolve.",
+      "key_manifestations_zh": [
+        "婚後同居一年以上未避孕而未能使配偶受孕",
+        "腰膝痠軟、頭暈耳鳴、精少清稀（腎精虧虛者）",
+        "陰囊潮濕、小便黃赤、精液黏稠或有異味（濕熱下注者）",
+        "情志抑鬱、胸脅脹悶、性欲減退（肝鬱氣滯者）",
+        "可兼見陽痿、早泄等性功能障礙表現"
+      ],
+      "key_manifestations_en": [
+        "Inability to impregnate a partner after one year or more of cohabitation without contraception",
+        "Lower back/knee soreness, dizziness, tinnitus, and scant, thin semen (Kidney Essence deficiency)",
+        "Scrotal dampness, dark-yellow urine, and thick or malodorous semen (Damp-Heat pouring downward)",
+        "Depressed mood, chest/hypochondriac fullness, and diminished libido (Liver Qi stagnation)",
+        "May be accompanied by impotence, premature ejaculation, or other sexual dysfunction"
+      ],
+      "disease_location_zh": "病位在腎，與肝關係密切。",
+      "disease_location_en": "Disease location is the Kidney, closely related to the Liver.",
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.damp_heat_lower_burner",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "treatment_principle_zh": "腎精虧虛者補腎益精,濕熱下注者清熱利濕,肝鬱氣滯者疏肝理氣,均需節制房事、調暢情志以助復元。",
+      "treatment_principle_en": "For Kidney Essence deficiency, tonify the Kidney and boost Essence; for Damp-Heat pouring downward, clear Heat and disinhibit Dampness; for Liver Qi stagnation, soothe the Liver and regulate Qi — combined in all cases with moderation of sexual activity and emotional regulation to support recovery.",
+      "red_flags_zh": [
+        {
+          "finding": "無精症或嚴重異常",
+          "urgency_level": "routine",
+          "recommended_action": "轉介泌尿／生殖專科與遺傳評估",
+          "rationale": "需泌尿／生殖專科與遺傳評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy01)"
+        },
+        {
+          "finding": "睪丸腫塊或不對稱",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除睪丸腫瘤",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy02)"
+        },
+        {
+          "finding": "性功能障礙合併荷爾蒙症狀",
+          "urgency_level": "routine",
+          "recommended_action": "建議內分泌評估",
+          "rationale": "需內分泌評估",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy03)"
+        },
+        {
+          "finding": "泌尿感染或疼痛徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速就醫評估",
+          "rationale": "需排除泌尿道感染",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy04)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Azoospermia or severe abnormalities",
+          "urgency_level": "routine",
+          "recommended_action": "Refer to urology/reproductive medicine and genetic evaluation",
+          "rationale": "Needs urology/reproductive medicine and genetic evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy01)"
+        },
+        {
+          "finding": "Testicular mass or asymmetry",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out testicular tumor",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy02)"
+        },
+        {
+          "finding": "Sexual dysfunction with hormonal symptoms",
+          "urgency_level": "routine",
+          "recommended_action": "Recommend endocrine evaluation",
+          "rationale": "Needs endocrine evaluation",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy03)"
+        },
+        {
+          "finding": "Signs of urinary infection or pain",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek prompt medical evaluation",
+          "rationale": "Must rule out urinary tract infection",
+          "source": "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (rf.male_infertility.legacy04)"
+        }
+      ],
+      "sources": [
+        "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+        "reused from data/pathology/red_flag_registry.json entity cond.male_infertility"
+      ],
+      "field_sources": {
+        "definition": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "etiology": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "pathomechanism": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "key_manifestations": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json"
+        ],
+        "related_patterns": [
+          "TCM Internal Medicine / Gynecology / Andrology textbook standard (中醫內科學/中醫婦科學/中醫男科學統編教材 分型); pattern-id cross-reference verified against data/pathology/pattern_library.json + pattern_registry.json",
+          "reasoned match — no canonical related_tcm_disease_ids back-link found for tdis.bu_yu"
+        ],
+        "red_flags": [
+          "reused from data/pathology/red_flag_registry.json entity cond.male_infertility (direct 1:1 clinical match)"
+        ]
+      },
+      "source_type": "textbook_standard_plus_reused_redflags",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     },
     {
       "id": "tdis.ren_shen_e_zu",
