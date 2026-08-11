@@ -8,7 +8,7 @@
 
 ## 2026-08-11 Codex C2B-R8 單點獨立覆核 — endpoint `7493d03`
 
-- **REVIEWED_SHA**: R7 cleanup 修正 `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`；branch endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`。後續 commits 未再改 migration store／migrate／rehearsal；`app.js` import 區段未變。
+- **REVIEWED_SHA**: R7 cleanup 修正 `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`；受審 endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`。審計提交前 shared tip 另前進至 `0b9d28c904fadaa5af2b22bd380e9d126bcf0987`（supplement interaction data／ledger only）；四個 migration blobs逐一 byte-identical，store／migrate／rehearsal與 `app.js` import 區段均未變。
 - **STATUS**: **CONTINUE — C2b FINAL GO（條件式）**。
 - **C2b final gate**: **GO**。P3.1=`PASS`、P3.2=`PASS`、P3.3=`PASS`、P3.4=`PASS`。這只授權依下列 P4 checklist 進行一次 Ting 在場的 Edge `file://` case→patient migration；任一前置或驗收不符即自動轉回 **NO-GO**。
 - **資料邊界**: 本審真實 clinical store 讀／寫=`0/0`；只用自製虛構 `2 patients / 2 cases` fixture。OS temp fixture 與 repo audit harness 於提交前移除。真機 N/M 一律取當日 raw，不把歷史 `2` 或 `33` 寫死成預期值。

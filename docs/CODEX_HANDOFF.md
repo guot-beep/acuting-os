@@ -2,7 +2,7 @@
 
 ## [2026-08-11] Codex Handoff — C2B-R8 / conditional C2b FINAL GO
 
-- **Reviewed endpoint**: cleanup fix `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`; branch endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`. P3.1/P3.2/P3.3/P3.4=`PASS/PASS/PASS/PASS`; **C2b FINAL GO is published subject to the checklist below**.
+- **Reviewed endpoint**: cleanup fix `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`; audited endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`. Before the audit commit, shared tip advanced to supplement-only `0b9d28c904fadaa5af2b22bd380e9d126bcf0987`; all four reviewed migration blobs remained byte-identical. P3.1/P3.2/P3.3/P3.4=`PASS/PASS/PASS/PASS`; **C2b FINAL GO is published subject to the checklist below**.
 - **Cleanup evidence**: persistent remove failure direct+app retries twice, returns structured failure, attempts active write `0`, reloads `0`, active/pointer unchanged. Transient first failure succeeds on retry before one active swap. R5/R6 adversarials remain green.
 - **Measured evidence**: independent fake harness=`25 PASS / 0 FAIL`; official fake rehearsal including 6i/6j=`30/30`; legacy interruption/rollback=`4/4`; true clinical-store reads/writes=`0/0`, fake artifacts removed. Standard regressions are green and generated hashes unchanged.
 - **Authority boundary**: one supervised Edge `file://` migration only, with Ting present. Immediately before writing, live raw full SHA must exactly equal same-day preflight SHA and plan source SHA; N/M come from live raw. Any mismatch, nonzero duplicate/orphan/blank/review count, storage error, or post-switch parity failure revokes GO and requires rollback.

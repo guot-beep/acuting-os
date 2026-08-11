@@ -1,6 +1,6 @@
 # 2026-08-11 Codex — C2B-R8 endpoint `7493d03`，P3=`PASS/PASS/PASS/PASS`
 
-- **Gate**：R7 persistent cleanup direct/app retry=`2`、active writes=`0`、reload=`0`、state unchanged；transient cleanup retry後才 swap；C2B-R8 harness=`25 PASS / 0 FAIL`，official fake rehearsal=`30/30`。
+- **Gate**：R7 persistent cleanup direct/app retry=`2`、active writes=`0`、reload=`0`、state unchanged；transient cleanup retry後才 swap；C2B-R8 harness=`25 PASS / 0 FAIL`，official fake rehearsal=`30/30`。提交前 shared tip 的 supplement-only `7493d03..0b9d28c` 未改四個 migration blobs。
 - **P3**：P3.1 plan/CLI/counts=`3/3`；P3.2 tampered/clean noop＋R5=`5/5`；P3.3 R6/R7/app defense=`12/12`；P3.4 interruption/rollback/raw=`4/4`。C2b=`FINAL GO（條件式）`。
 - **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`，build雙hash不變；真 store讀／寫=`0/0`，假 fixture清理。
 - **P4**：只授權 Ting 在場的一次 supervised shadow→verify→noop→pointer；當日 raw full SHA必須等於 preflight與plan source hash，N/M取 live raw，任一差異／紅燈立即 NO-GO＋rollback。
