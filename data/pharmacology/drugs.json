@@ -1931,14 +1931,34 @@
           "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
-          "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#WARNINGS_AND_PRECAUTIONS"
+          "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#WARNINGS_AND_PRECAUTIONS",
+          "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#MECHANISM_OF_ACTION",
+          "dailymed:9501dfaa-c8cf-46d6-8bec-936c4fd8fe03#PHARMACODYNAMICS"
         ]
       },
       "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a695008.html",
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Losartan",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "adverse_effects_zh": [
+        "頭暈",
+        "上呼吸道感染",
+        "鼻塞",
+        "高血鉀",
+        "背痛"
+      ],
+      "site_of_action_en": "Angiotensin II type 1 (AT1) receptor, found in many tissues including vascular smooth muscle and the adrenal gland",
+      "site_of_action_zh": "第一型血管收縮素 II 受體 (AT1),分布於血管平滑肌與腎上腺等多種組織",
+      "physiologic_effect_en": "Blockade of the vasoconstrictor and aldosterone-secreting effects of angiotensin II; a 100 mg dose inhibits the pressor effect of angiotensin II by about 85% at peak, with 25% to 40% inhibition persisting for 24 hours. Unlike ACE inhibitors, losartan does not affect the response to bradykinin.",
+      "physiologic_effect_zh": "阻斷血管收縮素 II 的血管收縮與促醛固酮分泌作用;100 mg 劑量在作用高峰可抑制其升壓效應約 85%,24 小時後仍維持 25% 至 40% 的抑制。與 ACE 抑制劑不同,losartan 不影響對緩激肽的反應。",
+      "updated_at": "2026-08-11"
     },
     {
       "id": "drug.lisinopril",
@@ -2052,6 +2072,13 @@
         ],
         "monitoring_requirements_en": [
           "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#MECHANISM_OF_ACTION",
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#PHARMACODYNAMICS"
         ]
       },
       "review_status": "draft",
@@ -2064,7 +2091,12 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Lisinopril",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "Angiotensin-converting enzyme (ACE), a peptidyl dipeptidase that catalyzes conversion of angiotensin I to angiotensin II",
+      "site_of_action_zh": "血管收縮素轉換酶 (ACE) —— 一種胜肽基二肽酶,負責把血管收縮素 I 轉為血管收縮素 II",
+      "physiologic_effect_en": "Decreased plasma angiotensin II leading to decreased vasopressor activity and decreased aldosterone secretion, which may produce a small increase in serum potassium; supine and standing blood pressure fall to about the same extent with no compensatory tachycardia, with onset at one hour and peak reduction by six hours",
+      "physiologic_effect_zh": "血漿中血管收縮素 II 下降,升壓活性與醛固酮分泌隨之減少,血鉀可能因此略為上升;臥姿與站姿血壓下降幅度相近,且不會出現代償性心搏過速,口服後約 1 小時起效、6 小時達最大降壓效果",
+      "updated_at": "2026-08-11"
     },
     {
       "id": "drug.metoprolol",
@@ -2191,6 +2223,13 @@
         ],
         "monitoring_requirements_en": [
           "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#PHARMACODYNAMICS",
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#MECHANISM_OF_ACTION"
         ]
       },
       "review_status": "draft",
@@ -2203,7 +2242,12 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Metoprolol",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "Beta1-adrenergic receptors, chiefly cardiac; at higher plasma concentrations metoprolol also inhibits beta2-adrenoreceptors in bronchial and vascular musculature",
+      "site_of_action_zh": "乙型第一型腎上腺素受體,主要位於心臟;血漿濃度較高時也會抑制支氣管與血管平滑肌上的乙型第二型受體",
+      "physiologic_effect_en": "Reduction in heart rate and cardiac output at rest and on exercise, reduction of systolic blood pressure on exercise, inhibition of isoproterenol-induced tachycardia, and reduction of reflex orthostatic tachycardia; the sinus rate is slowed and AV nodal conduction decreased",
+      "physiologic_effect_zh": "靜止與運動時的心率及心輸出量下降、運動時收縮壓下降、抑制 isoproterenol 誘發的心搏過速,並減少反射性姿勢性心搏過速;竇房結節律變慢,房室結傳導減緩",
+      "updated_at": "2026-08-11"
     },
     {
       "id": "drug.amlodipine",
@@ -2248,6 +2292,15 @@
       "field_sources": {
         "contraindications_en": [
           "dailymed:5467eee5-1519-7859-e063-6294a90afed1#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:5467eee5-1519-7859-e063-6294a90afed1#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:5467eee5-1519-7859-e063-6294a90afed1#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:5467eee5-1519-7859-e063-6294a90afed1#PHARMACODYNAMICS"
         ]
       },
       "review_status": "draft",
@@ -2256,7 +2309,26 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Amlodipine",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "adverse_effects_en": [
+        "Edema — the most common adverse reaction, occurring in a dose-related manner",
+        "Fatigue",
+        "Nausea",
+        "Abdominal pain",
+        "Somnolence"
+      ],
+      "adverse_effects_zh": [
+        "水腫 —— 最常見的不良反應,且與劑量相關",
+        "疲倦",
+        "噁心",
+        "腹痛",
+        "嗜睡"
+      ],
+      "site_of_action_en": "L-type calcium channels of vascular smooth muscle and cardiac muscle, with a greater effect on vascular smooth muscle",
+      "site_of_action_zh": "血管平滑肌與心肌的 L 型鈣離子通道,對血管平滑肌的作用較強",
+      "physiologic_effect_en": "Vasodilation producing a reduction of supine and standing blood pressure that is not accompanied by significant change in heart rate or plasma catecholamine levels with chronic dosing; antihypertensive effectiveness is maintained for at least 24 hours with once-daily dosing",
+      "physiologic_effect_zh": "藉由血管擴張降低臥姿與站姿血壓,長期使用時心率與血漿兒茶酚胺濃度不會明顯改變;每日一次給藥,降壓效果可維持至少 24 小時",
+      "updated_at": "2026-08-11"
     },
     {
       "id": "drug.atorvastatin",
@@ -2303,6 +2375,16 @@
       "field_sources": {
         "contraindications_en": [
           "dailymed:b687ba81-cb24-bbdf-5dd9-ab0e53dd480b#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:b687ba81-cb24-bbdf-5dd9-ab0e53dd480b#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:b687ba81-cb24-bbdf-5dd9-ab0e53dd480b#MECHANISM_OF_ACTION",
+          "dailymed:b687ba81-cb24-bbdf-5dd9-ab0e53dd480b#PHARMACODYNAMICS"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:b687ba81-cb24-bbdf-5dd9-ab0e53dd480b#MECHANISM_OF_ACTION"
         ]
       },
       "review_status": "draft",
@@ -2311,7 +2393,26 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Atorvastatin",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "adverse_effects_en": [
+        "Nasopharyngitis, arthralgia, diarrhea, pain in extremity, and urinary tract infection — the most common adverse reactions (incidence 5% or greater)",
+        "Myopathy and rhabdomyolysis",
+        "Immune-mediated necrotizing myopathy",
+        "Hepatic dysfunction",
+        "Increases in HbA1c and fasting serum glucose levels"
+      ],
+      "adverse_effects_zh": [
+        "鼻咽炎、關節痛、腹瀉、四肢疼痛與泌尿道感染 —— 最常見的不良反應(發生率 5% 以上)",
+        "肌病變與橫紋肌溶解",
+        "免疫媒介性壞死性肌病變",
+        "肝功能異常",
+        "糖化血色素與空腹血糖上升"
+      ],
+      "site_of_action_en": "HMG-CoA reductase; the liver is the primary site of action and the principal site of cholesterol synthesis and LDL clearance",
+      "site_of_action_zh": "HMG-CoA 還原酶;肝臟是主要作用部位,也是膽固醇合成與低密度脂蛋白清除的主要場所",
+      "physiologic_effect_en": "Lowering of plasma cholesterol and lipoprotein levels by inhibiting cholesterol synthesis and increasing the number of hepatic LDL receptors, enhancing uptake and catabolism of LDL; LDL production and the number of LDL particles are also reduced",
+      "physiologic_effect_zh": "抑制膽固醇合成並增加肝臟低密度脂蛋白受體數目,促進低密度脂蛋白的攝取與分解,使血漿膽固醇與脂蛋白濃度下降;同時減少低密度脂蛋白的生成量與顆粒數",
+      "updated_at": "2026-08-11"
     },
     {
       "id": "drug.digoxin",
@@ -2357,6 +2458,16 @@
       "field_sources": {
         "contraindications_en": [
           "dailymed:dbc0bc24-f250-47e8-8d10-6aef551823d7#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:dbc0bc24-f250-47e8-8d10-6aef551823d7#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:dbc0bc24-f250-47e8-8d10-6aef551823d7#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:dbc0bc24-f250-47e8-8d10-6aef551823d7#MECHANISM_OF_ACTION",
+          "dailymed:dbc0bc24-f250-47e8-8d10-6aef551823d7#PHARMACODYNAMICS"
         ]
       },
       "review_status": "draft",
@@ -2365,7 +2476,24 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Digoxin",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "adverse_effects_en": [
+        "Cardiac arrhythmias",
+        "Digoxin toxicity",
+        "Gastrointestinal disturbances",
+        "Central nervous system toxicity"
+      ],
+      "adverse_effects_zh": [
+        "心律不整",
+        "毛地黃中毒",
+        "腸胃道不適",
+        "中樞神經毒性"
+      ],
+      "site_of_action_en": "Na-K ATPase (the sodium pump) in the myocardium and conduction system",
+      "site_of_action_zh": "心肌與傳導系統上的鈉鉀幫浦 (Na-K ATPase)",
+      "physiologic_effect_en": "Increased availability of intracellular calcium in the myocardium and conduction system, with increased inotropy, increased automaticity and reduced conduction velocity; indirect parasympathetic stimulation affects the SA and AV nodes. Cardiac output rises while pulmonary artery pressure, pulmonary capillary wedge pressure and systemic vascular resistance fall.",
+      "physiologic_effect_zh": "心肌與傳導系統的細胞內鈣離子可用量增加,收縮力上升、自律性提高、傳導速度減慢;另經由間接的副交感興奮影響竇房結與房室結。心輸出量增加,肺動脈壓、肺微血管楔壓與全身血管阻力下降。",
+      "updated_at": "2026-08-11"
     },
     {
       "id": "drug.albuterol",
@@ -4643,11 +4771,17 @@
         ],
         "adverse_effects_en": [
           "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:d58f1f63-4bb6-413c-9730-ded3e8078618#PHARMACODYNAMICS"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "d58f1f63-4bb6-413c-9730-ded3e8078618",
       "dailymed_label_title": "ROSUVASTATIN CALCIUM tablet, film coated",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d58f1f63-4bb6-413c-9730-ded3e8078618",
@@ -4656,7 +4790,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Rosuvastatin",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "HMG-CoA reductase in the liver",
+      "site_of_action_zh": "肝臟中的 HMG-CoA 還原酶",
+      "physiologic_effect_en": "Inhibition of HMG-CoA reductase accelerates expression of LDL receptors and hepatic uptake of LDL-C, lowering plasma LDL-C and total cholesterol; sustained inhibition of hepatic cholesterol synthesis also lowers very-low-density lipoprotein levels. Maximum LDL-C reduction is usually achieved by 4 weeks and maintained thereafter.",
+      "physiologic_effect_zh": "抑制 HMG-CoA 還原酶可加速低密度脂蛋白受體的表現與肝臟對低密度脂蛋白膽固醇的攝取,使血漿低密度脂蛋白膽固醇與總膽固醇下降;持續抑制肝臟膽固醇合成亦降低極低密度脂蛋白濃度。最大降幅通常在 4 週達成並可維持。"
     },
     {
       "id": "drug.diltiazem",
@@ -4752,11 +4890,18 @@
         ],
         "adverse_effects_en": [
           "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#CLINICAL_PHARMACOLOGY",
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#MECHANISM_OF_ACTION"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "196fc367-330e-4d15-b1d6-084ad3f97ae7",
       "dailymed_label_title": "DILTIAZEM HYDROCHLORIDE tablet [ScieGen Pharmaceuticals, Inc.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=196fc367-330e-4d15-b1d6-084ad3f97ae7",
@@ -4765,7 +4910,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Diltiazem",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "Slow calcium channels of cardiac and vascular smooth muscle, including the coronary arteries",
+      "site_of_action_zh": "心肌與血管平滑肌(含冠狀動脈)的慢速鈣離子通道",
+      "physiologic_effect_en": "Inhibition of calcium ion influx during membrane depolarization produces dilation of epicardial and subendocardial coronary arteries and inhibits coronary artery spasm; myocardial oxygen demand falls through reductions in heart rate and systemic blood pressure at submaximal and maximal exercise workloads",
+      "physiologic_effect_zh": "抑制細胞膜去極化時的鈣離子內流,使心外膜與心內膜下的冠狀動脈擴張並抑制冠狀動脈痙攣;在次大與最大運動負荷下降低心率與全身血壓,因而減少心肌耗氧量"
     },
     {
       "id": "drug.atenolol",
@@ -4859,11 +5008,17 @@
         ],
         "adverse_effects_en": [
           "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#CLINICAL_PHARMACOLOGY"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:4ca8dd77-cdac-41fe-a742-b1b32551203b#CLINICAL_PHARMACOLOGY"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "4ca8dd77-cdac-41fe-a742-b1b32551203b",
       "dailymed_label_title": "ATENOLOL tablet",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4ca8dd77-cdac-41fe-a742-b1b32551203b",
@@ -4872,7 +5027,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Atenolol",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "Beta1-adrenergic receptors (cardioselective); at higher doses atenolol also inhibits beta2-adrenoreceptors, chiefly in bronchial and vascular musculature",
+      "site_of_action_zh": "乙型第一型腎上腺素受體(心臟選擇性);劑量較高時也會抑制主要位於支氣管與血管平滑肌的乙型第二型受體",
+      "physiologic_effect_en": "Beta1-selective adrenergic blockade without membrane stabilizing or intrinsic sympathomimetic (partial agonist) activity",
+      "physiologic_effect_zh": "選擇性阻斷乙型第一型腎上腺素受體,不具膜穩定作用,也沒有內在擬交感(部分促效)活性"
     },
     {
       "id": "drug.carvedilol",
@@ -4967,11 +5126,18 @@
         ],
         "adverse_effects_en": [
           "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#MECHANISM_OF_ACTION",
+          "dailymed:32098c09-7580-4975-a3e1-31b619c04c69#PHARMACODYNAMICS"
         ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "32098c09-7580-4975-a3e1-31b619c04c69",
       "dailymed_label_title": "CARVEDILOL tablet, film coated [Zydus Pharmaceuticals USA Inc.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=32098c09-7580-4975-a3e1-31b619c04c69",
@@ -4980,7 +5146,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Carvedilol",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "Beta-adrenoreceptors (nonselective, via the S(-) enantiomer) and alpha1-adrenergic receptors (via both R(+) and S(-) enantiomers at equal potency)",
+      "site_of_action_zh": "乙型腎上腺素受體(非選擇性,由 S(-) 對映異構物負責)與甲型第一型腎上腺素受體(R(+) 與 S(-) 兩種對映異構物效價相當)",
+      "physiologic_effect_en": "Combined nonselective beta-blockade and alpha1-blockade with no intrinsic sympathomimetic activity; in heart failure it significantly reduced systemic blood pressure, pulmonary artery pressure, right atrial pressure, systemic vascular resistance and heart rate, while stroke volume index increased",
+      "physiologic_effect_zh": "同時具非選擇性乙型阻斷與甲型第一型阻斷作用,且無內在擬交感活性;用於心衰竭時可明顯降低全身血壓、肺動脈壓、右心房壓、全身血管阻力與心率,而每搏輸出量指數上升"
     }
   ]
 }
