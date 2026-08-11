@@ -325,3 +325,235 @@ mostly gynecology (月經先期/後期/過多/過少, 崩漏, 閉經, 不孕/不
 白疕, 油風), stomatology (口瘡, 牙痛), ophthalmology (目暗昏花), and
 orthopedics/neuromuscular (面癱／口僻, 落枕, 肩凝症, 筋傷, 麻木, 面痛),
 plus 肥胖, 癭病.
+
+---
+
+# TDIS Enrichment Ledger — Batch C
+
+Branch `codex/tdis-enrich-c`, based on `origin/codex/pattern-v2` tip
+`b7a48b8` ("Tdis B merge finalize"). File touched: `data/pathology/
+tdis_registry.json` only. `condition_canon_shortlist.json`, `symptoms.json`,
+`supplements.json`, `pharmacology/*` untouched. `curriculum/**` untouched.
+Two commits: part 1 (`b1436c4`, 17 records) and part 2 (`df156e1`, 17
+records) — this closes the line to **0 T4 defects across all 75 records**.
+
+## 1. Records enriched (all 34 remaining T4 index-only records)
+
+Part 1 (17): `tdis.mian_tan, tdis.fei_pang, tdis.ying_bing, tdis.yi_niao,
+tdis.yi_jing, tdis.yang_wei, tdis.jin_shang, tdis.luo_zhen, tdis.jian_ning,
+tdis.yue_jing_xian_qi, tdis.yue_jing_hou_qi, tdis.yue_jing_guo_duo,
+tdis.yue_jing_guo_shao, tdis.beng_lou, tdis.bi_jing, tdis.bu_yun, tdis.bu_yu`
+
+Part 2 (17): `tdis.ren_shen_e_zu, tdis.tai_wei_bu_zheng, tdis.que_ru,
+tdis.jing_duan_qian_hou, tdis.zheng_jia, tdis.yin_zhen, tdis.shi_chuang,
+tdis.she_chuan_chuang, tdis.fen_ci, tdis.bai_bi, tdis.you_feng,
+tdis.kou_chuang, tdis.ya_tong, tdis.mu_yun, tdis.bai_he_bing, tdis.ma_mu,
+tdis.mian_tong`
+
+Same field set as Batch A/B: `definition_zh/en`, `etiology_zh/en`,
+`pathomechanism_zh/en`, `key_manifestations_zh/en` (4-6 items, index-aligned),
+`disease_location_zh/en`, `related_patterns`, `treatment_principle_zh/en`,
+`red_flags_zh/en` (structured 5-field rows), `sources`, `field_sources`,
+`source_type`, `review_status: "draft"`, `authored_by: "model_draft"`. All
+pre-existing fields (`id`/`name_zh`/`pinyin`/`name_en`/`taxonomy_id`, plus
+`classical_source` on `tdis.bai_he_bing`) left untouched — verified by a
+full before/after per-field diff against `git show HEAD` across all 75
+records after each commit: **0 changed pre-existing fields, 0 shortened
+strings/arrays**. Only new keys added via `Object.assign`.
+
+### 1.1 related_patterns — canonical back-link vs reasoned match
+
+Checked `related_tcm_disease_ids` across `pattern_library.json` (91 records)
+and `pattern_registry.json` (98 records — confirmed this file has no
+`related_tcm_disease_ids` field at all) for every one of the 34 ids before
+writing anything.
+
+**Canonical back-link found for 1 of 34**: `tdis.yang_wei` →
+`pattern.kidney_yang_deficiency` (`related_tcm_disease_ids` in
+`pattern_library.json`).
+
+**Reasoned match for the remaining 33**: no canonical back-link existed;
+matched by the pattern's own `name_zh`/`name_en` against standard 中醫內科學
+/婦科學/外科學/五官科學 textbook 分型, every chosen `pattern.*` id verified to
+exist in `pattern_library.json`/`pattern_registry.json` before use (a full
+list of the vocabulary's ~135 unique pattern ids was extracted and checked
+against — never invented). Disclosed per-record in
+`field_sources.related_patterns`.
+
+**Two disclosed approximations** (not full canonical matches, flagged for
+review):
+- `tdis.tai_wei_bu_zheng` (胎位不正): only 2 loosely-reasoned patterns
+  (`qi_blood_deficiency`, `qi_stagnation_blood_stasis`) instead of the usual
+  3-5 — classical TCM literature does not pattern-differentiate this
+  condition the way it does most `tdis.*` diseases; BL67 moxibustion is the
+  standard treatment regardless of 辨證分型.
+- `tdis.bai_he_bing` (百合病): `related_patterns` uses two separate
+  component ids (`pattern.heart_yin_deficiency` + `pattern.lung_yin_deficiency`)
+  as an approximation, since no single combined 心肺陰虛 pattern id exists in
+  the vocabulary.
+
+No 分型-as-text fallback was needed — every 分型 used had a resolvable
+canonical id.
+
+### 1.2 Red-flag sourcing
+
+**Reused from `red_flag_registry.json`** (19 of 34, all direct 1:1 clinical
+matches, every row citing its exact `rf.*` id): `tdis.mian_tan` ←
+`cond.bells_palsy` (2 rows); `tdis.jin_shang` ← tendon-injury cluster
+(`cond.rotator_cuff`, `cond.frozen_shoulder`, `cond.de_quervain`,
+`cond.trigger_finger`, `cond.medial_epicondylitis`,
+`cond.achilles_tendinopathy`, 4 rows); `tdis.luo_zhen` ←
+`cond.neck_pain_stiff` (3 rows); `tdis.jian_ning` ← `cond.frozen_shoulder`
+(3 rows); `tdis.yue_jing_xian_qi`/`tdis.yue_jing_hou_qi` ←
+`cond.irregular_menstruation` (4 rows, same set reused for both — shared
+cycle-timing biomedical danger profile); `tdis.yue_jing_guo_duo`/
+`tdis.beng_lou` ← `cond.menorrhagia` (4 rows, same set reused for both —
+shared heavy/irregular-bleeding danger profile); `tdis.yue_jing_guo_shao` ←
+`cond.oligomenorrhea` (4 rows); `tdis.bi_jing` ← `cond.amenorrhea` (4 rows);
+`tdis.bu_yun` ← `cond.female_infertility` (4 rows); `tdis.bu_yu` ←
+`cond.male_infertility` (4 rows); `tdis.ren_shen_e_zu` ←
+`cond.hyperemesis_gravidarum` (4 rows); `tdis.tai_wei_bu_zheng` ←
+`cond.breech_presentation` (4 rows); `tdis.que_ru` ←
+`cond.postpartum_hypolactation` (4 rows); `tdis.jing_duan_qian_hou` ←
+`cond.menopause_syndrome` (4 rows); `tdis.zheng_jia` ←
+`cond.uterine_fibroids` (4 rows); `tdis.ma_mu` ← `cond.peripheral_neuropathy`
++ `cond.diabetic_neuropathy` (2 rows); `tdis.mian_tong` ←
+`cond.trigeminal_neuralgia` + `cond.tmd` (4 rows).
+
+**Mixed reused + fresh** (1 of 34): `tdis.she_chuan_chuang` ← 1 row reused
+from `cond.postherpetic_neuralgia` (ocular-zoster emergency,
+`rf.postherpetic_neuralgia.ocular_zoster`) + 1 fresh MedlinePlus row
+(Shingles, immunocompromised/disseminated-rash criterion).
+
+**Fresh MedlinePlus research** (13 of 34, all URLs fetched and quoted
+verbatim, retrieved 2026-08-11): `tdis.fei_pang` (Obesity,
+ency/article/007297.htm), `tdis.yi_niao` (Frequent or urgent urination,
+ency/article/003140.htm), `tdis.yi_jing` (Prostate Diseases, prostatediseases.html
+— analogous prostatitis-screening source, no direct 遺精 equivalent exists),
+`tdis.yang_wei` (Erectile Dysfunction, erectiledysfunction.html),
+`tdis.ying_bing` (Simple goiter, ency/article/001178.htm), `tdis.yin_zhen`
+(Hives, ency/article/000845.htm), `tdis.shi_chuang` (Atopic dermatitis,
+ency/article/000853.htm), `tdis.fen_ci` (Acne, ency/article/000873.htm),
+`tdis.bai_bi` (Psoriasis, ency/article/000434.htm), `tdis.you_feng`
+(Alopecia areata, ency/article/001450.htm), `tdis.kou_chuang` (Canker sore,
+ency/article/000998.htm), `tdis.ya_tong` (Toothaches, ency/article/003067.htm),
+`tdis.mu_yun` (Blindness and vision loss, ency/article/003040.htm).
+
+**Reused by clinical analogy, not a fresh fetch** (1 of 34): `tdis.bai_he_bing`
+reuses Batch A's MedlinePlus "Major Depression" citation (already used for
+`tdis.yu_zheng`/`tdis.zang_zao`) — the emotional-dysregulation/unsettled-affect
+picture of 百合病 shares the suicide-risk safety pattern with depression, but
+this is a disclosed analogy, not a disease-specific source.
+
+Confirmed during Task 3 research (subagent + direct file grep): dermatology,
+stomatology, ophthalmology, obesity, thyroid/goiter, enuresis, spermatorrhea,
+and impotence/ED all have **zero rows** in `red_flag_registry.json` (the
+`cond.*` entities exist in `condition_canon_shortlist.json` but no red flags
+were ever authored for them) — this is why 13 of 34 records required fresh
+MedlinePlus sourcing rather than registry reuse.
+
+No dosage, toxicity, or pregnancy-safety numbers were written — out of scope
+for tdis-level content.
+
+### 1.3 Judgment calls / disclosed sourcing gaps flagged for review
+
+- `tdis.fei_pang`: only 1 red-flag row (comorbidity list under the source
+  page's "Surgery" section) — MedlinePlus Obesity has no dedicated "When to
+  Contact a Medical Professional" section.
+- `tdis.yi_jing`: only 1 row, sourced via analogy to prostatitis/urinary
+  infection screening (MedlinePlus Prostate Diseases) — 遺精/seminal emission
+  has no direct Western-medicine-equivalent MedlinePlus topic.
+- `tdis.yang_wei`: only 1 row (ED-as-vascular-disease-marker) — MedlinePlus
+  ED page's guidance is a single Summary-section sentence, not a dedicated
+  warning-signs section.
+- `tdis.yin_zhen`: only 1 row (anaphylaxis emergency) — MedlinePlus Hives'
+  "When to Contact a Medical Professional" section covers only the emergency
+  criteria, nothing at the urgent/routine tier.
+- `tdis.you_feng`: only 1 row — MedlinePlus Alopecia areata's guidance is a
+  single generic sentence ("contact your provider if concerned").
+- `tdis.kou_chuang`: only 1 row — MedlinePlus Canker sore's "When to Contact
+  a Medical Professional" section is a single brief criterion.
+- `tdis.mu_yun`: only 1 row (sudden vision loss emergency) — the sourced
+  MedlinePlus page (Blindness and vision loss) addresses acute loss, not the
+  gradual chronic dimming that 目暗昏花／視瞻昏渺 more typically describes;
+  a dedicated presbyopia/age-related-vision-change source was not located in
+  this pass.
+- `tdis.tai_wei_bu_zheng`: related_patterns has only 2 loosely-reasoned ids
+  (§1.1) — disclosed as a structural feature of this disease (not a
+  sourcing failure), since classical texts do not pattern-differentiate
+  fetal malposition.
+- `tdis.bai_he_bing`: red flags reuse Batch A's Major Depression citation by
+  clinical analogy (§1.2) — same category of judgment call as Batch A's
+  `tdis.bu_mei`/`shi_mian` and Batch B's `tdis.zang_zao`. Flag for
+  Fable/Ting: should 百合病 get its own dedicated red-flag research pass, or
+  is this analogy acceptable long-term? This is now the *third* tdis record
+  using this same Depression citation by analogy (`yu_zheng` — direct
+  match, `zang_zao` — analogy, `bai_he_bing` — analogy); worth a standing
+  decision rather than re-litigating per record.
+
+## 2. Validator tails (verbatim)
+
+Before (inherited from Batch B merge, `b7a48b8`):
+```
+FAIL — 34 blocking defect(s).
+```
+
+After part 1 (17 records, commit `b1436c4`):
+```
+validate-tdis-standard — data/pathology/tdis_registry.json
+scope: all branches · 75 records · 58 clean
+
+T4  NO RED FLAGS (safety) — 17 defect(s) across 17 record(s)
+    tdis.ren_shen_e_zu, tdis.tai_wei_bu_zheng, tdis.que_ru, tdis.jing_duan_qian_hou, tdis.zheng_jia, tdis.yin_zhen, tdis.shi_chuang, tdis.she_chuan_chuang, tdis.fen_ci, tdis.bai_bi, tdis.you_feng, tdis.kou_chuang, tdis.ya_tong, tdis.mu_yun, tdis.bai_he_bing, tdis.ma_mu, tdis.mian_tong
+
+N1  17 record(s) — no related_patterns — 辨證分型 is this card's irreplaceable section (note only)
+N2  17 record(s) — index entry only — no definition, etiology, pathomechanism or manifestations (note only)
+
+FAIL — 17 blocking defect(s). Run with --worklist to see the ids.
+```
+
+After part 2 (17 records, commit `df156e1`):
+```
+validate-tdis-standard — data/pathology/tdis_registry.json
+scope: all branches · 75 records · 75 clean
+
+PASS — 0 blocking defects.
+```
+
+**34 → 0 (−34), all 34 in-scope ids cleared, 0 new defects introduced.**
+
+`check-validation-ratchet.js` (after part 2):
+```
+validation ratchet — defect counts vs committed baseline
+
+  flat     conditions   481
+  flat     patterns     0
+  BETTER   tdis         34 → 0   (−34)
+  flat     symptoms     0
+  flat     naming       1
+
+PASS — no regressions (and something improved; run --update to lock it in).
+```
+
+`validate-content-junk.js`: `PASS — no scraped header tokens in content
+arrays.`
+
+`validate-relations.js`: `Relation validation passed.` (all `related_patterns`
+ids resolved; pre-existing `comparisons.json` skeleton-row warning is
+untouched by this batch).
+
+`git diff --check`: clean (no whitespace errors) after both commits.
+
+Full before/after per-field diff against `git show HEAD:data/pathology/
+tdis_registry.json` across all 75 records, run after each commit: **0
+changed pre-existing fields, 0 shortened strings/arrays** — verified with a
+script, not committed.
+
+## 3. Status
+
+**0 records remain with T4.** All 75 `tdis.*` records now carry full
+bilingual clinical content, 辨證分型 links, and structured sourced red
+flags. This closes the tdis enrichment line opened in Batch A. Any further
+work on this file is refinement (deepening `field_sources` provenance,
+resolving the disclosed judgment calls in §1.3, or upgrading
+`review_status` from `draft`), not backfill.
