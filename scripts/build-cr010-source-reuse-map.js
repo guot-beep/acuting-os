@@ -61,9 +61,17 @@ const records = loadRecords(input);
 const files = [...new Set([...walk("docs"), ...walk("data"), ...walk("curriculum")])]
   .sort((a,b)=>priorityRank(a)-priorityRank(b) || a.localeCompare(b));
 
-const cache = new Map();
+// Fable perf fix 2026-08-11: the original normalized every file's text once
+// PER RECORD (505 × N files × Unicode regex) —效果上是掛死。改為每檔案
+// 正規化一次快取,邏輯輸出不變。
+const cache = new Map();      // f -> raw text
+const normCache = new Map();  // f -> normalized text
 for (const f of files) {
-  try { cache.set(f, fs.readFileSync(f,"utf8")); } catch {}
+  try {
+    const t = fs.readFileSync(f,"utf8");
+    cache.set(f, t);
+    normCache.set(f, norm(t));
+  } catch {}
 }
 
 const results = [];
@@ -77,7 +85,7 @@ for (const r of records) {
     let kind = null, confidence = null;
     if (id && text.includes(id)) { kind="exact_id"; confidence="HIGH"; }
     else {
-      const nt = norm(text);
+      const nt = normCache.get(f);
       if (en && en.length >= 5 && nt.includes(en)) { kind="exact_normalized_en_name"; confidence="MEDIUM"; }
       else if (zh && zh.length >= 2 && nt.includes(zh)) { kind="exact_normalized_zh_name"; confidence="MEDIUM"; }
     }
