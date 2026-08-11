@@ -620,6 +620,53 @@ h1 {
 .agent-exposure-timeline li { color: #344044; }
 .agent-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
 
+/* Phase D batch 2: visit-level Lifestyle / Adverse events repeatable rows
+   inside the SOAP dialog (lifestyleFactors[] / adverseEvents[]). Same
+   light-palette row-card convention as .agent-exposure-row above — these
+   rows are DRAFT/editable in the form (append-only applies to exposure
+   EVENTS, not to visit rows being drafted, per SPRINT brief task 2). */
+.repeatable-rows { display: grid; gap: 0.6rem; margin: 0.5rem 0; }
+.lifestyle-factor-row,
+.adverse-event-row {
+  background: #f8faf9;
+  border: 1px solid #e0e6e5;
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  align-items: end;
+}
+.lifestyle-factor-row label,
+.adverse-event-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.72rem;
+  gap: 0.15rem;
+}
+.lifestyle-factor-row input,
+.lifestyle-factor-row select,
+.adverse-event-row input,
+.adverse-event-row select {
+  font-size: 0.82rem;
+  padding: 0.3rem 0.4rem;
+}
+.repeatable-row-remove {
+  align-self: end;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+}
+.repeatable-rows-empty {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.3rem 0;
+}
+
+/* Saved lifestyle/AE rows on the SOAP note display card. */
+.lifestyle-ae-view { display: grid; gap: 0.5rem; margin-top: 0.5rem; }
+.lifestyle-ae-view ul { margin: 0.2rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; }
+.lifestyle-ae-view li { color: #344044; font-size: 0.85rem; }
+
 /* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
 .soap-reflection-view {
   margin-top: 0.5rem;

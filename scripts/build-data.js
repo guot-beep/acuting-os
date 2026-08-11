@@ -157,6 +157,20 @@ const knowledge = {
   // the case form, so the vocabulary can grow without touching index.html or
   // app.js again.
   demographicVocabulary: readJson("data/config/demographic_vocabulary.json"),
+  // Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md) — D17 §5/§6 vocab five-
+  // pack (Sonnet B3). Same "vocabulary first, records born when filled"
+  // approach as symptom_taxonomy.json (D14 build order): supp.*/life.*/
+  // exposure.*/adverse_event.*/modality.* records don't exist yet, but the
+  // SOAP dialog needs bilingual option lists NOW. Whole file bundled as-is
+  // (like safetyFlagVocabulary/demographicVocabulary above) — the SOAP form
+  // and any future card read the vocab's own top-level shape (`records` for
+  // four of the five, `categories` for supplementCategoryVocabulary), not a
+  // re-shaped copy.
+  supplementCategoryVocabulary: readJson("data/config/supplement_category_vocabulary.json"),
+  lifestyleFactorVocabulary: readJson("data/config/lifestyle_factor_vocabulary.json"),
+  exposureVocabulary: readJson("data/config/exposure_vocabulary.json"),
+  adverseEventVocabulary: readJson("data/config/adverse_event_vocabulary.json"),
+  modalityVocabulary: readJson("data/config/modality_vocabulary.json"),
 };
 
 // Runtime red-flag resolver — IN THE BUNDLE ONLY (D13: derive, never write

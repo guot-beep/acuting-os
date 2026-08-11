@@ -1119,6 +1119,12 @@ document.querySelector("#closeSoapDialog").addEventListener("click", () => soapD
 document.querySelector("#cancelSoapBtn").addEventListener("click", () => soapDialog.close());
 document.querySelector("#closeAgentExposureDialog").addEventListener("click", () => agentExposureDialog.close());
 document.querySelector("#cancelAgentExposureBtn").addEventListener("click", () => agentExposureDialog.close());
+document.querySelector("#addLifestyleFactorRow")?.addEventListener("click", () => {
+  document.querySelector("#lifestyleFactorRows")?.insertAdjacentHTML("beforeend", lifestyleFactorRowHtml({}));
+});
+document.querySelector("#addAdverseEventRow")?.addEventListener("click", () => {
+  document.querySelector("#adverseEventRows")?.insertAdjacentHTML("beforeend", adverseEventRowHtml({}));
+});
 agentExposureForm.addEventListener("submit", saveAgentExposureFromForm);
 modelRotate?.addEventListener("input", () => renderMap(getFilteredPoints()));
 modelReset?.addEventListener("click", () => {
@@ -5591,6 +5597,215 @@ function renderOutcomeTrackingPanel(item) {
 const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Supplement" };
 const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
 
+// Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md task 2): visit-level
+// Lifestyle / Adverse events repeatable rows inside the SOAP dialog, writing
+// note.lifestyleFactors[] / note.adverseEvents[] (D17 §6/§4 shapes owned by
+// normalizeSoapNote — this section only builds/reads the DOM rows, the
+// normalizer still enforces the actual field shapes on save). Rows are
+// DRAFT/editable/removable before save — the append-only rule applies to
+// case-level exposure EVENTS (applyExposureChange), never to these visit
+// rows. No code path here may turn a life.*/adverse_event.* selection into a
+// pattern/tdis id (D17 §6 hard rule) — these functions only read/write the
+// vocab id and free text the practitioner picked.
+const REPEATABLE_ROW_OTHER_VALUE = "__other__";
+const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", cupping: "拔罐 Cupping", moxa: "艾灸 Moxa", herbs: "中藥 Herbs", formula: "方劑 Formula", other: "其他 Other" };
+const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
+const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
+
+// Shared <select> option builder for the two vocab-backed pickers below.
+// selectedValue is either a real vocab id, "" (nothing chosen yet), or
+// REPEATABLE_ROW_OTHER_VALUE (an "other" row whose free-text name lives in
+// nameText). A selectedValue that is none of those (a legacy id the current
+// vocab file no longer lists) gets its own fallback <option> rather than
+// silently resetting to blank — never lose a saved value on re-render.
+function vocabSelectOptionsHtml(records, selectedValue, opts = {}) {
+  const { includeOther = true, otherLabel = "其他 Other…", blankLabel = "—" } = opts;
+  const list = records || [];
+  const knownIds = new Set(list.map((r) => r.id));
+  const blank = `<option value=""${selectedValue === "" ? " selected" : ""}>${escapeHtml(blankLabel)}</option>`;
+  const known = list.map((r) => {
+    const label = `${r.name_zh || ""} ${r.name_en || ""}`.trim() || r.id;
+    return `<option value="${escapeAttribute(r.id)}"${selectedValue === r.id ? " selected" : ""}>${escapeHtml(label)}</option>`;
+  }).join("");
+  const other = includeOther
+    ? `<option value="${REPEATABLE_ROW_OTHER_VALUE}"${selectedValue === REPEATABLE_ROW_OTHER_VALUE ? " selected" : ""}>${escapeHtml(otherLabel)}</option>`
+    : "";
+  const isRecognized = selectedValue === "" || selectedValue === REPEATABLE_ROW_OTHER_VALUE || knownIds.has(selectedValue);
+  const fallback = (!isRecognized && selectedValue)
+    ? `<option value="${escapeAttribute(selectedValue)}" selected>${escapeHtml(selectedValue)}</option>`
+    : "";
+  return blank + known + other + fallback;
+}
+
+function lifestyleFactorRowHtml(row = {}) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.lifestyleFactorVocabulary?.records || [];
+  const selectValue = row.factorId ? row.factorId : (row.nameText ? REPEATABLE_ROW_OTHER_VALUE : "");
+  const isOther = selectValue === REPEATABLE_ROW_OTHER_VALUE;
+  const matchedRecord = vocab.find((r) => r.id === row.factorId);
+  const unitPlaceholder = matchedRecord?.value_hint_en || "";
+  const hasValueNumber = row.valueNumber === 0 || !!row.valueNumber;
+  return `
+    <div class="lifestyle-factor-row" data-row-id="${escapeAttribute(row.id || "")}">
+      <label>因子 Factor<select data-role="factorId">${vocabSelectOptionsHtml(vocab, selectValue)}</select></label>
+      <label data-role="nameTextWrap"${isOther ? "" : " hidden"}>名稱 Name<input type="text" data-role="nameText" value="${escapeAttribute(row.nameText || "")}" placeholder="e.g. Screen time before bed" /></label>
+      <label>數值 Value<input type="number" step="any" data-role="valueNumber" value="${hasValueNumber ? escapeAttribute(row.valueNumber) : ""}" /></label>
+      <label>單位 Unit<input type="text" data-role="unit" value="${escapeAttribute(row.unit || "")}" placeholder="${escapeAttribute(unitPlaceholder)}" /></label>
+      <label>頻率 Frequency<input type="text" data-role="frequencyText" value="${escapeAttribute(row.frequencyText || "")}" placeholder="daily / 3x week" /></label>
+      <label>備註 Notes<input type="text" data-role="notes" value="${escapeAttribute(row.notes || "")}" /></label>
+      <button type="button" class="ghost repeatable-row-remove" data-remove-row data-mode-text data-bilingual="移除" data-english="Remove">移除</button>
+    </div>`;
+}
+
+function adverseEventRowHtml(row = {}) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.adverseEventVocabulary?.records || [];
+  const modalityVocab = globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records || [];
+  const selectValue = row.eventId ? row.eventId : (row.nameText ? REPEATABLE_ROW_OTHER_VALUE : "");
+  const isOther = selectValue === REPEATABLE_ROW_OTHER_VALUE;
+  const optionRow = (value, label, current) => `<option value="${value}"${current === value ? " selected" : ""}>${escapeHtml(label)}</option>`;
+  return `
+    <div class="adverse-event-row" data-row-id="${escapeAttribute(row.id || "")}">
+      <label>事件 Event<select data-role="eventId">${vocabSelectOptionsHtml(vocab, selectValue)}</select></label>
+      <label data-role="nameTextWrap"${isOther ? "" : " hidden"}>名稱 Name<input type="text" data-role="nameText" value="${escapeAttribute(row.nameText || "")}" /></label>
+      <label>處置類型 Intervention<select data-role="interventionType">
+        <option value=""${row.interventionType ? "" : " selected"}>—</option>
+        ${Object.entries(ADVERSE_EVENT_INTERVENTION_LABELS).map(([v, l]) => optionRow(v, l, row.interventionType || "")).join("")}
+      </select></label>
+      <label>手法 Modality<select data-role="modalityId">${vocabSelectOptionsHtml(modalityVocab, row.modalityId || "", { includeOther: false, blankLabel: "—（選填）" })}</select></label>
+      <label>嚴重度 Severity<select data-role="severity">
+        <option value=""${row.severity ? "" : " selected"}>—</option>
+        ${Object.entries(ADVERSE_EVENT_SEVERITY_LABELS).map(([v, l]) => optionRow(v, l, row.severity || "")).join("")}
+      </select></label>
+      <label>處理狀態 Resolution<select data-role="resolutionStatus">
+        <option value=""${row.resolutionStatus ? "" : " selected"}>—</option>
+        ${Object.entries(ADVERSE_EVENT_RESOLUTION_LABELS).map(([v, l]) => optionRow(v, l, row.resolutionStatus || "")).join("")}
+      </select></label>
+      <label>備註 Notes<input type="text" data-role="notes" value="${escapeAttribute(row.notes || "")}" /></label>
+      <button type="button" class="ghost repeatable-row-remove" data-remove-row data-mode-text data-bilingual="移除" data-english="Remove">移除</button>
+    </div>`;
+}
+
+// Rebuilt every dialog open (like renderNumericOutcomeMetricInputs) — always
+// exactly matches whichever note is being edited (new note = []), which is
+// what keeps saveSoapFromForm's DOM read below honest: the container never
+// sits "un-rendered" while a saved note has rows, so collecting from it can
+// never clobber a saved array with [] just because the section wasn't
+// clicked into (SPRINT brief task 2's explicit clobber warning).
+function renderLifestyleFactorRows(rows) {
+  const container = document.querySelector("#lifestyleFactorRows");
+  if (!container) return;
+  container.innerHTML = (Array.isArray(rows) ? rows : []).map(lifestyleFactorRowHtml).join("");
+  wireRepeatableRowContainer(container, "factorId");
+}
+
+function renderAdverseEventRows(rows) {
+  const container = document.querySelector("#adverseEventRows");
+  if (!container) return;
+  container.innerHTML = (Array.isArray(rows) ? rows : []).map(adverseEventRowHtml).join("");
+  wireRepeatableRowContainer(container, "eventId");
+}
+
+// Delegated listeners on the container survive innerHTML rebuilds (the
+// container node itself is never replaced), so this only needs to attach
+// once per container — the dataset flag makes repeated calls (every dialog
+// open) idempotent.
+function wireRepeatableRowContainer(container, selectRole) {
+  if (container.dataset.wired) return;
+  container.dataset.wired = "1";
+  container.addEventListener("click", (event) => {
+    const removeBtn = event.target.closest("[data-remove-row]");
+    if (removeBtn) removeBtn.closest(".lifestyle-factor-row, .adverse-event-row")?.remove();
+  });
+  container.addEventListener("change", (event) => {
+    const select = event.target.closest(`[data-role="${selectRole}"]`);
+    if (!select) return;
+    const row = select.closest(".lifestyle-factor-row, .adverse-event-row");
+    const nameTextWrap = row?.querySelector('[data-role="nameTextWrap"]');
+    if (nameTextWrap) nameTextWrap.hidden = select.value !== REPEATABLE_ROW_OTHER_VALUE;
+    if (selectRole === "factorId") {
+      const vocab = globalThis.ACUTING_KNOWLEDGE?.lifestyleFactorVocabulary?.records || [];
+      const rec = vocab.find((r) => r.id === select.value);
+      const unitInput = row?.querySelector('[data-role="unit"]');
+      if (unitInput && rec?.value_hint_en) unitInput.placeholder = rec.value_hint_en;
+    }
+  });
+}
+
+// Read side of the two row widgets — plain objects matching
+// normalizeSoapNote's lifestyleFactors[]/adverseEvents[] field names
+// exactly; the normalizer still does the actual filtering/coercion, this
+// only translates DOM state into the same shape saveAgentExposureFromForm
+// already builds from FormData for its own dialog.
+function collectLifestyleFactorRows() {
+  const container = document.querySelector("#lifestyleFactorRows");
+  if (!container) return [];
+  return [...container.querySelectorAll(".lifestyle-factor-row")].map((row) => {
+    const select = row.querySelector('[data-role="factorId"]');
+    const isOther = select.value === REPEATABLE_ROW_OTHER_VALUE;
+    return {
+      id: row.dataset.rowId || "",
+      factorId: isOther ? "" : select.value,
+      nameText: (row.querySelector('[data-role="nameText"]').value || "").trim(),
+      valueNumber: row.querySelector('[data-role="valueNumber"]').value,
+      unit: (row.querySelector('[data-role="unit"]').value || "").trim(),
+      frequencyText: (row.querySelector('[data-role="frequencyText"]').value || "").trim(),
+      notes: (row.querySelector('[data-role="notes"]').value || "").trim()
+    };
+  });
+}
+
+function collectAdverseEventRows() {
+  const container = document.querySelector("#adverseEventRows");
+  if (!container) return [];
+  return [...container.querySelectorAll(".adverse-event-row")].map((row) => {
+    const select = row.querySelector('[data-role="eventId"]');
+    const isOther = select.value === REPEATABLE_ROW_OTHER_VALUE;
+    return {
+      id: row.dataset.rowId || "",
+      eventId: isOther ? "" : select.value,
+      nameText: (row.querySelector('[data-role="nameText"]').value || "").trim(),
+      interventionType: row.querySelector('[data-role="interventionType"]').value || "",
+      modalityId: row.querySelector('[data-role="modalityId"]').value || "",
+      severity: row.querySelector('[data-role="severity"]').value || "",
+      resolutionStatus: row.querySelector('[data-role="resolutionStatus"]').value || "",
+      notes: (row.querySelector('[data-role="notes"]').value || "").trim()
+    };
+  });
+}
+
+// SOAP note display card — mirrors how outcomes/patterns render (raw ids
+// resolved to vocab labels when known, falls back to nameText/id).
+function formatLifestyleFactorLine(f) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.lifestyleFactorVocabulary?.records || [];
+  const rec = vocab.find((r) => r.id === f.factorId);
+  const label = rec ? `${rec.name_zh} ${rec.name_en}` : (f.nameText || f.factorId || "—");
+  const hasValue = f.valueNumber === 0 || !!f.valueNumber;
+  const valueText = [hasValue ? `${f.valueNumber}${f.unit ? " " + f.unit : ""}` : "", f.frequencyText].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(label)}</strong>${valueText ? ` — ${escapeHtml(valueText)}` : ""}${f.notes ? `<br><small>${escapeHtml(f.notes)}</small>` : ""}</li>`;
+}
+
+function formatAdverseEventLine(a) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.adverseEventVocabulary?.records || [];
+  const rec = vocab.find((r) => r.id === a.eventId);
+  const label = rec ? `${rec.name_zh} ${rec.name_en}` : (a.nameText || a.eventId || "—");
+  const meta = [
+    ADVERSE_EVENT_INTERVENTION_LABELS[a.interventionType] || a.interventionType,
+    ADVERSE_EVENT_SEVERITY_LABELS[a.severity] || a.severity,
+    ADVERSE_EVENT_RESOLUTION_LABELS[a.resolutionStatus] || a.resolutionStatus
+  ].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(label)}</strong>${meta ? ` — ${escapeHtml(meta)}` : ""}${a.notes ? `<br><small>${escapeHtml(a.notes)}</small>` : ""}</li>`;
+}
+
+function renderLifestyleAdverseEventsView(note) {
+  const lifestyle = note.lifestyleFactors || [];
+  const adverse = note.adverseEvents || [];
+  if (!lifestyle.length && !adverse.length) return "";
+  return `
+    <div class="lifestyle-ae-view">
+      ${lifestyle.length ? `<div><small>生活型態 Lifestyle</small><ul>${lifestyle.map(formatLifestyleFactorLine).join("")}</ul></div>` : ""}
+      ${adverse.length ? `<div><small>不良反應 Adverse events</small><ul>${adverse.map(formatAdverseEventLine).join("")}</ul></div>` : ""}
+    </div>`;
+}
+
 function renderAgentExposuresPanel(item) {
   const store = window.AcuTingClinicalStore;
   const all = item.agentExposures || [];
@@ -6372,6 +6587,7 @@ function renderSoapNoteCard(note) {
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
         ${formatNumericOutcomeMetrics(note).map(([label, val]) => `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
       </div>
+      ${renderLifestyleAdverseEventsView(note)}
       <div class="soap-link-grid">
         <div><small>Western links</small><span>${escapeHtml(formatNoteList(note.westernConditionLinks))}</span></div>
         <div><small>TCM disease links</small><span>${escapeHtml(formatNoteList(note.easternDiseaseLinks))}</span></div>
@@ -6783,6 +6999,8 @@ function openSoapEditor(note = null) {
     outcomeMetricLinks: [],
     outcomeVerdict: "",
     outcomeMetrics: [],
+    lifestyleFactors: [],
+    adverseEvents: [],
     effectDurationDays: "",
     referralOrSupervisorQuestion: "",
     followUp: "",
@@ -6802,6 +7020,12 @@ function openSoapEditor(note = null) {
   // needs data.effectDurationDays too, for the legacy-field fallback/conflict
   // check (resolveNumericMetricValue).
   renderNumericOutcomeMetricInputs(data);
+  // D17 §6/§4 — visit-level Lifestyle / Adverse events repeatable rows.
+  // Rebuilt every open, same as renderNumericOutcomeMetricInputs above: for
+  // an existing note this hydrates from data.lifestyleFactors/adverseEvents;
+  // for a new note both render as an empty list of rows.
+  renderLifestyleFactorRows(data.lifestyleFactors);
+  renderAdverseEventRows(data.adverseEvents);
   // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
   // tcmPatternSecondary are UI-only form fields, no such keys exist on the
   // note object itself (the note holds tcmPatternSelections instead).
@@ -6857,6 +7081,18 @@ function saveSoapFromForm(event) {
   }
   const outcomeMetrics = numericMetricsResult.metrics;
   const legacyMetricClears = numericMetricsResult.legacyClears;
+
+  // D17 §6/§4 — lifestyleFactors[] / adverseEvents[] from the repeatable row
+  // widgets. openSoapEditor always renders these containers (even to an
+  // empty row list) before the dialog opens, so their presence in the DOM
+  // here is reliable — but the guard below is the literal backstop the
+  // SPRINT brief asks for: only overwrite the saved array when the
+  // container actually rendered rows this session, never fall back to []
+  // just because the section markup is (for any future reason) absent.
+  const lifestyleRowsContainer = document.querySelector("#lifestyleFactorRows");
+  const adverseEventRowsContainer = document.querySelector("#adverseEventRows");
+  const lifestyleFactors = lifestyleRowsContainer ? collectLifestyleFactorRows() : (current?.lifestyleFactors || []);
+  const adverseEvents = adverseEventRowsContainer ? collectAdverseEventRows() : (current?.adverseEvents || []);
 
   // TCM pattern primary/secondary reconciliation. The excludeValues live
   // filter (setupLinkAutocomplete) already keeps the current primary out of
@@ -6921,6 +7157,8 @@ function saveSoapFromForm(event) {
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     outcomeVerdict: data.outcomeVerdict || "",
     outcomeMetrics,
+    lifestyleFactors,
+    adverseEvents,
     ...legacyMetricClears,
     referralOrSupervisorQuestion: (data.referralOrSupervisorQuestion || "").trim(),
     followUp: data.followUp.trim(),

@@ -762,6 +762,18 @@
             <label class="wide">轉介/督導問題 Referral / supervisor question<textarea name="referralOrSupervisorQuestion" rows="2" placeholder="需要轉介、或想問督導的問題"></textarea></label>
           </fieldset>
 
+          <fieldset class="form-section soap-lifestyle">
+            <legend><span class="form-section-step">L</span>生活型態 Lifestyle<small>本次就診觀察值，不自動轉證型 observation only — never auto-converted to a TCM pattern/tdis (D17 §6)</small></legend>
+            <div id="lifestyleFactorRows" class="repeatable-rows wide"></div>
+            <button class="ghost" type="button" id="addLifestyleFactorRow">+ 新增因子 Add factor</button>
+          </fieldset>
+
+          <fieldset class="form-section soap-adverse-events">
+            <legend><span class="form-section-step">AE</span>不良反應 Adverse events<small>治療反應與耐受度</small></legend>
+            <div id="adverseEventRows" class="repeatable-rows wide"></div>
+            <button class="ghost" type="button" id="addAdverseEventRow">+ 新增事件 Add event</button>
+          </fieldset>
+
           <fieldset class="form-section soap-outcome">
             <legend><span class="form-section-step">✓</span>成效與反思 Outcome &amp; reflection<small>回診時回填，學習迴路靠這段</small></legend>
             <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
