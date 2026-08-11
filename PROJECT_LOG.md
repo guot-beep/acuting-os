@@ -1,3 +1,11 @@
+# 2026-08-11 Claude — C10 全庫歸零:最後 7 張誤置長文卡 untangle(batch 6)
+
+- **做了什麼**(commit `961f869`,7 卡):C10 殘餘的批次一型誤置長文全數處理。post_covid(氣喘文→家卡 asthma)、copd + post_viral_cough(咳嗽文→家卡 chronic_cough)、heart_failure(心律不整文→家卡 palpitations)、chronic_prostatitis(BPH 文→家卡 bph)、cluster_headache + migraine_vestibular(頭痛通論/偏頭痛文→家卡 tension_headache / migraine)。家卡六張(asthma、chronic_cough、palpitations、bph、tension_headache、migraine)保留原文未動,腳本 assert 家卡持有後才封存。
+- **pcos 前例再現三次**:cluster_headache 與 migraine_vestibular 的 etiology_zh 是家卡文的一字之差變體(2281/2280、1553/1552),heart_failure 的 western_pathology_zh 是 palpitations 文的訛字變體(「一鐘之內」)——三者皆因非逐字而逃過 C10,一併封存(reason 註明變體)。C10 的逐字比對抓不到變體,眼睛才抓得到——此教訓已三度成立。
+- **內容**:七卡各四欄新寫雙語 + field_sources。TCM 病因病機引《金匱》心水(heart_failure)、肺脹+《丹溪心法》痰挾瘀血礙氣(copd)、《傷寒》吳茱萸湯厥陰頭痛(cluster)、溫病瘥後勞復(post_covid)、精濁/癃閉同腺異病之辨(chronic_prostatitis,citing 1.1 BPH 課件命名)、風痰眩暈(vestibular,citing 2 Dizziness 課件);西醫標 WHO/GOLD/ACCP/AHA/NIH 分類/ICHD/Bárány 通說 + MedlinePlus URL。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):**C10 20 → 0(全檔 150 卡 C10 歸零)**;C5 130→116(七卡既存 14 個 _en 缺一併補齊);全檔 222 → **188**(C4 71、C5 116、C9 1);乾淨卡 50→52。ratchet baseline 鎖 188。content-junk PASS;HEAD 深比較=7 卡、封存逐字、無欄位清空。
+- **已知未解/下一步**:(1) C5 116(58 卡)——既存 _en 翻譯債,其中含六張家卡的長文(C10 註記「誤置文勿譯」已不適用於家卡自己的文,但家卡 CloudTCM 敘事宜先修語氣再譯,勿直譯 blog 文);(2) C4 71 無紅旗卡是安全線最大缺口,建議下一條派工;(3) 家卡六張保留的 CloudTCM 敘事(會員見證、APP 推廣句)語氣修整仍待批准後另開線;(4) 本日新增 MedlinePlus URL 未線上核驗。
+
 # 2026-08-11 Claude — 全庫樣板句清零:60 張非婦科卡病因/病理重寫(C10 stub group 0 carriers)
 
 - **做了什麼**:承上一條的機制(§3.5.5 import_artifacts),把 73 卡共用樣板句對(正氣不足…/相關系統功能障礙…)剩餘的 **60 張非 gyn 卡**全部封存重寫,分三批:批次三(commit `5a57dc4`,19 卡)pain_msk 13 + gi 6;批次四(commit `98d7948`,17 卡)psych_sleep 12 + respiratory 5;批次五(commit `1931443`,24 卡)neuro 8 + derm 3 + endo_metabolic 7 + cardio 4 + uro_renal 2。每卡:樣板句對封存(belongs_to: null,dated reason)→ 填本卡專屬雙語 etiology_*/western_pathology_* + field_sources → 每批 HEAD 深比較(變動卡=清單、封存逐字、無欄位清空)。
