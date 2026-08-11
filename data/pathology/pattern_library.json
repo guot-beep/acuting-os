@@ -14696,6 +14696,470 @@
       ],
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.qi_constipation",
+      "name_zh": "氣秘",
+      "name_en": "Qi-Stagnation Constipation",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "large_intestine"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "大便秘結，欲便不能，便後不爽",
+        "腹脹或脅肋脹痛",
+        "噯氣頻作",
+        "情志不遂則加重"
+      ],
+      "key_signs_en": [
+        "Constipation with urgency but inability to pass stool, unsatisfying defecation",
+        "Abdominal distension or flank distending pain",
+        "Frequent belching",
+        "Worse with emotional frustration"
+      ],
+      "tongue_zh": "舌苔薄膩",
+      "tongue_en": "Thin greasy tongue coating",
+      "pulse_zh": "脈弦",
+      "pulse_en": "Wiry pulse",
+      "mechanism_zh": "情志不遂，肝脾氣機鬱滯，腑氣不通，傳導失常，故大便秘結、欲便不能；氣滯於中則腹脹脅痛、噯氣頻作；為便秘三種基本證型（氣秘、熱秘、虛秘）之一，病機重在氣滯而非燥熱或正虛。",
+      "mechanism_en": "Emotional frustration causes Liver-Spleen Qi movement to stagnate; the bowel Qi fails to flow and the conducting function is disordered, producing constipation with urgency but inability to pass stool. Qi stagnating in the Middle produces abdominal/flank distension and frequent belching. This is one of the three basic constipation patterns (Qi-stagnation, Heat-excess, and Deficiency), with the core mechanism being Qi stagnation rather than Dryness-Heat or upright-Qi deficiency.",
+      "common_causes_zh": "情志不遂肝鬱氣滯、久坐少動氣機不暢",
+      "common_causes_en": "Emotional frustration with Liver-Qi stagnation; prolonged sitting and inactivity impairing Qi movement",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat_constipation",
+          "distinguishing_zh": "氣秘以腹脹噯氣、情志因素明顯、苔薄膩為特徵，無明顯熱象；熱秘以大便乾結如羊屎、腹脹痛拒按、口乾口臭、舌紅苔黃燥為主，兩者可從有無燥熱之象鑑別。",
+          "distinguishing_en": "Qi-Stagnation Constipation is characterized by abdominal distension, belching, a prominent emotional trigger, and a thin greasy coating, without notable heat signs; Heat-Excess Constipation is dominated by dry stool resembling goat pellets, distending abdominal pain worse with pressure, dry mouth and bad breath, and a red tongue with dry yellow coating. The two are distinguished by the presence or absence of Dryness-Heat signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.liver_qi_stagnation",
+          "distinguishing_zh": "氣秘病位局限於腸腑傳導失常，以大便秘結、便後不爽為核心主症；肝氣鬱結病位廣泛，以胸脅脹痛、情志抑鬱、善太息為主症，便秘只是其中可能兼見的一個症狀，兩者是局部腑病與全身肝系病機的層次之別。",
+          "distinguishing_en": "Qi-Stagnation Constipation is localized to disordered conducting function of the bowel, with constipation and unsatisfying defecation as the core symptom; Liver Qi Stagnation is broader, dominated by chest/flank distending pain, emotional depression, and frequent sighing, with constipation only a possible accompanying symptom. The two differ in local-bowel-disease vs. systemic-Liver-mechanism level.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "順氣導滯",
+      "treatment_principle_en": "Regulate Qi and disperse stagnation",
+      "typical_formulas": [],
+      "typical_points": [
+        "ST25",
+        "SP15",
+        "TE6",
+        "LR3",
+        "ST37"
+      ],
+      "point_rationale_zh": "天樞為大腸募穴，疏調腸腑氣機；支溝為治療便秘要穴，善通三焦氣滯；太衝疏肝理氣；上巨虛為大腸下合穴，通調腑氣。",
+      "point_rationale_en": "ST25 (Tianshu), the Front-Mu point of the Large Intestine, regulates bowel Qi movement; TE6 (Zhigou) is a principal point for constipation, effective at unblocking Triple-Burner Qi stagnation; LR3 (Taichong) courses the Liver and regulates Qi; ST37 (Shangjuxu), the Lower He-Sea point of the Large Intestine, regulates bowel Qi.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "typical_formulas left empty: the sourced canon formula 六磨湯 (Liu Mo Tang) does not resolve against any formula.* id in formulas.json and no textbook-equivalent formula id was substituted — treatment principle and point prescription carry the card instead"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.氣秘"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.heat_constipation",
+      "name_zh": "熱秘",
+      "name_en": "Heat-Excess Constipation",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "large_intestine"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "大便乾結，腹脹腹痛拒按",
+        "口乾口臭",
+        "面紅身熱",
+        "小便短赤"
+      ],
+      "key_signs_en": [
+        "Dry, hard stool, distending abdominal pain worse with pressure",
+        "Dry mouth, bad breath",
+        "Red face, body heat",
+        "Scanty, dark urine"
+      ],
+      "tongue_zh": "舌紅苔黃燥",
+      "tongue_en": "Red tongue with a dry yellow coating",
+      "pulse_zh": "脈滑數",
+      "pulse_en": "Slippery, rapid pulse",
+      "mechanism_zh": "腸胃積熱，或熱病傷津，腸道燥熱內結，傳導失司，故大便乾結難下；熱盛上炎則面紅口臭；是便秘三種基本證型之一，病機重在腸腑燥熱。",
+      "mechanism_en": "Heat accumulates in the Intestines and Stomach, or a febrile disease damages fluids, and Dryness-Heat binds internally in the bowel, disordering its conducting function — producing dry, hard-to-pass stool. Heat-excess flaring upward produces a red face and bad breath. This is one of the three basic constipation patterns, with the core mechanism being bowel Dryness-Heat.",
+      "common_causes_zh": "過食辛辣厚味助熱、熱病傷津、素體陽盛",
+      "common_causes_en": "Excessive spicy, rich food feeding heat; fluid damage from a febrile disease; a constitutionally Yang-exuberant person",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_constipation",
+          "distinguishing_zh": "熱秘以大便乾結如羊屎、腹脹痛拒按、口乾口臭、舌紅苔黃燥為特徵，屬燥熱內結；氣秘以腹脹噯氣、情志因素明顯、苔薄膩為主，無明顯燥熱之象，兩者可從有無燥熱表現鑑別。",
+          "distinguishing_en": "Heat-Excess Constipation is characterized by dry stool resembling goat pellets, distending pain worse with pressure, dry mouth and bad breath, and a red tongue with dry yellow coating — internal Dryness-Heat binding; Qi-Stagnation Constipation is dominated by abdominal distension, belching, and a prominent emotional trigger, with a thin greasy coating and no notable Dryness-Heat. The two are distinguished by the presence of Dryness-Heat signs.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.stomach_heat",
+          "distinguishing_zh": "熱秘病位偏重大腸，以大便乾結、腹脹拒按為核心；胃熱熾盛病位偏重胃腑，以消穀善飢、牙齦腫痛、口渴喜冷為主，便秘並非其必見主症，兩者可從主症所在臟腑鑑別。",
+          "distinguishing_en": "Heat-Excess Constipation is centered on the Large Intestine, with dry stool and distending pain worse with pressure as its core; excess Stomach Heat is centered on the Stomach, dominated by rapid hungering, swollen painful gums, and thirst for cold drinks — constipation is not a necessary symptom. The two are distinguished by which organ the primary symptoms localize to.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "瀉熱導滯，潤腸通便",
+      "treatment_principle_en": "Drain heat and disperse stagnation, moisten the intestines and unblock the bowels",
+      "typical_formulas": [
+        "formula.ma_zi_ren_wan"
+      ],
+      "typical_points": [
+        "ST25",
+        "ST37",
+        "LI11",
+        "SP15"
+      ],
+      "point_rationale_zh": "天樞、上巨虛（大腸下合穴）通降腑氣、瀉熱導滯；曲池清瀉陽明積熱；大橫理氣通腑。",
+      "point_rationale_en": "ST25 (Tianshu) and ST37 (Shangjuxu, the Lower He-Sea point of the Large Intestine) direct bowel Qi downward and drain heat/disperse stagnation; LI11 (Quchi) clears and drains accumulated Yangming heat; SP15 (Daheng) regulates Qi and unblocks the bowel.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.熱秘"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.deficiency_constipation",
+      "name_zh": "虛秘",
+      "name_en": "Deficiency Constipation",
+      "pattern_family": "bing_yin",
+      "zang_fu": [
+        "large_intestine"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "neutral",
+        "deficiency_excess": "deficiency",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "大便並不乾硬，但排出困難，努掙乏力",
+        "便後汗出氣短",
+        "面色㿠白，神疲懶言",
+        "便意頻而排出無力"
+      ],
+      "key_signs_en": [
+        "Stool not necessarily hard, but difficult to expel, straining with lack of strength",
+        "Sweating and shortness of breath after defecation",
+        "Pale, lusterless complexion, fatigue, disinclined to speak",
+        "Frequent urge but weak expulsion"
+      ],
+      "tongue_zh": "舌淡苔白",
+      "tongue_en": "Pale tongue with white coating",
+      "pulse_zh": "脈弱",
+      "pulse_en": "Weak pulse",
+      "mechanism_zh": "氣血兩虛或脾腎不足，大腸傳導無力，雖無燥熱內結，然推動排便之氣力不足，故雖有便意而努掙乏力、便後氣短汗出；是便秘三種基本證型之一，病機重在正虛而非氣滯或燥熱。",
+      "mechanism_en": "Qi-Blood deficiency, or Spleen-Kidney insufficiency, leaves the Large Intestine's conducting function powerless; although there is no internal Dryness-Heat binding, the Qi-strength needed to propel defecation is lacking — producing an urge to defecate accompanied by weak straining, with sweating and shortness of breath afterward. This is one of the three basic constipation patterns, with the core mechanism being upright-Qi deficiency rather than Qi stagnation or Dryness-Heat.",
+      "common_causes_zh": "年老體弱、久病氣血虧虛、產後氣血未復",
+      "common_causes_en": "Old age with physical weakness; chronic illness depleting Qi and Blood; unrecovered Qi and Blood postpartum",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.qi_blood_deficiency",
+          "distinguishing_zh": "虛秘以排便困難、努掙乏力、便後氣短為核心主症，病位局限於腸腑傳導無力；氣血兩虛以面色萎黃、頭暈心悸、神疲乏力等全身氣血不足見症為主，便秘只是可能兼見的症狀之一。",
+          "distinguishing_en": "Deficiency Constipation has difficult defecation, weak straining, and post-defecation shortness of breath as its core symptom, localized to a powerless bowel-conducting function; Qi-Blood Deficiency is dominated by systemic Qi-Blood insufficiency signs — sallow complexion, dizziness, palpitations, fatigue — with constipation only a possible accompanying symptom.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.heat_constipation",
+          "distinguishing_zh": "虛秘大便並不乾硬、排出無力、舌淡脈弱，屬虛證；熱秘大便乾結如羊屎、腹脹拒按、舌紅苔黃燥，屬實證，兩者虛實迥異。",
+          "distinguishing_en": "Deficiency Constipation has stool that is not necessarily hard, weak expulsion, a pale tongue, and a weak pulse — a deficiency pattern; Heat-Excess Constipation has stool as dry as goat pellets, distending pain worse with pressure, and a red tongue with dry yellow coating — an excess pattern. The two are markedly different in deficiency vs. excess.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "益氣養血，潤腸通便",
+      "treatment_principle_en": "Boost Qi and nourish Blood, moisten the intestines and unblock the bowels",
+      "typical_formulas": [
+        "formula.ji_chuan_jian"
+      ],
+      "typical_points": [
+        "ST36",
+        "SP6",
+        "CV6",
+        "BL20",
+        "ST25"
+      ],
+      "point_rationale_zh": "足三里、氣海補益氣血，培補元氣；脾俞健脾益氣以助腸腑傳導；天樞、三陰交調腸潤下。",
+      "point_rationale_en": "ST36 (Zusanli) and CV6 (Qihai) tonify Qi and Blood, replenishing original Qi; BL20 (Pishu) strengthens the Spleen and boosts Qi to assist bowel conduction; ST25 (Tianshu) and SP6 (Sanyinjiao) regulate the bowel and moisten it downward.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.ji_chuan_jian (濟川煎) used as the standard current 中醫內科學 textbook formula for this exact deficiency-constipation subtype (the sourced canon formula_zh 黃芪湯 does not resolve against any formula.* id in formulas.json); Ji Chuan Jian is the formula this pattern is taught with in modern practice"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.虛秘"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.spleen_constriction",
+      "name_zh": "脾約",
+      "name_en": "Spleen Constriction (Pi Yue)",
+      "pattern_family": "liu_jing",
+      "zang_fu": [
+        "spleen",
+        "stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "mixed",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "大便乾結，小便反數",
+        "口乾不甚渴",
+        "脘腹無明顯脹痛",
+        "病程較緩，無明顯全身燥熱或虛損見症"
+      ],
+      "key_signs_en": [
+        "Dry, hard stool with paradoxically frequent urination",
+        "Dry mouth without marked thirst",
+        "No notable epigastric/abdominal distension or pain",
+        "A comparatively mild course, without prominent systemic Dryness-Heat or deficiency signs"
+      ],
+      "tongue_zh": "舌苔薄黃",
+      "tongue_en": "Thin yellow tongue coating",
+      "pulse_zh": "脈浮澀或脈細",
+      "pulse_en": "Floating-choppy or thin pulse",
+      "mechanism_zh": "出自《傷寒論》陽明篇，胃強脾弱，胃有燥熱而脾陰（脾之布散津液功能）受約束，不能為胃行其津液，津液但輸膀胱，故小便數多而大便因失去脾陰濡潤反見乾結，是仲景論述陽明病的一個特定病理類型，與內科雜病便秘三型（氣秘/熱秘/虛秘）分屬不同辨證體系（六經 vs 臟腑氣血）。",
+      "mechanism_en": "From the Yangming chapter of the Shang Han Lun: the Stomach is strong and the Spleen relatively weak; Stomach Dryness-Heat constrains Spleen Yin (the Spleen's function of distributing fluid) so that it cannot circulate fluid on the Stomach's behalf — fluid is instead diverted to the Bladder, so urination becomes frequent while the stool, deprived of Spleen-Yin moistening, becomes dry and hard. This is a specific pathological type within Zhang Zhongjing's discussion of Yangming disease, belonging to a different diagnostic system (Six-Channel) than the three internal-medicine constipation subtypes (Qi-stagnation/Heat-excess/Deficiency, which belong to Zang-Fu/Qi-Blood differentiation).",
+      "common_causes_zh": "陽明胃熱津傷、脾為胃約、素體陰虛津虧",
+      "common_causes_en": "Yangming Stomach heat damaging fluids; the Spleen being constrained by the Stomach; a constitutionally Yin-deficient, fluid-depleted person",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heat_constipation",
+          "distinguishing_zh": "脾約證為《傷寒論》六經辨證下的特定病理（胃強脾弱、脾為胃約），以小便數而大便硬為特徵性表現，全身熱象不著；熱秘為內科雜病臟腑辨證下的證型，以大便乾結、腹脹拒按、口乾口臭、舌紅苔黃燥等全身腸胃熱盛見症為主，兩者辨證體系不同，脾約證的小便反數是其獨有的鑑別點。",
+          "distinguishing_en": "Spleen Constriction is a specific pathology under Six-Channel differentiation (Shang Han Lun) — Stomach strong, Spleen weak, Spleen constrained by the Stomach — characterized by frequent urination together with hard stool, without pronounced systemic heat signs; Heat-Excess Constipation is a Zang-Fu-differentiation pattern within internal medicine, dominated by systemic gastrointestinal heat-excess signs (dry hard stool, distending pain worse with pressure, dry mouth, bad breath, red tongue with dry yellow coating). The two belong to different diagnostic systems, and the paradoxically frequent urination is Spleen Constriction's unique distinguishing feature.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.stomach_yin_deficiency",
+          "distinguishing_zh": "脾約證核心在脾之轉輸津液功能受胃熱約束，小便反數為特徵；胃陰虛以饑不欲食、乾嘔、舌紅少苔或無苔為主，無小便反數之特異表現。",
+          "distinguishing_en": "Spleen Constriction's core mechanism is the Spleen's fluid-transporting function being constrained by Stomach heat, with paradoxically frequent urination as its hallmark; Stomach Yin Deficiency is dominated by hunger without desire to eat, dry retching, and a red tongue with scanty or absent coating, without the frequent-urination feature.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "潤腸通便，養陰增液",
+      "treatment_principle_en": "Moisten the intestines and unblock the bowels, nourish Yin and increase fluids",
+      "typical_formulas": [
+        "formula.ma_zi_ren_wan"
+      ],
+      "typical_points": [
+        "ST25",
+        "SP15",
+        "ST36",
+        "SP6"
+      ],
+      "point_rationale_zh": "天樞、大橫調理腸腑氣機；足三里、三陰交健脾滋陰，助脾轉輸津液，潤腸通便。",
+      "point_rationale_en": "ST25 (Tianshu) and SP15 (Daheng) regulate bowel Qi movement; ST36 (Zusanli) and SP6 (Sanyinjiao) strengthen the Spleen and nourish Yin, assisting the Spleen's transport of fluid and moistening the bowel.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "formula.ma_zi_ren_wan (麻子仁丸) — the classical Shang Han Lun formula for this exact pattern, matches the sourced canon formula_zh exactly"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "formulas": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.脾約"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "pattern.heat_disturbing_chest_diaphragm",
+      "name_zh": "熱擾胸膈",
+      "name_en": "Heat Disturbing the Chest and Diaphragm",
+      "pattern_family": "liu_jing",
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "cold_heat": "heat",
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "key_signs_zh": [
+        "心煩不寧，夜臥不安",
+        "胸中窒悶或懊憹",
+        "反覆輾轉，難以入睡",
+        "無明顯苔膩或燥結之象"
+      ],
+      "key_signs_en": [
+        "Restlessness and vexation, unsettled at night",
+        "Oppression or agitated distress in the chest",
+        "Tossing and turning, difficulty falling asleep",
+        "No notable greasy coating or Dryness-binding signs"
+      ],
+      "tongue_zh": "舌紅，苔微黃",
+      "tongue_en": "Red tongue with a slightly yellow coating",
+      "pulse_zh": "脈數",
+      "pulse_en": "Rapid pulse",
+      "mechanism_zh": "出自《傷寒論》，外感病汗吐下後，表邪已解而餘熱未清，鬱於胸膈，擾動心神，故心煩懊憹、夜臥不安，病勢較輕淺，既非有形之邪內結（無腹滿硬痛），亦非陰虛陽亢，純屬無形餘熱鬱擾胸膈，是仲景論述汗吐下後變證的特定病理類型。",
+      "mechanism_en": "From the Shang Han Lun: after sweating, vomiting, or purging in an external-pathogen disease, the exterior pathogen has resolved but residual heat remains uncleared, stagnating in the chest and diaphragm and disturbing the Heart spirit — producing restlessness, agitated distress, and unsettled sleep. The presentation is comparatively mild and superficial: it is neither a tangible pathogen bound internally (no firm, painful abdominal fullness) nor Yin-deficiency Yang-hyperactivity — it is purely formless residual heat stagnating in the chest and diaphragm, a specific pathological type Zhang Zhongjing discusses among the transformations that follow sweating, vomiting, or purging.",
+      "common_causes_zh": "外感熱病汗吐下後餘熱未清、情志化熱鬱於胸膈",
+      "common_causes_en": "Residual uncleared heat following sweating, vomiting, or purging in an external febrile disease; emotional stress transforming into heat and stagnating in the chest and diaphragm",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.heart_fire",
+          "distinguishing_zh": "熱擾胸膈為外感病後餘熱鬱於胸膈的特定病理階段，病勢較輕，以心煩懊憹、夜臥不安為主，無口舌生瘡、小便短赤等心火下移之象；心火亢盛（心火旺盛）為臟腑辨證下的實火證，以口舌生瘡、小便短赤、心煩失眠為主要表現，病因不限於外感病後。",
+          "distinguishing_en": "Heat Disturbing the Chest and Diaphragm is a specific, comparatively mild pathological stage of residual heat following an external disease, dominated by restlessness and agitated distress with unsettled sleep, without mouth ulcers or scanty dark urine (signs of Heart Fire moving down to the Small Intestine); Heart Fire is a Zang-Fu-differentiation excess-fire pattern, dominated by mouth ulcers, scanty dark urine, and restlessness/insomnia, not limited in cause to the aftermath of an external disease.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        },
+        {
+          "pattern_id": "pattern.yin_deficiency_fire_flaring",
+          "distinguishing_zh": "熱擾胸膈為餘熱未清之實證，病程較短，舌紅苔微黃、脈數，無明顯陰虛見症；陰虛火旺為陰液虧損所致虛火，病程較長，伴五心煩熱、潮熱盜汗、舌紅少苔、脈細數等陰虛徵象。",
+          "distinguishing_en": "Heat Disturbing the Chest and Diaphragm is an excess pattern of uncleared residual heat, with a shorter course, a red tongue with slightly yellow coating, and a rapid pulse, without notable Yin-deficiency signs; Yin Deficiency with Effulgent Fire is deficiency-fire from depleted Yin fluid, with a longer course, accompanied by five-palm heat, tidal fever with night sweats, a red tongue with scanty coating, and a thin rapid pulse.",
+          "source": "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        }
+      ],
+      "treatment_principle_zh": "清宣鬱熱，除煩",
+      "treatment_principle_en": "Clear and diffuse stagnant heat, relieve vexation",
+      "typical_formulas": [],
+      "typical_points": [
+        "PC6",
+        "HT7",
+        "BL15",
+        "CV17"
+      ],
+      "point_rationale_zh": "內關寬胸理氣，清熱除煩；神門寧心安神；心俞、膻中調暢胸膈氣機，助鬱熱得以宣散。",
+      "point_rationale_en": "PC6 (Neiguan) opens the chest, regulates Qi, clears heat, and relieves vexation; HT7 (Shenmen) calms the Heart spirit; BL15 (Xinshu) and CV17 (Danzhong) regulate Qi movement in the chest and diaphragm, helping the stagnant heat diffuse and disperse.",
+      "sources": [
+        "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)",
+        "docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 1 (CREATE_CANONICAL, textbook-clear subset)",
+        "typical_formulas left empty: the classical formula for this pattern, 梔子豉湯 (Zhi Zi Chi Tang), does not resolve against any formula.* id in formulas.json (genuinely absent from the dataset) — treatment principle and point prescription carry the card instead"
+      ],
+      "field_sources": {
+        "key_signs": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "pulse": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "mechanism": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "differentiation": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ],
+        "points": [
+          "TCM textbook standard (中醫診斷學/中醫內科學/方劑學 通用教材, course-level citation per template §R2)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.熱擾胸膈"
+      ],
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
