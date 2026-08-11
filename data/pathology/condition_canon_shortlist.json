@@ -28663,6 +28663,1941 @@
         "research_pack_batch_c_endocrine"
       ],
       "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.deep_vein_thrombosis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "深部靜脈血栓",
+      "name_en": "Deep Vein Thrombosis",
+      "category": "cardio",
+      "icd_hint": "I82",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "深靜脈栓塞"
+      ],
+      "aliases_en": [
+        "DVT"
+      ],
+      "summary_zh": "深部靜脈血栓是深層靜脈（最常見於小腿、大腿或骨盆）內形成血塊，是靜脈血栓栓塞症（VTE）的一環，臨床上格外重要，因為部分血塊可能脫落並流向肺部造成肺栓塞。",
+      "summary_en": "Deep vein thrombosis is formation of a blood clot in a deep vein, most often in the lower leg, thigh, or pelvis. It is one component of venous thromboembolism (VTE) and is clinically important because part of the clot can detach and travel to the lungs, causing pulmonary embolism.",
+      "etiology_zh": "重要危險情境包括：近期手術或重大創傷、長期臥床或制動、長途旅行久坐、活動性癌症或癌症治療、既往VTE或遺傳性／後天性凝血異常、嚴重感染或發炎狀態、懷孕與產後狀態、特定荷爾蒙暴露、高齡、肥胖，以及特定心臟、腎臟、神經或全身性疾病。不需要單一危險因子即可發病，許多病人同時具有多重危險因子。",
+      "etiology_en": "Important risk contexts include recent surgery or major trauma, prolonged immobility or bed rest, long-distance travel with prolonged sitting, active cancer or cancer treatment, prior VTE or inherited/acquired clotting disorders, serious infection or inflammatory states, pregnancy and postpartum states, selected hormone exposure, older age, obesity, and selected heart, kidney, neurologic or systemic disease. A single risk factor is not required, and many patients have more than one.",
+      "western_pathology_zh": "當靜脈血流減慢、血管壁受損與血液處於高凝狀態等條件並存時，容易形成深部靜脈血栓。深部靜脈血栓可阻塞局部靜脈回流，造成腫脹與疼痛；部分血塊脫落進入肺循環則可能造成肺栓塞。",
+      "western_pathology_en": "DVT develops when conditions favor venous clot formation, including slowed venous blood flow, vessel-wall injury and prothrombotic blood states. A deep venous thrombus can obstruct local venous return, causing swelling and pain. Embolization of part of the thrombus to the pulmonary circulation can produce PE.",
+      "western_context_zh": "臨床定位：深部靜脈血栓應與表淺性血栓性靜脈炎、全身性水腫、蜂窩性組織炎、淋巴水腫、慢性靜脈功能不全與肺栓塞清楚區分。DVT與PE同屬VTE疾病家族，但屬於不同臨床狀態，表現與安全意義各異。\n\n臨床表現：深部靜脈血栓可能完全無症狀。若有症狀，常見表現為單側下肢腫脹、疼痛或壓痛、發熱感，有時合併紅斑或膚色改變。症狀本身特異性不足，無法單獨確立診斷。\n\n重要特徵：屬於VTE疾病譜的一環；多發生於下肢、大腿或骨盆的深部靜脈；可能臨床無症狀；單側腫脹／壓痛雖引人關切但非診斷依據；最令人擔憂的併發症是肺栓塞；需要風險評估與客觀檢查確診。\n\n診斷方法：評估始於臨床機率評估、病史、理學檢查與危險因子回顧。D-dimer可在適當篩選的低風險族群中協助排除VTE，靜脈超音波是懷疑下肢深部靜脈血栓的主要影像檢查。其他影像依部位、機率與臨床情境選用。\n\n鑑別診斷：蜂窩性組織炎、表淺性血栓性靜脈炎、肌肉或軟組織損傷、貝克氏囊腫破裂、慢性靜脈功能不全、淋巴水腫、心臟衰竭或腎臟相關水腫，以及其他造成單側肢體腫脹或疼痛的病因。\n\n西醫治療：抗凝治療是大多數具臨床意義DVT的主要治療，有助於預防血栓延伸與新發栓塞。療程長短依誘發因子、復發風險、出血風險與病人情況而定。部分病人在無法使用抗凝治療時，可能需要導管介入清除血栓或置放下腔靜脈濾網。\n\n編碼備註：DVT編碼依靜脈部位、側別、急慢性與復發／情境而異，不應僅憑病名直接指派單一通用編碼，實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM。",
+      "western_context_en": "Clinical definition: DVT should remain distinct from superficial thrombophlebitis, generalized edema, cellulitis, lymphedema, chronic venous insufficiency and pulmonary embolism. DVT and PE belong to the same VTE disease family but are different clinical states with different immediate manifestations and safety implications.\n\nClinical presentation: DVT can be asymptomatic. When symptoms occur, common findings include unilateral leg swelling, pain or tenderness, warmth, and sometimes redness or discoloration. Symptoms alone are not sufficiently specific to establish DVT.\n\nKey features: part of the VTE spectrum; often involves a deep vein of the leg, thigh or pelvis; may be clinically silent; unilateral swelling/tenderness raises concern but is not diagnostic; major feared complication is pulmonary embolism; risk assessment and objective testing are required.\n\nDiagnostic approach: Evaluation begins with clinical probability assessment, history, examination and risk-factor review. D-dimer can help exclude VTE in appropriately selected low-risk contexts, while venous ultrasound is a major imaging test for suspected lower-extremity DVT. Additional imaging is chosen according to location, probability and clinical context.\n\nDifferential diagnosis: cellulitis, superficial thrombophlebitis, muscle or soft-tissue injury, ruptured Baker cyst, chronic venous insufficiency, lymphedema, heart-failure or renal-related edema, and other causes of unilateral limb swelling or pain.\n\nWestern treatment: Anticoagulation is the main treatment for most clinically significant DVT and helps prevent clot extension and new emboli. Duration depends on provoking factors, recurrence risk, bleeding risk and patient context. Selected patients may require catheter-based clot treatment or an inferior vena cava filter when anticoagulation cannot be used.\n\nCoding note: DVT coding depends on vein, laterality, acuity/chronicity and recurrence/context — do not assign one generic exact code from the disease name alone; verify the active fiscal-year CDC/NCHS ICD-10-CM at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期手術或重大創傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "長期臥床或制動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "長途旅行久坐",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "活動性癌症或癌症治療",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "既往VTE或遺傳性／後天性凝血異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "懷孕與產後狀態",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent surgery or major trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Prolonged immobility or bed rest",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Long-distance travel with prolonged sitting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Active cancer or cancer treatment",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Prior VTE or inherited/acquired clotting disorder",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Pregnancy and postpartum states",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        },
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新發呼吸急促",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示可能已併發肺栓塞",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "胸膜性或不明原因胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為肺栓塞的常見表現",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "咳血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示肺部血管受累",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能反映嚴重血流動力學不穩定",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "明顯心搏過速、低血氧或血流動力學不穩定",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重肺栓塞或休克",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New shortness of breath",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Raises concern for pulmonary embolism",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "Pleuritic or unexplained chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Common presentation of pulmonary embolism",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "Coughing blood",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests pulmonary vascular involvement",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "Syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May reflect severe hemodynamic instability",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        },
+        {
+          "finding": "Marked tachycardia, hypoxia, or hemodynamic instability",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe PE or shock",
+          "source": "NHLBI - Venous Thromboembolism Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "疑似急性DVT不屬於常規針灸適應症",
+        "precautions": "在DVT經妥善評估前，不得對新發腫脹疼痛的肢體以局部肌肉骨骼問題進行按摩、強力手法、拔罐或刮痧；服用抗凝劑病人進行針刺或其他造成組織創傷的技術前，須另行評估出血風險",
+        "co_management": "疑似或已知DVT病人應轉介或聯絡其主治醫師確認評估與抗凝治療狀態，執業者不得建議病人自行調整或停用抗凝藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於深部靜脈血栓的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Suspected acute DVT is not a routine acupuncture presentation",
+        "precautions": "Do not massage, vigorously manipulate, cup, scrape or otherwise treat a newly swollen painful limb as a local musculoskeletal problem until DVT has been appropriately evaluated; in patients taking anticoagulants, needling and other tissue-trauma techniques also require bleeding-risk review",
+        "co_management": "Suspected or known DVT patients should be referred to, or their physician contacted to confirm, evaluation and anticoagulation status; practitioners must not advise the patient to independently adjust or stop anticoagulant medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for DVT was located"
+      },
+      "sign_symptom_ids": [
+        "sym.edema"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NHLBI - Venous Thromboembolism: https://www.nhlbi.nih.gov/health/venous-thromboembolism",
+        "NHLBI - Venous Thromboembolism Causes and Risk Factors: https://www.nhlbi.nih.gov/health/venous-thromboembolism/causes",
+        "NHLBI - Venous Thromboembolism Symptoms: https://www.nhlbi.nih.gov/health/venous-thromboembolism/symptoms",
+        "NHLBI - Venous Thromboembolism Diagnosis: https://www.nhlbi.nih.gov/health/venous-thromboembolism/diagnosis",
+        "NHLBI - Venous Thromboembolism Treatment: https://www.nhlbi.nih.gov/health/venous-thromboembolism/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "summary_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "etiology_zh": [
+          "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        ],
+        "etiology_en": [
+          "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "western_context_zh": [
+          "NHLBI - Venous Thromboembolism Diagnosis",
+          "NHLBI - Venous Thromboembolism Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Venous Thromboembolism Diagnosis",
+          "NHLBI - Venous Thromboembolism Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Venous Thromboembolism Causes and Risk Factors"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Venous Thromboembolism Symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI - Venous Thromboembolism Symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.pulmonary_embolism",
+      "entity_type": "biomedical_condition",
+      "name_zh": "肺栓塞",
+      "name_en": "Pulmonary Embolism",
+      "category": "cardio",
+      "icd_hint": "I26",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "肺動脈栓塞"
+      ],
+      "aliases_en": [
+        "PE"
+      ],
+      "summary_zh": "肺栓塞是肺動脈血流受到栓子阻塞，最常見來源為深部靜脈血栓。表現範圍從輕微或幾乎無症狀，到迅速致命的心肺功能衰竭都有可能。",
+      "summary_en": "Pulmonary embolism is obstruction of pulmonary arterial blood flow by an embolus, most commonly a blood clot arising from a deep venous thrombosis. PE ranges from small or minimally symptomatic events to rapidly fatal cardiopulmonary collapse.",
+      "etiology_zh": "大多數血栓性肺栓塞與DVT／VTE的危險因子相同：近期手術或創傷、制動、既往VTE、癌症、懷孕／產後及特定荷爾蒙暴露、遺傳性／後天性血栓形成傾向、嚴重感染／發炎，以及高齡與特定全身性疾病。非血栓性肺栓塞現象雖然存在，但不應不加區辨地併入常規VTE病名。",
+      "etiology_en": "Most thromboembolic PE shares DVT/VTE risk factors: recent surgery or trauma, immobility, prior VTE, cancer, pregnancy/postpartum and selected hormone exposure, inherited/acquired thrombophilia, serious infection/inflammation, and older age and selected systemic disease. Nonthrombotic pulmonary embolic phenomena exist but should not be silently merged into the routine VTE card.",
+      "western_pathology_zh": "栓子阻塞肺動脈循環會增加肺血管阻力並造成通氣／灌流不匹配。血栓量較大或心肺儲備較差時，可能造成右心室壓力負荷、心輸出量受損、低血氧、休克甚至死亡。",
+      "western_pathology_en": "An embolus obstructing pulmonary arterial circulation increases pulmonary vascular resistance and produces ventilation-perfusion mismatch. Larger clot burden or poor cardiopulmonary reserve can cause right-ventricular strain, impaired cardiac output, hypoxemia, shock and death.",
+      "western_context_zh": "臨床定位：肺栓塞屬於VTE疾病譜的一環，但與DVT並非同義詞。DVT描述深部靜脈血栓的來源，PE描述肺循環的栓塞阻塞；病人可能只有DVT而未臨床確診PE，也可能只確診PE而未發現DVT，或兩者同時存在。\n\n臨床表現：可能出現突發性呼吸困難、隨呼吸加劇的胸痛、心搏過速、低血氧、咳嗽或咳血、頭暈、暈厥與焦慮感。表現差異極大，部分病例症狀隱晦不明顯。\n\n重要特徵：屬於可能致命的VTE併發症；突發呼吸困難與胸膜性胸痛為典型但非普遍表現；症狀與心肌梗塞、氣胸、肺炎等其他急症重疊；須採用客觀診斷策略；血流動力學影響會改變處置的緊急程度與治療方式。\n\n診斷方法：評估結合臨床機率、病史／理學檢查與適當檢查。D-dimer可在篩選過的低風險病人中協助排除PE，電腦斷層肺動脈血管攝影是主要的診斷影像檢查。依臨床情境可加做通氣灌流掃描與其他檢查；心電圖、血氧評估與心臟生物標記可協助評估嚴重度與鑑別診斷，但不能單獨作為PE的診斷依據。\n\n鑑別診斷：急性冠心症／心肌梗塞、氣胸、肺炎、氣喘或慢性阻塞性肺病急性惡化、主動脈疾病、心包膜炎、心臟衰竭、肌肉骨骼胸痛，以及恐慌／焦慮表現。\n\n西醫治療：抗凝治療是大多數血栓性肺栓塞的核心治療。嚴重或高風險事件可能需要溶栓治療、導管介入或手術。急性期需給予支持性心肺照護，並評估誘發病因以規劃後續追蹤。\n\n編碼備註：肺栓塞編碼依急性或慢性狀態及合併特徵而異，不應僅憑「PE」一詞推論精確編碼，實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM。",
+      "western_context_en": "Clinical definition: PE is part of VTE but is not synonymous with DVT. DVT describes the deep venous clot source; PE describes embolic obstruction in the pulmonary circulation. A patient can have DVT without clinically recognized PE, PE without a documented DVT at presentation, or both.\n\nClinical presentation: PE may cause sudden shortness of breath, chest pain that can worsen with breathing, tachycardia, low oxygen, cough or hemoptysis, lightheadedness, syncope and anxiety. Presentation is variable, and some cases are subtle.\n\nKey features: potentially life-threatening VTE complication; sudden dyspnea and pleuritic chest pain are classic but not universal; symptoms overlap MI, pneumothorax, pneumonia and other emergencies; objective diagnostic strategy is required; hemodynamic impact changes urgency and treatment.\n\nDiagnostic approach: Evaluation combines clinical probability, history/exam and appropriate testing. D-dimer can help exclude PE in selected low-risk patients. CT pulmonary angiography is a main diagnostic imaging test. Ventilation-perfusion scanning and other testing may be used when clinically appropriate. ECG, oxygen assessment and cardiac biomarkers can contribute to severity and differential evaluation but are not independently diagnostic of PE.\n\nDifferential diagnosis: acute coronary syndrome / myocardial infarction, pneumothorax, pneumonia, asthma or COPD exacerbation, aortic disease, pericarditis, heart failure, musculoskeletal chest pain, and panic/anxiety presentations.\n\nWestern treatment: Anticoagulation is central for most thromboembolic PE. Severe or high-risk events may require thrombolysis, catheter-assisted intervention or surgery. Supportive cardiopulmonary management and evaluation of the provoking cause are part of acute care and follow-up.\n\nCoding note: Pulmonary embolism codes vary by acute versus chronic context and associated features — do not infer an exact code from the phrase \"PE\" alone; verify active fiscal-year ICD-10-CM at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期手術或創傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "長期制動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "既往VTE病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "癌症",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "懷孕／產後及特定荷爾蒙暴露",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "遺傳性或後天性血栓形成傾向",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent surgery or trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "Prolonged immobility",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "Prior VTE",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "Cancer",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "Pregnancy/postpartum and selected hormone exposure",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "factor": "Inherited/acquired thrombophilia",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Venous Thromboembolism"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為急性PE致命表現之一",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重血流動力學受損",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "低血氧",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "反映氣體交換嚴重受損",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "低血壓或休克",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示高風險PE，可能危及生命",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "意識改變",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示嚴重循環衰竭",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "持續性明顯胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "不應以觀察等待方式處理，須立即轉診",
+          "source": "NHLBI - Venous Thromboembolism"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "One of the life-threatening presentations of acute PE",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "Syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe hemodynamic compromise",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "Hypoxia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Reflects severely impaired gas exchange",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "Hypotension or shock",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests high-risk PE that can be life-threatening",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "Altered mental status",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe circulatory failure",
+          "source": "NHLBI - Venous Thromboembolism"
+        },
+        {
+          "finding": "Persistent significant chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must not be managed by watchful waiting — requires immediate referral",
+          "source": "NHLBI - Venous Thromboembolism"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "疑似急性PE不屬於常規針灸處置範圍，須立即轉介急診醫療評估",
+        "precautions": "病情穩定、已治療過PE的病人，治療前應檢視藥物相關出血風險、殘存心肺症狀與復發警訊",
+        "co_management": "須聯絡病人的主治或心肺科醫師確認評估與治療進度，執業者不得建議病人自行調整或停用抗凝藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於肺栓塞的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Suspected acute PE is outside routine acupuncture management and requires emergency medical evaluation",
+        "precautions": "In a stable patient with a history of treated PE, medication-related bleeding risk, residual cardiopulmonary symptoms and recurrence warning signs should be reviewed before adjunctive care",
+        "co_management": "Contact the patient's physician or cardiopulmonary specialist to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust or stop anticoagulant medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for PE was located"
+      },
+      "sign_symptom_ids": [],
+      "sources": [
+        "NHLBI - Venous Thromboembolism: https://www.nhlbi.nih.gov/health/venous-thromboembolism",
+        "NHLBI - Venous Thromboembolism Symptoms: https://www.nhlbi.nih.gov/health/venous-thromboembolism/symptoms",
+        "NHLBI - Venous Thromboembolism Diagnosis: https://www.nhlbi.nih.gov/health/venous-thromboembolism/diagnosis",
+        "NHLBI - Venous Thromboembolism Treatment: https://www.nhlbi.nih.gov/health/venous-thromboembolism/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "summary_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "etiology_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "etiology_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "western_context_zh": [
+          "NHLBI - Venous Thromboembolism Diagnosis",
+          "NHLBI - Venous Thromboembolism Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Venous Thromboembolism Diagnosis",
+          "NHLBI - Venous Thromboembolism Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "red_flags_en": [
+          "NHLBI - Venous Thromboembolism"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.myocardial_infarction",
+      "entity_type": "biomedical_condition",
+      "name_zh": "急性心肌梗塞",
+      "name_en": "Myocardial Infarction",
+      "category": "cardio",
+      "icd_hint": "I21",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "心臟病發作"
+      ],
+      "aliases_en": [
+        "MI",
+        "Heart Attack"
+      ],
+      "summary_zh": "心肌梗塞是因持續性缺血（通常源於冠狀動脈突然阻塞）造成的急性心肌損傷，屬於致命性急症，延遲恢復血流會增加不可逆的心肌損害。",
+      "summary_en": "Myocardial infarction is acute myocardial injury caused by prolonged ischemia, commonly from sudden blockage of a coronary artery. It is a life-threatening emergency in which delayed restoration of blood flow can increase irreversible heart-muscle damage.",
+      "etiology_zh": "最常見的路徑是動脈粥狀硬化性冠心病合併斑塊破裂與血栓形成。其他機轉包括冠狀動脈痙攣、冠狀動脈栓塞、自發性冠狀動脈剝離，以及其他無阻塞性冠心病所致的心肌梗塞。",
+      "etiology_en": "The most common pathway is atherosclerotic coronary artery disease with plaque disruption and thrombus formation. Other mechanisms can include coronary spasm, coronary embolism, spontaneous coronary artery dissection and other causes of myocardial infarction without obstructive coronary artery disease.",
+      "western_pathology_zh": "冠狀動脈血流急劇下降造成氧氣供需嚴重失衡，足以損傷並造成心肌細胞死亡。損傷範圍與後果取決於受累血管、缺血持續時間、側枝循環、受累心肌區域與再灌流速度。",
+      "western_pathology_en": "Abrupt reduction of coronary blood flow creates an oxygen supply-demand mismatch severe enough to injure and kill myocardial cells. Extent and consequences depend on vessel, duration, collateral flow, myocardial territory and speed of reperfusion.",
+      "western_context_zh": "臨床定位：心肌梗塞須與心絞痛、非特異性胸痛、心臟停止與慢性冠心病清楚區分。心絞痛反映心肌缺血但沒有相同程度的心肌壞死；心肌梗塞則涉及心肌損傷／壞死，並由生物標記與缺血臨床證據支持。\n\n臨床表現：可能症狀包含胸悶、壓迫感、緊縮感或不適；手臂、肩膀、背部、頸部或下顎的疼痛或不適；呼吸困難；冒汗；噁心或嘔吐；異常疲倦；頭暈；以及心跳快速或不規則。部分病人症狀輕微或不典型，部分梗塞可能在臨床上呈現無症狀。\n\n重要特徵：屬於醫療急症；缺血症狀可能典型、不典型或完全缺席；心電圖是早期關鍵檢查；連續心肌旋轉蛋白（troponin）檢測支持心肌損傷診斷；心肌梗塞不等於心絞痛；心肌梗塞不等於心臟停止；快速再灌流可限制心肌損傷程度。\n\n診斷方法：急診評估包含心電圖、連續心肌旋轉蛋白檢測、病史與理學檢查。依表現與心電圖／生物標記結果選擇加做影像與冠狀動脈評估。不應對單一troponin切點做硬性規範，因檢驗方式與臨床標準各有不同。\n\n鑑別診斷：不穩定／穩定型心絞痛、肺栓塞、主動脈剝離或動脈瘤破裂、氣胸、心包膜炎、胃食道逆流／食道疾病、肌肉骨骼胸痛，以及其他造成急性呼吸困難或休克的病因。\n\n西醫治療：急性期治療目標為恢復冠狀動脈血流並減少併發症。依心肌梗塞類型與可用資源，處置可能包含抗血小板及其他抗血栓治療、適當時使用硝酸鹽類藥物、緊急經皮冠狀動脈介入、當無法及時進行PCI時選用溶栓治療，以及後續的二級預防用藥與心臟復健。\n\n編碼備註：急性心肌梗塞的編碼具有時間性、類型性與病程階段敏感性，須區分急性各類、後續心肌梗塞、併發症與陳舊性心肌梗塞狀態，實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM，不應僅憑一般概念指派單一I21亞型。",
+      "western_context_en": "Clinical definition: Myocardial infarction must remain distinct from angina, nonspecific chest pain, cardiac arrest and chronic coronary artery disease. Angina reflects myocardial ischemia without the same defining myocardial necrosis; MI involves myocardial injury/necrosis and is supported by biomarkers and clinical evidence of ischemia.\n\nClinical presentation: Possible symptoms include chest pressure, squeezing, heaviness or discomfort; pain or discomfort in an arm, shoulder, back, neck or jaw; shortness of breath; sweating; nausea or vomiting; unusual fatigue; lightheadedness; dizziness; and rapid or irregular heartbeat. Some people have mild or atypical symptoms, and some infarctions may be clinically silent.\n\nKey features: medical emergency; ischemic symptoms may be typical, atypical or absent; ECG is an early critical test; serial cardiac troponin testing supports myocardial-injury diagnosis; MI is not the same as angina; MI is not the same as cardiac arrest; rapid reperfusion can limit myocardial damage.\n\nDiagnostic approach: Emergency evaluation includes ECG, serial cardiac troponin testing, history and physical examination. Additional imaging and coronary evaluation are selected according to presentation and ECG/biomarker findings. The card should not hard-code a single troponin cutoff because assays and clinical criteria vary.\n\nDifferential diagnosis: unstable/stable angina, pulmonary embolism, aortic dissection or rupturing aneurysm, pneumothorax, pericarditis, GERD/esophageal disease, musculoskeletal chest pain, and other causes of acute dyspnea or shock.\n\nWestern treatment: Acute treatment aims to restore coronary blood flow and reduce complications. Depending on MI type and resources, care can include antiplatelet and other antithrombotic therapy, nitrates when appropriate, urgent percutaneous coronary intervention, selected thrombolytic therapy when timely PCI is not available, and subsequent secondary-prevention medication plus cardiac rehabilitation.\n\nCoding note: Acute MI coding is time-, type- and episode-sensitive, with distinctions among acute MI categories, subsequent MI, complications and old MI/history states — verify the active fiscal-year CDC/NCHS tabular rules at the time of coding; do not assign one universal I21 subtype from the generic concept.",
+      "risk_factors_zh": [
+        {
+          "factor": "動脈粥狀硬化性冠心病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "高血壓",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "糖尿病",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "血脂異常",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "既往心肌梗塞或冠心病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Atherosclerotic coronary artery disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "Hypertension",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "Diabetes",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "Dyslipidemia",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        },
+        {
+          "factor": "Prior MI or coronary artery disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Heart Attack Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新發持續性胸悶或胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即啟動緊急醫療系統（EMS）",
+          "rationale": "為心肌梗塞的核心警訊，不應自行開車前往醫院或先觀察再處置",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "不明原因呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即啟動緊急醫療系統（EMS）",
+          "rationale": "可能反映心肌缺血或心臟衰竭",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "冒冷汗",
+          "urgency_level": "emergency",
+          "recommended_action": "立即啟動緊急醫療系統（EMS）",
+          "rationale": "為缺血症候群常見伴隨徵象",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "暈厥或近乎暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即啟動緊急醫療系統（EMS）",
+          "rationale": "提示嚴重血流動力學不穩定",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "嚴重虛弱",
+          "urgency_level": "emergency",
+          "recommended_action": "立即啟動緊急醫療系統（EMS）",
+          "rationale": "可能為缺血症候群的表現之一",
+          "source": "NHLBI - Heart Attack Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New persistent chest pressure/pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate EMS activation",
+          "rationale": "The core MI warning sign — should not trigger private-vehicle transport or a 'treat first and reassess' approach",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "Unexplained dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate EMS activation",
+          "rationale": "May reflect myocardial ischemia or heart failure",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "Diaphoresis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate EMS activation",
+          "rationale": "A common accompanying sign of ischemic syndromes",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "Syncope or near-syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate EMS activation",
+          "rationale": "Suggests severe hemodynamic instability",
+          "source": "NHLBI - Heart Attack Symptoms"
+        },
+        {
+          "finding": "Severe weakness",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate EMS activation",
+          "rationale": "Can be a presentation of the ischemic symptom cluster",
+          "source": "NHLBI - Heart Attack Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "疑似急性心肌梗塞屬於醫療急症，絕不應以針灸、中藥、拔罐、刮痧或觀察等待方式處理",
+        "precautions": "對於心肌梗塞後復原病人，輔助性針灸須確認病情穩定，並留意抗血小板／抗凝藥物使用、心臟症狀、植入裝置狀況（如有）、運動耐受度與主治團隊的限制",
+        "co_management": "須聯絡病人的心臟科或主治醫師確認評估與治療進度，執業者不得建議病人自行調整或停用心臟相關藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於心肌梗塞的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Suspected acute MI is an emergency and should never be managed by acupuncture, herbs, cupping, gua sha or observation",
+        "precautions": "For patients recovering after MI, adjunctive acupuncture requires stable medical status and attention to antiplatelet/anticoagulant use, cardiac symptoms, implanted devices if relevant, exercise tolerance and the treating medical team's restrictions",
+        "co_management": "Contact the patient's cardiologist or physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust or stop cardiac medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for MI was located"
+      },
+      "sign_symptom_ids": [
+        "sym.nausea",
+        "sym.fatigue"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NHLBI - Heart Attack: https://www.nhlbi.nih.gov/health/heart-attack",
+        "NHLBI - Heart Attack Causes and Risk Factors: https://www.nhlbi.nih.gov/health/heart-attack/causes",
+        "NHLBI - Heart Attack Symptoms: https://www.nhlbi.nih.gov/health/heart-attack/symptoms",
+        "NHLBI - Heart Attack Diagnosis: https://www.nhlbi.nih.gov/health/heart-attack/diagnosis",
+        "NHLBI - Heart Attack Treatment: https://www.nhlbi.nih.gov/health/heart-attack/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Heart Attack"
+        ],
+        "summary_en": [
+          "NHLBI - Heart Attack"
+        ],
+        "etiology_zh": [
+          "NHLBI - Heart Attack Causes and Risk Factors"
+        ],
+        "etiology_en": [
+          "NHLBI - Heart Attack Causes and Risk Factors"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Heart Attack"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Heart Attack"
+        ],
+        "western_context_zh": [
+          "NHLBI - Heart Attack Diagnosis",
+          "NHLBI - Heart Attack Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Heart Attack Diagnosis",
+          "NHLBI - Heart Attack Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Heart Attack Causes and Risk Factors"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Heart Attack Causes and Risk Factors"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Heart Attack Symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI - Heart Attack Symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.angina_pectoris",
+      "entity_type": "biomedical_condition",
+      "name_zh": "心絞痛",
+      "name_en": "Angina Pectoris",
+      "category": "cardio",
+      "icd_hint": "I20",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "狹心症"
+      ],
+      "aliases_en": [
+        "Angina"
+      ],
+      "summary_zh": "心絞痛是因心肌供氧不足以滿足其需求所導致的胸痛或不適，常見於冠心病，但也可能因微血管功能障礙或冠狀動脈痙攣而發生。",
+      "summary_en": "Angina is chest pain or discomfort caused by inadequate oxygen-rich blood supply to the heart muscle relative to its needs. It commonly occurs in coronary heart disease but can also occur through microvascular dysfunction or coronary vasospasm.",
+      "etiology_zh": "主要機轉包含動脈粥狀硬化性冠心病、冠狀動脈微血管疾病、冠狀動脈痙攣，以及特定臨床情境下的氧氣供需失衡。",
+      "etiology_en": "Major mechanisms include atherosclerotic coronary artery disease, coronary microvascular disease, coronary vasospasm, and oxygen supply-demand mismatch in selected clinical contexts.",
+      "western_pathology_zh": "當心肌氧氣需求超過冠狀動脈血流所能提供時，即發生心絞痛。穩定型心絞痛的供需失衡常隨運動或壓力可預期地出現；不穩定型症狀則可能反映冠狀動脈血流的急性減少，可能先於或伴隨心肌梗塞發生。",
+      "western_pathology_en": "Angina occurs when myocardial oxygen demand exceeds the oxygen delivered through coronary blood flow. In stable angina this mismatch often appears predictably with exertion or stress. Unstable symptoms can reflect acute reduction in coronary blood flow and may precede or accompany MI.",
+      "western_context_zh": "臨床定位：心絞痛是一種缺血性症狀症候群，並非與心肌梗塞相同的實體。穩定型、不穩定型、微血管型與痙攣型心絞痛在誘發因子、風險與治療意義上各不相同。不穩定型心絞痛屬於急性冠心症，須緊急住院評估。\n\n臨床表現：胸部不適可能為壓迫感、緊縮感、緊繃感、沉重感或灼熱感，常位於胸骨後方，可能放射至肩膀、手臂、頸部、背部或下顎。可能伴隨呼吸困難、噁心、冒汗、虛弱、疲倦、頭暈或近乎暈厥。\n\n重要特徵：屬於缺血性胸部不適；心絞痛不等於心肌梗塞；穩定型心絞痛型態較可預測；不穩定型心絞痛屬於急症；微血管型與痙攣型心絞痛可能不符合典型的運動誘發型態；症狀表現可能因性別與個體而異。\n\n診斷方法：評估包含症狀病史、心血管風險評估、理學檢查與心電圖。Troponin有助於區分心肌損傷／心肌梗塞與不穩定型心絞痛。依穩定度與機率，可能使用壓力測試、冠狀動脈電腦斷層血管攝影、心臟超音波、心臟核磁共振或侵入性冠狀動脈血管攝影。針對特定痙攣型或微血管疾病，可考慮激發試驗。\n\n鑑別診斷：心肌梗塞／急性冠心症、肺栓塞、主動脈疾病、氣胸、心包膜炎、胃食道逆流／食道疼痛、胸壁或肌肉骨骼疼痛，以及恐慌／焦慮表現。\n\n西醫治療：治療依心絞痛型態與潛在冠心病而定，可能包含心血管健康風險降低措施、硝酸鹽類藥物、乙型阻斷劑、鈣離子通道阻斷劑、抗血小板治療、statin類藥物、其他抗心絞痛藥物，以及適當時採用經皮冠狀動脈介入或冠狀動脈繞道手術。不穩定型心絞痛須住院層級的緊急處置。\n\n編碼備註：心絞痛編碼依型態與潛在冠心病而異，部分文件須與動脈粥狀硬化性心臟病合併編碼，確切編碼選擇須遵循當年度CDC/NCHS ICD-10-CM表列規則。",
+      "western_context_en": "Clinical definition: Angina is an ischemic symptom syndrome, not the same identity as myocardial infarction. Stable, unstable, microvascular and vasospastic angina have different triggers, risk and treatment implications. Unstable angina is an acute coronary syndrome and requires urgent hospital assessment.\n\nClinical presentation: Chest discomfort can feel like pressure, squeezing, tightness, heaviness or burning, often behind the sternum, and may radiate to the shoulders, arms, neck, back or jaw. Dyspnea, nausea, sweating, weakness, fatigue, lightheadedness or fainting may accompany the discomfort.\n\nKey features: ischemic chest discomfort; angina is not the same as MI; stable angina follows a more predictable pattern; unstable angina is an emergency; microvascular and vasospastic angina may not fit classic exertional patterns; symptoms can differ by sex and individual patient.\n\nDiagnostic approach: Evaluation includes symptom history, cardiovascular risk assessment, physical examination and ECG. Troponin helps distinguish myocardial injury/MI from unstable angina. Depending on stability and probability, stress testing, coronary CT angiography, echocardiography, cardiac MRI or invasive coronary angiography may be used. Provocation testing may be considered for selected vasospastic or microvascular disease.\n\nDifferential diagnosis: myocardial infarction / acute coronary syndrome, pulmonary embolism, aortic disease, pneumothorax, pericarditis, GERD / esophageal pain, chest-wall or musculoskeletal pain, and panic/anxiety presentations.\n\nWestern treatment: Treatment depends on angina type and underlying coronary disease. It can include heart-healthy risk reduction, nitrates, beta blockers, calcium-channel blockers, antiplatelet therapy, statins, other antianginal medicines, and revascularization with PCI or CABG when indicated. Unstable angina requires hospital-level emergency management.\n\nCoding note: Angina coding varies by underlying coronary disease and subtype; some documentation can require combination coding with atherosclerotic heart disease — exact code selection must follow active fiscal-year ICD-10-CM tabular instructions.",
+      "risk_factors_zh": [
+        {
+          "factor": "動脈粥狀硬化性冠心病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        },
+        {
+          "factor": "冠狀動脈微血管功能障礙",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        },
+        {
+          "factor": "冠狀動脈痙攣",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        },
+        {
+          "factor": "高血壓、血脂異常、糖尿病、吸菸等冠心病共病因子",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Atherosclerotic coronary artery disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        },
+        {
+          "factor": "Coronary microvascular dysfunction",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        },
+        {
+          "factor": "Coronary vasospasm",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        },
+        {
+          "factor": "Hypertension, dyslipidemia, diabetes, smoking (shared coronary risk factors)",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Angina Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新發、惡化、休息時發作、持續性或反覆發作且未如預期緩解的胸部不適",
+          "urgency_level": "emergency",
+          "recommended_action": "立即以急性冠心症處理並轉診急診",
+          "rationale": "須排除急性冠心症／心肌梗塞",
+          "source": "NHLBI - Angina Symptoms"
+        },
+        {
+          "finding": "無法自信區分心絞痛與心肌梗塞",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "當不確定時，急診評估優先於觀察等待",
+          "source": "NHLBI - Angina Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Chest discomfort that is new, worsening, occurring at rest, prolonged, recurrent, or not relieved as expected",
+          "urgency_level": "emergency",
+          "recommended_action": "Treat as possible acute coronary syndrome and refer for emergency evaluation",
+          "rationale": "Must exclude acute coronary syndrome / MI",
+          "source": "NHLBI - Angina Symptoms"
+        },
+        {
+          "finding": "Inability to confidently distinguish angina from MI",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "When uncertain, emergency evaluation takes priority over watchful waiting",
+          "source": "NHLBI - Angina Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅可作為病情穩定、已經西醫評估病人的輔助性照護",
+        "precautions": "新發或型態改變的胸部症狀不應直接以氣滯、胸痺、肌肉緊繃或胃食道逆流解讀，須先經過適當生醫檢傷",
+        "co_management": "須聯絡病人的心臟科或主治醫師確認評估與治療進度，執業者不得建議病人自行調整或停用抗心絞痛藥物",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於心絞痛的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture may be considered only as adjunctive care in stable, medically evaluated patients",
+        "precautions": "New or changing chest symptoms should not be interpreted as Qi stagnation, chest Bi, muscle tension or reflux without appropriate biomedical triage",
+        "co_management": "Contact the patient's cardiologist or physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust or stop antianginal medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for angina was located"
+      },
+      "sign_symptom_ids": [
+        "sym.nausea",
+        "sym.dizziness"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NHLBI - Angina: https://www.nhlbi.nih.gov/health/angina",
+        "NHLBI - Angina Types: https://www.nhlbi.nih.gov/health/angina/types",
+        "NHLBI - Angina Causes and Risk Factors: https://www.nhlbi.nih.gov/health/angina/causes",
+        "NHLBI - Angina Symptoms: https://www.nhlbi.nih.gov/health/angina/symptoms",
+        "NHLBI - Angina Diagnosis: https://www.nhlbi.nih.gov/health/angina/diagnosis",
+        "NHLBI - Angina Treatment: https://www.nhlbi.nih.gov/health/angina/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Angina"
+        ],
+        "summary_en": [
+          "NHLBI - Angina"
+        ],
+        "etiology_zh": [
+          "NHLBI - Angina Causes and Risk Factors"
+        ],
+        "etiology_en": [
+          "NHLBI - Angina Causes and Risk Factors"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Angina Types"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Angina Types"
+        ],
+        "western_context_zh": [
+          "NHLBI - Angina Diagnosis",
+          "NHLBI - Angina Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Angina Diagnosis",
+          "NHLBI - Angina Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Angina Causes and Risk Factors"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Angina Causes and Risk Factors"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Angina Symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI - Angina Symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.aneurysm",
+      "entity_type": "biomedical_condition",
+      "name_zh": "主動脈瘤",
+      "name_en": "Aortic Aneurysm",
+      "category": "cardio",
+      "icd_hint": "I71",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "腹主動脈瘤",
+        "胸主動脈瘤"
+      ],
+      "aliases_en": [
+        "AAA",
+        "Abdominal Aortic Aneurysm",
+        "TAA",
+        "Thoracic Aortic Aneurysm"
+      ],
+      "summary_zh": "主動脈瘤是主動脈壁弱化所造成的異常氣球狀擴張。主要型態包含腹主動脈瘤（AAA）與胸主動脈瘤（TAA）。動脈瘤可能無症狀地逐漸增大，若破裂或併發剝離則可能危及生命。範圍說明：本記錄以主動脈瘤為研究核心；顱內（腦）動脈瘤屬於不同的神經科疾病實體，危險因子、併發症與診療路徑皆不相同，不應與本記錄內容混用。",
+      "summary_en": "An aortic aneurysm is an abnormal balloon-like enlargement of the aorta caused by weakening of the vessel wall. Major forms include abdominal aortic aneurysm (AAA) and thoracic aortic aneurysm (TAA). Aneurysms can enlarge silently and may become life-threatening if they rupture or are complicated by dissection. Scope note: this record is aortic-aneurysm-focused; intracranial (cerebral) aneurysm is a distinct neurologic disease entity with different risk factors, complications and diagnostic pathways, and should not be conflated with this record's content.",
+      "etiology_zh": "主動脈瘤的風險反映血管壁退化、年齡、吸菸、高血壓、動脈粥狀硬化性疾病、家族／遺傳性疾病、二尖瓣主動脈瓣、結締組織症候群、特定感染／發炎，以及創傷之間的交互作用。",
+      "etiology_en": "Aortic aneurysm risk reflects interaction among vessel-wall degeneration, age, smoking, hypertension, atherosclerotic disease, family/genetic conditions, bicuspid aortic valve, connective-tissue syndromes, selected infections/inflammation and trauma.",
+      "western_pathology_zh": "主動脈壁弱化使其在全身血壓作用下逐漸擴張。隨著直徑與血管壁張力增加，破裂或剝離的風險也隨之上升。擴張也可能壓迫鄰近結構或影響主動脈瓣功能。",
+      "western_pathology_en": "Weakening of the aortic wall permits progressive dilation under systemic pressure. As diameter and wall stress increase, risk of rupture or dissection rises. Expansion can also compress nearby structures or affect aortic-valve function.",
+      "western_context_zh": "臨床定位：動脈瘤是解剖學／病理學上的上位概念，並非單一均質的臨床疾病。主動脈瘤與顱內動脈瘤在危險因子、併發症、診斷路徑與專科分工上皆不相同；NHLBI對於腹主動脈瘤的診斷閾值為腹主動脈直徑達3公分以上，胸主動脈的判讀則須依部位與病人特徵而定。\n\n臨床表現：多數主動脈瘤無症狀。依部位不同，可能出現胸部、背部、腹部、頸部、下顎或肩膀疼痛；腹部搏動感；聲音沙啞；吞嚥困難；呼吸困難；或因壓迫鄰近結構而產生的症狀。\n\n重要特徵：在增大或併發之前多半無症狀；AAA與TAA屬於臨床上不同的亞型；影像檢查用於界定部位與大小；破裂與主動脈剝離是主要的致命急症；已知穩定動脈瘤可能需要定期影像追蹤。\n\n診斷方法：影像檢查為核心。超音波廣泛用於AAA篩檢與追蹤，電腦斷層、核磁共振與心臟超音波則依部位與臨床問題選用。影像應記錄部位、直徑、形態與相關情況下的間隔增長速度。\n\n鑑別診斷：主動脈剝離、急性冠心症、肺栓塞、腎臟或膽道絞痛、胰臟炎、肌肉骨骼背部／胸部疼痛，以及其他造成腹部腫塊或搏動感的病因；顱內動脈瘤則屬於另一條神經科鑑別診斷路徑。\n\n西醫治療：處置依部位、大小、增長速度、病因與病人風險而定。較小、穩定的主動脈瘤可能以影像追蹤與心血管危險因子控制為主；較大、快速增大、有症狀或已併發的動脈瘤可能需要開放手術或血管內修復。破裂或剝離可能需要緊急手術。\n\n編碼備註：動脈瘤編碼高度依血管部位、破裂狀態，以及若為主動脈瘤則須進一步依解剖節段而定，籠統的「動脈瘤」不足以支持精確編碼，實際編碼須於個案登錄時核對當年度CDC/NCHS ICD-10-CM表列清單。",
+      "western_context_en": "Clinical definition: Aneurysm refers to abnormal focal vessel dilation, but the clinically useful definition and threshold depend on vascular territory. In NHLBI guidance, an abdominal aortic aneurysm is diagnosed when the abdominal aorta measures 3 cm or greater; thoracic dimensions are interpreted using location and patient characteristics.\n\nClinical presentation: Many aortic aneurysms cause no symptoms. Depending on location, possible symptoms include chest, back, abdominal, neck, jaw or shoulder pain; pulsating abdominal sensation; hoarseness; swallowing difficulty; dyspnea; or symptoms from compression of nearby structures.\n\nKey features: often asymptomatic until large or complicated; AAA and TAA are clinically distinct subtypes; imaging defines location and size; rupture and aortic dissection are major emergencies; serial imaging may be needed for known stable aneurysms.\n\nDiagnostic approach: Imaging is central. Ultrasound is widely used for AAA screening and follow-up. CT, MRI and echocardiography are selected according to location and clinical question. Imaging should document location, diameter, morphology and interval growth when relevant.\n\nDifferential diagnosis: aortic dissection, acute coronary syndrome, pulmonary embolism, renal or biliary colic, pancreatitis, musculoskeletal back/chest pain, and other causes of abdominal mass or pulsation; intracranial aneurysm belongs to a separate neurologic differential pathway.\n\nWestern treatment: Management depends on location, size, growth rate, cause and patient risk. Smaller stable aortic aneurysms may be monitored with imaging and cardiovascular risk-factor management. Larger, rapidly enlarging, symptomatic or complicated aneurysms may require open surgical or endovascular repair. Rupture or dissection can require emergency surgery.\n\nCoding note: Aneurysm coding is highly dependent on vascular site, rupture status and, for aortic aneurysm, anatomical segment — a generic 'aneurysm' is insufficient for exact coding; use the active CDC/NCHS ICD-10-CM tabular list at the time of coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "高血壓",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "動脈粥狀硬化性疾病",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "家族史／遺傳性疾病（含結締組織症候群）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "二尖瓣主動脈瓣",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "Hypertension",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "Atherosclerotic disease",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "Family history / genetic conditions (including connective-tissue syndromes)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        },
+        {
+          "factor": "Bicuspid aortic valve",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突發劇烈胸痛、背痛或腹痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "須排除動脈瘤破裂或主動脈剝離",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "頭暈或近乎暈厥",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能反映血流動力學不穩定",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "心搏過速",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能為急性失血或休克代償反應",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "休克徵象",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示已發生嚴重出血或循環衰竭",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "已知動脈瘤病人出現突發新症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "須立即排除破裂或剝離，不應觀察等待",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden severe chest, back or abdominal pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Must exclude aneurysm rupture or aortic dissection",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "Lightheadedness or near-syncope",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May reflect hemodynamic instability",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "Rapid heart rate",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May be a compensatory response to acute blood loss or shock",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "Shock symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests severe hemorrhage or circulatory failure has occurred",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        },
+        {
+          "finding": "Known aneurysm with abrupt new symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Rupture or dissection must be excluded immediately, not observed",
+          "source": "NHLBI - Aortic Aneurysm Symptoms"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸無法治療或縮小動脈瘤",
+        "precautions": "已知動脈瘤病人的血壓控制、運動限制與抗血栓藥物使用可能影響輔助照護的安全性；動脈瘤病人若出現新發嚴重胸／背／腹痛，須立即轉診急診，不可以局部針刺或手法治療處理",
+        "co_management": "須聯絡病人的心血管外科或主治醫師確認評估與追蹤進度，執業者不得建議病人自行調整用藥或延後影像追蹤",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於主動脈瘤的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture does not treat or reduce an aneurysm",
+        "precautions": "Known aneurysm status, blood-pressure control, exercise restrictions and antithrombotic use may affect safe adjunctive care; new severe chest, back or abdominal pain in a patient with an aneurysm requires emergency evaluation, not local needling or manual therapy",
+        "co_management": "Contact the patient's vascular surgeon or physician to confirm evaluation and surveillance status; practitioners must not advise the patient to independently adjust medication or delay imaging follow-up",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for aortic aneurysm was located"
+      },
+      "sign_symptom_ids": [],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NHLBI - Aortic Aneurysm: https://www.nhlbi.nih.gov/health/aortic-aneurysm",
+        "NHLBI - Aortic Aneurysm Causes and Risk Factors: https://www.nhlbi.nih.gov/health/aortic-aneurysm/causes",
+        "NHLBI - Aortic Aneurysm Symptoms: https://www.nhlbi.nih.gov/health/aortic-aneurysm/symptoms",
+        "NHLBI - Aortic Aneurysm Diagnosis: https://www.nhlbi.nih.gov/health/aortic-aneurysm/diagnosis",
+        "NHLBI - Aortic Aneurysm Treatment: https://www.nhlbi.nih.gov/health/aortic-aneurysm/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NHLBI - Aortic Aneurysm"
+        ],
+        "summary_en": [
+          "NHLBI - Aortic Aneurysm"
+        ],
+        "etiology_zh": [
+          "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        ],
+        "etiology_en": [
+          "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Aortic Aneurysm"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Aortic Aneurysm"
+        ],
+        "western_context_zh": [
+          "NHLBI - Aortic Aneurysm Diagnosis",
+          "NHLBI - Aortic Aneurysm Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Aortic Aneurysm Diagnosis",
+          "NHLBI - Aortic Aneurysm Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Aortic Aneurysm Causes and Risk Factors"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Aortic Aneurysm Symptoms"
+        ],
+        "red_flags_en": [
+          "NHLBI - Aortic Aneurysm Symptoms"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.transient_ischemic_attack",
+      "entity_type": "biomedical_condition",
+      "name_zh": "暫時性腦缺血發作",
+      "name_en": "Transient Ischemic Attack",
+      "category": "neuro",
+      "icd_hint": "G45",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "小中風"
+      ],
+      "aliases_en": [
+        "TIA"
+      ],
+      "summary_zh": "暫時性腦缺血發作是因腦部或視網膜血流暫時中斷所造成的短暫局部神經功能障礙，不留下已確立中風的持續性臨床缺損。TIA是一種醫療警訊事件，因為潛在的血管病因可能很快導致完成性缺血性中風。",
+      "summary_en": "A transient ischemic attack is a brief episode of focal neurologic dysfunction caused by temporary interruption of blood flow to the brain or retina without the persistent clinical deficit of an established stroke. TIA is a medical warning event because an underlying vascular source can soon cause a completed ischemic stroke.",
+      "etiology_zh": "可能的缺血來源包括：大血管動脈粥狀硬化性疾病、頸動脈或椎基底動脈疾病、心因性栓塞（如心房顫動）、小血管疾病，以及其他栓塞性或血管性病因。危險因子評估與缺血性中風的預防重疊。",
+      "etiology_en": "Potential ischemic sources include large-artery atherosclerotic disease, carotid or vertebrobasilar disease, cardioembolism such as atrial fibrillation, small-vessel disease, and other embolic or vascular causes. Risk-factor evaluation overlaps ischemic stroke prevention.",
+      "western_pathology_zh": "腦部或視網膜血流暫時受阻或嚴重減少，會產生局部神經功能障礙。當灌流恢復或阻塞消散時症狀可能緩解，但造成該事件的血管病變可能仍然存在，並可能導致日後的腦梗塞。",
+      "western_pathology_en": "Transient obstruction or severe reduction of cerebral or retinal blood flow produces focal neurologic dysfunction. Symptoms can resolve when perfusion is restored or the obstruction dissipates, but the causative vascular disease may remain and can lead to later infarction.",
+      "western_context_zh": "臨床定位：TIA並非單純「會自己好的頭暈」、暈厥發作，或模糊的短暫症狀。典型表現為突發性、類似中風的局部缺損，例如單側無力／麻木、言語／語言障礙或急性視力喪失。現代臨床思維更重視「缺血證據」與「病因緊急評估」，而非僅依賴僵化的症狀持續時間切點。\n\n臨床表現：可能出現的突發症狀包含單側臉部／手臂／腿部無力或麻木、言語或語言困難、急性單眼或雙眼視覺障礙、平衡失調、協調障礙，或其他局部神經缺損。症狀可能在就醫前已緩解，但這不代表可以忽略此事件。\n\n重要特徵：屬於突發性局部神經功能障礙；症狀可能完全緩解；已緩解的缺損仍屬於急症；TIA是重要的中風警訊事件；病因評估至關重要；TIA預設不等於一般性頭暈、暈厥或焦慮。\n\n診斷方法：緊急評估可能包含腦部影像、血管影像、心電圖／心臟評估、實驗室檢查，以及針對潛在栓塞或血管病因的評估。診斷流程須將TIA與完成性缺血性中風區分，也須與類TIA疾病（如癲癇、偏頭痛先兆、低血糖、前庭疾病）做鑑別。\n\n鑑別診斷：缺血性中風、偏頭痛併先兆、局部性癲癇發作／發作後缺損、低血糖、周邊前庭疾病、暈厥／暈厥前兆、功能性神經症狀表現，以及其他代謝或中毒性病因。\n\n西醫治療：處置重點為快速的中風預防與病因治療。依病因與病人情況，可能包含抗血小板治療、特定心因性栓塞病因的抗凝治療、statin類藥物、血壓與糖尿病管理、戒菸，以及適當時的頸動脈或其他血管處置。\n\n編碼備註：TIA編碼屬於暫時性腦缺血發作／症候群家族，須依已記錄的症候群而定；未確立梗塞時不應編碼為完成性中風，也不應在未有紀錄的情況下推論精確的TIA亞型，實際編碼須核對當年度ICD-10-CM年度版本。",
+      "western_context_en": "Clinical definition: TIA is not simply \"dizziness that goes away,\" a fainting spell or a vague transient symptom. It typically begins suddenly with focal stroke-like deficits such as unilateral weakness/numbness, speech/language disturbance or acute visual loss. Modern clinical reasoning emphasizes evidence of transient ischemia and urgent cause evaluation rather than relying only on a rigid symptom-duration cutoff.\n\nClinical presentation: Possible sudden symptoms include unilateral face/arm/leg weakness or numbness, speech or language difficulty, acute monocular or binocular visual disturbance, imbalance, coordination problems or other focal neurologic deficits. Symptoms may resolve before medical assessment, which does not make the event safe to ignore.\n\nKey features: sudden focal neurologic dysfunction; symptoms may fully resolve; a resolved deficit is still urgent; TIA is a major stroke-warning event; cause evaluation is essential; TIA is not automatically equivalent to generalized dizziness, syncope or anxiety.\n\nDiagnostic approach: Urgent evaluation may include brain imaging, vascular imaging, ECG/cardiac evaluation, laboratory testing and assessment for the underlying embolic or vascular cause. Diagnostic work should distinguish TIA from completed ischemic stroke and from mimics such as seizure, migraine aura, hypoglycemia and vestibular disorders.\n\nDifferential diagnosis: ischemic stroke, migraine with aura, focal seizure / postictal deficit, hypoglycemia, peripheral vestibular disease, syncope/presyncope, functional neurologic presentation, and other metabolic or toxic causes.\n\nWestern treatment: Management focuses on rapid stroke prevention and treatment of the cause. Depending on etiology and patient context, this can include antiplatelet therapy, anticoagulation for selected cardioembolic causes, statin therapy, blood-pressure and diabetes management, smoking cessation and carotid or other vascular procedures when indicated.\n\nCoding note: TIA coding belongs to transient cerebral ischemic attack/syndrome families and depends on the documented syndrome — do not code a completed stroke when no infarction is established, and do not infer a precise TIA subtype without documentation; verify the active ICD-10-CM year.",
+      "risk_factors_zh": [
+        {
+          "factor": "大血管動脈粥狀硬化性疾病",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "心房顫動等心因性栓塞來源",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "高血壓",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "糖尿病",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "既往TIA或中風病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS - Stroke Overview"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Large-artery atherosclerotic disease",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "Cardioembolic source such as atrial fibrillation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "Hypertension",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "Diabetes",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NINDS - Stroke Overview"
+        },
+        {
+          "factor": "Prior TIA or stroke",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS - Stroke Overview"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "任何新發中風樣症狀，即使數分鐘內緩解",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／中風系統評估",
+          "rationale": "不應等待症狀復發，也不應因神經學檢查恢復正常而以針灸繼續處置",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        },
+        {
+          "finding": "單側肢體無力或麻木",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為典型局部神經缺損表現",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        },
+        {
+          "finding": "言語或語言障礙",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為典型局部神經缺損表現",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        },
+        {
+          "finding": "急性視力喪失",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能反映視網膜或腦部缺血",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Any new stroke-like symptoms, even if they improve within minutes",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/stroke-system evaluation",
+          "rationale": "Do not wait for symptoms to recur, and do not proceed with acupuncture because the neurologic examination appears normal after resolution",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        },
+        {
+          "finding": "Unilateral limb weakness or numbness",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A classic focal neurologic deficit presentation",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        },
+        {
+          "finding": "Speech or language difficulty",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "A classic focal neurologic deficit presentation",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        },
+        {
+          "finding": "Acute visual loss",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "May reflect retinal or cerebral ischemia",
+          "source": "NINDS - Signs and Symptoms of Stroke"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "疑似或近期未經評估的TIA須立即進行急症／中風系統評估，不屬於針灸處置範圍",
+        "precautions": "醫療穩定後，輔助照護僅能在病人的醫療計畫範圍內處理殘餘症狀或風險因子相關的生活品質問題",
+        "co_management": "須聯絡病人的神經科或主治醫師確認評估與二級預防治療進度，執業者不得建議病人自行調整用藥",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NINDS/NHLBI臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於TIA的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "A suspected or recent unevaluated TIA requires emergency/urgent stroke-system assessment, not acupuncture",
+        "precautions": "After medical stabilization, adjunctive care can address residual symptoms or risk-factor-related quality-of-life concerns only within the patient's medical plan",
+        "co_management": "Contact the patient's neurologist or physician to confirm evaluation and secondary-prevention treatment status; practitioners must not advise the patient to independently adjust medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NINDS/NHLBI clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for TIA was located"
+      },
+      "sign_symptom_ids": [],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NINDS - Stroke Overview: https://www.ninds.nih.gov/health-information/stroke/stroke-overview",
+        "NINDS - Signs and Symptoms of Stroke: https://www.ninds.nih.gov/health-information/stroke/signs-and-symptoms",
+        "NINDS - Assess and Treat: https://www.ninds.nih.gov/health-information/stroke/assess-and-treat",
+        "NHLBI - Stroke Diagnosis: https://www.nhlbi.nih.gov/health/stroke/diagnosis",
+        "NHLBI - Stroke Treatment: https://www.nhlbi.nih.gov/health/stroke/treatment",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "NINDS - Stroke Overview"
+        ],
+        "summary_en": [
+          "NINDS - Stroke Overview"
+        ],
+        "etiology_zh": [
+          "NINDS - Stroke Overview"
+        ],
+        "etiology_en": [
+          "NINDS - Stroke Overview"
+        ],
+        "western_pathology_zh": [
+          "NINDS - Stroke Overview"
+        ],
+        "western_pathology_en": [
+          "NINDS - Stroke Overview"
+        ],
+        "western_context_zh": [
+          "NHLBI - Stroke Diagnosis",
+          "NHLBI - Stroke Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Stroke Diagnosis",
+          "NHLBI - Stroke Treatment"
+        ],
+        "risk_factors_zh": [
+          "NINDS - Stroke Overview"
+        ],
+        "risk_factors_en": [
+          "NINDS - Stroke Overview"
+        ],
+        "red_flags_zh": [
+          "NINDS - Signs and Symptoms of Stroke"
+        ],
+        "red_flags_en": [
+          "NINDS - Signs and Symptoms of Stroke"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NINDS/NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NINDS/NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "ninds_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.giant_cell_arteritis",
+      "entity_type": "biomedical_condition",
+      "name_zh": "巨細胞動脈炎／顳動脈炎",
+      "name_en": "Giant Cell Arteritis",
+      "category": "immune_misc",
+      "icd_hint": "M31",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "顳動脈炎"
+      ],
+      "aliases_en": [
+        "Temporal Arteritis",
+        "GCA"
+      ],
+      "summary_zh": "巨細胞動脈炎是一種侵犯中、大型動脈的發炎性血管炎，常侵犯顱內分支如顳動脈，有時也侵犯主動脈或其主要分支。幾乎只發生於50歲以上成人，若未及時治療可能造成永久性視力喪失。",
+      "summary_en": "Giant cell arteritis is an inflammatory vasculitis of medium and large arteries, often involving cranial branches such as the temporal arteries and sometimes the aorta or its major branches. It occurs almost exclusively in adults over age 50 and can cause permanent visual loss if not treated promptly.",
+      "etiology_zh": "確切病因尚未完全釐清。巨細胞動脈炎屬於免疫媒介性疾病，與年齡及發炎／自體免疫易感性相關，常與多發性風濕性肌痛症重疊出現。",
+      "etiology_en": "The exact cause is not fully established. GCA is immune-mediated and is associated with age and inflammatory/autoimmune susceptibility. It frequently overlaps polymyalgia rheumatica.",
+      "western_pathology_zh": "受侵犯動脈壁的發炎會造成血管壁增厚、管腔狹窄與血流受損。眼部、顱部或其他血管區域的缺血可能造成視力喪失、下顎跛行、中風／TIA或大血管併發症。",
+      "western_pathology_en": "Inflammation of affected arterial walls causes wall thickening, luminal narrowing and impaired blood flow. Ischemia of ocular, cranial or other vascular territories can produce vision loss, jaw claudication, stroke/TIA or large-vessel complications.",
+      "western_context_zh": "臨床定位：「顳動脈炎」是巨細胞動脈炎常見的歷史／臨床稱呼，但GCA的侵犯範圍可能超出顳動脈。除非本資料庫另有既定命名慣例，否則此記錄以GCA作為較廣義的正典生醫病名，並保留「顳動脈炎」作為別名。\n\n臨床表現：重要特徵包括新發頭痛、顳部／頭皮壓痛、下顎跛行、疲勞、發燒、食慾下降，以及視覺症狀如複視或視力喪失。可能同時併有多發性風濕性肌痛症症狀。大血管疾病可能造成肢體跛行或主動脈併發症。\n\n重要特徵：好發於50歲以上成人；適當年齡層的新發頭痛是重要線索；下顎跛行與視覺症狀為高價值特徵；ESR／CRP支持發炎但非特異性；顳動脈切片與血管影像可協助診斷；治療的緊迫性由缺血／視力風險決定。\n\n診斷方法：診斷結合臨床病史與理學檢查，以及ESR、CRP等發炎指標。顳動脈切片為經典的確診檢查。超音波及其他血管影像（包括特定情況下的電腦斷層、核磁共振或正子攝影）可協助辨識顱部或大血管的發炎。\n\n鑑別診斷：偏頭痛或其他原發性頭痛、緊張型頭痛、顳顎關節或牙科疼痛、其他血管炎、無合併GCA的多發性風濕性肌痛症、頸動脈或其他血管疾病、造成急性視力喪失的眼科病因，以及造成全身性症狀的感染或惡性腫瘤。\n\n西醫治療：及早使用糖皮質類固醇是主要的初始治療，目的在降低缺血性併發症風險。部分病人可能加用其他免疫調節治療。長期照護包含監測疾病活動度、治療副作用與大血管併發症。\n\n編碼備註：GCA／顳動脈炎屬於血管炎／動脈炎編碼家族，確切編碼可能因已記錄的血管侵犯範圍或合併疾病而異，實際編碼須於個案登錄前核對當年度CDC/NCHS ICD-10-CM。",
+      "western_context_en": "Clinical definition: Temporal arteritis is a common historical/clinical name for giant cell arteritis, but GCA can extend beyond the temporal arteries. The card should therefore use GCA as the broader canonical biomedical identity while preserving \"temporal arteritis\" as an alias unless the current repo has a different convention.\n\nClinical presentation: Important features include new headache, temporal/scalp tenderness, jaw claudication, fatigue, fever, loss of appetite and visual symptoms such as diplopia or vision loss. Polymyalgia rheumatica symptoms can coexist. Large-vessel disease can produce limb claudication or aortic complications.\n\nKey features: usually age >50; new headache in the appropriate age group is a major clue; jaw claudication and visual symptoms are high-value features; ESR/CRP support inflammation but are not specific; temporal-artery biopsy and vascular imaging can support diagnosis; treatment urgency is driven by ischemic/vision risk.\n\nDiagnostic approach: Diagnosis uses clinical history and examination plus inflammatory markers such as ESR and CRP. Temporal-artery biopsy is a classic confirmatory test. Ultrasound and other vascular imaging, including CT, MRI or PET in selected cases, can identify cranial or large-vessel inflammation.\n\nDifferential diagnosis: migraine or other primary headache, tension-type headache, temporomandibular or dental pain, other vasculitides, polymyalgia rheumatica without GCA, carotid or other vascular disease, ophthalmic causes of acute visual loss, and infection or malignancy causing constitutional symptoms.\n\nWestern treatment: Prompt glucocorticoid therapy is the main initial treatment to reduce ischemic complications. Additional immunomodulatory therapy may be used in selected patients. Longitudinal care includes monitoring disease activity, treatment adverse effects and large-vessel complications.\n\nCoding note: GCA/temporal arteritis belongs to vasculitis/arteritis coding families; exact coding can vary with documented vessel involvement or related conditions — verify the active fiscal-year ICD-10-CM before coding.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡超過50歲",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        },
+        {
+          "factor": "同時患有多發性風濕性肌痛症",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        },
+        {
+          "factor": "女性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Age over 50",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        },
+        {
+          "factor": "Coexisting polymyalgia rheumatica",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        },
+        {
+          "factor": "Female sex",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新發視力喪失",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／眼科評估",
+          "rationale": "延誤治療可能造成不可逆失明",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        },
+        {
+          "finding": "暫時性單眼視力喪失",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／眼科評估",
+          "rationale": "為視力喪失的前兆警訊",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        },
+        {
+          "finding": "複視",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／眼科評估",
+          "rationale": "提示眼部缺血，須緊急處置",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        },
+        {
+          "finding": "其他缺血性症狀",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "治療可能須在確診檢查完成前即開始，以避免延誤造成失明",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New visual loss",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/ophthalmology evaluation",
+          "rationale": "Delay can lead to irreversible blindness",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        },
+        {
+          "finding": "Transient monocular vision loss",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/ophthalmology evaluation",
+          "rationale": "A warning sign preceding vision loss",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        },
+        {
+          "finding": "Diplopia",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency/ophthalmology evaluation",
+          "rationale": "Suggests ocular ischemia requiring urgent management",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        },
+        {
+          "finding": "Other ischemic symptoms",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Treatment may need to begin before confirmatory testing is complete because delay can lead to blindness",
+          "source": "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "疑似GCA屬於轉診／急症辨識病症，尤其當50歲以上病人出現新發頭痛、下顎跛行或視覺改變時",
+        "precautions": "以「頭痛」為主訴進行針灸治療前，若病人症狀符合此型態，絕不應延誤評估",
+        "co_management": "須立即轉診或聯絡病人的風濕科／主治醫師確認評估與治療進度，執業者不得建議病人自行調整類固醇用藥",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NIAMS臨床資料整理）",
+        "note": "此欄為執業範圍安全警示，尚未查到專屬於巨細胞動脈炎的針灸療效臨床指引"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Suspected GCA is a referral/emergency-recognition condition, especially when new headache, jaw claudication or visual change occurs in a patient over 50",
+        "precautions": "Acupuncture for \"headache\" should never delay evaluation when this phenotype is present",
+        "co_management": "Refer immediately or contact the patient's rheumatologist/physician to confirm evaluation and treatment status; practitioners must not advise the patient to independently adjust steroid medication",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NIAMS clinical materials)",
+        "note": "This is a scope-of-practice safety caution, not a condition-specific acupuncture efficacy guideline — no acupuncture-specific evidence for GCA was located"
+      },
+      "sign_symptom_ids": [
+        "sym.headache",
+        "sym.fatigue",
+        "sym.fever"
+      ],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis: https://www.niams.nih.gov/health-topics/polymyalgia-rheumatica-giant-cell-arteritis",
+        "NIAMS - Diagnosis, Treatment, and Steps to Take: https://www.niams.nih.gov/health-topics/polymyalgia-rheumatica-giant-cell-arteritis/diagnosis-treatment-and-steps-to-take",
+        "MedlinePlus - Giant Cell Arteritis: https://medlineplus.gov/giantcellarteritis.html",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus - Giant Cell Arteritis"
+        ],
+        "summary_en": [
+          "MedlinePlus - Giant Cell Arteritis"
+        ],
+        "etiology_zh": [
+          "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        ],
+        "etiology_en": [
+          "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        ],
+        "western_pathology_zh": [
+          "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        ],
+        "western_pathology_en": [
+          "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        ],
+        "western_context_zh": [
+          "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        ],
+        "western_context_en": [
+          "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        ],
+        "risk_factors_zh": [
+          "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        ],
+        "risk_factors_en": [
+          "NIAMS - Polymyalgia Rheumatica and Giant Cell Arteritis"
+        ],
+        "red_flags_zh": [
+          "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        ],
+        "red_flags_en": [
+          "NIAMS - Diagnosis, Treatment, and Steps to Take"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NIAMS臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NIAMS clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "niams_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
+    },
+    {
+      "id": "cond.pneumothorax",
+      "entity_type": "biomedical_condition",
+      "name_zh": "氣胸",
+      "name_en": "Pneumothorax",
+      "category": "respiratory",
+      "icd_hint": "J93",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "aliases_zh": [
+        "肺塌陷"
+      ],
+      "aliases_en": [
+        "Collapsed Lung"
+      ],
+      "summary_zh": "氣胸是胸膜腔內異常積氣，可能造成患側肺部部分或完全塌陷。嚴重程度範圍從小型穩定氣胸，到危及生命的張力性氣胸併呼吸循環嚴重受損都有可能。",
+      "summary_en": "Pneumothorax is abnormal accumulation of air in the pleural space, which can cause partial or complete collapse of the affected lung. Severity ranges from a small stable pneumothorax to tension pneumothorax with life-threatening respiratory and circulatory compromise.",
+      "etiology_zh": "重要情境包括：原發性自發性氣胸、合併潛在肺部疾病的續發性自發性氣胸、胸部創傷、醫源性或處置相關氣胸、正壓通氣，以及易感族群的特定壓力變化暴露。",
+      "etiology_en": "Important contexts include primary spontaneous pneumothorax, secondary spontaneous pneumothorax with underlying lung disease, chest trauma, iatrogenic or procedure-related pneumothorax, positive-pressure ventilation, and selected pressure-change exposures in susceptible people.",
+      "western_pathology_zh": "空氣進入胸膜腔會使臟層與壁層胸膜分離，並降低原本維持肺部擴張所需的負壓，導致患側肺部部分或完全塌陷。張力性氣胸時，胸內壓力上升足以妨礙靜脈回流與循環，造成阻塞性休克。",
+      "western_pathology_en": "Air entering the pleural space separates the visceral and parietal pleura and reduces the negative pressure that normally keeps the lung expanded. The affected lung can partially or fully collapse. In tension pneumothorax, intrathoracic pressure rises enough to impair venous return and circulation, producing obstructive shock.",
+      "western_context_zh": "臨床定位：氣胸須與肺塌陷（atelectasis）、肋膜積液、血胸與單純胸膜性疼痛清楚區分。可能自發性發生、因潛在肺部疾病而發生、因創傷發生，或作為醫療處置的併發症發生。\n\n臨床表現：典型症狀為突發性尖銳或胸膜性胸痛與呼吸困難。較大型的氣胸可能造成心搏過速、低血氧／發紺、呼吸做功增加、頭暈、近乎暈厥、低血壓或意識喪失。理學檢查可能發現患側呼吸音減弱。\n\n重要特徵：胸膜腔內積氣；突發性單側胸膜性胸痛與呼吸困難為典型表現；胸部影像通常可確診穩定型疑似氣胸；張力性氣胸屬於臨床急症，不應等待常規門診檢查；氣胸不等於肺塌陷。\n\n診斷方法：穩定病人的評估結合病史、理學檢查、血氧評估與胸部影像。胸部X光與超音波可辨識胸膜腔內積氣；當診斷不確定或須釐清合併損傷／疾病時可加做電腦斷層。病人不穩定時，張力性氣胸屬於須立即臨床判斷處置的時間敏感性診斷。\n\n鑑別診斷：肺栓塞、急性冠心症／心肌梗塞、肺炎、肋膜炎、氣喘／慢性阻塞性肺病急性惡化、主動脈疾病、肌肉骨骼胸痛、心包膜炎、血胸。\n\n西醫治療：治療依大小、症狀、病因與生理穩定度而定。小型穩定氣胸在特定情況下可能以觀察、給氧與追蹤處理；較大型或有症狀者可能需要針刺／導管引流或胸管置放。張力性氣胸須立即減壓與緊急處置。\n\n編碼備註：氣胸編碼依原發性、續發性、創傷性與醫源性等情境而異，創傷性氣胸可能屬於損傷編碼且有特定就診規則，不應在未確認機轉／情境與年度版本核對前指派單一通用編碼。",
+      "western_context_en": "Clinical definition: Pneumothorax should remain distinct from atelectasis, pleural effusion, hemothorax and simple pleuritic pain. It can occur spontaneously, because of underlying lung disease, after trauma, or as a complication of medical procedures.\n\nClinical presentation: Typical symptoms include sudden sharp or pleuritic chest pain and shortness of breath. Larger events may cause tachycardia, hypoxia/cyanosis, increased work of breathing, lightheadedness, near-syncope, hypotension or collapse. Examination can show reduced breath sounds on the affected side.\n\nKey features: air in the pleural space; sudden unilateral pleuritic chest pain and dyspnea are classic; chest imaging usually confirms a stable suspected pneumothorax; tension pneumothorax is a clinical emergency and must not wait for routine outpatient workup; pneumothorax is not the same as atelectasis.\n\nDiagnostic approach: History and examination are combined with oxygen assessment and chest imaging in stable patients. Chest X-ray and ultrasound can identify pleural air; CT may be used when diagnosis is uncertain or associated injury/disease must be defined. Tension pneumothorax is a time-critical clinical diagnosis when the patient is unstable.\n\nDifferential diagnosis: pulmonary embolism, acute coronary syndrome / MI, pneumonia, pleurisy, asthma/COPD exacerbation, aortic disease, musculoskeletal chest pain, pericarditis, hemothorax.\n\nWestern treatment: Treatment depends on size, symptoms, cause and physiologic stability. Small stable pneumothoraces may be observed with oxygen and follow-up in selected circumstances. Larger or symptomatic cases may require needle or catheter drainage and chest-tube placement. Tension pneumothorax requires immediate decompression and emergency management.\n\nCoding note: Pneumothorax coding depends on spontaneous, secondary, traumatic and iatrogenic context; traumatic pneumothorax may belong to injury coding with encounter-specific rules — do not assign a universal code without mechanism/context and active-year verification.",
+      "risk_factors_zh": [
+        {
+          "factor": "潛在肺部疾病（如慢性阻塞性肺病）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Pleural Disorders Types"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Pleural Disorders Types"
+        },
+        {
+          "factor": "近期胸部創傷或醫療處置",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Pleural Disorders Types"
+        },
+        {
+          "factor": "近期胸部／鎖骨上方深刺針灸病史",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Pleural Disorders"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Underlying lung disease (e.g., COPD)",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Pleural Disorders Types"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Pleural Disorders Types"
+        },
+        {
+          "factor": "Recent chest trauma or medical procedure",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI - Pleural Disorders Types"
+        },
+        {
+          "factor": "Recent deep thoracic/supraclavicular acupuncture needling",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI - Pleural Disorders"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嚴重胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能提示張力性氣胸",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "明顯呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能提示張力性氣胸",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "發紺",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "反映嚴重低血氧",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "低血壓",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "提示阻塞性休克，須立即減壓",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "急速惡化的呼吸窘迫或休克",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "為張力性氣胸的典型臨床表現",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "近期胸部針灸、創傷或處置後新發胸痛或呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即醫療評估排除氣胸",
+          "rationale": "應提高警覺，不應以常規治療後反應解釋",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Can indicate tension pneumothorax",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "Marked dyspnea",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Can indicate tension pneumothorax",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "Cyanosis",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Reflects severe hypoxia",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "Hypotension",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "Suggests obstructive shock requiring immediate decompression",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "Rapidly worsening respiratory distress or shock",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate emergency evaluation",
+          "rationale": "The classic presentation of tension pneumothorax",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        },
+        {
+          "finding": "New chest pain or dyspnea after recent thoracic needling, trauma or procedure",
+          "urgency_level": "emergency",
+          "recommended_action": "Immediate medical evaluation to rule out pneumothorax",
+          "rationale": "Should raise the index of suspicion rather than being explained as a routine post-treatment reaction",
+          "source": "NHLBI - Pleural Disorders Treatment"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "氣胸與針灸安全直接相關，因胸部針刺若技術、深度或解剖判斷不當，可能傷及肋膜",
+        "precautions": "近脊椎、上背部、鎖骨上方或胸壁區域施針須嚴格掌握深度與角度；施針後出現新發胸痛或呼吸困難，應立即進行醫療評估以排除氣胸，不應以常規治療後反應解讀",
+        "co_management": "疑似氣胸應立即轉診急診，不可延誤；已知病史病人須於治療前確認肺部狀況與近期處置史",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）",
+        "note": "此為胸部／鎖骨上方深刺相關的安全謹慎建議，非中醫證型分析，未涵蓋所有針刺深度門檻"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Pneumothorax is directly relevant to acupuncture safety because thoracic needling can injure the pleura if technique, depth or anatomy are inappropriate",
+        "precautions": "Depth and angle must be strictly controlled near the spine, upper back, supraclavicular region or chest wall; new chest pain or dyspnea after needling requires prompt medical assessment for pneumothorax rather than routine post-treatment reassurance",
+        "co_management": "Suspected pneumothorax should be referred to emergency care immediately without delay; for patients with relevant history, confirm lung status and recent procedure history before treating",
+        "evidence": "label_derived",
+        "source": "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)",
+        "note": "A safety caution specific to deep thoracic/supraclavicular needling, not a TCM pattern analysis; does not establish a universal depth threshold"
+      },
+      "sign_symptom_ids": [],
+      "sources": [
+        "NCBAHM 2026 Biomedicine Content Outline (Board authority)",
+        "NHLBI - Pleural Disorders: https://www.nhlbi.nih.gov/health/pleural-disorders",
+        "NHLBI - Pleural Disorders Types: https://www.nhlbi.nih.gov/health/pleural-disorders/types",
+        "NHLBI - Pleural Disorders Symptoms: https://www.nhlbi.nih.gov/health/pleural-disorders/symptoms",
+        "NHLBI - Pleural Disorders Diagnosis: https://www.nhlbi.nih.gov/health/pleural-disorders/diagnosis",
+        "NHLBI - Pleural Disorders Treatment: https://www.nhlbi.nih.gov/health/pleural-disorders/treatment",
+        "MedlinePlus - Collapsed Lung / Pneumothorax: https://medlineplus.gov/ency/article/000087.htm",
+        "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/ (coding verification only)"
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus - Collapsed Lung / Pneumothorax"
+        ],
+        "summary_en": [
+          "MedlinePlus - Collapsed Lung / Pneumothorax"
+        ],
+        "etiology_zh": [
+          "NHLBI - Pleural Disorders Types"
+        ],
+        "etiology_en": [
+          "NHLBI - Pleural Disorders Types"
+        ],
+        "western_pathology_zh": [
+          "NHLBI - Pleural Disorders"
+        ],
+        "western_pathology_en": [
+          "NHLBI - Pleural Disorders"
+        ],
+        "western_context_zh": [
+          "NHLBI - Pleural Disorders Diagnosis",
+          "NHLBI - Pleural Disorders Treatment"
+        ],
+        "western_context_en": [
+          "NHLBI - Pleural Disorders Diagnosis",
+          "NHLBI - Pleural Disorders Treatment"
+        ],
+        "risk_factors_zh": [
+          "NHLBI - Pleural Disorders Types"
+        ],
+        "risk_factors_en": [
+          "NHLBI - Pleural Disorders Types"
+        ],
+        "red_flags_zh": [
+          "NHLBI - Pleural Disorders Treatment"
+        ],
+        "red_flags_en": [
+          "NHLBI - Pleural Disorders Treatment"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular（依據NHLBI臨床資料整理）"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+        ]
+      },
+      "source_type": "sourced_research_pack",
+      "content_source": [
+        "nhlbi_overview",
+        "ncbahm_biomedicine_appendix_a",
+        "research_pack_batch_d_emergency_vascular"
+      ],
+      "source_status": "draft_pending_ting_review"
     }
   ]
 }
