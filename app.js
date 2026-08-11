@@ -7020,13 +7020,30 @@ function westernConditionPickerOptions() {
   })));
 }
 
+// INDEPENDENT_AUDIT_2026-08-11 #3-adjacent / TOP-10 #5: this picker used to
+// read `medications.records` — the 12 legacy `med.*` stubs (D15: all 12
+// contraindications empty, draft-only) — while the 40 full SPL-transcribed
+// `drug.*` cards (ACUTING_KNOWLEDGE.pharmDrugs.records, build-data.js:147)
+// sat unreachable from clinical UI. D15/D17 gate: a Visit saved after the
+// migration must never MINT a new med.* reference; med.* is compatibility-
+// only, kept so pre-migration notes keep resolving. This picker is the only
+// place medicationLinks values get minted, so switching its source to
+// pharmDrugs is sufficient — it does not touch any note that already links
+// med.* (searched app.js for a "med."-prefix resolver / id-based dispatch on
+// medicationLinks: none exists — formatNoteList()/the "Treatment record
+// links" row render every linked id as raw text with no lookup, so an
+// existing med.* id and a new drug.* id both already display correctly
+// with zero extra wiring; data/config/medication_alias_map.json exists on
+// disk from scripts/build-medication-alias-map.js but is not read by
+// build-data.js into ACUTING_KNOWLEDGE, so it is out of this fix's scope —
+// bundle untouched).
 function medicationPickerOptions() {
-  const records = globalThis.ACUTING_KNOWLEDGE?.medications?.records || [];
-  return records.map((m) => ({
-    value: m.id,
-    label: `${m.generic_name_en || m.id}${m.drug_class_en ? " · " + m.drug_class_en : ""}`,
-    terms: `${m.generic_name_en || ""} ${(m.brand_names_en || []).join(" ")} ${m.drug_class_en || ""} ${m.id}`.toLowerCase(),
-    meta: m.id,
+  const records = globalThis.ACUTING_KNOWLEDGE?.pharmDrugs?.records || [];
+  return records.map((d) => ({
+    value: d.id,
+    label: `${d.name_zh || d.id}${d.name_en ? " · " + d.name_en : ""}`,
+    terms: `${d.name_zh || ""} ${d.name_en || ""} ${(d.brand_names_en || []).join(" ")} ${d.id}`.toLowerCase(),
+    meta: d.id,
   }));
 }
 
