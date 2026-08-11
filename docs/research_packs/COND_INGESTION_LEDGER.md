@@ -40,6 +40,14 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
 | Batch F — Respiratory/Renal/Sleep | `cond.obstructive_sleep_apnea` → `cond.sleep_apnea` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact-scan found the concept already in canon under a shorter id (`cond.sleep_apnea`, `name_zh: "阻塞性睡眠呼吸中止（文件情境）"`) rather than the pack's candidate_id `cond.obstructive_sleep_apnea` — resolved to the existing id per D1 (ids never change), not created as a duplicate. C10 boilerplate `etiology_zh`/`western_pathology_zh` replaced (not appended) per validator's own authorization (same ruling as Batch C/E). Enriched summary/western_context/risk_factors/red_flags/acupuncture_scope + sign_symptom_ids + aliases, cleaned stale name suffix. |
 | Batch F — Respiratory/Renal/Sleep | `cond.pneumonia` → `cond.pneumonia` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `pneumonia`/`肺炎` — zero matches |
 | Batch F — Respiratory/Renal/Sleep | `cond.acute_bronchitis` → `cond.acute_bronchitis` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "急性支氣管炎（文件情境）"`). Same repo-wide C10-flagged shared-verbatim boilerplate as Batch C/E — replaced per validator's own authorization. Enriched summary/western_context/risk_factors/red_flags/acupuncture_scope + sign_symptom_ids, cleaned stale name suffix. |
+| Batch G — Neurology (`11_WESTERN_CONDITION_RESEARCH_BATCH_G_NEUROLOGY.md`) | `cond.bell_palsy` → `cond.bells_palsy` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact-scan found the concept already in canon under `cond.bells_palsy` (candidate_id `cond.bell_palsy` resolved to the existing id, D1). `etiology_zh`/`western_pathology_zh`/`classical_references_zh` are real, unique classical-text content (Lingshu/Zhubing Yuanhou Lun/Jingyue Quanshu/Yilin Gaicuo quotes) — left untouched, added `etiology_en`/`western_pathology_en` as condensed faithful translations. Added summary/western_context/risk_factors/red_flags/acupuncture_scope + aliases; this record had zero red flags before (C4), now has 5. |
+| Batch G — Neurology | `cond.trigeminal_neuralgia` → `cond.trigeminal_neuralgia` | 2026-08-11 | 0 baseline → 0 | EXISTING_ENRICH — exact id/name match, already had real content (aliases_en "Tic Douloureux", summary, red_flags). **`red_flags_zh`/`red_flags_en` deliberately left untouched** — wired to `data/pathology/red_flag_registry.json` via `red_flag_refs: ["rf.trigeminal_neuralgia.legacy01"]`; touching the legacy array without also updating the registry would break `validate-red-flag-wiring.js`'s verbatim-match requirement (template §3.2). Added `etiology_en`/`western_pathology_en` translations of the existing real zh content, plus western_context/risk_factors/acupuncture_scope, and one `aliases_zh` entry ("痛性抽搐") to match the existing `aliases_en` length. |
+| Batch G — Neurology | `cond.peripheral_neuropathy` → `cond.peripheral_neuropathy` | 2026-08-11 | 4 (C4+C10×2 boilerplate+C5) → 0 | EXISTING_ENRICH — exact id/name match. C10 boilerplate `etiology_zh`/`western_pathology_zh` replaced per validator's own authorization (same ruling as prior batches). Pack flags `NEAR_DUPLICATE_NEEDS_DECISION` (parent vs etiology-specific subtype) — kept as the parent/navigational card since `cond.diabetic_neuropathy` already exists in canon as a distinct etiology-specific child; `western_context_*` documents the parent/child relationship in prose (no cond-to-cond relation field exists, per Batch B–E notes). |
+| Batch G — Neurology | `cond.epilepsy` → `cond.epilepsy` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `epilepsy`/`seizure`/`癲癇` — zero matches |
+| Batch G — Neurology | `cond.parkinson_disease` → `cond.parkinsons` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact-scan found the concept already in canon under a shorter id (`cond.parkinsons`, `name_zh: "帕金森氏症（輔助文件情境）"`) rather than the pack's candidate_id `cond.parkinson_disease` — resolved to the existing id per D1. C10 boilerplate replaced per validator's own authorization. Cleaned stale name suffix, added sign_symptom_ids (`sym.tremor`). |
+| Batch G — Neurology | `cond.multiple_sclerosis` → `cond.multiple_sclerosis` | 2026-08-11 | 3 (C4+C10×2 boilerplate) → 0 | EXISTING_ENRICH — exact id/name match (`name_zh: "多發性硬化症（輔助文件情境）"`). C10 boilerplate replaced per validator's own authorization. Cleaned stale name suffix, added sign_symptom_ids (`sym.fatigue`, `sym.numbness`, `sym.blurred_vision`). |
+| Batch G — Neurology | `cond.guillain_barre_syndrome` → `cond.guillain_barre_syndrome` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `guillain`/`格林`/`巴利` — zero matches |
+| Batch G — Neurology | `cond.cauda_equina_syndrome` → `cond.cauda_equina_syndrome` | 2026-08-11 | n/a → 0 | NEW_CANDIDATE — exact-scanned for `cauda equina`/`馬尾` — zero matches. `cond.urinary_retention` exists (non-obstructive retention) but is a distinct symptom-level entity, not this emergency syndrome — no merge, no relation field available to link them (prose-only note in `western_context_*`). |
 
 ## Notes for the next ingest AI
 
@@ -202,3 +210,27 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
   needs to determine which record the text actually belongs to (almost
   certainly `cond.asthma`, given the content is asthma-specific) and what,
   if anything, real should replace it in `cond.post_covid`.
+
+## Batch G (2026-08-11) — additional notes for the next ingest AI
+
+- **Check `red_flag_refs` before touching `red_flags_zh`/`red_flags_en` on
+  any EXISTING_ENRICH target.** `cond.trigeminal_neuralgia` already carried
+  `red_flag_refs: ["rf.trigeminal_neuralgia.legacy01"]` pointing at
+  `data/pathology/red_flag_registry.json` — more records than just the
+  "Batch 4 婦科 25 張" the template §3.2 mentions may already be wired.
+  Editing the legacy `red_flags_zh`/`red_flags_en` array without also
+  updating the registry entry breaks `validate-red-flag-wiring.js`'s
+  verbatim-match requirement. This batch avoided the field entirely rather
+  than risk it — safest default until a batch is specifically scoped to
+  registry migration.
+- **Some pack candidate_ids resolve to shorter/different existing ids** —
+  this recurred twice in Batch G (`cond.bell_palsy`→`cond.bells_palsy`,
+  `cond.parkinson_disease`→`cond.parkinsons`), same pattern as Batch F's
+  `cond.obstructive_sleep_apnea`→`cond.sleep_apnea`. Always exact-scan by
+  name/alias content, not just by candidate_id string match — a same-topic
+  record with a differently-shaped id is common in this canon.
+- **Parent/child judgment**: `cond.peripheral_neuropathy` (parent, this
+  batch) coexists with the pre-existing `cond.diabetic_neuropathy` (etiology-
+  specific child) — no merge, relationship carried in prose only, following
+  the same pattern as `cond.hashimoto`/`cond.hypothyroidism` and
+  `cond.valvular_heart_disease` from earlier batches.
