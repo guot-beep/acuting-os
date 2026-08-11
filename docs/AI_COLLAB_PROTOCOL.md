@@ -65,6 +65,16 @@ exposure/ledger 歷史 · export/import 格式 · PHI/隔離 · 落 main · Clou
 production。這些做完:commit → push → 更新 HANDOFF → 可行就等下一輪 SOL
 review;SOL 或 Fable 建議 Codex audit 時,該範圍停住不往上蓋。
 
+## Codex 通道(2026-08-11 起,Ting 不再傳話)
+
+- **Fable → Codex**:任務寫進 `docs/CODEX_TASK_QUEUE.md` 最上方「⚡ NEXT TASK」
+  並 push。Ting 開 Codex session 只需固定一句:「照佇列」。
+- **Codex → Fable**:結論寫 `AI_REVIEW_FEEDBACK.md` + `CODEX_HANDOFF.md`,
+  commit+push——Fable 監聽 origin,新 commit 自動接手,無需人工轉達。
+- **即時通道(Ting 已授權)**:必要時 Fable 可直接操作 ChatGPT 桌面 app
+  (computer-use)讀取/回覆 Codex session;repo 檔案仍是正式紀錄,app 對話
+  只用於加速,不取代 repo 內的可稽核交接。
+
 ## 分支與角色
 
 - 永遠先確認實際工作分支;落 main 後**兩個共享檔都要更新**指向新真相。
