@@ -1,11 +1,12 @@
 {
   "dataset": "Symptom cards (sym.*) — the fourth diagnostic namespace (D11)",
-  "status": "pilot_0",
+  "status": "batch_a_pilot_0_plus_batch_b",
   "policy": [
     "Pilot 0 is a STRESS TEST of Batch A, not the start of a symptom database. Three cards were chosen because each loads a different part of the design: headache exercises location/quality/laterality and the red-flag layer, edema exercises the two observation modes, fever exercises the boundary between a symptom and a measurement.",
     "Records are born when someone fills them from a real source (D14). The 129 CloudTCM candidates are a gap map, not content, and are NOT imported here.",
     "Ids are permanent (D1). A card is retired with review_status deprecated, never deleted (D6).",
-    "supporting_measurements is DELIBERATELY ABSENT from sym.edema and sym.fever. The measurements they need (body weight, body temperature) do not exist in data/clinical_cases/outcome_metrics.json, and that file is the vocabulary for visit_outcomes — outcome tracking over time, not a vital-sign register. Inventing metric.body_temperature there would put a vital sign into an outcome-tracking list because that was the only list available. Reported to Ting instead; see PROJECT_LOG 2026-08-06."
+    "supporting_measurements is DELIBERATELY ABSENT from sym.edema and sym.fever. The measurements they need (body weight, body temperature) do not exist in data/clinical_cases/outcome_metrics.json, and that file is the vocabulary for visit_outcomes — outcome tracking over time, not a vital-sign register. Inventing metric.body_temperature there would put a vital sign into an outcome-tracking list because that was the only list available. Reported to Ting instead; see PROJECT_LOG 2026-08-06.",
+    "Batch B (2026-08-12, docs/SPRINT_2026-08-12_BRIEF.md) adds 15 pilot cards on top of Pilot 0's three (headache, edema, fever). Selection follows the sprint brief's priority list intersected with what is actually staged in data/research_staging/sym_seed_research_batch_b_v1.json (CR-001): insomnia, fatigue, low_back_pain, neck_pain, shoulder_pain, dizziness, vertigo, tinnitus, palpitations, nausea, abdominal_bloating, constipation, diarrhea, poor_appetite, weakness. night_sweats/anxiety-irritability-class/cold-limbs-class from the brief's suggestion were NOT staged in CR-001 and are left for a future batch rather than invented here."
   ],
   "created": "2026-08-06",
   "validator": "scripts/validate-symptom-standard.js",
@@ -17,68 +18,212 @@
       "name_en": "Headache",
       "pinyin": "tou tong",
       "pinyin_toned": "tóu tòng",
-      "aliases_zh": ["頭疼", "腦袋痛", "頭部脹痛"],
-      "aliases_en": ["Head pain", "Sore head", "Cephalalgia"],
-      "taxonomy_ids": ["sym.pain", "sym.head_face_eye"],
+      "aliases_zh": [
+        "頭疼",
+        "腦袋痛",
+        "頭部脹痛"
+      ],
+      "aliases_en": [
+        "Head pain",
+        "Sore head",
+        "Cephalalgia"
+      ],
+      "taxonomy_ids": [
+        "sym.pain",
+        "sym.head_face_eye"
+      ],
       "tradition": "both",
-      "observation_modes": ["patient_reported"],
+      "observation_modes": [
+        "patient_reported"
+      ],
       "primary_mode": "patient_reported",
       "definition_zh": "頭部的疼痛，範圍含前額、兩側、巔頂、後枕與眼眶周圍。它是主訴，不是診斷 —— 同一個「頭痛」可以出現在數十個西醫病名與中醫病名之下，所以卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
       "definition_en": "Pain in the head, spanning the forehead, temples, vertex, occiput and the region around the orbits. It is a presenting complaint, not a diagnosis — the same headache appears under dozens of biomedical and TCM disease names, so this card records what to ask and what it points toward, not a conclusion.",
       "patient_words_zh": "「一跳一跳的」「像被箍住、綁一條帶子」「頭很重，像戴著帽子」「痛到想吐、怕光」「只有一邊痛」「後腦勺緊緊的」「整個頭都是脹的」",
       "patient_words_en": "\"Throbbing\", \"like a band tightened around my head\", \"heavy, as if I'm wearing a hat\", \"bad enough to make me sick, and light hurts\", \"only one side\", \"tight at the back of my head\", \"my whole head feels full\"",
       "clinical_attributes": {
-        "location": { "applicable": true, "vocabulary": "symptom_taxonomy" },
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
         "quality": {
           "applicable": true,
           "vocabulary": "symptom_quality",
           "diagnostic_note_zh": "脹屬氣滯或肝陽 · 刺屬血瘀 · 隱屬虛 · 重屬濕痰 · 空屬精血虧虛 · 跳屬肝陽或血分"
         },
-        "laterality": { "applicable": true, "vocabulary": "symptom_laterality" },
-        "timing": { "applicable": true, "vocabulary": "symptom_timing" },
-        "severity": { "applicable": false, "why": "實例值，屬病例層（§8）" },
-        "duration": { "applicable": false, "why": "實例值，屬病例層（§8）" }
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
       },
       "inquiry_zh": [
-        { "dimension": "部位", "why": "前額屬陽明 · 兩側屬少陽 · 巔頂屬厥陰 · 後枕屬太陽。部位直接決定循經取穴" },
-        { "dimension": "性質", "why": "脹痛、刺痛、隱痛、頭重如裹分屬四類病機，是本症最有辨證重量的一問" },
-        { "dimension": "時間", "why": "晨起、午後、夜間加重各有指向；經前發作提示衝任與肝" },
-        { "dimension": "誘因", "why": "情緒、月經、勞累、風寒、睡眠不足、飲酒與特定食物" },
-        { "dimension": "緩解", "why": "按之減輕屬虛、拒按屬實、得溫則減屬寒、靜臥暗室緩解提示偏頭痛" },
-        { "dimension": "伴隨症", "why": "噁心畏光畏聲提示偏頭痛；發熱頸僵、神經缺損、意識改變則進入紅旗流程" },
-        { "dimension": "病程", "why": "新發劇烈與長期反覆的處置完全不同 —— 這一問決定要不要先轉診" }
+        {
+          "dimension": "部位",
+          "why": "前額屬陽明 · 兩側屬少陽 · 巔頂屬厥陰 · 後枕屬太陽。部位直接決定循經取穴"
+        },
+        {
+          "dimension": "性質",
+          "why": "脹痛、刺痛、隱痛、頭重如裹分屬四類病機，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起、午後、夜間加重各有指向；經前發作提示衝任與肝"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒、月經、勞累、風寒、睡眠不足、飲酒與特定食物"
+        },
+        {
+          "dimension": "緩解",
+          "why": "按之減輕屬虛、拒按屬實、得溫則減屬寒、靜臥暗室緩解提示偏頭痛"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "噁心畏光畏聲提示偏頭痛；發熱頸僵、神經缺損、意識改變則進入紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發劇烈與長期反覆的處置完全不同 —— 這一問決定要不要先轉診"
+        }
       ],
       "inquiry_en": [
-        { "dimension": "Location", "why": "Forehead = Yangming, temples = Shaoyang, vertex = Jueyin, occiput = Taiyang. Location drives channel-based point selection" },
-        { "dimension": "Quality", "why": "Distending, stabbing, dull and heavy-as-if-wrapped map to four different mechanisms — the highest-yield question on this symptom" },
-        { "dimension": "Timing", "why": "Worse on waking, in the afternoon or at night each point somewhere; premenstrual onset implicates the Chong/Ren and the Liver" },
-        { "dimension": "Triggers", "why": "Emotion, menses, exertion, wind-cold, poor sleep, alcohol and specific foods" },
-        { "dimension": "Relief", "why": "Better for pressure = deficiency, worse for pressure = excess, better for warmth = cold; relief in a dark quiet room suggests migraine" },
-        { "dimension": "Accompanying signs", "why": "Nausea, photophobia and phonophobia suggest migraine; fever with neck stiffness, focal deficit or altered consciousness enter the red-flag pathway" },
-        { "dimension": "Course", "why": "A new severe headache and a long-standing recurrent one are handled completely differently — this question decides whether to refer first" }
+        {
+          "dimension": "Location",
+          "why": "Forehead = Yangming, temples = Shaoyang, vertex = Jueyin, occiput = Taiyang. Location drives channel-based point selection"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Distending, stabbing, dull and heavy-as-if-wrapped map to four different mechanisms — the highest-yield question on this symptom"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse on waking, in the afternoon or at night each point somewhere; premenstrual onset implicates the Chong/Ren and the Liver"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Emotion, menses, exertion, wind-cold, poor sleep, alcohol and specific foods"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Better for pressure = deficiency, worse for pressure = excess, better for warmth = cold; relief in a dark quiet room suggests migraine"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Nausea, photophobia and phonophobia suggest migraine; fever with neck stiffness, focal deficit or altered consciousness enter the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "A new severe headache and a long-standing recurrent one are handled completely differently — this question decides whether to refer first"
+        }
       ],
       "differentiation_zh": [
-        { "variant": "脹痛", "points_to": ["pattern.liver_yang_rising"], "distinguishing": "頭目脹痛，多在兩側或巔頂，情緒波動或熬夜後加重，兼面紅目赤、急躁易怒、腰膝痠軟" },
-        { "variant": "刺痛", "points_to": ["pattern.blood_stasis"], "distinguishing": "痛處固定不移、拒按，夜間痛甚，多有головache 久病或外傷史，唇舌紫暗" },
-        { "variant": "隱痛綿綿", "points_to": ["pattern.qi_blood_deficiency"], "distinguishing": "痛勢綿綿，勞累後加重，按之稍舒，兼神疲乏力、面色淡白或萎黃、心悸" },
-        { "variant": "頭重如裹", "points_to": ["pattern.phlegm_damp"], "distinguishing": "頭昏沉重如布包裹，胸悶脘痞、身重困倦、痰多，陰雨天加重" },
-        { "variant": "頭痛連項背，惡風寒", "points_to": ["pattern.wind_cold"], "distinguishing": "起病急，痛連項背，遇風加重，喜裹頭，多見於外感初起" },
-        { "variant": "頭空痛", "points_to": ["pattern.kidney_essence_deficiency"], "distinguishing": "頭腦空痛，兼耳鳴、健忘、腰膝痠軟、齒搖髮脫，多見於久病或年長者" }
+        {
+          "variant": "脹痛",
+          "points_to": [
+            "pattern.liver_yang_rising"
+          ],
+          "distinguishing": "頭目脹痛，多在兩側或巔頂，情緒波動或熬夜後加重，兼面紅目赤、急躁易怒、腰膝痠軟"
+        },
+        {
+          "variant": "刺痛",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "痛處固定不移、拒按，夜間痛甚，多有головache 久病或外傷史，唇舌紫暗"
+        },
+        {
+          "variant": "隱痛綿綿",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "痛勢綿綿，勞累後加重，按之稍舒，兼神疲乏力、面色淡白或萎黃、心悸"
+        },
+        {
+          "variant": "頭重如裹",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "頭昏沉重如布包裹，胸悶脘痞、身重困倦、痰多，陰雨天加重"
+        },
+        {
+          "variant": "頭痛連項背，惡風寒",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "起病急，痛連項背，遇風加重，喜裹頭，多見於外感初起"
+        },
+        {
+          "variant": "頭空痛",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "頭腦空痛，兼耳鳴、健忘、腰膝痠軟、齒搖髮脫，多見於久病或年長者"
+        }
       ],
       "differentiation_en": [
-        { "variant": "Distending pain", "points_to": ["pattern.liver_yang_rising"], "distinguishing": "Distending pain in head and eyes, usually temporal or at the vertex, worse with emotional swings or late nights, with red face and eyes, irritability and weak aching low back and knees" },
-        { "variant": "Stabbing pain", "points_to": ["pattern.blood_stasis"], "distinguishing": "Fixed, unmoving, worse for pressure and worse at night, often long-standing or post-traumatic, with dusky lips and tongue" },
-        { "variant": "Dull lingering pain", "points_to": ["pattern.qi_blood_deficiency"], "distinguishing": "Vague and continuous, worse after exertion, slightly better for pressure, with fatigue, pale or sallow complexion and palpitations" },
-        { "variant": "Heavy head, as if wrapped", "points_to": ["pattern.phlegm_damp"], "distinguishing": "Muzzy heaviness as though the head were bound in cloth, with chest and epigastric fullness, heavy tired limbs, copious phlegm, worse in damp weather" },
-        { "variant": "Pain extending to nape and back with aversion to wind-cold", "points_to": ["pattern.wind_cold"], "distinguishing": "Abrupt onset, pain running into the nape and upper back, worse in a draught, the patient wants the head covered; typical of early external contraction" },
-        { "variant": "Empty pain", "points_to": ["pattern.kidney_essence_deficiency"], "distinguishing": "A hollow ache inside the head with tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss; usually chronic illness or older patients" }
+        {
+          "variant": "Distending pain",
+          "points_to": [
+            "pattern.liver_yang_rising"
+          ],
+          "distinguishing": "Distending pain in head and eyes, usually temporal or at the vertex, worse with emotional swings or late nights, with red face and eyes, irritability and weak aching low back and knees"
+        },
+        {
+          "variant": "Stabbing pain",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed, unmoving, worse for pressure and worse at night, often long-standing or post-traumatic, with dusky lips and tongue"
+        },
+        {
+          "variant": "Dull lingering pain",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Vague and continuous, worse after exertion, slightly better for pressure, with fatigue, pale or sallow complexion and palpitations"
+        },
+        {
+          "variant": "Heavy head, as if wrapped",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Muzzy heaviness as though the head were bound in cloth, with chest and epigastric fullness, heavy tired limbs, copious phlegm, worse in damp weather"
+        },
+        {
+          "variant": "Pain extending to nape and back with aversion to wind-cold",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "Abrupt onset, pain running into the nape and upper back, worse in a draught, the patient wants the head covered; typical of early external contraction"
+        },
+        {
+          "variant": "Empty pain",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "A hollow ache inside the head with tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss; usually chronic illness or older patients"
+        }
       ],
       "safety_review_status": "specific_red_flags_present",
       "safety_review_sources": [
         "ICHD-3 — International Classification of Headache Disorders, 3rd edition",
         "SNNOOP10 headache red-flag list (Do TP et al., Neurology 2019)"
       ],
-      "safety_flags": ["neurologic_red_flags"],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
       "red_flags_zh": [
         "霹靂性頭痛：數秒內達到最劇烈 → 立即排除蛛網膜下腔出血",
         "發熱合併頸項僵硬、畏光 → 排除腦膜炎／腦炎",
@@ -95,7 +240,9 @@
         "Worse with cough, straining, bending or lying flat → rule out abnormal intracranial pressure",
         "New headache in someone immunosuppressed, with a cancer history, or on anticoagulant/antiplatelet therapy → refer for assessment"
       ],
-      "supporting_measurements": ["metric.pain_score"],
+      "supporting_measurements": [
+        "metric.pain_score"
+      ],
       "sources": [
         "ICHD-3 — International Classification of Headache Disorders, 3rd edition（分類與發作特徵）",
         "SNNOOP10 headache red-flag list (Do TP et al., Neurology 2019)（紅旗清單）",
@@ -119,52 +266,154 @@
       "name_en": "Edema",
       "pinyin": "shui zhong",
       "pinyin_toned": "shuǐ zhǒng",
-      "aliases_zh": ["浮腫", "腫脹", "積水"],
-      "aliases_en": ["Swelling", "Puffiness", "Fluid retention"],
-      "taxonomy_ids": ["sym.general_limb"],
+      "aliases_zh": [
+        "浮腫",
+        "腫脹",
+        "積水"
+      ],
+      "aliases_en": [
+        "Swelling",
+        "Puffiness",
+        "Fluid retention"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
       "tradition": "both",
-      "observation_modes": ["patient_reported", "examiner_observed"],
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
       "primary_mode": "examiner_observed",
       "definition_zh": "水液瀦留泛溢肌膚，使眼瞼、頭面、四肢、腹背甚至全身浮腫。病人先察覺的是「穿不下、戴不上」，醫者確認的是按之凹陷與否、分布與對稱性 —— 這是本症同時具備自述與他覺兩種取得型態的原因。",
       "definition_en": "Retained fluid spilling into the tissues, puffing up the eyelids, face, limbs, abdomen and back, or the whole body. The patient notices it as things no longer fitting; the examiner confirms it by pressing for pitting and by reading the distribution and symmetry — which is why this symptom genuinely carries both observation modes.",
       "patient_words_zh": "「鞋子突然穿不下」「早上起來眼皮腫腫的」「按下去有一個坑，很久才回來」「戒指拔不下來」「腳脹脹的，一整天下來更腫」「襪子的痕跡很深」",
       "patient_words_en": "\"My shoes suddenly don't fit\", \"my eyelids are puffy when I wake up\", \"press it and there's a dent that takes ages to fill\", \"I can't get my ring off\", \"my feet feel tight, worse by the end of the day\", \"deep sock marks\"",
       "clinical_attributes": {
-        "location": { "applicable": true, "vocabulary": "symptom_taxonomy" },
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
         "quality": {
           "applicable": false,
           "why": "symptom_quality 是疼痛性質詞彙（脹刺隱空灼重竄絞酸掣墜麻冷跳）。水腫最關鍵的性質是「凹陷性／非凹陷性」與「皮膚繃急光亮／鬆軟」，該詞彙表沒有這個軸，因此不宣稱適用（見 Pilot 0 回報）"
         },
-        "laterality": { "applicable": true, "vocabulary": "symptom_laterality" },
-        "timing": { "applicable": true, "vocabulary": "symptom_timing" },
-        "severity": { "applicable": false, "why": "實例值，屬病例層（§8）" },
-        "duration": { "applicable": false, "why": "實例值，屬病例層（§8）" }
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
       },
       "inquiry_zh": [
-        { "dimension": "部位", "why": "先腫眼瞼頭面多屬陽水、風水；先腫足踝而腰以下甚多屬陰水、脾腎陽虛" },
-        { "dimension": "時間", "why": "晨起眼瞼腫、午後與久站後下肢腫 —— 這一組時間差是分辨上下與虛實的關鍵" },
-        { "dimension": "誘因", "why": "外感、飲食鹹膩、久站久坐、經前、藥物（鈣離子阻斷劑、類固醇、NSAID）" },
-        { "dimension": "緩解", "why": "抬高患肢是否消退、臥床一夜是否減輕" },
-        { "dimension": "伴隨症", "why": "尿量、尿泡沫、呼吸困難、體重變化、單側疼痛熱感 —— 紅旗都掛在這一問上" },
-        { "dimension": "病程", "why": "突發數日與長期漸進，鑑別方向完全不同" }
+        {
+          "dimension": "部位",
+          "why": "先腫眼瞼頭面多屬陽水、風水；先腫足踝而腰以下甚多屬陰水、脾腎陽虛"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起眼瞼腫、午後與久站後下肢腫 —— 這一組時間差是分辨上下與虛實的關鍵"
+        },
+        {
+          "dimension": "誘因",
+          "why": "外感、飲食鹹膩、久站久坐、經前、藥物（鈣離子阻斷劑、類固醇、NSAID）"
+        },
+        {
+          "dimension": "緩解",
+          "why": "抬高患肢是否消退、臥床一夜是否減輕"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "尿量、尿泡沫、呼吸困難、體重變化、單側疼痛熱感 —— 紅旗都掛在這一問上"
+        },
+        {
+          "dimension": "病程",
+          "why": "突發數日與長期漸進，鑑別方向完全不同"
+        }
       ],
       "inquiry_en": [
-        { "dimension": "Location", "why": "Starting at the eyelids and face suggests yang edema / wind edema; starting at the ankles and worst below the waist suggests yin edema with Spleen and Kidney yang deficiency" },
-        { "dimension": "Timing", "why": "Puffy eyelids on waking versus leg swelling in the afternoon and after long standing — this contrast is the key to upper/lower and deficiency/excess" },
-        { "dimension": "Triggers", "why": "External contraction, salty or rich food, prolonged standing or sitting, premenstrual phase, medication (calcium channel blockers, steroids, NSAIDs)" },
-        { "dimension": "Relief", "why": "Whether elevation reduces it, and whether a night lying flat improves it" },
-        { "dimension": "Accompanying signs", "why": "Urine volume, frothy urine, breathlessness, weight change, one-sided pain and warmth — every red flag hangs off this question" },
-        { "dimension": "Course", "why": "Days-old sudden swelling and slow chronic swelling point in completely different directions" }
+        {
+          "dimension": "Location",
+          "why": "Starting at the eyelids and face suggests yang edema / wind edema; starting at the ankles and worst below the waist suggests yin edema with Spleen and Kidney yang deficiency"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Puffy eyelids on waking versus leg swelling in the afternoon and after long standing — this contrast is the key to upper/lower and deficiency/excess"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "External contraction, salty or rich food, prolonged standing or sitting, premenstrual phase, medication (calcium channel blockers, steroids, NSAIDs)"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether elevation reduces it, and whether a night lying flat improves it"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Urine volume, frothy urine, breathlessness, weight change, one-sided pain and warmth — every red flag hangs off this question"
+        },
+        {
+          "dimension": "Course",
+          "why": "Days-old sudden swelling and slow chronic swelling point in completely different directions"
+        }
       ],
       "differentiation_zh": [
-        { "variant": "腰以下腫甚，按之凹陷不易復", "points_to": ["pattern.kidney_yang_deficiency", "pattern.spleen_yang_deficiency"], "distinguishing": "下肢腫甚，按之凹陷久不回復，畏寒肢冷、腰膝痠冷、夜尿頻多或大便清稀，屬陰水" },
-        { "variant": "晨起眼瞼微腫，食少便溏", "points_to": ["pattern.spleen_qi_deficiency"], "distinguishing": "腫勢不甚而反覆，晨起眼瞼與面部為著，兼食少腹脹、便溏、倦怠乏力、面色萎黃" },
-        { "variant": "腫處皮膚繃急光亮，胸悶煩熱", "points_to": ["pattern.damp_heat"], "distinguishing": "腫勢較急，皮膚繃急光亮，胸腹痞悶、煩熱口苦、小便短赤，屬陽水濕熱壅盛" }
+        {
+          "variant": "腰以下腫甚，按之凹陷不易復",
+          "points_to": [
+            "pattern.kidney_yang_deficiency",
+            "pattern.spleen_yang_deficiency"
+          ],
+          "distinguishing": "下肢腫甚，按之凹陷久不回復，畏寒肢冷、腰膝痠冷、夜尿頻多或大便清稀，屬陰水"
+        },
+        {
+          "variant": "晨起眼瞼微腫，食少便溏",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "腫勢不甚而反覆，晨起眼瞼與面部為著，兼食少腹脹、便溏、倦怠乏力、面色萎黃"
+        },
+        {
+          "variant": "腫處皮膚繃急光亮，胸悶煩熱",
+          "points_to": [
+            "pattern.damp_heat"
+          ],
+          "distinguishing": "腫勢較急，皮膚繃急光亮，胸腹痞悶、煩熱口苦、小便短赤，屬陽水濕熱壅盛"
+        }
       ],
       "differentiation_en": [
-        { "variant": "Worst below the waist, pits deeply and refills slowly", "points_to": ["pattern.kidney_yang_deficiency", "pattern.spleen_yang_deficiency"], "distinguishing": "Legs most affected, pitting that is slow to refill, with cold aversion and cold limbs, cold aching low back and knees, frequent night urination or loose stool — yin edema" },
-        { "variant": "Slight puffy eyelids on waking, poor appetite and loose stool", "points_to": ["pattern.spleen_qi_deficiency"], "distinguishing": "Mild but recurrent, most marked in the eyelids and face on waking, with poor appetite, abdominal fullness, loose stool, fatigue and a sallow complexion" },
-        { "variant": "Skin taut and shiny over the swelling, chest fullness and vexing heat", "points_to": ["pattern.damp_heat"], "distinguishing": "Faster onset, skin stretched tight and glossy, fullness in chest and abdomen, vexing heat, bitter taste, scanty dark urine — yang edema with damp-heat" }
+        {
+          "variant": "Worst below the waist, pits deeply and refills slowly",
+          "points_to": [
+            "pattern.kidney_yang_deficiency",
+            "pattern.spleen_yang_deficiency"
+          ],
+          "distinguishing": "Legs most affected, pitting that is slow to refill, with cold aversion and cold limbs, cold aching low back and knees, frequent night urination or loose stool — yin edema"
+        },
+        {
+          "variant": "Slight puffy eyelids on waking, poor appetite and loose stool",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Mild but recurrent, most marked in the eyelids and face on waking, with poor appetite, abdominal fullness, loose stool, fatigue and a sallow complexion"
+        },
+        {
+          "variant": "Skin taut and shiny over the swelling, chest fullness and vexing heat",
+          "points_to": [
+            "pattern.damp_heat"
+          ],
+          "distinguishing": "Faster onset, skin stretched tight and glossy, fullness in chest and abdomen, vexing heat, bitter taste, scanty dark urine — yang edema with damp-heat"
+        }
       ],
       "safety_review_status": "specific_red_flags_present",
       "safety_review_sources": [
@@ -212,11 +461,24 @@
       "name_en": "Fever",
       "pinyin": "fa re",
       "pinyin_toned": "fā rè",
-      "aliases_zh": ["發燒", "身熱", "體溫升高"],
-      "aliases_en": ["Pyrexia", "Feverishness", "Raised body temperature"],
-      "taxonomy_ids": ["sym.general_limb"],
+      "aliases_zh": [
+        "發燒",
+        "身熱",
+        "體溫升高"
+      ],
+      "aliases_en": [
+        "Pyrexia",
+        "Feverishness",
+        "Raised body temperature"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
       "tradition": "both",
-      "observation_modes": ["patient_reported", "examiner_observed"],
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
       "primary_mode": "examiner_observed",
       "definition_zh": "體溫升高，或病人自覺身熱。中醫的「發熱」比西醫的 fever 更寬：它同時涵蓋捫之烙手的實際體溫升高（壯熱、潮熱）與體溫未必升高的自覺熱感（五心煩熱、身熱不揚）——兩者辨證意義不同，不可混為一談。體溫的「數值」屬測量層，不在本卡。",
       "definition_en": "A raised body temperature, or the patient's own sense of being hot. The TCM concept is broader than biomedical fever: it covers both objectively hot skin (blazing heat, tidal heat) and a subjective sense of heat that may occur at a normal temperature (five-centre heat, unsurfaced heat). The two carry different diagnostic weight and must not be collapsed. The numeric temperature belongs to the measurement layer, not to this card.",
@@ -231,42 +493,141 @@
           "applicable": false,
           "why": "symptom_quality 是疼痛性質詞彙。發熱的性質軸是壯熱／潮熱／身熱不揚／五心煩熱／往來寒熱，屬熱型，不在該詞彙表中（見 Pilot 0 回報）"
         },
-        "laterality": { "applicable": false, "why": "全身性症狀，無側性" },
+        "laterality": {
+          "applicable": false,
+          "why": "全身性症狀，無側性"
+        },
         "timing": {
           "applicable": true,
           "vocabulary": "symptom_timing",
           "diagnostic_note_zh": "午後潮熱指向陰虛或濕熱 · 夜間發熱盜汗指向陰虛 · 勞累後發熱指向氣虛。時間是本症最有辨證重量的維度"
         },
-        "severity": { "applicable": false, "why": "實例值，屬病例層（§8）" },
-        "duration": { "applicable": false, "why": "實例值，屬病例層（§8）" }
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
       },
       "inquiry_zh": [
-        { "dimension": "時間", "why": "午後潮熱屬陰虛或濕熱、夜熱早涼屬熱入營血、勞則熱甚屬氣虛 —— 本症辨證最重的一問" },
-        { "dimension": "性質", "why": "壯熱、潮熱、身熱不揚、五心煩熱、往來寒熱是五種不同熱型" },
-        { "dimension": "伴隨症", "why": "惡寒之有無與輕重定表裡；汗、渴、二便定寒熱虛實；頸僵、意識改變、瘀點進紅旗流程" },
-        { "dimension": "誘因", "why": "外感、勞累、情志、飲食積滯、近期旅遊與接觸史、用藥（含免疫抑制）" },
-        { "dimension": "病程", "why": "驟起數日屬外感發熱；反覆或遷延屬內傷發熱，兩條路徑完全不同" }
+        {
+          "dimension": "時間",
+          "why": "午後潮熱屬陰虛或濕熱、夜熱早涼屬熱入營血、勞則熱甚屬氣虛 —— 本症辨證最重的一問"
+        },
+        {
+          "dimension": "性質",
+          "why": "壯熱、潮熱、身熱不揚、五心煩熱、往來寒熱是五種不同熱型"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "惡寒之有無與輕重定表裡；汗、渴、二便定寒熱虛實；頸僵、意識改變、瘀點進紅旗流程"
+        },
+        {
+          "dimension": "誘因",
+          "why": "外感、勞累、情志、飲食積滯、近期旅遊與接觸史、用藥（含免疫抑制）"
+        },
+        {
+          "dimension": "病程",
+          "why": "驟起數日屬外感發熱；反覆或遷延屬內傷發熱，兩條路徑完全不同"
+        }
       ],
       "inquiry_en": [
-        { "dimension": "Timing", "why": "Afternoon tidal heat suggests yin deficiency or damp-heat; heat at night clearing by morning suggests heat in the nutritive and blood levels; heat worse with exertion suggests qi deficiency — the highest-yield question here" },
-        { "dimension": "Quality", "why": "Blazing heat, tidal heat, unsurfaced heat, five-centre heat and alternating chills and fever are five distinct heat types" },
-        { "dimension": "Accompanying signs", "why": "Presence and degree of chills separates exterior from interior; sweat, thirst and the two excretions separate cold/heat and deficiency/excess; neck stiffness, altered consciousness or petechiae enter the red-flag pathway" },
-        { "dimension": "Triggers", "why": "External contraction, exertion, emotion, food stagnation, recent travel and exposure history, medication including immunosuppressants" },
-        { "dimension": "Course", "why": "Abrupt onset over days is externally contracted fever; recurrent or lingering fever is internal-damage fever — two entirely different pathways" }
+        {
+          "dimension": "Timing",
+          "why": "Afternoon tidal heat suggests yin deficiency or damp-heat; heat at night clearing by morning suggests heat in the nutritive and blood levels; heat worse with exertion suggests qi deficiency — the highest-yield question here"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Blazing heat, tidal heat, unsurfaced heat, five-centre heat and alternating chills and fever are five distinct heat types"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Presence and degree of chills separates exterior from interior; sweat, thirst and the two excretions separate cold/heat and deficiency/excess; neck stiffness, altered consciousness or petechiae enter the red-flag pathway"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "External contraction, exertion, emotion, food stagnation, recent travel and exposure history, medication including immunosuppressants"
+        },
+        {
+          "dimension": "Course",
+          "why": "Abrupt onset over days is externally contracted fever; recurrent or lingering fever is internal-damage fever — two entirely different pathways"
+        }
       ],
       "differentiation_zh": [
-        { "variant": "發熱惡寒並見，惡寒重", "points_to": ["pattern.wind_cold"], "distinguishing": "起病急，惡寒重而發熱輕，無汗，頭身疼痛，鼻塞流清涕，脈浮緊" },
-        { "variant": "發熱重惡寒輕", "points_to": ["pattern.wind_heat"], "distinguishing": "發熱明顯而惡寒輕微，咽喉腫痛，口渴，咳痰黃稠，脈浮數" },
-        { "variant": "午後潮熱，五心煩熱", "points_to": ["pattern.yin_deficiency"], "distinguishing": "午後或入夜熱甚，手足心與心胸煩熱，盜汗、顴紅、口乾咽燥，多見於久病或熱病後期" },
-        { "variant": "身熱不揚，午後熱甚，頭身困重", "points_to": ["pattern.damp_heat"], "distinguishing": "初捫不甚熱，久按灼手，午後轉甚，頭身困重、胸脘痞悶、口黏不渴或渴不欲飲" },
-        { "variant": "發熱勞則加重，熱勢或高或低", "points_to": ["pattern.qi_deficiency"], "distinguishing": "熱勢不定，勞累後發作或加重，倦怠氣短、自汗、食少，得臥稍減 —— 內傷發熱，非外感" }
+        {
+          "variant": "發熱惡寒並見，惡寒重",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "起病急，惡寒重而發熱輕，無汗，頭身疼痛，鼻塞流清涕，脈浮緊"
+        },
+        {
+          "variant": "發熱重惡寒輕",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "發熱明顯而惡寒輕微，咽喉腫痛，口渴，咳痰黃稠，脈浮數"
+        },
+        {
+          "variant": "午後潮熱，五心煩熱",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "午後或入夜熱甚，手足心與心胸煩熱，盜汗、顴紅、口乾咽燥，多見於久病或熱病後期"
+        },
+        {
+          "variant": "身熱不揚，午後熱甚，頭身困重",
+          "points_to": [
+            "pattern.damp_heat"
+          ],
+          "distinguishing": "初捫不甚熱，久按灼手，午後轉甚，頭身困重、胸脘痞悶、口黏不渴或渴不欲飲"
+        },
+        {
+          "variant": "發熱勞則加重，熱勢或高或低",
+          "points_to": [
+            "pattern.qi_deficiency"
+          ],
+          "distinguishing": "熱勢不定，勞累後發作或加重，倦怠氣短、自汗、食少，得臥稍減 —— 內傷發熱，非外感"
+        }
       ],
       "differentiation_en": [
-        { "variant": "Fever and chills together, chills predominant", "points_to": ["pattern.wind_cold"], "distinguishing": "Abrupt onset, marked aversion to cold with mild fever, absence of sweating, aching head and body, blocked nose with clear discharge, floating tight pulse" },
-        { "variant": "Fever predominant, chills mild", "points_to": ["pattern.wind_heat"], "distinguishing": "Pronounced fever with only slight aversion to cold, sore swollen throat, thirst, thick yellow phlegm, floating rapid pulse" },
-        { "variant": "Afternoon tidal heat with five-centre heat", "points_to": ["pattern.yin_deficiency"], "distinguishing": "Worse in the afternoon or evening, burning palms, soles and chest, night sweats, malar flush, dry mouth and throat; typical of chronic illness or the late stage of a febrile disease" },
-        { "variant": "Unsurfaced heat, worse in the afternoon, heavy head and body", "points_to": ["pattern.damp_heat"], "distinguishing": "Skin not obviously hot at first touch but scorching on sustained pressure, worse in the afternoon, heavy head and limbs, stifling fullness in chest and epigastrium, sticky mouth with no thirst or thirst without desire to drink" },
-        { "variant": "Fever worse with exertion, fluctuating in intensity", "points_to": ["pattern.qi_deficiency"], "distinguishing": "Variable intensity, brought on or worsened by exertion, with fatigue, shortness of breath, spontaneous sweating and poor appetite, eased by rest — internal-damage fever, not an external contraction" }
+        {
+          "variant": "Fever and chills together, chills predominant",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "Abrupt onset, marked aversion to cold with mild fever, absence of sweating, aching head and body, blocked nose with clear discharge, floating tight pulse"
+        },
+        {
+          "variant": "Fever predominant, chills mild",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "Pronounced fever with only slight aversion to cold, sore swollen throat, thirst, thick yellow phlegm, floating rapid pulse"
+        },
+        {
+          "variant": "Afternoon tidal heat with five-centre heat",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "Worse in the afternoon or evening, burning palms, soles and chest, night sweats, malar flush, dry mouth and throat; typical of chronic illness or the late stage of a febrile disease"
+        },
+        {
+          "variant": "Unsurfaced heat, worse in the afternoon, heavy head and body",
+          "points_to": [
+            "pattern.damp_heat"
+          ],
+          "distinguishing": "Skin not obviously hot at first touch but scorching on sustained pressure, worse in the afternoon, heavy head and limbs, stifling fullness in chest and epigastrium, sticky mouth with no thirst or thirst without desire to drink"
+        },
+        {
+          "variant": "Fever worse with exertion, fluctuating in intensity",
+          "points_to": [
+            "pattern.qi_deficiency"
+          ],
+          "distinguishing": "Variable intensity, brought on or worsened by exertion, with fatigue, shortness of breath, spontaneous sweating and poor appetite, eased by rest — internal-damage fever, not an external contraction"
+        }
       ],
       "safety_review_status": "specific_red_flags_present",
       "safety_review_sources": [
@@ -304,6 +665,2924 @@
         "differentiation_zh/en": "中醫內科學 外感發熱與內傷發熱分證 + 本 repo pattern_library 對應證型 key_signs_zh",
         "red_flags_zh/en": "腦膜炎／敗血症／發熱性嗜中性白血球低下症急症準則；FUO 鑑別架構",
         "supporting_measurements": "刻意留空並停止 —— metric.body_temperature 不存在，且 outcome_metrics.json 是療效追蹤詞彙而非生命徵象登記處。見 Pilot 0 回報第 4 點"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.insomnia",
+      "name_zh": "失眠",
+      "name_en": "Insomnia",
+      "pinyin": "shi mian",
+      "pinyin_toned": "shī mián",
+      "aliases_zh": [
+        "不寐",
+        "睡不著",
+        "入睡困難",
+        "易醒",
+        "早醒"
+      ],
+      "aliases_en": [
+        "Sleeplessness (TCM: bu mei)",
+        "Can't fall asleep",
+        "Difficulty falling asleep",
+        "Easily waking",
+        "Early waking"
+      ],
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "入睡困難、睡眠淺易醒、早醒後無法再入睡，或睡眠時數雖足但無恢復感，並影響日間功能。中醫稱「不寐」，是主訴而非診斷 —— 可見於多種證型與多個西醫病名之下。",
+      "definition_en": "Difficulty falling asleep, light or fragmented sleep, early waking without being able to return to sleep, or sleep that fails to restore daytime function despite adequate hours. This is a presenting complaint, not a diagnosis — it appears under many TCM patterns and biomedical conditions.",
+      "patient_words_zh": "「躺下腦子停不下來」「翻來覆去睡不著」「一點小聲音就醒」「凌晨三四點就醒了，再也睡不著」「睡了八小時還是很累」「怕睡不著，一到晚上就緊張」",
+      "patient_words_en": "\"My mind won't switch off when I lie down\", \"I toss and turn\", \"the smallest noise wakes me\", \"I wake at 3 or 4am and can't get back to sleep\", \"I sleep eight hours and still feel exhausted\", \"I get anxious about not sleeping as soon as evening comes\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "失眠非部位性症狀，不需部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙（脹刺隱空灼重竄絞酸掣墜麻冷跳），不適用於睡眠障礙的性質描述"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "入睡困難、徹夜不安多屬肝鬱化火或心火亢盛；夜半易醒、多夢多屬陰虛火旺或心膽氣虛；黎明早醒、醒後不能再寐多屬心脾兩虛"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "入睡難、睡中易醒、早醒三種型態分屬不同證型，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒波動、飲濃茶咖啡、輪班、時差、疼痛、更年期、藥物(如類固醇)"
+        },
+        {
+          "dimension": "緩解",
+          "why": "何種環境或方法能助眠、白天小睡是否加重夜間失眠"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "心悸、多夢易驚、五心煩熱、食少便溏、情緒低落或自殺意念——最後一項進紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性失眠(<1個月，常有明確誘因)與慢性失眠(≥3個月，每週≥3晚)處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Difficulty falling asleep, mid-sleep waking and early waking map to different patterns — the highest-yield question here"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Emotional stress, caffeine/alcohol, shift work, jet lag, pain, menopause, medication (e.g. steroids)"
+        },
+        {
+          "dimension": "Relief",
+          "why": "What environment or method helps, and whether daytime napping worsens night sleep"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Palpitations, vivid/disturbing dreams, five-centre heat, poor appetite and loose stool, low mood or suicidal ideation — the last enters the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute insomnia (under 1 month, usually with a clear trigger) and chronic insomnia (3+ months, 3+ nights/week) are managed differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "心煩不寐，多夢易驚，口乾便秘",
+          "points_to": [
+            "pattern.heart_fire"
+          ],
+          "distinguishing": "入睡困難、徹夜難安，心煩急躁，口舌生瘡，小便短赤，脈數有力"
+        },
+        {
+          "variant": "徹夜不寐，急躁易怒，脅脹口苦",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "難以入睡或多夢紛紜，情緒一激動即加重，兼頭脹頭痛、目赤、口苦，脈弦數"
+        },
+        {
+          "variant": "多夢易醒，心悸健忘，神疲食少",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "睡眠淺、易醒、多夢，兼心悸、健忘、面色萎黃、食少倦怠，多見於思慮勞心過度者"
+        },
+        {
+          "variant": "心煩不寐，心悸，腰膝痠軟，五心煩熱",
+          "points_to": [
+            "pattern.insomnia_heart_kidney_disharmony"
+          ],
+          "distinguishing": "入夜心煩難寐，兼盜汗、腰膝痠軟、耳鳴、五心煩熱，多見於久病或年長者"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Vexed and unable to sleep, dream-disturbed and easily startled, dry mouth and constipation",
+          "points_to": [
+            "pattern.heart_fire"
+          ],
+          "distinguishing": "Difficulty falling asleep and restless through the night, irritable and vexed, mouth ulcers, scanty dark urine, forceful rapid pulse"
+        },
+        {
+          "variant": "Sleepless through the night, irritable, hypochondriac fullness and bitter taste",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Difficulty falling asleep or turbulent dreaming, worse with any emotional flare, with distending headache, red eyes, bitter taste, wiry rapid pulse"
+        },
+        {
+          "variant": "Dream-disturbed and easily waking, palpitations and forgetfulness, fatigue and poor appetite",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "Light sleep, frequent waking, vivid dreams, with palpitations, forgetfulness, sallow complexion and poor appetite; typically overthinking and overwork"
+        },
+        {
+          "variant": "Vexed and sleepless, palpitations, weak aching low back and knees, five-centre heat",
+          "points_to": [
+            "pattern.insomnia_heart_kidney_disharmony"
+          ],
+          "distinguishing": "Restless and unable to sleep at night, with night sweats, weak aching low back and knees, tinnitus and five-centre heat; typically chronic illness or older patients"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.insomnia red_flags note + sources"
+      ],
+      "safety_flags": [
+        "psychiatric_red_flags"
+      ],
+      "red_flags_zh": [
+        "失眠合併自殺意念或計畫 → 立即精神科評估／轉診",
+        "失眠合併躁狂發作(睡眠需求驟減仍精力旺盛、言語急促、判斷力下降)或精神病症狀(幻覺、妄想) → 精神科緊急評估",
+        "嚴重失眠已導致日間功能危險受損(如駕駛、操作機械時嗜睡發作) → 需醫療評估",
+        "近期停用酒精、苯二氮平類或安眠藥後出現失眠合併震顫、心悸、焦慮、抽搐 → 排除戒斷症候群，需醫療評估"
+      ],
+      "red_flags_en": [
+        "Insomnia with suicidal ideation or a plan → immediate psychiatric evaluation/referral",
+        "Insomnia with manic symptoms (markedly reduced need for sleep with high energy, pressured speech, impaired judgement) or psychotic symptoms (hallucinations, delusions) → urgent psychiatric evaluation",
+        "Severe insomnia causing dangerous daytime impairment (e.g., falling asleep while driving or operating machinery) → medical evaluation needed",
+        "New insomnia with tremor, palpitations, anxiety or seizure after recent cessation of alcohol, benzodiazepines or sleep medication → rule out withdrawal syndrome, needs medical evaluation"
+      ],
+      "sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.insomnia red_flags note + sources",
+        "中醫內科學 不寐篇 —— 心火亢盛・肝鬱化火・心脾兩虛・心腎不交分證",
+        "本 repo 既有卡片：pattern.insomnia_heart_kidney_disharmony key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 不寐篇 + 睡眠醫學對 insomnia 的一般界定",
+        "differentiation_zh/en": "中醫內科學 不寐分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.insomnia + MedlinePlus emergency-care guidance，改寫為本卡具體情境",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.sleep_quality／sleep_onset_minutes／night_wakings／sleep_hours（既有，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.sleep_quality",
+        "metric.sleep_onset_minutes",
+        "metric.night_wakings",
+        "metric.sleep_hours"
+      ]
+    },
+    {
+      "id": "sym.fatigue",
+      "name_zh": "疲勞",
+      "name_en": "Fatigue",
+      "pinyin": "pi lao",
+      "pinyin_toned": "pí láo",
+      "aliases_zh": [
+        "倦怠",
+        "乏力",
+        "沒精神",
+        "容易累"
+      ],
+      "aliases_en": [
+        "Tiredness",
+        "Exhaustion",
+        "Lack of energy",
+        "Lethargy"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "持續或反覆的精力不足、倦怠感，休息後未能充分緩解，並影響日常活動或工作表現。與單純睡眠不足不同 —— 睡飽仍疲勞才是本症的重點。",
+      "definition_en": "Persistent or recurrent lack of energy and a sense of exhaustion that is not adequately relieved by rest, and that impairs daily activity or work. Distinct from simple sleep deprivation — the defining feature is fatigue that persists even with adequate sleep.",
+      "patient_words_zh": "「整天都提不起勁」「爬個樓梯就喘、就累」「睡再多還是累」「什麼都不想做」「電池好像永遠充不滿」",
+      "patient_words_en": "\"I can't get going all day\", \"a flight of stairs wipes me out\", \"I sleep plenty and I'm still exhausted\", \"I don't feel like doing anything\", \"my battery never seems to fill up\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "全身性症狀，無部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "晨起即倦怠、動則氣短多屬脾氣虛或陽虛；午後尤甚、肢體困重多屬脾虛濕困；勞累後加重、休息可緩多屬氣血兩虛"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "晨起、午後、勞累後何時最重，指向不同機轉"
+        },
+        {
+          "dimension": "誘因",
+          "why": "睡眠品質、情緒、飲食、月經、近期病後或手術後、藥物"
+        },
+        {
+          "dimension": "緩解",
+          "why": "休息或睡眠能否緩解 —— 若不能，提示非單純睡眠不足"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "胸痛、嚴重呼吸困難、暈厥、大出血、高燒或急性神經症狀 —— 進紅旗流程；食少便溏、面色萎黃、心悸提示證型方向"
+        },
+        {
+          "dimension": "病程",
+          "why": "數週內新發與持續數月的慢性疲勞處置方向不同，後者需排查系統性病因"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Worst on waking, in the afternoon, or after exertion each points toward a different mechanism"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Sleep quality, emotional state, diet, menstruation, recent illness or surgery, medication"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether rest or sleep relieves it — if not, this argues against simple sleep deprivation"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Chest pain, severe dyspnea, syncope, major bleeding, high fever or acute neurologic change enter the red-flag pathway; poor appetite, loose stool, sallow complexion and palpitations point toward pattern differentiation"
+        },
+        {
+          "dimension": "Course",
+          "why": "New fatigue over weeks versus persistent fatigue over months are managed differently — the latter needs a systemic workup"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "神疲乏力，氣短懶言，食少便溏",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "疲勞感明顯，動則氣短，食慾差、大便溏薄，面色萎黃，脈弱"
+        },
+        {
+          "variant": "神疲畏寒，肢冷，腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "疲勞兼明顯怕冷、四肢不溫，腰膝痠冷，夜尿頻多，脈沉遲"
+        },
+        {
+          "variant": "疲勞面色蒼白，唇甲淡白，心悸頭暈",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "疲勞兼氣血兩虛徵象——面色與唇甲淡白、頭暈心悸、月經量少色淡，脈細弱"
+        },
+        {
+          "variant": "疲勞頭身困重，胸悶納呆，苔膩",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "疲勞兼頭重如裹、肢體困重、胸悶脘痞、痰多，陰雨天加重，苔白膩"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Fatigue with shortness of breath, poor appetite and loose stool",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Marked fatigue, breathless on exertion, poor appetite, loose stool, sallow complexion, weak pulse"
+        },
+        {
+          "variant": "Fatigue with cold aversion, cold limbs, weak aching low back and knees",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Fatigue with pronounced cold intolerance, cold extremities, aching cold low back and knees, frequent night urination, deep slow pulse"
+        },
+        {
+          "variant": "Fatigue with pale complexion, pale lips and nails, dizziness and palpitations",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Fatigue with signs of combined qi-blood deficiency — pale face, lips and nails, dizziness, palpitations, scanty pale menses, thin weak pulse"
+        },
+        {
+          "variant": "Fatigue with heavy head and limbs, chest fullness and poor appetite, greasy coating",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Fatigue with heaviness as though wrapped in cloth, heavy limbs, chest and epigastric fullness, copious phlegm, worse in damp weather, white greasy tongue coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)"
+      ],
+      "safety_flags": [
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "疲勞合併胸痛、嚴重呼吸困難或暈厥 → 排除心肺急症",
+        "疲勞合併明顯出血傾向(黑便、吐血、大量瘀斑) → 需立即醫療評估",
+        "疲勞合併高燒或急性神經症狀改變(意識改變、言語不清、肢體無力) → 需緊急評估",
+        "疲勞伴隨不明原因明顯體重下降或反覆盜汗、發燒 → 需系統性檢查排除惡性腫瘤、感染或內分泌疾病"
+      ],
+      "red_flags_en": [
+        "Fatigue with chest pain, severe dyspnea or syncope → rule out cardiopulmonary emergency",
+        "Fatigue with signs of significant bleeding (black stool, vomiting blood, extensive bruising) → needs immediate medical evaluation",
+        "Fatigue with high fever or acute neurologic change (altered consciousness, slurred speech, limb weakness) → needs urgent evaluation",
+        "Fatigue with unexplained significant weight loss or recurrent night sweats and fever → needs systemic workup to rule out malignancy, infection or endocrine disease"
+      ],
+      "sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.fatigue red_flags note + sources",
+        "中醫內科學 虛勞篇 —— 脾氣虛・腎陽虛・氣血兩虛・痰濕困阻分證"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 虛勞篇 + fatigue 的一般臨床界定(區別於單純睡眠不足)",
+        "differentiation_zh/en": "中醫內科學 虛勞分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.fatigue + MedlinePlus emergency guidance，改寫為本卡具體情境",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.energy_level（label_zh 明載「疲勞記在這一項的低分」，既有未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.energy_level"
+      ]
+    },
+    {
+      "id": "sym.low_back_pain",
+      "name_zh": "下背痛",
+      "name_en": "Low back pain",
+      "pinyin": "xia bei tong",
+      "pinyin_toned": "xià bèi tòng",
+      "aliases_zh": [
+        "腰痛",
+        "腰酸背痛",
+        "下腰痛"
+      ],
+      "aliases_en": [
+        "Lower back pain",
+        "Lumbar pain",
+        "Backache"
+      ],
+      "taxonomy_ids": [
+        "sym.pain"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "腰部(肋緣下至臀褶之間)的疼痛，可牽連下肢或局限於腰部。是主訴而非診斷，可見於肌肉筋膜勞損、椎間盤病變、腎系疾病乃至內臟轉移痛等多種病因之下。",
+      "definition_en": "Pain in the lower back, between the lower ribs and the gluteal fold, with or without referral into the leg. A presenting complaint rather than a diagnosis, seen with myofascial strain, disc pathology, renal disease and even referred visceral pain.",
+      "patient_words_zh": "「腰一直酸酸的」「彎腰就痛」「早上起床特別僵硬，動一動才鬆開」「痛到腿麻」「像被人捶了一拳」「坐久了才痛，站起來反而好一點」",
+      "patient_words_en": "\"My lower back is always achy\", \"it hurts when I bend forward\", \"stiff first thing in the morning, loosens up once I move\", \"the pain shoots down my leg and it goes numb\", \"like someone punched me there\", \"it only hurts after sitting a while, standing up actually helps\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "痠痛屬腎虛 · 刺痛屬血瘀 · 冷痛屬寒濕 · 脹痛屬氣滯"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "晨起僵硬活動後緩解，多見於勞損；久坐或勞累後加重多屬腎虛；遇陰雨寒冷加重多屬寒濕"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "正中督脈、兩側膀胱經、單側或雙側，牽連臀腿與否，決定循經取穴與是否考慮神經根性病變"
+        },
+        {
+          "dimension": "性質",
+          "why": "痠痛、刺痛、冷痛、脹痛分屬四種病機"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨僵活動後緩解、久坐久站加重、遇寒加重各有指向"
+        },
+        {
+          "dimension": "誘因",
+          "why": "搬重物、久坐、外傷、受寒、月經週期"
+        },
+        {
+          "dimension": "緩解",
+          "why": "按之減輕屬虛、拒按屬實、得溫則減屬寒、平躺屈膝是否緩解"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "下肢麻木無力、大小便功能改變、鞍區感覺喪失 —— 這些進紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性新發(尤其外傷後)與慢性反覆的處置與轉診門檻不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Midline (Du channel), bilateral paraspinal (Bladder channel), one-sided, and whether it refers into the buttock/leg — this drives channel selection and whether to suspect a radicular cause"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Aching, stabbing, cold and distending pain map to four different mechanisms"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Morning stiffness that loosens with movement, worse with prolonged sitting/standing, or worse in cold damp weather each point somewhere different"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Heavy lifting, prolonged sitting, trauma, cold exposure, menstrual cycle"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Better for pressure = deficiency, worse for pressure = excess, better for warmth = cold, whether lying with knees bent helps"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Leg numbness or weakness, new bowel/bladder change, saddle anesthesia — these enter the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute new-onset (especially post-trauma) and chronic recurrent pain carry different thresholds for referral"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "腰部隱痛痠軟，喜按喜溫，遇勞加重",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "痠痛綿綿，喜溫喜按，遇勞更甚，臥則減輕，兼畏寒肢冷、夜尿頻多"
+        },
+        {
+          "variant": "腰痛而熱，午後潮熱，五心煩熱",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "腰部痠痛兼熱感，遇勞加重，兼顴紅盜汗、口乾咽燥、失眠"
+        },
+        {
+          "variant": "腰部冷痛重著，陰雨加重，轉側不利",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "腰部冷痛沉重，遇陰雨寒冷明顯加重，得溫痛減，肢體轉側不利"
+        },
+        {
+          "variant": "腰痛如刺，痛處固定，拒按，夜間加重",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "痛處固定不移，拒按，轉側不利，夜間痛甚，多有外傷或久病史，舌質紫暗"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Dull aching low back pain, likes pressure and warmth, worse with exertion",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Vague continuous ache, better for warmth and pressure, worse with exertion, eased by lying down, with cold aversion, cold limbs and frequent night urination"
+        },
+        {
+          "variant": "Low back pain with heat, afternoon tidal heat, five-centre heat",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "Aching with a sensation of heat, worse with exertion, with malar flush, night sweats, dry mouth and throat, insomnia"
+        },
+        {
+          "variant": "Cold heavy low back pain, worse in damp weather, stiff on turning",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Cold heavy pain, markedly worse in cold damp weather, better for warmth, stiffness on turning the trunk"
+        },
+        {
+          "variant": "Stabbing low back pain, fixed location, worse for pressure, worse at night",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed unmoving pain, worse for pressure, stiff on turning, worse at night, often a history of trauma or chronic illness, dusky tongue"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "下背痛合併新發大小便失禁或滯留、鞍區(會陰)麻木 → 排除馬尾症候群，急症轉診",
+        "下背痛合併下肢進行性或明顯無力 → 需緊急神經學評估",
+        "下背痛合併發熱，或有癌症病史、免疫低下、近期感染史 → 排除脊椎感染或腫瘤",
+        "重大外傷後下背痛 → 排除骨折",
+        "下背痛合併不明原因體重下降、夜間痛醒無法緩解 → 需進一步檢查排除惡性腫瘤"
+      ],
+      "red_flags_en": [
+        "Low back pain with new bowel/bladder incontinence or retention, or saddle (perineal) numbness → rule out cauda equina syndrome, urgent referral",
+        "Low back pain with progressive or marked leg weakness → needs urgent neurologic evaluation",
+        "Low back pain with fever, or a history of cancer, immunosuppression or recent infection → rule out spinal infection or malignancy",
+        "Low back pain after major trauma → rule out fracture",
+        "Low back pain with unexplained weight loss, or night pain that wakes the patient and is not relieved → needs further workup to rule out malignancy"
+      ],
+      "sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.low_back_pain red_flags note + sources",
+        "中醫內科學 腰痛篇 —— 腎陽虛・腎陰虛・寒濕・血瘀分證",
+        "cloudtcm.disease_entry.9070「背痛」taxonomy_ids: sym.pain（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 腰痛篇 + 骨科學對 low back pain 範圍界定(肋緣下至臀褶)",
+        "differentiation_zh/en": "中醫內科學 腰痛分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.low_back_pain + MedlinePlus emergency guidance（馬尾症候群為其展開）",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score（既有，未新增；沿用 sym.headache 先例）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.pain_score"
+      ]
+    },
+    {
+      "id": "sym.neck_pain",
+      "name_zh": "頸痛",
+      "name_en": "Neck pain",
+      "pinyin": "jing tong",
+      "pinyin_toned": "jǐng tòng",
+      "aliases_zh": [
+        "脖子痛",
+        "頸項痛",
+        "落枕",
+        "頸部酸痛"
+      ],
+      "aliases_en": [
+        "Neck pain (colloquial)",
+        "Cervical pain",
+        "Acute torticollis (wry neck)",
+        "Aching neck"
+      ],
+      "taxonomy_ids": [
+        "sym.pain"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "頸部(枕骨下緣至第一胸椎之間)的疼痛，可伴隨活動受限或牽連肩臂。是主訴而非診斷，可見於落枕、頸椎病、外傷乃至少數轉移痛之下。",
+      "definition_en": "Pain in the neck, from the base of the skull to the first thoracic vertebra, with or without restricted movement or referral into the shoulder/arm. A presenting complaint rather than a diagnosis, seen with acute torticollis, cervical spondylosis, trauma and occasionally referred pain.",
+      "patient_words_zh": "「脖子轉不過去」「早上起來落枕了」「一直維持同一個姿勢就緊繃」「痛到手臂會麻」「肩頸像壓了一塊石頭」",
+      "patient_words_en": "\"I can't turn my neck\", \"I woke up with a crick in my neck\", \"it gets tight if I hold one position too long\", \"the pain shoots into my arm and it goes numb\", \"it feels like there's a rock sitting on my shoulders and neck\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "脹痛屬氣滯或風邪 · 刺痛屬血瘀 · 痠痛屬勞損或氣血不足"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "正中督脈、單側或雙側，是否牽連肩臂或伴隨上肢麻木"
+        },
+        {
+          "dimension": "性質",
+          "why": "脹痛、刺痛、痠痛分屬不同病機"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起僵硬、久坐低頭加重、遇風加重各有指向"
+        },
+        {
+          "dimension": "誘因",
+          "why": "睡姿不良、久坐低頭(手機頸)、受風受寒、外傷、情緒緊張"
+        },
+        {
+          "dimension": "緩解",
+          "why": "熱敷是否緩解、活動後是否鬆開"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "上肢麻木無力、頭暈、頭痛、發熱頸僵 —— 進紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性落枕(數日)與慢性反覆頸痛處置不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Midline, one-sided or bilateral, and whether it refers into the shoulder/arm with numbness"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Distending, stabbing and aching pain map to different mechanisms"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Morning stiffness, worse with prolonged forward-head posture, worse in a draught"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Poor sleep posture, prolonged screen/phone use, wind-cold exposure, trauma, emotional tension"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether heat helps, whether movement loosens it"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Arm numbness or weakness, dizziness, headache, fever with neck stiffness — these enter the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute torticollis (days) and chronic recurrent neck pain are handled differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "頸項強痛，惡風寒，遇風加重",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "起病急，頸項強痛拘急，遇風寒加重，得溫痛減，或兼頭痛惡寒"
+        },
+        {
+          "variant": "頸肩痠痛麻木，遇勞加重",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "頸肩痠痛綿綿，勞累後加重，兼手臂麻木、頭暈、面色少華"
+        },
+        {
+          "variant": "頸項刺痛，痛處固定，轉側不利",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "痛處固定不移，拒按，轉側不利，多有外傷或長期姿勢不良史"
+        },
+        {
+          "variant": "頸部脹痛，情緒波動加重，兼胸脅悶",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "頸部脹痛隨情緒起伏，兼胸脅脹悶、善太息"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Stiff tight neck pain, aversion to wind-cold, worse in a draught",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Abrupt onset, stiff tight neck pain, worse in wind or cold, better for warmth, may accompany headache and chills"
+        },
+        {
+          "variant": "Aching numb neck and shoulder, worse with exertion",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Vague continuous ache, worse after exertion, with arm numbness, dizziness, pale complexion"
+        },
+        {
+          "variant": "Stabbing neck pain, fixed location, stiff on turning",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed unmoving pain, worse for pressure, stiff on turning, often a history of trauma or long-standing poor posture"
+        },
+        {
+          "variant": "Distending neck pain, worse with emotional swings, chest/hypochondriac fullness",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Distending pain that tracks emotional state, with chest and hypochondriac fullness, frequent sighing"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "重大外傷後頸痛 → 排除頸椎骨折／脊髓損傷，切勿隨意搬動或手法治療",
+        "頸痛合併新發上肢無力、麻木或步態改變 → 需緊急神經學評估",
+        "頸痛合併發熱、頸項僵硬拒按、畏光 → 排除腦膜炎",
+        "頸痛突發劇烈，性質與以往完全不同(撕裂樣) → 排除頸動脈剝離等血管病變"
+      ],
+      "red_flags_en": [
+        "Neck pain after major trauma → rule out cervical fracture/spinal cord injury; do not manipulate or move the neck freely",
+        "Neck pain with new arm weakness, numbness or gait change → needs urgent neurologic evaluation",
+        "Neck pain with fever, marked neck stiffness on passive flexion, photophobia → rule out meningitis",
+        "Sudden severe neck pain of a completely different character from before (tearing quality) → rule out vascular causes such as arterial dissection"
+      ],
+      "sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.neck_pain red_flags note + sources",
+        "cloudtcm.disease_entry.9092「脖子頸項酸痛」taxonomy_ids: sym.pain（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "骨科學對 neck pain 範圍界定 + 中醫傷科對頸項痛的一般描述",
+        "differentiation_zh/en": "中醫內科學／傷科學 痺症與頸項痛分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.neck_pain + MedlinePlus/CDC guidance",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score（既有，未新增；沿用 sym.headache 先例）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.pain_score"
+      ]
+    },
+    {
+      "id": "sym.shoulder_pain",
+      "name_zh": "肩痛",
+      "name_en": "Shoulder pain",
+      "pinyin": "jian tong",
+      "pinyin_toned": "jiān tòng",
+      "aliases_zh": [
+        "肩膀痛",
+        "五十肩",
+        "漏肩風",
+        "肩周炎痛"
+      ],
+      "aliases_en": [
+        "Shoulder pain (colloquial)",
+        "Frozen shoulder pain (\"fifty-year-old shoulder\")",
+        "Wind-invasion shoulder pain (TCM: lou jian feng)",
+        "Periarthritis shoulder pain"
+      ],
+      "taxonomy_ids": [
+        "sym.pain"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "肩關節及周圍軟組織的疼痛，可伴活動受限。是主訴而非診斷，可見於肩周炎、肌腱病變、外傷，少數情形是心臟或橫膈病變的轉移痛。",
+      "definition_en": "Pain in the shoulder joint or surrounding soft tissue, with or without restricted movement. A presenting complaint rather than a diagnosis, seen with frozen shoulder, tendinopathy, trauma, and occasionally as referred pain from cardiac or diaphragmatic disease.",
+      "patient_words_zh": "「手舉不上去」「穿外套很痛」「晚上睡覺壓到就痛醒」「肩膀卡卡的」「痛到沒辦法梳頭」",
+      "patient_words_en": "\"I can't lift my arm\", \"it hurts to put on a jacket\", \"it wakes me up if I roll onto it at night\", \"my shoulder feels stuck\", \"I can't reach up to brush my hair\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "冷痛屬寒濕 · 刺痛屬血瘀 · 痠痛屬氣血不足 · 脹痛屬氣滯"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "夜間痛甚影響睡眠，是肩周炎常見表現；遇寒加重多屬寒濕"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "肩前、肩外側、肩後或整個肩關節，牽連上臂與否"
+        },
+        {
+          "dimension": "性質",
+          "why": "冷痛、刺痛、痠痛、脹痛分屬四種病機"
+        },
+        {
+          "dimension": "時間",
+          "why": "夜間痛甚、遇寒加重、活動初期加重活動後反鬆"
+        },
+        {
+          "dimension": "誘因",
+          "why": "外傷、受寒、久未活動(如術後臥床)、反覆過度使用"
+        },
+        {
+          "dimension": "緩解",
+          "why": "熱敷是否緩解、活動範圍受限程度"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "胸痛、呼吸困難、冒冷汗 —— 需排除心因性轉移痛，進紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性外傷後與慢性反覆(肩周炎病程數月至年餘)處置不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Anterior, lateral or posterior shoulder, or the whole joint, and whether it refers down the arm"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Cold, stabbing, aching and distending pain map to four different mechanisms"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse at night, worse in cold weather, or worse at the start of movement and easing with continued motion"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Trauma, cold exposure, prolonged immobility (e.g. post-surgical bed rest), repetitive overuse"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether heat helps, and the degree of restricted range of motion"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Chest pain, dyspnea, cold sweat — must rule out cardiac referred pain; enters the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute post-traumatic pain and chronic recurrent pain (frozen shoulder runs months to over a year) are managed differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "肩部冷痛，遇寒加重，得溫則舒",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "肩部冷痛沉重，遇風寒陰雨加重，得溫痛減，活動受限"
+        },
+        {
+          "variant": "肩痛夜甚，痛處固定不移，拒按",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "痛處固定，拒按，夜間痛甚影響睡眠，多有外傷或勞損史"
+        },
+        {
+          "variant": "肩臂痠軟無力，遇勞加重",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "肩臂痠軟無力，勞累後加重，兼氣短懶言、面色少華"
+        },
+        {
+          "variant": "肩部脹痛，活動受限，情緒波動加重",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "肩部脹痛隨情緒起伏，兼胸脅脹悶、善太息"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Cold shoulder pain, worse in cold weather, better for warmth",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Cold heavy shoulder pain, markedly worse in wind, cold or damp weather, better for warmth, restricted movement"
+        },
+        {
+          "variant": "Shoulder pain worse at night, fixed location, worse for pressure",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed unmoving pain, worse for pressure, worse at night and disturbing sleep, often a history of trauma or overuse"
+        },
+        {
+          "variant": "Aching weak shoulder and arm, worse with exertion",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Aching weakness in the shoulder and arm, worse after exertion, with shortness of breath and pale complexion"
+        },
+        {
+          "variant": "Distending shoulder pain, restricted movement, worse with emotional swings",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Distending pain that tracks emotional state, with chest and hypochondriac fullness, frequent sighing"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)"
+      ],
+      "safety_flags": [
+        "chest_pain_red_flag"
+      ],
+      "red_flags_zh": [
+        "肩痛(尤其左肩或雙肩)合併胸痛、胸悶、冒冷汗、呼吸困難或暈厥 → 排除急性冠心症候群，立即就醫",
+        "肩痛伴大重大外傷、明顯畸形或無法活動 → 排除骨折或脫臼",
+        "肩痛合併神經血管功能受損徵象(手部麻木發白、脈搏消失) → 需緊急評估"
+      ],
+      "red_flags_en": [
+        "Shoulder pain (especially left or bilateral) with chest pain, tightness, cold sweat, dyspnea or syncope → rule out acute coronary syndrome, seek care immediately",
+        "Shoulder pain with major trauma, visible deformity or inability to move the joint → rule out fracture or dislocation",
+        "Shoulder pain with signs of neurovascular compromise (pale numb hand, absent pulse) → needs urgent assessment"
+      ],
+      "sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.shoulder_pain red_flags note + sources",
+        "cloudtcm.disease_entry.8195「肩關節痛」taxonomy_ids: sym.pain（本 repo symptom_taxonomy.json candidates）",
+        "中醫傷科學 肩痹（漏肩風）分證"
+      ],
+      "field_sources": {
+        "definition_zh/en": "骨科學對 shoulder pain 範圍界定 + 中醫傷科對肩痹的一般描述",
+        "differentiation_zh/en": "中醫傷科學 肩痹分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.shoulder_pain + MedlinePlus guidance，並補充心因性轉移痛(常見臨床安全考量)",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score（既有，未新增；沿用 sym.headache 先例）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.pain_score"
+      ]
+    },
+    {
+      "id": "sym.dizziness",
+      "name_zh": "頭暈",
+      "name_en": "Dizziness",
+      "pinyin": "tou yun",
+      "pinyin_toned": "tóu yūn",
+      "aliases_zh": [
+        "頭昏",
+        "昏沉",
+        "頭重腳輕"
+      ],
+      "aliases_en": [
+        "Light-headedness",
+        "Feeling faint",
+        "Unsteadiness"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "非旋轉性的頭部昏沉、輕飄或站立不穩感，與眩暈(明確旋轉感)不同 —— 兩者常被病人混用，問診時需分辨。是主訴而非診斷。",
+      "definition_en": "A non-spinning sense of light-headedness, wooziness or unsteadiness, distinct from vertigo (a definite spinning sensation) — patients frequently conflate the two, so distinguishing them is part of the history. A presenting complaint, not a diagnosis.",
+      "patient_words_zh": "「頭重重的」「昏昏沉沉」「站起來會晃一下」「腦袋不清楚」「輕飄飄的，好像要暈倒」",
+      "patient_words_en": "\"My head feels heavy\", \"foggy and woozy\", \"I sway a bit when I stand up\", \"my head isn't clear\", \"light-headed, like I might pass out\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "全頭性感受，無局部部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，頭暈的性質軸(昏沉、輕飄、搖晃)不在其中"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "起立時發作提示體位性因素；勞累後加重多屬氣血兩虛；午後或情緒波動後加重多屬肝陽"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "起立時、勞累後、情緒波動後何時發作，指向不同機轉"
+        },
+        {
+          "dimension": "誘因",
+          "why": "起身過快、空腹、睡眠不足、情緒、月經期、近期感冒"
+        },
+        {
+          "dimension": "緩解",
+          "why": "坐下或平躺是否緩解、進食是否緩解(提示低血糖相關)"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "單側肢體無力、言語不清、視覺改變、劇烈頭痛、步態不穩 —— 進紅旗流程；耳鳴腰痠提示腎虛，胸悶苔膩提示痰濕"
+        },
+        {
+          "dimension": "病程",
+          "why": "突發與慢性反覆處置方向不同，突發合併神經症狀需優先排除腦血管意外"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "On standing, after exertion, or after emotional upset each points toward a different mechanism"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Standing up quickly, fasting, sleep deprivation, emotion, menstruation, recent cold/flu"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether sitting or lying down helps, whether eating helps (suggests hypoglycemia)"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "One-sided weakness, slurred speech, visual change, severe headache, unsteady gait enter the red-flag pathway; tinnitus and low back ache suggest kidney deficiency, chest fullness and greasy coating suggest phlegm-damp"
+        },
+        {
+          "dimension": "Course",
+          "why": "Sudden onset and chronic recurrent dizziness are managed differently — sudden onset with neurologic symptoms must first rule out cerebrovascular events"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "頭暈脹痛，煩躁易怒，面紅目赤",
+          "points_to": [
+            "pattern.liver_yang_rising"
+          ],
+          "distinguishing": "頭暈兼脹痛感，情緒波動或熬夜後加重，兼面紅目赤、急躁易怒、腰膝痠軟"
+        },
+        {
+          "variant": "頭暈眼花，勞累加重，面色蒼白",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "頭暈眼花，動則加重，勞累後尤甚，兼神疲乏力、心悸、面色淡白"
+        },
+        {
+          "variant": "頭暈昏蒙，如物遮蓋，胸悶噁心",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "頭暈昏沉如有物蒙蔽，兼胸悶脘痞、噁心欲吐、痰多，苔白膩"
+        },
+        {
+          "variant": "頭暈耳鳴，腰膝痠軟，健忘",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "頭暈兼耳鳴、健忘、腰膝痠軟、齒搖髮脫，多見於久病或年長者"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Dizziness with distending sensation, irritability, red face and eyes",
+          "points_to": [
+            "pattern.liver_yang_rising"
+          ],
+          "distinguishing": "Dizziness with a distending quality, worse with emotional swings or late nights, with red face and eyes, irritability, weak aching low back and knees"
+        },
+        {
+          "variant": "Dizziness with blurred vision, worse after exertion, pale complexion",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Dizziness with blurred vision, worse on standing/exertion, with fatigue, palpitations, pale complexion"
+        },
+        {
+          "variant": "Muzzy dizziness as though covered, chest fullness and nausea",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Heavy foggy dizziness as though under a covering, with chest and epigastric fullness, nausea, copious phlegm, white greasy coating"
+        },
+        {
+          "variant": "Dizziness with tinnitus, weak aching low back and knees, forgetfulness",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Dizziness with tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss; usually chronic illness or older patients"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "頭暈合併單側肢體無力或麻木、言語不清、臉部歪斜 → 排除腦中風，立即送急診",
+        "頭暈合併視覺改變、複視、行走困難 → 需緊急神經學評估",
+        "突發劇烈頭暈合併嚴重頭痛 → 排除顱內出血",
+        "頭暈合併胸痛、心悸、暈厥 → 排除心因性病因"
+      ],
+      "red_flags_en": [
+        "Dizziness with one-sided limb weakness or numbness, slurred speech, facial droop → rule out stroke, send to emergency immediately",
+        "Dizziness with visual change, double vision, or difficulty walking → needs urgent neurologic evaluation",
+        "Sudden severe dizziness with severe headache → rule out intracranial hemorrhage",
+        "Dizziness with chest pain, palpitations or syncope → rule out cardiac cause"
+      ],
+      "sources": [
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.dizziness red_flags note + sources",
+        "中醫內科學 眩暈篇 —— 肝陽上亢・氣血兩虛・痰濕中阻・腎精不足分證",
+        "cloudtcm.disease_entry.17941「暈眩」taxonomy_ids: sym.head_face_eye（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 眩暈篇 + 一般臨床對 dizziness 與 vertigo 的區分",
+        "differentiation_zh/en": "中醫內科學 眩暈分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.dizziness + CDC stroke guidance",
+        "supporting_measurements": "刻意留空 —— 目前 22 個 outcome metrics 無對應頭暈量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.vertigo",
+      "name_zh": "眩暈",
+      "name_en": "Vertigo",
+      "pinyin": "xuan yun",
+      "pinyin_toned": "xuàn yūn",
+      "aliases_zh": [
+        "天旋地轉",
+        "旋轉性頭暈"
+      ],
+      "aliases_en": [
+        "Spinning sensation",
+        "Rotational dizziness"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "明確的旋轉或搖晃感，覺得自身或周圍環境在轉動，常合併噁心嘔吐、站立不穩。與頭暈(非旋轉性昏沉)不同，需在問診時明確分辨。是主訴而非診斷。",
+      "definition_en": "A definite spinning or swaying sensation, of the self or the surroundings rotating, often with nausea, vomiting and unsteadiness. Distinct from dizziness (non-spinning light-headedness), and the distinction must be made explicit during history-taking. A presenting complaint, not a diagnosis.",
+      "patient_words_zh": "「天旋地轉」「房間在轉」「像坐船一樣搖」「一動就想吐」「閉眼睛比較不會轉」",
+      "patient_words_en": "\"The room is spinning\", \"everything is whirling around me\", \"it feels like I'm on a boat\", \"any movement makes me want to vomit\", \"it's better with my eyes closed\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "全頭性感受，無局部部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，眩暈的性質軸(旋轉感、搖晃感)不在其中"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "轉頭或改變體位誘發，提示前庭因素；勞累後加重多屬氣血兩虛"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "轉頭誘發、勞累後加重、情緒波動後加重指向不同機轉"
+        },
+        {
+          "dimension": "誘因",
+          "why": "頭部姿勢改變、近期感冒、耳部感染史、情緒"
+        },
+        {
+          "dimension": "緩解",
+          "why": "靜臥閉眼是否緩解、發作持續時間(數秒、數分鐘、數小時)"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "耳鳴耳聾、噁心嘔吐是常見伴隨；單側肢體無力、複視、言語不清、劇烈頭痛則進紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "陣發性(數秒至數分鐘)與持續性眩暈的鑑別方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Triggered by head turning, worse after exertion, or worse after emotional upset each points somewhere different"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Change in head position, recent cold/flu, history of ear infection, emotion"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether lying still with eyes closed helps, and how long episodes last (seconds, minutes, hours)"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Tinnitus and hearing loss are common companions; one-sided weakness, double vision, slurred speech or severe headache enter the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Episodic (seconds to minutes) versus persistent vertigo point toward different causes"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "眩暈欲仆，兼耳鳴，肢體震顫",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "眩暈劇烈欲仆倒，兼耳鳴、肢體震顫或麻木，情緒激動或血壓驟升時發作"
+        },
+        {
+          "variant": "視物旋轉，噁心嘔吐，胸悶苔膩",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "眩暈劇烈伴視物旋轉、噁心嘔吐痰涎，胸悶脘痞，苔白膩"
+        },
+        {
+          "variant": "眩暈勞則加重，面色淡白，心悸",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "眩暈遇勞加重，動則尤甚，兼心悸、面色淡白、神疲乏力"
+        },
+        {
+          "variant": "眩暈耳鳴，腰膝痠軟，遺精",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "眩暈反覆發作，兼耳鳴、腰膝痠軟、男子遺精女子帶下，多見於久病或年長者"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Severe vertigo with a sense of falling, tinnitus, tremor",
+          "points_to": [
+            "pattern.liver_wind_stirring"
+          ],
+          "distinguishing": "Severe vertigo with a sense of near-collapse, tinnitus, limb tremor or numbness, triggered by strong emotion or a surge in blood pressure"
+        },
+        {
+          "variant": "Spinning vision, nausea and vomiting, chest fullness and greasy coating",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Severe vertigo with a spinning visual sensation, nausea, vomiting of phlegm-fluid, chest and epigastric fullness, white greasy coating"
+        },
+        {
+          "variant": "Vertigo worse with exertion, pale complexion, palpitations",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Vertigo worse with exertion, worse on movement, with palpitations, pale complexion, fatigue"
+        },
+        {
+          "variant": "Vertigo with tinnitus, weak aching low back and knees, seminal emission",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Recurrent vertigo with tinnitus, weak aching low back and knees, seminal emission in men or abnormal discharge in women; usually chronic illness or older patients"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "眩暈合併新發神經功能缺損(複視、構音障礙、單側無力、步態不穩、共濟失調) → 排除後循環中風",
+        "眩暈合併劇烈頭痛，性質與以往不同 → 需緊急影像評估",
+        "眩暈合併突發單側聽力喪失 → 需緊急耳鼻喉科評估",
+        "眩暈完全無法緩解、持續加重且合併意識改變 → 立即送急診"
+      ],
+      "red_flags_en": [
+        "Vertigo with new focal neurologic deficit (double vision, dysarthria, one-sided weakness, unsteady gait, ataxia) → rule out posterior circulation stroke",
+        "Vertigo with a severe headache unlike any before → needs urgent imaging evaluation",
+        "Vertigo with sudden one-sided hearing loss → needs urgent ENT evaluation",
+        "Vertigo that will not settle, keeps worsening, and comes with altered consciousness → send to emergency immediately"
+      ],
+      "sources": [
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.vertigo red_flags note + sources",
+        "中醫內科學 眩暈篇 —— 肝風內動・痰濕中阻・氣血兩虛・腎精不足分證",
+        "cloudtcm.disease_entry.17941「暈眩」taxonomy_ids: sym.head_face_eye（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 眩暈篇 + 一般臨床對 vertigo(旋轉性)與 dizziness 的區分",
+        "differentiation_zh/en": "中醫內科學 眩暈分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.vertigo + CDC stroke guidance",
+        "supporting_measurements": "刻意留空 —— 目前 22 個 outcome metrics 無對應眩暈量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.tinnitus",
+      "name_zh": "耳鳴",
+      "name_en": "Tinnitus",
+      "pinyin": "er ming",
+      "pinyin_toned": "ěr míng",
+      "aliases_zh": [
+        "耳中鳴響",
+        "耳朵嗡嗡叫"
+      ],
+      "aliases_en": [
+        "Ringing in the ears",
+        "Ear buzzing"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "在無外部聲源的情況下，自覺耳中或頭中有鳴響、嗡嗡、蟬鳴或潮聲等聲音。是主訴而非診斷，可為單側或雙側，可急可慢。",
+      "definition_en": "A perceived sound in the ear or head — ringing, buzzing, cicada-like or roaring — without any external sound source. A presenting complaint rather than a diagnosis, may be one- or two-sided, acute or chronic.",
+      "patient_words_zh": "「耳朵一直有聲音」「像蟬叫」「嗡嗡的」「安靜的時候特別明顯」「像海浪聲」",
+      "patient_words_en": "\"There's constant noise in my ear\", \"like cicadas\", \"a buzzing sound\", \"it's worse when it's quiet\", \"like the sound of waves\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於耳，無需再細分部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，耳鳴的音調性質(蟬鳴、嗡嗡、潮聲)不在其中"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality",
+          "diagnostic_note_zh": "單側耳鳴合併聽力驟降需優先排除突發性耳聾等急症；雙側慢性耳鳴多屬虛證"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "安靜夜間明顯多屬虛；突發劇烈多屬實／肝火；勞累後加重多屬脾腎兩虛"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "蟬鳴聲細多屬虛，潮聲如雷轟鳴多屬實(肝火、痰火)"
+        },
+        {
+          "dimension": "時間",
+          "why": "安靜時明顯、勞累後加重、突發與否指向不同證型"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒、勞累、噪音暴露史、藥物(耳毒性藥物)、感冒後"
+        },
+        {
+          "dimension": "緩解",
+          "why": "按壓耳周或安靜環境是否改變音量"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "聽力下降、耳悶脹感、眩暈 —— 常見伴隨；突發單側聽力喪失、新發神經症狀進紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性(數日內)與慢性(數月以上)耳鳴的轉診急迫性不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "A fine cicada-like tone suggests deficiency; a loud roaring/thunderous tone suggests excess (liver fire, phlegm-fire)"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Noticeable in quiet settings, worse after exertion, or sudden onset each point toward a different pattern"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Emotion, exertion, noise exposure history, ototoxic medication, after a cold"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether pressing around the ear or a quiet environment changes the volume"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Hearing loss, ear fullness, vertigo are common companions; sudden one-sided hearing loss or new neurologic symptoms enter the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute (days) versus chronic (months or more) tinnitus carries a different urgency for referral"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "耳鳴突發，聲大如潮，煩躁易怒，面紅",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "耳鳴聲大如潮，突發或驟然加重，兼頭脹頭痛、面紅目赤、口苦、急躁易怒"
+        },
+        {
+          "variant": "耳鳴如蟬，漸進，勞則加重",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "耳鳴細如蟬鳴，漸進性，夜間安靜時明顯，兼腰膝痠軟、頭暈健忘"
+        },
+        {
+          "variant": "耳鳴時輕時重，神疲乏力，食少",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "耳鳴時輕時重，勞累後加重，兼神疲乏力、食少便溏、面色萎黃"
+        },
+        {
+          "variant": "耳鳴脹悶如塞，頭重胸悶，苔膩",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "耳鳴兼耳中脹悶如塞，頭重如裹，胸悶噁心，苔白膩"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sudden loud roaring tinnitus, irritability, red face",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Loud roaring tinnitus, sudden onset or abrupt worsening, with distending headache, red face and eyes, bitter taste, irritability"
+        },
+        {
+          "variant": "Fine cicada-like tinnitus, gradual onset, worse with exertion",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Fine cicada-like tone, gradually progressive, noticeable in quiet at night, with weak aching low back and knees, dizziness, forgetfulness"
+        },
+        {
+          "variant": "Tinnitus fluctuating in intensity, fatigue, poor appetite",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Fluctuating tinnitus, worse after exertion, with fatigue, poor appetite, loose stool, sallow complexion"
+        },
+        {
+          "variant": "Tinnitus with a blocked stuffy sensation, heavy head, chest fullness",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Tinnitus with a stuffy blocked feeling in the ear, heavy head as though wrapped, chest fullness, nausea, white greasy coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Hearing loss (https://medlineplus.gov/ency/article/003044.htm)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "突發單側聽力顯著喪失合併耳鳴 → 屬耳鼻喉科急症(突發性耳聾)，需 72 小時內就醫",
+        "耳鳴合併新發神經功能缺損(臉部麻木、複視、步態不穩) → 需緊急神經學評估",
+        "與脈搏同步的搏動性耳鳴 → 需影像評估排除血管性病因",
+        "耳鳴合併頭部外傷史或耳道流血流膿 → 需耳鼻喉科評估"
+      ],
+      "red_flags_en": [
+        "Sudden marked one-sided hearing loss with tinnitus → an ENT emergency (sudden sensorineural hearing loss), needs care within 72 hours",
+        "Tinnitus with new focal neurologic deficit (facial numbness, double vision, unsteady gait) → needs urgent neurologic evaluation",
+        "Pulsatile tinnitus synchronized with the heartbeat → needs imaging to rule out a vascular cause",
+        "Tinnitus with a history of head trauma or ear discharge/bleeding → needs ENT evaluation"
+      ],
+      "sources": [
+        "MedlinePlus — Hearing loss (https://medlineplus.gov/ency/article/003044.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.tinnitus red_flags note + sources",
+        "中醫內科學 耳鳴耳聾篇 —— 肝火上炎・腎精不足・脾氣虛・痰濕上蒙分證",
+        "cloudtcm.disease_entry.86「耳聾」taxonomy_ids: sym.head_face_eye（本 repo symptom_taxonomy.json candidates，耳鳴耳聾同一分類）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 耳鳴耳聾篇 + 一般臨床對 tinnitus 的界定",
+        "differentiation_zh/en": "中醫內科學 耳鳴耳聾分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.tinnitus + MedlinePlus hearing-loss guidance",
+        "supporting_measurements": "刻意留空 —— 目前 22 個 outcome metrics 無對應耳鳴量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.palpitations",
+      "name_zh": "心悸",
+      "name_en": "Palpitations",
+      "pinyin": "xin ji",
+      "pinyin_toned": "xīn jì",
+      "aliases_zh": [
+        "心跳快",
+        "心慌",
+        "心跳不規則感"
+      ],
+      "aliases_en": [
+        "Racing heart",
+        "Heart pounding",
+        "Irregular heartbeat sensation"
+      ],
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "自覺心臟跳動異常 —— 快、慢、漏跳或用力搏動的不適感。是主訴，不等於心律不整的診斷，客觀心律需靠心電圖等檢查確認，屬病例層。",
+      "definition_en": "A subjective awareness of the heartbeat — racing, slow, skipping or pounding. A presenting complaint, not the same as a diagnosis of arrhythmia; the objective rhythm requires ECG or similar and belongs to the case layer.",
+      "patient_words_zh": "「心臟跳得很快」「心臟好像漏跳一拍」「心慌慌的」「感覺心臟在敲」「一緊張心跳就亂」",
+      "patient_words_en": "\"My heart is racing\", \"it feels like my heart skipped a beat\", \"a fluttery uneasy feeling in my chest\", \"I can feel my heart pounding\", \"my heartbeat goes erratic when I'm anxious\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "胸部正中，已由 taxonomy_ids 定位，無需再細分部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，心悸的性質軸(快、慢、漏跳、搏動有力與否)不在其中"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "夜間發作或影響入睡多屬陰血不足；勞累後或情緒激動後發作多屬氣虛或心陽不振"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "夜間、勞累後、情緒激動後何時發作，指向不同機轉"
+        },
+        {
+          "dimension": "誘因",
+          "why": "咖啡因、情緒、勞累、發燒、貧血、甲狀腺疾病、藥物、月經期"
+        },
+        {
+          "dimension": "緩解",
+          "why": "休息是否緩解、深呼吸或按壓是否改變"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "胸痛、暈厥或暈厥前兆、嚴重呼吸困難、冒冷汗 —— 進紅旗流程；善驚易恐、多夢、五心煩熱提示證型方向"
+        },
+        {
+          "dimension": "病程",
+          "why": "陣發性(數秒至數分鐘)與持續性心悸的鑑別方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "At night, after exertion, or after emotional upset each points toward a different mechanism"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Caffeine, emotion, exertion, fever, anemia, thyroid disease, medication, menstruation"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether rest helps, whether deep breathing or vagal maneuvers change it"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Chest pain, syncope or presyncope, severe dyspnea, cold sweat enter the red-flag pathway; being easily startled, vivid dreams and five-centre heat point toward pattern differentiation"
+        },
+        {
+          "dimension": "Course",
+          "why": "Episodic (seconds to minutes) versus persistent palpitations point toward different causes"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "心悸善驚，坐臥不安，寐差多夢",
+          "points_to": [
+            "pattern.heart_gallbladder_qi_deficiency"
+          ],
+          "distinguishing": "心悸易受驚嚇，坐臥不安，遇事易恐，寐差多夢，兼氣短乏力"
+        },
+        {
+          "variant": "心悸頭暈，面色無華，唇甲淡白",
+          "points_to": [
+            "pattern.heart_blood_deficiency"
+          ],
+          "distinguishing": "心悸兼頭暈眼花，面色與唇甲淡白無華，失眠健忘"
+        },
+        {
+          "variant": "心悸氣短，畏寒肢冷，遇冷加重",
+          "points_to": [
+            "pattern.heart_yang_deficiency"
+          ],
+          "distinguishing": "心悸兼胸悶氣短，畏寒肢冷，遇冷加重，動則尤甚，或見面色蒼白、自汗"
+        },
+        {
+          "variant": "心悸胸悶刺痛，唇甲紫暗",
+          "points_to": [
+            "pattern.heart_blood_stasis"
+          ],
+          "distinguishing": "心悸兼胸部刺痛或悶痛，痛處固定，唇甲紫暗，舌質紫暗或有瘀斑"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Palpitations with easy startling, restlessness, poor sleep with dreams",
+          "points_to": [
+            "pattern.heart_gallbladder_qi_deficiency"
+          ],
+          "distinguishing": "Palpitations easily triggered by fright, restless, easily fearful, poor sleep with dreaming, with shortness of breath and fatigue"
+        },
+        {
+          "variant": "Palpitations with dizziness, pale complexion, pale lips and nails",
+          "points_to": [
+            "pattern.heart_blood_deficiency"
+          ],
+          "distinguishing": "Palpitations with dizziness and blurred vision, pale lustreless complexion, lips and nails, insomnia, forgetfulness"
+        },
+        {
+          "variant": "Palpitations with shortness of breath, cold aversion and cold limbs, worse in cold",
+          "points_to": [
+            "pattern.heart_yang_deficiency"
+          ],
+          "distinguishing": "Palpitations with chest fullness and shortness of breath, cold aversion, cold limbs, worse in cold weather and with exertion, may show pale complexion and spontaneous sweating"
+        },
+        {
+          "variant": "Palpitations with chest fullness and stabbing pain, dusky lips and nails",
+          "points_to": [
+            "pattern.heart_blood_stasis"
+          ],
+          "distinguishing": "Palpitations with fixed stabbing or oppressive chest pain, dusky lips and nails, dusky tongue or with stasis spots"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)"
+      ],
+      "safety_flags": [
+        "chest_pain_red_flag"
+      ],
+      "red_flags_zh": [
+        "心悸合併暈厥或近乎暈厥 → 需緊急心臟科評估",
+        "心悸合併胸痛、嚴重呼吸困難 → 排除急性心臟事件，立即就醫",
+        "心悸合併持續性血流動力學不穩(冒冷汗、意識模糊、血壓下降) → 立即送急診",
+        "心悸合併已知心臟病史或明顯心律不規則且持續不緩解 → 需心臟科評估"
+      ],
+      "red_flags_en": [
+        "Palpitations with syncope or near-syncope → needs urgent cardiology evaluation",
+        "Palpitations with chest pain or severe dyspnea → rule out acute cardiac event, seek care immediately",
+        "Palpitations with sustained hemodynamic instability (cold sweat, confusion, falling blood pressure) → send to emergency immediately",
+        "Palpitations with a known cardiac history, or a markedly irregular rhythm that does not settle → needs cardiology evaluation"
+      ],
+      "sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.palpitations red_flags note + sources",
+        "中醫內科學 心悸篇 —— 心膽氣虛・心血不足・心陽不振・心血瘀阻分證",
+        "cloudtcm.disease_entry.290「心律不整」taxonomy_ids: sym.chest_respiratory（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 心悸篇 + 一般臨床對 palpitations(主觀感受，非心律診斷)的界定",
+        "differentiation_zh/en": "中醫內科學 心悸分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.palpitations + MedlinePlus emergency guidance",
+        "supporting_measurements": "刻意留空 —— 目前 22 個 outcome metrics 無心率／心律量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.nausea",
+      "name_zh": "噁心",
+      "name_en": "Nausea",
+      "pinyin": "e xin",
+      "pinyin_toned": "ě xīn",
+      "aliases_zh": [
+        "想吐",
+        "反胃",
+        "噁心感"
+      ],
+      "aliases_en": [
+        "Feeling sick",
+        "Queasiness",
+        "Feeling like vomiting"
+      ],
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "上腹部及咽喉部的不適感，伴有想嘔吐的衝動，可有或無實際嘔吐。是主訴而非診斷，病因跨消化、神經、內分泌、妊娠與藥物等多個系統。",
+      "definition_en": "An unpleasant sensation in the upper abdomen and throat with an urge to vomit, with or without actual vomiting. A presenting complaint rather than a diagnosis, with causes spanning digestive, neurologic, endocrine, pregnancy-related and drug-related origins.",
+      "patient_words_zh": "「一直想吐」「胃翻攪的」「反胃」「喉嚨口有東西頂著」「聞到味道就想吐」",
+      "patient_words_en": "\"I keep feeling like I'm going to be sick\", \"my stomach is churning\", \"queasy\", \"there's something rising in my throat\", \"certain smells make me want to gag\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於消化系統，噁心本身無更細部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用於噁心"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "食後即發多屬食滯或胃熱；晨起明顯需考慮妊娠；情緒波動後發作多屬肝胃不和"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "食後、晨起、情緒波動後發作各有指向"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲食(過飽、油膩)、情緒、暈車暈船、妊娠可能性、藥物(化療、鴉片類)"
+        },
+        {
+          "dimension": "緩解",
+          "why": "嘔吐後是否緩解、進食少量是否改善"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "持續嘔吐、吐血或咖啡渣樣物、劇烈腹痛、意識改變、明顯脫水 —— 進紅旗流程；口苦脅脹提示肝胃不和，噯腐吞酸提示食滯"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性(數小時至數日)與慢性反覆噁心的鑑別方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Occurring right after eating, on waking, or after emotional upset each points somewhere different"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Diet (overeating, greasy food), emotion, motion sickness, possible pregnancy, medication (chemotherapy, opioids)"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether vomiting relieves it, whether small frequent meals help"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Persistent vomiting, hematemesis or coffee-ground emesis, severe abdominal pain, altered mental status, significant dehydration enter the red-flag pathway; bitter taste and hypochondriac fullness suggest liver-stomach disharmony, sour belching suggests food stagnation"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute (hours to days) versus chronic recurrent nausea point toward different causes"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "噁心欲吐，脘悶不舒，得食稍緩，苔白膩",
+          "points_to": [
+            "pattern.cold_damp_encumbering_spleen"
+          ],
+          "distinguishing": "噁心兼脘腹痞悶，口淡不渴，肢體困重，苔白膩，遇寒或飲食生冷加重"
+        },
+        {
+          "variant": "噁心口苦，脘悶泛酸，苔黃膩",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "噁心兼口苦口黏，脘腹痞悶，泛酸嘈雜，苔黃膩，小便短赤"
+        },
+        {
+          "variant": "噁心噯腐，脘腹脹滿，厭食",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "噁心兼噯氣酸腐，脘腹脹滿拒按，厭食，或有暴飲暴食史"
+        },
+        {
+          "variant": "噁心脅脹，噯氣頻作，情緒波動加重",
+          "points_to": [
+            "pattern.liver_stomach_disharmony"
+          ],
+          "distinguishing": "噁心隨情緒起伏，兼脅肋脹悶、噯氣頻作、善太息"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Nausea with epigastric fullness, slightly relieved by eating, white greasy coating",
+          "points_to": [
+            "pattern.cold_damp_encumbering_spleen"
+          ],
+          "distinguishing": "Nausea with epigastric fullness, bland taste without thirst, heavy limbs, white greasy coating, worse with cold or raw/cold food"
+        },
+        {
+          "variant": "Nausea with bitter taste, epigastric fullness and acid regurgitation, yellow greasy coating",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "Nausea with a bitter sticky taste, epigastric fullness, acid regurgitation and gnawing hunger, yellow greasy coating, scanty dark urine"
+        },
+        {
+          "variant": "Nausea with sour belching, abdominal distension, loss of appetite",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Nausea with sour rotten belching, distended abdomen worse for pressure, loss of appetite, often a history of overeating"
+        },
+        {
+          "variant": "Nausea with hypochondriac fullness, frequent belching, worse with emotional swings",
+          "points_to": [
+            "pattern.liver_stomach_disharmony"
+          ],
+          "distinguishing": "Nausea that tracks emotional state, with hypochondriac fullness, frequent belching, frequent sighing"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)"
+      ],
+      "safety_flags": [
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "噁心合併持續嘔吐無法進食或飲水 → 需評估脫水",
+        "噁心合併吐血或咖啡渣樣嘔吐物 → 排除上消化道出血",
+        "噁心合併劇烈腹痛、意識改變 → 需緊急評估",
+        "噁心合併明顯脫水徵象(口乾、少尿、頭暈站不穩) → 需醫療評估補液"
+      ],
+      "red_flags_en": [
+        "Nausea with persistent vomiting preventing oral intake of food or fluids → needs assessment for dehydration",
+        "Nausea with hematemesis or coffee-ground vomiting → rule out upper GI bleeding",
+        "Nausea with severe abdominal pain or altered mental status → needs urgent evaluation",
+        "Nausea with signs of significant dehydration (dry mouth, reduced urination, dizziness on standing) → needs medical evaluation for rehydration"
+      ],
+      "sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.nausea red_flags note + sources",
+        "中醫內科學 嘔吐篇 —— 寒濕困脾・濕熱蘊結・食滯胃脘・肝胃不和分證"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 嘔吐篇 + 一般臨床對 nausea 的界定(不等於嘔吐)",
+        "differentiation_zh/en": "中醫內科學 嘔吐分證(取噁心相關證型) + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.nausea + MedlinePlus emergency guidance",
+        "supporting_measurements": "刻意留空 —— 目前 22 個 outcome metrics 無對應噁心量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.abdominal_bloating",
+      "name_zh": "腹脹",
+      "name_en": "Abdominal bloating",
+      "pinyin": "fu zhang",
+      "pinyin_toned": "fù zhàng",
+      "aliases_zh": [
+        "肚子脹",
+        "胃腸脹氣",
+        "脘腹脹滿"
+      ],
+      "aliases_en": [
+        "Bloating",
+        "Abdominal distension",
+        "Gassiness"
+      ],
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "腹部脹滿或緊繃感，可伴隨可見的腹部膨隆。病人先察覺的是「衣服變緊」，醫者可望診或觸診確認腹部膨隆與叩診鼓音，是本症兼具自述與他覺兩種取得型態的原因。是主訴而非診斷。",
+      "definition_en": "A sensation of fullness or tightness in the abdomen, with or without visible distension. The patient notices tight clothing first; the examiner can confirm visible distension and tympanic percussion — which is why this symptom carries both observation modes. A presenting complaint, not a diagnosis.",
+      "patient_words_zh": "「肚子脹得像氣球」「褲子扣不上」「吃一點就撐」「肚子裡都是氣」「一直想打嗝放屁」",
+      "patient_words_en": "\"My belly feels blown up like a balloon\", \"I can't do my trousers up\", \"I feel full after a few bites\", \"it feels like my stomach is full of gas\", \"I keep needing to burp or pass gas\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "脹屬氣滯，是本症最直接對應的性質詞"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "腹部脹滿多為瀰漫性，非側性症狀"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "食後即脹多屬食滯或脾虛；經前加重提示衝任與肝；情緒波動後加重多屬肝鬱氣滯"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "上腹、下腹或全腹脹滿，脹滿部位提示不同臟腑"
+        },
+        {
+          "dimension": "性質",
+          "why": "脹滿隨噯氣或矢氣後是否緩解，是氣滯與否的關鍵"
+        },
+        {
+          "dimension": "時間",
+          "why": "食後、經前、情緒波動後何時加重"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲食(產氣食物、進食過快)、情緒、月經週期、久坐少動"
+        },
+        {
+          "dimension": "緩解",
+          "why": "噯氣或矢氣後是否緩解、按摩是否改善"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "劇烈疼痛、持續嘔吐、無法排氣排便、消化道出血 —— 進紅旗流程；食少便溏提示脾虛"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性新發與慢性反覆(如經前週期性)處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Upper, lower or whole-abdomen fullness suggests different organ systems"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Whether the fullness eases after belching or passing gas is the key marker of qi stagnation"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse after eating, premenstrually, or after emotional upset"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Diet (gas-producing food, eating too fast), emotion, menstrual cycle, prolonged sitting"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether belching or passing gas relieves it, whether massage helps"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Severe pain, persistent vomiting, inability to pass gas or stool, GI bleeding enter the red-flag pathway; poor appetite and loose stool suggest spleen deficiency"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute new-onset versus chronic recurrent (e.g. cyclical premenstrual) bloating are managed differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "脘腹脹滿，噯腐吞酸，不欲飲食",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "脘腹脹滿拒按，噯氣酸腐，厭食，或有暴飲暴食史，瀉後或矢氣後稍減"
+        },
+        {
+          "variant": "腹脹隨情緒增減，噯氣則舒，脅肋脹悶",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "腹脹隨情緒起伏，噯氣或矢氣後緩解，兼脅肋脹悶、善太息"
+        },
+        {
+          "variant": "腹脹食少，便溏，神疲肢倦",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "腹脹綿綿，食後尤甚，兼食少、便溏、神疲乏力、面色萎黃"
+        },
+        {
+          "variant": "腹脹痞悶，口黏不渴，苔厚膩",
+          "points_to": [
+            "pattern.cold_damp_encumbering_spleen"
+          ],
+          "distinguishing": "腹脹兼脘痞不舒，口黏不渴，肢體困重，苔白厚膩"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Epigastric and abdominal fullness, sour rotten belching, loss of appetite",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Distension worse for pressure, sour rotten belching, loss of appetite, often a history of overeating, slightly relieved after a bowel movement or passing gas"
+        },
+        {
+          "variant": "Bloating that tracks emotional state, eased by belching, hypochondriac fullness",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Bloating that rises and falls with mood, relieved by belching or passing gas, with hypochondriac fullness, frequent sighing"
+        },
+        {
+          "variant": "Bloating with poor appetite, loose stool, fatigue",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Vague continuous bloating, worse after eating, with poor appetite, loose stool, fatigue, sallow complexion"
+        },
+        {
+          "variant": "Bloating with stuffy fullness, sticky mouth without thirst, thick greasy coating",
+          "points_to": [
+            "pattern.cold_damp_encumbering_spleen"
+          ],
+          "distinguishing": "Bloating with epigastric stuffiness, sticky mouth without thirst, heavy limbs, thick white greasy coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)"
+      ],
+      "safety_flags": [
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "腹脹明顯合併劇烈疼痛、持續嘔吐、完全無法排氣排便 → 排除腸阻塞，急症轉診",
+        "腹脹合併消化道出血徵象(吐血、黑便) → 需緊急評估",
+        "腹脹合併休克症狀(冒冷汗、心跳過速、意識模糊) → 立即送急診",
+        "腹脹合併不明原因體重下降或腹部可觸及腫塊 → 需進一步檢查"
+      ],
+      "red_flags_en": [
+        "Marked bloating with severe pain, persistent vomiting, complete inability to pass gas or stool → rule out bowel obstruction, urgent referral",
+        "Bloating with signs of GI bleeding (hematemesis, black stool) → needs urgent evaluation",
+        "Bloating with signs of shock (cold sweat, tachycardia, confusion) → send to emergency immediately",
+        "Bloating with unexplained weight loss or a palpable abdominal mass → needs further workup"
+      ],
+      "sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.abdominal_bloating red_flags note + sources",
+        "cloudtcm.disease_entry.28381「胃腸脹氣」taxonomy_ids: sym.dietary_gastrointestinal（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "一般臨床對 bloating 的界定(自述+視觸診可及) + 中醫內科學 痞滿篇",
+        "differentiation_zh/en": "中醫內科學 痞滿／腹脹分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.abdominal_bloating + MedlinePlus guidance",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.bloating（既有，未新增，精確對應）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.bloating"
+      ]
+    },
+    {
+      "id": "sym.constipation",
+      "name_zh": "便秘",
+      "name_en": "Constipation",
+      "pinyin": "bian mi",
+      "pinyin_toned": "biàn mì",
+      "aliases_zh": [
+        "大便乾結",
+        "排便困難",
+        "大便秘結"
+      ],
+      "aliases_en": [
+        "Difficulty passing stool",
+        "Infrequent bowel movements",
+        "Hard stool"
+      ],
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "排便頻率減少、糞便乾硬，或排便費力、不盡感。是主訴而非診斷，糞便的實際質地與頻率屬病例層(見 metric.bowel_frequency)。",
+      "definition_en": "Reduced bowel movement frequency, hard stool, or straining and a sense of incomplete evacuation. A presenting complaint rather than a diagnosis; the actual stool consistency and frequency belong to the case layer (see metric.bowel_frequency).",
+      "patient_words_zh": "「好幾天沒上大號」「大便很硬，很難解出來」「解完還是覺得沒解乾淨」「肚子脹脹的解不出來」",
+      "patient_words_en": "\"I haven't gone in days\", \"my stool is really hard to pass\", \"I still feel like I haven't fully emptied\", \"my belly feels full and I can't go\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於大小便系統，無需再細分部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用於便秘"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "便秘的辨證軸主要是排便頻率與糞質(屬病例層 metric.bowel_frequency)，而非時段；symptom_timing 詞彙表勉強套用會失真"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "程度",
+          "why": "排便頻率、糞質軟硬(Bristol 分型)屬病例層量化，問診仍需先掌握大致情況以判斷急迫性"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲水量、纖維攝取、活動量、藥物(鴉片類、鐵劑)、如廁習慣、旅行或作息改變"
+        },
+        {
+          "dimension": "緩解",
+          "why": "何種食物或方法能緩解、是否依賴瀉藥"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "劇烈腹痛、嘔吐、完全無法排氣、便血、發熱 —— 進紅旗流程；腹脹噯氣提示氣秘，畏寒肢冷提示陽虛冷秘"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性新發(尤其合併劇痛)與慢性習慣性便秘的處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Severity",
+          "why": "Frequency and stool consistency (Bristol type) are case-layer quantities, but a rough sense is still needed to judge urgency"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Fluid intake, fiber intake, activity level, medication (opioids, iron), toileting habits, travel or routine change"
+        },
+        {
+          "dimension": "Relief",
+          "why": "What food or method helps, and whether the patient relies on laxatives"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Severe abdominal pain, vomiting, complete inability to pass gas, blood in stool, fever enter the red-flag pathway; bloating and belching suggest qi-type constipation, cold aversion and cold limbs suggest yang-deficiency cold constipation"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute new-onset (especially with severe pain) and chronic habitual constipation are managed differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "大便乾結，腹脹拒按，口乾口臭，面赤",
+          "points_to": [
+            "pattern.large_intestine_excess_heat"
+          ],
+          "distinguishing": "大便乾結如羊屎，腹脹滿拒按，口乾口臭，面赤心煩，小便短赤"
+        },
+        {
+          "variant": "欲便不能，噯氣頻作，脅腹痞滿",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "有便意而排出困難，隨情緒起伏，噯氣頻作，脅肋或少腹脹滿"
+        },
+        {
+          "variant": "便質不硬但排出困難，便後乏力，神疲氣短",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "糞質並不乾硬，但臨廁努掙乏力，便後汗出短氣，神疲肢倦"
+        },
+        {
+          "variant": "大便艱澀，畏寒肢冷，腰膝冷痛",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "大便艱澀難下，小便清長，畏寒肢冷，腰膝冷痛，喜熱惡冷"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Hard dry stool, abdominal distension worse for pressure, dry mouth, bad breath, red face",
+          "points_to": [
+            "pattern.large_intestine_excess_heat"
+          ],
+          "distinguishing": "Stool hard like sheep pellets, distension worse for pressure, dry mouth, bad breath, red face, vexation, scanty dark urine"
+        },
+        {
+          "variant": "Urge without ability to pass stool, frequent belching, hypochondriac/lower-abdominal fullness",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Has the urge but struggles to pass stool, tracks emotional state, frequent belching, hypochondriac or lower abdominal fullness"
+        },
+        {
+          "variant": "Stool not hard but difficult to expel, fatigue after defecation, shortness of breath",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Stool not actually hard, but straining is exhausting, sweating and breathlessness after the effort, general fatigue"
+        },
+        {
+          "variant": "Difficult stool passage, cold aversion and cold limbs, cold aching low back and knees",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Difficult to pass stool, clear copious urine, cold aversion and cold limbs, cold aching low back and knees, prefers warmth"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)"
+      ],
+      "safety_flags": [
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "便秘合併劇烈腹脹腹痛、嘔吐、完全無法排氣 → 排除腸阻塞，急症轉診",
+        "便秘合併便血或黑便 → 需評估消化道出血或腫瘤",
+        "新發便秘合併不明原因體重下降，尤其中老年人 → 需進一步檢查排除腸道腫瘤",
+        "便秘合併發熱、劇烈腹痛拒按 → 排除急腹症"
+      ],
+      "red_flags_en": [
+        "Constipation with severe distension and pain, vomiting, complete inability to pass gas → rule out bowel obstruction, urgent referral",
+        "Constipation with blood in stool or black stool → needs evaluation for GI bleeding or malignancy",
+        "New constipation with unexplained weight loss, especially in an older patient → needs further workup to rule out bowel malignancy",
+        "Constipation with fever and severe pain worse for pressure → rule out acute abdomen"
+      ],
+      "sources": [
+        "MedlinePlus — Emergency medical services (https://medlineplus.gov/ency/article/001927.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.constipation red_flags note + sources",
+        "中醫內科學 便秘篇 —— 熱秘・氣秘・氣虛秘・陽虛冷秘分證",
+        "cloudtcm.disease_entry.83「大便秘結」taxonomy_ids: sym.urinary_bowel（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 便秘篇 + 一般臨床對 constipation 的界定，糞質頻率明確歸病例層",
+        "differentiation_zh/en": "中醫內科學 便秘分證(熱秘・氣秘・氣虛秘・陽虛冷秘) + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.constipation + MedlinePlus guidance",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.bowel_frequency（既有，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.bowel_frequency"
+      ]
+    },
+    {
+      "id": "sym.diarrhea",
+      "name_zh": "腹瀉",
+      "name_en": "Diarrhea",
+      "pinyin": "fu xie",
+      "pinyin_toned": "fù xiè",
+      "aliases_zh": [
+        "拉肚子",
+        "泄瀉",
+        "大便稀薄"
+      ],
+      "aliases_en": [
+        "Loose stool (colloquial)",
+        "Diarrhea (TCM: xie xie)",
+        "Thin watery stool"
+      ],
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "排便次數增加、糞便稀薄或水樣。是主訴而非診斷，實際的排便次數與性狀屬病例層(見 metric.bowel_frequency)。",
+      "definition_en": "Increased bowel movement frequency with loose or watery stool. A presenting complaint rather than a diagnosis; the actual frequency and stool form belong to the case layer (see metric.bowel_frequency).",
+      "patient_words_zh": "「一直拉肚子」「大便稀稀水水的」「一天跑好幾次廁所」「吃完就想跑廁所」「天還沒亮肚子就痛要拉」",
+      "patient_words_en": "\"I keep having to run to the toilet\", \"my stool is watery\", \"I've been going several times a day\", \"I need the toilet right after eating\", \"my stomach cramps and I need to go before dawn\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於大小便系統，無需再細分部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用於腹瀉本身(腹痛若合併存在，記在 sym.abdominal_pain)"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "食後即瀉多屬脾虛或食滯；黎明前(五更)臍腹作痛、腸鳴即瀉屬腎陽虛經典表現，此表未有「黎明前」專屬值，暫以 morning 記錄並於此說明"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "食後即瀉、黎明前作瀉(五更瀉)、情緒波動後發作各指向不同證型"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲食(生冷、油膩、不潔)、情緒、旅行史、近期用藥(抗生素)、乳製品"
+        },
+        {
+          "dimension": "緩解",
+          "why": "瀉後腹痛是否緩解、禁食是否改善"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "血便或黑便、嚴重脫水、持續嘔吐、劇烈腹痛、高燒 —— 進紅旗流程；腸鳴腹痛瀉後痛減提示食滯"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性(數日內，多屬外感或食物中毒)與慢性反覆(數週以上，需排查器質性疾病)處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Right after eating, before dawn (classic '5am diarrhea'), or after emotional upset each point toward a different pattern"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Diet (raw/cold food, greasy food, contaminated food), emotion, travel history, recent antibiotic use, dairy"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether the pain eases after passing stool, whether fasting improves it"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Bloody or black stool, severe dehydration, persistent vomiting, severe abdominal pain, high fever enter the red-flag pathway; cramping that eases after passing stool suggests food stagnation"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute (days, usually external contraction or food poisoning) versus chronic recurrent (weeks or more, needs workup for organic disease) are managed differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "腹瀉清稀，腸鳴腹痛，遇寒加重",
+          "points_to": [
+            "pattern.cold_damp_encumbering_spleen"
+          ],
+          "distinguishing": "大便清稀如水，腸鳴腹痛，口淡不渴，肢體困重，遇寒或飲食生冷誘發加重"
+        },
+        {
+          "variant": "瀉下急迫，肛門灼熱，糞質臭穢，口渴",
+          "points_to": [
+            "pattern.large_intestine_damp_heat"
+          ],
+          "distinguishing": "腹瀉急迫，瀉下黃褐穢臭，肛門灼熱，煩熱口渴，小便短赤"
+        },
+        {
+          "variant": "腹瀉因食滯，瀉下酸腐，脘腹脹痛，瀉後痛減",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "瀉下糞便夾未消化食物，酸腐臭穢，脘腹脹痛，瀉後痛減，噯氣厭食"
+        },
+        {
+          "variant": "大便稀溏，食少腹脹，神疲肢倦，反覆發作",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "大便時溏時瀉，稍進油膩即加重，食少腹脹，神疲乏力，面色萎黃，遷延反覆"
+        },
+        {
+          "variant": "黎明前臍腹作痛，腸鳴即瀉，瀉後則安，畏寒肢冷",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "每於黎明前臍腹作痛，腸鳴即瀉，瀉後痛減，畏寒肢冷，腰膝痠冷，即「五更瀉」"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Watery diarrhea, abdominal cramping and borborygmi, worse in cold",
+          "points_to": [
+            "pattern.cold_damp_encumbering_spleen"
+          ],
+          "distinguishing": "Clear watery stool, cramping with loud bowel sounds, bland taste without thirst, heavy limbs, worse with cold or raw/cold food"
+        },
+        {
+          "variant": "Urgent diarrhea, burning at the anus, foul-smelling stool, thirst",
+          "points_to": [
+            "pattern.large_intestine_damp_heat"
+          ],
+          "distinguishing": "Urgent diarrhea, foul yellow-brown stool, burning sensation at the anus, vexing heat and thirst, scanty dark urine"
+        },
+        {
+          "variant": "Diarrhea from food stagnation, sour rotten stool, cramping relieved after passing stool",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Stool containing undigested food, sour and foul, distending abdominal pain relieved after passing stool, belching, loss of appetite"
+        },
+        {
+          "variant": "Loose stool, poor appetite and bloating, fatigue, recurrent",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Alternating loose stool and diarrhea, worse with any greasy food, poor appetite, bloating, fatigue, sallow complexion, drags on and recurs"
+        },
+        {
+          "variant": "Pre-dawn periumbilical pain, diarrhea with bowel sounds, relieved after passing stool, cold aversion and cold limbs",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "Periumbilical pain before dawn, diarrhea with loud bowel sounds, pain eased after passing stool, cold aversion, cold limbs, cold aching low back and knees — the classic 'fifth-watch diarrhea'"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "active_bleeding_medical_review"
+      ],
+      "red_flags_zh": [
+        "腹瀉合併血便或黑便 → 排除消化道出血",
+        "腹瀉合併嚴重脫水徵象(口乾、少尿、頭暈站不穩、皮膚彈性差) → 需醫療評估補液",
+        "腹瀉合併持續嘔吐無法進食進水、劇烈腹痛或高燒 → 需緊急評估",
+        "嬰幼兒或年長者腹瀉合併明顯精神萎靡 → 較一般成人更需及早就醫"
+      ],
+      "red_flags_en": [
+        "Diarrhea with blood in stool or black stool → rule out GI bleeding",
+        "Diarrhea with signs of significant dehydration (dry mouth, reduced urination, dizziness on standing, poor skin turgor) → needs medical evaluation for rehydration",
+        "Diarrhea with persistent vomiting preventing oral intake, severe abdominal pain, or high fever → needs urgent evaluation",
+        "Diarrhea in infants or older adults with marked lethargy → needs earlier medical attention than in a typical adult"
+      ],
+      "sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.diarrhea red_flags note + sources",
+        "中醫內科學 泄瀉篇 —— 寒濕・濕熱・食滯・脾虛・脾腎陽虛(五更瀉)分證",
+        "cloudtcm.disease_entry.28420「腹瀉」taxonomy_ids: sym.urinary_bowel（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 泄瀉篇 + 一般臨床對 diarrhea 的界定，實際頻率性狀歸病例層",
+        "differentiation_zh/en": "中醫內科學 泄瀉分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.diarrhea + MedlinePlus guidance",
+        "clinical_attributes.timing": "symptom_timing 詞彙表無「黎明前」專屬值，以 morning 記錄並在 diagnostic_note 說明五更瀉的臨床意義 —— 誠實記錄詞彙表現有缺口，不強行造新值"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "supporting_measurements": [
+        "metric.bowel_frequency"
+      ]
+    },
+    {
+      "id": "sym.poor_appetite",
+      "name_zh": "食慾不振",
+      "name_en": "Poor appetite",
+      "pinyin": "shi yu bu zhen",
+      "pinyin_toned": "shí yù bú zhèn",
+      "aliases_zh": [
+        "胃口差",
+        "不想吃東西",
+        "納呆",
+        "納差"
+      ],
+      "aliases_en": [
+        "Poor appetite (colloquial)",
+        "Not wanting to eat",
+        "Reduced food intake (TCM: na dai)",
+        "Weak intake (TCM: na cha)"
+      ],
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "對食物的興趣或食量明顯下降，可伴隨早飽或食之無味。是主訴而非診斷，可見於消化系統疾病、情緒疾患、系統性疾病或藥物副作用之下。",
+      "definition_en": "A marked reduction in interest in food or in the amount eaten, with or without early satiety or a lack of taste for food. A presenting complaint rather than a diagnosis, seen with digestive disease, mood disorders, systemic illness or medication side effects.",
+      "patient_words_zh": "「什麼都不想吃」「看到食物就沒興趣」「吃一點就飽了」「食之無味」「勉強自己才吃得下」",
+      "patient_words_en": "\"I don't feel like eating anything\", \"food just doesn't interest me\", \"I get full after a few bites\", \"everything tastes bland\", \"I have to force myself to eat\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於消化系統，食慾不振本身無部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "無側性"
+        },
+        "timing": {
+          "applicable": false,
+          "why": "食慾的辨證軸主要是量與質的變化及伴隨症，非特定時段；勉強套用 symptom_timing 會失真"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "程度",
+          "why": "完全不想吃與吃得下但量少，臨床意義不同，決定是否優先評估器質性病因"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒(尤其憂鬱)、近期疾病、藥物(化療、抗生素)、口腔問題、妊娠早期"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "不明原因明顯體重下降、脫水、消化道出血、嚴重憂鬱或自殺意念 —— 進紅旗流程；脘悶苔膩提示濕困，脅脹噯氣提示肝胃不和"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性(常有明確誘因如感冒、情緒事件)與慢性遷延(需排查系統性疾病)處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Severity",
+          "why": "No desire to eat at all versus being able to eat but in reduced amounts carries different clinical weight and decides whether an organic cause needs priority workup"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Emotion (especially depression), recent illness, medication (chemotherapy, antibiotics), oral problems, early pregnancy"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Unexplained significant weight loss, dehydration, GI bleeding, severe depression or suicidal ideation enter the red-flag pathway; epigastric fullness with greasy coating suggests damp encumbrance, hypochondriac fullness with belching suggests liver-stomach disharmony"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute (usually with a clear trigger such as a cold or emotional event) versus chronic lingering poor appetite (needs a systemic workup) are managed differently"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "食慾不振，食少便溏，神疲乏力",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "食慾不振，食量減少，兼便溏、神疲乏力、面色萎黃，久病或勞倦所致"
+        },
+        {
+          "variant": "食慾不振，脘悶噯腐，噯氣酸臭",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "食慾不振兼脘腹脹滿，噯氣酸腐，厭食，或有暴飲暴食史"
+        },
+        {
+          "variant": "食慾不振，脅脹噯氣，情緒波動加重",
+          "points_to": [
+            "pattern.liver_stomach_disharmony"
+          ],
+          "distinguishing": "食慾不振隨情緒起伏，兼脅肋脹悶、噯氣頻作、善太息"
+        },
+        {
+          "variant": "食慾不振，口乾不欲飲，胃脘隱隱灼熱",
+          "points_to": [
+            "pattern.stomach_yin_deficiency"
+          ],
+          "distinguishing": "食慾不振兼口燥咽乾但不多飲，胃脘隱隱灼熱，大便乾結，舌紅少苔"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Poor appetite, reduced intake and loose stool, fatigue",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Poor appetite, reduced food intake, with loose stool, fatigue, sallow complexion; from chronic illness or overwork"
+        },
+        {
+          "variant": "Poor appetite, epigastric fullness, sour rotten belching",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Poor appetite with epigastric and abdominal fullness, sour rotten belching, loss of appetite, often a history of overeating"
+        },
+        {
+          "variant": "Poor appetite, hypochondriac fullness, frequent belching, worse with emotional swings",
+          "points_to": [
+            "pattern.liver_stomach_disharmony"
+          ],
+          "distinguishing": "Poor appetite that tracks emotional state, with hypochondriac fullness, frequent belching, frequent sighing"
+        },
+        {
+          "variant": "Poor appetite, dry mouth without desire to drink much, mild epigastric burning",
+          "points_to": [
+            "pattern.stomach_yin_deficiency"
+          ],
+          "distinguishing": "Poor appetite with dry mouth and throat but little desire to drink, mild epigastric burning, dry stool, red tongue with scanty coating"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "psychiatric_red_flags"
+      ],
+      "red_flags_zh": [
+        "食慾不振合併不明原因明顯體重下降 → 需進一步檢查排除惡性腫瘤或系統性疾病",
+        "食慾不振合併明顯脫水或無法進食進水 → 需醫療評估",
+        "食慾不振合併消化道出血徵象 → 需緊急評估",
+        "食慾不振合併嚴重憂鬱情緒或自殺意念 → 立即精神科評估／轉診"
+      ],
+      "red_flags_en": [
+        "Poor appetite with unexplained significant weight loss → needs further workup to rule out malignancy or systemic disease",
+        "Poor appetite with significant dehydration or inability to take food/fluids → needs medical evaluation",
+        "Poor appetite with signs of GI bleeding → needs urgent evaluation",
+        "Poor appetite with severe depression or suicidal ideation → immediate psychiatric evaluation/referral"
+      ],
+      "sources": [
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.poor_appetite red_flags note + sources",
+        "中醫內科學 —— 納呆／食慾不振相關分證(脾氣虛・食滯・肝胃不和・胃陰虛)",
+        "cloudtcm.disease_entry.92269「食慾不振」taxonomy_ids: sym.dietary_gastrointestinal（本 repo symptom_taxonomy.json candidates）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "一般臨床對 poor appetite 的界定 + 中醫「納呆」相關描述",
+        "differentiation_zh/en": "中醫內科學相關分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.poor_appetite + MedlinePlus guidance",
+        "supporting_measurements": "刻意留空 —— 目前 22 個 outcome metrics 無對應食慾量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.weakness",
+      "name_zh": "無力",
+      "name_en": "Weakness",
+      "pinyin": "wu li",
+      "pinyin_toned": "wú lì",
+      "aliases_zh": [
+        "沒力氣",
+        "肢體無力",
+        "四肢乏力"
+      ],
+      "aliases_en": [
+        "Lack of strength",
+        "Limb weakness",
+        "Reduced muscle strength"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "自覺肌肉力量下降，難以完成原本可勝任的動作，與疲勞(整體精力不足但肌力正常)不同 —— 兩者問診時需分辨，尤其單側突發無力是重要紅旗。",
+      "definition_en": "A subjective loss of muscular strength, difficulty performing tasks previously manageable — distinct from fatigue (overall low energy with normal strength). This distinction matters most for sudden one-sided weakness, an important red flag.",
+      "patient_words_zh": "「手沒力氣拿東西」「腿軟」「爬樓梯腿沒力」「一邊手腳突然沒力」「握力變差，東西常常拿不穩」",
+      "patient_words_en": "\"My hand has no strength to hold things\", \"my legs feel wobbly\", \"my legs give out on stairs\", \"one side of my body suddenly feels weak\", \"my grip is weaker, I keep dropping things\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於全身及四肢，無力本身無更細部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用於無力"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality",
+          "diagnostic_note_zh": "單側突發無力是中風的核心紅旗；雙側對稱、漸進性無力多屬氣虛或脾腎兩虛，辨證意義完全不同"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "勞累後加重、休息可緩多屬氣虛；晨起明顯提示陽虛"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "單側或雙側、上肢或下肢或全身，決定是否優先排除中風等急症"
+        },
+        {
+          "dimension": "時間",
+          "why": "突發與漸進、勞累後加重的時間特徵指向完全不同的處置路徑"
+        },
+        {
+          "dimension": "誘因",
+          "why": "近期感染、勞累、飲食失調、藥物、慢性病史(糖尿病、甲狀腺疾病)"
+        },
+        {
+          "dimension": "緩解",
+          "why": "休息是否緩解 —— 休息可緩多屬虛，休息不緩甚至加重需考慮神經肌肉疾病"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "言語不清、臉部歪斜、視覺改變、吞嚥困難 —— 進紅旗流程；氣短懶言、腰膝痠軟提示證型方向"
+        },
+        {
+          "dimension": "病程",
+          "why": "數分鐘至數小時內突發與數週至數月漸進，處置急迫性完全不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "One-sided or bilateral, arm or leg or whole body — decides whether stroke must be ruled out first"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Sudden versus gradual onset, and whether it worsens with exertion, point toward completely different management paths"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Recent infection, exertion, poor diet, medication, chronic disease history (diabetes, thyroid disease)"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether rest helps — improvement with rest suggests deficiency; no improvement or worsening with rest raises concern for neuromuscular disease"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Slurred speech, facial droop, visual change, difficulty swallowing enter the red-flag pathway; shortness of breath and aching low back/knees point toward pattern differentiation"
+        },
+        {
+          "dimension": "Course",
+          "why": "Sudden onset over minutes to hours versus gradual onset over weeks to months carries completely different urgency"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "肢體無力，氣短懶言，神疲自汗",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "四肢乏力，動則氣短，自汗，食少便溏，面色萎黃，脈弱"
+        },
+        {
+          "variant": "四肢痿軟無力，腰膝痠軟，耳鳴健忘",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "肢體痿軟無力漸進發展，兼腰膝痠軟、耳鳴健忘、男子遺精，多見於久病或年長者"
+        },
+        {
+          "variant": "肢體困重無力，胸悶苔膩",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "肢體無力兼沉重感，如物纏裹，胸悶脘痞，痰多，苔白膩"
+        },
+        {
+          "variant": "肢體無力，面色蒼白，頭暈心悸，唇甲淡白",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "肢體無力兼氣血兩虛徵象——面色與唇甲淡白、頭暈心悸，月經量少色淡"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Limb weakness with shortness of breath, fatigue and spontaneous sweating",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Weak limbs, breathless on exertion, spontaneous sweating, poor appetite, loose stool, sallow complexion, weak pulse"
+        },
+        {
+          "variant": "Flaccid limb weakness, weak aching low back and knees, tinnitus and forgetfulness",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Gradually progressive flaccid weakness, with weak aching low back and knees, tinnitus, forgetfulness, seminal emission in men; usually chronic illness or older patients"
+        },
+        {
+          "variant": "Heavy weak limbs, chest fullness, greasy coating",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Weakness with a heavy wrapped sensation, chest and epigastric fullness, copious phlegm, white greasy coating"
+        },
+        {
+          "variant": "Limb weakness, pale complexion, dizziness and palpitations, pale lips and nails",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Limb weakness with signs of combined qi-blood deficiency — pale complexion, lips and nails, dizziness, palpitations, scanty pale menses"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "突發單側肢體無力，合併臉部歪斜或言語不清 → 排除腦中風，立即送急診(記錄發作時間)",
+        "無力合併視覺改變、行走困難或步態不穩 → 需緊急神經學評估",
+        "急性進行性雙側肢體無力，尤其由下肢向上蔓延 → 排除格林-巴利症候群等神經急症",
+        "無力合併吞嚥困難或呼吸困難 → 需緊急評估"
+      ],
+      "red_flags_en": [
+        "Sudden one-sided limb weakness with facial droop or slurred speech → rule out stroke, send to emergency immediately (note the time of onset)",
+        "Weakness with visual change, difficulty walking or unsteady gait → needs urgent neurologic evaluation",
+        "Acute progressive bilateral limb weakness, especially ascending from the legs → rule out neurologic emergencies such as Guillain-Barré syndrome",
+        "Weakness with difficulty swallowing or breathing → needs urgent evaluation"
+      ],
+      "sources": [
+        "CDC — Stroke signs and symptoms (https://www.cdc.gov/stroke/signs-symptoms/index.html)",
+        "data/research_staging/sym_seed_research_batch_b_v1.json (CR-001) — sym.weakness red_flags note + sources",
+        "中醫內科學 痿證／虛勞篇 —— 脾氣虛・腎精不足・痰濕・氣血兩虛分證"
+      ],
+      "field_sources": {
+        "definition_zh/en": "一般臨床對 weakness(肌力下降)與 fatigue(整體精力不足)的區分 + 中醫痿證/虛勞篇",
+        "differentiation_zh/en": "中醫內科學 痿證／虛勞分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照",
+        "red_flags_zh/en": "data/research_staging/sym_seed_research_batch_b_v1.json CR-001 sym.weakness + CDC stroke guidance"
       },
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
