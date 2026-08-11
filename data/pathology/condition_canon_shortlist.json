@@ -800,7 +800,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/11"
+        "https://cloudtcm.com/disease/tcm/11",
+        "NICHD — Endometriosis: https://www.nichd.nih.gov/health/topics/endometriosis"
       ],
       "red_flag_refs": [
         "rf.endometriosis.legacy01",
@@ -875,7 +876,51 @@
         "nih_nichd_overview",
         "research_pack_batch_k_reproductive_gyne_urology"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "summary_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "summary_en": [
+          "NICHD — Endometriosis"
+        ],
+        "western_context_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "western_context_en": [
+          "NICHD — Endometriosis"
+        ],
+        "western_pathology_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "western_pathology_en": [
+          "NICHD — Endometriosis"
+        ],
+        "etiology_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "etiology_en": [
+          "NICHD — Endometriosis"
+        ],
+        "risk_factors_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "risk_factors_en": [
+          "NICHD — Endometriosis"
+        ],
+        "red_flags_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "red_flags_en": [
+          "NICHD — Endometriosis"
+        ],
+        "acupuncture_scope_zh": [
+          "NICHD — Endometriosis"
+        ],
+        "acupuncture_scope_en": [
+          "NICHD — Endometriosis"
+        ]
+      }
     },
     {
       "id": "cond.uterine_fibroids",
@@ -1550,7 +1595,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/11"
+        "https://cloudtcm.com/disease/tcm/11",
+        "MedlinePlus — Period Pain: https://medlineplus.gov/periodpain.html"
       ],
       "red_flag_refs": [
         "rf.primary_dysmenorrhea.legacy01",
@@ -1625,7 +1671,51 @@
         "medlineplus_overview",
         "research_pack_batch_k_reproductive_gyne_urology"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "summary_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "summary_en": [
+          "MedlinePlus — Period Pain"
+        ],
+        "western_context_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "western_context_en": [
+          "MedlinePlus — Period Pain"
+        ],
+        "western_pathology_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "western_pathology_en": [
+          "MedlinePlus — Period Pain"
+        ],
+        "etiology_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "etiology_en": [
+          "MedlinePlus — Period Pain"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — Period Pain"
+        ],
+        "red_flags_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "red_flags_en": [
+          "MedlinePlus — Period Pain"
+        ],
+        "acupuncture_scope_zh": [
+          "MedlinePlus — Period Pain"
+        ],
+        "acupuncture_scope_en": [
+          "MedlinePlus — Period Pain"
+        ]
+      }
     },
     {
       "id": "cond.pms",
@@ -11212,7 +11302,51 @@
         "sym.fatigue",
         "sym.poor_concentration"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/10578"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/10578"
+        ],
+        "western_pathology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/10578"
+        ],
+        "western_pathology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/10578"
+        ],
+        "summary_zh": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "summary_en": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "western_context_zh": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "western_context_en": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "risk_factors_zh": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "risk_factors_en": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "red_flags_zh": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "red_flags_en": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "acupuncture_scope_zh": [
+          "NIAMS — Fibromyalgia"
+        ],
+        "acupuncture_scope_en": [
+          "NIAMS — Fibromyalgia"
+        ]
+      }
     },
     {
       "id": "cond.myofascial_pain",
@@ -14290,7 +14424,51 @@
         "nih_niams_overview",
         "research_pack_batch_i_autoimmune_msk_derm_genetic"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/313"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/313"
+        ],
+        "western_pathology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/313"
+        ],
+        "western_pathology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/313"
+        ],
+        "summary_zh": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "summary_en": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "western_context_zh": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "western_context_en": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "risk_factors_zh": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "risk_factors_en": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "red_flags_zh": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "red_flags_en": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "acupuncture_scope_zh": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ],
+        "acupuncture_scope_en": [
+          "NIAMS — Arthritis and Rheumatic Diseases"
+        ]
+      }
     },
     {
       "id": "cond.gerd",
@@ -15212,7 +15390,51 @@
         "nih_niddk_overview",
         "research_pack_batch_h_gi_liver"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/20451"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/20451"
+        ],
+        "western_pathology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/20451"
+        ],
+        "western_pathology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/20451"
+        ],
+        "summary_zh": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "summary_en": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "western_context_zh": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "western_context_en": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "red_flags_en": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "acupuncture_scope_zh": [
+          "NIDDK — Gastritis & Gastropathy"
+        ],
+        "acupuncture_scope_en": [
+          "NIDDK — Gastritis & Gastropathy"
+        ]
+      }
     },
     {
       "id": "cond.peptic_ulcer",
@@ -16060,7 +16282,51 @@
         "nih_niddk_overview",
         "research_pack_batch_h_gi_liver"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/1671"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/1671"
+        ],
+        "western_pathology_zh": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "western_pathology_en": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "summary_zh": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "summary_en": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "western_context_zh": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "western_context_en": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "risk_factors_zh": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "risk_factors_en": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "red_flags_zh": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "red_flags_en": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "acupuncture_scope_zh": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ],
+        "acupuncture_scope_en": [
+          "NIDDK — Irritable Bowel Syndrome"
+        ]
+      }
     },
     {
       "id": "cond.ibd",
@@ -17928,7 +18194,8 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/319"
+        "https://cloudtcm.com/disease/tcm/319",
+        "NIMH — Anxiety Disorders: https://www.nimh.nih.gov/health/topics/anxiety-disorders"
       ],
       "entity_type": "biomedical_condition",
       "aliases_zh": [
@@ -18069,7 +18336,51 @@
         "nih_nimh_overview",
         "research_pack_batch_j_mental_behavioral"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "summary_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "summary_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "western_context_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "western_context_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "western_pathology_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "western_pathology_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "etiology_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "etiology_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "risk_factors_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "risk_factors_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "red_flags_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "red_flags_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "acupuncture_scope_zh": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ],
+        "acupuncture_scope_en": [
+          "NIMH — Anxiety Disorders (Generalized Anxiety Disorder section)"
+        ]
+      }
     },
     {
       "id": "cond.depression",
@@ -18384,7 +18695,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1659"
+        "https://cloudtcm.com/disease/tcm/1659",
+        "NIMH — Depression: https://www.nimh.nih.gov/health/topics/depression"
       ],
       "aliases_zh": [
         "重度憂鬱症",
@@ -18527,7 +18839,51 @@
         "nih_nimh_overview",
         "research_pack_batch_j_mental_behavioral"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record (content currently describes neurasthenia/自律神經失調 — topic-mismatch flagged, not corrected this batch): https://cloudtcm.com/disease/tcm/1659"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record (content currently describes neurasthenia/自律神經失調 — topic-mismatch flagged, not corrected this batch): https://cloudtcm.com/disease/tcm/1659"
+        ],
+        "western_pathology_zh": [
+          "CloudTCM disease record (content currently describes neurasthenia/自律神經失調 — topic-mismatch flagged, not corrected this batch): https://cloudtcm.com/disease/tcm/1659"
+        ],
+        "western_pathology_en": [
+          "CloudTCM disease record (content currently describes neurasthenia/自律神經失調 — topic-mismatch flagged, not corrected this batch): https://cloudtcm.com/disease/tcm/1659"
+        ],
+        "summary_zh": [
+          "NIMH — Depression"
+        ],
+        "summary_en": [
+          "NIMH — Depression"
+        ],
+        "western_context_zh": [
+          "NIMH — Depression"
+        ],
+        "western_context_en": [
+          "NIMH — Depression"
+        ],
+        "risk_factors_zh": [
+          "NIMH — Depression"
+        ],
+        "risk_factors_en": [
+          "NIMH — Depression"
+        ],
+        "red_flags_zh": [
+          "NIMH — Depression"
+        ],
+        "red_flags_en": [
+          "NIMH — Depression"
+        ],
+        "acupuncture_scope_zh": [
+          "NIMH — Depression"
+        ],
+        "acupuncture_scope_en": [
+          "NIMH — Depression"
+        ]
+      }
     },
     {
       "id": "cond.panic_disorder",
@@ -21018,7 +21374,51 @@
         "nih_nhlbi_overview",
         "research_pack_batch_f_respiratory_renal_sleep"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/2"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/2"
+        ],
+        "western_pathology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/2"
+        ],
+        "western_pathology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/2"
+        ],
+        "summary_zh": [
+          "NHLBI — Asthma / NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "summary_en": [
+          "NHLBI — Asthma / NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "western_context_zh": [
+          "NHLBI — Asthma / NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "western_context_en": [
+          "NHLBI — Asthma / NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "risk_factors_zh": [
+          "NHLBI — Asthma"
+        ],
+        "risk_factors_en": [
+          "NHLBI — Asthma"
+        ],
+        "red_flags_zh": [
+          "NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "red_flags_en": [
+          "NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "acupuncture_scope_zh": [
+          "NHLBI — Asthma Treatment and Action Plan"
+        ],
+        "acupuncture_scope_en": [
+          "NHLBI — Asthma Treatment and Action Plan"
+        ]
+      }
     },
     {
       "id": "cond.copd",
@@ -23206,7 +23606,51 @@
         "medlineplus_overview",
         "research_pack_batch_g_neurology"
       ],
-      "source_status": "draft_pending_ting_review"
+      "source_status": "draft_pending_ting_review",
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/92483"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/92483"
+        ],
+        "western_pathology_zh": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "western_pathology_en": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "summary_zh": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "summary_en": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "western_context_zh": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "western_context_en": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "risk_factors_zh": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "risk_factors_en": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "red_flags_zh": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "red_flags_en": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "acupuncture_scope_zh": [
+          "MedlinePlus — Bell palsy"
+        ],
+        "acupuncture_scope_en": [
+          "MedlinePlus — Bell palsy"
+        ]
+      }
     },
     {
       "id": "cond.stroke_rehab",
@@ -23658,7 +24102,51 @@
         "nhs_overview",
         "nih_nidcr_overview",
         "research_pack_batch_g_neurology"
-      ]
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/36"
+        ],
+        "etiology_en": [
+          "CloudTCM disease record: https://cloudtcm.com/disease/tcm/36"
+        ],
+        "western_pathology_zh": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "western_pathology_en": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "summary_zh": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "summary_en": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "western_context_zh": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "western_context_en": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "risk_factors_zh": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "risk_factors_en": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "red_flags_zh": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "red_flags_en": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "acupuncture_scope_zh": [
+          "NIDCR — Trigeminal Neuralgia"
+        ],
+        "acupuncture_scope_en": [
+          "NIDCR — Trigeminal Neuralgia"
+        ]
+      }
     },
     {
       "id": "cond.postherpetic_neuralgia",
