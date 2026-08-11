@@ -722,11 +722,19 @@
             <legend><span class="form-section-step">1</span>就診脈絡 Visit context</legend>
             <label>Visit date<input name="visitDate" type="date" /></label>
             <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
-            <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
-            <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
-            <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
-            <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
           </fieldset>
+
+          <!-- 週期/生殖欄位(2026-08-11 Ting 指正):原本開頭就問且不分性別,
+               生育科時代遺留。改為選填收合區,男性病例由 app.js 整段隱藏。 -->
+          <details class="form-section soap-cycle-section" id="soapCycleSection">
+            <summary>週期/生殖 Cycle & fertility<small>選填,僅相關病例需要</small></summary>
+            <div class="form-grid">
+              <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
+              <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
+              <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
+              <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
+            </div>
+          </details>
 
           <fieldset class="form-section soap-s">
             <legend><span class="form-section-step">S</span>Subjective 主觀<small>病人說的</small></legend>

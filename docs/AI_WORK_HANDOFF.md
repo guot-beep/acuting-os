@@ -2,6 +2,18 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #17 — Pharm 證據鏈修復(Ting 核准 #1/#2)
+
+- COMPLETED(fce078b):
+  - mannitol setid:尿路沖洗標籤 → OSMITROL(Baxter IV),supersedes_setid 留痕;缺欄從正確 SPL 轉錄 + 專屬 field_sources
+  - dailymed_api_responses.json 以新工具 scripts/refresh-dailymed-evidence.js 對 40 標籤當日實抓重建(LOINC 節碼盤點);過度宣稱清除,boxed-warning P0 防線恢復有效
+  - 連帶發現並修復:69 個 field_sources/interaction anchors 用 PLR 節名指向非 PLR 標籤 —— 全部重對應到標籤真實存在的節(WARNINGS/PRECAUTIONS/DRUG_INTERACTIONS);BOXED_WARNING 設為無等價、不可冒充。validate-pharm-standard PASS 0/0、ratchet 無回歸
+  - 方法論:證據檔灌水會遮蔽引用錯誤 —— refresh 工具往後可定期重跑(EVIDENCE_DATE 環境變數供重現)
+- IN PROGRESS: 四線 —— herb F12 缺口(Opus)、tdis B、cond J-N、P1 previsit(Sonnet×3)
+- NEXT: 待四線合併;SOL 收 CR-014
+
+---
+
 ## HANDOFF #16 — C2b FINAL GO 後續 + supp 治理三件(Ting 裁定已回)
 
 - CURRENT STATE: Codex R8 = **C2b FINAL GO(條件式)**,P4 真機 checklist 在 AI_REVIEW_FEEDBACK.md;等 Ting 選日真機執行。四線卡片併發中。

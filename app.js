@@ -7524,6 +7524,15 @@ function openSoapEditor(note = null) {
   document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
   deleteSoapBtn.hidden = !note;
   renderPreviousVisitPanel(findPreviousSoapNote(activeCase.soapNotes, editingSoapId));
+  // 週期/生殖區(2026-08-11 Ting 指正):sex at birth = M 整段隱藏 —— 但
+  // 若編輯中的舊 note 已有值,仍顯示且展開(已存在的資料絕不隱形,D4)。
+  // F / Other / 未填(不假設)保留,預設收合;有值必展開。
+  const cycleSection = document.getElementById("soapCycleSection");
+  if (cycleSection) {
+    const hasCycleData = !!(note && (note.cycleDay || note.cyclePhase || note.fertilityPhase || note.workflowLink));
+    cycleSection.hidden = activeCase.sex === "M" && !hasCycleData;
+    cycleSection.open = hasCycleData;
+  }
   const fallback = {
     visitDate: new Date().toISOString().slice(0, 10),
     visitNumber: activeCase.soapNotes.length + 1,

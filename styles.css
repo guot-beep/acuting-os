@@ -7302,3 +7302,9 @@ html { scroll-padding-top: 92px; }
 .home-tile--continue { grid-column: span 2; background: linear-gradient(135deg, var(--green-soft), var(--panel)); border-color: var(--accent); }
 .home-tile--continue strong { font-size: 1.15em; white-space: normal; }
 @media (prefers-reduced-motion: reduce) { .home-tile { transition: none; } .home-tile:hover { transform: none; } }
+
+/* SOAP cycle/fertility collapsible (2026-08-11 Ting fix) */
+.soap-cycle-section summary { cursor: pointer; font-weight: 600; padding: 4px 0; color: var(--accent-dark); }
+.soap-cycle-section summary small { font-weight: 400; color: var(--muted); margin-left: 8px; }
+.soap-cycle-section[open] summary { margin-bottom: 8px; }
+.soap-cycle-section .form-grid { margin: 0; }
