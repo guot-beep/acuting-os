@@ -1,0 +1,312 @@
+{
+  "created": "2026-08-09",
+  "pack": "AcuTing OS Disease Knowledge Research Pack CLEAN V2",
+  "repository_reference": {
+    "repository": "guot-beep/acuting-os",
+    "branch": "main",
+    "original_audited_commit": "47026e57566bcf1518a730906de832cbbc063c66"
+  },
+  "counts": {
+    "markdown_files": 56,
+    "western_full_research_entries": 93,
+    "western_research_batches": 14,
+    "tdis_full_research_entries": 75,
+    "tdis_research_batches": 10,
+    "crosswalk_relation_atoms": 230,
+    "crosswalk_batches": 10,
+    "canonical_ids_created": 0,
+    "new_edge_types_created": 0,
+    "schema_changes_made": 0,
+    "repo_files_modified": 0
+  },
+  "qa": {
+    "forbidden_variant_filenames": 0,
+    "empty_files": 0,
+    "exact_duplicate_content_hash_groups": 0,
+    "duplicate_western_candidate_ids": 0,
+    "duplicate_tdis_full_entry_ids": 0,
+    "duplicate_crosswalk_source_target_pairs": 0
+  },
+  "files": [
+    {
+      "file": "00_DISEASE_KNOWLEDGE_CURRENT_STATE_AUDIT.md",
+      "bytes": 3374,
+      "sha256": "87a7050d6a6a4bca87bb1df96c574861eccc3eed298faf242e69042121135092"
+    },
+    {
+      "file": "01_WESTERN_CONDITION_GAP_MASTERLIST.md",
+      "bytes": 9824,
+      "sha256": "c80eae1e627f3baea6311674c3ebfc950955ebffab716fa6b230a6badfb38f72"
+    },
+    {
+      "file": "02_TCM_DISEASE_GAP_MASTERLIST.md",
+      "bytes": 5965,
+      "sha256": "4b50b50c5a53dccacc463afe95c5f4748ac3e5919e27673895314b2d15ab1d2a"
+    },
+    {
+      "file": "03_COND_TDIS_PATTERN_RELATION_GAP_AUDIT.md",
+      "bytes": 1829,
+      "sha256": "4a9ac015929c554cb9c9ab80d3915554c6c96e6fc9f2c4297fbb51213a649167"
+    },
+    {
+      "file": "04_BOARD_BIOMEDICINE_COVERAGE_MATRIX.md",
+      "bytes": 2836,
+      "sha256": "368bb6fc0a4b4db318e74ba1d6742a33ee1781bb4cdd3b03172921e245f15f58"
+    },
+    {
+      "file": "05_WESTERN_CONDITION_RESEARCH_BATCH_A_HEMATOLOGY.md",
+      "bytes": 17843,
+      "sha256": "c2191b5058ced7d2a3828ed2899c182d140c2ca39a0925c28e13224833aa3ae8"
+    },
+    {
+      "file": "06_WESTERN_CONDITION_RESEARCH_BATCH_B_CARDIO_AUTONOMIC.md",
+      "bytes": 11411,
+      "sha256": "b8515ceb8d20871e4cd319e88985de93664d60b836c7ee02ee8fb988840a844a"
+    },
+    {
+      "file": "07_WESTERN_CONDITION_RESEARCH_BATCH_C_ENDOCRINE.md",
+      "bytes": 15275,
+      "sha256": "8194cc00221f4177ede31dfee817ff6a86c9dfcd0a82a08969bfd3480fb53a5d"
+    },
+    {
+      "file": "08_WESTERN_CONDITION_RESEARCH_BATCH_D_EMERGENCY_VASCULAR.md",
+      "bytes": 63881,
+      "sha256": "7f7d949af1049085bbd2918d72fa6ad1d9abf19b0960e1e29783334c9cc1f18d"
+    },
+    {
+      "file": "09_WESTERN_CONDITION_RESEARCH_BATCH_E_METABOLIC_HEMATOLOGY_CARDIAC.md",
+      "bytes": 23539,
+      "sha256": "d0bbb7e7e4a2c32f6977c2b2280b0d285b15c527d54cbf36e512757e06fe5323"
+    },
+    {
+      "file": "10_WESTERN_CONDITION_RESEARCH_BATCH_F_RESPIRATORY_RENAL_SLEEP.md",
+      "bytes": 23167,
+      "sha256": "f46520314b8527f2441f81667e1620b78ac48a31143da49695475234a7841b8f"
+    },
+    {
+      "file": "11_WESTERN_CONDITION_RESEARCH_BATCH_G_NEUROLOGY.md",
+      "bytes": 23070,
+      "sha256": "ce493f35ddefbde666316589ca3dd8a15704ab0f99196cb209c70420ca400b2f"
+    },
+    {
+      "file": "12_WESTERN_CONDITION_RESEARCH_BATCH_H_GI_LIVER.md",
+      "bytes": 28044,
+      "sha256": "2b644e38e3a8aca28539bef9fc0d48f0ba8c53eb58f22979746dfbb46829e2f7"
+    },
+    {
+      "file": "13_WESTERN_CONDITION_RESEARCH_BATCH_I_AUTOIMMUNE_MSK_DERM_GENETIC.md",
+      "bytes": 21786,
+      "sha256": "05de4420a12703a07cc5d3bfff9b8950d5448a62d7bc7aa01436ab54ef76aebb"
+    },
+    {
+      "file": "14_WESTERN_CONDITION_RESEARCH_BATCH_J_MENTAL_BEHAVIORAL.md",
+      "bytes": 20697,
+      "sha256": "a4a4e612ec8115d4ddfd7e2a87b0954cd4aef1ee8022d976345b646ef0a31399"
+    },
+    {
+      "file": "15_WESTERN_CONDITION_RESEARCH_BATCH_K_REPRODUCTIVE_GYNE_UROLOGY.md",
+      "bytes": 25781,
+      "sha256": "635bd183e8a02249f54ae011c348715d67a61ffc1f2fbcd2364871fb197e34ce"
+    },
+    {
+      "file": "16_WESTERN_CONDITION_RESEARCH_BATCH_L_ENT_OPHTHALMIC_EMERGENCIES.md",
+      "bytes": 16220,
+      "sha256": "ee5a5402763a318fb04541c80481a9126e4efff08590d8d20802114d2a0e4e44"
+    },
+    {
+      "file": "17_WESTERN_CONDITION_RESEARCH_BATCH_M_INFECTIOUS.md",
+      "bytes": 19836,
+      "sha256": "a68483015804941fdcc2aaceb5338580149887ad11c093a47b117224a8df373a"
+    },
+    {
+      "file": "18_WESTERN_CONDITION_RESEARCH_BATCH_N_GENETIC_ONCOLOGY.md",
+      "bytes": 19730,
+      "sha256": "ba0d7860f9430f59d805d72fa717d9820b84601488e61d99cb9f5645fac6bb78"
+    },
+    {
+      "file": "19_WESTERN_CONDITION_RESEARCH_INDEX.md",
+      "bytes": 8221,
+      "sha256": "02fa70b3d2668e770178a33a6f07f54f042bab7e2b445cd73fe2dfa4894b61c9"
+    },
+    {
+      "file": "20_TCM_DISEASE_RESEARCH_BATCH_A_NEURO_HEART.md",
+      "bytes": 13174,
+      "sha256": "d12930608dfee1338d70183461c0be4a71f5168b9f0f37c100170bf5aa01223b"
+    },
+    {
+      "file": "21_TCM_DISEASE_RESEARCH_BATCH_B_GI.md",
+      "bytes": 10492,
+      "sha256": "603f3f2ce17d5eebff8e5043b772b759101bc9ff53a9d98ba91ae096f593cc65"
+    },
+    {
+      "file": "22_TCM_DISEASE_RESEARCH_BATCH_C_GYNECOLOGY.md",
+      "bytes": 13675,
+      "sha256": "98cadc9a271cdc2d8c2c60c6c3d9aa25df6e3d130b12d90545f9c776d837fdf9"
+    },
+    {
+      "file": "23_TCM_DISEASE_RESEARCH_BATCH_D_RESPIRATORY_ENT.md",
+      "bytes": 24059,
+      "sha256": "62a90584a80e11f51288580dc837e5ce7ac58bc55233fc43f5a0f68c2bee4745"
+    },
+    {
+      "file": "24_TCM_DISEASE_RESEARCH_BATCH_E_QI_FLUID_GU_METABOLIC.md",
+      "bytes": 25915,
+      "sha256": "7744979af17a6e3d33237af82e6e78e2d56b23d5f2b730bbc92567fc75f267a4"
+    },
+    {
+      "file": "25_TCM_DISEASE_RESEARCH_BATCH_F_MSK_CHANNEL_NEURO.md",
+      "bytes": 17471,
+      "sha256": "d0d119dc22bf2b2a5b151b487a4b3bc569318feec46507f0a421cc9e115c0b34"
+    },
+    {
+      "file": "26_TCM_DISEASE_RESEARCH_BATCH_G_DERM_ORAL_EYE.md",
+      "bytes": 19373,
+      "sha256": "38121bbe1277c3d64c34840c9061e027e72551b6173022ab4e22deb573af563a"
+    },
+    {
+      "file": "27_TCM_DISEASE_RESEARCH_BATCH_H_NEURO_SHEN_CLASSICAL.md",
+      "bytes": 17535,
+      "sha256": "b3b4bec6426a9cf1f9a0a86d29b9f44b6d090e7723a9ef14e1ef283345a862fe"
+    },
+    {
+      "file": "28_TCM_DISEASE_RESEARCH_BATCH_I_GYNE_PREGNANCY_ADDITIONAL.md",
+      "bytes": 13523,
+      "sha256": "41b7990da4f79c10b5236054da67d0610fb93dc1367d3a4ed9afdf79d031365a"
+    },
+    {
+      "file": "29_TCM_DISEASE_RESEARCH_BATCH_J_HEPATOBILIARY_MISC_GI.md",
+      "bytes": 8743,
+      "sha256": "b9d0d09e5be6410b61d2cd7106db131d9cfd91653a9241dcd29dac9a825b4415"
+    },
+    {
+      "file": "30_TCM_DISEASE_RESEARCH_INDEX.md",
+      "bytes": 4882,
+      "sha256": "be2d313659c981260fa858135a38b57eac124c4269acd46995f62e380bf0445f"
+    },
+    {
+      "file": "31_TCM_DISEASE_SOURCE_VERIFICATION_QUEUE.md",
+      "bytes": 1117,
+      "sha256": "e2bb8134f56b081e434e3e0ce93a17f741c10bdbb1f8ad4508b1cf1e346410c3"
+    },
+    {
+      "file": "32_TCM_DISEASE_BIOMEDICAL_SAFETY_OVERLAY_QUEUE.md",
+      "bytes": 1049,
+      "sha256": "20c1eb422444e5b7c5eee4fe518b220dcae19a575f73f8eaec975a70c005167e"
+    },
+    {
+      "file": "40_COND_TDIS_CROSSWALK_BATCH_A.md",
+      "bytes": 5506,
+      "sha256": "7c2ec082024b17c186b2e97e3c96abc66ccd3b4e338c38b9fe5e5dca49b97ae4"
+    },
+    {
+      "file": "41_COND_TDIS_CROSSWALK_BATCH_B.md",
+      "bytes": 4950,
+      "sha256": "d6473f96fe434a34f88933131910b6e5b8212f0cbd6834929c8fb824fdd2d4ac"
+    },
+    {
+      "file": "42_COND_TDIS_CROSSWALK_BATCH_C_RESPIRATORY_NEURO.md",
+      "bytes": 8876,
+      "sha256": "fa68a5d876431c5b13c73bcd0ed1e662a69916a9d82e30ef649352b18bb1ab7f"
+    },
+    {
+      "file": "43_COND_TDIS_CROSSWALK_BATCH_D_EMERGENCY_VASCULAR.md",
+      "bytes": 4355,
+      "sha256": "9b3793c548d236a234517b13520840a39d96a2a3a6b859cd5af052feb51dcf56"
+    },
+    {
+      "file": "44_COND_TDIS_CROSSWALK_BATCH_E_GI_LIVER.md",
+      "bytes": 4272,
+      "sha256": "24265f6eb5d2fb31a06c8f475131d143e198883e16fad5dcd68113153d5d9304"
+    },
+    {
+      "file": "45_COND_TDIS_CROSSWALK_BATCH_F_RENAL_METABOLIC_HEME.md",
+      "bytes": 4441,
+      "sha256": "4c926cf31b32b8683d46f5d037a804247c0adefa68b8e2a55dd84c2397c005a4"
+    },
+    {
+      "file": "46_COND_TDIS_CROSSWALK_BATCH_G_REPRODUCTIVE.md",
+      "bytes": 4359,
+      "sha256": "0754e126e3eb69affc63baa6b89e6bffee6fb66664b9f87652818b9566e5f9a6"
+    },
+    {
+      "file": "47_COND_TDIS_CROSSWALK_BATCH_H_AUTOIMMUNE_MSK_DERM.md",
+      "bytes": 4286,
+      "sha256": "6db3e8e3888037ab028cf80992c76f3a7f4dc1cff7da19e1d3734be9b1760163"
+    },
+    {
+      "file": "48_COND_TDIS_CROSSWALK_BATCH_I_MENTAL_NEURO.md",
+      "bytes": 3847,
+      "sha256": "350acc96143e0b69906998aaa86d663da0e8a239d436206f923237beb80a206a"
+    },
+    {
+      "file": "49_COND_TDIS_CROSSWALK_BATCH_J_ENT_INFECTIOUS_GENETIC_ONCOLOGY.md",
+      "bytes": 4890,
+      "sha256": "5fe7a2afac342e5657e332853255e9f0d7268f5456465835e4b370b456c5ebea"
+    },
+    {
+      "file": "50_CROSSWALK_RESEARCH_INDEX.md",
+      "bytes": 791,
+      "sha256": "f024afa80abc1d76a8130238172124dc8758d1fbecac4ea1a8b11c21fa15c499"
+    },
+    {
+      "file": "51_NEGATIVE_LINK_GUARDRAILS.md",
+      "bytes": 748,
+      "sha256": "0a8c0de670d9bb247b45fb3949a4be2d9f2a1bf9286e4b720cdf05898b0f9ed0"
+    },
+    {
+      "file": "52_RELATION_INGESTION_READINESS_RULES.md",
+      "bytes": 647,
+      "sha256": "0d201bb789275a4e17f5613cc467b1513c116a5b56d52fcdfe4e0ca4e7742229"
+    },
+    {
+      "file": "60_RELATION_ENDPOINT_MISSING_CANDIDATES.md",
+      "bytes": 5364,
+      "sha256": "6eb645e4df5ec46ad8dcf832c8aa2500b88d6a8b1195e311581b48f25a5dd569"
+    },
+    {
+      "file": "61_SHARED_SAFETY_OBJECT_CANDIDATES.md",
+      "bytes": 4482,
+      "sha256": "35db2888fbb87d919b9b3ee7d179377e9c4a9e83cd2b587b69585ced49f25a2e"
+    },
+    {
+      "file": "62_WESTERN_IDENTITY_RECONCILIATION_QUEUE.md",
+      "bytes": 13401,
+      "sha256": "3e1d5880297e2ee1898ac9f81dc62bf71417f8515e95aeaec442af36d3a745a4"
+    },
+    {
+      "file": "63_SOURCE_AUTHORITY_LEDGER.md",
+      "bytes": 2970,
+      "sha256": "29e303e6ae209e4e0ec820fc7e5490dc8461b720eb43c5a68a4b55cf9cf6e1b5"
+    },
+    {
+      "file": "70_SCHEMA_GAP_FREQUENCY_AUDIT.md",
+      "bytes": 4256,
+      "sha256": "846c53b91d4fe2cfbeecf83ddf5584e16aa900c793cc2615db5309144fd7352b"
+    },
+    {
+      "file": "71_BOARD_COVERAGE_RESIDUAL_GAPS.md",
+      "bytes": 3642,
+      "sha256": "28565d758aa80905cdd79258a4540f40335916ea0a6cd7c4071a270b0e2126e8"
+    },
+    {
+      "file": "72_INGESTION_READINESS_MATRIX.md",
+      "bytes": 5811,
+      "sha256": "400088352fdde1959ba45b3f89da1cfb2045deb61408529bd83837cd3366599a"
+    },
+    {
+      "file": "73_DEDUP_QA_AUDIT.md",
+      "bytes": 2173,
+      "sha256": "b4f44d8815b27994da1b1293af9a0fba5ebca6255a4c156978cf1d92c69f628e"
+    },
+    {
+      "file": "90_INGESTION_QUEUE_AND_HANDOFF.md",
+      "bytes": 5744,
+      "sha256": "563bc9f50cb89de92612c46d4391b0e8c185df760f27a75941113f16063076d1"
+    },
+    {
+      "file": "README.md",
+      "bytes": 1932,
+      "sha256": "00145411ec3d0ca64bd50f9004bf6339b62d87c3ad6ad9bfb51182a23dd4d6be"
+    }
+  ]
+}
