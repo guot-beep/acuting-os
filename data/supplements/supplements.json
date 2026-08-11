@@ -1,6 +1,25 @@
 {
   "dataset": "supp_supplements",
   "policy": "supp.* 骨架層(D17)。西式營養補充劑產品——不是 herb.* 飲片/顆粒,不是 drug.* 處方藥。每個帶主張的欄位掛來源(NIH ODS > Examine.com > Natural Medicines > 官方單張/藥典 > 綜述論文,docs/SUPP_CARD_TEMPLATE.md §2);查不到就留空,不填樣板句。interaction_flags 是審閱旗標,不是斷言;CR-009 supp→drugclass 關係種子仍在 staging,尚未審閱前不落 related_drugclass_review_flags。herb/supp 同源物質分開建卡,經 related_herb_id 單側連結(D13)。",
+  "interaction_focus_vocabulary": {
+    "note": "interaction_focus 的三個審閱類別與五個狀態值(CR-006 triage 正規化)。狀態不是斷言,是「這一類藥要不要人工覆核」的旗標;除 no_specific_flag_in_source 外一律需要覆核。原始研究包字串保留在 staged_label,正規化可回溯。",
+    "classes": [
+      "anticoagulant",
+      "immunosuppressant",
+      "thyroid"
+    ],
+    "statuses": {
+      "known_concern": "Primary source names a specific concern with this drug class.",
+      "possible_concern": "Plausible, theoretical, case-level, or product-dependent signal; not established.",
+      "component_dependent": "Multi-ingredient product — review each ingredient and dose separately.",
+      "no_specific_flag_in_source": "Primary source was reviewed and carries no class-specific flag. NOT equivalent to 'no interaction'.",
+      "insufficient_data": "Evidence insufficient. Must not be converted to 'no interaction'."
+    },
+    "staging_refs": [
+      "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md",
+      "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+    ]
+  },
   "created": "2026-08-12",
   "records": [
     {
@@ -49,6 +68,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Thiazide diuretics can raise hypercalcemia risk; other drugs affecting vitamin D or calcium handling warrant review.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Established nutrient for calcium/bone metabolism; supplementation benefit is strongest for preventing/treating deficiency rather than as a universal disease treatment.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -110,6 +154,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Review B6, niacin, folate and B12 amounts separately; a blend does not carry one class-wide interaction conclusion.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Useful when one or more B-vitamin needs are not met, but a B-complex is not one standardized intervention and evidence cannot be generalized across formulations.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -181,6 +250,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Metformin and acid-suppressing drugs can contribute to low B12 status over time.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Strong evidence for correcting B12 deficiency; benefit in people with adequate status for nonspecific energy/cognition claims is not established.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -244,6 +338,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_antifolate_drugs",
+            "note_en": "Antifolate drugs — a group that overlaps with agents used as immunosuppressants — are the relevant interaction."
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Antifolate and some antiseizure medicines are more relevant here than the three focus classes; high folic acid intake can mask hematologic signs of B12 deficiency.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Established role in one-carbon metabolism and prevention of neural tube defects when adequate folic acid is taken per public-health guidance around conception.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -308,6 +427,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_warfarin",
+            "note_en": "May reduce warfarin effect; monitor anticoagulation clinically if combined."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "May also interact with insulin and diabetes treatment; compatibility with some cancer treatments is uncertain and should be coordinated with the oncology team.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Evidence is condition-specific and mixed; NCCIH does not support broad disease-treatment claims, though limited signals exist in selected cardiovascular/migraine contexts.",
       "evidence_source": {
         "name": "NCCIH",
@@ -370,6 +514,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_bleeding",
+            "note_en": "Bleeding interaction concern with anticoagulant or antiplatelet therapy; perioperative review warranted."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Supplement interaction data concern standardized leaf extract; raw or roasted seeds eaten in quantity are a separate toxic exposure.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/ginkgo"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "NCCIH reports no conclusive evidence that ginkgo is helpful for any health condition; dementia prevention and tinnitus benefit have not been demonstrated.",
       "evidence_source": {
         "name": "NCCIH",
@@ -433,6 +602,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "possible_bleeding_concern",
+            "note_en": "Antiplatelet and bleeding concern is plausible rather than established; use caution with anticoagulants and antiplatelets."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Piperine-containing and enhanced-bioavailability products can alter drug exposure, so interaction review must name the specific formulation.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/turmeric"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "NCCIH considers evidence insufficient for definitive health-purpose conclusions; osteoarthritis results are promising but not definitive.",
       "evidence_source": {
         "name": "NCCIH",
@@ -493,6 +687,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Downgraded from the staging matrix's 'no specific flag' to insufficient data: NIH ODS has no lutein ingredient fact sheet — the cited ODS page is a directory index that routes to an external entry — so no primary source was actually reviewed for these three classes. Combination eye-health products may also introduce interactions from their other ingredients.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/list-all/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Lutein/zeaxanthin are retinal carotenoids; evidence is strongest in specific ophthalmic contexts and combination formulations rather than as a general-purpose supplement.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -559,6 +778,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_if_vitamin_k",
+            "note_en": "Vitamin K-containing products can affect warfarin management."
+          },
+          "immunosuppressant": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_concern_if_calcium_iron",
+            "note_en": "Calcium and iron can impair levothyroxine absorption when taken too close together."
+          }
+        },
+        "focus_note_en": "The interaction profile follows the specific ingredient list and doses; duplicate intake alongside single-ingredient supplements is the major practical issue.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "MVMs can help fill nutrient gaps, but compositions vary widely and broad prevention benefits are not uniform across outcomes.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -622,6 +866,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_absorption_concern",
+            "note_en": "Calcium reduces levothyroxine absorption; separate administration per medication guidance."
+          }
+        },
+        "focus_note_en": "Also interacts with some antibiotics and with bisphosphonates; higher supplemental intake can raise kidney-stone risk in some people.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Essential for bone and neuromuscular physiology; supplementation is most rational when dietary intake is inadequate or specific clinical indications exist.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -684,6 +953,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "possible_concern",
+            "staged_label": "possible_absorption_timing_concern",
+            "note_en": "Timing against thyroid medication should be checked against the exact product and medication guidance."
+          }
+        },
+        "focus_note_en": "The strongest established timing interactions are with selected antibiotics and bisphosphonates; extreme doses can cause serious toxicity in renal impairment.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Essential mineral with established deficiency indications; evidence for symptom-specific supplementation varies by condition and baseline status.",
       "evidence_source": {
         "name": "NIH ODS",
@@ -746,6 +1040,31 @@
           }
         }
       ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Key interactions are with quinolone and tetracycline antibiotics and with penicillamine; separate dosing. Chronic high doses can cause copper deficiency.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
       "evidence_snapshot_en": "Established nutrient with clear deficiency treatment value. Benefit beyond correcting inadequate zinc status is indication-specific.",
       "evidence_source": {
         "name": "NIH ODS",
