@@ -1,0 +1,49 @@
+{
+  "status": "implementation_reference_not_canonical",
+  "supplement_exposure": {
+    "canonicalId": "supp.magnesium",
+    "snapshot": {
+      "status": "stopped",
+      "doseText": "400 mg",
+      "frequency": "nightly"
+    },
+    "events": [
+      {
+        "eventType": "initial_recorded",
+        "doseText": "200 mg",
+        "frequency": "nightly"
+      },
+      {
+        "eventType": "dose_changed",
+        "doseText": "400 mg",
+        "frequency": "nightly"
+      },
+      {
+        "eventType": "stopped"
+      }
+    ]
+  },
+  "environmental_exposure": {
+    "canonicalId": "exposure.wildfire_smoke",
+    "events": [
+      {
+        "eventType": "initial_recorded",
+        "status": "suspected",
+        "provenance": "patient_reported"
+      },
+      {
+        "eventType": "status_changed",
+        "status": "confirmed",
+        "provenance": "clinician_recorded"
+      }
+    ]
+  },
+  "symptom_metric": {
+    "symId": "sym.headache",
+    "metricId": "metric.pain_score",
+    "trajectory": [
+      8,
+      5
+    ]
+  }
+}

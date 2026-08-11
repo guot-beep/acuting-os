@@ -1,0 +1,207 @@
+{
+  "status": "research_staging_not_canonical",
+  "symptoms": [
+    {
+      "id": "sym.headache",
+      "name_en": "Headache",
+      "name_zh": "頭痛"
+    },
+    {
+      "id": "sym.neck_pain",
+      "name_en": "Neck pain",
+      "name_zh": "頸痛"
+    },
+    {
+      "id": "sym.shoulder_pain",
+      "name_en": "Shoulder pain",
+      "name_zh": "肩痛"
+    },
+    {
+      "id": "sym.low_back_pain",
+      "name_en": "Low back pain",
+      "name_zh": "下背痛"
+    },
+    {
+      "id": "sym.knee_pain",
+      "name_en": "Knee pain",
+      "name_zh": "膝痛"
+    },
+    {
+      "id": "sym.dizziness",
+      "name_en": "Dizziness",
+      "name_zh": "頭暈"
+    },
+    {
+      "id": "sym.vertigo",
+      "name_en": "Vertigo",
+      "name_zh": "眩暈"
+    },
+    {
+      "id": "sym.tinnitus",
+      "name_en": "Tinnitus",
+      "name_zh": "耳鳴"
+    },
+    {
+      "id": "sym.insomnia",
+      "name_en": "Insomnia",
+      "name_zh": "失眠"
+    },
+    {
+      "id": "sym.fatigue",
+      "name_en": "Fatigue",
+      "name_zh": "疲勞"
+    },
+    {
+      "id": "sym.palpitations",
+      "name_en": "Palpitations",
+      "name_zh": "心悸"
+    },
+    {
+      "id": "sym.shortness_of_breath",
+      "name_en": "Shortness of breath",
+      "name_zh": "呼吸急促"
+    },
+    {
+      "id": "sym.cough",
+      "name_en": "Cough",
+      "name_zh": "咳嗽"
+    },
+    {
+      "id": "sym.nausea",
+      "name_en": "Nausea",
+      "name_zh": "噁心"
+    },
+    {
+      "id": "sym.abdominal_bloating",
+      "name_en": "Abdominal bloating",
+      "name_zh": "腹脹"
+    },
+    {
+      "id": "sym.abdominal_pain",
+      "name_en": "Abdominal pain",
+      "name_zh": "腹痛"
+    },
+    {
+      "id": "sym.constipation",
+      "name_en": "Constipation",
+      "name_zh": "便秘"
+    },
+    {
+      "id": "sym.diarrhea",
+      "name_en": "Diarrhea",
+      "name_zh": "腹瀉"
+    },
+    {
+      "id": "sym.reflux",
+      "name_en": "Reflux symptoms",
+      "name_zh": "胃食道逆流症狀"
+    },
+    {
+      "id": "sym.poor_appetite",
+      "name_en": "Poor appetite",
+      "name_zh": "食慾不振"
+    },
+    {
+      "id": "sym.hot_flash",
+      "name_en": "Hot flash",
+      "name_zh": "潮熱"
+    },
+    {
+      "id": "sym.dysmenorrhea",
+      "name_en": "Dysmenorrhea",
+      "name_zh": "痛經"
+    },
+    {
+      "id": "sym.heavy_menstrual_bleeding",
+      "name_en": "Heavy menstrual bleeding",
+      "name_zh": "月經過多"
+    },
+    {
+      "id": "sym.nasal_congestion",
+      "name_en": "Nasal congestion",
+      "name_zh": "鼻塞"
+    },
+    {
+      "id": "sym.pruritus",
+      "name_en": "Pruritus",
+      "name_zh": "搔癢"
+    },
+    {
+      "id": "sym.muscle_cramp",
+      "name_en": "Muscle cramp",
+      "name_zh": "肌肉抽筋"
+    },
+    {
+      "id": "sym.numbness",
+      "name_en": "Numbness",
+      "name_zh": "麻木"
+    },
+    {
+      "id": "sym.weakness",
+      "name_en": "Weakness",
+      "name_zh": "無力"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "metric.pain_score",
+      "name_en": "Pain score",
+      "name_zh": "疼痛分數",
+      "scale_or_unit": "0-10"
+    },
+    {
+      "id": "metric.sleep_quality",
+      "name_en": "Sleep quality",
+      "name_zh": "睡眠品質",
+      "scale_or_unit": "ordinal_or_numeric"
+    },
+    {
+      "id": "metric.sleep_duration_hours",
+      "name_en": "Sleep duration",
+      "name_zh": "睡眠時數",
+      "scale_or_unit": "hours"
+    },
+    {
+      "id": "metric.sleep_onset_latency_min",
+      "name_en": "Sleep onset latency",
+      "name_zh": "入睡時間",
+      "scale_or_unit": "minutes"
+    },
+    {
+      "id": "metric.night_awakenings",
+      "name_en": "Night awakenings",
+      "name_zh": "夜間醒來次數",
+      "scale_or_unit": "count"
+    },
+    {
+      "id": "metric.fatigue_score",
+      "name_en": "Fatigue score",
+      "name_zh": "疲勞分數",
+      "scale_or_unit": "numeric"
+    },
+    {
+      "id": "metric.bowel_movements_per_week",
+      "name_en": "Bowel movements/week",
+      "name_zh": "每週排便次數",
+      "scale_or_unit": "per_week"
+    },
+    {
+      "id": "metric.stool_form_bristol",
+      "name_en": "Bristol stool type",
+      "name_zh": "Bristol 糞便分類",
+      "scale_or_unit": "1-7"
+    },
+    {
+      "id": "metric.hot_flash_count_day",
+      "name_en": "Hot flashes/day",
+      "name_zh": "每日潮熱次數",
+      "scale_or_unit": "per_day"
+    },
+    {
+      "id": "metric.range_of_motion_deg",
+      "name_en": "Range of motion",
+      "name_zh": "關節活動度",
+      "scale_or_unit": "degrees"
+    }
+  ]
+}

@@ -3258,3 +3258,9 @@ Current repo state as of this log:
 - Determinism 實證:patient id = sha256(patientCode) 純函數、無 Date.now/Math.random;self-test 7/7 PASS;同一 fixture 跨兩個獨立 process 產出 byte-identical plan。
 - Plan 內容:patients(9 欄+conflicts+needsReview)、caseAssignments、blankCodeCases(列出不丟棄)、manualReviewQueue、counts、source_sha256。輸入吃 RAW snapshot,不經 normalizer(Codex §A.4)。
 - 下一步:Codex 重審(計畫+本腳本+dry-run 樣本)→ GO 後才進 preflight/真機。
+
+# 2026-08-11 Fable — 等待 Codex GO 期間:invariants 單一來源 + SOL 研究包入庫
+
+- **ee00856**:`store.checkClinicalInvariants()` 成為 R1–R7 單一來源(CLI validator 與 import 前驗證共用);import 拒收契約違規(persist 前,不 silent 修)。實測:壞 fixture 3 違規全抓;**33 個真實病例 = 0 違規/8 個 legacy role warnings**;0 console errors。
+- **CI 接線受阻(預期)**:validate.yml 加 K 系列+invariants 兩步的 commit 被 GitHub 拒(PAT 無 workflow scope,記憶中的已知限制)。已 soft-reset,改動留在工作樹;需 Ting 在 GitHub web editor 手動加(delta 見工作樹 diff,只有 10 行)。
+- **SOL 研究包入庫**(Acuting_OC_Tonight_ClinicV2_research):docs/research_packs/ 5 檔 + data/research_staging/ 3 檔,全標 NOT CANONICAL。sym 候選 28、metric 候選 10(雙語,與 outcome_metrics id 對齊);capture examples 與已實作契約逐項吻合(magnesium 三態、suspected→confirmed 保痕、role⇔isPrimary、lifestyle 不自動轉證)。K 系列 PASS。ingestion 需照常走 canonical 閘門,等 Codex/模板鎖定。
