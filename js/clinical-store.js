@@ -118,7 +118,13 @@
       env.pending_patient_codes = [...pending].sort();
       // R9 gate C:runtime revision — 每次寫入遞增;syncPendingPatients 以
       // 「await 全部完成後重讀+同步套用」消除 lost-update,revision 供偵測。
-      env.runtime_revision = (env.runtime_revision || 0) + 1;
+      const nextRevision = (env.runtime_revision || 0) + 1;
+      // R12-F2:revision 上界 fail-closed —— overflow 時零寫入丟錯,
+      // 不產生「寫一次就自鎖」的 staging(load 端型別契約會拒讀它)。
+      if (!Number.isSafeInteger(nextRevision) || nextRevision < 1) {
+        throw new Error("clinical-store: runtime_revision overflow/invalid (next=" + nextRevision + ") — write refused (F2 fail-closed)");
+      }
+      env.runtime_revision = nextRevision;
       env.last_runtime_save_at = new Date().toISOString();
       writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
       return;
@@ -168,7 +174,13 @@
       created++;
     }
     env.pending_patient_codes = leftover.sort();
-    env.runtime_revision = (env.runtime_revision || 0) + 1;
+    const nextRevision = (env.runtime_revision || 0) + 1;
+      // R12-F2:revision 上界 fail-closed —— overflow 時零寫入丟錯,
+      // 不產生「寫一次就自鎖」的 staging(load 端型別契約會拒讀它)。
+      if (!Number.isSafeInteger(nextRevision) || nextRevision < 1) {
+        throw new Error("clinical-store: runtime_revision overflow/invalid (next=" + nextRevision + ") — write refused (F2 fail-closed)");
+      }
+      env.runtime_revision = nextRevision;
     writeKey(STAGING_KEY, JSON.stringify(env));
     return { ok: true, created, deferred: leftover.length };
   }
@@ -614,6 +626,13 @@
       const anchorRaw = readKey(STAGING_KEY);   // R11-E1 的 TOCTOU 錨(exact bytes)
       let currentEnv = null;
       try { currentEnv = JSON.parse(anchorRaw || "null"); } catch { currentEnv = null; }
+      // R12-F1:active 的 revision 欄位「存在但非法」不得被當成 0(那會讓
+      // anti-downgrade 對可能較新的 active 失效)。缺席 = 合法 migration-era;
+      // 存在就必須是 safe integer ≥1,否則整個 restore 拒收、active 不動。
+      if (currentEnv && currentEnv.runtime_revision !== undefined && currentEnv.runtime_revision !== null
+          && (!Number.isSafeInteger(currentEnv.runtime_revision) || currentEnv.runtime_revision < 1)) {
+        return fail([`ACTIVE staging has invalid runtime_revision ${JSON.stringify(currentEnv.runtime_revision)} — cannot order revisions safely; repair the active envelope first (restore refused, active/pointer untouched)`]);
+      }
       const currentRev = (currentEnv && Number.isSafeInteger(currentEnv.runtime_revision)) ? currentEnv.runtime_revision : 0;
       if (currentRev >= 1 && incomingRev < currentRev) {
         return fail([`incoming envelope revision ${incomingRev} is OLDER than active runtime revision ${currentRev} — refusing downgrade (would erase post-switch edits); disaster-restore requires the authorized rollback flow`]);
@@ -621,7 +640,10 @@
       // R11-E2:同 revision 在單調 journal 裡必須代表同一狀態 —— 只准
       // canonical-equal 的冪等 no-op;內容不同 = branch/竄改,必拒。
       if (currentRev >= 1 && incomingRev === currentRev) {
-        if (currentEnv && JSON.stringify(env) === JSON.stringify(currentEnv)) {
+        // R12-F4:契約 = exact bytes,實作就比原始位元組(envelopeText vs
+        // anchorRaw)。pretty-print 重排版的「同物不同字」一律拒 —— 要放寬
+        // 成 canonical-object equality 需 Ting 明改契約,不得實作偷跑。
+        if (currentEnv && envelopeText === anchorRaw) {
           const c0 = cleanupCandidate();
           if (!c0.ok) return { ok: false, code: "REJECTED_UNCHANGED", failures: ["idempotent no-op but candidate cleanup failed: " + c0.error] };
           return { ok: true, idempotent_noop: true, patients: env.patients.length, cases: env.cases.length, runtime_era: true };

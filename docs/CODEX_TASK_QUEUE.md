@@ -1,6 +1,20 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R12 — R11 E1-E5 修復覆核
+## ⚡ NEXT TASK: C2B-R13 — R12 F1-F4 修復覆核
+
+Fable 已修:F1 active revision 非法(存在但非 safe int ≥1)→ restore
+REJECTED_UNCHANGED、active/pointer 不動(四型反例入 suite);F2 兩條 writer
+寫入前算 nextRevision,overflow 零寫入丟錯(MAX_SAFE 反例入 suite);F3 官方
+E1 夾具重建 —— 含 canonical Patient(hasher 實際被叫)+ hasherCalls≥1 +
+restore-未-settled + race-動作已生效 三重防空跑斷言;F4 same-revision no-op
+改為原始位元組相等(envelopeText === anchorRaw),whitespace 變體必拒(要放寬
+成 canonical equality 需 Ting 明改契約)。rehearse-runtime-restore 50/50。
+請重跑 R9(9)+R10(8)+R11(5)+R12 加碼(6)全情境 + 自行再加碼;全綠發 R13 GO
++ 修訂版 P4。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R12 — R11 E1-E5 修復覆核
 
 Fable 已修(現 tip 見 origin):E1 TOCTOU —— 驗證錨 = 驗證起點的 staging exact
 bytes,全部 await 結束後寫入前重讀比對,不同即結構化拒絕零寫入(重試會對新

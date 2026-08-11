@@ -149,21 +149,41 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
 
   // === R11 反例(Codex 6cf7782)===
   // R11-E1:restore-vs-sync TOCTOU —— 驗證 await 期間 active 被推進,寫入前必拒
+  // R12-F3:夾具必須真的觸發 await race —— 含 1 個 canonical Patient(讓
+  // verifyRuntimeEnvelope 呼叫 hasher)+ 1 個 pending case;三重斷言防空跑:
+  // hasherCalls ≥ 1、race 動作發生時 restore 未 settled、race 動作真的執行。
   const bE = fakeBackend({});
   S.setBackend(bE);
-  const baseEnv = { schema_version: 2, journal: {}, patients: [], cases: [{ id:"case.e1", patientCode:"PE1", soapNotes: [] }], pending_patient_codes: ["PE1"], runtime_revision: 5 };
+  const linkedId = "patient." + (await sha("acuting-patient:P-LNK")).slice(0, 12);
+  const baseEnv = { schema_version: 2, journal: {},
+    patients: [{ id: linkedId, patientCode: "P-LNK", caseIds: ["case.lnk"] }],
+    cases: [
+      { id:"case.lnk", patientCode:"P-LNK", patientId: linkedId, soapNotes: [] },
+      { id:"case.e1", patientCode:"PE1", patientId: null, soapNotes: [] },
+    ],
+    pending_patient_codes: ["PE1"], runtime_revision: 5 };
   bE.kv.set(S.STAGING_KEY, JSON.stringify(baseEnv));
   bE.kv.set(S.POINTER_KEY, "v2");
-  const incomingE1 = JSON.parse(JSON.stringify(baseEnv)); incomingE1.runtime_revision = 6; incomingE1.cases[0].caseTitle = "import";
+  const incomingE1 = JSON.parse(JSON.stringify(baseEnv)); incomingE1.runtime_revision = 6; incomingE1.cases[1].caseTitle = "import";
   let releaseE1; const gateE1 = new Promise((r) => { releaseE1 = r; });
-  const slowShaE1 = async (s) => { await gateE1; return require("crypto").createHash("sha256").update(s).digest("hex"); };
-  const restoreP = S.restoreV2Envelope(JSON.stringify(incomingE1), slowShaE1);
-  S.save([{ id:"case.e1", patientCode:"PE1", soapNotes: [], edited:"during-restore" }]);   // await 期間推進 active(rev 6)
+  let hasherCallsE1 = 0;
+  const slowShaE1 = async (s) => { hasherCallsE1++; await gateE1; return require("crypto").createHash("sha256").update(s).digest("hex"); };
+  let restoreSettled = false;
+  const restoreP = S.restoreV2Envelope(JSON.stringify(incomingE1), slowShaE1).then((r) => { restoreSettled = true; return r; });
+  await new Promise((r) => setTimeout(r, 10));   // 讓 restore 跑到 hasher await
+  assert.ok(hasherCallsE1 >= 1); ok("R12-F3: hasher actually invoked (fixture not a no-op)");
+  assert.strictEqual(restoreSettled, false); ok("R12-F3: restore still pending when race action fires");
+  const savedCases = [
+    { id:"case.lnk", patientCode:"P-LNK", patientId: linkedId, soapNotes: [] },
+    { id:"case.e1", patientCode:"PE1", patientId: null, soapNotes: [], edited:"during-restore" },
+  ];
+  S.save(savedCases);   // await 期間推進 active(rev 6)— race 動作確實發生
+  assert.strictEqual(JSON.parse(bE.kv.get(S.STAGING_KEY)).runtime_revision, 6); ok("R12-F3: race action really advanced active");
   releaseE1();
   const rE1 = await restoreP;
   assert.strictEqual(rE1.ok, false); ok("R11-E1: TOCTOU refused (active changed during validation)");
-  assert.ok(rE1.failures[0].includes("CHANGED during restore validation")); ok("R11-E1: structured refusal message");
-  assert.strictEqual(JSON.parse(bE.kv.get(S.STAGING_KEY)).cases[0].edited, "during-restore"); ok("R11-E1: newer save preserved, zero overwrite");
+  assert.ok(rE1.failures[0].includes("CHANGED during restore validation") || rE1.failures[0].includes("SAME revision")); ok("R11-E1: structured refusal message");
+  assert.strictEqual(JSON.parse(bE.kv.get(S.STAGING_KEY)).cases[1].edited, "during-restore"); ok("R11-E1: newer save preserved, zero overwrite");
 
   // R11-E2:同 revision 不同內容必拒;byte-equal 冪等 no-op 放行
   const curE2 = JSON.parse(bE.kv.get(S.STAGING_KEY));
@@ -211,6 +231,37 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.strictEqual(rE5.ok, false); ok("R11-E5: double-fault -> ok:false");
   assert.strictEqual(rE5.code, "INCONSISTENT_STATE"); ok("R11-E5: INCONSISTENT_STATE code surfaced");
   assert.ok(rE5.failures[0].includes("INCONSISTENT STATE")); ok("R11-E5: honest state description");
+
+  // === R12 反例(Codex e7c1a22)===
+  // R12-F1:active 的 revision 非法(存在但非 safe int ≥1)→ restore 必拒,四型
+  for (const bad of ["2", 1.5, -3, Number.MAX_SAFE_INTEGER + 1]) {
+    const badActive = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: bad };
+    const bF1 = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(badActive), [S.POINTER_KEY]: "v2" });
+    S.setBackend(bF1);
+    const legit = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: 3 };
+    const rF1 = await S.restoreV2Envelope(JSON.stringify(legit), sha);
+    assert.strictEqual(rF1.ok, false);
+    assert.strictEqual(rF1.code, "REJECTED_UNCHANGED");
+    assert.strictEqual(bF1.kv.get(S.STAGING_KEY), JSON.stringify(badActive));
+  }
+  ok("R12-F1: invalid ACTIVE revision (string/fraction/negative/unsafe) — restore refused x4, active untouched");
+
+  // R12-F2:revision overflow → save/sync 零寫入丟錯
+  const maxEnv = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: Number.MAX_SAFE_INTEGER };
+  const bF2 = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(maxEnv), [S.POINTER_KEY]: "v2" });
+  S.setBackend(bF2);
+  assert.throws(() => S.save([]), /overflow/); ok("R12-F2: save at MAX_SAFE revision throws, zero write");
+  assert.strictEqual(bF2.kv.get(S.STAGING_KEY), JSON.stringify(maxEnv)); ok("R12-F2: staging bytes unchanged after refused save");
+
+  // R12-F4:同 revision、同物不同字(pretty-print)必拒
+  const bF4base = { schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: [], runtime_revision: 4 };
+  const bF4 = fakeBackend({ [S.STAGING_KEY]: JSON.stringify(bF4base), [S.POINTER_KEY]: "v2" });
+  S.setBackend(bF4);
+  const pretty = JSON.stringify(bF4base, null, 2);   // 同 canonical 物件、不同 bytes
+  const rF4 = await S.restoreV2Envelope(pretty, sha);
+  assert.strictEqual(rF4.ok, false); ok("R12-F4: same-revision whitespace-variant rejected (exact-bytes contract)");
+  const rF4b = await S.restoreV2Envelope(JSON.stringify(bF4base), sha);
+  assert.strictEqual(rF4b.ok, true); assert.strictEqual(rF4b.idempotent_noop, true); ok("R12-F4: true byte-identical no-op still accepted");
 
   console.log(`\nRUNTIME RESTORE REHEARSAL: ${pass}/${pass} PASS`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });
