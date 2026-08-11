@@ -30,7 +30,36 @@
 
   let backend = localStorageBackend;
 
+  /* Pointer-aware runtime contract(2026-08-11,INDEPENDENT_AUDIT 修復;
+   * 待 Codex R9 覆核)。切換前(pointer 缺席/v1):行為與從前逐位元相同。
+   * 切換後(pointer === "v2"):
+   *   - load() 讀 STAGING envelope 的 .cases;envelope 缺失/毀損 = THROW
+   *     (fail-loud —— 靜默回 v1 會造成雙世界分叉,靜默回 [] 會讓下一次
+   *     save 清空真資料;兩種靜默都比爆炸更危險)。
+   *   - save() 更新 envelope.cases、同步既有 Patient 的 caseIds、把「沒有
+   *     Patient 的新 patientCode」記進 envelope.pending_patient_codes ——
+   *     不在同步路徑鑄造 patient id(sha256 是 async;臨床存檔不等雜湊)。
+   *     UI 存檔後呼叫 syncPendingPatients() 補建。
+   *   - v1 key 在 v2 模式下永不再寫 —— 它從切換那一刻起是凍結的回滾備份。 */
+  function activeIsV2() {
+    try { return readKey(POINTER_KEY) === "v2"; } catch { return false; }
+  }
+
+  function readStagingEnvelopeOrThrow(context) {
+    const raw = readKey(STAGING_KEY);
+    if (!raw) throw new Error(`clinical-store: pointer=v2 but staging envelope is MISSING (${context}) — refusing v1 fallback to prevent silent fork. Run rollback or restore.`);
+    let env;
+    try { env = JSON.parse(raw); } catch (e) { throw new Error(`clinical-store: pointer=v2 but staging envelope is CORRUPT (${context}): ${e.message}`); }
+    if (!env || !Array.isArray(env.cases) || !Array.isArray(env.patients)) {
+      throw new Error(`clinical-store: pointer=v2 but staging envelope shape is invalid (${context})`);
+    }
+    return env;
+  }
+
   function load() {
+    if (activeIsV2()) {
+      return readStagingEnvelopeOrThrow("load").cases;
+    }
     const saved = backend.read();
     if (!saved) return [];
     try {
@@ -42,7 +71,50 @@
   }
 
   function save(cases) {
+    if (activeIsV2()) {
+      const env = readStagingEnvelopeOrThrow("save");
+      env.cases = cases;
+      // Patient↔Case 同步:既有 patient 的 caseIds 重算(patientCode 隸屬);
+      // case.patientId 對得上的維持;沒有 patient 的 code 進 pending 清單。
+      const byCode = new Map(env.patients.map((p) => [p.patientCode, p]));
+      for (const p of env.patients) p.caseIds = [];
+      const pending = new Set();
+      for (const c of cases) {
+        const code = String(c.patientCode || "").trim();
+        if (!code) { c.patientId = c.patientId || null; continue; }
+        const p = byCode.get(code);
+        if (p) { p.caseIds.push(c.id); c.patientId = p.id; }
+        else pending.add(code);
+      }
+      env.pending_patient_codes = [...pending].sort();
+      env.last_runtime_save_at = new Date().toISOString();
+      writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
+      return;
+    }
     backend.write(JSON.stringify(cases, null, 2));
+  }
+
+  /* 存檔後補建 pending 病人(async — sha256 與遷移同款 deterministic id)。
+   * 冪等:pending 清空即 no-op。UI fire-and-forget 呼叫,失敗不影響已存病歷
+   * (cases 已落盤;病人補建下次再試)。 */
+  async function syncPendingPatients(sha256hex) {
+    if (!activeIsV2()) return { ok: true, created: 0 };
+    const env = readStagingEnvelopeOrThrow("syncPendingPatients");
+    const codes = env.pending_patient_codes || [];
+    if (!codes.length) return { ok: true, created: 0 };
+    const derived = derivePatientsFromCases(env.cases);
+    let created = 0;
+    for (const code of codes) {
+      const d = derived.find((p) => p.patientCode === code);
+      if (!d) continue;
+      d.id = "patient." + (await sha256hex(code)).slice(0, 12);
+      env.patients.push(d);
+      for (const c of env.cases) if (String(c.patientCode || "").trim() === code) c.patientId = d.id;
+      created++;
+    }
+    env.pending_patient_codes = [];
+    writeKey(STAGING_KEY, JSON.stringify(env));
+    return { ok: true, created };
   }
 
   function makeId(prefix) {
@@ -543,6 +615,8 @@
     STORAGE_KEY,
     load,
     save,
+    syncPendingPatients,
+    activeIsV2,
     setBackend(b) { backend = b; },       // SQLite/D1 adapter 的插入點
     checkClinicalInvariants,
     canonicalEventPayload,

@@ -1,6 +1,26 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
+## ⚡ NEXT TASK: C2B-R9 — pointer-aware runtime 契約審計(新 gate,取代已作廢的 R8 GO)
+
+背景:INDEPENDENT_AUDIT_2026-08-11 發現 runtime load/save 不看 pointer(切換後
+新病歷寫 v1、export 出凍結 staging = 靜默分叉)。Fable 已修:
+- js/clinical-store.js:activeIsV2 / readStagingEnvelopeOrThrow(fail-loud,缺/毀 staging 一律 throw)/
+  v2 save 更新 envelope.cases + caseIds 同步 + pending_patient_codes(不同步鑄 id)/
+  syncPendingPatients(async,deterministic sha256 id,冪等)/ v1 在 v2 模式凍結永不寫
+- app.js:loadClinicalCases try/catch → 唯讀保護旗標;persistClinicalCases try/catch +
+  quota 失敗大聲告知絕不假裝已存;存檔後 fire-and-forget 補建病人
+- scripts/test-pointer-runtime.js:18 斷言(v1 不變性/v2 讀寫/凍結/pending/冪等/fail-loud)
+
+請審:1) v1 模式逐位元不變性(diff 舊行為);2) v2 模式下所有可達寫入路徑是否仍
+whitelist(rehearse 全套 + 你的注入);3) fail-loud 是否無路徑靜默降級;4) pending
+病人機制的競態與冪等;5) export/import 與新 runtime 的一致性(export 讀 pointer,
+現在 runtime 也讀 —— 兩者對齊?);6) P4 checklist 需要哪些新驗收項(切換後寫一筆
+→ export → 驗在場)。PASS 則發布 R9 GO + 修訂版 P4;任何 FAIL 照慣例寫反例。
+結論寫 AI_REVIEW_FEEDBACK.md + CODEX_HANDOFF.md 並 push。硬邊界照舊。
+
+---
+
+## (已完成)前一任務(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
 
 ### C2B-R8 — cleanup gate 單點覆核(最後一關)
 

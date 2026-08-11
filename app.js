@@ -1478,6 +1478,13 @@ function handlePointHashChange() {
   document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// Pointer-aware runtime + persist guard (2026-08-11, INDEPENDENT_AUDIT items
+// 1 & 3; pending Codex R9). clinicalStoreIntegrityError = the store threw on
+// load (pointer=v2 with missing/corrupt staging): the app runs READ-ONLY on
+// whatever loaded — persist refuses, because saving over a half-loaded world
+// is how data disappears.
+let clinicalStoreIntegrityError = null;
+
 function loadClinicalCases() {
   // Phase C seam (js/clinical-store.js): storage I/O goes through the
   // repository layer; normalization stays HERE (contract layer, not storage).
@@ -1485,7 +1492,13 @@ function loadClinicalCases() {
   // ever fails to load, silently returning [] would let the next save WIPE
   // every real case. Reading directly is the safe failure mode.
   if (window.AcuTingClinicalStore) {
-    return AcuTingClinicalStore.load().map(normalizeClinicalCase);
+    try {
+      return AcuTingClinicalStore.load().map(normalizeClinicalCase);
+    } catch (e) {
+      clinicalStoreIntegrityError = e.message;
+      alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + e.message);
+      return [];
+    }
   }
   const saved = localStorage.getItem(CASE_STORAGE_KEY);
   if (!saved) return [];
@@ -1498,11 +1511,28 @@ function loadClinicalCases() {
 }
 
 function persistClinicalCases() {
-  if (window.AcuTingClinicalStore) {
-    AcuTingClinicalStore.save(clinicalCases);
-    return;
+  if (clinicalStoreIntegrityError) {
+    alert("唯讀保護中,拒絕存檔(避免覆蓋半載入的資料):\n" + clinicalStoreIntegrityError);
+    return false;
   }
-  localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
+  try {
+    if (window.AcuTingClinicalStore) {
+      AcuTingClinicalStore.save(clinicalCases);
+      // v2 模式:存檔後補建 pending 病人(fire-and-forget;失敗不影響已存病歷)
+      if (AcuTingClinicalStore.activeIsV2 && AcuTingClinicalStore.activeIsV2() && AcuTingClinicalStore.syncPendingPatients) {
+        const sha = (s) => crypto.subtle.digest("SHA-256", new TextEncoder().encode(s))
+          .then((b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""));
+        AcuTingClinicalStore.syncPendingPatients(sha).catch((e) => console.error("syncPendingPatients failed (will retry next save):", e));
+      }
+    } else {
+      localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
+    }
+    return true;
+  } catch (e) {
+    // 寫入失敗(配額滿/隱私模式/storage 例外):大聲告知,絕不假裝已存。
+    alert("存檔失敗 —— 資料尚未寫入!請立即匯出備份再重試。\n" + e.message);
+    return false;
+  }
 }
 
 // ---- CS2: knowledge counts derived at runtime (no hardcoded stats) --------
