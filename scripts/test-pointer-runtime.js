@@ -70,5 +70,60 @@ const fakeSha = async (s) => Buffer.from(s).toString("hex").padEnd(64, "0");
   S.setBackend(b);
   assert.throws(() => S.load(), /CORRUPT/); ok("v2 + corrupt staging: load throws");
 
-  console.log(`\nPOINTER RUNTIME TEST: ${pass}/18 PASS`);
+  // === R9 反例(Codex 4b2cefd)===
+  // R9-A: pointer 讀取例外 → load/save 必 throw,零寫入(不得靜默走 v1)
+  b = fakeBackend({ "acuting-clinical-cases-v1": JSON.stringify(CASES) });
+  const origReadKey = b.readKey.bind(b);
+  b.readKey = (k) => { if (k === S.POINTER_KEY) throw new Error("storage fault"); return origReadKey(k); };
+  let writes = 0; const origWrite = b.write.bind(b); b.write = (s) => { writes++; origWrite(s); };
+  const origWriteKey = b.writeKey.bind(b); b.writeKey = (k, v) => { writes++; origWriteKey(k, v); };
+  S.setBackend(b);
+  assert.throws(() => S.load(), /POINTER read failed/); ok("R9-A: pointer fault -> load throws");
+  assert.throws(() => S.save([]), /POINTER read failed/); ok("R9-A: pointer fault -> save throws");
+  assert.strictEqual(writes, 0); ok("R9-A: zero writes on pointer fault");
+  // R9-A2: 非法 pointer 值一樣 throw
+  b = fakeBackend({ [S.POINTER_KEY]: "v3" }); S.setBackend(b);
+  assert.throws(() => S.load(), /invalid value/); ok("R9-A: invalid pointer value -> throw");
+
+  // R9-C1: ID 與 migration 推導完全一致(同鹽)
+  const saltedSha = async (s) => require("crypto").createHash("sha256").update(s).digest("hex");
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [], cases: [{ id:"case.x", patientCode:"PX", soapNotes: [] }], pending_patient_codes: ["PX"] }) });
+  S.setBackend(b);
+  await S.syncPendingPatients(saltedSha);
+  const envC = JSON.parse(b.kv.get(S.STAGING_KEY));
+  const expected = "patient." + (await saltedSha("acuting-patient:PX")).slice(0, 12);
+  assert.strictEqual(envC.patients[0].id, expected); ok("R9-C1: runtime id === migration derivation (salted)");
+
+  // R9-C2: lost-update race —— sync 停在 await 期間插入新 save,新資料不得被覆蓋
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [], cases: [{ id:"case.1", patientCode:"PA", soapNotes: [] }], pending_patient_codes: ["PA"] }) });
+  S.setBackend(b);
+  let release; const gate = new Promise((r) => { release = r; });
+  const slowSha = async (s) => { await gate; return require("crypto").createHash("sha256").update(s).digest("hex"); };
+  const syncP = S.syncPendingPatients(slowSha);
+  S.save([{ id:"case.1", patientCode:"PA", soapNotes: [], edited: true }, { id:"case.2", patientCode:"PB", soapNotes: [] }]);   // await 期間的較新 save
+  release(); await syncP;
+  const envR = JSON.parse(b.kv.get(S.STAGING_KEY));
+  assert.strictEqual(envR.cases.length, 2); ok("R9-C2: newer save's new case survives sync");
+  assert.strictEqual(envR.cases[0].edited, true); ok("R9-C2: newer edit survives sync");
+  assert.ok(envR.pending_patient_codes.includes("PB")); ok("R9-C2: new pending code deferred, not lost");
+  assert.ok(envR.patients.some((p)=>p.patientCode==="PA")); ok("R9-C2: prefetched patient still minted");
+
+  // R9-C3: collision fail-closed
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [{ id: "patient.aaaaaaaaaaaa", patientCode: "OTHER", caseIds: [] }], cases: [{ id:"case.z", patientCode:"PZ", soapNotes: [] }], pending_patient_codes: ["PZ"] }) });
+  S.setBackend(b);
+  const collideSha = async () => "aaaaaaaaaaaa".padEnd(64, "a");
+  const rc = await S.syncPendingPatients(collideSha);
+  const envZ = JSON.parse(b.kv.get(S.STAGING_KEY));
+  assert.strictEqual(rc.created, 0); ok("R9-C3: collision -> minting refused");
+  assert.ok(envZ.pending_patient_codes.includes("PZ")); ok("R9-C3: code stays pending");
+  assert.strictEqual(envZ.patients.length, 1); ok("R9-C3: no duplicate id written");
+
+  // R9-C4: blank code -> patientId 強制 null(stale FK 清除)
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({ journal:{}, patients: [], cases: [], pending_patient_codes: [] }) });
+  S.setBackend(b);
+  S.save([{ id:"case.blank", patientCode:"", patientId:"patient.stale", soapNotes: [] }]);
+  const envB = JSON.parse(b.kv.get(S.STAGING_KEY));
+  assert.strictEqual(envB.cases[0].patientId, null); ok("R9-C4: blank code forces patientId=null");
+
+  console.log(`\nPOINTER RUNTIME TEST: ${pass}/${pass} PASS (18 base + 12 R9 counterexamples)`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });

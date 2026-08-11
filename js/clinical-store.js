@@ -41,8 +41,21 @@
    *     不在同步路徑鑄造 patient id(sha256 是 async;臨床存檔不等雜湊)。
    *     UI 存檔後呼叫 syncPendingPatients() 補建。
    *   - v1 key 在 v2 模式下永不再寫 —— 它從切換那一刻起是凍結的回滾備份。 */
-  function activeIsV2() {
-    try { return readKey(POINTER_KEY) === "v2"; } catch { return false; }
+  /* R9 gate A:pointer 讀取是明確三態,絕不吞例外。只有「可靠讀到 absent/
+   * v1」才走 v1;讀取例外或非法值一律 throw —— 猜錯世界比爆炸更危險。 */
+  function readPointerState() {
+    let v;
+    try { v = readKey(POINTER_KEY); }
+    catch (e) { throw new Error("clinical-store: POINTER read failed (" + e.message + ") — refusing to guess the active world; no v1/staging write will occur."); }
+    if (v === null || v === undefined || v === "" || v === "v1") return "v1";
+    if (v === "v2") return "v2";
+    throw new Error(`clinical-store: POINTER holds invalid value "${v}" — refusing to guess the active world.`);
+  }
+  function activeIsV2() { return readPointerState() === "v2"; }
+
+  /* R9 gate C:runtime 與 migration 共用唯一 id 推導(同鹽同前綴)。 */
+  async function canonicalPatientIdOf(code, sha256hex) {
+    return "patient." + (await sha256hex("acuting-patient:" + code)).slice(0, 12);
   }
 
   function readStagingEnvelopeOrThrow(context) {
@@ -81,12 +94,17 @@
       const pending = new Set();
       for (const c of cases) {
         const code = String(c.patientCode || "").trim();
-        if (!code) { c.patientId = c.patientId || null; continue; }
+        // R9 gate C:blank code 強制 patientId=null(stale FK 違反
+        // verifyStagingObject 的 blank→null invariant,不得保留)。
+        if (!code) { c.patientId = null; continue; }
         const p = byCode.get(code);
         if (p) { p.caseIds.push(c.id); c.patientId = p.id; }
         else pending.add(code);
       }
       env.pending_patient_codes = [...pending].sort();
+      // R9 gate C:runtime revision — 每次寫入遞增;syncPendingPatients 以
+      // 「await 全部完成後重讀+同步套用」消除 lost-update,revision 供偵測。
+      env.runtime_revision = (env.runtime_revision || 0) + 1;
       env.last_runtime_save_at = new Date().toISOString();
       writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
       return;
@@ -99,22 +117,46 @@
    * (cases 已落盤;病人補建下次再試)。 */
   async function syncPendingPatients(sha256hex) {
     if (!activeIsV2()) return { ok: true, created: 0 };
-    const env = readStagingEnvelopeOrThrow("syncPendingPatients");
-    const codes = env.pending_patient_codes || [];
-    if (!codes.length) return { ok: true, created: 0 };
+    // R9 gate C(lost-update 消除):所有 await(雜湊)先完成,之後才重讀
+    // 最新 envelope 並「同步、不間斷」地套用+寫回 —— JS 單執行緒下,同步
+    // 區段內不可能插入其他 save,stale-envelope 覆寫在結構上不可能發生。
+    // 雜湊以 code 為輸入、deterministic,先算後用不影響正確性。
+    const first = readStagingEnvelopeOrThrow("syncPendingPatients:prefetch");
+    const prefetchCodes = first.pending_patient_codes || [];
+    if (!prefetchCodes.length) return { ok: true, created: 0 };
+    const idByCode = new Map();
+    for (const code of prefetchCodes) idByCode.set(code, await canonicalPatientIdOf(code, sha256hex));
+    // ---- 從這裡到 writeKey 全同步,絕無 await ----
+    const env = readStagingEnvelopeOrThrow("syncPendingPatients:apply");
+    const codes = (env.pending_patient_codes || []).filter((c) => idByCode.has(c));
+    const leftover = (env.pending_patient_codes || []).filter((c) => !idByCode.has(c));  // await 期間新出現的 code 留給下一輪
+    if (!codes.length) return { ok: true, created: 0, deferred: leftover.length };
     const derived = derivePatientsFromCases(env.cases);
+    const existingIds = new Set(env.patients.map((p) => p.id));
     let created = 0;
     for (const code of codes) {
       const d = derived.find((p) => p.patientCode === code);
       if (!d) continue;
-      d.id = "patient." + (await sha256hex(code)).slice(0, 12);
+      const id = idByCode.get(code);
+      // R9 gate C:collision fail-closed —— 同 id 已存在但 code 不同 = 截斷
+      // 雜湊撞車,拒絕鑄造(code 留在 pending,人工處理),絕不寫入重複 id。
+      const clash = env.patients.find((p) => p.id === id);
+      if (clash && clash.patientCode !== code) {
+        leftover.push(code);
+        console.error(`syncPendingPatients: patient id collision for code "${code}" vs existing "${clash.patientCode}" — minting refused, code left pending`);
+        continue;
+      }
+      if (existingIds.has(id)) continue;   // 已存在同 code 同 id:冪等
+      d.id = id;
       env.patients.push(d);
-      for (const c of env.cases) if (String(c.patientCode || "").trim() === code) c.patientId = d.id;
+      existingIds.add(id);
+      for (const c of env.cases) if (String(c.patientCode || "").trim() === code) c.patientId = id;
       created++;
     }
-    env.pending_patient_codes = [];
+    env.pending_patient_codes = leftover.sort();
+    env.runtime_revision = (env.runtime_revision || 0) + 1;
     writeKey(STAGING_KEY, JSON.stringify(env));
-    return { ok: true, created };
+    return { ok: true, created, deferred: leftover.length };
   }
 
   function makeId(prefix) {
