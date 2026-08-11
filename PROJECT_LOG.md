@@ -3169,3 +3169,11 @@ Current repo state as of this log:
 - **規則**:Fable 任務一旦規格明確且低風險,實作交給 Sonnet,不燒 Fable quota;**未定案的架構絕不下放**。本機 16 GB RAM —— 重型 edit/build/test agent 一律**依序執行**,不並行。
 - 政策同步寫入對帳文件 §F0(`docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md`)。工作樹警告不變:`curriculum/` 刪除檔不在範圍,禁 `git add -A`。
 - **STOP**:docs-only checkpoint,無其他變更。
+
+# 2026-08-12 Fable — Sprint 開工:Phase A 完成 + B1 schema 落地 + Cloudflare root cause 修復
+
+- **Phase A**:`origin/main` 是本分支祖先(fast-forward 落地安全,無 merge 覆寫 knowledge.js 風險);髒工作樹所有權判定 —— js/knowledge.js(+96)/js/router.js(+2)是藥理線未提交 WIP(pharm workspace 渲染),保留不動;curriculum/ 刪除檔與 untracked 研究包維持 out of scope。
+- **B1(`994d8b3`)**:schema.sql 新增 `case_agent_exposures` / `case_environmental_exposures` / `visit_lifestyle_factors` / `visit_adverse_events` / `visit_pattern_differentials` 五張空表 + `visit_tcm_patterns.role/confidence` + `visit_outcomes.related_sym_id`;localstorage_sqlite_mapping.json 加 `planned_mappings_d17`(7 條保留鍵名,B2 落地時轉正)。build-data PASS、ratchet PASS。
+- **Cloudflare**:root cause = dist/ 被 gitignore 而 Workers Builds 沒有 build 命令(Pages→Workers 遷移時儀表板配置漂移)。修法 = wrangler.jsonc 自帶 `build.command: node scripts/build-site.js`(deploy 前自動執行,本地驗證 15 files/23.1MB);quarantine 原樣保留;絕不發佈 repo root。Ting 要核對的四項儀表板設定寫在 `docs/DEPLOY_CLOUDFLARE.md`。
+- **Sprint brief 入庫**:`docs/SPRINT_2026-08-12_BRIEF.md`(十行操作硬規則 + 階段現況 + 路由含 ChatGPT/SOL + HARD GATES vs STRETCH)。八項修正全部採納:Phase C=薄抽象、Patient wiring 獨立高風險里程碑+Codex audit、Phase B 後強制 Codex schema audit、export 與 schema 同步凍結。
+- **下一步**:B2 localStorage 契約(Fable)→ B3 詞彙種子(Sonnet)→ Codex audit → Phase C/D。
