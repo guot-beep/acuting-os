@@ -7271,6 +7271,15 @@ function importClinicalCases(event) {
       const imported = JSON.parse(reader.result);
       if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
       const incoming = imported.map(normalizeClinicalCase);
+      // Codex spec §4.5: import 在 persist 前先驗不變量,不以 silent
+      // inference 修掉衝突 —— 規則與 CI 同一份(store.checkClinicalInvariants)。
+      if (window.AcuTingClinicalStore) {
+        const inv = AcuTingClinicalStore.checkClinicalInvariants(incoming);
+        if (inv.failures.length) {
+          alert(`匯入被拒絕 Import rejected — ${inv.failures.length} 筆契約違規:\n\n${inv.failures.slice(0, 5).join("\n")}${inv.failures.length > 5 ? "\n…" : ""}\n\n請修正匯入檔後重試(規則見 scripts/validate-clinical-invariants.js)。`);
+          return;
+        }
+      }
       // OK = merge(安全預設), Cancel = restore(整包覆蓋)。
       const restoreMode = !window.confirm(
         "匯入模式 Import mode:\n\n【確定 OK】= 合併 Merge(安全:保留現有病例,只新增/延伸)\n【取消 Cancel】= 完整還原 Restore(整包覆蓋,僅災難復原用)"

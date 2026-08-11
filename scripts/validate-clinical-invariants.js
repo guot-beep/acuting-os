@@ -22,49 +22,28 @@
 const fs = require("fs");
 const path = require("path");
 
-const AGENT_EVENTS = new Set(["started", "initial_recorded", "stopped", "dose_changed", "frequency_changed", "status_changed", "confirmed_unchanged"]);
-const ENV_EVENTS = new Set(["started", "initial_recorded", "stopped", "certainty_changed", "timing_changed", "confirmed_unchanged"]);
-const INITIAL_EVENTS = new Set(["started", "initial_recorded"]);
+// 規則單一來源(Codex §2「規則只寫一份」精神):R1–R7 的實作住在
+// js/clinical-store.js 的 checkClinicalInvariants —— app.js 的 import 前驗證
+// 與這支 CLI 共用同一份;這裡只保留 CLI 外殼與 R8 prefix-check。
+require("../js/clinical-store.js");
+const STORE = globalThis.AcuTingClinicalStore;
 
 let failures = 0, warnings = 0, checked = { cases: 0, selections: 0, exposures: 0, events: 0, lifestyle: 0 };
 const fail = (msg) => { failures++; console.log(`  FAIL ${msg}`); };
-const warn = (msg) => { warnings++; console.log(`  warn ${msg}`); };
 
-function checkCase(c, label) {
+function checkCase(c) {
   checked.cases++;
   for (const note of c.soapNotes || []) {
-    const sel = note.tcmPatternSelections || [];
-    const ids = new Set();
-    let primaries = 0;
-    for (const e of sel) {
-      checked.selections++;
-      if (ids.has(e.patternId)) fail(`${label}/${note.id}: duplicate patternId ${e.patternId} (R3)`);
-      ids.add(e.patternId);
-      if (e.isPrimary) primaries++;
-      const role = String(e.role || "");
-      if (role === "primary" && !e.isPrimary) fail(`${label}/${note.id}/${e.patternId}: role=primary but isPrimary=false (R1)`);
-      if (role !== "primary" && role !== "" && e.isPrimary) fail(`${label}/${note.id}/${e.patternId}: role=${role} but isPrimary=true (R2)`);
-      if (role === "" && (e.isPrimary || sel.length)) warn(`${label}/${note.id}/${e.patternId}: legacy empty role (R4)`);
-    }
-    if (primaries > 1) fail(`${label}/${note.id}: ${primaries} primary patterns in one visit (R3)`);
-    for (const f of note.lifestyleFactors || []) {
-      checked.lifestyle++;
-      const fid = String(f.factorId || "");
-      if (fid && !fid.startsWith("life.")) fail(`${label}/${note.id}: lifestyle factorId "${fid}" outside life.* (R7 — D17 §6)`);
-    }
+    checked.selections += (note.tcmPatternSelections || []).length;
+    checked.lifestyle += (note.lifestyleFactors || []).length;
   }
-  const groups = [["agent", AGENT_EVENTS, c.agentExposures || []], ["environmental", ENV_EVENTS, c.environmentalExposures || []]];
-  for (const [kind, allowed, rows] of groups) {
-    for (const row of rows) {
-      checked.exposures++;
-      const evs = row.events || [];
-      if (evs.length && !INITIAL_EVENTS.has(evs[0].eventType)) fail(`${label}/${kind}/${row.id || row.agentId || row.exposureId}: first event "${evs[0].eventType}" not started|initial_recorded (R5)`);
-      for (const ev of evs) {
-        checked.events++;
-        if (!allowed.has(ev.eventType)) fail(`${label}/${kind}: eventType "${ev.eventType}" not in ${kind} whitelist (R6)`);
-      }
-    }
+  for (const rows of [c.agentExposures || [], c.environmentalExposures || []]) {
+    checked.exposures += rows.length;
+    for (const row of rows) checked.events += (row.events || []).length;
   }
+  const result = STORE.checkClinicalInvariants([c]);
+  result.failures.forEach(fail);
+  result.warnings.forEach((w) => { warnings++; console.log(`  warn ${w}`); });
 }
 
 function loadCases(file) {
@@ -101,7 +80,7 @@ if (args[0] === "--prefix-check") {
   const targets = args.length ? args : ["data/clinical_cases/sample_deidentified_case.json", "data/clinical_cases/case_template.json"].filter((f) => fs.existsSync(f));
   for (const file of targets) {
     console.log(path.basename(file));
-    for (const c of loadCases(file)) checkCase(c, c.id || path.basename(file));
+    for (const c of loadCases(file)) checkCase(c);
   }
   console.log(`checked: ${checked.cases} cases · ${checked.selections} pattern selections · ${checked.exposures} exposures · ${checked.events} events · ${checked.lifestyle} lifestyle rows`);
 }

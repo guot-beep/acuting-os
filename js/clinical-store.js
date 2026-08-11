@@ -108,6 +108,47 @@
     return applyExposureChange({ ...rest, events: [] }, initialEvent, kind);
   }
 
+  /* Clinical 契約不變量(Codex audit §2/§4)——單一來源:
+   * scripts/validate-clinical-invariants.js(CI)與 app.js 的 import 前驗證
+   * 都呼叫這裡,規則只寫一份。回傳 {failures:[], warnings:[]}。 */
+  function checkClinicalInvariants(cases) {
+    const failures = [], warnings = [];
+    for (const c of cases || []) {
+      const label = c.id || "(no id)";
+      for (const note of c.soapNotes || []) {
+        const sel = note.tcmPatternSelections || [];
+        const ids = new Set();
+        let primaries = 0;
+        for (const e of sel) {
+          if (ids.has(e.patternId)) failures.push(`${label}/${note.id}: duplicate patternId ${e.patternId} (R3)`);
+          ids.add(e.patternId);
+          if (e.isPrimary) primaries++;
+          const role = String(e.role || "");
+          if (role === "primary" && !e.isPrimary) failures.push(`${label}/${note.id}/${e.patternId}: role=primary but isPrimary=false (R1)`);
+          if (role !== "primary" && role !== "" && e.isPrimary) failures.push(`${label}/${note.id}/${e.patternId}: role=${role} but isPrimary=true (R2)`);
+          if (role === "") warnings.push(`${label}/${note.id}/${e.patternId}: legacy empty role (R4)`);
+        }
+        if (primaries > 1) failures.push(`${label}/${note.id}: ${primaries} primary patterns in one visit (R3)`);
+        for (const f of note.lifestyleFactors || []) {
+          const fid = String(f.factorId || "");
+          if (fid && !fid.startsWith("life.")) failures.push(`${label}/${note.id}: lifestyle factorId "${fid}" outside life.* (R7)`);
+        }
+      }
+      for (const [kind, allowed, rows] of [["agent", AGENT_EVENT_TYPES, c.agentExposures || []], ["environmental", ENV_EVENT_TYPES, c.environmentalExposures || []]]) {
+        for (const row of rows) {
+          const evs = row.events || [];
+          if (evs.length && evs[0].eventType !== "started" && evs[0].eventType !== "initial_recorded") {
+            failures.push(`${label}/${kind}/${row.id || row.agentId || row.exposureId}: first event "${evs[0].eventType}" not started|initial_recorded (R5)`);
+          }
+          for (const ev of evs) {
+            if (!allowed.has(ev.eventType)) failures.push(`${label}/${kind}: eventType "${ev.eventType}" not in ${kind} whitelist (R6)`);
+          }
+        }
+      }
+    }
+    return { failures, warnings };
+  }
+
   /* ---- 純查詢助手(Patient Now / Over Time 與 Phase E 走查都吃這些) ---- */
 
   function getCurrentExposures(caseObj) {
@@ -210,6 +251,7 @@
     load,
     save,
     setBackend(b) { backend = b; },       // SQLite/D1 adapter 的插入點
+    checkClinicalInvariants,
     createExposure,
     applyExposureChange,
     getCurrentExposures,
