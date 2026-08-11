@@ -196,6 +196,21 @@
         ],
         "exam_trap_en": [
           "course:Pharmacology Summary#L403"
+        ],
+        "indications_en": [
+          "dailymed:b119ed8a-289a-46c5-9778-6b07e4c061c4#INDICATIONS_AND_USAGE"
+        ],
+        "contraindications_en": [
+          "dailymed:b119ed8a-289a-46c5-9778-6b07e4c061c4#CONTRAINDICATIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:b119ed8a-289a-46c5-9778-6b07e4c061c4#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:b119ed8a-289a-46c5-9778-6b07e4c061c4#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:b119ed8a-289a-46c5-9778-6b07e4c061c4#MECHANISM_OF_ACTION"
         ]
       },
       "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
@@ -205,12 +220,56 @@
       "dailymed_url_kind": "verified_exact",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a682627.html",
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Spironolactone",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "indications_en": [
+        "NYHA Class III-IV heart failure with reduced ejection fraction, to increase survival, manage edema, and reduce hospitalization for heart failure",
+        "Add-on therapy for hypertension, to lower blood pressure",
+        "Management of edema in adults with cirrhosis unresponsive to fluid and sodium restriction, and in nephrotic syndrome",
+        "Primary hyperaldosteronism: short-term preoperative treatment, and long-term maintenance in patients not candidates for surgery"
+      ],
+      "indications_zh": [
+        "NYHA 第三至第四級、射血分數降低的心衰竭,用以提高存活率、控制水腫並減少因心衰竭住院",
+        "高血壓的加成治療,用以降低血壓",
+        "肝硬化成人限水限鈉仍無法緩解的水腫,以及腎病症候群的水腫處理",
+        "原發性醛固酮增多症:術前短期治療,以及不適合手術者的長期維持治療"
+      ],
+      "contraindications_en": [
+        "Hyperkalemia",
+        "Addison's disease",
+        "Concomitant use of eplerenone"
+      ],
+      "contraindications_zh": [
+        "高血鉀",
+        "愛迪生氏病(腎上腺皮質功能不全)",
+        "併用 eplerenone"
+      ],
+      "adverse_effects_en": [
+        "Gynecomastia — the most common adverse reaction with spironolactone treatment",
+        "Hyperkalemia",
+        "Hypotension and worsening renal function",
+        "Electrolyte and metabolic abnormalities, including hyponatremia and hypovolemia",
+        "Impaired neurological function and coma in patients with hepatic impairment, cirrhosis and ascites",
+        "Decreased libido, inability to achieve or maintain erection, irregular menses or amenorrhea, postmenopausal bleeding, breast and nipple pain",
+        "Renal dysfunction, including renal failure"
+      ],
+      "adverse_effects_zh": [
+        "男性女乳症 —— 本藥最常見的不良反應",
+        "高血鉀",
+        "低血壓與腎功能惡化",
+        "電解質與代謝異常,包括低血鈉與血容積不足",
+        "肝功能不全、肝硬化併腹水的病人可能出現神經功能受損與昏迷",
+        "性慾下降、勃起困難或無法維持、月經不規則或停經、停經後出血、乳房與乳頭疼痛",
+        "腎功能異常,包括腎衰竭"
+      ],
+      "site_of_action_en": "Aldosterone-dependent sodium-potassium exchange site in the distal convoluted renal tubule",
+      "site_of_action_zh": "腎遠曲小管中醛固酮依賴性的鈉鉀交換部位",
+      "physiologic_effect_en": "Increased excretion of sodium and water while potassium is retained; acts as both a diuretic and an antihypertensive by competing with aldosterone for receptor sites",
+      "physiologic_effect_zh": "增加鈉與水的排出,同時保留鉀;藉由與醛固酮競爭受體結合位,兼具利尿與降血壓作用"
     },
     {
       "id": "drug.acetazolamide",
@@ -264,13 +323,22 @@
         ],
         "adverse_effects_en": [
           "course:W5-diuretics#L192-L193"
+        ],
+        "contraindications_en": [
+          "dailymed:268db224-d5db-457c-86bc-972c9fe07917#CONTRAINDICATIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:268db224-d5db-457c-86bc-972c9fe07917#CLINICAL_PHARMACOLOGY"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:268db224-d5db-457c-86bc-972c9fe07917#CLINICAL_PHARMACOLOGY"
         ]
       },
       "adverse_effect_note_zh": "課件標明這些副作用見於慢性使用。",
       "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "dailymed_setid": "268db224-d5db-457c-86bc-972c9fe07917",
       "dailymed_label_title": "ACETAZOLAMIDE TABLET [PD-RX PHARMACEUTICALS, INC.]",
       "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=268db224-d5db-457c-86bc-972c9fe07917",
@@ -279,7 +347,29 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Acetazolamide",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "contraindications_en": [
+        "Hypersensitivity to acetazolamide or any excipient in the formulation; cross-sensitivity with sulfonamides and other sulfonamide derivatives is possible",
+        "Depressed serum sodium and/or potassium levels",
+        "Marked kidney or liver disease or dysfunction",
+        "Suprarenal gland failure",
+        "Hyperchloremic acidosis",
+        "Cirrhosis, because of the risk of hepatic encephalopathy",
+        "Long-term administration in chronic noncongestive angle-closure glaucoma, since organic closure of the angle may occur while worsening glaucoma is masked by lowered intraocular pressure"
+      ],
+      "contraindications_zh": [
+        "對 acetazolamide 或製劑中任一賦形劑過敏;與磺胺類及其他磺胺衍生物可能有交叉過敏",
+        "血清鈉與(或)鉀濃度偏低",
+        "明顯的腎臟或肝臟疾病或功能異常",
+        "腎上腺功能衰竭",
+        "高氯性酸中毒",
+        "肝硬化,因有誘發肝性腦病變的風險",
+        "慢性非充血性閉角型青光眼不可長期使用 —— 眼壓下降會掩蓋病情惡化,期間房角可能發生器質性閉鎖"
+      ],
+      "site_of_action_en": "Carbonic anhydrase — in the kidney, in the eye where it governs aqueous humor secretion, and in the central nervous system",
+      "site_of_action_zh": "碳酸酐酶 —— 分布於腎臟、掌管房水分泌的眼部,以及中樞神經系統",
+      "physiologic_effect_en": "Renal loss of bicarbonate, which carries out sodium, water and potassium, alkalinizing the urine and promoting diuresis; in the eye, decreased aqueous humor secretion lowers intraocular pressure; in the central nervous system, inhibition appears to retard abnormal paroxysmal excessive neuronal discharge",
+      "physiologic_effect_zh": "腎臟排出碳酸氫根,連帶帶走鈉、水與鉀,使尿液鹼化並促進利尿;在眼部則減少房水分泌而降低眼壓;在中樞神經系統則似可抑制神經元異常陣發性過度放電"
     },
     {
       "id": "drug.mannitol",
@@ -441,12 +531,18 @@
         ],
         "monitoring_requirements_en": [
           "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CLINICAL_PHARMACOLOGY"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CLINICAL_PHARMACOLOGY"
         ]
       },
       "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。仍待補:機轉、孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "drug_interactions_graded": [
         {
           "with": "drug.aspirin",
@@ -751,7 +847,11 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Warfarin",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "site_of_action_en": "The C1 subunit of the vitamin K epoxide reductase (VKORC1) enzyme complex",
+      "site_of_action_zh": "維生素 K 環氧化物還原酶複合體的 C1 次單元 (VKORC1)",
+      "physiologic_effect_en": "Reduced synthesis of the vitamin K-dependent clotting factors II, VII, IX and X and of the anticoagulant proteins C and S; an anticoagulant effect generally occurs within 24 hours, but peak effect may be delayed 72 to 96 hours",
+      "physiologic_effect_zh": "減少維生素 K 依賴性凝血因子 II、VII、IX、X 以及抗凝蛋白 C 與 S 的合成;抗凝血作用通常在 24 小時內出現,但作用高峰可能延遲至 72 至 96 小時"
     },
     {
       "id": "drug.clopidogrel",
@@ -785,6 +885,19 @@
         ],
         "contraindications_en": [
           "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#MECHANISM_OF_ACTION",
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#PHARMACODYNAMICS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#PHARMACODYNAMICS"
         ]
       },
       "gap_note_zh": "交互作用已分級(10 條,全部引用標籤)。植物藥標記為 unknown 並記錄已查來源。仍待補:機轉、不良反應、孕期。",
@@ -793,7 +906,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "drug_interactions_graded": [
         {
           "with": "drug.omeprazole",
@@ -943,7 +1056,27 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Clopidogrel",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "mechanism_en": "Inhibits platelet activation and aggregation through irreversible binding of its active metabolite to the P2Y12 class of ADP receptors on platelets. Clopidogrel must first be metabolized by CYP450 enzymes to produce that active metabolite.",
+      "mechanism_zh": "其活性代謝物不可逆地結合血小板上的 P2Y12 型 ADP 受體,藉此抑制血小板活化與凝集。clopidogrel 必須先經 CYP450 酵素代謝才能生成該活性代謝物。",
+      "adverse_effects_en": [
+        "Bleeding, including life-threatening and fatal bleeding — the most commonly reported adverse reaction",
+        "Thrombotic thrombocytopenic purpura",
+        "Epistaxis",
+        "Hematuria",
+        "Bruising"
+      ],
+      "adverse_effects_zh": [
+        "出血,包括危及生命與致命性出血 —— 最常被通報的不良反應",
+        "血栓性血小板減少性紫斑症",
+        "鼻出血",
+        "血尿",
+        "瘀青"
+      ],
+      "site_of_action_en": "P2Y12 class of ADP receptors on platelets",
+      "site_of_action_zh": "血小板上的 P2Y12 型 ADP 受體",
+      "physiologic_effect_en": "Irreversible inhibition of ADP-induced platelet aggregation for the remainder of the platelet lifespan, about 7 to 10 days; average inhibition at steady state on 75 mg daily is 40% to 60%, and aggregation returns to baseline about 5 days after discontinuation",
+      "physiologic_effect_zh": "不可逆地抑制 ADP 誘發的血小板凝集,作用持續至該批血小板生命週期結束,約 7 至 10 天;每日 75 mg 於穩定狀態的平均抑制率為 40% 至 60%,停藥後約 5 天凝集功能回到基線"
     },
     {
       "id": "drug.apixaban",
@@ -962,7 +1095,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
       "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including ELIQUIS, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
       "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含阿哌沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
@@ -984,6 +1117,18 @@
         ],
         "contraindications_en": [
           "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#MECHANISM_OF_ACTION"
+        ],
+        "adverse_effects_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#MECHANISM_OF_ACTION"
         ]
       },
       "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
@@ -1005,7 +1150,25 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Apixaban",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "mechanism_en": "A selective inhibitor of factor Xa that does not require antithrombin III for antithrombotic activity. It inhibits free and clot-bound factor Xa and prothrombinase activity, thereby decreasing thrombin generation and thrombus development.",
+      "mechanism_zh": "選擇性抑制第十凝血因子活化型 (FXa),且不需要抗凝血酶 III 即可發揮抗血栓作用。它同時抑制游離態與結合於血栓上的 FXa 以及凝血酶原酶活性,因而減少凝血酶生成與血栓形成。",
+      "adverse_effects_en": [
+        "Bleeding — the most common adverse reactions (>1%) in adult patients are related to bleeding",
+        "Increased risk of thrombotic events after premature discontinuation",
+        "Spinal or epidural hematoma with neuraxial anesthesia or spinal puncture",
+        "In pediatric patients, the most common adverse reactions (10% or more) were headache, vomiting, and excessive menstrual bleeding"
+      ],
+      "adverse_effects_zh": [
+        "出血 —— 成人最常見的不良反應(大於 1%)皆與出血有關",
+        "過早停藥會提高血栓事件風險",
+        "接受脊椎或硬脊膜外麻醉、脊椎穿刺時可能發生脊椎或硬脊膜外血腫",
+        "兒童病人最常見的不良反應(10% 以上)為頭痛、嘔吐與月經量過多"
+      ],
+      "site_of_action_en": "Factor Xa, both free and clot-bound, and the prothrombinase complex",
+      "site_of_action_zh": "游離態與結合於血栓上的 FXa,以及凝血酶原酶複合體",
+      "physiologic_effect_en": "Decreased thrombin generation and thrombus development; no direct effect on platelet aggregation, but indirect inhibition of thrombin-induced platelet aggregation",
+      "physiologic_effect_zh": "減少凝血酶生成與血栓形成;對血小板凝集沒有直接作用,但可間接抑制凝血酶誘發的血小板凝集"
     },
     {
       "id": "drug.rivaroxaban",
@@ -1024,7 +1187,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
       "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including rivaroxaban, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
       "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含利伐沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
@@ -1046,6 +1209,18 @@
         ],
         "contraindications_en": [
           "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#MECHANISM_OF_ACTION"
+        ],
+        "adverse_effects_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#PHARMACODYNAMICS"
         ]
       },
       "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
@@ -1066,7 +1241,23 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Rivaroxaban",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "mechanism_en": "A selective inhibitor of factor Xa that does not require a cofactor such as antithrombin III for activity. It inhibits free factor Xa and prothrombinase activity, thereby decreasing thrombin generation.",
+      "mechanism_zh": "選擇性抑制第十凝血因子活化型 (FXa),不需要抗凝血酶 III 之類的輔因子即可作用。它抑制游離態 FXa 與凝血酶原酶活性,因而減少凝血酶生成。",
+      "adverse_effects_en": [
+        "Bleeding — the most common adverse reaction (>5%) in adult patients",
+        "Increased risk of stroke after discontinuation in nonvalvular atrial fibrillation",
+        "Spinal or epidural hematoma with neuraxial anesthesia or spinal puncture"
+      ],
+      "adverse_effects_zh": [
+        "出血 —— 成人最常見的不良反應(大於 5%)",
+        "非瓣膜性心房顫動病人停藥後中風風險升高",
+        "接受脊椎或硬脊膜外麻醉、脊椎穿刺時可能發生脊椎或硬脊膜外血腫"
+      ],
+      "site_of_action_en": "Free factor Xa and the prothrombinase complex",
+      "site_of_action_zh": "游離態 FXa 與凝血酶原酶複合體",
+      "physiologic_effect_en": "Dose-dependent inhibition of factor Xa activity with dose-dependent prolongation of prothrombin time and activated partial thromboplastin time; monitoring of the anticoagulant effect by anti-factor Xa activity or a clotting test is not recommended",
+      "physiologic_effect_zh": "呈劑量依賴性地抑制 FXa 活性,凝血酶原時間與活化部分凝血活酶時間也隨劑量延長;但不建議以抗 FXa 活性或凝血試驗來監測其抗凝血效果"
     },
     {
       "id": "drug.dabigatran",
@@ -1085,7 +1276,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
       "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including dabigatran etexilate, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture.",
       "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含達比加群酯)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫。",
@@ -1109,6 +1300,22 @@
         ],
         "contraindications_en": [
           "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#INDICATIONS_AND_USAGE"
+        ],
+        "adverse_effects_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#MECHANISM_OF_ACTION",
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#PHARMACODYNAMICS"
         ]
       },
       "exam_trap_zh": "⚠️ 機械性人工心臟瓣膜:達比加群是禁忌,華法林是適應症 —— 方向完全相反。這是 DOAC 不能一律取代 warfarin 的具體例子。",
@@ -1119,7 +1326,43 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Dabigatran",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "mechanism_en": "Dabigatran and its acyl glucuronides are competitive, direct thrombin inhibitors. Because thrombin enables the conversion of fibrinogen into fibrin during the coagulation cascade, its inhibition prevents the development of a thrombus. Both free and clot-bound thrombin, and thrombin-induced platelet aggregation, are inhibited.",
+      "mechanism_zh": "dabigatran 及其醯基葡萄糖醛酸苷是競爭性的直接凝血酶抑制劑。凝血酶在凝血瀑布中負責把纖維蛋白原轉為纖維蛋白,抑制凝血酶即可阻止血栓形成。游離態與結合於血栓上的凝血酶,以及凝血酶誘發的血小板凝集,都會被抑制。",
+      "indications_en": [
+        "To reduce the risk of stroke and systemic embolism in adults with non-valvular atrial fibrillation",
+        "Treatment of deep venous thrombosis and pulmonary embolism in adults treated with a parenteral anticoagulant for 5 to 10 days",
+        "To reduce the risk of recurrence of deep venous thrombosis and pulmonary embolism in previously treated adults",
+        "Prophylaxis of deep venous thrombosis and pulmonary embolism in adults who have undergone hip replacement surgery",
+        "Treatment of venous thromboembolic events in pediatric patients 8 to under 18 years of age treated with a parenteral anticoagulant for at least 5 days",
+        "To reduce the risk of recurrence of venous thromboembolism in previously treated pediatric patients 8 to under 18 years of age"
+      ],
+      "indications_zh": [
+        "降低非瓣膜性心房顫動成人病人的中風與全身性栓塞風險",
+        "已接受注射型抗凝劑治療 5 至 10 天的成人,用於治療深層靜脈栓塞與肺栓塞",
+        "降低曾接受治療的成人深層靜脈栓塞與肺栓塞的復發風險",
+        "接受髖關節置換手術的成人,用於預防深層靜脈栓塞與肺栓塞",
+        "已接受注射型抗凝劑治療至少 5 天、8 歲至未滿 18 歲的兒童病人,用於治療靜脈血栓栓塞事件",
+        "降低曾接受治療、8 歲至未滿 18 歲兒童病人的靜脈血栓栓塞復發風險"
+      ],
+      "adverse_effects_en": [
+        "Bleeding — the most serious adverse reactions reported are related to bleeding",
+        "Gastrointestinal adverse reactions — with bleeding, the most common adverse reactions (>15%)",
+        "Increased risk of thrombotic events after premature discontinuation",
+        "Spinal or epidural hematoma with neuraxial anesthesia or spinal puncture",
+        "Thromboembolic and bleeding events in patients with prosthetic heart valves"
+      ],
+      "adverse_effects_zh": [
+        "出血 —— 通報中最嚴重的不良反應皆與出血有關",
+        "腸胃道不良反應 —— 與出血同為最常見的不良反應(大於 15%)",
+        "過早停藥會提高血栓事件風險",
+        "接受脊椎或硬脊膜外麻醉、脊椎穿刺時可能發生脊椎或硬脊膜外血腫",
+        "裝有人工心臟瓣膜的病人可能發生血栓栓塞與出血事件"
+      ],
+      "site_of_action_en": "Thrombin (factor IIa), both free and clot-bound",
+      "site_of_action_zh": "凝血酶(第二凝血因子活化型),包括游離態與結合於血栓上者",
+      "physiologic_effect_en": "Prevention of thrombus development by blocking conversion of fibrinogen to fibrin; at therapeutic doses it prolongs aPTT, ECT, TT and dTT, while INR is relatively insensitive and cannot be interpreted as it is for warfarin",
+      "physiologic_effect_zh": "阻斷纖維蛋白原轉為纖維蛋白,藉此防止血栓形成;治療劑量下會延長 aPTT、ECT、TT 與 dTT,而 INR 對其相對不敏感,不能比照 warfarin 的方式判讀"
     },
     {
       "id": "drug.ticagrelor",
@@ -1136,7 +1379,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、不良反應、孕期待補。",
       "boxed_warning_en": "Ticagrelor, like other antiplatelet agents, can cause significant, sometimes fatal bleeding. Do not use in patients with active pathological bleeding or a history of intracranial hemorrhage. Do not start in patients undergoing urgent coronary artery bypass graft surgery (CABG). If possible, manage bleeding without discontinuing ticagrelor: stopping it increases the risk of subsequent cardiovascular events.",
       "boxed_warning_zh": "替格瑞洛如同其他抗血小板藥,可造成顯著、有時致命的出血。活動性病理性出血或有顱內出血病史者不可使用。正接受緊急冠狀動脈繞道手術者不可起始使用。若可能,處理出血時不要停藥 —— 停藥會增加後續心血管事件風險。",
@@ -1160,6 +1403,21 @@
         ],
         "contraindications_en": [
           "dailymed:557351f1-47b7-216d-e063-6394a90afb51#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#INDICATIONS_AND_USAGE"
+        ],
+        "adverse_effects_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#PHARMACODYNAMICS"
         ]
       },
       "exam_trap_zh": "⚠️ 禁忌是**顱內出血**病史,不是 TIA／中風 —— 那是普拉格雷。兩者常被對調。另外黑框特別寫「若可能不要停藥」,因為停藥本身會增加心血管事件。",
@@ -1169,7 +1427,31 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Ticagrelor",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "mechanism_en": "Ticagrelor and its major metabolite reversibly interact with the platelet P2Y12 ADP receptor to prevent signal transduction and platelet activation. Ticagrelor and its active metabolite are approximately equipotent.",
+      "mechanism_zh": "ticagrelor 與其主要代謝物可逆地作用於血小板 P2Y12 ADP 受體,阻斷訊息傳遞與血小板活化。原藥與其活性代謝物的效價大致相當。",
+      "indications_en": [
+        "To reduce the risk of cardiovascular death, myocardial infarction, and stroke in patients with acute coronary syndrome or a history of myocardial infarction; it also reduces the risk of stent thrombosis in patients stented for acute coronary syndrome",
+        "To reduce the risk of a first myocardial infarction or stroke in patients with coronary artery disease at high risk for such events",
+        "To reduce the risk of stroke in patients with acute ischemic stroke (NIH Stroke Scale score 5 or less) or high-risk transient ischemic attack"
+      ],
+      "indications_zh": [
+        "降低急性冠心症或曾發生心肌梗塞病人的心血管死亡、心肌梗塞與中風風險;對因急性冠心症置放支架者亦可降低支架內血栓風險",
+        "降低高風險冠狀動脈疾病病人首次發生心肌梗塞或中風的風險",
+        "降低急性缺血性中風(NIH 中風量表 5 分以下)或高風險短暫性腦缺血病人的中風風險"
+      ],
+      "adverse_effects_en": [
+        "Bleeding — with dyspnea, the most common adverse reactions (>5%)",
+        "Dyspnea"
+      ],
+      "adverse_effects_zh": [
+        "出血 —— 與呼吸困難同為最常見的不良反應(大於 5%)",
+        "呼吸困難"
+      ],
+      "site_of_action_en": "Platelet P2Y12 ADP receptor",
+      "site_of_action_zh": "血小板 P2Y12 ADP 受體",
+      "physiologic_effect_en": "Reversible inhibition of platelet aggregation; maximum inhibition is reached at around 2 hours after a loading dose and maintained for at least 8 hours, and by 5 days after the last dose inhibition is similar to placebo",
+      "physiologic_effect_zh": "可逆地抑制血小板凝集;給予負荷劑量後約 2 小時達最大抑制並可維持至少 8 小時,末次給藥後 5 天抑制程度已與安慰劑相當"
     },
     {
       "id": "drug.prasugrel",
@@ -1186,7 +1468,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、不良反應、孕期待補。",
       "boxed_warning_en": "Prasugrel can cause significant, sometimes fatal, bleeding. Do not use in patients with active pathological bleeding or a history of transient ischemic attack or stroke. Do not start in patients likely to undergo urgent coronary artery bypass graft surgery (CABG).",
       "boxed_warning_zh": "普拉格雷可造成顯著、有時致命的出血。活動性病理性出血或有短暫性腦缺血(TIA)／中風病史者不可使用。可能需接受緊急冠狀動脈繞道手術(CABG)者不可起始使用。",
@@ -1210,6 +1492,21 @@
         ],
         "contraindications_en": [
           "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#INDICATIONS_AND_USAGE"
+        ],
+        "adverse_effects_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#PHARMACODYNAMICS"
         ]
       },
       "exam_trap_zh": "⚠️ TIA／中風病史是普拉格雷的禁忌 —— 這一條 clopidogrel 與 ticagrelor 都沒有。三個 P2Y12 抑制劑不可互換。",
@@ -1219,7 +1516,31 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Prasugrel",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "ingredient_broad"
+      "medlineplus_scope": "ingredient_broad",
+      "mechanism_en": "Inhibits platelet activation and aggregation through the irreversible binding of its active metabolite to the P2Y12 class of ADP receptors on platelets.",
+      "mechanism_zh": "其活性代謝物不可逆地結合血小板上的 P2Y12 型 ADP 受體,藉此抑制血小板活化與凝集。",
+      "indications_en": [
+        "Reduction of thrombotic cardiovascular events, including stent thrombosis, in patients with acute coronary syndrome managed with percutaneous coronary intervention: patients with unstable angina or non-ST-elevation myocardial infarction",
+        "Reduction of thrombotic cardiovascular events in patients with ST-elevation myocardial infarction when managed with primary or delayed percutaneous coronary intervention"
+      ],
+      "indications_zh": [
+        "降低以經皮冠狀動脈介入治療處理的急性冠心症病人之血栓性心血管事件(含支架內血栓):適用於不穩定型心絞痛或非 ST 段上升型心肌梗塞病人",
+        "ST 段上升型心肌梗塞病人接受初級或延遲經皮冠狀動脈介入治療時,降低血栓性心血管事件"
+      ],
+      "adverse_effects_en": [
+        "Bleeding, including life-threatening and fatal bleeding — the most commonly reported adverse reaction",
+        "Thrombotic thrombocytopenic purpura",
+        "Hypersensitivity, including angioedema"
+      ],
+      "adverse_effects_zh": [
+        "出血,包括危及生命與致命性出血 —— 最常被通報的不良反應",
+        "血栓性血小板減少性紫斑症",
+        "過敏反應,包括血管性水腫"
+      ],
+      "site_of_action_en": "P2Y12 class of ADP receptors on platelets",
+      "site_of_action_zh": "血小板上的 P2Y12 型 ADP 受體",
+      "physiologic_effect_en": "Approximately 90% of patients achieve at least 50% inhibition of platelet aggregation within 1 hour of a 60 mg loading dose, with maximum inhibition about 80%; aggregation returns to baseline over 5 to 9 days after discontinuation, reflecting new platelet production",
+      "physiologic_effect_zh": "給予 60 mg 負荷劑量後 1 小時內,約 90% 的病人血小板凝集抑制達 50% 以上,最大抑制約 80%;停藥後 5 至 9 天凝集功能回到基線,反映的是新血小板生成而非藥物本身的藥動學"
     },
     {
       "id": "drug.aspirin",
@@ -1307,7 +1628,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
       "boxed_warning_en": "Epidural or spinal hematomas may occur in patients anticoagulated with low molecular weight heparins (LMWH) or heparinoids who are receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis. Risk is increased by indwelling epidural catheters; concomitant drugs affecting hemostasis such as NSAIDs, platelet inhibitors and other anticoagulants; a history of traumatic or repeated epidural or spinal punctures; and a history of spinal deformity or spinal surgery.",
       "boxed_warning_zh": "使用低分子量肝素或類肝素抗凝、且接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。風險增加因子:留置硬膜外導管;併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑);曾有創傷性或反覆的硬膜外／脊椎穿刺病史;脊椎變形或脊椎手術病史。",
@@ -1333,6 +1654,19 @@
         ],
         "contraindications_en": [
           "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#CONTRAINDICATIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#MECHANISM_OF_ACTION",
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#PHARMACODYNAMICS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#PHARMACODYNAMICS"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#PHARMACODYNAMICS"
         ]
       },
       "acupuncture_note_zh": "這是全 P1 層唯一列出**風險因子清單**的黑框,其中兩條值得注意:①「併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑)」——雙重抗凝／抗血小板的病人風險更高;②「曾有創傷性或反覆的硬膜外／脊椎穿刺病史」。第②條講的是硬膜外與脊椎穿刺,**不是針灸**,標籤沒有把針刺納入。但它說明了「反覆穿刺」本身是風險因子,近脊椎深刺時值得納入判斷。標籤未給任何針灸門檻,不要自行推導一個。",
@@ -1355,7 +1689,33 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Enoxaparin Injection",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "formulation_compatible"
+      "medlineplus_scope": "formulation_compatible",
+      "mechanism_en": "Enoxaparin is a low molecular weight heparin with antithrombotic properties, characterized by a substantially higher ratio of anti-factor Xa to anti-factor IIa activity than unfractionated heparin.",
+      "mechanism_zh": "enoxaparin 是具有抗血栓作用的低分子量肝素,其抗 FXa 與抗 FIIa 活性的比值遠高於未分餾肝素。",
+      "adverse_effects_en": [
+        "Bleeding and increased risk of hemorrhage",
+        "Anemia",
+        "Thrombocytopenia",
+        "Elevation of serum aminotransferase",
+        "Diarrhea and nausea",
+        "Ecchymosis and injection site pain",
+        "Fever, edema, peripheral edema, dyspnea, and confusion",
+        "Spinal or epidural hematoma with neuraxial anesthesia or spinal puncture"
+      ],
+      "adverse_effects_zh": [
+        "出血與出血風險升高",
+        "貧血",
+        "血小板減少",
+        "血清轉胺酶上升",
+        "腹瀉與噁心",
+        "瘀斑與注射部位疼痛",
+        "發燒、水腫、周邊水腫、呼吸困難與意識混亂",
+        "接受脊椎或硬脊膜外麻醉、脊椎穿刺時可能發生脊椎或硬脊膜外血腫"
+      ],
+      "site_of_action_en": "Factor Xa and, to a much lesser extent, factor IIa (thrombin)",
+      "site_of_action_zh": "第十凝血因子活化型 (FXa),對第二凝血因子活化型(凝血酶)的作用則小得多",
+      "physiologic_effect_en": "Anti-factor Xa activity predominates over anti-factor IIa activity, with a mean ratio of 14.0 compared with 1.22 for unfractionated heparin; thrombin time and aPTT are increased up to 1.8 times control values",
+      "physiologic_effect_zh": "抗 FXa 活性明顯強於抗 FIIa 活性,平均比值為 14.0,而未分餾肝素僅 1.22;凝血酶時間與 aPTT 最多可延長至對照值的 1.8 倍"
     },
     {
       "id": "drug.heparin",
@@ -1371,7 +1731,7 @@
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06",
+      "updated_at": "2026-08-11",
       "gap_note_zh": "交互作用、劑量、孕期待補。",
       "contraindications_en": [
         "Severe thrombocytopenia",
@@ -1405,6 +1765,21 @@
         ],
         "warnings_en": [
           "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "mechanism_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#MECHANISM_OF_ACTION"
+        ],
+        "indications_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#INDICATIONS_AND_USAGE"
+        ],
+        "adverse_effects_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#ADVERSE_REACTIONS"
+        ],
+        "site_of_action_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#MECHANISM_OF_ACTION"
+        ],
+        "physiologic_effect_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#PHARMACODYNAMICS"
         ]
       },
       "exam_trap_zh": "⚠️ 禁忌明列「無法在適當間隔進行凝血檢驗時」—— 肝素需要監測(aPTT),這與 DOAC 無監測、warfarin 用 INR 各不相同。三種抗凝劑三種監測方式。",
@@ -1414,7 +1789,51 @@
       "medlineplus_url_kind": "verified_exact",
       "medlineplus_title": "Heparin Injection",
       "medlineplus_verified_on": "2026-08-09",
-      "medlineplus_scope": "formulation_compatible"
+      "medlineplus_scope": "formulation_compatible",
+      "mechanism_en": "Heparin interacts with the naturally occurring plasma protein antithrombin III to induce a conformational change that markedly enhances its serine protease activity, thereby inhibiting the activated coagulation factors in the clotting sequence, particularly Xa and IIa. Small amounts inhibit factor Xa and larger amounts inhibit thrombin. Heparin also prevents formation of a stable fibrin clot by inhibiting activation of the fibrin stabilizing factor, and has no fibrinolytic activity.",
+      "mechanism_zh": "肝素與血漿中天然的抗凝血酶 III 結合,誘發其構型改變而大幅增強其絲胺酸蛋白酶活性,進而抑制凝血瀑布中已活化的凝血因子,尤以 Xa 與 IIa 為主。小劑量主要抑制 FXa,大劑量才抑制凝血酶。肝素另可抑制纖維蛋白穩定因子的活化,阻止穩定血栓形成;它沒有溶解血栓的作用。",
+      "indications_en": [
+        "Prophylaxis and treatment of venous thrombosis and pulmonary embolism",
+        "Prevention of postoperative deep venous thrombosis and pulmonary embolism in patients undergoing major abdominothoracic surgery or otherwise at risk of thromboembolic disease",
+        "Atrial fibrillation with embolization",
+        "Treatment of acute and chronic consumptive coagulopathies (disseminated intravascular coagulation)",
+        "Prevention of clotting in arterial and cardiac surgery",
+        "Prophylaxis and treatment of peripheral arterial embolism",
+        "Anticoagulant use in blood transfusions, extracorporeal circulation, and dialysis procedures"
+      ],
+      "indications_zh": [
+        "靜脈血栓與肺栓塞的預防及治療",
+        "接受腹胸腔大手術或因其他原因具血栓栓塞風險者,預防術後深層靜脈栓塞與肺栓塞",
+        "心房顫動併發栓塞",
+        "急性與慢性消耗性凝血病變(瀰漫性血管內凝血)的治療",
+        "動脈與心臟手術中防止血液凝固",
+        "周邊動脈栓塞的預防及治療",
+        "輸血、體外循環與透析過程中的抗凝用途"
+      ],
+      "adverse_effects_en": [
+        "Hemorrhage",
+        "Thrombocytopenia",
+        "Heparin-induced thrombocytopenia (HIT) and heparin-induced thrombocytopenia with thrombosis (HITT)",
+        "Injection site irritation",
+        "General hypersensitivity reactions",
+        "Elevations of aminotransferase levels",
+        "Hyperkalemia",
+        "Heparin resistance"
+      ],
+      "adverse_effects_zh": [
+        "出血",
+        "血小板減少",
+        "肝素誘發血小板減少症 (HIT) 與肝素誘發血小板減少併血栓症 (HITT)",
+        "注射部位刺激",
+        "全身性過敏反應",
+        "轉胺酶上升",
+        "高血鉀",
+        "肝素抗性"
+      ],
+      "site_of_action_en": "Antithrombin III in plasma; the resulting complex inhibits the activated coagulation factors, particularly Xa and IIa (thrombin)",
+      "site_of_action_zh": "血漿中的抗凝血酶 III;所形成的複合體再去抑制已活化的凝血因子,尤以 Xa 與 IIa(凝血酶)為主",
+      "physiologic_effect_en": "Full therapeutic doses prolong the activated clotting time, activated partial thromboplastin time, prothrombin time and whole blood clotting time; low doses usually do not measurably affect them, and bleeding time is usually unaffected. Existing clots are not lysed.",
+      "physiologic_effect_zh": "足量治療劑量會延長活化凝血時間、活化部分凝血活酶時間、凝血酶原時間與全血凝固時間;低劑量通常不會造成可測得的改變,出血時間一般也不受影響。既有的血栓不會被溶解。"
     },
     {
       "id": "drug.losartan",
