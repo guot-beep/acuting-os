@@ -120392,10 +120392,10 @@
       ]
     },
     {
-      "id": "formula.",
-      "name_zh": "都气丸",
-      "name_en": "都气丸",
-      "pinyin": "都气丸",
+      "id": "formula.du_qi_wan",
+      "name_zh": "都氣丸",
+      "name_en": "Du Qi Wan",
+      "pinyin": "du qi wan",
       "category_id": "category.formulas",
       "category_en": "Formulas",
       "review_status": "draft",
@@ -120540,13 +120540,14 @@
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DuQiWan.html",
       "contraindications_zh": [
         "陽虛者禁用"
-      ]
+      ],
+      "id_fix_note": "2026-08-11: id was corrupt placeholder \"formula.\" from import; assigned proper id + traditional name + real pinyin (F2 fix). Content untouched."
     },
     {
-      "id": "formula.",
-      "name_zh": "复元活血汤",
-      "name_en": "复元活血汤",
-      "pinyin": "复元活血汤",
+      "id": "formula.fu_yuan_huo_xue_tang",
+      "name_zh": "復元活血湯",
+      "name_en": "Fu Yuan Huo Xue Tang",
+      "pinyin": "fu yuan huo xue tang",
       "category_id": "category.formulas",
       "category_en": "Formulas",
       "review_status": "draft",
@@ -120721,7 +120722,8 @@
       "taiwan_pharmacopeia_zh": "Yes (THP p.133)",
       "contraindications_zh": [
         "孕婦禁用"
-      ]
+      ],
+      "id_fix_note": "2026-08-11: id was corrupt placeholder \"formula.\" from import; assigned proper id + traditional name + real pinyin (F2 fix). Content untouched."
     }
   ]
 }
