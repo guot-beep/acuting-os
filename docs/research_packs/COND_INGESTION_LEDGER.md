@@ -869,3 +869,126 @@ simplification, not a diagnostic claim.
 pre-existing only, N4 219/219 = 68+71+80 across all three batches so far).
 `check-validation-ratchet.js`: conditions flat at 425, **PASS**.
 `validate-content-junk.js`: PASS. `validate-relations.js`: passed.
+
+## Skeleton tier — Batch 4 (final): uro_renal / ent_eye / immune_misc (2026-08-11)
+
+Same exact-scan method against all 428 records in canon (Batches 1–3
+included) plus every id drafted earlier in this batch. 77 candidates → **77
+NEW, 0 alias-merged, 0 collisions**.
+
+**Category dedupe notes**:
+
+- `uro_renal` (25): all NEW. Checked against existing `cond.recurrent_uti`,
+  `cond.interstitial_cystitis`, `cond.overactive_bladder`,
+  `cond.urinary_retention` (non-obstructive), `cond.bph`,
+  `cond.chronic_prostatitis`, `cond.erectile_dysfunction`,
+  `cond.nocturnal_enuresis`, `cond.chronic_kidney_disease`,
+  `cond.nephrolithiasis`, `cond.pyelonephritis`, `cond.cystitis`,
+  `cond.prostate_cancer` — the three incontinence subtypes
+  (stress/urge/mixed) are distinct clinical entities per standard urology
+  classification, none overlapping `cond.urinary_retention` (opposite
+  symptom direction) or `cond.overactive_bladder` (urge incontinence's
+  driving syndrome, but not the same as the incontinence event itself —
+  kept as separate cards per template's non-equivalence rule, same
+  "syndrome vs specific symptom-diagnosis" split already used for
+  `cond.menorrhagia` vs `cond.abnormal_uterine_bleeding`).
+  `cond.spermatocele` and `cond.hydrocele` checked against each other and
+  kept distinct (different fluid compartment: epididymal vs tunica
+  vaginalis).
+- `ent_eye` (30): all NEW. Checked against existing `cond.tinnitus`,
+  `cond.hearing_loss`, `cond.dry_eye`, `cond.eye_strain`,
+  `cond.globus_pharyngitis`, `cond.aphthous_ulcers`,
+  `cond.acute_angle_closure_glaucoma`, `cond.retinal_detachment`,
+  `cond.sudden_sensorineural_hearing_loss`, `cond.otitis_media` —
+  `cond.chronic_open_angle_glaucoma` kept distinct from existing
+  `cond.acute_angle_closure_glaucoma` (different mechanism and urgency
+  tier, same pattern as the acute/chronic splits documented in Batch L).
+  10 of the 30 (vocal_cord_dysfunction, laryngopharyngeal_reflux,
+  vocal_cord_nodules, acute_pharyngitis, acute_tonsillitis,
+  deviated_nasal_septum, nasal_polyps, scarlet_fever, acute_epiglottitis,
+  croup) were originally drafted under `respiratory` in this session's
+  planning pass and reassigned to `ent_eye` before insertion — matches
+  `COND_300_CANDIDATE_LIST_v0.md`'s own ent_eye section, which explicitly
+  lists 咽喉炎/扁桃腺炎/聲帶結節 under that category, not respiratory.
+- `immune_misc` (22): all NEW. Checked against existing `cond.post_covid`,
+  `cond.chronic_allergies`, `cond.cancer_supportive`, `cond.anemia`,
+  `cond.thrombocytopenia`, `cond.sickle_cell_disease`,
+  `cond.giant_cell_arteritis`, `cond.polycythemia_vera`, `cond.neutropenia`,
+  `cond.systemic_lupus_erythematosus`, `cond.ehlers_danlos_syndrome`,
+  `cond.lyme_disease`, `cond.hiv_infection`, `cond.syphilis`,
+  `cond.down_syndrome`, `cond.marfan_syndrome`, `cond.cancer_parent`,
+  `cond.breast_cancer` — `cond.vasculitis_unspecified` kept as a distinct
+  parent/umbrella card beside the existing specific-subtype
+  `cond.giant_cell_arteritis` and this batch's own
+  `cond.polyarteritis_nodosa` (same parent/child pattern as
+  `cond.ibd`/`cond.viral_hepatitis`, first raised for vasculitis
+  specifically in the Batch D notes — now actually authored).
+  `cond.lymphoma`/`cond.leukemia`/`cond.multiple_myeloma` placed here
+  (heme-onc) rather than under a specific organ category, consistent with
+  how `cond.cancer_parent`/`cond.breast_cancer` already sit in
+  `immune_misc` (Batch N precedent) rather than being scattered by organ.
+
+**Judgment call**: the 10 laryngology/rhinology items reassigned from
+`respiratory` to `ent_eye` mid-planning (see above) — flagged explicitly
+since it's a category placement decision, not a mechanical dedupe ruling;
+matches the candidate list's own category boundaries.
+
+**Validator state after this batch's insertion (final)**:
+`data/pathology/condition_canon_shortlist.json` 428 → **505 records**.
+`validate-condition-standard.js`: 425 blocking defects (flat — C4 51/51
+pre-existing only, **N4 296/296** = 68+71+80+77 across all four batches).
+`check-validation-ratchet.js`: conditions flat at 425, **PASS**.
+`validate-content-junk.js`: PASS. `validate-relations.js`: passed, no
+broken links.
+
+### Sprint close-out (Skeleton tier Batches 1–4, 2026-08-11)
+
+- Branch `codex/cond-skeleton-500`, cut from `origin/codex/pattern-v2` tip
+  `4e644ee` (209 records), rebased onto `7ee6972` ("C4 skeleton-tier
+  carve-out") mid-session after a genuine blocking contradiction was found
+  and escalated (see "C4/skeleton contradiction" note under Batch 1) —
+  resolved by the coordinator landing the carve-out on
+  `origin/codex/pattern-v2`, not by this branch.
+- `data/pathology/condition_canon_shortlist.json`: **209 → 505 records**
+  (+296 skeleton records, 0 alias-merges, 0 collisions across all four
+  batches' exact-scans).
+- Per-category additions: gyn_fertility +20 (28→48), pain_msk +22 (30→52),
+  gi +26 (22→48), psych_sleep +25 (17→42), respiratory +20 (16→36),
+  neuro +26 (17→43), derm +30 (8→38), endo_metabolic +25 (15→40),
+  cardio +25 (15→40), uro_renal +25 (13→38), ent_eye +30 (10→40),
+  immune_misc +22 (18→40).
+- Dedupe rulings: **296 NEW_CANDIDATE, 0 alias-merged** — every candidate
+  cleared the exact-scan against the full growing canon (209 at Batch 1
+  start, up to 428 at Batch 4 start) plus every id already drafted earlier
+  in the same batch. No existing record's aliases were extended in lieu of
+  a new record this sprint (unlike Batches A–N, which mixed
+  NEW_CANDIDATE/EXISTING_ENRICH — this sprint's candidates were
+  systematically chosen from clinical gaps not yet represented in canon).
+- `check-validation-ratchet.js`: conditions flat at **425** through all
+  four commits — zero regressions, by design of the N4 carve-out (every
+  skeleton record adds exactly one N4 note, never a C4 blocking defect).
+- ICD uncertainties flagged: `cond.si_joint_dysfunction` (Batch 1, M53.2 —
+  genuinely ambiguous mechanical/inflammatory coding), `cond.sibo`
+  (Batch 1, K90.89 — no dedicated SIBO code exists, used closest
+  malabsorption leaf), `cond.menstrual_migraine` (Batch 2, G43.829 — no
+  dedicated menstrual-migraine leaf exists), `cond.primary_hyperaldosteronism`
+  (Batch 3, E26.01 — used the bilateral-hyperplasia subtype leaf as a
+  coding-convention simplification, not a diagnostic claim).
+- Judgment calls flagged for Fable/Ting review: `cond.pelvic_organ_prolapse`
+  and `cond.generalized_osteoarthritis` authored as parent/umbrella cards
+  beside existing site-specific children (Batch 1); `cond.crohn_disease`/
+  `cond.ulcerative_colitis` and `cond.chronic_hepatitis_b`/
+  `cond.chronic_hepatitis_c` authored as subtype children of existing
+  parent cards `cond.ibd`/`cond.viral_hepatitis` (Batch 1); three
+  valve-specific children (`cond.aortic_stenosis`,
+  `cond.mitral_regurgitation`, `cond.mitral_valve_prolapse`) authored
+  beside existing parent `cond.valvular_heart_disease` (Batch 3);
+  `cond.vasculitis_unspecified` authored as a parent beside existing
+  `cond.giant_cell_arteritis` and this sprint's own
+  `cond.polyarteritis_nodosa` (Batch 4); 10 laryngology/rhinology
+  candidates placed under `ent_eye` rather than `respiratory` per the
+  candidate list's own category boundaries (Batch 4).
+- Every batch was eyeball-read in full (id/category/icd_hint/name_zh/
+  name_en) before commit — no fake Chinese, no invisible English, no
+  template sentences (skeleton tier has no prose fields to template).
+- Not pushed (per task instructions).
