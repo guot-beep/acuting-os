@@ -331,3 +331,63 @@ Columns: batch · candidate_id → canonical id · date · defects before → af
   `cond.chronic_gastritis` renamed/broadened to cover the pack's generic
   "gastritis/gastropathy" concept — see Batch H notes above.
 - Not pushed (per task instructions — branch left for review).
+
+## Batch J — Mental/Behavioral Health (2026-08-11)
+
+Pack file: `14_WESTERN_CONDITION_RESEARCH_BATCH_J_MENTAL_BEHAVIORAL.md`
+(read via `git show origin/pattern-v2-implementation:curriculum/conditions/...`
+blob read into scratchpad — same branch-topology workaround as Batches A/F,
+this branch stays cut from the true `codex/pattern-v2` tip). Branch
+`codex/cond-enrich-j-n`, cut from `origin/codex/pattern-v2` tip (`78c370f`
+"Cond F-I merge finalize", confirmed ancestor). `sym.*` registry re-checked
+at branch time: still 49 records (unchanged since Batch F/I — the 61 seen in
+an early script run was a bug reading `Object.values(s)[0].length`, i.e. the
+string length of the `dataset` field, not a record count).
+
+| candidate_id → canonical id | ruling |
+|---|---|
+| `cond.generalized_anxiety_disorder` → `cond.anxiety` | EXISTING_ENRICH — exact-scanned `anxiety`/`焦慮` — found `cond.anxiety` (`name_zh: "焦慮（文件情境）"`) with C10 boilerplate `etiology_zh`/`western_pathology_zh`, replaced per validator's own authorization (same ruling as prior batches). Renamed to "焦慮症（廣泛性焦慮症）" / "Anxiety Disorder (Generalized Anxiety Disorder)" — the existing record's namespace is generic "anxiety" but the sourced pack content and `related_patterns` are GAD-specific, so the name change is scoped honestly rather than either fabricating generic-anxiety content or silently narrowing the id's stated scope. |
+| `cond.major_depressive_disorder` → `cond.depression` | EXISTING_ENRICH — exact-scanned `depress`/`憂鬱` — found `cond.depression` (`name_zh: "憂鬱（文件情境）"`) carrying REAL unique classical-text content (a long 神經衰弱/neurasthenia essay, not C10 boilerplate — confirmed by re-running the C10 check, which did not flag it). Left `etiology_zh`/`western_pathology_zh` untouched (§0) and added a condensed `_en` translation that explicitly notes it summarizes the neurasthenia-framed TCM etiology, not a line-by-line rendering and not itself a biomedical MDD mechanism — same "condensed, faithful, not verbatim" approach as Batch F's `cond.asthma` and Batch H's `cond.chronic_gastritis`/`cond.peptic_ulcer`. |
+| `cond.post_traumatic_stress_disorder` → `cond.ptsd` | EXISTING_ENRICH — exact-scanned `ptsd`/`創傷` — found `cond.ptsd` (`name_zh: "創傷後壓力症（文件情境）"`) with C10 boilerplate, replaced per validator's own authorization. Cleaned stale name suffix. |
+| `cond.adhd` → `cond.adhd` | EXISTING_ENRICH — exact id match (`name_zh: "注意力不足過動症（文件情境）"`) with C10 boilerplate, replaced per validator's own authorization. Cleaned stale name suffix. |
+| `cond.obsessive_compulsive_disorder` → `cond.obsessive_compulsive_disorder` | NEW_CANDIDATE — exact-scanned `ocd`/`強迫` — zero matches |
+| `cond.eating_disorder` (parent) → `cond.eating_disorder` | EXISTING_ENRICH — exact id AND candidate_id match (`name_zh: "飲食失調（文件情境）"`) with C10 boilerplate, replaced per validator's own authorization. Kept as parent/navigational card per the pack's own `NEAR_DUPLICATE_NEEDS_DECISION` framing — no anorexia/bulimia/BED child records exist in canon yet, same "parent card, no children yet" pattern as `cond.ibd`/`cond.viral_hepatitis` (Batch H) and `cond.valvular_heart_disease` (Batch E). Cleaned stale name suffix (dropped "（文件情境）", kept generic "飲食失調症"/"Eating Disorders", not narrowed to any one subtype). No `sign_symptom_ids` set — `sym.poor_appetite` considered but rejected as a dishonest match (eating disorders are not fundamentally an appetite-loss presentation; inventing the link would misrepresent the clinical picture). |
+| `cond.substance_use_disorder` (parent) → `cond.substance_use_disorder` | NEW_CANDIDATE — exact-scanned `substance`/`物質使用`/`成癮`/`addiction` — zero matches. Kept as parent/navigational card per the pack's own `NEAR_DUPLICATE_NEEDS_DECISION` framing (should alcohol/opioid/stimulant/cannabis be separate child ids — deferred, no child records exist yet to conflict with). |
+
+### Batch J notes for the next ingest AI
+
+- **`cond.anxiety` naming judgment flagged for Fable/Ting review**: renamed from
+  generic "焦慮（文件情境）" to "焦慮症（廣泛性焦慮症）" because the *sourced
+  content* (this batch) and the pre-existing `related_patterns` are GAD-specific,
+  while the id/namespace itself was left generic. This is a smaller version of
+  the Batch H `cond.chronic_gastritis` scope call — flagging explicitly rather
+  than treating it as a mechanical rename.
+- **Real-vs-boilerplate `western_pathology_zh`/`etiology_zh` check is per-field,
+  not per-record**: `cond.depression` had to be checked separately from its
+  batch-mates because 4 of 5 EXISTING_ENRICH targets in this batch carried the
+  repo-wide C10 boilerplate string while `cond.depression` carried real content
+  — always re-run the C10 check after drafting rather than assuming a batch is
+  uniform.
+- **New `aliases_zh`/`aliases_en` length-mismatch catch, applied proactively**:
+  followed the Batch I recommendation to hand-verify every alias pair's array
+  length before validating — caught one case in drafting
+  (`cond.obsessive_compulsive_disorder` needed a matching `aliases_zh` entry for
+  `aliases_en: ["OCD"]`) and fixed before the first validator run.
+- **`sign_symptom_ids` used where honest, skipped where not**: `sym.insomnia`,
+  `sym.fatigue`, `sym.poor_concentration`, `sym.poor_appetite` all resolve
+  against the 49-record registry and were used on GAD/MDD/PTSD/ADHD where the
+  match is direct. No symptom links invented for OCD, eating disorders or SUD
+  — the registry has no honest match (racing thoughts, rituals, craving, and
+  eating-behavior disturbance are not literally any of the 49 registered
+  symptoms).
+- **No red_flag_refs collision**: none of the 5 EXISTING_ENRICH targets in this
+  batch (`cond.anxiety`, `cond.depression`, `cond.ptsd`, `cond.adhd`,
+  `cond.eating_disorder`) carried a pre-existing `red_flag_refs` array —
+  checked before touching `red_flags_zh`/`red_flags_en` per the Batch G/I
+  standing rule, none found.
+- Validator state after Batch J commit: `data/pathology/condition_canon_shortlist.json`
+  187 → 189 records (2 NEW_CANDIDATE, 5 EXISTING_ENRICH — matches the pack's
+  own 7-concept count). `check-validation-ratchet.js` conditions defect count:
+  481 (F–I close-out) → 458 (BETTER, −23). All 7 touched/added records are
+  0-defect (only an N1 informational note on `cond.depression` for unlifted
+  `tcm_patterns` blobs, not a blocking defect).
