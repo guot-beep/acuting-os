@@ -2,9 +2,10 @@
   "dataset": "localStorage (acuting-clinical-cases-v1) -> data/clinical_cases/schema.sql field mapping",
   "status": "design_only__migration_script_NOT_implemented",
   "created": "2026-08-06",
-  "updated": "2026-08-09",
+  "updated": "2026-08-12",
   "changelog": [
-    "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered."
+    "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered.",
+    "2026-08-12: D17 tables landed in schema.sql (case_agent_exposures, case_environmental_exposures, visit_lifestyle_factors, visit_adverse_events, visit_pattern_differentials) plus visit_tcm_patterns.role/confidence and visit_outcomes.related_sym_id. localStorage-side keys are NOT yet written by the app — see planned_mappings_d17. Mapping entries move from planned to real when the B2 contract lands in normalizeCase/normalizeSoapNote."
   ],
   "policy": [
     "This file is a DESIGN, not a migration. No script reads it yet. It exists so the mapping is reviewable before it is executable — the H2 migration is a one-shot over real clinical data (D12), and a mapping decided inside a script is a mapping nobody reviewed.",
@@ -766,7 +767,56 @@
   ],
   "residual_gaps": {
     "note": "Verified 2026-08 by mechanically diffing every key normalizeClinicalCase()/normalizeSoapNote() actually produce against this file's source_field list (script run inline, not hand-counted): zero runtime fields are currently undocumented. The 12 case/soap fields the previous known_gaps_not_covered_by_this_pass section listed (genderIdentity, raceEthnicity, raceEthnicityDetail, onsetApprox, chronicity, coursePattern, previousTreatment, previousTreatmentNotes, baselineSeverity, allergyStatus, tcmPatternSelections, referralOrSupervisorQuestion) all had real schema.sql destinations already and are now mapped above — none of them were actually 'no destination,' they were just missing an entry, a distinction the prior version of this section did not draw. This note exists to be kept honest, not to be trusted blindly: whoever adds the next normalizeClinicalCase()/normalizeSoapNote() field is the one who makes this stale, and should re-run the same diff before assuming this section still says zero.",
-    "unresolved_needs_ting_still_open": ["case.allergies", "soap.tongueBody", "soap.tongueCoating", "soap.outcomeMetricLinks"],
-    "no_destination_yet_still_open": ["case.currentMeds", "soap.workflowLink"]
+    "unresolved_needs_ting_still_open": [
+      "case.allergies",
+      "soap.tongueBody",
+      "soap.tongueCoating",
+      "soap.outcomeMetricLinks"
+    ],
+    "no_destination_yet_still_open": [
+      "case.currentMeds",
+      "soap.workflowLink"
+    ]
+  },
+  "planned_mappings_d17": {
+    "status": "schema_landed__localStorage_contract_pending",
+    "policy": "These localStorage keys do not exist yet. They are the D17 §E contract names reserved so the B2 normalize-layer batch and this mapping cannot drift. All additive; absence of a key in an old case means [] / \"\" per the existing normalizer rules, never a fabricated value.",
+    "entries": [
+      {
+        "localStorage": "case.agentExposures[]",
+        "table": "case_agent_exposures",
+        "note": "one ledger row per agent (drug.*|supp.*); visit-level change updates the SAME row (change_since_last, last_confirmed_visit_id) — D17 single-timeline rule"
+      },
+      {
+        "localStorage": "case.environmentalExposures[]",
+        "table": "case_environmental_exposures",
+        "note": "certainty x timing are two independent axes; suspected never auto-promotes to confirmed"
+      },
+      {
+        "localStorage": "soapNote.lifestyleFactors[]",
+        "table": "visit_lifestyle_factors",
+        "note": "per-visit observed behavior rows; trajectory = the rows, current = latest row; never derives a pattern"
+      },
+      {
+        "localStorage": "soapNote.adverseEvents[]",
+        "table": "visit_adverse_events",
+        "note": "linked to the visit where reported; modality_id/intervention_ref_id optional sharpeners"
+      },
+      {
+        "localStorage": "soapNote.patternDifferentials[]",
+        "table": "visit_pattern_differentials",
+        "note": "considered-then-ruled-out is preserved; distinct from tcmPatternSelections (working patterns)"
+      },
+      {
+        "localStorage": "soapNote.tcmPatternSelections[].role / .confidence",
+        "table": "visit_tcm_patterns.role / .confidence",
+        "note": "MVP vocabulary primary|secondary; root|branch reserved; is_primary stays and must agree with role at write time"
+      },
+      {
+        "localStorage": "soapNote.outcomeMetrics[].relatedSymId",
+        "table": "visit_outcomes.related_sym_id",
+        "note": "optional symptom anchor for a measurement (D17 §3: sym.* and metric.* complementary)"
+      }
+    ]
   }
 }

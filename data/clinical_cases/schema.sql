@@ -232,6 +232,33 @@ CREATE TABLE IF NOT EXISTS visit_tcm_patterns (
   visit_id TEXT NOT NULL,
   pattern_id TEXT NOT NULL,
   is_primary INTEGER DEFAULT 0,
+  -- D17: MVP vocabulary is primary | secondary. root | branch are RESERVED for
+  -- the 標本 model and deliberately not blocked by a CHECK — blocking them would
+  -- turn a vocabulary extension into a schema migration, exactly what D12
+  -- forbids after 9/01. is_primary above is never removed; role is the richer
+  -- sibling, and (is_primary=1) ⇔ (role='primary') is enforced at write time by
+  -- the app, not by the schema.
+  role TEXT,
+  -- D17: "working patterns should support confidence." Free vocabulary today
+  -- (working | probable | confirmed …); lands now so post-freeze it exists.
+  confidence TEXT,
+  note TEXT,
+  PRIMARY KEY (visit_id, pattern_id),
+  FOREIGN KEY (visit_id) REFERENCES visits(id)
+);
+
+-- D17 / V2 §4: differential candidates are NOT working patterns. A pattern the
+-- clinician CONSIDERED (and possibly ruled out) this visit lives here; a pattern
+-- the clinician CONCLUDED lives in visit_tcm_patterns. Same visit, same pattern
+-- id appearing in both tables is legal and meaningful: considered, then adopted.
+-- ruled_out=1 preserves the negative finding — "thought about 肝陽上亢, rejected
+-- it" is diagnostic reasoning worth keeping (LL1 spirit), and it is exactly what
+-- the reflection_differential_considered free-text column on visits cannot give
+-- analytics.
+CREATE TABLE IF NOT EXISTS visit_pattern_differentials (
+  visit_id TEXT NOT NULL,
+  pattern_id TEXT NOT NULL,
+  ruled_out INTEGER DEFAULT 0,
   note TEXT,
   PRIMARY KEY (visit_id, pattern_id),
   FOREIGN KEY (visit_id) REFERENCES visits(id)
@@ -401,6 +428,14 @@ CREATE TABLE IF NOT EXISTS visit_outcomes (
   -- existing rows (all of them, today) have metric_name only, and backfilling
   -- metric_id is future work, not this column's job.
   metric_id TEXT,
+  -- D17 §3: sym.* and metric.* are complementary, never competing. A measurement
+  -- may optionally declare WHICH symptom/finding it measures
+  -- (sym.insomnia ← metric.sleep_quality + metric.sleep_duration_hours).
+  -- Nullable: a metric with no symptom anchor (BMI, blood pressure as routine
+  -- vitals) is normal, and existing rows all predate the column. This is the
+  -- additive link D17 asked for — a link table can supersede it later without
+  -- touching these rows if one symptom ever needs many-to-many semantics.
+  related_sym_id TEXT,
   FOREIGN KEY (visit_id) REFERENCES visits(id)
 );
 
@@ -520,5 +555,132 @@ CREATE TABLE IF NOT EXISTS visit_billing_links (
   coding_question TEXT,
   supervisor_or_billing_review TEXT,
   updated_at TEXT,
+  FOREIGN KEY (visit_id) REFERENCES visits(id)
+);
+
+-- ============================================================================
+-- D17 (2026-08-10) — Clinical Data Capture V2 layers. Four tables, all landed
+-- EMPTY before the D12 additive-only freeze (2026-09-01): 寧可表先建好空著,
+-- 也不要凍結後才發現要改型. Nothing writes to them at commit time; the
+-- localStorage contract (app.js normalizeCase/normalizeSoapNote) and
+-- localstorage_sqlite_mapping.json name the shapes that will migrate here.
+-- Design source: docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md §E.
+-- ============================================================================
+
+-- ONE coherent exposure timeline (D17 §5) for medications AND supplements.
+-- The row is the longitudinal ledger entry — "this patient is/was on this
+-- agent" — NOT a per-visit snapshot. Visit-level "changed since last visit"
+-- updates the SAME row (status/change_since_last/last_confirmed_visit_id),
+-- which is what lets baseline coffee-3-cups + Visit#4 "now 1 cup" reconstruct
+-- a timeline instead of scattering into disconnected snapshots.
+-- visit_western_medications (above) stays untouched as the legacy per-visit
+-- shape; after the migration gate new visits write HERE. agent_id namespaces:
+-- drug.* (D15) or supp.* (D17 §1 — NOT suppl.*); nullable because a
+-- patient-reported "some herbal blend from Taiwan" has a name, not an id —
+-- name_text is never optional in spirit even though SQL cannot say so for
+-- rows that carry only an id.
+CREATE TABLE IF NOT EXISTS case_agent_exposures (
+  id TEXT PRIMARY KEY,
+  case_id TEXT NOT NULL,
+  agent_type TEXT,               -- 'drug' | 'supplement'
+  agent_id TEXT,                 -- drug.* | supp.* (nullable, see above)
+  name_text TEXT,
+  dose_text TEXT,
+  frequency_text TEXT,
+  route TEXT,
+  -- D4 coarse dates: "YYYY", "YYYY-MM", "YYYY-MM-DD", or 'unknown'. Never a
+  -- fabricated day.
+  start_approx TEXT,
+  stop_approx TEXT,
+  status TEXT,                   -- 'current' | 'stopped' | 'prn' | 'unknown'
+  indication_text TEXT,          -- reason/indication if known (V2 §8)
+  adherence_note TEXT,
+  info_source TEXT,              -- 'patient_reported' | 'records'
+  first_noted_visit_id TEXT,
+  last_confirmed_visit_id TEXT,
+  change_since_last TEXT,        -- 'unchanged'|'started'|'stopped'|'dose_changed'|'frequency_changed'
+  change_note TEXT,
+  notes TEXT,
+  created_at TEXT,
+  updated_at TEXT,
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
+-- Environmental/toxic exposures (D17 §1, V2 §10) — SEPARATE from lifestyle:
+-- an exposure happens TO the patient, a lifestyle factor is the patient's own
+-- behavior; collapsing them loses exactly the occupational/environmental axis
+-- an epidemiological question needs. Two independent columns, not one enum:
+-- certainty (how sure are we it happened) × timing (is it still happening) are
+-- orthogonal — a confirmed historical lead exposure and a suspected ongoing
+-- mold exposure both need honest representation. Suspected NEVER silently
+-- becomes confirmed (D17 §6) — that promotion is a hand edit with a source.
+CREATE TABLE IF NOT EXISTS case_environmental_exposures (
+  id TEXT PRIMARY KEY,
+  case_id TEXT NOT NULL,
+  exposure_id TEXT,              -- exposure.* (nullable, name_text fallback)
+  name_text TEXT,
+  certainty TEXT,                -- 'suspected' | 'patient_reported' | 'confirmed'
+  timing TEXT,                   -- 'ongoing' | 'historical' | 'unknown'
+  start_approx TEXT,
+  end_approx TEXT,
+  context_text TEXT,             -- occupational / residential / event context
+  first_noted_visit_id TEXT,
+  last_confirmed_visit_id TEXT,
+  change_since_last TEXT,        -- same vocabulary as case_agent_exposures
+  notes TEXT,
+  created_at TEXT,
+  updated_at TEXT,
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
+-- Lifestyle factors (D17 §1, V2 §8–9) — per-VISIT observed behavior rows, so
+-- the trajectory (sleep 5h → 5.5h → 6h → 7h, V2 §18) falls out of the rows
+-- themselves; the "current" value is simply the latest visit's row, never an
+-- overwrite. Quantitative when possible: value_number+unit for measurable
+-- things (hours/night, cups/day), value_text/frequency_text for the rest.
+-- NOT in visit_observations on purpose: a behavior is not a symptom, and
+-- observation_type there enumerates clinical findings. factor_id is life.*
+-- (hierarchical ids allowed: life.sleep.late_bedtime).
+-- HARD RULE (D17 §6, V2 §9): rows here are OBSERVATIONS. No code path may
+-- derive a pattern.* or tdis.* from them — raw seafood 4×/week must never
+-- auto-create 脾陽虛. TCM interpretation is entered by the practitioner in
+-- Assessment, nowhere else.
+CREATE TABLE IF NOT EXISTS visit_lifestyle_factors (
+  id TEXT PRIMARY KEY,
+  visit_id TEXT NOT NULL,
+  factor_id TEXT,                -- life.* (nullable, name_text fallback)
+  name_text TEXT,
+  value_number REAL,
+  unit TEXT,
+  value_text TEXT,
+  frequency_text TEXT,
+  change_since_last TEXT,        -- same vocabulary as case_agent_exposures
+  notes TEXT,
+  FOREIGN KEY (visit_id) REFERENCES visits(id)
+);
+
+-- Adverse events / treatment tolerance (D17 §1, V2 §11). Linked to the visit
+-- where the event was REPORTED (which may be the visit after the treatment
+-- that caused it — onset_text carries that nuance). intervention_type is the
+-- coarse axis that always exists; modality_id (modality.*) and
+-- intervention_ref_id (a point/formula/herb id) sharpen it when known.
+-- severity mild|moderate|severe mirrors the safety-flag tiering; resolution
+-- has its own status so "bruise, resolved by next visit" and "dizziness,
+-- ongoing" are both queryable — V2 §20's tolerance questions read exactly
+-- these two columns.
+CREATE TABLE IF NOT EXISTS visit_adverse_events (
+  id TEXT PRIMARY KEY,
+  visit_id TEXT NOT NULL,
+  event_id TEXT,                 -- adverse_event.* (nullable, name_text fallback)
+  name_text TEXT,
+  intervention_type TEXT,        -- 'acupuncture'|'cupping'|'moxa'|'herbs'|'formula'|'other'
+  modality_id TEXT,              -- modality.* when known
+  intervention_ref_id TEXT,      -- point/formula/herb id when known
+  severity TEXT,                 -- 'mild' | 'moderate' | 'severe'
+  onset_text TEXT,
+  status TEXT,                   -- 'patient_reported' | 'observed'
+  resolution_status TEXT,        -- 'resolved'|'resolving'|'ongoing'|'unknown'
+  resolved_date TEXT,
+  notes TEXT,
   FOREIGN KEY (visit_id) REFERENCES visits(id)
 );
