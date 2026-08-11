@@ -15530,6 +15530,150 @@
       "legacy_ids": [
         "pat.肝鬱化火"
       ]
+    },
+    {
+      "id": "pattern.wind_damp_exterior",
+      "name_zh": "風濕襲表證",
+      "name_en": "Wind-Dampness Assailing the Exterior",
+      "pinyin": "Feng Shi Xi Biao",
+      "pinyin_toned": "Fēng Shī Xí Biǎo",
+      "aliases_zh": [
+        "外感風濕表證",
+        "外感風濕"
+      ],
+      "aliases_en": [
+        "Externally Contracted Wind-Dampness Exterior Pattern",
+        "Externally Contracted Wind-Dampness"
+      ],
+      "pattern_family": "bing_yin",
+      "review_status": "draft",
+      "authored_by": "model_draft",
+      "eight_principles": {
+        "interior_exterior": "exterior",
+        "cold_heat": null,
+        "deficiency_excess": "excess",
+        "yin_yang": null
+      },
+      "zang_fu": [
+        "lung"
+      ],
+      "qi_blood_fluid": [
+        "fluid"
+      ],
+      "mechanism_zh": "風邪與濕邪相合，侵襲肌表衛分，風邪遏阻衛氣宣發、濕邪黏滯閉阻腠理，故惡風發熱；濕性重濁，上蒙清竅則頭重如裹，浸淫肌肉關節則頭身困重、肢節酸楚；濕邪黏膩難解，雖有汗出而濕邪不隨汗解，故發熱、身重等症不因汗出而緩解（汗出不解）。",
+      "mechanism_en": "Wind combines with Dampness to invade the exterior/Wei level. Wind impairs the dispersal of Wei Qi and Dampness clogs the interstices, producing aversion to wind with fever. Dampness is heavy and turbid: clouding the clear orifices above gives a head that feels heavy as if wrapped in cloth; soaking into the muscles and joints gives a heavy body with aching limbs. Because Dampness is sticky and lingering, sweating does not carry the pathogen out with it — fever and heaviness persist despite sweating (sweating fails to resolve the exterior).",
+      "common_causes_zh": "感受風濕之邪、久居潮濕之地、氣候多雨潮濕、涉水淋雨、汗出當風後又感濕邪",
+      "common_causes_en": "Exposure to combined Wind and Dampness — living in a damp environment, rainy/humid weather, wading through water or being caught in rain, or contracting Dampness after sweating in the wind",
+      "progression_zh": "濕性黏滯難解，若失治或遷延，風濕之邪可由衛表深入經絡關節，發展為風寒濕痹（肢體關節疼痛重著、屈伸不利）；亦可因濕邪困阻中焦而兼見脘悶納呆等脾胃症狀。此為傾向，非絕對病程。",
+      "progression_en": "Because Dampness is sticky and slow to resolve, if untreated or prolonged this pattern may progress from the Wei/exterior level into the channels and joints, becoming Wind-Cold-Damp Bi (joint/muscle pain, heaviness, restricted flexion-extension); Dampness may also bog down the Middle Burner, producing epigastric fullness and poor appetite. These are tendencies, not an absolute course.",
+      "key_signs_zh": [
+        "惡風發熱",
+        "頭重如裹",
+        "頭身困重酸楚",
+        "肢體酸楚，或有關節疼痛",
+        "汗出而熱不解、身重不減"
+      ],
+      "key_signs_en": [
+        "Aversion to wind with fever",
+        "Heavy head sensation as if wrapped in cloth",
+        "Heavy, aching head and body",
+        "Aching limbs, sometimes with joint pain",
+        "Sweating occurs but the fever and heaviness fail to resolve"
+      ],
+      "supporting_signs_zh": [
+        "胸悶納呆",
+        "肢體浮腫或沉重感明顯",
+        "小便短少"
+      ],
+      "supporting_signs_en": [
+        "Chest oppression and poor appetite",
+        "Noticeable heaviness or mild swelling of the limbs",
+        "Scanty urination"
+      ],
+      "tongue_zh": "苔白膩",
+      "tongue_en": "White, greasy tongue coating",
+      "pulse_zh": "脈浮緩或濡",
+      "pulse_en": "Floating and moderate, or soggy (floating-soft), pulse",
+      "differential_patterns": [
+        {
+          "pattern_id": "pattern.wind_cold_damp_bi",
+          "distinguishing_zh": "風濕襲表證病位在衛表，屬外感表證：以惡風發熱、頭重如裹、頭身困重酸楚、汗出不解為核心，起病較急、病程通常較短；風寒濕痹病位在經絡關節，屬痹證：以關節肌肉疼痛、重著、屈伸不利為核心，可反覆遷延。兩者的區別是病位不同——衛表受邪 vs 經絡痹阻——而非同一證型「少了寒」的差異。",
+          "distinguishing_en": "Wind-Dampness Assailing the Exterior is a Wei-level/exterior-invasion pattern: aversion to wind with fever, a heavy head as if wrapped, generalized heavy aching, and sweating that fails to resolve the exterior symptoms — usually acute onset, shorter course. Wind-Cold-Damp Bi is a channel/joint-level obstruction pattern: joint and muscle pain, heaviness, and restricted flexion-extension, often chronic or recurring. The distinction is anatomical location and mechanism — Wei-level exterior invasion versus channel-collateral Bi obstruction — not simply the same pattern minus Cold.",
+          "source": "data/research_staging/p4_adjudication_external_wind_damp_SOL.json (P-4 SOL adjudication, basis_zh + relation_note); GB/T 16751.2-2021 中醫臨床診療術語 第2部分：證候"
+        },
+        {
+          "pattern_id": "pattern.wind_cold",
+          "distinguishing_zh": "風濕襲表以頭身困重、肢體酸楚、苔白膩、脈濡為特徵，反映濕邪重濁黏滯，且發熱多汗出不解；風寒表證以惡寒重、發熱輕、無汗、苔薄白而潤、脈浮緊為特徵，屬單純風寒閉表，無困重苔膩等濕象，身痛因寒性收引而非濕邪重著所致。",
+          "distinguishing_en": "Wind-Dampness Assailing the Exterior is marked by a heavy head and body, aching limbs, a white greasy coating, and a soggy pulse — reflecting Dampness's heavy, turbid, lingering nature — with fever that persists despite sweating. The Wind-Cold exterior pattern is marked by pronounced chills, mild fever, no sweating, a thin white moist coating, and a floating tight pulse — pure Wind-Cold closing the exterior without the heaviness/greasy-coating signs of Dampness; body aches there arise from Cold's contracting nature rather than Dampness's heaviness.",
+          "source": "TCM textbook standard (中醫診斷學／中醫內科學 外感表證通論, course-level synthesis); Me & Qi — Exterior Wind, Wind-Damp variation (https://www.meandqi.com/knowledge-base/patterns/exterior-wind)"
+        }
+      ],
+      "treatment_principle_zh": "祛風勝濕解表",
+      "treatment_principle_en": "Dispel Wind, overcome Dampness, and release the Exterior",
+      "typical_formulas": [
+        "formula.qiang_huo_sheng_shi_tang"
+      ],
+      "typical_points": [
+        "GB20",
+        "GV16",
+        "BL12",
+        "LI4",
+        "TE5",
+        "SP9",
+        "ST36",
+        "GV20"
+      ],
+      "point_rationale_zh": "風池、風府袪風解表，善除頭部風邪；風門為足太陽膀胱經與督脈交會穴，長於宣散風邪、通調肺衛；合谷、外關袪風解表，合谷兼止頭身疼痛；陰陵泉健脾利濕，足三里健脾助運以化濕；百會位居巔頂，升發清陽以緩頭重如裹之感。",
+      "point_rationale_en": "GB20 and GV16 dispel Wind and release the Exterior, especially for Wind at the head; BL12, a meeting point of the Bladder channel and the Governing Vessel, disperses Wind and regulates Lung/Wei Qi; LI4 and TE5 release the Exterior and dispel Wind, with LI4 also relieving head/body aching; SP9 and ST36 strengthen the Spleen and drain Dampness; GV20, at the vertex, raises clear Yang to relieve the wrapped, heavy sensation of the head.",
+      "sources": [
+        "data/research_staging/p4_adjudication_external_wind_damp_SOL.json (P-4 SOL adjudication)",
+        "GB/T 16751.2-2021 中醫臨床診療術語 第2部分：證候 (https://std.samr.gov.cn/gb/search/gbDetailed?id=D1E86BE73A31430EE05397BE0A0A206B)",
+        "WHO international standard terminologies on traditional Chinese medicine (https://www.who.int/publications/i/item/9789240042322)",
+        "ICD-11 / Chinese national TCM code mapping paper (https://chinarxiv.org/items/chinaxiv-202307.00672)",
+        "Me & Qi — Exterior Wind, Wind-Damp variation (https://www.meandqi.com/knowledge-base/patterns/exterior-wind)",
+        "curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md (羌活胜湿汤 F194 — Herbal Formulations Comprehensive p.138-139 excerpt, source: 內外傷辨惑論)",
+        "Sacred Lotus — Acupuncture Point Prescriptions (https://www.sacredlotus.com/go/acupuncture/get/acupuncture-point-prescriptions)"
+      ],
+      "field_sources": {
+        "identity": [
+          "data/research_staging/p4_adjudication_external_wind_damp_SOL.json",
+          "GB/T 16751.2-2021 中醫臨床診療術語 第2部分：證候",
+          "WHO international standard terminologies on traditional Chinese medicine",
+          "ICD-11 / Chinese national TCM code mapping paper (https://chinarxiv.org/items/chinaxiv-202307.00672)"
+        ],
+        "mechanism": [
+          "data/research_staging/p4_adjudication_external_wind_damp_SOL.json (basis_zh)",
+          "TCM textbook standard (中醫診斷學 病因辨證通論, course-level synthesis)"
+        ],
+        "key_signs": [
+          "data/research_staging/p4_adjudication_external_wind_damp_SOL.json (basis_zh)",
+          "Me & Qi — Exterior Wind, Wind-Damp variation (https://www.meandqi.com/knowledge-base/patterns/exterior-wind)"
+        ],
+        "tongue": [
+          "TCM textbook standard (中醫診斷學 病因辨證通論, course-level synthesis)"
+        ],
+        "pulse": [
+          "Me & Qi — Exterior Wind, Wind-Damp variation (https://www.meandqi.com/knowledge-base/patterns/exterior-wind)"
+        ],
+        "differentiation": [
+          "data/research_staging/p4_adjudication_external_wind_damp_SOL.json (do_not_map_to + basis_zh, primary ruling basis)",
+          "GB/T 16751.2-2021 中醫臨床診療術語 第2部分：證候"
+        ],
+        "treatment_principle": [
+          "curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md (羌活胜湿汤 F194)"
+        ],
+        "formulas": [
+          "curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md (羌活胜湿汤 F194 — indications explicitly 'Superficial Wind-Dampness'; Herbal Formulations Comprehensive p.138-139 excerpt)",
+          "data/herbs/formulas.json (formula.qiang_huo_sheng_shi_tang, verified present)"
+        ],
+        "points": [
+          "Sacred Lotus — Acupuncture Point Prescriptions (https://www.sacredlotus.com/go/acupuncture/get/acupuncture-point-prescriptions)",
+          "Standard acupuncture point-function knowledge, consistent with sibling wind-exterior pattern cards (pattern.wind_cold typical_points selection)"
+        ]
+      },
+      "legacy_ids": [
+        "pat.外感風濕"
+      ]
     }
   ]
 }

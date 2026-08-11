@@ -2218,6 +2218,19 @@
       "system": "zang_fu",
       "system_zh": "臟腑辨證",
       "registration_note_zh": "2026-08-11 Ting 裁決執行：推翻 docs/research_packs/PATTERN_P4_ADJUDICATION_v0.md Section 3 原 GRAPH_ONLY 建議，改建完整卡片——臨床教學上肝鬱化火有自己的一套主症/治則（疏肝瀉火），非單純過渡態。詳見 docs/research_packs/PATTERN_TING_TRIO_LEDGER.md。"
+    },
+    {
+      "id": "pattern.wind_damp_exterior",
+      "name_zh": "風濕襲表證",
+      "name_en": "Wind-Dampness Assailing the Exterior",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "p4_sol_adjudication_wind_damp_exterior_2026_08_11",
+      "level": "pattern",
+      "system": "bing_yin",
+      "system_zh": "病因辨證",
+      "registration_note_zh": "2026-08-11 SOL P-4 裁決執行（data/research_staging/p4_adjudication_external_wind_damp_SOL.json）：CREATE_CANONICAL，非 pattern.wind_cold_damp_bi 的同義詞——病位與主症群不同（衛表受邪 vs 經絡痹阻），詳見裁決 JSON 的 basis_zh 與 relation_note。原 pat.外感風濕（14 條病症引用）經 alias map 併入本 id。"
     }
   ]
 }

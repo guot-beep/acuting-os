@@ -158,6 +158,13 @@ const APPROVED_LEGACY_ALIAS_TARGETS = new Map([
   // below re-verifies on every run.
   ["pat.脾胃虛寒", "pattern.spleen_stomach_yang_deficiency"],
   ["pat.脾虛濕阻", "pattern.spleen_deficiency_damp_encumbrance"],
+  // P-4 SOL adjudication (2026-08-11), data/research_staging/
+  // p4_adjudication_external_wind_damp_SOL.json: CREATE_CANONICAL. Canonical
+  // name_zh is 風濕襲表證 (not an exact match for the legacy name 外感風濕, so
+  // this needs an explicit entry rather than resolving via canonicalByName).
+  // aliases_zh on the new card includes the exact legacy name "外感風濕",
+  // assertion below re-verifies on every run.
+  ["pat.外感風濕", "pattern.wind_damp_exterior"],
 ]);
 const registryIds = new Set(registry.map((record) => record.id));
 const activeLibraryById = new Map(

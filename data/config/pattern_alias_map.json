@@ -18,9 +18,9 @@
     "canon_records": 140,
     "canon_unique_ids": 134,
     "canon_duplicate_ids": 6,
-    "canonical_namespace_ids": 153,
-    "mapped": 94,
-    "pending_registration": 7,
+    "canonical_namespace_ids": 154,
+    "mapped": 95,
+    "pending_registration": 6,
     "excluded_formula_patterns": 32,
     "retired_as_import_artifact": 3
   },
@@ -34,6 +34,7 @@
     "pat.下焦濕熱": "pattern.damp_heat_lower_burner",
     "pat.脾胃陽虛": "pattern.spleen_stomach_yang_deficiency",
     "pat.腎陰虛": "pattern.kidney_yin_deficiency",
+    "pat.外感風濕": "pattern.wind_damp_exterior",
     "pat.肝脾不調": "pattern.liver_spleen_disharmony",
     "pat.脾虛濕困": "pattern.spleen_deficiency_damp_encumbrance",
     "pat.外感風寒": "pattern.wind_cold",
@@ -121,22 +122,6 @@
     "pat.清陽不升": "pattern.spleen_qi_sinking"
   },
   "pending_registration": [
-    {
-      "legacy_id": "pat.外感風濕",
-      "name_zh": "外感風濕",
-      "aliases_zh": [],
-      "used_by_condition_blobs": 14,
-      "example_conditions": [
-        "cond.lumbar_disc_herniation",
-        "cond.sciatica",
-        "cond.cervical_spondylosis",
-        "cond.frozen_shoulder",
-        "cond.de_quervain",
-        "cond.trigger_finger",
-        "cond.knee_osteoarthritis",
-        "cond.plantar_fasciitis"
-      ]
-    },
     {
       "legacy_id": "pat.燥氣傷肺",
       "name_zh": "燥氣傷肺",
