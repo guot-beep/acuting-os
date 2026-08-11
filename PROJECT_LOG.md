@@ -3177,3 +3177,10 @@ Current repo state as of this log:
 - **Cloudflare**:root cause = dist/ 被 gitignore 而 Workers Builds 沒有 build 命令(Pages→Workers 遷移時儀表板配置漂移)。修法 = wrangler.jsonc 自帶 `build.command: node scripts/build-site.js`(deploy 前自動執行,本地驗證 15 files/23.1MB);quarantine 原樣保留;絕不發佈 repo root。Ting 要核對的四項儀表板設定寫在 `docs/DEPLOY_CLOUDFLARE.md`。
 - **Sprint brief 入庫**:`docs/SPRINT_2026-08-12_BRIEF.md`(十行操作硬規則 + 階段現況 + 路由含 ChatGPT/SOL + HARD GATES vs STRETCH)。八項修正全部採納:Phase C=薄抽象、Patient wiring 獨立高風險里程碑+Codex audit、Phase B 後強制 Codex schema audit、export 與 schema 同步凍結。
 - **下一步**:B2 localStorage 契約(Fable)→ B3 詞彙種子(Sonnet)→ Codex audit → Phase C/D。
+
+# 2026-08-12 Fable+Sonnet — Phase B 完成:B2 契約(6569eaa)+ B3 詞彙種子
+
+- **B2(Fable,`6569eaa`)**:normalizeCase 新增 `agentExposures[]`(單一縱向時間線,含 changeSinceLast)與 `environmentalExposures[]`;normalizeSoapNote 新增 `lifestyleFactors[]` / `adverseEvents[]` / `patternDifferentials[]`;tcmPatternSelections 加 role/confidence(role 由 primary/secondary picker 忠實記錄,非推導;confidence 在 rebuild 時 carry-over 不被剝除);outcomeMetrics 加 relatedSymId 且 setOutcomeMetricValue upsert 保留之。驗證:live app 往返 7/7 鍵保留、0 console errors、34 個既有病例無回歸。
+- **B3(Sonnet 5 交付,Fable 眼睛驗過後提交)**:data/config/ 五檔 —— supplement_category(8)/ lifestyle_factor(26,含 value_hint_en)/ exposure(9)/ adverse_event(8)/ modality(8)。build-data PASS、content-junk PASS、ratchet PASS 無回歸。尚未接進 build-data readJson(之後跟 UI 一起接)。
+- **⏸ CODEX AUDIT RECOMMENDED NOW** — 範圍:commits `994d8b3`+`6569eaa`+本次。要驗:schema/契約/mapping 三方一致性;export/import 是否完整攜帶新鍵(理論上 case 物件全序列化,要實證);PHI validator 是否需要掃新欄位;visit_western_medications(舊)與 case_agent_exposures(新)並存語意;role⇔isPrimary 一致性。
+- **下一步路由**:Codex audit → Phase C 薄 repository 抽象(Fable)→ Phase D 捕捉 UI(Sonnet,契約=B2 鍵名)→ Phase C2 Patient wiring(Fable+audit)。

@@ -1,0 +1,21 @@
+{
+  "dataset": "Treatment modality (治療手法) controlled vocabulary",
+  "policy": [
+    "Canonical modality.* ids (D17). modality.* records do not exist yet — this is the vocabulary and the gap map, same approach as symptom_taxonomy.json (D14 build order).",
+    "觀察到的生活型態／暴露資料一律不得自動轉為 TCM 證型或診斷（D17 §6）；本檔案雖為治療手法而非觀察值，仍遵守同一原則——modality.* 只記錄『做了什麼』，不推論證型。",
+    "疑似暴露（suspected）不得自動升級為確診（confirmed）——與本檔案無直接關聯，一併聲明以維持五檔詞彙檔案政策一致。",
+    "IDs are ASCII (D10). Adding a modality is a schema change: this file, then the visit form, then any validator that checks modality.* ids."
+  ],
+  "created": "2026-08-12",
+  "applies_to": "Visit-level treatment records captured under a future modality.* field",
+  "records": [
+    { "id": "modality.acupuncture", "name_zh": "針刺", "name_en": "Acupuncture" },
+    { "id": "modality.electroacupuncture", "name_zh": "電針", "name_en": "Electroacupuncture" },
+    { "id": "modality.moxibustion", "name_zh": "艾灸", "name_en": "Moxibustion" },
+    { "id": "modality.cupping", "name_zh": "拔罐", "name_en": "Cupping" },
+    { "id": "modality.gua_sha", "name_zh": "刮痧", "name_en": "Gua sha" },
+    { "id": "modality.tui_na", "name_zh": "推拿", "name_en": "Tui na" },
+    { "id": "modality.auricular_acupuncture", "name_zh": "耳針", "name_en": "Auricular acupuncture" },
+    { "id": "modality.bloodletting", "name_zh": "刺血／放血", "name_en": "Bloodletting" }
+  ]
+}
