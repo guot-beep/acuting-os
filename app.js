@@ -1128,6 +1128,7 @@ document.querySelector("#closeCaseDialog").addEventListener("click", () => caseD
 document.querySelector("#cancelCaseBtn").addEventListener("click", () => caseDialog.close());
 document.querySelector("#closeSoapDialog").addEventListener("click", () => soapDialog.close());
 document.querySelector("#cancelSoapBtn").addEventListener("click", () => soapDialog.close());
+document.querySelector("#pastePrevisitBtn")?.addEventListener("click", pastePrevisitImport);
 document.querySelector("#closeAgentExposureDialog").addEventListener("click", () => agentExposureDialog.close());
 document.querySelector("#cancelAgentExposureBtn").addEventListener("click", () => agentExposureDialog.close());
 document.querySelector("#addLifestyleFactorRow")?.addEventListener("click", () => {
@@ -7612,7 +7613,143 @@ function openSoapEditor(note = null) {
   }
   setupLinkAutocomplete();                                   // CS4: idempotent
   Object.values(linkPickerControllers).forEach((c) => c.sync());  // rebuild chips from hydrated values
+  // P1 pre-visit paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §6.2):
+  // patientPerspective has no form field yet, so a pasted intake stashes it
+  // here (soapForm.dataset), read by saveSoapFromForm below. Reset on every
+  // open so a stash from a PREVIOUS note/dialog session can never leak into
+  // an unrelated save — openSoapEditor is the one place every dialog open
+  // (new note or edit) passes through.
+  delete soapForm.dataset.previsitPatientPerspective;
   soapDialog.showModal();
+}
+
+// P1 pre-visit intake paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md
+// §4 validation rules, §6.2 integration). Whole payload rejected on ANY
+// violation — never partial-apply a half-valid intake (contract: "非法整筆
+// 拒收並顯示原因"). metricId whitelist is NUMERIC_OUTCOME_METRIC_CONFIG
+// itself — the exact same config the SOAP form's own numeric metric inputs
+// already render from (declared near the top of this file) — one shared
+// source of truth, never a second copy that could drift out of sync.
+function validatePrevisitPayload(raw) {
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch (e) {
+    return { error: "不是合法的 JSON。Not valid JSON." };
+  }
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    return { error: "資料格式錯誤，不是一個物件。Invalid payload — not an object." };
+  }
+  if (data.kind !== "acuting-previsit-v1") {
+    return { error: `kind 欄位不是 "acuting-previsit-v1"，整筆拒收。kind is not "acuting-previsit-v1" — payload rejected.` };
+  }
+  if (typeof data.patientCode !== "string") {
+    return { error: "patientCode 必須是文字。patientCode must be a string." };
+  }
+  const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
+  const checkedMetrics = [];
+  for (let i = 0; i < rawMetrics.length; i++) {
+    const m = rawMetrics[i];
+    if (!m || typeof m.metricId !== "string" || !m.metricId) {
+      return { error: `metrics[${i}] 缺少 metricId。metrics[${i}] is missing metricId.` };
+    }
+    const cfg = NUMERIC_OUTCOME_METRIC_CONFIG.find((c) => c.metricId === m.metricId);
+    if (!cfg) {
+      return { error: `metricId「${m.metricId}」不在白名單內，整筆拒收。metricId is not in the allowed set — payload rejected.` };
+    }
+    if (!getOutcomeMetricDef(m.metricId)) {
+      return { error: `metricId「${m.metricId}」在 registry 找不到對應紀錄。metricId not found in the registry.` };
+    }
+    const num = Number(m.valueNumber);
+    if (!Number.isFinite(num)) {
+      return { error: `${outcomeMetricShortLabel(m.metricId)} 的數值不是數字。valueNumber is not a number.` };
+    }
+    const shapeOk = cfg.integer ? Number.isInteger(num) : true;
+    const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
+    if (!shapeOk || !rangeOk) {
+      const rangeText = cfg.max != null ? `${cfg.min}–${cfg.max}` : `${cfg.min} 以上`;
+      const shapeText = cfg.integer ? "整數" : "數字（可含小數）";
+      return { error: `${outcomeMetricShortLabel(m.metricId)} 須為 ${rangeText} 的${shapeText}。Must be a ${shapeText} in range ${rangeText}.` };
+    }
+    checkedMetrics.push({ metricId: m.metricId, valueNumber: num });
+  }
+  return {
+    data: {
+      patientCode: data.patientCode,
+      metrics: checkedMetrics,
+      subjectiveText: typeof data.subjectiveText === "string" ? data.subjectiveText.trim() : "",
+      patientPerspective: typeof data.patientPerspective === "string" ? data.patientPerspective.trim() : "",
+      aeSelfReport: (data.aeSelfReport && typeof data.aeSelfReport === "object")
+        ? { any: !!data.aeSelfReport.any, text: String(data.aeSelfReport.text || "").trim() }
+        : { any: false, text: "" },
+      exposureSelfReport: (data.exposureSelfReport && typeof data.exposureSelfReport === "object")
+        ? { any: !!data.exposureSelfReport.any, text: String(data.exposureSelfReport.text || "").trim() }
+        : { any: false, text: "" }
+    }
+  };
+}
+
+// Click handler for #pastePrevisitBtn. Prompts for pasted JSON, validates
+// it (reject-whole-payload-on-any-violation, above), then PREFILLS form
+// fields only — never writes clinicalCases/localStorage directly (contract
+// §1: "病人裝置絕不直寫任何 store"; this function runs on the CLINICIAN's
+// device, but the same rule applies here as a save-path discipline: the
+// clinician still has to review every field and press Save, same as if
+// they'd typed everything by hand). outcomeMetrics inputs are the SAME
+// <input name="metric.xxx"> elements renderNumericOutcomeMetricInputs
+// already rendered for this open dialog, so setting .value here is exactly
+// what a clinician typing into them by hand would produce — saveSoapFromForm
+// re-validates them again at save time regardless (computeNumericOutcomeMetrics),
+// so a stale/tampered clipboard value can never bypass that check.
+function pastePrevisitImport() {
+  const raw = prompt(
+    "貼上診前資料 JSON（病人手機頁產生的內容）\nPaste the pre-visit intake JSON (generated on the patient's phone):",
+    ""
+  );
+  if (raw == null) return;   // cancelled
+  const trimmed = raw.trim();
+  if (!trimmed) return;
+
+  const result = validatePrevisitPayload(trimmed);
+  if (result.error) {
+    alert(`診前資料格式不正確，整筆拒收：\n${result.error}`);
+    return;
+  }
+  const data = result.data;
+  const filledLabels = [];
+
+  data.metrics.forEach((m) => {
+    if (soapForm.elements[m.metricId]) {
+      soapForm.elements[m.metricId].value = m.valueNumber;
+      filledLabels.push(outcomeMetricShortLabel(m.metricId));
+    }
+  });
+
+  // No dedicated AE/exposure form fields to prefill into yet (contract §2
+  // items 4-5: clinician confirmation turns these into adverseEvents[] /
+  // an applyExposureChange event manually, never automatically) — surfaced
+  // as clearly-labeled text in Subjective, the existing free-text catch-all
+  // field, rather than silently dropped.
+  const extraBlocks = [];
+  if (data.subjectiveText) extraBlocks.push(`[診前自填 Pre-visit self-report] ${data.subjectiveText}`);
+  if (data.aeSelfReport.any) extraBlocks.push(`[診前自報：不良反應 Pre-visit AE self-report] ${data.aeSelfReport.text || "（未描述 no description given）"}`);
+  if (data.exposureSelfReport.any) extraBlocks.push(`[診前自報：藥物/補品變動 Pre-visit medication/supplement change] ${data.exposureSelfReport.text || "（未描述 no description given）"}`);
+  if (extraBlocks.length && soapForm.elements.subjective) {
+    const existing = soapForm.elements.subjective.value.trim();
+    soapForm.elements.subjective.value = extraBlocks.join("\n") + (existing ? `\n\n${existing}` : "");
+    filledLabels.push("主觀 Subjective（已加在最前面 prefixed）");
+  }
+
+  if (data.patientPerspective) {
+    // Stashed on the form, not on any note object — saveSoapFromForm reads
+    // and consumes this exactly once (see its patientPerspective line).
+    soapForm.dataset.previsitPatientPerspective = data.patientPerspective;
+    filledLabels.push("病人視角 Patient perspective（存於表單，按儲存時併入 stashed — merged in when you press Save）");
+  }
+
+  alert(filledLabels.length
+    ? `已預填以下欄位，請逐項確認後再按「儲存」：\nThe following fields were prefilled — please review each one before pressing Save:\n\n${filledLabels.join("\n")}`
+    : "貼上的資料沒有可預填的內容（六項指標皆為空、且無文字欄位）。Nothing to prefill — every field in the pasted data was empty.");
 }
 
 function saveSoapFromForm(event) {
@@ -7621,6 +7758,14 @@ function saveSoapFromForm(event) {
   if (!activeCase) return;
   const data = Object.fromEntries(new FormData(soapForm).entries());
   const current = activeCase.soapNotes.find((note) => note.id === editingSoapId);
+  // P1 pre-visit paste-import: consume the stash exactly once, here, at the
+  // one authorized save path (pastePrevisitImport itself never writes
+  // clinicalCases/localStorage — see that function's comment). Read-then-
+  // delete so a value from this paste can never silently reapply to some
+  // later, unrelated save if openSoapEditor's own reset (on next dialog
+  // open) were ever skipped for any reason.
+  const previsitPerspective = soapForm.dataset.previsitPatientPerspective || "";
+  delete soapForm.dataset.previsitPatientPerspective;
 
   // SOAP/Follow-up audit (2026-08-09): visit numbers are meant to be unique
   // per case (the timeline, "上次" comparisons, and CG8's future Baseline/
@@ -7738,6 +7883,13 @@ function saveSoapFromForm(event) {
     differentialConsidered: (data.differentialConsidered || "").trim(),
     reflection: (data.reflection || "").trim(),
     ifIneffectivePlan: (data.ifIneffectivePlan || "").trim(),
+    // P1 pre-visit paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §6.2):
+    // no form field exists for this yet (see the field's own comment in
+    // normalizeSoapNote), so a pasted value only ever reaches this note via
+    // the stash read above. Falls back to whatever this note already had —
+    // a save with no paste this session must never blank out a
+    // patientPerspective that was set some other way.
+    patientPerspective: previsitPerspective || (current?.patientPerspective || ""),
     // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
     // missing stays missing — stamping edit-time here would falsify creation
     // time. Only a genuinely NEW record gets createdAt = now.
