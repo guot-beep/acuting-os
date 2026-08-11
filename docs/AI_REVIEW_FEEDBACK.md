@@ -6,6 +6,52 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R9 pointer-aware runtime 獨立審計 — endpoint `602e075`
+
+- **REVIEWED_SHA**: freeze `5945308e08c3873842a02e2edb32c43620128f4e`；R9 implementation／受審 endpoint `602e075d65a8f288aadb1de85125e27daf9e96cb`。受審 blobs：`js/clinical-store.js=a281d04e84913db817a7ed763d03fb4ab3697907`、`app.js=a842f440b97fd8362722fefcba9f3357a7bc6cf7`、`scripts/test-pointer-runtime.js=170b191b2d845d2a9c476d13fe6d39680938be5e`。
+- **STATUS**: **PAUSE — C2b NO-GO**。先前 R8 的條件式 FINAL GO 已由 `5945308` 作廢；本輪沒有重新發布 P4。禁止在真實 Edge `file://` origin 執行 shadow write、pointer switch 或 case→patient migration。
+- **資料邊界**: 真實 clinical store 讀／寫=`0/0`；全部注入使用 process-local fake backend，共 `9` 個獨立情境，repo harness 已移除。未讀取、未寫入、未匯出任何真實病例。
+- **R9 gate 總表**: checklist 1–5=`PASS/FAIL/FAIL/FAIL/FAIL`，即 `1 PASS / 4 FAIL`；第 6 項 P4 checklist 因前置未全綠而不發布。
+
+### 1. v1 模式逐位元不變性 — PASS
+
+- 無 pointer 的 `load()`／`save()` 保持舊行為；獨立注入確認 serialized bytes=`JSON.stringify(cases, null, 2)`，寫入 key 只有 v1，staging writes=`0`。
+- 官方 pointer runtime 自測亦覆蓋正常 v1 路徑；本項合計 `2/2` 證據一致。
+
+### 2. v2 reachable write whitelist — FAIL（BLOCKER）
+
+- 正常 pointer=`v2` 時，fake post-switch save 只寫 staging、v1 bytes 不變，正常路徑=`1/1 PASS`。
+- 但 `activeIsV2()` 在 `js/clinical-store.js:44-46` 吞掉任何 `readKey(POINTER_KEY)` 例外並回 `false`。獨立注入 pointer I/O failure 後，`save()` 不 throw，反而走 v1 `backend.write()`；「v2 模式 v1 永凍」可被 storage read fault 靜默突破。pointer fault 的 load/save fail-loud=`0/2`。
+- **修復 gate A**：pointer read 必須是明確三態；只有可靠讀得 absent／`v1` 才可走 v1。pointer 讀取例外、非法值、不可判定狀態一律 throw，且 v1/staging writes=`0`；將此注入加入 blocking test。
+
+### 3. fail-loud／UI 存檔契約 — FAIL（BLOCKER + HIGH）
+
+- **BLOCKER**：上述 pointer I/O failure 的 `load()` 靜默讀 v1、`save()` 靜默寫 v1，直接違反「無 silent downgrade」。
+- **HIGH**：`persistClinicalCases()` 雖回傳 `false`，但 `9/9` 呼叫點均忽略結果；其中 case/SOAP save 在 failure 後仍執行 `noteClinicalSave()`=`2/2`，多條路徑仍 close dialog／render。使用者會看到 alert 後畫面仍呈現未落盤的 in-memory mutation，且備份計數可被當成成功存檔更新。
+- **修復 gate B**：所有 mutation 先建立 candidate state，只有 `persistClinicalCases() === true` 才 commit UI state、close、render、`noteClinicalSave()`；失敗要保留 editor 或回復舊 state。另以實際 app handler 注入 quota／pointer fault，斷言 close=`0`、save counter=`0`、畫面與 disk state 一致。
+
+### 4. pending patient race／冪等／identity — FAIL（BLOCKER + HIGH）
+
+- **BLOCKER — lost update**：讓 `syncPendingPatients()` 停在 async hash，期間執行較新的 `save()`（修改舊 case 並新增 `1` case），再釋放 hash；sync 以 await 前讀到的舊 envelope 覆寫 staging。結果 newer edit、new case、new pending code 均遺失，race safety=`0/3`。
+- **HIGH — ID 漂移**：migration 唯一來源用 `sha256("acuting-patient:" + code)`；runtime sync 用 `sha256(code)`。相同 fake code 的實測 id=`patient.98459f870772`，migration canonical=`patient.39a7dce9ae75`，parity=`0/1`。
+- **HIGH — collision 未 fail-closed**：注入不同 patientCode 但相同 12-hex hash，runtime 產生 duplicate patient id 並寫 staging；collision rejection=`0/1`，而 migration plan 已有的 collision guard 未被共用。
+- **HIGH — blank-code stale FK**：blank `patientCode` 搭配既有 `patientId="patient.stale"` 經 save 後仍保留，違反 `verifyStagingObject()` 的 blank-code→null invariant；normalization=`0/1`。
+- **修復 gate C**：runtime/migration 共用單一 `patientIdOf(code)` 與 collision guard；blank code 強制 `patientId=null`。pending sync 必須 serialize／revision-CAS，await 後重讀並合併當下 staging，或把整個 transaction 放在單一互斥區；任何 revision 改變不得以 stale envelope 覆寫。加入 save-vs-sync、sync-vs-sync、collision、retry/noop blocking tests。
+
+### 5. export/import 與 pointer-aware runtime 一致性 — FAIL（BLOCKER）
+
+- post-switch fake write→export 的 staging envelope 確實含新 case，export presence=`1/1 PASS`。
+- 但同一 envelope 送入 app 唯一路徑 `restoreV2Envelope()` 時，verifier 仍以凍結 v1 raw／原 migration plan 為唯一 anchor，拒絕自己的當前 export：`staged patients differ from plan`、new case assignment、case count、case not in raw、patient count 共 `5` 類 failure；runtime-write export round-trip=`0/1`。
+- 官方 rehearsal 的 `6g/6h` 僅測「剛 migration、尚無 runtime write」的 envelope，因此 `30/30` 是未覆蓋此生命週期的綠燈；Phase E 的 byte round-trip 同樣不是 post-switch v2 restore。
+- **修復 gate D**：定義 runtime revision-aware 的 v2 backup/restore contract。匯入必須驗 journal/schema、patients↔cases、R1–R8、append-only histories、ID/collision、counts/hash 與完整 envelope 自洽，但不能把合法 post-switch 資料要求等同原始 frozen v1 plan。新增 blocking rehearsal：switch→新增／編輯 fake case→等待 pending sync→file export→wipe isolated v2 keys→app restore→reload→全量 canonical hash／unknown fields／events exact。
+
+### 6. 數字、回歸與 P4 狀態
+
+- 官方 `scripts/test-pointer-runtime.js`=`18/18 PASS`；官方 `rehearse-c2b.js sample_export_fixture.json`=`30/30 PASS`。兩者皆為假資料，但沒有涵蓋本輪成立的 pointer exception、async lost-update、canonical ID/collision、blank FK 與 post-runtime-write restore。
+- 獨立 R9 harness=`2/9 PASS · 7/9 FAIL`；另有 app 靜態 call-site audit=`9/9` 忽略 persist failure。整體裁決歸為 `4` 個 blocker 類別（silent downgrade／lost update／unrestorable backup／UI persistence contract）與 `3` 個 identity/invariant HIGH。
+- invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E=`12 checks PASS`；interactions failures=`0`；app/store syntax=`2/2`。queue standard validators=`9 exit 0 / 3 exit 1`；既有 `validate-herb-canon`、`validate-naming`、`validate-encoding` 資料問題仍紅，與本輪 docs-only 審計無檔案交集，沒有誤報為全綠。
+- **P4**：不發布 revised checklist，也不授權 Ting 在場的真機 migration。A–D 與 app handler gate 全數修正、納入官方 blocking rehearsal，再經下一輪獨立覆核前，Edge raw hash 重比等既有 preflight 條件仍只是必要條件，不能把本輪 NO-GO 轉為 GO。
+
 ## 2026-08-11 Codex C2B-R8 單點獨立覆核 — endpoint `7493d03`
 
 - **REVIEWED_SHA**: R7 cleanup 修正 `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`；受審 endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`。審計提交前 shared tip 另前進至 `0b9d28c904fadaa5af2b22bd380e9d126bcf0987`（supplement interaction data／ledger only）；四個 migration blobs逐一 byte-identical，store／migrate／rehearsal與 `app.js` import 區段均未變。

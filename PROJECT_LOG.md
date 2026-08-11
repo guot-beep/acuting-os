@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R9 pointer-aware runtime audit（NO-GO）
+
+- **範圍**：覆核 `5945308..602e075`；R9 checklist 1–5=`PASS/FAIL/FAIL/FAIL/FAIL`，R8 conditional GO 維持作廢，未發布 P4。
+- **數字**：獨立 fake harness=`2/9 PASS · 7/9 FAIL`；官方 pointer=`18/18`、rehearsal=`30/30`；真 clinical store 讀／寫=`0/0`，假 harness 已清理。
+- **阻斷**：pointer I/O fault 靜默降 v1、async pending sync 覆寫較新 save、runtime ID/collision/blank FK 漂移、post-switch export 無法由唯一 restore 路徑還原；`9/9` app persist callers 忽略 failure return。
+- **驗證**：invariants `3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E `12 checks`；interactions failures=`0`；app/store syntax=`2/2`；standard validators=`9 exit 0 / 3 exit 1`（既有 herb-canon／naming／encoding 資料紅燈，非本輪 docs 變更）。
+- **下一步**：依 `docs/AI_REVIEW_FEEDBACK.md` A–D 修復並加入 blocking lifecycle tests 後再排 R9；修正前禁止真機 shadow write／pointer switch，即使 Ting 在場與 Edge raw full SHA 相符亦不授權。
+
 # 2026-08-11 Codex — C2B-R8 endpoint `7493d03`，P3=`PASS/PASS/PASS/PASS`
 
 - **Gate**：R7 persistent cleanup direct/app retry=`2`、active writes=`0`、reload=`0`、state unchanged；transient cleanup retry後才 swap；C2B-R8 harness=`25 PASS / 0 FAIL`，official fake rehearsal=`30/30`。提交前 shared tip 的 supplement-only `7493d03..0b9d28c` 未改四個 migration blobs。

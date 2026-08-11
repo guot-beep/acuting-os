@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R9 / pointer-aware runtime NO-GO
+
+- **Gate**: reviewed `5945308..602e075`; checklist 1–5=`PASS/FAIL/FAIL/FAIL/FAIL`，C2b=`NO-GO`。R8 conditional GO remains void；P4 未發布，禁止真實 Edge shadow write／pointer switch。
+- **Counterexamples**: pointer read exception 靜默走 v1=`0/2 fail-loud`；save-vs-sync lost update=`0/3`；migration/runtime ID parity、collision rejection、blank FK=`0/3`；post-switch write→export→restore=`0/1`，restore 回 `5` 類 plan/raw mismatch。
+- **Measured evidence**: independent fake harness=`2/9 PASS · 7/9 FAIL`；official pointer test=`18/18`、rehearsal=`30/30` 但未覆蓋上述生命週期。真 clinical store 讀／寫=`0/0`，temp harness 已移除。
+- **Required repairs**: A pointer tri-state fail-loud；B 所有 app mutation 必須尊重 persist result；C shared patientId/collision guard + revision-safe pending transaction + blank FK null；D runtime revision-aware v2 export/restore，並加入 switch→write→export→wipe→app restore blocking rehearsal。
+- **Regression**: invariants `3/3/2/5/3 · 0 violations`、Phase E `12 checks`、interactions `0 failures`、syntax `2/2`；queue validators=`9 exit 0 / 3 exit 1`（既有 herb-canon／naming／encoding 資料紅燈，與本輪 docs 無交集）。下一輪只在 A–D 與 app handler tests 全綠後重審 R9；Ting 在場與 Edge raw full-hash 重比仍不構成單獨授權。
+
 ## [2026-08-11] Codex Handoff — C2B-R8 / conditional C2b FINAL GO
 
 - **Reviewed endpoint**: cleanup fix `c9d7e865b57e6dd276a4298b7fe4e96290ea7d47`; audited endpoint `7493d03569b3dfd4721733f63e62c5104792bb23`. Before the audit commit, shared tip advanced to supplement-only `0b9d28c904fadaa5af2b22bd380e9d126bcf0987`; all four reviewed migration blobs remained byte-identical. P3.1/P3.2/P3.3/P3.4=`PASS/PASS/PASS/PASS`; **C2b FINAL GO is published subject to the checklist below**.
