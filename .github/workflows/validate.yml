@@ -113,6 +113,16 @@ jobs:
       - name: relation registry is machine-resolvable
         run: node scripts/validate-relation-registry.js
 
+      # Codex audit 2026-08-11 §5: the K-series PHI validator was green but
+      # nothing ran it in CI, so a K4 regression sailed through. Both clinical
+      # gates block from now on — PHI regex on tracked clinical JSON, and the
+      # Clinical V2 contract invariants (R1-R8) on the tracked sample files.
+      - name: clinical PHI (K-series)
+        run: node scripts/validate-clinical-case-standard.js
+
+      - name: clinical contract invariants (R1-R8)
+        run: node scripts/validate-clinical-invariants.js
+
       - name: whitespace / conflict markers
         run: git diff --check
 
