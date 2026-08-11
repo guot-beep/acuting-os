@@ -3326,3 +3326,10 @@ Current repo state as of this log:
 - `scripts/walkthrough-phase-e.js`:假病人 A(5 visits:pain 8→7→5→4→3、sleep 5→7、supp 200mg→400mg→stopped、suspected→confirmed 留痕、證型 肝鬱→脾虛 縱向演變不覆寫、一次 AE 含 modality+resolution)+ 假病人 B 隔離對照。驗 12 項:軌跡×2、時間線重建、現況重建、隔離、R1–R7、export round-trip+append-only、AE 完整性 —— 全 PASS。
 - 全部經正規 API 建構(createExposure/applyExposureChange),可重跑、Codex 可獨立執行。瀏覽器級 UI 走查(hard gate 1/2 的 reload/isolation 實測)另排在 9/5 前用 Edge 正本入口做一次人工+自動混合。
 - 並行中:Sonnet#1 sym Batch B、Sonnet#2 supp 36 卡、Codex C2B-R4。
+
+# 2026-08-11 Fable — supp.* 36 卡入 canon(Sonnet#2 實作、Fable 審核合併)
+
+- `data/supplements/supplements.json`:36/36 骨架卡(分類:botanical 9/antiox-coenz 8/vitamins 6/minerals 6/amino-perf 3/multi 2/fatty 1/probiotics 1);dose_source 34/36(NAD+/NMN 誠實留空——staging 來源不支持具體數字);safety notes 111/111 帶來源;interaction flags 逐句粒度(anticoagulant 18/immunosuppressant 10/thyroid 11,negation-aware)。
+- 亮點判斷(抽查認可):supp.ginkgo 不連 herb.yin_xing(葉萃取 vs 白果種子,herb 卡自己的 exam_pearl 佐證);curcumin→jiang_huang、asian_ginseng→ren_shen 連結正確。
+- 實作者回報的 taxonomy 缺口:staging 用了非詞彙的 other_bioactives(melatonin/glucosamine/chondroitin 被塞進勉強類)——列入詞彙表 v2 待議(可能加 category)。
+- validate-supp-standard 36 筆 0 defects;build/ratchet/content-junk 全綠。並行:Sonnet#1 sym 卡持續、Codex C2B-R4 持續、SOL 優化提案回覆中。
