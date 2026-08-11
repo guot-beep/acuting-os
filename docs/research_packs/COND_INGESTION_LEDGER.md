@@ -611,3 +611,134 @@ this sprint (Batches J–M each had at least one EXISTING_ENRICH).
   future DECISIONS entry, since it is now a load-bearing recurring judgment
   call across two different batches and three different concept pairs.
 - Not pushed (per task instructions — branch left for review).
+
+## Skeleton tier — Batch 1: gyn_fertility / pain_msk / gi (2026-08-11)
+
+Ting's uncapped-skeleton ruling (see TING 裁定 in `docs/AI_WORK_HANDOFF.md`):
+names-first index records, canon target 209 → ~500. Branch
+`codex/cond-skeleton-500`, cut from `origin/codex/pattern-v2` tip `4e644ee`
+("Cond J-N merge finalize", 209 records), then rebased onto `7ee6972` ("C4
+skeleton-tier carve-out") after that carve-out landed mid-session — see
+"C4/skeleton contradiction" note below. Each record carries EXACTLY:
+`id`, `entity_type: "biomedical_condition"`, `name_zh`, `name_en`, `category`,
+`icd_hint`, `aliases_zh`/`aliases_en` (equal length, may be empty),
+`review_status: "skeleton"`, `authored_by: "model_draft"`. No content fields
+(no summary/etiology/red_flags/etc.) — absent is honest at this tier, not a
+defect.
+
+**Dedupe method**: dumped all 209 existing `cond.*` id/name_zh/name_en/aliases
+to a scratch file, exact-scanned every new candidate's Chinese/English/synonym
+strings against that list plus every id already added earlier in this same
+batch before assigning an id. 0 collisions found — all 68 below are
+NEW_CANDIDATE relative to the 209-canon; none required an alias-merge instead
+of a new record.
+
+| id | name_zh | name_en | icd_hint | ruling |
+|---|---|---|---|---|
+| cond.adenomyosis | 子宮腺肌症 | Adenomyosis | N80.0 | NEW — no match on `adenomyosis`/`腺肌症`/`肌腺症` |
+| cond.ovarian_cyst | 卵巢囊腫 | Ovarian Cyst | N83.20 | NEW — distinct from `cond.pcos` (cystic morphology, not the syndrome) |
+| cond.acute_pid | 急性骨盆腔炎 | Acute Pelvic Inflammatory Disease | N70.9 | NEW — distinct from existing `cond.pid_chronic` (sequelae/chronic state, not the acute episode) |
+| cond.bacterial_vaginosis | 細菌性陰道炎 | Bacterial Vaginosis | N76.0 | NEW — distinct from existing `cond.vulvovaginal_candidiasis` (fungal, not bacterial) |
+| cond.genitourinary_syndrome_menopause | 停經泌尿生殖症候群 | Genitourinary Syndrome of Menopause | N95.2 | NEW — alias `萎縮性陰道炎`/`Vulvovaginal Atrophy`; no existing GSM/atrophic-vaginitis record |
+| cond.mastitis | 乳腺炎 | Mastitis | N61 | NEW — no match |
+| cond.cervicitis | 子宮頸炎 | Cervicitis | N72 | NEW — no match |
+| cond.cervical_dysplasia | 子宮頸上皮內贅瘤 | Cervical Intraepithelial Neoplasia | N87 | NEW — no match |
+| cond.uterine_prolapse | 子宮脫垂 | Uterine Prolapse | N81.4 | NEW — no match |
+| cond.pelvic_organ_prolapse | 骨盆器官脫垂 | Pelvic Organ Prolapse | N81.9 | NEW — parent/umbrella term next to uterine_prolapse (specific subtype), same parent/child pattern as `cond.ibd` |
+| cond.endometrial_polyp | 子宮內膜息肉 | Endometrial Polyp | N84.0 | NEW — distinct from `cond.uterine_fibroids` (myometrial, not endometrial) |
+| cond.postpartum_hemorrhage | 產後出血 | Postpartum Hemorrhage | O72 | NEW — no match |
+| cond.placenta_previa | 前置胎盤 | Placenta Previa | O44 | NEW — no match |
+| cond.placental_abruption | 胎盤早期剝離 | Placental Abruption | O45 | NEW — no match |
+| cond.preterm_labor | 早產 | Preterm Labor | O60 | NEW — no match |
+| cond.gestational_diabetes | 妊娠糖尿病 | Gestational Diabetes Mellitus | O24.4 | NEW — distinct from `cond.t2dm`/`cond.type_1_diabetes` (pregnancy-specific) |
+| cond.postmenopausal_bleeding | 停經後出血 | Postmenopausal Bleeding | N95.0 | NEW — distinct from `cond.menorrhagia` (reproductive-age heavy bleeding, different red-flag context) |
+| cond.cervical_insufficiency | 子宮頸閉鎖不全 | Cervical Insufficiency | N88.3 | NEW — no match |
+| cond.gestational_hypertension | 妊娠高血壓 | Gestational Hypertension | O13 | NEW — distinct from `cond.hypertension` (essential) and `cond.preeclampsia` (proteinuria/end-organ involvement) |
+| cond.ovarian_torsion | 卵巢扭轉 | Ovarian Torsion | N83.53 | NEW — no match |
+| cond.lumbar_spinal_stenosis | 腰椎椎管狹窄症 | Lumbar Spinal Stenosis | M48.06 | NEW — distinct from `cond.lumbar_disc_herniation` |
+| cond.pseudogout | 假性痛風 | Pseudogout (CPPD) | M11.2 | NEW — distinct from `cond.gout` (different crystal, per template's non-equivalence rule) |
+| cond.sarcopenia | 肌少症 | Sarcopenia | M62.84 | NEW — no match |
+| cond.ankylosing_spondylitis | 僵直性脊椎炎 | Ankylosing Spondylitis | M45.9 | NEW — no match |
+| cond.si_joint_dysfunction | 薦髂關節功能障礙 | Sacroiliac Joint Dysfunction | M53.2 | NEW — icd_hint uncertain (SI-joint dysfunction spans M53.2X/M46.1 depending on inflammatory vs mechanical framing); used the general spinal-instability chapter code, flagged here per task instruction on ICD uncertainty |
+| cond.thoracic_outlet_syndrome | 胸廓出口症候群 | Thoracic Outlet Syndrome | G54.0 | NEW — no match |
+| cond.subacromial_impingement | 肩峰下夾擠症候群 | Subacromial Impingement Syndrome | M75.4 | NEW — distinct from `cond.rotator_cuff` (impingement vs tendinopathy, related but not equivalent) |
+| cond.shoulder_labral_tear | 肩關節唇損傷 | Shoulder Labral Tear | S43.43 | NEW — no match |
+| cond.tfcc_injury | 三角纖維軟骨複合體損傷 | Triangular Fibrocartilage Complex (TFCC) Injury | S63.539 | NEW — no match |
+| cond.patellar_tendinopathy | 髕腱病變 | Patellar Tendinopathy | M76.5 | NEW — alias `跳躍膝`/`Jumper's Knee`; distinct from `cond.patellofemoral_pain` (tendon vs joint-surface pain) |
+| cond.shin_splints | 脛前疼痛症候群 | Medial Tibial Stress Syndrome | M76.81 | NEW — no match |
+| cond.stress_fracture | 應力性骨折 | Stress Fracture | M84.3 | NEW — no match |
+| cond.generalized_osteoarthritis | 全身性骨關節炎 | Generalized Osteoarthritis | M15.9 | NEW — parent/umbrella next to `cond.knee_osteoarthritis`/`cond.hip_osteoarthritis` (site-specific children), same pattern as `cond.ibd` |
+| cond.psoriatic_arthritis | 乾癬性關節炎 | Psoriatic Arthritis | L40.5 | NEW — distinct from `cond.psoriasis` (skin) and `cond.rheumatoid_arthritis` (different autoimmune mechanism) |
+| cond.spondylolisthesis | 脊椎滑脫症 | Spondylolisthesis | M43.1 | NEW — no match |
+| cond.spondylolysis | 椎弓解離症 | Spondylolysis | M43.0 | NEW — distinct from spondylolisthesis (defect vs slippage) |
+| cond.shoulder_instability | 肩關節不穩定 | Shoulder Instability | M25.319 | NEW — no match |
+| cond.cervicogenic_headache | 頸源性頭痛 | Cervicogenic Headache | G44.841 | NEW — distinct from `cond.tension_headache`/`cond.migraine` (structural cervical origin) |
+| cond.costochondritis | 肋軟骨炎 | Costochondritis | M94.0 | NEW — no match |
+| cond.coccydynia | 尾骨痛 | Coccydynia | M53.3 | NEW — no match |
+| cond.myositis | 肌炎 | Myositis | M60.9 | NEW — distinct from `cond.myofascial_pain` (inflammatory vs mechanical) |
+| cond.polymyalgia_rheumatica | 風濕性多肌痛症 | Polymyalgia Rheumatica | M35.3 | NEW — no match |
+| cond.acute_gastroenteritis | 急性腸胃炎 | Acute Gastroenteritis | A09 | NEW — no match |
+| cond.h_pylori_infection | 幽門螺旋桿菌感染 | Helicobacter Pylori Infection | B98.0 | NEW — distinct from `cond.peptic_ulcer` (causative infection vs the ulcer disease) |
+| cond.acute_cholecystitis | 急性膽囊炎 | Acute Cholecystitis | K81.0 | NEW — distinct from `cond.gallstone_disease` (acute inflammation vs the stone disease) |
+| cond.chronic_pancreatitis | 慢性胰臟炎 | Chronic Pancreatitis | K86.1 | NEW — distinct from `cond.acute_pancreatitis` |
+| cond.diverticular_disease | 憩室病／憩室炎 | Diverticular Disease | K57.9 | NEW — no match |
+| cond.anal_fissure | 肛裂 | Anal Fissure | K60.2 | NEW — distinct from `cond.hemorrhoids` |
+| cond.celiac_disease | 乳糜瀉 | Celiac Disease | K90.0 | NEW — no match |
+| cond.lactose_intolerance | 乳糖不耐症 | Lactose Intolerance | E73.9 | NEW — no match |
+| cond.crohn_disease | 克隆氏症 | Crohn Disease | K50.9 | NEW — subtype child of existing parent `cond.ibd`, same pattern as `cond.chronic_prostatitis`/BPH-family cards |
+| cond.ulcerative_colitis | 潰瘍性結腸炎 | Ulcerative Colitis | K51.9 | NEW — subtype child of existing parent `cond.ibd` |
+| cond.barrett_esophagus | 巴瑞特食道 | Barrett Esophagus | K22.7 | NEW — distinct from `cond.gerd` (a GERD complication, not GERD itself) |
+| cond.achalasia | 賁門失弛緩症 | Achalasia | K22.0 | NEW — no match |
+| cond.hiatal_hernia | 食道裂孔疝氣 | Hiatal Hernia | K44.9 | NEW — no match |
+| cond.colonic_polyp | 大腸息肉 | Colonic Polyp | K63.5 | NEW — distinct from `cond.colorectal_cancer` |
+| cond.ischemic_colitis | 缺血性結腸炎 | Ischemic Colitis | K55.9 | NEW — no match |
+| cond.rectal_prolapse | 直腸脫垂 | Rectal Prolapse | K62.3 | NEW — no match |
+| cond.perianal_abscess | 肛門周圍膿瘍 | Perianal Abscess | K61.0 | NEW — no match |
+| cond.anal_fistula | 肛門瘻管 | Anal Fistula | K60.3 | NEW — distinct from perianal abscess (chronic tract vs acute collection) |
+| cond.chronic_hepatitis_b | 慢性B型肝炎 | Chronic Hepatitis B | B18.1 | NEW — subtype child of existing parent `cond.viral_hepatitis` |
+| cond.chronic_hepatitis_c | 慢性C型肝炎 | Chronic Hepatitis C | B18.2 | NEW — subtype child of existing parent `cond.viral_hepatitis` |
+| cond.autoimmune_hepatitis | 自體免疫性肝炎 | Autoimmune Hepatitis | K75.4 | NEW — no match |
+| cond.primary_biliary_cholangitis | 原發性膽汁性膽管炎 | Primary Biliary Cholangitis | K74.3 | NEW — no match |
+| cond.sibo | 小腸細菌過度增生 | Small Intestinal Bacterial Overgrowth | K90.89 | NEW — distinct from `cond.ibs` (overlapping symptoms, distinct mechanism per non-equivalence rule); icd_hint approximate (SIBO has no dedicated ICD-10-CM code, K90.89 "other intestinal malabsorption" is the closest billing proxy) |
+| cond.gastroparesis | 胃輕癱 | Gastroparesis | K31.84 | NEW — distinct from `cond.functional_dyspepsia` |
+| cond.duodenitis | 十二指腸炎 | Duodenitis | K29.80 | NEW — no match |
+| cond.upper_gi_bleeding | 上消化道出血 | Upper Gastrointestinal Bleeding | K92.2 | NEW — no match |
+
+**Dedupe summary this batch**: 68 candidates → 68 NEW, 0 alias-merged, 0
+collisions with the 209-canon or with each other.
+
+**ICD uncertainty flagged**: `cond.si_joint_dysfunction` (M53.2, see row
+above — genuinely ambiguous between mechanical/inflammatory coding
+conventions, not a guess dressed as certainty).
+
+**Judgment calls (parent/child, same pattern as Batches H/K/N)**:
+`cond.pelvic_organ_prolapse` (parent) added alongside `cond.uterine_prolapse`
+(specific subtype, this batch); `cond.generalized_osteoarthritis` (parent)
+added alongside the existing `cond.knee_osteoarthritis`/`cond.hip_osteoarthritis`
+(site-specific children); `cond.crohn_disease`/`cond.ulcerative_colitis` and
+`cond.chronic_hepatitis_b`/`cond.chronic_hepatitis_c` added as subtype
+children of the existing parent cards `cond.ibd`/`cond.viral_hepatitis`
+(which were themselves authored as parent/navigational cards in Batches H).
+
+**C4/skeleton contradiction found and resolved mid-session**: the first
+validator run on this batch (pre-carve-out) showed the ratchet regressing
+425→493 (exactly +68, one per new record) — isolated to code C4 ("no red
+flags"), which had no exemption for content-free skeleton records. Flagged
+as `needs input` rather than proceeding through all 4 batches at that defect
+rate. Resolution landed as commit `7ee6972` on `origin/codex/pattern-v2`
+("C4 skeleton-tier carve-out"): `review_status: "skeleton"` + zero content
+fields now counts under new code **N4** (note, non-blocking) instead of C4.
+Branch was rebased onto `7ee6972` before re-inserting this batch. Re-run
+confirms the fix: C4 51/51 (only pre-existing records, unchanged from
+pre-batch), **N4 68/68** (all new skeletons, exactly this batch's size),
+ratchet **PASS** (conditions flat at 425).
+
+**Validator state after this batch's insertion** (not yet committed at time
+of writing this row — see commit below):
+`data/pathology/condition_canon_shortlist.json` 209 → 277 records.
+`node scripts/validate-condition-standard.js`: 425 blocking defects (flat —
+C4 51, C5 227/114, C10 147/76, all pre-existing debt, none from this batch).
+`check-validation-ratchet.js`: conditions flat at 425, **PASS**.
+`validate-content-junk.js`: PASS. `validate-relations.js`: passed (no
+broken links introduced; skeleton records carry no relation fields to
+validate).
