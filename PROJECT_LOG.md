@@ -3313,3 +3313,10 @@ Current repo state as of this log:
 - Fable 直接於 app 對話收 ZIP(20KB)→ pattern-v2 資料夾(同前兩包)→ 解壓 8 檔:supp 骨架批次二(18)、sym 擴充 Batch D(20)、臨床關係種子(sym→metric 20 條 measured_by + supp→drugclass 審閱關係 12 條 + forbidden_inferences 3 條)+ README/manifest。
 - 驗證:3 JSON 解析 OK、K 系列/content-junk/ratchet 全 PASS。全 NOT CANONICAL;關係種子正好對接未來 relation_registry typed-relation 工作(Pattern V2-D),ingestion 照常走閘門。
 - 累計 staging 庫存:sym 候選 48、metric 新增 4、supp 骨架 36、關係種子 32、test scenarios、selector vocab、Patient wiring pack、ingestion contract 草案。
+
+# 2026-08-11 Fable — supp 卡基建(模板+驗證器)+ 4 個新 metric 入 canon + 路由更新
+
+- `docs/SUPP_CARD_TEMPLATE.md` v1:supp.*/drug.*/herb.* 邊界(同源物質雙實體規則)、骨架 shape(逐欄來源、interaction 旗標=審閱非斷言)、maturity 三級、來源優先序(NIH ODS>Examine>NMD)、D17 §6 引用規則。
+- `scripts/validate-supp-standard.js`:0 records 誠實 PASS(尺先掛牆);id 拼法/雙語/分類詞彙/maturity/有值必有源/樣板句粗篩。
+- outcome_metrics 26 筆(+4:fatigue_score、stool_form_bristol、hot_flash_count_day、range_of_motion_deg;name 正規化 snake_case)。build/ratchet/K 全 PASS。
+- **路由更新(Ting)**:Antigravity 退出批量製卡(不可信,與既有記憶一致);批量卡工作改 Sonnet 5,可多開但以不壓垮本機為度(實務上限 2 並行)。sym Batch B(Sonnet #1)進行中;supp 批次(Sonnet #2)接續派出。

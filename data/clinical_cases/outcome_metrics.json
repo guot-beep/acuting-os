@@ -200,6 +200,42 @@
       "category": "safety",
       "unit": "text",
       "direction_good": "none"
+    },
+    {
+      "id": "metric.fatigue_score",
+      "name": "fatigue_score",
+      "label_zh": "疲勞分數 (0–10)",
+      "label_en": "Fatigue score (0–10)",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "decrease"
+    },
+    {
+      "id": "metric.stool_form_bristol",
+      "name": "stool_form_bristol",
+      "label_zh": "Bristol 糞便型態 (1–7 型)",
+      "label_en": "Bristol stool form (type 1–7)",
+      "category": "symptom",
+      "unit": "type 1-7",
+      "direction_good": "range"
+    },
+    {
+      "id": "metric.hot_flash_count_day",
+      "name": "hot_flash_count_day",
+      "label_zh": "每日潮熱次數 (次/日)",
+      "label_en": "Hot flash count (episodes/day)",
+      "category": "symptom",
+      "unit": "episodes/day",
+      "direction_good": "decrease"
+    },
+    {
+      "id": "metric.range_of_motion_deg",
+      "name": "range_of_motion_deg",
+      "label_zh": "關節活動度 (度)",
+      "label_en": "Range of motion (degrees)",
+      "category": "function",
+      "unit": "degrees",
+      "direction_good": "range"
     }
   ]
 }
