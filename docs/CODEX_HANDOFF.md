@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — C2B-R7 / cleanup stage remains NO-GO
+
+- **Reviewed endpoint**: R6 fix `7f6137cf9218b5c07ceeab69352f9365c6eb1050`; branch endpoint `23d5228a0d2ff38a271ef27faccdc757b3ad42ea`. P3.1 `PASS`, P3.2 `PASS`, P3.3 `FAIL`, P3.4 `PASS`; P4 FINAL GO/checklist is not published.
+- **R6/R5 retest**: active-replacement interruption direct+app=`4/4 PASS`; app `.catch` defense=`1/1`; occupation-tampered envelope=`3/3`; official fake rehearsal including 6i=`27/27`.
+- **Blocking evidence**: injected candidate `removeKey` failure is swallowed by `cleanupCandidate`; store returns `ok:true` with no failures, candidate remains, and actual app reloads once. Cleanup contract=`0/4`; independent harness=`23 PASS / 4 FAIL`.
+- **Non-regression**: plan/CLI/counts=`3/3`; tampered/clean noop=`2/2`; legacy interruption+rollback/raw=`4/4`; true clinical-store reads/writes=`0/0`, fake artifacts removed. Standard clinical/data regressions are green and generated hashes are unchanged.
+- **Next gate**: make cleanup return status, require successful candidate cleanup before active replacement, surface structured cleanup failure with no reload, and add a blocking cleanup-remove injection. Ting presence and fresh Edge `file://` raw-hash parity remain necessary after a future Codex `4/4 PASS` decision.
+
 ## [2026-08-11] Codex Handoff — C2B-R6 / restore interruption remains NO-GO
 
 - **Reviewed endpoint**: `6d5a11ddb589bc622989ae5522dd0968ecaf2c85`; P3.1 `PASS`, P3.2 `PASS`, P3.3 `FAIL`, P3.4 `PASS`; C2b remains **NO-GO**, so P4 FINAL GO/checklist is not published.

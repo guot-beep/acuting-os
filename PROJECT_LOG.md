@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — C2B-R7 endpoint `23d5228`，P3=`PASS/PASS/FAIL/PASS`
+
+- **Gate**：R6 active-replacement interruption 經 direct＋app `4/4 PASS`，R5 occupation tamper `3/3 PASS`；但 candidate cleanup fault=`0/4`，C2b=`NO-GO`，未發布 P4 checklist。
+- **阻斷反例**：注入 `removeKey(candidate)` failure 後 store 吞錯並回 `ok:true`、無 failures、candidate 留存；實際 app 顯示成功且 reload=`1`。獨立 harness=`23 PASS / 4 FAIL`；官方 fake rehearsal 6i=`27/27`但未覆蓋 cleanup fault。
+- **其餘 P3**：P3.1 plan/CLI/counts=`3/3`；P3.2 tampered／clean noop=`2/2`；P3.4 staging/pointer interruption＋rollback/raw=`4/4`；app `.catch` rejection defense=`1/1`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`，build 雙 hash不變；真 store 讀／寫=`0/0`，假 fixture 清理。
+- **下一 gate**：cleanup 回傳狀態；active swap 前先確認 candidate cleanup，錯誤回 structured failure且 app 不 reload；加入 cleanup-remove 注入 rehearsal，再交 Codex。
+
 # 2026-08-11 Codex — C2B-R6 endpoint `6d5a11d`，P3=`PASS/PASS/FAIL/PASS`
 
 - **Gate**：R5 occupation-tampered envelope 經 direct store＋實際 app import `2/2` 被拒，正常失敗 active/pointer unchanged、candidate absent、reload=`0`；但 restore storage interruption 仍紅，C2b=`NO-GO`，未發布 P4 checklist。

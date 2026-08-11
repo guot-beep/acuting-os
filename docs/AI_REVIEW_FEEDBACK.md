@@ -6,6 +6,41 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R7 單點獨立覆核 — endpoint `23d5228`
+
+- **REVIEWED_SHA**: R6 回應 `7f6137cf9218b5c07ceeab69352f9365c6eb1050`；branch endpoint `23d5228a0d2ff38a271ef27faccdc757b3ad42ea`。`7f6137c..23d5228` 未再改 store／rehearsal／migrate；`app.js` 後續只加 Visit Brief，import handler byte 區段未變。
+- **STATUS**: **PAUSE**。
+- **C2b final gate**: **NO-GO**。P3.1=`PASS`、P3.2=`PASS`、P3.3=`FAIL`、P3.4=`PASS`；未達 `4/4 PASS`，本輪仍不發布 P4 FINAL GO 條件或真機當日 checklist。
+- **資料邊界**: 真實 clinical store 讀／寫=`0/0`；只使用自製虛構 `2 patients / 2 cases` fixture。OS temp fixture 與 repo audit harness 於提交前移除；未執行 Fable 自述的 33-case rehearsal。
+
+### P3.1 plan／journal gate — PASS
+
+- store plan 兩次 byte-identical；`migrate-c2b --dry-run` 與 store plan exact parity；`journal.counts.cases=999` 仍被拒，合計 `3/3 PASS`。
+- CLI self-test=`7/7 PASS`，migration syntax=`4/4`。
+
+### P3.2 Patient parity／verified-only noop — PASS
+
+- tampered Patient staging 的 same-source noop 被拒；clean rerun=`creates/updates/deletes 0/0/0`，合計 `2/2 PASS`。
+- R5 occupation-tampered envelope 經 direct restore 與實際 app handler 均拒絕；active／pointer unchanged、candidate absent、reload=`0`，R5 反例=`3/3 PASS`。
+
+### P3.3 restore 全段 fail-closed — FAIL（HIGH）
+
+- **R6 指定反例已轉綠**：full verify 後注入 active-staging `writeKey` failure，direct restore 回 `{ok:false}` 且無 throw；實際 app handler顯示驗證失敗、reload=`0`、無 unhandled rejection；兩路徑 active／pointer unchanged、candidate absent，指定四斷言=`4/4 PASS`。另強制 store Promise reject 時 app `.catch` alert／no-reload=`1/1 PASS`。
+- candidate-write、plan、post-plan raw-hash、active-replacement 四階段故障均收斂為 `{ok:false}` 並清 candidate；官方全虛構 rehearsal（含 6i）=`27/27 PASS`。
+- **cleanup 階段仍非 fail-closed**：注入 `removeKey(CANDIDATE_KEY)` failure 時，`cleanupCandidate()` 在 `js/clinical-store.js:356` 吞掉例外並無回傳狀態；成功路徑 `:378` 隨後仍回 `{ok:true}`。direct 結果 `ok=true`、`failures=undefined`、candidate 留存；走實際 app handler時 alert 成功且 reload=`1`。cleanup contract 四斷言（structured failure／failure detail／no reload／candidate absent）=`0/4`；獨立 harness 原始輸出=`23 PASS / 4 FAIL`。
+- 這與 C2B-R7 明列「candidate write／plan／hash／active 替換／cleanup 全部 try-catch 收斂為 `{ok:false,failures}`」矛盾；6i 只注入 active replacement，沒有注入 candidate cleanup，故 `27/27` 不能覆蓋此 false green。
+- **修正 gate**：讓 `cleanupCandidate()` 回傳 success/error；full verify 後先清 candidate並確認 cleanup 成功，再做 active swap。cleanup error 必須在 active replacement 前回 `{ok:false, failures:[...cleanup...]}`，app 不 reload；可做一次 best-effort retry，但不得吞錯後回 `ok:true`。新增 rehearsal 6j：`removeKey(candidate)` 第一次拋錯，斷言 structured fail、active/pointer unchanged、no reload、cleanup outcome明示。
+
+### P3.4 原 interruption／rollback gate — PASS
+
+- staging-write 與 pointer-write interruption 各使 pointer absent；rollback 清 staging／pointer／candidate且 fake v1 raw byte-identical，共 `4/4 PASS`，原 gate 未回歸。
+
+### 回歸與 P4 狀態
+
+- invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions=`0 failures`。
+- content-junk、data=`947 points`、relations、ratchet 均 exit `0`；build 前後 `app_data.js`／`knowledge_data.js` SHA-256 各自一致。relation 既存 warnings 與本 gate 無關。
+- **P4 未發布**：Ting 在場與 Edge `file://` raw hash 當下重比仍是必要條件；cleanup gate 修正並經 Codex 重測為 P3=`PASS/PASS/PASS/PASS` 前，不授權任何真機 migration write。
+
 ## 2026-08-11 Codex C2B-R6 單點獨立覆核 — endpoint `6d5a11d`
 
 - **REVIEWED_SHA**: `6d5a11ddb589bc622989ae5522dd0968ecaf2c85`；審前 `git pull --ff-only origin codex/pattern-v2` 回 `Already up to date`。
