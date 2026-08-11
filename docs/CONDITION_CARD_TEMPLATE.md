@@ -200,6 +200,20 @@ derm · endo_metabolic · cardio · uro_renal · ent_eye · immune_misc
 - 工作方向:把 blob 裡真實存在的證型**提升**成 `pattern.*` 記錄,再寫進
   `related_patterns`。驗證器的 N1 會告訴你還有幾個沒提升(目前 66 筆記錄有落差)。
 
+`import_artifacts` —— 2026-08-11 新增。CloudTCM 部落格敘事(會員案例、
+經絡檢測行銷、修辭口吻)被抓進 canonical 內容欄位時的**搬移目的地**,
+讓「先搬再清」不違反 §0 只加深不刪除。陣列,每筆:
+
+```json
+{ "original_field": "etiology_zh", "text": "(原文全文)",
+  "reason": "(為什麼判定是部落格敘事/放錯病症)", "moved_at": "2026-08-11" }
+```
+
+- **只進不出**:內容只會從 canonical 欄位搬進來,不會反向搬回去;
+  要回填 canonical 欄位一律用有具名來源的新內容。
+- **絕不**渲染進卡片、絕不拿來導覽或翻譯 —— 它是 provenance 存證,
+  跟 `tcm_patterns` 同一層待遇。
+
 ---
 
 ## §4 證型的單一命名空間(架構修正,見 DECISIONS D10)

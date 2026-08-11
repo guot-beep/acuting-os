@@ -50,7 +50,11 @@
  *      a patient to stop a medication without routing it to the prescriber —
  *      that is scope of practice, not just safety.
  *
- * C11 and C12 check SHAPE, not presence. Requiring both on all 150 records
+ *   C13 import_artifacts filled but not structured (§3.6). The relocation
+ *      target for CloudTCM blog-narrative junk moved out of canonical fields
+ *      (2026-08-11); every entry must say what moved, from where, and why.
+ *
+ * C11, C12 and C13 check SHAPE, not presence. Requiring both on all 150 records
  * would add 300 defects to a layer already carrying 396, and a gate that fails
  * every run is a gate that gets switched off.
  *
@@ -114,7 +118,12 @@ const PROVENANCE_FIELDS = new Set([
   "public_safe", "source_status",
 ]);
 // Raw import kept for provenance (§0 只加深不刪除). Never used for navigation.
-const RAW_IMPORT_FIELDS = new Set(["tcm_patterns"]);
+// import_artifacts (template §3.6, added 2026-08-11): relocation target for
+// CloudTCM blog-narrative text found squatting in canonical content fields —
+// the "move first, then clean" half of redline 3. Entries are
+// {original_field, text, reason, moved_at}. One-way: content moves IN, never
+// back out; canonical fields refill only from named sources.
+const RAW_IMPORT_FIELDS = new Set(["tcm_patterns", "import_artifacts"]);
 
 const APPROVED = new Set([
   ...CORE_FIELDS, ...CONTENT_FIELDS, ...RELATION_FIELDS,
@@ -310,6 +319,21 @@ for (const rec of scope) {
     }
   }
 
+  // C13 import_artifacts shape (§3.6). Provenance only earns its keep if every
+  // entry says what moved, from where, and why — a bare text blob is just the
+  // junk relocated, not documented.
+  if (!isEmpty(rec.import_artifacts)) {
+    if (!Array.isArray(rec.import_artifacts)) {
+      add("C13", "import_artifacts must be an array of {original_field, text, reason, moved_at} (§3.6)");
+    } else {
+      rec.import_artifacts.forEach((a, i) => {
+        const missing = ["original_field", "text", "reason", "moved_at"]
+          .filter((k) => !a || isEmpty(a[k]));
+        if (missing.length) add("C13", `import_artifacts[${i}] missing ${missing.join(", ")} (§3.6)`);
+      });
+    }
+  }
+
   // C5 / C9 bilingual twins
   for (const [zh, en] of BILINGUAL_PAIRS) {
     const hasZh = !isEmpty(rec[zh]);
@@ -384,6 +408,7 @@ const CODE_LABEL = {
   C10: "content shared verbatim across records (boilerplate/misfiled)",
   C11: "risk_factors shape (§5.5)",
   C12: "acupuncture_scope shape (§5.6)",
+  C13: "import_artifacts shape (§3.6)",
 };
 
 const cleanRecords = scope.filter((r) => !defects.some((d) => d.id === r.id)).length;
