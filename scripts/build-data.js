@@ -171,6 +171,10 @@ const knowledge = {
   exposureVocabulary: readJson("data/config/exposure_vocabulary.json"),
   adverseEventVocabulary: readJson("data/config/adverse_event_vocabulary.json"),
   modalityVocabulary: readJson("data/config/modality_vocabulary.json"),
+  // 第一批 supp.* 骨架卡(2026-08-12,docs/SUPP_CARD_TEMPLATE.md)。跟
+  // supplementCategoryVocabulary 同模式掛進 bundle:卡片讀自己的頂層形狀
+  // (`records`),不重塑一份副本。
+  supplementRecords: readJson("data/supplements/supplements.json"),
 };
 
 // Runtime red-flag resolver — IN THE BUNDLE ONLY (D13: derive, never write
