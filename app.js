@@ -6472,6 +6472,87 @@ function renderCareReadinessPanel(item, notesDesc) {
     </div>`;
 }
 
+// Timeline swim-lanes (2026-08, SOL direction B — "Patient Over Time" 具象化).
+// READ-ONLY rendering over existing data. Lanes: outcome metrics (dots+line),
+// exposures (bars from event history), adverse events (markers). D4: coarse
+// dates position at period midpoint and are drawn hollow — coarsened, never
+// silently precisified into fake exact days.
+function swimDateToNum(s) {
+  const str = String(s || "");
+  let m = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) return { t: Date.UTC(+m[1], +m[2] - 1, +m[3]), coarse: false };
+  m = str.match(/^(\d{4})-(\d{2})$/);
+  if (m) return { t: Date.UTC(+m[1], +m[2] - 1, 15), coarse: true };
+  m = str.match(/^(\d{4})$/);
+  if (m) return { t: Date.UTC(+m[1], 6, 1), coarse: true };
+  return null;
+}
+
+function renderCaseSwimlanes(item, notesAsc) {
+  const notes = (notesAsc || []).filter((n) => swimDateToNum(n.visitDate));
+  const visitDate = (vid) => { const n = notes.find((x) => x.id === vid); return n ? n.visitDate : ""; };
+  const evDate = (ev) => swimDateToNum(ev.effectiveApprox) || swimDateToNum(visitDate(ev.visitId)) || swimDateToNum(String(ev.createdAt || "").slice(0, 10));
+
+  // 收集全部時間點
+  const points = notes.map((n) => swimDateToNum(n.visitDate).t);
+  const expos = (item.agentExposures || []).map((e) => ({
+    label: e.nameText || e.agentId || "?", status: e.status || "",
+    evs: (e.events || []).map((ev) => ({ d: evDate(ev), type: ev.eventType || "" })).filter((x) => x.d)
+  })).filter((e) => e.evs.length);
+  expos.forEach((e) => e.evs.forEach((x) => points.push(x.d.t)));
+  if (points.length < 2 || new Set(points).size < 2) return "";
+
+  const min = Math.min(...points), max = Math.max(...points);
+  const X = (t) => 40 + ((t - min) / (max - min)) * 920;
+  const fmt = (t) => new Date(t).toISOString().slice(0, 10);
+
+  // metric lanes:出現次數最多的前 4 個
+  const mCount = new Map();
+  notes.forEach((n) => (n.outcomeMetrics || []).forEach((m) => mCount.set(m.metricId, (mCount.get(m.metricId) || 0) + 1)));
+  const topMetrics = [...mCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([id]) => id);
+
+  let y = 30, rows = [];
+  // 軸
+  rows.push(`<line x1="40" y1="20" x2="960" y2="20" class="sw-axis"/>
+    <text x="40" y="12" class="sw-t">${fmt(min)}</text><text x="960" y="12" class="sw-t" text-anchor="end">${fmt(max)}</text>`);
+  notes.forEach((n) => { const x = X(swimDateToNum(n.visitDate).t); rows.push(`<line x1="${x}" y1="16" x2="${x}" y2="24" class="sw-axis"/>`); });
+
+  for (const id of topMetrics) {
+    const def = getOutcomeMetricDef(id);
+    const label = def ? (def.label_zh || def.name) : id;
+    const pts = notes.map((n) => { const m = (n.outcomeMetrics || []).find((x) => x.metricId === id); return m ? { x: X(swimDateToNum(n.visitDate).t), v: m.valueNumber } : null; }).filter(Boolean);
+    if (!pts.length) continue;
+    const vals = pts.map((p) => p.v), vmin = Math.min(...vals), vmax = Math.max(...vals);
+    const Y = (v) => y + 26 - (vmax === vmin ? 13 : ((v - vmin) / (vmax - vmin)) * 22);
+    rows.push(`<text x="4" y="${y + 14}" class="sw-lane">${escapeHtml(String(label).slice(0, 14))}</text>`);
+    if (pts.length > 1) rows.push(`<polyline points="${pts.map((p) => `${p.x},${Y(p.v)}`).join(" ")}" class="sw-line"/>`);
+    pts.forEach((p) => rows.push(`<circle cx="${p.x}" cy="${Y(p.v)}" r="3.5" class="sw-dot"/><text x="${p.x}" y="${Y(p.v) - 6}" class="sw-v" text-anchor="middle">${p.v}</text>`));
+    y += 34;
+  }
+
+  for (const e of expos.slice(0, 6)) {
+    const ts = e.evs.map((x) => x.d.t);
+    const x1 = X(Math.min(...ts));
+    const stopped = e.evs.some((x) => /stop|discontinu/i.test(x.type)) || /stopped|past/i.test(e.status);
+    const x2 = stopped ? X(Math.max(...ts)) : 960;
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">${escapeHtml(String(e.label).slice(0, 14))}</text>
+      <rect x="${x1}" y="${y + 4}" width="${Math.max(x2 - x1, 4)}" height="10" rx="5" class="sw-bar${stopped ? " sw-bar-stopped" : ""}"/>`);
+    e.evs.forEach((x) => rows.push(`<circle cx="${X(x.d.t)}" cy="${y + 9}" r="3" class="sw-ev${x.d.coarse ? " sw-coarse" : ""}"/>`));
+    y += 22;
+  }
+
+  const aes = [];
+  notes.forEach((n) => (n.adverseEvents || []).forEach((a) => aes.push({ x: X(swimDateToNum(n.visitDate).t), sev: a.severity || "mild" })));
+  if (aes.length) {
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">AE</text>`);
+    aes.forEach((a) => rows.push(`<path d="M ${a.x} ${y + 3} l 5 9 h -10 z" class="sw-ae sw-ae-${escapeHtml(a.sev)}"/>`));
+    y += 22;
+  }
+
+  return `<div class="swimlane-panel"><div class="timeline-head"><strong>病程泳道 Timeline</strong><small class="timeline-date">${notes.length} visits</small></div>
+    <svg viewBox="0 0 1000 ${y + 8}" preserveAspectRatio="xMidYMin meet">${rows.join("")}</svg></div>`;
+}
+
 function renderVisitBrief(item, notesDesc) {
   if (!notesDesc.length) return "";
   const L = notesDesc[0], P = notesDesc[1] || null;
@@ -6582,6 +6663,7 @@ function renderClinicalCaseDetail(item) {
     ${renderOutcomeTrackingPanel(item)}
     ${renderAgentExposuresPanel(item)}
     ${renderEnvironmentalExposuresPanel(item)}
+    ${renderCaseSwimlanes(item, [...notes].reverse())}
     ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>

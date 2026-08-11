@@ -7264,3 +7264,18 @@ html { scroll-padding-top: 92px; }
 .care-badge-low { background: rgba(248,113,113,.15); color: #f87171; }
 .care-row { margin-top: 8px; display: flex; gap: 8px; align-items: baseline; }
 .care-row small { opacity: .7; white-space: nowrap; }
+
+/* Timeline swim-lanes (2026-08, SOL direction B) */
+.swimlane-panel { margin: 14px 0; padding: 12px 14px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.05); }
+.swimlane-panel svg { width: 100%; height: auto; display: block; }
+.sw-axis { stroke: rgba(148,163,184,.5); stroke-width: 1; }
+.sw-t { fill: rgba(148,163,184,.9); font-size: 11px; }
+.sw-lane { fill: currentColor; font-size: 11px; opacity: .75; }
+.sw-line { fill: none; stroke: #60a5fa; stroke-width: 1.5; opacity: .8; }
+.sw-dot { fill: #60a5fa; }
+.sw-v { fill: currentColor; font-size: 10px; opacity: .85; }
+.sw-bar { fill: rgba(74,222,128,.35); }
+.sw-bar-stopped { fill: rgba(148,163,184,.3); }
+.sw-ev { fill: #4ade80; }
+.sw-ev.sw-coarse { fill: none; stroke: #4ade80; stroke-width: 1.5; }
+.sw-ae { fill: #fbbf24; } .sw-ae-severe { fill: #f87171; } .sw-ae-moderate { fill: #fb923c; }
