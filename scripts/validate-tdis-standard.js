@@ -172,7 +172,7 @@ for (const rec of scope) {
   // state (眩暈 hides stroke).
   const TDIS_CONTENT_FIELDS = ["definition_zh", "definition_en", "etiology_zh", "etiology_en",
     "pathomechanism_zh", "pathomechanism_en", "key_manifestations_zh", "key_manifestations_en",
-    "related_patterns", "classical_source"];
+    "related_patterns"];   // classical_source 是出處不是內容 — 骨架可帶(2026-08-11 裁定,agent 發現的矛盾)
   const isPureSkeleton = rec.review_status === "skeleton"
     && TDIS_CONTENT_FIELDS.every((f) => isEmpty(rec[f]))
     && isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en);

@@ -235,7 +235,7 @@ node scripts/validate-tdis-standard.js --worklist --taxonomy tdx.gynecology_obst
 ## T4 與骨架層(2026-08-11,鏡像 CONDITION 模板「C4 與骨架層」)
 
 純骨架卡(`review_status: "skeleton"` 且無任何內容欄:definition/etiology/
-pathomechanism/manifestations/related_patterns/classical_source/red_flags)
+pathomechanism/manifestations/related_patterns/red_flags;classical_source 屬出處可帶)
 不主張內容 → T4 改計 N4(note,不阻擋)。一旦加入任何內容欄位,T4 立即
 全力適用 —— 「有定義但沒紅旗」正是 T4 要抓的狀態(眩暈底下藏中風)。
 骨架卡必含:id/雙語名/pinyin/taxonomy_id/aliases(成對)/review_status。
