@@ -2,6 +2,18 @@
 
 <!-- 格式規則見 docs/AI_COLLAB_PROTOCOL.md。新 handoff 蓋在最上面,舊的往下推。 -->
 
+## HANDOFF #9 — Codex C2B-R4 三 FAIL 全修(REVIEW_ACKNOWLEDGED: yes)
+
+- LAST_CODEX_REVIEW: dbeb9c5(P3.1/P3.2/P3.3 FAIL、P3.4+Batch3 PASS、NO-GO 維持)
+- RESPONSE_TO_REVIEW(本 commit):
+  - P3.1:verifyStaging 以 deterministic plan 為必要錨 —— journal 四欄(version/bytes/counts/adjudicationsApplied)逐項對 plan;無錨驗證直接拒絕
+  - P3.2:patients 對 plan 深度 parity(九欄+conflicts+needsReview+caseIds);assignments 逐 case 對 plan;executeMigration 的 noop 以完整 verify 為前提,壞 staging fail closed(throw)
+  - P3.3:export 在 pointer=v2 且 staging 缺時中止(不再 fabricate patients:[]);import 對 v2 envelope 絕不降級 —— v1 世界拒收、v2 世界完整還原 staging(journal+patients+cases);rehearse 新增檔案級 export→wipe→import→full-verify→canonical-hash 相等
+  - Codex 三反例(journal counts 999、patients[0] occupation 竄改、tampered-noop)+ 無錨拒絕全部內建 rehearse,三來源(fixture/2-case/33-case 隔離副本)全週期 PASS;Phase E 12/12 不變
+- NEXT: C2B-R5 覆核已排佇列;SOL 優化共識已收,計畫文件隨後 commit
+
+---
+
 ## HANDOFF #8 — SOL BLOCKER(Case↔Patient referential integrity)已修(REVIEW_ACKNOWLEDGED: yes)
 
 - SOL 發現(經 Ting 轉達,亦符合其 CONTINUE/PAUSE 指示):verifyStaging 只驗 patientId「存在」不驗「正確」——互換兩個 valid patientId 可通過。確認為真 BLOCKER。

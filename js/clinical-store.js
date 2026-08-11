@@ -295,6 +295,12 @@
     if (existingStaging && existingStaging.journal &&
         existingStaging.journal.source_sha256 === plan.source_sha256 &&
         existingStaging.journal.migration_version === plan.migration_version) {
+      // Codex P3.2 FAIL 修正:noop 綠燈必須以「現有 staging 通過完整 verify」
+      // 為前提 —— 壞 staging 靜默回 0/0/0 就是把竄改洗白。fail closed。
+      const v = verifyStaging(rawText, { sha256 }, plan);
+      if (!v.ok) {
+        throw new Error("executeMigration: staging exists for this source but FAILS verification — refusing idempotent noop (fail closed): " + v.failures.join("; "));
+      }
       return { creates: 0, updates: 0, deletes: 0, idempotent_noop: true };
     }
     const rawCases = JSON.parse(rawText);
@@ -316,11 +322,28 @@
     return { creates: staging.patients.length + staging.cases.length, updates: 0, deletes: 0, idempotent_noop: false };
   }
 
-  function verifyStaging(rawText, { sha256 }) {
+  function verifyStaging(rawText, { sha256 }, plan) {
     const staging = JSON.parse(readKey(STAGING_KEY) || "null");
     const failures = [];
     if (!staging) return { ok: false, failures: ["staging absent"] };
     if (staging.journal.source_sha256 !== sha256(rawText)) failures.push("journal hash != raw hash");
+    // Codex C2B-R4 P3.1/P3.2 FAIL 修正:verify 必須以 deterministic plan 為錨。
+    // journal 全欄位、patients 全深度、assignments 全對映 —— 任何一項與 plan
+    // 不同即拒絕。plan 是必要參數:沒有錨的驗證就是上一輪被打掉的那種綠燈。
+    if (!plan) return { ok: false, failures: ["verifyStaging requires the deterministic plan as anchor — refusing anchorless verification"] };
+    if (plan.source_sha256 !== sha256(rawText)) failures.push("plan hash != raw hash");
+    if (staging.journal.migration_version !== plan.migration_version) failures.push("journal.migration_version != plan");
+    if (staging.journal.source_bytes !== plan.source_bytes) failures.push("journal.source_bytes != plan");
+    if (JSON.stringify(staging.journal.counts) !== JSON.stringify(plan.counts)) failures.push("journal.counts != plan.counts");
+    const planAdj = plan.patients.flatMap((p) => (p.adjudicationsApplied || []).map((a) => ({ patientCode: p.patientCode, ...a })));
+    if (JSON.stringify(staging.journal.adjudicationsApplied) !== JSON.stringify(planAdj)) failures.push("journal.adjudicationsApplied != plan");
+    // patients:九欄+conflicts+needsReview+caseIds 逐筆深度相等(順序即 plan 順序)。
+    if (JSON.stringify(staging.patients) !== JSON.stringify(plan.patients)) failures.push("staged patients differ from plan (deep parity)");
+    // assignments:每個 staged case 的 patientId 必須等於 plan.caseAssignments。
+    const planPid = new Map(plan.caseAssignments.map((a) => [a.caseId, a.patientId]));
+    for (const c of staging.cases || []) {
+      if ((planPid.get(c.id) ?? null) !== (c.patientId ?? null)) failures.push(`${c.id}: patientId differs from plan assignment`);
+    }
     const rawCases = JSON.parse(rawText);
     if (staging.cases.length !== rawCases.length) failures.push(`case count ${staging.cases.length} != raw ${rawCases.length}`);
     const rawById = new Map(rawCases.map((c) => [c.id, c]));
@@ -365,8 +388,8 @@
     return { ok: failures.length === 0, failures };
   }
 
-  function switchPointer(rawText, hasher) {
-    const v = verifyStaging(rawText, hasher);
+  function switchPointer(rawText, hasher, plan) {
+    const v = verifyStaging(rawText, hasher, plan);
     if (!v.ok) throw new Error("switchPointer refused — verifyStaging failures: " + v.failures.join("; "));
     writeKey(POINTER_KEY, "v2");
     return { switched: true };

@@ -7429,9 +7429,14 @@ function exportClinicalCases() {
   let payload;
   if (pointer === "v2") {
     const staging = JSON.parse(localStorage.getItem(AcuTingClinicalStore.STAGING_KEY) || "null");
-    // staging carries schema_version/journal/patients/cases — export the whole
-    // envelope; a v2 restore needs all of it (P3.3 round-trip requirement).
-    payload = staging ?? { schema_version: 2, patients: [], cases: clinicalCases };
+    // Codex C2B-R4: fail closed — pointer=v2 with staging missing is a broken
+    // world; exporting a fabricated {patients:[]} envelope would masquerade
+    // as a valid backup and could later "restore" data loss.
+    if (!staging) {
+      alert("匯出中止:pointer=v2 但 staging 不存在——資料狀態異常,請先 rollback 或聯絡維護。未產生任何檔案。");
+      return;
+    }
+    payload = staging;
   } else {
     payload = clinicalCases;
   }
@@ -7488,13 +7493,26 @@ function importClinicalCases(event) {
   reader.onload = () => {
     try {
       let imported = JSON.parse(reader.result);
-      // P3.3 companion: accept the v2 export envelope {schema_version:2,
-      // patients, cases} as well as the legacy bare array. Pre-switch, the
-      // envelope's cases[] feed the same merge/restore flow below; full v2
-      // restore (patients + pointer) is deliberately part of the P4-gated
-      // migration tooling, not this import path.
+      // Codex C2B-R4 P3.3: a v2 envelope is NEVER silently downgraded to its
+      // cases[] (that discards patients+journal — exactly the data the v2
+      // backup exists to carry). In the v2 world it restores the FULL
+      // envelope into staging; outside the v2 world it is refused outright.
       if (imported && !Array.isArray(imported) && imported.schema_version === 2 && Array.isArray(imported.cases)) {
-        imported = imported.cases;
+        const pointer = localStorage.getItem("acuting-clinical-active");
+        if (pointer !== "v2") {
+          alert("匯入被拒絕:這是 v2 備份(含 patients 層),目前系統仍在 v1 模式。v2 還原屬於 migration 工具流程,不能在這裡降級匯入(會丟失 patients/journal)。");
+          return;
+        }
+        if (!(imported.journal && Array.isArray(imported.patients))) {
+          alert("匯入被拒絕:v2 備份缺 journal/patients——檔案不完整。");
+          return;
+        }
+        const really = window.confirm(`⚠️ v2 完整還原:${imported.patients.length} patients / ${imported.cases.length} cases 將覆蓋現有 staging。確定?`);
+        if (!really) return;
+        localStorage.setItem(AcuTingClinicalStore.STAGING_KEY, JSON.stringify(imported));
+        alert("v2 staging 已還原。頁面將重新載入。");
+        location.reload();
+        return;
       }
       if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
       const incoming = imported.map(normalizeClinicalCase);
