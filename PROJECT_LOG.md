@@ -1,3 +1,12 @@
+# 2026-08-11 Claude — CloudTCM 部落格殘留清理:30 筆 cond.* 的 embed 標記與敘事搬遷
+
+- **做了什麼**:`condition_canon_shortlist.json` 裡 30 筆記錄、32 個欄位含 CloudTCM embed 標記(`[@ad:1]`×30、`[@post:N]`×6、`[@formula:N]`×2,共 40 個——派工單只列出 `[@ad/post:N]`,寬 regex 另抓到 2 個 `[@formula:N]`)。逐篇讀完全部 23 篇 distinct 全文後分類:**30 個欄位整段搬進 `import_artifacts`**(會員案例、經絡檢測行銷、修辭口吻;其中多筆根本放錯病症——月經不調通論重複於 7 筆 GYN 卡、氣喘文在 post_covid、心律不整文在 heart_failure、失眠文在 circadian_disorder、癃閉文在 recurrent_uti),**2 個欄位僅剝標記保留原文**(cond.asthma、cond.palpitations 的證候辨證內容有實質價值)。搬移共保存 98,011 字元,零刪除。
+- **Schema 前置**:派工單引用的模板 §3.5.5 `import_artifacts` **並不存在**(§3.5 是 category 枚舉),資料裡也沒有先例;依 C8 註明的 schema-change 程序補齊:模板 §3.6 先寫規格(`{original_field, text, reason, moved_at}`,單向、永不渲染),validator 再核准欄位並加 C13 shape check(引入時 0 缺陷)。
+- **數字 before→after**:validate-condition-standard defects `553 → 512`(C10 `189→176`,C5 `292→264`;每一步與預測相符:batch1 −13、batch2 −28)。canonical 欄位殘留 embed 標記 `40 → 0`(寬 regex `\[@[a-z_]+:\d+\]` 全檔重掃證實)。ratchet baseline `577 → 512` 已 `--update` 鎖定(同時鎖入本 branch 先前工作的 patterns `220 → 0`)。
+- **驗證**(可重現指令):`node scripts/build-data.js`、`node scripts/validate-condition-standard.js --json`(defects 512)、`node scripts/check-validation-ratchet.js`(PASS no regressions)、`validate-content-junk`(PASS)、`validate-relations`／`validate-data`(PASS,警告皆既存)、`git diff --check`(乾淨)。App 以 dev-server 實開:bundle 內 heart_failure etiology 空+1 artifact、asthma 原文無標記,console 零錯誤;`import_artifacts` 無任何 UI 引用(依規格永不渲染)。
+- **來源缺口/已知未解**:28 筆記錄的 etiology_zh(及 circadian 的 western_pathology_zh、migraine×2 的 western_pathology_zh)現為誠實空缺,**待具名來源回填**——這是 fill 線的下一批。cond.asthma／cond.palpitations 保留文仍是 CloudTCM 口吻(含「鐵三角」私有概念與孤兒圖說),留待內容精修。`validate-content-junk` 只掃陣列,仍不會抓 prose 裡的 embed 標記——已全數清零,但防再犯需另議是否加檢查(scripts 改動需 Ting 點頭,本批僅動 validate-condition-standard 落地 schema)。
+- **Commits**:`2be7b60`(schema)、`0ad416c`(batch1 GYN 7筆)、`3ce2675`(batch2 23筆)、`12d29e3`(ratchet baseline)。
+
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
 - **做了什麼**：保留既有 Pattern V2-B／V2-C canonical payload，補齊 Pattern preview／big-card 對 canonical `key_signs_*`、`supporting_signs_*`、`mechanism_*`、`common_causes_*`、`progression_*`、舌脈、八綱、structured differentials、aliases、treatment links 與真實 `sources`／`field_sources` 的相容呈現及搜尋；移除 renderer 的虛構預設來源 fallback。
