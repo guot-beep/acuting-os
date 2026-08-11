@@ -1,0 +1,356 @@
+{
+  "status": "fictional_test_data_not_phi",
+  "version": "v0",
+  "patients": [
+    {
+      "patientKey": "fictional_patient_a",
+      "displayName": "Fictional Patient A",
+      "cases": [
+        {
+          "caseKey": "case_headache_sleep",
+          "title": "Recurrent headache with poor sleep",
+          "visits": [
+            {
+              "visit": 1,
+              "symptoms": [
+                "sym.headache",
+                "sym.insomnia"
+              ],
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 8,
+                  "relatedSymId": "sym.headache"
+                },
+                {
+                  "metricId": "metric.sleep_duration_hours",
+                  "value": 5.0,
+                  "relatedSymId": "sym.insomnia"
+                }
+              ],
+              "patterns": [
+                {
+                  "patternId": "pattern.fixture_a",
+                  "role": "working",
+                  "isPrimary": true,
+                  "confidence": 0.75
+                },
+                {
+                  "patternId": "pattern.fixture_b",
+                  "role": "differential",
+                  "isPrimary": false,
+                  "confidence": 0.35
+                }
+              ],
+              "supplementChanges": [
+                {
+                  "canonicalId": "supp.magnesium",
+                  "eventType": "initial_recorded",
+                  "doseText": "200 mg",
+                  "frequency": "nightly"
+                }
+              ]
+            },
+            {
+              "visit": 2,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 6,
+                  "relatedSymId": "sym.headache"
+                },
+                {
+                  "metricId": "metric.sleep_duration_hours",
+                  "value": 5.8,
+                  "relatedSymId": "sym.insomnia"
+                }
+              ],
+              "supplementChanges": [
+                {
+                  "canonicalId": "supp.magnesium",
+                  "eventType": "dose_changed",
+                  "doseText": "400 mg",
+                  "frequency": "nightly"
+                }
+              ]
+            },
+            {
+              "visit": 3,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 5,
+                  "relatedSymId": "sym.headache"
+                },
+                {
+                  "metricId": "metric.sleep_duration_hours",
+                  "value": 6.2,
+                  "relatedSymId": "sym.insomnia"
+                }
+              ],
+              "adverseEvents": [
+                {
+                  "adverseEventId": "adverse_event.cupping_blister",
+                  "severity": "mild",
+                  "relatedModalityId": "modality.cupping",
+                  "resolved": true
+                }
+              ]
+            },
+            {
+              "visit": 4,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 4,
+                  "relatedSymId": "sym.headache"
+                }
+              ],
+              "supplementChanges": [
+                {
+                  "canonicalId": "supp.magnesium",
+                  "eventType": "stopped"
+                }
+              ]
+            },
+            {
+              "visit": 5,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 3,
+                  "relatedSymId": "sym.headache"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "patientKey": "fictional_patient_b",
+      "displayName": "Fictional Patient B",
+      "cases": [
+        {
+          "caseKey": "case_low_back_pain",
+          "title": "Mechanical low back pain",
+          "visits": [
+            {
+              "visit": 1,
+              "symptoms": [
+                "sym.low_back_pain"
+              ],
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 7,
+                  "relatedSymId": "sym.low_back_pain"
+                },
+                {
+                  "metricId": "metric.range_of_motion_deg",
+                  "value": 55,
+                  "relatedSymId": "sym.low_back_pain"
+                }
+              ]
+            },
+            {
+              "visit": 2,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 5,
+                  "relatedSymId": "sym.low_back_pain"
+                },
+                {
+                  "metricId": "metric.range_of_motion_deg",
+                  "value": 62,
+                  "relatedSymId": "sym.low_back_pain"
+                }
+              ]
+            },
+            {
+              "visit": 3,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 4,
+                  "relatedSymId": "sym.low_back_pain"
+                }
+              ],
+              "lifestyleChanges": [
+                {
+                  "lifeId": "life.sedentary_time",
+                  "valueText": "reduced"
+                }
+              ]
+            },
+            {
+              "visit": 4,
+              "metrics": [
+                {
+                  "metricId": "metric.pain_score",
+                  "value": 3,
+                  "relatedSymId": "sym.low_back_pain"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caseKey": "case_seasonal_congestion",
+          "title": "Seasonal nasal congestion",
+          "visits": [
+            {
+              "visit": 1,
+              "symptoms": [
+                "sym.nasal_congestion"
+              ],
+              "environmentalChanges": [
+                {
+                  "exposureId": "exposure.wildfire_smoke",
+                  "eventType": "initial_recorded",
+                  "status": "suspected",
+                  "provenance": "patient_reported"
+                }
+              ]
+            },
+            {
+              "visit": 2,
+              "environmentalChanges": [
+                {
+                  "exposureId": "exposure.wildfire_smoke",
+                  "eventType": "status_changed",
+                  "status": "confirmed",
+                  "provenance": "clinician_recorded"
+                }
+              ]
+            },
+            {
+              "visit": 3,
+              "symptoms": [
+                "sym.nasal_congestion"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "patientKey": "fictional_patient_c",
+      "displayName": "Fictional Patient C",
+      "cases": [
+        {
+          "caseKey": "case_gi",
+          "title": "Bloating and constipation",
+          "visits": [
+            {
+              "visit": 1,
+              "symptoms": [
+                "sym.abdominal_bloating",
+                "sym.constipation"
+              ],
+              "metrics": [
+                {
+                  "metricId": "metric.bowel_movements_per_week",
+                  "value": 3,
+                  "relatedSymId": "sym.constipation"
+                }
+              ]
+            },
+            {
+              "visit": 2,
+              "metrics": [
+                {
+                  "metricId": "metric.bowel_movements_per_week",
+                  "value": 4,
+                  "relatedSymId": "sym.constipation"
+                }
+              ]
+            },
+            {
+              "visit": 3,
+              "metrics": [
+                {
+                  "metricId": "metric.bowel_movements_per_week",
+                  "value": 5,
+                  "relatedSymId": "sym.constipation"
+                }
+              ],
+              "lifestyleChanges": [
+                {
+                  "lifeId": "life.hydration",
+                  "valueText": "increased"
+                }
+              ]
+            },
+            {
+              "visit": 4,
+              "metrics": [
+                {
+                  "metricId": "metric.bowel_movements_per_week",
+                  "value": 6,
+                  "relatedSymId": "sym.constipation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "patientKey": "fictional_patient_d",
+      "displayName": "Fictional Patient D",
+      "cases": [
+        {
+          "caseKey": "case_hot_flash",
+          "title": "Hot flashes",
+          "visits": [
+            {
+              "visit": 1,
+              "symptoms": [
+                "sym.hot_flash"
+              ],
+              "metrics": [
+                {
+                  "metricId": "metric.hot_flash_count_day",
+                  "value": 7,
+                  "relatedSymId": "sym.hot_flash"
+                }
+              ]
+            },
+            {
+              "visit": 2,
+              "metrics": [
+                {
+                  "metricId": "metric.hot_flash_count_day",
+                  "value": 5,
+                  "relatedSymId": "sym.hot_flash"
+                }
+              ]
+            },
+            {
+              "visit": 3,
+              "metrics": [
+                {
+                  "metricId": "metric.hot_flash_count_day",
+                  "value": 4,
+                  "relatedSymId": "sym.hot_flash"
+                }
+              ]
+            },
+            {
+              "visit": 4,
+              "metrics": [
+                {
+                  "metricId": "metric.hot_flash_count_day",
+                  "value": 3,
+                  "relatedSymId": "sym.hot_flash"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

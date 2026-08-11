@@ -3280,3 +3280,10 @@ Current repo state as of this log:
 - **ee00856**:`store.checkClinicalInvariants()` 成為 R1–R7 單一來源(CLI validator 與 import 前驗證共用);import 拒收契約違規(persist 前,不 silent 修)。實測:壞 fixture 3 違規全抓;**33 個真實病例 = 0 違規/8 個 legacy role warnings**;0 console errors。
 - **CI 接線受阻(預期)**:validate.yml 加 K 系列+invariants 兩步的 commit 被 GitHub 拒(PAT 無 workflow scope,記憶中的已知限制)。已 soft-reset,改動留在工作樹;需 Ting 在 GitHub web editor 手動加(delta 見工作樹 diff,只有 10 行)。
 - **SOL 研究包入庫**(Acuting_OC_Tonight_ClinicV2_research):docs/research_packs/ 5 檔 + data/research_staging/ 3 檔,全標 NOT CANONICAL。sym 候選 28、metric 候選 10(雙語,與 outcome_metrics id 對齊);capture examples 與已實作契約逐項吻合(magnesium 三態、suspected→confirmed 保痕、role⇔isPrimary、lifestyle 不自動轉證)。K 系列 PASS。ingestion 需照常走 canonical 閘門,等 Codex/模板鎖定。
+
+# 2026-08-11 Fable — Codex GO(P0–P2)+ SOL 第二包收檔入庫 + 正本 origin 確認
+
+- **Codex 覆核(b270b50)**:三 code gate 3/3 PASS(R8 反例 2/2 擋、coverage 斷言生效、K4 4/4+5/5、migration bytes/null/裁決/碰撞全過)。**GO:限 P0–P2 只讀 preflight**;P3 writer/rollback rehearsal 未提交,真機寫入仍 NO-GO(Codex final GO + Ting 在場)。
+- **P0.1 正本確認(Ting)**:真實病例輸入 = **Edge + file:// 本機 index.html**(C:\Projects\acupuncture-point-app\index.html,預設瀏覽器 MSEdgeHTM 佐證)。⚠️ 這與 session 內 localhost:8361 預覽面板所見的 33 cases 是**不同 origin**——正本內容待 raw 擷取後比對,不得假設相同。preflight 計算器已備(`scripts/preflight-c2b.js`,e07791b,拒絕輸出進 repo)。raw 擷取方案:Edge 關閉後以 --remote-debugging-port 重啟 + CDP 只讀 localStorage(Node 內建 WebSocket),待 Ting 給空檔。
+- **SOL 第二包(Fable 直接於 app 對話收檔)**:AcuTing_OS_Tonight_Pack_2(34KB)存至 pattern-v2 資料夾(同第一包),解壓 14 檔:4-pack(Patient Wiring/Test Scenario/Selector Vocab/Ingestion Contract 草案)+ CR-001 sym 種子 28 筆(全 both,含紅旗+來源)+ CR-002 metric 新增 4 筆(fatigue_score/stool_form_bristol/hot_flash_count_day/range_of_motion_deg;與現有 id 重複者已由 SOL 去重)+ CR-003 supp 骨架 18 筆(NAD+/NR/NMN 標 uncertainty)+ manifest。全 JSON 解析 OK、K 系列/content-junk/ratchet 全 PASS。全部 NOT CANONICAL,ingestion 走正常閘門。
+- **Ting 願望入 backlog**:本機網頁存病例(現行 file:// 即是)+ 手機網站(sprint STRETCH 已列 mobile,強度待 9/5 後排)。
