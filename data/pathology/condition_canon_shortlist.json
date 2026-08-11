@@ -21175,8 +21175,8 @@
         "pattern.qi_blood_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「中風」後遺,課件以「風痰瘀血,痹阻經絡」為恢復期總綱。急性期風陽痰火之勢已過,留下的是絡損之局:氣虛血瘀——正氣虧於大病,氣不帥血,瘀滯經絡,半身不遂、肢軟無力(補陽還五湯所主之象);風痰阻絡——痰濁流竄,舌強言蹇、口眼喎斜;肝腎虧虛——年高精衰,筋骨失養,患肢攣縮僵硬、步履不穩;心脾兩虛者情志低落、倦怠寡言(中風後鬱之象)。恢復之理在「通」與「養」並進:益氣活血、化痰通絡為軸,滋補肝腎為本;針灸取穴循經導氣,配合肢體用進——「用進廢退」,與神經可塑性之理不謀而合。",
+      "western_pathology_zh": "中風後復健的生物學基礎是神經可塑性:梗塞核心的神經元不可復生,但半暗帶存活組織、病灶周邊皮質與對側半球可經突觸重塑與功能重組接手部分功能——重組由使用驅動,任務導向、高重複度的訓練是驅動訊號,恢復速度以發病後早期數月最快,其後趨緩但不歸零。復健醫學的常見標的各有機轉:痙攣(上運動神經元損傷後脊髓反射去抑制)、偏癱肩痛(肩半脫位、痙攣、沾黏並存)、失語與吞嚥障礙(誤吸與肺炎風險所在)、中風後憂鬱(發生率高且直接拖累參與度)。「習得性廢用」是可塑性的反面教訓——不用的患肢被大腦邊緣化,故限制健側、強迫使用患側自成一派療法;二級預防(血壓、抗栓、血脂、心房顫動)與復健並行,是防再中風的另一半。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21208,7 +21208,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "The sequela stage of Chinese medicine's wind stroke (zhong feng); the handout's formula for recovery is \"wind, phlegm, and static blood obstructing channels and collaterals.\" The acute blaze of wind-yang and phlegm-fire has passed; what remains is injured collaterals: qi deficiency with blood stasis — the upright depleted by the great illness, qi failing to marshal blood, stasis lodged in the channels: hemiplegia with soft, powerless limbs (the pattern Bu Yang Huan Wu Tang governs); wind-phlegm obstructing the collaterals — phlegm turbidity roaming, stiff tongue with slurred speech, deviated mouth and eye; liver-kidney depletion — advanced age with waning essence, sinew and bone unnourished: contracted rigid limbs, unsteady gait; heart-spleen deficiency bringing low mood and weary silence (the post-stroke depression image). Recovery proceeds by \"unblocking\" and \"nourishing\" together: boosting qi and invigorating blood, transforming phlegm and opening collaterals as the axis, enriching liver and kidney as the root; acupuncture guides qi along the channels while the limb is put to use — \"use advances, disuse withers,\" arriving at neuroplasticity's own law by another road.",
+      "western_pathology_en": "The biology under post-stroke rehabilitation is neuroplasticity: neurons in the infarct core do not return, but surviving penumbral tissue, peri-lesional cortex, and the contralateral hemisphere can take over partial function through synaptic remodeling and reorganization — reorganization is use-driven, task-oriented high-repetition training is the driving signal, and recovery runs fastest in the early months before slowing without ever reaching zero. Rehabilitation's standard targets each have a mechanism: spasticity (spinal reflex disinhibition after upper motor neuron injury), hemiplegic shoulder pain (subluxation, spasticity, and adhesion coexisting), aphasia and dysphagia (where aspiration and pneumonia risk live), and post-stroke depression (common, and a direct drag on participation). \"Learned non-use\" is plasticity's cautionary mirror — the unused limb is marginalized by the brain, hence constraint-induced therapy forcing the affected side; secondary prevention (blood pressure, antithrombotics, lipids, atrial fibrillation) runs alongside rehabilitation as the other half of preventing recurrence.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/4 Wind Stroke.docx(Tier-1 課堂 handout)",
+          "中醫內科學教材通說(中風恢復期)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/4 Wind Stroke.docx(Tier-1 課堂 handout)",
+          "中醫內科學教材通說(中風恢復期)"
+        ],
+        "western_pathology_zh": [
+          "AHA/ASA — 中風復健通說(可塑性、任務導向訓練)",
+          "MedlinePlus — Stroke Rehabilitation (https://medlineplus.gov/strokerehabilitation.html)"
+        ],
+        "western_pathology_en": [
+          "AHA/ASA — 中風復健通說(可塑性、任務導向訓練)",
+          "MedlinePlus — Stroke Rehabilitation (https://medlineplus.gov/strokerehabilitation.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/strokerehabilitation.html"
+      ]
     },
     {
       "id": "cond.peripheral_neuropathy",
@@ -21226,8 +21265,8 @@
         "pattern.phlegm_damp"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「痺證」「麻木」「痿證」論。「氣不至則麻,血不榮則木」——氣血不足,四末失榮,是麻木之總綱:遠端先起、對稱上行,正合「四末者,氣血之所難至」之勢。分層:氣血兩虛——久病體衰,肌膚不仁,兼倦怠面白;肝腎虧虛——精血不足,筋脈失養,麻木入痿、步履不穩;瘀血阻絡——久病入絡,麻木刺痛固定、膚色黯滯;痰濕浸淫——體豐濕盛,肢體重著不仁;寒凝絡脈者得溫則減。虛為本(氣血肝腎),瘀痰為標,故治重益氣養血、滋補肝腎,佐活血通絡、化痰滲濕;灼痛甚者屬絡中鬱熱,又當涼絡——纖維型別之異,中醫以麻(氣虛)木(血虛)痛(瘀熱)分而應之。",
+      "western_pathology_zh": "周邊神經病變最常見的型態是長度依賴性軸突病:最長的神經纖維最先受損,症狀自足趾向上蔓延,及膝時手指開始——「襪套-手套」分布由此而來。病因譜是這張卡的主體:代謝(糖尿病居首、慢性腎衰、甲狀腺低下)、營養(B12 缺乏——注意長期二甲雙胍與制酸劑使用者、酗酒)、藥物毒性(化療鉑類與紫杉類、異煙肼)、免疫介導(急性的 Guillain-Barré 與慢性的 CIDP——脫髓鞘型,可治,不可漏)、感染(HIV、麻風)、遺傳、副蛋白血症與副腫瘤。纖維型別決定表現:大纖維損傷致麻木、位置覺與振動覺喪失、步態不穩;小纖維損傷致灼痛、針刺感與自主神經症狀(體位性低血壓、排汗異常)且常規神經傳導檢查可正常。找不到原因者仍有相當比例——但可治原因(B12、免疫性、藥物)一個都漏不得。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21259,7 +21298,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from bi syndrome, numbness (ma mu), and wei (atrophy) disorder. \"Where qi does not arrive there is tingling; where blood does not nourish there is numbness\" — insufficient qi and blood leaving the extremities unnourished is the governing formula, and the distal-first, symmetric ascent fits \"the four extremities are where qi and blood arrive with most difficulty.\" Layers: dual qi-blood deficiency — chronic illness and decline, skin without feeling, with weariness and pallor; liver-kidney depletion — essence and blood short, sinews unnourished: numbness passing into atrophy and unsteady walking; blood stasis obstructing collaterals — long illness entering the collaterals: fixed stabbing numbness, dusky skin; phlegm-damp soaking — a full habitus with heavy, insensate limbs; cold congealing the collaterals easing with warmth. Deficiency is the root (qi-blood, liver-kidney), stasis and phlegm the branch — so treatment stresses boosting qi and nourishing blood, enriching liver and kidney, assisted by invigorating collaterals and transforming phlegm; where burning pain dominates, heat constrained in the collaterals calls for cooling them — the fiber-type distinction answered in Chinese terms as tingling (qi deficiency), numbness (blood deficiency), pain (stasis-heat).",
+      "western_pathology_en": "The commonest pattern of peripheral neuropathy is length-dependent axonopathy: the longest fibers fail first, symptoms creep up from the toes, and the fingers join when the level reaches the knees — hence \"stocking-glove.\" The etiologic spectrum is this card's substance: metabolic (diabetes first, chronic renal failure, hypothyroidism), nutritional (B12 deficiency — mind long-term metformin and acid-suppressant users, and alcohol excess), drug toxicity (platinum and taxane chemotherapy, isoniazid), immune-mediated (acute Guillain-Barré and chronic CIDP — demyelinating, treatable, not to be missed), infectious (HIV, leprosy), hereditary, paraproteinemic and paraneoplastic. Fiber type decides the picture: large-fiber damage brings numbness, lost position and vibration sense, unsteady gait; small-fiber damage brings burning, pins-and-needles, and autonomic signs (orthostatic hypotension, sweating changes) with routine conduction studies often normal. A fair share remains idiopathic after work-up — but the treatable causes (B12, immune, drug) can none of them be missed.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痺證/麻木/痿證門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痺證/麻木/痿證門)"
+        ],
+        "western_pathology_zh": [
+          "NINDS — 周邊神經病變通說(病因譜、纖維型別)",
+          "MedlinePlus — Peripheral Nerve Disorders (https://medlineplus.gov/peripheralnervedisorders.html)"
+        ],
+        "western_pathology_en": [
+          "NINDS — 周邊神經病變通說(病因譜、纖維型別)",
+          "MedlinePlus — Peripheral Nerve Disorders (https://medlineplus.gov/peripheralnervedisorders.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/peripheralnervedisorders.html"
+      ]
     },
     {
       "id": "cond.diabetic_neuropathy",
@@ -21279,8 +21355,8 @@
       "review_status": "draft",
       "fetched_at": "2026-07-23T07:46:08.471Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫置於「消渴」變證,古人已見:「消渴日久,可致雀目、癰疽、麻木不仁」。病機主線是氣陰兩傷、絡脈瘀阻:消渴燥熱傷陰,陰虛則燥熱愈熾,久則氣隨陰耗——氣虛不運,血行澀滯,瘀阻絡脈,四末失榮,麻木由足而起;陰損及陽者,肢冷如冰、得溫不減(陽虛絡瘀之重象);肝腎虧虛,筋脈失養,則麻木入痿。灼痛夜甚者,陰虛絡熱;胃輕癱之嘔脹,脾虛胃逆之象;汗出異常,營衛失和。「治消渴必兼治絡」是此變證之訓:益氣養陰為本,活血通絡貫穿始終——而控糖即中醫「治其本病」,足部護理即「既病防變」。",
+      "western_pathology_zh": "糖尿病周邊神經病變是高血糖長期毒性的多路徑總和:多元醇路徑亢進(葡萄糖經醛糖還原酶轉為山梨醇,滲透壓與氧化還原失衡)、糖化終產物沉積(蛋白質功能受損、發炎受體活化)、蛋白激酶 C 活化與微血管病變(神經滋養血管缺血)、氧化壓力與粒線體損傷——共同指向軸突能量代謝崩潰,故最長纖維最先犧牲。臨床型態:遠端對稱感覺運動多神經病變最常見(足部麻木為主——「無感」比疼痛更危險,是潰瘍與截肢的上游);痛性小纖維神經病變(灼痛夜甚);自主神經病變(胃輕癱、體位性低血壓、無症狀低血糖——低血糖警覺喪失是用藥安全的直接變數);單神經病變(動眼神經、股神經)。血糖控制在第1型糖尿病明確延緩進展,第2型效果較弱——提示代謝症候群其他成分共同參與;足部檢查與衛教是實證最強的傷害預防。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21313,9 +21389,44 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/88"
+        "https://cloudtcm.com/disease/tcm/88",
+        "https://medlineplus.gov/diabeticnerveproblems.html"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine places this among the transmuted patterns of xiao ke (wasting-thirst); the ancients saw it — \"long-standing wasting-thirst can bring sparrow-eye blindness, abscesses, and numbness without feeling.\" The mainline mechanism is dual injury of qi and yin with stasis blocking the collaterals: wasting-thirst's dryness-heat wounds yin, deficient yin feeds the heat, and in time qi drains away with yin — qi too weak to move, blood running astringed, stasis lodging in the collaterals, the extremities unnourished, numbness rising from the feet; where yin damage reaches yang, limbs ice-cold and unrelieved by warmth (the grave image of yang deficiency with collateral stasis); liver-kidney depletion starving the sinews carries numbness into atrophy. Burning pain worse at night is yin deficiency with collateral heat; the bloating and retching of gastroparesis, spleen weakness with stomach counterflow; disordered sweating, disharmony of nutritive and defensive. \"Treating wasting-thirst, one must also treat the collaterals\" is this pattern's teaching: boost qi and nourish yin at the root, invigorate blood and unblock collaterals throughout — glycemic control is Chinese medicine's \"treating the root disease,\" and foot care its \"preventing transmutation once ill.\"",
+      "western_pathology_en": "Diabetic peripheral neuropathy is the sum of chronic glucotoxicity's pathways: polyol-pathway flux (glucose to sorbitol via aldose reductase, osmotic and redox imbalance), advanced glycation end-product deposition (crippled proteins, inflammatory receptor activation), protein kinase C activation with microvascular disease (ischemia of the vasa nervorum), and oxidative stress with mitochondrial injury — converging on collapse of axonal energy metabolism, which is why the longest fibers are sacrificed first. Clinical forms: distal symmetric sensorimotor polyneuropathy is commonest (foot numbness dominant — and \"no feeling\" is more dangerous than pain, the upstream of ulcer and amputation); painful small-fiber neuropathy (burning, worse at night); autonomic neuropathy (gastroparesis, orthostatic hypotension, hypoglycemia unawareness — a direct variable in medication safety); and mononeuropathies (oculomotor, femoral). Glycemic control clearly slows progression in type 1 diabetes, less so in type 2 — implicating the rest of the metabolic syndrome; foot examination and education remain the best-evidenced harm prevention.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(消渴變證)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(消渴變證)"
+        ],
+        "western_pathology_zh": [
+          "ADA — 糖尿病神經病變通說(機轉路徑、足部照護)",
+          "MedlinePlus — Diabetic Nerve Problems (https://medlineplus.gov/diabeticnerveproblems.html)"
+        ],
+        "western_pathology_en": [
+          "ADA — 糖尿病神經病變通說(機轉路徑、足部照護)",
+          "MedlinePlus — Diabetic Nerve Problems (https://medlineplus.gov/diabeticnerveproblems.html)"
+        ]
+      }
     },
     {
       "id": "cond.trigeminal_neuralgia",
@@ -21407,8 +21518,8 @@
         "pattern.qi_blood_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "帶狀皰疹中醫稱「蛇串瘡」「纏腰火丹」,多屬肝經濕熱火毒;皰疹後之痛,則病機已轉——「餘毒未清,絡脈已傷」:火毒雖退,經絡為毒邪灼傷,瘀血阻於絡道,不通則痛——痛處固定、如針如電,舌黯或有瘀斑,正是瘀象;年老體弱者氣血本虛,正不勝邪,餘邪與瘀互結,絡損難復——「不榮」與「不通」並病,故老人痛久難癒;陰血受灼者,絡脈失濡,灼熱之痛夜間尤甚;輕觸即痛,是絡虛不任邪擾之象。治重活血通絡、化瘀止痛,佐益氣養血扶正;初病清餘毒,久病專於通養——與西醫「急性期抗病毒、慢性期神經痛處置」的分期相映。",
+      "western_pathology_zh": "帶狀皰疹後神經痛慣以皮疹癒合後疼痛持續三個月為界,是帶狀皰疹最常見的併發症。機轉是病毒性神經破壞的後果:水痘-帶狀皰疹病毒自背根神經節再活化、沿神經下行時造成神經節出血性發炎與周邊神經纖維喪失——去傳入化使中樞失去正常輸入,脊髓背角神經元自發放電與敏感化;殘存纖維異常再生與交感耦聯加入,構成三種疼痛型態並存:自發性灼痛、陣發電擊痛、輕觸誘發之異痛(allodynia——衣物拂過即痛,是中樞敏感化的臨床印記)。年齡是壓倒性風險因子,急性期疼痛與皮疹嚴重度次之;帶狀皰疹疫苗大幅降低發生——預防是這個病最有效的「治療」;急性期抗病毒藥降低神經損傷程度,但能否預防後神經痛證據較弱。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21440,7 +21551,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Shingles is Chinese medicine's \"snake-string sores\" / \"fire cord around the waist,\" mostly liver-channel damp-heat fire toxin; once the rash is gone and pain remains, the mechanism has shifted — \"residual toxin not yet cleared, the collaterals already injured\": the fire toxin has receded, but the channels are scorched, and static blood blocks the collateral pathways — blockage causes pain: pain fixed in place, needling and electric, with a dusky tongue or stasis macules, the stasis image itself. In the old and weak, qi and blood are deficient to begin with, the upright cannot overcome the evil, residual toxin and stasis bind, and the injured collaterals cannot mend — \"non-nourishment\" and \"non-passage\" ill together, which is why the elderly hurt longest; where yin-blood was scorched, the unmoistened collaterals burn worse at night; pain at the lightest touch is the deficient collateral unable to bear disturbance. Treatment stresses invigorating blood, opening the collaterals, transforming stasis to stop pain, assisted by boosting qi and nourishing blood; early, clear the residual toxin — late, devote treatment to unblocking and nourishing, mirroring biomedicine's acute-antiviral versus chronic-neuralgia staging.",
+      "western_pathology_en": "Postherpetic neuralgia is conventionally pain persisting three months past rash healing, and it is shingles' most common complication. The mechanism is the aftermath of viral neural destruction: varicella-zoster virus reactivates in the dorsal root ganglion and descends the nerve, leaving hemorrhagic ganglionitis and loss of peripheral fibers — deafferentation strips the cord of normal input, and dorsal-horn neurons fire spontaneously and sensitize; aberrant regeneration of surviving fibers and sympathetic coupling join in, producing three coexisting pain forms: spontaneous burning, paroxysmal electric shocks, and touch-evoked allodynia (pain at the brush of clothing — the clinical stamp of central sensitization). Age is the overwhelming risk factor, acute-phase pain and rash severity next; the zoster vaccine sharply reduces incidence — prevention is this disease's most effective \"treatment\"; acute antivirals lessen neural damage, though their power to prevent the neuralgia itself is weaker.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫外科學教材通說(蛇串瘡;後遺神經痛依瘀阻絡傷論)"
+        ],
+        "etiology_en": [
+          "中醫外科學教材通說(蛇串瘡;後遺神經痛依瘀阻絡傷論)"
+        ],
+        "western_pathology_zh": [
+          "CDC/NINDS — 帶狀皰疹後神經痛通說(去傳入化、疫苗預防)",
+          "MedlinePlus — Shingles (https://medlineplus.gov/shingles.html)"
+        ],
+        "western_pathology_en": [
+          "CDC/NINDS — 帶狀皰疹後神經痛通說(去傳入化、疫苗預防)",
+          "MedlinePlus — Shingles (https://medlineplus.gov/shingles.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/shingles.html"
+      ]
     },
     {
       "id": "cond.parkinsons",
@@ -21457,8 +21605,8 @@
         "pattern.liver_blood_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「顫證」,《內經》「諸風掉眩,皆屬於肝」為總綱。病機以肝腎陰虧為本:年老精血漸衰,水不涵木,肝風內動——「顫」即風象;筋脈失養則僵直拘攣,「肝主筋」之病;氣血不足者,血虛生風,兼面白神疲;痰瘀阻絡——久病痰濁瘀血互結,竅絡不利,動作遲滯、神情呆鈍(認知之累);陰損及陽,晚期腎陽亦虛,便秘、夜尿、畏寒並見(非運動症狀之象)。虛為本(肝腎精血)、風痰瘀為標:滋補肝腎、育陰熄風為軸,佐化痰通絡、益氣養血;此病中醫定位是輔助——藥針、導引(太極)助其筋骨氣血之用,不代主方。",
+      "western_pathology_zh": "帕金森氏症是第二常見的神經退化疾病:黑質緻密部多巴胺神經元進行性喪失,伴 α-突觸核蛋白錯誤摺疊聚集成路易體;運動症狀(靜止性顫抖、僵直、動作遲緩、晚期姿勢不穩)在多巴胺神經元喪失過半後才顯現——臨床診斷時病理已走了很遠。非運動症狀是現代理解的另一半:嗅覺減退、快速動眼期睡眠行為障礙、便秘、憂鬱可先於運動症狀多年(病理自腸道與嗅球向上蔓延的 Braak 假說由此而來);病程後期的認知障礙與幻覺常比運動症狀更拖累生活。左旋多巴仍是最有效藥物,但長期使用出現異動症與療效波動;藥物只補症狀、不改病程——這是所有輔助照護(運動、復健、防跌)的定位背景。太極拳改善平衡與防跌在此病有較好的試驗證據,屬運動介入之列。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21490,7 +21638,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's tremor syndrome (chan zheng), governed by the Inner Classic line \"all wind with shaking and dizziness belongs to the liver.\" The root is liver-kidney yin depletion: with age, essence and blood wane, water fails to moisten wood, and liver wind stirs within — tremor is the wind image; sinews unnourished turn rigid and contracted — disease of \"the liver governs the sinews\"; where qi and blood run short, blood deficiency engenders wind, with pallor and weary spirit; phlegm and stasis obstructing the collaterals — in long disease phlegm turbidity and static blood interlock, the orifice-collaterals run unfree: slowed movement, dulled expression (the cognitive burden); yin damage reaching yang leaves late-stage kidney yang weak too — constipation, nocturia, cold intolerance (the non-motor picture). Deficiency is the root (liver-kidney essence-blood), wind-phlegm-stasis the branch: enrich liver and kidney and nourish yin to extinguish wind as the axis, assisted by transforming phlegm, opening collaterals, boosting qi and blood; Chinese medicine's position here is adjunctive — needles, herbs, and daoyin (tai chi) serve the sinews, bones, qi, and blood, not replacing the primary regimen.",
+      "western_pathology_en": "Parkinson's disease is the second most common neurodegenerative disorder: progressive loss of dopamine neurons in the substantia nigra pars compacta, with misfolded α-synuclein aggregating into Lewy bodies; motor signs (rest tremor, rigidity, bradykinesia, late postural instability) surface only after more than half the dopamine neurons are gone — by clinical diagnosis the pathology is far along. Non-motor symptoms are the other half of the modern picture: hyposmia, REM sleep behavior disorder, constipation, and depression can precede motor signs by years (whence Braak's hypothesis of pathology ascending from gut and olfactory bulb); late-course cognitive impairment and hallucinations often burden life more than the motor disease. Levodopa remains the most effective drug, but chronic use brings dyskinesias and fluctuations; medication replaces symptoms without altering course — the positioning background for all supportive care (exercise, rehabilitation, fall prevention). Tai chi has comparatively good trial evidence for balance and fall reduction here, within the exercise-intervention family.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(顫證門;《素問·至真要大論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(顫證門;《素問·至真要大論》)"
+        ],
+        "western_pathology_zh": [
+          "NINDS — 帕金森氏症通說(路易體、非運動前驅、levodopa 侷限)",
+          "MedlinePlus — Parkinson's Disease (https://medlineplus.gov/parkinsonsdisease.html)"
+        ],
+        "western_pathology_en": [
+          "NINDS — 帕金森氏症通說(路易體、非運動前驅、levodopa 侷限)",
+          "MedlinePlus — Parkinson's Disease (https://medlineplus.gov/parkinsonsdisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/parkinsonsdisease.html"
+      ]
     },
     {
       "id": "cond.multiple_sclerosis",
@@ -21508,8 +21693,8 @@
         "pattern.damp_heat_spleen_stomach"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「痿證」「風痱」「視瞻昏渺」論(視發作部位而異名)。課件與教材的共同框架:肝腎虧虛為本——精血不足,髓海與筋脈失養,痿弱不用、視物昏花;脾虛濕蘊為機轉之樞——脾失健運,濕濁內生,浸淫經脈,肢體困重麻木;濕鬱化熱者,發作期見濕熱痺阻之象;久病入絡,瘀血阻滯,症狀固定難退;陰損及陽,晚期脾腎陽虛,痿廢不用。「發作-緩解」之勢,中醫讀為正邪進退:邪盛(濕熱)則發,正復則緩——故發作期清利濕熱為先,緩解期補益肝腎、健脾益氣為本;疲勞之治重在脾(氣)腎(精),畏熱之象合於「陰虛不耐溫」——照護細節與辨證若合符節。",
+      "western_pathology_zh": "多發性硬化症是中樞神經系統的自體免疫脫髓鞘疾病:自身反應性 T 細胞穿越血腦屏障,攻擊寡突膠細胞與髓鞘,形成散在白質(與皮質)病灶——診斷的邏輯是「時間與空間的多發」:不同部位、不同時間的病灶,由病史與磁振造影共同確立。復發緩解型最常見:發炎性脫髓鞘造成急性功能缺損(視神經炎、複視、感覺異常、無力、共濟失調),髓鞘部分修復後緩解;隨病程,軸突喪失與腦萎縮累積,部分轉入續發進展型——失能由「發作」轉為「爬坡」。近年病因學的大事是 EB 病毒感染被確立為幾乎必要的前置因子;維生素 D 不足、吸菸、青少年期肥胖為輔助風險。疾病修飾治療已大幅改變病程;疲勞是最常見且最被低估的症狀,熱敏感(Uhthoff 現象)是照護細節——這兩點與輔助療法的接口最直接。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21541,7 +21726,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from wei (atrophy) disorder, feng fei (wind disablement), and dim vision — the name following the site of attack. The shared frame of handout and textbook: liver-kidney depletion as the root — essence and blood short, the sea of marrow and the sinews unnourished: weakness and disuse, blurred sight; spleen deficiency with damp accumulation as the pivot — failed transport breeds damp turbidity that soaks the channels: heavy, numb limbs; damp constrained into heat shows as damp-heat obstruction in flares; long disease enters the collaterals, and static blood fixes symptoms in place; yin damage reaching yang leaves late-stage spleen-kidney yang deficiency with atrophic disuse. The relapse-remission rhythm reads in Chinese terms as the advance and retreat of evil and upright: the evil (damp-heat) prevailing brings the flare, the upright recovering brings remission — so flares are treated first by clearing damp-heat, remissions by tonifying liver-kidney and fortifying spleen qi as the root; fatigue's treatment centers on spleen (qi) and kidney (essence), and heat intolerance fits \"deficient yin not bearing warmth\" — care details and pattern differentiation matching tally to tally.",
+      "western_pathology_en": "Multiple sclerosis is autoimmune demyelination of the central nervous system: autoreactive T cells cross the blood-brain barrier and attack oligodendrocytes and myelin, seeding scattered white-matter (and cortical) lesions — the diagnostic logic is \"dissemination in time and space,\" lesions at different sites and times established jointly by history and MRI. Relapsing-remitting disease is commonest: inflammatory demyelination brings acute deficits (optic neuritis, diplopia, paresthesia, weakness, ataxia) that remit as myelin partially repairs; over the course, axonal loss and brain atrophy accumulate and some patients enter secondary progression — disability shifting from \"attacks\" to \"slope.\" The recent landmark in etiology is Epstein-Barr virus infection established as a near-necessary antecedent; low vitamin D, smoking, and adolescent obesity are auxiliary risks. Disease-modifying therapy has transformed the course; fatigue is the most common and most underestimated symptom, and heat sensitivity (Uhthoff phenomenon) a practical care detail — the two points where supportive therapies interface most directly.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/8 Multiple Sclerosis (1).md(Tier-1 課堂 handout)",
+          "中醫內科學教材通說(痿證門)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/8 Multiple Sclerosis (1).md(Tier-1 課堂 handout)",
+          "中醫內科學教材通說(痿證門)"
+        ],
+        "western_pathology_zh": [
+          "NINDS/NMSS — 多發性硬化症通說(時間空間多發、EBV 前置)",
+          "MedlinePlus — Multiple Sclerosis (https://medlineplus.gov/multiplesclerosis.html)"
+        ],
+        "western_pathology_en": [
+          "NINDS/NMSS — 多發性硬化症通說(時間空間多發、EBV 前置)",
+          "MedlinePlus — Multiple Sclerosis (https://medlineplus.gov/multiplesclerosis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/multiplesclerosis.html"
+      ]
     },
     {
       "id": "cond.essential_tremor",
@@ -21557,8 +21781,8 @@
         "pattern.liver_blood_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫同入「顫證」,而與帕金森之顫分野明確:此病之顫「動則顯、靜則平」,無僵直遲滯,病勢緩淺——病位仍在肝,而虛損未深。病機:年高陰血漸虧,血虛生風,虛風擾動筋脈——持物書寫之際,氣血趨用而不足,風象乃顯;情志緊張則肝鬱化風,顫勢加重(緊張加劇之臨床特點,正合「肝隨境動」);酒性辛散,暫行氣血,故小酌暫平——亦是氣血不足之旁證;久則肝腎陰虛漸深,顫及頭聲。家族相傳者,稟賦使然。治以養血柔肝、滋陰熄風為軸,佐安神定志;病淺者調攝可安,病深者針藥並施——其「良性而漸進」之勢,即虛風緩耗之象。",
+      "western_pathology_zh": "原發性顫抖症是最常見的動作障礙之一,核心特徵與帕金森氏症相反而常被混淆:動作性與姿勢性顫抖——持物、寫字、端杯時明顯,靜止時減輕(帕金森為靜止顫、動作時減輕);多為雙側、以手為主,可及頭與聲音;無僵直與動作遲緩。約半數有家族史,呈體染色體顯性樣式;小量酒精短暫緩解是特徵性病史。機轉定位於小腦-丘腦-皮質迴路的節律性振盪,小腦浦金氏細胞病理與 GABA 系統功能下降是主要研究線索——「良性」之名已被棄用:進行性加重可致書寫、進食、社交的實質失能。藥物以 propranolol 與 primidone 為一線;重症的深部腦刺激與聚焦超音波丘腦燒灼有效。鑑別要點:藥物性顫抖(氣管擴張劑、鋰鹽、丙戊酸)、甲亢、生理性顫抖增強——可逆原因先排。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21590,7 +21814,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine files this too under tremor syndrome, but the line against Parkinson's tremor is clean: this tremor \"shows with motion, settles with stillness,\" without rigidity or slowing, its momentum shallow — the disease is still in the liver, the deficiency not yet deep. Mechanism: with advancing age yin-blood wanes, blood deficiency engenders wind, and deficient wind stirs the sinews — in holding and writing, qi and blood rush to the task and fall short, and the wind image appears; emotional tension constrains the liver into wind and the tremor worsens (the clinical hallmark of stress aggravation, fitting \"the liver moves with circumstance\"); alcohol, acrid and dispersing, briefly moves qi and blood — hence the small drink's brief calm, itself corroborating the underlying insufficiency; in time liver-kidney yin deficiency deepens and tremor reaches head and voice. Familial cases are endowment. Treatment takes nourishing blood and softening the liver, enriching yin and extinguishing wind as its axis, with spirit-calming assistance; shallow disease settles with regulation of daily life, deep disease needs needles and herbs together — the \"benign but progressive\" slope is the image of deficient wind slowly consuming.",
+      "western_pathology_en": "Essential tremor is among the most common movement disorders, its core features the mirror image of Parkinson's and often confused with it: an action and postural tremor — obvious when holding, writing, or carrying a cup, easing at rest (Parkinson's tremors rest and ease with action); mostly bilateral, hand-dominant, extending to head and voice; no rigidity or bradykinesia. About half report family history in an autosomal-dominant-like pattern; brief relief from small amounts of alcohol is a characteristic history. The mechanism localizes to rhythmic oscillation in the cerebellar-thalamo-cortical circuit, with cerebellar Purkinje-cell pathology and reduced GABA function the leading research threads — the label \"benign\" has been retired: progressive worsening can genuinely disable writing, eating, and social life. Propranolol and primidone are first-line; deep brain stimulation and focused-ultrasound thalamotomy work for severe cases. Differential essentials: drug-induced tremor (bronchodilators, lithium, valproate), hyperthyroidism, enhanced physiological tremor — reversible causes first.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(顫證門,依血虛生風論)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(顫證門,依血虛生風論)"
+        ],
+        "western_pathology_zh": [
+          "NINDS — 原發性顫抖症通說(小腦-丘腦-皮質迴路)",
+          "MedlinePlus — Tremor (https://medlineplus.gov/tremor.html)"
+        ],
+        "western_pathology_en": [
+          "NINDS — 原發性顫抖症通說(小腦-丘腦-皮質迴路)",
+          "MedlinePlus — Tremor (https://medlineplus.gov/tremor.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/tremor.html"
+      ]
     },
     {
       "id": "cond.dizziness_vertigo",
@@ -21673,8 +21934,8 @@
         "pattern.kidney_essence_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「眩暈」,課件之綱:「無痰不作眩」「無虛不作眩」與肝陽上亢三線並立,此病兼而有之。痰飲(水濕)內停為其標記性病機——脾失健運,水濕不化,聚為痰飲,上犯清竅:眩暈如旋、耳脹如塞、嘔惡痰涎,正是「痰飲上泛」之全象,與內淋巴「水」腫之意象跨語言相合;肝陽化風上擾,發作驟起、與情志勞倦相引;久病腎精虧虛,髓海不足——耳鳴漸固、聽力漸損,是精不上榮之象;氣血虛者,發後倦怠眼花。發作期治標:化痰熄風、和胃降逆;緩解期治本:健脾滲濕、滋腎填精——低鹽節飲食,即中醫「節水濕之源」。",
+      "western_pathology_zh": "梅尼爾氏症的病理標記是內淋巴水腫——內耳膜迷路的內淋巴液積聚膨脹;水腫如何生症仍有爭論(膜破裂鉀離子中毒說、壓力波動說),且屍檢發現水腫者未必生前有症狀——水腫是必要非充分條件。臨床四聯徵定義疾病:自發性旋轉性眩暈反覆發作(單次二十分鐘至十二小時)、波動性低頻感音神經性聽損、耳鳴、患耳脹滿感;早期聽力在發作間可回復,病久低頻聽損固定並漸進,眩暈發作反而可能「燒盡」減少。多為單側起病,部分年後累及對側。誘因與生活因素:高鹽、咖啡因、酒精、壓力與睡眠剝奪;處置階梯:低鹽與利尿、倍他司汀(證據有爭議)、鼓室內類固醇、破壞性治療(慶大黴素)居末;前庭復健用於發作間平衡失代償。鑑別最重要的是前庭性偏頭痛——兩者重疊之多,是這個診斷最常見的錯置。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -21706,7 +21967,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's vertigo (xuan yun); the handout's headings — \"no phlegm, no vertigo,\" \"no deficiency, no vertigo,\" and liver yang rising — all three converge in this disease. Retained phlegm-rheum (water-damp) is its signature mechanism: the spleen fails to transport, water-damp gathers into phlegm-rheum and floods the clear orifices above — spinning vertigo, ears stuffed and full, nausea with phlegmy drool: the complete image of \"phlegm-rheum surging upward,\" meeting the endolymphatic \"water\" swelling across languages; liver yang transforming into wind harasses above — attacks abrupt, drawn out by emotion and overwork; long disease depletes kidney essence and the sea of marrow — tinnitus fixing, hearing declining: essence failing to nourish upward; the qi-blood deficient are left drained and dim-sighted after attacks. In attacks, treat the branch: transform phlegm, extinguish wind, harmonize the stomach, downbear counterflow; between attacks, treat the root: fortify the spleen and percolate damp, enrich the kidney and replenish essence — and the low-salt diet is Chinese medicine's own \"stemming the source of water-damp.\"",
+      "western_pathology_en": "Ménière's disease's pathological marker is endolymphatic hydrops — distension of the membranous labyrinth by accumulated endolymph; how hydrops makes symptoms is still argued (membrane-rupture potassium intoxication, pressure fluctuation), and autopsy hydrops without lifetime symptoms shows it necessary but not sufficient. The clinical tetrad defines the disease: recurrent spontaneous rotational vertigo (twenty minutes to twelve hours per attack), fluctuating low-frequency sensorineural hearing loss, tinnitus, and aural fullness; early on, hearing recovers between attacks, while with years the low-frequency loss fixes and progresses as vertigo attacks may \"burn out.\" Onset is usually unilateral, with the other ear involved in a share of patients over years. Triggers and lifestyle: salt, caffeine, alcohol, stress, sleep loss. The management ladder: low salt and diuretics, betahistine (evidence contested), intratympanic steroids, destructive therapy (gentamicin) last; vestibular rehabilitation serves interictal imbalance. The differential that matters most is vestibular migraine — their overlap is this diagnosis's most frequent misfiling.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/2 Dizziness and Vertigo.docx(Tier-1 課堂 handout,痰/虛/肝陽三綱)",
+          "中醫內科學教材通說(眩暈門)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/2 Dizziness and Vertigo.docx(Tier-1 課堂 handout,痰/虛/肝陽三綱)",
+          "中醫內科學教材通說(眩暈門)"
+        ],
+        "western_pathology_zh": [
+          "AAO-HNS/NIDCD — 梅尼爾氏症通說(內淋巴水腫、四聯徵、前庭性偏頭痛鑑別)",
+          "MedlinePlus — Ménière's Disease (https://medlineplus.gov/menieresdisease.html)"
+        ],
+        "western_pathology_en": [
+          "AAO-HNS/NIDCD — 梅尼爾氏症通說(內淋巴水腫、四聯徵、前庭性偏頭痛鑑別)",
+          "MedlinePlus — Ménière's Disease (https://medlineplus.gov/menieresdisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/menieresdisease.html"
+      ]
     },
     {
       "id": "cond.migraine_vestibular",
@@ -22784,8 +23084,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「油風」,俗名「鬼舐頭」——《外科正宗》:「油風乃血虛不能隨氣榮養肌膚,故毛髮根空,脫落成片。」病機以血虛風動為綱:「髮為血之餘」——血虛不榮,髮失所養,根空而脫;「腎其華在髮」——肝腎不足,精血虧虛,脫髮成片、久不復生,兼腰酸耳鳴;情志化火——驟遭憂恐,五志化火,血熱生風,風動髮落,起病急驟者多此型;瘀血阻絡——久病瘀滯,新血不達髮根,斑禿日久、舌黯。血虛肝腎虛為本,風火瘀為標:養血滋腎為軸,佐涼血熄風、活血通絡;梅花針叩刺局部即「通絡引血達巔」之法(療效證據屬治療層)。",
+      "western_pathology_zh": "斑禿是自體免疫性非瘢痕性脫髮:毛囊本是「免疫豁免」部位——低表達組織相容性抗原、局部免疫抑制環境;豁免崩潰後,T 細胞群攻毛囊球部,毛髮斷裂脫落成界限清楚的圓斑。關鍵在於攻擊不毀毛囊幹細胞——毛囊保留再生能力,故任何階段都可能再生,也可能復發;疾病譜由單斑至全頭(全禿)至全身(普禿),範圍愈大、病程愈久、起病愈早,預後愈差。甲點蝕與甲粗糙是常見伴徵;與其他自體免疫病(甲狀腺炎、白斑)共病,家族聚集明確。急性期拔毛試驗陽性、「驚嘆號毛」是活動性標誌;精神壓力可為誘因之一,但「壓力致禿」的單因敘事並不成立。JAK 抑制劑的出現改變了重症治療版圖——機轉正是切斷毛囊周的干擾素-γ迴路。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -22817,7 +23117,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's \"oil wind\" (you feng), colloquially \"ghost-licked head\" — the Wai Ke Zheng Zong: \"oil wind is blood deficiency unable to follow qi and nourish skin, so the hair roots empty and shed in patches.\" The governing formula is blood deficiency with wind stirring: \"hair is the surplus of blood\" — deficient blood cannot nourish, roots empty and hair falls; \"the kidney's flowering is in the hair\" — liver-kidney insufficiency with depleted essence-blood: patchy loss slow to regrow, with lumbar soreness and tinnitus; the emotions transforming into fire — sudden grief or fright, the five minds turning to fire, blood heat engendering wind and shaking the hair loose: the abrupt-onset type; blood stasis obstructing collaterals — chronic stasis keeping fresh blood from the roots: long-standing patches, dusky tongue. Blood and liver-kidney deficiency at the root, wind, fire, and stasis at the branch: nourishing blood and enriching the kidney as the axis, with blood-cooling wind-extinguishing and collateral-opening assistance; plum-blossom needling of the patch is the method of \"opening the collaterals to draw blood to the summit\" (efficacy evidence belongs to the treatment layer).",
+      "western_pathology_en": "Alopecia areata is autoimmune non-scarring hair loss: the hair follicle is normally an \"immune-privileged\" site — low MHC expression, a locally immunosuppressive milieu; when privilege collapses, T cells swarm the follicular bulb and hairs snap off in sharply bounded round patches. The crucial point is that the attack spares follicular stem cells — regenerative capacity is preserved, so regrowth is possible at any stage, and so is relapse; the spectrum runs from a single patch to the whole scalp (totalis) to the whole body (universalis), with wider extent, longer duration, and earlier onset predicting worse. Nail pitting and roughness are frequent companions; comorbidity with other autoimmunity (thyroiditis, vitiligo) and familial clustering are established. A positive pull test and \"exclamation-mark hairs\" flag active disease; psychological stress can be one trigger, but the single-cause \"stress made the hair fall\" story does not hold. JAK inhibitors have redrawn severe-disease treatment — mechanistically by cutting the perifollicular interferon-γ loop.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫外科學教材通說(油風;《外科正宗》)"
+        ],
+        "etiology_en": [
+          "中醫外科學教材通說(油風;《外科正宗》)"
+        ],
+        "western_pathology_zh": [
+          "NIAMS/AAD — 斑禿通說(免疫豁免崩潰、幹細胞保留)",
+          "MedlinePlus — Hair Loss (https://medlineplus.gov/hairloss.html)"
+        ],
+        "western_pathology_en": [
+          "NIAMS/AAD — 斑禿通說(免疫豁免崩潰、幹細胞保留)",
+          "MedlinePlus — Hair Loss (https://medlineplus.gov/hairloss.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/hairloss.html"
+      ]
     },
     {
       "id": "cond.rosacea",
@@ -22834,8 +23171,8 @@
         "pattern.liver_fire"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「酒齄鼻」「赤鼻」。《外科正宗》謂:「肺風、粉刺、酒齄鼻,三名同種……總皆血熱鬱滯不散所致。」病機三層:肺胃積熱上蒸——面鼻屬肺胃所主,嗜食辛辣炙煿、飲酒,積熱循經上熏,顏面潮紅陣作;血熱鬱滯——熱伏血分,遇熱遇酒遇情志則面赤如燃,久之紅斑不退(潮紅固定化之象);氣滯血瘀——鬱熱久滯,經絡壅遏,鼻頭暗紅增厚(鼻瘤型之象)。脾胃濕熱為底盤者,丘疹膿皰纏綿。治分層而施:清泄肺胃、涼血活血為主軸,瘀重者化瘀散結;忌酒辛辣炙煿——中醫之「忌口」與西醫之誘因管理,同一張處方。",
+      "western_pathology_zh": "酒糟是顏面中央的慢性發炎皮膚病,機轉是三線交織:神經血管失調——溫度、辛辣、酒精、情緒觸發的過度潮紅反應,TRP 通道敏感化參與,反覆潮紅漸成持久紅斑與微血管擴張;先天免疫異常——皮膚抗菌肽(cathelicidin/LL-37)處理異常,產生促發炎促血管生成片段;微生物因素——蠕形蟎密度增高及其共生菌觸發免疫反應。臨床四型常混合:紅斑血管擴張型、丘疹膿皰型(易誤為痤瘡——但無粉刺)、鼻瘤型(皮脂腺與纖維增生,男性為主)、眼型(瞼緣炎、乾澀異物感,易漏診)。誘因管理是治療的地基:日曬、高溫環境、熱飲、酒精、辛辣為五大常見觸發;外用與口服抗發炎為主軸,血管雷射處理固定紅斑——「治紅」與「治丘疹」是兩條不同的路徑。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -22867,7 +23204,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's jiu zha bi (drinker's nose) / red nose. The Wai Ke Zheng Zong: \"lung wind, acne, and drinker's nose are three names of one kind … all caused by blood heat constrained and failing to disperse.\" Three mechanistic layers: accumulated lung-stomach heat steaming upward — face and nose belong to lung and stomach, and a taste for spice, roasted fare, and liquor sends accumulated heat up the channels: flushing in waves; blood heat with constraint — heat lying in the blood level, so heat, alcohol, or emotion sets the face burning red, and with time the erythema no longer recedes (flushing consolidated); qi stagnation with blood stasis — constrained heat long stagnant congests the channels, the nose tip darkening and thickening (the phymatous image). On a base of spleen-stomach damp-heat, papules and pustules linger. Treatment is layered: clearing and draining lung-stomach heat with blood-cooling and blood-invigoration as the axis, adding stasis-transforming and dispersing where stasis is heavy; abstaining from liquor, spice, and roasted food — Chinese medicine's dietary interdiction and biomedicine's trigger management are one and the same prescription.",
+      "western_pathology_en": "Rosacea is chronic inflammatory disease of the central face, its mechanism three interwoven lines: neurovascular dysregulation — exaggerated flushing to heat, spice, alcohol, and emotion, with TRP-channel sensitization involved, repeated flushing consolidating into fixed erythema and telangiectasia; innate immune abnormality — aberrant processing of the skin antimicrobial peptide cathelicidin (LL-37) yielding pro-inflammatory, pro-angiogenic fragments; and the microbial thread — increased Demodex mite density and its commensals triggering immune response. Four clinical subtypes usually blend: erythematotelangiectatic, papulopustular (mistaken for acne — but comedones are absent), phymatous (sebaceous-fibrous overgrowth, mostly men), and ocular (blepharitis, gritty dryness, easily missed). Trigger management is treatment's foundation — sun, hot environments, hot drinks, alcohol, and spice the five usual provocations; topical and oral anti-inflammatories are the axis, vascular laser handles fixed erythema — \"treating the red\" and \"treating the papules\" run on different tracks.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫外科學教材通說(酒齄鼻;《外科正宗》)"
+        ],
+        "etiology_en": [
+          "中醫外科學教材通說(酒齄鼻;《外科正宗》)"
+        ],
+        "western_pathology_zh": [
+          "AAD/NRS — 酒糟通說(神經血管-cathelicidin-蠕形蟎三線)",
+          "MedlinePlus — Rosacea (https://medlineplus.gov/rosacea.html)"
+        ],
+        "western_pathology_en": [
+          "AAD/NRS — 酒糟通說(神經血管-cathelicidin-蠕形蟎三線)",
+          "MedlinePlus — Rosacea (https://medlineplus.gov/rosacea.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/rosacea.html"
+      ]
     },
     {
       "id": "cond.pruritus",
@@ -22885,8 +23259,8 @@
         "pattern.damp_heat_spleen_stomach"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「風瘙癢」——癢而無疹,古人謂之「癢風」。「諸癢皆屬於風」為總綱,而風有內外虛實:血虛生風化燥——年老血虛,肌膚失濡,燥而作癢,入夜衣被溫暖則甚(老年乾燥性搔癢之象),「治風先治血,血行風自滅」正為此設;風濕熱客於肌膚——浴後受風、汗出當風,或濕熱內蘊外發,癢而竄走;血熱風盛——體質陽盛或嗜辛辣,血分伏熱,遇熱癢劇;久病入絡,瘀血阻滯,肌膚甲錯而癢。內傷之癢(黃疸之癢、消渴之癢)責在臟腑,不獨治皮——與西醫「無疹搔癢查全身」之訓完全同構。治以養血潤燥、祛風止癢為軸,濕熱者清利,血熱者涼血,瘀者化之。",
+      "western_pathology_zh": "慢性搔癢(超過六週)是症狀而非診斷,神經生理已明確:癢有專屬傳導路徑——組織胺性與非組織胺性(蛋白酶、IL-31 等介質)兩線,後者解釋了抗組織胺常無效的大宗病例;「癢-抓循環」有其迴路基礎:搔抓以痛抑癢、同時觸發發炎與表皮損傷,癢愈演愈烈,久之中樞敏感化——輕觸即癢(alloknesis),與慢性痛驚人平行。無疹搔癢的鑑別是臨床重點:全身性原因——膽汁鬱積(手足癢先起)、尿毒、缺鐵、紅血球增多症(浴後癢)、淋巴瘤(夜汗體重減輕為伴)、甲狀腺疾病、藥物(鴉片類);神經性——帶狀皰疹後癢、感覺異常性背痛;心因性居末且為排除診斷。老年最常見的仍是乾燥性搔癢——皮脂與屏障功能隨齡下降;保濕是所有治療的地基。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -22918,7 +23292,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's feng sao yang (wind itching) — itch without eruption, the ancients' \"itch wind.\" \"All itching belongs to wind\" is the governing line, but wind divides into external and internal, deficient and excess: blood deficiency engendering wind and dryness — the aged and blood-deficient, skin unmoistened, dry and itching, worse at night under warm bedding (the elderly xerotic image); \"to treat wind, first treat blood — when blood moves, wind extinguishes of itself\" was written for exactly this; wind-damp-heat lodging in the skin — wind caught after bathing or sweating, or internal damp-heat venting outward: wandering itch; blood heat with wind exuberant — a yang-replete constitution or spicy diet banking heat in the blood level, itch raging on warmth; long disease entering the collaterals, stasis blocking, skin scaled like armor and itching. The itch of internal damage (jaundice itch, wasting-thirst itch) is charged to the organs, never treated at the skin alone — structurally identical to biomedicine's rule that itch without rash demands a systemic search. Treatment takes nourishing blood and moistening dryness with wind-dispelling as its axis; clear and drain the damp-heat type, cool the blood-heat type, transform the stasis type.",
+      "western_pathology_en": "Chronic pruritus (beyond six weeks) is a symptom, not a diagnosis, and its neurophysiology is now clear: itch has dedicated pathways — histaminergic and non-histaminergic lines (proteases, IL-31, and other mediators), the latter explaining the large caseload where antihistamines fail; the itch-scratch cycle has a circuit basis — scratching suppresses itch with pain while triggering inflammation and epidermal damage, the itch escalates, and central sensitization eventually sets in, with light touch provoking itch (alloknesis), a striking parallel to chronic pain. The differential of itch without rash is the clinical heart: systemic — cholestasis (palms and soles first), uremia, iron deficiency, polycythemia vera (post-bath itch), lymphoma (with night sweats and weight loss), thyroid disease, drugs (opioids); neuropathic — postherpetic itch, notalgia paresthetica; psychogenic last and by exclusion. In the elderly the commonest remains xerotic itch — sebum and barrier function decline with age; moisturization is the foundation beneath every treatment.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫外科學教材通說(風瘙癢門;「治風先治血」)"
+        ],
+        "etiology_en": [
+          "中醫外科學教材通說(風瘙癢門;「治風先治血」)"
+        ],
+        "western_pathology_zh": [
+          "AAD/IFSI — 慢性搔癢通說(非組織胺路徑、無疹搔癢鑑別)",
+          "MedlinePlus — Itching (https://medlineplus.gov/itching.html)"
+        ],
+        "western_pathology_en": [
+          "AAD/IFSI — 慢性搔癢通說(非組織胺路徑、無疹搔癢鑑別)",
+          "MedlinePlus — Itching (https://medlineplus.gov/itching.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/itching.html"
+      ]
     },
     {
       "id": "cond.t2dm",
@@ -22998,8 +23409,8 @@
       "review_status": "draft",
       "fetched_at": "2026-07-23T07:46:10.716Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫無此名,而「肥滿」「痰濕」「膏濁」之論正相對應。病機:過食肥甘厚味,久坐少動,脾失健運——水穀精微不歸正化,化為膏脂痰濁,積於腹裡(中心性肥胖即「膏聚於中」);痰濁困脾,運化愈弱,惡性相循;肝失疏泄,氣機鬱滯,鬱而化熱——痰熱互結;久則入絡為瘀,痰瘀濁互阻,漸釀消渴(血糖)、眩暈(血壓)、胸痺(心脈)諸病之基。本虛標實:脾虛(運化)腎虛(氣化)為本,痰濕膏濁瘀為標。治重健脾化痰、消膏降濁,佐疏肝清熱、活血通絡;而「節飲食、常運動」即治其生痰之源——中醫養生之教與生活型態醫學,在此病幾乎逐句對譯。",
+      "western_pathology_zh": "代謝症候群不是單一疾病,而是心血管與糖尿病風險因子的聚集:中心性肥胖、血壓偏高、空腹血糖偏高、三酸甘油酯偏高、高密度脂蛋白偏低——五項中滿足三項即成立(各指標切點依指引與族群而異,亞洲腰圍切點較低)。聚集不是巧合,共同土壤是內臟脂肪與胰島素阻抗:內臟脂肪組織不是惰性倉庫而是內分泌器官——脂肪細胞肥大缺氧、巨噬細胞浸潤,釋放發炎細胞激素與游離脂肪酸,全身胰島素敏感性下降;高胰島素血症代償之下,肝臟脂質輸出增加(高三酸甘油酯、低 HDL)、腎鈉重吸收與交感活性增加(血壓上升)、β 細胞漸不堪負荷(血糖上升)。它把「還不是病」的人標記出來:向第2型糖尿病與動脈粥樣硬化心血管病的轉化風險成倍——而生活型態介入(減重、運動)對它的證據強度,勝過任何單一藥物。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23032,9 +23443,44 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1657"
+        "https://cloudtcm.com/disease/tcm/1657",
+        "https://medlineplus.gov/metabolicsyndrome.html"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine lacks the name, but its discourse on \"obesity-fullness,\" phlegm-damp, and \"fatty turbidity\" (gao zhuo) maps precisely. Mechanism: rich food in excess and sedentary living defeat the spleen's transport — food essence fails to transform properly and becomes fatty phlegm turbidity accumulating in the abdomen (central obesity as \"fat gathering at the center\"); phlegm turbidity encumbers the spleen, transport weakens further — a vicious circle; the liver loses coursing, qi constrains and transforms into heat — phlegm and heat binding; with time it enters the collaterals as stasis, and phlegm, stasis, and turbidity together lay the base for wasting-thirst (glucose), dizziness (pressure), and chest bi (heart vessels). Root-deficiency, branch-excess: spleen (transport) and kidney (qi transformation) deficient at the root, phlegm-damp, fat-turbidity, and stasis at the branch. Treatment stresses fortifying the spleen, transforming phlegm, dispersing fat, and lowering turbidity, with liver-coursing, heat-clearing, and blood-invigorating assistance — and \"moderate the diet, move the body\" treats the very source that breeds the phlegm: Chinese preventive teaching and lifestyle medicine translate almost line for line at this disease.",
+      "western_pathology_en": "Metabolic syndrome is not one disease but a clustering of cardiovascular and diabetes risk factors: central obesity, elevated blood pressure, elevated fasting glucose, elevated triglycerides, low HDL — three of five make the diagnosis (cutoffs vary by guideline and population, with lower Asian waist thresholds). The clustering is no coincidence; the common soil is visceral fat and insulin resistance: visceral adipose tissue is no inert depot but an endocrine organ — hypertrophic, hypoxic adipocytes with macrophage infiltration release inflammatory cytokines and free fatty acids, and whole-body insulin sensitivity falls; under compensatory hyperinsulinemia, hepatic lipid export rises (high triglycerides, low HDL), renal sodium reabsorption and sympathetic tone rise (blood pressure), and β cells gradually buckle (glucose). The syndrome's use is flagging people \"not yet diseased\": risk of converting to type 2 diabetes and atherosclerotic cardiovascular disease multiplies — and lifestyle intervention (weight loss, exercise) carries stronger evidence against it than any single drug.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(肥滿/痰飲門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(肥滿/痰飲門)"
+        ],
+        "western_pathology_zh": [
+          "NHLBI/IDF — 代謝症候群通說(五取三、內臟脂肪-胰島素阻抗)",
+          "MedlinePlus — Metabolic Syndrome (https://medlineplus.gov/metabolicsyndrome.html)"
+        ],
+        "western_pathology_en": [
+          "NHLBI/IDF — 代謝症候群通說(五取三、內臟脂肪-胰島素阻抗)",
+          "MedlinePlus — Metabolic Syndrome (https://medlineplus.gov/metabolicsyndrome.html)"
+        ]
+      }
     },
     {
       "id": "cond.hypothyroidism",
@@ -23424,8 +23870,8 @@
         "pattern.phlegm_damp"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「癭病」「虛勞」合論,病程兩段病機迥異。癭腫之段:情志不遂,肝鬱氣滯,津凝為痰,痰氣互結於頸前——「癭」之成,古人歸於氣鬱痰凝,瀰漫韌實之腫正合痰結之象;鬱久化火者,見短暫煩熱心悸(早期一過性甲亢之象)。功能低下之段:病機轉為虛損——脾腎陽虛為軸:陽氣不足,失於溫煦,故畏寒肢冷、倦怠嗜臥;脾陽虛則運化遲滯,便秘浮腫、體重日增;腎陽虛則天癸失調,經亂不孕;心陽不振者,神情淡漠、情緒低落。「始於鬱,成於痰,終於虛」是此病中醫病程觀。治亦分段:前段疏肝解鬱、化痰散結;後段溫補脾腎為本——而激素替代既立,中醫居輔位,重在改善殘餘症狀與體質調攝。",
+      "western_pathology_zh": "橋本氏甲狀腺炎是碘充足地區甲狀腺功能低下的首因:抗甲狀腺過氧化酶(anti-TPO)與抗甲狀腺球蛋白抗體標記的自體免疫,淋巴球浸潤腺體、濾泡漸進破壞——甲狀腺可先腫大(瀰漫、質韌)後萎縮。病程有其節律:早期可短暫甲亢(腺體破壞釋出存量激素,即 hashitoxicosis,勿誤為 Graves);繼而亞臨床甲低(TSH 升高、T4 正常);終至顯性甲低——怕冷、倦怠、體重增加、便秘、皮膚乾燥、月經紊亂、情緒低落,症狀之非特異正是延誤診斷之因。女性數倍於男性,家族聚集,與其他自體免疫病(第1型糖尿病、白斑、乳糜瀉)共病;產後甲狀腺炎是其變奏。TSH 是篩檢軸;治療是左旋甲狀腺素替代——劑量以 TSH 滴定,妊娠期需求上調是不可漏的細節。硒補充降低抗體滴度的證據有限,不改臨床病程。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23457,7 +23903,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reads this jointly through ying (goiter) disease and deficiency-taxation, the two stages of its course mechanistically distinct. The goitrous stage: emotional frustration constrains liver qi, fluids congeal into phlegm, and phlegm and qi bind at the front of the neck — the ancients ascribed goiter to qi constraint with phlegm congealing, and the diffuse firm swelling is the phlegm-binding image itself; where constraint transforms into fire, brief vexation and palpitations appear (the transient early hyperthyroid phase). The hypofunction stage: the mechanism turns to deficiency-damage — spleen-kidney yang deficiency as the axis: yang too weak to warm — cold intolerance, cold limbs, somnolent fatigue; spleen yang weak, transport slows — constipation, puffiness, mounting weight; kidney yang weak, tiangui deranges — menstrual disorder and infertility; heart yang unstirred — flat affect, low mood. \"Begins in constraint, forms in phlegm, ends in deficiency\" is the Chinese reading of its arc. Treatment splits likewise: early, course the liver and transform phlegm to dissipate binding; late, warm and supplement spleen and kidney as the root — and once hormone replacement stands, Chinese medicine takes the supporting seat, addressing residual symptoms and constitutional regulation.",
+      "western_pathology_en": "Hashimoto thyroiditis is the leading cause of hypothyroidism where iodine is sufficient: autoimmunity marked by anti-thyroid peroxidase (anti-TPO) and anti-thyroglobulin antibodies, lymphocytic infiltration of the gland, and progressive follicular destruction — the thyroid may first enlarge (diffuse, firm) and later atrophy. The course has a rhythm: an early transient hyperthyroid phase can occur (stored hormone released as the gland breaks down — hashitoxicosis, not to be mistaken for Graves); then subclinical hypothyroidism (raised TSH, normal T4); finally overt hypothyroidism — cold intolerance, fatigue, weight gain, constipation, dry skin, menstrual disturbance, low mood, its very non-specificity the reason diagnosis lags. Women outnumber men severalfold, families cluster, and other autoimmunity (type 1 diabetes, vitiligo, celiac) travels with it; postpartum thyroiditis is a variation. TSH anchors screening; treatment is levothyroxine replacement titrated by TSH — the rise in requirement during pregnancy is the detail not to miss. Selenium lowers antibody titers with limited evidence and does not change the clinical course.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(癭病/虛勞門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(癭病/虛勞門)"
+        ],
+        "western_pathology_zh": [
+          "ATA — 橋本氏甲狀腺炎通說(病程三段、TSH 軸、妊娠劑量)",
+          "MedlinePlus — Thyroid Diseases (https://medlineplus.gov/thyroiddiseases.html)"
+        ],
+        "western_pathology_en": [
+          "ATA — 橋本氏甲狀腺炎通說(病程三段、TSH 軸、妊娠劑量)",
+          "MedlinePlus — Thyroid Diseases (https://medlineplus.gov/thyroiddiseases.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/thyroiddiseases.html"
+      ]
     },
     {
       "id": "cond.obesity",
@@ -23477,8 +23960,8 @@
       "review_status": "draft",
       "fetched_at": "2026-07-23T07:46:12.590Z",
       "source_type": "sourced_cloudtcm_record",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「肥滿」,《內經》已言:「肥貴人,則膏粱之疾也」「久臥傷氣,久坐傷肉」。「肥人多痰濕」為體質總綱:脾失健運是軸——過食肥甘,勞逸失度,脾運不及,水穀精微不化精血、反聚為膏脂痰濕,充於肌膚腹裡;痰濕既成,反困脾陽,愈胖愈倦、愈倦愈胖——與「調定點」之頑固互為註腳;胃熱滯脾者,消穀善飢而食愈多(食慾亢進之象);脾腎陽虛者,代謝遲滯,雖食不多而形盛浮腫;肝鬱者,情志觸動則暴食(壓力性進食之象)。稟賦厚薄,古人亦知——「人有肥有膏有肉」之分。治重健脾化痰利濕,佐清胃熱、溫腎陽、疏肝鬱,隨證而異;而節食有度、起居有常、形勞而不倦,是《內經》開出的第一張處方。",
+      "western_pathology_zh": "肥胖是能量恆定系統的慢性疾病,不是意志力的簡單失敗:體重由下視丘迴路主動調節——脂肪組織的瘦素、胃的飢餓素、腸道的 GLP-1 與 PYY 匯報能量狀態,下視丘弓狀核的 POMC/AgRP 神經元調控食慾與消耗;肥胖者常見瘦素抵抗——訊號在而腦不應。「調定點」現象解釋復胖之頑固:減重後瘦素下降、飢餓素上升、基礎代謝下調,生理全力把體重拉回——復胖是生理反撲,不是品格缺陷,這句話本身就有治療意義。遺傳度高(雙生子研究),現代食物環境(高能量密度、超加工食品)是易感基因的扣板機;睡眠剝奪、壓力(皮質醇)、藥物(類固醇、部分精神科藥)、內分泌病(甲低、庫欣)是可辨識的促因。脂肪組織過載後異位沉積(肝、肌肉、胰島)與發炎脂肪激素,是通向糖尿病與心血管病的機轉橋;GLP-1 受體促效劑的成功,正證明「這是生理學,可以用生理學對付」。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23511,9 +23994,44 @@
         "柴胡疏肝散"
       ],
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1657"
+        "https://cloudtcm.com/disease/tcm/1657",
+        "https://medlineplus.gov/obesity.html"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's obesity-fullness (fei man); the Inner Classic already says \"the corpulent noble — a disease of rich fare,\" and \"long lying wounds qi, long sitting wounds flesh.\" \"The obese have much phlegm-damp\" is the constitutional formula, with spleen transport failure the axis: rich food in excess and disordered work-rest outrun the spleen, food essence fails to become essence and blood and gathers instead as fatty phlegm-damp filling skin and abdomen; once formed, phlegm-damp encumbers spleen yang in turn — the heavier, the wearier; the wearier, the heavier — an annotation, from the other tradition, on the set point's stubbornness. Stomach heat stagnating the spleen consumes grain and hungers fast (the hyperphagic image); spleen-kidney yang deficiency slows the whole metabolism — little eaten, yet the form swells and puffs; liver constraint erupts into bingeing at emotional touch (stress eating). Endowment thick or thin, the ancients knew too — their taxonomy of \"the fat, the greasy, the fleshy.\" Treatment stresses fortifying the spleen, transforming phlegm, and disinhibiting damp, assisted by clearing stomach heat, warming kidney yang, or coursing liver constraint by pattern — while measured eating, regular living, and \"labor of the body short of exhaustion\" are the first prescription, written in the Inner Classic.",
+      "western_pathology_en": "Obesity is a chronic disease of the energy-homeostasis system, not a simple failure of willpower: body weight is actively regulated by hypothalamic circuitry — adipose leptin, gastric ghrelin, and intestinal GLP-1 and PYY report energy status, while POMC/AgRP neurons of the arcuate nucleus govern appetite and expenditure; leptin resistance is typical in obesity — signal present, brain unresponsive. The \"set point\" phenomenon explains regain's stubbornness: after weight loss, leptin falls, ghrelin rises, and resting metabolism turns down as physiology hauls the weight back — regain is physiological counterattack, not character defect, a sentence with therapeutic value in itself. Heritability is high (twin studies), and the modern food environment (energy-dense, ultra-processed) is the trigger on susceptible genes; sleep loss, stress (cortisol), medications (steroids, some psychotropics), and endocrine disease (hypothyroidism, Cushing's) are identifiable promoters. Once adipose tissue overloads, ectopic deposition (liver, muscle, islets) and inflammatory adipokines bridge mechanistically to diabetes and cardiovascular disease; the success of GLP-1 receptor agonists is proof in kind that \"this is physiology, and physiology can answer it.\"",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(肥滿/痰飲門;《素問·通評虛實論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(肥滿/痰飲門;《素問·通評虛實論》)"
+        ],
+        "western_pathology_zh": [
+          "NIDDK/AACE — 肥胖通說(能量恆定、調定點、GLP-1)",
+          "MedlinePlus — Obesity (https://medlineplus.gov/obesity.html)"
+        ],
+        "western_pathology_en": [
+          "NIDDK/AACE — 肥胖通說(能量恆定、調定點、GLP-1)",
+          "MedlinePlus — Obesity (https://medlineplus.gov/obesity.html)"
+        ]
+      }
     },
     {
       "id": "cond.dyslipidemia",
@@ -23530,8 +24048,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫無「血脂」之名,依「痰濁」「膏脂」論——膏脂入血、凝而不化,即「痰濁入絡」之象。病機:脾失健運為源——肥甘過度,運化不及,精微不歸正化,變生膏脂痰濁,混處血脈;腎虛氣化不利為本——年高腎衰,清濁泌別失司,濁脂內留;肝鬱疏泄失常者,膏濁隨氣鬱滯。痰濁伏於脈絡,初則無形無症(血脂異常之「無症狀」正合「痰之為物,隨氣升降,無處不到」而未發之象);久則痰瘀互結,脈絡壅塞——胸痺、中風由此而成,「痰瘀同病」是動脈粥樣硬化最貼切的中醫轉譯。治重健脾化痰、消膏降濁,佐補腎、疏肝、活血;膏粱之變,仍以節食運動為第一義——他汀既立為主軸者,中醫居輔,不代降脂之任。",
+      "western_pathology_zh": "血脂異常的臨床意義幾乎全繫於動脈粥樣硬化:低密度脂蛋白(LDL)與其他含 apoB 脂蛋白滯留於動脈內皮下、氧化修飾、被巨噬細胞吞噬成泡沫細胞——斑塊的起點;LDL 的因果地位由三線證據釘死(家族性高膽固醇血症的自然實驗、孟德爾隨機化、降脂試驗的線性獲益),「累積暴露量」概念解釋了為何早控優於晚控。高三酸甘油酯的意義兩層:重度升高致急性胰臟炎;中度升高標記富含三酸甘油酯的殘餘脂蛋白——同樣致粥樣硬化,且常與低 HDL、小而密 LDL 同現(胰島素阻抗的血脂三聯徵)。HDL 數值低是風險標記,但拉高 HDL 的藥物試驗一再失敗——「好膽固醇」的因果神話已破。續發原因先查:甲低、糖尿病、腎病症候群、膽汁鬱積、酒精、藥物(類固醇、部分利尿劑與精神科藥);家族性高膽固醇血症(LDL 極高+家族早發心血管病+肌腱黃色瘤)須辨識——它改變整個家系的篩檢與治療強度。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23563,7 +24081,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine has no term for \"blood lipids\"; it reasons through phlegm turbidity and gao zhi (fatty deposits) — fat entering the blood and congealing untransformed is the image of \"phlegm turbidity entering the collaterals.\" Mechanism: spleen transport failure as the source — rich excess outruns transformation, food essence goes astray into fatty phlegm turbidity mingling in the vessels; kidney deficiency with failed qi transformation as the root — with age the kidney's separation of clear and turbid falters and turbid fat is retained; where liver constraint disorders coursing, the fatty turbidity stagnates with the qi. Phlegm turbidity lying hidden in the vessel network is at first formless and symptomless (dyslipidemia's \"asymptomatic\" nature matching \"phlegm rides the qi up and down, reaching everywhere\" before it strikes); with time phlegm and stasis interlock and the vessel network congests — chest bi and wind stroke are built from this; \"phlegm and stasis diseased together\" is atherosclerosis's most faithful Chinese translation. Treatment stresses fortifying the spleen, transforming phlegm, dispersing fat, and lowering turbidity, with kidney-supplementing, liver-coursing, and blood-invigorating assistance; for this disease of rich fare, diet and exercise remain the first duty — and where statins anchor the regimen, Chinese medicine assists without assuming the lipid-lowering charge.",
+      "western_pathology_en": "Dyslipidemia's clinical meaning hangs almost entirely on atherosclerosis: LDL and other apoB-containing lipoproteins are retained beneath the arterial endothelium, oxidatively modified, and engulfed by macrophages into foam cells — the plaque's beginning; LDL's causal status is nailed by three lines of evidence (the natural experiment of familial hypercholesterolemia, Mendelian randomization, and the linear benefit of lowering trials), and the \"cumulative exposure\" concept explains why early control beats late. High triglycerides matter on two levels: severe elevations cause acute pancreatitis; moderate elevations mark triglyceride-rich remnant lipoproteins — atherogenic in their own right, and typically co-occurring with low HDL and small dense LDL (the lipid triad of insulin resistance). Low HDL is a risk marker, but trials raising HDL have failed repeatedly — the \"good cholesterol\" causal myth is broken. Secondary causes come first: hypothyroidism, diabetes, nephrotic syndrome, cholestasis, alcohol, drugs (steroids, some diuretics and psychotropics); and familial hypercholesterolemia (very high LDL + premature family cardiovascular disease + tendon xanthomas) must be recognized — it changes screening and treatment intensity for an entire kindred.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(痰濁/膏脂論)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(痰濁/膏脂論)"
+        ],
+        "western_pathology_zh": [
+          "AHA/ACC/ESC — 血脂通說(LDL 因果三線證據、殘餘脂蛋白)",
+          "MedlinePlus — Cholesterol (https://medlineplus.gov/cholesterol.html)"
+        ],
+        "western_pathology_en": [
+          "AHA/ACC/ESC — 血脂通說(LDL 因果三線證據、殘餘脂蛋白)",
+          "MedlinePlus — Cholesterol (https://medlineplus.gov/cholesterol.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/cholesterol.html"
+      ]
     },
     {
       "id": "cond.osteoporosis",
@@ -23581,8 +24136,8 @@
         "pattern.spleen_qi_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「骨痿」「骨枯」,《內經》立論已完整:「腎主骨生髓」「腎氣熱,則腰脊不舉,骨枯而髓減,發為骨痿」。病機:腎精虧虛為本——先天之精定骨之稟賦(峰值骨量之意象),後天漸耗,精虧髓減,骨失所養;女子「七七」天癸竭,絕經後骨衰驟顯——古人以天癸之竭與骨之衰同繫於腎,與雌激素機轉遙相對應;脾虛為輔——後天化源不足,精微不布,先天失充(鈣營養吸收之意象);肝腎同源,筋骨並衰,則步態不穩而易仆(跌倒因子之中醫面);久病瘀阻,骨絡失榮,腰背固定作痛。治以補腎填精為軸,健脾益氣為輔,佐活血通絡;「腎-脾-瘀」三層,對應「激素軸-營養吸收-局部代謝」三層;而導引鍛鍊、慎防跌仆,古今同訓。",
+      "western_pathology_zh": "骨質疏鬆是骨強度下降致脆性骨折風險升高的骨骼疾病:骨骼終生處於重塑循環——蝕骨細胞吸收、成骨細胞新建,四十歲前後起吸收漸勝於形成;絕經後雌激素驟退,RANKL 路徑去抑制,蝕骨活性激增,是女性骨量在絕經後十年內快速流失的機轉(第一型);老年性(第二型)則兩性皆有,成骨功能與鈣維生素D軸全面衰退。峰值骨量(二十餘歲達頂,由遺傳、青少年期營養運動決定)與其後流失速率,共同決定晚年骨量——防治因此是「一生」的工程。臨床上它沉默至第一次骨折:椎體壓迫骨折(身高變矮、駝背、急性背痛)、髖部骨折(死亡率與失能的重災區)、腕部骨折;DXA 骨密度 T 值≤-2.5 定義診斷,但多數骨折發生在「骨量減少」區間——風險工具(FRAX)因此併入臨床因子。續發原因不可漏:糖皮質激素(最常見藥源)、甲亢與副甲亢、性腺低下、吸收不良、酒精;防跌與肌力訓練和藥物同等重要——骨折=骨脆+跌倒,兩個因子都要治。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23614,7 +24169,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's bone wei / bone desiccation; the Inner Classic's account is already complete: \"the kidney governs bone and engenders marrow,\" and \"when kidney qi is hot, the lumbar spine cannot lift; bone desiccates and marrow shrinks — bone wei results.\" Mechanism: kidney essence depletion as the root — prenatal essence endows the bone (the peak-bone-mass image), postnatal life spends it, and as essence shrinks and marrow lessens the bone loses nourishment; in women, tiangui is exhausted at \"seven sevens,\" and bone decline turns abrupt after menopause — the ancients tied tiangui's exhaustion and bone's decay to the same kidney, answering the estrogen mechanism across the centuries; spleen deficiency assists — the postnatal source runs short, essence fails to distribute, and the prenatal goes unreplenished (the image of calcium nutrition and absorption); liver and kidney share one source, so sinew and bone fail together — unsteady gait, easy falls (the fall factor, in Chinese terms); chronic stasis blocking the bone collaterals gives fixed lumbar-back pain. Treatment takes kidney-supplementing and essence-replenishing as the axis, spleen-fortifying as the wing, blood-invigoration as the assistant; the kidney-spleen-stasis triad maps onto hormone axis, nutrition-absorption, and local metabolism — and daoyin exercise with careful fall prevention is one teaching, ancient and modern.",
+      "western_pathology_en": "Osteoporosis is skeletal disease of reduced bone strength raising fragility-fracture risk: bone lives in lifelong remodeling — osteoclasts resorb, osteoblasts rebuild — with resorption gaining the upper hand from around forty; at menopause, estrogen withdrawal disinhibits the RANKL pathway and osteoclast activity surges — the mechanism of women's rapid loss in the first postmenopausal decade (type I); senile osteoporosis (type II) affects both sexes as bone formation and the calcium-vitamin D axis decline across the board. Peak bone mass (topping out in the twenties, set by genes and adolescent nutrition and exercise) together with the subsequent loss rate determines late-life bone — prevention is thus a whole-life project. Clinically it stays silent until the first fracture: vertebral compression (height loss, kyphosis, acute back pain), hip fracture (the disaster zone of mortality and disability), wrist fracture; DXA T-score ≤ −2.5 defines diagnosis, yet most fractures occur in the \"osteopenic\" range — hence risk tools (FRAX) folding in clinical factors. Secondary causes must not be missed: glucocorticoids (the commonest drug cause), hyper- and parathyroidism, hypogonadism, malabsorption, alcohol; fall prevention and strength training weigh as much as drugs — fracture = fragile bone + a fall, and both factors need treating.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(骨痿;《素問·痿論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(骨痿;《素問·痿論》)"
+        ],
+        "western_pathology_zh": [
+          "NIAMS/IOF — 骨質疏鬆通說(重塑失衡、DXA、FRAX、防跌)",
+          "MedlinePlus — Osteoporosis (https://medlineplus.gov/osteoporosis.html)"
+        ],
+        "western_pathology_en": [
+          "NIAMS/IOF — 骨質疏鬆通說(重塑失衡、DXA、FRAX、防跌)",
+          "MedlinePlus — Osteoporosis (https://medlineplus.gov/osteoporosis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/osteoporosis.html"
+      ]
     },
     {
       "id": "cond.hpa_dysregulation",
@@ -23631,8 +24223,8 @@
         "pattern.heart_kidney_not_communicating"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫不設此名,依「虛勞」「鬱證」論,而其症狀群在中醫框架內連貫可解:長期勞倦思慮,先傷心脾——氣血暗耗,神疲乏力、健忘寐差;累及於腎,腎精漸虧——晨起不振、腰酸耳鳴、性慾減退(晨峰鈍化之象,中醫讀為「陽氣不得順時而升」);腎陰虛者夜間虛煩、入睡困難(暮值偏高之象,讀為「陰不斂陽」);肝鬱貫穿其間——壓力觸發,氣機鬱滯,「wired but tired」正是「肝鬱化火於上、脾腎兩虛於下」的虛實夾雜圖景。治以補益心脾、滋腎填精為本,疏肝解鬱為樞,重建起居節律為基——「起居有常」即皮質醇節律之中醫語言;唯此病之「治」首在排除器質(甲狀腺、貧血、Addison),中醫調攝居其後,不代檢查之責。",
+      "western_pathology_zh": "這張卡須先誠實劃界:「腎上腺疲勞」不是公認醫學診斷——內分泌學會明確聲明缺乏證據,號稱檢測與補充劑市場走在證據前面;但「長期壓力下 HPA 軸調節改變」有真實文獻:慢性壓力人群可見皮質醇晝夜節律平坦化(晨峰鈍化、暮值偏高)、覺醒反應異常、對急性壓力的反應遲鈍——是「調節型態改變」而非「腺體衰竭」,與真正的腎上腺功能不全(Addison 病:自體免疫或其他破壞,皮質醇絕對缺乏,有低血壓、低鈉、色素沉著,是會致命的器質病)是兩件事,鑑別是這張卡存在的第一理由。求診者的疲勞、腦霧、睡眠障礙、「wired but tired」症狀真實存在,常見的可治底病依序是:睡眠障礙與呼吸中止、憂鬱焦慮、甲狀腺疾病、貧血缺鐵、圍絕經期——逐項排查勝過一個標籤。照護方向與過勞同構:壓力源管理、睡眠節律、運動、社會支持;「腎上腺補充劑」含腺體萃取物者有外源性皮質醇風險,是主動勸阻項。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23664,7 +24256,41 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine sets up no such name; it reasons through deficiency-taxation and constraint — and the symptom cluster reads coherently in that frame: long toil and rumination first wound heart and spleen — qi and blood silently spent: weary spirit, forgetfulness, broken sleep; the damage reaches the kidney and essence dwindles — mornings without lift, lumbar soreness, tinnitus, fading libido (the blunted morning peak, read as \"yang qi failing to rise with its hour\"); kidney yin deficiency brings empty vexation at night and difficulty falling asleep (the raised evening cortisol, read as \"yin failing to contain yang\"); liver constraint threads throughout — stress-triggered, the qi dynamic knotted: \"wired but tired\" is precisely the mixed picture of liver constraint flaring above with spleen-kidney deficiency below. Treatment rests on supplementing heart-spleen and enriching kidney essence, pivots on coursing the liver, and grounds itself in rebuilt daily rhythm — \"regularity in rising and resting\" is the cortisol rhythm in Chinese; but this condition's first \"treatment\" is excluding the organic (thyroid, anemia, Addison's) — Chinese regulation follows after and never substitutes for the work-up.",
+      "western_pathology_en": "This card must draw its boundary honestly first: \"adrenal fatigue\" is not a recognized diagnosis — the Endocrine Society states plainly that evidence is lacking, and the testing-and-supplement market runs ahead of the science; but \"altered HPA-axis regulation under chronic stress\" has a real literature: chronically stressed populations show flattened diurnal cortisol rhythm (blunted morning peak, raised evening values), abnormal awakening response, and sluggish response to acute stressors — a changed pattern of regulation, not a failing gland, and altogether distinct from true adrenal insufficiency (Addison's disease: autoimmune or other destruction, absolute cortisol deficiency, hypotension, hyponatremia, hyperpigmentation — an organic disease that kills), whose exclusion is this card's first reason to exist. The presenting fatigue, brain fog, sleep disturbance, and \"wired but tired\" state are real; the treatable conditions beneath them, in order of frequency: sleep disorders and apnea, depression and anxiety, thyroid disease, anemia and iron deficiency, perimenopause — working down that list beats applying a label. Care runs parallel to burnout: stressor management, sleep rhythm, exercise, social support; \"adrenal support\" supplements containing glandular extracts carry exogenous-cortisol risk and are an active dissuasion item.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(虛勞/鬱證門,依病機推證)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(虛勞/鬱證門,依病機推證)"
+        ],
+        "western_pathology_zh": [
+          "內分泌學會聲明(腎上腺疲勞非診斷)+ 慢性壓力皮質醇節律文獻通說",
+          "MedlinePlus — Adrenal Gland Disorders (https://medlineplus.gov/adrenalglanddisorders.html)"
+        ],
+        "western_pathology_en": [
+          "內分泌學會聲明(腎上腺疲勞非診斷)+ 慢性壓力皮質醇節律文獻通說",
+          "MedlinePlus — Adrenal Gland Disorders (https://medlineplus.gov/adrenalglanddisorders.html)"
+        ]
+      }
     },
     {
       "id": "cond.edema_fluid",
@@ -23681,8 +24307,8 @@
         "pattern.phlegm_damp"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「水腫」之「陰水」輕型。《內經》定總綱:「諸濕腫滿,皆屬於脾」;肺脾腎三臟主水——肺失通調、脾失轉輸、腎失開闔,水濕乃停。此病之型:脾虛不運為軸——勞倦思慮傷脾,水濕不化,晨輕暮重、身重倦怠,正合「脾主四肢肌肉、至暮陽氣漸衰」之律;氣滯水停為輔——久坐久立,氣機不行,水隨氣滯,經前情志之際加重(氣滯水停與肝鬱相引);腎陽不足者,氣化不利,下肢腫而畏寒。「久服利水之劑,傷脾耗氣,水反難制」——中醫早有峻利傷正之誡,與利尿劑依賴循環之理相合。治以健脾益氣、化濕利水為本,佐理氣、溫腎;節鹽、抬腿、有時而動,即「治水先治氣、氣行水自行」的日常化。",
+      "western_pathology_zh": "特發性水腫是排除診斷:週期性、直立位加重的水鈉滯留,幾乎僅見於育齡至中年女性——晨輕暮重、日間體重可明顯上升,手指腫脹戒指變緊、面部與下肢浮腫,而心、肝、腎、甲狀腺與靜脈淋巴系統檢查皆無異常。機轉假說:直立時毛細血管通透性異常增加,血漿外滲,有效血容量下降,RAAS 與抗利尿激素代償性活化——鈉水瀦留過度;部分患者與節食-暴食循環相關(碳水化合物再攝入時胰島素促鈉重吸收);利尿劑濫用是重要的醫源性環節——長期利尿劑使 RAAS 慢性活化,停藥後反彈性水腫更劇,形成依賴循環,漸進停用反而是治療。必須先排除的清單:心衰、腎病症候群、肝硬化、甲低(黏液水腫)、靜脈功能不全、淋巴水腫、藥物(鈣離子阻斷劑、NSAID、雌激素、甘草)。處置:限鹽、間歇平臥抬腿、彈性襪、體重日記;預後良性,但「良性」須以完整排除為前提。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -23717,6 +24343,43 @@
       "entity_type": "biomedical_condition",
       "sign_symptom_ids": [
         "sym.edema"
+      ],
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "The mild yin-water form of Chinese medicine's shui zhong (edema). The Inner Classic sets the rule: \"all damp with swelling and fullness belongs to the spleen\"; lung, spleen, and kidney govern water — when the lung fails to regulate the waterways, the spleen to transport, the kidney to open and close, water-damp comes to rest. This condition's shape: spleen deficiency failing to transport as the axis — toil and rumination wound the spleen, damp goes untransformed: light mornings, heavy evenings, weary heaviness, matching \"the spleen governs limbs and flesh, and yang qi wanes toward dusk\"; qi stagnation with water arrest as the wing — long sitting or standing stills the qi dynamic and water lodges where qi stalls, worse premenstrually and at emotional strain (qi-stagnant water inviting liver constraint); where kidney yang runs short, qi transformation fails — swollen cold legs. \"Long service of harsh water-draining drugs wounds the spleen and spends qi, and the water grows harder to govern\" — Chinese medicine's old warning against drastic diuresis, agreeing exactly with the diuretic-dependence loop. Treatment rests on fortifying the spleen, boosting qi, transforming damp, and disinhibiting water, assisted by qi-regulation and kidney-warming; salt moderation, raised legs, and timely movement are the daily form of \"to govern water, first govern qi — when qi moves, water moves of itself.\"",
+      "western_pathology_en": "Idiopathic edema is a diagnosis of exclusion: cyclic, orthostasis-aggravated salt-and-water retention seen almost exclusively in women from reproductive age to midlife — light in the morning, heavy by evening, with measurable daytime weight gain, tight rings on swollen fingers, facial and leg puffiness, while heart, liver, kidney, thyroid, and venolymphatic evaluations all return normal. Mechanistic hypotheses: on standing, capillary permeability rises abnormally, plasma extravasates, effective volume falls, and RAAS with antidiuretic hormone compensate — over-retaining sodium and water; a subset ties to diet-binge cycling (insulin promoting sodium reabsorption when carbohydrate returns); diuretic misuse is the key iatrogenic link — chronic diuretics keep RAAS activated so rebound edema after stopping is worse, a dependence loop where gradual withdrawal is itself the treatment. The exclusion list comes first: heart failure, nephrotic syndrome, cirrhosis, hypothyroid myxedema, venous insufficiency, lymphedema, drugs (calcium-channel blockers, NSAIDs, estrogens, licorice). Management: salt restriction, intermittent recumbency with legs raised, compression stockings, a weight diary; prognosis is benign — but \"benign\" is conditional on the exclusions being complete.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(水腫門;《素問·至真要大論》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(水腫門;《素問·至真要大論》)"
+        ],
+        "western_pathology_zh": [
+          "內科學通說(特發性水腫排除診斷、利尿劑反彈)",
+          "MedlinePlus — Edema (https://medlineplus.gov/edema.html)"
+        ],
+        "western_pathology_en": [
+          "內科學通說(特發性水腫排除診斷、利尿劑反彈)",
+          "MedlinePlus — Edema (https://medlineplus.gov/edema.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/edema.html"
       ]
     },
     {
@@ -24412,8 +25075,8 @@
         "pattern.heart_yang_deficiency"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「胸痺」「心痛」,《金匱要略》立綱:「陽微陰弦,即胸痺而痛」——上焦陽氣不振(陽微),陰邪乘居陽位(陰弦),是此病千年不移的病機總綱。本虛:心氣不足、胸陽不振,漸及氣陰兩虛、心腎陽虛;標實:痰濁盤踞胸中(與膏脂斑塊之意象相合)、瘀血阻滯心脈(「心痛如刺、固定不移」)、寒凝(遇寒痛作,得溫則減)、氣滯(情志誘發,脹悶走竄)。勞力誘發者,勞則耗氣,氣虛血行愈滯——與「需氧-供氧失衡」同構;痰瘀互結日深,脈道愈窄,則病勢日進。治法:通陽宣痺、豁痰化瘀為標,益氣溫陽養陰為本,分期權衡;而「猝然劇痛、汗出肢冷」之真心痛,古人已識其危——「旦發夕死」,今即急性冠心症候群,屬急救轉診,非針藥緩圖之地。",
+      "western_pathology_zh": "冠狀動脈疾病的底層是動脈粥樣硬化的數十年演進:內皮功能障礙(高血壓、吸菸、高血糖的共同打擊面)使含 apoB 脂蛋白滯留內膜、氧化修飾,單核球浸潤成泡沫細胞,平滑肌遷移形成纖維帽——斑塊既成,兩條出事路徑:管腔漸窄,需氧超過供氧時發生穩定型心絞痛(勞力誘發、休息或含硝酸甘油緩解);或斑塊破裂/侵蝕觸發血栓,驟然閉塞即急性冠心症候群——而破裂風險取決於斑塊性質(薄帽、大脂核、發炎活躍)而非狹窄程度,「輕度狹窄也能心肌梗塞」是這個病最重要的臨床事實。危險因子即治療靶:血脂(LDL 為因果軸)、血壓、血糖、吸菸;運動與心臟復健有堅實證據。此卡的針灸情境定位於穩定期輔助(症狀與生活品質、心臟復健之協同);任何新發、加劇、休息時胸痛屬急性冠心症候群之疑,是紅旗層的事,不在輔助範圍。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -24445,7 +25108,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's chest bi (xiong bi) / heart pain; the Jin Gui Yao Lue sets the rule: \"yang faint, yin string-taut — chest bi with pain\" — upper-burner yang unstirred (yang faint) with yin evils occupying yang's seat (yin string-taut), the mechanism formula unmoved for two millennia. Root deficiency: heart qi insufficient, chest yang unstirred, advancing to dual qi-yin deficiency and heart-kidney yang deficiency; branch excess: phlegm turbidity entrenched in the chest (meeting the image of fatty plaque), static blood obstructing the heart vessels (\"heart pain like an awl, fixed and unmoving\"), cold congealing (pain on cold exposure, easing with warmth), qi stagnation (emotion-triggered, distending and wandering). Exertional pain: labor spends qi, and deficient qi moves blood still worse — structurally the demand-supply mismatch; as phlegm and stasis interlock deeper, the vessel path narrows and the disease advances. Methods: free the yang and diffuse the bi, sweep phlegm and transform stasis at the branch; boost qi, warm yang, nourish yin at the root, weighed by stage. And the \"sudden violent pain with sweating and cold limbs\" of true heart pain the ancients already knew as mortal — \"onset at dawn, death by dusk\" — today's acute coronary syndrome: emergency referral, no ground for the slow work of needle and herb.",
+      "western_pathology_en": "Beneath coronary artery disease lies atherosclerosis evolving over decades: endothelial dysfunction (the common strike surface of hypertension, smoking, hyperglycemia) lets apoB lipoproteins lodge in the intima and oxidize, monocytes become foam cells, smooth muscle migrates into a fibrous cap — and the plaque, once built, fails along two routes: gradual luminal narrowing, with stable angina when demand outruns supply (exertional, relieved by rest or nitroglycerin); or plaque rupture/erosion triggering thrombosis and abrupt occlusion — acute coronary syndrome — where rupture risk rides on plaque character (thin cap, large lipid core, active inflammation) rather than stenosis grade: \"a mild stenosis can still infarct\" is this disease's most important clinical fact. Risk factors are the treatment targets: lipids (LDL the causal axis), blood pressure, glucose, smoking; exercise and cardiac rehabilitation carry solid evidence. This card's acupuncture context is stable-phase adjunct (symptoms, quality of life, synergy with cardiac rehab); any new, crescendo, or rest chest pain is suspected acute coronary syndrome — red-flag territory, outside the adjunctive scope.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(胸痺門;《金匱要略》)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(胸痺門;《金匱要略》)"
+        ],
+        "western_pathology_zh": [
+          "AHA/ACC — 冠心病通說(斑塊生物學、穩定/急性二路)",
+          "MedlinePlus — Coronary Artery Disease (https://medlineplus.gov/coronaryarterydisease.html)"
+        ],
+        "western_pathology_en": [
+          "AHA/ACC — 冠心病通說(斑塊生物學、穩定/急性二路)",
+          "MedlinePlus — Coronary Artery Disease (https://medlineplus.gov/coronaryarterydisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/coronaryarterydisease.html"
+      ]
     },
     {
       "id": "cond.heart_failure",
@@ -24772,8 +25472,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「脈痺」「四肢逆冷(厥)」論,「手足厥寒,脈細欲絕者,當歸四逆湯主之」(《傷寒論》)正是此病的原型條文。病機:陽氣不達四末為軸——素體陽虛血弱,復感寒邪,寒主收引,血脈攣急,氣血不能榮於指端:蒼白而冷即「陽氣不至」,紫黯即「血瘀於絡」,得溫轉紅即「陽回血行」——三相變色在中醫語言裡是一套完整的陽氣進退圖。情志緊張而發者,肝鬱氣滯,氣機一窒,血行隨閉;久病指端潰破不斂,是寒瘀化腐、氣血大虛之壞象(續發性組織損傷之警訊,中醫同樣視為病勢轉深)。治以溫經散寒、養血通脈為軸(當歸四逆之法),佐疏肝理氣;艾灸溫通四末為其所長——而保暖避寒,即「虛人避風寒如避矢石」之古訓。",
+      "western_pathology_zh": "雷諾氏現象是指(趾)端小動脈對寒冷與情緒的過度血管痙攣,典型三相變色:蒼白(痙攣缺血)→發紺(缺氧)→潮紅(再灌流),伴麻木刺痛。機轉:血管平滑肌 α2C 腎上腺素受體在低溫下向細胞膜轉位、收縮反應放大,內皮舒張因子(一氧化氮)與收縮因子(內皮素-1)失衡。臨床的分水嶺是原發與續發:原發性——多見於年輕女性,對稱、不留組織損傷、甲摺微血管鏡正常、抗核抗體陰性,預後良性;續發性——警訊為年齡偏大起病、不對稱、指端潰瘍或凹陷性瘢痕、甲摺微血管異常、自體抗體陽性——背後最常見的是硬皮症與混合性結締組織病,雷諾現象可先於硬皮症其他表現多年,故甲摺鏡與抗體是分流工具。誘因與藥物盤點:β 阻斷劑、偏頭痛藥(麥角類、部分曲坦)、興奮劑、尼古丁;保暖(核心體溫與手足並重)是第一處置,鈣離子阻斷劑為一線用藥。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -24805,7 +25505,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from vessel bi and reversal cold of the limbs (jue) — \"hands and feet reversal-cold, pulse fine to the point of expiry: Dang Gui Si Ni Tang governs it\" (Shang Han Lun) is this disease's prototype line. Mechanism: yang qi failing to reach the four extremities is the axis — a constitution of weak yang and thin blood meets cold, cold contracts, the vessels cramp, and qi and blood cannot nourish the fingertips: the pale cold phase is \"yang qi not arriving,\" the purple-dusky phase \"blood static in the collaterals,\" the flush on warming \"yang returning and blood moving\" — the triphasic change reads in Chinese as one complete diagram of yang's retreat and return. Attacks fired by emotion are liver constraint: the qi dynamic chokes and blood flow shuts with it. Fingertip ulcers that will not close in long disease are the grave image of cold-stasis rotting flesh on greatly deficient qi and blood (the secondary-disease tissue-damage warning, which Chinese medicine likewise reads as the disease turning deep). Treatment warms the channels and scatters cold, nourishes blood and frees the vessels (the Dang Gui Si Ni method), with liver-coursing assistance; moxibustion warming the extremities is its particular strength — and dressing warm against cold is the old teaching that \"the deficient shun wind and cold as they would arrows and stones.\"",
+      "western_pathology_en": "Raynaud phenomenon is exaggerated vasospasm of digital small arteries to cold and emotion, with the classic triphasic color change: pallor (spastic ischemia) → cyanosis (deoxygenation) → rubor (reperfusion), with numbness and tingling. Mechanism: vascular smooth-muscle α2C-adrenergic receptors translocate to the membrane in cold and amplify constriction, while endothelial dilators (nitric oxide) and constrictors (endothelin-1) fall out of balance. The clinical watershed is primary versus secondary: primary — young women mostly, symmetric, no tissue damage, normal nailfold capillaroscopy, negative ANA, benign course; secondary — warning signs are older onset, asymmetry, digital ulcers or pitted scars, abnormal nailfold capillaries, positive autoantibodies — with systemic sclerosis and mixed connective tissue disease the commonest background, and Raynaud may precede scleroderma's other features by years, making capillaroscopy and antibodies the triage tools. Triggers and drug inventory: beta-blockers, migraine drugs (ergots, some triptans), stimulants, nicotine; keeping warm (core and extremities alike) is the first measure, calcium-channel blockers the first-line drug.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(脈痺/厥證;《傷寒論》當歸四逆湯條)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(脈痺/厥證;《傷寒論》當歸四逆湯條)"
+        ],
+        "western_pathology_zh": [
+          "ACR — 雷諾氏現象通說(原發/續發分流、甲摺鏡)",
+          "MedlinePlus — Raynaud's Disease (https://medlineplus.gov/raynaudsdisease.html)"
+        ],
+        "western_pathology_en": [
+          "ACR — 雷諾氏現象通說(原發/續發分流、甲摺鏡)",
+          "MedlinePlus — Raynaud's Disease (https://medlineplus.gov/raynaudsdisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/raynaudsdisease.html"
+      ]
     },
     {
       "id": "cond.varicose_veins",
@@ -24822,8 +25559,8 @@
         "pattern.phlegm_damp"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「筋瘤」——《外科正宗》:「筋瘤者,堅而色紫,壘壘青筋,盤曲甚者,結若蚯蚓。」盤曲如蚯蚓之描述,與曲張靜脈之形一字不差。病機:久站負重,勞倦傷氣——氣虛下陷,無力帥血上行,血行遲緩,滯於下肢絡脈;氣滯血瘀,脈絡擴張迂曲,結成筋瘤;妊娠胎氣壓迫,血行受阻,同理成之。久病之變:瘀久化熱,或濕熱下注——局部紅腫熱痛(血栓性淺靜脈炎之象);瘀阻肌膚,失於榮養——色素沉著、肌膚甲錯,潰而成「臁瘡」(小腿潰瘍),瘡口經久難斂,正是氣虛血瘀之互為因果。治以益氣活血、化瘀通絡為軸,濕熱者清利,臁瘡者益氣托瘡生肌;抬腿、束縛(彈性襪之理)、動則氣行——保守處置之理,兩醫學互通。",
+      "western_pathology_zh": "靜脈曲張是下肢淺靜脈系統的瓣膜功能不全:靜脈瓣膜關閉不全→血液逆流→靜脈高壓→管壁擴張迂曲,而擴張又使瓣葉更難對合——自我強化的環;管壁本身的細胞外基質重塑(膠原與彈性纖維比例改變)是易感基礎。危險因子:家族史(最強)、久站職業、妊娠(孕酮鬆弛管壁+子宮壓迫回流+血容量增加)、肥胖、年齡。它是慢性靜脈疾病譜的一段:毛細血管擴張→曲張靜脈→水腫→皮膚變化(色素沉著、脂性硬皮症、白色萎縮)→靜脈性潰瘍(內踝好發)——皮膚變化是「該積極處理」的分界;併發症尚有血栓性淺靜脈炎與曲張破裂出血。長時間靜脈高壓的傳導主要走深淺交通支——評估靠都卜勒超音波定逆流位置。彈性襪與腿部肌肉幫浦運動是保守基石;熱消融取代大隱靜脈剝離為介入主流。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -24855,7 +25592,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's \"sinew tumor\" (jin liu) — the Wai Ke Zheng Zong: \"sinew tumors are firm and purple, heaped green-blue cords, and when greatly coiled, knotted like earthworms.\" The earthworm-coil description matches the varicose vein to the letter. Mechanism: long standing under load wears qi — qi deficient and sinking cannot marshal blood upward, flow slows and settles in the leg collaterals; qi stagnation with blood stasis dilates and coils the vessel network into the sinew tumor; in pregnancy the fetal qi presses the flow, forming it by the same logic. The turns of chronicity: stasis transforming into heat, or damp-heat pouring downward — local red, hot, painful swelling (the superficial thrombophlebitis image); stasis starving the skin — pigmentation, scaled skin, and ulceration into lian chuang (the shin ulcer), whose mouth will not close for months: qi deficiency and blood stasis feeding each other exactly. Treatment takes boosting qi and invigorating blood, transforming stasis and opening collaterals as its axis; clear and drain the damp-heat type; for shin ulcers, boost qi to support the sore and engender flesh; raised legs, binding (the logic of compression stockings), and \"movement moves qi\" — the conservative reasoning runs common between the two medicines.",
+      "western_pathology_en": "Varicose veins are valvular incompetence of the leg's superficial venous system: failing valve closure → reflux → venous hypertension → dilated tortuous walls, and dilation in turn holds the leaflets further apart — a self-reinforcing loop; remodeling of the wall's extracellular matrix (shifted collagen-elastin ratios) is the susceptible substrate. Risk factors: family history (strongest), standing occupations, pregnancy (progesterone slackening walls + uterine outflow compression + expanded volume), obesity, age. They are one segment of the chronic venous disease spectrum: telangiectasias → varicosities → edema → skin changes (pigmentation, lipodermatosclerosis, atrophie blanche) → venous ulcer (favoring the medial ankle) — skin change marks the \"treat actively now\" line; complications add superficial thrombophlebitis and bleeding from a ruptured varix. Sustained venous hypertension transmits chiefly through deep-superficial perforators — duplex ultrasound maps the reflux. Compression stockings and calf-pump exercise are the conservative bedrock; thermal ablation has displaced saphenous stripping as the mainstream intervention.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫外科學教材通說(筋瘤/臁瘡;《外科正宗》)"
+        ],
+        "etiology_en": [
+          "中醫外科學教材通說(筋瘤/臁瘡;《外科正宗》)"
+        ],
+        "western_pathology_zh": [
+          "SVS/AVF — 慢性靜脈疾病通說(逆流環、皮膚變化分界)",
+          "MedlinePlus — Varicose Veins (https://medlineplus.gov/varicoseveins.html)"
+        ],
+        "western_pathology_en": [
+          "SVS/AVF — 慢性靜脈疾病通說(逆流環、皮膚變化分界)",
+          "MedlinePlus — Varicose Veins (https://medlineplus.gov/varicoseveins.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/varicoseveins.html"
+      ]
     },
     {
       "id": "cond.poor_circulation",
@@ -24872,8 +25646,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫依「血痺」「四末不溫」論,而以辨證拆解諸型,恰與鑑別清單同構:陽虛失煦——素體陽虛,溫煦不及,四末冰冷、得溫則舒、畏寒踡臥(甲低與體質性肢冷之象);氣虛血弱——氣不帥血,血不榮末,冷而蒼白、倦怠脈弱(貧血之象);寒凝血瘀——寒客脈絡,血行凝澀,冷痛並見、膚色紫黯、行走則痠痛加重(動脈缺血跛行之象,「不通則痛」);氣滯——情志而發,時冷時溫(痙攣之象)。「四末者,諸陽之末」——陽氣血液所以不達,或因虛(陽虛氣虛)、或因阻(寒凝瘀滯),虛實之辨即治法之分:虛者溫陽益氣養血,阻者溫經散寒活血;而「行走痠痛、趾端紫黑不退」屬脫疽之漸(嚴重肢體缺血),古人已知其能致「脫」——急轉血管科,非灸熨可任。",
+      "western_pathology_zh": "「末梢循環不良」是主訴不是診斷——手腳冰冷、麻木、發白發紫、間歇性痠痛的背後,是一張必須拆開的鑑別清單:動脈性——周邊動脈疾病(粥樣硬化致下肢供血不足:間歇性跛行、患肢抬高蒼白下垂潮紅、足背脈搏減弱,踝肱指數是床邊定量工具;它同時標記全身動脈粥樣硬化,心腦血管風險同級上調);血管痙攣性——雷諾氏現象(指端三相變色,另卡詳述);靜脈性——功能不全之沉重腫脹;神經性——周邊神經病變的「冷感」實為感覺異常,血流可正常;此外,甲狀腺功能低下、貧血、藥物(β 阻斷劑)、單純體質性肢冷(年輕女性常見,檢查全陰性)各占一席。分流的第一步是動脈危險分層:年長、吸菸、糖尿病者先查脈搏與踝肱指數——跛行病史比「冰冷」本身更具警示價值;運動訓練是周邊動脈疾病證據最強的保守治療,與「怕冷少動」的直覺相反。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -24905,7 +25679,44 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine reasons from blood bi and \"the four extremities unwarmed,\" and its pattern-splitting maps one-to-one onto the differential: yang deficiency failing to warm — a yang-weak constitution, warmth not reaching: ice-cold extremities eased by warmth, huddled chill (the image of hypothyroidism and constitutional coldness); qi deficiency with thin blood — qi failing to marshal blood, blood failing to nourish the tips: cold and pale with weariness and a weak pulse (the anemia image); cold congealing with blood stasis — cold lodged in the vessel network, flow congealed: cold with pain, dusky-purple skin, aching worse with walking (the arterial claudication image — \"blockage causes pain\"); qi stagnation — emotion-fired, cold by fits and warm by fits (the vasospastic image). \"The four extremities are the ends of all yang\" — yang and blood fail to arrive either from deficiency (yang, qi) or from obstruction (cold congealing, stasis), and that deficiency-obstruction split is the treatment split: warm yang, boost qi, nourish blood for the former; warm the channels, scatter cold, invigorate blood for the latter. And \"aching on walking with toe tips turning black and not recovering\" is the gradient into tuo ju (gangrene of severe limb ischemia) — the ancients knew it could cost the limb: urgent vascular referral, no task for moxa and compress.",
+      "western_pathology_en": "\"Poor circulation\" is a complaint, not a diagnosis — behind cold, numb, blanching or purplish extremities and intermittent aching sits a differential that must be taken apart: arterial — peripheral artery disease (atherosclerotic underperfusion of the legs: intermittent claudication, elevation pallor with dependent rubor, weakened pedal pulses; the ankle-brachial index is the bedside quantifier — and PAD flags systemic atherosclerosis, upgrading cardiac and cerebral risk in the same breath); vasospastic — Raynaud phenomenon (triphasic digital color change, detailed on its own card); venous — the heavy swelling of insufficiency; neuropathic — the \"coldness\" of peripheral neuropathy is a paresthesia with flow often normal; plus hypothyroidism, anemia, drugs (beta-blockers), and simple constitutional cold limbs (common in young women, all tests negative) each holding a seat. Triage starts with arterial risk stratification: in the older, the smoking, and the diabetic, check pulses and the ankle-brachial index first — a claudication history warns louder than \"coldness\" itself; and exercise training is PAD's best-evidenced conservative treatment, against the instinct that cold limbs should move less.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(血痺/厥證門)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(血痺/厥證門)"
+        ],
+        "western_pathology_zh": [
+          "AHA — 周邊動脈疾病通說(ABI、跛行、運動治療)",
+          "MedlinePlus — Peripheral Arterial Disease (https://medlineplus.gov/peripheralarterialdisease.html)"
+        ],
+        "western_pathology_en": [
+          "AHA — 周邊動脈疾病通說(ABI、跛行、運動治療)",
+          "MedlinePlus — Peripheral Arterial Disease (https://medlineplus.gov/peripheralarterialdisease.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/peripheralarterialdisease.html"
+      ]
     },
     {
       "id": "cond.recurrent_uti",
@@ -25330,8 +26141,8 @@
         "pattern.blood_stasis"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫屬「淋證」,而以「勞淋」「氣淋」為其歸——課件淋證綱要之因(濕熱、心熱、肝鬱、脾腎兩虛)在此病呈慢性化組合:病久濕熱傷陰——初似熱淋而無邪可清,腎陰虧虛,虛火擾動膀胱,溺頻而澀痛隱隱、夜尿頻仍;肝鬱氣滯——情志不遂,少腹氣機鬱滯,脹痛連及前陰,症隨情緒起伏(氣淋之象);脾腎兩虛——中氣下陷,膀胱氣化無權,「勞則即發」正是勞淋定義性特徵,與此病壓力勞累加重之節律相合;久痛入絡,膀胱血瘀,痛有定處。「充盈則痛」,中醫讀為膀胱絡脈失濡、不任充撐——陰虛絡損之象。治忌苦寒通利之過(無濕熱可清而徒傷正),重在滋腎陰、益中氣、疏肝鬱、通絡止痛,分型而施;骨盆底攣急者,兼取筋會經筋之治——與西醫「膀胱與骨盆底並治」同構。",
+      "western_pathology_zh": "間質性膀胱炎/膀胱疼痛症候群的定義是:與膀胱充盈相關的骨盆疼痛、壓迫或不適,伴頻尿夜尿等下泌尿道症狀,持續超過六週且無感染或其他可辨識原因——「充盈痛、排尿緩解」的節律是與膀胱過動症(急迫為主、漏尿)分野的問診軸。機轉是多層假說的疊加:尿路上皮 GAG 黏多醣保護層缺損——尿中鉀離子等刺激物滲入間質;肥大細胞活化與神經源性發炎互相餵養;久之周邊與中樞敏感化——疼痛脫離局部病理自走,與慢性骨盆痛、腸躁、纖維肌痛的高共病即此背景。亞型有治療意義:有 Hunner 病灶型(膀胱鏡下發炎病灶,對局部燒灼與類固醇注射反應好)與無病灶型(佔多數,處置偏向整體疼痛管理)。診斷須排除感染、結石、癌(血尿者膀胱鏡不可省)、放射性與酮胺類膀胱炎;飲食觸發(咖啡因、酸性食物、酒精)個體差異大,飲食日記勝過一刀切禁單;骨盆底肌筋膜功能障礙常伴行——「治膀胱」與「治骨盆底」是兩條並行的路。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -25363,7 +26174,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine files this under lin syndrome, assigning it to \"taxation lin\" and \"qi lin\" — the handout's causes of lin (damp-heat, heart heat, liver constraint, spleen-kidney deficiency) here combine in chronic form: long disease with damp-heat wounding yin — once like heat lin but with no evil left to clear, kidney yin depleted, deficient fire stirring the bladder: frequent urination with dull rough pain and busy nights; liver constraint with qi stagnation — emotional frustration knotting the lower abdomen's qi dynamic, distending pain reaching the genitals, symptoms swinging with mood (the qi-lin image); spleen-kidney deficiency — middle qi sinking, the bladder's qi transformation unempowered: \"flaring upon taxation\" is taxation lin's defining trait, matching this disease's worsening with stress and fatigue; long pain entering the collaterals leaves bladder blood stasis with fixed pain. \"Pain upon filling\" reads in Chinese as the bladder's collaterals unmoistened and unable to bear distension — the image of yin deficiency with collateral injury. Treatment shuns excess bitter-cold draining (no damp-heat left to clear — it would only wound the upright), and stresses enriching kidney yin, boosting middle qi, coursing liver constraint, and opening collaterals to stop pain, by subtype; where the pelvic floor cramps, add the sinew-treatment approach — structurally the same as biomedicine's bladder-plus-pelvic-floor road.",
+      "western_pathology_en": "Interstitial cystitis / bladder pain syndrome is defined as pelvic pain, pressure, or discomfort tied to bladder filling, with urinary frequency and nocturia, persisting beyond six weeks without infection or another identifiable cause — the rhythm of \"pain with filling, relief with voiding\" is the history axis dividing it from overactive bladder (urgency-led, with leakage). The mechanism stacks hypotheses in layers: a defective urothelial GAG mucopolysaccharide shield — urinary potassium and other irritants seeping into the interstitium; mast-cell activation and neurogenic inflammation feeding each other; then peripheral and central sensitization — pain running on its own, detached from local pathology, the background of its heavy comorbidity with chronic pelvic pain, irritable bowel, and fibromyalgia. Subtype matters for treatment: Hunner-lesion disease (inflammatory lesions at cystoscopy, responding well to fulguration and steroid injection) versus the non-lesion majority (managed as whole-person pain). Diagnosis must exclude infection, stones, cancer (cystoscopy is not optional with hematuria), and radiation or ketamine cystitis; dietary triggers (caffeine, acidic foods, alcohol) vary widely — a food diary beats blanket prohibition; and pelvic-floor myofascial dysfunction commonly rides along — \"treating the bladder\" and \"treating the pelvic floor\" are two parallel roads.",
+      "field_sources": {
+        "etiology_zh": [
+          "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.docx(Tier-1 課堂 handout,淋證病因綱要)",
+          "中醫內科學教材通說(淋證·勞淋/氣淋)"
+        ],
+        "etiology_en": [
+          "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.docx(Tier-1 課堂 handout,淋證病因綱要)",
+          "中醫內科學教材通說(淋證·勞淋/氣淋)"
+        ],
+        "western_pathology_zh": [
+          "AUA — 間質性膀胱炎/膀胱疼痛症候群通說(GAG 層、Hunner 亞型)",
+          "MedlinePlus — Interstitial Cystitis (https://medlineplus.gov/interstitialcystitis.html)"
+        ],
+        "western_pathology_en": [
+          "AUA — 間質性膀胱炎/膀胱疼痛症候群通說(GAG 層、Hunner 亞型)",
+          "MedlinePlus — Interstitial Cystitis (https://medlineplus.gov/interstitialcystitis.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/interstitialcystitis.html"
+      ]
     },
     {
       "id": "cond.overactive_bladder",
@@ -25761,8 +26611,8 @@
         "pattern.damp_heat_lower_burner"
       ],
       "review_status": "draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "中醫「癃閉」——「癃」者小便不利、點滴而短少,「閉」者小便閉塞、點滴不通,正合慢性滯留與急性滯留之分。總綱是「膀胱氣化失司」,而氣化之權分屬三焦:腎陽虛衰——命門火衰,「無陽則陰無以化」,溺不得出而色清、腰膝冷(神經性與老年逼尿肌無力之象);中氣下陷——脾虛氣陷,升降失司,氣虛無力以運溺(產後術後氣血驟虛之象,故補中益氣為其正治);肝鬱氣滯——情志不舒,三焦水道氣機閉塞,脹急而溺不行(功能性與心因性滯留之象);濕熱蘊結膀胱、或尿路瘀阻者屬實——然「非阻塞性」之滯留,虛證居多,苦寒通利反傷其氣。「上竅開則下竅自通」——提壺揭蓋(宣肺以通溺)之法,是中醫治癃閉的特色思路;急性點滴不通、少腹脹急欲裂,古人亦知針藥不及之時當用導法(導尿之謂)——急則治標,與今之急診導尿一義。",
+      "western_pathology_zh": "非阻塞性尿滯留是排空功能的失敗而非通道的堵塞——逼尿肌收縮無力或逼尿肌-括約肌協同失調,使膀胱無法有效排空。神經性原因為主軸:糖尿病自主神經病變(感覺遲鈍→慢性過度充盈→肌源性失代償的惡性環)、骶髓與馬尾病變(急性尿滯留伴鞍區麻木、下肢無力者是外科急症)、多發性硬化、帕金森氏症、骨盆手術後神經損傷;藥物是最可逆的一環——抗膽鹼藥(含第一代抗組織胺、三環抗憂鬱劑)、鴉片類、擬交感神經藥;產後與術後尿滯留(麻醉、疼痛反射抑制)多為暫時性;Fowler 症候群(年輕女性括約肌鬆弛失敗)少見而特殊。慢性滯留的下游:溢流性失禁、反覆感染、結石、腎水腫與腎功能受損——殘尿量測定(超音波)是分層基礎,導尿(間歇自導優於留置)是保護上尿路的地基;急性完全無法排尿伴脹痛,是急診導尿之事。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -25794,7 +26644,46 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "import_artifacts": [
+        {
+          "field": "etiology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "正氣不足，臟腑功能失調，氣血津液運化不利。"
+        },
+        {
+          "field": "western_pathology_zh",
+          "archived_at": "2026-08-11",
+          "reason": "全庫 73 卡共用的樣板句(憲法紅線 6)——非本卡內容,無所屬家卡;依 §3.5.5 封存並以本卡專屬內容取代。",
+          "belongs_to": null,
+          "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
+        }
+      ],
+      "etiology_en": "Chinese medicine's long bi — long is unfree urination in drops and short measure, bi is complete blockage with not a drop through: precisely the chronic-versus-acute retention split. The governing formula is \"the bladder's qi transformation has lost its office,\" with that transformation's authority distributed across the burners: kidney yang decline — mingmen fire fading, \"without yang, yin cannot transform\": urine will not issue, runs clear, with cold lumbar and knees (the image of neurogenic and elderly detrusor weakness); middle qi sinking — spleen deficiency with sunken qi, ascent and descent disordered, qi too weak to move the urine (the image of postpartum and postoperative sudden depletion — hence Bu Zhong Yi Qi as its proper method); liver constraint with qi stagnation — emotions unstretched, the triple burner's waterway choked at the level of qi: distended urgency with no flow (the functional and psychogenic image); damp-heat smoldering in the bladder or stasis blocking the urinary path belong to excess — but in non-obstructive retention deficiency predominates, and bitter-cold draining only wounds the qi further. \"Open the upper orifice and the lower opens of itself\" — lifting the pot's lid (diffusing the lung to free the urine) is Chinese medicine's signature maneuver for long bi; and when not a drop passes and the lower abdomen distends near to bursting, the ancients knew the moment beyond needle and herb called for the guiding method — catheterization — treating the branch in the emergency, one meaning with today's emergency catheter.",
+      "western_pathology_en": "Non-obstructive urinary retention is failure of emptying rather than blockage of the channel — detrusor underactivity or detrusor-sphincter dyssynergia leaving the bladder unable to void effectively. Neurogenic causes are the axis: diabetic autonomic neuropathy (blunted sensation → chronic overdistension → myogenic decompensation, a vicious loop), sacral cord and cauda equina lesions (acute retention with saddle numbness and leg weakness is a surgical emergency), multiple sclerosis, Parkinson's disease, and nerve injury after pelvic surgery; drugs are the most reversible link — anticholinergics (including first-generation antihistamines and tricyclics), opioids, sympathomimetics; postpartum and postoperative retention (anesthesia, pain-reflex inhibition) is usually transient; Fowler's syndrome (failed sphincter relaxation in young women) is rare and particular. Chronic retention's downstream: overflow incontinence, recurrent infection, stones, hydronephrosis, and renal impairment — post-void residual measurement (ultrasound) is the stratification base, catheterization (intermittent self-catheterization over indwelling) the foundation protecting the upper tract; acute inability to void with painful distension is an emergency-catheterization matter.",
+      "field_sources": {
+        "etiology_zh": [
+          "中醫內科學教材通說(癃閉門)",
+          "curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.docx(Tier-1 課堂 handout,膀胱氣化框架)"
+        ],
+        "etiology_en": [
+          "中醫內科學教材通說(癃閉門)",
+          "curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.docx(Tier-1 課堂 handout,膀胱氣化框架)"
+        ],
+        "western_pathology_zh": [
+          "AUA — 尿滯留通說(逼尿肌無力/協同失調、殘尿分層)",
+          "MedlinePlus — Urinary Retention (https://medlineplus.gov/urinaryretention.html)"
+        ],
+        "western_pathology_en": [
+          "AUA — 尿滯留通說(逼尿肌無力/協同失調、殘尿分層)",
+          "MedlinePlus — Urinary Retention (https://medlineplus.gov/urinaryretention.html)"
+        ]
+      },
+      "sources": [
+        "https://medlineplus.gov/urinaryretention.html"
+      ]
     },
     {
       "id": "cond.bph",
