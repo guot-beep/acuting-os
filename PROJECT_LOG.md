@@ -3184,3 +3184,10 @@ Current repo state as of this log:
 - **B3(Sonnet 5 交付,Fable 眼睛驗過後提交)**:data/config/ 五檔 —— supplement_category(8)/ lifestyle_factor(26,含 value_hint_en)/ exposure(9)/ adverse_event(8)/ modality(8)。build-data PASS、content-junk PASS、ratchet PASS 無回歸。尚未接進 build-data readJson(之後跟 UI 一起接)。
 - **⏸ CODEX AUDIT RECOMMENDED NOW** — 範圍:commits `994d8b3`+`6569eaa`+本次。要驗:schema/契約/mapping 三方一致性;export/import 是否完整攜帶新鍵(理論上 case 物件全序列化,要實證);PHI validator 是否需要掃新欄位;visit_western_medications(舊)與 case_agent_exposures(新)並存語意;role⇔isPrimary 一致性。
 - **下一步路由**:Codex audit → Phase C 薄 repository 抽象(Fable)→ Phase D 捕捉 UI(Sonnet,契約=B2 鍵名)→ Phase C2 Patient wiring(Fable+audit)。
+
+# 2026-08-12 Fable — AI 協作協議安裝(SOL/ChatGPT ↔ Claude 經 GitHub,docs-only)
+
+- 三檔入庫:`docs/AI_COLLAB_PROTOCOL.md`(協議正文,一頁)、`docs/AI_WORK_HANDOFF.md`(Claude→SOL,首份 handoff 已寫入 Phase A+B 全狀態與路由建議)、`docs/AI_REVIEW_FEEDBACK.md`(SOL→Claude,骨架)。
+- 規則要點:每工作區塊前 pull+讀 feedback、比對 SHA 防過期 review;里程碑優先於時鐘、防空 commit 迴圈;高風險里程碑(schema/Patient wiring/migration/export/落 main/Cloudflare prod)過線即等外審;CONTENT_REQUEST YAML 讓 SOL 直接供研究材料進 staging,照常走驗證閘門,不自動成 canon。Ting 只管臨床偏好/不可逆/隱私/優先序。
+- Export/import 完整性(HARD GATE 7)結構驗證:export=全物件序列化、import=`map(normalizeClinicalCase)`(B2 已 live 驗證的同一 normalizer)→ 新鍵不會被備份遺漏;檔案級走查留給 Phase E。
+- 下一步:等 SOL 首輪 review + Codex Phase B audit;之後 Phase C 薄抽象(Fable)。
