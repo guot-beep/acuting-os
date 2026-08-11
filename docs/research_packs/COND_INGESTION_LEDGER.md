@@ -391,3 +391,60 @@ string length of the `dataset` field, not a record count).
   481 (F–I close-out) → 458 (BETTER, −23). All 7 touched/added records are
   0-defect (only an N1 informational note on `cond.depression` for unlifted
   `tcm_patterns` blobs, not a blocking defect).
+
+## Batch K — Reproductive/Gynecology/Urology (2026-08-11)
+
+Pack file: `15_WESTERN_CONDITION_RESEARCH_BATCH_K_REPRODUCTIVE_GYNE_UROLOGY.md`
+(same blob-read workaround). 9 concepts.
+
+| candidate_id → canonical id | ruling |
+|---|---|
+| `cond.endometriosis` → `cond.endometriosis` | EXISTING_ENRICH — exact id/name match, already carried real summary/western_context/red_flags and `red_flag_refs: ["rf.endometriosis.legacy01..04"]` (wired — `red_flags_zh/en` left untouched per Batch G/I standing rule). `etiology_zh`/`western_pathology_zh` were C10-flagged: shared verbatim by 7 gyn records (`cond.endometriosis`, `cond.primary_dysmenorrhea`, `cond.pms`, `cond.irregular_menstruation`, `cond.female_infertility`, `cond.recurrent_pregnancy_loss`, `cond.chronic_pelvic_pain`) — a generic 月經不調 (irregular menstruation) essay, title-matched to `cond.irregular_menstruation` as its likely true home, not endometriosis. Replaced with real endometriosis-specific content per validator's own C10 authorization (same ruling class as Batch F's asthma/post_covid, but this time 7-way not 2-way). `cond.irregular_menstruation` itself untouched (out of this batch's candidate list) — still carries the same essay, flagged below for a future batch. |
+| `cond.uterine_fibroids` → `cond.uterine_fibroids` | EXISTING_ENRICH — exact id/name match. `etiology_zh`/`western_pathology_zh`/`_en` already real, unique (count=1, not C10-flagged), complete huge bilingual essay pair — left fully untouched. Only added risk_factors/acupuncture_scope/aliases/sign_symptom_ids. |
+| `cond.primary_dysmenorrhea` → `cond.primary_dysmenorrhea` | EXISTING_ENRICH — exact id/name match, `red_flag_refs` wired (`rf.primary_dysmenorrhea.legacy01..04`) — `red_flags_zh/en` untouched. Same 7-way shared 月經不調 essay as endometriosis — replaced with real dysmenorrhea-specific content (prostaglandin mechanism) per C10 authorization. |
+| `cond.benign_prostatic_hyperplasia` → `cond.bph` | EXISTING_ENRICH — exact-scan resolved candidate_id to shorter existing id `cond.bph` (D1, same pattern as Batch F/G/H shorter-id resolutions). `etiology_zh`/`western_pathology_zh` (real, topically-correct 前列腺增生 essay) were C10-flagged as shared-by-2 with `cond.chronic_prostatitis` — left untouched here since this is the true topical home (title literally matches); the duplicate on chronic_prostatitis was replaced instead (see below), which resolves both flags together. No `red_flag_refs` — added new structured `red_flags_zh/en` (previously 0, C4). Cleaned stale "（文件情境）" name suffix. |
+| `cond.prostatitis` → `cond.chronic_prostatitis` | EXISTING_ENRICH — exact-scan found `cond.chronic_prostatitis` (`name_zh: "慢性攝護腺炎／慢性骨盆疼痛"`), a chronic/CPPS-specific existing card, while the pack's candidate covers both acute bacterial AND chronic prostatitis. Pack flags `NEAR_DUPLICATE_NEEDS_DECISION` (separate acute bacterial vs CP/CPPS cards?) — ruled to broaden this card into a parent covering both subtypes (renamed to "攝護腺炎（含慢性攝護腺炎／慢性骨盆疼痛症候群）" / "Prostatitis (including CP/CPPS)"), same scope-broadening pattern as Batch H's `cond.chronic_gastritis`, flagged here for Fable/Ting review same as that precedent. `etiology_zh`/`western_pathology_zh` were the misfiled BPH essay (C10 shared-by-2 with `cond.bph`, confirmed off-topic — the text is literally about 前列腺增生/BPH, not prostatitis) — replaced with real prostatitis-specific content per C10 authorization. Added new structured `red_flags_zh/en` (previously 0, C4). |
+| `cond.erectile_dysfunction` → `cond.erectile_dysfunction` | EXISTING_ENRICH — exact id/name match. `etiology_zh`/`western_pathology_zh` are real, topically-correct ED content (陰器不用/陽事不舉/陽萎 — classical ED terminology) but C10-flagged as shared-by-2 with `cond.male_infertility` (confirmed: `cond.male_infertility` carries the identical essay, misfiled there — out of this batch's candidate list, left untouched, flagged below). Left ED's copy untouched as the true home; added condensed `_en` translation. Added new structured `red_flags_zh/en` (previously 0, C4) — cardiovascular/priapism/neurologic red flags per NIDDK. |
+| `cond.abnormal_uterine_bleeding` → `cond.abnormal_uterine_bleeding` | NEW_CANDIDATE — exact-scanned `abnormal uterine`/`異常子宮出血`/`子宮出血` — zero matches. `cond.menorrhagia` exists ("月經過多"/"Heavy Menstrual Bleeding") but is a specific bleeding-amount symptom card, not the broader AUB syndrome-classification concept the pack describes (PALM-COEIN-style, "not one etiology... should not be equated directly with fibroids, anovulation or 崩漏") — ruled non-overlapping per template's non-equivalence rule, differential noted in `western_context_*` prose. |
+| `cond.ectopic_pregnancy` → `cond.ectopic_pregnancy` | NEW_CANDIDATE — exact-scanned `ectopic`/`子宮外孕`/`異位妊娠` — zero matches |
+| `cond.preeclampsia` → `cond.preeclampsia` | NEW_CANDIDATE — exact-scanned `preeclampsia`/`子癲`/`eclampsia` — zero matches. Pack flags `NEAR_DUPLICATE_NEEDS_DECISION` (separate preeclampsia/HELLP/eclampsia or model as complication states?) — ruled to cover the full spectrum under one card (`name_zh: "子癲前症／子癲症"`) with HELLP/eclampsia framed as severe complication states in `western_context_*`, same "single spectrum card" pattern as `cond.valvular_heart_disease` (Batch E parent-card precedent), not split into 3 ids. |
+
+### Batch K notes for the next ingest AI
+
+- **Cross-contamination flags carried forward, not fixed** (2 new ones this
+  batch, same class as Batch F's `cond.asthma`×`cond.post_covid`):
+  - `cond.irregular_menstruation` likely holds the TRUE home for the 7-way
+    shared 月經不調 essay that was replaced on `cond.endometriosis` and
+    `cond.primary_dysmenorrhea` this batch. The other 5 records still sharing
+    it (`cond.pms`, `cond.female_infertility`, `cond.recurrent_pregnancy_loss`,
+    `cond.chronic_pelvic_pain`, and `cond.irregular_menstruation` itself) are
+    untouched — out of this batch's candidate list. A future batch touching
+    any of these should re-run the C10 check before assuming boilerplate.
+  - `cond.male_infertility` holds a duplicate of `cond.erectile_dysfunction`'s
+    real ED-specific essay (陰器不用/陽事不舉/陽萎) — confirmed off-topic for
+    infertility. Untouched, out of scope.
+- **Scope-broadening judgment call flagged for Fable/Ting review** (2nd
+  instance of this pattern, 1st was Batch H's `cond.chronic_gastritis`):
+  `cond.chronic_prostatitis` renamed/broadened from chronic-only to a parent
+  card covering both acute bacterial and chronic/CPPS prostatitis, matching
+  the pack's own generic "prostatitis" candidate scope.
+- **A real-content C10 collision can be N-way, not just 2-way**: prior batches
+  (F, H) only saw pairwise verbatim sharing. This batch's 月經不調 essay was
+  shared by 7 records simultaneously. The fix logic is the same (replace the
+  off-topic copies, leave the true-home copy alone) but confirm the exact
+  share count with `conditions.filter(...).length` before deciding which
+  record(s) are "off-topic duplicates" vs the "true home" — do not assume
+  2-way from the validator's summary line alone.
+- **`red_flag_refs` wiring hit twice this batch** (`cond.endometriosis`,
+  `cond.primary_dysmenorrhea`) — both confirmed via direct field check before
+  touching `red_flags_zh/en`, consistent with the Batch G/I standing rule.
+  `cond.uterine_fibroids` also wired (`rf.uterine_fibroids.legacy01..04`) —
+  3 of 9 candidates in this batch alone were pre-wired, reinforcing "always
+  check, never assume unwired."
+- Validator state after Batch K commit: `data/pathology/condition_canon_shortlist.json`
+  189 → 192 records (3 NEW_CANDIDATE, 6 EXISTING_ENRICH — matches the pack's
+  own 9-concept count). `check-validation-ratchet.js` conditions defect count:
+  458 (Batch J close) → 437 (BETTER, −21). All 9 touched/added records are
+  0-defect except `cond.erectile_dysfunction`, which carries forward 1
+  pre-existing C10 defect (the `cond.male_infertility` cross-contamination
+  above, not caused by or fixable within this batch).
