@@ -107678,9 +107678,9 @@
         }
       ],
       "actions_zh": [
-        "緩解",
+        "止咳平喘",
         "滋養腎陰",
-        "於肺氣"
+        "收斂肺氣"
       ],
       "actions_en": [
         "Relieves asthmatic cough",
@@ -107694,9 +107694,9 @@
         "Lung and Kidney Yin Deficiency"
       ],
       "contraindications_zh": [
-        "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
-        "Use caution in areas where diseases are predominantly caused by Dampness.",
-        "禁用於 Yang Deficiency."
+        "脾虛所致腹瀉、消化不良、舌苔白膩者慎用",
+        "所在地區疾病多因濕邪所致者宜謹慎使用",
+        "陽虛者禁用"
       ],
       "contraindications_en": [
         "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
@@ -107726,10 +107726,17 @@
         ],
         "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
         "actions_zh": [
-          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)",
+          "譯文修正 2026-08-12：原「緩解」「於肺氣」為斷句碎片，依本筆 actions_en 重譯"
         ],
         "pattern_indications_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+        ],
+        "contraindications_zh": [
+          "譯自本筆 contraindications_en（2026-08-11 修復：原 _zh 陣列為英文原文誤植與半翻譯「禁用於 Yang Deficiency.」）"
+        ],
+        "cautions_zh": [
+          "譯自本筆 cautions_en（2026-08-11 修復：原 _zh 陣列為英文原文誤植與半翻譯「禁用於 Yang Deficiency.」）"
         ]
       },
       "ad_syndromes_en": [
@@ -107745,9 +107752,9 @@
         "Contraindicated for those with Yang Deficiency."
       ],
       "cautions_zh": [
-        "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
-        "Use caution in areas where diseases are predominantly caused by Dampness.",
-        "禁用於 Yang Deficiency."
+        "脾虛所致腹瀉、消化不良、舌苔白膩者慎用",
+        "所在地區疾病多因濕邪所致者宜謹慎使用",
+        "陽虛者禁用"
       ],
       "symptoms_zh": [
         "哮喘性咳嗽",
@@ -107767,7 +107774,8 @@
         "遺精。"
       ],
       "clinical_manifestations_zh": "哮喘性咳嗽、喘鳴、無力、痰、氣短、腰膝痠痛、虛熱、口咽乾、盜汗、聲音嘶啞、咳嗽痰少或痰中帶血、咽痛、頭暈、耳鳴、遺精。",
-      "name_fix_note": "2026-08-11: simplified truncated 都气 -> 都氣丸"
+      "name_fix_note": "2026-08-11: simplified truncated 都气 -> 都氣丸",
+      "correction_note": "[2026-08-12 選擇性整合 claude/recursing-wiles-8faf90] 本筆的隱形英文修復照收(本分支未曾改動本筆,無判斷衝突)。同批次對 ge_gen_tang / xie_xin_tang 的修復未採用:那兩筆的錯誤不是語言層而是歸屬層(誤植他方內容 / 組成整份為他方),把誤植內容譯得通順會讓它更像已審核過的內容。"
     },
     {
       "id": "formula.er_xian_tang",
