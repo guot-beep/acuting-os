@@ -1,3 +1,109 @@
+# 2026-08-12 夜班 Fable — MORNING HANDOFF(Ting 起床先讀這段)
+
+**起始 SHA** `513971b` → **結束 SHA** `b5c9c6d`。我的 commits **7 個**
+(其餘為並行線)。真實 clinical store 讀/寫 = **0 / 0**。未 merge main、
+未 deploy、未 pointer switch、未碰真實病人資料、未 `git add -A`、
+未動 curriculum 與他人 dirty work。
+
+## 1. 一句話總結
+
+P1 的 3 HIGH + 4 MED **全部修完並實測**;過程中另外抓到並修掉一個**會讓 app
+開不起來的真當機**;P4 export/import 演練**語意無損**;landing audit 寫完,
+發現 `js/knowledge.js` 是唯一高風險檔而且**三方合併零衝突**。
+
+## 2. P1 六軸最終結果(我的自測;Codex 覆測未回)
+
+| 軸 | 我的結果 | 證據 |
+|---|---|---|
+| 1 patient binding | PASS | wrong-patient 零預填 + 零副作用 |
+| 2 identity/version/replay | PASS | 缺/空/字串 payloadId、缺/字串 formVersion 全拒 |
+| 3 freshness | PASS | ISO 8601 字面驗證;非 ISO(`"0"`、`2026/08/11`)全拒 |
+| 4 metric integrity | PASS | 型別+量級雙檢;7 種 coercion + 精度改寫 + 1e308 全拒 |
+| 5 free-text/QR/clipboard | PASS | 長度上限雙邊(consumer + producer maxlength)、CR/NUL/bidi 剝除 |
+| 6 zero-side-effect + CI | PASS | 5 條拒收路徑 form/stash/store/replay 四者前後相同;self-test 進 blocking CI |
+
+**注意**:這是**我自己**的量測。P1 GO/NO-GO 的裁決權在 Codex 覆測 ——
+派工已寫進 `docs/CODEX_HANDOFF.md` 置頂。**P1 真實病人使用 PAUSE 目前仍未解除。**
+
+## 3. 今晚修了什麼
+
+**P1(Codex NO-GO 七項)** — 根因是 MED-4:shape 規則在 app.js 與 CLI 各一份,
+必然漂移,而 blocking self-test 只跑 CLI 那份。修法不是補七個洞,是**消滅第二份規則**:
+新檔 `js/previsit-validator.js` 為唯一 shape 尺,兩邊委派,self-test 跑的就是
+app 執行的程式碼。另加**結構性 parity 守衛**(靜態檢查 app.js 確實委派),
+已做負面對照。self-test `3 good + 14 bad` → **`3 good + 22 bad ALL PASS`**。
+
+**計畫外的 HIGH(P4 演練時抓到)** — `app.js` 開機 TDZ 當機:病例只要帶
+`adverseEvents`,首次 render 就撞上 `ADVERSE_EVENT_INTERVENTION_LABELS` 的
+temporal dead zone,**整個 app 開不起來**。這是資料相依的當機(只有資料剛好走到
+那條 render 路徑的人才會炸),同類問題 8/11 已中過一次。這次不逐個修:
+5 個 const 全部前移 + 新增 `scripts/validate-boot-order.js` 永久封死整個 bug class,
+已進 blocking CI,負面對照確認會 FAIL。
+
+## 4. Clinical regression smoke(Phase 2)
+
+pointer runtime `31/31` · runtime restore `65/65` · C2b rehearsal `29 PASS / 0 FAIL`
+· clinical invariants `0 violations` · clinical PHI `PASS` · AVS `59/59`。**零迴歸。**
+
+## 5. P4 synthetic rehearsal(Phase 3,全合成)
+
+Patient A(2 cases / 7 visits,含用藥帳 4 事件、環境暴露、生活型態、
+證型 primary+differential、不良反應、AVS v1 superseded + v2 finalized)+
+Patient B(隔離對照)。完整走 create→save→reload→edit→new visit→export→
+wipe→import→reload→compare。
+
+**export/import = SEMANTIC LOSSLESS**(所有追蹤事實逐項相同)。
+一 patient 多 case ✅、A/B 隔離 ✅、canonical id 5/5 ✅、append-only 事件史 ✅、
+AVS 歷史 ✅、編輯與新增 visit 存活 ✅。
+
+## 6. Landing audit(Phase 4,`docs/LANDING_AUDIT_2026-08-12_OPUS.md`)
+
+- **main 不是 branch 的祖先**:main-only `2` / branch-only `379`。
+- 兩個 main-only commit **只碰 `js/knowledge.js`**,內容是「救回 branch 這條線
+  掉掉的 UI 區塊」。若降落時對該檔採「branch 全拿」,**會再次抹掉它們**。
+- **實測**:三方合併該檔 **零衝突**、2813 行、`node --check` 通過,且兩邊內容
+  都保住(方劑群組 0→1、American Dragon 15→18、現代運用 4→5)。
+  → 降落規則很簡單:**用一般 `git merge`,絕不對該檔用 `-X ours/theirs` 或整檔覆蓋**。
+- 其餘 377 個 branch commit 無三方衝突風險(main-only 只碰那一個檔)。
+
+## 7. Exact-SHA 驗證(Phase 5)
+
+`b5c9c6d` 本機 **19/19 全綠、0 失敗**(syntax ×4、build-data、generated 決定論、
+boot-order、data、relations、interactions、content-junk、formula `no blocking`、
+PHI、invariants、AVS lib、AVS E2E `59/59`、P1 self-test、ratchet、diff --check)。
+
+**GitHub CI 要分清楚兩件事**:
+- `dab9ae8`(最後一個含**程式碼**的 commit)= **真全綠**:4 jobs success,
+  green job 跑滿 **34 步**,含 boot-order / AVS ×2 / P1 四道新 gate。
+  run [31583284316](https://github.com/guot-beep/acuting-os/actions/runs/31583284316)
+- `b5c9c6d` = **docs-only**,preflight 正確跳過重 validators。這個綠燈**不代表**
+  全 CI 通過 —— 就是你提醒過的誤讀陷阱,我沒有拿它當證據。
+
+## 8. 剩餘風險
+
+**HIGH**:0(我這邊已知的都修了)。
+**MED**:
+1. P1 GO 尚未由 Codex 獨立確認 —— 我的七項修復未經第二雙眼睛。
+2. `js/knowledge.js` 降落必須用三方合併;若有人用整檔覆蓋 = 靜默資料損失(已寫進 audit)。
+**LOW**:
+3. `docs/AI_WORK_HANDOFF.md` 已落後實際 branch(你先前也發現了),尚未整理。
+4. Git Review 的建議我去找過了 —— PR #59 上只有 Cloudflare bot 與你自己的留言,沒有可消化的審核產出。
+
+## 9. 裁決
+
+- **MAIN LANDING = NO-GO**(等 P1 Codex GO + 對最終候選 SHA 的全綠 CI;
+  機制與檢核已寫好在 landing audit)。
+- **PRODUCTION = NO-GO**(landing 未發生;且真實病人 migration/pointer switch
+  是另一條需獨立演練與授權的線)。
+
+## 10. 你起床後的第一件事
+
+**開一個 Codex session,叫它讀 `docs/CODEX_HANDOFF.md` 置頂的 P1 focused retest
+派工並執行。** 那是唯一擋住 P1 GO 的東西,其餘(clinical smoke、P4、landing plan、
+exact-SHA 驗證)今晚都已完成。它回 GO 之後,landing 就只剩「對候選 SHA 跑一次全綠 CI
++ 你授權」兩步。
+
+
 # 2026-08-12 夜班 Fable — P1 Codex NO-GO 七項全修:抽出單一 shape 尺
 
 - **根因(Codex MED-4)**:P1 shape 規則在 `app.js` 與 CLI 各一份,必然漂移;blocking self-test 只跑 CLI 那份,所以 app 端漂移能在全綠底下存活 —— HIGH-1 就是它的產物。
