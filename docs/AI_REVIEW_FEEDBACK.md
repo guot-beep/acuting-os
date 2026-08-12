@@ -6,6 +6,32 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R14 收斂覆測 — Clinical endpoint `8da3089`, exact candidate `7b23d0c`
+
+### 裁決：Clinical 六軸 GO；landing/P4 PAUSE（exact-SHA CI 紅）
+
+- **範圍**：覆測 R14 H1 blocker、sync overflow、六軸 regression、`main@ca2c45b9` ancestry 與 PR exact-SHA CI。current store/runtime rehearsal/pointer-test blobs 與 `8da3089` 相同；後續 `app.js` 差異僅穴位總數 UI 文案，不在 Clinical runtime seam。
+- **Clinical 六軸**：Patient↔Case integrity=`PASS`；revision/order=`PASS`；restore=`PASS`；race=`PASS`；rollback=`PASS`；pointer switch=`PASS`。H1 blocker 無殘留，不開新審計輪。
+- **發布閘**：**PAUSE**。佇列要求「六軸 + exact-SHA CI 全綠」才發布 R14 final GO/P4；六軸已綠，但 exact candidate SHA `7b23d0c38e286de8243a81bf47eef208c3db699a` 的 PR #59 validate 結論為 `failure`，故不發布 P4 rehearsal checklist。
+- **資料邊界**：真 clinical store 讀／寫=`0/0`；全程 fake backend，temp harness 已清理。
+
+### H1 與回歸證據
+
+- 獨立 H1 harness=`10/10 PASS`：active missing journal／journal null／journal array／pending string／schema 1／patients string／cases string共 `7/7` 被 `REJECTED_UNCHANGED`，active/pointer exact unchanged、candidate absent；incoming missing journal=`1/1` 拒；sync MAX_SAFE overflow=`1/1` 零寫入；migration-era missing pending compatibility=`1/1`。
+- 官方 fake suites：pointer runtime=`31/31 PASS`；runtime restore=`60/60 PASS`；C2b rehearsal=`30/30 PASS`。
+- Clinical：invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；K-series=`10 files / 2 refs / 0 issues`；Phase E=`12 checks PASS`；interactions failures=`0`；app/store syntax=`2/2`；build-data exit `0` 且 generated status unchanged。
+- Standard queue validators=`9 exit 0 / 3 exit 1`（既有 herb-canon/naming/encoding）；這三項不是本次 exact-SHA Actions 的失敗 step。
+- `git merge-base --is-ancestor ca2c45b9 HEAD` exit=`0`。
+
+### exact-SHA CI 證據與唯一待解除 gate
+
+- Draft PR [#59](https://github.com/guot-beep/acuting-os/pull/59) head=`7b23d0c38e286de8243a81bf47eef208c3db699a`，與當時 remote/local candidate exact 相同。
+- Validate run [31551253427](https://github.com/guot-beep/acuting-os/actions/runs/31551253427)：`no patient data in git=success`、`defect ratchet=success`、`green validators=failure`。另有 Workers build success。
+- Green job steps 4–20 均 success；step 21 `formula card standard` failure，steps 22–27（含 K-series、R1–R8、git diff check）被 skipped。獨立本機重跑 `node scripts/validate-formula-standard.js` 同樣 exit `1`，共 `10 blocking defects`（2 composition truncation、2 action-count、2 bilingual parity、3 unresolved herb composition references、1 missing 君臣佐使）。
+- **收斂解除條件**：這不是新的 Clinical 修復輪。由 formula owner 修到 `validate-formula-standard.js` exit `0`（或 Ting 明確修改 landing policy/workflow），對新的 exact candidate SHA 重新觸發 PR validate；三 jobs 全 success 且 ancestry仍為 `0` 時，直接發布 R14 final GO 並進 P4 rehearsal，不重審已綠 Clinical 六軸。
+
+---
+
 ## 2026-08-11 Codex C2B-R14 G1/G2 獨立覆核 — Clinical endpoint `3c3f60f`
 
 ### 裁決：R14 NO-GO；P4 不發布

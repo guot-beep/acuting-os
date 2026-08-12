@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — R14 convergence（Clinical GO / landing PAUSE）
+
+- **六軸**：Patient↔Case/revision/restore/race/rollback/pointer=`6/6 PASS`；H1 independent=`10/10`；official pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。
+- **回歸**：invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；build/generated unchanged；main ancestry exit `0`；真 store `0/0`。
+- **CI**：PR #59 exact head `7b23d0c`；validate run `31551253427`：ratchet/no-PHI success、green failure。formula standard step exit `1`、`10 blockers`，後續 K/R1–R8 steps skipped。
+- **裁決**：Clinical 六軸 GO，但 exact-SHA CI 未全綠，故 landing/P4 PAUSE；不開新 Clinical 審計輪。
+- **下一步**：formula owner 清除 CI blocker或 Ting 改 landing policy；新 exact SHA 三 jobs全 success後直接發 R14 final GO並進 P4 rehearsal。
+
 # 2026-08-11 Codex — C2B-R14 minimum-envelope audit（NO-GO）
 
 - **範圍**：覆核 `3d4ca4f..3c3f60f`；R9/R10/R11/R12/R13=`9/9 · 8/8 · 5/5 · 6/6 · 3/3 PASS`，new extras=`1/4 PASS · 3/4 FAIL`，未發布 P4。

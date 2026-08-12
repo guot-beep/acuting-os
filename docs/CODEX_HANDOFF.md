@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — R14 Clinical GO, landing/P4 paused by exact-SHA CI
+
+- **Six axes**：Patient↔Case/revision/restore/race/rollback/pointer=`6/6 PASS`；H1 independent=`10/10`；official pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。不開新 Clinical 審計輪。
+- **Exact candidate**：PR #59 head=`7b23d0c38e286de8243a81bf47eef208c3db699a`；validate run `31551253427`=`failure`。ratchet/no-PHI success，green job 在 formula card standard失敗。
+- **CI failure**：本機 formula validator亦 exit `1`，`10 blocking defects`；後續 K/R1–R8 workflow steps被 skipped。六軸雖綠，但未滿足 exact-SHA CI 全綠，P4不發布。
+- **Regression**：invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；build/generated unchanged；main ancestry exit `0`。
+- **Boundary / convergence**：真 store `0/0`，fake harness 清理。formula owner 清除 CI blocker並對新 exact SHA 重跑三 jobs；全 success 後直接進 R14 final GO/P4 rehearsal，不重審已綠六軸。
+
+---
+
 ## [2026-08-11] Codex Handoff — C2B-R14 remains NO-GO
 
 - **Gate**：reviewed `3d4ca4f..3c3f60f`；R9/R10/R11/R12/R13=`9/9 · 8/8 · 5/5 · 6/6 · 3/3 PASS`，new minimum-shape extras=`1/4 PASS · 3/4 FAIL`。
