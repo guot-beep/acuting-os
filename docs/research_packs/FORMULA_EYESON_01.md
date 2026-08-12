@@ -1,9 +1,38 @@
 # FORMULA_EYESON_01 — 方劑卡人眼審查（高曝光 30 方 + 1 筆補讀）
 
-狀態：**findings ledger only.** 本輪沒有動 `data/**` 一個字元。
+狀態：**findings ledger + 機械批次執行中。**
+原始 ledger（§0–§3）本輪沒有動 `data/**` 一個字元；下方「執行紀錄」區塊記錄後續在
+`codex/formula-eyeson-fixes-1` branch（自 `origin/codex/pattern-v2` tip `1379063`）
+執行的機械批次。
 Branch：`codex/formula-eyeson-1`（自 `origin/codex/pattern-v2` tip `4beab0e`）
 日期：2026-08-12
 對象：`data/herbs/formulas.json`（224 筆 records）
+
+## 執行紀錄（2026-08-12，branch `codex/formula-eyeson-fixes-1`）
+
+| 項目 | 狀態 | commit | 備註 |
+|---|---|---|---|
+| F-19 止血（`da_huang_mu_dan_tang` / `ge_gen_tang` `public_safe` → false） | **DONE**（早於本批） | `1379063` | 已在 pattern-v2 tip 完成，本批未重做 |
+| FB-1（安全欄長度/語義配對 worklist，只讀） | **DONE** | `07cefc0` | `docs/research_packs/FORMULA_FB1_SAFETY_ARRAY_WORKLIST.md`；重掃 1379063 得 contraindications 54 筆／cautions 21 筆，與 ledger 原文 52/18 有出入，已在 worklist 內註明差異，未回填 |
+| FB-3（`herb_drug_interactions_en` 與 `modern_research_en` 逐字重複的 5 筆清空） | **DONE** | `9dfdf12` | tiao_wei_cheng_qi_tang / ban_xia_xie_xin_tang / si_wu_tang / shi_quan_da_bu_tang / jin_gui_shen_qi_wan，共清 11 條，全數保留於 modern_research_en |
+| FB-5（方歌出處年代不可能的 10 筆，移除出處欄，方歌本身保留） | **DONE** | `e6e054a` | 移除值全數存入各筆 correction_note；validate-formula-song.js「其中註明出處」38→28 |
+| FB-10（`exact_source_url` 誤指 `/formula/99` 的 59 筆中，39 筆可從自身 `source_urls`/`cloudtcm_id` 推出正確值） | **DONE（部分：39/59）** | `d4443b4` | 另 20 筆（含 `da_huang_mu_dan_tang`）連 `source_urls[0]` 本身都是錯的 `/99`，本筆記錄內查無可推導的正確值，未動，留待有外部來源時處理 |
+| FB-11（`&hellip;&hellip;` 殘留 1 筆） | **DONE** | `4a028d4` | `formula.xiao_chai_hu_tang` |
+| 生成物重建 | — | `922929b` | `data/generated/knowledge_data.js`，224 formulas 不變 |
+| FB-2（刪除 "for those with for those with" 重複並還原強度，14 筆/20 條） | **本批不做** | — | 屬憲法所指「刪除」，需先過 Ting，派工單明確排除 |
+| FB-4 / FB-6 / FB-7 / FB-8 / FB-9 / FB-12 / FB-13 | **本批不做** | — | 不在派工單指定範圍（FB-1/3/5/10/11）內 |
+| Ting-review 九項（F-04 禁忌覆蓋缺口、F-01 安全欄正本裁定、F-07 渲染層裁定、F-10 逐詞查表、F-13 劑量欄定義、F-14 君臣佐使、F-15(b) 無來源藥理、F-19 閘門條件、F-24 格式定案）| **OPEN，未動** | — | 含 caution-herb 覆蓋缺口（木通/附子/麻黃/干擾素等），憲法第四條不准編 |
+
+驗證（每個 FB commit 後單獨跑過一次，數字未變）：
+`node scripts/build-data.js` → `{"formulas":224,...}` 全程不變；
+`node scripts/validate-formula-standard.js` → PASS — no blocking defects（224 筆不變）；
+`node scripts/validate-content-junk.js` → PASS（僅原有 1 條非阻擋 WARN，未變）；
+`node scripts/check-validation-ratchet.js` → PASS — no regressions；
+`node scripts/validate-relations.js` → Relation validation passed；
+`node scripts/validate-formula-quality-strict.js` → PASS，224/224；
+`node scripts/validate-formula-song.js` → 0 blocking（1 條既有非阻擋警告 `suan_zao_ren_tang`，與本批無關）。
+
+---
 
 ---
 
@@ -825,21 +854,21 @@ draft 147 | sourced_cloudtcm_record 43 | sourced_ad_record 21 | skeleton 11 | de
 
 ### FB 系列（機械批次候選，先出 worklist 再動手）
 
-| id | 內容 | 影響範圍 | 風險 |
-|---|---|---|---|
-| **FB-1** | 產出安全欄長度不等 / 首詞語義不匹配 worklist（不自動修） | 52 + 18 筆 | 低（只讀） |
-| **FB-2** | 刪除 `"for those with for those with"` 重複條並還原「慎用」強度 | 14 筆 / 20 條 | 中（屬刪除，須 Ting 先過目） |
-| **FB-3** | `herb_drug_interactions_en === modern_research_en` 的 5 筆清空交互作用欄 | 5 筆 | 低（內容不流失） |
-| **FB-4** | 決定 `treats_zh` 與 `modern_applications_zh` 保留哪一份、另一份停止渲染 | 197 筆 | 低（可先只改渲染） |
-| **FB-5** | 刪除年代不可能的 `formula_song_source_zh`（方歌本身保留） | 10 筆 | 低 |
-| **FB-6** | `_zh` 玻璃殘骸條目（`()` `（妊娠期）` 前導 `-`）列 worklist | 93 筆 / 345 條 | 低（只讀） |
-| **FB-7** | `name_en` ＝拼音的 9 筆，改用 `board_name_en` / `name_en_translated` | 9 筆 | 低 |
-| **FB-8** | `comparison_group` ＝分類字串的 9 筆，改成群組 slug | 9 筆 | 低（要先定 slug） |
-| **FB-9** | 修正 `pair.sheng_jiang__da_zhao` → `..._da_zao` 與 `"Da Zhao"` 字串 | 2 筆 | 低（紅線 1：改 id 須確認無外部引用） |
-| **FB-10** | `exact_source_url = /formula/99` 的 59 筆改回各自 `cloudtcm_id` | 59 筆 | 低 |
-| **FB-11** | `&hellip;` 殘留 1 筆 | 1 筆 | 低 |
-| **FB-12** | `ba_fa_zh` 英文樣板句 96 筆改為留空 | 96 筆 | 中（屬清空，須 Ting 過目） |
-| **FB-13** | `taiwan_pharmacopeia_zh: "Yes"` 31 筆列 worklist 待查編號 | 31 筆 | 低 |
+| id | 內容 | 影響範圍 | 風險 | 狀態 |
+|---|---|---|---|---|
+| **FB-1** | 產出安全欄長度不等 / 首詞語義不匹配 worklist（不自動修） | 52 + 18 筆（重掃得 54+21，見執行紀錄） | 低（只讀） | **DONE** `07cefc0` |
+| **FB-2** | 刪除 `"for those with for those with"` 重複條並還原「慎用」強度 | 14 筆 / 20 條 | 中（屬刪除，須 Ting 先過目） | OPEN — 本批不做，屬刪除須先過 Ting |
+| **FB-3** | `herb_drug_interactions_en === modern_research_en` 的 5 筆清空交互作用欄 | 5 筆 | 低（內容不流失） | **DONE** `9dfdf12` |
+| **FB-4** | 決定 `treats_zh` 與 `modern_applications_zh` 保留哪一份、另一份停止渲染 | 197 筆 | 低（可先只改渲染） | OPEN — 不在本批範圍 |
+| **FB-5** | 刪除年代不可能的 `formula_song_source_zh`（方歌本身保留） | 10 筆 | 低 | **DONE** `e6e054a` |
+| **FB-6** | `_zh` 玻璃殘骸條目（`()` `（妊娠期）` 前導 `-`）列 worklist | 93 筆 / 345 條 | 低（只讀） | OPEN — 不在本批範圍 |
+| **FB-7** | `name_en` ＝拼音的 9 筆，改用 `board_name_en` / `name_en_translated` | 9 筆 | 低 | OPEN — 不在本批範圍 |
+| **FB-8** | `comparison_group` ＝分類字串的 9 筆，改成群組 slug | 9 筆 | 低（要先定 slug） | OPEN — 不在本批範圍 |
+| **FB-9** | 修正 `pair.sheng_jiang__da_zhao` → `..._da_zao` 與 `"Da Zhao"` 字串 | 2 筆 | 低（紅線 1：改 id 須確認無外部引用） | OPEN — 不在本批範圍 |
+| **FB-10** | `exact_source_url = /formula/99` 的 59 筆改回各自 `cloudtcm_id` | 59 筆 | 低 | **DONE（39/59）** `d4443b4`；餘 20 筆本筆記錄內無可推導來源，未動 |
+| **FB-11** | `&hellip;` 殘留 1 筆 | 1 筆 | 低 | **DONE** `4a028d4` |
+| **FB-12** | `ba_fa_zh` 英文樣板句 96 筆改為留空 | 96 筆 | 中（屬清空，須 Ting 過目） | OPEN — 本批不做，屬清空須先過 Ting |
+| **FB-13** | `taiwan_pharmacopeia_zh: "Yes"` 31 筆列 worklist 待查編號 | 31 筆 | 低 | OPEN — 不在本批範圍 |
 
 ### Ting-review（不能機械做）
 
@@ -864,7 +893,9 @@ draft 147 | sourced_cloudtcm_record 43 | sourced_ad_record 21 | skeleton 11 | de
 ### 建議的下一個動作
 
 **先做 F-19 的止血**（把本批 4 筆 `public_safe: true` 中的大黃牡丹湯與葛根湯降回
-false），因為那是唯一「今天就會被病人看到」的一類；其餘依 FB-1 / FB-3 / FB-5 /
-FB-10 / FB-11 這幾個零風險項先跑，把 worklist 交給 Ting 之後再動 FB-2 / FB-12。
+false），因為那是唯一「今天就會被病人看到」的一類——**已完成，見上方「執行紀錄」**；
+其餘依 FB-1 / FB-3 / FB-5 / FB-10 / FB-11 這幾個零風險項先跑——**已完成，見上方
+「執行紀錄」**，把 worklist（`FORMULA_FB1_SAFETY_ARRAY_WORKLIST.md`）交給 Ting 之後
+再動 FB-2 / FB-12。
 第二批眼睛審查建議取大承氣湯、定喘湯、附子理中丸、涼膈散、獨活寄生湯
 （附子／麻黃／大黃／細辛族的其餘高曝光方），把 F-04 的缺口盤點完整。
