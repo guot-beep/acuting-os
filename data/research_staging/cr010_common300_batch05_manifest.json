@@ -1,0 +1,53 @@
+{
+  "pack": "AcuTing_OS_CR010_Common300_Detail_Batch_05",
+  "request_id": "CR-010",
+  "batch": "05",
+  "generated_at": "2026-08-12",
+  "source_commit": "d7c9901",
+  "condition_payload_count": 23,
+  "new_detail_count": 15,
+  "scope_backfill_count": 8,
+  "live_rank_range": [
+    31,
+    45
+  ],
+  "json_validation": "PASS",
+  "archive_manifest_validation": "PASS",
+  "payload_files": [
+    {
+      "path": "data/research_staging/cr010_condition_detail_batch05_SOL.json",
+      "bytes": 145944,
+      "sha256": "5e8d661fb78dddb168820d8abb256f9676970a0c76c579bdcc8346bf6f64537a"
+    },
+    {
+      "path": "data/research_staging/cr010_live_order_snapshot_batch05_SOL.json",
+      "bytes": 2653,
+      "sha256": "9cc9679049e67c6cc7423e374fbd147b90a027778732633e119e04029b073718"
+    },
+    {
+      "path": "docs/research_packs/00_README_CR010_COMMON300_BATCH05.md",
+      "bytes": 191,
+      "sha256": "6872f4c0f8b0849f3d80a5672527f3de3ef5136a028395eb2cd35c3731c085a8"
+    },
+    {
+      "path": "docs/research_packs/CR010_CONDITION_DETAIL_BATCH05_SOL.md",
+      "bytes": 3060,
+      "sha256": "b0e7e7a470f014217a0ecc219829d7066b20abe99d8665599bf52345c8427ec9"
+    },
+    {
+      "path": "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md",
+      "bytes": 4935,
+      "sha256": "ec51a8acf022f6b86b2dcf68f5b4e207a12359c4ddc43d431ecb73c89befd035"
+    }
+  ],
+  "manifest_self_path": "data/research_staging/cr010_common300_batch05_manifest.json",
+  "archive_members_expected": [
+    "data/research_staging/cr010_common300_batch05_manifest.json",
+    "data/research_staging/cr010_condition_detail_batch05_SOL.json",
+    "data/research_staging/cr010_live_order_snapshot_batch05_SOL.json",
+    "docs/research_packs/00_README_CR010_COMMON300_BATCH05.md",
+    "docs/research_packs/CR010_CONDITION_DETAIL_BATCH05_SOL.md",
+    "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md"
+  ],
+  "archive_file_count": 6
+}
