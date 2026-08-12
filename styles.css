@@ -659,6 +659,15 @@ h1 {
 .agent-exposure-timeline li { color: #344044; }
 .agent-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
 
+/* Dry Clinic log #16: intake currentMeds free text shown verbatim below the
+   structured ledger above — deliberately smaller/muted so it never reads as
+   an equally-verified structured row (no invented structure over free text). */
+.agent-exposure-unstructured { margin-top: 0.75rem; padding-top: 0.6rem; border-top: 1px dashed #dfe4e2; }
+.agent-exposure-unstructured > small { color: var(--muted); font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+.agent-exposure-unstructured ul { margin: 0.35rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; list-style: disc; }
+.agent-exposure-unstructured li { color: var(--muted); font-size: 0.82rem; }
+.agent-exposure-unstructured li strong { color: #344044; font-weight: 600; }
+
 /* Phase D batch 3: Environmental/toxicity exposures ledger
    (environmentalExposures[]), case-level. Same light-palette row-card
    convention as .agent-exposure-row above — kept as its own class family

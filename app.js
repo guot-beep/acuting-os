@@ -6081,16 +6081,18 @@ function renderAgentExposuresPanel(item) {
   const current = store ? store.getCurrentExposures(item) : all.filter((e) => e.status === "current" || e.status === "prn");
   const currentIds = new Set(current.map((e) => e.id));
   const ordered = [...current, ...all.filter((e) => !currentIds.has(e.id))];
+  const unstructuredHtml = renderUnstructuredMedsHtml([item]);
   const header = `
     <div class="timeline-head">
       <strong>用藥與補充劑 Meds &amp; Supplements</strong>
       <div class="case-actions"><button class="ghost" type="button" id="addAgentExposureInline">+ 新增 Add</button></div>
     </div>
   `;
-  if (!ordered.length) {
+  if (!ordered.length && !unstructuredHtml) {
     return `${header}<div class="case-empty">尚未記錄用藥或補充劑。Add current or past drugs/supplements as they come up.</div>`;
   }
-  return `${header}<div class="agent-exposure-list">${ordered.map(renderAgentExposureRow).join("")}</div>`;
+  const structuredHtml = ordered.length ? `<div class="agent-exposure-list">${ordered.map(renderAgentExposureRow).join("")}</div>` : "";
+  return `${header}${structuredHtml}${unstructuredHtml}`;
 }
 
 function renderAgentExposureRow(exposure) {
@@ -6786,6 +6788,31 @@ function renderPatientSafetyRollupHtml(cases) {
     ${flags.length ? `<div class="case-tags">${flags.map((f) => `<span class="case-tag">${escapeHtml(f)}</span>`).join("")}</div>` : `<div class="case-empty">尚無紀錄安全旗標。</div>`}`;
 }
 
+// Dry Clinic log #16: the structured ledger below only aggregates
+// agentExposures[]; intake's free-text currentMeds is a second, unrelated
+// source that can carry real agents (lorazepam + fish oil) the structured
+// side has never seen. This is deliberately NOT parsed into rows — no
+// invented structure over clinical free text — just surfaced verbatim,
+// deduplicated by exact string, so "0 agents" never reads as "no meds".
+function renderUnstructuredMedsHtml(cases) {
+  const seen = new Set();
+  const entries = [];
+  for (const c of cases) {
+    const text = (c.currentMeds || "").trim();
+    if (!text || seen.has(text)) continue;
+    seen.add(text);
+    entries.push({ caseTitle: c.caseTitle || c.id || "Untitled case", text });
+  }
+  if (!entries.length) return "";
+  return `
+    <div class="agent-exposure-unstructured">
+      <small>未結構化(intake 原文) Unstructured (from intake)</small>
+      <ul>
+        ${entries.map((e) => `<li><strong>${escapeHtml(e.caseTitle)}</strong>：${escapeHtml(e.text)}</li>`).join("")}
+      </ul>
+    </div>`;
+}
+
 function renderPatientAgentLedgerHtml(cases) {
   const groups = new Map();
   for (const c of cases) {
@@ -6795,8 +6822,9 @@ function renderPatientAgentLedgerHtml(cases) {
       groups.get(key).push({ caseItem: c, exposure: e });
     }
   }
+  const unstructuredHtml = renderUnstructuredMedsHtml(cases);
   const header = `<div class="timeline-head"><strong>用藥/補充劑總帳 Meds &amp; Supplements ledger</strong><small class="timeline-date">${groups.size} agents</small></div>`;
-  if (!groups.size) return `${header}<div class="case-empty">尚未記錄用藥或補充劑。</div>`;
+  if (!groups.size && !unstructuredHtml) return `${header}<div class="case-empty">尚未記錄用藥或補充劑。</div>`;
   const rows = [...groups.values()].map((entries) => {
     const first = entries[0].exposure;
     const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[first.agentType] || "—";
@@ -6816,7 +6844,8 @@ function renderPatientAgentLedgerHtml(cases) {
         <div class="agent-exposure-meta"><small>來源 Source cases（${entries.length}）</small><span>${sources}</span></div>
       </div>`;
   }).join("");
-  return `${header}<div class="agent-exposure-list">${rows}</div>`;
+  const structuredHtml = groups.size ? `<div class="agent-exposure-list">${rows}</div>` : "";
+  return `${header}${structuredHtml}${unstructuredHtml}`;
 }
 
 function renderPatientDetail(row) {
@@ -7247,9 +7276,19 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
   input.className = "link-picker-input";
   input.setAttribute("autocomplete", "off");
   input.placeholder = "輸入中文 / 拼音 / 代碼，從清單選取…";
+  // Dry Clinic log #1/#2: cheap ARIA combobox wiring — a unique per-instance
+  // id (not a shared module counter) so two dialogs open at once never
+  // collide on aria-activedescendant targets.
+  const uid = `linkpicker-${fieldName}-${Math.random().toString(36).slice(2, 8)}`;
   const menu = document.createElement("div");
   menu.className = "link-picker-menu";
+  menu.id = `${uid}-menu`;
+  menu.setAttribute("role", "listbox");
   menu.hidden = true;
+  input.setAttribute("role", "combobox");
+  input.setAttribute("aria-autocomplete", "list");
+  input.setAttribute("aria-expanded", "false");
+  input.setAttribute("aria-controls", menu.id);
   wrap.append(chips, input, menu);
   textarea.after(wrap);
 
@@ -7282,7 +7321,12 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
       chips.appendChild(chip);
     });
   }
-  function closeMenu() { menu.hidden = true; activeIndex = -1; }
+  function closeMenu() {
+    menu.hidden = true;
+    activeIndex = -1;
+    input.setAttribute("aria-expanded", "false");
+    input.removeAttribute("aria-activedescendant");
+  }
   function addValue(v) {
     if (single) {
       const old = getValues()[0] || null;
@@ -7308,7 +7352,11 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
     menu.innerHTML = "";
     matches.forEach((o, i) => {
       const el = document.createElement("div");
+      const optionId = `${uid}-option-${i}`;
+      el.id = optionId;
       el.className = "link-picker-option" + (i === activeIndex ? " active" : "");
+      el.setAttribute("role", "option");
+      el.setAttribute("aria-selected", i === activeIndex ? "true" : "false");
       el.innerHTML = `<span></span><small></small>`;
       el.firstChild.textContent = o.label;
       el.lastChild.textContent = o.value;
@@ -7317,17 +7365,38 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
     });
     menu.hidden = false;
     menu._matches = matches;
+    input.setAttribute("aria-expanded", "true");
+    input.setAttribute("aria-activedescendant", activeIndex >= 0 ? `${uid}-option-${activeIndex}` : "");
   }
   input.addEventListener("input", () => { activeIndex = -1; renderMenu(); });
   input.addEventListener("focus", () => { if (input.value.trim()) renderMenu(); });
   input.addEventListener("blur", () => setTimeout(closeMenu, 120));
   input.addEventListener("keydown", (e) => {
     const m = menu._matches || [];
-    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, m.length - 1); renderMenu(); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); renderMenu(); }
-    else if (e.key === "Enter") {
+    // Dry Clinic log #2 (every-visit friction): full keyboard flow so a
+    // clinical typing session never has to reach for the mouse. Arrow keys
+    // wrap around the currently rendered options; Enter picks the active
+    // option or, if none highlighted yet, the first match; Escape closes
+    // just the menu — it must not fall through to the <dialog>'s native
+    // Escape-to-close (stopPropagation), and only when the menu is actually
+    // open (an Escape with no menu showing should close the dialog as usual).
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (m.length) activeIndex = (activeIndex + 1) % m.length;
+      renderMenu();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (m.length) activeIndex = (activeIndex - 1 + m.length) % m.length;
+      renderMenu();
+    } else if (e.key === "Enter") {
       if (m.length) { e.preventDefault(); addValue(m[activeIndex >= 0 ? activeIndex : 0].value); }
-    } else if (e.key === "Escape") { closeMenu(); }
+    } else if (e.key === "Escape") {
+      if (!menu.hidden) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
+      }
+    }
   });
 
   linkPickerControllers[fieldName] = {
