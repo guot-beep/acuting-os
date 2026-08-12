@@ -207,5 +207,80 @@ console.log("Extra — banned-token interception on patient output");
   assert(threw2, "finalize on an already-finalized snapshot throws (immutability)");
 }
 
+// ---- Codex NO-GO 迴歸(2026-08-12 audit HIGH-1/HIGH-3/MED-1 的反例)---------
+console.log("Codex regression — HIGH-3 canonical scanner probes");
+{
+  const kase = makeCase();   // patientCode P-TEST-999
+  const probes = [
+    ["PATTERN.liver_qi", "pattern."],
+    ["Pattern.blood_stasis", "pattern."],
+    ["依 icd-10 編碼", "icd"],
+    ["P-test-999 的資料", "P-TEST-999"],                       // case-folded patientCode
+    ["pat<b>tern.split", "pattern."],                          // 跨 tag 拆字
+    ["&amp;#112;attern.double_encoded", "pattern."],           // 雙層 entity
+    ["Metric.pain_score from clinic field", "metric."],
+    ["Safety.anticoagulant from prompt", "safety."]
+  ];
+  for (const [payload, expected] of probes) {
+    const hits = AVS.findBannedTokens(payload, kase.patientCode);
+    assert(hits.includes(expected), `probe "${payload.slice(0, 30)}" caught as "${expected}"`);
+  }
+  // HTML-escaped patientCode:含 & 的 code 經 esc() 後仍要被抓
+  const ampCase = makeCase({ patientCode: "P&1" });
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
+  const d = draftFor(ampCase, note);
+  d.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "文件裡誤植 P&1 病歷代碼。" });
+  const html = AVS.renderPatientHtml(d, { visitDate: "2026-01-15" });
+  assert(html.includes("P&amp;1"), "renderer escapes the & in patient text (sanity)");
+  assert(AVS.checkPatientOutputSafety(html, ampCase).includes("P&1"), "HTML-escaped patientCode still caught after entity decode");
+  // 乾淨輸出零誤報(新尺不能把合法文件掃紅)
+  const clean = draftFor(makeCase(), note);
+  assert(AVS.checkPatientOutputSafety(AVS.renderPatientHtml(clean, { visitDate: "2026-01-15" }), makeCase()).length === 0, "clean patient output has zero false positives under canonical scanner");
+}
+
+console.log("Codex regression — HIGH-1 avsHistoryExtends (merge comparator)");
+{
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.cupping"] });
+  const d = draftFor(kase, note, 1);
+  const snaps = AVS.finalizeSnapshot(AVS.upsertDraft([], d), d.id, "2026-01-15T18:00:00Z");
+  const before = { ...note, avsSnapshots: snaps };
+  // 改寫 finalized 文字 → 拒
+  const rewritten = JSON.parse(JSON.stringify(before));
+  rewritten.avsSnapshots[0].renderedAdvice[0].text_zh = "被改寫的歷史";
+  assert(AVS.avsHistoryExtends(before, rewritten).ok === false, "rewritten finalized text refused");
+  // 截短(avsSnapshots: []) → 拒
+  assert(AVS.avsHistoryExtends(before, { ...note, avsSnapshots: [] }).ok === false, "truncated avsSnapshots refused");
+  // 合法更正:v1 finalized→superseded + v2 finalized → 放行
+  const d2 = AVS.createCorrectionDraft(snaps, "2026-01-16T09:00:00Z");
+  const snaps2 = AVS.finalizeSnapshot(AVS.upsertDraft(snaps, d2), d2.id, "2026-01-16T09:05:00Z");
+  assert(AVS.avsHistoryExtends(before, { ...note, avsSnapshots: snaps2 }).ok === true, "legal supersede correction passes");
+  // superseded 逆轉回 finalized → 拒
+  const resurrect = JSON.parse(JSON.stringify(snaps2));
+  resurrect.find((s) => s.status === "superseded").status = "finalized";
+  assert(AVS.avsHistoryExtends({ ...note, avsSnapshots: snaps2 }, { ...note, avsSnapshots: resurrect }).ok === false, "superseded→finalized resurrection refused");
+  // draft 自由替換 → 放行
+  const withDraft = AVS.upsertDraft(snaps2, { ...draftFor(kase, note, 3), version: 3 });
+  assert(AVS.avsHistoryExtends({ ...note, avsSnapshots: snaps2 }, { ...note, avsSnapshots: withDraft }).ok === true, "draft replacement is free");
+}
+
+console.log("Codex regression — MED-1 invariant hardening");
+{
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
+  const wrap = (snaps) => AVS.checkAvsInvariants([{ id: "case.test.fixture", soapNotes: [{ ...note, avsSnapshots: snaps }] }]);
+  const d = draftFor(kase, note, 1);
+  const fin = AVS.finalizeSnapshot(AVS.upsertDraft([], d), d.id, "2026-01-15T18:00:00Z")[0];
+  // duplicate id
+  assert(wrap([fin, { ...fin, status: "superseded", version: 2 }]).ok === false, "duplicate snapshot id caught");
+  // version -1 / 1.5
+  assert(wrap([{ ...fin, id: "avs.x1", version: -1 }]).ok === false, "version -1 caught");
+  assert(wrap([{ ...fin, id: "avs.x2", version: 1.5 }]).ok === false, "version 1.5 caught");
+  // superseded v2 蓋 finalized v1 → 拒
+  assert(wrap([{ ...fin, id: "avs.x3", version: 1 }, { ...fin, id: "avs.x4", version: 2, status: "superseded" }]).ok === false, "finalized must be strictly newer than superseded");
+  // 合法序列:superseded v1 + finalized v2 → ok
+  assert(wrap([{ ...fin, id: "avs.x5", version: 1, status: "superseded" }, { ...fin, id: "avs.x6", version: 2 }]).ok === true, "legal v1-superseded/v2-finalized sequence passes");
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

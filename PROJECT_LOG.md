@@ -1,3 +1,12 @@
+# 2026-08-12 Fable — Codex NO-GO 四項修復(3 HIGH + 1 MED),送覆測
+
+- **HIGH-1 Merge 改寫/截短 finalized AVS**:`js/avs.js` 新增 `avsHistoryExtends()`(canonical payload 逐 snapshot 比對,唯一合法變化 finalized→superseded);`findImportHistoryViolations()` 接上(含「整診帶定稿 AVS 消失」= 截斷)。瀏覽器 actual-function 實測:rewrite/truncate/dropVisit 三攻擊各回 1 violation,clean 回 `[]`。
+- **HIGH-2 刪除毀歷史**:`deleteCurrentSoap()`/`deleteCurrentCase()` 對含 finalized/superseded AVS 的 Visit/Case 改為**拒絕**(原「警告後仍可刪」廢除);訊息導向更正版本或 Ting 授權災難流程。實測:兩 gate 攔截、資料 1/1 完好、confirm 未被觸達。
+- **HIGH-3 safety gate 繞過**:`canonicalizeForScan()`(entity 解碼到定點 + 全小寫)+ `findBannedTokens()`(原字串與剝 tag 兩變體、icd/cpt 邊界比對、patientCode 解碼後比對),引擎與 `validate-avs-library.js` 共用同一把尺;validator 新增掃 `clinic_profile.json` 病人可見欄位。Codex 全部 8 個 probe(PATTERN./Pattern./icd-10/case-folded code/跨tag拆字/雙層entity/clinic Metric./prompt Safety.)+ HTML-escaped patientCode 現在全數被抓,乾淨輸出零誤報。
+- **MED-1 invariants**:補 snapshot id 唯一、version safe integer ≥1、finalized 嚴格新於所有 superseded、draft 嚴格新於 finalized。Codex 反例(duplicate id/version -1/1.5/superseded v2+finalized v1)全紅,合法序列綠。
+- **驗證**:`test-avs-checkout.js` 32→**53/53**(+21 Codex 反例迴歸);`validate-avs-library.js` PASS 0;ratchet no regressions;`node --check` ×2 綠。兩支 AVS 驗證已寫入待落地 validate.yml 的 green job(blocking)。
+- **待覆測**:Codex 依 handoff 置頂 retest 派工重跑其全部命令與反例。
+
 # 2026-08-12 Fable — CI 通知風暴修正(Ting 授權)— 待 PAT workflow scope 解鎖
 
 - **根因(API 實測)**:最近 50 runs = `50/50 failure`(44 PR + 6 main push);最新 run `31561388451`(head `8d310ca`)唯一紅步驟 = `formula card standard`(4 blockers),`generated data is committed and current` 已綠(`ecd2005` 修復成立);validate.yml 無 concurrency、無 docs-only 偵測,PR #59 期間每 push 各自跑滿並寄信。PR #59 現況 `closed`(08-12 前次處置)。

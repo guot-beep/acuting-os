@@ -317,16 +317,89 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
 </div></body></html>`;
   }
 
-  /* 零診斷自檢(§2.2/§12):病人輸出不得含任何內部 id 前綴、代碼詞彙或
-   * patientCode。渲染端與定稿端都跑;命中即 abort,絕不輸出。 */
-  function checkPatientOutputSafety(html, kase) {
-    const banned = ["cond.", "pattern.", "tdis.", "safety.", "modality.", "metric.", "ICD", "CPT"];
-    const patientCode = kase && String(kase.patientCode || "").trim();
-    if (patientCode) banned.push(patientCode);
-    return banned.filter((b) => html.includes(b));
+  /* 零診斷自檢(§2.2/§12;Codex NO-GO HIGH-3 修復版):
+   * 舊版是大小寫敏感的 raw-HTML includes,可被 `PATTERN.`、`icd-10`、
+   * HTML-escaped patientCode、跨 tag 拆字繞過。修復 = canonical 掃描器:
+   *   1. HTML entity 解碼到定點(擋 &amp;#112; 雙層編碼)再全小寫;
+   *   2. 同時掃「原字串」與「剝掉 tag 的 browser-visible 文字」兩個變體
+   *      (前者抓藏在屬性裡的,後者抓 pat<b>tern. 拆字);
+   *   3. icd/cpt 帶邊界比對(icd-10、ICD10 都中,不誤傷一般詞)。
+   * 引擎與 validate-avs-library.js 共用同一把尺(findBannedTokens)。 */
+  const BANNED_ID_PREFIXES = ["pattern.", "cond.", "tdis.", "safety.", "modality.", "metric.", "avs."];
+
+  function canonicalizeForScan(text) {
+    let t = String(text || "");
+    for (let i = 0; i < 4; i++) {
+      const prev = t;
+      t = t
+        .replace(/&#x([0-9a-f]+);?/gi, (m, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return m; } })
+        .replace(/&#(\d+);?/g, (m, d) => { try { return String.fromCodePoint(Number(d)); } catch { return m; } })
+        .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, '"').replace(/&apos;|&#39;/gi, "'")
+        .replace(/&amp;/gi, "&");
+      if (t === prev) break;   // 解碼到定點
+    }
+    return t.toLowerCase();
   }
 
-  /* ---- 歷史不變量(§12,node 驗證器與 E2E 共用)-------------------------- */
+  function findBannedTokens(text, patientCode) {
+    const canon = canonicalizeForScan(text);
+    const visible = canon.replace(/<[^>]*>/g, "");   // browser-visible 變體
+    const hits = new Set();
+    for (const variant of [canon, visible]) {
+      for (const p of BANNED_ID_PREFIXES) if (variant.includes(p)) hits.add(p);
+      if (/(^|[^a-z])icd[^a-z0-9]?\d*/.test(variant)) hits.add("icd");
+      if (/(^|[^a-z])cpt([^a-z0-9]|$)/.test(variant)) hits.add("cpt");
+      const code = canonicalizeForScan(patientCode || "").trim();
+      if (code && variant.includes(code)) hits.add(String(patientCode).trim());
+    }
+    return [...hits];
+  }
+
+  function checkPatientOutputSafety(html, kase) {
+    return findBannedTokens(html, kase && kase.patientCode);
+  }
+
+  /* ---- 歷史 append-only 比對器(Codex NO-GO HIGH-1 修復)------------------
+   * Merge/import 的唯一認可 AVS 歷史檢查:before 的每一份 finalized/
+   * superseded snapshot 都必須在 after 以同 id、同 canonical payload 存在;
+   * 唯一合法的欄位變化是 status finalized→superseded(更正定稿的副作用)。
+   * draft 可自由替換/消失 —— 草稿不是歷史文件。深層 key 排序後比 JSON,
+   * 與 clinical-store 的 exposureHistoryExtends 同哲學:結構相等,零漂移。 */
+  function sortKeysDeep(v) {
+    if (Array.isArray(v)) return v.map(sortKeysDeep);
+    if (v && typeof v === "object") {
+      const out = {};
+      for (const k of Object.keys(v).sort()) out[k] = sortKeysDeep(v[k]);
+      return out;
+    }
+    return v;
+  }
+
+  function canonicalSnapshotPayload(s) {
+    const { status, ...rest } = s || {};
+    return JSON.stringify(sortKeysDeep(rest));
+  }
+
+  function avsHistoryExtends(beforeNote, afterNote) {
+    const history = ((beforeNote && beforeNote.avsSnapshots) || []).filter((s) => s.status === "finalized" || s.status === "superseded");
+    const afterById = new Map(((afterNote && afterNote.avsSnapshots) || []).map((s) => [s.id, s]));
+    for (const b of history) {
+      const a = afterById.get(b.id);
+      if (!a) return { ok: false, reason: `${b.status} AVS snapshot ${b.id} missing (history truncated)` };
+      const legalStatus = a.status === b.status || (b.status === "finalized" && a.status === "superseded");
+      if (!legalStatus) return { ok: false, reason: `AVS snapshot ${b.id}: status "${b.status}" → "${a.status}" is not a legal transition` };
+      if (canonicalSnapshotPayload(b) !== canonicalSnapshotPayload(a)) {
+        return { ok: false, reason: `AVS snapshot ${b.id} payload rewritten (finalized history is immutable)` };
+      }
+    }
+    return { ok: true };
+  }
+
+  /* ---- 歷史不變量(§12,node 驗證器與 E2E 共用;MED-1 補強版)------------
+   * Codex NO-GO MED-1:舊版沒驗 id 唯一與合法版本序 —— duplicate id、
+   * version -1/1.5、superseded v2 蓋在 finalized v1 之上,全都 ok:true。
+   * 補:id 唯一;version 必為 safe integer >= 1;finalized 版本必須嚴格
+   * 大於所有 superseded;draft 版本必須嚴格大於現行 finalized。 */
   function checkAvsInvariants(cases) {
     const failures = [];
     for (const c of cases || []) {
@@ -335,9 +408,13 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
         const drafts = snaps.filter((s) => s.status === "draft");
         const finals = snaps.filter((s) => s.status === "finalized");
         const label = `${c.id}/${note.id}`;
+        const ids = new Set();
         for (const s of snaps) {
+          if (ids.has(s.id)) failures.push(`${label}/${s.id}: duplicate snapshot id`);
+          ids.add(s.id);
           if (!["draft", "finalized", "superseded"].includes(s.status)) failures.push(`${label}/${s.id}: invalid status "${s.status}"`);
           if (s.visitId !== note.id) failures.push(`${label}/${s.id}: visitId "${s.visitId}" does not match owning visit (AVS is Visit-owned)`);
+          if (!Number.isSafeInteger(s.version) || s.version < 1) failures.push(`${label}/${s.id}: version ${JSON.stringify(s.version)} must be a safe integer >= 1`);
           if (s.status !== "draft") {
             if (!s.finalizedAt) failures.push(`${label}/${s.id}: ${s.status} without finalizedAt`);
             const text = [...(s.renderedAdvice || []), ...(s.clinicianAddedAdvice || [])].map((a) => a.text_zh).join("").trim();
@@ -351,6 +428,17 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
         if (finals.length > 1) failures.push(`${label}: ${finals.length} concurrent finalized versions (correction must supersede)`);
         const versions = snaps.map((s) => Number(s.version) || 0);
         if (new Set(versions).size !== versions.length) failures.push(`${label}: duplicate snapshot versions`);
+        const fin = finals[0];
+        if (fin) {
+          for (const s of snaps) {
+            if (s.status === "superseded" && !(Number(fin.version) > Number(s.version))) {
+              failures.push(`${label}: finalized v${fin.version} is not strictly newer than superseded v${s.version}`);
+            }
+          }
+          for (const d of drafts) {
+            if (!(Number(d.version) > Number(fin.version))) failures.push(`${label}: draft v${d.version} must be strictly newer than finalized v${fin.version}`);
+          }
+        }
       }
     }
     return { ok: failures.length === 0, failures };
@@ -372,7 +460,10 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
     finalizeSnapshot,
     createCorrectionDraft,
     renderPatientHtml,
+    canonicalizeForScan,
+    findBannedTokens,
     checkPatientOutputSafety,
+    avsHistoryExtends,
     checkAvsInvariants
   };
 })(typeof window !== "undefined" ? window : globalThis);

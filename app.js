@@ -8139,6 +8139,15 @@ function saveCaseFromForm(event) {
 function deleteCurrentCase() {
   if (!editingCaseId) return;
   const item = clinicalCases.find((entry) => entry.id === editingCaseId);
+  // Codex NO-GO HIGH-2:含已定稿 AVS 的病例禁止 hard-delete —— 定稿文件是
+  // 交給過病人的歷史記錄,UI 沒有任何刪除它的路徑;真要銷毀走 Ting 明確
+  // 授權的災難流程(匯出備份 + 手動處理),不走這顆按鈕。
+  const finalizedAvsCount = (item?.soapNotes || [])
+    .reduce((n, note) => n + (note.avsSnapshots || []).filter((s) => s.status === "finalized" || s.status === "superseded").length, 0);
+  if (finalizedAvsCount) {
+    alert(`不可刪除:此病例有 ${finalizedAvsCount} 份已定稿/歷史 AVS 文件。\n定稿文件是不可變歷史;內容有誤請在該診 Checkout 建立更正版本。\n確要銷毀整筆病例,請先「立即匯出」備份並由 Ting 明確授權後手動處理。`);
+    return;
+  }
   if (!confirm(`確定刪除 ${item?.patientCode || "這筆病例"}？此動作會刪除其 SOAP notes。`)) return;
   const snapshot = structuredClone(clinicalCases);
   const prevSelectedCaseId = selectedCaseId;
@@ -8696,14 +8705,16 @@ function saveSoapFromForm(event) {
 
 function deleteCurrentSoap() {
   if (!editingSoapId) return;
-  // AVS v3(§8):刪 Visit 會連帶刪掉它擁有的 AVS 歷史文件 —— 有定稿版本
-  // 時必須把這件事講明白,不能讓歷史文件在不知情下消失。
+  // Codex NO-GO HIGH-2(取代原「警告後仍可刪」版本):含已定稿 AVS 的 Visit
+  // 禁止 hard-delete。定稿 AVS 是交給過病人的歷史文件,append-only;要修正
+  // 走更正版本(supersede),要銷毀走 Ting 明確授權的災難流程,不走這顆按鈕。
   const doomedNote = clinicalCases.find((item) => item.id === selectedCaseId)?.soapNotes.find((n) => n.id === editingSoapId);
   const finalizedCount = (doomedNote?.avsSnapshots || []).filter((s) => s.status === "finalized" || s.status === "superseded").length;
-  const warning = finalizedCount
-    ? `確定刪除這筆 SOAP note?\n\n⚠ 此診有 ${finalizedCount} 份已定稿/歷史 AVS 文件,會一併永久刪除。`
-    : "確定刪除這筆 SOAP note？";
-  if (!confirm(warning)) return;
+  if (finalizedCount) {
+    alert(`不可刪除:此診有 ${finalizedCount} 份已定稿/歷史 AVS 文件。\n內容有誤請在 Checkout 建立更正版本(舊版會標 superseded、永久保留)。\n確要銷毀請先「立即匯出」備份並由 Ting 明確授權後手動處理。`);
+    return;
+  }
+  if (!confirm("確定刪除這筆 SOAP note？")) return;
   const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((item) => {
     if (item.id !== selectedCaseId) return item;
@@ -9135,6 +9146,21 @@ function findImportHistoryViolations(existingCases, incomingCases) {
         if (!incRow) { violations.push(`${inc.id}/${field}/${row.id}: exposure row missing from import`); continue; }
         const check = AcuTingClinicalStore.exposureHistoryExtends(row, incRow);
         if (!check.ok) violations.push(`${inc.id}/${field}/${row.id}: ${check.reason}`);
+      }
+    }
+    // Codex NO-GO HIGH-1:AVS 歷史與 exposure 同等待遇 —— merge 用 incoming
+    // 整筆蓋掉同 id case 之前,現存每一份 finalized/superseded snapshot 都
+    // 必須在 incoming 以同 id、同 canonical payload 存在(唯一合法變化:
+    // finalized→superseded)。帶著已定稿 AVS 的 Visit 整筆消失也算截斷。
+    if (window.AcuTingAVS) {
+      const incNotes = new Map((inc.soapNotes || []).map((n) => [n.id, n]));
+      for (const note of cur.soapNotes || []) {
+        const hasHistory = (note.avsSnapshots || []).some((s) => s.status === "finalized" || s.status === "superseded");
+        if (!hasHistory) continue;
+        const incNote = incNotes.get(note.id);
+        if (!incNote) { violations.push(`${inc.id}/${note.id}: visit with finalized AVS missing from import (history truncated)`); continue; }
+        const check = AcuTingAVS.avsHistoryExtends(note, incNote);
+        if (!check.ok) violations.push(`${inc.id}/${note.id}: ${check.reason}`);
       }
     }
   }

@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-12] Fable → Codex Dispatch — AVS v3 NO-GO 修復覆測(retest)
+
+- **修復對應**(全部在本 commit;行號請以 HEAD 重查):HIGH-1 = `js/avs.js` `avsHistoryExtends()` + `app.js` `findImportHistoryViolations()` AVS 段;HIGH-2 = `deleteCurrentSoap()`/`deleteCurrentCase()` 含定稿 AVS 即拒刪;HIGH-3 = `js/avs.js` `canonicalizeForScan()`/`findBannedTokens()`(引擎+validator 同尺,validator 加掃 clinic_profile);MED-1 = `checkAvsInvariants()` 補 id 唯一/version 序列規則。
+- **覆測範圍**:重跑你 NO-GO 報告裡的全部命令與對抗 probes(含 8 個 scanner probes、merge rewrite/truncate、delete harness、invariant 反例);基線:`test-avs-checkout.js` = `53/53`(你的反例已入 suite)、`validate-avs-library.js` = `PASS 0`、ratchet 綠。找新繞過也在範圍內(尤其:scanner 的 entity 解碼定點、剝 tag 變體、patientCode 邊界)。
+- **邊界同前次派工**:唯讀審 + 本檔回報;真 store 0/0;不改產品碼。
+- **完成的定義**:六軸重判 + GO/NO-GO;若 GO,AVS v3 進入可宣告狀態(landing 仍受 formula gate 管)。
+
+---
+
 ## [2026-08-12] Codex Audit — AVS v3 Visit Checkout `NO-GO`（`ecd2005` + `9642f20`，reviewer §16）
 
 - **裁決／範圍**：AVS 產品樹審於 `codex/pattern-v2@7c173c0`；回報期間 HEAD 前進至 docs-only `ef02ac9`，`app.js`／`js/avs.js` blobs 與 `7c173c0` 相同。六軸=`PASS / FAIL / FAIL / FAIL / PASS / PASS`；找到 `3 HIGH + 1 MED`，故 AVS v3 不可宣告 GO。只做唯讀審計與本檔回報；真實 clinical store 讀／寫=`0/0`，未改 `app.js`、`js/**`、`data/**`、`scripts/**`。

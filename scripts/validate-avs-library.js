@@ -36,7 +36,6 @@ const safetyTokens = new Set(AVS.SAFETY_CANONICAL_TOKENS);
 
 const CATEGORIES = new Set(AVS.AVS_CATEGORIES);
 const EVIDENCE_TYPES = new Set(["clinical_safety", "regulatory_or_guideline", "evidence_informed", "practice_standard", "traditional_tcm_lifestyle", "clinic_preference"]);
-const BANNED_IN_PATIENT_TEXT = ["pattern.", "cond.", "tdis.", "safety.", "modality.", "metric.", "ICD", "CPT"];
 
 const failures = [];
 const warnings = [];
@@ -51,8 +50,10 @@ for (const r of records) {
 
   const text = String(r.advice_zh || "");
   if (r.active !== false && !text.trim()) failures.push(`${label}: active record with empty advice_zh`);
-  for (const b of BANNED_IN_PATIENT_TEXT) {
-    if (text.includes(b)) failures.push(`${label}: advice_zh contains banned token "${b}" (patient text must be diagnosis-free)`);
+  // Codex NO-GO HIGH-3:與引擎共用同一把 canonical 尺(大小寫不敏感、
+  // entity 解碼、icd/cpt 邊界比對)—— 不再各寫一份大小寫敏感的 includes。
+  for (const b of AVS.findBannedTokens(text)) {
+    failures.push(`${label}: advice_zh contains banned token "${b}" (patient text must be diagnosis-free)`);
   }
 
   const t = r.triggers || {};
@@ -83,6 +84,16 @@ for (const r of records) {
     if (r.requires_clinician_confirmation !== true) failures.push(`${label}: requires_clinician_confirmation must be true (no auto-finalized advice, §2.3)`);
   }
   if (r.review_status === "deprecated" && r.active !== false) failures.push(`${label}: deprecated record must have active:false`);
+}
+
+// Codex NO-GO HIGH-3:clinic_profile.json 的病人可見欄位同尺掃描 —— 它逐字
+// 進入每份 AVS 頁首/頁尾,之前完全沒人掃。
+const clinic = readJson("data/config/clinic_profile.json");
+for (const [key, value] of Object.entries(clinic)) {
+  if (typeof value !== "string") continue;
+  for (const b of AVS.findBannedTokens(value)) {
+    failures.push(`clinic_profile.${key}: contains banned token "${b}" (renders verbatim into every patient AVS)`);
+  }
 }
 
 const active = records.filter((r) => r.active !== false).length;
