@@ -4430,13 +4430,16 @@ section[data-workspace][hidden] {
 
 :root {
   --ink: #33291f;
-  --muted: #7d7160;
+  /* --muted, --warn darkened minimally (2026-08-11) to clear WCAG AA text
+     contrast (4.5:1) on --paper: #7d7160 measured 4.24:1, #b0563c measured
+     4.40:1 on paper / 3.94:1 on the .danger #f3e2da chip background. */
+  --muted: #786c5c;
   --line: #e5dcc9;
   --paper: #f6f1e7;
   --panel: #fffdf8;
   --accent: #6f7f58;
   --accent-dark: #515f3e;
-  --warn: #b0563c;
+  --warn: #a24f37;
   --gold: #b98b44;
   --plum: #9a6a55;
   --clay: #b0563c;
@@ -4470,7 +4473,9 @@ h1, h2, h3,
 .section-heading h2 { color: #3a2f22; }
 
 .eyebrow {
-  color: var(--gold);
+  /* --gold-text not --gold: raw gold is ~2.7:1 on --paper (fails AA);
+     this darkened variant clears 4.5:1 for small bold caption text. */
+  color: var(--gold-text);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -4523,9 +4528,16 @@ input, select, textarea {
   border-color: #ddd3bd;
   border-radius: 9px;
 }
+/* Consolidated focus state (2026-08-11): the two earlier input:focus rules
+   above left a mismatched teal box-shadow + sage border-color pair (each
+   only half-overridden the other via cascade). This is the one that wins
+   and now owns the full state — one gold ring, matching :focus-visible
+   elsewhere in the app. */
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(111, 127, 88, 0.75);
-  outline-color: rgba(111, 127, 88, 0.35);
+  border-color: var(--ring);
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+  box-shadow: none;
 }
 
 .case-toolbar, .search-row {
@@ -4568,7 +4580,7 @@ input:focus, select:focus, textarea:focus {
 
 .library-chip span,
 .library-card span,
-.formula-preview-card span { color: var(--gold); }
+.formula-preview-card span { color: var(--gold-text); }
 
 .library-chip.active {
   background: var(--green-soft);
