@@ -1,3 +1,24 @@
+# 2026-08-12 Sonnet — AVS v3 Phase E(print/PDF polish)
+
+- **範圍**:只動 print/CSS 與雙語細節,不碰引擎邏輯/狀態機/自檢/data。改了 3 檔:`js/avs.js`(+33/-4)、`styles.css`(+21/-3)、`app.js`(+8/-8)。`index.html` 未改(檢查後 `#avsCheckoutDialog` 標題與 SOAP「治療項目 Modalities performed」欄已是雙語,毋須動)。
+- **病人文件 print 版面**(`js/avs.js` `renderPatientHtml`,§10):
+  - 頁首新增 `.clinic-header .clinic-contact` 一行,只在 `address`/`phone` 至少一項有值時渲染,兩值以 `　·　` 相接;誠實顯示「(待填」佔位(未特判隱藏)。
+  - 頁尾新增 `.footer .booking-note`,`clinic.booking_note_zh` 有值才印。
+  - `@media print` 新增:`@page{size:A4;margin:15mm}`、`section{break-inside:avoid;page-break-inside:avoid}`(表格/列同款)、列印下 `td,th{border:1px solid #999}` 加深框線、`.sheet` 移除 border-radius/padding 貼齊紙緣。單檔仍自足,零外部資源。
+  - `buildDraftSnapshot` 的 `clinicProfileSnapshot` additive 加 `address`/`booking_note_zh` 兩鍵(4→6 鍵);渲染端對缺鍵容忍(舊 snapshot 沒有這兩鍵時,對應行不渲染,不報錯)——已用一支不帶這兩鍵的假 legacy snapshot 跑過 `renderPatientHtml` 驗證不崩、`checkPatientOutputSafety` 回傳 `[]`。
+- **Checkout dialog 醫師端 UI**(`styles.css` `.avs-co-*`):
+  - 新增 `@media (max-width: 720px)` 區塊:dialog 寬度改 `calc(100vw - 1rem)`、`.dialog-actions` 改單欄堆疊按鈕(沿用既有 760px 斷點同款模式,720px 再收一層 padding/gap)、歷史列 `flex-wrap`。瀏覽器實測(375×812,注入假 case/note 直呼 `openAvsCheckout`):dialog 寬 337px、`scrollWidth===clientWidth`(無水平溢出)、4 顆按鈕各自 315px 滿版單欄。
+  - `.avs-co-advice-head` 改 `align-items:flex-start`,checkbox 加 `flex-shrink:0;margin-top:3px` 避免多行建議文字時錯位;`.avs-co-advice-row textarea` 加 `line-height:1.5`。
+  - `.avs-co-superseded` 加 `opacity:.68` 弱化已取代版本列。
+- **雙語標籤**(`app.js` `renderAvsCheckout`):動態 HTML 補中英並列(沿用既有慣例,未引入新機制):`檢視`→`檢視 View`(×2 處,finalized 檢視模式 + 歷史列)、`移除`→`移除 Remove`、`為什麼建議?`→`為什麼建議? Why?`、`+ 新增自訂指示`→`+ 新增自訂指示 Add custom instruction`、`重新產生`→`重新產生 Regenerate`、`捨棄草稿`→`捨棄草稿 Discard draft`、`儲存草稿`→`儲存草稿 Save draft`。`預覽 Preview`/`定稿 Finalize`/`建立更正版本 Create correction`/`列印 / 存 PDF` 原已雙語或可讀,未動。
+- **驗證**(逐項貼原文輸出):
+  - `node --check app.js` / `node --check js/avs.js` — 皆無輸出(語法 OK)。
+  - `node scripts/test-avs-checkout.js` — `32 passed, 0 failed`。
+  - `node scripts/validate-avs-library.js` — `PASS — 0 failures, 0 warning(s)`。
+  - `node scripts/check-validation-ratchet.js` — `PASS — no regressions.`
+  - scratchpad 渲染肉眼檢查:虛構 clinic(含 `(待填` 佔位)+ 虛構 visit → `renderPatientHtml` → 存檔讀開,確認頁首「(待填:診所名稱)」+「(待填:地址)　·　(待填:預約電話)」一行、頁尾 booking-note、`@page{size:A4;margin:15mm}` 與 `break-inside:avoid` 皆已進入輸出;`checkPatientOutputSafety` 回傳 `[]`。
+- **完成的定義對照**:32/32、PASS 0、ratchet no regressions 皆綠;`renderPatientHtml` 輸出含正式頁首與 print CSS,零診斷自檢不變且通過;只 commit 上述 3 檔。
+
 # 2026-08-11 Fable — AVS 措辭審查包派給 SOL(Batch 01)
 
 - **新檔**:`docs/research_packs/AVS_ADVICE_REVIEW_01_SOL.md` —— 5 筆 `review_status:"draft"` 的 before→after、§6 理由、逐筆提問、回覆格式(verdict/suggested_advice_zh/evidence_type_verdict/sources)。

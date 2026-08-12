@@ -176,7 +176,12 @@
         clinic_name_zh: (clinic && clinic.clinic_name_zh) || "",
         practitioner_zh: (clinic && clinic.practitioner_zh) || "",
         phone: (clinic && clinic.phone) || "",
-        website: (clinic && clinic.website) || ""
+        website: (clinic && clinic.website) || "",
+        // Phase E additive fields (print header/footer). Snapshots created
+        // before this change won't carry these — renderPatientHtml treats
+        // them as optional (renders only when present).
+        address: (clinic && clinic.address) || "",
+        booking_note_zh: (clinic && clinic.booking_note_zh) || ""
       },
       generatorVersion: GENERATOR_VERSION
     };
@@ -262,10 +267,17 @@
       "服用調理品後噁心、皮疹或任何過敏反應",
       ...(snapshot.patientObservationPromptsSnapshot || [])
     ];
+    // 頁首聯絡列:地址/電話有值才印(誠實顯示「(待填」佔位,不特判隱藏——
+    // 診所自己決定何時填真實值)。舊 snapshot 沒有 address 鍵時視為空字串。
+    const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).map(esc).join("　·　");
+    const bookingNote = String(clinic.booking_note_zh || "").trim();
     return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>診後照護指示</title><style>
 body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f3eddf;color:#202427;margin:0;padding:24px;line-height:1.7}
 .sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #d9e0e4;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
+.clinic-header{text-align:center;margin-bottom:6px}
+.clinic-header .clinic-name{font-family:"Noto Serif TC",serif;font-size:1.2em;color:#16352f}
+.clinic-header .clinic-contact{font-size:.82em;color:#66717a;margin-top:2px}
 h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#0a5956;border-bottom:2px solid #c89033;padding-bottom:8px;margin:0 0 4px}
 .date{color:#66717a;font-size:.9em;margin-bottom:16px}
 h2{font-family:"Noto Serif TC",serif;font-size:1.05em;color:#16352f;margin:18px 0 6px}
@@ -275,10 +287,23 @@ th{background:#f7f3e8}
 td.note{font-size:.85em;color:#66717a}
 ul{margin:4px 0;padding-left:20px}
 .footer{margin-top:22px;padding-top:10px;border-top:1px dashed #c89033;font-size:.78em;color:#66717a}
+.footer .booking-note{margin-top:4px}
 .version{font-size:.72em;color:#9aa4ab;text-align:right}
-@media print{body{background:#fff;padding:0}.sheet{border:0;box-shadow:none}}
+@media print{
+  @page{size:A4;margin:15mm}
+  body{background:#fff;padding:0}
+  .sheet{max-width:100%;border:0;border-radius:0;box-shadow:none;padding:0}
+  section{break-inside:avoid;page-break-inside:avoid}
+  table{page-break-inside:avoid}
+  tr{page-break-inside:avoid}
+  td,th{border:1px solid #999}
+  .footer{break-inside:avoid}
+}
 </style></head><body><div class="sheet">
-<div style="text-align:center;margin-bottom:6px"><div style="font-family:'Noto Serif TC',serif;font-size:1.2em;color:#16352f">${esc(clinic.clinic_name_zh)}</div></div>
+<div class="clinic-header">
+<div class="clinic-name">${esc(clinic.clinic_name_zh)}</div>
+${headerContact ? `<div class="clinic-contact">${headerContact}</div>` : ""}
+</div>
 <h1>診後照護指示</h1>
 <div class="date">日期:${esc(visitDate)}${Number(snapshot.version) > 1 ? `　<span class="version">(更正版 v${esc(snapshot.version)})</span>` : ""}</div>
 ${sec("今天做了什麼", (snapshot.todayCare || []).length ? `<p>${snapshot.todayCare.map(esc).join("、")}。</p>` : "")}
@@ -288,7 +313,7 @@ ${sec("特別注意", ul(byCat("special")))}
 ${sec("什麼情況請盡快與我們聯絡或就醫", ul(watch))}
 ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapshot.followUpSnapshot)}</p>` : "")}
 <div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(clinic.practitioner_zh)}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(clinic.phone)}<br>${esc(clinic.website)}</div></div>
-<div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。</div>
+<div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。${bookingNote ? `<div class="booking-note">${esc(bookingNote)}</div>` : ""}</div>
 </div></body></html>`;
   }
 

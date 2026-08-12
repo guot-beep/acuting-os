@@ -8232,8 +8232,8 @@ function renderAvsCheckout() {
   const historyHtml = (finalized || superseded.length) ? `
     <section class="avs-co-section avs-co-history">
       <h3>歷史版本 History</h3>
-      ${finalized ? `<div class="avs-co-history-row"><span>v${escapeHtml(String(finalized.version))} 定稿 ${escapeHtml(finalized.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視</button></div>` : ""}
-      ${superseded.map((s) => `<div class="avs-co-history-row avs-co-superseded"><span>v${escapeHtml(String(s.version))} 已被取代(superseded)· 定稿於 ${escapeHtml(s.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(s.id)}">檢視</button></div>`).join("")}
+      ${finalized ? `<div class="avs-co-history-row"><span>v${escapeHtml(String(finalized.version))} 定稿 ${escapeHtml(finalized.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視 View</button></div>` : ""}
+      ${superseded.map((s) => `<div class="avs-co-history-row avs-co-superseded"><span>v${escapeHtml(String(s.version))} 已被取代(superseded)· 定稿於 ${escapeHtml(s.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(s.id)}">檢視 View</button></div>`).join("")}
     </section>` : "";
 
   if (!avsWorkingDraft) {
@@ -8261,7 +8261,7 @@ function renderAvsCheckout() {
         <label class="avs-co-advice-head">
           <input type="checkbox" data-avs-sel="${i}" ${a.selected !== false ? "checked" : ""} />
           <span class="avs-co-cat">${escapeHtml(AVS_CATEGORY_LABELS[a.category] || a.category)}</span>
-          <button class="ghost avs-co-why-btn" type="button" data-avs-why="${i}">為什麼建議?</button>
+          <button class="ghost avs-co-why-btn" type="button" data-avs-why="${i}">為什麼建議? Why?</button>
         </label>
         <textarea data-avs-text="${i}" rows="2">${escapeHtml(a.text_zh)}</textarea>
         <div class="avs-co-why" data-avs-why-panel="${i}" hidden><small>Matched(僅醫師端,不進病人文件):${escapeHtml((a.matchedTriggers || []).join("、") || "—")}</small></div>
@@ -8272,7 +8272,7 @@ function renderAvsCheckout() {
           <select data-avs-custom-cat="${i}">
             ${Object.entries(AVS_CATEGORY_LABELS).map(([id, label]) => `<option value="${escapeAttribute(id)}" ${a.category === id ? "selected" : ""}>${escapeHtml(label)}</option>`).join("")}
           </select>
-          <button class="ghost" type="button" data-avs-custom-remove="${i}">移除</button>
+          <button class="ghost" type="button" data-avs-custom-remove="${i}">移除 Remove</button>
         </div>
         <textarea data-avs-custom-text="${i}" rows="2" placeholder="病人語言,不放診斷詞與內部代碼">${escapeHtml(a.text_zh)}</textarea>
       </div>`).join("");
@@ -8290,7 +8290,7 @@ function renderAvsCheckout() {
       <section class="avs-co-section">
         <h3>3 · 自訂指示 Custom instructions</h3>
         ${customRows}
-        <button class="ghost" type="button" id="avsAddCustomBtn">+ 新增自訂指示</button>
+        <button class="ghost" type="button" id="avsAddCustomBtn">+ 新增自訂指示 Add custom instruction</button>
       </section>
       <section class="avs-co-section">
         <h3>4 · 中藥/營養品 Medicines & herbs</h3>
@@ -8307,10 +8307,10 @@ function renderAvsCheckout() {
       </section>
       ${historyHtml}
       <div class="dialog-actions">
-        <button class="ghost" type="button" id="avsRegenBtn">重新產生</button>
-        ${persistedDraft ? `<button class="ghost" type="button" id="avsDiscardBtn">捨棄草稿</button>` : ""}
+        <button class="ghost" type="button" id="avsRegenBtn">重新產生 Regenerate</button>
+        ${persistedDraft ? `<button class="ghost" type="button" id="avsDiscardBtn">捨棄草稿 Discard draft</button>` : ""}
         <span></span>
-        <button class="ghost" type="button" id="avsSaveDraftBtn">儲存草稿</button>
+        <button class="ghost" type="button" id="avsSaveDraftBtn">儲存草稿 Save draft</button>
         <button class="ghost" type="button" id="avsPreviewBtn">預覽 Preview</button>
         <button type="button" id="avsFinalizeBtn">定稿 Finalize</button>
       </div>`;
