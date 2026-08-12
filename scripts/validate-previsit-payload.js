@@ -467,6 +467,69 @@ function runSelfTest(config, registry) {
     allOk = allOk && !leaked;
     lines.push(`${leaked ? "FAIL" : "PASS"} [no-echo] ${p.name} rejection does not quote the input back`);
   }
+  /* SOL R-2:存檔端與傳輸端必須是同一把尺(2026-08-12 瀏覽器實測後補的迴歸)。
+   *
+   * 實測到的缺陷:SOAP 手動存檔只有 regex + range,沒有量級上界,而
+   * sleep_hours 的 max 是 null。於是超過 MAX_SAFE_INTEGER 的輸入會被**靜默
+   * 改成另一個數字**再存下去(9007199254740993 → …992、20 個 9 → 1e20、
+   * 24 個 9 → 1e+24),而傳輸端早就擋這些。醫師打的數字與存下去的不同,
+   * 而且沒有任何提示。
+   *
+   * SOL 提的另一半(約 400 位數導致「存檔成功但測量消失」)是虛驚:真瀏覽器
+   * 的 input[type=number] 直接清空欄位,醫師看得到空白,值不會進 FormData。
+   * 這一條記在這裡,免得下一輪又去追一次。
+   *
+   * 這裡用抽取的方式跑 app.js 的 computeNumericOutcomeMetrics 本體 —— 與
+   * parity guard 同款手法,確保驗的是 app 真的執行的那段程式碼。 */
+  {
+    const appSrc = fs.readFileSync(path.join(ROOT, "app.js"), "utf8");
+    const fnSrc = extractFunctionSource(appSrc, "function computeNumericOutcomeMetrics(formValues, currentMetrics) {");
+    const helperSrc = extractFunctionSource(appSrc, "function setOutcomeMetricValue(");
+    if (!fnSrc || !helperSrc) {
+      lines.push("FAIL [same-ruler] computeNumericOutcomeMetrics / setOutcomeMetricValue not found in app.js");
+      allOk = false;
+    } else {
+      let compute;
+      try {
+        // eslint-disable-next-line no-new-func
+        compute = new Function(
+          "NUMERIC_OUTCOME_METRIC_CONFIG", "outcomeMetricShortLabel", "globalThis_stub",
+          "\"use strict\";\nconst globalThis = globalThis_stub;\n" + helperSrc + "\n" + fnSrc + "\nreturn computeNumericOutcomeMetrics;"
+        )(config, (id) => shortLabel(registry.get(id), id), { AcuTingPrevisitValidator: globalThis.AcuTingPrevisitValidator });
+      } catch (e) {
+        lines.push("FAIL [same-ruler] could not evaluate computeNumericOutcomeMetrics in isolation: " + e.message);
+        allOk = false;
+      }
+      if (compute) {
+        const mod = globalThis.AcuTingPrevisitValidator;
+        const sleepCfg = config.filter((c) => c.metricId === "metric.sleep_hours");
+        const cases = [
+          { typed: "7.5", expectSave: true },
+          { typed: "24", expectSave: true },
+          { typed: "9007199254740991", expectSave: true },
+          { typed: "9007199254740993", expectSave: false },
+          { typed: "99999999999999999999", expectSave: false },
+          { typed: "999999999999999999999999", expectSave: false }
+        ];
+        for (const c of cases) {
+          const res = compute({ "metric.sleep_hours": c.typed }, []);
+          const saveOk = !res.error;
+          const raw = `{"kind":"acuting-previsit-v1","formVersion":1,"payloadId":"pv-x","filledAt":"2026-08-12T09:00:00.000Z","patientCode":"P-1","metrics":[{"metricId":"metric.sleep_hours","valueNumber":${c.typed}}]}`;
+          const t = mod.validatePrevisitShape(raw, { metricConfig: sleepCfg, registryHas: () => true, labelOf: (id) => id });
+          const agree = saveOk === t.ok && saveOk === c.expectSave;
+          allOk = allOk && agree;
+          lines.push(`${agree ? "PASS" : "FAIL"} [same-ruler] sleep_hours ${c.typed.slice(0, 24)} — save ${saveOk ? "accept" : "reject"} / transport ${t.ok ? "accept" : "reject"}${agree ? "" : "  << 兩層不同尺或與預期不符"}`);
+          // 接受的值還必須逐字存下醫師輸入的數字
+          if (saveOk && c.expectSave) {
+            const stored = (res.metrics || []).find((m) => m.metricId === "metric.sleep_hours");
+            const same = stored && mod.canonicalDecimal(String(stored.valueNumber)) === mod.canonicalDecimal(c.typed);
+            allOk = allOk && !!same;
+            lines.push(`${same ? "PASS" : "FAIL"} [same-ruler] sleep_hours ${c.typed.slice(0, 24)} stored as the value that was typed${same ? "" : ` — got ${stored && stored.valueNumber}`}`);
+          }
+        }
+      }
+    }
+  }
   const delegationProblems = checkAppDelegation();
   delegationProblems.forEach((p) => lines.push(`FAIL [parity] ${p}`));
   if (!delegationProblems.length) lines.push("PASS [parity] app.js delegates shape validation to the shared module; index.html loads it");

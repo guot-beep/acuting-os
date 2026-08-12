@@ -5849,6 +5849,26 @@ function computeNumericOutcomeMetrics(formValues, currentMetrics) {
         const shapeText = cfg.integer ? "整數" : "數字，可含小數";
         return { error: `${outcomeMetricShortLabel(cfg.metricId)}須為 ${rangeText} 的${shapeText}（可留空 = 未測量）。` };
       }
+      // SOL R-2(瀏覽器實測確認):存檔端過去只有 regex + range,沒有量級上界,
+      // 而 sleep_hours 的 max 是 null。於是超過 MAX_SAFE_INTEGER 的輸入會被
+      // **靜默改成另一個數字**再存下去 —— 實測 9007199254740993 → …992、
+      // 99999999999999999999 → 1e20、24 個 9 → 1e+24。傳輸層早就擋這些
+      // (共用驗證器的 magnitude 規則),兩層卻不同尺。
+      //
+      // 這裡改用共用模組的同一把尺:值必須落在安全整數範圍內,而且「存下去的
+      // 數字」與「醫師打的字」必須是同一個值(canonicalDecimal 比較的是值,
+      // 不是寫法,所以 7.50 / 07.5 這種寫法差異不受影響)。
+      const V = globalThis.AcuTingPrevisitValidator;
+      if (Math.abs(num) > Number.MAX_SAFE_INTEGER) {
+        return { error: `${outcomeMetricShortLabel(cfg.metricId)}的數值超出可精確表示的範圍（|值| 須 ≤ ${Number.MAX_SAFE_INTEGER}）——存下去會變成另一個數字。` };
+      }
+      if (V && typeof V.canonicalDecimal === "function") {
+        const typedCanonical = V.canonicalDecimal(raw);
+        const storedCanonical = V.canonicalDecimal(String(num));
+        if (typedCanonical !== null && storedCanonical !== null && typedCanonical !== storedCanonical) {
+          return { error: `${outcomeMetricShortLabel(cfg.metricId)}存下去的數值會與您輸入的不同（${raw} → ${num}），請確認後重新輸入。` };
+        }
+      }
     }
     metrics = setOutcomeMetricValue(metrics, cfg.metricId, raw);
     if (cfg.legacyField) legacyClears[cfg.legacyField] = "";
