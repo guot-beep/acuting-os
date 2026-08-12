@@ -709,6 +709,18 @@ const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Suppleme
 const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
 const ENV_EXPOSURE_CERTAINTY_LABELS = { suspected: "疑似 Suspected", patient_reported: "病人自述 Patient reported", confirmed: "已確認 Confirmed" };
 const ENV_EXPOSURE_TIMING_LABELS = { ongoing: "持續中 Ongoing", historical: "過去 Historical", unknown: "不確定 Unknown" };
+const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", cupping: "拔罐 Cupping", moxa: "艾灸 Moxa", herbs: "中藥 Herbs", formula: "方劑 Formula", other: "其他 Other" };
+const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
+const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
+const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+const AVS_CATEGORY_LABELS = {
+  aftercare: "治療後注意",
+  lifestyle: "作息生活",
+  diet: "飲食",
+  exercise: "運動",
+  special: "特別注意",
+  herb_caution: "服藥提醒"
+};
 let selectedPatientCode = "";   // Patient Workspace W1 — read-only, list selection only
 let editingCaseId = null;
 let editingSoapId = null;
@@ -5896,9 +5908,9 @@ function renderOutcomeTrackingPanel(item) {
 // pattern/tdis id (D17 §6 hard rule) — these functions only read/write the
 // vocab id and free text the practitioner picked.
 const REPEATABLE_ROW_OTHER_VALUE = "__other__";
-const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", cupping: "拔罐 Cupping", moxa: "艾灸 Moxa", herbs: "中藥 Herbs", formula: "方劑 Formula", other: "其他 Other" };
-const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
-const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 
 // Shared <select> option builder for the two vocab-backed pickers below.
 // selectedValue is either a real vocab id, "" (nothing chosen yet), or
@@ -6646,7 +6658,7 @@ function getFilteredClinicalCases() {
 // this is a read-only accommodation of an existing shape wrinkle, not a fix
 // to clinical-store.js (out of scope for W1).
 
-const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 
 function patientFieldValue(patient, key) {
   const top = patient ? patient[key] : undefined;
@@ -8690,14 +8702,7 @@ function deleteCurrentSoap() {
 // (失敗回滾,同 R9 gate B 模式)。病人可見輸出在預覽與定稿兩處都過
 // checkPatientOutputSafety 零診斷自檢,命中即 abort。
 
-const AVS_CATEGORY_LABELS = {
-  aftercare: "治療後注意",
-  lifestyle: "作息生活",
-  diet: "飲食",
-  exercise: "運動",
-  special: "特別注意",
-  herb_caution: "服藥提醒"
-};
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 
 let avsCheckoutNoteId = null;
 let avsWorkingDraft = null;   // 編輯中 draft(in-memory;儲存草稿/定稿才落盤)

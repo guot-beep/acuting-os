@@ -116,6 +116,11 @@ jobs:
       - name: app.js parses
         run: node --check app.js
 
+      # 開機順序守衛(2026-08-12):初始 render() 之後不得有頂層 const 宣告 ——
+      # TDZ 會讓「資料剛好走到那條 render 路徑」的使用者整個 app 開不起來。
+      - name: app boot order (no const in the TDZ of first render)
+        run: node scripts/validate-boot-order.js
+
       - name: referential integrity
         run: node scripts/validate-relations.js
 
