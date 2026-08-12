@@ -6049,121 +6049,106 @@
       "clinical_frequency": "臨床極高頻常用處方",
       "study_tags": [],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
-      "actions_zh": [
-        "祛散風-熱",
-        "補益理氣",
-        "補益理氣"
-      ],
-      "actions_en": [
-        "Expels Exterior Wind-Heat",
-        "Releases muscle layer",
-        "Vents rashes"
-      ],
-      "pattern_indications_zh": [
-        "麻疹初起透發不暢證",
-        "外感熱邪鬱於肺胃證",
-        "溫病初起熱邪在衛表證"
-      ],
-      "pattern_indications_en": [
-        "Measles",
-        "Externally contracted Heat collecting in the Lung and Stomach",
-        "Early-stage Warm febrile diseases"
-      ],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
       "composition": [
-        {
-          "herb_id": "herb.sheng_ma",
-          "herb_zh": "升麻",
-          "name_zh": "升麻",
-          "herb_en": "Cimicifuga Rhizome",
-          "name_en": "Cimicifuga Rhizome",
-          "pinyin": "Sheng Ma",
-          "pinyin_toned": "Shēng Má",
-          "pharmaceutical_latin": "Rz. Cimicifugae",
-          "dose_g": "2-6g",
-          "decoction_reference_g": "2-6g",
-          "in_formula_en": "Releases exterior Wind-Heat, clears toxicity and vents rashes.",
-          "actions_en": "Releases exterior Wind-Heat, clears toxicity and vents rashes.",
-          "in_formula_zh": "發表透疹，清熱解毒，升舉陽氣。",
-          "role_reason_zh": "發表透疹，清熱解毒，升舉陽氣。",
-          "is_alternate": false,
-          "actions_zh": "發表透疹，清熱解毒，升舉陽氣。",
-          "role_zh": "君"
-        },
         {
           "herb_id": "herb.ge_gen",
           "herb_zh": "葛根",
           "name_zh": "葛根",
           "herb_en": "Pueraria Root",
           "name_en": "Pueraria Root",
+          "pharmaceutical_latin": "Puerariae Radix",
+          "dose_range": "6.0g",
+          "decoction_reference_g": "6.0g",
+          "dose_g": "6.0g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
           "pinyin": "Ge Gen",
-          "pinyin_toned": "Gé Gēn",
-          "pharmaceutical_latin": "Rx. Puerariae",
-          "dose_g": "3-12g",
-          "decoction_reference_g": "3-12g",
-          "in_formula_en": "Releases muscle layer, clears Heat and vents rashes.",
-          "actions_en": "Releases muscle layer, clears Heat and vents rashes.",
-          "in_formula_zh": "清熱瀉火。",
-          "role_reason_zh": "清熱瀉火。",
-          "is_alternate": false,
-          "actions_zh": "清熱瀉火。",
-          "role_zh": "君"
+          "pinyin_toned": "Gé Gēn"
         },
         {
-          "herb_id": "herb.gan_cao",
-          "herb_zh": "甘草",
-          "name_zh": "甘草",
-          "herb_en": "Licorice Root",
-          "name_en": "Licorice Root",
-          "pinyin": "Gan Cao",
-          "pinyin_toned": "Gān Cǎo",
-          "pharmaceutical_latin": "Rx. Glycyrrhizae",
-          "dose_g": "1.5-6g",
-          "decoction_reference_g": "1.5-6g",
-          "in_formula_en": "Clears Heat/toxicity and harmonizes.",
-          "actions_en": "Clears Heat/toxicity and harmonizes.",
-          "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "is_alternate": false,
-          "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-          "role_zh": "佐"
+          "herb_id": "herb.ma_huang",
+          "herb_zh": "麻黃",
+          "name_zh": "麻黃",
+          "herb_en": "Ephedra Stem",
+          "name_en": "Ephedra Stem",
+          "pharmaceutical_latin": "Ephedrae Herba",
+          "dose_range": "4.5g",
+          "decoction_reference_g": "4.5g",
+          "dose_g": "4.5g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
+          "pinyin": "Ma Huang",
+          "pinyin_toned": "Má Huáng"
         },
         {
-          "herb_id": "herb.chi_shao",
-          "herb_zh": "赤芍",
-          "name_zh": "赤芍",
-          "herb_en": "Red Peony Root",
-          "name_en": "Red Peony Root",
-          "pinyin": "Chi Shao",
-          "pinyin_toned": "Chi Shao",
-          "pharmaceutical_latin": "Rx. Paeoniae Rubra",
-          "dose_g": "3-9g",
-          "decoction_reference_g": "3-9g",
-          "in_formula_en": "Cools and invigorates Blood, relieves Heat-related pain.",
-          "actions_en": "Cools and invigorates Blood, relieves Heat-related pain.",
-          "in_formula_zh": "清熱涼血，散瘀止痛。",
-          "role_reason_zh": "清熱涼血，散瘀止痛。",
-          "is_alternate": false,
-          "actions_zh": "清熱涼血，散瘀止痛。",
-          "role_zh": "佐"
+          "herb_id": "herb.gui_zhi",
+          "herb_zh": "桂枝",
+          "name_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
+          "name_en": "Cinnamon Twig",
+          "pharmaceutical_latin": "Cinnamomi Ramulus",
+          "dose_range": "3.0g",
+          "decoction_reference_g": "3.0g",
+          "dose_g": "3.0g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
+          "pinyin": "Gui Zhi",
+          "pinyin_toned": "Guì Zhī"
+        },
+        {
+          "herb_id": "herb.bai_shao",
+          "herb_zh": "白芍",
+          "name_zh": "白芍",
+          "herb_en": "White Peony Root",
+          "name_en": "White Peony Root",
+          "pharmaceutical_latin": "Paeoniae Radix Alba",
+          "dose_range": "3.0g",
+          "decoction_reference_g": "3.0g",
+          "dose_g": "3.0g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
+          "pinyin": "Bai Shao"
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "herb_zh": "炙甘草",
+          "name_zh": "炙甘草",
+          "herb_en": "Honey-fried Licorice Root",
+          "name_en": "Honey-fried Licorice Root",
+          "pharmaceutical_latin": "Glycyrrhizae Radix et Rhizoma Praeparatum cum Melle",
+          "dose_range": "3.0g",
+          "decoction_reference_g": "3.0g",
+          "dose_g": "3.0g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
+          "pinyin": "Zhi Gan Cao"
         },
         {
           "herb_id": "herb.sheng_jiang",
-          "herb_zh": "(生薑)",
-          "name_zh": "(生薑)",
-          "herb_en": "(Fresh Ginger)",
-          "name_en": "(Fresh Ginger)",
+          "herb_zh": "生薑",
+          "name_zh": "生薑",
+          "herb_en": "Fresh Ginger Root",
+          "name_en": "Fresh Ginger Root",
+          "pharmaceutical_latin": "Zingiberis Rhizoma Recens",
+          "dose_range": "4.5g",
+          "decoction_reference_g": "4.5g",
+          "dose_g": "4.5g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
           "pinyin": "Sheng Jiang",
-          "pinyin_toned": "Shēng Jiāng",
-          "pharmaceutical_latin": "Rz. Zingiberis Recens",
-          "dose_g": "2-6g",
-          "decoction_reference_g": "2-6g",
-          "in_formula_en": "AD lists optional addition; releases Exterior and harmonizes Middle.",
-          "actions_en": "AD lists optional addition; releases Exterior and harmonizes Middle.",
-          "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "is_alternate": true,
-          "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
-          "role_zh": "佐"
+          "pinyin_toned": "Shēng Jiāng"
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "herb_zh": "大棗",
+          "name_zh": "大棗",
+          "herb_en": "Jujube",
+          "name_en": "Jujube",
+          "pharmaceutical_latin": "Jujubae Fructus",
+          "dose_range": "4.0g",
+          "decoction_reference_g": "4.0g",
+          "dose_g": "4.0g",
+          "classical_amount_text": "《臺灣中藥典》第四版 THP 433 官方組成（每日總服用量 28.0 公克）",
+          "pinyin": "Da Zao",
+          "pinyin_toned": "Dà Zǎo"
         }
       ],
       "clinical_use_note": "《臺灣中藥典》第四版葛根湯濃縮製劑（顆粒、散）官方標準（THP 433）：葛根6.0公克、麻黃4.5公克、桂枝3.0公克、白芍3.0公克、炙甘草3.0公克、生薑4.5公克、大棗4.0公克，每日總服用量28.0公克。（順天堂顆粒劑通用服法，供對照）順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0公克～12.0公克，分次開水送服。",
@@ -6176,12 +6161,11 @@
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Kudzu Decoction",
@@ -6202,15 +6186,11 @@
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
-        "actions_zh": [
-          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
-        ],
-        "pattern_indications_zh": [
-          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
-        ],
         "clinical_use_note": [
           "curriculum/formulas/臺灣中藥典第四版英文版.md#p.635 THP 433 葛根湯濃縮製劑（顆粒、散）"
+        ],
+        "composition": [
+          "curriculum/formulas/臺灣中藥典第四版英文版.md#p.635（THP 433 葛根湯濃縮製劑〔顆粒、散〕官方組成，出典《傷寒論》）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/260",
@@ -6227,16 +6207,8 @@
       "formula_song": "葛根湯內麻黃黃，桂芍甘草薑棗藏。\n太陽傷寒兼項強，無汗惡風服之康。",
       "formula_song_zh": "葛根湯內麻黃黃，桂芍甘草薑棗藏。\n太陽傷寒兼項強，無汗惡風服之康。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
-      "ad_syndromes_en": [
-        "Measles",
-        "Externally contracted Heat collecting in the Lung and Stomach",
-        "Early-stage Warm febrile diseases"
-      ],
-      "pattern_focus_en": [
-        "Measles",
-        "Externally contracted Heat collecting in the Lung and Stomach",
-        "Early-stage Warm febrile diseases"
-      ],
+      "ad_syndromes_en": [],
+      "pattern_focus_en": [],
       "category_zh": "解表劑",
       "contraindications_en": [
         "This formula may cause exterior Deficiency in rashes that surface evenly.",
@@ -6261,7 +6233,9 @@
         "禁用於 measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
         "Use caution for those with warm pathogen Heat diseases.",
         "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
-      ]
+      ],
+      "correction_note": "【2026-08-11 接錯方修正】本筆原本帶的是「升麻葛根湯」的內容 —— American Dragon 201 方索引沒有 GE GEN TANG 條目，只有 SHENG MA GE GEN TANG，匯入時以方名子字串比對接錯。原內容全文保存如下，正本仍完整存放於 formula.sheng_ma_ge_gen_tang：\n・原組成：君／升麻／herb.sheng_ma／Sheng Ma／Shēng Má／Cimicifuga Rhizome／Rz. Cimicifugae／2-6g／發表透疹，清熱解毒，升舉陽氣。／Releases exterior Wind-Heat, clears toxicity and vents rashes.；君／葛根／herb.ge_gen／Ge Gen／Gé Gēn／Pueraria Root／Rx. Puerariae／3-12g／清熱瀉火。／Releases muscle layer, clears Heat and vents rashes.；佐／甘草／herb.gan_cao／Gan Cao／Gān Cǎo／Licorice Root／Rx. Glycyrrhizae／1.5-6g／清熱解毒，祛痰止咳，緩急止痛，調和諸藥。／Clears Heat/toxicity and harmonizes.；佐／赤芍／herb.chi_shao／Chi Shao／Chi Shao／Red Peony Root／Rx. Paeoniae Rubra／3-9g／清熱涼血，散瘀止痛。／Cools and invigorates Blood, relieves Heat-related pain.；佐／(生薑)／herb.sheng_jiang／Sheng Jiang／Shēng Jiāng／(Fresh Ginger)／Rz. Zingiberis Recens／2-6g／解表散寒，溫中止嘔，化痰止咳。／AD lists optional addition; releases Exterior and harmonizes Middle.\n・原功效中文：祛散風-熱、補益理氣、補益理氣\n・原功效英文：Expels Exterior Wind-Heat / Releases muscle layer / Vents rashes\n・原主治中文：麻疹初起透發不暢證、外感熱邪鬱於肺胃證、溫病初起熱邪在衛表證\n・原主治英文：Measles / Externally contracted Heat collecting in the Lung and Stomach / Early-stage Warm febrile diseases\n・原 pattern_focus_en / ad_syndromes_en：Measles / Externally contracted Heat collecting in the Lung and Stomach / Early-stage Warm febrile diseases\n組成改依《臺灣中藥典》第四版 p.635（THP 433）官方組成與官方劑量填入，出典《傷寒論》。⚠️ 君臣佐使未填：全 repo 查無葛根湯的君臣佐使來源（課件把葛根湯列在 3rd group，只教 Name/Ingredients/Actions，無 hierarchy），不自行指派，待 Ting 指認。⚠️ 功效與主治暫時留空：原內容既然是別的方的，就不能留在這裡；葛根湯自己的功效／主治在 repo 內查無來源，依憲法「查不到就留空」。",
+      "source_classic": "《傷寒論》"
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
@@ -48729,23 +48703,13 @@
         "滋陰",
         "滋養肝腎陰精",
         "明目退翳",
-        "滋陰養血",
-        "增強吞噬細胞活性",
-        "促進淋巴細胞轉化",
-        "促進免疫球蛋白生成",
-        "防輻射損傷血小板",
-        "抗化學性肝損傷"
+        "滋陰養血"
       ],
       "actions_en": [
         "Enriches Yin",
         "Nourishes the essence of the Liver and Kidneys",
         "Brightens eyes",
-        "Enriches Blood",
-        "Increases phagocytic activity",
-        "Increases lymphatic transformation",
-        "Increases production of immunoglobins",
-        "Protects against platelet damage by radiation",
-        "Protects against Liver damage by chemicals"
+        "Enriches Blood"
       ],
       "pattern_indications_zh": [
         "肝陰血虛證",
@@ -48970,6 +48934,12 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md（22 區塊方劑卡）"
+        ],
+        "modern_research_zh": [
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07) —— 原列於 actions 第 5-9 條，屬藥理指標非中醫功效，2026-08-11 錯層搬移歸位"
+        ],
+        "modern_research_en": [
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07) —— 原列於 actions 第 5-9 條，屬藥理指標非中醫功效，2026-08-11 錯層搬移歸位"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/115",
@@ -49443,6 +49413,20 @@
       "taiwan_pharmacopeia_zh": "No. 4",
       "contraindications_zh": [
         "陽虛者禁用"
+      ],
+      "modern_research_zh": [
+        "增強吞噬細胞活性",
+        "促進淋巴細胞轉化",
+        "促進免疫球蛋白生成",
+        "防輻射損傷血小板",
+        "抗化學性肝損傷"
+      ],
+      "modern_research_en": [
+        "Increases phagocytic activity",
+        "Increases lymphatic transformation",
+        "Increases production of immunoglobins",
+        "Protects against platelet damage by radiation",
+        "Protects against Liver damage by chemicals"
       ]
     },
     {
@@ -88858,7 +88842,11 @@
       "nccaom_high_yield": true,
       "public_safe": false,
       "study_tags": [],
-      "pattern_focus_en": [],
+      "pattern_focus_en": [
+        "Phlegm-Heat with dryness in Lung",
+        "Phlegm-Dryness in Lungs",
+        "Lung Yin deficiency with Phlegm-Fire"
+      ],
       "actions_en": [
         "Moistens Lungs, clears Heat, transforms Phlegm and stops cough",
         "Regulates Qi, opens chest oppression and descends rebellious Qi",
@@ -88955,7 +88943,9 @@
           "actions_en": "Disseminate Lung Qi and expel Phlegm; Benefit the throat and restore the voice; Expel pus; Guide other herbs upward"
         }
       ],
-      "pattern_indications_en": [],
+      "pattern_indications_en": [
+        "LU dry-phlegm causing cough — dry cough, or cough with deep-seated, viscous, difficult-to-expectorate sputum, wheezing, dry & sore throat"
+      ],
       "pattern_indications_zh": [
         "貝母瓜蔞散主治證候"
       ],
@@ -89029,10 +89019,20 @@
         ],
         "actions_zh": [
           "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+        ],
+        "pattern_indications_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md（Bei Mu Gua Lou San 條目 Indications 原文）"
+        ],
+        "pattern_focus_en": [
+          "curriculum/formulas/NCBAHM_2026_AD_181_Formulas_Name_Actions_Syndromes.md#010 Bei Mu Gua Lou San"
+        ],
+        "source_classic": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md（Source: Yi Xue Xin Wu）"
         ]
       },
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
-      "category_zh": "治燥劑"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。\n⚠️ pattern_indications_zh 目前是樣板佔位句「貝母瓜蔞散主治證候」（方名＋主治證候），不是真內容；2026-08-11 依課件補上英文主治，中文主治 repo 內查無來源，不硬翻，待 Ting 覆寫。",
+      "category_zh": "治燥劑",
+      "source_classic": "《醫學心悟》"
     },
     {
       "id": "formula.da_ding_feng_zhu",
@@ -91667,13 +91667,11 @@
       "pattern_focus_en": [],
       "actions_en": [
         "Stabilizes Chong Vessel, arrests bleeding and tonifies Spleen Qi",
-        "Astringes hemorrhage, tonifies Kidneys and secures vital root",
-        "Treats flooding and spotting due to Spleen/Kidney Deficiency"
+        "Astringes hemorrhage, tonifies Kidneys and secures vital root"
       ],
       "actions_zh": [
         ",於與補益脾氣",
-        "於,補益腎與",
-        "於與於脾/腎"
+        "於,補益腎與"
       ],
       "composition": [
         {
@@ -91819,7 +91817,9 @@
           "actions_en": "Tonifies Qi and harmonizes ingredients."
         }
       ],
-      "pattern_indications_en": [],
+      "pattern_indications_en": [
+        "Treats flooding and spotting due to Spleen/Kidney Deficiency"
+      ],
       "pattern_indications_zh": [
         "固沖湯主治證候"
       ],
@@ -91889,10 +91889,17 @@
         ],
         "actions_zh": [
           "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+        ],
+        "pattern_indications_en": [
+          "原列於 actions_en 第 3 條（實為主治非功效），2026-08-11 錯層搬移歸位"
+        ],
+        "source_classic": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md（Source: Yi Xue Zhong Zhong Can Xi Lu）"
         ]
       },
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
-      "category_zh": "固澀劑"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。\n⚠️ 2026-08-11 錯層搬移：actions_en 第 3 條「Treats flooding and spotting due to Spleen/Kidney Deficiency」實為主治，已搬入 pattern_indications_en；其中文搭檔「於與於脾/腎」是匯入時壞掉的殘字（非可讀內容），原字串保留於此不搬入主治。⚠️ pattern_indications_zh 目前是樣板佔位句「固沖湯主治證候」，repo 內查無中文主治來源，不硬翻，待 Ting 覆寫。⚠️ actions_zh 三條「,於與補益脾氣、於,補益腎與、於與於脾/腎」全為殘字，待 Ting 依《醫學衷中參西錄》重寫。",
+      "category_zh": "固澀劑",
+      "source_classic": "《醫學衷中參西錄》"
     },
     {
       "id": "formula.huai_hua_san",
@@ -97488,25 +97495,6 @@
           "role_reason_zh": "健脾和中，調和諸藥。",
           "is_alternate": false,
           "role_zh": "佐"
-        },
-        {
-          "herb_id": "",
-          "herb_zh": "—",
-          "name_zh": "—",
-          "herb_en": "Wine or vinegar",
-          "name_en": "Wine or vinegar",
-          "pinyin": "—",
-          "pinyin_toned": "—",
-          "pharmaceutical_latin": "Wine or vinegar",
-          "dose_g": "Not specified",
-          "decoction_reference_g": "Not specified",
-          "in_formula_en": "AD uses as a vehicle to enhance Blood-moving/pain-relieving effect.",
-          "actions_en": "AD uses as a vehicle to enhance Blood-moving/pain-relieving effect.",
-          "in_formula_zh": "和中健脾，調和諸藥。",
-          "actions_zh": "和中健脾，調和諸藥。",
-          "role_reason_zh": "和中健脾，調和諸藥。",
-          "is_alternate": false,
-          "role_zh": "佐"
         }
       ],
       "pattern_indications_en": [
@@ -97695,6 +97683,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+        ],
+        "administration_zh": [
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07) —— 原列為 composition 第 3 味「Wine or vinegar」，屬服法藥引，2026-08-11 錯層搬移歸位"
+        ],
+        "administration_en": [
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07) —— 原列為 composition 第 3 味「Wine or vinegar」，屬服法藥引，2026-08-11 錯層搬移歸位"
         ]
       },
       "cloudtcm_id": 478,
@@ -97903,7 +97897,9 @@
       "category_zh": "理血劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShiXiaoSan.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShiXiaoSan.html",
+      "administration_en": "Wine or vinegar — AD uses as a vehicle to enhance Blood-moving/pain-relieving effect.",
+      "administration_zh": "以酒或醋為藥引送服。（原資料把「Wine or vinegar」列為組成第 3 味、herb_zh 寫成「—」、role_zh「佐」、劑量「Not specified」、原文註「和中健脾，調和諸藥。」；藥引屬服法不屬方中藥味，2026-08-11 搬移歸位，組成 3 味 → 2 味。）"
     },
     {
       "id": "formula.si_ni_san",
@@ -109897,25 +109893,6 @@
           "role_reason_zh": "緩急止痛。",
           "is_alternate": false,
           "role_zh": "臣"
-        },
-        {
-          "herb_id": "",
-          "herb_zh": "Jiang Shi",
-          "name_zh": "Jiang Shi",
-          "herb_en": "Rz. Zingiberis",
-          "name_en": "Rz. Zingiberis",
-          "pinyin": "Jiang Shi",
-          "pinyin_toned": "Jiang Shi",
-          "pharmaceutical_latin": "Rz. Zingiberis",
-          "dose_g": "6g",
-          "decoction_reference_g": "6g",
-          "in_formula_en": "Warms/harmonizes Stomach, reduces nausea, transforms Phlegm and cough.",
-          "actions_en": "Warms/harmonizes Stomach, reduces nausea, transforms Phlegm and cough.",
-          "in_formula_zh": "和胃降逆，化痰降逆。",
-          "actions_zh": "和胃降逆，化痰降逆。",
-          "role_reason_zh": "和胃降逆，化痰降逆。",
-          "is_alternate": false,
-          "role_zh": "佐"
         }
       ],
       "actions_zh": [
@@ -109973,7 +109950,10 @@
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": [
+          "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+          "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md#191 良附丸（Bastyr/Chenoweth 課件 composition/role evidence）"
+        ],
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -109994,6 +109974,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md（22 區塊方劑卡）"
+        ],
+        "administration_zh": [
+          "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md#191 良附丸（Bastyr/Chenoweth 課件 composition/role evidence）；American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+        ],
+        "administration_en": [
+          "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md#191 良附丸（Bastyr/Chenoweth 課件 composition/role evidence）；American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -110106,7 +110092,9 @@
       "category": "未分類 / 考點與補充劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",
       "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/LiangFuWan.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/LiangFuWan.html",
+      "administration_en": "Ginger (AD lists as “Jiang Shi”, Rz. Zingiberis, 6g) — Warms/harmonizes Stomach, reduces nausea, transforms Phlegm and cough. Used as the pill-making / delivery vehicle; the Bastyr–Chenoweth course composition table lists only Chief Gao Liang Jiang and Deputy Xiang Fu.",
+      "administration_zh": "以薑為藥引／製丸用（原資料把「Jiang Shi」列為組成第 3 味，role_zh「佐」、劑量「6g」、Rz. Zingiberis、原文註「和胃降逆，化痰降逆。」）。課件 Bastyr/Chenoweth 的君臣表只列高良薑（君）與香附（臣）兩味，故第 3 味 2026-08-11 搬入服法欄，組成 3 味 → 2 味。⚠️「Jiang Shi」究竟指薑汁或乾薑，repo 內查無定論，未指派 herb_id，待 Ting 指認。"
     },
     {
       "id": "formula.ling_jiao_gou_teng_yin",
