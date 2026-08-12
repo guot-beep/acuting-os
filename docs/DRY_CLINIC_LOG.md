@@ -160,6 +160,16 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
 `evidence-debt.js`:正確算出 formula.jia_wei_xiao_yao_san 缺 modifications_zh
 的研究債分數。兩者輸出去識別化(ids only)。
 
+## 修復狀態(2026-08-11 當日)
+
+- ✅ **#9 v1 fail-loud**:R15 落地(rehearsal 65/65),corrupt store 鎖唯讀、raw bytes 保留,瀏覽器實證。
+- ✅ **#6 草稿保護**:case/SOAP 對話框節流草稿 + 還原/捨棄橫幅,重載實測還原成功。
+- ✅ **#14 存檔靜默失敗**:可見錯誤列+紅框+捲動+輸入即清除(初版有 fieldset 選擇器 bug,實測抓到後修正)。
+- ✅ **#3 safetyFlags 切分**:改分號/換行,括號內逗號保留,實測通過。
+- ✅ **#15 metric 長標籤**:CG8 表格+glance 卡+visit-brief 差值列三處全改短標籤(後兩處是實測追出來的)。
+- 🔄 **#5 藥卡批**:20 卡 DailyMed 批次進行中。
+- ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#16 用藥總帳低報、#2 picker 鍵盤流、#7 canonical origin 警示、#13(AVS v3 驗證)。
+
 ## 結論(給 Ting 的排序建議)
 
 9/5 前必修(依風險排序):**#9 v1 fail-loud**(資料毀滅鏈,Fable 接手)>
