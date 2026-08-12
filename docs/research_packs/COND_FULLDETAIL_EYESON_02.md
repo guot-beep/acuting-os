@@ -23,7 +23,7 @@ Branch：`codex/cond-eyeson-2`（自 `origin/codex/pattern-v2` tip `c1587d1`）
 | F-20 `cond.fibromyalgia`（SAFETY） | **RELOCATED**（`etiology_zh`/`etiology_en` 搬走留空；`western_pathology_zh` 的 `超氧化物雙效酶`／`公主病` 仍 OPEN，需 Ting；`tcm_patterns`/`acupoint_protocols`/`herb_formulas` 為卡片專屬 inline blob，非本批共用樣板，未動） | `29d3f8d` |
 | F-21 `cond.ivf_support` / `cond.luteal_phase_defect`（SAFETY） | **RELOCATED**（止血；處方重建仍 OPEN，需 Ting） | `29d3f8d` |
 | F-22 `cond.gout` 中英安全欄位方向相反 | **FIXED**（= B10） | `7acd0a2` |
-| F-23 `cond.heart_failure` 峻毒方/誤植欄位 | OPEN（`data/herbs/**` 所有權 + 不可逆損失疑慮，需 Ting 先確認） | — |
+| F-23 `cond.heart_failure` 峻毒方/誤植欄位 | 不可逆損失疑慮部分 **CLOSED**(Fable git 考古 8152fb2:被清文字=心律不整部落格誤植文,已存於 `cond.palpitations.import_artifacts` 並帶 `original_record: cond.heart_failure` 出處;該批次做過全庫 292,192 字元守恆驗證。male_infertility 同理存於 erectile_dysfunction)。herb_formulas 峻毒方部分維持 OPEN 待 Ting | 41e77c5 |
 | F-24 `cond.migraine` `western_pathology_zh` 未清洗 + 無 `_en` | OPEN（B12 僅止血兩處錯字；整段 725 字仍需 `import_artifacts` 流程，需 Ting） | — |
 | F-25 樣板治療區塊（本批 13 筆，全庫 74 筆） | OPEN（`cond.hyperemesis_gravidarum`／`cond.ivf_support`／`cond.luteal_phase_defect` 因孕期／生育安全已優先處理，見 F-19/F-21；其餘 10 筆＋全庫 66 筆仍 OPEN，是產品層取捨，需 Ting） | — |
 | F-26 抓取傾倒（不存在方名/峻毒方，本批 7 筆） | OPEN（`data/herbs/**` 所有權，本線只能回報） | — |
