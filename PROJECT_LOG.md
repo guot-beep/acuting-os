@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — R14 `39de5f1`（Clinical GO / landing PAUSE）
+
+- **Clinical**：六軸=`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`；K `10/2/0`；invariants `3/3/2/5/3 · 0`；Phase E `12`；真 store `0/0`。
+- **CI**：run `31554587975`在 generated-current step失敗；clean rebuild只改 knowledge bundle，`avsAdviceLibrary`／`clinicProfile`兩鍵無法由committed generator重現，hash `4a1ce7e2e969→2cc6ebe9d8aa`。
+- **Formula**：blockers `10→4`，template-grade `213→212`；剩柴胡加龍骨牡蠣湯／烏梅丸／大建中湯／蒿芩清膽湯。
+- **裁決**：landing/P4 PAUSE；不提交或覆蓋現有AVS WIP，不替formula缺口臆填內容。
+- **下一步**：AVS generator＋sources＋bundle同SHA自洽；formula 4項依來源／Ting裁決清除；新exact SHA三jobs success後進P4 rehearsal。
+
 # 2026-08-11 Codex — R14 exact-SHA `ac7a86d`（Clinical GO / landing PAUSE）
 
 - **六軸**：Clinical core未漂移，`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。

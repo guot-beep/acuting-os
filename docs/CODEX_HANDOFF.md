@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — R14 `39de5f1`, generated drift + formula 4
+
+- **Clinical**：core未漂移；六軸=`6/6 PASS`，pointer/runtime/C2b=`31/31 · 60/60 · 30/30`；K=`10/2/0`、invariants=`3/3/2/5/3 · 0`、Phase E=`12`、interactions=`0`、syntax=`2/2`、真 store=`0/0`。
+- **CI HIGH**：run `31554587975` step 5 generated-current failure。clean rebuild只改 knowledge bundle，移除無法由committed generator產生的 `avsAdviceLibrary`、`clinicProfile` 兩鍵；hash `4a1ce7e2e969→2cc6ebe9d8aa`。
+- **Formula**：`a6ee512` 已把 blockers `10→4`，但 template-grade `213→212`；剩柴胡加龍骨牡蠣湯、烏梅丸、大建中湯、蒿芩清膽湯四項。
+- **Next**：AVS generator/source與bundle須同commit自洽，再由formula owner依來源／Ting裁決清4項；新 exact SHA三 jobs success前不發布P4 checklist。
+
+---
+
 ## [2026-08-11] Codex Handoff — R14 exact-SHA `ac7a86d`, landing/P4 still paused
 
 - **Gate**：`c8959ad..ac7a86d` 未改 Clinical core；六軸=`6/6 PASS`，pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。

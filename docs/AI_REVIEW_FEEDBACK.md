@@ -6,6 +6,18 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R14 exact-SHA audit — `39de5f1`
+
+### 裁決：Clinical 六軸維持 GO；landing/P4 PAUSE（generated drift + formula 4）
+
+- **範圍**：formula-holds commit `a6ee512` 已進 product branch，current local／origin／PR #59=`39de5f1fc1e04a1c08fa92d5e0f0835f21822e73`；Clinical core仍與 `8da3089` blob-identical。全套測試在 detached clean worktree執行，未使用主工作樹AVS WIP。
+- **Clinical regression**：pointer/runtime/C2b=`31/31 · 60/60 · 30/30 PASS`；K=`10 files / 2 refs / 0 issues`；invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E=`12 PASS`；interactions failures=`0`；syntax=`2/2`；真 store讀／寫=`0/0`。
+- **HIGH — generated不可重現**：[CI run 31554587975](https://github.com/guot-beep/acuting-os/actions/runs/31554587975)在 step 5 `generated data is committed and current` failure，後續全部skipped。clean `node scripts/build-data.js`只改 `data/generated/knowledge_data.js`；commit版比committed generator可產出內容多出exactly `2` top-level keys：`avsAdviceLibrary`、`clinicProfile`（content hash `4a1ce7e2e969→2cc6ebe9d8aa`）。這表示bundle由帶未提交AVS generator WIP的工作樹產生後被單獨commit。
+- **formula gate進度**：獨立覆核 `a6ee512`，validator由 `10→4 blockers`，但 template-grade `213→212`、君臣佐使 `221→220`；葛根湯移除誤植的升麻葛根湯 actions／indications後誠實降為draft，非完整補卡。剩餘4項：柴胡加龍骨牡蠣湯 composition truncation、烏梅丸 actions 11、大建中湯缺君臣佐使、蒿芩清膽湯 unresolved 碧玉散。
+- **解除條件**：AVS owner須二擇一並保持同commit自洽：（A）提交能產出兩鍵的 generator＋source files；或（B）以committed generator重建並移除兩鍵。其後清除formula 4項（需來源／Ting裁決，不得為過validator臆填），對新 exact SHA取得三 jobs success，才發布R14 final GO／P4 rehearsal checklist。
+
+---
+
 ## 2026-08-11 Codex C2B-R14 exact-SHA refresh — `ac7a86d`
 
 ### 裁決：Clinical 六軸維持 GO；landing/P4 維持 PAUSE
