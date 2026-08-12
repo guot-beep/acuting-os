@@ -10933,7 +10933,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/92507"
+        "https://cloudtcm.com/disease/tcm/92507",
+        "AAOS — De Quervain's Tenosynovitis: https://orthoinfo.aaos.org/en/diseases--conditions/de-quervains-tendinosis/"
       ],
       "red_flag_refs": [
         "rf.de_quervain.legacy01",
@@ -10953,7 +10954,21 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "AAOS — De Quervain's Tenosynovitis"
+        ],
+        "western_context_en": [
+          "AAOS — De Quervain's Tenosynovitis"
+        ],
+        "red_flags_zh": [
+          "AAOS — De Quervain's Tenosynovitis"
+        ],
+        "red_flags_en": [
+          "AAOS — De Quervain's Tenosynovitis"
+        ]
+      }
     },
     {
       "id": "cond.trigger_finger",
@@ -14358,7 +14373,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/92683"
+        "https://cloudtcm.com/disease/tcm/92683",
+        "AAPM&R — Myofascial Pain: https://now.aapmr.org/myofascial-pain/"
       ],
       "red_flag_refs": [
         "rf.myofascial_pain.legacy01",
@@ -14378,7 +14394,21 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "AAPM&R — Myofascial Pain"
+        ],
+        "western_context_en": [
+          "AAPM&R — Myofascial Pain"
+        ],
+        "red_flags_zh": [
+          "AAPM&R — Myofascial Pain"
+        ],
+        "red_flags_en": [
+          "AAPM&R — Myofascial Pain"
+        ]
+      }
     },
     {
       "id": "cond.tmd",

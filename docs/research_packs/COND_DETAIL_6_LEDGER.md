@@ -32,25 +32,25 @@ not fuzzy-matched:**
 | 24 | `cond.ankle_sprain` | yes | — |
 | 25 | `cond.chronic_pelvic_pain` | yes | — |
 | 26 | `cond.cluster_headache` | yes | — |
-| 27 | `cond.de_quervain_tenosynovitis` | **NO** | live id is `cond.de_quervain` (no `_tenosynovitis` suffix) |
+| 27 | `cond.de_quervain_tenosynovitis` | **NO → APPLIED-VIA-VERIFIED-MAPPING (Batch 6b)** | live id is `cond.de_quervain` (no `_tenosynovitis` suffix); mapping independently re-verified and applied — see "Batch 6b" section below |
 | 28 | `cond.female_infertility` | yes | — |
 | 29 | `cond.male_infertility` | yes | — |
-| 30 | `cond.myofascial_pain_syndrome` | **NO** | live id is `cond.myofascial_pain` (no `_syndrome` suffix) |
+| 30 | `cond.myofascial_pain_syndrome` | **NO → APPLIED-VIA-VERIFIED-MAPPING (Batch 6b)** | live id is `cond.myofascial_pain` (no `_syndrome` suffix); mapping independently re-verified and applied — see "Batch 6b" section below |
 
 The task brief's own claim ("SOL confirms it used repo-true ids incl.
 `cond.pmdd`, `cond.postpartum_hypolactation`, `cond.rotator_cuff`") is true for
 those three named ids, but does not extend to all 15 — ranks 27 and 30 are
 genuine pack id errors. Per task instruction ("no fuzzy matching — the
 ge_gen_tang mis-join disaster came from fuzzy matching"), **both records were
-stopped and left completely untouched.** `cond.de_quervain` and
-`cond.myofascial_pain` carry zero writes from this batch — no
+stopped and left completely untouched in Batch 04.** `cond.de_quervain` and
+`cond.myofascial_pain` carried zero writes from Batch 04 — no
 western_pathology/etiology/risk_factors/sources/field_sources/relations
 changes. Their `name_en` (`De Quervain Tenosynovitis`, `Myofascial Pain
 Syndrome`) match the pack's cards verbatim, so this is very likely the same
 underlying condition the pack intended — but "very likely" is exactly the
 judgment a stop-and-report rule exists to keep out of an automated write.
-**13 of 15 records ingested this batch. 2 of 15 need Ting's id-mapping
-decision before any future batch can touch them.**
+**13 of 15 records ingested in Batch 04. The remaining 2 were subsequently
+applied under a router-verified id mapping in Batch 6b — see below.**
 
 ## Split handling (per pack, matches task brief exactly)
 
@@ -366,9 +366,9 @@ sourcing 8 new PARTIAL records from scratch.
   reason `full_detail_count` did not rise this batch.
 - **2 records stopped for id non-resolution** — `cond.de_quervain_tenosynovitis`
   → live id `cond.de_quervain`; `cond.myofascial_pain_syndrome` → live id
-  `cond.myofascial_pain`. Zero writes to either live record. Needs Ting's
-  explicit id-mapping decision (not an agent judgment call) before any future
-  batch touches these two.
+  `cond.myofascial_pain`. Zero writes to either live record in Batch 04.
+  **Update (Batch 6b, 2026-08-12): both applied under a router-verified id
+  mapping** — see "Batch 6b — verified id-mapping application" section below.
 - **Sources used this batch**: CDC (pid_chronic, vulvovaginal_candidiasis),
   PubMed systematic review (piriformis_syndrome), ACOG (pmdd,
   postpartum_hypolactation, secondary_dysmenorrhea, chronic_pelvic_pain,
@@ -391,7 +391,119 @@ priority attention before/alongside the next rank-31-45 pull:
    `cond.postpartum_hypolactation`, `cond.rotator_cuff`,
    `cond.secondary_dysmenorrhea`, `cond.vulvovaginal_candidiasis`,
    `cond.whiplash`) — would move `full_detail_count` 92 → 100 directly.
-2. Ting's id-mapping ruling on `cond.de_quervain_tenosynovitis` →
+2. ~~Ting's id-mapping ruling on `cond.de_quervain_tenosynovitis` →
    `cond.de_quervain` and `cond.myofascial_pain_syndrome` →
-   `cond.myofascial_pain`, so a future batch can safely ingest those 2
-   records' pack content.
+   `cond.myofascial_pain`~~ — **resolved in Batch 6b (2026-08-12)**, see below.
+
+---
+
+## Batch 6b — verified id-mapping application (2026-08-12)
+
+Branch: `codex/cond-detail-6b-idmap` off `origin/codex/pattern-v2` @ `d0e500f`
+(this ledger's own landing commit). Authority: router ruling applying the
+Batch 02 name-mismatch precedent (`COND_DETAIL_2_LEDGER.md` #2/#8 — id
+mismatches resolved by independent name/definition verification, treated as
+EXISTING under the live id, never as a new record) to the 2 records this
+batch stopped on id mismatch.
+
+### Step 0 — independent re-verification (mandatory, done before any write)
+
+Both pack records (`data/research_staging/cr010_condition_detail_batch04_SOL.json`)
+and both live canon records (`data/pathology/condition_canon_shortlist.json`)
+were read directly and compared:
+
+| | Pack (rank 27) | Live (`cond.de_quervain`) |
+|---|---|---|
+| `name_en` | De Quervain Tenosynovitis | De Quervain Tenosynovitis (exact match) |
+| `name_zh` | 狄奎凡氏腱鞘炎 (transliteration) | 媽媽手（狹窄性腱鞘炎）(Taiwan common name) — same condition, different naming convention |
+| Definition | AAOS source note: APL/EPB tendon-sheath irritation, pregnancy/postpartum association, thumb/wrist loading | `summary_zh`: 腕橈側第一背側腔室（拇長展肌與拇短伸肌腱）的狹窄性腱鞘炎 — first dorsal compartment (APL/EPB) stenosing tenosynovitis. Same anatomic structures, same condition. |
+| `icd_hint` (live only) | — | M65.4 (De Quervain's, correct) |
+
+| | Pack (rank 30) | Live (`cond.myofascial_pain`) |
+|---|---|---|
+| `name_en` | Myofascial Pain Syndrome | Myofascial Pain Syndrome (exact match) |
+| `name_zh` | 肌筋膜疼痛症候群 | 肌筋膜疼痛症候群 (exact match) |
+| Definition | AAPM&R source note: regional myofascial pain/trigger-point features, chronic stretch/overload contributors | `summary_zh`: 肌筋膜激痛點（緊繃帶內的過敏點）引起的局部與轉移痛 — trigger-point referred pain. Same condition. |
+| `icd_hint` (live only) | — | M79.1 (myofascial pain syndrome, correct) |
+
+Both pairs describe the same underlying condition (name_en exact match on
+both; name_zh either exact or a known alternate-naming convention; definition
+content congruent; icd_hint correct for the mapped id in both cases). **Both
+records verified — neither stopped at Step 0.**
+
+### Application (rank 24–30 sources-only rule, applied exactly)
+
+Per Batch 04's own resolved rank 24-30 subset treatment (both
+`western_pathology_action`/`etiology_action`/`risk_factors_action` are
+`PRESERVE_EXISTING` in the pack for both records): **no content field was
+overwritten.** Only `sources` (appended) and `field_sources` (newly added,
+keyed to the already-populated `western_context_zh/en` and `red_flags_zh/en`
+pairs, matching the exact field-keying convention used on
+`cond.ankle_sprain`/`cond.chronic_pelvic_pain`/`cond.cluster_headache`/
+`cond.female_infertility`/`cond.male_infertility`) were written:
+
+| Field | `cond.de_quervain` | `cond.myofascial_pain` |
+|---|---|---|
+| `sources` | +1 (appended `AAOS — De Quervain's Tenosynovitis: https://orthoinfo.aaos.org/en/diseases--conditions/de-quervains-tendinosis/`; pre-existing CloudTCM URL preserved, not replaced) | +1 (appended `AAPM&R — Myofascial Pain: https://now.aapmr.org/myofascial-pain/`; pre-existing CloudTCM URL preserved) |
+| `field_sources` | new: `western_context_zh`, `western_context_en`, `red_flags_zh`, `red_flags_en` (each `["AAOS — De Quervain's Tenosynovitis"]`) | new: `western_context_zh`, `western_context_en`, `red_flags_zh`, `red_flags_en` (each `["AAPM&R — Myofascial Pain"]`) |
+| `western_pathology_zh/en`, `etiology_zh/en`, `risk_factors_zh/en` | untouched (already empty pre-batch — same honest-gap state as the rank 24-30 resolved subset; not a fill_target) | untouched (already empty pre-batch; not a fill_target) |
+| `summary`, `red_flags` (content), `western_context` (content) | untouched | untouched |
+| `sign_symptom_ids` | not added — no genuine match in the 102-symptom registry (`data/symptoms/symptoms.json`; no wrist/thumb-specific entry) | not added — no genuine match (no myofascial/muscle-pain-specific entry beyond `sym.muscle_cramp`/`sym.muscle_atrophy`, neither a genuine fit) |
+| `structured_relation_seeds` (pack) | not written — no approved cond-to-cond free-text relation field exists (template §3.3); `related_patterns` (pre-existing, resolving) left untouched | not written, same reason; `related_patterns` (pre-existing, resolving, 2 entries) left untouched |
+
+`git diff data/pathology/condition_canon_shortlist.json` confirms exactly 2
+append-only hunks (one per record) — no lines removed, no existing field
+shortened or cleared.
+
+### Validation trail
+
+```
+node scripts/build-data.js
+  Built app_data.js / knowledge_data.js / cloudtcm_map.js / points_361.js — no errors
+
+node scripts/validate-condition-standard.js
+  505 records · 449 clean
+  C4  42 defects / 42 records   (flat — unchanged)
+  C5  72 defects / 38 records   (flat — unchanged, no _zh/_en pairs touched)
+  C10 74 defects / 40 records   (flat — unchanged, no boilerplate touched)
+  FAIL — 188 blocking defect(s)   (flat vs Batch 04's post-batch 188 — expected:
+  this batch adds sources/field_sources only, which are not C4/C5/C10-scored fields)
+
+node scripts/check-validation-ratchet.js
+  conditions 188 -> 188  flat  PASS — no regressions
+  (flat, not better — baseline NOT updated, per instruction to only --update on BETTER)
+
+node scripts/validate-content-junk.js
+  PASS — no scraped header tokens, no encoding anomalies in _zh fields
+  (1 pre-existing formula-layer WARN, 32-record shared dosage clause,
+  unrelated to this batch — same WARN documented in Batch 04's own trail)
+
+node scripts/validate-relations.js
+  Relation validation passed (11 pre-existing unrelated comparisons.json
+  SKELETON notes, same as Batch 04's trail)
+
+git diff --check data/pathology/condition_canon_shortlist.json
+  clean (no whitespace errors)
+```
+
+Maturity audit (`node scripts/audit-cr010-condition-detail-maturity.js`):
+`full_detail_count: 92`, `partial_count: 70`, `skeleton_count: 343` — all
+three flat, same as Batch 04's own finding (sources/field_sources are not
+among the score-moving criteria; `acupuncture_scope` remains the blocking
+hard gate on both records, unauthored, same as Batch 04's rank-16-23 set).
+
+### Totals (this batch)
+
+- **0 new `cond.*` records created.** Both pack ids resolved via verified
+  mapping to existing live ids; no duplicates.
+- **2 records written**: `cond.de_quervain`, `cond.myofascial_pain`.
+  `sources` +1 each, `field_sources` newly added (4 keys each) on both.
+  All other fields byte-identical to pre-batch state.
+- **Overall condition-layer blocking defects: 188 → 188 (flat)** — expected;
+  this batch's fill_targets (`sources`, `field_sources`) are not scored by
+  C4/C5/C10.
+- **`cond.de_quervain_tenosynovitis` → `cond.de_quervain` and
+  `cond.myofascial_pain_syndrome` → `cond.myofascial_pain`**: both Batch 04
+  STOPPED rows now **APPLIED-VIA-VERIFIED-MAPPING**, authority = this
+  dispatch + independent Step 0 re-verification (name_en exact match on
+  both + congruent definition + correct `icd_hint` on both live records).
