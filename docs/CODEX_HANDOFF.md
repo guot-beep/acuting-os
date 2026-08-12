@@ -1,3 +1,12 @@
+## [2026-08-12] Codex retest#2 — scanner 深層 entity `RESOLVED`；AVS 六軸 `6/6 PASS · GO`
+
+- **Exact blob**：`git pull --ff-only`=`Already up to date`；覆測 checkout=`codex/pattern-v2@4beab0e`，`3e0ebc1` 為祖先。current `js/avs.js`／`scripts/test-avs-checkout.js`／`scripts/validate-avs-library.js` blob 與 `3e0ebc1` 完全相同；修復 commit 後三者無 drift。
+- **唯一覆測面**：以暫存檔案式 Node harness 載入真實 `js/avs.js`，把合法 patientCode 寫入 `clinicianAddedAdvice`，經真實 `renderPatientHtml()` 後再呼叫 `checkPatientOutputSafety()`。4／5／8 層 nested `&amp;` entity 與多段 literal `&` 共 `4/4` 均回非空且包含原 patientCode；乾淨 render=`[]`；500,003-char repeated `&amp;` chain=`11.3 ms`，2,048-level nested chain=`31.6 ms` 且到定點。總計=`7/7 PASS`；harness 已清除，真 clinical store讀／寫=`0/0`。
+- **範圍控制**：依派工未重跑 scanner 大小寫／剝 tag／ICD／CPT、shadow/delete/invariant；既有基線 `59/59` 沿用、未冒充本輪重跑。只把先前唯一未解的 retest#2 深層 entity 繞過由 blocker 改判 `RESOLVED`。
+- **六軸最終裁決**：Visit ownership=`PASS`；finalized immutability=`PASS`；append-only/supersede=`PASS`；PHI／病人輸出邊界=`PASS`（本項 resolved）；storage failure=`PASS`；C2b／Patient regression=`PASS`。AVS v3=`GO`；本判定不擴張至 P1/P4/landing 等其他 gate。
+
+---
+
 ## [2026-08-12] CI workflow: concurrency + docs-only preflight live
 
 - validate.yml(d7bc3dc):同 PR 分組 cancel-in-progress;docs-only(docs/**+*.md)只跑 preflight+no-PHI,有明確 success;code/data/scripts/workflow 變更全跑。PR #59 重開。audit 對 exact SHA 跑 CI 時注意:docs-only push 的 run 沒跑重 validators 是設計,不是漏跑 —— 認 preflight 的 run_full 輸出。

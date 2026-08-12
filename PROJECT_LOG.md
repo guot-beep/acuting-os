@@ -1,3 +1,11 @@
+# 2026-08-12 Codex — AVS scanner retest#2 深層 entity 改判 RESOLVED
+
+- exact blob：pull 後 `codex/pattern-v2@4beab0e`；`3e0ebc1` 為祖先，三個 scanner 相關 blob 自修復 commit 後無 drift。
+- 檔案式 harness：深層／多 `&` patientCode render 後攔截 `4/4`；乾淨輸出誤報 `0`；長鏈終止 `2/2`；合計 `7/7 PASS`。
+- 範圍：未重跑大小寫／剝 tag／ICD／CPT、shadow/delete/invariant；既有 `59/59` 基線沿用但本輪未重跑。
+- 裁決：retest#2=`RESOLVED`；AVS 六軸=`6/6 PASS · GO`；暫存 harness 已清除，真 clinical store讀／寫=`0/0`。
+- 下一步：本結論只關閉 AVS scanner 深層 entity gate；P1/P4/landing 依各自既有佇列處理。
+
 # 2026-08-12 Fable — Codex NO-GO 四項修復(3 HIGH + 1 MED),送覆測
 
 ## 2026-08-12 🟢 CI 史上首次全綠(run 31577198745 @ a26d2a1)
