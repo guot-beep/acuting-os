@@ -436,9 +436,18 @@
   const herbByPinyin = new Map(herbs.map((record) => [normalizeKey(record.pinyin), record]));
   const herbByNameZh = new Map(herbs.map((record) => [record.name_zh, record]));
 
+  // 2026-08-12:\u52A0\u5165\u4F54\u4F4D\u5B57\u4E32\u904E\u6FFE\u3002usableText \u539F\u672C\u53EA\u64CB ?? \u8207 U+FFFD,\u65BC\u662F\u532F\u5165
+  // \u7559\u4E0B\u7684\u82F1\u6587\u8349\u7A3F\u6703\u88AB\u7576\u6210\u5167\u5BB9\u6E32\u67D3 \u2014\u2014 herb.zhe_bei_mu \u8207 herb.zhi_ke \u7684
+  // \u300C\u6027\u5473\u300D\u6B04\u76EE\u524D\u986F\u793A\u7684\u662F "Draft: warm/cool/bitter/acrid depending on herb;
+  // verify individual taste and temperature."\u3002\u90A3\u4E0D\u662F\u5F85\u9A57\u8B49\u7684\u5167\u5BB9,\u90A3\u662F
+  // \u300C\u9084\u6C92\u6709\u4EBA\u5BEB\u300D\u7684\u81EA\u767D,\u986F\u793A\u5B83\u6BD4\u7559\u767D\u66F4\u7CDF:\u8B80\u7684\u4EBA\u6703\u4EE5\u70BA\u90A3\u5C31\u662F\u9019\u5473\u85E5\u7684\u6027\u5473\u3002
+  // \u9019\u88E1\u53EA\u8A8D\u532F\u5165\u5668\u7522\u751F\u7684\u56FA\u5B9A\u53E5\u578B,\u4E0D\u505A\u6CDB\u7528\u82F1\u6587\u5075\u6E2C \u2014\u2014 \u4E2D\u82F1\u5C0D\u7167\u6B04\u4F4D\u672C\u4F86\u5C31\u6709\u82F1\u6587\u3002
+  const PLACEHOLDER_RE = /^(draft:|review .+ before clinical use\.?$|verify against .+ before |pattern documentation context only)/i;
   function usableText(value) {
     const text = String(value || "").trim();
-    return text && !/\?{2,}/.test(text) && !text.includes("\uFFFD") ? text : "";
+    if (!text || /\?{2,}/.test(text) || text.includes("\uFFFD")) return "";
+    if (PLACEHOLDER_RE.test(text)) return "";
+    return text;
   }
 
   function cleanList(values) {
