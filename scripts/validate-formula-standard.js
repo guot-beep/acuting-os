@@ -21,7 +21,11 @@
  *      as an action, a whole sentence sitting in the short-tag layer)
  *   F11 formula_family entry that names a formula without saying what changed —
  *      a bare list of names throws away the only valuable part
- *   F12 composition names an herb that is not in herb_canon_shortlist
+ *   F12 composition names an herb that is not in herb_canon_shortlist, or a
+ *      formula-in-formula entry (template §3.1) that does not resolve: no
+ *      formula_id, a malformed one, an unknown one with no honest status, an
+ *      empty expanded ingredient list, or an expanded ingredient that neither
+ *      resolves against the herb canon nor says why it cannot
  *   F9 fully-destroyed mojibake anywhere in the record — EVERY record, not
  *      just template-grade, because corrupt text is corrupt either way and it
  *      must never reach a card. Partially damaged text (a few characters lost,
@@ -112,7 +116,18 @@ const herbIds = (() => {
   return new Set((j.records || j).map((h) => String(h.id || "").trim()).filter(Boolean));
 })();
 
+// Formula ids this file itself defines — a formula-in-formula row may point at
+// a card that does not exist yet (碧玉散 has none), which is allowed but must
+// be said out loud rather than left to look resolved.
+const formulaIds = new Set(recs.map((r) => String(r.id || "").trim()).filter(Boolean));
+
 const ROLE_OK = /^(君|臣|佐|使|chief|deputy|assistant|envoy)/i;
+// A composition row that is itself a formula — 蒿芩清膽湯's 使藥 is 碧玉散, a
+// 6:1:1 成方, not an herb (template §3.1, Ting ruling 2A 2026-08-12). The switch
+// is opt-in: a row without this entry_type takes exactly the path it always did.
+const NESTED = "formula_in_formula";
+const isNested = (c) => c && c.entry_type === NESTED;
+const FORMULA_ID_RE = /^formula\.[a-z0-9_]+$/;
 // A whole sentence in the tag layer is the defect that destroyed the acupoint
 // search layer once already. But a flat character limit is the wrong test:
 // Chinese tags are 2-6 字 while English tags are snake_case slugs
@@ -325,6 +340,7 @@ for (const r of recs) {
        already clickable. An entry with neither a known name nor a resolving id
        still fails, which is the case this code was written for. */
     const unknown = comp
+      .filter((c) => !isNested(c))
       .filter((c) => !(c && c.herb_id && herbIds.has(String(c.herb_id).trim())))
       .map((c) => String(c?.herb_zh || "").trim())
       .filter((n) => n && !herbNames.has(n));
@@ -334,6 +350,35 @@ for (const r of recs) {
       if (isTemplate(r)) errors.push(`F12 ${id}: composition 有 ${unknown.length} 味不在中藥庫 — ${unknown.slice(0, 4).join("、")}`);
     }
   }
+
+  /* F12b — formula-in-formula rows (template §3.1). This is not a relaxation of
+     F12: the row skips the herb-name lookup only because it is not an herb, and
+     in exchange it must satisfy strictly MORE than an herb row does — a
+     well-formed nested formula id, an honest status when that card does not
+     exist yet, a non-empty expansion, and a resolved-or-explained leaf for every
+     expanded ingredient. Blurring 碧玉散 into a single herb-like row is what
+     would make safety/interaction traversal stop above the leaf herbs. */
+  comp.filter(isNested).forEach((c, i) => {
+    const where = `composition[${comp.indexOf(c)}]「${String(c.herb_zh || c.name_zh || "?").trim()}」`;
+    const push = (msg) => { flag(r, msg); if (isTemplate(r)) errors.push(`F12 ${id}: ${where} ${msg}`); };
+    const fid = String(c.formula_id || "").trim();
+    if (!fid) push("方中方沒有 formula_id — 不准為了過檢查留空");
+    else if (!FORMULA_ID_RE.test(fid)) push(`方中方 formula_id「${fid}」不符 formula.<english_slug> 格式`);
+    else if (!formulaIds.has(fid) && !String(c.formula_id_status || "").trim()) {
+      push(`方中方 formula_id「${fid}」方劑庫查無,且沒有 formula_id_status 說明它是保留待建`);
+    }
+    const leaves = arr(c.expanded_ingredients);
+    if (!leaves.length) push("方中方沒有展開 expanded_ingredients — 安全與交互作用會走不到葉子藥材");
+    leaves.forEach((leaf, j) => {
+      const name = String(leaf?.herb_zh || "").trim();
+      if (!name) return push(`expanded_ingredients[${j}] 沒有 herb_zh`);
+      if (!herbNames) return;
+      const byId = leaf.herb_id && herbIds.has(String(leaf.herb_id).trim());
+      if (byId || herbNames.has(name)) return;
+      if (String(leaf.herb_id_status || "").trim()) return;   // honestly unresolved
+      push(`expanded_ingredients[${j}]「${name}」中藥庫查無,也沒有 herb_id_status 說明`);
+    });
+  });
 
   if (!arr(r.tongue_zh).length && !arr(r.pulse_zh).length) flag(r, "缺舌脈 tongue_zh/pulse_zh");
   if (!arr(r.modifications_zh).length) flag(r, "缺加減變化");

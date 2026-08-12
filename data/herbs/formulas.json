@@ -120920,9 +120920,8 @@
           "role_zh": "佐"
         },
         {
-          "herb_id": "",
           "herb_zh": "碧玉散",
-          "name_zh": "Bi Yu San",
+          "name_zh": "碧玉散",
           "herb_en": "Jasper Powder",
           "name_en": "Jasper Powder",
           "pinyin": "Bi Yu San",
@@ -120930,17 +120929,55 @@
           "pharmaceutical_latin": "Jasper Powder",
           "dose_g": "9g",
           "decoction_reference_g": "9g",
-          "in_formula_en": "Clears Heat/toxin and promotes urination; used here to assist removal of Damp-Heat.",
+          "in_formula_en": "Clears Heat/toxin and promotes urination; used here to assist removal of Damp-Heat. (Formula-in-formula: Bi Yu San = Hua Shi : Gan Cao : Qing Dai, 6:1:1 — not a single herb.)",
           "actions_en": "Clears Heat/toxin and promotes urination; used here to assist removal of Damp-Heat.",
-          "in_formula_zh": "清熱解暑，利濕通淋。",
+          "in_formula_zh": "清熱解暑，利濕通淋。（方中方：碧玉散＝滑石:甘草:青黛 6:1:1，非單味藥）",
           "actions_zh": "清熱瀉火。",
           "role_reason_zh": "清熱瀉火。",
           "is_alternate": false,
-          "role_zh": "佐"
+          "role_zh": "佐",
+          "entry_type": "formula_in_formula",
+          "formula_id": "formula.bi_yu_san",
+          "formula_id_status": "reserved_pending_card — 方劑庫尚無碧玉散記錄，id 先保留，待建卡後自動接得上",
+          "dose_range": "9g",
+          "expanded_ratio_zh": "滑石:甘草:青黛 = 6:1:1",
+          "expanded_ingredients": [
+            {
+              "herb_id": "herb.hua_shi",
+              "herb_zh": "滑石",
+              "name_zh": "滑石",
+              "herb_en": "Talcum",
+              "name_en": "Talcum",
+              "pinyin": "Hua Shi",
+              "ratio_part": 6
+            },
+            {
+              "herb_id": "herb.gan_cao",
+              "herb_zh": "甘草",
+              "name_zh": "甘草",
+              "herb_en": "Licorice Root",
+              "name_en": "Licorice Root",
+              "pinyin": "Gan Cao",
+              "ratio_part": 1
+            },
+            {
+              "herb_id": "herb.qing_dai",
+              "herb_zh": "青黛",
+              "name_zh": "青黛",
+              "herb_en": "Indigo Naturalis",
+              "name_en": "Indigo Naturalis",
+              "pinyin": "Qing Dai",
+              "ratio_part": 1
+            }
+          ]
         }
       ],
       "field_sources": {
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": [
+          "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+          "curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」） —— 碧玉散展開比例",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §4 + Ting 裁定 2A（2026-08-12）；欄位規格見 docs/FORMULA_CARD_TEMPLATE.md §3.1"
+        ],
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -120967,6 +121004,10 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "composition_source_note_zh": [
+          "curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §4 + Ting 裁定 2A（2026-08-12）；欄位規格見 docs/FORMULA_CARD_TEMPLATE.md §3.1"
         ]
       },
       "actions_en": [
@@ -121163,7 +121204,9 @@
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/HaoQinQingDanTang.html",
       "contraindications_zh": [
         "因陽虛所致痰濕者禁用"
-      ]
+      ],
+      "composition_source_note_zh": "組成出自 American Dragon 匯入層；使藥位的碧玉散是成方不是單味藥，2026-08-12 依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改寫為 entry_type: formula_in_formula，展開為滑石:甘草:青黛 6:1:1（來源：curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）），三味都接回中藥庫 id，安全與交互作用可以走到葉子藥材。⚠️ 課件把碧玉散標為 Envoy（使），本卡既有值為「佐」，兩者不一致 —— 未擅改，列給 Ting 裁定。",
+      "correction_note": "【2026-08-12 方中方結構 — Ting 裁定 2A】碧玉散那一列原本是 herb_id 空字串 + herb_zh「碧玉散」，被 F12 判為「中藥庫查無的藥」。依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改為 formula-in-formula 型別：保留方名身分（formula_id formula.bi_yu_san），同時內嵌展開的三味葉子藥材。\n沒有刪任何東西：原有的 in_formula_zh/_en、actions_zh/_en、role_reason_zh、劑量、role_zh 全部原封保留，in_formula 兩語只在句尾追加「這是成方不是單味藥」與比例。\n被取代的兩個值已保存於此：name_zh 原值「Bi Yu San」（中文欄位放羅馬拼音，憲法紅線五；拼音仍在本列 pinyin 欄），herb_id 原值為空字串「」（空字串不是連結，改用 formula_id）。\n方劑庫目前沒有 formula.bi_yu_san 這張卡，故 id 標 formula_id_status = reserved_pending_card，不留空、不假裝已解析。\n⚠️ 待 Ting 裁定：curriculum/Formulations Summary Chart 把碧玉散標為 Envoy（使），本卡既有 role_zh 為「佐」。本次不動既有值。"
     },
     {
       "id": "formula.fu_ling_wan",
