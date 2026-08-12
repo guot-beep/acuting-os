@@ -1,5 +1,38 @@
 # 2026-08-12 Fable — 最後一條擱淺的 conditions 支線:`claude/vigilant-visvesvaraya-e20261` 併入 pattern-v2
 
+## 2026-08-12 夜 缺陷清算日:條件 184→4、方劑 10→0,五條擱置分支歸隊
+
+**起點**:早上方劑 10 阻斷、條件 184 阻斷、CI 從未全綠過。
+
+| 線 | 早 | 現在 |
+|---|---|---|
+| 方劑阻斷 | 10 | **0** |
+| 條件阻斷 | 184 | **4**(僅 C5,3 張卡) |
+| C4 紅旗缺陷 | 42 | **0** |
+| C10 樣板句 | 70 | **0** |
+| full_detail | 92 | **143** |
+| 組成羅馬拼音 | 248 | **0** |
+| 甘草樣板句(含四種變體) | 574 | **0** |
+| 公開卡 public_safe | 60 | 40(20 張因安全欄缺失或歸屬未定下架) |
+
+**方法面的收穫**(比數字更值得留):
+
+1. **CI 靜默死亡**:PR 與 main 衝突時 GitHub 連 run 都不建立 —— 沒有紅叉,gate 無聲消失 3 小時。偵測靠 PR 的 `mergeable_state`(dirty=已死),已寫進 DEPLOY_CLOUDFLARE.md 與長期記憶。
+2. **做完沒人撿**:`scripts/scan-unmerged-branches.js` 上線,首跑找到 11 條分支有未併入的工作,其中「C4 紅旗缺陷歸零」已擱置 11 小時。commit 不等於送達。
+3. **歸屬錯誤壓過語言錯誤**:把誤植內容翻譯通順,會讓它從「看起來沒做完」變成「看起來已審核」。選擇性整合先例 bb2b343(取 du_qi_wan、拒 ge_gen_tang/xie_xin_tang)。
+4. **逐欄位合併會製造兩邊都沒有的缺陷**:`_zh` 取 A 側、`_en` 取 B 側,憑空生出 17 個半套雙語對。雙語欄位必須成對解析 —— 後續整合已內建此守衛,實測攔下 1 次(chronic_gastritis)。
+5. **測試自己的測試**:P4 方向詞判斷式若把 `only` 收進方向詞,反而會放過它本來要抓的那張卡(chai_hu_jia_long_gu_mu_li_tang 的「lists only the 11 dispensable ingredients」)。
+
+**新上線的機器化守門**:
+
+- `validate-formula-composition-signatures.js` —— 組成簽章重複偵測,首跑抓到 7 對(含 yu_nv_jian/yu_nu_jian 同方兩 id、gui_zhi_fu_ling_wan 掛 fu_ling_wan 組成)
+- `validate-formula-safety-predicates.js` —— P1 慎用藥必須有禁忌、P2 公開卡必須有安全字串、P3 公開卡不得有破碎功效欄、P4 禁忌條目必須含方向詞、P6 君臣佐使用字;全 NOTE 級並逐條寫明畢業條件
+- `scan-unmerged-branches.js` —— 擱置工作掃描
+- C13 歸檔形狀閘(接受兩種既有 key shape,不強迫改寫既有出處)
+
+**仍待 Ting 裁定**:桂枝茯苓丸組成還原方式、十八反欄位、方劑安全欄結構問題(163/224 張卡 contraindications_en 與 cautions_en 逐位元組相同,方向詞由譯者當下決定 —— 中英打架是結構必然,修翻譯止不住)、cond.migraine 是否採用 sibling 判斷(採用則 C5 由 4 降 3)。
+
+
 - **做了什麼**:sibling(5 commits、merge-base `ca2c45b`、擱淺 ~12 小時)的 CloudTCM 部落格殘留
   清理併入 `codex/cloudtcm-cleanup-integration`(自 `codex/pattern-v2` `e0b223e` 開)。
   沿用上一批的 **record/field 級三方合併**(base/ours/theirs 三份 JSON,腳本可重跑),
