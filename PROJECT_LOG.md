@@ -241,6 +241,25 @@
 - **Handoff**: `docs/CLINICAL_OUTCOMES_HANDOFF.md` (new, single up-to-date status doc — architecture, runtime state, outcome metrics state, legacy reconciliation, Outcome Tracking v1 semantics, known debts, frozen decisions, commit lineage, recommended next task). `docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md` corrected to point to it rather than restating stale "nothing wired yet" status.
 - **Files changed this round**: `app.js`, `styles.css` (Outcome Tracking table CSS only), `docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md`, `docs/CLINICAL_OUTCOMES_HANDOFF.md` (new), `PROJECT_LOG.md`. No pharmacology, `js/knowledge.js`, `js/router.js`, or `curriculum/` files touched — confirmed via `git status --short` before every stage.
 - **Not done, by instruction**: no new outcome metric beyond the 8 named across the two batches, no boolean/categorical/text renderer, no chart/sparkline/statistical trend, no auto clinical interpretation, no SQLite migration, no Patient/Episode/Condition/Pharmacology/Pattern work, no form redesign. This was the final substantive round for this session — no further task started after the final commit.
+# 2026-08-12 Claude — 方劑組成樣板句清除:錯置的甘草功效「健脾和中，調和諸藥。」
+
+- **做了什麼**:`scripts/fix-formula-boilerplate-gancao.js` 清除被匯入樣板蓋到**非甘草**藥味上的
+  「健脾和中，調和諸藥。」(該句是甘草的本方功效;青蒿、細辛、芒硝等 184 味被它蓋掉,
+  卡片 方劑分析·本方功效 欄整排講健脾和中)。§0 先搬再改:每一筆的原值逐字保存於該方
+  `correction_note` 後才清空欄位;未依無具名來源新增逐味中文功效,卡片回退顯示既有 `in_formula_en`。
+- **數字**:方劑 `104`、藥味列 `184`、清除欄位 `512`(in_formula_zh 161 + actions_zh 184 + role_reason_zh 167)、
+  `correction_note` 新增/追加 `104`。結構化 diff 比對 HEAD:除上述兩類外零變更;
+  甘草/炙甘草列帶此句 `0`(全部 184 列均為錯置)。重現:
+  `node -e "const r=require('./data/herbs/formulas.json').records;let n=0;for(const x of r)for(const c of(x.composition||[]))if(['in_formula_zh','actions_zh','role_reason_zh'].some(f=>c[f]==='健脾和中，調和諸藥。'))n++;console.log(n)"` → `0`。
+- **驗證**:build-data 224 方;validate-formula-standard blocking `88 → 88`(既存 F5/F6/F12,本批未增未減);
+  content-junk PASS;ratchet PASS。Runtime 開卡核讀:蒿芩清膽湯 青蒿(君)與天麻鉤藤飲 5 味均回退英文,
+  頁面全文不含該句。
+- **已知未解/STOP — 變體樣板句家族(需 Ting 派工,含逐味臨床判斷,本批未動)**:
+  「和中健脾，調和諸藥。」`×194`(非甘草列,同病異寫,含 194 欄位);「補氣，調和諸藥。」`×48`;
+  「補益氣血，調和諸藥。」`×33`;「調和諸藥。」`×9`(紫蘇葉/麥芽/石菖蒲);另有 6 種混合句(部分正確部分錯置,
+  如 陳皮「燥濕健脾，調和諸藥。」、藿香「調和諸藥，降逆止嘔。」)與大棗/炙甘草/甘草的合理句(×171/×153,
+  同句多方共用仍屬紅線 6,但內容不誤)。另眼讀抓到損毀片段:蒿芩清膽湯 枳殼「緩解。」、
+  天麻鉤藤飲 桑寄生「補益，健旺。」,列 worklist。
 
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
