@@ -55,3 +55,30 @@ interferon 訊號(小柴胡湯+干擾素間質性肺炎是有名的藥害事件)
 `data/research_staging/*.json`),每條含 zh+en 與來源書目/URL。
 A 段最急(單卡),B 段可分批,C 段兩張卡。
 `NO PHI`、`NOT CANONICAL`。
+
+---
+
+## 追加(2026-08-12,方劑眼讀批 2 實據)
+
+**E. 毒性藥劑量疑似錯誤(最急,已把相關卡下架但資料仍錯)**
+
+| 卡 | 欄位值 | 疑點 |
+|---|---|---|
+| `formula.zhi_bao_dan` 雄黃 | `dose_g: "30g"`(單一值非範圍) | 藥典約 0.05–0.1 g,疑似 300 倍 |
+| `formula.su_he_xiang_wan` 硃砂 | `".5-60g"` | 疑似 120 倍 |
+| `formula.wu_mei_wan` 細辛 | `"1-28g"` | 「細辛不過錢」約 3g,疑似 9 倍 |
+
+需求:這三味在方中的**正確劑量範圍 + 來源**(台灣中藥典/藥典/教材),
+以及是否有「本方特例」的說法。我方不會憑推測改劑量。
+
+**F. 覆蓋矩陣的零命中項(B 段的具體優先序)**
+- 附子類 11 張卡:**0 張**載明先煎/久煎
+- 麻黃 6 張:**0 張**載明心血管/高血壓禁忌、**0 張**載 ephedrine 交互
+- 細辛 4 張:**0 張**提及馬兜鈴酸議題
+- 半夏與烏頭類同方者(本批半數):**十八反無任何欄位可載** ← 這是 schema 問題,
+  請一併給意見:十八反/十九畏該用既有 contraindications 表達,還是需要獨立欄位?
+
+**G. interferon 訊號第三張卡**
+`formula.da_qing_long_tang.herb_drug_interactions_en[0]` 同樣把 interferon 寫成
+**效益**(「reduced the adverse effects of interferon」)。加上小柴胡湯與麻黃湯,
+共三張。請一併給正確方向與來源。
