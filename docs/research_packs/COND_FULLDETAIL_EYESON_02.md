@@ -1,10 +1,50 @@
 # COND_FULLDETAIL_EYESON_02 — 全細節病症卡人眼審查（第 31–61 筆）
 
-狀態：**findings ledger only. 本次沒有動 `data/**` 一個字元。**
+狀態：**findings ledger + 修正紀錄。** 原始審查（本檔案 §0–§3 主文）沒有動
+`data/**` 一個字元；下方修正狀態總覽是後續修正批次補記的。
 Branch：`codex/cond-eyeson-2`（自 `origin/codex/pattern-v2` tip `c1587d1`）
 日期：2026-08-12
 接續：`COND_FULLDETAIL_EYESON_01.md`（第 1–30 筆）。發現編號自 **F-19** 起、
 機械批次編號自 **B7** 起，延續第 1 部分。
+
+## 修正狀態總覽（2026-08-12，branch `codex/cond-eyeson-fixes-2`）
+
+| 批次/Finding | 狀態 | commit |
+|---|---|---|
+| B7 (3): `field_sources.acupuncture_scope_*` 改抄該欄自己的 `source`（endometriosis/fibromyalgia/ibs） | **FIXED** | `7acd0a2` |
+| B8 (3, ledger-listed): `&hellip;` → `…`（fibromyalgia/frozen_shoulder/migraine） | **FIXED** | `7acd0a2` |
+| B9 (1): `cond.insomnia` 「心山失養」→「心神失養」 | **FIXED** | `7acd0a2` |
+| B10 (1): `cond.gout` `precautions` 補「避免」對齊 `_en` | **FIXED** | `7acd0a2` |
+| B11 (1): `cond.gerd` 書名「吵雜」→「嘈雜」 | **FIXED** | `7acd0a2` |
+| B12 (1): `cond.migraine` `western_pathology_zh` 兩處錯字止血 | **FIXED**（止血限定；F-24 整段仍 OPEN，需 Ting） | `7acd0a2` |
+| B13 (1): `cond.hypertension` 「臨床綜合征」→「臨床綜合徵」 | **FIXED** | `7acd0a2` |
+| B14 (1): `cond.frozen_shoulder` `import_artifacts[1].text` 移除 `\b` 控制字元 | **FIXED** | `7acd0a2` |
+| F-19 `cond.hyperemesis_gravidarum`（SAFETY） | **RELOCATED**（止血；PC6 處方重建仍 OPEN，需 Ting） | `29d3f8d` |
+| F-20 `cond.fibromyalgia`（SAFETY） | **RELOCATED**（`etiology_zh`/`etiology_en` 搬走留空；`western_pathology_zh` 的 `超氧化物雙效酶`／`公主病` 仍 OPEN，需 Ting；`tcm_patterns`/`acupoint_protocols`/`herb_formulas` 為卡片專屬 inline blob，非本批共用樣板，未動） | `29d3f8d` |
+| F-21 `cond.ivf_support` / `cond.luteal_phase_defect`（SAFETY） | **RELOCATED**（止血；處方重建仍 OPEN，需 Ting） | `29d3f8d` |
+| F-22 `cond.gout` 中英安全欄位方向相反 | **FIXED**（= B10） | `7acd0a2` |
+| F-23 `cond.heart_failure` 峻毒方/誤植欄位 | OPEN（`data/herbs/**` 所有權 + 不可逆損失疑慮，需 Ting 先確認） | — |
+| F-24 `cond.migraine` `western_pathology_zh` 未清洗 + 無 `_en` | OPEN（B12 僅止血兩處錯字；整段 725 字仍需 `import_artifacts` 流程，需 Ting） | — |
+| F-25 樣板治療區塊（本批 13 筆，全庫 74 筆） | OPEN（`cond.hyperemesis_gravidarum`／`cond.ivf_support`／`cond.luteal_phase_defect` 因孕期／生育安全已優先處理，見 F-19/F-21；其餘 10 筆＋全庫 66 筆仍 OPEN，是產品層取捨，需 Ting） | — |
+| F-26 抓取傾倒（不存在方名/峻毒方，本批 7 筆） | OPEN（`data/herbs/**` 所有權，本線只能回報） | — |
+| F-27 `cond.hypertension` 雙門檻不一致 | OPEN（B13 僅修正簡體字形；雙門檻矛盾本身未動，需 Ting） | — |
+| F-28 `cond.insomnia` 「心山失養」 | **FIXED**（= B9） | `7acd0a2` |
+| F-29A `cond.gerd` 書名錯字 | **FIXED**（= B11） | `7acd0a2` |
+| F-29B `cond.frozen_shoulder` 古籍引文書名混淆 | OPEN | — |
+| F-29C `&hellip;` 殘留 | **FIXED**（= B8） | `7acd0a2` |
+| F-30 `field_sources.acupuncture_scope_*` 誤植（本批 3 筆） | **FIXED**（= B7） | `7acd0a2` |
+| F-31 `import_artifacts[].reason` 樣板句 | OPEN（規格需先定，需 Ting） | — |
+| F-32 內部編輯備註寫進讀者欄位（2 筆） | OPEN | — |
+| F-33 `aliases` 長度不等（2 筆） | OPEN（用詞需 Ting 決定） | — |
+| F-34 `risk_factors` 混入非因子條目（2 筆） | OPEN | — |
+| F-35 `cond.hemochromatosis` `can_treat` 誤填警語 | OPEN | — |
+| F-36 `acupoint_protocols` 兩種 shape（本批 7 筆） | OPEN | — |
+
+**未做（本輪修正範圍聲明）**：只處理派工單指名的 B7–B14（12 筆機械修正）與
+F-19／F-20／F-21 三個 SAFETY 止血（4 筆記錄）。沒有讀第 62–92 筆。沒有處理
+F-23（heart_failure 疑似不可逆損失，需先問 Ting）、F-24 整段部落格文搬遷、
+F-25 全庫 74 筆樣板治療區塊（產品取捨，需 Ting）、F-26 抓取傾倒 7 筆、F-31
+的 `reason` 規格、F-33 的別名用詞、F-35/F-36 的欄位規範問題。
 
 ---
 
