@@ -285,6 +285,24 @@ jobs:
       - name: P1 previsit payload transport standard
         run: node scripts/validate-previsit-payload.js --self-test
 
+      # 欄位型別一致性普查(2026-08-12)。動機是同一天連踩三次同一種缺陷:
+      # cautionsEn 在部分穴位是字串、部分是陣列,needlingArticle() 先看
+      # `.length`(字串也為真)再 `.join()` -> TypeError -> 英文禁忌在 206 個穴位
+      # 「安靜地」消失(c078f4e 修);previsit payload 的 metrics 可能是物件而非
+      # 陣列,app 端降級成 [] 就放行、CLI 端卻擋(aaf8b81 修);import_artifacts
+      # 同一天被兩條線各自發明成兩種鍵組。三次都是「碰巧」被發現的,沒有任何
+      # 檢查在看這一類。這一步就是那個檢查。
+      # NOTE tier,理由同上面兩個 formula 步驟:實測 SHAPE 28(A 10)、
+      # CROSS 81(A 24)、ITEM 13、NULLMIX 46 —— 122 筆發現全部是 data/** 的
+      # 修改,分屬穴位/方藥/病症/藥理四條線,而且都還沒派工。今天把它接成
+      # blocking 只會讓 build 為了沒人被要求修的 backlog 變紅,一週內就會被
+      # 關掉。這一步永遠 exit 0,只讓四個數字每次 CI 都被印出來,不准偷偷變大。
+      # 畢業條件逐層獨立,寫在腳本開頭:數字歸零後在這裡加 `--blocking=A`、
+      # 再加 `--blocking=A,CROSS` … 基準清單:
+      # docs/research_packs/FIELD_SHAPE_CONSISTENCY_BASELINE.md
+      - name: field shape consistency census (NOTE tier, see script header)
+        run: node scripts/validate-field-shape-consistency.js
+
       - name: whitespace / conflict markers
         run: git diff --check
 
