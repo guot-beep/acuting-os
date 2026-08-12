@@ -1,3 +1,13 @@
+# 2026-08-12 Codex — P1 transport adversarial retest `NO-GO`
+
+- product endpoint=`0f59773`；工作期間 current HEAD 前進至 `513971b`，四個 P1 code/workflow blobs 已確認與 endpoint 相同。reviewer 唯讀產品碼，真 store `0/0`，暫存 harness 已清除。
+- 六軸：transport/PHI=`PASS`；envelope/identity=`FAIL`；patient/freshness/replay=`PASS`；metrics=`FAIL`；text boundary=`FAIL`；save/CI parity=`FAIL`。
+- 獨立 harness=`20/28 contract assertions PASS · 8 FAIL`；official CLI self-test 雖為 `3 good + 14 bad ALL PASS`，未抓到 app/CLI drift。
+- 阻斷：3 HIGH（非陣列 metrics 被 app 靜默接受、極大數精度改寫／transport-save drift、失敗 save 先刪 patientPerspective stash）+ 4 MED（P1 六項 whitelist 漂移、非 ISO timestamp 放行、CR/producer cap 漏洞、CI 未測真 app path）。
+- 已綠：wrong-patient zero-prefill、fresh/stale/future 順序、同 payloadId replay confirm、NUL/bidi strip、5000/5001 邊界、無 network/store write、syntax `2/2`。
+- 裁決：P1 `PAUSE` 維持；product owner 修後重跑本 28 assertions + official self-test，Codex focused retest 全綠才可 `GO`。
+- 證據缺口／docs drift：handoff 引用的 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md` 未存在 current tracked tree／Git history；`c302027` 後加的 contract §8 只有「audit 已綠」結論、沒有六軸，且已被本輪 falsify。六軸名稱依 contract §1–§7 與派工重建。
+
 # 2026-08-12 Fable — P1 transport 審查:SOL 兩 HIGH + 兩 MED 全實跑重現並修復
 
 - **背景**:SOL 交付 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md`(reviewer=Codex)。H1/H2 落在 Claude 所有權檔案,我先獨立重現(SOL 要求 falsify)再修 —— 四項全部真的可利用。

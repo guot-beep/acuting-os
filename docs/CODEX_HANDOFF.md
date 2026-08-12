@@ -1,3 +1,19 @@
+## [2026-08-12] Codex P1 adversarial retest — `NO-GO`；P1 `PAUSE` 維持（product endpoint `0f59773`；current HEAD `513971b`）
+
+- **Scope／來源**：pull 後開始獨立覆測 product endpoint `0f5977364693a548c185bd689be2b71affdc316f`；工作期間 branch 前進至 `513971b`，已逐 blob 確認 `app.js`／`previsit.html`／CLI validator／workflow 與 `0f59773` 完全相同。引用的 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md` 仍不在 current tracked tree／Git history；期間 `c302027` 只替 contract 新增「§8 audit 已綠」結論，沒有六軸定義也沒有產品修復，本輪 actual-function retest 已 falsify 該 technical-green 敘述。六軸名稱依 current contract §1–§7 + 派工重建；reviewer 未改產品碼／schema／AVS，真 store讀／寫=`0/0`，暫存 harness 已清除。
+- **六軸**：① transport／PHI boundary=`PASS`；② envelope／identity shape=`FAIL`；③ patient binding／freshness／replay=`PASS`；④ metric integrity=`FAIL`；⑤ free-text／producer boundary=`FAIL`；⑥ save-time／validator／CI parity=`FAIL`。總裁決=`NO-GO`，P1 真實病人使用 `PAUSE` 不解除。
+- **HIGH-1 — malformed metrics 在 app 靜默降成空陣列**：`validatePrevisitPayload()` 以 `Array.isArray(data.metrics) ? data.metrics : []` 後直接接受，`metrics:{metricId:...,valueNumber:4}` 得 `ACCEPT` 且預填零項；CLI 同 payload 正確 reject（`scripts/validate-previsit-payload.js:121-124`）。違反「非法整筆拒收」，並證明 blocking self-test 沒測真 app validator。
+- **HIGH-2 — 極大 number 可精度改寫／transport-save drift**：P1 固定六項內的 `metric.sleep_hours` raw JSON integer `9007199254740993` 經 parse 變 `9007199254740992` 仍被 validator 放行（獨立檔案 probe 的 CLI 亦回 `PASS`）；病人 payload 的數值已在驗證前被靜默改寫。`metric.sleep_hours=1e308` transport 亦放行，但 prefill 轉成 `"1e+308"` 後被 `computeNumericOutcomeMetrics()` regex 拒絕，兩層不是同一契約。`1e3` 在 bounded metric 正確拒；`-0` 被接受並在 save canonicalize 成 `0`，未單獨列缺陷。
+- **HIGH-3 — patientPerspective 在失敗 save 後遺失**：`saveSoapFromForm()` 於 `app.js:8585-8586` read-then-delete invisible stash，之後才跑 duplicate visit (`8593-8598`)、metric revalidation (`8611-8614`) 與 persistence (`8729`)。任一 return/failure 都讓 dialog 仍開著但 stash 已消失；重試 save 會落入舊值／空值，靜默丟病人原話。
+- **MED-1 — P1 metric whitelist 漂移**：patient page 固定六項（`previsit.html:347-354`），app／CLI 卻把完整 `NUMERIC_OUTCOME_METRIC_CONFIG` 當 whitelist；對抗 payload 的 `metric.effect_duration_days` 被接受並可預填，違反 contract v0 固定 subset。
+- **MED-2 — timestamp shape 過寬**：兩 validator 只用 `Date.parse`；非 ISO shorthand `filledAt:"0"` shape 層通過。雖 stale path 仍會 confirm，仍違反 §7「ISO 時間／shape 壞則整筆拒收」。
+- **MED-3 — text boundary 未真正端到端**：sanitizer 宣稱 C0 僅保留 tab/LF，但 regex 漏 `CR (U+000D)`，`"A\rB"` 原樣通過；patient page 四個 textarea 無 `maxlength`，submit 也不做 5000／2000 cap，能產生一份 importer 必拒的 payload。NUL／bidi override 正確剝除；5000 accept／5001 reject 正確。
+- **MED-4 — CI／文件 parity gate 不足**：official `node scripts/validate-previsit-payload.js --self-test`=`3 good + 14 bad ALL PASS` 且 workflow 已 blocking，但只跑 CLI implementation；本輪 actual-function harness=`20/28 contract assertions PASS · 8 FAIL`，其中 app/CLI `metrics` shape drift 在全綠 self-test 下存活。`c302027` 的 contract §8 technical-green／「兩把同尺」結論亦因此不成立，修後須同步修訂。
+- **已綠對抗面**：缺／空 payloadId、string formVersion 皆拒；wrong-patient=`0 prefill` 且先於 confirm；trim-equivalent duplicate ID 會進 replay confirm，decline 不覆寫；fresh payload 無 prompt；73h stale／11min future 都 prompt 且 decline=`0 prefill`；patient page 無 network/storage write；syntax `app.js`／CLI=`2/2`。
+- **解除條件**：由 product owner 修上述 3 HIGH + 4 MED；至少新增 actual app validator／paste／save-order blocking tests，並重跑本 28 assertions + official self-test。Codex focused retest 全綠後才可把 P1 改判 `GO`；這仍不等於 landing／deployment 授權。
+
+---
+
 ## [2026-08-12] Codex retest#2 — scanner 深層 entity `RESOLVED`；AVS 六軸 `6/6 PASS · GO`
 
 - **Exact blob**：`git pull --ff-only`=`Already up to date`；覆測 checkout=`codex/pattern-v2@4beab0e`，`3e0ebc1` 為祖先。current `js/avs.js`／`scripts/test-avs-checkout.js`／`scripts/validate-avs-library.js` blob 與 `3e0ebc1` 完全相同；修復 commit 後三者無 drift。
