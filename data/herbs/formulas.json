@@ -6211,30 +6211,18 @@
       "pattern_focus_en": [],
       "category_zh": "解表劑",
       "contraindications_en": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
-        "Contraindicated for those with measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
-        "Use caution for those with warm pathogen Heat diseases.",
-        "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
+        "This formula contains Ma Huang (Ephedra). The contraindications originally listed here were verified to be misattributed from Sheng Ma Ge Gen Tang (formula.sheng_ma_ge_gen_tang) and have been removed. Contraindications specific to this formula are pending a verified source."
       ],
       "cautions_en": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
-        "Contraindicated for those with measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
-        "Use caution for those with warm pathogen Heat diseases.",
-        "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
+        "This formula contains Ma Huang (Ephedra). The cautions originally listed here were verified to be misattributed from Sheng Ma Ge Gen Tang (formula.sheng_ma_ge_gen_tang) and have been removed. Cautions specific to this formula are pending a verified source."
       ],
       "cautions_zh": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
-        "禁用於 measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
-        "Use caution for those with warm pathogen Heat diseases.",
-        "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
+        "本方含麻黃。原載注意事項欄位經查證屬升麻葛根湯（formula.sheng_ma_ge_gen_tang）之誤植，已移除；本方注意事項待補充來源。"
       ],
       "contraindications_zh": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
-        "禁用於 measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
-        "Use caution for those with warm pathogen Heat diseases.",
-        "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
+        "本方含麻黃。原載禁忌欄位經查證屬升麻葛根湯（formula.sheng_ma_ge_gen_tang）之誤植，已移除；本方禁忌待補充來源。"
       ],
-      "correction_note": "【2026-08-11 接錯方修正】本筆原本帶的是「升麻葛根湯」的內容 —— American Dragon 201 方索引沒有 GE GEN TANG 條目，只有 SHENG MA GE GEN TANG，匯入時以方名子字串比對接錯。原內容全文保存如下，正本仍完整存放於 formula.sheng_ma_ge_gen_tang：\n・原組成：君／升麻／herb.sheng_ma／Sheng Ma／Shēng Má／Cimicifuga Rhizome／Rz. Cimicifugae／2-6g／發表透疹，清熱解毒，升舉陽氣。／Releases exterior Wind-Heat, clears toxicity and vents rashes.；君／葛根／herb.ge_gen／Ge Gen／Gé Gēn／Pueraria Root／Rx. Puerariae／3-12g／清熱瀉火。／Releases muscle layer, clears Heat and vents rashes.；佐／甘草／herb.gan_cao／Gan Cao／Gān Cǎo／Licorice Root／Rx. Glycyrrhizae／1.5-6g／清熱解毒，祛痰止咳，緩急止痛，調和諸藥。／Clears Heat/toxicity and harmonizes.；佐／赤芍／herb.chi_shao／Chi Shao／Chi Shao／Red Peony Root／Rx. Paeoniae Rubra／3-9g／清熱涼血，散瘀止痛。／Cools and invigorates Blood, relieves Heat-related pain.；佐／(生薑)／herb.sheng_jiang／Sheng Jiang／Shēng Jiāng／(Fresh Ginger)／Rz. Zingiberis Recens／2-6g／解表散寒，溫中止嘔，化痰止咳。／AD lists optional addition; releases Exterior and harmonizes Middle.\n・原功效中文：祛散風-熱、補益理氣、補益理氣\n・原功效英文：Expels Exterior Wind-Heat / Releases muscle layer / Vents rashes\n・原主治中文：麻疹初起透發不暢證、外感熱邪鬱於肺胃證、溫病初起熱邪在衛表證\n・原主治英文：Measles / Externally contracted Heat collecting in the Lung and Stomach / Early-stage Warm febrile diseases\n・原 pattern_focus_en / ad_syndromes_en：Measles / Externally contracted Heat collecting in the Lung and Stomach / Early-stage Warm febrile diseases\n組成改依《臺灣中藥典》第四版 p.635（THP 433）官方組成與官方劑量填入，出典《傷寒論》。⚠️ 君臣佐使未填：全 repo 查無葛根湯的君臣佐使來源（課件把葛根湯列在 3rd group，只教 Name/Ingredients/Actions，無 hierarchy），不自行指派，待 Ting 指認。⚠️ 功效與主治暫時留空：原內容既然是別的方的，就不能留在這裡；葛根湯自己的功效／主治在 repo 內查無來源，依憲法「查不到就留空」。",
+      "correction_note": "【2026-08-11 接錯方修正】本筆原本帶的是「升麻葛根湯」的內容 —— American Dragon 201 方索引沒有 GE GEN TANG 條目，只有 SHENG MA GE GEN TANG，匯入時以方名子字串比對接錯。原內容全文保存如下，正本仍完整存放於 formula.sheng_ma_ge_gen_tang：\n・原組成：君／升麻／herb.sheng_ma／Sheng Ma／Shēng Má／Cimicifuga Rhizome／Rz. Cimicifugae／2-6g／發表透疹，清熱解毒，升舉陽氣。／Releases exterior Wind-Heat, clears toxicity and vents rashes.；君／葛根／herb.ge_gen／Ge Gen／Gé Gēn／Pueraria Root／Rx. Puerariae／3-12g／清熱瀉火。／Releases muscle layer, clears Heat and vents rashes.；佐／甘草／herb.gan_cao／Gan Cao／Gān Cǎo／Licorice Root／Rx. Glycyrrhizae／1.5-6g／清熱解毒，祛痰止咳，緩急止痛，調和諸藥。／Clears Heat/toxicity and harmonizes.；佐／赤芍／herb.chi_shao／Chi Shao／Chi Shao／Red Peony Root／Rx. Paeoniae Rubra／3-9g／清熱涼血，散瘀止痛。／Cools and invigorates Blood, relieves Heat-related pain.；佐／(生薑)／herb.sheng_jiang／Sheng Jiang／Shēng Jiāng／(Fresh Ginger)／Rz. Zingiberis Recens／2-6g／解表散寒，溫中止嘔，化痰止咳。／AD lists optional addition; releases Exterior and harmonizes Middle.\n・原功效中文：祛散風-熱、補益理氣、補益理氣\n・原功效英文：Expels Exterior Wind-Heat / Releases muscle layer / Vents rashes\n・原主治中文：麻疹初起透發不暢證、外感熱邪鬱於肺胃證、溫病初起熱邪在衛表證\n・原主治英文：Measles / Externally contracted Heat collecting in the Lung and Stomach / Early-stage Warm febrile diseases\n・原 pattern_focus_en / ad_syndromes_en：Measles / Externally contracted Heat collecting in the Lung and Stomach / Early-stage Warm febrile diseases\n組成改依《臺灣中藥典》第四版 p.635（THP 433）官方組成與官方劑量填入，出典《傷寒論》。⚠️ 君臣佐使未填：全 repo 查無葛根湯的君臣佐使來源（課件把葛根湯列在 3rd group，只教 Name/Ingredients/Actions，無 hierarchy），不自行指派，待 Ting 指認。⚠️ 功效與主治暫時留空：原內容既然是別的方的，就不能留在這裡；葛根湯自己的功效／主治在 repo 內查無來源，依憲法「查不到就留空」。\n【2026-08-11 安全欄位修正】contraindications_zh/en 與 cautions_zh/en 同樣帶著升麻葛根湯的麻疹禁忌內容（原文：「This formula may cause exterior Deficiency in rashes that surface evenly.」「Contraindicated for those with measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).」「Use caution for those with warm pathogen Heat diseases.」「Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough.」），且 _zh 欄位混入未翻譯英文。經比對 formula.sheng_ma_ge_gen_tang 的 contraindications_en/cautions_en，四句英文全數逐字保留在該筆記錄中，內容未流失。葛根湯本方含麻黃，另查全 repo curriculum（American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md、Herbal Formulations Comprehensive.docx.md、臺灣中藥典第四版英文版.md THP433、Formulations Summary Chart.docx.md、00_Formula_Cards_Master_Index.md、NCBAHM_CH_Exam_Content_Outline）皆無獨立的「葛根湯」（非升麻葛根湯）禁忌/注意事項來源，故四欄改為誠實留白的結構性說明，待補充查證來源。",
       "source_classic": "《傷寒論》"
     },
     {
