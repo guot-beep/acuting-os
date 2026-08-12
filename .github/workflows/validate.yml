@@ -171,6 +171,9 @@ jobs:
       - name: acupoint source conflicts (APB-2 / APB-4)
         run: node scripts/validate-acupoint-source-conflicts.js
 
+      - name: formula herb-drug interactions are reviewed
+        run: node scripts/validate-formula-hdi-review.js
+
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js
 

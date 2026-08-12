@@ -28,8 +28,44 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 把欄位接上畫面是「新增 17 段沒人覆核過的臨床敘述」。方向不同,風險也不同。
 我已經把其中 4 段無來源的效益敘述移進 quarantine(見下),剩下 13 段品質未知。
 
-**兩個選項**:(a) 你先看那 13 段,通過的才接上畫面;
-(b) 先只接 `public_safe: true` 的那 1 張。我等你一句話。
+**逐條審完了(2026-08-12)**:實際是 **17 張卡、26 段敘述**(我先前寫 13 是張數)。
+結果寫在 `data/quality/formula_hdi_review.json`,每段一條紀錄。
+
+| 判定 | 段數 |
+|---|---|
+| `RISK_DIRECTION_KEEP` 講危害而非效益,該留、該補來源 | **1** |
+| `HOLD_REVERSES_INTENDED_DRUG_EFFECT` 宣稱抵銷醫師想要的藥效 | 1 |
+| `HOLD_MASKS_WARNING_SIGN` 處理的是該讓處方醫師知道的警訊 | 4 |
+| `HOLD_PRECLINICAL_AS_CLINICAL` 動物/體外資料寫成臨床結論 | 3 |
+| `HOLD_UNSOURCED_BENEFIT` 無來源的效益宣稱 | 17 |
+| **render_eligible = true** | **0** |
+
+**26 段裡只有 1 段講的是危害**(小柴胡湯的間質性肺炎),其餘 25 段都在講本方
+如何減輕西藥的不良反應。幾條最該注意的:
+
+- `you_gui_wan`「逆轉皮質類固醇引起的免疫抑制」—— 對器官移植或自體免疫病人,
+  那個免疫抑制**就是治療目的**。這是全批框架最危險的一句。
+- `zhi_bai_di_huang_wan`「治療 streptomycin 引起的毒性」—— 鏈黴素毒性是耳毒性
+  與腎毒性,不可逆、需要血中濃度監測。而**這是 26 段裡唯一 `public_safe:true` 的卡**。
+- `da_chai_hu_tang` / `zuo_jin_wan` 講 aspirin 引起的胃出血 —— 胃出血是停藥指徵,
+  不是加方指徵;前者還自比 sucralfate 與 cimetidine。
+- `xiao_cheng_qi_tang` 講鴉片類止痛藥引起的便秘合併噁心 —— 那個組合可能是腸阻塞,
+  而小承氣湯是攻下劑。
+- **同一句 GnRH agonist 更年期症狀「不影響血清雌二醇」出現在四張不同的方劑卡上**
+  (加味逍遙散、桃核承氣湯、當歸芍藥散、芍藥甘草湯),措辭略改。一段被抓取的
+  文字散到四張卡,不是四份獨立證據。
+
+**這個欄位仍然沒有接上畫面,而且現在接不上去**:
+`scripts/validate-formula-hdi-review.js` 是 **blocking**,規則三條 ——
+每段都要有審查紀錄、紀錄用 `text_sha1` 釘住當時審的字句、只有 `render_eligible:true`
+能進畫面。目前 26 段全部 `false`,所以「0 條未審核內容進入 UI」是機器擋著的,
+不是靠沒人去接。改字會讓該段變回未審(反向測試過:改一句 + 新增一句 → exit 1)。
+
+**要你決定的**:
+(a) 小柴胡湯那 1 段補上 §C1b 的文獻並改寫後,把 `render_eligible` 開成 true —— 這樣
+畫面上會出現一段**警告**,而不是 25 段效益宣稱;
+(b) 其餘 25 段是否比照干擾素那 4 段移進 quarantine。我沒有自己做,
+因為那是一次移走 25 段內容,量級與那 4 段不同。
 
 ### A0 · 210/361 個穴位的中英文寫著不同的進針深度,而英文那邊比較深(最重的一條)
 **問題**:`needling`(中文)與 `acumethod_en` 的深度數字在 **210/361 個穴位上不一致**;
