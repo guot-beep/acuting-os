@@ -9164,6 +9164,14 @@ function findImportHistoryViolations(existingCases, incomingCases) {
       }
     }
   }
+  // Codex retest(shadow bypass)整類收口:incoming 本身必須通過全部 AVS
+  // 歷史不變量(id 唯一、合法版本序、合法狀態…)才准進 merge —— 上面的
+  // extends 比對是「對現存歷史」的保護,這裡是「匯入資料自身健全」的保護,
+  // 兩層各擋一半,重複 id 的 shadow copy 在兩層都會死。
+  if (window.AcuTingAVS) {
+    const inv = AcuTingAVS.checkAvsInvariants(incomingCases);
+    for (const f of inv.failures || []) violations.push(`import AVS invariant: ${f}`);
+  }
   return violations;
 }
 

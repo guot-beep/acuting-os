@@ -381,8 +381,19 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
   }
 
   function avsHistoryExtends(beforeNote, afterNote) {
+    const afterSnaps = (afterNote && afterNote.avsSnapshots) || [];
+    // Codex retest 新發現(merge shadow bypass)修復:同 id 重複時,舊版
+    // Map 索引只看「最後一筆」,攻擊者放 [改寫版, 原版] 就能讓比對器對著
+    // 原版放行,而 find()/latestFinalized 等消費者讀到的是第一筆改寫版 ——
+    // 比對器與消費者看的不是同一筆。合法資料永遠不會有重複 id(引擎所有
+    // 寫路徑都保證),所以 after 出現任何重複 id 一律直接拒絕。
+    const seen = new Set();
+    for (const s of afterSnaps) {
+      if (seen.has(s.id)) return { ok: false, reason: `duplicate AVS snapshot id ${s.id} in incoming visit (shadow-copy attack or corruption) — refused` };
+      seen.add(s.id);
+    }
     const history = ((beforeNote && beforeNote.avsSnapshots) || []).filter((s) => s.status === "finalized" || s.status === "superseded");
-    const afterById = new Map(((afterNote && afterNote.avsSnapshots) || []).map((s) => [s.id, s]));
+    const afterById = new Map(afterSnaps.map((s) => [s.id, s]));
     for (const b of history) {
       const a = afterById.get(b.id);
       if (!a) return { ok: false, reason: `${b.status} AVS snapshot ${b.id} missing (history truncated)` };

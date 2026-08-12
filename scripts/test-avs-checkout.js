@@ -262,6 +262,18 @@ console.log("Codex regression — HIGH-1 avsHistoryExtends (merge comparator)");
   // draft 自由替換 → 放行
   const withDraft = AVS.upsertDraft(snaps2, { ...draftFor(kase, note, 3), version: 3 });
   assert(AVS.avsHistoryExtends({ ...note, avsSnapshots: snaps2 }, { ...note, avsSnapshots: withDraft }).ok === true, "draft replacement is free");
+  // Codex retest 新發現 — merge shadow bypass:同 id 兩筆,[改寫版, 原版]。
+  // 舊版 Map 索引只看最後一筆(原版)而放行,但消費者 find() 讀到第一筆
+  // (改寫版)。修復後:after 出現任何重複 id 一律拒。
+  const shadow = JSON.parse(JSON.stringify(before));
+  const rewrittenCopy = JSON.parse(JSON.stringify(shadow.avsSnapshots[0]));
+  rewrittenCopy.renderedAdvice[0].text_zh = "影子改寫版";
+  shadow.avsSnapshots = [rewrittenCopy, shadow.avsSnapshots[0]];
+  const shadowCheck = AVS.avsHistoryExtends(before, shadow);
+  assert(shadowCheck.ok === false && /duplicate/.test(shadowCheck.reason), "shadow-copy duplicate-id merge refused (Codex retest bypass)");
+  // 消費者視角 sanity:find() 確實會拿到第一筆 —— 證明這個洞是真的可利用,
+  // 而不是理論性的(拿舊版邏輯對照用)。
+  assert(shadow.avsSnapshots.find((s) => s.id === rewrittenCopy.id).renderedAdvice[0].text_zh === "影子改寫版", "consumer find() would have read the rewritten shadow copy (exploit sanity)");
 }
 
 console.log("Codex regression — MED-1 invariant hardening");
