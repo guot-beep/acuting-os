@@ -1047,23 +1047,57 @@
       ${d.indication_zh ? `<span class="kdf-ind">${esc(d.indication_zh)}</span>` : ""}</p>`;
   }
 
+  /* 66d3e72 merged the flat English condition lists (ad_treats_en, and the
+     applications_en that carries the same American Dragon list) into the
+     現代運用索引 chip cloud. Reprinting them as a section too would show the
+     same 24 conditions twice on one tab. This asks the only question that
+     matters at render time — is this list already on the card? — instead of
+     hardcoding which fields were merged: 7 of the 8 English-only 現代應用 are
+     100% covered by the chips, 人參敗毒散 is 0% covered and must still render.
+     Nothing is filtered item by item; a list either belongs here whole or was
+     absorbed whole, so no half-list of fragments can reach the card. */
+  const chipKey = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9一-鿿]/g, "");
+  function absorbedByModernIndex(list, record) {
+    const items = cleanList(list);
+    if (!items.length) return false;
+    const indexed = new Set([
+      ...cleanList(record.modern_applications_en || record.treats_en || ((record.english_exam_track || {}).treats_en)),
+      ...cleanList(record.modern_applications_zh || record.treats_zh)
+    ].map(chipKey));
+    if (!indexed.size) return false;
+    const covered = items.filter((v) => indexed.has(chipKey(v))).length;
+    return covered / items.length >= 0.8;
+  }
+
   /* 現代應用 — what this formula treats today. Kept separate from CloudTCM's
      modern_diseases_zh: that list has 系統性紅斑性狼瘡 and 心肌梗塞 under
      麻黃湯, which is keyword association rather than clinical application. Both
      are shown, each under its own heading and its own source. */
   function formulaModernSection(record) {
     const out = [];
+    // Gate on either language, not on 中文 alone: 8 formulas carry
+    // applications_en with no applications_zh and 5 carry modern_research_en
+    // with no _zh. A zh-only gate leaves that English in the data and off the
+    // card — the invisible-English failure this project keeps hitting.
+    // detailPairedList already falls back to whichever side exists.
     const app = cleanList(record.applications_zh), appEn = cleanList(record.applications_en);
-    if (app.length) out.push(detailSection("現代應用", "What this formula treats today（課件 Applications）", detailPairedList(app, appEn)));
+    // 課件 Chinese prose is never in the chip cloud, so it always renders; a
+    // bare English list only renders when the index did not already absorb it.
+    if (app.length || (appEn.length && !absorbedByModernIndex(appEn, record))) {
+      out.push(detailSection("現代應用", "What this formula treats today（課件 Applications）", detailPairedList(app, appEn)));
+    }
     // American Dragon's TREATS list: 24 English condition names, a different
     // granularity from the Chinese prose above. They used to share
     // applications_zh/_en, where the length mismatch made detailPairedList fall
     // back to Chinese only — the English was in the data and invisible on the
     // card. Its own section, so both actually render.
     const adTreats = cleanList(record.ad_treats_en);
-    if (adTreats.length) out.push(detailSection("現代應用（American Dragon 清單）", "Conditions treated — American Dragon", detailList(adTreats)));
+    if (adTreats.length && !absorbedByModernIndex(adTreats, record)) {
+      out.push(detailSection("現代應用（American Dragon 清單）", "Conditions treated — American Dragon", detailList(adTreats)));
+    }
+    // Research sentences are prose, never chips — no absorption check needed.
     const res = cleanList(record.modern_research_zh), resEn = cleanList(record.modern_research_en);
-    if (res.length) out.push(detailSection("現代藥理", "Modern research（課件）", detailPairedList(res, resEn)));
+    if (res.length || resEn.length) out.push(detailSection("現代藥理", "Modern research（課件）", detailPairedList(res, resEn)));
     // modern_diseases_zh is NOT rendered. It is CloudTCM keyword co-occurrence:
     // whatever disease names happened to appear on the same page. That is why
     // 桂枝湯 carried 心肌梗塞, 痲瘋 and 麻疹, and why Ting could not work out what
@@ -1299,8 +1333,6 @@
       } else {
         modernIndexHtml = `<div class="k-chip-cloud">${allModernChips}</div>`;
       }
-    } else if (relatedConditions) {
-      modernIndexHtml = `<div class="k-chip-cloud">${relatedConditions}</div>`;
     }
 
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
@@ -1314,7 +1346,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
