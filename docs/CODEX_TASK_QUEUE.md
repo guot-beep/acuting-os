@@ -1,5 +1,17 @@
 # Codex Task Queue
 
+## 🟢 GATE CLEARED 2026-08-12:CI 史上首次全綠
+
+**Run 31577198745 @ exact SHA a26d2a1**:4 jobs 全 success(no-PHI / preflight /
+ratchet / green validators 23 步含 formula 0 阻斷、K-series、R1-R8、AVS)。
+SOL 收斂序的第 1、2 步(方劑 4 清零 → exact SHA 全 CI)已成立。
+Codex 依序執行:**P1 transport audit(即刻)→ Clinical P4 rehearsal →
+branch landing audit**。Clinical 六軸只做 regression smoke(31/31 + 65/65 +
+seam diff:W1 bridge、R15 v1 fail-loud、formula-in-formula validator 延伸
+—— 最後一項改了 validate-formula-standard.js,mutation-tested 6/6,審它)。
+
+---
+
 ## 佇列(SOL 2026-08-12 晚間裁定:Clinical 只做 regression smoke,不再開全輪)
 
 收斂順序(SOL):方劑 4 清零 → 新 exact SHA 全 CI → P1 transport audit →

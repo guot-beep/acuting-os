@@ -1,5 +1,11 @@
 # 2026-08-12 Fable — Codex NO-GO 四項修復(3 HIGH + 1 MED),送覆測
 
+## 2026-08-12 🟢 CI 史上首次全綠(run 31577198745 @ a26d2a1)
+
+- 路徑:SOL 方劑裁定入庫 → 4 阻斷全清(柴胡加龍骨牡蠣湯傷寒論107全組成含鉛丹歷史標記/烏梅丸 actions 正典化/大建中湯 1A 膠飴君註明現代分析/碧玉散 2A 方中方型別:模板+validator mutation-tested+資料)→ 揭開兩顆被 fail-fast 遮 7 天的雷(relation registry 假宣告、bundle 漏建)→ 本地 23 步全綠後推送。
+- 同輪:Batch 05 入庫,full_detail 92→115;cond blocking 184。
+- 下一步:Codex P1 transport audit → P4 rehearsal → landing audit(佇列已更新)。
+
 ## 2026-08-12 CI 通知風暴根治(Fable,Ting 授權)
 
 - validate.yml 加 PR/branch-scoped concurrency(cancel-in-progress,同 PR 分組,跨 PR 不互取消)+ docs-only preflight(docs/**、*.md 不跑重 validators,workflow 仍出明確 success;no-PHI 無條件必跑;非 PR 事件全跑)。
