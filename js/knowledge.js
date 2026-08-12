@@ -1539,8 +1539,17 @@
           <div class="k-detail-columns">
             ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
             ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered || record.channels_zh))}
-            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "6~15g")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
-            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
+            ${/* 2026-08-12 紅線 4:此處原本是 `dose.standard_daily_g || "6~15g"`。
+                  358 張中藥卡有 200 張沒有 standard_daily_g,於是全部被填上編造的
+                  「6~15g」—— 其中 17 張標記有毒:雄黃卡自身寫「內服 0.05–0.1g,
+                  入丸散用」卻顯示 6~15g(300 倍),硃砂 150 倍,細辛卡自身寫
+                  「絕不可超過 5g」而畫面蓋過它。劑量寧可留白。
+                  刻意「不」自動改讀 record.dosage:那個欄位含「食療用量範圍」,
+                  在 77 張卡上食療上限高於藥用上限,盲撈會顯示更危險的數字。
+                  154 張卡的真實上限確實在那裡,接上去需要先定形狀公約(見
+                  docs/TING_DECISION_QUEUE.md B3)。*/ ""}
+            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "待補")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
+            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "待補")}</p>`)}
           </div>
           ${detailSection("功效 (Actions)", "傳統功效 · 中英對照", `<div class="k-chip-cloud">${bilingualFunctions}${actionsAligned ? "" : actionsEn.map((a) => `<span class="k-chip" style="background:#ecfdf5;color:#047857;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(a)}</span>`).join("")}</div>`)}
           ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
