@@ -1,3 +1,12 @@
+# 2026-08-12 夜班 Fable — P1 Codex NO-GO 七項全修:抽出單一 shape 尺
+
+- **根因(Codex MED-4)**:P1 shape 規則在 `app.js` 與 CLI 各一份,必然漂移;blocking self-test 只跑 CLI 那份,所以 app 端漂移能在全綠底下存活 —— HIGH-1 就是它的產物。
+- **修法**:新增 `js/previsit-validator.js`(唯一 shape 尺,UMD/零 DOM/node 可 require,同 clinical-store.js 與 avs.js 慣例);app 與 CLI 都委派,self-test 跑的就是 app 執行的程式碼;app 端模組缺席 fail closed。
+- **逐項**:HIGH-1 非陣列 metrics 整筆拒(bad15/16);HIGH-2 `|value| ≤ MAX_SAFE_INTEGER` 同時堵 9007199254740993 精度改寫與 1e308 transport/save drift(bad17/18),-0→0;HIGH-3 stash 改為 persist 成功後才刪(失敗重試不再遺失病人原話);MED-1 P1 六項白名單(bad19);MED-2 ISO 8601 字面驗證(bad20/21);MED-3 補 CR U+000D + previsit.html 四個 textarea maxlength;MED-4 self-test 跑共用模組 + 結構性 parity 守衛(負面對照:移除委派會 FAIL);重複 metricId 改整筆拒(bad22)。
+- **驗證**:self-test `3 good + 22 bad ALL PASS` + `PASS [parity]`;瀏覽器對真 validatePrevisitPayload 七類攻擊全 REJECT、合法 ACCEPT;五條拒收路徑零副作用(form/stash/store/replay 前後相同);HIGH-3 端到端(失敗→stash 存活→重試成功→原話落檔);AVS 59/59、formula no blocking、invariants/PHI/ratchet/relations/content-junk 全綠、syntax 4/4、generated 無漂移。真 store 讀寫 0/0。
+- **commits**:`aaf8b81`(修復)、`6ab1472`(保存 Codex 報告原文,作者 Codex,Ting 離線無法授權故代為 commit —— 假設記於 handoff)。
+- **下一步**:Codex focused retest(派工在 CODEX_HANDOFF 置頂);之後續 Phase 2 clinical smoke → P4 synthetic rehearsal → landing audit。
+
 # 2026-08-12 Codex — P1 transport adversarial retest `NO-GO`
 
 - product endpoint=`0f59773`；工作期間 current HEAD 前進至 `513971b`，四個 P1 code/workflow blobs 已確認與 endpoint 相同。reviewer 唯讀產品碼，真 store `0/0`，暫存 harness 已清除。
