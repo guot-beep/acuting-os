@@ -331,6 +331,16 @@ function adapt361Record(record) {
     patternsEn: record.indications_en || [],
     evidence: record.evidence || "",
     cautions: cleanCautions.join("\n"),
+    // 2026-08-12:361 經穴有兩個英文安全欄,而這個 adapter 一個都沒讀,
+    // 於是英文模式退回去印中文的 cautions。兩者差別是致命的:
+    //   contraindications_en —— 357/361 是同一句衛生教條(「Standard hygienic
+    //     practice; strictly control insertion depth…」),等於沒說。
+    //   cautions_en —— 逐穴手寫:LU1「⚠️ Deep medial insertion contraindicated
+    //     (pneumothorax risk)」、ST9「⚠️ Avoid carotid artery」、
+    //     ST17「⚠️ NEEDLING & MOXIBUSTION STRICTLY PROHIBITED! Landmark only.」
+    // 361 條逐穴警告存在資料裡,從來沒有一條到過畫面。逐穴的放前面。
+    pointCautionsEn: record.cautions_en || [],
+    cautionsEn: record.contraindications_en || [],
     techniqueNotes: needling361Text(record.needling),
     nccaomHighYield: record.nccaom_high_yield || [],
     // Board emphasis, read off the curriculum's own asterisks (2 = **, 1 = *).
@@ -4984,10 +4994,16 @@ function needlingArticle(point) {
     // threw TypeError, so English mode silently lost the contraindications
     // block on exactly those points — the safety text, on the language where
     // the reader is least able to fall back to the Chinese field.
-    const cautionsEnText = Array.isArray(point.cautionsEn)
-      ? point.cautionsEn.filter(Boolean).join("\n")
-      : (typeof point.cautionsEn === "string" ? point.cautionsEn.trim() : "");
-    if (cautionsEnText) parts.push(`CONTRAINDICATIONS:\n${cautionsEnText}`);
+    const asText = (v) => Array.isArray(v) ? v.filter(Boolean).join("\n") : (typeof v === "string" ? v.trim() : "");
+    // 逐穴警告優先,通用句在後。兩者都印,因為 cautions_en 常同時帶進針方式,
+    // 而 contraindications_en 偶爾(4/361)確實帶了逐穴內容 —— 丟掉哪一邊都會漏。
+    // 逐穴那條放前面:讀的人先看到「這一穴會出什麼事」,而不是先看到衛生守則。
+    const perPointEn = asText(point.pointCautionsEn);
+    const genericEn = asText(point.cautionsEn);
+    const enParts = [];
+    if (perPointEn) enParts.push(perPointEn);
+    if (genericEn && genericEn !== perPointEn) enParts.push(genericEn);
+    if (enParts.length) parts.push(`CONTRAINDICATIONS:\n${enParts.join("\n")}`);
     else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
     if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
