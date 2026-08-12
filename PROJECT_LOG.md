@@ -659,6 +659,101 @@ exact-SHA 驗證)今晚都已完成。它回 GO 之後,landing 就只剩「對�
 - **Aliases**：新增 `風寒犯肺`、`脾氣下陷`、`食積`、`濕痰` 四組卡片 alias；另四項因已是 canonical name 或既有 alias 不重複寫入。Legacy map 僅新增已核准的 `pat.濕痰 → pattern.phlegm_damp`，未把其他歷史近義詞升格為 identity。
 - **驗證**：Pattern standard `62/62 clean`、registry、content-junk、ratchet、alias dry-run、build-data、validate-data、interactions、diff check 全通過；final reconciliation `69/59/62/59/3`。Repo-wide encoding validator 仍有既存跨線基線缺陷，本批未修改其所列來源檔。
 - **已知未解／下一步**：V2-B 與所有新 Pattern IDs、relation types/edges、tdis、stage/location/channel endpoints、comparisons 均未開始；等待 Ting 另行批准。
+# 2026-08-08 Codex — EX-UE10 四縫、EX-UE11 十宣精修；EX-UE12 臂中衝突暫停
+
+- **做了什麼**：完成 EX-UE10、EX-UE11 strict-template／four-source card fill；逐頁核對 Board、local curriculum、eLotus、American Dragon，補齊雙語定位、技法、安全、主治／功效、配穴、考點、exact links 與 field-level provenance，並保留 unsupported legacy 的證據層級。
+- **數字 before→after**：嚴格模板／四來源稽核 `48/72 → 50/72`；待修 `24/72 → 22/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。
+- **來源與安全**：四縫不猜點刺器械、出液量、止血或灸法；十宣將淺刺、放血與 AD 的條件式後續灸法分列，重大急症僅作 clinical boundary。EX-UE12 出現掌側／外側／背側定位及1.0–1.2寸／貫穿肢體但不透皮／legacy 多套刺深、灸與放血的實質衝突，未擅自選邊。
+- **驗證**：extra-point audit、build-data、runtime data、interactions、point IDs、content-junk、Pattern registry／standard、JS syntax、canonical↔generated parity 與 `git diff --check` 依本批完整驗證執行；內容 commits `1fcc9f0`、`4dcf882`。
+- **已知未解／下一步**：依 Ting 的 pause 規則停在 EX-UE12 臂中，等待定位與侵入式技法裁決；未觸碰 dirty 主工作樹、Pattern、Condition 或 `curriculum/conditions/*`。
+
+# 2026-08-08 Codex — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
+
+- **做了什麼**：依 Ting 裁決完成 EX-UE6，並連續精修 EX-UE7～EX-UE9；逐張補齊雙語定位、解剖與 source gaps、來源分層刺灸／放血、功效主治、配穴、安全、考點、exact links 與 field-level provenance，stable code／id 全部維持。
+- **數字 before→after**：strict-template／four-source `44/72 → 48/72`；待修 `28/72 → 24/72`；generic Cloud 維持 `9/72`；measurable method、source URL、mojibake gaps 維持 `0/72`。
+- **來源／安全**：小骨空採 PIP＋只灸，eLotus DIP 明列衝突，AD Gukong 排除；腰痛點定位／刺深變體不硬合併；外勞宮的兒科驚厥／新生兒破傷風及八邪的蛇咬傷等重大主治只留 provenance／emergency boundary。所有 legacy 侵入性數字若無 exact source 均保留但降級，不升格為 canonical 規則。
+- **驗證**：extra audit、build-data、validate-data（947 runtime）、interactions、point IDs（925）、content-junk、Pattern registry／standard、app syntax、EX-UE6～EX-UE9 canonical↔runtime parity 與 `git diff --check` 均通過；content commits `35e8f75`、`56c54d8`、`eb73941`、`381d3ca`，audit/runtime commit `014a62c`。
+- **已知未解／下一步**：仍有24張待修與9張 generic Cloud URL；下一張 `EX-UE10 四縫 Sifeng`，須以完整深度模式處理兒童點刺／擠液、現有針灸衝突、放血與感染控制。未觸碰 Pattern、Condition、`curriculum/conditions/*` 或原 dirty 主工作樹。
+
+# 2026-08-08 Codex — EX-UE4 中魁、EX-UE5 大骨空四來源精修；EX-UE6 衝突暫停
+
+- **做了什麼**：以同一 strict-template／four-source workflow 精修 EX-UE4、EX-UE5，逐張補齊雙語定位、解剖與 source gaps、刺灸、功效主治、配穴／缺口、安全、考點及 field-level provenance；exact eLotus／AD links 均於本 session 實際開啟。
+- **數字 before→after**：strict-template／four-source `42/72 → 44/72`；待修 `30/72 → 28/72`；generic Cloud 維持 `9/72`；measurable method、source URL、mojibake gaps 維持 `0/72`。
+- **來源／安全**：中魁的 eLotus 與 AD 灸量、AD 針深分列，legacy 深刺／透刺／放血不升格；大骨空採 eLotus 0.1寸並將 legacy 0.5–0.8寸、5–7壯與橈動脈警語降為 unsupported。兩卡保持 `reviewStatus: draft`，strict/four-source 不等於 clinically verified。
+- **驗證**：extra audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、EX-UE5 canonical/runtime parity 與 `git diff --check` 均通過；content commits `2aafea3`、`51972f9`。
+- **已知未解／下一步**：EX-UE6 legacy 為小指 PIP＋針刺／放血，eLotus 為 DIP＋只灸；AD 只有無內容且無法確認 identity 的 Gukong 頁。依 stop rule 未修改 EX-UE6，下一步需由教材／書本或 Ting 裁決後再續；其他 session dirty files 未觸碰。
+
+# 2026-08-08 Codex — EX-UE3 中泉四源、AD 錯鏈與急症邊界精修
+
+- **做了什麼**：只精修 EX-UE3 中泉；整合 Board／課件缺口、eLotus Ex-UE3、AD 索引錯鏈稽核及 AHA／NHLBI／NHS 安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴缺口、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四來源稽核 `41/72 → 42/72`；待修 `31/72 → 30/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口維持 `0/72`。
+- **來源與安全**：AD 的 Zhongchuan 索引項實際錯鏈至 Ganrexue N-BW-8，明列 source gap、不猜網址。舊放血與關節消毒警語降為 unsupported；胸痛／心絞痛、嚴重氣喘、咯血移出 disease tags，只保留來源陳述與急症邊界。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、54欄 canonical/runtime parity、`git diff --check` 均通過；內容 commit `331c075`。
+- **已知未解／下一步**：AD 無可用中泉專頁；四層未提供放血、腕背深層解剖、孕期／兒童／凝血風險與灸量方案。下一張 EX-UE4 中魁；原 dirty 草稿 worktree 與 Pattern／Condition 工作未納入。
+
+# 2026-08-08 Codex — EX-UE2 二白四源、刺深分歧與 AD 配穴表精修
+
+- **做了什麼**：只精修 EX-UE2 二白；整合 Board 明列、課件缺口、eLotus Ex-UE2、AD M-UE-29 與 NIDDK 便血安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四來源稽核 `40/72 → 41/72`；待修 `32/72 → 31/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口維持 `0/72`。
+- **來源與安全**：eLotus 0.5～1.0寸、AD 0.5～1.0寸與0.5～1.5寸分列；AD 兩組配穴以實際表格欄位核對。舊0.3～0.5寸、點刺出血、骨膜警語降為 unsupported；便血只保留來源陳述與 NIDDK 急症邊界，不作療效標籤。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、54欄 canonical/runtime parity、ID/code uniqueness、`git diff --check` 均通過；內容 commit `038a7e1`。
+- **已知未解／下一步**：四層未提供放血安全規程、深層解剖、孕期／兒童／凝血風險與灸量；下一張 EX-UE3 中泉。原 dirty 經外奇穴草稿 worktree 與 Pattern／Condition 工作未納入。
+
+# 2026-08-08 Codex — EX-UE1 肘尖四源、兩源只灸與 AD 內容校正
+
+- **做了什麼**：從 EX-B12 已完成的 `39/72` 接續，只精修 EX-UE1 肘尖；整合 Board／課件缺口、eLotus Ex-UE1、AD M-UE-46 與 NIDDK 急症邊界，補齊雙語定位、解剖缺口、刺灸、安全、功效主治、配穴缺口、考點與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `39/72 → 40/72`；待修 `33/72 → 32/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus／AD 對鷹嘴尖與「只灸」一致；AD 精確頁實有瘰癧、化膿性癰腫、淋巴結炎，只有功效欄空白。舊直刺0.3～0.5寸、放血、直接灸7～15壯不升格；舊腸癰只保留為 NIDDK 支持的闌尾炎急症邊界。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、24欄 canonical/runtime parity、`git diff --check` 全通過；內容 commit `8801c10`。
+- **已知未解／下一步**：四層未提供灸法劑量／停止規則、孕期、兒童與凝血風險方案；下一張 EX-UE2 二白。既有 dirty 經外奇穴草稿 worktree 與 Pattern／Condition 工作均未納入。
+
+# 2026-08-08 Codex — EX-B12 坐骨定位衝突、深臀安全與精確連結修整
+
+- **做了什麼**：按四層工作流重整 EX-B12 坐骨；保留 `EX-B12`／`ex.b12`，補齊中英文定位、解剖、刺灸法、功效主治、配穴、考點、安全與逐欄來源，並把卡片可點來源收斂為已實際開啟的 American Dragon 坐骨精確頁。
+- **數字 before→after**：嚴格模板／四源稽核 `38/72 → 39/72`；待修 `34/72 → 33/72`；泛用 Cloud URL `10/72 → 9/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：Board 與本地課件無坐骨專條；eLotus production 索引無 Zuogu／坐骨項目；AD 精確頁正文使用 `N-BW-17`、搜尋標題顯示 `M-BW-17`，本卡如實保留站內差異。舊卡「大轉子—骶骨角三等分」與 AD「大轉子—尾骨中點下1寸」、舊深度與 AD 直刺2～3寸均分列，不硬合併；AD 所列下肢癱瘓已移出療效／主治陣列，只保留為神經急症邊界。深臀坐骨神經與特殊族群證據缺口已補入。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）、`validate-interactions.js`、`validate-point-ids.js`（925 ids）、`validate-content-junk.js`、`node --check app.js`、EX-B12 efficacy-boundary assertions 與 `git diff --check` 全通過；內容 commits `49f9830`、`583ab9e`。
+- **已知未解／下一步**：33張待修、9張泛用 Cloud URL；下一張 EX-UE1 肘尖。eLotus 無專頁，AD 未給安全終點、體型修正、孕期／兒童方案；舊點刺出血與可灸僅保留為未核實歷史值。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — 經外奇穴精確來源連結修正
+
+- **做了什麼**：修正所有經外奇穴上方來源按鈕誤套十四經穴網址推導的問題；經外奇穴現在只顯示資料中已核對的 CloudTCM／AD／eLotus 精確頁，不再產生空 CloudTCM URL、AD 首頁或索引頁假按鈕。另清理 EX-B10／EX-B11 當下無法直接開啟的來源按鈕，內容證據仍保留於 `field_sources`。
+- **數字 before→after**：嚴格模板／四源稽核維持 `38/72`；待修維持 `34/72`；泛用 Cloud URL 維持 `10/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 巨闕俞 Ex-B14 與接脊 Ex-B15、接脊 CloudTCM、Kurohon、AHA、Merck、Mayo、CDC 均於本輪實際開啟；AD 索引已確認無 Juqueshu／Jieji／Jiegu 專頁。Yibian／MedicalTeaching 與巨闕俞 CloudTCM 只保留稽核 provenance，不再作可點擊按鈕；兩張卡的本庫代碼與來源代碼已在標籤明示。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）、`validate-interactions.js`、`validate-point-ids.js`（925 ids）、`validate-content-junk.js`、`node --check app.js` 與 `git diff --check` 全通過；修正 commit `f42d00b`。
+- **已知未解／下一步**：34張待修、10張泛用 Cloud URL；下一張 EX-B12 坐骨。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
+
+- **做了什麼**：將舊卡主名接骨 Jiegu 校正為接脊（接骨）Jieji，保留 `EX-B11`／`ex.b11` 與舊值；核對 Board／課件缺口、eLotus Ex-B15、AD 拼音索引缺頁、CloudTCM、MedicalTeaching、日本考試資料及胸腰交界解剖，補齊全卡與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `37/72 → 38/72`；待修 `35/72 → 34/72`；泛用 Cloud URL `11/72 → 10/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：本庫 EX-B11、eLotus／日本 Ex-B15 與低權威 EX-B07 分列；一般層向上斜刺0.5～1寸，但補充來源同時引歷史禁針，衝突保留。T12～L1脊髓圓錐／椎管、兒童與癲癇、疑似骨折／脊柱外傷及灸量缺口已補入；接骨別名不等於骨折療效證據。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）與 `validate-interactions.js` 全通過；內容 commit `1c9de53`。
+- **已知未解／下一步**：34張待修、10張泛用 Cloud URL；下一張 EX-B12 坐骨。American Dragon 無 Jieji／Jiegu 專頁；古今針禁衝突及 MedicalTeaching 配伍中的未標準化『百合穴』已保留原文、不擅自修正。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
+
+- **做了什麼**：核對 Board／課件缺口、eLotus Ex-B14、AD 拼音索引缺頁、醫砭 EX-B11、CloudTCM 精確頁與 MedicalTeaching；保留資料庫 `EX-B10`／`ex.b10`，補齊英文名、異名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `36/72 → 37/72`；待修 `36/72 → 35/72`；泛用 Cloud URL `12/72 → 11/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 標 Ex-B14、醫砭標 EX-B11，與本庫 EX-B10 的代碼差異明列而不強行改碼；一般層向上斜刺0.5～1寸，醫砭直刺0.3～0.5寸分列。舊放血與孕婦慎用未獲精確頁支持，不作可執行指令；深刺傷椎管／脊髓及胸痛／中風急症邊界已補入。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）與 `validate-interactions.js` 全通過；內容 commit `417102f`。
+- **已知未解／下一步**：35張待修、11張泛用 Cloud URL；下一張 EX-B11 接骨。American Dragon 未找到巨闕俞專頁，Yibian／CloudTCM／MedicalTeaching 精確 URL 直接重開有 cache/internal error，均已如實記錄；Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
+
+- **做了什麼**：核對 Board／課件缺口、eLotus Ex-B9、AD M-BW-29／拼音索引、醫砭 EX-B9 與 CDC 癲癇急救；補齊英文名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源，修清原卡亂碼。
+- **數字 before→after**：嚴格模板／四源稽核 `35/72 → 36/72`；待修 `37/72 → 36/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：eLotus／醫砭的尾骨尖上2寸與 AD 的 S2棘突下分列；一般層向上沿皮1～2寸，AD／醫砭2～2.5寸作較長變體。舊直刺0.3～0.8寸、放血與孕婦慎用未獲精確頁支持，只留來源缺口、不作可執行指令；癲癇主治不取代藥物或急救。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B9 runtime assertions、雙語配對與 task-file diff 檢查均通過；內容 commit `c8e5d4b`。
+- **已知未解／下一步**：36張待修、12張泛用 Cloud URL；下一張 EX-B10 巨闕俞。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B8 十七椎四層、異名與椎管深度衝突修整
+
+- **做了什麼**：整合 Board 的 Shiqizhuixue／Shiqizhuixia、本地 checklist／腰痛課件、eLotus Ex-B8、AD M-BW-25／拼音索引與醫砭 EX-B8；保留 `EX-B8`／`ex.b8`，補齊異名、定位、解剖、全部功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `34/72 → 35/72`；待修 `38/72 → 37/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：一般層採 eLotus／AD 共同直刺0.8～1.2寸；AD 0.5～1寸分列。AD／醫砭1.5～2寸與 AD 所列皮膚至椎管1.25～1.75寸重疊，只作衝突記錄，不作常規深刺許可；另補神經紅旗與孕兒、高風險、灸量來源缺口。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B8 runtime assertions、雙語配對與 task-file diff 檢查均通過；內容 commit `2ac77dc`。
+- **已知未解／下一步**：37張待修、12張泛用 Cloud URL；下一張 EX-B9 腰奇。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
 
 # 2026-08-08 Codex — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 

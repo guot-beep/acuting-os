@@ -332,6 +332,119 @@ Codex 請直接讀這裡開工,結論寫回本檔置頂並 push。
 - **Aliases**: added four exact-identity card aliases: `風寒犯肺`, `脾氣下陷`, `食積`, and `濕痰`. `風熱犯肺`, `痰熱壅肺`, and `脾胃濕熱` were already canonical names; `心脾氣血兩虛` was already a paired alias and its mechanism matched. The legacy map gained only `pat.濕痰 → pattern.phlegm_damp`; broader historical aliases remain pending.
 - **Counts / Validation**: Registry 69, taxonomy 10, clinical 59, library raw 62, active 59, deprecated 3, reconciliation 59/59, duplicate registry/library IDs 0. Pattern standard 62/62 clean; registry, content-junk, ratchet, alias dry-run, build-data, validate-data, interactions, and diff checks passed. The optional repository-wide encoding validator still reports its pre-existing cross-line baseline and is not a V2-A regression.
 - **STOP**: no new Pattern IDs, Six Channels, Four Levels, San Jiao, gynecology/extraordinary-vessel V2 cards, relation types/edges, endpoint namespaces, tdis IDs, or differential comparison objects were created. Await explicit V2-B authorization.
+## [2026-08-08] Codex Handoff — EX-UE10 四縫、EX-UE11 十宣；EX-UE12 臂中定位與技法衝突暫停
+
+- **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE10 `1fcc9f0`、EX-UE11 `4dcf882`。只處理獨立經外奇穴 worktree 的 canonical、generated、audit 與 handoff；未觸碰 dirty 主工作樹、Pattern、Condition 或 `curriculum/conditions/*`。
+- **EX-UE10 / EX-UE11**: 四縫整合 Board 明列、課件缺口、eLotus Ex-UE10 與 AD Sifeng 精確頁；canonical 採點刺後擠出少量液體的來源原意，但不猜器械、出液量、止血或灸法規則，舊三稜針、刺深與互相矛盾的禁灸／可灸陳述均降為 unsupported。十宣整合 Board 明列、課件缺口、eLotus Ex-UE11 與 AD Shixuan 精確頁；淺刺0.1–0.2寸、點刺出血、AD「放血後可灸」分列，舊0.5–1.0寸與三稜針降為 unsupported。卒中、熱病／中暑與癲癇只保留來源陳述和急症邊界，不升格為療效標籤。
+- **Stop Condition / EX-UE12**: legacy 定位為前臂掌側、腕肘中點兩筋間；eLotus 為前臂外側、腕肘中點橈尺骨間；AD 為前臂背側、腕肘中點橈尺骨間。eLotus 直刺1.0–1.2寸且可灸；AD 描述直刺貫穿肢體但不透對側皮膚、無數值深度；legacy 又列0.5–1.0寸／0.3–0.8寸、灸與點刺出血。此為實質定位及侵入式安全衝突，依 Ting 規則未修改 EX-UE12 或後續穴位。
+- **Counts / Validation**: strict-template／four-source `48/72 → 50/72`；issues `24/72 → 22/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。完整 validator、canonical↔runtime parity、JS syntax 與 diff check 結果記於本批 rebuild commit；strict/four-source 仍只代表模板、provenance、來源與 exact-link 稽核，不是獨立臨床驗證，兩張均維持 draft。
+- **Next**: 仍為 `EX-UE12 臂中 Bizhong`，需 Ting 或可核對的書本來源裁決 canonical 掌側／外側／背側定位與可執行技法後再續；22張待修、9張仍有 generic CloudTCM。
+
+## [2026-08-08] Codex Handoff — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
+
+- **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE6 `35e8f75`、EX-UE7 `56c54d8`、EX-UE8 `eb73941`、EX-UE9 `381d3ca`；audit/runtime rebuild `014a62c`。只處理經外奇穴 canonical、generated bundle、audit 與 handoff，未觸碰 Pattern、Condition、`curriculum/conditions/*` 或原 dirty 主工作樹。
+- **EX-UE6 / Ting Adjudication**: canonical 定位採小指 PIP；eLotus DIP 保留為 `source_conflict`／alternate location。Canonical technique 為只灸；legacy 直刺0.3～0.5寸、點刺出血及灸5～7壯均降為 unsupported／不可執行。AD Gukong 不作 Xiaogukong 證據，stable `EX-UE6`／`ex.ue6` 未改。
+- **EX-UE7–EX-UE9 / Reconciliation**: 腰痛點將 eLotus 中點直刺0.5～1.0寸、AD Yaotong 1／3 掌骨基底向腕斜刺1～1.5寸及 legacy 技法分列；外勞宮保留 Luozhen 同位別名與 AD `M-UE-24` 外部編碼，兒童驚厥／新生兒破傷風只留 provenance 與急症邊界；八邪將 eLotus／AD 多套針刺、放血與無劑量灸法分列，蛇咬傷、壞疽、發熱病與瘧疾不升格為 efficacy／disease tags。
+- **Counts / Validation**: strict-template／four-source `44/72 → 48/72`；issues `28/72 → 24/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。extra audit、build-data、validate-data（947 runtime）、interactions、point IDs（925）、content-junk、Pattern registry／standard、app syntax、四張 canonical↔runtime parity 與 `git diff --check` 均通過。Strict/four-source 只代表模板、provenance、來源與 exact-link 稽核完成，不代表獨立臨床驗證；四張皆維持 draft。
+- **Next**: `EX-UE10 四縫 Sifeng`。需完整深度模式核對小兒點刺／擠液技法、現有針刺與灸法欄位矛盾、放血／感染控制與兒童安全；不得猜器械、出血量、止血、禁灸或特殊族群數值。Audit ledger 已同步為 48 complete／24 remaining／generic Cloud 9／next EX-UE10。
+
+## [2026-08-08] Codex Handoff — EX-UE4 中魁、EX-UE5 大骨空；EX-UE6 來源衝突暫停
+
+- **Branch / Content Commits**: `codex/extra-points-resume-2026-08-08`；EX-UE4 `2aafea3` (`feat(acupoints): refine Zhongkui extra point`)；EX-UE5 `51972f9` (`feat(acupoints): refine Dagukong extra point`)。只修改經外奇穴 canonical、generated bundle、audit 與本批 handoff；未觸碰 Pattern、Condition、`curriculum/conditions/*` 或其他 session dirty files。
+- **EX-UE4 / Exact Sources**: Board Appendix A 未明列、local curriculum 無專條；eLotus Ex-UE4 與 AD `M-UE-16` exact pages 已實際開啟。eLotus 灸3壯、AD 灸3–7壯／溫灸5–15分鐘及直刺0.2–0.3寸分列；legacy 直刺0.3–0.5寸、透刺、點刺出血與5–7壯均保留但未升格。AD 所列妊娠期使用只作來源陳述，不作孕期安全許可。
+- **EX-UE5 / Exact Sources**: Board Appendix A 未明列、local curriculum 無專條；eLotus Ex-UE5 與 AD `M-UE-15` exact pages 已實際開啟。eLotus 直刺0.1寸與兩頁可灸陳述分列；AD 未給針刺深度或灸量。legacy 直刺0.5–0.8寸、灸5–7壯及橈動脈警語均保留為 unsupported／不可執行歷史值。eLotus「拇指遠節與中節指骨間」的解剖命名異常已如實記錄，未改 stable `EX-UE5`／`ex.ue5`。
+- **Stop Condition / EX-UE6**: legacy 小骨空定位在小指 PIP 中點，並列直刺0.3–0.5寸或點刺出血；eLotus exact page 定位於遠節與中節指骨間的 DIP，且明列只灸。AD index 無 Xiaogukong，`Gukong` exact page內容欄全空，不能確認同一穴。此衝突同時影響定位與侵入性技法，依規則未修改 EX-UE6，等待裁決或書本來源。
+- **Counts / Validation / Next**: strict-template／four-source `42/72 → 44/72`；issues `30/72 → 28/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。extra audit、build-data、947 runtime、interactions、925 point IDs、content-junk、app syntax、EX-UE5 canonical/runtime parity 與 diff check 均通過。下一張仍為 `EX-UE6 小骨空 Xiaogukong`，但須先解決 PIP／DIP 與只灸／針刺放血衝突。
+
+## [2026-08-08] Codex Handoff — EX-UE3 中泉（Zhongquan）AD 錯鏈與胸肺急症邊界
+
+- **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `331c075` (`feat(acupoints): refine Zhongquan extra point`)；未觸碰原 dirty 經外奇穴草稿 worktree、Pattern、Condition 或 `curriculum/conditions/*`。
+- **Four Layers / Exact Links**: NCBAHM Appendix A 未明列 Zhongquan，本地課件無專條。eLotus Ex-UE3、AD 拼音索引、AHA 心肌梗塞警訊、NHLBI 氣喘發作與 NHS 咯血精確頁均於本 session 開啟；四個顯示連結均實際驗證，無 generic CloudTCM。
+- **AD Source Gap / Reconciliation**: 保留穩定 `EX-UE3`／`ex.ue3`／Zhongquan。AD 索引沒有 Zhongquan，只列近似 `Zhongchuan`；實際點擊卻進入另一穴 `Ganrexue N-BW-8` 的空白頁。錯鏈未作中泉來源、未顯示、未猜 URL。eLotus 完整支持 LI5 與 TE4 間定位、功效、七項主治、直刺0.3～0.5寸與可灸。
+- **Safety / Legacy**: 舊點刺出血與關節消毒文字保留但降為 unsupported legacy；無放血、腕背深層解剖、孕期、兒童、凝血風險或灸量方案。胸痛／心絞痛、嚴重氣喘與咯血保留來源陳述，但移出 disease tags 並分別接 AHA、NHLBI、NHS 急症邊界，絕不當作穴位已驗證療效。
+- **Counts / Validation / Next**: strict/four-source `41/72 → 42/72`；issues `31/72 → 30/72`；generic Cloud `9/72`；measurable/source/mojibake gaps `0/72`。extra audit、build、947 runtime、interactions、925 point IDs、content-junk、app syntax、54欄 canonical/runtime parity 與 diff check 均通過。下一張 `EX-UE4 中魁 Zhongkui`。
+
+## [2026-08-08] Codex Handoff — EX-UE2 二白（Erbai）Board 考點、刺深分歧與 AD 配穴表校正
+
+- **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `038a7e1` (`feat(acupoints): refine Erbai extra point`)；未觸碰原 dirty 經外奇穴草稿 worktree、Pattern、Condition 或 `curriculum/conditions/*`。
+- **Four Layers / Exact Links**: NCBAHM Appendix A 明列 Erbai；本地課件無二白專條，僅在他穴配伍中提名。eLotus Ex-UE2、AD 拼音索引與 `https://www.americandragon.com/Points/Erbai.html`、NIDDK GI bleeding 精確頁均於本 session 開啟；三個顯示連結均實際驗證，無 generic CloudTCM。
+- **Reconciliation**: 保留穩定 `EX-UE2`／`ex.ue2`，另記 AD `M-UE-29`。eLotus 的直刺0.5～1.0寸與 AD 同頁的0.5～1.0寸、0.5～1.5寸版本分列，不合併成假共識。AD 不是 identity-only：已吸收其定位變體、Actions、六項主治及兩組配穴；配穴表以 browser DOM 逐欄確認 BL57+GV1 對慢性痔瘡、GV20+BL52+GV1 對脫肛／痔瘡。
+- **Safety / Legacy**: 舊直刺0.3～0.5寸、點刺出血與「避免過深傷及骨膜」均保留但降為 unsupported legacy；精確頁未給放血、深層解剖、孕期、兒童、凝血風險或灸量方案。AD 的便血主治不收入 disease tags；NIDDK 只支持急性／嚴重 GI bleeding、黑便、暈厥與休克徵象的醫療邊界，不支持穴位療效。
+- **Counts / Validation / Next**: strict/four-source `40/72 → 41/72`；issues `32/72 → 31/72`；generic Cloud `9/72`；measurable/source/mojibake gaps `0/72`。extra audit、build、947 runtime、interactions、925 point IDs、content-junk、app syntax、54欄 canonical/runtime parity、ID/code uniqueness 與 diff check 均通過。下一張 `EX-UE3 中泉 Zhongquan`。
+
+## [2026-08-08] Codex Handoff — EX-UE1 肘尖（Zhoujian）兩源只灸與 legacy 技法降級
+
+- **Branch / Content Commit**: `codex/extra-points-resume-2026-08-08` / `8801c10` (`feat(acupoints): refine Zhoujian extra point`). 原 `codex/extra-points-2026-08-07` dirty worktree 的 EX-UE1～EX-UE4 草稿完整保留、未清理或覆蓋；本 branch 從已推送 `b92ac65` 乾淨建立。
+- **Four Layers / Exact Links**: NCBAHM Appendix A 未明列 Zhoujian，本地課件無專條。eLotus Ex-UE1、AD 拼音索引與 `https://www.americandragon.com/Points/Zhoujian.html` 均於本 session 開啟；另開啟 NIDDK appendicitis 精確頁，只作舊腸癰的急症邊界。三個顯示連結均實際開啟，無 generic CloudTCM。
+- **Reconciliation**: eLotus／AD 對鷹嘴尖定位與「只灸」一致；保留本庫 `EX-UE1`／`ex.ue1`，另記 AD `M-UE-46`。AD 內容頁實際列有瘰癧、化膿性癰腫與淋巴結炎，只有 Command Functions／Actions 空白；未沿用先前草稿的「AD identity-only」錯判。
+- **Safety / Legacy**: 舊直刺0.3～0.5寸、點刺出血、直接灸7～15壯及手指消毒文字均保留但降為 unsupported legacy，不與兩頁的「只灸」製造假共識。舊腸癰不升格為闌尾炎療效；孕期、兒童、感覺障礙、皮膚脆弱、抗凝／凝血異常與灸法停止規則均保留 source gap。
+- **Counts / Validation / Next**: strict/four-source `39/72 → 40/72`；issues `33/72 → 32/72`；generic Cloud `9/72`；measurable/source/mojibake gaps `0/72`。extra audit、build、947 runtime、interactions、925 point IDs、content-junk、app syntax、24欄 canonical/runtime parity 與 diff check 通過。下一張 `EX-UE2 二白 Erbai`。
+
+## [2026-08-08] Codex Handoff — EX-B12 坐骨（Zuogu）四層修整
+
+- **Branch / Content Commits**: `codex/extra-points-2026-08-07` / `49f9830` (`feat(acupoints): refine Zuogu extra point`) plus QA correction `583ab9e` (`fix(acupoints): keep Zuogu paralysis as red flag`).
+- **Files Changed**: `data/acupoints/extra_points.json`, `data/audits/missing_report.json`, and rebuilt `data/generated/app_data.js` / `data/generated/knowledge_data.js`; the occupied Pattern worktree and `curriculum/conditions/*` remained isolated.
+- **Four Layers / Links**: Zuogu is not explicitly named in NCBAHM Appendix A and has no dedicated local curriculum entry. The eLotus production index opened but contains no Zuogu／坐骨 entry. The exact American Dragon page `https://www.americandragon.com/Points/Zuogu.html` opened and is the card's only rendered source link; the AD pinyin index, sciatica page, and UB36 page were also checked for identity and combinations. No generic CloudTCM link remains on EX-B12.
+- **Identity / Reconciliation**: preserved immutable database `EX-B12` / `ex.b12`. AD's live body uses `N-BW-17`, while its search-title metadata uses `M-BW-17`; AD spells the English name `Ischeum`, while the card uses standard anatomical `Ischium` and records the source spelling. The legacy greater-trochanter-to-sacral-hiatus thirds location and AD greater-trochanter-to-coccyx midpoint-minus-1-cun location remain explicitly unreconciled.
+- **Content / Safety**: imported AD's straight 2–3-cun technique, sensation, sciatica indication, and exact combinations without converting blank AD Actions into invented functions. AD's lower-limb-paralysis claim is excluded from efficacy/indication arrays and retained only as a neurologic-emergency boundary. Legacy 1.5–2.5-cun, 0.3–0.8-cun, bloodletting, moxa, actions, and gluteal-pain content remain visible with evidence labels. Added deep-gluteal sciatic-nerve boundaries, distal-electric-sensation caution, cauda-equina red flags, and explicit pregnancy/pediatric/coagulation/body-habitus/source gaps; no universal safe depth or stopping rule was invented.
+- **Measured Counts**: strict/four-source `38/72 → 39/72`; issues `34/72 → 33/72`; generic Cloud URL `10/72 → 9/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Review Meaning**: strict/four-source completion denotes template, provenance, exact-link, and source-audit completion only; it is not independent clinical verification. EX-B12 remains `reviewStatus: draft` / `review_status: draft`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime), `validate-interactions`, `validate-point-ids` (925 ids), `validate-content-junk`, `node --check app.js`, EX-B12 runtime assertions, and `git diff --check` passed.
+- **Next**: EX-UE1 肘尖 (Zhoujian); continue one-point-at-a-time four-layer refinement and live-open every rendered source link.
+
+## [2026-08-08] Codex Handoff — 經外奇穴精確來源連結修正
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `f42d00b` (`fix(acupoints): only show verified extra-point links`).
+- **Root Cause / Fix**: `externalPointLinks()` treated extra-point codes like standard meridian codes. For codes such as `EX-B10` and `EX-B11`, that produced an empty CloudTCM URL and an American Dragon homepage fallback. Extra points now bypass derived URL builders and expose only exact CloudTCM, American Dragon, and eLotus detail pages explicitly present in reviewed record data.
+- **EX-B10 / EX-B11 Link Audit**: live-opened eLotus Juqueshu Ex-B14 and Jieji Ex-B15, CloudTCM Jieji, Kurohon, AHA, Merck, Mayo, CDC, and the American Dragon pinyin index. AD has no Juqueshu/Jieji/Jiegu detail entry. Yibian, MedicalTeaching, and Juqueshu CloudTCM matched indexed content but failed direct opening in this session, so they remain only in `field_sources` provenance and are no longer rendered as clickable card/source links.
+- **Code-label Reconciliation**: clickable eLotus labels now state both stable database identity and source identity: Juqueshu `EX-B10` versus eLotus Ex-B14, and Jieji `EX-B11` versus eLotus Ex-B15. No IDs or source-derived content were rewritten.
+- **Measured Counts**: strict/four-source remains `38/72`; issues remain `34/72`; generic Cloud URL remains `10/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime), `validate-interactions`, `validate-point-ids` (925), `validate-content-junk`, `node --check app.js`, and `git diff --check` passed.
+- **Next**: EX-B12 坐骨 (Zuogu); continue four-layer refinement and live-open every displayed detail URL before commit.
+
+## [2026-08-08] Codex Handoff — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `1c9de53` (`feat(acupoints): correct Jieji identity and safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; the occupied Pattern worktree and unrelated files remained isolated.
+- **Four Layers**: Jieji/Jiegu is absent from the NCBAHM Appendix A named focus list, and no dedicated local curriculum entry was found. The exact eLotus Ex-B15 page was opened. The American Dragon pinyin index was opened and searched for Jieji and Jiegu; neither is present, and both guessed detail URLs failed. Exact CloudTCM and MedicalTeaching pages plus Japanese exam-oriented material were checked as supplemental references.
+- **Identity / Reconciliation**: preserved immutable database `EX-B11` / `ex.b11`, but corrected the medically mismatched primary name from 接骨/Jiegu to 接脊（接骨）/Jieji/Connecting Vertebrae. Jiegu remains an alias and legacy value. eLotus/Japanese material uses Ex-B15, while a lower-authority page uses EX-B07; all code variants remain source-labeled. Legacy fracture pain and bone-healing actions are retained but marked unsupported rather than deleted.
+- **Content / Safety**: integrated all eLotus digestive, pediatric, neurologic, hernia, technique, and moxa content; added MedicalTeaching anatomy, expanded indications, combinations, retention, classical moxa, and its quoted historical no-needle statement. Modern exact pages use upward-oblique 0.5-1.0 cun, while historical needling prohibition remains an unresolved safety conflict. Added T12-L1 conus/canal anatomy, neurologic stopping rules, pediatric/seizure boundaries, suspected-fracture/spinal-trauma boundaries, and pregnancy/high-risk/moxa gaps without inventing protocols.
+- **Measured Counts**: strict/four-source `37/72 → 38/72`; issues `35/72 → 34/72`; generic Cloud URL `11/72 → 10/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, and task-file `git diff --check` passed.
+- **Next**: EX-B12 坐骨 (Zuogu); verify code/name/location variants, sciatic-nerve anatomy, deep gluteal needling depth, motor deficits, and exact eLotus/AD pages before writing.
+
+## [2026-08-08] Codex Handoff — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `417102f` (`feat(acupoints): reconcile Juqueshu source conflicts`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; the occupied Pattern worktree and all unrelated files remained isolated.
+- **Four Layers**: Juqueshu is absent from the NCBAHM Appendix A named focus list, and no dedicated local curriculum entry was found. The exact eLotus page was opened; the American Dragon pinyin index was opened and searched but contains no Juqueshu back-point entry, and the guessed detail URL failed. Exact indexed Yibian, CloudTCM, and MedicalTeaching content supplements the card; direct reopening of those three URLs returned cache/internal errors, which is disclosed.
+- **Identity / Reconciliation**: preserved immutable database identity `EX-B10` / `ex.b10` / 巨闕俞 / Juqueshu. eLotus labels the point Ex-B14 and Yibian labels it EX-B11; the conflict remains source-labeled. AD's CV14 Juque content was not transferred. Added eLotus's English name and Heart Comfort 2 / Return to Youth / Below the Fourth Vertebra aliases.
+- **Content / Safety**: integrated all eLotus actions, indications, technique, retention, moxa, and aliases; added Yibian anatomy and combinations, CloudTCM respiratory/GI additions and spinal-cord warning, and source-labeled MedicalTeaching combinations. The general layer uses upward-oblique 0.5-1.0 cun; Yibian perpendicular 0.3-0.5 cun remains separate. Legacy bloodletting and pregnancy caution lack exact-page support and remain documented but non-executable. Added spinal-canal/cord stopping rules, high-risk gaps, and AHA/ASA cardiac/stroke emergency boundaries.
+- **Measured Counts**: strict/four-source `36/72 → 37/72`; issues `36/72 → 35/72`; generic Cloud URL `12/72 → 11/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947 runtime points), `validate-interactions`, and task-file `git diff --check` passed.
+- **Next**: EX-B11 接骨 (Jiegu); first reconcile its database T12 location/code/name against eLotus, AD pinyin index, and exact Chinese references, then verify fracture claims and thoracolumbar depth/safety.
+
+## [2026-08-08] Codex Handoff — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `c8e5d4b` (`feat(acupoints): reconcile Yaoqi source variants`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; Pattern worktree and unrelated files remained isolated.
+- **Four Layers**: Yaoqi is absent from the NCBAHM Appendix A named focus list and no dedicated local curriculum entry was found. Exact eLotus Ex-B9, AD M-BW-29 and its pinyin index were opened. Yibian EX-B9 exact indexed content was read; direct reopening cache-missed. CDC seizure first-aid guidance supplies only the emergency boundary.
+- **Reconciliation**: preserved `EX-B9` / `ex.b9` and all four legacy indications/actions. eLotus/Yibian place the point 2 cun above the coccyx tip, while AD places it below S2; this remains unresolved. The general layer uses eLotus upward subcutaneous 1-2 cun; AD/Yibian 2-2.5 cun remains a longer variant. Legacy perpendicular 0.3-0.8 cun and bloodletting lack exact-page support and remain documented but non-executable.
+- **Content / Safety**: added Yibian sacral vessels/nerves and interictal combination, plus three AD cross-page seizure combinations because Yaoqi's own combination field is blank. Added seizure emergency criteria and explicit pregnancy, pediatric, anticoagulation, sacrococcygeal-history, and moxa-dose gaps; the legacy pregnancy caution is not falsely upgraded to verified contraindication.
+- **Measured Counts**: strict/four-source `35/72 → 36/72`; issues `37/72 → 36/72`; generic Cloud URL remains `12/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947), interactions, point IDs (925), content-junk, app syntax, EX-B9 runtime assertions, bilingual pairing, and task-file diff check passed.
+- **Next**: EX-B10 巨闕俞 (Juejueyu/Juqueyu); verify name/pinyin and code variants, upper-back organ risk, and exact eLotus/AD availability before writing.
+
+## [2026-08-08] Codex Handoff — EX-B8 十七椎四層、異名與椎管深度衝突修整
+
+- **Branch / Content Commit**: `codex/extra-points-2026-08-07` / `2ac77dc` (`feat(acupoints): reconcile Shiqizhui canal safety`).
+- **Files Changed**: `data/acupoints/extra_points.json` and rebuilt `data/generated/app_data.js`; the occupied Pattern worktree and all unrelated files were isolated and excluded.
+- **Four Layers**: NCBAHM Appendix A lists Shiqizhuixue/Shiqizhuixia; the local checklist lists Shi Qi Zhui Xia, and course notes use it as a tender L5-S1 local point in low-back-pain sets. Exact eLotus Ex-B8, AD M-BW-25 plus pinyin index, and Yibian EX-B8 were checked; AD's exact-page content was readable from its precise indexed result, while direct open showed a verification interstitial.
+- **Identity / Content**: preserved immutable `EX-B8` / `ex.b8` and database name 十七椎/Shiqizhui; added 十七椎下, Shiqizhuixue/Shiqizhuixia, M-BW-25, 腰孔, and 上仙 as source-labeled variants. Integrated all eLotus/AD actions and indications, Yibian anatomy/indications, local-course and exact-page combinations, while retaining the legacy BL32+SP6 dysmenorrhea combination as unverified exact grouping.
+- **Safety**: the general layer uses shared perpendicular 0.8-1.2 cun. AD's 0.5-1 cun remains separate; AD/Yibian 1.5-2 cun overlaps AD's stated 1.25-1.75-cun skin-to-spinal-canal depth and is retained only as a conflict, not a routine deep-insertion range. Added neurologic red flags and explicit pregnancy, pediatric, high-risk, and moxa-dose gaps without inventing protocols.
+- **Measured Counts**: strict/four-source `34/72 → 35/72`; issues `38/72 → 37/72`; generic Cloud URL remains `12/72`; measurable/source/mojibake gaps remain `0/72`.
+- **Validation**: all-point extra audit, `build-data`, `validate-data` (947), interactions, point IDs (925), content-junk, app syntax, EX-B8 runtime assertions, JSON pairing, and task-file diff check passed.
+- **Next**: EX-B9 腰奇 (Yaoqi); verify sacrococcygeal landmark variants, oblique direction/depth, epilepsy claims, and exact AD/eLotus pages before writing.
 
 ## [2026-08-08] Codex Handoff — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 
