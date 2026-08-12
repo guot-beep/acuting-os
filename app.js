@@ -4982,10 +4982,77 @@ function classicalRefsSection(point) {
   return studySection(title, text, "book");
 }
 
+// 2026-08-12(SOL 路由建議):361 經穴的中文 needling 與英文 acumethod_en 來自
+// 兩個來源(CloudTCM / eLotus),深度數字從未對帳。實測 145 穴兩邊不一致,英文較深
+// 者為多數,29 穴位於胸/背/頸/眶等高風險區;另有 7 穴中文明確禁直刺而英文寫
+// perpendicular(LR14 期門連自己的禁忌欄都與自己的針法欄互相矛盾)。
+// 在來源覆核完成前,fail-closed:不顯示任何一邊的數字,改顯示衝突聲明。
+// 顯示較淺的一邊等於替臨床選邊,顯示兩邊等於邀請讀者挑深的那個 —— 兩者都不做。
+function needlingDepthConflict(point) {
+  const ranges = (s) => {
+    const out = [];
+    const re = /(\d+(?:\.\d+)?)\s*[–\-~至]\s*(\d+(?:\.\d+)?)\s*(?:cun|寸|吋)/gi;
+    let m; while ((m = re.exec(s))) out.push(parseFloat(m[2]));
+    if (!out.length) { const one = /(\d+(?:\.\d+)?)\s*(?:cun|寸|吋)/gi; let s1; while ((s1 = one.exec(s))) out.push(parseFloat(s1[1])); }
+    return out;
+  };
+  // 「胸背部穴位斜刺…嚴禁直刺過深」是整條經共用的條件句(GB29–GB43 的膽經肢體穴
+  // 全都被貼上這句),它講的是胸背部穴位,不是這一穴。把條件句當成本穴禁令會在
+  // 丘墟、俠溪這種四肢穴上誤報,誤報會讓整個警告失去可信度 —— 先剔除再判斷。
+  const dropScoped = (s) => s.split(/[。\n]/).filter((t) => !/胸背部穴位|背部穴位/.test(t)).join("。");
+  const zhOwn = dropScoped([point.techniqueNotes, point.acumethodZh].filter(Boolean).join(" "));
+  const zhText = dropScoped([point.techniqueNotes, point.acumethodZh, point.cautions].filter(Boolean).join(" "));
+  const enText = String(point.acumethodEn || "");
+  if (!zhText || !enText) return null;
+  const zhMax = Math.max(...ranges(zhText), -Infinity);
+  const enMax = Math.max(...ranges(enText), -Infinity);
+  // 中文卡自己打自己:針法欄寫「直刺 0.3-0.5 寸」,禁忌欄寫「嚴禁直刺」(LR14 期門)。
+  // 這與語言無關,兩邊讀者看到的都是自相矛盾的卡,也不必比對英文就能判定。
+  // 危險區判定用「這一穴的文字自己講了什麼器官」,不用穴位代碼名單 —— 名單是我
+  // 手寫的,會漏;文字是有來源的。足通谷差 0.2 寸在腳趾上,與膏肓差 0.3 寸在肺上,
+  // 不是同一件事:前者藏起數字只損失可用性,後者藏起數字才是安全的一邊。
+  const hazard = /氣胸|傷及肺|肺臟|內臟|心臟|肝脾|大血管|動脈|眼球|眶|延髓|脊髓|胸腔|腹腔/.test(zhText)
+    || /pneumothorax|lung|pleura|artery|eyeball|orbit|spinal cord|medulla|cardiac|heart|viscera/i.test(enText);
+  const mark = (t) => (hazard ? t : t + "-soft");
+  const zhForbidsPerp = /嚴禁直刺|不可直刺|禁直刺|不宜直刺|僅可斜刺|只可斜刺/.test(zhText);
+  if (zhForbidsPerp && /直刺\s*\d/.test(zhOwn)) return mark("self");
+  // 英文側的 perpendicular 必須是「指示」而不是「警告」:多數英文欄長成
+  // 「Oblique insertion … CAUTION: deep perpendicular insertion risks pneumothorax」,
+  // 對整串做 /perpendicular/ 會把警告讀成許可,在兩邊其實一致的穴上誤報衝突。
+  const enInstruction = enText.split(/CAUTION|⚠|Contraindicat/i)[0];
+  if (zhForbidsPerp && /perpendicular/i.test(enInstruction)) return mark("angle");
+  if (Number.isFinite(zhMax) && Number.isFinite(enMax) && enMax > zhMax + 0.05) return mark("depth");
+  return null;
+}
+
 function needlingArticle(point) {
   const parts = [];
+  const rawConflict = needlingDepthConflict(point);
+  // -soft = 兩份來源確實不一致,但文字裡沒有任何器官風險(多為四肢穴、差距 0.2-0.3 寸)。
+  // 這種情況照常顯示數字,只在下面附一句提醒;只有危險區才 fail-closed 藏數字。
+  const softConflict = typeof rawConflict === "string" && rawConflict.endsWith("-soft");
+  const depthConflict = softConflict ? null : rawConflict;
+  if (softConflict) {
+    parts.push(contentMode === "english"
+      ? "NOTE: the Chinese and English sources give different depth figures for this point; the Chinese figure is the shallower one. Verify before needling."
+      : "提醒:本穴中英文來源的深度數字不一致(中文較淺),進針前請查證。");
+  }
+  if (depthConflict) {
+    parts.push(contentMode === "english"
+      ? {
+          self: "⚠️ SOURCE CONFLICT — DO NOT USE AS A NEEDLING GUIDE\nThis card contradicts itself: its technique field prescribes perpendicular insertion while its own contraindication field forbids it. Numeric technique is withheld until the sources are reconciled. Consult a verified text.",
+          angle: "⚠️ SOURCE CONFLICT — DO NOT USE AS A NEEDLING GUIDE\nThis point's two sources disagree on insertion angle: the Chinese source forbids perpendicular insertion, the English one prescribes it. Numeric technique is withheld until the sources are reconciled. Consult a verified text.",
+          depth: "⚠️ SOURCE CONFLICT — DO NOT USE AS A NEEDLING GUIDE\nThis point's two sources disagree on insertion depth (the English figure is deeper). Numeric technique is withheld until the sources are reconciled. Consult a verified text.",
+        }[depthConflict]
+      : {
+          self: "⚠️ 來源衝突 —— 禁止作為臨床進針指引\n本卡自相矛盾:針法欄寫直刺,而本卡自己的禁忌欄寫嚴禁直刺。在來源覆核完成前不顯示數字。請查證教材。",
+          angle: "⚠️ 來源衝突 —— 禁止作為臨床進針指引\n本穴兩份來源對進針角度的敘述不一致(中文禁直刺而英文指示直刺),在來源覆核完成前不顯示數字。請查證教材。",
+          depth: "⚠️ 來源衝突 —— 禁止作為臨床進針指引\n本穴兩份來源對進針深度的敘述不一致(英文側較深),在來源覆核完成前不顯示數字。請查證教材。",
+        }[depthConflict]);
+  }
   if (contentMode === "english") {
-    if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
+    if (depthConflict) { /* 數字已被 fail-closed 抑制,見函式頂端 */ }
+    else if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
     else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
     // 2026-08-12:21 個穴位的中文艾灸欄本身就是禁灸聲明(「不宜運用灸法」),
     // 而英文欄寫著通用的「Moxibustion applicable: 3-5 moxa cones…」。名單是
@@ -5019,7 +5086,8 @@ function needlingArticle(point) {
     if (enParts.length) parts.push(`CONTRAINDICATIONS:\n${enParts.join("\n")}`);
     else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
-    if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
+    if (depthConflict) { /* 數字已被 fail-closed 抑制,見函式頂端 */ }
+    else if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
     else if (point.techniqueNotes) parts.push(`【針刺法】\n${point.techniqueNotes}`);
 
     if (point.needleSensationZh) parts.push(`【針感】\n${point.needleSensationZh}`);
