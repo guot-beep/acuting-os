@@ -4978,7 +4978,16 @@ function needlingArticle(point) {
     if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
     else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
     if (point.moxaEn) parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
-    if (point.cautionsEn && point.cautionsEn.length) parts.push(`CONTRAINDICATIONS:\n${point.cautionsEn.join("\n")}`);
+    // cautionsEn arrives in BOTH shapes: an array from records whose
+    // contraindications_en is a list, and a plain string from 206 of the 947
+    // points (all of EX-UE6..UE17, EX-LE*, and others). `.join` on a string
+    // threw TypeError, so English mode silently lost the contraindications
+    // block on exactly those points — the safety text, on the language where
+    // the reader is least able to fall back to the Chinese field.
+    const cautionsEnText = Array.isArray(point.cautionsEn)
+      ? point.cautionsEn.filter(Boolean).join("\n")
+      : (typeof point.cautionsEn === "string" ? point.cautionsEn.trim() : "");
+    if (cautionsEnText) parts.push(`CONTRAINDICATIONS:\n${cautionsEnText}`);
     else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
     if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
