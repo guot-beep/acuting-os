@@ -312,7 +312,8 @@
 
   <div class="card" id="outputSection">
     <h2>完成 Done</h2>
-    <p class="card-sub">請將資料交給醫師：讓醫師掃描 QR，或按「複製」後貼給醫師 Hand this to your practitioner — let them scan the QR code, or press Copy and send it to them</p>
+    <p class="card-sub">請於<strong>診所現場</strong>出示下方 QR 碼讓醫師掃描。QR 掃不了時,才在醫師面前按「複製」直接交付。<br />Show the QR code below to your practitioner <strong>in the clinic</strong>. Only if the QR cannot be scanned, press Copy and hand it over in person.</p>
+    <p class="card-sub" style="color:#8a1f1f"><strong>⚠️ 內容含健康資料</strong>——請勿透過簡訊、Email、LINE、Messenger 等一般通訊軟體傳送。<br /><strong>This contains health information</strong> — do not send it by SMS, email, or messaging apps.</p>
     <button type="button" class="secondary" id="copyBtn">複製內容 Copy</button>
     <div id="copyStatus" aria-live="polite"></div>
     <div id="qrWrap"><canvas id="qrCanvas"></canvas></div>
@@ -775,8 +776,14 @@
         return;
       }
 
+      // SOL P1 transport review(2026-08-12):payloadId 供 import 端防重放,
+      // formVersion 供欄位演進;非加密、非簽章 —— v0 的傳輸邊界是「診所現場
+      // QR 掃描」,不是把 payload 變成可安全外傳的信物。
+      var payloadId = "pv-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
       var payload = {
         kind: "acuting-previsit-v1",
+        formVersion: 1,
+        payloadId: payloadId,
         patientCode: patientCode,
         filledAt: new Date().toISOString(),
         metrics: metrics,

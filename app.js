@@ -8368,6 +8368,19 @@ function validatePrevisitPayload(raw) {
   if (typeof data.patientCode !== "string") {
     return { error: "patientCode 必須是文字。patientCode must be a string." };
   }
+  // SOL P1 transport review(2026-08-12):formVersion/payloadId/filledAt 為
+  // v0 之後的必要欄位;缺 filledAt 或格式壞 → 整筆拒收(過期/重放規則靠它)。
+  // formVersion 目前只接受 1;缺 formVersion/payloadId 視為舊版頁面產物,
+  // 不直接拒收,由 import 端以人工覆核處理(見 pastePrevisitImport)。
+  if (data.formVersion !== undefined && data.formVersion !== 1) {
+    return { error: `formVersion ${JSON.stringify(data.formVersion)} 不支援,整筆拒收。Unsupported formVersion.` };
+  }
+  if (data.filledAt !== undefined) {
+    const t = Date.parse(data.filledAt);
+    if (!Number.isFinite(t)) {
+      return { error: "filledAt 不是合法時間,整筆拒收。filledAt is not a valid timestamp." };
+    }
+  }
   const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
   const checkedMetrics = [];
   for (let i = 0; i < rawMetrics.length; i++) {
@@ -8398,6 +8411,8 @@ function validatePrevisitPayload(raw) {
   return {
     data: {
       patientCode: data.patientCode,
+      payloadId: typeof data.payloadId === "string" ? data.payloadId : "",
+      filledAt: typeof data.filledAt === "string" ? data.filledAt : "",
       metrics: checkedMetrics,
       subjectiveText: typeof data.subjectiveText === "string" ? data.subjectiveText.trim() : "",
       patientPerspective: typeof data.patientPerspective === "string" ? data.patientPerspective.trim() : "",
@@ -8438,6 +8453,38 @@ function pastePrevisitImport() {
     return;
   }
   const data = result.data;
+
+  // SOL P1 transport review(2026-08-12)硬規則,順序:比對 → 過期 → 重放。
+  // 1. patientCode 硬比對:與目前開啟病例逐字相等,錯一個字就整筆拒收
+  //    (不是提醒)—— wrong-patient prefill 是這條動線最危險的錯誤。
+  const openCase = clinicalCases.find((c) => c.id === selectedCaseId);
+  if (!openCase || data.patientCode !== openCase.patientCode) {
+    alert(`診前資料拒收:payload 的 patientCode「${data.patientCode}」與目前開啟病例「${openCase ? openCase.patientCode : "(無)"}」不一致。\n請先開啟正確病人的病例再匯入。Rejected — patientCode does not match the open case.`);
+    return;
+  }
+  // 2. 過期/未來時間 → 人工覆核(confirm),不是靜默接受:診前資料超過 72
+  //    小時通常已不是「這次就診」的狀態;未來時間代表裝置時鐘或 payload 有問題。
+  const PREVISIT_MAX_AGE_MS = 72 * 60 * 60 * 1000;
+  if (data.filledAt) {
+    const age = Date.now() - Date.parse(data.filledAt);
+    if (age > PREVISIT_MAX_AGE_MS || age < -(10 * 60 * 1000)) {
+      const ok = window.confirm(`⚠️ 診前資料填寫時間為 ${data.filledAt},${age < 0 ? "在未來(裝置時鐘異常?)" : "已超過 72 小時"}。\n內容可能不反映今日狀態 —— 確定仍要匯入並逐欄覆核?`);
+      if (!ok) return;
+    }
+  } else {
+    const ok = window.confirm("⚠️ 這份診前資料沒有填寫時間戳(舊版頁面產物?)。確定仍要匯入並逐欄覆核?");
+    if (!ok) return;
+  }
+  // 3. 重放防護:同一 payloadId 本次開機期間只接受一次;重複匯入需明確確認。
+  //    (跨 session 重放由 72h 過期規則涵蓋;不為此開新的持久層。)
+  window.__previsitImportedIds = window.__previsitImportedIds || new Set();
+  if (data.payloadId) {
+    if (window.__previsitImportedIds.has(data.payloadId)) {
+      const ok = window.confirm("⚠️ 這份診前資料(相同 payloadId)本次已匯入過。重複匯入會再次覆蓋表單欄位 —— 確定?");
+      if (!ok) return;
+    }
+    window.__previsitImportedIds.add(data.payloadId);
+  }
   const filledLabels = [];
 
   data.metrics.forEach((m) => {

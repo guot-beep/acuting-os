@@ -104,6 +104,15 @@ function validatePayload(rawText, config, registry) {
   if (typeof data.patientCode !== "string") {
     errors.push(`patientCode 必須是文字（實際型別："${typeof data.patientCode}"）。patientCode must be a string (got type: "${typeof data.patientCode}").`);
   }
+  // SOL P1 transport review(2026-08-12):與 app.js validatePrevisitPayload
+  // 同步 —— formVersion 若存在只接受 1;filledAt 若存在必須可解析。
+  // (patientCode 硬比對/72h 過期/payloadId 重放屬 import 端規則,不在 shape 層。)
+  if (data.formVersion !== undefined && data.formVersion !== 1) {
+    errors.push(`formVersion ${JSON.stringify(data.formVersion)} 不支援。Unsupported formVersion.`);
+  }
+  if (data.filledAt !== undefined && !Number.isFinite(Date.parse(data.filledAt))) {
+    errors.push("filledAt 不是合法時間。filledAt is not a valid timestamp.");
+  }
 
   const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
   if (data.metrics !== undefined && !Array.isArray(data.metrics)) {

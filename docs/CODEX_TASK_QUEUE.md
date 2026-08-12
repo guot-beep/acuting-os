@@ -1,5 +1,24 @@
 # Codex Task Queue
 
+## 佇列(SOL 2026-08-12 路由:Clinical 不開新輪,轉 transport + landing)
+
+依序:R15 seam 增量覆核(小)→ **P1 transport audit** → **branch landing audit**。
+
+### P1 transport audit(SOL 指定高價值)
+對象:previsit.html payload(formVersion/payloadId/filledAt)+ app.js
+pastePrevisitImport 三道硬規則 + scripts/validate-previsit-payload.js。
+攻擊面:wrong-patient match(逐字比對繞過?)、stale/replayed payload
+(72h/未來/缺時戳/同 payloadId)、clipboard/QR 處理、malformed free text
+(注入 HTML/超長/控制字元進 subjective 預填)。契約見
+docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §7。全綠 → 解除「真實病人使用」PAUSE。
+
+### branch landing audit(SOL 指定)
+main → codex/pattern-v2 已 280+ commits。審 landing plan:merge-base 盤點、
+generated file 決定論、migration/export/import rehearsal、production smoke、
+DEPLOY_CLOUDFLARE 六 gate。CI 綠(剩 4 formula holds,3 個等 Ting)後執行。
+
+---
+
 ## ⚡ NEXT TASK: C2B-R15 seam 增量覆核(小,非新輪)
 
 R14 六軸 GO 之後 clinical-store.js 有兩筆**已落地**變更,exact-SHA 對照基準
