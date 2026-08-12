@@ -1,3 +1,87 @@
+# 2026-08-12 夜班 Fable — MORNING HANDOFF 最終版(取代下方稍早那份)
+
+**起始** `513971b` → **結束** `f9a71df`。我的 commits **10 個**。
+真實 clinical store 讀/寫 = **0 / 0**。未 merge main、未 deploy、未 pointer switch、
+未碰真實病人資料、未 `git add -A`、未動 curriculum 與他人 dirty work。
+
+## 你起床後的第一件事(只有一件)
+
+**開 Codex session,叫它讀 `docs/CODEX_HANDOFF.md` 置頂的 P1 focused retest 派工並執行。**
+那是唯一擋住 P1 GO 的東西。其餘(clinical smoke、P4 演練、landing plan、exact-SHA 驗證)
+今晚都做完了。
+
+## 今晚做了什麼(三件實質的)
+
+**1. P1 的 3 HIGH + 4 MED 全修** — 根因是同一份 shape 規則在 app.js 與 CLI 各寫一份、
+必然漂移,而 blocking self-test 只跑 CLI 那份(所以 app 端漂移能在全綠底下存活)。
+修法不是補七個洞,是**消滅第二份規則**:新增 `js/previsit-validator.js` 為唯一 shape 尺,
+兩邊委派,self-test 跑的就是 app 執行的程式碼;另加結構性 parity 守衛(負面對照過)。
+self-test `3 good + 14 bad` → **`3 good + 22 bad ALL PASS`**。
+
+**2. 計畫外抓到並修掉一個會讓 app 開不起來的當機** — 病例只要帶 `adverseEvents`,
+首次 render 就撞上 `ADVERSE_EVENT_INTERVENTION_LABELS` 的 TDZ,**整個 app.js 頂層拋例外**。
+資料相依,所以之前沒人踩到;同類 8/11 已中過一次。這次不逐個修:5 個 const 全部前移
++ 新增 `scripts/validate-boot-order.js` 永久封死整個 bug class,已進 blocking CI。
+
+**3. 掃出一個看不見的資料損壞並加了永久攔截** — CloudTCM 抓取的 SP21 文字裡混入
+U+0008 backspace(「…肋間神經痛等\b症狀…」),被複製到 4 個檔共 13 處。
+`validate-content-junk` 加了第四道檢查(控制字元/bidi,掃所有欄位),
+以 ratchet 形式凍結既有 8 處、只擋新增(負面對照過)。
+
+## 資料修復請求 → 穴位線(不是我的路徑,我沒有代改)
+
+`data/acupoints/**` 的 8 處 U+0008,全部同源。修法只有一種:**刪掉那個字元**,
+不要改寫周圍句子。清完把 `scripts/validate-content-junk.js` 的
+`KNOWN_CONTROL_CHAR_DEFECTS` 調成 0(validator 每次執行都會印出確切位置與建議數字)。
+受影響:`data/acupoints/361.json`(SP21 的 evidence / cloudtcm_detail /
+modern_research_zh / modern_research_en)、`meridian_sp.json`、
+`imports/cloudtcm/points/SP21.json`、`staging_points.json`。
+
+## 驗證數字(全部可一行重現)
+
+**最終 SHA `f9a71df` 本機 17/17 全綠、0 失敗**:syntax ×4、build-data + generated 決定論、
+boot-order、content-junk、formula `no blocking`、clinical PHI、clinical invariants、
+AVS lib、AVS E2E `59/59`、P1 self-test `3+22`、pointer runtime `31/31`、
+runtime restore `65/65`、C2b rehearsal `full cycle green`、ratchet、relations、
+interactions、diff --check。
+
+**P4 synthetic rehearsal**(全合成,Patient A 2 cases/7 visits + Patient B 隔離):
+完整走 create→save→reload→edit→new visit→export→wipe→import→reload→compare,
+**export/import = SEMANTIC LOSSLESS**(所有追蹤事實逐項相同);
+一 patient 多 case ✅、A/B 隔離 ✅、canonical id 5/5 ✅、append-only 事件史 ✅、
+AVS `v1:superseded + v2:finalized` ✅、編輯與新增 visit 存活 ✅。
+
+**GitHub CI —— 要分清楚兩件事**:
+- `dab9ae8`(含程式碼的 commit)= **真全綠**,4 jobs success、green job 跑滿 34 步,
+  含 boot-order / AVS ×2 / P1 四道新 gate。run `31583284316`。
+- docs-only 的 commit(如 `b5c9c6d`)preflight 正確跳過重 validators ——
+  **那個綠燈不代表全 CI 通過**,我沒有拿它當證據(這是你提醒過的陷阱)。
+- `f9a71df` 是 code commit,CI 應會跑全套;起床時可直接看它的 run 結果。
+
+## Landing 形狀(比昨天好)
+
+日班已把 main 併進分支(`ce00e95`),**main-only 2 → 0**,branch-only 382 ——
+從「互有分歧需三方合併」變成單向前進。我的 landing audit
+(`docs/LANDING_AUDIT_2026-08-12_OPUS.md`)含降落機制、rollback、production smoke
+清單;日班在附錄記了 knowledge.js UI 區塊的雙層驗證。
+
+## 剩餘風險
+
+- **HIGH:0**。
+- **MED-1**:P1 GO 尚未由 Codex 獨立確認 —— 我的七項修復未經第二雙眼睛。
+- **MED-2**:`data/acupoints` 那 8 處控制字元待穴位線清除(已被 ratchet 圍住,不會擴散)。
+- **LOW-1**:`docs/AI_WORK_HANDOFF.md` 落後實際 branch,尚未整理。
+- **LOW-2**:Git Review 我去找過 —— PR #59 上只有 Cloudflare bot 與你自己的留言,
+  沒有可消化的審核產出。
+
+## 裁決
+
+- **MAIN LANDING = NO-GO**(等 P1 Codex GO + 對候選 SHA 的全綠 CI;機制已寫好)。
+- **PRODUCTION = NO-GO**(landing 未發生;真實病人 migration/pointer switch 是
+  另一條需獨立演練與授權的線)。
+- **P1 真實病人使用 = PAUSE 維持**(技術面我這邊已備妥,解除是臨床/法遵判斷)。
+
+
 # 2026-08-12 夜班 Fable — MORNING HANDOFF(Ting 起床先讀這段)
 
 **起始 SHA** `513971b` → **結束 SHA** `b5c9c6d`。我的 commits **7 個**
