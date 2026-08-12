@@ -218,3 +218,32 @@ UI 還原)。已於 `ce00e95` 把 `origin/main` 併入分支,**main-only 由 2 �
 **注意(給下一位驗證者)**:這些區塊在方劑卡的分頁內,列表頁看不到 ——
 用「頁面文字有沒有出現現代應用」當驗證會得到假陰性。要開卡並切到對應分頁,
 或如本次直接確認模板字串位於分頁 content 內。
+
+---
+
+## 降落就緒狀態(Fable 覆核,2026-08-12 夜;每列可一行重現)
+
+本節只陳述「量到什麼」。**降落動作本身仍需 Ting 明確授權** —— 不 merge、不 push main、不 deploy。
+
+| 條件 | 值 | 重現 |
+|---|---|---|
+| branch HEAD | `7d69dd6` | `git rev-parse --short HEAD` |
+| main-only commits | **0**(本文前段量到 2,已於 `ce00e95` 整合) | `git rev-list --left-right --count origin/main...HEAD` |
+| branch-only commits | 429 | 同上 |
+| main 是否為祖先 | **是**(降落已是單向前進,不再需要三方合併) | `git merge-base --is-ancestor origin/main HEAD; echo $?` → 0 |
+| PR #59 `mergeable_state` | **clean**(可合併 + 全部檢查綠) | `gh`/API `pulls/59` |
+| 最近 4 次 CI | 全 success | API `actions/runs` |
+| 方劑阻斷 | **0** | `node scripts/validate-formula-standard.js` |
+| 條件阻斷 | **4**(僅 C5,3 張卡;非本日引入) | `node scripts/validate-condition-standard.js` |
+| ratchet | PASS(基準已鎖 4) | `node scripts/check-validation-ratchet.js` |
+| Clinical 套件 | 31/31 · 65/65 | pointer-runtime / rehearse-runtime-restore |
+| main 側 UI 區塊 | 已驗證存活於分頁渲染路徑(見本文附錄) | 見附錄 |
+
+### 仍未滿足、屬他人職權的兩項
+
+1. **Codex P1 focused retest** —— 它上一輪判 NO-GO 的 3 HIGH + 4 MED 已修並落地(`aaf8b81`,單一共用驗證器 `js/previsit-validator.js`;對抗性 fixture 14 → 22),Fable 已在活體 app 獨立打壞資料覆驗(物件冒充陣列的 metrics、9007199254740993、1e308、白名單外 metricId、`filledAt:"0"` 全部整筆拒收零預填;CR 被剝除)。**改判 GO 是 Codex 的職權,不是工程單方宣告。**
+2. **P4 rehearsal** —— 依 SOL 收斂序位於 landing 之前。
+
+### 降落前最後一次必做(因為它會靜默失效)
+
+`mergeable_state` 必須在**執行降落的當下**重新確認為 `clean`。main 會被其他線推進(內容線經 antigravity worktree 的 update.bat 推 main 是既有流程),而 **PR 一旦與 main 衝突,GitHub 連 workflow run 都不會建立** —— 沒有紅叉,gate 無聲消失。2026-08-12 實際發生過約 3 小時。
