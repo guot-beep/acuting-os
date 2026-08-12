@@ -329,14 +329,21 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
 
   function canonicalizeForScan(text) {
     let t = String(text || "");
-    for (let i = 0; i < 4; i++) {
+    // Codex retest#2 修復:必須解碼到「真正的定點」,不是「最多 N 次」。
+    // render 的 esc() 對 patientCode 多加一層 & 轉義,HTML 側需要的解碼
+    // passes 比原始字串多一層;寫死 4 次上限時,含多層 &amp; 的 patientCode
+    // 在 HTML 側停在半解碼,與完全解碼的 code 對不上 → 洩漏。每次
+    // &amp;→& 都嚴格縮短字串,while 迴圈必然終止;上界取字串長度(每輪至少
+    // 消一個字元才可能繼續),純粹是 DoS backstop,正常內容一兩輪就收斂。
+    const maxPasses = t.length + 1;
+    for (let i = 0; i < maxPasses; i++) {
       const prev = t;
       t = t
         .replace(/&#x([0-9a-f]+);?/gi, (m, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return m; } })
         .replace(/&#(\d+);?/g, (m, d) => { try { return String.fromCodePoint(Number(d)); } catch { return m; } })
         .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, '"').replace(/&apos;|&#39;/gi, "'")
         .replace(/&amp;/gi, "&");
-      if (t === prev) break;   // 解碼到定點
+      if (t === prev) break;   // 真定點:再解也不變
     }
     return t.toLowerCase();
   }

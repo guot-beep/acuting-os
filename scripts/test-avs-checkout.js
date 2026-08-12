@@ -236,6 +236,20 @@ console.log("Codex regression — HIGH-3 canonical scanner probes");
   // 乾淨輸出零誤報(新尺不能把合法文件掃紅)
   const clean = draftFor(makeCase(), note);
   assert(AVS.checkPatientOutputSafety(AVS.renderPatientHtml(clean, { visitDate: "2026-01-15" }), makeCase()).length === 0, "clean patient output has zero false positives under canonical scanner");
+
+  // Codex retest#2 — 深層巢狀 entity 繞過:patientCode 是含多層 & 的合法
+  // 自由字串,render 的 esc() 再加一層,舊版 4-pass 上限讓 HTML 側停在
+  // 半解碼、對不上 → hits=[]。修復後解碼到真定點,仍須抓到。
+  for (const code of ["P&&&&&1", "P&amp;&amp;X", "A&&B&&C&&D&&9"]) {
+    const deepCase = makeCase({ patientCode: code });
+    const dd = draftFor(deepCase, note);
+    dd.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: `文件誤植病歷代碼 ${code}。` });
+    const h = AVS.renderPatientHtml(dd, { visitDate: "2026-01-15" });
+    assert(AVS.checkPatientOutputSafety(h, deepCase).includes(code), `deep-nested-entity patientCode "${code}" caught after fixpoint decode`);
+  }
+  // 定點解碼終止性(DoS backstop):超長 &amp; 鏈不掛、可回傳
+  const bomb = "&amp;".repeat(2000) + "P-BOMB";
+  assert(typeof AVS.canonicalizeForScan(bomb) === "string", "canonicalizeForScan terminates on a long entity chain");
 }
 
 console.log("Codex regression — HIGH-1 avsHistoryExtends (merge comparator)");
