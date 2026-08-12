@@ -36,6 +36,7 @@
         <div class="nav-group">
           <p class="nav-group__title" data-mode-text data-bilingual="臨床 Clinical" data-english="Clinical">臨床 Clinical</p>
           <a href="#ws/cases" data-ws="cases" class="nav-sub" data-mode-text data-bilingual="病例 Cases" data-english="Cases">病例 Cases</a>
+          <a href="#ws/patients" data-ws="patients" class="nav-sub" data-mode-text data-bilingual="病人 Patients" data-english="Patients">病人 Patients</a>
           <a href="#billingSection" class="nav-sub" data-mode-text data-bilingual="保險 Billing" data-english="Billing">保險 Billing</a>
         </div>
 
@@ -569,6 +570,38 @@
           <section class="case-detail-panel" id="caseDetail"></section>
         </div>
         <p class="note" data-mode-text data-bilingual="病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。" data-english="Clinical case records are currently stored locally in this browser. Use patient_code and avoid full names, full birth dates, phone numbers, addresses, insurance details, or other directly identifying information.">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
+      </section>
+
+      <!-- Patient Longitudinal Workspace W1 (docs/PATIENT_WORKSPACE_DESIGN_v1.md).
+           Read-only view over getPatientsView() bridge — one row per
+           patientCode, joined back to clinicalCases by caseIds. No new
+           write path lives in this section. -->
+      <section class="case-workspace" data-workspace="patients" id="patientsWorkspace" aria-label="病人縱貫工作區 Patient Longitudinal Workspace">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Patient Longitudinal Workspace</p>
+            <h2 data-mode-text data-bilingual="病人總覽 / Patient Workspace" data-english="Patient Workspace">病人總覽 / Patient Workspace</h2>
+          </div>
+          <span class="data-pill" data-mode-text data-bilingual="唯讀衍生視圖" data-english="Read-only derived view">唯讀衍生視圖</span>
+        </div>
+        <nav class="section-quicknav" aria-label="Patient workspace quick navigation">
+          <a href="#patientListPanel">Patient List</a>
+          <a href="#patientDetail">Selected Patient</a>
+        </nav>
+        <div class="case-toolbar" id="patientToolbar">
+          <input id="patientSearch" type="search" placeholder="搜尋 patient code..." />
+        </div>
+        <div class="case-grid">
+          <aside class="case-list-panel" id="patientListPanel">
+            <div class="mini-head">
+              <strong data-mode-text data-bilingual="病人列表" data-english="Patient List">病人列表</strong>
+              <small id="patientResultCount">0 patients</small>
+            </div>
+            <div id="patientList" class="case-list"></div>
+          </aside>
+          <section class="case-detail-panel" id="patientDetail"></section>
+        </div>
+        <p class="note" data-mode-text data-bilingual="病人視圖只顯示 patient_code，不顯示任何姓名欄位；跨病例的資料落差（衝突/待審）原樣呈現，不代為判斷。" data-english="The patient view shows patient_code only — never a name field. Cross-case data conflicts and review flags are shown verbatim, never silently resolved.">病人視圖只顯示 patient_code，不顯示任何姓名欄位；跨病例的資料落差（衝突/待審）原樣呈現，不代為判斷。</p>
       </section>
 
     </main>

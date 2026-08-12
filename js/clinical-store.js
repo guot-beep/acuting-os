@@ -423,6 +423,18 @@
     });
   }
 
+  /* ---- Patient Longitudinal Workspace W1(docs/PATIENT_WORKSPACE_DESIGN_v1.md
+   * §1)the ONE bridge:UI 只認這個出口,不知道自己活在哪個世界。
+   * 切換前(v1/absent):即時 derive(不落盤)。切換後(v2):讀 staging
+   * envelope 的 patients(syncPendingPatients 寫入的 canonical-id 版)。
+   * 純加法 —— 不改動上面 derivePatientsFromCases 或任何既有函式一個字;
+   * 複用 readStagingEnvelopeOrThrow 走同一套 fail-loud 邊界(envelope 缺失/
+   * 毀損一樣 throw,不靜默回空清單)。零寫入:只讀,不碰 backend/writeKey。 */
+  function getPatientsView(cases) {
+    if (activeIsV2()) return readStagingEnvelopeOrThrow("getPatientsView").patients;
+    return derivePatientsFromCases(cases);
+  }
+
   /* ---- C2b P3:shadow writer(Codex P3 規格,docs/AI_REVIEW_FEEDBACK.md)----
    * 鐵律:
    *   1. v1 key 永不寫。這個區塊唯一可寫的 keys = STAGING_KEY 與 POINTER_KEY
@@ -875,6 +887,7 @@
     switchPointer,
     rollbackMigration,
     derivePatientsFromCases,
+    getPatientsView,
     STORAGE_KEY,
     load,
     save,

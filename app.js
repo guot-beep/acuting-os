@@ -701,6 +701,7 @@ const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Suppleme
 const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
 const ENV_EXPOSURE_CERTAINTY_LABELS = { suspected: "疑似 Suspected", patient_reported: "病人自述 Patient reported", confirmed: "已確認 Confirmed" };
 const ENV_EXPOSURE_TIMING_LABELS = { ongoing: "持續中 Ongoing", historical: "過去 Historical", unknown: "不確定 Unknown" };
+let selectedPatientCode = "";   // Patient Workspace W1 — read-only, list selection only
 let editingCaseId = null;
 let editingSoapId = null;
 let isSyncingPointHash = false;
@@ -778,6 +779,10 @@ const homeSearch = document.querySelector("#homeSearch");
 const caseList = document.querySelector("#caseList");
 const caseDetail = document.querySelector("#caseDetail");
 const caseResultCount = document.querySelector("#caseResultCount");
+const patientSearch = document.querySelector("#patientSearch");
+const patientList = document.querySelector("#patientList");
+const patientDetail = document.querySelector("#patientDetail");
+const patientResultCount = document.querySelector("#patientResultCount");
 const caseDialog = document.querySelector("#caseDialog");
 const caseForm = document.querySelector("#caseForm");
 const soapDialog = document.querySelector("#soapDialog");
@@ -1181,6 +1186,7 @@ soapForm.addEventListener("submit", saveSoapFromForm);
 deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
 caseSearch.addEventListener("input", () => { learnFromMode = false; renderClinicalCases(); });
+patientSearch?.addEventListener("input", () => renderPatientsWorkspace());
 document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
   learnFromMode = !learnFromMode;
   e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
@@ -1786,6 +1792,7 @@ function render() {
   renderDatabaseHealth();
   renderKnowledgeCounts();   // CS2
   renderClinicalCases();
+  renderPatientsWorkspace();   // Patient Workspace W1
   renderBackupBanner();   // CS1
   renderDirectoryFilters();
   renderSystemToggleDrawer();
@@ -6534,6 +6541,257 @@ function getFilteredClinicalCases() {
       ])
     ].join(" ").toLowerCase();
     return haystack.includes(query);
+  });
+}
+
+// ---- Patient Longitudinal Workspace W1 (docs/PATIENT_WORKSPACE_DESIGN_v1.md)
+// ----------------------------------------------------------------------------
+// Read-only. UI calls ONLY AcuTingClinicalStore.getPatientsView(cases) — never
+// derivePatientsFromCases/activeIsV2 directly (the bridge is the one seam that
+// is allowed to know which world is active). Every helper below joins back to
+// `clinicalCases` by patient.caseIds, so it works unchanged whether patients
+// came from the v1 derive or a v2 staging envelope. Zero new write paths —
+// nothing here calls save()/persistClinicalCases()/applyExposureChange().
+//
+// PHI discipline: only patientCode is ever printed. Demographics render as a
+// coarse birth-YEAR-BAND (decade), never a birth date; there is no name field
+// on the case object to begin with, so there is nothing to accidentally leak.
+//
+// Shape note (resolved ambiguity): buildMigrationPlan() nests demographic
+// fields under patient.fields{...}, while derivePatientsFromCases() (v1) and
+// syncPendingPatients() (v2 runtime creation) both put them at the top level.
+// patientFieldValue() below reads top-level first, falling back to .fields —
+// this is a read-only accommodation of an existing shape wrinkle, not a fix
+// to clinical-store.js (out of scope for W1).
+
+const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+
+function patientFieldValue(patient, key) {
+  const top = patient ? patient[key] : undefined;
+  if (top !== undefined && top !== null && top !== "") return top;
+  const nested = patient && patient.fields ? patient.fields[key] : undefined;
+  if (nested !== undefined && nested !== null) return nested;
+  return top !== undefined ? top : "";
+}
+
+function patientBirthYearBand(patient) {
+  const bym = String(patientFieldValue(patient, "birthYearMonth") || "");
+  const by = patientFieldValue(patient, "birthYear");
+  const year = bym ? Number(bym.slice(0, 4)) : (by ? Number(by) : null);
+  if (!year || !Number.isFinite(year)) return "";
+  return `${Math.floor(year / 10) * 10}s`;
+}
+
+function casesForPatient(patient) {
+  const ids = new Set(patient.caseIds || []);
+  return clinicalCases.filter((c) => ids.has(c.id));
+}
+
+function patientMostRecentVisitDate(cases) {
+  let latest = "";
+  for (const c of cases) {
+    for (const note of c.soapNotes || []) {
+      if (note.visitDate && note.visitDate > latest) latest = note.visitDate;
+    }
+  }
+  if (!latest) {
+    // No dated SOAP notes anywhere for this patient — fall back to the most
+    // recent case-level timestamp so the row still sorts sanely, rather than
+    // silently sinking to the bottom next to patients with zero data.
+    for (const c of cases) {
+      const t = (c.updatedAt || c.startDate || "").slice(0, 10);
+      if (t && t > latest) latest = t;
+    }
+  }
+  return latest;
+}
+
+function patientTrackedMetricsCount(cases) {
+  const ids = new Set();
+  for (const c of cases) for (const note of c.soapNotes || []) for (const m of note.outcomeMetrics || []) if (m.metricId) ids.add(m.metricId);
+  return ids.size;
+}
+
+function patientNeedsReview(patient) {
+  return !!((patient.needsReview && patient.needsReview.length) || Object.keys(patient.conflicts || {}).length);
+}
+
+function patientConsentSummary(cases) {
+  const vals = [...new Set(cases.map((c) => c.publicationConsent || "").filter(Boolean))];
+  if (!vals.length) return "未詢問 Not asked";
+  const label = (v) => CONSENT_LABELS[v] || v;
+  if (vals.length === 1) return label(vals[0]);
+  return `跨 case 不一致 Mixed: ${vals.map(label).join(" / ")}`;
+}
+
+function getFilteredPatientRows() {
+  const store = window.AcuTingClinicalStore;
+  if (!store || !store.getPatientsView) return { rows: [], error: "AcuTingClinicalStore.getPatientsView() 不可用" };
+  let patients;
+  try {
+    patients = store.getPatientsView(clinicalCases) || [];
+  } catch (e) {
+    // Fail loud, same spirit as loadClinicalCases()'s clinicalStoreIntegrityError
+    // path — a v2 staging envelope missing/corrupt must never silently render
+    // as "zero patients", which would look like a healthy, empty clinic.
+    return { rows: [], error: e.message };
+  }
+  const rows = patients.map((patient) => {
+    const cases = casesForPatient(patient);
+    return {
+      patient, cases,
+      mostRecentVisit: patientMostRecentVisitDate(cases),
+      trackedMetrics: patientTrackedMetricsCount(cases),
+      needsReview: patientNeedsReview(patient)
+    };
+  });
+  rows.sort((a, b) => String(b.mostRecentVisit || "").localeCompare(String(a.mostRecentVisit || "")));
+  const query = (patientSearch?.value || "").trim().toLowerCase();
+  const filtered = query ? rows.filter((r) => String(r.patient.patientCode || "").toLowerCase().includes(query)) : rows;
+  return { rows: filtered, error: null };
+}
+
+function renderPatientsWorkspace() {
+  if (!patientList || !patientDetail) return;   // section absent from this build — defensive, mirrors other optional-panel guards in this file
+  const { rows, error } = getFilteredPatientRows();
+  if (patientResultCount) patientResultCount.textContent = `${rows.length} patients`;
+  if (error) {
+    patientList.innerHTML = `<div class="case-empty">病人視圖讀取失敗<br>Patient view failed to load:<br>${escapeHtml(error)}</div>`;
+    patientDetail.innerHTML = "";
+    return;
+  }
+  if (selectedPatientCode && !rows.some((r) => r.patient.patientCode === selectedPatientCode)) selectedPatientCode = "";
+  if (!selectedPatientCode && rows.length) selectedPatientCode = rows[0].patient.patientCode;
+  patientList.innerHTML = "";
+  if (!rows.length) {
+    patientList.innerHTML = `<div class="case-empty">尚未有病人。<br>先在「病例 Cases」建立第一筆病例。</div>`;
+  } else {
+    rows.forEach((row) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `case-list-item ${row.patient.patientCode === selectedPatientCode ? "active" : ""}`;
+      button.innerHTML = `
+        <span>${escapeHtml(row.patient.patientCode || "No code")}</span>
+        <strong>${row.cases.length} case${row.cases.length === 1 ? "" : "s"}</strong>
+        <small>最近就診 Last visit ${escapeHtml(row.mostRecentVisit || "—")} · ${row.trackedMetrics} metrics${row.needsReview ? ' · <span class="case-tag">⚠ needsReview</span>' : ""}</small>
+      `;
+      button.addEventListener("click", () => { selectedPatientCode = row.patient.patientCode; renderPatientsWorkspace(); });
+      patientList.append(button);
+    });
+  }
+  const selected = rows.find((r) => r.patient.patientCode === selectedPatientCode) || null;
+  renderPatientDetail(selected);
+}
+
+function renderPatientCaseListHtml(cases) {
+  if (!cases.length) return `<div class="timeline-head"><strong>Case 清單</strong></div><div class="case-empty">此病人目前沒有可見病例。</div>`;
+  const cards = cases.map((c) => {
+    const notes = [...c.soapNotes].sort((a, b) => String(b.visitDate || "").localeCompare(String(a.visitDate || "")));
+    const readiness = computeCareReadiness(c, notes);
+    const pct = readiness.max ? Math.round((readiness.score / readiness.max) * 100) : null;
+    const badge = pct === null ? "" : `<span class="care-badge ${pct >= 80 ? "care-badge-good" : pct >= 50 ? "care-badge-mid" : "care-badge-low"}">${pct}%</span>`;
+    return `
+      <button type="button" class="case-list-item" data-open-case="${escapeAttribute(c.id)}">
+        <span>${escapeHtml([c.caseCategory, c.status].filter(Boolean).join(" · ") || "—")}</span>
+        <strong>${escapeHtml(c.caseTitle || "Untitled case")}</strong>
+        <small>${escapeHtml(c.startDate || "—")} · ${notes.length} SOAP ${badge}</small>
+      </button>`;
+  }).join("");
+  return `
+    <div class="timeline-head"><strong>Case 清單</strong><small class="timeline-date">${cases.length} cases</small></div>
+    <div class="case-list">${cards}</div>`;
+}
+
+function renderPatientConflictsHtml(patient) {
+  const conflicts = patient.conflicts || {};
+  const needsReview = patient.needsReview || [];
+  if (!Object.keys(conflicts).length && !needsReview.length) return "";
+  const rows = Object.entries(conflicts).map(([field, entries]) => `
+    <div class="brief-row"><small>${escapeHtml(field)}</small><span>${(entries || []).map((e) => escapeHtml(`${e.value || "(空 empty)"} [${e.caseId || "?"}${e.updatedAt ? " · " + e.updatedAt : ""}]`)).join(" vs ")}</span></div>
+  `).join("");
+  return `
+    <div class="visit-brief">
+      <div class="brief-review">
+        ⚠ 跨 case 資料落差 Cross-case data conflicts(needsReview: ${needsReview.length ? escapeHtml(needsReview.join("、")) : "0"})
+      </div>
+      <div class="brief-grid">${rows}</div>
+    </div>`;
+}
+
+function renderPatientSafetyRollupHtml(cases) {
+  const flags = [...new Set(cases.flatMap((c) => c.safetyFlags || []))];
+  return `
+    <div class="timeline-head"><strong>跨 case 警訊聚合 Safety flags</strong><small class="timeline-date">${flags.length}</small></div>
+    ${flags.length ? `<div class="case-tags">${flags.map((f) => `<span class="case-tag">${escapeHtml(f)}</span>`).join("")}</div>` : `<div class="case-empty">尚無紀錄安全旗標。</div>`}`;
+}
+
+function renderPatientAgentLedgerHtml(cases) {
+  const groups = new Map();
+  for (const c of cases) {
+    for (const e of c.agentExposures || []) {
+      const key = `${e.agentType}|${(e.agentId || e.nameText || "").toLowerCase().trim()}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push({ caseItem: c, exposure: e });
+    }
+  }
+  const header = `<div class="timeline-head"><strong>用藥/補充劑總帳 Meds &amp; Supplements ledger</strong><small class="timeline-date">${groups.size} agents</small></div>`;
+  if (!groups.size) return `${header}<div class="case-empty">尚未記錄用藥或補充劑。</div>`;
+  const rows = [...groups.values()].map((entries) => {
+    const first = entries[0].exposure;
+    const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[first.agentType] || "—";
+    const title = first.nameText || first.agentId || "未命名 Unnamed";
+    const anyCurrent = entries.some((en) => en.exposure.status === "current" || en.exposure.status === "prn");
+    const sources = entries.map((en) => {
+      const label = AGENT_EXPOSURE_STATUS_LABELS[en.exposure.status] || en.exposure.status || "—";
+      return escapeHtml(`${en.caseItem.caseTitle || en.caseItem.id}(${label})`);
+    }).join("、");
+    return `
+      <div class="agent-exposure-row">
+        <div class="agent-exposure-head">
+          <span class="agent-exposure-type-chip">${escapeHtml(typeLabel)}</span>
+          <strong>${escapeHtml(title)}</strong>
+          <span class="agent-exposure-status">${anyCurrent ? "使用中 Active" : "非使用中 Inactive"}</span>
+        </div>
+        <div class="agent-exposure-meta"><small>來源 Source cases（${entries.length}）</small><span>${sources}</span></div>
+      </div>`;
+  }).join("");
+  return `${header}<div class="agent-exposure-list">${rows}</div>`;
+}
+
+function renderPatientDetail(row) {
+  if (!row) {
+    patientDetail.innerHTML = `
+      <div class="case-empty">
+        <div>
+          <strong>Patient Longitudinal Workspace</strong>
+          <p>選一位病人查看跨病例總覽（頭卡、Case 清單、警訊聚合、用藥總帳）。</p>
+        </div>
+      </div>`;
+    return;
+  }
+  const { patient, cases } = row;
+  const sortedCases = [...cases].sort((a, b) => String(b.startDate || b.updatedAt || "").localeCompare(String(a.startDate || a.updatedAt || "")));
+  const band = patientBirthYearBand(patient);
+  const sex = patientFieldValue(patient, "sex");
+  patientDetail.innerHTML = `
+    <div class="case-detail-head">
+      <div>
+        <p class="eyebrow">${escapeHtml(patient.patientCode || "Patient")}</p>
+        <h3>${cases.length} case${cases.length === 1 ? "" : "s"} · 最近就診 ${escapeHtml(row.mostRecentVisit || "—")}</h3>
+        <div class="case-meta">${escapeHtml([band && `出生年段 Birth decade ${band}`, sex && `Sex ${sex}`, `發表同意 Consent: ${patientConsentSummary(cases)}`].filter(Boolean).join(" · "))}</div>
+      </div>
+    </div>
+    ${renderPatientConflictsHtml(patient)}
+    ${renderPatientCaseListHtml(sortedCases)}
+    ${renderPatientSafetyRollupHtml(cases)}
+    ${renderPatientAgentLedgerHtml(cases)}
+  `;
+  patientDetail.querySelectorAll("[data-open-case]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selectedCaseId = btn.dataset.openCase;
+      if (window.location.hash === "#ws/cases") { renderClinicalCases(); window.scrollTo({ top: 0 }); }
+      else window.location.hash = "#ws/cases";
+    });
   });
 }
 

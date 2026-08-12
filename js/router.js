@@ -2,7 +2,7 @@
  * router.js — workspace switcher for AcuTing OS.
  *
  * The page is organized into workspaces via section[data-workspace]:
- *   home | lookup | cases | quality | sources | learn
+ *   home | lookup | cases | patients | quality | sources | learn
  *
  * Rules:
  * - #ws/<name>            → activate that workspace, scroll to top.
@@ -15,7 +15,7 @@
  * This file deliberately does not touch app.js internals.
  */
 (function () {
-  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "pharm", "condition", "comparison", "cases", "quality", "sources"];
+  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "pharm", "condition", "comparison", "cases", "patients", "quality", "sources"];
   const DEFAULT_WS = "home";
   const sections = Array.from(document.querySelectorAll("section[data-workspace]"));
   const navLinks = Array.from(document.querySelectorAll(".workspace-nav a[data-ws]"));
