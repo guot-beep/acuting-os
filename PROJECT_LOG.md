@@ -1,3 +1,13 @@
+# 2026-08-12 Codex — Clinical P4 regression smoke `NO-GO`
+
+- **做了什麼**：只跑指定 `31/31 + 65/65` 與 W1／R15／formula-in-formula seam；不重開 Clinical 六軸，未碰產品碼／schema／真 store，暫存 harness 已清除。
+- **數字**：pointer=`31/31 PASS`、runtime restore=`65/65 PASS`、formula standard=`PASS 0 blocking`；獨立 seam=`9/12 PASS · 3 FAIL`。
+- **驗證**：W1 v1/v2 Patient bridge 皆正確且 writes=`0/0`；現行六個 F12b mutation 全擋，但新增 object-shaped expansion 可繞過。
+- **已知未解**：`1 HIGH + 1 MED`——R15/W1 parse error 回顯 raw PHI 前綴；F12b `arr()` 放行非 array `expanded_ingredients`。
+- **下一步**：固定無 raw 的錯誤訊息＋F12b 強制 array，三反例入 suite後 focused retest；P4 未 GO，且 P1 仍 `NO-GO`，不進 branch landing 執行階段。
+
+---
+
 # 2026-08-12 Codex — P1 focused retest `NO-GO`；`PAUSE` 維持
 
 - **做了什麼**：pull 後以現行 P1 seam 做檔案式獨立覆測；只寫 reviewer docs，未改產品碼／schema／AVS，真 store 讀／寫=`0/0`，暫存 harness 已清除。

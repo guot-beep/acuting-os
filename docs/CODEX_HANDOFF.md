@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-12 night] Codex Clinical P4 regression smoke — `NO-GO`（official `31/31 + 65/65`; seam `9/12`）
+
+- **Scope／endpoint**：依 queue 只做 Clinical regression smoke + W1／R15／formula-in-formula 增量 seam，不重開既有 Clinical 六軸。覆測期間 branch 因無關 formula content 前進至 `7a2e620e`；受審 blobs=`clinical-store 1810e95f`、pointer test=`10d1210e`、runtime rehearsal=`25fd5326`、formula validator=`bf077e30`，前後未漂移。reviewer 未改產品碼／schema，真 store 讀／寫=`0/0`，暫存 harness 已清除。
+- **Official regression（本輪實跑）**：`node scripts/test-pointer-runtime.js`=`31/31 PASS`、`node scripts/rehearse-runtime-restore.js`=`65/65 PASS`，兩者 exit `0`；`node scripts/validate-formula-standard.js` exit `0`、`224 formulas / 212 template-grade / no blocking defects`。既有 Clinical 六軸結論不重判。
+- **W1 bridge 正向面=`PASS`**：獨立 actual-store probe 的 v1 derive 與 v2 envelope 兩路皆回正確 Patient，backend writes=`0/0`；未找到 W1 讀路徑改寫 store 的證據。
+- **HIGH-1 — R15／W1 fail-loud 訊息回顯 raw PHI 片段**：`js/clinical-store.js` 把 `JSON.parse(...).message` 原樣拼進 v1 與 v2 corrupt-store error；V8 對 raw `PATIENT_SECRET…`／`PATIENT_STAGING_SECRET…` 實際產生含 `"PATIENT_SE"…`／`"PATIENT_ST"…` 的訊息。app 的 load 路徑把 `e.message` 放入 alert，W1 patient view 亦把它 render 到頁面；不符合 queue 要求的「throw 只含 key 名、不洩 PHI」。fail-loud／唯讀保護本身成立，但錯誤輸出邊界不成立。
+- **MED-1 — F12b 可用 object-shaped expansion 繞過 array 契約**：template §3.1 要求 `expanded_ingredients` 為非空 list；validator 卻用 `arr(c.expanded_ingredients)`，因此把單一合法 leaf object 當成一元素陣列。以現行 actual validator 注入 object 後仍 exit `0`。既有六個 mutation（缺／壞 formula_id、unknown id 無 status、空 expansion、unresolved leaf、leaf 缺名）均正確 exit `1`，但新增第七個 shape bypass 存活；current canonical 碧玉散資料本身仍是正確 array。
+- **Seam harness**：`9/12 PASS · 3 FAIL`；三個 FAIL = v1 raw error echo、v2/W1 raw error echo、object-shaped expansion 放行。故 P4 seam gate=`NO-GO`；P1 另有既存 `NO-GO`，branch landing audit 不進執行階段。
+- **下一步**：product owner 應把 parse failure 改成固定、無 raw／parser snippet 的錯誤碼或訊息，app/W1 只顯示固定文案；F12b 先 `Array.isArray(expanded_ingredients)` 再驗 leaf，object/string 必須 blocking。三反例進 suite 後只重跑 `31/31 + 65/65 + formula standard + 12 seam assertions`，不重開 Clinical 六軸。
+
+---
+
 ## [2026-08-12 night] Codex P1 focused retest — `NO-GO`; P1 `PAUSE` 維持（fresh `3 good + 22 bad`; focused `35/40`）
 
 - **Scope／exact seam**：開工先 `git pull --ff-only`=`Already up to date`，起始 checkout=`b689ed3d`；當時三個指定 blob 確認為 `app.js=002712ee`、CLI=`f724c3f9`、`previsit.html=24b68bc7`，不是 `513971b/0f59773` 舊 endpoint。覆測期間 branch 被其他安全工作推進至 `b68bf0d0`；CLI／previsit／shared validator blob 未變，`app.js` 整檔 blob 只因穴位 needling 顯示改動而變，P1 的 shape+paste／save／compute 三段與 `b689ed3d` byte-equivalent（SHA-256=`8a8926f4`／`23aca33e`／`59cb3523`）。reviewer 未改產品碼／schema／AVS，真 store 讀／寫=`0/0`，檔案式暫存 harness 已清除。
