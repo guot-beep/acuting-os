@@ -45,6 +45,14 @@ function categoryBadgesHtml(category) {
 const STORAGE_KEY = "acuting-acupoint-v3";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
+// FIX A (Dry Clinic #6) — UI-convenience-only draft autosave for the case/
+// SOAP dialogs. Deliberately separate keys from CASE_STORAGE_KEY: drafts
+// are never read/written by persistClinicalCases/loadClinicalCases, never
+// touched by export/import, and never enter the clinical store. Cleared on
+// successful save; otherwise survive a reload so a crash/F5 mid-form
+// doesn't erase 30-60 filled fields.
+const CASE_DRAFT_KEY = "acuting-draft-case-v1";
+const SOAP_DRAFT_KEY = "acuting-draft-soap-v1";
 // CS1: clinical cases live only in localStorage until the durable store lands
 // (NORTH_STAR §H2). Until then, export discipline is the only backup. This
 // meta tracks the last export + saves since, to nudge before data is lost.
@@ -787,6 +795,12 @@ const caseDialog = document.querySelector("#caseDialog");
 const caseForm = document.querySelector("#caseForm");
 const soapDialog = document.querySelector("#soapDialog");
 const soapForm = document.querySelector("#soapForm");
+// FIX A draft banner + FIX B submit-failure message line (both optional —
+// hidden by default in the markup, wired up further down).
+const caseDraftBanner = document.querySelector("#caseDraftBanner");
+const soapDraftBanner = document.querySelector("#soapDraftBanner");
+const caseSaveError = document.querySelector("#caseSaveError");
+const soapSaveError = document.querySelector("#soapSaveError");
 const agentExposureDialog = document.querySelector("#agentExposureDialog");
 const agentExposureForm = document.querySelector("#agentExposureForm");
 const environmentalExposureDialog = document.querySelector("#environmentalExposureDialog");
@@ -1183,6 +1197,16 @@ form.addEventListener("submit", saveFromForm);
 deleteBtn.addEventListener("click", deleteCurrent);
 caseForm.addEventListener("submit", saveCaseFromForm);
 soapForm.addEventListener("submit", saveSoapFromForm);
+// FIX A — throttled draft autosave (see wireDraftAutosave near openCaseEditor/
+// openSoapEditor for the read/restore/clear side of this).
+wireDraftAutosave(caseForm, CASE_DRAFT_KEY, () => editingCaseId || "new");
+wireDraftAutosave(soapForm, SOAP_DRAFT_KEY, () => `${selectedCaseId || ""}:${editingSoapId || "new"}`);
+// FIX B — native "invalid" event fires (capture phase; it does not bubble)
+// on every :invalid field when the browser blocks an attempted submit. We
+// only surface the FIRST one so the message/scroll doesn't thrash across
+// several bad fields at once.
+wireSubmitFailureFeedback(caseForm, caseSaveError);
+wireSubmitFailureFeedback(soapForm, soapSaveError);
 deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
 caseSearch.addEventListener("input", () => { learnFromMode = false; renderClinicalCases(); });
@@ -5176,7 +5200,7 @@ function normalizeClinicalCase(value) {
     westernConditions: Array.isArray(value.westernConditions) ? value.westernConditions.map(String) : splitList(String(value.westernConditions || "")),
     easternDiseases: Array.isArray(value.easternDiseases) ? value.easternDiseases.map(String) : splitList(String(value.easternDiseases || "")),
     tcmPatterns: Array.isArray(value.tcmPatterns) ? value.tcmPatterns.map(String) : splitList(String(value.tcmPatterns || "")),
-    safetyFlags: Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : splitList(String(value.safetyFlags || "")),
+    safetyFlags: Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : splitSafetyFlags(String(value.safetyFlags || "")),   // FIX C
     // D17 §5 — ONE longitudinal exposure timeline, CASE level. Each entry is a
     // ledger ROW ("this patient is/was on this agent"), not a per-visit
     // snapshot; a follow-up visit that changes a dose updates the SAME entry
@@ -5557,6 +5581,36 @@ function outcomeMetricShortLabel(metricId) {
   return zh.replace(/[（(][^）)]*[）)]/g, "").trim();
 }
 
+// FIX D (Dry Clinic #15) — outcome tracking panel row label. Some
+// label_zh/label_en values carry an internal semantic note AFTER the scale
+// parenthetical (e.g. mood: "情緒(0 最差 / 10 最好)。與 stress_level 分開:
+// 壓力是外在負荷,情緒是主觀狀態") — useful as a vocabulary-authoring
+// comment, not something a clinician scanning Baseline/Today/Change/Trend
+// needs. outcome_metrics.json has no separate short-name field (checked —
+// only label_zh/label_en/name, no name_zh), so per spec: truncate at the
+// first "(" in each language independently, same idea as
+// outcomeMetricShortLabel's regex-strip above but (a) bilingual/mode-aware
+// like outcomeMetricLabel, since this is a read-only display label, and
+// (b) a hard truncation rather than a strip-all-parens, so trailing prose
+// after the parenthetical is also dropped, not just the parenthetical
+// itself. Kept as its own function rather than changing
+// outcomeMetricShortLabel or outcomeMetricLabel in place — those still
+// serve validation-error text and the SOAP form's own input labels/Last
+// Visit at a Glance card respectively, unchanged. Baseline/Today/Change/
+// Trend values themselves are untouched — only this row's label text.
+function outcomeMetricPanelLabel(metricId) {
+  const def = getOutcomeMetricDef(metricId);
+  if (!def) return metricId;
+  const truncateAtParen = (s) => {
+    const str = String(s || "");
+    const i = str.search(/[（(]/);
+    return (i === -1 ? str : str.slice(0, i)).trim();
+  };
+  const zh = truncateAtParen(def.label_zh || def.name);
+  const en = truncateAtParen(def.label_en || "");
+  return modeText(`${zh} ${en}`.trim(), en || def.name);
+}
+
 // One-fact-one-home resolution for a metric that may still have a legacy
 // direct-field representation (only metric.effect_duration_days does, via
 // cfg.legacyField). Canonical (outcomeMetrics[]) wins whenever it exists —
@@ -5784,7 +5838,7 @@ function renderOutcomeTrackingPanel(item) {
               ? `<small class="direction-hint">${escapeHtml(OUTCOME_DIRECTION_HINT_LABELS[def.direction_good])}</small>`
               : "";
             return `<tr>
-              <td>${escapeHtml(outcomeMetricLabel(row.cfg.metricId))}${directionHint}</td>
+              <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}</td>
               <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
               <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
               <td>${escapeHtml(fmtChange(row.change))}</td>
@@ -7573,6 +7627,162 @@ function selectPoint(code) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// FIX A (Dry Clinic #6) — form draft autosave for caseDialog/soapDialog ----
+// UI convenience only: lives entirely under CASE_DRAFT_KEY/SOAP_DRAFT_KEY
+// (never CASE_STORAGE_KEY), never read by persistClinicalCases/
+// loadClinicalCases, and never touched by export/import — those all stay
+// scoped to `clinicalCases`, which a draft never becomes part of.
+//
+// serializeFormDraft/restoreFormDraft round-trip every NAMED form element
+// via FormData: plain text/number/select/textarea fields, checkbox groups
+// (raceEthnicity, previousTreatment, modalitiesPerformed — restored via the
+// existing setCheckboxGroup helper), and every link-picker's HIDDEN
+// textarea (westernConditions, tcmPatternLinks, safetyFlagLinks, etc. —
+// enhanceLinkField's setValues keeps that textarea's value in sync with the
+// chips, and `hidden` does not exclude an element from FormData). Restoring
+// those textareas' values and then re-running each controller's `sync()`
+// rebuilds the chip UI through the SAME render path used on dialog open —
+// full chip restore, not just plain fields.
+//
+// Documented boundary: the two repeatable row widgets (#lifestyleFactorRows
+// / #adverseEventRows) are NOT restored. Their rows are built from
+// `<div data-role="...">` elements with no `name` attribute by design (read
+// via collectLifestyleFactorRows/collectAdverseEventRows querying
+// data-role directly — see wireRepeatableRowContainer above), so they never
+// appear in `new FormData(form)` in the first place. A restored draft
+// leaves those two sections empty; every other field (including all chip
+// pickers and every numeric outcome metric input) is fully covered.
+function serializeFormDraft(form) {
+  const fields = {};
+  new FormData(form).forEach((value, key) => {
+    (fields[key] || (fields[key] = [])).push(String(value));
+  });
+  return fields;
+}
+
+// Known gap: FormData omits a checkbox group entirely when NOTHING in it is
+// checked, so a draft saved with e.g. raceEthnicity fully unchecked has no
+// "raceEthnicity" key at all — restoring it then leaves whatever the
+// dialog's own hydrate step already checked untouched, rather than
+// force-unchecking. Acceptable for a UI-convenience recovery feature; every
+// other field type round-trips exactly.
+function restoreFormDraft(form, fields) {
+  Object.entries(fields || {}).forEach(([key, values]) => {
+    const el = form.elements[key];
+    if (!el) return;
+    if (typeof RadioNodeList !== "undefined" && el instanceof RadioNodeList && el[0]?.type === "checkbox") {
+      setCheckboxGroup(form, key, values);
+    } else if (el.type === "checkbox") {
+      // Standalone (non-grouped) checkbox — none exist in caseForm/soapForm
+      // today, but .value alone would silently no-op on a lone checkbox
+      // (checked state is separate from its value attribute), so this is
+      // handled explicitly rather than left as a latent gap.
+      el.checked = values.includes(el.value);
+    } else {
+      el.value = values[0] ?? "";
+    }
+  });
+}
+
+function readDraft(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || !parsed.fields) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(key, context, form) {
+  try {
+    localStorage.setItem(key, JSON.stringify({
+      context,
+      savedAt: new Date().toISOString(),
+      fields: serializeFormDraft(form)
+    }));
+  } catch (e) {
+    console.error(`draft autosave failed (${key}):`, e);
+  }
+}
+
+function clearDraft(key) {
+  try { localStorage.removeItem(key); } catch { /* best-effort only */ }
+}
+
+// ~1s throttle: the first "input" after a save/restore starts a timer: any
+// further keystrokes within that window are absorbed, one write fires when
+// it elapses. Re-arms on the next input after that. getContext() is called
+// at write time (not bind time) so it always reflects whichever case/SOAP
+// note is currently open in the dialog.
+function wireDraftAutosave(form, key, getContext) {
+  let timer = null;
+  form.addEventListener("input", () => {
+    if (timer) return;
+    timer = setTimeout(() => {
+      timer = null;
+      writeDraft(key, getContext(), form);
+    }, 1000);
+  });
+}
+
+function formatDraftTimestamp(iso) {
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime()) ? "" : d.toLocaleString();
+}
+
+// Inline banner (never window.confirm — a blocking native dialog is exactly
+// what log #14/#6 are both reacting against). Pass draft: null to hide it.
+function renderDraftBanner(bannerEl, draft, onRestore, onDiscard) {
+  if (!bannerEl) return;
+  if (!draft) {
+    bannerEl.hidden = true;
+    bannerEl.innerHTML = "";
+    return;
+  }
+  bannerEl.hidden = false;
+  bannerEl.innerHTML = `
+    <span>找到未儲存草稿（${escapeHtml(formatDraftTimestamp(draft.savedAt))}）— Unsaved draft found</span>
+    <button type="button" class="ghost" data-draft-restore>還原 Restore</button>
+    <button type="button" class="ghost" data-draft-discard>捨棄 Discard</button>
+  `;
+  bannerEl.querySelector("[data-draft-restore]").addEventListener("click", onRestore);
+  bannerEl.querySelector("[data-draft-discard]").addEventListener("click", onDiscard);
+}
+
+// FIX B (Dry Clinic #14) — save-button click on an :invalid form fires the
+// browser's native "invalid" event on every offending field (capture-phase
+// only; it does not bubble) and silently blocks "submit" from ever firing —
+// which is exactly why saveCaseFromForm/saveSoapFromForm never even run and
+// nothing visible happens. Report only the FIRST invalid field (by DOM
+// order) so a form with several bad fields doesn't thrash the scroll/message
+// on every one of them.
+function wireSubmitFailureFeedback(form, errorEl) {
+  form.addEventListener("invalid", (event) => {
+    const firstInvalid = form.querySelector(":invalid");
+    if (!firstInvalid || event.target !== firstInvalid) return;
+    firstInvalid.classList.add("field-invalid");
+    firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+    const labelEl = firstInvalid.closest("label");
+    const labelText = labelEl
+      ? [...labelEl.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE).map((n) => n.textContent.trim()).filter(Boolean).join(" ")
+      : "";
+    const fieldName = labelText || firstInvalid.name || firstInvalid.id || "此欄位";
+    if (errorEl) {
+      errorEl.hidden = false;
+      errorEl.textContent = `有欄位格式不正確：${fieldName} — ${firstInvalid.validationMessage}`;
+    }
+    const clear = () => {
+      firstInvalid.classList.remove("field-invalid");
+      if (errorEl) { errorEl.hidden = true; errorEl.textContent = ""; }
+      firstInvalid.removeEventListener("input", clear);
+    };
+    firstInvalid.addEventListener("input", clear);
+  }, true);
+}
+
 function openCaseEditor(item = null) {
   editingCaseId = item?.id || null;
   document.querySelector("#caseDialogTitle").textContent = item ? `編輯 ${item.patientCode}` : "新增病例";
@@ -7624,6 +7834,25 @@ function openCaseEditor(item = null) {
   syncCaseCategoryQuickPick(data.caseCategory);                    // Phase 2: quick-select assist, caseCategory itself is still the stored field
   setupCaseLinkAutocomplete();                                     // Phase 2: idempotent, reuses the SOAP chip-picker mechanism
   Object.values(linkPickerControllers).forEach((c) => c.sync());   // rebuild chips from the values just hydrated above
+  if (caseSaveError) { caseSaveError.hidden = true; caseSaveError.textContent = ""; }
+  // FIX A — offer a draft back only if it belongs to the SAME target (this
+  // exact case being edited, or "new" for a fresh case) so a draft from a
+  // different case can never bleed into this one.
+  const caseDraftContext = editingCaseId || "new";
+  const caseDraft = readDraft(CASE_DRAFT_KEY);
+  if (caseDraft && caseDraft.context === caseDraftContext) {
+    renderDraftBanner(caseDraftBanner, caseDraft, () => {
+      restoreFormDraft(caseForm, caseDraft.fields);   // handles checkbox groups (raceEthnicity/previousTreatment) via setCheckboxGroup internally
+      Object.values(linkPickerControllers).forEach((c) => c.sync());
+      syncCaseCategoryQuickPick(caseForm.elements.caseCategory.value);
+      renderDraftBanner(caseDraftBanner, null);
+    }, () => {
+      clearDraft(CASE_DRAFT_KEY);
+      renderDraftBanner(caseDraftBanner, null);
+    });
+  } else {
+    renderDraftBanner(caseDraftBanner, null);
+  }
   caseDialog.showModal();
 }
 
@@ -7757,7 +7986,7 @@ function saveCaseFromForm(event) {
     westernConditions: splitList(data.westernConditions),
     easternDiseases: splitList(data.easternDiseases),
     tcmPatterns: splitList(data.tcmPatterns),
-    safetyFlags: splitList(data.safetyFlags),
+    safetyFlags: splitSafetyFlags(data.safetyFlags),   // FIX C: semicolon/newline split, not comma (Dry Clinic #3)
     summary: data.summary.trim(),
     // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
     // missing stays missing — stamping edit-time here would falsify creation
@@ -7808,6 +8037,7 @@ function saveCaseFromForm(event) {
     return;
   }
   noteClinicalSave();   // CS1
+  clearDraft(CASE_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   caseDialog.close();
   render();
 }
@@ -8007,6 +8237,24 @@ function openSoapEditor(note = null) {
   // an unrelated save — openSoapEditor is the one place every dialog open
   // (new note or edit) passes through.
   delete soapForm.dataset.previsitPatientPerspective;
+  if (soapSaveError) { soapSaveError.hidden = true; soapSaveError.textContent = ""; }
+  // FIX A — context is caseId+noteId (or "new") so a draft is only ever
+  // offered back for the SAME visit being edited, never a different case or
+  // a different SOAP note within the same case.
+  const soapDraftContext = `${selectedCaseId || ""}:${editingSoapId || "new"}`;
+  const soapDraft = readDraft(SOAP_DRAFT_KEY);
+  if (soapDraft && soapDraft.context === soapDraftContext) {
+    renderDraftBanner(soapDraftBanner, soapDraft, () => {
+      restoreFormDraft(soapForm, soapDraft.fields);
+      Object.values(linkPickerControllers).forEach((c) => c.sync());
+      renderDraftBanner(soapDraftBanner, null);
+    }, () => {
+      clearDraft(SOAP_DRAFT_KEY);
+      renderDraftBanner(soapDraftBanner, null);
+    });
+  } else {
+    renderDraftBanner(soapDraftBanner, null);
+  }
   soapDialog.showModal();
 }
 
@@ -8300,6 +8548,7 @@ function saveSoapFromForm(event) {
   // dialog, or render — roll back and keep the form's input intact.
   if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   noteClinicalSave();   // CS1
+  clearDraft(SOAP_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   soapDialog.close();
   render();
 }
@@ -8973,6 +9222,20 @@ function saveFromForm(event) {
 
 function splitList(text) {
   return text.split(/[、,，]/).map((item) => item.trim()).filter(Boolean);
+}
+
+// FIX C (Dry Clinic #3) — safetyFlags is safety-relevant free text scanned
+// before treatment; splitList's comma split breaks one flag with an
+// internal comma into two fragments (e.g. "偶服 lorazepam(鎮靜劑,注意電針/
+// 放鬆反應疊加)" → two broken pieces). Semicolon/newline only — commas
+// (inside or outside parentheses) never split a flag.
+// MIGRATION SAFETY: this only changes how NEW textarea input is parsed.
+// Every case's ALREADY-STORED safetyFlags is an array and goes through the
+// `Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : ...`
+// branch in normalizeClinicalCase, never through this function — no
+// existing record's flags are re-split or rewritten by this change.
+function splitSafetyFlags(text) {
+  return String(text || "").split(/[;；]|\r?\n/).map((item) => item.trim()).filter(Boolean);
 }
 
 function splitLines(text) {

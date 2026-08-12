@@ -659,6 +659,7 @@
           <h2 id="caseDialogTitle" data-mode-text data-bilingual="新增病例" data-english="New Case">新增病例</h2>
           <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
+        <div id="caseDraftBanner" class="draft-banner" hidden></div>
         <div class="form-grid">
           <fieldset class="form-section">
             <legend><span class="form-section-step">1</span>身分 Identity</legend>
@@ -730,6 +731,7 @@
             <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
           </fieldset>
         </div>
+        <div id="caseSaveError" class="save-error-msg" hidden></div>
         <div class="dialog-actions">
           <button id="deleteCaseBtn" class="danger" type="button" data-mode-text data-bilingual="刪除病例" data-english="Delete case">刪除病例</button>
           <span></span>
@@ -745,6 +747,7 @@
           <h2 id="soapDialogTitle">新增 SOAP Note</h2>
           <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
+        <div id="soapDraftBanner" class="draft-banner" hidden></div>
         <div class="form-grid soap-form-grid">
           <fieldset class="form-section soap-previous-visit">
             <legend><span class="form-section-step">«</span>上次就診 Previous visit<small>參考用，不會自動帶入 reference only, never auto-filled or copied</small></legend>
@@ -851,6 +854,7 @@
             </details>
           </fieldset>
         </div>
+        <div id="soapSaveError" class="save-error-msg" hidden></div>
         <div class="dialog-actions">
           <button id="deleteSoapBtn" class="danger" type="button" data-mode-text data-bilingual="刪除 SOAP" data-english="Delete SOAP">刪除 SOAP</button>
           <span></span>

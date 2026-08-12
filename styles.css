@@ -7427,3 +7427,34 @@ html { scroll-padding-top: 92px; }
   .avs-co-history-row { flex-wrap: wrap; }
   .avs-co-why-btn { margin-left: 0; }
 }
+
+/* FIX A (Dry Clinic #6) — caseDialog/soapDialog draft-recovery banner.
+   Inline, never window.confirm(); matches .backup-reminder-banner's warm-
+   amber "notice, not error" tone rather than .data-missing-banner's red. */
+.draft-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  background: #f5e6c8;
+  color: #5c4a1a;
+  border-bottom: 1px solid #d8c48f;
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+}
+.draft-banner button { font-size: 0.82rem; padding: 0.25rem 0.7rem; }
+
+/* FIX B (Dry Clinic #14) — submit-failure feedback: red outline on the
+   first :invalid field found on a blocked save, plus a message line near
+   the dialog's Save button (same red as .metric-conflict-warning's amber
+   sibling, but error-level rather than warning-level). */
+.field-invalid {
+  outline: 2px solid #c0392b;
+  outline-offset: 2px;
+}
+.save-error-msg {
+  color: #c0392b;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+}
