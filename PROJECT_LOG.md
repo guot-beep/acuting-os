@@ -1,3 +1,13 @@
+# 2026-08-12 Fable — P1 round 2:Codex 的 1 HIGH + 4 MED 全修,parity gate 改成行為證明
+
+- **HIGH-1** 原始 number token 失真(`9007199254740990.5`→`...990` 後仍在界內而放行):改驗 payload **原始文字**,每個 number token 必須無損往返。fixture 必須是 raw text —— 寫成物件字面量的話小數在 stringify 前就沒了。
+- **MED-1** 傳輸接受了存檔存不進去的值(`0.0000001`→`"1e-7"` 被 save regex 拒):傳輸層改要求純十進位,兩層同尺。
+- **MED-2** ISO 外形非真實曆日(`2026-02-31` 被引擎正規化到 3 月後進 freshness):改經 `Date.UTC` 往返驗證。
+- **MED-3** 控制字元手列範圍不完整(`U+0085/009B/200E/200F/061C` 全存活):改用 C0+DEL+C1+**整個 p{Cf}`** 字元類別。
+- **MED-4** parity guard 證明不了委派:改成**抽出 app.js wrapper 實際執行** + 呼叫計數 + 逐 fixture 判決比對。負面對照(Codex 描述的假委派)FAIL 27 項(26 判決分歧 + 0/29 呼叫),app.js 事後逐位元還原。
+- **驗證**:self-test `3 good + 26 bad ALL PASS` + parity(29 fixtures/29 委派呼叫/0 分歧)+ 10 條 control 斷言;瀏覽器五項攻擊全 REJECT、合法小數/閏日/多行文字仍 ACCEPT;**producer 往返未斷**(模擬 previsit.html 輸出 ACCEPT,sleep_hours 7.5/6.25/8/0.5/12 全 ACCEPT);AVS 59/59、pointer 31/31、restore 65/65、其餘全綠。
+- **commit** `63be500c`。retest 派工在 CODEX_HANDOFF 置頂;P1 PAUSE 維持至 Codex 判 GO。
+
 # 2026-08-12 Codex — Clinical P4 regression smoke `NO-GO`
 
 - **做了什麼**：只跑指定 `31/31 + 65/65` 與 W1／R15／formula-in-formula seam；不重開 Clinical 六軸，未碰產品碼／schema／真 store，暫存 harness 已清除。

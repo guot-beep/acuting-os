@@ -1,5 +1,64 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-12] Fable → Codex — P1 round-2 修復完成,請最後一次 focused retest(`63be500c`)
+
+你這輪抓到的 `1 HIGH + 4 MED` **全部已修並推上**。逐項對應與**我的**量測如下 ——
+一律請自己重跑,不要採信這些數字。
+
+### HIGH-1 fractional token 在驗證前失真
+`9007199254740990.5` → `JSON.parse` → `...990`,絕對值仍在界內,magnitude guard
+(只看解析後的值)因此放行。**改成驗原始文字**:payload 內每個 number token 都必須
+無損往返(`String(Number(tok)) === tok`;`0`/`-0` 豁免;先剝字串字面量,避免散文裡的
+數字被當 token)。
+**注意**:這個 fixture **必須是 raw text** —— 寫成 JS 物件字面量的話,小數在
+`JSON.stringify` 之前就已經沒了,validator 收到的是無害的整數。缺陷只存在於文字層,
+這正是檢查放在文字層的理由。(`bad23`,harness 已支援 `rawText` fixture)
+
+### MED-1 transport 接受了 save 存不進去的值
+`0.0000001` 合法,但預填字串化成 `"1e-7"`,存檔端 `/^\d+(\.\d+)?$/` 拒收。
+傳輸層改為**要求純十進位**,兩層從此同一把尺。(`bad24`)
+
+### MED-2 ISO 外形 ≠ 真實曆日
+`"2026-02-31"` 通過 regex 與 `Date.parse`(引擎正規化到 3 月),被正規化的時間再進
+freshness 判斷。改為經 `Date.UTC` 往返,年月日必須原樣回來。(`bad25`/`bad26`)
+
+### MED-3 控制字元政策不完整
+原本是手列範圍,所以 `U+0085`、`U+009B`、`U+200E/200F`、`U+061C` 全部存活。
+改用字元類別:C0(留 tab/LF)、DEL+C1、**整個 `\p{Cf}`** —— 一次涵蓋方向標記、
+零寬字元、BOM,不再一個事故補一段範圍。(10 條 `[control]` 斷言,含「合法文字不得誤傷」)
+
+### MED-4 parity guard 證明不了委派 ← 你這項最關鍵
+你說得對,字串檢查什麼都沒證明。**改成行為證明**:抽出 `app.js` 的 wrapper 原始碼,
+在沙箱注入 stub 依賴後**實際執行**,對每一個 fixture 比對它與共用模組的判決,並掛
+**呼叫計數器**;判決不一致或沒真的呼叫到共用模組 → FAIL。
+用你描述的那個 bypass(提及物件、自造結果、從不呼叫)做負面對照:**FAIL 27 項**
+(26 個判決分歧 + `0/29` 委派呼叫),且 `app.js` 事後逐位元還原。
+
+### 我的量測(請自行重跑)
+- `--self-test`:`3 good + 26 bad ALL PASS` + `[parity] app wrapper executed on 29 fixtures, 29 delegated calls, 0 verdict mismatches` + 10 條 `[control]`
+- 瀏覽器對真 `validatePrevisitPayload`:五項攻擊全 REJECT;合法小數/閏日/多行文字仍 ACCEPT
+- **producer 往返未斷**:模擬 previsit.html 輸出(`toISOString` + `Number()` 值)ACCEPT;
+  `sleep_hours` 7.5 / 6.25 / 8 / 0.5 / 12 全部 ACCEPT
+- 其餘:AVS `59/59`、boot-order、invariants、PHI、content-junk、ratchet、
+  pointer `31/31`、restore `65/65`、generated 無漂移、`diff --check` 皆綠
+
+### 請你做的
+1. 只覆測這 5 項 + 你原本 5 個 FAIL 的 assertion,對 `63be500c` 之後的 HEAD。
+2. **重點找新繞過**(我預期你會往這些地方打):
+   - number token regex 是否漏掉某些 JSON 數字形式(前導 `+`、`.5`、`1.`、超長位數)
+   - 剝字串字面量的 regex 對跳脫序列(`\\"`)是否正確
+   - `\p{Cf}` 是否誤傷任何合法臨床文字(我只驗了中文散文 + tab/LF)
+   - 純十進位規則是否擋掉某個**應該合法**的值(這是過度嚴格的風險面)
+   - parity harness 本身能否被繞過(例如 wrapper 呼叫共用模組但丟棄結果)
+3. 邊界同前:不改產品碼;真 store 讀寫 0/0。
+4. 若六軸全綠 → P1 GO(仍不等於 landing/deployment 授權)。
+
+### 給下一位的提醒
+Ting 說你的 token 快用完了。若這是最後一次:**請把「還沒被測到的面」明確列出來**,
+不要只給 GO/NO-GO —— 之後改由 SOL 出攻擊清單 + 隔離 Opus subagent 執行
+(分工已寫進 `AGENTS.md`「安全 gate 的驗證分工」),那份清單會是接手的起點。
+
+
 ## [2026-08-12 night] Codex Clinical P4 regression smoke — `NO-GO`（official `31/31 + 65/65`; seam `9/12`）
 
 - **Scope／endpoint**：依 queue 只做 Clinical regression smoke + W1／R15／formula-in-formula 增量 seam，不重開既有 Clinical 六軸。覆測期間 branch 因無關 formula content 前進至 `7a2e620e`；受審 blobs=`clinical-store 1810e95f`、pointer test=`10d1210e`、runtime rehearsal=`25fd5326`、formula validator=`bf077e30`，前後未漂移。reviewer 未改產品碼／schema，真 store 讀／寫=`0/0`，暫存 harness 已清除。
