@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-08-11",
+  "updated_at": "2026-08-12",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -17,10 +17,10 @@
   ],
   "layers": {
     "conditions": {
-      "defects": 285,
+      "defects": 225,
       "by_code": {
-        "C10": 123,
-        "C5": 120,
+        "C10": 93,
+        "C5": 90,
         "C4": 42
       },
       "doc": "docs/CONDITION_CARD_TEMPLATE.md"

@@ -2715,8 +2715,8 @@
       ],
       "western_context_zh": "常以補鐵、荷爾蒙或非荷爾蒙藥物減少出血，並針對結構性病因處理；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with iron repletion, hormonal or non-hormonal agents to reduce bleeding, and treatment of structural causes. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "可能原因包括排卵功能異常、子宮肌瘤或息肉、子宮腺肌症、出血性疾病、藥物以及其他子宮／內分泌因素；妊娠相關出血需走不同評估路徑。",
+      "western_pathology_zh": "月經過多屬異常子宮出血，指月經出血量或持續時間過多而影響健康或日常生活；它是多病因的出血表現，不是單一病理機轉。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -2754,6 +2754,120 @@
         "rf.menorrhagia.legacy02",
         "rf.menorrhagia.legacy03",
         "rf.menorrhagia.legacy04"
+      ],
+      "etiology_en": "Potential causes include ovulatory dysfunction, uterine fibroids or polyps, adenomyosis, bleeding disorders, medications, and other uterine/endocrine conditions; pregnancy-related bleeding belongs to a separate evaluation pathway.",
+      "western_pathology_en": "Heavy menstrual bleeding is abnormal uterine bleeding characterized by excessive menstrual blood loss or duration sufficient to affect health or daily life. It is a symptom pattern with multiple structural and nonstructural causes.",
+      "risk_factors_zh": [
+        {
+          "factor": "青春期或圍更年期排卵不規則",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "子宮肌瘤／息肉或腺肌症",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "出血性疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "影響出血的藥物",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "新出現的大量出血需依個別情境評估",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Adolescence or perimenopause with ovulatory irregularity",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "Uterine fibroids/polyps or adenomyosis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "Bleeding disorders",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "Medications affecting bleeding",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        },
+        {
+          "factor": "Any new heavy bleeding requires assessment for the individual clinical context",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Abnormal Uterine Bleeding"
+        }
+      ],
+      "sources": [
+        "ACOG — Abnormal Uterine Bleeding: https://www.acog.org/womens-health/faqs/abnormal-uterine-bleeding"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ACOG — Abnormal Uterine Bleeding"
+        ],
+        "etiology_en": [
+          "ACOG — Abnormal Uterine Bleeding"
+        ],
+        "western_pathology_zh": [
+          "ACOG — Abnormal Uterine Bleeding"
+        ],
+        "western_pathology_en": [
+          "ACOG — Abnormal Uterine Bleeding"
+        ],
+        "risk_factors_zh": [
+          "ACOG — Abnormal Uterine Bleeding"
+        ],
+        "risk_factors_en": [
+          "ACOG — Abnormal Uterine Bleeding"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為經量與週期相關症狀之輔助照護，但須先完成婦科評估排除結構性病灶（肌瘤、息肉、腺肌症）與出血性疾病",
+        "precautions": "停經後出血或不規則出血者，針灸介入前須先由婦科排除內膜病變；貧血症狀明顯者應同時處理鐵缺乏",
+        "co_management": "與婦產科保持聯繫確認結構性評估與出血性疾病篩檢結果；急性大量出血合併血壓下降等徵象立即轉介急診，不以針灸處理",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
+        "note": "本次查證未找到月經過多針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for flow/cycle-related symptoms, but gynecologic evaluation to exclude structural lesions (fibroids, polyps, adenomyosis) and bleeding disorders should be completed first",
+        "precautions": "For postmenopausal or irregular bleeding, gynecology must rule out endometrial pathology before acupuncture is offered; address iron deficiency concurrently when anemia symptoms are marked",
+        "co_management": "Maintain contact with obstetrics/gynecology to confirm structural work-up and bleeding-disorder screening results; refer immediately to emergency care for acute heavy bleeding with hypotension — acupuncture does not manage this",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ACOG clinical materials)",
+        "note": "No systematic-review source for heavy menstrual bleeding acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.heavy_menstrual_bleeding"
       ]
     },
     {
@@ -3039,8 +3153,8 @@
       ],
       "western_context_zh": "處置依病因，可能包含矯正泌乳素或甲狀腺異常、荷爾蒙補充、營養與體重恢復；此為文件對照用語，非治療指示。",
       "western_context_en": "Management is cause-specific and may include correcting prolactin or thyroid abnormalities, hormonal support, and nutritional/weight restoration. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "首先需排除懷孕；其他原因包括低體重或快速減重、飲食疾患、下視丘或腦下垂體問題、PCOS、甲狀腺疾病、原發性卵巢功能不全、壓力、慢性疾病，以及部分藥物或荷爾蒙避孕。",
+      "western_pathology_zh": "繼發性閉經是原本已有月經後停止月經，屬多病因臨床表現，可來自生殖、內分泌、下視丘－腦下垂體、全身疾病、藥物或生理因素，而非單一病理機轉。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -3078,6 +3192,132 @@
         "rf.amenorrhea.legacy02",
         "rf.amenorrhea.legacy03",
         "rf.amenorrhea.legacy04"
+      ],
+      "etiology_en": "Pregnancy must be excluded first. Other causes include low weight/rapid weight loss, eating disorders, hypothalamic or pituitary disorders, PCOS, thyroid disease, primary ovarian insufficiency, stress, chronic illness, and some medications or hormonal contraception.",
+      "western_pathology_en": "Secondary amenorrhea is cessation of previously established menses. It is a clinical sign with multiple possible reproductive, endocrine, hypothalamic-pituitary, systemic, medication-related, and physiologic causes rather than one single disease mechanism.",
+      "risk_factors_zh": [
+        {
+          "factor": "低體重或快速減重",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "飲食疾患或過度運動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "高度生理／心理壓力",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "PCOS、甲狀腺或腦下垂體疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "原發性卵巢功能不全",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "特定慢性疾病或藥物",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Low body weight or rapid weight loss",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "Eating disorders or excessive exercise",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "High physiologic/psychological stress",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "PCOS, thyroid or pituitary disorders",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "Primary ovarian insufficiency",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        },
+        {
+          "factor": "Certain chronic diseases or medications",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Amenorrhea: Absence of Periods"
+        }
+      ],
+      "sources": [
+        "ACOG — Amenorrhea: Absence of Periods: https://www.acog.org/womens-health/faqs/amenorrhea-absence-of-periods"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ACOG — Amenorrhea: Absence of Periods"
+        ],
+        "etiology_en": [
+          "ACOG — Amenorrhea: Absence of Periods"
+        ],
+        "western_pathology_zh": [
+          "ACOG — Amenorrhea: Absence of Periods"
+        ],
+        "western_pathology_en": [
+          "ACOG — Amenorrhea: Absence of Periods"
+        ],
+        "risk_factors_zh": [
+          "ACOG — Amenorrhea: Absence of Periods"
+        ],
+        "risk_factors_en": [
+          "ACOG — Amenorrhea: Absence of Periods"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為週期調節與體質支持之輔助照護，但須先完成懷孕排除、內分泌與影像學評估以釐清病因",
+        "precautions": "治療前確認是否已排除懷孕、高泌乳素或甲狀腺疾病；體重過低或飲食失調個案應以醫療團隊介入為主，針灸僅為輔助",
+        "co_management": "若懷疑腦下垂體病灶、卵巢早衰或顯著體重過低，轉介病人至婦產科／內分泌科，不建議以針灸延誤診斷性評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
+        "note": "本次查證未找到繼發性閉經針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for cycle regulation and constitutional support, but pregnancy exclusion plus endocrine/imaging workup should be completed first to clarify the cause",
+        "precautions": "Confirm before treatment that pregnancy, hyperprolactinemia, or thyroid disease has been ruled out; low body weight or eating-disorder cases should be led by the medical team, with acupuncture only adjunctive",
+        "co_management": "Refer to gynecology/endocrinology if a pituitary lesion, premature ovarian insufficiency, or marked underweight is suspected; do not let acupuncture delay diagnostic evaluation",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ACOG clinical materials)",
+        "note": "No systematic-review source for secondary amenorrhea acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.amenorrhea"
       ]
     },
     {
@@ -3912,8 +4152,8 @@
       ],
       "western_context_zh": "常於生殖醫療脈絡中討論卵巢刺激方案調整、生育時效與可行選項；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly discussed within reproductive care regarding stimulation-protocol adjustment, fertility timing, and available options. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "卵母細胞數量會隨生殖老化下降，但同年齡個體間差異很大；DOR 也可在既往卵巢刺激反應不佳或儲備檢測異常時被辨識。",
+      "western_pathology_zh": "卵巢儲備功能下降主要描述剩餘卵母細胞數量或預期卵巢反應下降。卵巢儲備指標可預估刺激反應與取卵數，但不能獨立準確預測自然生育能力或活產。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -3950,7 +4190,94 @@
         "rf.diminished_ovarian_reserve.legacy01",
         "rf.diminished_ovarian_reserve.legacy02",
         "rf.diminished_ovarian_reserve.legacy03"
-      ]
+      ],
+      "etiology_en": "Oocyte quantity declines with reproductive aging, with substantial variation among people of the same chronological age. DOR may also be recognized after a poor ovarian response or abnormal reserve testing.",
+      "western_pathology_en": "Diminished ovarian reserve describes reduced oocyte quantity or reduced expected ovarian response. Ovarian-reserve markers are useful for estimating response/oocyte yield but are poor independent predictors of reproductive potential or live birth.",
+      "risk_factors_zh": [
+        {
+          "factor": "生殖年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion"
+        },
+        {
+          "factor": "既往卵巢刺激反應不佳",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion"
+        },
+        {
+          "factor": "AMH 偏低或 AFC 偏低等卵巢儲備檢測異常，需置於臨床情境解讀",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing reproductive age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion"
+        },
+        {
+          "factor": "Previous poor ovarian response",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion"
+        },
+        {
+          "factor": "Abnormal ovarian reserve testing such as low AMH or low AFC, interpreted in clinical context",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion"
+        }
+      ],
+      "sources": [
+        "ASRM — Testing and interpreting measures of ovarian reserve: a committee opinion: https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ASRM — Testing and interpreting measures of ovarian reserve"
+        ],
+        "etiology_en": [
+          "ASRM — Testing and interpreting measures of ovarian reserve"
+        ],
+        "western_pathology_zh": [
+          "ASRM — Testing and interpreting measures of ovarian reserve"
+        ],
+        "western_pathology_en": [
+          "ASRM — Testing and interpreting measures of ovarian reserve"
+        ],
+        "risk_factors_zh": [
+          "ASRM — Testing and interpreting measures of ovarian reserve"
+        ],
+        "risk_factors_en": [
+          "ASRM — Testing and interpreting measures of ovarian reserve"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為整體照護與生殖醫療期間之症狀／壓力支持，不可宣稱針灸能提升卵巢儲備指標或逆轉 DOR",
+        "precautions": "治療前確認病人是否已於生殖科進行 AMH／AFC 評估與時效性討論；避免以針灸延誤或取代及時轉介",
+        "co_management": "與生殖醫學科保持聯繫，尤其病人正在規劃卵巢刺激或 IVF 週期時程",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ASRM 臨床資料整理）",
+        "note": "本次查證未找到 DOR 針灸療效之系統性回顧來源；ASRM 強調卵巢儲備指標不能準確預測自然生育力，須避免將針灸療效宣稱延伸超出證據"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as whole-person and stress-support care during reproductive treatment; do not claim acupuncture can raise ovarian-reserve markers or reverse DOR",
+        "precautions": "Confirm before treatment whether the patient has completed AMH/AFC assessment and timing discussion in reproductive care; avoid letting acupuncture delay or replace timely referral",
+        "co_management": "Maintain contact with reproductive medicine, especially while the patient is planning ovarian stimulation or an IVF cycle",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ASRM clinical materials)",
+        "note": "No systematic-review source for DOR acupuncture efficacy was confirmed this session; ASRM emphasizes ovarian-reserve markers cannot accurately predict natural fertility, so efficacy claims must not extend beyond the evidence"
+      }
     },
     {
       "id": "cond.ivf_support",
@@ -3984,8 +4311,8 @@
       ],
       "western_context_zh": "輔助照護在生殖團隊的療程計畫下進行，紀錄用語不取代生殖醫療處置；此為文件對照用語，非治療指示。",
       "western_context_en": "Adjunctive care proceeds under the reproductive team's cycle plan; documentation does not replace reproductive medical management. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "其病因應歸屬於接受 IVF 的不孕原因與療程背景，而不是「輔助照護」這個標籤本身。",
+      "western_pathology_zh": "此紀錄代表 IVF／ART 周邊的輔助照護情境，而不是疾病。IVF 涉及控制性卵巢刺激、取卵、受精／胚胎培養與胚胎移植，因此「IVF 輔助」本身沒有單一病理機轉。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4023,7 +4350,72 @@
         "rf.ivf_support.legacy02",
         "rf.ivf_support.legacy03",
         "rf.ivf_support.legacy04"
-      ]
+      ],
+      "etiology_en": "The underlying etiology belongs to the infertility indication and treatment context, not to the adjunctive-support label itself.",
+      "western_pathology_en": "This record represents an adjunctive-care context around IVF/ART rather than a disease. IVF involves controlled ovarian stimulation, oocyte retrieval, fertilization/embryo culture, and embryo transfer; there is no single pathology intrinsic to 'IVF support.'",
+      "risk_factors_zh": [
+        {
+          "factor": "風險輪廓取決於原發不孕診斷、卵巢反應、年齡與療程方案，而非單一固定因子；不可僅由 IVF 輔助照護情境本身反推不孕成因",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Performing the embryo transfer: a guideline"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Risk profile depends on the underlying infertility diagnosis, ovarian response, age, and treatment protocol rather than a single fixed factor; do not infer the infertility cause from the IVF-support context alone",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Performing the embryo transfer: a guideline"
+        }
+      ],
+      "sources": [
+        "ASRM — Performing the embryo transfer: a guideline: https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ASRM — Performing the embryo transfer: a guideline"
+        ],
+        "etiology_en": [
+          "ASRM — Performing the embryo transfer: a guideline"
+        ],
+        "western_pathology_zh": [
+          "ASRM — Performing the embryo transfer: a guideline"
+        ],
+        "western_pathology_en": [
+          "ASRM — Performing the embryo transfer: a guideline"
+        ],
+        "risk_factors_zh": [
+          "ASRM — Performing the embryo transfer: a guideline"
+        ],
+        "risk_factors_en": [
+          "ASRM — Performing the embryo transfer: a guideline"
+        ],
+        "acupuncture_scope_zh": [
+          "ASRM — Performing the embryo transfer: a guideline",
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "ASRM — Performing the embryo transfer: a guideline",
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為療程期間之整體身心支持與症狀緩解（如壓力、睡眠、消化）；ASRM 指出目前尚無充分證據顯示胚胎移植前後施行針灸可提升活產率，不可宣稱針灸能改善 IVF 活產結果",
+        "precautions": "治療時程須配合生殖團隊之刺激、取卵與植入排程；避免在關鍵操作日前後採用可能延誤或干擾療程安排的介入",
+        "co_management": "全程與生殖醫學科保持聯繫，任何療程階段之變動或不適徵象（如疑似卵巢過度刺激症候群）以生殖團隊評估為主",
+        "evidence": "guideline",
+        "source": "ASRM — Performing the embryo transfer: a guideline (2017): https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/",
+        "note": "ASRM 認為現有證據不支持胚胎移植周邊針灸能改善活產率；此為療效宣稱之上限，不是鼓勵介入的依據，卡片內容不得超出此結論"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as whole-person support and symptom relief (e.g., stress, sleep, digestion) during the treatment cycle; ASRM states there is no fair evidence that acupuncture around embryo transfer improves live-birth rates — do not claim acupuncture improves IVF live-birth outcomes",
+        "precautions": "Treatment timing must be coordinated with the reproductive team's stimulation, retrieval, and transfer schedule; avoid interventions around key procedure days that could delay or interfere with the treatment plan",
+        "co_management": "Maintain contact with reproductive medicine throughout; any cycle-stage change or concerning symptom (e.g., suspected ovarian hyperstimulation syndrome) is assessed by the reproductive team first",
+        "evidence": "guideline",
+        "source": "ASRM — Performing the embryo transfer: a guideline (2017): https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/",
+        "note": "ASRM concludes current evidence does not support acupuncture around embryo transfer improving live-birth rates; this is the ceiling for any efficacy claim, not a rationale to encourage the intervention — card content must not exceed this conclusion"
+      }
     },
     {
       "id": "cond.recurrent_pregnancy_loss",
@@ -4544,8 +4936,8 @@
       ],
       "western_context_zh": "常於生育脈絡中討論黃體支持與潛在內分泌因素之矯正；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly discussed within fertility care regarding luteal support and correction of underlying endocrine factors. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "黃體功能異常可能繼發於影響促性腺激素分泌、濾泡發育、黃體功能或子宮內膜對黃體酮反應的各種狀況。",
+      "western_pathology_zh": "黃體期功能不足是一個仍具爭議的臨床概念，涉及黃體期長度或黃體酮支持異常。ASRM 強調目前沒有單一可靠的臨床確診檢驗，也未證實孤立性 LPD 能獨立造成不孕或反覆流產。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4582,7 +4974,96 @@
         "rf.luteal_phase_defect.legacy01",
         "rf.luteal_phase_defect.legacy02",
         "rf.luteal_phase_defect.legacy03"
-      ]
+      ],
+      "etiology_en": "Altered luteal function may occur secondary to conditions that disturb gonadotropin secretion, follicular development, corpus-luteum function, or endometrial progesterone response.",
+      "western_pathology_en": "Luteal phase deficiency is a debated clinical construct involving abnormal luteal-phase duration or progesterone support. ASRM emphasizes that no single clinical diagnostic test is proven reliable and that isolated LPD has not been proven to independently cause infertility or recurrent pregnancy loss.",
+      "risk_factors_zh": [
+        {
+          "factor": "下視丘－腦下垂體或其他內分泌異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion"
+        },
+        {
+          "factor": "哺乳或會改變生殖荷爾蒙的特定疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion"
+        },
+        {
+          "factor": "肥胖與較高生殖年齡和黃體功能變化有關，但因果與臨床意義需個別判斷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Underlying hypothalamic-pituitary or endocrine disturbance",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion"
+        },
+        {
+          "factor": "Lactation or selected medical conditions that alter reproductive hormones",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion"
+        },
+        {
+          "factor": "Obesity and advanced reproductive age have been associated with altered luteal function, but causality and clinical significance vary",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion"
+        }
+      ],
+      "sources": [
+        "ASRM — Diagnosis and treatment of luteal phase deficiency: committee opinion: https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-luteal-phase-deciency-a-committee-opinion-2021/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency"
+        ],
+        "etiology_en": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency"
+        ],
+        "western_pathology_zh": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency"
+        ],
+        "western_pathology_en": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency"
+        ],
+        "risk_factors_zh": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency"
+        ],
+        "risk_factors_en": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency"
+        ],
+        "acupuncture_scope_zh": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency",
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "ASRM — Diagnosis and treatment of luteal phase deficiency",
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為經前期整體症狀支持照護，但 LPD 本身為具爭議之西醫概念，不可宣稱針灸能「治療」或「矯正」一項尚未有可靠確診檢驗的病理實體",
+        "precautions": "避免將患者的月經或生育困擾直接歸因並固定為「黃體不足」而略過其他病因評估",
+        "co_management": "若病人有反覆流產或不孕考量，轉介生殖醫學科進行完整評估，不以針灸取代生殖科的診斷與處置路徑",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ASRM 臨床資料整理）",
+        "note": "ASRM committee opinion 明確指出無單一可靠檢驗可確診 LPD，也未證實孤立性 LPD 獨立造成不孕；本卡在此保留該不確定性，避免針灸療效宣稱建立在有爭議的診斷之上"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as supportive care for premenstrual-phase symptoms, but LPD itself is a debated biomedical construct — do not claim acupuncture can 'treat' or 'correct' a pathological entity that lacks a reliable confirmatory test",
+        "precautions": "Avoid attributing a patient's menstrual or fertility difficulty fixedly to 'luteal deficiency' while skipping evaluation of other causes",
+        "co_management": "Refer to reproductive medicine for full evaluation if the patient has recurrent miscarriage or infertility concerns; do not let acupuncture replace reproductive medicine's diagnostic and management pathway",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ASRM clinical materials)",
+        "note": "The ASRM committee opinion explicitly states no single reliable test confirms LPD and isolated LPD has not been proven to independently cause infertility; this card preserves that uncertainty so acupuncture efficacy claims are not built on a contested diagnosis"
+      }
     },
     {
       "id": "cond.menopause_syndrome",
@@ -4616,8 +5097,8 @@
       ],
       "western_context_zh": "依症狀與風險，處置可涵蓋生活型態、非荷爾蒙藥物或荷爾蒙療法及局部治療；此為文件對照用語，非治療指示。",
       "western_context_en": "Depending on symptoms and risk, management may include lifestyle measures, non-hormonal agents, hormone therapy, and local treatments. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "自然生殖老化與卵巢濾泡功能逐步下降推動此轉變；症狀部分來自雌激素變化及相關神經內分泌效應。",
+      "western_pathology_zh": "更年期轉變與卵巢荷爾蒙產生下降及波動有關，直到月經永久停止；可能出現血管舒縮、睡眠、情緒、泌尿生殖與月經型態改變，個體差異很大。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4655,6 +5136,97 @@
         "rf.menopause_syndrome.legacy02",
         "rf.menopause_syndrome.legacy03",
         "rf.menopause_syndrome.legacy04"
+      ],
+      "etiology_en": "Natural reproductive aging and progressive loss of ovarian follicular function drive the transition; symptoms arise partly from changing estrogen and related neuroendocrine effects.",
+      "western_pathology_en": "The menopausal transition reflects declining and fluctuating ovarian hormone production before permanent cessation of menses. Symptoms can include vasomotor, sleep, mood, genitourinary, and menstrual-pattern changes, with wide individual variation.",
+      "risk_factors_zh": [
+        {
+          "factor": "隨年齡進入更年期轉變",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — The Menopause Years"
+        },
+        {
+          "factor": "症狀負擔個體差異大",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — The Menopause Years"
+        },
+        {
+          "factor": "手術或治療造成的卵巢功能喪失屬不同或加速的臨床情境",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — The Menopause Years"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age through the menopausal transition",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — The Menopause Years"
+        },
+        {
+          "factor": "Individual symptom burden varies widely",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — The Menopause Years"
+        },
+        {
+          "factor": "Surgical or treatment-induced loss of ovarian function is a different/accelerated clinical context",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — The Menopause Years"
+        }
+      ],
+      "sources": [
+        "ACOG — The Menopause Years: https://www.acog.org/womens-health/faqs/the-menopause-years"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ACOG — The Menopause Years"
+        ],
+        "etiology_en": [
+          "ACOG — The Menopause Years"
+        ],
+        "western_pathology_zh": [
+          "ACOG — The Menopause Years"
+        ],
+        "western_pathology_en": [
+          "ACOG — The Menopause Years"
+        ],
+        "risk_factors_zh": [
+          "ACOG — The Menopause Years"
+        ],
+        "risk_factors_en": [
+          "ACOG — The Menopause Years"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為血管舒縮、睡眠與情緒相關症狀之輔助照護",
+        "precautions": "治療前確認是否已排除停經後異常出血（需先婦科評估排除惡性）；40 歲前出現症狀應先評估卵巢早衰而非逕行針灸症狀處理",
+        "co_management": "若病人正接受荷爾蒙療法或有乳癌、血栓病史等，與其開立荷爾蒙治療之醫師保持聯繫，不建議病人自行調整荷爾蒙用藥",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
+        "note": "本次查證未找到更年期症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for vasomotor, sleep, and mood-related symptoms",
+        "precautions": "Confirm before treatment that postmenopausal abnormal bleeding has been evaluated by gynecology to exclude malignancy; symptoms before age 40 should first be evaluated for premature ovarian insufficiency rather than treated symptomatically with acupuncture alone",
+        "co_management": "If the patient is on hormone therapy or has a history of breast cancer or thrombosis, maintain contact with the prescribing clinician; do not advise the patient to independently adjust hormone therapy",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ACOG clinical materials)",
+        "note": "No systematic-review source for menopausal syndrome acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.hot_flash",
+        "sym.night_sweats"
       ]
     },
     {
@@ -4687,8 +5259,8 @@
       ],
       "western_context_zh": "常以補液、止吐與營養支持處理，嚴重時需住院；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with rehydration, antiemetics, and nutritional support; severe cases may need admission. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "確切病因屬多因素且尚未完全釐清；妊娠相關生物因素與個體易感性共同作用，持續嘔吐本身會造成脫水及代謝／營養併發症。",
+      "western_pathology_zh": "妊娠劇吐是妊娠噁心嘔吐的重症端，可造成明顯體重下降、脫水、電解質異常與營養缺乏。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4726,6 +5298,100 @@
         "rf.hyperemesis_gravidarum.legacy02",
         "rf.hyperemesis_gravidarum.legacy03",
         "rf.hyperemesis_gravidarum.legacy04"
+      ],
+      "etiology_en": "The exact cause is multifactorial and incompletely defined; pregnancy-related biologic factors interact with individual susceptibility. Persistent vomiting itself drives dehydration and metabolic/nutritional complications.",
+      "western_pathology_en": "Hyperemesis gravidarum is the severe end of nausea and vomiting of pregnancy and can produce clinically important weight loss, dehydration, electrolyte disturbance, and nutritional deficiency.",
+      "risk_factors_zh": [
+        {
+          "factor": "既往妊娠曾有妊娠劇吐",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        },
+        {
+          "factor": "多胎妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        },
+        {
+          "factor": "族群研究亦發現較年輕孕齡與部分既存疾病相關",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "PubMed / Acta Obstetricia et Gynecologica Scandinavica — Risk factors and recurrence of hyperemesis gravidarum: population-based cohort"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "History of hyperemesis gravidarum in a prior pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        },
+        {
+          "factor": "Multiple gestation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        },
+        {
+          "factor": "Younger maternal age and selected preexisting medical conditions have been associated in population studies",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "PubMed / Acta Obstetricia et Gynecologica Scandinavica — Risk factors and recurrence of hyperemesis gravidarum: population-based cohort"
+        }
+      ],
+      "sources": [
+        "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy: https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
+        "PubMed / Acta Obstetricia et Gynecologica Scandinavica — Risk factors and recurrence of hyperemesis gravidarum: population-based cohort: https://pubmed.ncbi.nlm.nih.gov/39258527/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        ],
+        "etiology_en": [
+          "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        ],
+        "western_pathology_zh": [
+          "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        ],
+        "western_pathology_en": [
+          "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy"
+        ],
+        "risk_factors_zh": [
+          "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy",
+          "PubMed / Acta Obstetricia et Gynecologica Scandinavica — Risk factors and recurrence of hyperemesis gravidarum"
+        ],
+        "risk_factors_en": [
+          "ACOG — Morning Sickness: Nausea and Vomiting of Pregnancy",
+          "PubMed / Acta Obstetricia et Gynecologica Scandinavica — Risk factors and recurrence of hyperemesis gravidarum"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為輕中度孕吐症狀緩解之輔助照護（如內關等傳統止嘔運用），明確妊娠劇吐（脫水、電解質異常、體重明顯下降）須以醫療處置與補液為主",
+        "precautions": "治療前評估脫水、體重下降與電解質異常之嚴重度；孕期針灸須依安全穴位與手法執行，避免可能催產之強刺激穴位",
+        "co_management": "出現無法進食飲水、少尿或意識混亂等徵象時，立即轉介產科／急診補液，針灸僅為輔助不可延誤醫療處置",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG／PubMed 臨床資料整理）",
+        "note": "本次查證未找到妊娠劇吐專屬針灸系統性回顧來源；孕期針灸安全性須遵循一般孕期禁忌穴位規範"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive relief for mild-to-moderate pregnancy nausea (e.g., traditional antiemetic point use such as PC6); frank hyperemesis (dehydration, electrolyte disturbance, significant weight loss) requires medical management and fluids as the primary treatment",
+        "precautions": "Assess severity of dehydration, weight loss, and electrolyte disturbance before treatment; pregnancy acupuncture must follow safe-point and technique restrictions, avoiding strongly stimulating points with theoretical labor-inducing risk",
+        "co_management": "Refer immediately to obstetrics/emergency care for rehydration if the patient cannot keep down food/fluids, has reduced urine output, or shows confusion; acupuncture is adjunctive only and must not delay medical management",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ACOG/PubMed clinical materials)",
+        "note": "No dedicated systematic-review source for hyperemesis gravidarum acupuncture efficacy was confirmed this session; pregnancy acupuncture safety must follow standard contraindicated-point guidance"
+      },
+      "sign_symptom_ids": [
+        "sym.nausea",
+        "sym.vomiting"
       ]
     },
     {
@@ -4758,8 +5424,8 @@
       ],
       "western_context_zh": "產科依孕週與情況評估外轉術或剖腹產等分娩計畫；此為文件對照用語，非治療指示。",
       "western_context_en": "Obstetric care assesses external cephalic version or delivery planning such as cesarean by gestation and circumstances. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "原因常無法確定；相關因素可包括多胎妊娠、羊水過多或過少、子宮形態異常或肌瘤，以及既往妊娠。",
+      "western_pathology_zh": "臀位屬胎兒先露方式，不是孕婦本身的疾病：接近足月時由臀部、足部或兩者先朝向產道，而不是頭部先露。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -4797,7 +5463,106 @@
         "rf.breech_presentation.legacy02",
         "rf.breech_presentation.legacy03",
         "rf.breech_presentation.legacy04"
-      ]
+      ],
+      "etiology_en": "The reason is often unknown. Contributing factors can include multiple gestation, abnormal amniotic-fluid volume, uterine shape abnormalities or fibroids, and prior pregnancy.",
+      "western_pathology_en": "Breech presentation is a fetal presentation, not an intrinsic maternal disease: the buttocks, feet, or both are positioned to present first near term rather than the fetal head.",
+      "risk_factors_zh": [
+        {
+          "factor": "多胎妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        },
+        {
+          "factor": "羊水過多或過少",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        },
+        {
+          "factor": "子宮形態異常或肌瘤",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        },
+        {
+          "factor": "既往妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Multiple gestation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        },
+        {
+          "factor": "Too much or too little amniotic fluid",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        },
+        {
+          "factor": "Uterine shape abnormalities or fibroids",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        },
+        {
+          "factor": "Prior pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — If Your Baby Is Breech"
+        }
+      ],
+      "sources": [
+        "ACOG — If Your Baby Is Breech: https://www.acog.org/womens-health/faqs/if-your-baby-is-breech"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "ACOG — If Your Baby Is Breech"
+        ],
+        "etiology_en": [
+          "ACOG — If Your Baby Is Breech"
+        ],
+        "western_pathology_zh": [
+          "ACOG — If Your Baby Is Breech"
+        ],
+        "western_pathology_en": [
+          "ACOG — If Your Baby Is Breech"
+        ],
+        "risk_factors_zh": [
+          "ACOG — If Your Baby Is Breech"
+        ],
+        "risk_factors_en": [
+          "ACOG — If Your Baby Is Breech"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "部分執業者於特定孕週（依訓練與臨床判斷）以艾灸至陰穴（BL67）作為胎位轉正之輔助嘗試，僅能作輔助，不保證轉位成功",
+        "precautions": "需先確認孕週、胎盤位置、羊水量及有無妊娠合併症等產科條件；操作應由受訓執業者依產科團隊時程配合進行，不可自行決定介入時機",
+        "co_management": "全程與孕婦之產科醫師保持聯繫，胎位轉正評估、外轉術與分娩計畫決策權在產科；針灸／艾灸不可取代或延誤產科評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
+        "note": "本次查證未找到艾灸轉胎位療效之系統性回顧來源；此為傳統執業常見用法但本次未確認實證等級，屬執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Some practitioners use moxibustion at BL67 (Zhiyin) during a specific gestational window (per training and clinical judgment) as an adjunct attempt at version — adjunctive only, with no guarantee of success",
+        "precautions": "Confirm gestational age, placental location, amniotic fluid volume, and any pregnancy complications first; performed by a trained practitioner coordinated with the obstetric team's timeline, not decided independently",
+        "co_management": "Maintain contact with the patient's obstetrician throughout; decisions on version, external cephalic version, and delivery planning remain with obstetrics — acupuncture/moxibustion must not replace or delay obstetric assessment",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ACOG clinical materials)",
+        "note": "No systematic-review source for moxibustion version efficacy was confirmed in this session's research; this is a commonly taught traditional practice whose evidence grade was not verified this session — a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.postpartum_hypolactation",
@@ -6128,8 +6893,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "常見機轉包括突然搬重物、扭轉、跌倒或其他使腰部軟組織過度牽拉的急性負荷。",
+      "western_pathology_zh": "急性腰扭傷／拉傷是腰部韌帶、肌肉或肌腱的突然軟組織損傷，可造成局部疼痛、痙攣與活動受限，但本身不代表神經根或脊椎結構性疾病。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6166,6 +6931,111 @@
         "rf.acute_lumbar_sprain.legacy01",
         "rf.acute_lumbar_sprain.legacy02",
         "rf.acute_lumbar_sprain.legacy03"
+      ],
+      "etiology_en": "Typical mechanisms include sudden lifting, twisting, a fall, or another abrupt load that overstretches soft tissues.",
+      "western_pathology_en": "An acute lumbar sprain/strain involves sudden injury to lumbar ligaments, muscles, or tendons, producing local soft-tissue pain, spasm, and movement limitation without implying nerve-root or structural spinal disease.",
+      "risk_factors_zh": [
+        {
+          "factor": "突然搬重物或不良姿勢搬運",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "軀幹快速扭轉",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "運動或工作中的突發高負荷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "身體承載能力不足或去訓練化可能增加易感性",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCCIH/NIH — Low-Back Pain and Complementary Health Approaches"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Sudden heavy or awkward lifting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "Rapid trunk twisting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "Sports or work involving abrupt high loads",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "Poor load tolerance/deconditioning may increase susceptibility",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCCIH/NIH — Low-Back Pain and Complementary Health Approaches"
+        }
+      ],
+      "sources": [
+        "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries: https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries",
+        "NCCIH/NIH — Low-Back Pain and Complementary Health Approaches: https://www.nccih.nih.gov/health/low-back-pain-and-complementary-health-approaches-what-you-need-to-know"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "etiology_en": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "western_pathology_en": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries",
+          "NCCIH/NIH — Low-Back Pain and Complementary Health Approaches"
+        ],
+        "risk_factors_en": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries",
+          "NCCIH/NIH — Low-Back Pain and Complementary Health Approaches"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為急性腰扭傷之疼痛緩解與恢復活動之輔助照護",
+        "precautions": "治療前排除下肢放射痛、麻木無力、馬尾徵象或外傷後無法負重等紅旗；避免鼓勵臥床超過必要時間",
+        "co_management": "出現神經根壓迫或馬尾徵象時，立即轉介急診／骨科，不以針灸延誤評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS／NCCIH 臨床資料整理）",
+        "note": "NCCIH 頁面本次查證僅用於危險因子引用，未特別評估急性腰扭傷之針灸實證等級；本次查證未找到專屬系統性回顧來源"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive pain relief and return-to-activity care for acute lumbar sprain",
+        "precautions": "Rule out radiating leg pain, numbness/weakness, cauda equina signs, or inability to bear weight after trauma before treatment; avoid encouraging bed rest beyond what is necessary",
+        "co_management": "Refer immediately to emergency/orthopedic care if nerve-root compression or cauda equina signs appear; do not let acupuncture delay evaluation",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS/NCCIH clinical materials)",
+        "note": "The NCCIH page was cited this session only for risk factors, not specifically evaluated for acute lumbar sprain acupuncture evidence; no dedicated systematic-review source was confirmed"
+      },
+      "sign_symptom_ids": [
+        "sym.low_back_pain"
       ]
     },
     {
@@ -7818,8 +8688,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "常見機械誘因包括頸部突然異常屈伸／扭轉、跌倒、碰撞／揮鞭樣損傷，或持續姿勢負荷；部分患者另有頸椎退化性疾病作為替代或共同原因。",
+      "western_pathology_zh": "急性頸痛與僵硬可來自頸部肌肉或韌帶拉傷／扭傷及其他機械性軟組織刺激；此症狀性診斷本身不能直接確定來源是肌肉、韌帶、椎間盤、關節、神經根或其他疾病。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -7856,6 +8726,115 @@
         "rf.neck_pain_stiff.legacy01",
         "rf.neck_pain_stiff.legacy02",
         "rf.neck_pain_stiff.legacy03"
+      ],
+      "etiology_en": "Common mechanical triggers include sudden abnormal bending/twisting, falls, collisions/whiplash, or sustained/postural loading; degenerative cervical disease is an important alternate or contributing cause in some patients.",
+      "western_pathology_en": "Acute neck pain and stiffness can arise from cervical muscle or ligament strain/sprain and other mechanical soft-tissue irritation. The symptom identity does not itself specify whether the source is muscle, ligament, disc, joint, nerve root, or another condition.",
+      "risk_factors_zh": [
+        {
+          "factor": "近期外傷或碰撞",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Neck Pain"
+        },
+        {
+          "factor": "頸部突然大幅度動作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Neck Pain"
+        },
+        {
+          "factor": "反覆／持續機械或姿勢負荷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Neck Sprains and Strains"
+        },
+        {
+          "factor": "隨年齡增加的頸椎退化可成為頸痛因素",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Neck Pain"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Recent trauma or collision",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Neck Pain"
+        },
+        {
+          "factor": "Sudden extreme neck motion",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Neck Pain"
+        },
+        {
+          "factor": "Repeated/sustained mechanical or postural load",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Neck Sprains and Strains"
+        },
+        {
+          "factor": "Degenerative cervical changes with increasing age can contribute to neck pain",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Neck Pain"
+        }
+      ],
+      "sources": [
+        "AAOS — Neck Pain: https://orthoinfo.aaos.org/diseases--conditions/neck-pain",
+        "AAOS — Neck Sprains and Strains: https://orthoinfo.aaos.org/diseases--conditions/neck-sprain/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Neck Pain",
+          "AAOS — Neck Sprains and Strains"
+        ],
+        "etiology_en": [
+          "AAOS — Neck Pain",
+          "AAOS — Neck Sprains and Strains"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Neck Pain",
+          "AAOS — Neck Sprains and Strains"
+        ],
+        "western_pathology_en": [
+          "AAOS — Neck Pain",
+          "AAOS — Neck Sprains and Strains"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Neck Pain",
+          "AAOS — Neck Sprains and Strains"
+        ],
+        "risk_factors_en": [
+          "AAOS — Neck Pain",
+          "AAOS — Neck Sprains and Strains"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為良性急性頸痛／落枕之疼痛與活動度輔助照護",
+        "precautions": "治療前排除發燒合併頸部僵硬畏光（腦膜炎徵象）、外傷後頸痛（骨折／韌帶損傷疑慮）及上肢放射麻木無力（神經根病變）",
+        "co_management": "出現上述紅旗徵象時，立即轉介急診或神經科／骨科評估，不以針灸處理疑似腦膜炎或不穩定頸椎損傷",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
+        "note": "本次查證未找到急性頸痛／落枕針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive pain and mobility care for benign acute neck pain / wry neck",
+        "precautions": "Rule out fever with neck stiffness and photophobia (meningitis signs), post-trauma neck pain (fracture/ligament injury concern), and radiating arm numbness/weakness (radiculopathy) before treatment",
+        "co_management": "Refer immediately to emergency care or neurology/orthopedics if any of the above red-flag signs appear; acupuncture must not be used to manage suspected meningitis or an unstable cervical injury",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS clinical materials)",
+        "note": "No systematic-review source for acute neck pain / stiff neck acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.neck_pain"
       ]
     },
     {
@@ -8520,8 +9499,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "反覆腕伸與抓握負荷若超過肌腱恢復能力即可發生，並不限於網球運動。",
+      "western_pathology_zh": "外上髁炎（網球肘）是外側肘部共同伸肌腱起點的過度使用性肌腱病，反覆微小損傷與肌腱退變／刺激造成負荷相關的外側肘痛。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8558,7 +9537,106 @@
         "rf.lateral_epicondylitis.legacy01",
         "rf.lateral_epicondylitis.legacy02",
         "rf.lateral_epicondylitis.legacy03"
-      ]
+      ],
+      "etiology_en": "Repeated wrist extension and gripping loads can exceed tendon recovery capacity; it is not limited to tennis.",
+      "western_pathology_en": "Lateral epicondylitis is an overuse tendinopathy involving the common extensor tendon origin at the lateral elbow, with repeated microtrauma and tendon degeneration/irritation producing load-related lateral elbow pain.",
+      "risk_factors_zh": [
+        {
+          "factor": "反覆抓握或腕伸活動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        },
+        {
+          "factor": "職業或運動性過度使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        },
+        {
+          "factor": "中年族群常見",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        },
+        {
+          "factor": "前臂反覆負荷後恢復不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Repetitive gripping or wrist-extension activity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        },
+        {
+          "factor": "Occupational or sports overuse",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        },
+        {
+          "factor": "Middle age is a common clinical context",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        },
+        {
+          "factor": "Poor recovery from repeated forearm loading",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        }
+      ],
+      "sources": [
+        "AAOS — Tennis Elbow (Lateral Epicondylitis): https://orthoinfo.aaos.org/en/diseases--conditions/tennis-elbow-lateral-epicondylitis/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        ],
+        "etiology_en": [
+          "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        ],
+        "western_pathology_en": [
+          "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        ],
+        "risk_factors_en": [
+          "AAOS — Tennis Elbow (Lateral Epicondylitis)"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為外上髁疼痛之輔助照護，核心治療仍為相對休息與離心運動",
+        "precautions": "治療前排除感染徵象（紅熱腫脹）與橈神經夾擠可能（手麻無力）；外傷後劇痛需先排除撕脫性骨折",
+        "co_management": "症狀持續逾預期病程或合併神經症狀者，轉介骨科／復健科評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
+        "note": "本次查證未找到網球肘針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for lateral epicondyle pain; core treatment remains relative rest and eccentric loading",
+        "precautions": "Rule out infection signs (redness, warmth, swelling) and possible radial nerve entrapment (hand numbness/weakness) before treatment; severe pain after trauma should rule out avulsion fracture first",
+        "co_management": "Refer for orthopedic/rehabilitation evaluation if symptoms persist beyond the expected course or neurologic symptoms are present",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS clinical materials)",
+        "note": "No systematic-review source for tennis elbow acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.medial_epicondylitis",
@@ -8592,8 +9670,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "反覆前臂屈曲、旋前、抓握、揮桿或搬運動作可使肌腱過載，高爾夫只是可能暴露之一。",
+      "western_pathology_zh": "內上髁炎（高爾夫球肘）是肘內側共同屈肌－旋前肌腱起點的過度使用性肌腱病，反覆負荷可損傷肌腱纖維並造成肘內側疼痛與壓痛。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8630,7 +9708,113 @@
         "rf.medial_epicondylitis.legacy01",
         "rf.medial_epicondylitis.legacy02",
         "rf.medial_epicondylitis.legacy03"
-      ]
+      ],
+      "etiology_en": "Repeated forearm flexion, pronation, gripping, or swing/lifting motions can overload the tendon; golf is only one possible exposure.",
+      "western_pathology_en": "Medial epicondylitis is an overuse tendinopathy at the common flexor-pronator tendon origin on the inner elbow, where repeated loading can damage tendon fibers and produce medial elbow pain and tenderness.",
+      "risk_factors_zh": [
+        {
+          "factor": "反覆抓握與腕屈／旋前工作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Golf Injury Prevention – Golfer's Elbow section"
+        },
+        {
+          "factor": "高爾夫或其他反覆前臂運動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Golf Injury Prevention – Golfer's Elbow section"
+        },
+        {
+          "factor": "職業性過度使用",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "反覆負荷間恢復不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Repetitive gripping and wrist-flexion/pronation work",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Golf Injury Prevention – Golfer's Elbow section"
+        },
+        {
+          "factor": "Golf or other repetitive forearm sports",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Golf Injury Prevention – Golfer's Elbow section"
+        },
+        {
+          "factor": "Occupational overuse",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "Insufficient recovery between repeated loads",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        }
+      ],
+      "sources": [
+        "AAOS — Golf Injury Prevention – Golfer's Elbow section: https://orthoinfo.aaos.org/staying-healthy/golf-injury-prevention",
+        "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries: https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Golf Injury Prevention",
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "etiology_en": [
+          "AAOS — Golf Injury Prevention",
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Golf Injury Prevention",
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "western_pathology_en": [
+          "AAOS — Golf Injury Prevention",
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Golf Injury Prevention",
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "risk_factors_en": [
+          "AAOS — Golf Injury Prevention",
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為內上髁疼痛之輔助照護，核心治療仍為相對休息與離心運動",
+        "precautions": "治療前留意第四、五指麻木無力等尺神經（肘管）症狀；紅熱腫脹需排除感染，外傷後劇痛需排除撕脫性骨折",
+        "co_management": "合併尺神經症狀持續或加重者，轉介骨科／復健科評估肘管症候群",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
+        "note": "本次查證未找到高爾夫球肘針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive care for medial elbow pain; core treatment remains relative rest and eccentric loading",
+        "precautions": "Watch for ring/little-finger numbness or weakness suggesting ulnar (cubital tunnel) involvement before treatment; redness/swelling should rule out infection, and severe post-trauma pain should rule out avulsion fracture",
+        "co_management": "Refer for orthopedic/rehabilitation evaluation of cubital tunnel syndrome if ulnar symptoms persist or worsen",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS clinical materials)",
+        "note": "No systematic-review source for golfer's elbow acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.carpal_tunnel",
@@ -10596,8 +11780,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "急性撕裂常見於轉身、切入或其他扭轉性損傷；退化的半月板隨年齡失去韌性後，較輕微的扭轉也可能造成撕裂。",
+      "western_pathology_zh": "半月板損傷是膝關節纖維軟骨撕裂或結構性受損；半月板負責分散負荷並協助穩定關節。損傷可為急性外傷性，也可為組織老化相關的退化性撕裂。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -10634,6 +11818,108 @@
         "rf.meniscus_injury.legacy01",
         "rf.meniscus_injury.legacy02",
         "rf.meniscus_injury.legacy03"
+      ],
+      "etiology_en": "Acute tears commonly follow pivoting/cutting or other twisting injury; degenerative tissue can tear with relatively minor twisting as the meniscus becomes less resilient with age.",
+      "western_pathology_en": "Meniscal injury is tearing or structural damage of knee fibrocartilage that helps distribute load and stabilize the joint. Tears may be acute traumatic lesions or degenerative tears related to tissue aging.",
+      "risk_factors_zh": [
+        {
+          "factor": "轉身／切入類運動或扭轉外傷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Meniscus Tears"
+        },
+        {
+          "factor": "接觸性或非接觸性膝傷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Meniscus Tears"
+        },
+        {
+          "factor": "年齡增加與半月板退化",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Meniscus Tears"
+        },
+        {
+          "factor": "可合併 ACL 等膝部損傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Meniscus Tears"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Pivoting/cutting sports or twisting trauma",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Meniscus Tears"
+        },
+        {
+          "factor": "Contact or non-contact knee injury",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Meniscus Tears"
+        },
+        {
+          "factor": "Increasing age and degenerative meniscal tissue",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Meniscus Tears"
+        },
+        {
+          "factor": "Coexisting knee injury such as ACL injury may occur",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Meniscus Tears"
+        }
+      ],
+      "sources": [
+        "AAOS — Meniscus Tears: https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Meniscus Tears"
+        ],
+        "etiology_en": [
+          "AAOS — Meniscus Tears"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Meniscus Tears"
+        ],
+        "western_pathology_en": [
+          "AAOS — Meniscus Tears"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Meniscus Tears"
+        ],
+        "risk_factors_en": [
+          "AAOS — Meniscus Tears"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為退化性半月板撕裂復健期間之疼痛輔助照護；真正機械性鎖住或外傷後大量積血非針灸適應範圍",
+        "precautions": "治療前確認是否為真正鎖住（無法伸直，桶柄狀撕裂徵象）或外傷後數小時內大量腫脹，此類需優先轉介；紅熱發燒需排除感染",
+        "co_management": "疑似需手術評估（真正鎖住、韌帶合併損傷）者轉介骨科，針灸不取代影像與手術評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
+        "note": "本次查證未找到半月板損傷針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive pain care during rehabilitation for degenerative meniscal tears; true mechanical locking or large post-traumatic hemarthrosis is outside acupuncture's scope",
+        "precautions": "Confirm before treatment whether true locking (inability to extend, suggesting bucket-handle tear) or large swelling within hours of trauma is present — these need priority referral; a red, hot, febrile joint should rule out infection",
+        "co_management": "Refer to orthopedics if surgical evaluation is likely needed (true locking, concurrent ligament injury); acupuncture does not replace imaging or surgical assessment",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS clinical materials)",
+        "note": "No systematic-review source for meniscus injury acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      },
+      "sign_symptom_ids": [
+        "sym.knee_pain"
       ]
     },
     {
@@ -11339,8 +12625,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "多與累積性機械負荷，或活動需求突然超過肌腱可承受能力有關。",
+      "western_pathology_zh": "反覆負荷可造成阿基里斯腱微小損傷、增厚、疼痛與承載能力下降；持續性病例屬慢性肌腱病變，不宜只視為一次性發炎。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -11377,7 +12663,94 @@
         "rf.achilles_tendinopathy.legacy01",
         "rf.achilles_tendinopathy.legacy02",
         "rf.achilles_tendinopathy.legacy03"
-      ]
+      ],
+      "etiology_en": "Most cases are related to cumulative mechanical overload or an abrupt mismatch between tendon capacity and activity demand.",
+      "western_pathology_en": "Repeated loading can produce micro-injury, tendon thickening, pain, and impaired load tolerance in the Achilles tendon; persistent cases reflect a chronic tendon disorder rather than a simple one-time inflammatory event.",
+      "risk_factors_zh": [
+        {
+          "factor": "跑跳或其他反覆肌腱負荷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "訓練量或強度快速增加",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "反覆負荷之間恢復不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Running/jumping or other repetitive tendon loading",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "Rapid increase in training volume or intensity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        },
+        {
+          "factor": "Insufficient recovery between repeated loads",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        }
+      ],
+      "sources": [
+        "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries: https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "etiology_en": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "western_pathology_en": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "risk_factors_en": [
+          "AAOS — Sprains, Strains, and Other Soft-Tissue Injuries"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為慢性肌腱病變之疼痛與功能輔助照護，需搭配離心負荷訓練等核心治療",
+        "precautions": "治療前確認有無 Thompson 測試陽性或突發斷裂徵象；病人若正使用氟喹諾酮類抗生素，須留意肌腱斷裂風險升高，治療手法應更謹慎",
+        "co_management": "出現肌腱斷裂徵象、感染徵象，或治療數月未改善時，轉介骨科／運動醫學評估",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
+        "note": "本次查證未找到跟腱病變針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive pain and function care for chronic Achilles tendinopathy, alongside core treatment such as eccentric loading",
+        "precautions": "Confirm before treatment whether a positive Thompson test or sudden-rupture signs are present; patients on fluoroquinolone antibiotics carry heightened rupture risk and warrant extra caution with technique",
+        "co_management": "Refer for orthopedic/sports-medicine evaluation if rupture signs, infection signs, or no improvement after months of treatment",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS clinical materials)",
+        "note": "No systematic-review source for Achilles tendinopathy acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.hip_osteoarthritis",
@@ -11413,8 +12786,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "沒有單一病因，退化通常由年齡相關變化、機械負荷、遺傳與既往關節損傷等因素共同作用。",
+      "western_pathology_zh": "髖骨關節炎是退化性關節疾病，關節軟骨逐漸磨損，可出現關節間隙變窄、表面粗糙與骨贅形成，進而造成疼痛與活動受限。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -11451,7 +12824,118 @@
         "rf.hip_osteoarthritis.legacy01",
         "rf.hip_osteoarthritis.legacy02",
         "rf.hip_osteoarthritis.legacy03"
-      ]
+      ],
+      "etiology_en": "There is no single cause. Degenerative change reflects interacting age-related, mechanical, genetic, and prior-joint-injury factors.",
+      "western_pathology_en": "Hip osteoarthritis is a degenerative joint disorder in which articular cartilage progressively deteriorates; joint-space narrowing, roughened surfaces, and osteophyte formation can impair hip motion and generate pain.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "骨關節炎家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "既往髖關節損傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "髖關節發育不良或先天結構異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "Family history of osteoarthritis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "Previous hip injury",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        },
+        {
+          "factor": "Developmental dysplasia or abnormal hip formation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS — Osteoarthritis of the Hip"
+        }
+      ],
+      "sources": [
+        "AAOS — Osteoarthritis of the Hip: https://orthoinfo.aaos.org/en/diseases--conditions/osteoarthritis-of-the-hip/"
+      ],
+      "field_sources": {
+        "etiology_zh": [
+          "AAOS — Osteoarthritis of the Hip"
+        ],
+        "etiology_en": [
+          "AAOS — Osteoarthritis of the Hip"
+        ],
+        "western_pathology_zh": [
+          "AAOS — Osteoarthritis of the Hip"
+        ],
+        "western_pathology_en": [
+          "AAOS — Osteoarthritis of the Hip"
+        ],
+        "risk_factors_zh": [
+          "AAOS — Osteoarthritis of the Hip"
+        ],
+        "risk_factors_en": [
+          "AAOS — Osteoarthritis of the Hip"
+        ],
+        "acupuncture_scope_zh": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ],
+        "acupuncture_scope_en": [
+          "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為髖關節退化疼痛與活動功能之輔助照護，屬長期退化性疾病之症狀管理",
+        "precautions": "治療前排除休息痛、夜間痛、體重減輕或紅熱發燒等提示腫瘤／感染／化膿性關節炎之徵象；有類固醇或酒精使用史合併突發劇痛者需優先排除股骨頭缺血性壞死",
+        "co_management": "症狀持續影響功能或屬末期退化者，轉介骨科評估是否符合人工髖關節置換適應症",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
+        "note": "本次查證未找到髖骨關節炎針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May serve as adjunctive pain and function care for hip osteoarthritis, as symptom management within a long-term degenerative disease",
+        "precautions": "Rule out rest pain, night pain, weight loss, or a red/hot/febrile joint before treatment; prioritize excluding avascular necrosis in patients with sudden severe pain, especially with a steroid or alcohol history",
+        "co_management": "Refer for orthopedic evaluation of hip-replacement candidacy if symptoms persistently affect function or degeneration is end-stage",
+        "evidence": "unknown",
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from AAOS clinical materials)",
+        "note": "No systematic-review source for hip osteoarthritis acupuncture efficacy was confirmed in this session's research; this is a scope-of-practice caution"
+      }
     },
     {
       "id": "cond.piriformis_syndrome",
