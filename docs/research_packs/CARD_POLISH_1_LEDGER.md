@@ -44,9 +44,15 @@ Branch `codex/card-polish-1`（自 `origin/codex/pattern-v2` @ `aa170b9`）。
 | 5 | `formula.dan_shen_yin` | `name_zh` | `丹参饮` → `丹參飲` | 全 `data/` 內 `丹參` 661 次 vs `丹参` 3 次，其餘 2 次都在 `data/imports/cloudtcm/`（未整理的原始簡體匯入，非本線）。此為 curated 資料中唯一一筆，明確離群 |
 | 6 | `formula.zhen_ren_yang_zang_tang` | `composition[5].name_zh` | `Zhi Ying Su Ke` → `炙罌粟殼` | 同一物件的 `herb_zh` 已是 `炙罌粟殼`，`pinyin`/`pinyin_toned` 另存拼音（無資訊損失）；同檔其他 composition 皆 `name_zh == herb_zh`（如 `制附子`、`厚朴`）。**注意：這是 133 筆同類問題中唯一「同筆內已有正確中文可回填」者**，其餘見 §3.1 |
 
+### sym（symptoms.json）
+
+| # | id | 欄位 | before → after | 為何無歧義 |
+|---|---|---|---|---|
+| 7 | `sym.knee_pain` | `aliases_en[2]`（對應 `aliases_zh[2]` = `膝軟`） | `Knee ache` → `Knee weakness` | `_zh` 為準：`軟` 是「痠軟無力」不是「痛」。本 repo 既有慣例把 `軟` 譯為 weak（`腰膝痠軟` → `Aching, weak lower back and knees`／`sore weak low back and knees`）。且同陣列 `膝蓋痛` 已譯 `Sore knee`，原譯讓兩條別名同義並丟失「無力」語意 |
+
 修改後 `git diff --stat`：`formulas.json` 4 ++--、`herb_canon_shortlist.json` 8 ++--、
-`knowledge_data.js` 4 ++--（build 產出）。無任何欄位被清空或變短（唯二字元減少來自
-重複逗號；#2 反而 +1 字「除」）。
+`symptoms.json` 2 ++--、`knowledge_data.js`（build 產出）。無任何欄位被清空或變短
+（唯二字元減少來自重複逗號；#2 反而 +1 字「除」）。
 
 ---
 
@@ -158,7 +164,25 @@ cond / sym / formula / tdis 的半形才是離群。但即使離群線，逐筆�
 （例：`tdis.yao_tong` `pathomechanism_zh` 一句內同時有全形 `、` 與半形 `;` `,`），
 超出 15 筆抽樣範圍，**本次不動，列給 Ting 決定要不要開正規化單**。
 
-### 3.6 `dosage` 欄位存的是「JSON 字串」而非物件 — herb 線
+### 3.6 同一 `_zh` 對到四種不同 `_en` — pattern 線 `pulse_en`
+
+`pulse_zh` 為 `脈弦滑數` 的三筆記錄，英譯各不相同：
+
+| id | `pulse_en` |
+|---|---|
+| `pattern.liver_gallbladder_damp_heat`（抽樣內） | `Wiry, rapid or slippery, rapid pulse` |
+| （line 6755） | `Wiry, slippery, and rapid pulse` |
+| （line 14635） | `Wiry-slippery-rapid pulse` |
+
+全線另有 `Wiry or slippery, rapid pulse`、`Wiry rapid or slippery rapid pulse`、
+`Wiry-slippery pulse` 等寫法。抽樣那筆的 `rapid` 出現兩次又多一個 `or`，
+最不貼合 `弦滑數`（弦=wiry、滑=slippery、數=rapid 三個並列）。
+
+**但沒有改**：`弦滑數` 是否可讀作「弦數 或 滑數」需要原始教材佐證，
+且這是全線 `pulse_en` 用語統一的問題（六種寫法），改一筆只會讓不一致更難追。
+建議另開一張 `pulse_en` 正規化單，一次收斂。
+
+### 3.7 `dosage` 欄位存的是「JSON 字串」而非物件 — herb 線
 
 `herb.huang_qin` / `xuan_shen` / `yin_chen_hao` / `ai_ye` / `shu_di_huang` /
 `mai_men_dong` 的 `dosage` 是一個**字串**，內容為縮排過的 JSON 文字：
@@ -208,12 +232,25 @@ cond / sym / formula / tdis 的半形才是離群。但即使離群線，逐筆�
 `wu_mei_wan` 1 vs 3、`xie_huang_san` 0 vs 2）。
 **中文使用者看到的禁忌／注意事項比英文使用者少**，這是系統性的安全落差，非單筆問題。
 
-### 4.4 `herb.chuan_wu`（制川烏）— 內容正確，僅記錄以便複查
+### 4.4 `drug.mannitol` — 來源標籤不是同一個臨床角色（記錄本身已自陳）
+
+`gap_note_zh` 自己寫著：
+
+> ⚠️ 來源不對藥:本筆記錄的 setid 5b44e248… 是「Sorbitol-Mannitol 泌尿科灌洗液」標籤,
+> 標籤首行即為「NOT FOR INJECTION BY USUAL PARENTERAL ROUTES / FOR UROLOGIC
+> IRRIGATION ONLY」,且含 sorbitol 為共同成分。這與本卡要教的靜脈滲透性利尿劑
+> (腦水腫、眼壓)不是同一個臨床角色
+
+**記錄誠實揭露了這件事，這是好的做法**，但缺陷仍然存在：這張卡教的是靜脈用滲透性
+利尿劑（降腦壓／眼壓），引用的卻是**明文禁止注射**的泌尿科灌洗液標籤。
+不屬文字髒污，不在修整範圍，但請 Ting/Fable 排入換源。
+
+### 4.5 `herb.chuan_wu`（制川烏）— 內容正確，僅記錄以便複查
 
 安全敘述完整且謹慎（炮製、先煎、孕禁、陰虛/熱痛禁、心律不整風險、十八反具名列出
 半夏／瓜蔞／貝母／白及／白蘞）。**無需修改**，列此僅因該藥高毒性、值得 Ting 複驗。
 
-### 4.5 `drug.enoxaparin` `acupuncture_note_zh` — 內容正確，值得保留為範例
+### 4.6 `drug.enoxaparin` `acupuncture_note_zh` — 內容正確，值得保留為範例
 
 該註記明確區分「標籤講的是硬膜外／脊椎穿刺，**不是針灸**」，並寫
 「標籤未給任何針灸門檻，不要自行推導一個」。**完全符合憲法紅線 9（不把不確定寫成確定）**，
@@ -221,7 +258,22 @@ cond / sym / formula / tdis 的半形才是離群。但即使離群線，逐筆�
 
 ---
 
-## 5. 抽樣 id 清單（供重跑核對）
+## 5. 逐線判讀
+
+| 線 | 抽樣 | 已修 | 記帳未修 | 逐筆讀後判讀 |
+|---|---|---|---|---|
+| cond | 15/505 | 0 | 2 類 | 未見假中文／亂碼／簡體。`latin_in_zh` 43 處全屬來源引用與 ICD 代碼，非違規。`red_flags_en[].recommended_action` 四種說法語意重疊（§3.3） |
+| tdis | 15/159 | 0 | 2 類 | 品質高。`definition_en` 用 `Xuan Yun (眩暈) is…` 雙語對照為刻意設計。`跌仆`/`暈仆` 用字正確。僅半形標點離群（§3.5） |
+| pattern | 15/154 | 0 | 2 類 | `_zh`/`_en` 忠實、陣列齊長、機轉敘述紮實。唯 `pulse_en` 全線用語分歧（§3.6）。半形標點為該線自有慣例（58.3%），非缺陷 |
+| sym | 15/102 | **1** | 1 類 | 品質最高的一線。`definition_zh` 會主動寫「是主訴而非診斷」，紅旗臨床正確。僅 `膝軟` 一處誤譯（已修） |
+| herb | 15/358 | **4** | 5 類 | 長文 `analysis_zh` 有簡體尾巴（已修 2 筆）。最大問題是 `english_exam_track` 樣板句 147/127/125/23 筆（§3.3） |
+| formula | 15/224 | **2** | 5 類 | 問題最集中：`_zh`/`_en` 陣列不等 31 處、`ba_fa_zh` 英文句 96 筆、`name_zh` 存拼音 133 筆、罌粟殼卡兩項安全問題（§4.1／§4.2） |
+| supp | 15/36 | 0 | 0 | **本次唯一零缺陷的線。** `maturity: skeleton` 誠實標示，`insufficient_data` 與 `no_specific_flag_in_source` 分得很清楚；`supp.lutein` 甚至記錄了「原引用是目錄索引頁、未真正查到一手來源，故降級」——示範級的來源紀律 |
+| drug | 15/40 | 0 | 2 類 | 內容品質好，`latin_in_zh` 33 處全是藥名／口訣／基因型（`HLA-B*1502`），非違規。`gap_note_zh` 會自陳缺口。唯 `mannitol` 來源不對藥（§4.4） |
+
+合計：**抽樣 120 筆，修 7 筆，記帳未修 12 類**（其中 6 項安全相關）。
+
+## 6. 抽樣 id 清單（供重跑核對）
 
 - **cond**：pertussis, adenomyosis, neurogenic_bladder, superficial_thrombophlebitis, trichotillomania, chronic_bronchitis, valvular_heart_disease, primary_biliary_cholangitis, mitral_regurgitation, lichen_planus, pulmonary_hypertension, laryngopharyngeal_reflux, testicular_torsion, ibs, chronic_open_angle_glaucoma
 - **tdis**：li_ji, luo_zhen, ji_zhi, jing_duan_qian_hou, tai_wei_bu_zheng, xuan_yun, xiao_ke, e_kou_chuang, zhong_shu, yin_yang, jing_xing_xie_xie, dong_chuang, yao_tong, luo_li, shi_wen
