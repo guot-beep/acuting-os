@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Fable → Codex Dispatch — AVS v3 audit(design §16 reviewer role)
+
+- **審什麼**:AVS v3 Visit Checkout(`ecd2005` 主實作 + `9642f20` Phase E polish,皆在 `codex/pattern-v2` / `fable/avs-v3`)。設計文件 = Ting 提供的 AVS_V3_VISIT_CHECKOUT_INTEGRATION_PLAN(§16 指定 Codex 為 reviewer,非 architect:除非找到具體 high-risk 缺陷,不重開架構)。
+- **Audit 六軸**(§16 列舉):
+  1. **Visit ownership**:snapshot 只掛 `note.avsSnapshots[]`,`visitId===note.id` 不變量;Patient/Case 端無第二份所有權。
+  2. **Finalized immutability**:`js/avs.js` 狀態機(finalizeSnapshot/createCorrectionDraft/upsertDraft)之外有無任何寫路徑可改 finalized/superseded 內容;`normalizeSoapNote` 的 avsSnapshots pass-through 是否真零重塑;UI(app.js `renderAvsCheckout`/`collectAvsDraftFromDom`)是否只編輯 draft。
+  3. **Append-only/supersede**:更正流程 v1→superseded 不可逆、無刪除路徑;`checkAvsInvariants` 的漏洞(≤1 draft、≤1 finalized、version 唯一)。
+  4. **PHI 邊界**:snapshot 只落 clinical store(localStorage/envelope);`avs_advice_library.json`/`clinic_profile.json`/bundle 零 PHI;`checkPatientOutputSafety` banned-token 覆蓋是否足夠(找繞過:自訂指示、metric prompt、clinic 欄位注入)。
+  5. **Storage failure**:`persistAvsSnapshots` 失敗回滾與 R9 gate B 等價性;finalize 失敗後 in-memory/storage 一致性;v2 envelope 模式下 avsSnapshots 隨 case 寫入的 revision/append-only 相容性。
+  6. **C2b/Patient regression**:`ecd2005..9642f20` 未觸碰 clinical-store.js —— 驗證 blob-identical;normalizeSoapNote 新增兩欄對 C2b 遷移(raw 原樣攜帶原則)與 verifyStagingObject 的影響 = 應為零(遷移不過 normalizer),請覆核。
+- **附帶覆核**:R14 CI HIGH(`avsAdviceLibrary`/`clinicProfile` 兩鍵不可重現)—— `ecd2005` 已補 generator,本機 clean rebuild byte-identical(`git status --short data/generated/` 空);請對 exact SHA 重驗 generated-current step。
+- **允許的檔案**:唯讀全 repo;可寫僅 `docs/CODEX_HANDOFF.md`(回報)與自建測試 harness(用完清理,真 store 讀/寫必須 `0/0`)。
+- **禁止**:不改 js/avs.js、app.js、data/**、scripts/**(找到缺陷 = 回報,不自行修);不開 SQLite;不動 C2b 六軸已綠結論。
+- **驗證指令**:`node scripts/test-avs-checkout.js`(基線 `32/32`)、`node scripts/validate-avs-library.js`(基線 `PASS 0`)、`node scripts/check-validation-ratchet.js`、`node --check app.js js/avs.js`、`git diff ecd2005~1..9642f20 --stat -- js/clinical-store.js`(應為空)。
+- **完成的定義**:本檔置頂回報 —— 六軸各 PASS/FAIL + 證據(可重現指令/行號)、缺陷分級(HIGH=可改寫歷史或洩 PHI/內部 id;MED=狀態機可繞過;LOW=其餘)、GO/NO-GO 裁決。找不到缺陷也要寫「找過哪裡、怎麼找」。
+
+---
+
 ## [2026-08-11] Codex Handoff — R14 `39de5f1`, generated drift + formula 4
 
 - **Clinical**：core未漂移；六軸=`6/6 PASS`，pointer/runtime/C2b=`31/31 · 60/60 · 30/30`；K=`10/2/0`、invariants=`3/3/2/5/3 · 0`、Phase E=`12`、interactions=`0`、syntax=`2/2`、真 store=`0/0`。
