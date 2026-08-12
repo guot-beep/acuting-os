@@ -1,0 +1,1415 @@
+{
+  "schema": "acuting_os.cr010_condition_detail_research.v1",
+  "request_id": "CR-010",
+  "batch": "03",
+  "generated_at": "2026-08-11",
+  "source_commit": "aa170b9",
+  "status": "research_staging_not_canonical",
+  "selection": "TRUE_LIVE_DETAIL_PARTIAL_ORDER",
+  "condition_count": 15,
+  "rules": [
+    "EXISTING_ENRICH only; all 15 IDs already exist.",
+    "Preserve existing summary, western_context, red_flags, acupuncture_scope unless a separate reviewed correction is approved.",
+    "Fill the live missing targets: western_pathology, etiology, risk_factors, sources, field_sources, structured relations.",
+    "Live source reuse gate is HIGH confidence for every selected ID; inspect existing assets before adding new prose.",
+    "TCM text is a differential seed only and remains needs_textbook_source_review.",
+    "No Western condition = TCM disease/pattern equivalence.",
+    "Repo schema, DECISIONS, canonical registries and validators win."
+  ],
+  "conditions": [
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 1,
+      "id": "cond.achilles_tendinopathy",
+      "name_en": "Achilles Tendinopathy",
+      "name_zh": "阿基里斯腱病變",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Repeated loading can produce micro-injury, tendon thickening, pain, and impaired load tolerance in the Achilles tendon; persistent cases reflect a chronic tendon disorder rather than a simple one-time inflammatory event.",
+      "western_pathology_zh": "反覆負荷可造成阿基里斯腱微小損傷、增厚、疼痛與承載能力下降；持續性病例屬慢性肌腱病變，不宜只視為一次性發炎。",
+      "etiology_en": "Most cases are related to cumulative mechanical overload or an abrupt mismatch between tendon capacity and activity demand.",
+      "etiology_zh": "多與累積性機械負荷，或活動需求突然超過肌腱可承受能力有關。",
+      "risk_factors_en": [
+        "Running/jumping or other repetitive tendon loading",
+        "Rapid increase in training volume or intensity",
+        "Insufficient recovery between repeated loads"
+      ],
+      "risk_factors_zh": [
+        "跑跳或其他反覆肌腱負荷",
+        "訓練量或強度快速增加",
+        "反覆負荷之間恢復不足"
+      ],
+      "sources": [
+        {
+          "title": "Sprains, Strains, and Other Soft-Tissue Injuries",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "Achilles rupture",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "heel pain / activity-related ankle pain",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only: local tendon pain and stiffness may suggest channel/tendon obstruction, qi-blood stagnation, or blood stasis depending on onset, trauma, cold/heat features, and examination.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子：局部肌腱疼痛與僵硬可依起病、外傷、寒熱與檢查，考慮經筋痹阻、氣血不暢或瘀血等候選機轉。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 2,
+      "id": "cond.acute_lumbar_sprain",
+      "name_en": "Acute Lumbar Sprain",
+      "name_zh": "急性腰扭傷",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "An acute lumbar sprain/strain involves sudden injury to lumbar ligaments, muscles, or tendons, producing local soft-tissue pain, spasm, and movement limitation without implying nerve-root or structural spinal disease.",
+      "western_pathology_zh": "急性腰扭傷／拉傷是腰部韌帶、肌肉或肌腱的突然軟組織損傷，可造成局部疼痛、痙攣與活動受限，但本身不代表神經根或脊椎結構性疾病。",
+      "etiology_en": "Typical mechanisms include sudden lifting, twisting, a fall, or another abrupt load that overstretches soft tissues.",
+      "etiology_zh": "常見機轉包括突然搬重物、扭轉、跌倒或其他使腰部軟組織過度牽拉的急性負荷。",
+      "risk_factors_en": [
+        "Sudden heavy or awkward lifting",
+        "Rapid trunk twisting",
+        "Sports or work involving abrupt high loads",
+        "Poor load tolerance/deconditioning may increase susceptibility"
+      ],
+      "risk_factors_zh": [
+        "突然搬重物或不良姿勢搬運",
+        "軀幹快速扭轉",
+        "運動或工作中的突發高負荷",
+        "身體承載能力不足或去訓練化可能增加易感性"
+      ],
+      "sources": [
+        {
+          "title": "Sprains, Strains, and Other Soft-Tissue Injuries",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        },
+        {
+          "title": "Low-Back Pain and Complementary Health Approaches",
+          "url": "https://www.nccih.nih.gov/health/low-back-pain-and-complementary-health-approaches-what-you-need-to-know",
+          "authority": "NCCIH/NIH",
+          "supports_fields": [
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries",
+          "https://www.nccih.nih.gov/health/low-back-pain-and-complementary-health-approaches-what-you-need-to-know"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "lumbar radiculopathy/sciatica",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "vertebral fracture",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only: an acute mechanical low-back injury may generate qi stagnation and blood-stasis or channel/tendon injury candidates; red flags still require biomedical evaluation.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子：急性機械性腰傷可考慮氣滯血瘀、經筋損傷等候選機轉；若有紅旗仍以西醫評估優先。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 3,
+      "id": "cond.amenorrhea",
+      "name_en": "Secondary Amenorrhea",
+      "name_zh": "繼發性閉經",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Secondary amenorrhea is cessation of previously established menses. It is a clinical sign with multiple possible reproductive, endocrine, hypothalamic-pituitary, systemic, medication-related, and physiologic causes rather than one single disease mechanism.",
+      "western_pathology_zh": "繼發性閉經是原本已有月經後停止月經，屬多病因臨床表現，可來自生殖、內分泌、下視丘－腦下垂體、全身疾病、藥物或生理因素，而非單一病理機轉。",
+      "etiology_en": "Pregnancy must be excluded first. Other causes include low weight/rapid weight loss, eating disorders, hypothalamic or pituitary disorders, PCOS, thyroid disease, primary ovarian insufficiency, stress, chronic illness, and some medications or hormonal contraception.",
+      "etiology_zh": "首先需排除懷孕；其他原因包括低體重或快速減重、飲食疾患、下視丘或腦下垂體問題、PCOS、甲狀腺疾病、原發性卵巢功能不全、壓力、慢性疾病，以及部分藥物或荷爾蒙避孕。",
+      "risk_factors_en": [
+        "Low body weight or rapid weight loss",
+        "Eating disorders or excessive exercise",
+        "High physiologic/psychological stress",
+        "PCOS, thyroid or pituitary disorders",
+        "Primary ovarian insufficiency",
+        "Certain chronic diseases or medications"
+      ],
+      "risk_factors_zh": [
+        "低體重或快速減重",
+        "飲食疾患或過度運動",
+        "高度生理／心理壓力",
+        "PCOS、甲狀腺或腦下垂體疾病",
+        "原發性卵巢功能不全",
+        "特定慢性疾病或藥物"
+      ],
+      "sources": [
+        {
+          "title": "Amenorrhea: Absence of Periods",
+          "url": "https://www.acog.org/womens-health/faqs/amenorrhea-absence-of-periods",
+          "authority": "ACOG",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/womens-health/faqs/amenorrhea-absence-of-periods"
+        ],
+        "etiology": [
+          "https://www.acog.org/womens-health/faqs/amenorrhea-absence-of-periods"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/womens-health/faqs/amenorrhea-absence-of-periods"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "pregnancy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "PCOS",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "primary ovarian insufficiency",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Biomedical secondary amenorrhea can overlap with the traditional disease category of amenorrhea, but pattern selection still depends on the patient; candidates may include Kidney deficiency, blood deficiency, phlegm-damp, blood stasis, or Liver qi constraint.",
+      "tcm_pathogenesis_zh": "僅作辨證研究種子。西醫繼發性閉經可與中醫閉經病名重疊，但仍需依個案辨證，可考慮腎虛、血虛、痰濕、血瘀或肝鬱等候選證機。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 4,
+      "id": "cond.breech_presentation",
+      "name_en": "Breech Presentation (moxibustion context)",
+      "name_zh": "胎位不正（艾灸文件情境）",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Breech presentation is a fetal presentation, not an intrinsic maternal disease: the buttocks, feet, or both are positioned to present first near term rather than the fetal head.",
+      "western_pathology_zh": "臀位屬胎兒先露方式，不是孕婦本身的疾病：接近足月時由臀部、足部或兩者先朝向產道，而不是頭部先露。",
+      "etiology_en": "The reason is often unknown. Contributing factors can include multiple gestation, abnormal amniotic-fluid volume, uterine shape abnormalities or fibroids, and prior pregnancy.",
+      "etiology_zh": "原因常無法確定；相關因素可包括多胎妊娠、羊水過多或過少、子宮形態異常或肌瘤，以及既往妊娠。",
+      "risk_factors_en": [
+        "Multiple gestation",
+        "Too much or too little amniotic fluid",
+        "Uterine shape abnormalities or fibroids",
+        "Prior pregnancy"
+      ],
+      "risk_factors_zh": [
+        "多胎妊娠",
+        "羊水過多或過少",
+        "子宮形態異常或肌瘤",
+        "既往妊娠"
+      ],
+      "sources": [
+        {
+          "title": "If Your Baby Is Breech",
+          "url": "https://www.acog.org/womens-health/faqs/if-your-baby-is-breech",
+          "authority": "ACOG",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/womens-health/faqs/if-your-baby-is-breech"
+        ],
+        "etiology": [
+          "https://www.acog.org/womens-health/faqs/if-your-baby-is-breech"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/womens-health/faqs/if-your-baby-is-breech"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "transverse lie / other malpresentation",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "obstetric assessment and external cephalic version eligibility",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Traditional discussion of fetal malposition and moxibustion must remain adjunctive and cannot replace obstetric assessment, gestational-age criteria, or delivery planning.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。傳統胎位不正與艾灸的討論只能作輔助，不能取代產科評估、孕週條件與分娩計畫。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Obstetric presentation/context identity, not a disease process.",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 5,
+      "id": "cond.diminished_ovarian_reserve",
+      "name_en": "Diminished Ovarian Reserve",
+      "name_zh": "卵巢儲備功能下降",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Diminished ovarian reserve describes reduced oocyte quantity or reduced expected ovarian response. Ovarian-reserve markers are useful for estimating response/oocyte yield but are poor independent predictors of reproductive potential or live birth.",
+      "western_pathology_zh": "卵巢儲備功能下降主要描述剩餘卵母細胞數量或預期卵巢反應下降。卵巢儲備指標可預估刺激反應與取卵數，但不能獨立準確預測自然生育能力或活產。",
+      "etiology_en": "Oocyte quantity declines with reproductive aging, with substantial variation among people of the same chronological age. DOR may also be recognized after a poor ovarian response or abnormal reserve testing.",
+      "etiology_zh": "卵母細胞數量會隨生殖老化下降，但同年齡個體間差異很大；DOR 也可在既往卵巢刺激反應不佳或儲備檢測異常時被辨識。",
+      "risk_factors_en": [
+        "Increasing reproductive age",
+        "Previous poor ovarian response",
+        "Abnormal ovarian reserve testing such as low AMH or low AFC, interpreted in clinical context"
+      ],
+      "risk_factors_zh": [
+        "生殖年齡增加",
+        "既往卵巢刺激反應不佳",
+        "AMH 偏低或 AFC 偏低等卵巢儲備檢測異常，需置於臨床情境解讀"
+      ],
+      "sources": [
+        {
+          "title": "Testing and interpreting measures of ovarian reserve: a committee opinion",
+          "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/",
+          "authority": "ASRM",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/"
+        ],
+        "etiology": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/"
+        ],
+        "risk_factors": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "infertility evaluation",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "primary ovarian insufficiency",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "IVF ovarian response counseling",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. DOR must not be equated with one 'Kidney deficiency' pattern; age, menstrual pattern, constitutional findings, tongue/pulse, and coexisting factors may support Kidney essence, Kidney yin/yang, blood deficiency, or stasis candidates.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。DOR 不可直接等同單一「腎虛」；仍需依年齡、月經、體質、舌脈與共存因素考慮腎精不足、腎陰／腎陽、血虛或瘀血等候選證機。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 6,
+      "id": "cond.hip_osteoarthritis",
+      "name_en": "Hip Osteoarthritis",
+      "name_zh": "髖骨關節炎",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Hip osteoarthritis is a degenerative joint disorder in which articular cartilage progressively deteriorates; joint-space narrowing, roughened surfaces, and osteophyte formation can impair hip motion and generate pain.",
+      "western_pathology_zh": "髖骨關節炎是退化性關節疾病，關節軟骨逐漸磨損，可出現關節間隙變窄、表面粗糙與骨贅形成，進而造成疼痛與活動受限。",
+      "etiology_en": "There is no single cause. Degenerative change reflects interacting age-related, mechanical, genetic, and prior-joint-injury factors.",
+      "etiology_zh": "沒有單一病因，退化通常由年齡相關變化、機械負荷、遺傳與既往關節損傷等因素共同作用。",
+      "risk_factors_en": [
+        "Increasing age",
+        "Family history of osteoarthritis",
+        "Previous hip injury",
+        "Obesity",
+        "Developmental dysplasia or abnormal hip formation"
+      ],
+      "risk_factors_zh": [
+        "年齡增加",
+        "骨關節炎家族史",
+        "既往髖關節損傷",
+        "肥胖",
+        "髖關節發育不良或先天結構異常"
+      ],
+      "sources": [
+        {
+          "title": "Osteoarthritis of the Hip",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/osteoarthritis-of-the-hip/",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/osteoarthritis-of-the-hip/"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/osteoarthritis-of-the-hip/"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/osteoarthritis-of-the-hip/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "hip bursitis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "inflammatory arthritis of the hip",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "osteonecrosis of the femoral head",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Hip OA may clinically overlap with Bi-type pain but should not be equated with one pattern; chronicity, heaviness, cold/heat, weakness, and stasis findings guide candidate patterns.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。髖 OA 可在症狀層面與痹證重疊，但不能固定等同單一證型；仍應依病程、重著、寒熱、虛弱與瘀象辨證。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 7,
+      "id": "cond.hyperemesis_gravidarum",
+      "name_en": "Nausea of Pregnancy / Hyperemesis (context)",
+      "name_zh": "妊娠劇吐（文件情境）",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Hyperemesis gravidarum is the severe end of nausea and vomiting of pregnancy and can produce clinically important weight loss, dehydration, electrolyte disturbance, and nutritional deficiency.",
+      "western_pathology_zh": "妊娠劇吐是妊娠噁心嘔吐的重症端，可造成明顯體重下降、脫水、電解質異常與營養缺乏。",
+      "etiology_en": "The exact cause is multifactorial and incompletely defined; pregnancy-related biologic factors interact with individual susceptibility. Persistent vomiting itself drives dehydration and metabolic/nutritional complications.",
+      "etiology_zh": "確切病因屬多因素且尚未完全釐清；妊娠相關生物因素與個體易感性共同作用，持續嘔吐本身會造成脫水及代謝／營養併發症。",
+      "risk_factors_en": [
+        "History of hyperemesis gravidarum in a prior pregnancy",
+        "Multiple gestation",
+        "Younger maternal age and selected preexisting medical conditions have been associated in population studies"
+      ],
+      "risk_factors_zh": [
+        "既往妊娠曾有妊娠劇吐",
+        "多胎妊娠",
+        "族群研究亦發現較年輕孕齡與部分既存疾病相關"
+      ],
+      "sources": [
+        {
+          "title": "Morning Sickness: Nausea and Vomiting of Pregnancy",
+          "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
+          "authority": "ACOG",
+          "supports_fields": [
+            "western_pathology",
+            "etiology"
+          ]
+        },
+        {
+          "title": "Risk factors and recurrence of hyperemesis gravidarum: population-based cohort",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39258527/",
+          "authority": "PubMed / Acta Obstetricia et Gynecologica Scandinavica",
+          "supports_fields": [
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy"
+        ],
+        "etiology": [
+          "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy"
+        ],
+        "risk_factors": [
+          "https://pubmed.ncbi.nlm.nih.gov/39258527/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "ordinary nausea and vomiting of pregnancy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "thyroid or gastrointestinal causes of severe vomiting",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "obstetric hydration/nutrition assessment",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Severe pregnancy vomiting can overlap with the traditional pregnancy-vomiting disease category, but patterning depends on the actual presentation; Stomach qi rebellion, phlegm-damp, Liver-Stomach disharmony, or Spleen-Stomach deficiency may be candidates.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。妊娠劇吐可與傳統妊娠惡阻病名有重疊，但仍需依實際表現辨證，可考慮胃氣上逆、痰濕、肝胃不和或脾胃虛弱等候選證機。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Pregnancy complication/context. Conventional obstetric assessment takes priority for dehydration, weight loss, electrolyte disturbance, or inability to maintain intake.",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 8,
+      "id": "cond.ivf_support",
+      "name_en": "IVF/ART Adjunctive Support (context)",
+      "name_zh": "試管嬰兒療程輔助（文件情境）",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "This record represents an adjunctive-care context around IVF/ART rather than a disease. IVF involves controlled ovarian stimulation, oocyte retrieval, fertilization/embryo culture, and embryo transfer; there is no single pathology intrinsic to 'IVF support.'",
+      "western_pathology_zh": "此紀錄代表 IVF／ART 周邊的輔助照護情境，而不是疾病。IVF 涉及控制性卵巢刺激、取卵、受精／胚胎培養與胚胎移植，因此「IVF 輔助」本身沒有單一病理機轉。",
+      "etiology_en": "The underlying etiology belongs to the infertility indication and treatment context, not to the adjunctive-support label itself.",
+      "etiology_zh": "其病因應歸屬於接受 IVF 的不孕原因與療程背景，而不是「輔助照護」這個標籤本身。",
+      "risk_factors_en": [
+        "Risk profile depends on the underlying infertility diagnosis, ovarian response, age, treatment protocol, and procedure-related factors",
+        "Do not infer infertility cause from the IVF-support context alone"
+      ],
+      "risk_factors_zh": [
+        "風險取決於原發不孕診斷、卵巢反應、年齡、療程方案與程序相關因素",
+        "不可僅從 IVF 輔助情境反推不孕原因"
+      ],
+      "sources": [
+        {
+          "title": "Performing the embryo transfer: a guideline",
+          "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/",
+          "authority": "ASRM",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/"
+        ],
+        "etiology": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/"
+        ],
+        "risk_factors": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "workflow_context",
+          "target_text": "infertility / assisted reproductive technology",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "diminished ovarian reserve when clinically present",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. IVF adjunctive care has no single TCM pattern; any pattern must come from the patient's actual menstrual, constitutional, emotional, sleep, digestive, and treatment-stage findings.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。IVF 輔助照護沒有固定中醫證型，必須依個人的月經、體質、情志、睡眠、消化與療程階段實際資料辨證。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Context identity, not a disease. ASRM reports fair evidence that acupuncture around embryo transfer does not improve IVF live-birth rates; do not claim fertility-outcome enhancement.",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 9,
+      "id": "cond.lateral_epicondylitis",
+      "name_en": "Lateral Epicondylitis (Tennis Elbow)",
+      "name_zh": "網球肘",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Lateral epicondylitis is an overuse tendinopathy involving the common extensor tendon origin at the lateral elbow, with repeated microtrauma and tendon degeneration/irritation producing load-related lateral elbow pain.",
+      "western_pathology_zh": "外上髁炎（網球肘）是外側肘部共同伸肌腱起點的過度使用性肌腱病，反覆微小損傷與肌腱退變／刺激造成負荷相關的外側肘痛。",
+      "etiology_en": "Repeated wrist extension and gripping loads can exceed tendon recovery capacity; it is not limited to tennis.",
+      "etiology_zh": "反覆腕伸與抓握負荷若超過肌腱恢復能力即可發生，並不限於網球運動。",
+      "risk_factors_en": [
+        "Repetitive gripping or wrist-extension activity",
+        "Occupational or sports overuse",
+        "Middle age is a common clinical context",
+        "Poor recovery from repeated forearm loading"
+      ],
+      "risk_factors_zh": [
+        "反覆抓握或腕伸活動",
+        "職業或運動性過度使用",
+        "中年族群常見",
+        "前臂反覆負荷後恢復不足"
+      ],
+      "sources": [
+        {
+          "title": "Tennis Elbow (Lateral Epicondylitis)",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/tennis-elbow-lateral-epicondylitis/",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/tennis-elbow-lateral-epicondylitis/"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/tennis-elbow-lateral-epicondylitis/"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/tennis-elbow-lateral-epicondylitis/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "radial tunnel syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical radiculopathy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "forearm extensor overuse",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Local lateral elbow pain may generate channel/tendon obstruction, qi stagnation, blood stasis, or Bi-pattern candidates according to pain quality, trauma/overuse, cold/heat, and examination.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。肘外側局部痛可依痛性、外傷／過用、寒熱與檢查考慮經筋痹阻、氣滯、血瘀或痹證等候選機轉。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 10,
+      "id": "cond.luteal_phase_defect",
+      "name_en": "Luteal Phase Deficiency (context)",
+      "name_zh": "黃體功能不足（文件情境）",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Luteal phase deficiency is a debated clinical construct involving abnormal luteal-phase duration or progesterone support. ASRM emphasizes that no single clinical diagnostic test is proven reliable and that isolated LPD has not been proven to independently cause infertility or recurrent pregnancy loss.",
+      "western_pathology_zh": "黃體期功能不足是一個仍具爭議的臨床概念，涉及黃體期長度或黃體酮支持異常。ASRM 強調目前沒有單一可靠的臨床確診檢驗，也未證實孤立性 LPD 能獨立造成不孕或反覆流產。",
+      "etiology_en": "Altered luteal function may occur secondary to conditions that disturb gonadotropin secretion, follicular development, corpus-luteum function, or endometrial progesterone response.",
+      "etiology_zh": "黃體功能異常可能繼發於影響促性腺激素分泌、濾泡發育、黃體功能或子宮內膜對黃體酮反應的各種狀況。",
+      "risk_factors_en": [
+        "Underlying hypothalamic-pituitary or endocrine disturbance",
+        "Lactation or selected medical conditions that alter reproductive hormones",
+        "Obesity and advanced reproductive age have been associated with altered luteal function, but causality and clinical significance vary"
+      ],
+      "risk_factors_zh": [
+        "下視丘－腦下垂體或其他內分泌異常",
+        "哺乳或會改變生殖荷爾蒙的特定疾病",
+        "肥胖與較高生殖年齡和黃體功能變化有關，但因果與臨床意義需個別判斷"
+      ],
+      "sources": [
+        {
+          "title": "Diagnosis and treatment of luteal phase deficiency: committee opinion",
+          "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-luteal-phase-deciency-a-committee-opinion-2021/",
+          "authority": "ASRM",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-luteal-phase-deciency-a-committee-opinion-2021/"
+        ],
+        "etiology": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-luteal-phase-deciency-a-committee-opinion-2021/"
+        ],
+        "risk_factors": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-luteal-phase-deciency-a-committee-opinion-2021/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "ovulatory dysfunction",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "hyperprolactinemia or thyroid dysfunction",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "infertility evaluation",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. This contested biomedical construct should not be converted into a fixed TCM pattern. Menstrual timing, flow, temperature, pain, sleep, constitutional findings, tongue, and pulse may support Kidney, Spleen, Liver, blood-deficiency, or blood-stasis candidates.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。這個具爭議的西醫概念不可直接轉成固定中醫證型；應依月經時序、量色、寒熱、疼痛、睡眠、體質、舌脈等再鑑別腎、脾、肝、血虛或血瘀等候選證機。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Contested clinical construct; preserve ASRM uncertainty in the canonical card.",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 11,
+      "id": "cond.medial_epicondylitis",
+      "name_en": "Medial Epicondylitis (Golfer's Elbow)",
+      "name_zh": "高爾夫球肘",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Medial epicondylitis is an overuse tendinopathy at the common flexor-pronator tendon origin on the inner elbow, where repeated loading can damage tendon fibers and produce medial elbow pain and tenderness.",
+      "western_pathology_zh": "內上髁炎（高爾夫球肘）是肘內側共同屈肌－旋前肌腱起點的過度使用性肌腱病，反覆負荷可損傷肌腱纖維並造成肘內側疼痛與壓痛。",
+      "etiology_en": "Repeated forearm flexion, pronation, gripping, or swing/lifting motions can overload the tendon; golf is only one possible exposure.",
+      "etiology_zh": "反覆前臂屈曲、旋前、抓握、揮桿或搬運動作可使肌腱過載，高爾夫只是可能暴露之一。",
+      "risk_factors_en": [
+        "Repetitive gripping and wrist-flexion/pronation work",
+        "Golf or other repetitive forearm sports",
+        "Occupational overuse",
+        "Insufficient recovery between repeated loads"
+      ],
+      "risk_factors_zh": [
+        "反覆抓握與腕屈／旋前工作",
+        "高爾夫或其他反覆前臂運動",
+        "職業性過度使用",
+        "反覆負荷間恢復不足"
+      ],
+      "sources": [
+        {
+          "title": "Golf Injury Prevention – Golfer's Elbow section",
+          "url": "https://orthoinfo.aaos.org/staying-healthy/golf-injury-prevention",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        },
+        {
+          "title": "Sprains, Strains, and Other Soft-Tissue Injuries",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/staying-healthy/golf-injury-prevention",
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/staying-healthy/golf-injury-prevention",
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/staying-healthy/golf-injury-prevention",
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprains-strains-and-other-soft-tissue-injuries"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "ulnar neuropathy/cubital tunnel syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical radiculopathy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "forearm flexor-pronator overuse",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Medial elbow pain may support channel/tendon obstruction, qi stagnation, blood stasis, or Bi-pattern candidates depending on mechanism and whole presentation.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。肘內側疼痛可依受傷機轉與整體表現考慮經筋痹阻、氣滯、血瘀或痹證等候選證機。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 12,
+      "id": "cond.meniscus_injury",
+      "name_en": "Meniscus Injury (context)",
+      "name_zh": "半月板損傷（文件情境）",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Meniscal injury is tearing or structural damage of knee fibrocartilage that helps distribute load and stabilize the joint. Tears may be acute traumatic lesions or degenerative tears related to tissue aging.",
+      "western_pathology_zh": "半月板損傷是膝關節纖維軟骨撕裂或結構性受損；半月板負責分散負荷並協助穩定關節。損傷可為急性外傷性，也可為組織老化相關的退化性撕裂。",
+      "etiology_en": "Acute tears commonly follow pivoting/cutting or other twisting injury; degenerative tissue can tear with relatively minor twisting as the meniscus becomes less resilient with age.",
+      "etiology_zh": "急性撕裂常見於轉身、切入或其他扭轉性損傷；退化的半月板隨年齡失去韌性後，較輕微的扭轉也可能造成撕裂。",
+      "risk_factors_en": [
+        "Pivoting/cutting sports or twisting trauma",
+        "Contact or non-contact knee injury",
+        "Increasing age and degenerative meniscal tissue",
+        "Coexisting knee injury such as ACL injury may occur"
+      ],
+      "risk_factors_zh": [
+        "轉身／切入類運動或扭轉外傷",
+        "接觸性或非接觸性膝傷",
+        "年齡增加與半月板退化",
+        "可合併 ACL 等膝部損傷"
+      ],
+      "sources": [
+        {
+          "title": "Meniscus Tears",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "knee osteoarthritis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "ACL injury",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "patellofemoral or other mechanical knee pain",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Traumatic knee pain/swelling may suggest qi-blood stagnation or blood stasis; chronic degenerative presentations may additionally involve Bi-pattern or deficiency candidates. Do not equate meniscal tear with one TCM pattern.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。外傷性膝痛腫可考慮氣血壅滯或血瘀；慢性退化性表現還可能涉及痹證或虛證候選，但半月板撕裂不可直接等同單一中醫證型。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 13,
+      "id": "cond.menopause_syndrome",
+      "name_en": "Menopausal Syndrome",
+      "name_zh": "更年期症候群",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "The menopausal transition reflects declining and fluctuating ovarian hormone production before permanent cessation of menses. Symptoms can include vasomotor, sleep, mood, genitourinary, and menstrual-pattern changes, with wide individual variation.",
+      "western_pathology_zh": "更年期轉變與卵巢荷爾蒙產生下降及波動有關，直到月經永久停止；可能出現血管舒縮、睡眠、情緒、泌尿生殖與月經型態改變，個體差異很大。",
+      "etiology_en": "Natural reproductive aging and progressive loss of ovarian follicular function drive the transition; symptoms arise partly from changing estrogen and related neuroendocrine effects.",
+      "etiology_zh": "自然生殖老化與卵巢濾泡功能逐步下降推動此轉變；症狀部分來自雌激素變化及相關神經內分泌效應。",
+      "risk_factors_en": [
+        "Increasing age through the menopausal transition",
+        "Individual symptom burden varies; surgical or treatment-induced loss of ovarian function may produce a different/accelerated context"
+      ],
+      "risk_factors_zh": [
+        "隨年齡進入更年期轉變",
+        "症狀負擔個體差異大；手術或治療造成的卵巢功能喪失屬不同或加速的臨床情境"
+      ],
+      "sources": [
+        {
+          "title": "The Menopause Years",
+          "url": "https://www.acog.org/womens-health/faqs/the-menopause-years",
+          "authority": "ACOG",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/womens-health/faqs/the-menopause-years"
+        ],
+        "etiology": [
+          "https://www.acog.org/womens-health/faqs/the-menopause-years"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/womens-health/faqs/the-menopause-years"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "thyroid disease when symptoms are atypical",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "sleep disturbance / vasomotor symptoms",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "menopause symptom management",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Menopausal symptoms may overlap with the traditional disease category 'disorders around menopause,' but patterns remain individualized; Kidney yin/yang deficiency, Heart-Kidney disharmony, Liver qi constraint, phlegm, or stasis may be candidates.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。更年期症狀可與「絕經前後諸證」重疊，但證型仍須個別辨證，可考慮腎陰／腎陽不足、心腎不交、肝鬱、痰或瘀等候選證機。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 14,
+      "id": "cond.menorrhagia",
+      "name_en": "Heavy Menstrual Bleeding",
+      "name_zh": "月經過多",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Heavy menstrual bleeding is abnormal uterine bleeding characterized by excessive menstrual blood loss or duration sufficient to affect health or daily life. It is a symptom pattern with multiple structural and nonstructural causes.",
+      "western_pathology_zh": "月經過多屬異常子宮出血，指月經出血量或持續時間過多而影響健康或日常生活；它是多病因的出血表現，不是單一病理機轉。",
+      "etiology_en": "Potential causes include ovulatory dysfunction, uterine fibroids or polyps, adenomyosis, bleeding disorders, medications, and other uterine/endocrine conditions; pregnancy-related bleeding belongs to a separate evaluation pathway.",
+      "etiology_zh": "可能原因包括排卵功能異常、子宮肌瘤或息肉、子宮腺肌症、出血性疾病、藥物以及其他子宮／內分泌因素；妊娠相關出血需走不同評估路徑。",
+      "risk_factors_en": [
+        "Adolescence or perimenopause with ovulatory irregularity",
+        "Uterine fibroids/polyps or adenomyosis",
+        "Bleeding disorders",
+        "Medications affecting bleeding",
+        "Any new heavy bleeding requires assessment for the individual clinical context"
+      ],
+      "risk_factors_zh": [
+        "青春期或圍更年期排卵不規則",
+        "子宮肌瘤／息肉或腺肌症",
+        "出血性疾病",
+        "影響出血的藥物",
+        "新出現的大量出血需依個別情境評估"
+      ],
+      "sources": [
+        {
+          "title": "Abnormal Uterine Bleeding",
+          "url": "https://www.acog.org/womens-health/faqs/abnormal-uterine-bleeding",
+          "authority": "ACOG",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/womens-health/faqs/abnormal-uterine-bleeding"
+        ],
+        "etiology": [
+          "https://www.acog.org/womens-health/faqs/abnormal-uterine-bleeding"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/womens-health/faqs/abnormal-uterine-bleeding"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "uterine fibroids/polyps",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "adenomyosis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "bleeding disorder / anemia",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Heavy menstrual bleeding may overlap with the traditional disease category of excessive menstruation, but actual patterns may include Spleen qi failing to contain blood, blood heat, blood stasis, or Kidney deficiency depending on timing, color, clots, pain, tongue, and pulse.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。月經過多可與中醫「月經過多」病名重疊，但實際證型仍可包括脾氣不攝、血熱、血瘀或腎虛等，需依時序、色質、血塊、疼痛、舌脈判斷。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "03",
+      "live_partial_rank": 15,
+      "id": "cond.neck_pain_stiff",
+      "name_en": "Acute Neck Pain / Stiff Neck",
+      "name_zh": "急性頸痛／落枕",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Acute neck pain and stiffness can arise from cervical muscle or ligament strain/sprain and other mechanical soft-tissue irritation. The symptom identity does not itself specify whether the source is muscle, ligament, disc, joint, nerve root, or another condition.",
+      "western_pathology_zh": "急性頸痛與僵硬可來自頸部肌肉或韌帶拉傷／扭傷及其他機械性軟組織刺激；此症狀性診斷本身不能直接確定來源是肌肉、韌帶、椎間盤、關節、神經根或其他疾病。",
+      "etiology_en": "Common mechanical triggers include sudden abnormal bending/twisting, falls, collisions/whiplash, or sustained/postural loading; degenerative cervical disease is an important alternate or contributing cause in some patients.",
+      "etiology_zh": "常見機械誘因包括頸部突然異常屈伸／扭轉、跌倒、碰撞／揮鞭樣損傷，或持續姿勢負荷；部分患者另有頸椎退化性疾病作為替代或共同原因。",
+      "risk_factors_en": [
+        "Recent trauma or collision",
+        "Sudden extreme neck motion",
+        "Repeated/sustained mechanical or postural load",
+        "Degenerative cervical changes with increasing age can contribute to neck pain"
+      ],
+      "risk_factors_zh": [
+        "近期外傷或碰撞",
+        "頸部突然大幅度動作",
+        "反覆／持續機械或姿勢負荷",
+        "隨年齡增加的頸椎退化可成為頸痛因素"
+      ],
+      "sources": [
+        {
+          "title": "Neck Pain",
+          "url": "https://orthoinfo.aaos.org/diseases--conditions/neck-pain",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        },
+        {
+          "title": "Neck Sprains and Strains",
+          "url": "https://orthoinfo.aaos.org/diseases--conditions/neck-sprain/",
+          "authority": "AAOS",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/diseases--conditions/neck-pain",
+          "https://orthoinfo.aaos.org/diseases--conditions/neck-sprain/"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/diseases--conditions/neck-pain",
+          "https://orthoinfo.aaos.org/diseases--conditions/neck-sprain/"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/diseases--conditions/neck-pain",
+          "https://orthoinfo.aaos.org/diseases--conditions/neck-sprain/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical radiculopathy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical myelopathy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "fracture / infection / tumor after red-flag screening",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_en": "TCM differentiation seed only. Acute stiff neck may overlap with the traditional disease label 'luo zhen' in some cases, while wind-cold, qi stagnation/blood stasis, or channel/tendon obstruction remain pattern candidates based on the actual presentation.",
+      "tcm_pathogenesis_zh": "僅作中醫辨證研究種子。部分急性頸僵可與中醫「落枕」病名重疊，而風寒、氣滯血瘀或經筋痹阻等仍需依實際表現辨證。",
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "",
+      "source_reuse_live_map": {
+        "has_high_confidence_reuse": true,
+        "research_gate": "REUSE_REVIEW_BEFORE_NEW_RESEARCH"
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    }
+  ]
+}
