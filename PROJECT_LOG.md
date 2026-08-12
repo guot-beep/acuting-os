@@ -1,3 +1,11 @@
+# 2026-08-11 Claude — formula.du_qi_wan 禁忌欄假中文修復 + 全庫隱形英文掃描
+
+- **做了什麼**：`formula.du_qi_wan` 的 `contraindications_zh` 與 `cautions_zh` 原樣抄了英文原文（2 條）加半翻譯「禁用於 Yang Deficiency.」（1 條），逐條譯回中文並補 `field_sources.contraindications_zh` / `cautions_zh` 註記。只動這一筆；`_en` 陣列一字未改。
+- **數字 before→after**：`contraindications_zh` 含英文句 `3/3 → 0/3`；`cautions_zh` 同 `3/3 → 0/3`；兩欄長度維持 `3 = 3`（與 `_en` 對齊）。已在 app 開卡片逐條目視核對（安全區三組中英成對正確）。
+- **掃描發現（等長掃描抓不到的同型缺陷，本批未修）**：① `禁用於 +英文` 半翻譯還有 2 筆：`formula.ge_gen_tang`（contraindications/cautions_zh 各 1 條，另各有 3 條整句英文）、`formula.xie_xin_tang`（各 2 條半翻譯 + 1 條英文）。② 全檔 `_zh` 與 `_en` 逐格 byte-identical 共 11,422 格／197 筆，集中在 `modern_applications_zh`（5,706）與 `treats_zh`（5,706）——現代病名整批沒翻。③ `_zh` 純英文（無漢字）321 格：`name_zh`（120，多為 composition 炮製藥名）、`ba_fa_zh`（96）、`herb_zh`（78）、`taiwan_pharmacopeia_zh`（27）。④ 兩筆記錄 id 損毀為 `"formula."`（name_zh 都气丸、复元活血汤），互為重複 id 且與 canonical 記錄重複。⑤ `formula.du_qi_wan` 自身 `actions_zh` 有斷句碎片（「緩解」「於肺氣」），en 為 Relieves asthmatic cough / Astringes Lung Qi。
+- **驗證**：`build-data` PASS（formulas 224）；`validate-formula-standard` 88 blocking（改前 stash 驗證同為 88，零回歸，且無 du_qi_wan 項）；`validate-content-junk` PASS；`check-validation-ratchet` PASS（conditions −24、patterns −220 為本 branch 既有改善，未 `--update`）；`git diff --check` 乾淨。
+- **已知未解／下一步**：上列掃描發現 ①–⑤ 全部未動，等派工。掃描腳本在 scratchpad（`scan-zh-en-identical.js`），邏輯：等長之外再抓 byte-identical 與無漢字格。
+
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
 - **做了什麼**：保留既有 Pattern V2-B／V2-C canonical payload，補齊 Pattern preview／big-card 對 canonical `key_signs_*`、`supporting_signs_*`、`mechanism_*`、`common_causes_*`、`progression_*`、舌脈、八綱、structured differentials、aliases、treatment links 與真實 `sources`／`field_sources` 的相容呈現及搜尋；移除 renderer 的虛構預設來源 fallback。
