@@ -5722,7 +5722,9 @@ function formatNumericOutcomeMetrics(note) {
     const resolved = resolveNumericMetricValue(note, cfg);
     if (!resolved.hasValue) return null;
     const valueText = formatMetricNumberDisplay(cfg, resolved.value) + (resolved.conflict ? " ⚠" : "");
-    return [outcomeMetricLabel(cfg.metricId), valueText];
+    // FIX D 延伸(Dry Clinic #15 實測):glance 卡同樣是唯讀掃視面,
+    // 用 panel 短標籤;完整語意註解留在 SOAP 表單輸入標籤(5661)那裡。
+    return [outcomeMetricPanelLabel(cfg.metricId), valueText];
   }).filter(Boolean);
 }
 
@@ -7024,7 +7026,9 @@ function renderVisitBrief(item, notesDesc) {
     const lv = (L.outcomeMetrics || []).find((m) => m.metricId === id)?.valueNumber;
     const pv = P ? (P.outcomeMetrics || []).find((m) => m.metricId === id)?.valueNumber : undefined;
     if (lv === undefined && pv === undefined) continue;
-    const label = def ? modeText(def.label_zh || def.name, def.label_en || def.name) : id;
+    // FIX D 延伸(Dry Clinic #15 實測第三處):visit-brief 差值列同為
+    // 唯讀掃視面,用 panel 短標籤,語意註解不外漏。
+    const label = outcomeMetricPanelLabel(id);
     let delta = "", cls = "";
     if (lv !== undefined && pv !== undefined && lv !== pv) {
       const arrow = lv > pv ? "↑" : "↓";
@@ -7761,7 +7765,9 @@ function renderDraftBanner(bannerEl, draft, onRestore, onDiscard) {
 // on every one of them.
 function wireSubmitFailureFeedback(form, errorEl) {
   form.addEventListener("invalid", (event) => {
-    const firstInvalid = form.querySelector(":invalid");
+    // 只找真正的欄位::invalid 也會匹配包住欄位的 form/fieldset 祖先,
+    // 那會讓 event.target !== firstInvalid 永遠成立而提前 return(實測抓到)。
+    const firstInvalid = form.querySelector("input:invalid, select:invalid, textarea:invalid");
     if (!firstInvalid || event.target !== firstInvalid) return;
     firstInvalid.classList.add("field-invalid");
     firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
