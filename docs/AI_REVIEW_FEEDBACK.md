@@ -6,6 +6,267 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## [2026-08-12] Opus 獨立對抗覆測 — P1 round-2 + P4 seam — **NO-GO**
+
+- **Exact SHA**:覆測起於 `5c2e15899cbdfcce06881a9583841bfb57a05c30`,期間他人推入 `aa9269a6`/`0787f171`;
+  被審檔案(`app.js`、`js/previsit-validator.js`、`js/clinical-store.js`、
+  `scripts/validate-previsit-payload.js`、`scripts/validate-formula-standard.js`、`data/herbs/formulas.json`)
+  在 `5c2e1589..0787f171` 之間 **blob-identical**(`git diff --stat 5c2e1589 HEAD -- <上列>` 為空),
+  故全部結論在 HEAD `0787f171` 成立。
+- **真 store 讀/寫:0/0**。所有 store harness 以 `S.setBackend(fakeBackend)` 注入記憶體 Map,
+  並把 `global.localStorage` 換成三個一律 throw 的 stub —— 任何一次真讀寫都會當場炸掉而非靜默通過。
+- **產品碼改動:0**。兩次負面對照(`app.js`、`data/herbs/formulas.json`)改完逐位元還原:
+  `app.js` sha256 還原後 `af0ab375…f5ba` 與改前相同;`formulas.json` 還原後 `28753c16…b359c`,
+  與 `git show HEAD:data/herbs/formulas.json | sha256sum` 相同。兩者 `git status --porcelain` 皆為空。
+  (過程註記:`node harness | head -50` 的 pipe 關閉會 SIGPIPE 殺掉 harness、跳過 `finally` 還原;
+   之後改為重導向到檔案。`formulas.json` 另有可重現的 Windows `UNKNOWN: open` 檔案鎖,
+   疑為另一個 session 的 dev server/watcher —— 動這個檔的人請預期會踩到。)
+- **Harness 已清除:是**(產品樹零殘留;harness 本身留在 scratchpad
+  `…/e464bcbb-…/scratchpad/h1…h9*.js` 供重跑,不在 repo 內)。
+- **基線自行重跑確認**(未引用你的數字):previsit self-test `3 good + 26 bad ALL PASS` +
+  `[parity] 29 fixtures / 29 delegated calls / 0 mismatches`;avs-checkout `59 passed, 0 failed`;
+  pointer-runtime `31/31`;runtime-restore `65/65`;formula-standard `PASS — no blocking defects`。
+  **全部綠 —— 而以下缺陷全都活在這片綠底下。**
+
+---
+
+### 批次 A(P1 五項)
+
+**A-1 原始 number token 失真 — RESOLVED(剝字串 regex 無洞)**
+你最擔心的 `/"(?:[^"\\]|\\.)*"/g` 我用差分 fuzz 打了:寫一個真的 JSON 掃描器(逐字元追蹤 in-string 狀態)
+當 ground truth,對 **300,000 份隨機合法 JSON** 比對 `lossyNumberTokens()` 的輸出。
+字串素材含 `\"`、`\\`、`\uXXXX`、裸 U+2028/U+2029、ZWJ、以及字串內的 `9007199254740990.5`。
+```
+node <scratchpad>/h8-fuzz-tokens.js
+→ fuzzed 300000 VALID JSON documents (0 invalid discarded)
+→ disagreements between lossyNumberTokens() and a real JSON scanner: 0
+```
+另手工打七種跳脫攻擊(escaped quote / 結尾反斜線 / `"` / 裸 U+2028 / ` ` / 深層巢狀 /
+17 位有效數字)全部 reject。**結論:誤殺與漏放都沒有,這個 regex 可以留。**
+但它判「失真」的**述詞**是錯的 → 見 MED-1。
+
+**A-2 transport/save 十進位漂移 — RESOLVED**
+`0.0000001` 在傳輸層被擋(`bad24` 重現)。`previsit.html` 生產端是
+`/^\d+(\.\d+)?$/` + `Number(raw)` + `JSON.stringify`(previsit.html:761-771),
+不可能吐出指數形式,所以這次「改嚴」沒有打到真實生產路徑。兩層契約現在確實同一把尺。
+
+**A-3 ISO 外形非真實曆日 — STILL VULNERABLE(時間分量沒驗)**
+日期分量修好了:`2026-02-31`、`2026-13-01`、`2026-02-29` 皆 reject,`2024-02-29` accept。
+但你只驗年月日,沒驗時分秒,於是**同一類缺陷從日期搬到時間**:
+```
+node <scratchpad>/h1-previsit-probe.js   (A4 段)
+accept | 2026-08-11T24:00:00.000Z        Date.parse -> 2026-08-12T00:00:00.000Z
+accept | 2026-08-11T24:00:00Z            Date.parse -> 2026-08-12T00:00:00.000Z
+```
+`isRealCalendarDate` 說「2026-08-11 是真日子」放行,但下游 72h 新鮮度用的是
+`Date.parse(data.filledAt)`(app.js:8577)= **8/12**。也就是 `isRealCalendarDate` 驗過的那一天,
+不是規則實際採用的那一天。可利用性:一份字面寫 8/9、實際被當 8/10 的 payload 白賺 24 小時,
+把過期 confirm 閘推掉;而 confirm 對話框印的是 `data.filledAt` 原字串,
+**醫師螢幕上讀到的日期與程式強制的日期不同**。
+
+**A-4 控制字元政策 — RESOLVED(五個字元)但兩頭都錯:過寬 + 有缺口**
+
+*過寬(誤傷合法臨床文字,而且完全靜默)*:`\p{Cf}` 含 U+200D ZWJ、U+200C ZWNJ、tag 字元、U+00AD。
+```
+node <scratchpad>/h1-previsit-probe.js   (A5 段)
+*** MUTATED *** | 醫師 emoji(ZWJ)  in="👨‍⚕️ 醫師說"  out="👨⚕️ 醫師說"
+*** MUTATED *** | 家庭 emoji         in="👨‍👩‍👧"       out="👨👩👧"
+*** MUTATED *** | 蘇格蘭旗(tag)     in="🏴󠁧󠁢󠁳󠁣󠁴󠁿"          out="🏴"
+*** MUTATED *** | 波斯文 ZWNJ        in="می‌خورم"      out="میخورم"
+*** MUTATED *** | 印地文 ZWNJ        in="क्‌ष"          out="क्ष"
+*** MUTATED *** | 英文 soft hyphen   in="co­operate"   out="cooperate"
+unchanged | 日文假名 / 韓文諺文 / 無 ZWJ emoji / 🇹🇼
+payload accepted? true | stored subjectiveText = "👨⚕️ 值班醫師" | errors raised: 0
+```
+你問日文/韓文:安全。你問 emoji ZWJ:**不安全**,而病人是在手機上打字,👩‍⚕️/🤦‍♀️/❤️‍🩹 全走 ZWJ。
+波斯/印地的 ZWNJ 是**正字法的一部分**,不是裝飾 —— 拿掉會換一個詞。
+整段變更沒有任何 error,病人打的字與病歷存的字不同,而沒有人會知道。
+
+*缺口(身分欄位沒剝,而硬規則就 key 在它上面)*:`patientCode` 與 `payloadId` 走的不是 `textField()`,
+沒有經過 `stripControlChars`(previsit-validator.js:238-239)。
+```
+node <scratchpad>/h9-code.js
+RLO U+202E   ok=true storedPatientCode="P-‮2026-001"   (prose 版會被剝成 "P-2026-001")
+ZWSP U+200B  ok=true storedPatientCode="P-2026​-001"
+```
+`patientCode` 逐字比對是 fail-closed(不匹配就拒),沒事;但它會被原樣印進不匹配 alert(app.js:8570),
+於是病人可控的 bidi 字元決定那句話怎麼渲染。真正會出事的是 `payloadId`:重放閘是
+`window.__previsitImportedIds.has(data.payloadId)`(app.js:8590),而 `payloadId` 只 `.trim()`,
+**ZWSP 不是 JS 的 whitespace,trim 不掉** → `pv-abc` 與 `pv-abc​` 是兩個不同的 key,
+同一份診前資料可以無限次重放而不觸發「本次已匯入過」確認。這是**已宣告硬規則的繞過**。
+
+**A-5 parity guard 證明委派 — STILL VULNERABLE(它只比對判決,不比對資料)**
+負面對照 M1:一個 **完全誠實委派**、判決 **逐筆相同**、但把每個 metric 值悄悄乘 2 的 wrapper。
+```
+node <scratchpad>/h5-parity-negctl.js
+### BASELINE ###  exit 0 | ALL PASS | 29 fixtures, 29 delegated calls, 0 mismatches
+### MUTATION M1_silent_value_change ###
+exit 0 | SELF-TEST: ALL PASS (3 good + 26 bad)
+[parity] app wrapper executed on 29 fixtures, 29 delegated calls, 0 verdict mismatches
+FAIL lines: (none)
+>>> GATE DID NOT CATCH THIS MUTATION
+### RESTORE ###  restored sha256 = af0ab375…f5ba (IDENTICAL) | git status ""
+```
+`checkAppDelegation()` 只比 `appOk !== shared.ok`(validate-previsit-payload.js:345)。
+病人回報 pain 4 → 表單預填 8,gate 全綠。這正是這道閘號稱要消滅的那一類。
+(第二個對照 M2「偽造判決+灌爆呼叫計數」被抓到,但抓到它的是判決比對,不是計數 ——
+ `calls < cases.length` 是**總數**不是逐 fixture,所以計數本身仍然證明不了逐筆委派。)
+
+你另外問 stub 保真度:`getOutcomeMetricDef` 真身讀的是
+`globalThis.ACUTING_KNOWLEDGE.outcomeMetrics.records`(app.js:5725)= **build 產物**
+`data/generated/knowledge_data.js`;parity harness 餵的是 **source** `data/clinical_cases/outcome_metrics.json`。
+今天兩邊一致(27/27 筆,六個 P1 metric 的 id 與 label_zh 全等,`h7-misc.js` 第 1 段),
+所以不是 live bug;但 gate 沒有任何一行斷言它們必須一致,而 MEMORY 裡「merges clobber knowledge.js」
+正是這條路徑會斷的方式。列為 LOW-3。
+
+---
+
+### 批次 B(P4 兩項)
+
+**B-1 PHI 出現在 parse 錯誤訊息 — 你點名的四處 RESOLVED,但掃描不完整(還有四處)**
+
+先確認四處真的乾淨(fake backend + 假 PHI,`h2b-store-phi.js`):
+```
+clean | [claimed fixed] v1 load                      → unparseable JSON, 51 char(s) present
+clean | [claimed fixed] v2 staging envelope (load)   → 同上
+clean | [claimed fixed] restore anchor corrupt       → 同上
+clean | [claimed fixed] getPatientsView → W1         → 同上
+healthy v2 load -> 1 case(s); patients -> 1          (沒有過度修正)
+```
+**但 commit message 說「all four content-parsing sites」是錯的 —— 實際有八處,還有四處原樣回述:**
+
+| 位置 | 出口 | 級別 |
+|---|---|---|
+| `js/previsit-validator.js:128` | `alert()`(app.js:8560)+ CLI stdout | **HIGH-1** |
+| `js/clinical-store.js:483` `buildMigrationPlan` | 被 :725 接住 → `res.failures` → `alert()`(app.js:9319) | **MED-5** |
+| `js/clinical-store.js:776/788/830/876` | `switchPointer`/`executeMigration` throw → migrate-c2b.js CLI | LOW-1 |
+| `app.js:9189` | export 途中 uncaught → console(無全域 error handler) | LOW-4 |
+
+而且**洩漏窗口比你以為的大**。`parseFailureDetail` 的註解寫 V8 只嵌
+「`"PATIENT_SE"...`」十個字 —— 實測不是十個字,是**錯誤位置前後各 10 字**,
+且輸入短於約 20 字時**整份原文照登、沒有省略號**:
+```
+node <scratchpad>/h3-v8-window.js / h4-echo-depth.js
+'{"pain":NaN,"dx":"HIV"}'  → Unexpected token 'N', "{"pain":NaN,"dx":""... is not valid JSON   (echo 18 chars)
+```
+配上 HIGH-1 的實際出口:
+```
+paste "我先生會打我,不要跟他說"
+alert -> 不是合法的 JSON。Not valid JSON: Unexpected token '我', "我先生會打我,不要跟他說" is not valid JSON
+paste "頭痛三天,昨天開始血尿"
+alert -> …Unexpected token '頭', "頭痛三天,昨天開始血尿" is not valid JSON
+```
+觸發條件不是異國情調:**醫師貼錯剪貼簿**就是貼上匯入動線最可能的操作失誤。
+中文 20 字是一整句話。同一份訊息在 CLI(`node scripts/validate-previsit-payload.js payload.json`)
+會進終端與 CI log —— 那比 alert 更持久。
+
+**B-2 `arr()` 型別繞過 — `expanded_ingredients` RESOLVED,但同一個洞在 `composition` 上還開著**
+
+先確認 F12b 本身穩:你問的 shape 我全打過(harness 用真 record
+`formula.hao_qin_qing_dan_tang` composition[7]「碧玉散」,mutate → 跑真 validator → 逐位元還原):
+```
+blocked (exit 1) | object-shaped {herb_zh}      blocked | string-shaped "甘草"
+blocked (exit 1) | empty array []               blocked | nested array [[leaf]]
+blocked (exit 1) | array with null element      blocked | array-like {0:leaf,length:1}
+blocked (exit 1) | number 3                     blocked | boolean true
+```
+八種全擋,`{length:3}` 也擋。**F12b 沒有漏 shape。**
+
+問題是這個修法只動了**一個 call site**。`arr()`(validate-formula-standard.js:68)在同一支檔案有 23 處,
+其中 `const comp = arr(r.composition)`(:240)是整張方劑卡的組成本體:
+```
+### C. composition object-shape on an ordinary template formula ###
+*** VALIDATOR PASSED (bypass) *** | composition = single herb object
+                                    (formula.gui_zhi_tang: 5 herbs -> 1)
+### D. other arr()-guarded array contracts ###
+*** VALIDATOR PASSED (bypass) *** | contraindications_zh = bare string
+*** VALIDATOR PASSED (bypass) *** | modifications_zh    = bare string
+*** VALIDATOR PASSED (bypass) *** | tongue_zh           = bare string
+*** VALIDATOR PASSED (bypass) *** | actions_zh          = bare string
+blocked (exit 1)                 | formula_family       = bare string
+### RESTORE ###  restored sha256 = 28753c16…b359c (IDENTICAL) | git status ""
+```
+**桂枝湯從五味變成一味物件,validator 印「PASS — no blocking defects」。**
+這比 `expanded_ingredients` 嚴重一級 —— 那是葉子展開,這是組成本身。
+而且 `arr()` 這個 helper 在 **6 支 validator** 裡都有:
+`validate-acupoint-standard.js`(14 處)、`validate-extra-point-standard.js`(12 處)也是同一份寫法。
+
+---
+
+### 新發現
+
+| # | 級別 | 一句話 | repro | 觀察到 vs 期望 |
+|---|---|---|---|---|
+| HIGH-1 | HIGH | 診前資料貼上失敗時,病人原話被回述進 `alert()` 與 CLI stdout | `h4-echo-depth.js` 第 3 段 | 觀察:`"我先生會打我,不要跟他說" is not valid JSON`;期望:只報 key + 字元數(P4 已宣告的政策) |
+| HIGH-2 | HIGH | parity gate 只比判決不比資料,靜默竄改臨床值可全綠通過 | `h5-parity-negctl.js` M1 | 觀察:29/29 delegated、0 mismatch、exit 0,而 metric 值被乘 2;期望:資料不等即 FAIL |
+| HIGH-3 | HIGH | `composition` 給單一物件可讓方劑卡少掉 4/5 味藥而 validator 全綠 | `h6-formula-shape.js` 段 C | 觀察:`PASS — no blocking defects`;期望:與 `expanded_ingredients` 同樣 blocking |
+| MED-1 | MED | 「無損往返」述詞把合法拼寫當成失真並整筆拒收,錯誤訊息還是假的 | `h8-fuzz-tokens.js` 末段 | 觀察:`7.0` `6.50` `10.00` `1e1` `1E5` `1e2` `5e-1` 全被判 LOSSY(`0.0`/`-0.0`/`0e0` 卻豁免);期望:只有真的損失精度才拒 |
+| MED-2 | MED | `T24:00:00Z` 通過曆日檢查但被 `Date.parse` 平移一天,72h 閘因此鬆一天 | `h1-previsit-probe.js` 段 A4 | 觀察:accept,`Date.parse → 2026-08-12`;期望:驗過的日子=規則採用的日子 |
+| MED-3 | MED | `\p{Cf}` 靜默改寫合法病人文字(emoji ZWJ / 波斯・印地 ZWNJ / soft hyphen) | `h1-previsit-probe.js` 段 A5 | 觀察:`👨‍⚕️→👨⚕️`、`می‌خورم→میخورم`,`errors.length === 0`;期望:保留 ZWJ/ZWNJ,或至少報告有改動 |
+| MED-4 | MED | `payloadId` 未剝控制字元 → 加一個 ZWSP 即可無限重放同一份診前資料 | `h9-code.js` + app.js:8590 | 觀察:`pv-abc` 與 `pv-abc​` 視為不同 payload;期望:重放閘認得出是同一份 |
+| MED-5 | MED | 壞掉的 v1 store 內容經 `buildMigrationPlan` 進入還原失敗 alert | `h2b-store-phi.js` 段 B1/B2 | 觀察:`plan rebuild failed: Unexpected token 'C', "CHEN-MEILI"...`;期望:key + 字元數 |
+| LOW-1 | LOW | migration CLI 三處 bare parse 把 store 內容印進終端/CI log | `h2b-store-phi.js` 段 B3/B4 | 同上,出口是 log 不是螢幕 |
+| LOW-2 | LOW | `aeSelfReport.any` 用 `!!` 強制轉型,與 metric 的「禁 coercion」政策相反 | `h1-previsit-probe.js` 段 A6 | `any:"no"`→true、`any:0`→false 且**不良反應文字被靜默丟棄**;生產端 previsit.html 只吐 boolean,故僅 LOW |
+| LOW-3 | LOW | parity gate 讀 source JSON,瀏覽器讀 build 產物,兩者一致無人斷言 | `h7-misc.js` 段 1 | 今天 27/27 相同;stale `knowledge_data.js` 會讓 gate 的 parity ≠ 瀏覽器的 parity |
+| LOW-4 | LOW | `app.js:9189` export 途中 bare parse,壞 staging → uncaught throw 進 console | code read + `h7-misc.js` 段 3 | 無全域 error handler,匯出靜默失敗 |
+
+**你問「字元數本身算不算洩漏」——我同意不算**,理由要說清楚:它不是 HIPAA 十八項識別子中的任何一項,
+單獨無法重識別,且它是區分「空/截斷/格式壞」三態的最小充分資訊 —— 拿掉就等於把 fail-loud 變成 fail-blind。
+唯一保留意見是那則訊息會被截圖轉給廠商,所以整份 store 的總長度算營運資訊(非 PHI);
+真正的問題不在你留了什麼,而在**你以為只剩字元數,實際還有四處在回述原文**。
+
+---
+
+### 三個「方向就是錯的」
+
+1. **PHI 修法的方向對,方法錯。** 你逐站點修了四處,漏了四處,commit message 卻寫「all four sites」。
+   只要修法是列舉站點,下一個 `JSON.parse` 就會把它加回來。應該是**政策 + 機制**:
+   一支 `safeParseOrThrow(raw, keyName)` 當唯一入口,加一條 CI grep —— 任何裸 `JSON.parse` 或
+   任何把 `catch` 到的 `e.message` 串進使用者可見字串的地方即 fail。現在的寫法讓下一輪必然重來。
+2. **`arr()` 的修法同病。** 一個欄位補了型別檢查,十個同契約欄位沒補,而且同一個 helper 還在另外
+   5 支 validator 裡。`arr()` 本身是缺陷來源:一個「陣列契約」的 helper 不該把非陣列悄悄包成一元素。
+   拆成 `optionalArray()`(缺席→[])與 `requireArray(field)`(非陣列→blocking),再全域換掉。
+3. **`\p{Cf}` 是過度矯正。** 上一輪逐段補範圍落後一步,這一輪直接跳到整個類別,於是從「漏放」
+   翻到「誤殺」,而且誤殺是靜默的 —— 比漏放難發現得多,正好是你自己在 brief 裡點名的那種傷害。
+   正解是**明列拒絕清單**(C0/C1、bidi 控制 U+202A-202E/U+2066-2069、LRM/RLM/ALM、ZWSP、BOM),
+   **明確保留 ZWJ(U+200D)與 ZWNJ(U+200C)** —— 那兩個是文字內容不是格式攻擊;
+   並且把「有剝除」變成可見事實(回報剝了幾個字元),不要靜默改病歷。
+   另外把剝除**套用到 `patientCode`/`payloadId`**,那兩欄才是硬規則的 key(MED-4)。
+
+順帶:`String(Number(tok)) === tok` 把「非正規拼寫」誤當成「精度損失」(MED-1),
+述詞本身選錯了。要驗的是**值**不是**字面**:先正規化 token(去掉小數尾零/指數展開)再比,
+或直接比 `Number(tok)` 與 token 的精確十進位值。現在的訊息會叫醫師去找一個不存在的精度 bug。
+
+---
+
+### 沒測到的面(給下一位接手)
+
+- **瀏覽器本身**:全部是 Node 層 actual-function harness,沒有開 Chrome。
+  alert/confirm 的實際渲染、W1 innerHTML 的逃逸、以及 `soapForm.elements[metricId].value = …` 的預填結果,
+  都是從碼推的,沒有在真 DOM 上看過。HIGH-2 的「預填成兩倍」我證的是 wrapper 回傳值,不是畫面。
+- **QR 路徑**:`previsit.html` 的 `drawQR(qrCanvas, currentJson)` 與掃描端 —— 編碼/解碼是否 byte-exact
+  完全沒碰。若 QR 走 alphanumeric mode 或做了任何正規化,那是第三份 payload 表示。
+- **previsit.html 自己的 client-side 驗證**:契約的第三份實作,本輪只讀了它的生產路徑(761-802),
+  沒有對它做對抗測試,也沒有驗它與共用模組的 parity(gate 只證了 app↔module 兩份)。
+- **存檔端**:`computeNumericOutcomeMetrics()` / `saveSoapFromForm()` 的再驗證只讀碼,沒跑。
+  MED-1/MED-2 的下游影響(存進去之後長什麼樣)沒有量測。
+- **72h / 重放 / patientCode 三道 import 硬規則的端到端**:只有 MED-4 打了重放那條,
+  過期與 patientCode 兩條是靠讀碼判斷 fail-closed,沒有實跑。
+- **其他 validator 線**:condition / tdis / pattern / symptom / comparison / formula-song 完全沒跑;
+  `validate-acupoint-standard.js`(14 處 `arr()`)與 `validate-extra-point-standard.js`(12 處)
+  **極可能有與 HIGH-3 相同的繞過**,我只確認了 helper 相同,沒有實測。
+- **clinical-store 併發/TOCTOU**:沿用前幾輪結論,本輪未重測。
+
+### 裁決:**NO-GO**
+
+擋下的理由是三條 HIGH,每一條都在「你的測試全綠之後」才成立:
+病人原話會被印進 alert(HIGH-1)、宣稱證明委派的閘看不見臨床值被竄改(HIGH-2)、
+方劑組成可以少掉四味藥而 validator 說乾淨(HIGH-3)。
+HIGH-2 與 HIGH-3 尤其要注意 —— 它們不是「還有洞」,是**閘本身量錯了東西**,
+所以它們不會隨著再補一個 fixture 而消失。
+
+---
+
 ## 2026-08-11 Codex C2B-R14 exact-SHA audit — `39de5f1`
 
 ### 裁決：Clinical 六軸維持 GO；landing/P4 PAUSE（generated drift + formula 4）

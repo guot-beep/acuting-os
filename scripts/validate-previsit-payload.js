@@ -345,6 +345,18 @@ function checkAppDelegation() {
     if (appOk !== shared.ok) {
       mismatches++;
       problems.push("app/CLI verdict differs on " + c.name + ": app " + (appOk ? "ACCEPT" : "REJECT") + " vs shared module " + (shared.ok ? "ACCEPT" : "REJECT"));
+      continue;
+    }
+    // Opus 覆測 HIGH-2:只比 ok 等於什麼都沒比。一個誠實委派、判決逐筆相同、
+    // 但把每個 metric 值乘 2 的 wrapper —— 呼叫計數滿、mismatch 0、exit 0,
+    // 而 pain 4 會預填成 8。閘要比的是**交出去的資料**,不是它有沒有說 yes。
+    if (appOk) {
+      const a = JSON.stringify(appRes.data);
+      const b = JSON.stringify(shared.data);
+      if (a !== b) {
+        mismatches++;
+        problems.push("app/CLI accepted " + c.name + " but returned DIFFERENT data — the wrapper is transforming values on the way through:\n      app:    " + String(a).slice(0, 200) + "\n      shared: " + String(b).slice(0, 200));
+      }
     }
   }
   if (calls < cases.length) {

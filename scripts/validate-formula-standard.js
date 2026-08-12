@@ -65,7 +65,22 @@ const catArg = (() => {
 const data = JSON.parse(fs.readFileSync(FILE, "utf8"));
 const recs = data.records || data;
 
+/* arr() 的既有語義:缺席→[],非陣列→包成一元素陣列。對「顯示用、可有可無」
+ * 的欄位這樣很方便,但對**契約欄位**是缺陷來源(Opus 覆測 HIGH-3):
+ * `const comp = arr(r.composition)` 讓桂枝湯從五味變成「一個物件」時,
+ * validator 照樣印 `PASS — no blocking defects`。
+ *
+ * 所以拆成兩個,依「非陣列算不算錯」來選,而不是依方便:
+ *   arr()          寬鬆:顯示/統計用,非陣列包成一元素(語義不變,30 處沿用)
+ *   requireArray() 契約:非陣列 = 違規,回 {ok:false} 讓呼叫端報出來
+ * 目前套在 composition 與 expanded_ingredients —— 那兩個是「這張卡的藥是什麼」
+ * 的資料來源,型別錯掉會讓下游安全檢查整段走不到。 */
 const arr = (v) => (Array.isArray(v) ? v : v == null || v === "" ? [] : [v]);
+const requireArray = (v) => {
+  if (Array.isArray(v)) return { ok: true, value: v };
+  if (v == null || v === "") return { ok: true, value: [] };   // 缺席是另一條規則管的
+  return { ok: false, value: [], actual: Array.isArray(v) ? "array" : typeof v };
+};
 const hasHan = (s) => /[一-鿿]/.test(String(s));
 const MOJIBAKE = /\?{4,}|�/;
 // A string that is almost entirely question marks carries no information and
@@ -237,7 +252,14 @@ for (const r of recs) {
   }
 
   // F6 — an ingredient with no name is not an ingredient.
-  const comp = arr(r.composition);
+  // 型別先驗(Opus 覆測 HIGH-3):composition 不是陣列時,舊的 arr() 會把整張
+  // 卡的「組成」悄悄變成一味,而所有下游檢查照跑照過。這是 blocking。
+  const compCheck = requireArray(r.composition);
+  if (!compCheck.ok) {
+    flag(r, `composition 必須是陣列(實際型別 ${compCheck.actual})— 單一物件不是「組成」`);
+    if (isTemplate(r)) errors.push(`F6 ${id}: composition is ${compCheck.actual}, expected array`);
+  }
+  const comp = compCheck.value;
   if (comp.length) nComp++;
   comp.forEach((c, i) => {
     if (String(c?.herb_zh || "").trim()) return;

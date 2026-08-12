@@ -44,18 +44,37 @@
    * 這裡就照字面驗。涵蓋 previsit.html 的 toISOString() 輸出與常見 ISO 變體。 */
   const ISO_8601_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d{1,6})?)?(Z|[+-]\d{2}:\d{2})$/;
 
-    /* 控制字元剝除(Codex MED-3,兩輪):C0 除 \t(09) \n(0A) 外全剝(含 CR)、
-   * DEL 與 C1(007F-009F)、以及**整個 Unicode 格式字元類** \p{Cf}。
+  /* 不可見字元政策(第三輪定版)。
    *
-   * 第一版只剝 C0/DEL 與 bidi override/isolate 兩段;Codex 覆測指出 U+0085、
-   * U+009B、U+200E/200F(LRM/RLM)、U+061C(ALM)全部原樣留下。逐段補範圍
-   * 永遠落後一步,所以改用字元類別:\p{Cf} 一次涵蓋所有方向標記、零寬字元
-   * (200B-200D)、BOM(FEFF)、word joiner 等看不見的格式字元。
-   * CR 一律剝除而非轉成 LF —— 剝除是唯一確定的行為。 */
-  const CONTROL_CHARS_RE = /[\u0000-\u0008\u000B-\u001F\u007F-\u009F\p{Cf}]/gu;
+   * 第一版手列範圍 → 漏掉 U+0085/009B/200E/200F/061C(Codex)。
+   * 第二版翻成整個 \p{Cf} → 從漏放翻成**靜默誤殺**(Opus 覆測):emoji 的
+   * ZWJ 與波斯/印地文的 ZWNJ(正字法的一部分)都被改掉,而且 errors 是空的
+   * —— 病人看不出自己的字被動過。
+   *
+   * 定版分兩種對象,因為它們的正確答案不同:
+   *   PROSE(病歷自由文字):剝掉不可見字元,但**保留 ZWJ(200D)/ZWNJ(200C)**
+   *     —— 那兩個在 emoji 與多種文字的正字法裡有語義。
+   *   IDENTIFIER(patientCode / payloadId):**全部剝掉,含 ZWJ/ZWNJ**。
+   *     識別碼不該有任何不可見字元,而且它們是硬規則的鍵 —— 一個 ZWSP 就能
+   *     讓 payloadId 變成另一個值、繞過重放閘(Opus MED-4 實證)。 */
+  const INVISIBLE_C0_C1 = "\\u0000-\\u0008\\u000B-\\u001F\\u007F-\\u009F";
+  const PROSE_INVISIBLE_RE = new RegExp("[" + INVISIBLE_C0_C1 + "]|(?![\\u200C\\u200D])\\p{Cf}", "gu");
+  const IDENTIFIER_INVISIBLE_RE = new RegExp("[" + INVISIBLE_C0_C1 + "]|\\p{Cf}", "gu");
 
   function stripControlChars(s) {
-    return String(s).replace(CONTROL_CHARS_RE, "");
+    return String(s).replace(PROSE_INVISIBLE_RE, "");
+  }
+  function stripIdentifierInvisibles(s) {
+    return String(s).replace(IDENTIFIER_INVISIBLE_RE, "");
+  }
+
+  /* 解析失敗描述:只給長度,絕不轉述內容(Opus 覆測 HIGH-1)。
+   * 與 js/clinical-store.js 的同名 helper 同款規則 —— 刻意各自持有一份三行
+   * 實作而不共用模組:兩者都在安全關鍵載入路徑上,為省三行而引入載入順序
+   * 相依,失敗模式比重複更糟。防止再犯的是 CI 守衛,不是共用程式碼。 */
+  function parseFailureDetail(raw) {
+    const n = typeof raw === "string" ? raw.length : 0;
+    return `${n} 字元,內容不轉述`;
   }
 
   /* 原始數字 token 完整性(Codex retest HIGH-1)。
@@ -66,6 +85,22 @@
    * 先把字串字面量抽掉,避免病歷散文裡的數字被當成 token。
    * 0 / -0 例外:兩者都精確可表示,String(-0) 會變 "0" 但不是失真。 */
   const NUMBER_TOKEN_RE = /-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g;
+  /* 把數字 token 正規化成 canonical 十進位字串(去符號冗餘、去前導/尾隨零、
+   * 展開指數),用來判斷「值有沒有真的變」而不是「寫法一不一樣」。 */
+  function canonicalDecimal(tok) {
+    const m = /^(-?)(\d+)(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/.exec(String(tok));
+    if (!m) return null;
+    const sign = m[1] === "-" ? "-" : "";
+    let digits = m[2] + (m[3] || "");
+    let point = m[2].length + Number(m[4] || 0);
+    if (point <= 0) { digits = "0".repeat(1 - point) + digits; point = 1; }
+    if (point > digits.length) digits += "0".repeat(point - digits.length);
+    let intPart = digits.slice(0, point).replace(/^0+(?=\d)/, "");
+    const fracPart = digits.slice(point).replace(/0+$/, "");
+    if (intPart === "") intPart = "0";
+    const body = fracPart ? intPart + "." + fracPart : intPart;
+    return (body === "0" ? "" : sign) + body;
+  }
   function lossyNumberTokens(rawText) {
     const withoutStrings = String(rawText).replace(/"(?:[^"\\]|\\.)*"/g, '""');
     const bad = [];
@@ -73,7 +108,13 @@
       const v = Number(tok);
       if (!Number.isFinite(v)) { bad.push(tok); continue; }
       if (v === 0) continue;
-      if (String(v) !== tok) bad.push(tok);
+      // Opus 覆測:第一版直接比 String(Number(tok)) === tok,於是 7.0 / 6.50 /
+      // 1e1 都被判「精度失真」—— 它們其實精確可表示,只是寫法不同。用錯誤的
+      // 理由拒收合法輸入,比漏放更難被發現,因為沒有人會去查。改成兩邊都
+      // 正規化成 canonical 十進位再比:寫法不同不算,值不同才算。
+      const before = canonicalDecimal(tok);
+      const after = canonicalDecimal(String(v));
+      if (before !== null && after !== null && before !== after) bad.push(tok);
     }
     return bad;
   }
@@ -125,7 +166,12 @@
     try {
       data = JSON.parse(rawText);
     } catch (e) {
-      return { ok: false, errors: [`不是合法的 JSON。Not valid JSON: ${e.message}`], data: null };
+      // Opus 覆測 HIGH-1(2026-08-12):這一行過去把 e.message 原樣送出,而它
+      // 流進 app.js 的 alert。V8 的 JSON 錯誤訊息內嵌**錯誤位置前後各約十個
+      // 字**的原文,所以短輸入等於整份照登 —— 醫師貼錯剪貼簿時,病人的原話
+      // 就出現在對話框裡(實測:12 字的貼上內容完整回顯)。這裡是 payload
+      // 的入口,收到的可能是任何東西,一個字都不能轉述。
+      return { ok: false, errors: [`不是合法的 JSON(${parseFailureDetail(rawText)})。Not valid JSON.`], data: null };
     }
     if (!data || typeof data !== "object" || Array.isArray(data)) {
       return { ok: false, errors: ["資料格式錯誤,不是一個物件。Invalid payload — not an object."], data: null };
@@ -235,8 +281,10 @@
       ok: true,
       errors: [],
       data: {
-        patientCode: data.patientCode,
-        payloadId: data.payloadId.trim(),
+        // MED-4:這兩欄是 import 端硬規則的鍵(逐字比對 / 重放去重),任何
+        // 不可見字元都會讓鍵變成另一個值 —— payloadId 加一個 ZWSP 就能無限重放。
+        patientCode: stripIdentifierInvisibles(data.patientCode),
+        payloadId: stripIdentifierInvisibles(data.payloadId).trim(),
         filledAt: data.filledAt,
         metrics: checkedMetrics,
         subjectiveText,
@@ -257,6 +305,8 @@
     MAX_REPORT_CHARS,
     ISO_8601_RE,
     stripControlChars,
+    stripIdentifierInvisibles,
+    canonicalDecimal,
     lossyNumberTokens,
     isPlainDecimal,
     isRealCalendarDate,
