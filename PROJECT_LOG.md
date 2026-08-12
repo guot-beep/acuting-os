@@ -1,3 +1,13 @@
+# 2026-08-12 Codex — P1 focused retest `NO-GO`；`PAUSE` 維持
+
+- **做了什麼**：pull 後以現行 P1 seam 做檔案式獨立覆測；只寫 reviewer docs，未改產品碼／schema／AVS，真 store 讀／寫=`0/0`，暫存 harness 已清除。
+- **數字**：official self-test=`3 good + 22 bad ALL PASS` + parity；actual-function focused harness=`35/40 PASS · 5 FAIL`，不是舊 `3+14`／`20/28`。
+- **驗證**：舊 3 HIGH + 4 MED focused regression 均 resolved；六軸=`PASS / FAIL / PASS / FAIL / FAIL / FAIL`，syntax=`3/3 PASS`。
+- **已知未解**：新 `1 HIGH + 4 MED`——large fractional JSON 精度折損、tiny decimal transport/save drift、不存在曆日 ISO、C1／bidi marks 殘留、parity guard 可假委派。
+- **下一步**：product owner 修五個反例並納入 blocking suite；Codex focused retest 六軸全綠且 `GO` 前，不解除 P1 `PAUSE`。
+
+---
+
 # 2026-08-12 Fable — 最後一條擱淺的 conditions 支線:`claude/vigilant-visvesvaraya-e20261` 併入 pattern-v2
 
 ## 2026-08-12 夜 缺陷清算日:條件 184→4、方劑 10→0,五條擱置分支歸隊
