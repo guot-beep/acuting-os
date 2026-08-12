@@ -1,12 +1,28 @@
 # COND_FULLDETAIL_EYESON_03 — 全細節病症卡人眼審查（第 62–92 筆，收尾）
 
-狀態：**findings ledger only. 本次沒有動 `data/**` 一個字元。**
+狀態：**findings ledger + 修正紀錄。** 原始審查（本檔案 §0–§3 主文）沒有動
+`data/**` 一個字元；下方修正狀態總覽是後續修正批次（`codex/cond-eyeson-fixes-3`）
+補記的。
 Branch：`codex/cond-eyeson-3`（自 `origin/codex/pattern-v2` tip `9abec04`）
 日期：2026-08-12
 接續：`COND_FULLDETAIL_EYESON_01.md`（1–30）與 `COND_FULLDETAIL_EYESON_02.md`（31–61）。
 發現編號自 **F-37** 起、機械批次編號自 **B15** 起，延續前兩部分。
 
 **本檔完成全細節 92 筆的覆蓋。§3 附三部分合併總表。**
+
+## 修正狀態總覽（2026-08-12，branch `codex/cond-eyeson-fixes-3`）
+
+| 批次/Finding | 狀態 | commit |
+|---|---|---|
+| B15 (4)：`&hellip;`／U+2025 → `…`（pcos/peptic_ulcer/tension_headache/tinnitus） | **FIXED** | `9fb98b9` |
+| B16 (3)：`field_sources.acupuncture_scope_*` 改抄該欄自己的 `source`（primary_dysmenorrhea/rheumatoid_arthritis/trigeminal_neuralgia） | **FIXED**（= F-47A） | `9fb98b9` |
+| B17 (1)：`cond.raynaud` `acupuncture_scope_en` can_treat/precautions 對調 | **FIXED**（= F-42） | `9fb98b9` |
+| B18 (1)：`cond.tinnitus` `red_flags_zh[1].rationale` 英文片語改中文 | **FIXED** | `9fb98b9` |
+| B19 (1)：`cond.tension_headache` `tcm_patterns[2].symptoms_zh` 簡體字形止血 | **FIXED** | `9fb98b9` |
+| B20 (4)：四張頭痛卡 `import_artifacts[].reason` 假註記改寫 | **FIXED**（= F-46；僅改註記，四欄部落格原文本身仍 OPEN，需走 import_artifacts 流程） | `9fb98b9` |
+| F-37 `cond.pcos`（SAFETY） | **RELOCATED**（`etiology_zh`/`etiology_en`/`western_pathology_zh`/`western_pathology_en` 四欄搬走留空，逐一驗證無可分離的 PCOS 專屬內容；`herb_formulas` 49 筆含抵當湯等破血逐瘀方，非 ledger 列為同一區塊，維持 OPEN 需 Ting 重新策展或整欄留空） | `8a26da9` |
+| F-38 `cond.peptic_ulcer`（SAFETY） | **RELOCATED**（局部搬移，非整欄：`etiology_zh` 僅搬走決明子/附子理中湯自行用藥軼事二段，周邊寒熱辨證文字保留；`western_pathology_zh`/`_en` 僅搬走誤植 NIDDK 名下的胃藥藥理錯誤句；`field_sources.western_pathology_zh/_en` 改正為 cloudtcm.com。`瓜蒂散` 於 `herb_formulas` 維持 OPEN 需 Ting；`etiology_zh` 內「黃連黃芩快速降火」「半夏瀉心湯效果很快」療效宣稱與「心臟病其實是胃脘經絡阻塞」因果推論本批未動，仍 OPEN 需 Ting） | `8a26da9` |
+| 孕期三張卡（`hyperemesis_gravidarum`/`ivf_support`/`luteal_phase_defect`） | **復核確認已止血**（F-19/F-21，`codex/cond-eyeson-fixes-2` 完成，未重做） | `29d3f8d`（merged `41e77c5`） |
 
 ---
 
@@ -927,14 +943,20 @@ F-20 fibromyalgia · F-21 ivf_support / luteal_phase_defect · **F-37 pcos** · 
 
 派工單問的是「還有沒有第 5 張」。答案分兩層：
 
-**第一層 —— 明確的妊娠情境卡（原 4 張，現 3 張未修）：**
+**第一層 —— 明確的妊娠情境卡（原 4 張，2026-08-12 fixes-3 復核：4/4 已止血）：**
 
 | id | 狀態 | 卡片自己寫對的穴 |
 |---|---|---|
 | `cond.breech_presentation` | **已止血**（e8843e1） | 至陰 BL67（艾灸） |
-| `cond.hyperemesis_gravidarum` | 未修 | 內關 PC6 |
-| `cond.ivf_support` | 未修 | （ASRM：不可宣稱提升活產率） |
-| `cond.luteal_phase_defect` | 未修 | （ASRM committee opinion） |
+| `cond.hyperemesis_gravidarum` | **已止血**（29d3f8d，merged 41e77c5） | 內關 PC6 |
+| `cond.ivf_support` | **已止血**（29d3f8d，merged 41e77c5） | （ASRM：不可宣稱提升活產率） |
+| `cond.luteal_phase_defect` | **已止血**（29d3f8d，merged 41e77c5） | （ASRM committee opinion） |
+
+> **fixes-3 復核（2026-08-12）**：派工單指示「這 3 張已在 codex/cond-eyeson-fixes-2 相關
+> —— 驗證是否完成，不要重做」。逐筆讀取 `data/pathology/condition_canon_shortlist.json`
+> 確認：三筆的 `acupoint_protocols`／`herb_formulas`／`tcm_patterns` 現況皆為 `[]`
+> （誠實留空），`import_artifacts` 各 3 筆（`acupoint_protocols`／`herb_formulas`／
+> `tcm_patterns`，逐字保留原始樣板內容 + reason + `moved_at`）。**確認已完成，本批未重做。**
 
 **本批 31 筆中沒有新的產科卡** —— `cond.pcos` 沒有 `acupoint_protocols` 欄位（誠實留空），
 其餘 30 筆無 O 開頭 ICD。派工單的假設在這一點上是安全的。
