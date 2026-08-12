@@ -99,12 +99,19 @@
     }
     const saved = backend.read();
     if (!saved) return [];
+    // R15(Dry Clinic #9):v1 與 v2 同等 fail-loud。「不存在→[]」是新機;
+    // 「存在但壞→丟錯」—— 靜默回 [] 會讓下一次 save 把還救得回來的原始
+    // 位元組永久蓋掉(2026-08-11 演練中真實發生,靠未重載分頁才救回)。
+    let parsed;
     try {
-      const parsed = JSON.parse(saved);
-      return Array.isArray(parsed) ? parsed : [];
-    } catch {
-      return [];
+      parsed = JSON.parse(saved);
+    } catch (e) {
+      throw new Error(`clinical-store: v1 store present but CORRUPT (unparseable JSON): ${e.message} — 拒絕載入。原始位元組仍在 localStorage["${STORAGE_KEY}"],請先匯出備份再修復;在此之前任何存檔都會被唯讀保護擋下`);
     }
+    if (!Array.isArray(parsed)) {
+      throw new Error(`clinical-store: v1 store present but has invalid shape (${typeof parsed}, expected array) — 拒絕載入。原始內容仍在 localStorage["${STORAGE_KEY}"],請先匯出備份再修復`);
+    }
+    return parsed;
   }
 
   function save(cases) {

@@ -320,5 +320,28 @@ let pass = 0; const ok = (m) => { pass++; console.log("PASS", m); };
   assert.strictEqual(syncThrew, true); ok("R14: sync at MAX_SAFE revision throws overflow");
   assert.strictEqual(bMS.kv.get(S.STAGING_KEY), JSON.stringify(maxSync)); ok("R14: staging bytes unchanged after refused sync");
 
+  // R15(Dry Clinic #9):v1 load fail-loud —— 存在但壞的 store 必須丟錯,
+  // 且 raw bytes 原封不動(靜默回 [] = 下一次 save 蓋掉可救回的資料)。
+  const b15a = fakeBackend({ "acuting-clinical-cases-v1": "not found" });
+  S.setBackend(b15a);
+  let threw15a = false;
+  try { S.load(); } catch (e) { threw15a = /CORRUPT/.test(e.message); }
+  assert.strictEqual(threw15a, true); ok("R15: v1 unparseable store throws (fetch-404-body scenario)");
+  assert.strictEqual(b15a.kv.get("acuting-clinical-cases-v1"), "not found"); ok("R15: raw bytes untouched after refused load");
+
+  const b15b = fakeBackend({ "acuting-clinical-cases-v1": JSON.stringify({ cases: [] }) });
+  S.setBackend(b15b);
+  let threw15b = false;
+  try { S.load(); } catch (e) { threw15b = /invalid shape/.test(e.message); }
+  assert.strictEqual(threw15b, true); ok("R15: v1 non-array JSON throws (object-shaped store refused)");
+
+  const b15c = fakeBackend({});
+  S.setBackend(b15c);
+  assert.deepStrictEqual(S.load(), []); ok("R15: absent v1 store still loads [] (fresh machine unaffected)");
+
+  const b15d = fakeBackend({ "acuting-clinical-cases-v1": JSON.stringify([{ id: "case.x" }]) });
+  S.setBackend(b15d);
+  assert.strictEqual(S.load().length, 1); ok("R15: healthy v1 array still loads normally");
+
   console.log(`\nRUNTIME RESTORE REHEARSAL: ${pass}/${pass} PASS`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });

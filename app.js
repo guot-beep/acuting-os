@@ -1518,8 +1518,13 @@ function loadClinicalCases() {
   if (!saved) return [];
   try {
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) ? parsed.map(normalizeClinicalCase) : [];
-  } catch {
+    if (!Array.isArray(parsed)) throw new Error(`v1 store present but not an array (${typeof parsed})`);
+    return parsed.map(normalizeClinicalCase);
+  } catch (e) {
+    // R15(Dry Clinic #9):與 store 層同等 fail-loud —— 存在但壞 = 唯讀鎖,
+    // 絕不靜默回 [](那會讓下一次存檔蓋掉還救得回來的原始位元組)。
+    clinicalStoreIntegrityError = "v1 store corrupt: " + (e && e.message || e);
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
     return [];
   }
 }
