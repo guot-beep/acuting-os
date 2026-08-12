@@ -61,6 +61,39 @@
  *
  * NOTES (reported, do not fail the build):
  *   N1 inline tcm_patterns blobs not yet lifted into related_patterns
+ *   N5 classical_references_zh probably misattributed (P3, see below)
+ *
+ * N5 / P3 — the only check this file has ever had on `classical_references_zh`.
+ * Until 2026-08-12 the field appeared here exactly twice, both membership lines
+ * (CONTENT_FIELDS, SKELETON_CONTENT_FIELDS), and neither was a check: 52 filled
+ * records produced 0 defects. A classical citation reads as provenance — it
+ * tells the reader "a classic said this about THIS disease" — so a citation
+ * about a different disease is not an incomplete card, it is a card that is
+ * wrong with a source attached. Predicate, from
+ * docs/research_packs/CLASSICAL_REFS_ATTRIBUTION_SCAN.md §4.2:
+ *
+ *   flag R when
+ *     (a) normalize(R.classical_references_zh) equals that of >=1 other record
+ *         (normalize = drop HTML entities, keep CJK only), AND
+ *     (b) no term of length >=2 from
+ *         { R.name_zh, R.aliases_zh[], tdis_registry[R.related_eastern_diseases].name_zh }
+ *         occurs as a literal substring of the passage.
+ *
+ * Measured on the pre-remediation corpus: 18 flags, 16 of them records the scan
+ * had independently read as WRONG-TOPIC or ADJACENT — an 11.1 % false-positive
+ * rate. Both false positives were card-side vocabulary gaps, not passage
+ * problems (`cond.irregular_menstruation` lacks 月經先期/月經後期 in aliases_zh
+ * although the passage's 「或早或遲」 is exactly that; `cond.chronic_prostatitis`
+ * lacks 精濁, the correct classical name of its own disease). That is why this
+ * is an N-code and not a C-code: a blocking gate that fails on a correct card
+ * is a gate that gets switched off, and the two fixes are content improvements
+ * that belong to the card, not to the validator.
+ *
+ * Deliberately NOT done here: adding ["classical_references_zh",
+ * "classical_references_en"] to BILINGUAL_PAIRS. `_en` does not exist on any of
+ * the 505 records, so that one line would mint one C5 per filled record in a
+ * single commit and break check-validation-ratchet. Whether a classical Chinese
+ * passage should have an English twin at all is Ting's call (scan §4.3).
  *
  * WORKLIST — `--worklist` lists the actual condition ids behind the numbers,
  * grouped by category (batches run one category at a time).
@@ -75,6 +108,7 @@ const ROOT = path.resolve(__dirname, "..");
 const CONDITION_FILE = "data/pathology/condition_canon_shortlist.json";
 const PATTERN_REGISTRY = "data/pathology/pattern_registry.json";
 const PATTERN_LIBRARY = "data/pathology/pattern_library.json";
+const TDIS_REGISTRY = "data/pathology/tdis_registry.json";
 
 // --- the approved field set (docs/CONDITION_CARD_TEMPLATE.md §3) -------------
 // Anything outside this set is C8. Growing this list is a schema change: it
@@ -197,6 +231,12 @@ const patternIds = new Set([
   ...(readJson(PATTERN_REGISTRY).records || []).map((r) => r.id),
   ...(readJson(PATTERN_LIBRARY).records || []).map((r) => r.id),
 ]);
+// N5/P3 needs the TCM disease NAME behind each related_eastern_diseases id —
+// a card that links tdis.long_bi is claiming 癃閉, and that is the word the
+// passage has to contain for the citation to be about this card's disease.
+const tdisNames = new Map(
+  (readJson(TDIS_REGISTRY).records || []).map((r) => [r.id, r.name_zh])
+);
 
 const scope = ONLY_CATEGORY
   ? conditions.filter((c) => c.category === ONLY_CATEGORY)
@@ -213,6 +253,34 @@ for (const f of C10_FIELDS) {
     if (v) byVal.set(v, (byVal.get(v) || 0) + 1);
   }
   sharedValues.set(f, byVal);
+}
+
+// N5/P3 part (a): duplicate passage blocks, computed over the FULL dataset for
+// the same reason C10 is. Normalization keeps CJK only, so `&hellip;` vs `…`,
+// `"` vs 「」 and stray whitespace cannot hide a copy — those differences are
+// import damage, not different citations.
+const CLASSICAL_FIELD = "classical_references_zh";
+const normClassical = (s) => String(s).replace(/&[a-zA-Z#0-9]+;/g, "").replace(/[^一-鿿]/g, "");
+const classicalGroups = new Map(); // normalized passage -> [record ids]
+for (const rec of conditions) {
+  const v = typeof rec[CLASSICAL_FIELD] === "string" ? rec[CLASSICAL_FIELD].trim() : "";
+  if (!v) continue;
+  const k = normClassical(v);
+  if (!k) continue;
+  if (!classicalGroups.has(k)) classicalGroups.set(k, []);
+  classicalGroups.get(k).push(rec.id);
+}
+
+// N5/P3 part (b): the disease terms this card claims as its own identity.
+function ownDiseaseTerms(rec) {
+  const terms = [rec.name_zh, ...(Array.isArray(rec.aliases_zh) ? rec.aliases_zh : [])];
+  for (const tid of (Array.isArray(rec.related_eastern_diseases) ? rec.related_eastern_diseases : [])) {
+    if (tdisNames.has(tid)) terms.push(tdisNames.get(tid));
+  }
+  return terms
+    .filter((t) => typeof t === "string")
+    .map((t) => t.trim())
+    .filter((t) => t.length >= 2);
 }
 
 // --- checks -----------------------------------------------------------------
@@ -418,6 +486,27 @@ for (const rec of scope) {
     notes.push({ code: "N2", id, category: cat, detail: "uses related_tcm_symptoms — deprecated_but_temporarily_accepted. Migrate to sign_symptom_ids (edge.condition_symptoms); no NEW content may use this field." });
   }
 
+  // N5 classical_references_zh probably misattributed (P3 = duplicate block AND
+  // the card's own disease term absent from the passage). Note only — see the
+  // header for the measured 11.1 % false-positive rate and why it is not a C.
+  const classical = typeof rec[CLASSICAL_FIELD] === "string" ? rec[CLASSICAL_FIELD].trim() : "";
+  if (classical) {
+    const group = classicalGroups.get(normClassical(classical)) || [];
+    if (group.length >= 2) {
+      const terms = ownDiseaseTerms(rec);
+      const hit = terms.find((t) => classical.includes(t));
+      if (!hit) {
+        const others = group.filter((g) => g !== rec.id);
+        notes.push({
+          code: "N5",
+          id,
+          category: cat,
+          detail: `${CLASSICAL_FIELD} is shared verbatim with ${others.join(", ")} AND names none of this card's own disease terms (${terms.join(" / ") || "none declared"}). Inside a group of n cards at most one can be the true home, so this citation is probably about another card's disease. Either move it (see CONDITION_CARD_TEMPLATE §3.5.5: write the true home FIRST, then archive and clear here), or — if the passage really is about this disease under a classical name — add that name to aliases_zh, which is a content fix and clears this note honestly.`,
+        });
+      }
+    }
+  }
+
   // N1 unlifted inline pattern blobs
   const inline = (rec.tcm_patterns || []).length;
   const resolved = (rec.related_patterns || []).length;
@@ -485,6 +574,7 @@ if (AS_JSON) {
       N1: "inline tcm_patterns blobs not lifted into related_patterns",
       N2: "related_tcm_symptoms (deprecated_but_temporarily_accepted)",
       N4: "skeleton index slots (no content claimed; C4 deferred)",
+      N5: "classical_references_zh duplicated AND missing this card's own disease term (P3)",
     };
     for (const code of Object.keys(NOTE_LABELS)) {
       const list = notes.filter((n) => n.code === code);
