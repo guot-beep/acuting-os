@@ -209,6 +209,51 @@ jobs:
       - name: symptom standard
         run: node scripts/validate-symptom-standard.js
 
+      # Pharmacology line (2026-08-12). Until now `grep -c pharm` on this file
+      # returned 0: 59 drug cards, 48 classes, 38 targets and 7 systems had no
+      # CI gate at all. That is the exact state the header block above calls the
+      # repo's real failure mode — and it is how Test 10 of the source-integrity
+      # suite sat FAIL for a day without anyone noticing.
+      # Tier chosen per validator by MEASURING it on this tree, not by guessing:
+      #   validate-pharm-standard.js                      exit 0 (阻擋 0 提醒 0) -> blocking
+      #   test-pharm-negative-cases.js                    exit 0 (5/5)           -> blocking
+      #   test-pharm-source-integrity-negative-cases.js   exit 0 (10/10)         -> blocking
+      # The two test suites mutate data/pharmacology fixtures in-memory and
+      # restore in a `finally`; `git status --porcelain` was empty after each
+      # run, so neither can leave the checkout dirty for the `git diff --check`
+      # step at the end of this job.
+      - name: pharm card standard
+        run: node scripts/validate-pharm-standard.js
+
+      # Guards the §0 rule (no safety field without a verified_exact official
+      # label): each case feeds the validator a deliberately bad record and
+      # requires it to FAIL. If someone loosens §0, these go green-when-they-
+      # should-be-red and this step catches it.
+      - name: pharm negative cases A-E (§0 source gate cannot be loosened)
+        run: node scripts/test-pharm-negative-cases.js
+
+      # Tests 1-9 are external-resource/scope evidence probes; Test 10 asserts
+      # docs/PHARM_CARD_TEMPLATE.md §G and VERIFICATION_STATUSES in
+      # validate-pharm-standard.js declare the same enum. Test 10 was FAIL on
+      # this branch until the template port in the preceding commit.
+      - name: pharm source integrity + template/validator enum contract (1-10)
+        run: node scripts/test-pharm-source-integrity-negative-cases.js
+
+      # NOTE tier, same idiom as the two formula steps above — but for a
+      # different reason, so read this before promoting it. This script has no
+      # `process.exitCode` assignment anywhere: it CANNOT fail, by construction.
+      # It is a dashboard (scope manifest vs what is actually built), and today
+      # it reports M3 48 manifest/data disagreements and M4 10 cards outside the
+      # scope list, against a scope of 85 drugs. It runs here only so those two
+      # numbers appear in every CI run instead of being re-measured by hand.
+      # Graduation: it does NOT graduate as-is — first the script needs a
+      # `--blocking` flag that sets a non-zero exit when M3/M4 are non-empty;
+      # then, once M3 and M4 both reach 0 (i.e. drug_scope_manifest.json and
+      # drugs.json agree), add the flag here. Promoting it before it can fail
+      # would put a gate on the wall that is incapable of ever turning red.
+      - name: pharm scope-vs-implementation coverage (NOTE tier, cannot fail — see comment)
+        run: node scripts/report-pharm-coverage.js
+
       # The edge registry had ZERO consumers until 2026-08-06 — D13 called it
       # "the authority on which fields are edges" while nothing parsed it. This
       # step is that consumer: every declared edge must resolve against real
