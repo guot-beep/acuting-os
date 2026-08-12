@@ -269,7 +269,7 @@
       <h2>上次治療後的變化 Change since last treatment</h2>
       <label class="field">
         <span class="field-prompt">上次治療後有什麼變化? What has changed since your last treatment?</span>
-        <textarea id="subjectiveText" name="subjectiveText" rows="4" placeholder="睡眠、疼痛、情緒、消化…想到什麼寫什麼"></textarea>
+        <textarea id="subjectiveText" name="subjectiveText" rows="4" maxlength="5000" placeholder="睡眠、疼痛、情緒、消化…想到什麼寫什麼"></textarea>
       </label>
     </div>
 
@@ -277,7 +277,7 @@
       <h2>您的想法 In your own words</h2>
       <label class="field">
         <span class="field-prompt">您怎麼看目前的狀況、這段經歷對您的意義? How do you see your current condition, and what has this experience meant to you?</span>
-        <textarea id="patientPerspective" name="patientPerspective" rows="4"></textarea>
+        <textarea id="patientPerspective" name="patientPerspective" rows="4" maxlength="5000"></textarea>
       </label>
     </div>
 
@@ -290,7 +290,7 @@
       </div>
       <label class="field" id="aeTextWrap" hidden>
         <span class="field-prompt">請描述 Please describe</span>
-        <textarea id="aeText" rows="3"></textarea>
+        <textarea id="aeText" rows="3" maxlength="2000"></textarea>
       </label>
     </div>
 
@@ -303,7 +303,7 @@
       </div>
       <label class="field" id="expTextWrap" hidden>
         <span class="field-prompt">請描述 Please describe</span>
-        <textarea id="expText" rows="3"></textarea>
+        <textarea id="expText" rows="3" maxlength="2000"></textarea>
       </label>
     </div>
 

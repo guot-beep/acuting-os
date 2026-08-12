@@ -86,87 +86,22 @@ function shortLabel(def, metricId) {
 // whole payload" — exactly the same all-or-nothing rule app.js and
 // previsit.html apply ("非法整筆拒收並顯示原因").
 // ---------------------------------------------------------------------
+// Shape 驗證委派給共用模組(js/previsit-validator.js)—— 與 app.js 同一份。
+// Codex P1 retest MED-4:過去 CLI 與 app 各一份規則,self-test 只跑 CLI 這份,
+// 於是 app 端的 metrics-shape 漂移可以在 "ALL PASS" 底下存活。現在 self-test
+// 跑的就是 app 執行的那段程式碼。
+require(path.join(__dirname, "..", "js", "previsit-validator.js"));   // UMD:掛上 globalThis
 function validatePayload(rawText, config, registry) {
-  const errors = [];
-  let data;
-  try {
-    data = JSON.parse(rawText);
-  } catch (e) {
-    return { ok: false, errors: [`不是合法的 JSON。Not valid JSON: ${e.message}`] };
+  const mod = globalThis.AcuTingPrevisitValidator;
+  if (!mod || typeof mod.validatePrevisitShape !== "function") {
+    throw new Error("js/previsit-validator.js did not load — refusing to validate with a second, drifting copy of the rules.");
   }
-  if (!data || typeof data !== "object" || Array.isArray(data)) {
-    return { ok: false, errors: ["資料格式錯誤，不是一個物件。Invalid payload — not an object."] };
-  }
-
-  if (data.kind !== "acuting-previsit-v1") {
-    errors.push(`kind 欄位不是 "acuting-previsit-v1"（實際："${data.kind}"）。kind is not "acuting-previsit-v1" (got: "${data.kind}").`);
-  }
-  if (typeof data.patientCode !== "string") {
-    errors.push(`patientCode 必須是文字（實際型別："${typeof data.patientCode}"）。patientCode must be a string (got type: "${typeof data.patientCode}").`);
-  }
-  // SOL P1 transport audit HIGH-1(2026-08-12):與 app.js validatePrevisitPayload
-  // 同步硬性要求 §7 三欄 —— formVersion===1、非空 payloadId、合法 filledAt。
-  // 舊版「缺就當 legacy 放行」在 import 端讓缺 payloadId 者繞過重放閘;此處
-  // shape 層一併堵死,兩個 validator 同尺。
-  if (data.formVersion !== 1) {
-    errors.push(`formVersion 必須為 1（實際 ${JSON.stringify(data.formVersion)}）。formVersion must be exactly 1.`);
-  }
-  if (typeof data.payloadId !== "string" || !data.payloadId.trim()) {
-    errors.push("payloadId 缺少或為空（重放防護所需）。payloadId missing/empty — required for replay protection.");
-  }
-  if (typeof data.filledAt !== "string" || !Number.isFinite(Date.parse(data.filledAt))) {
-    errors.push("filledAt 缺少或不是合法時間。filledAt missing or not a valid timestamp.");
-  }
-
-  const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
-  if (data.metrics !== undefined && !Array.isArray(data.metrics)) {
-    errors.push('metrics 必須是陣列。metrics must be an array.');
-  }
-  rawMetrics.forEach((m, i) => {
-    if (!m || typeof m.metricId !== "string" || !m.metricId) {
-      errors.push(`metrics[${i}] 缺少 metricId。metrics[${i}] is missing metricId.`);
-      return;
-    }
-    const cfg = config.find((c) => c.metricId === m.metricId);
-    if (!cfg) {
-      errors.push(`metrics[${i}]：metricId「${m.metricId}」不在白名單內。metricId "${m.metricId}" is not in the allowed set.`);
-      return;
-    }
-    if (!registry.has(m.metricId)) {
-      errors.push(`metrics[${i}]：metricId「${m.metricId}」在 registry（data/clinical_cases/outcome_metrics.json）找不到對應紀錄。metricId not found in the registry.`);
-      return;
-    }
-    // SOL P1 transport audit HIGH-2(2026-08-12):JSON number 本尊,禁 coercion。
-    // Number(null/false/""/[]) → 0、Number(true) → 1、Number("4") → 4 都會讓
-    // 壞值靜默變成臨床測量。傳輸層要求真數字。
-    if (typeof m.valueNumber !== "number" || !Number.isFinite(m.valueNumber)) {
-      errors.push(`metrics[${i}]（${shortLabel(registry.get(m.metricId), m.metricId)}）：valueNumber 必須是 JSON 數字（不接受字串/null/布林/空值，實際型別 "${typeof m.valueNumber}"）。valueNumber must be a JSON number.`);
-      return;
-    }
-    const num = m.valueNumber;
-    const shapeOk = cfg.integer ? Number.isInteger(num) : true;
-    const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
-    if (!shapeOk || !rangeOk) {
-      const rangeText = cfg.max != null ? `${cfg.min}–${cfg.max}` : `${cfg.min} 以上`;
-      const shapeText = cfg.integer ? "整數" : "數字（可含小數）";
-      errors.push(`metrics[${i}]（${shortLabel(registry.get(m.metricId), m.metricId)}）：須為 ${rangeText} 的${shapeText}（實際：${m.valueNumber}）。Must be a ${shapeText} in range ${rangeText} (got: ${m.valueNumber}).`);
-    }
+  const result = mod.validatePrevisitShape(rawText, {
+    metricConfig: config,
+    registryHas: (id) => registry.has(id),
+    labelOf: (id) => shortLabel(registry.get(id), id)
   });
-
-  // SOL P1 transport audit MED-1(2026-08-12):自由文字長度上限(與 app.js 同尺)
-  // —— 擋巨量 payload。字串以外的欄位視為缺欄,不強制轉型。
-  const PV_MAX_PROSE = 5000, PV_MAX_REPORT = 2000;
-  const lenCheck = (val, max, label) => {
-    if (typeof val === "string" && val.length > max) {
-      errors.push(`${label} 超過長度上限（${max} 字，實際 ${val.length}）。${label} exceeds the ${max}-char limit.`);
-    }
-  };
-  lenCheck(data.subjectiveText, PV_MAX_PROSE, "subjectiveText");
-  lenCheck(data.patientPerspective, PV_MAX_PROSE, "patientPerspective");
-  lenCheck(data.aeSelfReport && data.aeSelfReport.text, PV_MAX_REPORT, "aeSelfReport.text");
-  lenCheck(data.exposureSelfReport && data.exposureSelfReport.text, PV_MAX_REPORT, "exposureSelfReport.text");
-
-  return { ok: errors.length === 0, errors };
+  return { ok: result.ok, errors: result.errors };
 }
 
 // ---------------------------------------------------------------------
@@ -257,6 +192,29 @@ function selfTestFixtures() {
   // MED-1 oversized free text (>5000 prose limit).
   const bad14HugeText = { ...good2, subjectiveText: "x".repeat(5001) };
 
+  // ---- Codex P1 adversarial retest (2026-08-12) permanent regression ----
+  // Every one of these was an ACCEPT (or an app/CLI divergence) at 0f59773.
+  // HIGH-1: metrics as an object — app silently degraded it to [] and
+  // prefilled zero items while the CLI rejected. Same rules now, one module.
+  const bad15MetricsNotArray = { ...good2, metrics: { metricId: "metric.pain_score", valueNumber: 4 } };
+  const bad16MetricsString = { ...good2, metrics: "metric.pain_score=4" };
+  // HIGH-2: magnitudes JSON.parse silently rewrites, and transport/save drift.
+  const bad17UnsafeInteger = { ...good2, metrics: [{ metricId: "metric.sleep_hours", valueNumber: 9007199254740993 }] };
+  const bad18HugeExponent = { ...good2, metrics: [{ metricId: "metric.sleep_hours", valueNumber: 1e308 }] };
+  // MED-1: metric outside the six the patient page can actually produce.
+  const bad19OffSubsetMetric = { ...good2, metrics: [{ metricId: "metric.effect_duration_days", valueNumber: 3 }] };
+  // MED-2: Date.parse-able but not ISO 8601.
+  const bad20NonIsoTimestamp = { ...good2, filledAt: "0" };
+  const bad21LooseTimestamp = { ...good2, filledAt: "2026/08/11 09:00" };
+  // Deterministic duplicate handling (prefill last-write/first-write ambiguity).
+  const bad22DuplicateMetricId = {
+    ...good2,
+    metrics: [
+      { metricId: "metric.pain_score", valueNumber: 2 },
+      { metricId: "metric.pain_score", valueNumber: 9 }
+    ]
+  };
+
   return {
     good: [
       { name: "good1_full_payload", payload: good1 },
@@ -277,15 +235,53 @@ function selfTestFixtures() {
       { name: "bad11_metric_empty_string_coercion", payload: bad11MetricEmptyStr },
       { name: "bad12_metric_numeric_string", payload: bad12MetricNumStr },
       { name: "bad13_metric_array_coercion", payload: bad13MetricArray },
-      { name: "bad14_oversized_free_text", payload: bad14HugeText }
+      { name: "bad14_oversized_free_text", payload: bad14HugeText },
+      { name: "bad15_metrics_object_not_array", payload: bad15MetricsNotArray },
+      { name: "bad16_metrics_string_not_array", payload: bad16MetricsString },
+      { name: "bad17_unsafe_integer_precision", payload: bad17UnsafeInteger },
+      { name: "bad18_huge_exponent_transport_save_drift", payload: bad18HugeExponent },
+      { name: "bad19_metric_outside_p1_subset", payload: bad19OffSubsetMetric },
+      { name: "bad20_non_iso_timestamp", payload: bad20NonIsoTimestamp },
+      { name: "bad21_loose_timestamp_format", payload: bad21LooseTimestamp },
+      { name: "bad22_duplicate_metricId", payload: bad22DuplicateMetricId }
     ]
   };
+}
+
+/* Codex P1 retest MED-4 的結構性防線:self-test 跑的是共用模組,但如果有人
+ * 未來在 app.js 裡「順手」重新寫一份 shape 規則,漂移就會回來,而這支 CLI
+ * 仍然全綠(這正是 0f59773 當時發生的事)。這裡靜態檢查 app.js 的
+ * validatePrevisitPayload 確實委派共用模組、且沒有自己的 JSON.parse 規則。
+ * 純字串檢查、零執行風險。 */
+function checkAppDelegation() {
+  const src = fs.readFileSync(path.join(ROOT, "app.js"), "utf8");
+  const start = src.indexOf("function validatePrevisitPayload(raw) {");
+  if (start === -1) return ["app.js: validatePrevisitPayload not found — has it been renamed?"];
+  const end = src.indexOf("\n}", start);
+  const body = src.slice(start, end === -1 ? src.length : end);
+  const problems = [];
+  if (!body.includes("AcuTingPrevisitValidator")) {
+    problems.push("app.js validatePrevisitPayload no longer delegates to AcuTingPrevisitValidator — the app/CLI drift this suite exists to prevent has been reintroduced.");
+  }
+  if (body.includes("JSON.parse")) {
+    problems.push("app.js validatePrevisitPayload parses the payload itself — shape rules must live only in js/previsit-validator.js.");
+  }
+  const idx = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  if (!idx.includes("js/previsit-validator.js")) {
+    problems.push("index.html does not load js/previsit-validator.js — the browser app would fail closed on every paste-import.");
+  }
+  return problems;
 }
 
 function runSelfTest(config, registry) {
   const fixtures = selfTestFixtures();
   let allOk = true;
   const lines = [];
+
+  const delegationProblems = checkAppDelegation();
+  delegationProblems.forEach((p) => lines.push(`FAIL [parity] ${p}`));
+  if (!delegationProblems.length) lines.push("PASS [parity] app.js delegates shape validation to the shared module; index.html loads it");
+  allOk = allOk && delegationProblems.length === 0;
 
   fixtures.good.forEach((f) => {
     const result = validatePayload(JSON.stringify(f.payload), config, registry);

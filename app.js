@@ -8368,108 +8368,27 @@ function openSoapEditor(note = null) {
 // itself — the exact same config the SOAP form's own numeric metric inputs
 // already render from (declared near the top of this file) — one shared
 // source of truth, never a second copy that could drift out of sync.
+// P1 payload shape 驗證 —— 委派給共用模組 js/previsit-validator.js。
+// Codex P1 retest MED-4/HIGH-1 根因:這裡與 CLI validator 各有一份規則,
+// 兩份漂移(app 把非陣列 metrics 靜默降成 []、CLI 正確拒收),而 blocking
+// self-test 只跑 CLI 那份,漂移在全綠底下存活。現在 shape 規則只有一份,
+// app / CLI / self-test 跑的是同一段程式碼,漂移在結構上不可能。
+// import 端三道硬規則(patientCode 比對 / 過期 / 重放)仍在
+// pastePrevisitImport —— 那些需要目前開啟病例與 session 狀態,不屬 shape 層。
 function validatePrevisitPayload(raw) {
-  let data;
-  try {
-    data = JSON.parse(raw);
-  } catch (e) {
-    return { error: "不是合法的 JSON。Not valid JSON." };
+  const V = globalThis.AcuTingPrevisitValidator;
+  // fail-loud:模組沒載入就整筆拒收。靜默退回較弱的內建驗證 = 把安全 gate
+  // 變成「載入失敗時自動關閉」,那正是這次修復要消滅的類別。
+  if (!V || typeof V.validatePrevisitShape !== "function") {
+    return { error: "診前資料驗證模組(js/previsit-validator.js)未載入,拒絕匯入。Validator module not loaded — import refused." };
   }
-  if (!data || typeof data !== "object" || Array.isArray(data)) {
-    return { error: "資料格式錯誤，不是一個物件。Invalid payload — not an object." };
-  }
-  if (data.kind !== "acuting-previsit-v1") {
-    return { error: `kind 欄位不是 "acuting-previsit-v1"，整筆拒收。kind is not "acuting-previsit-v1" — payload rejected.` };
-  }
-  if (typeof data.patientCode !== "string") {
-    return { error: "patientCode 必須是文字。patientCode must be a string." };
-  }
-  // SOL P1 transport audit HIGH-1(2026-08-12,Codex/SOL retest 修復):§7 明訂
-  // 現行 payload 必帶 formVersion===1 + 非空 payloadId + filledAt。舊版把
-  // formVersion/payloadId 做成「缺就當 legacy 放行」,而 pastePrevisitImport 的
-  // 重放閘是 `if (data.payloadId)` —— 缺 payloadId 的 payload 直接繞過整個重放
-  // 防護、可無限重匯。previsit.html 一律 emit 齊全欄位,且 P1 尚無真實 legacy
-  // 生產資料,故硬性要求三欄,不留 legacy 旁路(§7「不得為遷就程式而弱化」)。
-  if (data.formVersion !== 1) {
-    return { error: `formVersion 必須為 1(實際 ${JSON.stringify(data.formVersion)}),整筆拒收。formVersion must be exactly 1.` };
-  }
-  if (typeof data.payloadId !== "string" || !data.payloadId.trim()) {
-    return { error: "payloadId 缺少或為空,整筆拒收(重放防護所需)。payloadId missing/empty — required for replay protection." };
-  }
-  if (typeof data.filledAt !== "string" || !Number.isFinite(Date.parse(data.filledAt))) {
-    return { error: "filledAt 缺少或不是合法時間,整筆拒收。filledAt missing or not a valid timestamp." };
-  }
-  const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
-  const checkedMetrics = [];
-  for (let i = 0; i < rawMetrics.length; i++) {
-    const m = rawMetrics[i];
-    if (!m || typeof m.metricId !== "string" || !m.metricId) {
-      return { error: `metrics[${i}] 缺少 metricId。metrics[${i}] is missing metricId.` };
-    }
-    const cfg = NUMERIC_OUTCOME_METRIC_CONFIG.find((c) => c.metricId === m.metricId);
-    if (!cfg) {
-      return { error: `metricId「${m.metricId}」不在白名單內，整筆拒收。metricId is not in the allowed set — payload rejected.` };
-    }
-    if (!getOutcomeMetricDef(m.metricId)) {
-      return { error: `metricId「${m.metricId}」在 registry 找不到對應紀錄。metricId not found in the registry.` };
-    }
-    // SOL P1 transport audit HIGH-2(2026-08-12):禁止 JS 型別強制把壞值變成
-    // 臨床數值。舊版 Number(m.valueNumber) 讓 null/false/""/[]→0、true→1、
-    // "4"/" 4 "→4 全數通過 —— 對 min=0 的 metric,壞掉的 JSON 就靜默變成一筆
-    // 合法測量。傳輸層必須要求 JSON number 本尊(previsit.html 一律 emit 數字),
-    // 字串/布林/null/陣列一律拒。存檔端(computeNumericOutcomeMetrics)讀 DOM
-    // 字串是另一回事,那裡 Number() 合理,不在此規則內。
-    if (typeof m.valueNumber !== "number" || !Number.isFinite(m.valueNumber)) {
-      return { error: `${outcomeMetricShortLabel(m.metricId)} 的數值必須是 JSON 數字(不接受字串/null/布林/空值),整筆拒收。valueNumber must be a JSON number.` };
-    }
-    const num = m.valueNumber;
-    const shapeOk = cfg.integer ? Number.isInteger(num) : true;
-    const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
-    if (!shapeOk || !rangeOk) {
-      const rangeText = cfg.max != null ? `${cfg.min}–${cfg.max}` : `${cfg.min} 以上`;
-      const shapeText = cfg.integer ? "整數" : "數字（可含小數）";
-      return { error: `${outcomeMetricShortLabel(m.metricId)} 須為 ${rangeText} 的${shapeText}。Must be a ${shapeText} in range ${rangeText}.` };
-    }
-    checkedMetrics.push({ metricId: m.metricId, valueNumber: num });
-  }
-  // SOL P1 transport audit MED-1(2026-08-12):自由文字邊界。
-  //   1. 只接受字串(非字串欄位不 String()-強制成圖表文字,直接視為缺欄)。
-  //   2. 長度上限:超過即整筆拒收,擋「巨量 payload 凍結 QR/import/render」。
-  //   3. 清除 C0 控制字元(保留 \t\n)、DEL、Unicode bidi override —— 讓
-  //      import 後到達的文字是 deterministic 的可視文字(顯示端另有 escapeHtml
-  //      作 XSS 防線,兩者不互相取代)。
-  const textField = (val, max, label) => {
-    if (val === undefined || val === null) return { value: "" };
-    if (typeof val !== "string") return { value: "" };   // 非字串 = 當作沒填,不強制轉型
-    if (val.length > max) return { error: `${label} 超過長度上限(${max} 字),整筆拒收。${label} exceeds the ${max}-char limit.` };
-    const cleaned = val.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u202A-\u202E\u2066-\u2069]/g, "").trim();
-    return { value: cleaned };
-  };
-  const PV_MAX_PROSE = 5000, PV_MAX_REPORT = 2000;
-  const subj = textField(data.subjectiveText, PV_MAX_PROSE, "主訴自述 subjectiveText");
-  if (subj.error) return { error: subj.error };
-  const persp = textField(data.patientPerspective, PV_MAX_PROSE, "病人觀點 patientPerspective");
-  if (persp.error) return { error: persp.error };
-  const aeText = textField(data.aeSelfReport && data.aeSelfReport.text, PV_MAX_REPORT, "不良反應自述 aeSelfReport.text");
-  if (aeText.error) return { error: aeText.error };
-  const expText = textField(data.exposureSelfReport && data.exposureSelfReport.text, PV_MAX_REPORT, "暴露自述 exposureSelfReport.text");
-  if (expText.error) return { error: expText.error };
-  return {
-    data: {
-      patientCode: data.patientCode,
-      payloadId: data.payloadId.trim(),
-      filledAt: data.filledAt,
-      metrics: checkedMetrics,
-      subjectiveText: subj.value,
-      patientPerspective: persp.value,
-      aeSelfReport: (data.aeSelfReport && typeof data.aeSelfReport === "object")
-        ? { any: !!data.aeSelfReport.any, text: aeText.value }
-        : { any: false, text: "" },
-      exposureSelfReport: (data.exposureSelfReport && typeof data.exposureSelfReport === "object")
-        ? { any: !!data.exposureSelfReport.any, text: expText.value }
-        : { any: false, text: "" }
-    }
-  };
+  const result = V.validatePrevisitShape(raw, {
+    metricConfig: NUMERIC_OUTCOME_METRIC_CONFIG,
+    registryHas: (id) => !!getOutcomeMetricDef(id),
+    labelOf: (id) => outcomeMetricShortLabel(id)
+  });
+  if (!result.ok) return { error: result.errors[0] };
+  return { data: result.data };
 }
 
 // Click handler for #pastePrevisitBtn. Prompts for pasted JSON, validates
@@ -8576,14 +8495,17 @@ function saveSoapFromForm(event) {
   // AVS v3 Phase C:checkbox 群組要用 getAll —— fromEntries 只留最後一個值。
   const modalitiesPerformed = soapFormData.getAll("modalitiesPerformed");
   const current = activeCase.soapNotes.find((note) => note.id === editingSoapId);
-  // P1 pre-visit paste-import: consume the stash exactly once, here, at the
-  // one authorized save path (pastePrevisitImport itself never writes
-  // clinicalCases/localStorage — see that function's comment). Read-then-
-  // delete so a value from this paste can never silently reapply to some
-  // later, unrelated save if openSoapEditor's own reset (on next dialog
-  // open) were ever skipped for any reason.
+  // P1 pre-visit paste-import: consume the stash exactly once, at the one
+  // authorized save path (pastePrevisitImport itself never writes
+  // clinicalCases/localStorage — see that function's comment).
+  //
+  // Codex P1 retest HIGH-3:過去在這裡就 read-then-delete,但這一行之後還有
+  // duplicate-visit 檢查、metric 重驗、以及 persist —— 任何一個提早 return
+  // 都會讓 dialog 仍開著、stash 卻已消失,醫師再按一次儲存時病人的原話已經
+  // 靜默不見。改成:此處只 READ;**只有 persist 成功後才 delete**(見本函式
+  // 末端),失敗路徑上 stash 原封不動,重試仍帶得回病人原話。
+  // 一次性語義由「成功後刪除」+ openSoapEditor 每次開啟的 reset 共同保證。
   const previsitPerspective = soapForm.dataset.previsitPatientPerspective || "";
-  delete soapForm.dataset.previsitPatientPerspective;
 
   // SOAP/Follow-up audit (2026-08-09): visit numbers are meant to be unique
   // per case (the timeline, "上次" comparisons, and CG8's future Baseline/
@@ -8727,6 +8649,10 @@ function saveSoapFromForm(event) {
   // R9 gate B: persist failure must not fire noteClinicalSave, close the
   // dialog, or render — roll back and keep the form's input intact.
   if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
+  // Codex P1 retest HIGH-3:病人原話的 stash 只在存檔真的落盤後才清除。
+  // 在此之前的任何 return(重複 visit number、metric 重驗失敗、persist 失敗)
+  // 都保留 stash,醫師重試時仍帶得回病人原話。
+  delete soapForm.dataset.previsitPatientPerspective;
   noteClinicalSave();   // CS1
   clearDraft(SOAP_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   soapDialog.close();
