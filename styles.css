@@ -1,27 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap");
 
+/* ==================================================================
+   Canonical design tokens — 唯一的 :root,改 palette 只改這裡。
+   (Consolidated 2026-08-11: this file used to have three competing
+   :root blocks — Atlas shell at top, clinical-workstation refresh
+   mid-file, Brand Theme v2 at the bottom. Per-property cascade meant
+   the LAST block, Brand Theme v2 品牌溫潤風 (2026-07-02), was what
+   actually rendered. These values ARE those rendered values, merged
+   with the nav tokens that only the Atlas-shell block declared —
+   zero visual change from the consolidation.)
+   ================================================================== */
 :root {
   color-scheme: light;
-  --ink: #202427;
-  --muted: #66717a;
-  --line: #d9e0e4;
-  --paper: #f3eddf;
-  --panel: #ffffff;
-  --accent: #0f7f7a;
-  --accent-dark: #0a5956;
-  --warn: #ad3f32;
-  --gold: #c89033;
-  --green-soft: #e8f4ef;
-  --blue-soft: #eaf1f7;
-  --shadow: 0 16px 50px rgba(23, 33, 38, 0.1);
-  /* Atlas shell (2026-07-25): deep-green + gold slide-out nav, warm parchment
-     page, serif display headings — tuned to the herbal-atlas look Ting likes. */
+  /* Brand Theme v2 — 品牌溫潤風: ivory / warm beige / sage /
+     deep brown / muted gold / soft terracotta. */
+  --ink: #33291f;
+  --muted: #7d7160;
+  --line: #e5dcc9;
+  --paper: #f6f1e7;
+  --panel: #fffdf8;
+  --accent: #6f7f58;
+  --accent-dark: #515f3e;
+  --warn: #b0563c;
+  --gold: #b98b44;
+  --plum: #9a6a55;
+  --clay: #b0563c;
+  --green-soft: #eef0e2;
+  --blue-soft: #f2ecdd;
+  --shadow: 0 14px 40px rgba(74, 60, 38, 0.1);
+  --shadow-soft: 0 4px 18px rgba(74, 60, 38, 0.07);
+  /* Atlas shell (2026-07-25): deep-green + gold slide-out nav. */
   --nav-bg: #16352f;
   --nav-bg-soft: #1d443c;
   --nav-ink: #f2ece0;
   --nav-line: #c89033;
   --serif: "Noto Serif TC", Georgia, "Songti TC", "STSong", serif;
-  font-family: "Microsoft JhengHei", "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
 }
 
 /* Serif display headings — the single biggest shift toward the atlas feel. */
@@ -2254,21 +2268,10 @@ footer {
   }
 }
 
-/* UI refresh: AcuTing OS clinical workstation */
-:root {
-  --ink: #1d2528;
-  --muted: #687276;
-  --line: #dfe6e3;
-  --paper: #f5f7f4;
-  --panel: #ffffff;
-  --accent: #0d6f69;
-  --accent-dark: #084c49;
-  --gold: #b9822f;
-  --plum: #7b506f;
-  --clay: #b7624f;
-  --shadow: 0 10px 28px rgba(25, 39, 42, 0.08);
-  --shadow-soft: 0 4px 16px rgba(25, 39, 42, 0.06);
-}
+/* UI refresh: AcuTing OS clinical workstation
+   (This section's :root token block was superseded by Brand Theme v2
+   and removed 2026-08-11 — tokens live only in the canonical :root at
+   the top of the file. The component rules below still apply.) */
 
 body {
   background:
@@ -4204,29 +4207,11 @@ section[data-workspace][hidden] {
 
 /* ==================================================================
    AcuTing Brand Theme v2 — 品牌溫潤風 (appended 2026-07-02, Claude)
-   Palette: ivory / warm beige / sage / deep brown / muted gold /
-   soft terracotta. Overrides the cool teal theme above via cascade.
-   To revert: delete everything from this banner to end of file.
+   Component overrides for the warm-brand look (buttons, topbar, nav,
+   typography). The palette tokens this section used to declare were
+   consolidated into the canonical :root at the TOP of the file
+   (2026-08-11) — edit colors there, not here.
    ================================================================== */
-
-:root {
-  --ink: #33291f;
-  --muted: #7d7160;
-  --line: #e5dcc9;
-  --paper: #f6f1e7;
-  --panel: #fffdf8;
-  --accent: #6f7f58;
-  --accent-dark: #515f3e;
-  --warn: #b0563c;
-  --gold: #b98b44;
-  --plum: #9a6a55;
-  --clay: #b0563c;
-  --green-soft: #eef0e2;
-  --blue-soft: #f2ecdd;
-  --shadow: 0 14px 40px rgba(74, 60, 38, 0.1);
-  --shadow-soft: 0 4px 18px rgba(74, 60, 38, 0.07);
-  font-family: "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
-}
 
 body {
   background: linear-gradient(180deg, #f1ebdd 0, #f7f2e8 300px, var(--paper) 100%);
