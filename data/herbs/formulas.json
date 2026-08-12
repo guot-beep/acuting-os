@@ -6710,7 +6710,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/269",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -6780,7 +6780,7 @@
         "Wind-Heat invasion with nasal obstruction and headache"
       ],
       "category_zh": "解表劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：蒼耳子（in_formula_zh、actions_zh、role_reason_zh）、白芷（in_formula_zh、actions_zh、role_reason_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：蒼耳子（in_formula_zh、actions_zh、role_reason_zh）、白芷（in_formula_zh、actions_zh、role_reason_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:君藥蒼耳子具肝毒性,且完全沒有 dose_g/dose_range(F6),安全欄位無字串。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.ren_shen_bai_du_san",
@@ -7081,7 +7081,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/12",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -7256,7 +7256,8 @@
         "Exterior Wind-Cold-Dampness with Qi Deficiency",
         "Wind-Cold invasion with heavy generalized joint pain"
       ],
-      "category_zh": "解表劑"
+      "category_zh": "解表劑",
+      "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:安全欄位無任何字串。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -10433,7 +10434,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -10503,7 +10504,8 @@
         "禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
         "禁用於 nausea and vomiting due to Yin Deficiency.",
         "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
-      ]
+      ],
+      "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:組成整份是半夏瀉心湯的(逐位元組相同),本方的大黃完全不在表中 —— 這是一張 on_board_list/exam_star 的考試卡掛著別的方的組成。身分釐清前不得公開。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.liang_ge_san",
@@ -18534,7 +18536,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "draft",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -18589,7 +18591,8 @@
         "Blazing Epidemic Heat toxicity in both Qi and Xue stages",
         "Severe fever, extreme thirst, hematemesis and delirium"
       ],
-      "category_zh": "清熱劑"
+      "category_zh": "清熱劑",
+      "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:安全欄位無字串;另 14 味中 9 味的英文 in_formula_en 同為樣板句,回退顯示無實質內容。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.da_cheng_qi_tang",
@@ -21024,7 +21027,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/557",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -21079,7 +21082,7 @@
         "Severe constipation due to exhausted body fluids and dry stool"
       ],
       "category_zh": "瀉下劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:含大黃+芒硝,安全欄位無任何字串(孕婦/哺乳/月經期皆未載)。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.da_huang_mu_dan_tang",
@@ -22272,7 +22275,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/278",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -22330,7 +22333,7 @@
         "Habitual constipation in the elderly or postpartum"
       ],
       "category_zh": "瀉下劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:含桃仁,用於產後便秘情境,安全欄位無任何字串。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.ji_chuan_jian",
@@ -24635,7 +24638,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/170",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -24684,7 +24687,8 @@
       "formula_song": "柴胡桂枝合兩方，太陽少陽合病康。\n發熱惡寒關節痛，微嘔心下支結強。",
       "formula_song_zh": "柴胡桂枝合兩方，太陽少陽合病康。\n發熱惡寒關節痛，微嘔心下支結強。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
-      "category_zh": "和解劑"
+      "category_zh": "和解劑",
+      "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:小柴胡湯複合方,而小柴胡湯的 interferon/間質性肺炎訊號在本卡完全沒有 —— 母方安全性不會自動繼承到複合方卡,此類別尚無處理機制。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.xiao_yao_san",
@@ -48979,7 +48983,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -49204,7 +49208,8 @@
       "category_zh": "補益劑",
       "ba_fa_zh": "補法 Bu Fa (Tonify)",
       "course_level_en": "Not found in the uploaded Formulations 1/2 master knowledge-level lists.",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/YouGuiYin.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/YouGuiYin.html",
+      "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:含制附子,安全欄位無任何字串(先煎/久煎與中毒徵象未載)。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.qi_ju_di_huang_wan",
@@ -57256,7 +57261,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -57305,7 +57310,8 @@
         "Restless fetus and vaginal bleeding due to Kidney Deficiency",
         "Habitual miscarriage due to Kidney Essence Deficiency"
       ],
-      "category_zh": "固澀劑"
+      "category_zh": "固澀劑",
+      "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:**妊娠用方**(pattern_indications_zh 為胎漏下血),安全欄位完全不存在,actions_zh 為破碎字串;另有 菟絲子 120g、阿膠/桑寄生/續斷 60g 的丸劑批量誤植疑慮。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.suan_zao_ren_tang",
@@ -59309,7 +59315,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/168",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -59411,7 +59417,7 @@
       "contraindications_en": [
         "The fifth ingredient of the original formula is Qian Dan (red lead, 一兩半). It is a lead-bearing mineral, omitted and prohibited in modern dispensing; the composition table therefore lists only the 11 dispensable ingredients, and the historical ingredient is preserved verbatim under historical_ingredients_omitted."
       ],
-      "correction_note": "【2026-08-12 組成重建 — 《傷寒論》第107條】原記錄 composition 只剩「柴胡」一味（匯入截斷）。依 docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1 重建為原方 12 味中可調劑的 11 味；第 5 味鉛丹另存 historical_ingredients_omitted，未併入 composition（中藥庫無鉛丹記錄，且現代禁用）。SOL 明示現有來源未建立統一的古今劑量換算，故不供現代克數，只列原方相對量。\n原 composition_suspect 標記全文保存：「組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊」\n柴胡那一列被搬離的原值（先搬再改，未刪）：in_formula_zh / actions_zh / role_reason_zh 三欄同為「健脾和中，調和諸藥。」—— 該句描述的是甘草類的健脾和中，不是柴胡，屬錯層內容，本次不沿用；classical_amount_text 原值「原典份量」（那是欄位標籤不是數值）；decoction_reference_g 原值「9g」、granule_reference_g 原值「1.8g」、granule_concentration_ratio 原值「5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)」—— 這三個逐味克數沒有具名的逐味來源，且與 SOL「不供現代克數」的裁定相衝突，故移出組成表存於此，Ting 若有課本來源可直接放回。\nactions_zh 原值兩條（缺字損毀，仍逐字保存）：「調和陽，與」、「肝陽,清熱瀉火與」—— 本次改為依本卡既有 actions_en 的忠實中譯，逐條索引對齊，未新增未查證主張。\n君臣佐使：《傷寒論》原文不指派君臣佐使，SOL 亦未裁定；柴胡的「君」是匯入既有值，予以保留但未經來源確認，其餘 10 味留空不編。"
+      "correction_note": "【2026-08-12 組成重建 — 《傷寒論》第107條】原記錄 composition 只剩「柴胡」一味（匯入截斷）。依 docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1 重建為原方 12 味中可調劑的 11 味；第 5 味鉛丹另存 historical_ingredients_omitted，未併入 composition（中藥庫無鉛丹記錄，且現代禁用）。SOL 明示現有來源未建立統一的古今劑量換算，故不供現代克數，只列原方相對量。\n原 composition_suspect 標記全文保存：「組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊」\n柴胡那一列被搬離的原值（先搬再改，未刪）：in_formula_zh / actions_zh / role_reason_zh 三欄同為「健脾和中，調和諸藥。」—— 該句描述的是甘草類的健脾和中，不是柴胡，屬錯層內容，本次不沿用；classical_amount_text 原值「原典份量」（那是欄位標籤不是數值）；decoction_reference_g 原值「9g」、granule_reference_g 原值「1.8g」、granule_concentration_ratio 原值「5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)」—— 這三個逐味克數沒有具名的逐味來源，且與 SOL「不供現代克數」的裁定相衝突，故移出組成表存於此，Ting 若有課本來源可直接放回。\nactions_zh 原值兩條（缺字損毀，仍逐字保存）：「調和陽，與」、「肝陽,清熱瀉火與」—— 本次改為依本卡既有 actions_en 的忠實中譯，逐條索引對齊，未新增未查證主張。\n君臣佐使：《傷寒論》原文不指派君臣佐使，SOL 亦未裁定；柴胡的「君」是匯入既有值，予以保留但未經來源確認，其餘 10 味留空不編。\n[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:唯一的 contraindications 條目其實是鉛丹省略的沿革註記,不是禁忌內容;本方含大黃。安全欄位補齊前不宜公開。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.yue_ju_wan",
@@ -82247,7 +82253,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "draft",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -82442,7 +82448,7 @@
         "陰虛者禁用",
         "孕婦禁用"
       ],
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：地龍（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：地龍（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:制川烏/制草烏 dose_g 皆為 180g(約為 1.5-3g 常規的 60-120 倍);卡片自身 clinical_use_note 寫明「研末為丸…每次3公克」,顯示 180g 是丸劑批量被誤填為單次劑量。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。"
     },
     {
       "id": "formula.bao_he_wan",
