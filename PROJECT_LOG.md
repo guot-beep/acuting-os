@@ -1,4 +1,11 @@
-# 2026-08-12 Sonnet — AVS v3 Phase E(print/PDF polish)
+# 2026-08-12 Fable — CI 通知風暴修正(Ting 授權)— 待 PAT workflow scope 解鎖
+
+- **根因(API 實測)**:最近 50 runs = `50/50 failure`(44 PR + 6 main push);最新 run `31561388451`(head `8d310ca`)唯一紅步驟 = `formula card standard`(4 blockers),`generated data is committed and current` 已綠(`ecd2005` 修復成立);validate.yml 無 concurrency、無 docs-only 偵測,PR #59 期間每 push 各自跑滿並寄信。PR #59 現況 `closed`(08-12 前次處置)。
+- **已備好未落地**:`.github/workflows/validate.yml` 改版在本機 worktree(YAML 解析通過):PR-scoped concurrency(`pr-<number>` / ref 分組,`cancel-in-progress: true`,不同 PR 不互取消)+ preflight 變更偵測(docs/** 與 *.md-only 的 PR diff 跳過 green/ratchet 兩個重 job、workflow 仍有明確 success 結論;no-PHI gate 永遠無條件跑)。
+- **落地被擋**:push 實測遭拒 `refusing to allow a Personal Access Token to ... without workflow scope`;瀏覽器(網頁編輯器/上傳頁)路徑被本 session 權限分類器拒絕。**解鎖需 Ting 三選一:PAT 加 workflow scope(建議)/ 允許瀏覽器操作 / 自行貼上整檔。**
+- **Formula 4 blockers 在 HEAD 實跑重確認,全數仍在、全需來源或裁決,不假綠**:F6 柴胡加龍骨牡蠣湯 composition 截斷(需 curriculum 補齊,Ting 檔案)/ F8 烏梅丸 actions_zh 11→8(取捨=臨床判斷,方劑線)/ F7 大建中湯缺君臣佐使(需具名來源)/ F12 蒿芩清膽湯「碧玉散」非單味藥(需 Ting 裁決建模方式:子方引用或藥庫條目)。
+- **順序決策**:PR #59 先不重開 —— concurrency 未落地前重開 = 風暴復發。落地後才重開並跑三情境驗收(rapid-push 取消/docs-only 綠/code 全跑)。
+- **重現**:`node scripts/validate-formula-standard.js`(4 defects);runs 統計 = GET `/actions/runs?per_page=50`。未動 GitHub 通知設定、未動 main、未動他人 dirty work。
 
 - **範圍**:只動 print/CSS 與雙語細節,不碰引擎邏輯/狀態機/自檢/data。改了 3 檔:`js/avs.js`(+33/-4)、`styles.css`(+21/-3)、`app.js`(+8/-8)。`index.html` 未改(檢查後 `#avsCheckoutDialog` 標題與 SOAP「治療項目 Modalities performed」欄已是雙語,毋須動)。
 - **病人文件 print 版面**(`js/avs.js` `renderPatientHtml`,§10):

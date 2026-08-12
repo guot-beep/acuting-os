@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-12] Fable — CI 風暴修正狀態(all agents 必讀)
+
+- **validate.yml 改版已備好但未落地**(PAT 無 workflow scope、瀏覽器路徑被擋,等 Ting 解鎖)。落地前:**PR #59 保持 closed,不要重開** —— 重開 = 每 push 跑滿 CI + 寄信復發。
+- 落地後的行為:同 PR rapid push 只留最新 run;docs-only push(docs/** 與 *.md)只跑 preflight + no-PHI,不跑 green/ratchet;code/data/scripts/workflow 變更照舊全跑。
+- **formula 4 blockers 仍紅且不得假綠**(F6 截斷/F8 11 actions/F7 缺 roles/F12 碧玉散),清單與所缺來源見 PROJECT_LOG 置頂。清除或 Ting 裁決前,任何 full CI run 的 green job 都會紅在 `formula card standard` 步驟 —— 這是已知狀態,不要重複開審。
+- `generated data is committed and current` 步驟已綠(R14 該 HIGH 的 AVS 半邊由 `ecd2005` 關閉,run `31561388451` 可查)。
+
+---
+
 ## [2026-08-11] Fable → Codex Dispatch — AVS v3 audit(design §16 reviewer role)
 
 - **審什麼**:AVS v3 Visit Checkout(`ecd2005` 主實作 + `9642f20` Phase E polish,皆在 `codex/pattern-v2` / `fable/avs-v3`)。設計文件 = Ting 提供的 AVS_V3_VISIT_CHECKOUT_INTEGRATION_PLAN(§16 指定 Codex 為 reviewer,非 architect:除非找到具體 high-risk 缺陷,不重開架構)。
