@@ -2,7 +2,7 @@
 /**
  * validate-content-junk.js — QA wall check (Codex runs this on every batch).
  *
- * Three independent checks, all read-only:
+ * Four independent checks, all read-only:
  *
  * 1. JUNK_TOKENS (blocking) — a scraped page-structure header token (see
  *    scripts/lib/content-junk-tokens.js) leaking out of CloudTCM page
@@ -46,6 +46,12 @@
  *    to reject-and-lose in CI. See docs/research_packs/AUDIT_DATA_FIXES_LEDGER.md
  *    for the current 58-id list.
  *
+ * 4. CONTROL / BIDI CHARACTER (ratchet) — C0 control characters (except
+ *    tab/LF/CR), DEL, or Unicode bidi overrides anywhere in a record's
+ *    strings. Invisible damage: breaks search, comparison and export.
+ *    Frozen at the measured baseline because the current instances live in
+ *    another line's path — see KNOWN_CONTROL_CHAR_DEFECTS below.
+ *
  * Read-only. To fix junk tokens: node scripts/clean-content-junk.js --apply
  */
 const fs = require("fs");
@@ -56,6 +62,7 @@ const ROOT = path.join(__dirname, "..");
 
 const junkFindings = [];
 const encodingFindings = [];
+const controlFindings = [];
 const dosageGroups = new Map(); // dosageClause -> [{file, id}]
 
 const FFFD = "�";
@@ -66,6 +73,29 @@ function hasCyrillic(str) {
   }
   return false;
 }
+
+/* C0 控制字元 / DEL / bidi override(2026-08-12 夜班新增)。
+ *
+ * 為什麼加:掃描 data/ 全語料抓到 13 處,全部源自**同一個** CloudTCM 抓取
+ * 字串 —— SP21 的 Detail 段「…肋間神經痛等<U+0008>症狀…」中間夾了一個
+ * backspace,之後被複製進 361.json、meridian_sp.json 與 staging_points。
+ * 本檔的掃描範圍(CONTENT_FILES 五個檔)內是其中 8 處。
+ *
+ * 這類字元在中文散文裡沒有任何正當用途:看不見、污染搜尋與比對、
+ * 匯出到別的系統行為未定義。與 U+FFFD/Cyrillic 同屬「無歧義的編碼損壞」。
+ *
+ * \t(09) \n(0A) \r(0D) 不算 —— 它們在多行文字欄位是合法的。
+ *
+ * 為什麼是 ratchet 而不是直接 blocking:那 8 處落在 `data/acupoints/**`,
+ * 屬穴位線的路徑(憲法 §1:不是你的路徑,一個字都不能寫),不能由本線代改。
+ * 所以既有數量凍結為 baseline、只擋「新增的」;穴位線清掉之後把
+ * KNOWN_CONTROL_CHAR_DEFECTS 調成 0,它就自動變成純 blocking。
+ * 修法只有一種:**刪掉那個字元**,不要改寫周圍句子。 */
+const CONTROL_CHARS_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u202A-\u202E\u2066-\u2069]/;
+
+// 凍結基線:2026-08-12 實測的既有損壞數(全部同源,見上方註解)。
+// 這個數字只准往下,不准往上 —— 新增一處就 FAIL。
+const KNOWN_CONTROL_CHAR_DEFECTS = 8;
 
 // Matches a dosage range like "6.0g～12.0g" or "3-9g" through to the end of
 // that sentence (next 。), so two records whose intro phrasing differs but
@@ -91,6 +121,28 @@ function walkZh(value, fieldPath, insideZh, file, id) {
     for (const [k, v] of Object.entries(value)) {
       walkZh(v, fieldPath ? `${fieldPath}.${k}` : k, insideZh || k.endsWith("_zh"), file, id);
     }
+  }
+}
+
+/* 控制字元掃描:與 walkZh 不同,這裡掃「所有字串欄位」——
+ * 控制字元在任何欄位都不合法,不像 boilerplate 只在 _zh 有意義。
+ * (實測的 SP21 損壞就同時落在 evidence / cloudtcm_detail /
+ * modern_research_zh / modern_research_en 四個欄位,只掃 _zh 會漏掉三個。) */
+function walkControl(value, fieldPath, file, id) {
+  if (typeof value === "string") {
+    if (CONTROL_CHARS_RE.test(value)) {
+      const idx = value.search(CONTROL_CHARS_RE);
+      const cp = "U+" + value.codePointAt(idx).toString(16).padStart(4, "0");
+      controlFindings.push({ file, id, field: fieldPath, cp, snippet: value.slice(Math.max(0, idx - 12), idx + 12) });
+    }
+    return;
+  }
+  if (Array.isArray(value)) {
+    value.forEach((v, i) => walkControl(v, `${fieldPath}[${i}]`, file, id));
+    return;
+  }
+  if (value && typeof value === "object") {
+    for (const [k, v] of Object.entries(value)) walkControl(v, fieldPath ? `${fieldPath}.${k}` : k, file, id);
   }
 }
 
@@ -137,6 +189,9 @@ for (const rel of CONTENT_FILES) {
     // 2. encoding anomalies inside _zh fields (recursive)
     walkZh(r, "", false, rel, id);
 
+    // 2b. 控制字元 / bidi override(所有字串欄位,不限 _zh)
+    walkControl(r, "", rel, id);
+
     // 3. shared verbatim dosage clauses (recursive, any field)
     walkDosage(r, rel, id);
   }
@@ -168,6 +223,27 @@ if (encodingFindings.length > 0) {
   if (encodingFindings.length > 40) console.error(`  ... and ${encodingFindings.length - 40} more`);
   console.error(`  Fix: locate the intended character from context (curriculum source / git history);`);
   console.error(`  if ambiguous, use the honest gap marker 〔字損〕 — never guess silently.`);
+}
+
+// 控制字元 ratchet:既有損壞的數量凍結為 baseline,只擋「比 baseline 多」。
+// 既有那幾處落在別條線的路徑(見 KNOWN_CONTROL_CHAR_DEFECTS 上方註解),
+// 本線不得代改;清乾淨之後把 baseline 調成 0,它就自動變成純 blocking。
+if (controlFindings.length > KNOWN_CONTROL_CHAR_DEFECTS) {
+  blocking = true;
+  console.error(`validate-content-junk: FAIL — ${controlFindings.length} control/bidi character(s) in content, baseline is ${KNOWN_CONTROL_CHAR_DEFECTS} (${controlFindings.length - KNOWN_CONTROL_CHAR_DEFECTS} NEW):`);
+  for (const f of controlFindings.slice(0, 40)) {
+    console.error(`  ${f.file}  ${f.id}  ${f.field}  [${f.cp}]  →  "${f.snippet}"`);
+  }
+  console.error(`  These are invisible: they break search, comparison and export. Delete the character;`);
+  console.error(`  do NOT "fix" them by rewriting the surrounding sentence.`);
+} else if (controlFindings.length > 0) {
+  console.warn(`validate-content-junk: WARN — ${controlFindings.length} known control character(s) at/below the frozen baseline of ${KNOWN_CONTROL_CHAR_DEFECTS} (owned by another line, not blocking here):`);
+  for (const f of controlFindings) {
+    console.warn(`  ${f.file}  ${f.id}  ${f.field}  [${f.cp}]  →  "${f.snippet}"`);
+  }
+  if (controlFindings.length < KNOWN_CONTROL_CHAR_DEFECTS) {
+    console.warn(`  Baseline can now be lowered to ${controlFindings.length} in scripts/validate-content-junk.js.`);
+  }
 }
 
 if (sharedDosage.length > 0) {
