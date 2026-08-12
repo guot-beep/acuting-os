@@ -44,14 +44,58 @@
    * 這裡就照字面驗。涵蓋 previsit.html 的 toISOString() 輸出與常見 ISO 變體。 */
   const ISO_8601_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d{1,6})?)?(Z|[+-]\d{2}:\d{2})$/;
 
-  /* 控制字元剝除(Codex MED-3):C0 除 \t(09) \n(0A) 外全剝,含過去漏掉的
-   * CR(0D);DEL(7F);Unicode bidi override(202A-202E, 2066-2069)。
-   * CR 一律剝除而非轉成 LF —— 剝除是唯一確定的行為,轉換會製造「輸入與
-   * 儲存不同」的第二種漂移。 */
-  const CONTROL_CHARS_RE = /[\u0000-\u0008\u000B-\u001F\u007F\u202A-\u202E\u2066-\u2069]/g;
+    /* 控制字元剝除(Codex MED-3,兩輪):C0 除 \t(09) \n(0A) 外全剝(含 CR)、
+   * DEL 與 C1(007F-009F)、以及**整個 Unicode 格式字元類** \p{Cf}。
+   *
+   * 第一版只剝 C0/DEL 與 bidi override/isolate 兩段;Codex 覆測指出 U+0085、
+   * U+009B、U+200E/200F(LRM/RLM)、U+061C(ALM)全部原樣留下。逐段補範圍
+   * 永遠落後一步,所以改用字元類別:\p{Cf} 一次涵蓋所有方向標記、零寬字元
+   * (200B-200D)、BOM(FEFF)、word joiner 等看不見的格式字元。
+   * CR 一律剝除而非轉成 LF —— 剝除是唯一確定的行為。 */
+  const CONTROL_CHARS_RE = /[\u0000-\u0008\u000B-\u001F\u007F-\u009F\p{Cf}]/gu;
 
   function stripControlChars(s) {
     return String(s).replace(CONTROL_CHARS_RE, "");
+  }
+
+  /* 原始數字 token 完整性(Codex retest HIGH-1)。
+   * magnitude guard 只看「解析後」的值,但 `9007199254740990.5` 在 JSON.parse
+   * 當下就被截成 `9007199254740990` —— 絕對值仍在安全範圍內,於是整筆放行,
+   * 而病人送出的數字在驗證前已經不是原值。所以要驗**原始文字**:payload 裡
+   * 每一個 number token 都必須能無損往返(String(Number(tok)) === tok)。
+   * 先把字串字面量抽掉,避免病歷散文裡的數字被當成 token。
+   * 0 / -0 例外:兩者都精確可表示,String(-0) 會變 "0" 但不是失真。 */
+  const NUMBER_TOKEN_RE = /-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g;
+  function lossyNumberTokens(rawText) {
+    const withoutStrings = String(rawText).replace(/"(?:[^"\\]|\\.)*"/g, '""');
+    const bad = [];
+    for (const tok of withoutStrings.match(NUMBER_TOKEN_RE) || []) {
+      const v = Number(tok);
+      if (!Number.isFinite(v)) { bad.push(tok); continue; }
+      if (v === 0) continue;
+      if (String(v) !== tok) bad.push(tok);
+    }
+    return bad;
+  }
+
+  /* 傳輸/存檔十進位契約(Codex retest MED-1)。
+   * 存檔端 computeNumericOutcomeMetrics() 讀的是 DOM 字串,它的守則是
+   * /^\d+(\.\d+)?$/ —— 指數形式一律拒。所以 0.0000001 這種合法極小值
+   * 在傳輸層過關、預填成 "1e-7" 之後卻存不進去,兩層契約不一致。
+   * 這裡要求 String(value) 必須是純十進位:兩層從此同一把尺。 */
+  function isPlainDecimal(v) {
+    return /^-?\d+(\.\d+)?$/.test(String(v));
+  }
+
+  /* 曆日真實性(Codex retest MED-2)。
+   * ISO 外形正確不代表日期存在:"2026-02-31" 通過 regex,Date.parse 也給得出
+   * 值(引擎正規化到 3 月),於是一個不存在的日子被正規化後送進 freshness 判斷。 */
+  function isRealCalendarDate(iso) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})T/.exec(String(iso));
+    if (!m) return false;
+    const y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]);
+    const dt = new Date(Date.UTC(y, mo - 1, d));
+    return dt.getUTCFullYear() === y && dt.getUTCMonth() === mo - 1 && dt.getUTCDate() === d;
   }
 
   /* 數值上界(Codex HIGH-2):JSON 整數超過 MAX_SAFE_INTEGER 在 JSON.parse
@@ -87,6 +131,13 @@
       return { ok: false, errors: ["資料格式錯誤,不是一個物件。Invalid payload — not an object."], data: null };
     }
 
+    // HIGH-1:原始 number token 必須無損 —— 在任何值檢查之前,因為到這一步
+    // 為止 data 裡的數字可能已經被 JSON.parse 靜默改寫過了。
+    const lossy = lossyNumberTokens(rawText);
+    if (lossy.length) {
+      return { ok: false, errors: [`payload 含精度會失真的數字 token(${lossy.slice(0, 3).map((t) => JSON.stringify(t)).join(", ")})—— 解析後的值與原始文字不同,整筆拒收。Payload contains number token(s) that do not survive JSON parsing losslessly.`], data: null };
+    }
+
     if (data.kind !== "acuting-previsit-v1") {
       errors.push(`kind 欄位不是 "acuting-previsit-v1"(實際:${JSON.stringify(data.kind)})。kind is not "acuting-previsit-v1".`);
     }
@@ -101,7 +152,7 @@
     if (typeof data.payloadId !== "string" || !data.payloadId.trim()) {
       errors.push("payloadId 缺少或為空(重放防護所需)。payloadId missing/empty — required for replay protection.");
     }
-    if (typeof data.filledAt !== "string" || !ISO_8601_RE.test(data.filledAt) || !Number.isFinite(Date.parse(data.filledAt))) {
+    if (typeof data.filledAt !== "string" || !ISO_8601_RE.test(data.filledAt) || !isRealCalendarDate(data.filledAt) || !Number.isFinite(Date.parse(data.filledAt))) {
       errors.push(`filledAt 必須是 ISO 8601 時間(實際 ${JSON.stringify(data.filledAt)})。filledAt must be an ISO 8601 timestamp.`);
     }
 
@@ -143,6 +194,12 @@
       }
       if (!magnitudeOk(m.valueNumber)) {
         errors.push(`metrics[${i}](${labelOf(m.metricId)}):數值超出安全範圍(|value| 須 ≤ ${Number.MAX_SAFE_INTEGER})。valueNumber magnitude exceeds the safe-integer bound.`);
+        return;
+      }
+      if (!isPlainDecimal(m.valueNumber)) {
+        // MED-1:指數形式在存檔端會被 /^\d+(\.\d+)?$/ 拒絕;傳輸層不得放行
+        // 一個存不進去的值。
+        errors.push(`metrics[${i}](${labelOf(m.metricId)}):數值必須是純十進位(實際 ${String(m.valueNumber)} 為指數形式,存檔端會拒絕)。valueNumber must be plain decimal, not exponent notation.`);
         return;
       }
       const num = m.valueNumber === 0 ? 0 : m.valueNumber;   // -0 → 0(消除傳輸/存檔的表示差異)
@@ -200,6 +257,9 @@
     MAX_REPORT_CHARS,
     ISO_8601_RE,
     stripControlChars,
+    lossyNumberTokens,
+    isPlainDecimal,
+    isRealCalendarDate,
     validatePrevisitShape
   };
 })(typeof window !== "undefined" ? window : globalThis);

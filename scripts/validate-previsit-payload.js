@@ -207,6 +207,27 @@ function selfTestFixtures() {
   const bad20NonIsoTimestamp = { ...good2, filledAt: "0" };
   const bad21LooseTimestamp = { ...good2, filledAt: "2026/08/11 09:00" };
   // Deterministic duplicate handling (prefill last-write/first-write ambiguity).
+  // ---- Codex focused retest round 2 (2026-08-12) permanent regression ----
+  // All four were ACCEPT at 38ec34ca.
+  // HIGH-1: JSON.parse truncates the fraction before any value check runs, so
+  // the magnitude guard sees an in-range integer and lets the rewritten value
+  // through. sleep_hours has no max, which is what made it reachable.
+  // MUST be raw text. Written as a JS object literal the fraction is already
+  // gone before JSON.stringify runs, so the validator would receive the
+  // harmless truncated integer — this defect only exists in the payload's
+  // source text, which is exactly why the check operates on that text.
+  const bad23FractionalTruncationRaw = JSON.stringify(good2).replace(
+    '"metrics":[]',
+    '"metrics":[{"metricId":"metric.sleep_hours","valueNumber":9007199254740990.5}]'
+  );
+  // MED-1: legal tiny decimal — transport accepted it, but prefill stringifies
+  // to "1e-7" and the save-time regex rejects that, so it could never be saved.
+  const bad24ExponentForm = { ...good2, metrics: [{ metricId: "metric.sleep_hours", valueNumber: 0.0000001 }] };
+  // MED-2: ISO *shape* is valid but the date does not exist; engines normalise
+  // it into March and the normalised time then feeds the freshness rules.
+  const bad25ImpossibleDate = { ...good2, filledAt: "2026-02-31T09:00:00.000Z" };
+  const bad26Month13 = { ...good2, filledAt: "2026-13-01T09:00:00.000Z" };
+
   const bad22DuplicateMetricId = {
     ...good2,
     metrics: [
@@ -243,32 +264,94 @@ function selfTestFixtures() {
       { name: "bad19_metric_outside_p1_subset", payload: bad19OffSubsetMetric },
       { name: "bad20_non_iso_timestamp", payload: bad20NonIsoTimestamp },
       { name: "bad21_loose_timestamp_format", payload: bad21LooseTimestamp },
-      { name: "bad22_duplicate_metricId", payload: bad22DuplicateMetricId }
+      { name: "bad22_duplicate_metricId", payload: bad22DuplicateMetricId },
+      { name: "bad23_fractional_token_truncated_by_parse", rawText: bad23FractionalTruncationRaw },
+      { name: "bad24_exponent_form_save_would_reject", payload: bad24ExponentForm },
+      { name: "bad25_iso_shape_but_impossible_date", payload: bad25ImpossibleDate },
+      { name: "bad26_iso_shape_but_month_13", payload: bad26Month13 }
     ]
   };
 }
 
-/* Codex P1 retest MED-4 的結構性防線:self-test 跑的是共用模組,但如果有人
- * 未來在 app.js 裡「順手」重新寫一份 shape 規則,漂移就會回來,而這支 CLI
- * 仍然全綠(這正是 0f59773 當時發生的事)。這裡靜態檢查 app.js 的
- * validatePrevisitPayload 確實委派共用模組、且沒有自己的 JSON.parse 規則。
- * 純字串檢查、零執行風險。 */
+/* app 委派的**行為**證明(Codex retest MED-4)。
+ *
+ * 第一版是字串檢查:只要 wrapper body 提到 "AcuTingPrevisitValidator" 且不含
+ * "JSON.parse" 就算過。Codex 指出這證明不了任何事 —— 把 wrapper 改成「提到那個
+ * 物件、但自己造結果、從不呼叫 validatePrevisitShape()」,guard 與 3+22 仍全綠。
+ *
+ * 改成真的跑:把 app.js 的 validatePrevisitPayload 原始碼抽出來,在沙箱裡用
+ * stub 注入它的三個依賴,然後餵真 payload,比對它的判決是否**逐筆等於**共用
+ * 模組的判決。同時掛一個 call counter —— 沒有真的呼叫到共用模組就 FAIL。
+ * (抽函式原始碼再 eval 是本檔既有手法,見 loadNumericOutcomeMetricConfig。)
+ *
+ * 這樣「app 與 CLI 用同一把尺」從宣稱變成每次 CI 都重新證明一次。 */
+function extractFunctionSource(src, signature) {
+  const start = src.indexOf(signature);
+  if (start === -1) return null;
+  let depth = 0, started = false;
+  for (let i = start; i < src.length; i++) {
+    const c = src[i];
+    if (c === "{") { depth++; started = true; }
+    else if (c === "}") { depth--; if (started && depth === 0) return src.slice(start, i + 1); }
+  }
+  return null;
+}
+
 function checkAppDelegation() {
-  const src = fs.readFileSync(path.join(ROOT, "app.js"), "utf8");
-  const start = src.indexOf("function validatePrevisitPayload(raw) {");
-  if (start === -1) return ["app.js: validatePrevisitPayload not found — has it been renamed?"];
-  const end = src.indexOf("\n}", start);
-  const body = src.slice(start, end === -1 ? src.length : end);
   const problems = [];
-  if (!body.includes("AcuTingPrevisitValidator")) {
-    problems.push("app.js validatePrevisitPayload no longer delegates to AcuTingPrevisitValidator — the app/CLI drift this suite exists to prevent has been reintroduced.");
-  }
-  if (body.includes("JSON.parse")) {
-    problems.push("app.js validatePrevisitPayload parses the payload itself — shape rules must live only in js/previsit-validator.js.");
-  }
+  const src = fs.readFileSync(path.join(ROOT, "app.js"), "utf8");
+  const fnSrc = extractFunctionSource(src, "function validatePrevisitPayload(raw) {");
+  if (!fnSrc) return ["app.js: validatePrevisitPayload not found — has it been renamed?"];
+
   const idx = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
   if (!idx.includes("js/previsit-validator.js")) {
     problems.push("index.html does not load js/previsit-validator.js — the browser app would fail closed on every paste-import.");
+  }
+
+  const config = loadNumericOutcomeMetricConfig();
+  const registry = loadOutcomeMetricRegistry();
+  const real = globalThis.AcuTingPrevisitValidator;
+
+  // Sandbox: a spy module that forwards to the real one and counts calls.
+  let calls = 0;
+  const spy = Object.assign({}, real, {
+    validatePrevisitShape(rawText, opts) { calls++; return real.validatePrevisitShape(rawText, opts); }
+  });
+  let appFn;
+  try {
+    // eslint-disable-next-line no-new-func -- evaluating our own app.js function
+    appFn = new Function(
+      "globalThis_stub", "NUMERIC_OUTCOME_METRIC_CONFIG", "getOutcomeMetricDef", "outcomeMetricShortLabel",
+      "\"use strict\";\n" +
+      "const globalThis = globalThis_stub;\n" +
+      fnSrc + "\nreturn validatePrevisitPayload;"
+    )({ AcuTingPrevisitValidator: spy }, config, (id) => registry.get(id), (id) => shortLabel(registry.get(id), id));
+  } catch (e) {
+    return problems.concat(["app.js validatePrevisitPayload could not be evaluated in isolation (" + e.message + ") — its dependencies changed; update this guard rather than deleting it."]);
+  }
+
+  // Behavioural parity: every fixture must get the same verdict from both.
+  const fixtures = selfTestFixtures();
+  const cases = [...fixtures.good.map((f) => ({ ...f, expectOk: true })), ...fixtures.bad.map((f) => ({ ...f, expectOk: false }))];
+  let mismatches = 0;
+  for (const c of cases) {
+    const raw = c.rawText !== undefined ? c.rawText : JSON.stringify(c.payload);
+    const shared = real.validatePrevisitShape(raw, {
+      metricConfig: config, registryHas: (id) => registry.has(id), labelOf: (id) => shortLabel(registry.get(id), id)
+    });
+    let appRes;
+    try { appRes = appFn(raw); } catch (e) { appRes = { error: "threw: " + e.message }; }
+    const appOk = !appRes.error;
+    if (appOk !== shared.ok) {
+      mismatches++;
+      problems.push("app/CLI verdict differs on " + c.name + ": app " + (appOk ? "ACCEPT" : "REJECT") + " vs shared module " + (shared.ok ? "ACCEPT" : "REJECT"));
+    }
+  }
+  if (calls < cases.length) {
+    problems.push("app.js validatePrevisitPayload did not call validatePrevisitShape for every payload (" + calls + "/" + cases.length + ") — it is not actually delegating, only referencing the module.");
+  }
+  if (!problems.length) {
+    console.log("  [parity] app wrapper executed on " + cases.length + " fixtures, " + calls + " delegated calls, " + mismatches + " verdict mismatches");
   }
   return problems;
 }
@@ -278,19 +361,45 @@ function runSelfTest(config, registry) {
   let allOk = true;
   const lines = [];
 
+  // Codex retest round 2 MED-3:控制字元政策是「剝除」而不是「拒收」,所以它
+  // 不是一個 bad fixture,而是一條輸出斷言 —— 這些看不見的字元一個都不准留在
+  // 病歷文字裡。第一版只剝 C0/DEL 與 bidi override,以下五個全數存活。
+  const controlProbes = {
+    "U+0085 NEL": "\u0085",
+    "U+009B CSI": "\u009B",
+    "U+200E LRM": "\u200E",
+    "U+200F RLM": "\u200F",
+    "U+061C ALM": "\u061C",
+    "U+200B ZWSP": "\u200B",
+    "U+FEFF BOM": "\uFEFF",
+    "U+202E RLO": "\u202E",
+    "U+0000 NUL": "\u0000"
+  };
+  const mod = globalThis.AcuTingPrevisitValidator;
+  for (const [name, ch] of Object.entries(controlProbes)) {
+    const cleaned = mod.stripControlChars("A" + ch + "B");
+    const ok = cleaned === "AB";
+    allOk = allOk && ok;
+    lines.push(`${ok ? "PASS" : "FAIL"} [control] ${name} stripped from patient text${ok ? "" : ` — got ${JSON.stringify(cleaned)}`}`);
+  }
+  // 合法文字不得被誤傷(tab / newline / 全形標點 / 小數點都要留著)。
+  const keep = "睡眠 5.5 小時\n第二行\t欄位,還好。";
+  const keepOk = mod.stripControlChars(keep) === keep;
+  allOk = allOk && keepOk;
+  lines.push(`${keepOk ? "PASS" : "FAIL"} [control] legitimate text with tab/newline/decimal preserved unchanged`);
   const delegationProblems = checkAppDelegation();
   delegationProblems.forEach((p) => lines.push(`FAIL [parity] ${p}`));
   if (!delegationProblems.length) lines.push("PASS [parity] app.js delegates shape validation to the shared module; index.html loads it");
   allOk = allOk && delegationProblems.length === 0;
 
   fixtures.good.forEach((f) => {
-    const result = validatePayload(JSON.stringify(f.payload), config, registry);
+    const result = validatePayload(f.rawText !== undefined ? f.rawText : JSON.stringify(f.payload), config, registry);
     const pass = result.ok === true;
     allOk = allOk && pass;
     lines.push(`${pass ? "PASS" : "FAIL"} [good] ${f.name}${pass ? "" : " — expected OK, got errors: " + result.errors.join(" | ")}`);
   });
   fixtures.bad.forEach((f) => {
-    const result = validatePayload(JSON.stringify(f.payload), config, registry);
+    const result = validatePayload(f.rawText !== undefined ? f.rawText : JSON.stringify(f.payload), config, registry);
     const pass = result.ok === false && result.errors.length > 0;
     allOk = allOk && pass;
     lines.push(`${pass ? "PASS" : "FAIL"} [bad]  ${f.name}${pass ? " — rejected as expected: " + result.errors.join(" | ") : " — expected rejection, got OK"}`);
