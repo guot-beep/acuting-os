@@ -4987,7 +4987,20 @@ function needlingArticle(point) {
   if (contentMode === "english") {
     if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
     else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
-    if (point.moxaEn) parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
+    // 2026-08-12:21 個穴位的中文艾灸欄本身就是禁灸聲明(「不宜運用灸法」),
+    // 而英文欄寫著通用的「Moxibustion applicable: 3-5 moxa cones…」。名單是
+    // 睛明、攢竹、承泣、四白、瞳子髎、絲竹空(眼周)、缺盆、啞門、風府、乳中…
+    // 也就是傳統禁灸穴。英文那句是事後機器產生的通用字串(全 361 穴同一句),
+    // 中文那句是有來源的敘述 —— 與 cautions_en 同一個道理:來源欄勝過生成欄。
+    // 這裡不翻譯、不新增內容,只是在中文明文禁灸時不顯示那句生成的「可灸」,
+    // 改為原樣呈現中文禁灸聲明。寧可讓英文讀者看到中文,也不要讓他在眼睛旁邊點艾炷。
+    const moxaZhText = String(point.moxaZh || "").trim();
+    const moxaProhibited = /^(不宜運用灸法|禁灸|不可灸|不宜灸)/.test(moxaZhText);
+    if (moxaProhibited) {
+      parts.push(`MOXIBUSTION & HEAT THERAPY:\n⚠️ ${moxaZhText}`);
+    } else if (point.moxaEn) {
+      parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
+    }
     // cautionsEn arrives in BOTH shapes: an array from records whose
     // contraindications_en is a list, and a plain string from 206 of the 947
     // points (all of EX-UE6..UE17, EX-LE*, and others). `.join` on a string
