@@ -2248,7 +2248,9 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11",
-        "https://medlineplus.gov/premenstrualsyndrome.html"
+        "https://medlineplus.gov/premenstrualsyndrome.html",
+        "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome",
+        "https://www.americandragon.com/conditions/PremenstrualSyndrome.html"
       ],
       "red_flag_refs": [
         "rf.pms.legacy01",
@@ -2269,7 +2271,62 @@
           "moved_at": "2026-08-11"
         }
       ],
-      "field_sources": {}
+      "field_sources": {
+        "risk_factors_zh": [
+          "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+        ],
+        "risk_factors_en": [
+          "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.americandragon.com/conditions/PremenstrualSyndrome.html"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.americandragon.com/conditions/PremenstrualSyndrome.html"
+        ]
+      },
+      "risk_factors_zh": [
+        {
+          "factor": "既往有憂鬱或其他情緒障礙",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "History of depression or another mood disorder",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://womenshealth.gov/menstrual-cycle/premenstrual-syndrome"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可依週期與證型討論經前疼痛、脹滿或情緒症狀的輔助照護，不取代症狀日誌與必要評估。",
+        "precautions": "嚴重憂鬱、自傷或自殺想法屬急性安全界線；可能懷孕、非週期性症狀或異常出血先評估其他原因。",
+        "co_management": "顯著影響功能、疑似 PMDD、症狀不具週期性或合併精神疾病時，與婦產科或心理健康專業共同管理。",
+        "evidence": "unknown",
+        "note": "CloudTCM 與 American Dragon 僅支援傳統辨證；本批未評讀針灸療效。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Pattern-based acupuncture may be discussed as adjunctive care for cyclic pain, distension, or mood symptoms; it does not replace symptom charting or indicated assessment.",
+        "precautions": "Severe depression, self-harm, or suicidal thoughts are acute safety boundaries. Possible pregnancy, noncyclic symptoms, or abnormal bleeding requires evaluation for other causes first.",
+        "co_management": "Marked functional impairment, suspected PMDD, noncyclic symptoms, or coexisting psychiatric illness warrants gynecologic or mental-health co-management.",
+        "evidence": "unknown",
+        "note": "CloudTCM and American Dragon support traditional differentiation only; acupuncture efficacy was not appraised in this batch."
+      }
     },
     {
       "id": "cond.irregular_menstruation",
@@ -2741,7 +2798,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/11"
+        "https://cloudtcm.com/disease/tcm/11",
+        "curriculum/conditions/IRREGU_1.md"
       ],
       "red_flag_refs": [
         "rf.irregular_menstruation.legacy01",
@@ -2762,7 +2820,77 @@
           "reason": "etiology_zh 部落格敘事的英譯,隨原文一併搬移",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "risk_factors_zh": [
+        {
+          "factor": "顯著體重改變或熱量攝取不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/IRREGU_1.md"
+        },
+        {
+          "factor": "過度運動",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/IRREGU_1.md"
+        },
+        {
+          "factor": "持續心理壓力或睡眠失調",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/IRREGU_1.md"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Marked weight change or inadequate energy intake",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/IRREGU_1.md"
+        },
+        {
+          "factor": "Excessive exercise",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/IRREGU_1.md"
+        },
+        {
+          "factor": "Persistent psychological stress or sleep disruption",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/IRREGU_1.md"
+        }
+      ],
+      "field_sources": {
+        "risk_factors_zh": [
+          "curriculum/conditions/IRREGU_1.md"
+        ],
+        "risk_factors_en": [
+          "curriculum/conditions/IRREGU_1.md"
+        ],
+        "acupuncture_scope_zh": [
+          "curriculum/conditions/IRREGU_1.md"
+        ],
+        "acupuncture_scope_en": [
+          "curriculum/conditions/IRREGU_1.md"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "課件支持依週期型態與證候作輔助調理，但不把『調經』視為單一病因的治療。",
+        "precautions": "先確認懷孕與出血量；大量或持續出血、暈厥、嚴重疼痛或停經後出血依 red flags 處理。",
+        "co_management": "新發或持續不規則、疑似 PCOS／甲狀腺／高泌乳素、結構性病變或貧血時需共同評估。",
+        "evidence": "course",
+        "source": "curriculum/conditions/IRREGU_1.md",
+        "note": "不同病因不應共用一套取穴。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "The course supports adjunctive pattern care according to cycle pattern, but 'cycle regulation' is not treatment for one uniform cause.",
+        "precautions": "Exclude pregnancy and assess bleeding volume first; heavy or persistent bleeding, syncope, severe pain, or postmenopausal bleeding follows red-flag triage.",
+        "co_management": "New or persistent irregularity, suspected PCOS, thyroid or prolactin disorder, structural disease, or anemia warrants medical assessment.",
+        "evidence": "course",
+        "source": "curriculum/conditions/IRREGU_1.md",
+        "note": "Different causes must not be assigned one point prescription."
+      }
     },
     {
       "id": "cond.menorrhagia",
@@ -3210,14 +3338,87 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1543"
+        "https://cloudtcm.com/disease/tcm/1543",
+        "curriculum/conditions/AMENO.md"
       ],
       "red_flag_refs": [
         "rf.oligomenorrhea.legacy01",
         "rf.oligomenorrhea.legacy02",
         "rf.oligomenorrhea.legacy03",
         "rf.oligomenorrhea.legacy04"
-      ]
+      ],
+      "risk_factors_zh": [
+        {
+          "factor": "PCOS 或其他慢性排卵障礙",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://cloudtcm.com/disease/tcm/1543"
+        },
+        {
+          "factor": "能量攝取不足、明顯減重或體重過低",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/AMENO.md"
+        },
+        {
+          "factor": "過度運動或持續壓力",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/AMENO.md"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "PCOS or another chronic ovulatory disorder",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://cloudtcm.com/disease/tcm/1543"
+        },
+        {
+          "factor": "Low energy intake, marked weight loss, or low body weight",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/AMENO.md"
+        },
+        {
+          "factor": "Excessive exercise or persistent stress",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/AMENO.md"
+        }
+      ],
+      "field_sources": {
+        "risk_factors_zh": [
+          "curriculum/conditions/AMENO.md",
+          "https://cloudtcm.com/disease/tcm/1543"
+        ],
+        "risk_factors_en": [
+          "curriculum/conditions/AMENO.md",
+          "https://cloudtcm.com/disease/tcm/1543"
+        ],
+        "acupuncture_scope_zh": [
+          "curriculum/conditions/AMENO.md"
+        ],
+        "acupuncture_scope_en": [
+          "curriculum/conditions/AMENO.md"
+        ]
+      },
+      "acupuncture_scope_zh": {
+        "can_treat": "可依課件將經行後期／經量漸少作輔助照護，但先完成懷孕與排卵、內分泌或結構性原因評估。",
+        "precautions": "先驗孕；快速減重、進食疾患、乳溢、視覺症狀、明顯高雄性素或轉為閉經時不能只作一般調經。",
+        "co_management": "持續月經稀發需評估 PCOS、甲狀腺、泌乳素、低能量可用性與子宮內膜風險。",
+        "evidence": "course",
+        "source": "curriculum/conditions/AMENO.md",
+        "note": "Condition 卡不給出下腹部刺深。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Course-based pattern care may be used adjunctively only after pregnancy and ovulatory, endocrine, or structural causes are assessed.",
+        "precautions": "Test for pregnancy first; rapid weight loss, eating disorder, galactorrhea, visual symptoms, marked hyperandrogenism, or progression to amenorrhea is not routine cycle regulation.",
+        "co_management": "Persistent oligomenorrhea warrants assessment for PCOS, thyroid and prolactin disorders, low energy availability, and endometrial risk.",
+        "evidence": "course",
+        "source": "curriculum/conditions/AMENO.md",
+        "note": "This Condition card does not specify lower-abdominal needle depth."
+      }
     },
     {
       "id": "cond.amenorrhea",
@@ -3905,7 +4106,10 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/11",
         "ASRM — Fertility evaluation of infertile women: committee opinion: https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/",
-        "https://medlineplus.gov/femaleinfertility.html"
+        "https://medlineplus.gov/femaleinfertility.html",
+        "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes",
+        "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle",
+        "curriculum/conditions/INFERTI.md"
       ],
       "red_flag_refs": [
         "rf.female_infertility.legacy01",
@@ -3939,7 +4143,77 @@
         ],
         "red_flags_en": [
           "ASRM — Fertility evaluation of infertile women: committee opinion"
+        ],
+        "risk_factors_zh": [
+          "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes",
+          "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle"
+        ],
+        "risk_factors_en": [
+          "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes",
+          "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle"
+        ],
+        "acupuncture_scope_zh": [
+          "curriculum/conditions/INFERTI.md"
+        ],
+        "acupuncture_scope_en": [
+          "curriculum/conditions/INFERTI.md"
         ]
+      },
+      "risk_factors_zh": [
+        {
+          "factor": "女性年齡增加與卵巢儲備下降",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle"
+        },
+        {
+          "factor": "體重過低或過高",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing female age and declining ovarian reserve",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle"
+        },
+        {
+          "factor": "Low or high body weight",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/lifestyle"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "課件提供依證型作生殖照護的輔助框架；不取代排卵、輸卵管、子宮、精液或卵巢儲備評估，也不保證受孕或活產。",
+        "precautions": "每週期確認懷孕可能；課件的下腹部 2–3 cun 泛稱深度未連結特定穴位與解剖安全資料，本卡不採納為可執行技法。",
+        "co_management": "依年齡、嘗試時間與病史及時轉介生殖醫療並評估伴侶雙方；排卵誘導或胚胎植入期間與生殖團隊協調。",
+        "evidence": "course",
+        "source": "curriculum/conditions/INFERTI.md",
+        "note": "course 不是提升受孕或活產率的獨立臨床驗證。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "The course provides a pattern-based adjunctive framework; acupuncture does not replace ovulatory, tubal, uterine, semen, or ovarian-reserve evaluation and no pregnancy or live-birth outcome is guaranteed.",
+        "precautions": "Assess possible pregnancy each cycle. A generic lower-abdominal depth of 2–3 cun in the course lacks point-specific anatomy and safety support and is not adopted here as an executable technique.",
+        "co_management": "Refer according to age, duration of trying, and history, assess both partners, and coordinate with the fertility team during ovulation induction or embryo transfer.",
+        "evidence": "course",
+        "source": "curriculum/conditions/INFERTI.md",
+        "note": "The course grade is not independent clinical verification of conception or live-birth benefit."
       }
     },
     {
@@ -4246,7 +4520,9 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/1496",
         "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I: https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/",
-        "https://medlineplus.gov/maleinfertility.html"
+        "https://medlineplus.gov/maleinfertility.html",
+        "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md",
+        "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
       ],
       "red_flag_refs": [
         "rf.male_infertility.legacy01",
@@ -4266,6 +4542,20 @@
         ],
         "red_flags_en": [
           "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I"
+        ],
+        "risk_factors_zh": [
+          "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md",
+          "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
+        ],
+        "risk_factors_en": [
+          "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md",
+          "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
+        ],
+        "acupuncture_scope_zh": [
+          "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md"
+        ],
+        "acupuncture_scope_en": [
+          "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md"
         ]
       },
       "import_artifacts": [
@@ -4285,7 +4575,61 @@
           "source_url": "https://cloudtcm.com/disease/tcm/1496",
           "text": "男性勃起障礙(陽痿)是一個原因相當複雜的疾病，任何年齡都有可能發生。大約有一半的男性曾經偶爾出現陽萎，除非是持續發生，否則並不需要接受治療。\n\n男性勃起障礙可以區分為「心因性」與「器官性」的問題。根據西方醫學統計，心因性的原因大約佔40%，主要是因為對自己的自信心不足，或是緊張、壓力、憂鬱症所造成的。\n\n器官性的勃起功能障礙，通常是一些疾病所造成，常見的有內分泌疾病，例如：糖尿病的病患就很容易陽痿。\n\n心臟相關疾病，因為血液循環障礙，沒有足夠的血液流向陰莖，也會造成無法勃起。\n\n一些神經系統的疾病，例如：阿滋海默氏病、帕金森病、腦或脊髓腫瘤、多發性硬化症、中風...等等，也會出現陽痿。\n\n有些藥物的副作用，也會直接造成陽痿，最常見的就是用來降血壓的「利尿劑」、「乙型阻斷劑」。\n\n現代醫學改善陽痿的藥物很多，效果也很強大，常見的如Avanafil(Stendra),Sildenafil(威而鋼,Viagra),Tadalafil(犀利士,Cialis)...等等，這些藥物的原理主要是改變血流量，來改善勃起功能。\n\n然而，這些藥物卻經常會有副作用，例如：頭痛、鼻塞流鼻水、身體疼痛、消化道問題、頭暈、臉部潮紅、視力變或或視覺模糊...等等。\n\n中醫對於陽痿的相關記載，至今已有千年以上的歷史，如果想要從其他角度來思考如何改善陽痿，也可以從中醫的角度來提供另一條思路。\n\n男性勃起障礙(陽痿)造成許多男性困擾"
         }
-      ]
+      ],
+      "risk_factors_zh": [
+        {
+          "factor": "精索靜脈曲張或其他影響睪丸溫度與功能的疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
+        },
+        {
+          "factor": "睪丸損傷、未下降睪丸、感染或遺傳／染色體異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
+        },
+        {
+          "factor": "吸菸、酒精或其他可能損害精子生成的生活／環境暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Varicocele or other conditions that impair testicular temperature regulation and function",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
+        },
+        {
+          "factor": "Testicular injury, undescended testes, infection, or genetic/chromosomal abnormalities",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-male"
+        },
+        {
+          "factor": "Smoking, alcohol, or other lifestyle/environmental exposures that may impair sperm production",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "curriculum/conditions/2.1 Male Infertility - handouts on canvas.md"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "完成精液與病因評估後，可依個別證型討論壓力、睡眠或伴隨症狀的輔助照護；不宣稱針灸可逆轉遺傳缺陷、輸精管阻塞或無精症。",
+        "precautions": "睪丸腫塊、感染疼痛、無精症或嚴重精液異常先依 red flags 轉介；不得把陽痿資料當成男性不育的替代診斷。",
+        "co_management": "應與泌尿科／男性生殖專科共同進行重複精液分析、內分泌、遺傳與解剖評估。",
+        "evidence": "unknown",
+        "note": "本批未獨立確認針灸改善精液參數、自然受孕或活產率的療效。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After semen and etiologic evaluation, pattern-based acupuncture may be discussed for adjunctive support of stress, sleep, or accompanying symptoms; it is not presented as reversing genetic defects, duct obstruction, or azoospermia.",
+        "precautions": "Testicular mass, infectious pain, azoospermia, or severe semen abnormalities require red-flag referral first; erectile-dysfunction material must not substitute for a male-infertility diagnosis.",
+        "co_management": "Coordinate with urology/andrology for repeat semen analysis and endocrine, genetic, and anatomic evaluation.",
+        "evidence": "unknown",
+        "note": "This batch did not independently verify effects on semen parameters, spontaneous conception, or live birth."
+      }
     },
     {
       "id": "cond.diminished_ovarian_reserve",
@@ -5074,7 +5418,9 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/11",
-        "https://medlineplus.gov/miscarriage.html"
+        "https://medlineplus.gov/miscarriage.html",
+        "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/",
+        "https://www.americandragon.com/conditions/HabitualMiscarriage.html"
       ],
       "red_flag_refs": [
         "rf.recurrent_pregnancy_loss.legacy01",
@@ -5096,7 +5442,76 @@
           "moved_at": "2026-08-11"
         }
       ],
-      "field_sources": {}
+      "field_sources": {
+        "risk_factors_zh": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        ],
+        "risk_factors_en": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/",
+          "https://www.americandragon.com/conditions/HabitualMiscarriage.html"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/",
+          "https://www.americandragon.com/conditions/HabitualMiscarriage.html"
+        ]
+      },
+      "risk_factors_zh": [
+        {
+          "factor": "母體年齡增加與胚胎非整倍體風險上升",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        },
+        {
+          "factor": "吸菸或二手菸暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        },
+        {
+          "factor": "肥胖",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing maternal age and the associated rise in embryonic aneuploidy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        },
+        {
+          "factor": "Smoking or secondhand-smoke exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        },
+        {
+          "factor": "Obesity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "https://www.asrm.org/practice-guidance/practice-committee-documents/recurrent-pregnancy-loss-a-committee-opinion-2026/"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可在反覆流產評估與生殖／產科共同照護下，依證型提供壓力、睡眠或其他症狀的輔助支持；不得宣稱預防流產或矯正染色體、結構或免疫原因。",
+        "precautions": "當次懷孕若有出血、單側劇痛、肩痛、暈厥、發燒或惡臭分泌物，先依 red flags 急診／產科處置，不進行常規療程。",
+        "co_management": "需依生殖或產科計畫完成流產組織、子宮腔、抗磷脂、甲狀腺及必要的遺傳評估。",
+        "evidence": "unknown",
+        "note": "傳統來源只作辨證 provenance；本卡未獨立驗證降低流產或提高活產率。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Within recurrent-loss evaluation and reproductive/obstetric co-management, pattern-based acupuncture may support stress, sleep, or other symptoms; it is not presented as preventing miscarriage or correcting chromosomal, structural, or immune causes.",
+        "precautions": "In a current pregnancy, bleeding, unilateral severe pain, shoulder pain, syncope, fever, or foul discharge requires red-flag emergency/obstetric care before any routine session.",
+        "co_management": "Follow the reproductive or obstetric plan for pregnancy-tissue, uterine-cavity, antiphospholipid, thyroid, and indicated genetic evaluation.",
+        "evidence": "unknown",
+        "note": "Traditional sources are provenance for differentiation only; this card did not independently verify reduction in miscarriage or improvement in live birth."
+      }
     },
     {
       "id": "cond.luteal_phase_defect",
@@ -6446,7 +6861,9 @@
       "sources": [
         "https://cloudtcm.com/disease/tcm/11",
         "ACOG — Chronic Pelvic Pain: https://www.acog.org/womens-health/faqs/chronic-pelvic-pain",
-        "https://medlineplus.gov/pelvicpain.html"
+        "https://medlineplus.gov/pelvicpain.html",
+        "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain",
+        "curriculum/conditions/DYSMENO.md"
       ],
       "red_flag_refs": [
         "rf.chronic_pelvic_pain.legacy01",
@@ -6480,7 +6897,75 @@
         ],
         "red_flags_en": [
           "ACOG — Chronic Pelvic Pain"
+        ],
+        "risk_factors_zh": [
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        ],
+        "risk_factors_en": [
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        ],
+        "acupuncture_scope_zh": [
+          "curriculum/conditions/DYSMENO.md",
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        ],
+        "acupuncture_scope_en": [
+          "curriculum/conditions/DYSMENO.md",
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
         ]
+      },
+      "risk_factors_zh": [
+        {
+          "factor": "子宮內膜異位、腺肌症、PID 或其他骨盆疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        },
+        {
+          "factor": "膀胱、腸道或骨盆底肌筋膜功能障礙",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        },
+        {
+          "factor": "既往身體、性或情緒創傷可能增加疼痛負擔，但通常不是唯一病因",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Endometriosis, adenomyosis, PID, or another pelvic disorder",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        },
+        {
+          "factor": "Bladder, bowel, or pelvic-floor myofascial dysfunction",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        },
+        {
+          "factor": "Prior physical, sexual, or emotional trauma may increase pain burden but is rarely the sole cause",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "完成病因與 red-flag 評估後，可作多專業疼痛照護中的症狀輔助；不宣稱治癒未辨識病因。",
+        "precautions": "急性劇痛、發燒、異常分泌物、疑似懷孕、血尿或腸道警訊先轉介；創傷史採知情與創傷知情照護。",
+        "co_management": "依表現協同婦產科、泌尿／腸胃、骨盆底物理治療與心理支持。",
+        "evidence": "unknown",
+        "note": "本批未獨立評讀慢性骨盆腔痛的針灸療效大小與持久性。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After etiologic and red-flag assessment, acupuncture may be adjunctive symptom care within a multidisciplinary pain plan; it is not presented as curing an unidentified cause.",
+        "precautions": "Acute severe pain, fever, abnormal discharge, possible pregnancy, hematuria, or bowel warning signs require referral first; use consent-based trauma-informed care when relevant.",
+        "co_management": "Coordinate gynecology, urology/gastroenterology, pelvic-floor physical therapy, and psychological support according to presentation.",
+        "evidence": "unknown",
+        "note": "This batch did not independently appraise the magnitude or durability of acupuncture effects for chronic pelvic pain."
       }
     },
     {
@@ -7075,7 +7560,9 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1543"
+        "https://cloudtcm.com/disease/tcm/1543",
+        "https://pubmed.ncbi.nlm.nih.gov/31029557/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
       ],
       "red_flag_refs": [
         "rf.thin_endometrium.legacy01",
@@ -7096,7 +7583,76 @@
           "moved_at": "2026-08-11"
         }
       ],
-      "field_sources": {}
+      "field_sources": {
+        "risk_factors_zh": [
+          "https://pubmed.ncbi.nlm.nih.gov/31029557/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
+        ],
+        "risk_factors_en": [
+          "https://pubmed.ncbi.nlm.nih.gov/31029557/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
+        ],
+        "acupuncture_scope_zh": [
+          "https://pubmed.ncbi.nlm.nih.gov/31029557/"
+        ],
+        "acupuncture_scope_en": [
+          "https://pubmed.ncbi.nlm.nih.gov/31029557/"
+        ]
+      },
+      "risk_factors_zh": [
+        {
+          "factor": "子宮內膜搔刮、宮腔手術或其他內膜創傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
+        },
+        {
+          "factor": "宮腔沾黏或慢性子宮內膜炎",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
+        },
+        {
+          "factor": "生殖年齡增加或反覆療程中持續內膜生長不良",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://pubmed.ncbi.nlm.nih.gov/31029557/"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Endometrial curettage, intrauterine surgery, or other endometrial trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
+        },
+        {
+          "factor": "Intrauterine adhesions or chronic endometritis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12697521/"
+        },
+        {
+          "factor": "Increasing reproductive age or persistently poor endometrial growth across monitored cycles",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "https://pubmed.ncbi.nlm.nih.gov/31029557/"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可在生殖專科完成宮腔與療程評估後，依症狀作輔助照護；不宣稱「增厚內膜」、改善容受性或提高著床／活產。",
+        "precautions": "經量驟減合併宮腔操作史、異常出血或反覆著床失敗先依 red flags 評估；不得自行加用阿斯匹靈、荷爾蒙或侵入性療法。",
+        "co_management": "由生殖專科確認量測時點、宮腔病變與是否需要治療，避免把單一厚度數字視為完整預後。",
+        "evidence": "unknown",
+        "note": "傳統 exact source 缺口明列；本卡不採用閉經或月經稀少頁面替代。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After reproductive-specialist cavity and cycle assessment, acupuncture may support symptoms; it is not claimed to thicken the lining, improve receptivity, or increase implantation/live birth.",
+        "precautions": "Abruptly scant flow after uterine procedures, abnormal bleeding, or repeated implantation failure requires red-flag evaluation first; aspirin, hormones, or invasive therapies must not be self-added.",
+        "co_management": "Reproductive specialists determine measurement timing, cavity pathology, and treatment need; a single thickness value must not be treated as complete prognosis.",
+        "evidence": "unknown",
+        "note": "The exact traditional-source gap is explicit; amenorrhea or scanty-menses pages were not substituted."
+      }
     },
     {
       "id": "cond.pmdd",
