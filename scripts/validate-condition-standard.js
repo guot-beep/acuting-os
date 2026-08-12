@@ -114,7 +114,9 @@ const PROVENANCE_FIELDS = new Set([
   "public_safe", "source_status",
 ]);
 // Raw import kept for provenance (§0 只加深不刪除). Never used for navigation.
-const RAW_IMPORT_FIELDS = new Set(["tcm_patterns"]);
+// import_artifacts (§3.5.5): misfiled import text archived move-not-delete.
+// Provenance only — C5/C9/C10 never look inside it.
+const RAW_IMPORT_FIELDS = new Set(["tcm_patterns", "import_artifacts"]);
 
 const APPROVED = new Set([
   // 3.5.5 import_artifacts (2026-08-11): relocation destination for junk-import

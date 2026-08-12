@@ -203,6 +203,24 @@ C5/C10 清查發現大量臨床欄位裡裝的是 CloudTCM **部落格敘事文*
 - **只准處理 ledger 逐筆列名的記錄**(COND_C5_LEDGER / COND_INGESTION_LEDGER),
   不做通案自由裁量;每筆搬家記 ledger。
 - `import_artifacts` 永不渲染進導覽/內容區;僅 provenance。
+- **先確認正文在家卡上存在,才能在誤置卡上封存。** 家卡沒有 = 先把原文補到
+  家卡(它自己的欄位或它的 `import_artifacts`),順序不能反。
+- `import_artifacts` 與 `tcm_patterns` 同級:永不渲染、永不導覽、永不翻譯。
+  驗證器把它列入 approved(不觸發 C8),C5/C9/C10 一律不看它的內部。
+- 封存記錄**永不刪除**(D6 同樣適用於痕跡)。
+
+> **⚠ 資料裡目前有兩套鍵名(2026-08-12 合併留下的,待 Ting 裁定統一)。**
+> 兩條線在同一天各自發明了這個欄位,鍵名不同但語意重疊:
+>
+> | 來源 | 鍵名 |
+> |---|---|
+> | codex/pattern-v2(本文規則) | `original_field` · `text` · `reason` · `moved_at`(+ `original_record`) |
+> | claude/confident-hugle-2cf3f3 | `field` · `text` · `reason` · `archived_at` · `belongs_to` · `source_url` |
+>
+> 合併時**兩套都原樣保留**(封存記錄不改寫、不刪除)。因為沒有任何程式讀
+> `import_artifacts`(只有 validator 的 approved 清單認得欄位名本身),混形
+> 不會壞掉任何東西。統一鍵名 = 改寫 provenance,要 Ting 點頭才做。
+> `belongs_to` / `source_url` 帶的資訊在上面那套沒有對應欄位,**不可直接丟棄**。
 
 ### 3.6 原始匯入(保留,但永不用於導覽)
 

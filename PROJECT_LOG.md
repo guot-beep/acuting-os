@@ -1,3 +1,49 @@
+# 2026-08-12 Fable — 撿回擱淺的 C4 紅旗支線:`claude/confident-hugle-2cf3f3` 併入 pattern-v2
+
+- **做了什麼**:sibling branch `claude/confident-hugle-2cf3f3`(13 commits、merge-base `ca2c45b`)
+  的 C4 紅旗成果已擱淺 ~11 小時,本次併入 `codex/c4-redflags-integration`(自 `codex/pattern-v2` 開)。
+  兩線同日改同一個 canon 檔,plain merge 五檔衝突。**canon 檔不用 --ours/--theirs**,改用
+  **record/field 級三方合併**(base=`ca2c45b`、ours=pattern-v2、theirs=sibling),腳本可重跑:
+  只有一邊動 → 取那邊;兩邊同改 → 取同值;真衝突才進政策表。
+- **衝突政策(261 個真衝突)**:`import_artifacts` 與 `sources` 取**聯集**(只加深不刪除);
+  `field_sources` 物件合併(ours 覆蓋同鍵、theirs 獨有鍵保留);其餘一律 **ours 勝**
+  —— 因為 integration 線的 CR-010 與 eyes-on 判斷比 sibling 新。**雙語成對另加一道尺**:
+  per-field 合併會把 `_zh` 取 A 邊、`_en` 取 B 邊,造出兩邊都沒有過的半套(先跑出 C9 17 個);
+  改成**整對一起決**,17 對回復一致,C9 歸 0。
+- **自 theirs 自動併入 414 個欄位**,其中 **red_flags_zh 42 + red_flags_en 42** —— 這 42 張正是
+  integration 端 C4 的全部缺口(ours 該欄為空、theirs 有,零覆蓋、逐條 zh/en 等長)。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`,505 筆):
+  blocking **184 → 4**;**C4 42 → 0**、**C10 70 → 0**、**C5 72 → 4**、C9 0 → 0;乾淨卡 **451 → 502**。
+  `check-validation-ratchet.js` 判 BETTER(184→4)後才 `--update` 鎖 4(**未採用 sibling 的 117**
+  —— 那是 150 筆世界的數字,與 505 筆不可比)。CR-010 `full_detail` **130 → 143**(未回退)。
+- **自查(驗證器 PASS ≠ 沒有損失)**:對 ours 深比較 **欄位被清空 0 個**;6 個欄位變短全部是
+  sibling batch 6 的誤置長文 untangle(copd/post_viral_cough etiology_zh 4821→291/236 等),
+  逐筆確認原文**逐字**躺在該卡 `import_artifacts`。眼讀 cond.copd / cond.pcos 全卡,無假中文、
+  無隱形英文、無樣板句。
+- **順手清兩處**:(1) theirs 帶進的 1 個 U+0008(cond.heart_failure 封存文)——content-junk
+  ratchet 凍在 8,這是第 9 個,依驗證器自身指示刪字元不改句子,現回到 8;
+  (2) 38 個 `field_sources` 鍵是 theirs 為「我們沒採用的內容」寫的出處,指向空欄位=假 provenance,
+  刪(只刪合併新增的、ours 原有的一個不動)。
+- **驗證器 diff 判定**:sibling 對 `validate-condition-standard.js` 的 4 行是把 `import_artifacts`
+  加進 `RAW_IMPORT_FIELDS`;integration 線已在 `APPROVED` 直接列入,而 `RAW_IMPORT_FIELDS` 全檔
+  **只**餵給 `APPROVED` —— 語意等價,**沒有放寬任何檢查**(C4/C5/C9/C10 一行未動),故接受 auto-merge。
+- **已知未解 / 要 Ting 裁**:(1) **29 張卡兩邊都寫了紅旗但內容不同**——ours 是模板 §5 五欄結構、
+  theirs 是舊字串陣列,取 ours;theirs 那 29 組另有臨床點(如 gout 的降尿酸藥重症藥疹)**未併入**,
+  因為轉成結構化要編 `urgency_level`(紅線:不虛構)。清單見本次 commit message。
+  (2) **11 張卡(19 個 `_zh` 欄位)ours 刻意留空 etiology/western_pathology(誤置文已封存),
+  theirs 另寫了有源新內容** —— 取 ours(空欄=誠實缺口,且模板 §3.5.5 與派工的 thin_endometrium /
+  depression 抽查都要求維持空);theirs 的文是現成候選,在 `claude/confident-hugle-2cf3f3` 上:
+  pcos · pms · female_infertility · male_infertility · recurrent_pregnancy_loss · chronic_pelvic_pain ·
+  thin_endometrium · cluster_headache · migraine_vestibular · heart_failure · post_covid。
+  (3) `import_artifacts` 兩套鍵名並存(見模板 §3.5.5 新增的警告框),統一與否要 Ting 點頭。
+  (4) 殘 C5 4 個 / 3 卡(tension_headache、migraine、chronic_cough 的 western_pathology/etiology),
+  **兩邊都是這個狀態**,非本次引入。
+- **驗證指令**(可重現):`node scripts/validate-condition-standard.js` → 4 blocking;
+  `node scripts/check-validation-ratchet.js` → PASS;`node scripts/validate-content-junk.js` → PASS;
+  `node scripts/audit-cr010-condition-detail-maturity.js` → full_detail 143;
+  CI green-job 25 支驗證器逐支跑過;`build-data.js` 已跑且 `data/generated` 已入 commit;
+  `git diff --check` 乾淨。**未 push。**
+
 # 2026-08-12 夜班 Fable — MORNING HANDOFF 最終版(取代下方稍早那份)
 
 **起始** `513971b` → **結束** `f9a71df`。我的 commits **10 個**。
@@ -470,6 +516,38 @@ exact-SHA 驗證)今晚都已完成。它回 GO 之後,landing 就只剩「對�
   如 陳皮「燥濕健脾，調和諸藥。」、藿香「調和諸藥，降逆止嘔。」)與大棗/炙甘草/甘草的合理句(×171/×153,
   同句多方共用仍屬紅線 6,但內容不誤)。另眼讀抓到損毀片段:蒿芩清膽湯 枳殼「緩解。」、
   天麻鉤藤飲 桑寄生「補益，健旺。」,列 worklist。
+
+# 2026-08-11 Claude — C4 安全線歸零:71 張無紅旗卡全數補齊(batches 7–9)
+
+- **做了什麼**:C4(無紅旗)71 卡分三批補齊,每卡 3–5 條結構化雙語紅旗。批次七(commit `0971fa6`,28 卡)pain_msk 2 + gi 1 + psych_sleep 15 + respiratory 10;批次八(commit `2c38c83`,26 卡)derm 8 + endo_metabolic 10 + cardio 8;批次九(commit `c10178f`,17 卡)uro_renal 8 + ent_eye 6 + immune_misc 3。**格式跟既有 55 卡的 legacy 字串陣列慣例**(「發現 → 行動(急症)」),非模板 §5 五欄物件——registry 結構化版仍只屬 Batch 4 婦科 25 卡,本批**未動 red_flag_refs/registry wiring**(validate-red-flag-wiring 範圍不變)。zh/en 逐條成對、長度相等;來源入 field_sources(ACR/EULAR、AASLD、AASM、GINA、GOLD、ACCP、ADA、ATA、AHA/ACC/ESC、AAD、AAO、AAO-HNS、AUA、NCCN/ASCO 等指引級通說;1 Palpitation、1.1 BPH、1.2 Lin、2.2 Impotence、NOC_ENU、7 CFS 課件標「轉介精神」)。
+- **內容原則**:每條=具體發現→具體行動,急症標記;各卡有自己的「最重要一條」(如 erectile_dysfunction 之心血管前哨與硝酸鹽禁忌、cancer_supportive 之發燒性嗜中性球低下與針灸前查血象、hpa_dysregulation 之 Addison 危象排除、cad 之抗血小板不可自停)。腳本 assert:紅旗欄原為空、不在 registry、zh/en 等長——凡已有內容者不覆蓋。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):**C4 71 → 0(全 150 卡皆有紅旗)**;全檔 188 → **117**(C5 116、C9 1);乾淨卡 73→**92**。ratchet baseline 鎖 117。三批皆 content-junk PASS、`git diff --check` 乾淨、build-data 已跑、HEAD 深比較=派工清單且無欄位被覆蓋。自抓兩處自產垃圾:t2dm zh 條漏入英文字「symptoms」、batch 5 曾漏入西里爾字——寫入前自校再度證明必要。
+- **本日總結**(一日四線):condition 檔全檔缺陷 **553 → 117**(C10 189→0、C4 71→0、C5 292→116),乾淨卡 1→92。
+- **已知未解/下一步**:(1) **C5 116(58 卡)是最後一座山**——多為 summary/context 與六張家卡長文的 _en 缺;家卡 CloudTCM 敘事宜先修語氣再譯;(2) C9 1 筆待查;(3) 本批紅旗為 model_draft 草稿,**臨床判斷內容,Ting 逐卡過目後才算數**(憲法:新內容 draft 直接上、Ting 在 app 裡審);(4) 未來若 red_flag registry migration 擴到全庫,本批 legacy 陣列即為 wiring 的原文基礎。
+
+# 2026-08-11 Claude — C10 全庫歸零:最後 7 張誤置長文卡 untangle(batch 6)
+
+- **做了什麼**(commit `961f869`,7 卡):C10 殘餘的批次一型誤置長文全數處理。post_covid(氣喘文→家卡 asthma)、copd + post_viral_cough(咳嗽文→家卡 chronic_cough)、heart_failure(心律不整文→家卡 palpitations)、chronic_prostatitis(BPH 文→家卡 bph)、cluster_headache + migraine_vestibular(頭痛通論/偏頭痛文→家卡 tension_headache / migraine)。家卡六張(asthma、chronic_cough、palpitations、bph、tension_headache、migraine)保留原文未動,腳本 assert 家卡持有後才封存。
+- **pcos 前例再現三次**:cluster_headache 與 migraine_vestibular 的 etiology_zh 是家卡文的一字之差變體(2281/2280、1553/1552),heart_failure 的 western_pathology_zh 是 palpitations 文的訛字變體(「一鐘之內」)——三者皆因非逐字而逃過 C10,一併封存(reason 註明變體)。C10 的逐字比對抓不到變體,眼睛才抓得到——此教訓已三度成立。
+- **內容**:七卡各四欄新寫雙語 + field_sources。TCM 病因病機引《金匱》心水(heart_failure)、肺脹+《丹溪心法》痰挾瘀血礙氣(copd)、《傷寒》吳茱萸湯厥陰頭痛(cluster)、溫病瘥後勞復(post_covid)、精濁/癃閉同腺異病之辨(chronic_prostatitis,citing 1.1 BPH 課件命名)、風痰眩暈(vestibular,citing 2 Dizziness 課件);西醫標 WHO/GOLD/ACCP/AHA/NIH 分類/ICHD/Bárány 通說 + MedlinePlus URL。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):**C10 20 → 0(全檔 150 卡 C10 歸零)**;C5 130→116(七卡既存 14 個 _en 缺一併補齊);全檔 222 → **188**(C4 71、C5 116、C9 1);乾淨卡 50→52。ratchet baseline 鎖 188。content-junk PASS;HEAD 深比較=7 卡、封存逐字、無欄位清空。
+- **已知未解/下一步**:(1) C5 116(58 卡)——既存 _en 翻譯債,其中含六張家卡的長文(C10 註記「誤置文勿譯」已不適用於家卡自己的文,但家卡 CloudTCM 敘事宜先修語氣再譯,勿直譯 blog 文);(2) C4 71 無紅旗卡是安全線最大缺口,建議下一條派工;(3) 家卡六張保留的 CloudTCM 敘事(會員見證、APP 推廣句)語氣修整仍待批准後另開線;(4) 本日新增 MedlinePlus URL 未線上核驗。
+
+# 2026-08-11 Claude — 全庫樣板句清零:60 張非婦科卡病因/病理重寫(C10 stub group 0 carriers)
+
+- **做了什麼**:承上一條的機制(§3.5.5 import_artifacts),把 73 卡共用樣板句對(正氣不足…/相關系統功能障礙…)剩餘的 **60 張非 gyn 卡**全部封存重寫,分三批:批次三(commit `5a57dc4`,19 卡)pain_msk 13 + gi 6;批次四(commit `98d7948`,17 卡)psych_sleep 12 + respiratory 5;批次五(commit `1931443`,24 卡)neuro 8 + derm 3 + endo_metabolic 7 + cardio 4 + uro_renal 2。每卡:樣板句對封存(belongs_to: null,dated reason)→ 填本卡專屬雙語 etiology_*/western_pathology_* + field_sources → 每批 HEAD 深比較(變動卡=清單、封存逐字、無欄位清空)。
+- **來源**:病因病機用到 Tier-1 課件 LBP1/NECK/SHOULDER/4.Vomiting/7 CFS/4 Wind Stroke/8 MS/2 Dizziness/1.2 Lin/3 Urinary Incontinence,其餘標中醫內科學/外科學/兒科學/骨傷科學教材通說並引原典(《金匱》胸痺·奔豚·百合病、《傷寒》當歸四逆、《素問》骨痿·水腫·諸風掉眩、《諸病源候論》鼾眠、《外科正宗》油風·酒齄鼻·筋瘤、《格致餘論》痛風);西醫病理標 NINDS/NIAMS/NIDDK/NIMH/AHA/ACC/ATA/AUA/AAD/CDC/ERAS 等通說 + 高確定度 MedlinePlus URL 入 sources。爭議誠實標註:hpa_dysregulation 明寫「腎上腺疲勞非公認診斷」、luteal 同款寫法沿用。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):全檔 462 → **222**(C10 142→20、C5 250→130、C4 71 flat、C9 1 flat);乾淨卡 13 → **50**;樣板句 carriers **60 → 0**(`stub-list.js` 重跑=0)。ratchet baseline 已兩度 `--update` 鎖住(conditions 222)。三批皆 content-junk PASS、`git diff --check` 乾淨、build-data 已跑。
+- **驗證指令**(可重現):`node scripts/validate-condition-standard.js` → 222;`node scripts/check-validation-ratchet.js` → PASS;`node scripts/validate-content-junk.js` → PASS。
+- **已知未解/下一步**:(1) C10 殘餘 20 defects/13 卡,全是**批次一型的誤置長文**(asthma+post_covid、copd+chronic_cough+post_viral_cough、palpitations+heart_failure、bph+chronic_prostatitis、tension+cluster headache、migraine+migraine_vestibular)——每組要判家卡再封存,是判斷題不是填空題,留待下一條派工;(2) C5 130(65 卡 _en 缺)與 C4 71(無紅旗)是既存缺口,非本批引入;(3) 本批 MedlinePlus URL 未逐一線上核驗,下次連線抽查。
+
+# 2026-08-11 Claude — gyn_fertility C10 誤置文untangle:§3.5.5 import_artifacts 機制 + 22 卡病因/病理重寫
+
+- **做了什麼**:CR-010 留下的跨卡 untangle。新增模板 §3.5.5 `import_artifacts`(move-not-delete 封存)並加入 validator `RAW_IMPORT_FIELDS`(文件→驗證器→資料,順序照 §3)。批次一(commit `3ce14e1`,9 卡):`cond.pcos`(四欄全誤置——etiology_zh 是 oligomenorrhea 文的 2499 字變體,C10 因兩字之差漏抓;en 兩欄與 oligomenorrhea 逐字相同)、endometriosis、primary_dysmenorrhea、pms、female_infertility、recurrent_pregnancy_loss、chronic_pelvic_pain(月經不調長文,家卡 `cond.irregular_menstruation`)、male_infertility(陽痿文,家卡 `cond.erectile_dysfunction`)、thin_endometrium(月經稀少文,家卡 `cond.oligomenorrhea`)——家卡皆已持有原文(腳本 assert 過才動),誤置卡逐筆封存(dated reason + belongs_to + 原文逐字)後填入本卡專屬雙語 etiology/western_pathology + field_sources。批次二(commit `e022cd5`,13 卡):73 卡共用樣板句對(正氣不足…/相關系統功能障礙…)封存(belongs_to: null)後同樣重寫:menorrhagia、amenorrhea、diminished_ovarian_reserve、ivf_support、luteal_phase_defect、menopause_syndrome、hyperemesis_gravidarum、breech_presentation、postpartum_hypolactation、pid_chronic、vulvovaginal_candidiasis、pmdd、secondary_dysmenorrhea。
+- **來源**:病因病機優先 Tier-1 課件(DYSMENO/INFERTI/AMENO/U_BLEED/MENOP/MORNING/INSUFF_L/LEUKO/2.1 Male Infertility),無課件者標「中醫婦科學教材通說」;西醫病理標 NICHD/ACOG/ASRM/FIGO/CDC 通說 + MedlinePlus 專頁 URL(僅加高確定度 URL 進 `sources`,cloudtcm 舊 URL 依模板永不刪除)。數字均標出處(32–48hr 病程=DYSMENO 課件;7mm 內膜閾值明標「參考值非硬切點」)。
+- **數字 before→after**:`validate-condition-standard --category gyn_fertility`:89 → **0** blocking(C5 42→0、C10 47→0;25/25 clean,原本 1/25)。全檔:553 → **462**(C4 71 flat、C9 1 flat、C10 189→142、C5 292→250)。ratchet baseline 已 `--update` 鎖住(conditions 462)。逐卡驗證:批次一 9 卡 + 批次二 13 卡與 HEAD 深比較,變動記錄=派工清單、封存原文逐字相符、無欄位被清空(diff-check 腳本 assert)。
+- **驗證指令**(可重現):`node scripts/validate-condition-standard.js --worklist --category gyn_fertility` → PASS 0 blocking;`node scripts/check-validation-ratchet.js` → PASS;`node scripts/validate-content-junk.js` → PASS;`node scripts/build-data.js` 已跑;`git diff --check` 乾淨。
+- **已知未解/下一步**:(1) C10 樣板句對還坐在其餘 **60 張非 gyn 卡**上(C10 142 的主體)——同機制可逐科複製;(2) gyn N1 12 卡 tcm_patterns blob 未提升(note only);(3) `cond.irregular_menstruation` / `cond.oligomenorrhea` / `cond.erectile_dysfunction` 家卡保留 CloudTCM 敘事原文(會員見證等 blog 語氣未修——本批只 untangle 不改家卡,語氣修整是另一條線);(4) MedlinePlus URL 未逐一線上核驗(離線批次),下次連線抽查。
 
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
