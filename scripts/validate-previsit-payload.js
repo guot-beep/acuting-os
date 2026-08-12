@@ -399,6 +399,33 @@ function runSelfTest(config, registry) {
   const keepOk = mod.stripControlChars(keep) === keep;
   allOk = allOk && keepOk;
   lines.push(`${keepOk ? "PASS" : "FAIL"} [control] legitimate text with tab/newline/decimal preserved unchanged`);
+
+  /* SOL 指定覆測:「安全清除」不得變成「竄改病歷」。
+   *
+   * ZWJ(U+200D)與 ZWNJ(U+200C)是 \p{Cf},但它們在 emoji 與波斯語/印地文/
+   * 馬拉雅拉姆語的正字法裡**有語義** —— 剝掉它們會把病人打的字改成另一個字,
+   * 而 errors 是空的,病人看不出來。上面那條 controlProbes 一個都沒涵蓋這兩個,
+   * 所以把 PROSE 規則改回整個 \p{Cf} 仍然會全綠。這幾行就是補那個洞。
+   *
+   * 兩個方向都要斷言:prose 保留、identifier 剝除。只斷言保留的話,
+   * 有人把 identifier 也一併豁免,重放閘就被一個 ZWSP 繞過去(MED-4)。 */
+  const prosePreserve = {
+    "ZWJ emoji(女醫師)": "我看的是 \u{1F469}‍⚕️",
+    "ZWJ emoji(家屬三人)": "\u{1F468}‍\u{1F469}‍\u{1F467} 陪同",
+    "波斯語 ZWNJ می‌رود": "می‌رود",
+    "印地文 ZWNJ": "क्‌ष",
+    "馬拉雅拉姆語 ZWJ": "ക്‍",
+  };
+  for (const [name, text] of Object.entries(prosePreserve)) {
+    const out = mod.stripControlChars(text);
+    const ok = out === text;
+    allOk = allOk && ok;
+    lines.push(`${ok ? "PASS" : "FAIL"} [control] prose keeps semantic ${name}${ok ? "" : ` — 病人原話被改寫成 ${JSON.stringify(out)}`}`);
+    const idOut = mod.stripIdentifierInvisibles(text);
+    const idOk = idOut !== text;
+    allOk = allOk && idOk;
+    lines.push(`${idOk ? "PASS" : "FAIL"} [control] identifier still strips ${name}`);
+  }
   const delegationProblems = checkAppDelegation();
   delegationProblems.forEach((p) => lines.push(`FAIL [parity] ${p}`));
   if (!delegationProblems.length) lines.push("PASS [parity] app.js delegates shape validation to the shared module; index.html loads it");
