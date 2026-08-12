@@ -56,7 +56,8 @@ AVS `v1:superseded + v2:finalized` ✅、編輯與新增 visit 存活 ✅。
   含 boot-order / AVS ×2 / P1 四道新 gate。run `31583284316`。
 - docs-only 的 commit(如 `b5c9c6d`)preflight 正確跳過重 validators ——
   **那個綠燈不代表全 CI 通過**,我沒有拿它當證據(這是你提醒過的陷阱)。
-- `f9a71df` 是 code commit,CI 應會跑全套;起床時可直接看它的 run 結果。
+- `f9a71df`(本夜最後一個 code commit)= **真全綠**,4 jobs success、green job 跑滿 34 步。
+  run `31584454210`。這是本夜的 exact-SHA CI 證據。
 
 ## Landing 形狀(比昨天好)
 
