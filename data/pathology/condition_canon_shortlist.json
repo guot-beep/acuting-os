@@ -4343,37 +4343,9 @@
       "western_context_en": "Adjunctive care proceeds under the reproductive team's cycle plan; documentation does not replace reproductive medical management. Documentation context only, not a treatment instruction.",
       "etiology_zh": "其病因應歸屬於接受 IVF 的不孕原因與療程背景，而不是「輔助照護」這個標籤本身。",
       "western_pathology_zh": "此紀錄代表 IVF／ART 周邊的輔助照護情境，而不是疾病。IVF 涉及控制性卵巢刺激、取卵、受精／胚胎培養與胚胎移植，因此「IVF 輔助」本身沒有單一病理機轉。",
-      "tcm_patterns": [
-        {
-          "pattern_zh": "氣血不和證",
-          "formula_zh": "八珍湯",
-          "acupoints_zh": [
-            "足三里 (ST36)",
-            "合谷 (LI4)",
-            "三陰交 (SP6)"
-          ]
-        },
-        {
-          "pattern_zh": "臟腑虛弱證",
-          "formula_zh": "補中益氣湯",
-          "acupoints_zh": [
-            "中脘 (CV12)",
-            "氣海 (CV6)",
-            "脾俞 (BL20)"
-          ]
-        }
-      ],
-      "acupoint_protocols": [
-        "足三里 (ST36)",
-        "合谷 (LI4)",
-        "三陰交 (SP6)",
-        "中脘 (CV12)"
-      ],
-      "herb_formulas": [
-        "八珍湯",
-        "補中益氣湯",
-        "柴胡疏肝散"
-      ],
+      "tcm_patterns": [],
+      "acupoint_protocols": [],
+      "herb_formulas": [],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
         "rf.ivf_support.legacy01",
@@ -4445,7 +4417,27 @@
         "evidence": "guideline",
         "source": "ASRM — Performing the embryo transfer: a guideline (2017): https://www.asrm.org/practice-guidance/practice-committee-documents/performing-the-embryo-transfer-a-guideline-2017/",
         "note": "ASRM concludes current evidence does not support acupuncture around embryo transfer improving live-birth rates; this is the ceiling for any efficacy claim, not a rationale to encourage the intervention — card content must not exceed this conclusion"
-      }
+      },
+      "import_artifacts": [
+        {
+          "original_field": "acupoint_protocols",
+          "text": "[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\",\"中脘 (CV12)\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-21): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.ivf_support. This card's acupuncture_scope is the batch's most carefully written (evidence: \"guideline\", citing an ASRM guideline whose conclusion is unfavorable to claiming benefit, explicitly capping efficacy claims), yet the boilerplate protocol/herb block sat on a peri-embryo-transfer and luteal-support card whose red_flags list ectopic-pregnancy signs — the same LI4/SP6 pregnancy-cautioned pairing as F-19. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "herb_formulas",
+          "text": "[\"八珍湯\",\"補中益氣湯\",\"柴胡疏肝散\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-21): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.ivf_support. This card's acupuncture_scope is the batch's most carefully written (evidence: \"guideline\", citing an ASRM guideline whose conclusion is unfavorable to claiming benefit, explicitly capping efficacy claims), yet the boilerplate protocol/herb block sat on a peri-embryo-transfer and luteal-support card whose red_flags list ectopic-pregnancy signs — the same LI4/SP6 pregnancy-cautioned pairing as F-19. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "tcm_patterns",
+          "text": "[{\"pattern_zh\":\"氣血不和證\",\"formula_zh\":\"八珍湯\",\"acupoints_zh\":[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\"]},{\"pattern_zh\":\"臟腑虛弱證\",\"formula_zh\":\"補中益氣湯\",\"acupoints_zh\":[\"中脘 (CV12)\",\"氣海 (CV6)\",\"脾俞 (BL20)\"]}]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-21): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.ivf_support. This card's acupuncture_scope is the batch's most carefully written (evidence: \"guideline\", citing an ASRM guideline whose conclusion is unfavorable to claiming benefit, explicitly capping efficacy claims), yet the boilerplate protocol/herb block sat on a peri-embryo-transfer and luteal-support card whose red_flags list ectopic-pregnancy signs — the same LI4/SP6 pregnancy-cautioned pairing as F-19. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        }
+      ]
     },
     {
       "id": "cond.recurrent_pregnancy_loss",
@@ -4968,37 +4960,9 @@
       "western_context_en": "Commonly discussed within fertility care regarding luteal support and correction of underlying endocrine factors. Documentation context only, not a treatment instruction.",
       "etiology_zh": "黃體功能異常可能繼發於影響促性腺激素分泌、濾泡發育、黃體功能或子宮內膜對黃體酮反應的各種狀況。",
       "western_pathology_zh": "黃體期功能不足是一個仍具爭議的臨床概念，涉及黃體期長度或黃體酮支持異常。ASRM 強調目前沒有單一可靠的臨床確診檢驗，也未證實孤立性 LPD 能獨立造成不孕或反覆流產。",
-      "tcm_patterns": [
-        {
-          "pattern_zh": "氣血不和證",
-          "formula_zh": "八珍湯",
-          "acupoints_zh": [
-            "足三里 (ST36)",
-            "合谷 (LI4)",
-            "三陰交 (SP6)"
-          ]
-        },
-        {
-          "pattern_zh": "臟腑虛弱證",
-          "formula_zh": "補中益氣湯",
-          "acupoints_zh": [
-            "中脘 (CV12)",
-            "氣海 (CV6)",
-            "脾俞 (BL20)"
-          ]
-        }
-      ],
-      "acupoint_protocols": [
-        "足三里 (ST36)",
-        "合谷 (LI4)",
-        "三陰交 (SP6)",
-        "中脘 (CV12)"
-      ],
-      "herb_formulas": [
-        "八珍湯",
-        "補中益氣湯",
-        "柴胡疏肝散"
-      ],
+      "tcm_patterns": [],
+      "acupoint_protocols": [],
+      "herb_formulas": [],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
         "rf.luteal_phase_defect.legacy01",
@@ -5093,7 +5057,27 @@
         "evidence": "unknown",
         "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ASRM clinical materials)",
         "note": "The ASRM committee opinion explicitly states no single reliable test confirms LPD and isolated LPD has not been proven to independently cause infertility; this card preserves that uncertainty so acupuncture efficacy claims are not built on a contested diagnosis"
-      }
+      },
+      "import_artifacts": [
+        {
+          "original_field": "acupoint_protocols",
+          "text": "[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\",\"中脘 (CV12)\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-21): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.luteal_phase_defect. This card correctly cites an ASRM committee opinion and explicitly disclaims that acupuncture can \"treat\" or \"correct\" a disputed diagnostic entity, yet the boilerplate protocol/herb block sat unchanged on a fertility-context card carrying the same LI4/SP6 pregnancy-cautioned pairing as F-19/ivf_support. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "herb_formulas",
+          "text": "[\"八珍湯\",\"補中益氣湯\",\"柴胡疏肝散\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-21): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.luteal_phase_defect. This card correctly cites an ASRM committee opinion and explicitly disclaims that acupuncture can \"treat\" or \"correct\" a disputed diagnostic entity, yet the boilerplate protocol/herb block sat unchanged on a fertility-context card carrying the same LI4/SP6 pregnancy-cautioned pairing as F-19/ivf_support. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "tcm_patterns",
+          "text": "[{\"pattern_zh\":\"氣血不和證\",\"formula_zh\":\"八珍湯\",\"acupoints_zh\":[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\"]},{\"pattern_zh\":\"臟腑虛弱證\",\"formula_zh\":\"補中益氣湯\",\"acupoints_zh\":[\"中脘 (CV12)\",\"氣海 (CV6)\",\"脾俞 (BL20)\"]}]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-21): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.luteal_phase_defect. This card correctly cites an ASRM committee opinion and explicitly disclaims that acupuncture can \"treat\" or \"correct\" a disputed diagnostic entity, yet the boilerplate protocol/herb block sat unchanged on a fertility-context card carrying the same LI4/SP6 pregnancy-cautioned pairing as F-19/ivf_support. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        }
+      ]
     },
     {
       "id": "cond.menopause_syndrome",
@@ -5291,37 +5275,9 @@
       "western_context_en": "Commonly managed with rehydration, antiemetics, and nutritional support; severe cases may need admission. Documentation context only, not a treatment instruction.",
       "etiology_zh": "確切病因屬多因素且尚未完全釐清；妊娠相關生物因素與個體易感性共同作用，持續嘔吐本身會造成脫水及代謝／營養併發症。",
       "western_pathology_zh": "妊娠劇吐是妊娠噁心嘔吐的重症端，可造成明顯體重下降、脫水、電解質異常與營養缺乏。",
-      "tcm_patterns": [
-        {
-          "pattern_zh": "氣血不和證",
-          "formula_zh": "八珍湯",
-          "acupoints_zh": [
-            "足三里 (ST36)",
-            "合谷 (LI4)",
-            "三陰交 (SP6)"
-          ]
-        },
-        {
-          "pattern_zh": "臟腑虛弱證",
-          "formula_zh": "補中益氣湯",
-          "acupoints_zh": [
-            "中脘 (CV12)",
-            "氣海 (CV6)",
-            "脾俞 (BL20)"
-          ]
-        }
-      ],
-      "acupoint_protocols": [
-        "足三里 (ST36)",
-        "合谷 (LI4)",
-        "三陰交 (SP6)",
-        "中脘 (CV12)"
-      ],
-      "herb_formulas": [
-        "八珍湯",
-        "補中益氣湯",
-        "柴胡疏肝散"
-      ],
+      "tcm_patterns": [],
+      "acupoint_protocols": [],
+      "herb_formulas": [],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
         "rf.hyperemesis_gravidarum.legacy01",
@@ -5422,6 +5378,26 @@
       "sign_symptom_ids": [
         "sym.nausea",
         "sym.vomiting"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "acupoint_protocols",
+          "text": "[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\",\"中脘 (CV12)\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-19): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.hyperemesis_gravidarum. On this hyperemesis-gravidarum card, 合谷 (LI4) and 三陰交 (SP6) are the standard pregnancy-cautioned/contraindicated point pair (traditionally associated with inducing labor), presented here as the structured protocol while the card's own acupuncture_scope_zh.can_treat correctly names 內關 (PC6, \"如內關等傳統止嘔運用\") as the traditional antiemetic point, which was absent from this structured field. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "herb_formulas",
+          "text": "[\"八珍湯\",\"補中益氣湯\",\"柴胡疏肝散\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-19): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.hyperemesis_gravidarum. On this hyperemesis-gravidarum card, 合谷 (LI4) and 三陰交 (SP6) are the standard pregnancy-cautioned/contraindicated point pair (traditionally associated with inducing labor), presented here as the structured protocol while the card's own acupuncture_scope_zh.can_treat correctly names 內關 (PC6, \"如內關等傳統止嘔運用\") as the traditional antiemetic point, which was absent from this structured field. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "tcm_patterns",
+          "text": "[{\"pattern_zh\":\"氣血不和證\",\"formula_zh\":\"八珍湯\",\"acupoints_zh\":[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\"]},{\"pattern_zh\":\"臟腑虛弱證\",\"formula_zh\":\"補中益氣湯\",\"acupoints_zh\":[\"中脘 (CV12)\",\"氣海 (CV6)\",\"脾俞 (BL20)\"]}]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-19): this is the generic 74-record shared-boilerplate treatment block (氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯; acupoint_protocols 足三里/合谷/三陰交/中脘; herb_formulas 八珍湯/補中益氣湯/柴胡疏肝散), not specific to cond.hyperemesis_gravidarum. On this hyperemesis-gravidarum card, 合谷 (LI4) and 三陰交 (SP6) are the standard pregnancy-cautioned/contraindicated point pair (traditionally associated with inducing labor), presented here as the structured protocol while the card's own acupuncture_scope_zh.can_treat correctly names 內關 (PC6, \"如內關等傳統止嘔運用\") as the traditional antiemetic point, which was absent from this structured field. Moved verbatim, not deleted (constitution redline 3: move-then-clear). No replacement protocol was authored here — that rebuild needs Ting's sign-off, matching the cond.breech_presentation (F-01) precedent.",
+          "moved_at": "2026-08-12"
+        }
       ]
     },
     {
@@ -13655,7 +13631,7 @@
         "research_pack_batch_i_autoimmune_msk_derm_genetic"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "全身痛，這種症狀在千年前就已經有了，漢朝時的《傷寒論》中就提到有「身疼」、「身體痛」等等名稱記載。《諸病派候論．風疾諸侯》提到：「風在於皮膚，淫淫躍躍，若畫若刺，一身盡痛…」，可見古人就體驗過這種疼痛。\n\n後代中醫廣泛提到所謂的「痹證」的概念，這就是從風、寒、濕、熱等外邪侵襲人體，閉阻經絡而導致氣血運行不暢的病證，而全身痛與這些原因密切相關！\n\n這種痹證會造成全身性的肌肉、筋骨、關節等部位出現酸痛、麻木、沉重、屈伸不利，甚至關節腫大灼熱等等現象，因此全身酸痛離不開這個範疇。\n\n由於風、寒、濕、熱這些外邪完全無法運用現代科技印證，經絡氣血這些概念，所以當然無法被檢查出來。中醫將全身痛區分為以下幾種證候：\n\n一、外感風寒後遺症\n\n中醫提到的表症，最常指的就是「外感風寒」這種外感，許多人在感冒的時候都會首先感到全身骨節疼痛、惡寒發熱、鼻塞流涕、喉嚨痛、咳嗽...等等。\n\n要印證這種全身痛其實很容易，只要在冷氣房裡面不穿衣服，待到全身發抖之後就很容易就可以印證。然而，這種原本感冒才有的症狀，竟然會在平時也會出現，合理的推斷是，某些人的傷寒感冒就從來沒真正康復過，因此遺留下來這種全身風寒疼痛。\n\n由於寒氣屬「陰」，會侵蝕體內的陽氣，因此感冒風寒長期遺留在體內的訊息，如果運用經絡檢測時，最容易遺留在「膀胱經」與「膽經」虛證，而成為一種長期的體質現象。\n\n感冒後遺症留下來的經絡體質現象\n\n由於膽經與胃經連動性高，因此最後就會變成腳三陽經虛證的型態，有些人連手三陽經也會同時能量不足！某位會員曾經幫一位纖維肌痛症的朋友進行經絡檢測，就是發現她的這兩條經絡能量明顯低下！\n\n二、外感風寒濕邪氣\n\n黃帝內經提到 :「風寒濕三氣雜至，合而為痹也。」除了上面的風寒，再加上濕氣就更容易出現全身疼痛。以「風邪」為例，特點是沒有特定疼痛的位置，早上時頭痛，下午腰痛。以「寒邪」為例，疼痛時會伴隨冰冷感，疼痛位置是固定的，溫度變冷時疼痛就會加重。\n\n因為淋雨、環境太濕，濕氣入侵體內後也會造成全身疼痛，伴隨其他症狀如：肢體沉重，頭脹、頭部像裹著一團毛巾一樣、惡寒發熱、皮膚麻木、感覺遲鈍...等等。\n\n所以因為梅雨季節、颱風天或是種種原因淋到雨，或是游泳、洗頭、三溫暖...等等，之後都要吹乾頭髮與身體，否則某一天開始就會出現這種全身怪痛！\n\n三、經絡瘀阻\n\n經絡就像是人體的河流，隔一陣子就要清理疏通一下，讓河流暢通，否則長久下來就會出現許多垃圾淤積。可是，現代人根本不知道什麼是經絡，所以一輩子也沒清理計畫，時間久了經絡氣血瘀積太多垃圾，就會開始疼痛。\n\n只要哪一條經絡氣血瘀阻，哪一條經絡就會出現疼痛，現代人最常瘀阻的經絡，就是脾經、膀胱經與膽經，如果把人體經絡穴道圖打開，查看這三條經走的路線，會發現：「這不就是全身痛嗎？」\n\n某條經絡不通時，就會在該經絡出現疼痛\n\n一條經絡阻塞時，只要針對該經絡長期拍打、刮痧、拔罐、推拿或按摩，經絡氣血自然就會疏通，這是不需要找醫生的，也是最簡單的養生法！\n\n要印證經絡與疼痛的關係很容易，大家都可以自行實驗。雲端中醫某會員曾經分享一個案例，他的親戚在某年夏天，電風扇就直直吹在小腿膽經處，竟然吹到睡著了，醒來之後已經是5小時之後，從此小腿疼痛了20年，只要天氣一冷就會發作。\n\n四、肝氣鬱結\n\n中醫認為「肝藏血」、「肝主筋」，現代人生活緊張、工作經常不順利、長期過勞，很容易造成肝氣鬱結，體內的氣血運行不暢，臟腑功能失調，運用經絡檢測觀察後發現，最容易出現肝經實證、脾經與膀胱經虛證，這是最容易出現全身關節與肌肉痛的經絡型態。\n\n這種經絡型態的人，經常會心情鬱悶、晚上失眠、食慾不佳、口渴、口乾等症狀，經常會出現各種腸胃不舒服症狀。長期下來出現疲倦、無力、聲音低微、瘦弱或過度肥胖現象。\n\n上面提到的濕氣，在這種長期體內脾虛的人身上更容易出現，這是因為體內脾臟運化水的能力不足所造成，因此也會出現全身痛。\n\n五、脾虛、氣血兩虛\n\n中醫認為「女子以血為本」，女性月經來潮、妊娠與生產，都會使體內陰血產生虧虛，經脈氣血不足，無法濡養筋骨，最後造成全身疼痛。這足以解釋為什麼女性比男性容易出現纖維肌痛症，類風濕關節炎的女性發病率也高於男性。\n\n運用經絡檢測大量在女性身上發現脾經與腎經虛證的現象，也可以印證這個事實。因此女性必須經常運用中醫的概念來養血，這是現代醫學所缺失的知識領域。\n\n氣血兩虛是過去千年來，多數中醫師最習慣出現的辨證推論，而「八珍湯」是過去千年來中醫師的最愛，因為多數疾病只要補氣血之後，就會明顯改善。而這種原因造成的全身痛，最適合補氣補血。[@post:388]\n\n六、陽虛體質(腎陽虛)\n\n中醫認為腎是先天的根本，藏精而主骨，脾是後天的根本，是體內產生氣血之根源，與肌肉四肢有密切關聯。而上面提到，運用經絡檢測大量在女性身上發現脾經與腎經虛證的現象，這就是女性容易出現纖維肌痛症的主要原因。\n\n腎虛常常是因為體內太寒所造成，從大量經絡數據發現，腎經虛證時經常伴隨膽經與胃經虛證，尤其是女性更容易出現這種經絡型態，因此多數女性手腳冰冷、經常感到疲勞。\n\n女性容易出現全身痛的經絡型態\n\n某會員就分享，幾年前他遇到一位全身疼痛的西方女性，一輩子沒吃過中藥。他當時幫他進行經絡檢測，就是出現膽經、胃經與腎經虛證。他當場以「四逆湯」科學中藥讓她服用，這位女性竟然說全身都感到麻麻的，有細微的感覺在運作，沒多久之後所有疼痛都瞬間消失了！",
+      "etiology_zh": "",
       "western_pathology_zh": "現代醫學稱將全身性的疼痛定義出一個名詞，稱之為「纖維肌痛症」（Fibromyalgia），這是一種很難讓人理解且神秘的疼痛病症，患者常抱怨身體到處在痛，經常做了一堆檢查也找不出原因。\n\n患者全身出現廣泛性疼痛，肌肉組織並沒有出現病理改變。這種疼痛經常合併許多其他症狀，例如：認知障礙、慢性疲勞綜合症、憂鬱、焦慮、睡眠障礙、疲倦無力、頭痛、顳顎關節痛、手腳麻痛、大腸激躁症、健忘、無法專心、經痛...等等。\n\n由於此病的原因不明，也沒有辦法以特定的檢查方法來確診。女性比男性多，好發於30-40歲女性，因此常有人說這是「公主病」。現代醫學推斷這可能與營養素缺乏有關，例如：缺乏鎂、硒、牛磺酸、褪黑激素、超氧化物雙效酶...等等。\n\n此病不但原因不明，在治療上採用一般止痛藥治療的效果也不佳。由於患者經常出現焦慮或憂鬱症，因而許多醫生將此症視為精神疾病，因此有不少治療精神病藥物被拿來治療此病。\n\n像這種原因不明，也不知道如何治療的疾病，其實最適合從中醫下手，因為中醫理論中提供了現代醫學所沒有的分析層面。",
       "tcm_patterns": [
         {
@@ -13902,7 +13878,7 @@
         "rf.fibromyalgia.legacy02",
         "rf.fibromyalgia.legacy03"
       ],
-      "etiology_en": "Widespread body pain has been documented in Chinese medicine for two millennia — the Shanghan Lun records terms like \"body ache\" (身疼/身體痛), and Zhubing Yuanhou Lun describes wind in the skin causing all-over pain \"as if drawn or pricked.\" Later TCM organized this as bi syndrome (痹證) — wind, cold, damp and heat pathogens obstructing the channels and impairing qi-blood flow, producing widespread aching, numbness, heaviness and restricted movement. The source record's meridian-measurement observations link fibromyalgia to several recurring patterns: (1) residual wind-cold after incompletely resolved common cold, leaving chronic bladder- and gallbladder-channel deficiency; (2) wind-cold-damp invasion (heavier, migratory or fixed-cold pain depending on which pathogen dominates); (3) channel stagnation from years of unaddressed qi-blood blockage, most often in the spleen, bladder and gallbladder channels; (4) liver qi stagnation from chronic stress, showing liver-channel excess with spleen/bladder-channel deficiency; (5) spleen deficiency with qi-blood deficiency, disproportionately observed in women (linked to menstruation/pregnancy/childbirth blood loss) and offered as a partial explanation for fibromyalgia's female predominance; (6) kidney-yang deficiency, also more common in women in the record's data, often co-occurring with gallbladder- and stomach-channel deficiency.",
+      "etiology_en": "",
       "western_pathology_en": "Modern medicine defines this widespread, hard-to-explain pain pattern as fibromyalgia — patients report pain \"everywhere\" despite extensive normal workups, with no pathological change in muscle tissue itself. It frequently co-occurs with cognitive difficulty, chronic fatigue syndrome, depression, anxiety, sleep disturbance, headache, TMJ pain, limb numbness/tingling, IBS, poor memory/concentration and dysmenorrhea. Cause is unknown and there is no specific confirmatory test; it is more common in women aged 30-40 (colloquially called \"princess disease\" in some contexts). Proposed contributing factors include deficiencies in magnesium, selenium, taurine, melatonin and superoxide dismutase. Standard analgesics are often ineffective, and because anxiety/depression frequently co-occur, psychiatric medications are commonly used — the record frames this symptom-of-unknown-cause profile as particularly suited to a complementary TCM channel-differentiation approach.",
       "risk_factors_zh": [
         {
@@ -14008,7 +13984,21 @@
         "acupuncture_scope_en": [
           "AcuTing OS Disease Knowledge Research Pack — Batch I Autoimmune/MSK/Derm/Genetic (compiled from NIAMS clinical materials)"
         ]
-      }
+      },
+      "import_artifacts": [
+        {
+          "original_field": "etiology_zh",
+          "text": "全身痛，這種症狀在千年前就已經有了，漢朝時的《傷寒論》中就提到有「身疼」、「身體痛」等等名稱記載。《諸病派候論．風疾諸侯》提到：「風在於皮膚，淫淫躍躍，若畫若刺，一身盡痛…」，可見古人就體驗過這種疼痛。\n\n後代中醫廣泛提到所謂的「痹證」的概念，這就是從風、寒、濕、熱等外邪侵襲人體，閉阻經絡而導致氣血運行不暢的病證，而全身痛與這些原因密切相關！\n\n這種痹證會造成全身性的肌肉、筋骨、關節等部位出現酸痛、麻木、沉重、屈伸不利，甚至關節腫大灼熱等等現象，因此全身酸痛離不開這個範疇。\n\n由於風、寒、濕、熱這些外邪完全無法運用現代科技印證，經絡氣血這些概念，所以當然無法被檢查出來。中醫將全身痛區分為以下幾種證候：\n\n一、外感風寒後遺症\n\n中醫提到的表症，最常指的就是「外感風寒」這種外感，許多人在感冒的時候都會首先感到全身骨節疼痛、惡寒發熱、鼻塞流涕、喉嚨痛、咳嗽...等等。\n\n要印證這種全身痛其實很容易，只要在冷氣房裡面不穿衣服，待到全身發抖之後就很容易就可以印證。然而，這種原本感冒才有的症狀，竟然會在平時也會出現，合理的推斷是，某些人的傷寒感冒就從來沒真正康復過，因此遺留下來這種全身風寒疼痛。\n\n由於寒氣屬「陰」，會侵蝕體內的陽氣，因此感冒風寒長期遺留在體內的訊息，如果運用經絡檢測時，最容易遺留在「膀胱經」與「膽經」虛證，而成為一種長期的體質現象。\n\n感冒後遺症留下來的經絡體質現象\n\n由於膽經與胃經連動性高，因此最後就會變成腳三陽經虛證的型態，有些人連手三陽經也會同時能量不足！某位會員曾經幫一位纖維肌痛症的朋友進行經絡檢測，就是發現她的這兩條經絡能量明顯低下！\n\n二、外感風寒濕邪氣\n\n黃帝內經提到 :「風寒濕三氣雜至，合而為痹也。」除了上面的風寒，再加上濕氣就更容易出現全身疼痛。以「風邪」為例，特點是沒有特定疼痛的位置，早上時頭痛，下午腰痛。以「寒邪」為例，疼痛時會伴隨冰冷感，疼痛位置是固定的，溫度變冷時疼痛就會加重。\n\n因為淋雨、環境太濕，濕氣入侵體內後也會造成全身疼痛，伴隨其他症狀如：肢體沉重，頭脹、頭部像裹著一團毛巾一樣、惡寒發熱、皮膚麻木、感覺遲鈍...等等。\n\n所以因為梅雨季節、颱風天或是種種原因淋到雨，或是游泳、洗頭、三溫暖...等等，之後都要吹乾頭髮與身體，否則某一天開始就會出現這種全身怪痛！\n\n三、經絡瘀阻\n\n經絡就像是人體的河流，隔一陣子就要清理疏通一下，讓河流暢通，否則長久下來就會出現許多垃圾淤積。可是，現代人根本不知道什麼是經絡，所以一輩子也沒清理計畫，時間久了經絡氣血瘀積太多垃圾，就會開始疼痛。\n\n只要哪一條經絡氣血瘀阻，哪一條經絡就會出現疼痛，現代人最常瘀阻的經絡，就是脾經、膀胱經與膽經，如果把人體經絡穴道圖打開，查看這三條經走的路線，會發現：「這不就是全身痛嗎？」\n\n某條經絡不通時，就會在該經絡出現疼痛\n\n一條經絡阻塞時，只要針對該經絡長期拍打、刮痧、拔罐、推拿或按摩，經絡氣血自然就會疏通，這是不需要找醫生的，也是最簡單的養生法！\n\n要印證經絡與疼痛的關係很容易，大家都可以自行實驗。雲端中醫某會員曾經分享一個案例，他的親戚在某年夏天，電風扇就直直吹在小腿膽經處，竟然吹到睡著了，醒來之後已經是5小時之後，從此小腿疼痛了20年，只要天氣一冷就會發作。\n\n四、肝氣鬱結\n\n中醫認為「肝藏血」、「肝主筋」，現代人生活緊張、工作經常不順利、長期過勞，很容易造成肝氣鬱結，體內的氣血運行不暢，臟腑功能失調，運用經絡檢測觀察後發現，最容易出現肝經實證、脾經與膀胱經虛證，這是最容易出現全身關節與肌肉痛的經絡型態。\n\n這種經絡型態的人，經常會心情鬱悶、晚上失眠、食慾不佳、口渴、口乾等症狀，經常會出現各種腸胃不舒服症狀。長期下來出現疲倦、無力、聲音低微、瘦弱或過度肥胖現象。\n\n上面提到的濕氣，在這種長期體內脾虛的人身上更容易出現，這是因為體內脾臟運化水的能力不足所造成，因此也會出現全身痛。\n\n五、脾虛、氣血兩虛\n\n中醫認為「女子以血為本」，女性月經來潮、妊娠與生產，都會使體內陰血產生虧虛，經脈氣血不足，無法濡養筋骨，最後造成全身疼痛。這足以解釋為什麼女性比男性容易出現纖維肌痛症，類風濕關節炎的女性發病率也高於男性。\n\n運用經絡檢測大量在女性身上發現脾經與腎經虛證的現象，也可以印證這個事實。因此女性必須經常運用中醫的概念來養血，這是現代醫學所缺失的知識領域。\n\n氣血兩虛是過去千年來，多數中醫師最習慣出現的辨證推論，而「八珍湯」是過去千年來中醫師的最愛，因為多數疾病只要補氣血之後，就會明顯改善。而這種原因造成的全身痛，最適合補氣補血。[@post:388]\n\n六、陽虛體質(腎陽虛)\n\n中醫認為腎是先天的根本，藏精而主骨，脾是後天的根本，是體內產生氣血之根源，與肌肉四肢有密切關聯。而上面提到，運用經絡檢測大量在女性身上發現脾經與腎經虛證的現象，這就是女性容易出現纖維肌痛症的主要原因。\n\n腎虛常常是因為體內太寒所造成，從大量經絡數據發現，腎經虛證時經常伴隨膽經與胃經虛證，尤其是女性更容易出現這種經絡型態，因此多數女性手腳冰冷、經常感到疲勞。\n\n女性容易出現全身痛的經絡型態\n\n某會員就分享，幾年前他遇到一位全身疼痛的西方女性，一輩子沒吃過中藥。他當時幫他進行經絡檢測，就是出現膽經、胃經與腎經虛證。他當場以「四逆湯」科學中藥讓她服用，這位女性竟然說全身都感到麻麻的，有細微的感覺在運作，沒多久之後所有疼痛都瞬間消失了！",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-20): CloudTCM blog-narrative essay in the etiology_zh field of a fibromyalgia card. Contains minimizing/unsafe-practice advice (\"一條經絡阻塞時，只要針對該經絡長期拍打、刮痧、拔罐、推拿或按摩，經絡氣血自然就會疏通，這是不需要找醫生的\" — \"this is not something you need to see a doctor for\") that directly undercuts this same card's red_flags_zh[0] (\"發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病\"); an unlicensed-dosing miracle-cure anecdote (\"他當場以「四逆湯」科學中藥讓她服用...沒多久之後所有疼痛都瞬間消失了！\" — a member giving a stranger aconite-containing 四逆湯 on the spot, described as an instant total cure), which is advertising copy modeling unsafe practice, not sourced pathology content (constitution redline 9: do not present the uncertain as certain); a garbled classical-text title (\"《諸病派候論．風疾諸侯》\", correct form 《諸病源候論．風病諸候》); unsourced proprietary \"經絡檢測\" (meridian-measurement) statistical claims repeated throughout (\"從大量經絡數據發現\", \"運用經絡檢測觀察後發現\" etc.) with no field_sources entry beyond a CloudTCM URL; member anecdotes and orphaned image-caption fragments (blog rhetorical voice); and an ad-embed short-code \"[@post:388]\". etiology_en is a clean condensed translation that already omits every one of these passages and is left untouched. Reviewed line-by-line for salvageable fibromyalgia-pathology content per instruction (只加深不刪除): the six \"證候\" headings (外感風寒後遺症/外感風寒濕邪氣/經絡瘀阻/肝氣鬱結/脾虛氣血兩虛/陽虛體質) read structurally like a TCM pattern-differentiation list, but every substantive sentence under them is built on the unsourced 經絡檢測 claims or member anecdotes described above rather than standard TCM textual sourcing — no sentence separates cleanly from that framing, so nothing was salvaged in place; a proper sourced etiology (matching the frozen_shoulder/knee_osteoarthritis/lumbar_disc_herniation curriculum-sourced rebuild precedent) still needs to be authored, which is Ting's call per the eyes-on-2 ledger §3 priority table. Moved verbatim, not deleted (constitution redline 3: move-then-clear).",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "etiology_en",
+          "text": "Widespread body pain has been documented in Chinese medicine for two millennia — the Shanghan Lun records terms like \"body ache\" (身疼/身體痛), and Zhubing Yuanhou Lun describes wind in the skin causing all-over pain \"as if drawn or pricked.\" Later TCM organized this as bi syndrome (痹證) — wind, cold, damp and heat pathogens obstructing the channels and impairing qi-blood flow, producing widespread aching, numbness, heaviness and restricted movement. The source record's meridian-measurement observations link fibromyalgia to several recurring patterns: (1) residual wind-cold after incompletely resolved common cold, leaving chronic bladder- and gallbladder-channel deficiency; (2) wind-cold-damp invasion (heavier, migratory or fixed-cold pain depending on which pathogen dominates); (3) channel stagnation from years of unaddressed qi-blood blockage, most often in the spleen, bladder and gallbladder channels; (4) liver qi stagnation from chronic stress, showing liver-channel excess with spleen/bladder-channel deficiency; (5) spleen deficiency with qi-blood deficiency, disproportionately observed in women (linked to menstruation/pregnancy/childbirth blood loss) and offered as a partial explanation for fibromyalgia's female predominance; (6) kidney-yang deficiency, also more common in women in the record's data, often co-occurring with gallbladder- and stomach-channel deficiency.",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-20): condensed-translation counterpart of the etiology_zh CloudTCM blog essay being moved in the same batch. This English text is a clean condensed summary that already omits the unsafe-practice line, the unlicensed-dosing anecdote, and the garbled classical-text title present in the Chinese source (per the ledger, \"_en already omits these passages\") — but leaving it live while etiology_zh is vacated produces a C9 defect (_en filled but _zh empty) and an orphan translation of now-removed Chinese content. Kept paired with etiology_zh in import_artifacts rather than left as an orphan; this matches the cond.depression (F-02) precedent of vacating a bilingual pair together. Not itself unsafe or fabricated content — available here for reuse when a proper sourced fibromyalgia etiology (matching the frozen_shoulder/knee_osteoarthritis/lumbar_disc_herniation curriculum-sourced rebuild precedent) is authored.",
+          "moved_at": "2026-08-12"
+        }
+      ]
     },
     {
       "id": "cond.myofascial_pain",
