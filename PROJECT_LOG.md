@@ -1,5 +1,11 @@
 # 2026-08-12 Fable — Codex NO-GO 四項修復(3 HIGH + 1 MED),送覆測
 
+## 2026-08-12 CI 通知風暴根治(Fable,Ting 授權)
+
+- validate.yml 加 PR/branch-scoped concurrency(cancel-in-progress,同 PR 分組,跨 PR 不互取消)+ docs-only preflight(docs/**、*.md 不跑重 validators,workflow 仍出明確 success;no-PHI 無條件必跑;非 PR 事件全跑)。
+- PAT 已由 Ting 加 workflow scope;PR #59 重開,回到 exact-SHA CI gate 模式。
+- 剩餘唯一紅步:formula 4 holds(柴胡加龍骨牡蠣湯/烏梅丸/大建中湯/碧玉散),CONTENT_REQUEST 已交 SOL,不造假綠燈。
+
 - **HIGH-1 Merge 改寫/截短 finalized AVS**:`js/avs.js` 新增 `avsHistoryExtends()`(canonical payload 逐 snapshot 比對,唯一合法變化 finalized→superseded);`findImportHistoryViolations()` 接上(含「整診帶定稿 AVS 消失」= 截斷)。瀏覽器 actual-function 實測:rewrite/truncate/dropVisit 三攻擊各回 1 violation,clean 回 `[]`。
 - **HIGH-2 刪除毀歷史**:`deleteCurrentSoap()`/`deleteCurrentCase()` 對含 finalized/superseded AVS 的 Visit/Case 改為**拒絕**(原「警告後仍可刪」廢除);訊息導向更正版本或 Ting 授權災難流程。實測:兩 gate 攔截、資料 1/1 完好、confirm 未被觸達。
 - **HIGH-3 safety gate 繞過**:`canonicalizeForScan()`(entity 解碼到定點 + 全小寫)+ `findBannedTokens()`(原字串與剝 tag 兩變體、icd/cpt 邊界比對、patientCode 解碼後比對),引擎與 `validate-avs-library.js` 共用同一把尺;validator 新增掃 `clinic_profile.json` 病人可見欄位。Codex 全部 8 個 probe(PATTERN./Pattern./icd-10/case-folded code/跨tag拆字/雙層entity/clinic Metric./prompt Safety.)+ HTML-escaped patientCode 現在全數被抓,乾淨輸出零誤報。
