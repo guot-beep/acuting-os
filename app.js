@@ -9186,7 +9186,21 @@ function exportClinicalCases() {
   const pointer = localStorage.getItem("acuting-clinical-active");
   let payload;
   if (pointer === "v2") {
-    const staging = JSON.parse(localStorage.getItem(AcuTingClinicalStore.STAGING_KEY) || "null");
+    // SOL R-13:這裡過去是裸 JSON.parse。staging 一旦毀損就是未捕捉例外,
+    // 而 V8 的 parse 訊息內嵌一段原始輸入 —— 病歷內容會出現在 console /
+    // 任何 error 收集器裡。匯出是「資料出事時最想用」的功能,它自己不能
+    // 在出事時再洩一次。失敗訊息只報長度,不轉述內容(與 clinical-store
+    // 的 parseFailureDetail 同款規則)。
+    let staging = null;
+    const rawStaging = localStorage.getItem(AcuTingClinicalStore.STAGING_KEY);
+    if (rawStaging) {
+      try {
+        staging = JSON.parse(rawStaging);
+      } catch {
+        alert(`匯出中止:staging 存在但無法解析(${rawStaging.length} 字元,內容不轉述)。\n原始位元組仍在 localStorage,請先人工備份該鍵再修復。未產生任何檔案。`);
+        return;
+      }
+    }
     // Codex C2B-R4: fail closed — pointer=v2 with staging missing is a broken
     // world; exporting a fabricated {patients:[]} envelope would masquerade
     // as a valid backup and could later "restore" data loss.

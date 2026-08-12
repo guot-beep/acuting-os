@@ -40,6 +40,38 @@ source.split("\n").forEach((line, i) => {
   bare.push(`js/clinical-store.js:${i + 1}  ${line.trim().slice(0, 100)}`);
 });
 
+/* app.js 也要掃(SOL R-13)。
+ * 這支守衛原本只看 clinical-store.js,而 app.js 自己也解析病歷:載入的
+ * fallback 路徑、匯出的 staging、匯入的備份檔。R-13 就是漏在這裡 ——
+ * `exportClinicalCases()` 的裸 `JSON.parse` 未被捕捉,staging 毀損時
+ * parser 訊息(含內容前 10 字)直接進 console。
+ *
+ * 只挑「碰臨床儲存」的解析行,其餘(知識庫快取、草稿、穴位匯入)不在此列。
+ * 同樣逐行列出而不是用模式放行:模式會連未來新增的一起放行。 */
+const APP = path.join(ROOT, "app.js");
+const appSource = fs.readFileSync(APP, "utf8");
+const CLINICAL_PARSE_RE = /STAGING_KEY|CASE_STORAGE_KEY|reader\.result|acuting-clinical/;
+const APP_ALLOWED = [
+  // loadClinicalCases 的 store-missing fallback:catch 只報長度,不轉述內容
+  "const parsed = JSON.parse(saved);",
+  // exportClinicalCases:try/catch 就地改寫成長度訊息(R-13 修復)
+  "staging = JSON.parse(rawStaging);",
+  // importClinicalCases:最外層 catch 是固定文案,不含 e.message;
+  // 內層 restoreV2Envelope 的 failures 已經是零內容(見本檔行為檢查)
+  "let imported = JSON.parse(reader.result);",
+  // 穴位匯入 —— 不是臨床資料,只因為同樣用 reader.result 而被上面的網撈到。
+  // catch 是固定文案(「請確認 JSON 是穴位陣列格式」),不轉述 e.message。
+  // 留在網內而不是把 regex 改窄:網寬一點、例外逐條記錄,比縮小偵測面安全。
+  "const imported = JSON.parse(reader.result);",
+];
+appSource.split("\n").forEach((line, i) => {
+  if (!/JSON\.parse\(/.test(line)) return;
+  if (/^\s*\*/.test(line) || /^\s*\/\//.test(line)) return;
+  if (!CLINICAL_PARSE_RE.test(line)) return;          // 非臨床資料的解析不管
+  if (APP_ALLOWED.some((a) => line.includes(a))) return;
+  bare.push(`app.js:${i + 1}  ${line.trim().slice(0, 100)}`);
+});
+
 // --- 行為檢查:壞掉的病歷不得出現在錯誤訊息裡 ---
 /* fixture 是這個檢查的全部價值,所以先講清楚它為什麼長這樣。
  *
