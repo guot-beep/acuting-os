@@ -94,3 +94,25 @@ quarantine 擋 `curriculum/`、`data/imports/`、`docs/`、`clinical/`、`cases/
 1. 臨床一律用**同一個網址**開系統;本機開發約定 `http://localhost:<port>`。
 2. 瀏覽器書籤只設一個,開診機器不留第二個入口(app 已對 127.0.0.1 顯示紅色警示橫幅)。
 3. **開診前先按「立即匯出」做一份備份**(2026-08-11 演練中匯出功能就是救回全庫的路徑)。
+
+## CI 通知風暴處置(2026-08-12)
+
+7 天 165 次 validate / 145 次失敗(全同一組 formula holds,非新缺陷)——
+成因:多工作線高頻推送 codex/pattern-v2,PR #59 對每次 push 都跑 CI 且無
+concurrency。處置:**PR #59 已關閉**,改「candidate 檢查點」模式:
+1. 平時推送照常(push=備份紀律不變),不觸發 CI、不寄信。
+2. landing candidate 就緒時:重開 PR #59 → 對 exact SHA 跑一次 validate →
+   全綠才進上方 landing gate。重開指令:
+   `curl -X PATCH -H "Authorization: token <PAT>" https://api.github.com/repos/guot-beep/acuting-os/pulls/59 -d '{"state":"open"}'`
+3. 若重開後仍需高頻驗證,先由 Ting 經 GitHub 網頁編輯器為 validate.yml 加
+   concurrency/cancel-in-progress(PAT 無 workflow scope;網頁編輯器有
+   自動縮排陷阱,逐字最小差異+byte-level 驗證)。
+4. 另一半信件來自 **main 的 123 run / 103 失敗**——同一組 formula holds
+   也存在於 main 的內容線落版;4 個保留裁定後兩邊一起變綠。
+
+## Wrangler 上傳事件歸因(2026-08-12)
+
+08-11 的 5 個未 promote 版本(652-656):Ting 判斷「很有可能」是其他 AI
+工作線(Codex 雲端/Antigravity/其他 Claude)持金鑰所為,非入侵。
+維持觀察,不強制輪替;若日後出現無法歸因的上傳,立即輪替
+CLOUDFLARE_API_TOKEN 並複查 Workers 版本歷史。
