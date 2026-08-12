@@ -171,6 +171,19 @@ jobs:
       - name: formula card standard
         run: node scripts/validate-formula-standard.js
 
+      # FB-20 (docs/research_packs/FORMULA_EYESON_02.md F-32/F-41): composition-
+      # signature duplicate detector. NOTE tier on purpose — 4 unresolved
+      # exact-duplicate pairs exist in the live data today (see the script's
+      # own report), so `--blocking` would break this job over content
+      # nobody has fixed yet. This step runs informationally (always exits 0)
+      # so every CI run surfaces the count; it graduates to blocking (add
+      # `--blocking` below) once that count reaches 0 — mirroring how
+      # `validate-point-ids` moved out of the ratchet job into an
+      # unconditional failing step here on 2026-08-06. See the script header
+      # for the exact graduation condition.
+      - name: formula composition-signature duplicates (NOTE tier, see script header)
+        run: node scripts/validate-formula-composition-signatures.js --worklist
+
       - name: comparison standard
         run: node scripts/validate-comparison-standard.js
 
