@@ -167,8 +167,10 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
 - ✅ **#14 存檔靜默失敗**:可見錯誤列+紅框+捲動+輸入即清除(初版有 fieldset 選擇器 bug,實測抓到後修正)。
 - ✅ **#3 safetyFlags 切分**:改分號/換行,括號內逗號保留,實測通過。
 - ✅ **#15 metric 長標籤**:CG8 表格+glance 卡+visit-brief 差值列三處全改短標籤(後兩處是實測追出來的)。
+- ✅ **#2 picker 鍵盤流**:↑↓ 環繞導航、Enter 選取(無高亮取第一項)、Esc 只關選單不關對話框,活庫實測;附帶 #1 的 ARIA(combobox/listbox/option)。
+- ✅ **#16 用藥總帳低報**:縱貫頁+case 詳情總帳新增「未結構化(intake 原文)」區,DRY 病例的 lorazepam+魚油現身,活庫實測。
 - 🔄 **#5 藥卡批**:20 卡 DailyMed 批次進行中。
-- ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#16 用藥總帳低報、#2 picker 鍵盤流、#7 canonical origin 警示、#13(AVS v3 驗證)。
+- ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#7 canonical origin 警示(併入真機部署 SOP)、#13(AVS v3 驗證)、#4 對話框分區導航、#8 日期時區。
 
 ## 結論(給 Ting 的排序建議)
 
