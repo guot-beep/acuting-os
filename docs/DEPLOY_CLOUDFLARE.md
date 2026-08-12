@@ -116,3 +116,21 @@ concurrency。處置:**PR #59 已關閉**,改「candidate 檢查點」模式:
 工作線(Codex 雲端/Antigravity/其他 Claude)持金鑰所為,非入侵。
 維持觀察,不強制輪替;若日後出現無法歸因的上傳,立即輪替
 CLOUDFLARE_API_TOKEN 並複查 Workers 版本歷史。
+
+## CI 靜默死亡:PR 與 main 衝突時不會有任何 run(2026-08-12 實例)
+
+現象:推送照常、PR 顯示 open,但 `actions/runs` 一筆都不建立,約 3 小時無人察覺。
+機制:`pull_request` 事件的 workflow 跑在 GitHub 生成的 `refs/pull/N/merge` 上;
+**PR 與 base 衝突時這個 merge ref 造不出來,於是連 run 都不會建立** —— 沒有紅叉、
+沒有失敗信,看起來像「還沒跑」。在以 CI 為 landing gate 的專案裡,等於 gate 被
+無聲拔掉。
+
+- **偵測**:`GET /repos/guot-beep/acuting-os/pulls/59` 的 `mergeable_state`。
+  `dirty` = 衝突 = CI 已死;`unstable` = 可合併但檢查未過(正常);`clean` = 都綠。
+  landing 前的例行檢查要看這個欄位,不能只看最後一次 run 的顏色。
+- **觸發條件**:任何一條線推 main(內容線經 antigravity worktree 的 update.bat
+  推 main 是既有流程),而工作分支正好也改同一個檔。
+- **處置**:盡快把 main 整進工作分支。衝突解法不要盲選一邊 —— 對方若把轉換腳本
+  一起提交(2026-08-12 的 `scripts/fix-formula-boilerplate-gancao.js` 即是),
+  正解是「檔案取我方 + 重跑對方腳本」,再逐項驗證兩邊關鍵成果都在
+  (該次驗證:樣板句殘留 0 且方劑阻斷仍為 0、巢狀方中方仍在、public_safe 仍為 false)。
