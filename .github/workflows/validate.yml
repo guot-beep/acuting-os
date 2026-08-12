@@ -201,6 +201,12 @@ jobs:
       - name: AVS checkout engine E2E (incl. Codex NO-GO probes)
         run: node scripts/test-avs-checkout.js
 
+      # P1 pre-visit transport(2026-08-12,SOL/Codex transport audit HIGH-1/
+      # HIGH-2/MED-1 修復後納入 blocking):payload shape + §7 必要欄位 +
+      # metric 型別(禁 JS coercion)+ 自由文字長度上限。fixtures 全合成、零 PHI。
+      - name: P1 previsit payload transport standard
+        run: node scripts/validate-previsit-payload.js --self-test
+
       - name: whitespace / conflict markers
         run: git diff --check
 

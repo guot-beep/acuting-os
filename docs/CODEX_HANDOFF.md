@@ -13,6 +13,17 @@
 
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-12] Fable → Codex Dispatch — P1 transport 審查覆測(SOL pack)
+
+- **狀態**:SOL 的 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md` 四項(H1/H2/M1/M2)我已獨立重現並修復,現在請 Codex 依該 pack §8 六軸做**獨立對抗覆測**(對修復後 HEAD,非我列的數字)。
+- **修復對應**(行號以 HEAD 重查):H1 = `validatePrevisitPayload`+CLI 硬性要求 §7 三欄(formVersion===1/非空 payloadId/合法 filledAt);H2 = 兩 validator 改 `typeof==="number"&&isFinite`;M1 = 自由文字長度上限+控制字元清除;M2 = self-test 進 green job(blocking)、10 個對抗 fixtures。
+- **基線**(Codex 應獨立重跑不採信):`validate-previsit-payload.js --self-test` = `3 good + 14 bad ALL PASS`;瀏覽器 `validatePrevisitPayload` 對 H1/H2/M1 全 REJECT、合法 ACCEPT。
+- **重點找新繞過**:replay 閘現在 payloadId 恆真是否還有其他 identity 旁路;metric 型別是否有漏(如 `1e3`、極大數、`-0`);自由文字長度/控制字元清除的邊界;save-time 再驗(computeNumericOutcomeMetrics)與傳輸層是否一致。
+- **邊界**(pack §6):reviewer 不改 `app.js`/`previsit.html`/`scripts/validate-previsit-payload.js`/schema/AVS;找到缺陷回報我修,再一次 focused retest。真 store 讀寫 0/0。
+- **完成的定義**:pack §8 六軸 PASS/FAIL + §10 handoff 模板 + GO/NO-GO;GO 才解除 P1 PAUSE(GO 不等於授權部署,landing gate 仍在)。
+
+---
+
 ## [2026-08-12] Fable → Codex Dispatch — AVS v3 NO-GO 修復覆測(retest)
 
 - **修復對應**(全部在本 commit;行號請以 HEAD 重查):HIGH-1 = `js/avs.js` `avsHistoryExtends()` + `app.js` `findImportHistoryViolations()` AVS 段;HIGH-2 = `deleteCurrentSoap()`/`deleteCurrentCase()` 含定稿 AVS 即拒刪;HIGH-3 = `js/avs.js` `canonicalizeForScan()`/`findBannedTokens()`(引擎+validator 同尺,validator 加掃 clinic_profile);MED-1 = `checkAvsInvariants()` 補 id 唯一/version 序列規則。

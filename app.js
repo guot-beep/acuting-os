@@ -8384,18 +8384,20 @@ function validatePrevisitPayload(raw) {
   if (typeof data.patientCode !== "string") {
     return { error: "patientCode 必須是文字。patientCode must be a string." };
   }
-  // SOL P1 transport review(2026-08-12):formVersion/payloadId/filledAt 為
-  // v0 之後的必要欄位;缺 filledAt 或格式壞 → 整筆拒收(過期/重放規則靠它)。
-  // formVersion 目前只接受 1;缺 formVersion/payloadId 視為舊版頁面產物,
-  // 不直接拒收,由 import 端以人工覆核處理(見 pastePrevisitImport)。
-  if (data.formVersion !== undefined && data.formVersion !== 1) {
-    return { error: `formVersion ${JSON.stringify(data.formVersion)} 不支援,整筆拒收。Unsupported formVersion.` };
+  // SOL P1 transport audit HIGH-1(2026-08-12,Codex/SOL retest 修復):§7 明訂
+  // 現行 payload 必帶 formVersion===1 + 非空 payloadId + filledAt。舊版把
+  // formVersion/payloadId 做成「缺就當 legacy 放行」,而 pastePrevisitImport 的
+  // 重放閘是 `if (data.payloadId)` —— 缺 payloadId 的 payload 直接繞過整個重放
+  // 防護、可無限重匯。previsit.html 一律 emit 齊全欄位,且 P1 尚無真實 legacy
+  // 生產資料,故硬性要求三欄,不留 legacy 旁路(§7「不得為遷就程式而弱化」)。
+  if (data.formVersion !== 1) {
+    return { error: `formVersion 必須為 1(實際 ${JSON.stringify(data.formVersion)}),整筆拒收。formVersion must be exactly 1.` };
   }
-  if (data.filledAt !== undefined) {
-    const t = Date.parse(data.filledAt);
-    if (!Number.isFinite(t)) {
-      return { error: "filledAt 不是合法時間,整筆拒收。filledAt is not a valid timestamp." };
-    }
+  if (typeof data.payloadId !== "string" || !data.payloadId.trim()) {
+    return { error: "payloadId 缺少或為空,整筆拒收(重放防護所需)。payloadId missing/empty — required for replay protection." };
+  }
+  if (typeof data.filledAt !== "string" || !Number.isFinite(Date.parse(data.filledAt))) {
+    return { error: "filledAt 缺少或不是合法時間,整筆拒收。filledAt missing or not a valid timestamp." };
   }
   const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
   const checkedMetrics = [];
@@ -8411,10 +8413,16 @@ function validatePrevisitPayload(raw) {
     if (!getOutcomeMetricDef(m.metricId)) {
       return { error: `metricId「${m.metricId}」在 registry 找不到對應紀錄。metricId not found in the registry.` };
     }
-    const num = Number(m.valueNumber);
-    if (!Number.isFinite(num)) {
-      return { error: `${outcomeMetricShortLabel(m.metricId)} 的數值不是數字。valueNumber is not a number.` };
+    // SOL P1 transport audit HIGH-2(2026-08-12):禁止 JS 型別強制把壞值變成
+    // 臨床數值。舊版 Number(m.valueNumber) 讓 null/false/""/[]→0、true→1、
+    // "4"/" 4 "→4 全數通過 —— 對 min=0 的 metric,壞掉的 JSON 就靜默變成一筆
+    // 合法測量。傳輸層必須要求 JSON number 本尊(previsit.html 一律 emit 數字),
+    // 字串/布林/null/陣列一律拒。存檔端(computeNumericOutcomeMetrics)讀 DOM
+    // 字串是另一回事,那裡 Number() 合理,不在此規則內。
+    if (typeof m.valueNumber !== "number" || !Number.isFinite(m.valueNumber)) {
+      return { error: `${outcomeMetricShortLabel(m.metricId)} 的數值必須是 JSON 數字(不接受字串/null/布林/空值),整筆拒收。valueNumber must be a JSON number.` };
     }
+    const num = m.valueNumber;
     const shapeOk = cfg.integer ? Number.isInteger(num) : true;
     const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
     if (!shapeOk || !rangeOk) {
@@ -8424,19 +8432,41 @@ function validatePrevisitPayload(raw) {
     }
     checkedMetrics.push({ metricId: m.metricId, valueNumber: num });
   }
+  // SOL P1 transport audit MED-1(2026-08-12):自由文字邊界。
+  //   1. 只接受字串(非字串欄位不 String()-強制成圖表文字,直接視為缺欄)。
+  //   2. 長度上限:超過即整筆拒收,擋「巨量 payload 凍結 QR/import/render」。
+  //   3. 清除 C0 控制字元(保留 \t\n)、DEL、Unicode bidi override —— 讓
+  //      import 後到達的文字是 deterministic 的可視文字(顯示端另有 escapeHtml
+  //      作 XSS 防線,兩者不互相取代)。
+  const textField = (val, max, label) => {
+    if (val === undefined || val === null) return { value: "" };
+    if (typeof val !== "string") return { value: "" };   // 非字串 = 當作沒填,不強制轉型
+    if (val.length > max) return { error: `${label} 超過長度上限(${max} 字),整筆拒收。${label} exceeds the ${max}-char limit.` };
+    const cleaned = val.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u202A-\u202E\u2066-\u2069]/g, "").trim();
+    return { value: cleaned };
+  };
+  const PV_MAX_PROSE = 5000, PV_MAX_REPORT = 2000;
+  const subj = textField(data.subjectiveText, PV_MAX_PROSE, "主訴自述 subjectiveText");
+  if (subj.error) return { error: subj.error };
+  const persp = textField(data.patientPerspective, PV_MAX_PROSE, "病人觀點 patientPerspective");
+  if (persp.error) return { error: persp.error };
+  const aeText = textField(data.aeSelfReport && data.aeSelfReport.text, PV_MAX_REPORT, "不良反應自述 aeSelfReport.text");
+  if (aeText.error) return { error: aeText.error };
+  const expText = textField(data.exposureSelfReport && data.exposureSelfReport.text, PV_MAX_REPORT, "暴露自述 exposureSelfReport.text");
+  if (expText.error) return { error: expText.error };
   return {
     data: {
       patientCode: data.patientCode,
-      payloadId: typeof data.payloadId === "string" ? data.payloadId : "",
-      filledAt: typeof data.filledAt === "string" ? data.filledAt : "",
+      payloadId: data.payloadId.trim(),
+      filledAt: data.filledAt,
       metrics: checkedMetrics,
-      subjectiveText: typeof data.subjectiveText === "string" ? data.subjectiveText.trim() : "",
-      patientPerspective: typeof data.patientPerspective === "string" ? data.patientPerspective.trim() : "",
+      subjectiveText: subj.value,
+      patientPerspective: persp.value,
       aeSelfReport: (data.aeSelfReport && typeof data.aeSelfReport === "object")
-        ? { any: !!data.aeSelfReport.any, text: String(data.aeSelfReport.text || "").trim() }
+        ? { any: !!data.aeSelfReport.any, text: aeText.value }
         : { any: false, text: "" },
       exposureSelfReport: (data.exposureSelfReport && typeof data.exposureSelfReport === "object")
-        ? { any: !!data.exposureSelfReport.any, text: String(data.exposureSelfReport.text || "").trim() }
+        ? { any: !!data.exposureSelfReport.any, text: expText.value }
         : { any: false, text: "" }
     }
   };

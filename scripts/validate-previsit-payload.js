@@ -104,14 +104,18 @@ function validatePayload(rawText, config, registry) {
   if (typeof data.patientCode !== "string") {
     errors.push(`patientCode 必須是文字（實際型別："${typeof data.patientCode}"）。patientCode must be a string (got type: "${typeof data.patientCode}").`);
   }
-  // SOL P1 transport review(2026-08-12):與 app.js validatePrevisitPayload
-  // 同步 —— formVersion 若存在只接受 1;filledAt 若存在必須可解析。
-  // (patientCode 硬比對/72h 過期/payloadId 重放屬 import 端規則,不在 shape 層。)
-  if (data.formVersion !== undefined && data.formVersion !== 1) {
-    errors.push(`formVersion ${JSON.stringify(data.formVersion)} 不支援。Unsupported formVersion.`);
+  // SOL P1 transport audit HIGH-1(2026-08-12):與 app.js validatePrevisitPayload
+  // 同步硬性要求 §7 三欄 —— formVersion===1、非空 payloadId、合法 filledAt。
+  // 舊版「缺就當 legacy 放行」在 import 端讓缺 payloadId 者繞過重放閘;此處
+  // shape 層一併堵死,兩個 validator 同尺。
+  if (data.formVersion !== 1) {
+    errors.push(`formVersion 必須為 1（實際 ${JSON.stringify(data.formVersion)}）。formVersion must be exactly 1.`);
   }
-  if (data.filledAt !== undefined && !Number.isFinite(Date.parse(data.filledAt))) {
-    errors.push("filledAt 不是合法時間。filledAt is not a valid timestamp.");
+  if (typeof data.payloadId !== "string" || !data.payloadId.trim()) {
+    errors.push("payloadId 缺少或為空（重放防護所需）。payloadId missing/empty — required for replay protection.");
+  }
+  if (typeof data.filledAt !== "string" || !Number.isFinite(Date.parse(data.filledAt))) {
+    errors.push("filledAt 缺少或不是合法時間。filledAt missing or not a valid timestamp.");
   }
 
   const rawMetrics = Array.isArray(data.metrics) ? data.metrics : [];
@@ -132,11 +136,14 @@ function validatePayload(rawText, config, registry) {
       errors.push(`metrics[${i}]：metricId「${m.metricId}」在 registry（data/clinical_cases/outcome_metrics.json）找不到對應紀錄。metricId not found in the registry.`);
       return;
     }
-    const num = Number(m.valueNumber);
-    if (!Number.isFinite(num)) {
-      errors.push(`metrics[${i}]（${shortLabel(registry.get(m.metricId), m.metricId)}）：valueNumber 不是數字（實際："${m.valueNumber}"）。valueNumber is not a number (got: "${m.valueNumber}").`);
+    // SOL P1 transport audit HIGH-2(2026-08-12):JSON number 本尊,禁 coercion。
+    // Number(null/false/""/[]) → 0、Number(true) → 1、Number("4") → 4 都會讓
+    // 壞值靜默變成臨床測量。傳輸層要求真數字。
+    if (typeof m.valueNumber !== "number" || !Number.isFinite(m.valueNumber)) {
+      errors.push(`metrics[${i}]（${shortLabel(registry.get(m.metricId), m.metricId)}）：valueNumber 必須是 JSON 數字（不接受字串/null/布林/空值，實際型別 "${typeof m.valueNumber}"）。valueNumber must be a JSON number.`);
       return;
     }
+    const num = m.valueNumber;
     const shapeOk = cfg.integer ? Number.isInteger(num) : true;
     const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
     if (!shapeOk || !rangeOk) {
@@ -145,6 +152,19 @@ function validatePayload(rawText, config, registry) {
       errors.push(`metrics[${i}]（${shortLabel(registry.get(m.metricId), m.metricId)}）：須為 ${rangeText} 的${shapeText}（實際：${m.valueNumber}）。Must be a ${shapeText} in range ${rangeText} (got: ${m.valueNumber}).`);
     }
   });
+
+  // SOL P1 transport audit MED-1(2026-08-12):自由文字長度上限(與 app.js 同尺)
+  // —— 擋巨量 payload。字串以外的欄位視為缺欄,不強制轉型。
+  const PV_MAX_PROSE = 5000, PV_MAX_REPORT = 2000;
+  const lenCheck = (val, max, label) => {
+    if (typeof val === "string" && val.length > max) {
+      errors.push(`${label} 超過長度上限（${max} 字，實際 ${val.length}）。${label} exceeds the ${max}-char limit.`);
+    }
+  };
+  lenCheck(data.subjectiveText, PV_MAX_PROSE, "subjectiveText");
+  lenCheck(data.patientPerspective, PV_MAX_PROSE, "patientPerspective");
+  lenCheck(data.aeSelfReport && data.aeSelfReport.text, PV_MAX_REPORT, "aeSelfReport.text");
+  lenCheck(data.exposureSelfReport && data.exposureSelfReport.text, PV_MAX_REPORT, "exposureSelfReport.text");
 
   return { ok: errors.length === 0, errors };
 }
@@ -158,6 +178,8 @@ function validatePayload(rawText, config, registry) {
 function selfTestFixtures() {
   const good1 = {
     kind: "acuting-previsit-v1",
+    formVersion: 1,
+    payloadId: "pv-good1-abc123",
     patientCode: "P-2026-001",
     filledAt: "2026-08-11T09:00:00.000Z",
     metrics: [
@@ -178,6 +200,8 @@ function selfTestFixtures() {
     // still validate, since "not measured" is always legal (contract §2:
     // every metric question may be left blank).
     kind: "acuting-previsit-v1",
+    formVersion: 1,
+    payloadId: "pv-good2-def456",
     patientCode: "P-min-002",
     filledAt: "2026-08-11T09:05:00.000Z",
     metrics: [],
@@ -190,6 +214,8 @@ function selfTestFixtures() {
     // Partial metrics + a decimal sleep_hours value (non-integer allowed
     // for that one metric specifically) + unicode patientCode.
     kind: "acuting-previsit-v1",
+    formVersion: 1,
+    payloadId: "pv-good3-ghi789",
     patientCode: "病人代碼-三號",
     filledAt: "2026-08-11T09:10:00.000Z",
     metrics: [
@@ -213,6 +239,24 @@ function selfTestFixtures() {
   };
   const bad4PatientCodeType = { ...good2, patientCode: 12345 };
 
+  // SOL P1 transport audit adversarial regression (2026-08-12). One bad
+  // fixture per new blocking rule so a future weakening is caught in CI.
+  const stripId = (p) => { const q = { ...p }; delete q.payloadId; return q; };  // HIGH-1 replay-bypass source
+  const bad5NoPayloadId = stripId(good2);
+  const bad6NoFormVersion = (() => { const q = { ...good2 }; delete q.formVersion; return q; })();
+  const bad7FormVersionString = { ...good2, formVersion: "1" };
+  // HIGH-2 coercion set: for metric.pain_score (min 0) each of these coerces to
+  // a finite number under the OLD Number() rule and must now be rejected.
+  const coerce = (v) => ({ ...good2, metrics: [{ metricId: "metric.pain_score", valueNumber: v }] });
+  const bad8MetricNull = coerce(null);
+  const bad9MetricFalse = coerce(false);
+  const bad10MetricTrue = coerce(true);
+  const bad11MetricEmptyStr = coerce("");
+  const bad12MetricNumStr = coerce("4");
+  const bad13MetricArray = coerce([]);
+  // MED-1 oversized free text (>5000 prose limit).
+  const bad14HugeText = { ...good2, subjectiveText: "x".repeat(5001) };
+
   return {
     good: [
       { name: "good1_full_payload", payload: good1 },
@@ -223,7 +267,17 @@ function selfTestFixtures() {
       { name: "bad1_wrong_kind", payload: bad1WrongKind },
       { name: "bad2_metric_not_whitelisted", payload: bad2UnknownMetric },
       { name: "bad3_value_out_of_range", payload: bad3OutOfRange },
-      { name: "bad4_patientCode_wrong_type", payload: bad4PatientCodeType }
+      { name: "bad4_patientCode_wrong_type", payload: bad4PatientCodeType },
+      { name: "bad5_no_payloadId_replay_bypass", payload: bad5NoPayloadId },
+      { name: "bad6_no_formVersion", payload: bad6NoFormVersion },
+      { name: "bad7_formVersion_string", payload: bad7FormVersionString },
+      { name: "bad8_metric_null_coercion", payload: bad8MetricNull },
+      { name: "bad9_metric_false_coercion", payload: bad9MetricFalse },
+      { name: "bad10_metric_true_coercion", payload: bad10MetricTrue },
+      { name: "bad11_metric_empty_string_coercion", payload: bad11MetricEmptyStr },
+      { name: "bad12_metric_numeric_string", payload: bad12MetricNumStr },
+      { name: "bad13_metric_array_coercion", payload: bad13MetricArray },
+      { name: "bad14_oversized_free_text", payload: bad14HugeText }
     ]
   };
 }

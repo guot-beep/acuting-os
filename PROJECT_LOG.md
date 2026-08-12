@@ -1,3 +1,13 @@
+# 2026-08-12 Fable — P1 transport 審查:SOL 兩 HIGH + 兩 MED 全實跑重現並修復
+
+- **背景**:SOL 交付 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md`(reviewer=Codex)。H1/H2 落在 Claude 所有權檔案,我先獨立重現(SOL 要求 falsify)再修 —— 四項全部真的可利用。
+- **H1(replay/version bypass,HIGH)**:缺 `payloadId` 的 payload 過 shape validation,而 import 端重放閘是 `if (data.payloadId)` → 無 payloadId 完全跳過重放防護,可無限重匯;缺/字串 `formVersion` 也被當 legacy 放行。實跑:`h1_no_identity.json` 舊版 PASS。修:`validatePrevisitPayload` 與 CLI 同步硬性要求 §7 三欄(`formVersion===1`、非空 `payloadId`、合法 `filledAt`),不留 legacy 旁路(previsit.html 一律 emit 齊全、P1 無真 legacy 資料)。
+- **H2(metric coercion,HIGH clinical integrity)**:`Number(m.valueNumber)` 讓 `null/false/""/[]`→0、`true`→1、`"4"/" 4 "`→4 全通過 —— 對 min=0 的 metric,壞 JSON 靜默變成合法測量。實跑:7 種壞值中 6 種舊版 PASS(只 `{}`→NaN 被擋)。修:傳輸層要求 `typeof==="number" && isFinite`,兩 validator 同尺;存檔端讀 DOM 字串不在此規則。
+- **M1(自由文字邊界,MED)**:加長度上限(prose 5000 / report 2000,超過整筆拒)+ 清 C0 控制字元(留 \t\n)/DEL/bidi override;非字串欄位不 String()-強制。顯示端 escapeHtml 不變(兩者不互相取代)。
+- **M2(CI 覆蓋,MED)**:`validate-previsit-payload.js --self-test` 過去 0 次進 CI;good fixtures 缺 formVersion/payloadId 把 legacy bypass 編碼成合格。修:good 補齊三欄;新增 10 個對抗 bad fixtures(no-payloadId/no-formVersion/formVersion-string/6 種 coercion/oversized);self-test `3 good + 14 bad ALL PASS`;步驟加入 green job(blocking)。
+- **驗證**:CLI self-test 全綠;瀏覽器對真 `validatePrevisitPayload` 走 H1/H2/M1 全 REJECT、合法 payload ACCEPT、bidi 字元剝除;原始攻擊檔全部改判 reject;AVS 59/59、invariants/PHI/ratchet/content-junk 全綠;真 store 讀寫 0/0(瀏覽器 fixture 已清)。修復點:`app.js`、`scripts/validate-previsit-payload.js`、`.github/workflows/validate.yml`。
+- **下一步**:Codex 依 SOL pack §8 六軸做獨立對抗覆測(對修復後 HEAD),確認無新繞過 → P1 GO 才解除 PAUSE。§6:reviewer 不改產品碼,找到缺陷回報我修。
+
 # 2026-08-12 Codex — AVS scanner retest#2 深層 entity 改判 RESOLVED
 
 - exact blob：pull 後 `codex/pattern-v2@4beab0e`；`3e0ebc1` 為祖先，三個 scanner 相關 blob 自修復 commit 後無 drift。
