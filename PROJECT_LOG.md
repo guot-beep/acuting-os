@@ -1,3 +1,65 @@
+# 2026-08-12 Fable — 最後一條擱淺的 conditions 支線:`claude/vigilant-visvesvaraya-e20261` 併入 pattern-v2
+
+- **做了什麼**:sibling(5 commits、merge-base `ca2c45b`、擱淺 ~12 小時)的 CloudTCM 部落格殘留
+  清理併入 `codex/cloudtcm-cleanup-integration`(自 `codex/pattern-v2` `e0b223e` 開)。
+  沿用上一批的 **record/field 級三方合併**(base/ours/theirs 三份 JSON,腳本可重跑),
+  不做行級 resolve。`sources`/`import_artifacts` 聯集、`field_sources` 物件合併 ours 勝、
+  其餘 per-member 三方且 ours 勝真衝突;**雙語成對整對一起決**(半套防護觸發 1 次)。
+- **theirs 動了 30 筆記錄 / 32 個欄位**,逐欄結果:**19 個兩邊同值**(兩線各自清空同一段
+  部落格文,合併後結果相同)、**10 個 ours 勝**(integration 已用具名來源改寫該欄)、
+  **3 個取 theirs**(ours 未動:`cond.irregular_menstruation` etiology_zh+_en 清空封存、
+  `cond.asthma` etiology_zh 剝除 `[@post:43]`/`[@post:182]`)。
+- **封存記錄不重複**:theirs 帶 30 筆 `import_artifacts`,**26 筆判為同段原文已封存**
+  (兩邊複本差在 HTML entity `&hellip;`/`…` 與 OCR 修字,用正規化+分段抽樣比對,不是逐字)、
+  **2 筆判為假搬家紀錄**(該段文字在合併後仍活在 canonical 欄位:`cond.migraine`
+  western_pathology_zh、`cond.chronic_gastritis` etiology_zh)、**實際新增 2 筆**
+  (irregular_menstruation 的 zh/en)。30 筆記錄合計 55 筆封存記錄,**逐筆比對 0 組重複原文**。
+  (`cond.palpitations` 有兩筆 765 字看似重複,實為本卡原文 + 從 heart_failure 誤植處搬回的
+  複本,差一個 OCR 字且 `reason` 寫明 —— 兩份不同痕跡,不合併。)
+- **canonical 欄位殘留 embed 標記 6 → 0**(`node` 全檔掃 `\[@[a-z_]+:\d+\]`,只算非
+  import_artifacts/tcm_patterns 欄位)。其中 2 個在「ours 判定該文可留」的欄位裡,
+  照 sibling 對可留文的做法**只剝標記不動內文**(各 −7 字元:migraine 726→719、
+  chronic_gastritis 3035→3028)。封存文裡的 37 個標記原樣保留(痕跡不改寫)。
+- **數字 before→after**(before = `codex/pattern-v2` `e0b223e`,不是 sibling 的世界):
+  `validate-condition-standard` 阻擋缺陷 **4 → 4**(全部是 C5,`cond.tension_headache`
+  western_pathology、`cond.migraine` western_pathology、`cond.chronic_cough`);記錄數 **505 → 505**;
+  `audit-cr010` full_detail **143 → 143**、partial 100、skeleton 262;
+  `validate-content-junk` 控制字元 **8 → 8**(凍結上限 8,PASS)。
+  **ratchet 未 `--update`** —— 合併後與已 commit 的 baseline(conditions 4 / patterns 0)持平,
+  沒有變好就不動它;**sibling 那筆 `conditions 512 / patterns 220` 的 baseline 沒有併入**,
+  那是 C4 42、C10 70 兩批落地之前的世界。
+- **驗證**(可重現):`node scripts/build-data.js`、`node scripts/validate-condition-standard.js`、
+  `node scripts/audit-cr010-condition-detail-maturity.js`、CI green job 28 支腳本全跑
+  (`validate-relations` / `validate-content-junk` / `check-validation-ratchet` 含在內)**0 支失敗**。
+  抽查:`cond.breech_presentation` acupoint_protocols `[]` + 5 筆封存、`cond.depression`
+  etiology zh/en 皆空 + 4 筆封存、`cond.thin_endometrium` 同樣 + 2 筆封存、
+  `cond.bppv` 持續性眩暈紅旗 `urgency_level: urgent`。
+- **驗證器**:併入 sibling 的 **C13 import_artifacts 形狀檢查**,但改成**兩套鍵名任一套齊全即通過**
+  —— sibling 原版只認 `{original_field, text, reason, moved_at}`,直接套用會把資料裡 160 筆
+  另一套鍵名判成缺陷(等於逼人改寫 provenance)。引入時 0 缺陷,反向測試(注入 3 種壞形狀)3 個都攔到。
+  模板 §3.5.5 同步補上 C13 與「同段文字不封存兩次」兩條。sibling 另寫的 §3.6 規格段未併入:
+  integration 的 §3.5.5 已涵蓋同一件事且更完整(含兩套鍵名裁定),重寫會變成兩份會分岔的規格。
+- **留給 Ting 決的兩處內容分歧**(這次一律保留 integration 的值,沒有替 Ting 決定):
+  1. `cond.migraine.western_pathology_zh`(719 字):sibling 判定整段是部落格敘事要搬走,
+     integration 判定可留並修過一個亂碼字。目前該欄仍是 CloudTCM 口吻(孤兒圖說「偏頭痛是相當
+     難以被治癒的疼痛」、結尾推銷句),而且**沒有 `_en`,正是現存 4 個 C5 缺陷之一**——
+     若採 sibling 的搬走,C5 會從 4 降到 3。
+  2. `cond.chronic_gastritis.etiology_zh`(3028 字):sibling 判定要搬走,integration 不但保留
+     還做了 1744 字的 `_en` 翻譯並標了來源。兩邊都留 = 半套(C9),所以整對取 ours。
+  另:`cond.asthma.etiology_zh` 保留文的章節序號本身有問題(一、二、二、三、四、六,缺五)
+  且夾著孤兒圖說,`cond.fibromyalgia`(2)與 `cond.depression`(4)有 6 個 `field_sources` 鍵
+  指著已清空的欄位 —— 這幾筆是既有狀態、不是這次合併造成的,**沒有動**,列出來備查。
+- **Commits**:見 `codex/cloudtcm-cleanup-integration`(未 push)。
+
+# 2026-08-11 Claude — CloudTCM 部落格殘留清理:30 筆 cond.* 的 embed 標記與敘事搬遷(sibling branch 原始回報,數字為併入前的世界)
+
+- **做了什麼**:`condition_canon_shortlist.json` 裡 30 筆記錄、32 個欄位含 CloudTCM embed 標記(`[@ad:1]`×30、`[@post:N]`×6、`[@formula:N]`×2,共 40 個——派工單只列出 `[@ad/post:N]`,寬 regex 另抓到 2 個 `[@formula:N]`)。逐篇讀完全部 23 篇 distinct 全文後分類:**30 個欄位整段搬進 `import_artifacts`**(會員案例、經絡檢測行銷、修辭口吻;其中多筆根本放錯病症——月經不調通論重複於 7 筆 GYN 卡、氣喘文在 post_covid、心律不整文在 heart_failure、失眠文在 circadian_disorder、癃閉文在 recurrent_uti),**2 個欄位僅剝標記保留原文**(cond.asthma、cond.palpitations 的證候辨證內容有實質價值)。搬移共保存 98,011 字元,零刪除。
+- **Schema 前置**:派工單引用的模板 §3.5.5 `import_artifacts` **並不存在**(§3.5 是 category 枚舉),資料裡也沒有先例;依 C8 註明的 schema-change 程序補齊:模板 §3.6 先寫規格(`{original_field, text, reason, moved_at}`,單向、永不渲染),validator 再核准欄位並加 C13 shape check(引入時 0 缺陷)。
+- **數字 before→after**:validate-condition-standard defects `553 → 512`(C10 `189→176`,C5 `292→264`;每一步與預測相符:batch1 −13、batch2 −28)。canonical 欄位殘留 embed 標記 `40 → 0`(寬 regex `\[@[a-z_]+:\d+\]` 全檔重掃證實)。ratchet baseline `577 → 512` 已 `--update` 鎖定(同時鎖入本 branch 先前工作的 patterns `220 → 0`)。
+- **驗證**(可重現指令):`node scripts/build-data.js`、`node scripts/validate-condition-standard.js --json`(defects 512)、`node scripts/check-validation-ratchet.js`(PASS no regressions)、`validate-content-junk`(PASS)、`validate-relations`／`validate-data`(PASS,警告皆既存)、`git diff --check`(乾淨)。App 以 dev-server 實開:bundle 內 heart_failure etiology 空+1 artifact、asthma 原文無標記,console 零錯誤;`import_artifacts` 無任何 UI 引用(依規格永不渲染)。
+- **來源缺口/已知未解**:28 筆記錄的 etiology_zh(及 circadian 的 western_pathology_zh、migraine×2 的 western_pathology_zh)現為誠實空缺,**待具名來源回填**——這是 fill 線的下一批。cond.asthma／cond.palpitations 保留文仍是 CloudTCM 口吻(含「鐵三角」私有概念與孤兒圖說),留待內容精修。`validate-content-junk` 只掃陣列,仍不會抓 prose 裡的 embed 標記——已全數清零,但防再犯需另議是否加檢查(scripts 改動需 Ting 點頭,本批僅動 validate-condition-standard 落地 schema)。
+- **Commits**:`2be7b60`(schema)、`0ad416c`(batch1 GYN 7筆)、`3ce2675`(batch2 23筆)、`12d29e3`(ratchet baseline)。
+
 # 2026-08-12 Fable — 撿回擱淺的 C4 紅旗支線:`claude/confident-hugle-2cf3f3` 併入 pattern-v2
 
 - **做了什麼**:sibling branch `claude/confident-hugle-2cf3f3`(13 commits、merge-base `ca2c45b`)

@@ -49,8 +49,13 @@
  *      valid value while absent is not. Also refuses a co_management that tells
  *      a patient to stop a medication without routing it to the prescriber —
  *      that is scope of practice, not just safety.
+ *   C13 import_artifacts entry not structured (§3.5.5). The relocation target
+ *      for import junk moved out of canonical fields: every entry must say what
+ *      moved, from where, and why. Accepts either of the two key shapes now in
+ *      the data — see §3.5.5; unifying them rewrites provenance and is Ting's
+ *      call.
  *
- * C11 and C12 check SHAPE, not presence. Requiring both on all 150 records
+ * C11, C12 and C13 check SHAPE, not presence. Requiring both on all 150 records
  * would add 300 defects to a layer already carrying 396, and a gate that fails
  * every run is a gate that gets switched off.
  *
@@ -332,6 +337,37 @@ for (const rec of scope) {
     }
   }
 
+  // C13 import_artifacts shape (§3.5.5). Archived junk only earns its keep as
+  // provenance if every entry says WHAT moved, FROM WHERE, and WHY — a bare text
+  // blob is the junk relocated, not documented.
+  //
+  // Two key shapes exist on purpose (§3.5.5 warning box): the two lines that
+  // invented this field on 2026-08-11 named the keys differently, and the merge
+  // kept both verbatim because rewriting an archive entry rewrites provenance.
+  // So this gate accepts EITHER shape and refuses to normalise them — unifying
+  // the keys is Ting's call, not the validator's.
+  if (!isEmpty(rec.import_artifacts)) {
+    if (!Array.isArray(rec.import_artifacts)) {
+      add("C13", "import_artifacts must be an array of archive entries (§3.5.5)");
+    } else {
+      rec.import_artifacts.forEach((a, i) => {
+        if (!a || typeof a !== "object" || Array.isArray(a)) {
+          add("C13", `import_artifacts[${i}] must be an object (§3.5.5)`);
+          return;
+        }
+        const shapeA = ["original_field", "text", "reason", "moved_at"];
+        const shapeB = ["field", "text", "reason", "archived_at"];
+        const missA = shapeA.filter((k) => isEmpty(a[k]));
+        const missB = shapeB.filter((k) => isEmpty(a[k]));
+        if (missA.length && missB.length) {
+          const shape = missA.length <= missB.length ? shapeA : shapeB;
+          const miss = missA.length <= missB.length ? missA : missB;
+          add("C13", `import_artifacts[${i}] missing ${miss.join(", ")} — needs {${shape.join(", ")}} (§3.5.5)`);
+        }
+      });
+    }
+  }
+
   // C5 / C9 bilingual twins
   for (const [zh, en] of BILINGUAL_PAIRS) {
     const hasZh = !isEmpty(rec[zh]);
@@ -406,6 +442,7 @@ const CODE_LABEL = {
   C10: "content shared verbatim across records (boilerplate/misfiled)",
   C11: "risk_factors shape (§5.5)",
   C12: "acupuncture_scope shape (§5.6)",
+  C13: "import_artifacts entry shape (§3.5.5)",
 };
 
 const cleanRecords = scope.filter((r) => !defects.some((d) => d.id === r.id)).length;
