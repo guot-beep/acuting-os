@@ -174,7 +174,10 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
   verified_exact,off-label 誠實標註(生殖藥標籤禁忌孕婦=核准適應症的人為產物,
   已文件化防誤讀);新增 2 個 drugsystem + 15 class + 9 target 待 Ting 過目
   (各帶 note_zh);dry-clinic 演練用的 lorazepam 現在查得到了。
-- ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#7 canonical origin 警示(併入真機部署 SOP)、#13(AVS v3 驗證)、#4 對話框分區導航、#8 日期時區。
+- ✅ **#7 origin 警示**:127.0.0.1 開啟即紅色警示橫幅(兩 origin 實測),
+  DEPLOY_CLOUDFLARE.md 加「單一入口網址+開診前先匯出」SOP。
+- ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#13(AVS v3 驗證)、
+  #4 對話框分區導航、#8 日期時區。9/5 必修僅剩 #12。
 
 ## 結論(給 Ting 的排序建議)
 
