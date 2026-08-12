@@ -134,3 +134,28 @@ CLOUDFLARE_API_TOKEN 並複查 Workers 版本歷史。
   一起提交(2026-08-12 的 `scripts/fix-formula-boilerplate-gancao.js` 即是),
   正解是「檔案取我方 + 重跑對方腳本」,再逐項驗證兩邊關鍵成果都在
   (該次驗證:樣板句殘留 0 且方劑阻斷仍為 0、巢狀方中方仍在、public_safe 仍為 false)。
+
+## docs-only preflight 的副作用:最新的綠燈不等於驗證過的綠燈
+
+2026-08-12 加了 docs-only preflight(只改 `docs/**` 或 `*.md` 時略過重驗證器)之後,
+那種 run 的結論仍是 `success`,但 green job 是 `skipped`。於是:
+
+> **「最新一次 run 是綠的」不再等於「程式碼與資料是綠的」。**
+
+當天就踩到:一筆條件資料合併漏了 `node scripts/build-data.js`,
+generated-data 關卡在 `057ee9e` 變紅;緊接著的 docs-only 推送顯示綠燈,
+差點讓那筆紅的被蓋過去。
+
+**檢查方式**(不要只看最近一次 run 的顏色):
+
+```bash
+export GH_TOKEN=$(printf "protocol=https\nhost=github.com\n" | git credential fill | grep ^password= | cut -d= -f2)
+node scripts/ci-last-real-run.js            # 預設 codex/pattern-v2
+node scripts/ci-last-real-run.js --branch main
+```
+
+它會略過所有 green job 被 skip 的 run,只報告最近一次真正跑過完整驗證的結果,
+並列出其後有幾次是 docs-only。green job 若被改名,腳本會**大聲失敗**而不是無聲通過。
+
+landing 前的檢查清單因此有兩項,不是一項:`mergeable_state` 必須是 `clean`
+(見上方章節),**且** `ci-last-real-run.js` 必須 exit 0。
