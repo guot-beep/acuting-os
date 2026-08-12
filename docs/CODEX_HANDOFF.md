@@ -1,3 +1,7 @@
+## [2026-08-12] CI workflow: concurrency + docs-only preflight live
+
+- validate.yml(d7bc3dc):同 PR 分組 cancel-in-progress;docs-only(docs/**+*.md)只跑 preflight+no-PHI,有明確 success;code/data/scripts/workflow 變更全跑。PR #59 重開。audit 對 exact SHA 跑 CI 時注意:docs-only push 的 run 沒跑重 validators 是設計,不是漏跑 —— 認 preflight 的 run_full 輸出。
+
 # AcuTing OS - Agent Handoff Log
 
 ## [2026-08-12] Fable → Codex Dispatch — AVS v3 NO-GO 修復覆測(retest)
