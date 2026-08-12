@@ -1944,7 +1944,7 @@ function renderHomeQuickGrid() {
   }
   tiles.push(
     { href: "#ws/cases", eyebrow: en ? "Cases" : "病例", title: String(clinicalCases.length), sub: en ? "clinical records" : "臨床病歷" },
-    { href: "#ws/acu", eyebrow: en ? "Acupoints" : "穴位", title: String(standardChannelAudit?.expectedTotal || 361), sub: en ? "standard channel" : "標準經穴" },
+    { href: "#ws/acu", eyebrow: en ? "Acupoints" : "穴位", title: String(getDataQualityAudit().total), sub: en ? "channel + Tung + auricular + extra" : "經穴+董氏+耳穴+奇穴" },
     { href: "#ws/formula", eyebrow: en ? "Formulas" : "方劑", title: String(count("formulas")), sub: en ? "with composition" : "含組成加減" },
     { href: "#ws/herb", eyebrow: en ? "Herbs" : "中藥", title: String(count("herbs")), sub: en ? "materia medica" : "本草" },
     { href: "#ws/condition", eyebrow: en ? "Conditions" : "病症", title: String(count("conditionCanon")), sub: en ? "western canon" : "西醫病名庫" },
@@ -1980,9 +1980,9 @@ function renderKnowledgeLineMatrix() {
   // 「有內容」對穴位 = source-checked(比 mere presence 嚴格,見
   // renderDatabaseHealth 的 verified % 註解 — 同一把尺)。
   const acu = getDataQualityAudit();
-  if (standardChannelAudit?.expectedTotal) {
-    const n = standardChannelAudit.expectedTotal, c = acu.sourceCheckedStandard;
-    lines.push({ zh: "標準穴位", en: "Acupoints", n, c, pct: Math.round((c / n) * 100), note: "分數 = 已源審核(非僅有卡)" });
+  // 2026-08-11 Ting 指正:穴位線是全集(經穴+董氏+耳穴+經外奇穴),不只 361。
+  if (acu.total) {
+    lines.push({ zh: "穴位(全集)", en: "Acupoints (all)", n: acu.total, c: acu.sourceCheckedStandard, pct: Math.round((acu.sourceCheckedStandard / acu.total) * 100), note: "經穴+董氏+耳穴+奇穴;分數 = 標準經穴已源審核數" });
   }
   push("中藥", "Herbs", recs("herbs"), "category", "");
   push("方劑", "Formulas", recs("formulas"), "composition", "");
