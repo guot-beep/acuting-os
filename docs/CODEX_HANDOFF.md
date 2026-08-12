@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-11] Codex Handoff — R14 exact-SHA `6e97118`, landing/P4 still paused
+
+- **Gate**：Clinical core與 `8da3089` blob-identical；六軸維持 `6/6 PASS`，official pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。
+- **Regression**：K=`10/2/0`；invariants=`3/3/2/5/3 · 0`；Phase E=`12`；interactions=`0`；syntax=`2/2`；build/generated unchanged；main ancestry=`0`；真 store=`0/0`。
+- **Exact-SHA CI**：覆核時 PR #59 product head=`6e971182b183ecd1e28cb54fe794f64ad0c9f36d`；run `31553075645`=`failure`。no-PHI／ratchet success；green job在 formula standard step失敗，後續 K/R1–R8 skipped。
+- **Blocker**：本機 formula validator同為 exit `1`／`10 defects`（truncation `2`、action-count `2`、parity `2`、unresolved refs `3`、roles `1`）。
+- **Next**：不重審 Clinical；formula gate清除後對新 exact SHA取得三 jobs success，再發布 R14 final GO並進 P4 rehearsal。此前不發布真機 checklist。
+
+---
+
 ## [2026-08-11] Codex Handoff — R14 Clinical GO, landing/P4 paused by exact-SHA CI
 
 - **Six axes**：Patient↔Case/revision/restore/race/rollback/pointer=`6/6 PASS`；H1 independent=`10/10`；official pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。不開新 Clinical 審計輪。

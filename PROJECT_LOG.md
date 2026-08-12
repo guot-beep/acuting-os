@@ -1,3 +1,11 @@
+# 2026-08-11 Codex — R14 exact-SHA refresh（Clinical GO / landing PAUSE）
+
+- **SHA／六軸**：candidate `6e97118`；Clinical core與 `8da3089`相同，六軸=`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。
+- **回歸**：K `10/2/0`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；build/generated unchanged；ancestry `0`；真 store `0/0`。
+- **CI**：run `31553075645`=`failure`；no-PHI/ratchet success，formula standard step失敗，後續 K/R1–R8 skipped。
+- **Blocker**：formula validator exit `1`／`10 defects`=`2 truncation + 2 actions + 2 parity + 3 refs + 1 roles`；未滿足 exact-SHA全綠，P4維持 PAUSE。
+- **下一步**：formula owner修正或 Ting明改 policy；新 exact SHA三 jobs success後直接發布 R14 final GO並進 P4 rehearsal，不另開 Clinical 輪次。
+
 # 2026-08-11 Codex — R14 convergence（Clinical GO / landing PAUSE）
 
 - **六軸**：Patient↔Case/revision/restore/race/rollback/pointer=`6/6 PASS`；H1 independent=`10/10`；official pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。

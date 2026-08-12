@@ -6,6 +6,18 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+## 2026-08-11 Codex C2B-R14 exact-SHA refresh — `6e97118`
+
+### 裁決：Clinical 六軸維持 GO；landing/P4 維持 PAUSE
+
+- **Exact candidate**：覆核時 origin／PR #59 product head=`6e971182b183ecd1e28cb54fe794f64ad0c9f36d`。Clinical core（`js/clinical-store.js`、pointer/runtime rehearsal）與已覆核 `8da3089` blob-identical；`app.js` 差異僅穴位全集統計 UI，不觸及 Clinical seam；其後新增的 Patient Workspace commit只有設計文件。
+- **Clinical regression**：pointer/runtime/C2b=`31/31 · 60/60 · 30/30 PASS`；K-series=`10 files / 2 refs / 0 issues`；invariants=`3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E=`12 PASS`；interactions failures=`0`；syntax=`2/2`；build/generated unchanged；main ancestry exit=`0`。真 clinical store 讀／寫=`0/0`。
+- **Exact-SHA CI**：[run 31553075645](https://github.com/guot-beep/acuting-os/actions/runs/31553075645)=`failure`。no-PHI與defect-ratchet jobs success；green job steps 4–20 success，step 21 formula card standard failure，steps 22–27（含 K、R1–R8、diff-check）skipped。
+- **本機同內容重現**：latest formula parity batch使非阻斷 coverage移動，但 `node scripts/validate-formula-standard.js` 仍 exit=`1`／`10 blocking defects`：composition truncation `2`、actions over-limit `2`、bilingual parity `2`、unresolved composition refs `3`、missing 君臣佐使 `1`。
+- **收斂判定**：沒有新的 Clinical blocker，也不開新 Clinical 輪次；但佇列要求 exact-SHA CI 全綠，故不發布 R14 final GO／P4 checklist。formula owner 修正上述 10 項（或 Ting 明改 landing policy）後，對新 exact SHA 重跑三 jobs；全 success 才直接進 P4 rehearsal。
+
+---
+
 ## 2026-08-11 Codex C2B-R14 收斂覆測 — Clinical endpoint `8da3089`, exact candidate `7b23d0c`
 
 ### 裁決：Clinical 六軸 GO；landing/P4 PAUSE（exact-SHA CI 紅）
