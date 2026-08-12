@@ -4,6 +4,7 @@
 
 - validate.yml 加 PR/branch-scoped concurrency(cancel-in-progress,同 PR 分組,跨 PR 不互取消)+ docs-only preflight(docs/**、*.md 不跑重 validators,workflow 仍出明確 success;no-PHI 無條件必跑;非 PR 事件全跑)。
 - PAT 已由 Ting 加 workflow scope;PR #59 重開,回到 exact-SHA CI gate 模式。
+- 驗收:concurrency 取消 ✅(2674601/d7bc3dc cancelled);docs-only 分類初版誤用 PR 累積 diff,已改 push 增量(event.before)。
 - 剩餘唯一紅步:formula 4 holds(柴胡加龍骨牡蠣湯/烏梅丸/大建中湯/碧玉散),CONTENT_REQUEST 已交 SOL,不造假綠燈。
 
 - **HIGH-1 Merge 改寫/截短 finalized AVS**:`js/avs.js` 新增 `avsHistoryExtends()`(canonical payload 逐 snapshot 比對,唯一合法變化 finalized→superseded);`findImportHistoryViolations()` 接上(含「整診帶定稿 AVS 消失」= 截斷)。瀏覽器 actual-function 實測:rewrite/truncate/dropVisit 三攻擊各回 1 violation,clean 回 `[]`。
