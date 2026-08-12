@@ -1,8 +1,14 @@
 # Codex Task Queue
 
-## 佇列(SOL 2026-08-12 路由:Clinical 不開新輪,轉 transport + landing)
+## 佇列(SOL 2026-08-12 晚間裁定:Clinical 只做 regression smoke,不再開全輪)
 
-依序:R15 seam 增量覆核(小)→ **P1 transport audit** → **branch landing audit**。
+收斂順序(SOL):方劑 4 清零 → 新 exact SHA 全 CI → P1 transport audit →
+Clinical P4 rehearsal → branch landing audit → main landing → production smoke。
+
+**Codex 下一個任務 = P1 transport adversarial audit**(可立即開跑,不等方劑 4;
+方劑 4 在 Ting/SOL 內容線)。R15 seam 覆核降級:併入 transport audit 的
+Clinical regression smoke(六軸只 smoke,W1 bridge + R15 v1 fail-loud 的
+diff 快查,不另開輪)。
 
 ### P1 transport audit(SOL 指定高價值)
 對象:previsit.html payload(formVersion/payloadId/filledAt)+ app.js
