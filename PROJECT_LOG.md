@@ -1,3 +1,11 @@
+# 2026-08-12 Claude — ge_gen_tang／xie_xin_tang 禁忌欄假中文修復 + du_qi_wan actions 碎片重譯
+
+- **做了什麼**（承 2026-08-11 批的掃描發現①⑤，共 3 筆）：`formula.ge_gen_tang` 的 `contraindications_zh`/`cautions_zh` 各 4 條（3 條英文原文照抄 + 1 條「禁用於 measles toxin…」半翻譯）逐條譯中。`formula.xie_xin_tang` 同兩欄各 3 條：2 條「禁用於 +英文」譯中；第 3 條 cisplatin/irinotecan 研究句**不是禁忌**，依「先搬再改」從 4 個陣列（contra/cautions × en/zh）搬到新建的 `modern_research_en`/`_zh`（各 1 條，對齊）。`formula.du_qi_wan` 的 `actions_zh` 斷句碎片「緩解」「於肺氣」依 `actions_en` 重譯為「止咳平喘」「收斂肺氣」。三筆均補 `field_sources` 註記。
+- **數字 before→after**：`_zh` 含英文句／半翻譯條目：ge_gen_tang `8/8 → 0/8`（兩欄各 4）；xie_xin_tang `6/6 → 0/4`（搬走 1 條後兩欄各 2）；du_qi_wan actions_zh 碎片 `2/3 → 0/3`。所有 `_zh` 長度 = `_en` 長度。三張卡已在 app 逐條目視核對。
+- **⚠️ 發現 UI 迴歸（已開獨立任務，本批不動 js/**）**：`js/knowledge.js` 的 `formulaModernSection` 自 commit `66d3e72`（2026-08-07）起沒有呼叫點——`applications_zh`、`modern_research_zh`、「相關病名與證型」在方劑卡上**全部不渲染**。搬過去的 cisplatin 研究句資料在、卡上看不到，等 UI 修復。
+- **驗證**：`build-data` PASS（formulas 224）；`validate-formula-standard` 88 blocking（與改前基線相同，零回歸；ge_gen_tang 只剩既有 F6 composition_suspect）；`validate-content-junk` PASS；`check-validation-ratchet` PASS 無回歸；`git diff --check` 乾淨。
+- **已知未解／下一步**：掃描發現②（`modern_applications_zh`/`treats_zh` 11,412 格現代病名未翻，197 筆）、③（`_zh` 純英文 321 格）、④（兩筆 id 損毀 `"formula."`：都气丸、复元活血汤，重複 id）仍未動，等派工；formulaModernSection 迴歸另案處理。
+
 # 2026-08-11 Claude — formula.du_qi_wan 禁忌欄假中文修復 + 全庫隱形英文掃描
 
 - **做了什麼**：`formula.du_qi_wan` 的 `contraindications_zh` 與 `cautions_zh` 原樣抄了英文原文（2 條）加半翻譯「禁用於 Yang Deficiency.」（1 條），逐條譯回中文並補 `field_sources.contraindications_zh` / `cautions_zh` 註記。只動這一筆；`_en` 陣列一字未改。

@@ -6185,6 +6185,12 @@
         ],
         "pattern_indications_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+        ],
+        "contraindications_zh": [
+          "譯自本筆 contraindications_en（2026-08-12 修復：原 _zh 陣列 3 條為英文原文誤植、1 條為半翻譯「禁用於 measles toxin…」）"
+        ],
+        "cautions_zh": [
+          "譯自本筆 cautions_en（2026-08-12 修復：原 _zh 陣列 3 條為英文原文誤植、1 條為半翻譯「禁用於 measles toxin…」）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/260",
@@ -6225,16 +6231,16 @@
         "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
       ],
       "cautions_zh": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
-        "禁用於 measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
-        "Use caution for those with warm pathogen Heat diseases.",
-        "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
+        "疹已均勻透發者，本方恐致表虛",
+        "麻疹毒邪內陷者禁用（症見氣短、呼吸粗重、咳嗽、喘鳴）",
+        "溫邪熱病者慎用",
+        "麻疹已透而熱邪內陷，見呼吸急促、氣喘、咳嗽者禁用"
       ],
       "contraindications_zh": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
-        "禁用於 measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
-        "Use caution for those with warm pathogen Heat diseases.",
-        "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
+        "疹已均勻透發者，本方恐致表虛",
+        "麻疹毒邪內陷者禁用（症見氣短、呼吸粗重、咳嗽、喘鳴）",
+        "溫邪熱病者慎用",
+        "麻疹已透而熱邪內陷，見呼吸急促、氣喘、咳嗽者禁用"
       ]
     },
     {
@@ -10361,6 +10367,18 @@
         ],
         "pattern_indications_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+        ],
+        "contraindications_zh": [
+          "譯自本筆 contraindications_en（2026-08-12 修復：原 _zh 為半翻譯「禁用於 +英文」；cisplatin/irinotecan 研究句非禁忌，已搬至 modern_research_en/zh）"
+        ],
+        "cautions_zh": [
+          "譯自本筆 cautions_en（2026-08-12 修復：同 contraindications_zh）"
+        ],
+        "modern_research_en": [
+          "自本筆 contraindications_en/cautions_en 錯層搬入（2026-08-12；原始出處同 safety_source：American Dragon harvest 2026-07-23）"
+        ],
+        "modern_research_zh": [
+          "譯自本筆 modern_research_en（2026-08-12）"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -10386,23 +10404,25 @@
       "category_zh": "和解劑",
       "contraindications_en": [
         "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-        "Contraindicated for those with nausea and vomiting due to Yin Deficiency.",
-        "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+        "Contraindicated for those with nausea and vomiting due to Yin Deficiency."
       ],
       "cautions_en": [
         "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-        "Contraindicated for those with nausea and vomiting due to Yin Deficiency.",
-        "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+        "Contraindicated for those with nausea and vomiting due to Yin Deficiency."
       ],
       "cautions_zh": [
-        "禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-        "禁用於 nausea and vomiting due to Yin Deficiency.",
-        "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+        "氣滯、食積或痰熱內蘊所致痞滿者禁用",
+        "陰虛所致噁心嘔吐者禁用"
       ],
       "contraindications_zh": [
-        "禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-        "禁用於 nausea and vomiting due to Yin Deficiency.",
+        "氣滯、食積或痰熱內蘊所致痞滿者禁用",
+        "陰虛所致噁心嘔吐者禁用"
+      ],
+      "modern_research_en": [
         "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+      ],
+      "modern_research_zh": [
+        "順鉑（Platinol）與伊立替康（Camptosar）所致腹瀉，本方曾有效控制"
       ]
     },
     {
@@ -106170,9 +106190,9 @@
         }
       ],
       "actions_zh": [
-        "緩解",
+        "止咳平喘",
         "滋養腎陰",
-        "於肺氣"
+        "收斂肺氣"
       ],
       "actions_en": [
         "Relieves asthmatic cough",
@@ -106218,7 +106238,8 @@
         ],
         "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
         "actions_zh": [
-          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)",
+          "譯文修正 2026-08-12：原「緩解」「於肺氣」為斷句碎片，依本筆 actions_en 重譯"
         ],
         "pattern_indications_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
