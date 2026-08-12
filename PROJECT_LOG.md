@@ -1,3 +1,10 @@
+# 2026-08-12 Fable — P4 seam:PHI 洩漏(HIGH)與 F12b shape 繞過(MED)已修
+
+- **HIGH**:`JSON.parse` 的錯誤訊息內嵌原始輸入片段,而那些 throw 被 load 路徑丟進 alert、也被 W1 patient view 印到頁面 —— 壞掉的儲存內容直接顯示在畫面上。改為只報「key + 字元數」,內容一字不轉述。**四個內容解析點全修**(Codex 點名 2 個,我掃出另外 2 個:restore anchor、app.js fallback 解析)。storage 例外訊息未動(不含內容)。
+- **MED**:`arr()` 把單一物件包成一元素陣列,使 object-shaped `expanded_ingredients` 繞過 array 契約且 leaf 檢查照過。改為先驗型別再進迴圈;object/string 皆 blocking。
+- **驗證**:種入可辨識假 PHI 的壞 v1/v2 儲存 —— 兩條訊息**零 6 字元片段存活**,健康儲存仍正常載入;F12b 對 object 與 string 兩種 shape 皆 exit 1,`formulas.json` 逐位元還原(canonical 零變更)。全套:pointer 31/31、restore 65/65、C2b green、formula 0 blocking、P1 3+26、AVS 59/59、其餘全綠。
+- **commit** `17025f01`。retest 派工在 CODEX_HANDOFF 置頂(依 Codex 建議只重跑 31/31 + 65/65 + formula + 12 seam,不重開六軸)。P1 與 P4 皆維持 NO-GO 至 Codex 覆測。
+
 # 2026-08-12 Fable — P1 round 2:Codex 的 1 HIGH + 4 MED 全修,parity gate 改成行為證明
 
 - **HIGH-1** 原始 number token 失真(`9007199254740990.5`→`...990` 後仍在界內而放行):改驗 payload **原始文字**,每個 number token 必須無損往返。fixture 必須是 raw text —— 寫成物件字面量的話小數在 stringify 前就沒了。
