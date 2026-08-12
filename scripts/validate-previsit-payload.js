@@ -216,6 +216,23 @@ function selfTestFixtures() {
   // gone before JSON.stringify runs, so the validator would receive the
   // harmless truncated integer — this defect only exists in the payload's
   // source text, which is exactly why the check operates on that text.
+  // ---- SOL input-validation review (2026-08-12) permanent regression ----
+  // R-7: a payloadId of one ZWSP passed the required check (ZWSP is not JS
+  // whitespace so trim() keeps it), then the output sanitiser reduced it to
+  // "" — and app.js gates replay on `if (data.payloadId)`, so the whole
+  // replay protection was skipped. Identifiers are now grammar-checked.
+  const bad27ZwspOnlyPayloadId = { ...good2, payloadId: "\u200B" };
+  // R-6: invisibles that are NOT \p{Cf} survived the old stripper, so two
+  // visually identical ids were two different replay keys.
+  const bad28CgjInPayloadId = { ...good2, payloadId: "pv-ab\u034Fc" };
+  const bad29VariationSelectorInPatientCode = { ...good2, patientCode: "P-1\uFE0F" };
+  // R-3: the calendar date is real but the clock normalises to the next day,
+  // so the validator checked 8/11 while the freshness gate used 8/12.
+  const bad30Hour24 = { ...good2, filledAt: "2026-08-11T24:00:00.000Z" };
+  // R-9: `any` was !!coerced, so the string "false" became true; and a
+  // non-string subjectiveText was silently dropped, losing the patient's words.
+  const bad31StringFalseFlag = { ...good2, aeSelfReport: { any: "false", text: "無不適" } };
+  const bad32ObjectProse = { ...good2, subjectiveText: { text: "胸痛" } };
   const bad23FractionalTruncationRaw = JSON.stringify(good2).replace(
     '"metrics":[]',
     '"metrics":[{"metricId":"metric.sleep_hours","valueNumber":9007199254740990.5}]'
@@ -268,7 +285,13 @@ function selfTestFixtures() {
       { name: "bad23_fractional_token_truncated_by_parse", rawText: bad23FractionalTruncationRaw },
       { name: "bad24_exponent_form_save_would_reject", payload: bad24ExponentForm },
       { name: "bad25_iso_shape_but_impossible_date", payload: bad25ImpossibleDate },
-      { name: "bad26_iso_shape_but_month_13", payload: bad26Month13 }
+      { name: "bad26_iso_shape_but_month_13", payload: bad26Month13 },
+      { name: "bad27_zwsp_only_payloadId_skips_replay_gate", payload: bad27ZwspOnlyPayloadId },
+      { name: "bad28_combining_grapheme_joiner_in_payloadId", payload: bad28CgjInPayloadId },
+      { name: "bad29_variation_selector_in_patientCode", payload: bad29VariationSelectorInPatientCode },
+      { name: "bad30_hour_24_normalises_to_next_day", payload: bad30Hour24 },
+      { name: "bad31_string_false_coerced_to_true", payload: bad31StringFalseFlag },
+      { name: "bad32_object_prose_silently_dropped", payload: bad32ObjectProse }
     ]
   };
 }
@@ -421,10 +444,28 @@ function runSelfTest(config, registry) {
     const ok = out === text;
     allOk = allOk && ok;
     lines.push(`${ok ? "PASS" : "FAIL"} [control] prose keeps semantic ${name}${ok ? "" : ` — 病人原話被改寫成 ${JSON.stringify(out)}`}`);
-    const idOut = mod.stripIdentifierInvisibles(text);
-    const idOk = idOut !== text;
+    // SOL R-6/R-7/R-8:識別碼不再「剝除」而是「拒收」——「全部剝掉」做不到
+    // (U+034F、VS16 不是 Cf),而且先驗證後清洗會讓 payloadId 變成空字串、
+    // 讓 app 的 `if (data.payloadId)` 重放閘整段跳過。改用正面文法:
+    // 只准字母數字與少數標點,任何不可見字元自動不合法。
+    const idOk = !mod.isWellFormedIdentifier(text);
     allOk = allOk && idOk;
-    lines.push(`${idOk ? "PASS" : "FAIL"} [control] identifier still strips ${name}`);
+    lines.push(`${idOk ? "PASS" : "FAIL"} [control] identifier REJECTS ${name} (grammar, not stripping)`);
+  }
+  // SOL R-10:錯誤訊息不得回顯自由文字。malformed JSON 的 parser echo 上一輪
+  // 修掉了,但「合法 JSON、非法欄位」的訊息還在插入原始值 —— 貼錯剪貼簿而
+  // 內容剛好是合法 JSON 時,病人的字就從 alert 上出來。
+  const canary = "CANARY_PATIENT_PROSE_血尿";
+  const echoProbes = [
+    { name: "kind", payload: { ...selfTestFixtures().good.find((f) => f.name === "good2_minimal_payload").payload, kind: canary } },
+    { name: "metricId", payload: { ...selfTestFixtures().good.find((f) => f.name === "good2_minimal_payload").payload, metrics: [{ metricId: canary, valueNumber: 1 }] } },
+    { name: "filledAt", payload: { ...selfTestFixtures().good.find((f) => f.name === "good2_minimal_payload").payload, filledAt: canary } }
+  ];
+  for (const p of echoProbes) {
+    const res = validatePayload(JSON.stringify(p.payload), config, registry);
+    const leaked = (res.errors || []).some((e) => String(e).includes(canary));
+    allOk = allOk && !leaked;
+    lines.push(`${leaked ? "FAIL" : "PASS"} [no-echo] ${p.name} rejection does not quote the input back`);
   }
   const delegationProblems = checkAppDelegation();
   delegationProblems.forEach((p) => lines.push(`FAIL [parity] ${p}`));

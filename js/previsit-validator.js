@@ -64,8 +64,25 @@
   function stripControlChars(s) {
     return String(s).replace(PROSE_INVISIBLE_RE, "");
   }
-  function stripIdentifierInvisibles(s) {
-    return String(s).replace(IDENTIFIER_INVISIBLE_RE, "");
+  /* 識別碼文法(SOL R-6/R-7/R-8 修復)。
+   *
+   * 前一版用「剝掉不可見字元」處理 patientCode / payloadId,三個問題:
+   *   R-7 先驗證後清洗 —— `payloadId:"\u200B"` 通過必填(ZWSP 不是 JS
+   *       whitespace,trim 不掉),清洗後變成 "",而 app 的重放閘是
+   *       `if (data.payloadId)` → 空字串 falsy → **整個重放防護跳過**。
+   *   R-6 「全部剝掉」做不到 —— U+034F(CGJ)、U+FE0F(VS16)不是 Cf,
+   *       原樣留下,於是螢幕上一樣的 ID 在 Set 裡是兩個字串。
+   *   R-8 靜默改寫讓「逐字相等」的契約變成「正規化後相等」,
+   *       `P\u200B123` 會悄悄比對成 `P123`。
+   *
+   * 列舉不可見字元永遠追不完,所以改成**正面文法**:識別碼只能由字母、
+   * 數字與一小組標點組成,且必須以字母或數字開頭。CGJ、VS、ZWSP、ZWJ
+   * 全部不屬於 \p{L}/\p{N},自動被排除 —— 不需要知道它們的名字。
+   * 而且**不合法就拒收**,不再靜默修正:異常識別碼是要被看見的事件。
+   * 中文病歷代碼(病人代碼-三號)照樣通過,因為漢字是 \p{L}。 */
+  const IDENTIFIER_RE = /^[\p{L}\p{N}][\p{L}\p{N} \-_.#/]*$/u;
+  function isWellFormedIdentifier(v) {
+    return typeof v === "string" && IDENTIFIER_RE.test(v.trim()) && v.trim() === v.replace(/^\s+|\s+$/g, "");
   }
 
   /* 解析失敗描述:只給長度,絕不轉述內容(Opus 覆測 HIGH-1)。
@@ -119,7 +136,11 @@
     return bad;
   }
 
-  /* 傳輸/存檔十進位契約(Codex retest MED-1)。
+  /* 傳輸/存檔十進位契約(Codex retest MED-1;敘述經 SOL R-1 修正)。
+   * 注意這條檢查的是**解析後數值的字串形式**,不是原始 JSON 的寫法 ——
+   * 所以 raw `1e1` 會先變成 10 而通過,`1e-7` 則因為 String(v) 仍是 "1e-7"
+   * 而被擋。規則的真正意思是「傳輸後必須能無歧義地進存檔端的十進位路徑」,
+   * 不是「原始 JSON 禁用指數寫法」。
    * 存檔端 computeNumericOutcomeMetrics() 讀的是 DOM 字串,它的守則是
    * /^\d+(\.\d+)?$/ —— 指數形式一律拒。所以 0.0000001 這種合法極小值
    * 在傳輸層過關、預填成 "1e-7" 之後卻存不進去,兩層契約不一致。
@@ -132,9 +153,14 @@
    * ISO 外形正確不代表日期存在:"2026-02-31" 通過 regex,Date.parse 也給得出
    * 值(引擎正規化到 3 月),於是一個不存在的日子被正規化後送進 freshness 判斷。 */
   function isRealCalendarDate(iso) {
-    const m = /^(\d{4})-(\d{2})-(\d{2})T/.exec(String(iso));
+    // R-3:只驗年月日不夠。`2026-08-11T24:00:00Z` 的日期是真的,但引擎會
+    // 把它正規化成 8/12 —— validator 驗的是 8/11,72 小時 gate 用的卻是
+    // 8/12,而 confirm 畫面顯示的又是原始字串。時分秒一併驗。
+    const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/.exec(String(iso));
     if (!m) return false;
     const y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]);
+    const hh = Number(m[4]), mi = Number(m[5]), ss = Number(m[6] || 0);
+    if (hh > 23 || mi > 59 || ss > 59) return false;
     const dt = new Date(Date.UTC(y, mo - 1, d));
     return dt.getUTCFullYear() === y && dt.getUTCMonth() === mo - 1 && dt.getUTCDate() === d;
   }
@@ -181,25 +207,33 @@
     // 為止 data 裡的數字可能已經被 JSON.parse 靜默改寫過了。
     const lossy = lossyNumberTokens(rawText);
     if (lossy.length) {
-      return { ok: false, errors: [`payload 含精度會失真的數字 token(${lossy.slice(0, 3).map((t) => JSON.stringify(t)).join(", ")})—— 解析後的值與原始文字不同,整筆拒收。Payload contains number token(s) that do not survive JSON parsing losslessly.`], data: null };
+      return { ok: false, errors: [`payload 含 ${lossy.length} 個精度會失真的數字(解析後的值與原始文字不同),整筆拒收。Payload contains number token(s) that do not survive JSON parsing losslessly.`], data: null };
     }
 
     if (data.kind !== "acuting-previsit-v1") {
-      errors.push(`kind 欄位不是 "acuting-previsit-v1"(實際:${JSON.stringify(data.kind)})。kind is not "acuting-previsit-v1".`);
+      errors.push(`kind 欄位不是 "acuting-previsit-v1"(實際型別 ${typeof data.kind})。kind is not "acuting-previsit-v1".`);
     }
     if (typeof data.patientCode !== "string") {
       errors.push(`patientCode 必須是文字(實際型別:"${typeof data.patientCode}")。patientCode must be a string.`);
+    } else if (!isWellFormedIdentifier(data.patientCode)) {
+      // R-8:不靜默改寫。異常識別碼要拒收,否則「逐字相等」的硬規則會被
+      // 悄悄降級成「正規化後相等」。
+      errors.push("patientCode 含不允許的字元(只接受字母、數字與 - _ . # / 空格)。patientCode contains characters that are not allowed in an identifier.");
     }
     // §7:formVersion / payloadId / filledAt 三欄必帶(缺 payloadId 會繞過
     // import 端的重放閘 —— 那道閘是 `if (data.payloadId)`)。
     if (data.formVersion !== 1) {
-      errors.push(`formVersion 必須為 1(實際 ${JSON.stringify(data.formVersion)})。formVersion must be exactly 1.`);
+      errors.push(`formVersion 必須為 1(實際型別 ${typeof data.formVersion})。formVersion must be exactly 1.`);
     }
     if (typeof data.payloadId !== "string" || !data.payloadId.trim()) {
       errors.push("payloadId 缺少或為空(重放防護所需)。payloadId missing/empty — required for replay protection.");
+    } else if (!isWellFormedIdentifier(data.payloadId)) {
+      // R-7:文法檢查跑在「輸出正規化」之前,所以不可能出現「驗證時非空、
+      // 交出去卻是空字串」。只有不可見字元的 payloadId 在這裡就被擋下。
+      errors.push("payloadId 含不允許的字元(只接受字母、數字與 - _ . # / 空格)。payloadId contains characters that are not allowed in an identifier.");
     }
     if (typeof data.filledAt !== "string" || !ISO_8601_RE.test(data.filledAt) || !isRealCalendarDate(data.filledAt) || !Number.isFinite(Date.parse(data.filledAt))) {
-      errors.push(`filledAt 必須是 ISO 8601 時間(實際 ${JSON.stringify(data.filledAt)})。filledAt must be an ISO 8601 timestamp.`);
+      errors.push(`filledAt 必須是合法的 ISO 8601 時間(型別 ${typeof data.filledAt})。filledAt must be a valid ISO 8601 timestamp.`);
     }
 
     // metrics:非陣列 = 整筆拒收(不靜默降成空陣列 —— HIGH-1 的根因)。
@@ -216,21 +250,21 @@
       }
       if (seenMetricIds.has(m.metricId)) {
         // 重複 metricId = 預填時 last-write/first-write 語義不明,一律拒。
-        errors.push(`metrics[${i}]:metricId「${m.metricId}」重複出現。duplicate metricId.`);
+        errors.push(`metrics[${i}] 的 metricId 與前面重複。duplicate metricId.`);
         return;
       }
       seenMetricIds.add(m.metricId);
       if (P1_TRANSPORT_METRIC_IDS.indexOf(m.metricId) === -1) {
-        errors.push(`metrics[${i}]:metricId「${m.metricId}」不在 P1 傳輸白名單內(病人頁只問 ${P1_TRANSPORT_METRIC_IDS.length} 項)。metricId not in the P1 transport subset.`);
+        errors.push(`metrics[${i}] 的 metricId 不在 P1 傳輸白名單內(病人頁只問 ${P1_TRANSPORT_METRIC_IDS.length} 項)。metricId not in the P1 transport subset.`);
         return;
       }
       const cfg = metricConfig.find((c) => c.metricId === m.metricId);
       if (!cfg) {
-        errors.push(`metrics[${i}]:metricId「${m.metricId}」不在數值 metric 設定內。metricId not in the numeric metric config.`);
+        errors.push(`metrics[${i}] 的 metricId 不在數值 metric 設定內。metricId not in the numeric metric config.`);
         return;
       }
       if (!registryHas(m.metricId)) {
-        errors.push(`metrics[${i}]:metricId「${m.metricId}」在 registry 找不到對應紀錄。metricId not found in the registry.`);
+        errors.push(`metrics[${i}] 的 metricId 在 registry 找不到對應紀錄。metricId not found in the registry.`);
         return;
       }
       // JSON number 本尊,禁 coercion(null/false/""/[] → 0、true → 1、"4" → 4)。
@@ -245,7 +279,7 @@
       if (!isPlainDecimal(m.valueNumber)) {
         // MED-1:指數形式在存檔端會被 /^\d+(\.\d+)?$/ 拒絕;傳輸層不得放行
         // 一個存不進去的值。
-        errors.push(`metrics[${i}](${labelOf(m.metricId)}):數值必須是純十進位(實際 ${String(m.valueNumber)} 為指數形式,存檔端會拒絕)。valueNumber must be plain decimal, not exponent notation.`);
+        errors.push(`metrics[${i}](${labelOf(m.metricId)}):數值必須是純十進位(指數形式存檔端會拒絕)。valueNumber must be plain decimal, not exponent notation.`);
         return;
       }
       const num = m.valueNumber === 0 ? 0 : m.valueNumber;   // -0 → 0(消除傳輸/存檔的表示差異)
@@ -254,7 +288,7 @@
       if (!shapeOk || !rangeOk) {
         const rangeText = cfg.max != null ? `${cfg.min}–${cfg.max}` : `${cfg.min} 以上`;
         const shapeText = cfg.integer ? "整數" : "數字(可含小數)";
-        errors.push(`metrics[${i}](${labelOf(m.metricId)}):須為 ${rangeText} 的${shapeText}(實際:${m.valueNumber})。Must be a ${shapeText} in range ${rangeText}.`);
+        errors.push(`metrics[${i}](${labelOf(m.metricId)}):須為 ${rangeText} 的${shapeText}。Must be a ${shapeText} in range ${rangeText}.`);
         return;
       }
       checkedMetrics.push({ metricId: m.metricId, valueNumber: num });
@@ -262,14 +296,28 @@
 
     // 自由文字:長度上限 + 控制字元剝除。非字串視為缺欄,不 String()-強制
     // (String({}) → "[object Object]" 會變成病歷文字)。
+    // R-9:非字串不再靜默當成缺欄。契約是「任何違規整筆拒收」,而一個
+    // 物件型的 subjectiveText 過去會變成空字串 —— 病人的原話無聲消失。
     const textField = (val, max, label) => {
-      if (val === undefined || val === null || typeof val !== "string") return "";
+      if (val === undefined || val === null) return "";
+      if (typeof val !== "string") {
+        errors.push(`${label} 必須是文字(實際型別 ${typeof val})。${label} must be a string.`);
+        return "";
+      }
       if (val.length > max) {
         errors.push(`${label} 超過長度上限(${max} 字,實際 ${val.length})。${label} exceeds the ${max}-char limit.`);
         return "";
       }
       return stripControlChars(val).trim();
     };
+    // R-9:`any` 過去用 !!value,於是字串 "false" 變成 true。這是病人自述
+    // 「有沒有不良反應」的旗標,型別錯就是資料錯,不能猜。
+    for (const rep of ["aeSelfReport", "exposureSelfReport"]) {
+      const o = data[rep];
+      if (o === undefined || o === null) continue;
+      if (typeof o !== "object" || Array.isArray(o)) { errors.push(`${rep} 必須是物件。${rep} must be an object.`); continue; }
+      if (o.any !== undefined && typeof o.any !== "boolean") errors.push(`${rep}.any 必須是 true/false(實際型別 ${typeof o.any})。${rep}.any must be a boolean.`);
+    }
     const subjectiveText = textField(data.subjectiveText, MAX_PROSE_CHARS, "subjectiveText");
     const patientPerspective = textField(data.patientPerspective, MAX_PROSE_CHARS, "patientPerspective");
     const aeText = textField(data.aeSelfReport && data.aeSelfReport.text, MAX_REPORT_CHARS, "aeSelfReport.text");
@@ -283,17 +331,17 @@
       data: {
         // MED-4:這兩欄是 import 端硬規則的鍵(逐字比對 / 重放去重),任何
         // 不可見字元都會讓鍵變成另一個值 —— payloadId 加一個 ZWSP 就能無限重放。
-        patientCode: stripIdentifierInvisibles(data.patientCode),
-        payloadId: stripIdentifierInvisibles(data.payloadId).trim(),
+        patientCode: data.patientCode,
+        payloadId: data.payloadId.trim(),
         filledAt: data.filledAt,
         metrics: checkedMetrics,
         subjectiveText,
         patientPerspective,
         aeSelfReport: (data.aeSelfReport && typeof data.aeSelfReport === "object" && !Array.isArray(data.aeSelfReport))
-          ? { any: !!data.aeSelfReport.any, text: aeText }
+          ? { any: data.aeSelfReport.any === true, text: aeText }
           : { any: false, text: "" },
         exposureSelfReport: (data.exposureSelfReport && typeof data.exposureSelfReport === "object" && !Array.isArray(data.exposureSelfReport))
-          ? { any: !!data.exposureSelfReport.any, text: expText }
+          ? { any: data.exposureSelfReport.any === true, text: expText }
           : { any: false, text: "" }
       }
     };
@@ -305,7 +353,7 @@
     MAX_REPORT_CHARS,
     ISO_8601_RE,
     stripControlChars,
-    stripIdentifierInvisibles,
+    isWellFormedIdentifier,
     canonicalDecimal,
     lossyNumberTokens,
     isPlainDecimal,
