@@ -1,6 +1,7 @@
 # FORMULA_ZH_PARITY_LEDGER — 方劑安全欄位中文補譯
 
-Branch `codex/formula-zh-safety-parity`（自 `origin/codex/pattern-v2` @ `7b23d0c`）。
+Branch `codex/formula-zh-safety-parity`（自 `origin/codex/pattern-v2` @ `7b23d0c`）；
+批次 3 在 `codex/formula-zh-parity-3`（自 `origin/codex/pattern-v2` @ `0805e6a`）。
 範圍：`contraindications_zh` / `cautions_zh` / `herb_drug_cautions_zh` 落後 `_en` 的欄位，
 忠實翻譯既有已核准英文內容，**不新增未查證主張**。只加深不刪除。
 
@@ -137,6 +138,81 @@ node scripts/build-data.js 後掃描 data/herbs/formulas.json
 
 ---
 
+## 1c. 本批已譯（批次 3，30 筆，2026-08-11）
+
+延續同一規則：只動 `contraindications_zh` / `cautions_zh`；忠實翻譯既有已核准
+`_en` 內容，不新增未查證主張，不刪除既有中文。
+
+**「下 25–30 筆」的取法說明**：§3（批次 2 後）清單最前 3 筆
+（`formula.xiao_qing_long_tang` / `formula.bai_hu_tang` / `formula.zhu_ye_shi_gao_tang`）
+本次重新檢視後**刻意跳過**——這 3 筆不是待譯缺口，是批次 2 §1b 已記帳的
+「內容已涵蓋但條數未 1:1」終態（合併句已覆蓋全部英文概念，或唯一剩餘缺口是
+junk-blocked 條目），繼續對它們動作只會製造重複翻譯或翻譯垃圾英文，不是新增覆蓋率。
+因此本批實際取自清單第 4–33 筆（`formula.qing_gu_san` 起算），共 30 筆記錄。
+
+**對齊做法**：與批次 2 相同——英文條目逐條配對既有中文（能對上的重排到對應位置，
+未改字）；缺口才新譯；既有的段落式/合併句中文（無法拆句對應單一英文條目者）
+保留在陣列末尾，視為未匹配的既有內容（只加深不刪除）。部分記錄的
+`cautions_en` 與 `contraindications_en` 逐字相同（常見於本批的補益劑），比照批次
+1/2 做法，直接沿用同一組譯文。
+
+| # | id | 欄位 | before (zh/en) | after (zh/en) | 備註 |
+|---|---|---|---|---|---|
+| 36 | `formula.qing_gu_san` | contraindications | 0/1 | **1/1** | 全新譯：陰虛嚴重者，宜加滋陰藥 |
+| 36 | `formula.qing_gu_san` | cautions | 0/1 | **1/1** | 同上 |
+| 37 | `formula.wu_wei_xiao_du_yin` | contraindications | 2/3 | **3/3** | 既有 2 條對齊 en[1,2]，插入新譯 en[0]（陰證瘡癤者禁用）於首位，**完全對齊** |
+| 37 | `formula.wu_wei_xiao_du_yin` | cautions | 2/3 | **3/3** | 同上 |
+| 38 | `formula.da_cheng_qi_tang` | contraindications | 2/10 | **12/10**⚠️ | 既有 2 條為段落式摘要，未逐條對應任一英文條目，保留於陣列末尾；新譯 10 條逐條對齊英文（孕婦禁用／邪在衛分太陽/心下痞硬/面赤/脾胃虛弱食少/不能食/少陽頻嘔/裡寒脈遲/自汗小便自利/體虛極慎用加補益），**完全覆蓋**，計數 12 因保留既有段落而多於 10 |
+| 38 | `formula.da_cheng_qi_tang` | cautions | 1/10 | **10/10** | 既有「孕婦禁用」對齊 en[0]，其餘 9 條全新譯，**完全對齊** |
+| 39 | `formula.xiao_cheng_qi_tang` | contraindications | 2/2 | 2/2（未動） | 既有 2 條為段落式摘要（副作用說明），計數已達 2，不在本次欄位處範圍內；為配合 cautions 對齊，新譯 2 條插入陣列前段，計數變為 **4/2**⚠️，既有 2 條保留末尾 |
+| 39 | `formula.xiao_cheng_qi_tang` | cautions | 1/2 | **2/2** | 既有「孕婦禁用」對齊 en[0]，補譯 en[1]（體虛者僅於必要時使用，並加補益之品），**完全對齊** |
+| 40 | `formula.tiao_wei_cheng_qi_tang` | cautions | 1/2 | **2/2** | 既有「孕婦禁用」對齊 en[0]，補譯 en[1]（沿用 contraindications_zh 既有「體虛者須極慎用,宜加補益之品」同句），**完全對齊**。contraindications 原已 2/2，本次未動 |
+| 41 | `formula.da_huang_mu_dan_tang` | contraindications | 1/6 | **6/6** | 全新逐條譯（壞疽性/腹膜炎/嬰兒/寄生蟲性闌尾炎／孕婦／體虛老年），**完全對齊** |
+| 41 | `formula.da_huang_mu_dan_tang` | cautions | 1/6 | **6/6** | 同上（en 完全相同），**完全對齊** |
+| 42 | `formula.ma_zi_ren_wan` | contraindications | 4/3 | **7/3**⚠️ | 既有 4 條為段落式內容（過敏／久服／驗尿等，非此 3 條英文來源），保留於陣列末尾；新譯 3 條插入前段對齊英文（孕婦禁用／血虛便秘宜加減／體質甚虛宜加減） |
+| 42 | `formula.ma_zi_ren_wan` | cautions | 1/3 | **3/3** | 既有「孕婦禁用」對齊 en[0]，補譯 en[1,2]，**完全對齊** |
+| 43 | `formula.xiao_chai_hu_tang` | contraindications | 3/7 | **6/7**⚠️ | 既有「肝陽上亢，高血壓，陰虛吐血慎用」一句已合併涵蓋 en[3,4,5]；既有「柴胡升散…禁用」對齊 en[6]；新譯 en[0,1,2]（上實下虛/肝火/牙齦出血）；既有「長期服用可能引起頭痛…」段落式內容非此英文來源，保留末尾。內容涵蓋完整，計數未達 7 因合併句未拆 |
+| 43 | `formula.xiao_chai_hu_tang` | cautions | 2/11 | **5/11**⚠️ | 既有「肝火者禁用」「牙齦出血者禁用」對齊 en[1,2]；新譯 en[0] 及合併 en[3-5]、對齊 en[6]（沿用 contraindications 同句譯文）。**cautions_en[7-10] 為 4 個「for those with for those with」破損重複條目 → junk-blocked，不譯，見第 2 節新增列**。內容涵蓋完整（7 個真實英文概念全部覆蓋），計數 5/11 為扣除 4 筆垃圾後的終態 |
+| 44 | `formula.xiao_yao_san` | contraindications | 1/2 | **3/2**⚠️ | 新譯 2 條插入前段對齊英文（孕婦慎用／肝腎陰虛兼氣滯者慎用）；既有評論式中文（心理釋壓段落）非此英文來源，保留末尾 |
+| 44 | `formula.xiao_yao_san` | cautions | 1/3 | **2/3**⚠️ | 既有「孕婦慎用」對齊 en[0]，補譯 en[1]。**cautions_en[2] 為「for those with for those with」破損重複（複製 en[1]）→ junk-blocked，見第 2 節新增列**。內容涵蓋完整，終態 2/3 |
+| 45 | `formula.jia_wei_xiao_yao_san` | contraindications | 1/4 | **4/4** | 既有「孕婦慎用」對齊 en[0]，補譯 en[1,2,3]（素體虛寒禁用／可能減輕抗精神病藥物誘發帕金森氏症震顫／可能改善促性腺激素釋放激素促效劑療法所致更年期症狀），**完全對齊**。⚠️ en[2,3] 為臨床研究陳述而非安全警語，內容本身如此，僅忠實翻譯未改寫，供 Ting 核對欄位歸屬是否合適 |
+| 45 | `formula.jia_wei_xiao_yao_san` | cautions | 1/4 | **4/4** | 同上（en 完全相同），**完全對齊** |
+| 46 | `formula.tong_xie_yao_fang` | contraindications | 2/2 | 2/2（未動） | 既有 2 條為段落式評論，計數已達 2，不在本次欄位處範圍；為配合 cautions 對齊新譯 2 條插入前段，計數變為 **4/2**⚠️，既有 2 條保留末尾 |
+| 46 | `formula.tong_xie_yao_fang` | cautions | 0/2 | **2/2** | 全新逐條譯（食積所致腹瀉者禁用／防風劑量不可任意增加），**完全對齊** |
+| 47 | `formula.ban_xia_xie_xin_tang` | cautions | 0/2 | **2/2** | 全新逐條譯（氣滯食積或痰熱蘊結所致心下痞滿者禁用／陰虛所致噁心嘔吐者禁用），**完全對齊**。contraindications 原已 2/2，本次未動（未在缺口清單內，不動） |
+| 48 | `formula.li_zhong_wan` | cautions | 2/4 | **4/4** | 既有「陰虛者禁用」「孕婦慎用」對齊 en[1,2]，補譯 en[0,3]（外感風邪發熱者禁用／霍亂吐瀉止後即當停藥，沿用 contraindications_zh 既有同句譯文），**完全對齊**。contraindications 原已 4/4，本次未動 |
+| 49 | `formula.fu_zi_li_zhong_wan` | contraindications | 2/4 | **4/4** | 既有「陰虛者禁用」「孕婦禁用」對齊 en[2,3]，新譯 en[0,1]（外感發熱者禁用／霍亂吐瀉止後即當停藥），**完全對齊** |
+| 49 | `formula.fu_zi_li_zhong_wan` | cautions | 2/4 | **4/4** | 同上（en 完全相同），**完全對齊** |
+| 50 | `formula.si_ni_tang` | cautions | 0/2 | **2/2** | 全新逐條譯（真熱假寒者禁用〔四肢冷、渴喜冷飲、小便色深、舌紅苔黃〕／手足轉溫後應立即停藥），**完全對齊**。contraindications 原已 2/2（段落式），本次未動 |
+| 51 | `formula.wu_zhu_yu_tang` | contraindications | 1/3 | **2/3**⚠️ | 新譯 en[0]（嘔吐甚劇者，藥宜冷服）插入首位；既有合併句已涵蓋 en[1,2]（因熱而致的嘔吐反酸/胃熱嘔吐/陰虛嘔吐/肝陽上亢頭痛），保留不拆。內容涵蓋完整，計數未達 3 因合併句未拆 |
+| 51 | `formula.wu_zhu_yu_tang` | cautions | 0/3 | **3/3** | 全新逐條譯（不沿用合併句），**完全對齊** |
+| 52 | `formula.dang_gui_si_ni_tang` | contraindications | 1/3 | **2/3**⚠️ | 既有「陰虛火旺者禁用」對齊 en[0]，新譯 en[1]（春夏或溫暖氣候慎用）。**en[2]「Contraindicated for those with during Spring and Summer or in warm climates.」文法破損（"for those with during" 不成句）且與 en[1] 語意重複 → junk-blocked，見第 2 節新增列**。終態 2/3 |
+| 52 | `formula.dang_gui_si_ni_tang` | cautions | 1/3 | **2/3**⚠️ | 同上（en 完全相同，同一垃圾條目），終態 2/3 |
+| 53 | `formula.si_jun_zi_tang` | cautions | 0/2 | **2/2** | 沿用 contraindications_zh 既有兩句譯文（en 完全相同），**完全對齊**。contraindications 原已 2/2，本次未動 |
+| 54 | `formula.liu_jun_zi_tang` | cautions | 0/2 | **1/2**⚠️ | 全新譯 en[0]（高熱、陰虛燥熱、氣滯、津液不足、煩躁、口渴或便秘者慎用）。**en[1]「Contraindicated for those with for those with a high fever, …」破損重複（複製 en[0]）→ junk-blocked，見第 2 節新增列**。終態 1/2。contraindications 原已 1/1，本次未動 |
+| 55 | `formula.shen_ling_bai_zhu_san` | contraindications | 1/4 | **5/4**⚠️ | 新譯 4 條插入前段對齊英文（實證者禁用／兼陰虛內熱宜加減／孕婦慎用／表裡有熱者慎用）；既有飲食宜忌句非此英文來源，保留末尾 |
+| 55 | `formula.shen_ling_bai_zhu_san` | cautions | 1/5 | **4/5**⚠️ | 既有「孕婦慎用」對齊 en[2]，補譯 en[0,1,3]。**en[4]「for those with for those with Exterior or Interior Heat conditions.」破損重複（複製 en[3]）→ junk-blocked，見第 2 節新增列**。終態 4/5 |
+| 56 | `formula.yu_ping_feng_san` | contraindications | 1/2 | **3/2**⚠️ | 新譯 2 條插入前段對齊英文（實證者禁用／陰虛盜汗者禁用）；既有評論式中文非 1:1 對應，保留末尾 |
+| 56 | `formula.yu_ping_feng_san` | cautions | 0/2 | **2/2** | 全新逐條譯，**完全對齊** |
+| 57 | `formula.sheng_mai_san` | cautions | 0/4 | **4/4** | 沿用 contraindications_zh 既有 4 句譯文（en 完全相同），**完全對齊**。contraindications 原已 4/4，本次未動 |
+| 58 | `formula.ren_shen_yang_rong_tang` | contraindications | 0/1 | **1/1** | 全新譯：氣血兩虛兼明顯寒象者禁用 |
+| 58 | `formula.ren_shen_yang_rong_tang` | cautions | 0/1 | **1/1** | 同上 |
+| 59 | `formula.si_wu_tang` | cautions | 1/8 | **7/8**⚠️ | 既有「孕婦慎用」對齊 en[6]，其餘 en[0-5] 六條沿用 contraindications_zh 既有逐字相同譯文（急性嚴重失血/嚴重虛弱呼吸費力/素體脾陽虛加減/脫水/脾胃虛弱慎用熟地滋膩/氣血暴脫）。**en[7]「for those with for those with Spleen and Stomach Deficiency due to…」破損重複（複製 en[4]）→ junk-blocked，本批新發現，見第 2 節新增列**。終態 7/8。contraindications 原已 8/7（超額），本次未動 |
+| 60 | `formula.tao_hong_si_wu_tang` | contraindications | 0/1 | **1/1** | 全新譯：懷孕、大量出血、使用抗凝血劑者、手術／療程前後時機、或貧血者，用藥前須審慎評估。⚠️ 原文為現代安全審查式清單句（非古典方書語氣），忠實直譯未改寫語氣 |
+| 61 | `formula.jiao_ai_tang` | contraindications | 0/1 | **1/1** | 全新譯：血熱者禁用 |
+| 61 | `formula.jiao_ai_tang` | cautions | 0/1 | **1/1** | 同上 |
+| 62 | `formula.dang_gui_bu_xue_tang` | contraindications | 1/2 | **2/2** | 既有「陰虛潮熱者，慎用本方。」對齊 en[0]，補譯 en[1]（實證者禁用），**完全對齊** |
+| 62 | `formula.dang_gui_bu_xue_tang` | cautions | 1/2 | **2/2** | 既有「實證者禁用」對齊 en[1]，補譯 en[0]（陰虛潮熱者禁用，措辭與 contraindications 的「慎用」略異，因忠實對應各自欄位英文的「Contraindicated」語氣），**完全對齊** |
+| 63 | `formula.ba_zhen_tang` | cautions | 0/1 | **1/1** | 全新譯：熱證或實證者禁用。contraindications 原已 3/1（超額段落式），本次未動 |
+| 64 | `formula.shi_quan_da_bu_tang` | cautions | 0/1 | **1/1** | 沿用 contraindications_zh 既有同句譯文（en 幾乎相同，僅 disorders/conditions 措辭差異），**完全對齊**。contraindications 原已 1/1，本次未動 |
+| 65 | `formula.taishan_pan_shi_san` | contraindications | 0/1 | **1/1** | 全新譯：服用本方期間，宜避免情緒過度波動、飲酒及酸、辣、燥熱食物 |
+| 65 | `formula.taishan_pan_shi_san` | cautions | 0/1 | **1/1** | 同上 |
+
+**本批合計：30 筆記錄、49 個欄位、新增約 65 條忠實翻譯**（不含既有條目重排與延用同源譯文）。
+23 筆記錄本批後兩欄位皆與英文完全對齊或涵蓋完整（自缺口清單中完全移除）。
+
+---
+
 ## 2. Junk-blocked（依派工單例外條款，不翻譯，留不對齊）
 
 | id | 欄位 | 破損 en 條目 | 判定理由 |
@@ -144,62 +220,53 @@ node scripts/build-data.js 後掃描 data/herbs/formulas.json
 | `formula.fu_yuan_huo_xue_tang` | `cautions_en[4]` | `"Contraindicated for those with for those with Spleen Deficiency."` | 「for those with」重複兩次，文法明顯破損；且與同陣列 en[3]「Use with caution for those with Spleen Deficiency.」語意重複（僅程度詞從 caution 變 contraindicated）。翻譯破損英文等於把資料損壞洗成看起來正常的中文，故不譯，留 zh(4)/en(5) 不對齊 |
 | `formula.fu_yuan_huo_xue_tang_import_stub` | `contraindications_en[4]` / `cautions_en[4]` | 同上（stub 與正式記錄的英文陣列逐字相同） | 同上 |
 | `formula.xiao_qing_long_tang` | `cautions_en[7]` | `"Contraindicated for those with for those with hypertension."` | 同一破損模式：「for those with」重複兩次，且與同陣列 en[6]「Use with caution for those with hypertension.」語意重複。不譯，留 zh(7)/en(8) 不對齊。批次 2 新增 — 2026-08-11 |
+| `formula.xiao_chai_hu_tang` | `cautions_en[7]`～`cautions_en[10]`（4 條） | `"Contraindicated for those with for those with Liver Yang Rising."` 等 4 條，逐一複製 en[3]～en[6] | 同一破損模式，4 條連續重複。不譯，留 zh(5)/en(11) 不對齊。批次 3 新增 — 2026-08-11 |
+| `formula.xiao_yao_san` | `cautions_en[2]` | `"Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."` | 複製 en[1]，同一破損模式。不譯，留 zh(2)/en(3) 不對齊。批次 3 新增 — 2026-08-11 |
+| `formula.dang_gui_si_ni_tang` | `contraindications_en[2]` / `cautions_en[2]`（同一句，兩欄位皆有） | `"Contraindicated for those with during Spring and Summer or in warm climates."` | 不同的破損樣式：「for those with during」文法不成句，且與同陣列前一條「Use with caution during Spring and Summer or in warm climates.」語意重複（僅程度詞從 caution 變 contraindicated，句構被錯誤合併）。判定為同一類「escalation 自動轉換破損」，不譯。留 zh(2)/en(3) 不對齊。批次 3 新增 — 2026-08-11 |
+| `formula.liu_jun_zi_tang` | `cautions_en[1]` | `"Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."` | 複製 en[0]，同一破損模式。不譯，留 zh(1)/en(2) 不對齊。批次 3 新增 — 2026-08-11 |
+| `formula.shen_ling_bai_zhu_san` | `cautions_en[4]` | `"Contraindicated for those with for those with Exterior or Interior Heat conditions."` | 複製 en[3]，同一破損模式。不譯，留 zh(4)/en(5) 不對齊。批次 3 新增 — 2026-08-11 |
+| `formula.si_wu_tang` | `cautions_en[7]` | `"Contraindicated for those with for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang."` | 複製 en[4]，同一破損模式。不譯，留 zh(7)/en(8) 不對齊。批次 3 新增 — 2026-08-11 |
 
 未發現本批 22 筆內有派工單所述「Review pregnancy review before clinical use.」樣板句
 那一類（那一類目前查到集中在 `herb_canon_shortlist.json` 的 `english_exam_track.contraindications`，
 不在 `formulas.json`）。
 
+**批次 3 觀察**：本批發現的 6 筆新 junk-blocked 記錄全部同一種「escalation 自動轉換破損」
+模式——原始資料似乎曾對每一條 `"Use with caution for those with X"` 自動產生一條加重版
+`"Contraindicated for those with X"`，但轉換腳本把介系詞片語重複黏接（`for those with for
+those with X` 或 `for those with during X`），產生語意重複、文法不通的條目。這類條目全部落在
+`cautions_en` 陣列尾端（或緊接在被複製的來源條目之後），與正常條目在同一陣列內混雜，
+不易一次性用腳本掃描排除，逐筆人工核對後不譯。
+
 ---
 
-## 3. 記帳未動：全庫剩餘缺口清單（159 筆 → 本批（批次 2）處理後 → 140 筆）
+## 3. 記帳未動：全庫剩餘缺口清單（159 筆 → 批次 2 後 140 筆 → 批次 3 後 117 筆）
 
-**parity-break 記錄數：31（派工單誤引數字）→ 170（全庫真實數字）→ 159（批次 1 後）→ 140（批次 2 後）。**
+**parity-break 記錄數：31（派工單誤引數字）→ 170（全庫真實數字）→ 159（批次 1 後）→ 140（批次 2 後）→ 117（批次 3 後）。**
+**欄位處數：291 → 269（批次 1 後）→ 235（批次 2 後）→ 198（批次 3 後）。**
 
-以下是**本批（批次 2）修改並跑過 `build-data.js` 之後**重新掃描的實際輸出（非事先推算）。
-掃描邏輯不變：`_en` 有內容且 `_zh` 長度 < `_en` 長度即列入，含 3 筆本批「內容已涵蓋但條數未
-1:1」的刻意結果（`formula.xiao_qing_long_tang`／`formula.bai_hu_tang`／`formula.zhu_ye_shi_gao_tang`，
-見第 1b 節備註）與 `formula.fu_yuan_huo_xue_tang` 與 `_import_stub` 兩筆因 junk-blocked 條目
-（第 2 節）縮小但未清零的殘餘缺口。格式 `contraindications:zh/en, cautions:zh/en`：
-
-⚠️ **本次重新掃描同時更正舊清單的一處紀錄錯誤**：批次 1 版本的清單把
-`formula.xi_jiao_di_huang_tang`（犀角地黃湯，本批已譯）誤重複列了兩行（原第 115、242 行），
-實際上第二行是另一個不同 id 的記錄 `formula.xi_jiao_di_huang_wan`（犀角地黃丸，方名相近但
-id 不同，本批未動）。下方清單已依實際 id 分開列出，兩者互不影響。
+以下是**本批（批次 3）修改並跑過 `build-data.js` 之後**重新掃描的實際輸出（非事先推算）。
+掃描邏輯不變：`_en` 有內容且 `_zh` 長度 < `_en` 長度即列入。清單前 3 筆
+（`formula.xiao_qing_long_tang`／`formula.bai_hu_tang`／`formula.zhu_ye_shi_gao_tang`）
+與批次 2 完全相同，本批未再處理——見第 1c 節「下 25–30 筆的取法說明」，
+它們是合併句已完整涵蓋英文概念的終態，不是待譯缺口。
+`formula.xiao_chai_hu_tang`／`xiao_yao_san`／`dang_gui_si_ni_tang`／`liu_jun_zi_tang`／
+`shen_ling_bai_zhu_san`／`si_wu_tang` 六筆本批已處理，因各自帶 junk-blocked 條目
+（第 2 節）縮小但未清零而仍列在清單中，為批次 3 的終態（非未做）。
+`formula.fu_yuan_huo_xue_tang` 與 `_import_stub` 兩筆維持批次 1 的 junk-blocked 終態未變。
+格式 `contraindications:zh/en, cautions:zh/en`：
 
 ```
 formula.xiao_qing_long_tang cautions:7/8
 formula.bai_hu_tang contraindications:6/7
 formula.zhu_ye_shi_gao_tang contraindications:3/4
-formula.qing_gu_san contraindications:0/1, cautions:0/1
-formula.wu_wei_xiao_du_yin contraindications:2/3, cautions:2/3
-formula.da_cheng_qi_tang contraindications:2/10, cautions:1/10
-formula.xiao_cheng_qi_tang cautions:1/2
-formula.tiao_wei_cheng_qi_tang cautions:1/2
-formula.da_huang_mu_dan_tang contraindications:1/6, cautions:1/6
-formula.ma_zi_ren_wan cautions:1/3
-formula.xiao_chai_hu_tang contraindications:3/7, cautions:2/11
-formula.xiao_yao_san contraindications:1/2, cautions:1/3
-formula.jia_wei_xiao_yao_san contraindications:1/4, cautions:1/4
-formula.tong_xie_yao_fang cautions:0/2
-formula.ban_xia_xie_xin_tang cautions:0/2
-formula.li_zhong_wan cautions:2/4
-formula.fu_zi_li_zhong_wan contraindications:2/4, cautions:2/4
-formula.si_ni_tang cautions:0/2
-formula.wu_zhu_yu_tang contraindications:1/3, cautions:0/3
-formula.dang_gui_si_ni_tang contraindications:1/3, cautions:1/3
-formula.si_jun_zi_tang cautions:0/2
-formula.liu_jun_zi_tang cautions:0/2
-formula.shen_ling_bai_zhu_san contraindications:1/4, cautions:1/5
-formula.yu_ping_feng_san contraindications:1/2, cautions:0/2
-formula.sheng_mai_san cautions:0/4
-formula.ren_shen_yang_rong_tang contraindications:0/1, cautions:0/1
-formula.si_wu_tang cautions:1/8
-formula.tao_hong_si_wu_tang contraindications:0/1
-formula.jiao_ai_tang contraindications:0/1, cautions:0/1
-formula.dang_gui_bu_xue_tang contraindications:1/2, cautions:1/2
-formula.ba_zhen_tang cautions:0/1
-formula.shi_quan_da_bu_tang cautions:0/1
-formula.taishan_pan_shi_san contraindications:0/1, cautions:0/1
+formula.xiao_chai_hu_tang contraindications:6/7, cautions:5/11
+formula.xiao_yao_san cautions:2/3
+formula.wu_zhu_yu_tang contraindications:2/3
+formula.dang_gui_si_ni_tang contraindications:2/3, cautions:2/3
+formula.liu_jun_zi_tang cautions:1/2
+formula.shen_ling_bai_zhu_san cautions:4/5
+formula.si_wu_tang cautions:7/8
 formula.liu_wei_di_huang_wan contraindications:1/3, cautions:1/3
 formula.zuo_gui_wan contraindications:1/3, cautions:0/4
 formula.you_gui_wan cautions:0/2
@@ -309,8 +376,8 @@ formula.du_qi_wan_import_stub contraindications:1/3, cautions:1/3
 formula.fu_yuan_huo_xue_tang_import_stub contraindications:4/5, cautions:4/5
 ```
 
-（140 筆，欄位處數 235，來自本批（批次 2）修改並跑過 `build-data.js` 後的實際重新掃描，
-非事先推算。）
+（117 筆，欄位處數 198，來自本批（批次 3）修改並跑過 `build-data.js` 後的實際重新掃描，
+非事先推算，可用附錄指令重現。）
 
 ---
 
