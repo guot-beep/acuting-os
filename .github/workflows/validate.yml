@@ -20,9 +20,64 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# CI 通知風暴處置(2026-08-12,Ting 授權):
+#   1. concurrency:同一 PR(以 PR number 分組)或同一 branch(push/dispatch
+#      以 ref 分組)同時只保留最新 run,舊 run 取消 —— 不同 PR 互不取消。
+#   2. preflight 變更偵測:docs-only push(docs/** 與任何 *.md)不跑昂貴
+#      validators,但 workflow 本身有明確 success 結論,不會永久 Pending。
+#      任何 code/data/scripts/workflow 變更照舊全跑。
+#   no-PHI gate(clinical-data-never-committed)永遠無條件執行 —— 它便宜、
+#   而且是不准削弱的安全 gate。
+concurrency:
+  group: validate-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  preflight:
+    name: change detection (docs-only skips heavy validators)
+    runs-on: ubuntu-latest
+    outputs:
+      run_full: ${{ steps.detect.outputs.run_full }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: classify changed files
+        id: detect
+        run: |
+          # 非 PR 事件(main push / manual dispatch)一律全跑。
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "non-PR event — full CI."
+            exit 0
+          fi
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          files=$(git diff --name-only "$BASE" "$HEAD_SHA")
+          echo "changed files:"
+          echo "$files"
+          # docs-only = 每一個變更檔都是 docs/** 或任一 *.md(PROJECT_LOG.md、
+          # CODEX_HANDOFF.md、AI_REVIEW_FEEDBACK.md、DRY_CLINIC_LOG.md…)。
+          # 空 diff 視為異常,保守全跑。validators 不讀任何 .md,分類安全。
+          if [ -z "$files" ]; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "empty diff — full CI (conservative)."
+            exit 0
+          fi
+          run_full=false
+          while IFS= read -r f; do
+            case "$f" in
+              docs/*|*.md) ;;
+              *) run_full=true; break ;;
+            esac
+          done <<< "$files"
+          echo "run_full=$run_full" >> "$GITHUB_OUTPUT"
+          echo "classification: run_full=$run_full"
+
   green:
     name: green validators (blocking)
+    needs: preflight
+    if: needs.preflight.outputs.run_full == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -123,11 +178,21 @@ jobs:
       - name: clinical contract invariants (R1-R8)
         run: node scripts/validate-clinical-invariants.js
 
+      # AVS v3(2026-08-12,Codex NO-GO 修復後納入 blocking):建議庫規則
+      # 驗證 + 引擎 E2E(§13 Scenario A–G + Codex HIGH-1/HIGH-3/MED-1 反例)。
+      - name: AVS advice library standard
+        run: node scripts/validate-avs-library.js
+
+      - name: AVS checkout engine E2E (incl. Codex NO-GO probes)
+        run: node scripts/test-avs-checkout.js
+
       - name: whitespace / conflict markers
         run: git diff --check
 
   ratchet:
     name: defect ratchet (conditions · patterns · naming)
+    needs: preflight
+    if: needs.preflight.outputs.run_full == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
