@@ -102319,30 +102319,14 @@
         "Chronic diarrhea or dysentery"
       ],
       "actions_en": [
-        "Warms the Internal organs",
-        "Warms the Middle Jiao",
-        "Warms the Intestines",
-        "Drains Heat",
-        "Replenishes Qi",
-        "Dispels parasites",
-        "Calms roundworms",
-        "Drains the Liver",
-        "Calms the Stomach",
-        "Promotes Blood circulation",
-        "Relieves pain"
+        "Warms the zang organs",
+        "Quiets roundworms",
+        "Relieves pain in the roundworm-reversal (蛔厥) pattern"
       ],
       "actions_zh": [
-        "溫裡散寒",
-        "溫中健脾",
-        "溫腸止瀉",
-        "清熱瀉火",
-        "補益氣血",
-        "驅蟲消積",
-        "安蛔止痛",
-        "瀉肝膽火",
-        "和胃降逆",
-        "活血化瘀",
-        "緩急止痛"
+        "溫臟",
+        "安蛔",
+        "止痛（蛔厥腹痛語境）"
       ],
       "composition": [
         {
@@ -102562,7 +102546,10 @@
         "Stomach Heat with Kidney Deficiency"
       ],
       "pattern_indications_zh": [
-        "厥陰病蛔厥腹痛、久瀉久痢證"
+        "蛔厥證：腹痛時作、煩悶嘔吐、得食則吐、甚則吐蛔、手足厥冷",
+        "厥陰病上熱下寒、寒熱錯雜證",
+        "久瀉久痢（依《傷寒論》原文語境）",
+        "胃熱兼腎虛證"
       ],
       "modifications_en": [],
       "modifications_zh": [],
@@ -102673,7 +102660,7 @@
         "notes_zh": []
       },
       "last_reviewed": "",
-      "source_classic": "《傷寒雜病論》",
+      "source_classic": "《傷寒論·辨厥陰病脈證並治》烏梅丸條",
       "exact_source_url": "https://cloudtcm.com/formula/179",
       "fetched_at": "2026-07-23T07:08:57.856Z",
       "cautions_zh": [
@@ -102743,10 +102730,13 @@
         ],
         "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
         "actions_zh": [
-          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+          "《傷寒論·辨厥陰病脈證並治》烏梅丸條（SOL 2026-08-12 裁定，docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §2）",
+          "國家中醫藥研究所〈烏梅丸的現代研究新知〉https://www.nricm.edu.tw/p/406-1000-7453%2Cr11.php?Lang=zh-tw"
         ],
         "pattern_indications_zh": [
-          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+          "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)",
+          "《傷寒論·辨厥陰病脈證並治》烏梅丸條（SOL 2026-08-12 裁定，docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §2）",
+          "國家中醫藥研究所〈烏梅丸的現代研究新知〉https://www.nricm.edu.tw/p/406-1000-7453%2Cr11.php?Lang=zh-tw"
         ],
         "category_zh": [
           "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
@@ -102765,6 +102755,14 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：American Dragon Formula Index, American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07 匯入）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "actions_en": [
+          "《傷寒論·辨厥陰病脈證並治》烏梅丸條（SOL 2026-08-12 裁定，docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §2）",
+          "國家中醫藥研究所〈烏梅丸的現代研究新知〉https://www.nricm.edu.tw/p/406-1000-7453%2Cr11.php?Lang=zh-tw"
+        ],
+        "source_classic": [
+          "《傷寒論·辨厥陰病脈證並治》烏梅丸條（SOL 2026-08-12 裁定，docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §2）",
+          "國家中醫藥研究所〈烏梅丸的現代研究新知〉https://www.nricm.edu.tw/p/406-1000-7453%2Cr11.php?Lang=zh-tw"
         ]
       },
       "cloudtcm_id": 179,
@@ -102913,7 +102911,8 @@
       "category_zh": "驅蟲劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",
       "course_level_en": "Not found in the uploaded Formulations 1/2 master knowledge-level lists.",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WuMeiWan.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WuMeiWan.html",
+      "correction_note": "【2026-08-12 功效正典化 — SOL §2】actions_zh 原有 11 條（American Dragon 匯入），超過 F8 上限 8。依 docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §2 的裁定，嚴格意義的「功效」只有三條：溫臟／安蛔／止痛（蛔厥腹痛語境）；SOL 清單第 4-5 條（主蛔厥、久利）是主治不是功效，改列 pattern_indications。\n11 條原文一字未刪，全數留在 english_exam_track.actions_zh / actions_en（American Dragon 匯入層），逐條去向如下：\n  1. 「溫裡散寒」／「Warms the Internal organs」→ 併入功效「溫臟」\n  2. 「溫中健脾」／「Warms the Middle Jiao」→ 併入功效「溫臟」\n  3. 「溫腸止瀉」／「Warms the Intestines」→ 併入功效「溫臟」；其「止瀉」面移入主治「久瀉久痢」\n  4. 「清熱瀉火」／「Drains Heat」→ 非 SOL 三條功效之一 —— 屬本方寒熱並用的配伍機轉，需方義來源另行處理；原文留存於 english_exam_track.actions_zh/_en\n  5. 「補益氣血」／「Replenishes Qi」→ 同上，留存於 english_exam_track\n  6. 「驅蟲消積」／「Dispels parasites」→ 併入功效「安蛔」\n  7. 「安蛔止痛」／「Calms roundworms」→ 拆為功效「安蛔」與「止痛（蛔厥腹痛語境）」\n  8. 「瀉肝膽火」／「Drains the Liver」→ 非 SOL 三條功效之一，留存於 english_exam_track\n  9. 「和胃降逆」／「Calms the Stomach」→ 屬臨床表現面（得食則吐、嘔逆），已見於 clinical_manifestations_zh 與 symptoms_zh；原文留存於 english_exam_track\n  10. 「活血化瘀」／「Promotes Blood circulation」→ 非 SOL 三條功效之一，留存於 english_exam_track\n  11. 「緩急止痛」／「Relieves pain」→ 併入功效「止痛（蛔厥腹痛語境）」\npattern_indications_zh 原本只有一條「厥陰病蛔厥腹痛、久瀉久痢證」，對上 4 條英文；本次拆為 4 條逐條對齊（第 1、3 條即 SOL 清單的第 4、5 項），原字串的語義完整落在新第 1、2、3 條內。\nsource_classic 原值「《傷寒雜病論》」，改為 SOL 指名的篇目「《傷寒論·辨厥陰病脈證並治》烏梅丸條」（同一書的更精確出處，非改寫）。"
     },
     {
       "id": "formula.xing_su_san",
