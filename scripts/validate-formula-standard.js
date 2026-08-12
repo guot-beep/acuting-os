@@ -367,8 +367,18 @@ for (const r of recs) {
     else if (!formulaIds.has(fid) && !String(c.formula_id_status || "").trim()) {
       push(`方中方 formula_id「${fid}」方劑庫查無,且沒有 formula_id_status 說明它是保留待建`);
     }
-    const leaves = arr(c.expanded_ingredients);
-    if (!leaves.length) push("方中方沒有展開 expanded_ingredients — 安全與交互作用會走不到葉子藥材");
+    // Codex P4 seam MED-1(2026-08-12):型別先驗,不能用 arr()。
+    // arr() 會把單一物件包成一元素陣列,所以一個 object-shaped
+    // expanded_ingredients 可以完全繞過「必須是非空 list」的契約
+    // (template §3.1),而且後面的 leaf 檢查照跑、照過。缺席以外的
+    // 任何非陣列型別都要當成違規報出來,不要靜默正規化。
+    const rawLeaves = c.expanded_ingredients;
+    const leavesPresent = rawLeaves !== undefined && rawLeaves !== null && rawLeaves !== "";
+    if (leavesPresent && !Array.isArray(rawLeaves)) {
+      push(`expanded_ingredients 必須是陣列(實際型別 ${Array.isArray(rawLeaves) ? "array" : typeof rawLeaves})— 單一物件不算「已展開」`);
+    }
+    const leaves = Array.isArray(rawLeaves) ? rawLeaves : [];
+    if (!leaves.length && !(leavesPresent && !Array.isArray(rawLeaves))) push("方中方沒有展開 expanded_ingredients — 安全與交互作用會走不到葉子藥材");
     leaves.forEach((leaf, j) => {
       const name = String(leaf?.herb_zh || "").trim();
       if (!name) return push(`expanded_ingredients[${j}] 沒有 herb_zh`);

@@ -83,11 +83,26 @@
     return null;
   }
 
+  /* PHI-safe 解析失敗描述(Codex P4 seam HIGH-1 修復,2026-08-12)。
+   *
+   * `JSON.parse` 的錯誤訊息會**內嵌一段原始輸入**(V8:`Unexpected token 'x',
+   * "PATIENT_SE"... is not valid JSON`)。這些 throw 的訊息會被 app 的 load
+   * catch 放進 alert、也會被 W1 patient view 印到頁面 —— 於是壞掉的病歷儲存
+   * 內容會直接顯示在螢幕上。fail-loud 是對的,但**錯誤輸出不得攜帶內容**。
+   *
+   * 因此:一律不轉述 parser 訊息。只給診斷得上、又不含內容的事實 ——
+   * 哪一個 key、多少位元組。長度不是 PHI,卻足以分辨「空字串」「被截斷」
+   * 「整份還在但格式壞」三種情況。 */
+  function parseFailureDetail(raw) {
+    const bytes = typeof raw === "string" ? raw.length : 0;
+    return `unparseable JSON, ${bytes} char(s) present (內容不轉述,避免病歷資料出現在錯誤訊息)`;
+  }
+
   function readStagingEnvelopeOrThrow(context) {
     const raw = readKey(STAGING_KEY);
     if (!raw) throw new Error(`clinical-store: pointer=v2 but staging envelope is MISSING (${context}) — refusing v1 fallback to prevent silent fork. Run rollback or restore.`);
     let env;
-    try { env = JSON.parse(raw); } catch (e) { throw new Error(`clinical-store: pointer=v2 but staging envelope is CORRUPT (${context}): ${e.message}`); }
+    try { env = JSON.parse(raw); } catch (e) { throw new Error(`clinical-store: pointer=v2 but staging envelope is CORRUPT (${context}): ${parseFailureDetail(raw)}`); }
     const shapeErr = minimumEnvelopeShapeError(env);
     if (shapeErr) throw new Error(`clinical-store: pointer=v2 but staging envelope shape is invalid (${context}): ${shapeErr}`);
     return env;
@@ -106,7 +121,7 @@
     try {
       parsed = JSON.parse(saved);
     } catch (e) {
-      throw new Error(`clinical-store: v1 store present but CORRUPT (unparseable JSON): ${e.message} — 拒絕載入。原始位元組仍在 localStorage["${STORAGE_KEY}"],請先匯出備份再修復;在此之前任何存檔都會被唯讀保護擋下`);
+      throw new Error(`clinical-store: v1 store present but CORRUPT (${parseFailureDetail(saved)}) — 拒絕載入。原始位元組仍在 localStorage["${STORAGE_KEY}"],請先匯出備份再修復;在此之前任何存檔都會被唯讀保護擋下`);
     }
     if (!Array.isArray(parsed)) {
       throw new Error(`clinical-store: v1 store present but has invalid shape (${typeof parsed}, expected array) — 拒絕載入。原始內容仍在 localStorage["${STORAGE_KEY}"],請先匯出備份再修復`);
@@ -666,7 +681,7 @@
       let currentEnv = null;
       if (anchorRaw !== null && anchorRaw !== undefined) {
         try { currentEnv = JSON.parse(anchorRaw); }
-        catch (e) { return fail(["ACTIVE staging exists but is CORRUPT (unparseable: " + e.message + ") — cannot order revisions or verify append-only; repair/rollback the active staging first (restore refused, nothing written)"]); }
+        catch (e) { return fail(["ACTIVE staging exists but is CORRUPT (" + parseFailureDetail(anchorRaw) + ") — cannot order revisions or verify append-only; repair/rollback the active staging first (restore refused, nothing written)"]); }
         const activeShapeErr = minimumEnvelopeShapeError(currentEnv);   // R14-H1:active 同一把尺
         if (activeShapeErr) {
           return fail(["ACTIVE staging exists but has INVALID SHAPE (" + activeShapeErr + ") — cannot verify append-only/order against it; repair the active staging first (restore refused, nothing written)"]);

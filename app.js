@@ -1588,7 +1588,13 @@ function loadClinicalCases() {
   } catch (e) {
     // R15(Dry Clinic #9):與 store 層同等 fail-loud —— 存在但壞 = 唯讀鎖,
     // 絕不靜默回 [](那會讓下一次存檔蓋掉還救得回來的原始位元組)。
-    clinicalStoreIntegrityError = "v1 store corrupt: " + (e && e.message || e);
+    //
+    // Codex P4 seam HIGH-1(2026-08-12):這裡過去把 `e.message` 原樣放進
+    // alert,而 JSON.parse 的訊息會內嵌一段原始輸入 —— 壞掉的病歷內容因此
+    // 直接顯示在螢幕上。訊息改為只有 key 名與長度(長度不是 PHI,但足以
+    // 分辨空/截斷/格式壞)。這條 fallback 路徑在 store 模組載入失敗時才走,
+    // 所以不能依賴 store 的 parseFailureDetail,同款規則就地實作一次。
+    clinicalStoreIntegrityError = `v1 store corrupt: unparseable JSON, ${saved.length} char(s) present in localStorage["${CASE_STORAGE_KEY}"](內容不轉述,避免病歷資料出現在錯誤訊息)`;
     alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
     return [];
   }
