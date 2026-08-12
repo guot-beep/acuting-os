@@ -1,6 +1,26 @@
 # Codex Task Queue
 
-## ⚡ NEXT TASK: C2B-R14 收斂覆測(依 R14 收斂令,非新輪)
+## ⚡ NEXT TASK: C2B-R15 seam 增量覆核(小,非新輪)
+
+R14 六軸 GO 之後 clinical-store.js 有兩筆**已落地**變更,exact-SHA 對照基準
+需要前移。請對 diff 做增量覆核(不重跑六軸,除非 diff 觸到已審 seam 的行為):
+
+1. **W1 getPatientsView bridge**(純新增函式 + export;UI 唯讀視圖用,
+   不觸 save/restore/sync 任何一行)。
+2. **R15 v1 load fail-loud**(Dry Clinic #9,事故驅動:2026-08-11 演練中
+   store 被並行 agent 寫入 fetch-404 body,v1 靜默回 [] 差點讓下一次存檔
+   蓋掉可救回資料)。變更:v1「存在但 unparseable / 非陣列」→ throw
+   (app 端 catch → 唯讀鎖,既有機制);「不存在」→ [] 不變。
+   app.js 直讀 fallback 同語意。rehearsal 新增 4 例(R15),65/65;31/31 不動。
+
+覆核點:R15 throw 訊息不洩 PHI(只含 key 名)✅?v1 fail-loud 是否影響
+P4 checklist 的 v1→v2 遷移前置(遷移讀 v1 store 的路徑現在會對 corrupt 丟錯
+—— 這是意圖行為,遷移工具應在乾淨 store 上跑)?通過後更新 exact-SHA 基準,
+CI 綠燈條件不變(剩 4 個 formula holds,其中 3 個等 Ting/SOL)。硬邊界照舊。
+
+---
+
+## (已完成)前一任務: C2B-R14 收斂覆測(依 R14 收斂令,非新輪)
 
 H1 已修並推送(8da3089):minimumEnvelopeShapeError 單一驗證器三邊界共用,
 五個 active 變體 + incoming 變體 + sync MAX_SAFE overflow 官方化,rehearsal 60/60。
