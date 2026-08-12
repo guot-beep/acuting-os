@@ -536,6 +536,58 @@ Context: `docs/CLINICAL_DATA_CAPTURE_V2_DIRECTION_2026-08-10.md` (direction) and
    practitioner at Case/Visit level.
 - **Reconsider only if:** never merge the namespaces or auto-diagnose; naming spelling
   is final once the first `supp.*` record is issued (D1).
+## D19 — TCM Pattern V1 frozen  · LOCKED (2026-08-08, Ting approved after the ChatGPT canonical review)
+
+> 編號註記(2026-08-12 整合時):本決定原記為 D17,與同編號的
+> 「D17 Clinical Data Capture V2 namespaces」(2026-08-10)撞號 —— 後者已被
+> 四份文件以 D17 §5/§6 引用,故保留其編號,本決定改列 D19。決定內容未更動。
+> 舊引用「D17 TCM Pattern V1 frozen」= 現 D19。
+
+- **What:** the `pattern.*` namespace's V1 completion pass (per
+  `docs/PATTERN_CARD_TEMPLATE.md`, run against every canonical Pattern) is
+  done. Frozen state, verified programmatically at freeze time:
+
+  | | Count |
+  |---|---|
+  | Registry total (`pattern_registry.json`) | 69 |
+  | — taxonomy/category nodes (`level:"category"`) | 10 |
+  | — canonical clinical ids (`level:"pattern"`) | 59 |
+  | Library total (`pattern_library.json`, raw) | 62 |
+  | — active canonical Pattern cards | 59 |
+  | — deprecated historical import records (D16) | 3 |
+  | Active library ids resolving exactly once to a registry clinical id | 59/59 |
+  | Active library − registry clinical | 0 |
+  | Registry clinical − active library | 0 |
+
+  `validate-pattern-standard`: 62/62 records clean, 0 blocking defects.
+  `validate-pattern-registry`: PASS. `validate-content-junk`: PASS.
+  `check-validation-ratchet`: PASS, no regressions (patterns 220 → 0 over the
+  V1 project).
+- **Canonical completion baseline commit:** `c8a5ea7` — "Pattern V1: build the
+  3 final canonical cards -- stomach_fire, wind_cold, wind_heat -- 59/59
+  active identity reconciled." Anyone auditing "what did V1 actually ship"
+  diffs against this commit.
+- **What "frozen" means going forward:**
+  1. New Pattern work is **V2 expansion**, not a silent V1 edit. A new
+     `pattern.*` id, a reclassification of an existing one, or a schema
+     change to `docs/PATTERN_CARD_TEMPLATE.md` all count as V2 and should say
+     so in the commit message — they do not retroactively change what V1 was.
+  2. No canonical V1 id is renamed, merged, redirected, or deleted without an
+     explicit migration decision recorded here (same standard as D1/D6/D10).
+  3. The 3 deprecated records from D16 (`pattern.insomnia_heart_kidney_disharmony`,
+     `pattern.liver_fire_flaring`, `pattern.liver_wind_stirring`) stay
+     `review_status: "deprecated"` in `pattern_library.json` — not deleted,
+     not un-deprecated without a new decision.
+  4. The 10 records still missing `differential_patterns` (`N1`, non-blocking)
+     are a known, accepted V1 gap — fill them only when a real source
+     supports a real distinguishing comparison, never by inventing one to
+     close the count.
+  5. The duplicated `cmp.insomnia_patterns` block in `data/knowledge/comparisons.json`
+     (flagged during the D16 reference audit) is explicitly **out of scope**
+     of this freeze — a separate, unapproved cleanup item.
+- **Reconsider only if:** a future canonical review finds a genuine identity
+  defect in the frozen 59 (a real duplicate, a real classification error) —
+  fix via a dated decision here, the same process D16 used, not a silent edit.
 
 ---
 
