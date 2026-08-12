@@ -8,10 +8,30 @@
 
 ---
 
+## 讀取方式(你只有 GitHub 唯讀權限)
+
+你看不到本機工作樹,但**需要的東西都已推上去**:
+`github.com/guot-beep/acuting-os`,branch **`codex/pattern-v2`**。
+
+要看的檔:
+- `js/previsit-validator.js`(P1 shape 規則本體)
+- `app.js` 的 `validatePrevisitPayload` / `pastePrevisitImport` / `saveSoapFromForm`
+- `js/clinical-store.js`(load/save/restore 與 fail-loud 訊息)
+- `scripts/validate-previsit-payload.js`(self-test + parity gate)
+- `scripts/validate-formula-standard.js`(`arr()` / `requireArray()`)
+- `docs/AI_REVIEW_FEEDBACK.md` 置頂(Opus 覆測報告,含它**沒測到的面**)
+- `docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md` §7(契約正本)
+
+**輸出方式**:你不能寫進 repo,所以**把整份 pack 當回覆內容輸出**,Ting 會轉交,
+由我落檔成 `docs/research_packs/ATTACK_INVENTORY_2026-08_SOL.md`。
+請用完整 markdown、可直接落檔,不要只給摘要。
+
+---
+
 ## 你要產出什麼
 
-一份 `docs/research_packs/ATTACK_INVENTORY_2026-08_SOL.md`,內容是**攻擊面**,
-不是判決(跟你之前那份 P1 transport pack 同樣定位:leads,執行與證明交給別人)。
+內容是**攻擊面**,不是判決(跟你之前那份 P1 transport pack 同樣定位:leads,
+執行與證明交給別人)。
 
 每一條寫成:
 
@@ -42,6 +62,13 @@ How to tell it's a false alarm: <反證條件 —— 這一行很重要>
 **Clinical P4 seam(`17025f01`)** —— 兩項修復:
 - parse 失敗訊息只報「key + 字元數」,不轉述內容(四個解析點)
 - `validate-formula-standard.js` 先驗 `Array.isArray(expanded_ingredients)` 再進 leaf 迴圈
+
+**已被獨立覆測打過一輪的部分(2026-08-12,`03942336`)**:一位隔離的 Opus
+覆測員在上述五項修復裡又找到 **3 HIGH + 5 MED + 4 LOW**,全部已修 ——
+包括我漏掉的第八處 PHI 回顯、只比 `ok` 不比 `data` 的 parity gate、
+以及 `arr()` 讓桂枝湯從五味變一味而 validator 照樣印 PASS。
+**它的報告在 `docs/AI_REVIEW_FEEDBACK.md` 置頂,含它自己列的「沒測到的面」——
+請從那份清單接手,不要重複它已經做過的差分 fuzz(30 萬份合法 JSON,0 分歧)。**
 
 **特別想請你想的**(這些是我自己最沒把握的):
 - **過度嚴格造成的傷害**。前幾輪都在補「漏放」,但「改嚴」會誤殺合法輸入,

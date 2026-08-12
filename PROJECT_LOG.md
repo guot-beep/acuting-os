@@ -1,3 +1,14 @@
+# 2026-08-12 Fable — Opus 獨立覆測抓到 3 HIGH,全在**我自己的修復**裡
+
+Codex 額度用盡(至 8/18),依 AGENTS.md 分工改由隔離 Opus subagent 執行對抗覆測。它在我上兩輪修復裡又找到 `3 HIGH + 5 MED + 4 LOW`,**全部活在我全綠的基線底下**。三項 HIGH 我逐一覆現成立後修掉:
+
+- **PHI 回顯我只修了四處,實際八處**。漏掉的是**我自己剛寫的模組** —— `js/previsit-validator.js` 把 `JSON.parse` 的 message 原樣送進 alert;V8 內嵌錯誤位置前後各約十字,**12 字的貼上內容整份照登**。實測前後對照已附。教訓:我掃的是「我當時在想的那兩個檔」,不是那個 pattern。
+- **parity gate 量錯東西**:只比 `ok`,從不比 `data`。一個誠實委派、判決逐筆相同、但把每個 metric 乘 2 的 wrapper 拿到「29 delegated calls, 0 mismatches」exit 0 —— pain 4 會預填成 8。已改為連 data 一起比,並用那個 wrapper 做負面對照。
+- **`arr()` 我只補了一個欄位**:同檔 30 處,`const comp = arr(r.composition)` 讓桂枝湯**五味變一味物件**而 validator 印 `PASS — no blocking defects`。已拆成 `arr()`(顯示用)與 `requireArray()`(契約用),套在 composition 與 expanded_ingredients。
+- **另外兩項是我改「過嚴」造成的**(比漏放更難發現,因為沒人會回報):`7.0`/`6.50`/`1e1` 被誤判精度失真(其實精確可表示,只是寫法不同)→ 改比 canonical 十進位值;整個 `p{Cf}` 靜默吃掉 emoji ZWJ 與波斯/印地 ZWNJ(正字法的一部分)→ 散文保留 ZWJ/ZWNJ、識別碼全剝(payloadId 加一個 ZWSP 即可無限重放,已修)。
+- **驗證**:三個負面對照全部 CAUGHT/BLOCKED,`app.js`、`formulas.json` 事後逐位元還原;真失真值仍 REJECT、合法寫法改為 accept;全套 13 項零失敗(P1 3+26、formula 0 blocking、AVS 59/59、pointer 31/31、restore 65/65、其餘全綠)。
+- **commit** `03942336`(含覆測員報告,它自己不能 commit)。P1/P4 維持 NO-GO —— 這輪修復尚未經第二次獨立覆測。
+
 # 2026-08-12 Fable — P4 seam:PHI 洩漏(HIGH)與 F12b shape 繞過(MED)已修
 
 - **HIGH**:`JSON.parse` 的錯誤訊息內嵌原始輸入片段,而那些 throw 被 load 路徑丟進 alert、也被 W1 patient view 印到頁面 —— 壞掉的儲存內容直接顯示在畫面上。改為只報「key + 字元數」,內容一字不轉述。**四個內容解析點全修**(Codex 點名 2 個,我掃出另外 2 個:restore anchor、app.js fallback 解析)。storage 例外訊息未動(不含內容)。
