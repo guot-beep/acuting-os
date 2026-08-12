@@ -3788,7 +3788,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/11"
+        "https://cloudtcm.com/disease/tcm/11",
+        "ASRM — Fertility evaluation of infertile women: committee opinion: https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/"
       ],
       "red_flag_refs": [
         "rf.female_infertility.legacy01",
@@ -3809,7 +3810,21 @@
           "reason": "Misfiled: byte-identical duplicate of cond.irregular_menstruation.etiology_zh, part of a 7-way shared 月經不調 (irregular menstruation) essay import bug. Batch K already replaced the cond.endometriosis and cond.primary_dysmenorrhea copies with condition-specific content; this record is one of the remaining 5-way share. True home is cond.irregular_menstruation per its title match and the ledger's own analysis (that record already carries this text as real, complete, bilingual content — left untouched). Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "ASRM — Fertility evaluation of infertile women: committee opinion"
+        ],
+        "western_context_en": [
+          "ASRM — Fertility evaluation of infertile women: committee opinion"
+        ],
+        "red_flags_zh": [
+          "ASRM — Fertility evaluation of infertile women: committee opinion"
+        ],
+        "red_flags_en": [
+          "ASRM — Fertility evaluation of infertile women: committee opinion"
+        ]
+      }
     },
     {
       "id": "cond.male_infertility",
@@ -4113,14 +4128,29 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/1496"
+        "https://cloudtcm.com/disease/tcm/1496",
+        "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I: https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/"
       ],
       "red_flag_refs": [
         "rf.male_infertility.legacy01",
         "rf.male_infertility.legacy02",
         "rf.male_infertility.legacy03",
         "rf.male_infertility.legacy04"
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I"
+        ],
+        "western_context_en": [
+          "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I"
+        ],
+        "red_flags_zh": [
+          "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I"
+        ],
+        "red_flags_en": [
+          "ASRM / AUA — Diagnosis and treatment of infertility in men: guideline part I"
+        ]
+      }
     },
     {
       "id": "cond.diminished_ovarian_reserve",
@@ -5594,8 +5624,8 @@
       ],
       "western_context_zh": "常以哺乳指導、增加有效吸吮與整體支持處理，必要時評估潛在病因；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with lactation guidance, increasing effective feeding, and whole-person support, evaluating underlying causes when needed. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "因素包括刺激／排乳不足、含乳或轉乳問題、泌乳延遲、母體生理／內分泌、部分藥物疾病與嬰兒因素。",
+      "western_pathology_zh": "可指主觀或實際乳量／轉乳不足；需區分產乳不足與排乳／轉乳效率不佳，並同時評估母嬰。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -5633,7 +5663,84 @@
         "rf.postpartum_hypolactation.legacy02",
         "rf.postpartum_hypolactation.legacy03",
         "rf.postpartum_hypolactation.legacy04"
-      ]
+      ],
+      "western_pathology_en": "Perceived or actual insufficient milk production/transfer. Assessment must distinguish low production from ineffective milk removal/transfer and evaluate the maternal-infant dyad.",
+      "etiology_en": "Contributors include inadequate stimulation/removal, latch or transfer problems, delayed lactogenesis, maternal physiologic/endocrine factors, selected medications/illness, and infant factors.",
+      "risk_factors_zh": [
+        {
+          "factor": "排乳／哺乳效率不佳",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Breastfeeding Challenges"
+        },
+        {
+          "factor": "含乳或轉乳問題",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Breastfeeding Challenges"
+        },
+        {
+          "factor": "母體相關風險疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Breastfeeding Challenges"
+        },
+        {
+          "factor": "晚期早產／早期足月兒哺乳困難",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Breastfeeding Challenges"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "ineffective milk removal",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Breastfeeding Challenges"
+        },
+        {
+          "factor": "latch/transfer problems",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "ACOG — Breastfeeding Challenges"
+        },
+        {
+          "factor": "maternal risk conditions",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Breastfeeding Challenges"
+        },
+        {
+          "factor": "late-preterm/early-term feeding difficulty",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Breastfeeding Challenges"
+        }
+      ],
+      "sources": [
+        "ACOG — Breastfeeding Challenges: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "ACOG — Breastfeeding Challenges"
+        ],
+        "western_pathology_en": [
+          "ACOG — Breastfeeding Challenges"
+        ],
+        "etiology_zh": [
+          "ACOG — Breastfeeding Challenges"
+        ],
+        "etiology_en": [
+          "ACOG — Breastfeeding Challenges"
+        ],
+        "risk_factors_zh": [
+          "ACOG — Breastfeeding Challenges"
+        ],
+        "risk_factors_en": [
+          "ACOG — Breastfeeding Challenges"
+        ]
+      }
     },
     {
       "id": "cond.chronic_pelvic_pain",
@@ -6102,7 +6209,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/11"
+        "https://cloudtcm.com/disease/tcm/11",
+        "ACOG — Chronic Pelvic Pain: https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
       ],
       "red_flag_refs": [
         "rf.chronic_pelvic_pain.legacy01",
@@ -6123,7 +6231,21 @@
           "reason": "Misfiled: byte-identical duplicate of cond.irregular_menstruation.etiology_zh, part of a 7-way shared 月經不調 (irregular menstruation) essay import bug. Batch K already replaced the cond.endometriosis and cond.primary_dysmenorrhea copies with condition-specific content; this record is one of the remaining 5-way share. True home is cond.irregular_menstruation per its title match and the ledger's own analysis (that record already carries this text as real, complete, bilingual content — left untouched). Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "ACOG — Chronic Pelvic Pain"
+        ],
+        "western_context_en": [
+          "ACOG — Chronic Pelvic Pain"
+        ],
+        "red_flags_zh": [
+          "ACOG — Chronic Pelvic Pain"
+        ],
+        "red_flags_en": [
+          "ACOG — Chronic Pelvic Pain"
+        ]
+      }
     },
     {
       "id": "cond.pid_chronic",
@@ -6156,8 +6278,8 @@
       ],
       "western_context_zh": "急性感染以抗生素處理，慢性後遺常需疼痛管理與生育相關評估；此為文件對照用語，非治療指示。",
       "western_context_en": "Acute infection is treated with antibiotics; chronic sequelae often need pain management and fertility-related evaluation. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "起始背景為既往 PID；淋病與披衣菌重要，但 PID 可為多微生物性。",
+      "western_pathology_zh": "既往上生殖道發炎後可留下輸卵管損傷／沾黏、慢性骨盆痛、不孕或子宮外孕風險；此標籤不代表仍有活動性感染。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6195,7 +6317,72 @@
         "rf.pid_chronic.legacy02",
         "rf.pid_chronic.legacy03",
         "rf.pid_chronic.legacy04"
-      ]
+      ],
+      "western_pathology_en": "Chronic sequelae after prior upper-genital-tract inflammation can include tubal damage/adhesions, chronic pelvic pain, infertility risk, or ectopic-pregnancy risk; the label does not prove persistent active infection.",
+      "etiology_en": "Prior PID is the initiating context; gonorrhea and chlamydia are important causes, but PID is polymicrobial.",
+      "risk_factors_zh": [
+        {
+          "factor": "過去骨盆腔炎（PID）病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        },
+        {
+          "factor": "性傳染病延遲就醫或未治療",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        },
+        {
+          "factor": "新性傳染病暴露／骨盆腔炎復發風險",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "prior PID",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        },
+        {
+          "factor": "delayed/untreated STI",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        },
+        {
+          "factor": "new STI exposure/recurrent PID risk",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        }
+      ],
+      "sources": [
+        "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines: https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        ],
+        "western_pathology_en": [
+          "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        ],
+        "etiology_zh": [
+          "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        ],
+        "etiology_en": [
+          "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        ],
+        "risk_factors_zh": [
+          "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        ],
+        "risk_factors_en": [
+          "CDC — Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines"
+        ]
+      }
     },
     {
       "id": "cond.vulvovaginal_candidiasis",
@@ -6227,8 +6414,8 @@
       ],
       "western_context_zh": "常以抗黴菌藥物處理並處置誘因；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with antifungal agents and addressing contributors. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "Candida 造成症狀性感染；復發／複雜病例可涉及宿主因素或非 albicans 菌種，許多單純病例則無明確誘因。",
+      "western_pathology_zh": "多由 C. albicans 造成；搔癢、疼痛、排尿痛、性交痛與分泌物皆不具特異性，不能只靠症狀診斷。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6266,6 +6453,75 @@
         "rf.vulvovaginal_candidiasis.legacy02",
         "rf.vulvovaginal_candidiasis.legacy03",
         "rf.vulvovaginal_candidiasis.legacy04"
+      ],
+      "western_pathology_en": "Symptomatic vulvovaginal candidiasis is most often caused by C. albicans; symptoms such as pruritus, soreness, dysuria, dyspareunia, and discharge are not specific, so diagnosis should not rest on symptoms alone.",
+      "etiology_en": "Candida causes symptomatic infection; recurrent/complicated cases may involve host factors or non-albicans species, while many uncomplicated cases lack an identifiable precipitant.",
+      "risk_factors_zh": [
+        {
+          "factor": "頻繁使用抗生素",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        },
+        {
+          "factor": "糖尿病／免疫低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        },
+        {
+          "factor": "懷孕（影響處置考量）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "frequent antibiotics",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        },
+        {
+          "factor": "diabetes/immunocompromise",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        },
+        {
+          "factor": "pregnancy changes management considerations",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        }
+      ],
+      "sources": [
+        "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines: https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        ],
+        "western_pathology_en": [
+          "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        ],
+        "etiology_zh": [
+          "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        ],
+        "etiology_en": [
+          "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        ],
+        "risk_factors_zh": [
+          "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        ],
+        "risk_factors_en": [
+          "CDC — Vulvovaginal Candidiasis - STI Treatment Guidelines"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.pruritus",
+        "sym.vaginal_discharge"
       ]
     },
     {
@@ -6557,8 +6813,8 @@
       ],
       "western_context_zh": "常以血清素類藥物、荷爾蒙處置與心理支持處理；此為文件對照用語，非治療指示。",
       "western_context_en": "Commonly managed with serotonergic agents, hormonal approaches, and psychological support. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "較可能是對正常卵巢類固醇波動的異常敏感與神經生物效應，而非單一結構病灶。",
+      "western_pathology_zh": "嚴重週期性經前疾患，情緒／行為／身體症狀隨月經週期出現並造成明顯困擾或功能受損。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6595,6 +6851,62 @@
         "rf.pmdd.legacy01",
         "rf.pmdd.legacy02",
         "rf.pmdd.legacy03"
+      ],
+      "western_pathology_en": "A severe cyclical premenstrual disorder with affective/behavioral/physical symptoms linked to the menstrual cycle and clinically meaningful distress or impairment.",
+      "etiology_en": "Likely reflects abnormal sensitivity to normal ovarian-steroid fluctuation with neurobiologic effects rather than a single structural lesion.",
+      "risk_factors_zh": [
+        {
+          "factor": "育齡期具排卵性週期",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Management of Premenstrual Disorders"
+        },
+        {
+          "factor": "共病情緒／焦慮疾患使鑑別診斷更複雜",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Management of Premenstrual Disorders"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "reproductive-age ovulatory cycles",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Management of Premenstrual Disorders"
+        },
+        {
+          "factor": "coexisting mood/anxiety disorders complicate differential",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Management of Premenstrual Disorders"
+        }
+      ],
+      "sources": [
+        "ACOG — Management of Premenstrual Disorders: https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "ACOG — Management of Premenstrual Disorders"
+        ],
+        "western_pathology_en": [
+          "ACOG — Management of Premenstrual Disorders"
+        ],
+        "etiology_zh": [
+          "ACOG — Management of Premenstrual Disorders"
+        ],
+        "etiology_en": [
+          "ACOG — Management of Premenstrual Disorders"
+        ],
+        "risk_factors_zh": [
+          "ACOG — Management of Premenstrual Disorders"
+        ],
+        "risk_factors_en": [
+          "ACOG — Management of Premenstrual Disorders"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.irritability"
       ]
     },
     {
@@ -6628,8 +6940,8 @@
       ],
       "western_context_zh": "處置以治療潛在病因為主，並輔以疼痛管理；此為文件對照用語，非治療指示。",
       "western_context_en": "Management targets the underlying cause with adjunctive pain control. Documentation context only, not a treatment instruction.",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "原因可包括子宮內膜異位、腺肌症、肌瘤、PID 與部分結構／先天異常。",
+      "western_pathology_zh": "由生殖器官潛在疾病造成的經痛，不同於原發性經痛；可較早開始、持續更久或逐漸加重。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -6667,6 +6979,50 @@
         "rf.secondary_dysmenorrhea.legacy02",
         "rf.secondary_dysmenorrhea.legacy03",
         "rf.secondary_dysmenorrhea.legacy04"
+      ],
+      "western_pathology_en": "Menstrual pain caused by an underlying reproductive-organ disorder rather than primary prostaglandin-mediated cramps; pain may begin earlier, last longer, or worsen over time.",
+      "etiology_en": "Underlying causes include endometriosis, adenomyosis, fibroids, PID, and selected structural/congenital disorders.",
+      "risk_factors_zh": [
+        {
+          "factor": "已知或疑似骨盆腔器質病變（如子宮內膜異位、腺肌症、肌瘤）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Dysmenorrhea: Painful Periods"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "known/suspected pelvic pathology",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "ACOG — Dysmenorrhea: Painful Periods"
+        }
+      ],
+      "sources": [
+        "ACOG — Dysmenorrhea: Painful Periods: https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "ACOG — Dysmenorrhea: Painful Periods"
+        ],
+        "western_pathology_en": [
+          "ACOG — Dysmenorrhea: Painful Periods"
+        ],
+        "etiology_zh": [
+          "ACOG — Dysmenorrhea: Painful Periods"
+        ],
+        "etiology_en": [
+          "ACOG — Dysmenorrhea: Painful Periods"
+        ],
+        "risk_factors_zh": [
+          "ACOG — Dysmenorrhea: Painful Periods"
+        ],
+        "risk_factors_en": [
+          "ACOG — Dysmenorrhea: Painful Periods"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.dysmenorrhea"
       ]
     },
     {
@@ -8883,8 +9239,8 @@
         "standard_spine_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "最常見於汽車碰撞，也可見於跌倒、接觸運動或跳水。",
+      "western_pathology_zh": "加速－減速力量造成的頸椎及支持結構損傷；可有頸痛、僵硬、頭痛或神經症狀，但不能只用碰撞標籤推定嚴重度。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -8921,6 +9277,74 @@
         "rf.whiplash.legacy01",
         "rf.whiplash.legacy02",
         "rf.whiplash.legacy03"
+      ],
+      "western_pathology_en": "Cervical-spine/supporting-structure injury produced by acceleration-deceleration force. Symptoms may include neck pain, stiffness, headache, or neurologic complaints; collision label alone does not determine severity/prognosis.",
+      "etiology_en": "Most often follows motor-vehicle collision; falls, contact-sport collisions, or diving can also cause this injury pattern.",
+      "risk_factors_zh": [
+        {
+          "factor": "汽車碰撞（尤其追撞）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAPM&R — Cervical Whiplash"
+        },
+        {
+          "factor": "跌倒／接觸性運動碰撞",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAPM&R — Cervical Whiplash"
+        },
+        {
+          "factor": "既往頸椎問題（可能影響症狀嚴重度）",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAPM&R — Cervical Whiplash"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "motor-vehicle collision",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAPM&R — Cervical Whiplash"
+        },
+        {
+          "factor": "falls/contact sport",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAPM&R — Cervical Whiplash"
+        },
+        {
+          "factor": "prior cervical problems may affect symptom burden",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAPM&R — Cervical Whiplash"
+        }
+      ],
+      "sources": [
+        "AAPM&R — Cervical Whiplash: https://now.aapmr.org/cervical-whiplash/"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "AAPM&R — Cervical Whiplash"
+        ],
+        "western_pathology_en": [
+          "AAPM&R — Cervical Whiplash"
+        ],
+        "etiology_zh": [
+          "AAPM&R — Cervical Whiplash"
+        ],
+        "etiology_en": [
+          "AAPM&R — Cervical Whiplash"
+        ],
+        "risk_factors_zh": [
+          "AAPM&R — Cervical Whiplash"
+        ],
+        "risk_factors_en": [
+          "AAPM&R — Cervical Whiplash"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.neck_pain"
       ]
     },
     {
@@ -9439,8 +9863,8 @@
         "aaos_orthoinfo",
         "standard_orthopedic_reference"
       ],
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "反覆過頭負荷、搬舉、年齡性退變與輕微外傷可參與。",
+      "western_pathology_zh": "旋轉肌袖肌腱疼痛／肌腱病變或肌腱炎，須與全層撕裂區分；反覆負荷可刺激肌腱與肩峰下結構。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -9477,6 +9901,86 @@
         "rf.rotator_cuff.legacy01",
         "rf.rotator_cuff.legacy02",
         "rf.rotator_cuff.legacy03"
+      ],
+      "western_pathology_en": "Rotator-cuff tendon pain/tendinopathy or tendinitis, distinct from a full-thickness tear. Repeated loading can irritate tendon/subacromial structures and provoke pain with elevation or overhead use.",
+      "etiology_en": "Repetitive overhead load, repeated lifting, age-related degeneration, and minor injury can contribute.",
+      "risk_factors_zh": [
+        {
+          "factor": "過頭運動項目",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        },
+        {
+          "factor": "過頭或反覆性職業性工作",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        },
+        {
+          "factor": "年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        },
+        {
+          "factor": "既往／輕微肩部外傷史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "overhead sport",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        },
+        {
+          "factor": "overhead/repetitive occupational work",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        },
+        {
+          "factor": "increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        },
+        {
+          "factor": "prior/minor shoulder injury",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        }
+      ],
+      "sources": [
+        "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis: https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        ],
+        "western_pathology_en": [
+          "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        ],
+        "etiology_zh": [
+          "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        ],
+        "etiology_en": [
+          "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        ],
+        "risk_factors_zh": [
+          "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        ],
+        "risk_factors_en": [
+          "AAOS / ASES — Shoulder Impingement/Rotator Cuff Tendinitis"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.shoulder_pain"
       ]
     },
     {
@@ -12225,7 +12729,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/92254"
+        "https://cloudtcm.com/disease/tcm/92254",
+        "AAOS — Sprained Ankle: https://orthoinfo.aaos.org/en/diseases--conditions/sprained-ankle"
       ],
       "red_flag_refs": [
         "rf.ankle_sprain.legacy01",
@@ -12245,7 +12750,21 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch.",
           "moved_at": "2026-08-11"
         }
-      ]
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "AAOS — Sprained Ankle"
+        ],
+        "western_context_en": [
+          "AAOS — Sprained Ankle"
+        ],
+        "red_flags_zh": [
+          "AAOS — Sprained Ankle"
+        ],
+        "red_flags_en": [
+          "AAOS — Sprained Ankle"
+        ]
+      }
     },
     {
       "id": "cond.plantar_fasciitis",
@@ -12984,8 +13503,8 @@
         "standard_orthopedic_reference"
       ],
       "authored_by": "model_draft",
-      "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-      "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+      "etiology_zh": "提出機轉包括非椎間盤來源坐骨神經壓迫、局部解剖、外傷或反覆負荷，尚無單一確立機轉。",
+      "western_pathology_zh": "具爭議性的深臀區坐骨神經刺激／壓迫概念；常見臀痛、久坐誘發與深臀壓痛，但診斷標準未完全一致。",
       "tcm_patterns": [
         {
           "pattern_zh": "氣血不和證",
@@ -13022,7 +13541,72 @@
         "rf.piriformis_syndrome.legacy01",
         "rf.piriformis_syndrome.legacy02",
         "rf.piriformis_syndrome.legacy03"
-      ]
+      ],
+      "western_pathology_en": "A debated deep-gluteal sciatic-nerve irritation/entrapment construct. Buttock pain, sitting-provoked symptoms, deep-gluteal tenderness, and provocation with piriformis tension are reported, but criteria are not fully standardized.",
+      "etiology_en": "Proposed mechanisms include non-discogenic sciatic-nerve entrapment related to local anatomy, trauma, or repetitive loading; no single mechanism is established.",
+      "risk_factors_zh": [
+        {
+          "factor": "久坐或反覆髖部負荷",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        },
+        {
+          "factor": "臀部外傷史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        },
+        {
+          "factor": "可能的解剖構造易感性",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "prolonged sitting/repetitive hip loading",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        },
+        {
+          "factor": "buttock trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        },
+        {
+          "factor": "possible anatomic susceptibility",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        }
+      ],
+      "sources": [
+        "PubMed systematic review — Four symptoms define the piriformis syndrome: https://pubmed.ncbi.nlm.nih.gov/28836092/"
+      ],
+      "field_sources": {
+        "western_pathology_zh": [
+          "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        ],
+        "western_pathology_en": [
+          "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        ],
+        "etiology_zh": [
+          "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        ],
+        "etiology_en": [
+          "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        ],
+        "risk_factors_zh": [
+          "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        ],
+        "risk_factors_en": [
+          "PubMed systematic review — Four symptoms define the piriformis syndrome"
+        ]
+      }
     },
     {
       "id": "cond.fibromyalgia",
@@ -15828,7 +16412,8 @@
       "source_type": "sourced_cloudtcm_record",
       "entity_type": "biomedical_condition",
       "sources": [
-        "https://cloudtcm.com/disease/tcm/28716"
+        "https://cloudtcm.com/disease/tcm/28716",
+        "IHS / ICHD-3 — 3.1 Cluster headache: https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-1-cluster-headache/"
       ],
       "red_flag_refs": [
         "rf.cluster_headache.legacy01",
@@ -15842,6 +16427,23 @@
           "reason": "CloudTCM blog-narrative import junk (member anecdotes, ad embed codes, rhetorical blog voice) — not template-appropriate 病理生理/病因病機 content per CONDITION_CARD_TEMPLATE §3.5.5. Field cleared to an honest gap; no replacement content invented this batch. (western_pathology_zh on this record is separately C10-shared-verbatim boilerplate — out of scope for this batch, left untouched for the C10/batch-2 pass.)",
           "moved_at": "2026-08-11"
         }
+      ],
+      "field_sources": {
+        "western_context_zh": [
+          "IHS / ICHD-3 — 3.1 Cluster headache"
+        ],
+        "western_context_en": [
+          "IHS / ICHD-3 — 3.1 Cluster headache"
+        ],
+        "red_flags_zh": [
+          "IHS / ICHD-3 — 3.1 Cluster headache"
+        ],
+        "red_flags_en": [
+          "IHS / ICHD-3 — 3.1 Cluster headache"
+        ]
+      },
+      "sign_symptom_ids": [
+        "sym.headache"
       ]
     },
     {
