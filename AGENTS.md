@@ -39,6 +39,24 @@ AcuTing OS：Ting 的私人 TCM 學習與臨床工作站（查資料、寫 SOAP�
    Codex 另外更新 `docs/CODEX_HANDOFF.md`（機器可讀、最新在前）。
 4. 回報格式照憲法 §四：逐欄位數字，禁用「完成」「100%」。
 
+## 安全 gate 的驗證分工（2026-08-12 定；預設不要「叫 Codex」）
+
+安全 gate（PHI／病人輸出／不可變歷史／傳輸／持久層）改完，**自測綠不算數** ——
+2026-08-12 的 AVS 與 P1 兩輪都是「自寫測試全綠之後」才被抓到二階 bug。
+分工按「誰抓得到哪一層」，不是按誰有空：
+
+| 階段 | 誰 | 為什麼 |
+|---|---|---|
+| 攻擊面清單 | **SOL** | 讀契約與程式碼推理出攻擊面（它的 P1 pack 就是這個）。它產出的是 leads，不是判決 |
+| **執行對抗測試** | Codex，或隔離的 Opus subagent | 只有真的跑 harness 才抓得到 Map last-wins、解碼上限、app/CLI 分歧這類二階 bug |
+| 修復 | 實作線 | reviewer 不改產品碼；找到缺陷回報，修完再一次 focused retest |
+| 例行迴歸 | **CI** | 每個被抓到的 bug 都要變成永久 fixture，驗證成本才會遞減 |
+
+- Codex token 有限：只花在**當下擋住 landing 的那一個 gate**，不重跑已綠的輪次。
+- 用自家 subagent 執行時要知道它的弱點：**與實作者同源，共用盲點的風險較高** ——
+  所以 SOL 出清單那一步不能省，那是外部視角的來源。
+- reviewer 一律**不採信派工單裡的數字**，自己重跑；報告出現舊數字 = 沒有重跑。
+
 ## 技術約定
 
 - 純 HTML/CSS/vanilla JS，無 build step。本機預覽：`node scripts/dev-server.js`。
