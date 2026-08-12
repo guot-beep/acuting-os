@@ -85,3 +85,12 @@ quarantine 擋 `curriculum/`、`data/imports/`、`docs/`、`clinical/`、`cases/
   (652–656)以 guotingru@gmail.com 身分經 wrangler 上傳(未 promote)。
   本機跑不了 wrangler,不是這裡做的——若不是 Codex/SOL 在別處代操作,
   應考慮 roll credentials。
+
+## 真機使用 SOP:單一入口網址(Dry Clinic #7)
+
+同一台機器上 `localhost` 與 `127.0.0.1` 是**兩個互不相通的病人資料庫**
+(localStorage per-origin;C2b 的 pointer/staging 兩鍵同樣 per-origin,會跟著分裂)。
+規則:
+1. 臨床一律用**同一個網址**開系統;本機開發約定 `http://localhost:<port>`。
+2. 瀏覽器書籤只設一個,開診機器不留第二個入口(app 已對 127.0.0.1 顯示紅色警示橫幅)。
+3. **開診前先按「立即匯出」做一份備份**(2026-08-11 演練中匯出功能就是救回全庫的路徑)。

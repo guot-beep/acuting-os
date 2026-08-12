@@ -1523,6 +1523,18 @@ function handlePointHashChange() {
 // is how data disappears.
 let clinicalStoreIntegrityError = null;
 
+// Dry Clinic #7:localhost 與 127.0.0.1 是不同 origin = 兩個互不相通的
+// 病人資料庫(2026-08-11 演練實測)。同機別名陷阱只有這一組;真機部署的
+// canonical 網域寫在 docs/DEPLOY_CLOUDFLARE.md SOP,不在此硬編碼。
+(function warnOriginAlias() {
+  if (location.hostname !== "127.0.0.1") return;
+  const el = document.createElement("div");
+  el.setAttribute("role", "alert");
+  el.style.cssText = "position:sticky;top:0;z-index:9999;background:#8a1f1f;color:#fff;padding:8px 14px;font-size:.9em;text-align:center";
+  el.textContent = "⚠️ 你正以 127.0.0.1 開啟本系統 — 這裡的病人資料庫與 localhost 的互不相通。臨床紀錄請一律使用同一個網址(建議 localhost),否則資料會分裂在兩邊。";
+  document.body.prepend(el);
+})();
+
 function loadClinicalCases() {
   // Phase C seam (js/clinical-store.js): storage I/O goes through the
   // repository layer; normalization stays HERE (contract layer, not storage).
