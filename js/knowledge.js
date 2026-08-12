@@ -1057,16 +1057,18 @@
      Nothing is filtered item by item; a list either belongs here whole or was
      absorbed whole, so no half-list of fragments can reach the card. */
   const chipKey = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9一-鿿]/g, "");
-  function absorbedByModernIndex(list, record) {
+  function alreadyShown(list, shownLists) {
     const items = cleanList(list);
     if (!items.length) return false;
-    const indexed = new Set([
-      ...cleanList(record.modern_applications_en || record.treats_en || ((record.english_exam_track || {}).treats_en)),
-      ...cleanList(record.modern_applications_zh || record.treats_zh)
-    ].map(chipKey));
-    if (!indexed.size) return false;
-    const covered = items.filter((v) => indexed.has(chipKey(v))).length;
-    return covered / items.length >= 0.8;
+    const shown = new Set(shownLists.flatMap((l) => cleanList(l)).map(chipKey));
+    if (!shown.size) return false;
+    return items.filter((v) => shown.has(chipKey(v))).length / items.length >= 0.8;
+  }
+  function absorbedByModernIndex(list, record) {
+    return alreadyShown(list, [
+      record.modern_applications_en || record.treats_en || ((record.english_exam_track || {}).treats_en),
+      record.modern_applications_zh || record.treats_zh
+    ]);
   }
 
   /* 現代應用 — what this formula treats today. Kept separate from CloudTCM's
@@ -1335,6 +1337,18 @@
       }
     }
 
+    /* American Dragon 證型 sat under 主治證型 as its own subhead until 66d3e72
+       rewrote this panel. Restoring it verbatim would double-print: on 202 of
+       the 212 formulas that carry ad_syndromes_en it is the same list as
+       pattern_indications_en, already paired with the 中文 line right above.
+       Ten formulas carry something genuinely different — 桂枝湯 Chest Bi,
+       理中丸 Colon Cold, 六一散 summer-heat — and those are the ones that were
+       lost. Same 80% test as the modern index, one shared helper. */
+    const adSyndromes = cleanList(record.ad_syndromes_en);
+    const adSyndromesBlock = (adSyndromes.length && !alreadyShown(adSyndromes, [indications, record.pattern_indications_en]))
+      ? `<h4 class="k-subhead">American Dragon 證型 Syndromes</h4>${detailList(adSyndromes)}`
+      : "";
+
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     const contraindicationsZh = cleanList(record.contraindications_zh || record.cautions_zh);
     const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
@@ -1343,7 +1357,7 @@
       : detailList(safetyList(safety));
 
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + adSyndromesBlock)}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : "")}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
