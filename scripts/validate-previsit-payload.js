@@ -530,6 +530,39 @@ function runSelfTest(config, registry) {
       }
     }
   }
+  /* 識別碼文法的兩面(自查後補,2026-08-12)。
+   *
+   * 這條規則有兩種失敗方式,而且都是靜默的:
+   *   太鬆 → 不可見字元混進 payloadId,重放去重失效(SOL R-6/R-7)
+   *   太嚴 → 合法的病歷代碼被拒,但沒有人會回報「系統說我的代碼不合法」
+   *
+   * 太嚴那一半是我自己造成的:第一版只准 \p{L}\p{N},於是印地文、阿拉伯文
+   * 帶母音、泰文帶聲調全被擋 —— 它們的字含組合符號。最不冷僻的是 NFD:
+   * Mac 剪貼簿常給分解式,同一個 `café-01` 在 Mac 上被拒、Windows 上通過。
+   * 所以兩組都要測,只測一邊會讓另一邊悄悄退化。 */
+  {
+    const mod = globalThis.AcuTingPrevisitValidator;
+    const mustPass = {
+      "越南文": "Nguyễn-01", "印地文": "मुझे-01", "阿拉伯文帶母音": "مُحَمَّد-01",
+      "泰文": "ก้อง-01", "韓文": "김-01", "日文": "さくら-01",
+      "重音 NFC": "café-01", "分解式 NFD": "cafe\u0301-01",
+      "中文": "病人代碼-三號", "一般": "P-2026-001"
+    };
+    for (const [name, id] of Object.entries(mustPass)) {
+      const ok = mod.isWellFormedIdentifier(id);
+      allOk = allOk && ok;
+      lines.push(`${ok ? "PASS" : "FAIL"} [identifier] accepts ${name}${ok ? "" : " — 合法病歷代碼被拒(過嚴)"}`);
+    }
+    const mustReject = {
+      "ZWSP": "pv-abc\u200B", "CGJ": "pv-ab\u034Fc", "VS16": "pv-abc\uFE0F",
+      "ZWJ": "pv\u200Dabc", "只有 ZWSP": "\u200B", "NBSP": "pv\u00A0abc"
+    };
+    for (const [name, id] of Object.entries(mustReject)) {
+      const ok = !mod.isWellFormedIdentifier(id);
+      allOk = allOk && ok;
+      lines.push(`${ok ? "PASS" : "FAIL"} [identifier] rejects invisible ${name}${ok ? "" : " — 重放去重會被繞過"}`);
+    }
+  }
   const delegationProblems = checkAppDelegation();
   delegationProblems.forEach((p) => lines.push(`FAIL [parity] ${p}`));
   if (!delegationProblems.length) lines.push("PASS [parity] app.js delegates shape validation to the shared module; index.html loads it");

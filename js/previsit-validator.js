@@ -80,9 +80,26 @@
    * 全部不屬於 \p{L}/\p{N},自動被排除 —— 不需要知道它們的名字。
    * 而且**不合法就拒收**,不再靜默修正:異常識別碼是要被看見的事件。
    * 中文病歷代碼(病人代碼-三號)照樣通過,因為漢字是 \p{L}。 */
-  const IDENTIFIER_RE = /^[\p{L}\p{N}][\p{L}\p{N} \-_.#/]*$/u;
+  /* 組合附加符號必須放行(自查,2026-08-12)。第一版只准 \p{L}\p{N},於是
+   * 印地文、阿拉伯文帶母音、泰文帶聲調全被拒 —— 它們的合法字元包含
+   * 組合符號(\p{M})。最不冷僻的一個情境是 NFD:Mac 的剪貼簿常給分解式,
+   * 所以同一個看起來一樣的 `café-01` 在 Mac 上被拒、在 Windows 上通過。
+   *
+   * 但 \p{M} 裡混著幾個「看不見」的成員,正是 SOL R-6 點名的那類:
+   * U+034F(CGJ)與 variation selectors(FE00-FE0F、E0100-E01EF)都是 Mn。
+   * 所以是「正面文法 + 針對性排除」:形狀由 L/N/M 決定,
+   * 少數不可見的 mark 逐個排除。
+   *
+   * 未解(留給 Ting/reviewer):NFC 與 NFD 是不同位元組,兩者都合法但
+   * 逐字比對不相等。要不要在比較時正規化,是契約決定 —— SOL R-8 明確
+   * 反對靜默改寫識別碼,所以這裡不擅自 normalize,寧可讓它拒收得明顯。 */
+  const INVISIBLE_MARKS = /[\u034F\uFE00-\uFE0F]|[\u{E0100}-\u{E01EF}]/u;
+  const IDENTIFIER_RE = /^[\p{L}\p{N}][\p{L}\p{N}\p{M} \-_.#/]*$/u;
   function isWellFormedIdentifier(v) {
-    return typeof v === "string" && IDENTIFIER_RE.test(v.trim()) && v.trim() === v.replace(/^\s+|\s+$/g, "");
+    if (typeof v !== "string") return false;
+    const t = v.trim();
+    if (INVISIBLE_MARKS.test(t)) return false;   // mark,但看不見 —— 不准當識別碼的一部分
+    return IDENTIFIER_RE.test(t) && t === v.replace(/^\s+|\s+$/g, "");
   }
 
   /* 解析失敗描述:只給長度,絕不轉述內容(Opus 覆測 HIGH-1)。
