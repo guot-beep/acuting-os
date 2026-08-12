@@ -26,6 +26,11 @@ const visitSel = arg("--visit", "latest");
 const note = visitSel === "latest" ? notes[notes.length - 1] : notes.find((n) => n.id === visitSel);
 if (!note) { console.error("visit not found"); process.exit(1); }
 
+// 建議庫 + 診所資訊(v2)
+let ADVICE = [], CLINIC = {};
+try { ADVICE = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/config/avs_advice_library.json"), "utf8")).records || []; } catch {}
+try { CLINIC = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/config/clinic_profile.json"), "utf8")); } catch {}
+
 // 知識庫(方劑/補充劑病人名):bundle 可載則用,不可載誠實略過
 let K = null;
 try { const g = {}; (new Function("globalThis", fs.readFileSync(path.join(__dirname, "..", "data/generated/knowledge_data.js"), "utf8") + ";"))(g); K = g.ACUTING_KNOWLEDGE; } catch { K = null; }
@@ -66,6 +71,30 @@ const prompts = [...tracked].map((id) => {
   return def && def.patient_prompt_zh ? def.patient_prompt_zh : null;
 }).filter(Boolean).slice(0, 4);
 
+// v2 生活醫囑:visit 證型 + case 病症/safetyFlags + 當日療法(technique/plan
+// 關鍵字推斷)挑建議 —— 觸發條件絕不輸出,只輸出 advice_zh(病人語言)。
+const visitPatterns = new Set((note.tcmPatternSelections || []).map((x) => x.patternId));
+const caseConds = new Set([...(kase.westernConditions || []), ...(kase.easternDiseases || [])]);
+const caseFlags = (kase.safetyFlags || []).map(String);
+const techText = [note.technique, note.plan, note.objective].filter(Boolean).join(" ");
+const modalitiesToday = new Set();
+if ((note.acupointLinks || []).length || note.pointsUsed) modalitiesToday.add("modality.acupuncture");
+if (/電針/.test(techText)) modalitiesToday.add("modality.electroacupuncture");
+if (/拔罐/.test(techText)) modalitiesToday.add("modality.cupping");
+if (/刮痧/.test(techText)) modalitiesToday.add("modality.gua_sha");
+if (/放血|點刺/.test(techText)) modalitiesToday.add("modality.bloodletting");
+if (/灸/.test(techText)) modalitiesToday.add("modality.moxibustion");
+const matchedAdvice = ADVICE.filter((a) => {
+  const t = a.triggers || {};
+  if ((t.patterns || []).some((p) => visitPatterns.has(p))) return true;
+  if ((t.conditions || []).some((c) => caseConds.has(c))) return true;
+  if ((t.modalities || []).some((m) => modalitiesToday.has(m))) return true;
+  if ((t.safetyFlags || []).some((f) => caseFlags.some((cf) => cf.includes(f)))) return true;
+  if (t.any_herbs && medRows.length) return true;
+  return false;
+});
+const byCat = (cat) => matchedAdvice.filter((a) => a.category === cat).map((a) => a.advice_zh);
+
 const esc = (s) => String(s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 const sec = (key, title, bodyHtml) => (skip.has(key) || !bodyHtml) ? "" : `<section><h2>${title}</h2>${bodyHtml}</section>`;
 
@@ -83,16 +112,20 @@ ul{margin:4px 0;padding-left:20px}
 .footer{margin-top:22px;padding-top:10px;border-top:1px dashed #c89033;font-size:.78em;color:#66717a}
 @media print{body{background:#fff;padding:0}.sheet{border:0;box-shadow:none}}
 </style></head><body><div class="sheet">
+<div style="text-align:center;margin-bottom:6px"><div style="font-family:'Noto Serif TC',serif;font-size:1.2em;color:#16352f">${esc(CLINIC.clinic_name_zh || "")}</div></div>
 <h1>診後照護指示</h1>
 <div class="date">日期:${esc(note.visitDate)}</div>
 ${sec("today", "今天做了什麼", didToday.length ? `<p>${didToday.map(esc).join("、")}。</p>` : "")}
 ${sec("summary", "近況小結", note.avsSummary ? `<p>${esc(note.avsSummary)}</p>` : "")}
-${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#66717a">與西藥同服請間隔至少一小時;有任何不適先暫停並聯絡我們。</p>` : "")}
-${sec("lifestyle", "作息與生活建議", note.avsLifestyle ? `<p>${esc(note.avsLifestyle)}</p>` : "")}
-${sec("diet", "飲食建議", note.avsDiet ? `<p>${esc(note.avsDiet)}</p>` : "")}
+${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#66717a">${esc(byCat("herb_caution").join(" ") || "中藥與西藥請間隔至少 1 小時服用;有任何不適先暫停並聯絡我們。")}</p>` : "")}
+${sec("aftercare", "今日治療後注意事項", byCat("aftercare").length ? "<ul>" + byCat("aftercare").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
+${sec("special", "特別注意", byCat("special").length ? "<ul>" + byCat("special").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
+${sec("lifestyle", "作息與生活建議", (byCat("lifestyle").length || note.avsLifestyle) ? (byCat("lifestyle").length ? "<ul>" + byCat("lifestyle").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "") + (note.avsLifestyle ? "<p>" + esc(note.avsLifestyle) + "</p>" : "") : "")}
+${sec("diet", "飲食建議", (byCat("diet").length || note.avsDiet) ? (byCat("diet").length ? "<ul>" + byCat("diet").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "") + (note.avsDiet ? "<p>" + esc(note.avsDiet) + "</p>" : "") : "")}
 ${sec("exercise", "活動與運動建議", note.avsExercise ? `<p>${esc(note.avsExercise)}</p>` : "")}
 ${sec("safety", "什麼情況請盡快與我們聯絡或就醫", `<ul><li>症狀明顯加重、或出現新的劇烈疼痛</li><li>發燒、持續頭暈、異常出血或瘀腫擴大</li><li>服用調理品後噁心、皮疹或任何過敏反應</li>${note.avsSafety ? `<li>${esc(note.avsSafety)}</li>` : ""}</ul>`)}
 ${sec("followup", "下次回診與自我觀察", `${note.followUp ? `<p>回診安排:${esc(note.followUp)}</p>` : ""}${prompts.length ? `<p>這段期間請留意:</p><ul>${prompts.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}`)}
+<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(CLINIC.practitioner_zh || "")}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(CLINIC.phone || "")}<br>${esc(CLINIC.website || "")}</div></div>
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。</div>
 </div></body></html>`;
 
