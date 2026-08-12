@@ -5456,37 +5456,9 @@
       "western_context_en": "Obstetric care assesses external cephalic version or delivery planning such as cesarean by gestation and circumstances. Documentation context only, not a treatment instruction.",
       "etiology_zh": "原因常無法確定；相關因素可包括多胎妊娠、羊水過多或過少、子宮形態異常或肌瘤，以及既往妊娠。",
       "western_pathology_zh": "臀位屬胎兒先露方式，不是孕婦本身的疾病：接近足月時由臀部、足部或兩者先朝向產道，而不是頭部先露。",
-      "tcm_patterns": [
-        {
-          "pattern_zh": "氣血不和證",
-          "formula_zh": "八珍湯",
-          "acupoints_zh": [
-            "足三里 (ST36)",
-            "合谷 (LI4)",
-            "三陰交 (SP6)"
-          ]
-        },
-        {
-          "pattern_zh": "臟腑虛弱證",
-          "formula_zh": "補中益氣湯",
-          "acupoints_zh": [
-            "中脘 (CV12)",
-            "氣海 (CV6)",
-            "脾俞 (BL20)"
-          ]
-        }
-      ],
-      "acupoint_protocols": [
-        "足三里 (ST36)",
-        "合谷 (LI4)",
-        "三陰交 (SP6)",
-        "中脘 (CV12)"
-      ],
-      "herb_formulas": [
-        "八珍湯",
-        "補中益氣湯",
-        "柴胡疏肝散"
-      ],
+      "tcm_patterns": [],
+      "acupoint_protocols": [],
+      "herb_formulas": [],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
         "rf.breech_presentation.legacy01",
@@ -5592,7 +5564,27 @@
         "evidence": "unknown",
         "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03 (compiled from ACOG clinical materials)",
         "note": "No systematic-review source for moxibustion version efficacy was confirmed in this session's research; this is a commonly taught traditional practice whose evidence grade was not verified this session — a scope-of-practice caution"
-      }
+      },
+      "import_artifacts": [
+        {
+          "original_field": "acupoint_protocols",
+          "text": "[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\",\"中脘 (CV12)\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-01): this is the generic 74-record shared-boilerplate protocol (足三里/合谷/三陰交/中脘), not a breech-presentation-specific protocol. On this late-pregnancy card (icd_hint O32.1), 合谷 (LI4) and 三陰交 (SP6) are the standard pregnancy-cautioned/contraindicated point pair (traditionally associated with inducing labor) — presenting them as THE structured acupoint_protocols renders a caution pair as the recommended treatment. The card's own acupuncture_scope_zh.can_treat correctly names 至陰穴 (BL67) moxibustion as the traditional approach, but BL67 was absent from this structured field. Moved verbatim, not deleted (constitution redline 3: move-then-clear). A condition-specific BL67 protocol was NOT authored here — that rebuild needs Ting's sign-off on gestational-week and technique wording per CONDITION_CARD_TEMPLATE §3.5.5.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "herb_formulas",
+          "text": "[\"八珍湯\",\"補中益氣湯\",\"柴胡疏肝散\"]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-01): same shared-boilerplate set as acupoint_protocols (八珍湯/補中益氣湯/柴胡疏肝散), not condition-specific and not annotated for pregnancy appropriateness. Moved verbatim rather than deleted; field left honestly empty pending condition-specific herb curation (Ting/herb line).",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "tcm_patterns",
+          "text": "[{\"pattern_zh\":\"氣血不和證\",\"formula_zh\":\"八珍湯\",\"acupoints_zh\":[\"足三里 (ST36)\",\"合谷 (LI4)\",\"三陰交 (SP6)\"]},{\"pattern_zh\":\"臟腑虛弱證\",\"formula_zh\":\"補中益氣湯\",\"acupoints_zh\":[\"中脘 (CV12)\",\"氣海 (CV6)\",\"脾俞 (BL20)\"]}]",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-01): inline tcm_patterns blob duplicates the same generic 氣血不和證/八珍湯 + 臟腑虛弱證/補中益氣湯 boilerplate (with the same LI4/SP6 pairing embedded in acupoints_zh) shared across 74 cond.* records. Per CONDITION_CARD_TEMPLATE §3.6 this raw-import field is provenance only and must never drive navigation, but on a late-pregnancy card it still surfaces the caution-point pairing. Moved verbatim into import_artifacts; field left honestly empty rather than carry a non-specific, safety-relevant blob forward.",
+          "moved_at": "2026-08-12"
+        }
+      ]
     },
     {
       "id": "cond.postpartum_hypolactation",
@@ -21111,8 +21103,8 @@
         "pattern.phlegm_misting_heart"
       ],
       "review_status": "draft",
-      "etiology_zh": "要治療神經衰弱最簡單的方法，就是放慢步調，遠離電腦、手機，讓腦子徹底休息。由於古代中國人沒有現代科技，所以要罹患這種疾病的機率應該很低。\n\n要理解神經衰弱的真正原因是什麼，最簡單直接的方法就是去找一個神經衰弱的人，長期檢測他/她的經絡，就可以知道是什麼經絡異常所造成的。\n\n由於過去幾年來回報受到神經衰弱困擾的會員實在是非常多，所以透過歸納這些經絡型態，就可以找出一些背後的主要原因，主要有以下幾種：\n\n1.肝氣鬱結、心脾兩虛、心血虛\n\n傳統中醫認為「心主血脈」，如果一個人思慮過度時，就會耗傷心血，導致心血不足。會出現心悸、失眠、多夢、容易驚嚇、健忘、頭暈...等症狀。\n\n當心臟的精神功能失調時，可能會表現為心神不寧、精神恍惚、悲傷想哭、無法控制自己的情緒、心中煩亂、睡眠不安、連連打哈欠，嚴重時甚至會出現語言異常。\n\n古人把這種症狀稱為「臟躁證」，這與現代所說的神經衰弱症有些相似，運用「甘麥大棗湯」加以改善。\n\n古人認為「思傷脾」，過度思考不僅會損傷心臟的血液，還會影響到脾臟和胃的功能，這是身體生成氣血的重要部分，功能都受損時，會導致精神無法穩定。\n\n古人認為「思傷脾」，思考過度傷害脾胃\n\n中醫也認為「肝主一身之氣」，掌管人體內所有氣之流動，肝氣一定要舒展暢達，如果「鬱滯」時，七情(喜、怒、憂、思、悲、恐、驚)就無法調節順暢，所以肝氣鬱結時也會神經衰弱。\n\n如果這個肝氣鬱結在體內累積一段時間之後，就會出現「化火」現象，這時候神經衰弱就會更嚴重。\n\n綜合以上的所有描述，完全可以運用經絡檢測來印證這件事情。從大量神經衰弱的經絡型態中可以看出，有較高的機率是出現「鐵三角經絡型態的極致現象」。(開啟閱讀深入理解)\n\n這種經絡型態，脾虛胃強、肝胃不和、肝脾不調、心脾兩虛，同時心經、心包經虛證。少陽經、陽明經實證，所以體內很火熱。\n\n有一定比例的人，一年四季都呈現這種經絡型態，這是非常容易出現神經衰弱的一種經絡模型。\n\n鐵三角經絡型態的極致現象\n\n尤其是這種經絡型態，幾乎是一年四季都是膀胱經虛證、腎經虛證。「膀胱經」與「督脈」牽動中樞神經系統，腎臟與腦部關係密切，因為能量過度消耗，很可能就是造成神經衰弱的主因。\n\n膀胱經與督脈氣血不足時，容易出現神經衰弱症\n\n2024年有一位會員就分享，他說「思傷脾」這件事完全可以理解，因為他只要有一陣子特別用腦寫程式，就會出現胃脹氣、消化不良，最後確實會出現神經衰弱的感覺。而他的經絡現象，確實就是出現鐵三角經絡型態。\n\n通常出現這種經絡型態的人，過去都是到處看病，怎麼看都看不好，這就是典型自律神經失調、神經衰弱的現象。\n\n2.心腎不交、腎精不足\n\n心腎不交時也會造成神經衰弱，這是中醫特有的概念，根據五行理論，心屬火、腎屬水。\n\n在正常情況下，水與火相融，心與腎應相互配合。當這兩者無法順利交融，便會導致心腎不交的狀態。\n\n中醫學中有「腎藏精」的觀點，中醫的腎與現代醫學的腦部有著密切的關聯。腎精不足會影響身體的激素平衡，進而可能引起各種腦部相關疾病。\n\n某會員患有神經衰弱持續至少10年以上，他從2020年開始觀察經絡，發現自己的經絡數據是非常穩定的，為什麼呢？因為他經常可以看到自己心經實證，脾經與腎經虛證的現象。\n\n男性長期神經衰弱，常見的經絡型態\n\n他說自己的每天常見症狀，與神經衰弱的症狀99%吻合。可見中醫說的心腎不交、腎精不足有可能造成神經衰弱，這應該是真的。透過觀察經絡，也可以印證這個現象。\n\n從大量現代人的經絡數據發現，脾經與腎經虛證是常態，基於此現代人有很高的機率會出現神經衰弱。\n\n傳統中醫認為，「腎陰虛化火」的人，也有機會出現神經衰弱症。上面提到的鐵三角經絡型態極致現象，有一定比例的人腎經就是實證，或許可以用來解釋什麼叫做腎陰虛化火。\n\n3.上虛下實、任督不通\n\n神經衰弱的經絡型態還有很多種類型，自從疫情之後最常見的類型就是「上虛下實」，這種經絡型態的特點，可以說是整個胸部與腹部的經絡氣血都是阻塞的。\n\n如果從經絡的角度來看，也可以說是任督二脈不通，上下無法交通，所以也有可能出現神經衰弱。\n\n上虛下實、上實下虛的人，容易任督二脈不通\n\n4.上實下虛、寒氣深重\n\n由於綜合經絡型態是最常見的經絡型態，所以有一定比例的人出現神經衰弱，也是這種「鐵三角」加上「陽虛」經絡型態所造成的現象。\n\n這種經絡型態膽經、胃經與膀胱經能量都是很虛弱的，這會導致通往頭部的氣血不足，所以很容易出現腦神經衰弱的現象。嚴重時就會出現「上實下虛」，導致任督二脈不通。\n\n既然神經衰弱是用腦過多所造成的，最好的治療方法就是不要用腦，經常放空腦袋，運用經絡穴道拍打是一個很好的改善方式。\n\n無論哪一種經絡型態，只要知道自己的異常經絡，經常運用經絡拍打或按摩，去疏通這些異常經絡，就可以緩解腦神經衰弱的現象。\n\n如果可以配合冥想、瑜伽呼吸法，這是改善神經衰弱的最根本方法。名醫陳慕純醫師，就是長期指導病患練習內核心呼吸法，用來治療失眠卻不依賴安眠藥。\n\n運用中藥改善神經衰弱的原理，主要是調整體內的脾胃系統， 讓所謂的「腦腸軸」暢通(開啟閱讀)，自然也可以改善神經衰弱的現象， 可見中醫的脾胃是與腦部密切相關的。",
-      "western_pathology_zh": "人腦是一個很神秘的器官，其實是相當耐操的！大腦皮質的神經細胞，就像那些可以連續工作超時的不倒翁，只要給它們足夠的睡眠和休息，它們就能迅速恢復元氣，再次投入戰鬥。\n\n不過，在現代社會的龐大壓力下，神經衰弱症已經成為不少人的隱形敵人，當腦神經被長時間過度使用，好比開了個不停的馬拉松，終有一刻會越耐受極限。\n\n現代人資訊焦慮，普遍用腦過多\n\n當一個人遭遇腦神經衰弱時，他的生活就好比被施了一個怪異的咒語。忘記東西變得司空見慣，就像個擁有短暫記憶的金魚。\n\n整天無精打采，仿佛所有生活動力都被抽走了。不論做什麼都提不起勁，最終只想找個安靜的角落坐下或躺著。\n\n反應變慢，對周遭的人事物漠不關心，這讓旁人可能會誤以為是憂鬱症。情緒波動大，可能因為一點小事就陷入深深的鬱悶，或是突然爆發出怒氣。\n\n睡眠再也不是一件輕鬆事，常常被一點小聲音驚醒，然後輾轉反側難以再次入眠。\n\n這種狀態常被歸類為「精神官能症」、「自律神經失調」或「身心症」。但是到醫院檢查，常會得到一個讓人哭笑不得的答案：「你沒有病！」讓人更感到無助。\n\n這時候，中醫提供了另一種角度來看待和治療神經衰弱，提供另一條全新的思路！",
+      "etiology_zh": "",
+      "western_pathology_zh": "",
       "tcm_patterns": [
         {
           "pattern_zh": "心血虛",
@@ -21420,8 +21412,8 @@
         "MDD",
         "Clinical Depression"
       ],
-      "etiology_en": "Condensed translation of the existing classical-text essay: TCM frames a neurasthenia-like presentation (神經衰弱) as arising mainly from liver-qi stagnation with heart-spleen/heart-blood deficiency, heart-kidney non-communication, or upper-deficiency-lower-excess channel patterns from prolonged mental overuse and stress — not a line-by-line rendering of the long Chinese essay, which remains the source of record.",
-      "western_pathology_en": "Condensed translation: the essay describes a modern-life 'neurasthenia' picture (forgetfulness, low drive, slowed reactions, emotional lability, poor sleep) often dismissed by biomedical workup as 'nothing wrong,' framed here as an entry point for the TCM etiologies described in etiology_zh — not itself a biomedical mechanism for major depressive disorder.",
+      "etiology_en": "",
+      "western_pathology_en": "",
       "summary_zh": "重度憂鬱症是一種情緒障礙，特徵為持續憂鬱情緒與／或興趣喪失，並合併認知、生理與功能症狀，造成顯著臨床損害。",
       "summary_en": "Major depressive disorder is a mood disorder with persistent depressed mood and/or loss of interest plus cognitive, physical and functional symptoms that cause clinically significant impairment.",
       "western_context_zh": "臨床定位：憂鬱症不同於一般的悲傷情緒，可能與焦慮、慢性疼痛、物質使用及內科疾病共病。\n\n臨床表現：情緒低落、興趣缺乏、睡眠／食慾改變、疲勞、罪惡感／無價值感、注意力困難、精神運動改變，可能出現死亡或自傷念頭。\n\n重要特徵：情緒／興趣喪失為核心、造成功能損害、須評估自殺風險、須篩檢躁鬱病史。\n\n診斷方法：臨床評估症狀、持續時間、功能損害，並鑑別雙相／物質／內科病因與自殺風險。\n\n鑑別診斷：雙相情感障礙、喪親反應、甲狀腺功能低下／貧血、物質誘發疾病、創傷後壓力症。\n\n西醫治療：心理治療、抗憂鬱藥物、合併治療，嚴重／頑固個案可考慮神經調控治療。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
@@ -21596,7 +21588,33 @@
         "acupuncture_scope_en": [
           "AcuTing OS Disease Knowledge Research Pack — Batch J Mental/Behavioral (compiled from NIMH clinical materials)"
         ]
-      }
+      },
+      "import_artifacts": [
+        {
+          "original_field": "etiology_zh",
+          "text": "要治療神經衰弱最簡單的方法，就是放慢步調，遠離電腦、手機，讓腦子徹底休息。由於古代中國人沒有現代科技，所以要罹患這種疾病的機率應該很低。\n\n要理解神經衰弱的真正原因是什麼，最簡單直接的方法就是去找一個神經衰弱的人，長期檢測他/她的經絡，就可以知道是什麼經絡異常所造成的。\n\n由於過去幾年來回報受到神經衰弱困擾的會員實在是非常多，所以透過歸納這些經絡型態，就可以找出一些背後的主要原因，主要有以下幾種：\n\n1.肝氣鬱結、心脾兩虛、心血虛\n\n傳統中醫認為「心主血脈」，如果一個人思慮過度時，就會耗傷心血，導致心血不足。會出現心悸、失眠、多夢、容易驚嚇、健忘、頭暈...等症狀。\n\n當心臟的精神功能失調時，可能會表現為心神不寧、精神恍惚、悲傷想哭、無法控制自己的情緒、心中煩亂、睡眠不安、連連打哈欠，嚴重時甚至會出現語言異常。\n\n古人把這種症狀稱為「臟躁證」，這與現代所說的神經衰弱症有些相似，運用「甘麥大棗湯」加以改善。\n\n古人認為「思傷脾」，過度思考不僅會損傷心臟的血液，還會影響到脾臟和胃的功能，這是身體生成氣血的重要部分，功能都受損時，會導致精神無法穩定。\n\n古人認為「思傷脾」，思考過度傷害脾胃\n\n中醫也認為「肝主一身之氣」，掌管人體內所有氣之流動，肝氣一定要舒展暢達，如果「鬱滯」時，七情(喜、怒、憂、思、悲、恐、驚)就無法調節順暢，所以肝氣鬱結時也會神經衰弱。\n\n如果這個肝氣鬱結在體內累積一段時間之後，就會出現「化火」現象，這時候神經衰弱就會更嚴重。\n\n綜合以上的所有描述，完全可以運用經絡檢測來印證這件事情。從大量神經衰弱的經絡型態中可以看出，有較高的機率是出現「鐵三角經絡型態的極致現象」。(開啟閱讀深入理解)\n\n這種經絡型態，脾虛胃強、肝胃不和、肝脾不調、心脾兩虛，同時心經、心包經虛證。少陽經、陽明經實證，所以體內很火熱。\n\n有一定比例的人，一年四季都呈現這種經絡型態，這是非常容易出現神經衰弱的一種經絡模型。\n\n鐵三角經絡型態的極致現象\n\n尤其是這種經絡型態，幾乎是一年四季都是膀胱經虛證、腎經虛證。「膀胱經」與「督脈」牽動中樞神經系統，腎臟與腦部關係密切，因為能量過度消耗，很可能就是造成神經衰弱的主因。\n\n膀胱經與督脈氣血不足時，容易出現神經衰弱症\n\n2024年有一位會員就分享，他說「思傷脾」這件事完全可以理解，因為他只要有一陣子特別用腦寫程式，就會出現胃脹氣、消化不良，最後確實會出現神經衰弱的感覺。而他的經絡現象，確實就是出現鐵三角經絡型態。\n\n通常出現這種經絡型態的人，過去都是到處看病，怎麼看都看不好，這就是典型自律神經失調、神經衰弱的現象。\n\n2.心腎不交、腎精不足\n\n心腎不交時也會造成神經衰弱，這是中醫特有的概念，根據五行理論，心屬火、腎屬水。\n\n在正常情況下，水與火相融，心與腎應相互配合。當這兩者無法順利交融，便會導致心腎不交的狀態。\n\n中醫學中有「腎藏精」的觀點，中醫的腎與現代醫學的腦部有著密切的關聯。腎精不足會影響身體的激素平衡，進而可能引起各種腦部相關疾病。\n\n某會員患有神經衰弱持續至少10年以上，他從2020年開始觀察經絡，發現自己的經絡數據是非常穩定的，為什麼呢？因為他經常可以看到自己心經實證，脾經與腎經虛證的現象。\n\n男性長期神經衰弱，常見的經絡型態\n\n他說自己的每天常見症狀，與神經衰弱的症狀99%吻合。可見中醫說的心腎不交、腎精不足有可能造成神經衰弱，這應該是真的。透過觀察經絡，也可以印證這個現象。\n\n從大量現代人的經絡數據發現，脾經與腎經虛證是常態，基於此現代人有很高的機率會出現神經衰弱。\n\n傳統中醫認為，「腎陰虛化火」的人，也有機會出現神經衰弱症。上面提到的鐵三角經絡型態極致現象，有一定比例的人腎經就是實證，或許可以用來解釋什麼叫做腎陰虛化火。\n\n3.上虛下實、任督不通\n\n神經衰弱的經絡型態還有很多種類型，自從疫情之後最常見的類型就是「上虛下實」，這種經絡型態的特點，可以說是整個胸部與腹部的經絡氣血都是阻塞的。\n\n如果從經絡的角度來看，也可以說是任督二脈不通，上下無法交通，所以也有可能出現神經衰弱。\n\n上虛下實、上實下虛的人，容易任督二脈不通\n\n4.上實下虛、寒氣深重\n\n由於綜合經絡型態是最常見的經絡型態，所以有一定比例的人出現神經衰弱，也是這種「鐵三角」加上「陽虛」經絡型態所造成的現象。\n\n這種經絡型態膽經、胃經與膀胱經能量都是很虛弱的，這會導致通往頭部的氣血不足，所以很容易出現腦神經衰弱的現象。嚴重時就會出現「上實下虛」，導致任督二脈不通。\n\n既然神經衰弱是用腦過多所造成的，最好的治療方法就是不要用腦，經常放空腦袋，運用經絡穴道拍打是一個很好的改善方式。\n\n無論哪一種經絡型態，只要知道自己的異常經絡，經常運用經絡拍打或按摩，去疏通這些異常經絡，就可以緩解腦神經衰弱的現象。\n\n如果可以配合冥想、瑜伽呼吸法，這是改善神經衰弱的最根本方法。名醫陳慕純醫師，就是長期指導病患練習內核心呼吸法，用來治療失眠卻不依賴安眠藥。\n\n運用中藥改善神經衰弱的原理，主要是調整體內的脾胃系統， 讓所謂的「腦腸軸」暢通(開啟閱讀)，自然也可以改善神經衰弱的現象， 可見中醫的脾胃是與腦部密切相關的。",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-02): this essay describes 神經衰弱 (neurasthenia/autonomic dysregulation), not major depressive disorder — a topic mismatch the record's own field_sources note already flagged (\"content currently describes neurasthenia/自律神經失調 — topic-mismatch flagged, not corrected this batch\") without actually correcting it. The essay also contains minimizing language (\"旁人可能會誤以為是憂鬱症\", \"你沒有病！\") that undercuts this same card's red_flags[0] instruction (suicidal intent/plan -> immediate psychiatric/ER evaluation). Moved verbatim rather than deleted (constitution redline 3); field left honestly empty pending condition-specific MDD etiology content.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "western_pathology_zh",
+          "text": "人腦是一個很神秘的器官，其實是相當耐操的！大腦皮質的神經細胞，就像那些可以連續工作超時的不倒翁，只要給它們足夠的睡眠和休息，它們就能迅速恢復元氣，再次投入戰鬥。\n\n不過，在現代社會的龐大壓力下，神經衰弱症已經成為不少人的隱形敵人，當腦神經被長時間過度使用，好比開了個不停的馬拉松，終有一刻會越耐受極限。\n\n現代人資訊焦慮，普遍用腦過多\n\n當一個人遭遇腦神經衰弱時，他的生活就好比被施了一個怪異的咒語。忘記東西變得司空見慣，就像個擁有短暫記憶的金魚。\n\n整天無精打采，仿佛所有生活動力都被抽走了。不論做什麼都提不起勁，最終只想找個安靜的角落坐下或躺著。\n\n反應變慢，對周遭的人事物漠不關心，這讓旁人可能會誤以為是憂鬱症。情緒波動大，可能因為一點小事就陷入深深的鬱悶，或是突然爆發出怒氣。\n\n睡眠再也不是一件輕鬆事，常常被一點小聲音驚醒，然後輾轉反側難以再次入眠。\n\n這種狀態常被歸類為「精神官能症」、「自律神經失調」或「身心症」。但是到醫院檢查，常會得到一個讓人哭笑不得的答案：「你沒有病！」讓人更感到無助。\n\n這時候，中醫提供了另一種角度來看待和治療神經衰弱，提供另一條全新的思路！",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-02): same neurasthenia-essay topic mismatch as etiology_zh, in the western_pathology_zh field of an MDD (F32-F33) card. Contains the same minimizing framing (\"反應變慢...這讓旁人可能會誤以為是憂鬱症\"; \"你沒有病！\"). Moved verbatim; field left honestly empty pending condition-specific MDD pathophysiology content sourced to NIMH.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "etiology_en",
+          "text": "Condensed translation of the existing classical-text essay: TCM frames a neurasthenia-like presentation (神經衰弱) as arising mainly from liver-qi stagnation with heart-spleen/heart-blood deficiency, heart-kidney non-communication, or upper-deficiency-lower-excess channel patterns from prolonged mental overuse and stress — not a line-by-line rendering of the long Chinese essay, which remains the source of record.",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-02): condensed-translation counterpart of the etiology_zh neurasthenia essay being moved in the same batch; kept paired with it in import_artifacts rather than left as an orphan translation of now-vacated Chinese content.",
+          "moved_at": "2026-08-12"
+        },
+        {
+          "original_field": "western_pathology_en",
+          "text": "Condensed translation: the essay describes a modern-life 'neurasthenia' picture (forgetfulness, low drive, slowed reactions, emotional lability, poor sleep) often dismissed by biomedical workup as 'nothing wrong,' framed here as an entry point for the TCM etiologies described in etiology_zh — not itself a biomedical mechanism for major depressive disorder.",
+          "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-02): condensed-translation counterpart of the western_pathology_zh neurasthenia essay being moved in the same batch; kept paired with it in import_artifacts rather than left as an orphan translation of now-vacated Chinese content.",
+          "moved_at": "2026-08-12"
+        }
+      ]
     },
     {
       "id": "cond.panic_disorder",
