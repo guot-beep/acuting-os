@@ -59161,8 +59161,8 @@
       "study_tags": [],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "actions_zh": [
-        "調和陽，與",
-        "肝陽,清熱瀉火與"
+        "和解少陽，重鎮安神，瀉火通便",
+        "平肝潛陽，清熱通利三焦"
       ],
       "actions_en": [
         "Harmonizes Shao Yang, calms Shen, purges Fire and unblocks bowels",
@@ -59178,18 +59178,144 @@
       ],
       "composition": [
         {
+          "herb_id": "herb.chai_hu",
           "herb_zh": "柴胡",
+          "name_zh": "柴胡",
+          "herb_en": "Bupleurum Root",
+          "name_en": "Bupleurum Root",
+          "pinyin": "Chai Hu",
+          "pinyin_toned": "Chái Hú",
+          "pharmaceutical_latin": "Bupleuri Radix",
           "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "健脾和中，調和諸藥。",
-          "in_formula_zh": "健脾和中，調和諸藥。",
-          "actions_zh": "健脾和中，調和諸藥。",
+          "classical_amount_text": "四兩",
+          "dose_range": "四兩（原方相對量，未換算 g）",
+          "is_alternate": false,
           "in_formula_en": "Harmonize Shaoyang and Reduce Fever; Course Liver Qi and Relieve Constraint; Raise Clear Yang Qi; Disperse Wind-Heat and Resolve Phlegm",
-          "actions_en": "Harmonize Shaoyang and Reduce Fever; Course Liver Qi and Relieve Constraint; Raise Clear Yang Qi; Disperse Wind-Heat and Resolve Phlegm",
-          "herb_id": "herb.chai_hu"
+          "actions_en": "Harmonize Shaoyang and Reduce Fever; Course Liver Qi and Relieve Constraint; Raise Clear Yang Qi; Disperse Wind-Heat and Resolve Phlegm"
+        },
+        {
+          "herb_id": "herb.long_gu",
+          "herb_zh": "龍骨",
+          "name_zh": "龍骨",
+          "herb_en": "Dragon Bone",
+          "name_en": "Dragon Bone",
+          "pinyin": "Long Gu",
+          "classical_amount_text": "一兩半",
+          "dose_range": "一兩半（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.huang_qin",
+          "herb_zh": "黃芩",
+          "name_zh": "黃芩",
+          "herb_en": "Scutellaria Root",
+          "name_en": "Scutellaria Root",
+          "pinyin": "Huang Qin",
+          "classical_amount_text": "一兩半",
+          "dose_range": "一兩半（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.sheng_jiang",
+          "herb_zh": "生薑",
+          "name_zh": "生薑",
+          "herb_en": "Fresh Ginger Root",
+          "name_en": "Fresh Ginger Root",
+          "pinyin": "Sheng Jiang",
+          "pinyin_toned": "Shēng Jiāng",
+          "pharmaceutical_latin": "Zingiberis Rhizoma Recens",
+          "classical_amount_text": "一兩半",
+          "dose_range": "一兩半（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.ren_shen",
+          "herb_zh": "人參",
+          "name_zh": "人參",
+          "herb_en": "Ginseng Root",
+          "name_en": "Ginseng Root",
+          "pinyin": "Ren Shen",
+          "pharmaceutical_latin": "Radix Ginseng",
+          "classical_amount_text": "一兩半",
+          "dose_range": "一兩半（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.gui_zhi",
+          "herb_zh": "桂枝",
+          "name_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
+          "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
+          "pinyin_toned": "Guì Zhī",
+          "pharmaceutical_latin": "Cinnamomi Ramulus",
+          "classical_amount_text": "一兩半",
+          "dose_range": "一兩半（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.fu_ling",
+          "herb_zh": "茯苓",
+          "name_zh": "茯苓",
+          "herb_en": "Poria",
+          "name_en": "Poria",
+          "pinyin": "Fu Ling",
+          "pinyin_toned": "Fú Líng",
+          "pharmaceutical_latin": "Poria (Sclerotium Poriae Cocos)",
+          "classical_amount_text": "一兩半",
+          "dose_range": "一兩半（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.ban_xia",
+          "herb_zh": "半夏",
+          "name_zh": "半夏",
+          "herb_en": "Pinellia Rhizome",
+          "name_en": "Pinellia Rhizome",
+          "pinyin": "Ban Xia",
+          "pinyin_toned": "Bàn Xià",
+          "pharmaceutical_latin": "Pinelliae Rhizoma",
+          "classical_amount_text": "二合半（洗）",
+          "dose_range": "二合半（洗；原方相對量，未換算 g）",
+          "preparation_zh": "洗",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.da_huang",
+          "herb_zh": "大黃",
+          "name_zh": "大黃",
+          "herb_en": "Rhubarb",
+          "name_en": "Rhubarb",
+          "pinyin": "Da Huang",
+          "classical_amount_text": "二兩",
+          "dose_range": "二兩（原方相對量，未換算 g）",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.mu_li",
+          "herb_zh": "牡蠣",
+          "name_zh": "牡蠣",
+          "herb_en": "Oyster Shell",
+          "name_en": "Oyster Shell",
+          "pinyin": "Mu Li",
+          "classical_amount_text": "一兩半（熬）",
+          "dose_range": "一兩半（熬；原方相對量，未換算 g）",
+          "preparation_zh": "熬",
+          "is_alternate": false
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "herb_zh": "大棗",
+          "name_zh": "大棗",
+          "herb_en": "Jujube",
+          "name_en": "Jujube",
+          "pinyin": "Da Zao",
+          "pinyin_toned": "Dà Zǎo",
+          "pharmaceutical_latin": "Fructus Jujubae",
+          "classical_amount_text": "六枚（擘）",
+          "dose_range": "六枚（擘；原方相對量，未換算 g）",
+          "preparation_zh": "擘",
+          "is_alternate": false
         }
       ],
       "clinical_use_note": "【柴胡加龍骨牡蠣湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -59207,7 +59333,6 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -59225,10 +59350,34 @@
           "data/config/formula_tag_glossary.json"
         ],
         "actions_zh": [
-          "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+          "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)",
+          "2026-08-12：中文層改為本筆既有 actions_en 的忠實中譯（原中文缺字損毀，全文保存於 correction_note），未新增未查證主張"
         ],
         "pattern_indications_zh": [
           "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+        ],
+        "composition": [
+          "《傷寒論·辨太陽病脈證並治下》第107條（原方 12 味，含鉛丹）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1（2026-08-12 SOL 裁定，逐味相對量表）"
+        ],
+        "source_classic": [
+          "《傷寒論·辨太陽病脈證並治下》第107條（原方 12 味，含鉛丹）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1（2026-08-12 SOL 裁定，逐味相對量表）"
+        ],
+        "source_text_zh": [
+          "《傷寒論·辨太陽病脈證並治下》第107條"
+        ],
+        "contraindications_zh": [
+          "《傷寒論·辨太陽病脈證並治下》第107條（原方 12 味，含鉛丹）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1（2026-08-12 SOL 裁定，逐味相對量表）"
+        ],
+        "contraindications_en": [
+          "《傷寒論·辨太陽病脈證並治下》第107條（原方 12 味，含鉛丹）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1（2026-08-12 SOL 裁定，逐味相對量表）"
+        ],
+        "historical_ingredients_omitted": [
+          "《傷寒論·辨太陽病脈證並治下》第107條（原方 12 味，含鉛丹）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1（2026-08-12 SOL 裁定，逐味相對量表）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/168",
@@ -59250,7 +59399,36 @@
         "Shao Yang disease with severe anxiety, irritability and delirium",
         "Liver Yang Rising with palpitations and insomnia"
       ],
-      "category_zh": "安神劑"
+      "category_zh": "安神劑",
+      "source_classic": "《傷寒論·辨太陽病脈證並治下》第107條",
+      "source_text_zh": "傷寒八九日，下之，胸滿煩驚，小便不利，譫語，一身盡重，不可轉側者，柴胡加龍骨牡蠣湯主之。",
+      "composition_source_note_zh": "組成與原方相對量取自《傷寒論·辨太陽病脈證並治下》第107條（SOL 2026-08-12 裁定，見 docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1）。原方 12 味，此表列可調劑的 11 味；鉛丹見 historical_ingredients_omitted。逐味「本方功效」與君臣佐使無來源可填，留空不編。",
+      "historical_ingredients_omitted": [
+        {
+          "herb_zh": "鉛丹",
+          "name_zh": "鉛丹",
+          "herb_en": "Red lead (minium)",
+          "name_en": "Red lead (minium)",
+          "pinyin": "Qian Dan",
+          "herb_id": null,
+          "herb_id_status": "no_canon_entry — 中藥庫無此記錄，且現代不作藥用，故不建卡、不進 composition",
+          "classical_amount_text": "一兩半",
+          "position_in_source_zh": "《傷寒論》第107條原方 12 味中的第 5 味",
+          "modern_status_zh": "現代不入藥、不調劑 —— 鉛丹主成分為四氧化三鉛（Pb3O4），有鉛毒",
+          "modern_status_en": "Omitted / prohibited in modern dispensing because of lead toxicity",
+          "source": [
+            "《傷寒論·辨太陽病脈證並治下》第107條（原方 12 味，含鉛丹）",
+            "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1（2026-08-12 SOL 裁定，逐味相對量表）"
+          ]
+        }
+      ],
+      "contraindications_zh": [
+        "原方第五味為鉛丹（一兩半）。鉛丹為含鉛礦物藥，現代不入藥、不調劑，本方組成表只列 11 味可調劑藥材；鉛丹原文保存於本筆 historical_ingredients_omitted 欄位，以免原方樣貌被靜默抹去。"
+      ],
+      "contraindications_en": [
+        "The fifth ingredient of the original formula is Qian Dan (red lead, 一兩半). It is a lead-bearing mineral, omitted and prohibited in modern dispensing; the composition table therefore lists only the 11 dispensable ingredients, and the historical ingredient is preserved verbatim under historical_ingredients_omitted."
+      ],
+      "correction_note": "【2026-08-12 組成重建 — 《傷寒論》第107條】原記錄 composition 只剩「柴胡」一味（匯入截斷）。依 docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §1 重建為原方 12 味中可調劑的 11 味；第 5 味鉛丹另存 historical_ingredients_omitted，未併入 composition（中藥庫無鉛丹記錄，且現代禁用）。SOL 明示現有來源未建立統一的古今劑量換算，故不供現代克數，只列原方相對量。\n原 composition_suspect 標記全文保存：「組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊」\n柴胡那一列被搬離的原值（先搬再改，未刪）：in_formula_zh / actions_zh / role_reason_zh 三欄同為「健脾和中，調和諸藥。」—— 該句描述的是甘草類的健脾和中，不是柴胡，屬錯層內容，本次不沿用；classical_amount_text 原值「原典份量」（那是欄位標籤不是數值）；decoction_reference_g 原值「9g」、granule_reference_g 原值「1.8g」、granule_concentration_ratio 原值「5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)」—— 這三個逐味克數沒有具名的逐味來源，且與 SOL「不供現代克數」的裁定相衝突，故移出組成表存於此，Ting 若有課本來源可直接放回。\nactions_zh 原值兩條（缺字損毀，仍逐字保存）：「調和陽，與」、「肝陽,清熱瀉火與」—— 本次改為依本卡既有 actions_en 的忠實中譯，逐條索引對齊，未新增未查證主張。\n君臣佐使：《傷寒論》原文不指派君臣佐使，SOL 亦未裁定；柴胡的「君」是匯入既有值，予以保留但未經來源確認，其餘 10 味留空不編。"
     },
     {
       "id": "formula.yue_ju_wan",
