@@ -199,6 +199,23 @@ jobs:
       - name: formula safety predicates P1-P4/P6 (NOTE tier, see script header)
         run: node scripts/validate-formula-safety-predicates.js
 
+      # docs/research_packs/HERB_EYESON_01.md §3.4 HB series — the herb-layer
+      # twin of the two formula predicate scripts above, for
+      # data/herbs/herb_canon_shortlist.json. NOTE tier: measured on the live
+      # corpus none of the eight is at zero (HB-4 910 · HB-5 19 · HB-6 11 ·
+      # HB-8 48 · HB-9 1 · HB-10 7 · HB-11 182 · HB-12 6), so wiring any of
+      # them blocking today would break the build over a backlog nobody has
+      # been asked to fix — same call the two formula-layer steps above make.
+      # HB-4's no_herb_in_comp bucket additionally cannot graduate before
+      # docs/TING_DECISION_QUEUE.md C6 rules on what related_formulas means.
+      # Each predicate graduates INDEPENDENTLY: when its count reaches zero,
+      # add it to the flag here, e.g. `--blocking=HB-9` then
+      # `--blocking=HB-6,HB-9`. Per-predicate graduation conditions are in
+      # the script header. Baseline worklist:
+      # docs/research_packs/HERB_INTEGRITY_BASELINE.md
+      - name: herb integrity predicates HB-4/5/6/8/9/10/11/12 (NOTE tier, see script header)
+        run: node scripts/validate-herb-integrity-predicates.js
+
       - name: comparison standard
         run: node scripts/validate-comparison-standard.js
 
