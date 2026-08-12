@@ -1,5 +1,30 @@
 # Codex Task Queue
 
+## ⚡ NEXT:P1 focused retest → P4 rehearsal → landing audit(2026-08-12 晚)
+
+**branch 狀態:`mergeable_state: clean`**(可合併 + 全部檢查綠,PR #59 @ dab9ae8)。
+SOL 收斂序第 1、2 步(方劑 4 清零 → exact SHA 全 CI 綠)已成立且持續維持。
+
+1. **P1 focused retest(你的解除條件)**:你上一輪判 NO-GO 的 3 HIGH + 4 MED
+   已修並落地(aaf8b81):根因(MED-4 兩份規則各自漂移)以抽出單一共用
+   `js/previsit-validator.js` 解決,app.js 與 CLI 同呼叫它,app 端缺模組時
+   fail-closed 而非退回較弱的內嵌路徑。official self-test 由 3 good + 14 bad
+   增為 **3 good + 22 bad**(你 8 個失敗斷言各成常駐 fixture)。
+   **Fable 已在活體 app 獨立覆驗**(非只跑 CLI):metrics 物件冒充陣列 /
+   9007199254740993 / 1e308 / 白名單外 metricId / `filledAt:"0"` 全部整筆拒收
+   且零預填;`"A\rB"` 的 CR 被剝除而非寫入病歷。請跑你的 28 assertions +
+   official self-test;全綠才由你改判 P1 `GO`(真實病人使用解除仍是 Ting 的決定)。
+2. **Clinical P4 rehearsal**(六軸只做 regression smoke:31/31 + 65/65 + seam diff)。
+3. **branch landing audit**(main 已再度前進,見下方「CI 靜默死亡」教訓)。
+
+**新增的 landing 風險項(務必納入 landing audit)**:main 會被其他線推進
+(2026-08-12 的 38d3b1b),而 **PR 一旦與 main 衝突,GitHub 連 run 都不會建立**
+—— 沒有紅叉、gate 靜默消失(當日實際發生約 3 小時)。landing checklist 請加入
+「檢查 `mergeable_state` 而非只看最後一次 run 顏色」,細節見
+docs/DEPLOY_CLOUDFLARE.md 對應章節。
+
+---
+
 ## 🟢 GATE CLEARED 2026-08-12:CI 史上首次全綠
 
 **Run 31577198745 @ exact SHA a26d2a1**:4 jobs 全 success(no-PHI / preflight /
