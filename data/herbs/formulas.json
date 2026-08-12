@@ -1604,11 +1604,19 @@
         "Influenza",
         "Acute bronchitis"
       ],
-      "herb_drug_interactions_en": [
-        "This formula may reduce the adverse effects of interferon in hepatitis C patients."
-      ],
+      "herb_drug_interactions_en": [],
       "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
-      "taiwan_pharmacopeia_zh": "No. 10"
+      "taiwan_pharmacopeia_zh": "No. 10",
+      "unsourced_claims_quarantine": [
+        {
+          "field": "herb_drug_interactions_en",
+          "index": 0,
+          "text": "This formula may reduce the adverse effects of interferon in hepatitis C patients.",
+          "reason": "unsupported_directionality",
+          "quarantined": "2026-08-12"
+        }
+      ],
+      "correction_note": "[2026-08-12 干擾素方向性盤點] 以下敘述宣稱本方「減輕/保護」干擾素或化療的不良反應,但本卡沒有任何來源支持該方向,而同屬柴胡類的小柴胡湯與干擾素併用的已知訊號是間質性肺炎(致死案例)。依「寧缺勿造」,原文一字未刪、原欄位與索引記錄在此,補到來源即可放回。追溯見 docs/research_packs/FORMULA_INTERFERON_PROVENANCE_TRACE.md。"
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -44506,7 +44514,6 @@
         "This formula may have a marked protective effect against cyclophosphamide- or prednisone-induced immuno-suppression.",
         "This formula may have a marked protective effect against carboplatin- or cisplatin-induced myclosuppression.",
         "This formula may have a marked protective effect against cis-diamminedichloroplatinum-induced nephrotoxicity and bone marrow toxicity.",
-        "This formula may have a marked protective effect against interferon toxicity.",
         "This formula may have a marked protective effect against rifampin-induced neutropenia."
       ],
       "ad_syndromes_en": [
@@ -45011,7 +45018,17 @@
       "category_zh": "補益劑",
       "ba_fa_zh": "補法 Bu Fa (Tonify)",
       "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
-      "taiwan_pharmacopeia_zh": "Yes"
+      "taiwan_pharmacopeia_zh": "Yes",
+      "unsourced_claims_quarantine": [
+        {
+          "field": "modern_research_en",
+          "index": 4,
+          "text": "This formula may have a marked protective effect against interferon toxicity.",
+          "reason": "unsupported_directionality",
+          "quarantined": "2026-08-12"
+        }
+      ],
+      "correction_note": "[2026-08-12 干擾素方向性盤點] 以下敘述宣稱本方「減輕/保護」干擾素或化療的不良反應,但本卡沒有任何來源支持該方向,而同屬柴胡類的小柴胡湯與干擾素併用的已知訊號是間質性肺炎(致死案例)。依「寧缺勿造」,原文一字未刪、原欄位與索引記錄在此,補到來源即可放回。追溯見 docs/research_packs/FORMULA_INTERFERON_PROVENANCE_TRACE.md。"
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -46766,16 +46783,23 @@
         "Use caution in areas where diseases are predominantly caused by Dampness.",
         "Contraindicated for those with Yang Deficiency."
       ],
-      "herb_drug_interactions_en": [
-        "This formula has shown to induce marked improvement in patients who are undergoing chemotherapy."
-      ],
+      "herb_drug_interactions_en": [],
       "clinical_manifestations_zh": "腰膝腿痠軟、足跟或足部痛、頭暈眩暈、耳鳴或聽力下降、五心煩熱、慢性乾燥咽痛、牙痛、消渴、肌肉無力、皮膚乾、耳聾、骨蒸、嬰兒囟門遲閉、潮熱、牙齒鬆動、尿後滴瀝、口渴舌乾、腰膝麻木無力、足跟痛、口咽乾、視物模糊、尿失禁、遺精、盜汗。",
       "coating_zh": "少或無",
       "category_zh": "補益劑",
       "ba_fa_zh": "補法 Bu Fa (Tonify)",
       "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
       "taiwan_pharmacopeia_zh": "No. 1",
-      "correction_note": "【2026-08-12 FB-5 方歌出處年代修正】formula_song_source_zh 原值「出自汪昂《湯頭歌訣》」與本方 source_classic「《小兒藥証直訣》」年代不合（《小兒藥証直訣》非《湯頭歌訣》所收方），依 FORMULA_CARD_TEMPLATE.md §1.1「不知道出處就不要填這個欄位」移除出處欄；formula_song_zh 本身（歌訣內容）保留未動，僅出處待查證後重填。見 docs/research_packs/FORMULA_EYESON_01.md F-12 / §3 FB-5。"
+      "correction_note": "【2026-08-12 FB-5 方歌出處年代修正】formula_song_source_zh 原值「出自汪昂《湯頭歌訣》」與本方 source_classic「《小兒藥証直訣》」年代不合（《小兒藥証直訣》非《湯頭歌訣》所收方），依 FORMULA_CARD_TEMPLATE.md §1.1「不知道出處就不要填這個欄位」移除出處欄；formula_song_zh 本身（歌訣內容）保留未動，僅出處待查證後重填。見 docs/research_packs/FORMULA_EYESON_01.md F-12 / §3 FB-5。 [2026-08-12 干擾素方向性盤點] 以下敘述宣稱本方「減輕/保護」干擾素或化療的不良反應,但本卡沒有任何來源支持該方向,而同屬柴胡類的小柴胡湯與干擾素併用的已知訊號是間質性肺炎(致死案例)。依「寧缺勿造」,原文一字未刪、原欄位與索引記錄在此,補到來源即可放回。追溯見 docs/research_packs/FORMULA_INTERFERON_PROVENANCE_TRACE.md。",
+      "unsourced_claims_quarantine": [
+        {
+          "field": "herb_drug_interactions_en",
+          "index": 0,
+          "text": "This formula has shown to induce marked improvement in patients who are undergoing chemotherapy.",
+          "reason": "unsupported_directionality",
+          "quarantined": "2026-08-12"
+        }
+      ]
     },
     {
       "id": "formula.zuo_gui_wan",
@@ -106211,10 +106235,18 @@
         "風寒外襲兼裡有嚴重停飲者禁用",
         "表虛（衛氣虛）者禁用"
       ],
-      "herb_drug_interactions_en": [
-        "Concurrent use of this formula reduced the adverse effects of interferon in hepatitis C patients."
+      "herb_drug_interactions_en": [],
+      "category_zh": "解表劑",
+      "unsourced_claims_quarantine": [
+        {
+          "field": "herb_drug_interactions_en",
+          "index": 0,
+          "text": "Concurrent use of this formula reduced the adverse effects of interferon in hepatitis C patients.",
+          "reason": "unsupported_directionality",
+          "quarantined": "2026-08-12"
+        }
       ],
-      "category_zh": "解表劑"
+      "correction_note": "[2026-08-12 干擾素方向性盤點] 以下敘述宣稱本方「減輕/保護」干擾素或化療的不良反應,但本卡沒有任何來源支持該方向,而同屬柴胡類的小柴胡湯與干擾素併用的已知訊號是間質性肺炎(致死案例)。依「寧缺勿造」,原文一字未刪、原欄位與索引記錄在此,補到來源即可放回。追溯見 docs/research_packs/FORMULA_INTERFERON_PROVENANCE_TRACE.md。"
     },
     {
       "id": "formula.dan_shen_yin",
