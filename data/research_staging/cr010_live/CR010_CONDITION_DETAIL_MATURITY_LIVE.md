@@ -3,10 +3,10 @@
 **AUDIT ONLY / NOT CANONICAL**
 
 - live condition count: **505**
-- FULL_DETAIL_CANDIDATE: **77**
-- DETAIL_PARTIAL: **85**
+- FULL_DETAIL_CANDIDATE: **92**
+- DETAIL_PARTIAL: **70**
 - SKELETON: **343**
-- remaining detail slots to Common 300: **223**
+- remaining detail slots to Common 300: **208**
 - minimum future identity slots if every current card were selected: **0**
 - baseline 209 changed: **YES**
 
@@ -360,21 +360,6 @@ This maturity heuristic is not the Common-300 ranking. Clinical commonness, boar
 | `cond.post_covid` | Post-COVID Syndrome (context) | 2/12 | SKELETON | summary, western_context, western_pathology, etiology, risk_factors, red_flags, acupuncture_scope, field_sources |
 | `cond.post_viral_cough` | Post-Viral Cough | 2/12 | SKELETON | summary, western_context, western_pathology, etiology, risk_factors, red_flags, acupuncture_scope, field_sources |
 | `cond.recurrent_uti` | Recurrent UTI (context) | 2/12 | SKELETON | summary, western_context, western_pathology, etiology, risk_factors, red_flags, acupuncture_scope, field_sources |
-| `cond.achilles_tendinopathy` | Achilles Tendinopathy | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.acute_lumbar_sprain` | Acute Lumbar Sprain | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.amenorrhea` | Secondary Amenorrhea | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.breech_presentation` | Breech Presentation (moxibustion context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.diminished_ovarian_reserve` | Diminished Ovarian Reserve | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.hip_osteoarthritis` | Hip Osteoarthritis | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.hyperemesis_gravidarum` | Nausea of Pregnancy / Hyperemesis (context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.ivf_support` | IVF/ART Adjunctive Support (context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.lateral_epicondylitis` | Lateral Epicondylitis (Tennis Elbow) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.luteal_phase_defect` | Luteal Phase Deficiency (context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.medial_epicondylitis` | Medial Epicondylitis (Golfer's Elbow) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.meniscus_injury` | Meniscus Injury (context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.menopause_syndrome` | Menopausal Syndrome | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.menorrhagia` | Heavy Menstrual Bleeding | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
-| `cond.neck_pain_stiff` | Acute Neck Pain / Stiff Neck | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
 | `cond.pid_chronic` | Chronic PID Sequelae (context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
 | `cond.piriformis_syndrome` | Piriformis Syndrome | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
 | `cond.pmdd` | Premenstrual Dysphoric Disorder (context) | 5/12 | DETAIL_PARTIAL | western_pathology, etiology, risk_factors, acupuncture_scope, sources, field_sources |
