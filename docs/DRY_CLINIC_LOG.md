@@ -169,7 +169,11 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
 - ✅ **#15 metric 長標籤**:CG8 表格+glance 卡+visit-brief 差值列三處全改短標籤(後兩處是實測追出來的)。
 - ✅ **#2 picker 鍵盤流**:↑↓ 環繞導航、Enter 選取(無高亮取第一項)、Esc 只關選單不關對話框,活庫實測;附帶 #1 的 ARIA(combobox/listbox/option)。
 - ✅ **#16 用藥總帳低報**:縱貫頁+case 詳情總帳新增「未結構化(intake 原文)」區,DRY 病例的 lorazepam+魚油現身,活庫實測。
-- 🔄 **#5 藥卡批**:20 卡 DailyMed 批次進行中。
+- ✅ **#5 藥卡批**:19 卡落地(40→59):生殖 5(letrozole/clomiphene/metformin/
+  progesterone/estradiol)+ 睡眠情緒 6 + 止痛 5 + 消化 3,全部 DailyMed
+  verified_exact,off-label 誠實標註(生殖藥標籤禁忌孕婦=核准適應症的人為產物,
+  已文件化防誤讀);新增 2 個 drugsystem + 15 class + 9 target 待 Ting 過目
+  (各帶 note_zh);dry-clinic 演練用的 lorazepam 現在查得到了。
 - ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#7 canonical origin 警示(併入真機部署 SOP)、#13(AVS v3 驗證)、#4 對話框分區導航、#8 日期時區。
 
 ## 結論(給 Ting 的排序建議)
