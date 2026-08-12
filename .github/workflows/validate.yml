@@ -100,6 +100,12 @@ jobs:
         with:
           node-version: "20"
 
+      # 品質 overlay 在 build-data 之前重建:build-data 會把它包進 bundle,
+      # 順序反了的話 CI 綠燈證明的是舊 overlay。它是從 ledger 產生的,
+      # 所以「ledger 改了但 overlay 沒重跑」與「generated 沒重建」是同一種病。
+      - name: rebuild content-quality overlay
+        run: node scripts/build-content-quality-overlay.js
+
       # build-data first: everything downstream reads data/generated/*.
       - name: build data
         run: node scripts/build-data.js
@@ -107,9 +113,9 @@ jobs:
       # If build-data changed a generated file, the PR is missing a rebuild.
       - name: generated data is committed and current
         run: |
-          if ! git diff --quiet -- data/generated; then
-            echo "::error::data/generated is stale — run 'node scripts/build-data.js' and commit the result."
-            git --no-pager diff --stat -- data/generated
+          if ! git diff --quiet -- data/generated data/quality; then
+            echo "::error::data/generated or data/quality is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
+            git --no-pager diff --stat -- data/generated data/quality
             exit 1
           fi
 

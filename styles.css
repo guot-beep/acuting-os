@@ -6629,6 +6629,27 @@ html { scroll-padding-top: 92px; }
   line-height: 1.6;
 }
 
+/* 內容品質軸(兩軸 maturity 的第二軸)。與 .k-comp-suspect 同一種視覺語言:
+   左側色條 + 淡底,不搶標題。SAFETY_HOLD 用紅,DEFECT 用琥珀 —— 這兩者的差別
+   是「不能當臨床依據」與「有缺陷但不致傷人」,顏色要讓人一眼分得出來。 */
+.k-quality-banner {
+  margin: 0 0 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+.k-quality-banner small { opacity: 0.7; font-size: 0.92em; }
+.k-quality-safety_hold {
+  border-left: 3px solid #dc2626;
+  background: rgba(220, 38, 38, 0.14);
+  font-weight: 600;
+}
+.k-quality-defect {
+  border-left: 3px solid #b45309;
+  background: rgba(180, 83, 9, 0.1);
+}
+
 /* Source registry: Ting browses these sites constantly, so the title IS the
    link. Entries with no online home say so instead of looking like dead links. */
 .k-src-title { color: #38bdf8; font-weight: 700; text-decoration: none; }

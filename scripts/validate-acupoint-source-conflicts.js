@@ -30,6 +30,11 @@ const path = require("path");
 const FILE = path.join(__dirname, "..", "data", "acupoints", "361.json");
 const BLOCKING = new Set([]); // 見檔頭畢業條件
 
+// 棘輪基線(SOL 2026-08-12 建議):NOTE 級不擋 CI,等於「歷史積欠可以留著,
+// 但不准再長」。這一行才是真正的擋 —— 沒有它,NOTE 只是把問題寫下來而已。
+// 數字只能往下改,而且要在同一個 commit 裡說明是哪幾筆修掉了。
+const BASELINE = { "APB-2": 21, "APB-4a": 4, "APB-4b": 1, "APB-4c": 14 };
+
 const records = JSON.parse(fs.readFileSync(FILE, "utf8").replace(/^﻿/, ""));
 const list = Array.isArray(records) ? records : records.records || [];
 
@@ -99,13 +104,26 @@ const DESC = {
 
 const worklist = process.argv.includes("--worklist");
 let blocking = 0;
+const grew = [];
 console.log(`acupoint source conflicts — ${list.length} 穴\n`);
 for (const key of Object.keys(findings)) {
   const hits = findings[key];
   const tier = BLOCKING.has(key) ? "BLOCK" : "NOTE ";
   if (BLOCKING.has(key)) blocking += hits.length;
-  console.log(`  ${tier} ${key.padEnd(7)} ${String(hits.length).padStart(3)}  ${DESC[key]}`);
+  const base = BASELINE[key];
+  let mark = "";
+  if (base != null) {
+    if (hits.length > base) { grew.push(`${key}: ${base} → ${hits.length}`); mark = `  ⛔ 超過基線 ${base}`; }
+    else if (hits.length < base) mark = `  ✅ 低於基線 ${base}（請一併調降 BASELINE）`;
+  }
+  console.log(`  ${tier} ${key.padEnd(7)} ${String(hits.length).padStart(3)}  ${DESC[key]}${mark}`);
   if (worklist && hits.length) console.log(`         ${hits.join(" ")}`);
+}
+if (grew.length) {
+  blocking += grew.length;
+  console.log(`\n⛔ 衝突數增加了 —— 新增或改動的卡引入了新的來源衝突:`);
+  for (const g of grew) console.log(`   ${g}`);
+  console.log(`   修掉它,或在同一個 commit 裡說明為什麼基線該往上（預設不該）。`);
 }
 console.log(
   worklist ? "" : "\n提示:加 --worklist 列出每一個穴位。畢業條件見檔頭 —— 計數歸零才升為 blocking。"

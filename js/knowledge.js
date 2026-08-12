@@ -2605,6 +2605,28 @@
     };
 
     // Preview card renderers — one shape per namespace, same shell.
+    // 兩軸 maturity 的第二軸上畫面。`review_status` 回答「欄位補到哪」,
+    // 這個回答「內容經人讀過沒有、讀出什麼」。兩者不同:92 張 full_detail 卡
+    // 全部欄位齊備,其中 8 張帶未修復的安全缺陷(孕期卡的處方是樣板的合谷＋
+    // 三陰交、自行停藥敘事等),在畫面上與乾淨的卡長得一模一樣。
+    // 只標記不隱藏:內容已由 eyes-on 那幾輪搬走,留下的是「這張卡別當臨床依據」。
+    const QUALITY_LABEL = {
+      SAFETY_HOLD: ["⚠️ 安全暫扣 · 有未修復的安全缺陷,不可作為臨床依據", "SAFETY HOLD — unrepaired safety defect; not a clinical reference"],
+      DEFECT: ["內容審查:發現缺陷,尚未修復", "Reviewed: defects found, not yet repaired"],
+      MINOR: ["內容審查:有小問題", "Reviewed: minor issues"],
+      CLEAN: ["內容審查:通過", "Reviewed: clean"],
+    };
+    const contentQualityBanner = (id) => {
+      const overlay = (K.contentQuality && K.contentQuality.records) || {};
+      const entry = overlay[id];
+      if (!entry || !QUALITY_LABEL[entry.quality]) return "";
+      // CLEAN/MINOR 不佔畫面 —— 讀的人要知道的是「哪張不能信」,不是每張都貼標籤。
+      if (entry.quality === "CLEAN" || entry.quality === "MINOR") return "";
+      const [zh, en] = QUALITY_LABEL[entry.quality];
+      return `<p class="k-quality-banner k-quality-${esc(entry.quality.toLowerCase())}">${esc(modeText(zh, en))}${
+        entry.evidence ? ` <small>${esc(entry.evidence)}</small>` : ""
+      }</p>`;
+    };
     const renderConditions = (list) => list.map((c) => {
       const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
@@ -2615,6 +2637,7 @@
       return `
         <article class="k-card k-condition-card" data-record-id="${esc(c.id)}">
           <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}${hasRedFlags(c) ? "" : noFlagBadge}</header>
+          ${contentQualityBanner(c.id)}
           <p class="k-meta">${esc(c.id)} · ICD hint ${esc(c.icd_hint || "—")}</p>
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
           ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}

@@ -99,6 +99,11 @@ const knowledge = {
   patternRegistry: readJson("data/pathology/pattern_registry.json"),
   tdisRegistry: readJson("data/pathology/tdis_registry.json"),
   conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
+  // 兩軸 maturity 的第二軸。完整度說「欄位齊了」,這個說「內容可不可信」——
+  // 92 張人工 eyes-on 判定過的卡的結論,原本只存在 docs 表格裡,畫面讀不到,
+  // 所以有未修復安全缺陷的卡看起來與乾淨的卡一模一樣。
+  // 由 scripts/build-content-quality-overlay.js 從 ledger 重新產生,不手改。
+  contentQuality: readJson("data/quality/content_quality.json"),
   // §6.5 (B) — points carry tcm_pattern_ids; without the canon in the bundle
   // the card can only print "pat.肝氣鬱結" instead of the pattern's name.
   tcmPatternCanon: readJson("data/config/tcm_pattern_canon.json"),
