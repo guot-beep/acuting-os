@@ -1,0 +1,1569 @@
+{
+  "schema": "acuting_os.cr010_condition_detail_research.v1",
+  "request_id": "CR-010",
+  "batch": "04",
+  "generated_at": "2026-08-11",
+  "source_commit": "aa170b9",
+  "status": "research_staging_not_canonical",
+  "phi": false,
+  "selection": "TRUE_LIVE_DETAIL_PARTIAL_ORDER",
+  "selected_live_ranks": [
+    16,
+    30
+  ],
+  "condition_count": 15,
+  "rules": [
+    "All 15 are EXISTING_ENRICH.",
+    "Use exact live IDs.",
+    "Ranks 16-23 fill pathology/etiology/risk/sources/relations.",
+    "Ranks 24-30 preserve populated pathology/etiology/risk fields and fill sources/field_sources/relations only.",
+    "cond.chronic_pelvic_pain has 11 unresolved crossrefs; do not auto-resolve.",
+    "Reuse referenced assets before replacing prose.",
+    "TCM seed is not an automatic merge target and needs textbook source review.",
+    "No Western=TCM equality.",
+    "No PHI."
+  ],
+  "conditions": [
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 16,
+      "id": "cond.pid_chronic",
+      "name_en": "Chronic Pelvic Inflammatory Disease Sequelae",
+      "name_zh": "慢性骨盆腔炎後遺",
+      "category": "uro_genital",
+      "domain": [
+        "gynecology",
+        "reproductive"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Chronic sequelae after prior upper-genital-tract inflammation can include tubal damage/adhesions, chronic pelvic pain, infertility risk, or ectopic-pregnancy risk; the label does not prove persistent active infection.",
+      "western_pathology_zh": "既往上生殖道發炎後可留下輸卵管損傷／沾黏、慢性骨盆痛、不孕或子宮外孕風險；此標籤不代表仍有活動性感染。",
+      "etiology_en": "Prior PID is the initiating context; gonorrhea and chlamydia are important causes, but PID is polymicrobial.",
+      "etiology_zh": "起始背景為既往 PID；淋病與披衣菌重要，但 PID 可為多微生物性。",
+      "risk_factors_en": [
+        "prior PID",
+        "delayed/untreated STI",
+        "new STI exposure/recurrent PID risk"
+      ],
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "Pelvic Inflammatory Disease (PID) - STI Treatment Guidelines",
+          "url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+        ],
+        "etiology": [
+          "https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+        ],
+        "risk_factors": [
+          "https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+        ],
+        "structured_relations": [
+          "https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "chronic pelvic pain",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "tubal-factor infertility",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "ectopic pregnancy risk after tubal damage",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "下焦濕熱餘邪、氣滯、血瘀或虛實夾雜候選；需依現況辨證。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Sequela identity; do not infer active infection.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 17,
+      "id": "cond.piriformis_syndrome",
+      "name_en": "Piriformis Syndrome",
+      "name_zh": "梨狀肌症候群",
+      "category": "pain_msk",
+      "domain": [
+        "orthopedics",
+        "pain",
+        "rehabilitation"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "A debated deep-gluteal sciatic-nerve irritation/entrapment construct. Buttock pain, sitting-provoked symptoms, deep-gluteal tenderness, and provocation with piriformis tension are reported, but criteria are not fully standardized.",
+      "western_pathology_zh": "具爭議性的深臀區坐骨神經刺激／壓迫概念；常見臀痛、久坐誘發與深臀壓痛，但診斷標準未完全一致。",
+      "etiology_en": "Proposed mechanisms include non-discogenic sciatic-nerve entrapment related to local anatomy, trauma, or repetitive loading; no single mechanism is established.",
+      "etiology_zh": "提出機轉包括非椎間盤來源坐骨神經壓迫、局部解剖、外傷或反覆負荷，尚無單一確立機轉。",
+      "risk_factors_en": [
+        "prolonged sitting/repetitive hip loading",
+        "buttock trauma",
+        "possible anatomic susceptibility"
+      ],
+      "sources": [
+        {
+          "authority": "PubMed systematic review",
+          "title": "Four symptoms define the piriformis syndrome",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28836092/",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://pubmed.ncbi.nlm.nih.gov/28836092/"
+        ],
+        "etiology": [
+          "https://pubmed.ncbi.nlm.nih.gov/28836092/"
+        ],
+        "risk_factors": [
+          "https://pubmed.ncbi.nlm.nih.gov/28836092/"
+        ],
+        "structured_relations": [
+          "https://pubmed.ncbi.nlm.nih.gov/28836092/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "lumbar radiculopathy / sciatica",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "other deep gluteal syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "hip or sacroiliac pathology",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "經筋痹阻、氣血不暢、血瘀候選；神經定位仍屬西醫評估。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Controversial diagnosis; preserve uncertainty.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 18,
+      "id": "cond.pmdd",
+      "name_en": "Premenstrual Dysphoric Disorder",
+      "name_zh": "經前不悅症",
+      "category": "mental_neurobehavioral",
+      "domain": [
+        "gynecology",
+        "mental_health"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "A severe cyclical premenstrual disorder with affective/behavioral/physical symptoms linked to the menstrual cycle and clinically meaningful distress or impairment.",
+      "western_pathology_zh": "嚴重週期性經前疾患，情緒／行為／身體症狀隨月經週期出現並造成明顯困擾或功能受損。",
+      "etiology_en": "Likely reflects abnormal sensitivity to normal ovarian-steroid fluctuation with neurobiologic effects rather than a single structural lesion.",
+      "etiology_zh": "較可能是對正常卵巢類固醇波動的異常敏感與神經生物效應，而非單一結構病灶。",
+      "risk_factors_en": [
+        "reproductive-age ovulatory cycles",
+        "coexisting mood/anxiety disorders complicate differential",
+        "prospective cyclic timing is important"
+      ],
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "Management of Premenstrual Disorders",
+          "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+        ],
+        "etiology": [
+          "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+        ],
+        "structured_relations": [
+          "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "premenstrual syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "major depressive disorder",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "anxiety disorder",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "肝鬱、肝脾不和、痰火、血虛或腎系候選，依週期與全身表現辨證。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Specific cyclical disorder; not a loose PMS synonym.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 19,
+      "id": "cond.postpartum_hypolactation",
+      "name_en": "Postpartum Lactation Insufficiency",
+      "name_zh": "產後缺乳",
+      "category": "uro_genital",
+      "domain": [
+        "gynecology",
+        "reproductive"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Perceived or actual insufficient milk production/transfer. Assessment must distinguish low production from ineffective milk removal/transfer and evaluate the maternal-infant dyad.",
+      "western_pathology_zh": "可指主觀或實際乳量／轉乳不足；需區分產乳不足與排乳／轉乳效率不佳，並同時評估母嬰。",
+      "etiology_en": "Contributors include inadequate stimulation/removal, latch or transfer problems, delayed lactogenesis, maternal physiologic/endocrine factors, selected medications/illness, and infant factors.",
+      "etiology_zh": "因素包括刺激／排乳不足、含乳或轉乳問題、泌乳延遲、母體生理／內分泌、部分藥物疾病與嬰兒因素。",
+      "risk_factors_en": [
+        "ineffective milk removal",
+        "latch/transfer problems",
+        "maternal risk conditions",
+        "late-preterm/early-term feeding difficulty"
+      ],
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "Breastfeeding Challenges",
+          "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+        ],
+        "etiology": [
+          "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+        ],
+        "structured_relations": [
+          "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "workflow_context",
+          "target_text": "lactation consultation and observed feeding",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "infant inadequate weight gain or dehydration risk",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "perceived low supply with adequate intake",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "氣血不足、脾胃虛弱或肝鬱候選，依乳量、疲倦、情志、舌脈辨證。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Infant intake/hydration/jaundice/weight trajectory is safety priority.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 20,
+      "id": "cond.rotator_cuff",
+      "name_en": "Rotator Cuff Tendinopathy",
+      "name_zh": "旋轉肌袖肌腱病變",
+      "category": "pain_msk",
+      "domain": [
+        "orthopedics",
+        "pain",
+        "rehabilitation"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Rotator-cuff tendon pain/tendinopathy or tendinitis, distinct from a full-thickness tear. Repeated loading can irritate tendon/subacromial structures and provoke pain with elevation or overhead use.",
+      "western_pathology_zh": "旋轉肌袖肌腱疼痛／肌腱病變或肌腱炎，須與全層撕裂區分；反覆負荷可刺激肌腱與肩峰下結構。",
+      "etiology_en": "Repetitive overhead load, repeated lifting, age-related degeneration, and minor injury can contribute.",
+      "etiology_zh": "反覆過頭負荷、搬舉、年齡性退變與輕微外傷可參與。",
+      "risk_factors_en": [
+        "overhead sport",
+        "overhead/repetitive occupational work",
+        "increasing age",
+        "prior/minor shoulder injury"
+      ],
+      "sources": [
+        {
+          "authority": "AAOS / ASES",
+          "title": "Shoulder Impingement/Rotator Cuff Tendinitis",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+        ],
+        "etiology": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+        ],
+        "risk_factors": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+        ],
+        "structured_relations": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "rotator cuff tear",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "subacromial bursitis / impingement",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical radiculopathy",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "經筋痹阻、氣滯、血瘀或痹證候選，依起病、無力、寒熱與檢查辨證。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Keep distinct from rotator-cuff tear.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 21,
+      "id": "cond.secondary_dysmenorrhea",
+      "name_en": "Secondary Dysmenorrhea",
+      "name_zh": "繼發性痛經",
+      "category": "reproductive",
+      "domain": [
+        "gynecology",
+        "reproductive"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Menstrual pain caused by an underlying reproductive-organ disorder rather than primary prostaglandin-mediated cramps; pain may begin earlier, last longer, or worsen over time.",
+      "western_pathology_zh": "由生殖器官潛在疾病造成的經痛，不同於原發性經痛；可較早開始、持續更久或逐漸加重。",
+      "etiology_en": "Underlying causes include endometriosis, adenomyosis, fibroids, PID, and selected structural/congenital disorders.",
+      "etiology_zh": "原因可包括子宮內膜異位、腺肌症、肌瘤、PID 與部分結構／先天異常。",
+      "risk_factors_en": [
+        "known/suspected pelvic pathology",
+        "new significant pain after previously painless cycles",
+        "progressive/prolonged atypical pain"
+      ],
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "Dysmenorrhea: Painful Periods",
+          "url": "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+        ],
+        "etiology": [
+          "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+        ],
+        "risk_factors": [
+          "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+        ],
+        "structured_relations": [
+          "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "primary dysmenorrhea",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "endometriosis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "adenomyosis / fibroids / PID",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "氣滯、血瘀、寒凝、濕熱或虛證候選；西醫病因與中醫證型分開。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Do not collapse into primary dysmenorrhea.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 22,
+      "id": "cond.vulvovaginal_candidiasis",
+      "name_en": "Vulvovaginal Candidiasis",
+      "name_zh": "外陰陰道念珠菌症",
+      "category": "uro_genital",
+      "domain": [
+        "gynecology",
+        "reproductive"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Symptomatic vulvovaginal candidiasis is most often caused by C. albicans; symptoms such as pruritus, soreness, dysuria, dyspareunia, and discharge are not specific, so diagnosis should not rest on symptoms alone.",
+      "western_pathology_zh": "多由 C. albicans 造成；搔癢、疼痛、排尿痛、性交痛與分泌物皆不具特異性，不能只靠症狀診斷。",
+      "etiology_en": "Candida causes symptomatic infection; recurrent/complicated cases may involve host factors or non-albicans species, while many uncomplicated cases lack an identifiable precipitant.",
+      "etiology_zh": "Candida 造成症狀性感染；復發／複雜病例可涉及宿主因素或非 albicans 菌種，許多單純病例則無明確誘因。",
+      "risk_factors_en": [
+        "frequent antibiotics",
+        "diabetes/immunocompromise",
+        "pregnancy changes management considerations",
+        "many uncomplicated cases have no clear trigger"
+      ],
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "Vulvovaginal Candidiasis - STI Treatment Guidelines",
+          "url": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+        ],
+        "etiology": [
+          "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+        ],
+        "risk_factors": [
+          "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+        ],
+        "structured_relations": [
+          "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "bacterial vaginosis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "trichomoniasis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "noninfectious vulvovaginal dermatoses/irritation",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "濕熱或虛證夾濕候選，依帶下、氣味、熱象、復發性與舌脈辨證。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Usually not an STI; avoid STI inference from diagnosis alone.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 23,
+      "id": "cond.whiplash",
+      "name_en": "Whiplash-Associated Disorder",
+      "name_zh": "揮鞭樣損傷",
+      "category": "pain_msk",
+      "domain": [
+        "orthopedics",
+        "pain",
+        "rehabilitation"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 5,
+      "live_content_depth_score": 4.0,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_en": "Cervical-spine/supporting-structure injury produced by acceleration-deceleration force. Symptoms may include neck pain, stiffness, headache, or neurologic complaints; collision label alone does not determine severity/prognosis.",
+      "western_pathology_zh": "加速－減速力量造成的頸椎及支持結構損傷；可有頸痛、僵硬、頭痛或神經症狀，但不能只用碰撞標籤推定嚴重度。",
+      "etiology_en": "Most often follows motor-vehicle collision; falls, contact-sport collisions, or diving can also cause this injury pattern.",
+      "etiology_zh": "最常見於汽車碰撞，也可見於跌倒、接觸運動或跳水。",
+      "risk_factors_en": [
+        "motor-vehicle collision",
+        "falls/contact sport",
+        "prior cervical problems may affect symptom burden"
+      ],
+      "sources": [
+        {
+          "authority": "AAPM&R",
+          "title": "Cervical Whiplash",
+          "url": "https://now.aapmr.org/cervical-whiplash/",
+          "supports_fields": [
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "western_pathology": [
+          "https://now.aapmr.org/cervical-whiplash/"
+        ],
+        "etiology": [
+          "https://now.aapmr.org/cervical-whiplash/"
+        ],
+        "risk_factors": [
+          "https://now.aapmr.org/cervical-whiplash/"
+        ],
+        "structured_relations": [
+          "https://now.aapmr.org/cervical-whiplash/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical fracture or instability",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "cervical radiculopathy / myelopathy",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "post-traumatic headache",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "氣滯、血瘀、經筋損傷候選；神經與結構紅旗優先西醫評估。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Trauma identity; preserve red-flag handling.",
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 24,
+      "id": "cond.ankle_sprain",
+      "name_en": "Ankle Sprain",
+      "name_zh": "踝關節扭傷",
+      "category": "pain_msk",
+      "domain": [],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "AAOS supports ligament sprain, common inversion/lateral mechanism, prior-sprain recurrence risk, and chronic instability.",
+      "sources": [
+        {
+          "authority": "AAOS",
+          "title": "Sprained Ankle",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/sprained-ankle",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprained-ankle"
+        ],
+        "field_sources": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprained-ankle"
+        ],
+        "structured_relations": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/sprained-ankle"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "ankle/foot fracture",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "high ankle sprain / syndesmotic injury",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "chronic ankle instability after recurrent/incompletely rehabilitated sprain",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "氣血壅滯、血瘀、經筋損傷候選。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Fill sources/relations only.",
+      "live_audit": {
+        "condition_ref_count": 2,
+        "unresolved_crossrefs": 0,
+        "dry_run_warnings": [
+          "migraine",
+          "pain"
+        ]
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 25,
+      "id": "cond.chronic_pelvic_pain",
+      "name_en": "Chronic Pelvic Pain",
+      "name_zh": "慢性骨盆痛",
+      "category": "chronic_pain",
+      "domain": [
+        "pain",
+        "rehabilitation"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "ACOG supports a ≥6-month, often multifactorial syndrome spanning gynecologic, urinary, GI, musculoskeletal, and pain-processing contributors.",
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "Chronic Pelvic Pain",
+          "url": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        ],
+        "field_sources": [
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        ],
+        "structured_relations": [
+          "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "endometriosis / adenomyosis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "irritable bowel syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "bladder pain syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "pelvic-floor/myofascial pain",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "氣滯、血瘀、濕熱、寒、虛或虛實夾雜候選。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Umbrella syndrome; 11 unresolved crossrefs must not be auto-resolved.",
+      "live_audit": {
+        "condition_ref_count": 13,
+        "unresolved_crossrefs": 11,
+        "dry_run_warnings": []
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 26,
+      "id": "cond.cluster_headache",
+      "name_en": "Cluster Headache",
+      "name_zh": "叢集性頭痛",
+      "category": "neurology",
+      "domain": [
+        "neurology",
+        "pain"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "ICHD-3 is the diagnostic/classification anchor and supports placement among trigeminal autonomic cephalalgias.",
+      "sources": [
+        {
+          "authority": "IHS / ICHD-3",
+          "title": "3.1 Cluster headache",
+          "url": "https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-1-cluster-headache/",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-1-cluster-headache/"
+        ],
+        "field_sources": [
+          "https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-1-cluster-headache/"
+        ],
+        "structured_relations": [
+          "https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-1-cluster-headache/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "taxonomy_relation",
+          "target_text": "trigeminal autonomic cephalalgias",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "migraine",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "paroxysmal hemicrania / SUNCT / SUNA",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "經絡、肝、痰、火、血瘀或虛證候選，與 ICHD 診斷分開。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Preserve existing pathology/etiology.",
+      "live_audit": {
+        "condition_ref_count": 5,
+        "unresolved_crossrefs": 0,
+        "dry_run_warnings": []
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 27,
+      "id": "cond.de_quervain_tenosynovitis",
+      "name_en": "De Quervain Tenosynovitis",
+      "name_zh": "狄奎凡氏腱鞘炎",
+      "category": "pain_msk",
+      "domain": [
+        "orthopedics",
+        "pain",
+        "rehabilitation"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "AAOS supports APL/EPB tendon-sheath irritation, pregnancy/postpartum association, and thumb/wrist loading as symptom aggravators.",
+      "sources": [
+        {
+          "authority": "AAOS",
+          "title": "De Quervain's Tenosynovitis",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/de-quervains-tendinosis/",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/de-quervains-tendinosis/"
+        ],
+        "field_sources": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/de-quervains-tendinosis/"
+        ],
+        "structured_relations": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/de-quervains-tendinosis/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "thumb CMC osteoarthritis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "intersection syndrome",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "pregnancy/postpartum context",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "經筋痹阻、氣滯或血瘀候選。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Preserve existing core detail.",
+      "live_audit": {
+        "condition_ref_count": 2,
+        "unresolved_crossrefs": 0,
+        "dry_run_warnings": []
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 28,
+      "id": "cond.female_infertility",
+      "name_en": "Female Infertility",
+      "name_zh": "女性不孕",
+      "category": "reproductive",
+      "domain": [
+        "reproductive"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "ASRM supports a multifactorial evaluation including ovulation, reproductive-tract structure/patency, age/context, and semen evaluation when applicable.",
+      "sources": [
+        {
+          "authority": "ASRM",
+          "title": "Fertility evaluation of infertile women: committee opinion",
+          "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/"
+        ],
+        "field_sources": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/"
+        ],
+        "structured_relations": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "associated_with",
+          "target_text": "ovulatory dysfunction / PCOS",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "tubal/uterine factor / endometriosis",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "associated_with",
+          "target_text": "diminished ovarian reserve in context",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "parallel male-factor evaluation when applicable",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "無固定單一證型；腎、沖任、肝、脾、氣血、痰濕、寒熱、瘀依個案判斷。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Multifactorial umbrella; do not equate with one cause.",
+      "live_audit": {
+        "condition_ref_count": 4,
+        "unresolved_crossrefs": 0,
+        "dry_run_warnings": []
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 29,
+      "id": "cond.male_infertility",
+      "name_en": "Male Infertility",
+      "name_zh": "男性不孕",
+      "category": "reproductive",
+      "domain": [
+        "reproductive"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "AUA/ASRM guideline hosted by ASRM supports reproductive history, semen analysis, directed evaluation, and concurrent couple assessment.",
+      "sources": [
+        {
+          "authority": "ASRM / AUA",
+          "title": "Diagnosis and treatment of infertility in men: guideline part I",
+          "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/"
+        ],
+        "field_sources": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/"
+        ],
+        "structured_relations": [
+          "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "abnormal semen parameters",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "varicocele / obstruction / endocrine or genetic causes",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "workflow_context",
+          "target_text": "parallel partner fertility evaluation",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "無固定單一證型；腎精、腎陰陽、肝氣、濕熱、痰、氣血與瘀依個案判斷。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Multifactorial umbrella; preserve existing core detail.",
+      "live_audit": {
+        "condition_ref_count": 3,
+        "unresolved_crossrefs": 0,
+        "dry_run_warnings": []
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "04",
+      "live_partial_rank": 30,
+      "id": "cond.myofascial_pain_syndrome",
+      "name_en": "Myofascial Pain Syndrome",
+      "name_zh": "肌筋膜疼痛症候群",
+      "category": "chronic_pain",
+      "domain": [
+        "pain",
+        "rehabilitation"
+      ],
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "DETAIL_PARTIAL",
+      "live_score": 6,
+      "live_content_depth_score": 7.5,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ],
+      "fill_targets": [
+        "sources",
+        "field_sources",
+        "structured_relations"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_pathology",
+        "western_context",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope"
+      ],
+      "western_pathology_action": "PRESERVE_EXISTING",
+      "etiology_action": "PRESERVE_EXISTING",
+      "risk_factors_action": "PRESERVE_EXISTING",
+      "source_support_note": "AAPM&R describes regional myofascial pain/trigger-point features and chronic stretch/overload contributors; diagnostic/mechanistic uncertainty remains.",
+      "sources": [
+        {
+          "authority": "AAPM&R",
+          "title": "Myofascial Pain",
+          "url": "https://now.aapmr.org/myofascial-pain/",
+          "supports_fields": [
+            "sources",
+            "field_sources",
+            "relations"
+          ]
+        }
+      ],
+      "field_sources": {
+        "sources": [
+          "https://now.aapmr.org/myofascial-pain/"
+        ],
+        "field_sources": [
+          "https://now.aapmr.org/myofascial-pain/"
+        ],
+        "structured_relations": [
+          "https://now.aapmr.org/myofascial-pain/"
+        ]
+      },
+      "structured_relation_seeds": [
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "fibromyalgia",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "differential_candidate",
+          "target_text": "radiculopathy / neuropathic pain",
+          "needs_id_resolution": true
+        },
+        {
+          "relation_type": "commonly_seen_with",
+          "target_text": "regional mechanical pain and muscle overload",
+          "needs_id_resolution": true
+        }
+      ],
+      "tcm_pathogenesis_seed_zh": "氣滯、血瘀、經筋痹阻、痹證或虛證候選。",
+      "tcm_seed_merge_target": false,
+      "tcm_source_status": "needs_textbook_source_review",
+      "identity_note": "Mechanisms/criteria debated; do not portray trigger points as a uniquely proven lesion.",
+      "live_audit": {
+        "condition_ref_count": 5,
+        "unresolved_crossrefs": 0,
+        "dry_run_warnings": []
+      },
+      "source_reuse_live_map": {
+        "map_present": true,
+        "source_commit": "aa170b9",
+        "research_gate": "REVIEW_REFERENCED_ASSETS_BEFORE_NEW_RESEARCH",
+        "confidence_not_reasserted_in_batch04": true
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    }
+  ]
+}
