@@ -105934,12 +105934,12 @@
       "on_board_list": true,
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
-      "source_classic": "",
+      "source_classic": "《金匱要略·腹滿寒疝宿食病脈證治》第十",
       "composition": [
         {
           "herb_id": "herb.hua_jiao",
-          "herb_zh": "Chuan Jiao",
-          "name_zh": "Chuan Jiao",
+          "herb_zh": "蜀椒",
+          "name_zh": "蜀椒",
           "herb_en": "Per. Zanthoxyli",
           "name_en": "Per. Zanthoxyli",
           "pinyin": "Chuan Jiao",
@@ -105952,7 +105952,9 @@
           "in_formula_zh": "緩急止痛。",
           "actions_zh": "緩急止痛。",
           "role_reason_zh": "緩急止痛。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "classical_amount_text": "二合"
         },
         {
           "herb_id": "herb.gan_jiang",
@@ -105970,7 +105972,9 @@
           "in_formula_zh": "溫中散寒，溫肺化飲，回陽通脈。",
           "actions_zh": "溫中散寒，溫肺化飲，回陽通脈。",
           "role_reason_zh": "溫中散寒，溫肺化飲，回陽通脈。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "臣",
+          "classical_amount_text": "四兩"
         },
         {
           "herb_id": "herb.ren_shen",
@@ -105988,7 +105992,9 @@
           "in_formula_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
           "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "佐",
+          "classical_amount_text": "二兩"
         },
         {
           "herb_id": "herb.yi_tang",
@@ -106006,7 +106012,9 @@
           "in_formula_zh": "健脾益氣。",
           "actions_zh": "健脾益氣。",
           "role_reason_zh": "健脾益氣。",
-          "is_alternate": false
+          "is_alternate": false,
+          "role_zh": "君",
+          "classical_amount_text": "一升（原方作「膠飴」）"
         }
       ],
       "actions_zh": [
@@ -106040,7 +106048,7 @@
       "formula_family": [],
       "review_status": "draft",
       "source_type": "board_outline_skeleton",
-      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "needs_fill": "組成、君臣佐使、功效、主治、禁忌原為骨架待補。2026-08-12 已補：組成原方相對量、君臣佐使（現代分析，見 hierarchy_status）、出典。仍待補：加減變化 modifications、方劑家族 formula_family、逐味「本方功效」的具名來源。",
       "source_urls": [],
       "field_sources": {
         "name_en": [
@@ -106055,7 +106063,10 @@
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
         ],
-        "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+        "composition": [
+          "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+          "《金匱要略·腹滿寒疝宿食病脈證治》第十（原方四味與相對量）"
+        ],
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -106079,6 +106090,17 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+        ],
+        "source_classic": [
+          "《金匱要略·腹滿寒疝宿食病脈證治》第十"
+        ],
+        "hierarchy_status": [
+          "EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §3（現代分析不一致的舉證）"
+        ],
+        "clinical_use_note": [
+          "EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）",
+          "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §3"
         ]
       },
       "ad_syndromes_en": [
@@ -106252,7 +106274,12 @@
       "ba_fa_zh": "溫法 Wen Fa (Warm)",
       "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaJianZhongTang.html",
-      "taiwan_pharmacopeia_zh": "No. 133 (THP p.133)"
+      "taiwan_pharmacopeia_zh": "No. 133 (THP p.133)",
+      "hierarchy_status": "disputed_modern_analysis",
+      "hierarchy_source_zh": "EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）",
+      "composition_source_note_zh": "組成與原方相對量出自《金匱要略·腹滿寒疝宿食病脈證治》第十（蜀椒二合、乾薑四兩、人參二兩、膠飴一升）。君臣佐使不是原典內容 —— 原文只給組成與煎服法，不指派角色；本卡的 膠飴君／蜀椒·乾薑臣／人參佐 是 Ting 2026-08-12 採用的現代分析，來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）。現代分析並不一致，另一種教學分析作 蜀椒君／乾薑臣／人參佐／膠飴佐使，兩說並存見 correction_note，hierarchy_status 標為 disputed_modern_analysis。",
+      "clinical_use_note": "君臣佐使為現代方劑分析，非《金匱要略·腹滿寒疝宿食病脈證治》第十原文（原典只給組成與煎服法，不指派君臣佐使）。本卡採膠飴（飴糖）君、蜀椒與乾薑臣、人參佐（來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄））。另有教學分析作蜀椒君、乾薑臣、人參佐、膠飴佐使 —— 兩說並存，考試作答時看課本採哪一說。",
+      "correction_note": "【2026-08-12 君臣佐使 — Ting 裁定 1A + SOL §3】《金匱要略·腹滿寒疝宿食病脈證治》第十 給的是組成與煎服法，不指派君臣佐使；本卡不把角色寫成原典事實。\n採用的現代分析：膠飴（飴糖）＝君、蜀椒＝臣、乾薑＝臣、人參＝佐。來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）。\n並存的另一說（不採用但必須記錄）：蜀椒＝君、乾薑＝臣、人參＝佐、膠飴＝佐/使。SOL §3 指出現代分析不一致，故 hierarchy_status = disputed_modern_analysis；若 Ting 指定的課本另有版本，以課本並註明版次頁碼為準。\n組成第一味的 herb_zh / name_zh 原值為拉丁拼寫「Chuan Jiao」（中文欄位放英文，憲法紅線五），改為原典用的中文藥名「蜀椒」；拼音「Chuan Jiao」仍在本列 pinyin 欄，未遺失。herb_id 仍為 herb.hua_jiao（中藥庫的花椒）。\n原方相對量取自《金匱要略·腹滿寒疝宿食病脈證治》第十：蜀椒二合、乾薑四兩、人參二兩、膠飴一升，寫入各列 classical_amount_text；既有的現代參考克數區間（decoction_reference_g）原封不動保留，未作古今換算。\nneeds_fill 原值保存：「骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。」"
     },
     {
       "id": "formula.da_qing_long_tang",
