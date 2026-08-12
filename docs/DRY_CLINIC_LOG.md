@@ -96,11 +96,77 @@ live origin 上 404,而腳本**先 setItem 後驗證**,把字串 `"not found"` �
   但鍵盤流(#2)與藥卡覆蓋(#5)讓「每診 30 秒內完成連結」尚未成立。
 - **「貼上診前資料」按鈕已在 SOAP 對話框內**(previsit 往返的接點),Step 4 測。
 
-## 待跑
+## Step 3:AVS 產生 — 完成 ✅(v3 WIP 版)
 
-- [ ] Step 3:AVS 產生(用 DRY-2026-001 的實際 SOAP)
-- [ ] Step 4:診前頁往返(previsit.html → 貼上診前資料)
-- [ ] Step 5:回診 SOAP #2 + 第二主訴(多 case 同 patientCode)
-- [ ] Step 6:病人縱貫頁核對總帳(等 W1 合併)
-- [ ] Step 7:export / restore 演練(v1 匯出→匯入)
-- [ ] Step 8:月審(practice-audit / evidence-debt)
+用 DRY 病例真實 SOAP 跑 `scripts/generate-avs.js`(當時工作樹為 AVS v3 半成品,
+其後已落 commit「AVS Phase E」)。**命中**:拔罐+針灸 aftercare 自動觸發、
+壓力→放鬆建議、紅旗段、追蹤指標自我觀察、頁尾免責、零 patientCode/診斷碼。
+
+12. **[9/5 前必修] followUp 全文直印進病人文件**:SOAP followUp 寫的內部推理
+    「若入睡持續 >60 分鐘,考慮加梔子豉湯思路或調整穴方」原封不動印給病人
+    (含方名=專有名詞,且洩漏「若無效就改方」的內部判斷)。
+    建議:AVS 只取回診日期/病人指示,臨床 planning 另欄或過濾。
+13. **[9/5 前必修→AVS v3 owner] 中藥服用指示段消失**:case 有加味逍遙散
+    (formulaHerbs+formulaLinks 俱在),v3 當時版本沒有渲染服藥指示段
+    (Ting 明點的需求)。請 AVS v3 線在 Phase E 之後驗證此段回歸。
+
+## Step 4:診前頁往返 — 完成 ✅
+
+previsit.html 填寫→產生 acuting-previsit-v1 payload→SOAP「貼上診前資料」:
+指標正確預填(pain 4/sleep 6.5/PGIC 2)、主觀敘述帶〔診前自填〕前綴合併。
+- **[可後補]** 匯入用 `prompt()`:真機可用,但無法貼多行預覽、headless 不可測,
+  建議改 dialog+textarea。
+- 診前 payload 的 patientPerspective 欄位未見落入 SOAP 對應欄(待查對映)。
+
+## Step 5:多 case — 完成 ✅
+
+同碼開第二主訴(經前頭痛):多 case 確認框正確跳出
+(「此代碼已有 1 筆病例…要為同一位病人開新病例嗎?」),35 案、DRY 佔 2。
+
+## 回診 SOAP #2 + Outcome Tracking 實戰 — 完成 ✅
+
+診前資料匯入後補齊 S/O/A/P、換穴(去 GB21 加 PC6)、判定 improved。
+**Outcome 面板(CG8 v1)實戰通過**:疼痛 6→4↓、睡眠 5.5→6.5↑、壓力 8→6↓、
+情緒 4→6↑、入睡 75→40↓、夜醒 3→2↓、PGIC 2,增好/減好方向箭頭全對。
+
+14. **[9/5 前必修] 存檔靜默失敗無錯誤提示**:night_wakings 填 1.5(病人說
+    「夜醒 1-2 次」很自然會填 1.5)被 step=1 擋下,但**畫面無任何錯誤訊息**,
+    按儲存就是沒反應。臨床下最危險的 UX:以為存了其實沒存。
+    建議:儲存失敗時捲動到第一個 invalid 欄位+紅框+訊息條。
+15. **[可後補] Outcome 面板標籤印出整段內部語意註解**(「與 stress_level 分開:
+    壓力是外在負荷…」),應該用短標籤。
+
+## Step 6:病人縱貫頁(W1)— 完成 ✅
+
+W1 合併後以真 store(34 病人/35 案)實測:病人列表排序正確(DRY 最近就診
+2026-08-14 置頂、2 cases、9 metrics)、縱貫頁頭卡(consent 未詢問)、
+Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈現
+包括 #3 的破碎旗標 —— 正確不代為判斷)、用藥總帳、PHI 紀律句。31/31+60/60 未動。
+
+16. **[9/5 前必修] currentMeds 自由文字不入用藥總帳**:intake 只有 currentMeds
+    文字欄,結構化 agentExposures 要在別處另填 → 縱貫頁總帳顯示「0 agents」
+    而病人實際服 lorazepam+魚油。安全價值最高的視圖低報用藥。
+    建議:intake 加結構化用藥列,或總帳附註顯示各 case currentMeds 原文。
+
+## Step 7:export / restore — 完成 ✅
+
+匯出 35 案(148,921 字元)。壞 payload(非陣列)→ 大聲拒絕+庫零變動;
+完整匯出 merge 回灌 → 冪等(35→35)。匯入雙模式(merge 安全預設/restore
+災難復原+自動備份)+ append-only 歷史防護符合設計。
+
+## Step 8:月審 — 完成 ✅
+
+`practice-audit.js`:病人/就診/outcome 完成率/常用穴方證型/知識缺口,全部渲染。
+`evidence-debt.js`:正確算出 formula.jia_wei_xiao_yao_san 缺 modifications_zh
+的研究債分數。兩者輸出去識別化(ids only)。
+
+## 結論(給 Ting 的排序建議)
+
+9/5 前必修(依風險排序):**#9 v1 fail-loud**(資料毀滅鏈,Fable 接手)>
+**#6 表單草稿保護**(半小時病歷白打)> **#14 存檔靜默失敗**(以為存了沒存)>
+**#3 safetyFlags 切分**(安全旗標破碎)> **#12 followUp 洩漏**(病人文件)>
+**#16 用藥總帳低報** > **#5 藥卡臨床頻率補批** > **#2 picker 鍵盤流** >
+**#7 canonical origin 警示**(寫入真機部署 SOP)。
+其餘(#1/#4/#8/#13/#15/prompt())可後補。整體判斷:**核心動線(建案→SOAP→
+診前→AVS→多 case→縱貫→匯出還原→月審)全部走得通**,9/5 開診阻塞點
+都是可修的 UX/防護層,不是架構問題。
