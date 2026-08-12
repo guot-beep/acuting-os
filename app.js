@@ -1535,6 +1535,13 @@ let clinicalStoreIntegrityError = null;
   document.body.prepend(el);
 })();
 
+// Dry Clinic #8:日期一律用「本地日曆日」。toISOString() 是 UTC,晚上開診
+// 時 visit/start date 會預設成明天(演練實測 08-11 晚顯示 08-12)。
+function localDateISO(t) {
+  const d = t === undefined ? new Date() : new Date(t);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 function loadClinicalCases() {
   // Phase C seam (js/clinical-store.js): storage I/O goes through the
   // repository layer; normalization stays HERE (contract layer, not storage).
@@ -7007,7 +7014,7 @@ function renderCaseSwimlanes(item, notesAsc) {
 
   const min = Math.min(...points), max = Math.max(...points);
   const X = (t) => 40 + ((t - min) / (max - min)) * 920;
-  const fmt = (t) => new Date(t).toISOString().slice(0, 10);
+  const fmt = (t) => localDateISO(t);
 
   // metric lanes:出現次數最多的前 4 個
   const mCount = new Map();
@@ -7879,7 +7886,7 @@ function openCaseEditor(item = null) {
     caseTitle: "",
     caseCategory: "",
     status: "active",
-    startDate: new Date().toISOString().slice(0, 10),
+    startDate: localDateISO(),
     birthYear: "",
     birthYearMonth: "",
     sex: "",
@@ -8233,7 +8240,7 @@ function openSoapEditor(note = null) {
     cycleSection.open = hasCycleData;
   }
   const fallback = {
-    visitDate: new Date().toISOString().slice(0, 10),
+    visitDate: localDateISO(),
     visitNumber: activeCase.soapNotes.length + 1,
     cycleDay: "",
     fertilityPhase: "",
@@ -9092,7 +9099,7 @@ function exportClinicalCases() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `acuting-clinical-${pointer === "v2" ? "v2" : "cases"}-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = `acuting-clinical-${pointer === "v2" ? "v2" : "cases"}-${localDateISO()}.json`;
   link.click();
   URL.revokeObjectURL(url);
   markCasesBackedUp();   // CS1: reset backup age + save counter
@@ -9391,7 +9398,7 @@ function exportJson() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `acupoint-atlas-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = `acupoint-atlas-${localDateISO()}.json`;
   link.click();
   URL.revokeObjectURL(url);
 }
