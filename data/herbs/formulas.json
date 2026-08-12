@@ -72125,6 +72125,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -72337,12 +72343,17 @@
       "cautions_en": [
         "Modify for Lung Heat or Liver and Kidney Deficiency."
       ],
-      "cautions_zh": [],
+      "cautions_zh": [
+        "肺熱或肝腎虛者，宜加減使用"
+      ],
       "herb_drug_interactions_en": [],
       "category_zh": "祛濕劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",
       "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiMiaoWan.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiMiaoWan.html",
+      "contraindications_zh": [
+        "肺熱或肝腎虛者，宜加減使用"
+      ]
     },
     {
       "id": "formula.zhen_wu_tang",
@@ -72505,7 +72516,8 @@
         "Water accumulation due only to Excess conditions."
       ],
       "contraindications_zh": [
-        "熱證者禁用"
+        "熱證者禁用",
+        "純屬實證所致水腫者禁用"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -72681,7 +72693,8 @@
       "exact_source_url": "https://cloudtcm.com/formula/180",
       "fetched_at": "2026-07-23T07:09:01.844Z",
       "cautions_zh": [
-        "熱證者慎用"
+        "熱證者慎用",
+        "純屬實證所致水腫者慎用"
       ],
       "syndromes_zh": [
         "水濕氾濫",
@@ -72790,6 +72803,12 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 180,
@@ -73921,7 +73940,11 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/526",
       "fetched_at": "2026-07-23T07:08:48.153Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "急性實證水腫者慎用",
+        "濕邪困遏衛陽者慎用",
+        "服用過量可能引起噁心與食慾不振"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/526",
       "safety_fetched_at": "2026-07-23T07:32:54.687Z",
@@ -73991,6 +74014,9 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 526,
@@ -74394,7 +74420,10 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/188",
       "fetched_at": "2026-07-23T07:09:00.468Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "陰黃者禁用",
+        "孕婦使用大黃宜格外謹慎"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/188",
       "safety_fetched_at": "2026-07-23T07:33:07.129Z",
@@ -74474,6 +74503,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 188,
@@ -74974,6 +75006,11 @@
         "Deficiency Cold."
       ],
       "contraindications_zh": [
+        "久病淋證者禁用",
+        "孕婦禁用",
+        "長期服用可能導致虛弱、心悸、頭暈及食慾不振",
+        "久病體虛者禁用",
+        "虛寒者禁用",
         "長期頭痛、心悸忌服",
         "虛寒或孕婦忌服",
         "本方爲苦寒通利之劑，多服會引起虛弱證候，如頭暈、心悸、四肢無力，食慾不佳等，故宜於實證，虛弱者慎用。"
@@ -75095,7 +75132,10 @@
       "exact_source_url": "https://cloudtcm.com/formula/15",
       "fetched_at": "2026-07-23T07:08:44.073Z",
       "cautions_zh": [
+        "久病淋證者慎用",
         "孕婦慎用",
+        "長期服用可能導致虛弱、心悸、頭暈及食慾不振",
+        "久病體虛者慎用",
         "虛寒者慎用"
       ],
       "safety_source": "cloudtcm_cautions_field",
@@ -75185,6 +75225,12 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 15,
@@ -75939,7 +75985,9 @@
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/7",
       "fetched_at": "2026-07-23T07:08:42.776Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "肺陰虛咳嗽者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/7",
       "safety_fetched_at": "2026-07-23T07:32:49.295Z",
@@ -76026,6 +76074,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 7,
@@ -77612,7 +77663,10 @@
       "source_classic": "《脾胃論》",
       "exact_source_url": "https://cloudtcm.com/formula/69",
       "fetched_at": "2026-07-23T07:08:44.891Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "肝陽上亢、血虛所致頭暈眼花（非風痰所致者）禁用",
+        "肝腎陰虛者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/69",
       "safety_fetched_at": "2026-07-23T07:32:51.387Z",
@@ -77691,6 +77745,9 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 69,
@@ -78670,7 +78727,9 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/419",
       "fetched_at": "2026-07-23T07:08:59.424Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "脾胃虛弱明顯者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/419",
       "safety_fetched_at": "2026-07-23T07:33:06.050Z",
@@ -78738,6 +78797,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 419,
@@ -79588,7 +79650,12 @@
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/45",
       "fetched_at": "2026-07-23T07:08:45.956Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "肝陽上亢所致頭痛者禁用",
+        "肝風內動所致頭痛者禁用",
+        "腎或肝陰虛者禁用",
+        "氣血兩虛者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/45",
       "safety_fetched_at": "2026-07-23T07:32:52.484Z",
@@ -79658,6 +79725,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 45,
@@ -80225,7 +80295,10 @@
       "source_classic": "《外科正宗》",
       "exact_source_url": "https://cloudtcm.com/formula/176",
       "fetched_at": "2026-07-23T07:08:58.668Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "服用本方期間，應避免酒類、咖啡、辛辣食物、海鮮及吸菸等被認為易動風之飲食",
+        "氣血明顯虧虛者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/176",
       "safety_fetched_at": "2026-07-23T07:33:05.289Z",
@@ -80293,6 +80366,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 176,
@@ -80855,7 +80931,9 @@
       "source_classic": "《中醫內科雜病證治新義》",
       "exact_source_url": "https://cloudtcm.com/formula/314",
       "fetched_at": "2026-07-23T07:08:56.017Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "陰虛風動證者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/314",
       "safety_fetched_at": "2026-07-23T07:33:02.853Z",
@@ -80931,6 +81009,9 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 314,
@@ -81482,7 +81563,8 @@
         "高血壓腎陰陽兩虛者禁用",
         "脾虛者慎用",
         "血虛者慎用",
-        "腎虛者慎用"
+        "腎虛者慎用",
+        "痰濕壅盛者慎用"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -81624,7 +81706,8 @@
         "高血壓腎陰陽兩虛者禁用",
         "脾虛者慎用",
         "血虛者慎用",
-        "腎虛者慎用"
+        "腎虛者慎用",
+        "痰濕壅盛者慎用"
       ],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -81655,6 +81738,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -82092,6 +82181,12 @@
         ],
         "clinical_use_note": [
           "curriculum/herbs/方剂学汇总_extracted.md#Table 513 Xiao Huo Luo Dan（Preparation & administration 欄）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -82225,6 +82320,7 @@
         "Contraindicated during pregnancy."
       ],
       "cautions_zh": [
+        "本方藥性峻烈溫燥，僅適用於體質較強者",
         "陰虛者禁用",
         "孕婦禁用"
       ],
@@ -82234,6 +82330,7 @@
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XiaoHuoLuoDan.html",
       "contraindications_zh": [
+        "本方藥性峻烈溫燥，僅適用於體質較強者",
         "陰虛者禁用",
         "孕婦禁用"
       ]
@@ -82439,6 +82536,8 @@
         "Use with caution during pregnancy."
       ],
       "contraindications_zh": [
+        "脾虛者禁用",
+        "孕婦慎用",
         "保和丸的消導效力較為溫和，一般適合食積不太嚴重、身體正氣尚未虧損且偏向體熱的人使用。如果身體正氣已經虛弱或者偏寒的人，應該適當調整藥方。"
       ],
       "safety_flags": [],
@@ -82609,6 +82708,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 142,
@@ -83125,7 +83227,9 @@
       "contraindications_en": [
         "Contraindicated in acute cases of Food Stagnation from contaminated food or over consumption."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "因飲食不潔或暴飲暴食所致急性食積者禁用"
+      ],
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/193",
@@ -83193,7 +83297,9 @@
       "source_classic": "《證治準繩方》",
       "exact_source_url": "https://cloudtcm.com/formula/193",
       "fetched_at": "2026-07-23T07:08:50.319Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "因飲食不潔或暴飲暴食所致急性食積者禁用"
+      ],
       "symptoms_zh": [
         "食慾下降",
         "消化困難",
@@ -83237,6 +83343,12 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 193,
@@ -83946,6 +84058,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -84217,13 +84335,17 @@
       "cautions_en": [
         "Contraindicated for those with Heat Excess Damaging the Body Fluids."
       ],
-      "cautions_zh": [],
+      "cautions_zh": [
+        "熱盛傷津者禁用"
+      ],
       "herb_drug_interactions_en": [],
       "category_zh": "治燥劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",
       "course_level_en": "Not found in the uploaded Formulations 1/2 master knowledge-level lists.",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShaShenMaiMenDongTang.html",
-      "contraindications_zh": []
+      "contraindications_zh": [
+        "熱盛傷津者禁用"
+      ]
     },
     {
       "id": "formula.zhi_sou_san",
@@ -84454,6 +84576,12 @@
         ],
         "clinical_use_note": [
           "curriculum/herbs/方剂学汇总_extracted.md#Table 627 Zhi Sou San（Preparation & administration 欄）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/60",
@@ -84603,14 +84731,24 @@
         "Contraindicated for those with cough due to Phlegm-Heat.",
         "Use with extreme caution if the cough is accompanied by Blood-streaked Phlegm."
       ],
-      "cautions_zh": [],
+      "cautions_zh": [
+        "陰虛咳嗽者禁用",
+        "肺熱咳嗽者禁用",
+        "痰熱咳嗽者禁用",
+        "痰中帶血者，宜格外謹慎使用"
+      ],
       "herb_drug_interactions_en": [],
       "category_zh": "治燥劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhiSouSan.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.131)",
-      "contraindications_zh": []
+      "contraindications_zh": [
+        "陰虛咳嗽者禁用",
+        "肺熱咳嗽者禁用",
+        "痰熱咳嗽者禁用",
+        "痰中帶血者，宜格外謹慎使用"
+      ]
     },
     {
       "id": "formula.an_gong_niu_huang_wan",
@@ -85121,7 +85259,8 @@
         "四肢厥冷，可見淡紅色皮疹。"
       ],
       "cautions_zh": [
-        "孕婦禁用"
+        "孕婦禁用",
+        "硃砂不宜大量服用或加熱使用"
       ],
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH Appendix C 相關高優先方劑；開竅劑重點考組成、君臣佐使、涼開三寶鑑別、熱閉 vs 寒閉／脫證，以及雄黃、硃砂等毒性安全。",
@@ -85296,6 +85435,9 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "composition_source_note_zh": "組成與劑量以課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表為主；CloudTCM formula/4361 用於交叉核對組成與功用。CloudTCM 仍列犀角，本資料庫依現代替代與課件整理列水牛角。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：牛黃保留為君，水牛角、麝香列臣以呈現清熱涼血與芳香開竅相助；未改組成或劑量。American Dragon 未找到精確安宮牛黃丸方頁，未列為本方來源。",
@@ -85983,6 +86125,12 @@
         ],
         "clinical_use_note": [
           "curriculum/herbs/方剂学汇总_extracted.md#Table 359 Zi Xue Dan（Preparation and administration 欄）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -86100,7 +86248,10 @@
         "Side effects from overuse include: sweating, nausea, vomiting, cold extremities, a frozen effect, dyspnea, palpitations, dizziness and vertigo."
       ],
       "cautions_zh": [
-        "孕婦禁用"
+        "孕婦禁用",
+        "神志恢復清醒後應即停藥",
+        "硃砂不宜大量或長期服用",
+        "過量服用之副作用包括：出汗、噁心、嘔吐、四肢冰冷、僵滯感、呼吸困難、心悸及頭暈目眩"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "開竅劑",
@@ -86108,7 +86259,10 @@
       "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZiXueDan.html",
       "contraindications_zh": [
-        "孕婦禁用"
+        "孕婦禁用",
+        "神志恢復清醒後應即停藥",
+        "硃砂不宜大量或長期服用",
+        "過量服用之副作用包括：出汗、噁心、嘔吐、四肢冰冷、僵滯感、呼吸困難、心悸及頭暈目眩"
       ]
     },
     {
@@ -86291,6 +86445,13 @@
         "Do not heat."
       ],
       "contraindications_zh": [
+        "孕婦禁用",
+        "陰虛者禁用",
+        "陽盛者禁用",
+        "肝陽上亢所致昏迷者禁用",
+        "孕婦禁用",
+        "不宜長期服用",
+        "不可加熱服用",
         "本方芳香辛燥之品較多，有耗陰劫液之弊，故神昏譫語由陽盛陰虛所致者忌用；孕婦慎用。"
       ],
       "safety_flags": [],
@@ -86413,7 +86574,11 @@
       "cautions_zh": [
         "孕婦禁用",
         "陰虛者禁用",
-        "孕婦慎用"
+        "陽盛者禁用",
+        "肝陽上亢所致昏迷者禁用",
+        "孕婦慎用",
+        "不宜長期服用",
+        "不可加熱服用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/493",
@@ -86480,6 +86645,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 493,
@@ -86948,6 +87119,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -87050,7 +87227,10 @@
         "Do not alter the dosage of Hb. Ephedrae Ma Huang."
       ],
       "cautions_zh": [
-        "陰虛者禁用"
+        "陽證瘡瘍腫毒者禁用",
+        "陰虛者禁用",
+        "腫瘍潰久未癒者禁用",
+        "麻黃劑量不可任意增減"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "癰瘍劑",
@@ -87058,7 +87238,10 @@
       "course_level_en": "Not found in the uploaded Formulations 1/2 master knowledge-level lists.",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/YangHeTang.html",
       "contraindications_zh": [
-        "陰虛者禁用"
+        "陽證瘡瘍腫毒者禁用",
+        "陰虛者禁用",
+        "腫瘍潰久未癒者禁用",
+        "麻黃劑量不可任意增減"
       ]
     },
     {
@@ -87612,7 +87795,8 @@
       "exact_source_url": "https://cloudtcm.com/formula/293",
       "fetched_at": "2026-07-23T07:08:40.680Z",
       "cautions_zh": [
-        "裡熱者禁用"
+        "裡熱者禁用",
+        "陰虛有熱者禁用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/293",
@@ -87762,6 +87946,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 293,
@@ -89353,6 +89540,7 @@
       ],
       "contraindications_zh": [
         "咳痰帶血、若屬肝火爍肺或肺有實熱者，不宜使用本方。本方藥物甘寒滋膩，脾虛便溏者慎用。",
+        "食積者宜謹慎使用",
         "忌食生冷、辛辣、油膩等物。"
       ],
       "safety_flags": [],
@@ -89429,7 +89617,11 @@
       "source_classic": "《周慎齋遺書》",
       "exact_source_url": "https://cloudtcm.com/formula/106",
       "fetched_at": "2026-07-23T07:08:44.333Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "實證咳嗽者禁用",
+        "脾虛者宜謹慎使用",
+        "食積者宜謹慎使用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/106",
       "safety_fetched_at": "2026-07-23T07:32:50.853Z",
@@ -89510,6 +89702,12 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 106,
@@ -90087,7 +90285,10 @@
         "Contraindicated for those with Yin and Fluid Deficiency with vigorous pathogenic Qi.",
         "Contraindicated for those with Excess Heat."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "陰液虧虛而邪氣熾盛者禁用",
+        "實熱者禁用"
+      ],
       "safety_flags": [],
       "source_urls": [
         "https://www.sunten.com.tw/",
@@ -90194,7 +90395,10 @@
         "腰膝痠痛",
         "夢遺，病人可接近休克狀態，伴低熱與皮膚乾。"
       ],
-      "cautions_zh": [],
+      "cautions_zh": [
+        "陰液虧虛而邪氣熾盛者禁用",
+        "實熱者禁用"
+      ],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -90220,6 +90424,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "ad_syndromes_en": [
@@ -91329,7 +91539,9 @@
         "Use with caution during pregnancy."
       ],
       "contraindications_zh": [
-        "痹證之屬濕熱實證者忌用。"
+        "痹證之屬濕熱實證者忌用。",
+        "肝腎陰虛所致痹證者禁用",
+        "孕婦慎用"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -91438,6 +91650,8 @@
       "exact_source_url": "https://cloudtcm.com/formula/285",
       "fetched_at": "2026-07-23T07:08:47.878Z",
       "cautions_zh": [
+        "痹證之屬濕熱實證者禁用",
+        "肝腎陰虛所致痹證者禁用",
         "孕婦慎用"
       ],
       "safety_source": "cloudtcm_cautions_field",
@@ -91525,6 +91739,12 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 285,
@@ -92129,7 +92349,9 @@
       "source_classic": "《醫效祕傳》",
       "exact_source_url": "https://cloudtcm.com/formula/88",
       "fetched_at": "2026-07-23T07:08:48.422Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "陰虛明顯者慎用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/88",
       "safety_fetched_at": "2026-07-23T07:32:54.961Z",
@@ -92221,6 +92443,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 88,
@@ -92907,7 +93132,9 @@
       "exact_source_url": "https://cloudtcm.com/formula/268",
       "fetched_at": "2026-07-23T07:08:49.179Z",
       "cautions_zh": [
-        "不宜長期服用"
+        "不宜長期服用",
+        "中焦虛寒者慎用",
+        "氣虛或陰虛所致便血者禁用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/268",
@@ -92968,6 +93195,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 268,
@@ -93437,7 +93667,10 @@
         "Use only for Damp-Heat type sudden turmoil disorder.",
         "Contraindicated for Cold-Dampness."
       ],
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "本方僅適用於濕熱型霍亂",
+        "寒濕者禁用"
+      ],
       "safety_flags": [],
       "source_urls": [
         "https://www.sunten.com.tw/",
@@ -93543,7 +93776,10 @@
         "口苦",
         "尿少色深或偏紅。"
       ],
-      "cautions_zh": [],
+      "cautions_zh": [
+        "本方僅適用於濕熱型霍亂",
+        "寒濕者禁用"
+      ],
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -93569,6 +93805,12 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "ad_syndromes_en": [
@@ -94122,7 +94364,9 @@
       "source_classic": "《通俗傷寒論》",
       "exact_source_url": "https://cloudtcm.com/formula/575",
       "fetched_at": "2026-07-23T07:08:50.865Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "虛風內動者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/575",
       "safety_fetched_at": "2026-07-23T07:32:57.557Z",
@@ -94194,6 +94438,9 @@
         ],
         "american_dragon_url": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 575,
@@ -94554,6 +94801,9 @@
       ],
       "contraindications_zh": [
         "風寒咳喘，痰熱壅盛者，非本方所宜。",
+        "氣虛邪戀者禁用",
+        "體質虛弱之小兒與老年人禁用",
+        "久病初癒調養期者禁用",
         "本方偏於寒涼，若患者體質虛寒或無肺熱症狀，不宜使用。",
         "劑量比例需根據病情調整，現代臨床常根據症狀輕重變化各藥用量。"
       ],
@@ -94668,7 +94918,12 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/224",
       "fetched_at": "2026-07-23T07:08:51.138Z",
-      "cautions_zh": [],
+      "cautions_zh": [
+        "風寒喘咳者禁用",
+        "氣虛邪戀者禁用",
+        "體質虛弱之小兒與老年人禁用",
+        "久病初癒調養期者禁用"
+      ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/224",
       "safety_fetched_at": "2026-07-23T07:32:58.076Z",
@@ -94810,6 +95065,12 @@
         "modifications_en": [
           "Claude 逐條忠實翻譯既有 modifications_zh（未新增主張，2026-08-11 F5 批次）",
           "CloudTCM 方劑頁——原存於 actions_zh/pattern_indications_zh,2026-08-06 錯層搬移歸位(scripts/curate-misfile-move-batch3.js)"
+        ],
+        "contraindications_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "cautions_zh": [
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ]
       },
       "cloudtcm_id": 224,
