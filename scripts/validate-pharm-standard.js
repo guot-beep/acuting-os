@@ -188,8 +188,11 @@ function verifyStrictIngredientMatch(expectedDrugId, activeIngredientText) {
   const allPresent = expectedTokens.every(tok => normActive.includes(tok));
   if (!allPresent) return false;
 
-  // Strict check: active ingredient must not contain unrelated extra active moieties (e.g. Metformin)
-  const forbiddenExtra = ['metformin', 'rosiglitazone', 'glimepiride', 'benazepril', 'irbesartan'];
+  // Strict check: active ingredient must not contain unrelated extra active moieties (e.g. Metformin
+  // combo products masquerading as some other drug's card). Exclude tokens that are themselves part
+  // of THIS drug's own expected ingredient set -- otherwise drug.metformin's own card could never pass.
+  const forbiddenExtra = ['metformin', 'rosiglitazone', 'glimepiride', 'benazepril', 'irbesartan']
+    .filter((f) => !expectedTokens.includes(f));
   if (forbiddenExtra.some(f => normActive.includes(f))) {
     return false;
   }

@@ -269,6 +269,139 @@
         ]
       },
       "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.aromatase",
+      "name_en": "Aromatase (CYP19A1)",
+      "name_zh": "芳香酶 (CYP19A1)",
+      "location_en": "Peripheral tissues (adipose, breast), ovary, and cancer tissue; converts androgens to estrogens",
+      "location_zh": "周邊組織(脂肪、乳房)、卵巢及腫瘤組織;將雄性素轉化為雌激素",
+      "mechanism_note_en": "Nonsteroidal competitive inhibitor binds the heme of the cytochrome P450 subunit of aromatase, blocking conversion of androstenedione/testosterone to estrone/estradiol.",
+      "mechanism_note_zh": "非固醇類競爭性抑制劑,結合芳香酶細胞色素 P450 次單元的血基質,阻斷雄烯二酮/睪固酮轉化為雌酮/雌二醇。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.estrogen_receptor",
+      "name_en": "Estrogen receptor (ER)",
+      "name_zh": "雌激素受體 (ER)",
+      "location_en": "Hypothalamus, pituitary, ovary, endometrium, vagina, cervix, and other estrogen-responsive tissues",
+      "location_zh": "下視丘、腦垂體、卵巢、子宮內膜、陰道、子宮頸及其他雌激素反應性組織",
+      "mechanism_note_en": "Nuclear receptor bound by estradiol (agonist) or by SERMs such as clomiphene (mixed agonist/antagonist, competes with endogenous estrogen and delays receptor replenishment).",
+      "mechanism_note_zh": "細胞核受體,可被雌二醇(致效劑)或如可洛米分(混合型致效/拮抗劑,與內生性雌激素競爭並延遲受體再合成)結合。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#CLINICAL_PHARMACOLOGY",
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#CLINICAL_PHARMACOLOGY"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.progesterone_receptor",
+      "name_en": "Progesterone receptor (PR)",
+      "name_zh": "黃體素受體 (PR)",
+      "location_en": "Endometrium, myometrium, and other progesterone-responsive tissues",
+      "location_zh": "子宮內膜、子宮肌層及其他黃體素反應性組織",
+      "mechanism_note_en": "Standard endocrinology places progesterone's action at the nuclear progesterone receptor; this specific label's CLINICAL PHARMACOLOGY section does not itself elaborate receptor-level mechanism (it addresses bioavailability of the micronized oral formulation only).",
+      "mechanism_note_zh": "傳統內分泌學將黃體素作用歸於細胞核黃體素受體;本標籤之 CLINICAL PHARMACOLOGY 段落本身未闡述受體層級機轉(僅談微粒化口服劑型的生體可用率)。",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.gaba_a_benzodiazepine_site",
+      "name_en": "GABA-A receptor, benzodiazepine binding site",
+      "name_zh": "GABA-A 受體苯二氮平結合位",
+      "location_en": "CNS neurons (alpha subunit-containing GABA-A receptor complexes)",
+      "location_zh": "中樞神經元(含 alpha 次單元之 GABA-A 受體複合體)",
+      "mechanism_note_en": "Positive allosteric modulation at the benzodiazepine site increases the frequency (Z-drugs, e.g. zolpidem) or overall GABA-mediated chloride channel opening, enhancing synaptic inhibition.",
+      "mechanism_note_zh": "在苯二氮平結合位進行正向異位調節,增加氯離子通道開啟頻率(Z-drug 如 zolpidem)或整體 GABA 介導之抑制,加強突觸抑制作用。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#MECHANISM_OF_ACTION",
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.serotonin_transporter",
+      "name_en": "Serotonin transporter (SERT)",
+      "name_zh": "血清素轉運體 (SERT)",
+      "location_en": "Presynaptic serotonergic neuron terminals, CNS",
+      "location_zh": "中樞血清素能神經元突觸前末梢",
+      "mechanism_note_en": "Inhibition of neuronal reuptake of serotonin (5-HT) potentiates serotonergic activity in the CNS.",
+      "mechanism_note_zh": "抑制神經元對血清素 (5-HT) 之再攝取,增強中樞神經系統血清素能活性。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.serotonin_2a_receptor",
+      "name_en": "Serotonin 5-HT2 receptor",
+      "name_zh": "血清素 5-HT2 受體",
+      "location_en": "CNS postsynaptic neurons",
+      "location_zh": "中樞神經系統突觸後神經元",
+      "mechanism_note_en": "Label describes trazodone as both a selective serotonin reuptake inhibitor and a 5HT2 receptor antagonist; the net contribution of each action to the antidepressant effect is stated as unknown.",
+      "mechanism_note_zh": "標籤將 trazodone 描述為兼具選擇性血清素回收抑制與 5HT2 受體拮抗雙重作用;兩者對抗憂鬱效果之各自貢獻標籤敘明「未知」。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#CLINICAL_PHARMACOLOGY"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.cox2",
+      "name_en": "Cyclooxygenase-2 (COX-2)",
+      "name_zh": "環氧合酶-2 (COX-2)",
+      "location_en": "Inducible; sites of inflammation and pain signaling",
+      "location_zh": "誘導型;發炎與疼痛訊號傳遞部位",
+      "mechanism_note_en": "Selective inhibition of COX-2 reduces prostaglandin synthesis at inflamed tissue with relative sparing of constitutive COX-1 (gastric/platelet).",
+      "mechanism_note_zh": "選擇性抑制 COX-2,減少發炎組織的前列腺素合成,相對保留恆定表現的 COX-1(胃黏膜/血小板)。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.gastric_proton_pump",
+      "name_en": "Gastric H+/K+-ATPase (proton pump)",
+      "name_zh": "胃酸氫鉀幫浦 (H+/K+-ATPase)",
+      "location_en": "Secretory surface of the gastric parietal cell",
+      "location_zh": "胃壁細胞分泌面",
+      "mechanism_note_en": "PPIs suppress gastric acid secretion by specific (irreversible/covalent) inhibition of the H+/K+-ATPase enzyme system, blocking the final step of acid production.",
+      "mechanism_note_zh": "PPI 藉由專一性(不可逆/共價)抑制 H+/K+-ATPase 酵素系統,阻斷胃酸生成的最後一步,達到抑酸效果。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#MECHANISM_OF_ACTION",
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.serotonin_3_receptor",
+      "name_en": "Serotonin 5-HT3 receptor",
+      "name_zh": "血清素 5-HT3 受體",
+      "location_en": "Peripherally on vagal nerve terminals; centrally in the chemoreceptor trigger zone of the area postrema",
+      "location_zh": "周邊迷走神經末梢;中樞則位於延腦最後區之化學受器觸發區",
+      "mechanism_note_en": "Selective 5-HT3 receptor antagonist; label states the antiemetic mechanism has not been fully characterized and it is not certain whether the action is mediated centrally, peripherally, or both. Ondansetron is explicitly stated not to be a dopamine-receptor antagonist.",
+      "mechanism_note_zh": "選擇性 5-HT3 受體拮抗劑;標籤敘明止吐機轉尚未完全釐清,無法確定其作用是中樞性、周邊性或兩者兼具。標籤明確指出 ondansetron 並非多巴胺受體拮抗劑。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
     }
   ]
 }

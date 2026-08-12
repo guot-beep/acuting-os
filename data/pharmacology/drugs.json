@@ -5392,6 +5392,2896 @@
       "site_of_action_zh": "乙型腎上腺素受體(非選擇性,由 S(-) 對映異構物負責)與甲型第一型腎上腺素受體(R(+) 與 S(-) 兩種對映異構物效價相當)",
       "physiologic_effect_en": "Combined nonselective beta-blockade and alpha1-blockade with no intrinsic sympathomimetic activity; in heart failure it significantly reduced systemic blood pressure, pulmonary artery pressure, right atrial pressure, systemic vascular resistance and heart rate, while stroke volume index increased",
       "physiologic_effect_zh": "同時具非選擇性乙型阻斷與甲型第一型阻斷作用,且無內在擬交感活性;用於心衰竭時可明顯降低全身血壓、肺動脈壓、右心房壓、全身血管阻力與心率,而每搏輸出量指數上升"
+    },
+    {
+      "id": "drug.letrozole",
+      "name_en": "Letrozole",
+      "name_zh": "萊翠唑",
+      "brand_names_en": [
+        "Femara"
+      ],
+      "drugclass_id": "drugclass.aromatase_inhibitors",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.aromatase",
+      "rxnorm_rxcui": "72965",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Nonsteroidal competitive inhibitor of the aromatase enzyme system; inhibits conversion of androgens (androstenedione, testosterone) to estrogens (estrone, estradiol) by competitively binding the heme of the cytochrome P450 subunit of aromatase. Selectively inhibits gonadal steroidogenesis without significant effect on adrenal mineralocorticoid or glucocorticoid synthesis.",
+      "mechanism_zh": "非固醇類芳香酶競爭性抑制劑;經與芳香酶細胞色素 P450 次單元的血基質競爭結合,抑制雄性素(雄烯二酮、睪固酮)轉化為雌激素(雌酮、雌二醇)。選擇性抑制性腺類固醇生成,對腎上腺礦物皮質素或糖皮質素合成無顯著影響。",
+      "indications_en": [
+        "FDA-approved: adjuvant treatment of postmenopausal women with hormone receptor-positive early breast cancer",
+        "FDA-approved: extended adjuvant treatment after prior standard adjuvant tamoxifen therapy",
+        "FDA-approved: first- and second-line treatment of postmenopausal women with hormone receptor-positive or unknown advanced breast cancer"
+      ],
+      "indications_zh": [
+        "FDA 核准:荷爾蒙受體陽性早期乳癌停經後婦女之輔助治療",
+        "FDA 核准:接受過標準 tamoxifen 輔助治療後之延長輔助治療",
+        "FDA 核准:荷爾蒙受體陽性或未知之晚期乳癌停經後婦女之第一線與第二線治療"
+      ],
+      "off_label_en": "Ovulation induction / superovulation in fertility care (very common off-label use in reproductive endocrinology, including PCOS-related anovulation) is NOT an FDA-approved indication on this label. This label's entire efficacy and safety dataset is from postmenopausal breast-cancer populations, not reproductive-age fertility patients.",
+      "off_label_zh": "生殖醫學常用之誘導排卵/超排卵(含 PCOS 相關無排卵)為仿單外使用,本標籤並未核准此適應症。本標籤全部療效與安全性資料來自停經後乳癌族群,並非生育年齡不孕症患者族群。",
+      "adverse_effects_en": [
+        "Bone mineral density decrease",
+        "Increased total cholesterol",
+        "Fatigue",
+        "Dizziness",
+        "Somnolence"
+      ],
+      "adverse_effects_zh": [
+        "骨密度下降",
+        "總膽固醇上升",
+        "疲倦",
+        "頭暈",
+        "嗜睡"
+      ],
+      "contraindications_en": [
+        "Pregnancy (can cause fetal harm)",
+        "Known hypersensitivity to the active substance or to any of the excipients"
+      ],
+      "contraindications_zh": [
+        "孕婦(可能造成胎兒傷害)",
+        "對活性成分或任一賦形劑已知過敏"
+      ],
+      "warnings_en": [
+        "Decreases in bone mineral density may occur; consider BMD monitoring",
+        "Increases in total cholesterol may occur; consider cholesterol monitoring",
+        "Fatigue, dizziness, and somnolence may occur; caution with machinery",
+        "Embryo-fetal toxicity: obtain a pregnancy test in females of reproductive potential; advise effective contraception"
+      ],
+      "warnings_zh": [
+        "可能發生骨密度下降;可考慮監測骨密度",
+        "可能發生總膽固醇上升;可考慮監測膽固醇",
+        "可能發生疲倦、頭暈、嗜睡;操作機械應謹慎",
+        "胚胎-胎兒毒性:對有生育能力之女性應先驗孕;建議採取有效避孕"
+      ],
+      "pregnancy_lactation_en": "Contraindicated in pregnancy: based on post-marketing reports, animal data, and mechanism of action, letrozole can cause fetal harm (post-marketing reports of spontaneous abortion and congenital birth defects; animal studies show increased post-implantation loss, fewer live fetuses, and renal/skeletal malformations). Lactation: advise lactating women not to breastfeed during treatment and for at least 3 weeks after the last dose; unknown whether letrozole is present in human milk.",
+      "pregnancy_lactation_zh": "孕期禁忌:根據上市後通報、動物試驗及作用機轉,萊翠唑可能造成胎兒傷害(上市後通報自發性流產與先天性缺陷;動物試驗顯示著床後胚胎流失增加、活產胎數減少及腎臟/骨骼畸形)。哺乳:建議哺乳婦女於治療期間及末次劑量後至少 3 週不哺乳;是否分泌至人乳尚不明。",
+      "integrative_clinical_flags": [
+        "bone_health"
+      ],
+      "tcm_relation_note_zh": "萊翠唑誘導排卵屬西醫生殖內分泌治療,與中醫「補腎助孕」等證型調理並非一對一對應;合併使用時應以西醫排卵監測(卵泡超音波、LH 高峰)為準,中醫介入定位為輔助調理,不取代生殖科追蹤。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "63e54b62-a30d-4a56-9215-75e7a0b0bf02",
+      "dailymed_label_title": "LETROZOLE TABLET [BRECKENRIDGE PHARMACEUTICAL, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=63e54b62-a30d-4a56-9215-75e7a0b0bf02",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#ADVERSE_REACTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "drug_interactions_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#DRUG_INTERACTIONS"
+        ]
+      },
+      "drug_interactions_en": [
+        "Tamoxifen: co-administration reduced letrozole plasma levels by ~38% on average; clinical experience indicates therapeutic effect is not impaired if letrozole is given immediately after tamoxifen."
+      ],
+      "drug_interactions_zh": [
+        "Tamoxifen:併用使letrozole 血漿濃度平均下降約 38%;臨床經驗顯示若在 tamoxifen 之後立即給予 letrozole,療效未受影響。"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Tamoxifen",
+          "with_label_zh": "Tamoxifen",
+          "effect_en": "Reduces letrozole plasma levels by ~38% on average; clinical effect not impaired if letrozole given immediately after tamoxifen",
+          "effect_zh": "使 letrozole 血漿濃度平均下降約 38%;若在 tamoxifen 之後立即給予則臨床療效不受影響",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤 DRUG INTERACTIONS 段落僅記載與 tamoxifen 之交互作用,未指名任何中藥或植物藥。未查得即為未查得,不推論中藥安全或不安全。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。核心落差:標籤全部資料來自乳癌適應症,誘導排卵之仿單外使用缺乏本標籤層級之安全性資料,已於 off_label_en/zh 說明。中藥交互作用未查得,不代表已排除。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11",
+      "site_of_action_en": "Aromatase enzyme system in peripheral tissues, ovary, and estrogen-dependent tumor tissue",
+      "site_of_action_zh": "周邊組織、卵巢及雌激素依賴性腫瘤組織之芳香酶系統",
+      "physiologic_effect_en": "Significantly lowers serum estrone, estradiol, and estrone sulfate; does not significantly affect adrenal corticosteroid, aldosterone, or thyroid hormone synthesis",
+      "physiologic_effect_zh": "顯著降低血清雌酮、雌二醇及硫酸雌酮;對腎上腺皮質類固醇、醛固酮或甲狀腺素合成無顯著影響"
+    },
+    {
+      "id": "drug.clomiphene",
+      "name_en": "Clomiphene citrate",
+      "name_zh": "可洛米分(檸檬酸鹽)",
+      "brand_names_en": [
+        "Clomid",
+        "Milophene"
+      ],
+      "drugclass_id": "drugclass.serms",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.estrogen_receptor",
+      "rxnorm_rxcui": "142431",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Interacts with estrogen-receptor-containing tissues (hypothalamus, pituitary, ovary, endometrium, vagina, cervix), competing with estrogen for receptor-binding sites and delaying replenishment of intracellular estrogen receptors. Initiates a series of endocrine events culminating in a preovulatory gonadotropin surge and follicular rupture. Has mixed estrogenic and antiestrogenic properties; no apparent progestational, androgenic, or antiandrogenic effects, and does not appear to interfere with pituitary-adrenal or pituitary-thyroid function.",
+      "mechanism_zh": "與含雌激素受體之組織(下視丘、腦垂體、卵巢、子宮內膜、陰道、子宮頸)作用,與雌激素競爭受體結合位並延遲細胞內雌激素受體之再合成,啟動一系列內分泌事件而導致排卵前促性腺激素高峰及濾泡破裂。具混合型雌激素與抗雌激素性質;無明顯黃體素、雄性素或抗雄性素作用,亦未見干擾腦垂體-腎上腺或腦垂體-甲狀腺功能。",
+      "indications_en": [
+        "FDA-approved: treatment of ovulatory dysfunction in women desiring pregnancy (PCOS, amenorrhea-galactorrhea syndrome, psychogenic amenorrhea, post-oral-contraceptive amenorrhea, certain secondary amenorrhea of undetermined etiology)"
+      ],
+      "indications_zh": [
+        "FDA 核准:有生育意願女性之排卵功能障礙治療(PCOS、閉經-泌乳症候群、心因性閉經、停服口服避孕藥後閉經、部分病因不明之續發性閉經)"
+      ],
+      "off_label_en": "Not indicated/effective for male infertility (label states no adequate/well-controlled studies demonstrate effectiveness, and notes reports of testicular tumors and gynecomastia in males using clomiphene; cause-and-effect not established). Not recommended for combined ovulation-induction regimens or IVF ovum-production protocols — label states no standard regimen exists and these uses are not recommended.",
+      "off_label_zh": "標籤敘明無充分對照試驗證實其對男性不孕症之療效,且有男性使用後睪丸腫瘤與男性女乳症之通報(因果關係未確立)。標籤亦敘明合併其他促排卵藥物或 IVF 取卵方案無標準用法,不建議此類使用。",
+      "adverse_effects_en": [
+        "Ovarian enlargement",
+        "Vasomotor flushes",
+        "Abdominal/pelvic discomfort, distention, bloating",
+        "Nausea and vomiting",
+        "Breast discomfort",
+        "Visual symptoms (blurred vision, floaters, scotomata, photophobia)",
+        "Headache",
+        "Abnormal uterine bleeding"
+      ],
+      "adverse_effects_zh": [
+        "卵巢腫大",
+        "血管舒縮性潮紅",
+        "腹部/骨盆不適、脹感、腹脹",
+        "噁心與嘔吐",
+        "乳房不適",
+        "視覺症狀(視力模糊、飛蚊、暗點、畏光)",
+        "頭痛",
+        "異常子宮出血"
+      ],
+      "serious_adverse_effects_en": [
+        "Ovarian hyperstimulation syndrome (OHSS) — can progress rapidly, gross ovarian enlargement, ascites, dyspnea, oliguria, pleural effusion, hemoconcentration, thromboembolism, death reported",
+        "Persistent or irreversible visual disturbance",
+        "Multiple pregnancy (label reports ~8% incidence of multiple pregnancies in clinical trials)"
+      ],
+      "serious_adverse_effects_zh": [
+        "卵巢過度刺激症候群(OHSS)——可能快速惡化,出現嚴重卵巢腫大、腹水、呼吸困難、少尿、肋膜積液、血液濃縮、血栓栓塞,並有死亡通報",
+        "持續性或不可逆之視覺障礙",
+        "多胞胎妊娠(標籤臨床試驗中多胞胎發生率約 8%)"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to clomiphene citrate or any ingredient",
+        "Pregnancy (does not offer benefit; contraindicated)",
+        "Liver disease or history of liver dysfunction",
+        "Abnormal uterine bleeding of undetermined origin",
+        "Ovarian cysts or enlargement not due to PCOS",
+        "Uncontrolled thyroid or adrenal dysfunction, or organic intracranial lesion (e.g. pituitary tumor)"
+      ],
+      "contraindications_zh": [
+        "對可洛米分或任一成分過敏",
+        "孕婦(無助益,禁用)",
+        "肝病或肝功能不全病史",
+        "病因不明之異常子宮出血",
+        "非 PCOS 導致之卵巢囊腫或腫大",
+        "未控制之甲狀腺或腎上腺功能障礙,或器質性顱內病灶(如腦垂體腫瘤)"
+      ],
+      "warnings_en": [
+        "Visual symptoms (blurring, spots/flashes/scintillating scotomata) may occur, increase with dose/duration, and may be irreversible — discontinue and refer for complete ophthalmological evaluation if they occur",
+        "Ovarian hyperstimulation syndrome (OHSS) — use lowest effective dose; PCOS patients especially sensitive and should start at lowest dose/shortest duration",
+        "Pelvic exam required before first and each subsequent treatment course"
+      ],
+      "warnings_zh": [
+        "可能出現視覺症狀(視力模糊、閃光/閃爍暗點),隨劑量或療程延長而增加,可能不可逆——一旦出現應停藥並轉介完整眼科評估",
+        "卵巢過度刺激症候群(OHSS)——應使用最低有效劑量;PCOS 患者特別敏感,首次療程應由最低劑量、最短療程開始",
+        "首次及每次後續療程前均須進行骨盆檢查"
+      ],
+      "pregnancy_lactation_en": "Contraindicated in pregnancy (offers no benefit in pregnant women). Available human data do not suggest increased risk of congenital anomalies above background population risk; however animal reproductive toxicology studies showed increased embryo-fetal loss and structural malformations. Long-term cyclic therapy not recommended beyond ~6 cycles.",
+      "pregnancy_lactation_zh": "孕期禁忌(對孕婦無助益)。現有人體資料未顯示先天性異常風險高於一般族群背景風險;然而動物生殖毒理試驗顯示胚胎-胎兒流失與結構性畸形增加。不建議長期週期性治療超過約 6 個週期。",
+      "integrative_clinical_flags": [],
+      "tcm_relation_note_zh": "可洛米分誘導排卵之機轉(阻斷雌激素負回饋)與中醫「腎陰虛」「肝鬱」等證型無一對一對應;患者若在服藥期間出現視覺症狀或劇烈腹脹痛,應立即轉介西醫評估 OHSS,不宜以症狀對應證型延誤處置。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "b56e04f0-490d-4f10-a0ed-31c288f4f4c5",
+      "dailymed_label_title": "CLOMIPHENE CITRATE TABLET [ANI PHARMACEUTICALS, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b56e04f0-490d-4f10-a0ed-31c288f4f4c5",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#WARNINGS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#ADVERSE_REACTIONS",
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#WARNINGS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#DRUG_INTERACTIONS"
+        ]
+      },
+      "drug_interactions_en": [
+        "Label states drug interactions with clomiphene citrate have not been documented."
+      ],
+      "drug_interactions_zh": [
+        "標籤敘明尚未記載可洛米分之藥物交互作用。"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "(none documented)",
+          "with_label_zh": "(標籤未記載交互作用對象)",
+          "effect_en": "Label explicitly states no drug interactions with clomiphene citrate have been documented",
+          "effect_zh": "標籤明確敘明尚未記載任何藥物交互作用",
+          "evidence": "unknown",
+          "sources_checked": [
+            "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤未指名任何中藥或植物藥交互作用。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。clomiphene 為此批唯一「仿單內」誘導排卵用藥(letrozole/estradiol/progesterone 皆為此適應症之仿單外使用),此區別已於各卡分別標明,避免混為一談。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.metformin",
+      "name_en": "Metformin",
+      "name_zh": "二甲雙胍(美福明)",
+      "brand_names_en": [
+        "Glucophage"
+      ],
+      "drugclass_id": "drugclass.biguanides",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "rxnorm_rxcui": "235743",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Antihyperglycemic agent that improves glucose tolerance, lowering both basal and postprandial plasma glucose. Decreases hepatic glucose production, decreases intestinal absorption of glucose, and improves insulin sensitivity by increasing peripheral glucose uptake and utilization. Insulin secretion remains unchanged while fasting and day-long plasma insulin response may decrease. Label does not name a single discrete molecular receptor target.",
+      "mechanism_zh": "抗高血糖藥物,可改善葡萄糖耐受性,降低空腹與飯後血糖。降低肝臟葡萄糖生成、減少腸道葡萄糖吸收,並藉由增加周邊葡萄糖攝取與利用來改善胰島素敏感性。胰島素分泌不受影響,但空腹及全天血漿胰島素反應可能下降。標籤未指名單一明確分子受體標的。",
+      "indications_en": [
+        "FDA-approved: adjunct to diet and exercise to improve glycemic control in type 2 diabetes mellitus (adults and pediatric patients 10 years and older)"
+      ],
+      "indications_zh": [
+        "FDA 核准:作為飲食與運動之輔助療法,改善第二型糖尿病(成人及 10 歲以上兒童)血糖控制"
+      ],
+      "off_label_en": "Widely used off-label in reproductive endocrinology for PCOS-related insulin resistance/ovulatory dysfunction and as an adjunct in fertility treatment — this is NOT an FDA-approved indication on this label; this label's safety data derive from the type 2 diabetes population.",
+      "off_label_zh": "生殖內分泌科廣泛仿單外使用於 PCOS 相關胰島素阻抗/排卵功能障礙及不孕症輔助治療——本標籤並未核准此適應症;本標籤安全性資料來自第二型糖尿病族群。",
+      "adverse_effects_en": [
+        "Diarrhea",
+        "Nausea/vomiting",
+        "Flatulence",
+        "Asthenia",
+        "Indigestion",
+        "Abdominal discomfort",
+        "Headache"
+      ],
+      "adverse_effects_zh": [
+        "腹瀉",
+        "噁心/嘔吐",
+        "腸胃脹氣",
+        "虛弱",
+        "消化不良",
+        "腹部不適",
+        "頭痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Lactic acidosis (see boxed warning)",
+        "Vitamin B12 deficiency",
+        "Hypoglycemia (with insulin/insulin secretagogues)"
+      ],
+      "serious_adverse_effects_zh": [
+        "乳酸中毒(見黑框警語)",
+        "維生素 B12 缺乏",
+        "低血糖(併用胰島素/胰島素促泌劑時)"
+      ],
+      "boxed_warning_en": "Postmarketing cases of metformin-associated lactic acidosis have resulted in death, hypothermia, hypotension, and resistant bradyarrhythmias. Onset is often subtle with nonspecific symptoms (malaise, myalgias, respiratory distress, somnolence, abdominal pain). Risk factors: renal impairment, concomitant carbonic anhydrase inhibitors (e.g. topiramate), age ≥65, radiological contrast studies, surgery, hypoxic states, excessive alcohol intake, hepatic impairment, mitochondrial disease. If suspected, discontinue metformin immediately and institute supportive measures in a hospital setting; prompt hemodialysis is recommended.",
+      "boxed_warning_zh": "上市後通報顯示 metformin 相關乳酸中毒可能導致死亡、低體溫、低血壓及頑固性心搏過緩。起病常隱匿,伴非特異性症狀(倦怠、肌痛、呼吸窘迫、嗜睡、腹痛)。危險因子:腎功能不全、併用碳酸酐酶抑制劑(如 topiramate)、年齡 ≥65 歲、顯影劑檢查、手術、缺氧狀態、過量飲酒、肝功能不全、粒線體疾病。若懷疑發生,應立即停藥並於醫院內給予支持性治療;建議儘速血液透析。",
+      "contraindications_en": [
+        "Severe renal impairment (eGFR below 30 mL/min/1.73m²)",
+        "Hypersensitivity to metformin",
+        "Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma"
+      ],
+      "contraindications_zh": [
+        "嚴重腎功能不全(eGFR 低於 30 mL/min/1.73m²)",
+        "對 metformin 過敏",
+        "急性或慢性代謝性酸中毒,包含糖尿病酮酸中毒(不論是否合併昏迷)"
+      ],
+      "warnings_en": [
+        "Lactic acidosis — see boxed warning",
+        "Vitamin B12 deficiency: measure hematological parameters annually and B12 at 2-3 year intervals",
+        "Hypoglycemia with concomitant insulin/insulin secretagogue use — lower dose of the other agent may be required",
+        "No conclusive evidence of macrovascular risk reduction from clinical studies"
+      ],
+      "warnings_zh": [
+        "乳酸中毒——見黑框警語",
+        "維生素 B12 缺乏:建議每年測血液學參數,每 2-3 年測 B12",
+        "併用胰島素/胰島素促泌劑時之低血糖——可能需降低另一藥物劑量",
+        "臨床試驗尚無確切證據顯示可降低大血管疾病風險"
+      ],
+      "pregnancy_lactation_en": "Pregnancy: limited data insufficient to determine drug-associated risk for major birth defects or miscarriage; published studies have not reported a clear association. Risks to mother/fetus are associated with poorly-controlled diabetes itself. Lactation: metformin is present in human milk (infant dose ~0.11%-1% of maternal weight-adjusted dose); insufficient data on breastfed-infant effects — weigh developmental/health benefits of breastfeeding against maternal need.",
+      "pregnancy_lactation_zh": "孕期:現有資料有限,不足以判定重大出生缺陷或流產之藥物相關風險;已發表研究未見明確關聯。孕期糖尿病控制不良本身即對母胎有風險。哺乳:metformin 會分泌至人乳(嬰兒劑量約為母體體重校正劑量之 0.11%-1%);對哺乳嬰兒影響資料不足——應權衡哺乳之發展/健康益處與母親用藥需求。",
+      "integrative_clinical_flags": [
+        "glucose_effects"
+      ],
+      "tcm_relation_note_zh": "Metformin 用於 PCOS 之胰島素阻抗調理,與中醫「脾虛痰濕」「腎虛」等證型有部分機轉重疊(改善代謝),但不構成中西醫病名一對一等同;合併使用時應留意腹瀉等腸胃道不良反應是否與中藥方劑之瀉下/滑腸成分疊加。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa",
+      "dailymed_label_title": "METFORMIN HYDROCHLORIDE TABLET [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#ADVERSE_REACTIONS",
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "drug_interactions_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Overdose (including ingestion >50g) has occurred; hypoglycemia in ~10% of cases (causal link not established); lactic acidosis reported in ~32% of overdose cases. Metformin is dialyzable (clearance up to 170 mL/min); hemodialysis may be useful for drug removal.",
+      "drug_interactions_en": [
+        "Carbonic anhydrase inhibitors (topiramate, zonisamide, acetazolamide, dichlorphenamide): may increase risk of lactic acidosis",
+        "Drugs reducing metformin clearance (OCT2/MATE inhibitors — ranolazine, vandetanib, dolutegravir, cimetidine): may increase metformin exposure and lactic acidosis risk",
+        "Alcohol: potentiates effect of metformin on lactate metabolism",
+        "Insulin secretagogues or insulin: increased hypoglycemia risk",
+        "Drugs affecting glycemic control (thiazides/diuretics, corticosteroids, phenothiazines, thyroid products, estrogens, oral contraceptives, phenytoin, nicotinic acid, sympathomimetics, calcium channel blockers, isoniazid): may cause hyper- or hypoglycemia when added/withdrawn"
+      ],
+      "drug_interactions_zh": [
+        "碳酸酐酶抑制劑(topiramate、zonisamide、acetazolamide、dichlorphenamide):可能增加乳酸中毒風險",
+        "降低 metformin 清除率之藥物(OCT2/MATE 抑制劑——ranolazine、vandetanib、dolutegravir、cimetidine):可能增加 metformin 暴露量與乳酸中毒風險",
+        "酒精:加強 metformin 對乳酸代謝之作用",
+        "胰島素促泌劑或胰島素:增加低血糖風險",
+        "影響血糖控制之藥物(thiazide/利尿劑、皮質類固醇、phenothiazine、甲狀腺製劑、雌激素、口服避孕藥、phenytoin、菸鹼酸、擬交感神經藥、鈣離子通道阻斷劑、isoniazid):加入或停用時可能造成高血糖或低血糖"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Carbonic anhydrase inhibitors (topiramate, zonisamide, acetazolamide, dichlorphenamide)",
+          "with_label_zh": "碳酸酐酶抑制劑(topiramate、zonisamide、acetazolamide、dichlorphenamide)",
+          "effect_en": "May increase risk of lactic acidosis via metabolic acidosis",
+          "effect_zh": "可能透過代謝性酸中毒增加乳酸中毒風險",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Alcohol",
+          "with_label_zh": "酒精",
+          "effect_en": "Potentiates effect of metformin on lactate metabolism, increasing lactic acidosis risk",
+          "effect_zh": "加強 metformin 對乳酸代謝之作用,增加乳酸中毒風險",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤 DRUG INTERACTIONS 段落未指名任何中藥或植物藥。未查得即為未查得,不推論已排除;PCOS 常用中藥複方併用 metformin 之交互作用需另查 NCCIH 或原始文獻。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。標籤未指定單一分子標的,故 drugtarget_id 留空,誠實反映標籤本身的不確定性,而非漏填。PCOS 之仿單外使用落差已於 off_label_en/zh 說明。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.progesterone",
+      "name_en": "Progesterone (oral micronized)",
+      "name_zh": "黃體素(口服微粒化)",
+      "brand_names_en": [
+        "Prometrium"
+      ],
+      "drugclass_id": "drugclass.progestins",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.progesterone_receptor",
+      "rxnorm_rxcui": "8727",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Oral dosage form of micronized progesterone which is chemically identical to progesterone of ovarian origin (synthesized from a plant source). Micronization increases oral bioavailability. This label's CLINICAL PHARMACOLOGY section does not itself elaborate receptor-level mechanism.",
+      "mechanism_zh": "微粒化黃體素之口服劑型,化學結構與卵巢來源之黃體素相同(自植物來源合成)。微粒化可提升口服生體可用率。本標籤 CLINICAL PHARMACOLOGY 段落本身未闡述受體層級機轉。",
+      "indications_en": [
+        "FDA-approved (this label): prevention of endometrial hyperplasia in nonhysterectomized postmenopausal women receiving conjugated estrogens",
+        "FDA-approved (this label): secondary amenorrhea"
+      ],
+      "indications_zh": [
+        "本標籤核准適應症:未切除子宮之停經後婦女接受結合型雌激素治療時,預防子宮內膜增生",
+        "本標籤核准適應症:續發性閉經"
+      ],
+      "off_label_en": "This clinic's most common use of oral micronized progesterone — luteal-phase support and early-pregnancy support in ART/IVF cycles — is NOT covered by this label. This label's own CONTRAINDICATIONS section lists 'known or suspected pregnancy' as a contraindication and its efficacy/safety data derive entirely from postmenopausal HRT and secondary-amenorrhea populations. This reflects that pregnancy has no role in THIS label's approved (non-pregnancy) indications — it is not a safety statement against the well-established practice of luteal-phase/early-pregnancy progesterone support in reproductive endocrinology, which relies on a separate ART/fertility evidence base this label does not address. Do not extrapolate this label's pregnancy contraindication to counsel against fertility-context use without checking ART-specific literature.",
+      "off_label_zh": "本診所最常見的口服微粒化黃體素用法——ART/IVF 週期黃體期支持與早期妊娠支持——本標籤並未涵蓋。本標籤 CONTRAINDICATIONS 段落將「已知或疑似懷孕」列為禁忌,其療效/安全性資料完全來自停經後 HRT 與續發性閉經族群。這反映的是懷孕與本標籤核准之(非孕期)適應症無關,並非針對生殖內分泌科黃體期/早期妊娠黃體素支持這項成熟臨床實務的安全性聲明——後者仰賴本標籤未處理的 ART/生殖醫學獨立實證。不可將本標籤之孕期禁忌直接外推為反對生殖科用法,須另查 ART 專屬文獻。",
+      "adverse_effects_en": [
+        "Headache",
+        "Breast tenderness",
+        "Joint pain",
+        "Depression",
+        "Dizziness",
+        "Abdominal bloating",
+        "Vaginal discharge",
+        "Nausea/vomiting"
+      ],
+      "adverse_effects_zh": [
+        "頭痛",
+        "乳房脹痛",
+        "關節痛",
+        "憂鬱",
+        "頭暈",
+        "腹脹",
+        "陰道分泌物",
+        "噁心/嘔吐"
+      ],
+      "serious_adverse_effects_en": [
+        "Breast carcinoma (reported at low rate in the postmenopausal HRT trial population)",
+        "Cardiovascular/thromboembolic events (as part of estrogen+progestin combination therapy — see boxed warning)"
+      ],
+      "serious_adverse_effects_zh": [
+        "乳癌(停經後 HRT 試驗族群中低發生率通報)",
+        "心血管/血栓栓塞事件(屬雌激素+黃體素併用治療之一部分——見黑框警語)"
+      ],
+      "boxed_warning_en": "WARNING: CARDIOVASCULAR DISORDERS, BREAST CANCER, AND PROBABLE DEMENTIA FOR ESTROGEN PLUS PROGESTIN THERAPY. Applies specifically to this label's postmenopausal estrogen+progestin HRT indication (this drug given cyclically WITH conjugated estrogens). The WHI estrogen-plus-progestin substudy reported increased risk of DVT, pulmonary embolism, stroke, and MI in postmenopausal women (age 50-79) over 5.6 years of CE+MPA therapy vs. placebo. WHIMS reported increased probable dementia risk in women ≥65 over 4 years. WHI also reported increased invasive breast cancer risk. Estrogen plus progestin should not be used for prevention of cardiovascular disease or dementia.",
+      "boxed_warning_zh": "黑框警語:雌激素併用黃體素治療之心血管疾病、乳癌與可能失智症風險。此警語特別針對本標籤停經後雌激素+黃體素 HRT 適應症(本藥與結合型雌激素週期性併用之情境)。WHI 雌激素併黃體素次研究顯示,50-79 歲停經後婦女接受 CE+MPA 治療 5.6 年,深部靜脈栓塞、肺栓塞、中風及心肌梗塞風險較安慰劑組增加。WHIMS 顯示 65 歲以上婦女治療 4 年後可能失智症風險增加。WHI 亦顯示侵襲性乳癌風險增加。雌激素併黃體素不應用於預防心血管疾病或失智症。",
+      "contraindications_en": [
+        "Known hypersensitivity to its ingredients — contains peanut oil, never use in patients allergic to peanuts",
+        "Undiagnosed abnormal genital bleeding",
+        "Known, suspected, or history of breast cancer",
+        "Active deep vein thrombosis, pulmonary embolism, or history of these conditions",
+        "Active arterial thromboembolic disease (e.g. stroke, MI), or history of these conditions",
+        "Known liver dysfunction or disease",
+        "Known or suspected pregnancy (this label's approved, non-pregnancy indications — see off_label note re: ART/fertility use)"
+      ],
+      "contraindications_zh": [
+        "對其成分已知過敏——含花生油,對花生過敏者絕對禁用",
+        "病因不明之異常生殖器出血",
+        "已知、疑似或有乳癌病史",
+        "活動性深部靜脈栓塞、肺栓塞或此類病史",
+        "活動性動脈血栓栓塞疾病(如中風、心肌梗塞)或此類病史",
+        "已知肝功能不全或肝病",
+        "已知或疑似懷孕(此為本標籤核准之非孕期適應症所致——ART/生殖科用法之落差見 off_label 說明)"
+      ],
+      "warnings_en": [
+        "See boxed warning (cardiovascular, breast cancer, probable dementia — estrogen+progestin combination context)",
+        "Fluid retention — caution in cardiac or renal dysfunction",
+        "Dizziness and drowsiness — caution driving/operating machinery; take as single bedtime dose"
+      ],
+      "warnings_zh": [
+        "見黑框警語(心血管、乳癌、可能失智症——雌激素+黃體素併用情境)",
+        "體液滯留——心臟或腎臟功能不全者應謹慎",
+        "頭暈與嗜睡——駕駛或操作機械應謹慎;建議睡前單次服用"
+      ],
+      "pregnancy_lactation_en": "This label states progesterone capsules should not be used during pregnancy (see contraindications) and classifies as Pregnancy Category B based on older reproductive studies in mice, rats, rabbits, guinea pigs, and rhesus monkeys showing little or no evidence of impaired fertility or fetal harm. See off_label_en for the critical distinction between this label's non-pregnancy indications and the separate, well-established ART/luteal-support evidence base.",
+      "pregnancy_lactation_zh": "本標籤敘明黃體素膠囊不應於孕期使用(見禁忌),並依較舊制度列為妊娠分類 B,依據小鼠、大鼠、兔、天竺鼠及恆河猴之生殖試驗顯示幾無生育能力受損或胎兒傷害證據。本標籤非孕期適應症與 ART 黃體期支持之獨立成熟實證間的關鍵區別,見 off_label_en 說明。",
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "tcm_relation_note_zh": "ART 黃體期黃體素支持與中醫「補腎固胎」「安胎」等概念在臨床目的上有交集,但不構成一對一等同;中藥安胎方劑併用時應留意頭暈嗜睡之疊加效應,並確認西醫黃體支持追蹤(血中黃體素濃度)未受中斷。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "f392c6d9-1420-4735-aa01-f434da9b31b3",
+      "dailymed_label_title": "PROGESTERONE CAPSULE [NORTHSTAR RX LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f392c6d9-1420-4735-aa01-f434da9b31b3",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#WARNINGS",
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#ADVERSE_REACTIONS",
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#PREGNANCY"
+        ],
+        "overdose_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "No studies on overdosage have been conducted in humans; discontinue and treat symptomatically.",
+      "herb_drug_interaction_note_zh": "本標籤未列 DRUG INTERACTIONS 段落,亦未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。這是本批 CRITICAL 落差最大的一張卡——標籤禁忌孕期,診所卻常用於黃體期/早期妊娠支持,已在 off_label_en/zh 與 contraindications 逐項標註,務必讓臨床使用者看到此區別,避免誤讀「孕期禁忌」為反對 ART 用法的安全訊號。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.estradiol",
+      "name_en": "Estradiol (oral micronized)",
+      "name_zh": "雌二醇(口服微粒化)",
+      "brand_names_en": [
+        "Estrace"
+      ],
+      "drugclass_id": "drugclass.estrogens",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.estrogen_receptor",
+      "rxnorm_rxcui": "24395",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Estradiol is the principal, most potent intracellular human estrogen; endogenous estrogens are largely responsible for development/maintenance of the female reproductive system and secondary sexual characteristics. Acts via binding to nuclear estrogen receptors (two subtypes identified) in estrogen-responsive tissues; modulates pituitary secretion of LH and FSH through negative feedback.",
+      "mechanism_zh": "雌二醇為人體最主要、活性最強的細胞內雌激素;內生性雌激素主要負責女性生殖系統與第二性徵之發育與維持。作用機轉為結合雌激素反應性組織之細胞核雌激素受體(已知兩種亞型);透過負回饋調節腦垂體 LH 與 FSH 之分泌。",
+      "indications_en": [
+        "FDA-approved (this label): moderate-to-severe vasomotor symptoms of menopause",
+        "FDA-approved (this label): moderate-to-severe vulvar and vaginal atrophy of menopause",
+        "FDA-approved (this label): hypoestrogenism due to hypogonadism, castration, or primary ovarian failure",
+        "FDA-approved (this label): palliative treatment of breast cancer (metastatic) and androgen-dependent prostate cancer",
+        "FDA-approved (this label): prevention of postmenopausal osteoporosis (selected patients)"
+      ],
+      "indications_zh": [
+        "本標籤核准適應症:中重度更年期血管舒縮症狀",
+        "本標籤核准適應症:中重度更年期外陰陰道萎縮",
+        "本標籤核准適應症:性腺功能低下、去勢或原發性卵巢衰竭所致之低雌激素狀態",
+        "本標籤核准適應症:轉移性乳癌與雄性素依賴性攝護腺癌之緩和治療",
+        "本標籤核准適應症:停經後骨質疏鬆預防(特定患者)"
+      ],
+      "off_label_en": "Endometrial priming for frozen embryo transfer (FET) and other ART protocols — a core use of oral estradiol in this clinic's fertility workflow — is NOT covered by this label. This label's Pregnancy Category X / 'known or suspected pregnancy is contraindicated' language reflects its menopausal-HRT indications (where pregnancy is not a relevant clinical state to begin with), not a safety judgment against the ART practice of continuing estradiol support into early pregnancy under reproductive-endocrinology protocols. Do not extrapolate this label's pregnancy contraindication to counsel against ART use without checking ART-specific literature.",
+      "off_label_zh": "凍胚植入(FET)及其他 ART 方案之子宮內膜準備——本診所生殖科工作流程中口服雌二醇之核心用途——本標籤並未涵蓋。本標籤之妊娠分類 X /「已知或疑似懷孕為禁忌」文字,反映的是其更年期 HRT 適應症本身與懷孕無關(而非相關臨床狀態),並非針對生殖內分泌科方案中持續使用雌二醇支持早期妊娠此一 ART 實務的安全性判斷。不可將本標籤之孕期禁忌直接外推為反對 ART 用法,須另查 ART 專屬文獻。",
+      "adverse_effects_en": [
+        "Vaginal bleeding pattern changes, breakthrough bleeding, spotting",
+        "Breast tenderness, enlargement, pain, nipple discharge",
+        "Nausea, vomiting, abdominal cramps, bloating",
+        "Headache, migraine, dizziness",
+        "Chloasma/melasma (may persist after discontinuation)",
+        "Edema, weight change, changes in libido"
+      ],
+      "adverse_effects_zh": [
+        "陰道出血型態改變、突破性出血、點狀出血",
+        "乳房脹痛、增大、疼痛、乳頭分泌物",
+        "噁心、嘔吐、腹部絞痛、腹脹",
+        "頭痛、偏頭痛、頭暈",
+        "肝斑/黃褐斑(停藥後可能持續)",
+        "水腫、體重改變、性慾改變"
+      ],
+      "serious_adverse_effects_en": [
+        "Endometrial cancer (unopposed estrogen with intact uterus — see boxed warning)",
+        "Deep/superficial venous thrombosis, pulmonary embolism, myocardial infarction, stroke",
+        "Gallbladder disease requiring surgery",
+        "Retinal vascular thrombosis"
+      ],
+      "serious_adverse_effects_zh": [
+        "子宮內膜癌(有子宮且單用雌激素——見黑框警語)",
+        "深部/淺部靜脈栓塞、肺栓塞、心肌梗塞、中風",
+        "需手術之膽囊疾病",
+        "視網膜血管栓塞"
+      ],
+      "boxed_warning_en": "ESTROGENS INCREASE THE RISK OF ENDOMETRIAL CANCER — close clinical surveillance important; adequate diagnostic measures (including endometrial sampling) should rule out malignancy in undiagnosed persistent/recurring abnormal vaginal bleeding. CARDIOVASCULAR AND OTHER RISKS — estrogens with or without progestins should not be used for prevention of cardiovascular disease. WHI reported increased MI, stroke, invasive breast cancer, pulmonary emboli, and DVT with oral CE+MPA over 5 years vs. placebo. WHIMS reported increased probable dementia in women ≥65 with CE+MPA over 4 years.",
+      "boxed_warning_zh": "黑框警語:雌激素增加子宮內膜癌風險——應密切臨床監測;未確診之持續性或反覆性異常陰道出血,應以適當診斷措施(含子宮內膜採樣)排除惡性腫瘤。心血管及其他風險——雌激素(併用或不併用黃體素)不應用於預防心血管疾病。WHI 顯示口服 CE+MPA 治療 5 年,較安慰劑組增加心肌梗塞、中風、侵襲性乳癌、肺栓塞及深部靜脈栓塞風險。WHIMS 顯示 65 歲以上婦女接受 CE+MPA 治療 4 年,可能失智症風險增加。",
+      "contraindications_en": [
+        "Undiagnosed abnormal genital bleeding",
+        "Known, suspected, or history of breast cancer (except appropriately selected metastatic-disease patients)",
+        "Known or suspected estrogen-dependent neoplasia",
+        "Active DVT, pulmonary embolism, or history of these conditions",
+        "Active or recent (within ~1 year) arterial thromboembolic disease (stroke, MI)",
+        "Liver dysfunction or disease",
+        "Known hypersensitivity to ingredients",
+        "Known or suspected pregnancy (this label's approved, non-pregnancy indications — see off_label note re: ART use)"
+      ],
+      "contraindications_zh": [
+        "病因不明之異常生殖器出血",
+        "已知、疑似或有乳癌病史(適當篩選之轉移性疾病患者除外)",
+        "已知或疑似雌激素依賴性腫瘤",
+        "活動性深部靜脈栓塞、肺栓塞或此類病史",
+        "活動性或近期(約 1 年內)動脈血栓栓塞疾病(中風、心肌梗塞)",
+        "肝功能不全或肝病",
+        "對成分已知過敏",
+        "已知或疑似懷孕(此為本標籤核准之非孕期適應症所致——ART 用法之落差見 off_label 說明)"
+      ],
+      "warnings_en": [
+        "See boxed warnings (endometrial cancer, cardiovascular, probable dementia)"
+      ],
+      "warnings_zh": [
+        "見黑框警語(子宮內膜癌、心血管、可能失智症)"
+      ],
+      "pregnancy_lactation_en": "This label classifies estradiol as Pregnancy Category X: 'should not be used during pregnancy' (see contraindications). Label separately notes little or no increased risk of birth defects has been observed in children born to women who inadvertently used estrogens/progestins from oral contraceptives in early pregnancy. See off_label_en for the critical distinction between this label's non-pregnancy menopausal indications and the separate ART/FET evidence base.",
+      "pregnancy_lactation_zh": "本標籤將雌二醇列為妊娠分類 X:「不應於孕期使用」(見禁忌)。標籤另指出,早期妊娠時不慎使用口服避孕藥中雌激素/黃體素之產婦,其子女先天缺陷風險未見明顯增加。本標籤非孕期更年期適應症與 ART/FET 獨立實證間的關鍵區別,見 off_label_en 說明。",
+      "integrative_clinical_flags": [
+        "procedural_safety"
+      ],
+      "tcm_relation_note_zh": "FET 週期雌二醇子宮內膜準備與中醫「補腎填精」「滋陰養血」等概念在臨床目的上有交集,但不構成一對一等同;合併中藥時應留意標籤所列 CYP3A4 交互作用(見 drug_interactions),避免植物藥誘導/抑制 CYP3A4 而改變雌二醇濃度。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b",
+      "dailymed_label_title": "ESTRADIOL TABLET [A-S MEDICATION SOLUTIONS]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#BOXED_WARNING"
+        ],
+        "adverse_effects_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#ADVERSE_REACTIONS",
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Serious ill effects have not been reported following acute ingestion of large doses of estrogen-containing oral contraceptives by young children; overdosage may cause nausea/vomiting and withdrawal bleeding in females.",
+      "drug_interactions_en": [
+        "CYP3A4 inducers (St. John's Wort/Hypericum perforatum, phenobarbital, carbamazepine, rifampin): may reduce plasma estrogen concentrations, decreasing therapeutic effect and/or altering bleeding profile",
+        "CYP3A4 inhibitors (erythromycin, clarithromycin, ketoconazole, itraconazole, ritonavir, grapefruit juice): may increase plasma estrogen concentrations and side effects",
+        "Thyroid replacement therapy: estrogen increases thyroid-binding globulin, may require higher thyroid hormone doses"
+      ],
+      "drug_interactions_zh": [
+        "CYP3A4 誘導劑(聖約翰草/貫葉連翹、phenobarbital、carbamazepine、rifampin):可能降低雌激素血中濃度,減弱療效及/或改變出血型態",
+        "CYP3A4 抑制劑(erythromycin、clarithromycin、ketoconazole、itraconazole、ritonavir、葡萄柚汁):可能增加雌激素血中濃度及副作用",
+        "甲狀腺補充治療:雌激素會增加甲狀腺結合球蛋白,可能需提高甲狀腺素劑量"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort (Hypericum perforatum)",
+          "with_label_zh": "聖約翰草(貫葉連翹)",
+          "effect_en": "CYP3A4 induction may reduce plasma estrogen concentrations, decreasing therapeutic effect and/or altering uterine bleeding profile",
+          "effect_zh": "誘導 CYP3A4 可能降低雌激素血中濃度,減弱療效及/或改變子宮出血型態",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort (Hypericum perforatum)",
+          "with_label_zh": "聖約翰草(貫葉連翹)",
+          "effect_en": "Named in the estradiol label as a CYP3A4 inducer that may reduce plasma estrogen concentrations",
+          "effect_zh": "標籤指名為 CYP3A4 誘導劑,可能降低雌激素血中濃度",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤在 CYP3A4 段落指名聖約翰草(西藥草,非中藥),藥庫目前無此卡;中藥複方是否含 CYP3A4 誘導/抑制成分需個別查證,不可從本欄推論。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。落差同 progesterone:標籤孕期禁忌(Category X)針對非孕期 HRT 適應症,ART/FET 子宮內膜準備用法未被涵蓋,已於 off_label_en/zh 詳述,避免誤讀。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.zolpidem",
+      "name_en": "Zolpidem",
+      "name_zh": "唑吡坦",
+      "brand_names_en": [
+        "Ambien"
+      ],
+      "drugclass_id": "drugclass.nonbenzodiazepine_hypnotics",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.gaba_a_benzodiazepine_site",
+      "rxnorm_rxcui": "39993",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "GABA-A receptor positive modulator of the imidazopyridine class, presumed to exert therapeutic effects through binding to the benzodiazepine site of alpha-1 subunit-containing GABA-A receptors, increasing the frequency of chloride channel opening and inhibiting neuronal excitation.",
+      "mechanism_zh": "咪唑吡啶類 GABA-A 受體正向調節劑,推定藉由結合含 alpha-1 次單元 GABA-A 受體之苯二氮平結合位而發揮療效,增加氯離子通道開啟頻率,抑制神經元興奮。",
+      "indications_en": [
+        "FDA-approved: short-term treatment of insomnia characterized by difficulty with sleep initiation (shown to decrease sleep latency for up to 35 days in controlled trials)"
+      ],
+      "indications_zh": [
+        "FDA 核准:短期治療以入睡困難為特徵之失眠(對照試驗顯示可縮短入睡潛伏期達 35 天)"
+      ],
+      "adverse_effects_en": [
+        "Drowsiness",
+        "Dizziness",
+        "Diarrhea (short-term use)",
+        "Drugged feeling (long-term use)"
+      ],
+      "adverse_effects_zh": [
+        "嗜睡",
+        "頭暈",
+        "腹瀉(短期使用)",
+        "藥物殘留感(長期使用)"
+      ],
+      "serious_adverse_effects_en": [
+        "Complex sleep behaviors (sleep-walking, sleep-driving, other activities while not fully awake) — see boxed warning",
+        "Severe anaphylactic/anaphylactoid reactions (angioedema, anaphylaxis)",
+        "Abnormal thinking/behavioral changes (decreased inhibition, bizarre behavior, agitation, depersonalization)",
+        "Worsening depression or emergence of suicidal thinking",
+        "Respiratory depression"
+      ],
+      "serious_adverse_effects_zh": [
+        "複雜睡眠行為(夢遊、夢中駕駛、未完全清醒時之其他活動)——見黑框警語",
+        "嚴重過敏性/類過敏反應(血管性水腫、過敏性休克)",
+        "異常思考/行為改變(抑制力下降、怪異行為、躁動、去人格化)",
+        "憂鬱惡化或出現自殺意念",
+        "呼吸抑制"
+      ],
+      "boxed_warning_en": "Complex sleep behaviors including sleep-walking, sleep-driving, and engaging in other activities while not fully awake may occur following use of zolpidem. Some of these events may result in serious injuries, including death. Discontinue zolpidem immediately if a patient experiences a complex sleep behavior.",
+      "boxed_warning_zh": "使用唑吡坦後可能出現複雜睡眠行為,包含夢遊、夢中駕駛及未完全清醒時之其他活動。部分事件可能導致重大傷害,包含死亡。若病人出現複雜睡眠行為應立即停藥。",
+      "contraindications_en": [
+        "Patients who have experienced complex sleep behaviors after taking zolpidem",
+        "Known hypersensitivity to zolpidem (observed reactions include anaphylaxis and angioedema)"
+      ],
+      "contraindications_zh": [
+        "曾於服用唑吡坦後出現複雜睡眠行為之病人",
+        "對唑吡坦已知過敏(曾見反應包含過敏性休克及血管性水腫)"
+      ],
+      "warnings_en": [
+        "CNS-depressant effects — risk of next-day impairment; increases with dose and with other CNS depressants/alcohol",
+        "Reevaluate if insomnia persists after 7-10 days (possible comorbid diagnosis)",
+        "Severe anaphylactic/anaphylactoid reactions — do not rechallenge",
+        "Abnormal thinking and behavioral changes — evaluate any new-onset behavioral change immediately",
+        "Depression — may worsen; prescribe least amount of tablets feasible",
+        "Respiratory depression risk in compromised respiratory function",
+        "Avoid in severe hepatic impairment",
+        "Withdrawal effects may occur with rapid dose reduction/discontinuation"
+      ],
+      "warnings_zh": [
+        "中樞神經抑制效應——有隔日功能受損風險;隨劑量及併用其他中樞抑制劑/酒精而增加",
+        "失眠若持續 7-10 天以上應重新評估(可能有共病診斷)",
+        "嚴重過敏性/類過敏反應——不應再次嘗試投藥",
+        "異常思考與行為改變——新發生之行為改變應立即評估",
+        "憂鬱——可能惡化;應開立可行之最少藥量",
+        "呼吸功能不全者有呼吸抑制風險",
+        "嚴重肝功能不全者應避免使用",
+        "快速減量或停藥可能出現戒斷效應"
+      ],
+      "pregnancy_lactation_en": "Pregnancy: neonates born to mothers using zolpidem late in the third trimester have been reported to experience respiratory depression and sedation; published data have not reported a clear association with major birth defects; monitor neonates exposed during pregnancy/labor. Lactation: a lactating woman may pump and discard breast milk during treatment and for 23 hours after the dose.",
+      "pregnancy_lactation_zh": "孕期:第三孕期後期使用唑吡坦之產婦,其新生兒曾通報出現呼吸抑制與鎮靜;已發表資料未見與重大先天缺陷有明確關聯;孕期/生產時暴露之新生兒應監測。哺乳:哺乳婦女可於治療期間及服藥後 23 小時內擠出並丟棄乳汁。",
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "acupuncture_note_zh": "唑吡坦為 CNS 鎮靜劑,與電針/放鬆反應之鎮靜效應理論上可能疊加(嗜睡加成),尤其合併其他鎮靜藥物或酒精時;標籤未針對針灸給出具體交互作用數據,臨床應留意治療後駕駛/操作機械之風險提示與服藥時間安排。",
+      "tcm_relation_note_zh": "唑吡坦治療之「入睡困難型失眠」與中醫「不寐」證型(心腎不交、肝鬱化火等)有部分症狀重疊,但不構成一對一等同;複雜睡眠行為等嚴重不良反應與中醫證型無關,應由西醫評估處置。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "413b6f65-101e-e2cf-0802-711d080b851b",
+      "dailymed_label_title": "ZOLPIDEM TARTRATE TABLET [BRYANT RANCH PREPACK]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=413b6f65-101e-e2cf-0802-711d080b851b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "drug_interactions_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Postmarketing experience of overdose with zolpidem alone, or combined with CNS-depressant agents, has reported impairment of consciousness ranging from somnolence to coma, cardiovascular and/or respiratory compromise, and fatal outcomes.",
+      "drug_interactions_en": [
+        "CNS depressants, including alcohol: possible additive CNS-depressant effects",
+        "Opioids: concomitant use may increase risk of respiratory depression",
+        "Imipramine: decreased alertness observed",
+        "Chlorpromazine: impaired alertness and psychomotor performance observed",
+        "CYP3A4 inducers (rifampin, St. John's Wort): may decrease zolpidem effect",
+        "Ketoconazole: may increase zolpidem effect"
+      ],
+      "drug_interactions_zh": [
+        "中樞神經抑制劑,含酒精:可能有相加性中樞抑制效應",
+        "鴉片類藥物:併用可能增加呼吸抑制風險",
+        "Imipramine:曾見警覺性下降",
+        "Chlorpromazine:曾見警覺性及精神運動功能受損",
+        "CYP3A4 誘導劑(rifampin、聖約翰草):可能減弱唑吡坦效果",
+        "Ketoconazole:可能增強唑吡坦效果"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Opioids",
+          "with_label_zh": "鴉片類藥物",
+          "effect_en": "Concomitant use may increase risk of respiratory depression",
+          "effect_zh": "併用可能增加呼吸抑制風險",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort (rifampin listed alongside as CYP3A4 inducer example)",
+          "with_label_zh": "聖約翰草(標籤與 rifampin 並列為 CYP3A4 誘導劑範例)",
+          "effect_en": "CYP3A4 induction may decrease zolpidem plasma levels/effect",
+          "effect_zh": "誘導 CYP3A4 可能降低唑吡坦血中濃度/效果",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤僅指名聖約翰草(西藥草),中藥複方交互作用未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。唑吡坦為 Schedule IV 管制藥物。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.lorazepam",
+      "name_en": "Lorazepam",
+      "name_zh": "勞拉西泮",
+      "brand_names_en": [
+        "Ativan"
+      ],
+      "drugclass_id": "drugclass.benzodiazepines",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.gaba_a_benzodiazepine_site",
+      "rxnorm_rxcui": "6470",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Benzodiazepine antianxiety agent; in healthy volunteers, single high doses have a tranquilizing action on the CNS with no appreciable effect on respiratory or cardiovascular systems.",
+      "mechanism_zh": "苯二氮平類抗焦慮藥;健康受試者單次高劑量對中樞神經系統有鎮靜作用,對呼吸或心血管系統無明顯影響。",
+      "indications_en": [
+        "FDA-approved: management of anxiety disorders; short-term relief of symptoms of anxiety or anxiety associated with depressive symptoms"
+      ],
+      "indications_zh": [
+        "FDA 核准:焦慮症之治療;短期緩解焦慮症狀或合併憂鬱症狀之焦慮"
+      ],
+      "adverse_effects_en": [
+        "Sedation",
+        "Dizziness",
+        "Weakness",
+        "Unsteadiness (incidence increases with age)",
+        "Fatigue",
+        "Amnesia/memory impairment"
+      ],
+      "adverse_effects_zh": [
+        "鎮靜",
+        "頭暈",
+        "無力",
+        "步態不穩(隨年齡增加)",
+        "疲倦",
+        "健忘/記憶受損"
+      ],
+      "serious_adverse_effects_en": [
+        "Profound sedation, respiratory depression, coma, death with concomitant opioids — see boxed warning",
+        "Abuse, misuse, addiction — see boxed warning",
+        "Physical dependence and life-threatening withdrawal reactions (including seizures) with abrupt discontinuation — see boxed warning",
+        "Worsening of hepatic encephalopathy in severe hepatic insufficiency"
+      ],
+      "serious_adverse_effects_zh": [
+        "併用鴉片類藥物之嚴重鎮靜、呼吸抑制、昏迷、死亡——見黑框警語",
+        "濫用、誤用、成癮——見黑框警語",
+        "驟然停藥可能導致身體依賴及危及生命之戒斷反應(含癲癇發作)——見黑框警語",
+        "嚴重肝功能不全者可能惡化肝性腦病變"
+      ],
+      "boxed_warning_en": "WARNING: RISKS FROM CONCOMITANT USE WITH OPIOIDS; ABUSE, MISUSE, AND ADDICTION; DEPENDENCE AND WITHDRAWAL REACTIONS. Concomitant benzodiazepine+opioid use may result in profound sedation, respiratory depression, coma, and death — reserve for patients without adequate alternatives, limit dose/duration. Benzodiazepine use exposes patients to risk of abuse, misuse, addiction, which can lead to overdose or death — assess risk before and throughout treatment. Continued use may lead to clinically significant physical dependence; abrupt discontinuation or rapid dose reduction may precipitate acute, life-threatening withdrawal reactions — use gradual taper.",
+      "boxed_warning_zh": "黑框警語:併用鴉片類藥物之風險;濫用、誤用及成癮;依賴及戒斷反應。苯二氮平併用鴉片類藥物可能導致嚴重鎮靜、呼吸抑制、昏迷及死亡——僅於無其他適當替代治療時使用,並限制劑量與療程。苯二氮平之使用使病人暴露於濫用、誤用及成癮風險,可能導致過量用藥或死亡——治療前及治療期間均應評估風險。持續使用可能導致臨床顯著之身體依賴;驟然停藥或快速減量可能引發急性、危及生命之戒斷反應——應採漸進減量。",
+      "contraindications_en": [
+        "Hypersensitivity to benzodiazepines or any formulation component",
+        "Acute narrow-angle glaucoma"
+      ],
+      "contraindications_zh": [
+        "對苯二氮平類或任一劑型成分過敏",
+        "急性隅角閉鎖性青光眼"
+      ],
+      "warnings_en": [
+        "See boxed warning (opioids, abuse/misuse/addiction, dependence/withdrawal)",
+        "Suicide risk in depression — should not be used alone without adequate antidepressant therapy",
+        "Caution with compromised respiratory function (COPD, sleep apnea)",
+        "Elderly/debilitated patients more susceptible to sedative effects — start ≤2 mg",
+        "Paradoxical reactions may occur, more likely in children/elderly",
+        "Caution in severe hepatic insufficiency/encephalopathy"
+      ],
+      "warnings_zh": [
+        "見黑框警語(鴉片類藥物、濫用/誤用/成癮、依賴/戒斷)",
+        "憂鬱患者有自殺風險——不應單獨使用而無適當抗憂鬱治療",
+        "呼吸功能不全者(慢性阻塞性肺病、睡眠呼吸中止症)應謹慎",
+        "老年/體弱病人對鎮靜效應較敏感——起始劑量不宜超過 2 mg",
+        "可能出現矛盾反應,兒童/老年人較常見",
+        "嚴重肝功能不全/腦病變者應謹慎使用"
+      ],
+      "pregnancy_lactation_en": "Pregnancy: neonates born to mothers using benzodiazepines late in pregnancy have been reported to experience sedation and/or neonatal withdrawal; published observational studies do not report a clear association with major birth defects; monitor neonates exposed during pregnancy/labor for sedation, respiratory depression, hypotonia, feeding problems, and withdrawal signs. Pregnancy exposure registry available for psychiatric medications.",
+      "pregnancy_lactation_zh": "孕期:孕期後期使用苯二氮平類之產婦,其新生兒曾通報出現鎮靜及/或新生兒戒斷症狀;已發表觀察性研究未見與重大先天缺陷有明確關聯;孕期/生產時暴露之新生兒應監測鎮靜、呼吸抑制、肌張力低下、餵食困難及戒斷徵象。有精神科用藥孕期暴露登錄系統可供通報。",
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "acupuncture_note_zh": "勞拉西泮為中樞鎮靜劑,理論上與電針/放鬆反應之鎮靜效應可能疊加,尤其合併其他鎮靜藥物或酒精時應留意嗜睡加成;標籤未針對針灸給出具體交互作用數據,不自行設定門檻。",
+      "tcm_relation_note_zh": "苯二氮平治療之焦慮症狀與中醫「肝鬱」「心膽氣虛」等證型有部分症狀重疊,但不構成一對一等同;戒斷反應與成癮風險屬西醫安全議題,應由開立醫師管理減量,中醫介入不取代此追蹤。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "6c5356b1-c199-49ad-bb00-fd67c6691f74",
+      "dailymed_label_title": "LORAZEPAM TABLET [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6c5356b1-c199-49ad-bb00-fd67c6691f74",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#WARNINGS",
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#BOXED_WARNING",
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#WARNINGS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Characterized by CNS depression ranging from drowsiness to coma; severe cases may develop respiratory depression and coma. Combination with other CNS depressants (alcohol, opioids) may be fatal. Flumazenil can reverse sedative effects but may precipitate withdrawal/seizures, particularly with long-term dependence.",
+      "drug_interactions_en": [
+        "Opioids: increased respiratory depression risk (different CNS respiratory-control receptor sites)",
+        "Other CNS depressants (alcohol, barbiturates, antipsychotics, sedative/hypnotics, anxiolytics, antidepressants, narcotic analgesics, sedative antihistamines, anticonvulsants, anesthetics): additive CNS-depressant effects",
+        "Clozapine: may produce marked sedation, excessive salivation, hypotension, ataxia, delirium, respiratory arrest",
+        "Valproate: increases lorazepam plasma concentration and reduces clearance — reduce lorazepam dose ~50%",
+        "Probenecid: more rapid/prolonged lorazepam effect — reduce dose ~50%",
+        "Theophylline/aminophylline: may reduce sedative effect"
+      ],
+      "drug_interactions_zh": [
+        "鴉片類藥物:呼吸抑制風險增加(作用於不同的中樞呼吸控制受體位點)",
+        "其他中樞神經抑制劑(酒精、巴比妥類、抗精神病藥、鎮靜安眠藥、抗焦慮藥、抗憂鬱藥、麻醉性止痛藥、鎮靜性抗組織胺、抗癲癇藥、麻醉劑):相加性中樞抑制效應",
+        "Clozapine:可能導致明顯鎮靜、流涎過多、低血壓、運動失調、譫妄、呼吸停止",
+        "Valproate:增加勞拉西泮血中濃度並降低清除率——應將劑量降低約 50%",
+        "Probenecid:使勞拉西泮起效更快或作用延長——應將劑量降低約 50%",
+        "Theophylline/aminophylline:可能降低鎮靜效果"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Opioids",
+          "with_label_zh": "鴉片類藥物",
+          "effect_en": "Increased risk of profound sedation, respiratory depression, coma, death",
+          "effect_zh": "嚴重鎮靜、呼吸抑制、昏迷、死亡風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#BOXED_WARNING"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Valproate",
+          "with_label_zh": "Valproate",
+          "effect_en": "Increases lorazepam plasma concentration and reduces clearance (dose reduction ~50% recommended)",
+          "effect_zh": "增加勞拉西泮血中濃度並降低清除率(建議劑量降低約 50%)",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤 DRUG INTERACTIONS 段落未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。勞拉西泮為 Schedule IV 管制藥物。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.alprazolam",
+      "name_en": "Alprazolam",
+      "name_zh": "阿普唑侖",
+      "brand_names_en": [
+        "Xanax"
+      ],
+      "drugclass_id": "drugclass.benzodiazepines",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.gaba_a_benzodiazepine_site",
+      "rxnorm_rxcui": "596",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "1,4-benzodiazepine that exerts its effect for acute treatment of generalized anxiety disorder and panic disorder through binding to the benzodiazepine site of GABA-A receptors in the brain, enhancing GABA-mediated synaptic inhibition.",
+      "mechanism_zh": "1,4-苯二氮平類藥物,經結合腦部 GABA-A 受體之苯二氮平結合位,增強 GABA 介導之突觸抑制,發揮急性治療廣泛性焦慮症與恐慌症之效果。",
+      "indications_en": [
+        "FDA-approved: acute treatment of generalized anxiety disorder (GAD) in adults",
+        "FDA-approved: treatment of panic disorder (PD), with or without agoraphobia, in adults"
+      ],
+      "indications_zh": [
+        "FDA 核准:成人廣泛性焦慮症(GAD)之急性治療",
+        "FDA 核准:成人恐慌症(合併或不合併懼曠症)之治療"
+      ],
+      "adverse_effects_en": [
+        "Drowsiness (41% in GAD trials)",
+        "Light-headedness",
+        "Dizziness",
+        "Dry mouth",
+        "Increased salivation",
+        "Hypotension"
+      ],
+      "adverse_effects_zh": [
+        "嗜睡(GAD 試驗中發生率 41%)",
+        "頭昏",
+        "頭暈",
+        "口乾",
+        "唾液分泌增加",
+        "低血壓"
+      ],
+      "serious_adverse_effects_en": [
+        "Profound sedation, respiratory depression, coma, death with concomitant opioids — see boxed warning",
+        "Abuse, misuse, addiction — see boxed warning",
+        "Life-threatening withdrawal reactions (e.g. seizures) with abrupt discontinuation, protracted withdrawal syndrome (weeks to >12 months) — see boxed warning",
+        "Death reported in patients with severe pulmonary disease shortly after starting alprazolam",
+        "Hypomania/mania in patients with depression"
+      ],
+      "serious_adverse_effects_zh": [
+        "併用鴉片類藥物之嚴重鎮靜、呼吸抑制、昏迷、死亡——見黑框警語",
+        "濫用、誤用、成癮——見黑框警語",
+        "驟然停藥可能出現危及生命之戒斷反應(如癲癇發作),及延長性戒斷症候群(數週至逾 12 個月)——見黑框警語",
+        "曾有重度肺病患者於開始使用阿普唑侖後不久死亡之通報",
+        "憂鬱患者可能出現輕躁/躁狂發作"
+      ],
+      "boxed_warning_en": "WARNING: RISKS FROM CONCOMITANT USE WITH OPIOIDS; ABUSE, MISUSE, AND ADDICTION; DEPENDENCE AND WITHDRAWAL REACTIONS. Concomitant benzodiazepine+opioid use may result in profound sedation, respiratory depression, coma, death. Alprazolam exposes users to risks of abuse, misuse, addiction, which can lead to overdose or death. Continued use may lead to clinically significant physical dependence; abrupt discontinuation or rapid dose reduction may precipitate acute, life-threatening withdrawal reactions — use gradual taper.",
+      "boxed_warning_zh": "黑框警語:併用鴉片類藥物之風險;濫用、誤用及成癮;依賴及戒斷反應。苯二氮平併用鴉片類藥物可能導致嚴重鎮靜、呼吸抑制、昏迷及死亡。阿普唑侖使使用者暴露於濫用、誤用及成癮風險,可能導致過量用藥或死亡。持續使用可能導致臨床顯著之身體依賴;驟然停藥或快速減量可能引發急性、危及生命之戒斷反應——應採漸進減量。",
+      "contraindications_en": [
+        "Known hypersensitivity to alprazolam or other benzodiazepines (angioedema reported)",
+        "Taking strong CYP3A inhibitors (e.g. ketoconazole, itraconazole), except ritonavir"
+      ],
+      "contraindications_zh": [
+        "對阿普唑侖或其他苯二氮平類已知過敏(曾見血管性水腫)",
+        "併用強效 CYP3A 抑制劑(如 ketoconazole、itraconazole),ritonavir 除外"
+      ],
+      "warnings_en": [
+        "See boxed warning (opioids, abuse/misuse/addiction, dependence/withdrawal)",
+        "Effects on driving/operating machinery — caution advised",
+        "CYP3A inhibitor interactions can profoundly raise alprazolam levels",
+        "Depression — least feasible tablet quantity to reduce overdose risk",
+        "Neonatal sedation/withdrawal syndrome with late-pregnancy use",
+        "Risk in patients with impaired respiratory function"
+      ],
+      "warnings_zh": [
+        "見黑框警語(鴉片類藥物、濫用/誤用/成癮、依賴/戒斷)",
+        "駕駛/操作機械應謹慎",
+        "CYP3A 抑制劑交互作用可能大幅提升阿普唑侖濃度",
+        "憂鬱——應開立可行之最少藥量以降低過量用藥風險",
+        "孕期後期使用之新生兒鎮靜/戒斷症候群",
+        "呼吸功能不全病人之風險"
+      ],
+      "pregnancy_lactation_en": "Pregnancy: neonates born to mothers using benzodiazepines late in pregnancy have been reported to experience sedation and/or neonatal withdrawal; published observational studies do not report a clear association with major birth defects. Lactation: breastfeeding not recommended. Pregnancy exposure registry available for psychiatric medications.",
+      "pregnancy_lactation_zh": "孕期:孕期後期使用苯二氮平類之產婦,其新生兒曾通報出現鎮靜及/或新生兒戒斷症狀;已發表觀察性研究未見與重大先天缺陷有明確關聯。哺乳:不建議哺乳。有精神科用藥孕期暴露登錄系統可供通報。",
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "acupuncture_note_zh": "阿普唑侖為中樞鎮靜劑,理論上與電針/放鬆反應之鎮靜效應可能疊加;標籤未針對針灸給出具體交互作用數據,不自行設定門檻。",
+      "tcm_relation_note_zh": "阿普唑侖治療之恐慌/焦慮症狀與中醫「肝鬱化火」「心膽氣虛」等證型有部分症狀重疊,但不構成一對一等同;成癮與戒斷風險屬西醫安全議題,減量應由開立醫師主導。",
+      "board_priority": "high",
+      "prototype_drug": false,
+      "dailymed_setid": "0cf8b567-201b-44fa-8fd3-c74023aff44f",
+      "dailymed_label_title": "ALPRAZOLAM TABLET [CLINICAL SOLUTIONS WHOLESALE, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0cf8b567-201b-44fa-8fd3-c74023aff44f",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#BOXED_WARNING",
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Characterized by CNS depression ranging from drowsiness to coma; severe cases may develop respiratory depression and coma. Combination with other CNS depressants may be fatal. Flumazenil can reverse sedative effects but risk of withdrawal seizures, particularly with long-term dependence.",
+      "drug_interactions_en": [
+        "Opioids: increased respiratory depression risk",
+        "Other CNS depressants: additive CNS-depressant effects",
+        "Digoxin: increased risk of digoxin toxicity",
+        "Strong CYP3A inhibitors (ketoconazole, itraconazole, except ritonavir): contraindicated — up to ~4-fold increase in alprazolam levels",
+        "CYP3A inhibitors nefazodone, fluvoxamine, cimetidine: consider dose reduction",
+        "CYP3A inducers: may reduce alprazolam efficacy",
+        "Ritonavir: dosage adjustment needed per specific protocol"
+      ],
+      "drug_interactions_zh": [
+        "鴉片類藥物:呼吸抑制風險增加",
+        "其他中樞神經抑制劑:相加性中樞抑制效應",
+        "Digoxin:digoxin 毒性風險增加",
+        "強效 CYP3A 抑制劑(ketoconazole、itraconazole,ritonavir 除外):禁忌併用——可使阿普唑侖濃度增加達約 4 倍",
+        "CYP3A 抑制劑 nefazodone、fluvoxamine、cimetidine:應考慮減量",
+        "CYP3A 誘導劑:可能降低阿普唑侖療效",
+        "Ritonavir:需依特定方案調整劑量"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Strong CYP3A inhibitors (ketoconazole, itraconazole)",
+          "with_label_zh": "強效 CYP3A 抑制劑(ketoconazole、itraconazole)",
+          "effect_en": "Contraindicated; ketoconazole increased alprazolam levels ~3.98-fold, itraconazole ~2.70-fold in vivo",
+          "effect_zh": "禁忌併用;活體試驗顯示 ketoconazole 使阿普唑侖濃度增加約 3.98 倍,itraconazole 約 2.70 倍",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Opioids",
+          "with_label_zh": "鴉片類藥物",
+          "effect_en": "Increased risk of respiratory depression",
+          "effect_zh": "呼吸抑制風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤 DRUG INTERACTIONS 段落未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。阿普唑侖為 Schedule IV 管制藥物。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.sertraline",
+      "name_en": "Sertraline",
+      "name_zh": "舍曲林",
+      "brand_names_en": [
+        "Zoloft"
+      ],
+      "drugclass_id": "drugclass.ssris",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_transporter",
+      "rxnorm_rxcui": "155137",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Potentiates serotonergic activity in the CNS through inhibition of neuronal reuptake of serotonin (5-HT).",
+      "mechanism_zh": "藉由抑制神經元對血清素 (5-HT) 之再攝取,增強中樞神經系統血清素能活性。",
+      "indications_en": [
+        "FDA-approved: major depressive disorder (MDD)",
+        "FDA-approved: obsessive-compulsive disorder (OCD)",
+        "FDA-approved: panic disorder (PD)",
+        "FDA-approved: posttraumatic stress disorder (PTSD)",
+        "FDA-approved: social anxiety disorder (SAD)",
+        "FDA-approved: premenstrual dysphoric disorder (PMDD)"
+      ],
+      "indications_zh": [
+        "FDA 核准:重度憂鬱症 (MDD)",
+        "FDA 核准:強迫症 (OCD)",
+        "FDA 核准:恐慌症 (PD)",
+        "FDA 核准:創傷後壓力症候群 (PTSD)",
+        "FDA 核准:社交焦慮症 (SAD)",
+        "FDA 核准:經前不悅症 (PMDD)"
+      ],
+      "adverse_effects_en": [
+        "Nausea",
+        "Diarrhea/loose stool",
+        "Tremor",
+        "Dyspepsia",
+        "Decreased appetite",
+        "Hyperhidrosis",
+        "Ejaculation failure",
+        "Decreased libido",
+        "Insomnia"
+      ],
+      "adverse_effects_zh": [
+        "噁心",
+        "腹瀉/軟便",
+        "顫抖",
+        "消化不良",
+        "食慾減退",
+        "多汗",
+        "射精失敗",
+        "性慾減退",
+        "失眠"
+      ],
+      "serious_adverse_effects_en": [
+        "Suicidal thoughts and behaviors in pediatric/young adult patients — see boxed warning",
+        "Serotonin syndrome (can occur alone or with other serotonergic drugs)",
+        "Increased risk of bleeding (with aspirin, NSAIDs, antiplatelets, warfarin/anticoagulants)",
+        "Activation of mania/hypomania",
+        "Discontinuation syndrome",
+        "QTc prolongation and Torsade de Pointes (postmarketing reports)",
+        "Hyponatremia (can be severe, e.g. SIADH)",
+        "Angle-closure glaucoma"
+      ],
+      "serious_adverse_effects_zh": [
+        "兒童/青年患者自殺意念與行為——見黑框警語",
+        "血清素症候群(單獨使用或併用其他血清素藥物皆可能發生)",
+        "出血風險增加(併用阿斯匹靈、NSAID、抗血小板藥、warfarin/抗凝血劑)",
+        "躁狂/輕躁發作活化",
+        "停藥症候群",
+        "QTc 延長及尖端扭轉型心室頻脈(上市後通報)",
+        "低血鈉症(可能嚴重,如 SIADH)",
+        "隅角閉鎖性青光眼"
+      ],
+      "boxed_warning_en": "Antidepressants increased the risk of suicidal thoughts and behavior in pediatric and young adult patients in short-term studies. Closely monitor all antidepressant-treated patients for clinical worsening and for emergence of suicidal thoughts and behaviors.",
+      "boxed_warning_zh": "短期研究顯示抗憂鬱藥物增加兒童及青年患者之自殺意念與行為風險。所有接受抗憂鬱藥治療之病人均應密切監測病情惡化及自殺意念與行為之出現。",
+      "contraindications_en": [
+        "Taking, or within 14 days of stopping, MAOIs (including linezolid, IV methylene blue) — increased serotonin syndrome risk",
+        "Taking pimozide",
+        "Known hypersensitivity to sertraline (e.g. anaphylaxis, angioedema)"
+      ],
+      "contraindications_zh": [
+        "正在服用或停用 MAOI 未滿 14 天(含 linezolid、靜脈注射 methylene blue)——血清素症候群風險增加",
+        "併用 pimozide",
+        "對舍曲林已知過敏(如過敏性休克、血管性水腫)"
+      ],
+      "warnings_en": [
+        "See boxed warning (suicidal thoughts/behaviors)",
+        "Serotonin syndrome — increased risk with other serotonergic drugs but also alone",
+        "Increased risk of bleeding with concomitant NSAIDs/aspirin/anticoagulants",
+        "Activation of mania/hypomania — screen for bipolar history",
+        "Seizures — caution in seizure disorder",
+        "Angle-closure glaucoma — avoid in untreated narrow angles",
+        "QTc prolongation — caution with risk factors",
+        "Sexual dysfunction"
+      ],
+      "warnings_zh": [
+        "見黑框警語(自殺意念/行為)",
+        "血清素症候群——併用其他血清素藥物風險增加,單獨使用亦可能發生",
+        "併用 NSAID/阿斯匹靈/抗凝血劑之出血風險增加",
+        "躁狂/輕躁發作活化——應篩檢雙相情緒障礙病史",
+        "癲癇發作——癲癇病史者應謹慎",
+        "隅角閉鎖性青光眼——未治療之隅角狹窄者應避免",
+        "QTc 延長——具危險因子者應謹慎",
+        "性功能障礙"
+      ],
+      "pregnancy_lactation_en": "Pregnancy: exposure to SSRIs, particularly in the month before delivery, associated with less than 2-fold increase in postpartum hemorrhage risk; published epidemiologic studies of first-trimester exposure suggest no difference in major birth defect risk vs. background rate, though some studies report increases for specific defects (inconclusive). Third-trimester exposure has clinical considerations for neonates. Lactation: published data demonstrate low levels of sertraline/metabolites in human milk (~2% of maternal serum level in one pooled analysis); no adverse reactions observed in studied infants.",
+      "pregnancy_lactation_zh": "孕期:暴露於 SSRI(尤其產前一個月)與產後大出血風險增加不到 2 倍相關;已發表流行病學研究顯示第一孕期暴露之重大先天缺陷風險與背景值無差異,惟部分研究顯示特定缺陷增加(尚無定論)。第三孕期暴露對新生兒有臨床注意事項。哺乳:已發表資料顯示人乳中舍曲林/代謝物濃度低(一項匯總分析約為母體血清濃度之 2%);研究中之嬰兒未見不良反應。",
+      "integrative_clinical_flags": [
+        "bleeding_risk",
+        "sedation_dizziness"
+      ],
+      "acupuncture_note_zh": "標籤明確將出血風險與 NSAID、阿斯匹靈、抗血小板藥及抗凝血劑並列,對侵入性針刺/放血/拔罐等操作有實務意義:併用抗凝血劑或近期手術患者應評估出血風險後再行侵入性治療;標籤未針對針刺本身給出數據,不自行設定門檻。",
+      "tcm_relation_note_zh": "SSRI 治療之憂鬱/焦慮症狀與中醫「肝鬱」「心脾兩虛」等證型有部分症狀重疊,但不構成一對一等同;血清素症候群、自殺意念惡化等安全訊號應立即轉介西醫,不宜以證型延誤處置。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "52c88667-c67e-4d42-b319-afb354713b1e",
+      "dailymed_label_title": "SERTRALINE HYDROCHLORIDE TABLET [PD-RX PHARMACEUTICALS, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52c88667-c67e-4d42-b319-afb354713b1e",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#WARNINGS_AND_PRECAUTIONS",
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Reported effects include seizures (may be delayed), altered mental status/coma, cardiovascular toxicity (QRS/QTc prolongation, hypertension more common than hypotension), and serotonin syndrome (higher risk with multi-drug proserotonergic overdose). Consider activated charcoal early; contact Poison Control.",
+      "drug_interactions_en": [
+        "MAOIs (incl. linezolid, IV methylene blue): contraindicated — serotonin syndrome risk",
+        "Pimozide: contraindicated — QTc prolongation/arrhythmia risk",
+        "Other serotonergic drugs (SSRIs, SNRIs, triptans, TCAs, opioids, lithium, tryptophan, buspirone, amphetamines): increased serotonin syndrome risk",
+        "Protein-bound drugs (e.g. warfarin): monitor for adverse reactions, dose adjustment as warranted",
+        "CYP2D6 substrates: may need dose reduction of the CYP2D6 substrate",
+        "No dosage adjustment needed with cimetidine, diazepam, lithium, atenolol, tolbutamide, digoxin"
+      ],
+      "drug_interactions_zh": [
+        "MAOI(含 linezolid、靜脈注射 methylene blue):禁忌併用——血清素症候群風險",
+        "Pimozide:禁忌併用——QTc 延長/心律不整風險",
+        "其他血清素藥物(SSRI、SNRI、triptan、三環抗憂鬱藥、鴉片類、鋰鹽、色胺酸、buspirone、安非他命類):血清素症候群風險增加",
+        "蛋白結合藥物(如 warfarin):應監測不良反應,視情況調整劑量",
+        "CYP2D6 受質藥物:可能需降低該 CYP2D6 受質藥物劑量",
+        "與 cimetidine、diazepam、鋰鹽、atenolol、tolbutamide、digoxin 併用不需調整劑量"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "MAOIs (including linezolid, IV methylene blue)",
+          "with_label_zh": "MAOI(含 linezolid、靜脈注射 methylene blue)",
+          "effect_en": "Contraindicated — increased risk of serotonin syndrome",
+          "effect_zh": "禁忌併用——血清素症候群風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.warfarin",
+          "with_label_en": "Warfarin",
+          "with_label_zh": "Warfarin",
+          "effect_en": "Increased risk of bleeding; monitor INR carefully",
+          "effect_zh": "出血風險增加;應密切監測 INR",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#WARNINGS_AND_PRECAUTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort",
+          "with_label_zh": "聖約翰草",
+          "effect_en": "Listed among serotonergic agents/examples that increase serotonin syndrome risk in the sertraline label's drug interaction section",
+          "effect_zh": "在舍曲林標籤藥物交互作用段落中,列為增加血清素症候群風險之血清素相關藥物範例之一",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤僅指名聖約翰草(西藥草);中藥複方是否含血清素相關活性成分需個別查證,不可從本欄推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.escitalopram",
+      "name_en": "Escitalopram",
+      "name_zh": "艾司西酞普蘭",
+      "brand_names_en": [
+        "Lexapro"
+      ],
+      "drugclass_id": "drugclass.ssris",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_transporter",
+      "rxnorm_rxcui": "321988",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "SSRI; mechanism of antidepressant/anxiolytic action is presumed linked to potentiation of serotonergic activity in the CNS through inhibition of neuronal reuptake of serotonin.",
+      "mechanism_zh": "SSRI;抗憂鬱/抗焦慮機轉推定與藉由抑制神經元血清素再攝取而增強中樞神經系統血清素能活性有關。",
+      "indications_en": [
+        "FDA-approved: major depressive disorder (MDD) in adults and pediatric patients 12 years and older",
+        "FDA-approved: generalized anxiety disorder (GAD) in adults"
+      ],
+      "indications_zh": [
+        "FDA 核准:成人及 12 歲以上兒童之重度憂鬱症 (MDD)",
+        "FDA 核准:成人廣泛性焦慮症 (GAD)"
+      ],
+      "adverse_effects_en": [
+        "Nausea",
+        "Insomnia",
+        "Ejaculation disorder",
+        "Diarrhea",
+        "Dry mouth",
+        "Somnolence",
+        "Fatigue"
+      ],
+      "adverse_effects_zh": [
+        "噁心",
+        "失眠",
+        "射精障礙",
+        "腹瀉",
+        "口乾",
+        "嗜睡",
+        "疲倦"
+      ],
+      "serious_adverse_effects_en": [
+        "Suicidal thoughts and behaviors in adolescents/young adults — see boxed warning",
+        "Serotonin syndrome",
+        "Discontinuation syndrome",
+        "Activation of mania/hypomania",
+        "Hyponatremia (SIADH-related)",
+        "Increased risk of bleeding",
+        "Angle-closure glaucoma",
+        "Seizures (caution in history of seizure disorder)"
+      ],
+      "serious_adverse_effects_zh": [
+        "青少年/青年患者自殺意念與行為——見黑框警語",
+        "血清素症候群",
+        "停藥症候群",
+        "躁狂/輕躁發作活化",
+        "低血鈉症(與 SIADH 相關)",
+        "出血風險增加",
+        "隅角閉鎖性青光眼",
+        "癲癇發作(癲癇病史者應謹慎)"
+      ],
+      "boxed_warning_en": "Antidepressants increased the risk of suicidal thoughts and behaviors in pediatric and young adult patients in short-term studies. Closely monitor for clinical worsening and emergence of suicidal thoughts/behaviors. Escitalopram is not approved for use in pediatric patients less than 7 years of age.",
+      "boxed_warning_zh": "短期研究顯示抗憂鬱藥物增加兒童及青年患者之自殺意念與行為風險。應密切監測病情惡化及自殺意念/行為之出現。艾司西酞普蘭未核准用於未滿 7 歲之兒童患者。",
+      "contraindications_en": [
+        "Taking MAOIs, or within 14 days of stopping/starting an MAOI — serotonin syndrome risk",
+        "Taking pimozide",
+        "Hypersensitivity to escitalopram, citalopram, or any inactive ingredient"
+      ],
+      "contraindications_zh": [
+        "正在服用 MAOI,或停用/開始 MAOI 未滿 14 天——血清素症候群風險",
+        "併用 pimozide",
+        "對艾司西酞普蘭、西酞普蘭或任一賦形劑過敏"
+      ],
+      "warnings_en": [
+        "See boxed warning (suicidal thoughts/behaviors)",
+        "Serotonin syndrome",
+        "Discontinuation syndrome — taper gradually",
+        "Seizures — caution",
+        "Activation of mania/hypomania — screen for bipolar history",
+        "Hyponatremia",
+        "Increased risk of bleeding with NSAIDs/aspirin/anticoagulants",
+        "Interference with cognitive/motor performance",
+        "Angle-closure glaucoma",
+        "Sexual dysfunction"
+      ],
+      "warnings_zh": [
+        "見黑框警語(自殺意念/行為)",
+        "血清素症候群",
+        "停藥症候群——應漸進減量",
+        "癲癇發作——應謹慎",
+        "躁狂/輕躁發作活化——應篩檢雙相情緒障礙病史",
+        "低血鈉症",
+        "併用 NSAID/阿斯匹靈/抗凝血劑之出血風險增加",
+        "認知/運動功能受干擾",
+        "隅角閉鎖性青光眼",
+        "性功能障礙"
+      ],
+      "pregnancy_lactation_en": "Pregnancy Exposure Registry available for antidepressants. Exposure to SSRIs, particularly in the month before delivery, has been associated with a less than 2-fold increase in postpartum hemorrhage risk. Available published epidemiologic/postmarketing data have not established an increased risk of major birth defects or miscarriage. Risks of persistent pulmonary hypertension of the newborn (PPHN) and poor neonatal adaptation with SSRI (including escitalopram) exposure during pregnancy. Animal reproduction studies of escitalopram and racemic citalopram showed adverse embryo/fetal and postnatal developmental effects (including fetal structural abnormalities) at doses greater than human therapeutic doses. Untreated depression itself carries maternal/fetal risk (relapse more likely if antidepressants discontinued in pregnancy).",
+      "pregnancy_lactation_zh": "有抗憂鬱藥物孕期暴露登錄系統可供通報。暴露於 SSRI(尤其產前一個月)與產後大出血風險增加不到 2 倍相關。現有已發表流行病學/上市後資料未確立與重大先天缺陷或流產風險增加之關聯。SSRI(含艾司西酞普蘭)孕期暴露有新生兒持續性肺動脈高壓 (PPHN) 及新生兒適應不良之風險。艾司西酞普蘭與消旋西酞普蘭之動物生殖試驗顯示,劑量高於人體治療劑量時對胚胎/胎兒及產後發育有不良影響(含胎兒結構異常)。未治療之憂鬱症本身即帶有母胎風險(孕期停用抗憂鬱藥物較易復發)。",
+      "integrative_clinical_flags": [
+        "bleeding_risk",
+        "sedation_dizziness"
+      ],
+      "acupuncture_note_zh": "標籤明確將出血風險與 NSAID、阿斯匹靈、抗血小板藥及抗凝血劑並列,對侵入性針刺/放血/拔罐等操作有實務意義:併用抗凝血劑患者應評估出血風險後再行侵入性治療;標籤未針對針刺本身給出數據。",
+      "tcm_relation_note_zh": "SSRI 治療之憂鬱/焦慮症狀與中醫「肝鬱」「心脾兩虛」等證型有部分症狀重疊,但不構成一對一等同;血清素症候群、自殺意念惡化等安全訊號應立即轉介西醫。",
+      "board_priority": "high",
+      "prototype_drug": false,
+      "dailymed_setid": "2db02476-325f-ee47-a7e5-b5aed56c364c",
+      "dailymed_label_title": "ESCITALOPRAM (ESCITALOPRAM OXALATE) TABLET, FILM COATED [JUBILANT CADISTA PHARMACEUTICALS INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2db02476-325f-ee47-a7e5-b5aed56c364c",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#WARNINGS_AND_PRECAUTIONS",
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#DRUG_INTERACTIONS"
+        ]
+      },
+      "drug_interactions_en": [
+        "MAOIs: contraindicated — serotonin syndrome risk",
+        "Pimozide: contraindicated",
+        "Other serotonergic drugs (triptans, TCAs, fentanyl, meperidine, methadone, lithium, tramadol, tryptophan, buspirone, amphetamines): increased serotonin syndrome risk"
+      ],
+      "drug_interactions_zh": [
+        "MAOI:禁忌併用——血清素症候群風險",
+        "Pimozide:禁忌併用",
+        "其他血清素藥物(triptan、三環抗憂鬱藥、fentanyl、meperidine、methadone、鋰鹽、tramadol、色胺酸、buspirone、安非他命類):血清素症候群風險增加"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "MAOIs",
+          "with_label_zh": "MAOI",
+          "effect_en": "Contraindicated — increased risk of serotonin syndrome",
+          "effect_zh": "禁忌併用——血清素症候群風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#CONTRAINDICATIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort",
+          "with_label_zh": "聖約翰草",
+          "effect_en": "Listed among serotonergic agents that increase serotonin syndrome risk with escitalopram",
+          "effect_zh": "與艾司西酞普蘭併列為增加血清素症候群風險之血清素相關藥物之一",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:2db02476-325f-ee47-a7e5-b5aed56c364c#WARNINGS_AND_PRECAUTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤僅指名聖約翰草(西藥草);中藥複方交互作用未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。孕期段落資料相對簡略,已誠實反映本次擷取所見內容,未補充未見於本標籤之細節。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.trazodone",
+      "name_en": "Trazodone",
+      "name_zh": "曲唑酮",
+      "brand_names_en": [
+        "Desyrel"
+      ],
+      "drugclass_id": "drugclass.sari",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_2a_receptor",
+      "rxnorm_rxcui": "10737",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Triazolopyridine derivative; label describes it as both a selective serotonin reuptake inhibitor and a 5HT2 receptor antagonist. The mechanism of trazodone's antidepressant action is not fully understood; the net result of this dual action on serotonergic transmission and its role in the antidepressant effect is unknown per the label.",
+      "mechanism_zh": "三唑并吡啶類衍生物;標籤將其描述為兼具選擇性血清素回收抑制劑與 5HT2 受體拮抗劑雙重作用。抗憂鬱機轉尚未完全理解;標籤敘明此雙重作用對血清素傳遞之淨效果及其在抗憂鬱效果中的角色未知。",
+      "indications_en": [
+        "FDA-approved: major depressive disorder (MDD) in adults"
+      ],
+      "indications_zh": [
+        "FDA 核准:成人重度憂鬱症 (MDD)"
+      ],
+      "off_label_en": "This clinic's most common use — low-dose trazodone for sleep — is off-label. This FDA label's approved indication is MDD only; it does not carry an insomnia indication, and this label's efficacy/safety data derive from the depression-treatment dosing range (150-400 mg/day), not the lower doses (often 25-100 mg) typically used off-label for sleep.",
+      "off_label_zh": "本診所最常見用法——低劑量曲唑酮助眠——為仿單外使用。本 FDA 標籤核准適應症僅重度憂鬱症,並無失眠適應症;本標籤療效/安全性資料來自憂鬱症治療劑量範圍(150-400 mg/day),並非仿單外助眠常用之較低劑量(常為 25-100 mg)。",
+      "adverse_effects_en": [
+        "Edema",
+        "Blurred vision",
+        "Syncope",
+        "Drowsiness",
+        "Fatigue",
+        "Diarrhea",
+        "Nasal congestion",
+        "Weight loss"
+      ],
+      "adverse_effects_zh": [
+        "水腫",
+        "視力模糊",
+        "暈厥",
+        "嗜睡",
+        "疲倦",
+        "腹瀉",
+        "鼻塞",
+        "體重減輕"
+      ],
+      "serious_adverse_effects_en": [
+        "Suicidal thoughts and behaviors in pediatric/young adult patients — see boxed warning",
+        "Serotonin syndrome",
+        "Cardiac arrhythmias (QT prolongation)",
+        "Orthostatic hypotension and syncope",
+        "Increased risk of bleeding",
+        "Priapism",
+        "Activation of mania/hypomania",
+        "Angle-closure glaucoma"
+      ],
+      "serious_adverse_effects_zh": [
+        "兒童/青年患者自殺意念與行為——見黑框警語",
+        "血清素症候群",
+        "心律不整(QT 延長)",
+        "姿勢性低血壓與暈厥",
+        "出血風險增加",
+        "陰莖異常勃起",
+        "躁狂/輕躁發作活化",
+        "隅角閉鎖性青光眼"
+      ],
+      "boxed_warning_en": "WARNING: SUICIDAL THOUGHTS AND BEHAVIORS. Antidepressants increased the risk of suicidal thoughts and behaviors in pediatric and young adult patients. Closely monitor for clinical worsening and emergence of suicidal thoughts and behaviors. Trazodone is not approved for use in pediatric patients.",
+      "boxed_warning_zh": "黑框警語:自殺意念與行為。抗憂鬱藥物增加兒童及青年患者之自殺意念與行為風險。應密切監測病情惡化及自殺意念與行為之出現。曲唑酮未核准用於兒童患者。",
+      "contraindications_en": [
+        "Taking, or within 14 days of stopping, MAOIs (including linezolid, IV methylene blue) — increased serotonin syndrome risk"
+      ],
+      "contraindications_zh": [
+        "正在服用或停用 MAOI 未滿 14 天(含 linezolid、靜脈注射 methylene blue)——血清素症候群風險增加"
+      ],
+      "warnings_en": [
+        "See boxed warning (suicidal thoughts/behaviors)",
+        "Serotonin syndrome — increased risk with other serotonergic agents but also alone",
+        "Cardiac arrhythmias — avoid with other QT-prolonging drugs; caution with risk factors",
+        "Orthostatic hypotension and syncope — warn patients of risk/symptoms",
+        "Increased risk of bleeding with aspirin/NSAIDs/antiplatelets/anticoagulants",
+        "Priapism — seek immediate medical attention if prolonged erection occurs",
+        "Activation of mania/hypomania",
+        "Cognitive/motor impairment — caution operating machinery",
+        "Angle-closure glaucoma"
+      ],
+      "warnings_zh": [
+        "見黑框警語(自殺意念/行為)",
+        "血清素症候群——併用其他血清素藥物風險增加,單獨使用亦可能發生",
+        "心律不整——應避免併用其他延長 QT 之藥物;具危險因子者應謹慎",
+        "姿勢性低血壓與暈厥——應告知病人風險/症狀",
+        "併用阿斯匹靈/NSAID/抗血小板藥/抗凝血劑之出血風險增加",
+        "陰莖異常勃起——出現持續性勃起應立即就醫",
+        "躁狂/輕躁發作活化",
+        "認知/運動功能受損——操作機械應謹慎",
+        "隅角閉鎖性青光眼"
+      ],
+      "pregnancy_lactation_en": "Published prospective cohort studies, case series, and case reports over several decades of trazodone use in pregnant women have not identified drug-associated risks of major birth defects, miscarriage, or adverse maternal/fetal outcomes. Animal studies (rat, rabbit) showed increased fetal resorption/congenital anomalies only at high multiples (~7-22x) of the maximum recommended human dose. Pregnancy exposure registry available for antidepressants.",
+      "pregnancy_lactation_zh": "數十年來已發表之前瞻性世代研究、病例系列及病例報告顯示,孕期使用曲唑酮未見與重大先天缺陷、流產或不良母胎結局有藥物相關風險。動物試驗(大鼠、兔)僅於人體建議最高劑量約 7-22 倍時顯示胚胎吸收增加/先天異常增加。有抗憂鬱藥物孕期暴露登錄系統可供通報。",
+      "integrative_clinical_flags": [
+        "bleeding_risk",
+        "sedation_dizziness",
+        "orthostatic_hypotension"
+      ],
+      "acupuncture_note_zh": "標籤明確將出血風險與阿斯匹靈、NSAID、抗血小板藥及抗凝血劑並列,對侵入性針刺/放血/拔罐等操作有實務意義;姿勢性低血壓/暈厥風險亦提示治療後起身應緩慢,尤其合併電針放鬆反應時。標籤未針對針刺本身給出數據。",
+      "tcm_relation_note_zh": "低劑量曲唑酮助眠(仿單外)與中醫「安神」相關證型調理目的有交集,但機轉與適應症基礎不同;姿勢性低血壓與陰莖異常勃起等安全訊號應轉介西醫,不宜以證型解釋延誤處置。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "1f74b23d-f2eb-4c18-a583-d608b7713694",
+      "dailymed_label_title": "TRAZODONE HYDROCHLORIDE TABLET [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1f74b23d-f2eb-4c18-a583-d608b7713694",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#WARNINGS_AND_PRECAUTIONS",
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#USE_IN_SPECIFIC_POPULATIONS"
+        ],
+        "drug_interactions_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Death from overdose has occurred, typically with concurrent CNS depressants (alcohol, chloral hydrate, diazepam, amobarbital, chlordiazepoxide, meprobamate). Most severe reported reactions with trazodone alone: priapism, respiratory arrest, seizures, ECG changes (QT prolongation), SIADH. No specific antidote; consider multiple-drug involvement.",
+      "drug_interactions_en": [
+        "MAOIs (including linezolid, IV methylene blue): contraindicated — serotonin syndrome risk",
+        "Other serotonergic drugs (triptans, TCAs/SSRIs, fentanyl, lithium, tramadol, tryptophan, buspirone, St. John's Wort): increased serotonin syndrome risk",
+        "Antiplatelet agents and anticoagulants: may potentiate bleeding risk (serotonin release by platelets plays a role in hemostasis)",
+        "CNS depressants: trazodone may enhance effects of alcohol, barbiturates, other CNS depressants",
+        "CYP3A4 inhibitors: consider trazodone dose reduction",
+        "CYP3A4 inducers: may need trazodone dose increase",
+        "Digoxin or phenytoin: monitor for increased serum levels",
+        "Warfarin: monitor for altered prothrombin time"
+      ],
+      "drug_interactions_zh": [
+        "MAOI(含 linezolid、靜脈注射 methylene blue):禁忌併用——血清素症候群風險",
+        "其他血清素藥物(triptan、三環/SSRI 抗憂鬱藥、fentanyl、鋰鹽、tramadol、色胺酸、buspirone、聖約翰草):血清素症候群風險增加",
+        "抗血小板藥與抗凝血劑:可能加強出血風險(血小板釋放之血清素在止血中扮演角色)",
+        "中樞神經抑制劑:曲唑酮可能增強酒精、巴比妥類及其他中樞抑制劑之效果",
+        "CYP3A4 抑制劑:應考慮降低曲唑酮劑量",
+        "CYP3A4 誘導劑:可能需提高曲唑酮劑量",
+        "Digoxin 或 phenytoin:應監測血中濃度是否升高",
+        "Warfarin:應監測凝血酶原時間變化"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": "drug.warfarin",
+          "with_label_en": "Warfarin",
+          "with_label_zh": "Warfarin",
+          "effect_en": "Monitor for increased or decreased prothrombin time",
+          "effect_zh": "應監測凝血酶原時間增加或減少",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "MAOIs (including linezolid, IV methylene blue)",
+          "with_label_zh": "MAOI(含 linezolid、靜脈注射 methylene blue)",
+          "effect_en": "Contraindicated — increased risk of serotonin syndrome",
+          "effect_zh": "禁忌併用——血清素症候群風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#CONTRAINDICATIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort",
+          "with_label_zh": "聖約翰草",
+          "effect_en": "Named in the trazodone label's drug interaction table as an example serotonergic agent increasing serotonin syndrome risk",
+          "effect_zh": "曲唑酮標籤藥物交互作用表中指名為增加血清素症候群風險之血清素相關藥物範例",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤僅指名聖約翰草(西藥草);中藥複方交互作用未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。off_label_en/zh 已標明此藥於本診所最常見的低劑量助眠用法,與本標籤核准之憂鬱症劑量範圍/實證基礎不同。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.ibuprofen",
+      "name_en": "Ibuprofen",
+      "name_zh": "布洛芬",
+      "brand_names_en": [
+        "Motrin",
+        "Advil"
+      ],
+      "drugclass_id": "drugclass.nsaids_nonselective",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": "drugtarget.cox1",
+      "rxnorm_rxcui": "5640",
+      "rx_otc_status": "Rx/OTC",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "NSAID with analgesic and antipyretic activity; mode of action, like other NSAIDs, not completely understood but may be related to prostaglandin synthetase inhibition. In rheumatoid arthritis/osteoarthritis studies, comparable to aspirin in controlling pain/inflammation with statistically significant reduction in milder GI side effects.",
+      "mechanism_zh": "NSAID,具止痛與解熱活性;作用機轉如其他 NSAID 尚未完全理解,但可能與抑制前列腺素合成酶有關。類風濕性關節炎/骨關節炎試驗顯示,其控制疼痛與發炎之效果與阿斯匹靈相當,且輕度腸胃副作用顯著較少。",
+      "indications_en": [
+        "FDA-approved (this label, Rx strength): relief of signs/symptoms of rheumatoid arthritis and osteoarthritis",
+        "FDA-approved (this label, Rx strength): relief of mild to moderate pain",
+        "FDA-approved (this label, Rx strength): treatment of primary dysmenorrhea"
+      ],
+      "indications_zh": [
+        "本標籤核准(處方箋強度):緩解類風濕性關節炎與骨關節炎之徵候/症狀",
+        "本標籤核准(處方箋強度):緩解輕至中度疼痛",
+        "本標籤核准(處方箋強度):治療原發性經痛"
+      ],
+      "adverse_effects_en": [
+        "GI complaints (4-16% of patients in controlled trials)",
+        "Nausea",
+        "Dyspepsia",
+        "Heartburn",
+        "Dizziness",
+        "Rash"
+      ],
+      "adverse_effects_zh": [
+        "腸胃不適(對照試驗中 4-16% 患者)",
+        "噁心",
+        "消化不良",
+        "火燒心",
+        "頭暈",
+        "皮疹"
+      ],
+      "serious_adverse_effects_en": [
+        "Serious cardiovascular thrombotic events (MI, stroke), can be fatal — see boxed warning",
+        "Serious GI bleeding, ulceration, perforation, can be fatal without warning symptoms — see boxed warning",
+        "Anaphylactoid reactions, especially in patients with prior aspirin/NSAID hypersensitivity"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重心血管血栓事件(心肌梗塞、中風),可能致命——見黑框警語",
+        "嚴重腸胃出血、潰瘍、穿孔,可能無預警症狀且致命——見黑框警語",
+        "類過敏反應,尤其對阿斯匹靈/NSAID 曾過敏之患者"
+      ],
+      "boxed_warning_en": "Cardiovascular Thrombotic Events: NSAIDs cause increased risk of serious CV thrombotic events, including MI and stroke, which can be fatal; risk may occur early and increase with duration of use; contraindicated in setting of CABG surgery. Gastrointestinal Risk: NSAIDs cause increased risk of serious GI adverse events including bleeding, ulceration, and perforation, which can be fatal; can occur at any time without warning symptoms; elderly at greater risk.",
+      "boxed_warning_zh": "心血管血栓事件:NSAID 增加嚴重心血管血栓事件風險,包含心肌梗塞及中風,可能致命;風險可能於治療早期即出現並隨療程延長而增加;於冠狀動脈繞道手術情境下禁用。腸胃道風險:NSAID 增加嚴重腸胃不良事件風險,包含出血、潰瘍、穿孔,可能致命;可於使用期間任何時間點無預警發生;老年患者風險較高。",
+      "contraindications_en": [
+        "Known hypersensitivity to ibuprofen",
+        "History of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs",
+        "Setting of coronary artery bypass graft (CABG) surgery"
+      ],
+      "contraindications_zh": [
+        "對布洛芬已知過敏",
+        "曾於服用阿斯匹靈或其他 NSAID 後出現氣喘、蕁麻疹或過敏型反應",
+        "冠狀動脈繞道手術情境"
+      ],
+      "warnings_en": [
+        "See boxed warning (cardiovascular, GI)",
+        "Use lowest effective dose for shortest duration",
+        "No consistent evidence that concurrent aspirin mitigates CV risk; concurrent aspirin+NSAID increases GI risk"
+      ],
+      "warnings_zh": [
+        "見黑框警語(心血管、腸胃道)",
+        "應使用最低有效劑量與最短療程",
+        "無一致證據顯示併用阿斯匹靈可降低心血管風險;併用阿斯匹靈與 NSAID 會增加腸胃風險"
+      ],
+      "pregnancy_lactation_en": "Use of NSAIDs, including ibuprofen, can cause premature closure of the fetal ductus arteriosus and fetal renal dysfunction leading to oligohydramnios and, in some cases, neonatal renal impairment. Limit dose/duration between about 20 and 30 weeks gestation; avoid use at about 30 weeks gestation and later. First/second-trimester observational data on other embryofetal risks are inconclusive; animal data show prostaglandin synthesis inhibitors can increase pre/post-implantation loss.",
+      "pregnancy_lactation_zh": "NSAID(含布洛芬)可能造成胎兒動脈導管早閉及胎兒腎功能異常,導致羊水過少,部分病例併發新生兒腎功能損傷。妊娠約 20 至 30 週間應限制劑量與療程;妊娠約 30 週起及之後應避免使用。第一/第二孕期其他胚胎-胎兒風險之觀察性資料尚無定論;動物資料顯示前列腺素合成抑制劑可能增加著床前後之胚胎流失。",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ],
+      "acupuncture_note_zh": "NSAID 抑制血小板功能,標籤本身雖未針對針刺給出數據,但出血/瘀傷風險與抗凝血劑併列討論(見 warfarin 卡片交互作用),臨床上長期或高劑量使用 NSAID 之患者接受侵入性針刺、放血或拔罐前應評估出血傾向。",
+      "tcm_relation_note_zh": "NSAID 消炎止痛之目的與中醫「活血化瘀」「清熱消腫」等治法有部分交集,但不構成一對一等同;妊娠中後期 NSAID 之胎兒風險為西醫明確禁忌,中醫止痛方劑併用時應留意不可取代此安全考量。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "3a38add6-a114-4e18-836c-3bfc727db231",
+      "dailymed_label_title": "IBUPROFEN TABLET, FILM COATED [PD-RX PHARMACEUTICALS, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3a38add6-a114-4e18-836c-3bfc727db231",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#WARNINGS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#BOXED_WARNING",
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#CONTRAINDICATIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#DRUG_INTERACTIONS"
+        ]
+      },
+      "drug_interactions_en": [
+        "ACE inhibitors: NSAIDs may diminish antihypertensive effect",
+        "Aspirin: ibuprofen interferes with antiplatelet activity of low-dose aspirin when dosed prior to it; concomitant use generally not recommended given increased CV risk and potential increased adverse effects",
+        "Diuretics: ibuprofen can reduce natriuretic effect"
+      ],
+      "drug_interactions_zh": [
+        "ACE 抑制劑:NSAID 可能減弱其降血壓效果",
+        "阿斯匹靈:布洛芬若在低劑量阿斯匹靈之前服用,會干擾其抗血小板活性;因心血管風險增加及可能之不良反應加成,一般不建議併用",
+        "利尿劑:布洛芬可能降低其利鈉效果"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": "drug.aspirin",
+          "with_label_en": "Aspirin (low-dose, cardioprotective)",
+          "with_label_zh": "阿斯匹靈(低劑量,心臟保護用)",
+          "effect_en": "Ibuprofen interferes with aspirin's antiplatelet activity, particularly when ibuprofen is dosed before aspirin; consider non-interfering NSAID or non-NSAID analgesic for patients on cardioprotective aspirin",
+          "effect_zh": "布洛芬會干擾阿斯匹靈之抗血小板活性,尤其在阿斯匹靈之前服用時;心臟保護用低劑量阿斯匹靈患者應考慮不干擾之 NSAID 或非 NSAID 止痛藥",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.warfarin",
+          "with_label_en": "Warfarin",
+          "with_label_zh": "Warfarin",
+          "effect_en": "Increased risk of bleeding (named in warfarin's own label as an NSAID example)",
+          "effect_zh": "出血風險增加(於 warfarin 標籤中被列名為 NSAID 範例)",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#WARNINGS_AND_PRECAUTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤 DRUG INTERACTIONS 段落未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。本標籤為處方箋強度(300-800mg)舊格式標籤;OTC 200mg 版本另有 Drug Facts 格式,未逐一比對差異。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.naproxen",
+      "name_en": "Naproxen",
+      "name_zh": "萘普生",
+      "brand_names_en": [
+        "Aleve",
+        "Naprosyn"
+      ],
+      "drugclass_id": "drugclass.nsaids_nonselective",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": "drugtarget.cox1",
+      "rxnorm_rxcui": "7258",
+      "rx_otc_status": "Rx/OTC",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "NSAID with analgesic, anti-inflammatory, and antipyretic properties; mechanism not completely understood but involves inhibition of cyclooxygenase (COX-1 and COX-2). Potent inhibitor of prostaglandin synthesis in vitro; prostaglandins sensitize afferent nerves and potentiate bradykinin-induced pain and are mediators of inflammation.",
+      "mechanism_zh": "NSAID,具止痛、消炎與解熱特性;機轉尚未完全理解,涉及抑制環氧合酶(COX-1 及 COX-2)。體外試驗顯示為強效前列腺素合成抑制劑;前列腺素可致敏傳入神經並增強緩激肽誘發之疼痛,亦為發炎介質。",
+      "indications_en": [
+        "FDA-approved: rheumatoid arthritis, osteoarthritis, ankylosing spondylitis, polyarticular juvenile idiopathic arthritis",
+        "FDA-approved: tendonitis, bursitis, acute gout",
+        "FDA-approved: management of pain, primary dysmenorrhea"
+      ],
+      "indications_zh": [
+        "FDA 核准:類風濕性關節炎、骨關節炎、僵直性脊椎炎、多關節型幼年型類風濕性關節炎",
+        "FDA 核准:肌腱炎、滑囊炎、急性痛風",
+        "FDA 核准:疼痛管理、原發性經痛"
+      ],
+      "adverse_effects_en": [
+        "GI complaints",
+        "Headache",
+        "Dizziness",
+        "Tinnitus",
+        "Edema"
+      ],
+      "adverse_effects_zh": [
+        "腸胃不適",
+        "頭痛",
+        "頭暈",
+        "耳鳴",
+        "水腫"
+      ],
+      "serious_adverse_effects_en": [
+        "Serious cardiovascular thrombotic events (MI, stroke) — see boxed warning",
+        "Serious GI bleeding, ulceration, perforation — see boxed warning",
+        "Hepatotoxicity",
+        "Renal toxicity (avoid in advanced renal disease)",
+        "Anaphylactic reactions",
+        "Serious skin reactions; DRESS",
+        "Aspirin-sensitive asthma exacerbation"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重心血管血栓事件(心肌梗塞、中風)——見黑框警語",
+        "嚴重腸胃出血、潰瘍、穿孔——見黑框警語",
+        "肝毒性",
+        "腎毒性(晚期腎病應避免使用)",
+        "過敏性休克反應",
+        "嚴重皮膚反應;藥物反應合併嗜伊紅血症及全身症狀 (DRESS)",
+        "阿斯匹靈敏感性氣喘惡化"
+      ],
+      "boxed_warning_en": "WARNING: RISK OF SERIOUS CARDIOVASCULAR AND GASTROINTESTINAL EVENTS. Cardiovascular Thrombotic Events: NSAIDs cause increased risk of serious CV thrombotic events, including MI and stroke, which can be fatal; contraindicated in setting of CABG surgery. Gastrointestinal Bleeding, Ulceration, and Perforation: increased risk of serious GI adverse events, can be fatal, can occur at any time without warning symptoms; elderly and prior peptic ulcer/GI bleeding history at greater risk.",
+      "boxed_warning_zh": "黑框警語:嚴重心血管與腸胃事件風險。心血管血栓事件:NSAID 增加嚴重心血管血栓事件風險,包含心肌梗塞及中風,可能致命;於冠狀動脈繞道手術情境下禁用。腸胃出血、潰瘍、穿孔:增加嚴重腸胃不良事件風險,可能致命,可於任何時間點無預警發生;老年患者及有消化性潰瘍/腸胃出血病史者風險較高。",
+      "contraindications_en": [
+        "Known hypersensitivity (anaphylactic reactions, serious skin reactions) to naproxen or any component",
+        "History of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs",
+        "Setting of coronary artery bypass graft (CABG) surgery"
+      ],
+      "contraindications_zh": [
+        "對萘普生或任一成分已知過敏(過敏性休克反應、嚴重皮膚反應)",
+        "曾於服用阿斯匹靈或其他 NSAID 後出現氣喘、蕁麻疹或過敏型反應",
+        "冠狀動脈繞道手術情境"
+      ],
+      "warnings_en": [
+        "See boxed warning (cardiovascular, GI)",
+        "Hepatotoxicity — monitor for signs/symptoms, discontinue if abnormal liver tests persist/worsen",
+        "Hypertension — monitor BP, may impair antihypertensive response",
+        "Heart failure/edema — avoid in severe heart failure unless benefit outweighs risk",
+        "Renal toxicity — monitor in renal/hepatic impairment, heart failure, dehydration; avoid in advanced renal disease",
+        "Anaphylactic reactions",
+        "Aspirin-sensitive asthma — contraindicated",
+        "Serious skin reactions; DRESS",
+        "Fetal toxicity — limit use 20-30 weeks gestation, avoid ≥30 weeks"
+      ],
+      "warnings_zh": [
+        "見黑框警語(心血管、腸胃道)",
+        "肝毒性——應監測徵象/症狀,肝功能檢驗持續異常或惡化應停藥",
+        "高血壓——應監測血壓,可能減弱降血壓藥效果",
+        "心衰竭/水腫——除非效益大於風險,重度心衰竭者應避免使用",
+        "腎毒性——腎/肝功能不全、心衰竭、脫水者應監測;晚期腎病應避免使用",
+        "過敏性休克反應",
+        "阿斯匹靈敏感性氣喘——禁忌",
+        "嚴重皮膚反應;DRESS",
+        "胎兒毒性——妊娠 20-30 週應限制使用,≥30 週應避免"
+      ],
+      "pregnancy_lactation_en": "Limit use of NSAIDs, including naproxen, between about 20 and 30 weeks gestation due to oligohydramnios/fetal renal dysfunction risk; avoid use at about 30 weeks gestation and later due to premature ductus arteriosus closure risk.",
+      "pregnancy_lactation_zh": "NSAID(含萘普生)於妊娠約 20 至 30 週間應限制使用,因有羊水過少/胎兒腎功能異常風險;妊娠約 30 週起及之後應避免使用,因有動脈導管早閉風險。",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ],
+      "acupuncture_note_zh": "NSAID 抑制血小板功能;標籤未針對針刺給出數據,但出血/瘀傷風險已於 warfarin 卡片交互作用中列名,長期或高劑量使用者接受侵入性針刺、放血或拔罐前應評估出血傾向。",
+      "tcm_relation_note_zh": "NSAID 消炎止痛之目的與中醫「活血化瘀」「清熱消腫」等治法有部分交集,但不構成一對一等同;妊娠中後期 NSAID 之胎兒風險為西醫明確禁忌,不因中醫止痛方劑併用而放鬆此警戒。",
+      "board_priority": "high",
+      "prototype_drug": false,
+      "dailymed_setid": "88a548d1-97c0-46d0-825a-75ef689d6470",
+      "dailymed_label_title": "NAPROXEN TABLET [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=88a548d1-97c0-46d0-825a-75ef689d6470",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#BOXED_WARNING",
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "drug_interactions_en": [
+          "dailymed:88a548d1-97c0-46d0-825a-75ef689d6470#DRUG_INTERACTIONS"
+        ]
+      },
+      "herb_drug_interaction_note_zh": "本標籤未查得指名中藥或植物藥之交互作用段落內容。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。標籤為 PLR 新格式(較 ibuprofen 舊格式詳盡),孕期資料位於 WARNINGS_AND_PRECAUTIONS 之 Fetal Toxicity 小節而非獨立 PREGNANCY 段落,已如實標註來源。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.acetaminophen",
+      "name_en": "Acetaminophen",
+      "name_zh": "乙醯胺酚(對乙醯胺基酚)",
+      "brand_names_en": [
+        "Tylenol"
+      ],
+      "drugclass_id": "drugclass.analgesics_antipyretic",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": null,
+      "rxnorm_rxcui": "161",
+      "rx_otc_status": "OTC",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "This label is an OTC Drug Facts monograph and does not include a Clinical Pharmacology or Mechanism of Action section; the label itself does not state acetaminophen's mechanism.",
+      "mechanism_zh": "本標籤為 OTC Drug Facts 格式,並未列出臨床藥理學或作用機轉段落;標籤本身未敘明乙醯胺酚之作用機轉。",
+      "indications_en": [
+        "FDA-approved (OTC monograph): temporary relief of minor aches/pains (headache, muscular aches, backache, minor arthritis pain, common cold, toothache, premenstrual/menstrual cramps)",
+        "FDA-approved (OTC monograph): temporary fever reduction"
+      ],
+      "indications_zh": [
+        "FDA 核准(OTC 專論):暫時緩解輕微疼痛(頭痛、肌肉痠痛、背痛、輕微關節炎疼痛、感冒、牙痛、經前/經期腹痛)",
+        "FDA 核准(OTC 專論):暫時退燒"
+      ],
+      "adverse_effects_en": [
+        "Severe skin reactions (rare) — skin reddening, blisters, rash"
+      ],
+      "adverse_effects_zh": [
+        "嚴重皮膚反應(罕見)——皮膚發紅、水泡、皮疹"
+      ],
+      "serious_adverse_effects_en": [
+        "Severe liver damage — see warnings",
+        "Severe skin reactions"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重肝損傷——見警語",
+        "嚴重皮膚反應"
+      ],
+      "contraindications_en": [
+        "Use with any other drug containing acetaminophen (prescription or nonprescription)",
+        "Known allergy to acetaminophen or any inactive ingredient in this product"
+      ],
+      "contraindications_zh": [
+        "併用任何其他含乙醯胺酚之藥物(處方箋或非處方箋)",
+        "已知對乙醯胺酚或本產品任一賦形劑過敏"
+      ],
+      "warnings_en": [
+        "Liver warning: severe liver damage may occur if more than 4,000 mg/24h, with other acetaminophen-containing drugs, or with 3+ alcoholic drinks/day",
+        "Allergy alert: acetaminophen may cause severe skin reactions (reddening, blisters, rash) — stop use and seek medical help if a skin reaction occurs"
+      ],
+      "warnings_zh": [
+        "肝臟警語:每 24 小時服用超過 4,000 mg、併用其他含乙醯胺酚藥物,或每日飲酒 3 杯以上,可能導致嚴重肝損傷",
+        "過敏警語:乙醯胺酚可能導致嚴重皮膚反應(發紅、水泡、皮疹)——若出現皮膚反應應停藥並立即就醫"
+      ],
+      "pregnancy_lactation_en": "This OTC Drug Facts label states: 'If pregnant or breast-feeding, ask a health professional before use.' No further pregnancy/lactation risk detail is provided by this label (unlike Rx-format labels, OTC monographs do not carry a structured Pregnancy/Lactation risk-summary section).",
+      "pregnancy_lactation_zh": "本 OTC Drug Facts 標籤僅敘明:「若懷孕或哺乳,使用前請諮詢醫療專業人員」。本標籤未提供進一步孕期/哺乳風險細節(與處方箋格式標籤不同,OTC 專論不含結構化之妊娠/哺乳風險摘要段落)。",
+      "integrative_clinical_flags": [],
+      "tcm_relation_note_zh": "乙醯胺酚止痛解熱與中醫「清熱」「止痛」治法目的有交集,但不構成一對一等同;過量使用之肝毒性為西醫明確安全議題,中藥複方併用時應留意患者是否同時服用其他含乙醯胺酚產品以避免總量超標。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "58840cf4-aceb-c7cf-e063-6294a90a5ff4",
+      "dailymed_label_title": "Timely Extra Strength Acetaminophen 500 mg Gelcaps [TIME CAP LABORATORIES, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=58840cf4-aceb-c7cf-e063-6294a90a5ff4",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#DO_NOT_USE"
+        ],
+        "warnings_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#WARNINGS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#WARNINGS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#WARNINGS"
+        ],
+        "overdose_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#OVERDOSAGE"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#PREGNANCY_OR_BREASTFEEDING"
+        ]
+      },
+      "overdose_en": "Overdose warning: in case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as children even without obvious signs/symptoms.",
+      "herb_drug_interaction_note_zh": "本 OTC 標籤無 DRUG INTERACTIONS 段落,未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。此標籤為 OTC Drug Facts 格式(非 PLR 處方箋格式),故無 CLINICAL_PHARMACOLOGY/MECHANISM_OF_ACTION/USE_IN_SPECIFIC_POPULATIONS 段落——mechanism_en 與 pregnancy_lactation_en 之簡短內容忠實反映此標籤本身的資訊侷限,並非漏填。drugtarget_id 因標籤未提供機轉留空。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.cyclobenzaprine",
+      "name_en": "Cyclobenzaprine",
+      "name_zh": "環苯扎林",
+      "brand_names_en": [
+        "Flexeril"
+      ],
+      "drugclass_id": "drugclass.central_muscle_relaxants",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain",
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": null,
+      "rxnorm_rxcui": "21949",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Relieves skeletal muscle spasm of local origin without interfering with muscle function; ineffective in muscle spasm due to CNS disease. Animal studies indicate cyclobenzaprine does not act at the neuromuscular junction or directly on skeletal muscle, but acts primarily within the CNS at brain stem (vs. spinal cord) levels, reducing tonic somatic motor activity via both gamma and alpha motor systems. Structurally related to tricyclic antidepressants, sharing reserpine antagonism, norepinephrine potentiation, potent central/peripheral anticholinergic effects, and sedation.",
+      "mechanism_zh": "緩解局部性骨骼肌痙攣,不干擾肌肉功能;對中樞神經系統疾病所致之肌肉痙攣無效。動物試驗顯示環苯扎林並非作用於神經肌肉接合處或直接作用於骨骼肌,而是主要在中樞神經系統腦幹層級(相對脊髓層級)發揮作用,透過 gamma 與 alpha 運動系統降低張力性軀體運動活性。結構上與三環抗憂鬱藥相關,具類似之利血平拮抗、正腎上腺素增強、強效中樞/周邊抗膽鹼效應及鎮靜作用。",
+      "indications_en": [
+        "FDA-approved: adjunct to rest and physical therapy for relief of muscle spasm associated with acute, painful musculoskeletal conditions (short-term use, up to 2-3 weeks)"
+      ],
+      "indications_zh": [
+        "FDA 核准:作為休息與物理治療之輔助,緩解急性疼痛性肌肉骨骼病症相關之肌肉痙攣(短期使用,至多 2-3 週)"
+      ],
+      "off_label_en": "Label explicitly states cyclobenzaprine has NOT been found effective in spasticity associated with cerebral or spinal cord disease, or in children with cerebral palsy — do not extrapolate to these conditions.",
+      "off_label_zh": "標籤明確敘明環苯扎林對腦部或脊髓疾病所致之痙攣性肌張力異常,以及腦性麻痺兒童,均未證實有效——不應外推使用於這些情況。",
+      "adverse_effects_en": [
+        "Drowsiness (29% at 5mg, 38% at 10mg)",
+        "Dry mouth (21% at 5mg, 32% at 10mg)",
+        "Fatigue",
+        "Headache",
+        "Dizziness",
+        "Nausea"
+      ],
+      "adverse_effects_zh": [
+        "嗜睡(5mg 時 29%,10mg 時 38%)",
+        "口乾(5mg 時 21%,10mg 時 32%)",
+        "疲倦",
+        "頭痛",
+        "頭暈",
+        "噁心"
+      ],
+      "serious_adverse_effects_en": [
+        "Serotonin syndrome (with SSRIs, SNRIs, TCAs, tramadol, bupropion, meperidine, verapamil, or MAOIs)",
+        "Hyperpyretic crisis, seizures, death with MAOI combination — see contraindications",
+        "Cardiac dysrhythmias, cardiac arrest (overdose)",
+        "Neuroleptic malignant syndrome (overdose)"
+      ],
+      "serious_adverse_effects_zh": [
+        "血清素症候群(併用 SSRI、SNRI、三環抗憂鬱藥、tramadol、bupropion、meperidine、verapamil 或 MAOI)",
+        "併用 MAOI 可能導致高熱危象、癲癇發作、死亡——見禁忌",
+        "心律不整、心臟停止(過量時)",
+        "神經抑制惡性症候群(過量時)"
+      ],
+      "contraindications_en": [
+        "Hypersensitivity to any component",
+        "Concomitant MAOI use, or within 14 days of discontinuation (hyperpyretic crisis, seizures, deaths reported)",
+        "Acute recovery phase of myocardial infarction; arrhythmias, heart block, conduction disturbances, or congestive heart failure",
+        "Hyperthyroidism"
+      ],
+      "contraindications_zh": [
+        "對任一成分過敏",
+        "併用 MAOI 或停用未滿 14 天(曾有高熱危象、癲癇發作、死亡通報)",
+        "心肌梗塞急性恢復期;心律不整、心傳導阻滯或鬱血性心衰竭",
+        "甲狀腺機能亢進"
+      ],
+      "warnings_en": [
+        "Serotonin syndrome risk with serotonergic drugs — concomitant MAOI use contraindicated",
+        "Closely related to tricyclic antidepressants; anticholinergic effects — caution in urinary retention, angle-closure glaucoma, increased intraocular pressure"
+      ],
+      "warnings_zh": [
+        "併用血清素相關藥物有血清素症候群風險——併用 MAOI 為禁忌",
+        "與三環抗憂鬱藥密切相關;具抗膽鹼效應——尿滯留、隅角閉鎖性青光眼、眼壓升高患者應謹慎"
+      ],
+      "pregnancy_lactation_en": "Older Pregnancy Category B classification: reproduction studies in rats, mice, and rabbits at doses up to 20x human dose revealed no evidence of impaired fertility or fetal harm; however, no adequate/well-controlled studies in pregnant women — use during pregnancy only if clearly needed.",
+      "pregnancy_lactation_zh": "採用較舊之妊娠分類 B:大鼠、小鼠及兔之生殖試驗於人體劑量 20 倍以下未顯示生育能力受損或胎兒傷害證據;然而尚無孕婦之充分對照試驗——僅於確有需要時於孕期使用。",
+      "integrative_clinical_flags": [
+        "sedation_dizziness"
+      ],
+      "acupuncture_note_zh": "環苯扎林具中樞鎮靜效應,理論上與電針/放鬆反應之鎮靜效應可能疊加;標籤未針對針刺給出具體交互作用數據,不自行設定門檻。",
+      "tcm_relation_note_zh": "環苯扎林治療急性肌肉痙攣與中醫「筋脈拘急」「風寒濕痹」等證型有部分症狀重疊,但不構成一對一等同;血清素症候群與 MAOI 交互作用屬西醫明確安全議題,應主動詢問患者是否服用抗憂鬱藥。",
+      "board_priority": "medium",
+      "prototype_drug": true,
+      "dailymed_setid": "b09ca979-ab6b-441b-a66f-41ca32eae6cb",
+      "dailymed_label_title": "CYCLOBENZAPRINE HYDROCHLORIDE TABLET, FILM COATED [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b09ca979-ab6b-441b-a66f-41ca32eae6cb",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#WARNINGS",
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#WARNINGS",
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#OVERDOSAGE"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#DRUG_INTERACTIONS"
+        ],
+        "overdose_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#OVERDOSAGE"
+        ]
+      },
+      "overdose_en": "Most common effects: drowsiness and tachycardia. Less frequent: tremor, agitation, coma, ataxia, hypertension, slurred speech, confusion, dizziness, nausea, vomiting, hallucinations. Rare but critical: cardiac arrest, chest pain, cardiac dysrhythmias, severe hypotension, seizures, neuroleptic malignant syndrome. QRS widening on ECG is a clinically significant toxicity indicator; contact poison control center for management.",
+      "drug_interactions_en": [
+        "MAOIs: life-threatening interactions — see contraindications",
+        "SSRIs, SNRIs, TCAs, tramadol, bupropion, meperidine, verapamil: postmarketing serotonin syndrome reports",
+        "Alcohol, barbiturates, other CNS depressants: cyclobenzaprine may enhance effects",
+        "Guanethidine-type antihypertensives: TCA-class action may block antihypertensive effect",
+        "Tramadol: may enhance seizure risk"
+      ],
+      "drug_interactions_zh": [
+        "MAOI:可能致命之交互作用——見禁忌",
+        "SSRI、SNRI、三環抗憂鬱藥、tramadol、bupropion、meperidine、verapamil:上市後有血清素症候群通報",
+        "酒精、巴比妥類、其他中樞抑制劑:環苯扎林可能增強其效果",
+        "guanethidine 類降血壓藥:三環類作用可能阻斷其降血壓效果",
+        "Tramadol:可能增加癲癇發作風險"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "MAOIs",
+          "with_label_zh": "MAOI",
+          "effect_en": "Contraindicated — hyperpyretic crisis, seizures, deaths reported with cyclobenzaprine (or structurally similar TCAs) plus MAOIs",
+          "effect_zh": "禁忌併用——環苯扎林(或結構相似之三環抗憂鬱藥)併用 MAOI 曾有高熱危象、癲癇發作、死亡通報",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#CONTRAINDICATIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "SSRIs, SNRIs, TCAs, tramadol, bupropion, meperidine, verapamil",
+          "with_label_zh": "SSRI、SNRI、三環抗憂鬱藥、tramadol、bupropion、meperidine、verapamil",
+          "effect_en": "Postmarketing serotonin syndrome cases reported during combined use",
+          "effect_zh": "併用時上市後曾通報血清素症候群病例",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。標籤明確排除小腦/脊髓疾病痙攣與腦性麻痺兒童之適應症,已於 off_label_en/zh 註記,避免誤用。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.celecoxib",
+      "name_en": "Celecoxib",
+      "name_zh": "希樂葆(塞來昔布)",
+      "brand_names_en": [
+        "Celebrex"
+      ],
+      "drugclass_id": "drugclass.cox2_inhibitors",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": "drugtarget.cox2",
+      "rxnorm_rxcui": "140587",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Analgesic, anti-inflammatory, and antipyretic properties; mechanism believed due to inhibition of prostaglandin synthesis, primarily via inhibition of COX-2. Potent inhibitor of prostaglandin synthesis in vitro.",
+      "mechanism_zh": "具止痛、消炎與解熱特性;機轉推定與抑制前列腺素合成有關,主要藉由抑制 COX-2。體外試驗顯示為強效前列腺素合成抑制劑。",
+      "indications_en": [
+        "FDA-approved: osteoarthritis (OA)",
+        "FDA-approved: rheumatoid arthritis (RA)",
+        "FDA-approved: juvenile rheumatoid arthritis (JRA), patients ≥2 years",
+        "FDA-approved: ankylosing spondylitis (AS)",
+        "FDA-approved: acute pain (AP) and primary dysmenorrhea (PD)"
+      ],
+      "indications_zh": [
+        "FDA 核准:骨關節炎",
+        "FDA 核准:類風濕性關節炎",
+        "FDA 核准:幼年型類風濕性關節炎(2 歲以上)",
+        "FDA 核准:僵直性脊椎炎",
+        "FDA 核准:急性疼痛與原發性經痛"
+      ],
+      "adverse_effects_en": [
+        "GI complaints",
+        "Hypertension",
+        "Peripheral edema",
+        "Headache"
+      ],
+      "adverse_effects_zh": [
+        "腸胃不適",
+        "高血壓",
+        "周邊水腫",
+        "頭痛"
+      ],
+      "serious_adverse_effects_en": [
+        "Serious cardiovascular thrombotic events (MI, stroke) — see boxed warning",
+        "Serious GI bleeding, ulceration, perforation — see boxed warning",
+        "Anaphylactic reactions, serious skin reactions"
+      ],
+      "serious_adverse_effects_zh": [
+        "嚴重心血管血栓事件(心肌梗塞、中風)——見黑框警語",
+        "嚴重腸胃出血、潰瘍、穿孔——見黑框警語",
+        "過敏性休克反應、嚴重皮膚反應"
+      ],
+      "boxed_warning_en": "WARNING: RISK OF SERIOUS CARDIOVASCULAR AND GASTROINTESTINAL EVENTS. NSAIDs, including celecoxib, cause increased risk of serious CV thrombotic events (MI, stroke), which can be fatal; risk may occur early and increase with duration of use; celecoxib is contraindicated in setting of CABG surgery. NSAIDs cause increased risk of serious GI adverse events including bleeding, ulceration, and perforation, which can be fatal; can occur at any time without warning symptoms; elderly and prior peptic ulcer/GI bleeding history at greater risk.",
+      "boxed_warning_zh": "黑框警語:嚴重心血管與腸胃事件風險。NSAID(含塞來昔布)增加嚴重心血管血栓事件(心肌梗塞、中風)風險,可能致命;風險可能於治療早期即出現並隨療程延長增加;塞來昔布於冠狀動脈繞道手術情境下禁用。NSAID 增加嚴重腸胃不良事件風險,包含出血、潰瘍、穿孔,可能致命,可於任何時間點無預警發生;老年患者及有消化性潰瘍/腸胃出血病史者風險較高。",
+      "contraindications_en": [
+        "Known hypersensitivity (anaphylactic reactions, serious skin reactions) to celecoxib or any component",
+        "History of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs",
+        "Setting of CABG surgery",
+        "Patients who have demonstrated allergic-type reactions to sulfonamides"
+      ],
+      "contraindications_zh": [
+        "對塞來昔布或任一成分已知過敏(過敏性休克反應、嚴重皮膚反應)",
+        "曾於服用阿斯匹靈或其他 NSAID 後出現氣喘、蕁麻疹或過敏型反應",
+        "冠狀動脈繞道手術情境",
+        "曾對磺胺類藥物出現過敏型反應之患者"
+      ],
+      "warnings_en": [
+        "See boxed warning (cardiovascular, GI)",
+        "Hepatotoxicity, hypertension, heart failure/edema, renal toxicity — similar class precautions as other NSAIDs",
+        "Anaphylactic reactions",
+        "Serious skin reactions"
+      ],
+      "warnings_zh": [
+        "見黑框警語(心血管、腸胃道)",
+        "肝毒性、高血壓、心衰竭/水腫、腎毒性——與其他 NSAID 類似之類別注意事項",
+        "過敏性休克反應",
+        "嚴重皮膚反應"
+      ],
+      "pregnancy_lactation_en": "Use of NSAIDs, including celecoxib, can cause premature closure of the fetal ductus arteriosus and fetal renal dysfunction leading to oligohydramnios and, in some cases, neonatal renal impairment. Limit dose/duration between about 20 and 30 weeks gestation; avoid use at about 30 weeks gestation and later. Lactation: limited data from 3 published reports (12 breastfeeding women) showed low levels of celecoxib in breast milk (calculated average infant dose 10-40 mcg/kg/day, <1% of weight-based therapeutic dose for a 2-year-old).",
+      "pregnancy_lactation_zh": "NSAID(含塞來昔布)可能造成胎兒動脈導管早閉及胎兒腎功能異常,導致羊水過少,部分病例併發新生兒腎功能損傷。妊娠約 20 至 30 週間應限制劑量與療程;妊娠約 30 週起及之後應避免使用。哺乳:3 篇已發表報告(共 12 位哺乳婦女)之有限資料顯示乳汁中塞來昔布濃度低(推算嬰兒平均每日劑量 10-40 mcg/kg,低於 2 歲兒童體重校正治療劑量之 1%)。",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ],
+      "acupuncture_note_zh": "COX-2 選擇性抑制劑對血小板功能影響相對較小,但仍屬 NSAID 類別黑框警語涵蓋之心血管/腸胃出血風險;標籤未針對針刺給出數據,長期使用者接受侵入性治療前仍應評估整體出血/心血管風險。",
+      "tcm_relation_note_zh": "塞來昔布消炎止痛之目的與中醫「活血化瘀」「清熱消腫」等治法有部分交集,但不構成一對一等同;含磺胺過敏史之患者為西醫明確禁忌,問診時應主動詢問磺胺藥物過敏史。",
+      "board_priority": "medium",
+      "prototype_drug": true,
+      "dailymed_setid": "d799328f-9ea0-4b64-9667-8feaa97f150c",
+      "dailymed_label_title": "CELECOXIB CAPSULE [A-S MEDICATION SOLUTIONS]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d799328f-9ea0-4b64-9667-8feaa97f150c",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#BOXED_WARNING"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#PREGNANCY",
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#LACTATION"
+        ]
+      },
+      "herb_drug_interaction_note_zh": "本標籤 DRUG INTERACTIONS 段落內容本批未逐字擷取比對是否指名中藥或植物藥,drug_interactions_en/zh 暫留空而非虛構;之後批次可補齊。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。磺胺類過敏禁忌為塞來昔布獨有(結構含磺胺基),與其他 NSAID 不同,已個別標註。drug_interactions_en/zh 本次未展開,誠實留空,不虛構內容。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.omeprazole",
+      "name_en": "Omeprazole",
+      "name_zh": "奧美拉唑",
+      "brand_names_en": [
+        "Prilosec"
+      ],
+      "drugclass_id": "drugclass.proton_pump_inhibitors",
+      "drugsystem_ids": [
+        "drugsystem.gastrointestinal"
+      ],
+      "drugtarget_id": "drugtarget.gastric_proton_pump",
+      "rxnorm_rxcui": "283742",
+      "rx_otc_status": "Rx/OTC",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Substituted benzimidazole antisecretory compound that suppresses gastric acid secretion by specific inhibition of the H+/K+-ATPase enzyme system at the secretory surface of the gastric parietal cell — characterized as a gastric acid-pump inhibitor blocking the final step of acid production. Dose-related; inhibits both basal and stimulated acid secretion irrespective of the stimulus.",
+      "mechanism_zh": "取代型苯并咪唑類抑酸化合物,藉由專一性抑制胃壁細胞分泌面之 H+/K+-ATPase 酵素系統以抑制胃酸分泌——被歸類為胃酸幫浦抑制劑,阻斷胃酸生成之最後一步。效果具劑量相關性;不論刺激來源為何,均可抑制基礎及受刺激之胃酸分泌。",
+      "indications_en": [
+        "FDA-approved: treatment of active duodenal ulcer",
+        "FDA-approved: H. pylori eradication (triple/dual therapy with antibiotics) to reduce duodenal ulcer recurrence",
+        "FDA-approved: treatment of active benign gastric ulcer",
+        "FDA-approved: symptomatic GERD and erosive esophagitis (patients ≥2 years)",
+        "FDA-approved: maintenance of healing of erosive esophagitis",
+        "FDA-approved: pathologic hypersecretory conditions"
+      ],
+      "indications_zh": [
+        "FDA 核准:治療活動性十二指腸潰瘍",
+        "FDA 核准:幽門螺旋桿菌根除(與抗生素併用之三合一/雙合一療法),降低十二指腸潰瘍復發",
+        "FDA 核准:治療活動性良性胃潰瘍",
+        "FDA 核准:症狀性胃食道逆流症與糜爛性食道炎(2 歲以上)",
+        "FDA 核准:糜爛性食道炎癒合後之維持治療",
+        "FDA 核准:病理性胃酸分泌過多狀態"
+      ],
+      "adverse_effects_en": [
+        "Headache",
+        "Abdominal pain",
+        "Diarrhea",
+        "Nausea"
+      ],
+      "adverse_effects_zh": [
+        "頭痛",
+        "腹痛",
+        "腹瀉",
+        "噁心"
+      ],
+      "serious_adverse_effects_en": [
+        "Acute tubulointerstitial nephritis",
+        "Clostridium difficile-associated diarrhea",
+        "Bone fracture (hip, wrist, spine) with high-dose/long-term use",
+        "Severe cutaneous adverse reactions (SJS, TEN, DRESS, AGEP)",
+        "Cutaneous/systemic lupus erythematosus",
+        "Cyanocobalamin (B12) deficiency (long-term, >3 years)",
+        "Hypomagnesemia (prolonged use, ≥3 months, often after 1 year) — may lead to tetany, arrhythmias, seizures",
+        "Fundic gland polyps (long-term use)"
+      ],
+      "serious_adverse_effects_zh": [
+        "急性腎小管間質性腎炎",
+        "困難梭狀桿菌相關腹瀉",
+        "高劑量/長期使用之骨折(髖部、腕部、脊椎)",
+        "嚴重皮膚不良反應(SJS、TEN、DRESS、AGEP)",
+        "皮膚性/全身性紅斑性狼瘡",
+        "維生素 B12 缺乏(長期使用超過 3 年)",
+        "低血鎂症(長期使用 ≥3 個月,常於 1 年後出現)——可能導致手足抽搐、心律不整、癲癇發作",
+        "胃底腺瘜肉(長期使用)"
+      ],
+      "contraindications_en": [
+        "Known hypersensitivity (including anaphylaxis) to the formulation or any substituted benzimidazole",
+        "Concomitant use with rilpivirine-containing products"
+      ],
+      "contraindications_zh": [
+        "對本劑型或任一取代型苯并咪唑類藥物已知過敏(含過敏性休克)",
+        "併用含 rilpivirine 之產品"
+      ],
+      "warnings_en": [
+        "Symptomatic response does not preclude gastric malignancy — consider further evaluation for suboptimal response or early relapse",
+        "Acute tubulointerstitial nephritis — discontinue and evaluate if suspected",
+        "C. difficile-associated diarrhea — consider if diarrhea does not improve",
+        "Bone fracture risk with high-dose/long-term use — use lowest effective dose/shortest duration",
+        "Severe cutaneous adverse reactions — discontinue at first signs",
+        "Cutaneous/systemic lupus erythematosus",
+        "Interaction with clopidogrel — avoid concomitant use (reduces clopidogrel's antiplatelet activation)",
+        "Cyanocobalamin (B12) deficiency with long-term use",
+        "Hypomagnesemia with prolonged use — consider monitoring, especially with digoxin/diuretics",
+        "Interaction with St. John's Wort or rifampin — avoid concomitant use (substantially decreases omeprazole concentrations)",
+        "False-positive results in neuroendocrine tumor diagnostics (elevated chromogranin A) — stop omeprazole ≥14 days before testing"
+      ],
+      "warnings_zh": [
+        "症狀緩解不代表已排除胃惡性腫瘤——治療反應不佳或早期復發應考慮進一步評估",
+        "急性腎小管間質性腎炎——疑似時應停藥並評估",
+        "困難梭狀桿菌相關腹瀉——腹瀉未改善時應納入考量",
+        "高劑量/長期使用之骨折風險——應使用最低有效劑量與最短療程",
+        "嚴重皮膚不良反應——出現首發徵象即應停藥",
+        "皮膚性/全身性紅斑性狼瘡",
+        "與 clopidogrel 之交互作用——應避免併用(降低 clopidogrel 抗血小板活化)",
+        "長期使用之維生素 B12 缺乏",
+        "長期使用之低血鎂症——應考慮監測,尤其併用 digoxin/利尿劑時",
+        "與聖約翰草或 rifampin 之交互作用——應避免併用(大幅降低奧美拉唑濃度)",
+        "神經內分泌腫瘤診斷檢測偽陽性(嗜鉻粒蛋白 A 升高)——檢測前應停藥至少 14 天"
+      ],
+      "pregnancy_lactation_en": "No adequate/well-controlled studies in pregnant women; available epidemiologic data fail to demonstrate increased risk of major congenital malformations or other adverse pregnancy outcomes with first-trimester omeprazole use. Reproduction studies in rats/rabbits showed dose-dependent embryo-lethality at high multiples of human dose.",
+      "pregnancy_lactation_zh": "尚無孕婦之充分對照試驗;現有流行病學資料未顯示第一孕期使用奧美拉唑會增加重大先天畸形或其他不良妊娠結果之風險。大鼠/兔生殖試驗於人體劑量高倍數下顯示劑量相關性胚胎致死性。",
+      "integrative_clinical_flags": [],
+      "tcm_relation_note_zh": "PPI 抑酸治療與中醫「胃火」「肝胃不和」等證型有部分症狀重疊,但不構成一對一等同;標籤明確指名聖約翰草交互作用,合併服用含聖約翰草成分之產品(西方複方,非傳統中藥)應留意療效降低。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "ded0df8b-1813-4595-ac2b-5499704bfd48",
+      "dailymed_label_title": "OMEPRAZOLE CAPSULE, DELAYED RELEASE [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ded0df8b-1813-4595-ac2b-5499704bfd48",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#DRUG_INTERACTIONS",
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#WARNINGS_AND_PRECAUTIONS"
+        ]
+      },
+      "drug_interactions_en": [
+        "Clopidogrel: avoid concomitant use — omeprazole (CYP2C19 inhibition) reduces clopidogrel's active metabolite and antiplatelet activity even when dosed 12 hours apart; consider alternative antiplatelet therapy",
+        "Rilpivirine-containing products: contraindicated",
+        "St. John's Wort or rifampin (CYP2C19/3A4 inducers): avoid concomitant use — substantially decreases omeprazole concentrations",
+        "Drugs dependent on gastric pH for absorption (e.g. certain HIV antivirals, iron salts, ketoconazole): may have altered absorption with acid suppression"
+      ],
+      "drug_interactions_zh": [
+        "Clopidogrel:應避免併用——奧美拉唑(抑制 CYP2C19)降低 clopidogrel 之活性代謝物與抗血小板活性,即使間隔 12 小時服用亦然;應考慮替代抗血小板療法",
+        "含 rilpivirine 之產品:禁忌併用",
+        "聖約翰草或 rifampin(CYP2C19/3A4 誘導劑):應避免併用——大幅降低奧美拉唑濃度",
+        "依賴胃酸 pH 值吸收之藥物(如特定 HIV 抗病毒藥、鐵鹽、ketoconazole):抑酸可能改變其吸收"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": "drug.clopidogrel",
+          "with_label_en": "Clopidogrel",
+          "with_label_zh": "Clopidogrel",
+          "effect_en": "Omeprazole reduces clopidogrel's active metabolite formation (CYP2C19 inhibition), reducing its antiplatelet effect even when doses are separated by 12 hours — avoid concomitant use",
+          "effect_zh": "奧美拉唑抑制 CYP2C19,減少 clopidogrel 活性代謝物生成,降低其抗血小板效果,即使間隔 12 小時服用亦然——應避免併用",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#WARNINGS_AND_PRECAUTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "St. John's Wort",
+          "with_label_zh": "聖約翰草",
+          "effect_en": "CYP2C19/3A4 induction substantially decreases omeprazole plasma concentrations — avoid concomitant use",
+          "effect_zh": "誘導 CYP2C19/3A4 大幅降低奧美拉唑血中濃度——應避免併用",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#WARNINGS_AND_PRECAUTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "標籤明確指名聖約翰草(西藥草)為 CYP2C19/3A4 誘導劑,會降低奧美拉唑療效,已列入 herb_drug_interactions_graded。中藥複方之 CYP2C19/3A4 影響需個別查證,不可從本欄推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.pantoprazole",
+      "name_en": "Pantoprazole",
+      "name_zh": "泮托拉唑",
+      "brand_names_en": [
+        "Protonix"
+      ],
+      "drugclass_id": "drugclass.proton_pump_inhibitors",
+      "drugsystem_ids": [
+        "drugsystem.gastrointestinal"
+      ],
+      "drugtarget_id": "drugtarget.gastric_proton_pump",
+      "rxnorm_rxcui": "40790",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "PPI that suppresses the final step in gastric acid production by covalently binding to the H+/K+-ATPase enzyme system at the secretory surface of the gastric parietal cell, inhibiting both basal and stimulated gastric acid secretion irrespective of the stimulus, with a duration of antisecretory effect persisting longer than 24 hours.",
+      "mechanism_zh": "PPI,藉由與胃壁細胞分泌面之 H+/K+-ATPase 酵素系統共價結合,抑制胃酸生成之最後一步,不論刺激來源為何,均可抑制基礎及受刺激之胃酸分泌,抑酸效果可持續超過 24 小時。",
+      "indications_en": [
+        "FDA-approved: short-term treatment (up to 8 weeks) of erosive esophagitis associated with GERD (adults and pediatric patients ≥5 years)",
+        "FDA-approved: maintenance of healing of erosive esophagitis",
+        "FDA-approved: pathologic hypersecretory conditions (e.g. Zollinger-Ellison syndrome)"
+      ],
+      "indications_zh": [
+        "FDA 核准:胃食道逆流症相關糜爛性食道炎之短期治療(至多 8 週,成人及 5 歲以上兒童)",
+        "FDA 核准:糜爛性食道炎癒合後之維持治療",
+        "FDA 核准:病理性胃酸分泌過多狀態(如 Zollinger-Ellison 症候群)"
+      ],
+      "adverse_effects_en": [
+        "Headache",
+        "Diarrhea",
+        "Nausea",
+        "Abdominal pain",
+        "Vomiting",
+        "Flatulence"
+      ],
+      "adverse_effects_zh": [
+        "頭痛",
+        "腹瀉",
+        "噁心",
+        "腹痛",
+        "嘔吐",
+        "腸胃脹氣"
+      ],
+      "serious_adverse_effects_en": [
+        "Acute tubulointerstitial nephritis",
+        "Clostridium difficile-associated diarrhea",
+        "Bone fracture with high-dose/long-term use",
+        "Severe cutaneous adverse reactions",
+        "Cutaneous/systemic lupus erythematosus",
+        "Cyanocobalamin (B12) deficiency (long-term use)",
+        "Hypomagnesemia (prolonged use)"
+      ],
+      "serious_adverse_effects_zh": [
+        "急性腎小管間質性腎炎",
+        "困難梭狀桿菌相關腹瀉",
+        "高劑量/長期使用之骨折",
+        "嚴重皮膚不良反應",
+        "皮膚性/全身性紅斑性狼瘡",
+        "維生素 B12 缺乏(長期使用)",
+        "低血鎂症(長期使用)"
+      ],
+      "contraindications_en": [
+        "Known hypersensitivity to any component of the formulation or any substituted benzimidazole",
+        "Concomitant use with rilpivirine-containing products"
+      ],
+      "contraindications_zh": [
+        "對本劑型任一成分或任一取代型苯并咪唑類藥物已知過敏",
+        "併用含 rilpivirine 之產品"
+      ],
+      "warnings_en": [
+        "Class warnings same as omeprazole: TIN, C. difficile diarrhea, bone fracture, severe cutaneous reactions, lupus erythematosus, B12 deficiency, hypomagnesemia",
+        "Use lowest effective dose and shortest duration appropriate to the condition"
+      ],
+      "warnings_zh": [
+        "與奧美拉唑相同之類別警語:急性腎小管間質性腎炎、困難梭狀桿菌腹瀉、骨折、嚴重皮膚反應、紅斑性狼瘡、B12 缺乏、低血鎂症",
+        "應使用適合病症之最低有效劑量與最短療程"
+      ],
+      "pregnancy_lactation_en": "Available data from published observational studies did not demonstrate an association of major malformations or other adverse pregnancy outcomes with pantoprazole. Animal reproduction studies (rats, rabbits) showed no evidence of adverse developmental outcomes at high oral doses.",
+      "pregnancy_lactation_zh": "已發表觀察性研究資料未顯示泮托拉唑與重大畸形或其他不良妊娠結果有關聯。動物生殖試驗(大鼠、兔)於高口服劑量下未顯示不良發育結果證據。",
+      "integrative_clinical_flags": [],
+      "tcm_relation_note_zh": "同 omeprazole,PPI 抑酸治療與中醫「胃火」「肝胃不和」等證型有部分症狀重疊,但不構成一對一等同。",
+      "board_priority": "medium",
+      "prototype_drug": false,
+      "dailymed_setid": "76e1839b-7462-4344-b319-001a5f57d67a",
+      "dailymed_label_title": "PANTOPRAZOLE SODIUM TABLET, DELAYED RELEASE [REMEDYREPACK INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=76e1839b-7462-4344-b319-001a5f57d67a",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#PREGNANCY"
+        ]
+      },
+      "herb_drug_interaction_note_zh": "本批未逐字擷取本標籤 DRUG INTERACTIONS 段落細節與 omeprazole 逐一比對是否完全相同;PPI 類別已知之聖約翰草交互作用見 drug.omeprazole 卡片,pantoprazole 是否列出同樣文字未個別查證,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。drug_interactions_en/zh 本次未展開(標籤內容與 omeprazole 高度相似但未逐字比對確認),誠實留空。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
+    },
+    {
+      "id": "drug.ondansetron",
+      "name_en": "Ondansetron",
+      "name_zh": "昂丹司瓊",
+      "brand_names_en": [
+        "Zofran"
+      ],
+      "drugclass_id": "drugclass.serotonin_5ht3_antagonists",
+      "drugsystem_ids": [
+        "drugsystem.gastrointestinal",
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_3_receptor",
+      "rxnorm_rxcui": "203148",
+      "rx_otc_status": "Rx",
+      "verification_status": "machine_metadata_verified",
+      "mechanism_en": "Selective 5-HT3 receptor antagonist. Mechanism of antiemetic action not fully characterized; ondansetron is explicitly stated NOT to be a dopamine-receptor antagonist. 5-HT3 receptors are present peripherally on vagal nerve terminals and centrally in the chemoreceptor trigger zone of the area postrema; not certain whether antiemetic action is mediated centrally, peripherally, or both.",
+      "mechanism_zh": "選擇性 5-HT3 受體拮抗劑。止吐機轉尚未完全釐清;標籤明確敘明昂丹司瓊並非多巴胺受體拮抗劑。5-HT3 受體周邊分布於迷走神經末梢,中樞則位於延腦最後區之化學受器觸發區;無法確定止吐作用是中樞性、周邊性或兩者兼具。",
+      "indications_en": [
+        "FDA-approved: prevention of nausea/vomiting associated with highly emetogenic cancer chemotherapy (e.g. cisplatin ≥50 mg/m²)",
+        "FDA-approved: prevention of nausea/vomiting with initial and repeat courses of moderately emetogenic chemotherapy",
+        "FDA-approved: prevention of nausea/vomiting with radiotherapy (total body irradiation, high-dose abdominal fraction, or daily abdominal fractions)",
+        "FDA-approved: prevention of postoperative nausea/vomiting"
+      ],
+      "indications_zh": [
+        "FDA 核准:預防高致吐性化學治療(如 cisplatin ≥50 mg/m²)引起之噁心/嘔吐",
+        "FDA 核准:預防中度致吐性化學治療首次及重複療程引起之噁心/嘔吐",
+        "FDA 核准:預防放射治療(全身照射、單次高劑量腹部照射或每日腹部分次照射)引起之噁心/嘔吐",
+        "FDA 核准:預防術後噁心/嘔吐"
+      ],
+      "off_label_en": "This clinic's likely common use — nausea/vomiting of pregnancy (hyperemesis gravidarum / morning sickness) — is NOT an FDA-approved indication on this label. This label's efficacy/safety data derive from oncology, radiotherapy, and postoperative populations, not pregnancy. Pregnancy safety data on this label come from a separate, methodologically limited epidemiologic literature specific to that off-label use (see pregnancy_lactation_en).",
+      "off_label_zh": "本診所可能常見之用法——妊娠劇吐/孕吐——並非本標籤核准之適應症。本標籤療效/安全性資料來自腫瘤科、放射治療及術後族群,非孕期族群。標籤中之孕期安全性資料來自另一批針對此仿單外用法、方法學上有其侷限之流行病學文獻(見 pregnancy_lactation_en)。",
+      "adverse_effects_en": [
+        "Headache",
+        "Constipation",
+        "Diarrhea",
+        "Fatigue"
+      ],
+      "adverse_effects_zh": [
+        "頭痛",
+        "便秘",
+        "腹瀉",
+        "疲倦"
+      ],
+      "serious_adverse_effects_en": [
+        "Hypersensitivity reactions including anaphylaxis and bronchospasm",
+        "QT interval prolongation, including postmarketing Torsade de Pointes reports",
+        "Serotonin syndrome (alone or with other serotonergic drugs)"
+      ],
+      "serious_adverse_effects_zh": [
+        "過敏反應,含過敏性休克及支氣管痙攣",
+        "QT 間期延長,含上市後尖端扭轉型心室頻脈通報",
+        "血清素症候群(單獨使用或併用其他血清素藥物)"
+      ],
+      "contraindications_en": [
+        "Known hypersensitivity (e.g. anaphylaxis) to ondansetron or any formulation component",
+        "Concomitant apomorphine use (risk of profound hypotension and loss of consciousness)"
+      ],
+      "contraindications_zh": [
+        "對昂丹司瓊或任一劑型成分已知過敏(如過敏性休克)",
+        "併用 apomorphine(有嚴重低血壓及意識喪失風險)"
+      ],
+      "warnings_en": [
+        "Hypersensitivity reactions — discontinue if occur, treat per standard of care",
+        "QT prolongation — avoid in congenital long QT syndrome; ECG monitoring recommended with electrolyte abnormalities, CHF, bradyarrhythmias, or other QT-prolonging drugs",
+        "Serotonin syndrome — most reports involve concomitant serotonergic drugs (SSRIs, SNRIs, MAOIs, mirtazapine, fentanyl, lithium, tramadol, IV methylene blue); some fatal; can occur with ondansetron overdose alone"
+      ],
+      "warnings_zh": [
+        "過敏反應——發生時應停藥並依標準照護處置",
+        "QT 延長——先天性長 QT 症候群者應避免使用;電解質異常、鬱血性心衰竭、心搏過緩型心律不整或併用其他延長 QT 藥物者建議心電圖監測",
+        "血清素症候群——多數通報涉及併用血清素相關藥物(SSRI、SNRI、MAOI、mirtazapine、fentanyl、鋰鹽、tramadol、靜脈注射 methylene blue);部分致命;昂丹司瓊單獨過量亦可能發生"
+      ],
+      "pregnancy_lactation_en": "Published epidemiological studies on the association between ondansetron use and major birth defects have reported inconsistent findings with important methodological limitations that preclude conclusions about safety in pregnancy. Available postmarketing data have not identified a drug-associated risk of miscarriage or adverse maternal outcomes. Reproductive studies in rats/rabbits did not show fetal harm at high multiples of the maximum recommended human dose.",
+      "pregnancy_lactation_zh": "已發表關於昂丹司瓊使用與重大出生缺陷關聯性之流行病學研究結果不一致,且有重要方法學侷限,無法對孕期安全性下定論。現有上市後資料未顯示與流產或不良母體結局有藥物相關風險。大鼠/兔生殖試驗於人體建議最高劑量之高倍數下未顯示胎兒傷害。",
+      "integrative_clinical_flags": [],
+      "acupuncture_note_zh": "止吐效果與中醫「和胃降逆」治法(如內關穴)目的有交集,臨床上常合併使用;標籤未討論針灸,兩者機轉獨立,合併使用無已知禁忌,但仍應個別評估病因(如是否為需優先處理之腸阻塞等器質性問題)。",
+      "tcm_relation_note_zh": "昂丹司瓊止吐與中醫「和胃降逆」證型治法目的有交集,但不構成一對一等同;QT 延長與血清素症候群為西醫明確安全議題,應留意患者是否合併服用其他延長 QT 或血清素相關藥物。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "2a30d534-4607-4882-865e-56d2364acaad",
+      "dailymed_label_title": "ONDANSETRON HYDROCHLORIDE TABLET, FILM COATED [PREFERRED PHARMACEUTICALS INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2a30d534-4607-4882-865e-56d2364acaad",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "adverse_effects_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#ADVERSE_REACTIONS"
+        ],
+        "serious_adverse_effects_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "pregnancy_lactation_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#PREGNANCY"
+        ],
+        "drug_interactions_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#CONTRAINDICATIONS",
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#WARNINGS_AND_PRECAUTIONS"
+        ]
+      },
+      "drug_interactions_en": [
+        "Apomorphine: contraindicated — risk of profound hypotension and loss of consciousness",
+        "Other serotonergic drugs (SSRIs, SNRIs, MAOIs, mirtazapine, fentanyl, lithium, tramadol, IV methylene blue): increased serotonin syndrome risk",
+        "QT-prolonging drugs, electrolyte abnormalities: additive QT-prolongation risk"
+      ],
+      "drug_interactions_zh": [
+        "Apomorphine:禁忌併用——有嚴重低血壓及意識喪失風險",
+        "其他血清素藥物(SSRI、SNRI、MAOI、mirtazapine、fentanyl、鋰鹽、tramadol、靜脈注射 methylene blue):血清素症候群風險增加",
+        "延長 QT 之藥物、電解質異常:QT 延長風險相加"
+      ],
+      "drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Apomorphine",
+          "with_label_zh": "Apomorphine",
+          "effect_en": "Contraindicated — risk of profound hypotension and loss of consciousness",
+          "effect_zh": "禁忌併用——有嚴重低血壓及意識喪失風險",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:2a30d534-4607-4882-865e-56d2364acaad#CONTRAINDICATIONS"
+          ]
+        }
+      ],
+      "herb_drug_interaction_note_zh": "本標籤未指名任何中藥或植物藥。未查得即為未查得,不推論已排除。",
+      "gap_note_zh": "本卡為診所常用頻率擴充新建(原方劑課程未涵蓋)。孕吐(妊娠劇吐)之仿單外使用已於 off_label_en/zh 詳述,包含孕期安全性資料本身方法學侷限之誠實說明。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-11"
     }
   ]
 }
