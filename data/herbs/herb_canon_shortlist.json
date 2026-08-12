@@ -132,7 +132,9 @@
         "tincture_ml": "American Dragon：1–3mL",
         "特殊說明": "煎劑可先煎去浮沫；發汗解表宜生用，止咳平喘多蜜炙用。不可因來源上限為 10g 即自行使用大劑量。"
       },
-      "dosage_g": "1.5–10g（CloudTCM、American Dragon）",
+      "dosage_g": {
+        "standard_daily_g": "1.5–10g（CloudTCM、American Dragon）"
+      },
       "cautions": "晚上服用麻黃可能興奮中樞神經，易致失眠。 [1]\n體虛自汗、盜汗、虛寒虛喘、中風癱瘓、陽虛者忌服。\n心血管疾病患者（如心衰竭、心肌梗塞、心臟病、高血壓）需慎服，麻黃可升高血壓。\n甲狀腺疾病患者或對麻黃過敏者應慎用。\n攝護腺肥大者可能導致尿滯留。\n《本草經疏》提到麻黃能去寒邪，但多服會損耗真元之氣。\n孕婦或哺乳期婦女應慎用麻黃。\n正在服用感冒藥或綜合感冒藥者，應諮詢醫師是否能服麻黃。\n麻黃劑量過高時可能引起心跳加速、呼吸急促、噁心、嘔吐、失眠、情緒亢奮、頭痛、癲癇及顫抖等副作用。",
       "source_urls": [
         "https://cloudtcm.com/herb/1",
@@ -589,7 +591,8 @@
       ],
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
-      "card_grade": "template"
+      "card_grade": "template",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"1.5–10g（CloudTCM、American Dragon）\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.gui_zhi",
@@ -34520,7 +34523,9 @@
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm",
       "pharmaceutical_latin": "Pinelliae Rhizoma",
       "part_used_en": "Rhizome",
-      "dosage_g": "3–15g（來源範圍不同；僅限炮製品內服）",
+      "dosage_g": {
+        "standard_daily_g": "3–15g（來源範圍不同；僅限炮製品內服）"
+      },
       "pao_zhi_notes_zh": [
         "法半夏：甘草、石灰等法製，燥濕化痰而藥力較和，偏脾虛濕痰。",
         "薑半夏：以生薑、明礬炮製，長於降逆止嘔、溫中化痰。",
@@ -34640,7 +34645,8 @@
       },
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
-      "card_grade": "template"
+      "card_grade": "template",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"3–15g（來源範圍不同；僅限炮製品內服）\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.tian_nan_xing",
@@ -34863,7 +34869,9 @@
       ],
       "pharmaceutical_latin": "Arisaematis Rhizoma preparatum",
       "part_used_en": "Processed rhizome/tuber",
-      "dosage_g": "3–10g（僅限炮製品；膽南星 2–5g）",
+      "dosage_g": {
+        "standard_daily_g": "3–10g（僅限炮製品；膽南星 2–5g）"
+      },
       "pao_zhi_notes_zh": [
         "制天南星以生薑等炮製後供內服，以降低刺激與毒性。",
         "膽南星偏清熱化痰、息風定驚。",
@@ -34978,7 +34986,8 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "pinyin_toned": "Tiān Nán Xīng"
+      "pinyin_toned": "Tiān Nán Xīng",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"3–10g（僅限炮製品；膽南星 2–5g）\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.jie_geng",
@@ -35206,7 +35215,9 @@
       ],
       "pharmaceutical_latin": "Platycodi Radix",
       "part_used_en": "Root",
-      "dosage_g": "3–10g",
+      "dosage_g": {
+        "standard_daily_g": "3–10g"
+      },
       "pao_zhi_notes_zh": [
         "生桔梗偏宣肺祛痰、利咽排膿；蜜炙品較潤，偏於止咳。"
       ],
@@ -35313,7 +35324,8 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "pinyin_toned": "Jié Gěng"
+      "pinyin_toned": "Jié Gěng",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"3–10g\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.chuan_bei_mu",
@@ -50200,7 +50212,9 @@
       ],
       "pharmaceutical_latin": "Inulae Flos",
       "part_used_en": "Flower",
-      "dosage_g": "3–12g（包煎）",
+      "dosage_g": {
+        "standard_daily_g": "3–12g（包煎）"
+      },
       "pao_zhi_notes_zh": [
         "花絨可能刺激咽喉，入煎劑須以布包煎。",
         "蜜炙旋覆花較潤，可減少辛散傷氣傷陰。"
@@ -50309,7 +50323,8 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "pinyin_toned": "Xuán Fù Huā"
+      "pinyin_toned": "Xuán Fù Huā",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"3–12g（包煎）\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.gao_liang_jiang",
@@ -54563,7 +54578,9 @@
       ],
       "pharmaceutical_latin": "Sinapis Semen",
       "part_used_en": "Seed",
-      "dosage_g": "3–15g（來源範圍不同；不宜久煎）",
+      "dosage_g": {
+        "standard_daily_g": "3–15g（來源範圍不同；不宜久煎）"
+      },
       "pao_zhi_notes_zh": [
         "炒白芥子刺激性較緩，便於內服。",
         "外用研末以醋調敷，不可久敷，以免起泡灼傷。"
@@ -54671,7 +54688,8 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "pinyin_toned": "Bái Jiè Zǐ"
+      "pinyin_toned": "Bái Jiè Zǐ",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"3–15g（來源範圍不同；不宜久煎）\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.qian_hu",
@@ -59808,7 +59826,9 @@
         "decoction_g": "Chenoweth：3–5g，重症可至 9g；American Dragon：1.5–6g；CloudTCM、Traditional World Medicine：3–6g",
         "特殊說明": "各來源範圍並列保留。內服只用炮製品；生品僅供外用。"
       },
-      "dosage_g": "1.5–9g（依來源與病情；僅限炮製品）",
+      "dosage_g": {
+        "standard_daily_g": "1.5–9g（依來源與病情；僅限炮製品）"
+      },
       "pao_zhi_notes_zh": [
         "制白附子經炮製降低毒性後供內服。",
         "生白附子毒性與刺激性較強，只供外用。"
@@ -59948,7 +59968,8 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "pinyin_toned": "Bái Fù Zǐ"
+      "pinyin_toned": "Bái Fù Zǐ",
+      "correction_note": "[2026-08-12 HB-13 形狀遷移] dosage_g 原為字串 \"1.5–9g（依來源與病情；僅限炮製品）\",與其餘 351 筆的物件形狀不一致,導致渲染器的 dosage_g.standard_daily_g 取值為 undefined —— 劑量存在於資料中卻無法顯示。原字串逐字放入 standard_daily_g,未改動任何文字。"
     },
     {
       "id": "herb.qu_mai",
