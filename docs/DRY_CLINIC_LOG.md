@@ -176,8 +176,10 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
   (各帶 note_zh);dry-clinic 演練用的 lorazepam 現在查得到了。
 - ✅ **#7 origin 警示**:127.0.0.1 開啟即紅色警示橫幅(兩 origin 實測),
   DEPLOY_CLOUDFLARE.md 加「單一入口網址+開診前先匯出」SOP。
+- ✅ **#8 日期時區**:visit/start date 預設改本地日曆日(localDateISO),
+  晚診不再預設成明天;實測於本地 08-11 晚(UTC 已 08-12)顯示正確。
 - ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#13(AVS v3 驗證)、
-  #4 對話框分區導航、#8 日期時區。9/5 必修僅剩 #12。
+  #4 對話框分區導航(可後補)。9/5 必修僅剩 #12。
 
 ## 結論(給 Ting 的排序建議)
 
