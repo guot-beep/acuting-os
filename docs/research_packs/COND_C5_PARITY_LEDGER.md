@@ -165,6 +165,42 @@ a translation pass. Flagging for a separate ledger
 (`COND_INGESTION_LEDGER`/misfile-relocation batch per §3.5.5), out of scope
 for this zh→en parity batch.
 
+**RELOCATED 2026-08-11** (branch `codex/cond-thin-endometrium-relocate`,
+commit see `git log -1 --oneline` on that branch — not pushed as of this
+entry). True owner confirmed by exact-match scan: both fields are
+byte-identical to `cond.oligomenorrhea` (月經過少), which already holds this
+text as real, complete, bilingual content (`western_pathology_en` /
+`etiology_en` both filled) — left untouched, nothing backfilled there.
+`western_pathology_zh` is a 3-way share (`cond.thin_endometrium`,
+`cond.pcos`, `cond.oligomenorrhea`); `etiology_zh` is a 2-way share
+(`cond.thin_endometrium`, `cond.oligomenorrhea`). Action taken on
+`cond.thin_endometrium` only (the one record this ledger entry and the
+mission authorized) — `cond.pcos`'s copy of `western_pathology_zh` is a
+separate, not-yet-authorized misfile and was left alone.
+
+- Read the whole record end-to-end first: confirmed both fields' openings
+  match this section's description exactly (etiology_zh opens「月經稀少或閉經，
+  絕對是困擾中國人千年以上的議題…」; western_pathology_zh opens「月經稀少是指
+  月經量明顯減少…」) — no stop condition triggered.
+- Salvage check: read both paragraphs in full: no sentence specific to thin
+  endometrial lining (vs. oligomenorrhea/amenorrhea) found — nothing
+  salvaged into `cond.thin_endometrium`'s own fields.
+- Moved verbatim into `cond.thin_endometrium.import_artifacts` (2 entries:
+  `{original_field, text, reason, moved_at: "2026-08-11"}`), matching the
+  convention already used by the 39 other `import_artifacts` records in this
+  file (e.g. `cond.pms`, `cond.tension_headache`). `etiology_zh` and
+  `western_pathology_zh` cleared to `""` on `cond.thin_endometrium` —
+  `related_patterns` (already carries a 45-char array of Chinese source
+  attribution)/`etiology_en`/`western_pathology_en` did not exist beforehand
+  so no dangling half-pair was created (C5 was already the defect being
+  cleared, not introduced).
+- Validators after the change: `validate-condition-standard.js` total
+  blocking **225 → 220** (C5 90→88, C10 93→90, C4 unchanged 42/42), 440→441
+  clean records. `check-validation-ratchet.js`: **BETTER conditions
+  225 → 220 (−5), PASS**. `validate-content-junk.js`: PASS (pre-existing
+  unrelated dosage-clause WARN only). `validate-relations.js`: PASS.
+  `build-data.js`: 505 condition records unchanged in count.
+
 ### File-wide picture (not just batch 1)
 
 The same per-field C10 cross-check was run over all 90 C5 occurrences across
