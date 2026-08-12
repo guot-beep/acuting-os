@@ -196,3 +196,25 @@ git push origin HEAD:main
 - **真實 patient migration / pointer switch 的時程**:不在降落範圍,需獨立演練 + 授權。
 - **FULL_DETAIL 兩軸 maturity 拆分**(completeness × content-quality):已在 Ting
   的策略更新中定調,實作尚未開始;與降落無相依,可降落後再做。
+
+---
+
+## 附錄:main-only commits 已整合並驗證(Fable 日班,2026-08-12)
+
+本文量測時 main-only = 2(`74c63a2`、`8cafc2a`,皆單獨動 `js/knowledge.js` 的
+UI 還原)。已於 `ce00e95` 把 `origin/main` 併入分支,**main-only 由 2 → 0**,
+降落形狀從「互有分歧需三方合併」變成單向前進(branch-only 380)。
+
+依既有教訓(合併會靜默吃掉 main 側 UI 區塊)做了雙層驗證:
+
+| 檢查 | 結果 |
+|---|---|
+| 原始碼區塊字串 | American Dragon 18 · 方劑群組 1 · 現代應用 5 · 現代藥理 2 · 相關病名 2 |
+| 這些區塊是否在有效渲染路徑 | 是 —— `js/knowledge.js:1365`(考試核心分頁:方劑群組)與 `:1368`(臨床理解分頁:`formulaModernSection()`、現代運用索引、相關病名與證型),皆為分頁 content 模板本體,非死碼 |
+| 伺服器實際送出的檔案 | 同上出現次數(以 cache-bust fetch 確認,非讀本機檔) |
+| `node --check js/knowledge.js` | 通過 |
+| formula validator / ratchet | 0 阻斷 / PASS |
+
+**注意(給下一位驗證者)**:這些區塊在方劑卡的分頁內,列表頁看不到 ——
+用「頁面文字有沒有出現現代應用」當驗證會得到假陰性。要開卡並切到對應分頁,
+或如本次直接確認模板字串位於分頁 content 內。
