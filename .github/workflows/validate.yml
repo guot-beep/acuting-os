@@ -51,8 +51,23 @@ jobs:
             echo "non-PR event — full CI."
             exit 0
           fi
-          BASE="${{ github.event.pull_request.base.sha }}"
+          # 增量分類修正(2026-08-12 驗收實測):比對基準必須是「本次 push 的
+          # 增量」(synchronize 事件的 event.before),不是 PR base——300+ commit
+          # 的長 PR 對 main 累積 diff 永遠含 code,docs-only 永遠不會觸發。
+          # opened/reopened 沒有增量概念 → 保守全跑。
+          if [ "${{ github.event.action }}" = "synchronize" ] && [ -n "${{ github.event.before }}" ] && ! echo "${{ github.event.before }}" | grep -q "^000000"; then
+            BASE="${{ github.event.before }}"
+          else
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "PR ${{ github.event.action }} (no push delta) — full CI (conservative)."
+            exit 0
+          fi
           HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          if ! git cat-file -e "$BASE" 2>/dev/null; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "before-SHA not in history (force push?) — full CI (conservative)."
+            exit 0
+          fi
           files=$(git diff --name-only "$BASE" "$HEAD_SHA")
           echo "changed files:"
           echo "$files"
