@@ -77,3 +77,16 @@ payload 含 patientCode + 臨床自由文字,QR 只是編碼、clipboard 可被�
    metrics 仍全部重新驗證。
 5. **在此之前的版本不得用於真實病人**(SOL PAUSE 裁定);本節落地並經
    Codex P1 transport audit(wrong-patient/stale/replay/malformed)後解除。
+
+## 8. Transport audit 結案與往返實證(2026-08-12)
+
+- **Codex/SOL P1 transport audit 已跑**,四項發現全修(commit 0f59773):
+  HIGH-1 shape 層硬性要求 formVersion===1 / 非空 payloadId / 合法 filledAt
+  (舊版「缺就當 legacy 放行」讓缺 payloadId 者繞過重放閘);HIGH-2 valueNumber
+  必須是 JSON number 本尊(Number(null/false/""/[]) → 0 會讓壞值靜默變成臨床
+  測量);MED-1 自由文字長度上限;MED-2。app.js 與 CLI validator 兩把同尺。
+- **三實作往返實證(Fable,活庫)**:previsit.html 產生 → CLI validator PASS
+  → app.js「貼上診前資料」正確預填(pain 3 / sleep 7 / 主觀帶前綴)。硬化
+  沒有打斷 producer→consumer 動線。CLI self-test 17/17(3 good + 14 bad)。
+- **仍待 Ting 決定**:§7 第 5 點的「真實病人使用 PAUSE」是否解除。技術面
+  已具備(audit 綠 + 往返實證);解除與否是臨床/法遵判斷,不由工程單方認定。
