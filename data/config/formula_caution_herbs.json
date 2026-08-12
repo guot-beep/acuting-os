@@ -1,0 +1,112 @@
+{
+  "_readme": [
+    "慎用藥 slug 名單 —— 「這味藥出現在組成表時，該卡必須有安全欄文字」。",
+    "",
+    "MEMBERSHIP MEANS: a card whose composition contains one of these herb_id",
+    "slugs MUST carry at least one non-empty safety string",
+    "(contraindications_zh / contraindications_en / cautions_zh / cautions_en).",
+    "MEMBERSHIP DOES NOT MEAN: the herb is banned, obsolete, unsafe at any dose,",
+    "or that the formula should be withdrawn. 大黃 · 麻黃 · 桃仁 · 附子 are all",
+    "standard, dispensable, board-list herbs. This file is a list of herbs whose",
+    "cards may not be SILENT — nothing more.",
+    "",
+    "SOURCE: docs/research_packs/FORMULA_EYESON_03.md §3.1「LIBRARY-COMPLETE",
+    "慎用藥覆蓋矩陣」(63 卡母體，三批人眼讀完) and the P1 slug set written out in",
+    "§3.2. The family grouping below is §3.1's own section order.",
+    "",
+    "KEYED BY herb_id SLUG, NOT BY CHINESE SUBSTRING — this is the whole point.",
+    "FORMULA_EYESON_03 F-46: `composition[].herb_zh` is romanized on 102 rows /",
+    "57 cards (`\"Zhi Chuan Wu\"`, `\"Shui Fei Zhu Sha\"`), so a Chinese-substring",
+    "scan returns FALSE NEGATIVES on exactly the two most dangerous cards in the",
+    "library (xiao_huo_luo_dan 川烏+草烏 同方, zhu_sha_an_shen_wan 硃砂為君).",
+    "Matching is EXACT slug equality after stripping the `herb.` prefix, so",
+    "`ma_huang_gen`(麻黃根, a different herb) does not match `ma_huang`, and",
+    "`bai_fu_zi`/`lai_fu_zi` do not match `fu_zi` — the batch-2 `mu_li_san`",
+    "false positive and its mirror image are both closed by construction.",
+    "",
+    "KNOWN BLIND SPOT (F-47): a card whose composition table belongs to a",
+    "DIFFERENT formula is invisible to any composition-keyed scan, herb_id or",
+    "not — `formula.xie_xin_tang` carries 半夏瀉心湯's table and therefore has no",
+    "大黃 row to match. That class is detected by",
+    "scripts/validate-formula-composition-signatures.js (FB-20/FB-28), not here.",
+    "The reader script also reports rows it CANNOT classify (empty herb_id with a",
+    "romanized herb_zh) so the coverage claim stays honest.",
+    "",
+    "READ BY: scripts/validate-formula-safety-predicates.js (P1).",
+    "Adding a slug widens P1's mother lode and may raise the violation count —",
+    "that is intended; do not remove a slug to make a number go down."
+  ],
+  "schema": {
+    "families": "object — family key -> { label_zh, label_en, signature_warning_zh, herb_id_slugs[] }",
+    "herb_id_slugs": "bare slug, i.e. `herb.fu_zi` is written `fu_zi`"
+  },
+  "source": "docs/research_packs/FORMULA_EYESON_03.md §3.1 慎用藥覆蓋矩陣 + §3.2 P1",
+  "last_reviewed": "2026-08-12",
+  "families": {
+    "aconite": {
+      "label_zh": "附子／川烏／草烏（烏頭類）",
+      "label_en": "Aconite group",
+      "signature_warning_zh": "炮製要求 · 先煎/久煎 · 劑量上限 · 孕婦禁 · 心律不整/中毒徵象",
+      "matrix_cards_in_ledger": 17,
+      "herb_id_slugs": ["fu_zi", "chuan_wu", "cao_wu"]
+    },
+    "ephedra": {
+      "label_zh": "麻黃",
+      "label_en": "Ephedra",
+      "signature_warning_zh": "心血管/高血壓/甲亢/青光眼 · 孕婦 · 運動禁藥 · MAOI/擬交感/咖啡因交互",
+      "matrix_cards_in_ledger": 9,
+      "note": "麻黃根 (`ma_huang_gen`) is a different herb and is deliberately NOT listed — batch 2's `mu_li_san` false positive.",
+      "herb_id_slugs": ["ma_huang"]
+    },
+    "rhubarb_mirabilite": {
+      "label_zh": "大黃／芒硝",
+      "label_en": "Rhubarb / Mirabilite",
+      "signature_warning_zh": "孕婦 · 哺乳 · 月經期 · 脾胃虛寒 · 久服依賴",
+      "matrix_cards_in_ledger": 23,
+      "herb_id_slugs": ["da_huang", "mang_xiao"]
+    },
+    "asarum": {
+      "label_zh": "細辛",
+      "label_en": "Asarum",
+      "signature_warning_zh": "劑量上限「細辛不過錢」· 馬兜鈴酸現況",
+      "matrix_cards_in_ledger": 8,
+      "herb_id_slugs": ["xi_xin"]
+    },
+    "aristolochia_risk": {
+      "label_zh": "木通／青木香（馬兜鈴科風險）",
+      "label_en": "Aristolochia-risk group",
+      "signature_warning_zh": "馬兜鈴酸 · 關木通 vs 川木通取代 · 腎損傷",
+      "matrix_cards_in_ledger": 8,
+      "herb_id_slugs": ["mu_tong", "qing_mu_xiang"]
+    },
+    "cinnabar_realgar": {
+      "label_zh": "朱砂／雄黃（礦物毒藥）",
+      "label_en": "Cinnabar / Realgar",
+      "signature_warning_zh": "重金屬（汞/砷）· 法規現況 · 不可加熱 · 不可久服 · 劑量",
+      "matrix_cards_in_ledger": 6,
+      "herb_id_slugs": ["zhu_sha", "xiong_huang"]
+    },
+    "insect_leech": {
+      "label_zh": "全蠍／蜈蚣／水蛭",
+      "label_en": "Scorpion / Centipede / Leech",
+      "signature_warning_zh": "孕婦禁 · 過敏 · 劑量",
+      "matrix_cards_in_ledger": 1,
+      "herb_id_slugs": ["quan_xie", "wu_gong", "shui_zhi"]
+    },
+    "blood_breaking": {
+      "label_zh": "桃仁／紅花／三稜／莪朮（破血）",
+      "label_en": "Blood-breaking group",
+      "signature_warning_zh": "孕婦禁 · 出血傾向/抗凝併用",
+      "matrix_cards_in_ledger": 12,
+      "herb_id_slugs": ["tao_ren", "hong_hua", "san_leng", "e_zhu"]
+    },
+    "other_toxic_seen_in_sweep": {
+      "label_zh": "眼審撞見、不在原派工名單但同等級的毒性藥",
+      "label_en": "Additional toxic herbs found during the eyes-on sweep",
+      "signature_warning_zh": "甘遂：峻下逐水、劑量嚴格；蒼耳子：肝毒性、過量中毒",
+      "matrix_cards_in_ledger": 2,
+      "note": "§3.1「其他在讀卡過程中撞見」表 — 大陷胸湯的甘遂（君）、蒼耳子散的蒼耳子（君）。檳榔 (bing_lang, IARC Group 1) 在同一張表上被記錄但未納入 P1 名單，因為 ledger §3.2 的 P1 slug 集合沒有列它；要納入須先過 Ting。",
+      "herb_id_slugs": ["gan_sui", "cang_er_zi"]
+    }
+  }
+}

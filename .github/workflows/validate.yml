@@ -184,6 +184,21 @@ jobs:
       - name: formula composition-signature duplicates (NOTE tier, see script header)
         run: node scripts/validate-formula-composition-signatures.js --worklist
 
+      # docs/research_packs/FORMULA_EYESON_03.md §3.2 P1/P2/P3/P4/P6 — the
+      # hand-found safety classes from three eyes-on sweeps, turned into
+      # machine predicates so the class stops depending on someone's eyes.
+      # NOTE tier: measured on the live corpus none of the five is at zero
+      # (P1 10 · P2 10 · P3 5 · P4-card 7 · P6 6), so wiring any of them
+      # blocking today would break the build over a backlog nobody has been
+      # asked to fix — the same call the composition-signature step above
+      # makes. Each predicate graduates INDEPENDENTLY: when its count reaches
+      # zero, add it to the flag here, e.g. `--blocking=P6` then
+      # `--blocking=P2,P6`. Per-predicate graduation conditions are in the
+      # script header. Baseline worklist:
+      # docs/research_packs/FORMULA_SAFETY_PREDICATE_BASELINE.md
+      - name: formula safety predicates P1-P4/P6 (NOTE tier, see script header)
+        run: node scripts/validate-formula-safety-predicates.js
+
       - name: comparison standard
         run: node scripts/validate-comparison-standard.js
 
