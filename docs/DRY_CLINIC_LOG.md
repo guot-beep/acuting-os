@@ -63,6 +63,32 @@ night_wakings/pain_score)可填。
    (UTC 換日)。若真機時區設定正確可能不重現,但建議用本地日期 API 產生預設值。
    (與 #7 一樣屬「環境陷阱」類,真機驗收清單應包含日期欄 spot-check。)
 
+## 事故報告:store 毀損與救回(2026-08-11,演練中真實發生)
+
+**經過**:W1 實作 agent 在共用瀏覽器面板驗證 UI 時,分頁被面板靜默重指回
+live origin(localhost:8361),其種子腳本 `fetch('/tmp-qa-seed.json')` 在
+live origin 上 404,而腳本**先 setItem 後驗證**,把字串 `"not found"` 直接寫進
+`acuting-clinical-cases-v1` —— 34 案(33 QA + DRY)瞬間全毀。
+
+**救回**:一個毀損前載入的分頁還活著,記憶體內仍有完整 state。攔截
+`URL.createObjectURL` + 觸發 app 自己的「匯出病例」,從記憶體取回 139,885
+字元完整 JSON,以 v1 格式(裸陣列 pretty-print)回寫,重載驗證 34 案復原。
+
+**教訓(全部進規則/工程)**:
+9. **[9/5 前必修] v1 load() fails-soft 是資料毀滅鏈**(js/clinical-store.js:102-107):
+   corrupt store → 靜默回傳 `[]` → app 顯示 0 cases(無警示、無鎖)→
+   下一次任何存檔把可救回的位元組永久蓋掉。v2 路徑 fail-loud(readStagingEnvelopeOrThrow),
+   v1 必須同等:「不存在→[]」與「存在但壞→丟錯+唯讀鎖」要分開。
+   今天能救回純屬僥倖(恰有未重載分頁)。→ 待 W1 合併後由 Fable 修
+   (同檔案,避免衝突)。
+10. **[規則] agent 瀏覽器紀律**:共用面板的分頁 origin 會被其他 session 改變;
+    任何 localStorage 寫入前必須同一個腳本內重驗 `location.origin`,
+    且**先驗證 payload 再 setItem**(fetch 404 body 直接入庫就是這次的肇因)。
+    Agent 驗證一律用自己 port 的隔離 server。
+11. **[價值確認] 匯出即保險**:救援路徑=app 自己的匯出功能。真診所版的
+    「立即匯出」每日習慣 + 自動備份(acuting-backup-meta-v1 已有雛形)
+    是最後防線,遷移文件應把「開診前先匯出」寫成 SOP。
+
 ## 系統性觀察(非單一摩擦)
 
 - **知識連結體驗是這個 OS 的靈魂,目前資料面 > 介面面**:picker 找得到
