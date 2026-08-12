@@ -98,6 +98,22 @@
     return `unparseable JSON, ${bytes} char(s) present (內容不轉述,避免病歷資料出現在錯誤訊息)`;
   }
 
+  /* 上面那個 helper 只在「我記得要用它」的地方生效。HIGH-1 修的是 load 路徑,
+   * 但 migration/verify 路徑還有五處裸 `JSON.parse`,而它們的外層 catch 會把
+   * `e.message` 串進 failures —— 於是被繞過的正是同一個洞:
+   *   executeMigration  JSON.parse(existing) / JSON.parse(rawText)
+   *   verifyStagingObject / verifyStaging / buildMigrationPlan
+   * 這些吃的都是病歷原文。與其逐處審「這個 catch 會不會轉述」,不如讓
+   * 「原始 parser 訊息不可能逸出這個檔案」變成結構上為真:所有解析走這裡,
+   * 由 scripts/validate-clinical-store-phi-boundary.js 擋住新的裸 parse。 */
+  function parseJsonOrThrow(raw, label) {
+    try {
+      return JSON.parse(raw);
+    } catch (e) {
+      throw new Error(`clinical-store: ${label} is CORRUPT (${parseFailureDetail(raw)})`);
+    }
+  }
+
   function readStagingEnvelopeOrThrow(context) {
     const raw = readKey(STAGING_KEY);
     if (!raw) throw new Error(`clinical-store: pointer=v2 but staging envelope is MISSING (${context}) — refusing v1 fallback to prevent silent fork. Run rollback or restore.`);
@@ -480,7 +496,7 @@
    * 無 Math.random,同 source 必得同 plan。 */
   async function buildMigrationPlan(rawText, adjudications, sha256) {
     const patientIdOf = async (code) => "patient." + (await sha256("acuting-patient:" + code)).slice(0, 12);
-    const cases = JSON.parse(rawText);
+    const cases = parseJsonOrThrow(rawText, "v1 snapshot (buildMigrationPlan)");
     if (!Array.isArray(cases)) throw new Error("raw snapshot must be a JSON array of cases");
     const caseIds = new Set();
     for (const c of cases) {
@@ -773,7 +789,7 @@
       throw new Error(`executeMigration: raw hash ${actualHash.slice(0, 12)}… does not match plan.source_sha256 — refusing`);
     }
     const existing = backend === localStorageBackend ? global.localStorage.getItem(STAGING_KEY) : null;
-    const existingStaging = existing ? JSON.parse(existing) : (backend.readKey ? JSON.parse(backend.readKey(STAGING_KEY) || "null") : null);
+    const existingStaging = existing ? parseJsonOrThrow(existing, "existing staging envelope (executeMigration)") : (backend.readKey ? parseJsonOrThrow(backend.readKey(STAGING_KEY) || "null", "existing staging envelope (executeMigration)") : null);
     if (existingStaging && existingStaging.journal &&
         existingStaging.journal.source_sha256 === plan.source_sha256 &&
         existingStaging.journal.migration_version === plan.migration_version) {
@@ -785,7 +801,7 @@
       }
       return { creates: 0, updates: 0, deletes: 0, idempotent_noop: true };
     }
-    const rawCases = JSON.parse(rawText);
+    const rawCases = parseJsonOrThrow(rawText, "v1 snapshot (executeMigration)");
     const pidByCase = new Map(plan.caseAssignments.map((a) => [a.caseId, a.patientId]));
     const staging = {
       schema_version: 2,
@@ -827,7 +843,7 @@
     for (const c of staging.cases || []) {
       if ((planPid.get(c.id) ?? null) !== (c.patientId ?? null)) failures.push(`${c.id}: patientId differs from plan assignment`);
     }
-    const rawCases = JSON.parse(rawText);
+    const rawCases = parseJsonOrThrow(rawText, "v1 snapshot (verifyStagingObject)");
     if (staging.cases.length !== rawCases.length) failures.push(`case count ${staging.cases.length} != raw ${rawCases.length}`);
     const rawById = new Map(rawCases.map((c) => [c.id, c]));
     for (const c of staging.cases) {
@@ -873,7 +889,7 @@
 
   // key 版包裝(rehearse/switch 用,同步 hasher)。
   function verifyStaging(rawText, { sha256 }, plan) {
-    const staging = JSON.parse(readKey(STAGING_KEY) || "null");
+    const staging = parseJsonOrThrow(readKey(STAGING_KEY) || "null", "staging envelope (verifyStaging)");
     return verifyStagingObject(staging, rawText, sha256(rawText), plan);
   }
 
