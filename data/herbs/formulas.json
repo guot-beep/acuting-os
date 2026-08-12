@@ -10716,7 +10716,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/204",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "draft",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -11142,7 +11142,7 @@
         "體虛者禁用",
         "孕婦禁用"
       ],
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 4 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）、連翹（actions_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）、蜂蜜（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 4 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）、連翹（actions_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）、蜂蜜（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含大黃/芒硝,安全欄位覆蓋不足(孕婦/經期等標準禁忌缺漏)。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.qing_ying_tang",
@@ -29429,7 +29429,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -29905,7 +29905,8 @@
         "霍亂吐瀉止後即當停藥",
         "陰虛者禁用",
         "孕婦禁用"
-      ]
+      ],
+      "correction_note": "[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含附子,先煎/久煎要求與中毒徵象未載。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -31981,7 +31982,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/568",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -32035,7 +32036,8 @@
         "Severe Qi and Yang collapse with cold extremities",
         "Heart/Kidney Yang collapse with profuse cold sweating"
       ],
-      "category_zh": "溫裡劑"
+      "category_zh": "溫裡劑",
+      "correction_note": "[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含制附子 9-15g,而 contraindications/cautions 欄位完全不存在,actions_zh 為破碎字串(「氣,陽」)。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.wu_zhu_yu_tang",
@@ -51027,7 +51029,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -51876,7 +51878,8 @@
         "腹瀉頻繁者禁用",
         "面赤發熱者禁用",
         "孕婦禁用"
-      ]
+      ],
+      "correction_note": "[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:與 jin_gui_shen_qi_wan 組成簽章重複(同方兩卡、exam_importance 互相矛盾),身分未釐清前不宜公開。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.jin_gui_shen_qi_wan",
@@ -73745,7 +73748,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -73793,7 +73796,7 @@
         "Pitting edema of lower limbs with cold extremities and loose stools"
       ],
       "category_zh": "祛濕劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：炮薑（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：炮薑（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含附子,actions_zh 為破碎字串(「溫中陽,健脾益氣,氣與促進於」),安全欄位不完整。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.fang_ji_huang_qi_tang",
@@ -86169,7 +86172,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "draft",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -86346,7 +86349,7 @@
         "硃砂不宜大量或長期服用",
         "過量服用之副作用包括：出汗、噁心、嘔吐、四肢冰冷、僵滯感、呼吸困難、心悸及頭暈目眩"
       ],
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Han Shui Shi（in_formula_zh、actions_zh、role_reason_zh）、滑石（in_formula_zh、actions_zh、role_reason_zh）、Jin Bo（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Han Shui Shi（in_formula_zh、actions_zh、role_reason_zh）、滑石（in_formula_zh、actions_zh、role_reason_zh）、Jin Bo（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含硃砂/犀角/青木香(重金屬與管制/瀕危藥材),安全欄位覆蓋不足。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.zhi_bao_dan",
@@ -87151,7 +87154,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
@@ -87315,7 +87318,7 @@
         "腫瘍潰久未癒者禁用",
         "麻黃劑量不可任意增減"
       ],
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Pao Jiang（in_formula_zh、actions_zh、role_reason_zh）、麻黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Pao Jiang（in_formula_zh、actions_zh、role_reason_zh）、麻黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含麻黃,心血管/高血壓禁忌與 ephedrine 交互作用未載。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。"
     },
     {
       "id": "formula.gui_pi_tang",
