@@ -1,3 +1,15 @@
+# 2026-08-11 Fable — AVS v3 Visit Checkout Integration（branch `fable/avs-v3`）
+
+- **引擎**：新增 `js/avs.js`(零 DOM、node 可測):safety 別名正規化(9 canonical token,取代 v2 子字串比對)、modality 解析(structured→inferred fallback)、媒合、draft/finalize/supersede 狀態機、病人 HTML 渲染、零診斷自檢、歷史不變量。
+- **建議庫**:`avs_advice_library.json` 12→13 筆(12 active + 1 deprecated),schema v3 治理欄位(version/trigger_mode/severity/evidence_type/review_status/active)。§6 措辭修訂 4 筆標 `review_status:"draft"` 待 SOL/Ting 審:herb 間隔規則移除(§6.1)、腫瘤建議改 active-treatment 觸發(§6.2,舊條目 deprecated 不硬刪)、拔罐時限改診所慣例+痧斑非絕對語言(§6.3/6.4)、飲水改舒適定位(§6.5)。修 2 個懸空 pattern trigger id(`cold_damp`→`cold_damp_encumbering_spleen`、`spleen_stomach_damp_heat`→`damp_heat_spleen_stomach`)。
+- **UI**(app.js/index.html/styles.css):SOAP 表單 modality.* 勾選群組(11 選項,詞彙驅動);SOAP note 契約 +2 欄(`modalitiesPerformed`、`avsSnapshots` pass-through);SOAP 卡 Checkout 按鈕+AVS 徽章;Checkout dialog 六區(今天/建議勾選改寫/自訂/用藥預覽/回診/觀察)+ 預覽/定稿/更正/歷史版本;定稿與檢視都過零診斷自檢;persist 失敗回滾(R9 gate B 同款)。
+- **驗證**:`validate-avs-library.js` PASS 0 failures(pattern 151/cond 505/modality 11 全解析);`test-avs-checkout.js` E2E `32/32`(§13 Scenario A–G + 攔截測試);content-junk PASS;ratchet PASS no regressions;瀏覽器實走:seed 虛構病例→草稿(5 候選全對)→編輯/勾掉/自訂→定稿 v1→更正 v2→v1 superseded 可讀,invariants OK,病人輸出全文肉眼讀過零內部代碼。
+- **CI 缺口回填**:R14 記錄的 `avsAdviceLibrary`/`clinicProfile` 兩鍵不可重現問題 —— build-data.js 補上兩鍵後 clean rebuild 與 committed bundle 逐位元一致(`git status data/generated/` 空)。
+- **附帶修復**:app.js 開機 TDZ(`AGENT_EXPOSURE_TYPE_LABELS` 等 4 個 const 宣告在初始 render() 之後,首個病例帶 exposures 即崩)—— HEAD 就存在,實走時抓到,宣告前移。
+- **CLI**:generate-avs.js 媒合委派引擎、§6.1 fallback 文字更新、banned list +3 前綴。
+- **重現**:`node scripts/validate-avs-library.js`;`node scripts/test-avs-checkout.js`;`node scripts/build-data.js && git status --short data/generated/`。
+- **下一步**:Sonnet 接 print/CSS 細節與雙語(Phase E);Codex audit finalized immutability/PHI/storage failure/Visit ownership/C2b regression;SOL 審 4 筆 draft 措辭。
+
 # 2026-08-11 Codex — R14 `39de5f1`（Clinical GO / landing PAUSE）
 
 - **Clinical**：六軸=`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`；K `10/2/0`；invariants `3/3/2/5/3 · 0`；Phase E `12`；真 store `0/0`。

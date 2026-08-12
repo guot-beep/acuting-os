@@ -772,6 +772,11 @@
             <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
             <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
             <label class="wide">治療手法 Modalities<input name="modalities" placeholder="艾灸 moxa / 電針 e-stim / 拔罐 cupping / 刮痧 gua sha / 推拿 tuina" /></label>
+            <!-- AVS v3 Phase C(§2.5/§7):結構化療法記錄 modality.* —— Checkout
+                 的權威來源;上面的自由文字欄位保留不動,舊 note 靠文字推斷
+                 fallback。選項由 app.js 從 modalityVocabulary 渲染。 -->
+            <label class="wide">治療項目 Modalities performed<small>結構化勾選,AVS/Checkout 依此判斷今日療法 structured record — Checkout reads this; free text above is legacy fallback</small></label>
+            <div id="modalitiesPerformedOptions" class="checkbox-group wide" role="group" aria-label="Modalities performed"></div>
             <label class="wide">方劑/中藥 Formula &amp; herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
             <label class="wide">Formula record links<textarea name="formulaLinks" rows="2" placeholder="formula.xiao_yao_san, formula.gui_pi_tang"></textarea></label>
             <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
@@ -820,6 +825,17 @@
           <button type="submit" data-mode-text data-bilingual="儲存 SOAP" data-english="Save SOAP">儲存 SOAP</button>
         </div>
       </form>
+    </dialog>
+
+    <!-- AVS v3(Visit Checkout Integration):結帳面板。內容全由 app.js 的
+         renderAvsCheckout() 渲染 —— draft 編輯、finalized 檢視、更正版本
+         都在同一個 dialog,狀態機在 js/avs.js。 -->
+    <dialog id="avsCheckoutDialog" class="avs-checkout-dialog">
+      <div class="dialog-head">
+        <h2 id="avsCheckoutTitle" data-mode-text data-bilingual="結帳 — 診後摘要 AVS" data-english="Checkout — After Visit Summary">結帳 — 診後摘要 AVS</h2>
+        <button class="icon-btn" type="button" id="closeAvsCheckout" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
+      </div>
+      <div id="avsCheckoutBody"></div>
     </dialog>
 
     <dialog id="agentExposureDialog">
@@ -920,6 +936,7 @@
     <script src="js/review.js"></script>
     <script src="js/notes.js"></script>
     <script src="js/clinical-store.js"></script>
+    <script src="js/avs.js"></script>
     <script src="app.js"></script>
     <script src="js/router.js"></script>
     <script src="js/knowledge.js"></script>

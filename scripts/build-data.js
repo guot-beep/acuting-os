@@ -175,6 +175,11 @@ const knowledge = {
   // supplementCategoryVocabulary 同模式掛進 bundle:卡片讀自己的頂層形狀
   // (`records`),不重塑一份副本。
   supplementRecords: readJson("data/supplements/supplements.json"),
+  // AVS v3(Visit Checkout):建議庫 + 診所資訊進 bundle,Checkout 引擎
+  // (js/avs.js)從 ACUTING_KNOWLEDGE 讀 —— PHI-free 靜態 config(§11);
+  // 病人資料永不進這兩份檔案(validate-avs-library.js 把關)。
+  avsAdviceLibrary: readJson("data/config/avs_advice_library.json"),
+  clinicProfile: readJson("data/config/clinic_profile.json"),
 };
 
 // Runtime red-flag resolver — IN THE BUNDLE ONLY (D13: derive, never write

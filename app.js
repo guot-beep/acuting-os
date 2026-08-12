@@ -693,6 +693,14 @@ let selectedCode = points[0]?.code || "";
 let editingCode = null;
 let clinicalCases = loadClinicalCases();
 let selectedCaseId = clinicalCases[0]?.id || "";
+// Meds & Supplements / Environmental exposures 的標籤 const —— 必須在初始
+// render() 之前宣告:renderAgentExposuresPanel / renderEnvironmentalExposuresPanel
+// 在第一次 render(第 ~1200 行)就可能執行,宣告留在面板函式旁是 TDZ,
+// 首個病例帶 exposures 時開機即崩(AVS v3 驗證走查實測抓到,非新引入)。
+const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Supplement" };
+const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
+const ENV_EXPOSURE_CERTAINTY_LABELS = { suspected: "疑似 Suspected", patient_reported: "病人自述 Patient reported", confirmed: "已確認 Confirmed" };
+const ENV_EXPOSURE_TIMING_LABELS = { ongoing: "持續中 Ongoing", historical: "過去 Historical", unknown: "不確定 Unknown" };
 let editingCaseId = null;
 let editingSoapId = null;
 let isSyncingPointHash = false;
@@ -5294,6 +5302,10 @@ function normalizeSoapNote(value) {
     pathomechanism: String(value.pathomechanism || ""),
     treatmentPrinciple: String(value.treatmentPrinciple || ""),
     modalities: String(value.modalities || ""),
+    // AVS v3 Phase C(§2.5):結構化療法記錄,modality.* id 陣列 —— Checkout
+    // 的權威來源(§7 順位 1)。自由文字 modalities 欄位原樣保留,legacy note
+    // 靠文字推斷 fallback(js/avs.js resolveModalities),兩者永不互相改寫。
+    modalitiesPerformed: normalizeStringList(value.modalitiesPerformed),
     advice: String(value.advice || ""),
     westernConditionLinks: normalizeStringList(value.westernConditionLinks),
     easternDiseaseLinks: normalizeStringList(value.easternDiseaseLinks),
@@ -5452,6 +5464,15 @@ function normalizeSoapNote(value) {
             resolvedDate: String(a.resolvedDate || ""),
             notes: String(a.notes || "")
           }))
+      : [],
+    // AVS v3 Phase B(§2.4/§8):Visit-owned 診後摘要 snapshot 陣列。
+    // PASS-THROUGH ON PURPOSE:finalized/superseded snapshot 是不可變歷史
+    // 文件,normalizer 絕不重塑/補欄/剝欄它們的內容 —— 只過濾掉根本不是
+    // 物件的殘渣。狀態機與唯一認可的變更路徑在 js/avs.js(upsertDraft/
+    // finalizeSnapshot/createCorrectionDraft),歷史不變量由
+    // AcuTingAVS.checkAvsInvariants + E2E(scripts/test-avs-checkout.js)把關。
+    avsSnapshots: Array.isArray(value.avsSnapshots)
+      ? value.avsSnapshots.filter((s) => s && typeof s === "object" && s.id)
       : [],
     effectDurationDays: (value.effectDurationDays === 0 || value.effectDurationDays) ? Number(value.effectDurationDays) : "",
     referralOrSupervisorQuestion: String(value.referralOrSupervisorQuestion || ""),
@@ -5772,8 +5793,10 @@ function renderOutcomeTrackingPanel(item) {
 // goes exclusively through AcuTingClinicalStore.applyExposureChange — never a
 // direct row/events mutation (audit B-1 invariant). Legacy currentMeds /
 // westernMeds / medicationLinks are untouched (M-3: the two tracks coexist).
-const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Supplement" };
-const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
+// (宣告移至檔頭 selectedCaseId 附近 —— 初始 render() 在第 ~1200 行就會走到
+// renderAgentExposuresPanel,const 留在這裡是 TDZ:首個病例帶 agentExposures
+// 時開機即崩。AVS v3 驗證走查時實測抓到,非新引入。)
+// (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
 
 // Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md task 2): visit-level
 // Lifestyle / Adverse events repeatable rows inside the SOAP dialog, writing
@@ -6154,8 +6177,8 @@ function promptAgentExposureAction(exposureId, eventType) {
 // this panel's write path is stricter than batch 1's. Write side goes
 // exclusively through AcuTingClinicalStore.createExposure/applyExposureChange
 // — never a direct row/events mutation (audit B-1 invariant).
-const ENV_EXPOSURE_CERTAINTY_LABELS = { suspected: "疑似 Suspected", patient_reported: "病人自述 Patient reported", confirmed: "已確認 Confirmed" };
-const ENV_EXPOSURE_TIMING_LABELS = { ongoing: "持續中 Ongoing", historical: "過去 Historical", unknown: "不確定 Unknown" };
+// (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
+// (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
 
 function renderEnvironmentalExposuresPanel(item) {
   const all = item.environmentalExposures || [];
@@ -6819,6 +6842,13 @@ function renderClinicalCaseDetail(item) {
       openSoapEditor(note);
     });
   });
+  // AVS v3:Visit-level Checkout(§3 Step 2)。
+  caseDetail.querySelectorAll("[data-checkout-soap]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const note = item.soapNotes.find((entry) => entry.id === button.dataset.checkoutSoap);
+      if (note) openAvsCheckout(note.id);
+    });
+  });
   // CS5: timeline node → scroll to that SOAP card + brief highlight
   caseDetail.querySelectorAll("[data-jump-soap]").forEach((node) => {
     node.addEventListener("click", () => {
@@ -7173,7 +7203,9 @@ function renderSoapNoteCard(note) {
         <div class="case-actions">
           <small class="timeline-date">${escapeHtml([note.visitDate, note.fertilityPhase, note.cyclePhase, note.workflowLink, note.cycleDay ? `CD${note.cycleDay}` : ""].filter(Boolean).join(" · "))}</small>
           ${verdictBadge(note.outcomeVerdict)}
+          ${avsStatusBadge(note)}
           <button class="ghost" type="button" data-edit-soap="${escapeAttribute(note.id)}">編輯</button>
+          <button class="ghost" type="button" data-checkout-soap="${escapeAttribute(note.id)}">結帳 Checkout</button>
         </div>
       </div>
       <div class="soap-grid">
@@ -7664,13 +7696,19 @@ function openSoapEditor(note = null) {
     followUp: "",
     differentialConsidered: "",
     reflection: "",
-    ifIneffectivePlan: ""
+    ifIneffectivePlan: "",
+    modalitiesPerformed: []
   };
   const data = { ...fallback, ...(note || {}) };
+  // AVS v3 Phase C:modality.* checkbox 群組先渲染再水合(與 case form 的
+  // raceEthnicity 同款作法)—— checkbox 群組不能走下面的 .value 泛用迴圈。
+  renderModalitiesPerformedOptions();
   Object.entries(data).forEach(([key, value]) => {
+    if (key === "modalitiesPerformed") return;   // checkbox group,下面 setCheckboxGroup 處理
     if (!soapForm.elements[key]) return;
     soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  setCheckboxGroup(soapForm, "modalitiesPerformed", data.modalitiesPerformed);
   // Metadata-driven numeric outcome metrics: one generic render instead of
   // per-metric hydration ifs. Inputs are UI-only (no soap_notes.painScore/
   // sleepHours key exists — they read/write through data.outcomeMetrics).
@@ -7842,7 +7880,10 @@ function saveSoapFromForm(event) {
   event.preventDefault();
   const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
   if (!activeCase) return;
-  const data = Object.fromEntries(new FormData(soapForm).entries());
+  const soapFormData = new FormData(soapForm);
+  const data = Object.fromEntries(soapFormData.entries());
+  // AVS v3 Phase C:checkbox 群組要用 getAll —— fromEntries 只留最後一個值。
+  const modalitiesPerformed = soapFormData.getAll("modalitiesPerformed");
   const current = activeCase.soapNotes.find((note) => note.id === editingSoapId);
   // P1 pre-visit paste-import: consume the stash exactly once, here, at the
   // one authorized save path (pastePrevisitImport itself never writes
@@ -7939,6 +7980,7 @@ function saveSoapFromForm(event) {
     pathomechanism: (data.pathomechanism || "").trim(),
     treatmentPrinciple: (data.treatmentPrinciple || "").trim(),
     modalities: (data.modalities || "").trim(),
+    modalitiesPerformed,
     advice: (data.advice || "").trim(),
     westernConditionLinks: splitList(data.westernConditionLinks),
     easternDiseaseLinks: splitList(data.easternDiseaseLinks),
@@ -8001,7 +8043,14 @@ function saveSoapFromForm(event) {
 
 function deleteCurrentSoap() {
   if (!editingSoapId) return;
-  if (!confirm("確定刪除這筆 SOAP note？")) return;
+  // AVS v3(§8):刪 Visit 會連帶刪掉它擁有的 AVS 歷史文件 —— 有定稿版本
+  // 時必須把這件事講明白,不能讓歷史文件在不知情下消失。
+  const doomedNote = clinicalCases.find((item) => item.id === selectedCaseId)?.soapNotes.find((n) => n.id === editingSoapId);
+  const finalizedCount = (doomedNote?.avsSnapshots || []).filter((s) => s.status === "finalized" || s.status === "superseded").length;
+  const warning = finalizedCount
+    ? `確定刪除這筆 SOAP note?\n\n⚠ 此診有 ${finalizedCount} 份已定稿/歷史 AVS 文件,會一併永久刪除。`
+    : "確定刪除這筆 SOAP note？";
+  if (!confirm(warning)) return;
   const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((item) => {
     if (item.id !== selectedCaseId) return item;
@@ -8012,6 +8061,364 @@ function deleteCurrentSoap() {
   if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   soapDialog.close();
   render();
+}
+
+// ======================  AVS v3 — Visit Checkout  ==========================
+// (AVS_V3_VISIT_CHECKOUT_INTEGRATION_PLAN,2026-08-11)
+// 分工:狀態機/媒合/病人輸出渲染在 js/avs.js(零 DOM、node 可測);這裡只
+// 做 Checkout UI 與持久化。snapshot 唯一落盤路徑 = persistAvsSnapshots()
+// (失敗回滾,同 R9 gate B 模式)。病人可見輸出在預覽與定稿兩處都過
+// checkPatientOutputSafety 零診斷自檢,命中即 abort。
+
+const AVS_CATEGORY_LABELS = {
+  aftercare: "治療後注意",
+  lifestyle: "作息生活",
+  diet: "飲食",
+  exercise: "運動",
+  special: "特別注意",
+  herb_caution: "服藥提醒"
+};
+
+let avsCheckoutNoteId = null;
+let avsWorkingDraft = null;   // 編輯中 draft(in-memory;儲存草稿/定稿才落盤)
+
+function avsStatusBadge(note) {
+  const snaps = note.avsSnapshots || [];
+  if (!window.AcuTingAVS || !snaps.length) return "";
+  if (AcuTingAVS.currentDraft(snaps)) return `<span class="avs-badge avs-badge-draft">AVS 草稿</span>`;
+  if (AcuTingAVS.latestFinalized(snaps)) return `<span class="avs-badge avs-badge-final">AVS ✓</span>`;
+  return "";
+}
+
+// SOAP 表單的 modality.* checkbox 群組(Phase C)—— 與 raceEthnicity 同款:
+// 由 bundled vocabulary 渲染,詞彙成長不再改 index.html。冪等。
+function renderModalitiesPerformedOptions() {
+  const container = document.querySelector("#modalitiesPerformedOptions");
+  if (!container) return;
+  const records = globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records || [];
+  container.innerHTML = records.map((r) =>
+    `<label><input type="checkbox" name="modalitiesPerformed" value="${escapeAttribute(r.id)}" />${escapeHtml(`${r.name_zh} ${r.name_en}`)}</label>`
+  ).join("");
+}
+
+function avsCheckoutContext() {
+  const kase = clinicalCases.find((item) => item.id === selectedCaseId);
+  const note = kase ? kase.soapNotes.find((n) => n.id === avsCheckoutNoteId) : null;
+  return { kase, note };
+}
+
+function avsAgentNameOf(agentId) {
+  if (!agentId) return null;
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  for (const pool of [k.formulas, k.supplementRecords, k.pharmDrugs, k.medications]) {
+    const rec = ((pool && pool.records) || []).find((r) => r.id === agentId);
+    if (rec) return rec.name_zh || rec.name_en || null;
+  }
+  return null;
+}
+
+function buildAvsDraftFor(kase, note, version) {
+  return AcuTingAVS.buildDraftSnapshot({
+    kase,
+    note,
+    library: globalThis.ACUTING_KNOWLEDGE?.avsAdviceLibrary?.records || [],
+    clinic: globalThis.ACUTING_KNOWLEDGE?.clinicProfile || {},
+    modalityVocabulary: globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records || [],
+    outcomeMetricDefs: globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || [],
+    nameOfAgent: avsAgentNameOf,
+    version
+  });
+}
+
+function openAvsCheckout(noteId) {
+  if (!window.AcuTingAVS) { alert("AVS 引擎未載入(js/avs.js)。"); return; }
+  avsCheckoutNoteId = noteId;
+  const { kase, note } = avsCheckoutContext();
+  if (!kase || !note) return;
+  const snaps = note.avsSnapshots || [];
+  const persisted = AcuTingAVS.currentDraft(snaps);
+  // 有 draft → 載入編輯;無 draft 也無 finalized → 依 §3 Step 3 產生草稿
+  // (draft 無副作用,不落盤;絕不自動定稿)。有 finalized 無 draft → 檢視模式。
+  avsWorkingDraft = persisted
+    ? structuredClone(persisted)
+    : (AcuTingAVS.latestFinalized(snaps) ? null : buildAvsDraftFor(kase, note));
+  const dialog = document.querySelector("#avsCheckoutDialog");
+  const closeBtn = document.querySelector("#closeAvsCheckout");
+  if (closeBtn && !closeBtn.dataset.wired) {
+    closeBtn.dataset.wired = "1";
+    closeBtn.addEventListener("click", () => dialog.close());
+  }
+  renderAvsCheckout();
+  dialog.showModal();
+}
+
+// 把 DOM 編輯狀態收回 avsWorkingDraft(勾選/改字/自訂/回診/觀察題)。
+function collectAvsDraftFromDom() {
+  const body = document.querySelector("#avsCheckoutBody");
+  if (!body || !avsWorkingDraft) return;
+  body.querySelectorAll("[data-avs-sel]").forEach((cb) => {
+    const row = avsWorkingDraft.renderedAdvice[Number(cb.dataset.avsSel)];
+    if (row) row.selected = cb.checked;
+  });
+  body.querySelectorAll("[data-avs-text]").forEach((ta) => {
+    const row = avsWorkingDraft.renderedAdvice[Number(ta.dataset.avsText)];
+    if (row) row.text_zh = ta.value;
+  });
+  body.querySelectorAll("[data-avs-custom-text]").forEach((ta) => {
+    const row = avsWorkingDraft.clinicianAddedAdvice[Number(ta.dataset.avsCustomText)];
+    if (row) row.text_zh = ta.value;
+  });
+  body.querySelectorAll("[data-avs-custom-cat]").forEach((sel) => {
+    const row = avsWorkingDraft.clinicianAddedAdvice[Number(sel.dataset.avsCustomCat)];
+    if (row) row.category = sel.value;
+  });
+  const followUp = body.querySelector("[data-avs-followup]");
+  if (followUp) avsWorkingDraft.followUpSnapshot = followUp.value.trim();
+  const keptPrompts = [];
+  body.querySelectorAll("[data-avs-watch]").forEach((cb) => {
+    if (cb.checked) keptPrompts.push(avsWorkingDraft.patientObservationPromptsSnapshot[Number(cb.dataset.avsWatch)]);
+  });
+  if (body.querySelector("[data-avs-watch]") || !avsWorkingDraft.patientObservationPromptsSnapshot.length) {
+    avsWorkingDraft.patientObservationPromptsSnapshot = keptPrompts.filter(Boolean);
+  }
+}
+
+// snapshot 唯一落盤路徑:換掉該 Visit 的 avsSnapshots,persist 失敗回滾
+// (storage 失敗絕不假裝已存 —— persistClinicalCases 已大聲告知)。
+function persistAvsSnapshots(nextSnaps) {
+  const backup = structuredClone(clinicalCases);
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((item) => {
+    if (item.id !== selectedCaseId) return item;
+    return {
+      ...item,
+      updatedAt: now,
+      soapNotes: item.soapNotes.map((n) => n.id === avsCheckoutNoteId ? { ...n, avsSnapshots: nextSnaps } : n)
+    };
+  });
+  if (!persistClinicalCases()) { clinicalCases = backup; return false; }
+  return true;
+}
+
+function avsOpenWindow(html, autoPrint) {
+  const w = window.open("", "_blank");
+  if (!w) { alert("瀏覽器阻擋了彈出視窗,請允許此網站的彈出視窗後再試。"); return; }
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+  if (autoPrint) setTimeout(() => { try { w.print(); } catch (e) { /* 使用者可自行列印 */ } }, 300);
+}
+
+// 檢視/預覽共用:渲染 + 零診斷自檢(§2.2)。命中 = abort,絕不輸出。
+function avsRenderChecked(snapshot, kase, note) {
+  const html = AcuTingAVS.renderPatientHtml(snapshot, { visitDate: note.visitDate || "" });
+  const banned = AcuTingAVS.checkPatientOutputSafety(html, kase);
+  if (banned.length) {
+    alert("SAFETY ABORT:病人輸出含內部代碼/禁用詞,已中止輸出。\n命中:" + banned.join(", ") + "\n請檢查建議文字或自訂指示內容。");
+    return null;
+  }
+  return html;
+}
+
+function renderAvsCheckout() {
+  const body = document.querySelector("#avsCheckoutBody");
+  const { kase, note } = avsCheckoutContext();
+  if (!body || !kase || !note) return;
+  const snaps = note.avsSnapshots || [];
+  const finalized = AcuTingAVS.latestFinalized(snaps);
+  const superseded = snaps.filter((s) => s.status === "superseded").sort((a, b) => Number(b.version) - Number(a.version));
+  const persistedDraft = AcuTingAVS.currentDraft(snaps);
+
+  const historyHtml = (finalized || superseded.length) ? `
+    <section class="avs-co-section avs-co-history">
+      <h3>歷史版本 History</h3>
+      ${finalized ? `<div class="avs-co-history-row"><span>v${escapeHtml(String(finalized.version))} 定稿 ${escapeHtml(finalized.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視</button></div>` : ""}
+      ${superseded.map((s) => `<div class="avs-co-history-row avs-co-superseded"><span>v${escapeHtml(String(s.version))} 已被取代(superseded)· 定稿於 ${escapeHtml(s.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(s.id)}">檢視</button></div>`).join("")}
+    </section>` : "";
+
+  if (!avsWorkingDraft) {
+    // 檢視模式:已定稿、無編輯中草稿。
+    body.innerHTML = `
+      <div class="avs-co-meta">Visit ${escapeHtml(note.visitDate || "")} · ${escapeHtml(kase.patientCode || "")}</div>
+      <section class="avs-co-section">
+        <h3>AVS 已定稿 v${escapeHtml(String(finalized.version))}</h3>
+        <p class="avs-co-final-time">定稿時間:${escapeHtml(finalized.finalizedAt || "")}</p>
+        <div class="avs-co-actions-row">
+          <button type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視 View</button>
+          <button type="button" data-avs-print="${escapeAttribute(finalized.id)}">列印 / 存 PDF</button>
+          <button class="ghost" type="button" id="avsCorrectionBtn">建立更正版本 Create correction</button>
+        </div>
+        <p class="avs-co-note">定稿文件不可修改;更正會建立 v${escapeHtml(String((Number(finalized.version) || 1) + 1))} 草稿,定稿後舊版標記為 superseded、永久保留可讀。</p>
+      </section>
+      ${historyHtml}`;
+  } else {
+    const d = avsWorkingDraft;
+    const sourceNote = d.modalitySource === "inferred"
+      ? `<p class="avs-co-warn">⚠ 治療項目由舊病歷自由文字推斷(legacy fallback),定稿前請確認正確。要改為結構化記錄,請在 SOAP「治療項目 Modalities performed」勾選後重新產生。</p>`
+      : (d.modalitySource === "none" ? `<p class="avs-co-warn">⚠ 此診未找到任何療法記錄 —— 「今天做了什麼」會是空白。</p>` : "");
+    const adviceRows = d.renderedAdvice.map((a, i) => `
+      <div class="avs-co-advice-row">
+        <label class="avs-co-advice-head">
+          <input type="checkbox" data-avs-sel="${i}" ${a.selected !== false ? "checked" : ""} />
+          <span class="avs-co-cat">${escapeHtml(AVS_CATEGORY_LABELS[a.category] || a.category)}</span>
+          <button class="ghost avs-co-why-btn" type="button" data-avs-why="${i}">為什麼建議?</button>
+        </label>
+        <textarea data-avs-text="${i}" rows="2">${escapeHtml(a.text_zh)}</textarea>
+        <div class="avs-co-why" data-avs-why-panel="${i}" hidden><small>Matched(僅醫師端,不進病人文件):${escapeHtml((a.matchedTriggers || []).join("、") || "—")}</small></div>
+      </div>`).join("");
+    const customRows = d.clinicianAddedAdvice.map((a, i) => `
+      <div class="avs-co-advice-row avs-co-custom-row">
+        <div class="avs-co-advice-head">
+          <select data-avs-custom-cat="${i}">
+            ${Object.entries(AVS_CATEGORY_LABELS).map(([id, label]) => `<option value="${escapeAttribute(id)}" ${a.category === id ? "selected" : ""}>${escapeHtml(label)}</option>`).join("")}
+          </select>
+          <button class="ghost" type="button" data-avs-custom-remove="${i}">移除</button>
+        </div>
+        <textarea data-avs-custom-text="${i}" rows="2" placeholder="病人語言,不放診斷詞與內部代碼">${escapeHtml(a.text_zh)}</textarea>
+      </div>`).join("");
+    body.innerHTML = `
+      <div class="avs-co-meta">Visit ${escapeHtml(note.visitDate || "")} · ${escapeHtml(kase.patientCode || "")} · 草稿 v${escapeHtml(String(d.version))}${finalized ? ` (更正 v${escapeHtml(String(finalized.version))})` : ""}</div>
+      <section class="avs-co-section">
+        <h3>1 · 今天 Today</h3>
+        ${d.todayCare.length ? `<p>${d.todayCare.map(escapeHtml).join("、")}</p>` : `<p class="avs-co-empty">無療法記錄</p>`}
+        ${sourceNote}
+      </section>
+      <section class="avs-co-section">
+        <h3>2 · 建議指示 Suggested instructions</h3>
+        ${adviceRows || `<p class="avs-co-empty">沒有符合的建議(可加自訂指示)。</p>`}
+      </section>
+      <section class="avs-co-section">
+        <h3>3 · 自訂指示 Custom instructions</h3>
+        ${customRows}
+        <button class="ghost" type="button" id="avsAddCustomBtn">+ 新增自訂指示</button>
+      </section>
+      <section class="avs-co-section">
+        <h3>4 · 中藥/營養品 Medicines & herbs</h3>
+        ${d.medicationInstructionsSnapshot.length ? `<table class="avs-co-med-table"><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${d.medicationInstructionsSnapshot.map((r) => `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.dose)}</td><td>${escapeHtml(r.freq)}</td></tr>`).join("")}</table><p class="avs-co-note">來源:病例用藥帳(active);要調整請回 Meds & Supplements ledger 再重新產生。</p>` : `<p class="avs-co-empty">目前沒有 active 的中藥/營養品。</p>`}
+      </section>
+      <section class="avs-co-section">
+        <h3>5 · 回診 Follow-up</h3>
+        <input type="text" data-avs-followup value="${escapeAttribute(d.followUpSnapshot)}" placeholder="例:兩週後回診" />
+      </section>
+      <section class="avs-co-section">
+        <h3>6 · 自我觀察 What to watch</h3>
+        ${d.patientObservationPromptsSnapshot.length ? d.patientObservationPromptsSnapshot.map((p, i) => `<label class="avs-co-watch-row"><input type="checkbox" data-avs-watch="${i}" checked />${escapeHtml(p)}</label>`).join("") : `<p class="avs-co-empty">此病例尚無追蹤指標題面。</p>`}
+        <p class="avs-co-note">通用警示(症狀加重/發燒/過敏反應等就醫指引)一律自動附在文件中。</p>
+      </section>
+      ${historyHtml}
+      <div class="dialog-actions">
+        <button class="ghost" type="button" id="avsRegenBtn">重新產生</button>
+        ${persistedDraft ? `<button class="ghost" type="button" id="avsDiscardBtn">捨棄草稿</button>` : ""}
+        <span></span>
+        <button class="ghost" type="button" id="avsSaveDraftBtn">儲存草稿</button>
+        <button class="ghost" type="button" id="avsPreviewBtn">預覽 Preview</button>
+        <button type="button" id="avsFinalizeBtn">定稿 Finalize</button>
+      </div>`;
+  }
+  wireAvsCheckoutEvents();
+}
+
+function wireAvsCheckoutEvents() {
+  const body = document.querySelector("#avsCheckoutBody");
+  const { kase, note } = avsCheckoutContext();
+  if (!body || !kase || !note) return;
+  const snaps = note.avsSnapshots || [];
+
+  body.querySelectorAll("[data-avs-view]").forEach((btn) => btn.addEventListener("click", () => {
+    const snap = snaps.find((s) => s.id === btn.dataset.avsView);
+    if (!snap) return;
+    const html = avsRenderChecked(snap, kase, note);
+    if (html) avsOpenWindow(html, false);
+  }));
+  body.querySelectorAll("[data-avs-print]").forEach((btn) => btn.addEventListener("click", () => {
+    const snap = snaps.find((s) => s.id === btn.dataset.avsPrint);
+    if (!snap) return;
+    const html = avsRenderChecked(snap, kase, note);
+    if (html) avsOpenWindow(html, true);
+  }));
+  body.querySelectorAll("[data-avs-why]").forEach((btn) => btn.addEventListener("click", () => {
+    const panel = body.querySelector(`[data-avs-why-panel="${btn.dataset.avsWhy}"]`);
+    if (panel) panel.hidden = !panel.hidden;
+  }));
+
+  const correctionBtn = body.querySelector("#avsCorrectionBtn");
+  if (correctionBtn) correctionBtn.addEventListener("click", () => {
+    try {
+      avsWorkingDraft = AcuTingAVS.createCorrectionDraft(snaps);
+    } catch (e) { alert(e.message); return; }
+    renderAvsCheckout();
+  });
+
+  if (!avsWorkingDraft) return;   // 以下皆 draft 編輯模式
+
+  const addCustomBtn = body.querySelector("#avsAddCustomBtn");
+  if (addCustomBtn) addCustomBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    avsWorkingDraft.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "" });
+    renderAvsCheckout();
+  });
+  body.querySelectorAll("[data-avs-custom-remove]").forEach((btn) => btn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    avsWorkingDraft.clinicianAddedAdvice.splice(Number(btn.dataset.avsCustomRemove), 1);
+    renderAvsCheckout();
+  }));
+
+  const regenBtn = body.querySelector("#avsRegenBtn");
+  if (regenBtn) regenBtn.addEventListener("click", () => {
+    if (!confirm("重新產生會重算媒合建議,勾選與建議文字的編輯會被重置(自訂指示與回診欄保留)。continue?")) return;
+    collectAvsDraftFromDom();
+    const regenerated = buildAvsDraftFor(kase, note, avsWorkingDraft.version);
+    regenerated.clinicianAddedAdvice = avsWorkingDraft.clinicianAddedAdvice;
+    regenerated.followUpSnapshot = avsWorkingDraft.followUpSnapshot;
+    avsWorkingDraft = regenerated;
+    renderAvsCheckout();
+  });
+
+  const discardBtn = body.querySelector("#avsDiscardBtn");
+  if (discardBtn) discardBtn.addEventListener("click", () => {
+    if (!confirm("捨棄已儲存的草稿?(已定稿的歷史版本不受影響)")) return;
+    if (!persistAvsSnapshots(snaps.filter((s) => s.status !== "draft"))) return;
+    avsWorkingDraft = null;
+    render();
+    renderAvsCheckout();
+  });
+
+  const saveDraftBtn = body.querySelector("#avsSaveDraftBtn");
+  if (saveDraftBtn) saveDraftBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    if (!persistAvsSnapshots(AcuTingAVS.upsertDraft(snaps, avsWorkingDraft))) return;
+    render();
+    renderAvsCheckout();
+  });
+
+  const previewBtn = body.querySelector("#avsPreviewBtn");
+  if (previewBtn) previewBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    // 預覽 = 病人會拿到的樣子(§3 Step 6):renderPatientHtml 只渲染勾選項,
+    // 診斷後設資料(matchedTriggers)結構上不進渲染器。
+    const html = avsRenderChecked(avsWorkingDraft, kase, note);
+    if (html) avsOpenWindow(html, false);
+  });
+
+  const finalizeBtn = body.querySelector("#avsFinalizeBtn");
+  if (finalizeBtn) finalizeBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    if (avsWorkingDraft.modalitySource === "inferred") {
+      if (!confirm("⚠ 治療項目由舊自由文字推斷(非結構化記錄)。已確認「今天」區塊內容正確?")) return;
+    }
+    let nextSnaps;
+    try {
+      nextSnaps = AcuTingAVS.finalizeSnapshot(AcuTingAVS.upsertDraft(snaps, avsWorkingDraft), avsWorkingDraft.id);
+    } catch (e) { alert(e.message); return; }
+    const fin = nextSnaps.find((s) => s.id === avsWorkingDraft.id);
+    const html = avsRenderChecked(fin, kase, note);
+    if (!html) return;   // 零診斷自檢未過,不定稿
+    if (!confirm(`定稿 AVS v${fin.version}?定稿後文件不可修改;之後的更正會建立新版本,舊版標記 superseded。`)) return;
+    if (!persistAvsSnapshots(nextSnaps)) return;
+    avsWorkingDraft = null;
+    render();
+    renderAvsCheckout();
+  });
 }
 
 function exportClinicalCases() {

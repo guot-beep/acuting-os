@@ -71,28 +71,13 @@ const prompts = [...tracked].map((id) => {
   return def && def.patient_prompt_zh ? def.patient_prompt_zh : null;
 }).filter(Boolean).slice(0, 4);
 
-// v2 生活醫囑:visit 證型 + case 病症/safetyFlags + 當日療法(technique/plan
-// 關鍵字推斷)挑建議 —— 觸發條件絕不輸出,只輸出 advice_zh(病人語言)。
-const visitPatterns = new Set((note.tcmPatternSelections || []).map((x) => x.patternId));
-const caseConds = new Set([...(kase.westernConditions || []), ...(kase.easternDiseases || [])]);
-const caseFlags = (kase.safetyFlags || []).map(String);
-const techText = [note.technique, note.plan, note.objective].filter(Boolean).join(" ");
-const modalitiesToday = new Set();
-if ((note.acupointLinks || []).length || note.pointsUsed) modalitiesToday.add("modality.acupuncture");
-if (/電針/.test(techText)) modalitiesToday.add("modality.electroacupuncture");
-if (/拔罐/.test(techText)) modalitiesToday.add("modality.cupping");
-if (/刮痧/.test(techText)) modalitiesToday.add("modality.gua_sha");
-if (/放血|點刺/.test(techText)) modalitiesToday.add("modality.bloodletting");
-if (/灸/.test(techText)) modalitiesToday.add("modality.moxibustion");
-const matchedAdvice = ADVICE.filter((a) => {
-  const t = a.triggers || {};
-  if ((t.patterns || []).some((p) => visitPatterns.has(p))) return true;
-  if ((t.conditions || []).some((c) => caseConds.has(c))) return true;
-  if ((t.modalities || []).some((m) => modalitiesToday.has(m))) return true;
-  if ((t.safetyFlags || []).some((f) => caseFlags.some((cf) => cf.includes(f)))) return true;
-  if (t.any_herbs && medRows.length) return true;
-  return false;
-});
+// v3:媒合委派給共用引擎(js/avs.js)—— 結構化 modalitiesPerformed 優先、
+// legacy 文字推斷 fallback、safety 旗標別名正規化後精確比對(不再子字串)。
+// 觸發條件絕不輸出,只輸出 advice_zh(病人語言)。
+require(path.join(__dirname, "..", "js", "avs.js"));
+const AVS = globalThis.AcuTingAVS;
+const avsCtx = AVS.buildMatchContext(kase, note);
+const matchedAdvice = AVS.matchAdvice(ADVICE, avsCtx).map((m) => m.rule);
 const byCat = (cat) => matchedAdvice.filter((a) => a.category === cat).map((a) => a.advice_zh);
 
 const esc = (s) => String(s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
@@ -117,7 +102,7 @@ ul{margin:4px 0;padding-left:20px}
 <div class="date">日期:${esc(note.visitDate)}</div>
 ${sec("today", "今天做了什麼", didToday.length ? `<p>${didToday.map(esc).join("、")}。</p>` : "")}
 ${sec("summary", "近況小結", note.avsSummary ? `<p>${esc(note.avsSummary)}</p>` : "")}
-${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#66717a">${esc(byCat("herb_caution").join(" ") || "中藥與西藥請間隔至少 1 小時服用;有任何不適先暫停並聯絡我們。")}</p>` : "")}
+${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#66717a">${esc(byCat("herb_caution").join(" ") || "請依本次提供的方式使用中藥或營養品;若同時使用處方藥或其他長期用藥,請讓醫療團隊知道,不要自行停藥或更改劑量;有任何不適先暫停並聯絡我們。")}</p>` : "")}
 ${sec("aftercare", "今日治療後注意事項", byCat("aftercare").length ? "<ul>" + byCat("aftercare").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
 ${sec("special", "特別注意", byCat("special").length ? "<ul>" + byCat("special").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
 ${sec("lifestyle", "作息與生活建議", (byCat("lifestyle").length || note.avsLifestyle) ? (byCat("lifestyle").length ? "<ul>" + byCat("lifestyle").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "") + (note.avsLifestyle ? "<p>" + esc(note.avsLifestyle) + "</p>" : "") : "")}
@@ -130,7 +115,7 @@ ${sec("followup", "下次回診與自我觀察", `${note.followUp ? `<p>回診�
 </div></body></html>`;
 
 // 零診斷自檢:輸出不得含病名/證型/代碼類詞彙(粗篩 + patientCode)
-const banned = [kase.patientCode, "ICD", "CPT", "cond.", "pattern.", "tdis."].filter(Boolean);
+const banned = [kase.patientCode, "ICD", "CPT", "cond.", "pattern.", "tdis.", "safety.", "modality.", "metric."].filter(Boolean);
 for (const b of banned) if (html.includes(b)) { console.error(`SAFETY ABORT: output contains banned token "${b}"`); process.exit(1); }
 
 const out = arg("--out");
