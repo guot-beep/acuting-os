@@ -13,6 +13,13 @@ const ROOT = path.resolve(__dirname, '..');
 const DRUGS_PATH = path.join(ROOT, 'data/pharmacology/drugs.json');
 const CLASSES_PATH = path.join(ROOT, 'data/pharmacology/drug_classes.json');
 
+// 這兩行把當下的檔案內容當成「原始檔」,結束時寫回去。若此刻檔案已經被別的
+// 行程改壞,還原就會把壞資料寫成永久狀態(2026-08-12 實際發生)。先確認乾淨。
+require('./lib/pharm-fixture-guard').assertFixturesClean(ROOT, [
+  'data/pharmacology/drugs.json', 'data/pharmacology/drug_classes.json',
+  'data/pharmacology/medlineplus_verified_links.json',
+]);
+
 const origDrugs = fs.readFileSync(DRUGS_PATH, 'utf8');
 const origClasses = fs.readFileSync(CLASSES_PATH, 'utf8');
 
