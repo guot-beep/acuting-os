@@ -442,11 +442,24 @@
   // verify individual taste and temperature."\u3002\u90A3\u4E0D\u662F\u5F85\u9A57\u8B49\u7684\u5167\u5BB9,\u90A3\u662F
   // \u300C\u9084\u6C92\u6709\u4EBA\u5BEB\u300D\u7684\u81EA\u767D,\u986F\u793A\u5B83\u6BD4\u7559\u767D\u66F4\u7CDF:\u8B80\u7684\u4EBA\u6703\u4EE5\u70BA\u90A3\u5C31\u662F\u9019\u5473\u85E5\u7684\u6027\u5473\u3002
   // \u9019\u88E1\u53EA\u8A8D\u532F\u5165\u5668\u7522\u751F\u7684\u56FA\u5B9A\u53E5\u578B,\u4E0D\u505A\u6CDB\u7528\u82F1\u6587\u5075\u6E2C \u2014\u2014 \u4E2D\u82F1\u5C0D\u7167\u6B04\u4F4D\u672C\u4F86\u5C31\u6709\u82F1\u6587\u3002
-  const PLACEHOLDER_RE = /^(draft:|review .+ before clinical use\.?$|verify against .+ before |pattern documentation context only)/i;
+  // \u9328\u9EDE\u4FEE\u6B63(2026-08-12,\u540C\u65E5\u7B2C\u4E8C\u6B21):\u7B2C\u4E00\u7248\u53EA\u7528 ^ \u958B\u982D\u6BD4\u5C0D,\u6F0F\u6389 243 \u500B
+  // \u628A\u540C\u4E00\u53E5\u578B\u653E\u5728\u53E5\u4E2D/\u53E5\u5C3E\u7684\u5B57\u4E32,\u4F8B\u5982
+  //   "Exterior pattern documentation context only"
+  //   "Often studied with qi tonics or blood-moving herbs depending on pattern;
+  //    verify against Bensky before source_checked."
+  // \u5F8C\u8005\u9010\u5B57\u76F8\u540C\u5730\u51FA\u73FE\u5728\u767D\u828D\u3001\u7576\u6B78\u3001\u719F\u5730\u9EC3\u3001\u963F\u81A0\u4E0A \u2014\u2014 \u56DB\u5473\u4E0D\u540C\u7684\u85E5\u5171\u7528\u4E00\u53E5\u8A71,
+  // \u5B9A\u7FA9\u4E0A\u5C31\u4E0D\u662F\u8A72\u85E5\u7684\u5167\u5BB9;\u800C "before source_checked" \u662F\u5167\u90E8\u6D41\u7A0B\u8A3B\u8A18\u5916\u6D29\u3002
+  // \u7528\u300C\u6574\u4E32\u7D50\u5C3E\u5373\u8A72\u53E5\u578B\u300D\u800C\u975E\u4EFB\u610F\u4F4D\u7F6E\u6BD4\u5C0D,\u907F\u514D\u8AA4\u50B7\u771F\u7684\u63D0\u5230 verify \u7684\u53E5\u5B50\u3002
+  const PLACEHOLDER_RES = [
+    /^draft:/i,
+    /^review .+ before clinical use\.?$/i,
+    /verify against .+ before source_checked\.?$/i,
+    /pattern documentation context only\.?$/i,
+  ];
   function usableText(value) {
     const text = String(value || "").trim();
     if (!text || /\?{2,}/.test(text) || text.includes("\uFFFD")) return "";
-    if (PLACEHOLDER_RE.test(text)) return "";
+    if (PLACEHOLDER_RES.some((re) => re.test(text))) return "";
     return text;
   }
 
