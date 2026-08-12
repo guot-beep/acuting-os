@@ -1,8 +1,39 @@
 # COND_FULLDETAIL_EYESON_01 — 全細節病症卡人眼審查（第 1–30 筆）
 
-狀態：**findings ledger only. 本次沒有動 `data/**` 一個字元。**
+狀態：**findings ledger + 修正紀錄。** 原始審查（本檔案 §0–§3 主文）沒有動
+`data/**` 一個字元；下方每條 finding 的狀態列是後續修正批次補記的。
 Branch：`codex/cond-eyeson-1`（自 `origin/codex/pattern-v2` tip `e3dabd4`）
 日期：2026-08-12
+
+## 修正狀態總覽（2026-08-12，branch `codex/cond-eyeson-fixes-1`）
+
+| Finding | 狀態 | commit |
+|---|---|---|
+| F-01 breech_presentation（SAFETY） | **RELOCATED**（止血；BL67 處方重建仍 OPEN，需 Ting） | `e8843e1` |
+| F-02 depression（SAFETY） | **RELOCATED**（etiology/western_pathology 四欄搬走留空；`aliases_zh` 的「神經衰弱」問題仍 OPEN，需 Ting） | `e8843e1` |
+| F-03 chronic_gastritis 部落格汙染 | OPEN（需 Ting 先看過） | — |
+| F-04 asthma 部落格汙染 + 穴位格式 | OPEN（需 Ting 先看過；穴位 id 格式問題見 F-17） | — |
+| F-05 bells_palsy 解剖錯誤 + 證型連結 | **FIXED** | `b2a1365` |
+| F-06 cervical_spondylosis 方劑/穴位傾倒 | OPEN（需 Ting 先看過；`import_artifacts` 已示範正確流程，未擴大處理） | — |
+| F-07 樣板治療區塊（8 筆／全庫 74 筆） | OPEN（`cond.breech_presentation` 因孕期安全已優先處理，見 F-01；其餘 7 筆＋全庫 66 筆仍 OPEN，是產品層取捨，需 Ting） | — |
+| F-08 bppv red flag 分級 | **FIXED** | `b2a1365` |
+| F-09 diminished_ovarian_reserve red flags 混入非安全條目 | OPEN | — |
+| F-10 acupuncture_scope 來源誤植（5 筆） | **FIXED** | `b2a1365` |
+| F-11 red flag 來源為不可回溯通則（2 筆） | OPEN | — |
+| F-12 eczema evidence 分級錯誤 | **FIXED** | `b2a1365` |
+| F-13 aneurysm 譯名 | OPEN | — |
+| F-14 etiology 與 risk_factors 重複 | OPEN | — |
+| F-15 acute_pancreatitis 中英強度不一致 | **FIXED** | `b2a1365` |
+| F-16 `&hellip;` 殘留（4 筆） | **FIXED** | `b2a1365` |
+| F-16 `classical_references_en` 全缺（5 筆） | OPEN（需 Ting 決定：翻譯／暫留單邊／整欄留空） | — |
+| F-17 `acupoint_protocols` 兩種 shape／非正規 code（4 筆） | OPEN | — |
+| F-18 chronic_low_back_pain 樣板只清了一半 | OPEN | — |
+
+**未做（本輪修正範圍聲明）**：只處理派工單指名的 B1–B6（13 筆機械修正）與
+F-01／F-02 兩個 SAFETY 止血。沒有讀第 31–92 筆。沒有處理 F-07 全庫 74 筆
+樣板治療區塊（產品取捨，需 Ting）、F-03/F-04/F-06 的部落格內文搬遷（每筆
+3000–5000 字，需 Ting 先看過）、F-16 的 `classical_references_en` 翻譯缺口、
+F-17 的穴位 id 格式映射。
 
 ---
 
