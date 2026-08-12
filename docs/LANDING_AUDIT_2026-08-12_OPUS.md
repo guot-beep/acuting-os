@@ -247,3 +247,54 @@ UI 還原)。已於 `ce00e95` 把 `origin/main` 併入分支,**main-only 由 2 �
 ### 降落前最後一次必做(因為它會靜默失效)
 
 `mergeable_state` 必須在**執行降落的當下**重新確認為 `clean`。main 會被其他線推進(內容線經 antigravity worktree 的 update.bat 推 main 是既有流程),而 **PR 一旦與 main 衝突,GitHub 連 workflow run 都不會建立** —— 沒有紅叉,gate 無聲消失。2026-08-12 實際發生過約 3 小時。
+
+---
+
+## 降落就緒狀態覆核 #2(Fable,2026-08-12;本節取代上方所有較舊的量測)
+
+上方 §1–§3 的數字是本文撰寫當時(`dab9ae8`)量的,**已過時** —— 之後 branch 前進了
+一百多個 commit、main 也被併入。以下是重新量的。
+
+| 條件 | 值 | 重現 |
+|---|---|---|
+| branch HEAD | `d569c709` | `git rev-parse --short HEAD` |
+| merge-base | `74c63a2` | `git merge-base origin/main origin/codex/pattern-v2` |
+| main-only / branch-only | **0 / 516** | `git rev-list --left-right --count origin/main...origin/codex/pattern-v2` |
+| main 是否為祖先 | **是** —— 降落是單向快進,§3 的三方合併程序**不再適用** | `git merge-base --is-ancestor origin/main HEAD` |
+| PR #59 | `open` · `mergeable: true` · `mergeable_state: clean` | API `pulls/59` |
+| workflow 直接執行的 validator | **36 個指令,本機 0 失敗** | 見下方註 |
+| 最後一個 **code** commit 的 CI | `03942336` → 4 jobs success,green job **44 步跑滿** | run `31646656518` |
+| HEAD 的 CI | `d569c709` 是 docs-only,preflight 正確跳過重 validators —— **這個綠燈不代表全 CI** | run `31646727117` |
+
+### 一個容易誤讀的點(記下來,免得下一位當成 blocker)
+
+`node scripts/validate-condition-standard.js` 在本機 **exit 1**(C5:4 個 `_zh` 有值
+但 `_en` 空,3 張卡)。**這不是 CI 阻斷** —— 它不在 green job 裡,而是由
+`check-validation-ratchet.js` 以基準比對的方式管理(基準已鎖 4,ratchet PASS)。
+這是這個 repo 刻意的兩層設計:有誠實 backlog 的層走 ratchet,只准變好不准變壞。
+直接跑它看到 FAIL 而以為 CI 紅了,是假陽性。
+
+### 並行線新增、已進 green job 的 validator(本機皆 PASS)
+
+`validate-field-shape-consistency`、`validate-formula-composition-signatures`、
+`validate-formula-safety-predicates`、`validate-herb-integrity-predicates`、
+`validate-acupoint-source-conflicts` —— 全部 blocking 且通過,green job 因此從
+34 步長到 44 步。
+
+### 仍未滿足的降落前置
+
+| # | 條件 | 現況 |
+|---|---|---|
+| P-1 | P1 transport 獨立覆測 GO | **未滿足**。Codex 額度用盡至 8/18;改由隔離 Opus 覆測,它在我的修復裡又找到 3 HIGH(全已修,`03942336`),**但那輪修復尚未經第二次獨立覆測**。 |
+| P-2 | AVS v3 六軸 GO | 已滿足(`2ddced2`) |
+| P-3 | formula 0 blocking | 已滿足 |
+| P-4 | exact-SHA 全綠 CI | 已滿足於 `03942336`;**降落候選 SHA 需重新取得一次** |
+| P-5 | export/import 無損 | 已滿足(§6) |
+| P-6 | knowledge.js 合併計畫 | **已不適用** —— main 已是祖先 |
+| P-7 | 真實病人 migration / pointer switch | 不在降落範圍 |
+
+### 降落當下必做(會靜默失效的那一項)
+
+`mergeable_state` 必須在**執行降落的當下**重新確認為 `clean`。PR 一旦與 main 衝突,
+GitHub **連 workflow run 都不會建立** —— 沒有紅叉,gate 無聲消失(2026-08-12 實際
+發生過約三小時)。
