@@ -413,6 +413,39 @@ BL13 肺俞就是差異來源的典型:`needling` 寫 0.5-0.7 寸,但它自己�
 **推翻方式**:刪掉 `app.js` 的 `needlingDepthConflict()` 與 `needlingArticle()` 開頭那段
 `rawConflict/softConflict` 分支,數字就全部回來。這是純顯示層,資料一個字沒動。
 
+### E7 條件卡接上針灸範圍/風險因子/西醫欄位,並修掉 3 筆 can_treat 與 precautions 對調
+
+接上畫面的是 `acupuncture_scope`(184)、`risk_factors`(183)、`western_pathology`(213)、
+`western_context`(190)。其中 `acupuncture_scope` 對診所最重要,因為它是結構化的
+「能做到哪裡 / 什麼不能碰 / 跟哪一科共管」,而且逐筆有來源。
+
+**上線前掃描抓到的資料錯誤(已在資料層搬回原位,文字一字未改)**:
+
+| 卡 | 欄位 | 狀況 |
+|---|---|---|
+| `cond.myocardial_infarction` | `_zh` + `_en` | can_treat 寫著「絕不應以針灸處理」,precautions 寫著復原期輔助指引 —— 兩個標題底下的內容完全相反 |
+| `cond.transient_ischemic_attack` | `_zh` + `_en` | 同上 |
+
+**我第一版判錯了一筆,寫在這裡因為它決定了這批數字可不可信**:我一開始的判準是
+「can_treat 像排除語氣 **且** precautions 像可治療」,結果(a)漏掉心肌梗塞的中文側
+——它的 precautions 寫「輔助**性**針灸」,而我的名單只有「輔助照護/輔助治療」;
+(b)誤判肺栓塞英文側並互換,但那張卡的 precautions 本來就是注意事項,換過去變成
+「針灸可作為:檢視出血風險」,語意不通,已還原。改用單邊判準覆核 368 組。
+
+**另外一個是我的標題在說謊,不是資料錯**:全庫有 29 張卡的 `can_treat` 寫的是
+「不適用」「不屬針灸處置範圍」(闌尾炎、腸阻塞、馬尾症候群、子宮外孕、急性 PE…),
+那是**正確的寫法**。但我固定印「針灸可作為」當標題,就變成
+「針灸可作為:疑似急性PE不屬於常規針灸處置範圍」—— 標題與內容打架,而且打架的方向
+剛好是危險的那一邊。改成標題跟著內容走:偵測到排除語氣就印「⚠️ 針灸範圍限制」。
+實測 29 張走限制標題、155 張走可作為標題、**標題與內容相反的 0 張**。
+
+順帶:`cond.herpes_zoster` 的 `western_pathology_zh` 夾著一段會員個人經歷
+(「2023年時有一位會員分享…」),已移入 `import_artifacts` 保留,不是刪除。
+`cond.raynaud` 舊 ledger 記的 can_treat/precautions 互換**已經修好了**,這輪覆核確認。
+
+**推翻方式**:`js/knowledge.js` 的 `scopeBlock` / `riskBlock` / `longTextBlock` 三個函式
+與 renderConditions 裡對它們的呼叫拿掉即可。資料層的三筆互換要還原的話,見上表。
+
 ### E6 實作西藥詳卡,讓 25 個黑框警告第一次上畫面(A0c 的第一步)
 
 「查看西藥卡」按鈕先前是壞的:`openKnowledgeDetail` 只認得 formula 與 herb,

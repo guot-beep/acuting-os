@@ -2789,6 +2789,65 @@
         entry.evidence ? ` <small>${esc(entry.evidence)}</small>` : ""
       }</p>`;
     };
+    /* 條件卡的西醫欄位與針灸範圍(2026-08-12,A0c 條件層)。
+     *
+     * 這幾欄先前完全沒上過畫面:western_pathology(213)、western_context(190)、
+     * acupuncture_scope(184)、risk_factors(183)、summary_en(190)。
+     *
+     * `acupuncture_scope` 是其中對診所最重要的一個,而且它不是自由文字而是結構:
+     *   can_treat / precautions / co_management / evidence / source
+     * 也就是「這個病針灸能做到哪裡、什麼情況不能碰、要跟哪一科共管」。
+     * 上線前掃描抓到 4 筆 can_treat 與 precautions **內容對調**(肺栓塞、心肌梗塞、
+     * TIA),已在資料層搬回原位 —— 把急症排除文字印在「可以治療」標題下,
+     * 會讓臨床做出相反的決定。
+     *
+     * precautions 用警示樣式且排在 can_treat 前面:讀的人要先知道什麼不能碰。
+     * 長段落(西醫病理/脈絡)收在 <details> 裡,免得把卡片撐爆 —— 但預設收合的是
+     * 敘述性內容,安全相關的一律攤開。 */
+    const scopeBlock = (c) => {
+      const s = (contentMode === "english" ? c.acupuncture_scope_en : c.acupuncture_scope_zh)
+        || c.acupuncture_scope_zh || c.acupuncture_scope_en;
+      if (!s || typeof s !== "object") return "";
+      const row = (label, val, cls) => usableText(val)
+        ? `<p class="${cls}"><strong>${esc(label)}</strong> ${esc(usableText(val))}</p>` : "";
+      /* can_treat 不一定是「可以做什麼」。全庫有一批卡(闌尾炎、腸阻塞、馬尾症候群、
+       * 子宮外孕、急性 PE…)在這一欄寫的是「不適用」「不屬針灸處置範圍」——
+       * 那是正確的寫法。但固定印「針灸可作為」當標題,就會變成
+       * 「針灸可作為:疑似急性PE不屬於常規針灸處置範圍」,標題與內容互相打架,
+       * 而打架的方向剛好是危險的那一邊。標題跟著內容走,不要假設欄位語氣。 */
+      const canText = usableText(s.can_treat);
+      const canIsExclusion = /不適用|不屬|不得|絕不應|不應以|須立即|not applicable|outside (routine|the scope)|should never|is an emergency|requires emergency/i.test(canText);
+      const body = [
+        row(modeText("⚠️ 不可單獨處理 / 注意", "⚠️ Precautions"), s.precautions, "k-scope-precaution"),
+        row(canIsExclusion ? modeText("⚠️ 針灸範圍限制", "⚠️ Out of scope")
+                           : modeText("針灸可作為", "Acupuncture may serve as"),
+            s.can_treat, canIsExclusion ? "k-scope-precaution" : "k-scope-can"),
+        row(modeText("共同照護", "Co-management"), s.co_management, "k-scope-co"),
+      ].join("");
+      if (!body) return "";
+      return `<div class="k-condition-scope"><strong>${esc(modeText("針灸範圍 Scope", "Acupuncture scope"))}</strong>
+        ${body}
+        ${usableText(s.source) ? `<small>${esc(modeText("來源:", "Source: "))}${esc(usableText(s.source))}</small>` : ""}</div>`;
+    };
+
+    const riskBlock = (c) => {
+      const list = (contentMode === "english" ? c.risk_factors_en : c.risk_factors_zh) || c.risk_factors_zh || [];
+      if (!Array.isArray(list) || !list.length) return "";
+      const items = list.filter((x) => x && x.factor).map((x) => {
+        const dir = x.direction === "decreases" ? "↓" : "↑";
+        const mod = x.modifiable === true ? modeText("可介入", "modifiable") : x.modifiable === false ? modeText("不可改變", "fixed") : "";
+        return `<li>${esc(dir)} ${esc(x.factor)}${mod ? ` <small>(${esc(mod)})</small>` : ""}</li>`;
+      });
+      if (!items.length) return "";
+      return `<details class="k-condition-related"><summary>${esc(modeText(`風險因子（${items.length}）`, `Risk factors (${items.length})`))}</summary><ul>${items.join("")}</ul></details>`;
+    };
+
+    const longTextBlock = (c, labelZh, labelEn, zhKey, enKey) => {
+      const text = usableText(contentMode === "english" ? (c[enKey] || c[zhKey]) : (c[zhKey] || c[enKey]));
+      if (!text) return "";
+      return `<details class="k-condition-related"><summary>${esc(modeText(labelZh, labelEn))}</summary><p>${esc(text).replace(/\n/g, "<br>")}</p></details>`;
+    };
+
     const renderConditions = (list) => list.map((c) => {
       const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
@@ -2807,6 +2866,10 @@
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
           ${redFlagRows(c)}
+          ${scopeBlock(c)}
+          ${riskBlock(c)}
+          ${longTextBlock(c, "西醫病理 Western pathology", "Western pathology", "western_pathology_zh", "western_pathology_en")}
+          ${longTextBlock(c, "西醫脈絡 Western context", "Western context", "western_context_zh", "western_context_en")}
           ${conditionSources(c)}${cloudRefBlock(c.id)}
         </article>`;
     }).join("");
