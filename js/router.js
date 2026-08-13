@@ -15,7 +15,9 @@
  * This file deliberately does not touch app.js internals.
  */
 (function () {
-  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "pharm", "condition", "comparison", "cases", "patients", "quality", "sources"];
+  // symptom 是白名單制的 —— 不在這個陣列裡的 hash 會被導回 home,所以新增
+  // workspace 一定要同時改這裡,否則 section 與 nav 都在、點了卻回首頁。
+  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "pharm", "symptom", "condition", "comparison", "cases", "patients", "quality", "sources"];
   const DEFAULT_WS = "home";
   const sections = Array.from(document.querySelectorAll("section[data-workspace]"));
   const navLinks = Array.from(document.querySelectorAll(".workspace-nav a[data-ws]"));

@@ -2369,6 +2369,77 @@
   // pages attach to the cards they describe instead of keeping a parallel
   // classification. The 8/6 bl-refinement merge resolved this file to the
   // pre-rebuild side and silently brought the old tab back — restored 8/7.
+  /* 症狀卡(2026-08-12,A0c 症狀層)。
+   *
+   * 這一層 102 筆記錄先前**完全沒有畫面入口** —— 不是欄位沒接,是整層沒有 UI。
+   * 而裡面放的正是診間會用到的東西:
+   *   patient_words   病人自己怎麼講(「一跳一跳的」「像被箍住」)
+   *   inquiry         要問哪幾個面向,每個面向附「為什麼要問」
+   *   differentiation 同一個症狀怎麼分證型,附鑑別點,並連到證型卡
+   *
+   * 排版順序照問診順序,不照資料表順序:先聽病人怎麼講 → 再問 → 再鑑別。
+   * 病人原話放最前面是刻意的:那是診間第一個接觸到的東西,也是最難從書上背到的。 */
+  const symptomHost = el("symptomRecords");
+  if (symptomHost) {
+    const symptoms = (K.symptoms && K.symptoms.records) || [];
+    const pickLang = (zh, en) => (contentMode === "english" ? (en || zh) : (zh || en));
+
+    const inquiryBlock = (s) => {
+      const rows = pickLang(s.inquiry_zh, s.inquiry_en) || [];
+      if (!Array.isArray(rows) || !rows.length) return "";
+      const items = rows.filter((r) => r && (r.dimension || r.why)).map((r) =>
+        `<li><strong>${esc(r.dimension || "")}</strong>${r.why ? ` — ${esc(r.why)}` : ""}</li>`).join("");
+      return items ? `<div class="k-symptom-block"><strong>${esc(modeText(`問診面向（${rows.length}）`, `Inquiry dimensions (${rows.length})`))}</strong><ul>${items}</ul></div>` : "";
+    };
+
+    const diffBlock = (s) => {
+      const rows = pickLang(s.differentiation_zh, s.differentiation_en) || [];
+      if (!Array.isArray(rows) || !rows.length) return "";
+      const items = rows.filter((r) => r && r.variant).map((r) => {
+        // points_to 是 pattern id;能解析出名字就連過去,解析不到就照實說「尚無證型卡」,
+        // 不要默默印 id ——「pattern.liver_yang_rising」對讀的人沒有意義。
+        const links = (r.points_to || []).map((pid) => {
+          // entityLabel 是模組層的解析器。原本想用 conditionPatternLabel,但那個
+          // 是條件區塊裡的 const,在這裡既不在作用域也還沒初始化 —— 會直接丟錯。
+          const label = entityLabel(pid);
+          return label && label !== pid
+            ? `<span class="k-entity-chip">${esc(label)}</span>`
+            : `<span class="k-entity-chip is-unresolved" title="${esc(pid)}">${esc(modeText("尚無證型卡", "no pattern card"))}</span>`;
+        }).join("");
+        return `<li><strong>${esc(r.variant)}</strong> ${links}${r.distinguishing ? `<br><small>${esc(r.distinguishing)}</small>` : ""}</li>`;
+      }).join("");
+      return items ? `<div class="k-symptom-block"><strong>${esc(modeText(`辨證鑑別（${rows.length}）`, `Differentiation (${rows.length})`))}</strong><ul class="k-symptom-diff">${items}</ul></div>` : "";
+    };
+
+    const renderSymptoms = (list) => list.map((s) => {
+      const words = usableText(pickLang(s.patient_words_zh, s.patient_words_en));
+      const def = usableText(pickLang(s.definition_zh, s.definition_en));
+      const metrics = (s.supporting_measurements || []).map((m) => `<span class="k-tag">${esc(entityLabel(m) || m)}</span>`).join("");
+      return `<article class="k-card k-symptom-card" data-record-id="${esc(s.id)}">
+        <header><strong>${esc(s.name_zh || "")} <small>${esc(s.name_en || "")}</small></strong></header>
+        <p class="k-meta">${esc(s.id)}${s.primary_mode ? ` · ${esc(s.primary_mode)}` : ""}</p>
+        ${def ? `<p>${esc(def)}</p>` : ""}
+        ${words ? `<p class="k-symptom-words">${esc(modeText("病人這樣講:", "Patients say: "))}${esc(words)}</p>` : ""}
+        ${inquiryBlock(s)}
+        ${diffBlock(s)}
+        ${metrics ? `<p class="k-tags">${esc(modeText("可追蹤指標:", "Trackable metrics: "))}${metrics}</p>` : ""}
+        ${(s.safety_review_sources || []).length ? `<details class="k-condition-related"><summary>${esc(modeText("安全覆核來源", "Safety review sources"))}</summary><ul>${(s.safety_review_sources || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>` : ""}
+      </article>`;
+    }).join("");
+
+    const updateSymptoms = () => {
+      const q = String((el("symptomFilter") || {}).value || "").trim().toLowerCase();
+      const hit = !q ? symptoms : symptoms.filter((s) =>
+        JSON.stringify([s.name_zh, s.name_en, s.patient_words_zh, s.patient_words_en, s.id]).toLowerCase().includes(q));
+      symptomHost.innerHTML = renderSymptoms(hit) || `<p class="k-detail-empty">${esc(modeText("沒有符合的症狀", "No matching symptom"))}</p>`;
+      const sum = el("symptomSummary");
+      if (sum) sum.textContent = `${hit.length} / ${symptoms.length}`;
+    };
+    updateSymptoms();
+    if (el("symptomFilter")) el("symptomFilter").addEventListener("input", updateSymptoms);
+    document.addEventListener("acuting:content-mode", updateSymptoms);
+  }
+
   // The Antigravity pattern big-card (modal + preview renderer) is kept: that
   // is what the 8/6 merge was trying to preserve.
   const condHost = el("conditionRecords");

@@ -29,6 +29,7 @@
           <a href="#ws/formula" data-ws="formula" class="nav-sub" data-mode-text data-bilingual="方劑 Formulas" data-english="Formulas">方劑 Formulas</a>
           <a href="#ws/herb" data-ws="herb" class="nav-sub" data-mode-text data-bilingual="中藥 Materia Medica" data-english="Materia Medica">中藥 Materia Medica</a>
           <a href="#ws/pharm" data-ws="pharm" class="nav-sub" data-mode-text data-bilingual="西藥 Pharmacology" data-english="Pharmacology">西藥 Pharmacology</a>
+          <a href="#ws/symptom" data-ws="symptom" class="nav-sub" data-mode-text data-bilingual="症狀問診 Symptoms" data-english="Symptoms">症狀問診 Symptoms</a>
           <a href="#ws/condition" data-ws="condition" class="nav-sub" data-mode-text data-bilingual="病症圖譜 Conditions" data-english="Conditions">病症圖譜 Conditions</a>
           <a href="#ws/comparison" data-ws="comparison" class="nav-sub" data-mode-text data-bilingual="辨證鑑別 Comparisons" data-english="Comparisons">辨證鑑別 Comparisons</a>
         </div>
@@ -446,6 +447,23 @@
           </div>
         </div>
         <div id="pharmRecords" class="k-records" aria-label="Pharmacology records"></div>
+      </section>
+
+      <!-- 症狀 (2026-08-12):102 筆症狀卡先前完全沒有入口 —— 資料裡有問診面向、
+           病人原話、辨證鑑別,畫面上一個字都到不了。這一節就是那個入口。 -->
+      <section class="formula-section symptom-section" data-workspace="symptom" id="symptomSection" aria-label="症狀問診" data-mode-aria-label data-bilingual-aria-label="症狀問診" data-english-aria-label="Symptoms">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Symptoms</p>
+            <h2 data-mode-text data-bilingual="症狀 / Symptoms" data-english="Symptoms">症狀 / Symptoms</h2>
+            <p data-mode-text data-bilingual="病人怎麼講、要問哪幾個面向、同一個症狀怎麼分證型。問診面向附「為什麼要問」，鑑別欄連到證型卡。" data-english="How patients describe it, which dimensions to ask about, and how one symptom splits across patterns. Each inquiry dimension carries why it matters; differentiation links to the pattern cards.">病人怎麼講、要問哪幾個面向、同一個症狀怎麼分證型。問診面向附「為什麼要問」，鑑別欄連到證型卡。</p>
+          </div>
+        </div>
+        <div class="k-toolbar">
+          <input type="search" id="symptomFilter" placeholder="搜尋症狀、病人用語… 例：頭痛、脹痛、想吐" data-mode-placeholder data-bilingual-placeholder="搜尋症狀、病人用語… 例：頭痛、脹痛、想吐" data-english-placeholder="Search symptoms or patient words…">
+          <small id="symptomSummary"></small>
+        </div>
+        <div id="symptomRecords" class="k-records" aria-label="Symptom records"></div>
       </section>
 
       <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="辨證鑑別表" data-mode-aria-label data-bilingual-aria-label="辨證鑑別表" data-english-aria-label="Pattern comparison tables">

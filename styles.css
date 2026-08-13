@@ -674,6 +674,19 @@ h1 {
 .agent-exposure-status { color: var(--muted); font-size: 0.78rem; margin-left: auto; }
 .agent-exposure-meta { color: var(--muted); display: flex; gap: 0.4rem; font-size: 0.82rem; margin-top: 0.3rem; }
 .agent-exposure-meta span { color: #344044; font-weight: 600; }
+/* 病歷裡的用藥安全提示。黑框警告不收在 details 裡 —— FDA 最高級別的警告
+   藏在要點開的地方,等於沒帶到病歷來。 */
+.agent-safety { margin-top: 0.45rem; }
+.agent-safety-boxed { border: 1px solid rgba(190,60,45,.45); border-left-width: 3px; border-radius: 6px; padding: 6px 10px; background: rgba(190,60,45,.06); }
+.agent-safety-boxed strong { display: block; font-size: .74rem; letter-spacing: .02em; color: #9c2f22; }
+.agent-safety-boxed p { margin: 3px 0 0; font-size: .8rem; line-height: 1.45; }
+.agent-safety-contra { margin-top: 0.35rem; font-size: .78rem; }
+.agent-safety-contra summary { cursor: pointer; color: var(--muted); }
+.agent-safety-contra ul { margin: 4px 0 0 1.1em; padding: 0; }
+.agent-safety-contra li { margin: 2px 0; }
+/* 「沒查過」跟「查過沒事」在畫面上必須分得出來,否則前者會被讀成後者。 */
+.agent-safety-unchecked small { color: var(--muted); font-size: .72rem; font-style: italic; }
+@media print { .agent-safety-contra[open] summary { list-style: none; } }
 .agent-exposure-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
 .agent-exposure-actions button { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
 .agent-exposure-timeline { margin-top: 0.5rem; font-size: 0.82rem; }
@@ -6634,6 +6647,22 @@ html { scroll-padding-top: 92px; }
   font-size: 0.86rem;
   line-height: 1.6;
 }
+
+/* 症狀卡:病人原話是診間第一個接觸到的東西,給它自己的視覺重量。 */
+.k-symptom-words {
+  margin: 0.5rem 0;
+  padding: 0.45rem 0.65rem;
+  border-left: 3px solid #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.k-symptom-block { margin: 0.6rem 0; font-size: 0.86rem; }
+.k-symptom-block > strong { display: block; margin-bottom: 0.25rem; opacity: 0.85; }
+.k-symptom-block ul { margin: 0; padding-left: 1.15rem; line-height: 1.65; }
+.k-symptom-diff > li { margin-bottom: 0.4rem; }
+.k-symptom-diff small { opacity: 0.8; }
 
 /* 針灸範圍:precautions 先讀、且看得出是警示。can_treat 與 co_management 是
    一般資訊,不搶那個紅。這個順序是刻意的 —— 讀的人要先知道什麼不能碰。 */
