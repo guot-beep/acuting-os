@@ -1549,6 +1549,30 @@
     ];
   }
 
+  /* 現代藥理詳解(2026-08-12,A0c 中藥層)。
+   *
+   * `modern_functions_detail_zh` 有 197 張卡帶值,從來沒上過畫面。它與已經在顯示的
+   * `modern_pharmacology` chip 不同:chip 只有標籤(「發汗作用」),這裡是那個標籤
+   * 底下的逐條機轉分析(「麻黃鹼促進汗腺分泌…」)。也就是說,畫面先前只給了標題,
+   * 內文一直躺在資料裡。
+   *
+   * 用 <details> 收合:單一藥材的分析可以到數千字,攤開會把卡片其他部分擠掉,
+   * 但它是有來源的內容,不該因為長就不給。收合的是篇幅,不是資訊。 */
+  function herbModernDetailSection(record) {
+    const rows = record.modern_functions_detail_zh;
+    if (!Array.isArray(rows) || !rows.length) return "";
+    const items = rows.filter((r) => r && (r.tag || r.analysis_zh)).map((r) => {
+      const body = usableText(r.analysis_zh);
+      if (!body) return "";
+      // 資料裡是 markdown 風格的粗體與編號,原樣 escape 後只把換行轉成段落 ——
+      // 不解析 markdown(那會把來源文字重新詮釋),只讓它讀得下去。
+      const html = esc(body).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/\n{2,}/g, "</p><p>").replace(/\n/g, "<br>");
+      return `<details class="k-herb-mechanism"><summary>${esc(r.tag || modeText("機轉", "Mechanism"))}</summary><p>${html}</p></details>`;
+    }).join("");
+    if (!items) return "";
+    return detailSection("現代藥理 逐條機轉", `Modern pharmacology — mechanism by mechanism (${rows.length})`, items);
+  }
+
   /* 中西藥交互作用(2026-08-12)。
    *
    * 這個欄位過去從來沒有被渲染過(A0b)。逐條審完 26 段之後,規則是:
@@ -1716,7 +1740,13 @@
           ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
           <div class="k-detail-columns">
             ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
-            ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered || record.channels_zh))}
+            ${/* channels_en 有 87 張卡帶值,先前一次都沒被讀過 —— 英文模式的讀者
+                  看到的是中文歸經。與 E3(361 穴的 cautions_en)同一種缺陷:
+                  同一張卡上,英文讀者拿到的比中文讀者少,而畫面沒說。 */ ""}
+            ${detailSection("歸經", "Channels entered", detailList(
+              contentMode === "english"
+                ? (cleanList(record.channels_en).length ? record.channels_en : (props.meridian_tropism_zh || record.channels_entered || record.channels_zh))
+                : (props.meridian_tropism_zh || record.channels_entered || record.channels_zh)))}
             ${/* 2026-08-12 紅線 4:此處原本是 `dose.standard_daily_g || "6~15g"`。
                   358 張中藥卡有 200 張沒有 standard_daily_g,於是全部被填上編造的
                   「6~15g」—— 其中 17 張標記有毒:雄黃卡自身寫「內服 0.05–0.1g,
@@ -1727,11 +1757,16 @@
                   154 張卡的真實上限確實在那裡,接上去需要先定形狀公約(見
                   docs/TING_DECISION_QUEUE.md B3)。*/ ""}
             ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "待補")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
-            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "待補")}</p>`)}
+            ${detailSection("使用部位", "Part used", `<p>${esc(
+              (contentMode === "english" && usableText(record.part_used_en)) || props.part_used_zh || usableText(record.part_used_en) || "待補"
+            )}</p>`)}
           </div>
           ${detailSection("功效 (Actions)", "傳統功效 · 中英對照", `<div class="k-chip-cloud">${bilingualFunctions}${actionsAligned ? "" : actionsEn.map((a) => `<span class="k-chip" style="background:#ecfdf5;color:#047857;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(a)}</span>`).join("")}</div>`)}
-          ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
+          ${(record.pao_zhi_notes_zh || record.pao_zhi_notes_en) ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(
+            (contentMode === "english" && usableText(record.pao_zhi_notes_en)) || record.pao_zhi_notes_zh || usableText(record.pao_zhi_notes_en)
+          )}</p>`) : ""}
           ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${bilingualModernPharm}</div>`) : ""}
+          ${herbModernDetailSection(record)}
         ` 
       },
       { 
