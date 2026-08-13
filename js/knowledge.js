@@ -397,7 +397,8 @@
     if (!list.length) {
       return '<p class="k-detail-empty">此方尚未建立藥對 / No herb pairs recorded for this formula yet.</p>';
     }
-    const note = record.key_pairs_note_zh ? `<p class="k-pair-note">${esc(record.key_pairs_note_zh)}</p>` : "";
+    const keyPairsNote = usableText(contentMode === "english" ? (record.key_pairs_note_en || record.key_pairs_note_zh) : (record.key_pairs_note_zh || record.key_pairs_note_en));
+    const note = keyPairsNote ? `<p class="k-pair-note">${esc(keyPairsNote)}</p>` : "";
     return note + `<div class="k-pair-list">${list.map((p) => pairCard(p, !explicit.length)).join("")}</div>`;
   }
 
@@ -819,8 +820,11 @@
     // 於是同一段症狀在我自己的區塊裡印了兩次(224 張裡 120 張)。
     // 用「非中日韓文字與英數一律剝除」而不是逐個列標點,免得下次再漏一個。
     const norm = (s) => String(s || "").replace(/[^一-鿿豈-﫿a-zA-Z0-9]/g, "");
-    const list = cleanList(record.symptoms_zh);
-    const prose = usableText(record.clinical_manifestations_zh);
+    const list = (contentMode === "english" && cleanList(record.symptoms_en).length)
+      ? cleanList(record.symptoms_en) : cleanList(record.symptoms_zh);
+    const prose = usableText(contentMode === "english"
+      ? (record.clinical_manifestations_en || record.clinical_manifestations_zh)
+      : (record.clinical_manifestations_zh || record.clinical_manifestations_en));
     // 只比對兩個新欄位彼此還不夠 —— 實測 224 張裡有 120 張,同一段症狀早就寫在
     // 考試重點的 exam_pearl 裡了,於是新區塊把同一句話在同一張卡上再講一次。
     // 所以要對「這張卡上面已經印過的東西」去重,不是對兄弟欄位去重。
@@ -858,7 +862,7 @@
       // "thin, white, moist coating",中文讀者卻只看到「正常」。國考問的是舌苔。
       ["舌 Tongue", [cleanList(record.tongue_zh).join("、"), usableText(record.coating_zh) ? `苔${usableText(record.coating_zh)}` : ""].filter(Boolean).join("・")],
       ["脈 Pulse", cleanList(record.pulse_zh).join("、")],
-      ["煎法 Preparation", usableText(record.preparation_zh)],
+      ["煎法 Preparation", usableText(contentMode === "english" ? (record.preparation_en || record.preparation_zh) : (record.preparation_zh || record.preparation_en))],
       ["臺灣藥典 TW Pharmacopeia", usableText(record.taiwan_pharmacopeia_zh)]
     ].filter(([, v]) => v);
     if (!bits.length) return "";
@@ -1048,7 +1052,13 @@
      2026-08 misfile moves put real content here, so it must render).
      Paragraphs are \n-joined by the move scripts; render as <br>. */
   function formulaDepthSection(record, key, titleZh, titleEn) {
-    const text = usableText((record.chinese_depth_track || {})[key]);
+    // fang_yi_en 等英文欄位住在記錄頂層,不在 chinese_depth_track 裡 —— 英文模式
+    // 先找頂層的 <key>_en,找不到才退回中文深度層。
+    // 名單寫死而不是動態拼字串:動態拼的話,人和驗證器都看不出這個欄位有被讀,
+    // validate-bilingual-render-parity.js 會把它報成缺口(它只能做靜態搜尋)。
+    const EN_TWIN = { fang_yi_zh: "fang_yi_en", zhu_zhi_zh: "zhu_zhi_en", notes_zh: "notes_en" };
+    const enTop = usableText(record[EN_TWIN[key]]);
+    const text = (contentMode === "english" && enTop) || usableText((record.chinese_depth_track || {})[key]);
     if (!text) return "";
     return detailSection(titleZh, titleEn, `<p class="k-depth-text">${esc(text).replace(/\n/g, "<br>")}</p>`);
   }
@@ -1455,7 +1465,7 @@
 
     return [
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + adSyndromesBlock)}${formulaSymptomSection(record)}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : "")}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
-      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${(() => { const a = usableText(contentMode === "english" ? (record.administration_en || record.administration_zh) : (record.administration_zh || record.administration_en)); return a ? `<p class="k-admin">服法 Administration：${esc(a)}</p>` : ""; })()}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaHdiSection(record)}${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${formulaModernDiseaseSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
@@ -1559,7 +1569,9 @@
    * 用 <details> 收合:單一藥材的分析可以到數千字,攤開會把卡片其他部分擠掉,
    * 但它是有來源的內容,不該因為長就不給。收合的是篇幅,不是資訊。 */
   function herbModernDetailSection(record) {
-    const rows = record.modern_functions_detail_zh;
+    const rows = (contentMode === "english" && Array.isArray(record.modern_functions_detail_en) && record.modern_functions_detail_en.length)
+      ? record.modern_functions_detail_en
+      : record.modern_functions_detail_zh;
     if (!Array.isArray(rows) || !rows.length) return "";
     const items = rows.filter((r) => r && (r.tag || r.analysis_zh)).map((r) => {
       const body = usableText(r.analysis_zh);
@@ -1696,9 +1708,22 @@
       return `<button type="button" class="k-cond-tag" data-search-term="${esc(zh)}" title="搜尋「${esc(zh)}」相關內容">` +
         `${esc(zh)}${en ? `<small>(${esc(en)})</small>` : ""}</button>`;
     }).join("");
+    /* bilingualChips 是**逐索引**配對的,所以英文那一側必須是同一份清單的翻譯。
+     * 這裡原本拿 modern_pharmacology_zh 去配 modern_functions_en —— 兩個不同的欄位。
+     * 79 張有中文藥理的卡裡,長度真的相符的只有 18 張;而 modern_pharmacology_en
+     * (先前完全沒被讀過)相符的有 32 張。長度不符時逐索引配對會把「第 1 項中文」
+     * 配上「第 1 項不相干的英文」,等於印出錯的翻譯 —— 那比沒有翻譯糟。
+     * 規則(索引對齊):長度相符才配,兩個都不符就只印中文。 */
+    const modernPharmEn = (() => {
+      const a = cleanList(record.modern_pharmacology_en);
+      if (a.length === modernPharm.length) return a;
+      const b = cleanList(record.modern_functions_en);
+      if (b.length === modernPharm.length) return b;
+      return [];
+    })();
     const bilingualModernPharm = bilingualChips(
       modernPharm,
-      cleanList(record.modern_functions_en),
+      modernPharmEn,
       "background:#e0f2fe;color:#0369a1;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;"
     );
     
@@ -2967,7 +2992,17 @@
           ${contentQualityBanner(c.id)}
           <p class="k-meta">${esc(c.id)} · ICD hint ${esc(c.icd_hint || "—")}</p>
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
-          ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
+          ${/* summary_en 有 190 張卡帶值,先前一次都沒被讀過 —— 英文模式的讀者
+                在摘要這一行看到的是中文。這是本輪補的最後一個、也是最大的一個
+                英文缺口。 */ ""}
+          ${(() => {
+            // 不用症狀區塊那個 pickLang:它是別的 if 區塊裡的 const,在這裡
+            // 不在作用域(和 conditionPatternLabel 同一個坑)。就地判斷。
+            const s = usableText(contentMode === "english"
+              ? (c.summary_en || c.summary_zh)
+              : (c.summary_zh || c.summary_en));
+            return s ? `<p>${esc(s)}</p>` : "";
+          })()}
           ${symptomIds.length ? `<div class="k-condition-related"><strong>症狀 <small>Symptoms</small></strong><p class="k-tags">${symptomChips(symptomIds)}</p></div>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}

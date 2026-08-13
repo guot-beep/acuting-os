@@ -177,6 +177,9 @@ jobs:
       - name: clinical store never echoes raw parser text (PHI boundary)
         run: node scripts/validate-clinical-store-phi-boundary.js
 
+      - name: bilingual render parity (no _en field left off the screen)
+        run: node scripts/validate-bilingual-render-parity.js
+
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js
 
