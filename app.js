@@ -177,6 +177,15 @@ const OUTCOME_DIRECTION_HINT_LABELS = {
   contextual: "方向：視情境 direction: contextual",
 };
 
+// outcome_metrics.json 的 interpretation_status 三態，畫在讀數字的地方。
+// 沒有這一行，Outcome Tracking 只會顯示「-3」，看的人無從分辨那是「文獻上
+// 有意義的變化」還是「一個沒有任何閾值可以對照的自評分數」——兩者長得一模一樣。
+// 契約寫在資料裡卻不上畫面，等於沒寫。
+const OUTCOME_INTERPRETATION_BADGES = {
+  no_published_threshold: { text: "無公認閾值 · 看趨勢", cls: "interp-none" },
+  source_pending: { text: "判讀來源待補", cls: "interp-pending" },
+};
+
 // Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
 // §7 — "worthwhile before more metrics," recommended there, implemented
 // here alongside this batch's new entries as suggested). Catches a
@@ -5722,6 +5731,17 @@ function setOutcomeMetricValue(list, metricId, value) {
 // page-load time, before this point in the file) — see that declaration's
 // comment for why the config lives in JS rather than
 // data/clinical_cases/outcome_metrics.json.
+// 表格那一格塞不下整串作者名。壓成「Farrar 2001」這種可以直接去查的短引用；
+// 完整書目留在 outcome_metrics.json，這裡只要能讓人認出是哪一篇。
+function shortCitation(name) {
+  const s = String(name || "").trim();
+  if (!s) return "";
+  const year = (s.match(/\b(1[89]|20)\d{2}\b/) || [])[0];
+  const lead = s.split(/[,.]/)[0].trim();
+  if (!lead) return year || "";
+  return year ? `${lead} ${year}` : lead;
+}
+
 function getOutcomeMetricDef(metricId) {
   const records = globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || [];
   return records.find((r) => r.id === metricId) || null;
@@ -6021,8 +6041,18 @@ function renderOutcomeTrackingPanel(item) {
             const directionHint = def?.direction_good && OUTCOME_DIRECTION_HINT_LABELS[def.direction_good]
               ? `<small class="direction-hint">${escapeHtml(OUTCOME_DIRECTION_HINT_LABELS[def.direction_good])}</small>`
               : "";
+            // sourced 的 badge 直接引用來源名稱，因為那筆判讀是可查證的；
+            // 另外兩態走固定措辭。未標註狀態的 metric 不畫 badge——寧可空白，
+            // 也不要用一個看起來像結論的標籤去蓋住「還沒判斷過」。
+            let interpHint = "";
+            if (def?.interpretation_status === "sourced" && def.source?.name) {
+              interpHint = `<small class="interp-hint interp-sourced" title="${escapeHtml(def.interpretation_en || "")}">判讀依據：${escapeHtml(shortCitation(def.source.name))}</small>`;
+            } else if (def && OUTCOME_INTERPRETATION_BADGES[def.interpretation_status]) {
+              const b = OUTCOME_INTERPRETATION_BADGES[def.interpretation_status];
+              interpHint = `<small class="interp-hint ${b.cls}" title="${escapeHtml(def.interpretation_note_zh || "")}">${escapeHtml(b.text)}</small>`;
+            }
             return `<tr>
-              <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}</td>
+              <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}</td>
               <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
               <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
               <td>${escapeHtml(fmtChange(row.change))}</td>

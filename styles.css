@@ -643,6 +643,12 @@ h1 {
 }
 .outcome-tracking-table tbody td:first-child { color: #20383b; font-weight: 700; }
 .outcome-tracking-table .direction-hint { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 500; margin-top: 0.15rem; }
+/* 判讀狀態：跟數字放在一起，不然「-3」會被當成有臨床意義的變化來讀。
+   刻意不用紅綠——這不是好壞，是「這個數字能不能拿去對照文獻」。 */
+.outcome-tracking-table .interp-hint { display: block; font-size: 0.7rem; font-weight: 500; margin-top: 0.1rem; }
+.outcome-tracking-table .interp-sourced { color: var(--muted); }
+.outcome-tracking-table .interp-none { color: var(--muted); font-style: italic; }
+.outcome-tracking-table .interp-pending { color: var(--muted); opacity: 0.8; }
 
 /* Phase D batch 1: Meds & Supplements ledger (agentExposures[]), case-level.
    Same light-palette / .case-actions button conventions as Outcome Tracking
