@@ -103,13 +103,12 @@ Consensus Sleep Diary 是**量表的出處**,不是閾值的出處 —— 放在
 
 ## 5. 還沒做的 / 需要你決定的
 
-1. **證型缺口還不能點。** `knowledge.js` 的 `openPatternBigCardModal` 沒有
-   export。加一行就能接上,但那個檔昨晚一直有別人在動,我不搶。
-2. **`patternDifferentials` 沒有輸入欄位。** 9/5 那 20 項裡唯一一個
-   「資料契約和 id 都有、UI 完全沒有」的。鑑別診斷目前寫不進去。
-3. **SOL 還欠 AVS 那 5 筆醫囑措辭的審核**(`AVS_ADVICE_REVIEW_01_SOL.md`)。
-   那是醫療內容判斷,工程線不能代答。
-4. **Dry Clinic 的 Top 5** —— 等你跑。
+> 你說「自行作業」之後我把下面原本的第 1、2 項做掉了,見 §8。
+> 剩下的兩項都需要你,我做不了。
+
+1. **SOL 還欠 AVS 那 5 筆醫囑措辭的審核**(`AVS_ADVICE_REVIEW_01_SOL.md`)。
+   那是醫療內容判斷,工程線不能代答,我也不該替你決定病人拿到的醫囑怎麼寫。
+2. **Dry Clinic 的 Top 5** —— 等你跑。這是現在唯一擋著 P0 Core Loop 的東西。
 
 ---
 
@@ -143,3 +142,43 @@ boot-order / interactions / practice-audit 29/29 / ratchet —— 全 PASS,無�
 - **30198563** Munro FIGO 2018 — 標題期刊年份全對。
 
 三筆全中,SOL 的引用紀律可信。但我還是只把它的數字放進有圍欄的欄位。
+
+---
+
+## 8. 你睡了之後又做的兩件(原本第 5 節的第 1、2 項)
+
+**證型缺口現在也能點開卡片。** 在 `knowledge.js` export 了證型大卡的入口。
+
+補的時候發現一個更容易出錯的地方:**「看起來可以點」跟「真的開得起來」不是
+同一件事。** 缺口清單是從 `patternLibrary` / `patternRegistry` /
+`tcmPatternCanon` 三個區塊找的,而開卡只認得 `patternLibrary`、還排除
+deprecated —— 只在 registry 裡的證型會通過缺口那關卻查無此人。先前的判斷是
+「API 在就畫成按鈕」,那會畫出按了沒反應的東西。改成逐筆問 `hasRecord`。
+負面對照:把 pattern 解析器換成永遠回 false,那一列立刻退回純文字。
+
+**`patternDifferentials` 有輸入欄位了。** 在 SOAP 表單的「臨床推理」那塊,
+`鑑別考量` 自由文字欄下面。每一列是:證型下拉(152 項)+ 已排除勾選 + 理由。
+
+跟旁邊那個自由文字欄**不重複,所以兩個都留**:
+
+| | 寫什麼 | 進得了統計嗎 |
+|---|---|---|
+| `differentialConsidered` | 為什麼考慮、為什麼排除 | ✗ 自由文字 |
+| `patternDifferentials` | 哪一個證型、有沒有被排除 | ✓ usedIn 反查、月審 |
+
+實測往返:既有一筆讀回來(證型解析成中文名、勾選與理由都在)→ 新增一筆
+(肺氣虛 · 已排除 · 「無寒象,排除」)→ 存檔 → reload → 兩筆都在,其他欄位
+未受影響。測完把那個 origin 的 localStorage 清空。
+
+**這兩件之後的 commit:**
+
+```
+b96b9574  patternDifferentials finally has a form field
+733bd920  Pattern gaps open their card too — and "clickable" means "will actually open"
+```
+
+`DECISIONS.md` 也補了 **D20**(兩個軸,你昨晚裁定的),含那條值得記住的一般
+形式:**一個用來守門的欄位,一旦同時回答兩個問題,守門就失效** ——
+所以要重新考慮時是**再加一個軸,不是把現有兩個合併**。
+
+工作樹乾淨,全部 push 到 `codex/pattern-v2`,驗證全過無退化。
