@@ -6655,6 +6655,18 @@ html { scroll-padding-top: 92px; }
   line-height: 1.6;
 }
 
+/* 針刺註記:對執業者而言,這是西藥卡上最切身的一塊 —— 它回答「這個病人能不能扎」。
+   用青色而不是紅色:它不是警告本身,是「先確認什麼再決定」。 */
+.k-acu-note {
+  margin: 0 0 0.85rem;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #0891b2;
+  border-radius: 6px;
+  background: rgba(8, 145, 178, 0.12);
+  line-height: 1.6;
+}
+.k-acu-note > strong { display: block; margin-bottom: 0.3rem; }
+
 /* 症狀卡:病人原話是診間第一個接觸到的東西,給它自己的視覺重量。 */
 .k-symptom-words {
   margin: 0.5rem 0;

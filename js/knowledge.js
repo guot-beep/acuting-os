@@ -1532,20 +1532,60 @@
       ? `<div class="k-boxed-warning">${modeText("⚠️ 黑框警告 BOXED WARNING（FDA 最高級別）", "⚠️ BOXED WARNING (FDA's most serious)")}
            ${pair(record.boxed_warning_zh, record.boxed_warning_en)}</div>`
       : "";
+    /* 針刺註記排在黑框警告之後、其他一切之前(2026-08-12)。
+     * 20 種藥帶 `acupuncture_note_zh`,先前完全沒上過畫面 —— 而它回答的是
+     * 「這個病人現在能不能扎」。華法林那條寫著:標籤禁忌明列「有無法控制出血
+     * 風險的操作」,已涵蓋侵入性針刺;必須先確認 INR 與最近抽血日期;標籤沒給
+     * 針刺的數值門檻,**不要自行設一個**。
+     * 對一個坐在治療床邊的執業者,這是全庫最切身的一句話,不該排在藥理後面。 */
+    const acuNote = pair(record.acupuncture_note_zh, record.acupuncture_note_en);
+    const acuBlock = acuNote
+      ? `<div class="k-acu-note"><strong>${esc(modeText("🪡 針刺相關 —— 這個病人能不能扎", "🪡 Needling — can this patient be needled"))}</strong>${acuNote}</div>`
+      : "";
+
+    const gradedRows = Array.isArray(record.drug_interactions_graded) ? record.drug_interactions_graded : [];
+    const graded = gradedRows.length
+      ? `<ul>${gradedRows.filter((g) => g && (g.with_label_zh || g.with_label_en)).map((g) => {
+          const who = modeText(g.with_label_zh || g.with_label_en, g.with_label_en || g.with_label_zh);
+          const eff = modeText(g.effect_zh || g.effect_en, g.effect_en || g.effect_zh);
+          const sev = g.severity || g.grade || "";
+          return `<li><strong>${esc(who)}</strong>${sev ? ` <span class="k-tag">${esc(sev)}</span>` : ""}${eff ? ` — ${esc(eff)}` : ""}</li>`;
+        }).join("")}</ul>`
+      : "";
+
     const safety = [
       boxed,
+      acuBlock,
       detailSection("禁忌", "Contraindications", pair(record.contraindications_zh, record.contraindications_en)),
+      detailSection("與中藥的交互作用（標籤指名者）", "Herb-drug interactions named on the label", pair(record.herb_drug_interaction_note_zh, record.herb_drug_interaction_note_en)),
+      detailSection("分級藥物交互作用", "Graded drug interactions", graded),
+      detailSection("監測需求", "Monitoring requirements", pair(record.monitoring_requirements_zh, record.monitoring_requirements_en)),
       detailSection("警語與注意事項", "Warnings & precautions", pair(record.warnings_zh, record.warnings_en)),
       detailSection("嚴重不良反應", "Serious adverse effects", pair(record.serious_adverse_effects_zh, record.serious_adverse_effects_en)),
       detailSection("常見不良反應", "Adverse effects", pair(record.adverse_effects_zh, record.adverse_effects_en)),
       detailSection("懷孕與哺乳", "Pregnancy & lactation", pair(record.pregnancy_lactation_zh, record.pregnancy_lactation_en)),
       detailSection("藥物交互作用", "Drug interactions", pair(record.drug_interactions_zh, record.drug_interactions_en)),
     ].join("");
+    // 藥動學是 object,不是文字欄位 —— 逐鍵取出,鍵名照臨床順序而不是資料順序。
+    const pk = record.pharmacokinetics && typeof record.pharmacokinetics === "object" ? record.pharmacokinetics : null;
+    const pkRows = pk
+      ? [["起效與作用時間", "Onset & duration", pk.onset_duration_zh || pk.onset_duration_en],
+         ["代謝", "Metabolism", pk.metabolism_zh || pk.metabolism_en],
+         ["排除", "Elimination", pk.elimination_zh || pk.elimination_en],
+         ["半衰期", "Half-life", pk.half_life_zh || pk.half_life_en]]
+          .filter(([, , v]) => usableText(v))
+          .map(([zh, en, v]) => `<p><strong>${esc(modeText(zh, en))}</strong> ${esc(usableText(v))}</p>`).join("")
+      : "";
+
     const pharmacology = [
+      detailSection("藥動學", "Pharmacokinetics", pkRows),
       detailSection("作用機轉", "Mechanism of action", pair(record.mechanism_zh, record.mechanism_en)),
       detailSection("生理作用", "Physiologic effect", pair(record.physiologic_effect_zh, record.physiologic_effect_en)),
       detailSection("作用部位", "Site of action", pair(record.site_of_action_zh, record.site_of_action_en)),
       detailSection("適應症", "Indications", pair(record.indications_zh, record.indications_en)),
+      // 口訣與原型定位:列表卡只印英文口訣,中文那條(15 種藥)沒地方去。
+      detailSection("記憶口訣", "Mnemonic", pair(record.mnemonic_zh, record.mnemonic_en)),
+      detailSection("原型藥定位", "Prototype association", pair(record.classic_association_zh, record.classic_association_en)),
     ].join("");
     // 中西醫關聯是本庫自己寫的,不是官方標籤 —— 與上面兩區分開放,標明出處性質。
     const integrative = [
@@ -2973,6 +3013,40 @@
       return `<details class="k-condition-related"><summary>${esc(modeText(`風險因子（${items.length}）`, `Risk factors (${items.length})`))}</summary><ul>${items.join("")}</ul></details>`;
     };
 
+    /* 治療清單(2026-08-12)。146 張卡有 herb_formulas、131 張有 acupoint_protocols,
+     * 先前都沒上過畫面。但這批的品質是兩極的:方劑數中位數是 3(策展過的),
+     * 而 **60 張帶 20 方以上、最多 50 方** —— 那是匯入時整頁傾倒下來的清單,
+     * 不是處方。心衰卡那 50 方裡就有含麻黃的半夏麻黃湯。
+     *
+     * 所以不是「顯示或不顯示」,是**分開處理**:
+     *   < 20 筆 → 照常列出(策展過的規模)
+     *   ≥ 20 筆 → 只給數量與一句實話,不列清單。列出 50 個方名會讀成處方建議,
+     *             而它不是;把它藏起來又等於假裝資料不存在。
+     * 門檻 20 是實測出來的分界(中位數 3 vs 傾倒 20–50),不是憑感覺選的。 */
+    const DUMP_THRESHOLD = 20;
+    const treatmentBlock = (c) => {
+      const formulas = Array.isArray(c.herb_formulas) ? c.herb_formulas : [];
+      const points = Array.isArray(c.acupoint_protocols) ? c.acupoint_protocols : [];
+      if (!formulas.length && !points.length) return "";
+      const dumpNote = (n, whatZh, whatEn) =>
+        `<p class="k-meta">${esc(modeText(
+          `${whatZh} ${n} 筆 —— 這是來源網站整頁匯入的清單,不是本卡的處方建議,未經辨證篩選,因此不逐筆列出。`,
+          `${whatEn}: ${n} entries — a whole-page import from the source site, not this card's prescription and not filtered by pattern, so they are not listed.`))}</p>`;
+      const fBlock = !formulas.length ? ""
+        : formulas.length >= DUMP_THRESHOLD ? dumpNote(formulas.length, "匯入方劑", "Imported formulas")
+        : `<p><strong>${esc(modeText("方劑", "Formulas"))}</strong> ${formulas.map((f) =>
+            `<span class="k-tag">${esc(typeof f === "string" ? f : (f.name_zh || f.name_en || ""))}</span>`).join("")}</p>`;
+      const pBlock = !points.length ? ""
+        : points.length >= DUMP_THRESHOLD ? dumpNote(points.length, "匯入穴位", "Imported points")
+        : `<p><strong>${esc(modeText("穴位", "Points"))}</strong> ${points.map((p) => {
+            const code = typeof p === "string" ? p : (p.code || "");
+            const name = typeof p === "string" ? "" : (p.name_zh || p.name_en || "");
+            return `<span class="k-tag">${esc([name, code].filter(Boolean).join(" "))}</span>`;
+          }).join("")}</p>`;
+      if (!fBlock && !pBlock) return "";
+      return `<div class="k-condition-related"><strong>${esc(modeText("記錄的治療內容", "Recorded treatment content"))}</strong>${fBlock}${pBlock}</div>`;
+    };
+
     const longTextBlock = (c, labelZh, labelEn, zhKey, enKey) => {
       const text = usableText(contentMode === "english" ? (c[enKey] || c[zhKey]) : (c[zhKey] || c[enKey]));
       if (!text) return "";
@@ -3008,6 +3082,7 @@
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
           ${redFlagRows(c)}
           ${scopeBlock(c)}
+          ${treatmentBlock(c)}
           ${riskBlock(c)}
           ${longTextBlock(c, "西醫病理 Western pathology", "Western pathology", "western_pathology_zh", "western_pathology_en")}
           ${longTextBlock(c, "西醫脈絡 Western context", "Western context", "western_context_zh", "western_context_en")}
