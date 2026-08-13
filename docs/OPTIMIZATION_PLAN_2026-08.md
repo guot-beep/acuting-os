@@ -5,7 +5,35 @@ CHM-CARE 61 項案例報告規範、真實世界針灸 clinical audit(2024,232 �
 主訴,證明診所級資料迴圈可行)、TCM 醫案 LLM+KG 數位化文獻。
 Codex 角色:每項落地後照常審計;真機資料相關項遵守既有 gate。
 
-## 優先序(SOL 調整後,Fable 同意):P1 → P3-lite → P2,穿插三個補充方向
+## 優先序(2026-08-12 改版,取代下方舊序)
+
+**Core Loop → Visit Brief → Timeline → Audit → Previsit → CHM-CARE**
+
+| | 做什麼 | 為什麼是這個位置 |
+|---|---|---|
+| **P0** | Clinical Core Loop | Patient → Case → Visit → save/reload/export 真的跑順 |
+| **P1** | Visit Brief | 開病人就知道「上次怎樣、今天變什麼」——「少查一次」 |
+| **P2** | Treatment Response Timeline | 資料結構已經比 UI 超前很多,把病情演進畫出來 |
+| **P3** | Practice Audit Lite | 病例開始反過來說「先補這 12 張」,而不是「還有 300 張」 |
+| **P4** | Safety Visibility | boxed warning / 禁忌已經有資料,畫面上看不到 |
+| **P5** | Pre-Visit patient form | **FROZEN**——見下 |
+| **P6** | CHM-CARE readiness | 有病例累積之後價值才成立 |
+| later | SQLite / full dashboard / 全庫 source 補齊 | 現在不是瓶頸 |
+
+**最大變動:Previsit 從 P1 降到 P5,狀態 = freeze,不是刪除。**
+它本質是「資料怎麼進 AcuTing OS」的 adapter,但已經花了不成比例的時間在
+「adapter 能不能接受這個奇怪的 JSON」上,而醫師每天真正要用的 Visit Brief /
+Timeline / Patient Over Time 還不是最成熟的體驗。順序應該是**先把 OS 裡面的
+資料循環跑順,再優化病人怎麼把資料塞進來**。
+
+判斷任何一項值不值得做,只問三個問題:少輸入一次了嗎?少查一次資料了嗎?
+這次產生的資料,下次能不能再利用?
+
+停止驗證的規則在 `docs/SPRINT_2026-08-12_BRIEF.md` §Validation Convergence。
+
+---
+
+## 舊優先序(2026-08-11,已被上表取代,保留供追溯):P1 → P3-lite → P2
 
 ### P1(最高優先)診前自填 → Visit Brief → 醫師確認
 不是「病人填表」,是三段流:**Pre-Visit Capture → Visit Brief → clinician confirms**。

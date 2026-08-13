@@ -70,6 +70,14 @@ P1 / AVS 的對抗覆測**到此為止，不再開新輪**。收斂的證據:嚴
 **之後的規則:只有 HIGH 擋進度。** MED 以下記進待辦，不擋 landing、不開新輪。
 HIGH 的定義不變:可洩 PHI、可靜默改臨床值、可繞過已宣告的硬規則。
 
+**2026-08-12 再收緊 —— VALIDATION FRONTIER FROZEN:** 一個 milestone 只允許
+一次 independent audit;修完只跑針對該 blocker 的 regression,沒有新的 hard-gate
+blocker 就 CLOSE,任何 agent 不得自行對同一 milestone 再開一輪。到 9/5 的配比是
+產品 75–80% / QA 20–25%。擋與不擋的完整對照表見
+`docs/SPRINT_2026-08-12_BRIEF.md` §Validation Convergence;新的優先序
+(Core Loop → Visit Brief → Timeline → Audit → Previsit → CHM-CARE,Previsit
+降級 freeze)見 `docs/OPTIMIZATION_PLAN_2026-08.md` 頂端那張表。
+
 **真正擋住「用在真實病人身上」的是醫療內容判斷**（醫囑措辭、來源強度），
 不是技術審核 —— 那是 Ting 與 SOL 的職權，工程線不能代答，也不該用更多技術輪
 去替代它。

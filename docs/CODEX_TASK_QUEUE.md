@@ -1,5 +1,15 @@
 # Codex Task Queue
 
+> **收口規則(2026-08-12,優先於本檔任何既有條目)**
+> 找到**非 hard-gate** 問題 → 寫進 backlog,**不得因此重開當前 milestone**,
+> 也不得自行發起同一 milestone 的第二輪完整 adversarial review。
+> 一個 milestone 一次 independent audit;修完只跑針對該 blocker 的 regression。
+> hard-gate 的定義與擋/不擋對照表見
+> `docs/SPRINT_2026-08-12_BRIEF.md` §Validation Convergence / Exit Rule。
+>
+> **VALIDATION FRONTIER FROZEN**:除非遇到 data-loss / cross-patient /
+> clinical safety / export-loss 級別的 blocker,不再開新 audit round。
+
 ## ⚡ NEXT:P1 focused retest → P4 rehearsal → landing audit(2026-08-12 晚)
 
 **branch 狀態:`mergeable_state: clean`**(可合併 + 全部檢查綠,PR #59 @ dab9ae8)。

@@ -19,6 +19,37 @@ schema 提案)。本文件只放 sprint 特有的內容:硬規則、階段、路
 9. 落地 main = fast-forward `push HEAD:main`,只在里程碑邊界、validators PASS 後。
 10. 回報逐項數字,禁「完成/100%」。部署規則見 `docs/DEPLOY_CLOUDFLARE.md`。
 
+## Validation Convergence / Exit Rule(2026-08-12 定,優先於本文件其他節奏)
+
+**一個 milestone 只允許一次 independent audit。**
+
+    audit → 找到 blocker → 修 → 只跑針對那個 blocker 的 regression → PASS → milestone CLOSE
+
+沒有新的 hard-gate blocker 就結案,**任何 agent 不得自行對同一 milestone 再開一輪
+完整 adversarial review**。唯一例外:修復本身動到新的 architecture boundary。
+
+會擋 milestone 的只有這條鏈斷掉時 ——
+`Patient → Case → Visit → Treatment → Outcome → Reload → Timeline → Export`:
+
+| 擋 | 不擋(記 backlog,不搶當週開發) |
+|---|---|
+| A 病人的資料跑到 B 病人 | 極端 Unicode edge case |
+| Save 顯示成功但資料沒存 | CLI-only 的訊息細節 |
+| Reload 後資料消失 | 理論上可能的罕見 timestamp 語法 |
+| Export/import 丟欄位 | 尚未啟用的 migration corner |
+| 病歷數值被靜默改寫 | schema 美化 |
+| 危險 clinical claim 自動顯示 | 卡片 source 全補齊 |
+| app 開不起來 / 存不了 | SQLite |
+| 自動推導出診斷或證型 | CHM-CARE 61 項全數完成 |
+
+到 9/5 的資源配比:**產品與 workflow 75–80%,QA 20–25%。**
+
+為什麼寫這條:R9–R14、P1 transport 那幾輪確實抓到資料分叉、錯病人、值被改寫、
+PHI error echo 這些實質問題,不是白做。但已經進入「修掉一個 edge case → 再做一輪
+完整審計 → 找到更小的 edge case → 又一輪」的狀態,而最後兩輪有一半是在修前一輪
+修壞的東西。原則從 *Find everything that can go wrong* 換成
+**Protect the irreversible things, then make the loop move.**
+
 ## 階段與現況
 
 - **Phase A** 倉庫安全 + 架構確認 — ✅ 2026-08-12 完成:分支祖先安全(main 是

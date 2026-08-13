@@ -6,6 +6,11 @@
      Claude 每個工作區塊開始前必讀本檔,並在 AI_WORK_HANDOFF.md 回 ACK。
      格式與防迴圈規則見 docs/AI_COLLAB_PROTOCOL.md。 -->
 
+> **收口規則(2026-08-12)**:本檔的回饋若指出**非 hard-gate** 問題 →
+> 進 backlog,**不得因此重開當前 milestone**。一個 milestone 一次 independent
+> audit,修完只跑針對該 blocker 的 regression,沒有新 hard-gate blocker 就 CLOSE。
+> hard-gate 定義見 `docs/SPRINT_2026-08-12_BRIEF.md` §Validation Convergence。
+
 ## [2026-08-12] Opus 獨立對抗覆測 — P1 round-2 + P4 seam — **NO-GO**
 
 - **Exact SHA**:覆測起於 `5c2e15899cbdfcce06881a9583841bfb57a05c30`,期間他人推入 `aa9269a6`/`0787f171`;
