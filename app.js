@@ -6764,6 +6764,21 @@ function formatPatternSelections(selections) {
   return parts.join("  ");
 }
 
+// Visit Brief / Case Swimlanes 共用的 id → 中文名解析。找不到就原樣回傳 id
+// (讓人至少知道有東西),不要回傳空字串。不讀 legacy `.conditions.*` 影子表 ——
+// 只讀 patternPickerOptions / formulaPickerOptions 已在用的同一批 canon 來源。
+function knowledgeRecordName(records, id) {
+  if (!id) return id;
+  const rec = (records || []).find((r) => r.id === id);
+  return rec ? (rec.name_zh || rec.name_en || id) : id;
+}
+function resolveFormulaName(id) {
+  return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.formulas?.records, id);
+}
+function resolveModalityName(id) {
+  return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records, id);
+}
+
 function createId(prefix) {
   return `${prefix}.${Date.now().toString(36)}.${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -7490,6 +7505,36 @@ function renderVisitBrief(item, notesDesc) {
     }
     rows.push(`<div class="brief-row ${cls}"><small>${escapeHtml(label)}</small><span>${escapeHtml(delta)}</span></div>`);
   }
+  // 1.5 上次治療 Last treatment — 全部讀既有欄位,不新增資料。找不到上一診
+  // (首診)時整塊不畫,改印一行「初診」;有上一診但個別欄位沒填,那一列
+  // 直接不印(不留空白列)。
+  let lastTreatmentHtml = "";
+  if (P) {
+    const ltRows = [];
+    const pointsText = (P.acupointLinks && P.acupointLinks.length) ? P.acupointLinks.join(" · ") : (P.pointsUsed || "");
+    if (pointsText) ltRows.push(["用穴", pointsText]);
+    const formulaText = (P.formulaLinks && P.formulaLinks.length)
+      ? P.formulaLinks.map(resolveFormulaName).join(" · ")
+      : (P.formulaHerbs || "");
+    if (formulaText) ltRows.push(["方劑", formulaText]);
+    const modalityText = (P.modalitiesPerformed || []).map(resolveModalityName).join(" · ");
+    if (modalityText) ltRows.push(["處置", modalityText]);
+    const retentionParts = [];
+    if (P.retentionMinutes !== "" && P.retentionMinutes !== undefined && P.retentionMinutes !== null) retentionParts.push(`${P.retentionMinutes} 分鐘`);
+    if (P.technique) retentionParts.push(P.technique);
+    if (retentionParts.length) ltRows.push(["留針/手法", retentionParts.join(" · ")]);
+    if (P.effectDurationDays !== "" && P.effectDurationDays !== undefined && P.effectDurationDays !== null) ltRows.push(["效果維持", `約 ${P.effectDurationDays} 天`]);
+    if (P.advice) ltRows.push(["醫囑", P.advice.length > 60 ? P.advice.slice(0, 60) + "…" : P.advice]);
+    const aeCount = (L.adverseEvents || []).length;
+    ltRows.push(["上次以來的不良事件", aeCount ? `本次記錄 ${aeCount} 筆` : "無"]);
+    if (L.patientPerspective) ltRows.push(["病人今日優先事項", L.patientPerspective]);
+    lastTreatmentHtml = `<div class="brief-last">
+      <small class="brief-last-label">上次治療 Last treatment</small>
+      ${ltRows.map(([label, val]) => `<div class="brief-row"><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
+    </div>`;
+  } else {
+    lastTreatmentHtml = `<div class="brief-last brief-last-empty">初診，沒有前次紀錄</div>`;
+  }
   // 2. 上次就診的 ledger 事件(用藥/補充劑/暴露變化)
   const changes = [];
   for (const [arr, kindZh] of [[item.agentExposures || [], ""], [item.environmentalExposures || [], "暴露 "]]) {
@@ -7517,11 +7562,12 @@ function renderVisitBrief(item, notesDesc) {
   for (const row of item.environmentalExposures || []) {
     for (const ev of row.events || []) if (ev.visitId === L.id && ev.eventType === "certainty_changed") review.push(`暴露確定度變更:${row.nameText || row.exposureId} → ${ev.certainty}`);
   }
-  if (!rows.length && !changes.length && !review.length) return "";
+  if (!rows.length && !changes.length && !review.length && !lastTreatmentHtml) return "";
   return `
     <div class="visit-brief">
       <div class="timeline-head"><strong>Visit Brief · 上次以來</strong><small class="timeline-date">${escapeHtml(L.visitDate || "")}${P ? ` vs ${escapeHtml(P.visitDate || "")}` : "(首診)"}</small></div>
       ${rows.length ? `<div class="brief-grid">${rows.join("")}</div>` : ""}
+      ${lastTreatmentHtml}
       ${changes.length ? `<div class="brief-changes"><small>變化 Changes</small><span>${changes.map(escapeHtml).join(" · ")}</span></div>` : ""}
       ${review.length ? `<div class="brief-review">⚠ ${review.map(escapeHtml).join(" · ")}</div>` : ""}
     </div>`;

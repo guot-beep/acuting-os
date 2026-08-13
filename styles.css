@@ -7420,6 +7420,14 @@ html { scroll-padding-top: 92px; }
 .brief-changes { margin-top: 8px; } .brief-changes small { opacity: .7; margin-right: 6px; }
 .brief-review { margin-top: 8px; color: #fbbf24; font-weight: 600; }
 
+/* 上次治療 Last treatment — 直向清單,長文字(醫囑、多穴)不會被 auto-fill 欄位擠壓 */
+.brief-last { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line, rgba(148,163,184,.25)); display: grid; gap: 4px; }
+.brief-last-label { display: block; opacity: .7; margin-bottom: 2px; }
+.brief-last .brief-row { display: flex; gap: 10px; }
+.brief-last .brief-row small { flex: 0 0 108px; opacity: .7; }
+.brief-last .brief-row span { flex: 1; }
+.brief-last-empty { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line, rgba(148,163,184,.25)); color: var(--muted); font-size: .85rem; }
+
 /* P2 Case Report Readiness (2026-08-11, CARE_READINESS_MAP_v0) */
 .care-readiness { margin: 14px 0; padding: 12px 14px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.06); }
 .care-readiness-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
