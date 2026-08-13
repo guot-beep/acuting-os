@@ -7340,7 +7340,19 @@ function renderCaseSwimlanes(item, notesAsc) {
 
   const min = Math.min(...points), max = Math.max(...points);
   const X = (t) => 40 + ((t - min) / (max - min)) * 920;
-  const fmt = (t) => localDateISO(t);
+  /* 軸標籤用 UTC 還原,不能用 localDateISO。
+   *
+   * swimDateToNum 把 "2026-05-01" 這種**日曆日**解析成 Date.UTC 午夜;
+   * localDateISO 再用本地 getter 讀回來,在 UTC-7 就變成 2026-04-30 ——
+   * 泳道上每一診的日期都往前一天。實測輸入 05-01/05-08、畫出 04-30/05-07。
+   *
+   * localDateISO 本身沒錯,它是為「現在幾點」那種時間戳寫的(Dry Clinic #8:
+   * 晚診時 UTC 會把預設日期跳到明天)。錯在拿它去格式化一個沒有時區的日曆日:
+   * 存進來的 visitDate 是「五月一日」這個日子,不是某個瞬間,來回換算就會漂。 */
+  const fmt = (t) => {
+    const d = new Date(t);
+    return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
+  };
 
   // metric lanes:出現次數最多的前 4 個
   const mCount = new Map();
