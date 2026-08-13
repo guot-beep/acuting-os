@@ -8,17 +8,28 @@
  * 不整齊,而是**下一個人看到空白會順手填一個看起來合理的閾值進去**,那就是
  * 憲法紅線 4(臨床數字必須具名來源)。
  *
- * 所以 interpretation_status 是三態,缺一不可:
- *   sourced                  已具名來源,source 必須帶 {name,url}
- *   no_published_threshold   自訂單題量表,文獻上不存在 MCID —— 這是結論,
- *                            不是待辦。看到它就不要再去「補」一個數字。
- *   source_pending           確實有文獻只是還沒查 —— 這一種才是待辦(SOL)。
+ * interpretation_status 是三態,而且它**只回答一個問題**:
+ * 「變化多少算臨床有意義」有沒有具名來源。
+ *   sourced                  有。source 帶 {name,url},interpretation_en 是那個來源的結論。
+ *   no_published_threshold   沒有。這是結論不是待辦,看到它就不要再去補一個數字。
+ *   source_pending           還沒查 —— 只有這一種是待辦。
+ *
+ * 第二個軸 reference_range 回答另一個問題:什麼算正常 / 診斷依據 / 證據標準。
+ * 這兩件事會同時成立又互相矛盾地存在:FIGO 說月經週期 24–38 天正常(有來源),
+ * 但沒有人說週期縮短幾天算治療有效(沒有閾值)。2026-08-12 SOL 查證 17 筆時
+ * 建議把 13 筆標成 sourced —— 若照做,validator 就會對這些記錄放行數字,於是
+ * 「內膜 ≥7 mm = 可著床」「卵泡 18 mm = 成熟」「每週 <3 次 = 便秘」這些
+ * **情境限定的切點會被寫成全域規則**。所以拆成兩個軸,規則也分開:
+ *   reference_range 允許數字,但**有數字就必須有 scope**(那個數字的圍欄),
+ *   而且必須有自己的 source —— 參考範圍也是臨床主張。
+ *
+ * 三個 source 槽不可互相頂替:source(改善幅度)/ reference_range.source
+ * (正常範圍)/ instrument_source(量表出處)。把量表出處放進 source,
+ * 會讓一份日記標準化文件看起來像在背書一個閾值。
  *
  * 兩層要求,因為它們會分別退化:
- *   1. P1 傳輸子集的六個 metric:blocking。它們直接進病人填答與病歷,
- *      判讀方式錯了會影響臨床解讀。
- *   2. 其餘:ratchet。目前 21 筆未標註是已知欠帳(排給 Sonnet),
- *      數字只准往下 —— 補完把 KNOWN_UNLABELLED 調成 0,它就變成純 blocking。
+ *   1. P1 傳輸子集的六個 metric:blocking。它們直接進病人填答與病歷。
+ *   2. 其餘:ratchet(KNOWN_UNLABELLED)。目前已歸零,等於純 blocking。
  *
  * 用法:node scripts/validate-metric-interpretation.js
  */
@@ -113,10 +124,35 @@ for (const r of records) {
       errors.push(`${id}: 標為 sourced 但 interpretation_en 空白`);
     }
   }
-  // no_published_threshold 不准同時帶來源,否則兩個欄位互相矛盾
-  if (status === "no_published_threshold" && r.source) {
-    errors.push(`${id}: 標為 no_published_threshold 卻帶了 source —— 兩者矛盾,請改成 sourced 或移除 source`);
+  /* 第二個軸:reference_range(什麼算正常 / 診斷依據)。
+   *
+   * 它跟 interpretation_status 是不同的問題,所以規則也不同 —— 這裡**允許**數字,
+   * 因為 FIGO 的 24–38 天、Rome IV 的每週 3 次都是真的有來源的。危險的不是數字
+   * 本身,是數字脫離情境:「內膜 ≥7 mm」在 IVF 預後研究裡有意義,被抄成一般婦科
+   * 的通則就是憑空造出一個臨床標準。2026-08-12 SOL 的四條防呆註記全部是這一類。
+   *
+   * 所以規則是:**有數字就必須有 scope**。scope 是那個數字的圍欄。 */
+  if (r.reference_range) {
+    const rr = r.reference_range;
+    if (typeof rr !== "object") {
+      errors.push(`${id}: reference_range 必須是物件`);
+    } else {
+      if (!rr.source || !String(rr.source.name || "").trim()) {
+        errors.push(`${id}: reference_range 沒有具名來源 —— 參考範圍也是臨床主張,不能無出處`);
+      }
+      const rrText = `${rr.text_en || ""} ${rr.text_zh || ""}`;
+      if (THRESHOLD_RE.test(rrText) && !String(rr.scope || "").trim()) {
+        errors.push(`${id}: reference_range 有數字「${(rrText.match(THRESHOLD_RE) || [])[0].trim()}」卻沒有 scope —— 沒有情境的數字會被當成通則`);
+      }
+    }
   }
+
+  // source 只屬於「改善幅度的判讀」。量表出處要放 instrument_source,
+  // 否則一份日記標準化文件會看起來像在背書一個閾值。
+  if (status !== "sourced" && r.source) {
+    errors.push(`${id}: 標為 ${status} 卻在 source 放了東西 —— 若那是量表出處,請改放 instrument_source`);
+  }
+
   // 這一條是本檔存在的理由:不准在「沒有來源」的記錄裡寫數字閾值。
   //
   // 單位清單要跟著 registry 走,不能只寫 point/%/分 —— 第一版就是那樣,

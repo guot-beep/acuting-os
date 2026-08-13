@@ -63,8 +63,17 @@
       "source": null,
       "patient_prompt_zh": "睡眠時數:平均一晚睡幾小時?",
       "patient_prompt_en": "Sleep hours: On average, how many hours do you sleep per night?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "成人每晚睡眠時數有專業學會的共識建議,但本輪未具名來源,故留待 SOL 補;在此之前不得寫入任何時數門檻。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:成人有健康建議時數,但「增加幾小時算臨床有意義的改善」沒有公認閾值。只看同一位病人的趨勢。",
+      "reference_range": {
+        "text_en": "AASM/SRS consensus recommends that healthy adults sleep at least 7 hours per night on a regular basis to promote optimal health.",
+        "text_zh": "AASM/SRS 共識建議健康成人規律地每晚至少睡 7 小時。",
+        "scope": "健康成人的一般睡眠需求建議。這不是治療反應的判讀門檻,不能套成「睡到 7 小時就算治好」或「增加 X 小時算有效」。",
+        "source": {
+          "name": "Watson NF, Badr MS, Belenky G, et al. Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society. Sleep. 2015;38(6):843-844.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26039963/"
+        }
+      }
     },
     {
       "id": "metric.sleep_onset_minutes",
@@ -77,14 +86,15 @@
       "scale": null,
       "instrument_en": "self-reported sleep diary (e.g. Consensus Sleep Diary core item: sleep onset latency)",
       "interpretation_en": "",
-      "source": {
-        "name": "Carney CE, Buysse DJ, Ancoli-Israel S, Edinger JD, Krystal AD, Lichstein KL, Morin CM. The consensus sleep diary: standardizing prospective sleep self-monitoring. Sleep. 2012;35(2):287-302.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
-      },
+      "source": null,
       "patient_prompt_zh": "入睡時間:躺下後大約幾分鐘才睡著?",
       "patient_prompt_en": "Sleep onset: About how many minutes does it take you to fall asleep after lying down?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "量表本身(Consensus Sleep Diary)已有具名出處,但入睡時間縮短多少分鐘算臨床有意義的改善並無具名來源,待 SOL 查證。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:Consensus Sleep Diary 標準化了入睡時間的記錄,但沒有定義縮短多少算臨床有意義。文獻裡看得到診斷或研究用的切點,那是另一回事,不能當成改善幅度門檻。",
+      "instrument_source": {
+        "name": "Carney CE, Buysse DJ, Ancoli-Israel S, et al. The consensus sleep diary: standardizing prospective sleep self-monitoring. Sleep. 2012;35(2):287-302.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
+      }
     },
     {
       "id": "metric.night_wakings",
@@ -97,14 +107,15 @@
       "scale": null,
       "instrument_en": "self-reported sleep diary (e.g. Consensus Sleep Diary core item: number of awakenings)",
       "interpretation_en": "",
-      "source": {
-        "name": "Carney CE, Buysse DJ, Ancoli-Israel S, Edinger JD, Krystal AD, Lichstein KL, Morin CM. The consensus sleep diary: standardizing prospective sleep self-monitoring. Sleep. 2012;35(2):287-302.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
-      },
+      "source": null,
       "patient_prompt_zh": "夜醒次數:一個晚上大概醒來幾次?",
       "patient_prompt_en": "Night wakings: About how many times do you wake up during the night?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "量表本身(Consensus Sleep Diary)已有具名出處,但夜醒次數減少多少算臨床有意義的改善並無具名來源,待 SOL 查證。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:CSD 把夜醒次數列為標準化日記指標,但沒有建立「減少幾次」的臨床重要改變閾值。不要把某個試驗的平均變化轉成通用門檻。",
+      "instrument_source": {
+        "name": "Carney CE, Buysse DJ, Ancoli-Israel S, et al. The consensus sleep diary: standardizing prospective sleep self-monitoring. Sleep. 2012;35(2):287-302.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
+      }
     },
     {
       "id": "metric.stress_level",
@@ -200,8 +211,17 @@
       "source": null,
       "patient_prompt_zh": "排便頻率:過去一週大概排便幾次?",
       "patient_prompt_en": "Bowel movements: About how many times did you have a bowel movement in the past week?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源(例如 Rome 準則)說明排便頻率變化多少算臨床有意義的改善或異常。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:Rome IV 的每週少於三次是功能性便秘的多項診斷條件之一,不是「增加幾次算改善」的閾值。",
+      "reference_range": {
+        "text_en": "Rome IV requires at least two of several symptoms for functional constipation, one of which is fewer than three spontaneous bowel movements per week, together with duration criteria and other stool characteristics.",
+        "text_zh": "Rome IV 的功能性便秘要求符合多項症狀中的至少兩項,其中一項是每週少於三次自發性排便,另外還有時間條件與其他排便特徵。",
+        "scope": "**是診斷組件,不是「每週少於三次 = 便秘」的單獨規則,更不是改善幅度門檻。** 將來若要用藥物試驗的 responder 定義,要另建 SBM/CSBM 指標。",
+        "source": {
+          "name": "Mearin F, Lacy BE, Chang L, et al. Bowel Disorders. Gastroenterology. 2016;150(6):1393-1407.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27144627/"
+        }
+      }
     },
     {
       "id": "metric.cycle_length",
@@ -217,8 +237,17 @@
       "source": null,
       "patient_prompt_zh": "月經週期:上次月經到這次月經開始,間隔大約幾天?",
       "patient_prompt_en": "Cycle length: About how many days from the start of your last period to the start of this one?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源(如婦產科學會準則)說明月經週期長度的正常範圍與臨床有意義變化的判定標準。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:FIGO 有正常範圍,但沒有規定週期長度改變幾天算臨床有意義的改善。週期規律性與單次週期長度是兩個維度,不要合成一個門檻。",
+      "reference_range": {
+        "text_en": "FIGO lists a menstrual frequency of 24-38 days as normal for women aged 18-45; under 24 days is frequent and over 38 days is infrequent.",
+        "text_zh": "FIGO 將 18–45 歲女性的月經頻率 24–38 天列為正常,<24 天為頻繁,>38 天為稀發。",
+        "scope": "生殖年齡、非妊娠的月經週期描述。這是症狀分類界線,不是治療前後的改善幅度。",
+        "source": {
+          "name": "Munro MG, Critchley HOD, Fraser IS; FIGO Menstrual Disorders Committee. The two FIGO systems for normal and abnormal uterine bleeding symptoms and classification of causes of abnormal uterine bleeding in the reproductive years: 2018 revisions. Int J Gynaecol Obstet. 2018;143(3):393-408.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30198563/"
+        }
+      }
     },
     {
       "id": "metric.bleeding_days",
@@ -234,8 +263,17 @@
       "source": null,
       "patient_prompt_zh": "經期天數:這次月經流血總共持續幾天?",
       "patient_prompt_en": "Bleeding days: How many days did the bleeding last this cycle?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明經期天數的正常範圍與臨床有意義變化的判定標準。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:FIGO 有正常時長,但沒有「治療後少幾天算改善」的閾值。",
+      "reference_range": {
+        "text_en": "FIGO 2018 treats a menstrual bleeding episode lasting 8 days or less as normal duration; longer than 8 days is prolonged.",
+        "text_zh": "FIGO 2018 將單次經期出血 ≤8 天視為正常時長,>8 天為經期延長。",
+        "scope": "生殖年齡、非妊娠的子宮出血症狀分類。是分類界線,不是改善幅度。",
+        "source": {
+          "name": "Munro MG, Critchley HOD, Fraser IS; FIGO Menstrual Disorders Committee. The two FIGO systems for normal and abnormal uterine bleeding symptoms and classification of causes of abnormal uterine bleeding in the reproductive years: 2018 revisions. Int J Gynaecol Obstet. 2018;143(3):393-408.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30198563/"
+        }
+      }
     },
     {
       "id": "metric.menstrual_flow_volume",
@@ -251,8 +289,17 @@
       "source": null,
       "patient_prompt_zh": "月經量:這次月經量偏少、正常、還是偏多?",
       "patient_prompt_en": "Flow volume: Was your flow this cycle scanty, normal, or heavy?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明量少/正常/量多的判定標準(例如失血量或標準化評分工具)。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:臨床上的經血過多是以「是否影響生活品質」定義,不是量到某個 mL。>80 mL 與 PBAC 分數是研究/工具情境,不能當全域分類門檻。",
+      "reference_range": {
+        "text_en": "FIGO defines clinically heavy menstrual bleeding by whether blood loss interferes with a woman's physical, social, emotional, or material quality of life, rather than by a measured volume. Historical research often used more than 80 mL per cycle, and pictorial blood-loss assessment charts have been used, but a systematic review found their cut-offs range from about 50 to 185 with inconsistent design and scoring.",
+        "text_zh": "FIGO 的臨床定義看的是出血量是否影響生活品質,而不是量到多少 mL。歷史研究常用每週期 >80 mL,PBAC 圖表也有人用,但系統性回顧發現不同版本的切點約在 50–185 之間,設計與計分都不一致。",
+        "scope": "若這一欄只是量少/正常/量多,就保留病人自述與臨床描述,**不要把「量多」自動等同於 >80 mL 或某個 PBAC 分數**。若將來真的採用 PBAC,必須連「哪一版」一起存。",
+        "source": {
+          "name": "Munro MG, Critchley HOD, Fraser IS; FIGO Menstrual Disorders Committee. The two FIGO systems for normal and abnormal uterine bleeding symptoms and classification of causes of abnormal uterine bleeding in the reproductive years: 2018 revisions. Int J Gynaecol Obstet. 2018;143(3):393-408.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30198563/"
+        }
+      }
     },
     {
       "id": "metric.menstrual_clots",
@@ -268,8 +315,8 @@
       "source": null,
       "patient_prompt_zh": "血塊:這次月經有血塊嗎?沒有/小血塊/大血塊?",
       "patient_prompt_en": "Clots: Did you have blood clots this cycle? None / small / large?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明血塊大小分級與臨床意義的判定標準。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:FIGO AUB System 1 沒有建立「小血塊 vs 大血塊」的獨立標準化分級,PBAC 類工具彼此也不一致。目前最安全的做法是當描述性紀錄,不要讓 small/large 觸發一個假裝有共識的判讀。"
     },
     {
       "id": "metric.ovulation_confirmed",
@@ -281,12 +328,15 @@
       "direction_good": "yes",
       "scale": null,
       "instrument_en": "",
-      "interpretation_en": "",
-      "source": null,
+      "interpretation_en": "ASRM: a serum progesterone above 3 ng/mL, drawn about a week before the expected next period, is presumptive and sufficient evidence of recent ovulation. Urinary LH and luteal-phase ultrasound are weaker, indirect evidence, and BBT is not accurate enough to serve as routine confirmation.",
+      "source": {
+        "name": "Practice Committee of the American Society for Reproductive Medicine. Fertility evaluation of infertile women: a committee opinion. Fertil Steril. 2021;116(5):1255-1265.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34607703/"
+      },
       "patient_prompt_zh": "排卵確認:這個週期有確認排卵嗎?有/沒有/不確定",
       "patient_prompt_en": "Ovulation: Did you confirm ovulation this cycle? Yes / no / not sure.",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明何種證據組合(如 BBT、LH、超音波)才構成「確認排卵」的判定標準。"
+      "interpretation_status": "sourced",
+      "interpretation_note_zh": "不同證據的強度不一樣。若這一欄只有 yes/no,建議另外記下是哪一種證據 —— 不要讓 LH 陽性、BBT 雙相與 progesterone >3 ng/mL 被當成同一件事。"
     },
     {
       "id": "metric.lh_surge",
@@ -298,12 +348,15 @@
       "direction_good": "contextual",
       "scale": null,
       "instrument_en": "urine LH ovulation predictor kit (OPK)",
-      "interpretation_en": "",
-      "source": null,
+      "interpretation_en": "ASRM: urinary LH kits detect the surge that usually precedes ovulation by one to two days, so a positive result is indirect evidence of ovulation. Persistently elevated basal LH (as in PCOS) can cause false positives, and accuracy differs between products.",
+      "source": {
+        "name": "Practice Committee of the American Society for Reproductive Medicine. Fertility evaluation of infertile women: a committee opinion. Fertil Steril. 2021;116(5):1255-1265.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34607703/"
+      },
       "patient_prompt_zh": "LH 試紙:這個週期驗到 LH 陽性(排卵)了嗎?陽性/陰性/不確定",
       "patient_prompt_en": "LH surge test: Did you get a positive LH (ovulation) test strip this cycle? Positive / negative / not sure.",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明 LH 試紙判讀方式與偽陰性/偽陽性的臨床意義。"
+      "interpretation_status": "sourced",
+      "interpretation_note_zh": "沒有一個通用的偽陽性/偽陰性率可以寫 —— 那會依產品與族群而不同。"
     },
     {
       "id": "metric.bbt_pattern",
@@ -315,12 +368,15 @@
       "direction_good": "contextual",
       "scale": null,
       "instrument_en": "basal body temperature (BBT) charting, oral thermometer taken immediately on waking",
-      "interpretation_en": "",
-      "source": null,
+      "interpretation_en": "ASRM: ovulatory cycles are usually associated with a biphasic BBT pattern and anovulatory cycles with a monophasic one, but some women who do ovulate never produce a clear biphasic chart. BBT lacks the accuracy to be recommended as a routine tool for confirming ovulation.",
+      "source": {
+        "name": "Practice Committee of the American Society for Reproductive Medicine. Fertility evaluation of infertile women: a committee opinion. Fertil Steril. 2021;116(5):1255-1265.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34607703/"
+      },
       "patient_prompt_zh": "基礎體溫:這個週期的基礎體溫型態如何(例如是否有明顯升溫)?請簡述",
       "patient_prompt_en": "Basal body temperature: What did your BBT pattern look like this cycle (e.g. a clear rise)? Brief description.",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明基礎體溫型態(如雙相型)判讀為排卵的標準。"
+      "interpretation_status": "sourced",
+      "interpretation_note_zh": "雙相型可以當支持排卵的低強度佐證,但不能單獨把 ovulation_confirmed 判成 yes。"
     },
     {
       "id": "metric.endometrial_lining",
@@ -336,8 +392,17 @@
       "source": null,
       "patient_prompt_zh": "",
       "patient_prompt_en": "",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明幾 mm 的內膜厚度算臨床有意義(如著床適合度的判定標準)。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:沒有可防守的「適合著床 = X mm」硬門檻。",
+      "reference_range": {
+        "text_en": "IVF studies commonly use 7 mm or less as a thin-endometrium cut point, and that group shows a lower probability of clinical pregnancy; but a meta-analysis concluded that endometrial thickness has almost no discriminative capacity for pregnancy and should not by itself drive cancellation, freeze-all, or abandoning IVF.",
+        "text_zh": "IVF 文獻常以 ≤7 mm 作為薄內膜的切點,該組的臨床懷孕率較低;但統合分析認為內膜厚度對懷孕的辨別力幾乎不存在,不應單憑它決定取消療程、全部冷凍或放棄 IVF。",
+        "scope": "**只適用於 IVF / 促排週期的預後研究。** 不得寫成「≥7 mm = 可著床」或「<7 mm = 不適合」,也不得套用到一般婦科或自然週期。",
+        "source": {
+          "name": "Kasius A, Smit JG, Torrance HL, et al. Endometrial thickness and pregnancy rates after IVF: a systematic review and meta-analysis. Hum Reprod Update. 2014;20(4):530-541.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24664156/"
+        }
+      }
     },
     {
       "id": "metric.follicle_size",
@@ -353,8 +418,17 @@
       "source": null,
       "patient_prompt_zh": "",
       "patient_prompt_en": "",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明卵泡大小達多少 mm 算成熟/臨床有意義。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:沒有一個跨自然週期與各種促排方案都適用的成熟尺寸。",
+      "reference_range": {
+        "text_en": "In small ultrasound studies of natural ovulatory cycles the dominant follicle averaged about 21.4 mm at ovulation, with a wide range of roughly 17.4 to 27.0 mm. Stimulated and IVF cycles use different trigger and maturity sizes, and the best cut point differs by which outcome is being predicted.",
+        "text_zh": "自然排卵週期的小型超音波研究中,排卵時主導卵泡平均約 21.4 mm,範圍約 17.4–27.0 mm。促排與 IVF 週期用的 trigger/成熟尺寸不同,而且最佳切點會隨著要預測哪個結果而變。",
+        "scope": "**自然週期、促排、IVF/ICSI 要分開解讀,不存在通用的「18 mm = 成熟」。** 若這筆資料沒有記錄治療情境,就只顯示「情境依賴」,不要自動判成熟或不成熟。",
+        "source": {
+          "name": "Bakos O, Lundkvist O, Wide L, Bergh T. Ultrasonographical and hormonal description of the normal ovulatory menstrual cycle. Acta Obstet Gynecol Scand. 1994;73(10):790-796.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7817731/"
+        }
+      }
     },
     {
       "id": "metric.post_treatment_reaction",
@@ -366,12 +440,15 @@
       "direction_good": "contextual",
       "scale": null,
       "instrument_en": "",
-      "interpretation_en": "",
-      "source": null,
+      "interpretation_en": "Acupuncture safety research separates transient short-term treatment reactions from adverse events, and further separates de qi / needling sensation from both. No single standard taxonomy has been agreed; reviews continue to call for one.",
+      "source": {
+        "name": "MacPherson H, Thomas K, Walters S, Fitter M. A prospective survey of adverse events and treatment reactions following 34,000 consultations with professional acupuncturists. Acupunct Med. 2001;19(2):93-102.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11829165/"
+      },
       "patient_prompt_zh": "治療後反應:上次針灸後有什麼感覺或反應嗎?(痠脹、疲倦、變好等)",
       "patient_prompt_en": "Post-treatment reaction: Did you notice anything after your last treatment (soreness, tiredness, feeling better, etc.)?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "此欄位目前是開放式文字描述,尚無具名來源界定哪些反應屬於預期的好轉反應、哪些需要留意,待 SOL 查證是否有可用的判讀框架。"
+      "interpretation_status": "sourced",
+      "interpretation_note_zh": "這一欄不需要數字閾值。真正的安全性事件記在 adverse_reaction,不要混在一起。"
     },
     {
       "id": "metric.effect_duration_days",
@@ -387,8 +464,12 @@
       "source": null,
       "patient_prompt_zh": "效果維持:上次治療的效果大概維持了幾天?",
       "patient_prompt_en": "Effect duration: About how many days did the effect from your last treatment last?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明效果維持天數的長短與臨床意義之間的判定標準。"
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "SOL 查過:有群體層級的療效持續性研究(如慢性疼痛在療程後 3、6、12 個月的軌跡),但沒有標準化的單一病人「維持幾天」判讀工具。這一欄維持描述性,用來安排回診間隔即可。",
+      "instrument_source": {
+        "name": "MacPherson H, Vertosick EA, Foster NE, et al.; Acupuncture Trialists' Collaboration. The persistence of the effects of acupuncture after a course of treatment: a meta-analysis of patients with chronic pain. Pain. 2017;158(5):784-793.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27764035/"
+      }
     },
     {
       "id": "metric.adverse_reaction",
@@ -400,12 +481,15 @@
       "direction_good": "none",
       "scale": null,
       "instrument_en": "",
-      "interpretation_en": "",
-      "source": null,
+      "interpretation_en": "Early acupuncture safety surveys graded events as serious, significant, or minor/transient, described by whether admission was needed or daily activity affected. CTCAE offers a generic five-grade severity scale but comes from oncology trial reporting; STRICTA governs how acupuncture interventions are reported and is not an adverse-event severity tool.",
+      "source": {
+        "name": "White A, Hayhoe S, Hart A, Ernst E. Survey of adverse events following acupuncture (SAFA): a prospective study of 32,000 consultations. Acupunct Med. 2001;19(2):84-92.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11829164/"
+      },
       "patient_prompt_zh": "不良反應:治療後有任何不舒服或異常反應嗎?請說明",
       "patient_prompt_en": "Adverse reaction: Did you have any discomfort or unusual reaction after treatment? Please describe.",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "此欄位為開放式文字紀錄不良反應,嚴重度分級目前無具名來源,待 SOL 查證是否需要採用標準化分級。"
+      "interpretation_status": "sourced",
+      "interpretation_note_zh": "現有的 mild/moderate/severe 可以留著當臨床紀錄。沒有廣泛接受的針灸專屬嚴重度分級工具 —— 若哪天改用 CTCAE,要標明那是外來框架。"
     },
     {
       "id": "metric.fatigue_score",
@@ -459,12 +543,15 @@
       "direction_good": "decrease",
       "scale": null,
       "instrument_en": "daily hot flash / vasomotor symptom diary (episode count)",
-      "interpretation_en": "",
-      "source": null,
+      "interpretation_en": "A reduction of roughly 50% in hot-flash frequency is the minimal clinically important difference estimated from postmenopausal women's own stated preferences.",
+      "source": {
+        "name": "Butt DA, Deng LY, Lewis JE, Lock M. Minimal decrease in hot flashes desired by postmenopausal women in family practice. Menopause. 2007;14(2):203-207.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17099324/"
+      },
       "patient_prompt_zh": "潮熱次數:最近平均一天發作幾次潮熱?",
       "patient_prompt_en": "Hot flashes: On average, how many hot flash episodes do you have per day?",
-      "interpretation_status": "source_pending",
-      "interpretation_note_zh": "需要具名來源說明每日潮熱次數減少多少算臨床有意義的改善。"
+      "interpretation_status": "sourced",
+      "interpretation_note_zh": "約 50% 的頻率下降是病人自己認為有意義的幅度(Butt 2007)。不要與 FDA 在 VEOZAH 試驗要求的「相對安慰劑每日多減 2 次」混用 —— 那是藥物試驗的組間療效門檻,不是單一病人的判讀標準。"
     },
     {
       "id": "metric.range_of_motion_deg",
@@ -509,11 +596,29 @@
     }
   ],
   "interpretation_policy": [
-    "interpretation_en / source 有三種狀態,不可混為一談:",
-    "  1. 已具名來源 — source 帶 {name,url},interpretation_en 敘述其結論。",
-    "  2. interpretation_status:\"no_published_threshold\" — 這是本診所自訂的單題量表,文獻上不存在 MCID/判讀閾值。這是結論,不是待辦:不要為它發明一個數字。",
-    "  3. interpretation_status:\"source_pending\" — 該指標確實有文獻,只是還沒查。這一種才是待辦(交 SOL)。",
-    "沒有 interpretation_status 又沒有 source 的記錄 = 契約不完整,validator 會擋。",
-    "狀態講的是「判讀閾值」,不是「量表出處」——兩者可以分開。metric.sleep_onset_minutes 就是這種:量表本身有 Consensus Sleep Diary 的具名出處,但多少分鐘算改善並沒有具名來源,所以它是 source_pending 而不是 sourced。source 欄位留著(那是量表的出處),status 照判讀閾值判。"
+    "這個檔有兩個各自獨立的軸,不要壓成一個。",
+    "",
+    "軸一 interpretation_status —— 只回答一件事:「變化多少算臨床有意義」有沒有具名來源。",
+    "  sourced                 有。source 帶 {name,url},interpretation_en 敘述那個來源的結論。",
+    "  no_published_threshold  沒有。這是結論,不是待辦:不要為它發明一個數字。",
+    "  source_pending          還沒查。只有這一種是待辦。",
+    "",
+    "軸二 reference_range(選填)—— 什麼算正常、診斷依據、或證據標準。它跟軸一是",
+    "  不同的問題:FIGO 說月經週期 24–38 天正常(軸二有來源),但沒有人說週期縮短",
+    "  幾天算治療有效(軸一沒有)。同一筆記錄可以「有參考範圍」而「沒有改善閾值」。",
+    "  reference_range 必須帶 source,而且**只要文字裡有數字就必須帶 scope**,",
+    "  說明那個數字限定在什麼情境。validator 會擋沒有 scope 的數字。",
+    "",
+    "為什麼要拆:2026-08-12 SOL 查證 17 筆時,建議把 13 筆標成 sourced —— 但其中多數",
+    "  的「來源」講的是正常範圍或診斷條件,不是改善幅度。壓成一個欄位的話,validator",
+    "  會對這些記錄放行數字,於是「內膜 ≥7 mm = 可著床」「卵泡 18 mm = 成熟」",
+    "  「每週 <3 次 = 便秘」這種情境限定的切點,就會被寫成全域規則。",
+    "  這正是 SOL 自己列的四條防呆註記在警告的事。",
+    "",
+    "三個 source 槽各自回答不同的問題,不要互相頂替:",
+    "  source                  改善幅度的判讀來源。只有 interpretation_status:sourced 才該有。",
+    "  reference_range.source  正常範圍/診斷依據的來源。",
+    "  instrument_source       量表本身的出處(例如 Consensus Sleep Diary)。",
+    "  把量表出處放進 source,會讓一份日記標準化文件看起來像在背書一個閾值。"
   ]
 }
