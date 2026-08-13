@@ -636,3 +636,46 @@ fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料
 (3) mapping 檔的維護讓延後不增加未來遷移成本。
 
 **Ting 裁定(2026-08-11)**:✅ 接受修訂 —— 9/5 前不做 SQLite;條件觸發制生效(病例 ≥50 / 多裝置需求 / 容量壓力,任一即啟動)。
+
+---
+
+## D20 — Outcome metric 的判讀分兩個軸,不是一個 · LOCKED(2026-08-13,Ting:「兩個軸留著」)
+
+**鎖住什麼**:`data/clinical_cases/outcome_metrics.json` 的每一筆記錄,對
+「這個數字怎麼判讀」保留**兩個彼此獨立**的欄位群,任何人不得把它們合併回一個:
+
+| 欄位 | 只回答這個問題 |
+|---|---|
+| `interpretation_status` + `source` + `interpretation_en` | **變化多少算臨床有意義**(MCID)有沒有具名來源 |
+| `reference_range{ text_zh, text_en, scope, source }` | **什麼算正常** / 診斷依據 / 證據標準 |
+| `instrument_source` | **量表本身**的出處 |
+
+`interpretation_status` 維持三態:`sourced` / `no_published_threshold` /
+`source_pending`,而且它**只**描述第一列那個問題。
+
+**為什麼**:2026-08-13 SOL 查證 17 筆待辦時,建議把 13 筆標成 `sourced`。
+照做會出事,而它自己的結論就是證據 —— `cycle_length` 是「FIGO 24–38 天正常
+**有來源**,但沒有 change-from-baseline MCID」。兩個不同的問題被壓進同一個
+欄位,而 `scripts/validate-metric-interpretation.js` 正是靠這個欄位決定
+**這筆記錄能不能寫數字**。一旦標成 `sourced`,守門就失效,下一個人寫
+「週期縮短 5 天算改善」不會有任何東西擋。
+
+SOL 自己列的四條防呆註記,全部是同一種失敗:情境限定的切點被抄成全域規則。
+內膜 ≤7 mm(IVF 預後,辨別力很弱)、卵泡尺寸(自然週期 vs 促排完全不同)、
+Rome IV <3 次/週(是多項診斷條件之一)、潮熱 50%(病人層級)vs FDA 2/day
+(組間療效門檻)。
+
+**這條的一般形式,值得記住**:*一個用來守門的欄位,一旦同時回答兩個問題,
+守門就失效。* 不是資料不整齊的問題,是規則被繞過的問題。
+
+**repo 現況(2026-08-13)**:27 筆 —— `sourced` 10 / `no_published_threshold`
+17 / `source_pending` 0。7 筆帶 `reference_range`,`scope` 全部非空。
+3 筆的量表出處已從 `source` 分流到 `instrument_source`。
+validator 強制:`reference_range` 必須有自己的 `source`;**文字裡有數字就
+必須有 `scope`**;非 `sourced` 的記錄不得在 `source` 放東西。
+負面對照 4/4 擋住,含「內膜 8 mm 以上即適合著床」。
+
+**只有在這種情況下重新考慮**:出現第三種判讀問題,而它既不是「改善幅度」
+也不是「正常範圍」—— 那時是**再加一個軸**,不是把現有兩個合併。
+合併的代價是守門失效,那是不可逆的:錯的閾值一旦寫進病歷判讀畫面,
+後面看到的人會把它當標準。

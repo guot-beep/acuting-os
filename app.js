@@ -1090,16 +1090,26 @@ function clearGlobalResults() {
  * **呼叫端要照 false 決定「這個東西該不該長得像可以點」** —— 點了沒反應
  * 比一開始就不做成連結更糟。
  *
- * 已知缺口:證型(pattern.*)沒有入口。knowledge.js 的 openPatternBigCardModal
- * 沒有 export,而那個檔目前是別人的未提交變更(專案裡 merge 洗掉 knowledge.js
- * 有前例),所以這輪不動它。等它乾淨了,在那邊加一行 export 就能接上。
+ * 判斷「畫不畫成可點的」要用 canOpenKnowledgeRecord,不要只看 API 在不在:
+ * API 在、但那一筆查無此人,一樣是按了沒反應。
  */
+function canOpenKnowledgeRecord(kind, id) {
+  if (!id) return false;
+  const api = globalThis.ACUTING_KNOWLEDGE_API;
+  if (!api) return false;
+  if (kind === "condition") return true;   // 走 section + scrollIntoView,沒有查表這一關
+  return typeof api.hasRecord === "function" && api.hasRecord(kind, id);
+}
+
 function openKnowledgeRecord(kind, id) {
   if (!id) return false;
   const api = globalThis.ACUTING_KNOWLEDGE_API;
   if ((kind === "formula" || kind === "herb" || kind === "pharm") && api && api.openDetail) {
     api.openDetail(kind, id);
     return true;
+  }
+  if (kind === "pattern" && api && typeof api.openPattern === "function") {
+    return api.openPattern(id);
   }
   if (kind === "condition") {
     goToSection("conditionGraph");
@@ -7536,12 +7546,14 @@ function renderPracticeAuditPanel() {
   }).join("");
 
   /* 缺口要能點開那張卡,否則「病例正在需要這 12 張」還是要自己去搜,迴圈沒閉。
-   * 但**只有真的開得起來的才做成可點的**:證型目前沒有入口(見
-   * openKnowledgeRecord 的註解),那就維持純文字。點了沒反應比不能點更糟。 */
+   * 但**只有真的開得起來的才做成可點的** —— 逐筆問 canOpenKnowledgeRecord,
+   * 不是看 API 在不在。缺口是從 patternLibrary / patternRegistry /
+   * tcmPatternCanon 三個區塊找出來的,而開卡只認得 patternLibrary(且排除
+   * deprecated);只在 registry 裡的證型會通過缺口那關卻開不起來。 */
   const gapKindToRecord = { "方劑": "formula", "證型": "pattern" };
   const gapRows = r.knowledgeGaps.map((g) => {
     const recordKind = gapKindToRecord[g.kind] || "";
-    const canOpen = recordKind === "formula" && !!(globalThis.ACUTING_KNOWLEDGE_API || {}).openDetail;
+    const canOpen = canOpenKnowledgeRecord(recordKind, g.id);
     const inner = `<span class="pa-gap-kind">${escapeHtml(g.kind)}</span><span>${escapeHtml(g.name)}</span><small>${g.visits} 診 · ${g.cases} 例</small><em>${escapeHtml(g.maturityLabel)}</em>`;
     return canOpen
       ? `<li><button type="button" class="pa-gap-open" data-gap-kind="${escapeHtml(recordKind)}" data-gap-id="${escapeHtml(g.id)}" title="開啟這張卡">${inner}</button></li>`

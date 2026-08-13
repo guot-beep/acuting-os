@@ -3257,9 +3257,36 @@
     condHost.addEventListener("click", (event) => {
       const btn = event.target.closest("[data-open-big-pattern]");
       if (!btn) return;
-      const found = patternRecords.find((r) => r.id === btn.dataset.openBigPattern);
+      const found = patternRecordById.get(btn.dataset.openBigPattern);
       if (found) openPatternBigCardModal(found, patternLangMode);
     });
+
+    /* 讓 app.js 也能開證型大卡。
+       起因:診務回顧的知識缺口列出「肝氣鬱結 · 2 診 · draft」,但沒有對外的
+       入口可以開那張卡,所以那一列只能是純文字 —— 迴圈少了最後一步。
+
+       同時提供 hasRecord:**「看起來可以點」和「真的開得起來」不是同一件事。**
+       patternRecords 排除了 deprecated,而缺口清單是從 patternLibrary /
+       patternRegistry / tcmPatternCanon 三個區塊找的 —— 只在 registry 裡的
+       證型會通過缺口那關,卻在這裡查無此人。呼叫端要先問得到答案,才不會
+       畫出一顆按了沒反應的按鈕。 */
+    {
+      const API = (globalThis.ACUTING_KNOWLEDGE_API = globalThis.ACUTING_KNOWLEDGE_API || {});
+      // 每個區塊登記自己的解析器,而不是各自定義 hasRecord —— 兩個
+      // Object.assign 都放 hasRecord 的話,後載入的會把前一個整個蓋掉。
+      API._resolvers = API._resolvers || {};
+      API._resolvers.pattern = (id) => patternRecordById.has(id);
+      API.hasRecord = API.hasRecord || ((kind, id) => {
+        const fn = API._resolvers[kind];
+        return typeof fn === "function" ? !!fn(String(id || "")) : false;
+      });
+      API.openPattern = (id) => {
+        const found = patternRecordById.get(String(id || ""));
+        if (!found) return false;
+        openPatternBigCardModal(found, patternLangMode);
+        return true;
+      };
+    }
 
     // 2026-08-12 lazy render(Ting 回報手機版西藥/condition常壞):condition是全站
     // 最重的分頁——西醫病名505+中醫病名+證型全部攤開,實測19,430個DOM節點/978KB。
@@ -3329,7 +3356,18 @@
 
   // Expose the formula/herb study-card opener so unified search (app.js) can
   // open the exact card the user clicked, rather than dumping them in a section.
-  globalThis.ACUTING_KNOWLEDGE_API = Object.assign(globalThis.ACUTING_KNOWLEDGE_API || {}, {
-    openDetail: openKnowledgeDetail
-  });
+  {
+    const API = (globalThis.ACUTING_KNOWLEDGE_API = globalThis.ACUTING_KNOWLEDGE_API || {});
+    API.openDetail = openKnowledgeDetail;
+    // 登記這三種的「查得到嗎」。openDetail 對查不到的 id 是靜靜 return,
+    // 呼叫端沒有這個就無法在畫按鈕之前先知道按了會不會有反應。
+    API._resolvers = API._resolvers || {};
+    API._resolvers.formula = (id) => formulaById.has(id);
+    API._resolvers.herb = (id) => herbById.has(id);
+    API._resolvers.pharm = (id) => pharmDrugs.some((d) => d && d.id === id);
+    API.hasRecord = API.hasRecord || ((kind, id) => {
+      const fn = API._resolvers[kind];
+      return typeof fn === "function" ? !!fn(String(id || "")) : false;
+    });
+  }
 })();
