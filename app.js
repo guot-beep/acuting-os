@@ -1080,6 +1080,38 @@ function clearGlobalResults() {
   globalResultsEl.hidden = true;
 }
 
+/* 「開這張知識卡」的單一入口。
+ *
+ * 抽出來是因為現在有第二個地方要用它:診務回顧的知識缺口清單。列出
+ * 「桂枝湯 · 1 診 · draft」卻不能點,等於還是要自己去搜 —— 那條迴圈就沒閉。
+ * 如果那邊各寫一份路由,兩份遲早會分岔(P1 transport 的 MED-4 就是這樣來的)。
+ *
+ * 回傳 true = 真的把卡開起來了;false = 這一類目前沒有可用的入口。
+ * **呼叫端要照 false 決定「這個東西該不該長得像可以點」** —— 點了沒反應
+ * 比一開始就不做成連結更糟。
+ *
+ * 已知缺口:證型(pattern.*)沒有入口。knowledge.js 的 openPatternBigCardModal
+ * 沒有 export,而那個檔目前是別人的未提交變更(專案裡 merge 洗掉 knowledge.js
+ * 有前例),所以這輪不動它。等它乾淨了,在那邊加一行 export 就能接上。
+ */
+function openKnowledgeRecord(kind, id) {
+  if (!id) return false;
+  const api = globalThis.ACUTING_KNOWLEDGE_API;
+  if ((kind === "formula" || kind === "herb" || kind === "pharm") && api && api.openDetail) {
+    api.openDetail(kind, id);
+    return true;
+  }
+  if (kind === "condition") {
+    goToSection("conditionGraph");
+    requestAnimationFrame(() => {
+      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
+      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
+    });
+    return true;
+  }
+  return false;
+}
+
 function openGlobalResult(btn) {
   const kind = btn.dataset.kind;
   clearGlobalResults();
@@ -1089,18 +1121,13 @@ function openGlobalResult(btn) {
     return;
   }
   if (kind === "formula" || kind === "herb") {
-    const api = globalThis.ACUTING_KNOWLEDGE_API;
-    if (api && api.openDetail) { api.openDetail(kind, btn.dataset.id); return; }
+    if (openKnowledgeRecord(kind, btn.dataset.id)) return;
+    // API 還沒載入時的退路:至少把人帶到對的區塊
     goToSection(kind === "formula" ? "ws/formula" : "ws/herb");
     return;
   }
   if (kind === "condition") {
-    goToSection("conditionGraph");
-    const id = btn.dataset.id;
-    requestAnimationFrame(() => {
-      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
-      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
-    });
+    openKnowledgeRecord(kind, btn.dataset.id);
     return;
   }
   if (kind === "case") {
@@ -7508,8 +7535,18 @@ function renderPracticeAuditPanel() {
     return `<li><span>${escapeHtml(o.label)}</span><strong>${escapeHtml(dir)}${escapeHtml(o.unitDisplay ? " " + o.unitDisplay : "")}</strong><small>${o.casesMeasured} 例有前後值</small>${basis}</li>`;
   }).join("");
 
-  const gapRows = r.knowledgeGaps.map((g) =>
-    `<li><span class="pa-gap-kind">${escapeHtml(g.kind)}</span><span>${escapeHtml(g.name)}</span><small>${g.visits} 診 · ${g.cases} 例</small><em>${escapeHtml(g.maturityLabel)}</em></li>`).join("");
+  /* 缺口要能點開那張卡,否則「病例正在需要這 12 張」還是要自己去搜,迴圈沒閉。
+   * 但**只有真的開得起來的才做成可點的**:證型目前沒有入口(見
+   * openKnowledgeRecord 的註解),那就維持純文字。點了沒反應比不能點更糟。 */
+  const gapKindToRecord = { "方劑": "formula", "證型": "pattern" };
+  const gapRows = r.knowledgeGaps.map((g) => {
+    const recordKind = gapKindToRecord[g.kind] || "";
+    const canOpen = recordKind === "formula" && !!(globalThis.ACUTING_KNOWLEDGE_API || {}).openDetail;
+    const inner = `<span class="pa-gap-kind">${escapeHtml(g.kind)}</span><span>${escapeHtml(g.name)}</span><small>${g.visits} 診 · ${g.cases} 例</small><em>${escapeHtml(g.maturityLabel)}</em>`;
+    return canOpen
+      ? `<li><button type="button" class="pa-gap-open" data-gap-kind="${escapeHtml(recordKind)}" data-gap-id="${escapeHtml(g.id)}" title="開啟這張卡">${inner}</button></li>`
+      : `<li>${inner}</li>`;
+  }).join("");
 
   panel.innerHTML = `
     <div class="timeline-head">
@@ -7556,6 +7593,12 @@ function renderPracticeAuditPanel() {
       <ul>${r.notStated.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>
     </details>
   `;
+
+  // 面板每次重畫都是新的 DOM,所以在這裡綁,不要用全域委派 —— 全域委派會在
+  // 面板收起來之後還留著,是另一種安靜的漏。
+  panel.querySelectorAll("[data-gap-id]").forEach((btn) => {
+    btn.addEventListener("click", () => openKnowledgeRecord(btn.dataset.gapKind, btn.dataset.gapId));
+  });
 }
 
 function renderVisitBrief(item, notesDesc) {

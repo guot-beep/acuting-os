@@ -7342,10 +7342,14 @@ html { scroll-padding-top: 92px; }
   font-weight: 600;
   white-space: nowrap;
 }
+/* 類別名要跟存進病歷的正典值一致(app.js OUTCOME_VERDICTS)。
+   先前寫成 kc-unchanged / kc-worse / kc-unclear,而程式送出的是
+   kc-no_change / kc-worsened / kc-lost_followup —— 四個裡三個對不上,
+   那三種判定永遠是沒有樣式的裸文字。改名而非新增,舊的三個沒有別處在用。 */
 .kc-improved { background: #e7f3ea; color: #2f6b45; }
-.kc-unchanged { background: #f0eee9; color: #6b6357; }
-.kc-worse { background: #f8e8e6; color: #96412f; }
-.kc-unclear { background: #f2eef7; color: #5f4c78; }
+.kc-no_change { background: #f0eee9; color: #6b6357; }
+.kc-worsened { background: #f8e8e6; color: #96412f; }
+.kc-lost_followup { background: #f2eef7; color: #5f4c78; }
 
 /* English-source drawer on a bilingual list. The 中文 is the card's content;
    the English source list supports it and must not out-weigh it, which is what
@@ -7473,6 +7477,10 @@ html { scroll-padding-top: 92px; }
 .pa-basis-none { opacity: .85; font-style: italic; }
 .pa-gap-kind { font-size: .68rem; padding: 1px 6px; border-radius: 999px; border: 1px solid rgba(148,163,184,.35); color: var(--muted); }
 .pa-gap-list li em { font-style: normal; font-size: .7rem; color: var(--muted); }
+/* 可以點開卡片的缺口。不能點的那些維持純文字 —— 長得像連結卻沒反應更糟。 */
+.pa-gap-open { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; width: 100%; padding: 2px 4px; margin: -2px -4px; border: 0; border-radius: 6px; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.pa-gap-open:hover, .pa-gap-open:focus-visible { background: rgba(148,163,184,.14); }
+.pa-gap-open small { margin-left: auto; }
 .pa-empty { margin: 4px 0 0; color: var(--muted); font-size: .78rem; }
 .pa-notstated { margin-top: 14px; font-size: .76rem; color: var(--muted); }
 .pa-notstated summary { cursor: pointer; }

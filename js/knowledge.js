@@ -1087,6 +1087,19 @@
      book; with it, the knowledge layer and the clinical record are one system.
      Only de-identified fields cross over (see window.AcuTingCases): code, visit
      number, date, title, verdict — never S/O/A/P text (DECISIONS D4/D7). */
+  /* 療效判定的顯示文字。鍵必須與 app.js 的 OUTCOME_VERDICTS 完全一致 ——
+     那是正典,存進病歷的就是這四個值。
+     這個常數先前**沒有定義**卻被下面用到,於是 formulaCaseSection 一執行到
+     就 ReferenceError。它只在「這個方劑真的被用在某個病例裡」時才會走到
+     (前面 rows.length 為 0 會提早 return),所以空資料看起來一切正常,
+     一旦真的開始累積病例才會壞 —— 剛好在這個功能開始有價值的時候。 */
+  const VERDICT_LABEL = {
+    improved: ["改善", "Improved"],
+    no_change: ["無變化", "No change"],
+    worsened: ["加重", "Worsened"],
+    lost_followup: ["失訪", "Lost to follow-up"],
+  };
+
   function formulaCaseSection(record) {
     const api = window.AcuTingCases;
     if (!api || !api.usedIn) return "";
@@ -1102,7 +1115,7 @@
             <span class="kc-title">${esc(r.caseTitle || "未命名病例")}</span>
           </button>
           <span class="kc-meta">${esc([r.visitNumber ? `第 ${r.visitNumber} 診` : "", r.date].filter(Boolean).join(" · "))}</span>
-          ${v ? `<span class="kc-verdict kc-${esc(r.verdict)}">${esc(v[0])}</span>` : ""}
+          ${v ? `<span class="kc-verdict kc-${esc(r.verdict)}">${esc(modeText(v[0], v[1]))}</span>` : ""}
         </li>`;
       }).join("")}</ul>
       ${rows.length > 12 ? `<p class="k-meta">${esc(`另有 ${rows.length - 12} 次，見病例區`)}</p>` : ""}`;
