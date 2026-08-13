@@ -10,102 +10,330 @@
     "定稿後的 AVS snapshot 永不因本庫修改而變動 —— 歷史文件存 rendered text,不存 rule 參照展開(§2.4)。"
   ],
   "records": [
-    { "id": "avs.cold_damp_diet", "version": 2, "category": "diet",
+    {
+      "id": "avs.cold_damp_diet",
+      "version": 2,
+      "category": "diet",
       "trigger_mode": "ANY",
-      "triggers": { "patterns": ["pattern.spleen_yang_deficiency", "pattern.spleen_stomach_yang_deficiency", "pattern.kidney_yang_deficiency", "pattern.cold_damp_encumbering_spleen", "pattern.spleen_deficiency_damp_encumbrance" ] },
+      "triggers": {
+        "patterns": [
+          "pattern.spleen_yang_deficiency",
+          "pattern.spleen_stomach_yang_deficiency",
+          "pattern.kidney_yang_deficiency",
+          "pattern.cold_damp_encumbering_spleen",
+          "pattern.spleen_deficiency_damp_encumbrance"
+        ]
+      },
       "advice_zh": "近期請避免冰飲、冰品與生冷食物(生菜沙拉、生魚片、剛從冰箱拿出的水果請退冰再吃),餐食以溫熱為主。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "traditional_tcm_lifestyle", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.damp_heat_diet", "version": 2, "category": "diet",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "traditional_tcm_lifestyle",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.damp_heat_diet",
+      "version": 2,
+      "category": "diet",
       "trigger_mode": "ANY",
-      "triggers": { "patterns": ["pattern.damp_heat", "pattern.liver_gallbladder_damp_heat", "pattern.damp_heat_spleen_stomach", "pattern.qi_stage_damp_heat"] },
+      "triggers": {
+        "patterns": [
+          "pattern.damp_heat",
+          "pattern.liver_gallbladder_damp_heat",
+          "pattern.damp_heat_spleen_stomach",
+          "pattern.qi_stage_damp_heat"
+        ]
+      },
       "advice_zh": "近期請減少油炸、燒烤、辛辣與酒類,甜食與含糖飲料也請節制,多喝溫開水。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "traditional_tcm_lifestyle", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.yin_deficiency_lifestyle", "version": 2, "category": "lifestyle",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "traditional_tcm_lifestyle",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.yin_deficiency_lifestyle",
+      "version": 2,
+      "category": "lifestyle",
       "trigger_mode": "ANY",
-      "triggers": { "patterns": ["pattern.yin_deficiency", "pattern.kidney_yin_deficiency", "pattern.yin_deficiency_fire_flaring", "pattern.liver_yin_deficiency"] },
+      "triggers": {
+        "patterns": [
+          "pattern.yin_deficiency",
+          "pattern.kidney_yin_deficiency",
+          "pattern.yin_deficiency_fire_flaring",
+          "pattern.liver_yin_deficiency"
+        ]
+      },
       "advice_zh": "請盡量在晚上 11 點前入睡,減少熬夜;辛辣燥熱食物(麻辣鍋、油炸、烈酒)請節制。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "traditional_tcm_lifestyle", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.qi_stagnation_lifestyle", "version": 2, "category": "lifestyle",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "traditional_tcm_lifestyle",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.qi_stagnation_lifestyle",
+      "version": 2,
+      "category": "lifestyle",
       "trigger_mode": "ANY",
-      "triggers": { "patterns": ["pattern.liver_qi_stagnation", "pattern.liver_depression_transforming_fire"] },
+      "triggers": {
+        "patterns": [
+          "pattern.liver_qi_stagnation",
+          "pattern.liver_depression_transforming_fire"
+        ]
+      },
       "advice_zh": "每天安排 20–30 分鐘讓自己放鬆的活動(散步、伸展、聽音樂皆可),避免長時間累積壓力不釋放。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "traditional_tcm_lifestyle", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.msk_winter_warmth", "version": 2, "category": "lifestyle",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "traditional_tcm_lifestyle",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.msk_winter_warmth",
+      "version": 2,
+      "category": "lifestyle",
       "trigger_mode": "ANY",
-      "triggers": { "patterns": ["pattern.wind_cold_damp_bi", "pattern.blood_stasis"], "conditions": ["cond.knee_osteoarthritis", "cond.chronic_low_back_pain", "cond.cervical_spondylosis", "cond.frozen_shoulder", "cond.ankle_sprain", "cond.lumbar_disc_herniation", "cond.sciatica"] },
+      "triggers": {
+        "patterns": [
+          "pattern.wind_cold_damp_bi",
+          "pattern.blood_stasis"
+        ],
+        "conditions": [
+          "cond.knee_osteoarthritis",
+          "cond.chronic_low_back_pain",
+          "cond.cervical_spondylosis",
+          "cond.frozen_shoulder",
+          "cond.ankle_sprain",
+          "cond.lumbar_disc_herniation",
+          "cond.sciatica"
+        ]
+      },
       "advice_zh": "天冷或吹風時請注意受傷/疼痛部位的保暖(圍巾、護膝、護腰),避免冷氣或風扇直吹患部;局部可溫敷,每次 15–20 分鐘。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "traditional_tcm_lifestyle", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.cupping_guasha_aftercare", "version": 2, "category": "aftercare",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "traditional_tcm_lifestyle",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.cupping_guasha_aftercare",
+      "version": 3,
+      "category": "aftercare",
       "trigger_mode": "ANY",
-      "triggers": { "modalities": ["modality.cupping", "modality.gua_sha"] },
-      "advice_zh": "今天做了拔罐/刮痧:建議今天避免劇烈運動、吹風受涼與泡湯游泳,依診所慣例約 6 小時內先不要洗澡;局部紅紫痧斑屬常見反應,通常會逐漸變淡,若明顯加重、持續腫痛、滲血或出現其他異常,請聯絡診所。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "clinic_preference", "source_refs": [],
-      "review_status": "draft", "active": true,
-      "revision_note": "§6.3/§6.4:洗澡時限改標示為診所慣例而非普適安全規則;痧斑消退改非絕對語言並加異常回報條件。" },
-    { "id": "avs.acupuncture_aftercare", "version": 2, "category": "aftercare",
+      "triggers": {
+        "modalities": [
+          "modality.cupping",
+          "modality.gua_sha"
+        ]
+      },
+      "advice_zh": "今天做了拔罐/刮痧:局部出現紅紫色痧斑或瘀斑是常見的皮膚反應,通常會逐漸變淡。依診所慣例,約 6 小時內先不要洗澡,今天先避免泡湯或游泳。若出現持續滲血、起水泡、明顯紅腫熱痛、化膿或不適持續加重,請聯絡診所;症狀明顯或快速惡化時請及時就醫。",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "clinic_preference",
+      "source_refs": [
+        {
+          "name": "Nielsen A, Knoblauch NTM, Dobos GJ, Michalsen A, Kaptchuk TJ. The effect of Gua Sha treatment on the microcirculation of surface tissue: a pilot study in healthy subjects. Explore (NY). 2007.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17905355/"
+        },
+        {
+          "name": "Nielsen A, Kligler B, Koll BS. Safety protocols for gua sha (press-stroking) and baguan (cupping). Complement Ther Med. 2012.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22863649/"
+        }
+      ],
+      "review_status": "reviewed",
+      "active": true,
+      "revision_note": "2026-08-13 SOL 醫療內容審核,verdict:reword,evidence_type 維持 clinic_preference。痧斑/瘀斑本身有文獻支持為常見皮膚反應,但「6 小時不洗澡」、避風與固定活動限制沒有可靠的普適臨床證據 —— 保留 6 小時只明示為診所慣例,刪除容易被病人理解成必要安全規則的避風與劇烈運動要求。"
+    },
+    {
+      "id": "avs.acupuncture_aftercare",
+      "version": 3,
+      "category": "aftercare",
       "trigger_mode": "ANY",
-      "triggers": { "modalities": ["modality.acupuncture", "modality.electroacupuncture", "modality.auricular_acupuncture"] },
-      "advice_zh": "今天做了針灸:今天請避免立即劇烈運動與過度勞累,補充溫開水讓自己舒服即可;針處若有小瘀青或痠脹感屬常見反應,通常數日內消退,若持續腫痛或不適加重,請聯絡我們。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "practice_standard", "source_refs": [],
-      "review_status": "draft", "active": true,
-      "revision_note": "§6.4/§6.5:喝溫開水改舒適性建議定位(非醫療必要);瘀青消退改非絕對語言。" },
-    { "id": "avs.bloodletting_aftercare", "version": 2, "category": "aftercare",
+      "triggers": {
+        "modalities": [
+          "modality.acupuncture",
+          "modality.electroacupuncture",
+          "modality.auricular_acupuncture"
+        ]
+      },
+      "advice_zh": "今天做了針灸:針處可能有短暫痠脹、小瘀青或少量出血,通常會自行緩解。若疼痛或腫脹持續加重、出血不止,請聯絡我們;若出現呼吸困難、胸痛、昏厥或其他明顯異常,請立即尋求醫療協助。",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "clinical_safety",
+      "source_refs": [
+        {
+          "name": "MacPherson H, Thomas K, Walters S, Fitter M. A prospective survey of adverse events and treatment reactions following 34,000 consultations with professional acupuncturists. Acupunct Med. 2001;19(2):93-102.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11829165/"
+        },
+        {
+          "name": "White A, Hayhoe S, Hart A, Ernst E. Adverse events following acupuncture: prospective survey of 32,000 consultations with doctors and physiotherapists. BMJ. 2001;323:485-486.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11532840/"
+        },
+        {
+          "name": "NIH/NCCIH. Acupuncture: Effectiveness and Safety.",
+          "url": "https://www.nccih.nih.gov/health/acupuncture-effectiveness-and-safety"
+        }
+      ],
+      "review_status": "reviewed",
+      "active": true,
+      "revision_note": "2026-08-13 SOL 醫療內容審核,verdict:reword,evidence_type 由 practice_standard 升級為 clinical_safety(SOL 判定)。小瘀青、局部疼痛與少量出血有前瞻性安全資料支持;查不到「必須喝溫水」或所有病人都要避免日常活動/運動的普適安全依據,移除該類語言。加入少見但重要的胸痛/呼吸困難等急症出口。"
+    },
+    {
+      "id": "avs.bloodletting_aftercare",
+      "version": 2,
+      "category": "aftercare",
       "trigger_mode": "ANY",
-      "triggers": { "modalities": ["modality.bloodletting"] },
+      "triggers": {
+        "modalities": [
+          "modality.bloodletting"
+        ]
+      },
       "advice_zh": "今天有點刺放血:傷口今日保持乾燥清潔,不要搓揉;若持續滲血或紅腫熱痛請與我們聯絡。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "practice_standard", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.moxa_aftercare", "version": 2, "category": "aftercare",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "practice_standard",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.moxa_aftercare",
+      "version": 2,
+      "category": "aftercare",
       "trigger_mode": "ANY",
-      "triggers": { "modalities": ["modality.moxibustion", "modality.tdp_heat_lamp"] },
+      "triggers": {
+        "modalities": [
+          "modality.moxibustion",
+          "modality.tdp_heat_lamp"
+        ]
+      },
       "advice_zh": "今天做了溫灸/溫熱照射:治療部位今日避免吹風受涼,若皮膚微紅屬正常;出現水泡請勿自行刺破,聯絡我們處理。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "practice_standard", "source_refs": [],
-      "review_status": "reviewed", "active": true },
-    { "id": "avs.active_oncology_tx_precautions", "version": 2, "category": "special",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "practice_standard",
+      "source_refs": [],
+      "review_status": "reviewed",
+      "active": true
+    },
+    {
+      "id": "avs.active_oncology_tx_precautions",
+      "version": 3,
+      "category": "special",
       "trigger_mode": "ANY",
-      "triggers": { "safety": ["safety.active_chemotherapy", "safety.active_radiation", "safety.immunosuppressed"] },
-      "advice_zh": "治療期間請特別留意:服用任何中藥或營養品前,請務必讓您的主治醫療團隊知道;若近期血球偏低、容易瘀青出血或特別容易疲倦,請在下次看診時告訴我們;任何發燒請立即聯絡您的主治醫療團隊。",
-      "severity": "clinical_safety", "requires_clinician_confirmation": true, "preselect": false,
-      "evidence_type": "clinical_safety", "source_refs": [],
-      "review_status": "draft", "active": true,
-      "revision_note": "§6.2:改由 active 治療狀態(safety.active_* token)觸發,癌症診斷/病史本身不再觸發;原 id avs.cancer_tx_precautions 依紅線 2 標記 deprecated 而非硬刪。preselect:false —— 需醫師明確勾選。措辭移除『腫瘤治療』診斷指涉,改一般化『治療期間』,拔罐部位安排屬臨床內部決策不放病人文件。" },
-    { "id": "avs.cancer_tx_precautions", "version": 1, "category": "special",
+      "triggers": {
+        "safety": [
+          "safety.active_chemotherapy",
+          "safety.active_radiation",
+          "safety.immunosuppressed"
+        ]
+      },
+      "advice_zh": "在這段治療期間,開始使用任何中藥、維生素或營養品前,請先告知您的主治醫療團隊。若近期檢驗顯示血球偏低、出現新的瘀青或出血,請在下次治療前告訴我們。若出現發燒,請立即聯絡您的主治醫療團隊;若有發冷、喉嚨痛、咳嗽、排尿疼痛或其他感染徵象,也請儘快聯絡他們。",
+      "severity": "clinical_safety",
+      "requires_clinician_confirmation": true,
+      "preselect": false,
+      "evidence_type": "clinical_safety",
+      "source_refs": [
+        {
+          "name": "National Cancer Institute. Infection and Neutropenia during Cancer Treatment.",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/infection"
+        },
+        {
+          "name": "National Cancer Institute. Cancer Therapy Interactions With Foods and Dietary Supplements (PDQ), patient and health professional versions.",
+          "url": "https://www.cancer.gov/about-cancer/treatment/cam/patient/dietary-interactions-pdq"
+        },
+        {
+          "name": "NIH/NCCIH. How Medications and Supplements Can Interact.",
+          "url": "https://www.nccih.nih.gov/health/know-science/how-medications-and-supplements-can-interact/talk-with-your-health-care-providers"
+        }
+      ],
+      "review_status": "reviewed",
+      "active": true,
+      "revision_note": "2026-08-13 SOL 醫療內容審核,verdict:reword,evidence_type 維持 clinical_safety。發燒明確列為最高優先級,新增感染徵象(發冷/喉嚨痛/咳嗽/排尿疼痛)—— SOL 指出免疫低下病人的感染徵象不能只靠發燒單一指標;移除「特別容易疲倦」(太非特異,不適合與急性安全警訊並列)。註記(不在本次措辭範圍內):immunosuppressed token 目前與 active 治療狀態共用同一觸發組,可能誤發於慢性免疫抑制但非治療中的病人 —— 待另案處理觸發分流,不動本次 triggers。"
+    },
+    {
+      "id": "avs.cancer_tx_precautions",
+      "version": 1,
+      "category": "special",
       "trigger_mode": "ANY",
       "triggers": {},
       "advice_zh": "正在接受腫瘤治療期間:服用任何中藥或營養品前,請務必讓您的腫瘤科醫療團隊知道;拔罐、刮痧會避開治療相關部位,若近期血球偏低或容易瘀青出血,請在下次看診時告訴我們;任何發燒請立即聯絡您的腫瘤科團隊。",
-      "severity": "clinical_safety", "requires_clinician_confirmation": true,
-      "evidence_type": "clinical_safety", "source_refs": [],
-      "review_status": "deprecated", "active": false,
-      "revision_note": "§6.2:由 avs.active_oncology_tx_precautions 取代 —— 舊版由癌症診斷觸發,遠期病史會誤發『治療中』指示。retirement = active:false + deprecated,不硬刪。" },
-    { "id": "avs.anticoagulant_precautions", "version": 2, "category": "special",
+      "severity": "clinical_safety",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "clinical_safety",
+      "source_refs": [],
+      "review_status": "deprecated",
+      "active": false,
+      "revision_note": "§6.2:由 avs.active_oncology_tx_precautions 取代 —— 舊版由癌症診斷觸發,遠期病史會誤發『治療中』指示。retirement = active:false + deprecated,不硬刪。"
+    },
+    {
+      "id": "avs.anticoagulant_precautions",
+      "version": 3,
+      "category": "special",
       "trigger_mode": "ANY",
-      "triggers": { "safety": ["safety.anticoagulant", "safety.antiplatelet", "safety.bleeding_tendency"] },
-      "advice_zh": "您正在使用抗凝血/抗血小板藥物(或有出血傾向):針灸或拔罐後若出現較大範圍瘀青或不易止血,請告訴我們;請勿自行調整藥物。",
-      "severity": "clinical_safety", "requires_clinician_confirmation": true,
-      "evidence_type": "clinical_safety", "source_refs": [],
-      "review_status": "draft", "active": true,
-      "revision_note": "§2.6:觸發改 canonical safety.* token 精確比對(原 safetyFlags 子字串);納入 antiplatelet 與出血傾向。" },
-    { "id": "avs.herb_general", "version": 2, "category": "herb_caution",
+      "triggers": {
+        "safety": [
+          "safety.anticoagulant",
+          "safety.antiplatelet",
+          "safety.bleeding_tendency"
+        ]
+      },
+      "advice_zh": "若您正在使用抗凝血或抗血小板藥物,請勿自行停藥或改劑量;若您本身較容易出血,也請特別留意。針灸或拔罐後若出血持續不止、瘀青快速擴大,或出現明顯頭暈、虛弱等不適,請及時聯絡您的醫療團隊並告知我們;症狀嚴重時請立即就醫。",
+      "severity": "clinical_safety",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "clinical_safety",
+      "source_refs": [
+        {
+          "name": "Lee M, Lee S, Kim E, Cho YE, Kang JW, Lee JD. Evaluation of bleeding-related adverse events following acupuncture treatment in patients on anticoagulant or antiplatelet drugs: A prospective observational study. Complement Ther Med. 2018;41:23-28.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30477845/"
+        },
+        {
+          "name": "U.S. National Library of Medicine, MedlinePlus. Warfarin Drug Information.",
+          "url": "https://medlineplus.gov/druginfo/meds/a682277.html"
+        }
+      ],
+      "review_status": "reviewed",
+      "active": true,
+      "revision_note": "2026-08-13 SOL 醫療內容審核,verdict:reword,evidence_type 維持 clinical_safety。用條件句同時涵蓋用藥者與非藥物性出血傾向,避免把「請勿自行調整藥物」錯套到沒在用藥的人;明確定義需要升級的情況是持續出血、快速擴大的瘀青或伴隨全身不適,不是任何小瘀青都要恐慌。"
+    },
+    {
+      "id": "avs.herb_general",
+      "version": 3,
+      "category": "herb_caution",
       "trigger_mode": "ANY",
-      "triggers": { "any_herbs": true },
-      "advice_zh": "請依本次提供的方式使用中藥或營養品。若同時使用處方藥、抗凝血藥、免疫抑制藥或其他長期用藥,請讓您的醫療團隊知道;不要自行停藥或更改劑量。服用期間若出現腸胃不適、皮疹或任何過敏反應,先暫停並與我們聯絡。",
-      "severity": "routine", "requires_clinician_confirmation": true,
-      "evidence_type": "clinical_safety", "source_refs": [],
-      "review_status": "draft", "active": true,
-      "revision_note": "§6.1:移除普適『間隔 1 小時』規則 —— 時間間隔不可靠地防止藥效學/藥動學交互作用;改為告知醫療團隊+不自行停改藥。個案間隔指示由醫師自訂條目提供。" }
+      "triggers": {
+        "any_herbs": true
+      },
+      "advice_zh": "請依本次提供的方式使用中藥或營養品。若您同時使用任何處方藥或其他長期用藥,請把中藥與營養品也告知開藥的醫師或藥師;有些交互作用不是靠錯開幾小時就能避免,因此不要自行停藥、改劑量,或用固定間隔取代個別的交互作用評估。服用後若出現持續或明顯的腸胃不適或皮疹,先停止本次中藥/營養品並聯絡我們;若出現呼吸困難、臉、舌或喉嚨腫脹、昏厥等嚴重過敏徵象,請立即尋求緊急醫療協助。",
+      "severity": "routine",
+      "requires_clinician_confirmation": true,
+      "evidence_type": "clinical_safety",
+      "source_refs": [
+        {
+          "name": "NIH/NCCIH. Herb-Drug Interactions. December 2024.",
+          "url": "https://www.nccih.nih.gov/health/providers/digest/herb-drug-interactions"
+        },
+        {
+          "name": "NIH/NCCIH. How Medications and Supplements Can Interact.",
+          "url": "https://www.nccih.nih.gov/health/know-science/how-medications-and-supplements-can-interact/introduction"
+        },
+        {
+          "name": "National Cancer Institute. Cancer Therapy Interactions With Foods and Dietary Supplements (PDQ).",
+          "url": "https://www.cancer.gov/about-cancer/treatment/cam/patient/dietary-interactions-pdq"
+        },
+        {
+          "name": "U.S. National Library of Medicine, MedlinePlus. Anaphylaxis.",
+          "url": "https://medlineplus.gov/anaphylaxis.html"
+        }
+      ],
+      "review_status": "reviewed",
+      "active": true,
+      "revision_note": "2026-08-13 SOL 醫療內容審核,verdict:reword,evidence_type 維持 clinical_safety。這是 5 筆裡證據面最重的一筆:查不到任何可信的普適規則支持「固定間隔即可避免交互作用」,已知交互作用可涉及吸收/代謝/藥效/副作用增強或降低,固定時間間隔不能取代個別評估 —— v2 方向正確但先前沒有明說這件事,現在明說,並補上嚴重過敏反應不能只等診所回覆的急症出口。"
+    }
   ]
 }
