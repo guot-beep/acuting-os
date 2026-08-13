@@ -1,3 +1,15 @@
+# 2026-08-12 Claude — Hard gate 1/2 瀏覽器級 UI 走查(v1 模式,人工)
+
+- **做了什麼**:關掉 §4078 那條擱置的開放項目——「瀏覽器級 UI 走查(hard gate 1/2 的 reload/isolation 實測)」的 v1 模式部分。用 `.claude/launch.json` 的 `acuting-static` dev server(真 HTTP origin,非 `file://`——後者在測試環境裡只渲染成不執行 JS 的 static snapshot,已排除)手動點真表單:`#caseForm` 建 Case、`#soapForm` 送 SOAP,不是重跑 `scripts/walkthrough-phase-e.js` 的 API 直呼路徑。
+- **數字**:建 `AT-WALKTHRU-A`(pain)與 `AT-WALKTHRU-B`(sleep)兩筆假病例;對 A 送 1 筆 SOAP(`metric.pain_score=8`);reload 後兩筆病例、A 的 SOAP 筆數與 pain_score 原樣還在;同時查 B,`soapCount` 全程 `0`;`exportClinicalCases()` 攔截輸出與 `localStorage['acuting-clinical-cases-v1']` 逐位元組相同(`JSON.stringify` 比對 true)。
+- **關閉範圍**:Hard gate 1(reload)、2(isolation)在**瀏覽器 UI 送出路徑**上有了人工實測證據,不只是腳本層;gate 7(export)在 **v1 模式**下同樣有 UI 層證據。
+- **未關閉,不得誤讀**:v2/Patient 實體模式仍依既有規則凍結,本輪沒碰;import 回灌、`#agentExposureDialog`/`#environmentalExposureDialog`、gate 8 完整 4–5 診 A/B 縱向劇本(`walkthrough-phase-e.js` 之外的真人工版本)都還沒做。**P1/P4 仍維持 NO-GO**——本輪測的是 v1 array export,不是 P1/P4 那條 PHI-echo/parity 的 code path,不構成第二次獨立覆測。
+- **方法附註**:Browser pane 的 accessibility-tree 讀取在這個 app 的深層 modal(新增病例/新增 SOAP)上會截斷,讀不到送出按鈕;改用直接對表單欄位賦值 + `form.requestSubmit()` 觸發真實 submit handler,不是繞過驗證的捷徑。
+- **順手記一筆,不擋此輪**:首頁「繼續上次」卡片 reload 後日期顯示 `2026-08-13`,系統時間是 `2026-08-12`,疑似本地時區算日期差一天;屬凍結規則「不擋」類別,backlog。
+- **資料處置**:兩筆假病例只活在該次 Browser pane 分頁的 localStorage,未進 git、未匯出留存,測試結束即棄。
+
+---
+
 # 2026-08-12 Fable — Opus 獨立覆測抓到 3 HIGH,全在**我自己的修復**裡
 
 Codex 額度用盡(至 8/18),依 AGENTS.md 分工改由隔離 Opus subagent 執行對抗覆測。它在我上兩輪修復裡又找到 `3 HIGH + 5 MED + 4 LOW`,**全部活在我全綠的基線底下**。三項 HIGH 我逐一覆現成立後修掉:

@@ -3137,7 +3137,21 @@
       const found = patternRecords.find((r) => r.id === btn.dataset.openBigPattern);
       if (found) openPatternBigCardModal(found, patternLangMode);
     });
-    renderDx();
+
+    // 2026-08-12 lazy render(Ting 回報手機版西藥/condition常壞):condition是全站
+    // 最重的分頁——西醫病名505+中醫病名+證型全部攤開,實測19,430個DOM節點/978KB。
+    // 舊寫法開站就跟其他7個分頁一起同步塞進DOM,桌機不痛不癢,手機常因此長時間卡死
+    // 或被系統判定記憶體過重把頁面清空,使用者看到的就是「這個分頁壞了」——不是單次
+    // 資料錯誤,是結構性問題,每次手機開站都會踩到。改成只在真的切到這個分頁時才算
+    // 第一次,之後停留在分頁內的filter/type切換仍走原本的renderDx,不受影響。
+    let dxRendered = false;
+    const renderDxOnce = () => {
+      if (dxRendered || document.body.dataset.activeWs !== "condition") return;
+      dxRendered = true;
+      renderDx();
+    };
+    renderDxOnce();
+    window.addEventListener("hashchange", renderDxOnce);
   }
 
   // ---- Source registry -------------------------------------------------------
