@@ -44,6 +44,7 @@ node scripts/validate-acupoint-standard.js
 node scripts/validate-content-junk.js
 node scripts/validate-metric-interpretation.js   # 沒來源就不准寫閾值
 node scripts/validate-outcome-panel-render.js    # 那個判讀有沒有真的到畫面上
+node scripts/validate-exposure-safety-render.js  # 黑框警告有沒有帶到病歷
 # 其他線：condition / tdis / pattern / symptom / comparison / formula-song
 node scripts/check-validation-ratchet.js   # 缺陷數不准變多
 ```

@@ -6315,6 +6315,66 @@ function renderAgentExposuresPanel(item) {
   return `${header}${structuredHtml}${unstructuredHtml}`;
 }
 
+/* 把已經在知識庫裡的藥物安全資訊,帶到病歷裡看得到的地方。
+ *
+ * 問題:59 種藥有 25 種帶 FDA 黑框警告,而且藥卡早就畫得出來 —— 但病歷的
+ * 用藥列只顯示藥名與劑量。要看到黑框,得離開病例、跳到藥卡、再跳回來。
+ * 那一跳正是「少查一次」的反例:最嚴重的那類警告,反而藏在最遠的地方。
+ *
+ * 三種狀態要分得清楚,這是本段的重點:
+ *   有卡片、有警告   → 畫出來
+ *   有卡片、沒警告   → 不畫。這是「查過了,沒有」
+ *   沒有卡片可查     → **明說沒查**。這一條最容易被寫成「不畫」,
+ *                      但兩者在畫面上長得一樣時,讀的人會把「沒查過」
+ *                      讀成「查過沒事」——那比不顯示更危險
+ */
+function lookupAgentSafetyCard(agentId) {
+  const id = String(agentId || "").trim();
+  if (!id) return { checked: false, reason: "沒有連結知識庫卡片" };
+  const K = globalThis.ACUTING_KNOWLEDGE;
+  if (!K) return { checked: false, reason: "知識庫未載入" };
+  const sections = id.startsWith("supp.") ? ["supplementRecords"]
+    : id.startsWith("med.") ? ["medications", "pharmDrugs"]
+    : ["pharmDrugs", "medications", "supplementRecords"];
+  for (const sec of sections) {
+    const recs = (K[sec] && K[sec].records) || [];
+    const hit = recs.find((r) => r && r.id === id);
+    if (hit) return { checked: true, card: hit, section: sec };
+  }
+  return { checked: false, reason: "知識庫沒有這張卡" };
+}
+
+// 安全欄位可能是字串或陣列(contraindications_zh 實測是 array[10])。
+// 統一成陣列,空的就是空的 —— 不要用 || 生出預設值。
+function safetyFieldList(card, zhKey, enKey) {
+  const out = [];
+  for (const key of [zhKey, enKey]) {
+    const v = card && card[key];
+    if (Array.isArray(v)) out.push(...v.map((x) => String(x || "").trim()).filter(Boolean));
+    else if (typeof v === "string" && v.trim()) out.push(v.trim());
+  }
+  return out;
+}
+
+function renderAgentExposureSafety(exposure) {
+  const found = lookupAgentSafetyCard(exposure.agentId);
+  if (!found.checked) {
+    return `<div class="agent-safety agent-safety-unchecked"><small>⃠ 未做安全檢查:${escapeHtml(found.reason)}</small></div>`;
+  }
+  const boxed = safetyFieldList(found.card, "boxed_warning_zh", "boxed_warning_en");
+  const contra = safetyFieldList(found.card, "contraindications_zh", "contraindications_en");
+  if (!boxed.length && !contra.length) return "";
+  const parts = [];
+  // 黑框警告直接展開:FDA 最高級別的警告不該藏在要點開的地方
+  if (boxed.length) {
+    parts.push(`<div class="agent-safety-boxed"><strong>⚠️ 黑框警告 BOXED WARNING</strong>${boxed.map((t) => `<p>${escapeHtml(t)}</p>`).join("")}</div>`);
+  }
+  if (contra.length) {
+    parts.push(`<details class="agent-safety-contra"><summary>禁忌 Contraindications（${contra.length}）</summary><ul>${contra.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul></details>`);
+  }
+  return `<div class="agent-safety">${parts.join("")}</div>`;
+}
+
 function renderAgentExposureRow(exposure) {
   const store = window.AcuTingClinicalStore;
   const timeline = store ? store.getExposureTimeline(exposure) : [...(exposure.events || [])];
@@ -6332,6 +6392,7 @@ function renderAgentExposureRow(exposure) {
       <div class="agent-exposure-meta">
         <small>劑量/頻率 Dose &amp; freq</small><span>${escapeHtml(doseFreq)}</span>
       </div>
+      ${renderAgentExposureSafety(exposure)}
       <div class="agent-exposure-actions">
         <button type="button" class="ghost" data-agent-exposure-action="dose_changed" data-exposure-id="${escapeHtml(exposure.id)}">改劑量</button>
         <button type="button" class="ghost" data-agent-exposure-action="frequency_changed" data-exposure-id="${escapeHtml(exposure.id)}">改頻率</button>
@@ -7064,6 +7125,7 @@ function renderPatientAgentLedgerHtml(cases) {
           <span class="agent-exposure-status">${anyCurrent ? "使用中 Active" : "非使用中 Inactive"}</span>
         </div>
         <div class="agent-exposure-meta"><small>來源 Source cases（${entries.length}）</small><span>${sources}</span></div>
+        ${renderAgentExposureSafety(first)}
       </div>`;
   }).join("");
   const structuredHtml = groups.size ? `<div class="agent-exposure-list">${rows}</div>` : "";
