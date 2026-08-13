@@ -23706,7 +23706,7 @@
         "Contraindicated for those with for those with Yin and/or Blood Deficiency."
       ],
       "herb_drug_interactions_en": [
-        "Acute Pneumonitis maybe associated with interferon in combination with this formula.",
+        "CONTRAINDICATED with interferon. Concurrent use of this formula with interferon has caused interstitial pneumonitis, including fatal cases; Japanese labelling for the identical seven-herb preparation (TJ-9 Sho-saiko-to) lists concurrent interferon therapy as a contraindication. Refer to the prescribing physician before use in any patient on interferon. (PubMed 8980988; PubMed 7575138; LiverTox NBK548777)",
         "Concurrent use of this formula and Interleukin 2 may have a synergistic anti-tumor effect against murine renal cell carcinoma.",
         "Concurrent use of this formula and antiviral drugs such as zidovudine (AZT), lamivudine (3TC), or AZT plus 3TC may have a synergistic antiviral effect.",
         "Concurrent use of this formula and 5-fluorouracil (5-FU) may have a synergistic in treating of cancer.",
@@ -23715,7 +23715,24 @@
       "category_zh": "和解劑",
       "ba_fa_zh": "和法 He Fa (Harmonize)",
       "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
-      "taiwan_pharmacopeia_zh": "No. 115 (THP p.132)"
+      "taiwan_pharmacopeia_zh": "No. 115 (THP p.132)",
+      "superseded_statements": [
+        {
+          "field": "herb_drug_interactions_en",
+          "index": 0,
+          "text": "Acute Pneumonitis maybe associated with interferon in combination with this formula.",
+          "superseded": "2026-08-12",
+          "reason": "方向正確但措辭過弱(maybe associated)且無來源;升級為併用禁忌並掛上文獻。組成經查證與 TJ-9 七味相同。"
+        }
+      ],
+      "herb_drug_interactions_zh": [
+        "與干擾素併用為禁忌。本方與干擾素併用曾導致間質性肺炎,含死亡病例;日本對相同七味組成的製劑(TJ-9 小柴胡湯)標示將干擾素併用列為禁忌。病人正在使用干擾素時,用藥前應先與其處方醫師確認。(PubMed 8980988、7575138;LiverTox NBK548777)"
+      ],
+      "herb_drug_interaction_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/8980988/",
+        "https://pubmed.ncbi.nlm.nih.gov/7575138/",
+        "https://www.ncbi.nlm.nih.gov/books/NBK548777/"
+      ]
     },
     {
       "id": "formula.da_chai_hu_tang",

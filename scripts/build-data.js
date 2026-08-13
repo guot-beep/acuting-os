@@ -104,6 +104,25 @@ const knowledge = {
   // 所以有未修復安全缺陷的卡看起來與乾淨的卡一模一樣。
   // 由 scripts/build-content-quality-overlay.js 從 ledger 重新產生,不手改。
   contentQuality: readJson("data/quality/content_quality.json"),
+  // 中西藥交互作用的逐條審查結論。渲染端只准顯示 render_eligible=true 的條目 ——
+  // 26 段裡目前只有 1 段(小柴胡湯的干擾素禁忌,講危害且有文獻),其餘 25 段
+  // 是無來源的效益宣稱,照規則留在資料裡但不上畫面。
+  formulaHdiReview: (() => {
+    // 雜湊比對在這裡做:瀏覽器沒有同步 sha1,而「顯示的必須就是被審過的那句話」
+    // 這個保證不能只靠 JSON 裡的一個布林值 —— 有人改了字沒重審,旗標不會自己變。
+    // 通過比對的原文放進 verified_texts,渲染端比對原文。
+    const review = readJson("data/quality/formula_hdi_review.json");
+    const formulas = readJson("data/herbs/formulas.json");
+    const sha = (s) => require("crypto").createHash("sha1").update(String(s).trim()).digest("hex").slice(0, 10);
+    const verified = [];
+    for (const rec of formulas.records || formulas) {
+      (rec.herb_drug_interactions_en || []).forEach((text, i) => {
+        const e = (review.entries || {})[`${rec.id}#${i}`];
+        if (e && e.render_eligible === true && e.text_sha1 === sha(text)) verified.push(String(text).trim());
+      });
+    }
+    return { ...review, verified_texts: verified };
+  })(),
   // §6.5 (B) — points carry tcm_pattern_ids; without the canon in the bundle
   // the card can only print "pat.肝氣鬱結" instead of the pattern's name.
   tcmPatternCanon: readJson("data/config/tcm_pattern_canon.json"),

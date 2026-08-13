@@ -1407,7 +1407,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + adSyndromesBlock)}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : "")}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaHdiSection(record)}${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
@@ -1497,6 +1497,42 @@
       { id: "pharmacology", label: modeText("藥理 Pharmacology", "Pharmacology"), content: pharmacology },
       { id: "integrative", label: modeText("中西醫 Integrative", "Integrative"), content: integrative },
     ];
+  }
+
+  /* 中西藥交互作用(2026-08-12)。
+   *
+   * 這個欄位過去從來沒有被渲染過(A0b)。逐條審完 26 段之後,規則是:
+   * **只顯示 `data/quality/formula_hdi_review.json` 標記 render_eligible 的條目**。
+   * 目前只有 1 段合格 —— 小柴胡湯與干擾素的間質性肺炎禁忌,它講的是危害而且有
+   * PubMed / LiverTox 文獻。其餘 25 段講的是「本方減輕西藥不良反應」且無來源,
+   * 留在資料裡但不上畫面(寧缺勿造)。
+   *
+   * 雜湊也在這裡再驗一次,不是只信 JSON 的旗標:審查是對**當時那句話**的判斷,
+   * 有人改了字卻沒重審,這裡就不顯示。驗證器擋 CI,這一層擋畫面 —— 兩道都要,
+   * 因為 CI 綠燈不代表使用者手上那份 bundle 是同一份。 */
+  function formulaHdiSection(record) {
+    const review = (K.formulaHdiReview && K.formulaHdiReview.entries) || {};
+    const en = record.herb_drug_interactions_en || [];
+    const zh = record.herb_drug_interactions_zh || [];
+    const rows = [];
+    en.forEach((text, i) => {
+      const entry = review[`${record.id}#${i}`];
+      if (!entry || entry.render_eligible !== true) return;
+      // 雜湊比對在 build 時做(瀏覽器沒有同步 sha1),build-data 會把通過比對的
+      // 原文放進 verified_texts。這裡比對原文本身 —— 保證同一件事:
+      // 顯示的字必須就是被審過的那句話,不是後來被改掉的版本。
+      const verified = (K.formulaHdiReview && K.formulaHdiReview.verified_texts) || [];
+      if (!verified.includes(String(text).trim())) return;
+      const zhText = usableText(zh[i]);
+      rows.push(`<li>${zhText ? `<strong>${esc(zhText)}</strong><br>` : ""}${esc(String(text).trim())}</li>`);
+    });
+    if (!rows.length) return "";
+    const srcs = (record.herb_drug_interaction_sources || []).filter((u) => /^https?:/.test(u));
+    return `<section class="k-detail-section k-hdi-section">
+      <h3>${esc(modeText("⚠️ 與西藥的交互作用", "⚠️ Herb-drug interactions"))}</h3>
+      <ul>${rows.join("")}</ul>
+      ${srcs.length ? `<p class="k-meta">${srcs.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, "").slice(0, 46))}</a>`).join(" · ")}</p>` : ""}
+    </section>`;
   }
 
   function herbPanels(record) {
