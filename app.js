@@ -6778,6 +6778,14 @@ function resolveFormulaName(id) {
 function resolveModalityName(id) {
   return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records, id);
 }
+function resolvePatternName(id) {
+  if (!id) return id;
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const rec = (K.patternLibrary?.records || []).find((r) => r.id === id)
+    || (K.patternRegistry?.records || []).find((r) => r.id === id)
+    || (K.tcmPatternCanon?.records || []).find((r) => r.id === id);
+  return rec ? (rec.name_zh || rec.name_en || id) : id;
+}
 
 function createId(prefix) {
   return `${prefix}.${Date.now().toString(36)}.${Math.random().toString(36).slice(2, 8)}`;
@@ -7358,6 +7366,64 @@ function renderCaseSwimlanes(item, notesAsc) {
     y += 34;
   }
 
+  // Patterns lane — 同一實體一條的畫法跟下面 exposures lane 一致:每個歷史上
+  // 出現過的證型各自一條,同證型跨診連成一條橫線,線上的 dot 是它出現過的診。
+  // patternId 取 tcmPatternSelections(primary+secondary 都算,一診可能同時屬於
+  // 好幾條),沒有才退回 tcmPatternLinks。
+  const patternOcc = new Map();
+  notes.forEach((n) => {
+    const ids = (n.tcmPatternSelections && n.tcmPatternSelections.length)
+      ? n.tcmPatternSelections.map((s) => s.patternId).filter(Boolean)
+      : (n.tcmPatternLinks || []);
+    const x = X(swimDateToNum(n.visitDate).t);
+    [...new Set(ids)].forEach((id) => {
+      if (!patternOcc.has(id)) patternOcc.set(id, []);
+      patternOcc.get(id).push(x);
+    });
+  });
+  for (const [pid, xs] of patternOcc) {
+    const label = resolvePatternName(pid);
+    const x1 = Math.min(...xs), x2 = Math.max(...xs);
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">${escapeHtml(String(label).slice(0, 14))}</text>`);
+    if (xs.length > 1) rows.push(`<line x1="${x1}" y1="${y + 9}" x2="${x2}" y2="${y + 9}" class="sw-pattern-line"/>`);
+    xs.forEach((x) => rows.push(`<circle cx="${x}" cy="${y + 9}" r="3" class="sw-pattern-mark"/>`));
+    y += 22;
+  }
+
+  // Points lane — 單一條,一診一個標記;hover(<title>)顯示該診穴位清單。
+  const pointVisits = notes.filter((n) => (n.acupointLinks && n.acupointLinks.length) || n.pointsUsed);
+  if (pointVisits.length) {
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">用穴 Points</text>`);
+    pointVisits.forEach((n) => {
+      const x = X(swimDateToNum(n.visitDate).t);
+      const list = (n.acupointLinks && n.acupointLinks.length) ? n.acupointLinks.join(" ") : n.pointsUsed;
+      rows.push(`<circle cx="${x}" cy="${y + 9}" r="3.5" class="sw-point-mark"><title>${escapeHtml(list)}</title></circle>`);
+    });
+    y += 22;
+  }
+
+  // Formulas lane — 單一條,formulaLinks 解析成中文名;方劑換掉的那一診標記換色
+  // 並加一條垂直虛線,看得出換方的時間點。只讀 formulaLinks(結構化 id),不退回
+  // formulaHerbs 自由文字 —— 換方偵測需要可比對的 id,自由文字比不出「換了」。
+  const formulaVisits = notes.filter((n) => n.formulaLinks && n.formulaLinks.length);
+  if (formulaVisits.length) {
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">方劑 Formulas</text>`);
+    let prevSig = null;
+    formulaVisits.forEach((n) => {
+      const x = X(swimDateToNum(n.visitDate).t);
+      const names = n.formulaLinks.map(resolveFormulaName).join(" · ");
+      const sig = [...n.formulaLinks].slice().sort().join("|");
+      const changed = prevSig !== null && sig !== prevSig;
+      if (changed) rows.push(`<line x1="${x}" y1="${y}" x2="${x}" y2="${y + 18}" class="sw-formula-change"/>`);
+      rows.push(`<circle cx="${x}" cy="${y + 9}" r="3.5" class="sw-formula-mark${changed ? " sw-formula-mark-changed" : ""}"><title>${escapeHtml(names)}</title></circle>`);
+      prevSig = sig;
+    });
+    y += 22;
+  }
+
+  // 用藥/暴露變動 lane — 已存在的 exposures bar 就是這條(每個 agentExposure 一條
+  // bar,marker 來自 events[]);這裡只補 hover title(藥名:eventType),不另開
+  // 一條重複的 lane 畫同一份 item.agentExposures[].events[] 資料。
   for (const e of expos.slice(0, 6)) {
     const ts = e.evs.map((x) => x.d.t);
     const x1 = X(Math.min(...ts));
@@ -7365,7 +7431,7 @@ function renderCaseSwimlanes(item, notesAsc) {
     const x2 = stopped ? X(Math.max(...ts)) : 960;
     rows.push(`<text x="4" y="${y + 12}" class="sw-lane">${escapeHtml(String(e.label).slice(0, 14))}</text>
       <rect x="${x1}" y="${y + 4}" width="${Math.max(x2 - x1, 4)}" height="10" rx="5" class="sw-bar${stopped ? " sw-bar-stopped" : ""}"/>`);
-    e.evs.forEach((x) => rows.push(`<circle cx="${X(x.d.t)}" cy="${y + 9}" r="3" class="sw-ev${x.d.coarse ? " sw-coarse" : ""}"/>`));
+    e.evs.forEach((x) => rows.push(`<circle cx="${X(x.d.t)}" cy="${y + 9}" r="3" class="sw-ev${x.d.coarse ? " sw-coarse" : ""}"><title>${escapeHtml(`${e.label}:${x.type}`)}</title></circle>`));
     y += 22;
   }
 

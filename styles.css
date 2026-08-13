@@ -7480,6 +7480,12 @@ html { scroll-padding-top: 92px; }
 .sw-ev { fill: #4ade80; }
 .sw-ev.sw-coarse { fill: none; stroke: #4ade80; stroke-width: 1.5; }
 .sw-ae { fill: #fbbf24; } .sw-ae-severe { fill: #f87171; } .sw-ae-moderate { fill: #fb923c; }
+.sw-pattern-line { stroke: #a78bfa; stroke-width: 3; opacity: .5; }
+.sw-pattern-mark { fill: #a78bfa; }
+.sw-point-mark { fill: #38bdf8; }
+.sw-formula-mark { fill: #2dd4bf; }
+.sw-formula-mark-changed { fill: #f472b6; }
+.sw-formula-change { stroke: #f472b6; stroke-width: 1; stroke-dasharray: 3 2; opacity: .7; }
 
 /* Knowledge line coverage matrix (2026-08-11 quality-page honesty rebuild) */
 .kline-matrix { display: flex; flex-direction: column; gap: 6px; margin: 12px 0 20px; }
