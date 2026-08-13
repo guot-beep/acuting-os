@@ -803,13 +803,63 @@
     </section>`;
   }
 
+  /* 症狀與現代對應病名(2026-08-12,A0c 的方劑層第一步)。
+   *
+   * `symptoms_zh`(206 張)與 `clinical_manifestations_zh`(197 張)先前都沒上過畫面。
+   * 兩者**大多是同一份內容的兩種排版** —— 前者是斜線分隔的清單,後者是頓號連成的
+   * 散文。兩個都印會變成同一段話講兩次,所以先比對去標點後的內容,一樣就只印清單版
+   * (清單好掃,考試時要的是掃)。這是 panel 改寫那次學到的:先數重疊再還原,
+   * 否則會 double-print。
+   *
+   * `modern_diseases_zh` 是現代病名關聯,不是適應症 —— 標題與說明都要講清楚,
+   * 不然「心肌梗塞」出現在桂枝湯卡上會被讀成主治。 */
+  function formulaSymptomSection(record) {
+    // 標點要剝乾淨才比得出「同一份內容的兩種排版」。第一版漏了全形分號「；」——
+    // 清單版用「/」分隔、散文版用「；、」分隔,只差那一個字元就判定成不同內容,
+    // 於是同一段症狀在我自己的區塊裡印了兩次(224 張裡 120 張)。
+    // 用「非中日韓文字與英數一律剝除」而不是逐個列標點,免得下次再漏一個。
+    const norm = (s) => String(s || "").replace(/[^一-鿿豈-﫿a-zA-Z0-9]/g, "");
+    const list = cleanList(record.symptoms_zh);
+    const prose = usableText(record.clinical_manifestations_zh);
+    // 只比對兩個新欄位彼此還不夠 —— 實測 224 張裡有 120 張,同一段症狀早就寫在
+    // 考試重點的 exam_pearl 裡了,於是新區塊把同一句話在同一張卡上再講一次。
+    // 所以要對「這張卡上面已經印過的東西」去重,不是對兄弟欄位去重。
+    const priorText = norm([
+      usableText(record.exam_pearl), usableText(record.exam_importance),
+      cleanList(record.pattern_indications_zh).join(""), cleanList(record.actions_zh).join(""),
+    ].filter(Boolean).join(""));
+    const already = (s) => s && priorText.includes(norm(s));
+    if (already(list.join("")) || (!list.length && already(prose))) return "";
+    const same = list.length && prose && norm(list.join("")) === norm(prose);
+    const body = list.length
+      ? `<ul>${list.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>${same || !prose ? "" : `<p>${esc(prose)}</p>`}`
+      : (prose ? `<p>${esc(prose)}</p>` : "");
+    return detailSection("症狀表現", "Presenting symptoms", body);
+  }
+
+  function formulaModernDiseaseSection(record) {
+    const list = cleanList(record.modern_diseases_zh);
+    if (!list.length) return "";
+    return `<section class="k-detail-section">
+      <h3>${esc(modeText("現代對應病名（關聯，非主治）", "Modern disease associations (not indications)"))}</h3>
+      <p class="k-chip-cloud">${list.map((n) => `<span class="k-tag">${esc(n)}</span>`).join("")}</p>
+      <p class="k-meta">${esc(modeText(
+        "來自來源網站的關聯清單:代表文獻上曾一起出現,不代表本方主治這些病,仍須辨證。",
+        "Association list from the source site: co-occurrence in the literature, not an indication list. Pattern differentiation still applies."))}</p>
+    </section>`;
+  }
+
   function formulaGlanceRow(record) {
     const bits = [
       ["八法 Ba Fa", [usableText(record.ba_fa_zh), usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
       ["出典 Source", usableText(record.source_classic)],
-      ["舌 Tongue", cleanList(record.tongue_zh).join("、")],
+      // 苔(coating_zh)171 張卡有值,先前完全沒上畫面。缺它的差別是實的:
+      // 桂枝湯的「舌」只寫「正常」,而它的苔是「白潤」—— 英文欄早就寫著
+      // "thin, white, moist coating",中文讀者卻只看到「正常」。國考問的是舌苔。
+      ["舌 Tongue", [cleanList(record.tongue_zh).join("、"), usableText(record.coating_zh) ? `苔${usableText(record.coating_zh)}` : ""].filter(Boolean).join("・")],
       ["脈 Pulse", cleanList(record.pulse_zh).join("、")],
-      ["煎法 Preparation", usableText(record.preparation_zh)]
+      ["煎法 Preparation", usableText(record.preparation_zh)],
+      ["臺灣藥典 TW Pharmacopeia", usableText(record.taiwan_pharmacopeia_zh)]
     ].filter(([, v]) => v);
     if (!bits.length) return "";
     return `<div class="k-formula-glance">${bits.map(([k, v]) =>
@@ -1404,10 +1454,10 @@
       : detailList(safetyList(safety));
 
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + adSyndromesBlock)}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : "")}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + adSyndromesBlock)}${formulaSymptomSection(record)}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : "")}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaHdiSection(record)}${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaHdiSection(record)}${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${formulaModernDiseaseSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
