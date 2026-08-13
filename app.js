@@ -1232,6 +1232,9 @@ document.querySelector("#cancelAgentExposureBtn").addEventListener("click", () =
 document.querySelector("#addLifestyleFactorRow")?.addEventListener("click", () => {
   document.querySelector("#lifestyleFactorRows")?.insertAdjacentHTML("beforeend", lifestyleFactorRowHtml({}));
 });
+document.querySelector("#addPatternDifferentialRow")?.addEventListener("click", () => {
+  document.querySelector("#patternDifferentialRows")?.insertAdjacentHTML("beforeend", patternDifferentialRowHtml({}));
+});
 document.querySelector("#addAdverseEventRow")?.addEventListener("click", () => {
   document.querySelector("#adverseEventRows")?.insertAdjacentHTML("beforeend", adverseEventRowHtml({}));
 });
@@ -6230,6 +6233,58 @@ function renderAdverseEventRows(rows) {
   wireRepeatableRowContainer(container, "eventId");
 }
 
+/* 鑑別診斷 patternDifferentials —— 「還考慮過哪些證型、排除了沒有」。
+ *
+ * 這一欄的資料契約(normalizeSoapNote)、正典 id、以及 localStorage→SQLite
+ * 的欄位對照都早就存在,**只有輸入欄位從來沒做**。9/5 的 20 項裡它是唯一
+ * 一個「契約齊備但 UI 完全沒有」的,所以那一格永遠是空的:CG 檢查表的
+ * 「8b 鑑別思路」只能靠旁邊那個自由文字欄 differentialConsidered 撐著。
+ *
+ * 兩者不重複:自由文字是「為什麼」,這裡是**哪一個證型、有沒有被排除** ——
+ * 只有後者能被 usedIn 反查與月審統計拿去用。
+ *
+ * 證型清單刻意用跟 patternPickerOptions 同一批來源(patternLibrary + 舊
+ * conditions.tcm_patterns),否則這裡選出來的 id 會跟 tcmPatternSelections
+ * 對不起來,反查就會斷。 */
+function patternDifferentialVocab() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const lib = k.patternLibrary?.records || [];
+  const old = k.conditions?.tcm_patterns || [];
+  const seen = new Set();
+  return [...lib, ...old].filter((p) => {
+    if (!p || !p.id || seen.has(p.id)) return false;
+    seen.add(p.id);
+    return p.review_status !== "deprecated";
+  });
+}
+
+function patternDifferentialRowHtml(row = {}) {
+  return `
+    <div class="pattern-differential-row" data-row-id="${escapeAttribute(row.id || "")}">
+      <label>考慮過的證型 Pattern considered<select data-role="patternId">${vocabSelectOptionsHtml(patternDifferentialVocab(), row.patternId || "", { includeOther: false })}</select></label>
+      <label class="pd-ruled">已排除 Ruled out<input type="checkbox" data-role="ruledOut"${row.ruledOut ? " checked" : ""} /></label>
+      <label>理由 Note<input type="text" data-role="note" value="${escapeAttribute(row.note || "")}" placeholder="為什麼考慮、又為什麼排除" /></label>
+      <button type="button" class="ghost repeatable-row-remove" data-remove-row data-mode-text data-bilingual="移除" data-english="Remove">移除</button>
+    </div>`;
+}
+
+function renderPatternDifferentialRows(rows) {
+  const container = document.querySelector("#patternDifferentialRows");
+  if (!container) return;
+  container.innerHTML = (Array.isArray(rows) ? rows : []).map(patternDifferentialRowHtml).join("");
+  wireRepeatableRowContainer(container, "patternId");
+}
+
+function collectPatternDifferentialRows() {
+  const container = document.querySelector("#patternDifferentialRows");
+  if (!container) return [];
+  return [...container.querySelectorAll(".pattern-differential-row")].map((row) => ({
+    patternId: row.querySelector('[data-role="patternId"]').value || "",
+    ruledOut: !!row.querySelector('[data-role="ruledOut"]').checked,
+    note: (row.querySelector('[data-role="note"]').value || "").trim(),
+  })).filter((e) => e.patternId);   // normalizeSoapNote 也會濾,這裡先濾避免空列進存檔
+}
+
 // Delegated listeners on the container survive innerHTML rebuilds (the
 // container node itself is never replaced), so this only needs to attach
 // once per container — the dataset flag makes repeated calls (every dialog
@@ -8899,6 +8954,7 @@ function openSoapEditor(note = null) {
   // for a new note both render as an empty list of rows.
   renderLifestyleFactorRows(data.lifestyleFactors);
   renderAdverseEventRows(data.adverseEvents);
+  renderPatternDifferentialRows(data.patternDifferentials);
   // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
   // tcmPatternSecondary are UI-only form fields, no such keys exist on the
   // note object itself (the note holds tcmPatternSelections instead).
@@ -9130,6 +9186,8 @@ function saveSoapFromForm(event) {
   const adverseEventRowsContainer = document.querySelector("#adverseEventRows");
   const lifestyleFactors = lifestyleRowsContainer ? collectLifestyleFactorRows() : (current?.lifestyleFactors || []);
   const adverseEvents = adverseEventRowsContainer ? collectAdverseEventRows() : (current?.adverseEvents || []);
+  const patternDifferentialRowsContainer = document.querySelector("#patternDifferentialRows");
+  const patternDifferentials = patternDifferentialRowsContainer ? collectPatternDifferentialRows() : (current?.patternDifferentials || []);
 
   // TCM pattern primary/secondary reconciliation. The excludeValues live
   // filter (setupLinkAutocomplete) already keeps the current primary out of
@@ -9203,6 +9261,7 @@ function saveSoapFromForm(event) {
     referralOrSupervisorQuestion: (data.referralOrSupervisorQuestion || "").trim(),
     followUp: data.followUp.trim(),
     differentialConsidered: (data.differentialConsidered || "").trim(),
+    patternDifferentials,
     reflection: (data.reflection || "").trim(),
     ifIneffectivePlan: (data.ifIneffectivePlan || "").trim(),
     // P1 pre-visit paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §6.2):

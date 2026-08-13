@@ -753,8 +753,13 @@ h1 {
    rows are DRAFT/editable in the form (append-only applies to exposure
    EVENTS, not to visit rows being drafted, per SPRINT brief task 2). */
 .repeatable-rows { display: grid; gap: 0.6rem; margin: 0.5rem 0; }
+/* 鑑別診斷那一列的「已排除」是勾選框,不是輸入框 —— 沿用群組的直排會把
+   checkbox 拉成整欄寬。只有這一格改成橫排。 */
+.pattern-differential-row .pd-ruled { flex-direction: row; align-items: center; gap: 0.35rem; white-space: nowrap; }
+.pattern-differential-row .pd-ruled input { width: auto; }
 .lifestyle-factor-row,
-.adverse-event-row {
+.adverse-event-row,
+.pattern-differential-row {
   background: #f8faf9;
   border: 1px solid #e0e6e5;
   border-radius: 8px;
@@ -765,7 +770,8 @@ h1 {
   align-items: end;
 }
 .lifestyle-factor-row label,
-.adverse-event-row label {
+.adverse-event-row label,
+.pattern-differential-row label {
   display: flex;
   flex-direction: column;
   font-size: 0.72rem;
@@ -774,7 +780,9 @@ h1 {
 .lifestyle-factor-row input,
 .lifestyle-factor-row select,
 .adverse-event-row input,
-.adverse-event-row select {
+.adverse-event-row select,
+.pattern-differential-row input,
+.pattern-differential-row select {
   font-size: 0.82rem;
   padding: 0.3rem 0.4rem;
 }

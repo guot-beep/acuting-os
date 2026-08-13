@@ -871,6 +871,16 @@
             <details class="soap-reflection wide">
               <summary>臨床推理 / 按語（選填）</summary>
               <label class="wide">鑑別考量 Differential considered<textarea name="differentialConsidered" rows="2" placeholder="這次還考慮了哪些證型/診斷、為什麼排除"></textarea></label>
+              <!-- 上面那欄是「為什麼」,這一區是「哪一個證型、排除了沒有」。
+                   只有結構化的這一份能被 usedIn 反查與月審統計拿去用;
+                   自由文字進不了任何統計。兩者不重複,不要合併。 -->
+              <div class="wide repeatable-rows-block">
+                <div class="mini-head">
+                  <strong data-mode-text data-bilingual="鑑別診斷(結構化)Differentials" data-english="Differentials (structured)">鑑別診斷(結構化)Differentials</strong>
+                  <button type="button" id="addPatternDifferentialRow" class="ghost" data-mode-text data-bilingual="+ 新增證型 Add pattern" data-english="+ Add pattern">+ 新增證型 Add pattern</button>
+                </div>
+                <div id="patternDifferentialRows" class="repeatable-rows"></div>
+              </div>
               <label class="wide">按語 Reflection<textarea name="reflection" rows="3" placeholder="學到什麼、什麼出乎意料、下次要留意什麼"></textarea></label>
               <label class="wide">若無效的下一步 If ineffective, next step<textarea name="ifIneffectivePlan" rows="2" placeholder="開方時就寫下可驗證的下一步，回診時檢查這個預測"></textarea></label>
             </details>
