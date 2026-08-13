@@ -1169,7 +1169,9 @@
        notes tab always stays: it is Ting's own layer and starts empty by
        design. */
     panels = (panels || []).filter((p) => p && (p.id === "notes" || String(p.content || "").trim()));
-    const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
+    const eyebrow = kind === "formula" ? "FORMULA STUDY CARD"
+      : kind === "pharm" ? "DRUG LABEL CARD"
+      : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
     const mappedHerb = kind === "herb" ? (HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))) : null;
     // Most herb cards (Codex + Claude batches) never set the dedicated
@@ -1193,7 +1195,25 @@
       ? "雲端中醫 CloudTCM"
       : (preferredCitation?.name || "外部藥材參考 Source");
     const herbDragonUrl = record.american_dragon_url || citedAmericanDragonUrl;
-    const facts = kind === "formula"
+    // 西藥卡不能沿用中藥的 glance row:那三格會在華法林上印出「性味 待補」
+    // 「歸經 待補」—— 那不是缺資料,是**這些概念不適用於西藥**。印「待補」等於
+    // 暗示遲早會補上,是渲染層在說資料沒說過的話(與假劑量 6~15g 同一種錯)。
+    const facts = kind === "pharm"
+      ? [
+          // 用列表卡已經在用的同一組解析(classLabelOf / drugtarget_id 查表),
+          // 不要另外猜欄位名 —— 猜錯就印「待補」,而那會被讀成「這味藥缺資料」。
+          ["分類 Class", (() => {
+            const c = pharmClassById.get(record.drugclass_id);
+            if (!c) return "待補";
+            return c.name_zh && c.name_en ? `${c.name_zh} / ${c.name_en}` : (c.name_zh || c.name_en || "待補");
+          })()],
+          ["作用標的 Target", (() => {
+            const t = pharmTargetById.get(record.drugtarget_id);
+            return t ? modeText(t.name_zh || t.name_en, t.name_en || t.name_zh) : "待補";
+          })()],
+          ["官方標籤 Label", usableText(record.dailymed_label_title) || usableText(record.medlineplus_title) || "待補"],
+        ]
+      : kind === "formula"
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
           // Ting removed the Tier tile long ago and wants this slot to be the
@@ -1228,7 +1248,7 @@
     return `
       <div class="k-detail-shell">
         <div class="k-detail-toolbar">
-          <span>${esc(kind === "formula" ? "方劑資料庫 / Formula" : "中藥資料庫 / Materia Medica")}</span>
+          <span>${esc(kind === "formula" ? "方劑資料庫 / Formula" : kind === "pharm" ? "西藥資料庫 / Drug label" : "中藥資料庫 / Materia Medica")}</span>
           <button type="button" class="k-detail-close" data-detail-close aria-label="關閉詳情">返回列表</button>
         </div>
         <header class="k-detail-hero">
@@ -1429,6 +1449,56 @@
     });
   }
 
+  /* 西藥詳卡(2026-08-12)。
+   *
+   * 這顆按鈕先前是壞的:`openKnowledgeDetail` 只認得 formula 與 herb,pharm 查不到
+   * 記錄就靜靜 return —— 按鈕在、按了什麼都不會發生。**按了沒反應比沒有按鈕更糟**,
+   * 它讀起來像「我查過了,沒有更多」。
+   *
+   * 顯示的欄位全部來自官方藥品標籤(DailyMed / MedlinePlus),而且已經有
+   * `validate-pharm-standard.js` 的 §0 閘門在守:安全欄位沒有 verified_exact 的
+   * 官方來源就不准存在。所以這裡不是「把沒人覆核的內容放上畫面」——
+   * 與方劑那 26 段抓取來的效益宣稱(A0b)剛好相反,那批仍然全部隱藏。
+   *
+   * 排序照臨床急迫性,不照資料表順序:黑框警告 → 禁忌 → 警語 → 嚴重不良反應 →
+   * 孕哺 → 交互作用。59 種藥裡 25 種有黑框警告,先前一種都沒顯示過。 */
+  function pharmPanels(record) {
+    const pair = (zh, en) => detailPairedList(zh, en, "");
+    const has = (...keys) => keys.some((k) => {
+      const v = record[k];
+      return Array.isArray(v) ? v.length : usableText(v);
+    });
+    const boxed = has("boxed_warning_zh", "boxed_warning_en")
+      ? `<div class="k-boxed-warning">${modeText("⚠️ 黑框警告 BOXED WARNING（FDA 最高級別）", "⚠️ BOXED WARNING (FDA's most serious)")}
+           ${pair(record.boxed_warning_zh, record.boxed_warning_en)}</div>`
+      : "";
+    const safety = [
+      boxed,
+      detailSection("禁忌", "Contraindications", pair(record.contraindications_zh, record.contraindications_en)),
+      detailSection("警語與注意事項", "Warnings & precautions", pair(record.warnings_zh, record.warnings_en)),
+      detailSection("嚴重不良反應", "Serious adverse effects", pair(record.serious_adverse_effects_zh, record.serious_adverse_effects_en)),
+      detailSection("常見不良反應", "Adverse effects", pair(record.adverse_effects_zh, record.adverse_effects_en)),
+      detailSection("懷孕與哺乳", "Pregnancy & lactation", pair(record.pregnancy_lactation_zh, record.pregnancy_lactation_en)),
+      detailSection("藥物交互作用", "Drug interactions", pair(record.drug_interactions_zh, record.drug_interactions_en)),
+    ].join("");
+    const pharmacology = [
+      detailSection("作用機轉", "Mechanism of action", pair(record.mechanism_zh, record.mechanism_en)),
+      detailSection("生理作用", "Physiologic effect", pair(record.physiologic_effect_zh, record.physiologic_effect_en)),
+      detailSection("作用部位", "Site of action", pair(record.site_of_action_zh, record.site_of_action_en)),
+      detailSection("適應症", "Indications", pair(record.indications_zh, record.indications_en)),
+    ].join("");
+    // 中西醫關聯是本庫自己寫的,不是官方標籤 —— 與上面兩區分開放,標明出處性質。
+    const integrative = [
+      detailSection("與中醫的關聯（本庫註記，非官方標籤）", "TCM relation (this library's note, not label text)",
+        pair(record.tcm_relation_note_zh, record.tcm_relation_note_en)),
+    ].join("");
+    return [
+      { id: "safety", label: modeText("安全 Safety", "Safety"), content: safety },
+      { id: "pharmacology", label: modeText("藥理 Pharmacology", "Pharmacology"), content: pharmacology },
+      { id: "integrative", label: modeText("中西醫 Integrative", "Integrative"), content: integrative },
+    ];
+  }
+
   function herbPanels(record) {
     const exam = record.english_exam_track || {};
     const props = record.tcm_properties || {};
@@ -1618,10 +1688,16 @@
   }
 
   function openKnowledgeDetail(kind, id) {
-    const record = kind === "formula" ? formulaById.get(id) : herbById.get(id);
+    // pharm 先前不在這裡,所以「查看西藥卡」按鈕按了靜靜什麼都不做。
+    const record = kind === "formula" ? formulaById.get(id)
+      : kind === "pharm" ? pharmDrugs.find((d) => d.id === id)
+      : herbById.get(id);
     if (!record) return;
     const dialog = ensureDetailDialog();
-    el("knowledgeDetailContent").innerHTML = detailShell(record, kind, kind === "formula" ? formulaPanels(record) : herbPanels(record));
+    const panels = kind === "formula" ? formulaPanels(record)
+      : kind === "pharm" ? pharmPanels(record)
+      : herbPanels(record);
+    el("knowledgeDetailContent").innerHTML = detailShell(record, kind, panels);
     if (!dialog.open) dialog.showModal();
     dialog.scrollTop = 0;
   }

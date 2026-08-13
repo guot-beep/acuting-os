@@ -6629,6 +6629,19 @@ html { scroll-padding-top: 92px; }
   line-height: 1.6;
 }
 
+/* 黑框警告是 FDA 最高級別的警告,視覺上必須勝過同卡上的任何東西 ——
+   它與一般「注意事項」的差別是「可能致死」與「請留意」的差別。 */
+.k-boxed-warning {
+  margin: 0 0 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border: 2px solid #dc2626;
+  border-radius: 6px;
+  background: rgba(220, 38, 38, 0.12);
+  font-weight: 600;
+  line-height: 1.6;
+}
+.k-boxed-warning ul { margin: 0.4rem 0 0; padding-left: 1.1rem; font-weight: 500; }
+
 /* 內容品質軸(兩軸 maturity 的第二軸)。與 .k-comp-suspect 同一種視覺語言:
    左側色條 + 淡底,不搶標題。SAFETY_HOLD 用紅,DEFECT 用琥珀 —— 這兩者的差別
    是「不能當臨床依據」與「有缺陷但不致傷人」,顏色要讓人一眼分得出來。 */
