@@ -553,11 +553,15 @@
           <button id="newCaseBtn" type="button" data-mode-text data-bilingual="新增病例" data-english="New case">新增病例</button>
           <button id="newSoapBtn" class="ghost" type="button" data-mode-text data-bilingual="新增 SOAP" data-english="New SOAP">新增 SOAP</button>
           <button id="exportCasesBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出病例" data-english="Export cases">匯出病例</button>
+          <button id="practiceAuditBtn" class="ghost" type="button" aria-pressed="false" aria-controls="practiceAuditPanel" data-mode-text data-bilingual="診務回顧 Practice Audit" data-english="Practice Audit">診務回顧 Practice Audit</button>
           <label class="ghost file-label">
             <span data-mode-text data-bilingual="匯入病例" data-english="Import cases">匯入病例</span>
             <input id="importCasesFile" type="file" accept="application/json" />
           </label>
         </div>
+        <!-- 診務回顧:病例反過來告訴你該補哪些卡片。預設收起,按工具列的按鈕展開。
+             資料全部來自本機已存在的病例,不另外儲存、不外送。 -->
+        <section class="practice-audit-panel" id="practiceAuditPanel" aria-label="診務回顧 Practice Audit" hidden></section>
         <div class="case-grid">
           <aside class="case-list-panel" id="caseListPanel">
             <div class="mini-head">
@@ -975,6 +979,7 @@
     <script src="js/clinical-store.js"></script>
     <script src="js/avs.js"></script>
     <script src="js/previsit-validator.js"></script>
+    <script src="js/practice-audit.js"></script>
     <script src="app.js"></script>
     <script src="js/router.js"></script>
     <script src="js/knowledge.js"></script>

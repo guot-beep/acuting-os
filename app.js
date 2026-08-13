@@ -69,6 +69,9 @@ const OUTCOME_VERDICTS = {
 };
 const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
 let learnFromMode = false;
+// 診務回顧面板的開合。宣告在這裡而不是 renderPracticeAuditPanel 旁邊:
+// renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
+let practiceAuditOpen = false;
 
 // Metadata-driven numeric outcome metric config (2026-08-09) — prototype
 // covering exactly the two metrics already proven (metric.pain_score,
@@ -1247,6 +1250,11 @@ document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
   e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
   e.currentTarget.classList.toggle("active", learnFromMode);
   renderClinicalCases();
+});
+document.querySelector("#practiceAuditBtn")?.addEventListener("click", (e) => {
+  practiceAuditOpen = !practiceAuditOpen;
+  e.currentTarget.classList.toggle("active", practiceAuditOpen);
+  renderPracticeAuditPanel();
 });
 window.addEventListener("hashchange", handlePointHashChange);
 
@@ -6714,6 +6722,8 @@ window.AcuTingCases = {
 };
 
 function renderClinicalCases() {
+  // 病例一有變動就重算回顧,否則存完 SOAP 後面板還停在舊數字
+  if (practiceAuditOpen) renderPracticeAuditPanel();
   if (learnFromMode) return renderLearnFromReview();
   const filtered = getFilteredClinicalCases();
   if (selectedCaseId && !clinicalCases.some((item) => item.id === selectedCaseId)) selectedCaseId = clinicalCases[0]?.id || "";
@@ -7254,6 +7264,105 @@ function renderCaseSwimlanes(item, notesAsc) {
 
   return `<div class="swimlane-panel"><div class="timeline-head"><strong>病程泳道 Timeline</strong><small class="timeline-date">${notes.length} visits</small></div>
     <svg viewBox="0 0 1000 ${y + 8}" preserveAspectRatio="xMidYMin meet">${rows.join("")}</svg></div>`;
+}
+
+/* ── 診務回顧 Practice Audit ────────────────────────────────────────────
+ *
+ * Knowledge OS 迴圈的回饋端:臨床使用 → 結構化資料 → 回顧 → 知識缺口。
+ * 目的是把「還有 300 張卡要填」換成「我的病例正在需要這 12 張」。
+ *
+ * 計算全部在 js/practice-audit.js —— 這裡只負責畫。月審 CLI 會呼叫同一份
+ * 計算,所以畫面與腳本不可能出現兩套數字(P1 transport 的 MED-4 就是
+ * app 一套規則、CLI 一套規則漂移出來的)。
+ *
+ * 這一層唯一的職責邊界:**不得在畫面上補計算層刻意不說的話。**
+ * 沒有具名來源的 metric,計算層只給變化量與 caveat,畫面就照樣只畫那兩個,
+ * 不准自己加箭頭顏色或「改善」字樣去暗示臨床顯著性。 */
+function renderPracticeAuditPanel() {
+  const panel = document.getElementById("practiceAuditPanel");
+  if (!panel) return;
+  panel.hidden = !practiceAuditOpen;
+  const btn = document.getElementById("practiceAuditBtn");
+  if (btn) btn.setAttribute("aria-pressed", practiceAuditOpen ? "true" : "false");
+  if (!practiceAuditOpen) { panel.innerHTML = ""; return; }
+
+  const engine = globalThis.AcuTingPracticeAudit;
+  if (!engine || typeof engine.computePracticeAudit !== "function") {
+    // fail loud:寧可明說算不出來,也不要畫一份空表讓人以為「都是 0」
+    panel.innerHTML = `<div class="case-empty">診務回顧模組未載入(js/practice-audit.js),無法計算。這不是「沒有資料」,是算不出來。</div>`;
+    return;
+  }
+  const r = engine.computePracticeAudit({ cases: clinicalCases, knowledge: globalThis.ACUTING_KNOWLEDGE });
+  const num = (v, suffix) => (v === null || v === undefined ? "—" : `${v}${suffix || ""}`);
+  const stat = (label, value, hint) =>
+    `<div class="pa-stat"><small>${escapeHtml(label)}</small><strong>${escapeHtml(String(value))}</strong>${hint ? `<em>${escapeHtml(hint)}</em>` : ""}</div>`;
+
+  const usedList = (rows, empty) => rows.length
+    // known === false = 查過但知識庫裡沒有這張卡,標出來而不是安靜顯示 id。
+    // undefined = 這一類本來就不查表(穴位是 LI4 這種代碼),不標。
+    ? `<ol class="pa-used">${rows.map((u) => `<li><span>${escapeHtml(u.name || u.id)}</span>${u.known === false ? `<em class="pa-basis pa-basis-none">知識庫沒有這張卡</em>` : ""}<small>${u.visits} 診 · ${u.cases} 例</small></li>`).join("")}</ol>`
+    : `<p class="pa-empty">${escapeHtml(empty)}</p>`;
+
+  const verdictRows = Object.entries(r.verdictMix)
+    .map(([k, v]) => `<li><span>${escapeHtml(OUTCOME_VERDICTS[k]?.zh || k)}</span><small>${v} 診</small></li>`).join("");
+
+  const outcomeRows = r.outcomeChanges.map((o) => {
+    const dir = o.medianChange === null ? "—" : (o.medianChange > 0 ? `+${o.medianChange}` : String(o.medianChange));
+    // 有具名來源才給得出「拿什麼對照」;沒有的就明寫沒有,不留空白讓人自行想像
+    const basis = o.interpretable
+      ? `<em class="pa-basis" title="${escapeHtml(o.interpretationText)}">可對照:${escapeHtml(shortCitation(o.interpretationSource))}</em>`
+      : `<em class="pa-basis pa-basis-none">${escapeHtml(o.caveat)}</em>`;
+    return `<li><span>${escapeHtml(o.label)}</span><strong>${escapeHtml(dir)}${escapeHtml(o.unitDisplay ? " " + o.unitDisplay : "")}</strong><small>${o.casesMeasured} 例有前後值</small>${basis}</li>`;
+  }).join("");
+
+  const gapRows = r.knowledgeGaps.map((g) =>
+    `<li><span class="pa-gap-kind">${escapeHtml(g.kind)}</span><span>${escapeHtml(g.name)}</span><small>${g.visits} 診 · ${g.cases} 例</small><em>${escapeHtml(g.maturityLabel)}</em></li>`).join("");
+
+  panel.innerHTML = `
+    <div class="timeline-head">
+      <strong>診務回顧 Practice Audit</strong>
+      <small class="timeline-date">${r.volume.firstVisitDate || "—"} → ${r.volume.lastVisitDate || "—"} · 本機資料,不外送</small>
+    </div>
+    <div class="pa-stats">
+      ${stat("病人 Patients", r.volume.patients)}
+      ${stat("病例 Cases", r.volume.cases)}
+      ${stat("就診 Visits", r.volume.visits, r.volume.undatedVisits ? `${r.volume.undatedVisits} 診沒有日期` : "")}
+      ${stat("回診率 Follow-up", num(r.followUp.followUpRatePct, "%"), `${r.followUp.singleVisitCases} 例只來過一次`)}
+      ${stat("療效判定填寫率", num(r.completeness.verdictRatePct, "%"), `${r.completeness.visitsWithVerdict} / ${r.volume.visits} 診`)}
+      ${stat("Outcome 數值填寫率", num(r.completeness.metricRatePct, "%"), `${r.completeness.visitsWithMetric} / ${r.volume.visits} 診`)}
+      ${stat("不良事件率 AE", num(r.adverseEvents.aeRatePct, "%"), `${r.adverseEvents.visitsWithAe} 診有記錄`)}
+    </div>
+
+    <div class="pa-cols">
+      <div class="pa-col">
+        <h4>療效判定分佈</h4>
+        ${verdictRows ? `<ul class="pa-list">${verdictRows}</ul>` : `<p class="pa-empty">還沒有任何一診填過療效判定。</p>`}
+        <h4>Outcome 變化(首診 → 末診中位數)</h4>
+        ${outcomeRows ? `<ul class="pa-list pa-outcome">${outcomeRows}</ul>` : `<p class="pa-empty">還沒有任何 metric 在同一病例被測過兩次以上。</p>`}
+        <h4>不良事件</h4>
+        ${Object.keys(r.adverseEvents.bySeverity).length
+          ? `<ul class="pa-list">${Object.entries(r.adverseEvents.bySeverity).map(([k, v]) => `<li><span>${escapeHtml(k)}</span><small>${v} 筆</small></li>`).join("")}</ul>`
+          : `<p class="pa-empty">沒有記錄到不良事件。</p>`}
+      </div>
+      <div class="pa-col">
+        <h4>最常用穴位</h4>${usedList(r.mostUsed.points, "還沒有記錄用穴。")}
+        <h4>最常用方劑</h4>${usedList(r.mostUsed.formulas, "還沒有記錄方劑。")}
+        <h4>最常用證型</h4>${usedList(r.mostUsed.patterns, "還沒有記錄證型。")}
+      </div>
+    </div>
+
+    <div class="pa-gaps">
+      <h4>知識缺口 — 病例正在需要,但卡片還不到位(${r.knowledgeGapTotal} 項)</h4>
+      ${gapRows
+        ? `<ul class="pa-list pa-gap-list">${gapRows}</ul>`
+        : `<p class="pa-empty">目前用到的方劑與證型卡片都已有來源。</p>`}
+    </div>
+
+    <details class="pa-notstated">
+      <summary>這份回顧刻意不說什麼</summary>
+      <ul>${r.notStated.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>
+    </details>
+  `;
 }
 
 function renderVisitBrief(item, notesDesc) {

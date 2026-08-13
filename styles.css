@@ -6635,6 +6635,26 @@ html { scroll-padding-top: 92px; }
   line-height: 1.6;
 }
 
+/* 針灸範圍:precautions 先讀、且看得出是警示。can_treat 與 co_management 是
+   一般資訊,不搶那個紅。這個順序是刻意的 —— 讀的人要先知道什麼不能碰。 */
+.k-condition-scope {
+  margin: 0.6rem 0;
+  padding: 0.55rem 0.7rem;
+  border-left: 3px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.07);
+  border-radius: 6px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.k-condition-scope p { margin: 0.35rem 0 0; }
+.k-condition-scope small { display: block; margin-top: 0.4rem; opacity: 0.7; }
+.k-scope-precaution {
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(220, 38, 38, 0.13);
+  border-left: 2px solid #dc2626;
+}
+
 /* 黑框警告是 FDA 最高級別的警告,視覺上必須勝過同卡上的任何東西 ——
    它與一般「注意事項」的差別是「可能致死」與「請留意」的差別。 */
 .k-boxed-warning {
@@ -7376,6 +7396,33 @@ html { scroll-padding-top: 92px; }
 .care-row small { opacity: .7; white-space: nowrap; }
 
 /* Timeline swim-lanes (2026-08, SOL direction B) */
+/* 診務回顧 Practice Audit — 病例反過來告訴你該補哪些卡片。
+   刻意樸素:這是拿來讀數字的面板,不是儀表板。 */
+.practice-audit-panel { margin: 14px 0; padding: 14px 16px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.05); }
+.practice-audit-panel h4 { margin: 14px 0 6px; font-size: .82rem; letter-spacing: .02em; color: var(--muted); font-weight: 600; }
+.practice-audit-panel h4:first-child { margin-top: 4px; }
+.pa-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+.pa-stat { padding: 8px 10px; border: 1px solid rgba(148,163,184,.2); border-radius: 8px; background: rgba(148,163,184,.06); }
+.pa-stat small { display: block; color: var(--muted); font-size: .7rem; }
+.pa-stat strong { display: block; font-size: 1.15rem; line-height: 1.4; }
+.pa-stat em { display: block; font-style: normal; color: var(--muted); font-size: .68rem; }
+.pa-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 6px; }
+.pa-list, .pa-used { list-style: none; margin: 0; padding: 0; }
+.pa-used { counter-reset: pa; }
+.pa-list li, .pa-used li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; padding: 4px 0; border-bottom: 1px dashed rgba(148,163,184,.18); font-size: .82rem; }
+.pa-list li small, .pa-used li small { color: var(--muted); font-size: .72rem; margin-left: auto; }
+.pa-outcome li strong { font-variant-numeric: tabular-nums; }
+/* 判讀依據:有具名來源與沒有,要一眼分得出來。不用紅綠 —— 這不是好壞。 */
+.pa-basis { flex-basis: 100%; font-style: normal; font-size: .7rem; color: var(--muted); }
+.pa-basis-none { opacity: .85; font-style: italic; }
+.pa-gap-kind { font-size: .68rem; padding: 1px 6px; border-radius: 999px; border: 1px solid rgba(148,163,184,.35); color: var(--muted); }
+.pa-gap-list li em { font-style: normal; font-size: .7rem; color: var(--muted); }
+.pa-empty { margin: 4px 0 0; color: var(--muted); font-size: .78rem; }
+.pa-notstated { margin-top: 14px; font-size: .76rem; color: var(--muted); }
+.pa-notstated summary { cursor: pointer; }
+.pa-notstated ul { margin: 6px 0 0 1.1em; padding: 0; }
+@media print { .practice-audit-panel { break-inside: avoid; } }
+
 .swimlane-panel { margin: 14px 0; padding: 12px 14px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.05); }
 .swimlane-panel svg { width: 100%; height: auto; display: block; }
 .sw-axis { stroke: rgba(148,163,184,.5); stroke-width: 1; }
