@@ -43,6 +43,8 @@ function grabFunction(name) {
 const BOXED_ZH = "華法林可造成重大或致命出血。所有用藥病人都須定期監測 INR。";
 const CONTRA_A = "活動性出血";
 const CONTRA_B = "懷孕（除機械瓣膜外）";
+const NOTE_FLAGGED = "High-dose omega-3 can increase bleeding-time laboratory effects; anticoagulant users need review.";
+const NOTE_PLAIN = "No characteristic thyroid-drug interaction.";
 
 const KNOWLEDGE = {
   pharmDrugs: {
@@ -52,7 +54,22 @@ const KNOWLEDGE = {
       { id: "drug.fixture_clean", name_zh: "測試藥丙" },
     ],
   },
-  supplementRecords: { records: [{ id: "supp.fixture", name_zh: "測試補充劑" }] },
+  supplementRecords: {
+    records: [
+      { id: "supp.fixture", name_zh: "測試補充劑" },
+      /* 補充劑用的是完全不同的欄位形狀。實測 supp.omega_3 就長這樣,而只讀
+       * 藥物欄位的第一版渲染器對它回傳空字串 —— 一個長期吃 warfarin 的病人
+       * 自己加魚油,畫面上會顯示成「查過了,沒有」。這組 fixture 就是為了
+       * 讓那個洞不會再被打開。 */
+      {
+        id: "supp.fixture_flagged", name_zh: "測試魚油",
+        key_safety_notes: [
+          { note_en: NOTE_FLAGGED, interaction_flags: ["anticoagulant"], source: { name: "NIH ODS", url: "https://example.invalid/" } },
+          { note_en: NOTE_PLAIN, interaction_flags: [], source: { name: "NIH ODS" } },
+        ],
+      },
+    ],
+  },
   medications: { records: [] },
 };
 
@@ -71,6 +88,7 @@ try {
   vm.runInContext([
     grabFunction("lookupAgentSafetyCard"),
     grabFunction("safetyFieldList"),
+    grabFunction("supplementSafetyNotes"),
     grabFunction("renderAgentExposureSafety"),
   ].join("\n"), sandbox);
   render = (agentId) => sandbox.renderAgentExposureSafety({ agentId, nameText: "測試" });
@@ -90,6 +108,7 @@ const cleanHtml = render("drug.fixture_clean");
 const unknownHtml = render("drug.does_not_exist");
 const noIdHtml = render("");
 const suppHtml = render("supp.fixture");
+const flaggedSuppHtml = render("supp.fixture_flagged");
 
 const checks = [
   ["黑框警告的文字有出現", () => boxedHtml.includes(BOXED_ZH)],
@@ -106,6 +125,19 @@ const checks = [
   ["查不到卡片 → 必須明說沒查過", () => /未做安全檢查/.test(unknownHtml) && /沒有這張卡/.test(unknownHtml)],
   ["沒有連結 agentId → 必須明說沒查過", () => /未做安全檢查/.test(noIdHtml)],
   ["supp.* 走補充劑區塊而不是誤報「沒有卡片」", () => suppHtml === "" ],
+  // 以下四條守補充劑那個不同的欄位形狀(key_safety_notes)
+  ["補充劑的 key_safety_notes 有被讀到", () => flaggedSuppHtml.includes(NOTE_FLAGGED)],
+  ["有交互作用標記的備註不用點開就看得到", () => visibleWithoutClicking(flaggedSuppHtml).includes(NOTE_FLAGGED)],
+  ["交互作用標記本身要顯示(anticoagulant)", () => flaggedSuppHtml.includes("anticoagulant")],
+  /* 來源必須貼在**那一條**備註上,不能只是「整頁某處有出現 NIH ODS」。
+   * 第一版寫成後者,於是把可行動那條的來源整個拿掉仍然 PASS ——
+   * 收合區裡另一條備註的來源就把它蓋過去了。斷言範圍要縮到區塊內。 */
+  ["可行動的那條備註本身要帶來源,不是整頁某處有就算", () => {
+    const block = (flaggedSuppHtml.match(/<div class="agent-safety-flagged">[\s\S]*?<\/div>/) || [""])[0];
+    return block.includes(NOTE_FLAGGED) && block.includes("NIH ODS");
+  }],
+  ["沒有標記的備註收在 details,不跟可行動的那條搶注意力", () =>
+    flaggedSuppHtml.includes(NOTE_PLAIN) && !visibleWithoutClicking(flaggedSuppHtml).includes(NOTE_PLAIN)],
   ["「沒查過」與「查過沒事」的輸出不相同", () => unknownHtml !== cleanHtml && noIdHtml !== cleanHtml],
 ];
 

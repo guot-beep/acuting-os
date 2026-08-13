@@ -6356,6 +6356,32 @@ function safetyFieldList(card, zhKey, enKey) {
   return out;
 }
 
+/* 補充劑卡片的安全資訊不是 boxed_warning/contraindications,而是
+ * key_safety_notes: [{ note_en, interaction_flags[], source{name,url} }]。
+ *
+ * 這個形狀差異差點讓整件事失效:supp.omega_3 帶著「高劑量 omega-3 會延長
+ * 出血時間,抗凝血劑使用者需評估」+ interaction_flags:["anticoagulant"],
+ * 而只讀藥物欄位的渲染器對它回傳空字串 —— 畫面上等於「查過了,沒有」。
+ * 一個長期吃 warfarin 的病人自己加魚油,正是這條備註存在的理由。
+ *
+ * 有 interaction_flags 的排前面且直接展開(那是可行動的);其餘收起來。
+ * 不做交互作用比對 —— 系統不知道這個病人同時在吃什麼,判斷是醫師的。
+ */
+function supplementSafetyNotes(card) {
+  const raw = card && card.key_safety_notes;
+  if (!Array.isArray(raw)) return { flagged: [], rest: [] };
+  const flagged = [], rest = [];
+  for (const n of raw) {
+    if (!n || typeof n !== "object") continue;
+    const text = String(n.note_zh || n.note_en || "").trim();
+    if (!text) continue;
+    const flags = Array.isArray(n.interaction_flags) ? n.interaction_flags.filter(Boolean).map(String) : [];
+    const source = n.source && n.source.name ? String(n.source.name) : "";
+    (flags.length ? flagged : rest).push({ text, flags, source });
+  }
+  return { flagged, rest };
+}
+
 function renderAgentExposureSafety(exposure) {
   const found = lookupAgentSafetyCard(exposure.agentId);
   if (!found.checked) {
@@ -6363,14 +6389,26 @@ function renderAgentExposureSafety(exposure) {
   }
   const boxed = safetyFieldList(found.card, "boxed_warning_zh", "boxed_warning_en");
   const contra = safetyFieldList(found.card, "contraindications_zh", "contraindications_en");
-  if (!boxed.length && !contra.length) return "";
+  const notes = supplementSafetyNotes(found.card);
+  if (!boxed.length && !contra.length && !notes.flagged.length && !notes.rest.length) return "";
   const parts = [];
   // 黑框警告直接展開:FDA 最高級別的警告不該藏在要點開的地方
   if (boxed.length) {
     parts.push(`<div class="agent-safety-boxed"><strong>⚠️ 黑框警告 BOXED WARNING</strong>${boxed.map((t) => `<p>${escapeHtml(t)}</p>`).join("")}</div>`);
   }
+  // 帶交互作用標記的補充劑備註 = 可行動的,跟黑框一樣直接展開
+  if (notes.flagged.length) {
+    parts.push(`<div class="agent-safety-flagged"><strong>⚠ 交互作用註記 Interaction note</strong>${notes.flagged.map((n) =>
+      `<p>${escapeHtml(n.text)}${n.flags.length ? ` <span class="agent-safety-flag">${n.flags.map(escapeHtml).join(" · ")}</span>` : ""}${n.source ? `<em>來源:${escapeHtml(n.source)}</em>` : ""}</p>`
+    ).join("")}</div>`);
+  }
   if (contra.length) {
     parts.push(`<details class="agent-safety-contra"><summary>禁忌 Contraindications（${contra.length}）</summary><ul>${contra.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul></details>`);
+  }
+  if (notes.rest.length) {
+    parts.push(`<details class="agent-safety-contra"><summary>其他安全備註 Other safety notes（${notes.rest.length}）</summary><ul>${notes.rest.map((n) =>
+      `<li>${escapeHtml(n.text)}${n.source ? `<em> — ${escapeHtml(n.source)}</em>` : ""}</li>`
+    ).join("")}</ul></details>`);
   }
   return `<div class="agent-safety">${parts.join("")}</div>`;
 }

@@ -680,6 +680,13 @@ h1 {
 .agent-safety-boxed { border: 1px solid rgba(190,60,45,.45); border-left-width: 3px; border-radius: 6px; padding: 6px 10px; background: rgba(190,60,45,.06); }
 .agent-safety-boxed strong { display: block; font-size: .74rem; letter-spacing: .02em; color: #9c2f22; }
 .agent-safety-boxed p { margin: 3px 0 0; font-size: .8rem; line-height: 1.45; }
+/* 補充劑的交互作用註記:比黑框低一階,但同樣不收在 details —— 病人自己買的
+   東西加上他長期在吃的藥,正是最容易漏掉的那一類。 */
+.agent-safety-flagged { margin-top: 0.35rem; border: 1px solid rgba(180,120,20,.4); border-left-width: 3px; border-radius: 6px; padding: 6px 10px; background: rgba(180,120,20,.06); }
+.agent-safety-flagged strong { display: block; font-size: .74rem; letter-spacing: .02em; color: #8a5b0d; }
+.agent-safety-flagged p { margin: 3px 0 0; font-size: .78rem; line-height: 1.45; }
+.agent-safety-flag { display: inline-block; font-size: .68rem; padding: 0 6px; border-radius: 999px; border: 1px solid rgba(180,120,20,.5); color: #8a5b0d; }
+.agent-safety-flagged em { display: block; font-style: normal; font-size: .68rem; color: var(--muted); }
 .agent-safety-contra { margin-top: 0.35rem; font-size: .78rem; }
 .agent-safety-contra summary { cursor: pointer; color: var(--muted); }
 .agent-safety-contra ul { margin: 4px 0 0 1.1em; padding: 0; }
