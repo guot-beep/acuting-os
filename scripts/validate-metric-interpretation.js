@@ -40,7 +40,7 @@ const P1_TRANSPORT = [
 const VALID_STATUS = ["sourced", "no_published_threshold", "source_pending"];
 
 // 凍結基線:2026-08-12 實測的未標註筆數(排給 Sonnet 補)。只准往下。
-const KNOWN_UNLABELLED = 21;
+const KNOWN_UNLABELLED = 0;
 
 const errors = [];
 const unlabelled = [];

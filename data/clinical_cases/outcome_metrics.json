@@ -38,10 +38,12 @@
         "max": 10
       },
       "instrument_en": "0–10 Numeric Rating Scale (NRS)",
-      "interpretation_en": "",
+      "interpretation_en": "Ad-hoc single-item 0-10 rating used by this clinic. No published minimal clinically important difference exists for this item as used here; read it as a within-patient trend over visits, not against an external threshold.",
       "source": null,
       "patient_prompt_zh": "睡眠品質:整體來說,這幾天睡得好嗎?0=非常差,10=非常好",
-      "patient_prompt_en": "Sleep quality: Overall, how well have you been sleeping these past few days? 0 = very poor, 10 = very good."
+      "patient_prompt_en": "Sleep quality: Overall, how well have you been sleeping these past few days? 0 = very poor, 10 = very good.",
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "本診所自訂的 0–10 單題量表。文獻上沒有對應的臨床顯著差異值 —— 只看同一位病人跨診次的趨勢,不要拿外部閾值來判讀,也不要為它發明一個。"
     },
     {
       "id": "metric.sleep_hours",
@@ -80,7 +82,9 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
       },
       "patient_prompt_zh": "入睡時間:躺下後大約幾分鐘才睡著?",
-      "patient_prompt_en": "Sleep onset: About how many minutes does it take you to fall asleep after lying down?"
+      "patient_prompt_en": "Sleep onset: About how many minutes does it take you to fall asleep after lying down?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "量表本身(Consensus Sleep Diary)已有具名出處,但入睡時間縮短多少分鐘算臨床有意義的改善並無具名來源,待 SOL 查證。"
     },
     {
       "id": "metric.night_wakings",
@@ -98,7 +102,9 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/22294820/"
       },
       "patient_prompt_zh": "夜醒次數:一個晚上大概醒來幾次?",
-      "patient_prompt_en": "Night wakings: About how many times do you wake up during the night?"
+      "patient_prompt_en": "Night wakings: About how many times do you wake up during the night?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "量表本身(Consensus Sleep Diary)已有具名出處,但夜醒次數減少多少算臨床有意義的改善並無具名來源,待 SOL 查證。"
     },
     {
       "id": "metric.stress_level",
@@ -173,10 +179,12 @@
         "max": 10
       },
       "instrument_en": "0–10 Numeric Rating Scale (NRS)",
-      "interpretation_en": "",
+      "interpretation_en": "Ad-hoc single-item 0-10 rating used by this clinic. No published minimal clinically important difference exists for this item as used here; read it as a within-patient trend over visits, not against an external threshold.",
       "source": null,
       "patient_prompt_zh": "腹脹:最近腹脹的程度如何?0=完全不脹,10=脹到最嚴重",
-      "patient_prompt_en": "Bloating: How bad has your bloating been lately? 0 = not at all, 10 = worst possible."
+      "patient_prompt_en": "Bloating: How bad has your bloating been lately? 0 = not at all, 10 = worst possible.",
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "本診所自訂的 0–10 單題量表。文獻上沒有對應的臨床顯著差異值 —— 只看同一位病人跨診次的趨勢,不要拿外部閾值來判讀,也不要為它發明一個。"
     },
     {
       "id": "metric.bowel_frequency",
@@ -191,7 +199,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "排便頻率:過去一週大概排便幾次?",
-      "patient_prompt_en": "Bowel movements: About how many times did you have a bowel movement in the past week?"
+      "patient_prompt_en": "Bowel movements: About how many times did you have a bowel movement in the past week?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源(例如 Rome 準則)說明排便頻率變化多少算臨床有意義的改善或異常。"
     },
     {
       "id": "metric.cycle_length",
@@ -206,7 +216,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "月經週期:上次月經到這次月經開始,間隔大約幾天?",
-      "patient_prompt_en": "Cycle length: About how many days from the start of your last period to the start of this one?"
+      "patient_prompt_en": "Cycle length: About how many days from the start of your last period to the start of this one?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源(如婦產科學會準則)說明月經週期長度的正常範圍與臨床有意義變化的判定標準。"
     },
     {
       "id": "metric.bleeding_days",
@@ -221,7 +233,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "經期天數:這次月經流血總共持續幾天?",
-      "patient_prompt_en": "Bleeding days: How many days did the bleeding last this cycle?"
+      "patient_prompt_en": "Bleeding days: How many days did the bleeding last this cycle?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明經期天數的正常範圍與臨床有意義變化的判定標準。"
     },
     {
       "id": "metric.menstrual_flow_volume",
@@ -236,7 +250,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "月經量:這次月經量偏少、正常、還是偏多?",
-      "patient_prompt_en": "Flow volume: Was your flow this cycle scanty, normal, or heavy?"
+      "patient_prompt_en": "Flow volume: Was your flow this cycle scanty, normal, or heavy?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明量少/正常/量多的判定標準(例如失血量或標準化評分工具)。"
     },
     {
       "id": "metric.menstrual_clots",
@@ -251,7 +267,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "血塊:這次月經有血塊嗎?沒有/小血塊/大血塊?",
-      "patient_prompt_en": "Clots: Did you have blood clots this cycle? None / small / large?"
+      "patient_prompt_en": "Clots: Did you have blood clots this cycle? None / small / large?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明血塊大小分級與臨床意義的判定標準。"
     },
     {
       "id": "metric.ovulation_confirmed",
@@ -266,7 +284,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "排卵確認:這個週期有確認排卵嗎?有/沒有/不確定",
-      "patient_prompt_en": "Ovulation: Did you confirm ovulation this cycle? Yes / no / not sure."
+      "patient_prompt_en": "Ovulation: Did you confirm ovulation this cycle? Yes / no / not sure.",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明何種證據組合(如 BBT、LH、超音波)才構成「確認排卵」的判定標準。"
     },
     {
       "id": "metric.lh_surge",
@@ -281,7 +301,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "LH 試紙:這個週期驗到 LH 陽性(排卵)了嗎?陽性/陰性/不確定",
-      "patient_prompt_en": "LH surge test: Did you get a positive LH (ovulation) test strip this cycle? Positive / negative / not sure."
+      "patient_prompt_en": "LH surge test: Did you get a positive LH (ovulation) test strip this cycle? Positive / negative / not sure.",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明 LH 試紙判讀方式與偽陰性/偽陽性的臨床意義。"
     },
     {
       "id": "metric.bbt_pattern",
@@ -296,7 +318,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "基礎體溫:這個週期的基礎體溫型態如何(例如是否有明顯升溫)?請簡述",
-      "patient_prompt_en": "Basal body temperature: What did your BBT pattern look like this cycle (e.g. a clear rise)? Brief description."
+      "patient_prompt_en": "Basal body temperature: What did your BBT pattern look like this cycle (e.g. a clear rise)? Brief description.",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明基礎體溫型態(如雙相型)判讀為排卵的標準。"
     },
     {
       "id": "metric.endometrial_lining",
@@ -311,7 +335,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "",
-      "patient_prompt_en": ""
+      "patient_prompt_en": "",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明幾 mm 的內膜厚度算臨床有意義(如著床適合度的判定標準)。"
     },
     {
       "id": "metric.follicle_size",
@@ -326,7 +352,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "",
-      "patient_prompt_en": ""
+      "patient_prompt_en": "",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明卵泡大小達多少 mm 算成熟/臨床有意義。"
     },
     {
       "id": "metric.post_treatment_reaction",
@@ -341,7 +369,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "治療後反應:上次針灸後有什麼感覺或反應嗎?(痠脹、疲倦、變好等)",
-      "patient_prompt_en": "Post-treatment reaction: Did you notice anything after your last treatment (soreness, tiredness, feeling better, etc.)?"
+      "patient_prompt_en": "Post-treatment reaction: Did you notice anything after your last treatment (soreness, tiredness, feeling better, etc.)?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "此欄位目前是開放式文字描述,尚無具名來源界定哪些反應屬於預期的好轉反應、哪些需要留意,待 SOL 查證是否有可用的判讀框架。"
     },
     {
       "id": "metric.effect_duration_days",
@@ -356,7 +386,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "效果維持:上次治療的效果大概維持了幾天?",
-      "patient_prompt_en": "Effect duration: About how many days did the effect from your last treatment last?"
+      "patient_prompt_en": "Effect duration: About how many days did the effect from your last treatment last?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明效果維持天數的長短與臨床意義之間的判定標準。"
     },
     {
       "id": "metric.adverse_reaction",
@@ -371,7 +403,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "不良反應:治療後有任何不舒服或異常反應嗎?請說明",
-      "patient_prompt_en": "Adverse reaction: Did you have any discomfort or unusual reaction after treatment? Please describe."
+      "patient_prompt_en": "Adverse reaction: Did you have any discomfort or unusual reaction after treatment? Please describe.",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "此欄位為開放式文字紀錄不良反應,嚴重度分級目前無具名來源,待 SOL 查證是否需要採用標準化分級。"
     },
     {
       "id": "metric.fatigue_score",
@@ -386,10 +420,12 @@
         "max": 10
       },
       "instrument_en": "",
-      "interpretation_en": "",
+      "interpretation_en": "Ad-hoc single-item 0-10 rating used by this clinic. No published minimal clinically important difference exists for this item as used here; read it as a within-patient trend over visits, not against an external threshold.",
       "source": null,
       "patient_prompt_zh": "疲勞:最近整體疲勞程度如何?0=完全不累,10=累到極點",
-      "patient_prompt_en": "Fatigue: How fatigued have you felt lately overall? 0 = not tired at all, 10 = extremely fatigued."
+      "patient_prompt_en": "Fatigue: How fatigued have you felt lately overall? 0 = not tired at all, 10 = extremely fatigued.",
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "本診所自訂的 0–10 單題量表。文獻上沒有對應的臨床顯著差異值 —— 只看同一位病人跨診次的趨勢,不要拿外部閾值來判讀,也不要為它發明一個。"
     },
     {
       "id": "metric.stool_form_bristol",
@@ -410,7 +446,8 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/9299672/"
       },
       "patient_prompt_zh": "糞便型態:最近的糞便比較接近 Bristol 分類的第幾型(1顆粒狀最硬,7水狀最軟)?",
-      "patient_prompt_en": "Stool form: Which Bristol type does your stool most resemble lately (1 = hard lumps, 7 = watery)?"
+      "patient_prompt_en": "Stool form: Which Bristol type does your stool most resemble lately (1 = hard lumps, 7 = watery)?",
+      "interpretation_status": "sourced"
     },
     {
       "id": "metric.hot_flash_count_day",
@@ -425,7 +462,9 @@
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "潮熱次數:最近平均一天發作幾次潮熱?",
-      "patient_prompt_en": "Hot flashes: On average, how many hot flash episodes do you have per day?"
+      "patient_prompt_en": "Hot flashes: On average, how many hot flash episodes do you have per day?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "需要具名來源說明每日潮熱次數減少多少算臨床有意義的改善。"
     },
     {
       "id": "metric.range_of_motion_deg",
@@ -443,7 +482,8 @@
         "url": "https://www.ncbi.nlm.nih.gov/books/NBK558985/"
       },
       "patient_prompt_zh": "",
-      "patient_prompt_en": ""
+      "patient_prompt_en": "",
+      "interpretation_status": "sourced"
     },
     {
       "id": "metric.pgic",
@@ -473,6 +513,7 @@
     "  1. 已具名來源 — source 帶 {name,url},interpretation_en 敘述其結論。",
     "  2. interpretation_status:\"no_published_threshold\" — 這是本診所自訂的單題量表,文獻上不存在 MCID/判讀閾值。這是結論,不是待辦:不要為它發明一個數字。",
     "  3. interpretation_status:\"source_pending\" — 該指標確實有文獻,只是還沒查。這一種才是待辦(交 SOL)。",
-    "沒有 interpretation_status 又沒有 source 的記錄 = 契約不完整,validator 會擋。"
+    "沒有 interpretation_status 又沒有 source 的記錄 = 契約不完整,validator 會擋。",
+    "狀態講的是「判讀閾值」,不是「量表出處」——兩者可以分開。metric.sleep_onset_minutes 就是這種:量表本身有 Consensus Sleep Diary 的具名出處,但多少分鐘算改善並沒有具名來源,所以它是 source_pending 而不是 sourced。source 欄位留著(那是量表的出處),status 照判讀閾值判。"
   ]
 }
