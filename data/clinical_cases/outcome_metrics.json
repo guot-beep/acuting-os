@@ -22,7 +22,8 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/11690728/"
       },
       "patient_prompt_zh": "疼痛:過去24小時平均痛多少?0=不痛,10=最痛",
-      "patient_prompt_en": "Pain: On average over the last 24 hours, how bad was your pain? 0 = no pain, 10 = worst pain."
+      "patient_prompt_en": "Pain: On average over the last 24 hours, how bad was your pain? 0 = no pain, 10 = worst pain.",
+      "interpretation_status": "sourced"
     },
     {
       "id": "metric.sleep_quality",
@@ -50,12 +51,18 @@
       "category": "symptom",
       "unit": "hours",
       "direction_good": "individualized",
-      "scale": null,
-      "instrument_en": "",
+      "scale": {
+        "min": 0,
+        "max": null,
+        "unit_note": "hours per night, self-reported"
+      },
+      "instrument_en": "Self-reported hours of sleep per night (not a validated instrument; a raw quantity)",
       "interpretation_en": "",
       "source": null,
       "patient_prompt_zh": "睡眠時數:平均一晚睡幾小時?",
-      "patient_prompt_en": "Sleep hours: On average, how many hours do you sleep per night?"
+      "patient_prompt_en": "Sleep hours: On average, how many hours do you sleep per night?",
+      "interpretation_status": "source_pending",
+      "interpretation_note_zh": "成人每晚睡眠時數有專業學會的共識建議,但本輪未具名來源,故留待 SOL 補;在此之前不得寫入任何時數門檻。"
     },
     {
       "id": "metric.sleep_onset_minutes",
@@ -106,10 +113,12 @@
         "max": 10
       },
       "instrument_en": "0–10 Numeric Rating Scale (NRS)",
-      "interpretation_en": "",
+      "interpretation_en": "Ad-hoc single-item 0-10 rating used by this clinic. No published minimal clinically important difference exists for this item as used here; read it as a within-patient trend over visits, not against an external threshold.",
       "source": null,
       "patient_prompt_zh": "壓力:最近感覺壓力有多大?0=完全沒有,10=壓力最大",
-      "patient_prompt_en": "Stress: How much stress have you been feeling lately? 0 = none at all, 10 = the most stress possible."
+      "patient_prompt_en": "Stress: How much stress have you been feeling lately? 0 = none at all, 10 = the most stress possible.",
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "本診所自訂的 0–10 單題量表。文獻上沒有對應的臨床顯著差異值 —— 只看同一位病人跨診次的趨勢,不要拿外部閾值來判讀,也不要為它發明一個。"
     },
     {
       "id": "metric.mood",
@@ -124,10 +133,12 @@
         "max": 10
       },
       "instrument_en": "0–10 Numeric Rating Scale (NRS)",
-      "interpretation_en": "",
+      "interpretation_en": "Ad-hoc single-item 0-10 rating used by this clinic. No published minimal clinically important difference exists for this item as used here; read it as a within-patient trend over visits, not against an external threshold.",
       "source": null,
       "patient_prompt_zh": "情緒:最近整體情緒如何?0=非常差,10=非常好",
-      "patient_prompt_en": "Mood: How has your overall mood been lately? 0 = very poor, 10 = very good."
+      "patient_prompt_en": "Mood: How has your overall mood been lately? 0 = very poor, 10 = very good.",
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "本診所自訂的 0–10 單題量表。文獻上沒有對應的臨床顯著差異值 —— 只看同一位病人跨診次的趨勢,不要拿外部閾值來判讀,也不要為它發明一個。"
     },
     {
       "id": "metric.energy_level",
@@ -142,10 +153,12 @@
         "max": 10
       },
       "instrument_en": "0–10 Numeric Rating Scale (NRS)",
-      "interpretation_en": "",
+      "interpretation_en": "Ad-hoc single-item 0-10 rating used by this clinic. No published minimal clinically important difference exists for this item as used here; read it as a within-patient trend over visits, not against an external threshold.",
       "source": null,
       "patient_prompt_zh": "精神體力:最近精神體力如何?0=非常差(很累),10=非常好(有活力)",
-      "patient_prompt_en": "Energy: How has your energy level been lately? 0 = very poor (exhausted), 10 = very good (energetic)."
+      "patient_prompt_en": "Energy: How has your energy level been lately? 0 = very poor (exhausted), 10 = very good (energetic).",
+      "interpretation_status": "no_published_threshold",
+      "interpretation_note_zh": "本診所自訂的 0–10 單題量表。文獻上沒有對應的臨床顯著差異值 —— 只看同一位病人跨診次的趨勢,不要拿外部閾值來判讀,也不要為它發明一個。"
     },
     {
       "id": "metric.bloating",
@@ -451,7 +464,15 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/18055266/"
       },
       "patient_prompt_zh": "跟開始治療前比,你覺得整體狀況:1=大幅改善、2=明顯改善、3=稍微改善、4=沒有改變、5=稍微惡化、6=明顯惡化、7=大幅惡化",
-      "patient_prompt_en": "Compared with before you started treatment, overall you feel: 1 = very much improved, 2 = much improved, 3 = minimally improved, 4 = no change, 5 = minimally worse, 6 = much worse, 7 = very much worse."
+      "patient_prompt_en": "Compared with before you started treatment, overall you feel: 1 = very much improved, 2 = much improved, 3 = minimally improved, 4 = no change, 5 = minimally worse, 6 = much worse, 7 = very much worse.",
+      "interpretation_status": "sourced"
     }
+  ],
+  "interpretation_policy": [
+    "interpretation_en / source 有三種狀態,不可混為一談:",
+    "  1. 已具名來源 — source 帶 {name,url},interpretation_en 敘述其結論。",
+    "  2. interpretation_status:\"no_published_threshold\" — 這是本診所自訂的單題量表,文獻上不存在 MCID/判讀閾值。這是結論,不是待辦:不要為它發明一個數字。",
+    "  3. interpretation_status:\"source_pending\" — 該指標確實有文獻,只是還沒查。這一種才是待辦(交 SOL)。",
+    "沒有 interpretation_status 又沒有 source 的記錄 = 契約不完整,validator 會擋。"
   ]
 }

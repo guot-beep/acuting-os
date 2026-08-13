@@ -42,6 +42,7 @@ node scripts/validate-herb-standard.js
 node scripts/validate-formula-standard.js
 node scripts/validate-acupoint-standard.js
 node scripts/validate-content-junk.js
+node scripts/validate-metric-interpretation.js   # 沒來源就不准寫閾值
 # 其他線：condition / tdis / pattern / symptom / comparison / formula-song
 node scripts/check-validation-ratchet.js   # 缺陷數不准變多
 ```
