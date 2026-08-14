@@ -2860,6 +2860,17 @@
               <h3>${isEn ? "4. Primary Treatment & Links" : "4. 代表方藥與針灸處方 Primary Treatment & Links"}</h3>
               ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(entityLabel(id))}</a>`).join(" ")}</p>` : ""}
               ${points.length ? `<p><strong>📌 ${isEn ? "Acupuncture Points:" : "針灸配穴："}</strong> ${points.map(code => `<a href="#point/${esc(code)}" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">📌 ${esc(code)}</a>`).join(" ")}</p>` : ""}
+              ${/* 配穴理由(63 張證型卡有,先前完全沒上過畫面)。
+                    卡片原本只列出穴位代碼 —— 讀的人看得到「取什麼」,看不到「為什麼」。
+                    而國考問的是為什麼,診間要判斷的也是為什麼:
+                    「氣海、關元培補元氣;足三里健運脾胃、後天化氣之源;脾俞助運化以資氣生。」
+                    這一句比那串代碼有用得多,所以緊接在代碼下面,不另開區塊。 */ ""}
+              ${(() => {
+                const why = isEn ? (p.point_rationale_en || p.point_rationale_zh)
+                                 : (p.point_rationale_zh || p.point_rationale_en);
+                const t = usableText(why);
+                return t ? `<p class="k-point-rationale"><strong>${isEn ? "Why these points:" : "配穴理由："}</strong> ${esc(t)}</p>` : "";
+              })()}
               ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => `<span class="k-tag">${esc(entityLabel(id))}</span>`).join(" ")}</p>` : ""}
             </div>
           ` : ""}

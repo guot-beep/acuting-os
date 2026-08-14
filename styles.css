@@ -6663,6 +6663,17 @@ html { scroll-padding-top: 92px; }
   line-height: 1.6;
 }
 
+/* 配穴理由:緊貼在穴位代碼下面,縮排讓人看得出它在解釋上面那一行。
+   考的是為什麼,不是取什麼。 */
+.k-point-rationale {
+  margin: 0.3rem 0 0.6rem 1.2rem;
+  padding-left: 0.6rem;
+  border-left: 2px solid rgba(167, 139, 250, 0.6);
+  font-size: 0.9em;
+  line-height: 1.65;
+  opacity: 0.95;
+}
+
 /* 針刺註記:對執業者而言,這是西藥卡上最切身的一塊 —— 它回答「這個病人能不能扎」。
    用青色而不是紅色:它不是警告本身,是「先確認什麼再決定」。 */
 .k-acu-note {
