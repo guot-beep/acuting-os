@@ -1,3 +1,22 @@
+# 2026-08-14 Fable(路由)× Sonnet(實作)— 驗證器小債清算 + HARD GATE 3 收到 14/14
+
+兩批 Sonnet worktree 實作、Fable 驗收落地(rebase → ff-merge → push),與同日另一 session 的 app.js 工作零檔案重疊。
+
+**批 1(`1dec8163`)驗證器小債:**
+- C5 blocking 4 → **2**:chronic_cough 兩欄補 _en(內容歸屬查證後才翻);migraine + tension_headache 各一欄**扣住不翻**——兩者的 import_artifacts 都記載疑似 CloudTCM 部落格殘文與 sibling 卡近重複(tension_headache 是 Sonnet 自己發現的同款,brief 沒點名),等 Ting 歸屬裁定。歸屬錯誤壓過語言錯誤。
+- 酸棗仁湯方歌「酸棗 popular 湯」→「酸棗仁湯」,單 token,雙欄孿生同步;查無《湯頭歌訣》原文可比對,依字面錯置修復並在 commit 註明。
+- `validate-condition-sources.js` crash → 可跑完(auto-vivify DOM stub + contentMode/window 種子 + 已拆除的 CloudTCM 目錄斷言改 skip-with-note)。殘餘 13 項全部在驗一個從未被任何記錄使用的欄位名 `source_links` + lazy-render 前的舊 DOM 假設——**Fable 裁定:退役那兩組斷言**,排下一批 scripts 小活。
+- ratchet 基線鎖進新低點 conditions 4 → **2**(`5ae6c8a4`),回退即紅。
+
+**批 2(`1f0fca05`)HARD GATE 3 最後兩格:**
+- `symptomLinks`(sym.*,102 筆 vocabulary picker)+ `herbLinks`(herb.*,358 筆),完全複製既有 xxxLinks 模式:normalize / picker / render(escapeHtml)/ 編輯回填 / 表單序列化七個接點。`formulaHerbs` 自由文字與 `linkifyFormulaHerbs()` 未動(additive,不是替換)。
+- **Gate 3 宣告 14/14**,證據三層:(a) normalize 單元測試 8/8(garbage 容錯與鄰居欄位同款);(b) pointer 31/31 維持;(c) **落地後瀏覽器實測**——真 UI 建案 → SOAP 填 `sym.insomnia`/`herb.suan_zao_ren` → requestSubmit → reload 存活 → exportClinicalCases() 輸出含兩鍵(煙測資料已清)。
+- 全套驗證器 PASS,ratchet 無回退。
+
+**待 Ting(不新增,重申)**:migraine / tension_headache 兩筆歸屬裁定 = C5 剩餘的全部。
+
+---
+
 # 2026-08-12 Claude — Hard gate 1/2 瀏覽器級 UI 走查(v1 模式,人工)
 
 - **做了什麼**:關掉 §4078 那條擱置的開放項目——「瀏覽器級 UI 走查(hard gate 1/2 的 reload/isolation 實測)」的 v1 模式部分。用 `.claude/launch.json` 的 `acuting-static` dev server(真 HTTP origin,非 `file://`——後者在測試環境裡只渲染成不執行 JS 的 static snapshot,已排除)手動點真表單:`#caseForm` 建 Case、`#soapForm` 送 SOAP,不是重跑 `scripts/walkthrough-phase-e.js` 的 API 直呼路徑。
