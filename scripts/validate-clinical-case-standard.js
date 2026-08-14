@@ -44,6 +44,21 @@ const PHI_PATTERNS = [
 /* Fields whose value is a date by design — a visit date is not an identifier,
  * and flagging it would make K4 unusable. Birth dates are the thing K4 exists
  * for, so they are not exempted. */
+/* 說明欄:記的是「這個指標為什麼這樣判讀、哪一天改的」,不是病人資料。
+ * 2026-08-12 landing 前置全閘掃到:outcome_metrics.json 的 interpretation_policy
+ * 寫著「為什麼要拆:2026-08-12 SOL 查證 17 筆時…」,那個日期戳被 K4 讀成出生日期,
+ * 整個 CI 因此會紅。
+ *
+ * **只豁免 K4,不豁免 K1/K2/K3/K5** —— 說明欄裡出現電話、Email、SSN、病歷號
+ * 仍然是錯的,那些沒有任何正當理由出現在設定檔裡。日期不同:變更紀錄一定會有日期。
+ *
+ * 沒有改成「散文欄一律不掃」:檔頭已經寫明那樣做 K4 就什麼都保護不到了
+ * —— 「病人生於 1980-05-03」正是它要抓的東西。 */
+const DOC_FIELDS = new Set([
+  'interpretation_policy', 'policy', 'rationale', 'why', 'note', 'notes',
+  'description', 'comment', '_comment', 'changelog',
+]);
+
 const DATE_FIELDS = new Set([
   'visit_date', 'next_follow_up', 'date', 'start_date', 'end_date', 'onset_date',
   'updated', 'updated_at', 'created', 'created_at', 'reviewed', 'last_reviewed',
@@ -122,6 +137,9 @@ function main() {
       // K-series — PHI
       PHI_PATTERNS.forEach((p) => {
         if (p.id === 'K4' && DATE_FIELDS.has(field)) return;
+        // 說明欄可能是陣列(interpretation_policy 就是),此時 keyPath 末端是索引
+        // 「13」而不是欄位名 —— 只看末端會漏掉整個陣列。看整條路徑上有沒有說明欄。
+        if (p.id === 'K4' && keyPath.some((seg) => DOC_FIELDS.has(String(seg)))) return;
         if (p.re.test(value)) {
           defects.push(`${p.id} ${rel} · ${keyPath.join('.')}: 疑似${p.label} — 「${value.slice(0, 40)}」`);
         }
