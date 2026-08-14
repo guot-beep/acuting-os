@@ -6,6 +6,19 @@
 - **已知未解／邊界**：本輪未開新 Clinical 六軸；未執行 main landing、deployment或真病人 migration/pointer switch；P1/P4 technical GO不取代 Ting／SOL 的醫療內容與真實病人使用裁決。
 - **下一步**：依 validation-frontier frozen 規則關閉本輪；若進 landing，另對候選 exact SHA 走既定 landing/CI 授權流程，不再以同一 milestone 開新 audit。
 
+# 2026-08-14 Fable(路由)× Sonnet(實作)— 中藥雙語線開動:安全欄清零、術語表立法、功效聯清倉
+
+連批模式(Ting 授權批次自主落地)。每批:Sonnet worktree 實作 → Fable 驗收(重現數字+diff 眼讀+安全欄逐句對嚴重度階梯)→ rebase → ff-merge → push。
+
+- **contraindications_en 9 → 0**(`a8a092db`):6 筆直翻 + 3 筆先執行 Ting 裁定(花椒矛盾條封存、丁香去重+炮製註+無源條封存、吳茱萸六條「不宜用」搬 cautions)再翻。驗收層攔到 2 處反/畏混用(丁香畏鬱金→Antagonistic;肉桂不宜同用→Avoid),integration commit 修正。
+- **術語表立法**(`f1d35e6d` + `a13dbbf0` B1 判例回填):從 138/109/787 既成對萃取;鎖漂移統一、嚴重度階梯(禁/不宜/慎 → Contraindicated/Avoid/Use cautiously)、反畏惡三分、證據後綴保留;批次表 HB-B1~B10(記錄批,每批三欄一次填)。
+- **HB-B1**(`546edb4a`):CT 141→119、MF 159→143、CA 216→201。**5 筆 cautions 因同記錄內在矛盾扣住**(鬱金溫/寒、鬱李仁寒/平、丹參擴血管升血壓、三稜柑橘科、沒藥促凝/抗血小板)→ Ting 裁定佇列,zh 未動。
+- **CT-110 功效聯清倉**(`c9cb16cd`,Ting 裁定「清空封存」):89 筆直接封存清空(34 筆與 functions_zh 逐字同)、21 筆先把缺項功效補進 functions_zh 再清(憲法「先搬再改」)、4 筆 E5 對齊延伸(_en 鏡像一併封存)、青蒿「清虛」→「清虛熱」截斷修復;qing_mu_xiang/huang_jiu 兩筆邊界保留不動。condition_tags_en missing 119 → **13**。
+- **待 Ting**:5 筆矛盾 cautions 裁定;三組疑似同藥雙卡(茜草/茜草根、旱蓮草/墨旱蓮、沙參/北沙參);黃酒「藥引」歸欄。
+- **流程教訓**:半刪殭屍 worktree 目錄裡 git 會打到主 repo(兩次遇到,零傷害,已入長期記憶);與並行 session 的 rebase 衝突固定落在 data/generated/(重建即解,不手併)。
+
+---
+
 # 2026-08-14 Fable(路由)× Sonnet(實作)— 驗證器小債清算 + HARD GATE 3 收到 14/14
 
 兩批 Sonnet worktree 實作、Fable 驗收落地(rebase → ff-merge → push),與同日另一 session 的 app.js 工作零檔案重疊。
