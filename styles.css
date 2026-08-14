@@ -6751,6 +6751,20 @@ html { scroll-padding-top: 92px; }
 }
 .k-boxed-checked > strong { display: block; margin-bottom: 0.25rem; }
 
+/* 「這個空白是清理的結果」。收合預設,因為它是解釋不是警告;但摘要那一行
+   要看得出來,否則空白仍然會被讀成「還沒做」。 */
+.k-removed-note {
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.6rem;
+  border-left: 3px solid #b45309;
+  background: rgba(180, 83, 9, 0.08);
+  border-radius: 6px;
+  font-size: 0.84rem;
+}
+.k-removed-note summary { cursor: pointer; line-height: 1.5; }
+.k-removed-note ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.6; }
+.k-removed-note small { opacity: 0.85; }
+
 /* 內容品質軸(兩軸 maturity 的第二軸)。與 .k-comp-suspect 同一種視覺語言:
    左側色條 + 淡底,不搶標題。SAFETY_HOLD 用紅,DEFECT 用琥珀 —— 這兩者的差別
    是「不能當臨床依據」與「有缺陷但不致傷人」,顏色要讓人一眼分得出來。 */

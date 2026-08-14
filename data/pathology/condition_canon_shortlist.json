@@ -14925,7 +14925,7 @@
       ],
       "authored_by": "model_draft",
       "etiology_zh": "",
-      "western_pathology_zh": "現代醫學稱將全身性的疼痛定義出一個名詞，稱之為「纖維肌痛症」（Fibromyalgia），這是一種很難讓人理解且神秘的疼痛病症，患者常抱怨身體到處在痛，經常做了一堆檢查也找不出原因。\n\n患者全身出現廣泛性疼痛，肌肉組織並沒有出現病理改變。這種疼痛經常合併許多其他症狀，例如：認知障礙、慢性疲勞綜合症、憂鬱、焦慮、睡眠障礙、疲倦無力、頭痛、顳顎關節痛、手腳麻痛、大腸激躁症、健忘、無法專心、經痛...等等。\n\n由於此病的原因不明，也沒有辦法以特定的檢查方法來確診。女性比男性多，好發於30-40歲女性，因此常有人說這是「公主病」。現代醫學推斷這可能與營養素缺乏有關，例如：缺乏鎂、硒、牛磺酸、褪黑激素、超氧化物雙效酶...等等。\n\n此病不但原因不明，在治療上採用一般止痛藥治療的效果也不佳。由於患者經常出現焦慮或憂鬱症，因而許多醫生將此症視為精神疾病，因此有不少治療精神病藥物被拿來治療此病。\n\n像這種原因不明，也不知道如何治療的疾病，其實最適合從中醫下手，因為中醫理論中提供了現代醫學所沒有的分析層面。",
+      "western_pathology_zh": "現代醫學稱將全身性的疼痛定義出一個名詞，稱之為「纖維肌痛症」（Fibromyalgia），這是一種很難讓人理解且神秘的疼痛病症，患者常抱怨身體到處在痛，經常做了一堆檢查也找不出原因。\n\n患者全身出現廣泛性疼痛，肌肉組織並沒有出現病理改變。這種疼痛經常合併許多其他症狀，例如：認知障礙、慢性疲勞綜合症、憂鬱、焦慮、睡眠障礙、疲倦無力、頭痛、顳顎關節痛、手腳麻痛、大腸激躁症、健忘、無法專心、經痛...等等。\n\n由於此病的原因不明，也沒有辦法以特定的檢查方法來確診。\n\n此病不但原因不明，在治療上採用一般止痛藥治療的效果也不佳。由於患者經常出現焦慮或憂鬱症，因而許多醫生將此症視為精神疾病，因此有不少治療精神病藥物被拿來治療此病。\n\n像這種原因不明，也不知道如何治療的疾病，其實最適合從中醫下手，因為中醫理論中提供了現代醫學所沒有的分析層面。",
       "tcm_patterns": [
         {
           "pattern_zh": "外感風寒",
@@ -15290,6 +15290,12 @@
           "text": "Widespread body pain has been documented in Chinese medicine for two millennia — the Shanghan Lun records terms like \"body ache\" (身疼/身體痛), and Zhubing Yuanhou Lun describes wind in the skin causing all-over pain \"as if drawn or pricked.\" Later TCM organized this as bi syndrome (痹證) — wind, cold, damp and heat pathogens obstructing the channels and impairing qi-blood flow, producing widespread aching, numbness, heaviness and restricted movement. The source record's meridian-measurement observations link fibromyalgia to several recurring patterns: (1) residual wind-cold after incompletely resolved common cold, leaving chronic bladder- and gallbladder-channel deficiency; (2) wind-cold-damp invasion (heavier, migratory or fixed-cold pain depending on which pathogen dominates); (3) channel stagnation from years of unaddressed qi-blood blockage, most often in the spleen, bladder and gallbladder channels; (4) liver qi stagnation from chronic stress, showing liver-channel excess with spleen/bladder-channel deficiency; (5) spleen deficiency with qi-blood deficiency, disproportionately observed in women (linked to menstruation/pregnancy/childbirth blood loss) and offered as a partial explanation for fibromyalgia's female predominance; (6) kidney-yang deficiency, also more common in women in the record's data, often co-occurring with gallbladder- and stomach-channel deficiency.",
           "reason": "SAFETY (COND_FULLDETAIL_EYESON_02 F-20): condensed-translation counterpart of the etiology_zh CloudTCM blog essay being moved in the same batch. This English text is a clean condensed summary that already omits the unsafe-practice line, the unlicensed-dosing anecdote, and the garbled classical-text title present in the Chinese source (per the ledger, \"_en already omits these passages\") — but leaving it live while etiology_zh is vacated produces a C9 defect (_en filled but _zh empty) and an orphan translation of now-removed Chinese content. Kept paired with etiology_zh in import_artifacts rather than left as an orphan; this matches the cond.depression (F-02) precedent of vacating a bilingual pair together. Not itself unsafe or fabricated content — available here for reuse when a proper sourced fibromyalgia etiology (matching the frozen_shoulder/knee_osteoarthritis/lumbar_disc_herniation curriculum-sourced rebuild precedent) is authored.",
           "moved_at": "2026-08-12"
+        },
+        {
+          "field": "western_pathology_zh",
+          "text": "女性比男性多，好發於30-40歲女性，因此常有人說這是「公主病」。現代醫學推斷這可能與營養素缺乏有關，例如：缺乏鎂、硒、牛磺酸、褪黑激素、超氧化物雙效酶...等等。",
+          "reason": "兩個問題各自獨立:(1)「公主病」是貶義俗稱,暗示病人嬌氣,印在臨床卡上會讓讀的人在看到病人之前就先貶低她的疼痛;(2)「超氧化物雙效酶」是錯譯 —— superoxide dismutase 的中文是超氧化物歧化酶,而且它是體內合成的酵素,不是可以「缺乏」的營養素,原句把它與鎂、硒並列成營養素缺乏,是雙重錯誤。整句移出而非改寫,因為改字會讓一段無來源的推論看起來像查證過的。",
+          "archived_at": "2026-08-12"
         }
       ]
     },
@@ -23004,8 +23010,7 @@
         "NIMH — Depression: https://www.nimh.nih.gov/health/topics/depression"
       ],
       "aliases_zh": [
-        "重度憂鬱症",
-        "神經衰弱"
+        "重度憂鬱症"
       ],
       "aliases_en": [
         "Major Depressive Disorder",
@@ -23213,6 +23218,12 @@
           "text": "Condensed translation: the essay describes a modern-life 'neurasthenia' picture (forgetfulness, low drive, slowed reactions, emotional lability, poor sleep) often dismissed by biomedical workup as 'nothing wrong,' framed here as an entry point for the TCM etiologies described in etiology_zh — not itself a biomedical mechanism for major depressive disorder.",
           "reason": "SAFETY (COND_FULLDETAIL_EYESON_01 F-02): condensed-translation counterpart of the western_pathology_zh neurasthenia essay being moved in the same batch; kept paired with it in import_artifacts rather than left as an orphan translation of now-vacated Chinese content.",
           "moved_at": "2026-08-12"
+        },
+        {
+          "field": "aliases_zh",
+          "text": "神經衰弱",
+          "reason": "神經衰弱是歷史診斷名詞,不是重度憂鬱症的別名。它會留在這裡,是因為這張卡原本整段 etiology/western_pathology 寫的就是神經衰弱(F-02 已搬走,其中含「旁人可能會誤以為是憂鬱症」「你沒有病」等淡化語句)。別名欄留著它,等於讓那次誤植繼續生效:搜尋神經衰弱會落到憂鬱症卡上,讀的人會以為兩者等同。",
+          "archived_at": "2026-08-12"
         }
       ]
     },

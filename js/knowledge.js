@@ -3182,6 +3182,37 @@
       return `<div class="k-condition-related"><strong>${esc(modeText("記錄的治療內容", "Recorded treatment content"))}</strong>${fBlock}${pBlock}</div>`;
     };
 
+    /* 「這一欄是空的」有兩種意思:沒人填過,或是**填過但內容不安全,已被移出**。
+     * 兩者的臨床後果相反,而畫面上長得一模一樣 —— 與肝素卡「已查證沒有黑框警告」
+     * 同一個道理。全庫 129 張卡有 import_artifacts 搬移紀錄,其中 57 張該欄位
+     * 現在是空的:例如胎位不正卡的處方(原本是樣板的合谷＋三陰交,孕期禁忌組合)、
+     * PCOS 的病因(3,500 字會員自行停藥敘事)。
+     * 讀的人有權知道那個空白是清理的結果,不是還沒做。 */
+    const removedBlock = (c) => {
+      /* import_artifacts 在資料裡有兩種形狀:
+       *   {field, text, reason, archived_at}        ← 範本 §3.5.5 寫的
+       *   {original_field, text, reason, moved_at}  ← 較早的批次
+       * 只讀 field 會漏掉後者 —— 而胎位不正卡正是後者,也就是這個提示最該出現的
+       * 那一張(它的處方欄被清空,原本是孕期禁忌的合谷＋三陰交組合)。
+       * 兩種都讀,並在下面把形狀不一致回報給 Ting。 */
+      const fieldOf = (a) => (a && (a.field || a.original_field)) || "";
+      const arts = (c.import_artifacts || []).filter((a) => fieldOf(a) && !String(c[fieldOf(a)] || "").trim());
+      if (!arts.length) return "";
+      const LABEL = {
+        western_pathology_zh: "西醫病理", western_pathology_en: "西醫病理(英)",
+        etiology_zh: "病因", etiology_en: "病因(英)",
+        acupoint_protocols: "針灸處方", herb_formulas: "方劑", aliases_zh: "別名",
+      };
+      const rows = arts.map((a) => {
+        const name = LABEL[fieldOf(a)] || fieldOf(a);
+        const why = usableText(a.reason);
+        return `<li><strong>${esc(name)}</strong>${why ? `<br><small>${esc(why)}</small>` : ""}</li>`;
+      }).join("");
+      return `<details class="k-removed-note"><summary>${esc(modeText(
+        `⚠️ 這張卡有 ${arts.length} 個欄位是空的,因為原本的內容被移出了（不是尚未填寫）`,
+        `⚠️ ${arts.length} field(s) on this card are empty because their content was removed, not because nobody filled them in`))}</summary><ul>${rows}</ul></details>`;
+    };
+
     const longTextBlock = (c, labelZh, labelEn, zhKey, enKey) => {
       const text = usableText(contentMode === "english" ? (c[enKey] || c[zhKey]) : (c[zhKey] || c[enKey]));
       if (!text) return "";
@@ -3224,6 +3255,7 @@
           ${/* 古籍引文(40 張)。收合而不是攤開:單則可到 1900 字,而且是文言文,
                 攤開會蓋掉卡片上其他所有東西。它是有出處的原文,不該因為長而不給。 */ ""}
           ${longTextBlock(c, "古籍引文 Classical references", "Classical references", "classical_references_zh", "classical_references_en")}
+          ${removedBlock(c)}
           ${conditionSources(c)}${cloudRefBlock(c.id)}
         </article>`;
     }).join("");

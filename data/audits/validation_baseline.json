@@ -13,6 +13,10 @@
     {
       "date": "2026-08-06",
       "reason": "symptoms namespace joins the ratchet: template + validator shipped 2026-08-06, completing D14 for all four namespaces"
+    },
+    {
+      "date": "2026-08-14",
+      "reason": "conditions 4→0: another session cleared the C5 backlog (70aa3aed, 1dec8163); leaving the baseline at 4 would silently permit 4 new defects"
     }
   ],
   "layers": {
