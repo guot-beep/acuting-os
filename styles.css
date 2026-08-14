@@ -6738,6 +6738,19 @@ html { scroll-padding-top: 92px; }
 }
 .k-boxed-warning ul { margin: 0.4rem 0 0; padding-left: 1.1rem; font-weight: 500; }
 
+/* 「查過,沒有黑框警告」用中性灰藍,不要用紅 —— 它不是警告,是一則說明,
+   說明這片空白是查證的結果而不是漏查。 */
+.k-boxed-checked {
+  margin: 0 0 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border-left: 3px solid #64748b;
+  background: rgba(100, 116, 139, 0.1);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.k-boxed-checked > strong { display: block; margin-bottom: 0.25rem; }
+
 /* 內容品質軸(兩軸 maturity 的第二軸)。與 .k-comp-suspect 同一種視覺語言:
    左側色條 + 淡底,不搶標題。SAFETY_HOLD 用紅,DEFECT 用琥珀 —— 這兩者的差別
    是「不能當臨床依據」與「有缺陷但不致傷人」,顏色要讓人一眼分得出來。 */
@@ -7579,6 +7592,8 @@ html { scroll-padding-top: 92px; }
 .avs-co-cat { font-size: .78em; color: var(--muted); background: rgba(148, 163, 184, .12); border-radius: 999px; padding: 2px 8px; }
 .avs-co-why-btn { font-size: .75em; margin-left: auto; }
 .avs-co-why { margin-top: 4px; color: var(--muted); }
+.avs-co-why small { display: block; margin-top: 2px; }
+.avs-co-sources a { color: inherit; }
 .avs-co-custom-row select { font-size: .85em; }
 .avs-co-med-table { width: 100%; border-collapse: collapse; font-size: .88em; }
 .avs-co-med-table td, .avs-co-med-table th { border: 1px solid var(--line); padding: 4px 8px; text-align: left; }

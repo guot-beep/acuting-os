@@ -1285,12 +1285,17 @@
           // 不要另外猜欄位名 —— 猜錯就印「待補」,而那會被讀成「這味藥缺資料」。
           ["分類 Class", (() => {
             const c = pharmClassById.get(record.drugclass_id);
-            if (!c) return "待補";
-            return c.name_zh && c.name_en ? `${c.name_zh} / ${c.name_en}` : (c.name_zh || c.name_en || "待補");
+            const base = c ? (c.name_zh && c.name_en ? `${c.name_zh} / ${c.name_en}` : (c.name_zh || c.name_en)) : "";
+            // subclass_en(14 種)比大分類精確:「ACE Inhibitor」之於「降血壓藥」。
+            const sub = usableText(record.subclass_zh) || usableText(record.subclass_en);
+            return [base, sub].filter(Boolean).join(" · ") || "待補";
           })()],
           ["作用標的 Target", (() => {
             const t = pharmTargetById.get(record.drugtarget_id);
-            return t ? modeText(t.name_zh || t.name_en, t.name_en || t.name_zh) : "待補";
+            if (t) return modeText(t.name_zh || t.name_en, t.name_en || t.name_zh);
+            // 沒有標的時,資料自己解釋了為什麼(「滲透作用不經受體,drugtarget_id
+            // 刻意為 null」)。印那句話,比印「待補」誠實 —— 待補暗示總有一天會補。
+            return usableText(record.target_note_zh) || usableText(record.target_note_en) || "待補";
           })()],
           ["官方標籤 Label", usableText(record.dailymed_label_title) || usableText(record.medlineplus_title) || "待補"],
         ]
@@ -1572,10 +1577,22 @@
       const v = record[k];
       return Array.isArray(v) ? v.length : usableText(v);
     });
+    /* 沒有黑框警告時,如果卡片自己查證過,要說出來。
+     * 肝素那條寫著:「本標籤**沒有**黑框警告 —— 已查證,不是漏查。低分子量肝素
+     * (依諾肝素)反而有脊椎血腫黑框,兩者不同,不要互相套用。」
+     * 一片空白有兩種意思 ——「查過,沒有」與「沒人查」—— 而它們的臨床後果相反。
+     * 既然黑框警告現在很顯眼,它的**缺席**就同樣需要解釋。 */
+    const checkedNote = pair(record.boxed_warning_checked_note_zh, record.boxed_warning_checked_note_en);
     const boxed = has("boxed_warning_zh", "boxed_warning_en")
       ? `<div class="k-boxed-warning">${modeText("⚠️ 黑框警告 BOXED WARNING（FDA 最高級別）", "⚠️ BOXED WARNING (FDA's most serious)")}
            ${pair(record.boxed_warning_zh, record.boxed_warning_en)}</div>`
-      : "";
+      // 來源文字用 **沒有** 強調關鍵詞,而 pair() 會原樣 escape,畫面上就變成
+      // 字面的星號。這裡只把成對的 ** 轉成粗體 —— escape 已經先做完,所以轉的是
+      // 我們自己輸出的標記,不是把來源文字當 HTML 解析。
+      : (checkedNote
+          ? `<div class="k-boxed-checked"><strong>${esc(modeText("黑框警告:已查證", "Boxed warning: checked"))}</strong>${
+              checkedNote.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")}</div>`
+          : "");
     /* 針刺註記排在黑框警告之後、其他一切之前(2026-08-12)。
      * 20 種藥帶 `acupuncture_note_zh`,先前完全沒上過畫面 —— 而它回答的是
      * 「這個病人現在能不能扎」。華法林那條寫著:標籤禁忌明列「有無法控制出血
@@ -1601,7 +1618,31 @@
       boxed,
       acuBlock,
       detailSection("禁忌", "Contraindications", pair(record.contraindications_zh, record.contraindications_en)),
-      detailSection("與中藥的交互作用（標籤指名者）", "Herb-drug interactions named on the label", pair(record.herb_drug_interaction_note_zh, record.herb_drug_interaction_note_en)),
+      detailSection("與中藥的交互作用（標籤指名者）", "Herb-drug interactions named on the label", (() => {
+        // herb_drug_interactions_graded(8 種藥)逐味列出標籤點名的中藥 ——
+        // 對一個中西醫並用的診所,這是這張卡最直接的用途,先前完全沒上過畫面。
+        const rows = Array.isArray(record.herb_drug_interactions_graded) ? record.herb_drug_interactions_graded : [];
+        const list = rows.filter((g) => g && (g.with_label_zh || g.with_label_en)).map((g) => {
+          const who = modeText(g.with_label_zh || g.with_label_en, g.with_label_en || g.with_label_zh);
+          const eff = modeText(g.effect_zh || g.effect_en, g.effect_en || g.effect_zh);
+          return `<li><strong>${esc(who)}</strong>${g.severity ? ` <span class="k-tag">${esc(g.severity)}</span>` : ""}${eff ? ` — ${esc(eff)}` : ""}</li>`;
+        }).join("");
+        return (list ? `<ul>${list}</ul>` : "") + pair(record.herb_drug_interaction_note_zh, record.herb_drug_interaction_note_en);
+      })()),
+      detailSection("仿單外使用", "Off-label use", (() => {
+        // off_label_zh 的措辭很小心(「本標籤並未核准此適應症…資料來自停經後乳癌
+        // 族群,並非生育年齡不孕症患者」)。這種界線敘述正是不該被藏起來的那種。
+        const uses = cleanList(contentMode === "english" ? (record.common_offlabel_uses_en || record.common_offlabel_uses_zh) : (record.common_offlabel_uses_zh || record.common_offlabel_uses_en));
+        return (uses.length ? `<p class="k-chip-cloud">${uses.map((u) => `<span class="k-tag">${esc(u)}</span>`).join("")}</p>` : "")
+          + pair(record.off_label_zh, record.off_label_en);
+      })()),
+      detailSection("監測補充", "Monitoring note", pair(record.monitoring_note_zh, record.monitoring_note_en)),
+      /* 病人可能會在意但不是醫學禁忌的事:肝素是豬源,穆斯林、猶太教與素食病人
+       * 可能有非醫療考量。問診時主動提,比病人事後才發現好。 */
+      detailSection("文化與信仰考量", "Cultural considerations", pair(record.cultural_note_zh, record.cultural_note_en)),
+      // 同一分子兩種臨床角色(阿斯匹靈低劑量抗血小板 / 高劑量 NSAID)。
+      // 資料自己說了「不要合併成一句」—— 那就給它自己的一行。
+      detailSection("雙重角色", "Dual clinical role", pair(record.dual_role_note_zh, record.dual_role_note_en)),
       detailSection("分級藥物交互作用", "Graded drug interactions", graded),
       detailSection("監測需求", "Monitoring requirements", pair(record.monitoring_requirements_zh, record.monitoring_requirements_en)),
       /* 腎/肝功能不全的劑量考量,與過量。這三項先前都沒上過畫面,而它們正是
@@ -1911,6 +1952,18 @@
                 「課件與 American Dragon 的寫法差在哪」—— 對照來源時要用的正是後者。
                 兩則都印,但分開標題,免得讀的人以為是同一段被重複貼上。 */ ""}
           ${detailSection("學習筆記", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}
+          ${/* 分類註記(1 味):「教科書多歸外用藥,本庫無該分類,故歸入驅蟲藥」。
+                讀的人拿著課本對不上分類時,這句話是答案 —— 不寫,他會以為卡片錯了。 */ ""}
+          ${detailSection("分類說明", "Why this category", (() => {
+            const n = usableText(contentMode === "english" ? (record.category_note_en || record.category_note_zh) : (record.category_note_zh || record.category_note_en));
+            return n ? `<p class="k-meta">${esc(n)}</p>` : "";
+          })())}
+          ${detailSection("其他英文名", "Other English names", (() => {
+            // alt_english_names(5 味):Semen Persicae / Persica Seed / Peach Pit。
+            // 查資料時看到的是哪一個名字不一定,列出來才對得起來。
+            const list = cleanList(record.alt_english_names);
+            return list.length ? `<p class="k-chip-cloud">${list.map((n) => `<span class="k-tag">${esc(n)}</span>`).join("")}</p>` : "";
+          })())}
           ${detailSection("來源寫法對照", "How the sources differ", (() => {
             const n = usableText(contentMode === "english"
               ? (record.clinical_use_note_en || record.clinical_use_note_zh)
