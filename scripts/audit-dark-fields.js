@@ -69,7 +69,17 @@ const IGNORE = /^(id|_.*|schema_version|source_type|source_urls|field_sources|re
  *
  * 有疑義時歸 clinical:漏報一個簿記欄位只是多看一眼,漏報一個臨床欄位是繼續瞎。
  */
-const PROCESS_NAME = /^(needs_fill|glance|updated_by|.*_repaired?|.*_translated|.*review_notes.*|.*_header_note.*|.*_source_note.*|.*_note_source|composition_cleared_note|related_formulas_note)$/;
+const PROCESS_NAME = /^(needs_fill|glance|updated_by|.*_repaired?|.*_translated|.*review_notes.*|.*_header_note.*|.*_source_note.*|.*_note_source|composition_cleared_note|related_formulas_note|.*_display_note_zh|fertility_notes|.*_links|legacy_ids|secondary_family)$/;
+/* 上面新增的四類,逐一說明為什麼不是卡片內容(2026-08-12 逐欄看過):
+ *   key_pairs_display_note_zh  寫給開發者的:「此處避免放 pair id 字串,以免前端
+ *                              顯示 raw id」—— 是實作備忘,不是藥材知識。
+ *   fertility_notes            「Needs fertility/IVF/IUI medication timing review
+ *                              before clinical or public use.」—— 是待辦標記,
+ *                              不是給讀者的敘述。
+ *   condition_links / external_links / western_condition_links
+ *                              前者是內部 slug(common_cold_pattern_support),
+ *                              後者是連結物件,卡片已另有來源連結區塊。
+ *   legacy_ids / secondary_family  舊 id 與分類軸的內部欄位。 */
 /* 只認「這段文字是在描述來源或排版」的句型,不要只看開頭是不是 `課件`。
  * 第一版寫成 /^課件/,結果把「課件強調袢利尿劑非常有效且快速,是急性水腫的首選」
  * 判成簿記 —— 那是內容,只是句首交代了出處。**在句首標明來源不會讓一句話變成
@@ -89,7 +99,11 @@ const VERIFIED_RENDERED = {
  * 是「用這個條件把穴位篩出來」的軸,不是這張卡少講了什麼。把它們算成缺內容,
  * 會讓待辦數字虛胖,也會誘使人把 chip 灑在卡片上當作補完 —— 那不是同一件事。
  * 要不要做 tag 瀏覽是產品決定,列在 A0c 給 Ting。 */
-const NAVIGATION_FIELDS = /^(action_tags(_zh|_en)?|acuTags|disease_tags(_zh|_en)?|study_tags|tags)$/;
+const NAVIGATION_FIELDS = /^(action_tags(_zh|_en)?|acuTags|disease_tags(_zh|_en)?|study_tags|tags|function_tags(_zh|_en)?|observation_modes|zang_fu|qi_blood_fluid|taxonomy_ids)$/;
+/* zang_fu(["lung"])、qi_blood_fluid(["phlegm"])、observation_modes
+ * (["patient_reported"])是分類軸的原始 token。它們**已經**透過對應的
+ * 名稱欄位/證型家族出現在畫面上;把原始 token 印出來只會多一行 "lung"。
+ * function_tags_zh(溫裡溫中/補陽…)同理:是篩選用的標籤,不是卡片少講的話。 */
 
 function classify(field, values) {
   if (VERIFIED_RENDERED[field]) return "verified_elsewhere";

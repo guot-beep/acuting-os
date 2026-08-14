@@ -855,6 +855,14 @@
 
   function formulaGlanceRow(record) {
     const bits = [
+      /* 國考用的英文方名(170 張)。卡片標題印的是拼音「Gui Zhi Tang」,而考卷上
+       * 寫的是「Cinnamon Twig Decoction」—— 那個名字先前完全沒上過畫面。
+       * 對著拼音背了半天,考卷用另一個名字問,是這一層最實際的落差。 */
+      ["國考英文名 Board name", usableText(record.board_name_en)],
+      /* 課程分級(187 張,9 個級距):Detailed Knowledge / Familiar With /
+       * General Knowledge。它回答的是「這個方要背到多熟」,與 ★ 考試重點那條
+       * (NCBAHM 考綱分域)不同 —— 一個講「考不考」,一個講「要多熟」。 */
+      ["課程分級 Course level", usableText(record.course_level_en)],
       ["八法 Ba Fa", [usableText(record.ba_fa_zh), usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
       ["出典 Source", usableText(record.source_classic)],
       // 苔(coating_zh)171 張卡有值,先前完全沒上畫面。缺它的差別是實的:
@@ -1478,7 +1486,15 @@
 
     return [
       { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications) + adSyndromesBlock)}${formulaSymptomSection(record)}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailPairedList(record.modifications_zh, modifications) + (cleanList(record.ad_modifications_en).length ? `<h4 class="k-subhead">American Dragon 加減</h4>${detailList(record.ad_modifications_en)}` : ""))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : "")}</div>${formulaDepthSection(record, "fang_yi_zh", "方義 為什麼這樣配", "Formula rationale（CloudTCM 中文深度層）")}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
-      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${(() => { const a = usableText(contentMode === "english" ? (record.administration_en || record.administration_zh) : (record.administration_zh || record.administration_en)); return a ? `<p class="k-admin">服法 Administration：${esc(a)}</p>` : ""; })()}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th>${showGranule ? "<th>濃縮藥粉參考 g</th>" : ""}</tr></thead><tbody>${composition}</tbody></table></div>${(() => { const a = usableText(contentMode === "english" ? (record.administration_en || record.administration_zh) : (record.administration_zh || record.administration_en)); return a ? `<p class="k-admin">服法 Administration：${esc(a)}</p>` : ""; })()}${(() => {
+        /* 服法補充(9 張)。這九張的 administration_zh 是空的,所以先前畫面上
+         * 完全沒有服法 —— 而桂枝湯那條正是考試會問的
+         * 「服後啜熱稀粥一升以助藥力,溫覆取微似汗,不可令大汗淋漓」。 */
+        const n = usableText(contentMode === "english"
+          ? (record.dose_adjustment_note_en || record.dose_adjustment_note_zh)
+          : (record.dose_adjustment_note_zh || record.dose_adjustment_note_en));
+        return n ? `<p class="k-admin">${esc(modeText("服法補充 Administration note：", "Administration note: "))}${esc(n)}</p>` : "";
+      })()}${showGranule ? `<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : ""}` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaHdiSection(record)}${detailSection("我的病例", "Visits where I prescribed this", formulaCaseSection(record))}${formulaDepthSection(record, "zhu_zhi_zh", "主治深度 病機展開", "Indication depth（CloudTCM 中文深度層）")}${formulaDepthSection(record, "notes_zh", "源流與臨床筆記", "History & clinical notes（CloudTCM 中文深度層）")}${formulaModernSection(record)}${detailSection("現代藥理（逐味）", "Modern pharmacology, herb by herb", (() => {
         // pharmacology_zh(42 張)是「這個方裡每一味現代藥理上做什麼」——
@@ -1588,6 +1604,12 @@
       detailSection("與中藥的交互作用（標籤指名者）", "Herb-drug interactions named on the label", pair(record.herb_drug_interaction_note_zh, record.herb_drug_interaction_note_en)),
       detailSection("分級藥物交互作用", "Graded drug interactions", graded),
       detailSection("監測需求", "Monitoring requirements", pair(record.monitoring_requirements_zh, record.monitoring_requirements_en)),
+      /* 腎/肝功能不全的劑量考量,與過量。這三項先前都沒上過畫面,而它們正是
+       * 「這個病人的身體處理得掉這個藥嗎」—— 對照針刺註記回答的「能不能扎」,
+       * 是同一類臨床判斷,所以放在安全頁而不是藥理頁。 */
+      detailSection("腎功能考量", "Renal considerations", pair(record.renal_considerations_zh, record.renal_considerations_en)),
+      detailSection("肝功能考量", "Hepatic considerations", pair(record.hepatic_considerations_zh, record.hepatic_considerations_en)),
+      detailSection("過量", "Overdose", pair(record.overdose_zh, record.overdose_en)),
       detailSection("警語與注意事項", "Warnings & precautions", pair(record.warnings_zh, record.warnings_en)),
       detailSection("嚴重不良反應", "Serious adverse effects", pair(record.serious_adverse_effects_zh, record.serious_adverse_effects_en)),
       detailSection("常見不良反應", "Adverse effects", pair(record.adverse_effects_zh, record.adverse_effects_en)),
@@ -1608,10 +1630,12 @@
     const pharmacology = [
       detailSection("藥動學", "Pharmacokinetics", pkRows),
       detailSection("作用機轉", "Mechanism of action", pair(record.mechanism_zh, record.mechanism_en)),
+      detailSection("藥效學摘要", "Pharmacodynamics", pair(record.pharmacodynamics_summary_zh, record.pharmacodynamics_summary_en)),
       detailSection("生理作用", "Physiologic effect", pair(record.physiologic_effect_zh, record.physiologic_effect_en)),
       detailSection("作用部位", "Site of action", pair(record.site_of_action_zh, record.site_of_action_en)),
       detailSection("適應症", "Indications", pair(record.indications_zh, record.indications_en)),
       // 口訣與原型定位:列表卡只印英文口訣,中文那條(15 種藥)沒地方去。
+      detailSection("國考重點", "Board high-yield", pair(record.board_high_yield_zh, record.board_high_yield_en)),
       detailSection("記憶口訣", "Mnemonic", pair(record.mnemonic_zh, record.mnemonic_en)),
       detailSection("原型藥定位", "Prototype association", pair(record.classic_association_zh, record.classic_association_en)),
     ].join("");
@@ -1882,7 +1906,17 @@
           ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", keyPairs || herbPairsSection(record))}
           ${record.classical_text_zh ? detailSection("古籍原文 (Classical Text)", "本草原文與英譯", `<blockquote class="k-classic">${linkifyHerbs(record.classical_text_zh, record.id)}${record.classical_text_en ? `<span class="k-classic-en">${esc(record.classical_text_en)}</span>` : ""}</blockquote>`) : ""}
           ${record.classical_text_zh ? detailSection("古文典籍記載", "Classical text quotation", `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(record.classical_text_zh).replace(/\n/g, '<br>')}</blockquote>`) : ""}
+          ${/* clinical_use_note_zh 是**另一則**筆記,不是 clinical_use_note 的中文版:
+                9 張卡兩者都有,而內容重疊為 0。前者是「學習辨識」,後者記的是
+                「課件與 American Dragon 的寫法差在哪」—— 對照來源時要用的正是後者。
+                兩則都印,但分開標題,免得讀的人以為是同一段被重複貼上。 */ ""}
           ${detailSection("學習筆記", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}
+          ${detailSection("來源寫法對照", "How the sources differ", (() => {
+            const n = usableText(contentMode === "english"
+              ? (record.clinical_use_note_en || record.clinical_use_note_zh)
+              : (record.clinical_use_note_zh || record.clinical_use_note_en));
+            return n ? `<p class="k-depth-text">${esc(n).replace(/\n/g, "<br>")}</p>` : "";
+          })())}
         ` 
       },
       { 
