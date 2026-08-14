@@ -15,6 +15,10 @@
 
 **待 Ting(不新增,重申)**:migraine / tension_headache 兩筆歸屬裁定 = C5 剩餘的全部。
 
+**同日追加兩批(Ting 授權 Sonnet 批次自主落地後):**
+- **批 3(`b12b8a78`)sources 驗證器殭屍斷言**:`source_links` 三條斷言改寫為驗正名 `sources`(意圖保留,欄位跟上;實測 241/505 records、553 條全 https 零 Google,無真缺陷浮出);initial-render 三條退役刪除(lazy-render e73095d4 是永久架構決定,search-first 檢查已覆蓋同一意圖)。13 → **0 defects**。
+- **批 4(`ee212b27`)condition 來源上畫面**:批 3 挖出 `js/knowledge.js` `conditionSources()` 讀同一個死欄位——**上線以來沒有任何 condition 卡顯示過來源**。改讀 `sources` 三形態(裸 URL / Label: URL / 純文字引用不造假連結),esc() 全插值,XSS 反例入測(15/15)。落地後瀏覽器實測:endometriosis 卡 3 條來源第一次渲染,`NICHD — Endometriosis` 標籤連結 href 精準。註:驗收時先吃到合併前快取 JS 誤判失敗,cache-bust 後確認——**驗收也要防快取**。
+
 ---
 
 # 2026-08-12 Claude — Hard gate 1/2 瀏覽器級 UI 走查(v1 模式,人工)
