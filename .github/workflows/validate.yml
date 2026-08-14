@@ -181,11 +181,36 @@ jobs:
       - name: clinical store never echoes raw parser text (PHI boundary)
         run: node scripts/validate-clinical-store-phi-boundary.js
 
+      # CARE 草稿匯出邊界(2026-08-14 Ting ruling / CODEX AUDIT #1-#2)。
+      # 這三支在 CLAUDE.md 裡被列為「改完要跑」,但 `grep -c care` 在這個檔案
+      # 上一直回 0 —— 也就是說,唯一會逼人跑它們的東西不存在。而它們守的是
+      # 一個把病歷寫到硬碟的按鈕:patientCode/caseTitle 不得出門、黑框必須在、
+      # 產生器不准宣稱任何一份草稿已清乾淨、二次確認按取消就真的不下載。
+      # 三支都是純合成 fixture,不碰 data/**,實測 exit 0 -> blocking。
+      - name: CARE draft PHI export boundary (never claims a draft is clean)
+        run: node scripts/validate-care-draft-phi.js
+
+      - name: CARE draft button wiring + download confirmation
+        run: node scripts/validate-care-draft-render.js
+
+      - name: CARE draft generator self-test (CLI/browser shared compute)
+        run: node scripts/generate-care-draft.js --self-test
+
       - name: bilingual render parity (no _en field left off the screen)
         run: node scripts/validate-bilingual-render-parity.js
 
+      # 可合性 gate 自己的回歸測試。**無條件跑**,不跟著下面那步的 if ——
+      # 2026-08-13 那次是 gate 自己發假紅燈(shallow clone 被判成衝突),
+      # 而那種缺陷只在 push 事件的環境裡現形,等於沒有人在看。這支自己造
+      # 六種 ancestry 的 repo(含 depth-1 shallow)在暫存目錄裡跑,不碰
+      # 這個 checkout,所以放在哪個事件都成立。
+      - name: mergeability gate regression suite (incl. shallow-clone case)
+        run: node scripts/test-branch-mergeable.js
+
       # 分支對 main 的可合性。放在這裡是因為它必須在**分支的 push**上跑得到 ——
       # PR 事件在衝突時根本不會發生,那正是需要警報的時刻。
+      # checkout 仍然是預設的 fetch-depth=1:歷史不夠時由腳本自己 unshallow
+      # (只有這一步會付那個成本),不用讓整個 job 每次都做完整 clone。
       - name: branch is still mergeable into main
         if: github.event_name == 'push' && github.ref != 'refs/heads/main'
         run: |
