@@ -320,6 +320,12 @@ modern_functions:抗癌 Anticancer activity · 抗瘧 Antimalarial activity ·
 緩解壓力 Relieves stress · 保護眼睛健康 Eye-protective activity ·
 抗突變作用 Antimutagenic activity
 
+### 5b-4. B4 新詞回填(2026-08-14)
+
+modern_functions:興奮中樞神經 CNS-stimulant activity ·
+抑制中樞神經 CNS-depressant activity ·
+消炎抗菌 Anti-inflammatory and antibacterial activity
+
 ### 5c. B1 判例
 
 - 單句內強弱動詞混用(標題「忌」+說明「不宜」):**取較保守(較強)級**。
