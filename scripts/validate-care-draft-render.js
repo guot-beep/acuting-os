@@ -149,7 +149,7 @@ const downloadChecks = [
   ["下載前問過一次(二次確認存在)", () => sandbox.__confirms.length === 1],
   ["確認框逐項講了內容,不是只問『確定下載?』", () => {
     const m = sandbox.__confirms[0] || "";
-    return m.includes("含 PHI") && /精確日期 \d+ 處/.test(m) && m.includes("病人原話");
+    return m.includes("含 PHI") && /精確日期 \d+ 個/.test(m) && m.includes("病人原話");
   }],
   ["沒有觸發 alert(表示沒有走到『模組未載入』的失敗分支)", () => sandbox.__alerts.length === 0],
 ];

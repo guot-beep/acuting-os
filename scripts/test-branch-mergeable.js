@@ -11,16 +11,18 @@
  * 開發機的 clone 永遠是完整的。所以這裡自己造 repo,把四種 ancestry 各造一次,
  * **包含 depth-1 的 shallow clone**,逐一跑真正的 gate、比對退出碼與結論。
  *
- * 六個情境:
+ * 七個情境:
  *   A  完整 clone,base 是 HEAD 的祖先          → PASS(0)
  *   B  **depth-1 shallow clone**,base 是祖先   → PASS(0)   ← 那次假紅燈
  *   C  分支落後 base(無衝突)                   → FAIL(1),結論必須是「落後」
  *   D  真的衝突                                  → FAIL(1),結論必須是「衝突」
  *   E  base ref 不存在                            → SKIP(0)
  *   F  HEAD 就是 base                             → PASS(0)
+ *   G  **shallow 且真的落後**                     → FAIL(1),必須是「落後 1」
  *
  * C/D 兩個負面情境是防空跑用的:只測 A/B 的話,一支「永遠 exit 0」的 gate
- * 也會全綠。
+ * 也會全綠。G 是 B 與 C 的交集 —— CI 在 19595ab6 撞到的正是那個組合,
+ * 而當時只有推論、沒有測試。
  *
  * 全部在系統暫存目錄裡造 repo,不碰這個 repo 的任何檔案(pharm 那兩支測試
  * 曾經因為就地改 tracked 檔案而在兩個 session 並行時造成永久汙染 —— 不重演)。
@@ -165,6 +167,31 @@ console.log("check-branch-mergeable regression suite\n");
     (x) => isSkip(x) && /讀不到 base/.test(x.out));
 }
 
+// --- G: shallow **且**真的落後 ------------------------------------------
+/* B 測的是「shallow 但其實可合」,C 測的是「落後但歷史完整」。CI 在
+ * 19595ab6 撞到的是兩者的交集:shallow 的 checkout 上 main 真的多了一個
+ * commit。那時候唯一的判斷依據是推論,不是測試 —— 補上。
+ * 要求:結論必須是「落後 1」。shallow 造成的假象是「落後 5、而且衝突」,
+ * 所以這裡連數字都要對,對不上就是歷史沒有真的補齊。 */
+{
+  const up = makeUpstream("upG");
+  git(up, ["checkout", "-q", "feature"]);
+  commit(up, "f.txt", "feature work\n", "feat");
+  git(up, ["checkout", "-q", "main"]);
+
+  const w = path.join(ROOT, "workG");
+  git(ROOT, ["clone", "-q", "--depth", "1", "--branch", "feature", fileUrl(up), w]);
+  git(w, ["config", "remote.origin.fetch", "+refs/heads/*:refs/remotes/origin/*"]);
+  // 分支 clone 完之後上游 main 才前進 → 真的落後 1,而且動的是別的檔案(不衝突)
+  commit(up, "b.txt", "main moved on\n", "main-ahead");
+  git(w, ["fetch", "--no-tags", "--depth=200", "-q", "origin", "main"]);
+
+  expect("G 前提:工作區是 shallow", { code: 0, out: "" }, () => git(w, ["rev-parse", "--is-shallow-repository"]) === "true");
+  const r = runGate(w);
+  expect("G shallow + 真的落後 1 → FAIL(1),結論是「落後 1」而不是「衝突」", r,
+    (x) => x.code === 1 && /分支落後 base 1 個 commit/.test(x.out) && !/與 base 衝突/.test(x.out));
+}
+
 // --- F: HEAD 就是 base ---------------------------------------------------
 {
   const up = makeUpstream("upF");
@@ -182,4 +209,4 @@ if (failures.length) {
   failures.forEach((f) => console.error(`  ✗ ${f}`));
   process.exit(1);
 }
-console.log("\nPASS — 六個 ancestry 情境的判定都正確(含 depth-1 shallow)。");
+console.log("\nPASS — 七個 ancestry 情境的判定都正確(含 depth-1 shallow、shallow+落後)。");

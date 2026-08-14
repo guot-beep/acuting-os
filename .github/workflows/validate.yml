@@ -202,7 +202,7 @@ jobs:
       # 可合性 gate 自己的回歸測試。**無條件跑**,不跟著下面那步的 if ——
       # 2026-08-13 那次是 gate 自己發假紅燈(shallow clone 被判成衝突),
       # 而那種缺陷只在 push 事件的環境裡現形,等於沒有人在看。這支自己造
-      # 六種 ancestry 的 repo(含 depth-1 shallow)在暫存目錄裡跑,不碰
+      # 七種 ancestry 的 repo(含 depth-1 shallow)在暫存目錄裡跑,不碰
       # 這個 checkout,所以放在哪個事件都成立。
       - name: mergeability gate regression suite (incl. shallow-clone case)
         run: node scripts/test-branch-mergeable.js

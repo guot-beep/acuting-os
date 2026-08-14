@@ -7471,12 +7471,15 @@ function downloadCareDraft(item) {
   const metricDefs = CD.metricDefMapFromKnowledge((K.outcomeMetrics && K.outcomeMetrics.records) || []);
   const draft = CD.generateDraft(item, { lang: contentMode === "english" ? "en" : "both", labelIdx, metricDefs, refDate: new Date() });
 
-  const findings = CD.scanIdentifiers(draft);
+  // 黑框、確認框、CLI 警告共用 phiCounts —— 三個地方報同一組數字,
+  // 不然使用者會看到「黑框說 2 個、確認框說 3 個」而不知道信哪個。
+  const counts = CD.phiCounts(draft);
+  const findings = counts.findings;
   const kinds = [...new Set(findings.map((f) => `${f.id} ${f.label}`))];
   const confirmed = confirm(
     "⚠️ 這份草稿含 PHI,未做任何去識別。\n\n" +
       "即將存到硬碟的檔案包含:\n" +
-      `  · 精確日期 ${CD.countExactDates(draft)} 處(就診日、暴露事件日)\n` +
+      `  · 精確日期 ${counts.dates.distinct} 個(就診日、暴露事件日),全文出現 ${counts.dates.total} 處\n` +
       "  · 主訴 / 病史 / 客觀所見 / 評估 / 計畫的病歷原文\n" +
       "  · 病人原話(CARE 12 病人視角)\n" +
       (kinds.length

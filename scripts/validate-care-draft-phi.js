@@ -101,7 +101,8 @@ check("下載檔名自己就標示 PHI(下載資料夾一眼認得出)", () =>
 console.log("\n— 2. 每份草稿都必須明著寫「含 PHI」 —");
 
 check("黑框是檔案的第一件事", () => cleanDraft.startsWith("> ⚠️ **本檔含 PHI"));
-check("黑框報出精確日期的處數(宣告,不是掃描)", () => /精確日期 \d+ 處/.test(bannerOf(cleanDraft)));
+check("黑框報出精確日期的『幾個』與『幾處』(宣告,不是掃描)", () =>
+  /精確日期 \d+ 個 · 全文出現 \d+ 處/.test(bannerOf(cleanDraft)));
 check("黑框點名病歷原文與病人原話", () =>
   bannerOf(cleanDraft).includes("原始敘述") && bannerOf(cleanDraft).includes("病人原話"));
 check("黑框有英文版(投稿對象不一定讀中文)", () => bannerOf(cleanDraft).includes("CONTAINS PHI"));
@@ -185,6 +186,29 @@ check("K4(完整日期)刻意不在掃描表 —— 日期改用宣告,否則就
 check("countExactDates 真的數得到就診日", () => {
   const n = CD.countExactDates(cleanDraft);
   return n >= 2 ? true : `只數到 ${n},fixture 有 2 個就診日`;
+});
+/* distinct 與 total 必須是兩個真的不同的量。同一個就診日會散在
+ * 6 / 7 / 8a / 10a 等好幾節,如果哪天有人把 distinct 寫成 total 的別名,
+ * 黑框會宣稱「精確日期 17 個」—— 把風險講大,跟講小一樣是不準。 */
+check("phiCounts 的 distinct 與 total 是兩個不同的量(同一天重複出現要摺疊)", () => {
+  const s = CD.phiCounts(cleanDraft).dates;
+  if (s.distinct !== 2) return `fixture 有 2 個不同就診日,distinct=${s.distinct}`;
+  return s.total > s.distinct ? true : `total=${s.total} 沒有大於 distinct=${s.distinct},摺疊沒發生或計數壞了`;
+});
+/* 產生日期不是病人日期。這條原本是抓到的實際缺陷:兩診的 fixture 被報成
+ * 「精確日期 3 個」,多出來的是標頭那行 `產生時間 YYYY-MM-DD`。 */
+check("產生時間那一行不算進病人日期", () => {
+  const raw = CD.exactDateStats(cleanDraft);
+  const net = CD.phiCounts(cleanDraft).dates;
+  return raw.distinct > net.distinct
+    ? true
+    : `未剔除:raw.distinct=${raw.distinct} net.distinct=${net.distinct} —— GENERATOR_META_PREFIX 可能與標頭文案不同步`;
+});
+check("黑框報的數字與 phiCounts 一致(三個出口不准各報各的)", () => {
+  const net = CD.phiCounts(cleanDraft).dates;
+  return bannerOf(cleanDraft).includes(`精確日期 ${net.distinct} 個 · 全文出現 ${net.total} 處`)
+    ? true
+    : `黑框與 phiCounts 對不上(net=${JSON.stringify(net)})`;
 });
 
 console.log("\n— 6. 病人代碼不因為看起來像別的東西就漏掉 —");

@@ -202,10 +202,11 @@ function main() {
 
   // 警告一律走 stderr:stdout 是草稿本身,管線接出去的人不該被警告污染,
   // 但也不該看不到警告。
-  const findings = CareDraft.scanIdentifiers(draft);
+  const counts = CareDraft.phiCounts(draft);   // 與黑框、瀏覽器確認框同一支
+  const findings = counts.findings;
   const kinds = [...new Set(findings.map((f) => `${f.id} ${f.label}`))];
   console.error("⚠️  這份草稿含 PHI,未做任何去識別。");
-  console.error(`    精確日期 ${CareDraft.countExactDates(draft)} 處 · 病歷原文照錄 · 病人原話照錄`);
+  console.error(`    精確日期 ${counts.dates.distinct} 個(全文 ${counts.dates.total} 處)· 病歷原文照錄 · 病人原話照錄`);
   console.error(
     findings.length
       ? `    自動掃描另外命中 ${findings.length} 處識別碼樣式:${kinds.join("、")}`

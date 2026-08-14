@@ -133,6 +133,30 @@
     return m ? m.length : 0;
   }
 
+  /* 兩個數字都要報,而且要分開報。一個兩診的病例全文會出現十幾次日期
+   * (同一個就診日散在 6/7/8a/10a/11c 與 STRICTA 表),只印「精確日期 17 處」
+   * 會讓人以為檔案裡有 17 個不同的日子 —— 那是把風險講大,而講大跟講小
+   * 一樣是不準。distinct 才是「洩漏了幾天」,total 是「要改幾個地方」。 */
+  function exactDateStats(text) {
+    const m = String(text || "").match(EXACT_DATE_RE) || [];
+    return { total: m.length, distinct: new Set(m).size };
+  }
+
+  /* 產生時間那一行不是病人資料,但它的格式是 YYYY-MM-DD,所以會被 EXACT_DATE_RE
+   * 抓進來 —— 兩診的病例因此被報成「精確日期 3 個」。往安全方向誇大也還是不準,
+   * 而一個會誇大的數字下次就會被當成雜訊略過。
+   * 這裡只剔掉那一行本身(用它的固定前綴精準比對),不是全域排除產生日期:
+   * 萬一某次就診剛好在產生當天,那個日期仍然要被算進去。
+   * 黑框、瀏覽器確認框、CLI 警告三個地方都走這一支,數字才不會各報各的。 */
+  const GENERATOR_META_PREFIX = "_由 `js/care-draft.js` 產生";
+  function phiCounts(text) {
+    const scanned = String(text || "")
+      .split("\n")
+      .filter((l) => !l.startsWith(">") && !l.startsWith(GENERATOR_META_PREFIX))
+      .join("\n");
+    return { dates: exactDateStats(scanned), findings: scanIdentifiers(scanned) };
+  }
+
   /* 下載檔名。caseTitle 不進來(檔名不用開檔就看得到),patientCode 更不會。
    * 只留 case id —— `case.<base36 時戳>.<亂數6>`,系統流水號,不是病人識別。
    * 檔名帶 PHI 三個字是刻意的:下載資料夾一眼就能認出這是不能亂丟的檔案。 */
@@ -145,13 +169,14 @@
    * (另外找到什麼)。兩者分開寫,因為它們的可信度不同 —— 宣告是確定的,
    * 掃描永遠可能漏。中英並陳,不隨 lang 縮減:安全文字不吃 contentMode。 */
   function buildPhiBanner(body) {
-    const findings = scanIdentifiers(body);
-    const dateCount = countExactDates(body);
+    const counts = phiCounts(body);
+    const findings = counts.findings;
+    const d = counts.dates;
     const out = [];
     out.push("> ⚠️ **本檔含 PHI(未去識別)· THIS FILE CONTAINS PHI**");
     out.push(">");
     out.push("> 這份草稿照錄病歷原文,依設計一定包含下列病人資訊:");
-    out.push(`> - 精確日期 ${dateCount} 處(CARE 7 Timeline 的價值就在日期,本產生器不做模糊化)`);
+    out.push(`> - 精確日期 ${d.distinct} 個 · 全文出現 ${d.total} 處(CARE 7 Timeline 的價值就在日期,本產生器不做模糊化)`);
     out.push("> - 主訴 / 病史 / 客觀所見 / 評估 / 計畫的原始敘述(照錄,未改寫)");
     out.push("> - 病人原話(CARE 12 Patient perspective)");
     out.push(">");
@@ -289,6 +314,8 @@
     const dxTitle = [resolveList(item.westernConditions), resolveList(item.easternDiseases)].filter(has).join(" / ");
     push(`# ${dxTitle || "個案 Case"} — CARE Case Report Draft 個案報告草稿`);
     push("");
+    // 這一行的前綴是 GENERATOR_META_PREFIX 的比對對象 —— 改文案時兩邊要一起改,
+    // 不然產生日期會重新被算成病人日期。
     push(
       `_由 \`js/care-draft.js\` 產生(瀏覽器與 \`scripts/generate-care-draft.js\` 共用)· ` +
         `產生時間 ${refDate.toISOString().slice(0, 10)} · case id \`${(item.id || "(none)")}\`(系統流水號,非病人識別)。_`
@@ -603,7 +630,7 @@
     VERDICT_LABELS, has, gap, ageRangeFromBirth, buildLabelIndexFromKnowledge,
     metricDefMapFromKnowledge, buildTimeline, generateDraft,
     IDENTIFIER_PATTERNS, FORBIDDEN_CLEARANCE_CLAIMS, scanIdentifiers, countExactDates,
-    redactSample, draftFilename, buildPhiBanner,
+    exactDateStats, phiCounts, redactSample, draftFilename, buildPhiBanner,
   };
   if (typeof module === "object" && module.exports) module.exports = api;
   root.AcuTingCareDraft = api;
