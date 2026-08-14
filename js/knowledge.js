@@ -1429,29 +1429,56 @@
        tag layer dies silently because the card still looks fine).
        Pairs are index-aligned per §2; a zh with no en shows the zh alone rather
        than a half-translation. */
-    const bilingualTagChips = (zhList, enList, kindZh, kindEn) => {
+    /* A 中文 side carrying no letter, digit or CJK character is not Chinese —
+       it is what a translation pass left behind after emptying a parenthetical:
+       麻黃湯 holds "( )" against "Rheumatoid arthritis (inflammation intense but
+       short)", and 85 chips across 58 formulas print that way. Treated as absent
+       so the chip shows the English alone; nothing is dropped, because "( )" says
+       nothing. The 中文 still needs restoring in data/**, which is another line's
+       work — this only stops the card printing the artifact. */
+    const contentlessZh = (s) => !/[\p{L}\p{N}]/u.test(String(s || ""));
+    const bilingualTagItems = (zhList, enList, kindZh, kindEn) => {
       const zh = cleanList(zhList), en = cleanList(enList);
-      if (!zh.length && !en.length) return "";
+      if (!zh.length && !en.length) return [];
       const maxLen = Math.max(zh.length, en.length);
-      const chips = [];
+      const items = [];
       for (let i = 0; i < maxLen; i++) {
-        const z = (zh[i] || "").trim();
+        const raw = (zh[i] || "").trim();
+        const z = contentlessZh(raw) ? "" : raw;
         const e = (en[i] || "").trim();
         const label = (z && e && z.toLowerCase() !== e.toLowerCase()) ? `${z} \u00B7 ${e}` : (z || e);
-        const search = z || e;
-        chips.push(`<button type="button" class="k-modern-chip k-chip-${kindEn}" data-search-term="${esc(search)}"
-          title="${esc(kindZh)} — 點擊全站搜尋">${esc(label)}</button>`);
+        if (!label) continue;
+        items.push({ label, search: z || e, kindZh, kindEn });
       }
-      return chips.join("");
+      return items;
     };
     const treatsZh = cleanList(record.modern_applications_zh || record.treats_zh);
     const treatsEn = cleanList(record.modern_applications_en || record.treats_en || exam.treats_en);
-    const treatsChips = bilingualTagChips(treatsZh, treatsEn, "現代運用", "condition");
-    const condChips = bilingualTagChips(record.condition_tags_zh, record.condition_tags_en, "病證", "condition");
-    const patChips = bilingualTagChips(record.pattern_tags_zh, record.pattern_tags_en, "證型", "pattern");
 
-    const allModernChips = [condChips, patChips, treatsChips].filter(Boolean).join("");
-    const totalModernCount = Math.max(treatsZh.length, treatsEn.length) + (cleanList(record.condition_tags_zh)).length + (cleanList(record.pattern_tags_zh)).length;
+    /* The same tag reaching the cloud from two source fields printed twice:
+       桂枝湯 showed 感冒 · Common Cold beside 感冒 · Common cold, differing only
+       in case — 126 such chips across 71 formulas. Dedupe on the whole label, so
+       發熱 · Fever and 發熱 · Puerperal fever both survive: they share a 中文 word
+       but are different conditions, and 白虎湯 carries seven such fevers. Curated
+       condition/pattern tags are added first, so they win over the treats copy. */
+    const modernItems = [];
+    const seenChip = new Set();
+    for (const it of [
+      ...bilingualTagItems(record.condition_tags_zh, record.condition_tags_en, "病證", "condition"),
+      ...bilingualTagItems(record.pattern_tags_zh, record.pattern_tags_en, "證型", "pattern"),
+      ...bilingualTagItems(treatsZh, treatsEn, "現代運用", "condition")
+    ]) {
+      const key = it.label.toLowerCase().replace(/\s+/g, " ");
+      if (seenChip.has(key)) continue;
+      seenChip.add(key);
+      modernItems.push(it);
+    }
+    const allModernChips = modernItems.map((it) =>
+      `<button type="button" class="k-modern-chip k-chip-${it.kindEn}" data-search-term="${esc(it.search)}"
+          title="${esc(it.kindZh)} — 點擊全站搜尋">${esc(it.label)}</button>`).join("");
+    // Count what the cloud actually shows. It was summed from the raw array
+    // lengths, so the drawer label over-counted by every chip deduped away.
+    const totalModernCount = modernItems.length;
 
     let modernIndexHtml = '<p class="k-detail-empty">待補</p>';
     if (allModernChips) {
