@@ -264,3 +264,41 @@ rou_dou_kou, xiong_huang, zhu_sha)散在各批,所在批優先排程。
 
 每批驗收指令:`node scripts/validate-herb-standard.js --worklist --category "<分類>"` +
 `node scripts/validate-herb-card-schema.js` + 全套 + ratchet。
+
+## 5. 批次判例回填(B1,2026-08-14)
+
+### 5a. B1 新定 condition_tags 詞(後批照抄)
+
+經閉 Amenorrhea · 產後惡露腹痛 Postpartum lochia with abdominal pain ·
+胸痺心痛 Chest Bi with heart pain · 胃脘痛 Epigastric pain ·
+產後瘀滯腹痛 Postpartum stasis abdominal pain · 熱病神昏 Clouded spirit in febrile disease ·
+癲癇狂躁 Epilepsy with manic agitation · 痰濕蒙蔽心竅 Phlegm-Damp clouding the orifices of the Heart ·
+產後血瘀 Postpartum Blood stasis · 胸脅刺痛 Stabbing pain in the chest and hypochondrium ·
+下肢痿軟 Weakness and flaccidity of the lower limbs · 血滯經閉 Blood-stagnation amenorrhea
+(滯≠瘀:與既定 血瘀經閉 Blood-stasis amenorrhea 嚴格分開) ·
+食積不化 Food stagnation with indigestion · 手足麻木 Numbness of the hands and feet ·
+跌打腫痛 Traumatic injury with swelling and pain ·
+瘡瘍潰後不斂 Toxic sores and swellings that fail to heal after rupture ·
+產後浮腫 Postpartum edema · 通利關節 Frees and benefits the joints ·
+利尿通淋 Promotes urination and relieves Lin · 淋濁 Turbid Lin ·
+血瘀心腹劇痛 Severe pain from Blood stasis in the heart and abdomen ·
+崩漏下血 Flooding and spotting with bleeding · 產後瘀血出血 Postpartum hemorrhage with Blood stasis ·
+經閉痛經 Amenorrhea and dysmenorrhea · 肩臂風濕痹痛 Wind-Damp Bi pain of the shoulder and arm
+
+### 5b. B1 新定 modern_functions 詞
+
+改善腦功能 Improves brain function · 改善記憶 Improves memory ·
+改善微循環 Improves microcirculation(改善-系動詞式,不加 activity,平行於既定 改善消化系統) ·
+保護心臟健康 Cardioprotective activity · 抗心肌缺血 Protects against myocardial ischemia ·
+抗肝纖維化 Anti-fibrotic activity in the liver · 興奮子宮 Uterine-stimulant activity ·
+抗血栓 Antithrombotic activity · 抗血小板聚集 Antiplatelet aggregation activity ·
+保護心血管 Cardiovascular-protective activity(與 預防心血管疾病 同英譯,zh 異形) ·
+抗早孕 Anti-early-pregnancy activity(低信度直譯,藥理實為抗著床/墮胎訊號,勿擴寫機轉)
+
+### 5c. B1 判例
+
+- 單句內強弱動詞混用(標題「忌」+說明「不宜」):**取較保守(較強)級**。
+- 反/畏與典籍通說不合時(例:五靈脂反人參 vs 通說人參畏五靈脂):**照原文字翻**,
+  不代改 TCM 學說;列報告供內容審。
+- cautions_zh 與同記錄藥性/藥理欄**內在矛盾**者(B1 抓到 5 筆):cautions_en 扣住,
+  zh 不動,進 Ting 裁定佇列。
