@@ -94,10 +94,54 @@ check("patient isolation in derivation", patients.length === 2 && patients.every
 const inv = S.checkClinicalInvariants(cases);
 check("invariants R1-R7 clean", inv.failures.length === 0, inv.failures.join("; "));
 
-// 8. export→wipe→import round-trip(序列化往返 + append-only 保持)
-const exported = JSON.stringify(cases, null, 2);
-const reimported = JSON.parse(exported);
-check("export/import byte round-trip", sha256(JSON.stringify(reimported, null, 2)) === sha256(exported));
+/* 8. export→wipe→import round-trip
+ *
+ * 這一項原本寫成:
+ *     const exported = JSON.stringify(cases, null, 2);
+ *     const reimported = JSON.parse(exported);
+ *     check(..., sha256(JSON.stringify(reimported, null, 2)) === sha256(exported));
+ * —— 也就是「JSON.parse ∘ JSON.stringify 是不是恆等函式」。**那個斷言不可能失敗**,
+ * 它沒有碰到檔案、沒有 wipe、沒有經過 clinical-store 的存讀路徑。
+ * AI_REVIEW_FEEDBACK.md:781 已經指出過同一件事,這裡把它補實。
+ *
+ * 現在真的走一次儲存層:save 進後端 → 取出原始位元組 → 清空後端(wipe)→
+ * 把位元組寫回去 → load 回來比對。這條路徑上任何一段序列化/反序列化壞掉,
+ * 或 load 的 fail-loud 誤擋合法資料,這個斷言都會紅。
+ */
+/* store 的 pointer 三態判定走 global.localStorage(不是注入的 backend)——
+ * node 裡沒有它,save() 會 fail-loud:「POINTER read failed — refusing to guess
+ * the active world」。那是正確行為(猜錯世界比爆炸危險),所以這裡給它一個
+ * 最小的 key-value 存放區,並讓 pointer 維持「不存在」= v1 世界,也就是本走查
+ * 要驗的那一條路徑。 */
+if (!globalThis.localStorage) {
+  const mem = new Map();
+  globalThis.localStorage = {
+    getItem: (k) => (mem.has(k) ? mem.get(k) : null),
+    setItem: (k, v) => { mem.set(k, String(v)); },
+    removeItem: (k) => { mem.delete(k); },
+  };
+}
+
+const backend = (() => {
+  let bytes = null;
+  return { read: () => bytes, write: (s) => { bytes = s; }, __wipe: () => { bytes = null; }, __raw: () => bytes };
+})();
+const savedBackend = S.setBackend ? (S.setBackend(backend), true) : false;
+if (!savedBackend) check("export/import round-trip 可執行(store 提供 setBackend)", false, "缺少 setBackend seam");
+
+S.save(cases);
+const exported = backend.__raw();
+check("save 真的寫出位元組", typeof exported === "string" && exported.length > 0);
+
+backend.__wipe();
+check("wipe 之後後端是空的", backend.__raw() === null);
+
+backend.write(exported);          // 模擬「匯入同一份匯出檔」
+const reimported = S.load();
+check("export→wipe→import 經儲存層往返後內容相同",
+  sha256(JSON.stringify(reimported, null, 2)) === sha256(JSON.stringify(cases, null, 2)));
+check("往返後筆數相同", Array.isArray(reimported) && reimported.length === cases.length,
+  `${Array.isArray(reimported) ? reimported.length : typeof reimported} vs ${cases.length}`);
 for (const [i, c] of cases.entries()) for (const f of ["agentExposures", "environmentalExposures"]) {
   for (const [j, row] of (c[f] || []).entries()) {
     const chk = S.exposureHistoryExtends(row, reimported[i][f][j]);
