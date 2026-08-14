@@ -73,31 +73,78 @@ if (!trigeminal) {
 // Render the real condition section against a tiny DOM contract. This catches
 // data that validates but never becomes visible because the static app uses a
 // generated JS bundle rather than fetching JSON at runtime.
-const hosts = Object.fromEntries([
-  "conditionRecords", "conditionFilter", "conditionGrid",
-  "cloudtcmDiseaseFilter", "cloudtcmDiseaseCategoryBar", "cloudtcmDiseaseGrid",
-  "cloudtcmDiseasePageStatus", "cloudtcmDiseasePrev", "cloudtcmDiseaseNext"
-].map((id) => [
-  id,
-  {
+//
+// The bootstrap code in js/knowledge.js calls document.getElementById() on
+// whatever ids its current UI wires up, and that list grows over time as the
+// UI grows (e.g. "dxTypeBar" was added after this stub was last hand-listed,
+// which crashed getElementById("dxTypeBar").addEventListener(...) on a bare
+// null). Hand-listing ids here is a standing trap: every new UI control is
+// another silent crash waiting to happen. Instead, `hosts` auto-vivifies an
+// inert stub for ANY id on first lookup, so the eval'd bootstrap can wire up
+// listeners on elements this validator doesn't otherwise care about, while
+// the ids this validator DOES assert against (conditionRecords,
+// cloudtcmDiseaseGrid, etc.) still resolve to the same cached object the
+// assertions read afterwards.
+function makeDomStub() {
+  return {
     innerHTML: "",
     textContent: "",
     value: "",
     disabled: false,
+    style: {},
+    dataset: {},
+    classList: { add() {}, remove() {}, toggle() {}, contains() { return false; } },
     listeners: {},
     addEventListener(type, handler) { this.listeners[type] = handler; },
-    querySelectorAll() { return []; }
-  }
-]));
+    removeEventListener() {},
+    setAttribute() {},
+    getAttribute() { return null; },
+    appendChild() {},
+    querySelector() { return null; },
+    querySelectorAll() { return []; },
+    options: [],
+    children: [],
+    parentElement: null,
+    closest() { return null; },
+    remove() {},
+    cloneNode() { return makeDomStub(); },
+    scrollIntoView() {},
+    focus() {},
+    blur() {},
+    click() {}
+  };
+}
+const hosts = {};
 const documentStub = {
   addEventListener() {},
-  getElementById(id) { return hosts[id] || null; },
+  getElementById(id) {
+    if (!hosts[id]) hosts[id] = makeDomStub();
+    return hosts[id];
+  },
   querySelector() { return null; },
-  createElement() { return { addEventListener() {}, querySelector() { return null; } }; },
-  body: { appendChild() {} }
+  querySelectorAll() { return []; },
+  createElement() { return makeDomStub(); },
+  body: makeDomStub()
 };
 
 new Function(fs.readFileSync(path.join(ROOT, "data/generated/knowledge_data.js"), "utf8"))();
+// js/knowledge.js reads `contentMode` as a free variable — in the real app it
+// is `let contentMode = ...` at the top level of app.js, which in a browser
+// becomes a global lexical binding shared with sibling <script> tags like
+// knowledge.js. app.js is not evaluated here, so that binding does not exist;
+// seed it as a real global so the eval below resolves it the same way the
+// browser's shared script scope would, defaulting to app.js's own default.
+global.contentMode = "bilingual";
+// Same reasoning as `document`/`contentMode` above: the browser gives every
+// script tag a real `window`, so the eval'd bootstrap reaches for it (hash
+// routing listeners, etc.) even though this validator only stubs `document`.
+global.window = {
+  addEventListener() {},
+  removeEventListener() {},
+  dispatchEvent() {},
+  location: { hash: "" },
+  localStorage: { getItem() { return null; }, setItem() {}, removeItem() {} }
+};
 new Function("document", fs.readFileSync(path.join(ROOT, "js/knowledge.js"), "utf8"))(documentStub);
 
 const initialMarkup = hosts.conditionRecords.innerHTML;
@@ -119,22 +166,42 @@ for (const expected of [
   if (!initialMarkup.includes(expected)) errors.push(`Rendered trigeminal-neuralgia card is missing: ${expected}`);
 }
 if (/google\./i.test(initialMarkup)) errors.push("Rendered condition cards contain a Google link");
-if (!initialMarkup.includes("Disease & Symptom Index (190)")) errors.push("CloudTCM disease directory was not mounted");
 
-if (hosts.cloudtcmDiseaseFilter.listeners.input) {
-  hosts.cloudtcmDiseaseFilter.value = "Trigeminal Neuralgia";
-  hosts.cloudtcmDiseaseFilter.listeners.input({ target: hosts.cloudtcmDiseaseFilter });
-  for (const expected of [
-    "cloudtcm.disease_entry.36",
-    "Trigeminal Neuralgia",
-    "https://cloudtcm.com/disease/tcm/36"
-  ]) {
-    if (!hosts.cloudtcmDiseaseGrid.innerHTML.includes(expected)) {
-      errors.push(`CloudTCM disease search is missing: ${expected}`);
+// The CloudTCM disease-directory browser this block used to assert against
+// (cloudtcmDiseaseFilter/Grid/CategoryBar/PageStatus/Prev/Next, "Disease &
+// Symptom Index (190)") no longer exists anywhere in js/knowledge.js or
+// index.html. js/knowledge.js documents why, in the copy it renders next to
+// cloudtcmRefMap: the directory was "dissolved" — its entries redistributed
+// onto condition/symptom cards and formula/herb source links — and it "no
+// longer has a classification of its own." This validator predates that
+// change and was never updated, so it hard-crashed on a null element instead
+// of failing meaningfully (`hosts.cloudtcmDiseaseFilter` is never populated
+// because nothing in the app calls getElementById for that id anymore).
+//
+// Rather than assert pass/fail against a UI surface that was intentionally
+// removed, this skips with a note when the surface is absent, and still runs
+// the original assertions if it's ever reintroduced. Whether to retire this
+// block for good (recommended — the dissolution looks deliberate) or replace
+// it with an assertion against wherever the dissolved content now lives is
+// an architecture call, not something to guess at here.
+if (initialMarkup.includes("Disease & Symptom Index (190)") || hosts.cloudtcmDiseaseFilter) {
+  if (hosts.cloudtcmDiseaseFilter && hosts.cloudtcmDiseaseFilter.listeners.input) {
+    hosts.cloudtcmDiseaseFilter.value = "Trigeminal Neuralgia";
+    hosts.cloudtcmDiseaseFilter.listeners.input({ target: hosts.cloudtcmDiseaseFilter });
+    for (const expected of [
+      "cloudtcm.disease_entry.36",
+      "Trigeminal Neuralgia",
+      "https://cloudtcm.com/disease/tcm/36"
+    ]) {
+      if (!hosts.cloudtcmDiseaseGrid.innerHTML.includes(expected)) {
+        errors.push(`CloudTCM disease search is missing: ${expected}`);
+      }
     }
+  } else {
+    errors.push("CloudTCM disease search input handler was not mounted");
   }
 } else {
-  errors.push("CloudTCM disease search input handler was not mounted");
+  console.log("- CloudTCM disease directory: SKIPPED (feature dissolved per js/knowledge.js; see comment above — retire-vs-fix decision needed)");
 }
 
 if (hosts.conditionFilter.listeners.input) {
