@@ -5662,6 +5662,11 @@ function normalizeSoapNote(value) {
     tcmPatternLinks: normalizeStringList(value.tcmPatternLinks),
     safetyFlagLinks: normalizeStringList(value.safetyFlagLinks),
     subjective: String(value.subjective || ""),
+    // Gate 3 (9/5 sym.* structured capture path): vocabulary = data/symptoms/
+    // symptoms.json (102 sym.* records), picker wired the same way
+    // easternDiseaseLinks reads tdisRegistry. subjective free text is
+    // untouched — this is an additive structured field, not a replacement.
+    symptomLinks: normalizeStringList(value.symptomLinks),
     objective: String(value.objective || ""),
     assessment: String(value.assessment || ""),
     plan: String(value.plan || ""),
@@ -5688,6 +5693,12 @@ function normalizeSoapNote(value) {
     needleTypeText: String(value.needleTypeText || ""),
     formulaHerbs: String(value.formulaHerbs || ""),
     formulaLinks: normalizeStringList(value.formulaLinks),
+    // Gate 3 (9/5 herb.* structured capture path): vocabulary = herb canon
+    // (358 herb.* records), picker wired the same way formulaLinks reads the
+    // formula library. formulaHerbs free text and linkifyFormulaHerbs()
+    // fuzzy matching are both untouched — herbLinks is an additive
+    // structured supplement, not a replacement.
+    herbLinks: normalizeStringList(value.herbLinks),
     westernMeds: String(value.westernMeds || ""),
     medicationLinks: normalizeStringList(value.medicationLinks),
     outcomes: String(value.outcomes || ""),
@@ -7983,6 +7994,18 @@ function formulaPickerOptions() {
   }));
 }
 
+// Gate 3 herb.* structured capture path — same shape as formulaPickerOptions,
+// reading the herb canon shortlist instead of the formula library.
+function herbPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.herbs?.records || [];
+  return records.map((h) => ({
+    value: h.id,
+    label: `${h.name_zh || h.id}${h.pinyin ? " · " + h.pinyin : ""}`,
+    terms: `${h.name_zh || ""} ${h.pinyin || ""} ${h.name_en || ""} ${h.id}`.toLowerCase(),
+    meta: h.pinyin || h.name_en || "",
+  }));
+}
+
 // TCM pattern primary/secondary reconciliation (2026-08-09,
 // docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md §9 ranked item #1). Three optional
 // behaviors added for the primary/secondary pattern pickers, all opt-in via
@@ -8175,6 +8198,18 @@ function easternDiseasePickerOptions() {
   })));
 }
 
+// Gate 3 sym.* structured capture path — same shape as
+// easternDiseasePickerOptions, reading the symptom vocabulary instead of tdis.
+function symptomPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.symptoms?.records || [];
+  return records.map((s) => ({
+    value: s.id,
+    label: `${s.name_zh || s.id}${s.pinyin ? " · " + s.pinyin : (s.name_en ? " · " + s.name_en : "")}`,
+    terms: `${s.name_zh || ""} ${s.pinyin || ""} ${s.name_en || ""} ${(s.aliases_zh || []).join(" ")} ${(s.aliases_en || []).join(" ")} ${s.id}`.toLowerCase(),
+    meta: s.id,
+  }));
+}
+
 function westernConditionPickerOptions() {
   const k = globalThis.ACUTING_KNOWLEDGE || {};
   const canon = k.conditionCanon?.records || [];
@@ -8255,6 +8290,8 @@ function setupLinkAutocomplete() {
   enhanceLinkField(soapForm, "westernConditionLinks", westernConditionPickerOptions);
   enhanceLinkField(soapForm, "medicationLinks", medicationPickerOptions);
   enhanceLinkField(soapForm, "safetyFlagLinks", safetyFlagPickerOptions);
+  enhanceLinkField(soapForm, "symptomLinks", symptomPickerOptions);   // Gate 3 sym.*
+  enhanceLinkField(soapForm, "herbLinks", herbPickerOptions);         // Gate 3 herb.*
   // outcomeMetricLinks stays free text: entries carry values ("pain_score 7->4"),
   // not bare ids — structured outcome entry is the LL-track item (LL2/LL5).
 }
@@ -8369,6 +8406,8 @@ function renderSoapNoteCard(note) {
         <div><small>TCM disease links</small><span>${escapeHtml(formatNoteList(note.easternDiseaseLinks))}</span></div>
         <div><small>Pattern links</small><span>${escapeHtml(formatNoteList(note.tcmPatternLinks))}</span></div>
         <div><small>Safety links</small><span>${escapeHtml(formatNoteList(note.safetyFlagLinks))}</span></div>
+        <div><small>Symptom links</small><span>${escapeHtml(formatNoteList(note.symptomLinks))}</span></div>
+        <div><small>Herb links</small><span>${escapeHtml(formatNoteList(note.herbLinks))}</span></div>
         <div class="wide"><small>Treatment record links</small><span>${escapeHtml(formatNoteList(linkedRecords))}</span></div>
       </div>
       ${(note.referralOrSupervisorQuestion) ? `
@@ -8989,6 +9028,7 @@ function openSoapEditor(note = null) {
     tcmPatternSelections: [],
     safetyFlagLinks: [],
     subjective: "",
+    symptomLinks: [],
     objective: "",
     assessment: "",
     plan: "",
@@ -8998,6 +9038,7 @@ function openSoapEditor(note = null) {
     technique: "",
     formulaHerbs: "",
     formulaLinks: [],
+    herbLinks: [],
     westernMeds: "",
     medicationLinks: [],
     outcomes: "",
@@ -9323,6 +9364,7 @@ function saveSoapFromForm(event) {
     tcmPatternLinks: tcmPatternLinksDerived,
     safetyFlagLinks: splitList(data.safetyFlagLinks),
     subjective: data.subjective.trim(),
+    symptomLinks: splitList(data.symptomLinks),
     objective: data.objective.trim(),
     assessment: data.assessment.trim(),
     plan: data.plan.trim(),
@@ -9332,6 +9374,7 @@ function saveSoapFromForm(event) {
     technique: data.technique.trim(),
     formulaHerbs: data.formulaHerbs.trim(),
     formulaLinks: splitList(data.formulaLinks),
+    herbLinks: splitList(data.herbLinks),
     westernMeds: data.westernMeds.trim(),
     medicationLinks: splitList(data.medicationLinks),
     outcomes: data.outcomes.trim(),
