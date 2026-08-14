@@ -326,6 +326,21 @@ modern_functions:興奮中樞神經 CNS-stimulant activity ·
 抑制中樞神經 CNS-depressant activity ·
 消炎抗菌 Anti-inflammatory and antibacterial activity
 
+### 5b-6. B6 新詞回填(2026-08-14)
+
+modern_functions:降膽固醇 Cholesterol-lowering activity · 減肥減重 Weight-loss activity ·
+補充能量 Energy-boosting activity · 促進腸道健康 Promotes gut health ·
+營養豐富 Rich in nutrients · 促進排毒 Promotes detoxification ·
+促進骨骼健康 Promotes bone health · 促進消化 Promotes digestion
+
+condition_tags:五更瀉 Fifth-watch diarrhea · 晨瀉 Morning diarrhea ·
+蛔厥腹痛 Roundworm-reversal abdominal pain · 膽道蛔蟲 Biliary ascariasis ·
+虛熱消渴 Deficiency-Heat wasting-thirst · 下痢滑脫 Diarrhea with slippery collapse ·
+瘡瘍不斂 Non-healing sores and ulcers
+
+配伍詞追加(架構裁定 2026-08-14):**相剋 = mutually restrains**(B6 烏賊骨判例),
+與 相反 incompatible / 相畏 antagonistic / 相惡 mutually inhibiting 並列第四詞,不互換。
+
 ### 5c. B1 判例
 
 - 單句內強弱動詞混用(標題「忌」+說明「不宜」):**取較保守(較強)級**。
