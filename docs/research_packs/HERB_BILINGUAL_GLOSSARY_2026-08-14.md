@@ -295,6 +295,23 @@ rou_dou_kou, xiong_huang, zhu_sha)散在各批,所在批優先排程。
 保護心血管 Cardiovascular-protective activity(與 預防心血管疾病 同英譯,zh 異形) ·
 抗早孕 Anti-early-pregnancy activity(低信度直譯,藥理實為抗著床/墮胎訊號,勿擴寫機轉)
 
+### 5b-2. B2 新詞回填(2026-08-14)
+
+condition_tags:腳氣 Beriberi · 濕溫初起 Early-stage Damp-Warmth ·
+痰飲眩暈 Phlegm-Fluids with dizziness · 腎陰不足 Kidney Yin deficiency ·
+濕熱水腫 Damp-Heat Edema · 熱淋痛澀 Heat Lin with painful urinary straining ·
+暑濕洩瀉 Summerheat-Damp diarrhea · 水瀉 Watery diarrhea ·
+肝火目赤腫痛 Liver Fire with red, swollen, painful eyes ·
+小便赤澀 Reddish, difficult urination ·
+心火上炎口舌生瘡 Heart Fire flaring upward with mouth and tongue sores ·
+產後乳汁不下 Postpartum insufficient lactation · 小便澀痛 Painful straining urination ·
+暑濕煩渴 Summerheat-Damp with vexing thirst
+
+modern_functions:助消化 Promotes digestion · 抗病原微生物 Antimicrobial activity ·
+護膚美容 Skin-care and beautifying activity ·
+降血脂降血壓 Lipid-lowering and antihypertensive activity ·
+改善心血管健康 Improves cardiovascular health · 抗輻射 Radioprotective activity
+
 ### 5c. B1 判例
 
 - 單句內強弱動詞混用(標題「忌」+說明「不宜」):**取較保守(較強)級**。
