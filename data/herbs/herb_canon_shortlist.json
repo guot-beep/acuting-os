@@ -10984,9 +10984,7 @@
         "Clear Heat & Drain Fire",
         "Nourish Yin & Moisten Dryness"
       ],
-      "condition_tags_zh": [
-        "清熱瀉火滋陰潤燥"
-      ],
+      "condition_tags_zh": [],
       "modern_pharmacology": [
         {
           "tag": "解熱與抗發炎作用",
@@ -11051,7 +11049,15 @@
           "https://cloudtcm.com/herb/1245"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱瀉火滋陰潤燥",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.lu_gen",
@@ -12637,9 +12643,7 @@
         "黃連"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱燥濕瀉火解毒"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1080",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HuangLian.html",
       "american_dragon_link_status": "derived",
@@ -12677,7 +12681,15 @@
           "https://cloudtcm.com/herb/1080"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱燥濕瀉火解毒",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.huang_bai",
@@ -13145,9 +13157,7 @@
         "龍膽草"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱燥濕瀉肝膽火"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1104",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/LongDanCao.html",
       "american_dragon_link_status": "derived",
@@ -13185,7 +13195,15 @@
           "https://cloudtcm.com/herb/1104"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱燥濕瀉肝膽火",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ku_shen",
@@ -13438,9 +13456,7 @@
         "苦參"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱燥濕殺蟲利尿"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1781",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/KuShen.html",
       "american_dragon_link_status": "derived",
@@ -13478,7 +13494,15 @@
           "https://cloudtcm.com/herb/1781"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱燥濕殺蟲利尿",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.jin_yin_hua",
@@ -13715,9 +13739,7 @@
         "金銀花"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒疏散風熱"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1089",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/JinYinHua.html",
       "american_dragon_link_status": "derived",
@@ -13755,7 +13777,15 @@
           "https://cloudtcm.com/herb/1089"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒疏散風熱",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.lian_qiao",
@@ -14488,7 +14518,8 @@
       "functions_zh": [
         "清熱解毒",
         "清熱瀉火",
-        "利水消腫"
+        "利水消腫",
+        "涼血"
       ],
       "modern_functions_zh": [
         "抗菌抗病毒"
@@ -14517,9 +14548,7 @@
         "紫花地丁"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒涼血消腫"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1812",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZiHuaDiDing.html",
       "american_dragon_link_status": "derived",
@@ -14557,7 +14586,15 @@
           "https://cloudtcm.com/herb/1812"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒涼血消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.da_qing_ye",
@@ -14719,9 +14756,7 @@
         "大青葉"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒涼血消斑"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1004",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DaQingYe.html",
       "american_dragon_link_status": "derived",
@@ -14759,7 +14794,15 @@
           "https://cloudtcm.com/herb/1004"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒涼血消斑",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ban_lan_gen",
@@ -14954,9 +14997,7 @@
         "板藍根"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒涼血利咽"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/965",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BanLanGen.html",
       "american_dragon_link_status": "derived",
@@ -14994,7 +15035,15 @@
           "https://cloudtcm.com/herb/965"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒涼血利咽",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.yu_xing_cao",
@@ -15352,7 +15401,8 @@
         "清熱瀉火",
         "清熱涼血",
         "止血",
-        "清火解毒"
+        "清火解毒",
+        "止痢"
       ],
       "modern_functions_zh": [
         "抗菌抗病毒",
@@ -15410,9 +15460,7 @@
         "白頭翁"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒涼血止痢"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1770",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaiTouWeng.html",
       "american_dragon_link_status": "derived",
@@ -15450,7 +15498,15 @@
           "https://cloudtcm.com/herb/1770"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒涼血止痢",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sheng_di_huang",
@@ -15680,9 +15736,7 @@
         "生地黃"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱涼血養陰生津"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1173",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShengDiHuang.html",
       "american_dragon_link_status": "derived",
@@ -15720,7 +15774,15 @@
           "https://cloudtcm.com/herb/1173"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱涼血養陰生津",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xuan_shen",
@@ -16653,7 +16715,7 @@
       "safety_fetched_at": "2026-07-23T07:25:08.448Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "清虛",
+        "清虛熱",
         "清熱瀉火",
         "治瘧",
         "清熱解毒",
@@ -16736,9 +16798,7 @@
         "青蒿"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "退虛熱解暑截瘧"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1141",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/QingHao.html",
       "american_dragon_link_status": "derived",
@@ -16776,7 +16836,15 @@
           "https://cloudtcm.com/herb/1141"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "退虛熱解暑截瘧",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.di_gu_pi",
@@ -16935,9 +17003,7 @@
         "地骨皮"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "涼血除蒸清肺降火"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1015",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DiGuPi.html",
       "american_dragon_link_status": "derived",
@@ -16975,7 +17041,15 @@
           "https://cloudtcm.com/herb/1015"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血除蒸清肺降火",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.yin_chai_hu",
@@ -17134,9 +17208,7 @@
         "銀柴胡"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "退虛熱清疳熱"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/12305",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/YinChaiHu.html",
       "american_dragon_link_status": "derived",
@@ -17174,7 +17246,15 @@
           "https://cloudtcm.com/herb/12305"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "退虛熱清疳熱",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.da_huang",
@@ -17957,9 +18037,7 @@
         "火麻仁"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "潤腸通便"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1083",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HuoMaRen.html",
       "american_dragon_link_status": "derived",
@@ -18001,9 +18079,7 @@
       "aliases_en": [
         "Ma Zi Ren"
       ],
-      "condition_tags_en": [
-        "Moistens the intestines and unblocks the bowels"
-      ],
+      "condition_tags_en": [],
       "modern_functions_en": [
         "Immune-enhancing activity",
         "Anti-ulcer activity",
@@ -18024,6 +18100,20 @@
         "Avoid in gout, hyperuricemia, and kidney stones — the riboflavin and purines in Huo Ma Ren increase uric acid production.",
         "Avoid in pregnancy — adenosine and other constituents in Huo Ma Ren may adversely affect the fetus; pregnant women should avoid it or eat only small amounts.",
         "Impaired liver function — the high unsaturated fatty acid content of Huo Ma Ren may increase the burden on the liver with excessive intake; reduce intake or avoid."
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "潤腸通便",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_en",
+          "text": "Moistens the intestines and unblocks the bowels",
+          "reason": "Ting 2026-08-14 裁定，condition_tags_zh 功效聯已封存清空，condition_tags_en 為其英譯鏡像，依憲法規則五（_en 長度須等於 _zh）同步封存清空，避免索引錯位",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -18187,9 +18277,7 @@
         "郁李仁"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "潤腸通便利水消腫"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1480",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/YuLiRen.html",
       "american_dragon_link_status": "derived",
@@ -18228,15 +18316,27 @@
         ]
       },
       "card_grade": "partial",
-      "condition_tags_en": [
-        "Moistens the intestines, unblocks the bowels, and reduces edema by promoting urination"
-      ],
+      "condition_tags_en": [],
       "modern_functions_en": [
         "Lipid-lowering activity",
         "Sleep-improving activity",
         "Hepatoprotective and cholagogic activity",
         "Anti-inflammatory activity",
         "Moistening laxative activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "潤腸通便利水消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_en",
+          "text": "Moistens the intestines, unblocks the bowels, and reduces edema by promoting urination",
+          "reason": "Ting 2026-08-14 裁定，condition_tags_zh 功效聯已封存清空，condition_tags_en 為其英譯鏡像，依憲法規則五（_en 長度須等於 _zh）同步封存清空，避免索引錯位",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -18340,7 +18440,8 @@
       "functions_zh": [
         "峻下逐水",
         "瀉下",
-        "化痰下氣"
+        "化痰下氣",
+        "消腫散結"
       ],
       "modern_functions_zh": [
         "抗發炎"
@@ -18370,9 +18471,7 @@
         "甘遂"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "瀉水逐飲消腫散結"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1040",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/GanSui.html",
       "american_dragon_link_status": "derived",
@@ -18411,9 +18510,7 @@
         ]
       },
       "card_grade": "partial",
-      "condition_tags_en": [
-        "Purges water, expels retained fluids, reduces swelling, and dissipates nodules"
-      ],
+      "condition_tags_en": [],
       "modern_functions_en": [
         "Anti-inflammatory activity"
       ],
@@ -18423,6 +18520,20 @@
         "Avoid in Spleen-Stomach Deficiency-Cold, diarrhea, abdominal pain, or abdominal distension — Gan Sui is Cold in nature and may worsen diarrhea, abdominal pain, and abdominal distension in Spleen-Stomach Deficiency-Cold.",
         "Concurrent use with antidiarrheal agents, diuretics, cardiac glycosides, or hypoglycemic drugs may cause adverse reactions — use only under medical supervision.",
         "Not for prolonged use — long-term use of Gan Sui may cause diarrhea, dehydration, and electrolyte imbalance; use only under medical supervision."
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "瀉水逐飲消腫散結",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_en",
+          "text": "Purges water, expels retained fluids, reduces swelling, and dissipates nodules",
+          "reason": "Ting 2026-08-14 裁定，condition_tags_zh 功效聯已封存清空，condition_tags_en 為其英譯鏡像，依憲法規則五（_en 長度須等於 _zh）同步封存清空，避免索引錯位",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -18627,9 +18738,7 @@
         "獨活"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "祛風勝濕散寒止痛"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1023",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DuHuo.html",
       "american_dragon_link_status": "derived",
@@ -18667,7 +18776,15 @@
           "https://cloudtcm.com/herb/1023"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "祛風勝濕散寒止痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.wei_ling_xian",
@@ -19371,9 +19488,7 @@
         "防己"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "祛風止痛利水消腫"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/4057",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/FangJi.html",
       "american_dragon_link_status": "derived",
@@ -19411,7 +19526,15 @@
           "https://cloudtcm.com/herb/4057"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "祛風止痛利水消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sang_ji_sheng",
@@ -19974,7 +20097,8 @@
       "functions_zh": [
         "祛風除濕",
         "強筋骨",
-        "通經絡"
+        "通經絡",
+        "和胃"
       ],
       "modern_functions_zh": [
         "提升免疫力",
@@ -20028,9 +20152,7 @@
         "木瓜"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "舒筋活絡和胃化濕"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1121",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/MuGua.html",
       "american_dragon_link_status": "derived",
@@ -20068,7 +20190,15 @@
           "https://cloudtcm.com/herb/1121"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "舒筋活絡和胃化濕",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.huo_xiang",
@@ -20243,9 +20373,7 @@
         "藿香"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "化濕解暑止嘔"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1084",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HuoXiang.html",
       "american_dragon_link_status": "derived",
@@ -20283,7 +20411,15 @@
           "https://cloudtcm.com/herb/1084"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "化濕解暑止嘔",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.pei_lan",
@@ -20394,7 +20530,8 @@
         "生津止渴",
         "鎮咳祛痰",
         "平喘解熱",
-        "祛暑化濕"
+        "祛暑化濕",
+        "辟穢和中"
       ],
       "modern_functions_zh": [
         "降血糖",
@@ -20434,9 +20571,7 @@
         "佩蘭"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "解暑化濕辟穢和中"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/8480",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/PeiLan.html",
       "american_dragon_link_status": "derived",
@@ -20474,7 +20609,15 @@
           "https://cloudtcm.com/herb/8480"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "解暑化濕辟穢和中",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.cang_zhu",
@@ -20922,7 +21065,8 @@
         "降氣化痰",
         "益腸胃",
         "保肝",
-        "解毒殺蟲"
+        "解毒殺蟲",
+        "行氣除滿"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -21017,9 +21161,7 @@
         "厚朴"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "燥濕消痰下氣除滿"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1068",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HouPo.html",
       "american_dragon_link_status": "derived",
@@ -21057,7 +21199,15 @@
           "https://cloudtcm.com/herb/1068"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "燥濕消痰下氣除滿",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sha_ren",
@@ -21426,9 +21576,7 @@
         "白豆蔻"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "化濕行氣溫中止嘔"
-      ],
+      "condition_tags_zh": [],
       "taste_temperature_zh": "辛, 溫",
       "cloudtcm_url": "https://cloudtcm.com/herb/948",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaiDouKou.html",
@@ -21470,7 +21618,15 @@
           "https://cloudtcm.com/herb/948"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "化濕行氣溫中止嘔",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.fu_ling",
@@ -24278,9 +24434,7 @@
         "茵陳蒿"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清利濕熱退黃疸"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1232",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/YinChenHao.html",
       "american_dragon_link_status": "derived",
@@ -24329,6 +24483,14 @@
       "card_grade": "partial",
       "aliases_en": [
         "Yin Chen"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清利濕熱退黃疸",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -26101,9 +26263,7 @@
         "小茴香"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "散寒止痛理氣和胃"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1218",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/XiaoHuiXiang.html",
       "american_dragon_link_status": "derived",
@@ -26175,7 +26335,15 @@
         "Contraindicated in Heat in the Small Intestine, Bladder, or Stomach: taking Xiao Hui Xiang in these Heat patterns may aggravate Heat symptoms.",
         "Contraindicated in Lung or Stomach Heat, or exuberant Heat-toxin: taking Xiao Hui Xiang in these patterns may aggravate Heat-toxin symptoms."
       ],
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "散寒止痛理氣和胃",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ding_xiang",
@@ -26398,9 +26566,7 @@
         "丁香"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "溫中降逆補腎助陽"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1019",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DingXiang.html",
       "american_dragon_link_status": "derived",
@@ -26474,6 +26640,12 @@
           "original_field": "contraindications_zh",
           "text": "氣血勝者不可服，丁香益其氣也。",
           "reason": "Ting 2026-08-14 裁定，照偵察建議：語意可疑——丁香傳統功效為溫中降逆、補腎助陽（見本記錄 functions_zh），並非補氣藥，「丁香益其氣也」讀起來像古籍截斷句。查本記錄僅有 exact_source_url 指向 CloudTCM 丁香頁的通用連結（https://cloudtcm.com/herb/1019），而 field_sources.contraindications_zh 註明此欄「由既有 cautions_zh 依禁服/忌服挑出，未新增內容」——即這句話從未被逐條核實，查無可獨立驗證的具體來源，依規定封存移除。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_zh",
+          "text": "溫中降逆補腎助陽",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
         }
       ],
@@ -26572,7 +26744,9 @@
         "散風寒",
         "補陽",
         "散結",
-        "燥濕"
+        "燥濕",
+        "理氣寬中",
+        "化痰"
       ],
       "aliases_zh": [],
       "category_zh": "理氣藥",
@@ -26590,9 +26764,7 @@
         "橘紅"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "理氣寬中燥濕化痰"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1092",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/JuHong.html",
       "american_dragon_link_status": "derived",
@@ -26624,7 +26796,15 @@
           "https://cloudtcm.com/herb/1092"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "理氣寬中燥濕化痰",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.chen_pi",
@@ -27239,9 +27419,7 @@
         "https://www.zhongyifangji.com"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "理氣寬中行滯消脹"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1244",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiKe.html",
       "american_dragon_link_status": "derived",
@@ -27276,7 +27454,15 @@
           "https://cloudtcm.com/herb/1244"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "理氣寬中行滯消脹",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.zhi_shi",
@@ -27481,9 +27667,7 @@
         "枳實"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "破氣消積化痰散痞"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1246",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiShi.html",
       "american_dragon_link_status": "derived",
@@ -27521,7 +27705,15 @@
           "https://cloudtcm.com/herb/1246"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "破氣消積化痰散痞",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.mu_xiang",
@@ -27680,7 +27872,8 @@
         "健脾胃",
         "止咳平喘",
         "疏肝解鬱",
-        "益腸胃"
+        "益腸胃",
+        "止痛"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -27755,9 +27948,7 @@
         "木香"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "行氣止痛健脾消食"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1124",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/MuXiang.html",
       "american_dragon_link_status": "derived",
@@ -27795,7 +27986,15 @@
           "https://cloudtcm.com/herb/1124"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "行氣止痛健脾消食",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xiang_fu",
@@ -27932,7 +28131,8 @@
         "理氣行氣",
         "補氣",
         "散結",
-        "調經止痛"
+        "調經止痛",
+        "疏肝解鬱"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -27996,9 +28196,7 @@
         "香附"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "疏肝理氣調經止痛"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1215",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/XiangFu.html",
       "american_dragon_link_status": "derived",
@@ -28036,7 +28234,15 @@
           "https://cloudtcm.com/herb/1215"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "疏肝理氣調經止痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.chuan_lian_zi",
@@ -28217,9 +28423,7 @@
         "川楝子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "行氣止痛殺蟲療癬"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/993",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ChuanLianZi.html",
       "american_dragon_link_status": "derived",
@@ -28257,7 +28461,15 @@
           "https://cloudtcm.com/herb/993"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "行氣止痛殺蟲療癬",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.qing_pi",
@@ -28466,9 +28678,7 @@
         "青皮"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "疏肝破氣消積化滯"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1142",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/QingPi.html",
       "american_dragon_link_status": "derived",
@@ -28506,7 +28716,15 @@
           "https://cloudtcm.com/herb/1142"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "疏肝破氣消積化滯",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.shan_zha",
@@ -28926,9 +29144,7 @@
         "神麴"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "消食調中"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1274",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShenQu.html",
       "american_dragon_link_status": "derived",
@@ -28966,7 +29182,15 @@
           "https://cloudtcm.com/herb/1274"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "消食調中",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.mai_ya",
@@ -29577,7 +29801,8 @@
         "平肝息風",
         "利水消腫",
         "補血",
-        "清熱利尿"
+        "清熱利尿",
+        "止痛"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -29660,9 +29885,7 @@
         "三七"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "化瘀止血活血定痛"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1151",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/SanQi.html",
       "american_dragon_link_status": "derived",
@@ -29700,7 +29923,15 @@
           "https://cloudtcm.com/herb/1151"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "化瘀止血活血定痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_ji",
@@ -29868,9 +30099,7 @@
         "白及"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "收斂止血消腫生肌"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/952",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaiJi.html",
       "american_dragon_link_status": "derived",
@@ -29908,7 +30137,15 @@
           "https://cloudtcm.com/herb/952"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "收斂止血消腫生肌",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ai_ye",
@@ -30424,9 +30661,7 @@
         "地榆"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "涼血止血解毒斂瘡"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1018",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DiYu.html",
       "american_dragon_link_status": "derived",
@@ -30464,7 +30699,15 @@
           "https://cloudtcm.com/herb/1018"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血解毒斂瘡",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ce_bai_ye",
@@ -30583,7 +30826,8 @@
         "活血化瘀",
         "清熱利尿",
         "化腐生肌",
-        "止咳化痰"
+        "止咳化痰",
+        "生髮烏髮"
       ],
       "modern_functions_zh": [
         "抗發炎",
@@ -30618,9 +30862,7 @@
         "側柏葉"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "涼血止血生髮烏髮"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/981",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/CeBaiYe.html",
       "american_dragon_link_status": "derived",
@@ -30658,7 +30900,15 @@
           "https://cloudtcm.com/herb/981"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血生髮烏髮",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.chuan_xiong",
@@ -36036,9 +36286,7 @@
         "https://www.zhongyifangji.com"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱化痰散結消癰"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/12761",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZheBeiMu.html",
       "american_dragon_link_status": "derived",
@@ -36073,7 +36321,15 @@
           "https://cloudtcm.com/herb/12761"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱化痰散結消癰",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.gua_lou",
@@ -36427,9 +36683,7 @@
         "竹茹"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱化痰除煩止嘔"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1249",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhuRu.html",
       "american_dragon_link_status": "derived",
@@ -36467,7 +36721,15 @@
           "https://cloudtcm.com/herb/1249"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱化痰除煩止嘔",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xing_ren",
@@ -37093,7 +37355,9 @@
       "functions_zh": [
         "止咳化痰",
         "除煩",
-        "止咳平喘"
+        "止咳平喘",
+        "潤肺",
+        "下氣"
       ],
       "modern_functions_zh": [
         "抗發炎",
@@ -37136,9 +37400,7 @@
         "款冬花"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "潤肺下氣止咳化痰"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1518",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/KuanDongHua.html",
       "american_dragon_link_status": "derived",
@@ -37176,7 +37438,15 @@
           "https://cloudtcm.com/herb/1518"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "潤肺下氣止咳化痰",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.zi_wan",
@@ -37285,7 +37555,8 @@
       "functions_zh": [
         "止咳化痰",
         "降氣",
-        "止咳平喘"
+        "止咳平喘",
+        "潤肺"
       ],
       "modern_functions_zh": [
         "抗發炎",
@@ -37337,9 +37608,7 @@
         "紫菀"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "潤肺下氣消痰止咳"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1522",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZiWan.html",
       "american_dragon_link_status": "derived",
@@ -37377,7 +37646,15 @@
           "https://cloudtcm.com/herb/1522"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "潤肺下氣消痰止咳",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.shi_chang_pu",
@@ -37719,7 +37996,8 @@
       "functions_zh": [
         "開竅",
         "除穢氣障氣",
-        "利水消腫"
+        "利水消腫",
+        "行氣止痛"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -37758,9 +38036,7 @@
         "蘇合香"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "開竅闢穢行氣止痛"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1185",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/SuHeXiang.html",
       "american_dragon_link_status": "derived",
@@ -37798,7 +38074,15 @@
           "https://cloudtcm.com/herb/1185"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "開竅闢穢行氣止痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.gou_teng",
@@ -37992,9 +38276,7 @@
         "鉤藤"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱平肝息風定驚"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1049",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/GouTeng.html",
       "american_dragon_link_status": "derived",
@@ -38032,7 +38314,15 @@
           "https://cloudtcm.com/herb/1049"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱平肝息風定驚",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.tian_ma",
@@ -43144,9 +43434,7 @@
         "熟地黃"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "補血養陰填精益髓"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1183",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShuDiHuang.html",
       "american_dragon_link_status": "derived",
@@ -43184,7 +43472,15 @@
           "https://cloudtcm.com/herb/1183"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "補血養陰填精益髓",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.e_jiao",
@@ -43376,9 +43672,7 @@
         "阿膠"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "補血滋陰潤肺止血"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1025",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/EJiao.html",
       "american_dragon_link_status": "derived",
@@ -43416,7 +43710,15 @@
           "https://cloudtcm.com/herb/1025"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "補血滋陰潤肺止血",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.he_shou_wu",
@@ -43663,9 +43965,7 @@
         "何首烏"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "補益精血"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1062",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HeShouWu.html",
       "american_dragon_link_status": "derived",
@@ -43703,7 +44003,15 @@
           "https://cloudtcm.com/herb/1062"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "補益精血",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.long_yan_rou",
@@ -43888,9 +44196,7 @@
         "龍眼肉"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "補益心脾養血安神"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1106",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/LongYanRou.html",
       "american_dragon_link_status": "derived",
@@ -43928,7 +44234,15 @@
           "https://cloudtcm.com/herb/1106"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "補益心脾養血安神",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bei_sha_shen",
@@ -44031,7 +44345,11 @@
       "functions_zh": [
         "止咳化痰",
         "活絡止痛",
-        "清肺熱利咽"
+        "清肺熱利咽",
+        "養陰",
+        "清肺",
+        "益胃",
+        "生津"
       ],
       "modern_functions_zh": [
         "抗氧化",
@@ -44085,9 +44403,7 @@
         "北沙參"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養陰清肺益胃生津"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/2358",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BeiShaShen.html",
       "american_dragon_link_status": "derived",
@@ -44125,7 +44441,15 @@
           "https://cloudtcm.com/herb/2358"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養陰清肺益胃生津",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.mai_men_dong",
@@ -44529,9 +44853,7 @@
         "天門冬"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養陰潤燥清肺生津"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1193",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/TianMenDong.html",
       "american_dragon_link_status": "derived",
@@ -44569,7 +44891,15 @@
           "https://cloudtcm.com/herb/1193"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養陰潤燥清肺生津",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.shi_hu",
@@ -44727,9 +45057,7 @@
         "石斛"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "益胃生津滋陰清熱"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1178",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShiHu.html",
       "american_dragon_link_status": "derived",
@@ -44767,7 +45095,15 @@
           "https://cloudtcm.com/herb/1178"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "益胃生津滋陰清熱",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.yu_zhu",
@@ -44914,9 +45250,7 @@
         "玉竹"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養陰潤燥生津止渴"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1259",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/YuZhu.html",
       "american_dragon_link_status": "derived",
@@ -44954,7 +45288,15 @@
           "https://cloudtcm.com/herb/1259"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養陰潤燥生津止渴",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_he",
@@ -45134,9 +45476,7 @@
         "百合"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養陰潤肺清心安神"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/950",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaiHe.html",
       "american_dragon_link_status": "derived",
@@ -45174,7 +45514,15 @@
           "https://cloudtcm.com/herb/950"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養陰潤肺清心安神",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.gou_qi_zi",
@@ -45381,9 +45729,7 @@
         "枸杞子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "滋補肝腎益精明目"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1048",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/GouQiZi.html",
       "american_dragon_link_status": "derived",
@@ -45421,7 +45767,15 @@
           "https://cloudtcm.com/herb/1048"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "滋補肝腎益精明目",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.nu_zhen_zi",
@@ -45541,7 +45895,9 @@
         "清熱涼血",
         "補益肝腎",
         "補血養肝",
-        "補腎"
+        "補腎",
+        "明目",
+        "烏髮"
       ],
       "modern_functions_zh": [
         "降血糖",
@@ -45590,9 +45946,7 @@
         "女貞子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "滋補肝腎明目烏髮"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1130",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/NuZhenZi.html",
       "american_dragon_link_status": "derived",
@@ -45630,7 +45984,15 @@
           "https://cloudtcm.com/herb/1130"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "滋補肝腎明目烏髮",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.gui_ban",
@@ -48094,9 +48456,7 @@
         "酸棗仁"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養心益肝安神斂汗"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1186",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/SuanZaoRen.html",
       "american_dragon_link_status": "derived",
@@ -48134,7 +48494,15 @@
           "https://cloudtcm.com/herb/1186"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養心益肝安神斂汗",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_zi_ren",
@@ -48252,7 +48620,8 @@
         "止血",
         "固表止汗",
         "補氣",
-        "滋陰"
+        "滋陰",
+        "潤腸通便"
       ],
       "modern_functions_zh": [
         "抗氧化",
@@ -48302,9 +48671,7 @@
         "柏子仁"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養心安神潤腸通便"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/964",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaiZiRen.html",
       "american_dragon_link_status": "derived",
@@ -48342,7 +48709,15 @@
           "https://cloudtcm.com/herb/964"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養心安神潤腸通便",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.yuan_zhi",
@@ -48456,7 +48831,8 @@
         "安神",
         "利水消腫",
         "止咳化痰",
-        "清熱解毒"
+        "清熱解毒",
+        "益智"
       ],
       "modern_functions_zh": [
         "鎮靜",
@@ -48496,9 +48872,7 @@
         "遠志"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "安神益智祛痰消腫"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1237",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/YuanZhi.html",
       "american_dragon_link_status": "derived",
@@ -48536,7 +48910,15 @@
           "https://cloudtcm.com/herb/1237"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "安神益智祛痰消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.he_huan_pi",
@@ -48676,9 +49058,7 @@
         "合歡皮"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "解鬱安神活血消腫"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/4828",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HeHuanPi.html",
       "american_dragon_link_status": "derived",
@@ -48716,7 +49096,15 @@
           "https://cloudtcm.com/herb/4828"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "解鬱安神活血消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.wu_wei_zi",
@@ -49417,9 +49805,7 @@
         "山茱萸"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "補益肝腎收斂固澀"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1166",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShanZhuYu.html",
       "american_dragon_link_status": "derived",
@@ -49457,7 +49843,15 @@
           "https://cloudtcm.com/herb/1166"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "補益肝腎收斂固澀",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.lian_zi",
@@ -50087,9 +50481,7 @@
         "浮小麥"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "固表止汗益氣除熱"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1036",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/FuXiaoMai.html",
       "american_dragon_link_status": "derived",
@@ -50127,7 +50519,15 @@
           "https://cloudtcm.com/herb/1036"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "固表止汗益氣除熱",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.dai_zhe_shi",
@@ -50812,9 +51212,7 @@
         "高良薑"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "溫胃止嘔散寒止痛"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1042",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/GaoLiangJiang.html",
       "american_dragon_link_status": "derived",
@@ -50852,7 +51250,15 @@
           "https://cloudtcm.com/herb/1042"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "溫胃止嘔散寒止痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.hua_jiao",
@@ -51146,9 +51552,7 @@
         "花椒"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "溫中止痛殺蟲止癢"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/992",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HuaJiao.html",
       "american_dragon_link_status": "derived",
@@ -51233,6 +51637,12 @@
           "original_field": "contraindications_zh",
           "text": "脾胃虛寒者不宜過度食用，因花椒溫熱辛辣，可能加重脾胃虛寒。",
           "reason": "Ting 2026-08-14 裁定，照偵察建議：自相矛盾的生成/複製錯誤——本記錄 functions_zh 明列花椒功效為「溫中止痛」，actions_en 為 \"Warms the middle jiao, alleviates pain\"，主治脾胃虛寒，此句卻說花椒可能「加重脾胃虛寒」，證型疑似被換錯，整條封存後移除。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_zh",
+          "text": "溫中止痛殺蟲止癢",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
         }
       ],
@@ -51772,7 +52182,8 @@
         "散結",
         "安胎",
         "止瀉",
-        "活絡止痛"
+        "活絡止痛",
+        "通陽"
       ],
       "modern_functions_zh": [
         "抗氧化",
@@ -51837,9 +52248,7 @@
         "薤白"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "通陽散結行氣導滯"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1510",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/XieBai.html",
       "american_dragon_link_status": "derived",
@@ -51877,7 +52286,15 @@
           "https://cloudtcm.com/herb/1510"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "通陽散結行氣導滯",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.lai_fu_zi",
@@ -52053,9 +52470,7 @@
         "萊菔子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "消食導滯降氣化痰"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1098",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/LaiFuZi.html",
       "american_dragon_link_status": "derived",
@@ -52093,7 +52508,15 @@
           "https://cloudtcm.com/herb/1098"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "消食導滯降氣化痰",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.shi_jun_zi",
@@ -52229,9 +52652,7 @@
         "使君子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "殺蟲消積健胃"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1180",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShiJunZi.html",
       "american_dragon_link_status": "derived",
@@ -52269,7 +52690,15 @@
           "https://cloudtcm.com/herb/1180"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "殺蟲消積健胃",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ku_lian_pi",
@@ -52477,9 +52906,7 @@
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "殺蟲療癬"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/6540",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/KuLianPi.html",
       "american_dragon_link_status": "derived",
@@ -52517,7 +52944,15 @@
           "https://cloudtcm.com/herb/6540"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "殺蟲療癬",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bing_lang",
@@ -52803,9 +53238,7 @@
         "南瓜子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "殺蟲"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/8052",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/NanGuaZi.html",
       "american_dragon_link_status": "derived",
@@ -52837,7 +53270,15 @@
           "https://cloudtcm.com/herb/8052"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "殺蟲",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xian_he_cao",
@@ -53237,9 +53678,7 @@
         "蒲黃"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "止血化瘀通淋"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1134",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/PuHuang.html",
       "american_dragon_link_status": "derived",
@@ -53277,7 +53716,15 @@
           "https://cloudtcm.com/herb/1134"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "止血化瘀通淋",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.qian_cao",
@@ -53404,9 +53851,7 @@
         "茜草"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "涼血止血祛瘀通經"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1135",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/QianCao.html",
       "american_dragon_link_status": "derived",
@@ -53444,7 +53889,15 @@
           "https://cloudtcm.com/herb/1135"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血祛瘀通經",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ru_xiang",
@@ -54051,9 +54504,7 @@
         "preparation_note_zh": "入湯劑宜打碎布包煎，或醋炒（醋沒藥）減輕胃刺激。"
       },
       "pao_zhi_notes_zh": "生沒藥散血祛瘀力強，易胃不適；醋沒藥（醋炒）緩和苦燥、減輕對胃刺激、增強散瘀止痛。",
-      "condition_tags_zh": [
-        "散血祛瘀消腫定痛"
-      ],
+      "condition_tags_zh": [],
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {
@@ -54098,9 +54549,7 @@
         ]
       },
       "card_grade": "partial",
-      "condition_tags_en": [
-        "Disperses Blood stasis, reduces swelling, and stops pain"
-      ],
+      "condition_tags_en": [],
       "modern_functions_en": [
         "Analgesic activity",
         "Anti-inflammatory activity",
@@ -54110,6 +54559,20 @@
         "Anti-inflammatory and analgesic activity",
         "Analgesic activity",
         "Lipid-lowering activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "散血祛瘀消腫定痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_en",
+          "text": "Disperses Blood stasis, reduces swelling, and stops pain",
+          "reason": "Ting 2026-08-14 裁定，condition_tags_zh 功效聯已封存清空，condition_tags_en 為其英譯鏡像，依憲法規則五（_en 長度須等於 _zh）同步封存清空，避免索引錯位",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -55283,9 +55746,7 @@
         "前胡"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "降氣化痰宣散風熱"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1136",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/QianHu.html",
       "american_dragon_link_status": "derived",
@@ -55323,7 +55784,15 @@
           "https://cloudtcm.com/herb/1136"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "降氣化痰宣散風熱",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_bu",
@@ -55705,9 +56174,7 @@
         "枇杷葉"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清肺止咳降逆止嘔"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1520",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/PiPaYe.html",
       "american_dragon_link_status": "derived",
@@ -55745,7 +56212,15 @@
           "https://cloudtcm.com/herb/1520"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清肺止咳降逆止嘔",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ting_li_zi",
@@ -55893,9 +56368,7 @@
         "葶藶子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "瀉肺平喘利水消腫"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1519",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/TingLiZi.html",
       "american_dragon_link_status": "derived",
@@ -55933,7 +56406,15 @@
           "https://cloudtcm.com/herb/1519"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "瀉肺平喘利水消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_jiang_can",
@@ -56334,9 +56815,7 @@
         "夜交藤"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "養心安神祛風通絡"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1226",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/YeJiaoTeng.html",
       "american_dragon_link_status": "derived",
@@ -56374,7 +56853,15 @@
           "https://cloudtcm.com/herb/1226"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養心安神祛風通絡",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.tai_zi_shen",
@@ -56484,7 +56971,8 @@
         "補氣",
         "止咳化痰",
         "生津止渴",
-        "健脾胃"
+        "健脾胃",
+        "潤肺"
       ],
       "modern_functions_zh": [
         "提升免疫力",
@@ -56533,9 +57021,7 @@
         "太子參"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "益氣健脾生津潤肺"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1746",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/TaiZiShen.html",
       "american_dragon_link_status": "derived",
@@ -56573,7 +57059,15 @@
           "https://cloudtcm.com/herb/1746"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "益氣健脾生津潤肺",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xi_yang_shen",
@@ -56801,9 +57295,7 @@
         "西洋參"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "補氣養陰清熱生津"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1211",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/XiYangShen.html",
       "american_dragon_link_status": "derived",
@@ -56841,7 +57333,15 @@
           "https://cloudtcm.com/herb/1211"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "補氣養陰清熱生津",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sang_shen",
@@ -56969,7 +57469,8 @@
         "生津止渴",
         "安胎",
         "補益肝腎",
-        "清熱解毒"
+        "清熱解毒",
+        "潤腸"
       ],
       "modern_functions_zh": [
         "抗氧化",
@@ -57023,9 +57524,7 @@
         "桑椹"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "滋陰補血生津潤腸"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1154",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/SangShen.html",
       "american_dragon_link_status": "derived",
@@ -57063,7 +57562,15 @@
           "https://cloudtcm.com/herb/1154"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "滋陰補血生津潤腸",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.han_lian_cao",
@@ -57221,9 +57728,7 @@
         "旱蓮草"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "滋補肝腎涼血止血"
-      ],
+      "condition_tags_zh": [],
       "cloudtcm_url": "https://cloudtcm.com/herb/1320",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HanLianCao.html",
       "american_dragon_link_status": "derived",
@@ -57261,7 +57766,15 @@
           "https://cloudtcm.com/herb/1320"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "滋補肝腎涼血止血",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.rou_cong_rong",
@@ -59198,9 +59711,7 @@
         "Clear Heat & Promote Urination",
         "Unblock Qi & Promote Lactation"
       ],
-      "condition_tags_zh": [
-        "清熱利尿通氣下乳"
-      ],
+      "condition_tags_zh": [],
       "modern_pharmacology": [
         {
           "tag": "溫和利尿作用",
@@ -59258,7 +59769,15 @@
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱利尿通氣下乳",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sha_shen",
@@ -59301,9 +59820,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "養陰清肺益胃生津"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.yi_guan_jian",
         "formula.sha_shen_mai_men_dong_tang",
@@ -59316,7 +59833,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "養陰清肺益胃生津",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_wei",
@@ -59672,9 +60197,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "行氣導滯利水消腫"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.huo_xiang_zheng_qi_san",
         "formula.wu_ling_san"
@@ -59685,7 +60208,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "行氣導滯利水消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.da_ji",
@@ -59728,9 +60259,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "涼血止血散瘀消腫"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.shi_hui_san",
         "formula.zhu_ling_tang"
@@ -59741,7 +60270,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血散瘀消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xiao_ji",
@@ -59784,9 +60321,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "涼血止血祛瘀消腫"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.shi_hui_san",
         "formula.zhu_ling_tang"
@@ -59797,7 +60332,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血祛瘀消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.she_gan",
@@ -59839,9 +60382,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "清熱解毒消痰利咽"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.gan_lu_xiao_du_dan"
       ],
@@ -59851,7 +60392,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒消痰利咽",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sang_bai_pi",
@@ -59893,9 +60442,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "瀉肺平喘利水消腫"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.sang_ju_yin",
         "formula.wu_ling_san",
@@ -59910,7 +60457,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "瀉肺平喘利水消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.sang_piao_xiao",
@@ -59953,9 +60508,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "固精縮尿補腎助陽"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.sang_piao_xiao_san",
         "formula.zhen_wu_tang"
@@ -59966,7 +60519,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "固精縮尿補腎助陽",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.huai_hua",
@@ -60009,9 +60570,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "涼血止血清肝瀉火"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.ma_zi_ren_wan",
         "formula.tian_ma_gou_teng_yin",
@@ -60023,7 +60582,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血清肝瀉火",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_bian_dou",
@@ -60066,9 +60633,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "健脾化濕和中消暑"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.tong_xie_yao_fang",
         "formula.shen_ling_bai_zhu_san"
@@ -60079,7 +60644,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "健脾化濕和中消暑",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_mao_gen",
@@ -60123,9 +60696,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "涼血止血清熱利尿"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.yin_qiao_san",
         "formula.sang_ju_yin",
@@ -60140,7 +60711,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血清熱利尿",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.bai_fu_zi",
@@ -60499,9 +61078,7 @@
         "Clear Heat & Promote Urination",
         "Invigorate Blood & Unblock Channels"
       ],
-      "condition_tags_zh": [
-        "利尿通淋破血通經"
-      ],
+      "condition_tags_zh": [],
       "modern_pharmacology": [
         {
           "tag": "顯著利尿作用",
@@ -60561,7 +61138,15 @@
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "利尿通淋破血通經",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.shi_jue_ming",
@@ -60603,9 +61188,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "平肝潛陽清肝明目"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.bu_yang_huan_wu_tang",
         "formula.tian_ma_gou_teng_yin"
@@ -60616,7 +61199,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "平肝潛陽清肝明目",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ling_yang_jiao",
@@ -60714,9 +61305,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "涼血止血祛瘀通經"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.sang_ju_yin",
         "formula.shi_hui_san",
@@ -60728,7 +61317,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血止血祛瘀通經",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.he_ye",
@@ -60898,9 +61495,7 @@
         "Promote Urination & Unblock Lin",
         "Kill Parasites & Relieve Itching"
       ],
-      "condition_tags_zh": [
-        "利尿通淋殺蟲止癢"
-      ],
+      "condition_tags_zh": [],
       "modern_pharmacology": [
         {
           "tag": "顯著利尿作用",
@@ -60957,7 +61552,15 @@
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "利尿通淋殺蟲止癢",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.xue_yu_tan",
@@ -61000,9 +61603,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "收斂止血化瘀利尿"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.gui_zhi_fu_ling_wan",
         "formula.shi_xiao_san"
@@ -61013,7 +61614,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "收斂止血化瘀利尿",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.wu_ling_zhi",
@@ -61248,9 +61857,7 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [
-        "滋陰潛陽軟堅散結"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.qing_hao_bie_jia_tang",
         "formula.yi_guan_jian",
@@ -61262,7 +61869,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "滋陰潛陽軟堅散結",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.wu_mei",
@@ -61580,9 +62195,7 @@
         "Promote Urination & Unblock Lin",
         "Clear Heart Heat & Relieve Irritability"
       ],
-      "condition_tags_zh": [
-        "清心火利小便"
-      ],
+      "condition_tags_zh": [],
       "modern_pharmacology": [
         {
           "tag": "鎮靜與催眠作用",
@@ -61638,7 +62251,15 @@
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清心火利小便",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.cong_bai",
@@ -61860,9 +62481,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "斂肺定喘止帶縮尿"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.ding_chuan_tang"
       ],
@@ -61872,7 +62491,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "斂肺定喘止帶縮尿",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.yi_tang",
@@ -61915,9 +62542,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "緩中補虛生津潤燥"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.xiao_jian_zhong_tang"
       ],
@@ -61927,7 +62552,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "緩中補虛生津潤燥",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ma_bo",
@@ -61968,9 +62601,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清肺利咽解毒止血"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.pu_ji_xiao_du_yin"
       ],
@@ -61980,7 +62611,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清肺利咽解毒止血",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.she_xiang",
@@ -62684,9 +63323,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "涼血活血解毒透疹"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.xiao_feng_san"
       ],
@@ -62696,7 +63333,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "涼血活血解毒透疹",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.chuan_xin_lian",
@@ -62740,9 +63385,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒燥濕"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [],
       "category": "清熱藥 / Clear Heat - Resolve Toxicity",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ChuanXinLian.html",
@@ -62750,7 +63393,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒燥濕",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.shan_dou_gen",
@@ -62792,9 +63443,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "清熱解毒利咽消腫"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.gan_lu_xiao_du_dan"
       ],
@@ -62804,7 +63453,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱解毒利咽消腫",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ma_chi_xian",
@@ -62997,9 +63654,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "瀉熱行滯通便"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.huo_xiang_zheng_qi_san",
         "formula.wu_ling_san"
@@ -63010,7 +63665,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "瀉熱行滯通便",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.lu_hui",
@@ -63103,9 +63766,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "溫中燥濕行氣動脾"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.ping_wei_san"
       ],
@@ -63115,7 +63776,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "溫中燥濕行氣動脾",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.cao_guo",
@@ -63157,9 +63826,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "燥濕溫中截瘧"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.san_ren_tang"
       ],
@@ -63169,7 +63836,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "燥濕溫中截瘧",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.hai_jin_sha",
@@ -63211,9 +63886,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "利尿通淋止痛"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.da_chai_hu_tang"
       ],
@@ -63223,7 +63896,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "利尿通淋止痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.wu_yao",
@@ -63267,9 +63948,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "行氣止痛溫腎散寒"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [
         "formula.dang_gui_si_ni_tang",
         "formula.xue_fu_zhu_yu_tang",
@@ -63284,7 +63963,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "行氣止痛溫腎散寒",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.jiang_huang",
@@ -63627,9 +64314,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "開竅醒神清熱止痛"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [],
       "category": "開竅藥 / Open Orifices",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BingPian.html",
@@ -63637,7 +64322,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "開竅醒神清熱止痛",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.huang_jing",
@@ -63730,9 +64423,7 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "condition_tags_zh": [
-        "滋補肝腎涼血止血"
-      ],
+      "condition_tags_zh": [],
       "related_formulas": [],
       "category": "補虛藥 / Tonify Yin",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/MoHanLian.html",
@@ -63740,7 +64431,15 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {},
-      "card_grade": "partial"
+      "card_grade": "partial",
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "滋補肝腎涼血止血",
+          "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.hu_zhang",
