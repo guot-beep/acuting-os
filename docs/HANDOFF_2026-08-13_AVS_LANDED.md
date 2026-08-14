@@ -50,8 +50,8 @@ SOL 兩份審核(metric 來源、AVS 醫囑)都收斂了。**現在真正卡住 
 一次跟其他並行 session 的暫態競爭(`js/knowledge.js`/`styles.css` 瞬間顯示
 dirty,幾秒後自己消失)——那是別人的 build 正在跑,不是我的變更,已確認乾淨。
 
-我不會再碰 `app.js`/`styles.css`/`index.html`,等你的 Top 5 出來再動——
-那會告訴我哪五個地方真的值得修,而不是我猜。
+> 這條後來被你「先別管我測試了,你繼續做進程」取消 —— 見 §4,
+> 我又動了 `app.js`/`index.html`。
 
 ---
 
