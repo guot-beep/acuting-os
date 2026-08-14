@@ -2087,8 +2087,14 @@ function renderHomeQuickGrid() {
   const tiles = [];
   const last = [...clinicalCases].sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")))[0];
   if (last) {
+    /* updatedAt 存的是 UTC 瞬間(new Date().toISOString()),不是日曆日。
+     * 直接切前 10 碼等於把「瞬間」當「日曆日」讀 —— 跟泳道軸標籤是反方向的
+     * 同一類錯(那邊是日曆日被當瞬間解析)。UTC-7 晚上 5 點後 UTC 已跨到
+     * 隔天,PROJECT_LOG 2026-08-12 記過:本地 08-12 晚上,卡片顯示 08-13。
+     * 用 localDateISO 轉回本地日曆日,不要對 ISO 字串切片。 */
+    const lastDate = last.updatedAt ? localDateISO(new Date(last.updatedAt).getTime()) : "";
     tiles.push({ href: "#ws/cases", cls: "home-tile--continue", eyebrow: en ? "Continue" : "繼續上次",
-      title: last.caseTitle || last.patientCode || "Case", sub: `${last.soapNotes.length} SOAP · ${(last.updatedAt || "").slice(0, 10)}` });
+      title: last.caseTitle || last.patientCode || "Case", sub: `${last.soapNotes.length} SOAP · ${lastDate}` });
   }
   tiles.push(
     { href: "#ws/cases", eyebrow: en ? "Cases" : "病例", title: String(clinicalCases.length), sub: en ? "clinical records" : "臨床病歷" },
