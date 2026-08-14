@@ -150,10 +150,14 @@
    * 黑框、瀏覽器確認框、CLI 警告三個地方都走這一支,數字才不會各報各的。 */
   const GENERATOR_META_PREFIX = "_由 `js/care-draft.js` 產生";
   function phiCounts(text) {
-    const scanned = String(text || "")
-      .split("\n")
-      .filter((l) => !l.startsWith(">") && !l.startsWith(GENERATOR_META_PREFIX))
-      .join("\n");
+    const lines = String(text || "").split("\n");
+    /* 只剝掉檔案**最前面那一段連續的**黑框 —— 它自己列出來的東西不該被回頭
+     * 再算一次。不是「所有 `>` 開頭的行」:病歷原文若剛好以 `>` 開頭
+     * (使用者自己打的引言、或貼進來的一段對話),那一行仍然要被掃到。
+     * 少算比多算危險,而少算正是「掃不到就以為乾淨」的那個方向。 */
+    let i = 0;
+    while (i < lines.length && lines[i].startsWith(">")) i++;
+    const scanned = lines.slice(i).filter((l) => !l.startsWith(GENERATOR_META_PREFIX)).join("\n");
     return { dates: exactDateStats(scanned), findings: scanIdentifiers(scanned) };
   }
 

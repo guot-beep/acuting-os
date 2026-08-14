@@ -204,6 +204,14 @@ check("產生時間那一行不算進病人日期", () => {
     ? true
     : `未剔除:raw.distinct=${raw.distinct} net.distinct=${net.distinct} —— GENERATOR_META_PREFIX 可能與標頭文案不同步`;
 });
+/* 剝黑框必須只剝「檔首那一段」,不是「所有 > 開頭的行」。臨床自由文字是
+ * 使用者打的,`> 病人說…` 這種寫法完全可能出現;把它一併濾掉會少算,
+ * 而少算正是「掃不到就以為乾淨」的方向。 */
+check("自由文字以 > 開頭時仍然掃得到(不得被當成黑框濾掉)", () => {
+  const d = gen(withFields({ chiefComplaint: "頭痛" }, { patientPerspective: "> 她說可以打 415-555-0132 找家屬" }));
+  const hit = CD.phiCounts(d).findings.some((f) => f.id === "K1");
+  return hit ? true : `phiCounts 沒掃到那支電話:${JSON.stringify(CD.phiCounts(d).findings)}`;
+});
 check("黑框報的數字與 phiCounts 一致(三個出口不准各報各的)", () => {
   const net = CD.phiCounts(cleanDraft).dates;
   return bannerOf(cleanDraft).includes(`精確日期 ${net.distinct} 個 · 全文出現 ${net.total} 處`)
