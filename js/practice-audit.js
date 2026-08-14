@@ -268,6 +268,19 @@
           : status === "source_pending"
             ? "判讀來源待補:變化量僅供描述"
             : status === "sourced" ? "" : "未標判讀狀態",
+        /* 第二個軸(D20):有具名的正常範圍,但不是改善幅度的閾值。
+         * 這個欄位在資料層(outcome_metrics.json)存在已久,但直到今晚才發現
+         * 沒有任何畫面讀過它 —— 契約寫完了,顯示忘了接。scope 一定要跟著帶,
+         * 那是這個數字唯一的圍欄,只顯示數字不顯示 scope 等於重犯 SOL
+         * 警告過的那個錯。 */
+        referenceRange: def && def.reference_range && String(def.reference_range.scope || "").trim()
+          ? {
+              text: String(def.reference_range.text_zh || def.reference_range.text_en || ""),
+              scope: String(def.reference_range.scope || ""),
+              source: def.reference_range.source && def.reference_range.source.name ? String(def.reference_range.source.name) : "",
+            }
+          : null,
+        instrumentSource: def && def.instrument_source && def.instrument_source.name ? String(def.instrument_source.name) : "",
       };
     }).sort((a, b) => b.casesMeasured - a.casesMeasured);
 

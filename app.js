@@ -6140,8 +6140,17 @@ function renderOutcomeTrackingPanel(item) {
               const b = OUTCOME_INTERPRETATION_BADGES[def.interpretation_status];
               interpHint = `<small class="interp-hint ${b.cls}" title="${escapeHtml(def.interpretation_note_zh || "")}">${escapeHtml(b.text)}</small>`;
             }
+            // 第二個軸(D20):沒有改善閾值,不代表沒有具名的正常範圍可以參考
+            // (例如 FIGO 對月經週期的正常範圍)。跟 interpHint 分開畫,
+            // 不要合成一行 —— 合成會讓讀的人把「有範圍」誤讀成「有閾值」。
+            let refRangeHint = "";
+            if (def?.interpretation_status !== "sourced" && def?.reference_range?.source?.name && def.reference_range.scope) {
+              const rr = def.reference_range;
+              const rrText = rr.text_zh || rr.text_en || "";
+              refRangeHint = `<small class="interp-hint interp-refrange" title="${escapeHtml(rrText)}${rr.scope ? "\n適用範圍：" + escapeHtml(rr.scope) : ""}">參考範圍：${escapeHtml(shortCitation(rr.source.name))}</small>`;
+            }
             return `<tr>
-              <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}</td>
+              <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}${refRangeHint}</td>
               <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
               <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
               <td>${escapeHtml(fmtChange(row.change))}</td>
@@ -7660,7 +7669,13 @@ function renderPracticeAuditPanel() {
     const basis = o.interpretable
       ? `<em class="pa-basis" title="${escapeHtml(o.interpretationText)}">可對照:${escapeHtml(shortCitation(o.interpretationSource))}</em>`
       : `<em class="pa-basis pa-basis-none">${escapeHtml(o.caveat)}</em>`;
-    return `<li><span>${escapeHtml(o.label)}</span><strong>${escapeHtml(dir)}${escapeHtml(o.unitDisplay ? " " + o.unitDisplay : "")}</strong><small>${o.casesMeasured} 例有前後值</small>${basis}</li>`;
+    // 第二個軸(D20):正常範圍有具名來源,但不是改善閾值 —— 跟上面那行分開列,
+    // 不要合成一句,合成會讓「有範圍」看起來像「有閾值」。scope 放進 title,
+    // 那是這個數字唯一的圍欄。
+    const refRange = !o.interpretable && o.referenceRange
+      ? `<em class="pa-basis pa-basis-refrange" title="${escapeHtml(o.referenceRange.text)}\n適用範圍：${escapeHtml(o.referenceRange.scope)}">參考範圍:${escapeHtml(shortCitation(o.referenceRange.source))}</em>`
+      : "";
+    return `<li><span>${escapeHtml(o.label)}</span><strong>${escapeHtml(dir)}${escapeHtml(o.unitDisplay ? " " + o.unitDisplay : "")}</strong><small>${o.casesMeasured} 例有前後值</small>${basis}${refRange}</li>`;
   }).join("");
 
   /* 缺口要能點開那張卡,否則「病例正在需要這 12 張」還是要自己去搜,迴圈沒閉。

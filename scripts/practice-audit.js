@@ -81,7 +81,10 @@ const outcomeRows = r.outcomeChanges.length
       const change = o.medianChange === null ? "—" : (o.medianChange > 0 ? `+${o.medianChange}` : String(o.medianChange));
       // 判讀依據要跟數字並排。沒有來源就明寫沒有 —— 一個沒有依據的中位數
       // 被單獨列出來,讀的人會自己補上「所以有改善」那句話。
-      const basis = o.interpretable ? `可對照文獻(${o.interpretationSource.split(/[,.]/)[0]})` : o.caveat;
+      let basis = o.interpretable ? `可對照文獻(${o.interpretationSource.split(/[,.]/)[0]})` : o.caveat;
+      // 第二個軸(D20):沒有閾值不代表沒有具名的正常範圍。分號接在同一格,
+      // 不覆蓋前半句 —— 「無公認閾值」跟「有正常範圍可參考」要同時看得到。
+      if (!o.interpretable && o.referenceRange) basis += `;參考範圍(${o.referenceRange.source.split(/[,.]/)[0]},限:${o.referenceRange.scope}）`;
       return `| ${o.label} | ${change}${o.unitDisplay ? " " + o.unitDisplay : ""} | ${o.casesMeasured} | ${basis} |`;
     }).join("\n")
   : "| — | — | 0 | 還沒有任何 metric 在同一病例被測過兩次以上 |";

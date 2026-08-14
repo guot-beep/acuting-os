@@ -33,6 +33,24 @@ const KNOWLEDGE = {
         id: "metric.sleep_hours", label_zh: "睡眠時數", unit: "hours", direction_good: "individualized",
         interpretation_status: "source_pending",
       },
+      {
+        // D20 第二軸:沒有改善閾值,但有具名的正常範圍(且帶 scope 圍欄)。
+        id: "metric.cycle_length", label_zh: "月經週期長度", unit: "days", direction_good: "individualized",
+        interpretation_status: "no_published_threshold",
+        reference_range: {
+          text_zh: "FIGO 將 18–45 歲女性的月經頻率 24–38 天列為正常。",
+          scope: "生殖年齡、非妊娠的月經週期描述。是分類界線,不是改善幅度。",
+          source: { name: "Munro MG, et al. Int J Gynaecol Obstet. 2018;143(3):393-408." },
+        },
+      },
+      {
+        // 邊界情況:reference_range 存在但沒有 scope —— 這種資料本來就不該
+        // 通過 validate-metric-interpretation.js,但計算層自己也要有防線,
+        // 不能只靠上游檔案乾淨。沒有 scope 就不該顯示。
+        id: "metric.__malformed_no_scope", label_zh: "測試:缺 scope", unit: "mm", direction_good: "individualized",
+        interpretation_status: "no_published_threshold",
+        reference_range: { text_zh: "某個數字。", source: { name: "Some Source." } },
+      },
     ],
   },
   formulas: {
@@ -69,8 +87,8 @@ const caseA = {
 const caseB = {
   id: "case.B", patientCode: "FICT-B", caseTitle: "虛構:失眠",
   soapNotes: [
-    note({ visitDate: "2026-03-05", acupointLinks: ["HT7"], formulaLinks: ["formula.gui_zhi_tang"], tcmPatternSelections: [{ patternId: "pattern.liver_qi_stagnation" }], outcomeMetrics: [{ metricId: "metric.pain_score", valueNumber: 5 }, { metricId: "metric.sleep_hours", valueNumber: 5 }] }),
-    note({ visitDate: "2026-03-12", outcomeVerdict: "improved", acupointLinks: ["HT7"], outcomeMetrics: [{ metricId: "metric.pain_score", valueNumber: 4 }] }),
+    note({ visitDate: "2026-03-05", acupointLinks: ["HT7"], formulaLinks: ["formula.gui_zhi_tang"], tcmPatternSelections: [{ patternId: "pattern.liver_qi_stagnation" }], outcomeMetrics: [{ metricId: "metric.pain_score", valueNumber: 5 }, { metricId: "metric.sleep_hours", valueNumber: 5 }, { metricId: "metric.cycle_length", valueNumber: 30 }, { metricId: "metric.__malformed_no_scope", valueNumber: 8 }] }),
+    note({ visitDate: "2026-03-12", outcomeVerdict: "improved", acupointLinks: ["HT7"], outcomeMetrics: [{ metricId: "metric.pain_score", valueNumber: 4 }, { metricId: "metric.cycle_length", valueNumber: 28 }, { metricId: "metric.__malformed_no_scope", valueNumber: 7 }] }),
   ],
 };
 
@@ -111,6 +129,8 @@ ok("用到知識庫沒有的方劑會被標 known:false",
 const pain = r.outcomeChanges.find((o) => o.metricId === "metric.pain_score");
 const mood = r.outcomeChanges.find((o) => o.metricId === "metric.mood");
 const sleep = r.outcomeChanges.find((o) => o.metricId === "metric.sleep_hours");
+const cycle = r.outcomeChanges.find((o) => o.metricId === "metric.cycle_length");
+const malformed = r.outcomeChanges.find((o) => o.metricId === "metric.__malformed_no_scope");
 
 eq("疼痛:兩位病人都算得出變化", pain.casesMeasured, 2);
 eq("疼痛中位數變化(-4 與 -1)", pain.medianChange, -2.5);
@@ -121,6 +141,15 @@ ok("情緒不可對照文獻", mood.interpretable === false && /無公認閾值/
 // 這一條是本測試最重要的:只測過一次 ≠ 沒有變化
 ok("只測一次的睡眠時數不進統計(不能當成變化 0)", sleep === undefined,
    sleep ? `卻出現了 casesMeasured=${sleep.casesMeasured} medianChange=${sleep.medianChange}` : "");
+
+/* D20 第二軸:有正常範圍但沒有改善閾值,今晚才發現資料契約做完了畫面沒接。
+ * 這裡守住計算層,app.js 的畫面接線另外用眼睛在瀏覽器驗證(見交接記錄)。 */
+ok("週期長度不可對照文獻(沒有 MCID)", cycle && cycle.interpretable === false, cycle && cycle.caveat);
+ok("週期長度帶得出正常範圍(FIGO)", cycle && cycle.referenceRange && /Munro/.test(cycle.referenceRange.source), cycle && JSON.stringify(cycle.referenceRange));
+ok("正常範圍的 scope 圍欄有跟著帶出來,不是只有數字", cycle && cycle.referenceRange && /分類界線/.test(cycle.referenceRange.scope), cycle && cycle.referenceRange && cycle.referenceRange.scope);
+// 防線在兩層:validate-metric-interpretation.js 擋資料進檔,這裡擋計算層
+// 自己不能假設上游一定乾淨 —— 沒有 scope 的 reference_range 就不該送出去。
+ok("沒有 scope 的 reference_range 不會被送到畫面層(計算層自己的防線)", malformed && malformed.referenceRange === null, malformed && JSON.stringify(malformed.referenceRange));
 
 /* 沒有具名來源的項目,不得出現任何肯定的臨床顯著性宣稱。
  *

@@ -649,6 +649,9 @@ h1 {
 .outcome-tracking-table .interp-sourced { color: var(--muted); }
 .outcome-tracking-table .interp-none { color: var(--muted); font-style: italic; }
 .outcome-tracking-table .interp-pending { color: var(--muted); opacity: 0.8; }
+/* 第二個軸(D20):正常範圍,不是改善閾值。跟上面同一套樸素風格，不要另外
+   配色暗示這是好消息或壞消息——它只是一個可查證的參考範圍。 */
+.outcome-tracking-table .interp-refrange { color: var(--muted); opacity: 0.8; }
 
 /* Phase D batch 1: Meds & Supplements ledger (agentExposures[]), case-level.
    Same light-palette / .case-actions button conventions as Outcome Tracking
@@ -7494,6 +7497,7 @@ html { scroll-padding-top: 92px; }
 /* 判讀依據:有具名來源與沒有,要一眼分得出來。不用紅綠 —— 這不是好壞。 */
 .pa-basis { flex-basis: 100%; font-style: normal; font-size: .7rem; color: var(--muted); }
 .pa-basis-none { opacity: .85; font-style: italic; }
+.pa-basis-refrange { opacity: .85; }
 .pa-gap-kind { font-size: .68rem; padding: 1px 6px; border-radius: 999px; border: 1px solid rgba(148,163,184,.35); color: var(--muted); }
 .pa-gap-list li em { font-style: normal; font-size: .7rem; color: var(--muted); }
 /* 可以點開卡片的缺口。不能點的那些維持純文字 —— 長得像連結卻沒反應更糟。 */

@@ -51,6 +51,9 @@ const FIXTURE = [
     interpretation_status: "sourced",
     interpretation_en: "A decrease of about 2 points is commonly cited as clinically meaningful.",
     source: { name: "Farrar JT, Young JP Jr. Clinical importance of changes. Pain. 2001;94(2):149-158.", url: "https://example.invalid/" },
+    // 刻意也帶一個 reference_range,確認「sourced 不畫參考範圍 badge」的
+    // 判斷是真的在檢查 status,不是因為這筆資料根本沒有 reference_range 可畫。
+    reference_range: { text_zh: "無關數字。", scope: "不該被畫出來。", source: { name: "Should Not Render." } },
   },
   {
     id: "metric.fixture_none", label_zh: "無閾值", direction_good: "increase",
@@ -64,6 +67,26 @@ const FIXTURE = [
     interpretation_note_zh: "待 SOL 補來源。",
   },
   { id: "metric.fixture_unlabelled", label_zh: "未標註", direction_good: "decrease" },
+  {
+    // D20 第二軸:沒有改善閾值,但有具名的正常範圍(帶 scope 圍欄)。
+    id: "metric.fixture_refrange", label_zh: "有範圍無閾值", direction_good: "individualized",
+    interpretation_status: "no_published_threshold",
+    interpretation_note_zh: "無公認閾值。",
+    reference_range: {
+      text_zh: "FIGO 正常範圍 24–38 天。",
+      scope: "生殖年齡、非妊娠。是分類界線,不是改善幅度。",
+      source: { name: "Munro MG, et al. Int J Gynaecol Obstet. 2018;143(3):393-408.", url: "https://example.invalid/" },
+    },
+  },
+  {
+    // 邊界情況:reference_range 存在但沒有 scope —— 不該通過
+    // validate-metric-interpretation.js,但 renderer 自己也不能假設上游一定
+    // 乾淨。沒有 scope 的參考範圍不該畫出來。
+    id: "metric.fixture_refrange_no_scope", label_zh: "範圍缺 scope", direction_good: "individualized",
+    interpretation_status: "no_published_threshold",
+    interpretation_note_zh: "無公認閾值。",
+    reference_range: { text_zh: "某個數字。", source: { name: "Some Source." } },
+  },
 ];
 
 const sandbox = {
@@ -99,6 +122,9 @@ try {
 
 const cellOf = (id) => (html.split("<tr>").find((s) => s.includes(id)) || "");
 const hintOf = (id) => (cellOf(id).match(/<small class="interp-hint[^>]*>([^<]*)</) || [])[1] || "";
+// 專找 refrange 那個 badge —— 一列可能同時有 interpHint 與 refRangeHint 兩個
+// interp-hint span,hintOf 只抓得到第一個,所以另外用 class 精確比對。
+const refRangeHintOf = (id) => (cellOf(id).match(/<small class="interp-hint interp-refrange"[^>]*>([^<]*)</) || [])[1] || "";
 
 const checks = [
   ["sourced 要顯示可查證的短引用", () => /Farrar JT 2001/.test(hintOf("metric.fixture_sourced"))],
@@ -107,6 +133,10 @@ const checks = [
   ["未標註的不畫 badge(空白好過假結論)", () => hintOf("metric.fixture_unlabelled") === ""],
   ["未標註的仍要出現在表格裡(不能被整列吃掉)", () => cellOf("metric.fixture_unlabelled") !== ""],
   ["方向提示沒有被 badge 擠掉", () => /direction-hint/.test(cellOf("metric.fixture_sourced"))],
+  ["有 scope 的參考範圍會顯示可查證的短引用", () => /Munro MG 2018/.test(refRangeHintOf("metric.fixture_refrange"))],
+  ["參考範圍不會蓋掉原本的無閾值 badge(兩個都要在)", () => /無公認閾值/.test(hintOf("metric.fixture_refrange"))],
+  ["沒有 scope 的參考範圍不畫 badge(缺圍欄寧可不顯示)", () => refRangeHintOf("metric.fixture_refrange_no_scope") === ""],
+  ["sourced 的列不會多畫一個參考範圍 badge(避免同一格兩套判讀依據)", () => refRangeHintOf("metric.fixture_sourced") === ""],
 ];
 for (const [name, fn] of checks) {
   let ok = false;
