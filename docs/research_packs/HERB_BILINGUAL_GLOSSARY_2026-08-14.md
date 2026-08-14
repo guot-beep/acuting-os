@@ -333,3 +333,28 @@ modern_functions:興奮中樞神經 CNS-stimulant activity ·
   不代改 TCM 學說;列報告供內容審。
 - cautions_zh 與同記錄藥性/藥理欄**內在矛盾**者(B1 抓到 5 筆):cautions_en 扣住,
   zh 不動,進 Ting 裁定佇列。
+
+### 5d. B5 新詞回填(2026-08-14)
+
+modern_functions:驅蟲 Anthelmintic activity · 抗生育作用 Anti-fertility activity
+(低信度直譯,平行於既定 抗早孕 判例,機轉未明,勿擴寫) ·
+抗動脈粥樣硬化 Anti-atherosclerotic activity ·
+抗黴菌/抗真菌 Antifungal activity(兩種 zh 寫法同譯一詞,不分裂黴菌/真菌)
+
+### 5e. B5 判例(清熱解毒+燥濕+涼血,24 味,3 筆扣住)
+
+- **herb.huang_qin** cautions_zh[1]「脾肺虛熱者忌之：體質虛寒者不宜服用」:
+  條目本身矛盾(前段講虛熱、後段講虛寒,方向相反)。cautions_en 整欄扣住,
+  zh 不動,進 Ting 裁定佇列。
+- **herb.huang_bai** cautions_zh[6]「黃柏具有收斂作用，腹瀉患者使用可能會加重腹瀉症狀」:
+  機轉倒置(收斂傳統上止瀉,不會導致腹瀉加重)。cautions_en 整欄扣住,進裁定佇列。
+- **herb.bai_tou_weng** cautions_zh[1]「豚實力使。（《藥性論》）」:
+  古籍引文疑似 OCR/校對錯字,無法可信翻譯(不同於「反/畏與通說不合」的可直譯情境,
+  此條本身語意不通)。cautions_en 整欄扣住,進裁定佇列。
+- **herb.sheng_di_huang** cautions_zh[4]「畏蕪荑（柳絮）」:蕪荑為榆科植物(Ulmus
+  macrocarpa)果實加工品,並非柳絮(楊柳科 Salix)。此為源資料的物種誤植,
+  **照原文字翻**(不代改 zh),於報告中列出供內容審訂正 zh。
+- **herb.chi_shao** functions_zh 內含「補腎」「補血養肝」,與赤芍(清熱涼血/
+  活血化瘀,無補益功效)的公認藥性不符,疑似與白芍(補血養肝)內容混淆。
+  functions_zh 不在本批填寫範圍,不逕行更動,列報告供 Ting 核對是否為
+  跨藥誤植。
