@@ -5936,7 +5936,12 @@
       "etiology_zh": "確切病因屬多因素且尚未完全釐清；妊娠相關生物因素與個體易感性共同作用，持續嘔吐本身會造成脫水及代謝／營養併發症。",
       "western_pathology_zh": "妊娠劇吐是妊娠噁心嘔吐的重症端，可造成明顯體重下降、脫水、電解質異常與營養缺乏。",
       "tcm_patterns": [],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        }
+      ],
       "herb_formulas": [],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
@@ -6024,8 +6029,8 @@
         "precautions": "治療前評估脫水、體重下降與電解質異常之嚴重度；孕期針灸須依安全穴位與手法執行，避免可能催產之強刺激穴位",
         "co_management": "出現無法進食飲水、少尿或意識混亂等徵象時，立即轉介產科／急診補液，針灸僅為輔助不可延誤醫療處置",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG／PubMed 臨床資料整理）",
-        "note": "本次查證未找到妊娠劇吐專屬針灸系統性回顧來源；孕期針灸安全性須遵循一般孕期禁忌穴位規範"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG／PubMed 臨床資料整理）；Cochrane CD010607（Boelig 2016, 妊娠劇吐專屬）",
+        "note": "內關（PC6）是傳統止嘔常用穴,但「妊娠劇吐專屬的實證支持不足」:Cochrane CD010607（Boelig 2016, 妊娠劇吐專屬） 中,針刺與 placebo 相比沒有主要結果資料,與 metoclopramide 相比證據不足,整體為低至極低品質。常被引用的 Cochrane CD007575（孕期噁心嘔吐）明確排除妊娠劇吐,不可用來替本症背書。妊娠劇吐以醫療處置與補液為主,針灸僅為輔助,不得延誤補液與電解質矯正。孕期避免強刺激可能催產之穴位;合谷（LI4）與三陰交（SP6）不列入本卡處方。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive relief for mild-to-moderate pregnancy nausea (e.g., traditional antiemetic point use such as PC6); frank hyperemesis (dehydration, electrolyte disturbance, significant weight loss) requires medical management and fluids as the primary treatment",
@@ -6107,7 +6112,12 @@
       "etiology_zh": "原因常無法確定；相關因素可包括多胎妊娠、羊水過多或過少、子宮形態異常或肌瘤，以及既往妊娠。",
       "western_pathology_zh": "臀位屬胎兒先露方式，不是孕婦本身的疾病：接近足月時由臀部、足部或兩者先朝向產道，而不是頭部先露。",
       "tcm_patterns": [],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "至陰",
+          "code": "BL67"
+        }
+      ],
       "herb_formulas": [],
       "entity_type": "biomedical_condition",
       "red_flag_refs": [
@@ -6204,8 +6214,8 @@
         "precautions": "需先確認孕週、胎盤位置、羊水量及有無妊娠合併症等產科條件；操作應由受訓執業者依產科團隊時程配合進行，不可自行決定介入時機",
         "co_management": "全程與孕婦之產科醫師保持聯繫，胎位轉正評估、外轉術與分娩計畫決策權在產科；針灸／艾灸不可取代或延誤產科評估",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
-        "note": "本次查證未找到艾灸轉胎位療效之系統性回顧來源；此為傳統執業常見用法但本次未確認實證等級，屬執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）；Cochrane CD003928.pub4（Coyle 2023, 13 trials / 2,181 women）",
+        "note": "Cochrane CD003928.pub4（Coyle 2023, 13 trials / 2,181 women）:艾灸至陰穴（BL67）併用常規照護,可能降低非頭位生產（中等確定性）;剖腹產率幾無差異。一般於 37 週前開始。已通報之不良反應含胎動增加、子宮收縮、噁心、頭痛,以及艾條過近造成的燙傷;該回顧指出多數試驗對不良事件通報不足。本穴僅用艾灸,不針刺;合谷（LI4）與三陰交（SP6）為晚期妊娠禁忌對,不列入本卡處方。"
       },
       "acupuncture_scope_en": {
         "can_treat": "Some practitioners use moxibustion at BL67 (Zhiyin) during a specific gestational window (per training and clinical judgment) as an adjunct attempt at version — adjunctive only, with no guarantee of success",

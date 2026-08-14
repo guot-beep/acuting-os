@@ -3131,8 +3131,13 @@
         row(modeText("共同照護", "Co-management"), s.co_management, "k-scope-co"),
       ].join("");
       if (!body) return "";
+      /* note 先前沒有被讀 —— 而它正是放證據等級與出處的地方。
+       * 我自己差點重蹈覆轍:把 Cochrane 的引用與「HG 專屬證據不足」寫進 note,
+       * 寫完才發現畫面不讀這個欄位,等於寫進一個看不見的抽屜。 */
+      const note = usableText(s.note);
       return `<div class="k-condition-scope"><strong>${esc(modeText("針灸範圍 Scope", "Acupuncture scope"))}</strong>
         ${body}
+        ${note ? `<p class="k-scope-note">${esc(note)}</p>` : ""}
         ${usableText(s.source) ? `<small>${esc(modeText("來源:", "Source: "))}${esc(usableText(s.source))}</small>` : ""}</div>`;
     };
 
@@ -3171,8 +3176,19 @@
         : formulas.length >= DUMP_THRESHOLD ? dumpNote(formulas.length, "匯入方劑", "Imported formulas")
         : `<p><strong>${esc(modeText("方劑", "Formulas"))}</strong> ${formulas.map((f) =>
             `<span class="k-tag">${esc(typeof f === "string" ? f : (f.name_zh || f.name_en || ""))}</span>`).join("")}</p>`;
+      /* F-07 的共用樣板:足三里＋合谷＋三陰交＋中脘。全庫還有 67 張卡帶著它,
+       * 而且都在 20 筆門檻以下,所以會照常列出 —— 讀的人會以為月經過多、閉經、
+       * 骨盆腔發炎與經前不悅症共用同一組穴,那是假的。它是匯入時的預設值,
+       * 不是任何一個病的處方。逐張重建需要逐病找來源,不是顯示層能解決的;
+       * 顯示層能做的是**不要讓它假裝成處方**。 */
+      const pointKey = points.map((p) => (typeof p === "string" ? p : `${p.name_zh || ""}${p.code || ""}`)).join("|");
+      const isSharedTemplate = points.length <= 5
+        && /足三里/.test(pointKey) && /合谷/.test(pointKey) && /三陰交/.test(pointKey) && /中脘/.test(pointKey);
       const pBlock = !points.length ? ""
         : points.length >= DUMP_THRESHOLD ? dumpNote(points.length, "匯入穴位", "Imported points")
+        : isSharedTemplate ? `<p class="k-meta">${esc(modeText(
+            "穴位欄目前是匯入時的共用預設組(足三里／合谷／三陰交／中脘),全庫 67 張卡相同 —— 不是本病專屬處方,不可照用。",
+            "The point field currently holds the shared import default (ST36/LI4/SP6/CV12), identical on 67 cards — not a protocol for this condition."))}</p>`
         : `<p><strong>${esc(modeText("穴位", "Points"))}</strong> ${points.map((p) => {
             const code = typeof p === "string" ? p : (p.code || "");
             const name = typeof p === "string" ? "" : (p.name_zh || p.name_en || "");

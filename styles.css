@@ -7661,3 +7661,13 @@ html { scroll-padding-top: 92px; }
   padding: 0.3rem 1rem;
   font-size: 0.85rem;
 }
+
+/* 證據等級與出處的說明句。比 can_treat/precautions 低一階,但必須看得見 ——
+   「這一條有 Cochrane 中等確定性」與「這一條專屬證據不足」的差別就在這裡。 */
+.k-scope-note {
+  margin: 0.4rem 0 0;
+  padding-left: 0.6rem;
+  border-left: 2px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.95em;
+  opacity: 0.92;
+}
