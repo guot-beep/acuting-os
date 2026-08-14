@@ -318,6 +318,21 @@ jobs:
       - name: clinical contract invariants (R1-R8)
         run: node scripts/validate-clinical-invariants.js
 
+      # Phase E 縱向走查(P4 驗收標準的第四項)。先前不在 CI,而它的
+      # export→wipe→import 斷言原本是 JSON.parse∘JSON.stringify 的恆等檢查 ——
+      # 不可能失敗,所以也證明不了什麼。現在它真的走一次儲存層(save → 取位元組
+      # → wipe → 寫回 → load),納入 CI 才能防止它再退回空跑。
+      # 純假資料、不動任何 tracked 檔案,不會像 pharm 那兩支互相踩。
+      - name: Phase E longitudinal walkthrough (storage round-trip)
+        run: node scripts/walkthrough-phase-e.js
+
+      # pointer 三態與還原演練:P4 的另外兩項驗收標準(31/31、65/65)。
+      - name: pointer runtime three-state contract
+        run: node scripts/test-pointer-runtime.js
+
+      - name: runtime restore rehearsal
+        run: node scripts/rehearse-runtime-restore.js
+
       # AVS v3(2026-08-12,Codex NO-GO 修復後納入 blocking):建議庫規則
       # 驗證 + 引擎 E2E(§13 Scenario A–G + Codex HIGH-1/HIGH-3/MED-1 反例)。
       - name: AVS advice library standard
