@@ -2814,17 +2814,26 @@
       return `<details class="k-condition-flags"><summary>${esc(modeText(`安全警訊 / Red flags (${n})`, `Red flags (${n})`))}</summary><ul class="k-red-flag-list">${rows.join("")}</ul></details>`;
     };
 
+    // `sources` (docs/CONDITION_CARD_TEMPLATE.md §3.4) is the canonical field —
+    // a flat array of strings in one of three shapes: a bare URL, "Label: URL"
+    // (or "Label — URL"), or a plain-text citation with no URL at all (e.g. an
+    // NCBAHM outline anchor). `source_links` was never populated on any
+    // condition record (dead read, always []) and is dropped here.
     const conditionSources = (record) => {
-      const links = asList(record.source_links).filter((link) =>
-        link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
-      );
-      if (!links.length) return "";
-      return `<div class="k-source-links k-condition-source-links">
-        ${links.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">
-          <strong>${esc(link.label_zh || "資料來源")}</strong>
-          <small>${esc(link.label_en || "Source")}</small>
-        </a>`).join("")}
-      </div>`;
+      const entries = asList(record.sources)
+        .map((entry) => String(entry == null ? "" : entry).trim())
+        .filter(Boolean);
+      if (!entries.length) return "";
+      const rendered = entries.map((entry) => {
+        const match = entry.match(/https?:\/\/\S+/);
+        if (!match) return `<span class="k-source-text">${esc(entry)}</span>`;
+        const url = match[0];
+        const before = entry.slice(0, match.index).replace(/[:\-–—]\s*$/, "").trim();
+        const after = entry.slice(match.index + url.length).trim();
+        const label = [before, after].filter(Boolean).join(" ") || url;
+        return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+      }).join("");
+      return `<div class="k-source-links k-condition-source-links">${rendered}</div>`;
     };
 
     let patternLangMode = "zh";
