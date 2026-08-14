@@ -4800,11 +4800,37 @@ function moxaTextEn(text) {
   return "As indicated / Warm moxibustion";
 }
 
+/* 這一穴到底是不是董氏穴。
+ * 2026-08-12:英文模式的簡介模板無條件寫「Master Tung Acupuncture point」,
+ * 於是 LI4 合谷 —— 十四正經最常用的穴 —— 的英文卡上寫著它是董氏穴,
+ * 433 個非董氏穴位全部如此。這不是翻譯不足,是**張冠李戴**:
+ * 生成的句子替卡片宣稱了一個它沒有的來源,而讀的人會以為那是查過的。
+ * 與假劑量 6~15g 同一類 —— 渲染層說了資料沒說過的話。 */
+function isTungPoint(point) {
+  const code = String(point.code || "");
+  if (/^T\d/.test(code) || /^TDT|^TVT/.test(code)) return true;
+  return /tung|董氏/i.test(String(point.meridian || "") + String(point.channel || "") + String(point.system || ""));
+}
+
 function pointIntro(point) {
   if (contentMode === "english") {
-    const regionText = regionEn(point) || point.region || "Master Tung anatomical region";
-    const actionsText = point.functionsEn || (Array.isArray(p => p.traditional_functions_en) ? p.traditional_functions_en.join(", ") : "") || "Harmonize Qi & Blood, Unblock Channels";
-    return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to ${shortMeridianEn(point)}. It is located in the ${regionText}.\n\nActions & Reaction Areas:\n${actionsText}\n\nClinical Application Note: Master Tung Acupuncture point for targeted channel regulation and internal organ harmony. Verify needling depth, angle, and safety precautions against professional textbooks.`;
+    // 有來源的英文簡介勝過生成的模板(49 個奇穴帶 nameIntroEn,先前完全沒被讀過)。
+    const introEn = String(point.nameIntroEn || "").trim();
+    const otherEn = Array.isArray(point.otherNamesEn) ? point.otherNamesEn.filter(Boolean).join(", ")
+      : String(point.otherNamesEn || "").trim();
+    if (introEn) {
+      const parts = [`【Name & Overview】\n${introEn}`];
+      if (otherEn) parts.push(`【Other names】${otherEn}`);
+      return parts.join("\n\n");
+    }
+    const regionText = regionEn(point) || point.region || "the recorded anatomical region";
+    const actionsText = point.functionsEn || "Harmonize Qi & Blood, Unblock Channels";
+    const tail = isTungPoint(point)
+      ? "Clinical Application Note: Master Tung Acupuncture point for targeted channel regulation and internal organ harmony. Verify needling depth, angle, and safety precautions against professional textbooks."
+      : "Clinical Application Note: verify needling depth, angle and safety precautions against professional textbooks.";
+    const head = [`${point.nameEn} (${point.pinyin}; ${point.code}) belongs to ${shortMeridianEn(point)}.`,
+      `It is located in the ${regionText}.`].join(" ");
+    return `${head}\n\nActions & Reaction Areas:\n${actionsText}\n\n${tail}`;
   }
   const introParts = [];
   if (point.nameIntroZh) {
@@ -5179,7 +5205,10 @@ function evidenceText(point) {
     if (point.reviewStatus === "sourced_elotus_direct") {
       parts.push("【Source Provenance】This record is sourced directly from eLotus CORE Master Tung Standard Documentation.");
     } else {
-      parts.push("Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks.");
+      // 同一個張冠李戴:這句原本無條件加在每一張英文卡上,包括十四正經與奇穴。
+      parts.push(isTungPoint(point)
+        ? "Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks."
+        : "Verify point selection with classic literature and professional textbooks.");
     }
     return parts.join("\n\n");
   }
