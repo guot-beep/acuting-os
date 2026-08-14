@@ -312,6 +312,14 @@ modern_functions:助消化 Promotes digestion · 抗病原微生物 Antimicrobia
 降血脂降血壓 Lipid-lowering and antihypertensive activity ·
 改善心血管健康 Improves cardiovascular health · 抗輻射 Radioprotective activity
 
+### 5b-3. B3 新詞回填(2026-08-14)
+
+modern_functions:抗癌 Anticancer activity · 抗瘧 Antimalarial activity ·
+調節血糖 Blood-glucose-regulating activity(調節≠降,與 Hypoglycemic 嚴格分開) ·
+抗應激作用 Anti-stress activity · 抗休克 Anti-shock activity ·
+緩解壓力 Relieves stress · 保護眼睛健康 Eye-protective activity ·
+抗突變作用 Antimutagenic activity
+
 ### 5c. B1 判例
 
 - 單句內強弱動詞混用(標題「忌」+說明「不宜」):**取較保守(較強)級**。
