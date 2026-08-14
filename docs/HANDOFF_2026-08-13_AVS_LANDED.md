@@ -52,3 +52,29 @@ dirty,幾秒後自己消失)——那是別人的 build 正在跑,不是我的�
 
 我不會再碰 `app.js`/`styles.css`/`index.html`,等你的 Top 5 出來再動——
 那會告訴我哪五個地方真的值得修,而不是我猜。
+
+---
+
+## 4. 你說「別管我測試,繼續做進程」之後,做了一件 P6 CHM-CARE 的事
+
+**Case Report Readiness 面板現在可以真的產生草稿了。**
+
+`docs/CARE_READINESS_MAP_v0.md` 早就定義好對映表,病例詳情的徽章也早就顯示
+`N/M · 百分比` —— 但「可以生成了」旁邊沒有生成的按鈕。`scripts/
+generate-care-draft.js` 這支 CLI 工具本來就能產生完整的 CARE 2013 +
+STRICTA 2010 草稿,只是要離開 app、手動匯出、下指令、指定 case id 才能用。
+
+把計算層抽到 `js/care-draft.js`(瀏覽器和 CLI 共用,跟上次 practice-audit.js
+同一個模式),CLI 改成薄包裝。**抽出前後逐字位元組比對確認輸出完全相同**,
+不是只看結構。病例詳情的 Case Report Readiness 面板現在多一顆「產生草稿」
+按鈕,點了直接下載 `.md`。
+
+誠實規則照搬:patientCode 只在標頭註解、出生年月只出年齡層、每個缺的欄位
+明寫〔缺:...〕、發表同意沒過會有 ⚠️ 但照常生成。實測含針刺/證型/療效判定/
+病人視角的虛構病例:草稿正文完全沒有 patientCode(逐行掃描確認),34 項
+缺項的空病例點下去不會炸。
+
+commit `5adcaa11`。CLI self-test 6/6、既有全部 validator 皆 PASS。
+
+工作樹目前只有另一個並行 session 在改 `js/knowledge.js`(穴位英文卡片內容),
+不是我的東西,沒碰。
