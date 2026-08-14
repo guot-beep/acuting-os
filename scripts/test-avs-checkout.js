@@ -89,6 +89,14 @@ console.log("Scenario B — cupping + anticoagulant flag");
   const d = draftFor(kase, note);
   assert(ruleIds(d).includes("avs.cupping_guasha_aftercare"), "cupping aftercare candidate present");
   assert(ruleIds(d).includes("avs.anticoagulant_precautions"), "anticoagulant candidate present (alias-normalized exact match)");
+  // 醫師端判斷輔助:draft 階段要帶得出證據等級與來源,不然「為什麼建議?」
+  // 面板沒東西可顯示。anticoagulant_precautions 是 2026-08-13 SOL 落庫的
+  // 5 筆之一,library 裡確實有 evidence_type 與 source_refs。
+  {
+    const acDraft = d.renderedAdvice.find((a) => a.ruleId === "avs.anticoagulant_precautions");
+    assert(!!acDraft.evidenceType, "draft carries evidenceType for a rule that has one");
+    assert(Array.isArray(acDraft.sourceRefs) && acDraft.sourceRefs.length > 0, "draft carries sourceRefs for a rule that has them");
+  }
   // 醫師可勾掉 + 改寫(§2.3)
   const cupIdx = d.renderedAdvice.findIndex((a) => a.ruleId === "avs.cupping_guasha_aftercare");
   d.renderedAdvice[cupIdx].text_zh = "今天有拔罐,今晚早點休息,有問題聯絡診所。";
@@ -100,6 +108,11 @@ console.log("Scenario B — cupping + anticoagulant flag");
   assert(fin.renderedAdvice.every((a) => a.ruleId !== "avs.anticoagulant_precautions"), "deselected candidate dropped at finalize");
   assert(fin.renderedAdvice.some((a) => a.text_zh.includes("今晚早點休息")), "clinician edit preserved in finalized text");
   assert(fin.renderedAdvice.every((a) => a.matchedTriggers === undefined), "matchedTriggers stripped at finalize");
+  // 跟 matchedTriggers 同一個命運:醫師端判斷輔助不該活到定稿文件裡 ——
+  // finalizeSnapshot 是白名單重建,這裡確認新加的兩個欄位真的被剝了,
+  // 不是只有沒寫斷言、沒被注意到而已。
+  assert(fin.renderedAdvice.every((a) => a.evidenceType === undefined), "evidenceType stripped at finalize");
+  assert(fin.renderedAdvice.every((a) => a.sourceRefs === undefined), "sourceRefs stripped at finalize");
   const html = AVS.renderPatientHtml(fin, { visitDate: note.visitDate });
   const banned = AVS.checkPatientOutputSafety(html, kase);
   assert(banned.length === 0, `patient output has zero internal ids/banned tokens (found: ${banned.join(",") || "none"})`);

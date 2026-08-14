@@ -166,7 +166,15 @@
         category: c.rule.category || "lifestyle",
         text_zh: c.rule.advice_zh || "",
         selected: c.rule.preselect === false ? false : true,
-        matchedTriggers: c.matchedTriggers
+        matchedTriggers: c.matchedTriggers,
+        // evidenceType/sourceRefs 是醫師端判斷輔助(這條建議的證據等級與
+        // 具名來源),跟 matchedTriggers 同一個命運:draft 階段帶著,
+        // finalizeSnapshot 的白名單重建(只留 ruleId/category/text_zh)會
+        // 自動剝掉,不會進病人文件也不會進定稿歷史 —— 不需要另外寫剝除邏輯,
+        // 那正是白名單而非黑名單的好處。scripts/test-avs-checkout.js 有
+        // 對稱斷言確認真的被剝了。
+        evidenceType: c.rule.evidence_type || "",
+        sourceRefs: Array.isArray(c.rule.source_refs) ? c.rule.source_refs : []
       })),
       clinicianAddedAdvice: [],
       medicationInstructionsSnapshot: medRows,

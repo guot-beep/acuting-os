@@ -743,6 +743,16 @@ const AVS_CATEGORY_LABELS = {
   special: "特別注意",
   herb_caution: "服藥提醒"
 };
+// §5 的證據等級類別(scripts/validate-avs-library.js 的 EVIDENCE_TYPES)。
+// 只用在「為什麼建議?」面板 —— 醫師端判斷輔助,不進病人文件。
+const AVS_EVIDENCE_TYPE_LABELS = {
+  clinical_safety: "臨床安全",
+  regulatory_or_guideline: "法規/指引",
+  evidence_informed: "實證支持",
+  practice_standard: "臨床常規",
+  traditional_tcm_lifestyle: "中醫養生慣例",
+  clinic_preference: "診所慣例"
+};
 let selectedPatientCode = "";   // Patient Workspace W1 — read-only, list selection only
 let editingCaseId = null;
 let editingSoapId = null;
@@ -9643,7 +9653,11 @@ function renderAvsCheckout() {
           <button class="ghost avs-co-why-btn" type="button" data-avs-why="${i}">為什麼建議? Why?</button>
         </label>
         <textarea data-avs-text="${i}" rows="2">${escapeHtml(a.text_zh)}</textarea>
-        <div class="avs-co-why" data-avs-why-panel="${i}" hidden><small>Matched(僅醫師端,不進病人文件):${escapeHtml((a.matchedTriggers || []).join("、") || "—")}</small></div>
+        <div class="avs-co-why" data-avs-why-panel="${i}" hidden>
+          <small>Matched(僅醫師端,不進病人文件):${escapeHtml((a.matchedTriggers || []).join("、") || "—")}</small>
+          ${a.evidenceType ? `<small>證據等級:${escapeHtml(AVS_EVIDENCE_TYPE_LABELS[a.evidenceType] || a.evidenceType)}</small>` : ""}
+          ${(a.sourceRefs || []).length ? `<small class="avs-co-sources">來源:${a.sourceRefs.map((s) => s && s.url ? `<a href="${escapeAttribute(s.url)}" target="_blank" rel="noopener">${escapeHtml(shortCitation(s.name))}</a>` : escapeHtml(shortCitation(s && s.name))).join("、")}</small>` : ""}
+        </div>
       </div>`).join("");
     const customRows = d.clinicianAddedAdvice.map((a, i) => `
       <div class="avs-co-advice-row avs-co-custom-row">
