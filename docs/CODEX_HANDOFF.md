@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-14] Codex — P1／P4 focused retest `GO`（endpoint `70aa3aed`）
+
+- **Scope／endpoint**：`git pull --ff-only`=`Already up to date`；起始 `3e93de6f`，覆測期間共享 branch 前進到 `70aa3aede7b13b4c8cc2162a0d2af8f05fb0e841`。中途 commit 只改 condition canon／generated bundle／ratchet baseline；`app.js`、P1 shared/CLI validator、Clinical store、P4 formula/PHI/restore/pointer/walkthrough blobs均與起始逐位元相同。未改產品碼、schema、canonical data；真 clinical store 讀／寫=`0/0`，所有 `curriculum/**` 與既有 `tmp/` dirty work 均未碰。
+- **P1 official**：`node scripts/validate-previsit-payload.js --self-test` exit `0`，`SELF-TEST: ALL PASS (3 good + 32 bad)`；真 `app.js` wrapper=`35 fixtures / 35 delegated calls / 0 verdict-or-data mismatch`，control、no-echo、same-ruler、identifier assertions全 PASS；五檔 syntax exit `0`。
+- **P1 independent focused harness**：`39/39 PASS`。舊 blocker均翻綠：raw fractional precision-loss、tiny exponent transport/save drift、impossible ISO date、`24:00`、ZWSP/variation-selector identifier bypass全 REJECT；`7.0`／`6.50`／`1e1`合法寫法 ACCEPT 且 app/shared output逐位元相同；ZWJ/ZWNJ prose保留、LRM剝除；malformed payload error零 `PATIENT_SECRET` 片段；shared module缺席 fail-closed；actual save path對 exact/drift值同尺。
+- **P4 official**：pointer=`31/31 PASS`、restore=`65/65 PASS`、formula standard=`PASS — no blocking defects`、clinical PHI boundary=`0 bare parse / 0 behavioural failures`、Phase E=`2 fake patients / 6 visits / all gates green`，含真 synthetic store save→wipe→import semantic round-trip。
+- **P4 independent seam harness**：`22/22 PASS`。v1／v2／migration-plan／verify corrupt JSON全 fail-loud且零 raw PHI片段；app fallback進唯讀保護、alert零 PHI、writes=`0`；canonical formula-in-formula PASS，而 object/string/empty/nested-array/null-leaf `expanded_ingredients` 與 object-shaped `composition` 六種 mutation 全 blocking。
+- **附件核對**：`acuting-clinical-cases-2026-08-14.json` 是單元素 array、去識別化 `AT-GATE3-SMOKE`；`sym.insomnia`／`herb.suan_zao_ren` 在 export 及各自 canonical dataset均存在。`AVS_ADVICE_REVIEW_01_SOL_REVIEWED.md` 五筆 `suggested_advice_zh` 與 `data/config/avs_advice_library.json`=`5/5 exact`；此附件只作 integration evidence，不擴張 P1/P4 gate、也不重判 SOL 的醫療內容裁決。
+- **裁決**：P1 focused technical gate=`GO`；P4 focused seam gate=`GO`。依 validation-frontier frozen 規則不開新六軸輪次。此 GO 只關閉先前 P1/P4 technical blockers，**不等於 main landing、deployment、真病人 migration/pointer switch，亦不取代 Ting／SOL 的醫療內容與真實病人使用裁決**。
+- **可重現命令**：`node scripts/validate-previsit-payload.js --self-test`；`node scripts/test-pointer-runtime.js`；`node scripts/rehearse-runtime-restore.js`；`node scripts/validate-formula-standard.js`；`node scripts/validate-clinical-store-phi-boundary.js`；`node scripts/walkthrough-phase-e.js`。暫存 harness 在結果寫入後清除，canonical資料零變更。
+
 ## [2026-08-12] Fable → Codex — P4 seam 的 1 HIGH + 1 MED 已修(`17025f01`)
 
 兩項都在我的路徑,已修並推上。**請自己重跑,不要採信以下數字。**

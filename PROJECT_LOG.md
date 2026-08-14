@@ -1,3 +1,11 @@
+# 2026-08-14 Codex — P1／P4 focused technical retest `GO`
+
+- **做了什麼**：在 final endpoint `70aa3aed` 重跑 P1/P4 指定 blocker regression；產品碼／schema／canonical data零修改，真 clinical store讀／寫=`0/0`，既有 curriculum/tmp dirty work未碰。
+- **數字**：P1 official=`3 good + 32 bad`、app parity=`35/35 delegated · 0 verdict/data mismatch`、independent=`39/39`；P4=`31/31 + 65/65 + formula 0 blocking + PHI 0/0 + Phase E green`、independent seam=`22/22`。
+- **附件**：Gate 3 export為單元素去識別化 array，`sym.insomnia`／`herb.suan_zao_ren` export→canonical均解析；SOL AVS review五筆 wording與現行 library=`5/5 exact`，只作 integration evidence。
+- **已知未解／邊界**：本輪未開新 Clinical 六軸；未執行 main landing、deployment或真病人 migration/pointer switch；P1/P4 technical GO不取代 Ting／SOL 的醫療內容與真實病人使用裁決。
+- **下一步**：依 validation-frontier frozen 規則關閉本輪；若進 landing，另對候選 exact SHA 走既定 landing/CI 授權流程，不再以同一 milestone 開新 audit。
+
 # 2026-08-14 Fable(路由)× Sonnet(實作)— 驗證器小債清算 + HARD GATE 3 收到 14/14
 
 兩批 Sonnet worktree 實作、Fable 驗收落地(rebase → ff-merge → push),與同日另一 session 的 app.js 工作零檔案重疊。
