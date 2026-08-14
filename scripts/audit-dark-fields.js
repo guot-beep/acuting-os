@@ -76,7 +76,24 @@ const PROCESS_NAME = /^(needs_fill|glance|updated_by|.*_repaired?|.*_translated|
  * 簿記。** 而且這個方向的誤判特別糟:把內容藏進簿記桶,它就從待辦上消失了。 */
 const PROVENANCE_TEXT = /^(AI draft|中文\/拼音)|五源核讀|共同核心[：:]|^[^。]{0,40}(取自|來源為|引用自)[^。]{0,30}。?$/;
 
+/* 靜態搜尋看不到、但已用眼睛確認畫面上有的欄位。
+ * needlingEn 是這樣一筆:它經由另一條程式路徑到畫面上(奇穴卡的 Needling 欄
+ * 實測有內容),但這支腳本只能做字面搜尋,所以會一直把它報成缺口。
+ * 用名單而不是放寬搜尋:放寬會連真的沒接的一起放行。每一筆都要註明怎麼確認的。 */
+const VERIFIED_RENDERED = {
+  needlingEn: "2026-08-12 開 EX-HN1 英文卡實測:Needling 欄顯示 needlingEn 原文",
+};
+
+/* 導覽用的受控詞彙(tag / 分類軸),不是卡片缺的內容。
+ * action_tags(339 穴,101 個不同值:Clear Heat / Tonify Spleen …)與 acuTags
+ * 是「用這個條件把穴位篩出來」的軸,不是這張卡少講了什麼。把它們算成缺內容,
+ * 會讓待辦數字虛胖,也會誘使人把 chip 灑在卡片上當作補完 —— 那不是同一件事。
+ * 要不要做 tag 瀏覽是產品決定,列在 A0c 給 Ting。 */
+const NAVIGATION_FIELDS = /^(action_tags(_zh|_en)?|acuTags|disease_tags(_zh|_en)?|study_tags|tags)$/;
+
 function classify(field, values) {
+  if (VERIFIED_RENDERED[field]) return "verified_elsewhere";
+  if (NAVIGATION_FIELDS.test(field)) return "navigation";
   const sample = values.find((v) => v !== undefined && v !== null);
   const flat = Array.isArray(sample) ? sample[0] : sample;
   const str = typeof flat === "string" ? flat.trim() : "";
@@ -114,7 +131,7 @@ const nonEmpty = (v) =>
   !(typeof v === "object" && !Array.isArray(v) && Object.keys(v).length === 0);
 
 let totalDark = 0;
-const totals = { clinical: 0, english_twin: 0, bookkeeping: 0 };
+const totals = { clinical: 0, english_twin: 0, navigation: 0, verified_elsewhere: 0, bookkeeping: 0 };
 const report = [];
 
 for (const [label, rel] of LAYERS) {
@@ -145,14 +162,14 @@ for (const [label, rel] of LAYERS) {
   }
   dark.sort((a, b) => b[1] - a[1]);
 
-  const byKind = { clinical: [], english_twin: [], bookkeeping: [] };
+  const byKind = { clinical: [], english_twin: [], navigation: [], verified_elsewhere: [], bookkeeping: [] };
   for (const row of dark) byKind[row[2]].push(row);
   for (const k of Object.keys(byKind)) totals[k] += byKind[k].length;
   totalDark += dark.length;
 
   report.push(`\n${label}  (${recs.length} 筆) — 畫面沒有引用的欄位:${dark.length}`);
-  const LABEL = { clinical: "臨床內容 —— 真的還缺", english_twin: "英文對照(中文那側也沒接)", bookkeeping: "簿記/製作紀錄 —— 本來就不該上畫面" };
-  for (const k of ["clinical", "english_twin", "bookkeeping"]) {
+  const LABEL = { clinical: "臨床內容 —— 真的還缺", english_twin: "英文對照(中文那側也沒接)", navigation: "導覽詞彙 —— 是篩選軸,不是卡片內容", verified_elsewhere: "已用眼睛確認畫面上有(靜態搜尋看不到)", bookkeeping: "簿記/製作紀錄 —— 本來就不該上畫面" };
+  for (const k of ["clinical", "english_twin", "navigation", "verified_elsewhere", "bookkeeping"]) {
     if (!byKind[k].length) continue;
     report.push(`   【${LABEL[k]}】${byKind[k].length}`);
     for (const [field, count] of byKind[k].slice(0, 10)) {
@@ -164,8 +181,8 @@ for (const [label, rel] of LAYERS) {
 
 console.log("dark fields — 有內容但渲染程式沒有引用\n");
 console.log(report.join("\n"));
-console.log(`\n合計 ${totalDark} 個欄位:臨床內容 ${totals.clinical} · 英文對照 ${totals.english_twin} · 簿記 ${totals.bookkeeping}`);
-console.log("**只有「臨床內容」那一欄是待辦**,另外兩類是分類結果不是缺陷。");
+console.log(`\n合計 ${totalDark} 個欄位:臨床內容 ${totals.clinical} · 英文對照 ${totals.english_twin} · 導覽詞彙 ${totals.navigation} · 已確認有顯示 ${totals.verified_elsewhere} · 簿記 ${totals.bookkeeping}`);
+console.log("**只有「臨床內容」那一欄是待辦**,其餘四類是分類結果,不是缺陷。");
 if (hasDynamic) {
   console.log("\n⚠️  渲染程式有動態欄位存取(record[key] / Object.entries),");
   console.log("    所以上面有些欄位可能其實是被讀到的 —— 這份是待查清單,不是判決。");
