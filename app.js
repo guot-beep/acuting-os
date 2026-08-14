@@ -5202,6 +5202,12 @@ function evidenceText(point) {
   if (contentMode === "english") {
     const modernEn = point.modernResearchEn || point.modernResearchZh;
     if (modernEn) parts.push(`【Clinical Application Notes】\n${modernEn}`);
+    // clinical_pearls_en:35 個奇穴帶著,先前沒被讀過。它記的是「這一穴在來源之間
+    // 有哪些延伸適應症與分歧」,與 modern_research 的整段研究敘述不同,兩者都留。
+    const pearls = Array.isArray(point.clinical_pearls_en)
+      ? point.clinical_pearls_en.filter(Boolean).join("\n")
+      : String(point.clinical_pearls_en || "").trim();
+    if (pearls && pearls !== String(modernEn || "").trim()) parts.push(`【Clinical Pearls】\n${pearls}`);
     if (point.reviewStatus === "sourced_elotus_direct") {
       parts.push("【Source Provenance】This record is sourced directly from eLotus CORE Master Tung Standard Documentation.");
     } else {
@@ -7416,6 +7422,27 @@ function computeCareReadiness(item, notesDesc) {
   return { checks, score, max: checks.length };
 }
 
+/* 產生 CARE/STRICTA 草稿並下載成 .md —— 計算全部在 js/care-draft.js
+ * (同一份邏輯 CLI 也用,見 scripts/generate-care-draft.js)。
+ * 只在瀏覽器記憶體裡發生,不寫 localStorage、不送網路;下載動作跟
+ * exportClinicalCases 用同一套 Blob + <a download> 慣例。 */
+function downloadCareDraft(item) {
+  const CD = globalThis.AcuTingCareDraft;
+  if (!CD) { alert("草稿產生器未載入(js/care-draft.js)。"); return; }
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const points = globalThis.ACUTING_POINTS_361 || [];
+  const labelIdx = CD.buildLabelIndexFromKnowledge(K, points);
+  const metricDefs = CD.metricDefMapFromKnowledge((K.outcomeMetrics && K.outcomeMetrics.records) || []);
+  const draft = CD.generateDraft(item, { lang: contentMode === "english" ? "en" : "both", labelIdx, metricDefs, refDate: new Date() });
+  const blob = new Blob([draft], { type: "text/markdown" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `care-draft-${(item.caseTitle || item.id || "case").replace(/[^\w一-鿿-]+/g, "_")}-${localDateISO()}.md`;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 function renderCareReadinessPanel(item, notesDesc) {
   const r = computeCareReadiness(item, notesDesc);
   if (!r.max) return "";
@@ -7428,6 +7455,7 @@ function renderCareReadinessPanel(item, notesDesc) {
         <strong>Case Report Readiness</strong>
         <span class="care-badge ${pct >= 80 ? "care-badge-good" : pct >= 50 ? "care-badge-mid" : "care-badge-low"}">${r.score % 1 ? r.score.toFixed(1) : r.score}/${r.max} · ${pct}%</span>
         <small>CARE 2013 + STRICTA 2010(v0 對映,docs/CARE_READINESS_MAP_v0.md)</small>
+        <button type="button" class="ghost" data-care-draft="${escapeAttribute(item.id)}">產生草稿 Generate draft</button>
       </div>
       ${gaps.length ? `<div class="care-row"><small>○ 缺</small><span>${gaps.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
       ${partials.length ? `<div class="care-row"><small>△ 部分</small><span>${partials.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
@@ -7888,6 +7916,11 @@ function renderClinicalCaseDetail(item) {
       const note = item.soapNotes.find((entry) => entry.id === button.dataset.checkoutSoap);
       if (note) openAvsCheckout(note.id);
     });
+  });
+  // CARE readiness 面板的「產生草稿」——徽章早就告訴你缺什麼,但沒有按鈕能把
+  // 已經齊備的那些欄位實際組成草稿。這裡補上那顆按鈕。
+  caseDetail.querySelectorAll("[data-care-draft]").forEach((button) => {
+    button.addEventListener("click", () => downloadCareDraft(item));
   });
   // CS5: timeline node → scroll to that SOAP card + brief highlight
   caseDetail.querySelectorAll("[data-jump-soap]").forEach((node) => {
