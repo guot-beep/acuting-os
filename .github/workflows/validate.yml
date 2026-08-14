@@ -17,7 +17,11 @@ name: validate
 on:
   pull_request:
   push:
-    branches: [main]
+    # codex/** 加進來的理由(2026-08-12):長命整合分支先前**只**靠 pull_request
+    # 事件觸發 CI。而 PR 一與 base 衝突,GitHub 就不建 merge ref,那個事件產生的
+    # run 是零 —— gate 不是變紅,是消失,沒有人會收到通知。PR #59 就這樣暗過一次。
+    # push 事件不受 PR 可合性影響,所以分支自己的 push 一定會跑,單點失效解除。
+    branches: [main, 'codex/**']
   workflow_dispatch:
 
 # CI 通知風暴處置(2026-08-12,Ting 授權):
@@ -179,6 +183,14 @@ jobs:
 
       - name: bilingual render parity (no _en field left off the screen)
         run: node scripts/validate-bilingual-render-parity.js
+
+      # 分支對 main 的可合性。放在這裡是因為它必須在**分支的 push**上跑得到 ——
+      # PR 事件在衝突時根本不會發生,那正是需要警報的時刻。
+      - name: branch is still mergeable into main
+        if: github.event_name == 'push' && github.ref != 'refs/heads/main'
+        run: |
+          git fetch --no-tags --depth=200 origin main || git fetch --no-tags origin main
+          node scripts/check-branch-mergeable.js origin/main
 
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js

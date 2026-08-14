@@ -361,6 +361,71 @@ interferon in combination with this formula."(方向正確,但寫成「可能有
 (防己在現代多指漢防己;蘇子即紫蘇子的簡稱)—— 若是,要決定保留哪一個 id 並合併連結。
 這是方劑層 `yu_nv_jian`/`yu_nu_jian` 同一個問題在中藥層的版本。
 
+## D0. 落地檢查表(landing gate)—— 每次要合進 main 之前照這張跑
+
+landing 本身仍是 **PAUSE**(P4 pointer/restore、P1 真實病人使用尚未解)。
+這一節是「等 PAUSE 解除的那一刻,要確認哪些事」,不是說現在可以合。
+
+### 一行跑完
+
+```bash
+node scripts/check-branch-mergeable.js && node scripts/build-content-quality-overlay.js && node scripts/build-data.js && git diff --quiet -- data/generated data/quality && echo "determinism OK"
+```
+
+### 逐項(2026-08-12 實測結果)
+
+| # | 檢查 | 怎麼跑 | 當時結果 |
+|---|---|---|---|
+| 1 | **分支可合進 main** | `node scripts/check-branch-mergeable.js` | ✅ behind 0 / ahead 571 |
+| 2 | **exact-head 全閘**(不是 docs-only) | 見下方「全閘掃描」 | ✅ 39/39 |
+| 3 | **generated 決定性** | 重跑 overlay + build-data,`git diff` 要空 | ✅ 無 diff |
+| 4 | **PHI 目錄未入版控** | `git diff --name-only origin/main...HEAD \| grep -E "clinical_cases/(local\|private\|exports)/"` | ✅ 空 |
+| 5 | **PHI 掃描器** | `node scripts/validate-clinical-case-standard.js` | ✅ PASS |
+
+**第 4 項的斜線不能省**:我第一次寫成 `(local|private|exports)` 沒有結尾斜線,
+`localstorage_sqlite_mapping.json` 就被誤判成 PHI 檔案。目錄檢查要有目錄邊界。
+
+### 全閘掃描(第 2 項)
+
+```bash
+grep -E "^\s+run: node scripts/" .github/workflows/validate.yml | sed 's/.*run: //' | sort -u > /tmp/gates.txt
+while IFS= read -r c; do eval "$c" >/dev/null 2>&1 && echo "PASS $c" || echo "FAIL $c"; done < /tmp/gates.txt
+```
+
+**在共用 checkout 上跑會有三支 pharm 閘假 FAIL** —— 那三支會把壞資料寫進真的
+`data/pharmacology/*.json` 再還原,兩個 session 同時跑就互相踩。要判斷分支本身,
+請在乾淨的隔離 checkout 跑(CI 就是這樣):
+
+```bash
+git worktree add --detach /tmp/gate-wt HEAD && node /tmp/gate-wt/scripts/validate-pharm-standard.js
+```
+
+2026-08-12 隔離跑的結果是三支全 exit 0、資料乾淨,所以那三個 FAIL 是本機併行造成的。
+
+### 為什麼 PR #59 會一再「壞掉」,以及已經做了什麼
+
+**症狀**:PR 看起來沒有紅燈,但也沒有任何 CI run。
+
+**成因有兩層**:
+
+1. `validate.yml` 的觸發條件是 `pull_request` 加上 `push: branches: [main]` ——
+   **長命分支自己的 push 不會跑 CI**,它唯一的覆蓋來自 PR 事件。
+2. PR 一旦與 base 衝突,GitHub 就不建 merge ref,**PR 事件產生的 run 是零**。
+
+兩者相乘 = 分支在衝突期間完全沒有 CI,而且**不是紅燈,是沒有燈**。
+`codex/pattern-v2` 領先 main 五百多個 commit,main 每收一個動到同檔案的 commit
+(例如 `213f8d18` 的手機 lazy-render 改了 `js/knowledge.js`)就會衝突一次。
+
+**已做的兩個修正**:
+
+- `push: branches: [main, 'codex/**']` —— 分支自己的 push 一定跑 CI,
+  **push 事件不受 PR 可合性影響**,單點失效解除。
+- `scripts/check-branch-mergeable.js` 加入 CI(只在 push 事件跑):
+  落後或衝突就**紅燈**,並印出怎麼修。它把「安靜消失」變成「明確失敗」。
+
+**根本解**還是縮短分支壽命:571 個 commit 的分支與持續前進的 main 必然反覆衝突。
+分批落地會讓這個問題自己消失 —— 但那要等 landing PAUSE 解除。
+
 ## D. 非臨床
 
 ### D1 · Cloudflare 金鑰
