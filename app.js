@@ -7454,8 +7454,14 @@ function computeCareReadiness(item, notesDesc) {
 
 /* 產生 CARE/STRICTA 草稿並下載成 .md —— 計算全部在 js/care-draft.js
  * (同一份邏輯 CLI 也用,見 scripts/generate-care-draft.js)。
- * 只在瀏覽器記憶體裡發生,不寫 localStorage、不送網路;下載動作跟
- * exportClinicalCases 用同一套 Blob + <a download> 慣例。 */
+ *
+ * 這是一個 **PHI export**(2026-08-14 Ting ruling / CODEX AUDIT #1)。
+ * 原本的檔頭寫「只在瀏覽器記憶體裡發生」,那描述的是計算,不是結果:按下去
+ * 之後硬碟上就多了一份病歷。所以這裡有兩道,兩道都不是裝飾:
+ *   1. 檔名不含 caseTitle、檔內不含 patientCode(js/care-draft.js 負責)
+ *   2. 下載前二次確認,而且確認框要**逐項講清楚裡面有什麼** —— 只寫「確定
+ *      下載?」等於沒問。日期處數與掃描命中數都是從真正要下載的那份文字算的。
+ * 取消就是取消:不建 Blob、不觸發下載。validate-care-draft-phi.js 守這條。 */
 function downloadCareDraft(item) {
   const CD = globalThis.AcuTingCareDraft;
   if (!CD) { alert("草稿產生器未載入(js/care-draft.js)。"); return; }
@@ -7464,11 +7470,29 @@ function downloadCareDraft(item) {
   const labelIdx = CD.buildLabelIndexFromKnowledge(K, points);
   const metricDefs = CD.metricDefMapFromKnowledge((K.outcomeMetrics && K.outcomeMetrics.records) || []);
   const draft = CD.generateDraft(item, { lang: contentMode === "english" ? "en" : "both", labelIdx, metricDefs, refDate: new Date() });
+
+  const findings = CD.scanIdentifiers(draft);
+  const kinds = [...new Set(findings.map((f) => `${f.id} ${f.label}`))];
+  const confirmed = confirm(
+    "⚠️ 這份草稿含 PHI,未做任何去識別。\n\n" +
+      "即將存到硬碟的檔案包含:\n" +
+      `  · 精確日期 ${CD.countExactDates(draft)} 處(就診日、暴露事件日)\n` +
+      "  · 主訴 / 病史 / 客觀所見 / 評估 / 計畫的病歷原文\n" +
+      "  · 病人原話(CARE 12 病人視角)\n" +
+      (kinds.length
+        ? `  · 自動掃描另外命中 ${findings.length} 處識別碼樣式:${kinds.join("、")}\n`
+        : "  · 自動掃描未命中識別碼樣式 —— 但掃不到不代表乾淨,姓名沒有機器特徵\n") +
+      "\n檔名不含病例標題、檔內不含病人代碼;其餘內容一律照錄。\n" +
+      "下載後請勿放進雲端同步資料夾、勿以附件寄出、勿直接投稿。\n\n" +
+      "確定下載?"
+  );
+  if (!confirmed) return;
+
   const blob = new Blob([draft], { type: "text/markdown" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `care-draft-${(item.caseTitle || item.id || "case").replace(/[^\w一-鿿-]+/g, "_")}-${localDateISO()}.md`;
+  link.download = CD.draftFilename(item, localDateISO());
   link.click();
   URL.revokeObjectURL(url);
 }
@@ -7485,8 +7509,9 @@ function renderCareReadinessPanel(item, notesDesc) {
         <strong>Case Report Readiness</strong>
         <span class="care-badge ${pct >= 80 ? "care-badge-good" : pct >= 50 ? "care-badge-mid" : "care-badge-low"}">${r.score % 1 ? r.score.toFixed(1) : r.score}/${r.max} · ${pct}%</span>
         <small>CARE 2013 + STRICTA 2010(v0 對映,docs/CARE_READINESS_MAP_v0.md)</small>
-        <button type="button" class="ghost" data-care-draft="${escapeAttribute(item.id)}">產生草稿 Generate draft</button>
+        <button type="button" class="ghost" data-care-draft="${escapeAttribute(item.id)}" title="下載一份含 PHI 的 .md 草稿(未去識別,下載前會再確認一次)">產生草稿 Generate draft ⚠️ 含 PHI</button>
       </div>
+      <div class="care-row"><small>⚠️ PHI</small><span>草稿照錄病歷原文與精確日期,屬於 PHI export。檔名不含病例標題、檔內不含病人代碼,其餘照錄 —— 投稿前必須人工去識別。</span></div>
       ${gaps.length ? `<div class="care-row"><small>○ 缺</small><span>${gaps.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
       ${partials.length ? `<div class="care-row"><small>△ 部分</small><span>${partials.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
       ${!gaps.length && !partials.length ? `<div class="care-row"><span>全部資料點齊備 —— 可著手 CARE 草稿。</span></div>` : ""}

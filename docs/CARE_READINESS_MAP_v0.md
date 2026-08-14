@@ -80,10 +80,22 @@ skeleton→Intro→Patient info→Clinical findings→Timeline→Diagnostic
 assessment→Interventions→Follow-up/outcomes→Discussion skeleton→Patient
 perspective→Consent)產生 CARE 2013 markdown 草稿,任一診有進針資料時附加
 STRICTA 2010 節。缺值一律輸出 `〔缺:<CARE item> — <field>〕`,絕不省略;
-`publicationConsent !== "granted"` 一律加 ⚠️ 發表同意警示;patientCode 只留在
-可移除的標頭註解,正文稱「本案病人」;birthYear 只出年齡層(如 40-49歲)。
+`publicationConsent !== "granted"` 一律加 ⚠️ 發表同意警示;正文稱「本案病人」;
+birthYear 只出年齡層(如 40-49歲)。
+
+**PHI(2026-08-14 Ting ruling / CODEX AUDIT #1)——本節取代先前「patientCode
+只留在可移除的標頭註解」的寫法。** 草稿是 PHI export,不是去識別摘要:
+`patientCode` 與 `caseTitle` 一律不輸出,也不進下載檔名(檔名為
+`care-draft-PHI-<caseId>-<date>.md`);每份草稿最上方掛「含 PHI」黑框,列出
+精確日期處數、病歷原文、病人原話;另外掃描 K1 電話 / K2 Email / K3 SSN /
+K5 病歷號 / K6 疑似姓名,命中就列章節與遮蔽樣本。**掃不到不等於乾淨** ——
+產生器永遠不宣稱任何一份草稿可以外流(機器面:
+`js/care-draft.js` 的 `FORBIDDEN_CLEARANCE_CLAIMS`,由
+`scripts/validate-care-draft-phi.js` 逐條斷言)。瀏覽器端下載前二次確認;
+CLI 端寫檔必須加 `--phi-ack`。
+
 用法:`node scripts/generate-care-draft.js <cases-export.json> --case <caseId>
-[--out draft.md] [--lang zh|en|both]`;`--self-test` 對
+[--lang zh|en|both]`,寫檔加 `--out draft.md --phi-ack`;`--self-test` 對
 `data/clinical_cases/sample_export_fixture.json` 跑內建斷言。
 
 ## CONTENT_REQUEST

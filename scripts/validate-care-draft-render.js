@@ -17,8 +17,14 @@
  *   - 面板存在時按鈕存在,且 data-care-draft 是正確的 case id
  *   - 呼叫 downloadCareDraft 真的觸發下載(不是靜默失敗)
  *   - 下載內容是這個 case 產生的草稿(不是空的、不是別的 case 的)
- *   - patientCode 沒有跑出標頭註解之外
  *   - js/care-draft.js 沒載入時,按鈕點了會提示而不是靜默失敗
+ *
+ * 2026-08-14(Ting ruling / CODEX AUDIT #1)加上的第二層:下載是一次
+ * **PHI export**,所以這裡還要守「二次確認」這條線本身沒有斷 ——
+ *   - 使用者按取消 → 不建 Blob、不觸發下載
+ *   - 確認框要逐項講內容,不能只寫「確定下載?」
+ *   - 檔名不含 caseTitle,草稿不含 patientCode
+ * 草稿內容那一層的斷言在 scripts/validate-care-draft-phi.js,不重複。
  *
  * 用法:node scripts/validate-care-draft-render.js
  */
@@ -71,7 +77,11 @@ const sandbox = {
   escapeHtml: (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])),
   escapeAttribute: (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])),
   alert: (msg) => { sandbox.__alerts.push(msg); },
+  // 二次確認。預設答「是」,想測取消路徑就把 __confirmAnswer 設成 false。
+  confirm: (msg) => { sandbox.__confirms.push(msg); return sandbox.__confirmAnswer; },
   __alerts: [],
+  __confirms: [],
+  __confirmAnswer: true,
   __blobs: [],
   Blob: class { constructor(parts, opts) { this.text = parts.join(""); this.type = opts && opts.type; sandbox.__blobs.push(this); } },
   URL: { createObjectURL: (b) => "blob:" + (sandbox.__blobs.indexOf(b)), revokeObjectURL: () => {} },
@@ -112,7 +122,14 @@ for (const [name, fn] of checks) {
 // generateDraft → 包 Blob → 觸發下載)接得上,不是只有 HTML 長得對。
 sandbox.__alerts.length = 0;
 sandbox.__blobs.length = 0;
+sandbox.__confirms.length = 0;
+sandbox.__confirmAnswer = true;
 let downloadThrew = null;
+let downloadedName = null;
+sandbox.document.createElement = (tag) => {
+  const el = { tag, clicked: false, click() { this.clicked = true; downloadedName = this.download; } };
+  return el;
+};
 try { sandbox.downloadCareDraft(CASE); } catch (e) { downloadThrew = String(e); }
 
 const downloadChecks = [
@@ -120,10 +137,19 @@ const downloadChecks = [
   ["真的產生了一個 Blob(下載被觸發)", () => sandbox.__blobs.length === 1],
   ["Blob 類型是 markdown", () => sandbox.__blobs[0] && sandbox.__blobs[0].type === "text/markdown"],
   ["草稿內容包含這個 case 的主訴(不是空的、不是別的 case)", () => sandbox.__blobs[0] && sandbox.__blobs[0].text.includes("測試主訴")],
-  ["patientCode 只出現在第一行(標頭註解)", () => {
+  // 舊斷言是「patientCode 只出現在第一行標頭註解」。那條現在是反的 ——
+  // 2026-08-14 的裁示是病人代碼一個字都不准輸出,留著舊斷言會把修好的
+  // 行為判成 FAIL,而且會把「第一行有 patientCode」重新寫成契約。
+  ["patientCode 完全不出現在草稿裡", () => {
     const text = sandbox.__blobs[0] ? sandbox.__blobs[0].text : "";
-    const lines = text.split("\n");
-    return lines[0].includes(CASE.patientCode) && !lines.slice(1).join("\n").includes(CASE.patientCode);
+    return !!text && !text.includes(CASE.patientCode);
+  }],
+  ["下載檔名不含 caseTitle,也不含 patientCode", () =>
+    !!downloadedName && !downloadedName.includes(CASE.caseTitle) && !downloadedName.includes(CASE.patientCode)],
+  ["下載前問過一次(二次確認存在)", () => sandbox.__confirms.length === 1],
+  ["確認框逐項講了內容,不是只問『確定下載?』", () => {
+    const m = sandbox.__confirms[0] || "";
+    return m.includes("含 PHI") && /精確日期 \d+ 處/.test(m) && m.includes("病人原話");
   }],
   ["沒有觸發 alert(表示沒有走到『模組未載入』的失敗分支)", () => sandbox.__alerts.length === 0],
 ];
@@ -133,6 +159,19 @@ for (const [name, fn] of downloadChecks) {
   console.log(`  ${ok ? "PASS" : "FAIL"} — ${name}`);
   if (!ok) failures.push(name);
 }
+
+// 取消路徑:按了「否」就什麼都不該發生。這條沒有守的話,確認框會退化成
+// 一個「按什麼都會下載」的裝飾 —— 而它看起來仍然像一道關卡。
+sandbox.__blobs.length = 0;
+sandbox.__confirms.length = 0;
+sandbox.__confirmAnswer = false;
+downloadedName = null;
+let cancelThrew = null;
+try { sandbox.downloadCareDraft(CASE); } catch (e) { cancelThrew = String(e); }
+const cancelOk = !cancelThrew && sandbox.__confirms.length === 1 && sandbox.__blobs.length === 0 && downloadedName === null;
+console.log(`  ${cancelOk ? "PASS" : "FAIL"} — 使用者取消時不建 Blob、不觸發下載`);
+if (!cancelOk) failures.push("取消確認後仍然下載了");
+sandbox.__confirmAnswer = true;
 
 // 負面情境:js/care-draft.js 沒載入時,按鈕點了要提示,不能靜默失敗。
 sandbox.AcuTingCareDraft = undefined;
@@ -149,4 +188,4 @@ if (failures.length) {
   failures.forEach((f) => console.error(`  ✗ ${f}`));
   process.exit(1);
 }
-console.log(`\nPASS — 產生草稿按鈕接得上,患者代碼沒有洩漏到正文。`);
+console.log(`\nPASS — 產生草稿按鈕接得上,二次確認守得住,患者代碼與病例標題都沒有出門。`);
