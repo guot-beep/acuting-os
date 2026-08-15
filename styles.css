@@ -4810,6 +4810,10 @@ a { color: var(--accent-dark); }
   white-space: nowrap;
 }
 .k-status-draft { background: #f7efdc; }
+/* 已核對來源是 Ting 的 RV1 升級，值得跟草稿分辨得出來；deprecated 要一眼看出
+   是退役品。沒有樣式的值 = 樣板沒定義的值，維持預設灰底而且顯示原始字串。 */
+.k-status-source_checked { background: #e3efe1; color: #3f6b3a; }
+.k-status-deprecated { background: #ece9e6; color: #6d6560; text-decoration: line-through; }
 .k-status-fertility { background: #f3e2da; color: var(--warn); }
 .k-missing { color: var(--warn); font-weight: 600; }
 

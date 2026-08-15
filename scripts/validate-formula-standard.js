@@ -26,6 +26,9 @@
  *      formula_id, a malformed one, an unknown one with no honest status, an
  *      empty expanded ingredient list, or an expanded ingredient that neither
  *      resolves against the herb canon nor says why it cannot
+ *   F12 composition names an herb that is not in herb_canon_shortlist
+ *   F14 review_status outside draft/source_checked/deprecated — same vocabulary
+ *      the acupoint card enforces as A12, on every record
  *   F9 fully-destroyed mojibake anywhere in the record — EVERY record, not
  *      just template-grade, because corrupt text is corrupt either way and it
  *      must never reach a card. Partially damaged text (a few characters lost,
@@ -158,6 +161,9 @@ const isSentence = (v) => {
 const BAN_IN_ACTIONS = /(禁用|忌服|孕婦忌|不可服|慎服|禁忌)/;
 
 let nTemplate = 0, nRoles = 0, nMojibake = 0, nDamaged = 0, nComp = 0, nMisaligned = 0, nUnknownHerb = 0, nSuspect = 0, nNeedName = 0, nSkeleton = 0;
+let badStatusHits = 0;
+// 樣板定的合法值，與 docs/ACUPOINT_CARD_TEMPLATE.md A12 同一組。
+const ALLOWED_STATUS = new Set(["draft", "source_checked", "deprecated"]);
 
 for (const r of recs) {
   const id = r.id || r.name_zh || "(no id)";
@@ -186,6 +192,18 @@ for (const r of recs) {
       if (bp.test(t)) errors.push(`F13 ${id}: boilerplate placeholder text "${t}" matches ${bp}`);
     });
   });
+
+  /* F14 — review_status vocabulary, mirroring the acupoint card's A12. Every
+     record, not just template-grade: the field says how far review has got,
+     and a value nobody defined answers nothing. The formula line had drifted
+     to four values, two of which (sourced_cloudtcm_record, sourced_ad_record)
+     named a source rather than a review state — provenance that field_sources,
+     cloudtcm_url and american_dragon_url already carried on all 65 of them.
+     Collapsed to draft 2026-08-12; source_checked stays Ting's RV1 promotion. */
+  if (r.review_status && !ALLOWED_STATUS.has(r.review_status)) {
+    badStatusHits++;
+    errors.push(`F14 ${id}: review_status "${r.review_status}" is not draft/source_checked/deprecated`);
+  }
 
   // F9 — every record. Corrupt text is corrupt regardless of curation state.
   const mojiFields = [], damagedFields = [];
@@ -434,6 +452,7 @@ console.log(`  有方劑家族 formula_family ${pct(recs.filter((r) => arr(r.for
 console.log(`  ⚠️ 組成有中藥庫查無的藥    ${nUnknownHerb} 味次`);
 console.log(`  ⚠️ 組成疑似被截斷         ${pct(nSuspect)}`);
 console.log(`  考綱骨架記錄(待補)        ${pct(nSkeleton)}${nNeedName ? `，其中 ${nNeedName} 個待 Ting 補中文方名` : ""}`);
+console.log(`  review_status 非法 F14    ${badStatusHits}`);
 
 // The linking layer, reported but not blocking — same as the acupoint card.
 const linked = recs.filter((r) => arr(r.related_conditions).length || arr(r.condition_links).length).length;

@@ -408,8 +408,21 @@
     return `<div class="k-pair-list">${list.map((p) => pairCard(p, false)).join("")}</div>`;
   }
 
+  /* The badge printed the raw enum, so 44 formula cards read
+     "sourced_cloudtcm_record" and 21 read "sourced_ad_record" at the reader.
+     Only the three values the templates define get a label; anything else is
+     shown verbatim on purpose — a value nobody defined should look wrong on
+     the card rather than be dressed up as if it were a real state. The herb
+     line still has 43 such records (validate-formula-standard F14 now blocks
+     new ones on the formula side). */
+  const STATUS_LABEL = {
+    draft: "草稿 Draft",
+    source_checked: "已核對來源 Source checked",
+    deprecated: "已退役 Deprecated"
+  };
   function statusPill(status) {
-    return `<span class="k-status k-status-${esc(status)}">${esc(status || "draft")}</span>`;
+    const key = String(status || "draft");
+    return `<span class="k-status k-status-${esc(key)}">${esc(STATUS_LABEL[key] || key)}</span>`;
   }
 
   if (!K) {
@@ -854,21 +867,26 @@
   }
 
   function formulaGlanceRow(record) {
+    /* 八法 is a 中文 field. 94 formulas hold "No single Ba Fa assigned
+       mechanically; use the formula-specific actions/pattern and course chapter
+       framing." there — a sentence saying no value was assigned, printed in the
+       glance row as if it were one. None of those 94 carry a ba_fa_en either,
+       so requiring 中文 on the 中文 side drops the cell entirely on them and
+       keeps all 91 real 八法 (清法 Qing Fa, 汗法 / 解表法, …). */
+    const baFaZh = /[一-鿿]/.test(String(record.ba_fa_zh || "")) ? usableText(record.ba_fa_zh) : "";
     const bits = [
       /* 國考用的英文方名(170 張)。卡片標題印的是拼音「Gui Zhi Tang」,而考卷上
-       * 寫的是「Cinnamon Twig Decoction」—— 那個名字先前完全沒上過畫面。
-       * 對著拼音背了半天,考卷用另一個名字問,是這一層最實際的落差。 */
+       * 寫的是「Cinnamon Twig Decoction」—— 那個名字先前完全沒上過畫面。 */
       ["國考英文名 Board name", usableText(record.board_name_en)],
-      /* 課程分級(187 張,9 個級距):Detailed Knowledge / Familiar With /
-       * General Knowledge。它回答的是「這個方要背到多熟」,與 ★ 考試重點那條
-       * (NCBAHM 考綱分域)不同 —— 一個講「考不考」,一個講「要多熟」。 */
+      /* 課程分級(187 張,9 個級距)回答「這個方要背到多熟」,與 ★ 考試重點
+       * 那條(NCBAHM 考綱分域,回答「考不考」)不同。 */
       ["課程分級 Course level", usableText(record.course_level_en)],
-      ["八法 Ba Fa", [usableText(record.ba_fa_zh), usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
+      ["八法 Ba Fa", [baFaZh, usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
       ["出典 Source", usableText(record.source_classic)],
-      // 苔(coating_zh)171 張卡有值,先前完全沒上畫面。缺它的差別是實的:
-      // 桂枝湯的「舌」只寫「正常」,而它的苔是「白潤」—— 英文欄早就寫著
-      // "thin, white, moist coating",中文讀者卻只看到「正常」。國考問的是舌苔。
-      ["舌 Tongue", [cleanList(record.tongue_zh).join("、"), usableText(record.coating_zh) ? `苔${usableText(record.coating_zh)}` : ""].filter(Boolean).join("・")],
+      ["舌 Tongue", cleanList(record.tongue_zh).join("、")],
+      // 苔 sat in 171 records and rendered nowhere — the row jumped 舌 → 脈.
+      // (本分支曾把苔併進「舌」那一列;採用 main 的獨立列,避免印兩次。)
+      ["苔 Coating", cleanList(record.coating_zh).join("、")],
       ["脈 Pulse", cleanList(record.pulse_zh).join("、")],
       ["煎法 Preparation", usableText(contentMode === "english" ? (record.preparation_en || record.preparation_zh) : (record.preparation_zh || record.preparation_en))],
       ["臺灣藥典 TW Pharmacopeia", usableText(record.taiwan_pharmacopeia_zh)]
