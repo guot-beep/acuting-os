@@ -12275,7 +12275,7 @@
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
         "忌蔥實、惡丹砂、牡丹、藜蘆：與這些藥物合用可能產生不良反應。",
-        "脾肺虛熱者忌之：體質虛寒者不宜服用。",
+        "《本草經疏》載:「脾肺虛熱者忌之。」另因本品苦寒,脾胃虛寒、中寒泄瀉者慎用。",
         "中寒作洩、中寒腹痛、肝腎虛少腹痛、血虛腹痛、脾虛泄瀉、腎虛溏瀉、脾虛水腫、血枯經閉、氣虛小水不利、肺受寒邪喘咳、血虛胎不安、陰虛淋露：上述症狀不適用。",
         "孕婦慎用：可能對胎兒造成影響。",
         "哺乳期婦女慎用：可能透過乳汁影響嬰兒。",
@@ -12451,6 +12451,24 @@
         "Antimicrobial activity",
         "Anticancer activity",
         "Antipyretic activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "脾肺虛熱者忌之：體質虛寒者不宜服用。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):「脾肺虛熱者忌之」與「體質虛寒者不宜服用」方向相反(B5 判例),改寫為古籍引文+苦寒本身之慎用敘述,消解內在矛盾。",
+          "moved_at": "2026-08-14"
+        }
+      ],
+      "cautions_en": [
+        "Contraindicated with Cong Shi (Allium seed); mutually inhibiting with Dan Sha (Cinnabar), Mu Dan (Moutan Bark), and Li Lu (Veratrum) — combining them reduces efficacy.",
+        "The Ben Cao Jing Shu states: \"Contraindicated in Spleen-Lung deficiency with Heat.\" As this herb is bitter and cold, use cautiously in Spleen-Stomach Deficiency-Cold and Middle-Cold diarrhea.",
+        "Not suitable in Middle-Cold diarrhea, Middle-Cold abdominal pain, Liver-Kidney deficiency lower abdominal pain, Blood-deficiency abdominal pain, Spleen-deficiency diarrhea, Kidney-deficiency loose stools, Spleen-deficiency Edema, Blood-exhaustion amenorrhea, Qi-deficiency difficult urination, Lung Cold-affected wheezing cough, Blood-deficiency restless fetus, and Yin-deficiency dripping Lin — this herb is not suitable for the conditions listed above.",
+        "Use cautiously in pregnancy — may affect the fetus.",
+        "Use cautiously during lactation — may affect the infant through breast milk.",
+        "Not suitable in deficient constitutions with loose stools — may worsen the symptoms.",
+        "Not suitable in diarrhea, nausea, and vomiting — may worsen the condition.",
+        "Not suitable in those with drug allergies — may provoke an allergic reaction."
       ]
     },
     {
@@ -12991,8 +13009,7 @@
         "陰陽兩虛、脾胃虛弱者忌服：黃柏苦寒，會損傷脾胃陽氣，加重陰虛、脾胃虛弱的症狀。",
         "孕婦禁用：黃柏含有生物鹼等成分，可能對胎兒造成影響。",
         "腎功能不全患者禁用：黃柏中的成分需要通過腎臟代謝，腎功能不全者使用會增加腎臟負擔。",
-        "肝功能不全患者禁用：黃柏中的成分需要在肝臟代謝，肝功能不全者使用會增加肝臟負擔。",
-        "腹瀉患者慎用：黃柏具有收斂作用，腹瀉患者使用可能會加重腹瀉症狀。"
+        "肝功能不全患者禁用：黃柏中的成分需要在肝臟代謝，肝功能不全者使用會增加肝臟負擔。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1078",
       "safety_fetched_at": "2026-07-23T07:25:04.606Z",
@@ -13136,6 +13153,14 @@
         "Antimicrobial activity",
         "Antibacterial activity",
         "Antiviral activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "腹瀉患者慎用：黃柏具有收斂作用，腹瀉患者使用可能會加重腹瀉症狀。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):黃柏具收斂作用,傳統收斂功效應為止瀉而非「加重腹瀉」,機轉倒置(B5 判例),不代補警語。",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -15710,7 +15735,7 @@
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
         "虛寒瀉痢者忌服。",
-        "豚實力使。（《藥性論》）",
+        "豚實為之使。(《藥性論》)",
         "得酒良。（《日華子本草》）",
         "滯下、胃虛不思食、下利完谷不化、洩瀉由於虛寒寒濕，而不由於濕毒者忌之。（《本草經疏》）",
         "血分無熱者忌。虛寒瀉痢忌服。（《本草從新》）",
@@ -15832,6 +15857,12 @@
           "text": "清熱解毒涼血止痢",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "豚實力使。（《藥性論》）",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):「豚實力使」疑為 OCR/校對訛字(B5 判例已標記語意不通),改寫為「豚實為之使」;另有版本作蠡實,存異文,未代改藥名本身。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -15841,6 +15872,18 @@
         "Cardiovascular-protective activity",
         "Antibacterial activity",
         "Antitumor activity"
+      ],
+      "cautions_en": [
+        "Contraindicated in Deficiency-Cold diarrhea and dysentery.",
+        "Yao Xing Lun: Tun Shi serves as its guiding herb (textual variant — some editions read Li Shi).",
+        "Improved by processing with wine. (Ri Hua Zi Ben Cao)",
+        "Contraindicated in dysenteric stagnation, Stomach deficiency with poor appetite, undigested food in the stool, and diarrhea due to Deficiency-Cold or Cold-Damp rather than Damp-toxin. (Ben Cao Jing Shu)",
+        "Contraindicated without Heat in the Blood level. Contraindicated in Deficiency-Cold diarrhea and dysentery. (Ben Cao Cong Xin)",
+        "Contraindicated in pregnancy and lactation.",
+        "Contraindicated in renal insufficiency.",
+        "Use cautiously in hypertension.",
+        "Contraindicated in coagulation disorders.",
+        "Use cautiously in hypoglycemia."
       ]
     },
     {
@@ -18729,7 +18772,7 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "陰虛液虧者慎服：鬱李仁性寒利濕，陰虛液虧者使用可能會加重口乾舌燥、失眠等症狀。",
+        "郁李仁辛、苦、甘,平,質潤滑利;脾虛便溏者及孕婦慎用。",
         "孕婦慎服：鬱李仁有活血破瘀的功效，孕婦服用可能會導致流產。",
         "忌牛、馬肉：鬱李仁與牛、馬肉相剋，食用後可能引起腹痛、嘔吐等不適症狀。"
       ],
@@ -18850,9 +18893,19 @@
           "text": "Moistens the intestines, unblocks the bowels, and reduces edema by promoting urination",
           "reason": "Ting 2026-08-14 裁定，condition_tags_zh 功效聯已封存清空，condition_tags_en 為其英譯鏡像，依憲法規則五（_en 長度須等於 _zh）同步封存清空，避免索引錯位",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "陰虛液虧者慎服：鬱李仁性寒利濕，陰虛液虧者使用可能會加重口乾舌燥、失眠等症狀。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):鬱李仁性寒與本記錄 properties_taste_temp「平」不符(B10 全庫掃尾觀察項),改寫為查證後的性味與慎忌敘述。",
+          "moved_at": "2026-08-14"
         }
       ],
-      "cautions_en": []
+      "cautions_en": [
+        "Yu Li Ren is acrid, bitter, and sweet, neutral, moist and sliding in nature; use cautiously in Spleen deficiency with loose stools and in pregnancy.",
+        "Use cautiously in pregnancy — Yu Li Ren invigorates the Blood and breaks stasis, and may cause miscarriage.",
+        "Mutually restrains beef and horse meat — concurrent consumption may cause abdominal pain, vomiting, and other discomfort."
+      ]
     },
     {
       "id": "herb.gan_sui",
@@ -23321,7 +23374,7 @@
         "畏海蛤、文蛤：澤瀉與海蛤、文蛤相剋，同時服用可能會導致中毒。",
         "多服病人眼：服用過量澤瀉可能導致視力模糊。",
         "淋、渴、水腫，腎虛所致者不可用：澤瀉利尿，對於腎虛所致的淋、渴、水腫無效，甚至可能加重病情。",
-        "陰虛，腎氣乏絕，陽衰精自流出，腎氣不固精滑，目痛，虛寒作泄等侯，法鹹忌之：澤瀉性鹹，對於陰虛、腎氣虛弱、精滑、目痛、虛寒作泄等症狀的人不宜服用。"
+        "腎虛精滑、無濕熱者慎服。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1239",
       "safety_fetched_at": "2026-07-23T07:25:14.584Z",
@@ -23573,7 +23626,21 @@
         "Antiplatelet aggregation activity",
         "Anti-inflammatory and analgesic activity"
       ],
-      "cautions_en": []
+      "cautions_en": [
+        "Contraindicated in Kidney deficiency with seminal leakage and no Damp-Heat — using Ze Xie here may worsen the seminal leakage.",
+        "Mutually restrains Hai Ge and Wen Ge (Clam Shell) — concurrent use may cause toxicity.",
+        "Overdose may cause blurred vision.",
+        "Contraindicated in Lin syndrome, thirst, and Edema arising from Kidney deficiency — Ze Xie’s diuretic action is ineffective for these Kidney-deficiency patterns and may even worsen the condition.",
+        "Use cautiously in Kidney deficiency with seminal leakage and no Damp-Heat."
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "陰虛，腎氣乏絕，陽衰精自流出，腎氣不固精滑，目痛，虛寒作泄等侯，法鹹忌之：澤瀉性鹹，對於陰虛、腎氣虛弱、精滑、目痛、虛寒作泄等症狀的人不宜服用。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):《本草經疏》理論段落被錯置為單味禁忌,改寫為簡潔慎服敘述。",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.yi_yi_ren",
@@ -25224,11 +25291,8 @@
       "cautions_zh": [
         "非因濕熱引起的發黃忌服：茵陳蒿擅長清濕熱退黃疸，若發黃非因濕熱所致，服用茵陳蒿無效反傷身。",
         "蓄血發黃者禁用：茵陳蒿具有活血化瘀作用，蓄血發黃者使用恐加重出血。",
-        "熱甚發黃，無濕氣者禁用：茵陳蒿屬溫性藥，熱甚發黃者服用易助熱生火。",
         "孕婦和哺乳期婦女慎用：茵陳蒿可能促進經血，影響胎兒或嬰兒健康。",
-        "脾胃虛寒者慎用：茵陳蒿性偏熱，脾胃虛寒者服用易傷及脾胃。",
-        "高血壓患者應適當控制劑量：茵陳蒿具有降血壓作用，高血壓患者應謹慎使用，以免血壓過低。",
-        "小兒、老人和體弱者慎用：茵陳蒿藥性偏熱，刺激性較強，此類人羣使用時應謹慎控制劑量。"
+        "高血壓患者應適當控制劑量：茵陳蒿具有降血壓作用，高血壓患者應謹慎使用，以免血壓過低。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1232",
       "safety_fetched_at": "2026-07-23T07:25:15.772Z",
@@ -25385,6 +25449,24 @@
           "original_field": "condition_tags_zh",
           "text": "清利濕熱退黃疸",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "熱甚發黃，無濕氣者禁用：茵陳蒿屬溫性藥，熱甚發黃者服用易助熱生火。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):茵陳蒿屬溫性藥與本記錄 properties_taste_temp「微苦、辛、微寒」矛盾(B10 全庫掃尾判例),不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾胃虛寒者慎用：茵陳蒿性偏熱，脾胃虛寒者服用易傷及脾胃。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):性偏熱敘述與本記錄寒性宣告矛盾,同一批掃尾判例,不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "小兒、老人和體弱者慎用：茵陳蒿藥性偏熱，刺激性較強，此類人羣使用時應謹慎控制劑量。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):藥性偏熱敘述與本記錄寒性宣告矛盾,同一批掃尾判例,不代補警語。",
           "moved_at": "2026-08-14"
         }
       ],
@@ -28404,12 +28486,8 @@
       "exact_source_url": "https://cloudtcm.com/herb/1244",
       "fetched_at": "2026-07-23T07:20:20.994Z",
       "cautions_zh": [
-        "虛體久病者禁用：虛證體質或長期患病者，不宜服用枳實，以免損傷正氣。",
-        "孕婦忌用：枳實具有收斂作用，孕婦長期或大量服用可能會影響胎兒發育。",
-        "氣虛者禁用：枳實會消耗真氣，氣虛體質者服用後會加重症狀。",
-        "腹瀉或腹瀉者禁用：枳實具有通便作用，腹瀉或腹瀉患者服用後會加重病情。",
-        "腸道梗阻者禁用：枳實促進腸道蠕動，腸道梗阻患者服用後會加劇梗阻。",
-        "食道炎或胃潰瘍者禁用：枳實具有收斂作用，食道炎或胃潰瘍患者服用後會刺激受損部位，加重病情。"
+        "孕婦慎用。",
+        "脾胃虛弱及氣虛者慎用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1244",
       "safety_fetched_at": "2026-07-23T07:25:18.856Z",
@@ -28530,6 +28608,42 @@
           "text": "理氣寬中行滯消脹",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "虛體久病者禁用：虛證體質或長期患病者，不宜服用枳實，以免損傷正氣。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「枳實」而非本記錄「枳殼」,與 herb.zhi_shi 內容幾乎逐字相同(B7 判例),整組封存,以查證後的孕婦/脾胃虛弱慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦忌用：枳實具有收斂作用，孕婦長期或大量服用可能會影響胎兒發育。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「枳實」而非本記錄「枳殼」,與 herb.zhi_shi 內容幾乎逐字相同(B7 判例),整組封存,以查證後的孕婦/脾胃虛弱慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "氣虛者禁用：枳實會消耗真氣，氣虛體質者服用後會加重症狀。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「枳實」而非本記錄「枳殼」,與 herb.zhi_shi 內容幾乎逐字相同(B7 判例),整組封存,以查證後的孕婦/脾胃虛弱慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腹瀉或腹瀉者禁用：枳實具有通便作用，腹瀉或腹瀉患者服用後會加重病情。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「枳實」而非本記錄「枳殼」,與 herb.zhi_shi 內容幾乎逐字相同(B7 判例),整組封存,以查證後的孕婦/脾胃虛弱慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腸道梗阻者禁用：枳實促進腸道蠕動，腸道梗阻患者服用後會加劇梗阻。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「枳實」而非本記錄「枳殼」,與 herb.zhi_shi 內容幾乎逐字相同(B7 判例),整組封存,以查證後的孕婦/脾胃虛弱慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "食道炎或胃潰瘍者禁用：枳實具有收斂作用，食道炎或胃潰瘍患者服用後會刺激受損部位，加重病情。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「枳實」而非本記錄「枳殼」,與 herb.zhi_shi 內容幾乎逐字相同(B7 判例),整組封存,以查證後的孕婦/脾胃虛弱慎用敘述取代。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -28540,6 +28654,10 @@
         "Antioxidant activity",
         "Anti-inflammatory activity",
         "Cardiovascular-protective activity"
+      ],
+      "cautions_en": [
+        "Use cautiously in pregnancy.",
+        "Use cautiously in Spleen-Stomach deficiency and Qi deficiency."
       ]
     },
     {
@@ -33154,12 +33272,11 @@
       "cautions_zh": [
         "陰虛失血者忌服：鬱金有活血化瘀之功效，陰虛失血者不宜服用。",
         "無氣滯血瘀者忌服：鬱金主要用於治療氣滯血瘀引起的疾病，若無氣滯血瘀症狀，不宜服用。",
-        "胃虛血虛者忌服：鬱金性溫，胃虛血虛者服用後可能加重症狀。",
+        "鬱金辛、苦,寒;陰虛失血及無氣滯血瘀者慎服,孕婦慎用。",
         "氣虛脹滯禁用：鬱金容易造成氣滯脹滿，氣虛脹滯患者禁用。",
         "孕婦禁用：鬱金可促進子宮收縮，孕婦服用後可能導致流產或早產。",
         "胃潰瘍患者禁用：鬱金會刺激胃黏膜分泌胃酸，加重胃潰瘍症狀。",
-        "肝病患者禁用：鬱金會刺激膽汁分泌，加重肝病症狀。",
-        "腸胃不適患者禁用：鬱金性溫，有些人在服用後可能會出現腸胃不適等不良反應。"
+        "肝病患者禁用：鬱金會刺激膽汁分泌，加重肝病症狀。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1235",
       "safety_fetched_at": "2026-07-23T07:25:23.640Z",
@@ -33443,6 +33560,29 @@
         "Antioxidant activity",
         "Immunomodulatory activity",
         "Cardiovascular-protective activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "胃虛血虛者忌服：鬱金性溫，胃虛血虛者服用後可能加重症狀。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):鬱金性溫與本記錄 properties_taste_temp「辛、寒、苦」矛盾(B10 全庫掃尾判例),併入替換句改寫。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腸胃不適患者禁用：鬱金性溫，有些人在服用後可能會出現腸胃不適等不良反應。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):與[2]同樣主張「鬱金性溫」,與寒性宣告矛盾,重複主張去重合併入同一替換句。",
+          "moved_at": "2026-08-14"
+        }
+      ],
+      "cautions_en": [
+        "Contraindicated in Yin deficiency with bleeding — Yu Jin invigorates the Blood and dispels stasis, which is unsuitable in this pattern.",
+        "Contraindicated without Qi stagnation and Blood stasis — Yu Jin is used mainly for disorders arising from Qi stagnation and Blood stasis, and is unsuitable absent these signs.",
+        "Yu Jin is acrid, bitter, and cold; use cautiously in Yin deficiency with bleeding and in the absence of Qi stagnation and Blood stasis; use cautiously in pregnancy.",
+        "Contraindicated in Qi deficiency with distension and stagnation — Yu Jin readily causes Qi stagnation and distension.",
+        "Contraindicated in pregnancy — Yu Jin may stimulate uterine contractions and cause miscarriage or premature birth.",
+        "Contraindicated in gastric ulcer — Yu Jin stimulates gastric acid secretion and may worsen ulcer symptoms.",
+        "Contraindicated in liver disease — Yu Jin stimulates bile secretion and may worsen liver disease symptoms."
       ]
     },
     {
@@ -33606,7 +33746,7 @@
         "孕婦忌用：丹參活血化瘀，孕婦使用恐對胎兒造成影響。",
         "月經期間忌用：丹參活血化瘀，月經期間使用恐加重月經量。",
         "腹瀉者忌用：丹參促進腸道蠕動，腹瀉者使用恐加重病情。",
-        "血壓過高者忌用：丹參擴張血管，血壓過高者使用恐導致血壓進一步升高。",
+        "丹參可能擴張血管並降低血壓,低血壓患者慎用;使用丹參注射製劑時尤應監測血壓。",
         "出血性疾病患者忌用：丹參活血化瘀，出血性疾病患者使用恐加重病情。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1009",
@@ -33926,6 +34066,22 @@
         "Anti-fibrotic activity in the liver",
         "Antibacterial activity",
         "Anti-ulcer activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "血壓過高者忌用：丹參擴張血管，血壓過高者使用恐導致血壓進一步升高。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):丹參擴血管機轉應為降壓而非「血壓進一步升高」,機轉倒置(B10 全庫掃尾判例,比照 B5 huang_bai),改寫為與 modern_functions_zh「降血壓」一致之低血壓慎用敘述。",
+          "moved_at": "2026-08-14"
+        }
+      ],
+      "cautions_en": [
+        "Use cautiously without Blood stasis — Dan Shen invigorates the Blood and dispels stasis, and should be used cautiously absent a Blood-stasis pattern.",
+        "Contraindicated in pregnancy — Dan Shen invigorates the Blood and dispels stasis, which may affect the fetus.",
+        "Contraindicated during menstruation — Dan Shen invigorates the Blood and dispels stasis, which may increase menstrual flow.",
+        "Contraindicated in diarrhea — Dan Shen promotes intestinal motility, which may worsen diarrhea.",
+        "Dan Shen may dilate blood vessels and lower blood pressure; use cautiously in hypotension. Blood pressure should be monitored especially closely when using Dan Shen injectable preparations.",
+        "Contraindicated in bleeding disorders — Dan Shen invigorates the Blood and dispels stasis, which may worsen bleeding disorders."
       ]
     },
     {
@@ -35582,7 +35738,6 @@
         "《品匯精要》：妊娠不可服。",
         "《得配本草》：素有血癥者禁用。",
         "嚴重肝腎功能不良或心血管疾病患者應避免使用。",
-        "對三稜或其他柑橘科植物過敏者應避免使用。",
         "使用時注意劑量，過量使用可能導致噁心、嘔吐、頭痛。",
         "三稜具降血糖和降血壓作用，低血糖或低血壓患者應諮詢醫師。"
       ],
@@ -35817,7 +35972,15 @@
         "Antitumor and cancer-preventive activity",
         "Immune-enhancing activity"
       ],
-      "cautions_en": []
+      "cautions_en": [],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "對三稜或其他柑橘科植物過敏者應避免使用。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):三稜為黑三稜科/莎草科植物,非柑橘科,「對柑橘科植物過敏」為他卡殘留誤植,不代補警語。",
+          "moved_at": "2026-08-14"
+        }
+      ]
     },
     {
       "id": "herb.ji_xue_teng",
@@ -37565,11 +37728,8 @@
       "exact_source_url": "https://cloudtcm.com/herb/12761",
       "fetched_at": "2026-07-23T07:20:29.470Z",
       "cautions_zh": [
-        "脾胃虛寒及寒痰、濕痰者慎服。 原因：川貝母性涼，容易損傷脾胃虛寒者的脾胃，加重寒痰、濕痰症狀。",
-        "不宜與烏頭類藥材同用。 原因：川貝母與烏頭類藥材存在相反藥性，同時服用會減弱藥效或產生不良反應。",
-        "脾胃虛寒者不宜。 原因：川貝母性涼，容易損傷脾胃虛寒者脆弱的脾胃。",
-        "腹瀉或腹脹者不宜。 原因：川貝母具有潤滑用，過量使用可能會加重腹瀉或腹脹症狀。",
-        "孕婦、哺乳期婦女慎用。 原因：川貝母具有一定的刺激性，對孕婦和哺乳期婦女過量使用可能會對胎兒或嬰兒造成影響。"
+        "不宜與川烏、制川烏、草烏、制草烏、附子同用。",
+        "浙貝母苦寒,脾胃虛寒及寒痰、濕痰者慎用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/12761",
       "safety_fetched_at": "2026-07-23T07:25:27.208Z",
@@ -37690,7 +37850,41 @@
           "text": "清熱化痰散結消癰",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾胃虛寒及寒痰、濕痰者慎服。 原因：川貝母性涼，容易損傷脾胃虛寒者的脾胃，加重寒痰、濕痰症狀。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「川貝母」而非本記錄「浙貝母」,且與 modern_functions_zh 一併疑似跨藥複製貼上(B10 全庫掃尾判例,比照 B7 zhi_ke 判例),整組封存,以查證後的十八反/慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "不宜與烏頭類藥材同用。 原因：川貝母與烏頭類藥材存在相反藥性，同時服用會減弱藥效或產生不良反應。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「川貝母」而非本記錄「浙貝母」,且與 modern_functions_zh 一併疑似跨藥複製貼上(B10 全庫掃尾判例,比照 B7 zhi_ke 判例),整組封存,以查證後的十八反/慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾胃虛寒者不宜。 原因：川貝母性涼，容易損傷脾胃虛寒者脆弱的脾胃。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「川貝母」而非本記錄「浙貝母」,且與 modern_functions_zh 一併疑似跨藥複製貼上(B10 全庫掃尾判例,比照 B7 zhi_ke 判例),整組封存,以查證後的十八反/慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腹瀉或腹脹者不宜。 原因：川貝母具有潤滑用，過量使用可能會加重腹瀉或腹脹症狀。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「川貝母」而非本記錄「浙貝母」,且與 modern_functions_zh 一併疑似跨藥複製貼上(B10 全庫掃尾判例,比照 B7 zhi_ke 判例),整組封存,以查證後的十八反/慎用敘述取代。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦、哺乳期婦女慎用。 原因：川貝母具有一定的刺激性，對孕婦和哺乳期婦女過量使用可能會對胎兒或嬰兒造成影響。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):cautions_zh 全數逐字引用「川貝母」而非本記錄「浙貝母」,且與 modern_functions_zh 一併疑似跨藥複製貼上(B10 全庫掃尾判例,比照 B7 zhi_ke 判例),整組封存,以查證後的十八反/慎用敘述取代。",
+          "moved_at": "2026-08-14"
         }
+      ],
+      "cautions_en": [
+        "Avoid combining with Chuan Wu (Radix Aconiti), prepared Chuan Wu, Cao Wu (Radix Aconiti Kusnezoffii), prepared Cao Wu, and Fu Zi (Radix Aconiti Lateralis Praeparata).",
+        "Zhe Bei Mu is bitter and cold; use cautiously in Spleen-Stomach Deficiency-Cold and in Cold-Phlegm or Damp-Phlegm patterns."
       ]
     },
     {
@@ -38775,8 +38969,7 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "肺火燔灼、肺氣焦滿者不可用：款冬花性溫，會加劇肺火。",
-        "陰虛勞嗽者禁用：款冬花性偏涼，會損傷陰津。",
+        "款冬花辛、微苦,溫;陰虛勞嗽、咯血者慎用。",
         "孕婦慎用：款冬花活血化瘀，可能對胎兒不利。",
         "結石患者慎用：款冬花利尿，可能引起結石移動。",
         "過敏體質者慎用：款冬花可能引起過敏反應。",
@@ -38879,6 +39072,18 @@
           "text": "潤肺下氣止咳化痰",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "肺火燔灼、肺氣焦滿者不可用：款冬花性溫，會加劇肺火。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):款冬花性溫會加劇肺火之敘述與[1]款冬花性偏涼互相矛盾(B9 判例),不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "陰虛勞嗽者禁用：款冬花性偏涼，會損傷陰津。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):款冬花性偏涼與本記錄 properties_taste_temp「溫」矛盾(B9 判例),改寫為查證後性味與陰虛勞嗽慎用敘述。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -38886,6 +39091,14 @@
         "Lipid-lowering activity",
         "Hepatoprotective and cholagogic activity",
         "Antitumor and cancer-preventive activity"
+      ],
+      "cautions_en": [
+        "Kuan Dong Hua is acrid, slightly bitter, and warm; use cautiously in Yin-deficiency consumptive cough and hemoptysis.",
+        "Use cautiously in pregnancy — Kuan Dong Hua invigorates the Blood and dispels stasis, which may be unfavorable for the fetus.",
+        "Use cautiously in patients with stones — Kuan Dong Hua’s diuretic action may cause stone movement.",
+        "Use cautiously in allergy-prone constitutions — Kuan Dong Hua may provoke allergic reactions.",
+        "Use cautiously in hypotension — Kuan Dong Hua lowers blood pressure and may worsen hypotension.",
+        "Use cautiously in Liver or Kidney insufficiency — Kuan Dong Hua may worsen Liver or Kidney insufficiency."
       ]
     },
     {
@@ -41013,12 +41226,10 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "濕熱、實邪者忌服：龍骨性質寒涼，濕熱、實邪者服用後可能加重病情。",
+        "龍骨甘、澀,平;濕熱積滯者不宜單獨使用。",
         "畏石膏：與石膏同用，可能產生不良反應。",
         "忌魚：與魚同用，可能導致腹瀉等問題。",
-        "脾胃虛寒者不宜使用：龍骨寒性，會損傷脾胃，不適合脾胃虛寒者使用。",
-        "孕婦慎用：龍骨寒性，可能傷胎，孕婦應避免使用。",
-        "肝陽上亢者不宜使用：龍骨清熱降火，肝陽上亢者服用後可能加重症狀。",
+        "龍骨甘、澀,性平,並非寒性藥。",
         "不宜長期大量使用：長期大量服用龍骨，會損傷肝腎，引起不良反應。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1105",
@@ -41105,6 +41316,39 @@
       "modern_functions_en": [
         "Sedative activity",
         "Anti-inflammatory activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "濕熱、實邪者忌服：龍骨性質寒涼，濕熱、實邪者服用後可能加重病情。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):龍骨性質寒涼與本記錄 properties_taste_temp「平」不符,改寫為查證後性味敘述。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾胃虛寒者不宜使用：龍骨寒性，會損傷脾胃，不適合脾胃虛寒者使用。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):龍骨寒性敘述與本記錄 properties_taste_temp「平」不符,改寫為澄清並非寒性藥。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦慎用：龍骨寒性，可能傷胎，孕婦應避免使用。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):龍骨寒性可能傷胎之敘述缺乏來源佐證且與平性矛盾,不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "肝陽上亢者不宜使用：龍骨清熱降火，肝陽上亢者服用後可能加重症狀。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):方向寫反——龍骨功效正是平肝潛陽(見 functions_zh/indications_zh),肝陽上亢者服用會加重症狀之敘述與本記錄主治欄直接矛盾,不代補警語。",
+          "moved_at": "2026-08-14"
+        }
+      ],
+      "cautions_en": [
+        "Long Gu is sweet, astringent, and neutral; not suitable for use alone in Damp-Heat with stagnation.",
+        "Antagonistic to Shi Gao (Gypsum) — concurrent use may cause adverse reactions.",
+        "Contraindicated with fish — concurrent consumption may cause diarrhea and other issues.",
+        "Long Gu is sweet, astringent, and neutral in nature — it is not a cold-natured herb.",
+        "Not for prolonged, high-dose use — long-term, high-dose use of Long Gu may damage the Liver and Kidneys and cause adverse reactions."
       ]
     },
     {
@@ -46741,7 +46985,6 @@
         "畏僵蠶、雷丸。",
         "《百草鏡》： 惟胃腎有虛熱者宜之，虛而無火者忌用。",
         "脾虛便溏、食慾不振等脾胃虛弱者不宜長期大量使用",
-        "石斛具有補益作用，以下狀況者應避免使用： 體質虛弱、氣血充足者",
         "高燒等熱證患者",
         "濕熱壅盛者"
       ],
@@ -46838,6 +47081,12 @@
           "text": "益胃生津滋陰清熱",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "石斛具有補益作用，以下狀況者應避免使用： 體質虛弱、氣血充足者",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):「體質虛弱、氣血充足者應避免使用」語意矛盾(虛弱與氣血充足互斥)且疑似批次掃尾誤填,不代補警語。cautions_en 整欄同步清空,維持 safety hold。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -46845,19 +47094,7 @@
         "Immune-enhancing activity",
         "Antioxidant activity"
       ],
-      "cautions_en": [
-        "Not suitable in Spleen-Stomach Deficiency-Cold.",
-        "Not suitable in early-stage Warm-Heat disease before Yin has been injured.",
-        "Not suitable in Damp-Warmth disease that has not yet transformed to Dryness.",
-        "Ben Cao Jing Ji Zhu: Lu Ying (Sambucus) serves as its guiding herb.",
-        "Mutually inhibiting with Ning Shui Shi (Glauberite) and Ba Dou (Crotonis Fructus) — combining them reduces efficacy.",
-        "Antagonistic to Jiang Can (Bombyx Batryticatus) and Lei Wan (Omphalia) — do not combine.",
-        "Bai Cao Jing: suitable only for Stomach-Kidney deficiency with Heat; contraindicated in deficiency without Fire.",
-        "Not for prolonged or high-dose use in Spleen deficiency with loose stools, poor appetite, and other Spleen-Stomach deficiency signs.",
-        "Shi Hu has a tonifying action — avoid use in those with a weak constitution but already sufficient Qi and Blood.",
-        "High fever and other Heat-pattern presentations.",
-        "Exuberant Damp-Heat."
-      ]
+      "cautions_en": []
     },
     {
       "id": "herb.yu_zhu",
@@ -53898,11 +54135,9 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "體質虛弱者不宜服用：佛手柑性偏寒涼，體質虛弱者服用後可能導致腹瀉、腹痛等症狀。",
         "痢疾、氣虛者不宜服用：佛手柑具有下氣作用，痢疾患者或氣虛者服用後會加重病情。",
         "腸胃功能較弱者慎用：佛手柑的揮發油成分可能會刺激腸胃，腸胃功能較弱者容易出現腹瀉等不適。",
-        "過量服用會傷胃：佛手柑中的揮發油成分過量服用會對胃黏膜造成刺激，引起胃痛、噁心等症狀。",
-        "與某些藥物會產生交互作用：佛手柑中的呋喃香豆素成分可能會影響藥物代謝，與某些藥物（如華法林、環孢素）併用時可能增加藥物濃度，導致不良反應。"
+        "過量服用會傷胃：佛手柑中的揮發油成分過量服用會對胃黏膜造成刺激，引起胃痛、噁心等症狀。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/4183",
       "safety_fetched_at": "2026-07-23T07:25:45.640Z",
@@ -54008,6 +54243,20 @@
         "Hypoglycemic activity",
         "Antihypertensive activity",
         "Antitumor activity"
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "體質虛弱者不宜服用：佛手柑性偏寒涼，體質虛弱者服用後可能導致腹瀉、腹痛等症狀。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):物種混寫——本句稱「佛手柑」且「性偏寒涼」,與本記錄 properties_taste_temp「辛、苦、溫、酸」矛盾(B7 fo_shou 判例),不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "與某些藥物會產生交互作用：佛手柑中的呋喃香豆素成分可能會影響藥物代謝，與某些藥物（如華法林、環孢素）併用時可能增加藥物濃度，導致不良反應。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):呋喃香豆素/華法林交互作用資料屬 Bergamot(佛手柑,Citrus bergamia)藥理,與本記錄佛手(Citrus medica var. sarcodactylis)非同一基原,物種誤植,不代補警語。",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -54341,13 +54590,11 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "氣虛者慎用：薤白性偏寒涼，氣虛者食用過多容易損傷脾胃陽氣，加重氣虛症狀。",
+        "薤白辛、苦,溫;陰虛及發熱者慎用。",
         "發熱病人不宜多食：《食療本草》記載，發熱病人食用過多薤白會加重發熱症狀。",
         "陰虛發熱病不宜食：《本草匯言》記載，陰虛發熱病患者食用薤白會加重陰虛發熱症狀。",
         "滑利之品，無滯勿用：《本草從新》記載，薤白具有滑利通便的作用，如果沒有實證便祕等需要通便的情況，不宜食用。",
-        "腹滿脹氣者應慎食：薤白能散寒化痰，但同時也具有刺激腸胃的作用，腹滿脹氣者食用過多容易加重腸胃負擔，引起腹脹、腹痛等不適症狀。",
-        "脾胃虛寒、腹瀉者應禁忌食用：薤白的性味偏涼，脾胃虛寒、腹瀉者食用後容易加重脾胃虛寒、腹瀉等症狀。",
-        "孕婦應慎用：薤白具有活血化瘀的作用，孕婦食用過多容易引起子宮收縮，增加早產的風險，因此孕婦應慎用或在醫師指導下使用。"
+        "腹滿脹氣者應慎食：薤白能散寒化痰，但同時也具有刺激腸胃的作用，腹滿脹氣者食用過多容易加重腸胃負擔，引起腹脹、腹痛等不適症狀。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1510",
       "safety_fetched_at": "2026-07-23T07:25:46.293Z",
@@ -54471,6 +54718,24 @@
           "text": "通陽散結行氣導滯",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "氣虛者慎用：薤白性偏寒涼，氣虛者食用過多容易損傷脾胃陽氣，加重氣虛症狀。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):薤白性偏寒涼與本記錄 properties_taste_temp「辛、苦、溫」矛盾(B7 判例延伸),與[5]重複主張去重合併改寫。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾胃虛寒、腹瀉者應禁忌食用：薤白的性味偏涼，脾胃虛寒、腹瀉者食用後容易加重脾胃虛寒、腹瀉等症狀。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):與[0]同樣主張薤白性偏涼,與溫性宣告矛盾,重複主張去重合併入同一替換句。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦應慎用：薤白具有活血化瘀的作用，孕婦食用過多容易引起子宮收縮，增加早產的風險，因此孕婦應慎用或在醫師指導下使用。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):孕婦子宮收縮流產風險之敘述缺乏具名來源佐證,不代補警語。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -54482,6 +54747,13 @@
         "Antihypertensive activity",
         "Cardioprotective activity",
         "Hepatoprotective and cholagogic activity"
+      ],
+      "cautions_en": [
+        "Xie Bai is acrid, bitter, and warm; use cautiously in Yin deficiency and in fever.",
+        "Not suitable in large amounts for patients with fever — the Shi Liao Ben Cao (Dietary Materia Medica) notes that excessive intake of Xie Bai in febrile patients may worsen the fever.",
+        "Not suitable in Yin deficiency with fever — the Ben Cao Hui Yan notes that Xie Bai may worsen Yin-deficiency fever in these patients.",
+        "Not suitable without stagnation — the Ben Cao Cong Xin notes that Xie Bai has a slippery, laxative action, so it is unsuitable absent excess-type constipation or other conditions requiring a laxative effect.",
+        "Use cautiously in abdominal fullness and distension — Xie Bai disperses Cold and transforms Phlegm but also stimulates the digestive tract; excessive intake in these patients may burden the digestive system and worsen the fullness, distension, and pain."
       ]
     },
     {
@@ -55899,7 +56171,7 @@
       "cautions_zh": [
         "孕婦禁用：蒲黃會刺激子宮收縮，造成早產或流產。",
         "血虛者禁用：蒲黃活血化瘀，容易造成血虛。",
-        "腸胃虛寒者禁用：蒲黃性寒，會傷及脾胃。",
+        "蒲黃甘、平;孕婦慎用。",
         "頭暈、耳鳴、目眩者禁用：蒲黃活血化瘀，會引起這些症狀。",
         "心悸、失眠者慎用：蒲黃興奮中樞神經，會造成心悸、失眠。"
       ],
@@ -55994,9 +56266,21 @@
           "text": "止血化瘀通淋",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腸胃虛寒者禁用：蒲黃性寒，會傷及脾胃。",
+          "reason": "SOL 查源判定 B改寫(2026-08-14,Ting 核可):蒲黃性寒與本記錄 properties_taste_temp「平」不符(B10 全庫掃尾觀察項),「傷及脾胃」缺乏來源佐證不予保留,改寫為查證後的性味與孕婦慎用敘述。",
+          "moved_at": "2026-08-14"
         }
       ],
-      "cautions_en": []
+      "cautions_en": [
+        "Contraindicated in pregnancy — Pu Huang may stimulate uterine contractions, causing premature birth or miscarriage.",
+        "Contraindicated in Blood deficiency — Pu Huang invigorates the Blood and dispels stasis, which can worsen Blood deficiency.",
+        "Pu Huang is sweet and neutral; use cautiously in pregnancy.",
+        "Contraindicated in dizziness, tinnitus, and vertigo — Pu Huang invigorates the Blood and dispels stasis, which may provoke these symptoms.",
+        "Use cautiously in palpitations and insomnia — Pu Huang stimulates the central nervous system and may cause palpitations and insomnia."
+      ]
     },
     {
       "id": "herb.qian_cao",
@@ -56674,9 +56958,7 @@
         "癰疽已潰爛不適用。",
         "目赤膚翳非血熱嚴重者不適用。",
         "孕婦和哺乳期婦女應避免使用，因其具有刺激性，可能影響胎兒或嬰兒。",
-        "出血性疾病患者應避免使用，因其具有促進血液凝固的作用。",
-        "高血壓患者應避免使用，因其可能對中樞神經系統和心血管系統造成不良影響。",
-        "青少年應避免使用，因其具有神經毒性，可能影響神經系統。"
+        "高血壓患者應避免使用，因其可能對中樞神經系統和心血管系統造成不良影響。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1119",
       "safety_fetched_at": "2026-07-23T07:25:49.204Z",
@@ -56855,6 +57137,18 @@
           "original_field": "condition_tags_en",
           "text": "Disperses Blood stasis, reduces swelling, and stops pain",
           "reason": "Ting 2026-08-14 裁定，condition_tags_zh 功效聯已封存清空，condition_tags_en 為其英譯鏡像，依憲法規則五（_en 長度須等於 _zh）同步封存清空，避免索引錯位",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "出血性疾病患者應避免使用，因其具有促進血液凝固的作用。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):稱沒藥「促進血液凝固」與本記錄 modern_functions_zh「抗血小板聚集」方向直接相反,機轉倒置(B10 全庫掃尾判例),不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "青少年應避免使用，因其具有神經毒性，可能影響神經系統。",
+          "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):「神經毒性」敘述缺乏具名來源佐證,不代補警語。",
           "moved_at": "2026-08-14"
         }
       ]
