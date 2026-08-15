@@ -253,7 +253,7 @@ corpus 內已有明文裁定×2:「不要把 AD 的『慎用』升級成禁用�
 | B6 | 收澀 + 消食 + 驅蟲 | 22 | 13(32) | 16(93) | 20(93) |
 | B7 | 理氣 + 化濕 + 開竅 | 23 | HOLD* | 17(113)✅ | 20/23(3 扣住:zhi_ke/xie_bai/fo_shou) |
 | B8 | 補陽 + 補氣 + 溫化寒痰 | 20 | HOLD* | 13(79)✅ | 20(96)✅ |
-| B9 | 清熱瀉火 + 止咳平喘 + 安神 | 23 | HOLD* | 18(117) | 23(123) |
+| B9 | 清熱瀉火 + 止咳平喘 + 安神 | 23 | 1/1(4 tags,shi_gao 例外)✅ | 18(117)✅ | 22/23(116 填入;1 扣住:kuan_dong_hua) |
 | B10 | 溫裡 + 祛風濕 + 平肝息風 | 22 | HOLD* | 20(198) | 22(126) |
 
 `HOLD*` = 該批 CT 欄多為 110 筆 schema 放錯記錄(單一功效聯),**待 Ting 裁定處置,不進翻譯**。
@@ -449,3 +449,37 @@ modern_functions:預防骨質疏鬆 Antiosteoporotic activity(anti+希臘語根�
   說法(非僅人參專有),核對後判定非跨藥誤植,兩者 zh 均未見「反」字,故英譯未套用
   「Eighteen Incompatibilities」標籤(該標籤僅在 zh 明文出現「反」/「十八反」時才用,
   見 herb.chi_shao 判例),改譯為中性「Avoid combining with Li Lu (Veratrum)」。
+
+### 5j. B9 新詞回填(2026-08-14,清熱瀉火+止咳平喘+安神)
+
+modern_functions:改善學習記憶 Improves learning and memory(改善-系動詞式,平行既定
+改善記憶/改善腦功能/改善大腦功能/改善微循環的造詞法,不加 activity) ·
+抗菌消炎 Antibacterial and anti-inflammatory activity(herb.he_huan_pi;字序與既定
+抗菌抗炎 相同、與 消炎抗菌 相反,依本詞字序譯 antibacterial 在前,鎖定同英譯不分裂) ·
+herb.su_zi(紫蘇子)modern_functions_zh[6]「抗化」核對其自身 modern_functions_detail_zh
+的 tag 說明文字(內容全講多醣體清除自由基、提升 SOD/CAT/GPx 抗氧化酶活性),確認為
+「抗氧化」的資料截斷/漏字(非新詞、非臆測),譯為既定 Antioxidant activity,供後批比對
+同類截斷字串時參考此驗證方法(查 modern_functions_detail_zh 而非直接猜詞)。
+
+### 5k. B9 判例(清熱瀉火+止咳平喘+安神,23 味,1 筆整欄扣住)
+
+- **herb.kuan_dong_hua(款冬花)cautions_zh[0]「款冬花性溫，會加劇肺火」vs [1]「款冬花
+  性偏涼，會損傷陰津」**:同一記錄的 cautions_zh 陣列內部直接自相矛盾(溫 vs 涼,
+  相反方向),且 [0] 與本記錄 `properties_taste_temp`「甘、辛、微甘、苦、溫」(溫)一致、
+  [1] 反而牴觸。比照 B1(huang_qin 虛熱/虛寒同句矛盾)、B7(xie_bai/fo_shou 性偏寒涼 vs
+  properties 溫)判例,cautions_en 整欄扣住,zh 不動,進 Ting 裁定佇列。modern_functions_zh
+  (抗發炎、降血脂、保肝利膽、防癌抗腫瘤,通用藥理未見矛盾)不在扣住範圍,正常翻譯收錄。
+- **herb.shi_gao(石膏)condition_tags_zh 例外處理**:本記錄的 `condition_tags_zh`
+  四則(清熱瀉火/除煩止渴/清肺平喘/斂瘡生肌)與 `traditional_functions_zh` 逐字相同,
+  外觀符合 §0 所述「110 筆 schema 放錯(單一四字功效聯,非證候標籤)」的樣式特徵。
+  本欄仍照派工單明示指令翻譯收錄(派工單原文:「它是全庫最後一筆 CT 缺口——一併補」),
+  未比照 HOLD* 扣住;因與既有 schema-錯置規則存在字面張力,在此列出供 Ting 複核是否
+  也需要和其餘 110 筆一併重新裁定 schema 歸屬(而非僅翻譯了事)。
+- **herb.zhu_sha(硃砂)cautions_zh 4 則**:全數為毒性/炮製警語(HgS 主成分、忌火煅、
+  不入湯劑、蓄積性中毒),逐字對應翻譯,⚠️ 警示符號原樣保留,零改寫,對應派工單「毒性與
+  久服警語逐字翻」規則;`contraindications_en` 先前批次已完成,本批僅補 `cautions_en`。
+- **止咳平喘類温度/毒性覆核**:xing_ren(杏仁)properties_taste_temp 同時列「有毒」與
+  「小毒」兩個並存的毒性標記(非同義互斥,屬原始資料冗餘,非方向性矛盾),cautions_zh
+  的「小毒慎用」逐字翻譯保留,不因標記重複而扣住整欄。
+- **herb.su_zi(蘇子)cautions_zh[4]「避免生食：生紫蘇子有毒」**:毒性警語逐字翻譯
+  (Avoid raw consumption — raw Su Zi is toxic…),不改寫、不淡化。
