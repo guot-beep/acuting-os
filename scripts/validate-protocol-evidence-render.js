@@ -98,7 +98,7 @@ function main() {
     rendered++;
     const ev = r.acupoint_protocol_evidence;
     // 等級字樣必須真的出現
-    if (!/證據支持|證據有限|僅症狀輔助|僅支持輔助既有治療|僅術後證據|現有證據不支持|查無合格來源/.test(html)) {
+    if (!/證據支持|證據有限|僅症狀輔助|僅支持輔助既有治療|僅術後證據|現有證據不支持|查無合格來源|來源未經評估/.test(html)) {
       fail.push(`${r.id} 的輸出裡沒有任何等級字樣(status=${ev.protocol_status})`);
     }
     // 有穴位的卡,證據說明必須上畫面
@@ -117,7 +117,7 @@ function main() {
   const enCtx = buildSandbox("english");
   const sample = withEv[0];
   const enHtml = render(enCtx, sample);
-  if (!/Supported|Limited evidence|Symptom relief only|Adjunct|Postoperative|Not supported|No qualifying source/.test(enHtml)) {
+  if (!/Supported|Limited evidence|Symptom relief only|Adjunct|Postoperative|Not supported|No qualifying source|Not assessed/.test(enHtml)) {
     fail.push(`英文模式下 ${sample.id} 的輸出沒有英文等級字樣`);
   }
 

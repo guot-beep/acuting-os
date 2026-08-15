@@ -3228,6 +3228,9 @@
       postoperative_only: ["僅術後證據", "Postoperative evidence only", "#92400e", "#fef3c7"],
       not_supported: ["現有證據不支持", "Not supported", "#991b1b", "#fee2e2"],
       no_source: ["查無合格來源", "No qualifying source", "#991b1b", "#fee2e2"],
+      /* unassessed 不是一個證據等級,是「沒有等級」。它必須跟查證過的狀態長得
+         明顯不同 —— 用最重的配色,因為讀的人最可能誤把這種卡當成處方。 */
+      unassessed: ["⚠ 來源未經評估 —— 不是處方建議", "⚠ Not assessed — not a prescription", "#7c2d12", "#ffedd5"],
     };
     const protocolEvidenceBlock = (c) => {
       const ev = c && c.acupoint_protocol_evidence;

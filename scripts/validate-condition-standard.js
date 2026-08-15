@@ -149,6 +149,10 @@ const RELATION_FIELDS = new Set([
   // protocol" look identical on screen. This field carries the status and
   // sources so the caveat travels with the points. C9 enforces the pairing.
   "acupoint_protocol_evidence",
+  // Added 2026-08-15 (template §3). Audit trail for the code-convention rewrite
+  // (LV->LR, DU->GV, REN->CV, SJ->TE, de-zero-padding). Keeps the original code
+  // and name so the rewrite is reversible — §0 只加深不刪除.
+  "acupoint_code_normalization",
   // Added 2026-08-08 (template §3): ordered rf.* ids referencing the red-flag
   // registry. Optional — only batches whose registry migration is done carry
   // it. Wiring consistency is validate-red-flag-wiring.js's job, not C8's.
@@ -487,41 +491,41 @@ for (const rec of scope) {
     const pts = Array.isArray(rec.acupoint_protocols) ? rec.acupoint_protocols : [];
     const ev = rec.acupoint_protocol_evidence;
     const STATUS = new Set(["supported", "limited", "symptom_only", "adjunct_only",
-      "postoperative_only", "not_supported", "no_source"]);
+      "postoperative_only", "not_supported", "no_source", "unassessed"]);
+    // unassessed = 匯入遺留,沒有人查過。它「沒有來源」正是它的內容,
+    // 所以不要求 sources;但必須把來歷寫在 evidence_note_zh 裡,否則等於沒說。
+    const ASSESSED = ev && ev.protocol_status !== "unassessed";
     // The shared import default is its own known defect (F-07) and the renderer
     // already names it — do not double-report it here.
     const key = pts.map((p) => (typeof p === "string" ? p : `${p.name_zh || ""}${p.code || ""}`)).join("|");
     const isSharedTemplate = pts.length <= 5 && /足三里/.test(key) && /合谷/.test(key)
       && /三陰交/.test(key) && /中脘/.test(key);
 
-    /* 分兩層,而且分法是有理由的,不是為了讓數字好看:
+    /* 2026-08-15:N6 已畢業為 blocking。
      *
-     *   BLOCKING —— 卡片**有** acupoint_protocol_evidence 但寫壞了。
-     *     從今天起寫進來的東西一律照這條走,沒有寬限。
+     * 這條原本是 NOTE + ratchet,因為當時有 73 張舊卡帶穴位卻沒有 evidence ——
+     * 一次把整個既有語料判成 blocking,gate 會變成一堵牆,下一個人就會去關掉它。
+     * 當時寫的畢業條件是「N6 降到 0 時改成 add("C14", ...)」。
+     * 那 73 張已於 2026-08-15 全部補上 protocol_status: unassessed(不是療效判斷,
+     * 是誠實標記「沒有人查過」),N6 歸零,所以照約定升級。
      *
-     *   N6(NOTE + ratchet)—— 舊卡有穴位、完全沒有 evidence。
-     *     這是 2026-08-14 之前就存在的 73 張,不是本次寫壞的。
-     *     一次把整個既有語料判成 blocking,gate 會變成一堵牆,
-     *     然後下一個人就會去關掉它 —— 那比沒有這條檢查更糟。
-     *     所以計數、只准降不准升,逐批補完後升級為 blocking。
-     *   **畢業條件**:N6 降到 0 時,把這段改成 add("C14", ...) 並刪掉本註解。
-     */
+     * 從此:有穴位就必須有 evidence,沒有寬限。 */
     if (pts.length && !isSharedTemplate && !ev) {
-      notes.push({
-        code: "N6",
-        id,
-        category: cat,
-        detail: `has ${pts.length} acupoint_protocols but no acupoint_protocol_evidence — `
-          + "a sub-20 point list renders as bare tags with no caveat, so it reads as a vetted "
-          + "protocol. Backfill the status and sources (template §3).",
-      });
+      add("C14", `has ${pts.length} acupoint_protocols but no acupoint_protocol_evidence — `
+        + "a sub-20 point list renders as bare tags with no caveat, so it reads as a vetted "
+        + "protocol. Even an unverified import must say so: use protocol_status \"unassessed\" "
+        + "with the provenance in evidence_note_zh (template §3).");
     }
     if (ev) {
       if (!STATUS.has(ev.protocol_status)) {
         add("C14", `acupoint_protocol_evidence.protocol_status "${ev.protocol_status}" is not one of ${[...STATUS].join("/")}`);
       }
-      if (!Array.isArray(ev.sources) || !ev.sources.length) {
+      if (ASSESSED && (!Array.isArray(ev.sources) || !ev.sources.length)) {
         add("C14", "acupoint_protocol_evidence has no sources — the status is an assertion without a citation");
+      }
+      if (!ASSESSED && !String(ev.evidence_note_zh || "").trim()) {
+        add("C14", "protocol_status is unassessed but evidence_note_zh is empty — "
+          + "an unassessed list must at least say where the points came from");
       }
       if (pts.length && !String(ev.evidence_note_zh || "").trim()) {
         add("C14", "has points but acupoint_protocol_evidence.evidence_note_zh is empty — the caveat has nowhere to render from");
@@ -632,7 +636,6 @@ if (AS_JSON) {
       N2: "related_tcm_symptoms (deprecated_but_temporarily_accepted)",
       N4: "skeleton index slots (no content claimed; C4 deferred)",
       N5: "classical_references_zh duplicated AND missing this card's own disease term (P3)",
-      N6: "acupoint_protocols without acupoint_protocol_evidence (pre-2026-08-14 backlog; graduates to C14 at 0)",
     };
     for (const code of Object.keys(NOTE_LABELS)) {
       const list = notes.filter((n) => n.code === code);

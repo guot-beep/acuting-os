@@ -150,6 +150,7 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 | `herb_formulas` | `formula.*` | — |
 | `acupoint_protocols` | 穴位處方 | — |
 | `acupoint_protocol_evidence` | 穴位處方的證據等級與出處 | 見下 |
+| `acupoint_code_normalization` | 穴位代碼改寫的稽核紀錄(2026-08-15) | 見下 |
 | `medication_links` | 西藥(藥理層做完後接) | — |
 | `workflow_links` | 臨床流程 | — |
 
@@ -167,9 +168,21 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 > 所以穴位可以寫進 `acupoint_protocols`,但**必須同時寫這個欄位**,
 > 由 renderer 一起顯示。缺這個欄位而有穴位 = C14 缺陷。
 >
+> #### `unassessed`(2026-08-15 新增)
+>
+> 上面那些狀態都是**查證過之後的結論**。但庫裡有 73 張卡的穴位是早年匯入的,
+> **從來沒有人逐穴查過來源** —— 那既不是 `no_source`(查過、沒找到),
+> 也不是 `not_supported`(查過、結論負面)。硬套任何一個都是說謊。
+>
+> `unassessed` 就是這個狀態:**穴位在那裡,但沒有人評估過它的證據。**
+> 它必須在畫面上長得跟「查證過」的狀態明顯不同 —— 這是它存在的唯一理由。
+>
+> 這個狀態**只能往外走,不能往裡走**:新收集的批次不准用它,
+> 它專門標記 2026-08-15 之前的匯入遺留。逐張查證後改成真正的結論。
+>
 > ```json
 > "acupoint_protocol_evidence": {
->   "protocol_status": "supported | limited | symptom_only | adjunct_only | postoperative_only | not_supported | no_source",
+>   "protocol_status": "supported | limited | symptom_only | adjunct_only | postoperative_only | not_supported | no_source | unassessed",
 >   "point_rationale_zh": "整組取穴依據;不得超出來源",
 >   "point_rationale_en": null,
 >   "evidence_note_zh": "證據設計、對照組、量表與限制;查不到時寫檢索日期／資料庫／檢索詞",
