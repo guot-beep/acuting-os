@@ -46313,7 +46313,8 @@
       "related_formulas": [
         "formula.liu_wei_di_huang_wan",
         "formula.yi_guan_jian",
-        "formula.zuo_gui_wan"
+        "formula.zuo_gui_wan",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "safety_flags": [
         "pregnancy_review"
@@ -46429,7 +46430,9 @@
           "analysis_zh": "北沙參根的乙醇提取物具有鎮痛作用。具體評估方法是採用兔牙髓電刺激法進行測試，結果顯示北沙參根的乙醇提取物能有效緩解牙髓電刺激所引起的疼痛。"
         }
       ],
-      "aliases_zh": [],
+      "aliases_zh": [
+        "沙參"
+      ],
       "category_zh": "補陰藥",
       "channels_zh": [
         "肺經",
@@ -46442,7 +46445,8 @@
         "單味中藥",
         "國考大綱",
         "補陰藥",
-        "北沙參"
+        "北沙參",
+        "順天堂藥材"
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
@@ -56584,7 +56588,9 @@
           "analysis_zh": "茜草根的抗發炎功效主要歸因於其所含活性成分。茜草苷能抑制白介素-6（IL-6）、腫瘤壞死因子-α（TNF-α）等炎性細胞因子，並抑制環氧合酶（COX-2）活性，從而減少前列腺素E2（PGE2）合成，降低發炎反應。茜草素則透過抑制促發炎細胞因子合成及NF-κB信號通路活化來減輕發炎。茜草酸則能抑制一氧化氮（NO）合成，進一步減少發炎反應。\n\n這些抗發炎功效已在體外及動物實驗中獲得證實。體外研究顯示，茜草根提取物能抑制白介素-1β（IL-1β）、腫瘤壞死因子-α（TNF-α）及其他促發炎細胞因子合成，並減輕炎症引起的細胞損傷。動物實驗中，茜草根提取物有效減輕小鼠和大鼠的關節炎、腸炎等炎症性疾病症狀。然而，茜草根的抗發炎功效在臨床上仍待充分驗證，需要進一步研究以確定其療效與安全性。"
         }
       ],
-      "aliases_zh": [],
+      "aliases_zh": [
+        "茜草根"
+      ],
       "category_zh": "涼血止血藥",
       "channels_zh": [
         "肝經"
@@ -56596,7 +56602,8 @@
         "單味中藥",
         "國考大綱",
         "涼血止血藥",
-        "茜草"
+        "茜草",
+        "順天堂藥材"
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
@@ -60534,7 +60541,7 @@
         "腎經"
       ],
       "source_hint": "Bensky Materia Medica: Tonify Yin",
-      "review_status": "draft",
+      "review_status": "deprecated",
       "properties_taste_temp": "甘、微寒、酸",
       "functions": [
         "滋陰",
@@ -60739,7 +60746,8 @@
         "Use cautiously in Deficiency-Cold of the Stomach-Intestines — Han Lian Cao's Cold nature can easily injure the Stomach and cause discomfort.",
         "Use cautiously in pregnancy, lactation, and children — clinical evidence supporting safety in these populations is insufficient.",
         "Note possible drug interactions — Han Lian Cao may interact with certain medications, affecting efficacy or safety."
-      ]
+      ],
+      "deprecated_note_zh": "2026-08-14 停用：與 herb.mo_han_lian（墨旱蓮，藥典正名）同為「墨旱蓮 Ecliptae Herba」的重複匯入記錄，經 SOL 鑑定 + Ting 裁定判定為重複。本記錄內容較 herb.mo_han_lian 原記錄完整（functions_zh/modern_functions_zh+_en/modern_functions_detail_zh/clinical_use_note/dosage/safety_flags/related_formulas/field_sources），已整批遷入 herb.mo_han_lian；herb.mo_han_lian 原短版 functions_zh/cautions_zh/_en/source_urls/exact_source_url已依 archive-before-replace 原則封存於該記錄自身的 import_artifacts。「旱蓮草」「金陵草」「蓮子草」已併入aliases_zh。本記錄未硬刪，review_status 改 deprecated 供追溯（D6）。對應：DECISIONS.md D21；SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」。"
     },
     {
       "id": "herb.rou_cong_rong",
@@ -61187,7 +61195,7 @@
         "肝經"
       ],
       "source_hint": "Bensky Materia Medica: Stabilize and Bind",
-      "review_status": "draft",
+      "review_status": "deprecated",
       "properties_taste_temp": "微溫、澀、有毒、鹹、無毒",
       "functions": [
         "固崩止帶",
@@ -61373,7 +61381,8 @@
         "Contraindicated in Blood deficiency and anemia — Hai Piao Xiao may worsen the condition.",
         "Contraindicated in common cold with fever — Hai Piao Xiao may injure the body's righteous Qi.",
         "Contraindicated in impaired kidney function — Hai Piao Xiao may cause hyperkalemia."
-      ]
+      ],
+      "deprecated_note_zh": "2026-08-14 停用：與 herb.hai_piao_xiao（海螵蛸，藥典正名）同為「海螵蛸 Sepiae Endoconcha」的重複匯入記錄，經 SOL 鑑定 + Ting 裁定判定為重複。herb.hai_piao_xiao 為 template-grade 較完整記錄；已將本記錄獨有的related_formulas（formula.mu_li_san / formula.zhen_ren_yang_zang_tang / formula.si_shen_wan——herb.hai_piao_xiao 原欄位為空）與 modern_functions_detail_zh（抗發炎、防癌抗腫瘤兩則完整分析——herb.hai_piao_xiao 原無此欄）遷入。本記錄 channels_zh（脾經、腎經）與 herb.hai_piao_xiao 採用的AD+課件版本（腎經、肝經、胃經）不同，已依「兩源不合就並記」原則加註於 herb.hai_piao_xiao 的tcm_properties.source_note_zh，未覆蓋主欄位。「烏賊骨」「墨魚骨」已確認在 herb.hai_piao_xiao 的aliases_zh 內。本記錄未硬刪，review_status 改 deprecated 供追溯（D6）。對應：DECISIONS.md D21；SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」。"
     },
     {
       "id": "herb.rou_dou_kou",
@@ -62858,7 +62867,7 @@
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://www.americandragon.com",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "deprecated",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
@@ -62888,7 +62897,8 @@
       ],
       "cautions_en": [
         "Contraindicated in cough due to Wind-Cold."
-      ]
+      ],
+      "deprecated_note_zh": "2026-08-14 停用（方案 A，Ting 裁定）：本記錄（沙參）逐欄檢查後確認為 herb.bei_sha_shen（北沙參，Glehnia littoralis，藥典正名）內容的未分化重複匯入——功效/主治/禁忌皆為 herb.bei_sha_shen 既有內容的子集，不含任何南沙參（Adenophora，Radix Adenophorae）專屬臨床內容，故未另立南沙參封存記錄。name_en「Glehniae / Adenophorae Radix」為北/南沙參拉丁學名混寫，依 Ting 裁定明確排除、未遷入 herb.bei_sha_shen（該卡維持自身 name_en \"Glehnia Root\"）。「沙參」已併入 herb.bei_sha_shen 的 aliases_zh。related_formulas 僅遷移 formula.sha_shen_mai_men_dong_tang（其 composition 確實列 herb_id: herb.sha_shen，可查證）；本記錄另列的 formula.bai_he_gu_jin_tang、formula.mai_men_dong_tang 經核對兩方劑的 composition皆未列沙參，判定為未查證關聯，未遷移，亦未修改。本記錄未硬刪，review_status 改 deprecated 供追溯（D6）。對應：DECISIONS.md D21；SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」。"
     },
     {
       "id": "herb.bai_wei",
@@ -64391,7 +64401,7 @@
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://www.americandragon.com",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "deprecated",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
@@ -64417,7 +64427,8 @@
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
         }
-      ]
+      ],
+      "deprecated_note_zh": "2026-08-14 停用：與 herb.qian_cao（茜草）同為藥典正名「茜草 Rubiae Radix et Rhizoma」的重複匯入記錄——茜草根即茜草之根莖入藥部位，藥典並無另立品種。逐欄檢查後，本記錄的功效/主治/劑量/禁忌內容皆為herb.qian_cao 既有內容的子集或同義敘述，另有 3 個來源網址（American Dragon 首頁、Zhongyifangji.com 首頁、CloudTCM 首頁——皆為裸網域，非可直達頁面）與「順天堂藥材」study_tag 未攜帶新增臨床事實，已將「茜草根」併入 herb.qian_cao 的 aliases_zh、「順天堂藥材」併入 study_tags；其餘內容未遷移（無新增查證事實）。本記錄未硬刪，review_status 改 deprecated 供追溯（D6）。對應：DECISIONS.md D21；SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」。"
     },
     {
       "id": "herb.he_ye",
@@ -67575,42 +67586,87 @@
         "腎經"
       ],
       "functions_zh": [
-        "滋補肝腎、涼血止血"
+        "滋陰",
+        "補氣",
+        "止血",
+        "清熱涼血",
+        "補益肝腎"
       ],
       "indications_zh": [
         "滋補肝腎；涼血止血"
       ],
       "cautions_zh": [
-        "脾胃虛寒忌用"
+        "脾腎虛寒者忌服 原因：旱蓮草性寒涼，脾腎虛寒者服後會加重虛寒症狀。",
+        "胃弱便溏、腎氣虛寒者禁用 原因：旱蓮草性寒涼，會加重胃腸虛寒和腎氣虛寒症狀。",
+        "腎虛體弱者慎用 原因：旱蓮草具有利尿作用，過量使用可能對腎臟產生負擔。",
+        "胃腸虛寒者慎用 原因：旱蓮草性寒涼，容易傷胃，引起胃部不適。",
+        "孕婦、哺乳期婦女及小兒慎用 原因：尚未有足夠的臨牀研究證據支持其安全性。",
+        "注意與藥物的相互作用 原因：旱蓮草可能會與某些藥物產生相互作用，影響藥效或安全。"
       ],
       "study_tags": [
         "單味中藥",
         "國考大綱",
         "順天堂藥材",
         "補陰藥",
-        "墨旱蓮"
+        "墨旱蓮",
+        "旱蓮草"
       ],
       "source_urls": [
-        "https://cloudtcm.com",
-        "https://www.americandragon.com",
-        "https://www.zhongyifangji.com"
+        "https://cloudtcm.com/herb/1320"
       ],
-      "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
-      "exact_source_url": "https://www.americandragon.com",
+      "safety_source": "cloudtcm_caution_field",
+      "exact_source_url": "https://cloudtcm.com/herb/1320",
       "source_type": "sourced_cloudtcm_record",
       "review_status": "sourced_cloudtcm_record",
       "public_safe": true,
-      "fetched_at": "2026-07-23",
+      "fetched_at": "2026-07-23T07:20:55.486Z",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23",
+      "safety_fetched_at": "2026-07-23T07:25:53.100Z",
       "condition_tags_zh": [],
-      "related_formulas": [],
+      "related_formulas": [
+        "formula.liu_wei_di_huang_wan",
+        "formula.yi_guan_jian",
+        "formula.zuo_gui_wan",
+        "formula.tong_xie_yao_fang",
+        "formula.wen_jing_tang"
+      ],
       "category": "補虛藥 / Tonify Yin",
-      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/MoHanLian.html",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/HanLianCao.html",
       "american_dragon_link_status": "derived",
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
-      "field_sources": {},
+      "field_sources": {
+        "properties_taste_temp": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "channels_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "functions_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "indications_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "dosage": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "condition_tags_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "category_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "modern_functions_detail_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1320"
+        ]
+      },
       "card_grade": "partial",
       "import_artifacts": [
         {
@@ -67618,10 +67674,90 @@
           "text": "滋補肝腎涼血止血",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，內容已由 functions_zh 覆蓋",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "functions_zh",
+          "text": "[\"滋補肝腎、涼血止血\"]",
+          "reason": "SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」；mo_han_lian 短版功效，由 herb.han_lian_cao 較完整版本取代（archive-before-replace）",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "[\"脾胃虛寒忌用\"]",
+          "reason": "SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」；mo_han_lian 短版注意事項，由 herb.han_lian_cao 較完整版本（含理由）取代",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_en",
+          "text": "[\"Contraindicated in Spleen-Stomach Deficiency-Cold.\"]",
+          "reason": "SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」；mo_han_lian 短版英文注意事項，由 herb.han_lian_cao 較完整版本取代",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "source_urls",
+          "text": "[\"https://cloudtcm.com\",\"https://www.americandragon.com\",\"https://www.zhongyifangji.com\"]",
+          "reason": "SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」；mo_han_lian 原僅列裸網域來源，由 herb.han_lian_cao 的精確 cloudtcm/1320 頁面取代",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "exact_source_url",
+          "text": "https://www.americandragon.com",
+          "reason": "SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14「四組照建議 沙參方案A」；mo_han_lian 原 exact_source_url 為 americandragon.com 首頁（非精確頁），由 cloudtcm/1320 精確頁取代",
+          "moved_at": "2026-08-14"
         }
       ],
       "cautions_en": [
-        "Contraindicated in Spleen-Stomach Deficiency-Cold."
+        "Contraindicated in Spleen-Kidney Deficiency-Cold — Han Lian Cao's Cold nature will worsen the Deficiency-Cold pattern.",
+        "Contraindicated in weak Stomach with loose stools and Kidney Qi Deficiency-Cold — Han Lian Cao's Cold nature will worsen Deficiency-Cold of the Stomach-Intestines and Kidney Qi.",
+        "Use cautiously in Kidney deficiency with a weak constitution — Han Lian Cao's diuretic action may burden the kidneys if overused.",
+        "Use cautiously in Deficiency-Cold of the Stomach-Intestines — Han Lian Cao's Cold nature can easily injure the Stomach and cause discomfort.",
+        "Use cautiously in pregnancy, lactation, and children — clinical evidence supporting safety in these populations is insufficient.",
+        "Note possible drug interactions — Han Lian Cao may interact with certain medications, affecting efficacy or safety."
+      ],
+      "modern_functions_zh": [
+        "抗發炎",
+        "降血糖",
+        "提升免疫力",
+        "預防心血管疾病"
+      ],
+      "modern_functions_en": [
+        "Anti-inflammatory activity",
+        "Hypoglycemic activity",
+        "Immune-enhancing activity",
+        "Cardiovascular-protective activity"
+      ],
+      "modern_functions_source": "cloudtcm_herb_tag_analysis",
+      "modern_functions_source_url": "https://cloudtcm.com/herb/1320",
+      "modern_functions_detail_zh": [
+        {
+          "tag": "抗發炎",
+          "analysis_zh": "旱蓮草的抗發炎功效，現代藥理學分析歸因於其複雜的化學成分。其中，旱蓮草苷（如黃酮醇苷）與旱蓮草酚（特別是香豆素類化合物，如威德內酯及其去甲基衍生物）為主要的活性成分。這些成分可能透過抑制體內多種發炎途徑來發揮作用。\n\n具體而言，研究顯示旱蓮草能抑制環氧合酶-2（COX-2）及誘導型一氧化氮合酶（iNOS）的活性，進而減少前列腺素和一氧化氮等促發炎介質的生成。此外，它亦能調控細胞因子，例如抑制腫瘤壞死因子-α（TNF-α）和介白素-1β（IL-1β）等發炎因子的釋放，並可能干預核因子-κB（NF-κB）等關鍵信號通路的活化，從根本上阻斷發炎反應的級聯放大。\n\n同時，旱蓮草所含的抗菌、抗病毒成分能抑制病原微生物的生長繁殖，從而減輕微生物感染引起的發炎反應。其對免疫系統的調節作用，提升宿主抵抗力，亦有助於更有效地清除病原體，加速組織修復，降低發炎的程度與持續時間。"
+        },
+        {
+          "tag": "降血糖",
+          "analysis_zh": "旱蓮草在現代藥理研究中，顯示其降血糖作用機制多元。其所含之旱蓮草苷、旱蓮草酚等活性成分，被證實能促進胰島素分泌，並可增進周邊組織對胰島素的利用效率。此外，旱蓮草對胰島β細胞具保護作用，能減少高血糖或氧化壓力對其造成的損害，維護其正常功能。此綜合效應有助於維持血糖穩定。"
+        },
+        {
+          "tag": "提升免疫力",
+          "analysis_zh": "旱蓮草富含多醣、黃酮、多酚等活性成分。其多醣體能有效活化巨噬細胞、淋巴細胞等免疫細胞，促進細胞因子分泌，從而增強非特異性及特異性免疫反應。黃酮與多酚則展現強效抗氧化能力，清除自由基，減少免疫細胞的氧化損傷，維護其正常功能。這些成分協同作用，共同提升宿主免疫防禦，增強對病原體抵抗力，促進整體免疫平衡。"
+        },
+        {
+          "tag": "預防心血管疾病",
+          "analysis_zh": "旱蓮草於預防心血管疾病之功效，現代藥理分析指出其多面向作用。其富含生物活性化合物，如黃酮類與酚酸，能有效清除自由基，保護血管內皮細胞免受氧化損傷，延緩粥樣硬化進程。旱蓮草的某些成分具抗發炎特性，可抑制細胞因子釋放，減輕血管慢性炎症，減少斑塊形成。此外，研究顯示旱蓮草有助於調節血脂，降低低密度脂蛋白膽固醇，提升高密度脂蛋白膽固醇，改善血脂譜。最後，其部分活性成分展現溫和的抗凝血作用，能抑制血小板聚集，有助於預防血栓形成，全面降低心血管事件風險。"
+        }
+      ],
+      "clinical_use_note": "旱蓮草是中藥，別名:墨旱蓮,金陵草,蓮子草, 主治功效：滋補肝腎，涼血止血。用於牙齒鬆動，鬚髮早白，眩暈耳鳴，腰膝酸軟，陰虛血熱、吐血、衄血、尿血，血痢，崩漏下血，外傷出血。治腎虛齒疼：旱蓮草，焙，為末，搽齒齦上。",
+      "dosage": "{\r\n  \"一般建議\": \"6-12克\",\r\n  \"食療用量範圍\": \"6-15克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮即可；脾胃虛寒者慎用\"\r\n}",
+      "safety_flags": [
+        "pregnancy_review",
+        "bleeding_review"
+      ],
+      "cloudtcm_url": "https://cloudtcm.com/herb/1320",
+      "safety_source_url": "https://cloudtcm.com/herb/1320",
+      "aliases_zh": [
+        "旱蓮草",
+        "金陵草",
+        "蓮子草"
       ]
     },
     {
@@ -77374,7 +77510,7 @@
         ],
         "part_used_zh": "烏賊內殼",
         "part_used_en": "cuttlefish endoconcha / internal shell",
-        "source_note_zh": "課件摘要列溫、腎胃；AD 完整頁列鹹澀微溫、腎肝胃（脾可選）。主顯示採 AD 完整頁並保留課件高層定位。"
+        "source_note_zh": "課件摘要列溫、腎胃；AD 完整頁列鹹澀微溫、腎肝胃（脾可選）。主顯示採 AD 完整頁並保留課件高層定位。　（併記：已退役 herb.wu_zei_gu 的 CloudTCM 匯入資料另列歸經為脾經、腎經——缺肝經/胃經，與本欄採用的 AD+課件版本不同，未採用但保留於此供核對，2026-08-14。）"
       },
       "property_channel_source_note_zh": "歸經只列腎、肝、胃；AD 的脾經括號資料不放主欄，避免再次把來源差異混進性味。",
       "functions_zh": [
@@ -77464,7 +77600,11 @@
         "ad_dose_g": "6–12g；研粉 2–6g",
         "source_note": "海螵蛸這張的精準劑量主要取 AD 與 CloudTCM；課件目前只有摘要定位。"
       },
-      "related_formulas": [],
+      "related_formulas": [
+        "formula.mu_li_san",
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.si_shen_wan"
+      ],
       "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：收澀止血 + 固精止帶 + 制酸止痛；不是只記外用止血。",
       "exam_pearl": "海螵蛸 = 烏賊骨、胃酸/潰瘍 + 遺精帶下 + 出血。看到 acid regurgitation 或 chronic ulcer bleeding 時要想到它。",
       "clinical_use_note": "海螵蛸是收澀藥中很有辨識度的一味：既能收斂止血，又能制酸止痛。Board 題常把『胃酸吞酸』和『遺精帶下』分開出，兩者都要記。安全上 CloudTCM 對孕期、血熱、血虛/貧血、腎功能與感冒發熱列得較嚴，AD 則強調虛熱與久用便秘；兩源差異保留。",
@@ -77573,7 +77713,17 @@
           "https://cloudtcm.com/herb/1058"
         ]
       },
-      "card_grade": "template"
+      "card_grade": "template",
+      "modern_functions_detail_zh": [
+        {
+          "tag": "抗發炎",
+          "analysis_zh": "海螵蛸在抗發炎領域展現顯著功效。現代藥理研究指出，其富含單萜類、鞣酸、黃酮等多元生物活性物質，這些成分能透過多重途徑發揮作用。實驗證實，能有效抑制促炎細胞因子（如TNF-α、IL-6）的產生與釋放，進而阻斷發炎反應級聯，減輕局部及全身炎症。此機制有助緩解發炎症狀，並促進組織修復。"
+        },
+        {
+          "tag": "防癌抗腫瘤",
+          "analysis_zh": "海螵蛸富含海螵蛸酸、海螵蛸醇等單萜類活性成分。現代藥理分析指出，其可顯著抑制腫瘤細胞增殖、轉移及侵襲。機制涉及誘導癌細胞凋亡，有效調控細胞增殖週期與相關信號通路。此外，海螵蛸亦能提升機體抗腫瘤免疫反應。體外與動物實驗證實，海螵蛸對肺癌、肝癌、大腸癌等多種人類腫瘤細胞株展現確切抑制作用。"
+        }
+      ]
     },
     {
       "review_status": "draft",

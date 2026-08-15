@@ -679,3 +679,78 @@ validator 強制:`reference_range` 必須有自己的 `source`;**文字裡有數
 也不是「正常範圍」—— 那時是**再加一個軸**,不是把現有兩個合併。
 合併的代價是守門失效,那是不可逆的:錯的閾值一旦寫進病歷判讀畫面,
 後面看到的人會把它當標準。
+
+## D21 — 四組中藥重複匯入卡退役(deprecated,非刪除),合併進正典藥典名 · LOCKED(2026-08-14,SOL 鑑定 + Ting 裁定「四組照建議 沙參方案A」)
+
+**機制沿用 D16**(pattern 線的 dedup migration):additive-only 合併進正典
+記錄,退役卡 `review_status` 改 `"deprecated"` 並加一句 `deprecated_note_zh`
+說明,整筆留在 `herb_canon_shortlist.json`(D6 不硬刪),全庫引用改指向正典
+id,退役 id 本身不變(D1)。herb 線資料形狀與 pattern 線不同(無
+`differential_patterns` 互斥欄、無現成 `deprecated_note_zh` 欄位),故新增
+該欄位進 `docs/HERB_CARD_TEMPLATE.md` §3.6,`validate-herb-standard.js`
+沒有 pattern 線那種 APPROVED 欄位白名單,不需要額外註冊。
+
+**四組**(SOL 鑑定重複,Ting 裁定逐組執行):
+
+| 退役 id(留檔) | 正典 id(藥典名) | 共同藥材 |
+|---|---|---|
+| `herb.qian_cao_gen` | `herb.qian_cao` | 茜草 Rubiae Radix et Rhizoma |
+| `herb.han_lian_cao` | `herb.mo_han_lian` | 墨旱蓮 Ecliptae Herba |
+| `herb.wu_zei_gu` | `herb.hai_piao_xiao` | 海螵蛸 Sepiae Endoconcha |
+| `herb.sha_shen`（方案 A） | `herb.bei_sha_shen` | 北沙參 Glehnia littoralis |
+
+- **茜草組**:正典本已較完整,只把「茜草根」併入 `aliases_zh`、
+  「順天堂藥材」併入 `study_tags`;退役卡的裸網域 source_urls 未帶新事實,
+  未遷移。
+- **墨旱蓮組(反向案例)**:退役卡 `herb.han_lian_cao` 內容反而比正典
+  `herb.mo_han_lian` 完整(functions_zh/modern_functions_zh+_en/
+  modern_functions_detail_zh/clinical_use_note/dosage/safety_flags/
+  related_formulas/field_sources 皆缺或較短)。**archive-before-replace**:
+  正典原本較短的 functions_zh/cautions_zh/_en/source_urls/exact_source_url
+  先寫進正典自己的 `import_artifacts`,再用退役卡的較完整版本取代;「旱蓮草」
+  「金陵草」「蓮子草」併入 `aliases_zh`。這是本次唯一一組「新 id 是正典、
+  舊 id 內容較完整」的反向案例,merge 方向不是機械地「保留正典所有欄位」,
+  而是逐欄比較長短。
+- **海螵蛸組**:退役卡獨有的 `related_formulas`(3 個,正典原欄位是空的)
+  與 `modern_functions_detail_zh`(2 則完整分析,正典原無此欄)遷入;
+  歸經兩源不合(退役卡:脾經、腎經;正典採用 AD+課件版:腎經、肝經、胃經)
+  依「兩源不合就並記」加註在正典 `tcm_properties.source_note_zh`,未覆蓋
+  主欄位。「烏賊骨」「墨魚骨」正典 aliases_zh 已有,確認無需再加。
+- **沙參組(方案 A,特別條款)**:retire 前逐欄檢查 `herb.sha_shen` 有無
+  南沙參(Adenophora)專屬內容 —— **檢查結果:沒有**,功效/主治/禁忌皆為
+  `herb.bei_sha_shen` 既有內容子集,故未另立南沙參封存記錄。
+  `name_en: "Glehniae / Adenophorae Radix"`(北/南沙參拉丁學名混寫)
+  依裁定明確排除,未遷入,`herb.bei_sha_shen` 維持自身 `"Glehnia Root"`。
+  「沙參」併入 `aliases_zh`。`related_formulas` 僅遷移
+  `formula.sha_shen_mai_men_dong_tang`(其 composition 確實列
+  `herb_id: "herb.sha_shen"`,可查證);退役卡另列的
+  `formula.bai_he_gu_jin_tang`、`formula.mai_men_dong_tang` 經核對兩方劑
+  composition 皆未列沙參,判定未查證,未遷移。
+
+**全庫引用改指向**(退役 id → 正典 id,共 9 處):
+
+| 檔案 | 處數 | 明細 |
+|---|---|---|
+| `data/herbs/formulas.json`(composition `herb_id`) | 5 | `formula.shi_hui_san`、`formula.gu_chong_tang`(茜草根→茜草 ×2)；`formula.er_zhi_wan`(旱蓮草→墨旱蓮)；`formula.yi_guan_jian`、`formula.sha_shen_mai_men_dong_tang`(沙參→北沙參 ×2) |
+| `data/herbs/herb_pairs.json`(`pairs[].herbs[]`) | 2 | `pair.han_lian_cao__nu_zhen_zi`、`pair.mai_men_dong__sha_shen` |
+| `data/imports/cloudtcm/herb_url_map.json`(`entries[].herb_id`) | 2 | 旱蓮草→墨旱蓮(cloudtcm_id 1320)、烏賊骨→海螵蛸(cloudtcm_id 1058) |
+
+`herb.wu_zei_gu` 在 `formulas.json`/`herb_pairs.json` 內原本零引用(全庫掃描
+確認)。退役卡的 `id` 欄位本身不改(僅存在於它自己的記錄裡,D1)。
+
+**未動的**:`data/knowledge/comparisons.json`、`data/config/relation_registry.json`
+全庫掃描零命中,未觸碰。`herb.nan_sha_shen`(南沙參)在 `herb_pairs.json`
+一筆藥對裡被引用,但**從未存在**於 `herb_canon_shortlist.json`——這是
+本次審查發現的既有缺口,與本決定的四組合併無關,不在此次範圍內處理,
+記錄於此供之後建卡。
+
+**驗證(2026-08-14)**:`validate-herb-standard.js` 358 筆 PASS、0 structural
+defect(合併前後記錄數不變,D6 不硬刪);`validate-formula-standard.js`
+PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶心土」,
+與本次四組合併無關,合併前後不變);`check-validation-ratchet.js` PASS 無
+新增缺陷;`validate-content-junk.js` 既有 baseline 警告不變。全庫退役 id
+殘留掃描:四個退役 id 除自己記錄的 `id` 欄位外,`data/**` 零殘留。
+
+**只有在這種情況下重新考慮**:未來查到 `herb.sha_shen` 或其他退役記錄其實
+帶有南沙參專屬臨床內容 —— 那時是取消 deprecated、另立南沙參正典卡,不是
+回頭改寫已合併的內容。
