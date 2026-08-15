@@ -43,6 +43,7 @@ node scripts/validate-formula-standard.js
 node scripts/validate-acupoint-standard.js
 node scripts/validate-content-junk.js
 node scripts/validate-metric-interpretation.js   # 沒來源就不准寫閾值
+node scripts/validate-herb-dosage-shape.js       # 沒查證的劑量不准自己跑到畫面上
 node scripts/validate-outcome-panel-render.js    # 那個判讀有沒有真的到畫面上
 node scripts/validate-exposure-safety-render.js  # 黑框警告有沒有帶到病歷
 node scripts/validate-care-draft-render.js       # 產生草稿按鈕接得上、取消真的不下載

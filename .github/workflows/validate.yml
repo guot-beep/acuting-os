@@ -242,6 +242,15 @@ jobs:
       - name: herb card standard
         run: node scripts/validate-herb-standard.js
 
+      # 劑量暗欄位守門(docs/TING_DECISION_QUEUE.md C5c)。record.dosage 有 299 張
+      # 有內容卻從不上畫面,是刻意的:它混了食療用量(80 張食療上限高於藥用上限,
+      # 大黃 9g vs 30g),形狀也有四種。負控先跑 —— 守不住的測試不准當 gate。
+      - name: herb dosage shape (negative controls first)
+        run: node scripts/validate-herb-dosage-shape.js --self-test
+
+      - name: herb dosage shape
+        run: node scripts/validate-herb-dosage-shape.js
+
       - name: formula card standard
         run: node scripts/validate-formula-standard.js
 
