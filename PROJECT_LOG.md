@@ -1,3 +1,19 @@
+# 2026-08-14 夜 — C2b 真機切換執行(結案,含一項誠實缺口)
+
+照 docs/C2B_EXECUTION_PLAN_2026-08-15.md 全程執行:
+
+- **Phase 0**:六項前置當日重驗全綠(16/16 validators、pointer 31/31、restore 65/65、GO 錨點後 clinical 路徑零 commit、工作樹安靜)。
+- **Phase R-A**(虛構資料 CLI 全週期):`rehearse-c2b.js` 全綠——tamper 三式、注入失敗原子性、rollback 白名單精確、v1 位元組全週期不變、白名單外零寫入。
+- **Phase R-B**(dev origin 瀏覽器實彈):node 產 staging(正典 kv 管線)→ subtle 雜湊比對後 setItem → reload 後 activeIsV2、Patient Workspace「2 patients」、真 UI SOAP 寫進 staging(revision 0→1)且 **v1 鍵位元組不變**、隔離成立、export 出 v2 envelope、rollback 演習與災難還原(R10-D6 路徑)全過。
+- **Phase P**(真機,Edge file://):真實資料 **2 cases / 0 SOAP / 2 patient codes / 0 conflicts**(「33-case store」為計畫文件舊假設,實測歷史備份一致為 1-2 案例;8/12 備份中 1 筆 SOAP 經 Ting 確認為測試殘留)。副本過 preflight + rehearse 全綠後,以三重自檢 console snippet(live raw 漂移雜湊 + staging 完整性雜湊,全過才寫入)套用,Ting 回報 ✅ APPLIED + F5。
+- **⚠️ 誠實缺口**:使用者級煙測(病人列表/病例開啟/切換後首份 v2 匯出)**未執行**——Ting 裁定直接結案。風險緩衝:資料僅 2 案例、四份 pre-c2b 備份(Downloads 原檔、Documents/AcuTing-backups、工作目錄×2)、一貼即回 v1 的 rollback console 檔已交付。**下次打開 app 即自然煙測**;任何異常先回滾再查。
+- **Phase A**:Codex 額度未回(8/18),照 AGENTS.md 慣例改派隔離 Opus 一輪收斂 audit(data loss/isolation/migration/export-import/regression only),判決落地後補記於此。
+- 附帶:排練/煙測期間誤落 Downloads 的兩個測試匯出檔(RH-A/RH-B envelope、AT-GATE3-SMOKE)已確認內容後刪除。
+
+**C2b 狀態:切換已執行,pointer=v2。9/5 HARD GATES 的 Patient 實體項自此在真機生效。**
+
+---
+
 # 2026-08-14 終收 — 中藥線完整關閉:四欄全零、六 hold 解鎖、四組雙卡退役
 
 **SOL 第二輪查源(6 張 hold 逐句 + 佛手整卡 + 2 小修)執行落地 `f61502d1`:**
