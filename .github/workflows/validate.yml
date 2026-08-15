@@ -251,6 +251,15 @@ jobs:
       - name: herb dosage shape
         run: node scripts/validate-herb-dosage-shape.js
 
+      # 處方的證據等級有沒有真的到畫面上(模板 §3 / 條件卡 C14)。
+      # 20 筆以下的穴位清單是一排裸標籤,不印等級的話「一個試驗的固定方案」
+      # 與「標準處方」在畫面上一模一樣。負控先跑。
+      - name: protocol evidence render (negative controls first)
+        run: node scripts/validate-protocol-evidence-render.js --self-test
+
+      - name: protocol evidence render
+        run: node scripts/validate-protocol-evidence-render.js
+
       - name: formula card standard
         run: node scripts/validate-formula-standard.js
 

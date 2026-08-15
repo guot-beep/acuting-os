@@ -22743,7 +22743,16 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "神門",
+          "code": "HT7"
+        },
+        {
+          "name_zh": "百會",
+          "code": "GV20"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -22959,7 +22968,133 @@
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
         }
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "只收錄 2025 年一項直接納入 GAD 患者的 RCT 固定方案 HT7＋GV20；這不是由系統性回顧的高頻穴位反推，也不能稱為通用處方。",
+        "point_rationale_en": "Only the fixed HT7 + GV20 regimen from one 2025 RCT directly enrolling patients with GAD is retained. It is a trial regimen, not a general prescription inferred from frequency tables.",
+        "evidence_note_zh": "2026-08-14 直接檢索 PubMed 與 NICE；檢索詞包含「generalized anxiety disorder acupuncture systematic review」「HT7 GV20 GAD randomized」「NICE CG113 GAD」。2025 systematic review 納入 41 RCT / 3,209 人：acupuncture alone vs medication 的 HAMA MD -1.79、acupuncture+medication vs medication MD -2.26、vs sham MD -3.46（3 studies），但 HAMA 主要結果為 low/very-low certainty。直接 RCT 為 HT7+GV20 vs breath-awareness meditation，HAMA 顯著較低；研究未報告可核對的 GAD-specific HAMA MCID，因此不可把量表下降寫成診斷緩解、功能恢復或可停藥。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "manual",
+          "frequency": "每日 1 次",
+          "session_duration": "20 分鐘",
+          "treatment_course": "10 天，共 10 次",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Lai J, Wang Y, Yao X, et al. Efficacy of acupuncture for generalized anxiety disorder: a systematic review. Ann Gen Psychiatry. 2025;24(1):73.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41316337/",
+            "pmid_or_doi": "PMID 41316337; DOI 10.1186/s12991-025-00614-5",
+            "covers": "成人 GAD；41 RCT、3,209 人；包含 acupuncture monotherapy、add-on、medication 與 sham comparisons。",
+            "modality": "mixed",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "HAMA 為主要結局，另有 SAS、CGI-EI；多數為症狀量表。",
+            "finding_zh": "相對 medication 或 sham 的 HAMA 分數有統計改善，但 RoB 多為 some concerns，HAMA 的 GRADE 為 low/very low；不能據此建立標準處方或 remission claim。",
+            "certainty": "very_low"
+          },
+          {
+            "source_id": "S2",
+            "type": "rct",
+            "citation": "Devi GD, Mooventhan A, Nivethitha L, et al. Effect of Acupuncture at HT-7 (Shenmen) and GV-20 (Baihui) on Anxiety and Cardiovascular Functions in Generalized Anxiety Disorder: A Randomized Controlled Trial. Int J Psychiatry Med. 2025.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41101756/",
+            "pmid_or_doi": "PMID 41101756; DOI 10.1177/00912174251391031",
+            "covers": "60 位 20–55 歲已診斷 GAD 患者。",
+            "modality": "acupuncture",
+            "comparator": "active_control(breath-awareness meditation)",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "HAMA；另測 BP 與 pulse rate。",
+            "finding_zh": "HT7+GV20 每日 20 分鐘、10 天，相對 breath-awareness meditation 的 HAMA 改善較大；BP/pulse 無顯著組間差異。未報告 MCID 或診斷緩解。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "guideline",
+            "citation": "NICE. Generalised anxiety disorder and panic disorder in adults: management. Clinical guideline CG113.",
+            "url": "https://www.nice.org.uk/guidance/cg113/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "成人 GAD 與 panic disorder 的診斷、stepped care、心理與藥物治療、風險轉介。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；臨床管理指引。",
+            "finding_zh": "GAD 高功能損害或高 self-harm risk 需 specialist/crisis-level care；完整評估需考慮共病、物質使用與醫療疾病。針灸不是 CG113 的建立治療。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S4",
+            "type": "guideline",
+            "citation": "Clinical Practice Guidelines for Assessment and Management of Anxiety and Panic Disorders in Emergency Setting. Indian J Psychiatry. 2023.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10096212/",
+            "pmid_or_doi": null,
+            "covers": "急診 anxiety/panic presentations 與醫療鑑別。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；急診鑑別與評估。",
+            "finding_zh": "焦慮／恐慌樣表現可由 acute MI、arrhythmia、hyperthyroidism、pheochromocytoma、hypoglycemia 等造成；急診應先排除急性身體疾病。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": [
+          {
+            "code": "HT7",
+            "role_zh": "一項 GAD RCT 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2"
+            ]
+          },
+          {
+            "code": "GV20",
+            "role_zh": "一項 GAD RCT 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "cond.depression",
@@ -23600,7 +23735,133 @@
         "Attack with unilateral weakness, slurred speech, or double vision → neurological emergency, not panic (emergency)",
         "Palpitations persisting apart from attacks, with heat intolerance and weight loss → rule out hyperthyroidism",
         "Suicide risk of comorbid depression → screen actively"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "不建立穴位。2007 systematic review 找不到 panic disorder 專屬 acupuncture trial；2025 只有把 panic disorder 與 social anxiety/agoraphobia/GAD 混合納入的 electroacupuncture trial protocol，尚不能形成 panic-specific prescription。",
+        "point_rationale_en": "No point prescription is created. A systematic review found no panic-disorder-specific acupuncture trials, and a 2025 electroacupuncture protocol mixes panic disorder with several other anxiety diagnoses.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed、PMC、NICE；檢索詞含「panic disorder acupuncture systematic review」「panic disorder electroacupuncture PC6 TF4」「panic attack emergency differential」。2007 review 明確報告未找到 panic disorder-specific acupuncture studies。2025 trial protocol 將 panic disorder 與 social anxiety disorder、agoraphobia、GAD 混合，PC6 body electroacupuncture 與 TF4 auricular Shenmen 為不同介入，主要 HAMA、次要包含 PDSS；尚無可用結果。故 points 留空。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "mixed",
+          "frequency": "研究 protocol：每週 2 次",
+          "session_duration": null,
+          "treatment_course": "研究 protocol：8 週，共 16 次",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Pilkington K, Kirkwood G, Rampes H, Cummings M, Richardson J. Acupuncture for anxiety and anxiety disorders—a systematic literature review. Acupunct Med. 2007;25(1-2):1-10.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17641561/",
+            "pmid_or_doi": "PMID 17641561; DOI 10.1136/aim.25.1-2.1",
+            "covers": "焦慮症與焦慮症狀文獻；作者明確分列 panic disorder。",
+            "modality": "mixed",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "各研究以主觀焦慮量表為主。",
+            "finding_zh": "未找到 panic disorder、phobias 或 OCD 的 acupuncture-specific studies；GAD 資料亦不足作 firm conclusion。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "trial_protocol",
+            "citation": "Jung IC, Kang DH, Choi S, et al. Efficacy and Safety of Electroacupuncture Through Nerve Stimulation in Patients With Anxiety Disorders: Protocol for a Randomized, Assessor-Blind, Three-Arm, Parallel-Group Clinical Trial. JMIR Res Protoc. 2025;14:e68166.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40690751/",
+            "pmid_or_doi": "PMID 40690751; DOI 10.2196/68166",
+            "covers": "social anxiety disorder、panic disorder、agoraphobia、GAD 混合樣本；每組20人。",
+            "modality": "mixed",
+            "comparator": "usual_care",
+            "supports": [
+              "specific_points",
+              "treatment_parameters",
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "Primary HAMA；secondary 包含 PDSS、BAI、BDI-II、PHQ-15、QoL 等；protocol 尚無結果。",
+            "finding_zh": "PC6 median-nerve electroacupuncture arm、TF4 auricular Shenmen vagus-nerve stimulation arm、usual-care control；每週2次、8週、16次。因診斷混合且尚無結果，不可建立 panic-specific prescription。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "guideline",
+            "citation": "NICE. Generalised anxiety disorder and panic disorder in adults: management. Clinical guideline CG113.",
+            "url": "https://www.nice.org.uk/guidance/cg113/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "成人 panic disorder；包含 A&E presentation、CBT、藥物、自助與 specialist referral。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床管理指引。",
+            "finding_zh": "A&E panic attack 應先做必要最低限度調查排除 acute physical problems；中重度 panic 的 established care 包括 CBT 或合適 antidepressant。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S4",
+            "type": "guideline",
+            "citation": "Clinical Practice Guidelines for Assessment and Management of Anxiety and Panic Disorders in Emergency Setting. Indian J Psychiatry. 2023.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10096212/",
+            "pmid_or_doi": null,
+            "covers": "急診 anxiety/panic 的醫療 mimic 與基本評估。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "生命徵象、心肺與代謝／內分泌鑑別。",
+            "finding_zh": "列出 acute MI、arrhythmia、hyperthyroidism、pheochromocytoma、hypoglycemia 等 mimics，並強調 panic-like presentation 要先排除 acute physical emergencies。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S5",
+            "type": "guideline",
+            "citation": "Creager MA, Barnes GD, Giri J, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults. Circulation. 2026;153(12):e977-e1051.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41712677/",
+            "pmid_or_doi": "PMID 41712677; DOI 10.1161/CIR.0000000000001415",
+            "covers": "成人 acute pulmonary embolism 的 evidence-based evaluation、risk assessment 與 management。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；PE 診斷與急症管理。",
+            "finding_zh": "成人疑似 acute PE 需按 evidence-based diagnostic/risk pathway 評估；此來源僅用來防止將可疑 PE 誤標為 panic。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": []
+      }
     },
     {
       "id": "cond.ptsd",
@@ -23641,7 +23902,60 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        },
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        },
+        {
+          "name_zh": "神門",
+          "code": "HT7"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "印堂",
+          "code": "EX-HN3"
+        },
+        {
+          "name_zh": "風池",
+          "code": "GB20"
+        },
+        {
+          "name_zh": "厥陰俞",
+          "code": "BL14"
+        },
+        {
+          "name_zh": "心俞",
+          "code": "BL15"
+        },
+        {
+          "name_zh": "肝俞",
+          "code": "BL18"
+        },
+        {
+          "name_zh": "脾俞",
+          "code": "BL20"
+        },
+        {
+          "name_zh": "胃俞",
+          "code": "BL21"
+        },
+        {
+          "name_zh": "腎俞",
+          "code": "BL23"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -23830,7 +24144,233 @@
       },
       "sources": [
         "https://medlineplus.gov/posttraumaticstressdisorder.html"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "2024 combat-veteran sham-controlled RCT 沿用既定 PTSD protocol：前後體位交替使用固定標準穴；每次另可依研究 TCM pattern 加最多3個 secondary points。此卡只收固定 standard points，不把研究者可選加減穴擴充成通用處方。",
+        "point_rationale_en": "The 2024 sham-controlled combat-PTSD trial used an alternating fixed front/back standard regimen, with up to three optional pattern-based points. Only the fixed standard points are retained here.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed/PMC、VA National Center for PTSD；檢索詞含「combat PTSD acupuncture randomized sham」「PTSD acupuncture protocol points」「VA DoD PTSD acupuncture」。2024 RCT 93 人，verum vs minimal-needling sham，ITT 的 between-group CAPS-5 mean difference 7.1 分、d=0.63、p=.005。另有 veterans psychometric analysis 顯示 within-person CAPS-5 reliable change 約 12–13 分；兩者是不同統計概念，不能直接把 7.1 分組間差解讀為個人達 clinically significant remission。VA/DoD CPG 目前仍 insufficient evidence to recommend acupuncture。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "mixed",
+          "frequency": "每週 2 次",
+          "session_duration": "每次約 1 小時；needle retention 30 分鐘",
+          "treatment_course": "最多 24 次；允許在 15 週內完成",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "U.S. Department of Veterans Affairs, National Center for PTSD. Complementary and Integrative Health (CIH) for PTSD; summarizes the 2023 VA/DoD PTSD Clinical Practice Guideline.",
+            "url": "https://www.ptsd.va.gov/professional/treat/txessentials/complementary_alternative_for_ptsd.asp",
+            "pmid_or_doi": null,
+            "covers": "PTSD；VA/DoD 2023 CPG 對 complementary/integrative health 的官方整理。",
+            "modality": "mixed",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；guideline evidence synthesis。",
+            "finding_zh": "VA/DoD 2023 CPG 對 acupuncture 為 insufficient evidence to recommend；CIH 不應作 PTSD first-line treatment。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "rct",
+            "citation": "Hollifield M, Hsiao AF, Smith T, et al. Acupuncture for Combat-Related Posttraumatic Stress Disorder: A Randomized Clinical Trial. JAMA Psychiatry. 2024;81(6):545-554.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38381417/",
+            "pmid_or_doi": "PMID 38381417; DOI 10.1001/jamapsychiatry.2023.5651",
+            "covers": "93 位 18–55 歲 treatment-seeking combat veterans with PTSD；單一 VA outpatient site。",
+            "modality": "mixed",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters",
+              "caution"
+            ],
+            "primary_outcome_zh": "Primary CAPS-5（clinician-administered）；secondary fear-potentiated startle extinction。",
+            "finding_zh": "verum 相對 minimal-needling sham 的 ITT between-group CAPS-5 difference 7.1 分（d=0.63,p=.005）；每週2次，最多24次/15週。Standard needling 後另以 2/100 Hz mixed-frequency electrical stimulation 連接兩點對。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "trial_protocol",
+            "citation": "Hollifield M, et al. Acupuncture for combat post-traumatic stress disorder: trial development and methodological approach for a randomized controlled clinical trial. Trials. 2021.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8419889/",
+            "pmid_or_doi": "PMCID PMC8419889",
+            "covers": "與後續 combat-PTSD RCT 對應的 intervention development / protocol；提供固定穴與可選 secondary points。",
+            "modality": "mixed",
+            "comparator": "sham",
+            "supports": [
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "Protocol；未單獨提供 efficacy result。",
+            "finding_zh": "固定 front points：LR3, PC6, HT7, ST36, SP6, Yintang；固定 back points：GB20, BL14, BL15, BL18, BL20, BL21, BL23；另最多3個 secondary points 依研究 TCM pattern 加減。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S4",
+            "type": "rct",
+            "citation": "Marx BP, Lee DJ, Norman SB, et al. Reliable and clinically significant change in the Clinician-Administered PTSD Scale for DSM-5 and PTSD Checklist for DSM-5 among male veterans. Psychol Assess. 2022;34(2):197-203.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34941354/",
+            "pmid_or_doi": "PMID 34941354; DOI 10.1037/pas0001098",
+            "covers": "三個 male-veteran samples；其中兩個為 PTSD RCT dataset。此來源只用於 CAPS-5 meaningful-change interpretation，不是 acupuncture efficacy evidence。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope"
+            ],
+            "primary_outcome_zh": "CAPS-5 / PCL-5 reliable change 與 clinically significant change。",
+            "finding_zh": "兩個 RCT samples 的 within-person CAPS-5 reliable change 約 ≥13 與 ≥12 分；CAPS-5 ≤8 較可能屬 non-PTSD population。不能把 acupuncture RCT 的 7.1 分『組間平均差』直接當成同一概念。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": [
+          {
+            "code": "LR3",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "PC6",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "HT7",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "ST36",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "SP6",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "EX-HN3",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "GB20",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "BL14",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "BL15",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "BL18",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "BL20",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "BL21",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          },
+          {
+            "code": "BL23",
+            "role_zh": "combat-PTSD RCT／trial protocol 的標準固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "cond.adhd",
@@ -24046,7 +24586,132 @@
       },
       "sources": [
         "https://medlineplus.gov/attentiondeficithyperactivitydisorder.html"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "不建立 needle-acupuncture 穴位。2025 systematic review 的兒少 ADHD 證據整體 very low–low 且作者明言目前仍過早推薦；可核對的近年點位研究中另有 TEAS 或耳穴壓豆，介入不同，不能拿來填體針處方。",
+        "point_rationale_en": "No needle-acupuncture point prescription is created. The 2025 pediatric ADHD review judged the evidence very low to low and premature for recommendation; recent point-specific studies also include non-needle TEAS and auricular acupressure, which are separate modalities.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed/PMC、NICE；檢索詞含「ADHD acupuncture systematic review children adolescents」「ADHD sham acupuncture」「TEAS ADHD randomized」「auricular acupressure ADHD」。2025 review 納入25 studies/1,758兒少，methodological quality very low–low、88%無follow-up，且沒有 acupuncture vs placebo 或 behavioral therapy 的合格比較；作者結論為 premature to recommend。另有 TEAS sham RCT 與耳穴 acupressure RCT，但都不是 needle body acupuncture。沒有足以建立成人 ADHD 處方的直接證據。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Zhao FY, Xu Y, Kennedy GA, et al. Is integrating acupuncture into the management of attention-deficit/hyperactivity disorder among children and adolescents now opportune and evidence-based? A systematic review with meta-analysis and trial sequential analysis. Complement Ther Med. 2025;90:103163.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40086639/",
+            "pmid_or_doi": "PMID 40086639; DOI 10.1016/j.ctim.2025.103163",
+            "covers": "children/adolescents with ADHD；25 studies、1,758 participants。",
+            "modality": "mixed",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "Conners parent ratings、continuous performance tests 等；多為症狀／行為量表。",
+            "finding_zh": "有若干 positive comparisons，但 quality very low–low、bias substantial、88%無 follow-up；作者明確寫 premature to recommend acupuncture as alternative or adjunctive ADHD therapy。",
+            "certainty": "very_low"
+          },
+          {
+            "source_id": "S2",
+            "type": "rct",
+            "citation": "Zhuo L, et al. Transcutaneous electrical acupoint stimulation for children with ADHD: randomized sham-controlled trial. Transl Psychiatry. 2022;12:165.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9022403/",
+            "pmid_or_doi": "PMCID PMC9022403",
+            "covers": "6–12 歲兒童 ADHD；TEAS，非 needle acupuncture。",
+            "modality": "unclear",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "CGI-I 及 parent/teacher Conners ratings。",
+            "finding_zh": "TEAS 使用 GV20、bilateral KI3、LR3；每週2次、4週、8次、20分鐘。CGI-I 有組間差異，但 parent/teacher Conners 多項無顯著組間差；因為是 non-needle TEAS，不匯入本卡 body-needle points。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "rct",
+            "citation": "Mahdavi F, Asgarian FS, Aghajani M. The Effect of Ear Acupressure on Behavioral Problems in Children with Attention-Deficit/Hyperactivity Disorder: A Randomized Clinical Trial. Med Acupunct. 2024;36(2):93-101.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38659722/",
+            "pmid_or_doi": "PMID 38659722; DOI 10.1089/acu.2023.0028",
+            "covers": "70 位 ADHD 兒童；ear acupressure vs neutral-point massage。",
+            "modality": "acupressure",
+            "comparator": "active_control(neutral-point ear massage)",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "Child Behavior Checklist；自/照顧者行為量表。",
+            "finding_zh": "耳穴壓豆／按壓組行為問題有改善，作者只建議作 usual treatment 的 complementary treatment 並要求進一步研究；不是 needle acupuncture。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S4",
+            "type": "guideline",
+            "citation": "NICE. Attention deficit hyperactivity disorder: diagnosis and management. NICE guideline NG87.",
+            "url": "https://www.nice.org.uk/guidance/ng87/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "children、young people、adults with ADHD；診斷、轉介、治療計畫、心理／藥物管理。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；clinical guideline。",
+            "finding_zh": "ADHD 應由 trained specialist 診斷；兒少與成人路徑分開；treatment plan 應納入 person/family preferences，並依 guideline 提供 environmental、psychological、medication care。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S5",
+            "type": "rct",
+            "citation": "Efficacy of adding acupuncture to Methylphenidate in children and adolescents with ADHD: A randomized clinical trial. Eur J Integr Med. 2018;22:62-68.",
+            "url": "https://www.sciencedirect.com/science/article/pii/S1876382018305225",
+            "pmid_or_doi": "DOI 10.1016/j.eujim.2018.08.003",
+            "covers": "59 位 children/adolescents with ADHD；all received methylphenidate；acupuncture vs sham add-on。",
+            "modality": "unclear",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "scope",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "parent ADHD rating scale；continuous performance attention outcome。",
+            "finding_zh": "4週、每週3次 add-on trial；parent-rated symptoms較有利，但 objective attention measure未顯示同等明確組間效果。可核對摘要未提供足以逐穴落庫的完整 needle regimen，因此 points 留空。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": []
+      }
     },
     {
       "id": "cond.stress_burnout",
@@ -24153,7 +24818,95 @@
         "Symptoms spreading to all life domains with lost function → formal depression evaluation; the 'burnout' label must not delay it",
         "Chest pain, palpitations, syncope → cardiac exclusion before attributing to stress",
         "Alcohol or drugs for sleep and relief → addiction screening"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "not_supported",
+        "point_rationale_zh": "不建立處方。Burnout 的直接 auriculotherapy evidence 無法在 network meta-analysis 中形成可支持 burnout 的統合結論；單一 RCT 的顯著 burnout reduction 出現在 ear seed acupressure 小 subgroup，而非清楚的 auricular acupuncture efficacy。",
+        "point_rationale_en": "No protocol is created. Direct auriculotherapy evidence could not support a meta-analytic conclusion for burnout, and the positive signal in one randomized trial arose in a small ear-seed acupressure subgroup rather than establishing auricular acupuncture efficacy.",
+        "evidence_note_zh": "2026-08-14 檢索 WHO、PubMed；檢索詞含「burnout acupuncture healthcare workers randomized」「auriculotherapy burnout network meta-analysis」。WHO 明確把 burnout 定義為 occupational phenomenon。2021 open randomized trial 比較 auricular acupuncture、ear-seed acupressure、ear massage：整體 STAI/ProQOL/CAI 未顯示 studied interventions 的清楚效果，burnout reduction 出現在 seed-acupressure subgroup。2022 network meta-analysis 15 studies 對 anxiety/stress 可分析，但 burnout 無法 meta-analyze，作者明言不能對 burnout 宣稱 effectiveness。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "World Health Organization. Burn-out an occupational phenomenon (ICD-11 classification information).",
+            "url": "https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon",
+            "pmid_or_doi": null,
+            "covers": "ICD-11 burn-out definition；官方分類資訊頁。schema 無 official_classification type，為相容現有 enum 暫列 guideline，但此頁不是治療指引。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；分類定義。",
+            "finding_zh": "Burn-out 是 occupational phenomenon，不分類為 medical condition；只適用 occupational context，不應描述其他生活領域的經驗。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "rct",
+            "citation": "Afrasiabi J, McCarty R, Hayakawa J, et al. Effects of Acupuncture and Acupressure on Burnout in Health Care Workers: A Randomized Trial. J Trauma Nurs. 2021;28(6):350-362.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34766929/",
+            "pmid_or_doi": "PMID 34766929; DOI 10.1097/JTN.0000000000000614",
+            "covers": "117 health care workers；auricular acupuncture vs auricular seed acupressure vs ear massage；open parallel-group trial。",
+            "modality": "auricular",
+            "comparator": "active_control(ear massage)",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "Self-reported STAI、Professional Quality of Life (ProQOL)、Caring Ability Inventory。",
+            "finding_zh": "seed acupressure subgroup 有 burnout/secondary traumatic stress reduction；studied interventions overall未對 STAI/ProQOL/CAI 顯示一致顯著作用，不能建立 auricular-acupuncture burnout protocol。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "systematic_review",
+            "citation": "Munhoz OL, Morais BX, Dos Santos WM, et al. Effectiveness of auriculotherapy for anxiety, stress or burnout in health professionals: a network meta-analysis. Rev Lat Am Enfermagem. 2022;30:e3708.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36287403/",
+            "pmid_or_doi": "PMID 36287403; DOI 10.1590/1518-8345.6219.3708",
+            "covers": "health professionals；15 experimental/quasi-experimental auriculotherapy studies。",
+            "modality": "auricular",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "scope"
+            ],
+            "primary_outcome_zh": "Anxiety、stress、burnout；量表依個別研究。",
+            "finding_zh": "可對 anxiety/stress 做統合，但 burnout 無法 meta-analyze，作者明言不能對 burnout 做 effectiveness assertion。常見耳穴 Shen Men、brainstem、kidney、sympathetic、lung、liver 不能因此轉成 burnout/NADA 處方。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": []
+      }
     },
     {
       "id": "cond.chronic_fatigue",
@@ -24193,7 +24946,16 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "關元",
+          "code": "CV4"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -24262,7 +25024,116 @@
         "Treatable causes first: anemia, thyroid disease, diabetes, sleep apnea, depression, medications",
         "New neurological signs (weakness, diplopia, unsteady gait) → neurology evaluation",
         "Severely bedbound → refer for medical and care support; prevent pressure injury and deepening disability"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "只保留 2025 五組 CFS RCT 明確測試的 ST36 與 CV4。該試驗比較 fake acupuncture、單穴、雙穴與 moxibustion；不是 NICE ME/CFS guideline 推薦處方，也不能外推 long-COVID fatigue。",
+        "point_rationale_en": "Only ST36 and CV4, explicitly tested in a 2025 multi-arm CFS RCT, are retained. This is a research regimen, not a NICE ME/CFS recommendation and not evidence for long-COVID fatigue.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed 與 NICE；檢索詞含「chronic fatigue syndrome acupuncture systematic review 2026」「CFS ST36 CV4 randomized」「NICE NG206 post-exertional malaise graded exercise」。2026 systematic review 8 RCT/715：overall fatigue SMD -1.31，但 I²=91.7%，7 studies some concerns、1 high RoB；作者要求 cautious interpretation。2025 direct RCT 175 CFS patients 加35 healthy controls，測 ST36/CV4 單穴／雙穴／fake acupuncture／moxibustion，10次隔日治療；outcomes 為 Qi-deficiency score、CFS score、SF-36 與 HRV。未提供可核對的 fatigue MCID，不能寫 remission。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "manual",
+          "frequency": "隔日 1 次",
+          "session_duration": null,
+          "treatment_course": "共 10 次",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "NICE. Myalgic encephalomyelitis (or encephalopathy)/chronic fatigue syndrome: diagnosis and management. NICE guideline NG206.",
+            "url": "https://www.nice.org.uk/guidance/ng206/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "ME/CFS diagnosis, PEM, investigations, energy management, severe disease and exercise safety。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；clinical guideline。",
+            "finding_zh": "PEM、energy-limit management、排除其他診斷，以及不要使用 fixed-increment graded exercise therapy；severe ME/CFS 對 touch/stimuli需特別謹慎。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "systematic_review",
+            "citation": "Li Y, Liang G, Xiao T, Xu L. Efficacy of acupuncture-based traditional Chinese medicine therapies for chronic fatigue syndrome: a systematic review and meta-analysis. Front Neurol. 2026;17:1860788.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42422219/",
+            "pmid_or_doi": "PMID 42422219; PMCID PMC13341292; DOI 10.3389/fneur.2026.1860788",
+            "covers": "CFS RCTs；8 studies、715 patients；不等同於 long COVID fatigue。",
+            "modality": "mixed",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "overall fatigue、physical fatigue、mental fatigue、response rate、adverse events。",
+            "finding_zh": "overall fatigue SMD -1.31 (95%CI -2.16,-0.47) but I²91.7%；small samples、moderate bias/heterogeneity，authors urge caution。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S3",
+            "type": "rct",
+            "citation": "Li T, Litscher G, Zhou Y, et al. Effects of acupuncture and moxibustion on heart rate variability in chronic fatigue syndrome patients: Regulating the autonomic nervous system in a clinical randomized controlled trial. Complement Ther Med. 2025;92:103184.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40315935/",
+            "pmid_or_doi": "PMID 40315935; DOI 10.1016/j.ctim.2025.103184",
+            "covers": "175 CFS patients randomized to fake acupuncture, ST36, CV4, dual ST36+CV4, or moxibustion；另35 healthy controls。",
+            "modality": "mixed",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "Qi-deficiency Syndrome Score、CFS Score、SF-36、HRV。",
+            "finding_zh": "10 treatments every other day；ST36/CV4 被直接比較，雙穴組效果較單穴組明顯；仍屬單一研究方案。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": [
+          {
+            "code": "ST36",
+            "role_zh": "2025 CFS RCT 的固定試驗穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "CV4",
+            "role_zh": "2025 CFS RCT 的固定試驗穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "cond.restless_legs",
@@ -24302,7 +25173,60 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "腎俞",
+          "code": "BL23"
+        },
+        {
+          "name_zh": "肝俞",
+          "code": "BL18"
+        },
+        {
+          "name_zh": "承筋",
+          "code": "BL56"
+        },
+        {
+          "name_zh": "承山",
+          "code": "BL57"
+        },
+        {
+          "name_zh": "京骨",
+          "code": "BL64"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "梁丘",
+          "code": "ST34"
+        },
+        {
+          "name_zh": "商丘",
+          "code": "SP5"
+        },
+        {
+          "name_zh": "血海",
+          "code": "SP10"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "太谿",
+          "code": "KI3"
+        },
+        {
+          "name_zh": "陽陵泉",
+          "code": "GB34"
+        },
+        {
+          "name_zh": "懸鐘",
+          "code": "GB39"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -24521,7 +25445,210 @@
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
         }
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "adjunct_only",
+        "point_rationale_zh": "2017 direct RLS RCT 比較 acupuncture + gabapentin 300 mg/day vs gabapentin alone，明確列出13個雙側 body points。因設計只能支持 additive effect，整組只能作 research regimen，不能稱 standalone RLS prescription。",
+        "point_rationale_en": "A 2017 direct RLS RCT explicitly used 13 bilateral body points while comparing acupuncture plus gabapentin 300 mg/day with gabapentin alone. The design only supports an additive effect, not a standalone RLS prescription.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed、AASM/J Clin Sleep Med；檢索詞含「restless legs syndrome acupuncture meta-analysis」「RLS acupuncture gabapentin randomized」「AASM RLS ferritin augmentation」。2021 meta-analysis 18 studies，IRLSRS pooled mean change from baseline -9.45，但整體品質 low，作者要求 sham RCT。2017 direct RCT 46人：acupuncture+gabapentin vs gabapentin；VAS、IRLSRS、PSQI time-group interaction favors add-on group。獨立 psychometric 文獻 PMID 24051118 報告 IRLS 約3分為 minimally clinically significant change，但該文章類型不在本任務接受的 source-type enum，且2017摘要未提供可直接比對的 exact between-group IRLS point difference，因此不宣稱達 MCID。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "manual",
+          "frequency": "原文：每週 3 次；同時報告 4 週共 10 次（次數算術不完全一致，照原文保留）",
+          "session_duration": "約 1 小時；needle retention 30 分鐘，約每 10 分鐘再操作",
+          "treatment_course": "4 週，共 10 次",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "scope_conflict_note": {
+          "existing_says": "尚未於本次查證中確認不寧腿症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "source_says": "已找到 2021 systematic review/meta-analysis（PMID 34763496）；其作者同時指出納入研究整體品質低，仍需高品質 sham-controlled RCT 驗證。",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "Winkelman JW, Berkowski JA, DelRosso LM, et al. Treatment of restless legs syndrome and periodic limb movement disorder: an American Academy of Sleep Medicine clinical practice guideline. J Clin Sleep Med. 2025;21(1):137-152.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39324694/",
+            "pmid_or_doi": "PMID 39324694; PMCID PMC11701286; DOI 10.5664/jcsm.11390",
+            "covers": "adults/children with RLS or PLMD；含 special populations（pregnancy、ESRD）與 iron/medication management。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "patient-important RLS outcomes；guideline recommendations。",
+            "finding_zh": "Good-practice statement 要求 iron studies，先處理 alcohol/caffeine、特定藥物與 untreated OSA；多個 dopamine agonists 因 augmentation 被建議 against standard use。Acupuncture 未列入推薦 treatments。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "systematic_review",
+            "citation": "Huang C, et al. Effectiveness of acupuncture in the management of restless leg syndrome: a systematic review and meta-analysis. Ann Palliat Med. 2021;10(10):10495-10505.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34763496/",
+            "pmid_or_doi": "PMID 34763496; DOI 10.21037/apm-21-2309",
+            "covers": "RLS acupuncture studies；18 studies。",
+            "modality": "mixed",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "IRLSRS 等 RLS severity outcomes。",
+            "finding_zh": "IRLSRS mean change from baseline -9.45；作者明確指出 overall quality low，仍需 well-designed sham-acupuncture RCT。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S3",
+            "type": "rct",
+            "citation": "Raissi GR, Forogh B, Ahadi T, et al. Evaluation of Acupuncture in the Treatment of Restless Legs Syndrome: A Randomized Controlled Trial. J Acupunct Meridian Stud. 2017;10(5):346-350.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29078970/",
+            "pmid_or_doi": "PMID 29078970; DOI 10.1016/j.jams.2017.08.004",
+            "covers": "46 位 diagnosed RLS patients；acupuncture + gabapentin 300 mg/day vs gabapentin 300 mg/day alone。",
+            "modality": "acupuncture",
+            "comparator": "active_control(gabapentin 300 mg/day)",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters",
+              "scope"
+            ],
+            "primary_outcome_zh": "VAS、IRLSRS、PSQI；baseline、post-course、8-week follow-up。",
+            "finding_zh": "10-session/4-week add-on regimen produced favorable time-group interactions in VAS/IRLSRS/PSQI. Because both groups received gabapentin, this supports additive benefit only.",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": [
+          {
+            "code": "BL23",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "BL18",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "BL56",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "BL57",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "BL64",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "ST36",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "ST34",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "SP5",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "SP10",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "SP6",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "KI3",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "GB34",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "code": "GB39",
+            "role_zh": "2017 RLS add-on RCT 固定方案穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "cond.circadian_disorder",
@@ -25162,7 +26289,85 @@
         "Changed symptom pattern or new red flags (weight loss, fever, neurological signs) → renewed organic evaluation — this diagnosis never exempts new symptoms from work-up",
         "Suicide risk of comorbid depression → screen actively",
         "Repeated requests for invasive tests or surgery → one coordinating responsible physician, preventing iatrogenic harm"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "adjunct_only",
+        "point_rationale_zh": "不建立穴位。2025 systematic review 雖稱 SSD，但納入的多數試驗實際是舊 ICD-10 persistent somatoform pain disorder / somatoform disorder；直接把其中 PC7/HT7/PC6/Ashi 等穴搬到 DSM-5/DSM-5-TR SSD 會構成診斷偷渡。",
+        "point_rationale_en": "No point regimen is created. Although a 2025 review labels the condition SSD, most included trials enrolled older ICD-10 persistent somatoform pain disorder/somatoform disorder populations. Importing their points into a DSM-5/DSM-5-TR SSD card would be diagnostic drift.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed/PMC 與 APA；檢索詞含「somatic symptom disorder acupuncture systematic review」「persistent somatoform pain disorder acupuncture」。2025 SR 5 studies/376；4 studies的 acupuncture+paroxetine/duloxetine vs medication alone 在 week4 HAMA MD -1.94，week6/8 borderline；pain NRS 各時點未顯著。所有 outcomes GRADE low/very low。研究診斷多為 PSPD/舊 somatoform disorder，因此不建立 DSM-5 SSD points。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": {
+          "existing_says": "[B3任務文字，非 repo 現行欄位]「身體症狀障礙症：前提是器質病因已被適當排除」",
+          "source_says": "APA DSM-5-TR patient summary states that physical symptoms may or may not coexist with a diagnosed medical condition, and SSD is not diagnosed solely because a medical cause cannot be identified.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Zhao F, Wang W, Feng X, et al. Effect of acupuncture on somatic symptom disorder: a systematic review and meta-analysis. Front Med (Lausanne). 2025;12:1625230.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41103694/",
+            "pmid_or_doi": "PMID 41103694; PMCID PMC12521258; DOI 10.3389/fmed.2025.1625230 (correction PMID 41244795)",
+            "covers": "5 RCTs/376；多數實際涵蓋 persistent somatoform pain disorder 或 older somatoform diagnoses，而非乾淨一致的 current DSM-5 SSD population。",
+            "modality": "mixed",
+            "comparator": "active_control(SSRI/SNRI alone)",
+            "supports": [
+              "efficacy",
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "HAMA；pain NRS；主要為症狀量表。",
+            "finding_zh": "Add-on acupuncture 對 week4 HAMA 有小幅統計優勢，後續時點邊緣；pain NRS 無顯著優勢。所有 outcomes GRADE low/very low。",
+            "certainty": "very_low"
+          },
+          {
+            "source_id": "S2",
+            "type": "guideline",
+            "citation": "American Psychiatric Association. What is Somatic Symptom Disorder? DSM-5-TR-based official patient/professional information.",
+            "url": "https://www.psychiatry.org/patients-families/somatic-symptom-disorder/what-is-somatic-symptom-disorder",
+            "pmid_or_doi": null,
+            "covers": "DSM-5-TR SSD definition and diagnostic boundary。schema 無 official_information type，為相容 enum 暫列 guideline。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；診斷定義。",
+            "finding_zh": "Physical symptoms may or may not have an associated diagnosed medical condition；absence of an identified medical cause alone does not establish SSD。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": []
+      }
     },
     {
       "id": "cond.poor_memory",
@@ -25201,7 +26406,64 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "百會",
+          "code": "GV20"
+        },
+        {
+          "name_zh": "神庭",
+          "code": "GV24"
+        },
+        {
+          "name_zh": "風府",
+          "code": "GV16"
+        },
+        {
+          "name_zh": "風池",
+          "code": "GB20"
+        },
+        {
+          "name_zh": "膻中",
+          "code": "CV17"
+        },
+        {
+          "name_zh": "中脘",
+          "code": "CV12"
+        },
+        {
+          "name_zh": "氣海",
+          "code": "CV6"
+        },
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        },
+        {
+          "name_zh": "通里",
+          "code": "HT5"
+        },
+        {
+          "name_zh": "血海",
+          "code": "SP10"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "照海",
+          "code": "KI6"
+        },
+        {
+          "name_zh": "心俞",
+          "code": "BL15"
+        },
+        {
+          "name_zh": "譩譆",
+          "code": "BL45"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -25270,7 +26532,243 @@
         "Onset after new anticholinergic or sedative drugs → medication inventory before any dementia label",
         "Comorbid depression → differentiate pseudodementia",
         "Wandering or safety events → dementia evaluation and care planning"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "2024 sham-controlled RCT 直接研究 older adults with subjective cognitive decline (SCD)，其 published protocol 提供 14 個固定穴。本卡只能把這套方案標成 SCD research regimen；不可外推 MCI、dementia 或 Alzheimer prevention。",
+        "point_rationale_en": "A 2024 sham-controlled trial directly studied older adults with subjective cognitive decline (SCD), and its published protocol specifies 14 fixed points. This is an SCD research regimen only, not a protocol for MCI, dementia, or Alzheimer prevention.",
+        "evidence_note_zh": "2026-08-14 檢索 PubMed、BMJ Open、NIA；檢索詞含「subjective cognitive decline acupuncture randomized」「SCD acupuncture protocol GV20 GV24」「NIA memory problems reversible causes」。2024 RCT 72 older adults，12週 acupuncture vs sham，composite multi-domain neuropsychological Z score 與 MRI hippocampal measures改善。研究未提供可核對的 composite-Z MCID，也沒有 dementia incidence、AD conversion、功能獨立性作 primary outcome，因此不能寫『防失智』或臨床緩解。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "mixed",
+          "frequency": "每週 2 次",
+          "session_duration": "20 分鐘；GV16、BL15、BL45 只達 deqi 不留針",
+          "treatment_course": "12 週，共 24 次",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "rct",
+            "citation": "Wang X, Zhou H, Yan CQ, et al. Cognitive and Hippocampal Changes in Older Adults With Subjective Cognitive Decline After Acupuncture Intervention. Am J Geriatr Psychiatry. 2024;32(8):1014-1027.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38521736/",
+            "pmid_or_doi": "PMID 38521736; DOI 10.1016/j.jagp.2024.03.001",
+            "covers": "72 older adults with subjective cognitive decline (SCD)，acupuncture vs sham，12 weeks。",
+            "modality": "mixed",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters",
+              "scope"
+            ],
+            "primary_outcome_zh": "Composite Z score from multi-domain neuropsychological tests；hippocampal MRI structure/function measures。",
+            "finding_zh": "相對 sham，composite Z score與 hippocampal volume/connectivity 有改善；沒有證明 MCI/dementia reversal 或 dementia prevention。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "trial_protocol",
+            "citation": "Yan CQ, Zhou P, Wang X, et al. Efficacy and neural mechanism of acupuncture treatment in older adults with subjective cognitive decline: study protocol for a randomised controlled clinical trial. BMJ Open. 2019;9:e028317.",
+            "url": "https://bmjopen.bmj.com/content/9/10/e028317",
+            "pmid_or_doi": "DOI 10.1136/bmjopen-2018-028317",
+            "covers": "older adults with SCD；對應 NCT03444896 intervention protocol。",
+            "modality": "mixed",
+            "comparator": "sham",
+            "supports": [
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "Protocol；neuropsychological and neuroimaging outcomes。",
+            "finding_zh": "24 sessions/12 weeks；GV20、GV24連EA 2–100Hz/1–5mA，其他穴manual deqi；針留20min，GV16/BL15/BL45達deqi後不留針。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "guideline",
+            "citation": "National Institute on Aging. Memory Problems, Forgetfulness, and Aging.",
+            "url": "https://www.nia.nih.gov/health/alzheimers-symptoms-and-diagnosis/do-memory-problems-always-mean-alzheimers-disease",
+            "pmid_or_doi": null,
+            "covers": "older adults with memory complaints；reversible/alternative causes and when to seek evaluation。schema 無 official_information type，為相容 enum 暫列 guideline。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；medical evaluation guidance。",
+            "finding_zh": "列出 thyroid/kidney/liver disease、medications、depression/anxiety、sleep problems、B12等原因；記憶問題持續數週應就醫。並提醒未證實的 memory enhancement/prevention claims。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S4",
+            "type": "guideline",
+            "citation": "National Institute on Aging. Assessing Cognitive Impairment in Older Patients.",
+            "url": "https://www.nia.nih.gov/health/health-care-professionals-information/assessing-cognitive-impairment-older-patients",
+            "pmid_or_doi": null,
+            "covers": "older adults with reported or observed cognitive change；screening and follow-up evaluation。schema 無 official_information type，為相容 enum 暫列 guideline。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "scope"
+            ],
+            "primary_outcome_zh": "不適用；cognitive assessment guidance。",
+            "finding_zh": "當 screening 或 clinical concern 指向 cognitive impairment，需進一步找原因並處理 medical conditions、medications與安全問題。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": [
+          {
+            "code": "GV20",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "GV24",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "GV16",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "GB20",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "CV17",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "CV12",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "CV6",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "PC6",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "HT5",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "SP10",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "ST36",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "KI6",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "BL15",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "BL45",
+            "role_zh": "older-adult SCD RCT protocol 的固定穴",
+            "reason_zh": null,
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "cond.alcohol_use",
@@ -25595,7 +27093,80 @@
       },
       "sources": [
         "https://medlineplus.gov/eatingdisorders.html"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "not_supported",
+        "point_rationale_zh": "不建立處方。雖有一項 26 人、medically stable anorexia nervosa 的 pilot RCT 明確報 LI4/ST36/PC6/LR3/GB34，但 NICE NG69 明確寫『Do not offer ... acupuncture as part of the treatment for eating disorders』；因此 point-level pilot data 留在 source record，不進正式 points。",
+        "point_rationale_en": "No protocol is created. Although a 26-person pilot RCT in medically stable anorexia nervosa reported LI4/ST36/PC6/LR3/GB34, NICE NG69 explicitly says not to offer acupuncture as part of eating-disorder treatment. The pilot regimen is retained only as source context.",
+        "evidence_note_zh": "2026-08-14 檢索 NICE、PubMed；檢索詞含「eating disorder acupuncture NICE」「anorexia nervosa acupuncture randomized pilot」。NICE NG69 recommendation 1.7.1 明確要求不要把 acupuncture 等 physical therapy 作為 eating-disorder treatment。2014 pilot RCT 26 medically stable AN patients，usual care 並行，acupuncture vs acupressure+massage；primary BMI，結果主要描述 subjective calm/relaxation與 feasibility，未建立 disease-treatment efficacy。依來源階層，guideline 優先，故 points 為空、status=not_supported。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "NICE. Eating disorders: recognition and treatment. NICE guideline NG69.",
+            "url": "https://www.nice.org.uk/guidance/ng69/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "anorexia nervosa、bulimia nervosa、binge-eating disorder及其他 eating disorders；recognition、treatment、medical monitoring、inpatient/refeeding。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用；clinical guideline。",
+            "finding_zh": "Recommendation 1.7.1：不要把 acupuncture 等 physical therapy 作為 eating-disorder treatment。另規定 severe electrolyte/malnutrition/dehydration/organ-failure risk 的急性醫療處置與 ECG/inpatient monitoring。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "rct",
+            "citation": "Smith C, Fogarty S, Touyz S, et al. Acupuncture and acupressure and massage health outcomes for patients with anorexia nervosa: findings from a pilot randomized controlled trial and patient interviews. J Altern Complement Med. 2014;20(2):103-112.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24102480/",
+            "pmid_or_doi": "PMID 24102480; DOI 10.1089/acm.2013.0142",
+            "covers": "26 medically stable patients with anorexia nervosa in a private medical facility；treatment as usual continued。",
+            "modality": "acupuncture",
+            "comparator": "active_control(acupressure and massage + treatment as usual)",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters",
+              "scope"
+            ],
+            "primary_outcome_zh": "Primary BMI；secondary eating-disorder psychopathology、anxiety、depression；qualitative interviews。",
+            "finding_zh": "Pilot acupuncture used LI4, ST36, PC6, LR3, GB34 plus individualized points; twice weekly first3 weeks then weekly3 weeks. Main published conclusion was subjective wellbeing/calmness and need for further research, not established eating-disorder treatment efficacy.",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S_SH",
+            "type": "guideline",
+            "citation": "National Institute for Health and Care Excellence (NICE). Self-harm: assessment, management and preventing recurrence. NICE guideline NG225. 2022.",
+            "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "所有曾自傷者的評估、安全、優先精神健康轉介與 safety plan；本批僅用於共通自傷／自殺風險路徑，不用來證明任何疾病的針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral",
+              "caution"
+            ],
+            "primary_outcome_zh": "不適用；臨床安全與轉診指引。",
+            "finding_zh": "自傷後應儘快確認傷勢、精神狀態、即時安全與是否需專科精神健康評估；當 distress 高或持續、自傷頻率／程度或 suicidal intent 上升時應優先轉介。Safety plan 應包含警訊、個人因應、支持者、精神健康／非上班時段／緊急聯絡，以及共同限制可致命手段。",
+            "certainty": "not_graded"
+          }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "no_source_found": false,
+        "points_detail": []
+      }
     },
     {
       "id": "cond.common_cold",

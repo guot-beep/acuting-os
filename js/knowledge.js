@@ -3209,10 +3209,55 @@
      *             而它不是;把它藏起來又等於假裝資料不存在。
      * 門檻 20 是實測出來的分界(中位數 3 vs 傾倒 20–50),不是憑感覺選的。 */
     const DUMP_THRESHOLD = 20;
+
+    /* acupoint_protocol_evidence(2026-08-14,模板 §3 / 驗證器 C14)。
+     *
+     * 20 筆以下的穴位清單原本就是一排裸標籤,沒有任何附註 —— 也就是說
+     * 「某一個試驗的固定方案、certainty not_graded、指引說證據不足」
+     * 與「這個病的標準處方」在畫面上長得一模一樣。B3 的 PTSD 就是這樣:
+     * 13 個穴全部來自一個 combat-PTSD sham RCT,而 VA/DoD 2023 明講證據不足。
+     *
+     * 所以有穴位就必須先印出它的等級。這一段是那個欄位存在的唯一理由。
+     * 沒有穴位但查過的卡也要印 —— 「查過、結論是不建處方」與「沒人查過」
+     * 必須分得出來。 */
+    const PROTOCOL_STATUS_LABEL = {
+      supported: ["證據支持", "Supported", "#065f46", "#d1fae5"],
+      limited: ["證據有限", "Limited evidence", "#92400e", "#fef3c7"],
+      symptom_only: ["僅症狀輔助", "Symptom relief only", "#92400e", "#fef3c7"],
+      adjunct_only: ["僅支持輔助既有治療", "Adjunct to existing care only", "#92400e", "#fef3c7"],
+      postoperative_only: ["僅術後證據", "Postoperative evidence only", "#92400e", "#fef3c7"],
+      not_supported: ["現有證據不支持", "Not supported", "#991b1b", "#fee2e2"],
+      no_source: ["查無合格來源", "No qualifying source", "#991b1b", "#fee2e2"],
+    };
+    const protocolEvidenceBlock = (c) => {
+      const ev = c && c.acupoint_protocol_evidence;
+      if (!ev || !ev.protocol_status) return "";
+      const L = PROTOCOL_STATUS_LABEL[ev.protocol_status];
+      if (!L) return "";
+      const [zh, en, fg, bg] = L;
+      const note = usableText(ev.evidence_note_zh);
+      const rationale = contentMode === "english"
+        ? (usableText(ev.point_rationale_en) || usableText(ev.point_rationale_zh))
+        : usableText(ev.point_rationale_zh);
+      const srcs = Array.isArray(ev.sources) ? ev.sources : [];
+      const conflict = ev.scope_conflict_note;
+      return `<div class="k-protocol-evidence" style="background:${bg};color:${fg};padding:8px 12px;border-radius:6px;margin:6px 0;font-size:0.92em;">
+        <strong>${esc(modeText(zh, en))}</strong>
+        ${rationale ? `<p style="margin:4px 0 0;">${esc(rationale)}</p>` : ""}
+        ${note ? `<p style="margin:4px 0 0;">${esc(note)}</p>` : ""}
+        ${conflict ? `<p style="margin:4px 0 0;"><strong>${esc(modeText("與現有卡片說法衝突", "Conflicts with the existing card"))}：</strong>${esc(
+            [conflict.existing_says, conflict.source_says].filter(Boolean).join(" ／ "))}</p>` : ""}
+        ${srcs.length ? `<p class="k-meta" style="margin:6px 0 0;">${esc(modeText("來源", "Sources"))}（${srcs.length}）：${
+            srcs.map((s) => esc([s.citation, s.pmid_or_doi].filter(Boolean).join(" · ").slice(0, 120))).join("<br>")}</p>` : ""}
+      </div>`;
+    };
+
     const treatmentBlock = (c) => {
       const formulas = Array.isArray(c.herb_formulas) ? c.herb_formulas : [];
       const points = Array.isArray(c.acupoint_protocols) ? c.acupoint_protocols : [];
-      if (!formulas.length && !points.length) return "";
+      /* 沒有穴位也可能查過。5 張 B3 卡的結論就是「查過,不建處方」——
+         那與「沒人查過」必須分得出來,所以證據區塊要照印。 */
+      if (!formulas.length && !points.length) return protocolEvidenceBlock(c);
       const dumpNote = (n, whatZh, whatEn) =>
         `<p class="k-meta">${esc(modeText(
           `${whatZh} ${n} 筆 —— 這是來源網站整頁匯入的清單,不是本卡的處方建議,未經辨證篩選,因此不逐筆列出。`,
@@ -3234,7 +3279,7 @@
         : isSharedTemplate ? `<p class="k-meta">${esc(modeText(
             "穴位欄目前是匯入時的共用預設組(足三里／合谷／三陰交／中脘),全庫 67 張卡相同 —— 不是本病專屬處方,不可照用。",
             "The point field currently holds the shared import default (ST36/LI4/SP6/CV12), identical on 67 cards — not a protocol for this condition."))}</p>`
-        : `<p><strong>${esc(modeText("穴位", "Points"))}</strong> ${points.map((p) => {
+        : `${protocolEvidenceBlock(c)}<p><strong>${esc(modeText("穴位", "Points"))}</strong> ${points.map((p) => {
             const code = typeof p === "string" ? p : (p.code || "");
             const name = typeof p === "string" ? "" : (p.name_zh || p.name_en || "");
             return `<span class="k-tag">${esc([name, code].filter(Boolean).join(" "))}</span>`;

@@ -149,8 +149,43 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 | ~~`related_tcm_symptoms`~~ | 症狀 | **deprecated_but_temporarily_accepted** —— 見下 |
 | `herb_formulas` | `formula.*` | — |
 | `acupoint_protocols` | 穴位處方 | — |
+| `acupoint_protocol_evidence` | 穴位處方的證據等級與出處 | 見下 |
 | `medication_links` | 西藥(藥理層做完後接) | — |
 | `workflow_links` | 臨床流程 | — |
+
+> #### `acupoint_protocol_evidence`(2026-08-14 新增)
+>
+> **為什麼要有這個欄位。** `acupoint_protocols` 只存 `{name_zh, code}`,
+> 而 20 筆以下的清單在卡片上就是一排標籤,**沒有任何附註**。
+> 也就是說,「某一個試驗的固定方案、certainty not_graded、指引說證據不足」
+> 與「這個病的標準處方」在畫面上長得**一模一樣**。
+>
+> B3 精神／睡眠那批把問題逼出來了:PTSD 有 13 個穴,全部來自
+> 一個 combat-PTSD sham RCT,但 VA/DoD 2023 明講 acupuncture 證據不足、
+> 不是一線治療。裸清單會把它讀成處方。
+>
+> 所以穴位可以寫進 `acupoint_protocols`,但**必須同時寫這個欄位**,
+> 由 renderer 一起顯示。缺這個欄位而有穴位 = C14 缺陷。
+>
+> ```json
+> "acupoint_protocol_evidence": {
+>   "protocol_status": "supported | limited | symptom_only | adjunct_only | postoperative_only | not_supported | no_source",
+>   "point_rationale_zh": "整組取穴依據;不得超出來源",
+>   "point_rationale_en": null,
+>   "evidence_note_zh": "證據設計、對照組、量表與限制;查不到時寫檢索日期／資料庫／檢索詞",
+>   "treatment_parameters": { "manual_or_electroacupuncture": null, "frequency": null,
+>                             "session_duration": null, "treatment_course": null },
+>   "scope_conflict_note": null,
+>   "sources": [ { "source_id": "S1", "type": "...", "citation": "...", "url": "...",
+>                  "pmid_or_doi": "...", "modality": "...", "comparator": "...",
+>                  "certainty": "...", "finding_zh": "..." } ],
+>   "collected_by": "SOL B3 2026-08-14",
+>   "no_source_found": false
+> }
+> ```
+>
+> `protocol_status` 不是 `supported` 時,**畫面必須說出來** ——
+> 這是本欄位存在的唯一理由,不是裝飾。
 
 > #### `related_tcm_symptoms` 的過渡狀態(2026-08-06)
 >
