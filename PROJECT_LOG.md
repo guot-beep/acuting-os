@@ -1,3 +1,20 @@
+# 2026-08-14 終收 — 中藥線完整關閉:四欄全零、六 hold 解鎖、四組雙卡退役
+
+**SOL 第二輪查源(6 張 hold 逐句 + 佛手整卡 + 2 小修)執行落地 `f61502d1`:**
+- 38 條 safety 句:7 A 保留 / 15 B 改寫(替換句逐字採 SOL 版,多為原典等級歸位:《神農本草經疏》沒藥五句、《本草經集註》黃柏惡乾漆、石斛古籍三連句)/ 16 C 封存刪除。本輪核心判例(入術語表 §5n):**古籍禁忌不得自動補現代機制;原典等級不得升降格;preclinical 訊號標（體外）不寫臨床口吻**。
+- 佛手整卡:SOL 物種審計結論=非 bergamot 污染而是 preclinical 寫成臨床口吻。functions_zh 正名(疏肝理氣/和胃止痛/燥濕化痰)、modern_functions 5 項降級標（體外）、降血壓刪除(人體吸入研究反向)。
+- 太子參標題錯置修正(上游 CloudTCM 原頁即錯;evidence_level 註記 preclinical/weak 入 ledger)、山藥「甘逆」→《本草經集註》「惡甘遂」訛字歸位。
+- 6 張解鎖補翻 → **cautions_en missing 6 → 0**。
+
+**四組重複卡 D16 退役 `5794c5f1`(SOL 鑑定 + Ting 裁定「四組照建議 沙參方案A」,D21 LOCKED):**
+qian_cao_gen→qian_cao、han_lian_cao→mo_han_lian(反向合併:退役卡較富,正卡舊值先封存再採富版)、wu_zei_gu→hai_piao_xiao、sha_shen→bei_sha_shen(逐欄查無 Adenophora 混血;混寫拉丁名不遷入)。全庫 9 處引用改指向,退役 id 殘留掃描零,斷鏈零新增,records 358 不變(D6 不硬刪)。順手發現:herb.nan_sha_shen 被 herb_pairs 引用但無記錄——D21 記為 open gap。
+
+**中藥雙語線最終狀態(validate-herb-standard 可重現):contraindications_en / condition_tags_en / modern_functions_en / cautions_en 四欄 missing 全部 = 0**,每一條英文都有中文源、每一條被裁的中文都有出處或封存痕跡。
+
+**本日全日總帳**:conditions blocking 4→0(ratchet 鎖死)、HARD GATE 3 12/14→14/14、P1/P4 Codex 雙 GO、condition 卡來源上畫面(553 條首次渲染)、中藥四欄歸零(~900+ 條目)、兩輪 SOL 查源迴路閉環(18+38 條裁定)、四組雙卡退役、C2b 執行計畫落檔(明日主菜)。**Ting 裁定佇列清空**;唯餘 SOL 劑量查源包(任務三)發出待回。
+
+---
+
 # 2026-08-14 夜收尾 — SOL 查源迴路關閉:18 筆裁定執行,cautions_en 17 → 6
 
 **中藥安全欄的裁定迴路今天走完整一圈**:批次扣住(B1-B10 攔 18 筆)→ SOL 逐條查源
