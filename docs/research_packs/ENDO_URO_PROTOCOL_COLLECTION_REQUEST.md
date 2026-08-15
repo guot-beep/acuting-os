@@ -123,7 +123,7 @@ Ting 指定這張卡的重點**不是配穴,是安全**。
   "condition_specific_cautions_zh": [ { "text": "警語", "source_ids": ["S2"] } ],
   "referral_red_flags_zh": [ { "text": "轉診或急症條件", "source_ids": ["S3"] } ],
   "sources": [
-    { "source_id": "S1", "type": "systematic_review | guideline | rct | textbook | trial_protocol",
+    { "source_id": "S1", "type": "systematic_review | guideline | official_safety_info | rct | textbook | trial_protocol",
       "citation": "完整書目", "url": "可直接開啟的文章頁", "pmid_or_doi": "PMID／DOI 或 null",
       "covers": "精確說明涵蓋哪個疾病、嚴重度、族群",
       "modality": "見補充 A", "comparator": "見補充 B",
@@ -150,6 +150,9 @@ Ting 指定這張卡的重點**不是配穴,是安全**。
 依優先序:專業臨床指引／官方 guideline(ADA、AACE、ATA、NICE、AUA、EAU、
 Endocrine Society、NAMS 等)→ Cochrane／系統性回顧／meta-analysis →
 有 PMID／DOI 的完整 RCT → 已發表試驗 protocol → 正規教材(需完整書目)。
+
+> `official_safety_info` 是 2026-08-15 新增:FDA、NIAAA 這類官方安全資訊頁不是 guideline
+> 也不是 review。B4 那次你只能暫時映射成 guideline 並加註 —— 現在有正式位置了。
 
 不接受:診所網站、減重／排毒商業療程頁、部落格、社群貼文、AI 摘要、
 無書目的「常用配穴」、搜尋摘要或資料庫首頁、把相近疾病配穴移植。

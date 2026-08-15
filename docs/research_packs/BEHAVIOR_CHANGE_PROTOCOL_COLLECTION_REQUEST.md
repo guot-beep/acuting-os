@@ -58,10 +58,23 @@ bupropion／brief counselling** 之中的哪一個,結論意義完全不同。�
 
 ## 【補充 C】**這一批最重要的一條:戒菸率不是渴求分數**
 
-這是 B3「量表分數不等於臨床緩解」在成癮領域的版本,而且更嚴格,
-因為這個領域有**公認的標準結果**:
+這是 B3「量表分數不等於臨床緩解」在成癮領域的版本,而且更嚴格。
+
+**本專案的落庫門檻**(這是我們自己訂的,比文獻慣例嚴):
 
 > **生化驗證(呼氣 CO 或唾液 cotinine)的持續戒菸率,追蹤至少 6 個月。**
+
+> #### 2026-08-15 更正(SOL 於 B4 交付中指出,他是對的)
+>
+> 本節原本的寫法會讓人以為**Cochrane 的 long-term outcome 就等於上面那條**。
+> **不是。** Cochrane CD000009 的實際規則是:取各試驗 **6 個月至 1 年的最後一次測量**、
+> 採**該試驗最嚴格的戒菸定義**,並在**有提供時優先採用**生化驗證 ——
+> 不是所有納入試驗都做了生化驗證的持續戒菸。
+>
+> 所以:**落庫門檻照上面那條走**(這仍是我們的要求),
+> 但**描述 Cochrane 的結果時必須照它自己的定義寫**,
+> 不可把它整體說成「所有試驗均為生化驗證之持續戒菸」。
+> 這兩件事分開講。
 
 以下都**不能**當成戒菸有效的證據:
 - 渴求(craving)量表下降
@@ -130,7 +143,7 @@ B3 那批你指出我把 SSD 寫成「前提是器質病因已被排除」,DSM-5
   "condition_specific_cautions_zh": [ { "text": "警語", "source_ids": ["S2"] } ],
   "referral_red_flags_zh": [ { "text": "轉診或急症條件", "source_ids": ["S3"] } ],
   "sources": [
-    { "source_id": "S1", "type": "systematic_review | guideline | rct | textbook | trial_protocol",
+    { "source_id": "S1", "type": "systematic_review | guideline | official_safety_info | rct | textbook | trial_protocol",
       "citation": "完整書目", "url": "可直接開啟的文章頁", "pmid_or_doi": "PMID／DOI 或 null",
       "covers": "精確說明涵蓋哪個族群、成癮程度、共病",
       "modality": "見補充 A", "comparator": "見補充 B",
@@ -153,7 +166,7 @@ B3 那批你指出我把 SSD 寫成「前提是器質病因已被排除」,DSM-5
   "protocol_status": "not_supported",
   "points": [],
   "no_source_found": false,
-  "evidence_note_zh": "現有 Cochrane 回顧／指引不支持將針灸作為常規戒菸輔助。回顧納入 N 項試驗、M 名受試者,主要結果為生化驗證之 6 個月持續戒菸率,相對 sham 未見具臨床意義之差異;證據確定性 low。"
+  "evidence_note_zh": "現有 Cochrane 回顧／指引不支持將針灸作為常規戒菸輔助。回顧納入 N 項試驗、M 名受試者;長期結果取各試驗 6 個月至 1 年的最後一次測量、採該試驗最嚴格之戒菸定義並於有提供時優先採用生化驗證,相對 sham 未見具臨床意義之差異;證據確定性 low。"
 }
 ```
 
@@ -176,6 +189,9 @@ B3 那批你指出我把 SSD 寫成「前提是器質病因已被排除」,DSM-5
 依優先序接受:專業臨床指引／官方 guideline(USPSTF、NICE、SAMHSA 等)→
 Cochrane review／系統性回顧／meta-analysis → 有 PMID／DOI 的完整 RCT →
 已發表試驗 protocol(只能支持該方案)→ 正規教材(需書名、主編、版次、出版社、年份、頁碼)。
+
+> `official_safety_info` 是 2026-08-15 新增:FDA、NIAAA 這類官方安全資訊頁不是 guideline
+> 也不是 review。B4 那次你只能暫時映射成 guideline 並加註 —— 現在有正式位置了。
 
 不接受:診所網站、戒菸／戒酒商業療程頁、部落格、社群貼文、AI 摘要、
 無書目的「常用配穴」、搜尋摘要或資料庫首頁、把相近情境配穴移植。

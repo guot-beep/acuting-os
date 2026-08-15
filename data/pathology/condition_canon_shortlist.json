@@ -26187,7 +26187,145 @@
         "Long smoking history meeting low-dose CT criteria → proactive referral",
         "Severe depression or suicidal ideation in withdrawal → psychiatry; abnormal mood or behavior on varenicline/bupropion warrants return visit",
         "Seizures are not nicotine withdrawal — convulsions demand a separate cause search"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "not_supported",
+        "point_rationale_zh": "不建立正式穴位處方。最新 overview 與 Cochrane 對長期戒菸均未顯示針灸相對 sham、NRT 或行為治療具有可靠長期優勢。近年 RCT 雖有明確體針方案與 CO 驗證的短期結果，但未達本批要求的至少6個月持續戒菸硬結果。",
+        "point_rationale_en": "No formal point prescription is created. Current syntheses do not show a reliable long-term cessation advantage over sham, NRT, or behavioral treatment; recent point-specific trials are short-term or use point-abstinence outcomes rather than the required durable continuous-abstinence endpoint.",
+        "evidence_note_zh": "2026-08-15 檢索 PubMed、Cochrane、USPSTF；檢索詞包括“acupuncture smoking cessation systematic review long-term abstinence”“auricular acupuncture smoking cessation biochemical verification”“smoking cessation CYP1A2 clozapine olanzapine”。2026 overview 納入10篇系統性回顧/74 RCT，短期 abstinence 對 sham 有小幅優勢，但 long-term abstinence 對 sham 無顯著優勢，也不優於 NRT 或 behavioral therapy；證據多為 low/critically low。Cochrane 2014 對6–12個月 long-term outcome 同樣未見持續效益。2018 RCT 的主要結果是24週 CO-confirmed 24-hour point abstinence；2025 RCT 的 continuous abstinence 只追到12週，因此都不能改寫成本批要求的『生化驗證、至少6個月持續戒菸』。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Fan et al. Acupuncture for smoking cessation: an overview of systematic reviews. Front Public Health. 2026.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41626375/",
+            "pmid_or_doi": "PMID 41626375; DOI 10.3389/fpubh.2025.1677231",
+            "covers": "10篇系統性回顧、74個RCT；涵蓋體針及相關穴位介入與 smoking cessation outcomes。",
+            "modality": "mixed",
+            "comparator": "unclear",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "主要重整 abstinence outcomes，區分 short-term 與 long-term；不是所有研究均使用同一生化驗證方式。",
+            "finding_zh": "短期相對 sham 有小幅優勢（updated meta-analysis RR 1.37），但 long-term abstinence 對 sham 無顯著優勢，亦不優於 NRT 或 behavioral therapy；多數證據 low/critically low。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "systematic_review",
+            "citation": "White AR, Rampes H, Liu JP, Stead LF, Campbell J. Acupuncture and related interventions for smoking cessation. Cochrane Database Syst Rev. 2014;(1):CD000009.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24459016/",
+            "pmid_or_doi": "PMID 24459016; DOI 10.1002/14651858.CD000009.pub4",
+            "covers": "38 studies；acupuncture、acupressure、laser、electrostimulation；smokers attempting cessation。",
+            "modality": "mixed",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "長期 outcome 為各試驗6個月至1年的最後測量；採各試驗最嚴格 abstinence definition，若有生化驗證則優先使用。",
+            "finding_zh": "acupuncture vs sham 的 long-term RR 1.10 (95% CI 0.86–1.40)；沒有一致、無偏倚的 ≥6個月持續效益。Acupuncture less effective than NRT and not better than counselling.",
+            "certainty": "moderate"
+          },
+          {
+            "source_id": "S3",
+            "type": "guideline",
+            "citation": "U.S. Preventive Services Task Force. Tobacco Smoking Cessation in Adults, Including Pregnant Persons: Interventions. 2021.",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions",
+            "pmid_or_doi": null,
+            "covers": "成人與孕婦 tobacco smoking cessation；primary-care preventive treatment.",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "臨床 guideline；以 smoking cessation 與相關 harms 為核心。",
+            "finding_zh": "非孕成人：behavioral interventions + FDA-approved pharmacotherapy 為 Grade A；孕婦：behavioral interventions 為 Grade A，pregnancy pharmacotherapy 為 insufficient evidence。",
+            "certainty": "high"
+          },
+          {
+            "source_id": "S4",
+            "type": "rct",
+            "citation": "Chen S, Liu Z, Ji J, et al. Acupuncture with different frequencies for tobacco dependence: a randomized controlled trial. J Tradit Chin Med. 2025;45(3):651-659.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40524304/",
+            "pmid_or_doi": "PMID 40524304; PMCID PMC12134313; DOI 10.19852/j.cnki.jtcm.2025.03.022",
+            "covers": "220名18–70歲、每日≥10支且有戒菸意願者；比較高頻與低頻體針/電針。",
+            "modality": "electroacupuncture",
+            "comparator": "active_control(lower-frequency acupuncture)",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "CO驗證 point abstinence at weeks 8/12；self-reported continuous abstinence 到12週；另 FTND/MNWS/QSU-Brief。",
+            "finding_zh": "固定穴 GV20、LU7、LI4、ST36、SP6、LR3；withdrawal-dependent 加 EX-HN3 或 PC6；LU7-ST36 接15 Hz EA 30 min。兩組 week12 CO point-abstinence 近似，continuous abstinence 僅12週，未提供≥6月硬結果，因此不建立正式處方。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S5",
+            "type": "systematic_review",
+            "citation": "Zanni S, Del Prete J, Capogrossi A, et al. Influence of cigarette smoking on drugs' metabolism and effects: a systematic review. Eur J Clin Pharmacol. 2025;81(5):667-695.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40111454/",
+            "pmid_or_doi": "PMID 40111454; DOI 10.1007/s00228-025-03817-7",
+            "covers": "2000–2024 smoking subjects receiving medications；藥物動力/藥效交互作用。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution"
+            ],
+            "primary_outcome_zh": "藥物濃度、PK/PD interactions。",
+            "finding_zh": "Cigarette smoke induction of CYP1A2 是最常見機制；吸菸狀態改變可能影響多種藥物療效與安全，需個別化監測。",
+            "certainty": "moderate"
+          },
+          {
+            "source_id": "S6",
+            "type": "systematic_review",
+            "citation": "Wagner E, McMahon L, Falkai P, Hasan A, Siskind D. Impact of smoking behavior on clozapine blood levels: a systematic review and meta-analysis. Acta Psychiatr Scand. 2020;142(6):456-466.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32869278/",
+            "pmid_or_doi": "PMID 32869278; DOI 10.1111/acps.13228",
+            "covers": "clozapine-treated smokers vs nonsmokers；23 studies；7,125 samples for primary blood-level outcome。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution"
+            ],
+            "primary_outcome_zh": "Clozapine blood levels/C:D ratio。",
+            "finding_zh": "Smokers有較低clozapine levels；停止吸菸時需依 trough level 與臨床風險評估調整；作者提出約30% dose reduction作為clozapine特定建議，不能外推所有CYP1A2藥。",
+            "certainty": "moderate"
+          },
+          {
+            "source_id": "S7",
+            "type": "guideline",
+            "citation": "U.S. Food and Drug Administration. Smoking – Medicines to Help You Quit / cessation product safety information. Updated 2025-2026.",
+            "url": "https://www.fda.gov/consumers/womens-health-topics/smoking-medicines-help-you-quit",
+            "pmid_or_doi": null,
+            "covers": "使用戒菸藥物的成人；FDA safety information。因 source type enum 無 official_safety_info，暫映射為 guideline。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "戒菸藥物常見/重大 adverse symptoms。",
+            "finding_zh": "FDA要求對新發或惡化的精神／行為變化及自殺意念提高警覺並聯絡醫療人員；這是安全監測資訊，不代表 acupuncture efficacy。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B4 2026-08-15",
+        "no_source_found": false
+      }
     },
     {
       "id": "cond.somatic_symptom",
@@ -26872,7 +27010,147 @@
         "Confusion, nystagmus, ataxia → Wernicke encephalopathy, immediate thiamine (emergency)",
         "Markedly elevated suicide risk → screen actively",
         "Drinking in pregnancy → immediate obstetric involvement"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "not_supported",
+        "point_rationale_zh": "不建立正式穴位處方。AUD 文獻混合 body acupuncture、auricular/NADA 與其他 acupoint stimulation；較新的 meta-analysis 對 craving/withdrawal score 有低或極低確定性訊號，但真正 alcohol-use/abstinence outcome 並未穩定改善。2020 NADA sham-controlled trial 的1年 abstinence 無組間差異，2002年503人 auricular trial 的 alcohol-use measures 亦無 treatment difference。",
+        "point_rationale_en": "No formal point prescription is created. AUD studies mix body acupuncture, auricular/NADA and other acupoint stimulation. Low-certainty signals exist for craving or withdrawal scales, but sustained drinking outcomes are not consistently improved; a sham-controlled NADA trial showed no one-year abstinence benefit.",
+        "evidence_note_zh": "2026-08-15 檢索 PubMed、ASAM、NIAAA、NICE；檢索詞包括“acupuncture alcohol use disorder systematic review abstinence”“NADA alcohol addiction randomized sham one-year abstinence”“ASAM alcohol withdrawal CIWA seizure delirium thiamine”。2023 meta-analysis 16 RCT/1,097人：對 craving、withdrawal severity、anxiety/depression 有 low/very-low certainty 訊號，但主要仍是 symptom scales。2020 NADA RCT 72人，20次/6週，1年 abstinence 在 NADA、sham、no-intervention 三組無差異；2002大型 auricular RCT 503人亦沒有 alcohol-use treatment difference。因此以 sustained abstinence/heavy-drinking outcome 評估，不支持建立常規針灸處方。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "A1",
+            "type": "guideline",
+            "citation": "American Society of Addiction Medicine (ASAM). The ASAM Clinical Practice Guideline on Alcohol Withdrawal Management. J Addict Med. 2020;14(3S Suppl 1):1-72.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32511109/",
+            "pmid_or_doi": "PMID 32511109; DOI 10.1097/ADM.0000000000000668",
+            "covers": "Alcohol withdrawal syndrome；ambulatory、ED、inpatient/ICU；mild到complicated withdrawal。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "withdrawal severity、seizure/delirium prevention、setting of care；CIWA-Ar為常用severity example。",
+            "finding_zh": "ASAM例示 CIWA-Ar <10 mild、10–18 moderate、≥19 severe；seizure/delirium為complicated withdrawal。Severe/complicated risk需藥物及醫療監督；withdrawal management不是AUD完整治療。",
+            "certainty": "high"
+          },
+          {
+            "source_id": "A2",
+            "type": "guideline",
+            "citation": "World Health Organization. Management of alcohol withdrawal. mhGAP Evidence Centre.",
+            "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/alcohol-use-disorders/management-of-alcohol-withdrawal",
+            "pmid_or_doi": null,
+            "covers": "Alcohol withdrawal；severe withdrawal、concurrent serious illness、Wernicke prevention/treatment。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "withdrawal complication prevention與setting。",
+            "finding_zh": "Severe withdrawal/serious comorbidity/insufficient support者prefer inpatient；withdrawal seizure後benzodiazepines防再發；所有withdrawal需thiamine，高Wernicke風險需parenteral thiamine。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "A3",
+            "type": "systematic_review",
+            "citation": "Acupoint stimulation for alcohol use disorder: a systematic review and meta-analysis. Medicine (Baltimore). 2023.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36607868/",
+            "pmid_or_doi": "PMID 36607868; PMCID PMC9829291; DOI 10.1097/MD.0000000000032614",
+            "covers": "16 RCTs、1,097 AUD participants；acupoint stimulation alone/add-on，介入異質。",
+            "modality": "mixed",
+            "comparator": "active_control(psychotherapy or drug therapy)",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "craving、withdrawal symptom severity、anxiety、depression；不是以 sustained abstinence/heavy-drinking days 為主要 pooled hard outcome。",
+            "finding_zh": "Add-on acupoint stimulation對craving/withdrawal有統計優勢，但GRADE多為low/very low；不足以證明持續戒酒或建立常規處方。",
+            "certainty": "very_low"
+          },
+          {
+            "source_id": "A4",
+            "type": "rct",
+            "citation": "Krause F, Penzlin AI, Ritschel G, et al. Randomized controlled three-arm study of NADA acupuncture for alcohol addiction. Addict Behav. 2020;110:106488.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32599496/",
+            "pmid_or_doi": "PMID 32599496; DOI 10.1016/j.addbeh.2020.106488",
+            "covers": "72名住院 alcohol-addiction rehabilitation patients；NADA vs sham auricular acupuncture vs no intervention；皆在既有住院復健背景下。",
+            "modality": "auricular",
+            "comparator": "sham",
+            "supports": [
+              "efficacy",
+              "treatment_parameters",
+              "scope"
+            ],
+            "primary_outcome_zh": "HRV、craving、depression/anxiety；最重要長期結果為study completion後1年 abstinence。",
+            "finding_zh": "20次、每次30分鐘、6週。NADA組HRV改善，但craving/psychiatric outcomes與1年 abstinence均未優於 sham/no-intervention；故不支持NADA作戒酒處方。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "A5",
+            "type": "guideline",
+            "citation": "National Institute on Alcohol Abuse and Alcoholism (NIAAA). Recommend Evidence-Based Treatment: Know the Options. Core Resource on Alcohol.",
+            "url": "https://www.niaaa.nih.gov/health-professionals-communities/core-resource-on-alcohol/recommend-evidence-based-treatment-know-options",
+            "pmid_or_doi": null,
+            "covers": "Alcohol use disorder treatment options across severities；professional behavioral treatment與FDA-approved medications。source type enum無official_resource，暫映射為guideline。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "AUD recovery outcomes；evidence-based treatment menu。",
+            "finding_zh": "Evidence-based AUD care包含behavioral health treatment與FDA-approved medications；三種FDA-approved AUD medication為naltrexone、acamprosate、disulfiram。Acupuncture不應取代這些治療。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "A6",
+            "type": "guideline",
+            "citation": "NICE. Alcohol-use disorders: diagnosis and management of physical complications. Clinical guideline CG100.",
+            "url": "https://www.nice.org.uk/guidance/cg100/chapter/recommendations",
+            "pmid_or_doi": null,
+            "covers": "acute alcohol withdrawal、Wernicke encephalopathy、alcohol-related liver disease、pancreatitis與GI bleeding相關處置。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "急性/身體併發症管理。",
+            "finding_zh": "Decompensated liver disease需有經驗專業者管理；高Wernicke風險與疑似Wernicke需thiamine；GI bleeding、renal impairment等併發症需先處理。",
+            "certainty": "high"
+          },
+          {
+            "source_id": "A7",
+            "type": "guideline",
+            "citation": "National Institute on Alcohol Abuse and Alcoholism (NIAAA). Medical Complications: Common Alcohol-Related Concerns / Alcohol and the Human Body. Updated 2026.",
+            "url": "https://www.niaaa.nih.gov/health-professionals-communities/core-resource-on-alcohol/medical-complications-common-alcohol-related-concerns",
+            "pmid_or_doi": null,
+            "covers": "Alcohol-related acute harms and chronic medical complications including trauma/falls, liver disease, pancreatitis and GI bleeding。source type enum無official_resource，暫映射為guideline。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "medical complication risk；不屬acupuncture efficacy outcome。",
+            "finding_zh": "Heavy/binge drinking與falls/trauma、GI bleeding、liver disease、pancreatitis等急性與慢性併發症相關；有相應症狀時需走醫療評估路徑。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B4 2026-08-15",
+        "no_source_found": false
+      }
     },
     {
       "id": "cond.eating_disorder",
