@@ -1,3 +1,22 @@
+# 2026-08-14 Fable × Sonnet — 中藥雙語線收官:HB-B1~B10 全數落地
+
+十批連跑一天完成(每批:worktree 實作 → Fable 驗收(數字重現+diff 眼讀+安全欄對嚴重度階梯)→ rebase → ff-merge → push)。最終數字(`node scripts/validate-herb-standard.js` 可重現):
+
+| 欄位 | 開盤 | 收盤 |
+|---|---|---|
+| contraindications_en missing | 9 | **0** |
+| condition_tags_en missing | 141 | **0**(110+1 筆功效聯按裁定封存清空,31 筆真標籤翻譯) |
+| modern_functions_en missing | 159 | **0** |
+| cautions_en missing | 216 | **17**(全部=裁定扣住,無漏填) |
+
+- 新增雙語內容約 900+ 條目;術語表(HERB_BILINGUAL_GLOSSARY_2026-08-14.md)每批判例回填,累計 §5a-§5m。
+- **17 筆扣住 = Ting 裁定佇列**,四類:同記錄藥性/藥理矛盾(鬱金、鬱李仁、丹參、沒藥、澤瀉、茵陳蒿、龍骨、薤白、佛手、款冬花、黃芩、蒲黃)、機轉倒置(黃柏)、整套跨藥抄襲(浙貝母←川貝母、枳殼←枳實)、亂碼/錯植(白頭翁、三稜)。zh 全部原樣未動。
+- **整合層攔截兩次**:B9 石膏 CT 功效聯(裁定按原則延伸,封存清空);B10 全庫掃尾用較窄門檻翻掉了 B1/B2/B4 扣住的 4 筆 → 還原扣留(「後批不得推翻前批的裁定扣留」入判例)。
+- 附帶收穫:21 筆 functions_zh 因 EXCEPTION 搬移而加深;青蒿「清虛」截斷修復;第 4 組重複記錄浮出(烏賊骨/海螵蛸);相剋 = mutually restrains 定為第四配伍詞。
+- **待 Ting**:17 筆 cautions 裁定(可打包給 SOL 查源)、4 組同藥雙卡去重、太子參標題錯置與山藥「甘逆」zh 修復、黃酒「藥引」歸欄。
+
+---
+
 # 2026-08-14 Codex — P1／P4 focused technical retest `GO`
 
 - **做了什麼**：在 final endpoint `70aa3aed` 重跑 P1/P4 指定 blocker regression；產品碼／schema／canonical data零修改，真 clinical store讀／寫=`0/0`，既有 curriculum/tmp dirty work未碰。
