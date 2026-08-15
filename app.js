@@ -1646,6 +1646,15 @@ function loadClinicalCases() {
       return [];
     }
   }
+  // M1(C2b audit E5;review 升級裁定):pointer=v2 但 store 模組沒載入 ——
+  // 這不是「沒有 v2 資料」,是「有 v2 資料但讀不到」。落到這裡若照舊把
+  // v1 鍵當現況顯示,凍結的回滾錨會被誤報成現況(reload 後才發現不見),
+  // 而且第一次存檔會把回滾錨靜默改寫掉。鎖唯讀,不讀 v1 內容當正常資料。
+  if (localStorage.getItem("acuting-clinical-active") === "v2") {
+    clinicalStoreIntegrityError = "系統已切換 v2 但 clinical-store 模組未載入 —— 唯讀保護啟動,禁止存檔;請確認用正式入口開啟,勿用 legacy 頁。";
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
+    return [];
+  }
   const saved = localStorage.getItem(CASE_STORAGE_KEY);
   if (!saved) return [];
   try {
@@ -1670,6 +1679,14 @@ function loadClinicalCases() {
 function persistClinicalCases() {
   if (clinicalStoreIntegrityError) {
     alert("唯讀保護中,拒絕存檔(避免覆蓋半載入的資料):\n" + clinicalStoreIntegrityError);
+    return false;
+  }
+  // M1:pointer=v2 但 store 缺失時,loadClinicalCases 通常已經先落入上面那條
+  // clinicalStoreIntegrityError 鎖。這裡是第二道防線 —— 萬一 pointer 在
+  // load 之後才切成 v2,或 persist 被獨立呼叫:一律零寫入,絕不寫回
+  // CASE_STORAGE_KEY(那是 v1 的回滾錨,寫了就把它蓋掉)。
+  if (!window.AcuTingClinicalStore && localStorage.getItem("acuting-clinical-active") === "v2") {
+    alert("唯讀保護中,拒絕存檔(pointer=v2 但 clinical-store 模組未載入):\n請確認用正式入口開啟,勿用 legacy 頁。");
     return false;
   }
   try {
