@@ -10636,12 +10636,7 @@
         "Clear Lung Heat & Relieve Asthma",
         "Astringe Wounds & Promote Tissue Growth"
       ],
-      "condition_tags_zh": [
-        "清熱瀉火",
-        "除煩止渴",
-        "清肺平喘",
-        "斂瘡生肌"
-      ],
+      "condition_tags_zh": [],
       "modern_pharmacology": [
         {
           "tag": "顯著解熱作用",
@@ -10703,12 +10698,7 @@
         ]
       },
       "card_grade": "partial",
-      "condition_tags_en": [
-        "Clears Heat and drains Fire",
-        "Relieves vexation and quenches thirst",
-        "Clears the Lung and calms wheezing",
-        "Astringes sores and promotes flesh regeneration"
-      ],
+      "condition_tags_en": [],
       "modern_functions_en": [
         "Hypoglycemic activity",
         "Anti-inflammatory activity",
@@ -10725,6 +10715,20 @@
         "Avoid in intestinal obstruction, to prevent aggravating the condition.",
         "Avoid in severe liver or kidney disease, hypercalcemia, hyperthyroidism, and similar conditions, to prevent adverse effects on the condition.",
         "Avoid prolonged, high-dose use in pregnancy, to prevent affecting fetal development."
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "condition_tags_zh",
+          "text": "清熱瀉火、除煩止渴、清肺平喘、斂瘡生肌",
+          "reason": "Ting 2026-08-14 裁定延伸:功效聯非證候標籤;與 functions 逐字相同,長度4故漏出原110名冊,B9 複核旗確認後併入同一裁定",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "condition_tags_en",
+          "text": "Clears Heat and drains Fire | Relieves vexation and quenches thirst | Clears the Lung and calms wheezing | Astringes sores and promotes flesh regeneration",
+          "reason": "同上,en 鏡像一併封存(E5 對齊)",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
