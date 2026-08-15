@@ -251,7 +251,7 @@ corpus 內已有明文裁定×2:「不要把 AD 的『慎用』升級成禁用�
 | B4 | 止血 + 清化熱痰 | 19 | HOLD* | 13(73) | 19(84) |
 | B5 | 清熱解毒 + 燥濕 + 涼血 | 24 | HOLD* | 16(150) | 24(130) |
 | B6 | 收澀 + 消食 + 驅蟲 | 22 | 13(32) | 16(93) | 20(93) |
-| B7 | 理氣 + 化濕 + 開竅 | 23 | HOLD* | 17(113) | 23(119) |
+| B7 | 理氣 + 化濕 + 開竅 | 23 | HOLD* | 17(113)✅ | 20/23(3 扣住:zhi_ke/xie_bai/fo_shou) |
 | B8 | 補陽 + 補氣 + 溫化寒痰 | 20 | HOLD* | 13(79) | 20(96) |
 | B9 | 清熱瀉火 + 止咳平喘 + 安神 | 23 | HOLD* | 18(117) | 23(123) |
 | B10 | 溫裡 + 祛風濕 + 平肝息風 | 22 | HOLD* | 20(198) | 22(126) |
@@ -340,6 +340,40 @@ condition_tags:五更瀉 Fifth-watch diarrhea · 晨瀉 Morning diarrhea ·
 
 配伍詞追加(架構裁定 2026-08-14):**相剋 = mutually restrains**(B6 烏賊骨判例),
 與 相反 incompatible / 相畏 antagonistic / 相惡 mutually inhibiting 並列第四詞,不互換。
+
+### 5f. B7 新詞回填(2026-08-14,理氣+化濕+開竅)
+
+modern_functions:改善皮膚健康 Improves skin health(改善-系動詞式,平行於既定 改善消化系統/改善微循環,不加 activity) ·
+抗菌抗炎 Antibacterial and anti-inflammatory activity(組合式,平行於既定 抗菌抗病毒 的 "X and Y activity" 造詞法) ·
+升高血壓 Raises blood pressure(本批確認鎖定,herb.chen_pi 已先行使用,回填鎖定供後批查表) ·
+降壓 = 降血壓 的同義簡寫,鎖定同一英譯 Antihypertensive activity(僅 zh 異形,不分裂)。
+
+### 5g. B7 判例(理氣+化濕+開竅,23 味,3 筆扣住)
+
+- **herb.zhi_ke** cautions_zh 全部 6 則逐字引用「枳實」(非「枳殼」),且與 herb.zhi_shi 的
+  cautions_zh 幾乎逐字相同(僅一處「或大量」/「或量」的 OCR 差異)——判定為整段從枳實卡複製貼上,
+  不是枳殼自己的禁忌內容。cautions_en 整欄扣住,zh 不動,進 Ting 裁定佇列(對照 zhi_ke 自己的
+  `properties_taste_temp` 目前也只是佔位草稿「Draft: ... verify individual taste and temperature」,
+  佐證這筆記錄本來就沒填完整)。herb.zhi_shi 自己的同段內容因主詞正確,正常翻譯收錄。
+- **herb.xie_bai** cautions_zh[0]「薤白性偏寒涼」與該記錄自己的 `properties_taste_temp`「辛、苦、溫」
+  直接矛盾(溫 vs 寒涼)。cautions_en 整欄扣住,進 Ting 裁定佇列(比照 B5 huang_qin 判例)。
+- **herb.fo_shou** cautions_zh 五則全數稱「佛手柑」而非本記錄的「佛手」,且其中「佛手柑性偏寒涼」
+  再度與本記錄 `properties_taste_temp`「辛、苦、溫、酸」矛盾——名稱(佛手柑/Bergamot 常指
+  Citrus bergamia,與本記錄「佛手」Citrus medica var. sarcodactylis 是不同基原)與藥性(寒涼/溫)
+  雙重不符,判定整段內容疑似跨物種誤植。cautions_en 整欄扣住,進 Ting 裁定佇列;
+  `modern_functions_zh`(抗菌、抗氧化等通用藥理,未見物種標記矛盾)不在本次扣住範圍,正常翻譯。
+- **herb.xiang_fu** cautions_zh[4]~[8]「血燥便祕者」「脾虛泄瀉者」「孕婦及哺乳期婦女」
+  「出血傾曏者」「高熱者」五則均為無動詞的裸名詞短語(疑似原本共用一個「禁用/慎用」表頭時
+  被拆成陣列各自一項,表頭遺失)。比照 B6 檳榔判例(無動詞的中性敘述不擅自升級)延伸適用於
+  「連中性動詞都沒有」的情況:逐項直譯為名詞短語,不代補「Contraindicated/Avoid/Use cautiously」
+  等嚴重度動詞。
+- **herb.shi_chang_pu** cautions_zh[1]「忌配伍：秦艽、秦皮為石菖蒲之使」——表頭寫「忌」,
+  但內容描述的是相使(七情裡的協同關係),不是不相容。**忌 ≠ 相使**,兩者不可混譯;
+  本欄照內容譯為配伍協同說明,不譯成「不可併用」,並在此列出供表頭用字校正。
+  同記錄 cautions_zh[10]/[11] 為同一句「避免長期大量使用」被拆成表頭+全句兩個陣列項
+  (索引對齊仍逐項照翻,不合併)。
+- 單句內強弱動詞混用(表頭「慎服/慎用」+ 內文「不宜/不可」等更強動詞):**取較保守(較強)級**,
+  沿用 B1 規則,本批命中 3 筆(shi_chang_pu[0]、shi_chang_pu[6]、su_he_xiang[0])。
 
 ### 5c. B1 判例
 
