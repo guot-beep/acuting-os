@@ -13004,12 +13004,9 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "脾虛洩瀉、胃弱食少者忌服：黃柏性寒，會損傷脾胃陽氣，加重脾虛、洩瀉、胃弱的症狀。",
-        "忌與乾漆同用：黃柏和乾漆同用會產生沉澱，影響藥效吸收。",
-        "陰陽兩虛、脾胃虛弱者忌服：黃柏苦寒，會損傷脾胃陽氣，加重陰虛、脾胃虛弱的症狀。",
-        "孕婦禁用：黃柏含有生物鹼等成分，可能對胎兒造成影響。",
-        "腎功能不全患者禁用：黃柏中的成分需要通過腎臟代謝，腎功能不全者使用會增加腎臟負擔。",
-        "肝功能不全患者禁用：黃柏中的成分需要在肝臟代謝，肝功能不全者使用會增加肝臟負擔。"
+        "脾虛洩瀉、胃弱食少者忌服。",
+        "《本草經集註》：黃柏惡乾漆。",
+        "《神農本草經疏》：陰陽兩虛而兼脾胃薄弱者忌用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1078",
       "safety_fetched_at": "2026-07-23T07:25:04.606Z",
@@ -13160,7 +13157,48 @@
           "text": "腹瀉患者慎用：黃柏具有收斂作用，腹瀉患者使用可能會加重腹瀉症狀。",
           "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):黃柏具收斂作用,傳統收斂功效應為止瀉而非「加重腹瀉」,機轉倒置(B5 判例),不代補警語。",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾虛洩瀉、胃弱食少者忌服：黃柏性寒，會損傷脾胃陽氣，加重脾虛、洩瀉、胃弱的症狀。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):原句由自動化流程在古籍/傳統禁忌後補上現代機制描述,原典等級不得升格。(拆除「性寒會損傷脾胃陽氣」自造機轉句)",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "忌與乾漆同用：黃柏和乾漆同用會產生沉澱，影響藥效吸收。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):原句由自動化流程在古籍/傳統禁忌後補上現代機制描述,原典等級不得升格。(「惡」是古典配伍關係,「產生沉澱、影響藥效吸收」的化學故事係憑空補上,無出處)",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "陰陽兩虛、脾胃虛弱者忌服：黃柏苦寒，會損傷脾胃陽氣，加重陰虛、脾胃虛弱的症狀。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):原句由自動化流程在古籍/傳統禁忌後補上現代機制描述,原典等級不得升格。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦禁用：黃柏含有生物鹼等成分，可能對胎兒造成影響。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):「生物鹼/腎臟代謝/肝臟代謝」等現代機轉缺具名來源支持之禁用等級判斷,資料不足不得升格為禁用,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腎功能不全患者禁用：黃柏中的成分需要通過腎臟代謝，腎功能不全者使用會增加腎臟負擔。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):「生物鹼/腎臟代謝/肝臟代謝」等現代機轉缺具名來源支持之禁用等級判斷,資料不足不得升格為禁用,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "肝功能不全患者禁用：黃柏中的成分需要在肝臟代謝，肝功能不全者使用會增加肝臟負擔。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):「生物鹼/腎臟代謝/肝臟代謝」等現代機轉缺具名來源支持之禁用等級判斷,資料不足不得升格為禁用,不代補。",
+          "moved_at": "2026-08-14"
         }
+      ],
+      "cautions_en": [
+        "Contraindicated in Spleen deficiency with diarrhea, or Stomach weakness with poor appetite.",
+        "Ben Cao Jing Ji Zhu: Huang Bai is mutually inhibiting with Gan Qi (dried lacquer) — combining them reduces efficacy.",
+        "Ben Cao Jing Shu: Contraindicated in combined Yin-Yang deficiency with concurrent Spleen-Stomach weakness."
       ]
     },
     {
@@ -25289,10 +25327,8 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "非因濕熱引起的發黃忌服：茵陳蒿擅長清濕熱退黃疸，若發黃非因濕熱所致，服用茵陳蒿無效反傷身。",
-        "蓄血發黃者禁用：茵陳蒿具有活血化瘀作用，蓄血發黃者使用恐加重出血。",
-        "孕婦和哺乳期婦女慎用：茵陳蒿可能促進經血，影響胎兒或嬰兒健康。",
-        "高血壓患者應適當控制劑量：茵陳蒿具有降血壓作用，高血壓患者應謹慎使用，以免血壓過低。"
+        "脾虛血虧所致的虛黃、萎黃，一般不宜使用。",
+        "《神農本草經疏》：蓄血發黃者禁用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1232",
       "safety_fetched_at": "2026-07-23T07:25:15.772Z",
@@ -25468,6 +25504,30 @@
           "text": "小兒、老人和體弱者慎用：茵陳蒿藥性偏熱，刺激性較強，此類人羣使用時應謹慎控制劑量。",
           "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):藥性偏熱敘述與本記錄寒性宣告矛盾,同一批掃尾判例,不代補警語。",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "非因濕熱引起的發黃忌服：茵陳蒿擅長清濕熱退黃疸，若發黃非因濕熱所致，服用茵陳蒿無效反傷身。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):原句由自動化流程在古籍禁忌後補上現代機制描述,原典等級不得升格,改採古籍/精確辨證原文。(原句「非因濕熱引起的發黃忌服」後段的活血/機轉解釋為套版文字,改採精確辨證版本)",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "蓄血發黃者禁用：茵陳蒿具有活血化瘀作用，蓄血發黃者使用恐加重出血。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):原句由自動化流程在古籍禁忌後補上現代機制描述,原典等級不得升格,改採古籍/精確辨證原文。(原典支持「蓄血發黃者禁用」的結論,但不支持「活血化瘀/恐加重出血」的機轉敘述——茵陳蒿為清濕熱退黃藥,非活血藥,機轉自造)",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦和哺乳期婦女慎用：茵陳蒿可能促進經血，影響胎兒或嬰兒健康。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):無具名來源支持之現代機制/劑量控制警語,不代補。(「促進經血」缺具名來源,妊娠/哺乳警語無法查證)",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "高血壓患者應適當控制劑量：茵陳蒿具有降血壓作用，高血壓患者應謹慎使用，以免血壓過低。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):無具名來源支持之現代機制/劑量控制警語,不代補。(前臨床血管舒張訊號不得升格為臨床劑量控制警語)",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -25482,6 +25542,10 @@
         "Antiviral activity",
         "Antipyretic activity",
         "Antitumor activity"
+      ],
+      "cautions_en": [
+        "Not suitable in Xu Huang (deficiency jaundice) or Wei Huang (sallow, withered-yellow complexion) arising from Spleen deficiency and Blood exhaustion, rather than Damp-Heat.",
+        "Ben Cao Jing Shu: Contraindicated in jaundice due to Blood accumulation and stasis."
       ]
     },
     {
@@ -35732,14 +35796,10 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "氣虛體弱者禁用。",
-        "血枯經閉、孕婦禁用。",
+        "血枯經閉者忌服。",
         "《醫學啟源》：破氣損真，氣虛人不用。",
         "《品匯精要》：妊娠不可服。",
-        "《得配本草》：素有血癥者禁用。",
-        "嚴重肝腎功能不良或心血管疾病患者應避免使用。",
-        "使用時注意劑量，過量使用可能導致噁心、嘔吐、頭痛。",
-        "三稜具降血糖和降血壓作用，低血糖或低血壓患者應諮詢醫師。"
+        "《得配本草》：素有血癥者禁用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1150",
       "safety_fetched_at": "2026-07-23T07:25:25.184Z",
@@ -35972,12 +36032,47 @@
         "Antitumor and cancer-preventive activity",
         "Immune-enhancing activity"
       ],
-      "cautions_en": [],
+      "cautions_en": [
+        "Contraindicated in amenorrhea due to Blood exhaustion.",
+        "Yi Xue Qi Yuan: Breaks Qi and damages the true (original) Qi — not to be used in Qi-deficient individuals.",
+        "Pinhui Jingyao: Not to be taken during pregnancy.",
+        "De Pei Ben Cao: Contraindicated in those with pre-existing Blood-stasis masses (Xue Zheng)."
+      ],
       "import_artifacts": [
         {
           "original_field": "cautions_zh",
           "text": "對三稜或其他柑橘科植物過敏者應避免使用。",
           "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):三稜為黑三稜科/莎草科植物,非柑橘科,「對柑橘科植物過敏」為他卡殘留誤植,不代補警語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "氣虛體弱者禁用。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):核心內容由 [2]《醫學啟源》「破氣損真，氣虛人不用」原典更精確涵蓋,保留白話重複句反而混淆嚴重度階梯,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "血枯經閉、孕婦禁用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):妊娠禁忌已由 [3]《品匯精要》「妊娠不可服」原典承擔,本句妊娠部分刪除以避免重複/升級,僅保留血枯經閉部分。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "嚴重肝腎功能不良或心血管疾病患者應避免使用。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):肝腎功能/心血管疾病禁忌缺具名來源,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "使用時注意劑量，過量使用可能導致噁心、嘔吐、頭痛。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):過量反應描述缺具名來源,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "三稜具降血糖和降血壓作用，低血糖或低血壓患者應諮詢醫師。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):動物/前臨床降血糖降血壓訊號不得外推為患者用藥警示,不代補。",
           "moved_at": "2026-08-14"
         }
       ]
@@ -43158,7 +43253,7 @@
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
         "濕盛中滿或有實邪、積滯者禁服：山藥性味甘平，有滋補脾胃、益氣養陰的功效，對於濕盛中滿或有實邪、積滯者不適合服用，因為山藥可能會加重濕邪或積滯，不利於身體康復。",
-        "紫芝為之使，惡甘逆：紫芝是一種中藥材，具有疏肝理氣的功效，與山藥搭配使用可以增強山藥的滋補脾胃作用。但是，山藥不宜與甘味過重的食物搭配食用，因為甘味過重會影響山藥的吸收，降低其滋補效果。",
+        "《本草經集註》：紫芝為之使，惡甘遂。",
         "二門冬為之使：二門冬是一種中藥材，具有滋陰潤肺、清熱生津的功效，與山藥搭配使用可以增強山藥補腎益氣的功效。",
         "腎臟病患者慎食：山藥中含有較高的鉀離子，對於腎臟病患者來說，過量攝入鉀離子可能會加重腎臟負擔，因此腎臟病患者應慎食山藥。",
         "高血壓患者慎食：山藥中鉀離子含量較高，對於高血壓患者來說，過量攝入鉀離子可能會導致血壓升高，因此高血壓患者應慎食山藥。"
@@ -43274,10 +43369,18 @@
       ],
       "cautions_en": [
         "Contraindicated in exuberant Dampness with fullness, or Excess pathogens with stagnation — Shan Yao tonifies the Spleen-Stomach and nourishes Qi and Yin, but may aggravate Dampness or stagnation and hinder recovery in such patterns.",
-        "Zi Zhi (Purple Reishi) acts as its guiding herb; mutually inhibiting with \"Gan Ni\" (a term of uncertain identity in the source text, possibly a mistranscription of Gan Sui) — Zi Zhi is said to enhance Shan Yao's Spleen-Stomach tonifying effect when paired. Shan Yao should also not be combined with excessively sweet-flavored foods, as this may impair absorption and reduce its tonifying effect.",
+        "Ben Cao Jing Ji Zhu: Zi Zhi (Purple Reishi) acts as its guiding herb; mutually inhibiting with Gan Sui (Kansui Root) — combining them reduces efficacy.",
         "Tian Men Dong and Mai Men Dong act as its guiding herbs — they nourish Yin, moisten the Lung, clear Heat, and generate fluids, and enhance Shan Yao's Kidney-tonifying, Qi-boosting effect when paired.",
         "Use cautiously in kidney disease — Shan Yao's relatively high potassium content may increase the burden on the kidneys with excessive intake.",
         "Use cautiously in hypertension — its relatively high potassium content may raise blood pressure with excessive intake."
+      ],
+      "import_artifacts": [
+        {
+          "original_field": "cautions_zh",
+          "text": "紫芝為之使，惡甘逆：紫芝是一種中藥材，具有疏肝理氣的功效，與山藥搭配使用可以增強山藥的滋補脾胃作用。但是，山藥不宜與甘味過重的食物搭配食用，因為甘味過重會影響山藥的吸收，降低其滋補效果。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):「甘逆」為「甘遂」訛字(B8 判例已標記疑似 OCR/校對錯字),原句「與甘味過重食物…影響吸收」的吸收機制解釋非原典意思,一併拆除,改採《本草經集註》原典逐字句「紫芝為之使，惡甘遂」。",
+          "moved_at": "2026-08-14"
+        }
       ]
     },
     {
@@ -46977,16 +47080,13 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "脾胃虛寒者不宜服",
-        "溫熱病早期陰未傷者不宜服",
-        "濕溫病未化燥者不宜服",
+        "脾胃虛寒、大便溏薄、舌苔厚膩者忌服。",
+        "溫熱病不宜早用。",
+        "濕溫病尚未化燥傷津者忌服。",
         "《本草經集註》： 陸英為之使。",
         "惡凝水石、巴豆。",
         "畏僵蠶、雷丸。",
-        "《百草鏡》： 惟胃腎有虛熱者宜之，虛而無火者忌用。",
-        "脾虛便溏、食慾不振等脾胃虛弱者不宜長期大量使用",
-        "高燒等熱證患者",
-        "濕熱壅盛者"
+        "《百草鏡》： 惟胃腎有虛熱者宜之，虛而無火者忌用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1178",
       "safety_fetched_at": "2026-07-23T07:25:37.121Z",
@@ -47087,6 +47187,42 @@
           "text": "石斛具有補益作用，以下狀況者應避免使用： 體質虛弱、氣血充足者",
           "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):「體質虛弱、氣血充足者應避免使用」語意矛盾(虛弱與氣血充足互斥)且疑似批次掃尾誤填,不代補警語。cautions_en 整欄同步清空,維持 safety hold。",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾胃虛寒者不宜服",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):補上原典完整辨證要件(便溏、苔厚膩),原句過度簡化。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "溫熱病早期陰未傷者不宜服",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):「陰未傷」為自動化流程補上的辨證條件,原典僅稱溫熱病不宜早用,拆除多餘限定語。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "濕溫病未化燥者不宜服",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):補回「傷津」完整辨證表述。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "脾虛便溏、食慾不振等脾胃虛弱者不宜長期大量使用",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):與首句(脾胃虛寒/大便溏薄)重複,且「長期大量」限定語無具名來源,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "高燒等熱證患者",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):無動詞裸名詞短語,過度泛化且與石斛清熱生津主治方向矛盾,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "濕熱壅盛者",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):無動詞裸名詞短語,過度泛化,不代補。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -47094,7 +47230,15 @@
         "Immune-enhancing activity",
         "Antioxidant activity"
       ],
-      "cautions_en": []
+      "cautions_en": [
+        "Contraindicated in Spleen-Stomach Deficiency-Cold with loose, watery stools and a thick greasy tongue coating.",
+        "Not suitable for early use in warm-febrile disease.",
+        "Contraindicated in Damp-Warmth disease that has not yet transformed to Dryness and damaged fluids.",
+        "Ben Cao Jing Ji Zhu: Lu Ying serves as its guiding herb.",
+        "Mutually inhibiting with Ning Shui Shi and Ba Dou (Croton Seed) — combining them reduces efficacy.",
+        "Antagonistic with Jiang Can (Bombyx Batryticatus) and Lei Wan — do not combine.",
+        "Bai Cao Jing: Suitable only for those with deficiency-Heat in the Stomach and Kidney; contraindicated in deficiency without Fire signs."
+      ]
     },
     {
       "id": "herb.yu_zhu",
@@ -54135,24 +54279,22 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "痢疾、氣虛者不宜服用：佛手柑具有下氣作用，痢疾患者或氣虛者服用後會加重病情。",
-        "腸胃功能較弱者慎用：佛手柑的揮發油成分可能會刺激腸胃，腸胃功能較弱者容易出現腹瀉等不適。",
-        "過量服用會傷胃：佛手柑中的揮發油成分過量服用會對胃黏膜造成刺激，引起胃痛、噁心等症狀。"
+        "痢久氣虛者慎用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/4183",
       "safety_fetched_at": "2026-07-23T07:25:45.640Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "理氣行氣",
-        "止咳化痰"
+        "疏肝理氣",
+        "和胃止痛",
+        "燥濕化痰"
       ],
       "modern_functions_zh": [
-        "抗菌",
-        "抗氧化",
-        "降血脂",
-        "降血糖",
-        "降血壓",
-        "抗腫瘤"
+        "抗菌活性（體外）",
+        "抗氧化活性（體外）",
+        "調節脂質代謝（體外）",
+        "糖代謝調節活性（體外）",
+        "抗腫瘤活性（體外）"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/4183",
@@ -54237,12 +54379,11 @@
       },
       "card_grade": "partial",
       "modern_functions_en": [
-        "Antibacterial activity",
-        "Antioxidant activity",
-        "Lipid-lowering activity",
-        "Hypoglycemic activity",
-        "Antihypertensive activity",
-        "Antitumor activity"
+        "Antibacterial activity (in vitro)",
+        "Antioxidant activity (in vitro)",
+        "Lipid-metabolism-modulating activity (in vitro)",
+        "Glucose-metabolism-modulating activity (in vitro)",
+        "Antitumor activity (in vitro)"
       ],
       "import_artifacts": [
         {
@@ -54256,7 +54397,46 @@
           "text": "與某些藥物會產生交互作用：佛手柑中的呋喃香豆素成分可能會影響藥物代謝，與某些藥物（如華法林、環孢素）併用時可能增加藥物濃度，導致不良反應。",
           "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):呋喃香豆素/華法林交互作用資料屬 Bergamot(佛手柑,Citrus bergamia)藥理,與本記錄佛手(Citrus medica var. sarcodactylis)非同一基原,物種誤植,不代補警語。",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "痢疾、氣虛者不宜服用：佛手柑具有下氣作用，痢疾患者或氣虛者服用後會加重病情。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):原句稱「佛手柑」(Citrus bergamia)非本記錄「佛手」(Citrus medica var. sarcodactylis)基原,且「下氣作用會加重痢疾/氣虛」機轉自造,改採辨證正確之慎用敘述。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "腸胃功能較弱者慎用：佛手柑的揮發油成分可能會刺激腸胃，腸胃功能較弱者容易出現腹瀉等不適。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):稱「佛手柑」(Bergamot)基原與本記錄「佛手」不同,揮發油刺激腸胃機轉缺具名來源,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "過量服用會傷胃：佛手柑中的揮發油成分過量服用會對胃黏膜造成刺激，引起胃痛、噁心等症狀。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):同上,基原誤植(佛手柑/Bergamot)且機轉缺具名來源,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "functions_zh",
+          "text": "[\"理氣行氣\",\"止咳化痰\"]",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):基原無污染,但措辭不標準(理氣行氣/止咳化痰為口語化重複詞),改採 C. medica var. sarcodactylis 正規功效表述,與本記錄 indications_zh「疏肝理氣；和胃止痛；燥濕化痰」對齊。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "modern_functions_zh",
+          "text": "[\"抗菌\",\"抗氧化\",\"降血脂\",\"降血糖\",\"降血壓\",\"抗腫瘤\"]",
+          "reason": "SOL 第二輪查源判定(2026-08-14,Ting 授權執行):體外藥理訊號逐項加註（體外）以誠實標示證據等級,不寫臨床口吻;降血壓一項另因人體吸入研究反而觀察到血壓上升,整項封存刪除(zh+en),不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "modern_functions_en",
+          "text": "[\"Antibacterial activity\",\"Antioxidant activity\",\"Lipid-lowering activity\",\"Hypoglycemic activity\",\"Antihypertensive activity\",\"Antitumor activity\"]",
+          "reason": "SOL 第二輪查源判定(2026-08-14,Ting 授權執行):同上,en 鏡像同步封存,索引對齊。",
+          "moved_at": "2026-08-14"
         }
+      ],
+      "cautions_en": [
+        "Use cautiously in chronic dysentery with Qi deficiency."
       ]
     },
     {
@@ -56952,13 +57132,11 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "孕婦忌服。",
-        "因血虛導致的骨節痛、胸腹脅肋痛不適用。",
-        "產後惡露過多、腹中虛痛者不適用。",
-        "癰疽已潰爛不適用。",
-        "目赤膚翳非血熱嚴重者不適用。",
-        "孕婦和哺乳期婦女應避免使用，因其具有刺激性，可能影響胎兒或嬰兒。",
-        "高血壓患者應避免使用，因其可能對中樞神經系統和心血管系統造成不良影響。"
+        "《神農本草經疏》：孕婦不宜服。",
+        "《神農本草經疏》：骨節痛及胸腹脅肋痛，非瘀血停留而因於血虛者不宜用。",
+        "《神農本草經疏》：產後惡露去多、腹中虛痛者不宜用。",
+        "《神農本草經疏》：癰疽已潰者不宜用。",
+        "《神農本草經疏》：目赤膚翳，非血熱甚者不宜用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1119",
       "safety_fetched_at": "2026-07-23T07:25:49.204Z",
@@ -57150,7 +57328,56 @@
           "text": "青少年應避免使用，因其具有神經毒性，可能影響神經系統。",
           "reason": "SOL 查源判定 C刪除(2026-08-14,Ting 核可):「神經毒性」敘述缺乏具名來源佐證,不代補警語。",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦忌服。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):《神農本草經疏》原典逐條列有沒藥禁忌,原句為白話改寫且遺失出處,改採原典逐句版本,原典等級不升格。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "因血虛導致的骨節痛、胸腹脅肋痛不適用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):《神農本草經疏》原典逐條列有沒藥禁忌,原句為白話改寫且遺失出處,改採原典逐句版本,原典等級不升格。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "產後惡露過多、腹中虛痛者不適用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):《神農本草經疏》原典逐條列有沒藥禁忌,原句為白話改寫且遺失出處,改採原典逐句版本,原典等級不升格。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "癰疽已潰爛不適用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):《神農本草經疏》原典逐條列有沒藥禁忌,原句為白話改寫且遺失出處,改採原典逐句版本,原典等級不升格。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "目赤膚翳非血熱嚴重者不適用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):《神農本草經疏》原典逐條列有沒藥禁忌,原句為白話改寫且遺失出處,改採原典逐句版本,原典等級不升格。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "孕婦和哺乳期婦女應避免使用，因其具有刺激性，可能影響胎兒或嬰兒。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):與 [0] 重複且哺乳期/心血管系統機轉無具名來源,不代補。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "高血壓患者應避免使用，因其可能對中樞神經系統和心血管系統造成不良影響。",
+          "reason": "SOL 第二輪查源判定 C刪除(2026-08-14,Ting 授權執行):中樞神經系統/心血管機轉無具名來源,不代補。",
+          "moved_at": "2026-08-14"
         }
+      ],
+      "cautions_en": [
+        "Ben Cao Jing Shu: Not suitable in pregnancy.",
+        "Ben Cao Jing Shu: Not suitable for joint pain or chest, abdominal, and hypochondriac pain that arises from Blood deficiency rather than stagnant Blood retention.",
+        "Ben Cao Jing Shu: Not suitable for excessive postpartum lochia or deficiency-type abdominal pain.",
+        "Ben Cao Jing Shu: Not suitable once a sore or abscess has already ruptured.",
+        "Ben Cao Jing Shu: Not suitable for red eyes with nebula that does not arise from severe Blood-Heat."
       ]
     },
     {
@@ -59620,8 +59847,8 @@
         "表實邪盛者不宜使用：太子參性質偏涼，表實邪盛者使用可能會加重病情。",
         "腹瀉：服用過量太子參可能會導致腹瀉等胃腸不適症狀。",
         "孕婦：太子參可能影響胎兒發育，孕婦應避免使用。",
-        "高血壓：患有低血壓或已服降壓藥物者應在醫生指導下使用。",
-        "糖尿病：患有低血糖或已服降糖藥物者應在醫生指導下使用。",
+        "低血壓／正在使用降壓藥物者：患有低血壓或已服降壓藥物者應在醫生指導下使用。",
+        "低血糖／正在使用降糖藥物者：患有低血糖或已服降糖藥物者應在醫生指導下使用。",
         "感冒、發燒等急性疾病：太子參不適合在急性疾病時使用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1746",
@@ -59726,6 +59953,18 @@
           "text": "益氣健脾生津潤肺",
           "reason": "Ting 2026-08-14 裁定，功效聯非證候標籤，缺項已先補入 functions_zh",
           "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "高血壓：患有低血壓或已服降壓藥物者應在醫生指導下使用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):上游 CloudTCM 原頁標題「高血壓」與內文「低血壓」方向相反(疑為生成模板套錯高/低變體,B8 判例已標記),repo 忠實搬回原始矛盾;本修復僅正表頭語義為「低血壓／正在使用降壓藥物者」,不改內文,evidence 層級仍為 preclinical/weak,不得視為 verified clinical contraindication。",
+          "moved_at": "2026-08-14"
+        },
+        {
+          "original_field": "cautions_zh",
+          "text": "糖尿病：患有低血糖或已服降糖藥物者應在醫生指導下使用。",
+          "reason": "SOL 第二輪查源判定 B改寫(2026-08-14,Ting 授權執行):同上,表頭「糖尿病」與內文「低血糖」方向相反,改正表頭為「低血糖／正在使用降糖藥物者」,evidence 層級仍為 preclinical/weak。",
+          "moved_at": "2026-08-14"
         }
       ],
       "modern_functions_en": [
@@ -59739,8 +59978,8 @@
         "Not suitable in Exterior Excess with exuberant pathogens — Tai Zi Shen is slightly cool in nature and may worsen the condition.",
         "Overdose may cause diarrhea and other gastrointestinal discomfort.",
         "Avoid in pregnancy — may affect fetal development.",
-        "Blood pressure caution — those with hypotension or already taking antihypertensive medication should use under medical guidance.",
-        "Blood glucose caution — those with hypoglycemia or already taking glucose-lowering medication should use under medical guidance.",
+        "Hypotension / concurrent antihypertensive medication use — those with hypotension or already taking antihypertensive medication should use under medical guidance.",
+        "Hypoglycemia / concurrent glucose-lowering medication use — those with hypoglycemia or already taking glucose-lowering medication should use under medical guidance.",
         "Not suitable during acute illness such as common cold or fever."
       ]
     },
