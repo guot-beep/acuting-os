@@ -74,6 +74,11 @@ function tidy(s) {
 }
 const empty = (v) => v === undefined || v === null || v === "" || (Array.isArray(v) && !v.length);
 const GARBAGE = /^[兼與所和]?[.．]證?$|^[.．]|[.．]證$/;
+/* ba_fa_zh 是中文欄位。課件在沒有八法可指派時寫的是一句英文說明，照抄進去就
+   變成「英文、而且說的是沒有值」印在卡片的八法格上。同一個意思用中文寫。 */
+const BA_FA_NONE_EN = /No single Ba Fa assigned mechanically/i;
+const BA_FA_NONE_ZH = "課件未指派單一八法；依本方功效與證型判讀";
+const baFaZh = (v) => (v && BA_FA_NONE_EN.test(String(v)) ? BA_FA_NONE_ZH : v);
 
 const FILE = "data/herbs/formulas.json";
 const raw = fs.readFileSync(path.join(ROOT, FILE), "utf8");
@@ -127,7 +132,10 @@ for (const r of recs) {
   };
   fill("category_zh", card.category, "D");
   fill("category", card.category, "D");
-  fill("ba_fa_zh", card.baFa, "D");
+  // 課件在沒有八法可指派時寫的是一句英文說明，這支腳本照抄進 ba_fa_zh，
+  // 於是 94 首方的「八法」欄位是英文、而且內容是「沒有指派值」。中文欄位放
+  // 中文，意思不變：見 data 端 2026-08-12 的改寫。
+  fill("ba_fa_zh", baFaZh(card.baFa), "D");
   fill("course_level_en", card.level, "D");
   fill("american_dragon_url", card.adUrl, "E");
   if (card.thp && /Yes/i.test(card.thp)) fill("taiwan_pharmacopeia_zh", card.thp.replace(/^Yes\s*—\s*/, ""), "E");
