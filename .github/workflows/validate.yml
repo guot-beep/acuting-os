@@ -199,6 +199,25 @@ jobs:
       - name: bilingual render parity (no _en field left off the screen)
         run: node scripts/validate-bilingual-render-parity.js
 
+      # 畫面層三支(2026-08-14 Ting 指示)。它們與上面的 CARE 三支同一種病:
+      # CLAUDE.md 把它們列為「改完要跑」,而這個檔案裡一個字都沒有 ——
+      # 唯一會逼人跑它們的東西不存在。而這一層抓的正是驗證器抓不到的東西:
+      # 資料是對的、驗證器全綠,但畫面上少了一塊,或畫出了資料沒說的話
+      # (捏造的劑量、沒人讀過的手寫警語、蓋掉來源欄的生成欄位)。
+      #   outcome-panel-render     三態指標有沒有真的畫到 Outcome Tracking
+      #   exposure-safety-render   黑框警告有沒有帶到病歷,且「沒查過」≠「查過沒事」
+      #   metric-interpretation    沒有來源就不准寫數字閾值
+      # 實測於 75f6d73e:三支皆 exit 0,且前後 `git status --porcelain` 相同
+      # (不像 pharm 那兩支會就地改 tracked 檔案)-> blocking。
+      - name: outcome panel actually renders the three-state metrics
+        run: node scripts/validate-outcome-panel-render.js
+
+      - name: exposure safety black-box warning reaches the chart
+        run: node scripts/validate-exposure-safety-render.js
+
+      - name: metric interpretation has no unsourced numeric threshold
+        run: node scripts/validate-metric-interpretation.js
+
       # 可合性 gate 自己的回歸測試。**無條件跑**,不跟著下面那步的 if ——
       # 2026-08-13 那次是 gate 自己發假紅燈(shallow clone 被判成衝突),
       # 而那種缺陷只在 push 事件的環境裡現形,等於沒有人在看。這支自己造
