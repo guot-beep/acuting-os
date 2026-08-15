@@ -3085,7 +3085,7 @@
         "co_management": "與婦產科保持聯繫確認結構性評估與出血性疾病篩檢結果；急性大量出血合併血壓下降等徵象立即轉介急診，不以針灸處理",
         "evidence": "unknown",
         "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
-        "note": "本次查證未找到月經過多針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "note": "證據:未找到符合本任務來源標準、直接涵蓋月經過多 N92.0 且可核對具體穴位的系統性回顧、指引或原始試驗。原發性痛經或異常子宮出血的資料不可直接代替月經過多處方。\n本次查證的注意事項:建立任何輔助處方前應先排除妊娠、嚴重貧血、凝血異常及需婦科處置的結構性病因。\n本欄目前留空,是查證後的結果 —— 未找到符合來源標準且直接涵蓋本病、並報告可核對穴位的資料,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive care for flow/cycle-related symptoms, but gynecologic evaluation to exclude structural lesions (fibroids, polyps, adenomyosis) and bleeding disorders should be completed first",
@@ -3117,6 +3117,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到月經過多針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -3635,7 +3641,7 @@
         "co_management": "若懷疑腦下垂體病灶、卵巢早衰或顯著體重過低，轉介病人至婦產科／內分泌科，不建議以針灸延誤診斷性評估",
         "evidence": "unknown",
         "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
-        "note": "本次查證未找到繼發性閉經針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "note": "證據:未找到可支持繼發性閉經 N91.1 固定穴組的合格直接來源。PCOS 月經頻率研究、排卵障礙研究及單一病例不能代表病因多樣的繼發性閉經。\n本次查證的注意事項:開始任何治療前須先驗孕，並評估甲狀腺、泌乳素、下視丘性閉經、PCOS、卵巢功能不全及解剖性病因。\n本欄目前留空,是查證後的結果 —— 未找到符合來源標準且直接涵蓋本病、並報告可核對穴位的資料,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive care for cycle regulation and constitutional support, but pregnancy exclusion plus endocrine/imaging workup should be completed first to clarify the cause",
@@ -3667,6 +3673,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到繼發性閉經針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -4813,8 +4825,8 @@
         "precautions": "治療前確認病人是否已於生殖科進行 AMH／AFC 評估與時效性討論；避免以針灸延誤或取代及時轉介",
         "co_management": "與生殖醫學科保持聯繫，尤其病人正在規劃卵巢刺激或 IVF 週期時程",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ASRM 臨床資料整理）",
-        "note": "本次查證未找到 DOR 針灸療效之系統性回顧來源；ASRM 強調卵巢儲備指標不能準確預測自然生育力，須避免將針灸療效宣稱延伸超出證據"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ASRM 臨床資料整理）；Lin G, et al. Clinical efficacy of acupuncture for diminished ovarian reserve: a systematic review and meta-analysis. Front Endocrinol. 2023;14:1136121. PMID: 37600702.(https://pubmed.ncbi.nlm.nih.gov/37600702/)【涵蓋:DOR 患者的卵巢儲備替代指標】；Xu H, et al. Effect of acupuncture for diminished ovarian reserve: a randomized controlled trial protocol. 2021.(https://pmc.ncbi.nlm.nih.gov/articles/PMC8527724/)【涵蓋:DOR 的 12 週針灸對 sham protocol】",
+        "note": "證據:目前證據主要是卵巢儲備替代指標，尚不足以建立通用固定處方或宣稱改善懷孕／活產；本交付不從多個異質試驗拼接穴組。\n本次查證的注意事項:每週期確認懷孕可能；針灸不得延誤生殖內分泌評估或把有限卵巢儲備描述為可逆。\n本欄目前留空,是查證後的結果 —— 現有來源不足以形成可核對的固定處方,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as whole-person and stress-support care during reproductive treatment; do not claim acupuncture can raise ovarian-reserve markers or reverse DOR",
@@ -4843,6 +4855,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到 DOR 針灸療效之系統性回顧來源；ASRM 強調卵巢儲備指標不能準確預測自然生育力，須避免將針灸療效宣稱延伸超出證據",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -5869,8 +5887,8 @@
         "precautions": "治療前確認是否已排除停經後異常出血（需先婦科評估排除惡性）；40 歲前出現症狀應先評估卵巢早衰而非逕行針灸症狀處理",
         "co_management": "若病人正接受荷爾蒙療法或有乳癌、血栓病史等，與其開立荷爾蒙治療之醫師保持聯繫，不建議病人自行調整荷爾蒙用藥",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）",
-        "note": "本次查證未找到更年期症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 ACOG 臨床資料整理）；Cho SH, Whang WW. Acupuncture for vasomotor menopausal symptoms: a systematic review. Menopause. 2009.(https://www.ncbi.nlm.nih.gov/books/NBK76776/)【涵蓋:更年期血管舒縮症狀】；Lund KS, et al. Efficacy of a standardised acupuncture approach for women with bothersome menopausal symptoms: a pragmatic randomised study in primary care (ACOM). BMJ Open. 2019;9:e023637.(https://bmjopen.bmj.com/content/9/1/e023637)【涵蓋:中重度更年期症狀的短期務實試驗】",
+        "note": "證據:療效依對照組而異；相對無治療可有短期改善，但相對假針未顯示一致特異效果。來源不足以建立單一通用穴組。\n本次查證的注意事項:異常停經後出血必須先接受婦科評估，不得作為一般更年期症狀直接針治。\n本欄目前留空,是查證後的結果 —— 現有來源不足以形成可核對的固定處方,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive care for vasomotor, sleep, and mood-related symptoms",
@@ -5903,6 +5921,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到更年期症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -6316,7 +6340,24 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "膻中",
+          "code": "CV17"
+        },
+        {
+          "name_zh": "少澤",
+          "code": "SI1"
+        },
+        {
+          "name_zh": "乳根",
+          "code": "ST18"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -6418,8 +6459,8 @@
         "precautions": "先評估母嬰感染、乳房炎／膿瘍、產後出血、嬰兒脫水、黃疸及體重問題。",
         "co_management": "與婦產科、兒科及國際認證泌乳顧問共同管理；不得延誤餵養補充計畫。",
         "evidence": "unknown",
-        "source": "ACOG — Breastfeeding Challenges",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "ACOG — Breastfeeding Challenges；Bao QN, et al. Efficacy and safety of acupuncture for postpartum hypogalactia: a systematic review and meta-analysis of randomized controlled trials. PLoS One. 2024;19:e0303948. PMID: 38843204.(https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0303948)【涵蓋:產後缺乳；19 個 RCT、2,400 人，排除乳腺炎與乳房膿瘍】",
+        "note": "取穴依據:CV17、SI1、ST18、ST36 是系統性回顧依 STRICTA 抽取後報告的最常用穴位；這是跨試驗頻率摘要，不等同已驗證的唯一標準方。\n證據:可建立研究來源支持的候選穴組，但證據為 critically low、試驗高度異質且多數有偏倚疑慮，不能保證泌乳效果。\n本次查證的注意事項:先評估含乳姿勢、餵奶頻率、嬰兒體重與脫水、母體出血／內分泌因素；乳房紅腫熱痛、發熱或疑似膿瘍不得只以針灸處理。產後情境不適用備孕卡的 LI4／SP6 孕期限制。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May be used only as adjunctive care for maternal stress, pain, or relaxation; do not promise increased milk production.",
@@ -6448,6 +6489,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -7177,8 +7224,8 @@
         "precautions": "不得以針灸治療活動性感染；發燒、急性骨盆痛或妊娠可能性須先依紅旗流程處理。",
         "co_management": "與婦產科／初級照護共同管理；不得延誤抗生素、性伴侶處置或不孕／子宮外孕風險評估。",
         "evidence": "unknown",
-        "source": "CDC — PID STI Treatment Guidelines",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "CDC — PID STI Treatment Guidelines；Yi L, et al. Acupuncture therapies for relieving pain in pelvic inflammatory disease: a systematic review and meta-analysis. PLoS One. 2024;19:e0292166.(https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292166)【涵蓋:PID 相關腹部及腰骶疼痛；包含不同針灸相關介入】；Cheng Y, et al. Acupuncture for chronic pelvic inflammatory disease: a systematic review protocol/review. 2018.(https://pmc.ncbi.nlm.nih.gov/articles/PMC5895379/)【涵蓋:慢性 PID／慢性骨盆炎症與疼痛】",
+        "note": "證據:可支持疼痛輔助的低確定性 scope，但不能從複合介入回顧建立固定針灸處方。\n本次查證的注意事項:發熱、急性下腹痛、宮頸舉痛、妊娠可能或疑似膿瘍須立即依急性 PID／急腹症處理；針灸不能替代抗生素。\n本欄目前留空,是查證後的結果 —— 現有來源不足以形成可核對的固定處方,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "After infection has been appropriately treated and the condition is stable, acupuncture may only be considered for adjunctive symptom care such as pain, stress, or functional burden.",
@@ -7207,6 +7254,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -7358,7 +7411,7 @@
         "co_management": "與婦產科／初級照護共同管理，避免僅憑症狀自我診斷或延誤檢驗治療。",
         "evidence": "unknown",
         "source": "CDC — Vulvovaginal Candidiasis STI Treatment Guidelines",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "note": "證據:檢索所得具體穴位主要來自診所網站、個案或中藥合併療法，不符合派工單來源標準；未找到可建立 VVC 針灸處方的合格直接試驗或回顧。\n本次查證的注意事項:應以檢驗及標準抗黴菌治療為主；反覆發作須評估糖尿病、免疫抑制、抗生素暴露及非念珠菌病因。\n本欄目前留空,是查證後的結果 —— 未找到符合來源標準且直接涵蓋本病、並報告可核對穴位的資料,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "Acupuncture does not treat Candida infection; after diagnosis and antifungal treatment, it may at most support noninfectious residual discomfort.",
@@ -7387,6 +7440,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -7780,7 +7839,20 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        },
+        {
+          "name_zh": "關元",
+          "code": "CV4"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -7860,8 +7932,8 @@
         "precautions": "每次確認自傷／自殺風險與躁期症狀；急性風險時停止常規治療並啟動危機流程。",
         "co_management": "與婦產科及心理健康專業人員共同管理；藥物不得自行停改。",
         "evidence": "unknown",
-        "source": "ACOG — Management of Premenstrual Disorders",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "ACOG — Management of Premenstrual Disorders；Armour M, et al. Acupuncture and acupressure for premenstrual syndrome. Cochrane Database Syst Rev. 2018;CD005290.(https://pmc.ncbi.nlm.nih.gov/articles/PMC6513602/)【涵蓋:PMS；部分研究不等同 DSM 定義的 PMDD】；Zhang J, et al. Acupuncture for premenstrual syndrome at different intervention times: a systematic review and meta-analysis. 2019.(https://pmc.ncbi.nlm.nih.gov/articles/PMC6614973/)【涵蓋:PMS 針灸研究；回顧明列常用穴為 SP6、LR3、RN4】",
+        "note": "取穴依據:這三穴來自 PMS 針灸研究的穴位使用頻率整理，不代表已有 PMDD 專屬標準處方。\n證據:證據主要來自 PMS，PMDD 專屬樣本有限；僅能作為輔助既有精神科／婦科治療的研究型方案。\n本次查證的注意事項:每週期先確認懷孕可能；如可能懷孕，不應機械沿用含 LI4／SP6 的研究方案。出現自傷或自殺意念須立即依精神健康急症流程處理。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May only be used as adjunctive symptom care for stress, sleep, or pain; it does not replace PMDD diagnosis or standard treatment.",
@@ -7890,6 +7962,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
@@ -8016,8 +8094,8 @@
         "precautions": "異常大量出血、妊娠可能、急性單側痛、發燒或昏厥須先轉診；孕期避免未經評估的腹骶部刺激。",
         "co_management": "與婦產科共同管理內膜異位、腺肌症、肌瘤或 PID；不得用症狀緩解取代病因追蹤。",
         "evidence": "unknown",
-        "source": "ACOG — Dysmenorrhea",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "ACOG — Dysmenorrhea；Giese N, et al. Acupuncture for endometriosis: a systematic review and meta-analysis. Integr Med Res. 2023.(https://www.sciencedirect.com/science/article/pii/S2213422023000823)【涵蓋:子宮內膜異位症相關月經痛與骨盆痛，不涵蓋所有繼發性痛經病因】；Xu Y, et al. Effects of acupuncture for the treatment of endometriosis-related pain: a systematic review and meta-analysis. PLoS One. 2017;12:e0186616.(https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0186616)【涵蓋:子宮內膜異位症相關痛經】",
+        "note": "證據:現有直接證據主要針對子宮內膜異位症相關痛經，不能擴張到腺肌症、肌瘤、感染或其他繼發性痛經；回顧沒有形成可核對的通用固定穴組，因此 points 留空。\n本次查證的注意事項:應先確認繼發性病因；新發或進行性疼痛、異常出血、發熱、妊娠可能或急腹症需婦科評估。\n本欄目前留空,是查證後的結果 —— 現有來源不足以形成可核對的固定處方,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "After the underlying cause is established and stable, acupuncture may be considered only for adjunctive care of pain, nausea, or stress.",
@@ -8046,6 +8124,12 @@
           "field": "acupoint_protocols",
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
+          "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-12 由 SOL 逐病查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,而該類說法在本專案已被推翻過一次(胎位不正卡宣稱查不到,實則 Cochrane CD003928 自 2005 年即存在)。原句保留備查。",
           "archived_at": "2026-08-12"
         }
       ]
