@@ -407,8 +407,21 @@
     return `<div class="k-pair-list">${list.map((p) => pairCard(p, false)).join("")}</div>`;
   }
 
+  /* The badge printed the raw enum, so 44 formula cards read
+     "sourced_cloudtcm_record" and 21 read "sourced_ad_record" at the reader.
+     Only the three values the templates define get a label; anything else is
+     shown verbatim on purpose — a value nobody defined should look wrong on
+     the card rather than be dressed up as if it were a real state. The herb
+     line still has 43 such records (validate-formula-standard F14 now blocks
+     new ones on the formula side). */
+  const STATUS_LABEL = {
+    draft: "草稿 Draft",
+    source_checked: "已核對來源 Source checked",
+    deprecated: "已退役 Deprecated"
+  };
   function statusPill(status) {
-    return `<span class="k-status k-status-${esc(status)}">${esc(status || "draft")}</span>`;
+    const key = String(status || "draft");
+    return `<span class="k-status k-status-${esc(key)}">${esc(STATUS_LABEL[key] || key)}</span>`;
   }
 
   if (!K) {
