@@ -10,6 +10,7 @@
 - **Phase A**:Codex 額度未回(8/18),照 AGENTS.md 慣例改派隔離 Opus 一輪收斂 audit → **判決 GO,0 HIGH blocker**(六類 HIGH 逐項機器證據排除;31/31+65/65+30/30 重現、PHI boundary 0 裸 parse、invariants 0、對抗 harness 24/24)。
   - **更正一筆**:上文「GO 錨點後 clinical 路徑零 commit」措辭不精確——實有 2 筆 app.js commit(71913291、16edc381),但 diff 全落在 CARE 面板,**觸及 v2/persist seam 的行數 = 0**,結論實質成立。
   - **MED 佇列(不擋,下個 clinical 檔期依序)**:M1 app.js no-store fallback 不看 pointer(2 行修法,排第一);M2 file:// 全機共用 localStorage namespace——`legacy/index.html`(直寫 v1 鍵)與 7 個無 clinical-store 的舊 worktree checkout 是污染源;M3 file:// 上 `crypto.subtle` 失敗靜默(syncPendingPatients 吞錯,症狀=新 code 永不長 Patient row;5 秒可補證);M4 未做使用者煙測=MED 級(F5 乾淨已經驗性排除 fail-loud 三類)。
+  - **M1 已修**(`9805b75e`,review 升級為首次存檔前必修):app.js 兩條 no-store fallback 在 pointer=v2 時 fail-closed——load 不再把凍結 v1 呈現為現況(integrity 唯讀鎖),persist 零寫入保護回滾錨;+17 行、負面測試 20/20(舊碼上情境 A 8/8 FAIL 為修復證明)、31/31 與 ratchet 維持。
   - **⏳ 限時窗口(E6)**:目前 envelope 仍是 migration-era(runtime_revision 缺席)——**在 Ting 第一次臨床存檔前**,匯出 v2 envelope + node 對 pre-c2b 原檔重建 plan 跑 `verifyStagingObject`,可回溯補齊 snippet 路徑繞過的 13 類驗證(對 v1 raw 的位元組忠實度證明);第一次存檔後 revision→1,此證明永久不可得。明晨第一件事。
 - 附帶:排練/煙測期間誤落 Downloads 的兩個測試匯出檔(RH-A/RH-B envelope、AT-GATE3-SMOKE)已確認內容後刪除。
 
