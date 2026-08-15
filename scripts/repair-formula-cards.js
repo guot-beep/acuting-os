@@ -79,6 +79,13 @@ const GARBAGE = /^[兼與所和]?[.．]證?$|^[.．]|[.．]證$/;
 const BA_FA_NONE_EN = /No single Ba Fa assigned mechanically/i;
 const BA_FA_NONE_ZH = "課件未指派單一八法；依本方功效與證型判讀";
 const baFaZh = (v) => (v && BA_FA_NONE_EN.test(String(v)) ? BA_FA_NONE_ZH : v);
+/* 同理，課程層級找不到時課件寫的是「在**上傳的**主清單裡找不到」——upload 是
+   當初那次匯入的事，讀卡片的人無從得知指的是哪一批。只留事實，用語跟其他 144
+   個真值一致（Formulations 1/2 …）。不套用在人參養榮湯那句，它另外說明了名稱
+   差異，是真內容。 */
+const LEVEL_NONE_EN = /^Not found in the uploaded Formulations 1\/2 master knowledge-level lists\.?$/i;
+const LEVEL_NONE = "Not listed in the Formulations 1/2 knowledge-level lists";
+const courseLevel = (v) => (v && LEVEL_NONE_EN.test(String(v).trim()) ? LEVEL_NONE : v);
 
 const FILE = "data/herbs/formulas.json";
 const raw = fs.readFileSync(path.join(ROOT, FILE), "utf8");
@@ -136,7 +143,7 @@ for (const r of recs) {
   // 於是 94 首方的「八法」欄位是英文、而且內容是「沒有指派值」。中文欄位放
   // 中文，意思不變：見 data 端 2026-08-12 的改寫。
   fill("ba_fa_zh", baFaZh(card.baFa), "D");
-  fill("course_level_en", card.level, "D");
+  fill("course_level_en", courseLevel(card.level), "D");
   fill("american_dragon_url", card.adUrl, "E");
   if (card.thp && /Yes/i.test(card.thp)) fill("taiwan_pharmacopeia_zh", card.thp.replace(/^Yes\s*—\s*/, ""), "E");
   if (APPLY && r.review_status === "skeleton" && (r.composition || []).length) r.review_status = "draft";
