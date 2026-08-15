@@ -7,7 +7,10 @@
 - **Phase R-B**(dev origin 瀏覽器實彈):node 產 staging(正典 kv 管線)→ subtle 雜湊比對後 setItem → reload 後 activeIsV2、Patient Workspace「2 patients」、真 UI SOAP 寫進 staging(revision 0→1)且 **v1 鍵位元組不變**、隔離成立、export 出 v2 envelope、rollback 演習與災難還原(R10-D6 路徑)全過。
 - **Phase P**(真機,Edge file://):真實資料 **2 cases / 0 SOAP / 2 patient codes / 0 conflicts**(「33-case store」為計畫文件舊假設,實測歷史備份一致為 1-2 案例;8/12 備份中 1 筆 SOAP 經 Ting 確認為測試殘留)。副本過 preflight + rehearse 全綠後,以三重自檢 console snippet(live raw 漂移雜湊 + staging 完整性雜湊,全過才寫入)套用,Ting 回報 ✅ APPLIED + F5。
 - **⚠️ 誠實缺口**:使用者級煙測(病人列表/病例開啟/切換後首份 v2 匯出)**未執行**——Ting 裁定直接結案。風險緩衝:資料僅 2 案例、四份 pre-c2b 備份(Downloads 原檔、Documents/AcuTing-backups、工作目錄×2)、一貼即回 v1 的 rollback console 檔已交付。**下次打開 app 即自然煙測**;任何異常先回滾再查。
-- **Phase A**:Codex 額度未回(8/18),照 AGENTS.md 慣例改派隔離 Opus 一輪收斂 audit(data loss/isolation/migration/export-import/regression only),判決落地後補記於此。
+- **Phase A**:Codex 額度未回(8/18),照 AGENTS.md 慣例改派隔離 Opus 一輪收斂 audit → **判決 GO,0 HIGH blocker**(六類 HIGH 逐項機器證據排除;31/31+65/65+30/30 重現、PHI boundary 0 裸 parse、invariants 0、對抗 harness 24/24)。
+  - **更正一筆**:上文「GO 錨點後 clinical 路徑零 commit」措辭不精確——實有 2 筆 app.js commit(71913291、16edc381),但 diff 全落在 CARE 面板,**觸及 v2/persist seam 的行數 = 0**,結論實質成立。
+  - **MED 佇列(不擋,下個 clinical 檔期依序)**:M1 app.js no-store fallback 不看 pointer(2 行修法,排第一);M2 file:// 全機共用 localStorage namespace——`legacy/index.html`(直寫 v1 鍵)與 7 個無 clinical-store 的舊 worktree checkout 是污染源;M3 file:// 上 `crypto.subtle` 失敗靜默(syncPendingPatients 吞錯,症狀=新 code 永不長 Patient row;5 秒可補證);M4 未做使用者煙測=MED 級(F5 乾淨已經驗性排除 fail-loud 三類)。
+  - **⏳ 限時窗口(E6)**:目前 envelope 仍是 migration-era(runtime_revision 缺席)——**在 Ting 第一次臨床存檔前**,匯出 v2 envelope + node 對 pre-c2b 原檔重建 plan 跑 `verifyStagingObject`,可回溯補齊 snippet 路徑繞過的 13 類驗證(對 v1 raw 的位元組忠實度證明);第一次存檔後 revision→1,此證明永久不可得。明晨第一件事。
 - 附帶:排練/煙測期間誤落 Downloads 的兩個測試匯出檔(RH-A/RH-B envelope、AT-GATE3-SMOKE)已確認內容後刪除。
 
 **C2b 狀態:切換已執行,pointer=v2。9/5 HARD GATES 的 Patient 實體項自此在真機生效。**
