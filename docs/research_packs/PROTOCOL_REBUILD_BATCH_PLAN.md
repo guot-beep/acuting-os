@@ -18,9 +18,9 @@
 | **B3** | 精神/睡眠(核心 10) | 10 | **請求已寫好** — `PSYCH_SLEEP_PROTOCOL_COLLECTION_REQUEST.md`。 焦慮、失眠、慢性疲勞在診間常見;證據中等但存在 |
 | **B4** | 行為改變(2) | 2 | **請求已寫好** — `BEHAVIOR_CHANGE_PROTOCOL_COLLECTION_REQUEST.md`。 **預期是負面/不足的證據**,單獨一批,見下方說明 |
 | **B5** | 神經 | 8 | **請求已寫好** — `NEURO_PROTOCOL_COLLECTION_REQUEST.md`。 中風後復健有實證;其餘多為輔助角色,scope 比 protocol 重要 |
-| **B6** | 呼吸(5)+腸胃(6) | 11 | 感冒/鼻竇炎為診間常見;CINV 有實證(與妊娠劇吐相反,見下) |
-| **B7** | 內分泌代謝(7)+泌尿(2) | 9 | 多為輔助;骨質疏鬆、甲狀腺以安全界線為主 |
-| **B8** | 心血管(4)+皮膚(3) | 7 | **風險最高的一批**,scope 與轉診條件比穴位重要 |
+| **B6** | 呼吸(5)+腸胃(6) | 11 | **請求已寫好** — `RESP_GI_PROTOCOL_COLLECTION_REQUEST.md`。 感冒/鼻竇炎為診間常見;CINV 有實證(與妊娠劇吐相反,見下) |
+| **B7** | 內分泌代謝(7)+泌尿(2) | 9 | **請求已寫好** — `ENDO_URO_PROTOCOL_COLLECTION_REQUEST.md`。 多為輔助;骨質疏鬆、甲狀腺以安全界線為主 |
+| **B8** | 心血管(4)+皮膚(3) | 7 | **請求已寫好** — `CARDIO_DERM_PROTOCOL_COLLECTION_REQUEST.md`。 **風險最高的一批**,scope 與轉診條件比穴位重要 |
 
 ---
 
