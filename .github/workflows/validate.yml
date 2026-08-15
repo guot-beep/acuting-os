@@ -343,6 +343,11 @@ jobs:
       - name: clinical contract invariants (R1-R8)
         run: node scripts/validate-clinical-invariants.js
 
+      # 67 張條件卡曾經共用同一組逐字相同的「處方」(足三里/合谷/三陰交/中脘)。
+      # 已搬進 import_artifacts;這支守著它不要再長回來。
+      - name: no shared template posing as a condition protocol
+        run: node scripts/validate-no-template-protocol.js
+
       # Phase E 縱向走查(P4 驗收標準的第四項)。先前不在 CI,而它的
       # export→wipe→import 斷言原本是 JSON.parse∘JSON.stringify 的恆等檢查 ——
       # 不可能失敗,所以也證明不了什麼。現在它真的走一次儲存層(save → 取位元組
