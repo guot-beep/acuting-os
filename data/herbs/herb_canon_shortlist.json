@@ -89156,7 +89156,9 @@
     }
   ],
   "batch_summary": {
-    "total_records": 327,
+    "total_records": 358,
+    "total_records_note": "2026-08-14 更正:此欄原寫 327,那是 2026-07-29 batch 16 當下的數字,之後檔案長到 358 卻沒同步。它讀起來像現況,實際是快照 —— SOL 第三號查源任務就是照 327 起算的。batch 16 的原數字保留在 records_as_of_batch_16。重算:node -e \"const d=require('./data/herbs/herb_canon_shortlist.json');console.log(d.records.length)\"",
+    "records_as_of_batch_16": 327,
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
@@ -89166,7 +89168,7 @@
       "皂角刺",
       "珍珠"
     ],
-    "local_herb_cards": 327,
+    "local_herb_cards_as_of_batch_16": 327,
     "latest_missing_card_batch": {
       "date": "2026-07-29",
       "agent": "Claude",
