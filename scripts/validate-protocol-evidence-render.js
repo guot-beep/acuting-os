@@ -44,13 +44,18 @@ function grabArrow(name) {
 
 /* 用括號配對,不要用縮排猜結尾 —— 原本靠 "\n    };" 找,結果一路吃掉 59k 字元
    把別的函式也捲進來,vm 直接噴 Illegal return statement。 */
+/* 物件常數與陣列常數都要能抽。開頭是 { 還是 [ 決定配對哪一種括號 ——
+   原本寫死配 {},遇到 const SAFETY_LISTS = [...] 就抓不到收尾。 */
 function grabConst(name) {
-  const start = SRC.indexOf(`const ${name} = {`);
+  const oIdx = SRC.indexOf(`const ${name} = {`);
+  const aIdx = SRC.indexOf(`const ${name} = [`);
+  const start = oIdx >= 0 ? oIdx : aIdx;
   if (start < 0) throw new Error(`js/knowledge.js 裡找不到 const ${name}`);
+  const [open, close] = oIdx >= 0 ? ["{", "}"] : ["[", "]"];
   let depth = 0, seen = false;
-  for (let j = SRC.indexOf("{", start); j < SRC.length; j++) {
-    if (SRC[j] === "{") { depth++; seen = true; }
-    else if (SRC[j] === "}") { depth--; if (seen && depth === 0) return SRC.slice(start, j + 1) + ";"; }
+  for (let j = SRC.indexOf(open, start); j < SRC.length; j++) {
+    if (SRC[j] === open) { depth++; seen = true; }
+    else if (SRC[j] === close) { depth--; if (seen && depth === 0) return SRC.slice(start, j + 1) + ";"; }
   }
   throw new Error(`const ${name} 的括號沒有收斂`);
 }
@@ -68,7 +73,8 @@ function buildSandbox(contentMode) {
      不會留到 context 上 —— 分兩次跑的話 protocolEvidenceBlock 看不見
      PROTOCOL_STATUS_LABEL,於是每張卡都回傳空字串,而且看起來像「資料沒接上」。 */
   vm.runInContext(
-    grabConst("PROTOCOL_STATUS_LABEL") + "\n" + grabArrow("protocolEvidenceBlock")
+    grabConst("PROTOCOL_STATUS_LABEL") + "\n" + grabConst("SAFETY_LISTS") + "\n"
+    + grabArrow("protocolEvidenceBlock")
     + "\nthis.__render = (card) => protocolEvidenceBlock(card);",
     ctx);
   return ctx;
@@ -110,6 +116,23 @@ function main() {
     if (ev.scope_conflict_note && !/衝突/.test(html)) {
       fail.push(`${r.id} 有 scope_conflict_note 但輸出沒有顯示衝突`);
     }
+    /* 批次專屬安全清單:收集它們的唯一理由就是讓施術者看到。
+       存進資料卻沒畫出來 = 又一個暗欄位,這正是本專案反覆踩的坑。 */
+    for (const [field, zhLabel] of [
+      ["sensory_loss_safety_zh", "感覺缺失"],
+      ["local_needling_contraindications_zh", "患部局部施術禁忌"],
+    ]) {
+      const rows = Array.isArray(ev[field]) ? ev[field] : [];
+      if (!rows.length) continue;
+      if (!html.includes(ctx.esc(zhLabel).slice(0, 4))) {
+        fail.push(`${r.id} 有 ${rows.length} 筆 ${field},但輸出沒有那個區塊的標題`);
+        continue;
+      }
+      const first = typeof rows[0] === "string" ? rows[0] : (rows[0].text || "");
+      if (first && !html.includes(ctx.esc(first).slice(0, 20))) {
+        fail.push(`${r.id} 的 ${field} 有標題但內容沒上畫面`);
+      }
+    }
   }
   if (empty.length) fail.push(`這些卡帶了 evidence 卻渲染出空字串:${empty.join(", ")}`);
 
@@ -137,6 +160,14 @@ function selfTest() {
     { name: "scope_conflict_note 會上畫面",
       ok: () => /衝突/.test(render(ctx, { acupoint_protocol_evidence: { protocol_status: "limited", sources: [],
           scope_conflict_note: { existing_says: "舊說法", source_says: "新來源" } } })) },
+    { name: "sensory_loss_safety_zh 會上畫面",
+      ok: () => /燙傷風險/.test(render(ctx, { acupoint_protocol_evidence: { protocol_status: "limited", sources: [],
+          sensory_loss_safety_zh: [{ text: "感覺缺失足部的燙傷風險" }] } })) },
+    { name: "local_needling_contraindications_zh 會上畫面",
+      ok: () => /曲張靜脈/.test(render(ctx, { acupoint_protocol_evidence: { protocol_status: "not_supported", sources: [],
+          local_needling_contraindications_zh: [{ text: "不得直接針刺曲張靜脈" }] } })) },
+    { name: "沒有安全清單就不畫空區塊",
+      ok: () => !/患部局部施術禁忌/.test(render(ctx, { acupoint_protocol_evidence: { protocol_status: "limited", sources: [] } })) },
     { name: "抽取失敗會丟例外(不允許空跑)",
       ok: () => { try { grabArrow("thisFunctionDoesNotExist"); return false; } catch (e) { return /找不到/.test(e.message); } } },
   ];

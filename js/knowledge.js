@@ -3232,6 +3232,11 @@
          明顯不同 —— 用最重的配色,因為讀的人最可能誤把這種卡當成處方。 */
       unassessed: ["⚠ 來源未經評估 —— 不是處方建議", "⚠ Not assessed — not a prescription", "#7c2d12", "#ffedd5"],
     };
+    /* 批次專屬的安全清單。加新批次時在這裡加一列,不要讓它只存在資料裡。 */
+    const SAFETY_LISTS = [
+      ["sensory_loss_safety_zh", "感覺缺失時的針刺／施灸安全", "Needling and heat safety with sensory loss"],
+      ["local_needling_contraindications_zh", "患部局部施術禁忌", "Local needling contraindications"],
+    ];
     const protocolEvidenceBlock = (c) => {
       const ev = c && c.acupoint_protocol_evidence;
       if (!ev || !ev.protocol_status) return "";
@@ -3250,6 +3255,17 @@
         ${note ? `<p style="margin:4px 0 0;">${esc(note)}</p>` : ""}
         ${conflict ? `<p style="margin:4px 0 0;"><strong>${esc(modeText("與現有卡片說法衝突", "Conflicts with the existing card"))}：</strong>${esc(
             [conflict.existing_says, conflict.source_says].filter(Boolean).join(" ／ "))}</p>` : ""}
+        ${/* 批次專屬的安全欄位。B5 的感覺缺失施灸安全、B8 的患部局部針刺禁忌 ——
+              收集它們的整個理由就是要讓施術者看到,存進資料卻不畫出來等於沒收集。 */ ""}
+        ${SAFETY_LISTS.map(([field, zh, en]) => {
+          const rows = Array.isArray(ev[field]) ? ev[field] : [];
+          if (!rows.length) return "";
+          return `<div style="margin:6px 0 0;padding:6px 10px;background:rgba(0,0,0,.05);border-radius:5px;">
+            <strong>${esc(modeText(zh, en))}</strong>
+            <ul style="margin:4px 0 0;padding-left:1.1em;">${rows.map((x) =>
+              `<li>${esc(typeof x === "string" ? x : (x.text || ""))}</li>`).join("")}</ul>
+          </div>`;
+        }).join("")}
         ${srcs.length ? `<p class="k-meta" style="margin:6px 0 0;">${esc(modeText("來源", "Sources"))}（${srcs.length}）：${
             srcs.map((s) => esc([s.citation, s.pmid_or_doi].filter(Boolean).join(" · ").slice(0, 120))).join("<br>")}</p>` : ""}
       </div>`;
