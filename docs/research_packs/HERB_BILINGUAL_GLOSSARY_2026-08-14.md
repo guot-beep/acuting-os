@@ -254,7 +254,7 @@ corpus 內已有明文裁定×2:「不要把 AD 的『慎用』升級成禁用�
 | B7 | 理氣 + 化濕 + 開竅 | 23 | HOLD* | 17(113)✅ | 20/23(3 扣住:zhi_ke/xie_bai/fo_shou) |
 | B8 | 補陽 + 補氣 + 溫化寒痰 | 20 | HOLD* | 13(79)✅ | 20(96)✅ |
 | B9 | 清熱瀉火 + 止咳平喘 + 安神 | 23 | 1/1(4 tags,shi_gao 例外)✅ | 18(117)✅ | 22/23(116 填入;1 扣住:kuan_dong_hua) |
-| B10 | 溫裡 + 祛風濕 + 平肝息風 | 22 | HOLD* | 20(198) | 22(126) |
+| B10 | 溫裡 + 祛風濕 + 平肝息風 | 22 | 0(0,無缺口)✅ | 20/20(198)✅ | 22/22(132)✅ |
 
 `HOLD*` = 該批 CT 欄多為 110 筆 schema 放錯記錄(單一功效聯),**待 Ting 裁定處置,不進翻譯**。
 B10/B5 modern_functions 最重(198/150 條),跑不完可拆:溫裡+祛風濕(15)/平肝息風(7)。
@@ -483,3 +483,77 @@ herb.su_zi(紫蘇子)modern_functions_zh[6]「抗化」核對其自身 modern_fu
   的「小毒慎用」逐字翻譯保留,不因標記重複而扣住整欄。
 - **herb.su_zi(蘇子)cautions_zh[4]「避免生食：生紫蘇子有毒」**:毒性警語逐字翻譯
   (Avoid raw consumption — raw Su Zi is toxic…),不改寫、不淡化。
+
+### 5l. B10 新詞回填(2026-08-14,溫裡+祛風濕+平肝息風,含全庫殘餘掃尾)
+
+modern_functions:利膽 Cholagogic activity(獨立詞,與既定 保肝利膽 Hepatoprotective and
+cholagogic activity 區分——單獨出現時只譯利膽部分) · 改善食慾 Improves appetite(改善-系動詞式,
+平行既定 改善消化系統/改善微循環/改善記憶,不加 activity) · 抗氧化抗腫瘤 Antioxidant and antitumor
+activity(組合式,平行既定 抗菌抗炎/消炎抗菌 的 "X and Y activity" 造詞法) · 抗癲癇(單獨,非
+「抗驚厥/抗癲癇方向」組合詞)Antiepileptic activity(平行 抗驚厥 Anticonvulsant activity 造詞) ·
+催眠 Hypnotic activity(與既定 鎮靜 Sedative activity / 改善睡眠 Sleep-improving activity 三詞
+並列,催眠指誘導入睡,不互換)。
+
+### 5m. B10 判例(溫裡+祛風濕+平肝息風,22 味,0 筆整欄扣住;全庫殘餘掃尾另發現 6 筆新扣住)
+
+B10 三分類本身逐筆核對(溫度極性、MF/CA 內部矛盾、跨藥誤植)**沒有找到扣住等級的案例**——
+溫裡藥全數性味方向一致(辛熱/溫,cautions 無反向溫度宣稱);平肝息風的蟲類/動物藥
+(全蠍、地龍)警語逐字對應無矛盾。以下 2 筆為**低信心度觀察,已翻譯、未扣住**,列此供 Ting 複核：
+
+- **herb.du_huo cautions_zh[0]「獨活性溫，具有補陽和散寒的作用」**:「補陽」一詞不見於本記錄
+  `functions_zh`(僅列「散風寒」，無補陽相關功效)，可能為 cautions 生成時的用詞誇大，非跨藥
+  誤植(全庫搜尋此句僅此一筆，非複製貼上)。因非溫度極性反向、且非跨藥複製，未達 B1/B5/B7
+  扣住門檻，**已照原文翻譯**，列此供內容審。
+- **herb.gan_jiang cautions_zh[0]「乾薑可能活血化瘀，孕婦服用不當易導致流產」**:「活血化瘀」
+  不見於本記錄 `functions_zh`(僅列「溫中散寒」「回陽通脈」「溫肺化飲」)。同上，未達扣住門檻，
+  已照原文翻譯，列此供內容審。
+- **herb.fang_ji cautions_zh[3]「上焦濕熱者不可用：防己清熱利濕，在上焦濕熱的情況下服用可能會
+  加重濕熱」**:字面上「清熱利濕」藥為何會「加重濕熱」，機轉敘述有邏輯跳躍，但不同於
+  B5 huang_bai(收斂止瀉 vs 加重腹瀉)的直接機轉倒置——本句可能反映上/下焦定位的古典教學
+  (防己主治下焦水濕，非用於上焦)，證據不足以判定為錯誤，**已照原文翻譯**，列此供內容審。
+
+**全庫殘餘掃尾(11 筆候選,5 筆填入,6 筆新扣住)**：溫度極性檢核延伸到全庫殘餘 CA 缺口時，
+發現 6 筆記錄的 cautions_zh 用「與本記錄 properties_taste_temp 直接相反的溫度字」或「與本記錄
+自己的 modern_functions_zh/functions_zh 直接相反的機轉/主治」作為警語理由——比照 B1/B5/B7/B9
+的扣住標準(溫度極性反向、機轉倒置、跨藥誤植)，逐筆列出：
+
+- **herb.yu_jin(鬱金)**:`properties_taste_temp`「辛、寒、苦」，但 cautions_zh[2]「胃虛血虛者
+  忌服：**鬱金性溫**」與 cautions_zh[7]「腸胃不適患者禁用：**鬱金性溫**」兩處均稱「性溫」，
+  與本記錄自己的寒性宣告直接相反(兩處重複出現，非單一筆誤)。cautions_en 整欄扣住，zh 不動，
+  進 Ting 裁定佇列。
+- **herb.yin_chen_hao(茵陳蒿)**:`properties_taste_temp`「微苦、辛、微寒」，但 cautions_zh[2]
+  「熱甚發黃，無濕氣者禁用：**茵陳蒿屬溫性藥**，熱甚發黃者服用易助熱生火」稱其為溫性藥，
+  與本記錄寒性宣告直接相反。cautions_en 整欄扣住，進 Ting 裁定佇列。
+- **herb.long_gu(龍骨)**:`functions_zh`/`indications_zh` 均明列「平肝潛陽」為核心功效/主治，
+  但 cautions_zh[5]「肝陽上亢者不宜使用：龍骨清熱降火，肝陽上亢者服用後可能加重症狀」直接
+  聲稱在其自身主治適應症(肝陽上亢)中使用會加重症狀——與本記錄自己的主治欄直接矛盾。
+  cautions_en 整欄扣住，進 Ting 裁定佇列。
+- **herb.dan_shen(丹參)**:`modern_functions_zh` 明列「降血壓」，但 cautions_zh[4]「血壓過高者
+  忌用：丹參擴張血管，血壓過高者使用恐導致血壓進一步升高」——擴血管機轉理應降壓而非「進一步
+  升高」，機轉倒置，比照 B5 huang_bai(收斂止瀉 vs 加重腹瀉)判例。cautions_en 整欄扣住，
+  進 Ting 裁定佇列。
+- **herb.mo_yao(沒藥)**:`modern_functions_zh` 明列「抗血小板聚集」(抗凝血方向)，但
+  cautions_zh[6]「出血性疾病患者應避免使用，因其具有促進血液凝固的作用」聲稱沒藥「促進血液
+  凝固」——與本記錄自己的現代藥理欄方向直接相反，機轉倒置。cautions_en 整欄扣住，
+  進 Ting 裁定佇列。
+- **herb.zhe_bei_mu(浙貝母)**:`modern_functions_zh`(5 條)與 `cautions_zh`(5 條)**逐字**與
+  `herb.chuan_bei_mu`(川貝母)的對應欄位相同，且 cautions_zh 內文五次直呼「川貝母」而非
+  本記錄的「浙貝母」——比照 B7 zhi_ke(cautions 逐字引用「枳實」)判例，判定為跨藥複製貼上。
+  cautions_en 整欄扣住，zh 不動；`modern_functions_en` 已在先前批次填入同樣的複製內容
+  (非本批填寫，不在本次改動範圍)，一併列出供 Ting 裁定 zhe_bei_mu 整卡是否需要重新核對來源。
+
+**未達扣住門檻、已翻譯的觀察項(平 vs 寒/熱，較弱極性差異)**：以下 3 筆的 cautions_zh 稱本記錄
+「性寒」或「性溫熱」，但 `properties_taste_temp` 宣告為中性「平」(非相反極性，只是中性
+vs 偏性)，未達 B1/B5/B7/B9 要求的「直接相反極性」門檻(溫 vs 寒/涼)，**已照原文翻譯，未扣住**，
+列此供 Ting 複核是否要把門檻延伸到「平 vs 偏性」：
+- herb.sang_ji_sheng：`properties_taste_temp`「苦、甘、平」vs cautions_zh[2]「桑寄生性溫熱」。
+- herb.yu_li_ren：`properties_taste_temp`「甘、辛、苦、平、無毒」vs cautions_zh[0]「鬱李仁性寒」。
+- herb.pu_huang：`properties_taste_temp`「辛、甘、平」vs cautions_zh[2]「蒲黃性寒」。
+
+**herb.san_leng(三稜)cautions_zh「對三稜或其他柑橘科植物過敏者應避免使用」**:三稜為黑三稜科/
+莎草科植物(Sparganium)，並非柑橘科(Rutaceae)，物種分類明顯錯誤，但屬單筆孤立錯誤(不影響
+該筆整體警語方向，且未與本記錄其他欄位直接矛盾)，比照 B5 sheng_di_huang(蕪荑/柳絮物種誤植)
+判例，**照原文字翻**，列此供內容審訂正 zh。
+
+**herb.quan_xie(全蠍)cautions_zh 4 則**:全數為毒性/中毒處置警語，逐字對應翻譯，對應派工單
+「蟲類藥毒性警語逐字翻」規則，已於眼讀樣本列出(見批次報告)。
