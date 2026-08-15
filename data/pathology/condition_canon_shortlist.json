@@ -8399,7 +8399,28 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "水溝",
+          "code": "GV26"
+        },
+        {
+          "name_zh": "後谿",
+          "code": "SI3"
+        },
+        {
+          "name_zh": "委中",
+          "code": "BL40"
+        },
+        {
+          "name_zh": "外關",
+          "code": "TE5"
+        },
+        {
+          "name_zh": "腰痛點",
+          "code": "EX-UE7"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -8503,8 +8524,8 @@
         "precautions": "治療前排除下肢放射痛、麻木無力、馬尾徵象或外傷後無法負重等紅旗；避免鼓勵臥床超過必要時間",
         "co_management": "出現神經根壓迫或馬尾徵象時，立即轉介急診／骨科，不以針灸延誤評估",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS／NCCIH 臨床資料整理）",
-        "note": "NCCIH 頁面本次查證僅用於危險因子引用，未特別評估急性腰扭傷之針灸實證等級；本次查證未找到專屬系統性回顧來源"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS／NCCIH 臨床資料整理）；Su X, et al. Acupuncture for acute low back pain: a systematic review and meta-analysis. Ann Palliat Med. 2021;10:6156-6167.(https://apm.amegroups.org/article/view/66741/html)[10.21037/apm-21-551]【涵蓋:急性下背痛；不全是 ICD S39.012 急性腰扭傷｜確定性:low】；Chan S, et al. Treating acute low back pain with acupuncture. J Acupunct Meridian Stud. 2024.(https://www.sciencedirect.com/science/article/pii/S2095754824000334)【涵蓋:急性下背痛遠端取穴研究｜確定性:not_graded】；Lin R, et al. Acupuncture-movement therapy for acute lumbar sprain: a randomized controlled clinical trial. J Tradit Chin Med. 2016;36:19-25.(https://pubmed.ncbi.nlm.nih.gov/26946614/)[PMID:26946614]【涵蓋:急性腰扭傷；針刺運動療法｜確定性:low】",
+        "note": "查證結論:證據有限(有直接來源,但不足以視為通用處方)\n取穴依據:五穴是文獻列出的遠端穴候選集合，不是已驗證必須合用的固定方；急性腰扭傷直接試驗常把針刺與活動合併。\n證據:13 項急性下背痛試驗的回顧顯示疼痛、ODI 與止痛藥使用可能小幅改善，但品質低且穴位、介入與對照異質；直接腰扭傷 RCT 合併活動療法，不能拆分效果。\n研究方案參數:方式 mixed\n來源介入方式:mixed／acupuncture(含非傳統針灸介入,效果不可全歸於針灸)\n對照組:active_control／unclear\n未解:遠端穴是否應合併為固定方案未獲支持。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive pain relief and return-to-activity care for acute lumbar sprain",
@@ -8537,6 +8558,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "NCCIH 頁面本次查證僅用於危險因子引用，未特別評估急性腰扭傷之針灸實證等級；本次查證未找到專屬系統性回顧來源",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -10212,7 +10239,12 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "後谿",
+          "code": "SI3"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -10320,8 +10352,8 @@
         "precautions": "治療前排除發燒合併頸部僵硬畏光（腦膜炎徵象）、外傷後頸痛（骨折／韌帶損傷疑慮）及上肢放射麻木無力（神經根病變）",
         "co_management": "出現上述紅旗徵象時，立即轉介急診或神經科／骨科評估，不以針灸處理疑似腦膜炎或不穩定頸椎損傷",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
-        "note": "本次查證未找到急性頸痛／落枕針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）；Sun Z, et al. Acupuncture at Houxi (SI3) acupoint for acute neck pain caused by stiff neck. BMJ Open. 2014;4:e006236.(https://bmjopen.bmj.com/content/4/12/e006236)[PMID:25537784; DOI:10.1136/bmjopen-2014-006236]【涵蓋:stiff neck patients with acute neck pain｜確定性:not_graded】",
+        "note": "查證結論:證據有限(有直接來源,但不足以視為通用處方)\n取穴依據:SI3 來自直接針對 stiff neck with acute neck pain 的 pilot randomized protocol，只能標示為研究方案。\n證據:找到疾病直接 pilot RCT protocol，但未用 protocol 本身宣稱有效，也未拿慢性頸痛資料代替。\n研究方案參數:方式 manual\n來源介入方式:acupuncture\n對照組:sham\n未解:未取得可升格為通用臨床方案的確證結果。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive pain and mobility care for benign acute neck pain / wry neck",
@@ -10354,6 +10386,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到急性頸痛／落枕針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -10502,8 +10540,8 @@
         "precautions": "未排除骨折、不穩定、脊髓／神經損傷或血管性症狀前，避免頸部深刺與強力手法。",
         "co_management": "與急診、復健醫學、物理治療或骨科依嚴重度共同管理。",
         "evidence": "unknown",
-        "source": "AAPM&R — Cervical Whiplash",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "AAPM&R — Cervical Whiplash；Lee SH, et al. Efficacy of acupuncture for whiplash injury. BMJ Open. 2024;14:e077700.(https://bmjopen.bmj.com/content/14/1/e077700)[10.1136/bmjopen-2023-077700]【涵蓋:Quebec-classified whiplash-associated disorder｜確定性:low】；Moon TW, et al. Acupuncture for treating whiplash associated disorder: a systematic review. 2014.(https://pmc.ncbi.nlm.nih.gov/articles/PMC4034516/)【涵蓋:WAD 的 acupuncture、electroacupuncture、dry needling RCT｜確定性:very_low】",
+        "note": "查證結論:僅支持症狀輔助(不能宣稱治療疾病本身)\n證據:2024 回顧混合 acupuncture、electroacupuncture 與 dry needling，不能把整體效果機械歸因於傳統針灸；較早回顧亦認為證據有限。\n研究方案參數:方式 mixed\n來源介入方式:mixed(含非傳統針灸介入,效果不可全歸於針灸)\n對照組:active_control／unclear\n未解:無法由混合介入回顧建立針灸專屬固定穴組。\n本欄目前留空,是查證後的結果,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "After trauma and neurologic assessment, acupuncture may be considered adjunctive care for pain and return of movement.",
@@ -10533,6 +10571,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -11178,8 +11222,8 @@
         "precautions": "急性外傷後明顯無力、脫位疑慮或全層撕裂疑慮未評估前，不在局部做強刺激。",
         "co_management": "與物理治療、復健醫學或骨科共同管理；針灸不取代漸進負荷復健。",
         "evidence": "unknown",
-        "source": "AAOS — Shoulder Impingement/Rotator Cuff Tendinitis",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "AAOS — Shoulder Impingement/Rotator Cuff Tendinitis；Choi S, et al. Acupuncture for symptomatic rotator cuff disease: a systematic review. J Acupunct Res. 2021.(https://www.e-jar.org/journal/view.html?pn=vol&uid=2486&vmd=Full)【涵蓋:症狀性 rotator cuff disease；不同診斷與針灸相關介入｜確定性:very_low】",
+        "note": "查證結論:僅支持症狀輔助(不能宣稱治療疾病本身)\n證據:回顧認定利益證據 very low，安全報告不完整，診斷與介入異質；未建立通用固定穴組。\n研究方案參數:方式 mixed\n來源介入方式:mixed(含非傳統針灸介入,效果不可全歸於針灸)\n對照組:active_control\n未解:tendinopathy、subacromial pain 及不同程度 tear 無法整合成單一處方。\n本欄目前留空,是查證後的結果,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May be considered adjunctive care for pain and rehabilitation in an evaluated rotator-cuff tendinopathy.",
@@ -11209,6 +11253,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -11268,7 +11318,36 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "外關",
+          "code": "TE5"
+        },
+        {
+          "name_zh": "手三里",
+          "code": "LI10"
+        },
+        {
+          "name_zh": "曲池",
+          "code": "LI11"
+        },
+        {
+          "name_zh": "尺澤",
+          "code": "LU5"
+        },
+        {
+          "name_zh": "肘髎",
+          "code": "LI12"
+        },
+        {
+          "name_zh": "阿是穴",
+          "code": "ASHI"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -11369,8 +11448,8 @@
         "precautions": "治療前排除感染徵象（紅熱腫脹）與橈神經夾擠可能（手麻無力）；外傷後劇痛需先排除撕脫性骨折",
         "co_management": "症狀持續逾預期病程或合併神經症狀者，轉介骨科／復健科評估",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
-        "note": "本次查證未找到網球肘針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）；Shin KM, et al. Acupuncture for lateral epicondylitis: study protocol for a randomized pilot trial. Trials. 2013;14:174.(https://link.springer.com/article/10.1186/1745-6215-14-174)[10.1186/1745-6215-14-174]【涵蓋:lateral epicondylitis；患側、健側與非侵入 sham｜確定性:not_graded】；Zhou Y, et al. Effectiveness of acupuncture for lateral epicondylitis. 2020.(https://pmc.ncbi.nlm.nih.gov/articles/PMC7114772/)【涵蓋:lateral epicondylitis RCT｜確定性:low】",
+        "note": "查證結論:證據有限(有直接來源,但不足以視為通用處方)\n取穴依據:整組來自 ipsilateral／contralateral／sham pilot RCT protocol，是特定研究方案，不是通用標準方。\n證據:直接 protocol 提供完整穴組；系統性回顧提示短期效果，但品質限制可信度。\n研究方案參數:方式 manual、頻次 10 treatments over 4 weeks、療程 4 weeks\n來源介入方式:acupuncture\n對照組:sham／active_control\n未解:pilot protocol 穴組不能升格為指引。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive care for lateral epicondyle pain; core treatment remains relative rest and eccentric loading",
@@ -11400,6 +11479,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到網球肘針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -11565,7 +11650,7 @@
         "co_management": "合併尺神經症狀持續或加重者，轉介骨科／復健科評估肘管症候群",
         "evidence": "unknown",
         "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
-        "note": "本次查證未找到高爾夫球肘針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "note": "查證結論:未找到符合標準的直接來源\n證據:2026-08-14 重新檢索 PubMed 索引結果、Cochrane Library 網頁及學術網頁；檢索詞：'acupuncture medial epicondylitis randomized trial acupoints'、'acupuncture golfer's elbow systematic review'。結果主要為 lateral epicondylitis、診所頁或未分內外側的 chronic epicondylitis，未找到合格直接列穴來源。\n未解:未被英文資料庫索引的中文試驗是否存在尚不確定。\n本欄目前留空,是查證後的結果,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive care for medial elbow pain; core treatment remains relative rest and eccentric loading",
@@ -11595,6 +11680,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到高爾夫球肘針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -11655,7 +11746,28 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "大陵",
+          "code": "PC7"
+        },
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        },
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "曲池",
+          "code": "LI11"
+        },
+        {
+          "name_zh": "勞宮",
+          "code": "PC8"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -11750,8 +11862,8 @@
         "precautions": "治療前確認是否已有大魚際肌萎縮或持續性麻木等進行性徵象；避免延誤神經傳導檢查與手術評估的適當時機",
         "co_management": "與病人的骨科／神經科醫師聯絡確認神經傳導檢查結果與是否已符合手術減壓適應症，不建議病人以針灸取代必要的手術評估",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NINDS 與相關文獻整理）",
-        "note": "尚未於本次查證中確認腕隧道症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 02（依據 NINDS 與相關文獻整理）；Dong Q, et al. Acupuncture for carpal tunnel syndrome. Front Neurosci. 2023;17:1097455.(https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1097455/full)[10.3389/fnins.2023.1097455]【涵蓋:CTS RCT；主要為輕中度患者｜確定性:low】；Sim H, et al. Acupuncture for carpal tunnel syndrome. J Pain. 2011;12:307-314.(https://pubmed.ncbi.nlm.nih.gov/21093382/)[PMID:21093382]【涵蓋:CTS 針灸及類針灸 RCT｜確定性:low】",
+        "note": "查證結論:證據有限(有直接來源,但不足以視為通用處方)\n取穴依據:這是跨 RCT 使用頻率摘要，不代表五穴必須合用；研究主要限輕中度 CTS。\n證據:回顧提供穴位頻率，但方案、對照及療程異質；較早回顧判定證據 encouraging but not convincing。\n研究方案參數:方式 mixed\n來源介入方式:mixed(含非傳統針灸介入,效果不可全歸於針灸)\n對照組:active_control\n未解:穴位頻率不能視為五穴合用處方。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive care for mild-to-moderate symptoms (without persistent thenar wasting or clear motor deficit) alongside basic treatment such as reducing provoking load and night splinting",
@@ -11837,6 +11949,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "尚未於本次查證中確認腕隧道症候群針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -13719,7 +13837,7 @@
         "co_management": "疑似需手術評估（真正鎖住、韌帶合併損傷）者轉介骨科，針灸不取代影像與手術評估",
         "evidence": "unknown",
         "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
-        "note": "本次查證未找到半月板損傷針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "note": "查證結論:未找到符合標準的直接來源\n證據:2026-08-14 重新檢索 PubMed 索引結果、Cochrane Library 網頁及學術網頁；檢索詞：'acupuncture meniscus injury randomized trial acupoints'、'acupuncture meniscal tear systematic review'、'acupuncture after meniscus repair trial'。結果主要為膝 OA、病例或術後針灸加功能訓練，不能分離效果或建立專屬穴組。\n未解:術後複合復健中文試驗完整原文與獨立效果未核實。\n本欄目前留空,是查證後的結果,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive pain care during rehabilitation for degenerative meniscal tears; true mechanical locking or large post-traumatic hemarthrosis is outside acupuncture's scope",
@@ -13752,6 +13870,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到半月板損傷針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -14495,7 +14619,12 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "阿是穴",
+          "code": "ASHI"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -14583,8 +14712,8 @@
         "precautions": "治療前確認有無 Thompson 測試陽性或突發斷裂徵象；病人若正使用氟喹諾酮類抗生素，須留意肌腱斷裂風險升高，治療手法應更謹慎",
         "co_management": "出現肌腱斷裂徵象、感染徵象，或治療數月未改善時，轉介骨科／運動醫學評估",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
-        "note": "本次查證未找到跟腱病變針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）；Kishmishian B, et al. A randomised feasibility study using an acupuncture protocol to the Achilles tendon in Achilles tendinopathy. 2019.(https://knowledge.lancashire.ac.uk/id/eprint/24398/7/24398%20Clinical_Effects_Acupuncture_on_Achilles_Tendon_Revised%20Manuscript.pdf)【涵蓋:對 modified eccentric exercise 反應不足的 Achilles tendinopathy｜確定性:low】",
+        "note": "查證結論:證據有限(有直接來源,但不足以視為通用處方)\n取穴依據:feasibility RCT 採 Achilles tendon 疼痛區局部針刺，不得轉換成推測的固定穴碼。\n證據:相對 sham 的 VISA-A 與疼痛差異達臨床重要門檻，但樣本小且屬 feasibility study。\n研究方案參數:方式 manual、頻次 4 sessions over 2 weeks、療程 2 weeks; follow-up to 12 weeks\n來源介入方式:acupuncture\n對照組:sham\n未解:研究未提供可轉為標準經穴代碼的固定位置。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive pain and function care for chronic Achilles tendinopathy, alongside core treatment such as eccentric loading",
@@ -14614,6 +14743,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到跟腱病變針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -14786,8 +14921,8 @@
         "precautions": "治療前排除休息痛、夜間痛、體重減輕或紅熱發燒等提示腫瘤／感染／化膿性關節炎之徵象；有類固醇或酒精使用史合併突發劇痛者需優先排除股骨頭缺血性壞死",
         "co_management": "症狀持續影響功能或屬末期退化者，轉介骨科評估是否符合人工髖關節置換適應症",
         "evidence": "unknown",
-        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）",
-        "note": "本次查證未找到髖骨關節炎針灸療效之系統性回顧來源，此為執業範圍謹慎建議"
+        "source": "AcuTing OS Disease Knowledge Research Pack — CR-010 Common-300 Detail Batch 03（依據 AAOS 臨床資料整理）；Manheimer E, et al. Acupuncture for hip osteoarthritis. Cochrane Database Syst Rev. 2018;CD013010.(https://www.cochrane.org/evidence/CD013010_acupuncture-hip-osteoarthritis)[10.1002/14651858.CD013010]【涵蓋:hip osteoarthritis；6 studies, 413 participants｜確定性:moderate】",
+        "note": "查證結論:現有證據不支持建立常規處方\n證據:結果依 comparator 而變：相對 sham 幾乎無差異；相對 routine care alone 可能改善；相對運動或 NSAID 不確定。因此不建穴組。\n研究方案參數:方式 mixed\n來源介入方式:acupuncture\n對照組:sham\n⚠️ 來源與本卡既有 scope 不一致(待 Ting 裁定,既有內容未更動):來源說「Cochrane：相對 sham 可能幾乎無差異；加於 routine care 相對 routine care alone 可能改善。」\n未解:一般 hip pain 常用穴頻率不能當成 hip OA 有效處方。\n本欄目前留空,是查證後的結果,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May serve as adjunctive pain and function care for hip osteoarthritis, as symptom management within a long-term degenerative disease",
@@ -14817,6 +14952,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "本次查證未找到髖骨關節炎針灸療效之系統性回顧來源，此為執業範圍謹慎建議",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
@@ -14964,8 +15105,8 @@
         "precautions": "避免在未釐清進行性無力、感覺缺損或膀胱腸道症狀時深刺臀區。",
         "co_management": "持續或有神經缺損者與復健醫學、骨科或神經科共同管理。",
         "evidence": "unknown",
-        "source": "PubMed systematic review — Four symptoms define piriformis syndrome",
-        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+        "source": "PubMed systematic review — Four symptoms define piriformis syndrome；He Y, et al. Acupuncture methods for piriformis syndrome: a protocol for systematic review and network meta-analysis. J Pain Res. 2023.(https://pmc.ncbi.nlm.nih.gov/articles/PMC10350400/)【涵蓋:piriformis syndrome acupuncture RCT 的預定回顧｜確定性:not_graded】",
+        "note": "查證結論:未找到符合標準的直接來源\n證據:2026-08-14 重新檢索 PubMed 索引結果、Cochrane Library 網頁及學術網頁；檢索詞：'acupuncture piriformis syndrome randomized trial acupoints'、'piriformis syndrome acupuncture systematic review'、'piriformis dry needling randomized trial'。只找到尚未產生結果的針灸 network-meta-analysis protocol，以及 dry needling／sciatica 資料。\n來源介入方式:mixed(含非傳統針灸介入,效果不可全歸於針灸)\n對照組:unclear\n未解:後續完成的 network meta-analysis 是否正式發表需追蹤。\n本欄目前留空,是查證後的結果,不以模型知識代寫。"
       },
       "acupuncture_scope_en": {
         "can_treat": "May be considered as adjunctive care for pain and activity limitation after lumbar radiculopathy and other deep-gluteal causes are assessed.",
@@ -14995,6 +15136,12 @@
           "text": "足三里 (ST36)、合谷 (LI4)、三陰交 (SP6)、中脘 (CV12)",
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
+        },
+        {
+          "field": "acupuncture_scope_zh.note",
+          "text": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。",
+          "reason": "2026-08-14 由 SOL canonical 查證結果取代。舊註記多為「本次查證未找到系統性回顧來源」,該類說法在本專案已被推翻過一次。原句保留備查。",
+          "archived_at": "2026-08-14"
         }
       ]
     },
