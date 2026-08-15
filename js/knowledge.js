@@ -777,10 +777,19 @@
   }
 
   function formulaGlanceRow(record) {
+    /* 八法 is a 中文 field. 94 formulas hold "No single Ba Fa assigned
+       mechanically; use the formula-specific actions/pattern and course chapter
+       framing." there — a sentence saying no value was assigned, printed in the
+       glance row as if it were one. None of those 94 carry a ba_fa_en either,
+       so requiring 中文 on the 中文 side drops the cell entirely on them and
+       keeps all 91 real 八法 (清法 Qing Fa, 汗法 / 解表法, …). */
+    const baFaZh = /[一-鿿]/.test(String(record.ba_fa_zh || "")) ? usableText(record.ba_fa_zh) : "";
     const bits = [
-      ["八法 Ba Fa", [usableText(record.ba_fa_zh), usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
+      ["八法 Ba Fa", [baFaZh, usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
       ["出典 Source", usableText(record.source_classic)],
       ["舌 Tongue", cleanList(record.tongue_zh).join("、")],
+      // 苔 sat in 171 records and rendered nowhere — the row jumped 舌 → 脈.
+      ["苔 Coating", cleanList(record.coating_zh).join("、")],
       ["脈 Pulse", cleanList(record.pulse_zh).join("、")],
       ["煎法 Preparation", usableText(record.preparation_zh)]
     ].filter(([, v]) => v);
