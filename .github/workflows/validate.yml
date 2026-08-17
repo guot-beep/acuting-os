@@ -400,6 +400,11 @@ jobs:
       - name: runtime restore rehearsal
         run: node scripts/rehearse-runtime-restore.js
 
+      # M1(C2b audit E5,2026-08-14):pointer=v2 且 store 模組缺失時
+      # fallback 必須 fail-closed(讀鎖定、寫零)。20 條負控,含回歸保護。
+      - name: M1 fallback fail-closed under pointer=v2
+        run: node scripts/test-m1-fallback-failclosed.js
+
       # AVS v3(2026-08-12,Codex NO-GO 修復後納入 blocking):建議庫規則
       # 驗證 + 引擎 E2E(§13 Scenario A–G + Codex HIGH-1/HIGH-3/MED-1 反例)。
       - name: AVS advice library standard
