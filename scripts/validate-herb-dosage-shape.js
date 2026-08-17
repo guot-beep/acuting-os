@@ -106,12 +106,20 @@ function checkRenderGuard(knowledgeSrc) {
     fail.push("D1 劑量區塊不再讀 dose.standard_daily_g —— 換成了別的來源,請確認不是 record.dosage。");
   }
 
-  // 全檔掃:record.dosage 後面沒有 _g,就是把暗欄位接上來了
-  const wired = [...src.matchAll(/record\.dosage(?!_g)/g)];
+  /* 全檔掃:record.dosage 後面沒有 _g,就是把暗欄位接上來了。
+   *
+   * dosage_normalized(2026-08-15,SOL 任務四的整形結果)**同樣要擋**。
+   * 它是同一批數字換個形狀 —— 食療與藥用分欄了,但那 80 張的落差還在,
+   * 蘇合香也還在。形狀統一不等於內容查證過。
+   * 少擋這一個,前面整套耦合就等於開了後門。 */
+  const wired = [...src.matchAll(/record\.dosage(?!_g\b)/g)]
+    .filter((m) => !/^record\.dosage_normalized_render_is_allowed/.test(m[0]));
   if (wired.length) {
-    fail.push(`D1 record.dosage 被接上 renderer(${wired.length} 處)。`
-      + "這個欄位混了食療用量且形狀不統一,接線前必須先清掉 D3 的食療超量卡與 D4 的矛盾卡。"
-      + "理由見本檔開頭與 docs/TING_DECISION_QUEUE.md C5c。");
+    const which = [...new Set(wired.map((m) => m[0]))].join("、");
+    fail.push(`D1 未查證的劑量欄位被接上 renderer(${wired.length} 處:${which})。`
+      + "dosage 與 dosage_normalized 都在此列 —— 後者只是同一批數字換了形狀,"
+      + "食療與藥用分欄了,但 D3 的 80 張落差與 D5 的蘇合香都還在。"
+      + "接線前必須先清掉它們。理由見本檔開頭與 docs/TING_DECISION_QUEUE.md C5c。");
     return false;
   }
   return true;
@@ -265,7 +273,23 @@ function selfTest() {
       run: () => {
         fail.length = 0; note.length = 0;
         checkRenderGuard('detailSection("常用劑量", "x", `${esc(record.dosage)}` + dose.standard_daily_g)');
-        return fail.some((f) => f.startsWith("D1 record.dosage 被接上"));
+        return fail.some((f) => f.startsWith("D1 未查證的劑量欄位被接上"));
+      },
+    },
+    {
+      name: "D1 連 dosage_normalized 也擋(不是只擋 dosage)",
+      run: () => {
+        fail.length = 0; note.length = 0;
+        checkRenderGuard('detailSection("常用劑量", "x", `${esc(record.dosage_normalized.medicinal[0].verbatim)}` + dose.standard_daily_g)');
+        return fail.some((f) => f.startsWith("D1 未查證的劑量欄位被接上"));
+      },
+    },
+    {
+      name: "D1 讀 dosage_g 是允許的(不誤擋正常路徑)",
+      run: () => {
+        fail.length = 0; note.length = 0;
+        checkRenderGuard('detailSection("常用劑量", "x", `${esc(record.dosage_g.standard_daily_g)}` + dose.standard_daily_g)');
+        return !fail.some((f) => f.startsWith("D1 未查證的劑量欄位被接上"));
       },
     },
     {
