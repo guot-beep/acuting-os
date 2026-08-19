@@ -2623,8 +2623,20 @@
       "pattern_indications_zh": [
         "外感風寒濕兼裏熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Pronounced interior heat → add Shi Gao and Zhi Mu",
+        "Pronounced dampness → add Huo Xiang, Ban Xia and Chen Pi; remove Sheng Di",
+        "Severe aches and pain → increase Qiang Huo and Cang Zhu; add Wei Ling Xian, Qin Jiao and Fang Ji",
+        "Severe sore throat → add Jie Geng, Bo He and Niu Bang Zi",
+        "No heat presentation → remove Sheng Di and Huang Qin"
+      ],
+      "modifications_zh": [
+        "裏熱明顯 → 加石膏、知母",
+        "濕邪明顯 → 加藿香、半夏、陳皮，去生地",
+        "肢體痠痛劇烈 → 重用羌活、蒼朮，加威靈仙、秦艽、防己",
+        "咽喉腫痛甚 → 加桔梗、薄荷、牛蒡子",
+        "無熱象 → 去生地、黃芩"
+      ],
       "contraindications_en": [
         "Contraindicated for those with Warm pathogenic diseases.",
         "Use with great caution for those who tend toward Yin Deficiency."
@@ -2788,6 +2800,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 25, source lines 249;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 24;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 9,
@@ -4792,6 +4807,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/92"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 28;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/317",
@@ -4984,7 +5002,15 @@
           "source": "curriculum 方剂学汇总 Table 29 (Xiang Su San)"
         }
       ],
-      "formula_song_zh": "香蘇散內草陳皮，疏散風寒又理氣，\n外感風寒兼氣滯，寒熱無汗胸脘痞。"
+      "formula_song_zh": "香蘇散內草陳皮，疏散風寒又理氣，\n外感風寒兼氣滯，寒熱無汗胸脘痞。",
+      "modifications_zh": [
+        "頭痛 → 加羌活、白芷、川芎、蔓荊子",
+        "咳嗽痰多 → 加紫蘇子、半夏"
+      ],
+      "modifications_en": [
+        "Headaches → add Qiang Huo, Bai Zhi, Chuan Xiong and Man Jing Zi",
+        "Coughing with copious sputum → add Zi Su Zi and Ban Xia"
+      ]
     },
     {
       "id": "formula.jing_fang_bai_du_san",
@@ -7286,6 +7312,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 55, source lines 511;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 54;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
@@ -7344,20 +7373,11 @@
         "Arthralgia"
       ],
       "modifications_en": [
-        "For Wind predominant Bi:",
-        "For Cold predominant Bi:",
-        "+ Fang Feng 10g（Rx. Saposhnikoviae）",
-        "+ Zhi Fu Zi（Rx. Aconiti Lateralis Preparatum）",
-        "For Damp predominant Bi",
-        "+ Guang Fang Ji（Rx. Aristolochiae）",
-        "+ Zhi Chuan Wu（Rx. Aconiti Preparata）",
-        "+ Cang Zhu（Rz. Atractylodis）",
-        "+ Zhi Cao Wu（Rx. Aconiti Kusnezoffii）",
-        "+ Yi YI Ren（Sm. Coicis）",
-        "+ Ma Huang（Rx. Ephedra）",
-        "+ Xi Xin（Hb. cum Rx. Asari）",
-        "+ Han Fang Ji（Rx. Stephaniae Tetrandrae）",
-        "+ Minor Invigorate the Channels Special Pill"
+        "Without cough and sputum → remove Jie Geng and Qian Hu",
+        "Acute rheumatic fever → add Gui Zhi, Zhi Mu, Ren Dong Teng and Sang Zhi",
+        "Pains due to Wind-Damp Bi → remove Jie Geng and Qian Hu; add Wei Ling Xian, Qin Jiao and Wu Tou",
+        "Wind-toxin rashes with itchiness → add Chan Tui and Ku Shen",
+        "Without damp presentation → remove Qiang Huo, Du Huo and Fu Ling"
       ],
       "contraindications_en": [
         "Contraindicated for those with Damp-Heat in the channels.",
@@ -7400,6 +7420,13 @@
           "indication_zh": "體實者之風寒濕重證（無汗）",
           "source": "curriculum 方剂学汇总 Table 55 (Ren Shen Bai Du San)"
         }
+      ],
+      "modifications_zh": [
+        "無咳嗽咯痰 → 去桔梗、前胡",
+        "急性風濕熱 → 加桂枝、知母、忍冬藤、桑枝",
+        "風寒濕痺疼痛 → 去桔梗、前胡，加威靈仙、秦艽、烏頭",
+        "風毒癮疹瘙癢 → 加蟬蛻、苦參",
+        "無濕象 → 去羌活、獨活、茯苓"
       ]
     },
     {
@@ -8823,8 +8850,16 @@
         "胃津不足證",
         "中暑證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Red dry tongue with canker sores in the mouth → add Shi Hu, Tian Hua Fen and Bei Sha Shen",
+        "Red tongue, rapid pulse and excessive hunger due to Stomach fire → add Zhi Mu, Xuan Shen and Tian Hua Fen",
+        "Mild or no Stomach heat with Stomach Qi and Yin deficiency → remove Shi Gao"
+      ],
+      "modifications_zh": [
+        "舌紅乾、口舌生瘡 → 加石斛、天花粉、北沙參",
+        "舌紅脈數、消穀善飢屬胃火 → 加知母、玄參、天花粉",
+        "胃熱輕微或無、胃氣陰兩虛 → 去石膏"
+      ],
       "contraindications_en": [
         "Febrile disease when both normal and pathogenic Qi remain abundant.",
         "Febrile disease when fever remains high.",
@@ -9056,6 +9091,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/67"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 126;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 108,
@@ -10946,6 +10984,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/113"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 147;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/204",
@@ -11314,7 +11355,19 @@
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 4 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）、連翹（actions_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）、蜂蜜（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含大黃/芒硝,安全欄位覆蓋不足(孕婦/經期等標準禁忌缺漏)。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。",
       "source_classic": "《太平惠民和劑局方》",
-      "formula_song_zh": "涼膈硝黃梔子翹，黃芩甘草薄荷饒，\n再加竹葉調蜂蜜，上中鬱熱服之消。"
+      "formula_song_zh": "涼膈硝黃梔子翹，黃芩甘草薄荷饒，\n再加竹葉調蜂蜜，上中鬱熱服之消。",
+      "modifications_zh": [
+        "上焦熱盛 → 加梔子、天花粉、麥冬",
+        "咽喉腫痛 → 加桔梗、板藍根、山豆根",
+        "口舌生瘡 → 加黃連、生地",
+        "小兒驚厥 → 加鉤藤、羚羊角"
+      ],
+      "modifications_en": [
+        "Severe heat in the Upper Jiao → add Zhi Zi, Tian Hua Fen and Mai Dong",
+        "Sore throat → add Jie Geng, Ban Lan Gen and Shan Dou Gen",
+        "Mouth and tongue sores → add Huang Lian and Sheng Di",
+        "Infantile convulsion → add Gou Teng and Ling Yang Jiao"
+      ]
     },
     {
       "id": "formula.qing_ying_tang",
@@ -11536,8 +11589,20 @@
         "營分熱證",
         "營分熱陷心包證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Severe Qi-level fire → add Shi Gao and Zhi Mu, or Da Qing Ye and Ban Lan Gen",
+        "Yin deficiency with thready rapid pulse → remove Huang Lian",
+        "Severe Ying-level heat → increase Shui Niu Jiao, Sheng Di and Xuan Shen",
+        "Severe Yin depletion → add Sha Shen",
+        "Tremors and spasms → add Gou Teng and Di Long"
+      ],
+      "modifications_zh": [
+        "氣分火盛 → 加石膏、知母，或大青葉、板藍根",
+        "陰虛見脈細數 → 去黃連",
+        "營分熱盛 → 重用水牛角、生地、玄參",
+        "陰液耗傷甚 → 加沙參",
+        "抽搐震顫 → 加鉤藤、地龍"
+      ],
       "contraindications_en": [
         "Dampness with a white, slippery tongue coat."
       ],
@@ -11705,6 +11770,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/119"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 130;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -12077,8 +12145,20 @@
         "血分熱迫血妄行證",
         "血分熱與血瘀互結證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Severe heat toxin → add Qing Dai and Zi Cao",
+        "Vomiting of blood → add Ce Bai Ye, Bai Mao Gen and San Qi",
+        "Blood in the stool → add Huai Hua and Di Yu",
+        "Nosebleed → add Bai Mao Gen and Huang Qin",
+        "Blood in the urine → add Bai Mao Gen and Xiao Ji"
+      ],
+      "modifications_zh": [
+        "熱毒熾盛 → 加青黛、紫草",
+        "吐血 → 加側柏葉、白茅根、三七",
+        "便血 → 加槐花、地榆",
+        "衄血 → 加白茅根、黃芩",
+        "尿血 → 加白茅根、小薊"
+      ],
       "contraindications_en": [
         "Bleeding due to Yang Deficiency.",
         "Bleeding due to Spleen and Stomach Deficiencies.",
@@ -12274,6 +12354,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md(「# 030. 犀角地黃湯 · Xi Jiao Di Huang Tang — Classical / course source: Qian Jin Yao Fang」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 133;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -14757,8 +14840,18 @@
         "胃火熾盛證",
         "胃熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Blazing Stomach fire → add Shi Gao",
+        "Gum bleeding → add Niu Xi",
+        "Heat with toxin → add Jin Yin Hua and Lian Qiao",
+        "Severe thirst → add Xuan Shen and Tian Hua Fen"
+      ],
+      "modifications_zh": [
+        "胃火熾盛 → 加石膏",
+        "齒齦出血 → 加牛膝",
+        "熱毒 → 加金銀花、連翹",
+        "口渴甚 → 加玄參、天花粉"
+      ],
       "contraindications_en": [
         "Toothache due to Wind-Cold.",
         "Tooth or gum problems due to Kidney Deficiency.",
@@ -14954,6 +15047,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/114"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 171;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 211,
@@ -15343,6 +15439,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/172"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 167;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/295",
@@ -15591,7 +15690,21 @@
         "pattern.liver_fire_scorching_lung"
       ],
       "source_classic": "《小兒藥證直訣》",
-      "formula_song_zh": "瀉白桑皮地骨皮，粳米甘草扶肺氣，\n清瀉肺熱平和劑，熱伏肺中喘咳醫。"
+      "formula_song_zh": "瀉白桑皮地骨皮，粳米甘草扶肺氣，\n清瀉肺熱平和劑，熱伏肺中喘咳醫。",
+      "modifications_zh": [
+        "口舌生瘡 → 加生地、赤芍",
+        "陰虛午後潮熱 → 加青蒿、鱉甲",
+        "便秘 → 加大黃",
+        "痰輕 → 加茯苓，去粳米",
+        "熱甚 → 加黃芩、知母"
+      ],
+      "modifications_en": [
+        "Mouth and tongue sores → add Sheng Di and Chi Shao",
+        "Afternoon fever from deficiency → add Qing Hao and Bie Jia",
+        "Constipation → add Da Huang",
+        "Mild phlegm → add Fu Ling; remove Geng Mi",
+        "Severe heat → add Huang Qin and Zhi Mu"
+      ]
     },
     {
       "id": "formula.yu_nv_jian",
@@ -16286,6 +16399,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/74"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 179;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/119",
@@ -16466,7 +16582,19 @@
         "表證未解者禁用"
       ],
       "source_classic": "《素問病機氣宜保命集》",
-      "formula_song_zh": "芍藥湯內用檳黃，芩連歸桂草木香，\n重在調氣煎行血，裏急便膿自然康。"
+      "formula_song_zh": "芍藥湯內用檳黃，芩連歸桂草木香，\n重在調氣煎行血，裏急便膿自然康。",
+      "modifications_zh": [
+        "便血多於膿 → 以當歸尾易當歸，加地榆、丹皮",
+        "舌乾口渴 → 去肉桂",
+        "兼食積 → 去甘草，加焦山楂、神麴",
+        "熱毒甚 → 加白頭翁、金銀花"
+      ],
+      "modifications_en": [
+        "More blood than pus → substitute Dang Gui Wei for Dang Gui; add Di Yu and Dan Pi",
+        "Dry tongue and thirst → remove Rou Gui",
+        "With food stagnation → remove Gan Cao; add Jiao Shan Zha and Shen Qu",
+        "Severe heat toxin → add Bai Tou Weng and Jin Yin Hua"
+      ]
     },
     {
       "id": "formula.bai_tou_weng_tang",
@@ -16654,6 +16782,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/61"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 183;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/97",
@@ -16835,7 +16966,19 @@
           "source": "curriculum 方剂学汇总 Table 184 (Bai Tou Weng Tang)"
         }
       ],
-      "formula_song_zh": "白頭翁治熱毒痢，黃連黃柏佐秦皮，\n清熱解毒並涼血，赤多白少膿血醫。"
+      "formula_song_zh": "白頭翁治熱毒痢，黃連黃柏佐秦皮，\n清熱解毒並涼血，赤多白少膿血醫。",
+      "modifications_zh": [
+        "血分熱毒甚 → 加生地、丹皮、金銀花",
+        "裏急後重甚 → 加木香、檳榔、白芍",
+        "便下膿血多 → 加赤芍、丹皮、地榆",
+        "兼食積 → 加焦山楂、枳實"
+      ],
+      "modifications_en": [
+        "Severe heat toxin in the Blood → add Sheng Di, Dan Pi and Jin Yin Hua",
+        "Severe tenesmus → add Mu Xiang, Bing Lang and Bai Shao",
+        "More pus and blood in the stool → add Chi Shao, Dan Pi and Di Yu",
+        "With food stagnation → add charred (Jiao) Shan Zha and Zhi Shi"
+      ]
     },
     {
       "id": "formula.qing_hao_bie_jia_tang",
@@ -17599,6 +17742,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/116"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 191;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -17710,7 +17856,19 @@
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：銀柴胡（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第3味 name_zh「Hu Huang Lian」→「胡黃連」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 3 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：胡黃連（actions_zh、role_reason_zh）、青蒿（in_formula_zh、actions_zh、role_reason_zh）、秦艽（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《證治準繩》",
-      "formula_song_zh": "清骨散君銀柴胡，胡連秦艽鱉甲輔，\n地骨青蒿知母草，骨蒸勞熱一併除。"
+      "formula_song_zh": "清骨散君銀柴胡，胡連秦艽鱉甲輔，\n地骨青蒿知母草，骨蒸勞熱一併除。",
+      "modifications_zh": [
+        "兼血虛 → 加當歸、芍藥、生地",
+        "兼氣虛 → 加黃耆、黨參",
+        "兼咳嗽 → 加阿膠、麥冬、五味子",
+        "兼脾虛 → 去秦艽、知母、胡黃連，加山藥、白扁豆"
+      ],
+      "modifications_en": [
+        "With Blood deficiency → add Dang Gui, Shao Yao and Sheng Di",
+        "With Qi deficiency → add Huang Qi and Dang Shen",
+        "With coughing → add E Jiao, Mai Dong and Wu Wei Zi",
+        "With Spleen deficiency → remove Qin Jiao, Zhi Mu and Hu Huang Lian; add Shan Yao and Bai Bian Dou"
+      ]
     },
     {
       "id": "formula.dang_gui_liu_huang_tang",
@@ -17972,6 +18130,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/146"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 194;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/253",
@@ -18037,7 +18198,23 @@
       "taiwan_pharmacopeia_zh": "No. 82 (THP p.131)",
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：黃柏（in_formula_zh、actions_zh、role_reason_zh）、牡蠣（in_formula_zh、actions_zh、role_reason_zh）、浮小麥（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《蘭室秘藏》",
-      "formula_song_zh": "火炎汗出六黃湯，歸柏芩連二地黃，\n倍用黃芪為固表，滋陰清熱斂汗強。"
+      "formula_song_zh": "火炎汗出六黃湯，歸柏芩連二地黃，\n倍用黃芪為固表，滋陰清熱斂汗強。",
+      "modifications_zh": [
+        "虛火較輕 → 去黃連、黃芩，加知母",
+        "陰虛陽亢 → 加白芍、龜板",
+        "盜汗甚 → 加煅龍骨、煅牡蠣、五味子、麻黃根",
+        "自汗 → 去黃連、黃芩、黃柏，加黨參、浮小麥、白朮",
+        "兼濕熱 → 加梔子、六一散、車前子",
+        "兼耳鳴眩暈 → 加龍膽草、磁石"
+      ],
+      "modifications_en": [
+        "Mild deficiency fire → remove Huang Lian and Huang Qin; add Zhi Mu",
+        "Excess Yang rising with Yin deficiency → add Bai Shao and Gui Ban",
+        "Severe night sweats → add Duan Long Gu, Duan Mu Li, Wu Wei Zi and Ma Huang Gen",
+        "Spontaneous sweating → remove Huang Lian, Huang Qin and Huang Bai; add Dang Shen, Fu Xiao Mai and Bai Zhu",
+        "With Damp-Heat → add Zhi Zi, Liu Yi San and Che Qian Zi",
+        "With tinnitus and dizziness → add Long Dan Cao and Ci Shi"
+      ]
     },
     {
       "id": "formula.liu_yi_san",
@@ -18161,6 +18338,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/30"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 198;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/53",
@@ -18232,7 +18412,27 @@
           "source": "curriculum 方剂学汇总 Table 199 (Liu Yi San)"
         }
       ],
-      "formula_song_zh": "六一散用滑石草，清暑利濕有功效，\n益元碧玉與雞蘇，砂黛薄荷加之好。"
+      "formula_song_zh": "六一散用滑石草，清暑利濕有功效，\n益元碧玉與雞蘇，砂黛薄荷加之好。",
+      "modifications_zh": [
+        "兼風寒 → 加蔥白、淡豆豉",
+        "重症 → 加西瓜霜、淡竹葉",
+        "心煩甚 → 加梔子、淡竹葉",
+        "氣陰兩傷 → 加西洋參",
+        "血淋 → 加白茅根、小薊",
+        "膀胱炎或尿道炎 → 加黃柏、金錢草",
+        "暑熱傷津無濕 → 以半量石膏易滑石",
+        "口渴甚、舌紅屬陰津虧虛 → 加麥冬、沙參、石斛、知母"
+      ],
+      "modifications_en": [
+        "With Wind-Cold → add Cong Bai and Dan Dou Chi",
+        "Severe cases → add Xi Gua Shuang and Dan Zhu Ye",
+        "Severe irritability → add Zhi Zi and Dan Zhu Ye",
+        "Injury to Qi and Yin → add Xi Yang Shen",
+        "Bloody Lin syndrome → add Bai Mao Gen and Xiao Ji",
+        "Cystitis or urethritis → add Huang Bai and Jin Qian Cao",
+        "Dry summerheat → substitute Shi Gao at half the dosage for Hua Shi",
+        "Severe thirst and red tongue from Yin-fluid deficiency → add Mai Dong, Sha Shen, Shi Hu and Zhi Mu"
+      ]
     },
     {
       "id": "formula.wu_wei_xiao_du_yin",
@@ -18924,6 +19124,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md(「Qing Wen Bai Du Yin [清瘟败毒饮] (Clear Epidemics And Overcome Toxin Decoction) Source: Yi Zhen」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 138;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -18946,7 +19149,23 @@
       ],
       "category_zh": "清熱劑",
       "correction_note": "[2026-08-12 FB-26 眼讀止血 round 3] public_safe true → false:安全欄位無字串;另 14 味中 9 味的英文 in_formula_en 同為樣板句,回退顯示無實質內容。 可逆下架:未刪內容、未新增臨床敘述。見 docs/research_packs/FORMULA_EYESON_03.md。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 3 味藥的所列欄位原值逐字同為「補氣，調和諸藥。」（原文保存於此）：淡竹葉（in_formula_zh、role_reason_zh）、玄參（in_formula_zh、role_reason_zh）、連翹（in_formula_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 3 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：淡竹葉（actions_zh）、玄參（actions_zh）、連翹（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《疫疹一得》"
+      "source_classic": "《疫疹一得》",
+      "modifications_zh": [
+        "便秘 → 加大黃、芒硝",
+        "腮腺腫大 → 加金銀花、青黛",
+        "高熱甚 → 加大青葉、板藍根",
+        "頭痛如劈、視物模糊 → 加菊花、夏枯草",
+        "顏面腫脹 → 加紫花地丁、生大黃",
+        "腰痛、關節痠痛 → 加黃柏、知母"
+      ],
+      "modifications_en": [
+        "Constipation → add Da Huang and Mang Xiao",
+        "Swollen parotid gland → add Jin Yin Hua and Qing Dai",
+        "Very high fever → add Da Qing Ye and Ban Lan Gen",
+        "Splitting headache with blurred vision → add Ju Hua and Xia Ku Cao",
+        "Swollen face → add Zi Hua Di Ding and Sheng Da Huang",
+        "Low-back pain and sore joints → add Huang Bai and Zhi Mu"
+      ]
     },
     {
       "id": "formula.da_cheng_qi_tang",
@@ -19081,23 +19300,17 @@
         "內有瘀血、腹痛痙攣證"
       ],
       "modifications_en": [
-        "For simultaneous Yang Ming Jing and Fu syndromes with high fever, pronounced thirst and a forceful, rapid pulse:",
-        "For severe bloating:",
-        "+ Zhi Mu（Rx. Anemarrhenae）",
-        "+ Lai Fu Zi（Sm. Raphani）",
-        "+ Shi Gao（Gypsum Fibrosum）",
-        "For Blood Stasis:",
-        "for Yang Ming disorder with damage to the fluids including dry lips, a burnt, yellow, dry tongue coat and a thin, rapid pulse:",
-        "+ Tao Ren（Sm. Persicae）",
-        "+ Sheng Di Huang（Rx. Rehmanniae）",
-        "+ Chi Shao（Rx. Paeoniae Rubra）",
-        "+ Xuan Shen（Rx. Scrophulariae）",
-        "+ Dang Gui（Rx. Angelicae Sinensis）",
-        "+ Mai Men Dong（Rx. Ophiopogonis）",
-        "For Qi Deficiency:",
-        "For fullness, distention and oppression in the abdomen:"
+        "Thready rapid pulse with dry mouth, lips and tongue → add Xuan Shen, Mai Dong and Sheng Di",
+        "Concurrent Yangming channel and organ stage → add Shi Gao and Zhi Mu",
+        "Deep hesitant pulse, dark red tongue and fever at night → add Tao Ren, Chi Shao and Dang Gui",
+        "Severe distension and fullness → add Lai Fu Zi"
       ],
-      "modifications_zh": [],
+      "modifications_zh": [
+        "脈細數、口唇舌乾燥 → 加玄參、麥冬、生地",
+        "陽明經腑同病 → 加石膏、知母",
+        "脈沉澀、舌暗紅、夜間發熱 → 加桃仁、赤芍、當歸",
+        "脹滿甚 → 加萊菔子"
+      ],
       "contraindications_en": [
         "Contraindicated during pregnancy.",
         "Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level.",
@@ -19428,6 +19641,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 61, source lines 552,553,554,555,556,557;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 60;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 32,
@@ -22240,8 +22456,20 @@
         "脾約腸燥便秘證",
         "津虧血虛便秘證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Post-surgical or post-injury constipation → add Tao Ren and Dang Gui",
+        "Hemorrhoids → add Huai Hua and Huai Jiao",
+        "Postpartum constipation → add Shu Di, Dang Gui and He Shou Wu",
+        "Habitual constipation → add Yu Li Ren",
+        "Post-apoplexy constipation → add Gua Lou, Sheng Di and Rou Cong Rong"
+      ],
+      "modifications_zh": [
+        "術後、外傷後便秘 → 加桃仁、當歸",
+        "痔瘡 → 加槐花、槐角",
+        "產後便秘 → 加熟地、當歸、何首烏",
+        "習慣性便秘 → 加郁李仁",
+        "中風後便秘 → 加瓜蔞、生地、肉蓯蓉"
+      ],
       "contraindications_en": [
         "Contraindicated during pregnancy.",
         "Modify for treating constipation with Blood Deficiency.",
@@ -22438,6 +22666,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/127"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 68;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 222,
@@ -22980,6 +23211,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md(「Ji Chuan Jian (Benefit The River Flow Decoction) ... Source: Jing Yue Quan Shu」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 72;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/559",
@@ -23003,7 +23237,25 @@
       ],
       "category_zh": "瀉下劑",
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：肉苁蓉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《景岳全書》"
+      "source_classic": "《景岳全書》",
+      "modifications_zh": [
+        "氣虛 → 加人參",
+        "兼有熱象 → 加黃芩",
+        "腎陰精虧虛甚 → 加熟地",
+        "虛甚 → 去枳殼",
+        "腸燥失潤 → 加火麻仁",
+        "腰膝痠痛甚 → 去澤瀉，加杜仲、枸杞子",
+        "心煩失眠 → 加柏子仁、酸棗仁"
+      ],
+      "modifications_en": [
+        "Qi deficiency → add Ren Shen",
+        "With heat → add Huang Qin",
+        "Severe Kidney Yin and Essence deficiency → add Shu Di",
+        "Severe deficiency → remove Zhi Ke",
+        "Lack of lubrication → add Huo Ma Ren",
+        "Severe low-back pain and knee soreness → remove Ze Xie; add Du Zhong and Gou Qi Zi",
+        "Irritability and insomnia → add Bai Zi Ren and Suan Zao Ren"
+      ]
     },
     {
       "id": "formula.xiao_chai_hu_tang",
@@ -24475,8 +24727,18 @@
         "少陽陽明合病證",
         "少陽鬱熱兼陽明實熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Severe Damp-Heat → add Pu Gong Ying, Zhi Zi and Yu Jin",
+        "Severe abdominal pain → add Yan Hu Suo, Xiang Fu and Chuan Lian Zi",
+        "Poor appetite with loose stools → add Cang Zhu, Hou Po, Chen Pi and Ji Nei Jin",
+        "Weak constitution → add Tai Zi Shen and Dang Gui"
+      ],
+      "modifications_zh": [
+        "濕熱甚 → 加蒲公英、梔子、鬱金",
+        "腹痛甚 → 加延胡索、香附、川楝子",
+        "納差、便溏 → 加蒼朮、厚朴、陳皮、雞內金",
+        "體質虛弱 → 加太子參、當歸"
+      ],
       "contraindications_en": [
         "Contraindicated for those with Spleen and Stomach Deficiencies."
       ],
@@ -24685,6 +24947,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/14"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 228;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 35,
@@ -27789,8 +28054,22 @@
       "pattern_indications_zh": [
         "脾虛肝旺腸鳴腹痛腹瀉證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Long-term diarrhea → add Sheng Ma",
+        "Blood and pus in the stool → add Huang Qin and Bai Tou Weng",
+        "Yellow greasy tongue coating → add Huang Lian",
+        "Tenesmus → add Mu Xiang and Bing Lang",
+        "Watery diarrhea → add Fu Ling, Gan Jiang and Che Qian Zi",
+        "Urinary difficulty → add Hua Shi"
+      ],
+      "modifications_zh": [
+        "久瀉 → 加升麻",
+        "便下膿血 → 加黃芩、白頭翁",
+        "舌苔黃膩 → 加黃連",
+        "裏急後重 → 加木香、檳榔",
+        "水瀉 → 加茯苓、乾薑、車前子",
+        "小便不利 → 加滑石"
+      ],
       "contraindications_en": [
         "Contraindicated for those with diarrhea due to Food Stagnation.",
         "Do not arbitrarily increase the dosage of Fang Feng.",
@@ -27959,6 +28238,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/134"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 112;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 563,
@@ -28306,8 +28588,18 @@
         "軟堅散結",
         "辛開苦降，消除痞滿"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Heat greater than cold → increase Huang Qin and Huang Lian",
+        "Pronounced turbidity rising up → increase Ban Xia",
+        "Cold greater than heat → increase Gan Jiang",
+        "Thick greasy tongue coating and severe dry heaves without middle Qi deficiency → remove Ren Shen and Da Zao; add Zhi Shi and Sheng Jiang"
+      ],
+      "modifications_zh": [
+        "熱重於寒 → 重用黃芩、黃連",
+        "痰濁上逆明顯 → 重用半夏",
+        "寒重於熱 → 重用乾薑",
+        "舌苔厚膩、乾嘔甚而無中氣虛 → 去人參、大棗，加枳實、生薑"
+      ],
       "contraindications_en": [
         "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
         "Contraindicated for those with nausea and vomiting due to Yin Deficiency."
@@ -28603,6 +28895,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 117, source lines 1010,1011;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 116;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 67,
@@ -29147,24 +29442,21 @@
         "胸痺虛寒證"
       ],
       "modifications_en": [
-        "For severe vomiting:",
-        "For frequent diarrhea:",
-        "+ Sheng Jiang（Rz. Zingiberis Recens）",
-        "+ Rou Dou Kou（Sm. Myristicae）",
-        "For palpitations:",
-        "+ He Zi（Fr. Chebulae）",
-        "+ Fu Ling（Poria）",
-        "For Qi Stagnation with Deficiency Cold:",
-        "For Stomach cancer:",
-        "+ Qing Pi（Per. Citri Reticulatae Viride）",
-        "+ Stomach cancer herbs",
-        "+ Chen Pi（Per. Citri Reticulatae）",
-        "For cold extremities, abdominal pain and vomiting:",
-        "For bad food with abdominal pain, diarrhea, acid regurgitation and a red tongue with a white coat:",
-        "+ Zhi Fu Zi（Rx. Lateralis Aconiti Preparata）",
-        "+ Huang Lian（Rz. Coptidis）"
+        "Severe vomiting → add Sheng Jiang; remove Bai Zhu",
+        "Severe cold → add Fu Zi and Rou Gui",
+        "With palpitations → add Fu Ling",
+        "Abdominal fullness → add Fu Zi; remove Bai Zhu",
+        "Severe abdominal pain → increase Ren Shen",
+        "Bleeding from Yang deficiency → add Ai Ye, Huang Qi and E Jiao; replace Gan Jiang with Pao Jiang"
       ],
-      "modifications_zh": [],
+      "modifications_zh": [
+        "嘔吐甚 → 加生薑，去白朮",
+        "寒甚 → 加附子、肉桂",
+        "兼心悸 → 加茯苓",
+        "腹滿 → 加附子，去白朮",
+        "腹痛甚 → 重用人參",
+        "陽虛失血 → 加艾葉、黃耆、阿膠，以炮薑易乾薑"
+      ],
       "contraindications_en": [
         "Contraindicated for those with External Wind Invasion with fever.",
         "Contraindicated for those with Yin Deficiency.",
@@ -29459,6 +29751,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 214, source lines 1850,1851,1852;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 213;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -30727,8 +31022,18 @@
         "虛勞發熱證",
         "心血虛不得養心證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "More severe cold → add Chuan Jiao; substitute Rou Gui for Gui Zhi",
+        "Loose stools → add Bai Zhu and Bai Bian Dou",
+        "With Qi stagnation → add Mu Xiang and Chen Pi",
+        "Parasites → add Wu Mei and Chuan Jiao; reduce Yi Tang and Bai Shao"
+      ],
+      "modifications_zh": [
+        "寒甚 → 加川椒，以肉桂易桂枝",
+        "便溏 → 加白朮、白扁豆",
+        "兼氣滯 → 加木香、陳皮",
+        "蟲積 → 加烏梅、川椒，減飴糖、白芍"
+      ],
       "contraindications_en": [
         "Contraindicated for those with Heat from Yin Deficiency.",
         "Eliminate sweet flavor for vomiting or roundworms.",
@@ -30990,6 +31295,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/22"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 217;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 39,
@@ -32041,23 +32349,19 @@
         "真寒假熱證"
       ],
       "modifications_en": [
-        "For edema or leukorrhea due Kidney and Spleen Yang Deficiency:",
-        "For a red face with extreme irritability:",
-        "+ Dang Shen（Rx. Codonopsis）",
-        "Take formula Cold",
-        "+ Fu Ling（Poria）",
-        "For intractable arthritis due to Wind-Damp:",
-        "+ Ze Xie（Rz. Alismatis）",
-        "+ Rou Gui（Cx. Cinnamomi）",
-        "+ Bai Zhu（Rz. Atractylodes Macrocephalae）",
-        "+ Huang Qi 24g（Rx. Astragali）",
-        "+ Fu Ling 30g（Poria）",
-        "For chronic arthritis due to Cold:",
-        "For shortness of breath or accelerated respiration:",
-        "+ Gui Zhi（Ram. Cinnamomi）",
-        "+ Bai Shao（Rx. Paeoniae Alba）"
+        "Edema or leukorrhea from deficiency cold → add Dang Shen, Fu Ling and Ze Xie",
+        "Low-back pain → add Sang Ji Sheng and Du Zhong",
+        "Weak constitution with a frail pulse → add Hong Shen and Huang Qi",
+        "Severe cold with excessive sweating and severe diarrhea → increase Fu Zi and Gan Jiang; add Long Gu and Mu Li",
+        "Intractable Bi syndrome → add Gui Zhi and Bai Zhu"
       ],
-      "modifications_zh": [],
+      "modifications_zh": [
+        "虛寒水腫、帶下 → 加黨參、茯苓、澤瀉",
+        "腰痛 → 加桑寄生、杜仲",
+        "體弱脈微 → 加紅參、黃耆",
+        "寒甚、汗出過多、下利甚 → 重用附子、乾薑，加龍骨、牡蠣",
+        "頑痺 → 加桂枝、白朮"
+      ],
       "contraindications_en": [
         "Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow).",
         "Stop this formula immediately once the hands and feet have warmed up."
@@ -32315,6 +32619,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 223, source lines 1920,1921,1922;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 222;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 483,
@@ -33629,8 +33936,18 @@
       "pattern_indications_zh": [
         "血虛寒厥、經脈凝滯證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Cold pains in the foot, leg, thigh and low back → add Xu Duan, Niu Xi and Ji Xue Teng",
+        "Vertex headache with vomiting of white foamy mucus → add Sheng Jiang and Wu Zhu Yu",
+        "Menstrual cold cramping and hernial disorders with a deep pulse and cold limbs → add Wu Yao, Xiao Hui Xiang, Mu Xiang and Gao Liang Jiang",
+        "Vertigo, tinnitus and chronic headache → add Bai Zhi and Fang Feng"
+      ],
+      "modifications_zh": [
+        "足、腿、股、腰冷痛 → 加續斷、牛膝、雞血藤",
+        "巔頂頭痛、嘔吐白色泡沫涎沫 → 加生薑、吳茱萸",
+        "經行冷痛、疝氣、脈沉肢冷 → 加烏藥、小茴香、木香、高良薑",
+        "眩暈、耳鳴、慢性頭痛 → 加白芷、防風"
+      ],
       "contraindications_en": [
         "Contraindicated for those with Yin Deficiency with Empty Fire.",
         "Use with caution during Spring and Summer or in warm climates.",
@@ -33859,6 +34176,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/147"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 208;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 256,
@@ -98045,8 +98365,20 @@
       "pattern_indications_zh": [
         "風熱毒邪兼痰上攻頭面高熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Exterior still present with mild interior heat → reduce Huang Qin and Huang Lian; add Jing Jie, Fang Feng and Sang Ye",
+        "Blazing interior fire with the exterior resolved → remove Chai Hu and Bo He; add Jin Yin Hua, Shi Gao and Qing Dai",
+        "Interior formed heat clumping → add Da Huang, Zhi Shi and Mang Xiao",
+        "Long-standing hard lumps and nodules → add Dan Pi, Bei Mu, Xia Ku Cao, Chi Shao, Si Gua Luo and Chen Pi",
+        "Complicated by orchitis → add Chuan Lian Zi, Long Dan Cao and Pu Gong Ying"
+      ],
+      "modifications_zh": [
+        "表證仍在、裏熱較輕 → 減黃芩、黃連用量，加荊芥、防風、桑葉",
+        "表證已解、裏熱熾盛 → 去柴胡、薄荷，加金銀花、石膏、青黛",
+        "裏熱結聚成實 → 加大黃、枳實、芒硝",
+        "硬結腫塊日久 → 加丹皮、貝母、夏枯草、赤芍、絲瓜絡、陳皮",
+        "併發睪丸炎 → 加川楝子、龍膽草、蒲公英"
+      ],
       "contraindications_en": [
         "Use caution in patients with Yin Deficiency."
       ],
@@ -98228,6 +98560,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 151;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 231,
@@ -105523,8 +105858,18 @@
         "玉女煎加減法：對於火氣過盛的患者，可加入山豆根、地骨皮等藥物以增強清熱瀉火的效果。若血熱引起出血較多，則可去掉熟地，加入牛蒡子、玄參等藥物以增加清熱涼血的功效。",
         "現代常用於治療口腔潰瘍、急性口腔炎、流鼻血、上消化道出血、糖尿病、舌炎、牙齦腫痛、三叉神經痛、牙周病、吐血衄血、病毒性心肌炎、腎虛腰痛、骨質疏鬆症、肺結核、慢性支氣管炎……等疾病。"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Severe Yin deficiency with heat → add Xuan Shen, Nu Zhen Zi and Huang Bai",
+        "Severe bleeding → increase Shi Gao and Zhi Mu; add Bai Mao Gen and Dan Pi",
+        "Profuse sweating with severe thirst → add Wu Wei Zi",
+        "Blazing Stomach fire → add Zhi Zi and Da Huang; substitute Sheng Di for Shu Di"
+      ],
+      "modifications_zh": [
+        "陰虛有熱甚 → 加玄參、女貞子、黃柏",
+        "出血甚 → 重用石膏、知母，加白茅根、丹皮",
+        "汗多口渴甚 → 加五味子",
+        "胃火熾盛 → 加梔子、大黃，以生地易熟地"
+      ],
       "contraindications_en": [
         "Not suitable for those with loose stools or diarrhea.",
         "This formula is cold in nature; use with caution in those with Spleen and Stomach deficiency cold.",
@@ -105734,6 +106079,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 175;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 82,
@@ -106361,8 +106709,14 @@
         "肝經有熱胃失和降證",
         "肝經實火兼胃熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "Severe hypochondriac pain and distension → add Chuan Lian Zi and Yan Hu Suo",
+        "Pronounced acid reflux → add Hai Piao Xiao (Wu Zei Gu) and Duan Wa Leng Zi"
+      ],
+      "modifications_zh": [
+        "脅肋脹痛甚 → 加川楝子、延胡索",
+        "吞酸明顯 → 加海螵蛸（烏賊骨）、煅瓦楞子"
+      ],
       "contraindications_en": [
         "Acid regurgitation due to Stomach Deficiency Cold.",
         "Hypochondriac pain due to Liver, Gallbladder, or Blood Deficiency.",
@@ -106539,6 +106893,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 163;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "cloudtcm_id": 566,
@@ -122000,6 +122357,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 77, source lines 681;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 76;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "actions_en": [
@@ -122249,6 +122609,20 @@
           "indication_zh": "脾陽虛寒積便秘；久痢赤白",
           "source": "curriculum 方剂学汇总 Table 77 (Da Huang Fu Zi Tang)"
         }
+      ],
+      "modifications_zh": [
+        "寒甚惡寒明顯 → 制附子、細辛加倍",
+        "體質虛弱 → 加黨參、當歸",
+        "積滯脹滿甚 → 加枳實、厚朴",
+        "疼痛劇烈 → 加桂枝、白芍",
+        "噁心嘔吐 → 加半夏、陳皮、黃連"
+      ],
+      "modifications_en": [
+        "Severe cold with chills → double Zhi Fu Zi and Xi Xin",
+        "Weak constitution → add Dang Shen and Dang Gui",
+        "Severe accumulation with distension → add Zhi Shi and Hou Po",
+        "Severe pains → add Gui Zhi and Bai Shao",
+        "Nausea and vomiting → add Ban Xia, Chen Pi and Huang Lian"
       ]
     },
     {
@@ -122773,6 +123147,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md(「# 125. 蒿芩清膽湯 · Hao Qin Qing Dan Tang — Classical / course source: Chong Ding Tong Su Shang」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "modifications_zh": [
+          "curriculum/herbs/方剂学汇总_extracted.md(Table 97;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ]
       },
       "actions_en": [
@@ -122972,7 +123349,21 @@
       ],
       "composition_source_note_zh": "組成出自 American Dragon 匯入層；使藥位的碧玉散是成方不是單味藥，2026-08-12 依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改寫為 entry_type: formula_in_formula，展開為滑石:甘草:青黛 6:1:1（來源：curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）），三味都接回中藥庫 id，安全與交互作用可以走到葉子藥材。⚠️ 課件把碧玉散標為 Envoy（使），本卡既有值為「佐」，兩者不一致 —— 未擅改，列給 Ting 裁定。",
       "correction_note": "【2026-08-12 方中方結構 — Ting 裁定 2A】碧玉散那一列原本是 herb_id 空字串 + herb_zh「碧玉散」，被 F12 判為「中藥庫查無的藥」。依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改為 formula-in-formula 型別：保留方名身分（formula_id formula.bi_yu_san），同時內嵌展開的三味葉子藥材。\n沒有刪任何東西：原有的 in_formula_zh/_en、actions_zh/_en、role_reason_zh、劑量、role_zh 全部原封保留，in_formula 兩語只在句尾追加「這是成方不是單味藥」與比例。\n被取代的兩個值已保存於此：name_zh 原值「Bi Yu San」（中文欄位放羅馬拼音，憲法紅線五；拼音仍在本列 pinyin 欄），herb_id 原值為空字串「」（空字串不是連結，改用 formula_id）。\n方劑庫目前沒有 formula.bi_yu_san 這張卡，故 id 標 formula_id_status = reserved_pending_card，不留空、不假裝已解析。\n⚠️ 待 Ting 裁定：curriculum/Formulations Summary Chart 把碧玉散標為 Envoy（使），本卡既有 role_zh 為「佐」。本次不動既有值。\n【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：青蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第7味 name_zh「Chi Fu Ling」→「赤茯苓」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：赤茯苓（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《重訂通俗傷寒論》"
+      "source_classic": "《重訂通俗傷寒論》",
+      "modifications_zh": [
+        "嘔吐明顯 → 加黃連、紫蘇葉",
+        "痰熱壅肺 → 加魚腥草、蘆根、冬瓜仁",
+        "濕痰偏重 → 加藿香、薏苡仁",
+        "舌苔厚膩、胸膈痞滿 → 加厚朴、藿香",
+        "小便不利 → 加澤瀉、車前子、通草"
+      ],
+      "modifications_en": [
+        "Pronounced vomiting → add Huang Lian and Zi Su Ye",
+        "Phlegm-heat in the Lungs → add Yu Xing Cao, Lu Gen and Dong Gua Ren",
+        "Severe damp and phlegm → add Huo Xiang and Yi Yi Ren",
+        "Thick greasy tongue coating with fullness in the chest and diaphragm → add Hou Po and Huo Xiang",
+        "Difficult urination → add Ze Xie, Che Qian Zi and Tong Cao"
+      ]
     },
     {
       "id": "formula.fu_ling_wan",
