@@ -4182,7 +4182,7 @@ function renderDetail(point) {
     render();
     document.querySelector("#acupointDirectory")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-  document.querySelector("#editBtn").addEventListener("click", () => openEditor(point));
+  document.querySelector("#editBtn")?.addEventListener("click", () => openEditor(point));
   document.querySelector("#copyPointLinkBtn")?.addEventListener("click", () => copyPointLink(point));
   detailCard.querySelectorAll("[data-related-point]").forEach((button) => {
     button.addEventListener("click", () => selectPoint(button.dataset.relatedPoint));
