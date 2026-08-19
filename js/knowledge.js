@@ -2198,7 +2198,9 @@
         const meta = [
           categoryLabel(f),
           f.tier ? `tier: ${f.tier}` : "",
-          f.comparison_group ? `group: ${f.comparison_group}` : "",
+          /* raw snake_case 不上畫面(§LABEL RESOLVERS):列表卡也要走 resolver,
+             detail 頁本來就解析,漏的是這裡。 */
+          f.comparison_group ? `group: ${comparisonGroupLabel(f.comparison_group)}` : "",
           f.nccaom_high_yield ? "NCCAOM high-yield" : ""
         ].filter(Boolean).join(" · ");
         const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
