@@ -18,7 +18,11 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const APPLY = process.argv.includes("--apply");
 
-const LEDGER_REL = "docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json";
+/* 兩本帳:curriculum 挖掘(預設)與 web/Notion 查證(--web,白名單站
+   zhongyifangji/cloudtcm 逐頁引【出處】,Notion 近乎全空僅右歸飲佐證)。 */
+const LEDGER_REL = process.argv.includes("--web")
+  ? "docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json"
+  : "docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json";
 const ledger = JSON.parse(fs.readFileSync(path.join(ROOT, LEDGER_REL), "utf8"));
 const fdoc = JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8"));
 const formulas = fdoc.records || Object.values(fdoc).find(Array.isArray);
@@ -44,7 +48,7 @@ for (const prop of ledger.proposals) {
     rec.field_sources = rec.field_sources || {};
     if (!rec.field_sources.source_classic) {
       rec.field_sources.source_classic = [
-        `${prop.evidence_file}(「${String(prop.evidence_quote).slice(0, 90)}」;帳本 ${LEDGER_REL})`,
+        `${prop.evidence_file || prop.source_ref}(「${String(prop.evidence_quote).slice(0, 90)}」;帳本 ${LEDGER_REL})`,
       ];
     }
   } else {
