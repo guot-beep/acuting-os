@@ -156,15 +156,18 @@
     "兼風寒濕痺 → 加薑黃、細辛"
    ],
    "contraindications_en": [
-    "Contraindicated for those with Exterior Cold with Interior Heat.",
     "Contraindicated for those with Tai Yang Shang Han.",
+    "Not appropriate for early-stage warm disease with constrained heat in the exterior, presenting with fever, thirst, and a rapid pulse — acrid-warm herbs would assist the heat.",
     "Contraindicated for those who drink alcohol frequently.",
+    "Contraindicated for those with Exterior Cold with Interior Heat.",
     "Use caution during the summer or spells of hot weather."
    ],
    "contraindications_zh": [
     "表實無汗者禁用 —— 此為麻黃湯證，誤用桂枝湯則邪無出路。《傷寒論》：「桂枝本為解肌，若其人脈浮緊、發熱汗不出者，不可與之也。」",
     "溫病初起、表有鬱熱而見發熱口渴、脈數者不宜 —— 辛溫助熱。",
-    "酒客（濕熱內蘊者）不宜，服之易致嘔。"
+    "酒客（濕熱內蘊者）不宜，服之易致嘔。",
+    "表寒裡熱者禁用。",
+    "夏季或天氣炎熱時慎用。"
    ],
    "herb_drug_cautions": [
     "sweating",
@@ -391,7 +394,7 @@
      "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
     ],
     "contraindications_en": [
-     "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "cautions_zh": [
      "《傷寒論》桂枝湯服法（啜熱稀粥、溫覆取微汗）"
@@ -957,6 +960,10 @@
     "體虛、年老者：全方減量，麻黃改用麻黃絨"
    ],
    "contraindications_en": [
+    "Contraindicated for those with exterior deficiency with spontaneous sweating, or Yin Deficiency with night sweats.",
+    "Use caution in those with chronic sores, chronic nosebleeds, or loss of Blood (Blood and sweat share the same source; strong diaphoretics must not be used).",
+    "Use caution for those with hypertension.",
+    "Use caution during pregnancy.",
     "Contraindicated for those with Lin Syndrome.",
     "Contraindicated for those with Yin Deficiency bleeding.",
     "Contraindicated for those with bacterial infections (Heat).",
@@ -965,7 +972,6 @@
     "Contraindicated for those with a weak pulse.",
     "Contraindicated for those with debility.",
     "Contraindicated for those with copious urination.",
-    "Use caution for those with hypertension.",
     "Avoid profuse perspiration.",
     "Use only for short periods of time."
    ],
@@ -973,7 +979,17 @@
     "表虛自汗、陰虛盜汗者禁用",
     "瘡家、衄家、亡血家慎用（血汗同源，重劑不可發汗）",
     "嚴重心臟病、高血壓患者慎用",
-    "孕婦慎用"
+    "孕婦慎用",
+    "淋家（淋證患者）禁用",
+    "陰虛出血者禁用",
+    "熱證（細菌感染）者禁用",
+    "皮膚瘡瘍感染者禁用",
+    "風熱證禁用",
+    "脈弱者禁用",
+    "體虛衰弱者禁用",
+    "小便量多者禁用",
+    "不可令汗出過多",
+    "不宜久服，中病即止"
    ],
    "herb_drug_cautions": [
     "hypertension_review",
@@ -1190,6 +1206,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 11 條(不同來源並行),對齊為 14 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "on_board_list": true,
@@ -1803,19 +1822,26 @@
     "水腫、小便不利者：加茯苓 15g、澤瀉 9g 利水滲濕"
    ],
    "contraindications_en": [
+    "Contraindicated for those with coughing due to Yin Deficiency.",
+    "Contraindicated for those with Lung Heat cough and wheezing with expectoration of thick, yellow sputum.",
+    "Use with caution for those with hypertension.",
+    "Use caution during pregnancy.",
     "Do not use long term.",
     "Contraindicated for those with Heat conditions.",
     "Contraindicated for those with hemoptysis.",
-    "Contraindicated for those with coughing due to Yin Deficiency.",
     "Contraindicated for those with dry mouth and throat with thick, yellow sputum.",
-    "Contraindicated for those with a sore throat and a rapid pulse.",
-    "Use with caution for those with hypertension."
+    "Contraindicated for those with a sore throat and a rapid pulse."
    ],
    "contraindications_zh": [
     "陰虛乾咳無痰者禁用",
     "肺熱咳喘、吐黃稠痰者禁用",
     "嚴重心臟病、高血壓患者慎用",
-    "孕婦慎用"
+    "孕婦慎用",
+    "不宜久服",
+    "熱證者禁用",
+    "咳血者禁用",
+    "口乾咽燥、吐黃稠痰者禁用",
+    "咽喉腫痛、脈數者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -2012,6 +2038,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 7 條(不同來源並行),對齊為 9 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 41,
@@ -3104,13 +3133,16 @@
     "胸悶脘痞者：加藿香 9g、鬱金 9g 芳香化濕"
    ],
    "contraindications_en": [
-    "This formula must be significantly modified to treat Damp-Heat.",
-    "Contraindicated for Wind-Cold."
+    "Contraindicated for Wind-Cold.",
+    "Use caution for those with Spleen and Stomach Deficiency Cold with loose stools.",
+    "Contraindicated for Yin-type sores and abscesses without heat signs.",
+    "This formula must be significantly modified to treat Damp-Heat."
    ],
    "contraindications_zh": [
     "外感風寒表寒證（惡寒重、流清涕）禁用",
     "脾胃虛寒、大便溏薄者慎用",
-    "瘡瘍陰證無熱者禁用"
+    "瘡瘍陰證無熱者禁用",
+    "治療濕熱證時，本方須經大幅加減方可使用"
    ],
    "herb_drug_cautions": [
     "febrile_illness",
@@ -3338,6 +3370,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 2 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 271,
@@ -3977,7 +4012,8 @@
     "咽喉腫痛甚者：加玄參 12g、板藍根 15g 清熱解毒利咽"
    ],
    "contraindications_en": [
-    "Contraindicated for those with an External Wind-Cold Invasion."
+    "Contraindicated for those with an External Wind-Cold Invasion.",
+    "Contraindicated for dry cough due to Yin Deficiency with Lung Dryness."
    ],
    "contraindications_zh": [
     "風寒咳嗽忌用",
@@ -4177,6 +4213,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 162,
@@ -6611,7 +6650,8 @@
     "Stops nasal discharge and relieves headache"
    ],
    "pattern_indications_zh": [
-    "風熱鬱肺、鼻塞流涕（鼻淵）證"
+    "風熱鬱肺、鼻塞流涕（鼻淵）證",
+    "風熱侵襲、鼻塞頭痛證"
    ],
    "pattern_indications_en": [
     "Nasal congestion and sinusitis due to Wind-Heat",
@@ -6706,6 +6746,9 @@
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/269",
@@ -7722,8 +7765,11 @@
     "兼濕熱身重、脘痞者：加蒼朮 9g ➔ 即白虎加蒼朮湯（燥濕清熱）"
    ],
    "contraindications_en": [
-    "Fever from Spleen/Stomach Yin Deficiency with spontaneous sweating, extreme fatigue, aversion to Wind, and a floating Deficiency pulse.",
+    "Contraindicated when the exterior pattern has not resolved, with absence of sweating and aversion to cold.",
+    "Contraindicated when the pulse is floating and thin, or submerged, or when there is no thirst or no sweating (the four prohibitions of Bai Hu).",
+    "Contraindicated for those with Spleen and Stomach Deficiency Cold with loose stools.",
     "True Cold with False Heat.",
+    "Fever from Spleen/Stomach Yin Deficiency with spontaneous sweating, extreme fatigue, aversion to Wind, and a floating Deficiency pulse.",
     "Yang Ming Fu pattern.",
     "Use caution with a floating, wiry, thin pulse.",
     "Use caution with a submerged pulse.",
@@ -7734,7 +7780,13 @@
     "表證未解、無汗惡寒者禁用",
     "脈浮細、脈沉、不渴、汗不出者禁用（白虎四禁）",
     "脾胃虛寒、大便溏薄者禁用",
-    "真寒假熱（陰盛格陽）者禁用"
+    "真寒假熱（陰盛格陽）者禁用",
+    "脾胃陰虛發熱，見自汗出、極度倦怠、惡風、脈浮虛者禁用",
+    "陽明腑實證者禁用",
+    "脈浮弦而細者慎用",
+    "脈沉者慎用",
+    "不渴者慎用",
+    "無汗者慎用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -7961,6 +8013,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 7 條(不同來源並行),對齊為 10 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 98,
@@ -8598,6 +8653,8 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is cooling and moistening; it is contraindicated when there is internal Phlegm-Damp, or fever due to Yang Deficiency.",
+    "Not appropriate in febrile disease while the pathogen remains exuberant, the high fever has not yet abated, and Qi and Yin have not yet been injured.",
     "Febrile disease when both normal and pathogenic Qi remain abundant.",
     "Febrile disease when fever remains high.",
     "Febrile disease when Qi and Yin have not been injured.",
@@ -8605,7 +8662,11 @@
    ],
    "contraindications_zh": [
     "本方清涼質潤，如內有痰濕，或陽虛發熱，均應忌用。",
-    "熱病開盛邪實，大熱未哀，氣陰未傷者，不宜使用本方。"
+    "熱病正盛邪實，大熱未衰，氣陰未傷者，不宜使用本方。",
+    "熱病邪正俱盛者不宜使用。",
+    "熱病高熱未退者不宜使用。",
+    "熱病氣陰未傷者不宜使用。",
+    "熱病兼濕熱，見胸悶、乾嘔、舌苔黃膩者不宜使用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -8816,6 +8877,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 108,
@@ -10681,6 +10745,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/204",
@@ -11022,9 +11089,9 @@
     "愛滋病 / 免疫功能低下"
    ],
    "contraindications_en": [
-    "Reduce or omit Da Huang once constipation resolves, or with mild abdominal pain, pus in stool, or reduced energy.",
     "Weak patients.",
-    "Pregnancy."
+    "Pregnancy.",
+    "Reduce or omit Da Huang once constipation resolves, or with mild abdominal pain, pus in stool, or reduced energy."
    ],
    "cautions_en": [
     "Reduce or omit Da Huang once constipation resolves, or with mild abdominal pain, pus in stool, or reduced energy.",
@@ -11043,7 +11110,8 @@
    "taiwan_pharmacopeia_zh": "No. 78 (THP p.131)",
    "contraindications_zh": [
     "體虛者禁用",
-    "孕婦禁用"
+    "孕婦禁用",
+    "便秘一旦解除，或見輕微腹痛、便中帶膿、體力減退時，應減量或去大黃"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 4 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）、連翹（actions_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）、蜂蜜（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
   },
@@ -14407,11 +14475,14 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is not appropriate for toothache due to Wind-Fire, or for swollen, bleeding gums due to Kidney Deficiency with Fire flaring upward.",
     "Toothache due to Wind-Cold.",
     "Tooth or gum problems due to Kidney Deficiency."
    ],
    "contraindications_zh": [
-    "凡屬風火牙痛或腎虛火炎所致的牙齦腫痛出血者，不宜使用本方。"
+    "凡屬風火牙痛或腎虛火炎所致的牙齦腫痛出血者，不宜使用本方。",
+    "風寒牙痛者不宜使用。",
+    "腎虛所致牙齒或牙齦疾患者不宜使用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -14583,6 +14654,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 211,
@@ -15803,6 +15877,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/97",
@@ -15956,7 +16033,8 @@
    "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BaiTouWengTang.html",
    "contraindications_zh": [
-    "不宜長期服用"
+    "不宜長期服用",
+    "脾胃陽虛者禁用"
    ],
    "formula_song": "白頭翁湯治熱痢，黃連黃柏秦皮聚，\n清熱解毒併涼血，赤多白少膿血醫。",
    "formula_song_zh": "白頭翁湯治熱痢，黃連黃柏秦皮聚，\n清熱解毒併涼血，赤多白少膿血醫。"
@@ -16113,7 +16191,8 @@
     "Spasms or convulsions from Yin Deficiency with Liver Wind Rising."
    ],
    "contraindications_zh": [
-    "溫病早期忌服"
+    "溫病早期忌服",
+    "陰虛動風（肝風內動）之痙攣抽搐者忌用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -16295,6 +16374,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 567,
@@ -17485,6 +17567,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -17663,9 +17748,9 @@
     "Ear pain"
    ],
    "contraindications_en": [
-    "Yin type boils.",
     "Use caution with Spleen Deficiency.",
-    "Use caution with Qi and Blood Deficiency."
+    "Use caution with Qi and Blood Deficiency.",
+    "Yin type boils."
    ],
    "cautions_en": [
     "Yin type boils.",
@@ -17683,7 +17768,8 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WuWeiXiaoDuYin.html",
    "contraindications_zh": [
     "脾虛者慎用",
-    "氣血兩虛者慎用"
+    "氣血兩虛者慎用",
+    "陰證瘡瘍者禁用"
    ]
   },
   {
@@ -18133,6 +18219,8 @@
    ],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is strongly purgative and may cause vomiting or diarrhea; weak patients should use it with particular care. It is strictly contraindicated during pregnancy. As a powerful purgative, it should be used cautiously in those with Qi Deficiency, insufficient Yin fluids, or mild constipation, especially the elderly and debilitated.",
+    "Discontinue as soon as the symptoms resolve, so that overuse does not damage the upright Qi. It is not appropriate for those with a weak constitution, a deep, weak pulse, or no heat accumulation in the Stomach and Intestines, as it may otherwise cause harm.",
     "Contraindicated during pregnancy.",
     "Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level.",
     "Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm.",
@@ -18146,7 +18234,17 @@
    ],
    "contraindications_zh": [
     "這個藥方作用強烈，可能會引起嘔吐或腹瀉，虛弱的患者應該特別小心使用。孕婦嚴禁使用。由於這是一種強效的通便藥，對於氣虛（身體能量不足）、陰液不足、便秘不嚴重的患者，特別是年老或體弱者，應該謹慎使用。",
-    "使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。"
+    "使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。",
+    "孕婦禁用。",
+    "邪尚在衛分或太陽經者禁用。",
+    "心下痞硬、示邪尚在膈上者禁用。",
+    "熱浮於表而面赤者禁用。",
+    "脾胃虛弱、食量甚少者禁用。",
+    "不能進食者禁用。",
+    "邪留少陽而頻繁嘔吐者禁用。",
+    "裡寒而脈遲者禁用。",
+    "自汗出而小便正常者禁用。",
+    "體弱者須極為慎用，並加入補益之品。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -18429,6 +18527,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 10 條(不同來源並行),對齊為 12 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 32,
@@ -20609,6 +20710,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -20900,11 +21004,11 @@
     "Lower abdominal masses"
    ],
    "contraindications_en": [
+    "Contraindicated during Pregnancy.",
     "Contraindicated for those with necrotic appendicitis.",
     "Contraindicated for those with appendicitis with peritonitis.",
     "Contraindicated for infants with appendicitis.",
     "Contraindicated for those with appendicitis due to parasites.",
-    "Contraindicated during Pregnancy.",
     "Use extreme caution in the weak and elderly."
    ],
    "cautions_en": [
@@ -20924,7 +21028,12 @@
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaHuangMuDanPiTang.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "孕婦禁用",
+    "壞疽性（壞死性）闌尾炎禁用",
+    "闌尾炎併發腹膜炎者禁用",
+    "嬰幼兒闌尾炎禁用",
+    "蟲積所致之闌尾炎禁用",
+    "年老體弱者須極為慎用"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
    "composition_suspect_cleared_note": "2026-08-19 核對《金匱要略》大黃牡丹湯五味(大黃、牡丹皮、桃仁、冬瓜仁、芒硝)俱在,旗標清除"
@@ -21110,6 +21219,8 @@
     }
    ],
    "pattern_indications_en": [
+    "Spleen constraint (Pi Yue) with intestinal dryness and constipation",
+    "Constipation due to depleted fluids and Blood Deficiency",
     "Colon Heat",
     "Deficiency of Fluid in Colon",
     "Dry Heat Retention in the Stomach and Intestines due to Jin Ye Deficiency",
@@ -21117,11 +21228,19 @@
    ],
    "pattern_indications_zh": [
     "脾約腸燥便秘證",
-    "津虧血虛便秘證"
+    "津虧血虛便秘證",
+    "大腸熱證",
+    "大腸津虧證",
+    "津液不足、胃腸燥熱內結證",
+    "陽明虛證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Although this is a moistening, mild laxative formula, it contains harsh, stagnation-breaking ingredients; the elderly and weak and those with depleted fluids and scant Blood should not take it regularly, and it should be used with caution during pregnancy.",
+    "Contraindicated for those allergic to hemp seed (Ma Zi Ren); anyone with such an allergy should avoid taking Ma Zi Ren Wan.",
+    "Not for long-term use: although Ma Zi Ren Wan moistens the Intestines and unblocks the bowels, it should not be taken for prolonged periods.",
+    "Ma Zi Ren is the seed of Cannabis sativa; those subject to urine drug testing should not take this formula.",
     "Contraindicated during pregnancy.",
     "Modify for treating constipation with Blood Deficiency.",
     "Modify for treating the very weak."
@@ -21130,7 +21249,10 @@
     "本方雖為潤腸緩下之劑，但含有攻下破滯之品，故年老體虛，津虧血少者，不宜常服，孕婦慎用。",
     "對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。",
     "不宜久服：麻子仁丸雖具有潤腸通便的功效，但不宜久服。",
-    "麻子仁是大麻的種子，需要驗尿者不宜服用。"
+    "麻子仁是大麻的種子，需要驗尿者不宜服用。",
+    "孕婦禁用。",
+    "治療血虛便秘時須加減使用。",
+    "治療極度虛弱者時須加減使用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -21296,6 +21418,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 3 條(不同來源並行),對齊為 7 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 222,
@@ -22030,18 +22158,26 @@
     "小柴胡湯的加減：若胸中煩而不嘔，為熱聚於胸，去半夏、人參，加瓜蔞清熱理氣寬胸；渴者，是熱傷津液，去半夏，加天花粉止渴生津；腹中痛，是肝氣乘脾，宜去黃芩，加芍藥柔肝緩急止痛；脅下痞硬，是氣滯痰鬱，去大棗，加牡蠣軟堅散結；心下悸，小便不利，是水氣凌心，宜去黃芩，加茯苓利水寧心；不渴，外有微熱，是表邪仍在，宜去人參，加桂枝解表；咳者，是素有肺寒留飲，宜去人參、大棗、生薑，加五味子、乾薑溫肺止咳。"
    ],
    "contraindications_en": [
+    "Long-term use may cause headache, dizziness, bleeding gums, or pneumonia.",
+    "Use with caution in those with Liver Yang Rising, hypertension, or hematemesis due to Yin Deficiency.",
+    "Use with caution for those with Yin and/or Blood Deficiency.",
     "Contraindicated for those with Excess above and deficiency below.",
     "Contraindicated for those with Liver Fire.",
     "Contraindicated for those with bleeding gums.",
     "Use with caution for those with Liver Yang Rising.",
     "Use with caution for those with hypertension.",
-    "Use with caution for those with hematemesis due to Yin Deficiency.",
-    "Use with caution for those with Yin and/or Blood Deficiency."
+    "Use with caution for those with hematemesis due to Yin Deficiency."
    ],
    "contraindications_zh": [
     "長期服用可能引起頭痛、頭暈，牙齦出血、肺炎",
     "肝陽上亢，高血壓，陰虛吐血慎用",
-    "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。"
+    "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。",
+    "上實下虛者禁用",
+    "肝火熾盛者禁用",
+    "牙齦出血者禁用",
+    "肝陽上亢者慎用",
+    "高血壓患者慎用",
+    "陰虛吐血者慎用"
    ],
    "herb_drug_cautions": [
     "liver_disease_review",
@@ -22057,6 +22193,8 @@
    "clinical_pearls": [],
    "pattern_indications_en": [
     "Shao Yang Stage disorders",
+    "Heat entering the Blood Chamber",
+    "Liver and Stomach disharmony with fullness and discomfort in the chest and hypochondria",
     "Gu Syndrome",
     "Liver Qi Stagnation with Spleen Dampness",
     "Heat in the Liver, Gallbladder, Stomach and/or Lungs"
@@ -22064,7 +22202,10 @@
    "pattern_indications_zh": [
     "少陽半表半裡證",
     "熱入血室證",
-    "肝胃不和胸脅苦滿證"
+    "肝胃不和胸脅苦滿證",
+    "蠱證",
+    "肝氣鬱結兼脾濕證",
+    "肝、膽、胃或肺有熱之證"
    ],
    "related_conditions": [],
    "source_status": "bensky_review_pending_chinese_source_draft",
@@ -22391,7 +22532,7 @@
      "American Dragon HERB/DRUG INTERACTIONS — 屬藥理與交互作用,不是禁忌,2026-08-06 歸位"
     ],
     "contraindications_en": [
-     "zh 為既有中文原文,en 為其對譯(內容與 American Dragon 2026-08 harvest 的禁忌條目一致);原值為無來源流程草稿,2026-08-06 替換"
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 7 條(不同來源並行),對齊為 9 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "actions_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
@@ -22410,6 +22551,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 43,
@@ -23241,11 +23385,14 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Use with caution in those without an excess pattern.",
+    "This formula is designed for a combined Shao Yang and Yang Ming pattern; a pure Shao Yang pattern or a pure Yang Ming pattern alone is not appropriate for it. When using it, the proportions of the ingredients should also be adjusted according to the relative severity of the Shao Yang disorder and the Yang Ming heat accumulation.",
     "Contraindicated for those with Spleen and Stomach Deficiencies."
    ],
    "contraindications_zh": [
     "非實證者慎用",
-    "本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例"
+    "本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例",
+    "脾胃虛弱者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -23445,6 +23592,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 35,
@@ -24234,11 +24384,14 @@
     "此方是中醫婦科的常用方，常用於治療各種「月經不調」，經常加香附、陳皮以疏肝解鬱。陰虛嚴重者，加熟地以養肝。肝鬱化火者，加牡丹皮、梔子以清熱涼血。"
    ],
    "contraindications_en": [
+    "Liver constraint mostly arises from emotional frustration; those taking this formula must also work on releasing stress psychologically for it to be effective. Otherwise the medicine may be \"free and easy\" while the person is not, and the effect will be limited.",
     "Use with caution during pregnancy.",
     "Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."
    ],
    "contraindications_zh": [
-    "肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。"
+    "肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。",
+    "孕婦慎用。",
+    "氣滯而兼肝腎陰虛者慎用。"
    ],
    "herb_drug_cautions": [
     "pregnancy_review",
@@ -24253,9 +24406,10 @@
    "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
    "clinical_pearls": [],
    "pattern_indications_en": [
-    "Liver Qi Stagnation Invades Stomach",
-    "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
     "Liver Qi Stagnation with Blood Deficiency",
+    "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
+    "Irregular menstruation with breast distention and pain",
+    "Liver Qi Stagnation Invades Stomach",
     "Qi and Blood Stagnation",
     "Blood Deficiency with fatigue",
     "Disharmony between the Ying and Wei with Phlegm, cough, tidal fever and wasting of limbs which may lead to Bone Steaming",
@@ -24264,7 +24418,12 @@
    "pattern_indications_zh": [
     "肝鬱血虛脾弱證",
     "肝脾不和胸脅脹痛證",
-    "月經不調乳房脹痛證"
+    "月經不調乳房脹痛證",
+    "肝氣犯胃證",
+    "氣血鬱滯證",
+    "血虛倦怠證",
+    "營衛不和，兼痰嗽、潮熱、肢體消瘦，甚則骨蒸之證",
+    "蠱證"
    ],
    "related_conditions": [
     "western_condition.unexplained_infertility",
@@ -24614,6 +24773,12 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 7 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 219,
@@ -25455,7 +25620,10 @@
     "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels."
    ],
    "contraindications_zh": [
-    "孕婦慎用"
+    "孕婦慎用",
+    "素體虛寒者禁用",
+    "本方或可減輕抗精神病藥所致帕金森氏症之震顫。",
+    "本方或可治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不影響血清雌二醇水平。"
    ],
    "herb_drug_cautions": [
     "pregnancy_review",
@@ -25798,6 +25966,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 65,
@@ -26522,7 +26693,8 @@
     "Painful diarrhea due to Liver Qi Stagnation Invading the Spleen with concurrent Wind-Cold Invasion"
    ],
    "pattern_indications_zh": [
-    "脾虛肝旺腸鳴腹痛腹瀉證"
+    "脾虛肝旺腸鳴腹痛腹瀉證",
+    "肝氣乘脾痛瀉兼外感風寒證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -26675,6 +26847,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 563,
@@ -27044,6 +27219,7 @@
    "fertility_notes": "",
    "clinical_pearls": [],
    "pattern_indications_en": [
+    "Focal distention (Pi Syndrome) due to intermingled Cold and Heat",
     "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
     "Improper purging of the Shao Yang with underlying Stomach Deficiency",
     "Damp-Heat in the gastrointestinal area",
@@ -27051,7 +27227,10 @@
    ],
    "pattern_indications_zh": [
     "寒熱錯雜痞證",
-    "腸胃不和嘔吐下利證"
+    "腸胃不和嘔吐下利證",
+    "少陽誤下、胃氣素虛證",
+    "腸胃濕熱證",
+    "蠱證"
    ],
    "related_conditions": [],
    "source_status": "bensky_review_pending_chinese_source_draft",
@@ -27305,6 +27484,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 67,
@@ -27812,6 +27994,9 @@
     }
    ],
    "pattern_indications_en": [
+    "Spleen and Stomach Deficiency Cold",
+    "Loss of Blood due to Spleen Yang Deficiency",
+    "Painful Obstruction in chest due to Upper Jiao Yang Deficiency",
     "Spleen Yang Deficiency",
     "Stomach Cold",
     "Small Intestine Deficiency Cold",
@@ -27819,15 +28004,22 @@
     "Tai Yin Shi (Spleen and Kidney Yang Deficiency - P: Slow and tight)",
     "Tai Yin Xu (abdominal pain)",
     "Sudden turmoil disorder (marked by absence of thirst)",
-    "Painful Obstruction in chest due to Upper Jiao Yang Deficiency",
     "Cold in chest during recovery from chronic illness (causes spitting of fluids)",
-    "Loss of Blood due to Spleen Yang Deficiency",
     "Chronic childhood convulsions"
    ],
    "pattern_indications_zh": [
     "脾胃虛寒證",
     "陽虛失血證",
-    "胸痺虛寒證"
+    "胸痺虛寒證",
+    "脾陽虛證",
+    "胃寒證",
+    "小腸虛寒證",
+    "中焦陽虛證",
+    "太陰實證（脾腎陽虛，脈遲而緊）",
+    "太陰虛證（腹痛）",
+    "霍亂（口不渴者）",
+    "大病瘥後胸上有寒、喜唾涎沫證",
+    "小兒慢驚風"
    ],
    "modifications_en": [
     "For severe vomiting:",
@@ -28128,6 +28320,9 @@
     ],
     "course_level_en": [
      "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 11 條(不同來源並行),對齊為 12 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -28585,14 +28780,19 @@
     "Strengthens the Spleen"
    ],
    "pattern_indications_zh": [
-    "脾腎陽虛陰寒內盛證"
+    "脾腎陽虛陰寒內盛證",
+    "大腸寒證",
+    "脾陽虛證",
+    "脾胃虛寒證",
+    "胃寒證",
+    "太陰虛寒證"
    ],
    "pattern_indications_en": [
+    "Spleen and Kidney Yang Deficiency",
     "Colon Cold",
     "Spleen Yang Deficiency",
     "Spleen and Stomach Deficiency Cold",
     "Stomach Cold",
-    "Spleen and Kidney Yang Deficiency",
     "Tai Yin Deficiency with Cold"
    ],
    "composition": [
@@ -28742,6 +28942,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -29146,10 +29352,10 @@
     "Cirrhosis of the Liver"
    ],
    "contraindications_en": [
-    "Contraindicated for those with External invasion with fever.",
-    "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped.",
     "Contraindicated for those with Yin Deficiency.",
-    "Contraindicated during pregnancy."
+    "Contraindicated during pregnancy.",
+    "Contraindicated for those with External invasion with fever.",
+    "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped."
    ],
    "cautions_en": [
     "Contraindicated for those with External invasion with fever.",
@@ -29168,7 +29374,9 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuZiLiZhongWan.html",
    "contraindications_zh": [
     "陰虛者禁用",
-    "孕婦禁用"
+    "孕婦禁用",
+    "外感發熱者禁用",
+    "霍亂者，吐瀉止後即當停服"
    ],
    "composition_suspect_cleared_note": "2026-08-19 核對附子理中丸五味(附子、人參、白朮、乾薑、炙甘草)俱在,旗標清除"
   },
@@ -29350,12 +29558,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Use with caution for those with Fire from Yin Deficiency, vomiting, or abdominal fullness.",
     "Contraindicated for those with Heat from Yin Deficiency.",
     "Eliminate sweet flavor for vomiting or roundworms.",
     "Modify for abdominal distention."
    ],
    "contraindications_zh": [
-    "陰虛火旺，嘔吐及中滿者慎用"
+    "陰虛火旺，嘔吐及中滿者慎用",
+    "陰虛發熱者禁用",
+    "嘔吐或有蛔蟲者，去甘味藥物",
+    "腹脹中滿者須加減使用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -29594,6 +29806,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 39,
@@ -29958,12 +30173,15 @@
     "Alleviates pain"
    ],
    "pattern_indications_zh": [
-    "中焦虛寒、氣血不足腹痛證"
+    "中焦虛寒、氣血不足腹痛證",
+    "胃氣虛證",
+    "脾陽虛證",
+    "衛氣虛證"
    ],
    "pattern_indications_en": [
+    "Deficiency Cold of the Middle Jiao with severe Qi Deficiency",
     "Stomach Qi Deficiency",
     "Spleen Yang Deficiency",
-    "Deficiency Cold of the Middle Jiao with severe Qi Deficiency",
     "Wei Qi Deficiency"
    ],
    "composition": [
@@ -30146,6 +30364,12 @@
     ],
     "pattern_indications_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -30453,8 +30677,8 @@
     "Cirrhosis of the Liver"
    ],
    "contraindications_en": [
-    "Eliminate sweet flavor for vomiting from roundworms.",
     "Contraindicated for those with Heat from Yin Deficiency.",
+    "Eliminate sweet flavor for vomiting from roundworms.",
     "Modify for abdominal distention."
    ],
    "cautions_en": [
@@ -30468,7 +30692,9 @@
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
    "contraindications_zh": [
-    "陰虛內熱者禁用"
+    "陰虛內熱者禁用",
+    "蛔蟲致嘔者，去甘味藥物",
+    "腹脹中滿者須加減使用"
    ],
    "composition_suspect_cleared_note": "2026-08-19 核對《金匱要略》黃耆建中湯七味(小建中湯全方加黃耆)俱在,旗標清除"
   },
@@ -30593,15 +30819,20 @@
     }
    ],
    "pattern_indications_en": [
+    "Shao Yin Cold",
+    "True Cold with False Heat",
     "Heart Yang Deficiency Exhaustion: Yang Xu Jue Ni",
     "Kidney Yang Deficiency with Internal Cold",
-    "Shao Yin Cold",
     "Yang Ming Han",
     "Excess use of diaphoretics in Tai Yang Stage leading to loss of Yang"
    ],
    "pattern_indications_zh": [
     "少陰病陰盛陽微證",
-    "真寒假熱證"
+    "真寒假熱證",
+    "心陽虛衰、陽虛厥逆證",
+    "腎陽虛衰、陰寒內盛證",
+    "陽明寒證",
+    "太陽病過汗亡陽證"
    ],
    "modifications_en": [
     "For edema or leukorrhea due Kidney and Spleen Yang Deficiency:",
@@ -30866,6 +31097,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 5 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 483,
@@ -31397,26 +31631,32 @@
     }
    ],
    "pattern_indications_en": [
+    "Jue Yin Cold in the Liver",
     "Stomach Deficiency Cold",
-    "Deficiency Cold of Stomach and Liver",
-    "Cold Attacking the Middle Jiao",
     "Shao Yin Cold",
-    "Jue Yin Cold in the Liver"
+    "Deficiency Cold of Stomach and Liver",
+    "Cold Attacking the Middle Jiao"
    ],
    "pattern_indications_zh": [
     "厥陰頭痛嘔吐證",
     "陽明虛寒嘔吐證",
-    "少陰吐利手足逆冷證"
+    "少陰吐利手足逆冷證",
+    "肝胃虛寒證",
+    "寒邪直犯中焦證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Contraindicated for vomiting or acid reflux due to Heat, vomiting due to Stomach Heat or Yin Deficiency, and headache due to Liver Yang Rising.",
     "For very severe vomiting, take the formula cool.",
     "Contraindicated for those with vomiting or acid reflux due to Heat.",
     "Contraindicated for those with headache due to Liver Yang Rising."
    ],
    "contraindications_zh": [
-    "因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。"
+    "因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。",
+    "嘔吐劇烈者，宜冷服",
+    "因熱所致之嘔吐反酸者禁用",
+    "肝陽上亢頭痛者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -31633,6 +31873,12 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 111,
@@ -32118,7 +32364,8 @@
     "Jue Yin Cold"
    ],
    "pattern_indications_zh": [
-    "血虛寒厥、經脈凝滯證"
+    "血虛寒厥、經脈凝滯證",
+    "厥陰寒證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -32128,7 +32375,9 @@
     "Contraindicated for those with during Spring and Summer or in warm climates."
    ],
    "contraindications_zh": [
-    "陰虛火旺者禁用"
+    "陰虛火旺者禁用",
+    "春夏季節或溫暖氣候慎用",
+    "春夏季節或溫暖氣候禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -32339,6 +32588,12 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 256,
@@ -35441,13 +35696,18 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "While taking this formula, avoid raw, cold, greasy, or difficult-to-digest foods.",
     "Contraindicated for those with Excess syndromes.",
     "Modify for concurrent Heat from Yin Deficiency.",
     "Use with caution during pregnancy.",
     "Use with caution for those with Exterior or Interior Heat conditions."
    ],
    "contraindications_zh": [
-    "服用本方，禁食生冷、油膩、不易消化之物"
+    "服用本方，禁食生冷、油膩、不易消化之物",
+    "實證者禁用",
+    "兼陰虛發熱者須加減使用",
+    "孕婦慎用",
+    "表熱或裡熱者慎用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -35706,6 +35966,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 194,
@@ -38026,11 +38289,14 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is not appropriate for exterior invasion in deficient patients where the pathogen predominates over the deficiency, nor for night sweats with fever due to Yin Deficiency.",
     "Contraindicated for those with Excess patterns.",
     "Contraindicated for those with night sweats due to Yin Deficiency."
    ],
    "contraindications_zh": [
-    "虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。"
+    "虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。",
+    "實證者禁用",
+    "陰虛盜汗者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -38196,6 +38462,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 86,
@@ -40150,6 +40419,8 @@
     "《銳齋醫學講稿》也提到，若主要是補血作用，熟地和當歸的劑量可偏重，白芍次之；若不使用熟地，則白芍的劑量可高於當歸。這些經驗可作為調配四物湯的參考。"
    ],
    "contraindications_en": [
+    "For chronic conditions that are not severe. Not for acute severe blood loss or other Blood Deficiency with severe weakness, in which case tonify the Qi instead (Dang Gui Bu Xue Tang).",
+    "Because Shu Di Huang in this formula is cloying and Dang Gui is slippery and moistening, it is not appropriate for patients with pronounced Dampness, a tendency to epigastric fullness, abdominal distention, or loose stools.",
     "Contraindicated for those with acute, severe blood loss.",
     "Contraindicated for those with severe weakness or labored breathing.",
     "Modify for those with constitutional Spleen Yang Deficiency.",
@@ -40464,7 +40735,7 @@
      "American Dragon formula page (harvested 2026-08)(完整 4 條;先前僅採用舊的 2 條摘要)"
     ],
     "contraindications_en": [
-     "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 9 條 / contraindications_en 7 條(不同來源並行),對齊為 9 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "contraindications_zh": [
      "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
@@ -41888,7 +42159,8 @@
     "Contraindicated for those with Excess conditions."
    ],
    "contraindications_zh": [
-    "陰虛潮熱者，慎用本方。"
+    "陰虛潮熱者，慎用本方。",
+    "實證者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -42085,6 +42357,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 251,
@@ -42531,12 +42806,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Not suitable during a common cold; taking tonics at that time will aggravate the cold symptoms.",
+    "Taking this formula during menstruation may increase the volume of menstrual flow.",
+    "Not suitable for those with Spleen and Stomach Yang Deficiency; dispel the Cold first rather than tonifying.",
     "Contraindicated for those with Heat or Excess conditions."
    ],
    "contraindications_zh": [
     "感冒時不適合吃補，服用會加重感冒症狀。",
     "月經來潮時容易造成經血量增加。",
-    "脾胃陽虛者，不適宜服用，應先去寒不宜補"
+    "脾胃陽虛者，不適宜服用，應先去寒不宜補",
+    "熱證或實證者禁用"
    ],
    "herb_drug_cautions": [
     "pregnancy_review",
@@ -42805,6 +43084,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 1 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 18,
@@ -44791,7 +45073,9 @@
     "Contraindicated for those with Yang Deficiency."
    ],
    "contraindications_zh": [
-    "本方雖有山藥、茯苓之補牌助運，但畢竟熟地味厚潰膩，有礙運化，故脾虛食少以及脾虛泄瀉當慎用"
+    "本方雖有山藥、茯苓之補脾助運，但畢竟熟地味厚滋膩，有礙運化，故脾虛食少以及脾虛泄瀉當慎用",
+    "濕邪為患之地區慎用",
+    "陽虛者禁用"
    ],
    "herb_drug_cautions": [
     "cloying_digestive_effect",
@@ -45185,6 +45469,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 55,
@@ -46167,7 +46454,9 @@
     "This formula is not suited for long-term use."
    ],
    "contraindications_zh": [
-    "本方組成藥物以陰柔滋潤為主，久服常服，每易滯脾礙胃，故脾虛泄瀉者慎用。"
+    "本方組成藥物以陰柔滋潤為主，久服常服，每易滯脾礙胃，故脾虛泄瀉者慎用。",
+    "實熱證者禁用",
+    "本方不宜久服"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -46379,6 +46668,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 81,
@@ -48577,6 +48869,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/115",
@@ -49018,8 +49313,8 @@
     "愛滋病 / 免疫功能低下"
    ],
    "contraindications_en": [
-    "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
-    "Contraindicated for those with Yang Deficiency."
+    "Contraindicated for those with Yang Deficiency.",
+    "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat."
    ],
    "cautions_en": [
     "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
@@ -49049,7 +49344,8 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/QiJuDiHuangWan.html",
    "taiwan_pharmacopeia_zh": "No. 4",
    "contraindications_zh": [
-    "陽虛者禁用"
+    "陽虛者禁用",
+    "脾虛泄瀉、食少不化、舌苔白膩者慎用"
    ]
   },
   {
@@ -49299,6 +49595,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/137",
@@ -49867,8 +50166,8 @@
     "愛滋病 / 免疫功能低下"
    ],
    "contraindications_en": [
-    "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
-    "Contraindicated for those with Yang Deficiency."
+    "Contraindicated for those with Yang Deficiency.",
+    "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat."
    ],
    "cautions_en": [
     "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
@@ -49886,7 +50185,8 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhiBaiDiHuangWan.html",
    "taiwan_pharmacopeia_zh": "No. 3",
    "contraindications_zh": [
-    "陽虛者禁用"
+    "陽虛者禁用",
+    "脾虛泄瀉、食少不化、舌苔白膩者慎用"
    ]
   },
   {
@@ -50152,6 +50452,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -50910,12 +51213,12 @@
     "Sore throat"
    ],
    "contraindications_en": [
-    "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat.",
-    "Use with caution for those with gastrointestinal weakness.",
     "Contraindicated for those with marked ascites.",
     "Contraindicated for those with frequent diarrhea.",
     "Contraindicated for those with facial flushing with fever.",
-    "Contraindicated during pregnancy."
+    "Contraindicated during pregnancy.",
+    "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat.",
+    "Use with caution for those with gastrointestinal weakness."
    ],
    "cautions_en": [
     "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat.",
@@ -50944,7 +51247,9 @@
     "明顯腹水者禁用",
     "腹瀉頻繁者禁用",
     "面赤發熱者禁用",
-    "孕婦禁用"
+    "孕婦禁用",
+    "陰虛口燥咽乾、舌紅無苔者禁用",
+    "腸胃虛弱者慎用"
    ]
   },
   {
@@ -53248,12 +53553,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula focuses on enriching and nourishing the body; although it can mobilize the formless Qi within, it cannot expel tangible pathogenic factors. As its ingredients are mostly sweet and cloying, it is unsuitable for patients with Phlegm-Fluid Retention presenting with a white, greasy tongue coating and a deep, tight pulse.",
+    "Pay particular attention: the words 'the tongue has no saliva' are crucial. If the tongue coating is turbid and dirty, this formula is not applicable.",
+    "For conditions such as Qi Stagnation, Blood Stagnation, exuberant Fire, undigested food, or Phlegm-Damp that are not accompanied by Yin Deficiency, this formula should be avoided. Because its ingredients are rather rich and cloying, it is unsuitable for those with Phlegm-Fluid Retention with a white, greasy tongue coating and a deep, tight pulse.",
     "Contraindicated for those with chest pain due to Phlegm or Phlegm-Damp Retention."
    ],
    "contraindications_zh": [
     "這個處方主要著重於滋養身體，雖然能夠調動身體內的無形能量，但是無法驅除有形的疾病因素。因為藥材大多甜膩，所以如果患者有痰飲停滯的情況，表現為舌苔白膩和脈象沉緊，則不適合使用這個方子。",
     "特別需要注意的是，如果患者的舌頭沒有唾液，這幾個字非常關鍵。如果舌苔出現濁垢，這個方子就不適用。",
-    "對於那些氣滯、血滯、火旺、飲食不化、痰濕等各種狀態，如果不伴有陰虛的情況，則應避免使用。由於這個方子中的藥材較為滋膩，因此對於那些有痰飲停滯且舌苔白膩、脈象沉緊的人來說，不宜使用。"
+    "對於那些氣滯、血滯、火旺、飲食不化、痰濕等各種狀態，如果不伴有陰虛的情況，則應避免使用。由於這個方子中的藥材較為滋膩，因此對於那些有痰飲停滯且舌苔白膩、脈象沉緊的人來說，不宜使用。",
+    "痰飲或痰濕停滯所致胸痛者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -53464,6 +53773,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 1 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 359,
@@ -53963,12 +54275,16 @@
     }
    ],
    "pattern_indications_en": [
+    "Spontaneous sweating and night sweats due to general Deficiency",
     "Spontaneous sweating due to Qi Deficiency",
     "Night sweats due to Yin Deficiency",
     "Sweating due to Qi and Yin Deficiency"
    ],
    "pattern_indications_zh": [
-    "體虛自汗盜汗證"
+    "體虛自汗盜汗證",
+    "氣虛自汗證",
+    "陰虛盜汗證",
+    "氣陰兩虛汗證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -54078,6 +54394,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -54408,15 +54727,19 @@
    "modifications_zh": [],
    "contraindications_en": [
     "Contraindicated for those with Excess conditions.",
+    "Contraindicated for those with Damp-Heat.",
     "Contraindicated for those with Heat and toxins remaining in the body.",
     "Contraindicated for those with Stagnation.",
-    "Contraindicated for those with Damp-Heat.",
     "Contraindicated for those in the Initial stage of diarrhea or dysentery.",
     "Avoid alcohol, fish, and raw, cold, oily or greasy foods while taking this decoction."
    ],
    "contraindications_zh": [
     "實證者禁用",
-    "濕熱者禁用"
+    "濕熱者禁用",
+    "熱毒留戀體內者禁用",
+    "積滯者禁用",
+    "瀉痢初起者禁用",
+    "服藥期間忌酒、魚及生冷油膩之物"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -54540,6 +54863,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "ad_syndromes_en": [
@@ -55291,6 +55617,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/138",
@@ -55480,7 +55809,10 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/JinSuoGuJingWan.html",
    "taiwan_pharmacopeia_zh": "Yes (THP p.135)",
    "contraindications_zh": [
-    "下焦濕熱者禁用"
+    "下焦濕熱者禁用",
+    "腎火熾盛者須加減使用",
+    "外感病邪者禁用",
+    "服藥期間忌食辛辣之物，並須節制房事"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 5 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芡實（actions_zh）、蓮鬚（in_formula_zh、actions_zh、role_reason_zh）、Duan Mu Li（in_formula_zh、actions_zh、role_reason_zh）、金櫻子（in_formula_zh、actions_zh、role_reason_zh）、Bai Ji Li（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
   },
@@ -55728,6 +56060,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/160",
@@ -55892,7 +56227,8 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SangPiaoXiaoSan.html",
    "taiwan_pharmacopeia_zh": "No. 192 (THP p.135)",
    "contraindications_zh": [
-    "下焦濕熱者禁用"
+    "下焦濕熱者禁用",
+    "下焦有火者禁用"
    ],
    "formula_song": "桑螵蛸散治便數，參苓龍骨同龜殼，\n菖蒲遠志及當歸，補腎寧心健忘怯。",
    "formula_song_zh": "桑螵蛸散治便數，參苓龍骨同龜殼，\n菖蒲遠志及當歸，補腎寧心健忘怯。"
@@ -56437,13 +56773,18 @@
     }
    ],
    "pattern_indications_en": [
+    "Deficiency irritability and insomnia due to insufficiency of Liver Blood with Yin Deficiency and Internal Heat",
     "Heart Blood Deficiency",
     "Heart and Liver Blood Deficiency",
     "Liver Yin Deficiency with Empty Fire Disturbing Heart",
     "Liver Blood Deficiency with Deficiency Heat Rising"
    ],
    "pattern_indications_zh": [
-    "肝血不足、陰虛內熱虛煩失眠證"
+    "肝血不足、陰虛內熱虛煩失眠證",
+    "心血虛證",
+    "心肝血虛證",
+    "肝陰虛虛火擾心證",
+    "肝血虛虛熱上擾證"
    ],
    "modifications_en": [
     "Modifications: for vexed insomnia from Liver Blood deficiency with pronounced Yin-deficiency internal Heat, combine with Er Zhi Wan, or add Sheng Di Huang, Xuan Shen and Bai Shao to nourish Blood, enrich Yin and clear Heat. With severe night sweats, add Wu Wei Zi, Bai Shao and Fu Xiao Mai to calm the spirit and restrain sweating.",
@@ -56694,6 +57035,9 @@
     ],
     "modifications_en": [
      "translated 2026-08-19 from the record's own modifications_zh"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 270,
@@ -57257,11 +57601,14 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "The classical formula contains Zhu Sha (cinnabar), which is toxic and should not be used long term. Modern scientific (concentrated) Chinese herbal preparations do not contain cinnabar and may be taken.",
+    "This formula contains many rich Yin-enriching ingredients; those with Spleen and Stomach Deficiency, poor appetite, or unformed stools should not take it long term.",
     "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
    ],
    "contraindications_zh": [
     "古方含有硃砂有毒，不宜長期使用。現代科學中藥不含硃砂，可以服用。",
-    "本方滋陰之品較多，對脾胃虛弱、納食欠佳、大便不實者，不宜長期服用。"
+    "本方滋陰之品較多，對脾胃虛弱、納食欠佳、大便不實者，不宜長期服用。",
+    "使用前須評估重度憂鬱、自殺傾向、躁狂、鎮靜藥物併用、妊娠及消化耐受情形"
    ],
    "herb_drug_cautions": [
     "sedative_medication_review",
@@ -57421,6 +57768,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 58,
@@ -59975,12 +60325,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula consists mostly of acrid-warm, bitter-drying ingredients and is suitable only for Phlegm and Qi binding together without Heat. If there are red cheeks, a bitter taste in the mouth, and a red tongue with scanty coating — indicating constrained Qi transforming into Fire with injured Yin and diminished fluids — this formula should not be used even when the characteristic plum-pit Qi is present. It is not suitable for those with Yin Deficiency with depleted fluids or with exuberant Fire.",
     "Contraindicated for those with chest pain due to Lung Yin Deficiency with red cheeks, a bitter taste in the mouth and a red tongue with a scanty coating.",
     "Contraindicated for those with Heat due to Qi Stagnation.",
     "Do not use long term."
    ],
    "contraindications_zh": [
-    "方中多辛溫苦燥之品，僅適宜於痰氣互結而無熱者。若見顴紅口苦、舌紅少苔屬於氣鬱化火，陰傷津少者，雖具梅核氣之特徵，亦不宜使用本方。陰虛津虧或火旺者不宜使用。"
+    "方中多辛溫苦燥之品，僅適宜於痰氣互結而無熱者。若見顴紅口苦、舌紅少苔屬於氣鬱化火，陰傷津少者，雖具梅核氣之特徵，亦不宜使用本方。陰虛津虧或火旺者不宜使用。",
+    "肺陰虛所致胸痛，見顴紅、口苦、舌紅少苔者禁用",
+    "氣滯化熱者禁用",
+    "不宜長期服用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -60218,6 +60572,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 71,
@@ -61724,13 +62081,14 @@
    "contraindications_en": [
     "Contraindicated during pregnancy.",
     "Contraindicated for those with Excess menstrual bleeding.",
-    "Contraindicated for the weak or debilitated.",
-    "Contraindicated for those with active hemorrhage disorders."
+    "Contraindicated for those with active hemorrhage disorders.",
+    "Contraindicated for the weak or debilitated."
    ],
    "contraindications_zh": [
     "孕婦忌用",
     "月經過多忌",
-    "出血傾向或任何出血疾病忌"
+    "出血傾向或任何出血疾病忌",
+    "體虛衰弱者忌用"
    ],
    "herb_drug_cautions": [
     "chest_pain_red_flag",
@@ -62048,6 +62406,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 109,
@@ -62797,6 +63158,10 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is absolutely contraindicated in the acute stage of Wind-Stroke. It should be used only when the patient's consciousness is clear, body temperature is normal, bleeding has stopped, and the pulse is moderate and weak.",
+    "Those with hypertension may take this formula, but it is contraindicated for those with Yin Deficiency and Blood Heat.",
+    "This formula must be taken over a long period to be effective, and after recovery it should be continued to consolidate the therapeutic effect and prevent recurrence. Wang stated: 'After recovery with this formula, the medicine must not be stopped; take one dose every three to five days, or one dose every seven to eight days.' However, if hemiplegia after Wind-Stroke belongs to Yin Deficiency with Yang Hyperactivity or Phlegm Obstruction with Blood Stasis, with a red tongue, yellow coating, and a surging, large, forceful pulse, this formula is not appropriate.",
+    "Bleeding risk (especially when combined with Western medications): besides Huang Qi, this formula contains Blood-invigorating, Stasis-transforming herbs (such as Chuan Xiong, Hong Hua, and Tao Ren). Used alone, it is appropriate for the pattern of Qi Deficiency with Blood Stasis and generally does not cause bleeding. Combined with Western drugs: if the patient is taking antiplatelet agents (such as aspirin) or anticoagulants (such as warfarin), adding potent Blood-invigorating herbs significantly increases the risk of bleeding, such as bleeding gums, subcutaneous bruising, or even internal hemorrhage. This must be reported to the physician, with close monitoring of coagulation function.",
     "Contraindicated immediately after a stroke due to cerebral hemorrhage.",
     "Contraindicated for those with Wind-Stroke with a big, forceful or firm, wiry, forceful pulse.",
     "Contraindicated for those with Yin Deficiency.",
@@ -62810,7 +63175,15 @@
     "此中藥在中風急性期絕對禁用！本方宜用於病人神志清醒、體溫正常、出血已止、脈象緩弱者。",
     "高血壓者可服用，但陰虛血熱者忌服。",
     "使用本方需久服才能有效，愈後還應繼續服用，以鞏固療效，防止復發，王氏謂：「服此方愈後，藥不可斷，或隔三五日吃一付，或七八日吃一付。」但若中風後半身不遂屬陰虛陽亢，痰阻血瘀，見舌紅苔黃、脈洪大有力者，非本方所宜。",
-    "出血風險（特別是與西藥併用時）：陽還五湯中除了黃耆，還有活血化瘀的藥物（如川芎、紅花、桃仁等）。單獨用藥：對於「氣虛血瘀」證是對症的，一般不會引起出血。與西藥併用：如果患者正在服用抗血小板藥（如阿司匹林）或抗凝血劑（如華法林），再疊加使用強效的活血中藥，會顯著增加出血的風險，如牙齦出血、皮下瘀青、甚至內出血。這點務必告知醫師，並密切監測凝血功能。"
+    "出血風險（特別是與西藥併用時）：陽還五湯中除了黃耆，還有活血化瘀的藥物（如川芎、紅花、桃仁等）。單獨用藥：對於「氣虛血瘀」證是對症的，一般不會引起出血。與西藥併用：如果患者正在服用抗血小板藥（如阿司匹林）或抗凝血劑（如華法林），再疊加使用強效的活血中藥，會顯著增加出血的風險，如牙齦出血、皮下瘀青、甚至內出血。這點務必告知醫師，並密切監測凝血功能。",
+    "腦出血所致中風後急性期禁用",
+    "中風而脈洪大有力，或弦勁有力者禁用",
+    "陰虛者禁用",
+    "血熱者禁用",
+    "痰阻者禁用",
+    "孕婦禁用",
+    "須確認神志已恢復且體溫正常",
+    "須確認已無出血且脈象和緩"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -63017,6 +63390,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 8 條(不同來源並行),對齊為 12 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 264,
@@ -63477,6 +63853,7 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is appropriate for postpartum patterns of Blood Deficiency with congealing Cold; it is contraindicated for those with Heat in the Blood accompanied by Stasis. In clinical use, Sheng Hua Tang must follow the therapeutic principle of nourishing the Blood and engendering the new while invigorating the Blood and transforming Stasis, and be used to treat 'blood-clot pain' in order to achieve good results; it must never be misused indiscriminately as a tonic.",
     "Contraindicated for those with Blood Stasis due to Heat. in the Blood.",
     "Contraindicated for those with postpartum hemorrhage due to Warm Blood.",
     "Contraindicated during pregnancy.",
@@ -63484,7 +63861,12 @@
     "Modify for those who already have normal discharge of lochia and only slight abdominal pain."
    ],
    "contraindications_zh": [
-    "本方宜用于產後血虛寒凝之證，血熱而有瘀滯者忌用。生化湯用於臨床，必須本著養血生新、活血化瘀這一治療原則，用治於 「血塊痛」 者，方能收到良好的效果，決不能以此當作補養劑而濫用之"
+    "本方宜用于產後血虛寒凝之證，血熱而有瘀滯者忌用。生化湯用於臨床，必須本著養血生新、活血化瘀這一治療原則，用治於 「血塊痛」 者，方能收到良好的效果，決不能以此當作補養劑而濫用之",
+    "血熱而致血瘀者忌用",
+    "血熱所致產後出血者忌用",
+    "孕婦忌用",
+    "有出血或活動性出血疾病者忌用",
+    "惡露已行而僅小腹微痛者，須加減使用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -63633,6 +64015,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 5 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 90,
@@ -64036,12 +64421,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is a remedy for treating the branch in urgent conditions; once the bleeding stops, one must still investigate the cause and address the root in order to consolidate the therapeutic effect. It should not be used for bleeding of the Deficiency-Cold type. As a powder, it may be taken internally or applied externally, but it should be prepared in advance so that its Fire Qi has subsided before use. The ingredients are all charred, but care must be taken to 'preserve their nature' when charring, or the effect will be unreliable.",
     "Discontinue as soon as bleeding stops.",
     "The patient must lie quietly during the treatment.",
     "Contraindicated for those with bleeding due to Deficiency and/or Cold."
    ],
    "contraindications_zh": [
-    "本方為急則治標之劑，血止之後，還當審因圖本，方能鞏固療效；對虛寒性出血則不宜使用。本方為散劑，既可內服，也能外用，但應預先制備，使火氣消退，方可使用。方中藥物皆燒炭，但應注意「存性」，否則藥效不確。"
+    "本方為急則治標之劑，血止之後，還當審因圖本，方能鞏固療效；對虛寒性出血則不宜使用。本方為散劑，既可內服，也能外用，但應預先制備，使火氣消退，方可使用。方中藥物皆燒炭，但應注意「存性」，否則藥效不確。",
+    "血止後即當停用",
+    "治療期間病人須靜臥休息",
+    "虛寒性出血者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -64179,6 +64568,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 573,
@@ -64590,7 +64982,8 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
-    "Contraindicated for abdominal masses due to Blood Stasis from excess."
+    "Contraindicated for abdominal masses due to Blood Stasis from excess.",
+    "Although this formula includes some cool, Yin-enriching herbs, it is predominantly warm; use with caution in those with pronounced Deficiency Heat."
    ],
    "contraindications_zh": [
     "血瘀實症而致的腹部腫塊勿用",
@@ -64840,6 +65233,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 249,
@@ -65191,9 +65587,8 @@
     "Phlegm-Dampness in the Middke Jiao"
    ],
    "actions_en": [
-    "Dries Dampness",
-    "Moves Qi",
-    "Transforms Phlegm"
+    "Invigorates Blood and transforms stasis",
+    "Gently reduces fixed abdominal masses"
    ],
    "actions_zh": [
     "活血化瘀",
@@ -65275,7 +65670,8 @@
     }
    ],
    "pattern_indications_en": [
-    "Phlegm-Dampness in the Middke Jiao"
+    "Pre-existing abdominal mass (zheng) in women with Blood stasis obstructing the uterus",
+    "Persistent postpartum lochia with abdominal pain that refuses pressure"
    ],
    "pattern_indications_zh": [
     "婦人宿症、瘀血阻滯胞宮證",
@@ -65414,6 +65810,12 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "actions_en": [
+     "2026-08-19 重寫:原值 [\"Dries Dampness\",\"Moves Qi\",\"Transforms Phlegm\"] 為他方(二陳湯類)誤植——該內容完整存在於 formula.er_chen_tang.actions_en;現值為本卡 actions_zh 之對齊翻譯"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 重寫:原值 [\"Phlegm-Dampness in the Middke Jiao\"](含拼字錯誤)為他方誤植;現值為本卡 pattern_indications_zh 之對齊翻譯"
     ]
    },
    "cloudtcm_id": 189,
@@ -65764,6 +66166,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/571",
@@ -66005,8 +66410,8 @@
     "愛滋病 / 免疫功能低下"
    ],
    "contraindications_en": [
-    "Use with caution during menstruation.",
-    "Contraindicated during pregnancy."
+    "Contraindicated during pregnancy.",
+    "Use with caution during menstruation."
    ],
    "cautions_en": [
     "Use with caution during menstruation.",
@@ -66022,7 +66427,8 @@
    "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/GeXiaZhuYuTang.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "孕婦禁用",
+    "月經期間慎用"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：香附（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
   },
@@ -66303,6 +66709,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/441",
@@ -66545,7 +66954,8 @@
    "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShaoFuZhuYuTang.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "孕婦禁用",
+    "血虛漏下者勿用"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：炒小茴香（actions_zh、role_reason_zh）、炮薑（actions_zh、role_reason_zh）、蒲黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
   },
@@ -68057,8 +68467,12 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
-    "Contraindicated for Damp-Heat with thirst, dry throat, greasy yellow tongue coat.",
     "Modify for Wind-Heat or Fire due to Deficiency.",
+    "Use with caution in those with severe chronic illnesses such as hypertension, heart disease, liver disease, diabetes, or kidney disease.",
+    "Pregnant women, children, and elderly or debilitated patients should take this formula under a physician's guidance.",
+    "However, this formula is somewhat warm and drying, and is therefore highly suitable for disorders caused by Wind-Cold attacking the exterior, Dampness obstructing the Spleen and Stomach, and miasmic mountain vapors. It is not suitable for 'Yang summerheat', but is suitable for 'Yin summerheat'.",
+    "When Heat is more pronounced than Dampness, it is unsuitable and should be avoided. When Dampness is more pronounced than Heat, it may be used with caution and appropriate combination.",
+    "Contraindicated for Damp-Heat with thirst, dry throat, greasy yellow tongue coat.",
     "Contraindicated for Yin or Blood Deficiencies."
    ],
    "contraindications_zh": [
@@ -68066,7 +68480,9 @@
     "有高血壓、心臟病、肝病、糖尿病、腎病等慢性病嚴重者慎用",
     "孕婦、小兒、老年體虛者應在醫師指導下服用",
     "但本方藥偏溫燥，故對風寒襲表，濕滯脾胃，以及山嵐瘴氣所導致的病證，甚為合適。若屬於「陽暑」不適合，「陰屬」適合",
-    "「熱重於濕」，不合適，應避免。「濕重於熱」，謹慎、配伍後可用。"
+    "「熱重於濕」，不合適，應避免。「濕重於熱」，謹慎、配伍後可用。",
+    "濕熱證見口渴、咽乾、舌苔黃膩者禁用",
+    "陰虛或血虛者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -68266,6 +68682,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 5 條 / contraindications_en 3 條(不同來源並行),對齊為 7 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 298,
@@ -68660,6 +69079,9 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula's nature leans toward percolating and draining; dosage and duration of use must be handled carefully — overdose produces dizziness, blurred vision, a bland taste in the mouth, and reduced appetite.",
+    "This formula should not be taken long term; for weak patients it is often combined with formulas that tonify and nourish the Spleen and Stomach.",
+    "The traditional form of this formula is a powder; after swallowing the powder, drink plenty of water, ideally until slight sweating occurs. Nowadays it is generally taken as a hot decoction; take care not to boil it for long, lest its percolating and draining property be weakened. It should not be used for thirst or urinary difficulty due to damaged fluids; use with caution in Yin-Deficient patients.",
     "With Spleen Qi and Kidney Deficiency limit dosage, may combine with tonics.",
     "For urinary difficulty with Yin Deficiency, protect Yin.",
     "Overdose symptoms: dizziness, vertigo, bland taste, anorexia.",
@@ -68672,7 +69094,15 @@
    "contraindications_zh": [
     "本方藥性偏於滲利，劑量及用藥時間必須小心，過量出現頭暈、目眩、口淡、食慾減退。",
     "本方不宜長服，體弱者常與補養脾胃劑合用。",
-    "本方傳統劑型為散劑，吞服散後多飲水，至微有汗出為好。現代一般用湯劑熱服，注意不宜久煎，以免減弱滲利之性。如津液耗傷的口渴或小便不利，不宜用本方，陰虛病人慎用。"
+    "本方傳統劑型為散劑，吞服散後多飲水，至微有汗出為好。現代一般用湯劑熱服，注意不宜久煎，以免減弱滲利之性。如津液耗傷的口渴或小便不利，不宜用本方，陰虛病人慎用。",
+    "脾氣虛及腎虛者應限制劑量，可與補益劑合用",
+    "陰虛之小便不利，須顧護陰液",
+    "過量症狀：頭暈、目眩、口淡、食慾不振",
+    "不宜長期服用",
+    "汗出過多而津液耗竭者禁用",
+    "嘔吐過甚者禁用",
+    "泄瀉過甚者禁用",
+    "濕熱蘊結者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -68939,6 +69369,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 8 條(不同來源並行),對齊為 11 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 50,
@@ -69563,12 +69996,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "If internal Heat is excessive and the Yin fluids are greatly damaged, this formula should not be used. The Shang Han Lun points out that in Yangming disease, if the patient sweats profusely and is thirsty, Zhu Ling Tang should not be given, because profuse sweating makes the Stomach too dry, and further promoting urination with Zhu Ling Tang may aggravate the condition. If Water-Damp is retained internally without signs of Yin Deficiency, it should also be avoided, to prevent the rich, cloying nature of E Jiao from assisting the Damp pathogen.",
     "Without Heat.",
     "Abundant Heat and severely damaged Yin.",
     "Pronounced Dampness."
    ],
    "contraindications_zh": [
-    "若患者內熱過盛，陰津大損，則不宜使用本方。《傷寒論》指出，在陽明病中，如果患者多汗且口渴，則不應使用猪苓湯，因為多汗會導致胃中過於乾燥，而猪苓湯進一步利小便可能會加重病情。如果患者水濕內滯而無陰虛的徵兆，也應避免使用，以防止阿膠的滋膩性質助長濕邪。"
+    "若患者內熱過盛，陰津大損，則不宜使用本方。《傷寒論》指出，在陽明病中，如果患者多汗且口渴，則不應使用猪苓湯，因為多汗會導致胃中過於乾燥，而猪苓湯進一步利小便可能會加重病情。如果患者水濕內滯而無陰虛的徵兆，也應避免使用，以防止阿膠的滋膩性質助長濕邪。",
+    "無熱者不宜使用",
+    "熱盛而陰液重傷者不宜使用",
+    "水濕顯盛者不宜使用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -69766,6 +70203,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 273,
@@ -70214,12 +70654,16 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Not suitable for those with a yellow, greasy tongue coating where Heat is more pronounced than Dampness.",
+    "In treating Damp diseases, promoting sweating is forbidden; yet failing to induce slight sweating when Yang is constrained instead causes harm — this is the physician's fault. Patients with Dampness must not be made to sweat, for the body already sweats copiously and Yang collapse is easily induced; hence in Damp-Warmth patterns, mistakenly promoting sweating is called 'double summerheat injury'.",
+    "In the Wen Bing Tiao Bian, Wu Tang clearly set out 'three prohibitions': first, do not, on seeing headache and aversion to cold, take it for Cold Damage and promote sweating — sweating injures Heart Yang, causing clouded spirit and deafness, or even closed eyes with no desire to speak; second, do not, on seeing fullness in the middle and absence of hunger, take it for food stagnation and purge — purging injures the Spleen and Stomach, and the Damp pathogen takes the opportunity to pour downward, causing profuse diarrhea; third, do not, on seeing afternoon fever, take it for Yin Deficiency and use rich, moistening herbs — Dampness is a sticky, stagnating Yin pathogen, and adding rich Yin-moistening herbs joins the two Yin together, creating an intractable, unresolvable situation. Therefore the proper method of treatment is only to diffuse and ease the Qi dynamic, clear Heat, and drain Dampness.",
     "Use only for Damp-Heat disorders where Damp is predominant."
    ],
    "contraindications_zh": [
     "舌苔黃膩，熱重於濕者則不宜使用。",
     "凡治濕病，禁發其汗，而陽鬱者不微汗之，轉致傷人，醫之過也。濕家不可發汗，以身本多汗，易致亡陽，故濕濕之證，誤發其汗，名曰重喝。",
-    "吳瑭於《溫病條辨》中明示「三戒」：一者，不可見其頭痛惡寒，以為傷寒而汗之，汗傷心陽，則神昏耳聾，甚則目瞑不欲言；二者，不可見其中滿不飢，以為停滯而下之，下傷脾胃，濕邪乘勢下注，則為洞泄三者，不可見其午後身熱，以為陰虛而用柔藥潤之，濕為膠滯陰邪，再加柔潤陰藥，兩陰相合，則有錮結不解之勢。故治療之法，惟宜宣暢氣機、清熱利濕。"
+    "吳瑭於《溫病條辨》中明示「三戒」：一者，不可見其頭痛惡寒，以為傷寒而汗之，汗傷心陽，則神昏耳聾，甚則目瞑不欲言；二者，不可見其中滿不飢，以為停滯而下之，下傷脾胃，濕邪乘勢下注，則為洞泄三者，不可見其午後身熱，以為陰虛而用柔藥潤之，濕為膠滯陰邪，再加柔潤陰藥，兩陰相合，則有錮結不解之勢。故治療之法，惟宜宣暢氣機、清熱利濕。",
+    "僅適用於濕重於熱之濕熱病證"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -70401,6 +70845,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 1 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 401,
@@ -71517,7 +71964,8 @@
     "Water accumulation due only to Excess conditions."
    ],
    "contraindications_zh": [
-    "熱證者禁用"
+    "熱證者禁用",
+    "純屬實證之水停者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -71805,6 +72253,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 180,
@@ -72826,6 +73277,11 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is not appropriate for those with exuberant Water-Damp and severe swelling.",
+    "This formula should not be used for Excess-type edema accompanied by gastrointestinal symptoms such as nausea, abdominal distension, and loose stools.",
+    "If Water-Damp is exuberant and there is no sweating, this formula is not appropriate even when there is a floating pulse with aversion to wind.",
+    "When using this formula, one must weigh the relative severity and urgency of Deficiency and Excess and combine the herbs appropriately, so that securing the exterior does not retain the pathogen and expelling the pathogen does not injure the upright Qi; improper tonification makes the pathogenic Qi more replete, while excessive dispersing further weakens the exterior Qi.",
+    "This formula should produce only slight sweating; do not promote profuse sweating, for Dampness is a Yin pathogen — heavy, turbid, sticky and stagnant — and as this is moreover an exterior Deficiency pattern, particular care is required; attention should be paid to the method of administration and to care after taking the medicine.",
     "Acute Excess type edema.",
     "Dampness Obstructing the Protective Yang.",
     "Overdose can cause nausea and anorexia."
@@ -72835,7 +73291,10 @@
     "水腫實證而兼有噁心、腹脹、便溏等腸胃症狀者，不宜使用本方",
     "若水濕壅盛，汗不出者，雖有脈浮惡風亦非本方所宜。",
     "使用本方必須權衡虛實之輕重緩急，恰當配伍，務使固表不留邪，祛邪不傷正，因補之不當邪氣反實，散之太過，表氣益虛。",
-    "使用本方以微微汗出爲宜，不可大發其汗，因濕爲陰邪，其性重濁粘滯，尤其是此爲表虛證，更當審慎；應注意服藥方法及藥後調護。"
+    "使用本方以微微汗出爲宜，不可大發其汗，因濕爲陰邪，其性重濁粘滯，尤其是此爲表虛證，更當審慎；應注意服藥方法及藥後調護。",
+    "急性實證水腫不宜使用",
+    "濕遏衛陽者不宜使用",
+    "過量服用可致噁心、食慾不振"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -73007,6 +73466,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 5 條 / contraindications_en 3 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 526,
@@ -73295,13 +73757,18 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Yin Chen Hao Tang is cold and cooling in nature; use with caution in those with Spleen and Stomach Deficiency-Cold.",
+    "Use with caution in pregnant women and the weak or debilitated.",
+    "During administration, keep the diet light and avoid acrid, spicy, oily or greasy foods.",
     "Contraindicated for Yin jaundice.",
     "Use Da Huang with extreme caution during pregnancy."
    ],
    "contraindications_zh": [
     "茵陳蒿湯性寒涼，脾胃虛寒者慎用。",
     "孕婦及體弱者慎用。",
-    "服用期間應注意飲食清淡，忌食辛辣油膩之物。"
+    "服用期間應注意飲食清淡，忌食辛辣油膩之物。",
+    "陰黃者禁用",
+    "孕婦使用大黃須極為謹慎"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -73490,6 +73957,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 2 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 188,
@@ -73980,16 +74450,22 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Contraindicated for those with chronic headache or palpitations.",
+    "Contraindicated for those with Deficiency Cold or during pregnancy.",
+    "Long term use may produce weakness, palpitations, light headedness and loss of appetite.",
     "Chronic Lin Syndrome.",
     "Pregnancy.",
-    "Long term use may produce weakness, palpitations, light headedness and loss of appetite.",
     "Chronic disease with weakness.",
     "Deficiency Cold."
    ],
    "contraindications_zh": [
     "長期頭痛、心悸忌服",
     "虛寒或孕婦忌服",
-    "本方爲苦寒通利之劑，多服會引起虛弱證候，如頭暈、心悸、四肢無力，食慾不佳等，故宜於實證，虛弱者慎用。"
+    "本方爲苦寒通利之劑，多服會引起虛弱證候，如頭暈、心悸、四肢無力，食慾不佳等，故宜於實證，虛弱者慎用。",
+    "久淋忌服。",
+    "孕婦忌服。",
+    "久病體弱者忌服。",
+    "虛寒者忌服。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -74198,6 +74674,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 5 條(不同來源並行),對齊為 7 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 15,
@@ -74788,6 +75267,7 @@
    ],
    "modifications_zh": [],
    "contraindications_en": [
+    "Improper use may cause thirst; contraindicated for those with a dry throat.",
     "Contraindicated for those with Lung Yin Deficiency cough."
    ],
    "contraindications_zh": [
@@ -74808,15 +75288,18 @@
    "fertility_notes": "",
    "clinical_pearls": [],
    "pattern_indications_en": [
-    "Phlegm-Damp Obstructs the Lungs",
-    "Spleen-Damp Disturbs the Lungs",
     "Damp-Phlegm Retention (Shi Tan)",
+    "Spleen-Damp Disturbs the Lungs",
+    "Phlegm-Damp Obstructs the Lungs",
     "Internal Phlegm-Damp with Qi Deficiency",
     "Wind-Phlegm (Feng Tan)"
    ],
    "pattern_indications_zh": [
     "濕痰咳嗽噁心嘔吐證",
-    "脾胃不和咳嗽痰多證"
+    "脾胃不和咳嗽痰多證",
+    "痰濕阻肺證",
+    "痰濕內停兼氣虛證",
+    "風痰證"
    ],
    "related_conditions": [
     "pattern.phlegm_damp"
@@ -75040,6 +75523,12 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 7,
@@ -75603,13 +76092,16 @@
     }
    ],
    "pattern_indications_en": [
+    "Disharmony Between the Gallbladder and Stomach with Phlegm Heat",
     "Phlegm-Fire Disturbs the Heart",
     "Gallbladder Deficiency Heat",
-    "Disharmony Between the Gallbladder and Stomach with Phlegm Heat",
     "Qi Stage Gallbladder Damp-Heat"
    ],
    "pattern_indications_zh": [
-    "膽胃不和、痰熱內擾失眠心悸證"
+    "膽胃不和、痰熱內擾失眠心悸證",
+    "痰火擾心證",
+    "膽虛有熱證",
+    "氣分膽經濕熱證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -75868,6 +76360,9 @@
     ],
     "contraindications_en": [
      "translated 2026-08-19 from the record's own contraindications_zh"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 250,
@@ -76492,7 +76987,8 @@
     "Shi Tan (Damp-Phlegm)"
    ],
    "pattern_indications_zh": [
-    "風痰上擾頭痛眩暈證"
+    "風痰上擾頭痛眩暈證",
+    "濕痰證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -76700,6 +77196,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 69,
@@ -78008,12 +78507,17 @@
     "Resolves Phlegm"
    ],
    "pattern_indications_zh": [
-    "痰壅氣逆、食滯不化喘咳證"
+    "痰壅氣逆、食滯不化喘咳證",
+    "肺寒兼食滯證",
+    "寒痰阻肺證",
+    "寒痰證",
+    "老人脾胃虛弱、食滯生痰證",
+    "氣逆上衝急證"
    ],
    "pattern_indications_en": [
+    "Phlegm Retention with Qi Stagnation",
     "Cold in the Lungs with Food Stagnation",
     "Cold Phlegm Obstructs the Lungs",
-    "Phlegm Retention with Qi Stagnation",
     "Han Tan",
     "Elderly person with a weak Spleen and Stomach and Phlegm due to Food Stagnation",
     "Emergency Rebellious Qi Conditions"
@@ -78130,6 +78634,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/25",
@@ -78509,13 +79016,18 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Headache has many causes, both externally contracted and internally generated; this formula is not appropriate for headaches due to Qi Deficiency, Blood Deficiency, Liver and Kidney Yin Deficiency, Liver Yang Rising, or internal stirring of Liver Wind.",
     "Contraindicated for those with headache due to Liver Yang Rising.",
     "Contraindicated for those with headache due to Liver Wind.",
     "Contraindicated for those with Kidney or Liver Yin Deficiency.",
     "Contraindicated for those with Qi and Blood Deficiencies."
    ],
    "contraindications_zh": [
-    "導致頭痛的原因很多，有外感與內傷的不同，對於氣虛、血虛、或肝腎陰虛、肝陽上亢、肝風內動等引起的頭痛，均不宜使用。"
+    "導致頭痛的原因很多，有外感與內傷的不同，對於氣虛、血虛、或肝腎陰虛、肝陽上亢、肝風內動等引起的頭痛，均不宜使用。",
+    "肝陽上亢頭痛者忌用。",
+    "肝風內動頭痛者忌用。",
+    "肝腎陰虛者忌用。",
+    "氣血兩虛者忌用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -78667,6 +79179,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 45,
@@ -79123,11 +79638,12 @@
     }
    ],
    "pattern_indications_en": [
-    "Damp-Heat Injures the Spleen",
-    "Skin conditions due to Wind-Damp (Damp Rash) and/or Wind-Heat (Wind Rash)"
+    "Skin conditions due to Wind-Damp (Damp Rash) and/or Wind-Heat (Wind Rash)",
+    "Damp-Heat Injures the Spleen"
    ],
    "pattern_indications_zh": [
-    "風濕熱邪浸淫肌膚瘙癢濕疹證"
+    "風濕熱邪浸淫肌膚瘙癢濕疹證",
+    "濕熱傷脾證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -79300,6 +79816,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 176,
@@ -79729,7 +80248,8 @@
     "Liver Yin Deficiency with Liver Yang Rising"
    ],
    "pattern_indications_zh": [
-    "肝陽上亢、肝風內動頭痛眩暈證"
+    "肝陽上亢、肝風內動頭痛眩暈證",
+    "肝陰不足、肝陽上亢證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -79924,6 +80444,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 314,
@@ -80452,7 +80975,9 @@
     "Jue Yin Heat type headache"
    ],
    "pattern_indications_zh": [
-    "類中風（肝陽上亢、肝風內動）證"
+    "類中風（肝陽上亢、肝風內動）證",
+    "肝腎陰虛、肝陽上亢化風、氣血逆亂證",
+    "厥陰熱證頭痛"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -80467,7 +80992,8 @@
     "高血壓腎陰陽兩虛者禁用",
     "脾虛者慎用",
     "血虛者慎用",
-    "腎虛者慎用"
+    "腎虛者慎用",
+    "痰濕壅盛者慎用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -80640,6 +81166,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -80901,7 +81433,9 @@
     "Warms the channels and collaterals"
    ],
    "pattern_indications_zh": [
-    "風寒濕痺、痰瘀阻絡手足不仁證"
+    "風寒濕痺、痰瘀阻絡手足不仁證",
+    "頑痺證",
+    "中風證"
    ],
    "pattern_indications_en": [
     "Obstruction of the channels by Wind-Cold-Dampness, Blood Stasis and Phlegm",
@@ -81072,6 +81606,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -81214,6 +81754,7 @@
    "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XiaoHuoLuoDan.html",
    "contraindications_zh": [
+    "本方藥性辛溫燥烈，只宜體質較壯實者服用。",
     "陰虛者禁用",
     "孕婦禁用"
    ],
@@ -81410,11 +81951,14 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "The reducing and guiding-out action of Bao He Wan is relatively mild; it is generally suitable for those whose food stagnation is not severe, whose upright Qi is not yet damaged, and whose constitution tends toward Heat. For those whose upright Qi is already weak or whose constitution tends toward Cold, the formula should be modified accordingly.",
     "Contraindicated for those with Spleen Deficiency.",
     "Use with caution during pregnancy."
    ],
    "contraindications_zh": [
-    "保和丸的消導效力較為溫和，一般適合食積不太嚴重、身體正氣尚未虧損且偏向體熱的人使用。如果身體正氣已經虛弱或者偏寒的人，應該適當調整藥方。"
+    "保和丸的消導效力較為溫和，一般適合食積不太嚴重、身體正氣尚未虧損且偏向體熱的人使用。如果身體正氣已經虛弱或者偏寒的人，應該適當調整藥方。",
+    "脾虛者忌用。",
+    "孕婦慎用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -81587,6 +82131,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 142,
@@ -82730,11 +83277,13 @@
     "Moistens Dryness"
    ],
    "pattern_indications_zh": [
-    "燥傷肺胃津液燥熱乾咳證"
+    "燥傷肺胃津液燥熱乾咳證",
+    "肺胃陰虛證",
+    "肺熱津傷痿證"
    ],
    "pattern_indications_en": [
-    "Stomach and Lung Yin Deficiency",
     "Dryness Injuring the Lungs and Stomach",
+    "Stomach and Lung Yin Deficiency",
     "Atrophy disorder (Wei Syndrome) due to Lung Heat with Fluid Deficiency"
    ],
    "composition": [
@@ -82922,6 +83471,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -83885,12 +84437,14 @@
     }
    ],
    "pattern_indications_en": [
-    "Phlegm Obstructs the Heart Orifice-Tense Type (Yang Obstruction)",
     "Wen Bing-Ying Stage Heat Attacks the Pericardium",
+    "Phlegm Obstructs the Heart Orifice-Tense Type (Yang Obstruction)",
     "Coma due to Wind-Stroke"
    ],
    "pattern_indications_zh": [
-    "熱閉心包、高熱神昏讝語證"
+    "熱閉心包、高熱神昏讝語證",
+    "痰蒙心竅（陽閉）證",
+    "中風昏迷"
    ],
    "modifications_en": [
     "Niu Huang Cheng Qi Tang: add Da Huang 9g when Yangming Fu-organ excess accompanies the heat-closed orifice pattern",
@@ -83901,14 +84455,18 @@
     "牛黃清心丸：同類較輕方，清熱開竅力較安宮牛黃丸弱"
    ],
    "contraindications_en": [
+    "Contraindicated for coma due to collapse (desertion pattern); this formula treats closed patterns and is not a formula for rescuing devastated Yang collapse.",
+    "Contraindicated or inappropriate for coma due to a Cold closed pattern; it must be differentiated from warm-opening formulas such as Su He Xiang Wan.",
     "Contraindicated during pregnancy.",
+    "Contains toxic minerals such as Realgar (Xiong Huang) and Cinnabar (Zhu Sha); do not self-administer or use long term.",
     "Do not take Cinnabaris (Zhu Sha) in large doses or heated."
    ],
    "contraindications_zh": [
     "脫證神昏者禁用；本方治閉證，不是亡陽脫證救逆方",
     "寒閉神昏者禁用或不宜；應與蘇合香丸等溫開方辨別",
     "孕婦禁用",
-    "含雄黃、硃砂等毒性礦物，不可自行使用或長期使用"
+    "含雄黃、硃砂等毒性礦物，不可自行使用或長期使用",
+    "硃砂不可大量服用，亦不可加熱。"
    ],
    "safety_flags": [
     "toxic_mineral_review",
@@ -84201,16 +84759,14 @@
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
     ],
     "pattern_indications_en": [
-     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
-     "https://cloudtcm.com/formula/4361"
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "contraindications_zh": [
      "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
      "composition toxicity review: Xiong Huang / Zhu Sha"
     ],
     "contraindications_en": [
-     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
-     "composition toxicity review: Xiong Huang / Zhu Sha"
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 2 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "exam_pearl": [
      "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
@@ -84931,6 +85487,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -85056,7 +85615,10 @@
    "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZiXueDan.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "孕婦禁用",
+    "神志清醒後即應停用。",
+    "硃砂不可大量或長期服用。",
+    "過量服用之副作用包括：汗出、噁心、嘔吐、四肢厥冷、僵滯、呼吸困難、心悸、頭暈目眩。"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Han Shui Shi（in_formula_zh、actions_zh、role_reason_zh）、滑石（in_formula_zh、actions_zh、role_reason_zh）、Jin Bo（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
   },
@@ -85220,11 +85782,17 @@
     "Infantile epilepsy and seizures due to Phlegm-Heat"
    ],
    "pattern_indications_zh": [
-    "痰熱內閉心包、中風昏迷證"
+    "痰熱內閉心包、中風昏迷證",
+    "中暑昏迷證",
+    "中風證",
+    "溫病熱入營分、熱陷心包證",
+    "小兒痰熱驚厥證",
+    "小兒痰熱癲癇驚風證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula contains many aromatic, acrid and drying substances that tend to consume Yin and plunder the fluids; it is therefore contraindicated when coma with delirious speech is due to Yang Excess with Yin Deficiency. Use with caution during pregnancy.",
     "Contraindicated during pregnancy.",
     "Contraindicated for those with Yin Deficiency.",
     "Contraindicated for those with Yang Excess.",
@@ -85234,7 +85802,14 @@
     "Do not heat."
    ],
    "contraindications_zh": [
-    "本方芳香辛燥之品較多，有耗陰劫液之弊，故神昏譫語由陽盛陰虛所致者忌用；孕婦慎用。"
+    "本方芳香辛燥之品較多，有耗陰劫液之弊，故神昏譫語由陽盛陰虛所致者忌用；孕婦慎用。",
+    "孕婦忌用。",
+    "陰虛者忌用。",
+    "陽盛者忌用。",
+    "肝陽上亢神昏者忌用。",
+    "妊娠期忌用。",
+    "不宜久服。",
+    "不可加熱服用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -85423,6 +85998,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 7 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 493,
@@ -85700,7 +86281,8 @@
     "Eliminates Stagnation"
    ],
    "pattern_indications_zh": [
-    "陰疽、寒凝痰滯骨槽風證"
+    "陰疽、寒凝痰滯骨槽風證",
+    "血虛陽虛兼寒證"
    ],
    "pattern_indications_en": [
     "Yin-Type abscess due to Yang Deficiency and Interior Cold Stagnation",
@@ -85886,6 +86468,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -85996,7 +86584,10 @@
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/YangHeTang.html",
    "contraindications_zh": [
-    "陰虛者禁用"
+    "陽證瘡瘍者忌用。",
+    "陰虛者禁用",
+    "瘡瘍潰破日久者忌用。",
+    "麻黃用量不可隨意增減。"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Pao Jiang（in_formula_zh、actions_zh、role_reason_zh）、麻黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
   },
@@ -86315,13 +86906,18 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Avoid raw and cold foods.",
+    "Avoid excessive worry and overwork.",
+    "Contraindicated for those with Yin Deficiency Internal Heat or Excess Heat patterns.",
     "Contraindicated for those with Interior Heat.",
     "Contraindicated for those with Yin Deficiency with Heat signs."
    ],
    "contraindications_zh": [
     "忌生冷食物",
     "勿思慮過度及過勞",
-    "陰虛內熱或實熱證者勿用"
+    "陰虛內熱或實熱證者勿用",
+    "裏熱者勿用。",
+    "陰虛有熱者勿用。"
    ],
    "herb_drug_cautions": [
     "sedative_medication_review",
@@ -86676,7 +87272,7 @@
      "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
     ],
     "contraindications_en": [
-     "zh 為既有中文原文,en 為其對譯(內容與 American Dragon 2026-08 harvest 的禁忌條目一致);原值為無來源流程草稿,2026-08-06 替換"
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 2 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "actions_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
@@ -87664,7 +88260,9 @@
     "Muscular atrophy due to Qi and Blood Stagnation"
    ],
    "pattern_indications_zh": [
-    "氣虛外感風寒濕邪惡寒發熱證"
+    "氣虛外感風寒濕邪惡寒發熱證",
+    "風寒濕痺證",
+    "氣血鬱滯痿證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -87679,6 +88277,7 @@
     "經絡濕熱者禁用",
     "外感風熱者禁用",
     "內熱者禁用",
+    "陰虛外感者禁用",
     "體質壯實者禁用"
    ],
    "safety_flags": [],
@@ -87844,6 +88443,12 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "clinical_manifestations_zh": "高熱、強烈惡寒甚至發抖，疼痛夜間較重、活動困難、局部炎症、遊走痛、四肢痠痛；鼻塞聲重、無汗、頭項痛與僵硬、胸膈脹滿、咳痰，可有肢體麻木沉重、身痛、鼻塞、關節痛遇寒加重得溫減輕、風濕加重、刺痛、肌無力。",
@@ -88273,13 +88878,18 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "For cough with blood-streaked sputum: this formula is not appropriate when Liver Fire scorches the Lungs or there is Excess Heat in the Lungs. As the herbs are sweet, cold, rich, and cloying, use with caution in those with Spleen Deficiency and loose stools.",
+    "Avoid raw and cold, pungent and spicy, and greasy foods.",
     "Contraindicated for those with cough due to Excess conditions.",
     "Use caution or those with Spleen Deficiency.",
     "Use caution or those with Food Stagnation."
    ],
    "contraindications_zh": [
     "咳痰帶血、若屬肝火爍肺或肺有實熱者，不宜使用本方。本方藥物甘寒滋膩，脾虛便溏者慎用。",
-    "忌食生冷、辛辣、油膩等物。"
+    "忌食生冷、辛辣、油膩等物。",
+    "咳嗽屬實證者禁用。",
+    "脾虛者慎用。",
+    "食積者慎用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -88436,6 +89046,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 106,
@@ -89367,78 +89980,14 @@
    "study_tags": [],
    "pattern_focus_en": [],
    "actions_en": [
-    "Action: 咳嗽",
-    "Action: 氣喘",
-    "Action: 胸悶"
+    "Diffuses and descends Lung Qi",
+    "Clears Heat and transforms Phlegm",
+    "Stops cough and calms wheezing"
    ],
    "actions_zh": [
-    ":組成及藥物分析",
-    ":定喘湯的基本組成包括：",
-    ":麻黃：發汗解表，宣肺平喘，為君藥。在此方中主要作用是宣肺散寒，解表發汗，使外邪得以宣散。",
-    ":白果：斂肺定喘，止咳化痰，為臣藥。白果具有收斂肺氣的作用，可以緩解肺氣上逆導致的喘咳。",
-    ":杏仁：止咳平喘，潤腸通便，為佐藥。協助麻黃宣肺平喘，並可潤肺化痰。",
-    ":半夏：燥濕化痰，降逆止嘔，為佐藥。針對痰濕內阻，協助化痰降逆。",
-    ":款冬花：潤肺下氣，止咳化痰，為佐藥。",
-    ":黃芩：清熱燥濕，瀉火解毒，為佐藥。針對裡熱，清肺熱化痰。",
-    ":桑白皮：瀉肺平喘，利水消腫，為佐藥。協助清肺熱、降肺氣。",
-    ":甘草：調和諸藥，補脾益氣，為使藥。",
-    ":綜觀全方，以麻黃宣肺散寒為君，白果斂肺定喘為臣，其餘諸藥皆為佐使，共奏宣肺定喘，清熱化痰之功。",
-    ":治療原理",
-    ":定喘湯的治療原理主要體現在以下幾個方面：",
-    ":宣肺散寒，解表化痰：麻黃為辛溫解表藥，能發汗解表，宣肺平喘，針對外感風寒之邪。配伍杏仁、蘇子，加強宣肺降氣、止咳平喘之功。半夏、款冬花燥濕化痰，桑白皮、黃芩清熱化痰，白果斂肺定喘，諸藥合用，可使肺氣宣暢，痰熱得清，喘咳得平。",
-    ":針對病機，標本兼治：定喘湯針對哮喘“寒包火”的病機，既能用麻黃、杏仁等宣肺散寒以解表邪，又能用黃芩、桑白皮等清熱化痰以治裡熱，標本兼治，相輔相成。",
-    ":用藥精當，配伍巧妙：方中麻黃與白果相配，一宣一斂，相反相成，既能增強宣肺定喘之功，又能防止麻黃過於辛散耗氣。桑白皮與黃芩相配，清熱瀉肺，既能清肺中之熱，又能防麻黃、杏仁等溫燥之性傷陰。",
-    ":臨床應用及加減",
-    ":定喘湯主要用於治療外感風寒、痰熱內蘊所致的哮喘，症見：",
-    ":咳嗽",
-    ":氣喘",
-    ":喉中痰鳴",
-    ":痰黃稠黏",
-    ":胸悶",
-    ":或伴有惡寒發熱、鼻塞流涕等表證",
-    ":加減應用：",
-    ":天寒可加桂枝以增強溫肺散寒之力。",
-    ":雨濕可加生薑以增強化痰止咳、溫肺散寒之功。",
-    ":春夏可加知母以清熱瀉火，潤燥生津。",
-    ":心下痞滿可加枳殼以行氣消痞。",
-    ":痰多可加南星以加強燥濕化痰之力。",
-    ":風虛可加當歸以養血活血。",
-    ":口渴可加栝蔞根以生津止渴。",
-    ":身疼痛可加秦艽以祛風濕，止疼痛。",
-    ":喘急可加炒桑皮以瀉肺平喘。",
-    ":醫家觀點比較",
-    "組成及藥物分析",
-    "定喘湯的基本組成包括：",
-    "麻黃：發汗解表，宣肺平喘，為君藥。在此方中主要作用是宣肺散寒，解表發汗，使外邪得以宣散。",
-    "白果：斂肺定喘，止咳化痰，為臣藥。白果具有收斂肺氣的作用，可以緩解肺氣上逆導致的喘咳。",
-    "杏仁：止咳平喘，潤腸通便，為佐藥。協助麻黃宣肺平喘，並可潤肺化痰。",
-    "半夏：燥濕化痰，降逆止嘔，為佐藥。針對痰濕內阻，協助化痰降逆。",
-    "款冬花：潤肺下氣，止咳化痰，為佐藥。",
-    "黃芩：清熱燥濕，瀉火解毒，為佐藥。針對裡熱，清肺熱化痰。",
-    "桑白皮：瀉肺平喘，利水消腫，為佐藥。協助清肺熱、降肺氣。",
-    "甘草：調和諸藥，補脾益氣，為使藥。",
-    "綜觀全方，以麻黃宣肺散寒為君，白果斂肺定喘為臣，其餘諸藥皆為佐使，共奏宣肺定喘，清熱化痰之功。",
-    "治療原理",
-    "定喘湯的治療原理主要體現在以下幾個方面：",
-    "宣肺散寒，解表化痰：麻黃為辛溫解表藥，能發汗解表，宣肺平喘，針對外感風寒之邪。配伍杏仁、蘇子，加強宣肺降氣、止咳平喘之功。半夏、款冬花燥濕化痰，桑白皮、黃芩清熱化痰，白果斂肺定喘，諸藥合用，可使肺氣宣暢，痰熱得清，喘咳得平。",
-    "針對病機，標本兼治：定喘湯針對哮喘“寒包火”的病機，既能用麻黃、杏仁等宣肺散寒以解表邪，又能用黃芩、桑白皮等清熱化痰以治裡熱，標本兼治，相輔相成。",
-    "用藥精當，配伍巧妙：方中麻黃與白果相配，一宣一斂，相反相成，既能增強宣肺定喘之功，又能防止麻黃過於辛散耗氣。桑白皮與黃芩相配，清熱瀉肺，既能清肺中之熱，又能防麻黃、杏仁等溫燥之性傷陰。",
-    "臨床應用及加減",
-    "定喘湯主要用於治療外感風寒、痰熱內蘊所致的哮喘，症見：",
-    "喉中痰鳴",
-    "痰黃稠黏",
-    "或伴有惡寒發熱、鼻塞流涕等表證",
-    "加減應用：",
-    "天寒可加桂枝 以增強溫肺散寒之力。",
-    "雨濕可加生薑 以增強化痰止咳、溫肺散寒之功。",
-    "春夏可加知母 以清熱瀉火，潤燥生津。",
-    "心下痞滿可加枳殼 以行氣消痞。",
-    "痰多可加南星 以加強燥濕化痰之力。",
-    "風虛可加當歸 以養血活血。",
-    "口渴可加栝蔞根 以生津止渴。",
-    "身疼痛可加秦艽 以祛風濕，止疼痛。",
-    "喘急可加炒桑皮 以瀉肺平喘。",
-    "醫家觀點比較"
+    "宣降肺氣",
+    "清熱化痰",
+    "止咳平喘"
    ],
    "composition": [
     {
@@ -89598,20 +90147,18 @@
     }
    ],
    "pattern_indications_en": [
-    "Indication: 總結與思考"
+    "Wheezing from Wind-Cold constraining the exterior with Phlegm-Heat smoldering internally"
    ],
    "pattern_indications_zh": [
-    "調和派：也有醫家持調和態度，如汪昂認為此方雖有爭議，但臨床應用廣泛，療效確切，可能是因為初起外感，需用風藥解表，而用血藥、氣藥調裡。費伯雄則認為方中四物俱備，不可謂無血藥，但建議減去石膏、細辛。",
-    "總結與思考",
-    "定喘湯作為一個經典方劑，其療效已得到廣泛認可，但其具體應用和機理仍存在一些爭議。",
-    "關於風藥的爭議：反對者認為方中風藥過多，有傷陰耗氣之弊；支持者則認為此方針對的是外感風寒、內有痰熱的病機，需要用風藥解表散寒。這提示我們，在臨床應用時，需要根據患者的具體情況，辨證施治，靈活加減。例如，對於體虛或久病患者，應減少風藥用量，或配伍補益氣血之品。",
-    "關於真中與類中：林佩琴提出「真中」和「類中」的概念，並認為定喘湯適用於「真中」之風邪在經。這提示我們，在應用定喘湯之前，需要仔細辨別中風的類型，不可一概而論。",
-    "關於現代研究：現代藥理研究表明，定喘湯中的麻黃、杏仁、白果等成分具有擴張支氣管、抗炎、鎮咳、祛痰等作用，這為其臨床應用提供了科學依據。但其作用機制和安全性仍需進一步深入研究。",
-    "總之，定喘湯是一個療效確切的方劑，但在臨床應用時，需要根據患者的具體情況，辨證施治，靈活加減，才能更好地發揮其療效。同時，也需要加強對其作用機制和安全性的研究，以更好地指導臨床應用。"
+    "風寒外束、痰熱內蘊之哮喘證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
-   "contraindications_en": [],
+   "contraindications_en": [
+    "Not suitable for Wind-Cold exterior invasion with no sweating and no phlegm.",
+    "Not suitable where Qi is deficient and the pulse is weak.",
+    "Not suitable for a recent Wind-Cold invasion with chills, fever, absence of sweating and wheezing but no internal Phlegm-Heat; nor for chronic wheezing with Lung-Kidney Yin Deficiency."
+   ],
    "contraindications_zh": [
     "外感風寒、無汗、沒有痰者不宜用",
     "氣虛脈弱不宜用",
@@ -89736,7 +90283,59 @@
     "source_status": "cloudtcm_or_institution_review_pending",
     "fang_yi_zh": "",
     "zhu_zhi_zh": "",
-    "notes_zh": []
+    "notes_zh": [
+     "組成及藥物分析",
+     "定喘湯的基本組成包括：",
+     "麻黃：發汗解表，宣肺平喘，為君藥。在此方中主要作用是宣肺散寒，解表發汗，使外邪得以宣散。",
+     "白果：斂肺定喘，止咳化痰，為臣藥。白果具有收斂肺氣的作用，可以緩解肺氣上逆導致的喘咳。",
+     "杏仁：止咳平喘，潤腸通便，為佐藥。協助麻黃宣肺平喘，並可潤肺化痰。",
+     "半夏：燥濕化痰，降逆止嘔，為佐藥。針對痰濕內阻，協助化痰降逆。",
+     "款冬花：潤肺下氣，止咳化痰，為佐藥。",
+     "黃芩：清熱燥濕，瀉火解毒，為佐藥。針對裡熱，清肺熱化痰。",
+     "桑白皮：瀉肺平喘，利水消腫，為佐藥。協助清肺熱、降肺氣。",
+     "甘草：調和諸藥，補脾益氣，為使藥。",
+     "綜觀全方，以麻黃宣肺散寒為君，白果斂肺定喘為臣，其餘諸藥皆為佐使，共奏宣肺定喘，清熱化痰之功。",
+     "治療原理",
+     "定喘湯的治療原理主要體現在以下幾個方面：",
+     "宣肺散寒，解表化痰：麻黃為辛溫解表藥，能發汗解表，宣肺平喘，針對外感風寒之邪。配伍杏仁、蘇子，加強宣肺降氣、止咳平喘之功。半夏、款冬花燥濕化痰，桑白皮、黃芩清熱化痰，白果斂肺定喘，諸藥合用，可使肺氣宣暢，痰熱得清，喘咳得平。",
+     "針對病機，標本兼治：定喘湯針對哮喘“寒包火”的病機，既能用麻黃、杏仁等宣肺散寒以解表邪，又能用黃芩、桑白皮等清熱化痰以治裡熱，標本兼治，相輔相成。",
+     "用藥精當，配伍巧妙：方中麻黃與白果相配，一宣一斂，相反相成，既能增強宣肺定喘之功，又能防止麻黃過於辛散耗氣。桑白皮與黃芩相配，清熱瀉肺，既能清肺中之熱，又能防麻黃、杏仁等溫燥之性傷陰。",
+     "臨床應用及加減",
+     "定喘湯主要用於治療外感風寒、痰熱內蘊所致的哮喘，症見：",
+     "咳嗽",
+     "氣喘",
+     "喉中痰鳴",
+     "痰黃稠黏",
+     "胸悶",
+     "或伴有惡寒發熱、鼻塞流涕等表證",
+     "加減應用：",
+     "天寒可加桂枝以增強溫肺散寒之力。",
+     "雨濕可加生薑以增強化痰止咳、溫肺散寒之功。",
+     "春夏可加知母以清熱瀉火，潤燥生津。",
+     "心下痞滿可加枳殼以行氣消痞。",
+     "痰多可加南星以加強燥濕化痰之力。",
+     "風虛可加當歸以養血活血。",
+     "口渴可加栝蔞根以生津止渴。",
+     "身疼痛可加秦艽以祛風濕，止疼痛。",
+     "喘急可加炒桑皮以瀉肺平喘。",
+     "醫家觀點比較",
+     "天寒可加桂枝 以增強溫肺散寒之力。",
+     "雨濕可加生薑 以增強化痰止咳、溫肺散寒之功。",
+     "春夏可加知母 以清熱瀉火，潤燥生津。",
+     "心下痞滿可加枳殼 以行氣消痞。",
+     "痰多可加南星 以加強燥濕化痰之力。",
+     "風虛可加當歸 以養血活血。",
+     "口渴可加栝蔞根 以生津止渴。",
+     "身疼痛可加秦艽 以祛風濕，止疼痛。",
+     "喘急可加炒桑皮 以瀉肺平喘。",
+     "調和派：也有醫家持調和態度，如汪昂認為此方雖有爭議，但臨床應用廣泛，療效確切，可能是因為初起外感，需用風藥解表，而用血藥、氣藥調裡。費伯雄則認為方中四物俱備，不可謂無血藥，但建議減去石膏、細辛。",
+     "總結與思考",
+     "定喘湯作為一個經典方劑，其療效已得到廣泛認可，但其具體應用和機理仍存在一些爭議。",
+     "關於風藥的爭議：反對者認為方中風藥過多，有傷陰耗氣之弊；支持者則認為此方針對的是外感風寒、內有痰熱的病機，需要用風藥解表散寒。這提示我們，在臨床應用時，需要根據患者的具體情況，辨證施治，靈活加減。例如，對於體虛或久病患者，應減少風藥用量，或配伍補益氣血之品。",
+     "關於真中與類中：林佩琴提出「真中」和「類中」的概念，並認為定喘湯適用於「真中」之風邪在經。這提示我們，在應用定喘湯之前，需要仔細辨別中風的類型，不可一概而論。",
+     "關於現代研究：現代藥理研究表明，定喘湯中的麻黃、杏仁、白果等成分具有擴張支氣管、抗炎、鎮咳、祛痰等作用，這為其臨床應用提供了科學依據。但其作用機制和安全性仍需進一步深入研究。",
+     "總之，定喘湯是一個療效確切的方劑，但在臨床應用時，需要根據患者的具體情況，辨證施治，靈活加減，才能更好地發揮其療效。同時，也需要加強對其作用機制和安全性的研究，以更好地指導臨床應用。"
+    ]
    },
    "last_reviewed": "",
    "source_classic": "《攝生眾妙方》",
@@ -89801,6 +90400,15 @@
     ],
     "cloudtcm_url": [
      "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+    ],
+    "actions_zh": [
+     "2026-08-19 整理:原欄為 67 條文章傾倒(組成分析/醫家爭議,含冒號前綴重複),51 條唯一句原文移至 chinese_depth_track.notes_zh;功效改為《攝生眾妙方》定喘湯標準三項;原 actions_en 為含中文之殘片(\"Action: 咳嗽\"等),以對齊翻譯取代"
+    ],
+    "pattern_indications_zh": [
+     "2026-08-19 整理:原 7 條醫家討論散文移至 chinese_depth_track.notes_zh,主治改寫;原 en 為殘片 \"Indication: 總結與思考\""
+    ],
+    "contraindications_en": [
+     "translated 2026-08-19 from the record's own contraindications_zh"
     ]
    },
    "cloudtcm_id": 130,
@@ -90221,13 +90829,18 @@
     }
    ],
    "pattern_indications_en": [
+    "Wind-Cold-Damp Bi Syndrome with Liver and Kidney Deficiency and Qi and Blood Deficiency",
     "Bi Syndrome with Kidney and Liver Deficiency",
     "Bi Syndrome with Qi and Blood Deficiency",
     "Invasion of the muscles and bones by Wind-Cold-Damp",
     "Atrophy disorder (wasting of the lower extremities)"
    ],
    "pattern_indications_zh": [
-    "肝腎兩虛、氣血不足風寒濕痺證"
+    "肝腎兩虛、氣血不足風寒濕痺證",
+    "肝腎兩虛之痺證",
+    "氣血不足之痺證",
+    "風寒濕邪侵襲筋骨",
+    "痿證（下肢痿弱不用）"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -90237,7 +90850,9 @@
     "Use with caution during pregnancy."
    ],
    "contraindications_zh": [
-    "痹證之屬濕熱實證者忌用。"
+    "痹證之屬濕熱實證者忌用。",
+    "痺證屬肝腎陰虛者禁用。",
+    "孕婦慎用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -90433,6 +91048,12 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 285,
@@ -90922,6 +91543,7 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Not appropriate when Damp-Heat has entered the Ying (Nutritive) level, with delirious speech and a crimson tongue.",
     "Significant underlying Yin Deficiency."
    ],
    "contraindications_zh": [
@@ -91120,6 +91742,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 88,
@@ -91713,24 +92338,30 @@
     }
    ],
    "pattern_indications_en": [
+    "Bloody stool due to Intestinal Wind or Organ Toxin with Damp-Heat",
     "Wind-Heat in the Stomach and Intestines (Intestinal Wind)",
     "Damp-Heat in the Stomach and Intestines"
    ],
    "pattern_indications_zh": [
-    "腸風臟毒便血濕熱便血證"
+    "腸風臟毒便血濕熱便血證",
+    "胃腸風熱（腸風）",
+    "胃腸濕熱"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
     "Do not use long term.",
     "Use with caution for those with Middle Jiao Deficiency Cold.",
+    "This powder form is now rarely produced; the formula has gradually been replaced by prepared medicines such as Huai Jiao Wan — select accordingly in clinical practice.",
+    "This formula is indeed effective for bleeding of the lower large intestine with a relatively simple cause. For bloody stool of complex cause that persists without healing, however, it treats only the manifestation, not the root; the cause should be investigated and a curative treatment sought.",
     "Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency."
    ],
    "contraindications_zh": [
     "本方藥性寒涼，故只宜暫用．不宜久服",
     "對中焦虛寒而大便下血者，則當慎用。",
     "現多無無此散劑生產，本方漸被槐角丸等一類成藥所代替，臨床時注意選用。",
-    "本方對於原因比較單純的大腸下部出血，確有療效。但對於原因複雜，病久不愈的便血，本方只能治標，不能治本，應探查病因，尋求根治方法。"
+    "本方對於原因比較單純的大腸下部出血，確有療效。但對於原因複雜，病久不愈的便血，本方只能治標，不能治本，應探查病因，尋求根治方法。",
+    "便血兼氣虛或陰虛見症者禁用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -91865,6 +92496,12 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 268,
@@ -92890,18 +93527,26 @@
     "Phlegm-Heat"
    ],
    "pattern_indications_zh": [
-    "熱極生風、肝經熱盛痙厥證"
+    "痰濁蒙蔽心竅之閉證（陽閉）",
+    "熱極生風、肝經熱盛痙厥證",
+    "溫病血分熱盛動風",
+    "痰熱"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Ling Jiao Gou Teng Tang calms the Liver, subdues Yang, extinguishes Wind, and stops spasms; the following points should be noted in clinical use:",
+    "This formula is mainly used for symptoms caused by ascendant Liver Wind and rebellious Liver Yang, such as dizziness with distending headache, tinnitus, palpitations, restless agitation of the hands and feet, and in severe cases convulsions, mania, and spasms with collapse.",
+    "This formula has certain toxic side effects; pay attention to the dosage in clinical use and do not use it in excess.",
+    "This formula should not be taken long term, to avoid damage to the Liver and Kidneys.",
     "Contraindicated for those with Wind due to Deficiency."
    ],
    "contraindications_zh": [
     "羚角鉤藤湯是一首具有平肝潛陽、熄風止痙功效的方劑，臨床應用時應注意以下幾點：",
     "本方主要用於治療肝風上亢、肝陽上逆所致的頭暈脹痛、耳鳴心悸、手足躁擾、甚則瘈瘲、狂亂痙厥等症狀。",
     "本方有一定的毒副作用，臨床應用時應注意用量，不可過量使用。",
-    "本方不宜長期服用，以免引起肝腎損害。"
+    "本方不宜長期服用，以免引起肝腎損害。",
+    "虛風內動者禁用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -93076,6 +93721,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 1 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 575,
@@ -93431,6 +94082,8 @@
    ],
    "contraindications_en": [
     "Contraindicated for those with asthma due to Wind-Cold.",
+    "This formula is cold in nature; it should not be used in patients with a deficient-cold constitution or without signs of Lung Heat.",
+    "The dosage ratio should be adjusted according to the condition; in modern clinical practice the amount of each herb is varied with the severity of the symptoms.",
     "Contraindicated when the pathogen lingers due to Qi Deficiency.",
     "Contraindicated for children and the elderly with general weakness.",
     "Contraindicated for those convalescing from chronic illness."
@@ -93438,7 +94091,10 @@
    "contraindications_zh": [
     "風寒咳喘，痰熱壅盛者，非本方所宜。",
     "本方偏於寒涼，若患者體質虛寒或無肺熱症狀，不宜使用。",
-    "劑量比例需根據病情調整，現代臨床常根據症狀輕重變化各藥用量。"
+    "劑量比例需根據病情調整，現代臨床常根據症狀輕重變化各藥用量。",
+    "氣虛邪戀者禁用。",
+    "小兒及老人體虛者禁用。",
+    "久病初癒體虛者禁用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -93695,6 +94351,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 224,
@@ -94204,6 +94863,9 @@
     "Contraindicated for those with Lung atrophy due to Deficiency Cold."
    ],
    "contraindications_zh": [
+    "風寒或熱邪所致咳嗽、呃逆者慎用。",
+    "濕邪內盛者禁用。",
+    "表熱所致高熱煩躁者慎用。",
     "肺痿病，有虛熱與虛寒之分。屬於虛寒者，不宜使用本方"
    ],
    "safety_flags": [],
@@ -94393,6 +95055,9 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 221,
@@ -95475,11 +96140,15 @@
     "Wind-Phlegm Obstructing the channels of the head and face"
    ],
    "pattern_indications_zh": [
+    "中風",
     "風痰阻絡口眼歪斜證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Do not use for deviation of the mouth and eyes or hemiplegia due to Qi Deficiency with Blood Stasis or internal stirring of Liver Wind.",
+    "Bai Fu Zi and Quan Xie in this formula are somewhat toxic, so the dosage should be cautious. Although Qian Zheng San is effective, both Bai Fu Zi and Quan Xie are toxic and must be used under the pattern-differentiated guidance of a TCM practitioner, with strict dosage control, and should not be taken long term. In clinical practice, processed forms of the herbs are commonly used to reduce toxicity, and they are often combined with other herbs that tonify Qi, nourish Blood, soften the Liver, and relax the sinews (such as Huang Qi, Dang Gui, and Di Long) to enhance efficacy, reduce side effects, and consolidate the root.",
+    "This formula is warm and drying in nature. It should not be used for deviation of the mouth and eyes or hemiplegia due to Liver Yang transforming into Wind, internal stirring of Liver Wind, or Qi Deficiency with Blood Stasis. Bai Fu Zi and Quan Xie are both toxic, and the whole formula uses unprocessed herbs with rather harsh action, so the dosage must not be too large.",
     "This formula should only be used for Wind-Stroke due to Wind-Cold and Phlegm.",
     "Contraindicated unless modified for deviation of the mouth or hemiplegia due to Internal Liver Wind Rising.",
     "Contraindicated unless modified for deviation of the mouth or hemiplegia due to Qi Deficiency and Blood Stagnation.",
@@ -95489,7 +96158,12 @@
    "contraindications_zh": [
     "若屬氣虛血瘀，或肝風內動之口眼喁斜、半身不遂，不宜使用。",
     "方中白附子和全蠍有一定的毒性，用量宜慎。牽正散雖然有效，但白附子和全蠍均有毒，必須在中醫師的辨證論治指導下使用，嚴格控制劑量，且不宜久服。臨床上常使用經過炮製的藥材以減低毒性，並常配合其他益氣養血、柔肝舒筋的藥物（如黃耆、當歸、地龍等）一起使用，以增強療效、減少副作用，並鞏固根本。",
-    "本方偏溫燥。若屬肝陽化風、肝風內動，或氣虛血瘀所致之口眼喎斜、半身不遂者，不宜使用。白附子與全蠍皆有毒，且全方皆使用生品，藥勢較峻烈，劑量不可過大。"
+    "本方偏溫燥。若屬肝陽化風、肝風內動，或氣虛血瘀所致之口眼喎斜、半身不遂者，不宜使用。白附子與全蠍皆有毒，且全方皆使用生品，藥勢較峻烈，劑量不可過大。",
+    "本方僅適用於風寒夾痰所致之中風。",
+    "肝風內動所致之口眼喎斜、半身不遂，非經加減不宜使用。",
+    "氣虛血瘀所致之口眼喎斜、半身不遂，非經加減不宜使用。",
+    "白附子與蜈蚣有毒，劑量不可超過六克。",
+    "孕婦禁用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -95636,6 +96310,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 5 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 574,
@@ -95997,16 +96677,23 @@
     "Atrophy disorder (Wei Syndrome) due to Lung Heat with Fluid Deficiency"
    ],
    "pattern_indications_zh": [
-    "燥熱傷肺、氣陰兩傷乾咳無痰證"
+    "燥邪犯肺",
+    "溫燥襲肺",
+    "燥熱傷肺、氣陰兩傷乾咳無痰證",
+    "燥痰",
+    "肺熱津傷之痿證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "The original formula uses calcined Shi Gao, but modern clinical practice mostly uses raw Shi Gao, the calcined form being reserved mainly for external use. The dosage of Shi Gao should be weighed according to the severity of the condition, to avoid an excessive dose damaging Lung Qi.",
     "Contraindicated for those with Deficiency without an Exterior Condition.",
     "Use caution for those with Spleen Deficiency."
    ],
    "contraindications_zh": [
-    "原方使用煅石膏，但現代臨床多用生石膏，煅石膏則以外用為主。石膏用量需根據病情輕重斟酌，避免過量而傷肺氣。"
+    "原方使用煅石膏，但現代臨床多用生石膏，煅石膏則以外用為主。石膏用量需根據病情輕重斟酌，避免過量而傷肺氣。",
+    "虛證而無表證者禁用。",
+    "脾虛者慎用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -96217,6 +96904,12 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 216,
@@ -97190,16 +97883,21 @@
     "Liver Qi Stagnation with Blood Blockage"
    ],
    "pattern_indications_zh": [
-    "瘀血停滯少腹劇痛產後惡露不止證"
+    "瘀血停滯於胃",
+    "瘀血停滯少腹劇痛產後惡露不止證",
+    "肝鬱氣滯血瘀"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "Contraindicated during pregnancy; use with caution in those with Spleen and Stomach weakness and in women during their menstrual period.",
     "Contraindicated during pregnancy.",
     "Use with caution for those with Stomach Deficiency."
    ],
    "contraindications_zh": [
-    "本方孕婦禁用，脾胃虛弱及婦女月經期慎用。"
+    "本方孕婦禁用，脾胃虛弱及婦女月經期慎用。",
+    "孕婦禁用。",
+    "胃虛者慎用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -97373,6 +98071,12 @@
     ],
     "composition.cleanup": [
      "2026-08-19 第三列「—」依其英文欄(Wine or vinegar, vehicle)識別為送服載體黃酒(或醋),連結 herb.jiu;並清除誤植之甘草樣板句「和中健脾，調和諸藥。」(同 38d3b1b 批)"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 478,
@@ -97714,13 +98418,18 @@
     }
    ],
    "pattern_indications_en": [
+    "Yang constraint with cold extremities and Liver-Spleen disharmony with epigastric and abdominal pain",
     "Jue Yin Heat",
     "Shao Yin Heat",
     "Liver and Spleen Disharmony (Liver Attacking the Spleen) with costal or abdominal pain and menstrual complaints",
     "Gu Syndrome"
    ],
    "pattern_indications_zh": [
-    "陽鬱厥逆、肝脾不和脘腹疼痛證"
+    "陽鬱厥逆、肝脾不和脘腹疼痛證",
+    "厥陰熱證",
+    "少陰熱證",
+    "肝脾不和（肝氣犯脾）之脅腹疼痛、月經不調",
+    "蠱證"
    ],
    "modifications_en": [
     "Related modifications: with cough, add Wu Wei Zi and Gan Jiang to warm the Lung, disperse Cold and stop coughing. With palpitations, add Gui Zhi to warm Heart Yang. With inhibited urination, add Fu Ling to promote urination. With abdominal pain, add Pao Fu Zi to disperse internal Cold. With diarrhea, add Xie Bai to unblock Yang and disperse binding. With pronounced qi constraint, add Xiang Fu and Yu Jin to regulate qi and resolve constraint. With Heat signs, add Zhi Zi and Chuan Lian Zi to clear internal Heat."
@@ -98025,6 +98734,9 @@
     ],
     "modifications_en": [
      "translated 2026-08-19 from the record's own modifications_zh"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 78,
@@ -98830,7 +99542,12 @@
     "Turbid Phlegm Obstructing the channels and collaterals"
    ],
    "pattern_indications_zh": [
-    "寒厥/痰厥閉證（陰閉神昏）證"
+    "寒厥/痰厥閉證（陰閉神昏）證",
+    "中氣或中寒",
+    "乾霍亂",
+    "氣滯胸痺",
+    "寒凝證",
+    "痰濁阻滯經絡"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -98841,7 +99558,10 @@
     "Do not take Zhu Sha in large doses or for a long time."
    ],
    "contraindications_zh": [
-    "孕婦禁用"
+    "孕婦禁用",
+    "熱閉者禁用。",
+    "脫證者禁用。",
+    "硃砂不可大量或長期服用。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -98971,7 +99691,7 @@
      "curriculum/herbs/方剂学汇总_extracted.md#Table367(Actions/Indications 行);原 actions_zh 誤作「清熱解表、調理氣血」(本方為溫開劑),2026-08-06 依課件更正"
     ],
     "pattern_indications_en": [
-     "curriculum/herbs/方剂学汇总_extracted.md#Table367(Actions/Indications 行);原 actions_zh 誤作「清熱解表、調理氣血」(本方為溫開劑),2026-08-06 依課件更正"
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ],
     "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
     "actions_zh": [
@@ -98991,6 +99711,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "correction_note": "2026-08-06:actions_zh 原誤作「清熱解表、調理氣血」——本方為溫開劑,依課件表367 更正為溫通中焦/芳香開竅/行氣/化濁。組成仍待由課件表368 建立(15 味,課件標 4 味君藥,與 F7「君藥 1-2 味」不符,需 Ting 裁定),故本卡尚未列為已整理。\n【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：麝香（in_formula_zh、actions_zh、role_reason_zh）、訶子（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
@@ -100332,6 +101055,7 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is intended for Spleen-Deficiency type vaginal discharge; it should not be used when the discharge is red-and-white or yellow-red, thick, sticky, and foul-smelling, accompanied by signs of Damp-Heat pouring downward such as a red tongue and rapid pulse.",
     "Contraindicated for those with yellow, bloody, thick, sticky or foul smelling discharge due to Liver Stagnation transforming into Heat or Damp-Heat."
    ],
    "contraindications_zh": [
@@ -100487,6 +101211,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 112,
@@ -100913,23 +101640,32 @@
     }
    ],
    "pattern_indications_en": [
+    "Jue Yin disorder with roundworm collapse and abdominal pain, and chronic diarrhea or dysentery",
     "Collapse from roundworms",
     "Jue Yin Stage Cold and Heat",
     "Chronic diarrhea or dysentery",
     "Stomach Heat with Kidney Deficiency"
    ],
    "pattern_indications_zh": [
-    "厥陰病蛔厥腹痛、久瀉久痢證"
+    "厥陰病蛔厥腹痛、久瀉久痢證",
+    "蛔厥",
+    "厥陰病寒熱錯雜證",
+    "久瀉久痢",
+    "胃熱腎虛"
    ],
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "This formula is warm in nature and most suitable for cases in which Cold predominates. The Shang Han Lun states: avoid raw and cold, slippery, and foul-smelling foods while taking it.",
     "Contraindicated for those with explosive diarrhea.",
     "Contraindicated for those with Damp-Heat dysentery.",
     "Use with caution during pregnancy."
    ],
    "contraindications_zh": [
-    "本方性質偏於溫熱，以寒重者爲宜。《傷寒論》提到：「禁生冷、滑物、臭食等」"
+    "本方性質偏於溫熱，以寒重者爲宜。《傷寒論》提到：「禁生冷、滑物、臭食等」",
+    "暴瀉者禁用",
+    "濕熱痢疾者禁用",
+    "孕婦慎用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -101113,6 +101849,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 179,
@@ -103170,13 +103912,18 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
+    "In this formula the ratio of Huang Lian to Wu Zhu Yu is 6:1.",
+    "This formula is bitter and cold in nature; contraindicated for vomiting due to Deficiency Cold.",
     "Acid regurgitation due to Stomach Deficiency Cold.",
     "Hypochondriac pain due to Liver, Gallbladder, or Blood Deficiency.",
     "Pregnancy."
    ],
    "contraindications_zh": [
     "本方黃連與吳茱萸比例為6:1",
-    "本方藥偏苦寒，虛寒性嘔吐者忌用"
+    "本方藥偏苦寒，虛寒性嘔吐者忌用",
+    "胃虛寒之吞酸者禁用",
+    "肝膽虛或血虛之脅痛者禁用",
+    "孕婦禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -103335,6 +104082,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "cloudtcm_id": 566,
@@ -103974,9 +104724,14 @@
     "Descends Fire"
    ],
    "pattern_indications_zh": [
-    "陰虛火旺、骨蒸潮熱盜汗證"
+    "陰虛火旺、骨蒸潮熱盜汗證",
+    "肝陰虛陽亢證",
+    "肺腎陰虛證",
+    "肝腎陰虛虛火上炎證",
+    "肝腎虧虛之痿證"
    ],
    "pattern_indications_en": [
+    "Yin Deficiency with Fire Flaring, manifesting as steaming bone disorder, tidal fever and night sweats",
     "Liver Yin Deficiency with Yang Rising",
     "Lung and Kidney Yin Deficiency",
     "Liver and Kidney Yin Deficiency (with Fire Flaring)",
@@ -104035,6 +104790,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -104742,17 +105500,28 @@
     "Relieves irritability"
    ],
    "pattern_indications_zh": [
-    "風寒外束、水飲內停兼裡熱煩躁證"
+    "風寒外束、水飲內停兼裡熱煩躁證",
+    "外感風寒兼裡熱證",
+    "太陽陽明合病",
+    "全身嚴重浮腫",
+    "溢飲"
    ],
    "pattern_indications_en": [
+    "Wind-Cold fettering the exterior with internal retention of water and Interior Heat with irritability and restlessness",
     "Exogenous Wind-Cold Invasion with Interior Heat",
     "Tai Yang - Yang Ming",
     "Severe floating edema",
     "Yi Yin"
    ],
    "contraindications_zh": [
+    "宜漸次服用，汗出即停後服",
+    "少陰證者禁用",
     "陽虛者禁用",
-    "陰血虛者禁用"
+    "中風表虛證者禁用",
+    "汗出而煩躁熱象加重者禁用",
+    "陰血虛者禁用",
+    "風寒襲表兼裡飲壅盛者禁用",
+    "表虛（衛氣虛）者禁用"
    ],
    "contraindications_en": [
     "Administer gradually and stop when sweating has begun.",
@@ -104788,6 +105557,12 @@
     ],
     "pattern_indications_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 8 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "ad_syndromes_en": [
@@ -104979,7 +105754,8 @@
     "Qi and Blood Stagnation in the Middle Jiao"
    ],
    "contraindications_zh": [
-    "孕婦禁用"
+    "孕婦禁用",
+    "出血者禁用"
    ],
    "contraindications_en": [
     "Contraindicated during pregnancy.",
@@ -105029,6 +105805,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -107556,7 +108335,9 @@
     "Good for all Wind-Heat disorders with constipation, dark, rough urination, facial sores and red, sore eyes. which can lead to Internal Wind with a stiff tongue and clenched fists."
    ],
    "contraindications_zh": [
-    "孕婦禁用"
+    "虛證者禁用",
+    "孕婦禁用",
+    "脾胃虛弱者慎用"
    ],
    "contraindications_en": [
     "Contraindicated for those with Deficiency.",
@@ -107607,6 +108388,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成與劑量取自課件 Herbal Formulations Comprehensive / Formulations Summary Chart 的 Rank/Herb/Amount 表。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：防風、麻黃保留為君以解表散風；大黃、芒硝列臣以瀉下通腑、清裡熱；未改組成或劑量。尚未完成完整方義與主治重修。",
@@ -108122,6 +108906,8 @@
    ],
    "contraindications_zh": [
     "孕婦禁用",
+    "服本方後瀉利而病未痊癒者，當改用他方",
+    "體弱虛損者禁用",
     "脾虛者慎用"
    ],
    "contraindications_en": [
@@ -108186,6 +108972,9 @@
     ],
     "symptoms_zh": [
      "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -108418,9 +109207,14 @@
    ],
    "pattern_indications_zh": [
     "表證未解、邪熱入裡身熱下利證",
-    "濕熱下利身熱痛證"
+    "濕熱下利身熱痛證",
+    "太陽病誤用攻下證",
+    "下焦濕熱兼表證未盡",
+    "泄瀉痢疾（無論有無風邪外襲）"
    ],
    "pattern_indications_en": [
+    "Unresolved exterior pattern with pathogenic Heat entering the Interior, manifesting as fever and diarrhea",
+    "Damp-Heat diarrhea with fever and pain",
     "Improper treatment of Tai Yang Stage with purgatives (c).",
     "Lower Jiao Damp Heat with lingering exterior symptoms.",
     "Diarrhea and dysentery whether or not there is Wind Invasion."
@@ -108479,6 +109273,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -108901,6 +109698,8 @@
     "Yin Deficiency Heat"
    ],
    "contraindications_zh": [
+    "血瘀所致血熱者禁用",
+    "血瘀者禁用",
     "氣虛者禁用"
    ],
    "contraindications_en": [
@@ -108952,6 +109751,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -109253,9 +110055,14 @@
    ],
    "pattern_indications_zh": [
     "風濕歷節、風寒濕痺化熱關節腫痛證",
-    "風濕痺痛關節紅腫證"
+    "風濕痺痛關節紅腫證",
+    "風寒濕痺反覆發作證",
+    "風濕痺化熱證",
+    "風痰濕化熱證"
    ],
    "pattern_indications_en": [
+    "Wind-Damp migratory joint disorder (li jie) — Wind-Cold-Damp Bi transforming into Heat with swollen, painful joints",
+    "Wind-Damp Bi pain with red, swollen joints",
     "Recurrent Wind-Cold-Damp Bi",
     "Wind-Damp Bi with formation of Heat",
     "Wind-Phlegm-Dampness with formation of Heat"
@@ -109286,6 +110093,9 @@
     ],
     "pattern_indications_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "ad_syndromes_en": [
@@ -109709,6 +110519,10 @@
     "Epigastric pain and vomiting due to Liver Qi Stagnation Invading the Stomach"
    ],
    "contraindications_zh": [
+    "胃火或肝火所致腹痛者禁用",
+    "津液虧虛者禁用",
+    "出血者禁用",
+    "舌質深紅者禁用",
     "孕婦禁用"
    ],
    "contraindications_en": [
@@ -109765,6 +110579,9 @@
     ],
     "composition.cleanup": [
      "2026-08-19 「Jiang Shi」列依《良方集腋》良附丸製法(米飲加薑汁和丸)辨為薑汁,連結 herb.sheng_jiang(生薑之汁)"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -110695,7 +111512,12 @@
     "Superficial Wind-Dampness"
    ],
    "contraindications_zh": [
-    "風熱者禁用"
+    "體弱虛證者禁用",
+    "素體陰虛者慎用",
+    "凡有熱象者慎用",
+    "虛弱者禁用",
+    "風熱者禁用",
+    "大劑量可致汗出過多而傷津耗陽"
    ],
    "contraindications_en": [
     "Contraindicated for those with weak and Deficient Conditions.",
@@ -110752,6 +111574,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -111657,7 +112482,8 @@
     "Hernia due to Cold Stagnation in the Liver Channel"
    ],
    "contraindications_zh": [
-    "濕熱者禁用"
+    "濕熱者禁用",
+    "不宜與補氣藥同服"
    ],
    "contraindications_en": [
     "Contraindicated for those with Damp-Heat.",
@@ -111699,6 +112525,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "ad_syndromes_en": [
@@ -112801,15 +113630,22 @@
    ],
    "pattern_indications_zh": [
     "熱結下焦、血淋尿血尿痛證",
-    "尿血小腹脹痛證"
+    "尿血小腹脹痛證",
+    "膀胱濕熱證",
+    "血淋",
+    "心火亢盛證"
    ],
    "pattern_indications_en": [
+    "Heat accumulating in the Lower Jiao with Blood Lin, hematuria and painful urination",
+    "Hematuria with lower abdominal distension and pain",
     "Damp-Heat in the Bladder",
     "Blood Lin",
     "Heart Fire"
    ],
    "contraindications_zh": [
-    "孕婦禁用"
+    "氣虛所致血淋尿痛者禁用",
+    "孕婦禁用",
+    "久病者禁用"
    ],
    "contraindications_en": [
     "Contraindicated for those with bloody, painful urinary dysfunction due to Qi Deficiency.",
@@ -112858,6 +113694,12 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "ad_syndromes_en": [
@@ -113368,7 +114210,8 @@
    ],
    "pattern_indications_zh": [
     "陽明溫病、津液虧損便秘證",
-    "陰虛腸燥便秘證"
+    "陰虛腸燥便秘證",
+    "營分熱盛兼中焦乾燥證"
    ],
    "pattern_indications_en": [
     "Deficiency of Fluid in Colon (Yang Ming Xu)",
@@ -113403,6 +114246,9 @@
     ],
     "pattern_indications_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "ad_syndromes_en": [
@@ -113682,6 +114528,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 5 條(不同來源並行),對齊為 7 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -113704,6 +114553,8 @@
     "Eye disorders due to upward blazing of Heat toxin"
    ],
    "pattern_indications_en": [
+    "Lung Abscess with expectoration of pus — Phlegm-Heat and Blood Stasis obstructing the Lungs",
+    "Wind-Heat toxin congesting the Lungs with fever and cough",
     "Phlegm-Heat Congests the Lungs",
     "Lung Abscess due to Wind-Heat toxin obstructing the Lungs with Phlegm and Blood Stasis",
     "Lung Heat",
@@ -113712,7 +114563,12 @@
    ],
    "pattern_indications_zh": [
     "肺癰吐膿、痰熱瘀血鬱肺證",
-    "風熱毒邪壅肺身熱咳嗽證"
+    "風熱毒邪壅肺身熱咳嗽證",
+    "痰熱壅肺證",
+    "風熱毒邪壅肺、痰瘀互結之肺癰",
+    "肺熱證",
+    "熱病後之調養",
+    "熱毒上攻之目疾"
    ],
    "pattern_focus_en": [
     "Phlegm-Heat Congests the Lungs",
@@ -114919,6 +115775,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md（22 區塊方劑卡）"
+    ],
+    "pattern_indications_en": [
+     "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -114944,12 +115803,15 @@
    ],
    "pattern_indications_en": [
     "Damp-Heat with External Wind Invasion",
+    "Damp-Heat Bi pain with red, swollen joints and limbs",
     "Damp-Heat Bi",
     "Atrophy disorder (Wei Syndrome) due to Damp-Heat"
    ],
    "pattern_indications_zh": [
     "濕熱相搏、外感風邪肢節煩痛證",
-    "濕熱痺痛肢節紅腫證"
+    "濕熱痺痛肢節紅腫證",
+    "濕熱痺證",
+    "濕熱痿證"
    ],
    "pattern_focus_en": [
     "Damp-Heat with External Wind Invasion",
@@ -117620,6 +118482,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -117794,6 +118659,9 @@
    "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/GuaLouXieBaiBaiJiuTang.html",
    "contraindications_zh": [
+    "酒精過敏者禁用",
+    "肺癆胸痛者禁用",
+    "痰熱作痛者禁用",
     "不宜長期服用"
    ],
    "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：白酒（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
@@ -118194,6 +119062,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -118316,7 +119187,10 @@
    "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaXianXiongTang.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "僅用於急症",
+    "中病即止，僅服數劑",
+    "孕婦禁用",
+    "體弱者禁用"
    ]
   },
   {
@@ -118408,6 +119282,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -118637,6 +119514,7 @@
    "course_level_en": "Formulations 1 — 3rd group: General Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaHuangFuZiTang.html",
    "contraindications_zh": [
+    "裡熱實證者禁用",
     "虛寒者禁用"
    ]
   },
@@ -119614,6 +120492,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -119797,7 +120678,11 @@
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhuShaAnShenWan.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "硃砂今已不用，須以適當之品代替",
+    "以陰虛為主者禁用",
+    "孕婦禁用",
+    "小兒及老人禁用",
+    "不宜久服，以免損傷中焦陽氣"
    ]
   },
   {
@@ -120222,6 +121107,9 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+    ],
+    "contraindications_en": [
+     "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
     ]
    },
    "actions_en": [
@@ -120382,7 +121270,11 @@
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/CiZhuWan.html",
    "contraindications_zh": [
-    "孕婦禁用"
+    "肝腎虧虛火旺所致視聽障礙者，須加減使用",
+    "脾胃虛弱者宜減量",
+    "長期服用須謹慎",
+    "孕婦禁用",
+    "小兒及老人禁用"
    ]
   }
  ]
