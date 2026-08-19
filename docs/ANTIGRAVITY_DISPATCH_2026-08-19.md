@@ -503,10 +503,195 @@ PROJECT_LOG 最上方一條，含四種 `fy2027_status` 各幾筆、以及上面
 
 ---
 
-## 5–7. 其餘任務包 P2 / P4 / P5
+## 5. P4 — 穴位「卡內自相矛盾」裁決（25 個候選，機器已篩好）
 
-> 精確參數調查中，同一天補上。
-> P4（高危穴「卡內自相矛盾」掃描）→ P2（方歌缺口）→ P5（中藥安全欄位英文）。
+**為什麼是它做**：這一包**不需要網路**，需要的是「一雙讀得懂中醫的眼睛」。
+機器探針已經把 361 穴篩到 **25 個候選**——Antigravity 的工作是逐一裁決
+「這是真矛盾還是誤報」，並給出逐字證據。清單有界、每一條我都能覆核，
+**這是最適合拿來練它、風險也最低的生產任務**。
+
+**已確認的三個真錯誤**（`validate-acupoint-standard` / `content-junk` / `ratchet`
+**全部 PASS，全部沒抓到**——證明這一類缺陷只有眼睛抓得到）：
+
+| 位置 | 錯誤 |
+|---|---|
+| `BL1.clinical_pearls[0]` | 「為**手太陽小腸經**的經穴」，同卡 `channel_zh`=膀胱經 |
+| `CV8.contraindications[1]` | 「**神願**穴位於臍中」，同卡 `chinese`=神闕 |
+| `BL1.needling` | 「左手輕推眼球**想**外側固定」應為「向」；同句還有裸 HTML 實體 `&mdash;` |
+
+### 5.1 貼上用 Prompt（copy-paste）
+
+```
+你在 AcuTing OS repo 幫 Ting 做「穴位卡內自相矛盾裁決」。
+
+先讀：docs/AI_CONSTITUTION.md、docs/ANTIGRAVITY_DISPATCH_2026-08-19.md §5。
+
+機器探針已經把 361 穴篩出 25 個候選（清單見 §5.3）。你的工作是**逐一裁決**：
+這是真的矛盾，還是探針誤報？
+
+每一個候選都要回答四件事：
+  1. 真矛盾 / 誤報 —— 二選一，不准寫「可能」
+  2. 逐字證據 —— 貼出該欄位的原文（複製，不是轉述），並指出 JSON 路徑
+  3. 如果是真矛盾：正確的寫法應該是什麼，以及**改動幾個字**
+  4. 信心：高／中／低
+
+**你只寫一個新檔**：
+  data/imports/acupoint_sources/acupoint_contradiction_staging.json（格式見 §5.4）
+**禁止**：改 data/acupoints/361.json、data/acupoints/embedded/**、
+        data/generated/**、或任何其他既有檔案。一個字都不准。
+
+三條規矩：
+- **最小改動。** 錯字就只改那一個字。不准「順手把整段重寫得更好」——
+  這個專案的憲法紅線 3 是「不用短的覆蓋長的，不清空有內容的欄位」。
+  你的 proposed_excerpt 字數不准比 current_excerpt 少。
+- **誤報要老實說是誤報。** 25 個裡如果你判 25 個都是真矛盾，我會直接懷疑你沒查。
+- **不准動數字。** 刺深、寸數、壯數一律不准改，就算你覺得不對。
+  發現數字有問題 → 寫進 notes 交給 Claude，不要自己改。
+
+做完 25 個就停下回報。
+```
+
+### 5.2 這一包最大的陷阱：**同一段錯字存在於兩條資料線**
+
+`scripts/build-data.js` 有**兩條互不相干**的穴位資料線：
+251 行讀 `data/acupoints/361.json` → `points_361.js`；
+37–49 行讀 `data/acupoints/embedded/*.json` → `app_data.js`。
+**同一段錯誤文字在兩邊都有，欄位名還不一樣。**
+
+實測：`grep -rlF "想外側" data/` 命中 **8 個檔案**。
+只修 `361.json` 會留下另一條線的同一個錯字，而所有驗證器照樣全綠。
+
+→ 所以 staging 記錄裡有一個 `mirror_paths` 欄位，要它把**同一段文字還出現在哪些
+檔案**列出來。修哪些、怎麼修由 Claude 決定，但清單要它列。
+
+### 5.3 25 個候選（分六類）
+
+**A. 經絡歸屬自述與 `channel_zh` 不符（16 個）**
+```
+BL1  BL4  BL14  BL49  BL50  BL62  BL65  HT4
+LI8  LI20  SI15  KI16  KI24  KI26  KI27  LR7
+```
+（注意：這 16 個是高精度探針的結果，但**仍會有誤報**——有些句子在講配穴或
+交會經，不是在講本穴歸經。裁決這個差別正是這一包的價值。）
+
+**B. 標「禁針」卻同時有刺深（3 個）**
+```
+ST17 乳中 · CV8 神闕 —— 兩者都帶「直刺0.0寸」（樣板產生的假數字）
+GV21 前頂 —— 帶「平刺0.3寸」
+```
+
+**C. 寸數在不同欄位互相打架（5 個）**
+```
+BL13（location 1.5 vs 敘述 1.5/2/3）
+BL42 · BL45 · BL51 · BL53（location 3 vs 敘述 1.5 —— 這四個是第二側線穴，
+                          很可能是把第一側線的 1.5 寸抄過來了）
+```
+
+**D. 裸 HTML 實體（2 個）**：`BL1` · `ST4`（`&mdash;` 出現在刺深範圍裡）
+
+**E. 同音錯字（1 個）**：`BL1`「眼球**想**外側」
+
+**F. 已確認的錯字（1 個）**：`CV8`「**神願**」
+
+> **不要做的事**：拼音／中文名比對已經查過了——對照獨立的 WHO 檔案
+> （`data/imports/acupoint_sources/who_location_staging.json`），
+> **拼音 0/361 不符、中文名 0/361 不符**。這一項不要浪費它的時間。
+
+### 5.4 輸出格式
+
+檔案 `data/imports/acupoint_sources/acupoint_contradiction_staging.json`：
+
+```json
+{
+  "dataset": "acupoint_intra_card_contradictions",
+  "policy": "staging only; no canonical write; Claude applies after Ting approval",
+  "canonical_write_allowed": false,
+  "created": "2026-08-DD",
+  "extractor": "antigravity",
+  "records": [{
+    "id": "contra.BL1.clinical_pearls.channel",
+    "code": "BL1",
+    "chinese": "睛明",
+    "contradiction_type": "channel_self_assertion_mismatch",
+    "verdict": "real | false_positive",
+    "field": "clinical_pearls",
+    "array_index": 0,
+    "current_excerpt": "為手太陽小腸經的經穴",
+    "proposed_excerpt": "為足太陽膀胱經的經穴",
+    "char_delta": 0,
+    "contradicts_field": "channel_zh",
+    "contradicts_value": "膀胱經",
+    "mirror_paths": ["<同一段文字還出現在哪些檔案，用 grep -rlF 找>"],
+    "confidence": "高",
+    "notes": ""
+  }]
+}
+```
+
+### 5.5 驗證與完成定義
+
+```bash
+export PATH="/c/Program Files/nodejs:$PATH"
+
+# canonical 必須零變動
+git status --short          # 只准出現新的 staging 檔 + PROJECT_LOG.md
+node scripts/validate-acupoint-standard.js
+node scripts/validate-data.js
+node scripts/check-validation-ratchet.js
+
+# X1 涵蓋率：25 個候選一個都不准漏
+node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const want='BL1 BL4 BL14 BL49 BL50 BL62 BL65 HT4 LI8 LI20 SI15 KI16 KI24 KI26 KI27 LR7 ST17 CV8 GV21 BL13 BL42 BL45 BL51 BL53 ST4'.split(' ');const got=new Set(b.records.map(r=>r.code));const miss=want.filter(c=>!got.has(c));console.log('records:',b.records.length,'| 漏掉:',miss.length,miss.join(','))"
+
+# X2 current_excerpt 必須真的存在於 361.json（抓「引文不忠實」）
+node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const src=JSON.stringify(require('./data/acupoints/361.json'));let bad=0;b.records.forEach(r=>{if(!src.includes(r.current_excerpt)){bad++;console.log('NOT IN SOURCE',r.id,JSON.stringify(r.current_excerpt))}});console.log('引文對不上原文:',bad)"
+
+# X3 紅線 3：提案不准比原文短
+node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const bad=b.records.filter(r=>r.verdict==='real'&&(r.proposed_excerpt||'').length<(r.current_excerpt||'').length);console.log('提案變短的:',bad.length);bad.forEach(r=>console.log('  ',r.id))"
+
+# X4 誤報率健康度：全判 real 或全判 false_positive 都可疑
+node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const t={};b.records.forEach(r=>t[r.verdict]=(t[r.verdict]||0)+1);console.log(t)"
+```
+
+**完成的定義**：X1 `漏掉: 0`、**X2 `引文對不上原文: 0`（這條不過就整批退回）**、
+X3 `提案變短的: 0`；三個已知真錯誤（BL1 經絡、BL1 想、CV8 神願）必須被判為 `real`；
+`git status` 只有兩個檔；PROJECT_LOG 一條含 X1–X4 輸出原文。
+
+---
+
+## 6. P5 — 中藥安全欄位英文缺口（**這一包我建議暫時不要派**）
+
+**現況**：216 味藥 `cautions_zh` 有內容但 `cautions_en` 空，共 **1,095 條中文警語**。
+
+**為什麼建議不派**：我在 scratch 副本裡實測——注入 30 筆**長度對齊、內容完全捏造**
+的英文警語（「do not exceed 15 g per day」「limit courses to 8 weeks」
+「may potentiate warfarin and aspirin」），**整面驗證器牆全綠**。
+
+也就是說：這一包**沒有任何機器能抓包**。它是純翻譯任務，而翻譯品質的唯一檢查是
+「懂中文又懂英文的人逐條讀 1,095 句」——那個人是 Ting，工作量比自己翻還大。
+
+而且這一包的失敗模式特別陰險：不是憑空捏造，是**「順手翻好一點」**——
+`不宜長期服用` 翻成 "Do not use for more than 4 weeks"（憑空生出 4 週）、
+`孕婦慎用` 翻成 "Contraindicated in pregnancy and during breastfeeding"
+（慎用升級成禁用，還多出哺乳期）。這是憲法紅線 4 的直接違反，而且讀起來更專業。
+
+**如果一定要做，最小安全版本**：
+- **範圍限縮**：只做 `cautions_zh` **只有 1 條**的那 62 味（一句對一句，索引不會錯位）。
+- **禁區**：`contraindications_en` 缺口那 9 味**絕對不要派**——
+  附子 · 乾薑 · 肉桂 · 吳茱萸 · 小茴香 · 丁香 · 花椒 · **雄黃** · **硃砂**。
+  全是毒性／妊娠／重金屬類，這正是憲法 E2 說「不派給弱模型」的那一類。
+- **硬規矩**：`_en` 陣列長度必須等於 `_zh`（E5 是阻擋級）；英文裡出現的
+  **每一個數字、每一個西藥名**都必須在同一條中文裡找得到，否則就是捏造。
+
+---
+
+## 7. P2 — 方歌缺口（調查中斷，改由 Claude 處理）
+
+方歌那條調查線被內容過濾中斷，沒有拿到精確參數。加上另一條線已回報
+「方歌 130/224，其中 12 首判定白名單查無、3 首因疑有訛字暫扣」——
+**這一包的核心正是『訛字判定』**（PROJECT_LOG 有前例：酸棗仁湯歌 popular→仁、
+心山失養→心神失養），屬於需要古典文獻判斷的工作，不適合派給沒有戰績的代理。
+
+**改由 Claude 在 Clinical 線整合落地後直接處理。**
 
 ---
 
