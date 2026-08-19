@@ -1,3 +1,27 @@
+# 2026-08-19 午 — 考試重點失蹤案偵破:11f37a97 merge 洗掉三欄,依 Ting 裁示全量回填
+
+Ting 問「方劑卡跟很多卡片的 board exam 筆記怎麼不見了」。追查結果:
+- **兇手是 2026-08-06 04:02 merge `11f37a97`**(preserving Gold-Standard cards)——
+  整檔覆蓋 formulas.json,exam_pearl 201→7;之後 restoration 只救回 10 張就轉線,
+  13 天沒人發現。同刀:formula_song_zh 201→130(方歌 waves 一直在重做歷史裡已有的)、
+  formula_song_source_zh 201→43、modern_research_zh/en 201→6/10。
+  倖存:exam_star、exam_importance、english_exam_track。穴位卡無恙(361/361 前後一致)。
+- **回填(來源 `4752b6ea`,被洗前一刻;只填空欄不覆寫)**,三波各自驗證後 push:
+  exam_pearl 10→**201/224**;formula_song_zh 130→**201/224**(出處欄依裁示不回填,
+  維持 43);modern_research_zh 6→**196**、_en 10→**200/224**(zh/en 成對落庫)。
+- **腳本 `scripts/restore-wiped-formula-fields.js`**:canonical 格式 round-trip 檢查、
+  未觸及記錄逐位元組不變、觸及記錄任何欄位不得縮水,三重防護全過。
+- **眼睛驗證**:四物湯/六味地黃丸/桃紅四物湯卡片實開,★考試重點+方歌+現代藥理全渲染,
+  zh/en 成對。0 重複樣板句(六君子/香砂六君子共用湯頭歌訣家族詩一首,屬原貌)。
+- **裁決佇列殘留**:① 6 方 modern_research 單側已填跳過未動(小承氣/調胃承氣/小柴胡/
+  半夏瀉心/十全大補/金匱腎氣),要對齊需覆寫現存單側,gate on Ting;
+  ② 四物湯 pearl「動靜相相」疑為訛字(bulk 波原文如此,無據不代改);
+  ③ 工作區另有 59 個 curriculum 原始檔(PDF/DOCX)未 commit 刪除,非本案,待確認是哪條線。
+- **方法**:驗證器全綠 ≠ 沒有損失的鐵證又添一例——ratchet 檢查現存資料形狀,
+  不檢查「曾經有 201 條」。歷史欄位計數對帳(grep 非空欄位數 across commits)十分鐘定位案發 commit。
+
+---
+
 # 2026-08-19 晨 — SOL 指定三點對帳 + 代表卡 smoke:全一致,順手修兩個顯示層 bug
 
 依 SOL 審計指示(CONTINUE preview/smoke/低風險內容;PAUSE PR landing 與 graph 升格推薦):
