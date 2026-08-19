@@ -1,0 +1,33 @@
+# 穴位證候連結 — 配伍孤證待人工覆核
+
+以下連結唯一證據是 combine_points_zh / clinical_pearls 的配伍句(主詞是穴組不是本穴),未寫入 361.json。
+覆核後要收的,把該條移進帳本 evidence 換成更強證據再跑 apply。
+
+- BL10  pattern.liver_fire  (point_text:data/acupoints/361.json#BL10.clinical_pearls | point_text:data/acupoints/361.json#BL10.combine_points_zh)
+- BL14  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL14.clinical_pearls)
+- BL15  pattern.kidney_yin_deficiency  (point_text:data/acupoints/361.json#BL15.clinical_pearls | point_text:data/acupoints/361.json#BL15.combine_points_zh)
+- BL18  pattern.liver_spleen_disharmony  (point_text:data/acupoints/361.json#BL18.clinical_pearls | point_text:data/acupoints/361.json#BL18.combine_points_zh)
+- BL19  pattern.liver_qi_stagnation  (point_text:data/acupoints/361.json#BL19.clinical_pearls)
+- BL19  pattern.qi_stagnation_blood_stasis  (point_text:data/acupoints/361.json#BL19.clinical_pearls)
+- BL19  pattern.yin_deficiency_fire_flaring  (point_text:data/acupoints/361.json#BL19.clinical_pearls)
+- BL22  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL22.clinical_pearls)
+- BL24  pattern.qi_stagnation_blood_stasis  (point_text:data/acupoints/361.json#BL24.clinical_pearls)
+- BL26  pattern.damp_heat_lower_burner  (point_text:data/acupoints/361.json#BL26.clinical_pearls | point_text:data/acupoints/361.json#BL26.combine_points_zh)
+- BL26  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL26.clinical_pearls | point_text:data/acupoints/361.json#BL26.combine_points_zh)
+- BL29  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL29.clinical_pearls | point_text:data/acupoints/361.json#BL29.combine_points_zh)
+- BL39  pattern.kidney_qi_deficiency  (point_text:data/acupoints/361.json#BL39.clinical_pearls | point_text:data/acupoints/361.json#BL39.combine_points_zh)
+- BL4  pattern.liver_wind  (point_text:data/acupoints/361.json#BL4.clinical_pearls | point_text:data/acupoints/361.json#BL4.combine_points_zh)
+- BL4  pattern.liver_yang_rising  (point_text:data/acupoints/361.json#BL4.clinical_pearls)
+- BL43  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL43.clinical_pearls | point_text:data/acupoints/361.json#BL43.combine_points_zh)
+- BL43  pattern.qi_blood_deficiency  (point_text:data/acupoints/361.json#BL43.clinical_pearls | point_text:data/acupoints/361.json#BL43.combine_points_zh)
+- BL44  pattern.yin_deficiency_fire_flaring  (point_text:data/acupoints/361.json#BL44.clinical_pearls)
+- BL46  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL46.clinical_pearls)
+- BL47  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL47.clinical_pearls)
+- BL48  pattern.spleen_stomach_yang_deficiency  (point_text:data/acupoints/361.json#BL48.clinical_pearls)
+- BL48  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL48.clinical_pearls | point_text:data/acupoints/361.json#BL48.combine_points_zh)
+- BL49  pattern.liver_gallbladder_damp_heat  (point_text:data/acupoints/361.json#BL49.clinical_pearls | point_text:data/acupoints/361.json#BL49.combine_points_zh)
+- BL5  pattern.liver_yang_rising  (point_text:data/acupoints/361.json#BL5.clinical_pearls | point_text:data/acupoints/361.json#BL5.combine_points_zh)
+- BL50  pattern.spleen_qi_deficiency  (point_text:data/acupoints/361.json#BL50.clinical_pearls)
+- BL52  pattern.blood_stasis  (point_text:data/acupoints/361.json#BL52.clinical_pearls)
+- BL53  pattern.kidney_yang_deficiency  (point_text:data/acupoints/361.json#BL53.clinical_pearls)
+- BL54  pattern.damp_heat_lower_burner  (point_text:data/acupoints/361.json#BL54.clinical_pearls)

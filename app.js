@@ -4368,7 +4368,13 @@ function pointCompareSection(point) {
 function pointLinkSection(point) {
   const K = globalThis.ACUTING_KNOWLEDGE || {};
   const condById = new Map((K.conditionCanon?.records || []).map((c) => [c.id, c]));
-  const patById = new Map((K.tcmPatternCanon?.records || []).map((p) => [p.id, p]));
+  /* 兩個 id 空間並存:既有 44 點的 tcm_pattern_ids 是 legacy pat.<中文>
+     (tcmPatternCanon 的鍵),新接的線依紅線 1 只寫 canonical pattern.<slug>
+     (patternLibrary 的鍵)。只查其中一邊,另一邊就整批變暗連結。 */
+  const patById = new Map([
+    ...((K.patternLibrary?.records || (Array.isArray(K.patternLibrary) ? K.patternLibrary : [])) || []).map((p) => [p.id, p]),
+    ...(K.tcmPatternCanon?.records || []).map((p) => [p.id, p]),
+  ]);
   const CAP = 12;
 
   const block = (label, items, render, showLabel = true) => {

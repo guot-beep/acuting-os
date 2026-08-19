@@ -2913,6 +2913,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "point_identity_zh": [
@@ -2969,7 +2972,10 @@
     "examPearl": "★ 大杼為八會穴之「骨會」，海穴之一（血海）。斜刺0.5-0.8寸，不可深刺防止氣胸。",
     "examPearlEn": "★ Dashu is the Hui-Meeting point of Bones and a Sea of Blood point. Oblique insertion 0.5-0.8 inch; avoid deep perpendicular insertion to prevent pneumothorax.",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "tcm_pattern_ids": [
+      "pattern.kidney_essence_deficiency"
+    ]
   },
   {
     "code": "BL12",
@@ -3188,6 +3194,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -3260,7 +3269,14 @@
     "examImportance": "NCCAOM / US Acupuncture Board Exam Focus",
     "exam_pearl_en": "High-Yield Board Pearl (BL12 Fengmen): **Fengmen (Wind Gate), Primary wind-dispelling & Lung-diffusing point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (BL12 Fengmen): **Fengmen (Wind Gate), Primary wind-dispelling & Lung-diffusing point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examStar": 1
+    "examStar": 1,
+    "tcm_pattern_ids": [
+      "pattern.wind_cold_invading_lung",
+      "pattern.wind_cold",
+      "pattern.wind_external",
+      "pattern.tai_yang_cold_damage",
+      "pattern.wind_damp_exterior"
+    ]
   },
   {
     "code": "BL13",
@@ -3470,6 +3486,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -3485,7 +3504,17 @@
     ],
     "tcm_pattern_ids": [
       "pat.肺氣虛寒",
-      "pat.肺胃燥熱"
+      "pat.肺胃燥熱",
+      "pattern.lung_qi_deficiency",
+      "pattern.lung_yin_deficiency",
+      "pattern.wind_cold_invading_lung",
+      "pattern.wind_heat_invading_lung",
+      "pattern.phlegm_damp_in_lung",
+      "pattern.phlegm_heat_in_lung",
+      "pattern.kidney_not_grasping_qi",
+      "pattern.lung_kidney_yin_deficiency",
+      "pattern.wind_cold",
+      "pattern.wind_heat"
     ],
     "point_identity_zh": [
       "肺之背俞穴",
@@ -3754,6 +3783,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -3813,7 +3845,10 @@
     "exam_pearl_en": "High-Yield Board Pearl (BL14 Jueyinshu): **Back-Shu point of Pericardium (Jueyinshu)**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (BL14 Jueyinshu): **Back-Shu point of Pericardium (Jueyinshu)**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "tcm_pattern_ids": [
+      "pattern.heart_blood_stasis"
+    ]
   },
   {
     "code": "BL15",
@@ -4033,6 +4068,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -4046,7 +4084,17 @@
     ],
     "tcm_pattern_ids": [
       "pat.心脾兩虛",
-      "pat.陰虛火旺"
+      "pat.陰虛火旺",
+      "pattern.heart_qi_deficiency",
+      "pattern.heart_yang_deficiency",
+      "pattern.heart_blood_deficiency",
+      "pattern.heart_yin_deficiency",
+      "pattern.heart_fire",
+      "pattern.heart_blood_stasis",
+      "pattern.phlegm_misting_heart",
+      "pattern.heart_kidney_not_communicating",
+      "pattern.water_qi_attacking_heart",
+      "pattern.heat_disturbing_chest_diaphragm"
     ],
     "point_identity_zh": [
       "心之背俞穴",
@@ -4605,13 +4653,23 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
       "cond.patellofemoral_pain"
     ],
     "tcm_pattern_ids": [
-      "pat.血虛風燥"
+      "pat.血虛風燥",
+      "pattern.liver_blood_deficiency",
+      "pattern.heart_blood_deficiency",
+      "pattern.qi_blood_deficiency",
+      "pattern.blood_stasis",
+      "pattern.blood_heat",
+      "pattern.blood_lin_excess",
+      "pattern.blood_deficiency"
     ],
     "point_identity_zh": [
       "八會穴之「血會」",
@@ -4931,6 +4989,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -4952,7 +5013,11 @@
       "cond.hypotension"
     ],
     "tcm_pattern_ids": [
-      "pat.肝腎陰虛"
+      "pat.肝腎陰虛",
+      "pattern.liver_blood_deficiency",
+      "pattern.liver_yin_deficiency",
+      "pattern.liver_gallbladder_damp_heat",
+      "pattern.liver_qi_stagnation"
     ],
     "point_identity_zh": [
       "肝之背俞穴",
@@ -5261,6 +5326,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -5337,7 +5405,10 @@
     "exam_pearl_en": "High-Yield Board Pearl (BL19 Danshu): **Back-Shu point of Gallbladder, Key point for clearing Liver & Gallbladder damp-heat**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (BL19 Danshu): **Back-Shu point of Gallbladder, Key point for clearing Liver & Gallbladder damp-heat**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "tcm_pattern_ids": [
+      "pattern.liver_gallbladder_damp_heat"
+    ]
   },
   {
     "code": "BL20",
@@ -5560,6 +5631,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -5586,7 +5660,20 @@
       "pat.脾胃虛弱",
       "pat.虛秘",
       "pat.心脾兩虛",
-      "pat.脾氣虛弱"
+      "pat.脾氣虛弱",
+      "pattern.spleen_yang_deficiency",
+      "pattern.spleen_qi_sinking",
+      "pattern.damp_heat_spleen_stomach",
+      "pattern.cold_damp_encumbering_spleen",
+      "pattern.liver_blood_deficiency",
+      "pattern.heart_blood_deficiency",
+      "pattern.spleen_kidney_yang_deficiency",
+      "pattern.qi_blood_deficiency",
+      "pattern.fatigue_lin",
+      "pattern.qi_deficiency",
+      "pattern.tai_yin_deficiency_cold",
+      "pattern.water_fluid_retention",
+      "pattern.blood_deficiency"
     ],
     "point_identity_zh": [
       "脾之背俞穴",
@@ -5874,10 +5961,21 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "tcm_pattern_ids": [
-      "pat.脾胃虛寒"
+      "pat.脾胃虛寒",
+      "pattern.spleen_yang_deficiency",
+      "pattern.damp_heat_spleen_stomach",
+      "pattern.cold_damp_encumbering_spleen",
+      "pattern.stomach_yin_deficiency",
+      "pattern.stomach_fire",
+      "pattern.stomach_cold",
+      "pattern.spleen_deficiency_damp_encumbrance",
+      "pattern.spleen_qi_deficiency"
     ],
     "point_identity_zh": [
       "胃之背俞穴",
@@ -6447,6 +6545,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -6474,7 +6575,19 @@
       "pat.腎精不足",
       "pat.腎陰虧虛",
       "pat.肝腎陰虛",
-      "pat.腎精虧虛"
+      "pat.腎精虧虛",
+      "pattern.liver_yin_deficiency",
+      "pattern.kidney_yang_deficiency",
+      "pattern.kidney_qi_not_firm",
+      "pattern.kidney_not_grasping_qi",
+      "pattern.heart_kidney_not_communicating",
+      "pattern.lung_kidney_yin_deficiency",
+      "pattern.spleen_kidney_yang_deficiency",
+      "pattern.stone_lin",
+      "pattern.fatigue_lin",
+      "pattern.yang_deficiency",
+      "pattern.kidney_deficiency",
+      "pattern.uterus_deficiency_cold"
     ],
     "point_identity_zh": [
       "腎之背俞穴",
@@ -7877,6 +7990,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -7946,7 +8062,16 @@
     ],
     "examPearl": "★ 膀胱俞為膀胱之背俞穴。通利膀胱、清熱利濕止淋要穴。直刺0.8-1.2寸。",
     "examPearlEn": "★ Pangguangshu is the Back-Shu point of Bladder. Primary point for clearing Bladder damp-heat and Strangury. Perpendicular 0.8-1.2 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "tcm_pattern_ids": [
+      "pattern.damp_heat_lower_burner",
+      "pattern.heat_lin",
+      "pattern.stone_lin",
+      "pattern.qi_lin_excess",
+      "pattern.blood_lin_excess",
+      "pattern.cloudy_lin",
+      "pattern.tai_yang_water_accumulation"
+    ]
   },
   {
     "code": "BL29",
@@ -10749,6 +10874,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -10813,7 +10941,10 @@
     ],
     "examPearl": "★ 委陽為三焦之下合穴。通利三焦水道與小腹脹痛要穴。直刺0.5-1.0寸。",
     "examPearlEn": "★ Weiyang is the Lower He-Sea point of San Jiao. Key point for regulating San Jiao fluid passages and lower abdominal pain. Perpendicular 0.5-1.0 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "tcm_pattern_ids": [
+      "pattern.damp_heat_lower_burner"
+    ]
   },
   {
     "code": "BL40",
@@ -11897,6 +12028,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "tcm_pattern_ids": [
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ]
     },
     "related_conditions": [
@@ -11950,7 +12084,10 @@
     "examImportance": "NCCAOM / US Acupuncture Board Exam Focus",
     "exam_pearl_en": "High-Yield Board Pearl (BL43 Gaohuang): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (BL43 Gaohuang): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examStar": 1
+    "examStar": 1,
+    "tcm_pattern_ids": [
+      "pattern.lung_qi_deficiency"
+    ]
   },
   {
     "code": "BL44",
