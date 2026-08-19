@@ -8,6 +8,25 @@
 
 ---
 
+## ⚠️ 緊急附記（2026-08-19 18:20 UTC，報告發布後追加）
+
+**repo 目前是 public，不是 private。** 已三重驗證：GitHub API `visibility:"public"`／`private:false`；repo 出現在 GitHub 搜尋索引（搜尋只收錄公開 repo）；`allow_forking:true`（目前 fork 0、star 0、watcher 0）。重現：`搜尋 repo:guot-beep/acuting-os` 或開無痕視窗訪問 repo 網址。
+
+這使本報告兩條發現從「假設風險」升級為「現在進行式」：
+
+- **F5（版權同倉）**：79MB 課程教材（78 PDF + 47 doc）與 45MB CloudTCM 抓取語料、American Dragon 全站爬取內容，**現在任何人可下載、可 fork、已被搜尋引擎收錄範圍涵蓋**。`build-site.js` 的 quarantine 只防部署面，防不了 repo 本身公開。
+- **E1（分支保護）**：公開 repo 的分支保護是免費的——TOP-10 第 1 項今天就能零成本做，不用等升級 Pro。但若翻回 private，free 方案無分支保護（需 Pro $4/月）。
+
+**病人資料不受影響**（gitignore + CI 雙保險有效，庫內只有去識別化模板——本次已核實）。
+
+**給 Ting 的兩個立即決定**（我不擅自改設定，因為可能是為某個整合刻意開的）：
+1. 若非刻意公開 → Settings → General → Danger Zone → **Change visibility → Private**（一分鐘）。翻回後再決定分支保護方案（Pro 或先靠紀律）。注意：若其他 agent 環境以無憑證方式 clone 公開網址，翻 private 後它們需改用帶憑證的 remote。
+2. 若是刻意公開（例如某整合需要）→ 至少把 `curriculum/`、`data/imports/`、`scratch/ad_cache` 立即遷出到第二個 private repo（F5 的方案，順序提前到最優先），因為公開狀態下每多一天都在累積版權曝險與被快取的範圍。
+
+另註：workers.dev 的 branch preview URL（Cloudflare bot 在 PR 留言中公開張貼）是否受 Access 保護，本環境 egress 受限無法驗證——請在本機開無痕視窗測一次；若 preview 不設防，整個知識庫（含全部 draft 內容）對任何拿到 URL 的人可讀。
+
+---
+
 ## 一、總體判斷
 
 **骨架是專業級的，血肉有系統性風險，最大的敵人是時間。**
