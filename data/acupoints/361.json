@@ -2650,6 +2650,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p2"
       ]
     },
     "related_conditions": [
@@ -11307,6 +11310,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p6",
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p1"
       ]
     },
     "related_conditions": [
@@ -16704,6 +16711,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p6"
       ]
     },
     "related_conditions": [
@@ -19779,6 +19789,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Techniques 3 points.pdf#p15"
       ]
     },
     "related_conditions": [
@@ -19991,7 +20004,25 @@
     ],
     "examPearl": "★ 中脘為胃之募穴、八會穴之「腑會」。和胃健脾、胃痛嘔吐第一要穴（「腑會中脘」）。直刺0.8-1.2寸。",
     "examPearlEn": "★ Zhongwan is the Front-Mu point of Stomach and Hui-Meeting of Fu/Hollow Organs. Primary point for epigastric pain, vomiting, and stomach disorders. Perpendicular 0.8-1.2 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "CV13",
+          "CV12"
+        ],
+        "axis": "上焦 vs 中焦分工",
+        "note": "課件：REN 13 is useful for upper warmer issues (vomiting, hiatal hernia, hiccups, epigastric pain), whereas REN 12 is useful for middle warmer issues —— 上脘主上、中脘主中。"
+      },
+      {
+        "codes": [
+          "CV12",
+          "CV10"
+        ],
+        "axis": "中焦 vs 下焦分工",
+        "note": "課件：REN 12 is useful for middle warmer issues and REN 10 is useful for lower warmer issues —— 中脘主中、下脘主下。"
+      }
+    ]
   },
   {
     "code": "CV17",
@@ -20599,6 +20630,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p2"
       ]
     },
     "related_conditions": [
@@ -21653,6 +21687,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p101"
       ]
     },
     "tcm_pattern_ids": [
@@ -21778,7 +21815,17 @@
     ],
     "examPearl": "★ 陽陵泉為合穴（土）、膽下合穴、八會穴之「筋會」。全身筋病、膽囊炎與膝痛第一要穴（「筋會陽陵泉」）。直刺1.0-1.5寸。",
     "examPearlEn": "★ Yanglingquan is the He-Sea (Earth), Lower He-Sea of GB, and Hui-Meeting of Sinews. Primary point on the body for tendon pain, sciatica, and GB disorders. Perpendicular 1.0-1.5 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "LR2",
+          "GB34"
+        ],
+        "axis": "清肝熱方式",
+        "note": "課件：LV 2: Heat [Clear better LV heat, doesn’t drain turbid yang]；GB 34: Heat [More balancing, drains turbid yang] —— 行間清肝熱較好但不瀉濁陽，陽陵泉較平衡且瀉濁陽。"
+      }
+    ]
   },
   {
     "code": "GB39",
@@ -25790,6 +25837,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/5 HEART CHANNEL OF HAND SHAO YIN.pdf#p2"
       ]
     },
     "point_identity_zh": [
@@ -25847,7 +25897,17 @@
     ],
     "examPearl": "★ 少衝為井穴（木/母穴）。急救昏迷、熱病醒神第一要穴。淺刺0.1寸或點刺出血。",
     "examPearlEn": "★ Shaochong is the Jing-Well (Wood, Mother) point. Primary emergency point for loss of consciousness, stroke coma, and high fever. Subcutaneous 0.1 inch or bleed.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "HT9",
+          "PC8"
+        ],
+        "axis": "情志與心火口瘡",
+        "note": "課件：Emotional disorders (PC 8 might be better)；Heart Fire affecting mouth: Ulcers, canker sores, etc. (PC 7 or PC 8 may be better) —— 情志病與心火口瘡，勞宮可能優於少衝。"
+      }
+    ]
   },
   {
     "code": "KI3",
@@ -26096,6 +26156,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p91"
       ]
     },
     "related_conditions": [
@@ -26226,7 +26289,17 @@
     ],
     "examPearl": "★ 太溪為輸穴、原穴（土）。大補腎陰腎陽、腰膝酸痛、耳鳴耳聾與消渴第一要穴（「滋陰補腎第一穴」）。直刺0.5-1.0寸。",
     "examPearlEn": "★ Taixi is the Shu-Stream, Yuan-Source point. Primary point on the body for tonifying Kidney Yin & Yang, lower back pain, tinnitus, and asthma. Perpendicular 0.5-1.0 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "KI3",
+          "KI6"
+        ],
+        "axis": "補陰 vs 清熱",
+        "note": "課件：KD 3: Yin [Tonify Yin stronger than KD 6]；KD 6: Clear heat better —— 太溪補陰較強，照海清熱較好。"
+      }
+    ]
   },
   {
     "code": "KI6",
@@ -26480,6 +26553,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p91"
       ]
     },
     "related_conditions": [
@@ -26577,7 +26653,17 @@
     ],
     "examPearl": "★ 照海為八脈交會穴（通陰蹻脈，配列缺 LU7）。慢性乾咳咽痛、失眠（陰虛失眠）與便秘第一要穴（「照海陰蹻咽喉胸」）。直刺0.3-0.5寸。",
     "examPearlEn": "★ Zhaohai is the Confluent point of Yin Qiao Mai. Primary point on the body for chronic dry sore throat, insomnia (Yin deficiency), and constipation. Perpendicular 0.3-0.5 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "KI3",
+          "KI6"
+        ],
+        "axis": "補陰 vs 清熱",
+        "note": "課件：KD 3: Yin [Tonify Yin stronger than KD 6]；KD 6: Clear heat better —— 太溪補陰較強，照海清熱較好。"
+      }
+    ]
   },
   {
     "code": "LI1",
@@ -26851,6 +26937,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p1"
       ]
     },
     "related_conditions": [
@@ -26917,7 +27006,17 @@
     ],
     "examPearl": "大腸經井穴、金穴（本經本穴）。與 LU11 少商同為井穴放血穴，一在食指一在拇指：LI1 偏牙痛咽痛，LU11 偏極度咽痛與中風昏迷。",
     "examPearlEn": "、（）。 LU11 ，：LI1 ，LU11 。",
-    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
+    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
+    "compare_with": [
+      {
+        "codes": [
+          "LI1",
+          "LU11"
+        ],
+        "axis": "井穴放血分工",
+        "note": "與 LU11 少商同為井穴放血穴，一在食指一在拇指：LI1 偏牙痛咽痛，LU11 偏極度咽痛與中風昏迷"
+      }
+    ]
   },
   {
     "code": "LI2",
@@ -29040,7 +29139,7 @@
       "Xi-Cleft point",
       "Moxibustion applicable"
     ],
-    "exam_pearl": "★ 溫溜為郄穴（大腸經郄穴）。急性腸鳴腹痛、疔瘡腫毒與喉痺要穴。直刺0.5-1.0寸。",
+    "exam_pearl": "★ 溫溜為郄穴（大腸經郄穴）。急性腸鳴腹痛、疔瘡腫毒與喉痺要穴。直刺0.5-1.0寸。大腸經郄穴的特色是清熱解毒（癰腫瘡瘍）而非止血，這跟肺經郄穴 LU6 主咯血不同。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "field_sources": {
       "acumethod_zh": [
@@ -29089,6 +29188,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p2"
       ]
     },
     "compare_with": [
@@ -31584,6 +31686,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p4"
       ]
     },
     "exam_star": 1,
@@ -31913,6 +32018,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p4"
       ]
     },
     "related_conditions": [
@@ -32524,6 +32632,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p2"
       ]
     },
     "exam_star": 1,
@@ -32804,6 +32915,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p5"
       ]
     },
     "related_conditions": [
@@ -32843,7 +32957,17 @@
     ],
     "examPearl": "大腸經的出經穴，交會胃經。功效與 LI20 幾乎相同但更單純，臨床多作迎香的輔助。",
     "examPearlEn": "，。 LI20 ，。",
-    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
+    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
+    "compare_with": [
+      {
+        "codes": [
+          "LI19",
+          "LI20"
+        ],
+        "axis": "主輔分工",
+        "note": "功效與 LI20 幾乎相同但更單純，臨床多作迎香的輔助"
+      }
+    ]
   },
   {
     "code": "LI20",
@@ -33090,6 +33214,9 @@
       ],
       "tcm_pattern_ids": [
         "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p5"
       ]
     },
     "exam_star": 1,
@@ -33158,7 +33285,17 @@
     "examPearl": "★ 迎香為通鼻第一要穴（「鼻塞鼻淵尋迎香」）。主治鼻塞、鼻淵、鼻衄與口眼喎斜。斜刺或沿皮刺0.3-0.5寸。",
     "examPearlEn": "★ Yingxiang is the primary point on the body for unblocking nasal passages (nasal congestion, sinusitis, rhinitis). Oblique 0.3-0.5 inch.",
     "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "LI19",
+          "LI20"
+        ],
+        "axis": "主輔分工",
+        "note": "功效與 LI20 幾乎相同但更單純，臨床多作迎香的輔助"
+      }
+    ]
   },
   {
     "code": "LR3",
@@ -34140,7 +34277,7 @@
       "Front-Mu point of the Lung",
       "Meeting point of Hand and Foot Taiyin"
     ],
-    "exam_pearl": "★ 中府為肺之募穴（手足太陰交會穴）。宣肺理氣、治咳嗽氣喘與胸痛第一要穴。向外斜刺0.5-0.8寸，⚠️ 嚴禁向內深刺以免刺傷肺臟致氣胸。",
+    "exam_pearl": "★ 中府為肺之募穴（手足太陰交會穴）。宣肺理氣、治咳嗽氣喘與胸痛第一要穴。向外斜刺0.5-0.8寸，⚠️ 嚴禁向內深刺以免刺傷肺臟致氣胸。與 LU2 的分工：兩穴都在鎖骨下，但 LU2 更常單純當肩部局部穴用。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "field_sources": {
       "acumethod_zh": [
@@ -34192,6 +34329,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p1"
       ]
     },
     "exam_star": 1,
@@ -34514,6 +34654,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p1"
       ]
     },
     "related_conditions": [
@@ -35470,6 +35613,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p1",
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p4"
       ]
     },
     "exam_star": 1,
@@ -35869,6 +36016,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p2"
       ]
     },
     "related_conditions": [
@@ -36229,6 +36379,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p3"
       ]
     },
     "exam_star": 1,
@@ -36589,6 +36742,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p3"
       ]
     },
     "compare_with": [
@@ -37206,7 +37362,7 @@
       "Fire point",
       "Moxibustion applicable"
     ],
-    "exam_pearl": "★ 魚際為滎穴（火）。清肺熱、利咽喉與治失音暴喑第一要穴（「咽喉腫痛尋魚際」）。直刺0.5-0.8寸。",
+    "exam_pearl": "★ 魚際為滎穴（火）。清肺熱、利咽喉與治失音暴喑第一要穴（「咽喉腫痛尋魚際」）。直刺0.5-0.8寸。與 LU5（合穴）的分工：LU10 偏清而急，主咽痛；LU5 偏降而廣，主水道與痹痛。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "field_sources": {
       "acumethod_zh": [
@@ -37240,7 +37396,8 @@
       ],
       "exam_pearl": [
         "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p4",
-        "eLotus CORE"
+        "eLotus CORE",
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p2"
       ],
       "exam_pearl_en": [
         "eLotus CORE / MasterTungAcupuncture.org"
@@ -37261,6 +37418,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p4"
       ]
     },
     "exam_star": 1,
@@ -37660,6 +37820,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf#p1"
       ]
     },
     "exam_star": 1,
@@ -37729,6 +37892,16 @@
     "examStar": 1,
     "tcm_pattern_ids": [
       "pattern.wind_heat"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "LI1",
+          "LU11"
+        ],
+        "axis": "井穴放血分工",
+        "note": "與 LU11 少商同為井穴放血穴，一在食指一在拇指：LI1 偏牙痛咽痛，LU11 偏極度咽痛與中風昏迷"
+      }
     ]
   },
   {
@@ -38005,6 +38178,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf#p2"
       ]
     },
     "related_conditions": [
@@ -38167,7 +38343,17 @@
     "examPearl": "★ 內關為絡穴（通三焦經）、八脈交會穴（通陰維脈）、六總穴之一（胸脅內關謀）。寬胸理氣、和胃降逆止嘔、寧心安神第一要穴。直刺0.5-1.0寸，注意避開正中神經。",
     "examPearlEn": "★ Neiguan is the Luo-Connecting, Confluent point of Yin Wei Mai, and Command point for chest & hypochondrium. Primary point for nausea, vomiting, chest oppression, and insomnia. Perpendicular 0.5-1.0 inch; avoid median nerve.",
     "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "PC6",
+          "PC3"
+        ],
+        "axis": "急慢性心症分工",
+        "note": "課件：Similar to PC 3 but more for Chronic Heart symptoms from Qi stagnation —— 內關與曲澤相近，但更偏氣滯所致的慢性心症。"
+      }
+    ]
   },
   {
     "code": "SI1",
@@ -44362,6 +44548,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ]
     },
     "point_identity_zh": [
@@ -44376,7 +44565,7 @@
       "Yuan Source Point",
       "Moxibustion Applicable"
     ],
-    "exam_pearl": "★ 太白為輸穴、原穴（土/本穴）。大補脾胃、健脾化濕與腹痛腹瀉第一要穴（「健脾第一穴太白」）。直刺0.5-0.8寸。",
+    "exam_pearl": "★ 太白為輸穴、原穴（土/本穴）。大補脾胃、健脾化濕與腹痛腹瀉第一要穴（「健脾第一穴太白」）。直刺0.5-0.8寸。與 SP4 公孫分工：太白補脾之本，公孫調衝脈與心胸。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "related_conditions": [
       "cond.cervical_spondylosis",
@@ -44712,6 +44901,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ]
     },
     "related_conditions": [
@@ -45324,7 +45516,8 @@
       ],
       "exam_pearl": [
         "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2",
-        "eLotus CORE"
+        "eLotus CORE",
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ],
       "exam_pearl_en": [
         "eLotus CORE / MasterTungAcupuncture.org"
@@ -45346,6 +45539,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2",
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
       ]
     },
     "point_identity_zh": [
@@ -45360,7 +45557,7 @@
       "Contraindicated during pregnancy",
       "⚠️"
     ],
-    "exam_pearl": "★ 三陰交為足三陰經（脾肝腎）交會穴。全身婦科、科泌尿、消化與失眠第一要穴（「婦科第一要穴三陰交」）。直刺0.8-1.0寸。⚠️ 孕婦嚴禁針刺！",
+    "exam_pearl": "★ 三陰交為足三陰經（脾肝腎）交會穴。全身婦科、科泌尿、消化與失眠第一要穴（「婦科第一要穴三陰交」）。直刺0.8-1.0寸。⚠️ 孕婦嚴禁針刺！與 ST36 分工：足三里補氣，三陰交補陰血、調下焦。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "related_conditions": [
       "cond.endometriosis",
@@ -46880,7 +47077,8 @@
       ],
       "exam_pearl": [
         "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3",
-        "eLotus CORE"
+        "eLotus CORE",
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ],
       "exam_pearl_en": [
         "eLotus CORE / MasterTungAcupuncture.org"
@@ -46902,6 +47100,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
       ]
     },
     "point_identity_zh": [
@@ -46912,7 +47113,7 @@
       "Good for Blood conditions",
       "Moxibustion Applicable"
     ],
-    "exam_pearl": "★ 血海為涼血活血第一要穴（「治風先治血，血行風自滅」）。主治蕁麻疹、濕疹、皮膚瘙癢與痛經崩漏。直刺0.8-1.5寸。",
+    "exam_pearl": "★ 血海為涼血活血第一要穴（「治風先治血，血行風自滅」）。主治蕁麻疹、濕疹、皮膚瘙癢與痛經崩漏。直刺0.8-1.5寸。與 SP6 分工：血海治血，三陰交調三陰經。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "related_conditions": [
       "cond.endometriosis",
@@ -47514,6 +47715,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p4"
       ]
     },
     "functions": "理氣止痛，溫陽固本",
@@ -47568,7 +47772,17 @@
     ],
     "examPearl": "★ 安全考點：本穴外側就是**髂外動脈搏動處**，課件直接寫 Avoid Artery。定位在恥骨聯合上緣水平、旁開任脈 3.5 吋 —— 這個 3.5 吋是脾經腹部唯一不是 4 吋的一穴。",
     "examPearlEn": "★ ：****， Avoid Artery。、 3.5  ——  3.5  4 。",
-    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）"
+    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "compare_with": [
+      {
+        "codes": [
+          "SP13",
+          "SP12"
+        ],
+        "axis": "動脈安全性",
+        "note": "與 SP12 衝門僅相距 0.7 吋，主治高度重疊（都治疝氣與少腹痛），差別在 SP12 要避動脈、SP13 不用"
+      }
+    ]
   },
   {
     "code": "SP13",
@@ -47774,6 +47988,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p4"
       ]
     },
     "functions": "溫中理氣，健脾止瀉",
@@ -47819,7 +48036,17 @@
     ],
     "examPearl": "課件只給兩條功效，是脾經最簡的穴之一。與 SP12 衝門僅相距 0.7 吋，主治高度重疊（都治疝氣與少腹痛），差別在 SP12 要避動脈、SP13 不用。",
     "examPearlEn": "，。 SP12  0.7 ，（）， SP12 、SP13 。",
-    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）"
+    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "compare_with": [
+      {
+        "codes": [
+          "SP13",
+          "SP12"
+        ],
+        "axis": "動脈安全性",
+        "note": "與 SP12 衝門僅相距 0.7 吋，主治高度重疊（都治疝氣與少腹痛），差別在 SP12 要避動脈、SP13 不用"
+      }
+    ]
   },
   {
     "code": "SP14",
@@ -48263,6 +48490,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
     },
     "point_identity_zh": [
@@ -49281,6 +49511,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p5"
       ]
     },
     "functions": "寬胸理氣，宣肺止痛",
@@ -49320,7 +49553,17 @@
     ],
     "examPearl": "SP19 胸鄉與 SP20 周榮功效完全相同（調氣降逆、寬胸），差別只在肋間隙：胸鄉第 3、周榮第 2。由下而上數：SP18 第 4、SP19 第 3、SP20 第 2 —— 這個序列是定位考點。",
     "examPearlEn": "SP19  SP20 （、），： 3、 2。：SP18  4、SP19  3、SP20  2 —— 。",
-    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）"
+    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "compare_with": [
+      {
+        "codes": [
+          "SP19",
+          "SP20"
+        ],
+        "axis": "肋間定位差別",
+        "note": "SP19 胸鄉與 SP20 周榮功效完全相同（調氣降逆、寬胸），差別只在肋間隙：胸鄉第 3、周榮第 2"
+      }
+    ]
   },
   {
     "code": "SP20",
@@ -49523,6 +49766,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p5"
       ]
     },
     "functions": "宣肺止咳，寬胸降氣",
@@ -49571,7 +49817,17 @@
     ],
     "examPearl": "脾經最高的一個肋間穴（第 2 肋間）。功效與 SP19 相同，但課件多給了「咳嗽、呃逆」—— 位置越高越靠近肺，降逆止咳的用法越明顯。",
     "examPearlEn": "（ 2 ）。 SP19 ，「、」—— ，。",
-    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）"
+    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "compare_with": [
+      {
+        "codes": [
+          "SP19",
+          "SP20"
+        ],
+        "axis": "肋間定位差別",
+        "note": "SP19 胸鄉與 SP20 周榮功效完全相同（調氣降逆、寬胸），差別只在肋間隙：胸鄉第 3、周榮第 2"
+      }
+    ]
   },
   {
     "code": "SP21",
@@ -50088,6 +50344,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p1"
       ]
     },
     "related_conditions": [
@@ -50411,6 +50670,9 @@
       ],
       "tcm_pattern_ids": [
         "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p1"
       ]
     },
     "point_identity_zh": [
@@ -51696,13 +51958,16 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p1"
       ]
     },
     "point_identity_zh": [
       "鬼穴",
       "可灸"
     ],
-    "exam_pearl": "★ 頰車為下頜關節、齒痛、面癱與腮腺炎第一要穴（「牙痛面癱尋頰車」）。直刺0.3-0.5寸或向地倉方向透刺。",
+    "exam_pearl": "★ 頰車為下頜關節、齒痛、面癱與腮腺炎第一要穴（「牙痛面癱尋頰車」）。直刺0.3-0.5寸或向地倉方向透刺。與 ST7 分工：ST6 主下頜與後臼齒，ST7 主上頜與顳顎關節。",
     "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "related_conditions": [
       "cond.tmd",
@@ -52058,6 +52323,9 @@
       ],
       "tcm_pattern_ids": [
         "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p1"
       ]
     },
     "related_conditions": [
@@ -52725,6 +52993,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p2"
       ]
     },
     "point_identity_zh": [
@@ -56068,6 +56339,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p3"
       ]
     },
     "point_identity_zh": [
@@ -56352,6 +56626,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p3"
       ]
     },
     "compare_with": [
@@ -57221,6 +57498,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
     },
     "point_identity_zh": [
@@ -58108,6 +58388,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p4"
       ]
     },
     "point_identity_zh": [
@@ -58427,6 +58710,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p4"
       ]
     },
     "compare_with": [
@@ -58765,6 +59051,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p4"
       ]
     },
     "point_identity_zh": [
@@ -60573,6 +60862,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
     },
     "point_identity_zh": [
@@ -63927,6 +64219,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p58"
       ]
     },
     "related_conditions": [
@@ -64032,6 +64327,16 @@
       "pattern.wind_cold",
       "pattern.wind_heat",
       "pattern.wind_damp_exterior"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "TE6",
+          "TE5"
+        ],
+        "axis": "清熱強度",
+        "note": "課件：SJ 6: Clear heat [better than SJ 5] —— 脅肋痛清熱取支溝勝外關。"
+      }
     ]
   },
   {
@@ -72874,6 +73179,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p61"
       ]
     },
     "related_conditions": [
@@ -72954,7 +73262,17 @@
     "examPearl": "★ 神闕為臍中要穴。⚠️ 禁針（嚴禁針刺）！隔鹽/隔薑灸溫陽救逆、治中風脫證與虛寒腹瀉第一要穴。",
     "examPearlEn": "★ Shenque is the navel point. ⚠️ NEEDLING IS CONTRAINDICATED! Moxibustion with salt/ginger is the primary method for warming Yang and rescuing from collapse.",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "compare_with": [
+      {
+        "codes": [
+          "CV8",
+          "GV4"
+        ],
+        "axis": "灸法分工（脫垂 vs 陽痿）",
+        "note": "課件：Differentiation REN 8/DU 4 — Organ Prolapse: Moxa REN 8 better than Moxa DU 4; Male ED: Moxa DU 4 —— 臟器脫垂灸神闕優於命門，陽痿灸命門。"
+      }
+    ]
   },
   {
     "code": "CV9",
@@ -73453,6 +73771,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Techniques 3 points.pdf#p15"
       ]
     },
     "action_tags": [
@@ -73507,7 +73828,17 @@
     "exam_star": 1,
     "examStar": 1,
     "exam_pearl_en": "High-Yield Board Pearl (CV10 Xiawan): **Conception Vessel (Ren Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (CV10 Xiawan): **Conception Vessel (Ren Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (CV10 Xiawan): **Conception Vessel (Ren Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "CV12",
+          "CV10"
+        ],
+        "axis": "中焦 vs 下焦分工",
+        "note": "課件：REN 12 is useful for middle warmer issues and REN 10 is useful for lower warmer issues —— 中脘主中、下脘主下。"
+      }
+    ]
   },
   {
     "code": "CV11",
@@ -73998,6 +74329,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Techniques 3 points.pdf#p15"
       ]
     },
     "functions": "和胃降逆，理氣化痰",
@@ -74066,7 +74400,17 @@
     "exam_star": 1,
     "examStar": 1,
     "exam_pearl_en": "High-Yield Board Pearl (CV13 Shangwan): **Conception Vessel (Ren Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (CV13 Shangwan): **Conception Vessel (Ren Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (CV13 Shangwan): **Conception Vessel (Ren Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "CV13",
+          "CV12"
+        ],
+        "axis": "上焦 vs 中焦分工",
+        "note": "課件：REN 13 is useful for upper warmer issues (vomiting, hiatal hernia, hiccups, epigastric pain), whereas REN 12 is useful for middle warmer issues —— 上脘主上、中脘主中。"
+      }
+    ]
   },
   {
     "code": "CV14",
@@ -77845,6 +78189,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p61"
       ]
     },
     "related_conditions": [
@@ -77907,6 +78254,16 @@
       "pattern.yang_deficiency",
       "pattern.shao_yin_cold_transformation",
       "pattern.uterus_deficiency_cold"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "CV8",
+          "GV4"
+        ],
+        "axis": "灸法分工（脫垂 vs 陽痿）",
+        "note": "課件：Differentiation REN 8/DU 4 — Organ Prolapse: Moxa REN 8 better than Moxa DU 4; Male ED: Moxa DU 4 —— 臟器脫垂灸神闕優於命門，陽痿灸命門。"
+      }
     ]
   },
   {
@@ -79611,6 +79968,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf#p3"
       ]
     },
     "functions": "清心安神，宣肺止痛",
@@ -79654,7 +80014,17 @@
     "examImportance": "NCCAOM / US Acupuncture Board Exam Focus",
     "exam_pearl_en": "High-Yield Board Pearl (GV11 Shendao): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (GV11 Shendao): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "GV11",
+          "GV12"
+        ],
+        "axis": "心肺虛實分工",
+        "note": "課件：Differentiation — DU 11: mostly for HT & LU deficiency; DU 12: more for excess of HT & LU —— 神道偏心肺之虛，身柱偏心肺之實。"
+      }
+    ]
   },
   {
     "code": "GV12",
@@ -79853,6 +80223,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf#p3"
       ]
     },
     "point_identity_zh": [
@@ -79892,7 +80265,17 @@
     "exam_star": 1,
     "examStar": 1,
     "exam_pearl_en": "High-Yield Board Pearl (GV12 Shenzhu): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (GV12 Shenzhu): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (GV12 Shenzhu): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "GV11",
+          "GV12"
+        ],
+        "axis": "心肺虛實分工",
+        "note": "課件：Differentiation — DU 11: mostly for HT & LU deficiency; DU 12: more for excess of HT & LU —— 神道偏心肺之虛，身柱偏心肺之實。"
+      }
+    ]
   },
   {
     "code": "GV13",
@@ -82104,6 +82487,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf#p5"
       ]
     },
     "functions": "宣肺通鼻，清頭明目，寧神止痛",
@@ -82152,7 +82538,17 @@
     "examPearl": "★ 上星為宣肺通鼻第一要穴（「上星通鼻治鼻淵」）。主治鼻塞、鼻淵、鼻衄與前頭痛。平刺0.3-0.5寸。",
     "examPearlEn": "★ Shangxing is the primary point for nasal congestion, sinusitis, epistaxis, and frontal headache. Transverse 0.3-0.5 inch.",
     "examStar": 1,
-    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients."
+    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
+    "compare_with": [
+      {
+        "codes": [
+          "GV23",
+          "GV24"
+        ],
+        "axis": "鼻病 vs 頭痛",
+        "note": "課件：Differentiation: DU 23 is more for nose problems whereas DU 24 is more for headaches —— 上星偏鼻病，神庭偏頭痛。"
+      }
+    ]
   },
   {
     "code": "GV24",
@@ -82383,6 +82779,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf#p5"
       ]
     },
     "point_identity_zh": [
@@ -82435,6 +82834,16 @@
     "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
     "related_conditions": [
       "cond.poor_memory"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "GV23",
+          "GV24"
+        ],
+        "axis": "鼻病 vs 頭痛",
+        "note": "課件：Differentiation: DU 23 is more for nose problems whereas DU 24 is more for headaches —— 上星偏鼻病，神庭偏頭痛。"
+      }
     ]
   },
   {
@@ -89936,6 +90345,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf#p5"
       ]
     },
     "action_tags": [
@@ -89987,7 +90399,17 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (GB27 Wushu): **Foot Shaoyang Gallbladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (GB27 Wushu): **Foot Shaoyang Gallbladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (GB27 Wushu): **Foot Shaoyang Gallbladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "GB28",
+          "GB27"
+        ],
+        "axis": "男科分工",
+        "note": "課件：GB 27 is used more for male issues: testicular pain a/or retraction, lower abdominal pain, shan disorder —— 男科（睪丸痛、疝氣）多用五樞，維道偏帶下與子宮脫垂。"
+      }
+    ]
   },
   {
     "code": "GB28",
@@ -90198,6 +90620,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf#p5"
       ]
     },
     "action_tags": [
@@ -90252,7 +90677,17 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (GB28 Weidao): **Foot Shaoyang Gallbladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (GB28 Weidao): **Foot Shaoyang Gallbladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (GB28 Weidao): **Foot Shaoyang Gallbladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "GB28",
+          "GB27"
+        ],
+        "axis": "男科分工",
+        "note": "課件：GB 27 is used more for male issues: testicular pain a/or retraction, lower abdominal pain, shan disorder —— 男科（睪丸痛、疝氣）多用五樞，維道偏帶下與子宮脫垂。"
+      }
+    ]
   },
   {
     "code": "GB29",
@@ -94801,6 +95236,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf#p2"
       ]
     },
     "related_conditions": [
@@ -94870,6 +95308,16 @@
     "examStar": 1,
     "tcm_pattern_ids": [
       "pattern.blood_heat"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "PC6",
+          "PC3"
+        ],
+        "axis": "急慢性心症分工",
+        "note": "課件：Similar to PC 3 but more for Chronic Heart symptoms from Qi stagnation —— 內關與曲澤相近，但更偏氣滯所致的慢性心症。"
+      }
     ]
   },
   {
@@ -96085,6 +96533,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/5 HEART CHANNEL OF HAND SHAO YIN.pdf#p2"
       ]
     },
     "related_conditions": [
@@ -96179,6 +96630,16 @@
       "pattern.stomach_fire",
       "pattern.fire",
       "pattern.ying_stage_heat"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "HT9",
+          "PC8"
+        ],
+        "axis": "情志與心火口瘡",
+        "note": "課件：Emotional disorders (PC 8 might be better)；Heart Fire affecting mouth: Ulcers, canker sores, etc. (PC 7 or PC 8 may be better) —— 情志病與心火口瘡，勞宮可能優於少衝。"
+      }
     ]
   },
   {
@@ -97065,6 +97526,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p101"
       ]
     },
     "related_conditions": [
@@ -97165,7 +97629,17 @@
     "examPearl": "★ 行間為滎穴（火/子穴）。瀉肝火、清頭目、高血壓與痛經第一要穴（「瀉肝火尋行間」）。斜刺0.3-0.5寸。",
     "examPearlEn": "★ Xingjian is the Ying-Spring (Fire, Child/Sedation) point. Primary point for draining Liver Fire, headache, hypertension, and dysmenorrhea. Oblique 0.3-0.5 inch.",
     "examStar": 1,
-    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients."
+    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
+    "compare_with": [
+      {
+        "codes": [
+          "LR2",
+          "GB34"
+        ],
+        "axis": "清肝熱方式",
+        "note": "課件：LV 2: Heat [Clear better LV heat, doesn’t drain turbid yang]；GB 34: Heat [More balancing, drains turbid yang] —— 行間清肝熱較好但不瀉濁陽，陽陵泉較平衡且瀉濁陽。"
+      }
+    ]
   },
   {
     "code": "LR4",
@@ -100230,6 +100704,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p1"
       ]
     },
     "compare_with": [
@@ -100581,6 +101058,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p1"
       ]
     },
     "point_identity_zh": [
@@ -100657,7 +101137,17 @@
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (TE2 Yemen): **Ying-Spring point, Water point (Five-Shu)**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (TE2 Yemen): **Ying-Spring point, Water point (Five-Shu)**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients."
+    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
+    "compare_with": [
+      {
+        "codes": [
+          "TE2",
+          "TE3"
+        ],
+        "axis": "臨床使用頻率",
+        "note": "課件：Similar to SJ 3 (used more clinically) —— 液門與中渚作用相近，臨床多用中渚。"
+      }
+    ]
   },
   {
     "code": "TE3",
@@ -100942,6 +101432,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p1"
       ]
     },
     "compare_with": [
@@ -100952,6 +101445,14 @@
         ],
         "axis": "臨床使用頻率",
         "note": "課件：Similar to SJ3 (used more clinically) —— 關沖與中渚作用相近，臨床多用中渚。"
+      },
+      {
+        "codes": [
+          "TE2",
+          "TE3"
+        ],
+        "axis": "臨床使用頻率",
+        "note": "課件：Similar to SJ 3 (used more clinically) —— 液門與中渚作用相近，臨床多用中渚。"
       }
     ],
     "point_identity_zh": [
@@ -101613,6 +102114,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p58"
       ]
     },
     "related_conditions": [
@@ -101708,7 +102212,17 @@
     "examPearl": "★ 支溝為便秘、脅肋痛與暴喑第一要穴（「便秘脅痛首選支溝」）。直刺0.8-1.0寸。",
     "examPearlEn": "★ Zhigou is the primary point on the body for constipation, hypochondriac pain, and sudden loss of voice. Perpendicular 0.8-1.0 inch.",
     "examStar": 1,
-    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients."
+    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
+    "compare_with": [
+      {
+        "codes": [
+          "TE6",
+          "TE5"
+        ],
+        "axis": "清熱強度",
+        "note": "課件：SJ 6: Clear heat [better than SJ 5] —— 脅肋痛清熱取支溝勝外關。"
+      }
+    ]
   },
   {
     "code": "TE7",
