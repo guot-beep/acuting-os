@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-08-07",
+  "updated_at": "2026-08-19",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -17,30 +17,23 @@
   ],
   "layers": {
     "conditions": {
-      "defects": 577,
+      "defects": 376,
       "by_code": {
-        "C10": 189,
-        "C5": 292,
-        "C4": 95,
-        "C9": 1
+        "C10": 151,
+        "C5": 154,
+        "C4": 71
       },
       "doc": "docs/CONDITION_CARD_TEMPLATE.md"
     },
     "patterns": {
-      "defects": 220,
-      "by_code": {
-        "P1": 43,
-        "P4": 42,
-        "P5": 134,
-        "P7": 1
-      },
+      "defects": 0,
+      "by_code": {},
       "doc": "docs/PATTERN_CARD_TEMPLATE.md"
     },
     "tdis": {
-      "defects": 103,
+      "defects": 75,
       "by_code": {
-        "T4": 75,
-        "T10": 28
+        "T4": 75
       },
       "doc": "docs/TDIS_CARD_TEMPLATE.md"
     },
@@ -50,7 +43,7 @@
       "doc": "docs/SYMPTOM_CARD_TEMPLATE.md"
     },
     "naming": {
-      "defects": 1,
+      "defects": 0,
       "doc": "DECISIONS.md D3"
     }
   }

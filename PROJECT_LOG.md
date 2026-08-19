@@ -1,3 +1,38 @@
+# 2026-08-19 Claude — 第二輪(PR #62):C10 假填重填 wave 1、加減表抽盡、方歌批3、瀉心湯善後
+
+- **做了什麼**:PR #60 合併後分支自 main 重建。瀉心湯身分裁定(Ting 授權):卡上為半夏瀉心湯內容(逐欄機器驗證與正卡逐字相同)→ 依方名重建為《金匱》瀉心湯(大黃黃連黃芩),原值逐字存 correction_note(已隨 #60 合併)。
+  本輪:C10/C5 重填 wave 1 —— 18 個病症卡的全庫共用樣板 etiology/western_pathology 以課件真內容替換(工作流編排:逐卡抽取帶 verbatim evidence quotes + 逐卡對抗驗證;15 卡直接過、3 卡依驗證意見修正、cond.anxiety 誠實 not covered);
+  加減表 wave 3(驗證版)6 方 26 列,另 24 方逐一查證課件無自屬表——國考方課件加減表抽盡;方歌批 3 再 11 首。
+- **數字 before→after**:conditions blocking `447→376`(C10 189→154、C5 187→151,68 欄寫入);有加減 `60→66/221`;方歌已填 `98→109/221`;formula/tdis/其餘各線維持 PASS/持平;ratchet 全數鎖定。
+- **驗證**:每批 build-data + 該線 validator + content-junk + no-loss --save + ratchet;CI green validators 全程綠。
+- **已知未解/STOP**:紅旗(C4 71 + T4 75)仍卡 egress 403(medlineplus/nih/cdc);C10 剩 154(無課件覆蓋之 ~80 記錄)與 C5 剩 151 待 fill line 取源;heart_failure/recurrent_uti 中文錯置未動;方歌累計 71 首與方族 36 條待 Ting 抽讀複核。
+
+# 2026-08-19 Claude — 全系統優化長跑:formula 線 87→0、conditions 553→447、tdis 103→75、雙語對齊與課件回填
+
+- **做了什麼**:Ting 指示全方位自動優化。以驗證器缺陷數為主軸,25 個 commit 分批推進(每批獨立驗證、獨立 push,PR #60)。
+  方劑線:玉女煎重複卡合併(nv/nu,同 1ae5f49 手法);葛根湯組成+功效誤植為升麻葛根湯 → 依《傷寒論》重建;
+  柴胡桂枝湯/柴胡加龍牡湯/瓜蔞薤白半夏湯/橘皮竹茹湯 1 味截斷 → 從庫內藥列重建;8 方 composition_suspect 逐味核對清旗;
+  21 張新藥卡補中藥庫缺口(粳米/犀角→水牛角走 alias、青木香/穿山甲禁用帶藥典/CITES 出處與 safety_flags、酒/雞子黃/碧玉散成方入藥註明);
+  17 卡 30 條假中文功效(「調和陽與陽」類)依卡上英文重寫;138 組雙語欄位聯集對齊(原文逐字保留,machine-checked);
+  定喘湯/桃紅四物湯/玉女煎式文章傾倒 → 先搬 notes_zh 再改欄;60 首湯頭歌訣、41 筆出典(curriculum Source 行抽取)、
+  11 個方族 36 子方、41 方加減表 181 列(課件逐列抽取)。條件/病名線:C9 清零、105 欄 _en 翻譯(避開 C10 假填)、
+  223 條證型連結接上(alias map 限定)、tdis T10 拆分 14 筆、32 張病名卡由課件萃取補全。
+  基建:relation-registry R4 路徑宣告修正(differential_patterns[].pattern_id)、ratchet 分批鎖低。
+  另修 OCR/亂碼:酸棗仁湯歌 popular→仁、心山失養→心神失養、補牌→補脾、潰膩→滋膩、開盛→正盛、未哀→未衰、SP6 科泌尿、四物湯/天王補心丹 U+FFFD。
+- **數字 before→after**(每個都可一行指令重現):validate-formula-standard blocking `87→0`;中英未對齊 `144→2`(剩 2 = 瀉心湯身分問題);
+  缺字 `2→0`;中文誤置 _en `8→2`;有出典 `96→137`;有加減 `18→60`;方劑家族 `9→20`;尚無方歌 `183→123`;
+  naming `1→0`;comparison C8 `缺2→0`;relation-registry `FAIL→PASS`;conditions `553→447`(C9 1→0、C5 292→187);
+  patterns ratchet `220→0` 鎖定;tdis `103→75`(T10 28→0)、索引空卡 N2 `75→43`;herb 庫 `330→352` records(結構 PASS)。
+- **驗證**:formula/herb/pattern/comparison/song/naming/relation-registry/content-junk 全 PASS;check-formula-no-loss --save 每批 PASS;
+  ratchet PASS(conditions 447、tdis 75 鎖定)。CI green validators 於 formula 歸零後轉綠(PR mergeable_state clean)。
+- **已知未解/STOP(需 Ting)**:①conditions C4(71)+ tdis T4(75)紅旗:白名單 medlineplus/nih/cdc 被本環境 egress 403 擋死,
+  規格禁換站禁虛構,7 個抓源代理全數 not_found(嘗試 URL 已記錄);環境 allowlist 放行後可原樣重跑。
+  ②C10(189)+C5 剩餘(187,多數壓在 C10 假填中文上)+ heart_failure/recurrent_uti 中文錯置:需 fill line 重新取源。
+  ③formula.xie_xin_tang 身分:名瀉心湯、組成/證型/EN 是半夏瀉心湯(另有正卡)、actions_zh 是三黃瀉心湯式,待裁定。
+  ④build-compare-with 4 筆 note 錨定失效(ST6/SP3/SP6/SP10,pearl 已改寫)。
+  ⑤更正:「加減 wave 1」commit 訊息誤列批 A 方名,實際批 A 套用 11 方(香蘇散 人參敗毒散 竹葉石膏湯 涼膈散 清營湯 清胃散 瀉白散 芍藥湯 白頭翁湯 當歸六黃湯 大承氣湯);
+  「出典」commit 訊息寫 43/139,實為 41 筆/137。
+
 # 2026-08-12 Claude — 方劑組成樣板句清除:錯置的甘草功效「健脾和中，調和諸藥。」
 
 - **做了什麼**:`scripts/fix-formula-boilerplate-gancao.js` 清除被匯入樣板蓋到**非甘草**藥味上的
