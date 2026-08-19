@@ -1,543 +1,556 @@
 {
-  "dataset": "TraditionalDisease registry (中醫病名, per CONDITIONS_MODULE_DESIGN)",
-  "policy": "Draft registry of standard TCM disease names (中醫內科學/婦科學/外科學 chapter level). Ids are permanent. related_* back-links filled by validation pass in E3.",
-  "created": "2026-07-12",
-  "records": [
-    {
-      "id": "tdis.gan_mao",
-      "name_zh": "感冒",
-      "pinyin": "Ganmao",
-      "name_en": "Common Cold (TCM)",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
-      "key_manifestation_ids": [
-        "sym.fever"
-      ]
-    },
-    {
-      "id": "tdis.ke_sou",
-      "name_zh": "咳嗽",
-      "pinyin": "Kesou",
-      "name_en": "Cough",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
-    },
-    {
-      "id": "tdis.xiao_bing",
-      "name_zh": "哮病",
-      "pinyin": "Xiaobing",
-      "name_en": "Wheezing Disease",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
-    },
-    {
-      "id": "tdis.chuan_zheng",
-      "name_zh": "喘證",
-      "pinyin": "Chuanzheng",
-      "name_en": "Dyspnea Pattern Disease",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
-    },
-    {
-      "id": "tdis.bi_qiu",
-      "name_zh": "鼻鼽",
-      "pinyin": "Biqiu",
-      "name_en": "Allergic Rhinorrhea",
-      "taxonomy_id": "tdx.ent.nose"
-    },
-    {
-      "id": "tdis.bi_yuan",
-      "name_zh": "鼻淵",
-      "pinyin": "Biyuan",
-      "name_en": "Deep-Source Nasal Congestion",
-      "taxonomy_id": "tdx.ent.nose"
-    },
-    {
-      "id": "tdis.ru_e",
-      "name_zh": "乳蛾",
-      "pinyin": "Ru'e",
-      "name_en": "Tonsillar Swelling",
-      "taxonomy_id": "tdx.ent.throat"
-    },
-    {
-      "id": "tdis.wei_tong",
-      "name_zh": "胃痛",
-      "pinyin": "Weitong",
-      "name_en": "Stomach Pain",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.pi_man",
-      "name_zh": "痞滿",
-      "pinyin": "Piman",
-      "name_en": "Glomus and Fullness",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.ou_tu",
-      "name_zh": "嘔吐",
-      "pinyin": "Outu",
-      "name_en": "Vomiting",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.tun_suan",
-      "name_zh": "吞酸",
-      "pinyin": "Tunsuan",
-      "name_en": "Acid Regurgitation",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.e_ni",
-      "name_zh": "呃逆",
-      "pinyin": "Eni",
-      "name_en": "Hiccup",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.xie_xie",
-      "name_zh": "泄瀉",
-      "pinyin": "Xiexie",
-      "name_en": "Diarrhea",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.bian_mi",
-      "name_zh": "便秘",
-      "pinyin": "Bianmi",
-      "name_en": "Constipation",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.fu_tong",
-      "name_zh": "腹痛",
-      "pinyin": "Futong",
-      "name_en": "Abdominal Pain",
-      "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
-    },
-    {
-      "id": "tdis.xie_tong",
-      "name_zh": "脅痛",
-      "pinyin": "Xietong",
-      "name_en": "Hypochondriac Pain",
-      "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
-    },
-    {
-      "id": "tdis.huang_dan",
-      "name_zh": "黃疸",
-      "pinyin": "Huangdan",
-      "name_en": "Jaundice",
-      "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
-    },
-    {
-      "id": "tdis.zhi_chuang",
-      "name_zh": "痔瘡",
-      "pinyin": "Zhichuang",
-      "name_en": "Hemorrhoids",
-      "taxonomy_id": "tdx.surgery_dermatology.anorectal_disorders"
-    },
-    {
-      "id": "tdis.tou_tong",
-      "name_zh": "頭痛",
-      "pinyin": "Toutong",
-      "name_en": "Headache",
-      "classical_source_hint": "中醫內科學·氣血津液/腦系",
-      "key_manifestation_ids": [
-        "sym.headache"
-      ]
-    },
-    {
-      "id": "tdis.xuan_yun",
-      "name_zh": "眩暈",
-      "pinyin": "Xuanyun",
-      "name_en": "Dizziness",
-      "classical_source_hint": "中醫內科學·腦系"
-    },
-    {
-      "id": "tdis.zhong_feng",
-      "name_zh": "中風",
-      "pinyin": "Zhongfeng",
-      "name_en": "Wind-Stroke",
-      "classical_source_hint": "中醫內科學·腦系"
-    },
-    {
-      "id": "tdis.mian_tan",
-      "name_zh": "面癱／口僻",
-      "pinyin": "Miantan",
-      "name_en": "Facial Paralysis",
-      "classical_source_hint": "針灸治療學"
-    },
-    {
-      "id": "tdis.chan_zheng",
-      "name_zh": "顫證",
-      "pinyin": "Chanzheng",
-      "name_en": "Tremor Disease",
-      "classical_source_hint": "中醫內科學·腦系"
-    },
-    {
-      "id": "tdis.bu_mei",
-      "name_zh": "不寐",
-      "pinyin": "Bumei",
-      "name_en": "Insomnia",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
-    },
-    {
-      "id": "tdis.xin_ji",
-      "name_zh": "心悸",
-      "pinyin": "Xinji",
-      "name_en": "Palpitations",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
-    },
-    {
-      "id": "tdis.xiong_bi",
-      "name_zh": "胸痺",
-      "pinyin": "Xiongbi",
-      "name_en": "Chest Bi",
-      "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
-    },
-    {
-      "id": "tdis.yu_zheng",
-      "name_zh": "鬱證",
-      "pinyin": "Yuzheng",
-      "name_en": "Depression Pattern Disease",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
-    },
-    {
-      "id": "tdis.zang_zao",
-      "name_zh": "臟躁",
-      "pinyin": "Zangzao",
-      "name_en": "Visceral Agitation",
-      "classical_source": "金匱要略·婦人病脈證并治",
-      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
-    },
-    {
-      "id": "tdis.mei_he_qi",
-      "name_zh": "梅核氣",
-      "pinyin": "Meiheqi",
-      "name_en": "Plum-Pit Qi",
-      "classical_source_hint": "中醫內科學"
-    },
-    {
-      "id": "tdis.jian_wang",
-      "name_zh": "健忘",
-      "pinyin": "Jianwang",
-      "name_en": "Poor Memory",
-      "classical_source_hint": "中醫內科學·腦系"
-    },
-    {
-      "id": "tdis.xiao_ke",
-      "name_zh": "消渴",
-      "pinyin": "Xiaoke",
-      "name_en": "Wasting-Thirst",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
-    },
-    {
-      "id": "tdis.han_zheng",
-      "name_zh": "汗證",
-      "pinyin": "Hanzheng",
-      "name_en": "Sweating Disorders",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
-    },
-    {
-      "id": "tdis.xu_lao",
-      "name_zh": "虛勞",
-      "pinyin": "Xulao",
-      "name_en": "Consumptive Deficiency",
-      "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
-    },
-    {
-      "id": "tdis.fei_pang",
-      "name_zh": "肥胖",
-      "pinyin": "Feipang",
-      "name_en": "Obesity (TCM)",
-      "classical_source_hint": "中醫內科學"
-    },
-    {
-      "id": "tdis.ying_bing",
-      "name_zh": "癭病",
-      "pinyin": "Yingbing",
-      "name_en": "Goiter Disease",
-      "taxonomy_id": "tdx.surgery_dermatology.goiters_masses_tumors"
-    },
-    {
-      "id": "tdis.lin_zheng",
-      "name_zh": "淋證",
-      "pinyin": "Linzheng",
-      "name_en": "Strangury",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
-    },
-    {
-      "id": "tdis.long_bi",
-      "name_zh": "癃閉",
-      "pinyin": "Longbi",
-      "name_en": "Urinary Retention/Dribbling",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
-    },
-    {
-      "id": "tdis.shui_zhong",
-      "name_zh": "水腫",
-      "pinyin": "Shuizhong",
-      "name_en": "Edema",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
-      "key_manifestation_ids": [
-        "sym.edema"
-      ]
-    },
-    {
-      "id": "tdis.yi_niao",
-      "name_zh": "遺尿",
-      "pinyin": "Yiniao",
-      "name_en": "Enuresis",
-      "classical_source_hint": "中醫兒科/內科"
-    },
-    {
-      "id": "tdis.yi_jing",
-      "name_zh": "遺精",
-      "pinyin": "Yijing",
-      "name_en": "Seminal Emission",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
-    },
-    {
-      "id": "tdis.yang_wei",
-      "name_zh": "陽痿",
-      "pinyin": "Yangwei",
-      "name_en": "Impotence",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
-    },
-    {
-      "id": "tdis.er_ming_er_long",
-      "name_zh": "耳鳴耳聾",
-      "pinyin": "Erming Erlong",
-      "name_en": "Tinnitus and Deafness",
-      "taxonomy_id": "tdx.ent.ear"
-    },
-    {
-      "id": "tdis.yao_tong",
-      "name_zh": "腰痛",
-      "pinyin": "Yaotong",
-      "name_en": "Lumbar Pain",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
-    },
-    {
-      "id": "tdis.bi_zheng",
-      "name_zh": "痺證",
-      "pinyin": "Bizheng",
-      "name_en": "Bi Syndrome (Painful Obstruction)",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
-    },
-    {
-      "id": "tdis.wei_zheng",
-      "name_zh": "痿證",
-      "pinyin": "Weizheng",
-      "name_en": "Wei Syndrome (Atrophy-Flaccidity)",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
-    },
-    {
-      "id": "tdis.jin_shang",
-      "name_zh": "筋傷",
-      "pinyin": "Jinshang",
-      "name_en": "Sinew Injury",
-      "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders"
-    },
-    {
-      "id": "tdis.luo_zhen",
-      "name_zh": "落枕",
-      "pinyin": "Luozhen",
-      "name_en": "Stiff Neck",
-      "classical_source_hint": "針灸治療學"
-    },
-    {
-      "id": "tdis.jian_ning",
-      "name_zh": "肩凝症（漏肩風）",
-      "pinyin": "Jianning",
-      "name_en": "Frozen Shoulder",
-      "classical_source_hint": "針灸治療學"
-    },
-    {
-      "id": "tdis.tong_jing",
-      "name_zh": "痛經",
-      "pinyin": "Tongjing",
-      "name_en": "Dysmenorrhea",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.yue_jing_xian_qi",
-      "name_zh": "月經先期",
-      "pinyin": "Yuejing Xianqi",
-      "name_en": "Early Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.yue_jing_hou_qi",
-      "name_zh": "月經後期",
-      "pinyin": "Yuejing Houqi",
-      "name_en": "Delayed Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.yue_jing_guo_duo",
-      "name_zh": "月經過多",
-      "pinyin": "Yuejing Guoduo",
-      "name_en": "Heavy Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.yue_jing_guo_shao",
-      "name_zh": "月經過少",
-      "pinyin": "Yuejing Guoshao",
-      "name_en": "Scanty Menstruation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.beng_lou",
-      "name_zh": "崩漏",
-      "pinyin": "Benglou",
-      "name_en": "Flooding and Trickling",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.bi_jing",
-      "name_zh": "閉經",
-      "pinyin": "Bijing",
-      "name_en": "Amenorrhea",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.dai_xia_bing",
-      "name_zh": "帶下病",
-      "pinyin": "Daixiabing",
-      "name_en": "Vaginal Discharge Disease",
-      "taxonomy_id": "tdx.gynecology_obstetrics.leukorrhea_disorders"
-    },
-    {
-      "id": "tdis.bu_yun",
-      "name_zh": "不孕",
-      "pinyin": "Buyun",
-      "name_en": "Infertility (female)",
-      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
-    },
-    {
-      "id": "tdis.bu_yu",
-      "name_zh": "不育",
-      "pinyin": "Buyu",
-      "name_en": "Infertility (male)",
-      "taxonomy_id": "tdx.andrology.general"
-    },
-    {
-      "id": "tdis.ren_shen_e_zu",
-      "name_zh": "妊娠惡阻",
-      "pinyin": "Renshen Ezu",
-      "name_en": "Morning Sickness",
-      "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
-    },
-    {
-      "id": "tdis.tai_wei_bu_zheng",
-      "name_zh": "胎位不正",
-      "pinyin": "Taiwei Buzheng",
-      "name_en": "Fetal Malposition",
-      "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
-    },
-    {
-      "id": "tdis.que_ru",
-      "name_zh": "缺乳",
-      "pinyin": "Queru",
-      "name_en": "Insufficient Lactation",
-      "taxonomy_id": "tdx.gynecology_obstetrics.postpartum_disorders"
-    },
-    {
-      "id": "tdis.jing_duan_qian_hou",
-      "name_zh": "絕經前後諸證",
-      "pinyin": "Jingduan Qianhou Zhuzheng",
-      "name_en": "Perimenopausal Syndrome",
-      "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
-    },
-    {
-      "id": "tdis.zheng_jia",
-      "name_zh": "癥瘕",
-      "pinyin": "Zhengjia",
-      "name_en": "Abdominal Masses (gyn)",
-      "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
-    },
-    {
-      "id": "tdis.yin_zhen",
-      "name_zh": "癮疹",
-      "pinyin": "Yinzhen",
-      "name_en": "Urticaria",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
-    },
-    {
-      "id": "tdis.shi_chuang",
-      "name_zh": "濕瘡",
-      "pinyin": "Shichuang",
-      "name_en": "Eczema",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
-    },
-    {
-      "id": "tdis.she_chuan_chuang",
-      "name_zh": "蛇串瘡",
-      "pinyin": "Shechuanchuang",
-      "name_en": "Herpes Zoster",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
-    },
-    {
-      "id": "tdis.fen_ci",
-      "name_zh": "粉刺",
-      "pinyin": "Fenci",
-      "name_en": "Acne",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
-    },
-    {
-      "id": "tdis.bai_bi",
-      "name_zh": "白疕",
-      "pinyin": "Baibi",
-      "name_en": "Psoriasis",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
-    },
-    {
-      "id": "tdis.you_feng",
-      "name_zh": "油風（斑禿）",
-      "pinyin": "Youfeng",
-      "name_en": "Alopecia Areata",
-      "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
-    },
-    {
-      "id": "tdis.kou_chuang",
-      "name_zh": "口瘡",
-      "pinyin": "Kouchuang",
-      "name_en": "Mouth Ulcers",
-      "taxonomy_id": "tdx.stomatology.general"
-    },
-    {
-      "id": "tdis.ya_tong",
-      "name_zh": "牙痛",
-      "pinyin": "Yatong",
-      "name_en": "Toothache",
-      "classical_source_hint": "針灸治療學"
-    },
-    {
-      "id": "tdis.mu_yun",
-      "name_zh": "目暗昏花／視瞻昏渺",
-      "pinyin": "Muyun",
-      "name_en": "Blurred Vision",
-      "taxonomy_id": "tdx.ophthalmology.general"
-    },
-    {
-      "id": "tdis.bai_he_bing",
-      "name_zh": "百合病",
-      "pinyin": "Baihebing",
-      "name_en": "Lily Disease (restless disorder)",
-      "classical_source_hint": "金匱要略",
-      "classical_source": "金匱要略"
-    },
-    {
-      "id": "tdis.ma_mu",
-      "name_zh": "麻木",
-      "pinyin": "Mamu",
-      "name_en": "Numbness",
-      "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
-    },
-    {
-      "id": "tdis.mian_tong",
-      "name_zh": "面痛",
-      "pinyin": "Miantong",
-      "name_en": "Facial Pain",
-      "classical_source_hint": "針灸治療學"
-    }
-  ]
+ "dataset": "TraditionalDisease registry (中醫病名, per CONDITIONS_MODULE_DESIGN)",
+ "policy": "Draft registry of standard TCM disease names (中醫內科學/婦科學/外科學 chapter level). Ids are permanent. related_* back-links filled by validation pass in E3.",
+ "created": "2026-07-12",
+ "records": [
+  {
+   "id": "tdis.gan_mao",
+   "name_zh": "感冒",
+   "pinyin": "Ganmao",
+   "name_en": "Common Cold (TCM)",
+   "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
+   "key_manifestation_ids": [
+    "sym.fever"
+   ]
+  },
+  {
+   "id": "tdis.ke_sou",
+   "name_zh": "咳嗽",
+   "pinyin": "Kesou",
+   "name_en": "Cough",
+   "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+  },
+  {
+   "id": "tdis.xiao_bing",
+   "name_zh": "哮病",
+   "pinyin": "Xiaobing",
+   "name_en": "Wheezing Disease",
+   "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+  },
+  {
+   "id": "tdis.chuan_zheng",
+   "name_zh": "喘證",
+   "pinyin": "Chuanzheng",
+   "name_en": "Dyspnea Pattern Disease",
+   "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+  },
+  {
+   "id": "tdis.bi_qiu",
+   "name_zh": "鼻鼽",
+   "pinyin": "Biqiu",
+   "name_en": "Allergic Rhinorrhea",
+   "taxonomy_id": "tdx.ent.nose"
+  },
+  {
+   "id": "tdis.bi_yuan",
+   "name_zh": "鼻淵",
+   "pinyin": "Biyuan",
+   "name_en": "Deep-Source Nasal Congestion",
+   "taxonomy_id": "tdx.ent.nose"
+  },
+  {
+   "id": "tdis.ru_e",
+   "name_zh": "乳蛾",
+   "pinyin": "Ru'e",
+   "name_en": "Tonsillar Swelling",
+   "taxonomy_id": "tdx.ent.throat"
+  },
+  {
+   "id": "tdis.wei_tong",
+   "name_zh": "胃痛",
+   "pinyin": "Weitong",
+   "name_en": "Stomach Pain",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.pi_man",
+   "name_zh": "痞滿",
+   "pinyin": "Piman",
+   "name_en": "Glomus and Fullness",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.ou_tu",
+   "name_zh": "嘔吐",
+   "pinyin": "Outu",
+   "name_en": "Vomiting",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.tun_suan",
+   "name_zh": "吞酸",
+   "pinyin": "Tunsuan",
+   "name_en": "Acid Regurgitation",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.e_ni",
+   "name_zh": "呃逆",
+   "pinyin": "Eni",
+   "name_en": "Hiccup",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.xie_xie",
+   "name_zh": "泄瀉",
+   "pinyin": "Xiexie",
+   "name_en": "Diarrhea",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.bian_mi",
+   "name_zh": "便秘",
+   "pinyin": "Bianmi",
+   "name_en": "Constipation",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.fu_tong",
+   "name_zh": "腹痛",
+   "pinyin": "Futong",
+   "name_en": "Abdominal Pain",
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+  },
+  {
+   "id": "tdis.xie_tong",
+   "name_zh": "脅痛",
+   "pinyin": "Xietong",
+   "name_en": "Hypochondriac Pain",
+   "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
+  },
+  {
+   "id": "tdis.huang_dan",
+   "name_zh": "黃疸",
+   "pinyin": "Huangdan",
+   "name_en": "Jaundice",
+   "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
+  },
+  {
+   "id": "tdis.zhi_chuang",
+   "name_zh": "痔瘡",
+   "pinyin": "Zhichuang",
+   "name_en": "Hemorrhoids",
+   "taxonomy_id": "tdx.surgery_dermatology.anorectal_disorders"
+  },
+  {
+   "id": "tdis.tou_tong",
+   "name_zh": "頭痛",
+   "pinyin": "Toutong",
+   "name_en": "Headache",
+   "key_manifestation_ids": [
+    "sym.headache"
+   ],
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.xuan_yun",
+   "name_zh": "眩暈",
+   "pinyin": "Xuanyun",
+   "name_en": "Dizziness",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.zhong_feng",
+   "name_zh": "中風",
+   "pinyin": "Zhongfeng",
+   "name_en": "Wind-Stroke",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.mian_tan",
+   "name_zh": "面癱／口僻",
+   "pinyin": "Miantan",
+   "name_en": "Facial Paralysis",
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+   "classical_source": "針灸治療學"
+  },
+  {
+   "id": "tdis.chan_zheng",
+   "name_zh": "顫證",
+   "pinyin": "Chanzheng",
+   "name_en": "Tremor Disease",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.bu_mei",
+   "name_zh": "不寐",
+   "pinyin": "Bumei",
+   "name_en": "Insomnia",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+  },
+  {
+   "id": "tdis.xin_ji",
+   "name_zh": "心悸",
+   "pinyin": "Xinji",
+   "name_en": "Palpitations",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+  },
+  {
+   "id": "tdis.xiong_bi",
+   "name_zh": "胸痺",
+   "pinyin": "Xiongbi",
+   "name_en": "Chest Bi",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+  },
+  {
+   "id": "tdis.yu_zheng",
+   "name_zh": "鬱證",
+   "pinyin": "Yuzheng",
+   "name_en": "Depression Pattern Disease",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+  },
+  {
+   "id": "tdis.zang_zao",
+   "name_zh": "臟躁",
+   "pinyin": "Zangzao",
+   "name_en": "Visceral Agitation",
+   "classical_source": "金匱要略·婦人病脈證并治",
+   "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+  },
+  {
+   "id": "tdis.mei_he_qi",
+   "name_zh": "梅核氣",
+   "pinyin": "Meiheqi",
+   "name_en": "Plum-Pit Qi",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.jian_wang",
+   "name_zh": "健忘",
+   "pinyin": "Jianwang",
+   "name_en": "Poor Memory",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.xiao_ke",
+   "name_zh": "消渴",
+   "pinyin": "Xiaoke",
+   "name_en": "Wasting-Thirst",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+  },
+  {
+   "id": "tdis.han_zheng",
+   "name_zh": "汗證",
+   "pinyin": "Hanzheng",
+   "name_en": "Sweating Disorders",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+  },
+  {
+   "id": "tdis.xu_lao",
+   "name_zh": "虛勞",
+   "pinyin": "Xulao",
+   "name_en": "Consumptive Deficiency",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+  },
+  {
+   "id": "tdis.fei_pang",
+   "name_zh": "肥胖",
+   "pinyin": "Feipang",
+   "name_en": "Obesity (TCM)",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+   "classical_source": "中醫內科學"
+  },
+  {
+   "id": "tdis.ying_bing",
+   "name_zh": "癭病",
+   "pinyin": "Yingbing",
+   "name_en": "Goiter Disease",
+   "taxonomy_id": "tdx.surgery_dermatology.goiters_masses_tumors"
+  },
+  {
+   "id": "tdis.lin_zheng",
+   "name_zh": "淋證",
+   "pinyin": "Linzheng",
+   "name_en": "Strangury",
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+  },
+  {
+   "id": "tdis.long_bi",
+   "name_zh": "癃閉",
+   "pinyin": "Longbi",
+   "name_en": "Urinary Retention/Dribbling",
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+  },
+  {
+   "id": "tdis.shui_zhong",
+   "name_zh": "水腫",
+   "pinyin": "Shuizhong",
+   "name_en": "Edema",
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+   "key_manifestation_ids": [
+    "sym.edema"
+   ]
+  },
+  {
+   "id": "tdis.yi_niao",
+   "name_zh": "遺尿",
+   "pinyin": "Yiniao",
+   "name_en": "Enuresis",
+   "taxonomy_id": "tdx.pediatrics.common_miscellaneous_pediatric",
+   "classical_source": "中醫兒科學/中醫內科學"
+  },
+  {
+   "id": "tdis.yi_jing",
+   "name_zh": "遺精",
+   "pinyin": "Yijing",
+   "name_en": "Seminal Emission",
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+  },
+  {
+   "id": "tdis.yang_wei",
+   "name_zh": "陽痿",
+   "pinyin": "Yangwei",
+   "name_en": "Impotence",
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+  },
+  {
+   "id": "tdis.er_ming_er_long",
+   "name_zh": "耳鳴耳聾",
+   "pinyin": "Erming Erlong",
+   "name_en": "Tinnitus and Deafness",
+   "taxonomy_id": "tdx.ent.ear"
+  },
+  {
+   "id": "tdis.yao_tong",
+   "name_zh": "腰痛",
+   "pinyin": "Yaotong",
+   "name_en": "Lumbar Pain",
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+  },
+  {
+   "id": "tdis.bi_zheng",
+   "name_zh": "痺證",
+   "pinyin": "Bizheng",
+   "name_en": "Bi Syndrome (Painful Obstruction)",
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+  },
+  {
+   "id": "tdis.wei_zheng",
+   "name_zh": "痿證",
+   "pinyin": "Weizheng",
+   "name_en": "Wei Syndrome (Atrophy-Flaccidity)",
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+  },
+  {
+   "id": "tdis.jin_shang",
+   "name_zh": "筋傷",
+   "pinyin": "Jinshang",
+   "name_en": "Sinew Injury",
+   "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders"
+  },
+  {
+   "id": "tdis.luo_zhen",
+   "name_zh": "落枕",
+   "pinyin": "Luozhen",
+   "name_en": "Stiff Neck",
+   "taxonomy_id": "tdx.orthopedics_traumatology.spinal_disorders",
+   "classical_source": "針灸治療學"
+  },
+  {
+   "id": "tdis.jian_ning",
+   "name_zh": "肩凝症（漏肩風）",
+   "pinyin": "Jianning",
+   "name_en": "Frozen Shoulder",
+   "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders",
+   "classical_source": "針灸治療學"
+  },
+  {
+   "id": "tdis.tong_jing",
+   "name_zh": "痛經",
+   "pinyin": "Tongjing",
+   "name_en": "Dysmenorrhea",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.yue_jing_xian_qi",
+   "name_zh": "月經先期",
+   "pinyin": "Yuejing Xianqi",
+   "name_en": "Early Menstruation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.yue_jing_hou_qi",
+   "name_zh": "月經後期",
+   "pinyin": "Yuejing Houqi",
+   "name_en": "Delayed Menstruation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.yue_jing_guo_duo",
+   "name_zh": "月經過多",
+   "pinyin": "Yuejing Guoduo",
+   "name_en": "Heavy Menstruation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.yue_jing_guo_shao",
+   "name_zh": "月經過少",
+   "pinyin": "Yuejing Guoshao",
+   "name_en": "Scanty Menstruation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.beng_lou",
+   "name_zh": "崩漏",
+   "pinyin": "Benglou",
+   "name_en": "Flooding and Trickling",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.bi_jing",
+   "name_zh": "閉經",
+   "pinyin": "Bijing",
+   "name_en": "Amenorrhea",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.dai_xia_bing",
+   "name_zh": "帶下病",
+   "pinyin": "Daixiabing",
+   "name_en": "Vaginal Discharge Disease",
+   "taxonomy_id": "tdx.gynecology_obstetrics.leukorrhea_disorders"
+  },
+  {
+   "id": "tdis.bu_yun",
+   "name_zh": "不孕",
+   "pinyin": "Buyun",
+   "name_en": "Infertility (female)",
+   "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+  },
+  {
+   "id": "tdis.bu_yu",
+   "name_zh": "不育",
+   "pinyin": "Buyu",
+   "name_en": "Infertility (male)",
+   "taxonomy_id": "tdx.andrology.general"
+  },
+  {
+   "id": "tdis.ren_shen_e_zu",
+   "name_zh": "妊娠惡阻",
+   "pinyin": "Renshen Ezu",
+   "name_en": "Morning Sickness",
+   "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
+  },
+  {
+   "id": "tdis.tai_wei_bu_zheng",
+   "name_zh": "胎位不正",
+   "pinyin": "Taiwei Buzheng",
+   "name_en": "Fetal Malposition",
+   "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
+  },
+  {
+   "id": "tdis.que_ru",
+   "name_zh": "缺乳",
+   "pinyin": "Queru",
+   "name_en": "Insufficient Lactation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.postpartum_disorders"
+  },
+  {
+   "id": "tdis.jing_duan_qian_hou",
+   "name_zh": "絕經前後諸證",
+   "pinyin": "Jingduan Qianhou Zhuzheng",
+   "name_en": "Perimenopausal Syndrome",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+  },
+  {
+   "id": "tdis.zheng_jia",
+   "name_zh": "癥瘕",
+   "pinyin": "Zhengjia",
+   "name_en": "Abdominal Masses (gyn)",
+   "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+  },
+  {
+   "id": "tdis.yin_zhen",
+   "name_zh": "癮疹",
+   "pinyin": "Yinzhen",
+   "name_en": "Urticaria",
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+  },
+  {
+   "id": "tdis.shi_chuang",
+   "name_zh": "濕瘡",
+   "pinyin": "Shichuang",
+   "name_en": "Eczema",
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+  },
+  {
+   "id": "tdis.she_chuan_chuang",
+   "name_zh": "蛇串瘡",
+   "pinyin": "Shechuanchuang",
+   "name_en": "Herpes Zoster",
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+  },
+  {
+   "id": "tdis.fen_ci",
+   "name_zh": "粉刺",
+   "pinyin": "Fenci",
+   "name_en": "Acne",
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+  },
+  {
+   "id": "tdis.bai_bi",
+   "name_zh": "白疕",
+   "pinyin": "Baibi",
+   "name_en": "Psoriasis",
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+  },
+  {
+   "id": "tdis.you_feng",
+   "name_zh": "油風（斑禿）",
+   "pinyin": "Youfeng",
+   "name_en": "Alopecia Areata",
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+  },
+  {
+   "id": "tdis.kou_chuang",
+   "name_zh": "口瘡",
+   "pinyin": "Kouchuang",
+   "name_en": "Mouth Ulcers",
+   "taxonomy_id": "tdx.stomatology.general"
+  },
+  {
+   "id": "tdis.ya_tong",
+   "name_zh": "牙痛",
+   "pinyin": "Yatong",
+   "name_en": "Toothache",
+   "taxonomy_id": "tdx.stomatology.general",
+   "classical_source": "針灸治療學"
+  },
+  {
+   "id": "tdis.mu_yun",
+   "name_zh": "目暗昏花／視瞻昏渺",
+   "pinyin": "Muyun",
+   "name_en": "Blurred Vision",
+   "taxonomy_id": "tdx.ophthalmology.general"
+  },
+  {
+   "id": "tdis.bai_he_bing",
+   "name_zh": "百合病",
+   "pinyin": "Baihebing",
+   "name_en": "Lily Disease (restless disorder)",
+   "classical_source": "金匱要略",
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+  },
+  {
+   "id": "tdis.ma_mu",
+   "name_zh": "麻木",
+   "pinyin": "Mamu",
+   "name_en": "Numbness",
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+  },
+  {
+   "id": "tdis.mian_tong",
+   "name_zh": "面痛",
+   "pinyin": "Miantong",
+   "name_en": "Facial Pain",
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+   "classical_source": "針灸治療學"
+  }
+ ]
 }
