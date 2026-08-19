@@ -22,9 +22,20 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const APPLY = process.argv.includes("--apply");
 
-const HOLD = new Set(["formula.jin_suo_gu_jing_wan"]);
+/* HOLD:來源頁本身疑有訛字/簡體殘留——逐字照抄會把站方錯字釘進卡片,
+   一字裁決留 Ting(wave1 金鎖固精丸簡體;wave2 牽正散「口眼斜」破格、
+   玉女煎「叔地黃」疑熟之誤、真武湯「潤惕」通行作瞤惕)。 */
+const HOLD = new Set([
+  "formula.jin_suo_gu_jing_wan",
+  "formula.qian_zheng_san",
+  "formula.yu_nu_jian",
+  "formula.yu_nv_jian",
+  "formula.zhen_wu_tang",
+]);
 
-const LEDGER_REL = "docs/research_packs/FORMULA_SONG_PROPOSALS_2026-08-19.json";
+const LEDGER_REL = process.argv.includes("--wave2")
+  ? "docs/research_packs/FORMULA_SONG_WAVE2_2026-08-19.json"
+  : "docs/research_packs/FORMULA_SONG_PROPOSALS_2026-08-19.json";
 const ledger = JSON.parse(fs.readFileSync(path.join(ROOT, LEDGER_REL), "utf8"));
 const fdoc = JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8"));
 const formulas = fdoc.records || Object.values(fdoc).find(Array.isArray);

@@ -64318,6 +64318,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 441;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/166"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/283",
@@ -64352,7 +64355,8 @@
         "With Stomach heat → remove Ren Shen and Da Zao; add Shi Di",
         "Stomach Yin deficiency with phlegm → add Fu Ling, Ban Xia, Mai Dong and Pi Pa Ye",
         "Morning sickness → add Huang Qin and Bai Zhu"
-      ]
+      ],
+      "formula_song_zh": "橘皮竹茹治嘔逆，人參甘草棗薑益，\n胃虛有熱失和降，久病之後更相宜。"
     },
     {
       "id": "formula.xue_fu_zhu_yu_tang",
@@ -66606,6 +66610,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/58"
         ]
       },
       "cloudtcm_id": 90,
@@ -66764,7 +66771,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShengHuaTang.html",
       "taiwan_pharmacopeia_zh": "No. 150 (THP p.134)",
-      "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第4味 name_zh「Pao Jiang」→「炮薑」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 2 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）、炮薑（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第4味 name_zh「Pao Jiang」→「炮薑」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 2 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）、炮薑（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "生化湯宜產後嘗，歸芎桃草酒炮薑，\n惡露不行少腹痛，溫養活血最見長。"
     },
     {
       "id": "formula.shi_hui_san",
@@ -67170,6 +67178,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/8"
         ]
       },
       "cloudtcm_id": 573,
@@ -67275,7 +67286,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShiHuiSan.html",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：棕櫚皮（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第10味 name_zh「Zong Lu Pi」→「棕櫚皮」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：棕櫚皮（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第10味 name_zh「Zong Lu Pi」→「棕櫚皮」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
+      "formula_song_zh": "十灰散用大小薊，荷柏茅茜棕丹皮，\n山梔大黃俱為灰，上部出血此方宜。"
     },
     {
       "id": "formula.wen_jing_tang",
@@ -67850,6 +67862,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 475;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/144"
         ]
       },
       "cloudtcm_id": 249,
@@ -68166,7 +68181,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WenJingTang.html",
-      "taiwan_pharmacopeia_zh": "No. 159 (THP p.134)"
+      "taiwan_pharmacopeia_zh": "No. 159 (THP p.134)",
+      "formula_song_zh": "溫經湯用桂萸芎，歸芍丹皮薑夏冬，\n參草阿膠調氣血，暖宮祛瘀在溫通。"
     },
     {
       "id": "formula.gui_zhi_fu_ling_wan",
@@ -68432,6 +68448,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 469;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/95"
         ]
       },
       "cloudtcm_id": 189,
@@ -68465,7 +68484,8 @@
         "Phlegm-Dampness in the Middke Jiao"
       ],
       "category_zh": "祛痰劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "金匱桂枝茯苓丸，桃仁芍藥與牡丹，\n等分為末蜜丸服，緩消癥塊胎可安。"
     },
     {
       "id": "formula.ge_xia_zhu_yu_tang",
@@ -72065,6 +72085,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 574, source lines 5012,5013,5014;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/29"
         ]
       },
       "cloudtcm_id": 50,
@@ -72559,7 +72582,8 @@
           "indication_zh": "夏秋之間脾胃傷於生冷：脘腹脹痛、泄瀉、小便不利",
           "source": "curriculum 方剂学汇总 Table 574 (Wu Ling San)"
         }
-      ]
+      ],
+      "formula_song_zh": "五苓散治太陽腑，白朮澤瀉豬茯苓，\n桂枝溫通助氣化，利便解表煩渴清。"
     },
     {
       "id": "formula.zhu_ling_tang",
@@ -72944,6 +72968,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 578;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/163"
         ]
       },
       "cloudtcm_id": 273,
@@ -73184,7 +73211,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhuLingTang.html",
-      "taiwan_pharmacopeia_zh": "Yes (THP p.133)"
+      "taiwan_pharmacopeia_zh": "Yes (THP p.133)",
+      "formula_song_zh": "豬苓湯內二苓全，澤瀉阿膠滑石添；\n利水育陰兼瀉熱，溺秘心煩嘔渴痊。"
     },
     {
       "id": "formula.san_ren_tang",
@@ -73581,6 +73609,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/11"
         ]
       },
       "cloudtcm_id": 401,
@@ -73844,7 +73875,8 @@
       "tcm_pattern_ids": [
         "pattern.damp_heat",
         "pattern.summerheat_dampness"
-      ]
+      ],
+      "formula_song_zh": "三仁杏蔻薏苡仁，朴夏通草滑竹存，\n宣暢氣機清濕熱，濕重熱輕在氣分。"
     },
     {
       "id": "formula.er_miao_san",
@@ -73986,6 +74018,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 564, source lines 4933,4934,4935;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/4"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/368",
@@ -74227,7 +74262,8 @@
           "indication_zh": "濕熱下注兼陰傷：肢體沉重不適、痿弱、浮腫、麻木",
           "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
         }
-      ]
+      ],
+      "formula_song_zh": "二妙散中蒼柏兼，若云三妙牛膝添，\n四妙再加薏苡仁，濕熱下注痿痹痊。"
     },
     {
       "id": "formula.si_miao_wan",
@@ -75915,6 +75951,9 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/156(「实脾散【出处】《重订严氏济生方》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/156"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -75936,7 +75975,8 @@
       ],
       "category_zh": "祛濕劑",
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：炮薑（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含附子,actions_zh 為破碎字串(「溫中陽,健脾益氣,氣與促進於」),安全欄位不完整。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 name_zh「Pao Jiang」→「炮薑」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
-      "source_classic": "《重訂嚴氏濟生方》"
+      "source_classic": "《重訂嚴氏濟生方》",
+      "formula_song_zh": "實脾苓朮與木瓜，甘草木香大腹加，\n草果附薑兼厚朴，虛寒陰水效堪誇。"
     },
     {
       "id": "formula.fang_ji_huang_qi_tang",
@@ -76304,6 +76344,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/76"
         ]
       },
       "cloudtcm_id": 526,
@@ -76486,7 +76529,8 @@
       "category_zh": "祛濕劑",
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FangJiHuangQiTang.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FangJiHuangQiTang.html",
+      "formula_song_zh": "防己黃芪金匱方，朮甘薑棗共煎嘗，\n此治風水與風濕，身重汗出服之良。"
     },
     {
       "id": "formula.yin_chen_hao_tang",
@@ -76790,6 +76834,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/107"
         ]
       },
       "cloudtcm_id": 188,
@@ -77032,7 +77079,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/YinChenHaoTang.html",
       "taiwan_pharmacopeia_zh": "No. 140 (THP p.133)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：茵陳蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：茵陳蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "茵陳蒿湯大黃梔，瘀熱陽黃此方施，\n便難尿赤腹脹滿，功在清熱與利濕。"
     },
     {
       "id": "formula.ba_zheng_san",
@@ -77924,6 +77972,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md(「Ling Gui Zhu Gan Tang [苓桂术甘汤] (Poria, Cinnamon Twig, Atractylodis Macrocephalae, & Licoric」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/91"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/151",
@@ -77947,7 +77998,8 @@
         "Fullness in chest and hypochondrium, dizziness and palpitations"
       ],
       "category_zh": "祛濕劑",
-      "source_classic": "《傷寒論》"
+      "source_classic": "《傷寒論》",
+      "formula_song_zh": "苓桂朮甘是經方，中陽不足痰飲猖，\n悸眩咳逆胸脅滿，溫陽化飲功效彰。"
     },
     {
       "id": "formula.er_chen_tang",
@@ -80137,6 +80189,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 632;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/39"
         ]
       },
       "cloudtcm_id": 69,
@@ -80421,7 +80476,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BanXiaBaiZhuTianMaTang.html",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：天麻（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：天麻（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "半夏白朮天麻湯，苓草橘紅棗生薑，\n眩暈頭痛風痰盛，痰化風熄復正常。"
     },
     {
       "id": "formula.qing_qi_hua_tan_wan",
@@ -80776,6 +80832,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md(「# 151. 清氣化痰丸 · Qing Qi Hua Tan Wan — Classical / course source: Yi Fang Kao」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/115"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -80895,7 +80954,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/QingQiHuaTanWan.html",
       "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Dan Nan Xing」→「膽南星」、name_zh「Dan Nan Xing」→「膽南星」；第3味 herb_zh「Chao Huang Qin」→「炒黃芩」、name_zh「Chao Huang Qin」→「炒黃芩」；第5味 herb_zh「Chao Zhi Shi」→「炒枳實」、name_zh「Chao Zhi Shi」→「炒枳實」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：炒枳實（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《醫方考》"
+      "source_classic": "《醫方考》",
+      "formula_song_zh": "清氣化痰杏瓜蔞，茯苓枳芩膽星投，\n陳夏薑汁糊丸服，專治肺熱咳痰稠。"
     },
     {
       "id": "formula.xiao_xian_xiong_tang",
@@ -81582,6 +81642,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md(「# 153. 三子養親湯 · San Zi Yang Qin Tang — Classical / course source: Han Shi Yi Tong」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/10"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/25",
@@ -81727,7 +81790,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SanZiYangQinTang.html",
-      "source_classic": "《韓氏醫通》"
+      "source_classic": "《韓氏醫通》",
+      "formula_song_zh": "三子養親祛痰方，芥蘇萊菔共煎湯，\n大便實硬加熟蜜，冬寒更可加生薑。"
     },
     {
       "id": "formula.chuan_xiong_cha_tiao_san",
@@ -82122,6 +82186,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/27"
         ]
       },
       "cloudtcm_id": 45,
@@ -82266,7 +82333,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ChuanXiongChaTiaoSan.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.129)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：薄荷（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第6味 herb_zh「(Chao Xiang Fu)」→「(炒香附)」、name_zh「(Chao Xiang Fu)」→「(炒香附)」；第10味 herb_zh「Lu Cha」→「綠茶」、name_zh「Lu Cha」→「綠茶」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：荊芥（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：薄荷（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第6味 herb_zh「(Chao Xiang Fu)」→「(炒香附)」、name_zh「(Chao Xiang Fu)」→「(炒香附)」；第10味 herb_zh「Lu Cha」→「綠茶」、name_zh「Lu Cha」→「綠茶」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：荊芥（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "川芎茶調有荊防，辛芷薄荷甘草羌，\n目昏鼻塞風攻上，偏正頭痛悉能康。"
     },
     {
       "id": "formula.xiao_feng_san",
@@ -82774,6 +82842,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 509;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/102"
         ]
       },
       "cloudtcm_id": 176,
@@ -82957,7 +83028,8 @@
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XiaoFengSan.html",
       "taiwan_pharmacopeia_zh": "No. 65 (THP p.130)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：荊芥（in_formula_zh、actions_zh、role_reason_zh）、牛蒡子（actions_zh）、蟬蛻（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：荊芥（in_formula_zh、actions_zh、role_reason_zh）、牛蒡子（actions_zh）、蟬蛻（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "消風散中有荊防，蟬蛻胡麻苦參蒼，\n知膏蒡通歸地草，風疹濕疹服之康。"
     },
     {
       "id": "formula.tian_ma_gou_teng_yin",
@@ -83413,6 +83485,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 521;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/34"
         ]
       },
       "cloudtcm_id": 314,
@@ -83670,7 +83745,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/TianMaGouTengYin.html",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 5 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：天麻（in_formula_zh、actions_zh、role_reason_zh）、鉤藤（in_formula_zh、actions_zh、role_reason_zh）、石決明（in_formula_zh、actions_zh、role_reason_zh）、益母草（in_formula_zh、actions_zh、role_reason_zh）、夜交藤（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：茯神（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 5 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：天麻（in_formula_zh、actions_zh、role_reason_zh）、鉤藤（in_formula_zh、actions_zh、role_reason_zh）、石決明（in_formula_zh、actions_zh、role_reason_zh）、益母草（in_formula_zh、actions_zh、role_reason_zh）、夜交藤（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：茯神（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "天麻鉤藤石決明，梔杜寄生膝與芩，\n夜藤茯神益母草，主治眩暈與耳鳴。"
     },
     {
       "id": "formula.zhen_gan_xi_feng_tang",
@@ -84137,6 +84213,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md(「# 142. 鎮肝熄風湯 · Zhen Gan Xi Feng Tang — Classical / course source: Yi Xue Zhong Zhong Can X」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/173"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -84364,7 +84443,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhenGanXiFengTang.html",
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：龍骨（in_formula_zh、actions_zh、role_reason_zh）、牡蠣（in_formula_zh、actions_zh、role_reason_zh）、茵陳蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「調和諸藥。」（原文保存於此）：麥芽（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《醫學衷中參西錄》"
+      "source_classic": "《醫學衷中參西錄》",
+      "formula_song_zh": "鎮肝熄風芍天冬，玄參龜板赭茵從，\n龍牡麥芽膝草楝，肝陽上亢能奏功。"
     },
     {
       "id": "formula.xiao_huo_luo_dan",
@@ -84585,6 +84665,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 515;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/23"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -84743,7 +84826,8 @@
         "Severe Wind → add Fang Feng, Qin Jiao, Qiang Huo and Du Huo",
         "Severe Damp → add Cang Zhu and Yi Yi Ren",
         "With Liver and Kidney deficiency and Qi and Blood deficiency → combine with Du Huo Ji Sheng Tang"
-      ]
+      ],
+      "formula_song_zh": "小活絡丹天南星，二烏乳沒與地龍，\n寒濕瘀血成痹痛，搜風活血經絡通。"
     },
     {
       "id": "formula.bao_he_wan",
@@ -85129,6 +85213,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 636;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/87"
         ]
       },
       "cloudtcm_id": 142,
@@ -85327,7 +85414,8 @@
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BaoHeWan.html",
       "taiwan_pharmacopeia_zh": "No. 183 (THP p.135)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：山楂（in_formula_zh、actions_zh、role_reason_zh）、萊菔子（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：(麥芽)（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：山楂（in_formula_zh、actions_zh、role_reason_zh）、萊菔子（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：(麥芽)（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "保和神曲與山楂，陳翹萊菔苓半夏，\n炊餅為丸白湯下，消食和胃效堪誇。"
     },
     {
       "id": "formula.jian_pi_wan",
@@ -86112,6 +86200,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md(「# 154. 桑杏湯 · Sang Xing Tang — Classical / course source: Wen Bing Tiao Bian」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/97"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/327",
@@ -86272,7 +86363,8 @@
         "陰虛者禁用"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桑葉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第7味 herb_zh「Li Pi」→「梨皮」、name_zh「Li Pi」→「梨皮」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：淡豆豉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《溫病條辨》"
+      "source_classic": "《溫病條辨》",
+      "formula_song_zh": "桑杏湯中象貝宜，沙參梔豉與梨皮，\n乾咳鼻燥右脈大，辛涼甘潤燥能醫。"
     },
     {
       "id": "formula.sha_shen_mai_men_dong_tang",
@@ -87023,6 +87115,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 629;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/36"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/60",
@@ -87205,7 +87300,8 @@
         "Wind-Dryness predominance → add Sang Ye, Xing Ren, Sha Shen and Mai Dong",
         "Summer Wind-Damp → add Huo Xiang, Xiang Ru and Yi Yi Ren",
         "With Spleen deficiency → combine with Er Chen Tang"
-      ]
+      ],
+      "formula_song_zh": "止嗽散內用桔梗，紫菀荊芥百部陳，\n白前甘草共為末，薑湯調服止嗽頻。"
     },
     {
       "id": "formula.an_gong_niu_huang_wan",
@@ -87877,6 +87973,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/64"
         ]
       },
       "composition_source_note_zh": "組成與劑量以課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表為主；CloudTCM formula/4361 用於交叉核對組成與功用。CloudTCM 仍列犀角，本資料庫依現代替代與課件整理列水牛角。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：牛黃保留為君，水牛角、麝香列臣以呈現清熱涼血與芳香開竅相助；未改組成或劑量。American Dragon 未找到精確安宮牛黃丸方頁，未列為本方來源。",
@@ -88116,7 +88215,8 @@
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 3rd group: General Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/AnGongNiuHuangWan.html",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 5 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：牛黃（in_formula_zh、actions_zh、role_reason_zh）、雄黃（in_formula_zh、actions_zh、role_reason_zh）、鬱金（in_formula_zh、actions_zh、role_reason_zh）、珍珠（in_formula_zh、actions_zh、role_reason_zh）、Jin Bo（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Xi Jiao」→「犀角」、name_zh「Xi Jiao」→「犀角」；第13味 herb_zh「Jin Bo」→「金箔」、name_zh「Jin Bo」→「金箔」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：麝香（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 5 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：牛黃（in_formula_zh、actions_zh、role_reason_zh）、雄黃（in_formula_zh、actions_zh、role_reason_zh）、鬱金（in_formula_zh、actions_zh、role_reason_zh）、珍珠（in_formula_zh、actions_zh、role_reason_zh）、Jin Bo（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Xi Jiao」→「犀角」、name_zh「Xi Jiao」→「犀角」；第13味 herb_zh「Jin Bo」→「金箔」、name_zh「Jin Bo」→「金箔」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：麝香（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "安宮牛黃開竅方，芩連梔鬱朱雄黃，\n牛角珍珠冰麝箔，熱閉心包功效良。"
     },
     {
       "id": "formula.zi_xue_dan",
@@ -89565,6 +89665,9 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/138(「阳和汤【出处】《外科证治全生集》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/138"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -89684,7 +89787,8 @@
         "麻黃劑量不可任意增減"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Pao Jiang（in_formula_zh、actions_zh、role_reason_zh）、麻黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含麻黃,心血管/高血壓禁忌與 ephedrine 交互作用未載。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第4味 herb_zh「Pao Jiang」→「炮薑」、name_zh「Pao Jiang」→「炮薑」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
-      "source_classic": "《外科證治全生集》"
+      "source_classic": "《外科證治全生集》",
+      "formula_song_zh": "陽和湯法解寒凝，貼骨流注鶴膝風，\n熟地鹿膠薑炭桂，麻黃白芥甘草從。"
     },
     {
       "id": "formula.gui_pi_tang",
@@ -92167,6 +92271,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/66"
         ]
       },
       "cloudtcm_id": 106,
@@ -92267,7 +92374,8 @@
       "taiwan_pharmacopeia_zh": "Yes",
       "tcm_pattern_ids": [
         "pattern.lung_yin_deficiency"
-      ]
+      ],
+      "formula_song_zh": "百合固金二地黃，玄參貝母桔草藏，\n麥冬芍藥當歸配，喘咳痰血肺家傷。"
     },
     {
       "id": "formula.bei_mu_gua_lou_san",
@@ -92483,12 +92591,16 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 617;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/75"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。\n⚠️ pattern_indications_zh 目前是樣板佔位句「貝母瓜蔞散主治證候」（方名＋主治證候），不是真內容；2026-08-11 依課件補上英文主治，中文主治 repo 內查無來源，不硬翻，待 Ting 覆寫。",
       "category_zh": "治燥劑",
       "source_classic": "《醫學心悟》",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 4 味藥的所列欄位原值逐字同為「補氣，調和諸藥。」（原文保存於此）：川貝母（in_formula_zh、role_reason_zh）、瓜蔞（in_formula_zh、role_reason_zh）、天花粉（in_formula_zh、role_reason_zh）、橘紅（in_formula_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 4 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：川貝母（actions_zh）、瓜蔞（actions_zh）、天花粉（actions_zh）、橘紅（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 4 味藥的所列欄位原值逐字同為「補氣，調和諸藥。」（原文保存於此）：川貝母（in_formula_zh、role_reason_zh）、瓜蔞（in_formula_zh、role_reason_zh）、天花粉（in_formula_zh、role_reason_zh）、橘紅（in_formula_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 4 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：川貝母（actions_zh）、瓜蔞（actions_zh）、天花粉（actions_zh）、橘紅（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "貝母瓜蔞散茯苓，陳皮桔梗花粉增，\n咳嗽咽乾痰難咯，潤燥化痰病自清。"
     },
     {
       "id": "formula.da_ding_feng_zhu",
@@ -93561,6 +93673,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 433;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/79"
         ]
       },
       "cloudtcm_id": 130,
@@ -93595,7 +93710,8 @@
         }
       },
       "category_zh": "祛痰劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：麻黃（in_formula_zh、actions_zh、role_reason_zh）、半夏（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 6 味藥的所列欄位原值逐字同為「補氣，調和諸藥。」（原文保存於此）：銀杏（in_formula_zh、role_reason_zh）、款冬花（in_formula_zh、role_reason_zh）、桑白皮（in_formula_zh、role_reason_zh）、紫蘇子（in_formula_zh、role_reason_zh）、杏仁（in_formula_zh、role_reason_zh）、黃芩（in_formula_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 6 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：銀杏（actions_zh）、款冬花（actions_zh）、桑白皮（actions_zh）、紫蘇子（actions_zh）、杏仁（actions_zh）、黃芩（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：麻黃（in_formula_zh、actions_zh、role_reason_zh）、半夏（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 6 味藥的所列欄位原值逐字同為「補氣，調和諸藥。」（原文保存於此）：銀杏（in_formula_zh、role_reason_zh）、款冬花（in_formula_zh、role_reason_zh）、桑白皮（in_formula_zh、role_reason_zh）、紫蘇子（in_formula_zh、role_reason_zh）、杏仁（in_formula_zh、role_reason_zh）、黃芩（in_formula_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 6 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：銀杏（actions_zh）、款冬花（actions_zh）、桑白皮（actions_zh）、紫蘇子（actions_zh）、杏仁（actions_zh）、黃芩（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "定喘白果與麻黃，款冬半夏白皮桑，\n蘇杏黃芩兼甘草，風寒痰熱喘哮嘗。"
     },
     {
       "id": "formula.du_huo_ji_sheng_tang",
@@ -94221,6 +94337,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 594;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/167"
         ]
       },
       "cloudtcm_id": 285,
@@ -94461,7 +94580,8 @@
           "indication_zh": "氣虛為主之痹證：肢體拘攣、活動受限",
           "source": "curriculum 方剂学汇总 Table 595 (Du Huo Ji Sheng Tang)"
         }
-      ]
+      ],
+      "formula_song_zh": "獨活寄生艽防辛，芎歸地芍桂苓均，\n杜仲牛膝人參草，風濕頑痹屈能伸。"
     },
     {
       "id": "formula.gan_lu_xiao_du_dan",
@@ -95672,6 +95792,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/157"
         ]
       },
       "cloudtcm_id": 268,
@@ -95760,7 +95883,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/HuaiHuaSan.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.129)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Jing Jie Sui（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 herb_zh「Chao Huai Hua」→「炒槐花」、name_zh「Chao Huai Hua」→「炒槐花」；第3味 herb_zh「Jing Jie Sui」→「荊芥穗」、name_zh「Jing Jie Sui」→「荊芥穗」；第4味 herb_zh「Fu Chao Zhi Ke」→「麩炒枳殼」、name_zh「Fu Chao Zhi Ke」→「麩炒枳殼」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Jing Jie Sui（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 herb_zh「Chao Huai Hua」→「炒槐花」、name_zh「Chao Huai Hua」→「炒槐花」；第3味 herb_zh「Jing Jie Sui」→「荊芥穗」、name_zh「Jing Jie Sui」→「荊芥穗」；第4味 herb_zh「Fu Chao Zhi Ke」→「麩炒枳殼」、name_zh「Fu Chao Zhi Ke」→「麩炒枳殼」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
+      "formula_song_zh": "槐花散為便血方，側柏芥穗枳殼襄，\n槐角防榆歸芩枳，清腸止血亦可嘗。"
     },
     {
       "id": "formula.huang_tu_tang",
@@ -97552,6 +97676,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 46, source lines 428,429;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/128"
         ]
       },
       "cloudtcm_id": 224,
@@ -97893,7 +98020,8 @@
           "indication_zh": "風水重證：眼瞼浮腫、肢體沉重、小便不利、水濕停聚",
           "source": "curriculum 方剂学汇总 Table 46 (Ma Xing Shi Gan Tang)"
         }
-      ]
+      ],
+      "formula_song_zh": "傷寒麻杏甘石湯，汗出而喘法度良，\n辛涼宣洩能清肺，定喘除熱效力彰。"
     },
     {
       "id": "formula.mai_men_dong_tang",
@@ -98288,6 +98416,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/126"
         ]
       },
       "cloudtcm_id": 221,
@@ -98510,7 +98641,8 @@
       "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第4味 herb_zh「Geng Mi」→「粳米」、name_zh「Geng Mi」→「粳米」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
       "tcm_pattern_ids": [
         "pattern.stomach_fire"
-      ]
+      ],
+      "formula_song_zh": "麥門冬湯用人參，棗草粳米半夏存，\n肺痿咳逆因虛火，清養肺胃此方珍。"
     },
     {
       "id": "formula.pu_ji_xiao_du_yin",
@@ -99052,6 +99184,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 151;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/132"
         ]
       },
       "cloudtcm_id": 231,
@@ -99288,7 +99423,8 @@
       "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/PuJiXiaoDuYin.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.134)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：牛蒡子（in_formula_zh、actions_zh、role_reason_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）、馬勃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 name_zh「Jiu Chao Huang Qin」→「酒炒黃芩」；第2味 name_zh「Jiu Chao Huang Lian」→「酒炒黃連」；第6味 name_zh「Jiang Can」→「僵蠶」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：牛蒡子（in_formula_zh、actions_zh、role_reason_zh）、薄荷（in_formula_zh、actions_zh、role_reason_zh）、馬勃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 name_zh「Jiu Chao Huang Qin」→「酒炒黃芩」；第2味 name_zh「Jiu Chao Huang Lian」→「酒炒黃連」；第6味 name_zh「Jiang Can」→「僵蠶」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
+      "formula_song_zh": "普濟消毒蒡芩連，甘桔蘭根勃翹玄，\n升柴陳薄僵蠶入，大頭瘟毒服之痊。"
     },
     {
       "id": "formula.qian_zheng_san",
@@ -100160,6 +100296,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/120"
         ]
       },
       "cloudtcm_id": 216,
@@ -100454,7 +100593,8 @@
       "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/QingZaoJiuFeiTang.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.131)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桑葉（in_formula_zh、actions_zh、role_reason_zh）、枇杷葉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桑葉（in_formula_zh、actions_zh、role_reason_zh）、枇杷葉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "清燥救肺桑麥膏，參膠胡麻杏杷草，\n清宣潤肺養氣陰，溫燥傷肺氣陰耗。"
     },
     {
       "id": "formula.shi_pi_san",
@@ -101320,6 +101460,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/48"
         ]
       },
       "cloudtcm_id": 478,
@@ -101531,7 +101674,8 @@
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShiXiaoSan.html",
       "administration_en": "Wine or vinegar — AD uses as a vehicle to enhance Blood-moving/pain-relieving effect.",
       "administration_zh": "以酒或醋為藥引送服。（原資料把「Wine or vinegar」列為組成第 3 味、herb_zh 寫成「—」、role_zh「佐」、劑量「Not specified」、原文註「和中健脾，調和諸藥。」；藥引屬服法不屬方中藥味，2026-08-11 搬移歸位，組成 3 味 → 2 味。）",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：蒲黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：蒲黃（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "失笑靈脂蒲黃同，等量為散釅醋沖，\n瘀滯心腹時作痛，祛瘀止痛有奇功。"
     },
     {
       "id": "formula.si_ni_san",
@@ -103570,6 +103714,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 453;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/101"
         ]
       },
       "cloudtcm_id": 169,
@@ -104081,7 +104228,8 @@
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/TaoHeChengQiTang.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.132)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "桃核承氣硝黃草，少佐桂枝溫通妙，\n下焦蓄血小腹脹，瀉熱破瘀微利效。"
     },
     {
       "id": "formula.wan_dai_tang",
@@ -104509,6 +104657,9 @@
         ],
         "contraindications_en": [
           "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/71"
         ]
       },
       "cloudtcm_id": 112,
@@ -104676,7 +104827,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WanDaiTang.html",
       "taiwan_pharmacopeia_zh": "Yes (THP p.132)",
-      "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 name_zh「Tu Chao Bai Zhu」→「土炒白朮」；第2味 name_zh「Chao Shan Yao」→「炒山藥」；第5味 name_zh「Zhi Cang Zhu」→「制蒼朮」；第7味 name_zh「Jiu Chao Che Qian Zi」→「酒炒車前子」；第8味 name_zh「Jiu Chao Bai Shao」→「酒炒白芍」；第10味 name_zh「Jing Jie Sui Tan」→「荊芥穗炭」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 2 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：酒炒車前子（actions_zh、role_reason_zh）、荊芥穗炭（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 name_zh「Tu Chao Bai Zhu」→「土炒白朮」；第2味 name_zh「Chao Shan Yao」→「炒山藥」；第5味 name_zh「Zhi Cang Zhu」→「制蒼朮」；第7味 name_zh「Jiu Chao Che Qian Zi」→「酒炒車前子」；第8味 name_zh「Jiu Chao Bai Shao」→「酒炒白芍」；第10味 name_zh「Jing Jie Sui Tan」→「荊芥穗炭」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 2 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：酒炒車前子（actions_zh、role_reason_zh）、荊芥穗炭（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "完帶湯中二朮陳，車前甘草和人參，\n柴芍淮山黑芥穗，化濕止帶此方金。"
     },
     {
       "id": "formula.wu_mei_wan",
@@ -105729,6 +105881,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/72"
         ]
       },
       "cloudtcm_id": 114,
@@ -105867,7 +106022,8 @@
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XingSuSan.html",
       "taiwan_pharmacopeia_zh": "No. 100 (THP p.132)",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：紫蘇葉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：前胡（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：紫蘇葉（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：前胡（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "杏蘇散內夏陳前，枳桔苓草薑棗研，\n輕宣溫潤治涼燥，咳止痰化病自痊。"
     },
     {
       "id": "formula.xuan_fu_dai_zhe_tang",
@@ -106141,6 +106297,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/112"
         ]
       },
       "cloudtcm_id": 62,
@@ -106173,7 +106332,8 @@
         }
       },
       "category_zh": "理氣劑",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：半夏（in_formula_zh、actions_zh、role_reason_zh）、旋覆花（in_formula_zh、actions_zh、role_reason_zh）、生薑（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：代赭石（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：半夏（in_formula_zh、actions_zh、role_reason_zh）、旋覆花（in_formula_zh、actions_zh、role_reason_zh）、生薑（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「補益氣血，調和諸藥。」（原文保存於此）：代赭石（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "旋覆代赭用人參，半夏薑甘大棗臨，\n化痰降逆兼調補，痞硬噫氣力能禁。"
     },
     {
       "id": "formula.yu_nu_jian",
@@ -107407,6 +107567,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 163;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/49"
         ]
       },
       "cloudtcm_id": 566,
@@ -107553,7 +107716,8 @@
       "ba_fa_zh": "清法 Qing Fa (Clear)",
       "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZuoJinWan.html",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：吳茱萸（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：吳茱萸（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+      "formula_song_zh": "左金連萸六比一，脅痛吞酸悉能醫，\n再加芍藥名戊己，專治泄瀉痛在臍。"
     },
     {
       "id": "formula.bu_fei_tang",
@@ -108126,6 +108290,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 307;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "formula_song_zh": [
+          "https://www.zhongyifangji.com/cht/prescription/detail/id/19"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -108342,7 +108509,8 @@
         "Severe night sweats → add Mu Li and Fu Xiao Mai",
         "Spontaneous emissions → add Jin Ying Zi, Qian Shi and Sang Piao Xiao",
         "Coughing with difficult expectoration → add Bai Bu, Bei Mu and Kuan Dong Hua"
-      ]
+      ],
+      "formula_song_zh": "大補陰丸知柏黃，龜板脊髓蜜成方，\n咳嗽咯血骨蒸熱，陰虛火旺制亢陽。"
     },
     {
       "id": "formula.da_jian_zhong_tang",
@@ -108520,6 +108688,9 @@
         "clinical_use_note": [
           "EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）",
           "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §3"
+        ],
+        "formula_song_zh": [
+          "https://jicheng.tw/tcm/book/%E9%87%91%E5%8C%B1%E6%96%B9%E6%AD%8C%E6%8B%AC/index.html"
         ]
       },
       "ad_syndromes_en": [
@@ -108698,7 +108869,9 @@
       "hierarchy_source_zh": "EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）",
       "composition_source_note_zh": "組成與原方相對量出自《金匱要略·腹滿寒疝宿食病脈證治》第十（蜀椒二合、乾薑四兩、人參二兩、膠飴一升）。君臣佐使不是原典內容 —— 原文只給組成與煎服法，不指派角色；本卡的 膠飴君／蜀椒·乾薑臣／人參佐 是 Ting 2026-08-12 採用的現代分析，來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）。現代分析並不一致，另一種教學分析作 蜀椒君／乾薑臣／人參佐／膠飴佐使，兩說並存見 correction_note，hierarchy_status 標為 disputed_modern_analysis。",
       "clinical_use_note": "君臣佐使為現代方劑分析，非《金匱要略·腹滿寒疝宿食病脈證治》第十原文（原典只給組成與煎服法，不指派君臣佐使）。本卡採膠飴（飴糖）君、蜀椒與乾薑臣、人參佐（來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup —— 現代方劑分析，SOL 2026-08-12 引錄）。另有教學分析作蜀椒君、乾薑臣、人參佐、膠飴佐使 —— 兩說並存，考試作答時看課本採哪一說。",
-      "correction_note": "【2026-08-12 君臣佐使 — Ting 裁定 1A + SOL §3】《金匱要略·腹滿寒疝宿食病脈證治》第十 給的是組成與煎服法，不指派君臣佐使；本卡不把角色寫成原典事實。\n採用的現代分析：膠飴（飴糖）＝君、蜀椒＝臣、乾薑＝臣、人參＝佐。來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）。\n並存的另一說（不採用但必須記錄）：蜀椒＝君、乾薑＝臣、人參＝佐、膠飴＝佐/使。SOL §3 指出現代分析不一致，故 hierarchy_status = disputed_modern_analysis；若 Ting 指定的課本另有版本，以課本並註明版次頁碼為準。\n組成第一味的 herb_zh / name_zh 原值為拉丁拼寫「Chuan Jiao」（中文欄位放英文，憲法紅線五），改為原典用的中文藥名「蜀椒」；拼音「Chuan Jiao」仍在本列 pinyin 欄，未遺失。herb_id 仍為 herb.hua_jiao（中藥庫的花椒）。\n原方相對量取自《金匱要略·腹滿寒疝宿食病脈證治》第十：蜀椒二合、乾薑四兩、人參二兩、膠飴一升，寫入各列 classical_amount_text；既有的現代參考克數區間（decoction_reference_g）原封不動保留，未作古今換算。\nneeds_fill 原值保存：「骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。」"
+      "correction_note": "【2026-08-12 君臣佐使 — Ting 裁定 1A + SOL §3】《金匱要略·腹滿寒疝宿食病脈證治》第十 給的是組成與煎服法，不指派君臣佐使；本卡不把角色寫成原典事實。\n採用的現代分析：膠飴（飴糖）＝君、蜀椒＝臣、乾薑＝臣、人參＝佐。來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）。\n並存的另一說（不採用但必須記錄）：蜀椒＝君、乾薑＝臣、人參＝佐、膠飴＝佐/使。SOL §3 指出現代分析不一致，故 hierarchy_status = disputed_modern_analysis；若 Ting 指定的課本另有版本，以課本並註明版次頁碼為準。\n組成第一味的 herb_zh / name_zh 原值為拉丁拼寫「Chuan Jiao」（中文欄位放英文，憲法紅線五），改為原典用的中文藥名「蜀椒」；拼音「Chuan Jiao」仍在本列 pinyin 欄，未遺失。herb_id 仍為 herb.hua_jiao（中藥庫的花椒）。\n原方相對量取自《金匱要略·腹滿寒疝宿食病脈證治》第十：蜀椒二合、乾薑四兩、人參二兩、膠飴一升，寫入各列 classical_amount_text；既有的現代參考克數區間（decoction_reference_g）原封不動保留，未作古今換算。\nneeds_fill 原值保存：「骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。」",
+      "formula_song_zh": "痛嘔食艱屬大寒。腹沖頭足觸之難。\n乾薑四兩椒二合。參二飴升食粥安。",
+      "formula_song_source_zh": "出自陳修園《金匱方歌括》"
     },
     {
       "id": "formula.da_qing_long_tang",
@@ -108926,6 +109099,9 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/33(「《傷寒雜病論》經方;相同名稱方劑:「大青龍湯,出處:《傷寒論》。」」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://jicheng.tw/tcm/book/%E9%95%B7%E6%B2%99%E6%96%B9%E6%AD%8C%E6%8B%AC/index.html"
         ]
       },
       "ad_syndromes_en": [
@@ -109039,7 +109215,9 @@
           "quarantined": "2026-08-12"
         }
       ],
-      "correction_note": "[2026-08-12 干擾素方向性盤點] 以下敘述宣稱本方「減輕/保護」干擾素或化療的不良反應,但本卡沒有任何來源支持該方向,而同屬柴胡類的小柴胡湯與干擾素併用的已知訊號是間質性肺炎(致死案例)。依「寧缺勿造」,原文一字未刪、原欄位與索引記錄在此,補到來源即可放回。追溯見 docs/research_packs/FORMULA_INTERFERON_PROVENANCE_TRACE.md。"
+      "correction_note": "[2026-08-12 干擾素方向性盤點] 以下敘述宣稱本方「減輕/保護」干擾素或化療的不良反應,但本卡沒有任何來源支持該方向,而同屬柴胡類的小柴胡湯與干擾素併用的已知訊號是間質性肺炎(致死案例)。依「寧缺勿造」,原文一字未刪、原欄位與索引記錄在此,補到來源即可放回。追溯見 docs/research_packs/FORMULA_INTERFERON_PROVENANCE_TRACE.md。",
+      "formula_song_zh": "二兩桂甘三兩姜。膏如雞子六麻黃。\n棗枚十二五十杏。無汗煩而且躁方。",
+      "formula_song_source_zh": "出自陳修園《長沙方歌括》"
     },
     {
       "id": "formula.dan_shen_yin",
@@ -109191,6 +109369,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md(「# 092. 丹參飲 · Dan Shen Yin — Classical / course source: Shi Fang Ge Kuo」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_song_zh": [
+          "https://jicheng.tw/tcm/book/%E6%99%82%E6%96%B9%E6%AD%8C%E6%8B%AC/index.html"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -109343,7 +109524,9 @@
       "category": "未分類 / 考點與補充劑",
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
       "course_level_en": "Formulations 2 — 2nd group: Familiar With The Information",
-      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DanShenYin.html"
+      "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DanShenYin.html",
+      "formula_song_zh": "心腹諸疼有妙方。丹參十分作提綱。\n檀砂一分聊為佐。入咽咸知效驗彰。",
+      "formula_song_source_zh": "出自陳修園《時方歌括》"
     },
     {
       "id": "formula.dang_gui_shao_yao_san",
