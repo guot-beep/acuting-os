@@ -6005,14 +6005,12 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "祛散風-熱",
-    "補益理氣",
-    "補益理氣"
+    "發汗解表",
+    "升津舒筋"
    ],
    "actions_en": [
-    "Expels Exterior Wind-Heat",
-    "Releases muscle layer",
-    "Vents rashes"
+    "Induces sweating and releases the Exterior",
+    "Raises fluids and relaxes the sinews"
    ],
    "pattern_indications_zh": [
     "麻疹初起透發不暢證",
@@ -6205,10 +6203,13 @@
      "《傷寒論》葛根湯(葛根、麻黃、桂枝、芍藥、生薑、大棗、炙甘草);藥列複製自本庫既有列(劑量為藥物層參考範圍)"
     ],
     "actions_zh": [
-     "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+     "《傷寒論》葛根湯(太陽病，項背強几几)；2026-08-19 重寫——原值 {\"zh\":[\"祛散風-熱\",\"補益理氣\",\"補益理氣\"],\"en\":[\"Expels Exterior Wind-Heat\",\"Releases muscle layer\",\"Vents rashes\"]} 為升麻葛根湯之功效(解肌透疹/風熱)誤植，與其組成誤植同源"
     ],
     "pattern_indications_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+    ],
+    "actions_en": [
+     "《傷寒論》葛根湯(太陽病，項背強几几)；2026-08-19 重寫——原值 {\"zh\":[\"祛散風-熱\",\"補益理氣\",\"補益理氣\"],\"en\":[\"Expels Exterior Wind-Heat\",\"Releases muscle layer\",\"Vents rashes\"]} 為升麻葛根湯之功效(解肌透疹/風熱)誤植，與其組成誤植同源"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/260",
@@ -6602,8 +6603,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "風與",
-    "止與緩解"
+    "祛風通鼻竅",
+    "止涕止頭痛"
    ],
    "actions_en": [
     "Dispels Wind and unblocks the nasal passages",
@@ -6701,7 +6702,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"風與\",\"止與緩解\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -6764,9 +6765,9 @@
    ],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "氣與,風-寒-濕邪與於",
-    "氣與",
-    "於與"
+    "益氣解表，祛風寒濕止痛",
+    "扶正托邪，止咳",
+    "通絡止痛"
    ],
    "actions_en": [
     "Augments Qi and releases Exterior, dispels Wind-Cold-Dampness and pain",
@@ -7111,7 +7112,7 @@
      "curriculum/herbs/方剂学汇总_extracted.md(Indications 行);解析器原將 Case Study 病例段落黏入,2026-08-06 截去病例殘渣,中文層待填"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"氣與,風-寒-濕邪與於\",\"氣與\",\"於與\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -17115,8 +17116,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "-熱與於濕邪",
-    "補益理氣"
+    "清暑利濕",
+    "和中"
    ],
    "actions_en": [
     "Clear summer-heat and drain dampness",
@@ -17129,7 +17130,13 @@
     "泄瀉下痢",
     "皮膚濕疹瘙癢"
    ],
-   "pattern_indications_en": [],
+   "pattern_indications_en": [
+    "Summerheat-Dampness pattern",
+    "Fever with thirst",
+    "Scanty, dark, painful urination",
+    "Diarrhea or dysenteric disorder",
+    "Damp skin rashes (eczema) with itching"
+   ],
    "composition": [
     {
      "herb_zh": "滑石",
@@ -17198,6 +17205,12 @@
     ],
     "ad_syndromes_en": [
      "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
+    ],
+    "actions_zh": [
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"-熱與於濕邪\",\"補益理氣\"]，依本卡對齊之 actions_en 重寫為標準功效語"
+    ],
+    "pattern_indications_en": [
+     "translated 2026-08-19 from the record's own pattern_indications_zh"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/53",
@@ -20227,8 +20240,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "滋陰養陰，熱與",
-    "於與於陽於熱"
+    "滋陰生津，瀉熱通便",
+    "增液潤燥，瀉陽明熱結"
    ],
    "actions_en": [
     "Nourishes Yin, generates fluids, purges Heat and unblocks bowels",
@@ -20363,7 +20376,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"滋陰養陰，熱與\",\"於與於陽於熱\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -21446,8 +21459,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "於於，補血養血與陰",
-    "於血,氣與軟堅"
+    "潤腸通便，養血滋陰",
+    "活血行氣，潤燥軟堅"
    ],
    "actions_en": [
     "Moistens Intestines, unblocks bowel movements, nourishes Blood and Yin",
@@ -21582,7 +21595,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"於於，補血養血與陰\",\"於血,氣與軟堅\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -21625,8 +21638,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "溫中腎，於於與",
-    "溫中與於於腎"
+    "溫腎益精，潤腸通便",
+    "溫通大腸，治腎虛便秘"
    ],
    "actions_en": [
     "Warms Kidneys, augments Essence, moistens Intestines and unblocks bowels",
@@ -21774,7 +21787,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"溫中腎，於於與\",\"溫中與於於腎\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -23714,9 +23727,9 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "調和陽與陽",
-    "風-寒與調和營衛",
-    "理氣寬中與緩解與"
+    "和解少陽，兼解太陽",
+    "解表散寒，調和營衛",
+    "理氣和中，緩解肢節煩疼"
    ],
    "actions_en": [
     "Harmonizes Shao Yang and Tai Yang channels simultaneously",
@@ -23939,7 +23952,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"調和陽與陽\",\"風-寒與調和營衛\",\"理氣寬中與緩解與\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_en": [
      "translated 2026-08-19 from the record's own pattern_indications_zh"
@@ -31121,8 +31134,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "氣,陽",
-    "溫中與補益心與腎陽於"
+    "大補元氣，回陽救逆",
+    "溫補心腎之陽"
    ],
    "actions_en": [
     "Strongly augments Yuan Qi, rescues Yang from collapse",
@@ -31209,7 +31222,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"氣,陽\",\"溫中與補益心與腎陽於\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -40990,8 +41003,8 @@
     "Invigorate blood and dispel stasis"
    ],
    "actions_zh": [
-    "與血",
-    "於血與"
+    "補血調血",
+    "活血化瘀"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -41011,26 +41024,15 @@
    ],
    "fertility_notes": "",
    "clinical_pearls": [],
-   "pattern_indications_en": [],
+   "pattern_indications_en": [
+    "Blood Deficiency with Blood Stasis",
+    "Delayed or inhibited menstruation, dark purple flow with clots, lower abdominal distending pain (Yi Xue Ji Cheng)",
+    "Scant, dripping incessant uterine bleeding with occasional clots (Fu Ke Bing Jian)"
+   ],
    "pattern_indications_zh": [
-    "根據古代醫書記載，桃紅四物湯主要功效為養血活血，通絡調經，祛瘀止痛。具體而言，可以應用於以下幾種情況：",
-    "經期血瘀：如《醫學集成》所述，月經延期不行，因血凝而導致脹痛，或經來色紫，有瘀塊，如《婦科冰鑑》中提到的「血多有塊，色紫稠黏者，有瘀停也」。",
-    "漏血不暢：如《婦科冰鑑》所記載，「漏血澀少，間有淤塊者」，指的是月經淋漓不盡，量少且伴有瘀塊。",
-    "治療原理",
-    "桃紅四物湯以四物湯為基礎，加入桃仁和紅花，增強活血化瘀的功效。各藥材的功效如下：",
-    "熟地黃：滋陰補腎，益精填髓，為補血之要藥。",
-    "白芍：養血調經，緩急止痛，與熟地黃相配，滋陰養血。",
-    "當歸：補血活血，調經止痛，既能補血，又能活血，使補而不滯。",
-    "川芎：活血行氣，散寒止痛，為血中氣藥，推動血液運行。",
-    "桃仁：活血化瘀，潤腸通便，破血行瘀，消癥散結。",
-    "紅花：活血通經，散瘀止痛，擅長活血通經，祛瘀止痛。",
-    "此方以熟地黃、白芍滋陰養血為基礎；當歸補血活血；川芎行氣活血；桃仁、紅花加強活血化瘀之力。諸藥合用，共奏養血活血、通絡調經、祛瘀止痛之效。",
-    "方劑加減變化",
-    "古籍中亦記載了桃紅四物湯的加減變化，以應對不同的症狀：",
-    "加強行氣止痛：如《醫學集成》中，對於「過期不行，因血凝脹痛」，在桃紅四物湯的基礎上加香附、莪朮、木通、木香、肉桂、甘草，以加強行氣活血、溫經止痛之效。",
-    "清熱涼血：對於「經來色紫」，《醫學集成》中提到可用桃紅四物湯，或生地四物湯，用歸尾、赤芍，加香附、丹皮、黃連、甘草。其中，丹皮、黃連具有清熱涼血的作用，歸尾、赤芍加強活血化瘀的功效。",
-    "破瘀行滯： 《婦科冰鑑》中記載的「漏血澀少，間有淤塊者」，在桃紅四物湯的基礎上加香附以增強破瘀行滯之力。",
-    "總體而言，桃紅四物湯通過養血與活血並用，達到調經止痛的目的。其加減變化靈活，可根據具體病情進行調整，體現了中醫辨證論治的精髓。"
+    "血虛兼血瘀證",
+    "月經延期、經行不暢，經色紫暗有塊，小腹脹痛（《醫學集成》）",
+    "漏血澀少、淋漓不盡，間有瘀塊（《婦科冰鑑》）"
    ],
    "related_conditions": [
     "eastern_disease.dysmenorrhea",
@@ -41083,7 +41085,27 @@
     "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
     "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
     "fang_yi_zh": "",
-    "zhu_zhi_zh": ""
+    "zhu_zhi_zh": "",
+    "notes_zh": [
+     "根據古代醫書記載，桃紅四物湯主要功效為養血活血，通絡調經，祛瘀止痛。具體而言，可以應用於以下幾種情況：",
+     "經期血瘀：如《醫學集成》所述，月經延期不行，因血凝而導致脹痛，或經來色紫，有瘀塊，如《婦科冰鑑》中提到的「血多有塊，色紫稠黏者，有瘀停也」。",
+     "漏血不暢：如《婦科冰鑑》所記載，「漏血澀少，間有淤塊者」，指的是月經淋漓不盡，量少且伴有瘀塊。",
+     "治療原理",
+     "桃紅四物湯以四物湯為基礎，加入桃仁和紅花，增強活血化瘀的功效。各藥材的功效如下：",
+     "熟地黃：滋陰補腎，益精填髓，為補血之要藥。",
+     "白芍：養血調經，緩急止痛，與熟地黃相配，滋陰養血。",
+     "當歸：補血活血，調經止痛，既能補血，又能活血，使補而不滯。",
+     "川芎：活血行氣，散寒止痛，為血中氣藥，推動血液運行。",
+     "桃仁：活血化瘀，潤腸通便，破血行瘀，消癥散結。",
+     "紅花：活血通經，散瘀止痛，擅長活血通經，祛瘀止痛。",
+     "此方以熟地黃、白芍滋陰養血為基礎；當歸補血活血；川芎行氣活血；桃仁、紅花加強活血化瘀之力。諸藥合用，共奏養血活血、通絡調經、祛瘀止痛之效。",
+     "方劑加減變化",
+     "古籍中亦記載了桃紅四物湯的加減變化，以應對不同的症狀：",
+     "加強行氣止痛：如《醫學集成》中，對於「過期不行，因血凝脹痛」，在桃紅四物湯的基礎上加香附、莪朮、木通、木香、肉桂、甘草，以加強行氣活血、溫經止痛之效。",
+     "清熱涼血：對於「經來色紫」，《醫學集成》中提到可用桃紅四物湯，或生地四物湯，用歸尾、赤芍，加香附、丹皮、黃連、甘草。其中，丹皮、黃連具有清熱涼血的作用，歸尾、赤芍加強活血化瘀的功效。",
+     "破瘀行滯： 《婦科冰鑑》中記載的「漏血澀少，間有淤塊者」，在桃紅四物湯的基礎上加香附以增強破瘀行滯之力。",
+     "總體而言，桃紅四物湯通過養血與活血並用，達到調經止痛的目的。其加減變化靈活，可根據具體病情進行調整，體現了中醫辨證論治的精髓。"
+    ]
    },
    "tier": "core",
    "category": "理血劑 / Regulate Blood",
@@ -41175,6 +41197,15 @@
     ],
     "ad_syndromes_en": [
      "American Dragon SYNDROMES 清單(證型名稱,與中文辨證敘述粒度不同)— 2026-08-06 拆為獨立欄位以免中英錯位"
+    ],
+    "actions_zh": [
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"與血\",\"於血與\"]，依本卡對齊之 actions_en 重寫為標準功效語"
+    ],
+    "pattern_indications_zh": [
+     "2026-08-19 原欄為 18 條方義/加減敘事(引《醫學集成》《婦科冰鑑》),整段原文移至 chinese_depth_track.notes_zh,此欄改寫為證型主治"
+    ],
+    "pattern_indications_en": [
+     "translated 2026-08-19 from the rewritten pattern_indications_zh"
     ]
    },
    "cloudtcm_id": 171,
@@ -56045,8 +56076,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "補益腎，補血養血與",
-    "肝/腎與"
+    "補腎固本，養血安胎",
+    "益肝腎之精，治胎動不安、滑胎"
    ],
    "actions_en": [
     "Tonifies Kidneys, secures root, nourishes Blood and secures fetus",
@@ -56164,7 +56195,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"補益腎，補血養血與\",\"肝/腎與\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -58022,8 +58053,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "調和陽，與",
-    "肝陽,清熱瀉火與"
+    "和解少陽，鎮驚安神，瀉熱通便",
+    "平肝潛陽，清熱通利三焦"
    ],
    "actions_en": [
     "Harmonizes Shao Yang, calms Shen, purges Fire and unblocks bowels",
@@ -58280,7 +58311,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"調和陽，與\",\"肝陽,清熱瀉火與\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -59557,8 +59588,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "陽，氣與止於",
-    "氣與化痰降逆"
+    "通陽散結，行氣止痛",
+    "降逆化痰，寬胸"
    ],
    "actions_en": [
     "Unblocks Yang, dissipates clumps, moves Qi and stops chest pain",
@@ -59676,7 +59707,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"陽，氣與止於\",\"氣與化痰降逆\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -61118,8 +61149,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "氣,止於與和胃降逆",
-    "胃熱與補益胃氣於"
+    "降逆止嘔，和胃",
+    "清胃熱，補胃氣"
    ],
    "actions_en": [
     "Directs rebellious Qi downward, stops vomiting and harmonizes Stomach",
@@ -61280,7 +61311,7 @@
      "data/config/formula_tag_glossary.json"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"氣,止於與和胃降逆\",\"胃熱與補益胃氣於\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -72161,8 +72192,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "溫中陽,健脾益氣,氣與促進於",
-    "溫中腎與燥濕健脾陽"
+    "溫陽健脾，行氣利水",
+    "溫腎燥濕，治陽虛水腫"
    ],
    "actions_en": [
     "Warms Yang, strengthens Spleen, moves Qi and promotes urination",
@@ -72471,7 +72502,7 @@
     ],
     "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"溫中陽,健脾益氣,氣與促進於\",\"溫中腎與燥濕健脾陽\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -74323,8 +74354,8 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "溫中陽,化痰降逆-,健脾益氣與於",
-    "溫中痰-與"
+    "溫陽化飲，健脾利濕",
+    "溫中化飲，定短氣"
    ],
    "actions_en": [
     "Warms Yang, transforms Phlegm-fluid, strengthens Spleen and drains fluid",
@@ -74437,7 +74468,7 @@
      "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\"溫中陽,化痰降逆-,健脾益氣與於\",\"溫中痰-與\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
@@ -91194,9 +91225,9 @@
     "Treats flooding and spotting due to Spleen/Kidney Deficiency"
    ],
    "actions_zh": [
-    ",於與補益脾氣",
-    "於,補益腎與",
-    "於與於脾/腎"
+    "固沖攝血，補益脾氣",
+    "收澀止血，補腎固本",
+    "治脾腎虛之崩漏"
    ],
    "composition": [
     {
@@ -91411,7 +91442,7 @@
      "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
     ],
     "actions_zh": [
-     "AcuTing Board Curriculum & Classical TCM Outlines (2026-08-07)"
+     "2026-08-19 重寫：原值為機翻殘缺句 [\",於與補益脾氣\",\"於,補益腎與\",\"於與於脾/腎\"]，依本卡對齊之 actions_en 重寫為標準功效語"
     ],
     "pattern_indications_zh": [
      "curriculum/formulas/Herbal Formulations Comprehensive.docx.md p.94 (replaced the scraped placeholder 「固沖湯主治證候」)"
