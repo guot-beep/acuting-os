@@ -20,6 +20,15 @@
   ③ 病例持久化三修+筆記匯出鈕;④ review_status 詞彙收斂(需 Ting 裁定 16 值語意);⑤ 361 雙鍵手術(整合後);
   ⑥ 紅旗 Ting 供源備援;⑦ encoding+樣板句上鎖;⑧ ICD 到期監測;⑨ draft 天花板+安全欄位級畢業;⑩ MAINTENANCE_CALENDAR+DEGRADED_MODE。
 
+# 2026-08-19 Claude — 第二輪(PR #62):C10 假填重填 wave 1、加減表抽盡、方歌批3、瀉心湯善後
+
+- **做了什麼**:PR #60 合併後分支自 main 重建。瀉心湯身分裁定(Ting 授權):卡上為半夏瀉心湯內容(逐欄機器驗證與正卡逐字相同)→ 依方名重建為《金匱》瀉心湯(大黃黃連黃芩),原值逐字存 correction_note(已隨 #60 合併)。
+  本輪:C10/C5 重填 wave 1 —— 18 個病症卡的全庫共用樣板 etiology/western_pathology 以課件真內容替換(工作流編排:逐卡抽取帶 verbatim evidence quotes + 逐卡對抗驗證;15 卡直接過、3 卡依驗證意見修正、cond.anxiety 誠實 not covered);
+  加減表 wave 3(驗證版)6 方 26 列,另 24 方逐一查證課件無自屬表——國考方課件加減表抽盡;方歌批 3 再 11 首。
+- **數字 before→after**:conditions blocking `447→376`(C10 189→154、C5 187→151,68 欄寫入);有加減 `60→66/221`;方歌已填 `98→109/221`;formula/tdis/其餘各線維持 PASS/持平;ratchet 全數鎖定。
+- **驗證**:每批 build-data + 該線 validator + content-junk + no-loss --save + ratchet;CI green validators 全程綠。
+- **已知未解/STOP**:紅旗(C4 71 + T4 75)仍卡 egress 403(medlineplus/nih/cdc);C10 剩 154(無課件覆蓋之 ~80 記錄)與 C5 剩 151 待 fill line 取源;heart_failure/recurrent_uti 中文錯置未動;方歌累計 71 首與方族 36 條待 Ting 抽讀複核。
+
 # 2026-08-19 Claude — 全系統優化長跑:formula 線 87→0、conditions 553→447、tdis 103→75、雙語對齊與課件回填
 
 - **做了什麼**:Ting 指示全方位自動優化。以驗證器缺陷數為主軸,25 個 commit 分批推進(每批獨立驗證、獨立 push,PR #60)。
