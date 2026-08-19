@@ -213,10 +213,17 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "tcm_pattern_ids": [
-      "pat.肝腎陰虛"
+      "pat.肝腎陰虛",
+      "pattern.liver_kidney_yin_deficiency"
     ],
     "point_identity_zh": [
       "交會穴（手足太陽、足陽明、陰蹻、陽蹻）",
@@ -490,6 +497,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -499,7 +512,8 @@
       "cond.eye_strain"
     ],
     "tcm_pattern_ids": [
-      "pat.肝腎陰虛"
+      "pat.肝腎陰虛",
+      "pattern.liver_kidney_yin_deficiency"
     ],
     "action_tags": [
       "Clear Heat",
@@ -758,6 +772,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "祛風清頭，通鼻開竅",
@@ -2351,6 +2368,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "action_tags": [
@@ -2627,6 +2647,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -3197,6 +3220,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -3488,7 +3514,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -3514,7 +3544,9 @@
       "pattern.kidney_not_grasping_qi",
       "pattern.lung_kidney_yin_deficiency",
       "pattern.wind_cold",
-      "pattern.wind_heat"
+      "pattern.wind_heat",
+      "pattern.lung_qi_deficiency_cold",
+      "pattern.lung_stomach_dryness_heat"
     ],
     "point_identity_zh": [
       "肺之背俞穴",
@@ -3786,13 +3818,17 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
       "cond.asthma",
       "cond.palpitations",
       "cond.heart_failure",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.ptsd"
     ],
     "point_identity_zh": [
       "厥陰俞（心包背俞穴）"
@@ -4070,7 +4106,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -4080,7 +4120,9 @@
       "cond.hypotension",
       "cond.palpitations",
       "cond.heart_failure",
-      "cond.eye_strain"
+      "cond.eye_strain",
+      "cond.ptsd",
+      "cond.poor_memory"
     ],
     "tcm_pattern_ids": [
       "pat.心脾兩虛",
@@ -4094,7 +4136,9 @@
       "pattern.phlegm_misting_heart",
       "pattern.heart_kidney_not_communicating",
       "pattern.water_qi_attacking_heart",
-      "pattern.heat_disturbing_chest_diaphragm"
+      "pattern.heat_disturbing_chest_diaphragm",
+      "pattern.heart_spleen_deficiency",
+      "pattern.yin_deficiency_fire_flaring"
     ],
     "point_identity_zh": [
       "心之背俞穴",
@@ -4655,7 +4699,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -4669,7 +4717,8 @@
       "pattern.blood_stasis",
       "pattern.blood_heat",
       "pattern.blood_lin_excess",
-      "pattern.blood_deficiency"
+      "pattern.blood_deficiency",
+      "pattern.blood_deficiency_wind_dryness"
     ],
     "point_identity_zh": [
       "八會穴之「血會」",
@@ -4991,7 +5040,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -5010,14 +5063,17 @@
       "cond.chronic_cough",
       "cond.post_viral_cough",
       "cond.herpes_zoster",
-      "cond.hypotension"
+      "cond.hypotension",
+      "cond.ptsd",
+      "cond.restless_legs"
     ],
     "tcm_pattern_ids": [
       "pat.肝腎陰虛",
       "pattern.liver_blood_deficiency",
       "pattern.liver_yin_deficiency",
       "pattern.liver_gallbladder_damp_heat",
-      "pattern.liver_qi_stagnation"
+      "pattern.liver_qi_stagnation",
+      "pattern.liver_kidney_yin_deficiency"
     ],
     "point_identity_zh": [
       "肝之背俞穴",
@@ -5329,6 +5385,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -5633,7 +5692,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -5651,7 +5714,8 @@
       "cond.chronic_diarrhea",
       "cond.asthma",
       "cond.herpes_zoster",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.ptsd"
     ],
     "tcm_pattern_ids": [
       "pat.臟腑虛弱",
@@ -5673,7 +5737,12 @@
       "pattern.qi_deficiency",
       "pattern.tai_yin_deficiency_cold",
       "pattern.water_fluid_retention",
-      "pattern.blood_deficiency"
+      "pattern.blood_deficiency",
+      "pattern.spleen_stomach_yang_deficiency",
+      "pattern.spleen_deficiency_damp_encumbrance",
+      "pattern.spleen_qi_deficiency",
+      "pattern.deficiency_constipation",
+      "pattern.heart_spleen_deficiency"
     ],
     "point_identity_zh": [
       "脾之背俞穴",
@@ -5912,7 +5981,8 @@
       "cond.peptic_ulcer",
       "cond.asthma",
       "cond.herpes_zoster",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.ptsd"
     ],
     "field_sources": {
       "acumethod_zh": [
@@ -5963,7 +6033,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "tcm_pattern_ids": [
@@ -5975,7 +6049,8 @@
       "pattern.stomach_fire",
       "pattern.stomach_cold",
       "pattern.spleen_deficiency_damp_encumbrance",
-      "pattern.spleen_qi_deficiency"
+      "pattern.spleen_qi_deficiency",
+      "pattern.spleen_stomach_yang_deficiency"
     ],
     "point_identity_zh": [
       "胃之背俞穴",
@@ -6257,6 +6332,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -6547,7 +6625,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -6568,7 +6650,9 @@
       "cond.overactive_bladder",
       "cond.nocturnal_enuresis",
       "cond.hearing_loss",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.ptsd",
+      "cond.restless_legs"
     ],
     "tcm_pattern_ids": [
       "pat.陰虛火旺",
@@ -6587,7 +6671,11 @@
       "pattern.fatigue_lin",
       "pattern.yang_deficiency",
       "pattern.kidney_deficiency",
-      "pattern.uterus_deficiency_cold"
+      "pattern.uterus_deficiency_cold",
+      "pattern.yin_deficiency_fire_flaring",
+      "pattern.kidney_essence_deficiency",
+      "pattern.kidney_yin_deficiency",
+      "pattern.liver_kidney_yin_deficiency"
     ],
     "point_identity_zh": [
       "腎之背俞穴",
@@ -7157,6 +7245,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -7166,7 +7260,9 @@
     ],
     "tcm_pattern_ids": [
       "pat.熱秘",
-      "pat.虛秘"
+      "pat.虛秘",
+      "pattern.heat_constipation",
+      "pattern.deficiency_constipation"
     ],
     "point_identity_zh": [
       "大腸之背俞穴",
@@ -7709,6 +7805,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -7993,6 +8092,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -8812,6 +8914,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "action_tags": [
@@ -10101,6 +10206,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -10346,6 +10454,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "action_tags": [
@@ -10877,6 +10988,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -11190,6 +11304,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -11204,7 +11321,8 @@
       "cond.tension_headache",
       "cond.cluster_headache",
       "cond.recurrent_uti",
-      "cond.overactive_bladder"
+      "cond.overactive_bladder",
+      "cond.acute_lumbar_sprain"
     ],
     "compare_with": [
       {
@@ -12031,6 +12149,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -12556,6 +12677,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "理氣止痛，宣肺清熱",
@@ -12607,7 +12731,10 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (BL45 Yixi): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (BL45 Yixi): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (BL45 Yixi): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "related_conditions": [
+      "cond.poor_memory"
+    ]
   },
   {
     "code": "BL46",
@@ -14880,6 +15007,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -15441,6 +15571,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，清熱消腫",
@@ -15486,7 +15619,10 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (BL56 Chengjin): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (BL56 Chengjin): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (BL56 Chengjin): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "related_conditions": [
+      "cond.restless_legs"
+    ]
   },
   {
     "code": "BL57",
@@ -15704,6 +15840,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -15713,7 +15852,8 @@
       "cond.plantar_fasciitis",
       "cond.myofascial_pain",
       "cond.peptic_ulcer",
-      "cond.hemorrhoids"
+      "cond.hemorrhoids",
+      "cond.restless_legs"
     ],
     "point_identity_zh": [
       "承山（痔疾與小腿痙攣第一要穴）"
@@ -16273,6 +16413,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -16558,6 +16701,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -16861,6 +17007,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "action_tags": [
@@ -17145,12 +17294,16 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
       "cond.de_quervain",
       "cond.ankle_sprain",
-      "cond.myofascial_pain"
+      "cond.myofascial_pain",
+      "cond.parkinsons"
     ],
     "point_identity_zh": [
       "八脈交會穴（通陽蹻脈）",
@@ -17424,6 +17577,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -17646,7 +17802,8 @@
     ],
     "related_conditions": [
       "cond.tension_headache",
-      "cond.cluster_headache"
+      "cond.cluster_headache",
+      "cond.restless_legs"
     ],
     "field_sources": {
       "acumethod_zh": [
@@ -17695,6 +17852,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -17982,6 +18142,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -18558,6 +18721,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -18567,7 +18733,8 @@
       "cond.irregular_menstruation",
       "cond.female_infertility",
       "cond.recurrent_pregnancy_loss",
-      "cond.chronic_pelvic_pain"
+      "cond.chronic_pelvic_pain",
+      "cond.breech_presentation"
     ],
     "point_identity_zh": [
       "井穴",
@@ -18874,6 +19041,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -18890,7 +19060,9 @@
       "cond.recurrent_uti",
       "cond.overactive_bladder",
       "cond.nocturnal_enuresis",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.pmdd",
+      "cond.chronic_fatigue"
     ],
     "point_identity_zh": [
       "小腸之募穴",
@@ -19226,7 +19398,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -19244,7 +19420,8 @@
       "cond.circadian_disorder",
       "cond.recurrent_uti",
       "cond.overactive_bladder",
-      "cond.nocturnal_enuresis"
+      "cond.nocturnal_enuresis",
+      "cond.poor_memory"
     ],
     "tcm_pattern_ids": [
       "pat.臟腑虛弱",
@@ -19262,7 +19439,8 @@
       "pattern.qi_yin_deficiency",
       "pattern.deficiency_constipation",
       "pattern.kidney_deficiency",
-      "pattern.liver_qi_stagnation"
+      "pattern.liver_qi_stagnation",
+      "pattern.spleen_qi_deficiency"
     ],
     "point_identity_zh": [
       "氣海（盲之原，大局氣海穴）",
@@ -19596,7 +19774,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -19708,7 +19890,13 @@
       "pattern.chong_mai_qi_rebellion",
       "pattern.lung_stomach_dryness_heat",
       "pattern.stomach_cold",
-      "pattern.spleen_qi_deficiency"
+      "pattern.spleen_qi_deficiency",
+      "pattern.liver_stomach_disharmony",
+      "pattern.gallbladder_heat_invading_stomach",
+      "pattern.spleen_stomach_yang_deficiency",
+      "pattern.spleen_deficiency_damp_encumbrance",
+      "pattern.qi_constipation",
+      "pattern.phlegm_damp"
     ],
     "point_identity_zh": [
       "胃之募穴",
@@ -20040,6 +20228,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -20051,7 +20242,9 @@
       "cond.circadian_disorder",
       "cond.palpitations",
       "cond.heart_failure",
-      "cond.cancer_supportive"
+      "cond.cancer_supportive",
+      "cond.postpartum_hypolactation",
+      "cond.poor_memory"
     ],
     "point_identity_zh": [
       "心包之募穴",
@@ -20401,7 +20594,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -20419,7 +20616,9 @@
       "cond.hypertension",
       "cond.hearing_loss",
       "cond.eye_strain",
-      "cond.chronic_allergies"
+      "cond.chronic_allergies",
+      "cond.ptsd",
+      "cond.poor_memory"
     ],
     "tcm_pattern_ids": [
       "pat.肺氣虛寒",
@@ -20432,7 +20631,9 @@
       "pattern.tai_yang_wind_strike",
       "pattern.yang_wei_mai_disharmony",
       "pattern.wind_cold_invading_collaterals",
-      "pattern.wind_damp_exterior"
+      "pattern.wind_damp_exterior",
+      "pattern.lung_qi_deficiency_cold",
+      "pattern.liver_yang_rising"
     ],
     "compare_with": [
       {
@@ -20753,6 +20954,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -21070,6 +21274,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -21388,7 +21595,9 @@
       "cond.herpes_zoster",
       "cond.palpitations",
       "cond.heart_failure",
-      "cond.overactive_bladder"
+      "cond.overactive_bladder",
+      "cond.restless_legs",
+      "cond.postherpetic_neuralgia"
     ],
     "field_sources": {
       "acumethod_zh": [
@@ -21439,7 +21648,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "tcm_pattern_ids": [
@@ -21452,7 +21665,8 @@
       "pattern.shao_yang_pattern",
       "pattern.channel_qi_blood_obstruction",
       "pattern.liver_depression_transforming_fire",
-      "pattern.damp_heat"
+      "pattern.damp_heat",
+      "pattern.gallbladder_heat_invading_stomach"
     ],
     "point_identity_zh": [
       "合穴",
@@ -21762,7 +21976,8 @@
       "cond.cervical_spondylosis",
       "cond.trigger_finger",
       "cond.ankle_sprain",
-      "cond.rheumatoid_arthritis"
+      "cond.rheumatoid_arthritis",
+      "cond.restless_legs"
     ],
     "field_sources": {
       "acumethod_zh": [
@@ -21811,10 +22026,17 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "tcm_pattern_ids": [
-      "pat.腎精不足"
+      "pat.腎精不足",
+      "pattern.kidney_essence_deficiency"
     ],
     "point_identity_zh": [
       "八會穴之「髓會」",
@@ -22111,6 +22333,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -22434,7 +22659,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -22448,7 +22677,9 @@
       "cond.dizziness_vertigo",
       "cond.nocturnal_enuresis",
       "cond.hearing_loss",
-      "cond.cancer_supportive"
+      "cond.cancer_supportive",
+      "cond.anxiety",
+      "cond.poor_memory"
     ],
     "tcm_pattern_ids": [
       "pat.肝陽上亢",
@@ -22459,7 +22690,9 @@
       "pattern.phlegm_misting_heart",
       "pattern.lung_qi_deficiency_cold",
       "pattern.wind_damp_exterior",
-      "pattern.liver_qi_stagnation"
+      "pattern.liver_qi_stagnation",
+      "pattern.liver_yang_rising",
+      "pattern.kidney_essence_deficiency"
     ],
     "point_identity_zh": [
       "百會（升陽舉陷、清熱醒腦第一要穴）",
@@ -22735,10 +22968,14 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
-      "cond.lumbar_disc_herniation"
+      "cond.lumbar_disc_herniation",
+      "cond.acute_lumbar_sprain"
     ],
     "point_identity_zh": [
       "水溝/人中（急救甦厥第一要穴）",
@@ -23037,6 +23274,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "寬胸理氣，通絡止痛，清心安神",
@@ -23664,6 +23904,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -24248,6 +24491,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -24299,6 +24545,9 @@
     "examStar": 1,
     "tcm_pattern_ids": [
       "pattern.heart_yin_deficiency"
+    ],
+    "related_conditions": [
+      "cond.poor_memory"
     ]
   },
   {
@@ -24527,6 +24776,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -24838,7 +25090,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -24862,7 +25118,10 @@
       "cond.hearing_loss",
       "cond.aphthous_ulcers",
       "cond.post_covid",
-      "cond.cancer_supportive"
+      "cond.cancer_supportive",
+      "cond.anxiety",
+      "cond.ptsd",
+      "cond.parkinsons"
     ],
     "tcm_pattern_ids": [
       "pat.心脾兩虛",
@@ -24880,7 +25139,11 @@
       "pattern.shao_yin_heat_transformation",
       "pattern.ying_stage_heat",
       "pattern.heart_stomach_fire",
-      "pattern.heat_disturbing_chest_diaphragm"
+      "pattern.heat_disturbing_chest_diaphragm",
+      "pattern.heart_spleen_deficiency",
+      "pattern.yin_deficiency_fire_flaring",
+      "pattern.liver_depression_transforming_fire",
+      "pattern.wind_heat"
     ],
     "point_identity_zh": [
       "輸穴 (土穴)",
@@ -25209,6 +25472,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -25521,6 +25787,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -25822,7 +26091,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -25860,7 +26133,9 @@
       "cond.tinnitus",
       "cond.hearing_loss",
       "cond.dry_eye",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.restless_legs",
+      "cond.diabetic_neuropathy"
     ],
     "tcm_pattern_ids": [
       "pat.陰虛火旺",
@@ -25882,7 +26157,11 @@
       "pattern.kidney_deficiency",
       "pattern.shao_yin_cold_transformation",
       "pattern.chong_ren_deficiency",
-      "pattern.qi_yin_deficiency"
+      "pattern.qi_yin_deficiency",
+      "pattern.yin_deficiency_fire_flaring",
+      "pattern.kidney_essence_deficiency",
+      "pattern.kidney_yin_deficiency",
+      "pattern.liver_kidney_yin_deficiency"
     ],
     "point_identity_zh": [
       "輸穴",
@@ -26196,7 +26475,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -26205,7 +26488,9 @@
       "cond.myofascial_pain",
       "cond.chronic_constipation",
       "cond.insomnia",
-      "cond.recurrent_uti"
+      "cond.recurrent_uti",
+      "cond.poor_memory",
+      "cond.parkinsons"
     ],
     "tcm_pattern_ids": [
       "pat.腎陰虧虛",
@@ -26216,7 +26501,9 @@
       "pattern.shao_yin_heat_transformation",
       "pattern.yin_qiao_mai_imbalance",
       "pattern.phlegm_qi_binding",
-      "pattern.yin_deficiency_fire_flaring"
+      "pattern.yin_deficiency_fire_flaring",
+      "pattern.kidney_yin_deficiency",
+      "pattern.kidney_essence_deficiency"
     ],
     "point_identity_zh": [
       "八脈交會穴（通陰蹻脈）",
@@ -26561,6 +26848,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -27189,6 +27479,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -27627,7 +27920,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -27774,7 +28071,11 @@
       "pattern.heart_stomach_fire",
       "pattern.heat_toxin_blazing",
       "pattern.liver_depression_transforming_fire",
-      "pattern.wind_damp_exterior"
+      "pattern.wind_damp_exterior",
+      "pattern.wind_cold_invading_collaterals",
+      "pattern.blood_stasis",
+      "pattern.damp_heat_skin_invasion",
+      "pattern.wind_heat"
     ],
     "functions": "疏風解表，清熱止痛，宣肺通竅，調和營衛，催產通經",
     "indications": "頭痛，目赤腫痛，齒痛 / 面腫，咽喉腫痛，感冒發熱，痛經 / 滯產，半身不遂",
@@ -28159,6 +28460,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -29069,6 +29373,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -29646,6 +29953,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -29658,7 +29968,9 @@
       "cond.patellofemoral_pain",
       "cond.myofascial_pain",
       "cond.chronic_gastritis",
-      "cond.chronic_diarrhea"
+      "cond.chronic_diarrhea",
+      "cond.lateral_epicondylitis",
+      "cond.stroke_rehab"
     ],
     "functions": "通經活絡，理氣和胃，調和氣血",
     "indications": "手臂麻木痛 / 偏癱，腹痛腹瀉，齒痛，肩臂不舉",
@@ -29995,7 +30307,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -30032,7 +30348,10 @@
       "cond.eye_strain",
       "cond.aphthous_ulcers",
       "cond.post_covid",
-      "cond.chronic_allergies"
+      "cond.chronic_allergies",
+      "cond.lateral_epicondylitis",
+      "cond.carpal_tunnel",
+      "cond.stroke_rehab"
     ],
     "tcm_pattern_ids": [
       "pat.濕熱浸淫",
@@ -30053,7 +30372,11 @@
       "pattern.xue_stage_heat",
       "pattern.lung_heat_excess",
       "pattern.heat_toxin_blazing",
-      "pattern.heat_constipation"
+      "pattern.heat_constipation",
+      "pattern.damp_heat_skin_invasion",
+      "pattern.blood_deficiency_wind_dryness",
+      "pattern.wind_heat",
+      "pattern.liver_yang_rising"
     ],
     "functions": "清熱解表，涼血息風，消腫止癢，調和氣血，通絡止痛",
     "indications": "發熱感冒，高血壓，蕁麻疹 / 濕疹，肘臂屈伸不利 / 肩周炎，咽喉腫痛，頭痛眩暈，腹痛腹瀉",
@@ -30346,10 +30669,14 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
-      "cond.cervical_spondylosis"
+      "cond.cervical_spondylosis",
+      "cond.lateral_epicondylitis"
     ],
     "functions": "舒筋通絡，理氣止痛",
     "indications": "肘臂攣痛，麻木不仁，瘰癧",
@@ -30633,6 +30960,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，清熱化痰",
@@ -30683,7 +31013,10 @@
     ],
     "examPearl": "上臂穴中唯一標註「避開動脈」的。功效比鄰近穴多了止咳化痰一路 —— 大腸經與肺相表裡的體現。",
     "examPearlEn": "High-yield Board Exam Pearl: Key point classification, anatomical landmark, and primary clinical indications for LI13.",
-    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
+    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
+    "related_conditions": [
+      "cond.stroke_rehab"
+    ]
   },
   {
     "code": "LI14",
@@ -30925,10 +31258,14 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
-      "cond.myofascial_pain"
+      "cond.myofascial_pain",
+      "cond.stroke_rehab"
     ],
     "functions": "清熱明目，舒筋通絡",
     "indications": "肩臂痛，瘰癧，目疾",
@@ -31244,6 +31581,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -31254,7 +31594,8 @@
       "cond.de_quervain",
       "cond.trigger_finger",
       "cond.myofascial_pain",
-      "cond.aphthous_ulcers"
+      "cond.aphthous_ulcers",
+      "cond.stroke_rehab"
     ],
     "compare_with": [
       {
@@ -31569,6 +31910,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -32457,6 +32801,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -32737,6 +33084,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -32748,7 +33101,9 @@
     ],
     "tcm_pattern_ids": [
       "pat.肺氣虛寒",
-      "pat.脾氣虛弱"
+      "pat.脾氣虛弱",
+      "pattern.lung_qi_deficiency_cold",
+      "pattern.spleen_qi_deficiency"
     ],
     "functions": "宣肺通鼻，疏風清熱，通絡止痛",
     "indications": "鼻塞 / 鼻淵 / 鼻衄，口眼喎斜，面腫皮膚瘙癢，膽道蛔蟲症",
@@ -33069,7 +33424,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -33119,7 +33478,10 @@
       "cond.eye_strain",
       "cond.aphthous_ulcers",
       "cond.post_covid",
-      "cond.cancer_supportive"
+      "cond.cancer_supportive",
+      "cond.pmdd",
+      "cond.ptsd",
+      "cond.diabetic_neuropathy"
     ],
     "tcm_pattern_ids": [
       "pat.肝胃不和",
@@ -33143,7 +33505,13 @@
       "pattern.phlegm_stasis_binding",
       "pattern.blood_deficiency_wind_dryness",
       "pattern.liver_fire_invading_stomach",
-      "pattern.damp_heat"
+      "pattern.damp_heat",
+      "pattern.liver_stomach_disharmony",
+      "pattern.liver_spleen_disharmony",
+      "pattern.qi_constipation",
+      "pattern.liver_depression_transforming_fire",
+      "pattern.liver_yang_rising",
+      "pattern.liver_fire"
     ],
     "point_identity_zh": [
       "輸穴",
@@ -33465,7 +33833,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -33491,7 +33863,8 @@
       "pattern.liver_qi_stagnation",
       "pattern.liver_wind",
       "pattern.liver_gallbladder_damp_heat",
-      "pattern.liver_depression_transforming_fire"
+      "pattern.liver_depression_transforming_fire",
+      "pattern.liver_stomach_disharmony"
     ],
     "point_identity_zh": [
       "肝之募穴",
@@ -33816,6 +34189,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -34135,6 +34511,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -34744,6 +35123,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -35085,6 +35467,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -35104,7 +35489,8 @@
       "cond.post_viral_cough",
       "cond.recurrent_uti",
       "cond.hearing_loss",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.lateral_epicondylitis"
     ],
     "compare_with": [
       {
@@ -35480,6 +35866,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -35837,6 +36226,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -36523,6 +36915,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -36863,6 +37258,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "exam_star": 1,
@@ -37602,7 +38000,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -37633,7 +38035,11 @@
       "cond.heart_failure",
       "cond.hearing_loss",
       "cond.post_covid",
-      "cond.cancer_supportive"
+      "cond.cancer_supportive",
+      "cond.hyperemesis_gravidarum",
+      "cond.carpal_tunnel",
+      "cond.ptsd",
+      "cond.poor_memory"
     ],
     "tcm_pattern_ids": [
       "pat.肝胃不和",
@@ -37658,7 +38064,10 @@
       "pattern.water_qi_attacking_heart",
       "pattern.liver_fire_invading_stomach",
       "pattern.stomach_cold",
-      "pattern.heat_disturbing_chest_diaphragm"
+      "pattern.heat_disturbing_chest_diaphragm",
+      "pattern.liver_stomach_disharmony",
+      "pattern.gallbladder_heat_invading_stomach",
+      "pattern.phlegm_damp"
     ],
     "point_identity_zh": [
       "絡穴",
@@ -37933,7 +38342,8 @@
     ],
     "related_conditions": [
       "cond.palpitations",
-      "cond.heart_failure"
+      "cond.heart_failure",
+      "cond.postpartum_hypolactation"
     ],
     "field_sources": {
       "acumethod_zh": [
@@ -37982,6 +38392,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -38557,6 +38970,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -38578,7 +38994,9 @@
       "cond.recurrent_uti",
       "cond.overactive_bladder",
       "cond.hearing_loss",
-      "cond.eye_strain"
+      "cond.eye_strain",
+      "cond.acute_lumbar_sprain",
+      "cond.neck_pain_stiff"
     ],
     "point_identity_zh": [
       "輸穴",
@@ -38890,6 +39308,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -39481,6 +39902,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -39782,6 +40206,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -40069,6 +40496,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -40347,6 +40777,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -40894,6 +41327,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -41406,6 +41842,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -41649,6 +42088,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -41904,6 +42346,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -42717,6 +43162,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -42992,6 +43440,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -43005,7 +43459,9 @@
     ],
     "tcm_pattern_ids": [
       "pat.肝膽火盛",
-      "pat.腎精虧虛"
+      "pat.腎精虧虛",
+      "pattern.liver_fire",
+      "pattern.kidney_essence_deficiency"
     ],
     "point_identity_zh": [
       "交會穴（手太陽、手少陽、足少陽）",
@@ -43304,6 +43760,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -43900,6 +44359,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -44247,6 +44709,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -44561,11 +45026,15 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
       "cond.de_quervain",
-      "cond.chronic_diarrhea"
+      "cond.chronic_diarrhea",
+      "cond.restless_legs"
     ],
     "functions": "健脾化濕，通絡止痛",
     "indications": "腹脹腹瀉，黃疸，足踝腫痛，小兒驚風",
@@ -44872,7 +45341,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -45052,7 +45525,12 @@
       "pattern.spleen_deficiency_damp_encumbrance",
       "pattern.liver_depression_transforming_fire",
       "pattern.kidney_deficiency",
-      "pattern.phlegm_damp"
+      "pattern.phlegm_damp",
+      "pattern.heart_spleen_deficiency",
+      "pattern.qi_blood_deficiency",
+      "pattern.blood_deficiency_wind_dryness",
+      "pattern.kidney_yin_deficiency",
+      "pattern.liver_kidney_yin_deficiency"
     ],
     "compare_with": [
       {
@@ -45684,6 +46162,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -46035,7 +46516,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -46109,7 +46594,9 @@
       "pattern.san_jiao_damp_heat",
       "pattern.water_fluid_retention",
       "pattern.water_qi_attacking_heart",
-      "pattern.wind_damp_exterior"
+      "pattern.wind_damp_exterior",
+      "pattern.spleen_deficiency_damp_encumbrance",
+      "pattern.damp_heat_skin_invasion"
     ],
     "functions": "健脾利濕，通利水道，理氣止痛，清熱消腫",
     "indications": "水腫 / 小便不利，腹脹腹瀉，黃疸，陰痛 / 帶下，膝關節腫痛",
@@ -46410,7 +46897,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -46451,7 +46942,9 @@
       "cond.overactive_bladder",
       "cond.eye_strain",
       "cond.post_covid",
-      "cond.chronic_allergies"
+      "cond.chronic_allergies",
+      "cond.restless_legs",
+      "cond.poor_memory"
     ],
     "tcm_pattern_ids": [
       "pat.瘀血阻絡",
@@ -46468,7 +46961,11 @@
       "pattern.xue_stage_heat",
       "pattern.uterus_blood_stasis",
       "pattern.phlegm_stasis_binding",
-      "pattern.heat_toxin_blazing"
+      "pattern.heat_toxin_blazing",
+      "pattern.blood_stasis",
+      "pattern.damp_heat_skin_invasion",
+      "pattern.blood_deficiency_wind_dryness",
+      "pattern.wind_heat"
     ],
     "compare_with": [
       {
@@ -49289,6 +49786,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -49585,6 +50085,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -49902,6 +50405,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -49916,7 +50425,8 @@
       "cond.eye_strain"
     ],
     "tcm_pattern_ids": [
-      "pat.風寒襲絡"
+      "pat.風寒襲絡",
+      "pattern.wind_cold_invading_collaterals"
     ],
     "compare_with": [
       {
@@ -50519,6 +51029,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -50536,7 +51052,10 @@
     "tcm_pattern_ids": [
       "pat.風寒襲絡",
       "pat.氣血虛弱",
-      "pat.瘀血阻絡"
+      "pat.瘀血阻絡",
+      "pattern.wind_cold_invading_collaterals",
+      "pattern.qi_blood_deficiency",
+      "pattern.blood_stasis"
     ],
     "functions": "祛風通絡，舒筋止痛",
     "indications": "口眼喎斜，流涎，齒痛，唇腫痛",
@@ -51172,7 +51691,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -51188,7 +51711,9 @@
     "tcm_pattern_ids": [
       "pat.風寒襲絡",
       "pat.氣血虛弱",
-      "pattern.stomach_fire"
+      "pattern.stomach_fire",
+      "pattern.wind_cold_invading_collaterals",
+      "pattern.qi_blood_deficiency"
     ],
     "compare_with": [
       {
@@ -51527,6 +52052,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -51536,7 +52067,8 @@
     ],
     "tcm_pattern_ids": [
       "pat.風火上擾",
-      "pat.瘀血阻絡"
+      "pat.瘀血阻絡",
+      "pattern.blood_stasis"
     ],
     "compare_with": [
       {
@@ -51861,6 +52393,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -51876,7 +52414,8 @@
       "cond.migraine_vestibular"
     ],
     "tcm_pattern_ids": [
-      "pat.痰濕中阻"
+      "pat.痰濕中阻",
+      "pattern.phlegm_damp"
     ],
     "functions": "祛風清頭，止痛明目",
     "indications": "頭痛，眩暈，目痛 / 流淚",
@@ -53591,6 +54130,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -54659,6 +55201,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -54727,7 +55272,10 @@
     "examPearl": "乳根是乳房疾患的主穴（乳癰、乳汁不足）。位在乳房下緣，是胸部氣胸風險段的最後一穴。",
     "examPearlEn": "High-yield Board Exam Pearl: Key point classification, anatomical landmark, and primary clinical indications for ST18.",
     "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
-    "examStar": 1
+    "examStar": 1,
+    "related_conditions": [
+      "cond.postpartum_hypolactation"
+    ]
   },
   {
     "code": "ST19",
@@ -56668,7 +57216,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -56706,7 +57258,12 @@
       "pat.虛秘",
       "pattern.yang_ming_fu_organ_excess",
       "pattern.chong_mai_qi_rebellion",
-      "pattern.spleen_constriction"
+      "pattern.spleen_constriction",
+      "pattern.liver_spleen_disharmony",
+      "pattern.spleen_qi_deficiency",
+      "pattern.heat_constipation",
+      "pattern.qi_constipation",
+      "pattern.deficiency_constipation"
     ],
     "compare_with": [
       {
@@ -57548,6 +58105,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -58496,6 +59056,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -58761,6 +59324,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -59327,6 +59893,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -59336,7 +59905,9 @@
       "cond.cluster_headache",
       "cond.chronic_gastritis",
       "cond.peptic_ulcer",
-      "cond.chronic_diarrhea"
+      "cond.chronic_diarrhea",
+      "cond.restless_legs",
+      "cond.diabetic_neuropathy"
     ],
     "point_identity_en": [
       "Xi-Cleft point"
@@ -59632,6 +60203,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -59994,7 +60568,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -60169,7 +60747,17 @@
       "pattern.wind_cold_invading_collaterals",
       "pattern.spleen_constriction",
       "pattern.wind_damp_exterior",
-      "pattern.kidney_deficiency"
+      "pattern.kidney_deficiency",
+      "pattern.liver_stomach_disharmony",
+      "pattern.gallbladder_heat_invading_stomach",
+      "pattern.spleen_stomach_yang_deficiency",
+      "pattern.spleen_deficiency_damp_encumbrance",
+      "pattern.liver_spleen_disharmony",
+      "pattern.spleen_qi_deficiency",
+      "pattern.deficiency_constipation",
+      "pattern.qi_blood_deficiency",
+      "pattern.blood_deficiency_wind_dryness",
+      "pattern.lung_stomach_dryness_heat"
     ],
     "compare_with": [
       {
@@ -60532,6 +61120,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -60836,6 +61427,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -61420,7 +62014,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -61432,7 +62030,8 @@
       "cond.copd",
       "cond.chronic_cough",
       "cond.post_viral_cough",
-      "cond.dizziness_vertigo"
+      "cond.dizziness_vertigo",
+      "cond.diabetic_neuropathy"
     ],
     "tcm_pattern_ids": [
       "pat.痰濕中阻",
@@ -61441,7 +62040,8 @@
       "pattern.cloudy_lin",
       "pattern.phlegm",
       "pattern.phlegm_stasis_binding",
-      "pattern.phlegm_qi_binding"
+      "pattern.phlegm_qi_binding",
+      "pattern.phlegm_damp"
     ],
     "point_identity_en": [
       "Luo-Connecting point"
@@ -61729,6 +62329,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -62039,6 +62642,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -62612,7 +63218,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -62642,7 +63252,9 @@
       "pattern.liver_fire_invading_stomach",
       "pattern.damp_heat_skin_invasion",
       "pattern.lung_heat_excess",
-      "pattern.heat_toxin_blazing"
+      "pattern.heat_toxin_blazing",
+      "pattern.heat_constipation",
+      "pattern.lung_stomach_dryness_heat"
     ],
     "point_identity_en": [
       "Ying-Spring point (Water point)"
@@ -62960,6 +63572,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -63309,6 +63924,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -63324,7 +63942,10 @@
       "cond.asthma",
       "cond.migraine_vestibular",
       "cond.herpes_zoster",
-      "cond.post_covid"
+      "cond.post_covid",
+      "cond.acute_lumbar_sprain",
+      "cond.lateral_epicondylitis",
+      "cond.stroke_rehab"
     ],
     "point_identity_zh": [
       "絡穴（三焦經別絡，通心包經）",
@@ -63678,6 +64299,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -64038,6 +64662,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -64350,6 +64977,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -64920,6 +65550,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -65539,6 +66172,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -65852,6 +66488,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -66688,6 +67327,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "調經理氣，補腎固精",
@@ -68533,6 +69175,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "和胃降逆，理氣止痛",
@@ -71346,6 +71991,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -72223,6 +72871,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -72528,6 +73179,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -73341,6 +73995,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "和胃降逆，理氣化痰",
@@ -76907,6 +77564,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "溫補腎陽，祛風除濕，通利關節",
@@ -77182,6 +77842,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -78454,6 +79117,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -79940,13 +80606,17 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
       "cond.cervical_spondylosis",
       "cond.myofascial_pain",
       "cond.tension_headache",
-      "cond.cluster_headache"
+      "cond.cluster_headache",
+      "cond.poor_memory"
     ],
     "point_identity_zh": [
       "天窗穴（Window of Sky Point）",
@@ -81710,6 +82380,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -81759,7 +82432,10 @@
     "examPearl": "★ 神庭為清心安神、失眠與前頭痛要穴。平刺0.3-0.5寸。",
     "examPearlEn": "★ Shenting is a key point for calming spirit, insomnia, anxiety, and frontal headache. Transverse 0.3-0.5 inch.",
     "examStar": 1,
-    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients."
+    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
+    "related_conditions": [
+      "cond.poor_memory"
+    ]
   },
   {
     "code": "GV25",
@@ -82963,10 +83639,17 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "tcm_pattern_ids": [
-      "pat.肝膽火盛"
+      "pat.肝膽火盛",
+      "pattern.liver_fire"
     ],
     "point_identity_zh": [
       "耳疾要穴（聽會）",
@@ -83246,6 +83929,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "聰耳利齒，疏風通絡",
@@ -86177,6 +86863,12 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -86184,7 +86876,8 @@
       "cond.eye_strain"
     ],
     "tcm_pattern_ids": [
-      "pat.風寒襲絡"
+      "pat.風寒襲絡",
+      "pattern.wind_cold_invading_collaterals"
     ],
     "point_identity_zh": [
       "面部解剖標誌穴",
@@ -87538,6 +88231,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "清頭安神，通絡止痛",
@@ -88663,6 +89359,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -88966,6 +89665,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -89758,6 +90460,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，通利關節",
@@ -90054,6 +90759,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "祛風止癢，舒筋活絡，通利關節",
@@ -90574,6 +91282,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，利膝止痛",
@@ -91323,6 +92034,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -91896,6 +92610,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -92215,6 +92932,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -92860,6 +93580,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -93486,6 +94209,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -93767,6 +94493,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "寬胸理氣，寧心安神",
@@ -94069,6 +94798,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -94364,6 +95096,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -95003,12 +95738,17 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
       "cond.ankle_sprain",
       "cond.hypotension",
-      "cond.hearing_loss"
+      "cond.hearing_loss",
+      "cond.carpal_tunnel",
+      "cond.parkinsons"
     ],
     "point_identity_zh": [
       "輸穴 (土穴)",
@@ -95342,6 +96082,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -95358,7 +96101,8 @@
       "cond.post_viral_cough",
       "cond.migraine_vestibular",
       "cond.aphthous_ulcers",
-      "cond.cancer_supportive"
+      "cond.cancer_supportive",
+      "cond.carpal_tunnel"
     ],
     "point_identity_zh": [
       "滎穴 (火穴)"
@@ -95667,6 +96411,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -96313,7 +97060,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -96330,7 +97081,9 @@
       "pat.肝陽上亢",
       "pattern.liver_fire",
       "pattern.fire",
-      "pattern.liver_fire_invading_stomach"
+      "pattern.liver_fire_invading_stomach",
+      "pattern.liver_depression_transforming_fire",
+      "pattern.liver_yang_rising"
     ],
     "point_identity_zh": [
       "滎穴",
@@ -96635,6 +97388,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -97479,6 +98235,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，利膝止痛",
@@ -97778,6 +98537,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -98071,6 +98833,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "理氣止痛，清熱利濕",
@@ -99129,7 +99894,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -99139,7 +99908,8 @@
     "tcm_pattern_ids": [
       "pat.肝鬱脾虛",
       "pattern.food_stagnation",
-      "pattern.liver_qi_stagnation"
+      "pattern.liver_qi_stagnation",
+      "pattern.liver_spleen_disharmony"
     ],
     "point_identity_zh": [
       "脾之募穴",
@@ -99457,6 +100227,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "compare_with": [
@@ -99805,6 +100578,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -100163,6 +100939,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "compare_with": [
@@ -100492,6 +101271,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "point_identity_zh": [
@@ -100826,7 +101608,11 @@
         "eLotus CORE"
       ],
       "tcm_pattern_ids": [
-        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+        "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)",
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -100837,12 +101623,15 @@
       "cond.hemorrhoids",
       "cond.herpes_zoster",
       "cond.hearing_loss",
-      "cond.eye_strain"
+      "cond.eye_strain",
+      "cond.postherpetic_neuralgia"
     ],
     "tcm_pattern_ids": [
       "pat.熱秘",
       "pat.氣秘",
-      "pattern.qi_stagnation_blood_stasis"
+      "pattern.qi_stagnation_blood_stasis",
+      "pattern.heat_constipation",
+      "pattern.qi_constipation"
     ],
     "point_identity_zh": [
       "經穴",
@@ -101389,6 +102178,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -101980,6 +102772,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -102270,6 +103065,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，清熱止痛",
@@ -102846,6 +103644,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "舒筋活絡，散結止痛",
@@ -103110,6 +103911,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -103370,6 +104174,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "functions": "祛風通絡，清熱止痛",
@@ -103972,6 +104779,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
@@ -105115,13 +105925,20 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "tcm_pattern_ids": [
+        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
       ]
     },
     "related_conditions": [
       "cond.tinnitus"
     ],
     "tcm_pattern_ids": [
-      "pat.肝膽火盛"
+      "pat.肝膽火盛",
+      "pattern.liver_fire"
     ],
     "functions": "聰耳通竅，清熱止痛",
     "indications": "耳鳴耳聾，聤耳，齒痛，下頜關節痛",
@@ -105687,6 +106504,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "related_conditions": [
+        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ]
     },
     "related_conditions": [
