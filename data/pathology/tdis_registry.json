@@ -74,7 +74,53 @@
    "name_zh": "嘔吐",
    "pinyin": "Outu",
    "name_en": "Vomiting",
-   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+   "definition_zh": "嘔吐是指胃內容物經口（有時兼經鼻）強力排出體外的病證，俗稱「吐」。",
+   "definition_en": "Vomiting (known informally as throwing up) is the forceful expulsion of the contents of the stomach through the mouth and sometimes the nose.",
+   "etiology_zh": "一為外邪侵襲（外感）；二為飲食不節，損傷脾胃（急性者食滯內停，慢性者如食物過敏、痰飲內生）；三為情志所傷，肝氣犯胃；四為脾胃虛弱（脾陽虛、胃陰虛）。",
+   "etiology_en": "Per the handout's TCM section: (1) invasion of external pathogens; (2) improper diet injuring the spleen and stomach (acute food retention; chronic conditions such as food allergies with phlegm-fluid); (3) emotional injury with liver qi attacking the stomach; (4) deficiency of the spleen and stomach (spleen yang deficiency, stomach yin deficiency).",
+   "pathomechanism_zh": "諸因均致胃失和降、胃氣上逆而發為嘔吐：外邪犯胃、食滯中脘、痰飲內停、肝氣犯胃者屬實；脾陽虛衰、胃陰不足、胃失濡養溫煦者屬虛。（講義未設病機專節，此據各證治則「和胃降逆」歸納。）",
+   "pathomechanism_en": "In all cases the stomach loses its harmonious downward movement and stomach qi rebels upward, producing vomiting: invasion of external pathogens, food retention, phlegm-fluid accumulation, and liver qi attacking the stomach constitute the excess side, while spleen yang deficiency and stomach yin deficiency constitute the deficiency side. (The handout has no dedicated pathomechanism section; this is summarized from its treatment principles of regulating the stomach and descending stomach qi.)",
+   "key_manifestations_zh": [
+    "胃內容物經口強力吐出",
+    "噁心",
+    "汗出",
+    "面色蒼白",
+    "心動過速"
+   ],
+   "key_manifestations_en": [
+    "Forceful expulsion of stomach contents through the mouth",
+    "Nausea",
+    "Sweating",
+    "Pale face",
+    "Tachycardia"
+   ],
+   "related_patterns": [
+    "pattern.food_stagnation",
+    "pattern.liver_stomach_disharmony",
+    "pattern.spleen_yang_deficiency",
+    "pattern.stomach_yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/4. Vomiting - handout on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/4. Vomiting - handout on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/4. Vomiting - handout on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/4. Vomiting - handout on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/4. Vomiting - handout on Canvas.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 外邪犯胃、痰飲內停（慢性飲食所傷／食物過敏型）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.tun_suan",
@@ -88,21 +134,155 @@
    "name_zh": "呃逆",
    "pinyin": "Eni",
    "name_en": "Hiccup",
-   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+   "definition_zh": "呃逆係指膈肌不自主收縮,呃聲頻頻,一分鐘內可反覆多次發作,不能自制的病證。",
+   "definition_en": "Hiccup refers to an involuntary contraction of the diaphragm that may repeat several times per minute.",
+   "etiology_zh": "西醫病因:進食過速,碳酸飲料與酒,某些藥物。中醫病因分虛實:實者為胃中寒冷、胃火上逆、氣鬱痰阻(每因情志緊張、焦慮而誘發);虛者為胃陽不足、胃陰虧虛。",
+   "etiology_en": "Western causes given in the handout: rapid eating; carbonated beverages and alcohol; certain drugs. In Chinese medicine the causes divide into excess conditions — stomach cold, stomach fire, and qi-phlegm stagnation (induced by stress or anxiety) — and deficiency conditions — stomach yang deficiency and stomach yin deficiency.",
+   "key_manifestations_zh": [
+    "呃聲頻作,不能自制,一分鐘內可反覆多次",
+    "胃寒者呃聲深長有力,胃脘冷痛;胃火者呃聲洪亮清晰有力,口舌生瘡",
+    "氣鬱痰阻者呃逆連連不止,兼嘔吐,遇情志緊張焦慮而發",
+    "胃陽虛者呃聲低弱沉緩,肢冷倦怠,納差;胃陰虛者呃聲短促急速,口乾唇燥而渴"
+   ],
+   "key_manifestations_en": [
+    "Repeated involuntary hiccups that may recur several times per minute",
+    "In stomach cold the sound is deep, long and forceful with cramping stomach pain; in stomach fire it is loud, clear and forceful with mouth ulcers",
+    "In qi-phlegm stagnation the hiccups are continuous with vomiting, induced by stress or anxiety",
+    "In stomach yang deficiency the sound is weak, deep and low-toned with cold limbs, fatigue and poor appetite; in stomach yin deficiency it is short and quick with thirst and dry mouth, tongue and lips"
+   ],
+   "related_patterns": [
+    "pattern.stomach_fire",
+    "pattern.stomach_yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/10. Hiccup - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/10. Hiccup - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/10. Hiccup - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/10. Hiccup - handouts on Canvas.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 胃中寒冷、氣鬱痰阻、胃陽虛。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.xie_xie",
    "name_zh": "泄瀉",
    "pinyin": "Xiexie",
    "name_en": "Diarrhea",
-   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+   "definition_zh": "泄瀉係指排便次數增多,每日三次或以上,糞質稀溏或呈水樣的病證;其病與脾、肝、腎三臟關係最為密切。",
+   "definition_en": "Diarrhea refers to the condition of having three or more loose or liquid bowel movements per day; the zangfu chiefly involved are the spleen, liver, and kidney.",
+   "etiology_zh": "感受外邪(風、暑、濕、寒、熱);飲食所傷(暴飲暴食);情志失調(郁怒致肝氣鬱結,橫逆乘脾);脾胃虛弱;腎陽虧虛。",
+   "etiology_en": "Affection by external pathogens (wind, summerheat, damp, cold, and heat); dietary injury (overeating); emotional disturbance (anger leading to liver qi stagnation overacting on the spleen); spleen and stomach weakness; kidney yang deficiency.",
+   "pathomechanism_zh": "外邪侵襲(寒濕、濕熱)或飲食積滯,損傷脾胃,運化失司,發為急性泄瀉,多屬實證;病久不癒,則見肝氣橫逆乘脾、脾胃虛弱不能運化水穀、或腎陽虧虛不能溫煦,轉為慢性泄瀉,多屬虛證;腎陽虛者每於黎明之前腸鳴腹痛而瀉,瀉後始安。病位雖在腸,而關鍵繫於脾,並涉及肝腎。",
+   "pathomechanism_en": "Invasion by external pathogens (cold-damp, damp-heat) or food stagnation injures the spleen and stomach, whose transportation and transformation fail, producing acute diarrhea, mostly of excess type. When prolonged, liver qi overacting on the spleen, spleen-stomach weakness unable to transform food, or kidney yang deficiency failing to warm gives rise to chronic diarrhea, mostly of deficient type; in kidney yang deficiency the diarrhea occurs before dawn, preceded by borborygmus and abdominal pain and eased after the bowel movement. The disease is located in the intestines, with the spleen as the pivot, and also involves the liver and kidney.",
+   "key_manifestations_zh": [
+    "排便次數明顯增多,每日三次或以上",
+    "糞質稀溏,色黃,氣味酸臭,或夾黏液及未消化食物",
+    "腹痛",
+    "腸鳴",
+    "肛門墜重、灼熱"
+   ],
+   "key_manifestations_en": [
+    "Markedly increased bowel movement frequency, three or more times per day",
+    "Loose stool, yellow in color, with a sour odor, mucus, or undigested food",
+    "Abdominal pain",
+    "Borborygmus",
+    "Heavy sensation and burning of the anus"
+   ],
+   "related_patterns": [
+    "pattern.cold_damp_encumbering_spleen",
+    "pattern.large_intestine_damp_heat",
+    "pattern.food_stagnation",
+    "pattern.liver_spleen_disharmony",
+    "pattern.spleen_qi_deficiency",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/7. Diarrhea - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/7. Diarrhea - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/7. Diarrhea - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/7. Diarrhea - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/7. Diarrhea - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.bian_mi",
    "name_zh": "便秘",
    "pinyin": "Bianmi",
    "name_en": "Constipation",
-   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+   "definition_zh": "便秘係指排便困難、便後有排便不盡感,且排便次數減少(一般每週三次或以下)的病證。",
+   "definition_en": "Constipation refers to a condition of difficulty during defecation, a sensation of incomplete bowel evacuation, and infrequent bowel movements, typically three times or fewer per week.",
+   "etiology_zh": "講義所列病因:飲食失宜(膳食纖維與水分攝取不足,嗜食辛辣、乾燥、高蛋白、高脂之品)、藥物所傷、焦慮等情志因素、戒菸、腹部手術、肛門括約肌損傷、腫瘤梗阻、乳糖不耐等。中醫辨其虛實:實者為腸胃積熱與氣機鬱滯;虛者為血虛、陰虛、氣虛、陽虛。",
+   "etiology_en": "Causes listed in the handout: dietary factors (insufficient fiber and water intake; spicy-pungent, dry, high-protein and high-fat foods), medications, anxiety and other psychological factors, smoking cessation, abdominal surgery, damage to the anal sphincter, tumor obstruction, and lactose intolerance. In TCM it is differentiated into excess conditions (gastrointestinal heat and qi stagnation) and deficient conditions (blood deficiency, yin deficiency, qi deficiency, yang deficiency).",
+   "pathomechanism_zh": "其病機不外排便受阻與腸道傳導遲緩兩端。實者腸胃積熱,津液受灼,或氣機鬱滯,腑氣不通,故大便乾結、排出困難,情志波動則加重;虛者血虛陰虛,腸道失於濡潤,大便乾燥難下,或氣虛陽虛,大腸傳送無力、蠕動遲緩,雖糞便蓄積而便意不生,或雖有便意而努掙難出,便後短氣汗出、疲乏,甚者須賴瀉藥方得一行。",
+   "pathomechanism_en": "The mechanisms fall into two categories: obstructed defecation and hypomotility. In excess patterns, gastrointestinal heat scorches the fluids, or stagnant qi blocks the bowel qi, so the stool is dry and difficult to pass, worsening with emotional fluctuation. In deficiency patterns, blood or yin deficiency deprives the intestines of moistening so the dry stool is hard to pass, or qi and yang deficiency leaves the large intestine without propulsive force and peristalsis slows — the urge to defecate may be absent even when feces have accumulated, or defecation remains difficult and is followed by shortness of breath, sweating and fatigue, in severe cases relying on purgatives.",
+   "key_manifestations_zh": [
+    "大便乾結,排便困難",
+    "排便次數減少,每週三次或以下",
+    "便後有排便不盡感",
+    "腹部脹滿",
+    "或需藉手法或瀉藥始能排便"
+   ],
+   "key_manifestations_en": [
+    "Dry, hard stool with difficulty in defecation",
+    "Infrequent bowel movements, three times or fewer per week",
+    "Sensation of incomplete bowel evacuation",
+    "Abdominal distension",
+    "May require manual maneuvers or purgatives to facilitate defecation"
+   ],
+   "related_patterns": [
+    "pattern.large_intestine_excess_heat",
+    "pattern.liver_qi_stagnation",
+    "pattern.blood_deficiency",
+    "pattern.yin_deficiency",
+    "pattern.qi_deficiency",
+    "pattern.yang_deficiency",
+    "pattern.lung_qi_deficiency",
+    "pattern.spleen_qi_deficiency",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/5. Constipation - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/5. Constipation - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/5. Constipation - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/5. Constipation - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/5. Constipation - handouts on Canvas.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.fu_tong",
@@ -116,7 +296,53 @@
    "name_zh": "脅痛",
    "pinyin": "Xietong",
    "name_en": "Hypochondriac Pain",
-   "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders"
+   "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders",
+   "definition_zh": "脅痛係指以一側或兩側脅肋部疼痛為主要表現的病證;其病與肝膽、脾胃、腎相關。",
+   "definition_en": "Hypochondriac pain refers to a disorder characterized by pain over the unilateral or bilateral sides of the hypochondriac region; the zangfu involved are the liver and gallbladder, spleen and stomach, and kidney.",
+   "etiology_zh": "總由外邪侵襲、飲食所傷、七情內傷所致。實證:肝氣鬱結;瘀血停著(氣血運行不暢);肝膽濕熱(痰濕外侵、飲食過度)。虛證:肝陰不足;飲停脅下;少陽經受病(邪鬱少陽)。",
+   "etiology_en": "Caused overall by affection by exterior pathogens, dietary injury, and the seven emotional factors. Excess conditions: liver qi stagnation; blood stasis (failure of the free flow of qi and blood); damp-heat in the liver and gallbladder (phlegm-damp invasion, overeating). Deficiency conditions: liver yin deficiency; fluid retention in the hypochondrium; Shaoyang meridian disease (stagnation of pathogens).",
+   "pathomechanism_zh": "實者氣滯、血瘀、濕熱壅阻,肝膽氣血失於流暢,不通則痛,故起病急、病程短、痛處拒按,見於體實之人;虛者肝陰虧虛,脈絡失養,不榮則痛,故起病緩、病程長、痛處喜按,見於體弱之人。本病常虛實並見,日久每轉為陰虛與氣滯並存。",
+   "pathomechanism_en": "In excess, qi stagnation, blood stasis, or damp-heat obstruction blocks the free flow of qi and blood in the liver and gallbladder — where there is blockage there is pain — hence rapid onset, short duration, refusal of pressure, and a strong constitution. In deficiency, liver yin insufficiency leaves the vessels unnourished — where there is malnourishment there is pain — hence slow onset, long duration, preference for pressure, and a weak constitution. Hypochondriac pain often presents with both excess and deficiency, and over time evolves into coexisting yin deficiency and qi stagnation.",
+   "key_manifestations_zh": [
+    "一側或兩側脅肋部疼痛,呈脹痛、刺痛、隱痛、灼痛或絞痛",
+    "疼痛可放射至肩背",
+    "疼痛每因情志波動而增減",
+    "口苦",
+    "目視昏花"
+   ],
+   "key_manifestations_en": [
+    "Pain in the unilateral or bilateral hypochondriac regions — distending, stabbing, dull, burning, or colicky in character",
+    "Pain may radiate to the shoulder and back",
+    "Pain relieved or exacerbated by emotional fluctuations",
+    "Bitter taste in the mouth",
+    "Blurred vision"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.blood_stasis",
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.liver_yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/8. Hypochondriac Pain- handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/8. Hypochondriac Pain- handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/8. Hypochondriac Pain- handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/8. Hypochondriac Pain- handouts on Canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/8. Hypochondriac Pain- handouts on Canvas.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 飲停脅下、少陽經病。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.huang_dan",
@@ -130,7 +356,52 @@
    "name_zh": "痔瘡",
    "pinyin": "Zhichuang",
    "name_en": "Hemorrhoids",
-   "taxonomy_id": "tdx.surgery_dermatology.anorectal_disorders"
+   "taxonomy_id": "tdx.surgery_dermatology.anorectal_disorders",
+   "definition_zh": "痔瘡係指直腸下端或肛門部靜脈瘀血擴張所形成之柔軟腫塊，以肛門腫痛、瘙癢、便血為主要表現的病證。生於齒線以上、肛內直腸下端者為內痔；生於齒線以下、肛門口者為外痔，可脫出肛外。其病與肝膽、脾胃、腎、肺諸臟腑相關。",
+   "definition_en": "Hemorrhoids are painful, swollen veins in the lower portion of the rectum or anus, presenting mainly with anal pain, itching, and bleeding. Internal hemorrhoids occur just inside the anus above the pectinate line; external hemorrhoids occur at the anal opening below the pectinate line and may hang outside the anus. The zangfu involved are the Liver and Gallbladder, Spleen and Stomach, Kidney, and Lung.",
+   "etiology_zh": "情志失調、精神緊張；飲食不節；久坐久立；長期便祕或泄瀉。",
+   "etiology_en": "Mental stress; improper diet; prolonged sitting or standing; chronic constipation or diarrhea.",
+   "pathomechanism_zh": "講義未設專門病機論述，據其證型分類可知：濕熱下注大腸，或風邪襲擾腸絡而動血，或血行瘀滯結聚肛門，或脾虛中氣下陷、升舉無力而痔核脫出，均可發為本病。",
+   "pathomechanism_en": "The handout has no dedicated pathomechanism discussion; from its pattern classification, the disease arises when damp-heat pours into the intestines, or intestinal wind disturbs the collaterals and stirs the blood, or blood stagnates and binds at the anus, or spleen deficiency with sinking qi fails to lift, causing prolapse of the hemorrhoids.",
+   "key_manifestations_zh": [
+    "肛門瘙癢",
+    "肛門痠痛或疼痛",
+    "便時見鮮紅血，附於糞便、手紙或滴入便池",
+    "排便時疼痛",
+    "肛門旁一個或多個質硬觸痛之腫塊"
+   ],
+   "key_manifestations_en": [
+    "Anal itching",
+    "Anal ache or pain",
+    "Bright red blood on toilet tissue, stool, or in the toilet bowl",
+    "Pain during bowel movements",
+    "One or more hard, tender lumps near the anus"
+   ],
+   "related_patterns": [
+    "pattern.large_intestine_damp_heat",
+    "pattern.blood_stasis",
+    "pattern.spleen_qi_sinking"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/9. Hemorrhoids - handout on moodle.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/9. Hemorrhoids - handout on moodle.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/9. Hemorrhoids - handout on moodle.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/9. Hemorrhoids - handout on moodle.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/9. Hemorrhoids - handout on moodle.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 腸風（腸道風邪）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.tou_tong",
@@ -149,7 +420,53 @@
    "pinyin": "Xuanyun",
    "name_en": "Dizziness",
    "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
-   "classical_source": "中醫內科學"
+   "classical_source": "中醫內科學",
+   "definition_zh": "眩暈是指頭暈與目眩並見的病證：頭暈者自覺頭腦昏沉、如將暈厥；眩者視物旋轉、如坐舟車。症狀可持續或呈發作性，歷時數分鐘至數小時，常因體位變動而誘發；病情有輕重之分，輕者為輕度眩暈，重者為重度眩暈。",
+   "definition_en": "Dizziness and vertigo is a condition combining two different feelings: lightheadedness, a feeling of being about to faint, and vertigo, a spinning sensation. Symptoms can be constant or episodic, last from minutes to hours, and onset can be triggered by a movement; it is categorized into mild vertigo and severe vertigo.",
+   "etiology_zh": "病因分外感與內傷兩類（外因與內因）。",
+   "etiology_en": "The causes are classified into external causes and internal causes.",
+   "pathomechanism_zh": "其病機主要有五：肝陽上亢，上擾清竅；痰濁阻滯，清陽不升；瘀血內停，脈絡不通；氣血兩虛，清竅失養；腎精不足，髓海空虛。",
+   "pathomechanism_en": "Five main mechanisms are described: liver yang uprising, phlegm obstruction, blood stagnation, qi and blood deficiency, and kidney essence insufficiency.",
+   "key_manifestations_zh": [
+    "自覺景物旋轉、有運動感",
+    "噁心或嘔吐",
+    "眼球運動異常",
+    "言語困難",
+    "行走困難"
+   ],
+   "key_manifestations_en": [
+    "A sensation of motion (spinning)",
+    "Nausea or vomiting",
+    "Abnormal eye movements",
+    "Difficulty speaking",
+    "Difficulty walking"
+   ],
+   "related_patterns": [
+    "pattern.liver_yang_rising",
+    "pattern.phlegm_damp",
+    "pattern.blood_stasis",
+    "pattern.qi_blood_deficiency",
+    "pattern.kidney_essence_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/2 Dizziness and Vertigo.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/2 Dizziness and Vertigo.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/2 Dizziness and Vertigo.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/2 Dizziness and Vertigo.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/2 Dizziness and Vertigo.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.zhong_feng",
@@ -157,7 +474,56 @@
    "pinyin": "Zhongfeng",
    "name_en": "Wind-Stroke",
    "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
-   "classical_source": "中醫內科學"
+   "classical_source": "中醫內科學",
+   "definition_zh": "中風，古稱「猝然中風邪」之證，相當於西醫之腦血管意外（CVA），因腦部動脈阻塞或破裂，導致猝然昏仆、半身不遂（偏癱）等症的病證。",
+   "definition_en": "Wind Stroke (Zhong Feng), a TCM term meaning \"catching wind\", corresponds to Cerebrovascular Accident (CVA), in which the arteries in the brain become blocked or rupture, resulting in hemiplegia.",
+   "etiology_zh": "一為肝陽亢盛、腎陰虧虛；二為痰濕內蘊；三為勞倦過度與情志緊張；四為生活方式失宜。",
+   "etiology_en": "Its TCM etiology comprises: (1) liver yang excess with kidney yin deficiency; (2) phlegm and dampness accumulation; (3) overstrain and stress; (4) lifestyle factors.",
+   "pathomechanism_zh": "病機關鍵有五：風、火、痰、瘀、虛（虛包括血虛、陰虛、津液虧虛）。病位深淺分中經絡與中臟腑：中經絡者病輕，見風邪入中、肝腎陰虛化風、痰熱風痰上擾三種情形；中臟腑者病重，分閉證（實，陽閉、陰閉）與脫證（虛，陽脫、陰脫）；後遺恢復期則見肝腎陰虛、痰濕內蘊、氣血兩虛等傳變。",
+   "pathomechanism_en": "Five key pathogenic factors operate: wind, fire, phlegm, stasis, and deficiency (of blood, yin, and body fluid). By depth, stroke refers to two types: meridian stroke (milder, with three conditions — wind invasion obstruction; liver and kidney yin deficiency stirring up wind; phlegm-heat with wind-phlegm disturbing upward) and zang-fu stroke (severe, divided into the excess/close type — yang bi and yin bi conditions — and the deficiency/open type — yang tuo and yin tuo conditions); in the convalescence stage it evolves into liver-kidney yin deficiency, damp-phlegm accumulation, or qi and blood deficiency.",
+   "key_manifestations_zh": [
+    "半身不遂（偏癱）",
+    "面部感覺減退",
+    "言語異常（謇澀或錯亂）",
+    "神志喪失（昏仆）",
+    "頭痛",
+    "嘔吐"
+   ],
+   "key_manifestations_en": [
+    "Hemiplegia",
+    "Decreased sensation of the face",
+    "Abnormal speech",
+    "Loss of consciousness",
+    "Headache",
+    "Vomiting"
+   ],
+   "related_patterns": [
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.wind_phlegm",
+    "pattern.phlegm_damp",
+    "pattern.qi_blood_deficiency",
+    "pattern.liver_yang_rising"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/4 Wind Stroke.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/4 Wind Stroke.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/4 Wind Stroke.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/4 Wind Stroke.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/4 Wind Stroke.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 風邪入中經絡、陽閉、陰閉、陽脫、陰脫、氣虛血瘀。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.mian_tan",
@@ -187,7 +553,55 @@
    "name_zh": "心悸",
    "pinyin": "Xinji",
    "name_en": "Palpitations",
-   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders"
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "definition_zh": "心悸是指患者自覺心中悸動不安、心跳異常的病證，可表現為心跳過速、心跳漏跳感或心中怦怦跳動，程度輕者常不自覺，重者則明顯可感；發作可見於活動或安靜之時，持續時間自數秒至數小時不等。",
+   "definition_en": "Palpitation is a condition in which the patient subjectively perceives an abnormality in the normal beating of the heart, ranging from often unnoticed skipped beats or an accelerated heart rate to very noticeable changes; it can occur whether the patient is active or at rest, and episodes may last from a few seconds to several hours.",
+   "etiology_zh": "實證多因情志失調（精神因素）、痰濕內停、外邪乘心，或久病所致；虛證多因勞倦過度與久病耗傷而成。",
+   "etiology_en": "Excess-type palpitation arises from emotional/mental disorder, accumulation of phlegm-damp, pathogenic factors invading the heart, or chronic disease; deficiency-type palpitation arises from overstrain and chronic disease.",
+   "pathomechanism_zh": "本病分虛實兩端：實者瘀血阻絡（心血瘀阻）、痰火擾心，或水飲上凌於心，心神被擾而悸動；虛者心之氣、血、陰、陽虧虛，心失所養，神不守舍而作悸。（講義未另立病機專節，此為其虛實分類與各證型內容之歸納。）",
+   "pathomechanism_en": "The disease divides into excess and deficiency: in excess patterns, blood stasis obstructing the heart vessels, phlegm-fire harassing the heart, or pathogenic water attacking the heart disturbs the heart spirit and causes palpitation; in deficiency patterns, deficiency of heart qi, blood, yin, or yang leaves the heart undernourished and the spirit unsettled. (The handout has no separate pathomechanism section; this summarizes its excess/deficiency classification and pattern content.)",
+   "key_manifestations_zh": [
+    "心跳過速",
+    "心跳漏跳感",
+    "心中怦怦悸動",
+    "胸部滿悶",
+    "暈厥"
+   ],
+   "key_manifestations_en": [
+    "Rapid heartbeats",
+    "Sensation of skipped heartbeats",
+    "Pounding feeling in the chest",
+    "Chest fullness",
+    "Syncope"
+   ],
+   "related_patterns": [
+    "pattern.heart_blood_stasis",
+    "pattern.phlegm_fire_disturbing_heart",
+    "pattern.heart_qi_deficiency",
+    "pattern.heart_blood_deficiency",
+    "pattern.heart_yin_deficiency",
+    "pattern.heart_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 水飲凌心。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.xiong_bi",
@@ -268,7 +682,55 @@
    "name_zh": "淋證",
    "pinyin": "Linzheng",
    "name_en": "Strangury",
-   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+   "definition_zh": "淋證係以小便頻數急迫、短少澀滯、淋瀝刺痛、排尿困難為主症的病證，多伴小腹拘急或痛引腰腹。約當西醫之尿路感染、膀胱炎、泌尿系結石、前列腺炎、腎小球腎炎、乳糜尿、尿瀦留及膀胱腫瘤等疾患。",
+   "definition_en": "Lin syndrome is a disorder characterized by discomfort during urination, with urgency, increased frequency, oliguria, and painful, difficult urination, often with lower abdominal cramping or pain radiating to the lower back. It roughly corresponds to Western conditions such as urinary tract infection, cystitis, urinary calculi, prostatitis, glomerulonephritis, milky urine, urinary retention, and neoplasms of the bladder or prostate.",
+   "etiology_zh": "飲食不節，脾生濕濁，釀成內生濕熱；外感濕熱之邪侵犯膀胱；熱邪或濕熱傷及血分；濕熱擾亂膀胱氣化；年老或久病致腎氣虛；脾腎兩虛；情志不遂，肝氣鬱結。",
+   "etiology_en": "Improper diet generating internal damp-heat from spleen dampness; exogenous damp-heat invading the urinary bladder; heat or damp-heat injuring the blood; damp-heat disturbing the bladder's function of qi transformation; old age or chronic illness causing kidney qi deficiency; deficiency of spleen and kidney; emotional stress stagnating liver qi.",
+   "pathomechanism_zh": "病位主在膀胱與腎，並涉及脾、肝。基本病機為濕熱、濕寒等病邪阻滯水道，膀胱、腎之氣化失司；或兼氣虛、陰虛不能司膀胱開闔。濕熱蘊結下焦煎熬成石則為石淋；肝氣鬱滯、氣機不利則為氣淋；熱傷血絡則為血淋；濕濁不化則為膏淋；久病耗傷氣血陰精，脾腎虛憊，病情纏綿反覆，則轉為勞淋。實證多急，虛證多慢性反覆。",
+   "pathomechanism_en": "The disease is located mainly in the bladder and kidney, involving the spleen and liver. The key pathology is obstruction of the water passages by pathogenic factors, most often damp-heat or damp-cold, impairing bladder and kidney qi transformation, with possible underlying deficiency of qi or yin that fails to regulate urination. Damp-heat condensing in the lower burner produces stones (stone lin); liver qi stagnation obstructing the water passages produces qi lin; heat injuring the collaterals produces blood lin; unresolved damp turbidity produces cloudy lin; chronic depletion of qi, blood, or yin with spleen-kidney deficiency produces recurrent, lingering fatigue lin. Excess patterns are acute; deficiency patterns are chronic and recurrent.",
+   "key_manifestations_zh": [
+    "小便頻數急迫",
+    "排尿澀痛困難，尿道灼熱刺痛",
+    "小便短少色深",
+    "小腹拘急脹痛，排尿時可痛引腰部",
+    "隨證型不同可兼見尿中砂石、血尿或小便渾濁如膏"
+   ],
+   "key_manifestations_en": [
+    "Frequent, urgent urination",
+    "Painful, difficult urination with burning sensation and sharp pain in the urethra",
+    "Dark, scanty urine",
+    "Lower abdominal cramping and pain that may radiate to the lower back during urination",
+    "Depending on the type, sand or stones in the urine, hematuria, or cloudy, milky urine"
+   ],
+   "related_patterns": [
+    "pattern.heat_lin",
+    "pattern.stone_lin",
+    "pattern.qi_lin_excess",
+    "pattern.blood_lin_excess",
+    "pattern.cloudy_lin",
+    "pattern.fatigue_lin"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.md; curriculum/conditions/MM2-Lin Syndrome-Overview.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.md; curriculum/conditions/MM2-Lin Syndrome-Overview.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.md; curriculum/conditions/MM2-Lin Syndrome-Overview.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.md; curriculum/conditions/MM2-Lin Syndrome-Overview.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/1.2 Lin syndrome - handouts on canvas.md; curriculum/conditions/MM2-Lin Syndrome-Overview.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 氣淋（虛證，脾虛氣陷）、血淋（虛證，腎陰虛）、膏淋（虛證，脾腎兩虛）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.long_bi",
@@ -307,7 +769,57 @@
    "name_zh": "陽痿",
    "pinyin": "Yangwei",
    "name_en": "Impotence",
-   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+   "definition_zh": "陽痿係指男子未逾八八天癸之年，陰莖持續痿軟不舉，或舉而不堅，不能完成正常房事的病證，即西醫之勃起功能障礙。中醫又稱陰痿、筋痿。",
+   "definition_en": "Yang wei (impotence) refers to the male sexual dysfunction, occurring in men who have not yet passed the age of eight-times-eight of Tian Gui, characterized by the persistent inability to develop or maintain an erection of the penis satisfactory for sexual performance; it corresponds to erectile dysfunction (ED) in Western medicine. Alternative TCM names include yin wei and jin wei.",
+   "etiology_zh": "先天稟賦不足；命門火衰；心脾兩虛；情志所傷（肝氣鬱結，或恐懼傷腎）；濕熱下注下焦；陰津虧虛；陰陽兩虛；痰濕阻滯；局部脈絡阻滯；寒滯肝經；氣滯血瘀。",
+   "etiology_en": "Poor congenital constitution; ming men fire deficiency; heart and spleen deficiency; emotional injury (liver qi stagnation, or fear damaging the kidney); damp-heat invading the lower jiao; yin fluid deficiency; combined yin and yang deficiency; phlegm-damp blockage; local blockage; cold invading the liver meridian; qi stagnation with blood stasis.",
+   "pathomechanism_zh": "講義未設專門病機論述，據其分型可知：或因先天不足、命門火衰、心脾氣血虧虛、陰津不足，宗筋失於溫煦濡養；或因濕熱、痰濕、寒邪、氣滯血瘀阻滯肝經與局部脈絡，宗筋弛縱不用而痿。",
+   "pathomechanism_en": "The handout has no dedicated pathomechanism discussion; from its clinical classification, the disorder arises either from deficiency — poor congenital constitution, ming men fire deficiency, heart-spleen deficiency, or yin fluid deficiency depriving the ancestral sinew of warmth and nourishment — or from excess — damp-heat, phlegm-damp, cold in the liver meridian, or qi stagnation with blood stasis obstructing the channels locally — so that the ancestral sinew becomes slack and fails to rise.",
+   "key_manifestations_zh": [
+    "陰莖痿軟不能勃起，或舉而不堅",
+    "腰痠膝軟、乏力、畏寒、頭暈耳鳴（命門火衰者）",
+    "心悸、氣短、自汗、納差、便溏（心脾兩虛者）",
+    "小便灼熱、陰部潮濕瘙癢、口渴（濕熱下注者）",
+    "陰部發涼、少腹掣痛、小便清長（寒滯肝經者）"
+   ],
+   "key_manifestations_en": [
+    "Inability to develop or maintain an erection of the penis",
+    "Sore lower back, weak knees, fatigue, aversion to cold, dizziness, and tinnitus (ming men fire deficiency)",
+    "Palpitations, shortness of breath, spontaneous sweating, poor appetite, and loose stools (heart-spleen deficiency)",
+    "Burning urination, itchy and damp genitals, and thirst (damp-heat invading the lower jiao)",
+    "Cold genital area, pulling pain toward the lower abdomen, and profuse urination (cold invading the liver meridian)"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yang_deficiency",
+    "pattern.heart_spleen_deficiency",
+    "pattern.liver_qi_stagnation",
+    "pattern.damp_heat_lower_burner",
+    "pattern.kidney_yin_deficiency",
+    "pattern.phlegm_damp",
+    "pattern.cold_stagnation_liver_channel",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/2.2 Impotence - handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/2.2 Impotence - handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/2.2 Impotence - handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/2.2 Impotence - handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/2.2 Impotence - handouts on canvas.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 先天稟賦不足、恐懼傷腎、陰陽兩虛、宗筋局部脈絡阻滯。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.er_ming_er_long",
@@ -365,7 +877,54 @@
    "name_zh": "痛經",
    "pinyin": "Tongjing",
    "name_en": "Dysmenorrhea",
-   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "definition_zh": "痛經係指婦女於行經前、行經期間或經後，小腹及腰部發作劇烈而頻繁之痙攣性疼痛，隨月經週期反覆出現的病證。",
+   "definition_en": "Dysmenorrhea refers to severe, frequent cramping pain in the lower abdomen and lower back occurring either before, during, or after the menstrual cycle.",
+   "etiology_zh": "情志刺激；外邪侵襲；氣血瘀滯；衝任損傷。",
+   "etiology_en": "Emotional stimulation; invasion of exogenous factors; qi and blood stagnation; damage to the Chong and Ren vessels.",
+   "pathomechanism_zh": "經前或經期作痛者屬實，多因肝氣鬱滯、寒邪侵襲凝滯，或衝任受損，氣血運行不暢，不通則痛；經後作痛、痛勢隱隱者屬虛，多因氣虛、血虛或氣血兩虛，胞宮失於濡養，不榮則痛。",
+   "pathomechanism_en": "Pain preceding or during menstruation indicates an excess pattern, mostly from liver qi stagnation, cold invasion, or damage to the Chong and Ren vessels obstructing the movement of qi and blood — where there is blockage there is pain. Dull pain following menstruation indicates a deficiency pattern, from insufficiency of qi, blood, or both, failing to nourish — where there is lack of nourishment there is pain.",
+   "key_manifestations_zh": [
+    "經期前後或行經時小腹劇烈痙攣性疼痛",
+    "疼痛可連及腰部",
+    "實證者疼痛多見於經前或經期",
+    "虛證者多於經末或經後隱隱作痛"
+   ],
+   "key_manifestations_en": [
+    "Severe cramping pain in the lower abdomen before, during, or after menstruation",
+    "Pain may extend to the lower back",
+    "In excess types, pain precedes or occurs during menstruation",
+    "In deficiency types, dull pain usually starts by the end of or after menstruation"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.liver_qi_stagnation",
+    "pattern.chong_ren_disharmony",
+    "pattern.qi_deficiency",
+    "pattern.blood_deficiency",
+    "pattern.qi_blood_deficiency",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/DYSMENO.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/DYSMENO.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/DYSMENO.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/DYSMENO.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/DYSMENO.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 實寒（寒凝）、濕邪停聚。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.yue_jing_xian_qi",
