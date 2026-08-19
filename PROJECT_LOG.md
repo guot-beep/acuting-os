@@ -1,3 +1,51 @@
+# 2026-08-19 — 八小時強力優化:連接層+對齊+出典+方歌+家族+加減,18 commit 全 push
+
+Ting 口頭派工(檢視哪裡可優化→執行八小時;可用 curriculum/Notion/建議官網;多線並行)。
+主 session 整合落庫,7 個唯讀研究 agent 並行產帳本;每帳本進 `docs/research_packs/`,
+每筆帶來源檔+逐字引文,落庫走 dry-run→快照重驗→apply→diff 無損檢查→驗證器→push。
+
+**逐欄位數字(全部可用該行驗證器重現):**
+
+| 欄位 | before → after | 驗證指令 |
+|---|---|---|
+| 方劑 證候連結 tcm_pattern_ids | 0 → 50/224 | validate-formula-standard(本次新增此行) |
+| 方劑 出典 source_classic | 101 → 210/224 | 同上 |
+| 方劑 方歌 | 38 → 85/224(尚無 186→139) | validate-formula-song |
+| 方劑 家族 formula_family | 9 → 41/224 | validate-formula-standard |
+| 方劑 加減變化 | 18 → 97/224 | 同上 |
+| 方劑 中英未對齊 | 101 → 69/224(contra 34 方落) | 同上 |
+| 方劑 鑑別群組 C8 | 28/30 → 30/30(9 方分類值錯置復原) | validate-comparison-standard |
+| 穴位 證候連結 | 44 → 109/361(547 條) | validate-acupoint-standard |
+| 穴位 病證連結 | 179 → 185/361 | 同上 |
+| 穴位 複習對比 compare_with | 34 → 91/361(38 組新對比) | 同上 |
+
+**修的兩顆炸彈**:①`link-point-conditions.js` 原是整欄覆寫(重跑會洗掉 547 條新連結)
+→ 改併集+field_sources append+legacy 過 alias map 只落 canonical(`bb6471c5`)。
+②LU/LI/ST/SP refine pass 把 7 穴 exam_pearl 的「與 X 分工」句洗掉(build-compare-with
+逐字斷言抓到)→ 從 854a581d 取回原句 append 復原(`6efcc3e1`)。
+
+**渲染接線**(資料寫了≠上畫面):方劑卡「相關病名與證型」併入 tcm_pattern_ids 去重
+(knowledge.js);app.js patById 同時解析 legacy pat.* 與 canonical pattern.*。
+瀏覽器實測:麻黃湯證候 chips、ST40 相關證候 7、CV12 複習對比、溫膽湯家族+加減、
+溫脾湯出典《千金要方》+禁忌中英成對。
+
+**來源紀律**:模型記憶零筆入庫。curriculum 查無出典的 63 方誠實留空後由白名單站
+補 53(壽胎丸/蔥豉湯四站皆無→仍空);配伍孤證 264 條穴位連結全數攔下;
+主治對齊 60 筆只落 2(其餘=覆蓋既有內容,整批進裁決)。
+
+**裁決佇列:`docs/research_packs/RULING_QUEUE_2026-08-19.md`(17 項,歸屬錯誤置頂)。**
+最重要一筆:formula.xie_xin_tang 名實不符(組成=半夏瀉心湯),兩條獨立線互相印證。
+
+**驗證終態**:16 個驗證器全 PASS、ratchet 無回歸(naming 1 = 玉女煎重複,佇列 #7)、
+test-branch-mergeable PASS。18 commit(f5443aac..4e06ee00+)全數 push codex/pattern-v2。
+
+**下一批**:裁決佇列 A 段(歸屬 6 項)→ 解鎖 PI/actions 58 筆+contra 20 方;
+方歌第二波(139 缺,60 之後的權重段);tdis 84 筆 index-only;
+中藥線 contraindications_zh 35%/actions_en 51% 排 Antigravity;
+knowledge_data.js 16MB 同步載入排 BLUEPRINT。
+
+---
+
 # 2026-08-14 夜 — C2b 真機切換執行(結案,含一項誠實缺口)
 
 照 docs/C2B_EXECUTION_PLAN_2026-08-15.md 全程執行:
