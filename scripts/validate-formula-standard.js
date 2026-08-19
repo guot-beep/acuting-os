@@ -458,6 +458,7 @@ console.log(`  review_status 非法 F14    ${badStatusHits}`);
 const linked = recs.filter((r) => arr(r.related_conditions).length || arr(r.condition_links).length).length;
 console.log(`\n連接層(待補不擋):`);
 console.log(`  病證連結                  ${pct(linked)}`);
+console.log(`  證候連結 tcm_pattern_ids  ${pct(recs.filter((r) => arr(r.tcm_pattern_ids).length).length)}`);
 console.log(`  單味藥連結 herb_id        ${pct(recs.filter((r) => arr(r.composition).some((c) => c?.herb_id)).length)}`);
 
 if (WORKLIST) {
