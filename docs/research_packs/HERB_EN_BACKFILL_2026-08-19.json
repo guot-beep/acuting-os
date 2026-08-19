@@ -1,0 +1,3308 @@
+{
+ "generated": "2026-08-19",
+ "shape_notes": "Conventions observed in the 181 already-filled records (e.g. herb.ma_huang, herb.gui_zhi, herb.zi_su_ye, herb.sheng_jiang, herb.xiang_ru): (1) actions_en is a 1:1, same-order translation of functions_zh — one English action phrase per zh entry, Bensky/Wiseman-style verb phrases with capitalized TCM entities (Lung, Cold, Qi, Yang, Ying/Wei, Middle, Dampness, Summerheat); verb person is mixed in existing data (both \"Induces sweating...\" and \"Release the muscle layer...\"), proposals here use third-person -s consistently. Compound zh entries (containing 、 or ，) stay a single en string with sub-actions joined by \"; \" (matches \"Warm and unblock the channels; disperse Cold and relieve pain\"). (2) condition_tags_en is a 1:1, same-order translation of condition_tags_zh — short pattern/disease noun tags (\"Wind-cold excess exterior\", \"Cold-congealing dysmenorrhea\"), NOT derived from indications_zh. Finding: every one of the 190 records with empty condition_tags_en also has empty condition_tags_zh (verified programmatically), so per the no-extraction rule there are zero condition_tags_en proposals — that gap cannot be closed by translation alone.",
+ "proposals": [
+  {
+   "herb_id": "herb.lu_gen",
+   "field": "actions_en",
+   "zh": [
+    "清熱利尿",
+    "清胃熱",
+    "止嘔",
+    "清熱瀉火",
+    "生津止渴",
+    "除煩",
+    "解酒毒",
+    "透疹",
+    "止咳平喘"
+   ],
+   "en_proposed": [
+    "Clears Heat and promotes urination",
+    "Clears Stomach Heat",
+    "Stops vomiting",
+    "Clears Heat and drains Fire",
+    "Generates fluids and quenches thirst",
+    "Eliminates vexation",
+    "Relieves alcohol toxicity",
+    "Vents rashes",
+    "Stops coughing and calms wheezing"
+   ]
+  },
+  {
+   "herb_id": "herb.tian_hua_fen",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "止咳化痰",
+    "生津止渴",
+    "利水消腫",
+    "排膿",
+    "潤燥",
+    "清熱解毒",
+    "消腫排膿",
+    "清熱生津"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Stops coughing and transforms Phlegm",
+    "Generates fluids and quenches thirst",
+    "Promotes urination and reduces edema",
+    "Expels pus",
+    "Moistens dryness",
+    "Clears Heat and resolves toxicity",
+    "Reduces swelling and expels pus",
+    "Clears Heat and generates fluids"
+   ]
+  },
+  {
+   "herb_id": "herb.zhi_zi",
+   "field": "actions_en",
+   "zh": [
+    "止血",
+    "清熱解毒",
+    "清熱瀉火",
+    "清熱利濕",
+    "清熱涼血",
+    "清熱利尿",
+    "清熱除煩"
+   ],
+   "en_proposed": [
+    "Stops bleeding",
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and drains Fire",
+    "Clears Heat and drains Dampness",
+    "Clears Heat and cools the Blood",
+    "Clears Heat and promotes urination",
+    "Clears Heat and eliminates vexation"
+   ]
+  },
+  {
+   "herb_id": "herb.xia_ku_cao",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "強筋骨",
+    "散結",
+    "清肝明目",
+    "補血養肝",
+    "清熱解毒"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Strengthens sinews and bones",
+    "Dissipates nodules",
+    "Clears the Liver and brightens the eyes",
+    "Tonifies the Blood and nourishes the Liver",
+    "Clears Heat and resolves toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.huang_qin",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "清熱瀉火",
+    "瀉下",
+    "止血",
+    "清熱解毒",
+    "清熱涼血",
+    "降氣",
+    "排膿",
+    "清熱利尿",
+    "安胎",
+    "清火解毒",
+    "利水",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Clears Heat and drains Fire",
+    "Drains downward",
+    "Stops bleeding",
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and cools the Blood",
+    "Directs Qi downward",
+    "Expels pus",
+    "Clears Heat and promotes urination",
+    "Calms the fetus",
+    "Clears Fire and resolves toxicity",
+    "Promotes urination",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.huang_lian",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "清熱瀉火",
+    "清熱解毒",
+    "止嘔",
+    "止血",
+    "止瀉",
+    "清火解毒",
+    "解痙",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Clears Heat and drains Fire",
+    "Clears Heat and resolves toxicity",
+    "Stops vomiting",
+    "Stops bleeding",
+    "Stops diarrhea",
+    "Clears Fire and resolves toxicity",
+    "Relieves spasms",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.huang_bai",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "清熱瀉火",
+    "清熱解毒",
+    "滋陰",
+    "斂瘡",
+    "清虛熱",
+    "清火解毒"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Clears Heat and drains Fire",
+    "Clears Heat and resolves toxicity",
+    "Nourishes Yin",
+    "Closes sores",
+    "Clears deficiency Heat",
+    "Clears Fire and resolves toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.long_dan_cao",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "清熱瀉火",
+    "清肝熱",
+    "清熱鎮驚",
+    "利水",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Clears Heat and drains Fire",
+    "Clears Liver Heat",
+    "Clears Heat and settles fright",
+    "Promotes urination",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.ku_shen",
+   "field": "actions_en",
+   "zh": [
+    "驅蟲殺蟲",
+    "清熱涼血",
+    "清熱利尿",
+    "生津止渴",
+    "燥濕",
+    "清熱瀉火",
+    "利水消腫",
+    "平喘止喘",
+    "止瀉",
+    "解毒殺蟲"
+   ],
+   "en_proposed": [
+    "Expels and kills parasites",
+    "Clears Heat and cools the Blood",
+    "Clears Heat and promotes urination",
+    "Generates fluids and quenches thirst",
+    "Dries Dampness",
+    "Clears Heat and drains Fire",
+    "Promotes urination and reduces edema",
+    "Calms and arrests wheezing",
+    "Stops diarrhea",
+    "Resolves toxicity and kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.jin_yin_hua",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "散風熱",
+    "清熱解毒",
+    "透疹",
+    "降脂",
+    "利膽",
+    "涼血止血"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Disperses Wind-Heat",
+    "Clears Heat and resolves toxicity",
+    "Vents rashes",
+    "Lowers blood lipids",
+    "Promotes bile flow",
+    "Cools the Blood and stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.lian_qiao",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "散風熱",
+    "清熱解毒",
+    "散結",
+    "排膿",
+    "利水消腫",
+    "止嘔",
+    "保肝",
+    "消腫散結"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Disperses Wind-Heat",
+    "Clears Heat and resolves toxicity",
+    "Dissipates nodules",
+    "Expels pus",
+    "Promotes urination and reduces edema",
+    "Stops vomiting",
+    "Protects the liver",
+    "Reduces swelling and dissipates nodules"
+   ]
+  },
+  {
+   "herb_id": "herb.zi_hua_di_ding",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒",
+    "清熱瀉火",
+    "利水消腫",
+    "涼血"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and drains Fire",
+    "Promotes urination and reduces edema",
+    "Cools the Blood"
+   ]
+  },
+  {
+   "herb_id": "herb.da_qing_ye",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒",
+    "清熱瀉火",
+    "清熱涼血",
+    "活血化瘀",
+    "平肝息風",
+    "涼血止血"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and drains Fire",
+    "Clears Heat and cools the Blood",
+    "Invigorates the Blood and dispels stasis",
+    "Calms the Liver and extinguishes Wind",
+    "Cools the Blood and stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.ban_lan_gen",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "清肺熱利咽",
+    "止血",
+    "清熱解毒",
+    "清熱涼血",
+    "涼血消斑"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Clears Lung Heat and benefits the throat",
+    "Stops bleeding",
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and cools the Blood",
+    "Cools the Blood and resolves maculae"
+   ]
+  },
+  {
+   "herb_id": "herb.yu_xing_cao",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒",
+    "清熱瀉火",
+    "清熱利尿",
+    "排膿",
+    "清熱利濕",
+    "止咳平喘",
+    "利水消腫",
+    "利尿通淋"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and drains Fire",
+    "Clears Heat and promotes urination",
+    "Expels pus",
+    "Clears Heat and drains Dampness",
+    "Stops coughing and calms wheezing",
+    "Promotes urination and reduces edema",
+    "Promotes urination and unblocks painful urinary dribbling"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_tou_weng",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒",
+    "清熱瀉火",
+    "清熱涼血",
+    "止血",
+    "清火解毒",
+    "止痢"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and drains Fire",
+    "Clears Heat and cools the Blood",
+    "Stops bleeding",
+    "Clears Fire and resolves toxicity",
+    "Stops dysentery"
+   ]
+  },
+  {
+   "herb_id": "herb.sheng_di_huang",
+   "field": "actions_en",
+   "zh": [
+    "清熱涼血",
+    "清熱瀉火",
+    "補血",
+    "滋陰生津",
+    "保肝"
+   ],
+   "en_proposed": [
+    "Clears Heat and cools the Blood",
+    "Clears Heat and drains Fire",
+    "Tonifies the Blood",
+    "Nourishes Yin and generates fluids",
+    "Protects the liver"
+   ]
+  },
+  {
+   "herb_id": "herb.xuan_shen",
+   "field": "actions_en",
+   "zh": [
+    "清熱涼血",
+    "清熱瀉火",
+    "清熱解毒",
+    "滋陰",
+    "利水消腫",
+    "除煩",
+    "散結"
+   ],
+   "en_proposed": [
+    "Clears Heat and cools the Blood",
+    "Clears Heat and drains Fire",
+    "Clears Heat and resolves toxicity",
+    "Nourishes Yin",
+    "Promotes urination and reduces edema",
+    "Eliminates vexation",
+    "Dissipates nodules"
+   ]
+  },
+  {
+   "herb_id": "herb.mu_dan_pi",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "活血化瘀",
+    "清熱涼血",
+    "破血消癥",
+    "排膿",
+    "滋陰",
+    "利尿",
+    "保肝"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Invigorates the Blood and dispels stasis",
+    "Clears Heat and cools the Blood",
+    "Breaks up Blood stasis and reduces abdominal masses",
+    "Expels pus",
+    "Nourishes Yin",
+    "Promotes urination",
+    "Protects the liver"
+   ]
+  },
+  {
+   "herb_id": "herb.chi_shao",
+   "field": "actions_en",
+   "zh": [
+    "清熱涼血",
+    "清熱瀉火",
+    "利水消腫",
+    "補腎",
+    "清熱利尿",
+    "活血化瘀",
+    "補血養肝",
+    "止血",
+    "活絡止痛",
+    "保肝",
+    "解痙",
+    "散瘀止痛"
+   ],
+   "en_proposed": [
+    "Clears Heat and cools the Blood",
+    "Clears Heat and drains Fire",
+    "Promotes urination and reduces edema",
+    "Tonifies the Kidneys",
+    "Clears Heat and promotes urination",
+    "Invigorates the Blood and dispels stasis",
+    "Tonifies the Blood and nourishes the Liver",
+    "Stops bleeding",
+    "Quickens the collaterals and relieves pain",
+    "Protects the liver",
+    "Relieves spasms",
+    "Dissipates stasis and relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.qing_hao",
+   "field": "actions_en",
+   "zh": [
+    "清虛熱",
+    "清熱瀉火",
+    "治瘧",
+    "清熱解毒",
+    "驅蟲殺蟲",
+    "消暑"
+   ],
+   "en_proposed": [
+    "Clears deficiency Heat",
+    "Clears Heat and drains Fire",
+    "Treats malaria",
+    "Clears Heat and resolves toxicity",
+    "Expels and kills parasites",
+    "Relieves Summerheat"
+   ]
+  },
+  {
+   "herb_id": "herb.di_gu_pi",
+   "field": "actions_en",
+   "zh": [
+    "清虛熱",
+    "清熱瀉火",
+    "清熱涼血",
+    "止血",
+    "清熱潤肺"
+   ],
+   "en_proposed": [
+    "Clears deficiency Heat",
+    "Clears Heat and drains Fire",
+    "Clears Heat and cools the Blood",
+    "Stops bleeding",
+    "Clears Heat and moistens the Lungs"
+   ]
+  },
+  {
+   "herb_id": "herb.yin_chai_hu",
+   "field": "actions_en",
+   "zh": [
+    "清虛熱",
+    "清熱瀉火",
+    "清肺熱利咽",
+    "清熱涼血",
+    "保肝",
+    "清熱除疳"
+   ],
+   "en_proposed": [
+    "Clears deficiency Heat",
+    "Clears Heat and drains Fire",
+    "Clears Lung Heat and benefits the throat",
+    "Clears Heat and cools the Blood",
+    "Protects the liver",
+    "Clears Heat and eliminates gan malnutrition"
+   ]
+  },
+  {
+   "herb_id": "herb.da_huang",
+   "field": "actions_en",
+   "zh": [
+    "清熱利尿",
+    "瀉下",
+    "止血",
+    "活血化瘀",
+    "清熱解毒",
+    "降氣",
+    "清熱涼血",
+    "清熱瀉火",
+    "清利濕熱",
+    "利水",
+    "保肝",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Clears Heat and promotes urination",
+    "Drains downward",
+    "Stops bleeding",
+    "Invigorates the Blood and dispels stasis",
+    "Clears Heat and resolves toxicity",
+    "Directs Qi downward",
+    "Clears Heat and cools the Blood",
+    "Clears Heat and drains Fire",
+    "Clears and drains Damp-Heat",
+    "Promotes urination",
+    "Protects the liver",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.mang_xiao",
+   "field": "actions_en",
+   "zh": [
+    "清熱利尿",
+    "清熱瀉火",
+    "瀉下",
+    "利水消腫",
+    "破血消癥",
+    "通便",
+    "軟堅",
+    "清熱利濕",
+    "活絡止痛"
+   ],
+   "en_proposed": [
+    "Clears Heat and promotes urination",
+    "Clears Heat and drains Fire",
+    "Drains downward",
+    "Promotes urination and reduces edema",
+    "Breaks up Blood stasis and reduces abdominal masses",
+    "Unblocks the bowels",
+    "Softens hardness",
+    "Clears Heat and drains Dampness",
+    "Quickens the collaterals and relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.huo_ma_ren",
+   "field": "actions_en",
+   "zh": [
+    "瀉下",
+    "利水滲濕",
+    "活血化瘀",
+    "清熱利尿",
+    "潤肺",
+    "降氣",
+    "潤燥"
+   ],
+   "en_proposed": [
+    "Drains downward",
+    "Promotes urination and leaches out Dampness",
+    "Invigorates the Blood and dispels stasis",
+    "Clears Heat and promotes urination",
+    "Moistens the Lungs",
+    "Directs Qi downward",
+    "Moistens dryness"
+   ]
+  },
+  {
+   "herb_id": "herb.yu_li_ren",
+   "field": "actions_en",
+   "zh": [
+    "瀉下",
+    "利水滲濕",
+    "降氣",
+    "潤燥",
+    "利水消腫"
+   ],
+   "en_proposed": [
+    "Drains downward",
+    "Promotes urination and leaches out Dampness",
+    "Directs Qi downward",
+    "Moistens dryness",
+    "Promotes urination and reduces edema"
+   ]
+  },
+  {
+   "herb_id": "herb.gan_sui",
+   "field": "actions_en",
+   "zh": [
+    "峻下逐水",
+    "瀉下",
+    "化痰下氣",
+    "消腫散結"
+   ],
+   "en_proposed": [
+    "Drastically purges and expels water",
+    "Drains downward",
+    "Transforms Phlegm and directs Qi downward",
+    "Reduces swelling and dissipates nodules"
+   ]
+  },
+  {
+   "herb_id": "herb.du_huo",
+   "field": "actions_en",
+   "zh": [
+    "發汗解表",
+    "散風寒",
+    "祛風除濕",
+    "活絡止痛",
+    "活血化瘀",
+    "解痙"
+   ],
+   "en_proposed": [
+    "Induces sweating and releases the exterior",
+    "Disperses Wind-Cold",
+    "Dispels Wind and eliminates Dampness",
+    "Quickens the collaterals and relieves pain",
+    "Invigorates the Blood and dispels stasis",
+    "Relieves spasms"
+   ]
+  },
+  {
+   "herb_id": "herb.wei_ling_xian",
+   "field": "actions_en",
+   "zh": [
+    "祛風除濕",
+    "清熱利尿",
+    "通經絡",
+    "清熱解毒",
+    "活絡止痛"
+   ],
+   "en_proposed": [
+    "Dispels Wind and eliminates Dampness",
+    "Clears Heat and promotes urination",
+    "Unblocks the channels and collaterals",
+    "Clears Heat and resolves toxicity",
+    "Quickens the collaterals and relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.qin_jiao",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "祛風除濕",
+    "清熱利尿",
+    "強筋骨",
+    "清虛熱",
+    "利水"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Dispels Wind and eliminates Dampness",
+    "Clears Heat and promotes urination",
+    "Strengthens sinews and bones",
+    "Clears deficiency Heat",
+    "Promotes urination"
+   ]
+  },
+  {
+   "herb_id": "herb.fang_ji",
+   "field": "actions_en",
+   "zh": [
+    "祛風除濕",
+    "利水消腫",
+    "散風寒",
+    "健脾胃",
+    "止咳化痰",
+    "利水滲濕",
+    "活絡止痛",
+    "破血消癥",
+    "祛風濕",
+    "解痙"
+   ],
+   "en_proposed": [
+    "Dispels Wind and eliminates Dampness",
+    "Promotes urination and reduces edema",
+    "Disperses Wind-Cold",
+    "Strengthens the Spleen and Stomach",
+    "Stops coughing and transforms Phlegm",
+    "Promotes urination and leaches out Dampness",
+    "Quickens the collaterals and relieves pain",
+    "Breaks up Blood stasis and reduces abdominal masses",
+    "Dispels Wind-Dampness",
+    "Relieves spasms"
+   ]
+  },
+  {
+   "herb_id": "herb.sang_ji_sheng",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火",
+    "祛風除濕",
+    "止咳化痰",
+    "強筋骨",
+    "通經絡",
+    "補益肝腎",
+    "安胎",
+    "補腎"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire",
+    "Dispels Wind and eliminates Dampness",
+    "Stops coughing and transforms Phlegm",
+    "Strengthens sinews and bones",
+    "Unblocks the channels and collaterals",
+    "Tonifies the Liver and Kidneys",
+    "Calms the fetus",
+    "Tonifies the Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.wu_jia_pi",
+   "field": "actions_en",
+   "zh": [
+    "強筋骨",
+    "活血化瘀",
+    "止咳化痰",
+    "祛風除濕",
+    "利水消腫",
+    "補益肝腎"
+   ],
+   "en_proposed": [
+    "Strengthens sinews and bones",
+    "Invigorates the Blood and dispels stasis",
+    "Stops coughing and transforms Phlegm",
+    "Dispels Wind and eliminates Dampness",
+    "Promotes urination and reduces edema",
+    "Tonifies the Liver and Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.mu_gua",
+   "field": "actions_en",
+   "zh": [
+    "祛風除濕",
+    "強筋骨",
+    "通經絡",
+    "和胃"
+   ],
+   "en_proposed": [
+    "Dispels Wind and eliminates Dampness",
+    "Strengthens sinews and bones",
+    "Unblocks the channels and collaterals",
+    "Harmonizes the Stomach"
+   ]
+  },
+  {
+   "herb_id": "herb.huo_xiang",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "芳香化濕",
+    "止嘔",
+    "止咳化痰",
+    "祛風除濕",
+    "健脾胃",
+    "清熱解暑"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Aromatically transforms Dampness",
+    "Stops vomiting",
+    "Stops coughing and transforms Phlegm",
+    "Dispels Wind and eliminates Dampness",
+    "Strengthens the Spleen and Stomach",
+    "Clears Heat and relieves Summerheat"
+   ]
+  },
+  {
+   "herb_id": "herb.pei_lan",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "芳香化濕",
+    "調經",
+    "生津止渴",
+    "鎮咳祛痰",
+    "平喘解熱",
+    "祛暑化濕",
+    "辟穢和中"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Aromatically transforms Dampness",
+    "Regulates menstruation",
+    "Generates fluids and quenches thirst",
+    "Suppresses coughing and expels phlegm",
+    "Calms wheezing and abates fever",
+    "Dispels Summerheat and transforms Dampness",
+    "Repels foulness and harmonizes the Middle"
+   ]
+  },
+  {
+   "herb_id": "herb.cang_zhu",
+   "field": "actions_en",
+   "zh": [
+    "芳香化濕",
+    "散風寒",
+    "健脾胃",
+    "補腎",
+    "溫裡溫中",
+    "清肝明目",
+    "利水滲濕",
+    "除穢氣障氣",
+    "燥濕健脾",
+    "益腸胃",
+    "保肝"
+   ],
+   "en_proposed": [
+    "Aromatically transforms Dampness",
+    "Disperses Wind-Cold",
+    "Strengthens the Spleen and Stomach",
+    "Tonifies the Kidneys",
+    "Warms the interior and the Middle",
+    "Clears the Liver and brightens the eyes",
+    "Promotes urination and leaches out Dampness",
+    "Dispels foul and miasmic Qi",
+    "Dries Dampness and strengthens the Spleen",
+    "Benefits the intestines and Stomach",
+    "Protects the liver"
+   ]
+  },
+  {
+   "herb_id": "herb.hou_po",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "健脾胃",
+    "溫裡溫中",
+    "驅蟲殺蟲",
+    "消食化積",
+    "降氣化痰",
+    "益腸胃",
+    "保肝",
+    "解毒殺蟲",
+    "行氣除滿"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Strengthens the Spleen and Stomach",
+    "Warms the interior and the Middle",
+    "Expels and kills parasites",
+    "Promotes digestion and reduces food stagnation",
+    "Directs Qi downward and transforms Phlegm",
+    "Benefits the intestines and Stomach",
+    "Protects the liver",
+    "Resolves toxicity and kills parasites",
+    "Moves Qi and eliminates fullness"
+   ]
+  },
+  {
+   "herb_id": "herb.sha_ren",
+   "field": "actions_en",
+   "zh": [
+    "燥濕",
+    "芳香化濕",
+    "理氣行氣",
+    "止瀉",
+    "安胎",
+    "健脾胃"
+   ],
+   "en_proposed": [
+    "Dries Dampness",
+    "Aromatically transforms Dampness",
+    "Regulates and moves Qi",
+    "Stops diarrhea",
+    "Calms the fetus",
+    "Strengthens the Spleen and Stomach"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_dou_kou",
+   "field": "actions_en",
+   "zh": [
+    "芳香化濕",
+    "溫裡溫中",
+    "理氣行氣",
+    "止嘔",
+    "解酒毒"
+   ],
+   "en_proposed": [
+    "Aromatically transforms Dampness",
+    "Warms the interior and the Middle",
+    "Regulates and moves Qi",
+    "Stops vomiting",
+    "Relieves alcohol toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.yin_chen_hao",
+   "field": "actions_en",
+   "zh": [
+    "利濕退黃",
+    "利水滲濕",
+    "清熱瀉火",
+    "平肝息風",
+    "清熱利濕",
+    "清熱利尿",
+    "止癢",
+    "清濕熱",
+    "保肝",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Drains Dampness and relieves jaundice",
+    "Promotes urination and leaches out Dampness",
+    "Clears Heat and drains Fire",
+    "Calms the Liver and extinguishes Wind",
+    "Clears Heat and drains Dampness",
+    "Clears Heat and promotes urination",
+    "Stops itching",
+    "Clears Damp-Heat",
+    "Protects the liver",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.jin_qian_cao",
+   "field": "actions_en",
+   "zh": [
+    "利濕退黃",
+    "清熱解毒",
+    "利水消腫",
+    "排石",
+    "止血",
+    "祛風除濕",
+    "清熱瀉火",
+    "止咳化痰",
+    "清熱利尿",
+    "清利濕熱",
+    "利尿排石",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Drains Dampness and relieves jaundice",
+    "Clears Heat and resolves toxicity",
+    "Promotes urination and reduces edema",
+    "Expels stones",
+    "Stops bleeding",
+    "Dispels Wind and eliminates Dampness",
+    "Clears Heat and drains Fire",
+    "Stops coughing and transforms Phlegm",
+    "Clears Heat and promotes urination",
+    "Clears and drains Damp-Heat",
+    "Promotes urination and expels stones",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.ju_hong",
+   "field": "actions_en",
+   "zh": [
+    "散風寒",
+    "補陽",
+    "散結",
+    "燥濕",
+    "理氣寬中",
+    "化痰"
+   ],
+   "en_proposed": [
+    "Disperses Wind-Cold",
+    "Tonifies Yang",
+    "Dissipates nodules",
+    "Dries Dampness",
+    "Regulates Qi and expands the Middle",
+    "Transforms Phlegm"
+   ]
+  },
+  {
+   "herb_id": "herb.zhi_ke",
+   "field": "actions_en",
+   "zh": [
+    "理氣行氣",
+    "止咳化痰",
+    "止瀉",
+    "消食化積",
+    "補氣"
+   ],
+   "en_proposed": [
+    "Regulates and moves Qi",
+    "Stops coughing and transforms Phlegm",
+    "Stops diarrhea",
+    "Promotes digestion and reduces food stagnation",
+    "Tonifies Qi"
+   ]
+  },
+  {
+   "herb_id": "herb.zhi_shi",
+   "field": "actions_en",
+   "zh": [
+    "理氣行氣",
+    "止咳化痰",
+    "止瀉",
+    "消食化積",
+    "補氣"
+   ],
+   "en_proposed": [
+    "Regulates and moves Qi",
+    "Stops coughing and transforms Phlegm",
+    "Stops diarrhea",
+    "Promotes digestion and reduces food stagnation",
+    "Tonifies Qi"
+   ]
+  },
+  {
+   "herb_id": "herb.mu_xiang",
+   "field": "actions_en",
+   "zh": [
+    "溫裡溫中",
+    "消食化積",
+    "理氣行氣",
+    "止瀉",
+    "健脾胃",
+    "止咳平喘",
+    "疏肝解鬱",
+    "益腸胃",
+    "止痛"
+   ],
+   "en_proposed": [
+    "Warms the interior and the Middle",
+    "Promotes digestion and reduces food stagnation",
+    "Regulates and moves Qi",
+    "Stops diarrhea",
+    "Strengthens the Spleen and Stomach",
+    "Stops coughing and calms wheezing",
+    "Soothes the Liver and relieves constraint",
+    "Benefits the intestines and Stomach",
+    "Relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.xiang_fu",
+   "field": "actions_en",
+   "zh": [
+    "理氣行氣",
+    "補氣",
+    "散結",
+    "調經止痛",
+    "疏肝解鬱"
+   ],
+   "en_proposed": [
+    "Regulates and moves Qi",
+    "Tonifies Qi",
+    "Dissipates nodules",
+    "Regulates menstruation and relieves pain",
+    "Soothes the Liver and relieves constraint"
+   ]
+  },
+  {
+   "herb_id": "herb.chuan_lian_zi",
+   "field": "actions_en",
+   "zh": [
+    "理氣行氣",
+    "驅蟲殺蟲",
+    "疏肝解鬱",
+    "益腸胃",
+    "利膽",
+    "行氣止痛",
+    "解毒殺蟲"
+   ],
+   "en_proposed": [
+    "Regulates and moves Qi",
+    "Expels and kills parasites",
+    "Soothes the Liver and relieves constraint",
+    "Benefits the intestines and Stomach",
+    "Promotes bile flow",
+    "Moves Qi and relieves pain",
+    "Resolves toxicity and kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.qing_pi",
+   "field": "actions_en",
+   "zh": [
+    "理氣行氣",
+    "活血化瘀",
+    "疏肝解鬱",
+    "消食化積",
+    "降氣",
+    "疏肝理氣"
+   ],
+   "en_proposed": [
+    "Regulates and moves Qi",
+    "Invigorates the Blood and dispels stasis",
+    "Soothes the Liver and relieves constraint",
+    "Promotes digestion and reduces food stagnation",
+    "Directs Qi downward",
+    "Soothes the Liver and regulates Qi"
+   ]
+  },
+  {
+   "herb_id": "herb.shan_zha",
+   "field": "actions_en",
+   "zh": [
+    "消食化積",
+    "理氣行氣",
+    "活血化瘀",
+    "降氣",
+    "清熱利尿",
+    "安神",
+    "益腸胃",
+    "降脂",
+    "利水"
+   ],
+   "en_proposed": [
+    "Promotes digestion and reduces food stagnation",
+    "Regulates and moves Qi",
+    "Invigorates the Blood and dispels stasis",
+    "Directs Qi downward",
+    "Clears Heat and promotes urination",
+    "Calms the spirit",
+    "Benefits the intestines and Stomach",
+    "Lowers blood lipids",
+    "Promotes urination"
+   ]
+  },
+  {
+   "herb_id": "herb.shen_qu",
+   "field": "actions_en",
+   "zh": [
+    "消食化積",
+    "健脾胃",
+    "除煩"
+   ],
+   "en_proposed": [
+    "Promotes digestion and reduces food stagnation",
+    "Strengthens the Spleen and Stomach",
+    "Eliminates vexation"
+   ]
+  },
+  {
+   "herb_id": "herb.mai_ya",
+   "field": "actions_en",
+   "zh": [
+    "消食化積",
+    "理氣行氣",
+    "健脾胃",
+    "溫裡溫中",
+    "除煩",
+    "回乳退乳"
+   ],
+   "en_proposed": [
+    "Promotes digestion and reduces food stagnation",
+    "Regulates and moves Qi",
+    "Strengthens the Spleen and Stomach",
+    "Warms the interior and the Middle",
+    "Eliminates vexation",
+    "Restrains lactation"
+   ]
+  },
+  {
+   "herb_id": "herb.ji_nei_jin",
+   "field": "actions_en",
+   "zh": [
+    "消食化積",
+    "澀精止遺",
+    "止咳化痰",
+    "利水滲濕",
+    "理氣行氣",
+    "健脾胃"
+   ],
+   "en_proposed": [
+    "Promotes digestion and reduces food stagnation",
+    "Astringes Essence and stops seminal emission",
+    "Stops coughing and transforms Phlegm",
+    "Promotes urination and leaches out Dampness",
+    "Regulates and moves Qi",
+    "Strengthens the Spleen and Stomach"
+   ]
+  },
+  {
+   "herb_id": "herb.san_qi",
+   "field": "actions_en",
+   "zh": [
+    "止血",
+    "活血化瘀",
+    "平肝息風",
+    "利水消腫",
+    "補血",
+    "清熱利尿",
+    "止痛"
+   ],
+   "en_proposed": [
+    "Stops bleeding",
+    "Invigorates the Blood and dispels stasis",
+    "Calms the Liver and extinguishes Wind",
+    "Promotes urination and reduces edema",
+    "Tonifies the Blood",
+    "Clears Heat and promotes urination",
+    "Relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_ji",
+   "field": "actions_en",
+   "zh": [
+    "化腐生肌",
+    "活血化瘀",
+    "收斂止血"
+   ],
+   "en_proposed": [
+    "Transforms putridity and generates flesh",
+    "Invigorates the Blood and dispels stasis",
+    "Astringes and stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.ai_ye",
+   "field": "actions_en",
+   "zh": [
+    "溫經",
+    "補陽",
+    "祛風除濕",
+    "安胎",
+    "止咳化痰",
+    "溫裡溫中",
+    "活絡止痛",
+    "通經絡",
+    "燥濕止癢",
+    "溫經止血",
+    "平喘止喘",
+    "利膽"
+   ],
+   "en_proposed": [
+    "Warms the channels",
+    "Tonifies Yang",
+    "Dispels Wind and eliminates Dampness",
+    "Calms the fetus",
+    "Stops coughing and transforms Phlegm",
+    "Warms the interior and the Middle",
+    "Quickens the collaterals and relieves pain",
+    "Unblocks the channels and collaterals",
+    "Dries Dampness and stops itching",
+    "Warms the channels and stops bleeding",
+    "Calms and arrests wheezing",
+    "Promotes bile flow"
+   ]
+  },
+  {
+   "herb_id": "herb.di_yu",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒",
+    "清熱涼血",
+    "斂瘡",
+    "排膿",
+    "收斂止血",
+    "清火解毒",
+    "保肝",
+    "止瀉"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity",
+    "Clears Heat and cools the Blood",
+    "Closes sores",
+    "Expels pus",
+    "Astringes and stops bleeding",
+    "Clears Fire and resolves toxicity",
+    "Protects the liver",
+    "Stops diarrhea"
+   ]
+  },
+  {
+   "herb_id": "herb.ce_bai_ye",
+   "field": "actions_en",
+   "zh": [
+    "止血",
+    "清熱涼血",
+    "活絡止痛",
+    "祛風除濕",
+    "活血化瘀",
+    "清熱利尿",
+    "化腐生肌",
+    "止咳化痰",
+    "生髮烏髮"
+   ],
+   "en_proposed": [
+    "Stops bleeding",
+    "Clears Heat and cools the Blood",
+    "Quickens the collaterals and relieves pain",
+    "Dispels Wind and eliminates Dampness",
+    "Invigorates the Blood and dispels stasis",
+    "Clears Heat and promotes urination",
+    "Transforms putridity and generates flesh",
+    "Stops coughing and transforms Phlegm",
+    "Promotes hair growth and blackens the hair"
+   ]
+  },
+  {
+   "herb_id": "herb.chuan_bei_mu",
+   "field": "actions_en",
+   "zh": [
+    "清化熱痰",
+    "止咳化痰",
+    "止咳平喘",
+    "散結",
+    "清熱解毒",
+    "安神",
+    "鎮咳祛痰",
+    "祛痰"
+   ],
+   "en_proposed": [
+    "Clears and transforms Phlegm-Heat",
+    "Stops coughing and transforms Phlegm",
+    "Stops coughing and calms wheezing",
+    "Dissipates nodules",
+    "Clears Heat and resolves toxicity",
+    "Calms the spirit",
+    "Suppresses coughing and expels phlegm",
+    "Expels phlegm"
+   ]
+  },
+  {
+   "herb_id": "herb.zhe_bei_mu",
+   "field": "actions_en",
+   "zh": [
+    "清化熱痰",
+    "止咳化痰",
+    "止咳平喘",
+    "散結",
+    "清熱解毒",
+    "安神",
+    "鎮咳祛痰",
+    "祛痰"
+   ],
+   "en_proposed": [
+    "Clears and transforms Phlegm-Heat",
+    "Stops coughing and transforms Phlegm",
+    "Stops coughing and calms wheezing",
+    "Dissipates nodules",
+    "Clears Heat and resolves toxicity",
+    "Calms the spirit",
+    "Suppresses coughing and expels phlegm",
+    "Expels phlegm"
+   ]
+  },
+  {
+   "herb_id": "herb.gua_lou",
+   "field": "actions_en",
+   "zh": [
+    "清化熱痰",
+    "止咳化痰",
+    "清熱瀉火",
+    "潤肺",
+    "散結"
+   ],
+   "en_proposed": [
+    "Clears and transforms Phlegm-Heat",
+    "Stops coughing and transforms Phlegm",
+    "Clears Heat and drains Fire",
+    "Moistens the Lungs",
+    "Dissipates nodules"
+   ]
+  },
+  {
+   "herb_id": "herb.zhu_ru",
+   "field": "actions_en",
+   "zh": [
+    "清化熱痰",
+    "清胃熱",
+    "止嘔",
+    "清熱瀉火",
+    "止咳化痰",
+    "利水消腫",
+    "清熱涼血"
+   ],
+   "en_proposed": [
+    "Clears and transforms Phlegm-Heat",
+    "Clears Stomach Heat",
+    "Stops vomiting",
+    "Clears Heat and drains Fire",
+    "Stops coughing and transforms Phlegm",
+    "Promotes urination and reduces edema",
+    "Clears Heat and cools the Blood"
+   ]
+  },
+  {
+   "herb_id": "herb.xing_ren",
+   "field": "actions_en",
+   "zh": [
+    "止咳化痰",
+    "通便",
+    "止咳平喘",
+    "降氣",
+    "生津止渴",
+    "驅蟲殺蟲"
+   ],
+   "en_proposed": [
+    "Stops coughing and transforms Phlegm",
+    "Unblocks the bowels",
+    "Stops coughing and calms wheezing",
+    "Directs Qi downward",
+    "Generates fluids and quenches thirst",
+    "Expels and kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.su_zi",
+   "field": "actions_en",
+   "zh": [
+    "止咳化痰",
+    "止咳平喘",
+    "潤肺",
+    "降氣"
+   ],
+   "en_proposed": [
+    "Stops coughing and transforms Phlegm",
+    "Stops coughing and calms wheezing",
+    "Moistens the Lungs",
+    "Directs Qi downward"
+   ]
+  },
+  {
+   "herb_id": "herb.kuan_dong_hua",
+   "field": "actions_en",
+   "zh": [
+    "止咳化痰",
+    "除煩",
+    "止咳平喘",
+    "潤肺",
+    "下氣"
+   ],
+   "en_proposed": [
+    "Stops coughing and transforms Phlegm",
+    "Eliminates vexation",
+    "Stops coughing and calms wheezing",
+    "Moistens the Lungs",
+    "Directs Qi downward"
+   ]
+  },
+  {
+   "herb_id": "herb.zi_wan",
+   "field": "actions_en",
+   "zh": [
+    "止咳化痰",
+    "降氣",
+    "止咳平喘",
+    "潤肺"
+   ],
+   "en_proposed": [
+    "Stops coughing and transforms Phlegm",
+    "Directs Qi downward",
+    "Stops coughing and calms wheezing",
+    "Moistens the Lungs"
+   ]
+  },
+  {
+   "herb_id": "herb.shi_chang_pu",
+   "field": "actions_en",
+   "zh": [
+    "開竅",
+    "芳香化濕",
+    "安神",
+    "理氣行氣",
+    "止咳化痰",
+    "活血化瘀",
+    "解痙"
+   ],
+   "en_proposed": [
+    "Opens the orifices",
+    "Aromatically transforms Dampness",
+    "Calms the spirit",
+    "Regulates and moves Qi",
+    "Stops coughing and transforms Phlegm",
+    "Invigorates the Blood and dispels stasis",
+    "Relieves spasms"
+   ]
+  },
+  {
+   "herb_id": "herb.su_he_xiang",
+   "field": "actions_en",
+   "zh": [
+    "開竅",
+    "除穢氣障氣",
+    "利水消腫",
+    "行氣止痛"
+   ],
+   "en_proposed": [
+    "Opens the orifices",
+    "Dispels foul and miasmic Qi",
+    "Promotes urination and reduces edema",
+    "Moves Qi and relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.gou_teng",
+   "field": "actions_en",
+   "zh": [
+    "平肝息風",
+    "清熱瀉火",
+    "清熱平肝",
+    "息風止痙"
+   ],
+   "en_proposed": [
+    "Calms the Liver and extinguishes Wind",
+    "Clears Heat and drains Fire",
+    "Clears Heat and calms the Liver",
+    "Extinguishes Wind and stops convulsions"
+   ]
+  },
+  {
+   "herb_id": "herb.tian_ma",
+   "field": "actions_en",
+   "zh": [
+    "平肝息風",
+    "祛風除濕",
+    "活絡止痛",
+    "補血養肝",
+    "安神",
+    "息風止痙",
+    "平肝潛陽",
+    "延緩衰老"
+   ],
+   "en_proposed": [
+    "Calms the Liver and extinguishes Wind",
+    "Dispels Wind and eliminates Dampness",
+    "Quickens the collaterals and relieves pain",
+    "Tonifies the Blood and nourishes the Liver",
+    "Calms the spirit",
+    "Extinguishes Wind and stops convulsions",
+    "Calms the Liver and subdues Yang",
+    "Delays aging"
+   ]
+  },
+  {
+   "herb_id": "herb.di_long",
+   "field": "actions_en",
+   "zh": [
+    "平肝息風",
+    "清熱瀉火",
+    "清熱利尿",
+    "止咳平喘",
+    "通經絡"
+   ],
+   "en_proposed": [
+    "Calms the Liver and extinguishes Wind",
+    "Clears Heat and drains Fire",
+    "Clears Heat and promotes urination",
+    "Stops coughing and calms wheezing",
+    "Unblocks the channels and collaterals"
+   ]
+  },
+  {
+   "herb_id": "herb.quan_xie",
+   "field": "actions_en",
+   "zh": [
+    "平肝息風",
+    "去風止痙",
+    "祛風除濕",
+    "息風止痙",
+    "解毒殺蟲"
+   ],
+   "en_proposed": [
+    "Calms the Liver and extinguishes Wind",
+    "Dispels Wind and stops convulsions",
+    "Dispels Wind and eliminates Dampness",
+    "Extinguishes Wind and stops convulsions",
+    "Resolves toxicity and kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.mu_li",
+   "field": "actions_en",
+   "zh": [
+    "通經",
+    "平肝息風",
+    "固表止汗",
+    "澀精止遺",
+    "止咳化痰",
+    "生津止渴",
+    "軟堅",
+    "清熱利濕",
+    "健脾胃",
+    "滋陰補腎"
+   ],
+   "en_proposed": [
+    "Unblocks the channels",
+    "Calms the Liver and extinguishes Wind",
+    "Consolidates the exterior and stops sweating",
+    "Astringes Essence and stops seminal emission",
+    "Stops coughing and transforms Phlegm",
+    "Generates fluids and quenches thirst",
+    "Softens hardness",
+    "Clears Heat and drains Dampness",
+    "Strengthens the Spleen and Stomach",
+    "Nourishes Yin and tonifies the Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.long_gu",
+   "field": "actions_en",
+   "zh": [
+    "安神",
+    "止瀉",
+    "止血",
+    "健脾胃",
+    "澀精止遺",
+    "強筋骨",
+    "平肝潛陽"
+   ],
+   "en_proposed": [
+    "Calms the spirit",
+    "Stops diarrhea",
+    "Stops bleeding",
+    "Strengthens the Spleen and Stomach",
+    "Astringes Essence and stops seminal emission",
+    "Strengthens sinews and bones",
+    "Calms the Liver and subdues Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.dang_shen",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "健脾胃",
+    "補中益氣",
+    "生津止渴",
+    "補血",
+    "清肺化痰",
+    "安神益智",
+    "益腸胃",
+    "益氣養血",
+    "保肝"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Strengthens the Spleen and Stomach",
+    "Tonifies the Middle and augments Qi",
+    "Generates fluids and quenches thirst",
+    "Tonifies the Blood",
+    "Clears the Lungs and transforms Phlegm",
+    "Calms the spirit and boosts the intellect",
+    "Benefits the intestines and Stomach",
+    "Augments Qi and nourishes the Blood",
+    "Protects the liver"
+   ]
+  },
+  {
+   "herb_id": "herb.shan_yao",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "澀精止遺",
+    "止咳化痰",
+    "強筋骨",
+    "健脾胃",
+    "滋陰",
+    "止瀉",
+    "補腎澀精",
+    "健脾養胃"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Astringes Essence and stops seminal emission",
+    "Stops coughing and transforms Phlegm",
+    "Strengthens sinews and bones",
+    "Strengthens the Spleen and Stomach",
+    "Nourishes Yin",
+    "Stops diarrhea",
+    "Tonifies the Kidneys and astringes Essence",
+    "Strengthens the Spleen and nourishes the Stomach"
+   ]
+  },
+  {
+   "herb_id": "herb.shu_di_huang",
+   "field": "actions_en",
+   "zh": [
+    "補血",
+    "滋陰",
+    "益精",
+    "補益肝腎",
+    "補腎",
+    "滋補養生",
+    "延緩衰老"
+   ],
+   "en_proposed": [
+    "Tonifies the Blood",
+    "Nourishes Yin",
+    "Boosts Essence",
+    "Tonifies the Liver and Kidneys",
+    "Tonifies the Kidneys",
+    "Nourishes and tonifies the body",
+    "Delays aging"
+   ]
+  },
+  {
+   "herb_id": "herb.e_jiao",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "滋陰",
+    "止咳化痰",
+    "清熱利尿",
+    "清肺熱利咽",
+    "安胎",
+    "潤燥",
+    "補血養肝",
+    "和血止血"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Nourishes Yin",
+    "Stops coughing and transforms Phlegm",
+    "Clears Heat and promotes urination",
+    "Clears Lung Heat and benefits the throat",
+    "Calms the fetus",
+    "Moistens dryness",
+    "Tonifies the Blood and nourishes the Liver",
+    "Harmonizes the Blood and stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.he_shou_wu",
+   "field": "actions_en",
+   "zh": [
+    "補血",
+    "補氣",
+    "祛風除濕",
+    "益精",
+    "解毒",
+    "活絡止痛",
+    "通便",
+    "強筋骨",
+    "補益肝腎",
+    "保肝",
+    "延緩衰老"
+   ],
+   "en_proposed": [
+    "Tonifies the Blood",
+    "Tonifies Qi",
+    "Dispels Wind and eliminates Dampness",
+    "Boosts Essence",
+    "Resolves toxicity",
+    "Quickens the collaterals and relieves pain",
+    "Unblocks the bowels",
+    "Strengthens sinews and bones",
+    "Tonifies the Liver and Kidneys",
+    "Protects the liver",
+    "Delays aging"
+   ]
+  },
+  {
+   "herb_id": "herb.long_yan_rou",
+   "field": "actions_en",
+   "zh": [
+    "補血",
+    "安神",
+    "補氣",
+    "健脾胃",
+    "止咳化痰",
+    "潤肺"
+   ],
+   "en_proposed": [
+    "Tonifies the Blood",
+    "Calms the spirit",
+    "Tonifies Qi",
+    "Strengthens the Spleen and Stomach",
+    "Stops coughing and transforms Phlegm",
+    "Moistens the Lungs"
+   ]
+  },
+  {
+   "herb_id": "herb.bei_sha_shen",
+   "field": "actions_en",
+   "zh": [
+    "止咳化痰",
+    "活絡止痛",
+    "清肺熱利咽",
+    "養陰",
+    "清肺",
+    "益胃",
+    "生津"
+   ],
+   "en_proposed": [
+    "Stops coughing and transforms Phlegm",
+    "Quickens the collaterals and relieves pain",
+    "Clears Lung Heat and benefits the throat",
+    "Nourishes Yin",
+    "Clears the Lungs",
+    "Benefits the Stomach",
+    "Generates fluids"
+   ]
+  },
+  {
+   "herb_id": "herb.mai_men_dong",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "止咳化痰",
+    "清虛熱",
+    "潤肺",
+    "安神",
+    "清熱解毒"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Stops coughing and transforms Phlegm",
+    "Clears deficiency Heat",
+    "Moistens the Lungs",
+    "Calms the spirit",
+    "Clears Heat and resolves toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.tian_men_dong",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "止血",
+    "清熱利尿",
+    "清肺熱利咽",
+    "潤燥",
+    "潤肺",
+    "清熱解毒"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Stops bleeding",
+    "Clears Heat and promotes urination",
+    "Clears Lung Heat and benefits the throat",
+    "Moistens dryness",
+    "Moistens the Lungs",
+    "Clears Heat and resolves toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.shi_hu",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "清熱瀉火",
+    "生津止渴",
+    "強筋骨",
+    "益精"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Clears Heat and drains Fire",
+    "Generates fluids and quenches thirst",
+    "Strengthens sinews and bones",
+    "Boosts Essence"
+   ]
+  },
+  {
+   "herb_id": "herb.yu_zhu",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "生津止渴",
+    "潤燥",
+    "除煩"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Generates fluids and quenches thirst",
+    "Moistens dryness",
+    "Eliminates vexation"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_he",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "止咳化痰",
+    "安神",
+    "潤肺",
+    "補中益氣",
+    "止血",
+    "清熱解毒"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Stops coughing and transforms Phlegm",
+    "Calms the spirit",
+    "Moistens the Lungs",
+    "Tonifies the Middle and augments Qi",
+    "Stops bleeding",
+    "Clears Heat and resolves toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.gou_qi_zi",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "益精",
+    "潤肺",
+    "補血養肝",
+    "補益肝腎",
+    "清肝明目",
+    "強筋骨",
+    "滋陰益氣",
+    "保肝"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Boosts Essence",
+    "Moistens the Lungs",
+    "Tonifies the Blood and nourishes the Liver",
+    "Tonifies the Liver and Kidneys",
+    "Clears the Liver and brightens the eyes",
+    "Strengthens sinews and bones",
+    "Nourishes Yin and augments Qi",
+    "Protects the liver"
+   ]
+  },
+  {
+   "herb_id": "herb.nu_zhen_zi",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "清熱涼血",
+    "補益肝腎",
+    "補血養肝",
+    "補腎",
+    "明目",
+    "烏髮"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Clears Heat and cools the Blood",
+    "Tonifies the Liver and Kidneys",
+    "Tonifies the Blood and nourishes the Liver",
+    "Tonifies the Kidneys",
+    "Brightens the eyes",
+    "Blackens the hair"
+   ]
+  },
+  {
+   "herb_id": "herb.gui_ban",
+   "field": "actions_en",
+   "zh": [
+    "止血",
+    "補腎",
+    "安神",
+    "滋陰補腎",
+    "養血潤燥",
+    "強筋健骨"
+   ],
+   "en_proposed": [
+    "Stops bleeding",
+    "Tonifies the Kidneys",
+    "Calms the spirit",
+    "Nourishes Yin and tonifies the Kidneys",
+    "Nourishes the Blood and moistens dryness",
+    "Strengthens the sinews and bones"
+   ]
+  },
+  {
+   "herb_id": "herb.lu_jiao_jiao",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "益精",
+    "止血",
+    "補中益氣",
+    "補血",
+    "安胎",
+    "固崩止帶",
+    "補腎益精",
+    "強筋健骨",
+    "滋陰養血",
+    "潤肺止咳"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Boosts Essence",
+    "Stops bleeding",
+    "Tonifies the Middle and augments Qi",
+    "Tonifies the Blood",
+    "Calms the fetus",
+    "Stems uterine bleeding and stops vaginal discharge",
+    "Tonifies the Kidneys and boosts Essence",
+    "Strengthens the sinews and bones",
+    "Nourishes Yin and the Blood",
+    "Moistens the Lungs and stops coughing"
+   ]
+  },
+  {
+   "herb_id": "herb.lu_rong",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "強筋骨",
+    "益精",
+    "補腎",
+    "固崩止帶",
+    "強筋健骨",
+    "溫腎壯陽"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Strengthens sinews and bones",
+    "Boosts Essence",
+    "Tonifies the Kidneys",
+    "Stems uterine bleeding and stops vaginal discharge",
+    "Strengthens the sinews and bones",
+    "Warms the Kidneys and fortifies Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.yin_yang_huo",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "補氣",
+    "補腎",
+    "清熱利尿",
+    "強筋骨",
+    "溫腎壯陽"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Tonifies Qi",
+    "Tonifies the Kidneys",
+    "Clears Heat and promotes urination",
+    "Strengthens sinews and bones",
+    "Warms the Kidneys and fortifies Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.ba_ji_tian",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "祛風除濕",
+    "補氣",
+    "散風寒",
+    "止咳化痰",
+    "降氣",
+    "強筋骨",
+    "補腎壯陽"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Dispels Wind and eliminates Dampness",
+    "Tonifies Qi",
+    "Disperses Wind-Cold",
+    "Stops coughing and transforms Phlegm",
+    "Directs Qi downward",
+    "Strengthens sinews and bones",
+    "Tonifies the Kidneys and fortifies Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.xu_duan",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "補氣",
+    "強筋骨",
+    "補益肝腎",
+    "利水消腫",
+    "安胎",
+    "通經絡",
+    "止血"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Tonifies Qi",
+    "Strengthens sinews and bones",
+    "Tonifies the Liver and Kidneys",
+    "Promotes urination and reduces edema",
+    "Calms the fetus",
+    "Unblocks the channels and collaterals",
+    "Stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.bu_gu_zhi",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "補氣",
+    "止瀉",
+    "健脾胃",
+    "溫腎助陽",
+    "延緩衰老",
+    "解毒殺蟲"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Tonifies Qi",
+    "Stops diarrhea",
+    "Strengthens the Spleen and Stomach",
+    "Warms the Kidneys and assists Yang",
+    "Delays aging",
+    "Resolves toxicity and kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.tu_si_zi",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "補氣",
+    "止瀉",
+    "補益肝腎",
+    "安胎",
+    "補血養肝",
+    "補腎",
+    "通經絡"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Tonifies Qi",
+    "Stops diarrhea",
+    "Tonifies the Liver and Kidneys",
+    "Calms the fetus",
+    "Tonifies the Blood and nourishes the Liver",
+    "Tonifies the Kidneys",
+    "Unblocks the channels and collaterals"
+   ]
+  },
+  {
+   "herb_id": "herb.sha_yuan_zi",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "澀精止遺",
+    "益精",
+    "補益肝腎",
+    "養肝明目"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Astringes Essence and stops seminal emission",
+    "Boosts Essence",
+    "Tonifies the Liver and Kidneys",
+    "Nourishes the Liver and brightens the eyes"
+   ]
+  },
+  {
+   "herb_id": "herb.suan_zao_ren",
+   "field": "actions_en",
+   "zh": [
+    "安神",
+    "生津止渴",
+    "補血養肝",
+    "清虛熱",
+    "固表止汗"
+   ],
+   "en_proposed": [
+    "Calms the spirit",
+    "Generates fluids and quenches thirst",
+    "Tonifies the Blood and nourishes the Liver",
+    "Clears deficiency Heat",
+    "Consolidates the exterior and stops sweating"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_zi_ren",
+   "field": "actions_en",
+   "zh": [
+    "安神",
+    "止血",
+    "固表止汗",
+    "補氣",
+    "滋陰",
+    "潤腸通便"
+   ],
+   "en_proposed": [
+    "Calms the spirit",
+    "Stops bleeding",
+    "Consolidates the exterior and stops sweating",
+    "Tonifies Qi",
+    "Nourishes Yin",
+    "Moistens the intestines and unblocks the bowels"
+   ]
+  },
+  {
+   "herb_id": "herb.yuan_zhi",
+   "field": "actions_en",
+   "zh": [
+    "安神",
+    "利水消腫",
+    "止咳化痰",
+    "清熱解毒",
+    "益智"
+   ],
+   "en_proposed": [
+    "Calms the spirit",
+    "Promotes urination and reduces edema",
+    "Stops coughing and transforms Phlegm",
+    "Clears Heat and resolves toxicity",
+    "Boosts the intellect"
+   ]
+  },
+  {
+   "herb_id": "herb.he_huan_pi",
+   "field": "actions_en",
+   "zh": [
+    "活血化瘀",
+    "利水消腫",
+    "安神解鬱",
+    "活血消癰"
+   ],
+   "en_proposed": [
+    "Invigorates the Blood and dispels stasis",
+    "Promotes urination and reduces edema",
+    "Calms the spirit and relieves constraint",
+    "Invigorates the Blood and reduces abscesses"
+   ]
+  },
+  {
+   "herb_id": "herb.wu_bei_zi",
+   "field": "actions_en",
+   "zh": [
+    "固澀收斂",
+    "止血",
+    "清熱解毒",
+    "固表止汗",
+    "止瀉",
+    "止咳化痰"
+   ],
+   "en_proposed": [
+    "Astringes and consolidates",
+    "Stops bleeding",
+    "Clears Heat and resolves toxicity",
+    "Consolidates the exterior and stops sweating",
+    "Stops diarrhea",
+    "Stops coughing and transforms Phlegm"
+   ]
+  },
+  {
+   "herb_id": "herb.shan_zhu_yu",
+   "field": "actions_en",
+   "zh": [
+    "固澀收斂",
+    "澀精止遺",
+    "補益肝腎",
+    "補血養肝",
+    "益精"
+   ],
+   "en_proposed": [
+    "Astringes and consolidates",
+    "Astringes Essence and stops seminal emission",
+    "Tonifies the Liver and Kidneys",
+    "Tonifies the Blood and nourishes the Liver",
+    "Boosts Essence"
+   ]
+  },
+  {
+   "herb_id": "herb.lian_zi",
+   "field": "actions_en",
+   "zh": [
+    "固澀收斂",
+    "安神",
+    "澀精止遺",
+    "止嘔",
+    "生津止渴",
+    "止瀉",
+    "強筋骨",
+    "補氣",
+    "健脾胃"
+   ],
+   "en_proposed": [
+    "Astringes and consolidates",
+    "Calms the spirit",
+    "Astringes Essence and stops seminal emission",
+    "Stops vomiting",
+    "Generates fluids and quenches thirst",
+    "Stops diarrhea",
+    "Strengthens sinews and bones",
+    "Tonifies Qi",
+    "Strengthens the Spleen and Stomach"
+   ]
+  },
+  {
+   "herb_id": "herb.qian_shi",
+   "field": "actions_en",
+   "zh": [
+    "固澀收斂",
+    "止瀉",
+    "固崩止帶",
+    "補中益氣",
+    "補腎",
+    "補血"
+   ],
+   "en_proposed": [
+    "Astringes and consolidates",
+    "Stops diarrhea",
+    "Stems uterine bleeding and stops vaginal discharge",
+    "Tonifies the Middle and augments Qi",
+    "Tonifies the Kidneys",
+    "Tonifies the Blood"
+   ]
+  },
+  {
+   "herb_id": "herb.fu_xiao_mai",
+   "field": "actions_en",
+   "zh": [
+    "固表止汗",
+    "固澀收斂",
+    "補氣",
+    "滋陰",
+    "健脾和胃",
+    "清熱利溼"
+   ],
+   "en_proposed": [
+    "Consolidates the exterior and stops sweating",
+    "Astringes and consolidates",
+    "Tonifies Qi",
+    "Nourishes Yin",
+    "Strengthens the Spleen and harmonizes the Stomach",
+    "Clears Heat and drains Dampness"
+   ]
+  },
+  {
+   "herb_id": "herb.dai_zhe_shi",
+   "field": "actions_en",
+   "zh": [
+    "通經",
+    "平肝息風",
+    "止血",
+    "止咳化痰",
+    "清熱涼血",
+    "活血化瘀",
+    "止嘔",
+    "止咳平喘",
+    "鎮靜安神"
+   ],
+   "en_proposed": [
+    "Unblocks the channels",
+    "Calms the Liver and extinguishes Wind",
+    "Stops bleeding",
+    "Stops coughing and transforms Phlegm",
+    "Clears Heat and cools the Blood",
+    "Invigorates the Blood and dispels stasis",
+    "Stops vomiting",
+    "Stops coughing and calms wheezing",
+    "Settles and calms the spirit"
+   ]
+  },
+  {
+   "herb_id": "herb.gao_liang_jiang",
+   "field": "actions_en",
+   "zh": [
+    "溫裡溫中",
+    "止嘔",
+    "活絡止痛",
+    "理氣行氣",
+    "降氣",
+    "補陽",
+    "健脾胃",
+    "治瘧",
+    "溫中散寒",
+    "行氣止痛",
+    "鎮痛解熱"
+   ],
+   "en_proposed": [
+    "Warms the interior and the Middle",
+    "Stops vomiting",
+    "Quickens the collaterals and relieves pain",
+    "Regulates and moves Qi",
+    "Directs Qi downward",
+    "Tonifies Yang",
+    "Strengthens the Spleen and Stomach",
+    "Treats malaria",
+    "Warms the Middle and disperses Cold",
+    "Moves Qi and relieves pain",
+    "Relieves pain and reduces fever"
+   ]
+  },
+  {
+   "herb_id": "herb.fo_shou",
+   "field": "actions_en",
+   "zh": [
+    "疏肝理氣",
+    "和胃止痛",
+    "燥濕化痰"
+   ],
+   "en_proposed": [
+    "Soothes the Liver and regulates Qi",
+    "Harmonizes the Stomach and relieves pain",
+    "Dries Dampness and transforms Phlegm"
+   ]
+  },
+  {
+   "herb_id": "herb.mei_gui_hua",
+   "field": "actions_en",
+   "zh": [
+    "理氣行氣",
+    "活血散瘀"
+   ],
+   "en_proposed": [
+    "Regulates and moves Qi",
+    "Invigorates the Blood and dissipates stasis"
+   ]
+  },
+  {
+   "herb_id": "herb.xie_bai",
+   "field": "actions_en",
+   "zh": [
+    "解毒",
+    "理氣行氣",
+    "補氣",
+    "健脾胃",
+    "散結",
+    "安胎",
+    "止瀉",
+    "活絡止痛",
+    "通陽"
+   ],
+   "en_proposed": [
+    "Resolves toxicity",
+    "Regulates and moves Qi",
+    "Tonifies Qi",
+    "Strengthens the Spleen and Stomach",
+    "Dissipates nodules",
+    "Calms the fetus",
+    "Stops diarrhea",
+    "Quickens the collaterals and relieves pain",
+    "Unblocks Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.lai_fu_zi",
+   "field": "actions_en",
+   "zh": [
+    "消食化積",
+    "止咳化痰",
+    "降氣化痰"
+   ],
+   "en_proposed": [
+    "Promotes digestion and reduces food stagnation",
+    "Stops coughing and transforms Phlegm",
+    "Directs Qi downward and transforms Phlegm"
+   ]
+  },
+  {
+   "herb_id": "herb.shi_jun_zi",
+   "field": "actions_en",
+   "zh": [
+    "驅蟲殺蟲",
+    "健脾胃",
+    "消食化積"
+   ],
+   "en_proposed": [
+    "Expels and kills parasites",
+    "Strengthens the Spleen and Stomach",
+    "Promotes digestion and reduces food stagnation"
+   ]
+  },
+  {
+   "herb_id": "herb.ku_lian_pi",
+   "field": "actions_en",
+   "zh": [
+    "驅蟲殺蟲",
+    "清熱瀉火",
+    "燥濕",
+    "利尿",
+    "止血",
+    "止癢"
+   ],
+   "en_proposed": [
+    "Expels and kills parasites",
+    "Clears Heat and drains Fire",
+    "Dries Dampness",
+    "Promotes urination",
+    "Stops bleeding",
+    "Stops itching"
+   ]
+  },
+  {
+   "herb_id": "herb.bing_lang",
+   "field": "actions_en",
+   "zh": [
+    "驅蟲殺蟲",
+    "降氣",
+    "除煩",
+    "消食化積",
+    "利水消腫"
+   ],
+   "en_proposed": [
+    "Expels and kills parasites",
+    "Directs Qi downward",
+    "Eliminates vexation",
+    "Promotes digestion and reduces food stagnation",
+    "Promotes urination and reduces edema"
+   ]
+  },
+  {
+   "herb_id": "herb.nan_gua_zi",
+   "field": "actions_en",
+   "zh": [
+    "利水滲濕",
+    "驅蟲殺蟲",
+    "利水消腫"
+   ],
+   "en_proposed": [
+    "Promotes urination and leaches out Dampness",
+    "Expels and kills parasites",
+    "Promotes urination and reduces edema"
+   ]
+  },
+  {
+   "herb_id": "herb.xian_he_cao",
+   "field": "actions_en",
+   "zh": [
+    "止血",
+    "清熱解毒",
+    "止瀉",
+    "健脾胃",
+    "驅蟲殺蟲",
+    "解毒殺蟲"
+   ],
+   "en_proposed": [
+    "Stops bleeding",
+    "Clears Heat and resolves toxicity",
+    "Stops diarrhea",
+    "Strengthens the Spleen and Stomach",
+    "Expels and kills parasites",
+    "Resolves toxicity and kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.pu_huang",
+   "field": "actions_en",
+   "zh": [
+    "止瀉",
+    "活血化瘀",
+    "止血",
+    "清熱涼血",
+    "清熱利尿",
+    "排膿",
+    "降脂"
+   ],
+   "en_proposed": [
+    "Stops diarrhea",
+    "Invigorates the Blood and dispels stasis",
+    "Stops bleeding",
+    "Clears Heat and cools the Blood",
+    "Clears Heat and promotes urination",
+    "Expels pus",
+    "Lowers blood lipids"
+   ]
+  },
+  {
+   "herb_id": "herb.qian_cao",
+   "field": "actions_en",
+   "zh": [
+    "通經絡",
+    "涼血止血",
+    "活血化瘀"
+   ],
+   "en_proposed": [
+    "Unblocks the channels and collaterals",
+    "Cools the Blood and stops bleeding",
+    "Invigorates the Blood and dispels stasis"
+   ]
+  },
+  {
+   "herb_id": "herb.mo_yao",
+   "field": "actions_en",
+   "zh": [
+    "化腐生肌",
+    "利水消腫",
+    "活血化瘀",
+    "活血止痛",
+    "生肌"
+   ],
+   "en_proposed": [
+    "Transforms putridity and generates flesh",
+    "Promotes urination and reduces edema",
+    "Invigorates the Blood and dispels stasis",
+    "Invigorates the Blood and relieves pain",
+    "Generates flesh"
+   ]
+  },
+  {
+   "herb_id": "herb.qian_hu",
+   "field": "actions_en",
+   "zh": [
+    "降氣化痰、宣散風熱"
+   ],
+   "en_proposed": [
+    "Directs Qi downward and transforms Phlegm; diffuses and disperses Wind-Heat"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_bu",
+   "field": "actions_en",
+   "zh": [
+    "潤肺下氣止咳、殺蟲滅蝨"
+   ],
+   "en_proposed": [
+    "Moistens the Lungs, directs Qi downward and stops coughing; kills parasites and exterminates lice"
+   ]
+  },
+  {
+   "herb_id": "herb.pi_pa_ye",
+   "field": "actions_en",
+   "zh": [
+    "清肺止咳、降逆止嘔"
+   ],
+   "en_proposed": [
+    "Clears the Lungs and stops coughing; directs rebellious Qi downward and stops vomiting"
+   ]
+  },
+  {
+   "herb_id": "herb.ting_li_zi",
+   "field": "actions_en",
+   "zh": [
+    "止咳化痰",
+    "利水消腫",
+    "止咳平喘",
+    "清熱利尿",
+    "清肺熱利咽"
+   ],
+   "en_proposed": [
+    "Stops coughing and transforms Phlegm",
+    "Promotes urination and reduces edema",
+    "Stops coughing and calms wheezing",
+    "Clears Heat and promotes urination",
+    "Clears Lung Heat and benefits the throat"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_jiang_can",
+   "field": "actions_en",
+   "zh": [
+    "平肝息風",
+    "祛風除濕",
+    "止咳化痰",
+    "清熱解毒",
+    "清肺熱利咽",
+    "散結",
+    "祛風解痙",
+    "化痰散結"
+   ],
+   "en_proposed": [
+    "Calms the Liver and extinguishes Wind",
+    "Dispels Wind and eliminates Dampness",
+    "Stops coughing and transforms Phlegm",
+    "Clears Heat and resolves toxicity",
+    "Clears Lung Heat and benefits the throat",
+    "Dissipates nodules",
+    "Dispels Wind and relieves spasms",
+    "Transforms Phlegm and dissipates nodules"
+   ]
+  },
+  {
+   "herb_id": "herb.ye_jiao_teng",
+   "field": "actions_en",
+   "zh": [
+    "安神",
+    "祛風除濕",
+    "活絡止痛",
+    "通經絡",
+    "補血養肝"
+   ],
+   "en_proposed": [
+    "Calms the spirit",
+    "Dispels Wind and eliminates Dampness",
+    "Quickens the collaterals and relieves pain",
+    "Unblocks the channels and collaterals",
+    "Tonifies the Blood and nourishes the Liver"
+   ]
+  },
+  {
+   "herb_id": "herb.tai_zi_shen",
+   "field": "actions_en",
+   "zh": [
+    "補氣",
+    "止咳化痰",
+    "生津止渴",
+    "健脾胃",
+    "潤肺"
+   ],
+   "en_proposed": [
+    "Tonifies Qi",
+    "Stops coughing and transforms Phlegm",
+    "Generates fluids and quenches thirst",
+    "Strengthens the Spleen and Stomach",
+    "Moistens the Lungs"
+   ]
+  },
+  {
+   "herb_id": "herb.xi_yang_shen",
+   "field": "actions_en",
+   "zh": [
+    "生津止渴",
+    "補氣",
+    "滋陰",
+    "安神",
+    "清心安神",
+    "養陰清熱"
+   ],
+   "en_proposed": [
+    "Generates fluids and quenches thirst",
+    "Tonifies Qi",
+    "Nourishes Yin",
+    "Calms the spirit",
+    "Clears the Heart and calms the spirit",
+    "Nourishes Yin and clears Heat"
+   ]
+  },
+  {
+   "herb_id": "herb.sang_shen",
+   "field": "actions_en",
+   "zh": [
+    "補血",
+    "滋陰",
+    "止咳化痰",
+    "祛風除濕",
+    "生津止渴",
+    "安胎",
+    "補益肝腎",
+    "清熱解毒",
+    "潤腸"
+   ],
+   "en_proposed": [
+    "Tonifies the Blood",
+    "Nourishes Yin",
+    "Stops coughing and transforms Phlegm",
+    "Dispels Wind and eliminates Dampness",
+    "Generates fluids and quenches thirst",
+    "Calms the fetus",
+    "Tonifies the Liver and Kidneys",
+    "Clears Heat and resolves toxicity",
+    "Moistens the intestines"
+   ]
+  },
+  {
+   "herb_id": "herb.han_lian_cao",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "止血",
+    "清熱涼血",
+    "補益肝腎"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Stops bleeding",
+    "Clears Heat and cools the Blood",
+    "Tonifies the Liver and Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.rou_cong_rong",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "補氣",
+    "益精",
+    "補腎益精",
+    "溫腎壯陽"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Tonifies Qi",
+    "Boosts Essence",
+    "Tonifies the Kidneys and boosts Essence",
+    "Warms the Kidneys and fortifies Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.yi_zhi_ren",
+   "field": "actions_en",
+   "zh": [
+    "補陽",
+    "補氣",
+    "溫裡溫中",
+    "調經",
+    "補腎"
+   ],
+   "en_proposed": [
+    "Tonifies Yang",
+    "Tonifies Qi",
+    "Warms the interior and the Middle",
+    "Regulates menstruation",
+    "Tonifies the Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.wu_zei_gu",
+   "field": "actions_en",
+   "zh": [
+    "固崩止帶",
+    "固澀收斂",
+    "止血",
+    "固表止汗",
+    "祛風除濕",
+    "斂瘡",
+    "外用"
+   ],
+   "en_proposed": [
+    "Stems uterine bleeding and stops vaginal discharge",
+    "Astringes and consolidates",
+    "Stops bleeding",
+    "Consolidates the exterior and stops sweating",
+    "Dispels Wind and eliminates Dampness",
+    "Closes sores",
+    "For external use"
+   ]
+  },
+  {
+   "herb_id": "herb.dan_zhu_ye",
+   "field": "actions_en",
+   "zh": [
+    "清熱瀉火、除煩止渴、利尿通淋"
+   ],
+   "en_proposed": [
+    "Clears Heat and drains Fire; eliminates vexation and quenches thirst; promotes urination and unblocks painful urinary dribbling"
+   ]
+  },
+  {
+   "herb_id": "herb.sha_shen",
+   "field": "actions_en",
+   "zh": [
+    "養陰清肺、益胃生津"
+   ],
+   "en_proposed": [
+    "Nourishes Yin and clears the Lungs; benefits the Stomach and generates fluids"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_wei",
+   "field": "actions_en",
+   "zh": [
+    "清熱涼血、利尿通淋、解毒療瘡"
+   ],
+   "en_proposed": [
+    "Clears Heat and cools the Blood; promotes urination and unblocks painful urinary dribbling; resolves toxicity and heals sores"
+   ]
+  },
+  {
+   "herb_id": "herb.zi_su_zi",
+   "field": "actions_en",
+   "zh": [
+    "降氣化痰、止咳平喘、潤腸通便"
+   ],
+   "en_proposed": [
+    "Directs Qi downward and transforms Phlegm; stops coughing and calms wheezing; moistens the intestines and unblocks the bowels"
+   ]
+  },
+  {
+   "herb_id": "herb.da_fu_pi",
+   "field": "actions_en",
+   "zh": [
+    "行氣導滯、利水消腫"
+   ],
+   "en_proposed": [
+    "Moves Qi and guides out stagnation; promotes urination and reduces edema"
+   ]
+  },
+  {
+   "herb_id": "herb.da_ji",
+   "field": "actions_en",
+   "zh": [
+    "涼血止血、散瘀消腫"
+   ],
+   "en_proposed": [
+    "Cools the Blood and stops bleeding; dissipates stasis and reduces swelling"
+   ]
+  },
+  {
+   "herb_id": "herb.xiao_ji",
+   "field": "actions_en",
+   "zh": [
+    "涼血止血、祛瘀消腫"
+   ],
+   "en_proposed": [
+    "Cools the Blood and stops bleeding; dispels stasis and reduces swelling"
+   ]
+  },
+  {
+   "herb_id": "herb.she_gan",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒、消痰利咽"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity; dissolves Phlegm and benefits the throat"
+   ]
+  },
+  {
+   "herb_id": "herb.sang_bai_pi",
+   "field": "actions_en",
+   "zh": [
+    "瀉肺平喘、利水消腫"
+   ],
+   "en_proposed": [
+    "Drains the Lungs and calms wheezing; promotes urination and reduces edema"
+   ]
+  },
+  {
+   "herb_id": "herb.sang_piao_xiao",
+   "field": "actions_en",
+   "zh": [
+    "固精縮尿、補腎助陽"
+   ],
+   "en_proposed": [
+    "Secures Essence and reduces urination; tonifies the Kidneys and assists Yang"
+   ]
+  },
+  {
+   "herb_id": "herb.huai_hua",
+   "field": "actions_en",
+   "zh": [
+    "涼血止血、清肝瀉火"
+   ],
+   "en_proposed": [
+    "Cools the Blood and stops bleeding; clears the Liver and drains Fire"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_bian_dou",
+   "field": "actions_en",
+   "zh": [
+    "健脾化濕、和中消暑"
+   ],
+   "en_proposed": [
+    "Strengthens the Spleen and transforms Dampness; harmonizes the Middle and relieves Summerheat"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_mao_gen",
+   "field": "actions_en",
+   "zh": [
+    "涼血止血、清熱利尿"
+   ],
+   "en_proposed": [
+    "Cools the Blood and stops bleeding; clears Heat and promotes urination"
+   ]
+  },
+  {
+   "herb_id": "herb.shi_jue_ming",
+   "field": "actions_en",
+   "zh": [
+    "平肝潛陽、清肝明目"
+   ],
+   "en_proposed": [
+    "Calms the Liver and subdues Yang; clears the Liver and brightens the eyes"
+   ]
+  },
+  {
+   "herb_id": "herb.ling_yang_jiao",
+   "field": "actions_en",
+   "zh": [
+    "平肝息風、清肝明目、涼血解毒"
+   ],
+   "en_proposed": [
+    "Calms the Liver and extinguishes Wind; clears the Liver and brightens the eyes; cools the Blood and resolves toxicity"
+   ]
+  },
+  {
+   "herb_id": "herb.qian_cao_gen",
+   "field": "actions_en",
+   "zh": [
+    "涼血止血、祛瘀通經"
+   ],
+   "en_proposed": [
+    "Cools the Blood and stops bleeding; dispels stasis and unblocks the channels"
+   ]
+  },
+  {
+   "herb_id": "herb.he_ye",
+   "field": "actions_en",
+   "zh": [
+    "清暑化濕、升發清陽、涼血止血"
+   ],
+   "en_proposed": [
+    "Clears Summerheat and transforms Dampness; raises and disseminates clear Yang; cools the Blood and stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.xue_yu_tan",
+   "field": "actions_en",
+   "zh": [
+    "收斂止血、化瘀利尿"
+   ],
+   "en_proposed": [
+    "Astringes and stops bleeding; transforms stasis and promotes urination"
+   ]
+  },
+  {
+   "herb_id": "herb.bie_jia",
+   "field": "actions_en",
+   "zh": [
+    "滋陰潛陽、軟堅散結"
+   ],
+   "en_proposed": [
+    "Nourishes Yin and subdues Yang; softens hardness and dissipates nodules"
+   ]
+  },
+  {
+   "herb_id": "herb.yin_xing",
+   "field": "actions_en",
+   "zh": [
+    "斂肺定喘、止帶縮尿"
+   ],
+   "en_proposed": [
+    "Restrains the Lungs and arrests wheezing; stops vaginal discharge and reduces urination"
+   ]
+  },
+  {
+   "herb_id": "herb.yi_tang",
+   "field": "actions_en",
+   "zh": [
+    "緩中補虛、生津潤燥"
+   ],
+   "en_proposed": [
+    "Moderates the Middle and tonifies deficiency; generates fluids and moistens dryness"
+   ]
+  },
+  {
+   "herb_id": "herb.ma_bo",
+   "field": "actions_en",
+   "zh": [
+    "清肺利咽、解毒止血"
+   ],
+   "en_proposed": [
+    "Clears the Lungs and benefits the throat; resolves toxicity and stops bleeding"
+   ]
+  },
+  {
+   "herb_id": "herb.she_xiang",
+   "field": "actions_en",
+   "zh": [
+    "開竅醒神、活血通經、止痛"
+   ],
+   "en_proposed": [
+    "Opens the orifices and revives the spirit; invigorates the Blood and unblocks the channels; relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.hei_zhi_ma",
+   "field": "actions_en",
+   "zh": [
+    "補肝腎、益精血、潤腸通便"
+   ],
+   "en_proposed": [
+    "Tonifies the Liver and Kidneys; boosts Essence and Blood; moistens the intestines and unblocks the bowels"
+   ]
+  },
+  {
+   "herb_id": "herb.zi_cao",
+   "field": "actions_en",
+   "zh": [
+    "涼血活血、解毒透疹"
+   ],
+   "en_proposed": [
+    "Cools and invigorates the Blood; resolves toxicity and vents rashes"
+   ]
+  },
+  {
+   "herb_id": "herb.chuan_xin_lian",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒、燥濕"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity; dries Dampness"
+   ]
+  },
+  {
+   "herb_id": "herb.shan_dou_gen",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒、利咽消腫"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity; benefits the throat and reduces swelling"
+   ]
+  },
+  {
+   "herb_id": "herb.ma_chi_xian",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒、涼血止血、止痢"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity; cools the Blood and stops bleeding; stops dysentery"
+   ]
+  },
+  {
+   "herb_id": "herb.chui_pen_cao",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒、消腫利濕、降低轉氨酶"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity; reduces swelling and drains Dampness; lowers transaminase levels"
+   ]
+  },
+  {
+   "herb_id": "herb.bai_jiang_cao",
+   "field": "actions_en",
+   "zh": [
+    "清熱解毒、消癰排膿、祛瘀止痛"
+   ],
+   "en_proposed": [
+    "Clears Heat and resolves toxicity; reduces abscesses and expels pus; dispels stasis and relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.fan_xie_ye",
+   "field": "actions_en",
+   "zh": [
+    "瀉熱行滯、通便"
+   ],
+   "en_proposed": [
+    "Drains Heat and moves stagnation; unblocks the bowels"
+   ]
+  },
+  {
+   "herb_id": "herb.lu_hui",
+   "field": "actions_en",
+   "zh": [
+    "瀉下通便、清肝瀉火、殺蟲"
+   ],
+   "en_proposed": [
+    "Purges downward and unblocks the bowels; clears the Liver and drains Fire; kills parasites"
+   ]
+  },
+  {
+   "herb_id": "herb.cao_dou_kou",
+   "field": "actions_en",
+   "zh": [
+    "溫中燥濕、行氣動脾"
+   ],
+   "en_proposed": [
+    "Warms the Middle and dries Dampness; moves Qi and activates the Spleen"
+   ]
+  },
+  {
+   "herb_id": "herb.cao_guo",
+   "field": "actions_en",
+   "zh": [
+    "燥濕溫中、截瘧"
+   ],
+   "en_proposed": [
+    "Dries Dampness and warms the Middle; checks malaria"
+   ]
+  },
+  {
+   "herb_id": "herb.hai_jin_sha",
+   "field": "actions_en",
+   "zh": [
+    "利尿通淋、止痛"
+   ],
+   "en_proposed": [
+    "Promotes urination and unblocks painful urinary dribbling; relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.wu_yao",
+   "field": "actions_en",
+   "zh": [
+    "行氣止痛、溫腎散寒"
+   ],
+   "en_proposed": [
+    "Moves Qi and relieves pain; warms the Kidneys and disperses Cold"
+   ]
+  },
+  {
+   "herb_id": "herb.pang_da_hai",
+   "field": "actions_en",
+   "zh": [
+    "清熱潤肺、利咽開音、潤腸通便"
+   ],
+   "en_proposed": [
+    "Clears Heat and moistens the Lungs; benefits the throat and opens the voice; moistens the intestines and unblocks the bowels"
+   ]
+  },
+  {
+   "herb_id": "herb.ci_shi",
+   "field": "actions_en",
+   "zh": [
+    "鎮靜安神、聰耳明目、納氣平喘"
+   ],
+   "en_proposed": [
+    "Settles and calms the spirit; sharpens hearing and brightens the eyes; aids the grasping of Qi and calms wheezing"
+   ]
+  },
+  {
+   "herb_id": "herb.bing_pian",
+   "field": "actions_en",
+   "zh": [
+    "開竅醒神、清熱止痛"
+   ],
+   "en_proposed": [
+    "Opens the orifices and revives the spirit; clears Heat and relieves pain"
+   ]
+  },
+  {
+   "herb_id": "herb.huang_jing",
+   "field": "actions_en",
+   "zh": [
+    "補氣養陰、健脾、潤肺、益腎"
+   ],
+   "en_proposed": [
+    "Tonifies Qi and nourishes Yin; strengthens the Spleen; moistens the Lungs; benefits the Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.mo_han_lian",
+   "field": "actions_en",
+   "zh": [
+    "滋陰",
+    "補氣",
+    "止血",
+    "清熱涼血",
+    "補益肝腎"
+   ],
+   "en_proposed": [
+    "Nourishes Yin",
+    "Tonifies Qi",
+    "Stops bleeding",
+    "Clears Heat and cools the Blood",
+    "Tonifies the Liver and Kidneys"
+   ]
+  },
+  {
+   "herb_id": "herb.xiong_huang",
+   "field": "actions_en",
+   "zh": [
+    "解毒殺蟲",
+    "燥濕祛痰",
+    "截瘧"
+   ],
+   "en_proposed": [
+    "Resolves toxicity and kills parasites",
+    "Dries Dampness and expels Phlegm",
+    "Checks malaria"
+   ]
+  },
+  {
+   "herb_id": "herb.zhu_sha",
+   "field": "actions_en",
+   "zh": [
+    "清心鎮驚",
+    "安神",
+    "明目",
+    "解毒"
+   ],
+   "en_proposed": [
+    "Clears the Heart and settles fright",
+    "Calms the spirit",
+    "Brightens the eyes",
+    "Resolves toxicity"
+   ]
+  }
+ ],
+ "damaged": [],
+ "skipped_nonempty": 181
+}
