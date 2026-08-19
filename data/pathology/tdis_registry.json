@@ -531,7 +531,50 @@
    "pinyin": "Miantan",
    "name_en": "Facial Paralysis",
    "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
-   "classical_source": "針灸治療學"
+   "classical_source": "針灸治療學",
+   "definition_zh": "面癱（口僻，口眼喎斜）係外感風寒或風熱之邪侵襲面部經絡、絡脈及經筋所致，以口眼喎斜為主要表現的病證，相當於西醫之貝爾氏麻痺。任何年齡、任何時節皆可發病，以二十至四十歲多見，好發於春秋二季，女性較多。西醫對其病因尚不明確。",
+   "definition_en": "Mian tan (deviation of eye and mouth, known in Chinese as kou yan wai xie) is derived from invasion of the meridians, collaterals and tendon-muscle meridians of the facial region by exogenous pathogenic wind-cold or wind-heat, manifesting as deviation of the eye and mouth; Bell's palsy is similar to this disorder. It can occur at any age and any time, but mostly at 20-40 years old, in spring and fall, and more frequently in females. In Western medicine the cause remains unknown.",
+   "etiology_zh": "面部經絡空虛於先，風寒或風熱之邪乘虛侵襲面部經絡經筋。西醫推測貝爾氏麻痺係免疫或病毒性疾病致面神經腫脹，面神經於顳骨內狹窄之骨管中受壓、缺血所致。",
+   "etiology_en": "Deficiency or vacancy of the facial meridians, plus invasion of pathogenic wind-cold or wind-heat. Western medicine presumably thinks that Bell's palsy involves swelling of the nerve due to immune or viral disease, with ischemia and compression of the facial nerve in the narrow confines of its course through the temporal bone.",
+   "pathomechanism_zh": "面部經絡空虛，風寒風熱之邪入中，氣血阻滯，陽明、少陽經筋失於濡養，功能失司，面部肌肉筋脈癱緩不收，遂成口眼喎斜。病久遷延者，患側面肌攣縮，口角反牽向患側，是為「倒錯」。",
+   "pathomechanism_en": "Facial meridian deficiency plus invasion of wind-cold or wind-heat leads to qi and blood stagnation, then malnutrition of the yangming and shaoyang tendon-muscle meridians, failure of their function, and paralysis of the facial muscles and sinews, producing deviation of eye and mouth. If the condition is prolonged, muscle contractures of the affected-side facial muscles may pull the mouth toward the affected side, which is called the 'inverted image'.",
+   "key_manifestations_zh": [
+    "起病突然，多於睡醒後發現，或先有耳後疼痛，癱瘓於數小時內進展，甚可完全",
+    "患側眼瞼閉合不全（瞼裂增寬）、口角下垂、鼻唇溝變淺、流涎",
+    "不能皺眉、抬眉、閉目、鼓腮、示齒或吹哨",
+    "口眼喎斜向健側，或舌前三分之二味覺消失，可伴聽覺過敏、乳突部疼痛或頭痛",
+    "患側面部平坦無表情，自覺僵硬、沉重、麻木、弛緩，但無可查之感覺缺失"
+   ],
+   "key_manifestations_en": [
+    "Sudden onset, often right after waking up, possibly preceded by pain behind the ear; weakness develops within hours, sometimes to complete paralysis",
+    "Incomplete closure of the eye on the affected side (widened palpebral fissure), drooping of the angle of the mouth, flattened nasolabial sulcus, salivation",
+    "Inability to frown, raise the eyebrow, close the eye, blow out the cheek, show the teeth or whistle",
+    "Deviation of eye and mouth to the healthy side; possible disappearance of taste in the front two-thirds of the tongue, with hyperacusis, mastoid-region pain or headache",
+    "Affected side flat and expressionless, feeling stiff, heavy, numb and flaccid, but no demonstrable sensory loss"
+   ],
+   "related_patterns": [
+    "pattern.wind_cold",
+    "pattern.wind_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/BELL.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/BELL.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/BELL.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/BELL.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/BELL.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.chan_zheng",
@@ -615,7 +658,58 @@
    "name_zh": "鬱證",
    "pinyin": "Yuzheng",
    "name_en": "Depression Pattern Disease",
-   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+   "definition_zh": "鬱證乃情志失調所致之病證，以持續之悲傷、失落、憤怒、煩躁等情緒障礙為主要表現，妨礙日常生活達數週以上；相當於西醫之抑鬱障礙（憂鬱症），不僅見於成人，兒童與青少年亦可罹患，且常與經前綜合徵並見。",
+   "definition_en": "Yu zheng (depressive disorder) is a mood disorder in which feelings of sadness, loss, anger, or frustration interfere with daily life for weeks or longer; it occurs not only in adults but also in children and teens, and often occurs with PMS.",
+   "etiology_zh": "中醫病因為：一、肝氣鬱結；二、心陰虧虛；三、痰濕內擾。西醫確切病因不明，一般認為與腦內化學物質改變有關，可因遺傳因素或應激事件誘發，或兩者兼有；可能之誘因尚包括遺傳、酗酒、藥物濫用、睡眠障礙、精神壓力、某些藥物及某些內科疾病。",
+   "etiology_en": "TCM etiology: (1) liver qi stagnation; (2) heart yin deficiency; (3) damp-phlegm disturbances. In Western medicine the exact cause is unknown; it is believed to involve chemical changes in the brain, due to a problem with the genes or triggered by stressful events, or both — possible causes include heredity, alcohol, drug abuse, sleeping disorder, stress, certain medications and certain medical conditions.",
+   "pathomechanism_zh": "本病病機以實證與虛證分列。實者肝氣鬱結，氣機不暢，胸脅脹悶疼痛；氣滯日久則血行瘀阻而成血瘀；鬱久化火則肝火上炎，兼犯胃腑；氣鬱津凝，聚而成痰，痰氣互結則咽中如有物梗；氣鬱擾心則心神不寧。虛者病久耗傷，心脾兩虛、心陰虧虛、肝陰不足，甚則脾腎陽虛，神失所養而抑鬱纏綿。",
+   "pathomechanism_en": "The handout organizes the pathomechanism into excess and deficiency conditions. In excess, liver qi stagnation obstructs the qi dynamic with distention, stuffiness and pain of the chest and hypochondria; prolonged qi stagnation leads to blood stasis; stagnation transforming into fire gives liver fire uprising that also disturbs stomach function; qi stagnation with phlegm accumulation produces the sensation of an object in the throat that can be neither expectorated nor swallowed; disturbance of the heart shen causes emotional instability. In deficiency, prolonged illness leads to heart and spleen deficiency, heart yin deficiency, liver yin deficiency, and ultimately spleen and kidney yang deficiency, leaving the shen malnourished.",
+   "key_manifestations_zh": [
+    "凡事消極負面，情緒抑鬱，時時嘆息",
+    "煩躁不安，易於激動發怒",
+    "自覺孤立無援，絕望、無助、無價值感，自責自罪",
+    "對既往喜好之活動喪失興趣或樂趣",
+    "疲乏，睡眠差，注意力不集中，性慾減退",
+    "食慾驟變、體重改變，甚則自傷或有自殺意念"
+   ],
+   "key_manifestations_en": [
+    "Sees everything in a negative way, depressed mood, often sighing",
+    "Agitation, restlessness, irritability and anger",
+    "Feeling isolated, hopeless, helpless, worthless, guilty and self-hating",
+    "Loss of interest or pleasure in activities that were once enjoyed",
+    "Fatigue, poor sleeping, poor concentration, poor sexual drive",
+    "Sudden change in appetite, weight changes, and in severe cases hurting themselves or thoughts of suicide"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.blood_stasis",
+    "pattern.liver_fire",
+    "pattern.heart_spleen_deficiency",
+    "pattern.heart_yin_deficiency",
+    "pattern.liver_yin_deficiency",
+    "pattern.spleen_kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/6 Mood Disorder (1).md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/6 Mood Disorder (1).md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/6 Mood Disorder (1).md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/6 Mood Disorder (1).md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/6 Mood Disorder (1).md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 氣滯痰鬱（Qi stagnation and phlegm accumulation）、心神不寧（Heart Shen Disturbance）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.zang_zao",
@@ -660,7 +754,63 @@
    "name_zh": "虛勞",
    "pinyin": "Xulao",
    "name_en": "Consumptive Deficiency",
-   "taxonomy_id": "tdx.internal_medicine.qi_blood_body"
+   "taxonomy_id": "tdx.internal_medicine.qi_blood_body",
+   "definition_zh": "虛勞（慢性疲勞綜合徵）指以嚴重而持續之疲倦為特徵的一組症候，其疲倦休息不能緩解，非其他疾病直接引起，病程持續六個月以上。",
+   "definition_en": "Xu lao (chronic fatigue syndrome) refers to a group of symptoms characterized by severe continued tiredness that is not relieved by rest, is not directly caused by other medical conditions, and lasts more than six months.",
+   "etiology_zh": "西醫對本病之機理尚未明瞭，一般認為與EB病毒或人類疱疹病毒六型（HHV-6）感染，以及免疫應答失常所致之神經系統炎症有關。中醫則責之餘邪未淨（外感之後餘邪留戀），以及臟腑氣血陰陽虧虛。",
+   "etiology_en": "In Western medicine this syndrome is not clearly understood; it is believed to be due to Epstein-Barr virus or human herpes virus-6 (HHV-6), and inflammation in the nervous system because of a faulty immune system response. In Chinese medicine it is attributed to residual pathogenic factors after an external invasion (residual EPI) and to deficiency of the zang-fu organs' qi, blood, yin and yang.",
+   "pathomechanism_zh": "外感之後餘邪未淨：邪留少陽而成少陽證；邪入陽明化熱，上焦則為心熱、肺熱，中焦則發熱心煩，下焦則熱灼傷陰。脾為濕熱所困而脾氣虛；肺之水液下歸於脾而肺氣虛；肝氣橫逆乘脾，肝鬱而脾氣益虛。病久則諸臟虛損：肝血虛、肺陰虛、胃陰虛、腎陰虛、腎陽虛、心血虛、心陰虛，虛勞遂成。",
+   "pathomechanism_en": "After an external invasion the residual pathogen lingers: retained in shaoyang it forms a shaoyang pattern; entering yangming it transforms into heat — heat in the upper jiao as heart heat and lung heat, heat in the middle jiao with fever and irritability, and heat in the lower jiao that hurts yin. Spleen damp-heat encumbers the spleen causing spleen qi deficiency; lung fluid falls back to the spleen with lung qi deficiency; liver qi overacts on the spleen, giving liver qi stagnation with spleen qi deficiency. With prolonged illness the organs become depleted: liver blood, lung yin, stomach yin, kidney yin, kidney yang, heart blood and heart yin deficiency.",
+   "key_manifestations_zh": [
+    "持續疲乏，臥床休息亦不能緩解",
+    "肌肉痠痛無力，關節疼痛而無紅腫",
+    "失眠，健忘，注意力不集中，神識昏蒙",
+    "咽痛，淋巴結腫大，低熱，免疫力低下",
+    "與既往不同之頭痛，肩部肌肉緊繃疼痛，胸痛或胸悶",
+    "腸易激，腹瀉"
+   ],
+   "key_manifestations_en": [
+    "Persistent fatigue that bed rest does not relieve",
+    "Muscle aches and weak muscles; joint pain but no swelling or redness",
+    "Insomnia, forgetfulness, poor concentration, confusion",
+    "Sore throat, enlargement of lymph nodes, low-grade fever, weak immunity",
+    "Headache that differs from the past, tight and painful shoulder muscles, chest pain or congestion",
+    "IBS, diarrhea"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat_spleen_stomach",
+    "pattern.spleen_qi_deficiency",
+    "pattern.lung_qi_deficiency",
+    "pattern.liver_qi_stagnation",
+    "pattern.liver_spleen_disharmony",
+    "pattern.liver_blood_deficiency",
+    "pattern.lung_yin_deficiency",
+    "pattern.stomach_yin_deficiency",
+    "pattern.kidney_yin_deficiency",
+    "pattern.kidney_yang_deficiency",
+    "pattern.heart_blood_deficiency",
+    "pattern.heart_yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/7 Chronic Fatigue Symdrome.md; curriculum/conditions/8 Chronic Fatigue Symdrome - handout on canvas26.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/7 Chronic Fatigue Symdrome.md; curriculum/conditions/8 Chronic Fatigue Symdrome - handout on canvas26.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/7 Chronic Fatigue Symdrome.md; curriculum/conditions/8 Chronic Fatigue Symdrome - handout on canvas26.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/7 Chronic Fatigue Symdrome.md; curriculum/conditions/8 Chronic Fatigue Symdrome - handout on canvas26.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/7 Chronic Fatigue Symdrome.md; curriculum/conditions/8 Chronic Fatigue Symdrome - handout on canvas26.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 少陽證（Shaoyang Pattern）、陽明證（Yangming Pattern，含上、中、下三焦熱）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.fei_pang",
@@ -755,7 +905,59 @@
    "pinyin": "Yiniao",
    "name_en": "Enuresis",
    "taxonomy_id": "tdx.pediatrics.common_miscellaneous_pediatric",
-   "classical_source": "中醫兒科學/中醫內科學"
+   "classical_source": "中醫兒科學/中醫內科學",
+   "definition_zh": "遺尿（尿床）指三歲以上小兒於睡眠中不自主排尿的病證，即在無意識之睡眠狀態下尿液不自主漏出，多見於幼童。中醫認為本病與肺、脾、腎及膀胱相關。",
+   "definition_en": "Yi niao (nocturnal enuresis, bedwetting) refers to urination during sleep in children over three years old — accidental urine leakage while in an unconscious condition during sleeping, usually related to young children. In TCM, enuresis is associated with the lung, spleen, kidney and urinary bladder.",
+   "etiology_zh": "素體虛弱，腎氣不足，肺脾氣虛。此外尚有久病體衰、胎兒或小兒發育期間受驚、年老生理機能衰退、房勞過度耗傷腎精、產育耗損精氣、久咳不已等因素。",
+   "etiology_en": "Weak constitution, kidney qi deficiency, and lung qi and spleen qi deficiency. Additional contributing factors include long-term debilitating disease, shock to the developing child or fetus, physiological change of old age, excessive sexual activity causing kidney essence deficiency, childbirth using up essence, and chronic cough with the repeated act of coughing.",
+   "pathomechanism_zh": "虛者為主：腎陽虛衰、下焦虛寒，膀胱失於約束；腎陰虧虛，膀胱失司則尿後餘瀝；脾氣虛而下陷、肺氣虛弱，上虛不能制下，咳嗽噴嚏之際尿液外漏。實者為次：肝火內擾、心火亢盛，擾動心神則夜寐不安而遺尿；濕熱下注膀胱，膀胱失約則遺尿且小便灼熱不利。",
+   "pathomechanism_en": "Deficiency types predominate: kidney yang deficiency with lower jiao cold and deficiency leaves the bladder unrestrained; kidney yin deficiency causes dribbling after urination with reduced force; spleen qi deficiency or sinking and lung qi deficiency mean the upper cannot control the lower, with leakage on coughing or sneezing. Excess types: liver fire and heart fire disturb the spirit, causing restless sleep and enuresis; damp-heat pouring down into the urinary bladder deprives it of restraint, with burning, difficult urination.",
+   "key_manifestations_zh": [
+    "睡眠中不自主排尿（尿床）",
+    "尿頻、夜尿，或尿後餘瀝不盡",
+    "兼氣虛者疲乏、納差、便溏、聲低息弱、自汗，咳嗽噴嚏時少量漏尿",
+    "兼火擾者夜寐不安、多夢、夜間齘齒或哭鬧",
+    "兼濕熱者小便困難、尿時灼熱"
+   ],
+   "key_manifestations_en": [
+    "Involuntary urination during sleep (bedwetting)",
+    "Frequent urination, nocturia, or dribbling after urination",
+    "With qi deficiency: fatigue, poor appetite, loose stool, soft weak voice, spontaneous sweat, slight leakage on coughing or sneezing",
+    "With fire disturbance: restless sleep, nightmares, teeth grinding or crying at night",
+    "With damp-heat: difficult urination, burning urination"
+   ],
+   "related_patterns": [
+    "pattern.kidney_qi_deficiency",
+    "pattern.kidney_yang_deficiency",
+    "pattern.kidney_yin_deficiency",
+    "pattern.spleen_qi_deficiency",
+    "pattern.spleen_qi_sinking",
+    "pattern.lung_qi_deficiency",
+    "pattern.lung_spleen_qi_deficiency",
+    "pattern.liver_fire",
+    "pattern.heart_fire",
+    "pattern.bladder_damp_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/NOC_ENU.md; curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/NOC_ENU.md; curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/NOC_ENU.md; curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/NOC_ENU.md; curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/NOC_ENU.md; curriculum/conditions/3 Urinary Incontinence_-Handouts on canvas.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 下焦虛寒（Lower Jiao Cold & Deficiency）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.yi_jing",
@@ -833,7 +1035,52 @@
    "name_zh": "腰痛",
    "pinyin": "Yaotong",
    "name_en": "Lumbar Pain",
-   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+   "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+   "definition_zh": "腰痛係指腰部一側、兩側或正中疼痛之病證，首載於《黃帝內經·素問》第四十一篇。腰痛可見於腎臟、婦科、脊柱及腰部筋肉等多種疾病；腰為腎之府，故腰痛與腎之關係最為密切。",
+   "definition_en": "Lower back pain (yao tong) is first mentioned in the Yellow Emperor's Inner Classic (Huang Di Nei Jing, Su Wen), Chapter 41. It can occur unilaterally, bilaterally, or centrally, and is present in many diseases such as those of the kidneys, gynecology, the spinal column, and the lumbar muscles. TCM holds that the lower back region is the residence of the Kidneys, thus lower back pain has a close relationship with the Kidneys.",
+   "etiology_zh": "病涉腎、肝與督脈、膀胱經、帶脈。實證：外感寒濕或濕熱之邪，或勞損外傷（扭挫傷），致氣血瘀滯於經絡；虛證：稟賦不足、年老體衰、久病耗損，致精血虧耗、腎精衰減。",
+   "etiology_en": "The Kidneys, Liver, Du vessel, Bladder channel, and Dai vessel are involved. Excess (shi): contraction of external pathogenic influences — invasion of cold-damp or damp-heat — or overexertion and trauma (sprain/contusion), leading to qi and blood stagnation in the meridians and collaterals. Deficiency (xu): constitutional weakness, old age, or chronic illness, leading to exhaustion and weakening of essence and blood and a decline of Kidney essence.",
+   "pathomechanism_zh": "實者，寒濕、濕熱之邪客於經絡，或跌仆勞損，氣血瘀滯，經脈不通則痛；虛者，精血虧耗，腎精衰減，經絡失於濡養，不榮則痛。臨證分寒濕、濕熱、瘀血、腎虛四型。",
+   "pathomechanism_en": "In excess types, cold-damp or damp-heat lodges in the meridians, or overexertion and trauma cause qi and blood to stagnate, obstructing the channels and producing pain; in deficiency types, essence and blood are exhausted, Kidney essence declines, and the meridians and collaterals are deprived of nourishment, producing pain. Clinically it is differentiated into four types: cold-damp, damp-heat, blood stagnation, and Kidney deficiency.",
+   "key_manifestations_zh": [
+    "寒濕型：腰部冷痛重著，如有物下墜，晨起下床或陰雨天加重，轉側不利，舌苔白膩，脈沉",
+    "濕熱型：腰痛而有熱感，口苦心煩，小便短赤，舌苔黃膩，脈濡數",
+    "瘀血型：腰痛日久，痛如錐刺，或有外傷史，痛處固定，拒按，轉側不利，舌紫黯或有瘀點，脈澀",
+    "腎虛型：腰痛隱隱，痠軟無力，腿膝乏力，時作時止，勞則加重，兼見頭暈目眩、耳鳴、遺精，舌苔薄，脈沉細，尺部尤甚"
+   ],
+   "key_manifestations_en": [
+    "Cold-damp: cold lower back pain with a heavy dragging sensation, worse when getting up from bed or on rainy days, difficulty moving the back, white sticky tongue coating, deep pulse",
+    "Damp-heat: lower back pain with a sensation of heat, bitter taste in the mouth, restlessness, scanty deep-yellow urine, yellow sticky tongue coating, soft and rapid pulse",
+    "Blood stagnation: long-standing sharp pain or a history of trauma, fixed in location, worse on pressure, difficulty moving the back, purplish tongue or purple spots, hesitant pulse",
+    "Kidney deficiency: dull pain, sore and weak in nature, weakness of the legs, comes and goes, aggravated on exertion, with dizziness, blurred vision, tinnitus, nocturnal emission, thin tongue coating, thready deep pulse pronounced at the chi positions"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.blood_stasis",
+    "pattern.kidney_deficiency",
+    "pattern.kidney_yang_deficiency",
+    "pattern.kidney_yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/LBP1.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/LBP1.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/LBP1.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/LBP1.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/LBP1.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 寒濕。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.bi_zheng",
@@ -959,28 +1206,203 @@
    "name_zh": "崩漏",
    "pinyin": "Benglou",
    "name_en": "Flooding and Trickling",
-   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "definition_zh": "崩漏指經期之外的子宮出血，或量多如注，或淋漓不斷。崩者，驟然而至、出血量多；漏者，起病隱緩、出血量少。",
+   "definition_en": "Uterine bleeding beyond the menstrual period, either copious or continuously spotting, is generally defined as Beng Lou in TCM. Beng means sudden onset with profuse bleeding; Lou means insidious onset with scanty bleeding.",
+   "etiology_zh": "中醫將崩漏歸因於三端：一為實熱，如心熱損傷衝任，或陰虛致心肝失養、虛火內生而灼於血海；二為氣虛，如脾虛不能統攝血行，或青春期、絕經期腎氣不足致衝任失養；三為衝任損傷、固攝陰血失職，如墮胎、小產、產後及手術損傷衝任，風寒侵襲胞宮致血瘀阻滯，情志刺激致肝氣鬱結、血行瘀滯而衝任阻塞。西醫學認為子宮出血的原因包括：激素失衡（最常見，有時因激素藥物使用不當）、子宮頸或宮腔息肉、子宮肌瘤、卵巢囊腫、使用宮內節育器、妊娠併發症（流產、先兆流產、異位妊娠）、子宮或卵巢或子宮頸癌，以及凝血障礙、糖尿病、甲狀腺疾病等慢性疾患。",
+   "etiology_en": "TCM attributes Beng Lou to: (1) Excess heat — heart heat damaging the Chong and Ren, or Yin deficiency leading to lack of nourishment of the heart and liver, resulting in deficiency fire internally burning in the blood sea; (2) Qi deficiency — Spleen deficiency unable to control blood flow, or Kidney Qi deficiency during puberty or menopause leading to lack of nourishment of the Chong and Ren; (3) Chong and Ren damage with failure in controlling Yin blood — abortion, miscarriage, postpartum, and surgery injuring the Chong and Ren; wind-cold invasion of the uterus causing blood stagnation and blockage; and emotional stimulation causing liver Qi and blood stagnation that blocks the Chong and Ren. Western medicine attributes uterine bleeding to hormone imbalance (the most common cause, sometimes from improper use of hormone medicine), polyps on the cervix or inside the uterus, fibroids (noncancerous growths in the uterus), an ovarian cyst, use of an IUD, pregnancy complications (miscarriage, threat of miscarriage, ectopic pregnancy), cancer of the uterus, ovary, or cervix, and chronic medical disorders such as blood-clotting problems, diabetes, and thyroid problems.",
+   "pathomechanism_zh": "崩為急證，漏為緩證，二者在病程中常互相轉化：暴崩下血，耗傷氣血，可轉為淋漓不止之漏；久漏不止，氣虛失攝，又可復發為崩。熱迫、氣虛失統與衝任損傷失於固攝，皆使經血非時妄行。",
+   "pathomechanism_en": "Although Beng is an acute and Lou a chronic condition, they often transform into each other in the course of the disease: profuse bleeding (Beng) consumes Qi and blood, leading to continuous scanty bleeding (Lou), while prolonged scanty bleeding (Lou) due to Qi deficiency can change into profuse bleeding (Beng). Excess heat, Qi deficiency failing to control blood, and Chong and Ren damage failing to restrain Yin blood all cause menstrual blood to flow outside its proper time.",
+   "key_manifestations_zh": [
+    "經期之外的子宮出血",
+    "崩者驟然而至，出血量多",
+    "漏者起病隱緩，淋漓量少",
+    "崩漏常互相轉化：崩久成漏，漏久復崩"
+   ],
+   "key_manifestations_en": [
+    "Uterine bleeding beyond the menstrual period",
+    "Beng: sudden onset and profuse bleeding",
+    "Lou: insidious onset and scanty spotting",
+    "Beng and Lou often transform into each other: profuse bleeding becomes continuous spotting, and prolonged spotting can change into profuse bleeding"
+   ],
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.chong_ren_disharmony"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/U_BLEED.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/U_BLEED.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/U_BLEED.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/U_BLEED.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/U_BLEED.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 實熱。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.bi_jing",
    "name_zh": "閉經",
    "pinyin": "Bijing",
    "name_en": "Amenorrhea",
-   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "definition_zh": "閉經指女子年逾十八歲月經尚未初潮（原發性閉經），或月經週期已建立之後停閉三個月以上、並伴見其他症狀（繼發性閉經）的病證；家族史有時可為診斷線索。",
+   "definition_en": "Amenorrhea means not having menstrual periods. It refers to the condition in which a female has never menstruated by 18 years of age (primary amenorrhea), or in which an established menstrual cycle has been suspended for over 3 months in association with a number of other signs and symptoms (secondary amenorrhea). Family history may sometimes be a clue.",
+   "etiology_zh": "中醫認為本病之因有三：血滯、血枯與衝任損傷。西醫學認為原發性閉經主因青春期延遲，多原因不明，亦可由激素異常（如甲狀腺功能減退）、染色體異常等遺傳因素或先天缺陷（如無陰道、無子宮或陰道閉鎖）所致；繼發性閉經最常見於妊娠與哺乳，停用避孕藥後亦可延遲，其他原因包括情志刺激、腦外傷、垂體或卵巢及腎上腺腫瘤、卵巢囊腫、抑鬱、假孕、甲狀腺疾病、營養不良、劇烈運動、泌乳素分泌增多、鎮靜與抗抑鬱等藥物、體重驟增驟減、化學治療、慢性疾病（腎衰竭、囊性纖維化、結腸炎等）、盆腔放射治療、宮腔粘連（Asherman氏綜合徵）及重度吸菸等；長期身體壓力、消瘦（如厭食）或體脂過低者常見停經半年以上；絕經（可早於四十歲）及子宮切除後則為永久性閉經。",
+   "etiology_en": "TCM attributes this disease to three causes: blood stagnation, blood exhaustion, and Chong and Ren damage. In Western medicine, the main cause of primary amenorrhea is late puberty, mostly for no known reason, sometimes from a hormonal problem such as hypothyroidism, a genetic disorder such as chromosome abnormalities, or a birth defect (e.g., absence of the vagina or uterus, or a vagina without an opening for menstrual blood to escape). The most common cause of secondary amenorrhea is pregnancy; breast-feeding mothers usually do not menstruate, and periods may take 3 months or longer to resume after stopping birth control pills or nursing. Secondary amenorrhea may also result from emotional stress, brain injury, tumors of the pituitary gland, ovary, or adrenal gland, ovarian cysts, depression, pseudocyesis, thyroid problems, malnutrition, vigorous exercise, increased prolactin production by the pituitary, drugs such as tranquilizers and antidepressants, rapid weight gain or loss, chemotherapy, chronic diseases such as kidney failure, cystic fibrosis, and colitis, pelvic radiotherapy, Asherman's syndrome (scarring of the uterine lining after infection or surgery such as a D&C), and heavy smoking. Long lapses of 6 months or longer are common with ongoing physical stress, marked weight loss (as with anorexia), or very low body fat (as in some female athletes). Permanent secondary amenorrhea occurs after menopause (which may occur prematurely before age 40) and after hysterectomy.",
+   "pathomechanism_zh": "病機分血滯、血枯與衝任損傷三端：血滯者瘀阻衝任，經血不得下行；血枯者精血耗竭，血海空虛，無血可下；衝任損傷者衝任二脈失於通盛，經水乃絕。其傳變常循月經後期、經量漸減而至經閉的過程；氣血瘀滯者治當通調衝任、祛除瘀滯，氣血虛竭者治當補益腎氣。",
+   "pathomechanism_en": "The pathomechanism falls under blood stagnation, blood exhaustion, and Chong and Ren damage: with blood stagnation, stasis obstructs the Chong and Ren so menstrual blood cannot descend; with blood exhaustion, blood is depleted and the blood sea is empty, leaving no blood to discharge; with Chong and Ren damage, these two vessels fail and menstruation ceases. The typical progression is late menses, then decrease of menstrual flow, then amenorrhea. Treatment clears the stagnation from Chong and Ren for the Qi and blood stagnation type, and tonifies kidney Qi for the Qi and blood exhaustion type.",
+   "key_manifestations_zh": [
+    "年逾十八歲月經尚未初潮（原發性閉經）",
+    "月經停閉三個月以上，並伴其他症狀（繼發性閉經）",
+    "常先見月經後期、經量漸少，繼而經閉不行",
+    "兼症隨病因而異：激素失衡者可見體毛及面毛增多、痤瘡、乳汁自出、聲音或性慾改變、體重增減等"
+   ],
+   "key_manifestations_en": [
+    "No menstruation by 18 years of age (primary amenorrhea)",
+    "Menstrual cycle suspended for over 3 months, with a number of other signs and symptoms (secondary amenorrhea)",
+    "Typical progression of late menses, then decrease of menstrual flow, then amenorrhea",
+    "Other symptoms depend on the cause: with hormone imbalance there may be excessive body and facial hair, acne, breast milk secretions, a change in voice or sex drive, and weight gain or loss"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.blood_stasis",
+    "pattern.qi_blood_deficiency",
+    "pattern.chong_ren_disharmony"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/AMENO.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/AMENO.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/AMENO.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/AMENO.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/AMENO.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.dai_xia_bing",
    "name_zh": "帶下病",
    "pinyin": "Daixiabing",
    "name_en": "Vaginal Discharge Disease",
-   "taxonomy_id": "tdx.gynecology_obstetrics.leukorrhea_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.leukorrhea_disorders",
+   "definition_zh": "帶下病指以陰道黏液樣分泌物持續過多為特徵的疾病，中醫稱之為帶下。西醫學中相當於累及陰道黏膜、有時波及外陰的感染性及其他炎症性疾患，常產生異常陰道分泌物。",
+   "definition_en": "Leukorrhagia refers to a disease characterized by persistent excessive mucous vaginal discharge; it is called Dai Xia in TCM. In Western medicine it corresponds to infections and other inflammatory disorders affecting the vaginal mucosa and sometimes the vulva, commonly producing an abnormal vaginal discharge.",
+   "etiology_zh": "病因包括：飲食不節；腎氣虛而帶脈弛縱失約；肝氣鬱結日久。臨證應詳詢病史，包括帶下之色、質、氣味與持續時間，是否與月經相關、是否反覆發作，有無瘙癢、灼熱、疼痛或局部病損，並問及性生活史（避孕方式與性傳播疾病）、尿道分泌物、瘙癢、交合後刺激、陰道感染史及家中他人有無陰部瘙癢等。",
+   "etiology_en": "Causes include improper diet; kidney Qi deficiency with a loose Dai Mai; and long-standing Liver Qi stagnation. A complete history should be taken, including symptoms and the color, consistency, odor, and duration of the discharge; whether it occurs in relation to menses and whether it is recurrent; whether itching, burning, pain, or a lesion is present; and what bothers the patient the most. A sexual history (contraceptive use and STDs), as well as questions about urethral discharge, pruritus, postcoital irritation, vaginal infection, and whether anyone else in the household has genital itching, are pertinent.",
+   "pathomechanism_zh": "腎氣虛則帶脈弛縱、約束無力，飲食不節與肝鬱日久皆可致濕濁下注而為帶下。臨床上帶下清稀、色白者，多屬寒濕；帶下稠黏、色黃（或黃白相兼）而有臭味者，多屬濕熱。治療以補脾、調理帶脈與衝任督脈、化濕或清熱為法。",
+   "pathomechanism_en": "With kidney Qi deficiency the Dai Mai becomes loose and fails to restrain; improper diet and long-standing Liver Qi stagnation likewise lead to damp pouring downward as vaginal discharge. Clinically, dilute, clear, white leukorrhea usually accompanies cold damp, while thick, yellow (or white-yellow) leukorrhea with a foul smell is regarded as damp heat. Treatment is directed toward tonifying the Spleen, regulating the Dai, Chong, Ren, and Du channels, and transforming damp or clearing heat.",
+   "key_manifestations_zh": [
+    "帶下量多，持續不斷",
+    "寒濕者帶下清稀、色白",
+    "濕熱者帶下稠黏、色黃或黃白相兼、有臭味",
+    "或伴陰部瘙癢、灼熱、疼痛"
+   ],
+   "key_manifestations_en": [
+    "Persistent excessive mucous vaginal discharge",
+    "With cold damp, the leukorrhea is dilute, clear, and white",
+    "With damp heat, the leukorrhea is thick, yellow (or white-yellow), with a foul smell",
+    "There may be accompanying genital itching, burning, or pain"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/LEUKO.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/LEUKO.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/LEUKO.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/LEUKO.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/LEUKO.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 寒濕。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.bu_yun",
    "name_zh": "不孕",
    "pinyin": "Buyun",
    "name_en": "Infertility (female)",
-   "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders",
+   "definition_zh": "不孕係指夫婦同居三年以上、配偶雙方身體健康而未能受孕者；或末次分娩之後三年以上不再受孕者。前者為原發性不孕，後者為繼發性不孕。",
+   "definition_en": "Infertility refers to failure to conceive after more than three years of marriage even though both partners are healthy, or failure to conceive for more than three years after the last delivery.",
+   "etiology_zh": "腎虛；精血虧少、衝任不足；命門火衰；氣血瘀滯；痰濕阻滯。",
+   "etiology_en": "Kidney deficiency; deficiency of blood, essence, and the Chong and Ren vessels; fading of the Mingmen fire; stagnation of qi and blood; blockage by damp and phlegm.",
+   "pathomechanism_zh": "腎虛則精血不足，衝任虛損，胞宮失養；命門火衰則胞宮虛寒，不能攝精成孕；氣血瘀滯或痰濕壅阻胞宮胞脈，兩精不得相合，故而不孕。臨證分為腎虛、血虛、宮寒、氣血痰瘀阻滯四型。",
+   "pathomechanism_en": "Kidney deficiency leads to insufficiency of essence and blood and depletion of the Chong and Ren vessels, leaving the uterus unnourished; fading of the Mingmen fire leaves the uterus cold and unable to receive essence for conception; stagnation of qi and blood or obstruction by damp-phlegm blocks the uterus and its vessels so the two essences cannot unite. Clinically it is differentiated into four types: kidney deficiency, blood deficiency, cold uterus, and stagnation of qi, blood, or phlegm.",
+   "key_manifestations_zh": [
+    "婚後同居三年以上、配偶雙方健康而不受孕",
+    "末次分娩後三年以上不再受孕",
+    "依腎虛、血虛、宮寒或氣血痰瘀之不同證型而兼見相應全身見證"
+   ],
+   "key_manifestations_en": [
+    "No conception after more than three years of marriage although both partners are healthy",
+    "No conception for more than three years after the last delivery",
+    "Accompanying general signs vary with the type: kidney deficiency, blood deficiency, cold uterus, or stagnation of qi, blood, or phlegm"
+   ],
+   "related_patterns": [
+    "pattern.kidney_deficiency",
+    "pattern.kidney_qi_deficiency",
+    "pattern.kidney_yang_deficiency",
+    "pattern.kidney_yin_deficiency",
+    "pattern.kidney_essence_deficiency",
+    "pattern.blood_deficiency",
+    "pattern.chong_ren_disharmony",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.liver_qi_stagnation",
+    "pattern.blood_stasis",
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/INFERTI.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/INFERTI.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/INFERTI.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/INFERTI.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/INFERTI.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 胞宮虛寒（宮寒）、命門火衰。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.bu_yu",
@@ -994,7 +1416,50 @@
    "name_zh": "妊娠惡阻",
    "pinyin": "Renshen Ezu",
    "name_en": "Morning Sickness",
-   "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.pregnancy_disorders",
+   "definition_zh": "妊娠惡阻係指妊娠早期（多在妊娠前三個月內）出現噁心、嘔吐、厭食、頭暈等一組症狀者。為妊娠早期常見病證，通常於孕十二至十六週之間漸自緩解；重症稱妊娠劇吐（惡阻重症），可致孕婦形體消瘦，並變生他疾。",
+   "definition_en": "Morning sickness is marked by a group of symptoms including nausea, vomiting, anorexia, and dizziness during early pregnancy, often within the first trimester of gestation. It is a common complaint in the early stage of pregnancy and usually subsides between weeks 12 and 16; severe cases are called hyperemesis gravidarum and may emaciate the pregnant woman and lead to other disorders.",
+   "etiology_zh": "脾胃虛弱，衝氣上逆；肝血不足，肝陽偏亢。",
+   "etiology_en": "Deficiency of the Spleen and Stomach with rebellion of the Chong vessel qi; insufficiency of Liver blood with hyperactivity of Liver yang.",
+   "pathomechanism_zh": "脾胃素虛，孕後衝脈之氣上逆犯胃，胃失和降而嘔惡；肝血不足，肝陽偏亢，肝氣橫逆犯胃，肝胃不和亦致嘔逆。嘔吐不止，重則耗傷氣陰，形體消瘦，變生他疾。",
+   "pathomechanism_en": "With pre-existing Spleen and Stomach deficiency, after conception the qi of the Chong vessel rebels upward and attacks the Stomach, which loses its harmonious descent, causing nausea and vomiting; when Liver blood is insufficient and Liver yang hyperactive, Liver qi invades the Stomach and the resulting Liver-Stomach disharmony likewise causes vomiting. Unrelenting vomiting in severe cases emaciates the pregnant woman and gives rise to other disorders.",
+   "key_manifestations_zh": [
+    "妊娠早期噁心嘔吐",
+    "厭食納呆",
+    "頭暈",
+    "重者嘔吐劇烈不止，形體消瘦（妊娠劇吐）"
+   ],
+   "key_manifestations_en": [
+    "Nausea and vomiting in early pregnancy",
+    "Anorexia",
+    "Dizziness",
+    "In severe cases unrelenting vomiting with emaciation (hyperemesis gravidarum)"
+   ],
+   "related_patterns": [
+    "pattern.liver_stomach_disharmony",
+    "pattern.liver_blood_deficiency",
+    "pattern.liver_yang_rising"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/MORNING.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/MORNING.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/MORNING.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/MORNING.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/MORNING.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 脾胃虛弱。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.tai_wei_bu_zheng",
@@ -1015,7 +1480,52 @@
    "name_zh": "絕經前後諸證",
    "pinyin": "Jingduan Qianhou Zhuzheng",
    "name_en": "Perimenopausal Syndrome",
-   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "definition_zh": "絕經前後諸證指在絕經前後出現的一組症狀與體徵，其輕重與持續時間因人而異，差別甚大。",
+   "definition_en": "Menopausal syndrome refers to a group of symptoms and signs coming up before or after menopause. The severity and duration of these symptoms may vary greatly from case to case.",
+   "etiology_zh": "腎氣漸衰，衝任虛損空虛，陰陽失於平衡。",
+   "etiology_en": "Kidney Qi declining with the Chong and Ren becoming empty, and imbalance between Yin and Yang.",
+   "pathomechanism_zh": "絕經之際腎氣衰退，衝任二脈虛空，陰陽失調，遂生諸證，證候分屬腎陰虛與腎陽虛兩端。治當補腎、調理衝任。",
+   "pathomechanism_en": "Around menopause, kidney Qi declines and the Chong and Ren become empty; the balance between Yin and Yang is lost, giving rise to the various symptoms, which are differentiated into Kidney Yin deficiency and Kidney Yang deficiency. Treatment tonifies the kidneys and regulates the Chong and Ren.",
+   "key_manifestations_zh": [
+    "情緒不穩，煩躁易怒",
+    "精神萎靡，倦怠乏力",
+    "汗出，眩暈，心悸",
+    "失眠，健忘，耳鳴",
+    "五心煩熱，口渴，蟻走感",
+    "腰痠，甚者可見精神失常"
+   ],
+   "key_manifestations_en": [
+    "Emotional lability and irritability",
+    "Listlessness and fatigue",
+    "Sweating, dizziness, and palpitation",
+    "Insomnia, forgetfulness, and tinnitus",
+    "Five-center burn, thirst, and formication",
+    "Lumbar soreness, and in extreme cases even psychosis"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yin_deficiency",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/MENOP.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/MENOP.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/MENOP.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/MENOP.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/MENOP.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.zheng_jia",
@@ -1029,7 +1539,51 @@
    "name_zh": "癮疹",
    "pinyin": "Yinzhen",
    "name_en": "Urticaria",
-   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders"
+   "taxonomy_id": "tdx.surgery_dermatology.dermatologic_disorders",
+   "definition_zh": "癮疹為常見之過敏性皮膚病證，以皮膚驟起扁平隆起之風團為特徵，形如麻疹或如扁豆大小，時起時消。因每於受風後發作，中醫又名「風疹塊」；以其忽隱忽現，故稱「癮疹」，即西醫所稱蕁麻疹。",
+   "definition_en": "Urticaria is a common allergic skin disorder, an eruption of skin characterized by temporary, flat-topped wheals that look like measles or are as large as broad beans. Because it tends to appear after exposure to wind it is named \"wind wheal\" in TCM, and because it comes and goes it is also named \"hidden rash\"; another term for it is hives.",
+   "etiology_zh": "一、濕邪蘊於肌膚，復感風熱或風寒之邪；二、胃腸積熱，復感風邪；三、腸道寄生蟲，或對魚、蝦、蟹等食物過敏。",
+   "etiology_en": "1. Damp retained in the skin and muscles, attacked by wind-heat or wind-cold; 2. Accumulated heat in the Stomach and intestines, attacked by wind; 3. Intestinal parasites, or allergy to foods such as fish, shrimp, or crab.",
+   "pathomechanism_zh": "風邪與濕、熱相搏，鬱於肌膚腠理之間，發為風團；風性善行數變，故疹塊驟起驟消、此起彼伏，並可隨天氣變化而加重或減輕。急性者消退較速；重者風邪壅盛，可見面咽腫脹，甚則氣道閉阻。",
+   "pathomechanism_en": "Wind combines with damp or heat and becomes constrained in the skin and interstices, erupting as wheals; as wind is mobile and changeable, the wheals arise and subside abruptly, appearing one after another, and may be aggravated or alleviated by weather changes. Acute conditions subside quickly; in severe reactions the face and throat may swell, rarely causing breathing difficulty or closing of the throat.",
+   "key_manifestations_zh": [
+    "驟起搔癢劇烈之隆起風團，色紅或淡紅，大小形狀不一",
+    "疹塊此起彼伏，時隱時現，可持續數分鐘至數日",
+    "可發於身體任何部位，以四肢與軀幹為多見",
+    "可隨天氣變化而加重或減輕",
+    "重者面部咽喉腫脹，甚則呼吸困難"
+   ],
+   "key_manifestations_en": [
+    "Abrupt onset of intensely itchy, raised, red or light-red wheals varying in size and shape",
+    "Wheals rise one after another, coming and going, lasting from a few minutes to several days",
+    "May appear on any part of the body, most commonly the arms, legs, and trunk",
+    "May be aggravated or alleviated by weather change",
+    "In severe cases the face and throat swell, rarely causing trouble breathing"
+   ],
+   "related_patterns": [
+    "pattern.wind_heat",
+    "pattern.wind_cold"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/URTICARI.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/URTICARI.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/URTICARI.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/URTICARI.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/URTICARI.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 風濕、胃腸積熱。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.shi_chuang",
