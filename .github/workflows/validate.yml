@@ -20,6 +20,14 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# CI 通知風暴處置(2026-08-12,Ting 授權;先落在 codex/pattern-v2,這裡補回 main,
+# 讓之後從 main 長出來的分支一開始就有):同一 PR(以 PR number 分組)或同一
+# branch(push/dispatch 以 ref 分組)同時只保留最新 run,舊 run 取消 ——
+# 不同 PR 互不取消。連續 push 不再每一發都跑完整 gate、各寄一封失敗信。
+concurrency:
+  group: validate-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   green:
     name: green validators (blocking)
