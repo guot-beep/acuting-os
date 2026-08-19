@@ -356,11 +356,157 @@ Ting 可能會問：檢測報告說 tdis 紅旗 75/75 全空是全庫最大安�
 
 ---
 
-## 4–7. 其餘任務包 P2–P5
+## 4. P3 — ICD-10-CM FY2027 換版盤點（六週死線，純機械）
 
-> 待 Claude 完成精確參數調查後補上（同一天）。
-> 順序建議：P3（ICD 換版，六週死線）→ P4（高危穴事實掃描）→ P2（方歌）→
-> P5（中藥安全欄位英文）。
+**為什麼急**：`data/interop/condition_crosswalk.json` 裡 **679 個碼**（676 個相異）
+的 `effective_to` 全部是 `2026-09-30`。**六週後全數過期，而系統不會有任何反應**——
+`validate-crosswalk-mappings.js` 全文 56 行、零個日期比較，10/1 當天照樣印
+`0 defects`；它也不在 ratchet 名單裡。
+
+**為什麼是它做**：需要下載 CDC/CMS 的官方 FY2027 碼表檔並逐碼比對。Claude 沙箱
+連 `clinicaltables.nlm.nih.gov` / `cms.gov` / `cdc.gov` 都是 000（連不上）。
+
+**它做什麼**：找到官方 FY2027 檔案 → 下載 → 對 676 個碼產出一張「還在／改名／
+刪除／需要更細的碼」對照表，寫進 staging。
+**它不做什麼**：不改 `condition_crosswalk.json`（一個字都不准）。
+
+### 4.1 貼上用 Prompt（copy-paste）
+
+```
+你在 AcuTing OS repo 幫 Ting 做「ICD-10-CM FY2027 換版盤點」第 A 批。
+
+先讀：docs/AI_CONSTITUTION.md、docs/ANTIGRAVITY_DISPATCH_2026-08-19.md §4、
+      docs/COND_INGESTION_SPEC.md 第 15 行（ICD 來源白名單）。
+
+背景：data/interop/condition_crosswalk.json 有 679 個 ICD-10-CM 碼，effective_to
+全部是 2026-09-30。ICD-10-CM 每年 10/1 換版。你的工作是查出 FY2027 版本里這些碼
+怎麼了，**只產報告，不改任何既有檔案**。
+
+第一步（做不到就停下來回報，不要往下做）：
+  到 CDC/NCHS 或 CMS 的官網找到 **FY2027 ICD-10-CM 官方碼表檔**（code descriptions
+  或 addenda），實際下載下來，記下：你打開的頁面網址、檔案直接網址、檔名、
+  檔案 sha256。
+  ⚠️ repo 裡有大約 70 個 FY2026 的 CMS 網址（.../FY2026-fr-v43.1-.../P1345.html）。
+  **不准把 FY2026 改成 FY2027、v43.1 改成 v44 去猜網址。** 猜出來的網址就算能開，
+  也不是你實際查證的來源。找不到官方頁 → 整批寫 not_found 回報，這是合格交件。
+
+第二步：對 §4.3 清單上那幾張卡的每一個碼，在你下載的檔案裡查：
+  - 還在，描述一樣 → unchanged
+  - 還在，描述改了 → description_changed（新舊描述都要寫）
+  - 不在了 → deleted
+  - 變成不可申報的父層（底下多了更細的碼）→ needs_leaf
+  每一個判定都要寫出**在檔案裡的位置**（行號／章節／頁面網址）。
+
+**你只寫一個新檔**：data/imports/official/icd10cm_fy2027_delta_a.json（格式見 §4.4）
+**禁止**：改 data/interop/condition_crosswalk.json、
+        跑 `node scripts/fill-icd-labels.js --apply`（會直接改壞 crosswalk）、
+        碰那 117 個沒有版本欄位的碼（它們是故意留白的，見 §4.2）。
+
+做完 §4.3 那一批就停，回報格式見 §4.5。
+```
+
+### 4.2 三個會做白工或做壞的陷阱（務必寫進派工）
+
+1. **`fill-icd-labels.js --apply` 會直接改壞 crosswalk。** 它的說明寫著「對 NLM
+   官方 API 核驗碼」，聽起來就是這個任務——**不是**。它只寫
+   `label_en` / `label_source` / `code_specificity` / `nearest_billable`，
+   完全不碰 `release` / `effective_from` / `effective_to` / `description`，
+   而且會往那 679 個目前**刻意沒有 `label_en`** 的條目全部塞進去。
+   **不加 `--apply` 的 dry-run 可以跑**（它預設就是 dry-run），輸出可以當參考。
+2. **那 117 個沒有版本欄位的碼是誘餌。** 其中 48 筆 `legacy_seed_nonterminal`
+   是驗證器**故意豁免**的（`validate-crosswalk-mappings.js` 32–34 行）。
+   「順手幫它們補上版本欄位」會同時觸發 XW4/XW5 與 `validate-relations.js`
+   的 icd_hint 警告。**範圍只有那 679 個已有 `mapping_type` 的條目。**
+3. **staging 的欄位名故意跟 canonical 不一樣**（`fy2027_status` 而不是 `status`）。
+   因為 crosswalk 的 `status` 詞彙裡有 `source_checked`——那是 Antigravity
+   **永遠不准寫**的值（AI_ROLES 規則 6）。名字不同，複製貼上就貼不進去。
+
+### 4.3 這批的範圍（第 A 批：碼數最重的三張卡 = 294 個碼）
+
+```
+xwalk.meniscus_injury  (99 碼)
+xwalk.endometriosis    (98 碼)
+xwalk.gout             (97 碼)
+```
+
+先做這三張是因為它們佔了 676 個碼的 43%——一批就能看出換版影響有多大。
+全部 81 張卡的清單重生成：
+
+```bash
+node -e "const R=require('./data/interop/condition_crosswalk.json').records;const rows=R.map(r=>[r.id,(r.icd10||[]).filter(e=>e.mapping_type).length]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);console.log(rows.length+' records, '+rows.reduce((s,x)=>s+x[1],0)+' versioned codes');rows.slice(0,12).forEach(x=>console.log('  '+x[0]+'  '+x[1]))"
+# → 81 records, 679 versioned codes
+```
+
+### 4.4 輸出格式
+
+檔案 `data/imports/official/icd10cm_fy2027_delta_a.json`：
+
+```json
+{
+  "batch": "icd10cm_fy2027_delta_a",
+  "retrieved_at": "2026-08-DD",
+  "extractor": "antigravity",
+  "icd10cm_version_from": "FY2026",
+  "icd10cm_version_to": "FY2027",
+  "authoritative_files": [{
+    "publisher": "CMS 或 CDC/NCHS",
+    "page_url": "<你實際打開的官方發布頁>",
+    "file_url": "<你實際下載的檔案直接網址>",
+    "file_name": "<下載下來的檔名>",
+    "file_sha256": "<檔案的 sha256>",
+    "retrieved_at": "2026-08-DD"
+  }],
+  "records": [{
+    "xwalk_id": "xwalk.gout",
+    "codes": [{
+      "code": "M10.9",
+      "fy2026_description": "<照抄 crosswalk 現有的 description>",
+      "fy2027_status": "unchanged | description_changed | deleted | needs_leaf",
+      "fy2027_description": "<FY2027 檔案裡的原文；deleted 就留空>",
+      "fy2027_billable": true,
+      "evidence": { "file_name": "<同上>", "locator": "<行號／章節／頁面網址>" }
+    }]
+  }],
+  "not_found": []
+}
+```
+
+### 4.5 驗證與完成定義
+
+```bash
+export PATH="/c/Program Files/nodejs:$PATH"
+
+# 這一批一個 canonical 數字都不該動
+node scripts/validate-crosswalk-mappings.js   # 必須仍是 679 versioned · 81 conditions · 0 defects
+node scripts/validate-relations.js
+node scripts/check-validation-ratchet.js
+git status --short                            # 只准出現你的新檔 + PROJECT_LOG.md
+
+# W1 涵蓋率：三張卡的碼一個都不准漏
+node -e "const b=require('./data/imports/official/icd10cm_fy2027_delta_a.json');const R=require('./data/interop/condition_crosswalk.json').records;let miss=0;for(const rec of b.records){const src=R.find(r=>r.id===rec.xwalk_id);const want=new Set((src.icd10||[]).filter(e=>e.mapping_type).map(e=>e.code));const got=new Set(rec.codes.map(c=>c.code));for(const w of want)if(!got.has(w)){miss++;console.log('MISSING',rec.xwalk_id,w)}}console.log('missing codes:',miss)"
+
+# W2 每個碼都要有出處定位
+node -e "const b=require('./data/imports/official/icd10cm_fy2027_delta_a.json');const bad=b.records.flatMap(r=>r.codes.filter(c=>!c.evidence||!c.evidence.locator));console.log('no-locator:',bad.length);bad.slice(0,10).forEach(c=>console.log('  ',c.code))"
+
+# W3 來源必須是官方站
+node -e "const b=require('./data/imports/official/icd10cm_fy2027_delta_a.json');const W=/(cms\.gov|cdc\.gov)/;const bad=(b.authoritative_files||[]).filter(f=>!W.test(f.page_url||'')||!W.test(f.file_url||''));console.log('off-whitelist files:',bad.length,'| files declared:',(b.authoritative_files||[]).length)"
+```
+
+**完成的定義**：W1 `missing codes: 0`、W2 `no-locator: 0`、W3 `off-whitelist files: 0`
+且至少宣告 1 個檔案（含 sha256）；`validate-crosswalk-mappings.js` 仍印
+`679 versioned entries · 81 conditions covered · 0 defects`；`git status` 只有兩個檔；
+PROJECT_LOG 最上方一條，含四種 `fy2027_status` 各幾筆、以及上面三條指令的輸出原文。
+
+> **Claude 這一側的配套**（不是 Antigravity 的工作）：給
+> `validate-crosswalk-mappings.js` 加十行日期檢查——`effective_to < today` 就 FAIL。
+> 這樣每年 10/1 CI 會自己變紅，變成零成本的年度提醒。已列入待辦。
+
+---
+
+## 5–7. 其餘任務包 P2 / P4 / P5
+
+> 精確參數調查中，同一天補上。
+> P4（高危穴「卡內自相矛盾」掃描）→ P2（方歌缺口）→ P5（中藥安全欄位英文）。
 
 ---
 
