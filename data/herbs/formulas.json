@@ -48249,7 +48249,6 @@
    "study_tags": [],
    "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
    "actions_zh": [
-    "滋陰",
     "滋養肝腎陰精",
     "明目退翳",
     "滋陰養血",
@@ -48260,7 +48259,6 @@
     "抗化學性肝損傷"
    ],
    "actions_en": [
-    "Enriches Yin",
     "Nourishes the essence of the Liver and Kidneys",
     "Brightens eyes",
     "Enriches Blood",
@@ -100505,10 +100503,7 @@
     "Replenishes Qi",
     "Dispels parasites",
     "Calms roundworms",
-    "Drains the Liver",
-    "Calms the Stomach",
-    "Promotes Blood circulation",
-    "Relieves pain"
+    "Calms the Stomach"
    ],
    "actions_zh": [
     "溫裡散寒",
@@ -100518,10 +100513,7 @@
     "補益氣血",
     "驅蟲消積",
     "安蛔止痛",
-    "瀉肝膽火",
-    "和胃降逆",
-    "活血化瘀",
-    "緩急止痛"
+    "和胃降逆"
    ],
    "composition": [
     {
@@ -100846,7 +100838,9 @@
     "source_status": "cloudtcm_or_institution_review_pending",
     "fang_yi_zh": "",
     "zhu_zhi_zh": "",
-    "notes_zh": []
+    "notes_zh": [
+     "功效精簡註(2026-08-19):原功效欄另載「瀉肝膽火、活血化瘀、緩急止痛」,依 F8 規則精簡至八項核心功效,移記於此。"
+    ]
    },
    "last_reviewed": "",
    "source_classic": "《傷寒雜病論》",
@@ -104084,7 +104078,9 @@
      "in_formula_zh": "緩急止痛。",
      "actions_zh": "緩急止痛。",
      "role_reason_zh": "緩急止痛。",
-     "is_alternate": false
+     "is_alternate": false,
+     "role_zh": "君",
+     "role_en": "Chief"
     },
     {
      "herb_id": "herb.gan_jiang",
@@ -104102,7 +104098,9 @@
      "in_formula_zh": "溫中散寒，溫肺化飲，回陽通脈。",
      "actions_zh": "溫中散寒，溫肺化飲，回陽通脈。",
      "role_reason_zh": "溫中散寒，溫肺化飲，回陽通脈。",
-     "is_alternate": false
+     "is_alternate": false,
+     "role_zh": "臣",
+     "role_en": "Deputy"
     },
     {
      "herb_id": "herb.ren_shen",
@@ -104120,7 +104118,9 @@
      "in_formula_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
      "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
      "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-     "is_alternate": false
+     "is_alternate": false,
+     "role_zh": "佐",
+     "role_en": "Assistant"
     },
     {
      "herb_id": "herb.yi_tang",
@@ -104138,7 +104138,9 @@
      "in_formula_zh": "健脾益氣。",
      "actions_zh": "健脾益氣。",
      "role_reason_zh": "健脾益氣。",
-     "is_alternate": false
+     "is_alternate": false,
+     "role_zh": "使",
+     "role_en": "Envoy"
     }
    ],
    "actions_zh": [
@@ -104211,6 +104213,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md（22 區塊方劑卡）"
+    ],
+    "composition.roles": [
+     "《金匱要略》大建中湯:蜀椒君、乾薑臣、人參佐、膠飴為使(2026-08-19 補)"
     ]
    },
    "ad_syndromes_en": [
