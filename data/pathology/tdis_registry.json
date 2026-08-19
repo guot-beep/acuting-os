@@ -127,7 +127,50 @@
    "name_zh": "吞酸",
    "pinyin": "Tunsuan",
    "name_en": "Acid Regurgitation",
-   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal"
+   "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+   "definition_zh": "吞酸指胃中酸水上泛、逆流入食道之病證。本講義以西醫胃食道逆流病（GERD）立論：因下食道括約肌（LES）功能不全，胃酸持續逆流入食道，刺激損傷黏膜，臨床以胃灼熱與泛酸為主症，為最常見之食道疾病。",
+   "definition_en": "Tun suan (acid regurgitation) denotes sour gastric fluid surging upward into the esophagus. The handout presents it as gastroesophageal reflux disease (GERD): a chronic condition in which gastric acid flows back into the esophagus due to lower esophageal sphincter (LES) incompetence, irritating and damaging the mucosa; heartburn and regurgitation are the cardinal symptoms, and it is the most common esophageal disease.",
+   "etiology_zh": "講義所列危險因子：肥胖（腹內壓增高）、食道裂孔疝（胃酸更易逆流）、懷孕（激素與機械性壓迫）、抽菸與飲酒（鬆弛下食道括約肌）、嗜食辛辣油膩（誘發逆流）。中醫方面，講義指出肝胃不和型之逆流多由情志緊張（壓力）誘發。",
+   "etiology_en": "Risk factors listed in the handout: obesity (raised intra-abdominal pressure), hiatal hernia (allows acid to reflux more easily), pregnancy (hormonal and mechanical pressure), smoking and alcohol (both relax the LES), and spicy or fatty food (triggers reflux). On the TCM side, the handout notes that reflux of the Liver-invading-Stomach type is triggered by emotional stress.",
+   "pathomechanism_zh": "下食道括約肌鬆弛，胃酸逆流入食道，致黏膜刺激與糜爛；久病可發展為Barrett食道（腸化生），進而增加腺癌風險。中醫整合部分分三型：肝胃不和、胃熱上逆、脾胃虛寒，皆以酸水上逆為共同病機表現。",
+   "pathomechanism_en": "LES incompetence permits acid reflux into the esophagus, causing mucosal irritation and erosion; if chronic, Barrett esophagus (intestinal metaplasia) may develop, raising the risk of adenocarcinoma. The TCM integration section differentiates three types — Liver invading Stomach, Stomach heat rebelling upward, and Spleen-Stomach deficiency cold — all sharing upward counterflow of acid as the common mechanism.",
+   "key_manifestations_zh": [
+    "胃灼熱，餐後、平臥、彎腰時加重",
+    "泛酸／胃酸逆流，口中有酸苦味",
+    "吞嚥困難（警訊症狀，須排除食道狹窄或惡性病變）",
+    "胸痛（須先排除心源性病因）",
+    "慢性咳嗽、聲音沙啞（食道外／非典型表現）"
+   ],
+   "key_manifestations_en": [
+    "Heartburn, worse after meals, when lying flat, or bending over",
+    "Regurgitation of gastric acid with a sour or bitter taste in the mouth",
+    "Dysphagia (alarm symptom; rule out stricture or malignancy)",
+    "Chest pain (cardiac cause must be ruled out first)",
+    "Chronic cough and hoarseness (extra-esophageal / atypical presentation)"
+   ],
+   "related_patterns": [
+    "pattern.liver_stomach_disharmony"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/GERD.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/GERD.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/GERD.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/GERD.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/GERD.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 胃熱上逆、脾胃虛寒。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.e_ni",
@@ -1087,14 +1130,106 @@
    "name_zh": "痺證",
    "pinyin": "Bizheng",
    "name_en": "Bi Syndrome (Painful Obstruction)",
-   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+   "definition_zh": "痺證於本講義以纖維肌痛症為載體講授：屬全身廣泛性疼痛、僵硬之病證。其痹證型以惡寒、惡陰雨天氣、肢體麻木、自覺手指足趾腫脹為特徵；局部無紅、腫、熱，關節活動度不受限。",
+   "definition_en": "Bi syndrome is taught in this handout through fibromyalgia: a condition of widespread body pain and stiffness. Its Bi-syndrome type is characterized by aversion to cold and rainy weather, numbness of the limbs, and a frequent complaint of swollen fingers and toes; there is no local redness, swelling or heat, and no limitation of range of motion.",
+   "pathomechanism_zh": "講義未直接論述中醫病機；由其治療原則（促進局部血液循環、消散水濕、去除阻滯、補益氣血、止痛）可見其機轉為局部氣血阻滯、水濕停聚，部分患者兼有氣血不足。",
+   "pathomechanism_en": "The handout does not state the TCM pathomechanism directly; from its stated treatment principles (promote local blood circulation, disperse fluids, remove blockage, tonify qi and blood, stop pain), the mechanism is local obstruction of qi and blood with retained fluids, with concurrent qi and blood deficiency in some patients.",
+   "key_manifestations_zh": [
+    "全身廣泛性疼痛與僵硬，特定壓痛點按壓（4公斤力）即劇痛",
+    "惡寒、惡陰雨天氣，對寒冷潮濕氣候高度敏感（痹證型）",
+    "肢體麻木，常自覺手指、足趾腫脹（痹證型）",
+    "局部無紅、腫、熱，關節活動度不受限，X光與檢驗均正常",
+    "舌體胖大、苔白膩；脈緊而滑（痹證型舌脈）"
+   ],
+   "key_manifestations_en": [
+    "Widespread pain and stiffness, with extreme pain on tender points under 4 kg of palpation force",
+    "Aversion to cold and rainy weather, with severe sensitivity to cold and damp conditions (Bi-syndrome type)",
+    "Numbness of the limbs, with frequent complaints of swollen fingers and toes (Bi-syndrome type)",
+    "No local redness, swelling or heat, no limitation of range of motion, and normal X-ray and laboratory findings",
+    "Big tongue body with a white, greasy coating; tight and slippery pulse (tongue and pulse of the Bi-syndrome type)"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.qi_blood_deficiency",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/10 Fibromyalgia.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/10 Fibromyalgia.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/10 Fibromyalgia.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/10 Fibromyalgia.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/10 Fibromyalgia.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 痹證型（講義僅稱 Bi Syndrome，未細分為風寒濕痹或熱痹，故不強行對映）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.wei_zheng",
    "name_zh": "痿證",
    "pinyin": "Weizheng",
    "name_en": "Wei Syndrome (Atrophy-Flaccidity)",
-   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular"
+   "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
+   "definition_zh": "痿證為以肢體軟弱無力、甚則癱瘓不用、肌肉萎縮為主要表現的病證，病位與肺、脾、腎、肝相關。西醫之多發性硬化症（Multiple Sclerosis）在中醫屬痿證範疇。",
+   "definition_en": "Wei syndrome (atrophy-flaccidity syndrome) is a disorder characterized by limb weakness and flaccidity, in severe cases paralysis and muscular atrophy; it is associated with the lung, spleen, kidney and liver. In Chinese medicine, multiple sclerosis falls into the category of Wei syndrome.",
+   "etiology_zh": "一、外邪侵襲：以濕邪侵襲最為常見；亦可因風熱（伴高熱之強烈風熱型）而發。二、飲食不節：過食生濕之品及發物。三、房勞過度：耗傷腎精。四、驚恐及劇烈情志刺激：以心、脾受損最重。",
+   "etiology_en": "1. Invasion of external pathogens: damp invasion is the most common cause; a strong type of wind-heat with high fever may also be responsible. 2. Diet: damp-producing foods and excessive consumption of Fa Wu (stimulating foods). 3. Excessive sexual activity, which depletes the kidney. 4. Shock and severe emotions, with the heart and spleen taking the greatest hit.",
+   "pathomechanism_zh": "本病與肺、脾、腎、肝有關。其機轉可見：痰熱阻滯經絡（熱後突發肢體無力、麻木或癱瘓）；濕熱浸淫（肢體無力漸起，以下肢為著）；瘀血阻於經絡（肢體無力伴麻木、刺痛或攣痛，肌肉萎縮）；肺脾兩虛（肢體無力緩慢進展，伴肌肉萎縮）；肝腎虧虛（全身癱瘓、消瘦、腰膝痠軟，見陰虛內熱之象）；腎陽衰憊（全身癱瘓、肢冷畏寒、二便失司）。",
+   "pathomechanism_en": "The disease involves the lung, spleen, kidney and liver. Its mechanisms include: obstruction of the meridians by phlegm and heat (sudden limb weakness, numbness or paralysis after fever); damp-heat dissemination (gradual limb weakness, most obvious in the lower limbs); blood stasis accumulated in the meridians (limb weakness with numbness, tingling or contracting pain and muscular atrophy); deficiencies of lung and spleen (slow, progressive limb weakness with atrophy); deficiencies of liver and kidney (general paralysis, weight loss, lumbar and knee soreness with signs of deficiency heat); and depletion of kidney yang (general paralysis with cold limbs, cold intolerance and impaired urination and bowel function).",
+   "key_manifestations_zh": [
+    "肢體軟弱無力，甚則癱瘓，以下肢為著",
+    "肌肉萎縮",
+    "肢體麻木、刺痛或攣痛",
+    "步態不穩、震顫、動作笨拙",
+    "視物模糊、複視，甚則失明",
+    "小便困難或失禁等二便功能障礙"
+   ],
+   "key_manifestations_en": [
+    "Limb weakness, in severe cases paralysis, most obvious in the lower limbs",
+    "Muscular atrophy",
+    "Numbness, tingling or contracting pain of the limbs",
+    "Unsteady gait, tremor and clumsiness",
+    "Blurred vision, double vision, or even blindness",
+    "Urinary difficulty or incontinence and other disorders of excretory function"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.blood_stasis",
+    "pattern.lung_spleen_qi_deficiency",
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/8 Multiple Sclerosis (1).md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/8 Multiple Sclerosis (1).md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/8 Multiple Sclerosis (1).md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/8 Multiple Sclerosis (1).md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/8 Multiple Sclerosis (1).md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 痰熱阻滯經絡（Meridian obstruction by phlegm and heat）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.jin_shang",
@@ -1109,7 +1244,49 @@
    "pinyin": "Luozhen",
    "name_en": "Stiff Neck",
    "taxonomy_id": "tdx.orthopedics_traumatology.spinal_disorders",
-   "classical_source": "針灸治療學"
+   "classical_source": "針灸治療學",
+   "definition_zh": "落枕指因睡眠姿勢不當，或風寒之邪侵襲頸項，導致所涉經脈局部氣機運行失調而發的急性頸項強痛（斜頸），多見於成年人。",
+   "definition_en": "Luo zhen (stiff neck, wryneck / torticollis) refers to acute stiffness and pain of the neck caused by an inappropriate sleeping posture or an attack of wind-cold on the neck and nape, leading to disturbance of the local circulation of qi in the involved meridians; it occurs mostly in adults.",
+   "etiology_zh": "睡眠姿勢不當；風寒之邪侵襲頸項。",
+   "etiology_en": "Inappropriate sleeping posture; invasion of the neck and nape by wind-cold.",
+   "pathomechanism_zh": "睡姿不當或風寒外襲，擾亂頸項部所涉經脈之局部氣機，氣血運行阻滯，筋脈拘急而見強直疼痛；故治以祛風散寒、舒筋活血、溫通經脈、去除阻滯。",
+   "pathomechanism_en": "Poor sleeping posture or external wind-cold disturbs the local circulation of qi in the meridians traversing the neck; qi and blood become obstructed and the sinews cramp, producing stiffness and pain — hence the treatment principle of expelling wind and dispersing cold, relaxing the sinews, activating blood and qi circulation, warming the meridians and removing stagnation.",
+   "key_manifestations_zh": [
+    "一側頸項強直疼痛，頭歪向一側、活動受限；患者常保持頭偏向患側以減輕疼痛與痙攣",
+    "強直疼痛可放散至患側肩臂，偶爾頸項與肩部雙側同時受累",
+    "觸診頸項部有壓痛與肌肉痙攣，但無紅、熱、腫",
+    "或兼見風寒表證",
+    "若經治療疼痛強直仍逾一週不解，應轉介西醫評估頸椎疾患"
+   ],
+   "key_manifestations_en": [
+    "Stiffness and pain of the neck and nape on one side, with the head wried toward one side and motor impairment; most patients keep the head toward the affected side to reduce pain and spasm",
+    "Stiffness and pain may spread to the shoulder and arm on the affected side; occasionally both sides of the nape and shoulder are involved",
+    "Palpation shows tenderness and muscular spasm in the neck and nape area, but no redness, heat or swelling",
+    "Wind-cold symptoms may accompany the neck stiffness and pain",
+    "If pain and stiffness persist beyond a week despite treatment, refer to a physician to evaluate for cervical vertebrae disorders"
+   ],
+   "related_patterns": [
+    "pattern.wind_cold"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/NECK.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/NECK.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/NECK.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/NECK.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/NECK.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.jian_ning",
@@ -1117,7 +1294,54 @@
    "pinyin": "Jianning",
    "name_en": "Frozen Shoulder",
    "taxonomy_id": "tdx.orthopedics_traumatology.limb_joint_disorders",
-   "classical_source": "針灸治療學"
+   "classical_source": "針灸治療學",
+   "definition_zh": "肩凝症（漏肩風），即凍結肩；因多發於五十歲左右之人，中醫又稱「五十肩」。相當於西醫之肩關節周圍炎，以肩部疼痛與各方向活動受限為特徵。",
+   "definition_en": "Jian ning (frozen shoulder, also called 'leaking shoulder wind'), known in TCM as the 'fifty-year-old shoulder' because it usually occurs in people around their fifties; in Western medicine it corresponds to periarthritis of the shoulder joint, characterized by shoulder pain and limitation of motion in all directions.",
+   "etiology_zh": "腎虛（組織退化）；勞倦耗傷之際感受風寒濕邪，致肩部氣血凝滯；肩關節周圍組織損傷；睡中氣虛受邪；缺乏運動。",
+   "etiology_en": "Kidney deficiency (degeneration); exhaustion with subsequent attack by wind-cold-damp, leading to qi and blood stagnation at the shoulder; injury to the tissues around the shoulder joint; qi deficiency while asleep; lack of exercise.",
+   "pathomechanism_zh": "腎虛則筋骨組織退化；勞倦氣虛之時風寒濕邪乘襲肩部，氣血凝滯不通而作痛。其病程具三個特點：初期以疼痛為主；後期因肩周粘連而以活動受限為主；最終因患肩少動、不動而肩臂肌肉萎縮。",
+   "pathomechanism_en": "Kidney deficiency underlies tissue degeneration; when the body is exhausted, wind-cold-damp attacks the shoulder and qi and blood stagnate there, producing pain. The course has three characteristics: at the initial stage pain predominates; at the late stage limitation of range of motion predominates due to adhesion around the shoulder; finally the affected shoulder and arm become atrophic from lack of motion.",
+   "key_manifestations_zh": [
+    "初起患側肩部輕度酸楚或疼痛（常被忽視），活動與勞累後逐漸加重",
+    "疼痛漸進加劇並擴散至鄰近組織——上及頸項、下至上臂、後及項背肩胛部，但患處無紅、熱、腫",
+    "肩周疼痛夜間加重，甚至痛醒；白天活動後疼痛減輕",
+    "重者肩關節各方向活動均受限，以致穿脫衣、梳頭困難",
+    "肩周可捫及壓痛點（如LI 15等處）",
+    "慢性病例可見患側三角肌萎縮"
+   ],
+   "key_manifestations_en": [
+    "Initially mild soreness or pain (usually negligible) on one side of the shoulder with movements, gradually becoming pronounced and worse on exertion",
+    "Pain aggravates progressively and spreads to nearby tissues — up to the neck, down to the upper arm, and back to the nape and scapular area — yet with no redness, heat or swelling in the affected area",
+    "Pain around the shoulder is worse at night, even waking the patient, and is alleviated by exercise during the day",
+    "In severe cases movement of the affected shoulder is limited in all directions, preventing the patient from dressing and undressing or combing the hair",
+    "Tender points around the shoulder (such as LI 15) can be palpated",
+    "Atrophy of the deltoid muscle on the diseased side is present in chronic cases"
+   ],
+   "related_patterns": [
+    "pattern.kidney_deficiency",
+    "pattern.qi_deficiency",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/SHOULDER.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/SHOULDER.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/SHOULDER.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/SHOULDER.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/SHOULDER.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 風寒濕邪侵襲（講義僅列為病因外邪，未立為獨立證名，故不對映風寒濕痹）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.tong_jing",
@@ -1178,14 +1402,95 @@
    "name_zh": "月經先期",
    "pinyin": "Yuejing Xianqi",
    "name_en": "Early Menstruation",
-   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "definition_zh": "月經先期指月經較應至之期提前七至八日而至，甚或一月兩至者。",
+   "definition_en": "Early menstruation refers to menstruation arriving earlier than the due time by 7 to 8 days, or even occurring twice a month.",
+   "etiology_zh": "血熱；氣虛。",
+   "etiology_en": "Heat in the blood; qi deficiency.",
+   "pathomechanism_zh": "本病與足三陰經及衝、任二脈相關；血熱者屬實，氣虛者屬虛（治療上實者用瀉法，虛者用補法並灸）。（講義僅列病因與虛實分型，未詳述病機）",
+   "pathomechanism_en": "The disorder involves the Three Foot Yin channels as well as the Chong and Ren channels; heat in the blood is an excess type, while qi deficiency is a deficient type (treated respectively with reducing techniques, and tonifying techniques with moxibustion). (The handout lists causes and excess/deficiency typing only, without elaborating the mechanism.)",
+   "key_manifestations_zh": [
+    "月經週期提前七至八日",
+    "甚或一月行經兩次"
+   ],
+   "key_manifestations_en": [
+    "Menstrual cycle arrives 7 to 8 days earlier than the due time",
+    "In severe cases menstruation occurs twice in one month"
+   ],
+   "related_patterns": [
+    "pattern.blood_heat",
+    "pattern.qi_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 肝熱（Lr heat，處方加減）、腎虛熱（K xu heat，處方加減）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.yue_jing_hou_qi",
    "name_zh": "月經後期",
    "pinyin": "Yuejing Houqi",
    "name_en": "Delayed Menstruation",
-   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "definition_zh": "月經後期指月經較應至之期延後八至九日而至，甚或四五十日一行者。",
+   "definition_en": "Late menstruation refers to menstruation arriving later than the due time by 8 to 9 days, or even occurring only every 40 to 50 days.",
+   "etiology_zh": "血虛；血寒；氣滯。",
+   "etiology_en": "Blood deficiency; cold in the blood; qi stagnation.",
+   "pathomechanism_zh": "本病與足三陰經及衝、任二脈相關；分血虛、血寒、氣滯三端，虛者（血虛、血寒兼腎陽虛者）用補法並灸，實者（氣滯）用瀉法。（講義僅列病因與分型，未詳述病機）",
+   "pathomechanism_en": "The disorder involves the Three Foot Yin channels as well as the Chong and Ren channels; it divides into blood deficiency, cold in the blood, and qi stagnation. Deficient types (blood deficiency, and cold with kidney yang deficiency) are treated with tonifying techniques and moxibustion, while the excess type (qi stagnation) is treated with reducing techniques. (The handout lists causes and typing only, without elaborating the mechanism.)",
+   "key_manifestations_zh": [
+    "月經週期延後八至九日",
+    "甚或四五十日一行",
+    "血寒者可兼小腹冷痛",
+    "氣滯者可兼乳房脹痛、情志不舒"
+   ],
+   "key_manifestations_en": [
+    "Menstrual cycle arrives 8 to 9 days later than the due time",
+    "In severe cases menstruation occurs only every 40 to 50 days",
+    "In the cold-in-the-blood type there may be cold pain (of the lower abdomen)",
+    "In the qi-stagnation type there may be breast tenderness and emotional stress"
+   ],
+   "related_patterns": [
+    "pattern.blood_deficiency",
+    "pattern.liver_qi_stagnation",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/IRREGU_1.md（2026-08-19 課件萃取）",
+     "課件另載證型(詞彙表無 id,未強配): 血寒（Cold in the blood）、氣滯（Qi stagnation，泛指，詞彙表僅有肝氣鬱結）。"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.yue_jing_guo_duo",
@@ -1473,7 +1778,46 @@
    "name_zh": "缺乳",
    "pinyin": "Queru",
    "name_en": "Insufficient Lactation",
-   "taxonomy_id": "tdx.gynecology_obstetrics.postpartum_disorders"
+   "taxonomy_id": "tdx.gynecology_obstetrics.postpartum_disorders",
+   "definition_zh": "缺乳指產後哺乳期間乳汁分泌不足，不能滿足餵養嬰兒之需的常見臨床病證；甚者可全無乳汁分泌。",
+   "definition_en": "Insufficient lactation refers to the common clinical condition in which the milk secretion of a nursing mother is insufficient to feed the baby; in some cases there may even be no milk secretion at all.",
+   "etiology_zh": "素體脾胃虛弱；失血過多；情志抑鬱。",
+   "etiology_en": "Constitutional spleen and stomach deficiency; profuse loss of blood; mental depression.",
+   "pathomechanism_zh": "臨床分虛實兩端：虛者為氣血兩虛，實者為肝氣鬱結。故治療上虛證以補益氣血為主，實證以行氣活血通乳為主。（講義未再詳述病機）",
+   "pathomechanism_en": "Clinically the disorder divides into deficiency and excess: the deficiency (xu) type is qi and blood deficiency, and the excess (shi) type is liver qi stagnation. Accordingly, treatment tonifies qi and blood for the xu type and moves qi and blood flow for the shi type. (The handout does not elaborate further on the mechanism.)",
+   "key_manifestations_zh": [
+    "產後乳汁分泌量少，不足以餵養嬰兒",
+    "甚則乳汁全無",
+    "可兼見血虛、消化吸收不良（虛證）或情志不舒、乳絡不暢（實證）之兼症"
+   ],
+   "key_manifestations_en": [
+    "Postpartum milk secretion is scanty and insufficient to feed the baby",
+    "In severe cases there is no milk secretion at all",
+    "Accompanying features may include blood deficiency and poor digestion or absorption (xu type), or emotional stress with obstructed flow (shi type)"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.liver_qi_stagnation"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/INSUFF_L.md（2026-08-19 課件萃取）"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/INSUFF_L.md（2026-08-19 課件萃取）"
+    ],
+    "pathomechanism_zh": [
+     "curriculum/conditions/INSUFF_L.md（2026-08-19 課件萃取）"
+    ],
+    "key_manifestations_zh": [
+     "curriculum/conditions/INSUFF_L.md（2026-08-19 課件萃取）"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/INSUFF_L.md（2026-08-19 課件萃取）"
+    ]
+   },
+   "review_status": "draft",
+   "authored_by": "model_draft"
   },
   {
    "id": "tdis.jing_duan_qian_hou",
