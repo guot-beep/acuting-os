@@ -7,6 +7,17 @@
   // only the 13 files index.html actually references.
   "name": "acuting-os",
   "compatibility_date": "2026-07-26",
+  // dist/ is GITIGNORED, so every fresh Cloudflare Workers Builds checkout has
+  // NO dist/ until something builds it. Putting the build here (wrangler runs
+  // build.command before every deploy/dev) makes the pipeline deterministic
+  // from the repo alone — it no longer depends on a Dashboard build-command
+  // field that can silently drift (which is exactly what broke the deploys
+  // after the Pages -> Workers Static Assets move). build-site.js also
+  // enforces the curriculum//clinical//imports//docs/ quarantine, so the
+  // build step is a privacy gate, not just a copy.
+  "build": {
+    "command": "node scripts/build-site.js"
+  },
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"

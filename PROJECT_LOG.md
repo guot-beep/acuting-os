@@ -1,3 +1,828 @@
+# 2026-08-19 — 八小時強力優化:連接層+對齊+出典+方歌+家族+加減,18 commit 全 push
+
+Ting 口頭派工(檢視哪裡可優化→執行八小時;可用 curriculum/Notion/建議官網;多線並行)。
+主 session 整合落庫,7 個唯讀研究 agent 並行產帳本;每帳本進 `docs/research_packs/`,
+每筆帶來源檔+逐字引文,落庫走 dry-run→快照重驗→apply→diff 無損檢查→驗證器→push。
+
+**逐欄位數字(全部可用該行驗證器重現):**
+
+| 欄位 | before → after | 驗證指令 |
+|---|---|---|
+| 方劑 證候連結 tcm_pattern_ids | 0 → 50/224 | validate-formula-standard(本次新增此行) |
+| 方劑 出典 source_classic | 101 → 210/224 | 同上 |
+| 方劑 方歌 | 38 → 85/224(尚無 186→139) | validate-formula-song |
+| 方劑 家族 formula_family | 9 → 41/224 | validate-formula-standard |
+| 方劑 加減變化 | 18 → 97/224 | 同上 |
+| 方劑 中英未對齊 | 101 → 69/224(contra 34 方落) | 同上 |
+| 方劑 鑑別群組 C8 | 28/30 → 30/30(9 方分類值錯置復原) | validate-comparison-standard |
+| 穴位 證候連結 | 44 → 109/361(547 條) | validate-acupoint-standard |
+| 穴位 病證連結 | 179 → 185/361 | 同上 |
+| 穴位 複習對比 compare_with | 34 → 91/361(38 組新對比) | 同上 |
+
+**修的兩顆炸彈**:①`link-point-conditions.js` 原是整欄覆寫(重跑會洗掉 547 條新連結)
+→ 改併集+field_sources append+legacy 過 alias map 只落 canonical(`bb6471c5`)。
+②LU/LI/ST/SP refine pass 把 7 穴 exam_pearl 的「與 X 分工」句洗掉(build-compare-with
+逐字斷言抓到)→ 從 854a581d 取回原句 append 復原(`6efcc3e1`)。
+
+**渲染接線**(資料寫了≠上畫面):方劑卡「相關病名與證型」併入 tcm_pattern_ids 去重
+(knowledge.js);app.js patById 同時解析 legacy pat.* 與 canonical pattern.*。
+瀏覽器實測:麻黃湯證候 chips、ST40 相關證候 7、CV12 複習對比、溫膽湯家族+加減、
+溫脾湯出典《千金要方》+禁忌中英成對。
+
+**來源紀律**:模型記憶零筆入庫。curriculum 查無出典的 63 方誠實留空後由白名單站
+補 53(壽胎丸/蔥豉湯四站皆無→仍空);配伍孤證 264 條穴位連結全數攔下;
+主治對齊 60 筆只落 2(其餘=覆蓋既有內容,整批進裁決)。
+
+**裁決佇列:`docs/research_packs/RULING_QUEUE_2026-08-19.md`(17 項,歸屬錯誤置頂)。**
+最重要一筆:formula.xie_xin_tang 名實不符(組成=半夏瀉心湯),兩條獨立線互相印證。
+
+**驗證終態**:16 個驗證器全 PASS、ratchet 無回歸(naming 1 = 玉女煎重複,佇列 #7)、
+test-branch-mergeable PASS。18 commit(f5443aac..4e06ee00+)全數 push codex/pattern-v2。
+
+**下一批**:裁決佇列 A 段(歸屬 6 項)→ 解鎖 PI/actions 58 筆+contra 20 方;
+方歌第二波(139 缺,60 之後的權重段);tdis 84 筆 index-only;
+中藥線 contraindications_zh 35%/actions_en 51% 排 Antigravity;
+knowledge_data.js 16MB 同步載入排 BLUEPRINT。
+
+---
+
+# 2026-08-14 夜 — C2b 真機切換執行(結案,含一項誠實缺口)
+
+照 docs/C2B_EXECUTION_PLAN_2026-08-15.md 全程執行:
+
+- **Phase 0**:六項前置當日重驗全綠(16/16 validators、pointer 31/31、restore 65/65、GO 錨點後 clinical 路徑零 commit、工作樹安靜)。
+- **Phase R-A**(虛構資料 CLI 全週期):`rehearse-c2b.js` 全綠——tamper 三式、注入失敗原子性、rollback 白名單精確、v1 位元組全週期不變、白名單外零寫入。
+- **Phase R-B**(dev origin 瀏覽器實彈):node 產 staging(正典 kv 管線)→ subtle 雜湊比對後 setItem → reload 後 activeIsV2、Patient Workspace「2 patients」、真 UI SOAP 寫進 staging(revision 0→1)且 **v1 鍵位元組不變**、隔離成立、export 出 v2 envelope、rollback 演習與災難還原(R10-D6 路徑)全過。
+- **Phase P**(真機,Edge file://):真實資料 **2 cases / 0 SOAP / 2 patient codes / 0 conflicts**(「33-case store」為計畫文件舊假設,實測歷史備份一致為 1-2 案例;8/12 備份中 1 筆 SOAP 經 Ting 確認為測試殘留)。副本過 preflight + rehearse 全綠後,以三重自檢 console snippet(live raw 漂移雜湊 + staging 完整性雜湊,全過才寫入)套用,Ting 回報 ✅ APPLIED + F5。
+- **⚠️ 誠實缺口**:使用者級煙測(病人列表/病例開啟/切換後首份 v2 匯出)**未執行**——Ting 裁定直接結案。風險緩衝:資料僅 2 案例、四份 pre-c2b 備份(Downloads 原檔、Documents/AcuTing-backups、工作目錄×2)、一貼即回 v1 的 rollback console 檔已交付。**下次打開 app 即自然煙測**;任何異常先回滾再查。
+- **Phase A**:Codex 額度未回(8/18),照 AGENTS.md 慣例改派隔離 Opus 一輪收斂 audit → **判決 GO,0 HIGH blocker**(六類 HIGH 逐項機器證據排除;31/31+65/65+30/30 重現、PHI boundary 0 裸 parse、invariants 0、對抗 harness 24/24)。
+  - **更正一筆**:上文「GO 錨點後 clinical 路徑零 commit」措辭不精確——實有 2 筆 app.js commit(71913291、16edc381),但 diff 全落在 CARE 面板,**觸及 v2/persist seam 的行數 = 0**,結論實質成立。
+  - **MED 佇列(不擋,下個 clinical 檔期依序)**:M1 app.js no-store fallback 不看 pointer(2 行修法,排第一);M2 file:// 全機共用 localStorage namespace——`legacy/index.html`(直寫 v1 鍵)與 7 個無 clinical-store 的舊 worktree checkout 是污染源;M3 file:// 上 `crypto.subtle` 失敗靜默(syncPendingPatients 吞錯,症狀=新 code 永不長 Patient row;5 秒可補證);M4 未做使用者煙測=MED 級(F5 乾淨已經驗性排除 fail-loud 三類)。
+  - **M1 已修**(`9805b75e`,review 升級為首次存檔前必修):app.js 兩條 no-store fallback 在 pointer=v2 時 fail-closed——load 不再把凍結 v1 呈現為現況(integrity 唯讀鎖),persist 零寫入保護回滾錨;+17 行、負面測試 20/20(舊碼上情境 A 8/8 FAIL 為修復證明)、31/31 與 ratchet 維持。
+  - **⏳ 限時窗口(E6)**:目前 envelope 仍是 migration-era(runtime_revision 缺席)——**在 Ting 第一次臨床存檔前**,匯出 v2 envelope + node 對 pre-c2b 原檔重建 plan 跑 `verifyStagingObject`,可回溯補齊 snippet 路徑繞過的 13 類驗證(對 v1 raw 的位元組忠實度證明);第一次存檔後 revision→1,此證明永久不可得。明晨第一件事。
+- 附帶:排練/煙測期間誤落 Downloads 的兩個測試匯出檔(RH-A/RH-B envelope、AT-GATE3-SMOKE)已確認內容後刪除。
+
+**C2b 狀態:切換已執行,pointer=v2。9/5 HARD GATES 的 Patient 實體項自此在真機生效。**
+
+---
+
+# 2026-08-14 終收 — 中藥線完整關閉:四欄全零、六 hold 解鎖、四組雙卡退役
+
+**SOL 第二輪查源(6 張 hold 逐句 + 佛手整卡 + 2 小修)執行落地 `f61502d1`:**
+- 38 條 safety 句:7 A 保留 / 15 B 改寫(替換句逐字採 SOL 版,多為原典等級歸位:《神農本草經疏》沒藥五句、《本草經集註》黃柏惡乾漆、石斛古籍三連句)/ 16 C 封存刪除。本輪核心判例(入術語表 §5n):**古籍禁忌不得自動補現代機制;原典等級不得升降格;preclinical 訊號標（體外）不寫臨床口吻**。
+- 佛手整卡:SOL 物種審計結論=非 bergamot 污染而是 preclinical 寫成臨床口吻。functions_zh 正名(疏肝理氣/和胃止痛/燥濕化痰)、modern_functions 5 項降級標（體外）、降血壓刪除(人體吸入研究反向)。
+- 太子參標題錯置修正(上游 CloudTCM 原頁即錯;evidence_level 註記 preclinical/weak 入 ledger)、山藥「甘逆」→《本草經集註》「惡甘遂」訛字歸位。
+- 6 張解鎖補翻 → **cautions_en missing 6 → 0**。
+
+**四組重複卡 D16 退役 `5794c5f1`(SOL 鑑定 + Ting 裁定「四組照建議 沙參方案A」,D21 LOCKED):**
+qian_cao_gen→qian_cao、han_lian_cao→mo_han_lian(反向合併:退役卡較富,正卡舊值先封存再採富版)、wu_zei_gu→hai_piao_xiao、sha_shen→bei_sha_shen(逐欄查無 Adenophora 混血;混寫拉丁名不遷入)。全庫 9 處引用改指向,退役 id 殘留掃描零,斷鏈零新增,records 358 不變(D6 不硬刪)。順手發現:herb.nan_sha_shen 被 herb_pairs 引用但無記錄——D21 記為 open gap。
+
+**中藥雙語線最終狀態(validate-herb-standard 可重現):contraindications_en / condition_tags_en / modern_functions_en / cautions_en 四欄 missing 全部 = 0**,每一條英文都有中文源、每一條被裁的中文都有出處或封存痕跡。
+
+**本日全日總帳**:conditions blocking 4→0(ratchet 鎖死)、HARD GATE 3 12/14→14/14、P1/P4 Codex 雙 GO、condition 卡來源上畫面(553 條首次渲染)、中藥四欄歸零(~900+ 條目)、兩輪 SOL 查源迴路閉環(18+38 條裁定)、四組雙卡退役、C2b 執行計畫落檔(明日主菜)。**Ting 裁定佇列清空**;唯餘 SOL 劑量查源包(任務三)發出待回。
+
+---
+
+# 2026-08-14 夜收尾 — SOL 查源迴路關閉:18 筆裁定執行,cautions_en 17 → 6
+
+**中藥安全欄的裁定迴路今天走完整一圈**:批次扣住(B1-B10 攔 18 筆)→ SOL 逐條查源
+(藥典/教材/本草原文,B改寫/C刪除逐句判)→ Ting 核可 → 執行(`3767498f`,落地 `8e1719ec`)。
+
+- **B 改寫 10 味**:鬱金/郁李仁/蒲黃/澤瀉(《本草經疏》錯置引文歸位)/龍骨(寒性誤植×2,
+  「清熱降火治肝陽上亢」方向反寫句刪除)/薤白/款冬花/黃芩(古籍「脾肺虛熱」與虛寒混解拆開)/
+  丹參(擴血管→升血壓的機轉倒置改為低血壓慎用+注射劑監測)/白頭翁(「豚實力使」訛字→
+  「豚實為之使」,蠡實異文存檔)。替換句逐字採 SOL 版本。
+- **整組重建 2 味**:浙貝母(5 條全是川貝母內容→藥典版 2 條)、枳殼(6 條全是枳實→2 條)。
+- **C 刪除封存,不生成替代 6 味**:茵陳蒿×3、佛手×2(bergamot 物種混寫)、沒藥×2、
+  黃柏、三稜(柑橘科誤植)、石斛(互斥條件句;另還原其被誤填的 cautions_en 整欄)。
+- **12 筆解鎖補翻**;**6 筆維持 safety hold**(SOL 明令:其餘句子未逐句查源前英文留白)。
+- 每句被動原文逐條 import_artifacts 封存,exact-text 定位。全套驗證器 PASS、ratchet 零回歸。
+- **最終**:cautions_en missing 17 → **6**(全部有名有姓有理由,零漏填零矇混)。
+
+**同日晚間並行**:C2b 執行計畫落檔(docs/C2B_EXECUTION_PLAN_2026-08-15.md,明日主菜:
+排練→真機→一輪 audit);婦科 9 卡 SOL 摘要回覆已到(5 填 4 空),**等完整 JSON 交付物**
+才寫卡(摘要缺 DOR 兩套穴組、PID 五穴與逐筆 citation/covers,依 collection request 鐵則
+不憑摘要+記憶重建);4 張 no_source_found 可先行,排在 C2b 之後。
+
+---
+
+# 2026-08-14 Fable × Sonnet — 中藥雙語線收官:HB-B1~B10 全數落地
+
+十批連跑一天完成(每批:worktree 實作 → Fable 驗收(數字重現+diff 眼讀+安全欄對嚴重度階梯)→ rebase → ff-merge → push)。最終數字(`node scripts/validate-herb-standard.js` 可重現):
+
+| 欄位 | 開盤 | 收盤 |
+|---|---|---|
+| contraindications_en missing | 9 | **0** |
+| condition_tags_en missing | 141 | **0**(110+1 筆功效聯按裁定封存清空,31 筆真標籤翻譯) |
+| modern_functions_en missing | 159 | **0** |
+| cautions_en missing | 216 | **17**(全部=裁定扣住,無漏填) |
+
+- 新增雙語內容約 900+ 條目;術語表(HERB_BILINGUAL_GLOSSARY_2026-08-14.md)每批判例回填,累計 §5a-§5m。
+- **17 筆扣住 = Ting 裁定佇列**,四類:同記錄藥性/藥理矛盾(鬱金、鬱李仁、丹參、沒藥、澤瀉、茵陳蒿、龍骨、薤白、佛手、款冬花、黃芩、蒲黃)、機轉倒置(黃柏)、整套跨藥抄襲(浙貝母←川貝母、枳殼←枳實)、亂碼/錯植(白頭翁、三稜)。zh 全部原樣未動。
+- **整合層攔截兩次**:B9 石膏 CT 功效聯(裁定按原則延伸,封存清空);B10 全庫掃尾用較窄門檻翻掉了 B1/B2/B4 扣住的 4 筆 → 還原扣留(「後批不得推翻前批的裁定扣留」入判例)。
+- 附帶收穫:21 筆 functions_zh 因 EXCEPTION 搬移而加深;青蒿「清虛」截斷修復;第 4 組重複記錄浮出(烏賊骨/海螵蛸);相剋 = mutually restrains 定為第四配伍詞。
+- **待 Ting**:17 筆 cautions 裁定(可打包給 SOL 查源)、4 組同藥雙卡去重、太子參標題錯置與山藥「甘逆」zh 修復、黃酒「藥引」歸欄。
+
+---
+
+# 2026-08-14 Codex — P1／P4 focused technical retest `GO`
+
+- **做了什麼**：在 final endpoint `70aa3aed` 重跑 P1/P4 指定 blocker regression；產品碼／schema／canonical data零修改，真 clinical store讀／寫=`0/0`，既有 curriculum/tmp dirty work未碰。
+- **數字**：P1 official=`3 good + 32 bad`、app parity=`35/35 delegated · 0 verdict/data mismatch`、independent=`39/39`；P4=`31/31 + 65/65 + formula 0 blocking + PHI 0/0 + Phase E green`、independent seam=`22/22`。
+- **附件**：Gate 3 export為單元素去識別化 array，`sym.insomnia`／`herb.suan_zao_ren` export→canonical均解析；SOL AVS review五筆 wording與現行 library=`5/5 exact`，只作 integration evidence。
+- **已知未解／邊界**：本輪未開新 Clinical 六軸；未執行 main landing、deployment或真病人 migration/pointer switch；P1/P4 technical GO不取代 Ting／SOL 的醫療內容與真實病人使用裁決。
+- **下一步**：依 validation-frontier frozen 規則關閉本輪；若進 landing，另對候選 exact SHA 走既定 landing/CI 授權流程，不再以同一 milestone 開新 audit。
+
+# 2026-08-14 Fable(路由)× Sonnet(實作)— 中藥雙語線開動:安全欄清零、術語表立法、功效聯清倉
+
+連批模式(Ting 授權批次自主落地)。每批:Sonnet worktree 實作 → Fable 驗收(重現數字+diff 眼讀+安全欄逐句對嚴重度階梯)→ rebase → ff-merge → push。
+
+- **contraindications_en 9 → 0**(`a8a092db`):6 筆直翻 + 3 筆先執行 Ting 裁定(花椒矛盾條封存、丁香去重+炮製註+無源條封存、吳茱萸六條「不宜用」搬 cautions)再翻。驗收層攔到 2 處反/畏混用(丁香畏鬱金→Antagonistic;肉桂不宜同用→Avoid),integration commit 修正。
+- **術語表立法**(`f1d35e6d` + `a13dbbf0` B1 判例回填):從 138/109/787 既成對萃取;鎖漂移統一、嚴重度階梯(禁/不宜/慎 → Contraindicated/Avoid/Use cautiously)、反畏惡三分、證據後綴保留;批次表 HB-B1~B10(記錄批,每批三欄一次填)。
+- **HB-B1**(`546edb4a`):CT 141→119、MF 159→143、CA 216→201。**5 筆 cautions 因同記錄內在矛盾扣住**(鬱金溫/寒、鬱李仁寒/平、丹參擴血管升血壓、三稜柑橘科、沒藥促凝/抗血小板)→ Ting 裁定佇列,zh 未動。
+- **CT-110 功效聯清倉**(`c9cb16cd`,Ting 裁定「清空封存」):89 筆直接封存清空(34 筆與 functions_zh 逐字同)、21 筆先把缺項功效補進 functions_zh 再清(憲法「先搬再改」)、4 筆 E5 對齊延伸(_en 鏡像一併封存)、青蒿「清虛」→「清虛熱」截斷修復;qing_mu_xiang/huang_jiu 兩筆邊界保留不動。condition_tags_en missing 119 → **13**。
+- **待 Ting**:5 筆矛盾 cautions 裁定;三組疑似同藥雙卡(茜草/茜草根、旱蓮草/墨旱蓮、沙參/北沙參);黃酒「藥引」歸欄。
+- **流程教訓**:半刪殭屍 worktree 目錄裡 git 會打到主 repo(兩次遇到,零傷害,已入長期記憶);與並行 session 的 rebase 衝突固定落在 data/generated/(重建即解,不手併)。
+
+---
+
+# 2026-08-14 Fable(路由)× Sonnet(實作)— 驗證器小債清算 + HARD GATE 3 收到 14/14
+
+兩批 Sonnet worktree 實作、Fable 驗收落地(rebase → ff-merge → push),與同日另一 session 的 app.js 工作零檔案重疊。
+
+**批 1(`1dec8163`)驗證器小債:**
+- C5 blocking 4 → **2**:chronic_cough 兩欄補 _en(內容歸屬查證後才翻);migraine + tension_headache 各一欄**扣住不翻**——兩者的 import_artifacts 都記載疑似 CloudTCM 部落格殘文與 sibling 卡近重複(tension_headache 是 Sonnet 自己發現的同款,brief 沒點名),等 Ting 歸屬裁定。歸屬錯誤壓過語言錯誤。
+- 酸棗仁湯方歌「酸棗 popular 湯」→「酸棗仁湯」,單 token,雙欄孿生同步;查無《湯頭歌訣》原文可比對,依字面錯置修復並在 commit 註明。
+- `validate-condition-sources.js` crash → 可跑完(auto-vivify DOM stub + contentMode/window 種子 + 已拆除的 CloudTCM 目錄斷言改 skip-with-note)。殘餘 13 項全部在驗一個從未被任何記錄使用的欄位名 `source_links` + lazy-render 前的舊 DOM 假設——**Fable 裁定:退役那兩組斷言**,排下一批 scripts 小活。
+- ratchet 基線鎖進新低點 conditions 4 → **2**(`5ae6c8a4`),回退即紅。
+
+**批 2(`1f0fca05`)HARD GATE 3 最後兩格:**
+- `symptomLinks`(sym.*,102 筆 vocabulary picker)+ `herbLinks`(herb.*,358 筆),完全複製既有 xxxLinks 模式:normalize / picker / render(escapeHtml)/ 編輯回填 / 表單序列化七個接點。`formulaHerbs` 自由文字與 `linkifyFormulaHerbs()` 未動(additive,不是替換)。
+- **Gate 3 宣告 14/14**,證據三層:(a) normalize 單元測試 8/8(garbage 容錯與鄰居欄位同款);(b) pointer 31/31 維持;(c) **落地後瀏覽器實測**——真 UI 建案 → SOAP 填 `sym.insomnia`/`herb.suan_zao_ren` → requestSubmit → reload 存活 → exportClinicalCases() 輸出含兩鍵(煙測資料已清)。
+- 全套驗證器 PASS,ratchet 無回退。
+
+**待 Ting(不新增,重申)**:migraine / tension_headache 兩筆歸屬裁定 = C5 剩餘的全部。
+
+**同日追加兩批(Ting 授權 Sonnet 批次自主落地後):**
+- **批 3(`b12b8a78`)sources 驗證器殭屍斷言**:`source_links` 三條斷言改寫為驗正名 `sources`(意圖保留,欄位跟上;實測 241/505 records、553 條全 https 零 Google,無真缺陷浮出);initial-render 三條退役刪除(lazy-render e73095d4 是永久架構決定,search-first 檢查已覆蓋同一意圖)。13 → **0 defects**。
+- **批 4(`ee212b27`)condition 來源上畫面**:批 3 挖出 `js/knowledge.js` `conditionSources()` 讀同一個死欄位——**上線以來沒有任何 condition 卡顯示過來源**。改讀 `sources` 三形態(裸 URL / Label: URL / 純文字引用不造假連結),esc() 全插值,XSS 反例入測(15/15)。落地後瀏覽器實測:endometriosis 卡 3 條來源第一次渲染,`NICHD — Endometriosis` 標籤連結 href 精準。註:驗收時先吃到合併前快取 JS 誤判失敗,cache-bust 後確認——**驗收也要防快取**。
+
+---
+
+# 2026-08-12 Claude — Hard gate 1/2 瀏覽器級 UI 走查(v1 模式,人工)
+
+- **做了什麼**:關掉 §4078 那條擱置的開放項目——「瀏覽器級 UI 走查(hard gate 1/2 的 reload/isolation 實測)」的 v1 模式部分。用 `.claude/launch.json` 的 `acuting-static` dev server(真 HTTP origin,非 `file://`——後者在測試環境裡只渲染成不執行 JS 的 static snapshot,已排除)手動點真表單:`#caseForm` 建 Case、`#soapForm` 送 SOAP,不是重跑 `scripts/walkthrough-phase-e.js` 的 API 直呼路徑。
+- **數字**:建 `AT-WALKTHRU-A`(pain)與 `AT-WALKTHRU-B`(sleep)兩筆假病例;對 A 送 1 筆 SOAP(`metric.pain_score=8`);reload 後兩筆病例、A 的 SOAP 筆數與 pain_score 原樣還在;同時查 B,`soapCount` 全程 `0`;`exportClinicalCases()` 攔截輸出與 `localStorage['acuting-clinical-cases-v1']` 逐位元組相同(`JSON.stringify` 比對 true)。
+- **關閉範圍**:Hard gate 1(reload)、2(isolation)在**瀏覽器 UI 送出路徑**上有了人工實測證據,不只是腳本層;gate 7(export)在 **v1 模式**下同樣有 UI 層證據。
+- **未關閉,不得誤讀**:v2/Patient 實體模式仍依既有規則凍結,本輪沒碰;import 回灌、`#agentExposureDialog`/`#environmentalExposureDialog`、gate 8 完整 4–5 診 A/B 縱向劇本(`walkthrough-phase-e.js` 之外的真人工版本)都還沒做。**P1/P4 仍維持 NO-GO**——本輪測的是 v1 array export,不是 P1/P4 那條 PHI-echo/parity 的 code path,不構成第二次獨立覆測。
+- **方法附註**:Browser pane 的 accessibility-tree 讀取在這個 app 的深層 modal(新增病例/新增 SOAP)上會截斷,讀不到送出按鈕;改用直接對表單欄位賦值 + `form.requestSubmit()` 觸發真實 submit handler,不是繞過驗證的捷徑。
+- **順手記一筆,不擋此輪**:首頁「繼續上次」卡片 reload 後日期顯示 `2026-08-13`,系統時間是 `2026-08-12`,疑似本地時區算日期差一天;屬凍結規則「不擋」類別,backlog。
+- **資料處置**:兩筆假病例只活在該次 Browser pane 分頁的 localStorage,未進 git、未匯出留存,測試結束即棄。
+
+---
+
+# 2026-08-12 Fable — Opus 獨立覆測抓到 3 HIGH,全在**我自己的修復**裡
+
+Codex 額度用盡(至 8/18),依 AGENTS.md 分工改由隔離 Opus subagent 執行對抗覆測。它在我上兩輪修復裡又找到 `3 HIGH + 5 MED + 4 LOW`,**全部活在我全綠的基線底下**。三項 HIGH 我逐一覆現成立後修掉:
+
+- **PHI 回顯我只修了四處,實際八處**。漏掉的是**我自己剛寫的模組** —— `js/previsit-validator.js` 把 `JSON.parse` 的 message 原樣送進 alert;V8 內嵌錯誤位置前後各約十字,**12 字的貼上內容整份照登**。實測前後對照已附。教訓:我掃的是「我當時在想的那兩個檔」,不是那個 pattern。
+- **parity gate 量錯東西**:只比 `ok`,從不比 `data`。一個誠實委派、判決逐筆相同、但把每個 metric 乘 2 的 wrapper 拿到「29 delegated calls, 0 mismatches」exit 0 —— pain 4 會預填成 8。已改為連 data 一起比,並用那個 wrapper 做負面對照。
+- **`arr()` 我只補了一個欄位**:同檔 30 處,`const comp = arr(r.composition)` 讓桂枝湯**五味變一味物件**而 validator 印 `PASS — no blocking defects`。已拆成 `arr()`(顯示用)與 `requireArray()`(契約用),套在 composition 與 expanded_ingredients。
+- **另外兩項是我改「過嚴」造成的**(比漏放更難發現,因為沒人會回報):`7.0`/`6.50`/`1e1` 被誤判精度失真(其實精確可表示,只是寫法不同)→ 改比 canonical 十進位值;整個 `p{Cf}` 靜默吃掉 emoji ZWJ 與波斯/印地 ZWNJ(正字法的一部分)→ 散文保留 ZWJ/ZWNJ、識別碼全剝(payloadId 加一個 ZWSP 即可無限重放,已修)。
+- **驗證**:三個負面對照全部 CAUGHT/BLOCKED,`app.js`、`formulas.json` 事後逐位元還原;真失真值仍 REJECT、合法寫法改為 accept;全套 13 項零失敗(P1 3+26、formula 0 blocking、AVS 59/59、pointer 31/31、restore 65/65、其餘全綠)。
+- **commit** `03942336`(含覆測員報告,它自己不能 commit)。P1/P4 維持 NO-GO —— 這輪修復尚未經第二次獨立覆測。
+
+# 2026-08-12 Fable — P4 seam:PHI 洩漏(HIGH)與 F12b shape 繞過(MED)已修
+
+- **HIGH**:`JSON.parse` 的錯誤訊息內嵌原始輸入片段,而那些 throw 被 load 路徑丟進 alert、也被 W1 patient view 印到頁面 —— 壞掉的儲存內容直接顯示在畫面上。改為只報「key + 字元數」,內容一字不轉述。**四個內容解析點全修**(Codex 點名 2 個,我掃出另外 2 個:restore anchor、app.js fallback 解析)。storage 例外訊息未動(不含內容)。
+- **MED**:`arr()` 把單一物件包成一元素陣列,使 object-shaped `expanded_ingredients` 繞過 array 契約且 leaf 檢查照過。改為先驗型別再進迴圈;object/string 皆 blocking。
+- **驗證**:種入可辨識假 PHI 的壞 v1/v2 儲存 —— 兩條訊息**零 6 字元片段存活**,健康儲存仍正常載入;F12b 對 object 與 string 兩種 shape 皆 exit 1,`formulas.json` 逐位元還原(canonical 零變更)。全套:pointer 31/31、restore 65/65、C2b green、formula 0 blocking、P1 3+26、AVS 59/59、其餘全綠。
+- **commit** `17025f01`。retest 派工在 CODEX_HANDOFF 置頂(依 Codex 建議只重跑 31/31 + 65/65 + formula + 12 seam,不重開六軸)。P1 與 P4 皆維持 NO-GO 至 Codex 覆測。
+
+# 2026-08-12 Fable — P1 round 2:Codex 的 1 HIGH + 4 MED 全修,parity gate 改成行為證明
+
+- **HIGH-1** 原始 number token 失真(`9007199254740990.5`→`...990` 後仍在界內而放行):改驗 payload **原始文字**,每個 number token 必須無損往返。fixture 必須是 raw text —— 寫成物件字面量的話小數在 stringify 前就沒了。
+- **MED-1** 傳輸接受了存檔存不進去的值(`0.0000001`→`"1e-7"` 被 save regex 拒):傳輸層改要求純十進位,兩層同尺。
+- **MED-2** ISO 外形非真實曆日(`2026-02-31` 被引擎正規化到 3 月後進 freshness):改經 `Date.UTC` 往返驗證。
+- **MED-3** 控制字元手列範圍不完整(`U+0085/009B/200E/200F/061C` 全存活):改用 C0+DEL+C1+**整個 p{Cf}`** 字元類別。
+- **MED-4** parity guard 證明不了委派:改成**抽出 app.js wrapper 實際執行** + 呼叫計數 + 逐 fixture 判決比對。負面對照(Codex 描述的假委派)FAIL 27 項(26 判決分歧 + 0/29 呼叫),app.js 事後逐位元還原。
+- **驗證**:self-test `3 good + 26 bad ALL PASS` + parity(29 fixtures/29 委派呼叫/0 分歧)+ 10 條 control 斷言;瀏覽器五項攻擊全 REJECT、合法小數/閏日/多行文字仍 ACCEPT;**producer 往返未斷**(模擬 previsit.html 輸出 ACCEPT,sleep_hours 7.5/6.25/8/0.5/12 全 ACCEPT);AVS 59/59、pointer 31/31、restore 65/65、其餘全綠。
+- **commit** `63be500c`。retest 派工在 CODEX_HANDOFF 置頂;P1 PAUSE 維持至 Codex 判 GO。
+
+# 2026-08-12 Codex — Clinical P4 regression smoke `NO-GO`
+
+- **做了什麼**：只跑指定 `31/31 + 65/65` 與 W1／R15／formula-in-formula seam；不重開 Clinical 六軸，未碰產品碼／schema／真 store，暫存 harness 已清除。
+- **數字**：pointer=`31/31 PASS`、runtime restore=`65/65 PASS`、formula standard=`PASS 0 blocking`；獨立 seam=`9/12 PASS · 3 FAIL`。
+- **驗證**：W1 v1/v2 Patient bridge 皆正確且 writes=`0/0`；現行六個 F12b mutation 全擋，但新增 object-shaped expansion 可繞過。
+- **已知未解**：`1 HIGH + 1 MED`——R15/W1 parse error 回顯 raw PHI 前綴；F12b `arr()` 放行非 array `expanded_ingredients`。
+- **下一步**：固定無 raw 的錯誤訊息＋F12b 強制 array，三反例入 suite後 focused retest；P4 未 GO，且 P1 仍 `NO-GO`，不進 branch landing 執行階段。
+
+---
+
+# 2026-08-12 Codex — P1 focused retest `NO-GO`；`PAUSE` 維持
+
+- **做了什麼**：pull 後以現行 P1 seam 做檔案式獨立覆測；只寫 reviewer docs，未改產品碼／schema／AVS，真 store 讀／寫=`0/0`，暫存 harness 已清除。
+- **數字**：official self-test=`3 good + 22 bad ALL PASS` + parity；actual-function focused harness=`35/40 PASS · 5 FAIL`，不是舊 `3+14`／`20/28`。
+- **驗證**：舊 3 HIGH + 4 MED focused regression 均 resolved；六軸=`PASS / FAIL / PASS / FAIL / FAIL / FAIL`，syntax=`3/3 PASS`。
+- **已知未解**：新 `1 HIGH + 4 MED`——large fractional JSON 精度折損、tiny decimal transport/save drift、不存在曆日 ISO、C1／bidi marks 殘留、parity guard 可假委派。
+- **下一步**：product owner 修五個反例並納入 blocking suite；Codex focused retest 六軸全綠且 `GO` 前，不解除 P1 `PAUSE`。
+
+---
+
+# 2026-08-12 Fable — 最後一條擱淺的 conditions 支線:`claude/vigilant-visvesvaraya-e20261` 併入 pattern-v2
+
+## 2026-08-12 夜 缺陷清算日:條件 184→4、方劑 10→0,五條擱置分支歸隊
+
+**起點**:早上方劑 10 阻斷、條件 184 阻斷、CI 從未全綠過。
+
+| 線 | 早 | 現在 |
+|---|---|---|
+| 方劑阻斷 | 10 | **0** |
+| 條件阻斷 | 184 | **4**(僅 C5,3 張卡) |
+| C4 紅旗缺陷 | 42 | **0** |
+| C10 樣板句 | 70 | **0** |
+| full_detail | 92 | **143** |
+| 組成羅馬拼音 | 248 | **0** |
+| 甘草樣板句(含四種變體) | 574 | **0** |
+| 公開卡 public_safe | 60 | 40(20 張因安全欄缺失或歸屬未定下架) |
+
+**方法面的收穫**(比數字更值得留):
+
+1. **CI 靜默死亡**:PR 與 main 衝突時 GitHub 連 run 都不建立 —— 沒有紅叉,gate 無聲消失 3 小時。偵測靠 PR 的 `mergeable_state`(dirty=已死),已寫進 DEPLOY_CLOUDFLARE.md 與長期記憶。
+2. **做完沒人撿**:`scripts/scan-unmerged-branches.js` 上線,首跑找到 11 條分支有未併入的工作,其中「C4 紅旗缺陷歸零」已擱置 11 小時。commit 不等於送達。
+3. **歸屬錯誤壓過語言錯誤**:把誤植內容翻譯通順,會讓它從「看起來沒做完」變成「看起來已審核」。選擇性整合先例 bb2b343(取 du_qi_wan、拒 ge_gen_tang/xie_xin_tang)。
+4. **逐欄位合併會製造兩邊都沒有的缺陷**:`_zh` 取 A 側、`_en` 取 B 側,憑空生出 17 個半套雙語對。雙語欄位必須成對解析 —— 後續整合已內建此守衛,實測攔下 1 次(chronic_gastritis)。
+5. **測試自己的測試**:P4 方向詞判斷式若把 `only` 收進方向詞,反而會放過它本來要抓的那張卡(chai_hu_jia_long_gu_mu_li_tang 的「lists only the 11 dispensable ingredients」)。
+
+**新上線的機器化守門**:
+
+- `validate-formula-composition-signatures.js` —— 組成簽章重複偵測,首跑抓到 7 對(含 yu_nv_jian/yu_nu_jian 同方兩 id、gui_zhi_fu_ling_wan 掛 fu_ling_wan 組成)
+- `validate-formula-safety-predicates.js` —— P1 慎用藥必須有禁忌、P2 公開卡必須有安全字串、P3 公開卡不得有破碎功效欄、P4 禁忌條目必須含方向詞、P6 君臣佐使用字;全 NOTE 級並逐條寫明畢業條件
+- `scan-unmerged-branches.js` —— 擱置工作掃描
+- C13 歸檔形狀閘(接受兩種既有 key shape,不強迫改寫既有出處)
+
+**仍待 Ting 裁定**:桂枝茯苓丸組成還原方式、十八反欄位、方劑安全欄結構問題(163/224 張卡 contraindications_en 與 cautions_en 逐位元組相同,方向詞由譯者當下決定 —— 中英打架是結構必然,修翻譯止不住)、cond.migraine 是否採用 sibling 判斷(採用則 C5 由 4 降 3)。
+
+
+- **做了什麼**:sibling(5 commits、merge-base `ca2c45b`、擱淺 ~12 小時)的 CloudTCM 部落格殘留
+  清理併入 `codex/cloudtcm-cleanup-integration`(自 `codex/pattern-v2` `e0b223e` 開)。
+  沿用上一批的 **record/field 級三方合併**(base/ours/theirs 三份 JSON,腳本可重跑),
+  不做行級 resolve。`sources`/`import_artifacts` 聯集、`field_sources` 物件合併 ours 勝、
+  其餘 per-member 三方且 ours 勝真衝突;**雙語成對整對一起決**(半套防護觸發 1 次)。
+- **theirs 動了 30 筆記錄 / 32 個欄位**,逐欄結果:**19 個兩邊同值**(兩線各自清空同一段
+  部落格文,合併後結果相同)、**10 個 ours 勝**(integration 已用具名來源改寫該欄)、
+  **3 個取 theirs**(ours 未動:`cond.irregular_menstruation` etiology_zh+_en 清空封存、
+  `cond.asthma` etiology_zh 剝除 `[@post:43]`/`[@post:182]`)。
+- **封存記錄不重複**:theirs 帶 30 筆 `import_artifacts`,**26 筆判為同段原文已封存**
+  (兩邊複本差在 HTML entity `&hellip;`/`…` 與 OCR 修字,用正規化+分段抽樣比對,不是逐字)、
+  **2 筆判為假搬家紀錄**(該段文字在合併後仍活在 canonical 欄位:`cond.migraine`
+  western_pathology_zh、`cond.chronic_gastritis` etiology_zh)、**實際新增 2 筆**
+  (irregular_menstruation 的 zh/en)。30 筆記錄合計 55 筆封存記錄,**逐筆比對 0 組重複原文**。
+  (`cond.palpitations` 有兩筆 765 字看似重複,實為本卡原文 + 從 heart_failure 誤植處搬回的
+  複本,差一個 OCR 字且 `reason` 寫明 —— 兩份不同痕跡,不合併。)
+- **canonical 欄位殘留 embed 標記 6 → 0**(`node` 全檔掃 `\[@[a-z_]+:\d+\]`,只算非
+  import_artifacts/tcm_patterns 欄位)。其中 2 個在「ours 判定該文可留」的欄位裡,
+  照 sibling 對可留文的做法**只剝標記不動內文**(各 −7 字元:migraine 726→719、
+  chronic_gastritis 3035→3028)。封存文裡的 37 個標記原樣保留(痕跡不改寫)。
+- **數字 before→after**(before = `codex/pattern-v2` `e0b223e`,不是 sibling 的世界):
+  `validate-condition-standard` 阻擋缺陷 **4 → 4**(全部是 C5,`cond.tension_headache`
+  western_pathology、`cond.migraine` western_pathology、`cond.chronic_cough`);記錄數 **505 → 505**;
+  `audit-cr010` full_detail **143 → 143**、partial 100、skeleton 262;
+  `validate-content-junk` 控制字元 **8 → 8**(凍結上限 8,PASS)。
+  **ratchet 未 `--update`** —— 合併後與已 commit 的 baseline(conditions 4 / patterns 0)持平,
+  沒有變好就不動它;**sibling 那筆 `conditions 512 / patterns 220` 的 baseline 沒有併入**,
+  那是 C4 42、C10 70 兩批落地之前的世界。
+- **驗證**(可重現):`node scripts/build-data.js`、`node scripts/validate-condition-standard.js`、
+  `node scripts/audit-cr010-condition-detail-maturity.js`、CI green job 28 支腳本全跑
+  (`validate-relations` / `validate-content-junk` / `check-validation-ratchet` 含在內)**0 支失敗**。
+  抽查:`cond.breech_presentation` acupoint_protocols `[]` + 5 筆封存、`cond.depression`
+  etiology zh/en 皆空 + 4 筆封存、`cond.thin_endometrium` 同樣 + 2 筆封存、
+  `cond.bppv` 持續性眩暈紅旗 `urgency_level: urgent`。
+- **驗證器**:併入 sibling 的 **C13 import_artifacts 形狀檢查**,但改成**兩套鍵名任一套齊全即通過**
+  —— sibling 原版只認 `{original_field, text, reason, moved_at}`,直接套用會把資料裡 160 筆
+  另一套鍵名判成缺陷(等於逼人改寫 provenance)。引入時 0 缺陷,反向測試(注入 3 種壞形狀)3 個都攔到。
+  模板 §3.5.5 同步補上 C13 與「同段文字不封存兩次」兩條。sibling 另寫的 §3.6 規格段未併入:
+  integration 的 §3.5.5 已涵蓋同一件事且更完整(含兩套鍵名裁定),重寫會變成兩份會分岔的規格。
+- **留給 Ting 決的兩處內容分歧**(這次一律保留 integration 的值,沒有替 Ting 決定):
+  1. `cond.migraine.western_pathology_zh`(719 字):sibling 判定整段是部落格敘事要搬走,
+     integration 判定可留並修過一個亂碼字。目前該欄仍是 CloudTCM 口吻(孤兒圖說「偏頭痛是相當
+     難以被治癒的疼痛」、結尾推銷句),而且**沒有 `_en`,正是現存 4 個 C5 缺陷之一**——
+     若採 sibling 的搬走,C5 會從 4 降到 3。
+  2. `cond.chronic_gastritis.etiology_zh`(3028 字):sibling 判定要搬走,integration 不但保留
+     還做了 1744 字的 `_en` 翻譯並標了來源。兩邊都留 = 半套(C9),所以整對取 ours。
+  另:`cond.asthma.etiology_zh` 保留文的章節序號本身有問題(一、二、二、三、四、六,缺五)
+  且夾著孤兒圖說,`cond.fibromyalgia`(2)與 `cond.depression`(4)有 6 個 `field_sources` 鍵
+  指著已清空的欄位 —— 這幾筆是既有狀態、不是這次合併造成的,**沒有動**,列出來備查。
+- **Commits**:見 `codex/cloudtcm-cleanup-integration`(未 push)。
+
+# 2026-08-11 Claude — CloudTCM 部落格殘留清理:30 筆 cond.* 的 embed 標記與敘事搬遷(sibling branch 原始回報,數字為併入前的世界)
+
+- **做了什麼**:`condition_canon_shortlist.json` 裡 30 筆記錄、32 個欄位含 CloudTCM embed 標記(`[@ad:1]`×30、`[@post:N]`×6、`[@formula:N]`×2,共 40 個——派工單只列出 `[@ad/post:N]`,寬 regex 另抓到 2 個 `[@formula:N]`)。逐篇讀完全部 23 篇 distinct 全文後分類:**30 個欄位整段搬進 `import_artifacts`**(會員案例、經絡檢測行銷、修辭口吻;其中多筆根本放錯病症——月經不調通論重複於 7 筆 GYN 卡、氣喘文在 post_covid、心律不整文在 heart_failure、失眠文在 circadian_disorder、癃閉文在 recurrent_uti),**2 個欄位僅剝標記保留原文**(cond.asthma、cond.palpitations 的證候辨證內容有實質價值)。搬移共保存 98,011 字元,零刪除。
+- **Schema 前置**:派工單引用的模板 §3.5.5 `import_artifacts` **並不存在**(§3.5 是 category 枚舉),資料裡也沒有先例;依 C8 註明的 schema-change 程序補齊:模板 §3.6 先寫規格(`{original_field, text, reason, moved_at}`,單向、永不渲染),validator 再核准欄位並加 C13 shape check(引入時 0 缺陷)。
+- **數字 before→after**:validate-condition-standard defects `553 → 512`(C10 `189→176`,C5 `292→264`;每一步與預測相符:batch1 −13、batch2 −28)。canonical 欄位殘留 embed 標記 `40 → 0`(寬 regex `\[@[a-z_]+:\d+\]` 全檔重掃證實)。ratchet baseline `577 → 512` 已 `--update` 鎖定(同時鎖入本 branch 先前工作的 patterns `220 → 0`)。
+- **驗證**(可重現指令):`node scripts/build-data.js`、`node scripts/validate-condition-standard.js --json`(defects 512)、`node scripts/check-validation-ratchet.js`(PASS no regressions)、`validate-content-junk`(PASS)、`validate-relations`／`validate-data`(PASS,警告皆既存)、`git diff --check`(乾淨)。App 以 dev-server 實開:bundle 內 heart_failure etiology 空+1 artifact、asthma 原文無標記,console 零錯誤;`import_artifacts` 無任何 UI 引用(依規格永不渲染)。
+- **來源缺口/已知未解**:28 筆記錄的 etiology_zh(及 circadian 的 western_pathology_zh、migraine×2 的 western_pathology_zh)現為誠實空缺,**待具名來源回填**——這是 fill 線的下一批。cond.asthma／cond.palpitations 保留文仍是 CloudTCM 口吻(含「鐵三角」私有概念與孤兒圖說),留待內容精修。`validate-content-junk` 只掃陣列,仍不會抓 prose 裡的 embed 標記——已全數清零,但防再犯需另議是否加檢查(scripts 改動需 Ting 點頭,本批僅動 validate-condition-standard 落地 schema)。
+- **Commits**:`2be7b60`(schema)、`0ad416c`(batch1 GYN 7筆)、`3ce2675`(batch2 23筆)、`12d29e3`(ratchet baseline)。
+
+# 2026-08-12 Fable — 撿回擱淺的 C4 紅旗支線:`claude/confident-hugle-2cf3f3` 併入 pattern-v2
+
+- **做了什麼**:sibling branch `claude/confident-hugle-2cf3f3`(13 commits、merge-base `ca2c45b`)
+  的 C4 紅旗成果已擱淺 ~11 小時,本次併入 `codex/c4-redflags-integration`(自 `codex/pattern-v2` 開)。
+  兩線同日改同一個 canon 檔,plain merge 五檔衝突。**canon 檔不用 --ours/--theirs**,改用
+  **record/field 級三方合併**(base=`ca2c45b`、ours=pattern-v2、theirs=sibling),腳本可重跑:
+  只有一邊動 → 取那邊;兩邊同改 → 取同值;真衝突才進政策表。
+- **衝突政策(261 個真衝突)**:`import_artifacts` 與 `sources` 取**聯集**(只加深不刪除);
+  `field_sources` 物件合併(ours 覆蓋同鍵、theirs 獨有鍵保留);其餘一律 **ours 勝**
+  —— 因為 integration 線的 CR-010 與 eyes-on 判斷比 sibling 新。**雙語成對另加一道尺**:
+  per-field 合併會把 `_zh` 取 A 邊、`_en` 取 B 邊,造出兩邊都沒有過的半套(先跑出 C9 17 個);
+  改成**整對一起決**,17 對回復一致,C9 歸 0。
+- **自 theirs 自動併入 414 個欄位**,其中 **red_flags_zh 42 + red_flags_en 42** —— 這 42 張正是
+  integration 端 C4 的全部缺口(ours 該欄為空、theirs 有,零覆蓋、逐條 zh/en 等長)。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`,505 筆):
+  blocking **184 → 4**;**C4 42 → 0**、**C10 70 → 0**、**C5 72 → 4**、C9 0 → 0;乾淨卡 **451 → 502**。
+  `check-validation-ratchet.js` 判 BETTER(184→4)後才 `--update` 鎖 4(**未採用 sibling 的 117**
+  —— 那是 150 筆世界的數字,與 505 筆不可比)。CR-010 `full_detail` **130 → 143**(未回退)。
+- **自查(驗證器 PASS ≠ 沒有損失)**:對 ours 深比較 **欄位被清空 0 個**;6 個欄位變短全部是
+  sibling batch 6 的誤置長文 untangle(copd/post_viral_cough etiology_zh 4821→291/236 等),
+  逐筆確認原文**逐字**躺在該卡 `import_artifacts`。眼讀 cond.copd / cond.pcos 全卡,無假中文、
+  無隱形英文、無樣板句。
+- **順手清兩處**:(1) theirs 帶進的 1 個 U+0008(cond.heart_failure 封存文)——content-junk
+  ratchet 凍在 8,這是第 9 個,依驗證器自身指示刪字元不改句子,現回到 8;
+  (2) 38 個 `field_sources` 鍵是 theirs 為「我們沒採用的內容」寫的出處,指向空欄位=假 provenance,
+  刪(只刪合併新增的、ours 原有的一個不動)。
+- **驗證器 diff 判定**:sibling 對 `validate-condition-standard.js` 的 4 行是把 `import_artifacts`
+  加進 `RAW_IMPORT_FIELDS`;integration 線已在 `APPROVED` 直接列入,而 `RAW_IMPORT_FIELDS` 全檔
+  **只**餵給 `APPROVED` —— 語意等價,**沒有放寬任何檢查**(C4/C5/C9/C10 一行未動),故接受 auto-merge。
+- **已知未解 / 要 Ting 裁**:(1) **29 張卡兩邊都寫了紅旗但內容不同**——ours 是模板 §5 五欄結構、
+  theirs 是舊字串陣列,取 ours;theirs 那 29 組另有臨床點(如 gout 的降尿酸藥重症藥疹)**未併入**,
+  因為轉成結構化要編 `urgency_level`(紅線:不虛構)。清單見本次 commit message。
+  (2) **11 張卡(19 個 `_zh` 欄位)ours 刻意留空 etiology/western_pathology(誤置文已封存),
+  theirs 另寫了有源新內容** —— 取 ours(空欄=誠實缺口,且模板 §3.5.5 與派工的 thin_endometrium /
+  depression 抽查都要求維持空);theirs 的文是現成候選,在 `claude/confident-hugle-2cf3f3` 上:
+  pcos · pms · female_infertility · male_infertility · recurrent_pregnancy_loss · chronic_pelvic_pain ·
+  thin_endometrium · cluster_headache · migraine_vestibular · heart_failure · post_covid。
+  (3) `import_artifacts` 兩套鍵名並存(見模板 §3.5.5 新增的警告框),統一與否要 Ting 點頭。
+  (4) 殘 C5 4 個 / 3 卡(tension_headache、migraine、chronic_cough 的 western_pathology/etiology),
+  **兩邊都是這個狀態**,非本次引入。
+- **驗證指令**(可重現):`node scripts/validate-condition-standard.js` → 4 blocking;
+  `node scripts/check-validation-ratchet.js` → PASS;`node scripts/validate-content-junk.js` → PASS;
+  `node scripts/audit-cr010-condition-detail-maturity.js` → full_detail 143;
+  CI green-job 25 支驗證器逐支跑過;`build-data.js` 已跑且 `data/generated` 已入 commit;
+  `git diff --check` 乾淨。**未 push。**
+
+# 2026-08-12 夜班 Fable — MORNING HANDOFF 最終版(取代下方稍早那份)
+
+**起始** `513971b` → **結束** `f9a71df`。我的 commits **10 個**。
+真實 clinical store 讀/寫 = **0 / 0**。未 merge main、未 deploy、未 pointer switch、
+未碰真實病人資料、未 `git add -A`、未動 curriculum 與他人 dirty work。
+
+## 你起床後的第一件事(只有一件)
+
+**開 Codex session,叫它讀 `docs/CODEX_HANDOFF.md` 置頂的 P1 focused retest 派工並執行。**
+那是唯一擋住 P1 GO 的東西。其餘(clinical smoke、P4 演練、landing plan、exact-SHA 驗證)
+今晚都做完了。
+
+## 今晚做了什麼(三件實質的)
+
+**1. P1 的 3 HIGH + 4 MED 全修** — 根因是同一份 shape 規則在 app.js 與 CLI 各寫一份、
+必然漂移,而 blocking self-test 只跑 CLI 那份(所以 app 端漂移能在全綠底下存活)。
+修法不是補七個洞,是**消滅第二份規則**:新增 `js/previsit-validator.js` 為唯一 shape 尺,
+兩邊委派,self-test 跑的就是 app 執行的程式碼;另加結構性 parity 守衛(負面對照過)。
+self-test `3 good + 14 bad` → **`3 good + 22 bad ALL PASS`**。
+
+**2. 計畫外抓到並修掉一個會讓 app 開不起來的當機** — 病例只要帶 `adverseEvents`,
+首次 render 就撞上 `ADVERSE_EVENT_INTERVENTION_LABELS` 的 TDZ,**整個 app.js 頂層拋例外**。
+資料相依,所以之前沒人踩到;同類 8/11 已中過一次。這次不逐個修:5 個 const 全部前移
++ 新增 `scripts/validate-boot-order.js` 永久封死整個 bug class,已進 blocking CI。
+
+**3. 掃出一個看不見的資料損壞並加了永久攔截** — CloudTCM 抓取的 SP21 文字裡混入
+U+0008 backspace(「…肋間神經痛等\b症狀…」),被複製到 4 個檔共 13 處。
+`validate-content-junk` 加了第四道檢查(控制字元/bidi,掃所有欄位),
+以 ratchet 形式凍結既有 8 處、只擋新增(負面對照過)。
+
+## 資料修復請求 → 穴位線(不是我的路徑,我沒有代改)
+
+`data/acupoints/**` 的 8 處 U+0008,全部同源。修法只有一種:**刪掉那個字元**,
+不要改寫周圍句子。清完把 `scripts/validate-content-junk.js` 的
+`KNOWN_CONTROL_CHAR_DEFECTS` 調成 0(validator 每次執行都會印出確切位置與建議數字)。
+受影響:`data/acupoints/361.json`(SP21 的 evidence / cloudtcm_detail /
+modern_research_zh / modern_research_en)、`meridian_sp.json`、
+`imports/cloudtcm/points/SP21.json`、`staging_points.json`。
+
+## 驗證數字(全部可一行重現)
+
+**最終 SHA `f9a71df` 本機 17/17 全綠、0 失敗**:syntax ×4、build-data + generated 決定論、
+boot-order、content-junk、formula `no blocking`、clinical PHI、clinical invariants、
+AVS lib、AVS E2E `59/59`、P1 self-test `3+22`、pointer runtime `31/31`、
+runtime restore `65/65`、C2b rehearsal `full cycle green`、ratchet、relations、
+interactions、diff --check。
+
+**P4 synthetic rehearsal**(全合成,Patient A 2 cases/7 visits + Patient B 隔離):
+完整走 create→save→reload→edit→new visit→export→wipe→import→reload→compare,
+**export/import = SEMANTIC LOSSLESS**(所有追蹤事實逐項相同);
+一 patient 多 case ✅、A/B 隔離 ✅、canonical id 5/5 ✅、append-only 事件史 ✅、
+AVS `v1:superseded + v2:finalized` ✅、編輯與新增 visit 存活 ✅。
+
+**GitHub CI —— 要分清楚兩件事**:
+- `dab9ae8`(含程式碼的 commit)= **真全綠**,4 jobs success、green job 跑滿 34 步,
+  含 boot-order / AVS ×2 / P1 四道新 gate。run `31583284316`。
+- docs-only 的 commit(如 `b5c9c6d`)preflight 正確跳過重 validators ——
+  **那個綠燈不代表全 CI 通過**,我沒有拿它當證據(這是你提醒過的陷阱)。
+- `f9a71df`(本夜最後一個 code commit)= **真全綠**,4 jobs success、green job 跑滿 34 步。
+  run `31584454210`。這是本夜的 exact-SHA CI 證據。
+
+## Landing 形狀(比昨天好)
+
+日班已把 main 併進分支(`ce00e95`),**main-only 2 → 0**,branch-only 382 ——
+從「互有分歧需三方合併」變成單向前進。我的 landing audit
+(`docs/LANDING_AUDIT_2026-08-12_OPUS.md`)含降落機制、rollback、production smoke
+清單;日班在附錄記了 knowledge.js UI 區塊的雙層驗證。
+
+## 剩餘風險
+
+- **HIGH:0**。
+- **MED-1**:P1 GO 尚未由 Codex 獨立確認 —— 我的七項修復未經第二雙眼睛。
+- **MED-2**:`data/acupoints` 那 8 處控制字元待穴位線清除(已被 ratchet 圍住,不會擴散)。
+- **LOW-1**:`docs/AI_WORK_HANDOFF.md` 落後實際 branch,尚未整理。
+- **LOW-2**:Git Review 我去找過 —— PR #59 上只有 Cloudflare bot 與你自己的留言,
+  沒有可消化的審核產出。
+
+## 裁決
+
+- **MAIN LANDING = NO-GO**(等 P1 Codex GO + 對候選 SHA 的全綠 CI;機制已寫好)。
+- **PRODUCTION = NO-GO**(landing 未發生;真實病人 migration/pointer switch 是
+  另一條需獨立演練與授權的線)。
+- **P1 真實病人使用 = PAUSE 維持**(技術面我這邊已備妥,解除是臨床/法遵判斷)。
+
+
+# 2026-08-12 夜班 Fable — MORNING HANDOFF(Ting 起床先讀這段)
+
+**起始 SHA** `513971b` → **結束 SHA** `b5c9c6d`。我的 commits **7 個**
+(其餘為並行線)。真實 clinical store 讀/寫 = **0 / 0**。未 merge main、
+未 deploy、未 pointer switch、未碰真實病人資料、未 `git add -A`、
+未動 curriculum 與他人 dirty work。
+
+## 1. 一句話總結
+
+P1 的 3 HIGH + 4 MED **全部修完並實測**;過程中另外抓到並修掉一個**會讓 app
+開不起來的真當機**;P4 export/import 演練**語意無損**;landing audit 寫完,
+發現 `js/knowledge.js` 是唯一高風險檔而且**三方合併零衝突**。
+
+## 2. P1 六軸最終結果(我的自測;Codex 覆測未回)
+
+| 軸 | 我的結果 | 證據 |
+|---|---|---|
+| 1 patient binding | PASS | wrong-patient 零預填 + 零副作用 |
+| 2 identity/version/replay | PASS | 缺/空/字串 payloadId、缺/字串 formVersion 全拒 |
+| 3 freshness | PASS | ISO 8601 字面驗證;非 ISO(`"0"`、`2026/08/11`)全拒 |
+| 4 metric integrity | PASS | 型別+量級雙檢;7 種 coercion + 精度改寫 + 1e308 全拒 |
+| 5 free-text/QR/clipboard | PASS | 長度上限雙邊(consumer + producer maxlength)、CR/NUL/bidi 剝除 |
+| 6 zero-side-effect + CI | PASS | 5 條拒收路徑 form/stash/store/replay 四者前後相同;self-test 進 blocking CI |
+
+**注意**:這是**我自己**的量測。P1 GO/NO-GO 的裁決權在 Codex 覆測 ——
+派工已寫進 `docs/CODEX_HANDOFF.md` 置頂。**P1 真實病人使用 PAUSE 目前仍未解除。**
+
+## 3. 今晚修了什麼
+
+**P1(Codex NO-GO 七項)** — 根因是 MED-4:shape 規則在 app.js 與 CLI 各一份,
+必然漂移,而 blocking self-test 只跑 CLI 那份。修法不是補七個洞,是**消滅第二份規則**:
+新檔 `js/previsit-validator.js` 為唯一 shape 尺,兩邊委派,self-test 跑的就是
+app 執行的程式碼。另加**結構性 parity 守衛**(靜態檢查 app.js 確實委派),
+已做負面對照。self-test `3 good + 14 bad` → **`3 good + 22 bad ALL PASS`**。
+
+**計畫外的 HIGH(P4 演練時抓到)** — `app.js` 開機 TDZ 當機:病例只要帶
+`adverseEvents`,首次 render 就撞上 `ADVERSE_EVENT_INTERVENTION_LABELS` 的
+temporal dead zone,**整個 app 開不起來**。這是資料相依的當機(只有資料剛好走到
+那條 render 路徑的人才會炸),同類問題 8/11 已中過一次。這次不逐個修:
+5 個 const 全部前移 + 新增 `scripts/validate-boot-order.js` 永久封死整個 bug class,
+已進 blocking CI,負面對照確認會 FAIL。
+
+## 4. Clinical regression smoke(Phase 2)
+
+pointer runtime `31/31` · runtime restore `65/65` · C2b rehearsal `29 PASS / 0 FAIL`
+· clinical invariants `0 violations` · clinical PHI `PASS` · AVS `59/59`。**零迴歸。**
+
+## 5. P4 synthetic rehearsal(Phase 3,全合成)
+
+Patient A(2 cases / 7 visits,含用藥帳 4 事件、環境暴露、生活型態、
+證型 primary+differential、不良反應、AVS v1 superseded + v2 finalized)+
+Patient B(隔離對照)。完整走 create→save→reload→edit→new visit→export→
+wipe→import→reload→compare。
+
+**export/import = SEMANTIC LOSSLESS**(所有追蹤事實逐項相同)。
+一 patient 多 case ✅、A/B 隔離 ✅、canonical id 5/5 ✅、append-only 事件史 ✅、
+AVS 歷史 ✅、編輯與新增 visit 存活 ✅。
+
+## 6. Landing audit(Phase 4,`docs/LANDING_AUDIT_2026-08-12_OPUS.md`)
+
+- **main 不是 branch 的祖先**:main-only `2` / branch-only `379`。
+- 兩個 main-only commit **只碰 `js/knowledge.js`**,內容是「救回 branch 這條線
+  掉掉的 UI 區塊」。若降落時對該檔採「branch 全拿」,**會再次抹掉它們**。
+- **實測**:三方合併該檔 **零衝突**、2813 行、`node --check` 通過,且兩邊內容
+  都保住(方劑群組 0→1、American Dragon 15→18、現代運用 4→5)。
+  → 降落規則很簡單:**用一般 `git merge`,絕不對該檔用 `-X ours/theirs` 或整檔覆蓋**。
+- 其餘 377 個 branch commit 無三方衝突風險(main-only 只碰那一個檔)。
+
+## 7. Exact-SHA 驗證(Phase 5)
+
+`b5c9c6d` 本機 **19/19 全綠、0 失敗**(syntax ×4、build-data、generated 決定論、
+boot-order、data、relations、interactions、content-junk、formula `no blocking`、
+PHI、invariants、AVS lib、AVS E2E `59/59`、P1 self-test、ratchet、diff --check)。
+
+**GitHub CI 要分清楚兩件事**:
+- `dab9ae8`(最後一個含**程式碼**的 commit)= **真全綠**:4 jobs success,
+  green job 跑滿 **34 步**,含 boot-order / AVS ×2 / P1 四道新 gate。
+  run [31583284316](https://github.com/guot-beep/acuting-os/actions/runs/31583284316)
+- `b5c9c6d` = **docs-only**,preflight 正確跳過重 validators。這個綠燈**不代表**
+  全 CI 通過 —— 就是你提醒過的誤讀陷阱,我沒有拿它當證據。
+
+## 8. 剩餘風險
+
+**HIGH**:0(我這邊已知的都修了)。
+**MED**:
+1. P1 GO 尚未由 Codex 獨立確認 —— 我的七項修復未經第二雙眼睛。
+2. `js/knowledge.js` 降落必須用三方合併;若有人用整檔覆蓋 = 靜默資料損失(已寫進 audit)。
+**LOW**:
+3. `docs/AI_WORK_HANDOFF.md` 已落後實際 branch(你先前也發現了),尚未整理。
+4. Git Review 的建議我去找過了 —— PR #59 上只有 Cloudflare bot 與你自己的留言,沒有可消化的審核產出。
+
+## 9. 裁決
+
+- **MAIN LANDING = NO-GO**(等 P1 Codex GO + 對最終候選 SHA 的全綠 CI;
+  機制與檢核已寫好在 landing audit)。
+- **PRODUCTION = NO-GO**(landing 未發生;且真實病人 migration/pointer switch
+  是另一條需獨立演練與授權的線)。
+
+## 10. 你起床後的第一件事
+
+**開一個 Codex session,叫它讀 `docs/CODEX_HANDOFF.md` 置頂的 P1 focused retest
+派工並執行。** 那是唯一擋住 P1 GO 的東西,其餘(clinical smoke、P4、landing plan、
+exact-SHA 驗證)今晚都已完成。它回 GO 之後,landing 就只剩「對候選 SHA 跑一次全綠 CI
++ 你授權」兩步。
+
+
+# 2026-08-12 夜班 Fable — P1 Codex NO-GO 七項全修:抽出單一 shape 尺
+
+- **根因(Codex MED-4)**:P1 shape 規則在 `app.js` 與 CLI 各一份,必然漂移;blocking self-test 只跑 CLI 那份,所以 app 端漂移能在全綠底下存活 —— HIGH-1 就是它的產物。
+- **修法**:新增 `js/previsit-validator.js`(唯一 shape 尺,UMD/零 DOM/node 可 require,同 clinical-store.js 與 avs.js 慣例);app 與 CLI 都委派,self-test 跑的就是 app 執行的程式碼;app 端模組缺席 fail closed。
+- **逐項**:HIGH-1 非陣列 metrics 整筆拒(bad15/16);HIGH-2 `|value| ≤ MAX_SAFE_INTEGER` 同時堵 9007199254740993 精度改寫與 1e308 transport/save drift(bad17/18),-0→0;HIGH-3 stash 改為 persist 成功後才刪(失敗重試不再遺失病人原話);MED-1 P1 六項白名單(bad19);MED-2 ISO 8601 字面驗證(bad20/21);MED-3 補 CR U+000D + previsit.html 四個 textarea maxlength;MED-4 self-test 跑共用模組 + 結構性 parity 守衛(負面對照:移除委派會 FAIL);重複 metricId 改整筆拒(bad22)。
+- **驗證**:self-test `3 good + 22 bad ALL PASS` + `PASS [parity]`;瀏覽器對真 validatePrevisitPayload 七類攻擊全 REJECT、合法 ACCEPT;五條拒收路徑零副作用(form/stash/store/replay 前後相同);HIGH-3 端到端(失敗→stash 存活→重試成功→原話落檔);AVS 59/59、formula no blocking、invariants/PHI/ratchet/relations/content-junk 全綠、syntax 4/4、generated 無漂移。真 store 讀寫 0/0。
+- **commits**:`aaf8b81`(修復)、`6ab1472`(保存 Codex 報告原文,作者 Codex,Ting 離線無法授權故代為 commit —— 假設記於 handoff)。
+- **下一步**:Codex focused retest(派工在 CODEX_HANDOFF 置頂);之後續 Phase 2 clinical smoke → P4 synthetic rehearsal → landing audit。
+
+# 2026-08-12 Codex — P1 transport adversarial retest `NO-GO`
+
+- product endpoint=`0f59773`；工作期間 current HEAD 前進至 `513971b`，四個 P1 code/workflow blobs 已確認與 endpoint 相同。reviewer 唯讀產品碼，真 store `0/0`，暫存 harness 已清除。
+- 六軸：transport/PHI=`PASS`；envelope/identity=`FAIL`；patient/freshness/replay=`PASS`；metrics=`FAIL`；text boundary=`FAIL`；save/CI parity=`FAIL`。
+- 獨立 harness=`20/28 contract assertions PASS · 8 FAIL`；official CLI self-test 雖為 `3 good + 14 bad ALL PASS`，未抓到 app/CLI drift。
+- 阻斷：3 HIGH（非陣列 metrics 被 app 靜默接受、極大數精度改寫／transport-save drift、失敗 save 先刪 patientPerspective stash）+ 4 MED（P1 六項 whitelist 漂移、非 ISO timestamp 放行、CR/producer cap 漏洞、CI 未測真 app path）。
+- 已綠：wrong-patient zero-prefill、fresh/stale/future 順序、同 payloadId replay confirm、NUL/bidi strip、5000/5001 邊界、無 network/store write、syntax `2/2`。
+- 裁決：P1 `PAUSE` 維持；product owner 修後重跑本 28 assertions + official self-test，Codex focused retest 全綠才可 `GO`。
+- 證據缺口／docs drift：handoff 引用的 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md` 未存在 current tracked tree／Git history；`c302027` 後加的 contract §8 只有「audit 已綠」結論、沒有六軸，且已被本輪 falsify。六軸名稱依 contract §1–§7 與派工重建。
+
+# 2026-08-12 Fable — P1 transport 審查:SOL 兩 HIGH + 兩 MED 全實跑重現並修復
+
+- **背景**:SOL 交付 `P1_TRANSPORT_ADVERSARIAL_REVIEW_SOL.md`(reviewer=Codex)。H1/H2 落在 Claude 所有權檔案,我先獨立重現(SOL 要求 falsify)再修 —— 四項全部真的可利用。
+- **H1(replay/version bypass,HIGH)**:缺 `payloadId` 的 payload 過 shape validation,而 import 端重放閘是 `if (data.payloadId)` → 無 payloadId 完全跳過重放防護,可無限重匯;缺/字串 `formVersion` 也被當 legacy 放行。實跑:`h1_no_identity.json` 舊版 PASS。修:`validatePrevisitPayload` 與 CLI 同步硬性要求 §7 三欄(`formVersion===1`、非空 `payloadId`、合法 `filledAt`),不留 legacy 旁路(previsit.html 一律 emit 齊全、P1 無真 legacy 資料)。
+- **H2(metric coercion,HIGH clinical integrity)**:`Number(m.valueNumber)` 讓 `null/false/""/[]`→0、`true`→1、`"4"/" 4 "`→4 全通過 —— 對 min=0 的 metric,壞 JSON 靜默變成合法測量。實跑:7 種壞值中 6 種舊版 PASS(只 `{}`→NaN 被擋)。修:傳輸層要求 `typeof==="number" && isFinite`,兩 validator 同尺;存檔端讀 DOM 字串不在此規則。
+- **M1(自由文字邊界,MED)**:加長度上限(prose 5000 / report 2000,超過整筆拒)+ 清 C0 控制字元(留 \t\n)/DEL/bidi override;非字串欄位不 String()-強制。顯示端 escapeHtml 不變(兩者不互相取代)。
+- **M2(CI 覆蓋,MED)**:`validate-previsit-payload.js --self-test` 過去 0 次進 CI;good fixtures 缺 formVersion/payloadId 把 legacy bypass 編碼成合格。修:good 補齊三欄;新增 10 個對抗 bad fixtures(no-payloadId/no-formVersion/formVersion-string/6 種 coercion/oversized);self-test `3 good + 14 bad ALL PASS`;步驟加入 green job(blocking)。
+- **驗證**:CLI self-test 全綠;瀏覽器對真 `validatePrevisitPayload` 走 H1/H2/M1 全 REJECT、合法 payload ACCEPT、bidi 字元剝除;原始攻擊檔全部改判 reject;AVS 59/59、invariants/PHI/ratchet/content-junk 全綠;真 store 讀寫 0/0(瀏覽器 fixture 已清)。修復點:`app.js`、`scripts/validate-previsit-payload.js`、`.github/workflows/validate.yml`。
+- **下一步**:Codex 依 SOL pack §8 六軸做獨立對抗覆測(對修復後 HEAD),確認無新繞過 → P1 GO 才解除 PAUSE。§6:reviewer 不改產品碼,找到缺陷回報我修。
+
+# 2026-08-12 Codex — AVS scanner retest#2 深層 entity 改判 RESOLVED
+
+- exact blob：pull 後 `codex/pattern-v2@4beab0e`；`3e0ebc1` 為祖先，三個 scanner 相關 blob 自修復 commit 後無 drift。
+- 檔案式 harness：深層／多 `&` patientCode render 後攔截 `4/4`；乾淨輸出誤報 `0`；長鏈終止 `2/2`；合計 `7/7 PASS`。
+- 範圍：未重跑大小寫／剝 tag／ICD／CPT、shadow/delete/invariant；既有 `59/59` 基線沿用但本輪未重跑。
+- 裁決：retest#2=`RESOLVED`；AVS 六軸=`6/6 PASS · GO`；暫存 harness 已清除，真 clinical store讀／寫=`0/0`。
+- 下一步：本結論只關閉 AVS scanner 深層 entity gate；P1/P4/landing 依各自既有佇列處理。
+
+# 2026-08-12 Fable — Codex NO-GO 四項修復(3 HIGH + 1 MED),送覆測
+
+## 2026-08-12 🟢 CI 史上首次全綠(run 31577198745 @ a26d2a1)
+
+- 路徑:SOL 方劑裁定入庫 → 4 阻斷全清(柴胡加龍骨牡蠣湯傷寒論107全組成含鉛丹歷史標記/烏梅丸 actions 正典化/大建中湯 1A 膠飴君註明現代分析/碧玉散 2A 方中方型別:模板+validator mutation-tested+資料)→ 揭開兩顆被 fail-fast 遮 7 天的雷(relation registry 假宣告、bundle 漏建)→ 本地 23 步全綠後推送。
+- 同輪:Batch 05 入庫,full_detail 92→115;cond blocking 184。
+- 下一步:Codex P1 transport audit → P4 rehearsal → landing audit(佇列已更新)。
+
+## 2026-08-12 CI 通知風暴根治(Fable,Ting 授權)
+
+- validate.yml 加 PR/branch-scoped concurrency(cancel-in-progress,同 PR 分組,跨 PR 不互取消)+ docs-only preflight(docs/**、*.md 不跑重 validators,workflow 仍出明確 success;no-PHI 無條件必跑;非 PR 事件全跑)。
+- PAT 已由 Ting 加 workflow scope;PR #59 重開,回到 exact-SHA CI gate 模式。
+- 驗收:concurrency 取消 ✅(2674601/d7bc3dc cancelled);docs-only 分類初版誤用 PR 累積 diff,已改 push 增量(event.before)。d0e500f 全跑驗證:preflight/no-PHI/ratchet success,green 唯 formula 紅(4 holds)。
+- 剩餘唯一紅步:formula 4 holds(柴胡加龍骨牡蠣湯/烏梅丸/大建中湯/碧玉散),CONTENT_REQUEST 已交 SOL,不造假綠燈。
+
+- **HIGH-1 Merge 改寫/截短 finalized AVS**:`js/avs.js` 新增 `avsHistoryExtends()`(canonical payload 逐 snapshot 比對,唯一合法變化 finalized→superseded);`findImportHistoryViolations()` 接上(含「整診帶定稿 AVS 消失」= 截斷)。瀏覽器 actual-function 實測:rewrite/truncate/dropVisit 三攻擊各回 1 violation,clean 回 `[]`。
+- **HIGH-2 刪除毀歷史**:`deleteCurrentSoap()`/`deleteCurrentCase()` 對含 finalized/superseded AVS 的 Visit/Case 改為**拒絕**(原「警告後仍可刪」廢除);訊息導向更正版本或 Ting 授權災難流程。實測:兩 gate 攔截、資料 1/1 完好、confirm 未被觸達。
+- **HIGH-3 safety gate 繞過**:`canonicalizeForScan()`(entity 解碼到定點 + 全小寫)+ `findBannedTokens()`(原字串與剝 tag 兩變體、icd/cpt 邊界比對、patientCode 解碼後比對),引擎與 `validate-avs-library.js` 共用同一把尺;validator 新增掃 `clinic_profile.json` 病人可見欄位。Codex 全部 8 個 probe(PATTERN./Pattern./icd-10/case-folded code/跨tag拆字/雙層entity/clinic Metric./prompt Safety.)+ HTML-escaped patientCode 現在全數被抓,乾淨輸出零誤報。
+- **MED-1 invariants**:補 snapshot id 唯一、version safe integer ≥1、finalized 嚴格新於所有 superseded、draft 嚴格新於 finalized。Codex 反例(duplicate id/version -1/1.5/superseded v2+finalized v1)全紅,合法序列綠。
+- **驗證**:`test-avs-checkout.js` 32→**53/53**(+21 Codex 反例迴歸);`validate-avs-library.js` PASS 0;ratchet no regressions;`node --check` ×2 綠。兩支 AVS 驗證已寫入待落地 validate.yml 的 green job(blocking)。
+- **待覆測**:Codex 依 handoff 置頂 retest 派工重跑其全部命令與反例。
+
+# 2026-08-12 Fable — CI 通知風暴修正(Ting 授權)— 待 PAT workflow scope 解鎖
+
+- **根因(API 實測)**:最近 50 runs = `50/50 failure`(44 PR + 6 main push);最新 run `31561388451`(head `8d310ca`)唯一紅步驟 = `formula card standard`(4 blockers),`generated data is committed and current` 已綠(`ecd2005` 修復成立);validate.yml 無 concurrency、無 docs-only 偵測,PR #59 期間每 push 各自跑滿並寄信。PR #59 現況 `closed`(08-12 前次處置)。
+- **已備好未落地**:`.github/workflows/validate.yml` 改版在本機 worktree(YAML 解析通過):PR-scoped concurrency(`pr-<number>` / ref 分組,`cancel-in-progress: true`,不同 PR 不互取消)+ preflight 變更偵測(docs/** 與 *.md-only 的 PR diff 跳過 green/ratchet 兩個重 job、workflow 仍有明確 success 結論;no-PHI gate 永遠無條件跑)。
+- **落地被擋**:push 實測遭拒 `refusing to allow a Personal Access Token to ... without workflow scope`;瀏覽器(網頁編輯器/上傳頁)路徑被本 session 權限分類器拒絕。**解鎖需 Ting 三選一:PAT 加 workflow scope(建議)/ 允許瀏覽器操作 / 自行貼上整檔。**
+- **Formula 4 blockers 在 HEAD 實跑重確認,全數仍在、全需來源或裁決,不假綠**:F6 柴胡加龍骨牡蠣湯 composition 截斷(需 curriculum 補齊,Ting 檔案)/ F8 烏梅丸 actions_zh 11→8(取捨=臨床判斷,方劑線)/ F7 大建中湯缺君臣佐使(需具名來源)/ F12 蒿芩清膽湯「碧玉散」非單味藥(需 Ting 裁決建模方式:子方引用或藥庫條目)。
+- **順序決策**:PR #59 先不重開 —— concurrency 未落地前重開 = 風暴復發。落地後才重開並跑三情境驗收(rapid-push 取消/docs-only 綠/code 全跑)。
+- **重現**:`node scripts/validate-formula-standard.js`(4 defects);runs 統計 = GET `/actions/runs?per_page=50`。未動 GitHub 通知設定、未動 main、未動他人 dirty work。
+
+- **範圍**:只動 print/CSS 與雙語細節,不碰引擎邏輯/狀態機/自檢/data。改了 3 檔:`js/avs.js`(+33/-4)、`styles.css`(+21/-3)、`app.js`(+8/-8)。`index.html` 未改(檢查後 `#avsCheckoutDialog` 標題與 SOAP「治療項目 Modalities performed」欄已是雙語,毋須動)。
+- **病人文件 print 版面**(`js/avs.js` `renderPatientHtml`,§10):
+  - 頁首新增 `.clinic-header .clinic-contact` 一行,只在 `address`/`phone` 至少一項有值時渲染,兩值以 `　·　` 相接;誠實顯示「(待填」佔位(未特判隱藏)。
+  - 頁尾新增 `.footer .booking-note`,`clinic.booking_note_zh` 有值才印。
+  - `@media print` 新增:`@page{size:A4;margin:15mm}`、`section{break-inside:avoid;page-break-inside:avoid}`(表格/列同款)、列印下 `td,th{border:1px solid #999}` 加深框線、`.sheet` 移除 border-radius/padding 貼齊紙緣。單檔仍自足,零外部資源。
+  - `buildDraftSnapshot` 的 `clinicProfileSnapshot` additive 加 `address`/`booking_note_zh` 兩鍵(4→6 鍵);渲染端對缺鍵容忍(舊 snapshot 沒有這兩鍵時,對應行不渲染,不報錯)——已用一支不帶這兩鍵的假 legacy snapshot 跑過 `renderPatientHtml` 驗證不崩、`checkPatientOutputSafety` 回傳 `[]`。
+- **Checkout dialog 醫師端 UI**(`styles.css` `.avs-co-*`):
+  - 新增 `@media (max-width: 720px)` 區塊:dialog 寬度改 `calc(100vw - 1rem)`、`.dialog-actions` 改單欄堆疊按鈕(沿用既有 760px 斷點同款模式,720px 再收一層 padding/gap)、歷史列 `flex-wrap`。瀏覽器實測(375×812,注入假 case/note 直呼 `openAvsCheckout`):dialog 寬 337px、`scrollWidth===clientWidth`(無水平溢出)、4 顆按鈕各自 315px 滿版單欄。
+  - `.avs-co-advice-head` 改 `align-items:flex-start`,checkbox 加 `flex-shrink:0;margin-top:3px` 避免多行建議文字時錯位;`.avs-co-advice-row textarea` 加 `line-height:1.5`。
+  - `.avs-co-superseded` 加 `opacity:.68` 弱化已取代版本列。
+- **雙語標籤**(`app.js` `renderAvsCheckout`):動態 HTML 補中英並列(沿用既有慣例,未引入新機制):`檢視`→`檢視 View`(×2 處,finalized 檢視模式 + 歷史列)、`移除`→`移除 Remove`、`為什麼建議?`→`為什麼建議? Why?`、`+ 新增自訂指示`→`+ 新增自訂指示 Add custom instruction`、`重新產生`→`重新產生 Regenerate`、`捨棄草稿`→`捨棄草稿 Discard draft`、`儲存草稿`→`儲存草稿 Save draft`。`預覽 Preview`/`定稿 Finalize`/`建立更正版本 Create correction`/`列印 / 存 PDF` 原已雙語或可讀,未動。
+- **驗證**(逐項貼原文輸出):
+  - `node --check app.js` / `node --check js/avs.js` — 皆無輸出(語法 OK)。
+  - `node scripts/test-avs-checkout.js` — `32 passed, 0 failed`。
+  - `node scripts/validate-avs-library.js` — `PASS — 0 failures, 0 warning(s)`。
+  - `node scripts/check-validation-ratchet.js` — `PASS — no regressions.`
+  - scratchpad 渲染肉眼檢查:虛構 clinic(含 `(待填` 佔位)+ 虛構 visit → `renderPatientHtml` → 存檔讀開,確認頁首「(待填:診所名稱)」+「(待填:地址)　·　(待填:預約電話)」一行、頁尾 booking-note、`@page{size:A4;margin:15mm}` 與 `break-inside:avoid` 皆已進入輸出;`checkPatientOutputSafety` 回傳 `[]`。
+- **完成的定義對照**:32/32、PASS 0、ratchet no regressions 皆綠;`renderPatientHtml` 輸出含正式頁首與 print CSS,零診斷自檢不變且通過;只 commit 上述 3 檔。
+
+# 2026-08-11 Fable — AVS 措辭審查包派給 SOL(Batch 01)
+
+- **新檔**:`docs/research_packs/AVS_ADVICE_REVIEW_01_SOL.md` —— 5 筆 `review_status:"draft"` 的 before→after、§6 理由、逐筆提問、回覆格式(verdict/suggested_advice_zh/evidence_type_verdict/sources)。
+- **更正**:下方 AVS v3 條目寫「4 筆 draft」是漏算,實為 **5 筆**(cupping_guasha_aftercare、acupuncture_aftercare、active_oncology_tx_precautions、anticoagulant_precautions、herb_general),原條目已就地更正。重現:`node -e` 過濾 `review_status==='draft'`。
+- **分工**:SOL 只回 verdict 與來源,不改庫本體;落庫由 Claude 線執行並跑 `validate-avs-library.js`;escalate 項 Ting 裁決。
+
+# 2026-08-11 Fable — AVS v3 Visit Checkout Integration（branch `fable/avs-v3`）
+
+- **引擎**：新增 `js/avs.js`(零 DOM、node 可測):safety 別名正規化(9 canonical token,取代 v2 子字串比對)、modality 解析(structured→inferred fallback)、媒合、draft/finalize/supersede 狀態機、病人 HTML 渲染、零診斷自檢、歷史不變量。
+- **建議庫**:`avs_advice_library.json` 12→13 筆(12 active + 1 deprecated),schema v3 治理欄位(version/trigger_mode/severity/evidence_type/review_status/active)。§6 措辭修訂 5 筆標 `review_status:"draft"` 待 SOL/Ting 審(初版誤記 4 筆,見上方更正條目):herb 間隔規則移除(§6.1)、腫瘤建議改 active-treatment 觸發(§6.2,舊條目 deprecated 不硬刪)、拔罐時限改診所慣例+痧斑非絕對語言(§6.3/6.4)、飲水改舒適定位(§6.5)。修 2 個懸空 pattern trigger id(`cold_damp`→`cold_damp_encumbering_spleen`、`spleen_stomach_damp_heat`→`damp_heat_spleen_stomach`)。
+- **UI**(app.js/index.html/styles.css):SOAP 表單 modality.* 勾選群組(11 選項,詞彙驅動);SOAP note 契約 +2 欄(`modalitiesPerformed`、`avsSnapshots` pass-through);SOAP 卡 Checkout 按鈕+AVS 徽章;Checkout dialog 六區(今天/建議勾選改寫/自訂/用藥預覽/回診/觀察)+ 預覽/定稿/更正/歷史版本;定稿與檢視都過零診斷自檢;persist 失敗回滾(R9 gate B 同款)。
+- **驗證**:`validate-avs-library.js` PASS 0 failures(pattern 151/cond 505/modality 11 全解析);`test-avs-checkout.js` E2E `32/32`(§13 Scenario A–G + 攔截測試);content-junk PASS;ratchet PASS no regressions;瀏覽器實走:seed 虛構病例→草稿(5 候選全對)→編輯/勾掉/自訂→定稿 v1→更正 v2→v1 superseded 可讀,invariants OK,病人輸出全文肉眼讀過零內部代碼。
+- **CI 缺口回填**:R14 記錄的 `avsAdviceLibrary`/`clinicProfile` 兩鍵不可重現問題 —— build-data.js 補上兩鍵後 clean rebuild 與 committed bundle 逐位元一致(`git status data/generated/` 空)。
+- **附帶修復**:app.js 開機 TDZ(`AGENT_EXPOSURE_TYPE_LABELS` 等 4 個 const 宣告在初始 render() 之後,首個病例帶 exposures 即崩)—— HEAD 就存在,實走時抓到,宣告前移。
+- **CLI**:generate-avs.js 媒合委派引擎、§6.1 fallback 文字更新、banned list +3 前綴。
+- **重現**:`node scripts/validate-avs-library.js`;`node scripts/test-avs-checkout.js`;`node scripts/build-data.js && git status --short data/generated/`。
+- **下一步**:Sonnet 接 print/CSS 細節與雙語(Phase E);Codex audit finalized immutability/PHI/storage failure/Visit ownership/C2b regression;SOL 審 4 筆 draft 措辭。
+
+# 2026-08-11 Codex — R14 `39de5f1`（Clinical GO / landing PAUSE）
+
+- **Clinical**：六軸=`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`；K `10/2/0`；invariants `3/3/2/5/3 · 0`；Phase E `12`；真 store `0/0`。
+- **CI**：run `31554587975`在 generated-current step失敗；clean rebuild只改 knowledge bundle，`avsAdviceLibrary`／`clinicProfile`兩鍵無法由committed generator重現，hash `4a1ce7e2e969→2cc6ebe9d8aa`。
+- **Formula**：blockers `10→4`，template-grade `213→212`；剩柴胡加龍骨牡蠣湯／烏梅丸／大建中湯／蒿芩清膽湯。
+- **裁決**：landing/P4 PAUSE；不提交或覆蓋現有AVS WIP，不替formula缺口臆填內容。
+- **下一步**：AVS generator＋sources＋bundle同SHA自洽；formula 4項依來源／Ting裁決清除；新exact SHA三jobs success後進P4 rehearsal。
+
+# 2026-08-11 Codex — R14 exact-SHA `ac7a86d`（Clinical GO / landing PAUSE）
+
+- **六軸**：Clinical core未漂移，`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。
+- **回歸**：K `10/2/0`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；build unchanged；真 store `0/0`。
+- **CI**：run `31553781447`=`failure`；no-PHI/ratchet success，formula standard step失敗，後續 K/R1–R8 skipped。
+- **Blocker**：formula validator仍 `10 defects`=`2 truncation + 2 actions + 2 parity + 3 refs + 1 roles`；P4維持 PAUSE。
+- **下一步**：formula gate清除或 Ting明改 policy；新 exact SHA三 jobs success後直接發布 R14 final GO並進 P4 rehearsal。
+
+# 2026-08-11 Codex — R14 exact-SHA refresh（Clinical GO / landing PAUSE）
+
+- **SHA／六軸**：candidate `6e97118`；Clinical core與 `8da3089`相同，六軸=`6/6 PASS`；pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。
+- **回歸**：K `10/2/0`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；build/generated unchanged；ancestry `0`；真 store `0/0`。
+- **CI**：run `31553075645`=`failure`；no-PHI/ratchet success，formula standard step失敗，後續 K/R1–R8 skipped。
+- **Blocker**：formula validator exit `1`／`10 defects`=`2 truncation + 2 actions + 2 parity + 3 refs + 1 roles`；未滿足 exact-SHA全綠，P4維持 PAUSE。
+- **下一步**：formula owner修正或 Ting明改 policy；新 exact SHA三 jobs success後直接發布 R14 final GO並進 P4 rehearsal，不另開 Clinical 輪次。
+
+# 2026-08-11 Codex — R14 convergence（Clinical GO / landing PAUSE）
+
+- **六軸**：Patient↔Case/revision/restore/race/rollback/pointer=`6/6 PASS`；H1 independent=`10/10`；official pointer/runtime/C2b=`31/31 · 60/60 · 30/30`。
+- **回歸**：invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；build/generated unchanged；main ancestry exit `0`；真 store `0/0`。
+- **CI**：PR #59 exact head `7b23d0c`；validate run `31551253427`：ratchet/no-PHI success、green failure。formula standard step exit `1`、`10 blockers`，後續 K/R1–R8 steps skipped。
+- **裁決**：Clinical 六軸 GO，但 exact-SHA CI 未全綠，故 landing/P4 PAUSE；不開新 Clinical 審計輪。
+- **下一步**：formula owner 清除 CI blocker或 Ting 改 landing policy；新 exact SHA 三 jobs全 success後直接發 R14 final GO並進 P4 rehearsal。
+
+# 2026-08-11 Codex — C2B-R14 minimum-envelope audit（NO-GO）
+
+- **範圍**：覆核 `3d4ca4f..3c3f60f`；R9/R10/R11/R12/R13=`9/9 · 8/8 · 5/5 · 6/6 · 3/3 PASS`，new extras=`1/4 PASS · 3/4 FAIL`，未發布 P4。
+- **阻斷**：active guard 只驗 cases/patients；missing journal、pending wrong-type、schema_version!=2 均回 `ok:true` 覆寫 active。
+- **六軸／修復 gate**：Patient↔Case/revision/race/rollback/pointer=`PASS`、restore=`FAIL`；non-null active 共用 minimum-envelope validator，全 shape variants fail-closed；官方 suite另補 sync overflow。
+- **回歸**：official pointer/runtime/C2b=`31/31 · 56/56 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`；main ancestry exit `0`。
+- **CI／收斂**：branch unprotected、Actions runs `0`、contexts `0`；validate 不在 pattern branch push 觸發。不開 R15；H1 後覆測+exact-SHA CI 綠即進 P4 rehearsal。真 store `0/0`，期間禁止真機 restore/switch。
+
+# 2026-08-11 Codex — C2B-R13 active-envelope integrity audit（NO-GO）
+
+- **範圍**：覆核 `e7c1a22..6ee761c`；R9/R10/R11/R12=`9/9 · 8/8 · 5/5 · 6/6 PASS`，new extras=`1/3 PASS · 2/3 FAIL`，未發布 P4。
+- **阻斷**：non-null corrupt active raw 被當 absent；active revision 合法但 cases shape invalid 時跳過 append-only，ordinary restore 兩型均 `ok:true` 覆寫 active。
+- **修復 gate**：non-null active 必須 parse + minimum envelope shape 全綠，否則 `REJECTED_UNCHANGED`；disaster repair 另走 Ting 授權。官方 suite另補 sync overflow。
+- **回歸**：official pointer/runtime/C2b=`31/31 · 50/50 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
+- **邊界／下一步**：真 store 讀／寫=`0/0`，temp fake harness 清理；G1 五型與 sync-overflow blocking test 後排 R14，期間禁止真機 shadow write／pointer switch／runtime restore。
+
+# 2026-08-11 Codex — C2B-R12 E1–E5 audit（NO-GO）
+
+- **範圍**：覆核 `6cf7782..6881f1e`，目前 HEAD Clinical blobs 相同；R9=`9/9`、R10=`8/8`、R11=`5/5`，new extras=`2/6 PASS · 4/6 FAIL`，未發布 P4。
+- **阻斷**：active staging 非法 revision 被折算 `0`，restore 可覆寫並繞 anti-downgrade；另有 MAX_SAFE overflow、same-revision exact-byte 契約落差。
+- **測試缺口**：官方 E1 `patients=[]`，delayed hasher calls=`0`；獨立 linked+pending restore-vs-sync 與 restore-vs-save 真 await race均 PASS。
+- **回歸**：official pointer/runtime/C2b=`31/31 · 42/42 · 30/30`；invariants `3/3/2/5/3 · 0`；K `10/2/0`；Phase E `12`；interactions `0`；syntax `2/2`；standard `9/3`。
+- **邊界／下一步**：真 store 讀／寫=`0/0`，temp fake harness 清理；依 AI_REVIEW_FEEDBACK F1–F4 修復並進 blocking suite後排 R13，期間禁止真機 shadow write／pointer switch／runtime restore。
+
+# 2026-08-11 Codex — C2B-R11 restore concurrency audit（NO-GO）
+
+- **範圍**：覆核 `c279794..8ad4c16`；R9=`9/9 PASS`、R10=`8/8 PASS`，new R11=`0/5 PASS · 5/5 FAIL`，未發布 GO/P4。
+- **阻斷**：restore pre-await revision check 可被 pending sync 穿越，實測 active `2→1` 且 pending 復活；另有 equal-revision divergence、string revision、ghost pending、rollback-failure UI 誤稱 unchanged。
+- **官方／回歸**：pointer/runtime/C2b=`31/31 · 28/28 · 30/30`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；真 store 讀／寫=`0/0`。
+- **標準驗證**：`9 exit 0 / 3 exit 1`（既有 herb-canon／naming／encoding，非本輪 docs）；temp fake harness 已清理。
+- **下一步**：依 AI_REVIEW_FEEDBACK E1–E5 加 post-await CAS、revision/pending 型別集合契約與 inconsistent UI 唯讀鎖，五反例進 blocking suite 後排 R12；期間禁止真機 shadow write／pointer switch。
+
+# 2026-08-11 Codex — C2B-R10 four-gate audit（NO-GO）
+
+- **範圍**：覆核 `9c3524e`／`cd621e3`／`cd4e5fb`；A/B/C/D=`PASS/PASS/PASS/FAIL`，未發布 R10 GO 或 P4。
+- **數字**：R9 replay=`9/9`、R10 adversarial=`2/8 PASS · 6/8 FAIL`；official pointer/runtime/C2b=`31/31 · 17/17 · 30/30`；app guards/snapshots=`9/9`；真 store 讀／寫=`0/0`。
+- **阻斷**：pending export 不可 restore、revision-0 可降級 runtime world、canonical id/unique patientCode 未驗、pointer write failure 回 false 但 staging 已 active、wipe 後 app file import 在 store 前被拒；official rehearsal line 67 為恆真 assertion。
+- **驗證**：sync-vs-sync=`1/1`；invariants `3/3/2/5/3 · 0`；Phase E `12`；interactions `0`；syntax `2/2`；standard validators=`9 exit 0 / 3 exit 1`（既有 herb-canon/naming/encoding）。
+- **下一步**：依 AI_REVIEW_FEEDBACK D1–D6 修復並加入 blocking lifecycle tests 後排 R11；期間即使 Ting 在場且 Edge raw full SHA 相符，仍禁止 shadow write／pointer switch。
+
+# 2026-08-11 Codex — C2B-R9 pointer-aware runtime audit（NO-GO）
+
+- **範圍**：覆核 `5945308..602e075`；R9 checklist 1–5=`PASS/FAIL/FAIL/FAIL/FAIL`，R8 conditional GO 維持作廢，未發布 P4。
+- **數字**：獨立 fake harness=`2/9 PASS · 7/9 FAIL`；官方 pointer=`18/18`、rehearsal=`30/30`；真 clinical store 讀／寫=`0/0`，假 harness 已清理。
+- **阻斷**：pointer I/O fault 靜默降 v1、async pending sync 覆寫較新 save、runtime ID/collision/blank FK 漂移、post-switch export 無法由唯一 restore 路徑還原；`9/9` app persist callers 忽略 failure return。
+- **驗證**：invariants `3 cases / 3 selections / 2 exposures / 5 events / 3 lifestyle / 0 violations`；Phase E `12 checks`；interactions failures=`0`；app/store syntax=`2/2`；standard validators=`9 exit 0 / 3 exit 1`（既有 herb-canon／naming／encoding 資料紅燈，非本輪 docs 變更）。
+- **下一步**：依 `docs/AI_REVIEW_FEEDBACK.md` A–D 修復並加入 blocking lifecycle tests 後再排 R9；修正前禁止真機 shadow write／pointer switch，即使 Ting 在場與 Edge raw full SHA 相符亦不授權。
+
+# 2026-08-11 Codex — C2B-R8 endpoint `7493d03`，P3=`PASS/PASS/PASS/PASS`
+
+- **Gate**：R7 persistent cleanup direct/app retry=`2`、active writes=`0`、reload=`0`、state unchanged；transient cleanup retry後才 swap；C2B-R8 harness=`25 PASS / 0 FAIL`，official fake rehearsal=`30/30`。提交前 shared tip 的 supplement-only `7493d03..0b9d28c` 未改四個 migration blobs。
+- **P3**：P3.1 plan/CLI/counts=`3/3`；P3.2 tampered/clean noop＋R5=`5/5`；P3.3 R6/R7/app defense=`12/12`；P3.4 interruption/rollback/raw=`4/4`。C2b=`FINAL GO（條件式）`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`，build雙hash不變；真 store讀／寫=`0/0`，假 fixture清理。
+- **P4**：只授權 Ting 在場的一次 supervised shadow→verify→noop→pointer；當日 raw full SHA必須等於 preflight與plan source hash，N/M取 live raw，任一差異／紅燈立即 NO-GO＋rollback。
+- **留存**：v1、raw＋兩份 export、plan/adjudications保留到人工驗收後下一備份週期；repo只放去識別 counts/hashes。真機逐項 checklist 見 `docs/AI_REVIEW_FEEDBACK.md` 最上方。
+
+# 2026-08-11 Codex — C2B-R7 endpoint `23d5228`，P3=`PASS/PASS/FAIL/PASS`
+
+- **Gate**：R6 active-replacement interruption 經 direct＋app `4/4 PASS`，R5 occupation tamper `3/3 PASS`；但 candidate cleanup fault=`0/4`，C2b=`NO-GO`，未發布 P4 checklist。
+- **阻斷反例**：注入 `removeKey(candidate)` failure 後 store 吞錯並回 `ok:true`、無 failures、candidate 留存；實際 app 顯示成功且 reload=`1`。獨立 harness=`23 PASS / 4 FAIL`；官方 fake rehearsal 6i=`27/27`但未覆蓋 cleanup fault。
+- **其餘 P3**：P3.1 plan/CLI/counts=`3/3`；P3.2 tampered／clean noop=`2/2`；P3.4 staging/pointer interruption＋rollback/raw=`4/4`；app `.catch` rejection defense=`1/1`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`，build 雙 hash不變；真 store 讀／寫=`0/0`，假 fixture 清理。
+- **下一 gate**：cleanup 回傳狀態；active swap 前先確認 candidate cleanup，錯誤回 structured failure且 app 不 reload；加入 cleanup-remove 注入 rehearsal，再交 Codex。
+
+# 2026-08-11 Codex — C2B-R6 endpoint `6d5a11d`，P3=`PASS/PASS/FAIL/PASS`
+
+- **Gate**：R5 occupation-tampered envelope 經 direct store＋實際 app import `2/2` 被拒，正常失敗 active/pointer unchanged、candidate absent、reload=`0`；但 restore storage interruption 仍紅，C2b=`NO-GO`，未發布 P4 checklist。
+- **阻斷反例**：full verify 後注入 active staging write failure，Promise reject、candidate 留存；app 只有 `.then` 無 rejection handler，故無 fail-closed alert。restore interruption=`3 PASS / 2 FAIL`，整體獨立 harness=`20 PASS / 2 FAIL`。
+- **其餘 P3**：P3.1 plan deterministic/CLI parity/counts tamper=`PASS`；P3.2 tampered noop／clean `0/0/0`=`PASS`；原 P3.4 staging/pointer error＋rollback/raw=`4/4 PASS`；官方 fake rehearsal=`23/23`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`，build 雙 hash不變；真 store 讀／寫=`0/0`，假 fixture 清理。
+- **下一 gate**：restore 捕捉所有 storage exception、active replacement 失敗時清 candidate並回結構化 failure；app handle rejection、不 reload；把此注入加入 blocking rehearsal，再交 Codex。
+
+# 2026-08-11 Codex — C2B-R5 endpoint `cef1e93`，P3=`PASS/PASS/FAIL/PASS`
+
+- **Gate**：R4 三反例 `3/3` 被擋；P3.1 journal/plan=`PASS`，P3.2 Patient parity/verified noop=`PASS`，P3.3 app v2 restore=`FAIL`，P3.4 interruption/rollback=`PASS`；C2b=`NO-GO`，未發布 P4 真機 checklist。
+- **P3.3 反例**：active-v2 UI import 接受 `patients[0].fields.occupation` 竄改 envelope，直接覆寫 staging+reload，未取 raw/plan、未跑共用 verify；官方 6g 是手動 verify-before-switch，未走 app import handler。
+- **數字**：官方 fake rehearsal `19/19`；獨立 harness `18 PASS / 1 FAIL`；檔案 full-verify/hash/unknown-field `3/3`；P3.4 注入／rollback `3/3`；真 store 讀／寫 `0/0`。
+- **回歸**：invariants `3/3/2/5/3 · 0 violations`，K `10 files / 2 refs / 0 issues`，Phase E `12 checks`，interactions `0 failures`；build 雙 hash 不變，其餘資料／關聯／ratchet gates exit `0`。
+- **下一 gate**：v2 import 先寫非 active candidate，以正典 raw+deterministic plan 做 full verify，失敗不得改 staging/pointer/reload；把 Patient-tampered UI import 加為 blocking regression，再交 Codex。
+
+# 2026-08-11 Codex — C2B-R4 endpoint `14d2a60`，P3=`FAIL/FAIL/FAIL/PASS`
+
+- **Gate**：P3.1 journal verify=`FAIL`；P3.2 full verify/idempotent=`FAIL`；P3.3 v2 file round-trip=`FAIL`；P3.4 error ordering/rollback=`PASS`。C2b final=`NO-GO`，Edge `file://` 不得 shadow write／pointer switch／execute。
+- **反例**：journal counts tamper、Patient field rewrite、tampered-staging noop 共 `0/3` 被擋；`dbfd392` 的 cross-wired assignment 已擋 `1/1`。`924198e` export 已含 v2 envelope，但 import 仍丟 patients/journal；Phase E 所謂 round-trip 僅記憶體 cases stringify/parse。
+- **假資料驗證**：官方 rehearsal 自製 fixture `12/12`；另行 P3/Batch3 harness `17 PASS / 4 FAIL`。Batch3 UI/VM `7/7`，隔離 origin `0→1→0 cases`、event `1→2` 合法 append、空 note writes `0/0/0`；假資料與測試頁已清。
+- **P0–P2 對帳**：正典 `5,880 bytes · 2 cases · 0 SOAP · 2 patients`；export hashes `2/2` 相同；plan files `2/2` 相同，assignments `2`，blank/duplicate/collision/orphan/conflict/review/adjudication均 `0`。33-case/52-SOAP 檔只作 QA archive hash/count 對帳，未送入測試。
+- **下一 gate**：exact plan↔journal/Patient verify、verified-only noop、完整 v2 patients+cases+journal file export→wipe→import，三反例進 rehearsal；再交 Codex，真機仍須 Ting 在場及執行前 raw hash 重驗。
+
+# 2026-08-11 Codex — C2b code gates `3/3 PASS`，開放只讀 preflight
+
+- **範圍／gate**：隔離覆核 `ee00856`、`ef1b58b`、`e5d6158^..cbeff22`；R8、coverage/K/CI、migrate三 gate=`PASS/PASS/PASS`。授權只到 P0–P2 read-only preflight；真機 write仍等 reviewed writer/rehearsal、Codex final GO與Ting在場。
+- **R8／import**：兩個舊 false negatives `2/2`被擋（各 exit `1`），合法 append exit `0`；CLI/app共用store comparator。R1–R7惡意結果 failures `7`、R4 warnings `1`，import在persist前呼叫同源規則。
+- **Coverage／K／CI**：預設 coverage selections/exposures/events/lifestyle=`3/2/5/3`；移走 fixture後`0/0/0/0` exit `1`。允許日期 `4/4`未誤擋；生日欄位 `5/5`被K4擋。CI兩 step committed blob=`617aac232c4a0535c85730b92f6b2392f314e151`。
+- **Migration**：中文 fixture bytes `893→893`；unresolved `null`，adjudication needsReview `1→0`且journal `1`；no-adj／adj plan雙跑hash各自一致。duplicate case與強制 patient-id collision均 exit `1`；`--execute` exit `2`。
+- **回歸／下一步**：build雙hash不變，PHI `10/2/0`，invariants/content/data(`947`)/interactions(`0`)/relations/ratchet/syntax均 exit `0`；假檔全清。依 `AI_REVIEW_FEEDBACK.md`執行P0–P2，P3 writer與rollback rehearsal另交審。
+
+# 2026-08-11 Codex — C2b 回應批重審，real-case gate 維持 NO-GO
+
+- **範圍／結論**：鎖定 `23b310d^..7830ba4` 隔離快照重審 A–D、六項修正、dry-run 與 R1–R8；六項為 `PASS 2 · MEDIUM 3 · HIGH 1`，C2b = **NO-GO / PAUSE**，真實 localStorage 讀／寫 `0/0`。
+- **反例數字**：R1–R7 惡意資料 `7/7` 被擋、R4 warning `1`；R8 的 id-prefix collision 與 same-id payload rewrite `0/2` 被擋（兩者錯誤 exit `0`）。committed CI clinical commands `0`；預設 invariant coverage為 selections/exposures/events/lifestyle `0/0/0/0`。
+- **dry-run**：self-test `7/7`；兩 process plan SHA-256同為 `8C03D63C10C3FBD17414A24DFB23A5941B2E7EF8F041E2E33CEFA7801BA93658`；`--execute` exit `2`，無 clinical execute path。Unicode fixture `source_bytes`報 `889`、UTF-8實際 `893`。
+- **快照驗證**：build exit `0`且兩 generated SHA不變；PHI `9 files / 2 refs / 0 issues`；content/data(`947`)/interactions(`0 failures`)/relations/ratchet與四個 JS syntax均 exit `0`。後續 `ee00856`、`3f4f1f0`及未提交 workflow接線未納入 endpoint證據。
+- **下一 gate**：修 R8 structured id+payload-hash comparator、committed import/CI nonzero fixture、bytes/null/adjudication與 stale mapping；以假 clone提交 shadow/idempotency/rollback/full export round-trip證據後再重審，期間不得對33 real cases寫入。
+
+# 2026-08-11 Codex — Clinical V2 Phase B→C2a 獨立審計與 C2b gate
+
+- **範圍／結果**：獨立重查 `994d8b3^..e959ce9` 的 10 項清單；分級 `BLOCKER 1 · HIGH 4 · MEDIUM 3 · LOW 0 · PASS 2`，C2b = **NO-GO / PAUSE**，不得對 33 個真實病例執行 case→patient 抬升。
+- **檔案走查**：隔離 origin 假 case `0→1→0→1→0`；agent/env events `3/3`、life/adverse/differential `1/1/1`、selections/metric `2/1`；兩次 export `7,532 bytes` 且 SHA-256 相同，3 份假資料檔均清理。
+- **主要風險**：mapping exposure timestamps `4` 欄與 pattern note `1` 欄未覆蓋且 status/policy 過期；import 可整包改刪 events；role/isPrimary 反例可匯入；sparse `418→2,636 bytes` 並合成 `4` 個 timestamps；Patient 衍生漏 `birthYear`。
+- **驗證原文摘要**：`build-data exit 0` 且兩個主要 generated SHA 不變；clinical validator `9 files / 2 refs / 0 issues`；content-junk/data(`947`)/interactions(`0 failures`)/relations/ratchet/app+store syntax 均 exit `0`；diff range `21 paths`，forbidden paths `0/0/0`。
+- **已知未解／下一步**：未連上持有 33 real cases 的 browser profile，故 `33 patients / 0 conflicts` 與 `34→33` 未獨立實讀；先依 `docs/AI_REVIEW_FEEDBACK.md` 建 raw+export 雙備份、dry-run/idempotency/shadow-key/rollback/逐欄驗收，再交 Codex 重審 GO。
+
+# 2026-08-09 Claude — Outcome metrics batches 2-3 (8 metrics wired) + Outcome Tracking v1 + session handoff
+
+- **Scope**: three sequential rounds in one session, each committed and pushed separately, ending with this final-round handoff. Numeric outcome metric renderer went from 3 wired metrics to **11 of 22** vocabulary definitions; a new read-only Outcome Tracking panel (Baseline/Today/Change/Trend, CG8) was added on top.
+- **Batch 2 (`c16099b`)**: wired `metric.stress_level`/`mood`/`energy_level`/`sleep_quality` (four bounded 0–10 scales, same shape as the already-proven `pain_score`). Corrected `docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md`'s overclaim that a metric's `unit` string alone proves integer-vs-decimal — `unit` proves kind/range, whole-number-vs-decimal is a separate stated AcuTing convention. Added a config-integrity self-check (`console.error` on an unresolvable `metricId` at load) — found and fixed a real bug in it during validator verification: `scripts/validate-data.js` evaluates `app.js` in a bare `new Function()` sandbox with no vocabulary loaded, which made the first version flag all 7 valid ids as typos; fixed by gating the scan on the vocabulary actually being present.
+- **Batch 3 (`360691d`)**: wired `metric.bloating`/`sleep_onset_minutes`/`night_wakings`/`bowel_frequency` — deliberately mixed shapes (bounded scale / unbounded integer duration / unbounded integer count), not four more 0–10 clones, to prove the generic renderer across shapes. `bowel_frequency`'s `direction_good: "individualized"` confirmed against the vocabulary before wiring; config and display make no higher/lower-is-better claim. **Form density observation** (not acted on): 11 inputs render as a 2-column grid, 6 rows, ~700–780px inside a form ~7× a 720px viewport — classified **B, usable but grouping would help**, recorded as debt, not redesigned.
+- **Outcome Tracking v1 (this round)**: read-only panel in the case detail view, fully derived from existing `outcomeMetrics[]` — no new persisted field, no schema change, no chart. Baseline = case's chronologically first visit (never backfilled from a later visit); Today = case's latest visit (no LOCF); Change = signed numeric delta, never converted to "improved/worsened" text; Trend = `↑`/`↓`/`→` over the measured-only sequence, unmeasured visits skipped rather than given a fabricated arrow, `—` under 2 measured points. Row shown only if the metric has ≥1 measurement anywhere in the case; whole panel replaced by one compact empty-state line if the case has none. Hit the same TDZ class of bug the config array hit earlier (a `const` declared near its consuming function, but `render()` can reach it synchronously on first page load) — fixed by moving the direction-hint label map to the top of the file, same precedent as `NUMERIC_OUTCOME_METRIC_CONFIG`.
+- **QA**: 10 lettered scenarios (A–J) from the task spec, all passed exactly as specified against live browser state — two-visit change, increase-good metric, individualized metric (no "better" wording), decimal preservation (no rounding), missing baseline, missing today, 3+ measurements, intermediate-missing-visit gap, cross-case isolation, single-visit case (Change=0/Trend=— falls out of the definition with no special-casing). Cross-case isolation test surfaced a pre-existing, unrelated finding: case creation enforces one Case per `patientCode` (an existing UI guard, not touched this session) — worked around by using two patientCodes, which the task explicitly permitted.
+- **Regression**: pain_score, sleep_hours decimal, effect_duration_days legacy/conflict resolution, batch-2 metrics, `outcomeVerdict`, `tcmPatternSelections`, Last Visit at a Glance all spot-checked intact across all three rounds; zero console errors on fresh-tab load each round.
+- **Validators actually run, every round**: `node --check app.js`, `validate-clinical-case-standard` (PASS, 0 issues), `check-validation-ratchet` (PASS, no regressions), `validate-data.js` (PASS), `validate-relations.js` (PASS, same pre-existing unrelated warnings throughout), `git diff --check` (clean).
+- **Known debts** (see `docs/CLINICAL_OUTCOMES_HANDOFF.md` §F for the full list): 11-field SOAP block usable-but-dense (grouping desirable, not done this round); boolean/categorical/free-text outcome metrics unwired; fertility numeric metrics (cycle_length, bleeding_days, endometrial_lining, follicle_size) READY but unwired; SQLite migration not started; Patient runtime entity not implemented; several field-level migration mappings (`currentMeds`, `allergies`, `tongueBody`/`tongueCoating`, `outcomeMetricLinks`, `workflowLink`) still unresolved.
+- **Handoff**: `docs/CLINICAL_OUTCOMES_HANDOFF.md` (new, single up-to-date status doc — architecture, runtime state, outcome metrics state, legacy reconciliation, Outcome Tracking v1 semantics, known debts, frozen decisions, commit lineage, recommended next task). `docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md` corrected to point to it rather than restating stale "nothing wired yet" status.
+- **Files changed this round**: `app.js`, `styles.css` (Outcome Tracking table CSS only), `docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md`, `docs/CLINICAL_OUTCOMES_HANDOFF.md` (new), `PROJECT_LOG.md`. No pharmacology, `js/knowledge.js`, `js/router.js`, or `curriculum/` files touched — confirmed via `git status --short` before every stage.
+- **Not done, by instruction**: no new outcome metric beyond the 8 named across the two batches, no boolean/categorical/text renderer, no chart/sparkline/statistical trend, no auto clinical interpretation, no SQLite migration, no Patient/Episode/Condition/Pharmacology/Pattern work, no form redesign. This was the final substantive round for this session — no further task started after the final commit.
 # 2026-08-12 Claude — 方劑組成樣板句清除:錯置的甘草功效「健脾和中，調和諸藥。」
 
 - **做了什麼**:`scripts/fix-formula-boilerplate-gancao.js` 清除被匯入樣板蓋到**非甘草**藥味上的
@@ -18,6 +843,38 @@
   同句多方共用仍屬紅線 6,但內容不誤)。另眼讀抓到損毀片段:蒿芩清膽湯 枳殼「緩解。」、
   天麻鉤藤飲 桑寄生「補益，健旺。」,列 worklist。
 
+# 2026-08-11 Claude — C4 安全線歸零:71 張無紅旗卡全數補齊(batches 7–9)
+
+- **做了什麼**:C4(無紅旗)71 卡分三批補齊,每卡 3–5 條結構化雙語紅旗。批次七(commit `0971fa6`,28 卡)pain_msk 2 + gi 1 + psych_sleep 15 + respiratory 10;批次八(commit `2c38c83`,26 卡)derm 8 + endo_metabolic 10 + cardio 8;批次九(commit `c10178f`,17 卡)uro_renal 8 + ent_eye 6 + immune_misc 3。**格式跟既有 55 卡的 legacy 字串陣列慣例**(「發現 → 行動(急症)」),非模板 §5 五欄物件——registry 結構化版仍只屬 Batch 4 婦科 25 卡,本批**未動 red_flag_refs/registry wiring**(validate-red-flag-wiring 範圍不變)。zh/en 逐條成對、長度相等;來源入 field_sources(ACR/EULAR、AASLD、AASM、GINA、GOLD、ACCP、ADA、ATA、AHA/ACC/ESC、AAD、AAO、AAO-HNS、AUA、NCCN/ASCO 等指引級通說;1 Palpitation、1.1 BPH、1.2 Lin、2.2 Impotence、NOC_ENU、7 CFS 課件標「轉介精神」)。
+- **內容原則**:每條=具體發現→具體行動,急症標記;各卡有自己的「最重要一條」(如 erectile_dysfunction 之心血管前哨與硝酸鹽禁忌、cancer_supportive 之發燒性嗜中性球低下與針灸前查血象、hpa_dysregulation 之 Addison 危象排除、cad 之抗血小板不可自停)。腳本 assert:紅旗欄原為空、不在 registry、zh/en 等長——凡已有內容者不覆蓋。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):**C4 71 → 0(全 150 卡皆有紅旗)**;全檔 188 → **117**(C5 116、C9 1);乾淨卡 73→**92**。ratchet baseline 鎖 117。三批皆 content-junk PASS、`git diff --check` 乾淨、build-data 已跑、HEAD 深比較=派工清單且無欄位被覆蓋。自抓兩處自產垃圾:t2dm zh 條漏入英文字「symptoms」、batch 5 曾漏入西里爾字——寫入前自校再度證明必要。
+- **本日總結**(一日四線):condition 檔全檔缺陷 **553 → 117**(C10 189→0、C4 71→0、C5 292→116),乾淨卡 1→92。
+- **已知未解/下一步**:(1) **C5 116(58 卡)是最後一座山**——多為 summary/context 與六張家卡長文的 _en 缺;家卡 CloudTCM 敘事宜先修語氣再譯;(2) C9 1 筆待查;(3) 本批紅旗為 model_draft 草稿,**臨床判斷內容,Ting 逐卡過目後才算數**(憲法:新內容 draft 直接上、Ting 在 app 裡審);(4) 未來若 red_flag registry migration 擴到全庫,本批 legacy 陣列即為 wiring 的原文基礎。
+
+# 2026-08-11 Claude — C10 全庫歸零:最後 7 張誤置長文卡 untangle(batch 6)
+
+- **做了什麼**(commit `961f869`,7 卡):C10 殘餘的批次一型誤置長文全數處理。post_covid(氣喘文→家卡 asthma)、copd + post_viral_cough(咳嗽文→家卡 chronic_cough)、heart_failure(心律不整文→家卡 palpitations)、chronic_prostatitis(BPH 文→家卡 bph)、cluster_headache + migraine_vestibular(頭痛通論/偏頭痛文→家卡 tension_headache / migraine)。家卡六張(asthma、chronic_cough、palpitations、bph、tension_headache、migraine)保留原文未動,腳本 assert 家卡持有後才封存。
+- **pcos 前例再現三次**:cluster_headache 與 migraine_vestibular 的 etiology_zh 是家卡文的一字之差變體(2281/2280、1553/1552),heart_failure 的 western_pathology_zh 是 palpitations 文的訛字變體(「一鐘之內」)——三者皆因非逐字而逃過 C10,一併封存(reason 註明變體)。C10 的逐字比對抓不到變體,眼睛才抓得到——此教訓已三度成立。
+- **內容**:七卡各四欄新寫雙語 + field_sources。TCM 病因病機引《金匱》心水(heart_failure)、肺脹+《丹溪心法》痰挾瘀血礙氣(copd)、《傷寒》吳茱萸湯厥陰頭痛(cluster)、溫病瘥後勞復(post_covid)、精濁/癃閉同腺異病之辨(chronic_prostatitis,citing 1.1 BPH 課件命名)、風痰眩暈(vestibular,citing 2 Dizziness 課件);西醫標 WHO/GOLD/ACCP/AHA/NIH 分類/ICHD/Bárány 通說 + MedlinePlus URL。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):**C10 20 → 0(全檔 150 卡 C10 歸零)**;C5 130→116(七卡既存 14 個 _en 缺一併補齊);全檔 222 → **188**(C4 71、C5 116、C9 1);乾淨卡 50→52。ratchet baseline 鎖 188。content-junk PASS;HEAD 深比較=7 卡、封存逐字、無欄位清空。
+- **已知未解/下一步**:(1) C5 116(58 卡)——既存 _en 翻譯債,其中含六張家卡的長文(C10 註記「誤置文勿譯」已不適用於家卡自己的文,但家卡 CloudTCM 敘事宜先修語氣再譯,勿直譯 blog 文);(2) C4 71 無紅旗卡是安全線最大缺口,建議下一條派工;(3) 家卡六張保留的 CloudTCM 敘事(會員見證、APP 推廣句)語氣修整仍待批准後另開線;(4) 本日新增 MedlinePlus URL 未線上核驗。
+
+# 2026-08-11 Claude — 全庫樣板句清零:60 張非婦科卡病因/病理重寫(C10 stub group 0 carriers)
+
+- **做了什麼**:承上一條的機制(§3.5.5 import_artifacts),把 73 卡共用樣板句對(正氣不足…/相關系統功能障礙…)剩餘的 **60 張非 gyn 卡**全部封存重寫,分三批:批次三(commit `5a57dc4`,19 卡)pain_msk 13 + gi 6;批次四(commit `98d7948`,17 卡)psych_sleep 12 + respiratory 5;批次五(commit `1931443`,24 卡)neuro 8 + derm 3 + endo_metabolic 7 + cardio 4 + uro_renal 2。每卡:樣板句對封存(belongs_to: null,dated reason)→ 填本卡專屬雙語 etiology_*/western_pathology_* + field_sources → 每批 HEAD 深比較(變動卡=清單、封存逐字、無欄位清空)。
+- **來源**:病因病機用到 Tier-1 課件 LBP1/NECK/SHOULDER/4.Vomiting/7 CFS/4 Wind Stroke/8 MS/2 Dizziness/1.2 Lin/3 Urinary Incontinence,其餘標中醫內科學/外科學/兒科學/骨傷科學教材通說並引原典(《金匱》胸痺·奔豚·百合病、《傷寒》當歸四逆、《素問》骨痿·水腫·諸風掉眩、《諸病源候論》鼾眠、《外科正宗》油風·酒齄鼻·筋瘤、《格致餘論》痛風);西醫病理標 NINDS/NIAMS/NIDDK/NIMH/AHA/ACC/ATA/AUA/AAD/CDC/ERAS 等通說 + 高確定度 MedlinePlus URL 入 sources。爭議誠實標註:hpa_dysregulation 明寫「腎上腺疲勞非公認診斷」、luteal 同款寫法沿用。
+- **數字 before→after**(`node scripts/validate-condition-standard.js`):全檔 462 → **222**(C10 142→20、C5 250→130、C4 71 flat、C9 1 flat);乾淨卡 13 → **50**;樣板句 carriers **60 → 0**(`stub-list.js` 重跑=0)。ratchet baseline 已兩度 `--update` 鎖住(conditions 222)。三批皆 content-junk PASS、`git diff --check` 乾淨、build-data 已跑。
+- **驗證指令**(可重現):`node scripts/validate-condition-standard.js` → 222;`node scripts/check-validation-ratchet.js` → PASS;`node scripts/validate-content-junk.js` → PASS。
+- **已知未解/下一步**:(1) C10 殘餘 20 defects/13 卡,全是**批次一型的誤置長文**(asthma+post_covid、copd+chronic_cough+post_viral_cough、palpitations+heart_failure、bph+chronic_prostatitis、tension+cluster headache、migraine+migraine_vestibular)——每組要判家卡再封存,是判斷題不是填空題,留待下一條派工;(2) C5 130(65 卡 _en 缺)與 C4 71(無紅旗)是既存缺口,非本批引入;(3) 本批 MedlinePlus URL 未逐一線上核驗,下次連線抽查。
+
+# 2026-08-11 Claude — gyn_fertility C10 誤置文untangle:§3.5.5 import_artifacts 機制 + 22 卡病因/病理重寫
+
+- **做了什麼**:CR-010 留下的跨卡 untangle。新增模板 §3.5.5 `import_artifacts`(move-not-delete 封存)並加入 validator `RAW_IMPORT_FIELDS`(文件→驗證器→資料,順序照 §3)。批次一(commit `3ce14e1`,9 卡):`cond.pcos`(四欄全誤置——etiology_zh 是 oligomenorrhea 文的 2499 字變體,C10 因兩字之差漏抓;en 兩欄與 oligomenorrhea 逐字相同)、endometriosis、primary_dysmenorrhea、pms、female_infertility、recurrent_pregnancy_loss、chronic_pelvic_pain(月經不調長文,家卡 `cond.irregular_menstruation`)、male_infertility(陽痿文,家卡 `cond.erectile_dysfunction`)、thin_endometrium(月經稀少文,家卡 `cond.oligomenorrhea`)——家卡皆已持有原文(腳本 assert 過才動),誤置卡逐筆封存(dated reason + belongs_to + 原文逐字)後填入本卡專屬雙語 etiology/western_pathology + field_sources。批次二(commit `e022cd5`,13 卡):73 卡共用樣板句對(正氣不足…/相關系統功能障礙…)封存(belongs_to: null)後同樣重寫:menorrhagia、amenorrhea、diminished_ovarian_reserve、ivf_support、luteal_phase_defect、menopause_syndrome、hyperemesis_gravidarum、breech_presentation、postpartum_hypolactation、pid_chronic、vulvovaginal_candidiasis、pmdd、secondary_dysmenorrhea。
+- **來源**:病因病機優先 Tier-1 課件(DYSMENO/INFERTI/AMENO/U_BLEED/MENOP/MORNING/INSUFF_L/LEUKO/2.1 Male Infertility),無課件者標「中醫婦科學教材通說」;西醫病理標 NICHD/ACOG/ASRM/FIGO/CDC 通說 + MedlinePlus 專頁 URL(僅加高確定度 URL 進 `sources`,cloudtcm 舊 URL 依模板永不刪除)。數字均標出處(32–48hr 病程=DYSMENO 課件;7mm 內膜閾值明標「參考值非硬切點」)。
+- **數字 before→after**:`validate-condition-standard --category gyn_fertility`:89 → **0** blocking(C5 42→0、C10 47→0;25/25 clean,原本 1/25)。全檔:553 → **462**(C4 71 flat、C9 1 flat、C10 189→142、C5 292→250)。ratchet baseline 已 `--update` 鎖住(conditions 462)。逐卡驗證:批次一 9 卡 + 批次二 13 卡與 HEAD 深比較,變動記錄=派工清單、封存原文逐字相符、無欄位被清空(diff-check 腳本 assert)。
+- **驗證指令**(可重現):`node scripts/validate-condition-standard.js --worklist --category gyn_fertility` → PASS 0 blocking;`node scripts/check-validation-ratchet.js` → PASS;`node scripts/validate-content-junk.js` → PASS;`node scripts/build-data.js` 已跑;`git diff --check` 乾淨。
+- **已知未解/下一步**:(1) C10 樣板句對還坐在其餘 **60 張非 gyn 卡**上(C10 142 的主體)——同機制可逐科複製;(2) gyn N1 12 卡 tcm_patterns blob 未提升(note only);(3) `cond.irregular_menstruation` / `cond.oligomenorrhea` / `cond.erectile_dysfunction` 家卡保留 CloudTCM 敘事原文(會員見證等 blog 語氣未修——本批只 untangle 不改家卡,語氣修整是另一條線);(4) MedlinePlus URL 未逐一線上核驗(離線批次),下次連線抽查。
+
 # 2026-08-08 Codex — Pattern V2 renderer 安全 checkpoint
 
 - **做了什麼**：保留既有 Pattern V2-B／V2-C canonical payload，補齊 Pattern preview／big-card 對 canonical `key_signs_*`、`supporting_signs_*`、`mechanism_*`、`common_causes_*`、`progression_*`、舌脈、八綱、structured differentials、aliases、treatment links 與真實 `sources`／`field_sources` 的相容呈現及搜尋；移除 renderer 的虛構預設來源 fallback。
@@ -33,6 +890,101 @@
 - **Aliases**：新增 `風寒犯肺`、`脾氣下陷`、`食積`、`濕痰` 四組卡片 alias；另四項因已是 canonical name 或既有 alias 不重複寫入。Legacy map 僅新增已核准的 `pat.濕痰 → pattern.phlegm_damp`，未把其他歷史近義詞升格為 identity。
 - **驗證**：Pattern standard `62/62 clean`、registry、content-junk、ratchet、alias dry-run、build-data、validate-data、interactions、diff check 全通過；final reconciliation `69/59/62/59/3`。Repo-wide encoding validator 仍有既存跨線基線缺陷，本批未修改其所列來源檔。
 - **已知未解／下一步**：V2-B 與所有新 Pattern IDs、relation types/edges、tdis、stage/location/channel endpoints、comparisons 均未開始；等待 Ting 另行批准。
+# 2026-08-08 Codex — EX-UE10 四縫、EX-UE11 十宣精修；EX-UE12 臂中衝突暫停
+
+- **做了什麼**：完成 EX-UE10、EX-UE11 strict-template／four-source card fill；逐頁核對 Board、local curriculum、eLotus、American Dragon，補齊雙語定位、技法、安全、主治／功效、配穴、考點、exact links 與 field-level provenance，並保留 unsupported legacy 的證據層級。
+- **數字 before→after**：嚴格模板／四來源稽核 `48/72 → 50/72`；待修 `24/72 → 22/72`；generic Cloud `9/72`；measurable method、source URL、mojibake gaps 均 `0/72`。
+- **來源與安全**：四縫不猜點刺器械、出液量、止血或灸法；十宣將淺刺、放血與 AD 的條件式後續灸法分列，重大急症僅作 clinical boundary。EX-UE12 出現掌側／外側／背側定位及1.0–1.2寸／貫穿肢體但不透皮／legacy 多套刺深、灸與放血的實質衝突，未擅自選邊。
+- **驗證**：extra-point audit、build-data、runtime data、interactions、point IDs、content-junk、Pattern registry／standard、JS syntax、canonical↔generated parity 與 `git diff --check` 依本批完整驗證執行；內容 commits `1fcc9f0`、`4dcf882`。
+- **已知未解／下一步**：依 Ting 的 pause 規則停在 EX-UE12 臂中，等待定位與侵入式技法裁決；未觸碰 dirty 主工作樹、Pattern、Condition 或 `curriculum/conditions/*`。
+
+# 2026-08-08 Codex — EX-UE6 小骨空至 EX-UE9 八邪四來源精修
+
+- **做了什麼**：依 Ting 裁決完成 EX-UE6，並連續精修 EX-UE7～EX-UE9；逐張補齊雙語定位、解剖與 source gaps、來源分層刺灸／放血、功效主治、配穴、安全、考點、exact links 與 field-level provenance，stable code／id 全部維持。
+- **數字 before→after**：strict-template／four-source `44/72 → 48/72`；待修 `28/72 → 24/72`；generic Cloud 維持 `9/72`；measurable method、source URL、mojibake gaps 維持 `0/72`。
+- **來源／安全**：小骨空採 PIP＋只灸，eLotus DIP 明列衝突，AD Gukong 排除；腰痛點定位／刺深變體不硬合併；外勞宮的兒科驚厥／新生兒破傷風及八邪的蛇咬傷等重大主治只留 provenance／emergency boundary。所有 legacy 侵入性數字若無 exact source 均保留但降級，不升格為 canonical 規則。
+- **驗證**：extra audit、build-data、validate-data（947 runtime）、interactions、point IDs（925）、content-junk、Pattern registry／standard、app syntax、EX-UE6～EX-UE9 canonical↔runtime parity 與 `git diff --check` 均通過；content commits `35e8f75`、`56c54d8`、`eb73941`、`381d3ca`，audit/runtime commit `014a62c`。
+- **已知未解／下一步**：仍有24張待修與9張 generic Cloud URL；下一張 `EX-UE10 四縫 Sifeng`，須以完整深度模式處理兒童點刺／擠液、現有針灸衝突、放血與感染控制。未觸碰 Pattern、Condition、`curriculum/conditions/*` 或原 dirty 主工作樹。
+
+# 2026-08-08 Codex — EX-UE4 中魁、EX-UE5 大骨空四來源精修；EX-UE6 衝突暫停
+
+- **做了什麼**：以同一 strict-template／four-source workflow 精修 EX-UE4、EX-UE5，逐張補齊雙語定位、解剖與 source gaps、刺灸、功效主治、配穴／缺口、安全、考點及 field-level provenance；exact eLotus／AD links 均於本 session 實際開啟。
+- **數字 before→after**：strict-template／four-source `42/72 → 44/72`；待修 `30/72 → 28/72`；generic Cloud 維持 `9/72`；measurable method、source URL、mojibake gaps 維持 `0/72`。
+- **來源／安全**：中魁的 eLotus 與 AD 灸量、AD 針深分列，legacy 深刺／透刺／放血不升格；大骨空採 eLotus 0.1寸並將 legacy 0.5–0.8寸、5–7壯與橈動脈警語降為 unsupported。兩卡保持 `reviewStatus: draft`，strict/four-source 不等於 clinically verified。
+- **驗證**：extra audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、EX-UE5 canonical/runtime parity 與 `git diff --check` 均通過；content commits `2aafea3`、`51972f9`。
+- **已知未解／下一步**：EX-UE6 legacy 為小指 PIP＋針刺／放血，eLotus 為 DIP＋只灸；AD 只有無內容且無法確認 identity 的 Gukong 頁。依 stop rule 未修改 EX-UE6，下一步需由教材／書本或 Ting 裁決後再續；其他 session dirty files 未觸碰。
+
+# 2026-08-08 Codex — EX-UE3 中泉四源、AD 錯鏈與急症邊界精修
+
+- **做了什麼**：只精修 EX-UE3 中泉；整合 Board／課件缺口、eLotus Ex-UE3、AD 索引錯鏈稽核及 AHA／NHLBI／NHS 安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴缺口、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四來源稽核 `41/72 → 42/72`；待修 `31/72 → 30/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口維持 `0/72`。
+- **來源與安全**：AD 的 Zhongchuan 索引項實際錯鏈至 Ganrexue N-BW-8，明列 source gap、不猜網址。舊放血與關節消毒警語降為 unsupported；胸痛／心絞痛、嚴重氣喘、咯血移出 disease tags，只保留來源陳述與急症邊界。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、54欄 canonical/runtime parity、`git diff --check` 均通過；內容 commit `331c075`。
+- **已知未解／下一步**：AD 無可用中泉專頁；四層未提供放血、腕背深層解剖、孕期／兒童／凝血風險與灸量方案。下一張 EX-UE4 中魁；原 dirty 草稿 worktree 與 Pattern／Condition 工作未納入。
+
+# 2026-08-08 Codex — EX-UE2 二白四源、刺深分歧與 AD 配穴表精修
+
+- **做了什麼**：只精修 EX-UE2 二白；整合 Board 明列、課件缺口、eLotus Ex-UE2、AD M-UE-29 與 NIDDK 便血安全邊界，補齊雙語定位、解剖缺口、刺灸、功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四來源稽核 `40/72 → 41/72`；待修 `32/72 → 31/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口維持 `0/72`。
+- **來源與安全**：eLotus 0.5～1.0寸、AD 0.5～1.0寸與0.5～1.5寸分列；AD 兩組配穴以實際表格欄位核對。舊0.3～0.5寸、點刺出血、骨膜警語降為 unsupported；便血只保留來源陳述與 NIDDK 急症邊界，不作療效標籤。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、54欄 canonical/runtime parity、ID/code uniqueness、`git diff --check` 均通過；內容 commit `038a7e1`。
+- **已知未解／下一步**：四層未提供放血安全規程、深層解剖、孕期／兒童／凝血風險與灸量；下一張 EX-UE3 中泉。原 dirty 經外奇穴草稿 worktree 與 Pattern／Condition 工作未納入。
+
+# 2026-08-08 Codex — EX-UE1 肘尖四源、兩源只灸與 AD 內容校正
+
+- **做了什麼**：從 EX-B12 已完成的 `39/72` 接續，只精修 EX-UE1 肘尖；整合 Board／課件缺口、eLotus Ex-UE1、AD M-UE-46 與 NIDDK 急症邊界，補齊雙語定位、解剖缺口、刺灸、安全、功效主治、配穴缺口、考點與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `39/72 → 40/72`；待修 `33/72 → 32/72`；泛用 Cloud URL 維持 `9/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus／AD 對鷹嘴尖與「只灸」一致；AD 精確頁實有瘰癧、化膿性癰腫、淋巴結炎，只有功效欄空白。舊直刺0.3～0.5寸、放血、直接灸7～15壯不升格；舊腸癰只保留為 NIDDK 支持的闌尾炎急症邊界。
+- **驗證**：extra-point audit、`build-data`、`validate-data`（947 runtime）、interactions、point IDs（925）、content-junk、app syntax、24欄 canonical/runtime parity、`git diff --check` 全通過；內容 commit `8801c10`。
+- **已知未解／下一步**：四層未提供灸法劑量／停止規則、孕期、兒童與凝血風險方案；下一張 EX-UE2 二白。既有 dirty 經外奇穴草稿 worktree 與 Pattern／Condition 工作均未納入。
+
+# 2026-08-08 Codex — EX-B12 坐骨定位衝突、深臀安全與精確連結修整
+
+- **做了什麼**：按四層工作流重整 EX-B12 坐骨；保留 `EX-B12`／`ex.b12`，補齊中英文定位、解剖、刺灸法、功效主治、配穴、考點、安全與逐欄來源，並把卡片可點來源收斂為已實際開啟的 American Dragon 坐骨精確頁。
+- **數字 before→after**：嚴格模板／四源稽核 `38/72 → 39/72`；待修 `34/72 → 33/72`；泛用 Cloud URL `10/72 → 9/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：Board 與本地課件無坐骨專條；eLotus production 索引無 Zuogu／坐骨項目；AD 精確頁正文使用 `N-BW-17`、搜尋標題顯示 `M-BW-17`，本卡如實保留站內差異。舊卡「大轉子—骶骨角三等分」與 AD「大轉子—尾骨中點下1寸」、舊深度與 AD 直刺2～3寸均分列，不硬合併；AD 所列下肢癱瘓已移出療效／主治陣列，只保留為神經急症邊界。深臀坐骨神經與特殊族群證據缺口已補入。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）、`validate-interactions.js`、`validate-point-ids.js`（925 ids）、`validate-content-junk.js`、`node --check app.js`、EX-B12 efficacy-boundary assertions 與 `git diff --check` 全通過；內容 commits `49f9830`、`583ab9e`。
+- **已知未解／下一步**：33張待修、9張泛用 Cloud URL；下一張 EX-UE1 肘尖。eLotus 無專頁，AD 未給安全終點、體型修正、孕期／兒童方案；舊點刺出血與可灸僅保留為未核實歷史值。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — 經外奇穴精確來源連結修正
+
+- **做了什麼**：修正所有經外奇穴上方來源按鈕誤套十四經穴網址推導的問題；經外奇穴現在只顯示資料中已核對的 CloudTCM／AD／eLotus 精確頁，不再產生空 CloudTCM URL、AD 首頁或索引頁假按鈕。另清理 EX-B10／EX-B11 當下無法直接開啟的來源按鈕，內容證據仍保留於 `field_sources`。
+- **數字 before→after**：嚴格模板／四源稽核維持 `38/72`；待修維持 `34/72`；泛用 Cloud URL 維持 `10/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 巨闕俞 Ex-B14 與接脊 Ex-B15、接脊 CloudTCM、Kurohon、AHA、Merck、Mayo、CDC 均於本輪實際開啟；AD 索引已確認無 Juqueshu／Jieji／Jiegu 專頁。Yibian／MedicalTeaching 與巨闕俞 CloudTCM 只保留稽核 provenance，不再作可點擊按鈕；兩張卡的本庫代碼與來源代碼已在標籤明示。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）、`validate-interactions.js`、`validate-point-ids.js`（925 ids）、`validate-content-junk.js`、`node --check app.js` 與 `git diff --check` 全通過；修正 commit `f42d00b`。
+- **已知未解／下一步**：34張待修、10張泛用 Cloud URL；下一張 EX-B12 坐骨。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B11 接脊主名校正、胸腰交界與兒科安全修整
+
+- **做了什麼**：將舊卡主名接骨 Jiegu 校正為接脊（接骨）Jieji，保留 `EX-B11`／`ex.b11` 與舊值；核對 Board／課件缺口、eLotus Ex-B15、AD 拼音索引缺頁、CloudTCM、MedicalTeaching、日本考試資料及胸腰交界解剖，補齊全卡與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `37/72 → 38/72`；待修 `35/72 → 34/72`；泛用 Cloud URL `11/72 → 10/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：本庫 EX-B11、eLotus／日本 Ex-B15 與低權威 EX-B07 分列；一般層向上斜刺0.5～1寸，但補充來源同時引歷史禁針，衝突保留。T12～L1脊髓圓錐／椎管、兒童與癲癇、疑似骨折／脊柱外傷及灸量缺口已補入；接骨別名不等於骨折療效證據。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）與 `validate-interactions.js` 全通過；內容 commit `1c9de53`。
+- **已知未解／下一步**：34張待修、10張泛用 Cloud URL；下一張 EX-B12 坐骨。American Dragon 無 Jieji／Jiegu 專頁；古今針禁衝突及 MedicalTeaching 配伍中的未標準化『百合穴』已保留原文、不擅自修正。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B10 巨闕俞編碼衝突、胸椎刺法與脊髓安全修整
+
+- **做了什麼**：核對 Board／課件缺口、eLotus Ex-B14、AD 拼音索引缺頁、醫砭 EX-B11、CloudTCM 精確頁與 MedicalTeaching；保留資料庫 `EX-B10`／`ex.b10`，補齊英文名、異名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `36/72 → 37/72`；待修 `36/72 → 35/72`；泛用 Cloud URL `12/72 → 11/72`；技法、來源 URL、亂碼缺口均維持 `0/72`。
+- **來源與安全**：eLotus 標 Ex-B14、醫砭標 EX-B11，與本庫 EX-B10 的代碼差異明列而不強行改碼；一般層向上斜刺0.5～1寸，醫砭直刺0.3～0.5寸分列。舊放血與孕婦慎用未獲精確頁支持，不作可執行指令；深刺傷椎管／脊髓及胸痛／中風急症邊界已補入。
+- **驗證**：`validate-extra-point-standard.js --all`、`build-data.js`、`validate-data.js`（947 runtime）與 `validate-interactions.js` 全通過；內容 commit `417102f`。
+- **已知未解／下一步**：35張待修、11張泛用 Cloud URL；下一張 EX-B11 接骨。American Dragon 未找到巨闕俞專頁，Yibian／CloudTCM／MedicalTeaching 精確 URL 直接重開有 cache/internal error，均已如實記錄；Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B9 腰奇定位衝突、沿皮刺法與癲癇安全邊界修整
+
+- **做了什麼**：核對 Board／課件缺口、eLotus Ex-B9、AD M-BW-29／拼音索引、醫砭 EX-B9 與 CDC 癲癇急救；補齊英文名、定位、解剖、功效主治、配穴、考點、安全與逐欄來源，修清原卡亂碼。
+- **數字 before→after**：嚴格模板／四源稽核 `35/72 → 36/72`；待修 `37/72 → 36/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：eLotus／醫砭的尾骨尖上2寸與 AD 的 S2棘突下分列；一般層向上沿皮1～2寸，AD／醫砭2～2.5寸作較長變體。舊直刺0.3～0.8寸、放血與孕婦慎用未獲精確頁支持，只留來源缺口、不作可執行指令；癲癇主治不取代藥物或急救。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B9 runtime assertions、雙語配對與 task-file diff 檢查均通過；內容 commit `c8e5d4b`。
+- **已知未解／下一步**：36張待修、12張泛用 Cloud URL；下一張 EX-B10 巨闕俞。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
+
+# 2026-08-08 Codex — EX-B8 十七椎四層、異名與椎管深度衝突修整
+
+- **做了什麼**：整合 Board 的 Shiqizhuixue／Shiqizhuixia、本地 checklist／腰痛課件、eLotus Ex-B8、AD M-BW-25／拼音索引與醫砭 EX-B8；保留 `EX-B8`／`ex.b8`，補齊異名、定位、解剖、全部功效主治、配穴、考點、安全與逐欄來源。
+- **數字 before→after**：嚴格模板／四源稽核 `34/72 → 35/72`；待修 `38/72 → 37/72`；泛用 Cloud URL 維持 `12/72`；技法、來源 URL、亂碼缺口均 `0/72`。
+- **來源與安全**：一般層採 eLotus／AD 共同直刺0.8～1.2寸；AD 0.5～1寸分列。AD／醫砭1.5～2寸與 AD 所列皮膚至椎管1.25～1.75寸重疊，只作衝突記錄，不作常規深刺許可；另補神經紅旗與孕兒、高風險、灸量來源缺口。
+- **驗證**：全套 validator、build、947 runtime、互動、925 ids、內容垃圾、語法、EX-B8 runtime assertions、雙語配對與 task-file diff 檢查均通過；內容 commit `2ac77dc`。
+- **已知未解／下一步**：37張待修、12張泛用 Cloud URL；下一張 EX-B9 腰奇。Pattern 主 worktree 與 `curriculum/conditions/*` 完全隔離、未納入。
 
 # 2026-08-08 Codex — EX-B7 腰眼四層、定位／深度變體與 AD 配穴錯碼修整
 
@@ -3152,3 +4104,185 @@ Current repo state as of this log:
 - **來源與空欄**：9/9 有 identity/mechanism/key-sign/differential provenance；tongue `8/9`、pulse `7/9`。寒熱錯雜無單一通用舌脈，真寒假熱脈象未寫；9/9 formulas/points 留空，未將來源情境詞彙伪造為 live ID links。
 - **驗證**：Pattern standard/registry、ratchet、alias dry-run、build-data determinism、validate-data、interactions、content-junk、relations、reconciliation、endpoint/bilingual/focused-encoding audit 通過。`validate-relation-registry` 僅保留既有 `edge.pattern_differentials` R4；全庫 encoding debt 非本批回歸。
 - **STOP**：V2-D／六經、衛氣營血、三焦、婦科、奇經、relation types/edges 與 endpoint namespaces 均未開始。
+
+# 2026-08-10 Claude — Clinical Data Capture V2 direction reconciliation (architecture checkpoint, design only)
+
+- **做了什麼**:比對 Ting 核准的 V2 方向(Clinical Data Capture & Longitudinal Analytics)與 `388c947` 現況;只動兩份 docs + 本 log,零程式碼、零 data 變更。
+- **產出**:`docs/CLINICAL_DATA_CAPTURE_V2_DIRECTION_2026-08-10.md`(方向原文入庫)+ `docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md`(A–F 對帳)。
+- **對帳結論**:ALREADY = D11 四命名空間非 1:1、Case/Visit 層辨證表、SOAP 旁掛 canonical ID、L1–L6 藥理骨架、日期/隔離/outcome 架構。PARTIAL = 關係無類型語意、用藥為逐次快照非縱向帳、`med.*` vs `drug.*` 並存、`visit_observations` 空表 + sym_id 分叉、visit 證型無 role/confidence。MISSING = `suppl.*`/`life.*`/`exposure.*`/`adverse_event.*`/`modality.*` 五個命名空間與四張新表。
+- **風險**:D12 凍結 2026-09-01 —— 新表必須在 9/01 前落地;`supp.*` vs `suppl.*` 拼法、med→drug 正名、sym_id 分叉,三項都等 Ting 在 D15 拍板。
+- **STOP**:未建表、未種詞彙、未動 UI、未動 relation_registry;下一步順序寫在對帳文件 §F。
+
+# 2026-08-10 Claude — D17 locked: V2 命名空間與模型規則(docs-only 收尾 checkpoint)
+
+- **做了什麼**:記錄 Ting 當晚拍板的決定為 **D17**(DECISIONS.md),同步更新對帳文件;零程式碼、零 data、零 DDL。
+- **D17 內容**:(1) 補充劑命名空間定案 **`supp.*`**(不是 V2 方向文件 §6 寫的 `suppl.*`);連同 `life.*` / `exposure.*` / `adverse_event.*` / `modality.*`。(2) 藥物重申 D15:`drug.*` 正典,`med.*` 永不刪除、走 alias,migration gate 之後新 Visit 不得再產生 `med.*`。(3) `sym.*` 與 `metric.*` 是互補不是競爭 —— 症狀可選連結一或多個量測;schema.sql 裡的 sym_id 分叉就此解決。(4) Visit 證型 role:MVP 支援 primary|secondary,root|branch 保留;confidence 之後補。(5) baseline 與 Visit 變化必須是同一條可重建的縱向時間線(drug/supp/life/exposure 全適用)。(6) 生活型態/暴露是觀察值,永不自動轉成證型;suspected 暴露永不自動變 confirmed。
+- **⚠️ 給下一個 agent 的工作樹警告**:工作樹裡有約 40 個先前就被刪除的 `curriculum/` 檔案,**不在範圍內** —— 不要 restore、不要 stage、不要 commit、不要動它們;**永遠不要用 `git add -A`**,一律逐檔路徑 stage。
+- **下一個實作週期**(Claude quota 重置後開始):第一步是 **additive Clinical schema/DDL**(四張新表 + visit_tcm_patterns 欄位,空表落地),不是知識卡內容擴充。順序在對帳文件 §F。
+- **STOP**:本 checkpoint 到此為止。
+
+# 2026-08-10 Claude — 8/12 sprint 模型分工政策(docs-only)
+
+- **Ting 指示**:8/12 Clinical V2 sprint 由 Fable 擔任 architecture lead + task router。分工:**Fable** = schema/架構/遷移/跨模組/高風險決策;**Sonnet** = 設計定案後的實作(表單、CRUD、UI、測試、例行重構/整合);**Opus** = 僅重大架構分歧或 second opinion;**Antigravity** = 大量機械性內容;**Codex** = 里程碑後獨立 QA/驗證。
+- **規則**:Fable 任務一旦規格明確且低風險,實作交給 Sonnet,不燒 Fable quota;**未定案的架構絕不下放**。本機 16 GB RAM —— 重型 edit/build/test agent 一律**依序執行**,不並行。
+- 政策同步寫入對帳文件 §F0(`docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md`)。工作樹警告不變:`curriculum/` 刪除檔不在範圍,禁 `git add -A`。
+- **STOP**:docs-only checkpoint,無其他變更。
+
+# 2026-08-12 Fable — Sprint 開工:Phase A 完成 + B1 schema 落地 + Cloudflare root cause 修復
+
+- **Phase A**:`origin/main` 是本分支祖先(fast-forward 落地安全,無 merge 覆寫 knowledge.js 風險);髒工作樹所有權判定 —— js/knowledge.js(+96)/js/router.js(+2)是藥理線未提交 WIP(pharm workspace 渲染),保留不動;curriculum/ 刪除檔與 untracked 研究包維持 out of scope。
+- **B1(`994d8b3`)**:schema.sql 新增 `case_agent_exposures` / `case_environmental_exposures` / `visit_lifestyle_factors` / `visit_adverse_events` / `visit_pattern_differentials` 五張空表 + `visit_tcm_patterns.role/confidence` + `visit_outcomes.related_sym_id`;localstorage_sqlite_mapping.json 加 `planned_mappings_d17`(7 條保留鍵名,B2 落地時轉正)。build-data PASS、ratchet PASS。
+- **Cloudflare**:root cause = dist/ 被 gitignore 而 Workers Builds 沒有 build 命令(Pages→Workers 遷移時儀表板配置漂移)。修法 = wrangler.jsonc 自帶 `build.command: node scripts/build-site.js`(deploy 前自動執行,本地驗證 15 files/23.1MB);quarantine 原樣保留;絕不發佈 repo root。Ting 要核對的四項儀表板設定寫在 `docs/DEPLOY_CLOUDFLARE.md`。
+- **Sprint brief 入庫**:`docs/SPRINT_2026-08-12_BRIEF.md`(十行操作硬規則 + 階段現況 + 路由含 ChatGPT/SOL + HARD GATES vs STRETCH)。八項修正全部採納:Phase C=薄抽象、Patient wiring 獨立高風險里程碑+Codex audit、Phase B 後強制 Codex schema audit、export 與 schema 同步凍結。
+- **下一步**:B2 localStorage 契約(Fable)→ B3 詞彙種子(Sonnet)→ Codex audit → Phase C/D。
+
+# 2026-08-12 Fable+Sonnet — Phase B 完成:B2 契約(6569eaa)+ B3 詞彙種子
+
+- **B2(Fable,`6569eaa`)**:normalizeCase 新增 `agentExposures[]`(單一縱向時間線,含 changeSinceLast)與 `environmentalExposures[]`;normalizeSoapNote 新增 `lifestyleFactors[]` / `adverseEvents[]` / `patternDifferentials[]`;tcmPatternSelections 加 role/confidence(role 由 primary/secondary picker 忠實記錄,非推導;confidence 在 rebuild 時 carry-over 不被剝除);outcomeMetrics 加 relatedSymId 且 setOutcomeMetricValue upsert 保留之。驗證:live app 往返 7/7 鍵保留、0 console errors、34 個既有病例無回歸。
+- **B3(Sonnet 5 交付,Fable 眼睛驗過後提交)**:data/config/ 五檔 —— supplement_category(8)/ lifestyle_factor(26,含 value_hint_en)/ exposure(9)/ adverse_event(8)/ modality(8)。build-data PASS、content-junk PASS、ratchet PASS 無回歸。尚未接進 build-data readJson(之後跟 UI 一起接)。
+- **⏸ CODEX AUDIT RECOMMENDED NOW** — 範圍:commits `994d8b3`+`6569eaa`+本次。要驗:schema/契約/mapping 三方一致性;export/import 是否完整攜帶新鍵(理論上 case 物件全序列化,要實證);PHI validator 是否需要掃新欄位;visit_western_medications(舊)與 case_agent_exposures(新)並存語意;role⇔isPrimary 一致性。
+- **下一步路由**:Codex audit → Phase C 薄 repository 抽象(Fable)→ Phase D 捕捉 UI(Sonnet,契約=B2 鍵名)→ Phase C2 Patient wiring(Fable+audit)。
+
+# 2026-08-12 Fable — AI 協作協議安裝(SOL/ChatGPT ↔ Claude 經 GitHub,docs-only)
+
+- 三檔入庫:`docs/AI_COLLAB_PROTOCOL.md`(協議正文,一頁)、`docs/AI_WORK_HANDOFF.md`(Claude→SOL,首份 handoff 已寫入 Phase A+B 全狀態與路由建議)、`docs/AI_REVIEW_FEEDBACK.md`(SOL→Claude,骨架)。
+- 規則要點:每工作區塊前 pull+讀 feedback、比對 SHA 防過期 review;里程碑優先於時鐘、防空 commit 迴圈;高風險里程碑(schema/Patient wiring/migration/export/落 main/Cloudflare prod)過線即等外審;CONTENT_REQUEST YAML 讓 SOL 直接供研究材料進 staging,照常走驗證閘門,不自動成 canon。Ting 只管臨床偏好/不可逆/隱私/優先序。
+- Export/import 完整性(HARD GATE 7)結構驗證:export=全物件序列化、import=`map(normalizeClinicalCase)`(B2 已 live 驗證的同一 normalizer)→ 新鍵不會被備份遺漏;檔案級走查留給 Phase E。
+- 下一步:等 SOL 首輪 review + Codex Phase B audit;之後 Phase C 薄抽象(Fable)。
+
+# 2026-08-12 Fable — Phase B 對抗性審計 + BLOCKER 修正(858e6f0 → 本 commit)
+
+- **審計**(`docs/AUDIT_PHASE_B_2026-08-12.md`,12 項):B-1 BLOCKER = agent/env ledger 就地更新,200mg→400mg→stopped 不可重建,違反 D17 §5;H-1 = certainty 覆寫即無痕晉升;H-2 = B1 的 mapping changelog 全日期命中 K4,K 系列 validator 紅了(不在 CI,原報告未察)。差異點:原 Phase B 報告宣稱「單一時間線」成立——審計證明只有快照半邊成立,事件半邊缺失。
+- **修正**:schema 新增 `case_exposure_events`(append-only,agent|environmental 雙親型);契約 `agentExposures[].events[]` / `environmentalExposures[].events[]`;changelog 改月精度。
+- **驗證數字**:審計情境 live 重建 3/3 事件、歷史劑量 200/400 皆可回溯、晉升 trail 含來源 note、0 console errors、K 系列 exit 0、app.js check PASS。
+- **裁定:PHASE C: SAFE TO PROCEED**(原 HOLD 解除)。Codex 落 main 前仍須獨立複核五點(報告檔尾)+ 事件層 append-only 不變量。
+
+# 2026-08-12 Fable — Phase C 完成:薄 repository 層(af52eb8)
+
+- `js/clinical-store.js`:storage seam(load/persist 兩處委派 + 直讀 fallback)、`applyExposureChange()` append-only 唯一寫入路徑(回應審計 B-1「靠紀律」缺口的機器強制面)、四個軌跡/現況查詢助手。normalize 留 app.js(契約層),store 零 DOM 依賴可 node 測。
+- 驗證:node 單元測試 5 項全過;live 33 real cases 無恙、0 errors;build-site 16 files;遷移路徑補記入 MIGRATION_LOCALSTORAGE_TO_SQLITE.md(未來換後端=setBackend,UI 零改動)。
+- 下一步:Phase D UI → Sonnet(契約已鎖);Phase C2 Patient wiring → Fable(高風險,完成即 Codex audit)。
+
+# 2026-08-11 Fable — Phase D batch 1 落地 + SOL Phase C 三項全解 + Cloudflare 停在認證邊界
+
+- **Phase D batch 1(ba8b1bd,Sonnet 實作、Fable 審)**:用藥/補充劑 ledger UI(清單+timeline、新增 dialog、改劑量/頻率/停用/確認未變),全部寫入走 applyExposureChange。live:3/3 事件、33/33 真實病例、0 errors。
+- **SOL 三項**:①歷史時間戳不合成(normalizer `|| ""`)②createExposure API 強制初始事件 + initial_recorded 語意(「已在使用」勾選)+ legacy events=[] 不回填 ③34→33 = Phase B 計數含 case_d17test 測試病例的回報錯誤,非資料遺失(33 id 全列、52 SOAP 不變、store 無 delete 路徑)。
+- **Cloudflare**:本機 Windows ARM64,workerd 不支援 → wrangler 完全不能跑;本機零憑證。停在唯一授權邊界:Ting 建 API token(Workers Builds Configuration: Edit + Workers Scripts: Edit)以 CLOUDFLARE_API_TOKEN 提供,其後 trigger 修復+main build+smoke test 全自動。DEPLOY 文件已更正(trigger 自帶 build command 為正道)。
+- **下一步**:Phase C2 Patient wiring(Fable,高風險,設計先行,完成即 Codex audit)。
+
+# 2026-08-11 Fable — Phase C2a:Patient 衍生層(read-only 安全半邊)
+
+- **調查結論**:app.js:6645 有 patientCode 唯一性 guard(一 code 一 case)→ patientCode 事實上已是 patient 身分鍵、每個 case 都帶 FK。「一 Patient 多 Cases」(V2 §4)目前被 guard 擋住 —— 解除是 C2b 的事。
+- **C2a 實作**:`store.derivePatientsFromCases()` 純函式(零持久化、零遷移、零真實資料風險):按 patientCode 群組、8 個 demographics 欄位取 updatedAt 最新非空值、相異值全記 conflicts(衍生層記錄分歧不消滅分歧,D4)。
+- **驗證**:node 單元測試(群組/latest-wins/conflict 記錄/無 code 跳過/caseIds 排序)全過;live 對 33 個真實 case 衍生 33 patients、0 無 code、0 衝突、零寫入。
+- **C2b(需 gate)**:patients 落盤、guard 語意改為「同 code 多 case 需確認」、case 建立 patient picker、case→patient 抬升遷移(真實資料遷移 = 不可逆,需 Ting 核准 + Codex audit 先行)。
+
+# 2026-08-11 Fable — C2b 核准入檔 + Codex 審計簡報
+
+- Ting 核准 C2b(patients 落盤 + guard 語意 + picker + 真實資料抬升遷移),前置條件 = Codex 對 Phase B→C2a 全段審計給 GO。
+- 簡報:`docs/CODEX_AUDIT_BRIEF_PHASE_B_TO_C2A.md`(10 檢查項含檔案級 export 走查與 C2b 遷移計畫審查;硬邊界:33 真實病例只讀)。
+- Codex GO 前,Fable/Sonnet 不動 C2b;可並行的只有不依賴 Patient 所有權的 Phase D 備料。
+
+# 2026-08-11 Fable — Cloudflare Step 1 完成(免部署)+ 根因定案
+
+- Token 生效後 API 實查:production = main `47026e5` 逐檔 MATCH、HTTP 200,健康;今天 5 個 wrangler 版本上傳(guotingru 身分、未 promote)非本機所為,待 Ting 確認來源。
+- 根因:Worker 從未 git-connected(Builds API 無任何 trigger)。剩一步 Ting 互動動作:Dashboard Connect GitHub(main/build-site/wrangler deploy/root)。細節在 DEPLOY_CLOUDFLARE.md。
+- Codex 審計進行中;C2b 等 GO。
+
+# 2026-08-11 Fable — Cloudflare 收尾:Connect 完成,驗證 push 觸發管線
+
+- 更正:08-11 的 5 個 wrangler 版本上傳是 **Ting 本人**所為(非 Codex/SOL),無安全疑慮。
+- Ting 已在 Dashboard 完成 GitHub Connect(官方文件確認 Builds 設定僅 Dashboard 可操作,無公開 API——先前 API 探測 12000 是預期行為)。
+- 本 commit 兼作管線驗證觸發:push 後 Workers Builds 應對 codex/pattern-v2 產生 preview 版本(versions API 可查),production 只在 main 更新時觸發(等 Codex GO 後首次落地時驗證)。
+
+# 2026-08-11 Fable — Codex 審計回應完成(兩批)+ batch-2 審核落地
+
+- **批1(23b310d)**:C2a 衍生修正(HIGH#8:+birthYear、set 欄 canonicalize、conflict 帶來源、缺/同 timestamp 不選 winner→needsReview,5 項迴歸測試過)· `validate-clinical-invariants.js`(R1–R8 含 --prefix-check,good/bad/truncated fixtures 自測 5 類違規全抓)· mapping 逐欄展開(21/15/14/10/13/4 與審計對照表一致;timestamps=preserve-missing;pattern note 裁決=ADD)· `C2B_MIGRATION_PLAN.md`(BLOCKER#9 的 A–D 全落計畫,C2b 仍 NO-GO 等 Codex 重審)。
+- **batch-2 審核(5e58867,Codex 實作、Fable 審)**:SOAP 生活型態/不良反應列 + 五詞彙入 bundle(8/26/9/8/8)。實查發現實作者遺留假病例 `case_phaseD2_test` 於真實 store(34→33 清理,同時取得持久化證據:coffee 3 cups/day、bruising/mild/resolved,shape 全符)。
+- **批2(本 commit)**:HIGH#6 —— normalizer 讀路徑不再合成 createdAt/updatedAt(""保留),save 站只給全新記錄蓋戳;HIGH#2 —— import 拆 merge(預設,event 序列必須 prefix-extend 否則整包拒絕)/restore(二次確認+先自動下載備份);pattern note 鍵入契約。live 驗證:legacy 戳保持缺失、截短偵測、延伸放行、33 病例、0 errors。
+- **未結**:R1–R5 進 import 前驗證與 CI/ratchet 接線;C2b 等 Codex 重審 GO;藥理 WIP(js/knowledge.js/router.js)仍未提交,不動。
+
+# 2026-08-11 Fable — migrate-c2b.js dry-run scaffold(假資料,無任何 storage 寫入)
+
+- `scripts/migrate-c2b.js`:只有 --dry-run 與 --self-test,execute 模式刻意不存在(等 Codex GO + Ting 在場,屆時走 shadow-key+pointer,見 C2B_MIGRATION_PLAN §B.4)。
+- Determinism 實證:patient id = sha256(patientCode) 純函數、無 Date.now/Math.random;self-test 7/7 PASS;同一 fixture 跨兩個獨立 process 產出 byte-identical plan。
+- Plan 內容:patients(9 欄+conflicts+needsReview)、caseAssignments、blankCodeCases(列出不丟棄)、manualReviewQueue、counts、source_sha256。輸入吃 RAW snapshot,不經 normalizer(Codex §A.4)。
+- 下一步:Codex 重審(計畫+本腳本+dry-run 樣本)→ GO 後才進 preflight/真機。
+
+# 2026-08-11 Fable — 等待 Codex GO 期間:invariants 單一來源 + SOL 研究包入庫
+
+- **ee00856**:`store.checkClinicalInvariants()` 成為 R1–R7 單一來源(CLI validator 與 import 前驗證共用);import 拒收契約違規(persist 前,不 silent 修)。實測:壞 fixture 3 違規全抓;**33 個真實病例 = 0 違規/8 個 legacy role warnings**;0 console errors。
+- **CI 接線受阻(預期)**:validate.yml 加 K 系列+invariants 兩步的 commit 被 GitHub 拒(PAT 無 workflow scope,記憶中的已知限制)。已 soft-reset,改動留在工作樹;需 Ting 在 GitHub web editor 手動加(delta 見工作樹 diff,只有 10 行)。
+- **SOL 研究包入庫**(Acuting_OC_Tonight_ClinicV2_research):docs/research_packs/ 5 檔 + data/research_staging/ 3 檔,全標 NOT CANONICAL。sym 候選 28、metric 候選 10(雙語,與 outcome_metrics id 對齊);capture examples 與已實作契約逐項吻合(magnesium 三態、suspected→confirmed 保痕、role⇔isPrimary、lifestyle 不自動轉證)。K 系列 PASS。ingestion 需照常走 canonical 閘門,等 Codex/模板鎖定。
+
+# 2026-08-11 Fable — Codex GO(P0–P2)+ SOL 第二包收檔入庫 + 正本 origin 確認
+
+- **Codex 覆核(b270b50)**:三 code gate 3/3 PASS(R8 反例 2/2 擋、coverage 斷言生效、K4 4/4+5/5、migration bytes/null/裁決/碰撞全過)。**GO:限 P0–P2 只讀 preflight**;P3 writer/rollback rehearsal 未提交,真機寫入仍 NO-GO(Codex final GO + Ting 在場)。
+- **P0.1 正本確認(Ting)**:真實病例輸入 = **Edge + file:// 本機 index.html**(C:\Projects\acupuncture-point-app\index.html,預設瀏覽器 MSEdgeHTM 佐證)。⚠️ 這與 session 內 localhost:8361 預覽面板所見的 33 cases 是**不同 origin**——正本內容待 raw 擷取後比對,不得假設相同。preflight 計算器已備(`scripts/preflight-c2b.js`,e07791b,拒絕輸出進 repo)。raw 擷取方案:Edge 關閉後以 --remote-debugging-port 重啟 + CDP 只讀 localStorage(Node 內建 WebSocket),待 Ting 給空檔。
+- **SOL 第二包(Fable 直接於 app 對話收檔)**:AcuTing_OS_Tonight_Pack_2(34KB)存至 pattern-v2 資料夾(同第一包),解壓 14 檔:4-pack(Patient Wiring/Test Scenario/Selector Vocab/Ingestion Contract 草案)+ CR-001 sym 種子 28 筆(全 both,含紅旗+來源)+ CR-002 metric 新增 4 筆(fatigue_score/stool_form_bristol/hot_flash_count_day/range_of_motion_deg;與現有 id 重複者已由 SOL 去重)+ CR-003 supp 骨架 18 筆(NAD+/NR/NMN 標 uncertainty)+ manifest。全 JSON 解析 OK、K 系列/content-junk/ratchet 全 PASS。全部 NOT CANONICAL,ingestion 走正常閘門。
+- **Ting 願望入 backlog**:本機網頁存病例(現行 file:// 即是)+ 手機網站(sprint STRETCH 已列 mobile,強度待 9/5 後排)。
+
+# 2026-08-11 Fable — C2b P0–P2 只讀 preflight 完成 + ⚠️ 正本認定翻案
+
+- **P0**:Ting 指定正本 = Edge + file:// 本機 index.html。Edge 136+ 禁止預設 profile 除錯 → 改用「複製 Local Storage leveldb 至暫存 profile」法,對正本零寫入。操作全程 CDP 只讀,結束後 Edge 原樣還原。
+- **P1**:raw 擷取 SHA-256 `54890af4…3acba`、5,880 bytes;前後 raw 完全相同(只讀證明);兩次 app-export 序列化 hash 相同;備份三檔 + 報告存 Git 外(%USERPROFILE%\AcuTing-backups\pre-c2b\)。
+- **P2**:同 raw 兩次 dry-run plan byte-identical;source_sha256/source_bytes 與 raw 相符;blank/duplicate/collision/conflict 全 0。
+- **⚠️ 重大發現**:file:// 正本只有 **2 cases、0 SOAP**(P-2026-001/002,舊 schema 殘留 `case.startDate` unknown field)——與預覽面板(localhost:8361)的 **33 cases/52 SOAP** 是兩份完全不同的資料。研判:近期病例練習(含 08-09 outcome metrics 測試)都發生在預覽面板 profile;file:// 是早期試用殘留。**且兩份都是練習/測試資料——9/5 前不存在真正病人資料。**「正本是哪份、9/5 用哪個入口」待 Ting 裁決後才能定 P3 目標 store。
+
+# 2026-08-11 Fable — 正本定案(Ting 授權)+ P3 writer 開工
+
+- **定案**:9/5 起正典臨床入口 = **Edge + file:// 本機 index.html**(acuting-clinical-cases-v1 於該 origin)。預覽面板(localhost:8361)33 筆經逐筆檢視全為 QA fixtures,歸檔為開發測試資料;不做任何搬移。兩 store 已完整備份(hash 驗證,AcuTing-backups/pre-c2b/2026-08-11_0202/)。
+- **並行**:Sonnet batch 3(環境暴露 UI)於獨立 worktree branch codex/phase-d-batch3 進行中;SOL 正補 CR 系列與下批 research packs,約 5 分鐘後收檔。
+- **P3 開工**:shadow writer + rollback + rehearsal(只寫 staging key、pointer 切換、白名單 rollback;假資料/檔案級排練,不碰真 store)。
+
+# 2026-08-11 Fable — P3 shadow writer + rollback rehearsal 完成(假資料/隔離副本)
+
+- store 新增(白名單寫入:僅 staging+pointer 兩 keys):executeMigration(hash 驗證、冪等 0/0/0、raw 原樣攜帶+additive patientId)、verifyStaging(逐 case 比對、event 序列 exact、orphan/counts)、switchPointer(verify 全綠才准)、rollbackMigration(白名單刪除)。hasher 注入式,store 零依賴。
+- scripts/rehearse-c2b.js:完整週期排練(plan→execute→verify→冪等重跑→pointer→tamper 拒絕→rollback→raw byte 不變+白名單外零寫入)。rehearsal shim 對 v1 寫入直接 throw。
+- 排練結果:fixture 10/10 PASS;Edge raw 隔離副本(2 cases)PASS;preview raw 隔離副本(33 cases)PASS。途中修一個測試自身 bug(tamper regex 誤中 counts.cases —— 改為直接竄改 case 欄位,verify 正確拒絕)。
+- P3 交付物齊:writer+rehearsal artifacts,待 Codex P3 覆核 → P4 final GO(真機執行仍 = Ting 在場)。
+
+# 2026-08-11 Fable — SOL Pack 3(CR-007~009)收檔入庫
+
+- Fable 直接於 app 對話收 ZIP(20KB)→ pattern-v2 資料夾(同前兩包)→ 解壓 8 檔:supp 骨架批次二(18)、sym 擴充 Batch D(20)、臨床關係種子(sym→metric 20 條 measured_by + supp→drugclass 審閱關係 12 條 + forbidden_inferences 3 條)+ README/manifest。
+- 驗證:3 JSON 解析 OK、K 系列/content-junk/ratchet 全 PASS。全 NOT CANONICAL;關係種子正好對接未來 relation_registry typed-relation 工作(Pattern V2-D),ingestion 照常走閘門。
+- 累計 staging 庫存:sym 候選 48、metric 新增 4、supp 骨架 36、關係種子 32、test scenarios、selector vocab、Patient wiring pack、ingestion contract 草案。
+
+# 2026-08-11 Fable — supp 卡基建(模板+驗證器)+ 4 個新 metric 入 canon + 路由更新
+
+- `docs/SUPP_CARD_TEMPLATE.md` v1:supp.*/drug.*/herb.* 邊界(同源物質雙實體規則)、骨架 shape(逐欄來源、interaction 旗標=審閱非斷言)、maturity 三級、來源優先序(NIH ODS>Examine>NMD)、D17 §6 引用規則。
+- `scripts/validate-supp-standard.js`:0 records 誠實 PASS(尺先掛牆);id 拼法/雙語/分類詞彙/maturity/有值必有源/樣板句粗篩。
+- outcome_metrics 26 筆(+4:fatigue_score、stool_form_bristol、hot_flash_count_day、range_of_motion_deg;name 正規化 snake_case)。build/ratchet/K 全 PASS。
+- **路由更新(Ting)**:Antigravity 退出批量製卡(不可信,與既有記憶一致);批量卡工作改 Sonnet 5,可多開但以不壓垮本機為度(實務上限 2 並行)。sym Batch B(Sonnet #1)進行中;supp 批次(Sonnet #2)接續派出。
+
+# 2026-08-11 Fable — Phase E 契約級走查腳本(HARD GATE 8)12/12 PASS
+
+- `scripts/walkthrough-phase-e.js`:假病人 A(5 visits:pain 8→7→5→4→3、sleep 5→7、supp 200mg→400mg→stopped、suspected→confirmed 留痕、證型 肝鬱→脾虛 縱向演變不覆寫、一次 AE 含 modality+resolution)+ 假病人 B 隔離對照。驗 12 項:軌跡×2、時間線重建、現況重建、隔離、R1–R7、export round-trip+append-only、AE 完整性 —— 全 PASS。
+- 全部經正規 API 建構(createExposure/applyExposureChange),可重跑、Codex 可獨立執行。瀏覽器級 UI 走查(hard gate 1/2 的 reload/isolation 實測)另排在 9/5 前用 Edge 正本入口做一次人工+自動混合。
+- 並行中:Sonnet#1 sym Batch B、Sonnet#2 supp 36 卡、Codex C2B-R4。
+
+# 2026-08-11 Fable — supp.* 36 卡入 canon(Sonnet#2 實作、Fable 審核合併)
+
+- `data/supplements/supplements.json`:36/36 骨架卡(分類:botanical 9/antiox-coenz 8/vitamins 6/minerals 6/amino-perf 3/multi 2/fatty 1/probiotics 1);dose_source 34/36(NAD+/NMN 誠實留空——staging 來源不支持具體數字);safety notes 111/111 帶來源;interaction flags 逐句粒度(anticoagulant 18/immunosuppressant 10/thyroid 11,negation-aware)。
+- 亮點判斷(抽查認可):supp.ginkgo 不連 herb.yin_xing(葉萃取 vs 白果種子,herb 卡自己的 exam_pearl 佐證);curcumin→jiang_huang、asian_ginseng→ren_shen 連結正確。
+- 實作者回報的 taxonomy 缺口:staging 用了非詞彙的 other_bioactives(melatonin/glucosamine/chondroitin 被塞進勉強類)——列入詞彙表 v2 待議(可能加 category)。
+- validate-supp-standard 36 筆 0 defects;build/ratchet/content-junk 全綠。並行:Sonnet#1 sym 卡持續、Codex C2B-R4 持續、SOL 優化提案回覆中。
+
+# 2026-08-11 Fable — Antigravity 西藥成果整合進 local index(Ting 反映「沒融入」)
+
+- **調查**:成果卡在 acuting-antigravity worktree 的 pattern-v2-implementation 分支(8 個 pharm commits),從未併入主線;主線只差 UI(js WIP 未提交)。真實成色:40 drugs/33 classes/29 targets/5 systems **全為 draft 骨架**——0 來源、0 禁忌、0 不良反應,truth-verification 閘門建好但無已驗內容;中文名有錯(如 lisinopril→「李斯諾普」,應為賴諾普利)。
+- **整合**:採納資料檔+4 支 pharm 驗證/測試腳本(檔案級 adoption,不 git-merge——遵守 knowledge.js 覆寫教訓);正式提交擱置多日的 pharm UI WIP(knowledge.js +96/router.js +2)。live:pharm workspace 40 卡渲染、bundle 40/33/29、0 console errors、validate-pharm PASS、ratchet 無回歸。
+- **待辦(Sonnet 批次)**:40 個中文名逐一審校 + 用其 DailyMed/MedlinePlus manifests 把 draft 填成 verified(來源逐欄)。在 UI 上 draft 卡誠實顯示 status pill 與 gap note——這正是該 WIP 自己的設計。
+
+# 2026-08-11 Fable — 資產盤點糾偏(Ting 抓到重複下單)+ 訂單三修
+
+- Ting 指正:下單前未盤點既有資產。實查結果:CR-011 全重複(pack 02 即 tdis 完整度審查+75 條)、CR-010 半重複(pack 01+71 已有 93 條 masterlist 與 board 殘缺 189 行)、CR-012 大半重複(Pattern Batch02-10 zip 內 Batch04/07/08 已含婦科/衝任/奇經/辨證系統研究)。已向 SOL 三度修正:CR-011 取消、CR-010 縮為「補到 300 的 delta 清單」、CR-012 縮為「V2-D Final Canonical Decision Pack」。
+- 跨倉盤點另發現:pattern-v2-implementation 分支較主線 +44k 行(含 731 行完整版 validate-pharm-standard——主線現用的是舊小版,**待對帳採納**);antigravity worktree 有 curriculum/pharm/v7_extracted 未入庫。
+- 已請 SOL 出「最新版 manifest」→ 將建 docs/RESEARCH_ASSET_INDEX.md,之後任何下單先查索引(教訓已入長期記憶)。
+
+# 2026-08-11 Fable — P0.5 Visit Brief 上線 + 資產索引制度化 + SOL 交接包入庫
+
+- **Visit Brief(P0.5,優化主項)**:病例詳情頂部新面板——上次 vs 前次 metric 差值(direction_good 紅綠上色)、本次 ledger 事件(藥/補/暴露變化)、生活型態差值、⚠ REVIEW(未緩解 AE、certainty 晉升)。live 驗證:QA-G 病例 pain 6→4↓ 綠色渲染正確。純讀取衍生,零 schema 變更;P1 手機自填上線後自動更完整。
+- **SOL 交接包(91b3004)**:RESEARCH_ASSET_INDEX(權威/取代/已入庫三態)+ DO_NOT_USE 清單 + Pattern V2-D canonical decision slice(V2-D 連決定都有了——CR-012 歸零)+ 漏收的 CR-004~006(sym TCM 擴充、supp 交互矩陣、metric 別名去重表)。
+- **制度化**:下單前必查 INDEX + 五處盤點寫入 AI_COLLAB_PROTOCOL(Ting 裁定,三方適用)。
+- Fable 主項隊列(自選,狂做模式):P3-lite 月審腳本 → Timeline 泳道圖原型 → CARE readiness(61 項對映採 SOL 既有 spec)→ pharm validator 對帳。

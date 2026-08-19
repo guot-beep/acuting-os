@@ -155,3 +155,15 @@ app 存**單一語言的自由文字**,schema 是 `_zh` / `_en` 成對。
 四項全部是 additive 或文件工作,不受 9/01 凍結影響。
 9/01 真正鎖住的是**既有欄位的型態變更**(例如 §3.1 把 `tongue_zh` 拆成兩欄,
 那要遷移腳本)。
+
+## Phase C 補記(2026-08-12)— repository seam 已落地,遷移面縮到兩個函式
+
+`js/clinical-store.js` 現在是唯一摸 localStorage 的地方(app.js 的
+loadClinicalCases/persistClinicalCases 委派給它,並保留直讀 fallback ——
+store 腳本沒載入時,靜默回 [] 會讓下一次存檔清空真實病例,直讀才是安全失敗)。
+
+未來遷 SQLite/D1 的路徑:實作同介面 backend(`read()`/`write()`,或屆時改
+async 並調整兩個 seam 呼叫點),`AcuTingClinicalStore.setBackend(adapter)` 插入,
+UI 零改動。normalize 留在 app.js(契約層);`applyExposureChange()` 是 ledger
+唯一認可變更路徑(append-only,AUDIT B-1),SQLite 版對應
+`case_exposure_events` 的 INSERT-only。

@@ -1,5 +1,193 @@
 # Codex Task Queue
 
+> **收口規則(2026-08-12,優先於本檔任何既有條目)**
+> 找到**非 hard-gate** 問題 → 寫進 backlog,**不得因此重開當前 milestone**,
+> 也不得自行發起同一 milestone 的第二輪完整 adversarial review。
+> 一個 milestone 一次 independent audit;修完只跑針對該 blocker 的 regression。
+> hard-gate 的定義與擋/不擋對照表見
+> `docs/SPRINT_2026-08-12_BRIEF.md` §Validation Convergence / Exit Rule。
+>
+> **VALIDATION FRONTIER FROZEN**:除非遇到 data-loss / cross-patient /
+> clinical safety / export-loss 級別的 blocker,不再開新 audit round。
+
+## ⚡ NEXT:P1 focused retest → P4 rehearsal → landing audit(2026-08-12 晚)
+
+**branch 狀態:`mergeable_state: clean`**(可合併 + 全部檢查綠,PR #59 @ dab9ae8)。
+SOL 收斂序第 1、2 步(方劑 4 清零 → exact SHA 全 CI 綠)已成立且持續維持。
+
+1. **P1 focused retest(你的解除條件)**:你上一輪判 NO-GO 的 3 HIGH + 4 MED
+   已修並落地(aaf8b81):根因(MED-4 兩份規則各自漂移)以抽出單一共用
+   `js/previsit-validator.js` 解決,app.js 與 CLI 同呼叫它,app 端缺模組時
+   fail-closed 而非退回較弱的內嵌路徑。official self-test 由 3 good + 14 bad
+   增為 **3 good + 22 bad**(你 8 個失敗斷言各成常駐 fixture)。
+   **Fable 已在活體 app 獨立覆驗**(非只跑 CLI):metrics 物件冒充陣列 /
+   9007199254740993 / 1e308 / 白名單外 metricId / `filledAt:"0"` 全部整筆拒收
+   且零預填;`"A\rB"` 的 CR 被剝除而非寫入病歷。請跑你的 28 assertions +
+   official self-test;全綠才由你改判 P1 `GO`(真實病人使用解除仍是 Ting 的決定)。
+2. **Clinical P4 rehearsal**(六軸只做 regression smoke:31/31 + 65/65 + seam diff)。
+3. **branch landing audit**(main 已再度前進,見下方「CI 靜默死亡」教訓)。
+
+**新增的 landing 風險項(務必納入 landing audit)**:main 會被其他線推進
+(2026-08-12 的 38d3b1b),而 **PR 一旦與 main 衝突,GitHub 連 run 都不會建立**
+—— 沒有紅叉、gate 靜默消失(當日實際發生約 3 小時)。landing checklist 請加入
+「檢查 `mergeable_state` 而非只看最後一次 run 顏色」,細節見
+docs/DEPLOY_CLOUDFLARE.md 對應章節。
+
+---
+
+## 🟢 GATE CLEARED 2026-08-12:CI 史上首次全綠
+
+**Run 31577198745 @ exact SHA a26d2a1**:4 jobs 全 success(no-PHI / preflight /
+ratchet / green validators 23 步含 formula 0 阻斷、K-series、R1-R8、AVS)。
+SOL 收斂序的第 1、2 步(方劑 4 清零 → exact SHA 全 CI)已成立。
+Codex 依序執行:**P1 transport audit(即刻)→ Clinical P4 rehearsal →
+branch landing audit**。Clinical 六軸只做 regression smoke(31/31 + 65/65 +
+seam diff:W1 bridge、R15 v1 fail-loud、formula-in-formula validator 延伸
+—— 最後一項改了 validate-formula-standard.js,mutation-tested 6/6,審它)。
+
+---
+
+## 佇列(SOL 2026-08-12 晚間裁定:Clinical 只做 regression smoke,不再開全輪)
+
+收斂順序(SOL):方劑 4 清零 → 新 exact SHA 全 CI → P1 transport audit →
+Clinical P4 rehearsal → branch landing audit → main landing → production smoke。
+
+**Codex 下一個任務 = P1 transport adversarial audit**(可立即開跑,不等方劑 4;
+方劑 4 在 Ting/SOL 內容線)。R15 seam 覆核降級:併入 transport audit 的
+Clinical regression smoke(六軸只 smoke,W1 bridge + R15 v1 fail-loud 的
+diff 快查,不另開輪)。
+
+### P1 transport audit(SOL 指定高價值)
+對象:previsit.html payload(formVersion/payloadId/filledAt)+ app.js
+pastePrevisitImport 三道硬規則 + scripts/validate-previsit-payload.js。
+攻擊面:wrong-patient match(逐字比對繞過?)、stale/replayed payload
+(72h/未來/缺時戳/同 payloadId)、clipboard/QR 處理、malformed free text
+(注入 HTML/超長/控制字元進 subjective 預填)。契約見
+docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §7。全綠 → 解除「真實病人使用」PAUSE。
+
+### branch landing audit(SOL 指定)
+main → codex/pattern-v2 已 280+ commits。審 landing plan:merge-base 盤點、
+generated file 決定論、migration/export/import rehearsal、production smoke、
+DEPLOY_CLOUDFLARE 六 gate。CI 綠(剩 4 formula holds,3 個等 Ting)後執行。
+
+---
+
+## ⚡ NEXT TASK: C2B-R15 seam 增量覆核(小,非新輪)
+
+R14 六軸 GO 之後 clinical-store.js 有兩筆**已落地**變更,exact-SHA 對照基準
+需要前移。請對 diff 做增量覆核(不重跑六軸,除非 diff 觸到已審 seam 的行為):
+
+1. **W1 getPatientsView bridge**(純新增函式 + export;UI 唯讀視圖用,
+   不觸 save/restore/sync 任何一行)。
+2. **R15 v1 load fail-loud**(Dry Clinic #9,事故驅動:2026-08-11 演練中
+   store 被並行 agent 寫入 fetch-404 body,v1 靜默回 [] 差點讓下一次存檔
+   蓋掉可救回資料)。變更:v1「存在但 unparseable / 非陣列」→ throw
+   (app 端 catch → 唯讀鎖,既有機制);「不存在」→ [] 不變。
+   app.js 直讀 fallback 同語意。rehearsal 新增 4 例(R15),65/65;31/31 不動。
+
+覆核點:R15 throw 訊息不洩 PHI(只含 key 名)✅?v1 fail-loud 是否影響
+P4 checklist 的 v1→v2 遷移前置(遷移讀 v1 store 的路徑現在會對 corrupt 丟錯
+—— 這是意圖行為,遷移工具應在乾淨 store 上跑)?通過後更新 exact-SHA 基準,
+CI 綠燈條件不變(剩 4 個 formula holds,其中 3 個等 Ting/SOL)。硬邊界照舊。
+
+---
+
+## (已完成)前一任務: C2B-R14 收斂覆測(依 R14 收斂令,非新輪)
+
+H1 已修並推送(8da3089):minimumEnvelopeShapeError 單一驗證器三邊界共用,
+五個 active 變體 + incoming 變體 + sync MAX_SAFE overflow 官方化,rehearsal 60/60。
+照你的收斂規則:只覆測本 blocker + 全套 regression;六軸 + exact-SHA CI 全綠
+→ 直接發 GO + 修訂版 P4 進 rehearsal 階段。CI:Fable 已開 draft PR 觸發
+validate.yml(見 PR 描述,exact SHA 對齊)。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R13 — R12 F1-F4 修復覆核
+
+Fable 已修:F1 active revision 非法(存在但非 safe int ≥1)→ restore
+REJECTED_UNCHANGED、active/pointer 不動(四型反例入 suite);F2 兩條 writer
+寫入前算 nextRevision,overflow 零寫入丟錯(MAX_SAFE 反例入 suite);F3 官方
+E1 夾具重建 —— 含 canonical Patient(hasher 實際被叫)+ hasherCalls≥1 +
+restore-未-settled + race-動作已生效 三重防空跑斷言;F4 same-revision no-op
+改為原始位元組相等(envelopeText === anchorRaw),whitespace 變體必拒(要放寬
+成 canonical equality 需 Ting 明改契約)。rehearse-runtime-restore 50/50。
+請重跑 R9(9)+R10(8)+R11(5)+R12 加碼(6)全情境 + 自行再加碼;全綠發 R13 GO
++ 修訂版 P4。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R12 — R11 E1-E5 修復覆核
+
+Fable 已修(現 tip 見 origin):E1 TOCTOU —— 驗證錨 = 驗證起點的 staging exact
+bytes,全部 await 結束後寫入前重讀比對,不同即結構化拒絕零寫入(重試會對新
+狀態重新驗證);E2 revision 秩序 —— <current 拒、==current 只准 byte-equal
+冪等 no-op(divergent 必拒)、>current 才進完整驗證;E3 runtime_revision
+型別鐵則(safe integer ≥1,store restore/load 邊界 + app 前置三處);E4
+pending 集合與 null-FK case code 集合雙向精確互等(ghost/漏列/重複全拒);
+E5 結構化失敗碼 REJECTED_UNCHANGED / INCONSISTENT_STATE,app 依 code 分流,
+INCONSISTENT_STATE 顯示實際兩鍵狀態 + 設唯讀鎖擋 persist,不再宣稱「未被更動」。
+rehearse-runtime-restore 42/42(你的五反例含 delayed-hasher restore-vs-sync、
+equal-revision divergent、string revision、ghost pending、double-fault code)。
+請重跑 R9(9)+R10(8)+R11(5)全情境 + 自行加碼;全綠發 R12 GO + 修訂版 P4。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R11 — R10 六反例修復覆核
+
+Fable 已修 D1-D6(現 tip 見 origin):D1 save 對 pending case 明確 patientId=null,
+verifier 承認「code∈pending 且 patientId=null」唯一合法 transient(還原後 sync 收尾);
+D2 反降級(active runtime-era 時,incoming revision < current 一律拒,revision-0 亦然);
+D3 verifyRuntimeEnvelope 以 sha256 重算 canonicalPatientIdOf 逐 patient 驗 immutable id;
+D4 duplicate normalized patientCode 必拒;D5 兩鍵替換原子化(pointer 失敗→staging
+回滾至 prior exact 值,回滾失敗則精確描述不一致狀態);D6 app importClinicalCases
+對 runtime-era envelope 在 pointer 缺席(wipe 復原)時放行同一 restore 函式。
+rehearse-runtime-restore 28/28(含你的六反例 + 恆真斷言已改 before/after 位元組比對)。
+請重跑你 R10 的 8 情境 + R9 的 9 情境,並自行加碼(D6 的 app 路徑請以你的 fake
+app handler 驗 import 可達性)。全綠發 R11 GO + 修訂版 P4。硬邊界照舊。
+
+---
+
+## (NO-GO 已修復)前一任務 : C2B-R10 — R9 四 gate 修復覆核
+
+Fable 已修全部四 gate(A+C = 31/31 pointer tests 含你的 9 情境;B = Sonnet
+commit-on-true 批(見最新 tip);D = verifyRuntimeEnvelope 兩型 restore 契約
++ scripts/rehearse-runtime-restore.js 17/17,含 switch→edit→sync→export→
+wipe→restore→canonical-hash exact + 截斷/交換/blank-FK 反例)。
+請重跑你 R9 的 9 情境注入 harness + 新增你自己的 runtime-restore 對抗情境
+(sync-vs-sync、restore-during-pending、pointer 恢復語義)。全綠則發布
+R10 GO + 修訂版 P4(需含:切換後寫一筆→export→驗在場;pending sync 驗證;
+runtime-era restore 演練)。結論照舊寫檔 push。硬邊界照舊。
+
+---
+
+## (已覆核 NO-GO)前一任務 : C2B-R9 — pointer-aware runtime 契約審計(新 gate,取代已作廢的 R8 GO)
+
+背景:INDEPENDENT_AUDIT_2026-08-11 發現 runtime load/save 不看 pointer(切換後
+新病歷寫 v1、export 出凍結 staging = 靜默分叉)。Fable 已修:
+- js/clinical-store.js:activeIsV2 / readStagingEnvelopeOrThrow(fail-loud,缺/毀 staging 一律 throw)/
+  v2 save 更新 envelope.cases + caseIds 同步 + pending_patient_codes(不同步鑄 id)/
+  syncPendingPatients(async,deterministic sha256 id,冪等)/ v1 在 v2 模式凍結永不寫
+- app.js:loadClinicalCases try/catch → 唯讀保護旗標;persistClinicalCases try/catch +
+  quota 失敗大聲告知絕不假裝已存;存檔後 fire-and-forget 補建病人
+- scripts/test-pointer-runtime.js:18 斷言(v1 不變性/v2 讀寫/凍結/pending/冪等/fail-loud)
+
+請審:1) v1 模式逐位元不變性(diff 舊行為);2) v2 模式下所有可達寫入路徑是否仍
+whitelist(rehearse 全套 + 你的注入);3) fail-loud 是否無路徑靜默降級;4) pending
+病人機制的競態與冪等;5) export/import 與新 runtime 的一致性(export 讀 pointer,
+現在 runtime 也讀 —— 兩者對齊?);6) P4 checklist 需要哪些新驗收項(切換後寫一筆
+→ export → 驗在場)。PASS 則發布 R9 GO + 修訂版 P4;任何 FAIL 照慣例寫反例。
+結論寫 AI_REVIEW_FEEDBACK.md + CODEX_HANDOFF.md 並 push。硬邊界照舊。
+
+---
+
+## (已完成)前一任務(2026-08-11,Fable 排入;Ting 只需說「照佇列」)
+
+### C2B-R8 — cleanup gate 單點覆核(最後一關)
+
+Endpoint:codex/pattern-v2 最新(先 pull)。R7 cleanup 反例已修:cleanupCandidate 明示 success/error(retry 一次);成功路徑 = cleanup 確認成功 → 才 active swap;cleanup 失敗在 swap 前回 {ok:false,failures},active/pointer 不動;失敗路徑 cleanup 錯誤附註 failures。rehearse 6j 內建你的注入(含「swap 不得發生」的 backend 證明)。請重跑你的 cleanup 注入(direct + app handler)、確認 R5/R6 反例與 P3.1/3.2/3.4 無回歸;**4/4 PASS 即發布 P4 final GO 條件與真機當日 checklist**(執行=Ting 在場、重比 Edge file:// raw hash)。結論寫 AI_REVIEW_FEEDBACK.md + push。硬邊界照舊。
+
+---
+
 Written: 2026-07-08 (Claude Cowork). Owner: Ting decides when each task runs.
 Purpose: Codex is running low on tokens. Each task below is written to be
 self-contained — Codex should be able to execute it by reading ONLY this task

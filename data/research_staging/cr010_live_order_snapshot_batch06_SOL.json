@@ -1,0 +1,99 @@
+{
+  "request_id": "CR-010",
+  "batch": "06",
+  "source_commit": "2ddced2",
+  "source_path": "data/research_staging/cr010_live/cr010_common300_detail_queue_live.json",
+  "note": "ID/order snapshot only; source queue summary counts are stale relative to Batch 05 ingestion.",
+  "ranks": [
+    {
+      "live_rank": 46,
+      "id": "cond.central_sleep_apnea",
+      "name_en": "Central Sleep Apnea",
+      "name_zh": "中樞型睡眠呼吸中止症"
+    },
+    {
+      "live_rank": 47,
+      "id": "cond.cerebral_palsy",
+      "name_en": "Cerebral Palsy",
+      "name_zh": "腦性麻痺"
+    },
+    {
+      "live_rank": 48,
+      "id": "cond.cerumen_impaction",
+      "name_en": "Cerumen Impaction",
+      "name_zh": "耵聹栓塞"
+    },
+    {
+      "live_rank": 49,
+      "id": "cond.cervical_dysplasia",
+      "name_en": "Cervical Intraepithelial Neoplasia",
+      "name_zh": "子宮頸上皮內瘤變"
+    },
+    {
+      "live_rank": 50,
+      "id": "cond.cervical_insufficiency",
+      "name_en": "Cervical Insufficiency",
+      "name_zh": "子宮頸閉鎖不全"
+    },
+    {
+      "live_rank": 51,
+      "id": "cond.cervicitis",
+      "name_en": "Cervicitis",
+      "name_zh": "子宮頸炎"
+    },
+    {
+      "live_rank": 52,
+      "id": "cond.cervicogenic_headache",
+      "name_en": "Cervicogenic Headache",
+      "name_zh": "頸源性頭痛"
+    },
+    {
+      "live_rank": 53,
+      "id": "cond.chronic_bronchitis",
+      "name_en": "Chronic Bronchitis",
+      "name_zh": "慢性支氣管炎"
+    },
+    {
+      "live_rank": 54,
+      "id": "cond.chronic_hepatitis_c",
+      "name_en": "Chronic Hepatitis C",
+      "name_zh": "慢性 C 型肝炎"
+    },
+    {
+      "live_rank": 55,
+      "id": "cond.chronic_open_angle_glaucoma",
+      "name_en": "Chronic Open-Angle Glaucoma",
+      "name_zh": "慢性開角型青光眼"
+    },
+    {
+      "live_rank": 56,
+      "id": "cond.chronic_pancreatitis",
+      "name_en": "Chronic Pancreatitis",
+      "name_zh": "慢性胰臟炎"
+    },
+    {
+      "live_rank": 57,
+      "id": "cond.chronic_scrotal_pain_syndrome",
+      "name_en": "Chronic Scrotal Pain Syndrome",
+      "name_zh": "慢性陰囊內容物疼痛症候群"
+    },
+    {
+      "live_rank": 58,
+      "id": "cond.chronic_venous_insufficiency",
+      "name_en": "Chronic Venous Insufficiency",
+      "name_zh": "慢性靜脈功能不全"
+    },
+    {
+      "live_rank": 59,
+      "id": "cond.cidp",
+      "name_en": "Chronic Inflammatory Demyelinating Polyneuropathy",
+      "name_zh": "慢性發炎性脫髓鞘性多發神經病變"
+    },
+    {
+      "live_rank": 60,
+      "id": "cond.cipn",
+      "name_en": "Chemotherapy-Induced Peripheral Neuropathy",
+      "name_zh": "化療誘發周邊神經病變"
+    }
+  ]
+}

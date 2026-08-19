@@ -1,0 +1,121 @@
+{
+  "source_commit": "aa170b9",
+  "queue_path": "data/research_staging/cr010_live/cr010_common300_detail_queue_live.json",
+  "maturity_path": "data/research_staging/cr010_live/cr010_condition_detail_maturity_live.json",
+  "reuse_map_path": "data/research_staging/cr010_live/cr010_source_reuse_map_live.json",
+  "live_counts": {
+    "full_detail": 77,
+    "partial": 85,
+    "skeleton": 343,
+    "total": 505
+  },
+  "source_assets_scanned": 1106,
+  "selection_rule": "Filter live queue to maturity == DETAIL_PARTIAL, preserve live file order, take first 15.",
+  "selected": [
+    {
+      "rank": 1,
+      "id": "cond.achilles_tendinopathy",
+      "name_en": "Achilles Tendinopathy",
+      "name_zh": "阿基里斯腱病變",
+      "live_score": 5
+    },
+    {
+      "rank": 2,
+      "id": "cond.acute_lumbar_sprain",
+      "name_en": "Acute Lumbar Sprain",
+      "name_zh": "急性腰扭傷",
+      "live_score": 5
+    },
+    {
+      "rank": 3,
+      "id": "cond.amenorrhea",
+      "name_en": "Secondary Amenorrhea",
+      "name_zh": "繼發性閉經",
+      "live_score": 5
+    },
+    {
+      "rank": 4,
+      "id": "cond.breech_presentation",
+      "name_en": "Breech Presentation (moxibustion context)",
+      "name_zh": "胎位不正（艾灸文件情境）",
+      "live_score": 5
+    },
+    {
+      "rank": 5,
+      "id": "cond.diminished_ovarian_reserve",
+      "name_en": "Diminished Ovarian Reserve",
+      "name_zh": "卵巢儲備功能下降",
+      "live_score": 5
+    },
+    {
+      "rank": 6,
+      "id": "cond.hip_osteoarthritis",
+      "name_en": "Hip Osteoarthritis",
+      "name_zh": "髖骨關節炎",
+      "live_score": 5
+    },
+    {
+      "rank": 7,
+      "id": "cond.hyperemesis_gravidarum",
+      "name_en": "Nausea of Pregnancy / Hyperemesis (context)",
+      "name_zh": "妊娠劇吐（文件情境）",
+      "live_score": 5
+    },
+    {
+      "rank": 8,
+      "id": "cond.ivf_support",
+      "name_en": "IVF/ART Adjunctive Support (context)",
+      "name_zh": "試管嬰兒療程輔助（文件情境）",
+      "live_score": 5
+    },
+    {
+      "rank": 9,
+      "id": "cond.lateral_epicondylitis",
+      "name_en": "Lateral Epicondylitis (Tennis Elbow)",
+      "name_zh": "網球肘",
+      "live_score": 5
+    },
+    {
+      "rank": 10,
+      "id": "cond.luteal_phase_defect",
+      "name_en": "Luteal Phase Deficiency (context)",
+      "name_zh": "黃體功能不足（文件情境）",
+      "live_score": 5
+    },
+    {
+      "rank": 11,
+      "id": "cond.medial_epicondylitis",
+      "name_en": "Medial Epicondylitis (Golfer's Elbow)",
+      "name_zh": "高爾夫球肘",
+      "live_score": 5
+    },
+    {
+      "rank": 12,
+      "id": "cond.meniscus_injury",
+      "name_en": "Meniscus Injury (context)",
+      "name_zh": "半月板損傷（文件情境）",
+      "live_score": 5
+    },
+    {
+      "rank": 13,
+      "id": "cond.menopause_syndrome",
+      "name_en": "Menopausal Syndrome",
+      "name_zh": "更年期症候群",
+      "live_score": 5
+    },
+    {
+      "rank": 14,
+      "id": "cond.menorrhagia",
+      "name_en": "Heavy Menstrual Bleeding",
+      "name_zh": "月經過多",
+      "live_score": 5
+    },
+    {
+      "rank": 15,
+      "id": "cond.neck_pain_stiff",
+      "name_en": "Acute Neck Pain / Stiff Neck",
+      "name_zh": "急性頸痛／落枕",
+      "live_score": 5
+    }
+  ]
+}

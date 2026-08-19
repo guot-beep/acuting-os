@@ -1,0 +1,52 @@
+{
+  "pack": "AcuTing_OS_CR010_Common300_Detail_Batch_04",
+  "request_id": "CR-010",
+  "batch": "04",
+  "generated_at": "2026-08-11",
+  "source_commit": "aa170b9",
+  "condition_count": 15,
+  "live_rank_range": [
+    16,
+    30
+  ],
+  "selection": "TRUE_LIVE_DETAIL_PARTIAL_ORDER",
+  "json_validation": "PASS",
+  "archive_manifest_validation": "PASS",
+  "payload_files": [
+    {
+      "path": "data/research_staging/cr010_condition_detail_batch04_SOL.json",
+      "bytes": 56423,
+      "sha256": "92913e06427c6b7489f47322ac3172de8e0eebcb10079f86cc3bf46e847faa0e"
+    },
+    {
+      "path": "data/research_staging/cr010_live_order_snapshot_batch04_SOL.json",
+      "bytes": 5905,
+      "sha256": "916785758ed470f7d19ede30b5e8364ad4663dbc2664fcc4ff88763321000a52"
+    },
+    {
+      "path": "data/research_staging/cr010_source_reuse_map_batch04_SOL.json",
+      "bytes": 4368,
+      "sha256": "f7dac97b957414441d23ca35861f9c97cb479ddb1a5abf2d42c5d54417f6c2b9"
+    },
+    {
+      "path": "docs/research_packs/00_README_CR010_COMMON300_BATCH04.md",
+      "bytes": 524,
+      "sha256": "d0df647654999db8462f6bab2930fd4087c03a41bca75b7e23044312edbc3792"
+    },
+    {
+      "path": "docs/research_packs/CR010_CONDITION_DETAIL_BATCH04_SOL.md",
+      "bytes": 14890,
+      "sha256": "70d8900e57ba5aded5de03106eb0de1db1061c4e94e121c37c25d496e6673074"
+    }
+  ],
+  "manifest_self_path": "data/research_staging/cr010_common300_batch04_manifest.json",
+  "archive_members_expected": [
+    "data/research_staging/cr010_common300_batch04_manifest.json",
+    "data/research_staging/cr010_condition_detail_batch04_SOL.json",
+    "data/research_staging/cr010_live_order_snapshot_batch04_SOL.json",
+    "data/research_staging/cr010_source_reuse_map_batch04_SOL.json",
+    "docs/research_packs/00_README_CR010_COMMON300_BATCH04.md",
+    "docs/research_packs/CR010_CONDITION_DETAIL_BATCH04_SOL.md"
+  ],
+  "archive_file_count": 6
+}

@@ -98,6 +98,310 @@
       "location_en": "Plasma",
       "location_zh": "血漿",
       "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.at1_receptor",
+      "name_en": "Angiotensin II type 1 (AT1) receptor",
+      "name_zh": "血管緊張素 II 第一型受體",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "receptor",
+      "description_en": "G-protein-coupled receptor mediating vasoconstriction and aldosterone release.",
+      "description_zh": "偶聯 G 蛋白受體，介導血管收縮與醛固酮釋放。",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_pilot"
+    },
+    {
+      "id": "drugtarget.ace",
+      "name_en": "Angiotensin-converting enzyme (ACE)",
+      "name_zh": "血管緊張素轉換酶",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "enzyme",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.beta1_adrenergic",
+      "name_en": "Beta-1 adrenergic receptor",
+      "name_zh": "Beta-1 腎上腺素受體",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "receptor",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.l_type_calcium_channel",
+      "name_en": "L-type voltage-gated calcium channel",
+      "name_zh": "L 型電位依存性鈣離子通道",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "ion_channel",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.hmg_coa_reductase",
+      "name_en": "HMG-CoA reductase",
+      "name_zh": "HMG-CoA 還原酶",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "enzyme",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.na_k_atpase",
+      "name_en": "Sodium-potassium adenosine triphosphatase (Na+/K+-ATPase)",
+      "name_zh": "鈉鉀三磷酸腺苷酶 (Na+/K+-ATPase)",
+      "drugsystem_id": "drugsystem.cardiovascular_renal",
+      "target_type": "transporter_pump",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2"
+    },
+    {
+      "id": "drugtarget.beta2_adrenergic",
+      "name_en": "Beta-2 Adrenergic Receptor",
+      "name_zh": "Beta-2 腎上腺素受體",
+      "gene_symbol": "ADRB2",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.alpha1_adrenergic",
+      "name_en": "Alpha-1 Adrenergic Receptor",
+      "name_zh": "Alpha-1 腎上腺素受體",
+      "gene_symbol": "ADRA1A",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.alpha2_adrenergic",
+      "name_en": "Alpha-2 Adrenergic Receptor",
+      "name_zh": "Alpha-2 腎上腺素受體",
+      "gene_symbol": "ADRA2A",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.muscarinic_receptors",
+      "name_en": "Muscarinic Acetylcholine Receptors",
+      "name_zh": "毒蕈鹼型乙醯膽鹼受體 (M1-M5)",
+      "gene_symbol": "CHRM1-5",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.aldehyde_dehydrogenase",
+      "name_en": "Aldehyde Dehydrogenase (ALDH)",
+      "name_zh": "乙醛脫氫酶",
+      "gene_symbol": "ALDH2",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.voltage_gated_sodium_channels",
+      "name_en": "Voltage-Gated Sodium Channels",
+      "name_zh": "電壓門控鈉離子通道",
+      "gene_symbol": "SCN1A",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.t_type_calcium_channels",
+      "name_en": "T-Type Voltage-Gated Calcium Channels",
+      "name_zh": "T 型電壓門控鈣離子通道",
+      "gene_symbol": "CACNA1G",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.alpha2_delta_calcium_channels",
+      "name_en": "Voltage-Gated Calcium Channel Alpha-2-Delta Subunit",
+      "name_zh": "電壓門控鈣通道 Alpha-2-Delta 亞基",
+      "gene_symbol": "CACNA2D1",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.dopamine_receptors",
+      "name_en": "Dopamine Receptors & Precursors",
+      "name_zh": "多巴胺受體與前驅物",
+      "gene_symbol": "DRD2",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.monoamine_oxidase",
+      "name_en": "Monoamine Oxidase (MAO-A / MAO-B)",
+      "name_zh": "單胺氧化酶 (MAO-A / MAO-B)",
+      "gene_symbol": "MAOA / MAOB",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.glp1_receptor",
+      "name_en": "Glucagon-like peptide-1 (GLP-1) receptor",
+      "name_zh": "升糖素樣胜肽-1 受體",
+      "location_en": "Pancreatic beta cells, gut, brain",
+      "location_zh": "胰臟β細胞、腸道、腦部",
+      "mechanism_note_en": "Activation of GLP-1 receptor stimulates glucose-dependent insulin secretion, suppresses glucagon, slows gastric emptying, and reduces appetite.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.thyroid_hormone_receptor",
+      "name_en": "Thyroid hormone receptor (TR-alpha / TR-beta)",
+      "name_zh": "甲狀腺素受體 (TR-alpha / TR-beta)",
+      "location_en": "Cell nucleus; widespread in heart, liver, pituitary, bone",
+      "location_zh": "細胞核；廣泛分布於心臟、肝臟、腦垂體、骨骼",
+      "mechanism_note_en": "Exogenous T4 binds thyroid hormone receptors, restoring euthyroid physiology in hypothyroid patients. Excess produces hyperthyroid-like adverse effects.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.glucocorticoid_receptor",
+      "name_en": "Glucocorticoid receptor (GR / NR3C1)",
+      "name_zh": "糖皮質激素受體 (GR / NR3C1)",
+      "location_en": "Cytoplasm of virtually all nucleated cells",
+      "location_zh": "幾乎所有有核細胞的細胞質",
+      "mechanism_note_en": "Glucocorticoids bind intracellular GR, translocate to nucleus, and modulate gene transcription—broadly suppressing inflammation and immune response, with wide metabolic, endocrine, and CNS effects.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.aromatase",
+      "name_en": "Aromatase (CYP19A1)",
+      "name_zh": "芳香酶 (CYP19A1)",
+      "location_en": "Peripheral tissues (adipose, breast), ovary, and cancer tissue; converts androgens to estrogens",
+      "location_zh": "周邊組織(脂肪、乳房)、卵巢及腫瘤組織;將雄性素轉化為雌激素",
+      "mechanism_note_en": "Nonsteroidal competitive inhibitor binds the heme of the cytochrome P450 subunit of aromatase, blocking conversion of androstenedione/testosterone to estrone/estradiol.",
+      "mechanism_note_zh": "非固醇類競爭性抑制劑,結合芳香酶細胞色素 P450 次單元的血基質,阻斷雄烯二酮/睪固酮轉化為雌酮/雌二醇。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.estrogen_receptor",
+      "name_en": "Estrogen receptor (ER)",
+      "name_zh": "雌激素受體 (ER)",
+      "location_en": "Hypothalamus, pituitary, ovary, endometrium, vagina, cervix, and other estrogen-responsive tissues",
+      "location_zh": "下視丘、腦垂體、卵巢、子宮內膜、陰道、子宮頸及其他雌激素反應性組織",
+      "mechanism_note_en": "Nuclear receptor bound by estradiol (agonist) or by SERMs such as clomiphene (mixed agonist/antagonist, competes with endogenous estrogen and delays receptor replenishment).",
+      "mechanism_note_zh": "細胞核受體,可被雌二醇(致效劑)或如可洛米分(混合型致效/拮抗劑,與內生性雌激素競爭並延遲受體再合成)結合。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#CLINICAL_PHARMACOLOGY",
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#CLINICAL_PHARMACOLOGY"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.progesterone_receptor",
+      "name_en": "Progesterone receptor (PR)",
+      "name_zh": "黃體素受體 (PR)",
+      "location_en": "Endometrium, myometrium, and other progesterone-responsive tissues",
+      "location_zh": "子宮內膜、子宮肌層及其他黃體素反應性組織",
+      "mechanism_note_en": "Standard endocrinology places progesterone's action at the nuclear progesterone receptor; this specific label's CLINICAL PHARMACOLOGY section does not itself elaborate receptor-level mechanism (it addresses bioavailability of the micronized oral formulation only).",
+      "mechanism_note_zh": "傳統內分泌學將黃體素作用歸於細胞核黃體素受體;本標籤之 CLINICAL PHARMACOLOGY 段落本身未闡述受體層級機轉(僅談微粒化口服劑型的生體可用率)。",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.gaba_a_benzodiazepine_site",
+      "name_en": "GABA-A receptor, benzodiazepine binding site",
+      "name_zh": "GABA-A 受體苯二氮平結合位",
+      "location_en": "CNS neurons (alpha subunit-containing GABA-A receptor complexes)",
+      "location_zh": "中樞神經元(含 alpha 次單元之 GABA-A 受體複合體)",
+      "mechanism_note_en": "Positive allosteric modulation at the benzodiazepine site increases the frequency (Z-drugs, e.g. zolpidem) or overall GABA-mediated chloride channel opening, enhancing synaptic inhibition.",
+      "mechanism_note_zh": "在苯二氮平結合位進行正向異位調節,增加氯離子通道開啟頻率(Z-drug 如 zolpidem)或整體 GABA 介導之抑制,加強突觸抑制作用。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#MECHANISM_OF_ACTION",
+          "dailymed:0cf8b567-201b-44fa-8fd3-c74023aff44f#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.serotonin_transporter",
+      "name_en": "Serotonin transporter (SERT)",
+      "name_zh": "血清素轉運體 (SERT)",
+      "location_en": "Presynaptic serotonergic neuron terminals, CNS",
+      "location_zh": "中樞血清素能神經元突觸前末梢",
+      "mechanism_note_en": "Inhibition of neuronal reuptake of serotonin (5-HT) potentiates serotonergic activity in the CNS.",
+      "mechanism_note_zh": "抑制神經元對血清素 (5-HT) 之再攝取,增強中樞神經系統血清素能活性。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.serotonin_2a_receptor",
+      "name_en": "Serotonin 5-HT2 receptor",
+      "name_zh": "血清素 5-HT2 受體",
+      "location_en": "CNS postsynaptic neurons",
+      "location_zh": "中樞神經系統突觸後神經元",
+      "mechanism_note_en": "Label describes trazodone as both a selective serotonin reuptake inhibitor and a 5HT2 receptor antagonist; the net contribution of each action to the antidepressant effect is stated as unknown.",
+      "mechanism_note_zh": "標籤將 trazodone 描述為兼具選擇性血清素回收抑制與 5HT2 受體拮抗雙重作用;兩者對抗憂鬱效果之各自貢獻標籤敘明「未知」。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#CLINICAL_PHARMACOLOGY"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.cox2",
+      "name_en": "Cyclooxygenase-2 (COX-2)",
+      "name_zh": "環氧合酶-2 (COX-2)",
+      "location_en": "Inducible; sites of inflammation and pain signaling",
+      "location_zh": "誘導型;發炎與疼痛訊號傳遞部位",
+      "mechanism_note_en": "Selective inhibition of COX-2 reduces prostaglandin synthesis at inflamed tissue with relative sparing of constitutive COX-1 (gastric/platelet).",
+      "mechanism_note_zh": "選擇性抑制 COX-2,減少發炎組織的前列腺素合成,相對保留恆定表現的 COX-1(胃黏膜/血小板)。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.gastric_proton_pump",
+      "name_en": "Gastric H+/K+-ATPase (proton pump)",
+      "name_zh": "胃酸氫鉀幫浦 (H+/K+-ATPase)",
+      "location_en": "Secretory surface of the gastric parietal cell",
+      "location_zh": "胃壁細胞分泌面",
+      "mechanism_note_en": "PPIs suppress gastric acid secretion by specific (irreversible/covalent) inhibition of the H+/K+-ATPase enzyme system, blocking the final step of acid production.",
+      "mechanism_note_zh": "PPI 藉由專一性(不可逆/共價)抑制 H+/K+-ATPase 酵素系統,阻斷胃酸生成的最後一步,達到抑酸效果。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#MECHANISM_OF_ACTION",
+          "dailymed:76e1839b-7462-4344-b319-001a5f57d67a#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.serotonin_3_receptor",
+      "name_en": "Serotonin 5-HT3 receptor",
+      "name_zh": "血清素 5-HT3 受體",
+      "location_en": "Peripherally on vagal nerve terminals; centrally in the chemoreceptor trigger zone of the area postrema",
+      "location_zh": "周邊迷走神經末梢;中樞則位於延腦最後區之化學受器觸發區",
+      "mechanism_note_en": "Selective 5-HT3 receptor antagonist; label states the antiemetic mechanism has not been fully characterized and it is not certain whether the action is mediated centrally, peripherally, or both. Ondansetron is explicitly stated not to be a dopamine-receptor antagonist.",
+      "mechanism_note_zh": "選擇性 5-HT3 受體拮抗劑;標籤敘明止吐機轉尚未完全釐清,無法確定其作用是中樞性、周邊性或兩者兼具。標籤明確指出 ondansetron 並非多巴胺受體拮抗劑。",
+      "field_sources": {
+        "mechanism_note_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#MECHANISM_OF_ACTION"
+        ]
+      },
+      "review_status": "draft"
     }
   ]
 }

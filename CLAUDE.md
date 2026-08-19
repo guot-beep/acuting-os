@@ -42,6 +42,13 @@ node scripts/validate-herb-standard.js
 node scripts/validate-formula-standard.js
 node scripts/validate-acupoint-standard.js
 node scripts/validate-content-junk.js
+node scripts/validate-metric-interpretation.js   # 沒來源就不准寫閾值
+node scripts/validate-herb-dosage-shape.js       # 沒查證的劑量不准自己跑到畫面上
+node scripts/validate-outcome-panel-render.js    # 那個判讀有沒有真的到畫面上
+node scripts/validate-exposure-safety-render.js  # 黑框警告有沒有帶到病歷
+node scripts/validate-care-draft-render.js       # 產生草稿按鈕接得上、取消真的不下載
+node scripts/validate-care-draft-phi.js          # 草稿不帶 patientCode/caseTitle,且從不宣稱已清乾淨
+node scripts/test-branch-mergeable.js            # 可合性 gate 自己不准發假紅燈(含 shallow clone)
 # 其他線：condition / tdis / pattern / symptom / comparison / formula-song
 node scripts/check-validation-ratchet.js   # 缺陷數不准變多
 ```

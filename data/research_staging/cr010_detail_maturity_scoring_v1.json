@@ -1,0 +1,81 @@
+{
+  "status": "PRODUCTION_HEURISTIC_NOT_SCHEMA",
+  "version": "v1",
+  "total_points": 12,
+  "criteria": [
+    {
+      "key": "summary",
+      "zh": "summary_zh",
+      "en": "summary_en",
+      "points": 1
+    },
+    {
+      "key": "western_context",
+      "zh": "western_context_zh",
+      "en": "western_context_en",
+      "points": 1
+    },
+    {
+      "key": "western_pathology",
+      "zh": "western_pathology_zh",
+      "en": "western_pathology_en",
+      "points": 1
+    },
+    {
+      "key": "etiology",
+      "zh": "etiology_zh",
+      "en": "etiology_en",
+      "points": 1
+    },
+    {
+      "key": "risk_factors",
+      "zh": "risk_factors_zh",
+      "en": "risk_factors_en",
+      "points": 1
+    },
+    {
+      "key": "red_flags",
+      "zh": "red_flags_zh",
+      "en": "red_flags_en",
+      "points": 2,
+      "hard_gate": true
+    },
+    {
+      "key": "acupuncture_scope",
+      "zh": "acupuncture_scope_zh",
+      "en": "acupuncture_scope_en",
+      "points": 2,
+      "hard_gate": true
+    },
+    {
+      "key": "sources",
+      "field": "sources",
+      "points": 1,
+      "hard_gate": true
+    },
+    {
+      "key": "field_sources",
+      "field": "field_sources",
+      "points": 1,
+      "hard_gate": true
+    },
+    {
+      "key": "relations",
+      "fields": [
+        "related_patterns",
+        "related_eastern_diseases",
+        "sign_symptom_ids",
+        "herb_formulas",
+        "acupoint_protocols",
+        "medication_links",
+        "workflow_links"
+      ],
+      "points": 1
+    }
+  ],
+  "classifications": {
+    "FULL_DETAIL_CANDIDATE": "score >= 10 and all hard gates present",
+    "DETAIL_PARTIAL": "score 4-9, or >=10 with missing hard gate",
+    "SKELETON": "score <= 3"
+  }
+}

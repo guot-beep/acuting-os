@@ -1,0 +1,639 @@
+{
+  "status": "RESEARCH STAGING / NOT CANONICAL",
+  "batch": "CR-001",
+  "tradition_rule": "If a biomedical term describes the phenomenon, classify both even if also strongly associated with TCM vocabulary.",
+  "records": [
+    {
+      "id": "sym.headache",
+      "name_zh": "頭痛",
+      "name_en": "Headache",
+      "tradition": "both",
+      "western_term": "headache",
+      "body_region": "head_face",
+      "red_flags": [
+        {
+          "note": "Sudden explosive/worst-ever headache; focal neurologic deficit; fever with stiff neck; post-trauma headache",
+          "sources": [
+            {
+              "source_key": "medline_headache",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000424.htm"
+            },
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.neck_pain",
+      "name_zh": "頸痛",
+      "name_en": "Neck pain",
+      "tradition": "both",
+      "western_term": "neck pain",
+      "body_region": "musculoskeletal",
+      "red_flags": [
+        {
+          "note": "Major trauma, new limb weakness/numbness, gait change, fever/meningismus, or severe sudden pain requires urgent evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            },
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.range_of_motion_deg"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.shoulder_pain",
+      "name_zh": "肩痛",
+      "name_en": "Shoulder pain",
+      "tradition": "both",
+      "western_term": "shoulder pain",
+      "body_region": "musculoskeletal",
+      "red_flags": [
+        {
+          "note": "Shoulder discomfort with chest pain, dyspnea, diaphoresis, syncope, or major trauma can indicate non-musculoskeletal emergency",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.range_of_motion_deg"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.low_back_pain",
+      "name_zh": "下背痛",
+      "name_en": "Low back pain",
+      "tradition": "both",
+      "western_term": "low back pain",
+      "body_region": "musculoskeletal",
+      "red_flags": [
+        {
+          "note": "New bowel/bladder dysfunction, saddle anesthesia, major/progressive weakness, fever, cancer/infection context, or major trauma are red flags",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.range_of_motion_deg"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.knee_pain",
+      "name_zh": "膝痛",
+      "name_en": "Knee pain",
+      "tradition": "both",
+      "western_term": "knee pain",
+      "body_region": "musculoskeletal",
+      "red_flags": [
+        {
+          "note": "Hot swollen joint with fever, inability to bear weight after major injury, or neurovascular compromise needs urgent assessment",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.range_of_motion_deg"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.dizziness",
+      "name_zh": "頭暈",
+      "name_en": "Dizziness",
+      "tradition": "both",
+      "western_term": "dizziness",
+      "body_region": "neuro",
+      "red_flags": [
+        {
+          "note": "Sudden dizziness with unilateral weakness/numbness, speech/vision change, severe headache, or inability to walk can be stroke",
+          "sources": [
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.vertigo",
+      "name_zh": "眩暈",
+      "name_en": "Vertigo",
+      "tradition": "both",
+      "western_term": "vertigo",
+      "body_region": "neuro",
+      "red_flags": [
+        {
+          "note": "New focal neurologic deficit, severe headache, diplopia, dysarthria, or inability to walk raises concern for central cause/stroke",
+          "sources": [
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.tinnitus",
+      "name_zh": "耳鳴",
+      "name_en": "Tinnitus",
+      "tradition": "both",
+      "western_term": "tinnitus",
+      "body_region": "ears_nose_throat",
+      "red_flags": [
+        {
+          "note": "Sudden severe hearing loss with tinnitus, new neurologic deficit, or pulsatile tinnitus warrants prompt medical assessment",
+          "sources": [
+            {
+              "source_key": "medline_hearing",
+              "url": "https://medlineplus.gov/ency/article/003044.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.insomnia",
+      "name_zh": "失眠",
+      "name_en": "Insomnia",
+      "tradition": "both",
+      "western_term": "insomnia",
+      "body_region": "sleep_energy_mood",
+      "red_flags": [
+        {
+          "note": "Severe insomnia with suicidality, mania/psychosis, dangerous impairment, or substance withdrawal requires urgent evaluation",
+          "sources": [
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.fatigue",
+      "name_zh": "疲勞",
+      "name_en": "Fatigue",
+      "tradition": "both",
+      "western_term": "fatigue",
+      "body_region": "sleep_energy_mood",
+      "red_flags": [
+        {
+          "note": "Fatigue with chest pain, severe dyspnea, syncope, major bleeding, high fever, or acute neurologic change requires urgent evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            },
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.fatigue_score"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.palpitations",
+      "name_zh": "心悸",
+      "name_en": "Palpitations",
+      "tradition": "both",
+      "western_term": "palpitations",
+      "body_region": "chest_cardio",
+      "red_flags": [
+        {
+          "note": "Palpitations with syncope/presyncope, chest pain, severe dyspnea, or sustained hemodynamic instability are urgent",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.shortness_of_breath",
+      "name_zh": "呼吸急促",
+      "name_en": "Shortness of breath",
+      "tradition": "both",
+      "western_term": "dyspnea",
+      "body_region": "respiratory",
+      "red_flags": [
+        {
+          "note": "Severe or sudden breathing difficulty, cyanosis, chest pain, altered mental status, or inability to speak normally is emergency-level",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.cough",
+      "name_zh": "咳嗽",
+      "name_en": "Cough",
+      "tradition": "both",
+      "western_term": "cough",
+      "body_region": "respiratory",
+      "red_flags": [
+        {
+          "note": "Hemoptysis, severe dyspnea, cyanosis, chest pain, or persistent high fever are red flags",
+          "sources": [
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            },
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.nausea",
+      "name_zh": "噁心",
+      "name_en": "Nausea",
+      "tradition": "both",
+      "western_term": "nausea",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Persistent vomiting, hematemesis, severe abdominal pain, altered mental status, or significant dehydration require urgent assessment",
+          "sources": [
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.abdominal_bloating",
+      "name_zh": "腹脹",
+      "name_en": "Abdominal bloating",
+      "tradition": "both",
+      "western_term": "abdominal bloating",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Marked distension with severe pain, persistent vomiting, inability to pass stool/gas, GI bleeding, or shock symptoms is concerning for obstruction/acute abdomen",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            },
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.abdominal_pain",
+      "name_zh": "腹痛",
+      "name_en": "Abdominal pain",
+      "tradition": "both",
+      "western_term": "abdominal pain",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Sudden/severe pain, rigid abdomen, GI bleeding, syncope, pregnancy with severe pain/bleeding, or persistent vomiting are red flags",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            },
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.constipation",
+      "name_zh": "便秘",
+      "name_en": "Constipation",
+      "tradition": "both",
+      "western_term": "constipation",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Constipation with severe distension/pain, vomiting, inability to pass gas, GI bleeding, or systemic illness needs urgent evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.stool_form_bristol"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.diarrhea",
+      "name_zh": "腹瀉",
+      "name_en": "Diarrhea",
+      "tradition": "both",
+      "western_term": "diarrhea",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Bloody/black stool, severe dehydration, persistent vomiting, severe abdominal pain, or high fever warrants urgent assessment",
+          "sources": [
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.stool_form_bristol"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.reflux",
+      "name_zh": "胃食道逆流症狀",
+      "name_en": "Reflux symptoms",
+      "tradition": "both",
+      "western_term": "gastroesophageal reflux symptoms",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Dysphagia/odynophagia, GI bleeding, progressive weight loss, recurrent vomiting, or chest pain concerning for cardiac disease are alarm features",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.poor_appetite",
+      "name_zh": "食慾不振",
+      "name_en": "Poor appetite",
+      "tradition": "both",
+      "western_term": "decreased appetite",
+      "body_region": "digestive",
+      "red_flags": [
+        {
+          "note": "Unintentional major weight loss, dehydration, GI bleeding, severe depression/suicidality, or systemic illness requires further evaluation",
+          "sources": [
+            {
+              "source_key": "medline_er",
+              "url": "https://medlineplus.gov/ency/patientinstructions/000593.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.hot_flash",
+      "name_zh": "潮熱",
+      "name_en": "Hot flash",
+      "tradition": "both",
+      "western_term": "hot flash/vasomotor symptom",
+      "body_region": "gyn_repro",
+      "red_flags": [
+        {
+          "note": "New flushing with syncope, chest pain, severe palpitations, unexplained weight loss/fever, or atypical onset should prompt broader evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [
+        "metric.hot_flash_count_day"
+      ],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.dysmenorrhea",
+      "name_zh": "痛經",
+      "name_en": "Dysmenorrhea",
+      "tradition": "both",
+      "western_term": "dysmenorrhea",
+      "body_region": "gyn_repro",
+      "red_flags": [
+        {
+          "note": "Sudden severe pelvic pain, pregnancy possibility, syncope, fever, or heavy bleeding requires urgent evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.heavy_menstrual_bleeding",
+      "name_zh": "月經過多",
+      "name_en": "Heavy menstrual bleeding",
+      "tradition": "both",
+      "western_term": "heavy menstrual bleeding",
+      "body_region": "gyn_repro",
+      "red_flags": [
+        {
+          "note": "Soaking bleeding with dizziness/syncope, dyspnea, chest pain, pregnancy, or hemodynamic symptoms is urgent",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.nasal_congestion",
+      "name_zh": "鼻塞",
+      "name_en": "Nasal congestion",
+      "tradition": "both",
+      "western_term": "nasal congestion",
+      "body_region": "ears_nose_throat",
+      "red_flags": [
+        {
+          "note": "Airway compromise, facial/orbital swelling, altered mental status, severe headache with fever, or persistent unilateral bloody discharge needs evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.pruritus",
+      "name_zh": "搔癢",
+      "name_en": "Pruritus",
+      "tradition": "both",
+      "western_term": "pruritus",
+      "body_region": "skin",
+      "red_flags": [
+        {
+          "note": "Pruritus with facial/tongue swelling, hives plus breathing difficulty, jaundice/systemic illness, or blistering rash can be serious",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.muscle_cramp",
+      "name_zh": "肌肉抽筋",
+      "name_en": "Muscle cramp",
+      "tradition": "both",
+      "western_term": "muscle cramp",
+      "body_region": "musculoskeletal",
+      "red_flags": [
+        {
+          "note": "Cramp with marked unilateral swelling, progressive weakness, dark urine after exertion, chest symptoms, or neurologic deficit needs evaluation",
+          "sources": [
+            {
+              "source_key": "medline_emergency",
+              "url": "https://medlineplus.gov/ency/article/001927.htm"
+            },
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.numbness",
+      "name_zh": "麻木",
+      "name_en": "Numbness",
+      "tradition": "both",
+      "western_term": "numbness/paresthesia",
+      "body_region": "neuro",
+      "red_flags": [
+        {
+          "note": "Sudden unilateral numbness, especially with weakness, speech/vision change, dizziness, or severe headache, can be stroke",
+          "sources": [
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    },
+    {
+      "id": "sym.weakness",
+      "name_zh": "無力",
+      "name_en": "Weakness",
+      "tradition": "both",
+      "western_term": "weakness",
+      "body_region": "neuro",
+      "red_flags": [
+        {
+          "note": "Sudden unilateral weakness, facial droop, speech/vision change, severe headache, or inability to walk can be stroke",
+          "sources": [
+            {
+              "source_key": "cdc_stroke",
+              "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+            }
+          ]
+        }
+      ],
+      "related_metric_ids": [],
+      "status": "research_staging_not_canonical"
+    }
+  ]
+}

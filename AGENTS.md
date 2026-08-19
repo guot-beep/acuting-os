@@ -39,6 +39,49 @@ AcuTing OS：Ting 的私人 TCM 學習與臨床工作站（查資料、寫 SOAP�
    Codex 另外更新 `docs/CODEX_HANDOFF.md`（機器可讀、最新在前）。
 4. 回報格式照憲法 §四：逐欄位數字，禁用「完成」「100%」。
 
+## 安全 gate 的驗證分工（2026-08-12 定；預設不要「叫 Codex」）
+
+> **2026-08-12 起至 8/18:Codex 額度用盡,不可用。** 不要在任何 handoff 裡
+> 「等 Codex 覆測」—— 那會讓 gate 無限期停住。這段期間執行層改由
+> **隔離的 Opus subagent** 擔任(見下表「執行對抗測試」),攻擊清單仍由 SOL 出。
+> 8/18 之後 Codex 恢復,優先用在**當下擋住 landing 的那一個 gate**。
+
+安全 gate（PHI／病人輸出／不可變歷史／傳輸／持久層）改完，**自測綠不算數** ——
+2026-08-12 的 AVS 與 P1 兩輪都是「自寫測試全綠之後」才被抓到二階 bug。
+分工按「誰抓得到哪一層」，不是按誰有空：
+
+| 階段 | 誰 | 為什麼 |
+|---|---|---|
+| 攻擊面清單 | **SOL** | 讀契約與程式碼推理出攻擊面（它的 P1 pack 就是這個）。它產出的是 leads，不是判決 |
+| **執行對抗測試** | Codex，或隔離的 Opus subagent | 只有真的跑 harness 才抓得到 Map last-wins、解碼上限、app/CLI 分歧這類二階 bug |
+| 修復 | 實作線 | reviewer 不改產品碼；找到缺陷回報，修完再一次 focused retest |
+| 例行迴歸 | **CI** | 每個被抓到的 bug 都要變成永久 fixture，驗證成本才會遞減 |
+
+- Codex token 有限：只花在**當下擋住 landing 的那一個 gate**，不重跑已綠的輪次。
+- 用自家 subagent 執行時要知道它的弱點：**與實作者同源，共用盲點的風險較高** ——
+  所以 SOL 出清單那一步不能省，那是外部視角的來源。
+- reviewer 一律**不採信派工單裡的數字**，自己重跑；報告出現舊數字 = 沒有重跑。
+
+### 什麼時候停（2026-08-12 Ting 裁定）
+
+P1 / AVS 的對抗覆測**到此為止，不再開新輪**。收斂的證據:嚴重度一輪比一輪低，
+而最後兩輪有一半是在修前一輪修壞的東西 —— 那是返工，不是進度。
+
+**之後的規則:只有 HIGH 擋進度。** MED 以下記進待辦，不擋 landing、不開新輪。
+HIGH 的定義不變:可洩 PHI、可靜默改臨床值、可繞過已宣告的硬規則。
+
+**2026-08-12 再收緊 —— VALIDATION FRONTIER FROZEN:** 一個 milestone 只允許
+一次 independent audit;修完只跑針對該 blocker 的 regression,沒有新的 hard-gate
+blocker 就 CLOSE,任何 agent 不得自行對同一 milestone 再開一輪。到 9/5 的配比是
+產品 75–80% / QA 20–25%。擋與不擋的完整對照表見
+`docs/SPRINT_2026-08-12_BRIEF.md` §Validation Convergence;新的優先序
+(Core Loop → Visit Brief → Timeline → Audit → Previsit → CHM-CARE,Previsit
+降級 freeze)見 `docs/OPTIMIZATION_PLAN_2026-08.md` 頂端那張表。
+
+**真正擋住「用在真實病人身上」的是醫療內容判斷**（醫囑措辭、來源強度），
+不是技術審核 —— 那是 Ting 與 SOL 的職權，工程線不能代答，也不該用更多技術輪
+去替代它。
+
 ## 技術約定
 
 - 純 HTML/CSS/vanilla JS，無 build step。本機預覽：`node scripts/dev-server.js`。

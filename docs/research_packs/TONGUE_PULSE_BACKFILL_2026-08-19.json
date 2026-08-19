@@ -1,0 +1,231 @@
+{
+  "generated": "2026-08-19",
+  "shape_notes": "庫內慣例(由 formula.gui_zhi_tang / ma_huang_tang 等 172 筆觀察):tongue_zh=舌質短描述、無標點(如「正常」「粉紅」「淡」);coating_zh=獨立欄位放苔(如「白潤」「薄白潤」);pulse_zh=字串、句末帶「。」;tongue_en/pulse_en 可為字串或 null。本檔提案照此拆分:來源只給苔時 tongue_zh 留 null、只填 coating_zh,不編造舌質。英文來源者 en 放逐字原文、zh 為忠實中譯。evidence_quote 為來源檔逐字文字(含原始排版符號)。",
+  "proposals": [
+    {
+      "formula_id": "formula.shi_pi_yin",
+      "tongue_zh": "淡",
+      "coating_zh": "厚膩",
+      "pulse_zh": "沉遲或沉細。",
+      "tongue_en": null,
+      "pulse_en": null,
+      "evidence_file": "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md",
+      "evidence_quote": "- **Tongue 舌:** 淡\n- **Coating 苔:** 厚膩\n- **Pulse 脈:** 沉遲或沉細",
+      "note": "卡片「實脾散 · Shi Pi Yin」本卡 §6 American Dragon 區塊;同內容亦見 American_Dragon_201_Formulas_Clinical_Manifestations.md「**舌：**淡；**苔：**厚膩；**脈：**沉遲或沉細。」"
+    },
+    {
+      "formula_id": "formula.yu_nu_jian",
+      "tongue_zh": "紅乾",
+      "coating_zh": "白或黃而乾",
+      "pulse_zh": "浮實滑虛大，或洪大數、數。",
+      "tongue_en": null,
+      "pulse_en": null,
+      "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
+      "evidence_quote": "- **Tongue 舌:** 紅乾\n- **Coating 苔:** 白或黃而乾\n- **Pulse 脈:** 浮實滑虛大，或洪大數、數",
+      "note": "卡片「玉女煎 · Yu Nu Jian」本卡 §6 American Dragon 區塊。"
+    },
+    {
+      "formula_id": "formula.ling_jiao_gou_teng_yin",
+      "tongue_zh": "深紅乾燥，或焦而有芒刺",
+      "coating_zh": "黃乾",
+      "pulse_zh": "弦數或弦滑。",
+      "tongue_en": null,
+      "pulse_en": null,
+      "evidence_file": "curriculum/formulas/American_Dragon_201_Formulas_Clinical_Manifestations.md",
+      "evidence_quote": "**舌：**深紅乾燥，或焦而有芒刺；**苔：**黃乾；**脈：**弦數或弦滑。",
+      "note": "來源條目名「羚角钩藤饮 (Ling Jiao Gou Teng Tang)」(第19條,亦見第7條「羚角鉤藤湯」同文)。DB 名 name_zh=羚角鉤藤丸 / pinyin=Ling Jiao Gou Teng Yin,同一經典方(通俗傷寒論),以 pinyin 對上;丸/飲/湯名稱差異請 Ting 裁定是否採用。"
+    },
+    {
+      "formula_id": "formula.dang_gui_si_ni_tang",
+      "tongue_zh": "淡",
+      "coating_zh": "白",
+      "pulse_zh": "沉細，或細至難以觸及。",
+      "tongue_en": "pale with white coating",
+      "pulse_en": "deep, thin, or too thin to be perceptible",
+      "evidence_file": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md",
+      "evidence_quote": "- T: pale with white coating, P: deep, thin, or too thin to be perceptible. deficiency]. Other sx: pale complexion, always bundled up, coldness worse in",
+      "note": "本卡 §6 Bastyr/Chenoweth 區塊第一行,T:/P: 標記明確;與當歸四逆湯經典表現(脈細欲絕)一致。"
+    },
+    {
+      "formula_id": "formula.zhen_wu_tang",
+      "tongue_zh": "淡",
+      "coating_zh": "白潤",
+      "pulse_zh": "沉細無力。",
+      "tongue_en": "pale tongue with moist white coating",
+      "pulse_en": "thin deep forceless pulse",
+      "evidence_file": "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md",
+      "evidence_quote": "- T: pale tongue with moist white coating\n- P: thin deep forceless pulse",
+      "note": "本卡 §6 Bastyr/Chenoweth 區塊,T:/P: 標記行;同區塊另有「T: pale, flabby tongue with moist white coating」「P: deep, thin, weak pulse」互證。"
+    },
+    {
+      "formula_id": "formula.bai_du_san",
+      "tongue_zh": null,
+      "coating_zh": "白膩",
+      "pulse_zh": "浮濡。",
+      "tongue_en": "greasy, white tongue coating",
+      "pulse_en": "floating, soggy",
+      "evidence_file": "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md",
+      "evidence_quote": "- T: greasy, white tongue coating, P: floating, soggy red and superficial within qi regions.",
+      "note": "卡片「敗毒散 · Ren Shen Bai Du San」本卡 §6 Bastyr/Chenoweth 區塊;行尾「red and superficial within qi regions」為 PDF 抽取竄入的鄰欄文字(指小兒指紋),T:/P: 部分歸屬明確。來源只給苔,故 tongue_zh 留空。"
+    },
+    {
+      "formula_id": "formula.zhi_bao_dan",
+      "tongue_zh": "紅或深紅",
+      "coating_zh": "黃厚膩而穢濁",
+      "pulse_zh": "滑數。",
+      "tongue_en": "red or deep-red with a foul, greasy, yellow coating",
+      "pulse_en": "slippery, rapid",
+      "evidence_file": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+      "evidence_quote": "- T: red or deep-red with a foul, greasy, yellow coating, P: slippery, rapid Think & Review [Important!!! Know this!]",
+      "note": "本卡 §6 Bastyr/Chenoweth 區塊第一行;「Think & Review…」為排版竄入,T:/P: 歸屬明確(痰熱內閉證,與至寶丹主證一致)。"
+    },
+    {
+      "formula_id": "formula.liu_yi_san",
+      "tongue_zh": null,
+      "coating_zh": "薄黃膩",
+      "pulse_zh": "濡數。",
+      "tongue_en": "thin, yellow, and greasy coating",
+      "pulse_en": "soggy, rapid",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  Summer-heat (damp) invasion [fever, sweating, thirst, irritability, urinary difficulty, diarrhea]  [Very mild formula, initial stage]<br>T:  thin, yellow, and greasy coating, P: soggy, rapid",
+      "note": "Liu Yi San [六一散] 本方表格區塊內(約 L1703),歸屬明確。來源只給苔。"
+    },
+    {
+      "formula_id": "formula.qing_wen_bai_du_yin",
+      "tongue_zh": "深紅（絳），唇色深而焦",
+      "coating_zh": null,
+      "pulse_zh": "數，兼沉細或浮大。",
+      "tongue_en": "dark-red, the lip are dark and scorched",
+      "pulse_en": "rapid and either deep and thin or floating and large",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "T:  dark-red, the lip are dark and scorched<br>P:  rapid and either deep and thin or floating and large.",
+      "note": "Qing Wen Bai Du Yin [清瘟败毒饮] 本方表格區塊內(約 L1155),緊接其 Indications(氣血兩燔),歸屬明確。唇象為來源原文一併帶出,忠實保留。"
+    },
+    {
+      "formula_id": "formula.tian_wang_bu_xin_dan",
+      "tongue_zh": "紅",
+      "coating_zh": "少苔",
+      "pulse_zh": "細數。",
+      "tongue_en": "red with little coating",
+      "pulse_en": "thin, rapid",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  HT Blood & KD Yin Xu [irritability, palpitations with anxiety, fatigue, insomnia with very restless sleep, inability to think or concentrate for even short periods of time, nocturnal emissions, forgetfulness, dry stools; or sores of the tongue & mouth, low-grade fever, night sweats]  <br>T: red with little coating, P: thin, rapid",
+      "note": "Tian Wang Bu Xin Dan [天王补心丹] 本方表格區塊內(約 L3023),歸屬明確。"
+    },
+    {
+      "formula_id": "formula.gui_zhi_fu_ling_wan",
+      "tongue_zh": "紫或紅，舌邊有瘀點",
+      "coating_zh": "白或黃",
+      "pulse_zh": "澀或弦。",
+      "tongue_en": "purple or red tongue with lateral spots, white or yellow coating",
+      "pulse_en": "choppy, or wiry pulse",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "T:  purple or red tongue with lateral spots, white or yellow coating; P: choppy, or wiry pulse.",
+      "note": "Gui Zhi Fu Ling Wan [桂枝茯苓丸] 本方表格區塊內(約 L4062),歸屬明確。"
+    },
+    {
+      "formula_id": "formula.ding_chuan_tang",
+      "tongue_zh": null,
+      "coating_zh": "黃膩",
+      "pulse_zh": "滑數。",
+      "tongue_en": "greasy, yellow coating",
+      "pulse_en": "slippery, rapid",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  Wind-cold constraining exterior & phlegm-heat smoldering in interior [coughing & wheezing with copious, thick, and yellow sputum, labored breathing. Or simultaneous mild fever and chills] <br>T: greasy, yellow coating; P: slippery, rapid",
+      "note": "Ding Chuan Tang [定喘汤] 本方表格區塊內(約 L3760),歸屬明確。來源只給苔。"
+    },
+    {
+      "formula_id": "formula.xuan_fu_dai_zhe_tang",
+      "tongue_zh": null,
+      "coating_zh": "白滑",
+      "pulse_zh": "虛，兼弦或滑。",
+      "tongue_en": "white slippery tongue coating",
+      "pulse_en": "empty, wiry/slippery",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "T:  white slippery tongue coating, P: empty, wiry/slippery",
+      "note": "Xuan Fu Dai Zhe Tang [旋复代赭汤] 本方表格區塊內(約 L3813),歸屬明確。來源只給苔。"
+    },
+    {
+      "formula_id": "formula.bei_mu_gua_lou_san",
+      "tongue_zh": "紅而乾",
+      "coating_zh": "少苔",
+      "pulse_zh": "細數，或滑細。",
+      "tongue_en": "red/dry with little coating",
+      "pulse_en": "thin rapid/slippery thin pulse",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  LU dry-phlegm causing cough [dry cough/cough with deep-seated, viscous, difficult to expectorate sputum, wheezing, dry & sore throat] <br>T:  red/dry with little coating<br>P:  thin rapid/slippery thin pulse",
+      "note": "Bei Mu Gua Lou San [贝母瓜蒌散] 本方表格區塊內(約 L5381),歸屬明確。"
+    },
+    {
+      "formula_id": "formula.ling_gui_zhu_gan_tang",
+      "tongue_zh": "淡胖",
+      "coating_zh": "白潤或膩",
+      "pulse_zh": "弦滑，或濡。",
+      "tongue_en": "a pale flabby tongue with white moist or greasy coating",
+      "pulse_en": "a slippery and wiry or soggy pulse",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  Lu phlegm-damp/congested Fluids (tan yin痰饮) syndrome – fullness of the chest & hypochondria, coughing up clear & watery sputum, SOB, dizziness or vertigo, palpitations; a pale flabby tongue with white moist or greasy coating, a slippery and wiry or soggy pulse.",
+      "note": "Ling Gui Zhu Gan Tang [苓桂术甘汤] 本方表格區塊 Indications 句內(約 L5438),歸屬明確(散文式,非 T:/P: 標記)。"
+    },
+    {
+      "formula_id": "formula.huang_tu_tang",
+      "tongue_zh": "淡",
+      "coating_zh": "白",
+      "pulse_zh": "沉細弱。",
+      "tongue_en": "a pale tongue with white coating",
+      "pulse_en": "a deep, thin, weak pulse",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  SP Yang xu (failure to govern Blood) with empty cold in Middle Jiao causing chronic bleeding – blood in the stool, vomiting or spitting up blood, nosebleeds, or abnormal uterine bleeding of pale-red blood accompanied by cold extremities, fatigue, sallow complexion; a pale tongue with white coating, a deep, thin, weak pulse.",
+      "note": "Huang Tu Tang [黄土汤] 本方表格區塊 Indications 句內(約 L4314),歸屬明確。"
+    },
+    {
+      "formula_id": "formula.ju_pi_zhu_ru_tang",
+      "tongue_zh": "嫩紅",
+      "coating_zh": "黃",
+      "pulse_zh": "虛數。",
+      "tongue_en": "A tender, red tongue with yellow coating",
+      "pulse_en": "a weak, rapid pulse",
+      "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+      "evidence_quote": "Indications:  ST heat & qi xu causing ST qi rebellion [hiccough, nausea,dry heaves, belching. A tender, red tongue with yellow coating; a weak, rapid pulse. Also for vomiting resulting from debility after a prolonged illness, or heat from ST xu]",
+      "note": "Ju (Chen) Pi Zhu Ru Tang [橘皮竹茹汤] 本方表格區塊 Indications 句內(約 L3838 起),歸屬明確。"
+    },
+    {
+      "formula_id": "formula.ji_chuan_jian",
+      "tongue_zh": null,
+      "coating_zh": "薄白",
+      "pulse_zh": "沉遲。",
+      "tongue_en": "white, thin coating",
+      "pulse_en": "deep & slow",
+      "evidence_file": "curriculum/formulas/Formulations Summary Chart.docx.md",
+      "evidence_quote": "Intestines, Unblocks Bowels.   Envoy      Sheng Ma                          1.5-3       sensation in the back, weak & sore back and lower limbs. T: white, thin\nTonify KD Yin, Yang, Essence              [Black cohosh]                                coating, P: deep & slow]",
+      "note": "Ji Chuan Jian 專屬區塊(L396-402),T/P 在本方 Indications 中括號內收尾(docx 欄位交錯排版,左欄為本方 Actions 重複行);已逐行核對非鄰方錯位(鄰方 Da Huang Fu Zi Tang 的 T/P 在 L425 另列)。來源只給苔。"
+    },
+    {
+      "formula_id": "formula.shou_tai_wan",
+      "tongue_zh": "淡",
+      "coating_zh": null,
+      "pulse_zh": "滑。",
+      "tongue_en": "pale tongue",
+      "pulse_en": "slippery pulse",
+      "evidence_file": "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
+      "evidence_quote": "Indications: soreness and distention of lower back, sensation of collapse in lower abdomen,\n            vaginal bleeding during pregnancy. Dizziness, weak legs, pale tongue, slippery pulse.",
+      "note": "Shou Tai Wan 專屬段落(標題行「Shou Tai Wan - secure essence p.441」,約 L197 起;引文為其 Indications 兩行),歸屬明確。"
+    }
+  ],
+  "not_found": [
+    {"formula_id": "formula.ge_gen_tang", "reason": "課綱無獨立葛根湯條目;僅出現於索引清單、桂枝加葛根湯加減行、升麻葛根湯卡(不同方)。無任何舌脈文字。"},
+    {"formula_id": "formula.cang_er_zi_san", "reason": "CHM_Formulation_2(L1404)與 Herbal Formulations Comprehensive(L7155)僅有組成與劑量,無舌脈。"},
+    {"formula_id": "formula.jia_jian_wei_rui_tang", "reason": "卡片存在(08 批)但 §6 AD 三欄皆「Not separately listed」、Bastyr 欄空白;AD Clinical Manifestations 條目無舌脈句。"},
+    {"formula_id": "formula.xie_xin_tang", "reason": "汇总 L1227 與 Summary Chart 皆僅比較表行(組成/主治),無舌脈;卡片 130 為半夏瀉心湯(不同方,已避開錯配)。"},
+    {"formula_id": "formula.zeng_ye_cheng_qi_tang", "reason": "Summary Chart L464 的「T: Dry, yellow/black coating with cracks」實屬 Xin Jia Huang Long Tang 的 Indications,增液承氣湯僅為右欄『hidden formulas』清單項——確認錯位,整筆放棄。"},
+    {"formula_id": "formula.run_chang_wan", "reason": "汇总 L589 的 T/P 屬 Ma Zi Ren Wan 區塊(潤腸丸僅為其成藥名對照);Comprehensive L1208 為比較行無舌脈——確認錯配風險,放棄。"},
+    {"formula_id": "formula.chai_hu_gui_zhi_tang", "reason": "僅見於小柴胡湯加減比較行(Comprehensive L1507、Summary Chart L525 欄頭),無舌脈。"},
+    {"formula_id": "formula.shen_fu_tang", "reason": "Summary Chart 中僅為四逆湯 related-formula 欄;鄰近 T/P 行屬 Si Ni Tang 本方——確認錯位,放棄。汇总無條目。"},
+    {"formula_id": "formula.tao_hong_si_wu_tang", "reason": "汇总 L2328/Comprehensive L3856 皆為四物湯加減比較行(Early menses with dark clots),無舌脈。"},
+    {"formula_id": "formula.chai_hu_jia_long_gu_mu_li_tang", "reason": "NCBAHM 181 條目(#017)僅 Name/Actions/Syndromes 無舌脈;臺灣中藥典僅方名索引。CHM L172 為桂枝加龍骨牡蠣湯(不同方)。"},
+    {"formula_id": "formula.chai_hu_shu_gan_san", "reason": "卡片 §6 AD 三欄「Not separately listed」、Bastyr 空白;AD Clinical Manifestations 條目無舌脈句;Comprehensive L1685 為比較行。"},
+    {"formula_id": "formula.gua_lou_xie_bai_ban_xia_tang", "reason": "僅見於瓜蔞薤白白酒湯的加減行(汇总 L3635)與索引,無本方舌脈。"},
+    {"formula_id": "formula.gu_chong_tang", "reason": "汇总 L3427 與 Comprehensive L5653 區塊的 Indications/T/P 文字經核對屬下一方完帶湯(leucorrhea、蒼朮白朮入帶脈等皆完帶湯內容)——確認錯位,整筆放棄。固沖湯本方 Indications 未被抽取。"},
+    {"formula_id": "formula.ci_zhu_wan", "reason": "卡片 §6 AD 三欄「Not separately listed」、Bastyr 空白;AD Clinical Manifestations 條目(心悸失眠耳鳴頭暈…)無舌脈句。"}
+  ]
+}

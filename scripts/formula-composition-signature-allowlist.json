@@ -1,0 +1,33 @@
+{
+  "_readme": [
+    "Pairs of formula ids that legitimately share (or nearly share) a full",
+    "composition signature — acknowledged by Ting, not a mis-join.",
+    "This file is read by scripts/validate-formula-composition-signatures.js.",
+    "It stays in scripts/ (not data/config/) because this task's dispatch",
+    "restricts edits to scripts/ and docs/ only — see FB-20 work order,",
+    "docs/research_packs/FORMULA_EYESON_02.md.",
+    "",
+    "When to add a pair here vs. when NOT to:",
+    "  ADD    a legitimate shared-base design decision has been made and",
+    "         recorded — e.g. two dosage forms of one classical formula",
+    "         that are deliberately kept as two cards with identical ratios,",
+    "         or an accepted 加減 variant whose only change has not yet been",
+    "         filled in. Requires a `reason`, `decided_by`, and `date`.",
+    "  DO NOT add a pair just to silence a real defect (a mis-join, a",
+    "         copy-paste from the wrong record, an unresolved duplicate-",
+    "         record governance question). Those stay reported — see F-32",
+    "         and F-41 in FORMULA_EYESON_02.md. The validator already",
+    "         auto-recognizes review_status:\"deprecated\" as a resolved",
+    "         duplicate without needing an entry here (constitution 紅線 2:",
+    "         retirement is deprecation, not deletion — deprecating the",
+    "         losing id IS the fix)."
+  ],
+  "schema": {
+    "a": "formula.<id>",
+    "b": "formula.<id>",
+    "reason": "string — why this pair is legitimately allowed to share a signature",
+    "decided_by": "string",
+    "date": "YYYY-MM-DD"
+  },
+  "pairs": []
+}

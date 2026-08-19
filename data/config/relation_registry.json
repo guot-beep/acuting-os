@@ -105,6 +105,8 @@
       "stored_on": "pattern.*",
       "field": "differential_patterns",
       "target": "pattern.*",
+      "stored_shape": "inline_objects",
+      "shape_note": "全庫 144 卡/263 項一致為鑑別物件(id key = pattern_id,含 distinguishing_zh/en、舌脈差異、source)— 2026-08-12 修正原宣告(誤稱裸 id);反向索引需以 pattern_id 萃取",
       "file": "data/pathology/pattern_library.json",
       "reverse": {
         "derived_field": null,
