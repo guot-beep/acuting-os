@@ -1438,7 +1438,14 @@
       </tr>`;
     }).join("");
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
-    const relatedConditions = entityChips(record.related_conditions);
+    /* 區塊 15 的兩條連結線走同一個 chip 區:related_conditions(病證)與
+       tcm_pattern_ids(證候,derive-formula-pattern-links.js 接的線)。早期資料把
+       pattern.* 塞在 related_conditions 裡,所以要去重,不然同一證型印兩顆。 */
+    const relatedLinkIds = [...new Set([
+      ...(record.related_conditions || []),
+      ...(record.tcm_pattern_ids || []),
+    ])];
+    const relatedConditions = entityChips(relatedLinkIds);
     /* 現代運用索引 read only modern_clinical_use_tags, which is null on most
        formulas — so the section rendered "—" while the record was actually
        carrying 感冒 / Common Cold and 營衛不和 / Ying-Wei Disharmony in
@@ -1561,7 +1568,7 @@
           : (record.constitutional_note_zh || record.constitutional_note_en));
         if (!list.length && !note) return "";
         return `${list.length ? `<p class="k-chip-cloud">${list.map((x) => `<span class="k-tag">${esc(x)}</span>`).join("")}</p>` : ""}${note ? `<p class="k-meta">${esc(note)}</p>` : ""}`;
-      })())}${formulaModernDiseaseSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", (record.related_conditions || []).length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
+      })())}${formulaModernDiseaseSection(record)}${detailSection("現代運用索引", "Modern application tags（中英對照，點擊全站搜尋）", modernIndexHtml)}${detailSection("相關病名與證型", "Related conditions and patterns", relatedLinkIds.length ? `<div class="k-chip-cloud">${relatedConditions}</div>` : "")}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", (usableText(record.clinical_use_note) ? `<p>${esc(usableText(record.clinical_use_note))}</p>` : "<p class=\"k-detail-empty\">-</p>"))}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
