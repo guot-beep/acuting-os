@@ -4414,6 +4414,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p161"
       ]
     },
     "functions": "寬胸理氣，活血止痛",
@@ -4479,7 +4482,17 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (BL16 Dushu): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (BL16 Dushu): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (BL16 Dushu): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "BL17",
+          "BL16"
+        ],
+        "axis": "膈肌痙攣",
+        "note": "課件：spasms of the diaphragm (better than Bl 16) —— 膈肌痙攣膈俞優於督俞。"
+      }
+    ]
   },
   {
     "code": "BL17",
@@ -4707,6 +4720,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p161"
       ]
     },
     "related_conditions": [
@@ -4788,7 +4804,17 @@
     "examPearl": "★ 膈俞為八會穴之「血會」，活血化瘀、養血止血第一要穴（「血會膈俞」）。斜刺0.5-0.8寸。",
     "examPearlEn": "★ Geshu is the Hui-Meeting point of Blood. Primary point for all blood disorders (blood stasis, anemia, hemorrhage). Oblique insertion 0.5-0.8 inch.",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "compare_with": [
+      {
+        "codes": [
+          "BL17",
+          "BL16"
+        ],
+        "axis": "膈肌痙攣",
+        "note": "課件：spasms of the diaphragm (better than Bl 16) —— 膈肌痙攣膈俞優於督俞。"
+      }
+    ]
   },
   {
     "code": "BL18",
@@ -6633,6 +6659,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p168",
+        "curriculum/acupoints/AP Point Book (1).pdf#p169"
       ]
     },
     "related_conditions": [
@@ -6748,7 +6778,25 @@
     "examPearl": "★ 腎俞為腎之背俞穴。補腎填精、壯陽滋陰第一要穴，主治腰痛、遺精、陽痿、耳鳴耳聾與水腫。直刺0.5-1.0寸，注意避免刺傷腎臟。",
     "examPearlEn": "★ Shenshu is the Back-Shu point of Kidney. Primary point for tonifying Kidney Essence, Yang, and Yin (lumbar pain, tinnitus, impotence, edema). Perpendicular 0.5-1.0 inch; avoid deep renal puncture.",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "compare_with": [
+      {
+        "codes": [
+          "BL24",
+          "BL23"
+        ],
+        "axis": "補氣使用頻率",
+        "note": "課件：Used as a Qi tonic, though U.B. 23 is used more —— 氣海俞可補氣，但腎俞更常用。"
+      },
+      {
+        "codes": [
+          "BL25",
+          "BL23"
+        ],
+        "axis": "腰痛虛實分工",
+        "note": "課件：(UB 25) Used allot for low back pain — U.B. 23 used more for chronic deficient low back pain —— 大腸俞治腰痛，慢性虛性腰痛多用腎俞。"
+      }
+    ]
   },
   {
     "code": "BL24",
@@ -6979,6 +7027,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p168"
       ]
     },
     "functions": "補腎活血，強腰利濕",
@@ -7036,7 +7087,17 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (BL24 Qihaishu): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (BL24 Qihaishu): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (BL24 Qihaishu): **Foot Taiyang Bladder Channel Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "BL24",
+          "BL23"
+        ],
+        "axis": "補氣使用頻率",
+        "note": "課件：Used as a Qi tonic, though U.B. 23 is used more —— 氣海俞可補氣，但腎俞更常用。"
+      }
+    ]
   },
   {
     "code": "BL25",
@@ -7254,6 +7315,9 @@
       ],
       "tcm_pattern_ids": [
         "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p169"
       ]
     },
     "related_conditions": [
@@ -7322,7 +7386,17 @@
     ],
     "examPearl": "★ 大腸俞為大腸之背俞穴。理腸通便、止瀉止痛第一要穴。直刺0.8-1.2寸。",
     "examPearlEn": "★ Dachangshu is the Back-Shu point of Large Intestine. Primary point for bowel regulation, constipation, and diarrhea. Perpendicular 0.8-1.2 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "BL25",
+          "BL23"
+        ],
+        "axis": "腰痛虛實分工",
+        "note": "課件：(UB 25) Used allot for low back pain — U.B. 23 used more for chronic deficient low back pain —— 大腸俞治腰痛，慢性虛性腰痛多用腎俞。"
+      }
+    ]
   },
   {
     "code": "BL26",
@@ -16713,7 +16787,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p6"
+        "curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p6",
+        "curriculum/acupoints/AP Point Book (1).pdf#p196"
       ]
     },
     "related_conditions": [
@@ -16737,6 +16812,14 @@
         ],
         "axis": "脊椎痛部位分工",
         "note": "課件：Main point for pain anywhere along spine (UB-40 may be used more for pain in middle of spine) —— 崑崙主全脊，委中偏中段。"
+      },
+      {
+        "codes": [
+          "BL62",
+          "BL60"
+        ],
+        "axis": "頭痛類型分工",
+        "note": "課件：headache more from neurological/brain disorders (U.B. 60 more for tension HA) —— 申脈偏神經性頭痛，崑崙偏緊張性頭痛。"
       }
     ],
     "point_identity_zh": [
@@ -17307,6 +17390,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p196",
+        "curriculum/acupoints/AP Point Book (1).pdf#p198"
       ]
     },
     "related_conditions": [
@@ -17374,6 +17461,24 @@
     "examStar": 1,
     "tcm_pattern_ids": [
       "pattern.yang_qiao_mai_imbalance"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "BL62",
+          "BL60"
+        ],
+        "axis": "頭痛類型分工",
+        "note": "課件：headache more from neurological/brain disorders (U.B. 60 more for tension HA) —— 申脈偏神經性頭痛，崑崙偏緊張性頭痛。"
+      },
+      {
+        "codes": [
+          "BL63",
+          "BL62"
+        ],
+        "axis": "痛證使用頻率",
+        "note": "課件：(UB 63) U.B. 62 used more for pain —— 痛證申脈比金門更常用。"
+      }
     ]
   },
   {
@@ -17590,6 +17695,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p198"
       ]
     },
     "point_identity_zh": [
@@ -17646,7 +17754,17 @@
     "exam_star": 2,
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (BL63 Jinmen): **Xi-Cleft point of Bladder channel**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (BL63 Jinmen): **Xi-Cleft point of Bladder channel**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (BL63 Jinmen): **Xi-Cleft point of Bladder channel**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "BL63",
+          "BL62"
+        ],
+        "axis": "痛證使用頻率",
+        "note": "課件：(UB 63) U.B. 62 used more for pain —— 痛證申脈比金門更常用。"
+      }
+    ]
   },
   {
     "code": "BL64",
@@ -19054,6 +19172,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p320",
+        "curriculum/acupoints/AP Point Book (1).pdf#p324"
       ]
     },
     "related_conditions": [
@@ -19168,6 +19290,24 @@
       "pattern.spleen_stomach_yang_deficiency",
       "pattern.blood_stasis",
       "pattern.yin_deficiency"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "CV3",
+          "CV4"
+        ],
+        "axis": "月經虛實分工",
+        "note": "課件：(Ren 3) More for excessive menstrual disorders — Ren 4 more for deficient menses —— 中極偏實性月經病，關元偏虛性月經病。"
+      },
+      {
+        "codes": [
+          "CV6",
+          "CV4"
+        ],
+        "axis": "補氣血分工",
+        "note": "課件：(Ren 6) Very similar to Ren 4, but more for building deficient Qi in the body. Also more for deficient Blood —— 氣海與關元相近，但更偏補氣血之虛。"
+      }
     ]
   },
   {
@@ -19413,6 +19553,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p324"
       ]
     },
     "related_conditions": [
@@ -19528,7 +19671,17 @@
     ],
     "examPearl": "★ 氣海為補氣要穴（「氣海補氣升陽」）。主治虛勞羸瘦、腹脹腹瀉、陰挺脫肛。直刺0.8-1.2寸。",
     "examPearlEn": "★ Qihai is the primary point on the body for tonifying Qi and raising Yang (for collapse/prolapse). Perpendicular 0.8-1.2 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "CV6",
+          "CV4"
+        ],
+        "axis": "補氣血分工",
+        "note": "課件：(Ren 6) Very similar to Ren 4, but more for building deficient Qi in the body. Also more for deficient Blood —— 氣海與關元相近，但更偏補氣血之虛。"
+      }
+    ]
   },
   {
     "code": "CV12",
@@ -19791,7 +19944,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/Techniques 3 points.pdf#p15"
+        "curriculum/acupoints/Techniques 3 points.pdf#p15",
+        "curriculum/acupoints/AP Point Book (1).pdf#p70"
       ]
     },
     "related_conditions": [
@@ -20021,6 +20175,14 @@
         ],
         "axis": "中焦 vs 下焦分工",
         "note": "課件：REN 12 is useful for middle warmer issues and REN 10 is useful for lower warmer issues —— 中脘主中、下脘主下。"
+      },
+      {
+        "codes": [
+          "ST21",
+          "CV12"
+        ],
+        "axis": "調上下焦使用頻率",
+        "note": "課件：\"Door that regulates upper and lower burners\" — but Ren 12 is used more often —— 梁門能調上下焦，但臨床多用中脘。"
       }
     ]
   },
@@ -25142,6 +25304,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p239"
       ]
     },
     "related_conditions": [
@@ -25253,7 +25418,17 @@
     ],
     "examPearl": "★ 神門為輸穴、原穴（土/子穴）。全身清心安神、治療失眠多夢與驚悸第一要穴（「安神失眠首選神門」）。直刺0.3-0.5寸，避開尺動脈。",
     "examPearlEn": "★ Shenmen is the Shu-Stream, Yuan-Source (Earth, Child/Sedation) point. Primary point on the body for insomnia, anxiety, and heart pain. Perpendicular 0.3-0.5 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "PC7",
+          "HT7"
+        ],
+        "axis": "情志男女分工",
+        "note": "課件：Maciocia: emotional upset from the ending of relationships, P 7: better for women / H 7: better for men —— 關係結束的情志傷，大陵偏女、神門偏男。"
+      }
+    ]
   },
   {
     "code": "HT8",
@@ -26555,7 +26730,9 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p91"
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p91",
+        "curriculum/acupoints/AP Point Book (1).pdf#p209",
+        "curriculum/acupoints/AP Point Book (1).pdf#p310"
       ]
     },
     "related_conditions": [
@@ -26662,6 +26839,22 @@
         ],
         "axis": "補陰 vs 清熱",
         "note": "課件：KD 3: Yin [Tonify Yin stronger than KD 6]；KD 6: Clear heat better —— 太溪補陰較強，照海清熱較好。"
+      },
+      {
+        "codes": [
+          "KI2",
+          "KI6"
+        ],
+        "axis": "咽痛虛實分工",
+        "note": "課件：(K 2) More for excess sore throat than K 6；(K 6) K 2 more for tonsillitis/excess, more for chronic sore throat —— 然谷偏實熱咽痛，照海偏陰虛慢性咽痛。"
+      },
+      {
+        "codes": [
+          "LR8",
+          "KI6"
+        ],
+        "axis": "子宮脫垂",
+        "note": "課件：(Liv 8) prolapsed uterus (K-6 better) —— 子宮脫垂照海優於曲泉。"
       }
     ]
   },
@@ -28024,6 +28217,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p32"
       ]
     },
     "exam_star": 1,
@@ -28297,7 +28493,25 @@
     "examPearlEn": "★ Hegu is the Yuan-Source, Four Command Point (Face/Mouth), and Four Gates point. Primary point on the body for headache, toothache, fever, and pain. Perpendicular 0.5-1.0 inch; ⚠️ STRICTLY CONTRAINDICATED IN PREGNANCY.",
     "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
     "examStar": 1,
-    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves."
+    "cautionsEn": "Strict caution required. Observe accurate insertion angle and depth; avoid deep insertion to protect internal organs/nerves.",
+    "compare_with": [
+      {
+        "codes": [
+          "LI4",
+          "LI11"
+        ],
+        "axis": "風氣 vs 熱血",
+        "note": "課件：L.I. 4 stronger for Wind/Qi; L.I. 11 stronger for Heat/Blood —— 合谷偏風偏氣，曲池偏熱偏血。"
+      },
+      {
+        "codes": [
+          "LI5",
+          "LI4"
+        ],
+        "axis": "頭痛使用頻率",
+        "note": "課件：L.I. 5 headaches (L.I. 4 used more) —— 頭痛陽溪可用，但合谷更常用。"
+      }
+    ]
   },
   {
     "code": "LI5",
@@ -28562,6 +28776,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p32"
       ]
     },
     "related_conditions": [
@@ -28621,7 +28838,17 @@
     ],
     "examPearl": "經穴、火穴，也是腕部（解剖鼻煙壺）的局部主穴。神志用法容易漏：與 LI7 並稱主狂躁「見鬼」。",
     "examPearlEn": "、，（）。： LI7 「」。",
-    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
+    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
+    "compare_with": [
+      {
+        "codes": [
+          "LI5",
+          "LI4"
+        ],
+        "axis": "頭痛使用頻率",
+        "note": "課件：L.I. 5 headaches (L.I. 4 used more) —— 頭痛陽溪可用，但合谷更常用。"
+      }
+    ]
   },
   {
     "code": "LI6",
@@ -30414,6 +30641,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p32"
       ]
     },
     "exam_star": 1,
@@ -30548,7 +30778,17 @@
     "examPearl": "★ 曲池為合穴（土/母穴）。全身退熱高燒、高血壓、蕁麻疹/皮膚瘙癢與肘臂痛第一要穴（「清熱降壓首選曲池」）。直刺1.0-1.5寸。",
     "examPearlEn": "★ Quchi is the He-Sea (Earth, Mother) point. Primary point on the body for high fever, hypertension, skin itching/urticaria, and elbow pain. Perpendicular 1.0-1.5 inch.",
     "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "LI4",
+          "LI11"
+        ],
+        "axis": "風氣 vs 熱血",
+        "note": "課件：L.I. 4 stronger for Wind/Qi; L.I. 11 stronger for Heat/Blood —— 合谷偏風偏氣，曲池偏熱偏血。"
+      }
+    ]
   },
   {
     "code": "LI12",
@@ -32328,6 +32568,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p32"
       ]
     },
     "functions": "利咽散結，通絡止痛",
@@ -32384,7 +32627,17 @@
     ],
     "examPearl": "頸部穴，功效很單一：利咽開音。與 LI18 成對，LI18 多一條止咳平喘。頸部針刺深度必須嚴格控制。",
     "examPearlEn": "，：。 LI18 ，LI18 。。",
-    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
+    "examImportance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
+    "compare_with": [
+      {
+        "codes": [
+          "LI18",
+          "LI17"
+        ],
+        "axis": "頸局部使用頻率",
+        "note": "課件：L.I. 18 used more than 17 for local problems —— 頸部局部問題扶突比天鼎更常用。"
+      }
+    ]
   },
   {
     "code": "LI18",
@@ -32634,7 +32887,8 @@
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ],
       "compare_with": [
-        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p2"
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p2",
+        "curriculum/acupoints/AP Point Book (1).pdf#p32"
       ]
     },
     "exam_star": 1,
@@ -32646,6 +32900,14 @@
         ],
         "axis": "頸部安全性",
         "note": "課件：Can affect common carotid artery, use LI-18 because it is safer —— 人迎緊貼頸總動脈，需要頸部取穴時扶突較安全。"
+      },
+      {
+        "codes": [
+          "LI18",
+          "LI17"
+        ],
+        "axis": "頸局部使用頻率",
+        "note": "課件：L.I. 18 used more than 17 for local problems —— 頸部局部問題扶突比天鼎更常用。"
       }
     ],
     "functions": "宣肺利咽，理氣化痰",
@@ -38180,7 +38442,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf#p2"
+        "curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf#p2",
+        "curriculum/acupoints/AP Point Book (1).pdf#p238"
       ]
     },
     "related_conditions": [
@@ -38352,6 +38615,14 @@
         ],
         "axis": "急慢性心症分工",
         "note": "課件：Similar to PC 3 but more for Chronic Heart symptoms from Qi stagnation —— 內關與曲澤相近，但更偏氣滯所致的慢性心症。"
+      },
+      {
+        "codes": [
+          "PC6",
+          "PC5"
+        ],
+        "axis": "甲狀腺亢進",
+        "note": "課件：(P 6) hyperthyroidism (P-5 used more) —— 甲亢間使比內關更常用。"
       }
     ]
   },
@@ -43949,6 +44220,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p99"
       ]
     },
     "point_identity_zh": [
@@ -44045,6 +44319,16 @@
       "pattern.spleen_not_governing_blood",
       "pattern.liver_qi_stagnation",
       "pattern.spleen_qi_deficiency"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "SP5",
+          "SP1"
+        ],
+        "axis": "痔瘡首選",
+        "note": "課件：hemorrhoids (Sp 1 used more) —— 痔瘡商丘可用，但隱白更常用。"
+      }
     ]
   },
   {
@@ -45221,6 +45505,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p99"
       ]
     },
     "related_conditions": [
@@ -45273,7 +45560,17 @@
     ],
     "examPearl": "踝關節局部要穴 —— 「利筋骨」加「足踝痛」是課件唯一在脾經給的踝部主治。金穴＝本經子穴，實則瀉其子，脾經實證瀉此穴。舌強痛是容易漏的考點（脾之脈連舌本、散舌下）。",
     "examPearlEn": "—— 「」「」。＝，，。（、）。",
-    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）"
+    "examImportance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "compare_with": [
+      {
+        "codes": [
+          "SP5",
+          "SP1"
+        ],
+        "axis": "痔瘡首選",
+        "note": "課件：hemorrhoids (Sp 1 used more) —— 痔瘡商丘可用，但隱白更常用。"
+      }
+    ]
   },
   {
     "code": "SP6",
@@ -46362,6 +46659,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p105"
       ]
     },
     "point_identity_zh": [
@@ -46469,6 +46769,16 @@
     "tcm_pattern_ids": [
       "pattern.cold_congealing_uterus",
       "pattern.blood_stasis"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "SP10",
+          "SP8"
+        ],
+        "axis": "偏熱程度",
+        "note": "課件：(Sp 10) More for heat than Sp 8 —— 血海比地機更偏熱證。"
+      }
     ]
   },
   {
@@ -47102,7 +47412,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3",
+        "curriculum/acupoints/AP Point Book (1).pdf#p105"
       ]
     },
     "point_identity_zh": [
@@ -47176,6 +47487,14 @@
         ],
         "axis": "治血 vs 調經",
         "note": "血海治血，三陰交調三陰經"
+      },
+      {
+        "codes": [
+          "SP10",
+          "SP8"
+        ],
+        "axis": "偏熱程度",
+        "note": "課件：(Sp 10) More for heat than Sp 8 —— 血海比地機更偏熱證。"
       }
     ],
     "functions": "清熱涼血，活血化瘀，祛風止癢，調經止痛",
@@ -56341,7 +56660,8 @@
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
       ],
       "compare_with": [
-        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p3"
+        "curriculum/acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf#p3",
+        "curriculum/acupoints/AP Point Book (1).pdf#p70"
       ]
     },
     "point_identity_zh": [
@@ -56357,6 +56677,14 @@
         ],
         "axis": "是否兼水道",
         "note": "關門兼顧腸與水道，腹瀉伴水腫時比 ST21 更對證"
+      },
+      {
+        "codes": [
+          "ST21",
+          "CV12"
+        ],
+        "axis": "調上下焦使用頻率",
+        "note": "課件：\"Door that regulates upper and lower burners\" — but Ren 12 is used more often —— 梁門能調上下焦，但臨床多用中脘。"
       }
     ],
     "functions": "和胃降逆，健脾理氣，止嘔止痛",
@@ -64221,7 +64549,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p58"
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p58",
+        "curriculum/acupoints/AP Point Book (1).pdf#p248"
       ]
     },
     "related_conditions": [
@@ -64336,6 +64665,14 @@
         ],
         "axis": "清熱強度",
         "note": "課件：SJ 6: Clear heat [better than SJ 5] —— 脅肋痛清熱取支溝勝外關。"
+      },
+      {
+        "codes": [
+          "TE5",
+          "TE6"
+        ],
+        "axis": "便祕使用頻率",
+        "note": "課件：(SJ 5) constipation (SJ 6 used more) —— 便祕支溝比外關更常用。"
       }
     ]
   },
@@ -64970,6 +65307,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p209"
       ]
     },
     "related_conditions": [
@@ -65053,7 +65393,17 @@
     "examImportance": "NCCAOM / US Acupuncture Board Exam Focus",
     "exam_pearl_en": "High-Yield Board Pearl (KI2 Rangu): **Ying-Spring point, Fire point (Five-Shu), Key point for nourishing Yin & clearing fire**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (KI2 Rangu): **Ying-Spring point, Fire point (Five-Shu), Key point for nourishing Yin & clearing fire**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "KI2",
+          "KI6"
+        ],
+        "axis": "咽痛虛實分工",
+        "note": "課件：(K 2) More for excess sore throat than K 6；(K 6) K 2 more for tonsillitis/excess, more for chronic sore throat —— 然谷偏實熱咽痛，照海偏陰虛慢性咽痛。"
+      }
+    ]
   },
   {
     "muscles": [],
@@ -72299,6 +72649,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p320"
       ]
     },
     "related_conditions": [
@@ -72383,6 +72736,16 @@
       "pattern.blood_lin_excess",
       "pattern.cloudy_lin",
       "pattern.tai_yang_water_accumulation"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "CV3",
+          "CV4"
+        ],
+        "axis": "月經虛實分工",
+        "note": "課件：(Ren 3) More for excessive menstrual disorders — Ren 4 more for deficient menses —— 中極偏實性月經病，關元偏虛性月經病。"
+      }
     ]
   },
   {
@@ -77359,6 +77722,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p344"
       ]
     },
     "point_identity_zh": [
@@ -77416,7 +77782,17 @@
     "examImportance": "NCCAOM / US Acupuncture Board Exam Focus",
     "exam_pearl_en": "High-Yield Board Pearl (GV1 Changqiang): **Luo-Connecting point of Governing Vessel, Intersection point (Du, Ren, KI), Primary point for hemorrhoid & anal disorders (Changqiang)**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (GV1 Changqiang): **Luo-Connecting point of Governing Vessel, Intersection point (Du, Ren, KI), Primary point for hemorrhoid & anal disorders (Changqiang)**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "GV2",
+          "GV1"
+        ],
+        "axis": "痔瘡替代",
+        "note": "課件：(DU 2) hemorrhoids (instead of DU 1) —— 痔瘡可用腰俞替代長強。"
+      }
+    ]
   },
   {
     "code": "GV2",
@@ -77640,6 +78016,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p344"
       ]
     },
     "point_identity_zh": [
@@ -77693,7 +78072,17 @@
     "exam_star": 1,
     "examStar": 1,
     "exam_pearl_en": "High-Yield Board Pearl (GV2 Yaoshu): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "examPearlEn": "High-Yield Board Pearl (GV2 Yaoshu): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications."
+    "examPearlEn": "High-Yield Board Pearl (GV2 Yaoshu): **Governing Vessel (Du Mai) Point**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
+    "compare_with": [
+      {
+        "codes": [
+          "GV2",
+          "GV1"
+        ],
+        "axis": "痔瘡替代",
+        "note": "課件：(DU 2) hemorrhoids (instead of DU 1) —— 痔瘡可用腰俞替代長強。"
+      }
+    ]
   },
   {
     "code": "GV3",
@@ -90077,6 +90466,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p285"
       ]
     },
     "point_identity_zh": [
@@ -90143,6 +90535,16 @@
     "tcm_pattern_ids": [
       "pattern.dai_mai_dysfunction",
       "pattern.damp_heat_lower_burner"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "GB27",
+          "GB26"
+        ],
+        "axis": "整體強度 vs 疝氣",
+        "note": "課件：Similar to GB 26, which is usually stronger, but GB 27 is better for hernia —— 帶脈通常較強，疝氣則五樞較好。"
+      }
     ]
   },
   {
@@ -90347,7 +90749,8 @@
         "eLotus CORE"
       ],
       "compare_with": [
-        "curriculum/acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf#p5"
+        "curriculum/acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf#p5",
+        "curriculum/acupoints/AP Point Book (1).pdf#p285"
       ]
     },
     "action_tags": [
@@ -90408,6 +90811,14 @@
         ],
         "axis": "男科分工",
         "note": "課件：GB 27 is used more for male issues: testicular pain a/or retraction, lower abdominal pain, shan disorder —— 男科（睪丸痛、疝氣）多用五樞，維道偏帶下與子宮脫垂。"
+      },
+      {
+        "codes": [
+          "GB27",
+          "GB26"
+        ],
+        "axis": "整體強度 vs 疝氣",
+        "note": "課件：Similar to GB 26, which is usually stronger, but GB 27 is better for hernia —— 帶脈通常較強，疝氣則五樞較好。"
       }
     ]
   },
@@ -95868,6 +96279,9 @@
       ],
       "tcm_pattern_ids": [
         "derived: docs/research_packs/ACUPOINT_PATTERN_LINKS_LEDGER_2026-08-19.json(逐條帶來源檔與原句引文;結構化反向連結/課件行/本穴自述文字,配伍孤證不寫入)"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p238"
       ]
     },
     "point_identity_zh": [
@@ -95928,6 +96342,16 @@
     "tcm_pattern_ids": [
       "pattern.heart_yin_deficiency",
       "pattern.phlegm_misting_heart"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "PC6",
+          "PC5"
+        ],
+        "axis": "甲狀腺亢進",
+        "note": "課件：(P 6) hyperthyroidism (P-5 used more) —— 甲亢間使比內關更常用。"
+      }
     ]
   },
   {
@@ -96189,6 +96613,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p239"
       ]
     },
     "related_conditions": [
@@ -96259,6 +96686,16 @@
       "pattern.heart_yin_deficiency",
       "pattern.heart_fire",
       "pattern.heart_kidney_not_communicating"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "PC7",
+          "HT7"
+        ],
+        "axis": "情志男女分工",
+        "note": "課件：Maciocia: emotional upset from the ending of relationships, P 7: better for women / H 7: better for men —— 關係結束的情志傷，大陵偏女、神門偏男。"
+      }
     ]
   },
   {
@@ -98137,6 +98574,9 @@
       "cautions_en": [
         "WHO SAPL 2008",
         "eLotus CORE"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p302"
       ]
     },
     "point_identity_zh": [
@@ -98207,7 +98647,17 @@
     ],
     "examPearl": "★ 蠡溝為絡穴（通膽經）。全身陰痛陰癢、梅核氣與生殖器病變第一要穴（「陰痛陰癢尋蠡溝」）。沿皮刺0.5-0.8寸。",
     "examPearlEn": "★ Ligou is the Luo-Connecting point of Liver. Primary point for genital itching/pain, plum-pit Qi, and urogenital disorders. Subcutaneous 0.5-0.8 inch.",
-    "examStar": 1
+    "examStar": 1,
+    "compare_with": [
+      {
+        "codes": [
+          "LR5",
+          "LR8"
+        ],
+        "axis": "疏散 vs 清潤",
+        "note": "課件：Liv 8 herpes/genital. Liv 5 used more — Liv 8 more cooling, nourishing, Liv 5 more dispersing —— 生殖器疱疹蠡溝更常用；曲泉偏清潤，蠡溝偏疏散。"
+      }
+    ]
   },
   {
     "code": "LR6",
@@ -99014,6 +99464,10 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p302",
+        "curriculum/acupoints/AP Point Book (1).pdf#p310"
       ]
     },
     "related_conditions": [
@@ -99107,6 +99561,24 @@
     "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
     "tcm_pattern_ids": [
       "pattern.damp_heat_lower_burner"
+    ],
+    "compare_with": [
+      {
+        "codes": [
+          "LR5",
+          "LR8"
+        ],
+        "axis": "疏散 vs 清潤",
+        "note": "課件：Liv 8 herpes/genital. Liv 5 used more — Liv 8 more cooling, nourishing, Liv 5 more dispersing —— 生殖器疱疹蠡溝更常用；曲泉偏清潤，蠡溝偏疏散。"
+      },
+      {
+        "codes": [
+          "LR8",
+          "KI6"
+        ],
+        "axis": "子宮脫垂",
+        "note": "課件：(Liv 8) prolapsed uterus (K-6 better) —— 子宮脫垂照海優於曲泉。"
+      }
     ]
   },
   {
@@ -101434,7 +101906,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p1"
+        "curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p1",
+        "curriculum/acupoints/AP Point Book (1).pdf#p247"
       ]
     },
     "compare_with": [
@@ -101453,6 +101926,14 @@
         ],
         "axis": "臨床使用頻率",
         "note": "課件：Similar to SJ 3 (used more clinically) —— 液門與中渚作用相近，臨床多用中渚。"
+      },
+      {
+        "codes": [
+          "TE4",
+          "TE3"
+        ],
+        "axis": "耳疾使用頻率",
+        "note": "課件：(SJ 4) deafness & tinnitus — SJ 3 more common —— 耳鳴耳聾中渚比陽池更常用。"
       }
     ],
     "point_identity_zh": [
@@ -101775,6 +102256,9 @@
       ],
       "related_conditions": [
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      ],
+      "compare_with": [
+        "curriculum/acupoints/AP Point Book (1).pdf#p247"
       ]
     },
     "point_identity_zh": [
@@ -101838,7 +102322,17 @@
     "examStar": 2,
     "exam_pearl_en": "High-Yield Board Pearl (TE4 Yangchi): **Yuan-Source point of San Jiao channel**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
     "examPearlEn": "High-Yield Board Pearl (TE4 Yangchi): **Yuan-Source point of San Jiao channel**. Core NCCAOM exam focus: point location landmarks, special point classifications, and clinical indications.",
-    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients."
+    "cautionsEn": "Observe correct depth and angle under aseptic conditions. Caution in pregnancy and weak patients.",
+    "compare_with": [
+      {
+        "codes": [
+          "TE4",
+          "TE3"
+        ],
+        "axis": "耳疾使用頻率",
+        "note": "課件：(SJ 4) deafness & tinnitus — SJ 3 more common —— 耳鳴耳聾中渚比陽池更常用。"
+      }
+    ]
   },
   {
     "code": "TE6",
@@ -102116,7 +102610,8 @@
         "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
       ],
       "compare_with": [
-        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p58"
+        "curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p58",
+        "curriculum/acupoints/AP Point Book (1).pdf#p248"
       ]
     },
     "related_conditions": [
@@ -102221,6 +102716,14 @@
         ],
         "axis": "清熱強度",
         "note": "課件：SJ 6: Clear heat [better than SJ 5] —— 脅肋痛清熱取支溝勝外關。"
+      },
+      {
+        "codes": [
+          "TE5",
+          "TE6"
+        ],
+        "axis": "便祕使用頻率",
+        "note": "課件：(SJ 5) constipation (SJ 6 used more) —— 便祕支溝比外關更常用。"
       }
     ]
   },
