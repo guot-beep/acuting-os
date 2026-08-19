@@ -1,3 +1,21 @@
+# 2026-08-19 晨 — SOL 指定三點對帳 + 代表卡 smoke:全一致,順手修兩個顯示層 bug
+
+依 SOL 審計指示(CONTINUE preview/smoke/低風險內容;PAUSE PR landing 與 graph 升格推薦):
+- **source↔generated 對帳:15/15 欄位計數完全一致**(formulas/points 記錄數、方劑證候
+  50 方 80 邊、穴位證候 109 穴 784 邊、compare_with 91、出典 210、方歌 130、家族 41、
+  加減 97、禁忌 218、舌脈 210、slug 型比較組 115、related_conditions 185;
+  腳本 scratchpad three-point-audit.js,build 後 git status 零漂移)。
+- **renderer smoke 4/4**:ST40「相關中醫證候 8」=canonical 8;麻黃湯證型 chips 2=2;
+  保和丸加減 4 列=4;白虎湯比較組解析「清氣營血分熱」。
+- **順手修掉兩個既有顯示層 bug**(smoke 過程曝露,非本次資料改動引入):
+  ① #point/ deep-link 崩潰——app.js:4185 #editBtn 缺 ?.,throw 後 related-point
+  監聽全沒掛;修後 #point/LI4 零 error、相關穴恢復可點。
+  ② 方劑列表卡 meta 直印 raw slug(group: heat_qi_ying_blood)——改走
+  comparisonGroupLabel resolver。殘餘:cmp 骨架卡 meta 印 cmp.<id>,列裁決佇列。
+- PAUSE 遵守:未開 PR;graph 關聯維持瀏覽/學習用途,無任何推薦/排序接線。
+
+---
+
 # 2026-08-19 加時 90 分 — 中藥英文歸零+方歌二波+舌脈+禁忌,+6 commit
 
 延長場次(Ting:繼續一個半小時最大強力),5 個唯讀 agent 並行,同帳本管線:
