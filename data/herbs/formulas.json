@@ -10292,82 +10292,43 @@
    "actions_zh": [
     "清熱瀉火",
     "瀉火解毒",
-    "燥濕便秘"
+    "清熱燥濕",
+    "涼血止血"
    ],
    "actions_en": [
-    "Harmonizes the Stomach",
-    "Descends Rebellious Qi",
-    "Disperses clumping",
-    "Eliminates focal distention due to Cold and Heat factors"
+    "Clears Heat and drains Fire",
+    "Drains Fire and relieves toxicity",
+    "Clears Heat and dries Dampness",
+    "Cools the Blood and stops bleeding"
    ],
    "pattern_indications_zh": [
-    "腸胃不和、寒熱錯雜證",
-    "少陽誤下、中焦虛寒證",
-    "胃腸濕熱積滯證"
+    "邪火內熾、迫血妄行之吐血衄血證",
+    "三焦積熱之目赤口瘡、癰腫瘡毒、便秘溲赤證"
    ],
    "pattern_indications_en": [
-    "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
-    "Improper purging of the Shao Yang with underlying Stomach Deficiency",
-    "Damp-Heat in the gastrointestinal area",
-    "Gu Syndrome"
+    "Hematemesis and epistaxis from intense Fire forcing the Blood to move recklessly",
+    "Accumulated Heat in the Three Burners with red eyes, mouth sores, abscesses and toxic swellings, constipation and dark urine"
    ],
    "composition": [
     {
-     "herb_id": "herb.ban_xia",
-     "herb_zh": "制半夏",
-     "name_zh": "制半夏",
-     "herb_en": "Prepared Pinellia Rhizome",
-     "name_en": "Prepared Pinellia Rhizome",
-     "pinyin": "Zhi Ban Xia",
-     "pinyin_toned": "Zhì Bàn Xià",
-     "pharmaceutical_latin": "Rz. Pinelliae Preparatum",
-     "dose_g": "6-12g",
-     "decoction_reference_g": "6-12g",
-     "in_formula_en": "Dries Dampness, transforms Phlegm, disperses focal clumping and directs rebellious Qi downward.",
-     "actions_en": "Dries Dampness, transforms Phlegm, disperses focal clumping and directs rebellious Qi downward.",
-     "in_formula_zh": "燥濕化痰，降逆止嘔，消痞散結。",
-     "role_reason_zh": "燥濕化痰，降逆止嘔，消痞散結。",
+     "herb_id": "herb.da_huang",
+     "herb_zh": "大黃",
+     "name_zh": "大黃",
+     "herb_en": "Rhubarb",
+     "name_en": "Rhubarb",
+     "pinyin": "Da Huang",
+     "pinyin_toned": "Da Huang",
+     "pharmaceutical_latin": "Rx. et Rz. Rhei",
+     "dose_g": "4.5-10g",
+     "decoction_reference_g": "4.5-10g",
+     "in_formula_en": "",
+     "actions_en": "",
+     "in_formula_zh": "",
+     "actions_zh": "",
+     "role_reason_zh": "",
      "is_alternate": false,
-     "actions_zh": "燥濕化痰，降逆止嘔，消痞散結。",
-     "role_zh": "君"
-    },
-    {
-     "herb_id": "herb.gan_jiang",
-     "herb_zh": "乾薑",
-     "name_zh": "乾薑",
-     "herb_en": "Dried Ginger",
-     "name_en": "Dried Ginger",
-     "pinyin": "Gan Jiang",
-     "pinyin_toned": "Gān Jiāng",
-     "pharmaceutical_latin": "Rz. Zingiberis",
-     "dose_g": "2-12g",
-     "decoction_reference_g": "2-12g",
-     "in_formula_en": "Warms the Middle and disperses Interior Cold.",
-     "actions_en": "Warms the Middle and disperses Interior Cold.",
-     "in_formula_zh": "溫中散寒，溫肺化飲，回陽通脈。",
-     "role_reason_zh": "溫中散寒，溫肺化飲，回陽通脈。",
-     "is_alternate": false,
-     "actions_zh": "溫中散寒，溫肺化飲，回陽通脈。",
-     "role_zh": "臣"
-    },
-    {
-     "herb_id": "herb.huang_qin",
-     "herb_zh": "黃芩",
-     "name_zh": "黃芩",
-     "herb_en": "Scutellaria Root",
-     "name_en": "Scutellaria Root",
-     "pinyin": "Huang Qin",
-     "pinyin_toned": "Huang Qin",
-     "pharmaceutical_latin": "Rx. Scutellariae",
-     "dose_g": "3-10g",
-     "decoction_reference_g": "3-10g",
-     "in_formula_en": "Clears Heat and dries Dampness in the Middle/Upper Jiao.",
-     "actions_en": "Clears Heat and dries Dampness in the Middle/Upper Jiao.",
-     "in_formula_zh": "清熱燥濕，瀉火解毒，止血安胎。",
-     "role_reason_zh": "清熱燥濕，瀉火解毒，止血安胎。",
-     "is_alternate": false,
-     "actions_zh": "清熱燥濕，瀉火解毒，止血安胎。",
-     "role_zh": "佐"
+     "role_zh": "君",
+     "role_en": "Chief"
     },
     {
      "herb_id": "herb.huang_lian",
@@ -10378,72 +10339,36 @@
      "pinyin": "Huang Lian",
      "pinyin_toned": "Huang Lian",
      "pharmaceutical_latin": "Rz. Coptidis",
-     "dose_g": "1-6g",
-     "decoction_reference_g": "1-6g",
-     "in_formula_en": "Strongly clears Heat and dries Dampness, especially from the Middle Jiao.",
-     "actions_en": "Strongly clears Heat and dries Dampness, especially from the Middle Jiao.",
-     "in_formula_zh": "清熱燥濕，瀉火解毒，清心除煩。",
-     "role_reason_zh": "清熱燥濕，瀉火解毒，清心除煩。",
+     "dose_g": "6-12g",
+     "decoction_reference_g": "6-12g",
+     "in_formula_en": "",
+     "actions_en": "",
+     "in_formula_zh": "",
+     "actions_zh": "",
+     "role_reason_zh": "",
      "is_alternate": false,
-     "actions_zh": "清熱燥濕，瀉火解毒，清心除煩。",
-     "role_zh": "佐"
+     "role_zh": "臣",
+     "role_en": "Deputy"
     },
     {
-     "herb_id": "herb.ren_shen",
-     "herb_zh": "人參",
-     "name_zh": "人參",
-     "herb_en": "Ginseng Root",
-     "name_en": "Ginseng Root",
-     "pinyin": "Ren Shen",
-     "pinyin_toned": "Rén Shēn",
-     "pharmaceutical_latin": "Rx. Ginseng",
-     "dose_g": "3-10g",
-     "decoction_reference_g": "3-10g",
-     "in_formula_en": "Tonifies Yuan and Spleen/Stomach Qi.",
-     "actions_en": "Tonifies Yuan and Spleen/Stomach Qi.",
-     "in_formula_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-     "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
+     "herb_id": "herb.huang_qin",
+     "herb_zh": "黃芩",
+     "name_zh": "黃芩",
+     "herb_en": "Scutellaria Root",
+     "name_en": "Scutellaria Root",
+     "pinyin": "Huang Qin",
+     "pinyin_toned": "Huang Qin",
+     "pharmaceutical_latin": "Rx. Scutellariae",
+     "dose_g": "2-9g",
+     "decoction_reference_g": "2-9g",
+     "in_formula_en": "",
+     "actions_en": "",
+     "in_formula_zh": "",
+     "actions_zh": "",
+     "role_reason_zh": "",
      "is_alternate": false,
-     "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-     "role_zh": "佐"
-    },
-    {
-     "herb_id": "herb.da_zao",
-     "herb_zh": "大棗",
-     "name_zh": "大棗",
-     "herb_en": "Jujube Date",
-     "name_en": "Jujube Date",
-     "pinyin": "Da Zao",
-     "pinyin_toned": "Dà Zǎo",
-     "pharmaceutical_latin": "Fr. Jujube",
-     "dose_g": "3g",
-     "decoction_reference_g": "3g",
-     "in_formula_en": "Tonifies Spleen Qi, nourishes and harmonizes.",
-     "actions_en": "Tonifies Spleen Qi, nourishes and harmonizes.",
-     "in_formula_zh": "補中益氣，養血安神，調和營衛。",
-     "role_reason_zh": "補中益氣，養血安神，調和營衛。",
-     "is_alternate": false,
-     "actions_zh": "補中益氣，養血安神，調和營衛。",
-     "role_zh": "佐"
-    },
-    {
-     "herb_id": "herb.zhi_gan_cao",
-     "herb_zh": "炙甘草",
-     "name_zh": "炙甘草",
-     "herb_en": "Honey-fried Licorice Root",
-     "name_en": "Honey-fried Licorice Root",
-     "pinyin": "Zhi Gan Cao",
-     "pinyin_toned": "Zhì Gān Cǎo",
-     "pharmaceutical_latin": "Fried Rx. Glycyrrhizae",
-     "dose_g": "3-9g",
-     "decoction_reference_g": "3-9g",
-     "in_formula_en": "Tonifies Middle Qi and harmonizes the hot/cold herbs.",
-     "actions_en": "Tonifies Middle Qi and harmonizes the hot/cold herbs.",
-     "in_formula_zh": "補中益氣，緩急止痛，調和諸藥。",
-     "role_reason_zh": "補中益氣，緩急止痛，調和諸藥。",
-     "is_alternate": false,
-     "actions_zh": "補中益氣，緩急止痛，調和諸藥。",
-     "role_zh": "使"
+     "role_zh": "臣",
+     "role_en": "Deputy"
     }
    ],
    "clinical_use_note": "【瀉心湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -10479,12 +10404,38 @@
     "condition_tags_en": [
      "data/config/formula_tag_glossary.json"
     ],
-    "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+    "composition": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
     "actions_zh": [
-     "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
     ],
     "pattern_indications_zh": [
-     "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "actions_en": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "pattern_indications_en": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "contraindications_zh": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "contraindications_en": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "tongue_zh": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "coating_zh": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "pulse_zh": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+    ],
+    "source_classic": [
+     "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
     ]
    },
    "clinical_classification_zh": "臨床常用專病處方",
@@ -10509,25 +10460,30 @@
    ],
    "category_zh": "和解劑",
    "contraindications_en": [
-    "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-    "Contraindicated for those with nausea and vomiting due to Yin Deficiency.",
-    "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+    "Not suitable where there is no excess Fire and exuberant Heat.",
+    "Contraindicated in Spleen-Stomach Deficiency Cold.",
+    "Use with caution during pregnancy."
    ],
    "cautions_en": [
-    "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-    "Contraindicated for those with nausea and vomiting due to Yin Deficiency.",
-    "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+    "Not suitable where there is no excess Fire and exuberant Heat.",
+    "Contraindicated in Spleen-Stomach Deficiency Cold.",
+    "Use with caution during pregnancy."
    ],
    "cautions_zh": [
-    "禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-    "禁用於 nausea and vomiting due to Yin Deficiency.",
-    "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
+    "非實火熱盛者不宜使用。",
+    "脾胃虛寒者忌服。",
+    "孕婦慎用。"
    ],
    "contraindications_zh": [
-    "禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-    "禁用於 nausea and vomiting due to Yin Deficiency.",
-    "Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula."
-   ]
+    "非實火熱盛者不宜使用。",
+    "脾胃虛寒者忌服。",
+    "孕婦慎用。"
+   ],
+   "correction_note": "2026-08-19 身分裁定(Ting 授權):本卡原載半夏瀉心湯之組成/證型/英文(該內容完整存於 formula.ban_xia_xie_xin_tang),actions_zh 為三黃式;依方名重建為《金匱要略》瀉心湯(大黃黃連黃芩)。原值逐字保存:{\"composition_note\":\"7 列與 formula.ban_xia_xie_xin_tang 逐字相同(僅黃芩/黃連原標「佐」,正卡作「臣」),正卡俱在,未另存\",\"actions_zh\":[\"清熱瀉火\",\"瀉火解毒\",\"燥濕便秘\"],\"actions_en\":[\"Harmonizes the Stomach\",\"Descends Rebellious Qi\",\"Disperses clumping\",\"Eliminates focal distention due to Cold and Heat factors\"],\"pattern_indications_zh\":[\"腸胃不和、寒熱錯雜證\",\"少陽誤下、中焦虛寒證\",\"胃腸濕熱積滯證\"],\"pattern_indications_en\":[\"Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors\",\"Improper purging of the Shao Yang with underlying Stomach Deficiency\",\"Damp-Heat in the gastrointestinal area\",\"Gu Syndrome\"],\"contraindications_zh\":[\"禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.\",\"禁用於 nausea and vomiting due to Yin Deficiency.\",\"Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula.\"],\"contraindications_en\":[\"Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.\",\"Contraindicated for those with nausea and vomiting due to Yin Deficiency.\",\"Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula.\"],\"cautions_zh\":[\"禁用於 focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.\",\"禁用於 nausea and vomiting due to Yin Deficiency.\",\"Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula.\"],\"cautions_en\":[\"Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.\",\"Contraindicated for those with nausea and vomiting due to Yin Deficiency.\",\"Diarrhea induced by cisplatin (Platinol) and irinotecan (Camptosar) was effectively controlled by this formula.\"]}",
+   "tongue_zh": "紅",
+   "coating_zh": "黃",
+   "pulse_zh": "數有力",
+   "source_classic": "《金匱要略》"
   },
   {
    "id": "formula.liang_ge_san",
