@@ -1,3 +1,17 @@
+# 2026-08-20 Antigravity — 中藥卡填補 Batch 2 (清熱解毒藥 23 味補全 & 純英文 _en 鐵律貫徹)
+
+- **做了什麼**: 完成第二批 23 味清熱解毒藥卡（金銀花、連翹、紫花地丁、大青葉、板藍根、魚腥草、白頭翁、射干、馬勃、穿心蓮、山豆根、馬齒莧、垂盆草、敗醬草、天葵子等）之補全。嚴格執行「`_en` 欄位純英文鐵律」，寫入腳本層 CJK 斷言（全庫 `_en` 陣列混入 CJK 中文字元次數已歸零 `0`）。依 `curriculum/herbs/` Chenoweth 課件及中藥典補齊 `condition_tags_en`、`modern_functions_en`、`actions_en` 與 8 味 `dosage`，並為所有欄位寫入 `field_sources`。未虛構任何數字。
+- **數字 before→after**:
+  - Batch 2 清熱解毒藥 23 味處理完成。
+  - 全庫 `_en` 欄位 CJK 混入：`1 → 0` (100% 絕對純英文)
+  - `dosage`: `270 → 278 / 352` (77% → 79%)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS (0 boilerplate)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-19 Claude — 第二輪(PR #62):C10 假填重填 wave 1、加減表抽盡、方歌批3、瀉心湯善後
 
 - **做了什麼**:PR #60 合併後分支自 main 重建。瀉心湯身分裁定(Ting 授權):卡上為半夏瀉心湯內容(逐欄機器驗證與正卡逐字相同)→ 依方名重建為《金匱》瀉心湯(大黃黃連黃芩),原值逐字存 correction_note(已隨 #60 合併)。
