@@ -119,6 +119,8 @@ function main() {
     /* 批次專屬安全清單:收集它們的唯一理由就是讓施術者看到。
        存進資料卻沒畫出來 = 又一個暗欄位,這正是本專案反覆踩的坑。 */
     for (const [field, zhLabel] of [
+      ["condition_specific_cautions_zh", "本病專屬注意事項"],
+      ["referral_red_flags_zh", "轉診與急症門檻"],
       ["sensory_loss_safety_zh", "感覺缺失"],
       ["local_needling_contraindications_zh", "患部局部施術禁忌"],
     ]) {

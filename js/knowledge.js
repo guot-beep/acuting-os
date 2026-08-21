@@ -3243,6 +3243,11 @@
     };
     /* 批次專屬的安全清單。加新批次時在這裡加一列,不要讓它只存在資料裡。 */
     const SAFETY_LISTS = [
+      /* 前兩條是 2026-08-21 補的。它們原本被落庫腳本整個丟掉(93 條),
+         修好之後如果不畫出來,就只是把暗欄位從交付檔搬進資料庫而已。
+         卡片自己的 red_flags_zh 另有區塊;這裡是**本次查證新收集、帶出處**的那些。 */
+      ["condition_specific_cautions_zh", "本病專屬注意事項（查證來源）", "Condition-specific cautions (sourced)"],
+      ["referral_red_flags_zh", "轉診與急症門檻（查證來源）", "Referral and emergency thresholds (sourced)"],
       ["sensory_loss_safety_zh", "感覺缺失時的針刺／施灸安全", "Needling and heat safety with sensory loss"],
       ["local_needling_contraindications_zh", "患部局部施術禁忌", "Local needling contraindications"],
     ];
