@@ -1,3 +1,24 @@
+# 2026-08-20 Claude — Batch 1 精修:condition_tags_en / modern_functions_en / actions_en 混入中文回填翻譯
+
+- **做了什麼**:Batch 1(2b599640)驗證器全綠,但實查發現 `condition_tags_en`、`modern_functions_en`、`actions_en`
+  三個英文欄位裡混進了未翻譯的原始中文(推測是欄位填補時直接複製 zh 來源、忘記翻譯)。掃過 26 味實際被觸及的藥卡,
+  共 100 個不重複中文詞條、222 處出現。逐詞條翻回英文,依欄位既有慣例分兩種文體:`actions_en`/`condition_tags_en`
+  用句式(`Clears heat and drains fire`),`modern_functions_en` 用藥理形容詞(`Anti-inflammatory`)——比照同一陣列裡
+  antigravity 自己寫對的英文項目的文體,維持陣列內一致。只換值,陣列長度/順序/其餘欄位一律不動;
+  `herb.qin_pi` 有一條無關的舊有中英混雜(非本次批次觸及,句子型不是詞條型)刻意跳過,留待另案處理。
+  驗證器目前只查 `_zh` 欄位有沒有中文、`_en`/`_zh` 陣列有沒有對齊,沒查 `_en` 欄位本身有沒有混中文——這是盲點,
+  不是這批獨有的風險,值得之後幫驗證器補一條斷言。
+  另外:10 味藥卡的 `condition_tags_en`/`condition_tags_zh` 內容讀起來其實是「功效」(如「清熱瀉火」)不是「主治/適應症」,
+  疑似欄位錯置而非單純語言問題——已翻譯但**未搬動**,標記給 Ting 裁定要不要重新歸欄。
+- **數字**:觸及 26 味 / 352;翻譯詞條 100 個不重複 / 222 處出現;誤譯 0(逐詞條人工核對,無 dict miss);
+  欄位覆蓋率(填了幾張卡)不變,因為沒有新增或刪除任何 tag,純語言修正。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS(0 structural defects)
+  - `node scripts/validate-content-junk.js`: PASS(0 header tokens)
+- **已知未解/STOP(需 Ting)**:上述 10 味藥的 condition_tags 欄位疑似裝錯內容(功效當成適應症),清單見本 commit diff 的
+  `herb.shi_gao / herb.zhi_mu / herb.huang_lian / herb.long_dan_cao / herb.ku_shen / herb.sheng_di_huang / herb.qing_hao / herb.di_gu_pi / herb.yin_chai_hu / herb.zi_cao`。
+
 # 2026-08-20 Antigravity — 中藥卡填補 Batch 1 (清熱藥 29 味補全)
 
 - **做了什麼**: 完成第一批 29 味清熱藥卡（瀉火 12 味、燥濕 6 味、涼血 6 味、虛熱 5 味）之低覆蓋率欄位補全。依照 `docs/HERB_FILL_DISPATCH.md` 規範，以 `curriculum/herbs/` (Chenoweth 課件: `materia_medica_abbreviated_chenoweth.md`) 及《臺灣中藥典第四版》為依據，成對補齊 `condition_tags_en`、`modern_functions_en`、`actions_en` 與 `dosage`，並為所有欄位寫入 `field_sources` Provenance。絕未虛構任何無來源劑量。
