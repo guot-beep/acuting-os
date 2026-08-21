@@ -1,3 +1,41 @@
+# 2026-08-21 Claude — 第三輪(PR #65):conditions C4/C5/C10 三線歸零/大幅推進;PR #64 ruling queue 6 項裁決
+
+- **做了什麼**:分支自 main 重啟(前兩輪 #60/#62 均已併入)。6 個分類 agent 平行處理
+  `condition_canon_shortlist.json` 的 C5(zh 填了 en 空)/C10(內容逐字共用,樣板句或誤植)
+  81 筆記錄,每筆先查 `curriculum/conditions/` 課件(找到就逐項引用 verbatim evidence),
+  查無覆蓋才依中醫內科學/傷科學/婦科學教材通行病因病機 + 西醫臨床通識撰寫;套用一律經
+  `apply-c5-c10-batch.js` 三道守衛(值未變過才寫、雙語成對、_en 不准夾雜中文),五批合計
+  0 筆被守衛擋下。另 1 個 agent 逐一核對 71 筆無紅旗(C4)病症的課件覆蓋率,6 筆有真實
+  課件段落(19 條紅旗直填 red_flags_zh/en,未用 red_flag_registry.json——該檔 RF5 檢查
+  要求 evidence 必須 https 網址,本地課件過不了),65 筆誠實記錄查詢範圍待補。
+  過程中 agent 主動抓到 6 筆內容錯置(非 C10 逐字共用檢測抓得到的範圍):cond.post_covid
+  (整段氣喘內容)、cond.migraine_vestibular(廣告部落格文)、cond.pcos/oligomenorrhea/
+  thin_endometrium(三筆共用同段「月經稀少」部落格長文)、**cond.heart_failure(整段講
+  心律不整)/cond.recurrent_uti(整段講泛用排尿困難)/cond.chronic_prostatitis(整段講
+  BPH,獨立疾病)**——後三筆原 _en 皆空,agent 依指示忠實翻譯但未判斷是否錯置,故未套用
+  其譯文,改由我依真實病機/病理重寫,原誤植內容(含部落格廣告痕跡)逐字存 field_sources。
+  另外處理 PR #64(main→codex/pattern-v2 整合)上 Ting 授權的 RULING_QUEUE 6 項裁決
+  (瀉心湯/玉女煎重複已由先前 main 合併解決,不重複改):桂枝茯苓丸 composition 誤植
+  指迷茯苓丸組成→依《金匱要略》重建;formula.fu_ling_wan 正名「指迷茯苓丸」補出典;
+  黃土湯/羚角鉤藤「丸」的樣板假動作依真實出典重寫,羚角鉤藤記錄正名「飲」標記
+  deprecated;桂枝湯 related_conditions 誤連 spleen_qi_deficiency 改回 tai_yang_wind_strike;
+  柴胡桂枝湯出典衝突(傷寒論 146 條 vs 金匱瘧病附方)兩者並記。
+- **數字 before→after**(每個都可一行指令重現):`validate-condition-standard.js` blocking
+  `376→65`(C5 `154→0`、C10 `151→0`、C4 `71→65`);乾淨記錄(0 defect)`40→85`/150;
+  ratchet 兩次鎖定(376→71、71→65)。formulas.json(PR #64 分支):formula-standard 0
+  blocking、naming PASS(586)、content-junk PASS、no-loss 0 退步。
+- **驗證**:每批 build-data + validate-condition-standard + validate-content-junk +
+  check-validation-ratchet;formulas 側另跑 validate-formula-standard + validate-naming +
+  check-formula-no-loss;CI(`validate` workflow)於兩分支最新 commit 均 success。
+- **已知未解/STOP(需 Ting)**:①C4 剩 65 筆:白名單來源(medlineplus/nih/cdc)本環境網路
+  阻擋,已逐筆記錄課件查詢範圍與日期於 field_sources,egress 放行後可直接續查,不用重查。
+  ②N1(51 筆病症 inline tcm_patterns 未提升為 related_patterns,note only 不擋)——需要
+  語意比對,嘗試比對「氣血不和證」「臟腑虛弱證」等複合證名發現無法機械匹配到既有
+  pattern.* 登記,未列入本輪範圍。③TDIS 紅旗(main 上仍 75 筆全缺)已在 codex/pattern-v2
+  解決(見 #64),等 #64 併入即帶過來,本輪未重做避免白工。④PR #64 上 RULING_QUEUE 剩餘
+  A/B 類身分/合併決定(#3 定喘湯/#8 敗毒散重複/#9 兩個 import stub)與 C 類其餘出典衝突
+  仍留給妳裁。⑤`cond.pcos` 的 etiology_en 仍有 1 筆 CJK-in-en 殘留(既有內容,非本輪所碰,
+  翻譯本身忠實但夾帶古籍原文引號內中文屬常見學術寫法,未強行清除)。
 # 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
 
 - **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
