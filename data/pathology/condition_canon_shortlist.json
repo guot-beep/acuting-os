@@ -14819,8 +14819,8 @@
     "pattern.blood_stasis"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "發炎性腸道疾病屬中醫「久痢」「腸澼」「臟毒」範疇。素體脾胃虛弱，復因飲食不節、外感濕熱之邪，濕熱蘊結大腸，壅遏氣機，腐灼腸絡，而見腹痛、下痢膿血；若情志失調，肝鬱乘脾，則見腹痛即瀉、瀉後痛減；病久脾傷及腎，火不暖土，可見五更瀉、完穀不化；久病入絡，氣血瘀滯，腸絡受損，可見腹部包塊、便血反覆不止；病程遷延則氣血兩虛，正氣愈虛，邪愈難去，形成虛實夾雜之候。",
+   "western_pathology_zh": "發炎性腸道疾病包括潰瘍性結腸炎與克隆氏症，是腸道黏膜對腸道菌叢產生異常免疫反應所致的慢性復發性發炎疾病，與遺傳易感性（如 NOD2 基因變異）、腸道屏障功能缺損及環境因子（吸菸、感染、飲食）有關。潰瘍性結腸炎病灶連續分布於大腸黏膜層，以直腸為起點向近端蔓延；克隆氏症則可侵犯自口腔至肛門的全消化道，呈跳躍性分布並可深達腸壁全層，產生廔管、狹窄與膿瘍等併發症。主要表現為腹痛、腹瀉、黏液血便、體重減輕及疲倦，長期發炎亦增加大腸癌風險。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -14852,7 +14852,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Inflammatory bowel disease falls under the TCM categories of \"chronic dysentery\" and \"intestinal filth.\" It typically arises in a person with constitutionally weak spleen and stomach; improper diet or invasion of external damp-heat pathogens then causes damp-heat to accumulate in the large intestine, obstructing qi movement and scorching the intestinal collaterals, producing abdominal pain and mucopurulent, bloody stool. When emotional disturbance causes liver depression to overwhelm the spleen, pain-then-diarrhea with relief after defecation is seen. Prolonged illness damages the spleen and then the kidney, so kidney fire fails to warm the earth, producing pre-dawn diarrhea with undigested food in the stool. Long-standing disease enters the collaterals, causing qi-blood stasis and damage to the intestinal collaterals, manifesting as abdominal masses and recurrent, persistent rectal bleeding. As the course prolongs, both qi and blood become deficient — the more depleted the righteous qi, the harder the pathogen is to expel — forming a pattern of intermingled deficiency and excess.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Inflammatory bowel disease comprises ulcerative colitis and Crohn's disease, chronic relapsing inflammatory disorders arising from an abnormal immune response of the intestinal mucosa to the gut microbiota, related to genetic susceptibility (e.g., NOD2 mutations), impaired intestinal barrier function, and environmental factors (smoking, infection, diet). Ulcerative colitis produces continuous mucosal lesions of the colon beginning at the rectum and extending proximally; Crohn's disease can affect the entire gastrointestinal tract from mouth to anus in a skip-lesion pattern and may penetrate the full thickness of the bowel wall, producing fistulas, strictures, and abscesses. Main manifestations are abdominal pain, diarrhea, mucous or bloody stool, weight loss, and fatigue; chronic inflammation also raises the risk of colorectal cancer."
   },
   {
    "id": "cond.chronic_constipation",
@@ -15955,8 +15971,8 @@
     "pattern.damp_heat_spleen_stomach"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "非酒精性脂肪肝屬中醫「脅痛」「積聚」「痰濁」範疇，病位在肝、脾，與腎相關。多因飲食不節、嗜食肥甘，損傷脾胃，運化失司，水濕內停，聚而成痰；或情志不遂，肝失疏泄，氣機鬱滯，木鬱克土，痰濕與氣滯互結，壅塞肝絡，形成痰濁瘀阻之候。病久痰濕化熱，可見濕熱蘊結；痰瘀互結日久，肝絡瘀阻，則見脅肋刺痛、肝區腫大；若素體肝腎不足，精血虧虛，亦可因虛致實，痰瘀內生。",
+   "western_pathology_zh": "非酒精性脂肪肝是指排除酒精及其他明確病因下，肝細胞內三酸甘油酯過度堆積（脂肪變性超過肝重5%），與胰島素阻抗、代謝症候群（肥胖、第二型糖尿病、血脂異常）密切相關。疾病譜由單純脂肪肝逐漸進展至非酒精性脂肪性肝炎，伴隨肝細胞氣球樣變、發炎與纖維化，少數可演變為肝硬化甚至肝細胞癌。多數患者早期無明顯症狀，常於健檢發現肝功能異常（ALT、AST 上升）或影像學脂肪肝變化，部分患者有右上腹悶脹或疲倦感。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -15988,7 +16004,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Nonalcoholic fatty liver disease falls under the TCM categories of \"rib-side pain,\" \"accumulation,\" and \"phlegm-turbidity,\" located in the liver and spleen, with kidney involvement. It commonly arises from improper diet and excessive consumption of rich, greasy foods, which damage the spleen and stomach and impair their transportive-transformative function, causing water-damp to accumulate and condense into phlegm; or from unresolved emotional stress causing liver qi stagnation, in which wood constrains earth and phlegm-damp binds with qi stagnation, obstructing the liver collaterals to form phlegm-turbidity stasis. With prolonged illness, phlegm-damp transforms into heat, producing damp-heat accumulation; when phlegm and stasis interlock over time and obstruct the liver collaterals, stabbing rib-side pain and hepatomegaly appear. In those constitutionally deficient in liver and kidney, with depleted essence and blood, deficiency can also give rise to excess, generating internal phlegm and stasis.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Nonalcoholic fatty liver disease refers to excessive accumulation of triglycerides within hepatocytes (hepatic steatosis exceeding 5% of liver weight) in the absence of alcohol use or other identifiable causes, closely linked to insulin resistance and metabolic syndrome (obesity, type 2 diabetes, dyslipidemia). The disease spectrum progresses from simple steatosis to nonalcoholic steatohepatitis, with hepatocyte ballooning, inflammation, and fibrosis, a minority progressing to cirrhosis or even hepatocellular carcinoma. Most patients are asymptomatic early on, often discovered through abnormal liver function tests (elevated ALT/AST) or imaging showing fatty infiltration on routine health checks; some report right upper quadrant fullness or fatigue."
   },
   {
    "id": "cond.gallbladder_dysfunction",
@@ -16004,8 +16036,8 @@
     "pattern.liver_qi_stagnation"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "膽道功能障礙屬中醫「脅痛」「膽脹」範疇，病位在肝膽，與脾胃相關。多因情志不遂，肝失疏泄，膽失通降，氣機鬱滯，而見右脅脹痛、噯氣、食後脹悶；肝鬱日久化熱，或飲食肥甘釀生濕熱，濕熱蘊結肝膽，膽汁疏泄失常，則見脅痛口苦、噁心厭油、甚或身目發黃；氣滯日久，血行不暢，絡脈瘀阻，可見脅肋刺痛、痛有定處；若肝陰不足，膽失濡養，通降無力，則見脅肋隱痛、口乾咽燥，病程纏綿反覆。",
+   "western_pathology_zh": "膽道功能障礙（膽囊運動障礙）是指膽囊或 Oddi 括約肌收縮排空功能異常，而無膽結石或器質性阻塞證據，常因膽囊收縮素（CCK）反應異常或膽囊平滑肌動力不協調所致。臨床表現為反覆發作之右上腹或上腹部絞痛，常於進食油膩食物後誘發，可伴隨噁心、嘔吐、腹脹，症狀類似膽結石但影像學及抽血檢查無明顯異常。診斷常需以核子醫學膽囊收縮分率（HIDA scan with CCK, ejection fraction）檢測膽囊排空功能作為輔助。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -16037,7 +16069,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Biliary dyskinesia falls under the TCM categories of \"rib-side pain\" and \"gallbladder distension,\" located in the liver and gallbladder, with spleen-stomach involvement. It commonly arises from unresolved emotional stress causing the liver to lose its free-coursing function and the gallbladder to lose its descending function, so qi movement stagnates, producing right-sided rib pain, belching, and postprandial distension. When liver depression transforms into heat over time, or rich, greasy food generates damp-heat, damp-heat accumulates in the liver and gallbladder and bile secretion becomes disordered, producing rib pain with a bitter taste in the mouth, nausea and aversion to greasy food, or even jaundice of the body and eyes. Prolonged qi stagnation impedes blood flow and obstructs the collaterals, producing stabbing, fixed rib-side pain. When liver yin is insufficient and the gallbladder loses nourishment, its descending function weakens, producing dull, lingering rib pain with dry mouth and throat, and a protracted, recurrent course.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Biliary dyskinesia (gallbladder motility disorder) refers to abnormal contraction and emptying function of the gallbladder or the sphincter of Oddi in the absence of gallstones or structural obstruction, often due to an abnormal response to cholecystokinin (CCK) or uncoordinated gallbladder smooth-muscle motility. Clinically it presents as recurrent right upper quadrant or epigastric colicky pain, often triggered by a fatty meal, which may be accompanied by nausea, vomiting, and bloating, resembling gallstone disease but without significant abnormalities on imaging or blood tests. Diagnosis often requires a nuclear-medicine CCK-stimulated hepatobiliary (HIDA) scan measuring gallbladder ejection fraction to assess emptying function."
   },
   {
    "id": "cond.cinv",
@@ -16053,8 +16101,8 @@
     "pattern.stomach_yin_deficiency"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "化療相關噁心嘔吐屬中醫「嘔吐」範疇，因化療藥毒直中脾胃，損傷中焦氣機所致。藥毒之邪易傷脾胃陽氣，脾失健運，胃失和降，濁氣上逆，而見噁心嘔吐、食慾不振、脘腹痞悶；藥毒燥烈亦易耗傷胃陰，胃失濡潤，虛火上炎，可見乾嘔、口乾欲飲、舌紅少津；情志因素（對化療之恐懼焦慮）易致肝氣鬱結，橫逆犯胃，而見嘔吐與情緒波動相關，遇緊張加重；素體痰濕偏盛者，藥毒助濕生痰，痰濁中阻，清陽不升，則見嘔吐痰涎、頭暈胸悶。反覆多次化療者，脾胃正氣漸傷，可由實轉虛，形成脾胃虛弱之候。",
+   "western_pathology_zh": "化療引起的噁心嘔吐主要透過化療藥物直接刺激小腸腸嗜鉻細胞釋放血清素（5-HT3），活化迷走神經傳入通路，並作用於延腦後極區（area postrema）之化學感受區，啟動嘔吐中樞；部分藥物亦促使 substance P 經 NK1 受體參與延遲性嘔吐。臨床依發作時間分為急性（給藥後24小時內）、延遲性（24小時後至數日）及預期性（制約反射，尚未給藥即因焦慮誘發）三型，其嚴重度與化療藥物之致吐風險分級（高、中、低度）相關，若未妥善控制可導致脫水、電解質失衡、治療順從性下降。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -16086,7 +16134,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Chemotherapy-induced nausea and vomiting falls under the TCM category of \"vomiting,\" arising because chemotherapeutic drug toxin acts directly on the spleen and stomach, damaging the qi mechanism of the middle burner. Drug toxin readily damages spleen-stomach yang qi; when the spleen loses its transporting function and the stomach loses its descending function, turbid qi rebels upward, producing nausea, vomiting, poor appetite, and epigastric fullness. Being drying and fierce in nature, drug toxin also readily consumes stomach yin, depriving the stomach of moisture and allowing deficiency fire to flare upward, producing dry heaving, thirst with desire to drink, and a red tongue with scant fluid. Emotional factors (fear and anxiety about chemotherapy) readily cause liver qi depression that invades the stomach transversely, so vomiting correlates with emotional fluctuation and worsens with tension. In those constitutionally prone to phlegm-damp, drug toxin further nourishes dampness and generates phlegm; phlegm-turbidity obstructs the middle burner and clear yang fails to ascend, producing vomiting of phlegm-fluid with dizziness and chest oppression. With repeated chemotherapy cycles, spleen-stomach righteous qi is progressively damaged, and the pattern can shift from excess to deficiency, forming spleen-stomach qi deficiency.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Chemotherapy-induced nausea and vomiting is mediated mainly by chemotherapeutic agents directly stimulating enterochromaffin cells in the small intestine to release serotonin (5-HT3), which activates vagal afferent pathways and acts on the chemoreceptor trigger zone in the area postrema of the medulla to initiate the vomiting reflex; some agents also promote release of substance P acting via NK1 receptors, contributing to delayed emesis. Clinically it is classified by timing into acute (within 24 hours of administration), delayed (24 hours to several days after), and anticipatory (a conditioned reflex triggered by anxiety before drug administration) types; severity correlates with the emetogenic-risk grade (high, moderate, or low) of the chemotherapy regimen. Poorly controlled symptoms can lead to dehydration, electrolyte imbalance, and reduced treatment adherence."
   },
   {
    "id": "cond.post_op_ileus",
@@ -16103,8 +16167,8 @@
     "pattern.spleen_qi_deficiency"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "術後腸麻痺屬中醫「腹脹」「腸結」範疇，病機以術後耗氣傷血、脾胃氣機壅滯為主。手術金刃損傷，耗傷氣血，脾胃之氣受損，運化無力，腑氣不通，而見腹脹、無矢氣、腸鳴音減弱；麻醉、臥床及情志緊張亦致氣機鬱滯，氣滯則腑氣不降，濁氣壅塞中焦，可見腹脹拒按、噁心嘔吐；術中失血耗氣，氣虛推動無力，血行遲滯，可兼見面色少華、神疲乏力；若素體陽虛，復加術中寒邪內侵，寒凝氣滯，腸道失於溫通，則腹脹綿綿、得溫稍減。治療重在通腑理氣，兼顧扶正，忌一味攻伐傷正。",
+   "western_pathology_zh": "術後腸麻痺是指腹部或非腹部手術後，腸道蠕動功能暫時性抑制，無機械性阻塞證據，通常於術後2至3天內小腸功能先恢復，胃及大腸功能恢復較慢（約3至5天）。其機轉涉及手術操作直接刺激腸道引發交感神經反射性抑制蠕動、發炎介質（如一氧化氮、前列腺素）釋放抑制平滑肌收縮，以及麻醉藥物（尤其類鴉片）、電解質失衡（低血鉀）、術後疼痛與臥床等因素共同作用。臨床表現為腹脹、噁心嘔吐、排氣排便延遲、腸鳴音減弱或消失，若超過術後3至5天仍未緩解則稱為延長性腸麻痺，需與機械性腸阻塞鑑別。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -16136,7 +16200,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Postoperative ileus falls under the TCM categories of \"abdominal distension\" and \"intestinal binding,\" with the core pathomechanism being postsurgical depletion of qi and blood together with stagnation of spleen-stomach qi movement. Surgical trauma from the metal blade depletes qi and blood and damages spleen-stomach qi; when its transportive function fails, bowel qi fails to move, producing abdominal distension, absence of flatus, and diminished bowel sounds. Anesthesia, prolonged bed rest, and emotional tension also cause qi stagnation; when qi stagnates, bowel qi fails to descend and turbid qi accumulates in the middle burner, producing distension that is worse on pressure, along with nausea and vomiting. Blood loss and qi depletion during surgery weaken the qi's propulsive force and slow blood flow, which may be accompanied by a sallow complexion and lassitude. In those constitutionally yang-deficient, if cold pathogen additionally invades during surgery, cold congeals qi stagnation and the bowel loses warming and free flow, producing persistent, dull distension that eases somewhat with warmth. Treatment should focus on freeing the bowel and regulating qi while also supporting the righteous qi, avoiding excessive purgation that would further damage it.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Postoperative ileus refers to a temporary suppression of bowel motility after abdominal or non-abdominal surgery in the absence of mechanical obstruction; small bowel function typically recovers first, within 2–3 days after surgery, while gastric and colonic function recover more slowly (about 3–5 days). Its mechanism involves direct surgical manipulation of the bowel triggering a sympathetically mediated reflex suppression of motility, release of inflammatory mediators (such as nitric oxide and prostaglandins) that inhibit smooth-muscle contraction, and the combined effects of anesthetic agents (particularly opioids), electrolyte imbalance (hypokalemia), postoperative pain, and immobility. Clinical features include abdominal distension, nausea and vomiting, delayed passage of flatus and stool, and diminished or absent bowel sounds; if it does not resolve beyond 3–5 postoperative days it is termed prolonged postoperative ileus, which must be distinguished from mechanical bowel obstruction."
   },
   {
    "id": "cond.food_sensitivity",
@@ -16153,8 +16233,8 @@
     "pattern.food_stagnation"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "食物不耐屬中醫「傷食」「腹脹」「泄瀉」範疇，病位在脾胃，與肝相關。素體脾胃虛弱，運化功能低下，若進食特定食物（如生冷、油膩、乳製品、麩質等）超過脾胃運化之能，則食滯內停，升降失常，而見食後腹脹、腸鳴、便溏或腹瀉；脾虛濕盛者，水濕內生，清濁不分，可見大便黏滯、身重倦怠；情志不遂，肝鬱乘脾，則症狀易因情緒緊張而加重，伴脅肋不適、噯氣；病程日久，脾胃愈虛，運化愈弱，對誘發食物之耐受閾值隨之下降，形成反覆發作、虛實夾雜之候。",
+   "western_pathology_zh": "食物不耐是指非免疫機轉（區別於食物過敏之 IgE 媒介反應）所致的食物相關不良反應，常見機轉包括酵素缺乏（如乳糖不耐症之乳糖酶缺乏）、食物中特定化學物質（如組織胺、咖啡因、水楊酸鹽）的藥理作用，或腸道對可發酵寡糖、雙醣、單醣及多元醇（FODMAP）吸收不良所致滲透性效應與腸道菌叢發酵產氣。臨床表現以腹脹、腹痛、腸胃脹氣、腹瀉或便秘為主，通常於攝入誘發食物後數小時內出現，症狀嚴重度與攝取劑量相關，不會如食物過敏般引發蕁麻疹、血管性水腫或過敏性休克等全身性免疫反應。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -16186,7 +16266,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Food intolerance falls under the TCM categories of \"food damage,\" \"abdominal distension,\" and \"diarrhea,\" located in the spleen and stomach, with liver involvement. In those constitutionally weak in spleen and stomach with diminished transportive-transformative function, consuming particular foods (such as cold-raw, greasy, dairy, or gluten-containing foods) beyond the spleen-stomach's transformative capacity causes food stagnation and disordered ascent-descent, producing postprandial distension, borborygmus, loose stool, or diarrhea. In those with spleen deficiency and damp excess, internally generated dampness fails to separate clear from turbid, producing sticky stool and heavy-bodied fatigue. When emotional stress causes liver depression to overwhelm the spleen, symptoms readily worsen with emotional tension and are accompanied by rib-side discomfort and belching. Over a prolonged course, the spleen-stomach becomes progressively more deficient and its transformative function weaker, so the tolerance threshold for triggering foods progressively falls, forming a recurrent pattern of intermingled deficiency and excess.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Food intolerance refers to adverse food-related reactions mediated by non-immune mechanisms (as distinct from IgE-mediated food allergy). Common mechanisms include enzyme deficiency (such as lactase deficiency in lactose intolerance), the pharmacologic action of specific chemical substances in food (such as histamine, caffeine, or salicylates), or malabsorption of fermentable oligosaccharides, disaccharides, monosaccharides, and polyols (FODMAPs), producing an osmotic effect and gas from bacterial fermentation in the gut. Clinical manifestations are mainly bloating, abdominal pain, flatulence, diarrhea, or constipation, usually appearing within hours of ingesting the trigger food, with severity related to the amount consumed; unlike food allergy, it does not trigger urticaria, angioedema, or anaphylaxis as systemic immune reactions."
   },
   {
    "id": "cond.insomnia",
@@ -24127,8 +24223,8 @@
     "pattern.heart_yang_deficiency"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "冠狀動脈疾病屬中醫「胸痹」「心痛」範疇，病位在心，與肝、脾、腎相關，基本病機為心脈痹阻，不通則痛。多因年老體衰、勞欲過度，腎精虧損，或飲食不節、嗜食肥甘，脾失健運，痰濁內生，痰阻心脈，而見胸悶如窒、痛引肩背；情志失調，肝氣鬱結，氣滯血瘀，心脈瘀阻，則見胸痛如刺、痛有定處、入夜尤甚；素體陽虛，復感寒邪，陰寒凝滯心脈，可見胸痛遇寒加重、畏寒肢冷；病久氣陰兩傷，或心腎陽虛，鼓動無力，血行遲滯，則胸痛反覆發作，兼見心悸氣短、神疲乏力，病情由實轉虛或虛實夾雜。",
+   "western_pathology_zh": "冠狀動脈疾病是指冠狀動脈血管壁因粥狀硬化斑塊沉積（脂質、發炎細胞、平滑肌細胞增生及纖維帽形成）導致管腔狹窄，使心肌血流供應與需求失衡，引發心肌缺血。危險因子包括高血壓、糖尿病、血脂異常、吸菸、肥胖及家族史。穩定型心絞痛通常於運動或情緒激動時因心肌氧耗增加而誘發胸悶胸痛，休息或含硝酸甘油可緩解；若斑塊破裂形成血栓造成血管急性完全或部分阻塞，則引發急性冠心症（不穩定型心絞痛或心肌梗塞），伴隨持續性胸痛、冒冷汗、呼吸困難，屬需緊急處置之心臟急症。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -24160,7 +24256,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Coronary artery disease falls under the TCM categories of \"chest bi-obstruction\" and \"heart pain,\" located in the heart, with liver, spleen, and kidney involvement, the basic pathomechanism being obstruction of the heart vessel — \"where there is no free flow, there is pain.\" It commonly arises from advancing age and bodily decline, or from overexertion depleting kidney essence, or from improper diet and excessive rich, greasy food impairing spleen transportive function and generating internal phlegm-turbidity, which obstructs the heart vessel, producing oppressive chest tightness radiating to the shoulder and back. Emotional disturbance causing liver qi depression leads to qi stagnation and blood stasis obstructing the heart vessel, producing stabbing, fixed chest pain that worsens at night. In those constitutionally yang deficient who are additionally affected by cold pathogen, cold congeals and constrains the heart vessel, producing chest pain that worsens with cold and is accompanied by aversion to cold and cold limbs. With prolonged illness, both qi and yin become damaged, or heart-kidney yang becomes deficient, weakening the propulsive force and slowing blood flow, so chest pain recurs repeatedly, accompanied by palpitations, shortness of breath, and lassitude, the condition shifting from excess to deficiency or presenting as intermingled deficiency and excess.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Coronary artery disease is narrowing of the coronary arterial lumen caused by atherosclerotic plaque deposition in the vessel wall (lipid accumulation, inflammatory cell infiltration, smooth-muscle proliferation, and fibrous cap formation), creating an imbalance between myocardial blood supply and demand and resulting in myocardial ischemia. Risk factors include hypertension, diabetes, dyslipidemia, smoking, obesity, and family history. Stable angina is typically triggered by exertion or emotional excitement, which increases myocardial oxygen demand, producing chest tightness and pain relieved by rest or nitroglycerin; if a plaque ruptures and forms a thrombus causing acute partial or complete vessel occlusion, acute coronary syndrome results (unstable angina or myocardial infarction), with persistent chest pain, cold sweats, and dyspnea, constituting a cardiac emergency requiring immediate treatment."
   },
   {
    "id": "cond.heart_failure",
@@ -24181,8 +24293,8 @@
     "pattern.liver_qi_stagnation"
    ],
    "review_status": "draft",
-   "etiology_zh": "中醫並沒有心律不整這種疾病，但是中醫在兩千年前就已經密切觀察這種現象。《黃帝內經》提到：「脈絕不至曰死，乍疏乍數日死。」《傷寒論》也提到「傷寒脈結代，心動悸，主之。」這種「結代脈」，指的就是心律不整。\n\n中醫的脈象中，有6種就是描述心律不整：\n\n促脈：脈來急數有力而呈不規則間歇;\n\n結脈：脈來遲緩而有不規則間歇的脈象;\n\n代脈：脈來緩慢而有規則的間歇，且間歇時間較長的脈象；\n\n數脈或疾脈：脈來急速，每分鐘超過100;\n\n遲脈：脈行遲緩，每分鐘40至50次。\n\n怪脈：屋漏脈(脈搏極遲慢，濺起無力）、遊蝦脈（時而躍然而去，須臾又來）...等等。\n\n古人沒有鈉離子拮抗劑，也沒有電燒技術，更沒有心律調整器，那他們為什麼又可以治療這種症狀呢？這是因為中醫認為心律不整的原因，與現代醫學的立場完全不一樣，主要分類為以下幾種類型：\n\n一、太陽少陰病、心腎陽虛\n\n漢朝《傷寒論》中提到「傷寒脈結代、心動悸，炙甘草湯主之」，所謂「脈結代」的脈象，就是一種心律不整的脈象，同時還伴隨心悸，自覺心跳不安。\n\n這個條文中，以「傷寒」二個字為首，說明其病因是「感受風寒」而起，且表邪尚未解除，又見脈結代，心動悸之證，這是因為少陰裡虛，心失所養所造成。\n\n由於「太陽與少陰互為表裡」，所以太陽病很容易直接切入少陰病！而少陰以「心腎」為主，如果一個人平時心血虛弱、氣血不足，則太陽病之邪解不了，反而進入少陰，損傷心之氣血，就會出現心律不整且心悸。\n\n因此，這種心律不整，也可以說是一種感冒遺留下來的後遺症，可見妥善處理好傷寒感冒，是預防疾病很重關鍵的程序！\n\n二、心脾兩虛、心陽虛、心氣血虛\n\n站在中醫的立場來看，現代人思慮過多，這很容易勞傷心脾，耗傷心血，又會影響脾胃。脾主運化血液，心又主行血，因此心脾兩虛的時候，最容易出現心律不整。\n\n主要症狀是：心悸、健忘、睡眠障礙、夜間多夢、面色萎黃、食慾不佳、容易疲倦、腹脹、大便溏瀉、氣短、皮下出血、婦女月經不調，月經色淡量多、崩漏、月經少或經閉、舌質淡嫩苔白、脈細弱。\n\n除此心脾兩虛之外，類似的證候還有心氣虛、心陽虛、心血虛時，也都會出現心律不整。從大量現代人的經絡數據發現，心經與心包經同步異常的頻率很高。\n\n心經與心包經同步異常機率高\n\n三、脾腎兩虛、水氣上擾凌心\n\n依照中醫理論，脾臟與腎臟運化體內的水液，脾腎陽氣不足時，由於運化水液功能低下，不能布散體內津液，導致水液停聚而稱之為「痰飲」。\n\n痰飲上犯，水氣在體內亂竄，甚至往上衝，就會出現心悸或心律不整。症狀是：胸悶、眩暈、氣喘、短氣、小便短少、咳嗽、咳痰，舌苔水滑，脈沉弦。\n\n腎臟陽氣不足時，因為下半身的寒水亂竄，會出現嚴重頭暈、小便不利、四肢浮腫、肩背酸痛、腹痛腹瀉，這個時候也會出現心律不整，這也可以歸類為傷寒的少陰病。\n\n這類疾病，可以說都是一種「水氣病」，這種經絡型態很容易在秋冬季節出現，而現代醫學也發現秋冬季節容易出現心律不整的現象。\n\n秋冬季節常見的經絡型態\n\n四、肝氣鬱結、肝火擾心\n\n台灣奇美醫院中醫部創立「心律不整特別門診」，將心律不整區分為五種證候。其中一種就是肝氣鬱結、肝火擾心，這是現代人很容易出現的一種證候。\n\n從大量現代人的經絡數據也可以印證這個事實，現代人至少有50%常出現的「鐵三角經絡型態」，就是以肝經實證為主軸所變化出來的一系列經絡型態，其中有一種就非常容易出現心律不整(見下圖)。\n\n鐵三角經絡型態變化型，容易出現心律不整\n\n從圖上可以清楚看出，這種經絡型態異常經絡很多，其中「心經」與「心包經」明顯虛證，體內三焦、大腸、肝經、膽經、胃經實證，可視為肝火、膽火、陽明火氣旺盛。脾經虛證，也可視為是心脾兩虛的現象。\n\n五、氣滯血瘀、經絡不通\n\n中醫診斷很喜歡運用「氣滯血瘀」這四個字，因為只要體內經絡氣血運作不佳時，就一定出現氣滯血瘀。從上面的經絡圖形看來，體內的經絡幾乎都是異常，可以說是全身性的氣血循環不佳。\n\n凡是過度疲勞、年老的人、大病久病之後的人，都很容易出現這種證候，當這些通往胸部的經絡(例如：心經、心包經、肝經、膽經、脾經、胃經、腎經...等等)都阻塞時，人體前半部的氣血可以說都是瘀阻的。\n\n因此，有些人就發現按摩腹部可以從根本來改善心律不整，這是因為腹部的經絡疏通了之後，整個胸部的氣血也會順暢。[@post:58]",
-   "western_pathology_zh": "「心律不整」有很多類似名稱，這是指心臟電傳導系統異常，所引起的各種症狀。在正常狀況下，人體的心跳為每分鐘60至100下，若心臟電流傳導系統被各種可能因素所擾亂，導致心跳太快、太慢、不規律等狀況，就稱為「心律不整」。\n\n在科技日新月異之下，現代每一個人都可以透過智慧手錶，或下載手機APP，在一鐘之內就可以診斷出是否心律不整，有興趣的人可以點選下載[愛心鏡RhythmCam](IOS/Android)。\n\n自從新冠疫情爆發以來，心律不整一直是大家關注的議題，因為青壯年人如果發生猝死，最有可能的原因是「心律不整」。大約有1%~2%的人會出現心律不整，65歲以上的的機率\b增至5%~10%。\n\n運用手機APP檢查是否心律不整\n\n大約有80%的心律不整都是屬於良性的，多數人沒有察覺，然而有20%屬於惡性，屬於一種心臟疾病，容易產生血栓，這一類人的中風機率是一般人的5倍。\n\n許多心律不整表現是無症狀的，如果有症狀會出現「心悸」，突然感覺心臟的跳動和撞擊。嚴重的心律不整，會出現：胸悶、胸痛、呼吸困難、冒冷汗、血壓低、頭暈、暈厥(感覺快暈倒)、恐慌症...等等。\n\n造成心律不整的原因很多，例如：遺傳、吸菸飲酒過度、喝咖啡、壓力大、電解質不平衡、藥物濫用或副作用、糖尿病、心臟病、睡眠呼吸中止症、高血壓、甲狀腺機能低下或亢進、冠狀動脈心臟病...等等。\n\n大部分的心律不整，可以透過正常作息就可以改善。現代醫學採用抗心律不整藥物(例如：鈉、鉀、鈣離子拮抗劑、乙型交感神經抑制劑)，或是「心導管電燒療法」，有些人會安裝入心律調整器。\n\n中醫對心律不整的看法是從經絡氣血、寒熱這些抽象概念去分析的，現代醫學幾乎不能理解中醫在講什麼？如果一個人在經過現代醫學總總治療之後，效果依然不佳，或是直接想要選擇另類療法，那就可以參考中醫的治療理論。",
+   "etiology_zh": "心臟衰竭屬中醫「心衰病」範疇，亦與「喘證」「水腫」「心悸」相關。病機以心氣虛、心陽虛為本，日久累及肺、脾、腎。心氣不足則鼓動無力，血行瘀滯；心陽虛衰不能溫煦周身，久則陽損及陰；肺失肅降，肺氣上逆，故見喘促、咳嗽、不能平臥；脾腎陽虛、氣化不利，水濕泛溢肌膚，發為水腫、尿少；瘀血阻絡，可見唇甲青紫、脅下痞塊。本病屬本虛標實：本為心之氣陽虧虛，標為血瘀、水停、痰飲互結，虛實夾雜，遇勞、外感、情志刺激則加重。",
+   "western_pathology_zh": "心臟衰竭是指心臟無法有效泵送足夠血液以滿足身體代謝需求，或僅能在心室充填壓升高的代償下勉強維持。依左心室射血分數分為射血分數降低型(HFrEF，<40%)、輕度降低型(HFmrEF，40–49%)與射血分數保存型(HFpEF，≥50%)；依受累心室分左心衰竭(以肺鬱血、呼吸困難為主)與右心衰竭(以體循環鬱血、周邊水腫為主)。常見病因包括冠狀動脈疾病／心肌梗塞、長期高血壓、瓣膜性心臟病、心肌病變。臨床表現包括勞力性呼吸困難、端坐呼吸、陣發性夜間呼吸困難、疲倦、周邊(下肢)水腫、頸靜脈怒張；依紐約心臟學會(NYHA)分為第I至IV級功能分類。屬慢性進行性疾病，治療以指引導向藥物治療(ACE抑制劑/ARB/ARNI、乙型阻斷劑、礦皮質素受體拮抗劑、SGLT2抑制劑)為主，並依鬱血程度使用利尿劑。",
    "tcm_patterns": [
     {
      "pattern_zh": "心陽虛",
@@ -24471,7 +24583,25 @@
    "entity_type": "biomedical_condition",
    "sources": [
     "https://cloudtcm.com/disease/tcm/290"
-   ]
+   ],
+   "etiology_en": "Heart failure falls within the TCM category of \"heart failure disease\" (xin shuai bing), overlapping with \"panting pattern,\" \"edema,\" and \"palpitations.\" The root pathomechanism is Heart qi and Heart yang deficiency, which over time involves the Lung, Spleen, and Kidney. Insufficient Heart qi weakens the propulsion of Blood, causing stasis; declining Heart yang fails to warm the body, and long-standing yang deficiency eventually damages yin as well. Impaired Lung descent and dispersal produces dyspnea, cough, and orthopnea; Spleen-Kidney yang deficiency with impaired qi transformation lets water-damp overflow into the flesh, producing edema and scanty urination; Blood stasis obstructing the collaterals may show as cyanotic lips/nails and a mass below the ribs (hepatomegaly). The pattern is root-deficiency with branch-excess: the root is qi-yang deficiency of the Heart, the branch is Blood stasis with water and phlegm accumulation, aggravated by exertion, external pathogens, or emotional stress.",
+   "western_pathology_en": "Heart failure is the inability of the heart to pump enough blood to meet the body's metabolic demands, or to do so only at the cost of elevated filling pressures. It is classified by left-ventricular ejection fraction as heart failure with reduced ejection fraction (HFrEF, <40%), mildly reduced (HFmrEF, 40-49%), or preserved ejection fraction (HFpEF, ≥50%), and by which side predominates: left-sided (pulmonary congestion, dyspnea) or right-sided (systemic venous congestion, peripheral edema). Common causes include coronary artery disease/myocardial infarction, chronic hypertension, valvular heart disease, and cardiomyopathy. It presents with exertional dyspnea, orthopnea, paroxysmal nocturnal dyspnea, fatigue, peripheral (lower-limb) edema, and jugular venous distension, and is staged functionally by the New York Heart Association (NYHA) Class I-IV system. It is a chronic, progressive condition managed with guideline-directed medical therapy (ACE inhibitors/ARBs/ARNI, beta-blockers, mineralocorticoid receptor antagonists, SGLT2 inhibitors) plus diuretics for congestive symptoms.",
+   "field_sources": {
+    "etiology_zh": [
+     "2026-08-21 內容錯置修正:原 etiology_zh/western_pathology_zh 逐段核對後確認為「心律不整」全文(脈象促結代脈、心跳過快過慢、智慧手錶心律APP)，並非心臟衰竭内容，與本卡病名完全不符(非樣板句,是獨立誤植内容,C10 逐字共用檢測抓不到)。原值(含部落格廣告痕跡)逐字保存:{\"etiology_zh\":\"中醫並沒有心律不整這種疾病，但是中醫在兩千年前就已經密切觀察這種現象。《黃帝內經》提到：「脈絕不至曰死，乍疏乍數日死。」《傷寒論》也提到「傷寒脈結代，心動悸，主之。」這種「結代脈」，指的就是心律不整。\\n\\n中醫的脈象中，有6種就是描述心律不整：\\n\\n促脈：脈來急數有力而呈不規則間歇;\\n\\n結脈：脈來遲緩而有不規則間歇的脈象;\\n\\n代脈：脈來緩慢而有規則的間歇，且間歇時間較長的脈象；\\n\\n數脈或疾脈：脈來急速，每分鐘超過100;\\n\\n遲脈：脈行遲緩，每分鐘40至50次。\\n\\n怪脈：屋漏脈(脈搏極遲慢，濺起無力）、遊蝦脈（時而躍然而去，須臾又來）...等等。\\n\\n古人沒有鈉離子拮抗劑，也沒有電燒技術，更沒有心律調整器，那他們為什麼又可以治療這種症狀呢？這是因為中醫認為心律不整的原因，與現代醫學的立場完全不一樣，主要分類為以下幾種類型：\\n\\n一、太陽少陰病、心腎陽虛\\n\\n漢朝《傷寒論》中提到「傷寒脈結代、心動悸，炙甘草湯主之」，所謂「脈結代」的脈象，就是一種心律不整的脈象，同時還伴隨心悸，自覺心跳不安。\\n\\n這個條文中，以「傷寒」二個字為首，說明其病因是「感受風寒」而起，且表邪尚未解除，又見脈結代，心動悸之證，這是因為少陰裡虛，心失所養所造成。\\n\\n由於「太陽與少陰互為表裡」，所以太陽病很容易直接切入少陰病！而少陰以「心腎」為主，如果一個人平時心血虛弱、氣血不足，則太陽病之邪解不了，反而進入少陰，損傷心之氣血，就會出現心律不整且心悸。\\n\\n因此，這種心律不整，也可以說是一種感冒遺留下來的後遺症，可見妥善處理好傷寒感冒，是預防疾病很重關鍵的程序！\\n\\n二、心脾兩虛、心陽虛、心氣血虛\\n\\n站在中醫的立場來看，現代人思慮過多，這很容易勞傷心脾，耗傷心血，又會影響脾胃。脾主運化血液，心又主行血，因此心脾兩虛的時候，最容易出現心律不整。\\n\\n主要症狀是：心悸、健忘、睡眠障礙、夜間多夢、面色萎黃、食慾不佳、容易疲倦、腹脹、大便溏瀉、氣短、皮下出血、婦女月經不調，月經色淡量多、崩漏、月經少或經閉、舌質淡嫩苔白、脈細弱。\\n\\n除此心脾兩虛之外，類似的證候還有心氣虛、心陽虛、心血虛時，也都會出現心律不整。從大量現代人的經絡數據發現，心經與心包經同步異常的頻率很高。\\n\\n心經與心包經同步異常機率高\\n\\n三、脾腎兩虛、水氣上擾凌心\\n\\n依照中醫理論，脾臟與腎臟運化體內的水液，脾腎陽氣不足時，由於運化水液功能低下，不能布散體內津液，導致水液停聚而稱之為「痰飲」。\\n\\n痰飲上犯，水氣在體內亂竄，甚至往上衝，就會出現心悸或心律不整。症狀是：胸悶、眩暈、氣喘、短氣、小便短少、咳嗽、咳痰，舌苔水滑，脈沉弦。\\n\\n腎臟陽氣不足時，因為下半身的寒水亂竄，會出現嚴重頭暈、小便不利、四肢浮腫、肩背酸痛、腹痛腹瀉，這個時候也會出現心律不整，這也可以歸類為傷寒的少陰病。\\n\\n這類疾病，可以說都是一種「水氣病」，這種經絡型態很容易在秋冬季節出現，而現代醫學也發現秋冬季節容易出現心律不整的現象。\\n\\n秋冬季節常見的經絡型態\\n\\n四、肝氣鬱結、肝火擾心\\n\\n台灣奇美醫院中醫部創立「心律不整特別門診」，將心律不整區分為五種證候。其中一種就是肝氣鬱結、肝火擾心，這是現代人很容易出現的一種證候。\\n\\n從大量現代人的經絡數據也可以印證這個事實，現代人至少有50%常出現的「鐵三角經絡型態」，就是以肝經實證為主軸所變化出來的一系列經絡型態，其中有一種就非常容易出現心律不整(見下圖)。\\n\\n鐵三角經絡型態變化型，容易出現心律不整\\n\\n從圖上可以清楚看出，這種經絡型態異常經絡很多，其中「心經」與「心包經」明顯虛證，體內三焦、大腸、肝經、膽經、胃經實證，可視為肝火、膽火、陽明火氣旺盛。脾經虛證，也可視為是心脾兩虛的現象。\\n\\n五、氣滯血瘀、經絡不通\\n\\n中醫診斷很喜歡運用「氣滯血瘀」這四個字，因為只要體內經絡氣血運作不佳時，就一定出現氣滯血瘀。從上面的經絡圖形看來，體內的經絡幾乎都是異常，可以說是全身性的氣血循環不佳。\\n\\n凡是過度疲勞、年老的人、大病久病之後的人，都很容易出現這種證候，當這些通往胸部的經絡(例如：心經、心包經、肝經、膽經、脾經、胃經、腎經...等等)都阻塞時，人體前半部的氣血可以說都是瘀阻的。\\n\\n因此，有些人就發現按摩腹部可以從根本來改善心律不整，這是因為腹部的經絡疏通了之後，整個胸部的氣血也會順暢。[@post:58]\",\"western_pathology_zh\":\"「心律不整」有很多類似名稱，這是指心臟電傳導系統異常，所引起的各種症狀。在正常狀況下，人體的心跳為每分鐘60至100下，若心臟電流傳導系統被各種可能因素所擾亂，導致心跳太快、太慢、不規律等狀況，就稱為「心律不整」。\\n\\n在科技日新月異之下，現代每一個人都可以透過智慧手錶，或下載手機APP，在一鐘之內就可以診斷出是否心律不整，有興趣的人可以點選下載[愛心鏡RhythmCam](IOS/Android)。\\n\\n自從新冠疫情爆發以來，心律不整一直是大家關注的議題，因為青壯年人如果發生猝死，最有可能的原因是「心律不整」。大約有1%~2%的人會出現心律不整，65歲以上的的機率\\b增至5%~10%。\\n\\n運用手機APP檢查是否心律不整\\n\\n大約有80%的心律不整都是屬於良性的，多數人沒有察覺，然而有20%屬於惡性，屬於一種心臟疾病，容易產生血栓，這一類人的中風機率是一般人的5倍。\\n\\n許多心律不整表現是無症狀的，如果有症狀會出現「心悸」，突然感覺心臟的跳動和撞擊。嚴重的心律不整，會出現：胸悶、胸痛、呼吸困難、冒冷汗、血壓低、頭暈、暈厥(感覺快暈倒)、恐慌症...等等。\\n\\n造成心律不整的原因很多，例如：遺傳、吸菸飲酒過度、喝咖啡、壓力大、電解質不平衡、藥物濫用或副作用、糖尿病、心臟病、睡眠呼吸中止症、高血壓、甲狀腺機能低下或亢進、冠狀動脈心臟病...等等。\\n\\n大部分的心律不整，可以透過正常作息就可以改善。現代醫學採用抗心律不整藥物(例如：鈉、鉀、鈣離子拮抗劑、乙型交感神經抑制劑)，或是「心導管電燒療法」，有些人會安裝入心律調整器。\\n\\n中醫對心律不整的看法是從經絡氣血、寒熱這些抽象概念去分析的，現代醫學幾乎不能理解中醫在講什麼？如果一個人在經過現代醫學總總治療之後，效果依然不佳，或是直接想要選擇另類療法，那就可以參考中醫的治療理論。\"}",
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "etiology_en": [
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "western_pathology_zh": [
+     "2026-08-21 內容錯置修正:原 etiology_zh/western_pathology_zh 逐段核對後確認為「心律不整」全文(脈象促結代脈、心跳過快過慢、智慧手錶心律APP)，並非心臟衰竭内容，與本卡病名完全不符(非樣板句,是獨立誤植内容,C10 逐字共用檢測抓不到)。原值(含部落格廣告痕跡)逐字保存:{\"etiology_zh\":\"中醫並沒有心律不整這種疾病，但是中醫在兩千年前就已經密切觀察這種現象。《黃帝內經》提到：「脈絕不至曰死，乍疏乍數日死。」《傷寒論》也提到「傷寒脈結代，心動悸，主之。」這種「結代脈」，指的就是心律不整。\\n\\n中醫的脈象中，有6種就是描述心律不整：\\n\\n促脈：脈來急數有力而呈不規則間歇;\\n\\n結脈：脈來遲緩而有不規則間歇的脈象;\\n\\n代脈：脈來緩慢而有規則的間歇，且間歇時間較長的脈象；\\n\\n數脈或疾脈：脈來急速，每分鐘超過100;\\n\\n遲脈：脈行遲緩，每分鐘40至50次。\\n\\n怪脈：屋漏脈(脈搏極遲慢，濺起無力）、遊蝦脈（時而躍然而去，須臾又來）...等等。\\n\\n古人沒有鈉離子拮抗劑，也沒有電燒技術，更沒有心律調整器，那他們為什麼又可以治療這種症狀呢？這是因為中醫認為心律不整的原因，與現代醫學的立場完全不一樣，主要分類為以下幾種類型：\\n\\n一、太陽少陰病、心腎陽虛\\n\\n漢朝《傷寒論》中提到「傷寒脈結代、心動悸，炙甘草湯主之」，所謂「脈結代」的脈象，就是一種心律不整的脈象，同時還伴隨心悸，自覺心跳不安。\\n\\n這個條文中，以「傷寒」二個字為首，說明其病因是「感受風寒」而起，且表邪尚未解除，又見脈結代，心動悸之證，這是因為少陰裡虛，心失所養所造成。\\n\\n由於「太陽與少陰互為表裡」，所以太陽病很容易直接切入少陰病！而少陰以「心腎」為主，如果一個人平時心血虛弱、氣血不足，則太陽病之邪解不了，反而進入少陰，損傷心之氣血，就會出現心律不整且心悸。\\n\\n因此，這種心律不整，也可以說是一種感冒遺留下來的後遺症，可見妥善處理好傷寒感冒，是預防疾病很重關鍵的程序！\\n\\n二、心脾兩虛、心陽虛、心氣血虛\\n\\n站在中醫的立場來看，現代人思慮過多，這很容易勞傷心脾，耗傷心血，又會影響脾胃。脾主運化血液，心又主行血，因此心脾兩虛的時候，最容易出現心律不整。\\n\\n主要症狀是：心悸、健忘、睡眠障礙、夜間多夢、面色萎黃、食慾不佳、容易疲倦、腹脹、大便溏瀉、氣短、皮下出血、婦女月經不調，月經色淡量多、崩漏、月經少或經閉、舌質淡嫩苔白、脈細弱。\\n\\n除此心脾兩虛之外，類似的證候還有心氣虛、心陽虛、心血虛時，也都會出現心律不整。從大量現代人的經絡數據發現，心經與心包經同步異常的頻率很高。\\n\\n心經與心包經同步異常機率高\\n\\n三、脾腎兩虛、水氣上擾凌心\\n\\n依照中醫理論，脾臟與腎臟運化體內的水液，脾腎陽氣不足時，由於運化水液功能低下，不能布散體內津液，導致水液停聚而稱之為「痰飲」。\\n\\n痰飲上犯，水氣在體內亂竄，甚至往上衝，就會出現心悸或心律不整。症狀是：胸悶、眩暈、氣喘、短氣、小便短少、咳嗽、咳痰，舌苔水滑，脈沉弦。\\n\\n腎臟陽氣不足時，因為下半身的寒水亂竄，會出現嚴重頭暈、小便不利、四肢浮腫、肩背酸痛、腹痛腹瀉，這個時候也會出現心律不整，這也可以歸類為傷寒的少陰病。\\n\\n這類疾病，可以說都是一種「水氣病」，這種經絡型態很容易在秋冬季節出現，而現代醫學也發現秋冬季節容易出現心律不整的現象。\\n\\n秋冬季節常見的經絡型態\\n\\n四、肝氣鬱結、肝火擾心\\n\\n台灣奇美醫院中醫部創立「心律不整特別門診」，將心律不整區分為五種證候。其中一種就是肝氣鬱結、肝火擾心，這是現代人很容易出現的一種證候。\\n\\n從大量現代人的經絡數據也可以印證這個事實，現代人至少有50%常出現的「鐵三角經絡型態」，就是以肝經實證為主軸所變化出來的一系列經絡型態，其中有一種就非常容易出現心律不整(見下圖)。\\n\\n鐵三角經絡型態變化型，容易出現心律不整\\n\\n從圖上可以清楚看出，這種經絡型態異常經絡很多，其中「心經」與「心包經」明顯虛證，體內三焦、大腸、肝經、膽經、胃經實證，可視為肝火、膽火、陽明火氣旺盛。脾經虛證，也可視為是心脾兩虛的現象。\\n\\n五、氣滯血瘀、經絡不通\\n\\n中醫診斷很喜歡運用「氣滯血瘀」這四個字，因為只要體內經絡氣血運作不佳時，就一定出現氣滯血瘀。從上面的經絡圖形看來，體內的經絡幾乎都是異常，可以說是全身性的氣血循環不佳。\\n\\n凡是過度疲勞、年老的人、大病久病之後的人，都很容易出現這種證候，當這些通往胸部的經絡(例如：心經、心包經、肝經、膽經、脾經、胃經、腎經...等等)都阻塞時，人體前半部的氣血可以說都是瘀阻的。\\n\\n因此，有些人就發現按摩腹部可以從根本來改善心律不整，這是因為腹部的經絡疏通了之後，整個胸部的氣血也會順暢。[@post:58]\",\"western_pathology_zh\":\"「心律不整」有很多類似名稱，這是指心臟電傳導系統異常，所引起的各種症狀。在正常狀況下，人體的心跳為每分鐘60至100下，若心臟電流傳導系統被各種可能因素所擾亂，導致心跳太快、太慢、不規律等狀況，就稱為「心律不整」。\\n\\n在科技日新月異之下，現代每一個人都可以透過智慧手錶，或下載手機APP，在一鐘之內就可以診斷出是否心律不整，有興趣的人可以點選下載[愛心鏡RhythmCam](IOS/Android)。\\n\\n自從新冠疫情爆發以來，心律不整一直是大家關注的議題，因為青壯年人如果發生猝死，最有可能的原因是「心律不整」。大約有1%~2%的人會出現心律不整，65歲以上的的機率\\b增至5%~10%。\\n\\n運用手機APP檢查是否心律不整\\n\\n大約有80%的心律不整都是屬於良性的，多數人沒有察覺，然而有20%屬於惡性，屬於一種心臟疾病，容易產生血栓，這一類人的中風機率是一般人的5倍。\\n\\n許多心律不整表現是無症狀的，如果有症狀會出現「心悸」，突然感覺心臟的跳動和撞擊。嚴重的心律不整，會出現：胸悶、胸痛、呼吸困難、冒冷汗、血壓低、頭暈、暈厥(感覺快暈倒)、恐慌症...等等。\\n\\n造成心律不整的原因很多，例如：遺傳、吸菸飲酒過度、喝咖啡、壓力大、電解質不平衡、藥物濫用或副作用、糖尿病、心臟病、睡眠呼吸中止症、高血壓、甲狀腺機能低下或亢進、冠狀動脈心臟病...等等。\\n\\n大部分的心律不整，可以透過正常作息就可以改善。現代醫學採用抗心律不整藥物(例如：鈉、鉀、鈣離子拮抗劑、乙型交感神經抑制劑)，或是「心導管電燒療法」，有些人會安裝入心律調整器。\\n\\n中醫對心律不整的看法是從經絡氣血、寒熱這些抽象概念去分析的，現代醫學幾乎不能理解中醫在講什麼？如果一個人在經過現代醫學總總治療之後，效果依然不佳，或是直接想要選擇另類療法，那就可以參考中醫的治療理論。\"}",
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "western_pathology_en": [
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ]
+   }
   },
   {
    "id": "cond.raynaud",
@@ -24489,8 +24619,8 @@
     "pattern.blood_stasis"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "雷諾氏現象屬中醫「脈痹」「厥證」範疇，病機以陽氣不足、寒凝血瘀為主，病位在四末，與心、肝、脾、腎相關。素體陽虛，尤以脾腎陽虛為主，溫煦推動無力，復感寒邪，寒性收引凝滯，經脈氣血運行不暢，而見手足遇冷即現蒼白、青紫，溫暖後轉紅漸復；情志不遂，肝氣鬱結，氣滯則血行不暢，亦可致氣滯血瘀，加重四末血行障礙；病程日久，氣血兩虛，血脈失於充養，推動無力，則發作頻繁、恢復遲緩，兼見神疲乏力、面色少華；若寒凝血瘀日久不解，絡脈瘀阻，甚可見肢端麻木刺痛、膚色紫暗。",
+   "western_pathology_zh": "雷諾氏現象是指手指、腳趾等肢體末梢小動脈於寒冷刺激或情緒緊張時發生陣發性血管痙攣，導致局部血流驟減，皮膚依序呈現蒼白（缺血）、發紺（缺氧）、發紅（血流恢復充血）三階段變化，常伴隨麻木或刺痛感。原發性（雷諾氏病）好發於年輕女性，無合併其他疾病，機轉與血管平滑肌對交感神經刺激及低溫過度敏感有關；續發性（雷諾氏症候群）則與結締組織疾病（如硬皮症、紅斑性狼瘡、類風濕性關節炎）、血管疾病、藥物（如乙型阻斷劑、化療藥物）或職業性振動傷害相關，症狀往往較嚴重，可能併發指端潰瘍或壞疽，須積極排查潛在病因。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -24522,7 +24652,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Raynaud phenomenon falls under the TCM categories of \"vessel bi-obstruction\" and \"reversal pattern\" (cold extremities), with the pathomechanism centered on yang qi insufficiency and cold-congealed blood stasis, located in the extremities, with heart, liver, spleen, and kidney involvement. In those constitutionally yang deficient, particularly with spleen-kidney yang deficiency, warming and propulsive function is weak; when additionally affected by cold pathogen, whose contracting and congealing nature obstructs the free flow of qi and blood through the vessels, the hands and feet turn pale then bluish-purple on cold exposure, gradually returning to red on warming. Emotional disturbance causing liver qi depression can also impede blood flow, producing qi stagnation and blood stasis that worsens the circulatory disturbance in the extremities. With prolonged course, both qi and blood become deficient, the vessels lose nourishment and propulsion weakens, so attacks become frequent with slow recovery, accompanied by lassitude and a sallow complexion. When cold-congealed blood stasis persists unresolved, obstructing the collaterals, numbness and stabbing pain of the fingertips with dusky purple skin may appear.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Raynaud phenomenon is episodic vasospasm of the small arteries of the extremities (fingers, toes) triggered by cold exposure or emotional stress, causing an abrupt drop in local blood flow and sequential skin color changes — pallor (ischemia), cyanosis (hypoxia), and redness (reactive hyperemia) — often accompanied by numbness or tingling. Primary Raynaud disease predominantly affects young women without an associated underlying disease, its mechanism related to excessive sensitivity of vascular smooth muscle to sympathetic stimulation and cold; secondary Raynaud syndrome is associated with connective tissue disease (such as scleroderma, lupus, or rheumatoid arthritis), vascular disease, medications (such as beta-blockers or chemotherapy drugs), or occupational vibration injury, tends to be more severe, and can be complicated by digital ulceration or gangrene, warranting active investigation for an underlying cause."
   },
   {
    "id": "cond.varicose_veins",
@@ -24539,8 +24685,8 @@
     "pattern.phlegm_damp"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "靜脈曲張屬中醫「筋瘤」範疇，病位在下肢絡脈，與脾、腎相關，基本病機為氣虛血瘀、脈絡失和。久站久行，耗傷脾氣，脾主肌肉四肢，脾氣虛則清陽不升，氣虛無力推動血行，血滯絡脈，而見下肢靜脈迂曲怒張、久立加重、抬高減輕；濕熱下注者，兼見下肢腫脹灼熱、皮色紅赤，或伴濕疹瘙癢；寒濕之邪凝滯經脈，則見下肢沉重冷痛、遇寒加劇；病程日久，氣虛下陷，固攝無力，絡脈瘀阻不解，可致皮膚色素沉著、甚則絡脈破損而見出血、潰瘍難癒，形成因虛致瘀、瘀阻更虛之惡性循環。",
+   "western_pathology_zh": "靜脈曲張是下肢淺靜脈系統因靜脈瓣膜功能不全，無法有效阻止血液逆流，導致靜脈內壓力持續升高、血管壁擴張迂曲的慢性靜脈疾病。危險因子包括長時間站立或久坐、懷孕、肥胖、年齡增長及家族遺傳傾向。臨床表現由輕度的下肢痠脹、水腫、夜間抽筋，逐漸進展為明顯可見之迂曲靜脈團塊，久站後加重、抬腿休息可緩解；慢性靜脈功能不全嚴重者可併發皮膚色素沉著、脂性硬皮病、靜脈性濕疹，甚至靜脈性潰瘍，少數併發淺層血栓性靜脈炎。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -24572,7 +24718,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Varicose veins fall under the TCM category of \"sinew tumor,\" located in the lower-limb collaterals, with spleen and kidney involvement, the basic pathomechanism being qi deficiency with blood stasis and disharmony of the collaterals. Prolonged standing or walking depletes spleen qi — the spleen governing the muscles and limbs — so that when spleen qi is deficient, clear yang fails to ascend and deficient qi lacks the force to propel blood, causing blood to stagnate in the collaterals, producing tortuous, distended varicose veins of the lower limbs that worsen with prolonged standing and ease with leg elevation. In those with damp-heat pouring downward, swelling and burning heat of the lower limbs with reddened skin, sometimes with itchy eczema, are also seen. Cold-damp pathogen congealing the channels produces heaviness and cold pain of the lower limbs that worsens with cold exposure. With prolonged course, sinking qi deficiency fails to contain and unresolved collateral stasis can lead to skin pigmentation and even collateral rupture with bleeding and non-healing ulceration, forming a vicious cycle in which deficiency causes stasis and stasis deepens deficiency.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Varicose veins are a chronic venous disease of the lower-limb superficial venous system caused by incompetent venous valves that fail to effectively prevent retrograde blood flow, resulting in persistently elevated intravenous pressure and dilated, tortuous vessels. Risk factors include prolonged standing or sitting, pregnancy, obesity, advancing age, and family predisposition. Clinical presentation ranges from mild lower-limb aching, edema, and nocturnal cramps, progressing to visibly tortuous venous clusters that worsen after prolonged standing and improve with leg elevation; severe chronic venous insufficiency can be complicated by skin pigmentation, lipodermatosclerosis, venous eczema, and even venous ulceration, with a minority developing superficial thrombophlebitis."
   },
   {
    "id": "cond.poor_circulation",
@@ -24589,8 +24751,8 @@
     "pattern.blood_stasis"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "末梢循環不良屬中醫「痹證」「血痹」範疇，病機以陽氣虛衰、氣血運行不暢為核心，病位在四肢末端經絡。素體陽氣不足，尤以脾腎陽虛為主，溫煦推動無力，氣血難以充達四末，而見手足冰冷、膚色蒼白或青紫、麻木不仁；久病或年老氣血兩虛，血脈失於充養，運行遲滯，亦致肢端失於溫養，兼見神疲乏力、面色萎黃；情志不遂或久坐少動，氣機鬱滯，血行不暢，形成氣滯血瘀，可見肢端刺痛、膚色紫暗；痰濕偏盛之體，痰濕阻滯經絡，氣血運行受阻，則見肢體沉重、麻木感明顯。諸證常相兼夾雜，虛中夾瘀者尤為多見。",
+   "western_pathology_zh": "末梢循環不良泛指肢體末端（尤以手足為主）因動脈血流供應不足或靜脈回流障礙，導致局部組織灌流不佳的一組臨床表現，常見成因包括周邊動脈疾病（動脈粥狀硬化致血管狹窄）、糖尿病周邊血管病變、長期吸菸、久坐或久處低溫環境使周邊血管收縮，以及自主神經調節異常等。臨床表現為手足冰冷、膚色蒼白或發紺、麻木刺痛感，嚴重動脈阻塞者可出現間歇性跛行，甚至靜息痛與組織缺血壞死，須與雷諾氏現象、周邊神經病變等疾病鑑別診斷。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -24622,7 +24784,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Poor peripheral circulation falls under the TCM categories of \"bi-obstruction pattern\" and \"blood bi-obstruction,\" the core pathomechanism being decline of yang qi with impaired qi and blood movement, located in the channels and collaterals of the extremities. In those constitutionally yang-qi deficient, particularly with spleen-kidney yang deficiency, warming and propulsive function is weak and qi and blood struggle to reach the extremities, producing cold hands and feet, pale or bluish-purple skin, and numbness. In prolonged illness or advancing age with qi and blood deficiency, the vessels lose nourishment and blood flow slows, likewise depriving the extremities of warmth and nourishment, accompanied by lassitude and a sallow complexion. Emotional disturbance or prolonged sedentary inactivity causes qi-mechanism stagnation and impaired blood flow, forming qi stagnation and blood stasis, producing stabbing pain and dusky discoloration of the extremities. In those constitutionally prone to phlegm-damp, phlegm-damp obstructing the channels impedes qi and blood movement, producing marked heaviness and numbness of the limbs. These patterns frequently intermingle, deficiency complicated by stasis being especially common.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Poor peripheral circulation broadly refers to a cluster of clinical presentations resulting from insufficient arterial blood supply or impaired venous return to the distal extremities (particularly the hands and feet), commonly caused by peripheral arterial disease (atherosclerotic vessel narrowing), diabetic peripheral vascular disease, long-term smoking, prolonged sitting or exposure to cold environments causing peripheral vasoconstriction, and autonomic dysregulation. Clinical features include cold hands and feet, pale or cyanotic skin, and numbness or tingling; severe arterial occlusion may cause intermittent claudication and even rest pain with tissue ischemic necrosis, requiring differentiation from Raynaud phenomenon, peripheral neuropathy, and other conditions."
   },
   {
    "id": "cond.recurrent_uti",
@@ -24642,8 +24820,8 @@
     "pattern.bladder_damp_heat"
    ],
    "review_status": "draft",
-   "etiology_zh": "排尿困難是指小便不通，尿液點滴難出，這絕對是困擾中國人上千年的症狀，在古代稱為《黃帝內經》稱「癃」或「不得小便」、「癃閉」...等等，類似的名詞非常多。\n\n依照傳統中醫的觀察，小便不通可以分類為以下證候，這同時也可以運用經絡檢測來加以比對驗證，分述如下：\n\n一、外感傷寒(太陽病)\n\n「小便不通」與「小便不利」概念類似，中醫的《傷寒論》可以說整本書有一大半都在處理感冒及其後遺症現象，而其中大量探討「小便不利」的症狀，涉及的條文有37條。\n\n小便不利指的是「尿少或無尿」，「小便不通」是指膀胱中有尿液，但是排出困難，這兩種症狀經常會交替出現。\n\n《傷寒論》將外感傷寒區分為六個階段(太陽病、少陽病、陽明病、太陰病、少陰病與厥陰病)，從熱證到寒證都會出現小便不利。\n\n所謂的太陽病，大部分指的就是「膀胱經」，膀胱不就是管控排尿的主要器官嗎？因此在外感傷寒之後，很容易出現膀胱相關症狀，排尿障礙就是其中一個。\n\n當外在的寒邪之氣進入體內之後，膀胱氣化失職，水液停留在下焦時，就容易出現口渴、口乾一直想要喝水，「尿不出來」或是「頻尿」兩種可能性，最常出現的就是「五苓散」證、「小青龍湯」證。\n\n體內水液同時也與脾臟有關聯，因為「脾主運化」。從大量現代人的經絡數據中發現，膀胱經與脾經的連動性極高，因此當膀胱經異常時，會出現體內水氣運化障礙，就是這麼理所當然了。\n\n膀胱經與脾經連動性高，牽動體內水氣運作\n\n某會員A先生觀察自己身上的經絡長達10年以上，確認自己只要每次有點感冒的感覺就會開始頻尿，然而在夏天的時候，有時候會尿不出來，甚至感覺尿痛，幾乎每次只要立刻服用治療太陽病的「五苓散」就會快速改善，屢試不爽。\n\n對某些人而言，一年四季出現膀胱經與脾經虛證已經成為一種體質現象，因此有些人很容易出現膀胱炎。2022年7月時就有一位男性會員分享，他被診斷出前列腺肥大，經常尿不出來，而他就是典型的「鐵三角經絡體質」。[@ad:1]\n\n二、外感傷寒(少陽病)、肝氣鬱結\n\n當外來寒邪進入少陽病之後，影響到膽經與三焦經，三焦不通時，體內的水氣運化就會出現障礙，因此也容易出現小便不利。同時出現暈眩、口苦、口乾、食慾不佳的現象，最常出現的就是「小柴胡湯」證，或是合併太陽病的「柴胡桂枝湯」證。\n\n現代人由於壓力過大，情緒鬱悶，容易肝氣鬱結。不論是《傷寒論》或是後代中醫都有提出，體內肝氣鬱結時，很容易出現小便不通的現象。\n\n由於情志失調，肝失調達，疏泄不利而出現小便不通、心情鬱悶、多煩善怒、肋痛、失眠、多夢、口苦胃酸、舌紅苔薄黃，脈弦。\n\n從經絡的角度來看，肝經通往整個陰部，因此肝經異常時容易出現泌尿道、陰部的相關疾病。從現代人高機率出現肝經實證的狀況看來，長期坐在辦公室的現代人，容易出現膀胱疾病就是這麼理所當然了！\n\n現代人肝氣鬱結，容易出現肝經實證之鐵三角經絡型態\n\n同時肝經實證的時候，膀胱經與脾經經常出現虛證，呈現所謂的鐵三角型態，因此傳統中醫所說的「肝氣鬱結」造成的小便不通，用圖象化來理解就是這種經絡型態。\n\n三、外感傷寒(陽明病)、下焦濕熱\n\n造成小便困難最常見的狀態，其實是體內過於濕熱，有火氣所造成的，這常常是外感寒邪化熱(陽明病階段)，或是夏天處於濕熱的環境下所造成。常出現尿痛、尿頻、尿急、小便灼熱感、大便秘結，舌質紅、苔黃膩，脈沉數或濡數。嚴重的時候還會出現黃疸。\n\n現代醫學也發現，夏季是膀胱炎高頻率出現的季節。古書《諸病源候論》提到：「小便不通，由膀胱與腎俱有熱故也」，體內濕熱阻滯牓胱，移熱於膀胱，濕熱互結，膀胱氣化失調，導致小便不通。這時候就要運用清熱利尿、瀉火、瀉大便的方法。\n\n從大量現代人的經絡數據中完全可以印證這個事實，從腎經與膀胱經的能量趨勢看來，這2條經絡一起出現虛證的機率，在夏天到達了最高點。\n\n夏季時，腎經與膀胱經虛證機率達到極點\n\n某會女性會員C小姐過去經常開車，找不到廁所時就憋尿，久了就經常膀胱炎，可以說每隔幾個月就出現一次，她的經絡型態就是經常出現腎經與膀胱經虛證，持續觀察了好幾年都保持一樣的經絡型態，就算已經治癒了，也依然是屬於「鐵三角經絡體質」。\n\n因此，要改變一種經絡體質是非常困難的，必須要持之以恆養生，努力提升腎經與膀胱經的能量，才有可能根本改善慢性膀胱炎的體質。\n\n事實上，所謂的陽明病與下焦濕熱，依然沒有逃脫鐵三角經絡型態的範疇。到了夏季的時候，有一定比例的人會出現胃經實證，呈現下圖這種經絡型態，這是很容易出現膀胱炎的。\n\n夏季容易出現型態，其實就是陽明濕熱膀胱炎的模型\n\n在2022年6-7月間，至少有3-5位會員回報出現膀胱炎現象，幾乎都是出現這種經絡型態，這是因為夏季至少有50%的人會出現鐵三角經絡型態，而這種變化型就是常見的一種。[@ad:1]\n\n四、外感傷寒(太陰少陰病)、下焦濕寒及腎氣不足\n\n以上都是在講夏季的鐵三角，進入秋冬之後有沒有機會出現小便不通的機會呢？也是有的，這就是傳統中醫所說的腎氣不足小便不通。\n\n當外感寒邪進入體內進入三陰階段之後，體內就開始變得很寒，進入所謂的少陰病，這個少陰指的就是「腎臟」，腎陽、腎氣不足時，就會出現小便排出無力，尿意頻頻又排尿困難，腰膝痠痛，手腳冰冷的症狀。\n\n現代醫學同時也發現，冬天也是容易出現排尿障礙的季節。這時候只要溫暖腎陽，小便不利的現象就會消失。由於中老年人很容易出現腎陽虛，因此這個年紀的人如果出現小便困難，通常就是這個原因所造成的。\n\n腎陽虛造成的小便不利，在冬天機率很高\n\n從大量現代人的經絡數據中完全可以印證這個事實，從腎經與膽經胃經陽虛的能量趨勢看來，這3條經絡一起出現虛證的機率，在冬天到達了最高點。同時在冬季也有不少會員回報出現小便不通的現象，尤其是45歲以上機率更高。\n\n現代人腎經高機率出現虛證，夏天與鐵三角經絡型態結合，冬天與陽虛經絡型態結合，因此只要是腎氣虛弱的人一年四季都有可能出現小便不通，這是必須要特別注意的。\n\n尤其是男性前列腺肥大，幾乎都是夏季的鐵三角經絡型態，加上冬季的腎陽經經絡型態所構成，這通常要到中年以上才會穩定出現。現代醫學也發現50-60歲有50％機率出現前列腺肥大，完全不謀而合。\n\n因此，善於養生者，一定要提升腎經能量，這樣就可以根本改善慢性長期困擾人的膀胱炎。\n\n五、脾胃虛弱(中氣不足)、下腹部瘀血\n\n傳統中醫還提到所謂的「中氣不足」會造成小便不通，這其實與上面的所有背後原因都是一樣的，由於鐵三角經絡型態脾經長期虛證，因此脾胃運化能力不佳。\n\n上面提到肝氣鬱結的人，通常都會出現脾胃障礙，長期脾胃虛弱的人，也會出現排尿困難，伴隨各種脾胃症狀(食慾不佳、肚子脹氣、大便稀溏...等等)。\n\n除了是季節性的影響，平日生活習慣(壓力、熬夜晚睡)也會造成鐵三角經絡型態，必須要改變生活習慣才會根本改善。\n\n2022年8月初時有一位會員H先生就回報，由於該年夏天非常熱，全球處於熱浪狀態，他幾乎每天都晚上1點才睡。漸漸地發現自己的脾胃功能變差，食慾不佳，白天沒有精神，後腦杓常常暈暈的，經常還會出現背痛，分享經絡圖如下：\n\n2022年經常熬夜造成脾胃虛弱，中氣不足案例\n\n有些人長期喝冰水或寒涼食物，造成腹部經絡阻塞，外是車禍外傷造成下腹部瘀血，也會出現排尿困難，這時候可以運用「經絡療法」，或是運用活血化瘀中藥，將下腹部的瘀血化開，即可改善長期慢性的排尿障礙。\n\n古代中醫也有運用導尿術治療小便不通，由於這是現代醫學的強項，嚴重到需要導尿時，是一定要到醫院去就診的，中醫的角色是用來平時保養及預防疾病才具有意義。",
-   "western_pathology_zh": "「排尿困難」是指在排尿過程出現困難，尿不出來的現象，有時可能會伴隨疼痛，小便無力需要用力、排尿啟動緩慢、小便延遲、排尿不乾淨(殘尿感)、尿滯留(尿不完)...等等。\n\n小便困難通常是泌尿道感染發炎所引起，但也可能是其他疾病的症狀，例如：中樞神經病變、脊髓外傷、膀胱病變、腫瘤或結石、帶狀泡疹、尿道狹窄、前列腺肥大、過動性膀胱、子宮脫垂、骨盆底肌肉不能放鬆、膀胱頸功能失調、免疫神經疾病...等等。\n\n現代許多女性上班族，因為工作需求而必須久坐、憋尿，讓肌肉長期處於緊繃狀態，逐漸無法放鬆，導致排尿困難。同時，女性膀胱出口阻塞的機率最高達到25%。\n\n年紀大的男性容易出現排尿障礙，約有50%以上是攝護腺肥大引起。長期排尿困難，最終容易造成膀胱、腎臟功能受損及尿毒症，所以一定要儘早治療。\n\n現代醫學治療排尿困難的方法，經常運用藥物，或用手加壓腹部輔助排尿，或運用導尿管或手術治療。醫生會建議進行膀胱訓練，骨盆底肌肉強化訓練(例如：凱格爾運動(Kegel)或提臀運動)。\n\n如果一個人長期出現排尿障礙，又找不出明確的原因或治療效果不佳的時候，就很適合運用中醫的理論來探討，尤其是短暫出現的排尿困難，有可能只是經絡氣血的障礙所造成。",
+   "etiology_zh": "反覆泌尿道感染屬中醫「淋證」範疇，尤以「熱淋」「勞淋」多見。初病多因濕熱下注膀胱，膀胱氣化失司，故見尿頻、尿急、尿痛、小便黃赤；若治不徹底，或素體脾腎氣虛，濕熱未盡而正氣已傷，轉為脾腎兩虛、氣化無力，復易感濕熱之邪，故反覆發作、纏綿難癒。病程日久者，脾腎兩虛為本，濕熱下注為標，虛實夾雜；每遇勞累、房事不節或外感則誘發加重。",
+   "western_pathology_zh": "反覆泌尿道感染一般定義為6個月內發作2次以上，或12個月內發作3次以上，多為上行性感染，以大腸桿菌(E. coli)最常見。危險因子包括女性尿道短且鄰近肛門、性行為、停經後雌激素缺乏改變陰道菌叢、糖尿病、排尿功能障礙或殘尿(排空不全)、留置導尿管、泌尿系統結構異常等。臨床表現為解尿疼痛、頻尿、急尿、恥骨上疼痛，發燒或腰痛則提示可能上行至腎臟(腎盂腎炎)。反覆發作者應評估是否有結構性或功能性根本病因。",
    "tcm_patterns": [
     {
      "pattern_zh": "腎陽虛",
@@ -25031,7 +25209,25 @@
    "entity_type": "biomedical_condition",
    "sources": [
     "https://cloudtcm.com/disease/tcm/203"
-   ]
+   ],
+   "etiology_en": "Recurrent urinary tract infection falls within the TCM category of \"stranguria pattern\" (lin zheng), most often the \"heat stranguria\" or \"taxation stranguria\" subtypes. In the initial episode, damp-heat commonly pours downward into the Bladder, impairing Bladder qi transformation, producing frequent, urgent, painful urination with dark, scanty urine. If treatment is incomplete, or the patient has an underlying Spleen-Kidney qi deficiency, residual damp-heat combined with already-damaged upright qi leads to Spleen-Kidney deficiency with weak qi transformation, which in turn predisposes to repeated damp-heat invasion — hence the recurrent, protracted course. In long-standing cases the root is Spleen-Kidney deficiency with damp-heat pouring downward as the branch, a root-deficiency/branch-excess pattern triggered or worsened by fatigue, sexual activity, or external pathogenic invasion.",
+   "western_pathology_en": "Recurrent urinary tract infection is generally defined as ≥2 infections in 6 months or ≥3 in 12 months, typically from ascending infection, most commonly with Escherichia coli. Risk factors include female urethral anatomy (short and close to the anus), sexual activity, postmenopausal estrogen deficiency altering vaginal flora, diabetes, voiding dysfunction or incomplete bladder emptying, indwelling catheters, and structural urinary tract abnormalities. It presents with dysuria, urinary frequency, urgency, and suprapubic pain; fever or flank pain suggests possible ascending infection to the kidney (pyelonephritis). Recurrent cases warrant evaluation for an underlying structural or functional cause.",
+   "field_sources": {
+    "etiology_zh": [
+     "2026-08-21 內容錯置修正:原 etiology_zh/western_pathology_zh 逐段核對後確認為「小便不通／排尿困難」全文(癃閉、傷寒論太陽病、多種泛用排尿障礙病因)，並非反覆泌尿道感染内容，與本卡病名完全不符(非樣板句,是獨立誤植内容,C10 逐字共用檢測抓不到)。原值(含部落格廣告痕跡)逐字保存:{\"etiology_zh\":\"排尿困難是指小便不通，尿液點滴難出，這絕對是困擾中國人上千年的症狀，在古代稱為《黃帝內經》稱「癃」或「不得小便」、「癃閉」...等等，類似的名詞非常多。\\n\\n依照傳統中醫的觀察，小便不通可以分類為以下證候，這同時也可以運用經絡檢測來加以比對驗證，分述如下：\\n\\n一、外感傷寒(太陽病)\\n\\n「小便不通」與「小便不利」概念類似，中醫的《傷寒論》可以說整本書有一大半都在處理感冒及其後遺症現象，而其中大量探討「小便不利」的症狀，涉及的條文有37條。\\n\\n小便不利指的是「尿少或無尿」，「小便不通」是指膀胱中有尿液，但是排出困難，這兩種症狀經常會交替出現。\\n\\n《傷寒論》將外感傷寒區分為六個階段(太陽病、少陽病、陽明病、太陰病、少陰病與厥陰病)，從熱證到寒證都會出現小便不利。\\n\\n所謂的太陽病，大部分指的就是「膀胱經」，膀胱不就是管控排尿的主要器官嗎？因此在外感傷寒之後，很容易出現膀胱相關症狀，排尿障礙就是其中一個。\\n\\n當外在的寒邪之氣進入體內之後，膀胱氣化失職，水液停留在下焦時，就容易出現口渴、口乾一直想要喝水，「尿不出來」或是「頻尿」兩種可能性，最常出現的就是「五苓散」證、「小青龍湯」證。\\n\\n體內水液同時也與脾臟有關聯，因為「脾主運化」。從大量現代人的經絡數據中發現，膀胱經與脾經的連動性極高，因此當膀胱經異常時，會出現體內水氣運化障礙，就是這麼理所當然了。\\n\\n膀胱經與脾經連動性高，牽動體內水氣運作\\n\\n某會員A先生觀察自己身上的經絡長達10年以上，確認自己只要每次有點感冒的感覺就會開始頻尿，然而在夏天的時候，有時候會尿不出來，甚至感覺尿痛，幾乎每次只要立刻服用治療太陽病的「五苓散」就會快速改善，屢試不爽。\\n\\n對某些人而言，一年四季出現膀胱經與脾經虛證已經成為一種體質現象，因此有些人很容易出現膀胱炎。2022年7月時就有一位男性會員分享，他被診斷出前列腺肥大，經常尿不出來，而他就是典型的「鐵三角經絡體質」。[@ad:1]\\n\\n二、外感傷寒(少陽病)、肝氣鬱結\\n\\n當外來寒邪進入少陽病之後，影響到膽經與三焦經，三焦不通時，體內的水氣運化就會出現障礙，因此也容易出現小便不利。同時出現暈眩、口苦、口乾、食慾不佳的現象，最常出現的就是「小柴胡湯」證，或是合併太陽病的「柴胡桂枝湯」證。\\n\\n現代人由於壓力過大，情緒鬱悶，容易肝氣鬱結。不論是《傷寒論》或是後代中醫都有提出，體內肝氣鬱結時，很容易出現小便不通的現象。\\n\\n由於情志失調，肝失調達，疏泄不利而出現小便不通、心情鬱悶、多煩善怒、肋痛、失眠、多夢、口苦胃酸、舌紅苔薄黃，脈弦。\\n\\n從經絡的角度來看，肝經通往整個陰部，因此肝經異常時容易出現泌尿道、陰部的相關疾病。從現代人高機率出現肝經實證的狀況看來，長期坐在辦公室的現代人，容易出現膀胱疾病就是這麼理所當然了！\\n\\n現代人肝氣鬱結，容易出現肝經實證之鐵三角經絡型態\\n\\n同時肝經實證的時候，膀胱經與脾經經常出現虛證，呈現所謂的鐵三角型態，因此傳統中醫所說的「肝氣鬱結」造成的小便不通，用圖象化來理解就是這種經絡型態。\\n\\n三、外感傷寒(陽明病)、下焦濕熱\\n\\n造成小便困難最常見的狀態，其實是體內過於濕熱，有火氣所造成的，這常常是外感寒邪化熱(陽明病階段)，或是夏天處於濕熱的環境下所造成。常出現尿痛、尿頻、尿急、小便灼熱感、大便秘結，舌質紅、苔黃膩，脈沉數或濡數。嚴重的時候還會出現黃疸。\\n\\n現代醫學也發現，夏季是膀胱炎高頻率出現的季節。古書《諸病源候論》提到：「小便不通，由膀胱與腎俱有熱故也」，體內濕熱阻滯牓胱，移熱於膀胱，濕熱互結，膀胱氣化失調，導致小便不通。這時候就要運用清熱利尿、瀉火、瀉大便的方法。\\n\\n從大量現代人的經絡數據中完全可以印證這個事實，從腎經與膀胱經的能量趨勢看來，這2條經絡一起出現虛證的機率，在夏天到達了最高點。\\n\\n夏季時，腎經與膀胱經虛證機率達到極點\\n\\n某會女性會員C小姐過去經常開車，找不到廁所時就憋尿，久了就經常膀胱炎，可以說每隔幾個月就出現一次，她的經絡型態就是經常出現腎經與膀胱經虛證，持續觀察了好幾年都保持一樣的經絡型態，就算已經治癒了，也依然是屬於「鐵三角經絡體質」。\\n\\n因此，要改變一種經絡體質是非常困難的，必須要持之以恆養生，努力提升腎經與膀胱經的能量，才有可能根本改善慢性膀胱炎的體質。\\n\\n事實上，所謂的陽明病與下焦濕熱，依然沒有逃脫鐵三角經絡型態的範疇。到了夏季的時候，有一定比例的人會出現胃經實證，呈現下圖這種經絡型態，這是很容易出現膀胱炎的。\\n\\n夏季容易出現型態，其實就是陽明濕熱膀胱炎的模型\\n\\n在2022年6-7月間，至少有3-5位會員回報出現膀胱炎現象，幾乎都是出現這種經絡型態，這是因為夏季至少有50%的人會出現鐵三角經絡型態，而這種變化型就是常見的一種。[@ad:1]\\n\\n四、外感傷寒(太陰少陰病)、下焦濕寒及腎氣不足\\n\\n以上都是在講夏季的鐵三角，進入秋冬之後有沒有機會出現小便不通的機會呢？也是有的，這就是傳統中醫所說的腎氣不足小便不通。\\n\\n當外感寒邪進入體內進入三陰階段之後，體內就開始變得很寒，進入所謂的少陰病，這個少陰指的就是「腎臟」，腎陽、腎氣不足時，就會出現小便排出無力，尿意頻頻又排尿困難，腰膝痠痛，手腳冰冷的症狀。\\n\\n現代醫學同時也發現，冬天也是容易出現排尿障礙的季節。這時候只要溫暖腎陽，小便不利的現象就會消失。由於中老年人很容易出現腎陽虛，因此這個年紀的人如果出現小便困難，通常就是這個原因所造成的。\\n\\n腎陽虛造成的小便不利，在冬天機率很高\\n\\n從大量現代人的經絡數據中完全可以印證這個事實，從腎經與膽經胃經陽虛的能量趨勢看來，這3條經絡一起出現虛證的機率，在冬天到達了最高點。同時在冬季也有不少會員回報出現小便不通的現象，尤其是45歲以上機率更高。\\n\\n現代人腎經高機率出現虛證，夏天與鐵三角經絡型態結合，冬天與陽虛經絡型態結合，因此只要是腎氣虛弱的人一年四季都有可能出現小便不通，這是必須要特別注意的。\\n\\n尤其是男性前列腺肥大，幾乎都是夏季的鐵三角經絡型態，加上冬季的腎陽經經絡型態所構成，這通常要到中年以上才會穩定出現。現代醫學也發現50-60歲有50％機率出現前列腺肥大，完全不謀而合。\\n\\n因此，善於養生者，一定要提升腎經能量，這樣就可以根本改善慢性長期困擾人的膀胱炎。\\n\\n五、脾胃虛弱(中氣不足)、下腹部瘀血\\n\\n傳統中醫還提到所謂的「中氣不足」會造成小便不通，這其實與上面的所有背後原因都是一樣的，由於鐵三角經絡型態脾經長期虛證，因此脾胃運化能力不佳。\\n\\n上面提到肝氣鬱結的人，通常都會出現脾胃障礙，長期脾胃虛弱的人，也會出現排尿困難，伴隨各種脾胃症狀(食慾不佳、肚子脹氣、大便稀溏...等等)。\\n\\n除了是季節性的影響，平日生活習慣(壓力、熬夜晚睡)也會造成鐵三角經絡型態，必須要改變生活習慣才會根本改善。\\n\\n2022年8月初時有一位會員H先生就回報，由於該年夏天非常熱，全球處於熱浪狀態，他幾乎每天都晚上1點才睡。漸漸地發現自己的脾胃功能變差，食慾不佳，白天沒有精神，後腦杓常常暈暈的，經常還會出現背痛，分享經絡圖如下：\\n\\n2022年經常熬夜造成脾胃虛弱，中氣不足案例\\n\\n有些人長期喝冰水或寒涼食物，造成腹部經絡阻塞，外是車禍外傷造成下腹部瘀血，也會出現排尿困難，這時候可以運用「經絡療法」，或是運用活血化瘀中藥，將下腹部的瘀血化開，即可改善長期慢性的排尿障礙。\\n\\n古代中醫也有運用導尿術治療小便不通，由於這是現代醫學的強項，嚴重到需要導尿時，是一定要到醫院去就診的，中醫的角色是用來平時保養及預防疾病才具有意義。\",\"western_pathology_zh\":\"「排尿困難」是指在排尿過程出現困難，尿不出來的現象，有時可能會伴隨疼痛，小便無力需要用力、排尿啟動緩慢、小便延遲、排尿不乾淨(殘尿感)、尿滯留(尿不完)...等等。\\n\\n小便困難通常是泌尿道感染發炎所引起，但也可能是其他疾病的症狀，例如：中樞神經病變、脊髓外傷、膀胱病變、腫瘤或結石、帶狀泡疹、尿道狹窄、前列腺肥大、過動性膀胱、子宮脫垂、骨盆底肌肉不能放鬆、膀胱頸功能失調、免疫神經疾病...等等。\\n\\n現代許多女性上班族，因為工作需求而必須久坐、憋尿，讓肌肉長期處於緊繃狀態，逐漸無法放鬆，導致排尿困難。同時，女性膀胱出口阻塞的機率最高達到25%。\\n\\n年紀大的男性容易出現排尿障礙，約有50%以上是攝護腺肥大引起。長期排尿困難，最終容易造成膀胱、腎臟功能受損及尿毒症，所以一定要儘早治療。\\n\\n現代醫學治療排尿困難的方法，經常運用藥物，或用手加壓腹部輔助排尿，或運用導尿管或手術治療。醫生會建議進行膀胱訓練，骨盆底肌肉強化訓練(例如：凱格爾運動(Kegel)或提臀運動)。\\n\\n如果一個人長期出現排尿障礙，又找不出明確的原因或治療效果不佳的時候，就很適合運用中醫的理論來探討，尤其是短暫出現的排尿困難，有可能只是經絡氣血的障礙所造成。\"}",
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "etiology_en": [
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "western_pathology_zh": [
+     "2026-08-21 內容錯置修正:原 etiology_zh/western_pathology_zh 逐段核對後確認為「小便不通／排尿困難」全文(癃閉、傷寒論太陽病、多種泛用排尿障礙病因)，並非反覆泌尿道感染内容，與本卡病名完全不符(非樣板句,是獨立誤植内容,C10 逐字共用檢測抓不到)。原值(含部落格廣告痕跡)逐字保存:{\"etiology_zh\":\"排尿困難是指小便不通，尿液點滴難出，這絕對是困擾中國人上千年的症狀，在古代稱為《黃帝內經》稱「癃」或「不得小便」、「癃閉」...等等，類似的名詞非常多。\\n\\n依照傳統中醫的觀察，小便不通可以分類為以下證候，這同時也可以運用經絡檢測來加以比對驗證，分述如下：\\n\\n一、外感傷寒(太陽病)\\n\\n「小便不通」與「小便不利」概念類似，中醫的《傷寒論》可以說整本書有一大半都在處理感冒及其後遺症現象，而其中大量探討「小便不利」的症狀，涉及的條文有37條。\\n\\n小便不利指的是「尿少或無尿」，「小便不通」是指膀胱中有尿液，但是排出困難，這兩種症狀經常會交替出現。\\n\\n《傷寒論》將外感傷寒區分為六個階段(太陽病、少陽病、陽明病、太陰病、少陰病與厥陰病)，從熱證到寒證都會出現小便不利。\\n\\n所謂的太陽病，大部分指的就是「膀胱經」，膀胱不就是管控排尿的主要器官嗎？因此在外感傷寒之後，很容易出現膀胱相關症狀，排尿障礙就是其中一個。\\n\\n當外在的寒邪之氣進入體內之後，膀胱氣化失職，水液停留在下焦時，就容易出現口渴、口乾一直想要喝水，「尿不出來」或是「頻尿」兩種可能性，最常出現的就是「五苓散」證、「小青龍湯」證。\\n\\n體內水液同時也與脾臟有關聯，因為「脾主運化」。從大量現代人的經絡數據中發現，膀胱經與脾經的連動性極高，因此當膀胱經異常時，會出現體內水氣運化障礙，就是這麼理所當然了。\\n\\n膀胱經與脾經連動性高，牽動體內水氣運作\\n\\n某會員A先生觀察自己身上的經絡長達10年以上，確認自己只要每次有點感冒的感覺就會開始頻尿，然而在夏天的時候，有時候會尿不出來，甚至感覺尿痛，幾乎每次只要立刻服用治療太陽病的「五苓散」就會快速改善，屢試不爽。\\n\\n對某些人而言，一年四季出現膀胱經與脾經虛證已經成為一種體質現象，因此有些人很容易出現膀胱炎。2022年7月時就有一位男性會員分享，他被診斷出前列腺肥大，經常尿不出來，而他就是典型的「鐵三角經絡體質」。[@ad:1]\\n\\n二、外感傷寒(少陽病)、肝氣鬱結\\n\\n當外來寒邪進入少陽病之後，影響到膽經與三焦經，三焦不通時，體內的水氣運化就會出現障礙，因此也容易出現小便不利。同時出現暈眩、口苦、口乾、食慾不佳的現象，最常出現的就是「小柴胡湯」證，或是合併太陽病的「柴胡桂枝湯」證。\\n\\n現代人由於壓力過大，情緒鬱悶，容易肝氣鬱結。不論是《傷寒論》或是後代中醫都有提出，體內肝氣鬱結時，很容易出現小便不通的現象。\\n\\n由於情志失調，肝失調達，疏泄不利而出現小便不通、心情鬱悶、多煩善怒、肋痛、失眠、多夢、口苦胃酸、舌紅苔薄黃，脈弦。\\n\\n從經絡的角度來看，肝經通往整個陰部，因此肝經異常時容易出現泌尿道、陰部的相關疾病。從現代人高機率出現肝經實證的狀況看來，長期坐在辦公室的現代人，容易出現膀胱疾病就是這麼理所當然了！\\n\\n現代人肝氣鬱結，容易出現肝經實證之鐵三角經絡型態\\n\\n同時肝經實證的時候，膀胱經與脾經經常出現虛證，呈現所謂的鐵三角型態，因此傳統中醫所說的「肝氣鬱結」造成的小便不通，用圖象化來理解就是這種經絡型態。\\n\\n三、外感傷寒(陽明病)、下焦濕熱\\n\\n造成小便困難最常見的狀態，其實是體內過於濕熱，有火氣所造成的，這常常是外感寒邪化熱(陽明病階段)，或是夏天處於濕熱的環境下所造成。常出現尿痛、尿頻、尿急、小便灼熱感、大便秘結，舌質紅、苔黃膩，脈沉數或濡數。嚴重的時候還會出現黃疸。\\n\\n現代醫學也發現，夏季是膀胱炎高頻率出現的季節。古書《諸病源候論》提到：「小便不通，由膀胱與腎俱有熱故也」，體內濕熱阻滯牓胱，移熱於膀胱，濕熱互結，膀胱氣化失調，導致小便不通。這時候就要運用清熱利尿、瀉火、瀉大便的方法。\\n\\n從大量現代人的經絡數據中完全可以印證這個事實，從腎經與膀胱經的能量趨勢看來，這2條經絡一起出現虛證的機率，在夏天到達了最高點。\\n\\n夏季時，腎經與膀胱經虛證機率達到極點\\n\\n某會女性會員C小姐過去經常開車，找不到廁所時就憋尿，久了就經常膀胱炎，可以說每隔幾個月就出現一次，她的經絡型態就是經常出現腎經與膀胱經虛證，持續觀察了好幾年都保持一樣的經絡型態，就算已經治癒了，也依然是屬於「鐵三角經絡體質」。\\n\\n因此，要改變一種經絡體質是非常困難的，必須要持之以恆養生，努力提升腎經與膀胱經的能量，才有可能根本改善慢性膀胱炎的體質。\\n\\n事實上，所謂的陽明病與下焦濕熱，依然沒有逃脫鐵三角經絡型態的範疇。到了夏季的時候，有一定比例的人會出現胃經實證，呈現下圖這種經絡型態，這是很容易出現膀胱炎的。\\n\\n夏季容易出現型態，其實就是陽明濕熱膀胱炎的模型\\n\\n在2022年6-7月間，至少有3-5位會員回報出現膀胱炎現象，幾乎都是出現這種經絡型態，這是因為夏季至少有50%的人會出現鐵三角經絡型態，而這種變化型就是常見的一種。[@ad:1]\\n\\n四、外感傷寒(太陰少陰病)、下焦濕寒及腎氣不足\\n\\n以上都是在講夏季的鐵三角，進入秋冬之後有沒有機會出現小便不通的機會呢？也是有的，這就是傳統中醫所說的腎氣不足小便不通。\\n\\n當外感寒邪進入體內進入三陰階段之後，體內就開始變得很寒，進入所謂的少陰病，這個少陰指的就是「腎臟」，腎陽、腎氣不足時，就會出現小便排出無力，尿意頻頻又排尿困難，腰膝痠痛，手腳冰冷的症狀。\\n\\n現代醫學同時也發現，冬天也是容易出現排尿障礙的季節。這時候只要溫暖腎陽，小便不利的現象就會消失。由於中老年人很容易出現腎陽虛，因此這個年紀的人如果出現小便困難，通常就是這個原因所造成的。\\n\\n腎陽虛造成的小便不利，在冬天機率很高\\n\\n從大量現代人的經絡數據中完全可以印證這個事實，從腎經與膽經胃經陽虛的能量趨勢看來，這3條經絡一起出現虛證的機率，在冬天到達了最高點。同時在冬季也有不少會員回報出現小便不通的現象，尤其是45歲以上機率更高。\\n\\n現代人腎經高機率出現虛證，夏天與鐵三角經絡型態結合，冬天與陽虛經絡型態結合，因此只要是腎氣虛弱的人一年四季都有可能出現小便不通，這是必須要特別注意的。\\n\\n尤其是男性前列腺肥大，幾乎都是夏季的鐵三角經絡型態，加上冬季的腎陽經經絡型態所構成，這通常要到中年以上才會穩定出現。現代醫學也發現50-60歲有50％機率出現前列腺肥大，完全不謀而合。\\n\\n因此，善於養生者，一定要提升腎經能量，這樣就可以根本改善慢性長期困擾人的膀胱炎。\\n\\n五、脾胃虛弱(中氣不足)、下腹部瘀血\\n\\n傳統中醫還提到所謂的「中氣不足」會造成小便不通，這其實與上面的所有背後原因都是一樣的，由於鐵三角經絡型態脾經長期虛證，因此脾胃運化能力不佳。\\n\\n上面提到肝氣鬱結的人，通常都會出現脾胃障礙，長期脾胃虛弱的人，也會出現排尿困難，伴隨各種脾胃症狀(食慾不佳、肚子脹氣、大便稀溏...等等)。\\n\\n除了是季節性的影響，平日生活習慣(壓力、熬夜晚睡)也會造成鐵三角經絡型態，必須要改變生活習慣才會根本改善。\\n\\n2022年8月初時有一位會員H先生就回報，由於該年夏天非常熱，全球處於熱浪狀態，他幾乎每天都晚上1點才睡。漸漸地發現自己的脾胃功能變差，食慾不佳，白天沒有精神，後腦杓常常暈暈的，經常還會出現背痛，分享經絡圖如下：\\n\\n2022年經常熬夜造成脾胃虛弱，中氣不足案例\\n\\n有些人長期喝冰水或寒涼食物，造成腹部經絡阻塞，外是車禍外傷造成下腹部瘀血，也會出現排尿困難，這時候可以運用「經絡療法」，或是運用活血化瘀中藥，將下腹部的瘀血化開，即可改善長期慢性的排尿障礙。\\n\\n古代中醫也有運用導尿術治療小便不通，由於這是現代醫學的強項，嚴重到需要導尿時，是一定要到醫院去就診的，中醫的角色是用來平時保養及預防疾病才具有意義。\",\"western_pathology_zh\":\"「排尿困難」是指在排尿過程出現困難，尿不出來的現象，有時可能會伴隨疼痛，小便無力需要用力、排尿啟動緩慢、小便延遲、排尿不乾淨(殘尿感)、尿滯留(尿不完)...等等。\\n\\n小便困難通常是泌尿道感染發炎所引起，但也可能是其他疾病的症狀，例如：中樞神經病變、脊髓外傷、膀胱病變、腫瘤或結石、帶狀泡疹、尿道狹窄、前列腺肥大、過動性膀胱、子宮脫垂、骨盆底肌肉不能放鬆、膀胱頸功能失調、免疫神經疾病...等等。\\n\\n現代許多女性上班族，因為工作需求而必須久坐、憋尿，讓肌肉長期處於緊繃狀態，逐漸無法放鬆，導致排尿困難。同時，女性膀胱出口阻塞的機率最高達到25%。\\n\\n年紀大的男性容易出現排尿障礙，約有50%以上是攝護腺肥大引起。長期排尿困難，最終容易造成膀胱、腎臟功能受損及尿毒症，所以一定要儘早治療。\\n\\n現代醫學治療排尿困難的方法，經常運用藥物，或用手加壓腹部輔助排尿，或運用導尿管或手術治療。醫生會建議進行膀胱訓練，骨盆底肌肉強化訓練(例如：凱格爾運動(Kegel)或提臀運動)。\\n\\n如果一個人長期出現排尿障礙，又找不出明確的原因或治療效果不佳的時候，就很適合運用中醫的理論來探討，尤其是短暫出現的排尿困難，有可能只是經絡氣血的障礙所造成。\"}",
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "western_pathology_en": [
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ]
+   }
   },
   {
    "id": "cond.interstitial_cystitis",
@@ -25050,8 +25246,8 @@
     "pattern.blood_stasis"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "間質性膀胱炎屬中醫「淋證」「膀胱痛」範疇，病位在膀胱，與腎、肝相關。病久濕熱蘊結下焦，膀胱氣化不利，可見尿頻尿急、小便澀痛、膀胱區脹痛；情志不遂，肝氣鬱結，疏泄失常，氣機不暢，亦可致膀胱氣化受阻，症狀隨情緒緊張而加重；病程遷延，反覆發作，耗傷腎氣，腎陽不足，膀胱失於溫煦，則見尿意頻頻而排出無力、小腹冷痛；若陰虛內熱，虛火擾動膀胱，可見尿頻尿痛而尿檢無明顯感染徵象、夜尿頻多、手足心熱；久病入絡，瘀血阻滯膀胱脈絡，則膀胱區疼痛纏綿不癒、痛有定處，與濕熱、肝鬱、腎虛諸候相互夾雜，形成虛實並見之慢性頑固病證。",
+   "western_pathology_zh": "間質性膀胱炎/膀胱疼痛症候群是一種慢性非細菌性膀胱疾病，以反覆膀胱區或骨盆疼痛合併尿頻、尿急為特徵，症狀常於膀胱充盈時加重、排尿後暫時緩解，診斷須排除泌尿道感染、膀胱腫瘤等其他病因。確切機轉未明，可能與膀胱上皮糖胺聚醣（GAG）保護層缺損、尿液中有害物質滲入膀胱壁刺激神經末梢、肥大細胞活化釋放發炎介質，以及中樞神經敏感化（慢性疼痛致痛覺閾值下降）等多重因素相關。膀胱鏡檢查部分患者可見 Hunner 氏病灶或黏膜下點狀出血（glomerulation），但多數患者膀胱鏡檢查無明顯特異性發現，診斷仍以臨床症狀為主要依據，病程反覆遷延，對生活品質影響顯著。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -25083,7 +25279,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Interstitial cystitis falls under the TCM categories of \"painful urinary dribbling\" (lin syndrome) and \"bladder pain,\" located in the bladder, with kidney and liver involvement. Long-standing accumulation of damp-heat in the lower burner impairs bladder qi transformation, producing urinary frequency and urgency, painful urination, and distending bladder-region pain. Emotional disturbance causing liver qi depression with disordered free coursing can likewise impair bladder qi transformation, so symptoms worsen with emotional tension. A protracted, recurrent course depletes kidney qi; when kidney yang is insufficient and the bladder loses warmth, frequent urge with weak stream and lower-abdominal cold pain appear. When yin deficiency generates internal heat that disturbs the bladder, frequent, painful urination occurs without significant infection on urinalysis, along with frequent nocturia and heat in the palms and soles. Long-standing disease entering the collaterals causes blood stasis obstructing the bladder vessels, producing persistent, fixed bladder-region pain that intermingles with damp-heat, liver depression, and kidney deficiency patterns, forming a chronic, intractable condition with mixed deficiency and excess.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Interstitial cystitis/bladder pain syndrome is a chronic, non-bacterial bladder disorder characterized by recurrent bladder or pelvic pain accompanied by urinary frequency and urgency, symptoms typically worsening as the bladder fills and easing temporarily after voiding; the diagnosis requires exclusion of urinary tract infection, bladder tumor, and other causes. The precise mechanism is unclear but may involve multiple factors: defects in the protective glycosaminoglycan (GAG) layer of the bladder urothelium, penetration of noxious urinary substances into the bladder wall irritating nerve endings, mast cell activation releasing inflammatory mediators, and central sensitization (a lowered pain threshold from chronic pain). Cystoscopy reveals Hunner lesions or submucosal petechial hemorrhages (glomerulations) in some patients, but most show no specific findings, so diagnosis remains primarily clinical; the course is chronic and recurrent, with substantial impact on quality of life."
   },
   {
    "id": "cond.overactive_bladder",
@@ -25496,8 +25708,8 @@
     "pattern.damp_heat_lower_burner"
    ],
    "review_status": "draft",
-   "etiology_zh": "正氣不足，臟腑功能失調，氣血津液運化不利。",
-   "western_pathology_zh": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。",
+   "etiology_zh": "非阻塞性尿滯留屬中醫「癃閉」範疇，以小便量少、點滴而出，甚則閉塞不通為主症，病位在膀胱，與腎、肺、脾、肝三焦氣化功能相關，而無明顯有形阻塞之因。多因久病體虛，腎氣不足，腎陽虛衰，命門火衰，膀胱氣化無權，而見小便艱澀、排出無力、腰膝痠冷；中氣不足，脾虛下陷，升舉無力，則氣化不行，可見小便滴瀝不爽、伴神疲乏力、少氣懶言；情志不遂，肝氣鬱結，疏泄失常，氣機壅滯，膀胱氣化受阻，則因情緒緊張而排尿困難加重；若肺熱壅盛，肺失肅降，水道通調失職，亦可致上焦不宣、下焦不通，小便不利。諸因皆以氣化失司為核心病機，治宜辨明虛實，分別以溫補腎陽、益氣升陷、疏肝理氣或宣肺利水為法。",
+   "western_pathology_zh": "非阻塞性尿滯留是指膀胱內尿液無法有效排空，但影像學及理學檢查未發現明顯機械性阻塞（如攝護腺肥大、尿道狹窄、結石）之情形，機轉主要與膀胱逼尿肌收縮功能低下或膀胱-括約肌協同失調有關，常見於神經性膀胱（如糖尿病周邊神經病變、脊髓損傷、多發性硬化症、腦血管疾病影響排尿神經反射）、術後（尤其骨盆腔手術或麻醉後）暫時性膀胱功能抑制，以及特定藥物（抗膽鹼藥物、鴉片類止痛劑、麻醉劑）對逼尿肌收縮之抑制作用。臨床表現為排尿啟動困難、尿流細弱、殘尿感明顯，長期未緩解可致膀胱過度擴張、逼尿肌失代償，甚至上泌尿道逆流性腎功能損害，故須及早釐清病因並處理。",
    "tcm_patterns": [
     {
      "pattern_zh": "氣血不和證",
@@ -25529,7 +25741,23 @@
     "補中益氣湯",
     "柴胡疏肝散"
    ],
-   "entity_type": "biomedical_condition"
+   "entity_type": "biomedical_condition",
+   "etiology_en": "Non-obstructive urinary retention falls under the TCM category of \"dribbling and blockage\" (lung bi), presenting mainly as scanty, dribbling urination or even complete urinary blockage, located in the bladder, with lung, spleen, liver, and triple-burner qi-transformation function involved, but without an evident structural obstruction. It commonly arises from prolonged illness and bodily deficiency with insufficient kidney qi, kidney yang decline, and waning of the life-gate fire, depriving the bladder of the authority to transform qi, producing difficult, weak urination with lower-back and knee soreness and cold sensation. Insufficiency of central qi with spleen deficiency and sinking prevents proper ascent, so qi transformation fails, producing unsatisfying, dribbling urination together with lassitude and shortness of breath with disinclination to speak. Emotional disturbance causing liver qi depression with disordered free coursing leads to qi-mechanism stagnation that obstructs bladder qi transformation, so urinary difficulty worsens with emotional tension. When lung heat is excessive and the lung loses its depurative-descending function, impaired regulation of the water pathways can cause failure of dispersal in the upper burner and blockage in the lower burner, producing difficult urination. In all these, failure of qi transformation is the core pathomechanism; treatment should distinguish deficiency from excess, using methods such as warming and tonifying kidney yang, boosting qi and raising the sunken, coursing the liver and regulating qi, or diffusing the lung and disinhibiting water, as appropriate.",
+   "field_sources": {
+    "etiology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "etiology_en": [
+     "與 etiology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ],
+    "western_pathology_zh": [
+     "curriculum/conditions/ 內查無此病種對應課件（已用「發炎性腸道疾病/脂肪肝/膽道功能障礙/化療噁心/腸麻痺/食物不耐/冠心病/雷諾氏/靜脈曲張/末梢循環/間質性膀胱炎/尿滯留」等中英文關鍵詞全文檢索確認無 Tier-1 課件覆蓋)；依中醫內科學教材通行病因病機辨證框架（依本病實際證型撰寫，非泛用句）+ 西醫消化科/心臟科/泌尿科臨床通識內容撰寫，2026-08-21 撰寫，待 Ting 複核出處。"
+    ],
+    "western_pathology_en": [
+     "與 western_pathology_zh 同步撰寫之忠實英譯，非獨立內容"
+    ]
+   },
+   "western_pathology_en": "Non-obstructive urinary retention refers to ineffective bladder emptying without evidence of mechanical obstruction (such as benign prostatic hyperplasia, urethral stricture, or calculus) on imaging and physical examination; the mechanism mainly involves impaired detrusor contractility or detrusor-sphincter dyssynergia. It is commonly seen in neurogenic bladder (as from diabetic peripheral neuropathy, spinal cord injury, multiple sclerosis, or cerebrovascular disease affecting the micturition reflex), transient postoperative bladder dysfunction (particularly after pelvic surgery or anesthesia), and suppression of detrusor contraction by certain medications (anticholinergics, opioid analgesics, anesthetics). Clinical features include difficulty initiating urination, a weak stream, and marked sensation of incomplete emptying; if unresolved over the long term, it can cause bladder overdistension, detrusor decompensation, and even reflux-related upper urinary tract renal impairment, so prompt identification of the cause and management are essential."
   },
   {
    "id": "cond.bph",
@@ -25817,8 +26045,8 @@
     "pattern.bladder_damp_heat"
    ],
    "review_status": "draft",
-   "etiology_zh": "古代中醫雖然沒有前列腺增生的這個疾病，但是古人曾經記載不少類似的症狀與疾病，例如「白濁」、「精濁」、「癃閉」...等等。\n\n現代醫學發現，前列腺增生容易出現在50歲後，遠在《黃帝內經》就提到，隨著年齡增長，男性腎氣逐漸衰退，就會出現腎氣虛弱的現象。\n\n原文是這樣描述「丈夫五八，腎氣衰，髮墮齒槁；七八，肝氣衰，筋不能動，天癸竭，精少，腎藏衰，形體皆極。」\n\n白話意思是，當男人到了40歲左右，腎氣開始衰退，會出現掉頭髮和牙齒失去光澤的情況。\n\n到了五十六歲左右，肝氣也開始減弱，筋骨不再靈活，體內的精氣減少，腎臟功能下降，整個身體的狀態都會達到一個極限。\n\n古人發現40歲以後男人的腎氣就開始虛弱\n\n傳統中醫普遍認為，此病的病位主要在中醫的腎臟、膀胱及精室，疾病初起以實證居多，日久以虛證居多，病因病機錯綜複雜，基本是濕熱、腎陽虛、肝氣鬱結、氣滯血瘀所造成。\n\n關於男性的前列腺疾病，現代中醫師研究的更為透徹。當代中醫研究名家曲黎敏，在《曲黎敏講黃帝內經》書中明確提到，男性會得到前列腺疾病，一般有三個原因：\n\n忍精不瀉：只要是男人，只要欲念一動，前列腺就會帶著精子出來一小部分，但是使勁憋著不洩精，就容易得前列腺肥大。有些男性認為只要忍精不洩就不會傷害身體，但他不知道的是，欲念一動，精就動，就好比「拉出的屎坐不回去」​，把已經動了的精生生憋回去，已然是敗精，久之則化膿，成炎症，再遇鬱悶寒邪就容易成癌。\n\n久坐不運動\n\n老了，陽氣虛，不能化精，氣瘀、精瘀，就會得病。\n\n以上三種以大白話解釋的原因，事實上就把現代男性會得到前列腺疾病的原因都清楚分析了。尤其是第一點，經常就是現代男性罹患前列腺疾病的主要原因。\n\n所以嚴格說起來，前列腺疾病的背後一定伴隨情緒的相關困擾，一個男人會人忍精不瀉，多半有複雜的心理因素所造成。\n\n忍精不瀉有機會造成攝護腺肥大\n\n大國大陸李海松教授針對男科疾病有非常深入的研究，在《李海松男科指掌》書中提到，「從慢性前列腺炎病因來看，除少數病例有感染性因素以外，絕大多數發病是由不良的生活方式所致。」\n\n「常見的如夫妻分居、忍精不洩、長期酗酒、嗜食辛辣、久坐濕冷之處或長途騎車擠壓、寒冷刺激等，均可導致前列腺導管舒縮功能障礙，前列腺液排出不暢，血液運行障礙，代謝廢物瘀積引起炎症。」\n\n簡而言之，前列腺疾病通常源於下腹部、泌尿系統及陰部附近的經絡長期不暢，造成氣滯和血瘀。\n\n這符合中醫理論中「久痛入絡」、「不通則痛」、「瘀滯則腫」和「瘀滯則凝」的概念。\n\n由於多種原因，患者的絡脈氣滯不通，常見於少腹、睪丸、陰囊、恥骨及肛周等部位出現脹痛或刺痛。\n\n邪氣在絡脈中滯留，導致血液流通不暢形成瘀滯，而津液凝滯則表現為痰。隨著時間的推移，氣滯、血瘀和痰濁逐漸凝聚形成積聚，使前列腺局部出現硬結、腫大，並導致精液液化不完全。\n\n改善的方法很明確，就是運用經絡療法或中藥疏通經絡，去除體內的寒氣、濕氣，或是火熱，依照個別現象來對症下藥。\n\n如果從經絡來理解前列腺的疾病，最簡單的方法就是找一個有前列腺增生的人來進行經絡檢測，就可以知道背後原因。\n\n現代醫學發現前列腺疾病主要發生在中老年人男性身上，從大量現代人經絡數據中發現，通常這種年齡的人，最常出現「綜合經絡型態」，或是「上實下虛」。\n\n下面這位會員就是典型的攝護腺肥大案例，這就是典型的「上實下虛」經絡型態，他是一位肥胖的男性，平常很頻尿卻排尿困難(常常要等很久)，這讓他非常困擾。\n\n男性出現綜合經絡型態之上實下虛，有機會出現前列腺疾病\n\n這種經絡型態的特點，就是體內寒氣重，下半身經絡(肝經、脾經、腎經、膀胱經、膽經與胃經)全部不暢通，通往下腹部泌尿系統及陰部附近的經絡當然也不通，久了一定生病，時間越久也就是年紀越大則越嚴重。\n\n年輕人較不容易出現這種經絡型態，最有可能的原因，就是久坐、不運動。年輕人如果出現這種經絡型態，只要起來運動就會快速改善。\n\n基於此，幾乎可以推斷，一個人如果從年輕就不運動，整天坐著不起身。到中年以後就很有可能出現這種經絡型態，產生前列腺疾病的基本模型。\n\n如果這種人還整天不運動，經常坐著、躺著看色情網站，經常自慰又忍精不射的話，幾乎就可以確認他難逃各種前列腺疾病的困擾。\n\n久坐不運動，容易出現下腹部經絡阻塞\n\n從大量現代人的經絡數據也發現，「上虛下實」及「上實下虛」都代表肚子經絡有阻塞，所以有一定比例的前列腺增生會員，體內確實出現「上虛下實」的經絡型態。\n\n所以不論「上實下虛」或「上虛下實」都要預防這個疾病，小部分比例的鐵三角經絡體質的人，也出現前列腺增生。\n\n用最簡單的概念來理解前列腺增生，就是下腹部的經絡不通，所以從小到大都要疏通經絡，就可以精確預防前列腺疾病。\n\n最主要的經絡有肝經、腎經、脾經。當膽經與胃經虛證時，也會造成前列腺的疾病，至於體內寒氣很重有密切的關係，所以必須溫陽。\n\n除了平時要經常按摩、經絡拍打疏通經絡，配合服用中藥調整寒熱之外，身為男性一定要知道，只要慾念一動，前列腺液就會流出，忍精不瀉完全是錯誤的。\n\n從根本解決的方法就是透過修煉昇華慾望，做不到就就只能正常瀉精，千萬不能忍精不瀉，造成複雜難治的疾病。",
-   "western_pathology_zh": "良性前列腺增生症，又稱「前列腺肥大」或「攝護腺肥大」，是男性隨著年齡增長而常見的疾病。\n\n通常在35歲後開始出現增生，50-60歲的男性50%產生問題，到了80-90歲則有90%的男性有攝護腺肥大的症狀。\n\n早期最常見的症狀包括夜間和日間頻尿、排尿困難、小便無法立即排出。有時會出現滴尿現象，尿量少且排尿無力，排尿時間延長，並常感覺排尿不盡，甚至需要用手壓腹部以協助排尿。\n\n由於排尿不暢，患者易併發細菌性膀胱炎、膀胱結石、前列腺炎及尿路感染，嚴重時可能導致腎功能不全。\n\n一般而言，多數人罹患這種疾病會主動選擇現代醫學治療，如果中醫及經絡的角度來觀察理解，依然是可以預防，甚至改善這種疾病。",
+   "etiology_zh": "慢性攝護腺炎／慢性骨盆疼痛症候群屬中醫「精濁」「白濁」「淋證」範疇。多因濕熱下注，蘊結精室，阻遏氣機，則見尿道灼痛、尿頻尿急、會陰脹痛不適；情志不遂，肝鬱氣滯，或久坐濕熱內蘊，敗精瘀阻精室脈絡，不通則痛，症見會陰、少腹、腰骶墜脹疼痛，病程遷延反覆；病久勞欲過度，耗傷腎氣，腎虛精關不固，兼見腰膝痠軟、遺精早洩、神疲乏力。臨床多屬虛實夾雜，濕熱瘀滯為標，肝鬱腎虛為本。",
+   "western_pathology_zh": "慢性攝護腺炎／慢性骨盆疼痛症候群(NIH第III型，佔所有攝護腺炎九成以上，為最常見類型)，主要表現為持續3個月以上的骨盆、會陰或生殖器疼痛，常合併下泌尿道症狀(頻尿、急尿、尿流無力)，部分伴性功能障礙，但尿液培養通常無明確細菌感染(藉此與第I型急性細菌性、第II型慢性細菌性攝護腺炎區別)。病因機轉尚未完全明朗，目前認為與骨盆底肌肉功能失調、神經發炎反應、既往感染引發持續發炎/神經性疼痛、心理壓力等因素相關。本病與良性攝護腺增生(BPH，另一獨立的年齡相關腺體增生疾病，以阻塞性排尿症狀為主，不一定伴隨疼痛)是不同的疾病，臨床上易被混淆。",
    "tcm_patterns": [
     {
      "pattern_zh": "腎陽虛",
@@ -26047,7 +26275,25 @@
    "entity_type": "biomedical_condition",
    "sources": [
     "https://cloudtcm.com/disease/tcm/873"
-   ]
+   ],
+   "etiology_en": "Chronic prostatitis / chronic pelvic pain syndrome falls within the TCM categories of \"turbid essence\" (jing zhuo) and \"stranguria pattern\" (lin zheng). It commonly arises from damp-heat pouring downward and accumulating in the essence chamber, obstructing qi movement, producing burning urethral pain, frequent urgent urination, and perineal distension and discomfort. Emotional frustration causing Liver qi stagnation, or prolonged sitting with internal damp-heat, can lead to stagnant degenerate essence obstructing the essence chamber's vessels — \"where there is no free flow there is pain\" — presenting as distending pain in the perineum, lower abdomen, and lumbosacral region, with a protracted, relapsing course. In long-standing cases, excessive fatigue or sexual overexertion damages Kidney qi, and Kidney deficiency fails to secure the essence gate, adding lower-back and knee soreness, premature ejaculation or seminal emission, and fatigue. The pattern is typically root-deficiency with branch-excess: damp-heat stasis as the branch, Liver stagnation and Kidney deficiency as the root.",
+   "western_pathology_en": "Chronic prostatitis / chronic pelvic pain syndrome (CP/CPPS, NIH category III, accounting for over 90% of prostatitis cases and the most common subtype) presents as pelvic, perineal, or genital pain lasting more than 3 months, often with lower urinary tract symptoms (frequency, urgency, weak stream) and sometimes sexual dysfunction, typically without a positive urine culture for active bacterial infection (distinguishing it from category I acute bacterial and category II chronic bacterial prostatitis). Its underlying mechanism is not fully understood, with proposed contributors including pelvic floor muscle dysfunction, neurogenic inflammation, ongoing inflammatory or neuropathic pain following a prior infection, and psychological stress. It is a distinct condition from benign prostatic hyperplasia (BPH, a separate age-related glandular enlargement disorder causing obstructive voiding symptoms that does not necessarily involve pain) — a distinction that is frequently confused clinically.",
+   "field_sources": {
+    "etiology_zh": [
+     "2026-08-21 內容錯置修正:原 etiology_zh/western_pathology_zh 逐段核對後確認為「良性前列腺增生症(BPH)」全文(50歲後好發、35歲起增生、80–90歲盛行率)，並非慢性攝護腺炎/慢性骨盆疼痛症候群内容——BPH 是另一獨立疾病，與本卡病名完全不符(非樣板句,是獨立誤植内容,C10 逐字共用檢測抓不到)。原值(含部落格廣告痕跡)逐字保存:{\"etiology_zh\":\"古代中醫雖然沒有前列腺增生的這個疾病，但是古人曾經記載不少類似的症狀與疾病，例如「白濁」、「精濁」、「癃閉」...等等。\\n\\n現代醫學發現，前列腺增生容易出現在50歲後，遠在《黃帝內經》就提到，隨著年齡增長，男性腎氣逐漸衰退，就會出現腎氣虛弱的現象。\\n\\n原文是這樣描述「丈夫五八，腎氣衰，髮墮齒槁；七八，肝氣衰，筋不能動，天癸竭，精少，腎藏衰，形體皆極。」\\n\\n白話意思是，當男人到了40歲左右，腎氣開始衰退，會出現掉頭髮和牙齒失去光澤的情況。\\n\\n到了五十六歲左右，肝氣也開始減弱，筋骨不再靈活，體內的精氣減少，腎臟功能下降，整個身體的狀態都會達到一個極限。\\n\\n古人發現40歲以後男人的腎氣就開始虛弱\\n\\n傳統中醫普遍認為，此病的病位主要在中醫的腎臟、膀胱及精室，疾病初起以實證居多，日久以虛證居多，病因病機錯綜複雜，基本是濕熱、腎陽虛、肝氣鬱結、氣滯血瘀所造成。\\n\\n關於男性的前列腺疾病，現代中醫師研究的更為透徹。當代中醫研究名家曲黎敏，在《曲黎敏講黃帝內經》書中明確提到，男性會得到前列腺疾病，一般有三個原因：\\n\\n忍精不瀉：只要是男人，只要欲念一動，前列腺就會帶著精子出來一小部分，但是使勁憋著不洩精，就容易得前列腺肥大。有些男性認為只要忍精不洩就不會傷害身體，但他不知道的是，欲念一動，精就動，就好比「拉出的屎坐不回去」​，把已經動了的精生生憋回去，已然是敗精，久之則化膿，成炎症，再遇鬱悶寒邪就容易成癌。\\n\\n久坐不運動\\n\\n老了，陽氣虛，不能化精，氣瘀、精瘀，就會得病。\\n\\n以上三種以大白話解釋的原因，事實上就把現代男性會得到前列腺疾病的原因都清楚分析了。尤其是第一點，經常就是現代男性罹患前列腺疾病的主要原因。\\n\\n所以嚴格說起來，前列腺疾病的背後一定伴隨情緒的相關困擾，一個男人會人忍精不瀉，多半有複雜的心理因素所造成。\\n\\n忍精不瀉有機會造成攝護腺肥大\\n\\n大國大陸李海松教授針對男科疾病有非常深入的研究，在《李海松男科指掌》書中提到，「從慢性前列腺炎病因來看，除少數病例有感染性因素以外，絕大多數發病是由不良的生活方式所致。」\\n\\n「常見的如夫妻分居、忍精不洩、長期酗酒、嗜食辛辣、久坐濕冷之處或長途騎車擠壓、寒冷刺激等，均可導致前列腺導管舒縮功能障礙，前列腺液排出不暢，血液運行障礙，代謝廢物瘀積引起炎症。」\\n\\n簡而言之，前列腺疾病通常源於下腹部、泌尿系統及陰部附近的經絡長期不暢，造成氣滯和血瘀。\\n\\n這符合中醫理論中「久痛入絡」、「不通則痛」、「瘀滯則腫」和「瘀滯則凝」的概念。\\n\\n由於多種原因，患者的絡脈氣滯不通，常見於少腹、睪丸、陰囊、恥骨及肛周等部位出現脹痛或刺痛。\\n\\n邪氣在絡脈中滯留，導致血液流通不暢形成瘀滯，而津液凝滯則表現為痰。隨著時間的推移，氣滯、血瘀和痰濁逐漸凝聚形成積聚，使前列腺局部出現硬結、腫大，並導致精液液化不完全。\\n\\n改善的方法很明確，就是運用經絡療法或中藥疏通經絡，去除體內的寒氣、濕氣，或是火熱，依照個別現象來對症下藥。\\n\\n如果從經絡來理解前列腺的疾病，最簡單的方法就是找一個有前列腺增生的人來進行經絡檢測，就可以知道背後原因。\\n\\n現代醫學發現前列腺疾病主要發生在中老年人男性身上，從大量現代人經絡數據中發現，通常這種年齡的人，最常出現「綜合經絡型態」，或是「上實下虛」。\\n\\n下面這位會員就是典型的攝護腺肥大案例，這就是典型的「上實下虛」經絡型態，他是一位肥胖的男性，平常很頻尿卻排尿困難(常常要等很久)，這讓他非常困擾。\\n\\n男性出現綜合經絡型態之上實下虛，有機會出現前列腺疾病\\n\\n這種經絡型態的特點，就是體內寒氣重，下半身經絡(肝經、脾經、腎經、膀胱經、膽經與胃經)全部不暢通，通往下腹部泌尿系統及陰部附近的經絡當然也不通，久了一定生病，時間越久也就是年紀越大則越嚴重。\\n\\n年輕人較不容易出現這種經絡型態，最有可能的原因，就是久坐、不運動。年輕人如果出現這種經絡型態，只要起來運動就會快速改善。\\n\\n基於此，幾乎可以推斷，一個人如果從年輕就不運動，整天坐著不起身。到中年以後就很有可能出現這種經絡型態，產生前列腺疾病的基本模型。\\n\\n如果這種人還整天不運動，經常坐著、躺著看色情網站，經常自慰又忍精不射的話，幾乎就可以確認他難逃各種前列腺疾病的困擾。\\n\\n久坐不運動，容易出現下腹部經絡阻塞\\n\\n從大量現代人的經絡數據也發現，「上虛下實」及「上實下虛」都代表肚子經絡有阻塞，所以有一定比例的前列腺增生會員，體內確實出現「上虛下實」的經絡型態。\\n\\n所以不論「上實下虛」或「上虛下實」都要預防這個疾病，小部分比例的鐵三角經絡體質的人，也出現前列腺增生。\\n\\n用最簡單的概念來理解前列腺增生，就是下腹部的經絡不通，所以從小到大都要疏通經絡，就可以精確預防前列腺疾病。\\n\\n最主要的經絡有肝經、腎經、脾經。當膽經與胃經虛證時，也會造成前列腺的疾病，至於體內寒氣很重有密切的關係，所以必須溫陽。\\n\\n除了平時要經常按摩、經絡拍打疏通經絡，配合服用中藥調整寒熱之外，身為男性一定要知道，只要慾念一動，前列腺液就會流出，忍精不瀉完全是錯誤的。\\n\\n從根本解決的方法就是透過修煉昇華慾望，做不到就就只能正常瀉精，千萬不能忍精不瀉，造成複雜難治的疾病。\",\"western_pathology_zh\":\"良性前列腺增生症，又稱「前列腺肥大」或「攝護腺肥大」，是男性隨著年齡增長而常見的疾病。\\n\\n通常在35歲後開始出現增生，50-60歲的男性50%產生問題，到了80-90歲則有90%的男性有攝護腺肥大的症狀。\\n\\n早期最常見的症狀包括夜間和日間頻尿、排尿困難、小便無法立即排出。有時會出現滴尿現象，尿量少且排尿無力，排尿時間延長，並常感覺排尿不盡，甚至需要用手壓腹部以協助排尿。\\n\\n由於排尿不暢，患者易併發細菌性膀胱炎、膀胱結石、前列腺炎及尿路感染，嚴重時可能導致腎功能不全。\\n\\n一般而言，多數人罹患這種疾病會主動選擇現代醫學治療，如果中醫及經絡的角度來觀察理解，依然是可以預防，甚至改善這種疾病。\"}",
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "etiology_en": [
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "western_pathology_zh": [
+     "2026-08-21 內容錯置修正:原 etiology_zh/western_pathology_zh 逐段核對後確認為「良性前列腺增生症(BPH)」全文(50歲後好發、35歲起增生、80–90歲盛行率)，並非慢性攝護腺炎/慢性骨盆疼痛症候群内容——BPH 是另一獨立疾病，與本卡病名完全不符(非樣板句,是獨立誤植内容,C10 逐字共用檢測抓不到)。原值(含部落格廣告痕跡)逐字保存:{\"etiology_zh\":\"古代中醫雖然沒有前列腺增生的這個疾病，但是古人曾經記載不少類似的症狀與疾病，例如「白濁」、「精濁」、「癃閉」...等等。\\n\\n現代醫學發現，前列腺增生容易出現在50歲後，遠在《黃帝內經》就提到，隨著年齡增長，男性腎氣逐漸衰退，就會出現腎氣虛弱的現象。\\n\\n原文是這樣描述「丈夫五八，腎氣衰，髮墮齒槁；七八，肝氣衰，筋不能動，天癸竭，精少，腎藏衰，形體皆極。」\\n\\n白話意思是，當男人到了40歲左右，腎氣開始衰退，會出現掉頭髮和牙齒失去光澤的情況。\\n\\n到了五十六歲左右，肝氣也開始減弱，筋骨不再靈活，體內的精氣減少，腎臟功能下降，整個身體的狀態都會達到一個極限。\\n\\n古人發現40歲以後男人的腎氣就開始虛弱\\n\\n傳統中醫普遍認為，此病的病位主要在中醫的腎臟、膀胱及精室，疾病初起以實證居多，日久以虛證居多，病因病機錯綜複雜，基本是濕熱、腎陽虛、肝氣鬱結、氣滯血瘀所造成。\\n\\n關於男性的前列腺疾病，現代中醫師研究的更為透徹。當代中醫研究名家曲黎敏，在《曲黎敏講黃帝內經》書中明確提到，男性會得到前列腺疾病，一般有三個原因：\\n\\n忍精不瀉：只要是男人，只要欲念一動，前列腺就會帶著精子出來一小部分，但是使勁憋著不洩精，就容易得前列腺肥大。有些男性認為只要忍精不洩就不會傷害身體，但他不知道的是，欲念一動，精就動，就好比「拉出的屎坐不回去」​，把已經動了的精生生憋回去，已然是敗精，久之則化膿，成炎症，再遇鬱悶寒邪就容易成癌。\\n\\n久坐不運動\\n\\n老了，陽氣虛，不能化精，氣瘀、精瘀，就會得病。\\n\\n以上三種以大白話解釋的原因，事實上就把現代男性會得到前列腺疾病的原因都清楚分析了。尤其是第一點，經常就是現代男性罹患前列腺疾病的主要原因。\\n\\n所以嚴格說起來，前列腺疾病的背後一定伴隨情緒的相關困擾，一個男人會人忍精不瀉，多半有複雜的心理因素所造成。\\n\\n忍精不瀉有機會造成攝護腺肥大\\n\\n大國大陸李海松教授針對男科疾病有非常深入的研究，在《李海松男科指掌》書中提到，「從慢性前列腺炎病因來看，除少數病例有感染性因素以外，絕大多數發病是由不良的生活方式所致。」\\n\\n「常見的如夫妻分居、忍精不洩、長期酗酒、嗜食辛辣、久坐濕冷之處或長途騎車擠壓、寒冷刺激等，均可導致前列腺導管舒縮功能障礙，前列腺液排出不暢，血液運行障礙，代謝廢物瘀積引起炎症。」\\n\\n簡而言之，前列腺疾病通常源於下腹部、泌尿系統及陰部附近的經絡長期不暢，造成氣滯和血瘀。\\n\\n這符合中醫理論中「久痛入絡」、「不通則痛」、「瘀滯則腫」和「瘀滯則凝」的概念。\\n\\n由於多種原因，患者的絡脈氣滯不通，常見於少腹、睪丸、陰囊、恥骨及肛周等部位出現脹痛或刺痛。\\n\\n邪氣在絡脈中滯留，導致血液流通不暢形成瘀滯，而津液凝滯則表現為痰。隨著時間的推移，氣滯、血瘀和痰濁逐漸凝聚形成積聚，使前列腺局部出現硬結、腫大，並導致精液液化不完全。\\n\\n改善的方法很明確，就是運用經絡療法或中藥疏通經絡，去除體內的寒氣、濕氣，或是火熱，依照個別現象來對症下藥。\\n\\n如果從經絡來理解前列腺的疾病，最簡單的方法就是找一個有前列腺增生的人來進行經絡檢測，就可以知道背後原因。\\n\\n現代醫學發現前列腺疾病主要發生在中老年人男性身上，從大量現代人經絡數據中發現，通常這種年齡的人，最常出現「綜合經絡型態」，或是「上實下虛」。\\n\\n下面這位會員就是典型的攝護腺肥大案例，這就是典型的「上實下虛」經絡型態，他是一位肥胖的男性，平常很頻尿卻排尿困難(常常要等很久)，這讓他非常困擾。\\n\\n男性出現綜合經絡型態之上實下虛，有機會出現前列腺疾病\\n\\n這種經絡型態的特點，就是體內寒氣重，下半身經絡(肝經、脾經、腎經、膀胱經、膽經與胃經)全部不暢通，通往下腹部泌尿系統及陰部附近的經絡當然也不通，久了一定生病，時間越久也就是年紀越大則越嚴重。\\n\\n年輕人較不容易出現這種經絡型態，最有可能的原因，就是久坐、不運動。年輕人如果出現這種經絡型態，只要起來運動就會快速改善。\\n\\n基於此，幾乎可以推斷，一個人如果從年輕就不運動，整天坐著不起身。到中年以後就很有可能出現這種經絡型態，產生前列腺疾病的基本模型。\\n\\n如果這種人還整天不運動，經常坐著、躺著看色情網站，經常自慰又忍精不射的話，幾乎就可以確認他難逃各種前列腺疾病的困擾。\\n\\n久坐不運動，容易出現下腹部經絡阻塞\\n\\n從大量現代人的經絡數據也發現，「上虛下實」及「上實下虛」都代表肚子經絡有阻塞，所以有一定比例的前列腺增生會員，體內確實出現「上虛下實」的經絡型態。\\n\\n所以不論「上實下虛」或「上虛下實」都要預防這個疾病，小部分比例的鐵三角經絡體質的人，也出現前列腺增生。\\n\\n用最簡單的概念來理解前列腺增生，就是下腹部的經絡不通，所以從小到大都要疏通經絡，就可以精確預防前列腺疾病。\\n\\n最主要的經絡有肝經、腎經、脾經。當膽經與胃經虛證時，也會造成前列腺的疾病，至於體內寒氣很重有密切的關係，所以必須溫陽。\\n\\n除了平時要經常按摩、經絡拍打疏通經絡，配合服用中藥調整寒熱之外，身為男性一定要知道，只要慾念一動，前列腺液就會流出，忍精不瀉完全是錯誤的。\\n\\n從根本解決的方法就是透過修煉昇華慾望，做不到就就只能正常瀉精，千萬不能忍精不瀉，造成複雜難治的疾病。\",\"western_pathology_zh\":\"良性前列腺增生症，又稱「前列腺肥大」或「攝護腺肥大」，是男性隨著年齡增長而常見的疾病。\\n\\n通常在35歲後開始出現增生，50-60歲的男性50%產生問題，到了80-90歲則有90%的男性有攝護腺肥大的症狀。\\n\\n早期最常見的症狀包括夜間和日間頻尿、排尿困難、小便無法立即排出。有時會出現滴尿現象，尿量少且排尿無力，排尿時間延長，並常感覺排尿不盡，甚至需要用手壓腹部以協助排尿。\\n\\n由於排尿不暢，患者易併發細菌性膀胱炎、膀胱結石、前列腺炎及尿路感染，嚴重時可能導致腎功能不全。\\n\\n一般而言，多數人罹患這種疾病會主動選擇現代醫學治療，如果中醫及經絡的角度來觀察理解，依然是可以預防，甚至改善這種疾病。\"}",
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ],
+    "western_pathology_en": [
+     "2026-08-21 內容錯置修正後重寫;中醫内科學/男科學/婦科學教材通行病因病機 + 西醫臨床醫學通識,待 Ting 複核出處"
+    ]
+   }
   },
   {
    "id": "cond.erectile_dysfunction",
