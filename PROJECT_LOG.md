@@ -1,4 +1,38 @@
-# 2026-08-21 Claude — pattern-v2→main 併回 Phase C:中藥庫(HB-B1~B10)整檔取代,main 這邊的批次確認已被涵蓋
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase B:formulas/tdis/conditions 逐欄位併,scripts/ 整批補齊
+
+- **做法**:formulas.json / tdis_registry.json / condition_canon_shortlist.json 三個檔案雙邊都真的改過
+  (`bothChanged` 189/40/88 筆),不能像 Phase A/C 整檔套用。寫了一個逐欄位三方合併腳本:以 pattern-v2 版本
+  為底,對每一筆兩邊都動過的記錄,逐欄位比對——**只有 main 動過、pattern-v2 完全沒碰過**的欄位(值仍等於
+  共同祖先)才把 main 的值疊上去;pattern-v2 也動過的欄位維持 pattern-v2 的版本。這樣不會用「筆數贏」的
+  粗暴邏輯蓋掉 main 的具體修正,也不會反過來丟掉 pattern-v2 的內容。
+  - formulas.json:263 個欄位從 main 疊回(方歌 71 首、中英未對齊修復、composition_suspect_cleared_note、
+    `formula.xie_xin_tang` 整組身分欄位——composition/actions/pattern_indications/source_classic 等)。
+  - tdis_registry.json:13 個 `classical_source` 欄位。
+  - condition_canon_shortlist.json:127 個欄位(related_patterns 59、etiology_en 28、western_pathology_en 26
+    等)。
+  - `formula.yu_nv_jian`(main 判定為 玉女煎 重複卡、已合併進 `formula.yu_nu_jian` 並刪除):pattern-v2 這邊
+    從沒動過這筆、兩份重複卡都還在——腳本刻意不自動刪,列出來人工核對後手動刪除,確認沒有其他記錄引用它
+    (`related_formulas`/家族連結掃過,零引用)才刪,`yu_nu_jian` 那邊的欄位合併已經由前面的逐欄位邏輯帶上。
+- **意外發現且已處理**:main 對 `data/pathology/condition_canon_shortlist.json` 跟 `tdis_registry.json` 的
+  驗證器(`validate-condition-standard.js`/`validate-tdis-standard.js`)是舊版,pattern-v2 這邊各自往前
+  改了 236 行/17 行——換成新版本後 `condition-standard` 476/505 clean(55 blocking，主要是 C9 _en 有填但
+  _zh 空、C6 一筆 pattern id 沒解到)、`tdis-standard` **0 blocking**(84 筆新記錄正確被判定為「skeleton
+  index slot,允許 deferred」,不是缺陷)。用main 舊驗證器跑會誤判成 583+84 個新缺陷,是驗證器版本不對,
+  不是資料真的壞——這提醒了一件事:**data 跟它的驗證器要一起搬,不能只搬 data**。順勢把 `scripts/` 整批
+  改用 pattern-v2 版本(main 這邊自己動過的腳本只有一支——今天早上加的 `validate-herb-standard.js` E10,
+  已確認 pattern-v2 從未碰過那支檔案,E10 的 patch 原樣重新套用在 pattern-v2 版本上,沒有遺失)。
+  `.github/workflows/validate.yml` 刻意不動——main 有一個小的 CI 修正(concurrency 通知風暴,7a034a17)
+  pattern-v2 那邊差了 349 行,兩邊都真的改過需要另外處理,不在這批範圍內。
+- **驗證**:`build-data.js` PASS;`validate-formula-standard.js` PASS(0 blocking，唯一警示是
+  `formula.hao_qin_qing_dan_tang` 組成裡的「碧玉散」沒接上 `herb.bi_yu_san` 的 herb_id,pre-existing,
+  非阻擋);`validate-formula-song.js` PASS(201/223 已有方歌);`validate-condition-standard.js` 476/505
+  clean(55 blocking);`validate-tdis-standard.js` PASS(0 blocking);`validate-content-junk.js` PASS
+  (WARN 都是 pattern-v2 自己已凍結追蹤的已知項目,不是新增);`check-validation-ratchet.js` **BETTER**
+  (conditions 376→55、tdis 75→0),已 `--update` 落地新 baseline。
+- **待辦**:`.github/workflows/validate.yml` 雙邊分岔待處理;formula.hao_qin_qing_dan_tang 的碧玉散連結
+  可以順手修但這批先不做,留一條線索。
+
+
 
 - **背景**:main 上原本有兩層中藥工作——antigravity batch1/2(29+23 味 `_en` 回填,昨天我修過裡面混入的中文)
   跟 pattern-v2 的 HB-B1~B10 線(8/14,352→358 筆,十批連跑+Fable 驗收)。兩邊 `bothChanged` 分析(以三方共同

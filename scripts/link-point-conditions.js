@@ -62,10 +62,23 @@ const patterns = JSON.parse(fs.readFileSync(PATTERNS, "utf8")).records;
 const patKey = (s) => String(s || "").trim().replace(/[證症]$/, "");
 const patByName = new Map(patterns.map((p) => [patKey(p.name_zh), p.id]));
 
+// legacy pat.<中文> → canonical pattern.<slug>(data/config/pattern_alias_map.json)
+const ALIAS = (() => {
+  const doc = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data/config/pattern_alias_map.json"), "utf8")
+  );
+  const out = {};
+  for (const [k, v] of Object.entries(doc.aliases || {})) {
+    out[k] = typeof v === "string" ? v : v && v.pattern_id;
+  }
+  return out;
+})();
+
 const condLinks = new Map();   // point code → [condition ids]
 const patLinks = new Map();    // point code → [pattern ids]
 const unmatchedCodes = new Set();
 const unmatchedPatterns = new Set();
+const unregisteredLegacy = new Set();
 
 const push = (map, code, id) => {
   if (!map.has(code)) map.set(code, []);
@@ -85,8 +98,15 @@ for (const c of conds) {
 
   // 中醫證候 — each pattern names its own points.
   for (const p of c.tcm_patterns || []) {
-    const pid = patByName.get(patKey(p.pattern_zh));
+    let pid = patByName.get(patKey(p.pattern_zh));
     if (!pid) { if (p.pattern_zh) unmatchedPatterns.add(p.pattern_zh); continue; }
+    /* 紅線 1:新寫入只准 canonical pattern.<slug>。legacy canon 給的是
+       pat.<中文>,先過 alias map 轉 canonical;轉不了的(pending_registration
+       或 catch-all)攔下回報,不落一個新的 legacy id 進資料。既有記錄裡的
+       legacy id 不動(alias map 政策:legacy 永不改寫),但別再生新的。 */
+    const canonical = ALIAS[pid];
+    if (!canonical) { unregisteredLegacy.add(pid + "（" + (p.pattern_zh || "") + "）"); continue; }
+    pid = canonical;
     for (const a of p.acupoints_zh || []) {
       const code = normalizeCode(a);
       if (!code || !byCode.has(code)) { unmatchedCodes.add(String(a)); continue; }
@@ -95,20 +115,38 @@ for (const c of conds) {
   }
 }
 
+/* ⚠️ 併集,不是覆寫。這兩個欄位如今不只一條線在寫:
+   tcm_pattern_ids 另有 apply-acupoint-pattern-links.js(帳本推導)與
+   既有 44 點的 legacy pat.<中文>;related_conditions 也可能被手工策展。
+   直接 `r.x = links` 會把別條線的成果整欄洗掉——這個 repo 已經被
+   「合併時整檔覆寫」燒過(knowledge.js),資料層不准再犯。
+   field_sources 同理:append 具名來源,不清掉別人的。 */
+const SRC_COND = "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）";
+const SRC_PAT = "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）";
+const union = (existing, add) => {
+  const out = [...(existing || [])];
+  const seen = new Set(out);
+  for (const x of add) if (!seen.has(x)) { seen.add(x); out.push(x); }
+  return out;
+};
+const appendSource = (r, field, src) => {
+  r.field_sources = r.field_sources || {};
+  const list = r.field_sources[field] || [];
+  if (!list.includes(src)) list.push(src);
+  r.field_sources[field] = list;
+};
 let nCond = 0, nPat = 0;
 for (const r of recs) {
   const cs = condLinks.get(r.code);
   if (cs && cs.length) {
-    r.related_conditions = cs;
-    r.field_sources = r.field_sources || {};
-    r.field_sources.related_conditions = ["data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"];
+    r.related_conditions = union(r.related_conditions, cs);
+    appendSource(r, "related_conditions", SRC_COND);
     nCond++;
   }
   const ps = patLinks.get(r.code);
   if (ps && ps.length) {
-    r.tcm_pattern_ids = ps;
-    r.field_sources = r.field_sources || {};
-    r.field_sources.tcm_pattern_ids = ["data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"];
+    r.tcm_pattern_ids = union(r.tcm_pattern_ids, ps);
+    appendSource(r, "tcm_pattern_ids", SRC_PAT);
     nPat++;
   }
 }
@@ -123,6 +161,7 @@ console.log(`病證連結 related_conditions   ${nCond}/${recs.length} 穴   中
 console.log(`證候連結 tcm_pattern_ids      ${nPat}/${recs.length} 穴   中位數 ${dp.med}，最多 ${dp.max}`);
 console.log(`  代碼正規化失敗   ${unmatchedCodes.size}${unmatchedCodes.size ? " → " + [...unmatchedCodes].slice(0, 8).join(" ") : ""}`);
 console.log(`  證候名不在 canon ${unmatchedPatterns.size}${unmatchedPatterns.size ? " → " + [...unmatchedPatterns].slice(0, 6).join("、") : ""}`);
+console.log(`  legacy 無 canonical 對映(不落庫) ${unregisteredLegacy.size}${unregisteredLegacy.size ? " → " + [...unregisteredLegacy].slice(0, 6).join("、") : ""}`);
 
 // The busiest points are worth eyeballing: a point linked to nearly every
 // condition means the link carries no information and should be questioned.
