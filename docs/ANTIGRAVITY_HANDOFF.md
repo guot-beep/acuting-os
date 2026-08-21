@@ -1,26 +1,50 @@
-# Antigravity Session Handoff Report — Pattern Registry 3D Structure Preserved
+# Antigravity Task Queue — 每次來先讀這份，做完更新這份
 
-**Date**: 2026-07-31  
-**Agent**: Antigravity  
-**Branch**: `antigravity/bl-refinement`  
-
----
-
-## 1. Summary of Round 4 Fixes Completed
-
-### A. Preserved main's 3D Pattern Registry Architecture
-- Checked out `scripts/build-pattern-registry.js` directly from `origin/main`.
-- Appended the 13 missing Chinese pattern names directly into `main`'s `NAME_ZH` mapping without touching the script structure.
-- Executed `node scripts/build-pattern-registry.js --write`.
-
-### B. Pattern Registry Metrics Verification
-- **Total Patterns**: 59 (10 parent categories, 49 concrete patterns).
-- **Has Chinese Name**: **59 / 59 (100% PASS)**, zero missing (`needs_name_zh: 0`).
-- **3D Multi-axis Structure Preserved**: 10 parent categories, 48 `system` entries, and 31 `member_of` multi-axis classifications 100% intact.
+這份是「現在該做什麼」，不是報告。報告照舊寫回 `PROJECT_LOG.md` 置頂（`docs/HERB_FILL_DISPATCH.md` 的慣例）。
+做完一項就把它從下面「待辦」搬到「已完成」，並附 commit hash。
 
 ---
 
-## 2. Automated Validation Results
-- `node scripts/build-pattern-registry.js`: **59/59 patterns with name_zh (100% PASS)**
-- `node scripts/build-data.js`: **PASS**
-- `node scripts/validate-interactions.js`: **PASS (0 warnings, 0 failures)**
+## ⚠️ 先讀：中藥分類批次填補暫停中
+
+Batch 1（清熱藥 29 味）跟 Batch 2（清熱解毒藥 23 味）都已經落地 `main`，謝謝，也謝謝照規則把 `_en`
+欄位改成純英文。
+
+**先不要再開新的中藥分類批次**（不管是補虛、祛濕、瀉下、理氣……任何分類都不要）。原因：Claude 這邊發現
+另一支分支（`codex/pattern-v2`）已經對全庫 358 味中藥做過更完整的雙語欄位回填（`actions_en` 100%、
+`cautions_en` 99%、`modern_functions_en` 75%），但還沒併回 `main`，而且那支分支跟 `main` 在中藥、穴位、
+藥理（PHARM）好幾個資料夾都已經分岔了一大段（不只中藥）。在那支分支的內容併回 `main` 之前，任何新分類
+批次都有很高機率整批白做或跟它撞車。這邊處理好會回來更新這份文件、解除暫停。
+
+---
+
+## ✅ 現在可以做 — Task 1：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
+
+**範圍**：`main` 上現有 352 味中藥卡（`data/herbs/herb_canon_shortlist.json`），全部 352 味，不限分類。
+
+**背景**：`validate-herb-standard.js` 剛加了 E10，能抓「整條中文完全沒翻譯、直接複製貼上」這種明顯錯誤
+（Batch 1 就是這種），但抓不到「翻了、但翻錯了」或「翻譯本身讀不通」這種語意層問題——那個只能靠人讀卡。
+
+**做什麼**：逐張卡片對照 `functions_zh` / `modern_functions_zh` / `cautions_zh` 跟它們對應的 `_en`
+翻譯，找三類問題：
+1. **翻譯跟中文原意明顯不符**（不是用詞選擇的差異，是意思翻錯了、甚至翻反了）
+2. **英文本身不通順到會誤導使用者**（不是挑文筆好壞，是真的看不懂、或會讓人理解成別的意思）
+3. **中文源頭本身有明顯亂碼、重複貼上、或內容跟這味藥對不上**（例如某味藥的功效欄位其實是別的藥的內容）
+
+**不要做**：不要自己改 `herb_canon_shortlist.json` 裡的任何欄位、不要下架或搬動任何內容。這是唯讀稽核，
+找出來交給 Claude 或 Ting 判斷要不要改。
+
+**輸出**：新增一份新檔案 `docs/audits/HERB_SEMANTIC_QA_2026-08-21.md`（`docs/audits/` 資料夾不存在就新建）。
+每一條問題寫：`herb.<id>`（藥名）、欄位名、中文原文、目前的英文翻譯、你認為的問題、建議修法（不需要真的改，
+寫建議就好）。沒問題的卡不用寫，只列有問題的。
+
+**驗證**：做完後 `git status` 應該只多出這一份新檔案，`data/` 底下完全零異動——這條是唯讀稽核，不是填補。
+
+---
+
+## 已完成（供參考，不用重做）
+
+- Batch 1：清熱藥 29 味 `_en`/`dosage` 回填（`2b599640`）→ 語言修復（`ac02dcde`，把混入的 100 個中文詞條
+  翻回英文）→ 已落地 `main`
+- Batch 2：清熱解毒藥 23 味 `_en`/`dosage` 回填，純英文鐵律貫徹（`9cd4ffde`）→ 已落地 `main`
+- `validate-herb-standard.js` 新增 E10：`_en` 欄位混入未翻譯中文的機器斷言（`0180b6db`）

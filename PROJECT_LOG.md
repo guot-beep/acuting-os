@@ -72,6 +72,54 @@
 - **下一批**：P4 派工單已可直接發（§5.1 prompt 已改為指向骨架）。骨架 54 筆 `verdict` 全空，
   待 Antigravity 逐條裁決；回收後由 Claude 依 `mirror_paths` 決定兩條資料線各修哪些，再走 gate。
 
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase C:中藥庫(HB-B1~B10)整檔取代,main 這邊的批次確認已被涵蓋
+
+- **背景**:main 上原本有兩層中藥工作——antigravity batch1/2(29+23 味 `_en` 回填,昨天我修過裡面混入的中文)
+  跟 pattern-v2 的 HB-B1~B10 線(8/14,352→358 筆,十批連跑+Fable 驗收)。兩邊 `bothChanged` 分析(以三方共同
+  祖先 `1ff208bd` 為 base):31 筆 pre-existing 記錄雙邊都動過、296 筆只有 pattern-v2 動過、`onlyMain=0`——main
+  改過的每一筆 pattern-v2 也都改過。另外 17 味藥是雙邊各自獨立新增(名稱、分類 15/17 一致,顯然是同一味藥
+  的兩份獨立草稿,不是身分衝突)。
+- **落地前查證(不是憑「筆數多就贏」直接套用)**:
+  1. 抽查 shi_gao/zhi_mu(batch1 混中文的重災區)——pattern-v2 版本乾淨純英文,而且 `condition_tags_en`
+     刻意留空,不是塞進翻譯過的功效內容——這正是我在批一修復報告裡標記給 Ting 的「疑似欄位錯置」問題,
+     pattern-v2 這邊做對了。
+  2. 31 筆雙邊都動過的記錄逐一比對 `safety_flags` 與 `dosage`(臨床風險最高的兩欄):**零筆不一致**。
+  3. 用剛加的 E10(`_en` 混中文斷言)整檔掃過 pattern-v2 版本:**0 命中**,358 筆全乾淨。
+- **做了什麼**:`data/herbs/herb_canon_shortlist.json` 整檔改用 pattern-v2 版本(352→358 筆)。main 這邊
+  antigravity batch1/2 的回填等於是被 pattern-v2 更完整、更早、且經過 Fable 裁決的版本涵蓋掉了，沒有額外
+  搬移動作。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` PASS(0 structural defects，`actions_en` 100%、
+  `cautions_zh` 99%、bilingual gaps 掛零);`validate-content-junk.js` PASS;`check-validation-ratchet.js` PASS。
+- **待 Ting 裁定(不是我能單方面選的)**:17 味雙邊獨立新增的藥裡，2 味分類不一致——`herb.xiao_mai`(小麥:
+  pattern-v2 標「補虛藥/Tonify Qi」、main 原本標「安神藥/Calm Spirit」)、`herb.xiao_shi`(硝石:pattern-v2
+  「瀉下藥/Drain Downward」、main 原本「瀉下藥/Harsh Expellants」)。目前落地的是 pattern-v2 的分類，
+  未改動的話請視為待覆核，不是定案。
+
+
+
+- **背景**:發現 `codex/pattern-v2`(本機另一支長期分支)跟 `main` 已分岔 695 vs 39 commits、93 個檔案、
+  39 萬行等級。開新分支 `claude/pattern-v2-main-reconcile` 分階段併回，這是第一批——只挑「main 完全沒動過、
+  pattern-v2 純疊加」的域，逐檔用 3-way 記錄比對（`bothChanged`/`onlyMain`/`onlyPattern`）確認零風險才落地：
+  - `data/acupoints/361.json`:pattern-v2 版本為底，重新套用 main 唯一動過的一處錯字修復(「科泌尿」→「泌尿」，
+    兩處 exam_pearl/examPearl 都補)——不是簡單覆蓋，是先確認 main 改了什麼、再把那個改動疊回去。
+  - `data/acupoints/extra_points.json`、`data/symptoms/symptoms.json`(3→102)、`data/supplements/supplements.json`
+    (main 上不存在，新增)、`data/pharmacology/*`(drugs 15→59、加 4 個新檔)、`data/clinical_cases/*`
+    (SQLite 遷移 schema、outcome_metrics 等):逐檔核對 main 版本 === base 版本(bothChanged=0、onlyMain=0)
+    才整檔套用 pattern-v2 版本。
+  - symptoms 一開始因為依賴 `data/clinical_cases/outcome_metrics.json` 的新 metric 定義而 Y6 FAIL 4 筆
+    （metric id 找不到），確認 main 對 clinical_cases 目錄同樣零改動後，把整個目錄也併了，4 筆全過。
+- **驗證**:`build-data.js` PASS;`validate-acupoint-standard.js` PASS(0 blocking);`validate-pharm-standard.js`
+  PASS(0 阻擋);`validate-symptom-standard.js` PASS(102/102 clean，N3 4 筆僅為通用紅旗合併建議、非阻擋);
+  `validate-content-junk.js` PASS;`check-validation-ratchet.js` PASS(conditions/patterns/tdis/symptoms/naming
+  全部 flat，symptoms 0 沒有變壞)。
+- **範圍確認**:`git status` 只動了上述五個域 + 對應 `data/generated/*`，沒碰 herbs/formulas/conditions/tdis/
+  comparisons——那些 main 跟 pattern-v2 雙邊都真的改過，需要逐筆判斷，留給 Phase B/C。
+- **待辦**:`data/research_staging/**`(CR010 condition 擴充的工作檔，`build-data.js` 沒有引用，非產品資料)
+  這批刻意不搬，等 Phase B 做 conditions 擴充時再評估要不要留。
+- **下一步**:Phase C(herbs：main 現在 352 筆含 batch1/2/E10，pattern-v2 358 筆含 HB-B1~B10，需要三方合併，
+  且要把 E10 驗證器規則也帶回 pattern-v2)；Phase B(formulas/conditions/tdis/comparisons：雙邊都真的改過，
+  已確認 main side 至少兩個具體修正 pattern-v2 沒有——玉女煎重複卡合併、瀉心湯身分重建——逐筆比對不能省)。
+
 # 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
 
 - **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
