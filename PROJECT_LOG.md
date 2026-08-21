@@ -1,3 +1,10 @@
+# 2026-08-20 Antigravity — 待命與派工單請求 (Standby & Work Dispatch Request)
+
+- **做了什麼**: 完成 GitHub 遠端更新同步 (`main` commit `7a034a17`) 與全系統狀態與文件審視。跑完基礎驗證 (`build-data.js` PASS, `validate-interactions.js` PASS, `validate-content-junk.js` PASS)。確認目前尚無專屬 Antigravity 的新作業單。
+- **數字 before→after**: 系統狀態維護於全綠 baseline，無未合併之異動。
+- **驗證**: `node scripts/build-data.js` PASS; `node scripts/validate-interactions.js` PASS; `node scripts/validate-content-junk.js` PASS; `git status` clean (分支: `antigravity/dispatch-request-20260820`)。
+- **待命與請求派工 (STOP / Awaiting Dispatch)**: 依據 `AI_CONSTITUTION.md` §五，Antigravity 當前處於待命狀態，向 Ting / 主管請求下一批派工單。派工單需包含五項要素：(1) 允許的檔案 (2) 禁止的檔案 (3) 這批的 ID 清單 (4) 驗證指令 (5) 完成的定義。
+
 # 2026-08-19 Claude — 第二輪(PR #62):C10 假填重填 wave 1、加減表抽盡、方歌批3、瀉心湯善後
 
 - **做了什麼**:PR #60 合併後分支自 main 重建。瀉心湯身分裁定(Ting 授權):卡上為半夏瀉心湯內容(逐欄機器驗證與正卡逐字相同)→ 依方名重建為《金匱》瀉心湯(大黃黃連黃芩),原值逐字存 correction_note(已隨 #60 合併)。
