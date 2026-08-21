@@ -198,11 +198,11 @@ function probeB(r) {
 const CUN = /旁開\s*([\d.．]+)\s*寸/g;
 function probeC(r) {
   const byField = new Map();
+  const textOf = new Map();
   for (const [fpath, s] of walk(r, "$")) {
-    const field = fpath.split(".")[1] || "";
     const vals = new Set();
     for (const m of s.matchAll(CUN)) vals.add(m[1].replace("．", "."));
-    if (vals.size) byField.set(fpath, [...vals]);
+    if (vals.size) { byField.set(fpath, [...vals]); textOf.set(fpath, s); }
   }
   const anchor = [...byField.entries()].find(([p]) => /location_zh|cun_measurement/.test(p));
   if (!anchor) return;
@@ -211,11 +211,14 @@ function probeC(r) {
     if (fpath === anchor[0]) continue;
     const diff = vals.filter((v) => !anchorVals.has(v));
     if (!diff.length) continue;
+    // excerpt 必須是原檔逐字存在的一句 —— 合成的摘要既不可回驗，也不能拿來做取代。
+    const whole = textOf.get(fpath) || "";
+    const sentence = whole.split(/[。\n]/).find((x) => new RegExp("旁開\\s*" + diff[0].replace(".", "\\.") + "\\s*寸").test(x));
     add({
       type: "C", label: "cun_disagreement",
       code: r.code, chinese: r.chinese, field: fpath.split(".")[1] || "",
-      json_path: fpath, excerpt: `旁開 ${diff.join("/")} 寸`,
-      conflict: `${anchor[0]} 說旁開 ${[...anchorVals].join("/")} 寸`,
+      json_path: fpath, excerpt: (sentence !== undefined ? sentence : whole),
+      conflict: `本句寫旁開 ${diff.join("/")} 寸，但 ${anchor[0]} 說旁開 ${[...anchorVals].join("/")} 寸`,
     });
   }
 }
