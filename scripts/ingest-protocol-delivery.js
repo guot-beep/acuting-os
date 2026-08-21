@@ -30,6 +30,13 @@ const CANON = path.join(ROOT, "data/pathology/condition_canon_shortlist.json");
 
 /* 各批獨有、要收進 evidence 底下的欄位。新增批次時加在這裡就好。 */
 const EXTRA_FIELDS = [
+  /* 2026-08-21 修正:下面兩個原本不在這份清單裡,結果 B3/B4/B5 三批共 93 條
+     **有出處的臨床警語**在落庫時被整個丟掉 —— 包括 B4 的酒精戒斷急症路徑
+     (CIWA-Ar 分層、Wernicke)、CYP1A2 停菸交互作用、B3 十張的自傷轉診路徑。
+     我當時複核的是「交付檔裡有沒有」,不是「卡片上有沒有」,所以全綠。
+     這兩個欄位是本任務收集的主要價值之一,絕不能只留在交付檔裡。 */
+  "condition_specific_cautions_zh",      // 逐病警語(帶 source_ids)
+  "referral_red_flags_zh",               // 轉診/急症路徑(帶 source_ids)
   "sensory_loss_safety_zh",              // B5 神經
   "local_needling_contraindications_zh", // B8 心血管/皮膚
   "identical_protocol_explanation",      // 全批共用規則

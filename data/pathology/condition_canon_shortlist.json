@@ -26689,8 +26689,6 @@
             "certainty": "not_graded"
           }
         ],
-        "collected_by": "SOL B3 2026-08-14",
-        "no_source_found": false,
         "points_detail": [
           {
             "code": "HT7",
@@ -26708,6 +26706,41 @@
               "S2"
             ]
           }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "新發或非典型焦慮若伴明顯胸痛、暈厥、不規則心悸、低血糖疑慮或甲狀腺功能亢進等器質性線索，應先做醫療評估；急診焦慮鑑別包含心肌梗塞、心律不整、hyperthyroidism、pheochromocytoma、hypoglycemia 等。",
+            "source_ids": [
+              "S4"
+            ]
+          },
+          {
+            "text": "GAD 的完整評估需同時考慮共病憂鬱／其他焦慮症、物質使用與共病醫療疾病；針灸不應延後這些評估。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "非常顯著功能受損、自我忽視、高自傷風險、重大共病或對既有 step-3 治療反應不足，應轉 specialist mental-health / crisis-level assessment，而不是提高針灸強度。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "unresolved": [
+          "直接 GAD RCT 未提供可核對的 HAMA MCID；本輪未用其他診斷的 HAMA threshold 代替。",
+          "器質性焦慮 mimic 的轉診敘述來自急診 anxiety/panic guideline，並非針灸試驗安全規則。"
         ]
       }
     },
@@ -27561,9 +27594,50 @@
             "certainty": "not_graded"
           }
         ],
+        "points_detail": [],
         "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
         "no_source_found": false,
-        "points_detail": []
+        "condition_specific_cautions_zh": [
+          {
+            "text": "首次恐慌樣發作或表現非典型時，不應先假定為精神科 panic；NICE 要求在急診完成必要最低限度檢查以排除 acute physical problems。",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "text": "急診鑑別須考慮 acute MI／arrhythmia、hyperthyroidism、pheochromocytoma、hypoglycemia 等可模仿 panic 的疾病。",
+            "source_ids": [
+              "S4"
+            ]
+          },
+          {
+            "text": "若臨床懷疑 pulmonary embolism，應走 validated acute-PE evaluation pathway；不可因有焦慮或恐慌感而先把症狀歸因為 panic disorder。",
+            "source_ids": [
+              "S5"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "新發胸痛、呼吸困難、暈厥、血流動力學異常、明顯不規則心律或其他可能急性心肺／代謝疾病的表現，先做急症醫療評估，再談恐慌症。",
+            "source_ids": [
+              "S3",
+              "S4",
+              "S5"
+            ]
+          }
+        ],
+        "unresolved": [
+          "2025 electroacupuncture study目前取得的是 published protocol；未找到可用的 panic-disorder subgroup efficacy result，因此不建立 PC6 或 TF4 為本卡穴位。",
+          "TF4 是耳穴 Shenmen，若未來有 panic-specific 結果，必須 modality=auricular 並保留耳穴系統，不能改寫成體針 HT7。"
+        ]
       }
     },
     {
@@ -27952,8 +28026,6 @@
             "certainty": "not_graded"
           }
         ],
-        "collected_by": "SOL B3 2026-08-14",
-        "no_source_found": false,
         "points_detail": [
           {
             "code": "LR3",
@@ -28072,6 +28144,35 @@
               "S3"
             ]
           }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "針灸不是 VA/DoD PTSD CPG 的 first-line intervention；若使用只能與既有 evidence-based PTSD care 並行，不得宣稱可替代 trauma-focused psychotherapy。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "該 RCT 在研究流程中定期篩查 suicidal/homicidal ideation 與 anger/irritability，at-risk participant 由 qualified clinician 評估，顯示精神風險監測是此研究介入的一部分。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          }
+        ],
+        "unresolved": [
+          "未找到 VA/DoD 對『針刺、臥位或針感誘發 dissociation／re-traumatization』的針灸專屬操作閾值；不自行制定。",
+          "本 RCT 主要是 combat veterans，不能直接外推複雜性 PTSD（CPTSD）或 acute stress disorder。"
         ]
       }
     },
@@ -28411,9 +28512,48 @@
             "certainty": "not_graded"
           }
         ],
+        "points_detail": [],
         "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
         "no_source_found": false,
-        "points_detail": []
+        "condition_specific_cautions_zh": [
+          {
+            "text": "兒童／青少年與成人 ADHD 必須分開：NICE 要求由具 ADHD 診斷專長者進行完整臨床、發展與精神病史評估；成人新診斷需確認症狀自童年開始並造成至少中度功能損害。",
+            "source_ids": [
+              "S4"
+            ]
+          },
+          {
+            "text": "兒童與青少年應在適合其發展程度下參與治療規劃與決策；本卡不建立跨法域的 consent 年齡門檻。",
+            "source_ids": [
+              "S4"
+            ]
+          },
+          {
+            "text": "不得因 acupuncture evidence 而建議自行減量或停用 ADHD medication；NICE 的 medication review / discontinuation 應由具 ADHD 管理專長的醫療人員處理。",
+            "source_ids": [
+              "S4"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "兒童或青少年若注意／行為問題造成 severe impairment，應直接轉 secondary/specialist ADHD service；成人疑似 ADHD 亦需 specialist diagnostic assessment。",
+            "source_ids": [
+              "S4"
+            ]
+          }
+        ],
+        "unresolved": [
+          "本輪未找到符合本任務標準、可直接套用到 adult ADHD 的 needle-acupuncture RCT；不得由兒童方案外推。",
+          "TEAS 與 auricular acupressure 皆有 point-level data，但介入不是 body needle acupuncture，刻意不寫進 points。"
+        ]
       }
     },
     {
@@ -28606,9 +28746,30 @@
             "certainty": "not_graded"
           }
         ],
+        "points_detail": [],
         "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
         "no_source_found": false,
-        "points_detail": []
+        "condition_specific_cautions_zh": [
+          {
+            "text": "Burnout 依 ICD-11 只指 chronic workplace stress 的 occupational context；若低落、失去興趣、認知／睡眠／功能問題廣泛存在於非工作情境，不能僅用 burnout 解釋，需評估其他醫療或精神健康診斷。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          }
+        ],
+        "unresolved": [
+          "Burnout direct acupuncture-related evidence幾乎都在 auricular systems；沒有合格證據支持把 NADA 五點或任何 body-acupuncture regimen 寫成本卡處方。",
+          "本卡計入 evidence_from_auricular_only，但因 evidence 不支持 burnout effectiveness，points 仍為空。"
+        ]
       }
     },
     {
@@ -28816,8 +28977,6 @@
             "certainty": "not_graded"
           }
         ],
-        "collected_by": "SOL B3 2026-08-14",
-        "no_source_found": false,
         "points_detail": [
           {
             "code": "ST36",
@@ -28835,6 +28994,54 @@
               "S3"
             ]
           }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "PEM 是 ME/CFS 核心特徵之一，可在很小活動後 12–48 小時延遲惡化並持續數日或更久；施術與活動安排需避免讓病人超過 energy limit。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "不得建議固定增量的 graded exercise therapy，亦不應以『去健身房／多運動』取代 specialist-tailored energy management，因可能惡化症狀。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "疑似 ME/CFS 仍需排除其他診斷；NICE列出的基本調查包含 CBC、electrolytes、LFT、thyroid、CRP/ESR、HbA1c、ferritin、coeliac screen、CK，並依臨床需要加 B12/folate 等。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "severe/very severe ME/CFS 對 sensory stimulation 與 pressure of touch 可能特別敏感；任何針刺方案都應服從病人當下 tolerance，而不是照研究頻率硬做。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "新出現或進展中的症狀若不符合既有 ME/CFS pattern，或基礎檢查提示貧血／鐵缺乏、甲狀腺、腎肝、代謝等可逆或其他疾病，應先回醫療團隊完成鑑別。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "現有 acupuncture RCT 的 CFS 定義與現行 ME/CFS/PEM case definition 未必完全一致，不能把研究結果無條件套到所有 ME/CFS。",
+          "本輪 NICE ME/CFS source未提供 sleep-apnea-specific screening threshold；若臨床有疑似 OSA，應走獨立睡眠醫學評估，不自行在本卡造閾值。",
+          "不把 long-COVID fatigue 文獻移植到此卡。"
         ]
       }
     },
@@ -29243,8 +29450,6 @@
             "certainty": "not_graded"
           }
         ],
-        "collected_by": "SOL B3 2026-08-14",
-        "no_source_found": false,
         "points_detail": [
           {
             "code": "BL23",
@@ -29350,6 +29555,54 @@
               "S3"
             ]
           }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "所有 clinically significant RLS 應規律檢查 ferritin 與 transferrin saturation；AASM consensus 對成人提出 ferritin ≤75 ng/mL 或 TSat <20% 的 iron-treatment consideration，75–100 ng/mL 時若補鐵則偏向 IV iron。這是醫療處置門檻，不是針灸適應證。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "RLS 首先處理加重因素：alcohol、caffeine、antihistaminergic、serotonergic、antidopaminergic medications 與 untreated obstructive sleep apnea。不得自行停病人的抗憂鬱劑或其他處方藥，應與開藥醫師協調。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "dopamine agonists／levodopa 長期使用的 augmentation 風險需由睡眠／神經醫療團隊評估；AASM 2025 對多個 dopamine agonists 已建議 against standard use，並特別指出 augmentation。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "pregnancy 是 RLS 常見特殊族群；任何治療需另外評估 pregnancy-specific safety。CKD/ESRD 亦有獨立管理路徑。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "低 ferritin／低 transferrin saturation、CKD/ESRD、疑似 untreated OSA、妊娠或疑似 medication-induced/augmentation RLS，需回睡眠醫學／神經科或相關主治團隊評估，不應只做針灸。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "IRLS MCID 文獻（PMID 24051118）不是本任務列出的 guideline/SR/RCT/textbook/protocol 類型，故不塞入 sources；只作解讀警示。",
+          "2017 RCT 報告『每週3次、4週、共10次』存在次數算術不一致；delivery 原樣標註，不自行修正。",
+          "AASM 2025 guideline不推薦 acupuncture；本卡 points 只來自 add-on RCT，不能升格為 guideline regimen。"
         ]
       }
     },
@@ -30137,7 +30390,62 @@
         ],
         "points_detail": [],
         "collected_by": "SOL B4 2026-08-15",
-        "no_source_found": false
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "戒菸會逆轉菸煙對 CYP1A2 的誘導；正在使用 clozapine、olanzapine、theophylline 或其他重要 CYP1A2 substrate 的病人，減量或停止吸菸後藥物濃度可能上升，應通知開藥者並監測副作用／必要時調整劑量。這是煙霧成分的作用，不是尼古丁本身，因此使用 NRT 也不會保留原本的酵素誘導。",
+            "source_ids": [
+              "S5",
+              "S6"
+            ]
+          },
+          {
+            "text": "非孕成人應優先獲得有確定效益的 behavioral counseling 與 FDA-approved pharmacotherapy；不應因使用針灸而延遲或取代 NRT、bupropion、varenicline 或行為介入。",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "text": "孕婦戒菸由產科／初級照護體系提供行為介入；USPSTF 對孕期戒菸藥物的效益與危害目前仍判定證據不足。針灸資料不能用來填補這個藥物證據缺口。",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "text": "使用 varenicline 或 bupropion、或在戒菸過程中若出現新發／惡化的憂鬱、躁動、行為異常或自殺意念，應立即聯絡醫療人員；這是戒菸安全監測路徑，不代表大型試驗已證明藥物增加嚴重神經精神事件。",
+            "source_ids": [
+              "S7",
+              "S3"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "戒菸期間出現自殺意念／行為、新發嚴重精神症狀、躁狂、危險衝動或無法維持自身安全：優先精神健康／急症評估，而不是增加針灸頻率。",
+            "source_ids": [
+              "S7"
+            ]
+          },
+          {
+            "text": "孕婦或可能懷孕者需要戒菸治療時，應連結產科／初級照護的 pregnancy-specific cessation pathway；不要自行套用非孕成人的藥物或針灸研究方案。",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "text": "病人正在服用 clozapine、olanzapine、theophylline 等受吸菸影響的藥物而準備大幅減量／停止吸菸時，應在戒菸初期通知開藥醫療團隊以安排監測。",
+            "source_ids": [
+              "S5",
+              "S6"
+            ]
+          }
+        ],
+        "unresolved": [
+          "規格校正：『所有主要結果都必須是生化驗證的≥6個月持續戒菸率』比 Cochrane 的實際 long-term outcome rule 更嚴格。Cochrane 使用6個月至1年的最後測量、每項試驗最嚴格 abstinence definition，並在有提供時優先使用生化驗證。因此不可把 Cochrane 整體結果描述成所有試驗均為 biochemically verified continuous abstinence。本批仍採用 Ting/Fable 指定的更嚴格落庫門檻。",
+          "2018 Wang et al. RCT 為24週 CO-confirmed 24-hour point abstinence，不是 continuous abstinence，因此沒有用它建立 points。",
+          "耳穴/auricular 短期訊號未轉寫成體針證據，也未用 NADA 五點填本卡。"
+        ]
       }
     },
     {
@@ -30315,9 +30623,42 @@
             "certainty": "not_graded"
           }
         ],
+        "points_detail": [],
         "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
         "no_source_found": false,
-        "points_detail": []
+        "condition_specific_cautions_zh": [
+          {
+            "text": "SSD 可與真實、已診斷的醫療疾病並存；不能因『找不到病因』本身下 SSD，也不能因已有 SSD 就拒絕對新紅旗或客觀惡化做必要檢查。",
+            "source_ids": [
+              "S2"
+            ]
+          },
+          {
+            "text": "本批 acupuncture evidence 多是 SSRI/SNRI add-on；不得寫成可替代精神科藥物、心理治療或持續醫療追蹤。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "出現新的客觀神經缺損、生命徵象異常、進行性體重下降、出血、發燒或其他可能重大器質疾病線索時，仍需按症狀重新醫療評估；SSD 標籤不能封住 diagnostic work-up。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "unresolved": [
+          "納入 SR 的 point-level regimens 受 older ICD-10 PSPD/somatoform diagnosis 污染，因此刻意不搬入 points。",
+          "若未來要建 current DSM-5/DSM-5-TR SSD protocol，需直接納入該診斷且清楚報穴的 RCT。"
+        ]
       }
     },
     {
@@ -30589,8 +30930,6 @@
             "certainty": "not_graded"
           }
         ],
-        "collected_by": "SOL B3 2026-08-14",
-        "no_source_found": false,
         "points_detail": [
           {
             "code": "GV20",
@@ -30718,6 +31057,49 @@
               "S2"
             ]
           }
+        ],
+        "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "『記憶變差』不是單一診斷。可逆或其他原因包含 thyroid/kidney/liver problems、medication side effects、depression/anxiety、alcohol/drugs、sleep problems、B12/nutrition，以及 head injury、brain lesion/infection 等；應先釐清病因。",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "text": "研究 evidence 是 SCD，不是 MCI 或 dementia；不得把穴位方案移植成失智症治療或 Alzheimer prevention。",
+            "source_ids": [
+              "S1",
+              "S3"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "記憶／認知改變若持續數週、進展，或已影響帳務、時間定向、對話、日常功能，應轉做正式 cognitive assessment 與 medical work-up，而不是只以針灸追蹤。",
+            "source_ids": [
+              "S3",
+              "S4"
+            ]
+          },
+          {
+            "text": "急性 confusion/delirium、突然神經缺損或近期頭傷後認知變化屬醫療評估優先。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "unresolved": [
+          "本 RCT 的 composite cognitive Z score 沒有可核對 MCID；MRI hippocampal changes 為 surrogate/biomarker，不等於臨床功能恢復。",
+          "不將 SCD 結果移植到 MCI、Alzheimer disease 或其他 dementia。"
         ]
       }
     },
@@ -30962,7 +31344,85 @@
         ],
         "points_detail": [],
         "collected_by": "SOL B4 2026-08-15",
-        "no_source_found": false
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "急性酒精戒斷不是針灸門診自行處理的對象。ASAM將 CIWA-Ar <10 列為 mild、10–18 moderate、≥19 severe；seizure、delirium/confusion 或新發 hallucinations 屬 complicated withdrawal。CIWA-Ar 依賴病人自述，已有 delirium 時不應依 CIWA-Ar 作唯一評估。",
+            "source_ids": [
+              "A1"
+            ]
+          },
+          {
+            "text": "CIWA-Ar ≥19、既往 withdrawal seizure/delirium、正在出現 seizure/delirium、明顯自主神經不穩定、嚴重共病或無安全支持者，需要醫療監督的 withdrawal treatment／住院或急症層級評估；benzodiazepines 是預防與治療 severe/complicated withdrawal 的標準一線藥物之一。",
+            "source_ids": [
+              "A1"
+            ]
+          },
+          {
+            "text": "Wernicke encephalopathy 是急症。高風險包括營養不良/吸收不良、嚴重 withdrawal、decompensated liver disease；疑似 confusion、ataxia、眼球運動異常或其他相符表現時需立即醫療評估與 parenteral thiamine，不得等針灸反應。",
+            "source_ids": [
+              "A1",
+              "A2",
+              "A6"
+            ]
+          },
+          {
+            "text": "肝病、黃疸/腹水/肝性腦病、疑似 GI bleeding（hematemesis、melena 等）、pancreatitis、明顯營養不良、跌倒/頭部外傷或其他急性外傷，均需先處理醫療問題；針灸不能把這些併發症重新標成『戒斷不舒服』。",
+            "source_ids": [
+              "A6",
+              "A7"
+            ]
+          },
+          {
+            "text": "AUD 的 evidence-based treatment 包括 behavioral health treatment、FDA-approved medications（naltrexone、acamprosate、disulfiram）以及適當 mutual-support；withdrawal management 本身也不等於完成 AUD treatment。",
+            "source_ids": [
+              "A1",
+              "A5"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "現在或近期酒精戒斷伴 seizure、delirium/confusion、新發 hallucinations、CIWA-Ar ≥19 或無法可靠參與評估：立即轉急症/醫療監督 withdrawal management；已有 delirium 時不要用 CIWA-Ar 當唯一決策工具。",
+            "source_ids": [
+              "A1"
+            ]
+          },
+          {
+            "text": "有既往 withdrawal seizure 或 delirium tremens、嚴重自主神經不穩定（例如明顯血壓/心率異常）、嚴重內外科/精神科共病，或缺乏安全照護支持者：高風險 withdrawal，優先 inpatient/medically supervised pathway。",
+            "source_ids": [
+              "A1",
+              "A2"
+            ]
+          },
+          {
+            "text": "疑似 Wernicke encephalopathy（尤其營養不良/嚴重 withdrawal 中出現 confusion、ataxia、眼球運動異常）或高風險營養缺乏：立即醫療處理與 thiamine pathway。",
+            "source_ids": [
+              "A2",
+              "A6"
+            ]
+          },
+          {
+            "text": "hematemesis/melena、失血或循環不穩、黃疸合併腹水/encephalopathy、嚴重腹痛疑 pancreatitis、跌倒或頭傷後神經症狀：先急症/醫療評估。",
+            "source_ids": [
+              "A6",
+              "A7"
+            ]
+          },
+          {
+            "text": "若有自傷／自殺意念、無法維持安全或嚴重精神狀態改變，轉精神健康危機/急症評估；不要把症狀單純歸因於 AUD、withdrawal 或『排毒反應』。",
+            "source_ids": [
+              "A2"
+            ]
+          }
+        ],
+        "unresolved": [
+          "NADA 是 auricular intervention；即使來源稱 NADA，也沒有把耳穴改寫成任何 body-acupuncture code。",
+          "2023 meta-analysis 的陽性主要是 craving/withdrawal/anxiety/depression scale，不是 sustained abstinence 或 heavy-drinking days，因此不提升 protocol_status。",
+          "CIWA-Ar 是 withdrawal severity 工具，不是單獨決定 disposition 的萬用門檻；ASAM要求結合既往 complicated withdrawal、共病、vital signs、支持環境與臨床判斷。",
+          "急性 alcohol withdrawal、delirium tremens、withdrawal seizure、Wernicke encephalopathy 皆不屬本卡可由針灸處理的 therapeutic scope。"
+        ]
       }
     },
     {
@@ -31254,9 +31714,60 @@
             "certainty": "not_graded"
           }
         ],
+        "points_detail": [],
         "collected_by": "SOL B3 2026-08-14",
+        "assessed": true,
         "no_source_found": false,
-        "points_detail": []
+        "condition_specific_cautions_zh": [
+          {
+            "text": "醫療不穩定優先於任何 complementary care：severe electrolyte imbalance、severe malnutrition、severe dehydration 或 incipient organ failure 需 acute medical care / emergency admission。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "需評估 ECG risk factors，包括 rapid weight loss、severe purging、bradycardia、hypotension、electrolyte imbalance、previous abnormal rhythm 等；NICE 舉例 bradycardia <40 bpm 或 prolonged QT 可能需要 inpatient active monitoring。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "住院決策不得只靠單一 BMI/體重門檻；需看 rate of weight loss、medical risk、blood tests、observations、ECG 與整體穩定性。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "需要 medical stabilisation/refeeding 且無法 outpatient 完成者應入 medical inpatient/day service；refeeding 必須由具 eating-disorder medical monitoring 能力的團隊依 protocol 執行，針灸不處理 refeeding-syndrome risk。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "若揭露近期自傷／自殺意念、已有自傷，或 suicidal intent 正在增加：先確認即時身體與心理安全；若安全無法維持或有急性醫療危險，優先轉急性／危機精神醫療；其餘安排優先精神健康評估並共同建立 safety plan（警訊、因應、支持者、緊急聯絡、限制可致命手段）。",
+            "source_ids": [
+              "S_SH"
+            ]
+          },
+          {
+            "text": "severe electrolyte imbalance、severe dehydration、severe malnutrition、incipient organ failure、需要主動監測的 marked bradycardia（NICE例 <40 bpm）或 prolonged QT：急性醫療／住院層級評估。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "text": "疑似 eating disorder 應及早轉 specialist eating-disorder service；不要等到極低 BMI 才轉介。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "NICE guideline明確 against acupuncture as eating-disorder treatment，因此 pilot RCT 的穴位不進正式 points。",
+          "Pilot RCT僅 medically stable anorexia nervosa；不得外推 bulimia nervosa 或 binge-eating disorder。"
+        ]
       }
     },
     {
@@ -35976,6 +36487,28 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "抗血小板／抗凝治療不得因針灸自行停藥；需核對出血風險、針刺位置與深度，並以局部壓迫等常規方式處理小量出血。",
+            "source_ids": [
+              "ST5"
+            ]
+          },
+          {
+            "text": "若出現新的 FAST/focal neurologic deficit，這是可能的急性中風而不是『復健波動』，優先 EMS/急性中風評估。",
+            "source_ids": [
+              "ST4"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "任何新發臉歪、單側無力／麻木、言語障礙、視覺或平衡急變等疑似急性中風表現：立即走急性中風急症路徑，不先施針。",
+            "source_ids": [
+              "ST4"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [],
         "unresolved": [
           "未找到足以建立『中風患側感覺缺失時施灸／溫針』具體安全閾值的 stroke-specific guideline；不自行制定熱度、時間或針深。",
@@ -36319,6 +36852,22 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "傘狀 neuropathy 必須先確認病因；糖尿病、B12/營養、酒精/毒物、藥物、壓迫、免疫/發炎、感染與遺傳性病因不可用同一配穴邏輯取代診斷。",
+            "source_ids": [
+              "PN1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "急性或亞急性快速進展的對稱無力／上行性麻痺，尤其合併顱神經、呼吸功能或 autonomic dysfunction：應緊急神經科／急症評估 Guillain-Barré syndrome。",
+            "source_ids": [
+              "PN2"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [
           {
             "text": "若這張傘狀卡的實際病因是糖尿病且已有 loss of protective sensation，足部熱療與傷口風險應改依 diabetic-neuropathy/diabetic-foot 安全路徑；這條不能外推到所有 neuropathy 病因。",
@@ -36591,6 +37140,34 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "糖尿病/DPN 的主線仍包括 glycemic/diabetes management、DPN etiologic review 與 foot-care surveillance；針灸不取代這些管理。",
+            "source_ids": [
+              "DPN3"
+            ]
+          },
+          {
+            "text": "任何 open ulcer、unexplained swelling、erythema 或 increased skin temperature 應 urgent referral to foot-care specialist/interprofessional team；PAD symptoms/absent pulses 需 vascular assessment。",
+            "source_ids": [
+              "DPN3"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "足部 open ulcer、感染疑慮、紅腫熱、疑 Charcot foot、PAD/ischemia 或無法癒合的傷口：先足病／血管／糖尿病團隊 urgent evaluation，不在病灶足部照常施針。",
+            "source_ids": [
+              "DPN3"
+            ]
+          },
+          {
+            "text": "DPN 表現若 acute/subacute、asymmetric、non-length-dependent 或以 motor weakness 為主，屬 atypical feature，應評估其他 neuropathy 病因／神經科轉診。",
+            "source_ids": [
+              "DPN3"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [
           {
             "text": "有 loss of protective sensation 的足部可能無法察覺 minor trauma；足部應在每次相關就診檢查皮膚與傷口，高風險足需要更密集 surveillance。",
@@ -37023,6 +37600,47 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "PHN 本身定義為 rash onset 後疼痛持續超過90天；有 active vesicles 的病人仍在 acute herpes zoster pathway，不能直接套 PHN trial regimen。",
+            "source_ids": [
+              "PHN2"
+            ]
+          },
+          {
+            "text": "活動性帶狀疱疹 lesions 具有傳染性，直到乾燥結痂；應覆蓋病灶並避免接觸 vesicular fluid。PHN RCT 沒有驗證在 active blister 上／旁施針的安全性。",
+            "source_ids": [
+              "PHN2"
+            ]
+          },
+          {
+            "text": "免疫抑制者較易 severe/generalized/disseminated zoster；需降低以『普通 PHN』處理的門檻。",
+            "source_ids": [
+              "PHN2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "眼部/三叉神經眼支帶狀疱疹（HZO）、眼痛/視力改變：urgent medical/ophthalmic evaluation；CDC 強調 early antiviral treatment，尤其為防 corneal involvement/vision loss。",
+            "source_ids": [
+              "PHN2",
+              "PHN3"
+            ]
+          },
+          {
+            "text": "免疫抑制者出現廣泛皮疹、跨多皮節、神經/肺/肝症狀，需評估 disseminated zoster。",
+            "source_ids": [
+              "PHN2"
+            ]
+          },
+          {
+            "text": "急性 shingles 應儘早接受 antiviral medical treatment；CDC 指治療在 symptom onset 72 小時內最有效。",
+            "source_ids": [
+              "PHN3"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [],
         "unresolved": [
           "未找到 guideline-level acupuncture source 指定 active vesicle 周邊『禁止針刺幾公分』；因此不創造 exclusion-zone 數字。安全處置採『active zoster ≠ PHN trial population，先走 acute-zoster pathway』。",
@@ -37384,6 +38002,28 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "不得自行停／減 levodopa 或其他 antiparkinsonian medication；NICE 明確警告 abrupt withdrawal 可能造成 acute akinesia 或 neuroleptic malignant syndrome，劑量變更應與 PD specialist 討論。",
+            "source_ids": [
+              "PD2"
+            ]
+          },
+          {
+            "text": "orthostatic hypotension 是 PD 重要跌倒/傷害來源；若頭暈、近暈厥或跌倒增加，需 review dopaminergic、antihypertensive、anticholinergic、antidepressant 等可能誘因。",
+            "source_ids": [
+              "PD2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "反覆暈厥、嚴重姿勢性低血壓、頻繁跌倒/受傷、新發嚴重 hallucination/delusion 或急性運動惡化，優先 PD/medical review，而不是把針灸加量。",
+            "source_ids": [
+              "PD2"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [],
         "unresolved": [
           "本卡正式 points 只代表 PD-insomnia RCT；沒有用 sleep outcome 外推 motor symptom control。",
@@ -37722,6 +38362,34 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "MS-related fatigue 可被 heat 觸發；NICE 明確指出 heat 可能誘發／加重 fatigue。對已知 heat-sensitive/Uhthoff-like 症狀者，避免把 moxibustion、warm needling 或其他加熱療法當成預設選項；這是基於 heat sensitivity 的安全推論，不是 NICE 的針灸專屬禁忌。",
+            "source_ids": [
+              "MS2"
+            ]
+          },
+          {
+            "text": "疲勞不可一律歸因 MS；要評估 sleep problems、pain/spasticity/bladder dysfunction、medication effects、infection、anemia、thyroid dysfunction、anxiety/depression 等。",
+            "source_ids": [
+              "MS2"
+            ]
+          },
+          {
+            "text": "不得因 acupuncture response 自行減少或停用 disease-modifying therapy；DMT 與 relapse management 應由 MS specialist pathway處理。",
+            "source_ids": [
+              "MS2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "新 neurological symptom 或既有症狀惡化 >24h，且在先前至少1個月穩定後、無感染/其他原因，需評估 MS relapse；影響 usual tasks 的 relapse 應儘早並在 onset 14 days 內由專業團隊評估治療。",
+            "source_ids": [
+              "MS2"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [],
         "unresolved": [
           "未找到 MS-specific acupuncture/moxibustion guideline 直接規定熱療溫度或施灸禁區；僅能根據 NICE heat sensitivity 作保守 inference，不能造數字。",
@@ -37888,6 +38556,28 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "ET 的標準 established pharmacologic options 仍包括 propranolol/primidone 等；針灸資料不授權自行減藥或停藥。",
+            "source_ids": [
+              "ET2"
+            ]
+          },
+          {
+            "text": "ET 典型核心是 action tremor；若是突然出現、明顯單側或合併 weakness、ataxia、rigidity/bradykinesia 等其他神經徵象，不宜直接當作典型 ET，應做 neurological evaluation。",
+            "source_ids": [
+              "ET2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "突發顫抖、單側進行性顫抖或合併其他局灶/新神經徵象：轉神經科釐清 secondary tremor、parkinsonism、stroke/structural cause，而不是先建立 ET 針灸方案。",
+            "source_ids": [
+              "ET2"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [],
         "unresolved": [
           "Alcohol responsiveness may occur in ET but is not treated here as a diagnostic test or treatment; no alcohol-use advice is generated from this card.",
@@ -38289,6 +38979,34 @@
         "collected_by": "SOL B5 2026-08-15",
         "assessed": true,
         "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "Ménière disease 診斷需要典型 episodic vertigo、documented low-to-mid-frequency sensorineural hearing loss 與 fluctuating aural symptoms；BPPV、vestibular migraine、vestibular neuritis 等不能拿來替代其 evidence。",
+            "source_ids": [
+              "MD2"
+            ]
+          },
+          {
+            "text": "既有醫療管理常含 lifestyle/diet modification 與 medical/surgical options；針灸的低確定性 evidence 不應使病人停用既有處置。",
+            "source_ids": [
+              "MD2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "突然新發 sensorineural hearing loss 不要當成一般 Ménière fluctuation 等待針灸。AAO-HNS 建議盡快做 audiometry（14天內），可在 onset 2週內考慮 corticosteroids；未完全恢復者 2–6週有 intratympanic steroid salvage window。",
+            "source_ids": [
+              "MD3"
+            ]
+          },
+          {
+            "text": "sudden hearing loss 合併 focal neurologic findings、bilateral/recurrent sudden loss，或需排 retrocochlear pathology 時應走 ENT/audiology/neurologic work-up；SSNHL guideline 建議 MRI 或 ABR 評估 retrocochlear pathology。",
+            "source_ids": [
+              "MD3"
+            ]
+          }
+        ],
         "sensory_loss_safety_zh": [],
         "unresolved": [
           "未從 2024 SR 取『高頻穴』拼成處方；review 本身強調 point/session/technique heterogeneity。",
