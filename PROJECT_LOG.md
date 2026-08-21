@@ -1,3 +1,17 @@
+# 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
+
+- **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
+  陣列有沒有對齊(E5),從沒查過 `_en` 欄位自己的內容是不是真的英文。補 E10:陣列/字串項目裡「有 CJK 但完全沒有
+  拉丁字母」判定為未譯,直接複製 `_zh` 來源沒翻譯。刻意排除「英文正文夾一小段中文原詞」的合法寫法(例如
+  `indications_en` 裡 `"...hernia-like masses (疝瘕)"`——這種有大量英文,不會誤判)。寫規則前先掃過全庫確認
+  這個判準目前 0 筆命中(不會讓 PASS 變 FAIL),寫完後注入一條合成回歸(把 shi_gao 的 actions_en 改回中文)
+  驗證 E10 真的會抓、`--worklist` 也真的會列出來,再撤掉測試檔案。
+- **驗證指令與結果**:
+  - `node scripts/validate-herb-standard.js`(真實資料):PASS,0 defects(E10 沒有誤殺任何既有卡片)
+  - 注入回歸測試(暫存副本,未進 repo):PASS——正確噴出 `E10 herb.shi_gao: actions_en has 1 untranslated Chinese item(s)...`
+- **已知限制**:判準是「整條 CJK、零拉丁字母」,抓的是「忘記翻譯、整條複製過去」這種明顯錯誤;
+  抓不到「翻譯錯但語法上是英文」這種語意層問題,那個仍要靠人讀卡。
+
 # 2026-08-20 Antigravity — 中藥卡填補 Batch 2 (清熱解毒藥 23 味補全 & 純英文 _en 鐵律貫徹)
 
 - **做了什麼**: 完成第二批 23 味清熱解毒藥卡（金銀花、連翹、紫花地丁、大青葉、板藍根、魚腥草、白頭翁、射干、馬勃、穿心蓮、山豆根、馬齒莧、垂盆草、敗醬草、天葵子等）之補全。嚴格執行「`_en` 欄位純英文鐵律」，寫入腳本層 CJK 斷言（全庫 `_en` 陣列混入 CJK 中文字元次數已歸零 `0`）。依 `curriculum/herbs/` Chenoweth 課件及中藥典補齊 `condition_tags_en`、`modern_functions_en`、`actions_en` 與 8 味 `dosage`，並為所有欄位寫入 `field_sources`。未虛構任何數字。
