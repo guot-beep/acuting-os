@@ -1,4 +1,29 @@
-# 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase A:穴位/藥理/symptoms/supplements/clinical_cases 純疊加落地
+
+- **背景**:發現 `codex/pattern-v2`(本機另一支長期分支)跟 `main` 已分岔 695 vs 39 commits、93 個檔案、
+  39 萬行等級。開新分支 `claude/pattern-v2-main-reconcile` 分階段併回，這是第一批——只挑「main 完全沒動過、
+  pattern-v2 純疊加」的域，逐檔用 3-way 記錄比對（`bothChanged`/`onlyMain`/`onlyPattern`）確認零風險才落地：
+  - `data/acupoints/361.json`:pattern-v2 版本為底，重新套用 main 唯一動過的一處錯字修復(「科泌尿」→「泌尿」，
+    兩處 exam_pearl/examPearl 都補)——不是簡單覆蓋，是先確認 main 改了什麼、再把那個改動疊回去。
+  - `data/acupoints/extra_points.json`、`data/symptoms/symptoms.json`(3→102)、`data/supplements/supplements.json`
+    (main 上不存在，新增)、`data/pharmacology/*`(drugs 15→59、加 4 個新檔)、`data/clinical_cases/*`
+    (SQLite 遷移 schema、outcome_metrics 等):逐檔核對 main 版本 === base 版本(bothChanged=0、onlyMain=0)
+    才整檔套用 pattern-v2 版本。
+  - symptoms 一開始因為依賴 `data/clinical_cases/outcome_metrics.json` 的新 metric 定義而 Y6 FAIL 4 筆
+    （metric id 找不到），確認 main 對 clinical_cases 目錄同樣零改動後，把整個目錄也併了，4 筆全過。
+- **驗證**:`build-data.js` PASS;`validate-acupoint-standard.js` PASS(0 blocking);`validate-pharm-standard.js`
+  PASS(0 阻擋);`validate-symptom-standard.js` PASS(102/102 clean，N3 4 筆僅為通用紅旗合併建議、非阻擋);
+  `validate-content-junk.js` PASS;`check-validation-ratchet.js` PASS(conditions/patterns/tdis/symptoms/naming
+  全部 flat，symptoms 0 沒有變壞)。
+- **範圍確認**:`git status` 只動了上述五個域 + 對應 `data/generated/*`，沒碰 herbs/formulas/conditions/tdis/
+  comparisons——那些 main 跟 pattern-v2 雙邊都真的改過，需要逐筆判斷，留給 Phase B/C。
+- **待辦**:`data/research_staging/**`(CR010 condition 擴充的工作檔，`build-data.js` 沒有引用，非產品資料)
+  這批刻意不搬，等 Phase B 做 conditions 擴充時再評估要不要留。
+- **下一步**:Phase C(herbs：main 現在 352 筆含 batch1/2/E10，pattern-v2 358 筆含 HB-B1~B10，需要三方合併，
+  且要把 E10 驗證器規則也帶回 pattern-v2)；Phase B(formulas/conditions/tdis/comparisons：雙邊都真的改過，
+  已確認 main side 至少兩個具體修正 pattern-v2 沒有——玉女煎重複卡合併、瀉心湯身分重建——逐筆比對不能省)。
+
+
 
 - **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
   陣列有沒有對齊(E5),從沒查過 `_en` 欄位自己的內容是不是真的英文。補 E10:陣列/字串項目裡「有 CJK 但完全沒有

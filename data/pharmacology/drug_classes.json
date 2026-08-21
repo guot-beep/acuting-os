@@ -67,7 +67,10 @@
           "course:Pharmacology Summary#L399-L400"
         ]
       },
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.thiazide_diuretics",
@@ -136,7 +139,10 @@
           "course:Pharmacology Summary#L401-L402"
         ]
       },
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.potassium_sparing_diuretics",
@@ -165,7 +171,10 @@
         ]
       },
       "review_status": "draft",
-      "gap_note_zh": "課件對本類的機轉敘述較少,site_of_action 與 shared_adverse_effects 待官方標籤補。"
+      "gap_note_zh": "課件對本類的機轉敘述較少,site_of_action 與 shared_adverse_effects 待官方標籤補。",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.carbonic_anhydrase_inhibitors",
@@ -220,7 +229,10 @@
         ]
       },
       "adverse_effect_note_zh": "課件標明這些副作用見於「慢性使用」(chronic use)。",
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.osmotic_diuretics",
@@ -245,7 +257,10 @@
         ]
       },
       "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意留 null,不是待補。",
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.vitamin_k_antagonists",
@@ -261,7 +276,11 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.p2y12_inhibitors",
@@ -279,7 +298,11 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.factor_xa_inhibitors",
@@ -305,7 +328,10 @@
           "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#BOXED_WARNING",
           "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#BOXED_WARNING"
         ]
-      }
+      },
+      "sources": [
+        "course:extracted_classes"
+      ]
     },
     {
       "id": "drugclass.direct_thrombin_inhibitors",
@@ -321,7 +347,11 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.cox_antiplatelet",
@@ -337,7 +367,11 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
     },
     {
       "id": "drugclass.heparins",
@@ -353,7 +387,2352 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
+    },
+    {
+      "id": "drugclass.arbs",
+      "name_en": "Angiotensin II receptor blockers (ARBs)",
+      "name_zh": "血管緊張素 II 受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.at1_receptor",
+      "suffix_en": "-sartan",
+      "mechanism_overview_en": "Selectively block angiotensin II binding to AT1 receptors, preventing vasoconstriction and aldosterone secretion.",
+      "mechanism_overview_zh": "選擇性阻斷血管緊張素 II 與 AT1 受體結合，抑制血管收縮與醛固酮釋放。",
+      "indications_en": [
+        "Hypertension",
+        "Diabetic nephropathy",
+        "Heart failure"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "糖尿病腎病變",
+        "心衰竭"
+      ],
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_pilot",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {},
+      "prototype_drug_id": "drug.losartan",
+      "representative_drug_ids": [
+        "drug.losartan"
+      ]
+    },
+    {
+      "id": "drugclass.ace_inhibitors",
+      "name_en": "Angiotensin-converting enzyme (ACE) inhibitors",
+      "name_zh": "血管緊張素轉換酶抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.ace",
+      "suffix_en": "-pril",
+      "mechanism_overview_en": "Inhibit angiotensin-converting enzyme, blocking conversion of angiotensin I to angiotensin II and reducing aldosterone secretion.",
+      "mechanism_overview_zh": "抑制血管緊張素轉換酶，阻斷血管緊張素 I 轉化為 II，並減少醛固酮分泌。",
+      "indications_en": [
+        "Hypertension",
+        "Heart failure",
+        "Diabetic nephropathy"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心衰竭",
+        "糖尿病腎病變"
+      ],
+      "shared_adverse_effects_en": [
+        "Dry cough",
+        "Hyperkalemia",
+        "Hypotension",
+        "Angioedema"
+      ],
+      "shared_adverse_effects_zh": [
+        "乾咳",
+        "高血鉀",
+        "低血壓",
+        "血管神經性水腫"
+      ],
+      "class_warnings_en": [
+        "Boxed warning for fetal toxicity during pregnancy",
+        "36-hour washout required when switching to/from Sacubitril/Valsartan"
+      ],
+      "class_warnings_zh": [
+        "懷孕期胎兒毒性黑框警告",
+        "與 Sacubitril/Valsartan 互換需 36 小時洗脫期"
+      ],
+      "class_contraindications_en": [
+        "Pregnancy",
+        "History of ACEi-associated angioedema",
+        "Concomitant Sacubitril/Valsartan"
+      ],
+      "class_contraindications_zh": [
+        "懷孕",
+        "ACEi 相關血管神經性水腫病史",
+        "併用 Sacubitril/Valsartan"
+      ],
+      "board_high_yield_en": "Suffix -pril. Inhibits bradykinin degradation -> Dry cough & Angioedema. Fetal toxicity boxed warning. Renal protective in T2D nephropathy.",
+      "board_high_yield_zh": "字尾 -pril。抑制緩激肽降解 -> 乾咳與血管水腫。胎兒毒性黑框警告。第二型糖尿病腎病變具腎臟保護作用。",
+      "differentiating_notes_en": "Unlike ARBs (-sartan), ACE inhibitors inhibit bradykinin breakdown causing dry cough in ~10-20% of patients.",
+      "differentiating_notes_zh": "與 ARB (-sartan) 不同，ACE 抑制劑會抑制緩激肽分解，約 10-20% 患者出現乾咳。",
+      "representative_drug_ids": [
+        "drug.lisinopril"
+      ],
+      "prototype_drug_id": "drug.lisinopril",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2",
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.heart_failure"
+      ],
+      "sources": [
+        "course:02_PHARM_BATCH_P1_ANTICOAG_ANTIPLATELET.md"
+      ],
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:ab561d21-7466-4d8b-8d06-291c1d4d82ff#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.beta1_selective_blockers",
+      "name_en": "Beta-1 selective adrenergic receptor blockers (Beta-1 selective blockers)",
+      "name_zh": "Beta-1 選擇性受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "suffix_en": "-olol",
+      "mechanism_overview_en": "Selectively block beta-1 adrenergic receptors in cardiac tissue, reducing heart rate, myocardial contractility, and blood pressure.",
+      "mechanism_overview_zh": "選擇性阻斷心肌組織 beta-1 腎上腺素受體，降低心跳率、心肌收縮力與血壓。",
+      "indications_en": [
+        "Hypertension",
+        "Angina pectoris",
+        "Heart failure",
+        "Post-myocardial infarction"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "心衰竭",
+        "心肌梗塞後"
+      ],
+      "shared_adverse_effects_en": [
+        "Bradycardia",
+        "Hypotension",
+        "Fatigue",
+        "Cold extremities",
+        "Masked hypoglycemia signs"
+      ],
+      "shared_adverse_effects_zh": [
+        "心跳過緩",
+        "低血壓",
+        "疲勞",
+        "四肢發涼",
+        "掩蓋低血糖徵象"
+      ],
+      "class_warnings_en": [
+        "Boxed warning against abrupt discontinuation (rebound angina/MI risk)",
+        "Beta-1 selectivity is dose-dependent and lost at high doses"
+      ],
+      "class_warnings_zh": [
+        "突發停藥黑框警告（反彈性心絞痛/心肌梗塞風險）",
+        "Beta-1 選擇性具劑量依賴性，高劑量下會喪失"
+      ],
+      "class_contraindications_en": [
+        "Severe bradycardia",
+        "2nd or 3rd degree AV block",
+        "Cardiogenic shock",
+        "Decompensated heart failure"
+      ],
+      "class_contraindications_zh": [
+        "嚴重心跳過緩",
+        "二度或三度房室傳導阻滯",
+        "心源性休克",
+        "失代償性心衰竭"
+      ],
+      "board_high_yield_en": "Suffix -olol. Selective for heart (beta-1), preferred in asthma/COPD over nonselective blockers. Abrupt cessation causes rebound ischemia.",
+      "board_high_yield_zh": "字尾 -olol。心臟選擇性 (beta-1)，氣喘/COPD 患者較非選擇性安全。突發停藥引起反彈性缺血。",
+      "differentiating_notes_en": "Metoprolol succinate, bisoprolol, and carvedilol are the 3 beta-blockers proven to reduce mortality in heart failure.",
+      "differentiating_notes_zh": "美托洛爾琥珀酸鹽、比索洛爾與卡維地洛為實證可降低心衰竭死亡率的三種 beta 阻斷劑。",
+      "representative_drug_ids": [
+        "drug.metoprolol"
+      ],
+      "prototype_drug_id": "drug.metoprolol",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2",
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.heart_failure"
+      ],
+      "sources": [
+        "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md"
+      ],
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:151079c5-6360-45ed-8118-885543d6a4ad#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.dhp_ccbs",
+      "name_en": "Dihydropyridine calcium channel blockers (DHP CCBs)",
+      "name_zh": "二氫吡啶類鈣離子通道阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.l_type_calcium_channel",
+      "suffix_en": "-dipine",
+      "mechanism_overview_en": "Inhibit L-type calcium channels in vascular smooth muscle, causing peripheral arterial vasodilation.",
+      "mechanism_overview_zh": "抑制血管平滑肌 L 型鈣通道，引起周邊動脈血管擴張。",
+      "indications_en": [
+        "Hypertension",
+        "Chronic stable angina"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "慢性穩定型心絞痛"
+      ],
+      "representative_drug_ids": [
+        "drug.amlodipine"
+      ],
+      "prototype_drug_id": "drug.amlodipine",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
+    },
+    {
+      "id": "drugclass.statins",
+      "name_en": "HMG-CoA reductase inhibitors (Statins)",
+      "name_zh": "HMG-CoA 還原酶抑制劑 (他汀類)",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.hmg_coa_reductase",
+      "suffix_en": "-vastatin",
+      "mechanism_overview_en": "Inhibit HMG-CoA reductase, the rate-limiting enzyme in cholesterol synthesis, upregulating hepatic LDL receptors.",
+      "mechanism_overview_zh": "抑制膽固醇合成關鍵酶 HMG-CoA 還原酶，上調肝臟 LDL 受體。",
+      "indications_en": [
+        "Hyperlipidemia",
+        "Cardiovascular disease risk reduction"
+      ],
+      "indications_zh": [
+        "高脂血症",
+        "高風險患者心血管疾病之預防"
+      ],
+      "representative_drug_ids": [
+        "drug.atorvastatin"
+      ],
+      "prototype_drug_id": "drug.atorvastatin",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
+    },
+    {
+      "id": "drugclass.cardiac_glycosides",
+      "name_en": "Cardiac glycosides",
+      "name_zh": "強心苷類",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.na_k_atpase",
+      "mechanism_overview_en": "Inhibit Na+/K+-ATPase pump in cardiomyocytes, increasing intracellular sodium and secondary calcium influx to enhance contractility.",
+      "mechanism_overview_zh": "抑制心肌細胞 Na+/K+-ATPase 泵，增加細胞內鈉與次級鈣流入以增強收縮力。",
+      "indications_en": [
+        "Heart failure",
+        "Atrial fibrillation rate control"
+      ],
+      "indications_zh": [
+        "心衰竭",
+        "心房顫動心室率控制"
+      ],
+      "representative_drug_ids": [
+        "drug.digoxin"
+      ],
+      "prototype_drug_id": "drug.digoxin",
+      "board_priority": "high",
+      "review_status": "draft",
+      "authored_by": "v7_ingestion_batch2",
+      "sources": [
+        "course:extracted_classes"
+      ],
+      "field_sources": {}
+    },
+    {
+      "id": "drugclass.beta2_agonists",
+      "name_en": "Beta-2 Selective Adrenergic Agonists",
+      "name_zh": "Beta-2 選擇性腎上腺素受體致劑",
+      "drugsystem_ids": [
+        "drugsystem.respiratory",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta2_adrenergic",
+      "suffix_en": "-terol",
+      "mechanism_overview_en": "Selectively stimulate beta-2 adrenergic receptors in bronchial smooth muscle, causing bronchodilation.",
+      "mechanism_overview_zh": "選擇性刺激支氣管平滑肌 beta-2 受體，引起支氣管擴張。",
+      "indications_en": [
+        "Asthma",
+        "COPD",
+        "Bronchospasm"
+      ],
+      "indications_zh": [
+        "氣喘",
+        "慢性阻塞性肺病",
+        "支氣管痙攣"
+      ],
+      "indication_condition_ids": [
+        "cond.asthma",
+        "cond.copd"
+      ],
+      "shared_adverse_effects_en": [
+        "Tremor",
+        "Tachycardia",
+        "Palpitations",
+        "Hypokalemia at high doses"
+      ],
+      "shared_adverse_effects_zh": [
+        "震顫",
+        "心跳過速",
+        "心悸",
+        "高劑量引致低血鉀"
+      ],
+      "class_warnings_en": [
+        "Risk of paradoxical bronchospasm; overreliance on short-acting agents indicates poor asthma control."
+      ],
+      "class_warnings_zh": [
+        "反常性支氣管痙攣風險；過度依賴短效劑型代表氣喘控制不良。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to formulation components."
+      ],
+      "class_contraindications_zh": [
+        "對製劑成分過敏。"
+      ],
+      "board_high_yield_en": "Suffix -terol. Beta-2 = lungs. SABA rescue inhaler (albuterol) for acute bronchospasm. Tremor & tachycardia adverse effects.",
+      "board_high_yield_zh": "字尾 -terol。Beta-2 作用於肺部。SABA 救急吸入劑 (albuterol) 用於急性支氣管痙攣。副作用為震顫與心律過速。",
+      "prototype_drug_id": "drug.albuterol",
+      "representative_drug_ids": [
+        "drug.albuterol"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:07_PHARM_BATCH_P6_INFECTIOUS_RESP_GI.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:583c6408-45cc-9121-e063-6294a90afcc4#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.anticholinergics",
+      "name_en": "Anticholinergic / Antimuscarinic Agents",
+      "name_zh": "抗膽鹼 / 抗毒蕈鹼藥物",
+      "drugsystem_ids": [
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.muscarinic_receptors",
+      "suffix_en": "-tropium / -amine",
+      "mechanism_overview_en": "Competitively block muscarinic acetylcholine receptors, inhibiting parasympathetic impulses.",
+      "mechanism_overview_zh": "競爭性阻斷毒蕈鹼型乙醯膽鹼受體，抑制副交感神經傳導。",
+      "indications_en": [
+        "Bradycardia",
+        "Organophosphate poisoning",
+        "Mydriasis",
+        "COPD"
+      ],
+      "indications_zh": [
+        "心跳過緩",
+        "有機磷農藥中毒",
+        "散瞳",
+        "慢性阻塞性肺病"
+      ],
+      "indication_condition_ids": [
+        "cond.copd"
+      ],
+      "shared_adverse_effects_en": [
+        "Dry mouth",
+        "Blurred vision",
+        "Urinary retention",
+        "Constipation",
+        "Tachycardia",
+        "Confusion"
+      ],
+      "shared_adverse_effects_zh": [
+        "口乾",
+        "視力模糊",
+        "尿滯留",
+        "便秘",
+        "心跳過速",
+        "譫妄意識混亂"
+      ],
+      "class_warnings_en": [
+        "Anticholinergic toxicity toxidrome; caution in elderly and patients with prostatic hyperplasia."
+      ],
+      "class_warnings_zh": [
+        "抗膽鹼毒性症候群；老年人及攝護腺肥大患者慎用。"
+      ],
+      "class_contraindications_en": [
+        "Closed-angle glaucoma",
+        "Uncontrolled tachyarrhythmias"
+      ],
+      "class_contraindications_zh": [
+        "閉角型青光眼",
+        "未控制的心律過速"
+      ],
+      "board_high_yield_en": "Classic toxidrome: 'Blind as a bat, mad as a hatter, red as a beet, hot as a hare, dry as a bone'. Atropine is prototype.",
+      "board_high_yield_zh": "經典中毒口訣：盲如蝙蝠、瘋如帽匠、紅如甜菜、熱如野兔、乾如枯骨。阿托品為代表藥。",
+      "prototype_drug_id": "drug.atropine",
+      "representative_drug_ids": [
+        "drug.atropine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:a116af5c-ba4c-408c-9a02-4bc33772aa8d#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.alpha1_blockers",
+      "name_en": "Alpha-1 Selective Adrenergic Receptor Blockers",
+      "name_zh": "Alpha-1 選擇性腎上腺素受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.alpha1_adrenergic",
+      "suffix_en": "-osin",
+      "mechanism_overview_en": "Selectively inhibit alpha-1 adrenergic receptors, relaxing vascular smooth muscle and prostatic smooth muscle.",
+      "mechanism_overview_zh": "選擇性抑制 alpha-1 腎上腺素受體，使血管平滑肌與攝護腺平滑肌鬆弛。",
+      "indications_en": [
+        "Hypertension",
+        "Benign Prostatic Hyperplasia (BPH)",
+        "PTSD-associated nightmares (prazosin)"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "良性攝護腺肥大",
+        "PTSD 創傷後壓力症夢魘 (prazosin)"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.bph",
+        "cond.ptsd"
+      ],
+      "shared_adverse_effects_en": [
+        "First-dose syncope",
+        "Orthostatic hypotension",
+        "Nasal congestion",
+        "Dizziness",
+        "Reflex tachycardia"
+      ],
+      "shared_adverse_effects_zh": [
+        "首劑暈厥",
+        "姿勢性低血壓",
+        "鼻塞",
+        "頭暈",
+        "反射性心跳過速"
+      ],
+      "class_warnings_en": [
+        "First-dose effect: severe orthostatic hypotension and syncope after initial dose. Take at bedtime."
+      ],
+      "class_warnings_zh": [
+        "首劑效應：初始給藥後易發生嚴重姿勢性低血壓與暈厥。建議睡前服藥。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to alpha-1 blockers."
+      ],
+      "class_contraindications_zh": [
+        "對 alpha-1 阻斷劑過敏。"
+      ],
+      "board_high_yield_en": "Suffix -osin. Alpha-1 = vascular constriction. Prazosin cause first-dose syncope; tamsulosin selective for prostate BPH.",
+      "board_high_yield_zh": "字尾 -osin。Alpha-1 主導血管收縮。Prazosin 引起首劑暈厥；tamsulosin 具攝護腺選擇性用於 BPH。",
+      "prototype_drug_id": "drug.prazosin",
+      "representative_drug_ids": [
+        "drug.prazosin"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:2f86fc8e-71c1-4749-b67e-86d86cf1d984#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.nonselective_beta_blockers",
+      "name_en": "Non-Selective Beta-1 and Beta-2 Adrenergic Blockers",
+      "name_zh": "非選擇性 Beta-1 及 Beta-2 腎上腺素受體阻斷劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.beta1_adrenergic",
+      "suffix_en": "-lol",
+      "mechanism_overview_en": "Block both beta-1 (cardiac) and beta-2 (bronchial/vascular) adrenergic receptors.",
+      "mechanism_overview_zh": "同時阻斷 beta-1 (心臟) 與 beta-2 (支氣管/血管) 腎上腺素受體。",
+      "indications_en": [
+        "Hypertension",
+        "Angina",
+        "Migraine prophylaxis",
+        "Essential tremor",
+        "Thyroid storm"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "偏頭痛預防",
+        "原發性顫抖症",
+        "甲狀腺風暴"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.migraine",
+        "cond.essential_tremor",
+        "cond.hyperthyroidism"
+      ],
+      "shared_adverse_effects_en": [
+        "Bronchospasm",
+        "Bradycardia",
+        "Cold extremities",
+        "Fatigue",
+        "Masking hypoglycemia"
+      ],
+      "shared_adverse_effects_zh": [
+        "支氣管痙攣",
+        "心跳過緩",
+        "四肢冰冷",
+        "疲勞",
+        "掩蓋低血糖徵象"
+      ],
+      "class_warnings_en": [
+        "Contraindicated in asthma and severe COPD due to beta-2 blockade induced bronchospasm; abrupt withdrawal boxed warning."
+      ],
+      "class_warnings_zh": [
+        "氣喘及嚴重 COPD 患者禁忌（Beta-2 阻斷引致支氣管痙攣）；突發停藥黑框警告。"
+      ],
+      "class_contraindications_en": [
+        "Asthma",
+        "COPD",
+        "Severe bradycardia",
+        "2nd/3rd degree AV block"
+      ],
+      "class_contraindications_zh": [
+        "氣喘",
+        "慢性阻塞性肺病",
+        "嚴重心跳過緩",
+        "二度/三度房室傳導阻滯"
+      ],
+      "board_high_yield_en": "Propranolol is prototype. Nonselective beta-blockade causes bronchospasm -> DO NOT use in asthmatics. Migraine & essential tremor uses.",
+      "board_high_yield_zh": "Propranolol 為代表藥。非選擇性阻斷導致支氣管痙攣 -> 氣喘患者禁用。亦用於偏頭痛預防與原發性顫抖症。",
+      "prototype_drug_id": "drug.propranolol",
+      "representative_drug_ids": [
+        "drug.propranolol"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:1cd914b6-b250-4b11-8404-41db3589361e#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.central_alpha2_agonists",
+      "name_en": "Central Alpha-2 Adrenergic Receptor Agonists",
+      "name_zh": "中樞 Alpha-2 腎上腺素受體致劑",
+      "drugsystem_ids": [
+        "drugsystem.autonomic_nervous_system",
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.alpha2_adrenergic",
+      "suffix_en": "-dine",
+      "mechanism_overview_en": "Stimulate presynaptic alpha-2 receptors in the brainstem, decreasing central sympathetic outflow.",
+      "mechanism_overview_zh": "刺激腦幹突觸前 alpha-2 受體，降低中樞交感神經衝動輸出。",
+      "indications_en": [
+        "Hypertension",
+        "ADHD",
+        "Opioid withdrawal management"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "注意力不足過動症",
+        "鴉片類戒斷輔助"
+      ],
+      "indication_condition_ids": [
+        "cond.hypertension",
+        "cond.adhd"
+      ],
+      "shared_adverse_effects_en": [
+        "Rebound hypertensive crisis",
+        "Severe dry mouth",
+        "Sedation",
+        "Bradycardia"
+      ],
+      "shared_adverse_effects_zh": [
+        "反彈性高血壓危機",
+        "嚴重口乾",
+        "鎮靜嗜睡",
+        "心跳過緩"
+      ],
+      "class_warnings_en": [
+        "Abrupt discontinuation causes severe rebound hypertension due to rapid surge in catecholamines."
+      ],
+      "class_warnings_zh": [
+        "突然停藥會因兒茶酚胺劇增而引致嚴重反彈性高血壓。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to formulation components."
+      ],
+      "class_contraindications_zh": [
+        "對製劑成分過敏。"
+      ],
+      "board_high_yield_en": "Clonidine central sympatholytic. Reduces sympathetic outflow. WARNING: Abrupt withdrawal = rebound hypertensive crisis.",
+      "board_high_yield_zh": "Clonidine 為中樞交感抑制劑。降低交感輸出。警告：突發停藥導致反彈性高血壓危機。",
+      "prototype_drug_id": "drug.clonidine",
+      "representative_drug_ids": [
+        "drug.clonidine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:8171776a-dd14-4dcc-8860-3c27d8ea9504#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.alcohol_deterrents",
+      "name_en": "Aldehyde Dehydrogenase Inhibitors / Alcohol Deterrents",
+      "name_zh": "乙醛脫氫酶抑制劑 / 戒酒輔助藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.aldehyde_dehydrogenase",
+      "suffix_en": null,
+      "mechanism_overview_en": "Inhibit aldehyde dehydrogenase, preventing metabolism of acetaldehyde to acetic acid after ethanol intake.",
+      "mechanism_overview_zh": "抑制乙醛脫氫酶，阻斷乙醇代謝中間產物乙醛轉化為乙酸。",
+      "indications_en": [
+        "Alcohol dependence / Alcohol use disorder"
+      ],
+      "indications_zh": [
+        "酒精依賴 / 酒精使用障礙"
+      ],
+      "indication_condition_ids": [
+        "cond.alcohol_use"
+      ],
+      "shared_adverse_effects_en": [
+        "Disulfiram-alcohol reaction (flushing, nausea, vomiting, throbbing headache, hypotension)",
+        "Hepatotoxicity"
+      ],
+      "shared_adverse_effects_zh": [
+        "雙硫崙-酒精反應 (面部潮紅、噁心、嘔吐、劇烈頭痛、低血壓)",
+        "肝臟毒性"
+      ],
+      "class_warnings_en": [
+        "Boxed warning: Never administer to patient who is intoxicated or without their full consent and knowledge."
+      ],
+      "class_warnings_zh": [
+        "黑框警告：絕不可在患者醉酒或未知情同意下給藥。"
+      ],
+      "class_contraindications_en": [
+        "Severe myocardial disease",
+        "Use of alcohol or alcohol-containing products",
+        "Metronidazole co-administration"
+      ],
+      "class_contraindications_zh": [
+        "嚴重心肌疾病",
+        "使用酒精或含酒精製品",
+        "併用 Metronidazole"
+      ],
+      "board_high_yield_en": "Disulfiram blocks ALDH -> acetaldehyde accumulation. Causes severe flushing/nausea with alcohol. Also metronidazole disulfiram-like reaction.",
+      "board_high_yield_zh": "Disulfiram 阻斷 ALDH -> 乙醛蓄積。飲酒引起嚴重潮紅噁心。Metronidazole 亦具雙硫崙樣反應。",
+      "prototype_drug_id": "drug.disulfiram",
+      "representative_drug_ids": [
+        "drug.disulfiram"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:16_PHARM_BATCH_P10_COMMON_OUTPATIENT_BREADTH_B.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:d3832a1a-a140-49c1-a7df-134fa81341e3#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.hydantoin_antiseizure",
+      "name_en": "Hydantoin Antiseizure Agents",
+      "name_zh": "乙內醯脲類抗癲癇藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.voltage_gated_sodium_channels",
+      "suffix_en": "-toin",
+      "mechanism_overview_en": "Block voltage-gated sodium channels, stabilizing neuronal membranes and inhibiting seizure spread.",
+      "mechanism_overview_zh": "阻斷電壓門控鈉離子通道，穩定神經元膜並抑制癲癇發作擴散。",
+      "indications_en": [
+        "Tonic-clonic seizures",
+        "Focal (partial) seizures",
+        "Status epilepticus"
+      ],
+      "indications_zh": [
+        "強直陣攣性發作 (大發作)",
+        "局灶性 (部分性) 發作",
+        "癲癇重積狀態"
+      ],
+      "shared_adverse_effects_en": [
+        "Gingival hyperplasia",
+        "Nystagmus",
+        "Ataxia",
+        "Hirsutism",
+        "Megaloblastic anemia",
+        "SJS/TEN"
+      ],
+      "shared_adverse_effects_zh": [
+        "齒齦增生",
+        "眼球震顫",
+        "共濟失調",
+        "多毛症",
+        "巨幼紅血球性貧血",
+        "史蒂芬斯-強森症候群"
+      ],
+      "class_warnings_en": [
+        "Boxed warning for IV infusion rate (hypotension & arrhythmia risk); strong CYP450 inducer; non-linear saturation kinetics."
+      ],
+      "class_warnings_zh": [
+        "靜脈注射速率黑框警告 (低血壓與心律不整風險)；強效 CYP450 誘導劑；非線性飽和動力學。"
+      ],
+      "class_contraindications_en": [
+        "Sinus bradycardia",
+        "2nd/3rd degree SA/AV block",
+        "Hypersensitivity"
+      ],
+      "class_contraindications_zh": [
+        "竇性心跳過緩",
+        "二度/三度竇房或房室傳導阻滯",
+        "過敏"
+      ],
+      "board_high_yield_en": "Phenytoin is prototype. Zero-order saturation kinetics. Classic adverse effect triad: Gingival hyperplasia, nystagmus, ataxia. INEFFECTIVE for absence seizures.",
+      "board_high_yield_zh": "Phenytoin 為代表藥。零級飽和動力學。經典副作用三聯徵：齒齦增生、眼球震顫、共濟失調。對失神發作無效。",
+      "prototype_drug_id": "drug.phenytoin",
+      "representative_drug_ids": [
+        "drug.phenytoin"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:ef4e97a7-cd18-47a9-a016-2eca5481a87e#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.iminostilbene_antiseizure",
+      "name_en": "Iminostilbene Antiseizure Agents",
+      "name_zh": "亞胺茋類抗癲癇藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.voltage_gated_sodium_channels",
+      "suffix_en": "-zepine",
+      "mechanism_overview_en": "Block voltage-dependent sodium channels, reducing repetitive neuronal firing.",
+      "mechanism_overview_zh": "阻斷電壓依賴性鈉離子通道，減少高頻重複神經放電。",
+      "indications_en": [
+        "Partial seizures",
+        "Generalized tonic-clonic seizures",
+        "Trigeminal neuralgia",
+        "Bipolar disorder mania"
+      ],
+      "indications_zh": [
+        "部分性發作",
+        "全體強直陣攣性發作",
+        "三叉神經痛",
+        "雙相情緒障礙躁期"
+      ],
+      "indication_condition_ids": [
+        "cond.trigeminal_neuralgia"
+      ],
+      "shared_adverse_effects_en": [
+        "Diplopia",
+        "Ataxia",
+        "Hyponatremia / SIADH",
+        "Leukopenia",
+        "SJS/TEN skin rash"
+      ],
+      "shared_adverse_effects_zh": [
+        "複視",
+        "共濟失調",
+        "低血鈉 / SIADH",
+        "白血球減少",
+        "史蒂芬斯-強森症候群皮疹"
+      ],
+      "class_warnings_en": [
+        "Boxed warnings: Aplastic anemia & agranulocytosis; Serious dermatologic reactions (HLA-B*1502 screening required). Potent CYP3A4 auto-inducer."
+      ],
+      "class_warnings_zh": [
+        "黑框警告：再生不良性貧血與顆粒性白血球缺乏症；嚴重皮膚反應 (HLA-B*1502 篩檢)。強效 CYP3A4 自體誘導劑。"
+      ],
+      "class_contraindications_en": [
+        "Bone marrow depression",
+        "Co-administration with MAOIs"
+      ],
+      "class_contraindications_zh": [
+        "骨髓抑制病史",
+        "併用 MAO 抑制劑"
+      ],
+      "board_high_yield_en": "Carbamazepine 1st line for trigeminal neuralgia. Aplastic anemia boxed warning. Auto-induces CYP metabolism. Test HLA-B*1502 in Asians.",
+      "board_high_yield_zh": "Carbamazepine 為三叉神經痛首選。再生不良性貧血黑框警告。自體誘導 CYP 代謝。亞洲人須篩檢 HLA-B*1502。",
+      "prototype_drug_id": "drug.carbamazepine",
+      "representative_drug_ids": [
+        "drug.carbamazepine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:52cf3ba9-0a7c-4809-830e-af93d1532726#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.succinimide_antiseizure",
+      "name_en": "Succinimide Antiseizure Agents",
+      "name_zh": "琥珀醯亞胺類抗失神癲癇藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.t_type_calcium_channels",
+      "suffix_en": "-suximide",
+      "mechanism_overview_en": "Block T-type voltage-gated calcium channels in thalamic neurons, suppressing 3-Hz spike-and-wave discharges.",
+      "mechanism_overview_zh": "阻斷丘腦神經元 T 型電壓門控鈣通道，抑制 3-Hz 棘慢波異常放電。",
+      "indications_en": [
+        "Absence (petit mal) seizures"
+      ],
+      "indications_zh": [
+        "失神發作 (小發作)"
+      ],
+      "shared_adverse_effects_en": [
+        "Nausea / Vomiting",
+        "Abdominal distress",
+        "Drowsiness",
+        "Headache",
+        "Blood dyscrasias"
+      ],
+      "shared_adverse_effects_zh": [
+        "噁心 / 嘔吐",
+        "腹部不適",
+        "嗜睡",
+        "頭痛",
+        "血液疾患"
+      ],
+      "class_warnings_en": [
+        "Risk of serious blood dyscrasias and SJS/TEN."
+      ],
+      "class_warnings_zh": [
+        "嚴重血液疾病與史蒂芬斯-強森症候群風險。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to succinimides."
+      ],
+      "class_contraindications_zh": [
+        "對琥珀醯亞胺類過敏。"
+      ],
+      "board_high_yield_en": "Ethosuximide is PROTOTYPE for absence (petit mal) seizures ('EFG - Ethosuximide for Absence'). Blocks thalamic T-type Ca channels.",
+      "board_high_yield_zh": "Ethosuximide 為失神 (小發作) 癲癇代表藥 (口訣 'EFG - Ethosuximide for Petit Mal')。阻斷丘腦 T 型鈣通道。",
+      "prototype_drug_id": "drug.ethosuximide",
+      "representative_drug_ids": [
+        "drug.ethosuximide"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:19c924c2-f558-4c78-9277-2d7e0df2f505#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.gabapentinoids",
+      "name_en": "Gabapentinoids (Alpha-2-Delta Calcium Channel Ligands)",
+      "name_zh": "加巴噴丁類藥物 (Alpha-2-Delta 鈣通道配體)",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.alpha2_delta_calcium_channels",
+      "suffix_en": "-gabin / -pentin",
+      "mechanism_overview_en": "Bind to the alpha-2-delta subunit of voltage-gated calcium channels in the CNS, decreasing excitatory neurotransmitter release.",
+      "mechanism_overview_zh": "結合至中樞電壓門控鈣通道 alpha-2-delta 亞基，減少興奮性神經傳遞物質釋放。",
+      "indications_en": [
+        "Postherpetic neuralgia",
+        "Neuropathic pain",
+        "Adjunctive therapy for partial seizures",
+        "Fibromyalgia"
+      ],
+      "indications_zh": [
+        "帶狀皰疹後神經痛",
+        "神經病理性疼痛",
+        "部分性發作輔助治療",
+        "纖維肌痛症"
+      ],
+      "indication_condition_ids": [
+        "cond.postherpetic_neuralgia",
+        "cond.peripheral_neuropathy",
+        "cond.fibromyalgia"
+      ],
+      "shared_adverse_effects_en": [
+        "Sedation / Somnolence",
+        "Dizziness",
+        "Peripheral edema",
+        "Ataxia",
+        "Weight gain"
+      ],
+      "shared_adverse_effects_zh": [
+        "鎮靜 / 嗜睡",
+        "頭暈",
+        "周邊水腫",
+        "共濟失調",
+        "體重增加"
+      ],
+      "class_warnings_en": [
+        "Risk of severe respiratory depression when co-administered with opioids or CNS depressants."
+      ],
+      "class_warnings_zh": [
+        "與鴉片類或中樞抑制劑併用時具嚴重呼吸抑制風險。"
+      ],
+      "class_contraindications_en": [
+        "Hypersensitivity to formulation components."
+      ],
+      "class_contraindications_zh": [
+        "對成分過敏。"
+      ],
+      "board_high_yield_en": "Gabapentin & pregabalin. Structurally related to GABA but DO NOT bind GABA receptors. Primary use is neuropathic pain & postherpetic neuralgia.",
+      "board_high_yield_zh": "Gabapentin 與 pregabalin。結構與 GABA 相似但不結合 GABA 受體。主用於神經痛與帶狀皰疹後神經痛。",
+      "prototype_drug_id": "drug.gabapentin",
+      "representative_drug_ids": [
+        "drug.gabapentin"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:05_PHARM_BATCH_P4_PAIN_NSAID_OPIOID.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:507bf6d0-e7a2-413d-9848-cd2445a1411d#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.dopamine_precursors",
+      "name_en": "Dopamine Precursors & Decarboxylase Inhibitor Combinations",
+      "name_zh": "多巴胺前驅物與去羧酶抑制劑複方藥物",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.dopamine_receptors",
+      "suffix_en": null,
+      "mechanism_overview_en": "Levodopa crosses the BBB and converts to dopamine; carbidopa inhibits peripheral dopa decarboxylase to prevent peripheral metabolism.",
+      "mechanism_overview_zh": "左旋多巴通過血腦障壁轉化為多巴胺；卡比多巴抑制外周多巴去羧酶，防止外周代謝並降低副作用。",
+      "indications_en": [
+        "Parkinson's disease",
+        "Post-encephalitic parkinsonism"
+      ],
+      "indications_zh": [
+        "帕金森氏症",
+        "腦炎後帕金森氏症候群"
+      ],
+      "indication_condition_ids": [
+        "cond.parkinsons"
+      ],
+      "shared_adverse_effects_en": [
+        "Dyskinesia",
+        "On-off motor fluctuations",
+        "Nausea",
+        "Orthostatic hypotension",
+        "Hallucinations",
+        "Dark urine/sweat"
+      ],
+      "shared_adverse_effects_zh": [
+        "運動障礙 (Dyskinesia)",
+        "開關現象 (On-off phenomenon)",
+        "噁心",
+        "姿勢性低血壓",
+        "幻覺",
+        "尿液/汗液深色化"
+      ],
+      "class_warnings_en": [
+        "Long-term therapy produces motor fluctuations (wearing-off and on-off phenomenon). Contraindicated with nonselective MAOIs."
+      ],
+      "class_warnings_zh": [
+        "長期治療引發運動波動現象（藥效消退與開關現象）。非選擇性 MAOI 併用禁忌。"
+      ],
+      "class_contraindications_en": [
+        "Co-administration with nonselective MAOIs",
+        "Narrow-angle glaucoma",
+        "Suspicious undiagnosed skin lesions (melanoma)"
+      ],
+      "class_contraindications_zh": [
+        "併用非選擇性 MAOI",
+        "閉角型青光眼",
+        "未確診的疑似黑素瘤皮膚病變"
+      ],
+      "board_high_yield_en": "Levodopa + Carbidopa (Sinemet) is 1st line for Parkinson's. Carbidopa prevents peripheral L-dopa breakdown. Long-term use -> 'on-off' dyskinesia.",
+      "board_high_yield_zh": "Levodopa + Carbidopa (Sinemet) 為帕金森氏症首選。Carbidopa 阻止外周 L-dopa 破壞。長期使用導致『開關』運動障礙。",
+      "prototype_drug_id": "drug.carbidopa_levodopa",
+      "representative_drug_ids": [
+        "drug.carbidopa_levodopa"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:4ace5274-b6cf-414c-b9c0-f60e28a9cea5#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.mao_inhibitors",
+      "name_en": "Monoamine Oxidase Inhibitors (MAOIs)",
+      "name_zh": "單胺氧化酶抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.monoamine_oxidase",
+      "suffix_en": "-giline / -zine",
+      "mechanism_overview_en": "Inhibit monoamine oxidase enzymes (MAO-A and/or MAO-B), preventing breakdown of norepinephrine, serotonin, and dopamine.",
+      "mechanism_overview_zh": "抑制單胺氧化酶 (MAO-A 及/或 MAO-B)，阻止正腎上腺素、血清素及多巴胺降解。",
+      "indications_en": [
+        "Atypical / Treatment-resistant depression",
+        "Parkinson's disease (MAO-B selective agents like selegiline)"
+      ],
+      "indications_zh": [
+        "非典型 / 難治性憂鬱症",
+        "帕金森氏症 (MAO-B 選擇性劑如 selegiline)"
+      ],
+      "indication_condition_ids": [
+        "cond.depression",
+        "cond.parkinsons"
+      ],
+      "shared_adverse_effects_en": [
+        "Hypertensive crisis (with tyramine)",
+        "Serotonin syndrome (with SSRIs/SNRIs)",
+        "Orthostatic hypotension",
+        "Weight gain",
+        "Insomnia"
+      ],
+      "shared_adverse_effects_zh": [
+        "高血壓危機 (併用含酪胺食物)",
+        "血清素症候群 (併用 SSRI/SNRI)",
+        "姿勢性低血壓",
+        "體重增加",
+        "失眠"
+      ],
+      "class_warnings_en": [
+        "Boxed warning: Suicidality in children/young adults. Dietary tyramine restriction required for nonselective MAOIs to avoid fatal hypertensive crisis. 14-day washout period."
+      ],
+      "class_warnings_zh": [
+        "黑框警告：青少年自殺風險。非選擇性 MAOI 須嚴格限制飲食酪胺以防致命高血壓危機。換藥須 14 天洗脫期。"
+      ],
+      "class_contraindications_en": [
+        "Co-administration with SSRIs, SNRIs, meperidine, dextromethorphan, or sympathomimetics",
+        "Pheochromocytoma"
+      ],
+      "class_contraindications_zh": [
+        "併用 SSRI、SNRI、Meperidine、Dextromethorphan 或交感神經刺激劑",
+        "嗜鉻細胞腫"
+      ],
+      "board_high_yield_en": "Phenelzine is nonselective prototype. Tyramine food reaction -> severe hypertensive crisis ('cheese reaction'). Requires 14-day washout before SSRIs.",
+      "board_high_yield_zh": "Phenelzine 為非選擇性代表藥。酪胺食物反應 -> 嚴重高血壓危機 ('乳酪效應')。使用 SSRI 前須 14 天洗脫期。",
+      "prototype_drug_id": "drug.phenelzine",
+      "representative_drug_ids": [
+        "drug.phenelzine"
+      ],
+      "board_priority": "high",
+      "sources": [
+        "course:06_PHARM_BATCH_P5_PSYCH_NEURO_SLEEP_ADHD.md"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "class_contraindications_en": [
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#CONTRAINDICATIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:fa041652-fdde-4794-a8d2-279dd309e075#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.glp1_receptor_agonists",
+      "name_en": "GLP-1 receptor agonists",
+      "name_zh": "升糖素樣胜肽-1 受體促效劑",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.glp1_receptor",
+      "suffix_en": "-glutide",
+      "mechanism_overview_en": "Activate GLP-1 receptors to stimulate glucose-dependent insulin secretion, suppress glucagon, slow gastric emptying, and reduce appetite. Also have cardiovascular and renal protective effects.",
+      "mechanism_overview_zh": "激活GLP-1受體，促進葡萄糖依賴性胰島素分泌，抑制升糖素，延緩胃排空，降低食慾。亦有心血管與腎臟保護效果。",
+      "site_of_action_en": "Pancreatic beta cells, gut, brain",
+      "site_of_action_zh": "胰臟β細胞、腸道、腦部",
+      "indications_en": [
+        "Type 2 diabetes mellitus (glycemic control)",
+        "Reduction of major cardiovascular events in selected patients",
+        "Chronic weight management (product-dependent)"
+      ],
+      "indications_zh": [
+        "第二型糖尿病血糖控制",
+        "降低特定患者主要心血管事件風險",
+        "慢性體重管理（依產品適應症）"
+      ],
+      "shared_adverse_effects_en": [
+        "Nausea, vomiting, diarrhea (very common)",
+        "Delayed gastric emptying",
+        "Pancreatitis (serious, monitor symptoms)",
+        "Gallbladder disease",
+        "Thyroid C-cell tumor (boxed warning in Ozempic label; contraindicated in MTC/MEN2 history)"
+      ],
+      "shared_adverse_effects_zh": [
+        "噁心、嘔吐、腹瀉（非常常見）",
+        "胃排空延遲",
+        "胰臟炎（嚴重，監測症狀）",
+        "膽囊疾病",
+        "甲狀腺C細胞腫瘤（Ozempic黑框警語；MTC/MEN2病史禁用）"
+      ],
+      "representative_drug_ids": [
+        "drug.semaglutide"
+      ],
+      "prototype_drug_id": "drug.semaglutide",
+      "sources": [
+        "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+        "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.thyroid_hormones",
+      "name_en": "Thyroid hormone replacements",
+      "name_zh": "甲狀腺素替代藥",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.thyroid_hormone_receptor",
+      "suffix_en": null,
+      "mechanism_overview_en": "Exogenous thyroid hormone (T4) binds nuclear thyroid hormone receptors, restoring euthyroid metabolic state. Excess T4 is peripherally converted to active T3.",
+      "mechanism_overview_zh": "外源性甲狀腺素（T4）結合核內甲狀腺素受體，恢復正常甲狀腺功能代謝狀態。過量T4在周邊組織轉化為活性T3。",
+      "site_of_action_en": "Nuclear thyroid hormone receptors in heart, liver, bone, pituitary",
+      "site_of_action_zh": "心臟、肝臟、骨骼、腦垂體的核內甲狀腺素受體",
+      "indications_en": [
+        "Hypothyroidism (primary and secondary)",
+        "Thyroid-stimulating hormone suppression in selected thyroid conditions"
+      ],
+      "indications_zh": [
+        "甲狀腺功能低下（原發性與繼發性）",
+        "特定甲狀腺疾病的促甲狀腺素抑制"
+      ],
+      "shared_adverse_effects_en": [
+        "Tachycardia, palpitations (overdose / excess)",
+        "Tremor, heat intolerance (overdose)",
+        "Bone loss with prolonged excess",
+        "Boxed warning: not for use in obesity or weight loss"
+      ],
+      "shared_adverse_effects_zh": [
+        "心跳過速、心悸（過量）",
+        "顫抖、耐熱能力下降（過量）",
+        "長期過量導致骨質流失",
+        "黑框警語：不得用於肥胖或減重"
+      ],
+      "representative_drug_ids": [
+        "drug.levothyroxine"
+      ],
+      "prototype_drug_id": "drug.levothyroxine",
+      "sources": [
+        "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+        "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.systemic_glucocorticoids",
+      "name_en": "Systemic glucocorticoids",
+      "name_zh": "全身性糖皮質激素",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.glucocorticoid_receptor",
+      "suffix_en": "-sone / -olone",
+      "mechanism_overview_en": "Bind intracellular glucocorticoid receptors, translocate to nucleus, and modulate gene transcription producing broad anti-inflammatory and immunosuppressive effects; also exert metabolic, cardiovascular, and CNS effects.",
+      "mechanism_overview_zh": "結合細胞內糖皮質激素受體，轉位至細胞核調節基因轉錄，產生廣泛的抗炎與免疫抑制效果；同時有代謝、心血管及中樞神經系統效應。",
+      "site_of_action_en": "Ubiquitous intracellular glucocorticoid receptors",
+      "site_of_action_zh": "全身細胞內糖皮質激素受體",
+      "indications_en": [
+        "Inflammatory and autoimmune conditions",
+        "Allergic reactions",
+        "Adrenal insufficiency replacement therapy",
+        "Organ transplant rejection prophylaxis"
+      ],
+      "indications_zh": [
+        "炎症與自體免疫疾病",
+        "過敏反應",
+        "腎上腺功能不全替代療法",
+        "器官移植排斥預防"
+      ],
+      "shared_adverse_effects_en": [
+        "Hyperglycemia",
+        "Immunosuppression and increased infection susceptibility",
+        "Osteoporosis (long-term use)",
+        "Fluid and sodium retention",
+        "Mood and sleep changes",
+        "Adrenal suppression with chronic use"
+      ],
+      "shared_adverse_effects_zh": [
+        "高血糖",
+        "免疫抑制，增加感染風險",
+        "骨質疏鬆（長期使用）",
+        "液體與鈉瀦留",
+        "情緒與睡眠改變",
+        "長期使用導致腎上腺抑制"
+      ],
+      "representative_drug_ids": [
+        "drug.prednisone"
+      ],
+      "prototype_drug_id": "drug.prednisone",
+      "sources": [
+        "course:04_PHARM_BATCH_P3_ENDOCRINE_METABOLIC.md",
+        "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:d6df3295-3118-49af-be05-b1fab0d4adaa#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.nondhp_ccbs",
+      "name_en": "Non-dihydropyridine calcium channel blockers (Non-DHP CCBs)",
+      "name_zh": "非二氫吡啶類鈣通道阻滯劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.autonomic_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.l_type_calcium_channel",
+      "suffix_en": null,
+      "mechanism_overview_en": "Block L-type voltage-gated calcium channels in cardiac and vascular smooth muscle, but with greater effect on cardiac conduction (AV node) and heart rate than dihydropyridines. Reduce HR, slow AV conduction, and reduce contractility.",
+      "mechanism_overview_zh": "阻斷心臟與血管平滑肌L型電壓門控鈣通道，但對心臟傳導（房室結）與心率的影響大於二氫吡啶類。降低心率、延緩房室傳導、減少心肌收縮力。",
+      "site_of_action_en": "L-type calcium channels in sinoatrial and atrioventricular nodes, cardiac muscle, and vascular smooth muscle",
+      "site_of_action_zh": "竇房結與房室結、心肌、血管平滑肌的L型鈣通道",
+      "indications_en": [
+        "Hypertension",
+        "Angina pectoris",
+        "Supraventricular tachyarrhythmias (rate control)",
+        "Atrial fibrillation/flutter rate control"
+      ],
+      "indications_zh": [
+        "高血壓",
+        "心絞痛",
+        "上心室心動過速（頻率控制）",
+        "心房顫動/撲動的頻率控制"
+      ],
+      "shared_adverse_effects_en": [
+        "Bradycardia and heart block (high-yield: dangerous in combination with beta-blockers)",
+        "Hypotension",
+        "Constipation (especially verapamil)",
+        "Peripheral edema"
+      ],
+      "shared_adverse_effects_zh": [
+        "心跳過緩與心臟傳導阻滯（高度重要：與β阻斷劑合用有危險）",
+        "低血壓",
+        "便秘（尤其是維拉帕米）",
+        "周邊水腫"
+      ],
+      "representative_drug_ids": [
+        "drug.diltiazem"
+      ],
+      "prototype_drug_id": "drug.diltiazem",
+      "sources": [
+        "course:03_PHARM_BATCH_P2_CARDIOVASCULAR_DIURETICS.md",
+        "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7"
+      ],
+      "review_status": "draft",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:196fc367-330e-4d15-b1d6-084ad3f97ae7#WARNINGS_AND_PRECAUTIONS"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.aromatase_inhibitors",
+      "name_en": "Aromatase inhibitors",
+      "name_zh": "芳香酶抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.aromatase",
+      "suffix_en": "-zole (nonsteroidal); -stane (steroidal)",
+      "mechanism_overview_en": "Inhibit the aromatase enzyme, blocking peripheral conversion of androgens to estrogens and lowering circulating estradiol/estrone.",
+      "mechanism_overview_zh": "抑制芳香酶,阻斷周邊組織雄性素轉化為雌激素,降低循環雌二醇/雌酮濃度。",
+      "site_of_action_en": "Peripheral tissues, ovary, cancer tissue (aromatase enzyme system)",
+      "site_of_action_zh": "周邊組織、卵巢、腫瘤組織(芳香酶系統)",
+      "indications_en": [
+        "FDA-approved: hormone receptor-positive breast cancer (adjuvant/advanced)",
+        "Off-label: ovulation induction (widely used off-label in reproductive endocrinology; not an FDA-labeled use)"
+      ],
+      "indications_zh": [
+        "仿單核准:荷爾蒙受體陽性乳癌(輔助性/晚期)",
+        "仿單外:誘導排卵(生殖內分泌科廣泛仿單外使用,非 FDA 核准適應症)"
+      ],
+      "shared_adverse_effects_en": [
+        "Decreased bone mineral density",
+        "Increased total cholesterol",
+        "Fatigue, dizziness, somnolence",
+        "Hot flashes/vasomotor symptoms (class effect of estrogen suppression)"
+      ],
+      "shared_adverse_effects_zh": [
+        "骨密度下降",
+        "總膽固醇上升",
+        "疲倦、頭暈、嗜睡",
+        "熱潮紅/血管舒縮症狀(雌激素抑制之類別效應)"
+      ],
+      "representative_drug_ids": [
+        "drug.letrozole"
+      ],
+      "prototype_drug_id": "drug.letrozole",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:63e54b62-a30d-4a56-9215-75e7a0b0bf02#WARNINGS_AND_PRECAUTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建,非原藥理課程涵蓋範圍;機轉/共同不良反應轉錄自 letrozole 標籤,無課件來源可引。"
+    },
+    {
+      "id": "drugclass.serms",
+      "name_en": "Selective estrogen receptor modulators (SERMs)",
+      "name_zh": "選擇性雌激素受體調節劑 (SERM)",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.estrogen_receptor",
+      "suffix_en": null,
+      "mechanism_overview_en": "Compete with estrogen for estrogen-receptor binding sites; mixed estrogenic/antiestrogenic effects depending on tissue. Clomiphene blocks hypothalamic negative feedback, triggering a gonadotropin surge and ovulation.",
+      "mechanism_overview_zh": "與雌激素競爭雌激素受體結合位;依組織不同而有混合型雌激素/抗雌激素效應。可洛米分阻斷下視丘負回饋,誘發促性腺激素高峰進而排卵。",
+      "site_of_action_en": "Hypothalamus, pituitary, ovary, endometrium",
+      "site_of_action_zh": "下視丘、腦垂體、卵巢、子宮內膜",
+      "indications_en": [
+        "Ovulatory dysfunction in women desiring pregnancy (clomiphene, FDA-approved)"
+      ],
+      "indications_zh": [
+        "有生育意願之排卵功能障礙女性(可洛米分,FDA 核准)"
+      ],
+      "shared_adverse_effects_en": [
+        "Ovarian enlargement",
+        "Vasomotor flushes",
+        "Visual symptoms (blurring, scintillating scotomata)",
+        "Multiple pregnancy"
+      ],
+      "shared_adverse_effects_zh": [
+        "卵巢腫大",
+        "血管舒縮性潮紅",
+        "視覺症狀(視力模糊、閃爍暗點)",
+        "多胞胎妊娠"
+      ],
+      "representative_drug_ids": [
+        "drug.clomiphene"
+      ],
+      "prototype_drug_id": "drug.clomiphene",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:b56e04f0-490d-4f10-a0ed-31c288f4f4c5#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/不良反應轉錄自 clomiphene 標籤,無課件來源可引。"
+    },
+    {
+      "id": "drugclass.biguanides",
+      "name_en": "Biguanides",
+      "name_zh": "雙胍類",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": null,
+      "suffix_en": "-formin",
+      "mechanism_overview_en": "Lower blood glucose by decreasing hepatic glucose production, decreasing intestinal glucose absorption, and improving peripheral insulin sensitivity, without stimulating insulin secretion.",
+      "mechanism_overview_zh": "藉由降低肝臟葡萄糖生成、減少腸道葡萄糖吸收、改善周邊胰島素敏感性以降低血糖,不刺激胰島素分泌。",
+      "site_of_action_en": "Liver, intestine, skeletal muscle",
+      "site_of_action_zh": "肝臟、腸道、骨骼肌",
+      "indications_en": [
+        "FDA-approved: Type 2 diabetes mellitus (adjunct to diet/exercise)",
+        "Off-label: PCOS-related ovulatory dysfunction and insulin resistance in fertility care"
+      ],
+      "indications_zh": [
+        "仿單核准:第二型糖尿病(飲食/運動之輔助治療)",
+        "仿單外:生殖醫學中 PCOS 相關排卵功能障礙與胰島素阻抗"
+      ],
+      "shared_adverse_effects_en": [
+        "Diarrhea",
+        "Nausea/vomiting",
+        "Flatulence",
+        "Vitamin B12 deficiency (long-term use)"
+      ],
+      "shared_adverse_effects_zh": [
+        "腹瀉",
+        "噁心/嘔吐",
+        "腸胃脹氣",
+        "維生素 B12 缺乏(長期使用)"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: lactic acidosis, rare but potentially fatal; risk increases with renal impairment, hypoxic states, excess alcohol, hepatic impairment, and contrast imaging."
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:乳酸中毒,罕見但可能致命;腎功能不全、缺氧狀態、過量飲酒、肝功能不全及顯影劑檢查會增加風險。"
+      ],
+      "representative_drug_ids": [
+        "drug.metformin"
+      ],
+      "prototype_drug_id": "drug.metformin",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:1e8136e0-cc98-41e4-ad4b-a8fc27fb4daa#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/不良反應轉錄自 metformin 標籤,無課件來源可引。無明確分子標的可具名(標籤未指定單一受體),drugtarget_id 留空。"
+    },
+    {
+      "id": "drugclass.progestins",
+      "name_en": "Progestins",
+      "name_zh": "黃體素類",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.progesterone_receptor",
+      "suffix_en": null,
+      "mechanism_overview_en": "Oral micronized progesterone is chemically identical to ovarian-origin progesterone; micronization increases oral bioavailability.",
+      "mechanism_overview_zh": "口服微粒化黃體素與卵巢來源之黃體素化學結構相同;微粒化可提升口服生體可用率。",
+      "site_of_action_en": "Endometrium, myometrium",
+      "site_of_action_zh": "子宮內膜、子宮肌層",
+      "indications_en": [
+        "FDA-approved (this label): prevention of endometrial hyperplasia in postmenopausal women on estrogen; secondary amenorrhea",
+        "Off-label: luteal-phase support / early-pregnancy support in ART and IVF (very common fertility-clinic use; not covered by this label)"
+      ],
+      "indications_zh": [
+        "本標籤核准適應症:接受雌激素治療之停經後婦女預防子宮內膜增生;續發性閉經",
+        "仿單外:輔助生殖技術(ART/IVF)黃體期支持與早期妊娠支持(生殖科極常用,本標籤未涵蓋)"
+      ],
+      "shared_adverse_effects_en": [
+        "Headache",
+        "Breast tenderness",
+        "Dizziness/drowsiness",
+        "Fluid retention"
+      ],
+      "shared_adverse_effects_zh": [
+        "頭痛",
+        "乳房脹痛",
+        "頭暈/嗜睡",
+        "體液滯留"
+      ],
+      "representative_drug_ids": [
+        "drug.progesterone"
+      ],
+      "prototype_drug_id": "drug.progesterone",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:f392c6d9-1420-4735-aa01-f434da9b31b3#ADVERSE_REACTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建。重要落差:本標籤(NorthStar 學名藥,同 Prometrium)核准適應症是停經後 HRT 與續發性閉經,並將「已知或疑似懷孕」列為禁忌 —— 但這是針對本標籤核准適應症的用藥情境,不是針對生殖科黃體期支持這種孕期持續使用的安全聲明。標籤完全未涵蓋 ART 黃體期支持這個診所最常見的用法,此落差已在 drug.progesterone 卡片 gap_note_zh 詳述,不可從本欄推論黃體素於早期妊娠不安全。"
+    },
+    {
+      "id": "drugclass.estrogens",
+      "name_en": "Estrogens",
+      "name_zh": "雌激素類",
+      "drugsystem_ids": [
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.estrogen_receptor",
+      "suffix_en": "estradiol / estr-",
+      "mechanism_overview_en": "Bind nuclear estrogen receptors in estrogen-responsive tissues; endogenous estradiol is the principal, most potent intracellular human estrogen.",
+      "mechanism_overview_zh": "與雌激素反應性組織之細胞核雌激素受體結合;內生性雌二醇為人體最主要、活性最強的細胞內雌激素。",
+      "site_of_action_en": "Reproductive tract, bone, CNS, cardiovascular system",
+      "site_of_action_zh": "生殖道、骨骼、中樞神經系統、心血管系統",
+      "indications_en": [
+        "FDA-approved (this label): vasomotor symptoms of menopause; vulvovaginal atrophy; hypoestrogenism (hypogonadism, castration, primary ovarian failure); palliative breast/prostate cancer therapy; osteoporosis prevention",
+        "Off-label: endometrial priming in frozen embryo transfer (FET) / ART cycles (not covered by this label)"
+      ],
+      "indications_zh": [
+        "本標籤核准適應症:更年期血管舒縮症狀;外陰陰道萎縮;性腺功能低下(性腺功能不足、去勢、原發性卵巢衰竭);乳癌/攝護腺癌緩和治療;骨質疏鬆預防",
+        "仿單外:凍胚植入(FET)/ART 週期子宮內膜準備(本標籤未涵蓋)"
+      ],
+      "shared_adverse_effects_en": [
+        "Genitourinary bleeding changes",
+        "Breast tenderness",
+        "Nausea",
+        "Headache"
+      ],
+      "shared_adverse_effects_zh": [
+        "生殖泌尿道出血型態改變",
+        "乳房脹痛",
+        "噁心",
+        "頭痛"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: endometrial cancer risk (unopposed estrogen with intact uterus); cardiovascular events (MI, stroke, VTE) and probable dementia per WHI/WHIMS data."
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:子宮內膜癌風險(有子宮者單用雌激素);心血管事件(心肌梗塞、中風、靜脈血栓)與可能失智症風險(依 WHI/WHIMS 研究)。"
+      ],
+      "representative_drug_ids": [
+        "drug.estradiol"
+      ],
+      "prototype_drug_id": "drug.estradiol",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:5c9a2e0f-704b-4d16-8ea3-d94f7f36ce6b#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建。落差同 progestins:本標籤是停經期 HRT 適應症(Pregnancy Category X,孕期禁忌),與生殖科 FET/ART 週期子宮內膜準備的雌二醇臨床使用情境不同,標籤未涵蓋後者,不可直接引用本標籤孕期禁忌語句評論 ART 用法。"
+    },
+    {
+      "id": "drugclass.nonbenzodiazepine_hypnotics",
+      "name_en": "Nonbenzodiazepine hypnotics (\"Z-drugs\")",
+      "name_zh": "非苯二氮平類安眠藥(\"Z 藥物\")",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.gaba_a_benzodiazepine_site",
+      "suffix_en": "zol-/-iclone/-plon",
+      "mechanism_overview_en": "GABA-A receptor positive modulators that bind the benzodiazepine site of alpha-1 subunit-containing GABA-A receptors, increasing chloride channel opening frequency and inhibiting neuronal excitation.",
+      "mechanism_overview_zh": "GABA-A 受體正向調節劑,結合含 alpha-1 次單元 GABA-A 受體之苯二氮平結合位,增加氯離子通道開啟頻率,抑制神經元興奮。",
+      "site_of_action_en": "CNS GABA-A receptor complexes (alpha-1 subunit selective)",
+      "site_of_action_zh": "中樞神經系統 GABA-A 受體複合體(alpha-1 次單元選擇性)",
+      "indications_en": [
+        "Short-term treatment of insomnia characterized by difficulty with sleep initiation"
+      ],
+      "indications_zh": [
+        "短期治療以入睡困難為特徵之失眠"
+      ],
+      "shared_adverse_effects_en": [
+        "Drowsiness",
+        "Dizziness",
+        "Complex sleep behaviors (sleep-walking, sleep-driving)",
+        "Next-day psychomotor impairment"
+      ],
+      "shared_adverse_effects_zh": [
+        "嗜睡",
+        "頭暈",
+        "複雜睡眠行為(夢遊、夢中駕駛)",
+        "隔日精神運動功能受損"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: complex sleep behaviors including sleep-walking, sleep-driving, and other activities while not fully awake; some events resulted in serious injury or death."
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:複雜睡眠行為,包含夢遊、夢中駕駛及其他未完全清醒時之活動;部分事件導致重大傷害或死亡。"
+      ],
+      "representative_drug_ids": [
+        "drug.zolpidem"
+      ],
+      "prototype_drug_id": "drug.zolpidem",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:413b6f65-101e-e2cf-0802-711d080b851b"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:413b6f65-101e-e2cf-0802-711d080b851b#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 zolpidem 標籤,無課件來源可引。"
+    },
+    {
+      "id": "drugclass.benzodiazepines",
+      "name_en": "Benzodiazepines (anxiolytic/hypnotic)",
+      "name_zh": "苯二氮平類(抗焦慮/安眠)",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.gaba_a_benzodiazepine_site",
+      "suffix_en": "-azepam/-azolam",
+      "mechanism_overview_en": "Bind the benzodiazepine site of GABA-A receptors, enhancing GABA-mediated synaptic inhibition throughout the CNS.",
+      "mechanism_overview_zh": "結合 GABA-A 受體之苯二氮平結合位,增強中樞神經系統全面之 GABA 介導突觸抑制。",
+      "site_of_action_en": "CNS GABA-A receptor complexes",
+      "site_of_action_zh": "中樞神經系統 GABA-A 受體複合體",
+      "indications_en": [
+        "Anxiety disorders / short-term relief of anxiety symptoms",
+        "Panic disorder (specific agents)"
+      ],
+      "indications_zh": [
+        "焦慮症/短期緩解焦慮症狀",
+        "恐慌症(特定藥物)"
+      ],
+      "shared_adverse_effects_en": [
+        "Sedation",
+        "Dizziness",
+        "Weakness/unsteadiness (increases with age)",
+        "Cognitive/psychomotor impairment"
+      ],
+      "shared_adverse_effects_zh": [
+        "鎮靜",
+        "頭暈",
+        "無力/步態不穩(隨年齡增加)",
+        "認知/精神運動功能受損"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: risks from concomitant opioid use (profound sedation, respiratory depression, coma, death); risks of abuse, misuse, and addiction; risk of physical dependence and life-threatening withdrawal reactions with abrupt discontinuation."
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:併用鴉片類藥物之風險(嚴重鎮靜、呼吸抑制、昏迷、死亡);濫用、誤用及成癮風險;驟然停藥可能導致身體依賴及危及生命之戒斷反應。"
+      ],
+      "representative_drug_ids": [
+        "drug.lorazepam",
+        "drug.alprazolam"
+      ],
+      "prototype_drug_id": "drug.lorazepam",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:6c5356b1-c199-49ad-bb00-fd67c6691f74#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 lorazepam 標籤,無課件來源可引。"
+    },
+    {
+      "id": "drugclass.ssris",
+      "name_en": "Selective serotonin reuptake inhibitors (SSRIs)",
+      "name_zh": "選擇性血清素回收抑制劑 (SSRI)",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_transporter",
+      "suffix_en": "-tine/-pram/-oxetine",
+      "mechanism_overview_en": "Potentiate serotonergic activity in the CNS through inhibition of neuronal reuptake of serotonin (5-HT) at the presynaptic transporter.",
+      "mechanism_overview_zh": "藉由抑制突觸前血清素轉運體對血清素 (5-HT) 之再攝取,增強中樞神經系統血清素能活性。",
+      "site_of_action_en": "Presynaptic serotonergic neuron terminals, CNS",
+      "site_of_action_zh": "中樞血清素能神經元突觸前末梢",
+      "indications_en": [
+        "Major depressive disorder",
+        "Generalized anxiety disorder / other anxiety disorders (agent-dependent)",
+        "OCD, PTSD, panic disorder, PMDD (agent-dependent)"
+      ],
+      "indications_zh": [
+        "重度憂鬱症",
+        "廣泛性焦慮症/其他焦慮症(依藥物而定)",
+        "強迫症、創傷後壓力症候群、恐慌症、經前不悅症(依藥物而定)"
+      ],
+      "shared_adverse_effects_en": [
+        "Nausea",
+        "Sexual dysfunction",
+        "Insomnia or somnolence",
+        "Headache",
+        "Hyponatremia (esp. elderly)"
+      ],
+      "shared_adverse_effects_zh": [
+        "噁心",
+        "性功能障礙",
+        "失眠或嗜睡",
+        "頭痛",
+        "低血鈉症(尤其老年人)"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: increased risk of suicidal thoughts and behaviors in pediatric and young adult patients (short-term studies)",
+        "Serotonin syndrome, increased risk of bleeding, activation of mania/hypomania, discontinuation syndrome, angle-closure glaucoma, QTc prolongation risk (agent-dependent)"
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:兒童及青年患者短期研究顯示自殺意念與行為風險增加",
+        "血清素症候群、出血風險增加、躁狂/輕躁發作活化、停藥症候群、隅角閉鎖性青光眼、QTc 延長風險(依藥物而定)"
+      ],
+      "representative_drug_ids": [
+        "drug.sertraline",
+        "drug.escitalopram"
+      ],
+      "prototype_drug_id": "drug.sertraline",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:52c88667-c67e-4d42-b319-afb354713b1e"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:52c88667-c67e-4d42-b319-afb354713b1e#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 sertraline 標籤,無課件來源可引。"
+    },
+    {
+      "id": "drugclass.sari",
+      "name_en": "Serotonin antagonist and reuptake inhibitors (SARI)",
+      "name_zh": "血清素拮抗暨回收抑制劑 (SARI)",
+      "drugsystem_ids": [
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_2a_receptor",
+      "suffix_en": null,
+      "mechanism_overview_en": "Label describes this class prototype (trazodone) as both a selective serotonin reuptake inhibitor and a 5HT2 receptor antagonist; the mechanism of antidepressant action is not fully understood and the net contribution of each action is unknown.",
+      "mechanism_overview_zh": "標籤將此類代表藥(trazodone)描述為兼具選擇性血清素回收抑制與 5HT2 受體拮抗雙重作用;抗憂鬱機轉尚未完全釐清,兩者各自貢獻程度未知。",
+      "site_of_action_en": "CNS serotonergic synapses",
+      "site_of_action_zh": "中樞神經系統血清素能突觸",
+      "indications_en": [
+        "Major depressive disorder"
+      ],
+      "indications_zh": [
+        "重度憂鬱症"
+      ],
+      "shared_adverse_effects_en": [
+        "Sedation/drowsiness",
+        "Orthostatic hypotension",
+        "Dry mouth",
+        "Blurred vision"
+      ],
+      "shared_adverse_effects_zh": [
+        "鎮靜/嗜睡",
+        "姿勢性低血壓",
+        "口乾",
+        "視力模糊"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: increased risk of suicidal thoughts and behaviors in pediatric and young adult patients",
+        "Serotonin syndrome, cardiac arrhythmias (QT prolongation), orthostatic hypotension/syncope, priapism, increased bleeding risk"
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:兒童及青年患者自殺意念與行為風險增加",
+        "血清素症候群、心律不整(QT 延長)、姿勢性低血壓/暈厥、陰莖異常勃起、出血風險增加"
+      ],
+      "representative_drug_ids": [
+        "drug.trazodone"
+      ],
+      "prototype_drug_id": "drug.trazodone",
+      "board_priority": "medium",
+      "sources": [
+        "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:1f74b23d-f2eb-4c18-a583-d608b7713694#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 trazodone 標籤,無課件來源可引。臨床上 trazodone 於本診所常見用途為低劑量助眠(仿單外),已於 drug.trazodone 卡片說明。"
+    },
+    {
+      "id": "drugclass.nsaids_nonselective",
+      "name_en": "Nonselective NSAIDs (COX-1/COX-2 inhibitors)",
+      "name_zh": "非選擇性 NSAID(COX-1/COX-2 抑制劑)",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": "drugtarget.cox1",
+      "suffix_en": "-profen (propionic acid derivatives)",
+      "mechanism_overview_en": "Analgesic, anti-inflammatory, and antipyretic properties; mode of action not completely understood but believed related to inhibition of prostaglandin synthesis via nonselective inhibition of both COX-1 and COX-2.",
+      "mechanism_overview_zh": "具止痛、消炎與解熱作用;作用機轉尚未完全理解,但認為與非選擇性抑制 COX-1 及 COX-2 進而抑制前列腺素合成有關。",
+      "site_of_action_en": "Peripheral tissues (inflammation sites); gastric mucosa, platelets, kidney (COX-1 constitutive expression)",
+      "site_of_action_zh": "周邊發炎部位;胃黏膜、血小板、腎臟(COX-1 恆定表現部位)",
+      "indications_en": [
+        "Rheumatoid arthritis and osteoarthritis",
+        "Mild to moderate pain",
+        "Primary dysmenorrhea",
+        "Tendonitis, bursitis, acute gout (agent-dependent)"
+      ],
+      "indications_zh": [
+        "類風濕性關節炎與骨關節炎",
+        "輕至中度疼痛",
+        "原發性經痛",
+        "肌腱炎、滑囊炎、急性痛風(依藥物而定)"
+      ],
+      "shared_adverse_effects_en": [
+        "GI complaints (dyspepsia, nausea)",
+        "GI bleeding/ulceration/perforation risk",
+        "Cardiovascular thrombotic events risk",
+        "Renal effects",
+        "Fluid retention"
+      ],
+      "shared_adverse_effects_zh": [
+        "腸胃不適(消化不良、噁心)",
+        "腸胃出血/潰瘍/穿孔風險",
+        "心血管血栓事件風險",
+        "腎臟影響",
+        "體液滯留"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: increased risk of serious cardiovascular thrombotic events (MI, stroke) and increased risk of serious GI bleeding/ulceration/perforation, can be fatal, can occur without warning; contraindicated in the setting of CABG surgery."
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:嚴重心血管血栓事件(心肌梗塞、中風)風險增加,以及嚴重腸胃出血/潰瘍/穿孔風險增加,可能致命且可無預警發生;於冠狀動脈繞道手術情境下禁用。"
+      ],
+      "representative_drug_ids": [
+        "drug.ibuprofen",
+        "drug.naproxen"
+      ],
+      "prototype_drug_id": "drug.ibuprofen",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:3a38add6-a114-4e18-836c-3bfc727db231"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#WARNINGS"
+        ],
+        "class_warnings_en": [
+          "dailymed:3a38add6-a114-4e18-836c-3bfc727db231#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 ibuprofen 標籤,無課件來源可引。drugtarget_id 借用既有 drugtarget.cox1(阿斯匹靈/cox_antiplatelet 已建立),因 NSAID 為非選擇性抑制 COX-1 與 COX-2,本欄僅取其中一標的為代表,COX-2 抑制部分於 mechanism_overview 說明。"
+    },
+    {
+      "id": "drugclass.analgesics_antipyretic",
+      "name_en": "Non-NSAID analgesic/antipyretics",
+      "name_zh": "非 NSAID 類止痛解熱藥",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": null,
+      "suffix_en": null,
+      "mechanism_overview_en": "This label (an OTC Drug Facts monograph) does not include a Clinical Pharmacology or Mechanism of Action section; acetaminophen's precise mechanism is not stated by this label.",
+      "mechanism_overview_zh": "本標籤(OTC Drug Facts 格式)並未列出臨床藥理學或作用機轉段落;乙醯胺酚之確切機轉本標籤未敘明。",
+      "indications_en": [
+        "Temporary relief of minor aches/pains (headache, muscular aches, backache, minor arthritis pain, common cold, toothache, menstrual cramps)",
+        "Temporary fever reduction"
+      ],
+      "indications_zh": [
+        "暫時緩解輕微疼痛(頭痛、肌肉痠痛、背痛、輕微關節炎疼痛、感冒、牙痛、經痛)",
+        "暫時退燒"
+      ],
+      "shared_adverse_effects_en": [
+        "Severe liver damage risk with overdose or with other acetaminophen-containing products",
+        "Severe skin reactions (rare)"
+      ],
+      "shared_adverse_effects_zh": [
+        "過量或併用其他含乙醯胺酚產品時有嚴重肝損傷風險",
+        "嚴重皮膚反應(罕見)"
+      ],
+      "class_warnings_en": [
+        "OTC label Liver Warning: severe liver damage may occur if more than 4,000 mg/24h, combined with other acetaminophen-containing drugs, or with ≥3 alcoholic drinks/day."
+      ],
+      "class_warnings_zh": [
+        "OTC 標籤肝臟警語:每 24 小時超過 4,000 mg、併用其他含乙醯胺酚藥物,或每日飲酒 ≥3 杯,可能導致嚴重肝損傷。"
+      ],
+      "representative_drug_ids": [
+        "drug.acetaminophen"
+      ],
+      "prototype_drug_id": "drug.acetaminophen",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4"
+      ],
+      "field_sources": {
+        "class_warnings_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#WARNINGS"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:58840cf4-aceb-c7cf-e063-6294a90a5ff4#WARNINGS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建。無明確分子標的可具名(標籤本身未提供機轉段落),drugtarget_id 留空,誠實反映標籤限制而非漏填。"
+    },
+    {
+      "id": "drugclass.central_muscle_relaxants",
+      "name_en": "Centrally acting skeletal muscle relaxants",
+      "name_zh": "中樞作用骨骼肌鬆弛劑",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain",
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": null,
+      "suffix_en": null,
+      "mechanism_overview_en": "Relieve skeletal muscle spasm of local origin without interfering with muscle function; ineffective in muscle spasm due to CNS disease. Animal studies indicate action does not occur at the neuromuscular junction or directly on skeletal muscle, but primarily within the CNS at brain stem (and to a lesser extent spinal cord) level, reducing tonic somatic motor activity via both gamma and alpha motor systems. Structurally related to tricyclic antidepressants (shares anticholinergic and sedative pharmacology).",
+      "mechanism_overview_zh": "緩解局部性骨骼肌痙攣,不干擾肌肉功能;對中樞神經系統疾病所致之肌肉痙攣無效。動物試驗顯示其作用並非發生於神經肌肉接合處或直接作用於骨骼肌,而是主要在中樞神經系統腦幹層級(脊髓層級貢獻較小),透過 gamma 與 alpha 運動系統降低張力性軀體運動活性。結構上與三環抗憂鬱藥相關(具類似之抗膽鹼與鎮靜藥理特性)。",
+      "site_of_action_en": "CNS (brain stem level primarily)",
+      "site_of_action_zh": "中樞神經系統(主要腦幹層級)",
+      "indications_en": [
+        "Adjunct to rest and physical therapy for relief of muscle spasm associated with acute, painful musculoskeletal conditions (short-term use, up to 2-3 weeks)"
+      ],
+      "indications_zh": [
+        "作為休息與物理治療之輔助,緩解急性疼痛性肌肉骨骼病症相關之肌肉痙攣(短期使用,至多 2-3 週)"
+      ],
+      "shared_adverse_effects_en": [
+        "Drowsiness",
+        "Dry mouth",
+        "Fatigue",
+        "Dizziness"
+      ],
+      "shared_adverse_effects_zh": [
+        "嗜睡",
+        "口乾",
+        "疲倦",
+        "頭暈"
+      ],
+      "class_contraindications_en": [
+        "Concomitant MAOI use or within 14 days of discontinuation (hyperpyretic crisis, seizures, deaths reported)",
+        "Acute recovery phase of MI, arrhythmias, heart block, conduction disturbances, or CHF",
+        "Hyperthyroidism"
+      ],
+      "class_contraindications_zh": [
+        "併用 MAOI 或停用未滿 14 天(曾有高熱危象、癲癇發作、死亡通報)",
+        "心肌梗塞急性恢復期、心律不整、心傳導阻滯或鬱血性心衰竭",
+        "甲狀腺機能亢進"
+      ],
+      "representative_drug_ids": [
+        "drug.cyclobenzaprine"
+      ],
+      "prototype_drug_id": "drug.cyclobenzaprine",
+      "board_priority": "medium",
+      "sources": [
+        "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#CLINICAL_PHARMACOLOGY"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#ADVERSE_REACTIONS"
+        ],
+        "class_contraindications_en": [
+          "dailymed:b09ca979-ab6b-441b-a66f-41ca32eae6cb#CONTRAINDICATIONS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/禁忌轉錄自 cyclobenzaprine 標籤,無課件來源可引。無明確分子受體標的可具名,drugtarget_id 留空。"
+    },
+    {
+      "id": "drugclass.cox2_inhibitors",
+      "name_en": "COX-2 selective inhibitors",
+      "name_zh": "COX-2 選擇性抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.musculoskeletal_pain"
+      ],
+      "drugtarget_id": "drugtarget.cox2",
+      "suffix_en": "-coxib",
+      "mechanism_overview_en": "Analgesic, anti-inflammatory, and antipyretic properties believed due to inhibition of prostaglandin synthesis, primarily via inhibition of COX-2, with relative sparing of constitutive COX-1.",
+      "mechanism_overview_zh": "止痛、消炎與解熱作用,推定與抑制前列腺素合成有關,主要藉由抑制 COX-2,相對保留恆定表現之 COX-1。",
+      "site_of_action_en": "Sites of inflammation (COX-2 induced expression)",
+      "site_of_action_zh": "發炎部位(COX-2 誘導性表現)",
+      "indications_en": [
+        "Osteoarthritis",
+        "Rheumatoid arthritis",
+        "Juvenile rheumatoid arthritis",
+        "Ankylosing spondylitis",
+        "Acute pain",
+        "Primary dysmenorrhea"
+      ],
+      "indications_zh": [
+        "骨關節炎",
+        "類風濕性關節炎",
+        "幼年型類風濕性關節炎",
+        "僵直性脊椎炎",
+        "急性疼痛",
+        "原發性經痛"
+      ],
+      "shared_adverse_effects_en": [
+        "GI complaints",
+        "Edema/hypertension",
+        "Renal effects"
+      ],
+      "shared_adverse_effects_zh": [
+        "腸胃不適",
+        "水腫/高血壓",
+        "腎臟影響"
+      ],
+      "class_warnings_en": [
+        "Boxed warning class: increased risk of serious cardiovascular thrombotic events (MI, stroke) and increased risk of serious GI bleeding/ulceration/perforation, can be fatal, can occur without warning; contraindicated in the setting of CABG surgery."
+      ],
+      "class_warnings_zh": [
+        "黑框警語類別:嚴重心血管血栓事件(心肌梗塞、中風)風險增加,以及嚴重腸胃出血/潰瘍/穿孔風險增加,可能致命且可無預警發生;於冠狀動脈繞道手術情境下禁用。"
+      ],
+      "representative_drug_ids": [
+        "drug.celecoxib"
+      ],
+      "prototype_drug_id": "drug.celecoxib",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#WARNINGS_AND_PRECAUTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:d799328f-9ea0-4b64-9667-8feaa97f150c#BOXED_WARNING"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 celecoxib 標籤,無課件來源可引。"
+    },
+    {
+      "id": "drugclass.proton_pump_inhibitors",
+      "name_en": "Proton pump inhibitors (PPIs)",
+      "name_zh": "質子幫浦抑制劑 (PPI)",
+      "drugsystem_ids": [
+        "drugsystem.gastrointestinal"
+      ],
+      "drugtarget_id": "drugtarget.gastric_proton_pump",
+      "suffix_en": "-prazole",
+      "mechanism_overview_en": "Substituted benzimidazoles that suppress gastric acid secretion by specific inhibition of the H+/K+-ATPase enzyme system at the secretory surface of the gastric parietal cell, blocking the final step of acid production irrespective of the stimulus.",
+      "mechanism_overview_zh": "取代型苯并咪唑類藥物,藉由專一性抑制胃壁細胞分泌面之 H+/K+-ATPase 酵素系統,抑制胃酸分泌,不論刺激來源為何,均可阻斷胃酸生成之最後一步。",
+      "site_of_action_en": "Gastric parietal cell secretory surface",
+      "site_of_action_zh": "胃壁細胞分泌面",
+      "indications_en": [
+        "Active duodenal/gastric ulcer",
+        "H. pylori eradication (combination therapy)",
+        "GERD (symptomatic and erosive esophagitis)",
+        "Pathologic hypersecretory conditions"
+      ],
+      "indications_zh": [
+        "活動性十二指腸/胃潰瘍",
+        "幽門螺旋桿菌根除(合併療法)",
+        "胃食道逆流症(症狀性及糜爛性食道炎)",
+        "病理性胃酸分泌過多狀態"
+      ],
+      "shared_adverse_effects_en": [
+        "Headache",
+        "Diarrhea",
+        "Abdominal pain",
+        "Nausea"
+      ],
+      "shared_adverse_effects_zh": [
+        "頭痛",
+        "腹瀉",
+        "腹痛",
+        "噁心"
+      ],
+      "class_warnings_en": [
+        "Acute tubulointerstitial nephritis",
+        "Clostridium difficile-associated diarrhea (increased risk, especially hospitalized patients)",
+        "Bone fracture risk with high-dose/long-term use",
+        "Severe cutaneous adverse reactions (SJS, TEN, DRESS, AGEP)",
+        "Cutaneous/systemic lupus erythematosus",
+        "Interaction with clopidogrel (reduces its antiplatelet activation)",
+        "Cyanocobalamin (B12) deficiency with long-term use",
+        "Hypomagnesemia with prolonged use",
+        "Interaction with St. John's Wort or rifampin (CYP2C19/3A4 induction substantially decreases PPI concentrations)"
+      ],
+      "class_warnings_zh": [
+        "急性腎小管間質性腎炎",
+        "困難梭狀桿菌相關腹瀉(風險增加,尤其住院病人)",
+        "高劑量/長期使用之骨折風險",
+        "嚴重皮膚不良反應(史帝文生氏強生症候群、毒性表皮壞死溶解症、藥物反應合併嗜伊紅血症及全身症狀、急性泛發性發疹性膿皰病)",
+        "皮膚性/全身性紅斑性狼瘡",
+        "與 clopidogrel 之交互作用(降低其抗血小板活化)",
+        "長期使用之維生素 B12 缺乏",
+        "長期使用之低血鎂症",
+        "與聖約翰草或 rifampin 之交互作用(誘導 CYP2C19/3A4,大幅降低 PPI 濃度)"
+      ],
+      "representative_drug_ids": [
+        "drug.omeprazole",
+        "drug.pantoprazole"
+      ],
+      "prototype_drug_id": "drug.omeprazole",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:ded0df8b-1813-4595-ac2b-5499704bfd48#WARNINGS_AND_PRECAUTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 omeprazole 標籤,無課件來源可引。標籤明確指名聖約翰草交互作用,已於 drug.omeprazole 卡片之 herb_drug_interactions_graded 詳列。"
+    },
+    {
+      "id": "drugclass.serotonin_5ht3_antagonists",
+      "name_en": "Serotonin 5-HT3 receptor antagonists (antiemetics)",
+      "name_zh": "血清素 5-HT3 受體拮抗劑(止吐藥)",
+      "drugsystem_ids": [
+        "drugsystem.gastrointestinal",
+        "drugsystem.central_nervous_system"
+      ],
+      "drugtarget_id": "drugtarget.serotonin_3_receptor",
+      "suffix_en": "-setron",
+      "mechanism_overview_en": "Selective 5-HT3 receptor antagonists; mechanism of antiemetic action not fully characterized. 5-HT3 receptors are present peripherally on vagal nerve terminals and centrally in the chemoreceptor trigger zone of the area postrema; not certain whether action is mediated centrally, peripherally, or both. Not dopamine-receptor antagonists.",
+      "mechanism_overview_zh": "選擇性 5-HT3 受體拮抗劑;止吐機轉尚未完全釐清。5-HT3 受體周邊分布於迷走神經末梢,中樞則位於延腦最後區之化學受器觸發區;無法確定作用是中樞性、周邊性或兩者兼具。並非多巴胺受體拮抗劑。",
+      "site_of_action_en": "Vagal nerve terminals (peripheral); chemoreceptor trigger zone, area postrema (central)",
+      "site_of_action_zh": "迷走神經末梢(周邊);化學受器觸發區,延腦最後區(中樞)",
+      "indications_en": [
+        "Prevention of chemotherapy-induced nausea/vomiting",
+        "Prevention of radiotherapy-induced nausea/vomiting",
+        "Prevention of postoperative nausea/vomiting"
+      ],
+      "indications_zh": [
+        "預防化學治療引起之噁心/嘔吐",
+        "預防放射治療引起之噁心/嘔吐",
+        "預防術後噁心/嘔吐"
+      ],
+      "shared_adverse_effects_en": [
+        "Headache",
+        "Constipation",
+        "QT interval prolongation"
+      ],
+      "shared_adverse_effects_zh": [
+        "頭痛",
+        "便秘",
+        "QT 間期延長"
+      ],
+      "class_warnings_en": [
+        "QT prolongation, including Torsade de Pointes (postmarketing) — avoid in congenital long QT syndrome",
+        "Serotonin syndrome (alone or with other serotonergic drugs)",
+        "Hypersensitivity/anaphylaxis (cross-reactivity with other 5-HT3 antagonists)"
+      ],
+      "class_warnings_zh": [
+        "QT 延長,含尖端扭轉型心室頻脈(上市後通報)——先天性長 QT 症候群者應避免",
+        "血清素症候群(單獨使用或併用其他血清素藥物)",
+        "過敏反應/過敏性休克(與其他 5-HT3 拮抗劑有交叉反應)"
+      ],
+      "representative_drug_ids": [
+        "drug.ondansetron"
+      ],
+      "prototype_drug_id": "drug.ondansetron",
+      "board_priority": "high",
+      "sources": [
+        "dailymed:2a30d534-4607-4882-865e-56d2364acaad"
+      ],
+      "field_sources": {
+        "mechanism_overview_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#MECHANISM_OF_ACTION"
+        ],
+        "shared_adverse_effects_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#ADVERSE_REACTIONS"
+        ],
+        "class_warnings_en": [
+          "dailymed:2a30d534-4607-4882-865e-56d2364acaad#WARNINGS_AND_PRECAUTIONS"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "本分類為診所常用頻率擴充新建;機轉/警語轉錄自 ondansetron 標籤,無課件來源可引。本診所常見的孕吐(hyperemesis gravidarum)仿單外使用已於 drug.ondansetron 卡片說明。"
     }
   ]
 }
