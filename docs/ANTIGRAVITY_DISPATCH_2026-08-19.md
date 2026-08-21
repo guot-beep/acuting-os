@@ -545,8 +545,10 @@ PROJECT_LOG 最上方一條，含四種 `fy2027_status` 各幾筆、以及上面
 
 先讀：docs/AI_CONSTITUTION.md、docs/ANTIGRAVITY_DISPATCH_2026-08-19.md §5。
 
-機器探針已經把 361 穴篩出 25 個候選（清單見 §5.3）。你的工作是**逐一裁決**：
-這是真的矛盾，還是探針誤報？
+機器探針已經把 361 穴篩成 54 個候選（清單見 §5.3，指令：
+node scripts/report-acupoint-contradictions.js）。你的工作是**逐一裁決**：
+這是真的矛盾，還是探針誤報？誤報很多是正常的，判 false_positive 不扣分——
+**硬把誤報說成真矛盾才扣分。**
 
 每一個候選都要回答四件事：
   1. 真矛盾 / 誤報 —— 二選一，不准寫「可能」
@@ -554,8 +556,10 @@ PROJECT_LOG 最上方一條，含四種 `fy2027_status` 各幾筆、以及上面
   3. 如果是真矛盾：正確的寫法應該是什麼，以及**改動幾個字**
   4. 信心：高／中／低
 
-**你只寫一個新檔**：
-  data/imports/acupoint_sources/acupoint_contradiction_staging.json（格式見 §5.4）
+**骨架已經幫你產好了**：data/imports/acupoint_sources/acupoint_contradiction_staging.json
+  裡面 54 筆候選的 code / json_path / current_excerpt / mirror_paths 都已填好。
+  **你只要填四個欄位**：verdict、proposed_excerpt、confidence、notes。
+  其他欄位一個字都不要改（它們是機器產的，改了就對不上原檔）。
 **禁止**：改 data/acupoints/361.json、data/acupoints/embedded/**、
         data/generated/**、或任何其他既有檔案。一個字都不准。
 
@@ -583,34 +587,48 @@ PROJECT_LOG 最上方一條，含四種 `fy2027_status` 各幾筆、以及上面
 → 所以 staging 記錄裡有一個 `mirror_paths` 欄位，要它把**同一段文字還出現在哪些
 檔案**列出來。修哪些、怎麼修由 Claude 決定，但清單要它列。
 
-### 5.3 25 個候選（分六類）
+### 5.3 候選清單（**由腳本產生，不是手抄**）
 
-**A. 經絡歸屬自述與 `channel_zh` 不符（16 個）**
-```
-BL1  BL4  BL14  BL49  BL50  BL62  BL65  HT4
-LI8  LI20  SI15  KI16  KI24  KI26  KI27  LR7
-```
-（注意：這 16 個是高精度探針的結果，但**仍會有誤報**——有些句子在講配穴或
-交會經，不是在講本穴歸經。裁決這個差別正是這一包的價值。）
+2026-08-21 補上前置：候選清單原本只是文件裡的一串代號，沒有任何指令能重現——
+違反專案自己的規矩（每個數字要能被一行指令重現）。現在有腳本了：
 
-**B. 標「禁針」卻同時有刺深（3 個）**
-```
-ST17 乳中 · CV8 神闕 —— 兩者都帶「直刺0.0寸」（樣板產生的假數字）
-GV21 前頂 —— 帶「平刺0.3寸」
+```bash
+node scripts/report-acupoint-contradictions.js            # 人讀的工單
+node scripts/report-acupoint-contradictions.js --json     # 機器可讀
+node scripts/report-acupoint-contradictions.js --only=A,F # 只跑某幾類
 ```
 
-**C. 寸數在不同欄位互相打架（5 個）**
-```
-BL13（location 1.5 vs 敘述 1.5/2/3）
-BL42 · BL45 · BL51 · BL53（location 3 vs 敘述 1.5 —— 這四個是第二側線穴，
-                          很可能是把第一側線的 1.5 寸抄過來了）
-```
+**今天的實際產出：54 個候選 / 22 個穴位**（七類）。
+文件初稿寫的「25 個候選」是子代理暫存區的舊數字，已由腳本取代——**以腳本輸出為準**。
 
-**D. 裸 HTML 實體（2 個）**：`BL1` · `ST4`（`&mdash;` 出現在刺深範圍裡）
+| 類 | 探針 | 候選 | 穴 |
+|---|---|---|---|
+| A | 歸屬動詞把本穴綁到 `channel_zh` 以外的經 | 21 | 11 |
+| B | 同卡既標**無條件**禁針、又給了可執行刺深 | 7 | 3 |
+| C | 旁開寸數在 `location_zh` 與敘述欄互相打架 | 12 | 5 |
+| D | 殘留原始 HTML 實體（`&mdash;`） | 4 | 2 |
+| E | 針法敘述的同音錯字（想／向） | 2 | 1 |
+| F | 文中「XX穴」與本穴名差一字且不是任何已知穴名 | 4 | 4 |
+| G | 刺深是 `0.0 寸` 這種假數字（憲法紅線 4） | 4 | 2 |
 
-**E. 同音錯字（1 個）**：`BL1`「眼球**想**外側」
+**三個已知真錯誤全部被抓到**（這是探針的最低門檻）：
+BL1 經絡自述（A）· BL1「眼球**想**外側」（E）· CV8「**神願**」（F）。
 
-**F. 已確認的錯字（1 個）**：`CV8`「**神願**」
+> **誤報是設計的一部分。** 七個探針都寧可多報也不漏報——這正是要派人裁決的原因。
+> 已知會誤報的例子：LR7 的「膝眼穴」是真的奇穴（EX-LE4/5），只是它在奇穴檔裡
+> 不是以兩字名登記。**裁決者把它判 `false_positive` 就是正確答案。**
+
+#### 前置已備好的東西
+
+1. **探針腳本**：`scripts/report-acupoint-contradictions.js`（唯讀；只有 `--seed` 會寫檔）
+2. **裁決骨架**：`data/imports/acupoint_sources/acupoint_contradiction_staging.json`
+   —— 54 筆已填好 `code` / `json_path` / `current_excerpt` / `machine_note` / `mirror_paths`，
+   Antigravity **只需要填四個欄位**：`verdict` · `proposed_excerpt` · `confidence` · `notes`。
+   重生成：`node scripts/report-acupoint-contradictions.js --seed <path>`
+3. **mirror_paths 已解析**：不必自己 grep。實例——BL1 那個「想外側」錯字同時住在
+   **5 個檔案**（`361.json` · `embedded/meridian_bl.json` · `channels_and_charts.json` ·
+   `imports/cloudtcm/points/BL1.json` · `imports/cloudtcm/staging_points.json`）。
+   54 個候選中 40 個有 mirror。
 
 > **不要做的事**：拼音／中文名比對已經查過了——對照獨立的 WHO 檔案
 > （`data/imports/acupoint_sources/who_location_staging.json`），
@@ -658,8 +676,12 @@ node scripts/validate-acupoint-standard.js
 node scripts/validate-data.js
 node scripts/check-validation-ratchet.js
 
-# X1 涵蓋率：25 個候選一個都不准漏
-node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const want='BL1 BL4 BL14 BL49 BL50 BL62 BL65 HT4 LI8 LI20 SI15 KI16 KI24 KI26 KI27 LR7 ST17 CV8 GV21 BL13 BL42 BL45 BL51 BL53 ST4'.split(' ');const got=new Set(b.records.map(r=>r.code));const miss=want.filter(c=>!got.has(c));console.log('records:',b.records.length,'| 漏掉:',miss.length,miss.join(','))"
+# X1 涵蓋率：骨架裡每一筆都要有裁決（記錄數以腳本輸出為準）
+node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const blank=b.records.filter(r=>!r.verdict);console.log('records:',b.records.length,'| 沒有裁決的:',blank.length);blank.slice(0,10).forEach(r=>console.log('  ',r.id))"
+
+# X1b 骨架不得被增刪：重跑腳本，記錄數與 id 必須一致
+node scripts/report-acupoint-contradictions.js --seed /tmp/reseed.json
+node -e "const a=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json'),b=require('/tmp/reseed.json');const A=a.records.map(r=>r.id).sort().join(),B=b.records.map(r=>r.id).sort().join();console.log('id 集合一致:',A===B,'|',a.records.length,'vs',b.records.length)"
 
 # X2 current_excerpt 必須真的存在於 361.json（抓「引文不忠實」）
 node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const src=JSON.stringify(require('./data/acupoints/361.json'));let bad=0;b.records.forEach(r=>{if(!src.includes(r.current_excerpt)){bad++;console.log('NOT IN SOURCE',r.id,JSON.stringify(r.current_excerpt))}});console.log('引文對不上原文:',bad)"
@@ -671,7 +693,7 @@ node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction
 node -e "const b=require('./data/imports/acupoint_sources/acupoint_contradiction_staging.json');const t={};b.records.forEach(r=>t[r.verdict]=(t[r.verdict]||0)+1);console.log(t)"
 ```
 
-**完成的定義**：X1 `漏掉: 0`、**X2 `引文對不上原文: 0`（這條不過就整批退回）**、
+**完成的定義**：X1 `沒有裁決的: 0` 且 X1b `id 集合一致: true`、**X2 `引文對不上原文: 0`（這條不過就整批退回）**、
 X3 `提案變短的: 0`；三個已知真錯誤（BL1 經絡、BL1 想、CV8 神願）必須被判為 `real`；
 `git status` 只有兩個檔；PROJECT_LOG 一條含 X1–X4 輸出原文。
 

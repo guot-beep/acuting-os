@@ -1,3 +1,42 @@
+# 2026-08-21 Claude — P4 前置：穴位「卡內自相矛盾」探針落地（候選清單從手抄變成可重現）
+
+- **做了什麼**：Ting 指示停止 PR #63 監看、先做 P4 前置。P4 派工單原本列了 25 個候選代號，
+  但那是子代理暫存區跑出來的，**repo 裡沒有任何指令能重現**——違反憲法 §四「每個數字要能被
+  一行指令重現」，而且裁決者還得自己 grep 出那段話還住在哪些檔案。現在補上：
+  新增 `scripts/report-acupoint-contradictions.js`（唯讀探針，七類）與由它產生的裁決骨架
+  `data/imports/acupoint_sources/acupoint_contradiction_staging.json`。
+  Antigravity 的工作因此從「自己建 JSON 結構 + 自己 grep」縮到**只填四個欄位**
+  （`verdict` / `proposed_excerpt` / `confidence` / `notes`）。
+- **探針七類與今日產出**（`node scripts/report-acupoint-contradictions.js`）：
+  A 經絡自述與 `channel_zh` 不符 `21 候選 / 11 穴`；B 無條件禁針卻仍有刺深 `7 / 3`；
+  C 旁開寸數互相打架 `12 / 5`；D 殘留 HTML 實體 `4 / 2`；E 針法同音錯字 `2 / 1`；
+  F 穴名差一字 `4 / 4`；G 刺深 0 寸假數字 `4 / 2`。**合計 `54 候選 / 22 穴`**（361 筆母體）。
+- **最低門檻：三個已知真錯誤全部命中** —— BL1 `clinical_pearls[0]` 說「為手太陽小腸經」而同卡
+  `channel_zh=膀胱經`（A）；BL1 `needling`「眼球**想**外側」應為「向」（E）；
+  CV8 `contraindications[1]` 禁針警語裡「**神願**」應為「神闕」（F）。
+  這三個在 `validate-acupoint-standard` / `content-junk` / `ratchet` 全 PASS 之下存活至今。
+- **mirror_paths 已解析（這是這次前置最實質的一項）**：同一段錯字常同時住在兩條資料線，
+  只修一邊驗證器照樣全綠。實測 BL1 的「想外側」住在 **5 個檔案**：
+  `data/acupoints/361.json` · `data/acupoints/embedded/meridian_bl.json` ·
+  `data/channels/channels_and_charts.json` · `data/imports/cloudtcm/points/BL1.json` ·
+  `data/imports/cloudtcm/staging_points.json`。54 個候選中 `40` 個帶 mirror。
+- **探針調校過程（留給下一個要改它的人）**：初版用「本穴名 + 經名共現」→ 22 個候選，
+  但誤報全是正確敘述（BL7「膀胱經與督脈相連」）。改用**歸屬動詞綁定**（屬／為／是）→ 18 個，
+  誤報變成配穴句在講別的穴。再加**「歸屬動詞前最近的穴名必須指得到本穴」**→ 仍 18 個，
+  因為名稱欄用 `中衝／崑崙／後谿` 而散文用 `中沖／昆侖／後溪`，字形對不上。
+  補字形折疊後掉到 9 個，但**誤殺了 BL1／BL14** —— 原因是別名 token（目內眥→BL1、陰俞→BL14）
+  搶走了「最近穴名」的位置。最後改成 **名稱→code 集合**（別名指回本穴就算本穴），A 類定於 21。
+  同理 B 類初版把條件式禁針（小兒禁針、過飽者禁針）也算矛盾 → 25 個，加條件詞排除後降到 7。
+- **驗證**：`build-data` 無漂移；`validate-data` / `validate-acupoint-standard` /
+  `validate-relations` / `validate-content-junk` / `validate-point-ids` / `check-validation-ratchet`
+  全 PASS；`git diff --check` clean。探針唯讀性實測：連跑兩次（含 `--json`）後
+  `git status --short` 只有兩個新檔，零既有檔案被改。
+- **已知誤報（不修，這是設計）**：LR7 的「膝眼穴」是真奇穴（EX-LE4/5），但奇穴檔用 `nameZh`
+  camelCase 且未以兩字名登記，所以 F 類仍會報它。裁決者判 `false_positive` 即為正解。
+  （順帶佐證檢測報告的雙鍵發現：`361.json` 用 snake_case、`extra_points.json` 用 camelCase。）
+- **下一批**：P4 派工單已可直接發（§5.1 prompt 已改為指向骨架）。骨架 54 筆 `verdict` 全空，
+  待 Antigravity 逐條裁決；回收後由 Claude 依 `mirror_paths` 決定兩條資料線各修哪些，再走 gate。
+
 # 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
 
 - **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
