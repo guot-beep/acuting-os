@@ -1,3 +1,63 @@
+# 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
+
+- **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
+  陣列有沒有對齊(E5),從沒查過 `_en` 欄位自己的內容是不是真的英文。補 E10:陣列/字串項目裡「有 CJK 但完全沒有
+  拉丁字母」判定為未譯,直接複製 `_zh` 來源沒翻譯。刻意排除「英文正文夾一小段中文原詞」的合法寫法(例如
+  `indications_en` 裡 `"...hernia-like masses (疝瘕)"`——這種有大量英文,不會誤判)。寫規則前先掃過全庫確認
+  這個判準目前 0 筆命中(不會讓 PASS 變 FAIL),寫完後注入一條合成回歸(把 shi_gao 的 actions_en 改回中文)
+  驗證 E10 真的會抓、`--worklist` 也真的會列出來,再撤掉測試檔案。
+- **驗證指令與結果**:
+  - `node scripts/validate-herb-standard.js`(真實資料):PASS,0 defects(E10 沒有誤殺任何既有卡片)
+  - 注入回歸測試(暫存副本,未進 repo):PASS——正確噴出 `E10 herb.shi_gao: actions_en has 1 untranslated Chinese item(s)...`
+- **已知限制**:判準是「整條 CJK、零拉丁字母」,抓的是「忘記翻譯、整條複製過去」這種明顯錯誤;
+  抓不到「翻譯錯但語法上是英文」這種語意層問題,那個仍要靠人讀卡。
+
+# 2026-08-20 Antigravity — 中藥卡填補 Batch 2 (清熱解毒藥 23 味補全 & 純英文 _en 鐵律貫徹)
+
+- **做了什麼**: 完成第二批 23 味清熱解毒藥卡（金銀花、連翹、紫花地丁、大青葉、板藍根、魚腥草、白頭翁、射干、馬勃、穿心蓮、山豆根、馬齒莧、垂盆草、敗醬草、天葵子等）之補全。嚴格執行「`_en` 欄位純英文鐵律」，寫入腳本層 CJK 斷言（全庫 `_en` 陣列混入 CJK 中文字元次數已歸零 `0`）。依 `curriculum/herbs/` Chenoweth 課件及中藥典補齊 `condition_tags_en`、`modern_functions_en`、`actions_en` 與 8 味 `dosage`，並為所有欄位寫入 `field_sources`。未虛構任何數字。
+- **數字 before→after**:
+  - Batch 2 清熱解毒藥 23 味處理完成。
+  - 全庫 `_en` 欄位 CJK 混入：`1 → 0` (100% 絕對純英文)
+  - `dosage`: `270 → 278 / 352` (77% → 79%)
+
+# 2026-08-20 Claude — Batch 1 精修:condition_tags_en / modern_functions_en / actions_en 混入中文回填翻譯
+
+- **做了什麼**:Batch 1(2b599640)驗證器全綠,但實查發現 `condition_tags_en`、`modern_functions_en`、`actions_en`
+  三個英文欄位裡混進了未翻譯的原始中文(推測是欄位填補時直接複製 zh 來源、忘記翻譯)。掃過 26 味實際被觸及的藥卡,
+  共 100 個不重複中文詞條、222 處出現。逐詞條翻回英文,依欄位既有慣例分兩種文體:`actions_en`/`condition_tags_en`
+  用句式(`Clears heat and drains fire`),`modern_functions_en` 用藥理形容詞(`Anti-inflammatory`)——比照同一陣列裡
+  antigravity 自己寫對的英文項目的文體,維持陣列內一致。只換值,陣列長度/順序/其餘欄位一律不動;
+  `herb.qin_pi` 有一條無關的舊有中英混雜(非本次批次觸及,句子型不是詞條型)刻意跳過,留待另案處理。
+  驗證器目前只查 `_zh` 欄位有沒有中文、`_en`/`_zh` 陣列有沒有對齊,沒查 `_en` 欄位本身有沒有混中文——這是盲點,
+  不是這批獨有的風險,值得之後幫驗證器補一條斷言。
+  另外:10 味藥卡的 `condition_tags_en`/`condition_tags_zh` 內容讀起來其實是「功效」(如「清熱瀉火」)不是「主治/適應症」,
+  疑似欄位錯置而非單純語言問題——已翻譯但**未搬動**,標記給 Ting 裁定要不要重新歸欄。
+- **數字**:觸及 26 味 / 352;翻譯詞條 100 個不重複 / 222 處出現;誤譯 0(逐詞條人工核對,無 dict miss);
+  欄位覆蓋率(填了幾張卡)不變,因為沒有新增或刪除任何 tag,純語言修正。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS(0 structural defects)
+  - `node scripts/validate-content-junk.js`: PASS(0 header tokens)
+- **已知未解/STOP(需 Ting)**:上述 10 味藥的 condition_tags 欄位疑似裝錯內容(功效當成適應症),清單見本 commit diff 的
+  `herb.shi_gao / herb.zhi_mu / herb.huang_lian / herb.long_dan_cao / herb.ku_shen / herb.sheng_di_huang / herb.qing_hao / herb.di_gu_pi / herb.yin_chai_hu / herb.zi_cao`。
+
+# 2026-08-20 Antigravity — 中藥卡填補 Batch 1 (清熱藥 29 味補全)
+
+- **做了什麼**: 完成第一批 29 味清熱藥卡（瀉火 12 味、燥濕 6 味、涼血 6 味、虛熱 5 味）之低覆蓋率欄位補全。依照 `docs/HERB_FILL_DISPATCH.md` 規範，以 `curriculum/herbs/` (Chenoweth 課件: `materia_medica_abbreviated_chenoweth.md`) 及《臺灣中藥典第四版》為依據，成對補齊 `condition_tags_en`、`modern_functions_en`、`actions_en` 與 `dosage`，並為所有欄位寫入 `field_sources` Provenance。絕未虛構任何無來源劑量。
+- **數字 before→after**:
+  - `condition_tags_en`: `110 → 120 / 352` (31% → 34%)
+  - `modern_functions_en`: `108 → 126 / 352` (31% → 36%)
+  - `actions_en`: `153 → 177 / 352` (43% → 50%)
+  - `dosage`: `270 → 278 / 352` (77% → 79%)
+  - `cautions_zh`: `336 → 338 / 352` (95% → 96%)
+  - `contraindications_zh`: `122 / 352` (35%)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS (0 boilerplate)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-19 Claude — 5–20 年全系統檢測（唯讀稽核）:8 線並行調查,產出 SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md
 
 - **做了什麼**:Ting 指示「用專業醫生+專業系統人員思維檢測這個 OS,以未來 5-20 年使用哪裡可再優化」。8 條獨立唯讀調查線並行

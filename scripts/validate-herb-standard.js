@@ -17,6 +17,12 @@
  *   E7 a template-grade record has no contraindications_zh (禁忌症)
  *   E8 a template-grade record's functions_zh is outside 2-6 curated actions
  *   E9 two records share the same id (variant-character duplicates)
+ *   E10 an _en field holds an item that is CJK with no Latin letters at all —
+ *      copy-pasted from the _zh source instead of translated. Found 2026-08-20:
+ *      batch1 herb fill validated 100% green while condition_tags_en /
+ *      modern_functions_en / actions_en on 26 herbs carried raw Chinese —
+ *      E4/E5 only check the _zh side has Chinese and the arrays are
+ *      index-aligned, never that the _en side is actually English.
  *
  * WORKLIST MODE — `node scripts/validate-herb-standard.js --worklist`
  * lists the actual herb names behind every number, grouped by defect and by
@@ -60,12 +66,23 @@ const doc = JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/herb_canon_sh
 const recs = doc.records || doc;
 
 const hasCJK = (s) => /[㐀-鿿]/.test(String(s));
+const hasLatin = (s) => /[A-Za-z]/.test(String(s));
 const zhTextOk = (v) => {
   if (v == null) return true;
   const vals = Array.isArray(v) ? v : [v];
   const nonEmpty = vals.filter((x) => String(x).trim() !== "");
   if (!nonEmpty.length) return true;
   return nonEmpty.some((x) => hasCJK(x));
+};
+// An _en item that has CJK but zero Latin letters was never translated — it
+// was copy-pasted straight from the _zh source. This is deliberately narrower
+// than "any CJK in an _en field": some cards legitimately cite a short
+// Chinese original alongside real English prose (e.g. an indications_en entry
+// ending "...hernia-like masses (疝瘕)") — those have plenty of Latin text and
+// must not be flagged. Zero pre-existing hits when this was written.
+const untranslatedEnItems = (v) => {
+  const vals = Array.isArray(v) ? v : (typeof v === "string" ? [v] : []);
+  return vals.filter((x) => typeof x === "string" && hasCJK(x) && !hasLatin(x));
 };
 const filled = (v) => Array.isArray(v) ? v.length > 0 : (v != null && String(v).trim() !== "" && (typeof v !== "object" || Object.keys(v).length > 0));
 
@@ -137,6 +154,14 @@ for (const r of recs) {
   if (!r.category && r.category_zh && (ALIAS[r.category_zh] || CANON.has(r.category_zh))) aliasFixable++;
   for (const f of ZH_FIELDS) {
     if (!zhTextOk(r[f])) errors.push(`E4 ${id}: ${f} has content but no Chinese`);
+  }
+  for (const k of Object.keys(r)) {
+    if (!/_en$/.test(k) || /zh/.test(k)) continue;
+    const bad = untranslatedEnItems(r[k]);
+    if (bad.length) {
+      flag(r, `E10 ${k} 混入未譯中文 ${bad.length} 條`);
+      errors.push(`E10 ${id}: ${k} has ${bad.length} untranslated Chinese item(s) (no Latin letters at all) — ${bad.slice(0, 3).map((x) => `"${x}"`).join(", ")}${bad.length > 3 ? ", ..." : ""}`);
+    }
   }
   for (const [zhF, enF] of PAIRS) {
     const zh = Array.isArray(r[zhF]) ? r[zhF] : [];
