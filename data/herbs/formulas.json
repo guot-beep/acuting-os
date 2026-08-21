@@ -189,9 +189,7 @@
     "外感風寒兼營衛不和證",
     "太陽中風證"
    ],
-   "related_conditions": [
-    "pattern.spleen_qi_deficiency"
-   ],
+   "related_conditions": [],
    "source_status": "bensky_review_pending_chinese_source_draft",
    "english_exam_track": {
     "review_status": "draft",
@@ -820,7 +818,8 @@
    "herb_drug_interactions_en": [],
    "ba_fa_zh": "汗法 Han Fa / 解表法 (Release Exterior / Sweating strategy)",
    "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
-   "taiwan_pharmacopeia_zh": "No. 11"
+   "taiwan_pharmacopeia_zh": "No. 11",
+   "correction_note": "2026-08-20 錯連結修正：移除 related_conditions 的 pattern.spleen_qi_deficiency；該連結來自早期 formula_pattern_links 草稿，與桂枝湯營衛不和／太陽中風主證不符。原值=[\"pattern.spleen_qi_deficiency\"]"
   },
   {
    "id": "formula.ma_huang_tang",
@@ -10492,7 +10491,8 @@
    "tongue_zh": "紅",
    "coating_zh": "黃",
    "pulse_zh": "數有力",
-   "source_classic": "《金匱要略》"
+   "source_classic": "《金匱要略》",
+   "formula_song_zh": "瀉心湯用大黃連，黃芩三味三黃先。\n邪火內攻心煩躁，吐衄便秘火盛宣。"
   },
   {
    "id": "formula.liang_ge_san",
@@ -24540,7 +24540,8 @@
     "https://cloudtcm.com/formula/170",
     "https://www.sunten.com.tw/",
     "https://www.zhongyifangji.com",
-    "https://www.americandragon.com"
+    "https://www.americandragon.com",
+    "https://www.jstcm.cn/cn/article/pdf/preview/10.19844/j.cnki.1672-397X.2022.06.016.pdf"
    ],
    "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
    "exact_source_url": "https://cloudtcm.com/formula/99",
@@ -24578,6 +24579,9 @@
     ],
     "composition": [
      "《傷寒論》146條柴胡桂枝湯;curriculum/formulas/Herbal Formulations Comprehensive.docx.md line1507(chief pair 柴胡+桂枝);藥列複製自本庫既有列"
+    ],
+    "source_classic": [
+     "https://www.jstcm.cn/cn/article/pdf/preview/10.19844/j.cnki.1672-397X.2022.06.016.pdf"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/170",
@@ -24595,8 +24599,9 @@
    "formula_song_zh": "柴胡桂枝合兩方，太陽少陽合病康。\n發熱惡寒關節痛，微嘔心下支結強。",
    "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
    "category_zh": "和解劑",
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：柴胡（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-   "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味柴胡,依《傷寒論》146條(小柴胡湯+桂枝湯合半)重建九味"
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：柴胡（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。 | 2026-08-20 出典釐清：課件標《金匱要略》；通行原文見《傷寒論》第146條，依現有九味組成採《傷寒論》。",
+   "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味柴胡,依《傷寒論》146條(小柴胡湯+桂枝湯合半)重建九味",
+   "source_classic": "《傷寒論》"
   },
   {
    "id": "formula.xiao_yao_san",
@@ -40610,7 +40615,8 @@
     "https://cloudtcm.com/formula/10",
     "https://www.sunten.com.tw/",
     "https://www.zhongyifangji.com",
-    "https://www.americandragon.com"
+    "https://www.americandragon.com",
+    "https://www1.ndmctsgh.edu.tw/MedChinese/Detail/C1/B0989.html"
    ],
    "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
    "exact_source_url": "https://cloudtcm.com/formula/99",
@@ -40657,6 +40663,10 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md（22 區塊方劑卡）"
+    ],
+    "source_classic": [
+     "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
+     "https://www1.ndmctsgh.edu.tw/MedChinese/Detail/C1/B0989.html"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/10",
@@ -41058,7 +41068,10 @@
    "course_level_en": "Not found as a standalone formula in the uploaded Chenoweth Formulations 1/2 master lists. It appears in Formulations Summary Chart p.18 as “Ren Shen Yang Ying Tang,” a related formula under Ba Zhen Tang; this spelling/name is preserved as a source variation rather than silently equated.",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/RenShenYangRongTang.html",
    "taiwan_pharmacopeia_zh": "No. 12 (THP p.128)",
-   "composition_suspect_cleared_note": "2026-08-19 核對《太平惠民和劑局方》人參養榮湯十二味加薑棗俱在(含黨參/桂心替代列),旗標清除"
+   "composition_suspect_cleared_note": "2026-08-19 核對《太平惠民和劑局方》人參養榮湯十二味加薑棗俱在(含黨參/桂心替代列),旗標清除",
+   "source_classic": "《太平惠民和劑局方》",
+   "correction_note": "2026-08-20 出典正名：課件文字「Tai Ping Hui Min He Ji Ju Tang」為書名尾字誤寫；正名採《太平惠民和劑局方》。",
+   "formula_song_zh": "人參養榮熟地黃，黃芪白朮草當歸。\n芍藥遠志陳皮桂，五味茯苓心脾微。"
   },
   {
    "id": "formula.si_wu_tang",
@@ -50488,7 +50501,8 @@
     "https://cloudtcm.com/formula/137",
     "https://www.sunten.com.tw/",
     "https://www.zhongyifangji.com",
-    "https://www.americandragon.com"
+    "https://www.americandragon.com",
+    "https://www.zhongyifangji.com/home/prescription/detail/id/31"
    ],
    "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
    "exact_source_url": "https://cloudtcm.com/formula/99",
@@ -50546,6 +50560,10 @@
     ],
     "formula_song": [
      "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+    ],
+    "source_classic": [
+     "https://www.zhongyifangji.com/home/prescription/detail/id/31",
+     "https://cloudtcm.com/formula/137"
     ]
    },
    "cloudtcm_url": "https://cloudtcm.com/formula/137",
@@ -51137,7 +51155,9 @@
     "脾虛泄瀉、食少不化、舌苔白膩者慎用"
    ],
    "formula_song": "六味地黃益腎肝，茱薯丹澤地苓摻，\n更加知柏成八味，陰虛火旺自可煎。",
-   "formula_song_zh": "六味地黃益腎肝，茱薯丹澤地苓摻，\n更加知柏成八味，陰虛火旺自可煎。"
+   "formula_song_zh": "六味地黃益腎肝，茱薯丹澤地苓摻，\n更加知柏成八味，陰虛火旺自可煎。",
+   "source_classic": "《醫方考》；《醫宗金鑑》亦載",
+   "correction_note": "2026-08-20 出典並列：白名單來源一記《醫方考》，一記《醫宗金鑑》時方；兩者均保留，不將後載誤作唯一初出。"
   },
   {
    "id": "formula.shen_qi_wan",
@@ -66796,77 +66816,99 @@
    ],
    "composition": [
     {
+     "herb_id": "herb.gui_zhi",
+     "herb_zh": "桂枝",
+     "name_zh": "桂枝",
+     "herb_en": "Cinnamon Twig",
+     "name_en": "Cinnamon Twig",
+     "pinyin": "Gui Zhi",
+     "pinyin_toned": "Guì Zhī",
+     "pharmaceutical_latin": "Cinnamomi Ramulus",
+     "dose_g": "9-12g",
+     "decoction_reference_g": "9-12g",
+     "in_formula_en": "Warms and unblocks the vessels and supports Qi transformation to dispel stasis and reduce masses.",
+     "actions_en": "Warms and unblocks the vessels and supports Qi transformation to dispel stasis and reduce masses.",
+     "in_formula_zh": "溫通血脈，助氣化以行瘀消癥。",
+     "actions_zh": "溫通血脈，助氣化以行瘀消癥。",
+     "role_reason_zh": "溫通血脈，助氣化以行瘀消癥。",
+     "is_alternate": false,
+     "role_zh": "君",
+     "dose_range": "9-12g"
+    },
+    {
      "herb_id": "herb.fu_ling",
      "herb_zh": "茯苓",
      "name_zh": "茯苓",
-     "herb_en": "Poria Sclerotium",
-     "name_en": "Poria Sclerotium",
+     "herb_en": "Poria",
+     "name_en": "Poria",
      "pinyin": "Fu Ling",
      "pinyin_toned": "Fú Líng",
-     "pharmaceutical_latin": "Poria",
-     "dose_g": "6g",
-     "decoction_reference_g": "6g",
-     "in_formula_en": "Drains Dampness and strengthens Spleen.",
-     "actions_en": "Drains Dampness and strengthens Spleen.",
-     "in_formula_zh": "滲濕利水，健脾和中，寧心安神。",
-     "role_reason_zh": "滲濕利水，健脾和中，寧心安神。",
+     "pharmaceutical_latin": "Poria (Sclerotium Poriae Cocos)",
+     "dose_g": "9-12g",
+     "decoction_reference_g": "9-12g",
+     "in_formula_en": "Strengthens the Spleen and leaches Dampness; with Gui Zhi it supports Qi transformation and movement of stasis.",
+     "actions_en": "Strengthens the Spleen and leaches Dampness; with Gui Zhi it supports Qi transformation and movement of stasis.",
+     "in_formula_zh": "健脾滲濕，與桂枝相配助化氣行瘀。",
+     "actions_zh": "健脾滲濕，與桂枝相配助化氣行瘀。",
+     "role_reason_zh": "健脾滲濕，與桂枝相配助化氣行瘀。",
      "is_alternate": false,
-     "actions_zh": "滲濕利水，健脾和中，寧心安神。",
-     "role_zh": "君"
+     "role_zh": "君",
+     "dose_range": "9-12g"
     },
     {
-     "herb_id": "herb.zhi_ke",
-     "herb_zh": "枳殼",
-     "name_zh": "枳殼",
-     "herb_en": "Bitter Orange Mature Fruit",
-     "name_en": "Bitter Orange Mature Fruit",
-     "pinyin": "Zhi Ke",
-     "pinyin_toned": "Zhi Ke",
-     "pharmaceutical_latin": "Fr. Aurantii",
-     "dose_g": "3g",
-     "decoction_reference_g": "3g",
-     "in_formula_en": "Moves Qi and relieves focal distention.",
-     "actions_en": "Moves Qi and relieves focal distention.",
-     "in_formula_zh": "理氣寬中，緩解。",
-     "role_reason_zh": "理氣寬中，緩解。",
+     "herb_id": "herb.chi_shao",
+     "herb_zh": "赤芍",
+     "name_zh": "赤芍",
+     "herb_en": "Red Peony Root",
+     "name_en": "Red Peony Root",
+     "pinyin": "Chi Shao",
+     "dose_g": "9-12g",
+     "decoction_reference_g": "9-12g",
+     "in_formula_en": "Invigorates Blood, disperses stasis, and clears Heat arising from stagnation.",
+     "actions_en": "Invigorates Blood, disperses stasis, and clears Heat arising from stagnation.",
+     "in_formula_zh": "活血散瘀，清瘀滯所生之熱。",
+     "actions_zh": "活血散瘀，清瘀滯所生之熱。",
+     "role_reason_zh": "活血散瘀，清瘀滯所生之熱。",
      "is_alternate": false,
-     "actions_zh": "理氣寬中，緩解。",
-     "role_zh": "臣"
+     "role_zh": "臣",
+     "dose_range": "9-12g"
     },
     {
-     "herb_id": "herb.ban_xia",
-     "herb_zh": "制半夏",
-     "name_zh": "制半夏",
-     "herb_en": "Prepared Pinellia Rhizome",
-     "name_en": "Prepared Pinellia Rhizome",
-     "pinyin": "Zhi Ban Xia",
-     "pinyin_toned": "Zhì Bàn Xià",
-     "pharmaceutical_latin": "Rz. Pinelliae Preparatum",
-     "dose_g": "9g",
-     "decoction_reference_g": "9g",
-     "in_formula_en": "Dries Dampness and transforms Phlegm.",
-     "actions_en": "Dries Dampness and transforms Phlegm.",
-     "in_formula_zh": "燥濕化痰，降逆止嘔，消痞散結。",
-     "role_reason_zh": "燥濕化痰，降逆止嘔，消痞散結。",
+     "herb_id": "herb.tao_ren",
+     "herb_zh": "桃仁",
+     "name_zh": "桃仁",
+     "herb_en": "Peach Seed / Persica",
+     "name_en": "Peach Seed / Persica",
+     "pinyin": "Tao Ren",
+     "pinyin_toned": "Táo Rén",
+     "dose_g": "9-12g",
+     "decoction_reference_g": "9-12g",
+     "in_formula_en": "Invigorates Blood, dispels stasis, and assists in reducing fixed masses.",
+     "actions_en": "Invigorates Blood, dispels stasis, and assists in reducing fixed masses.",
+     "in_formula_zh": "活血祛瘀，協助消散癥塊。",
+     "actions_zh": "活血祛瘀，協助消散癥塊。",
+     "role_reason_zh": "活血祛瘀，協助消散癥塊。",
      "is_alternate": false,
-     "actions_zh": "燥濕化痰，降逆止嘔，消痞散結。",
-     "role_zh": "佐"
+     "role_zh": "佐",
+     "dose_range": "9-12g"
     },
     {
-     "herb_id": "herb.mang_xiao",
-     "herb_zh": "芒硝",
-     "name_zh": "芒硝",
-     "herb_en": "Mirabilite",
-     "name_en": "Mirabilite",
-     "pinyin": "Mang Xiao",
-     "pinyin_toned": "Mang Xiao",
-     "pharmaceutical_latin": "Natrii Sulfas",
-     "dose_g": "3g",
-     "decoction_reference_g": "3g",
-     "in_formula_en": "Softens hardness and purges/loosens accumulated Phlegm and fluids.",
-     "actions_en": "Softens hardness and purges/loosens accumulated Phlegm and fluids.",
+     "herb_id": "herb.mu_dan_pi",
+     "herb_zh": "牡丹皮",
+     "name_zh": "牡丹皮",
+     "herb_en": "Moutan Cortex",
+     "name_en": "Moutan Cortex",
+     "pinyin": "Mu Dan Pi",
+     "dose_g": "9-12g",
+     "decoction_reference_g": "9-12g",
+     "in_formula_en": "Invigorates Blood, disperses stasis, clears stasis Heat, and assists in reducing masses.",
+     "actions_en": "Invigorates Blood, disperses stasis, clears stasis Heat, and assists in reducing masses.",
+     "in_formula_zh": "活血散瘀、清瘀熱，協助消癥。",
+     "actions_zh": "活血散瘀、清瘀熱，協助消癥。",
+     "role_reason_zh": "活血散瘀、清瘀熱，協助消癥。",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "佐",
+     "dose_range": "9-12g"
     }
    ],
    "pattern_indications_en": [
@@ -66945,7 +66987,7 @@
     "notes_zh": []
    },
    "last_reviewed": "",
-   "source_classic": "《傷寒雜病論》",
+   "source_classic": "《金匱要略》",
    "exact_source_url": "https://cloudtcm.com/formula/189",
    "fetched_at": "2026-07-23T07:08:48.925Z",
    "cautions_zh": [
@@ -67008,7 +67050,11 @@
     "cloudtcm_url": [
      "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
     ],
-    "composition": "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+    "composition": [
+     "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
+     "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md#L1114-L1131",
+     "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md#L3293-L3301"
+    ],
     "actions_zh": [
      "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
     ],
@@ -67032,6 +67078,9 @@
     ],
     "modifications_en": [
      "curriculum/herbs/方剂学汇总_extracted.md — Gui Zhi Fu Ling Wan section, Modifications table (Table 469); same content in curriculum/formulas/Herbal Formulations Comprehensive.docx.md（2026-08-19 課件 Modifications 表逐列抽取）"
+    ],
+    "source_classic": [
+     "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md#L3261"
     ]
    },
    "cloudtcm_id": 189,
@@ -67065,9 +67114,10 @@
     "Phlegm-Dampness in the Middke Jiao"
    ],
    "category_zh": "祛痰劑",
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。 | 2026-08-20 身分修正：原 composition 為茯苓、枳殼、制半夏、芒硝，與 formula.fu_ling_wan（指迷茯苓丸）相同，屬張冠李戴；原值仍完整保留於該 canonical 卡。依具名課件重建桂枝茯苓丸五味組成。原 composition=[\"茯苓\",\"枳殼\",\"制半夏\",\"芒硝\"]",
    "formula_song": "金匱桂枝茯苓丸，桃仁芍藥和丹皮，\n等分為末蜜丸服，緩消癥塊胎可安。",
-   "formula_song_zh": "金匱桂枝茯苓丸，桃仁芍藥和丹皮，\n等分為末蜜丸服，緩消癥塊胎可安。"
+   "formula_song_zh": "金匱桂枝茯苓丸，桃仁芍藥和丹皮，\n等分為末蜜丸服，緩消癥塊胎可安。",
+   "composition_source_note_zh": "組成、君臣佐使與劑量依 curriculum/herbs/CHM_Formulation_2_course_package_extracted.md:1114-1131 及 curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md:3293-3301。"
   },
   {
    "id": "formula.ge_xia_zhu_yu_tang",
@@ -89420,7 +89470,7 @@
    "name_zh": "敗毒散",
    "name_en": "Overcome Pathogenic Influences Powder",
    "pinyin": "Bai Du San",
-   "review_status": "draft",
+   "review_status": "deprecated",
    "source_status": "source_review_pending",
    "source_type": "formula_canon_shortlist_skeleton",
    "category_id": "",
@@ -90094,7 +90144,8 @@
    "ba_fa_zh": "汗法 Han Fa / 解表法 (Release Exterior / Sweating strategy)",
    "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/RenShenBaiDuSan.html",
-   "taiwan_pharmacopeia_zh": "No. 28 (THP p.129)"
+   "taiwan_pharmacopeia_zh": "No. 28 (THP p.129)",
+   "correction_note": "2026-08-20 重複記錄裁定：本卡與 formula.ren_shen_bai_du_san 組成相同，且同對應課件卡 077「敗毒散 · Ren Shen Bai Du San」；保留永久 id，但 canonical 採來源、組成角色與中英內容較完整的 formula.ren_shen_bai_du_san。"
   },
   {
    "id": "formula.bai_he_gu_jin_tang",
@@ -94117,98 +94168,152 @@
    "public_safe": false,
    "study_tags": [],
    "pattern_focus_en": [],
-   "actions_en": [],
+   "actions_en": [
+    "Warms Yang and strengthens the Spleen",
+    "Nourishes Blood and stops bleeding"
+   ],
    "actions_zh": [
-    ":黃土湯：清熱解表、調理氣血",
-    "黃土湯：清熱解表、調理氣血"
+    "溫陽健脾",
+    "養血止血"
    ],
    "composition": [
     {
+     "herb_id": "herb.zao_xin_tu",
      "herb_zh": "灶心土",
-     "herb_en": null,
+     "name_zh": "灶心土",
+     "herb_en": "Ignited Yellow Earth",
+     "name_en": "Ignited Yellow Earth",
      "pinyin": "Zao Xin Tu",
+     "pinyin_toned": "Zào Xīn Tǔ",
+     "pharmaceutical_latin": "Terra Flava Usta",
+     "dose_g": "30g",
+     "decoction_reference_g": "30g",
+     "in_formula_en": "Warms and harmonizes the Middle, binds the Intestines, and stops bleeding.",
+     "actions_en": "Warms and harmonizes the Middle, binds the Intestines, and stops bleeding.",
+     "in_formula_zh": "溫中和胃、澀腸止血。",
+     "actions_zh": "溫中和胃、澀腸止血。",
+     "role_reason_zh": "溫中和胃、澀腸止血。",
+     "is_alternate": false,
      "role_zh": "君",
-     "role_en": "Chief",
-     "dose_range": "30g",
-     "in_formula_en": "Assists formula in releasing exterior and harmonizing Middle Jiao.",
-     "actions_en": "Assists formula in releasing exterior and harmonizing Middle Jiao.",
-     "herb_id": "herb.zao_xin_tu"
+     "dose_range": "30g"
     },
     {
-     "herb_zh": "白朮",
-     "herb_en": null,
-     "pinyin": "Bai Zhu",
-     "role_zh": "臣",
-     "role_en": "Deputy",
-     "dose_range": "9g",
      "herb_id": "herb.bai_zhu",
-     "in_formula_zh": "健脾益氣，燥濕利水，止汗安胎。",
-     "actions_zh": "健脾益氣，燥濕利水，止汗安胎。",
-     "role_reason_zh": "健脾益氣，燥濕利水，止汗安胎。",
-     "in_formula_en": "Tonifies the Spleen and augments Qi; Dries Dampness and promotes water metabolism; Stabilizes the exterior and stops sweating; Calms the fetus",
-     "actions_en": "Tonifies the Spleen and augments Qi; Dries Dampness and promotes water metabolism; Stabilizes the exterior and stops sweating; Calms the fetus"
-    },
-    {
-     "herb_zh": "附子",
-     "herb_en": null,
-     "pinyin": "Fu Zi",
+     "herb_zh": "白朮",
+     "name_zh": "白朮",
+     "herb_en": "White Atractylodes Rhizome",
+     "name_en": "White Atractylodes Rhizome",
+     "pinyin": "Bai Zhu",
+     "pinyin_toned": "Bái Zhú",
+     "pharmaceutical_latin": "Rhizoma Atractylodis Macrocephalae",
+     "dose_g": "9g",
+     "decoction_reference_g": "9g",
+     "in_formula_en": "Warms and tonifies the Spleen to restore its ability to govern Blood.",
+     "actions_en": "Warms and tonifies the Spleen to restore its ability to govern Blood.",
+     "in_formula_zh": "溫補脾氣，恢復脾統血之權。",
+     "actions_zh": "溫補脾氣，恢復脾統血之權。",
+     "role_reason_zh": "溫補脾氣，恢復脾統血之權。",
+     "is_alternate": false,
      "role_zh": "臣",
-     "role_en": "Deputy",
-     "dose_range": "9g",
+     "dose_range": "9g"
+    },
+    {
      "herb_id": "herb.fu_zi",
-     "preparation_zh": "炙",
-     "in_formula_zh": "回陽救逆，補火助陽，散寒止痛。",
-     "actions_zh": "回陽救逆，補火助陽，散寒止痛。",
-     "role_reason_zh": "回陽救逆，補火助陽，散寒止痛。",
-     "in_formula_en": "Revives the yang and restores devastated yang; Augments fire and assists the Yang; Disperses cold-dampness, warms the channels and alleviates pain",
-     "actions_en": "Revives the yang and restores devastated yang; Augments fire and assists the Yang; Disperses cold-dampness, warms the channels and alleviates pain"
+     "herb_zh": "附子",
+     "name_zh": "附子",
+     "herb_en": "Aconite Lateral Root",
+     "name_en": "Aconite Lateral Root",
+     "pinyin": "Fu Zi",
+     "dose_g": "9g",
+     "decoction_reference_g": "9g",
+     "in_formula_en": "Warms and supports Spleen Yang to assist in stopping bleeding.",
+     "actions_en": "Warms and supports Spleen Yang to assist in stopping bleeding.",
+     "in_formula_zh": "溫助脾陽，協助止血。",
+     "actions_zh": "溫助脾陽，協助止血。",
+     "role_reason_zh": "溫助脾陽，協助止血。",
+     "is_alternate": false,
+     "role_zh": "臣",
+     "dose_range": "9g"
     },
     {
-     "herb_zh": "生地黃",
-     "herb_en": null,
-     "pinyin": "Sheng Di Huang",
-     "role_zh": "佐",
-     "role_en": "Assistant",
-     "dose_range": "9g",
      "herb_id": "herb.sheng_di_huang",
-     "in_formula_zh": "清熱涼血，養陰生津。",
-     "actions_zh": "清熱涼血，養陰生津。",
-     "role_reason_zh": "清熱涼血，養陰生津。",
-     "in_formula_en": "Tonifies Qi and harmonizes ingredients.",
-     "actions_en": "Tonifies Qi and harmonizes ingredients."
-    },
-    {
-     "herb_zh": "黃芩",
-     "herb_en": null,
-     "pinyin": "Huang Qin",
+     "herb_zh": "生地黃",
+     "name_zh": "生地黃",
+     "herb_en": "Rehmannia Root",
+     "name_en": "Rehmannia Root",
+     "pinyin": "Sheng Di Huang",
+     "dose_g": "9g",
+     "decoction_reference_g": "9g",
+     "in_formula_en": "Nourishes Yin and Blood and stops bleeding while moderating the warm, drying ingredients.",
+     "actions_en": "Nourishes Yin and Blood and stops bleeding while moderating the warm, drying ingredients.",
+     "in_formula_zh": "養陰養血並止血，制約溫燥。",
+     "actions_zh": "養陰養血並止血，制約溫燥。",
+     "role_reason_zh": "養陰養血並止血，制約溫燥。",
+     "is_alternate": false,
      "role_zh": "佐",
-     "role_en": "Assistant",
-     "dose_range": "9g",
-     "herb_id": "herb.huang_qin",
-     "in_formula_zh": "清熱燥濕，瀉火解毒，止血安胎。",
-     "actions_zh": "清熱燥濕，瀉火解毒，止血安胎。",
-     "role_reason_zh": "清熱燥濕，瀉火解毒，止血安胎。",
-     "in_formula_en": "Tonifies Qi and harmonizes ingredients.",
-     "actions_en": "Tonifies Qi and harmonizes ingredients."
+     "dose_range": "9g"
     },
     {
-     "herb_zh": "甘草",
-     "herb_en": null,
-     "pinyin": "Gan Cao",
-     "role_zh": "使",
-     "role_en": "Envoy",
-     "dose_range": "9g",
+     "herb_id": "herb.e_jiao",
+     "herb_zh": "阿膠",
+     "name_zh": "阿膠",
+     "herb_en": "Donkey-Hide Gelatin",
+     "name_en": "Donkey-Hide Gelatin",
+     "pinyin": "E Jiao",
+     "dose_g": "9g",
+     "decoction_reference_g": "9g",
+     "in_formula_en": "Nourishes Blood and stops bleeding while moderating the warm, drying ingredients.",
+     "actions_en": "Nourishes Blood and stops bleeding while moderating the warm, drying ingredients.",
+     "in_formula_zh": "養血止血，制約溫燥。",
+     "actions_zh": "養血止血，制約溫燥。",
+     "role_reason_zh": "養血止血，制約溫燥。",
+     "is_alternate": false,
+     "role_zh": "佐",
+     "dose_range": "9g"
+    },
+    {
+     "herb_id": "herb.huang_qin",
+     "herb_zh": "黃芩",
+     "name_zh": "黃芩",
+     "herb_en": "Scutellaria Root",
+     "name_en": "Scutellaria Root",
+     "pinyin": "Huang Qin",
+     "dose_g": "9g",
+     "decoction_reference_g": "9g",
+     "in_formula_en": "Clears Heat and stops bleeding; with Sheng Di Huang and E Jiao it moderates warm, drying ingredients.",
+     "actions_en": "Clears Heat and stops bleeding; with Sheng Di Huang and E Jiao it moderates warm, drying ingredients.",
+     "in_formula_zh": "清熱止血，與生地、阿膠制約溫燥。",
+     "actions_zh": "清熱止血，與生地、阿膠制約溫燥。",
+     "role_reason_zh": "清熱止血，與生地、阿膠制約溫燥。",
+     "is_alternate": false,
+     "role_zh": "佐",
+     "dose_range": "9g"
+    },
+    {
      "herb_id": "herb.gan_cao",
-     "in_formula_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-     "actions_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-     "role_reason_zh": "清熱解毒，祛痰止咳，緩急止痛，調和諸藥。",
-     "in_formula_en": "Tonifies the Spleen and augments Qi; Clears Heat and relieves Fire toxicity (antidote for many toxic substances); Moistens the Lungs, resolves Phlegm and stops coughing; Moderates spasms and alleviates pain; Moderates and harmonizes the harsh properties of other herbs",
-     "actions_en": "Tonifies the Spleen and augments Qi; Clears Heat and relieves Fire toxicity (antidote for many toxic substances); Moistens the Lungs, resolves Phlegm and stops coughing; Moderates spasms and alleviates pain; Moderates and harmonizes the harsh properties of other herbs"
+     "herb_zh": "甘草",
+     "name_zh": "甘草",
+     "herb_en": "Licorice Root",
+     "name_en": "Licorice Root",
+     "pinyin": "Gan Cao",
+     "pharmaceutical_latin": "Radix Glycyrrhizae",
+     "dose_g": "9g",
+     "decoction_reference_g": "9g",
+     "in_formula_en": "Harmonizes the formula and supports the Spleen and Stomach.",
+     "actions_en": "Harmonizes the formula and supports the Spleen and Stomach.",
+     "in_formula_zh": "調和諸藥，補益脾胃。",
+     "actions_zh": "調和諸藥，補益脾胃。",
+     "role_reason_zh": "調和諸藥，補益脾胃。",
+     "is_alternate": false,
+     "role_zh": "使",
+     "dose_range": "9g"
     }
    ],
-   "pattern_indications_en": [],
+   "pattern_indications_en": [
+    "Chronic bleeding from Spleen Yang deficiency with empty Cold in the Middle Jiao and failure of the Spleen to govern Blood"
+   ],
    "pattern_indications_zh": [
-    "黃土湯主治證候"
+    "脾陽虛、中焦虛寒、脾不統血之慢性出血證"
    ],
    "modifications_en": [],
    "modifications_zh": [],
@@ -94268,16 +94373,31 @@
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
     ],
     "composition": [
-     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6952-L6973"
     ],
     "source_classic": [
-     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md「Source: Jin Gui Yao Lue」(2026-08-19 課件抽取)"
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md「Source: Jin Gui Yao Lue」(2026-08-19 課件抽取)",
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6952-L6973"
+    ],
+    "actions_zh": [
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6952-L6973"
+    ],
+    "actions_en": [
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6952-L6973"
+    ],
+    "pattern_indications_zh": [
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6952-L6973"
+    ],
+    "pattern_indications_en": [
+     "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6952-L6973"
     ]
    },
-   "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+   "composition_source_note_zh": "組成、君臣佐使、劑量、功用與主證依 curriculum/formulas/Herbal Formulations Comprehensive.docx.md:6952-6973。",
    "category_zh": "理血劑",
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：灶心土（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-   "source_classic": "《金匱要略》"
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：灶心土（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。 | 2026-08-20 假內容修正：原 actions_zh 與 pattern_indications_zh 為重複樣板句，且 composition 漏阿膠；舊值保存={\"composition\":[\"灶心土\",\"白朮\",\"附子\",\"生地黃\",\"黃芩\",\"甘草\"],\"actions_zh\":[\":黃土湯：清熱解表、調理氣血\",\"黃土湯：清熱解表、調理氣血\"],\"actions_en\":[],\"pattern_indications_zh\":[\"黃土湯主治證候\"],\"pattern_indications_en\":[]}",
+   "source_classic": "《金匱要略》",
+   "formula_song_zh": "黃土灶心白朮附，阿膠生地黃芩輔。\n甘草同煎溫脾陽，先便後血遠血吐。"
   },
   {
    "id": "formula.lian_po_yin",
@@ -105793,7 +105913,7 @@
    "on_board_list": true,
    "exam_star": 1,
    "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
-   "source_classic": "",
+   "source_classic": "《永類鈐方》；《醫方集解》亦載",
    "composition": [
     {
      "herb_id": "herb.ren_shen",
@@ -105951,7 +106071,10 @@
    "review_status": "draft",
    "source_type": "board_outline_skeleton",
    "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-   "source_urls": [],
+   "source_urls": [
+    "https://www.dayi.org.cn/prescriptions/901379?from=sg",
+    "https://www.zysj.com.cn/lilunshuji/yifangjijie/193.html"
+   ],
    "field_sources": {
     "name_en": [
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -105989,6 +106112,10 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "source_classic": [
+     "https://www.dayi.org.cn/prescriptions/901379?from=sg",
+     "https://www.zysj.com.cn/lilunshuji/yifangjijie/193.html"
     ]
    },
    "ad_syndromes_en": [
@@ -106141,7 +106268,9 @@
    "category": "未分類 / 考點與補充劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
-   "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BuFeiTang.html"
+   "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BuFeiTang.html",
+   "correction_note": "2026-08-20 同名異方釐清：依本卡人參、黃耆、熟地黃、五味子、紫菀、桑白皮六味組成，初出採《永類鈐方》，並列《醫方集解》傳載；不採《婦人良方》同名異方。",
+   "formula_song_zh": "補肺湯用人參芪，熟地五味紫菀宜。\n桑白皮同補肺氣，肺虛咳嗽喘促熄。"
   },
   {
    "id": "formula.da_bu_yin_wan",
@@ -108255,7 +108384,7 @@
    "on_board_list": true,
    "exam_star": 1,
    "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
-   "source_classic": "",
+   "source_classic": "《太平惠民和劑局方》；原型見《備急千金要方》開心散",
    "composition": [
     {
      "herb_id": "herb.ren_shen",
@@ -108360,7 +108489,10 @@
    "review_status": "draft",
    "source_type": "board_outline_skeleton",
    "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-   "source_urls": [],
+   "source_urls": [
+    "https://zh.wikipedia.org/wiki/%E5%AE%9A%E5%BF%97%E4%B8%B8",
+    "https://www.nricm.edu.tw/p/404-1000-5664.php?Lang=zh-tw"
+   ],
    "field_sources": {
     "name_en": [
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -108395,6 +108527,10 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "source_classic": [
+     "https://zh.wikipedia.org/wiki/%E5%AE%9A%E5%BF%97%E4%B8%B8",
+     "https://www.nricm.edu.tw/p/404-1000-5664.php?Lang=zh-tw"
     ]
    },
    "ad_syndromes_en": [
@@ -108537,7 +108673,8 @@
    "category": "未分類 / 考點與補充劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
-   "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DingZhiWan.html"
+   "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DingZhiWan.html",
+   "correction_note": "2026-08-20 同名異方釐清：依本卡人參、茯苓、石菖蒲、遠志四味組成，採《太平惠民和劑局方》定志丸，並記其原型為《備急千金要方》開心散；其他含茯神、朱砂等同名版本不併入本卡。"
   },
   {
    "id": "formula.du_qi_wan",
@@ -108903,7 +109040,7 @@
    "on_board_list": true,
    "exam_star": 1,
    "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
-   "source_classic": "",
+   "source_classic": "《婦產科學》；《中醫方劑臨床手冊》",
    "composition": [
     {
      "herb_id": "herb.xian_mao",
@@ -109046,7 +109183,10 @@
    "review_status": "draft",
    "source_type": "board_outline_skeleton",
    "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-   "source_urls": [],
+   "source_urls": [
+    "https://cloudtcm.com/formula/344",
+    "https://www.zysj.com.cn/zhongyaofang/erxiantang/index.html"
+   ],
    "field_sources": {
     "name_en": [
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -109084,6 +109224,11 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md（22 區塊方劑卡）"
+    ],
+    "source_classic": [
+     "https://cloudtcm.com/formula/344",
+     "https://www.zysj.com.cn/zhongyaofang/erxiantang/index.html",
+     "curriculum/Formulations Summary Chart.docx.md#L2188-L2206"
     ]
    },
    "ad_syndromes_en": [
@@ -109263,7 +109408,8 @@
    "category": "未分類 / 考點與補充劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
-   "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ErXianTang.html"
+   "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ErXianTang.html",
+   "correction_note": "2026-08-20 同名異方釐清：本卡六味（仙茅、淫羊藿、巴戟天、當歸、黃柏、知母）為20世紀上海方，見《婦產科學》與《中醫方劑臨床手冊》；《壽世保元》二味同名方組成不同，不歸入本卡。"
   },
   {
    "id": "formula.er_zhi_wan",
@@ -112546,7 +112692,7 @@
    "contraindications_zh": [],
    "contraindications_en": [],
    "formula_family": [],
-   "review_status": "draft",
+   "review_status": "deprecated",
    "source_type": "board_outline_skeleton",
    "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
    "source_urls": [],
@@ -112562,10 +112708,13 @@
     ],
     "exam_importance": [
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+    ],
+    "source_classic": [
+     "https://www.zhongyifangji.com/home/prescription/detail/id/123"
     ]
    },
    "category_zh": "治風劑",
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 4 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：羚羊角（in_formula_zh、actions_zh、role_reason_zh）、鉤藤（actions_zh）、桑葉（in_formula_zh、actions_zh、role_reason_zh）、竹茹（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 4 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：羚羊角（in_formula_zh、actions_zh、role_reason_zh）、鉤藤（actions_zh）、桑葉（in_formula_zh、actions_zh、role_reason_zh）、竹茹（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。 | 2026-08-20 重複記錄裁定：本卡「羚角鉤藤丸」的組成與 formula.ling_jiao_gou_teng_tang 完全相同，通行方名與出典為羚角鉤藤湯《通俗傷寒論》。保留永久 id 但停止作 canonical；正卡為 formula.ling_jiao_gou_teng_tang。原樣板 actions/pattern 保留於本 deprecated 記錄，不提升至正卡。"
   },
   {
    "id": "formula.nuan_gan_jian",
@@ -121914,6 +122063,9 @@
     ],
     "taiwan_pharmacopeia_zh": [
      "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md（22 區塊方劑卡）"
+    ],
+    "source_classic": [
+     "https://www.cnpharm.com/c/2022-03-28/821547.shtml"
     ]
    },
    "actions_zh": [
@@ -121998,7 +122150,11 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuLingWan.html",
    "taiwan_pharmacopeia_zh": "Yes (THP p.133)",
    "contraindications_zh": [],
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。 | 2026-08-20 出典釐清：課件標《金匱要略》疑與桂枝茯苓丸混淆；本卡四味（茯苓、枳殼、半夏、芒硝）及臂痛痰飲主治對應《是齋百一選方》引《全生指迷方》的指迷茯苓丸。",
+   "source_classic": "《是齋百一選方》引《全生指迷方》",
+   "source_urls": [
+    "https://www.cnpharm.com/c/2022-03-28/821547.shtml"
+   ]
   },
   {
    "id": "formula.zhu_sha_an_shen_wan",
@@ -122528,6 +122684,10 @@
     ],
     "american_dragon_url": [
      "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md（22 區塊方劑卡）"
+    ],
+    "source_classic": [
+     "curriculum/herbs/方剂学汇总_extracted.md#L3017",
+     "https://www.zysj.com.cn/zhongyaofang/zhenzhumuwan/index.html"
     ]
    },
    "actions_en": [
@@ -122636,7 +122796,11 @@
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhenZhuMuWan.html",
    "contraindications_zh": [],
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 6 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Zhen Zhu Mu（in_formula_zh、actions_zh、role_reason_zh）、Long Chi（in_formula_zh、actions_zh、role_reason_zh）、Chao Dang Gui（in_formula_zh、actions_zh、role_reason_zh）、Chao Suan Zao Ren（in_formula_zh、actions_zh、role_reason_zh）、柏子仁（in_formula_zh、actions_zh、role_reason_zh）、茯神（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。"
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 6 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Zhen Zhu Mu（in_formula_zh、actions_zh、role_reason_zh）、Long Chi（in_formula_zh、actions_zh、role_reason_zh）、Chao Dang Gui（in_formula_zh、actions_zh、role_reason_zh）、Chao Suan Zao Ren（in_formula_zh、actions_zh、role_reason_zh）、柏子仁（in_formula_zh、actions_zh、role_reason_zh）、茯神（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。 | 2026-08-20 出典釐清：現有十味組成（含龍齒、犀角之水牛角代用品）對應《普濟本事方》珍珠母丸；白名單另見《中醫臨症備要》同名異方，組成不同，不歸入本卡。",
+   "source_classic": "《普濟本事方》",
+   "source_urls": [
+    "https://www.zysj.com.cn/zhongyaofang/zhenzhumuwan/index.html"
+   ]
   },
   {
    "id": "formula.ci_zhu_wan",
