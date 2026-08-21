@@ -1,4 +1,27 @@
-# 2026-08-21 Claude — pattern-v2→main 併回 Phase A:穴位/藥理/symptoms/supplements/clinical_cases 純疊加落地
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase C:中藥庫(HB-B1~B10)整檔取代,main 這邊的批次確認已被涵蓋
+
+- **背景**:main 上原本有兩層中藥工作——antigravity batch1/2(29+23 味 `_en` 回填,昨天我修過裡面混入的中文)
+  跟 pattern-v2 的 HB-B1~B10 線(8/14,352→358 筆,十批連跑+Fable 驗收)。兩邊 `bothChanged` 分析(以三方共同
+  祖先 `1ff208bd` 為 base):31 筆 pre-existing 記錄雙邊都動過、296 筆只有 pattern-v2 動過、`onlyMain=0`——main
+  改過的每一筆 pattern-v2 也都改過。另外 17 味藥是雙邊各自獨立新增(名稱、分類 15/17 一致,顯然是同一味藥
+  的兩份獨立草稿,不是身分衝突)。
+- **落地前查證(不是憑「筆數多就贏」直接套用)**:
+  1. 抽查 shi_gao/zhi_mu(batch1 混中文的重災區)——pattern-v2 版本乾淨純英文,而且 `condition_tags_en`
+     刻意留空,不是塞進翻譯過的功效內容——這正是我在批一修復報告裡標記給 Ting 的「疑似欄位錯置」問題,
+     pattern-v2 這邊做對了。
+  2. 31 筆雙邊都動過的記錄逐一比對 `safety_flags` 與 `dosage`(臨床風險最高的兩欄):**零筆不一致**。
+  3. 用剛加的 E10(`_en` 混中文斷言)整檔掃過 pattern-v2 版本:**0 命中**,358 筆全乾淨。
+- **做了什麼**:`data/herbs/herb_canon_shortlist.json` 整檔改用 pattern-v2 版本(352→358 筆)。main 這邊
+  antigravity batch1/2 的回填等於是被 pattern-v2 更完整、更早、且經過 Fable 裁決的版本涵蓋掉了，沒有額外
+  搬移動作。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` PASS(0 structural defects，`actions_en` 100%、
+  `cautions_zh` 99%、bilingual gaps 掛零);`validate-content-junk.js` PASS;`check-validation-ratchet.js` PASS。
+- **待 Ting 裁定(不是我能單方面選的)**:17 味雙邊獨立新增的藥裡，2 味分類不一致——`herb.xiao_mai`(小麥:
+  pattern-v2 標「補虛藥/Tonify Qi」、main 原本標「安神藥/Calm Spirit」)、`herb.xiao_shi`(硝石:pattern-v2
+  「瀉下藥/Drain Downward」、main 原本「瀉下藥/Harsh Expellants」)。目前落地的是 pattern-v2 的分類，
+  未改動的話請視為待覆核，不是定案。
+
+
 
 - **背景**:發現 `codex/pattern-v2`(本機另一支長期分支)跟 `main` 已分岔 695 vs 39 commits、93 個檔案、
   39 萬行等級。開新分支 `claude/pattern-v2-main-reconcile` 分階段併回，這是第一批——只挑「main 完全沒動過、
