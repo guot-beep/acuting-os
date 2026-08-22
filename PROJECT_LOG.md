@@ -65,7 +65,81 @@
 - **待辦**:`.github/workflows/validate.yml` 雙邊分岔待處理;formula.hao_qin_qing_dan_tang 的碧玉散連結
   可以順手修但這批先不做,留一條線索。
 
+# 2026-08-21 Claude — P4 裁決：4 個 Sonnet 5 代理裁完 54 個候選（44 真 / 10 誤報），驗證閘門抓出我自己的兩個 bug
 
+- **做了什麼**：Ting 指示「自己開分支請 Sonnet 5 做」。開 `claude/p4-acupoint-contradictions`，
+  把探針產出的 54 個候選按類型切四組，派 4 個 Sonnet 5 代理**並行裁決**（不是產內容，是判真偽）。
+  代理一律**不准寫 repo**，只回傳結構化裁決；由 Claude 跑六道抓包檢查後才合併。
+- **裁決數字**：`54 筆全數有裁決`，**real `44` / false_positive `10`**。
+  分組：A 經絡自述 `19 真 / 2 誤報`；C 寸數 `8 / 4`；B+G 禁針與假刺深 `8 / 3`；D+E+F 錯字 `9 / 1`。
+  安全類（B/G/C）依派工規定 **`proposed_excerpt` 全部留空**（`real 但刻意留空 16 筆`），
+  只在 notes 寫建議處理方式，數字一律不由 AI 寫——`real 且附提案的 28 筆`全部是單點字元替換。
+- **驗證閘門抓到兩個 bug，而且都是我自己的，不是代理的**（這正是這套架構要證明的事）：
+  ① **V5 檢查本身寫錯**：拿 `readFileSync` 的原始檔文字比對 excerpt，但檔案裡換行是跳脫字元，
+  含換行的 excerpt 一律假失敗（誤報 2 筆 ST4）。改成比對**解析後的字串值**。
+  ② **探針 C 的 excerpt 是合成的**：原本輸出 `旁開 1.5 寸` 這種摘要，不是原檔逐字引用——
+  既無法回頭驗證，也不能拿來做安全的 find-and-replace。已改為引用**真正的那一句**（9 筆受影響，
+  修正後 finding 數與 id 順序不變，`54 → 54`、`id 集合一致 true`）。
+- **代理的工作反過來修正了我的檢查**：D 類還原 `&mdash;`（7 字元）成 `-`（1 字元）**必然縮短字串**，
+  會被紅線 3「提案不得比原文短」誤殺。代理主動在 notes 標明這一點。V3 因此加了嚴格例外：
+  把解碼字元換回實體必須**逐字還原成原文**才放行（等於證明「只動了實體」）——4 筆放行、零內容流失。
+- **代理在任務範圍外抓到的東西（比原任務更重要，需 Ting 裁定）**：
+  · **整段錯置**：KI16 肓俞卡上寫「背部第二腰椎旁1.5寸」（那是腎俞 BL23 的定位）；KI24 靈墟寫「腕後區」
+  （靈墟在胸部第三肋間）；LI8 下廉寫「腹部臍旁2寸」（那是天樞 ST25）。這三段疑似整段是別的穴的內容，
+  **不是改一個經名就能修的**。
+  · **BL53 卡裡把殷門穴寫成「骶骨裂孔旁開0.5寸，屬督脈」**——已核對 BL37 殷門自己的卡：
+  大腿後面、膀胱經。這是**配穴散文描述別的穴且描述是錯的**，屬探針 A 的設計盲區（A 的
+  「最近穴名須為本穴」規則正好會濾掉這類）。
+  · **HT2 青靈判誤報是對的**：核對後「禁刺」只出現在 `classical_refs[2].excerpt_zh` 的《明堂》引文，
+  現代 `needling` 給 0.5─1 寸——是正確的來源分離，不是卡內矛盾。**探針 B 應排除 `classical_refs`**（待修）。
+- **驗證**：六道抓包全過（覆蓋率／verdict 詞彙／紅線 3 長度／紅線 4 數字未動／excerpt 逐字可回驗／
+  答案卡三個已知真錯誤須判 real）；`build-data` 無漂移；validate-data / acupoint-standard / relations /
+  content-junk / point-ids / ratchet 全 PASS；`git diff --check` clean。
+- **已知未解／下一批**：① 上述三段「整段錯置」與 BL53 殷門段需 Ting 裁定改法（不是機械修）；
+  ② 探針 B 排除 `classical_refs`；③ 新增 Type H（配穴散文描述他穴且與該穴自己的卡矛盾）；
+  ④ BL1 `needling` 同時有 D 與 E 兩筆裁決，套用時要**合成兩個修正**，不能各改各的。
+  真正把修正寫進 `361.json` 與 `mirror_paths` 的另外幾個檔，是下一步、需 Ting 過 gate。
+
+# 2026-08-21 Claude — P4 前置：穴位「卡內自相矛盾」探針落地（候選清單從手抄變成可重現）
+
+- **做了什麼**：Ting 指示停止 PR #63 監看、先做 P4 前置。P4 派工單原本列了 25 個候選代號，
+  但那是子代理暫存區跑出來的，**repo 裡沒有任何指令能重現**——違反憲法 §四「每個數字要能被
+  一行指令重現」，而且裁決者還得自己 grep 出那段話還住在哪些檔案。現在補上：
+  新增 `scripts/report-acupoint-contradictions.js`（唯讀探針，七類）與由它產生的裁決骨架
+  `data/imports/acupoint_sources/acupoint_contradiction_staging.json`。
+  Antigravity 的工作因此從「自己建 JSON 結構 + 自己 grep」縮到**只填四個欄位**
+  （`verdict` / `proposed_excerpt` / `confidence` / `notes`）。
+- **探針七類與今日產出**（`node scripts/report-acupoint-contradictions.js`）：
+  A 經絡自述與 `channel_zh` 不符 `21 候選 / 11 穴`；B 無條件禁針卻仍有刺深 `7 / 3`；
+  C 旁開寸數互相打架 `12 / 5`；D 殘留 HTML 實體 `4 / 2`；E 針法同音錯字 `2 / 1`；
+  F 穴名差一字 `4 / 4`；G 刺深 0 寸假數字 `4 / 2`。**合計 `54 候選 / 22 穴`**（361 筆母體）。
+- **最低門檻：三個已知真錯誤全部命中** —— BL1 `clinical_pearls[0]` 說「為手太陽小腸經」而同卡
+  `channel_zh=膀胱經`（A）；BL1 `needling`「眼球**想**外側」應為「向」（E）；
+  CV8 `contraindications[1]` 禁針警語裡「**神願**」應為「神闕」（F）。
+  這三個在 `validate-acupoint-standard` / `content-junk` / `ratchet` 全 PASS 之下存活至今。
+- **mirror_paths 已解析（這是這次前置最實質的一項）**：同一段錯字常同時住在兩條資料線，
+  只修一邊驗證器照樣全綠。實測 BL1 的「想外側」住在 **5 個檔案**：
+  `data/acupoints/361.json` · `data/acupoints/embedded/meridian_bl.json` ·
+  `data/channels/channels_and_charts.json` · `data/imports/cloudtcm/points/BL1.json` ·
+  `data/imports/cloudtcm/staging_points.json`。54 個候選中 `40` 個帶 mirror。
+- **探針調校過程（留給下一個要改它的人）**：初版用「本穴名 + 經名共現」→ 22 個候選，
+  但誤報全是正確敘述（BL7「膀胱經與督脈相連」）。改用**歸屬動詞綁定**（屬／為／是）→ 18 個，
+  誤報變成配穴句在講別的穴。再加**「歸屬動詞前最近的穴名必須指得到本穴」**→ 仍 18 個，
+  因為名稱欄用 `中衝／崑崙／後谿` 而散文用 `中沖／昆侖／後溪`，字形對不上。
+  補字形折疊後掉到 9 個，但**誤殺了 BL1／BL14** —— 原因是別名 token（目內眥→BL1、陰俞→BL14）
+  搶走了「最近穴名」的位置。最後改成 **名稱→code 集合**（別名指回本穴就算本穴），A 類定於 21。
+  同理 B 類初版把條件式禁針（小兒禁針、過飽者禁針）也算矛盾 → 25 個，加條件詞排除後降到 7。
+- **驗證**：`build-data` 無漂移；`validate-data` / `validate-acupoint-standard` /
+  `validate-relations` / `validate-content-junk` / `validate-point-ids` / `check-validation-ratchet`
+  全 PASS；`git diff --check` clean。探針唯讀性實測：連跑兩次（含 `--json`）後
+  `git status --short` 只有兩個新檔，零既有檔案被改。
+- **已知誤報（不修，這是設計）**：LR7 的「膝眼穴」是真奇穴（EX-LE4/5），但奇穴檔用 `nameZh`
+  camelCase 且未以兩字名登記，所以 F 類仍會報它。裁決者判 `false_positive` 即為正解。
+  （順帶佐證檢測報告的雙鍵發現：`361.json` 用 snake_case、`extra_points.json` 用 camelCase。）
+- **下一批**：P4 派工單已可直接發（§5.1 prompt 已改為指向骨架）。骨架 54 筆 `verdict` 全空，
+  待 Antigravity 逐條裁決；回收後由 Claude 依 `mirror_paths` 決定兩條資料線各修哪些，再走 gate。
+
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase C:中藥庫(HB-B1~B10)整檔取代,main 這邊的批次確認已被涵蓋
 
 - **背景**:main 上原本有兩層中藥工作——antigravity batch1/2(29+23 味 `_en` 回填,昨天我修過裡面混入的中文)
   跟 pattern-v2 的 HB-B1~B10 線(8/14,352→358 筆,十批連跑+Fable 驗收)。兩邊 `bothChanged` 分析(以三方共同
@@ -113,7 +187,7 @@
   且要把 E10 驗證器規則也帶回 pattern-v2)；Phase B(formulas/conditions/tdis/comparisons：雙邊都真的改過，
   已確認 main side 至少兩個具體修正 pattern-v2 沒有——玉女煎重複卡合併、瀉心湯身分重建——逐筆比對不能省)。
 
-
+# 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
 
 - **做了什麼**:上一條(Batch 1 精修)修完才發現驗證器本身有盲點——只查 `_zh` 欄位有沒有中文(E4)、`_en`/`_zh`
   陣列有沒有對齊(E5),從沒查過 `_en` 欄位自己的內容是不是真的英文。補 E10:陣列/字串項目裡「有 CJK 但完全沒有
@@ -172,6 +246,28 @@
   - `node scripts/validate-no-boilerplate.js`: PASS (0 boilerplate)
   - `node scripts/validate-content-junk.js`: PASS
 - **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
+# 2026-08-19 Claude — 5–20 年全系統檢測（唯讀稽核）:8 線並行調查,產出 SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md
+
+- **做了什麼**:Ting 指示「用專業醫生+專業系統人員思維檢測這個 OS,以未來 5-20 年使用哪裡可再優化」。8 條獨立唯讀調查線並行
+  (臨床安全/醫學知識/資料架構/應用工程/維運保全/法規執業/現況實測/完整性批判,510 次工具呼叫),互相不知情、各自實測,
+  批判者對 8 項最重跨線發現逐一抽查:全部 CONFIRMED、零 REFUTED。產出去重收斂報告 `SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md`
+  (TOP-10 優先行動 + 62 條發現全表 + 5 個跨面向根因 + 維護日曆草案 + 當晚 Clinical 併行協調狀態存證)。**未改動任何 data/**、
+  scripts/**、app 檔案;新增檔案僅報告一份 + 本條目。**
+- **關鍵實測數字**(每個可重現,指令在報告 §九):review_status 碎裂 16 種值(sourced_checked 272 > source_checked 131);
+  draft 增速 +303/11天 vs 臨床內容人審畢業 0(source_checked 51→131 增量全來自 ICD 匯入機器蓋章);tdis 紅旗 75/75 全空、
+  conditions 71/150 空;361 穴 field_sources.cautions_zh 361/361 同值蓋章(WHO SAPL 錯掛禁忌欄);cautions_en/cautionsEn
+  71 筆共存 100% 分歧(LI4 孕忌只在其中一份);safety_flags 256/294 不在詞彙表;方劑樣板句家族殘 281 欄位;
+  validate-encoding --summary-only 13,232(不在任何 gate);ICD 679/796 碼 effective_to=2026-09-30(剩 6 週),117 碼無版本;
+  方劑劑量 9/221、煎服法 3/221;症狀實體 3 筆;病→方 2,914 邊 37% 斷鏈(210 首缺席方=實測需求清單);
+  main 分支 protected:false(全部 92+ 分支)、單一 remote、git 全史 85 commits/11 天 vs PROJECT_LOG 56 sessions(洗掉物證);
+  app 病例儲存三個資料毀滅口(損壞歸零/quota 無承接/匯入整批覆蓋);穴位編輯 isUserEdited 零寫入點(存了也被丟);
+  dist 23.8MB/15 檔、knowledge_data.js 11.8MB;public_ready 0 筆但 acuting.com 公開管線已在治理外運轉。
+- **驗證**:調查全程唯讀;build-data 重跑後 data/generated 零 diff;結束時 git status 僅新增報告與本條目。
+  15 支驗證器重跑:12 PASS、3 FAIL(conditions 447=基線、tdis 75=基線、encoding 13,232 無 gate)。
+- **下一批(報告 TOP-10,前三為最急)**:① main 分支保護+required checks(Clinical 整合前);② 3-2-1 備份(第二遠端+bundle 冷備);
+  ③ 病例持久化三修+筆記匯出鈕;④ review_status 詞彙收斂(需 Ting 裁定 16 值語意);⑤ 361 雙鍵手術(整合後);
+  ⑥ 紅旗 Ting 供源備援;⑦ encoding+樣板句上鎖;⑧ ICD 到期監測;⑨ draft 天花板+安全欄位級畢業;⑩ MAINTENANCE_CALENDAR+DEGRADED_MODE。
 
 # 2026-08-19 Claude — 第二輪(PR #62):C10 假填重填 wave 1、加減表抽盡、方歌批3、瀉心湯善後
 
