@@ -1,3 +1,31 @@
+# 2026-08-22 Claude — pattern-v2→main 併回 Phase E+F:配色改版(Ting 已點頭)+ 最後兩個 config 檔收尾
+
+- **Phase E(補記,commit `5c7b1904`→`0dd88e55`)**:styles.css 全站配色改版,Brand Theme v2 品牌溫潤風。
+  上一批漏寫 PROJECT_LOG 條目,這裡補上。做法:先確認 main 對 styles.css 零獨立改動,整檔套用
+  pattern-v2 版本;因為是使用者每次開站都看得到的視覺決策,沒有直接落地——先用 Artifact 做一份左右並排
+  的比較頁(兩邊各用麻黃卡真實內容做 mini mockup,不是抽象色塊),推到獨立分支 `claude/pattern-v2-main-reconcile`
+  等 Ting 點頭,點頭後才 push 到 main。技術驗證:main 零獨立改動、瀏覽器實測 console 零錯誤、色票正確套用。
+- **Phase F**:最後兩個 `data/config/` 分岔檔案。
+  - `formula_caution_herbs.json`(慎用藥 slug 名單,pattern-v2 新增、main 完全沒有):落地前確認main 目前
+    因為缺這個檔案,`validate-formula-safety-predicates.js` 直接 fail-loud 拒絕跑(「找不到慎用藥設定檔…
+    拒絕以『0 違反』收場」)——不是驗證器沒查,是它正確地不敢在缺設定檔時假裝查過。補上後正常跑出
+    P4 552 條、P6 6 條(全 NOTE 級,不擋 CI)。
+  - `relation_registry.json`(雙邊都真的改過):查了才發現**這次不是 pattern-v2 贏**——main 在 2026-08-19
+    把 `edge.pattern_differentials` 的 `field` 從 `"differential_patterns"` 改成
+    `"differential_patterns[].pattern_id"`,直接把「這欄位存的是物件、id 在 .pattern_id 裡」這件事編進
+    路徑本身,並帶了 `field_note` 說明;pattern-v2 那邊是 2026-08-12 的舊修法,只加了兩個描述性欄位
+    (`stored_shape`/`shape_note`),解決同一個問題但方案較舊、較不完整。main 的版本更新、更完整,
+    **維持 main 原樣,沒有套用 pattern-v2 的版本**——這是本輪唯一一次「main 版本較優、不採 pattern-v2」
+    的案例,寫下來避免以後又重新掙扎一次。
+- **驗證**:`build-data.js` PASS;`validate-formula-safety-predicates.js` 從 fail-loud 拒答變成正常出結果;
+  `check-validation-ratchet.js` PASS(conditions/patterns/tdis/symptoms/naming 全部 flat,零倒退)。
+- **pattern-v2→main 併回工作到此告一段落**:Phase A(穴位/藥理/symptoms/supplements/clinical_cases)、
+  B(formulas/tdis/conditions 逐欄位 + scripts/ 整批)、C(中藥庫)、D(previsit/patients 畫面層)、
+  E(配色,已點頭)、F(最後兩個 config 檔)全部落地。過程中兩次接到其他 session 的補強(PR #69 救回
+  Phase C 誤刪的 5 筆中藥、PR #70 補回 Phase B 漏搬的 10 個資料檔),也抓到一次 antigravity 的資料汙染
+  (batch1 中文混入 `_en` 欄位)。`docs/research_packs/`(45% 的原始分岔量)是研究工作檔,`build-data.js`
+  未引用,故意不搬。
+
 # 2026-08-21 Claude — pattern-v2→main 併回 Phase D:previsit/patients 畫面層(app.js + 6 支新 JS + index.html)
 
 - **範圍**:Ting 指名要「js/previsit 那塊」,查下去發現不能只搬 `previsit.html` + `js/previsit-validator.js`——
