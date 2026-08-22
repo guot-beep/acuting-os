@@ -96661,6 +96661,56 @@
     {
       "review_status": "draft",
       "source_status": "source_layered_draft",
+      "public_safe": false,
+      "updated_at": "2026-08-19",
+      "authored_by": "Claude",
+      "review_notes_zh": "AI draft：為補中藥庫缺口而建(方劑組成列連結對象)。性味歸經功效依所列來源;劑量未填(不虛構)。待 Ting 源審核。",
+      "id": "herb.zong_lu_tan",
+      "name_zh": "棕櫚炭",
+      "name_en": "Charred Trachycarpus Petiole",
+      "pinyin": "Zong Lu Tan",
+      "pinyin_toned": "Zōng Lǘ Tàn",
+      "pharmaceutical_latin": "Trachycarpi Petiolus Carbonisatus",
+      "category": "止血藥 / Stop Bleeding",
+      "taste_temperature_zh": "苦、澀，平",
+      "channels_zh": [
+        "肝經",
+        "肺經",
+        "大腸經"
+      ],
+      "functions_zh": [
+        "收澀止血"
+      ],
+      "aliases_zh": [
+        "棕櫚皮",
+        "陳棕炭",
+        "棕炭"
+      ],
+      "cautions_zh": [
+        "出血兼有瘀滯者不宜單用。"
+      ],
+      "cautions_en": [
+        "Not to be used alone where bleeding is accompanied by stasis."
+      ],
+      "source_citations": [
+        "《中華人民共和國藥典》2020年版一部：棕櫚(炭)"
+      ],
+      "channels_en": [],
+      "field_sources": {
+        "functions_zh": [
+          "《中華人民共和國藥典》2020年版一部：棕櫚(炭)"
+        ],
+        "taste_temperature_zh": [
+          "《中華人民共和國藥典》2020年版一部：棕櫚(炭)"
+        ],
+        "channels_zh": [
+          "《中華人民共和國藥典》2020年版一部：棕櫚(炭)"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
       "ncbahm_2026_official": false,
       "public_safe": false,
       "updated_at": "2026-08-11",
@@ -98129,6 +98179,132 @@
         "no_new_numbers": true,
         "source_field": "dosage"
       }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "public_safe": false,
+      "updated_at": "2026-08-19",
+      "authored_by": "Claude",
+      "review_notes_zh": "AI draft：為補中藥庫缺口而建(方劑組成列連結對象)。性味歸經功效依所列來源;劑量未填(不虛構)。待 Ting 源審核。",
+      "id": "herb.jiu",
+      "name_zh": "酒",
+      "name_en": "Rice Wine / Spirits",
+      "pinyin": "Jiu",
+      "pinyin_toned": "Jiǔ",
+      "pharmaceutical_latin": "Vinum",
+      "category": "活血化瘀藥 / Invigorate Blood",
+      "taste_temperature_zh": "辛、甘，大熱",
+      "channels_zh": [
+        "心經",
+        "肝經",
+        "肺經",
+        "胃經"
+      ],
+      "functions_zh": [
+        "通血脈",
+        "行藥勢",
+        "散寒"
+      ],
+      "aliases_zh": [
+        "白酒",
+        "黃酒",
+        "清酒",
+        "米酒",
+        "料酒"
+      ],
+      "cautions_zh": [
+        "陰虛火旺、出血性疾患及酒精禁忌者(孕婦、肝病、服用相互作用藥物者)不宜。"
+      ],
+      "cautions_en": [
+        "Not suitable in Yin deficiency with effulgent Fire, bleeding disorders, or where alcohol is contraindicated (pregnancy, liver disease, interacting medications)."
+      ],
+      "clinical_use_note": "瓜蔞薤白白酒湯之「白酒」為古代米酒/醪酒，非今日蒸餾白酒；炙甘草湯以清酒與水同煎；通竅活血湯用黃酒。",
+      "source_citations": [
+        "《金匱要略》瓜蔞薤白白酒湯條文",
+        "《傷寒論》炙甘草湯條文",
+        "《醫林改錯》通竅活血湯條文",
+        "《中藥大辭典》：酒"
+      ],
+      "channels_en": [],
+      "field_sources": {
+        "functions_zh": [
+          "《金匱要略》瓜蔞薤白白酒湯條文",
+          "《傷寒論》炙甘草湯條文",
+          "《醫林改錯》通竅活血湯條文",
+          "《中藥大辭典》：酒"
+        ],
+        "taste_temperature_zh": [
+          "《金匱要略》瓜蔞薤白白酒湯條文",
+          "《傷寒論》炙甘草湯條文",
+          "《醫林改錯》通竅活血湯條文",
+          "《中藥大辭典》：酒"
+        ],
+        "channels_zh": [
+          "《金匱要略》瓜蔞薤白白酒湯條文",
+          "《傷寒論》炙甘草湯條文",
+          "《醫林改錯》通竅活血湯條文",
+          "《中藥大辭典》：酒"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "public_safe": false,
+      "updated_at": "2026-08-19",
+      "authored_by": "Claude",
+      "review_notes_zh": "AI draft：本品為成方入藥(六一散加青黛),非單味藥;建卡使蒿芩清膽湯組成列可連結查閱。待 Ting 源審核。",
+      "id": "herb.bi_yu_san",
+      "name_zh": "碧玉散",
+      "name_en": "Jasper Powder (Liu Yi San plus Qing Dai)",
+      "pinyin": "Bi Yu San",
+      "pinyin_toned": "Bì Yù Sǎn",
+      "pharmaceutical_latin": "—(成方:滑石、甘草、青黛)",
+      "category": "清熱藥 / Clear Heat - Drain Fire",
+      "taste_temperature_zh": "甘、鹹，寒",
+      "channels_zh": [
+        "心經",
+        "胃經",
+        "膀胱經"
+      ],
+      "channels_en": [],
+      "functions_zh": [
+        "清熱解暑",
+        "利濕",
+        "清肝瀉火"
+      ],
+      "aliases_zh": [],
+      "clinical_use_note": "六一散(滑石六、甘草一)加青黛而成;蒿芩清膽湯以布包入煎。單味成分見 herb.hua_shi、herb.gan_cao、herb.qing_dai。",
+      "source_citations": [
+        "《傷寒直格》六一散加減方",
+        "蒿芩清膽湯(《重訂通俗傷寒論》)組成"
+      ],
+      "field_sources": {
+        "functions_zh": [
+          "《傷寒直格》六一散加減方"
+        ],
+        "actions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "dosage": "curriculum/herbs/臺灣中藥典第四版英文版.md",
+        "cautions_zh": "curriculum/herbs/臺灣中藥典第四版英文版.md",
+        "cautions_en": "curriculum/herbs/臺灣中藥典第四版英文版.md"
+      },
+      "actions_en": [
+        "Clears heat and relieves summerheat",
+        "Disinhibits dampness",
+        "Clears the liver and drains fire"
+      ],
+      "dosage": {
+        "decoction_g": "6–18g"
+      },
+      "cautions_zh": [
+        "陰虛津傷者慎用",
+        "脾虛便溏者慎用"
+      ],
+      "cautions_en": [
+        "Use with caution in Yin deficiency fluid damage",
+        "Use with caution in Spleen deficiency loose stool"
+      ]
     },
     {
       "review_status": "draft",
@@ -100064,6 +100240,59 @@
     {
       "review_status": "draft",
       "source_status": "source_layered_draft",
+      "public_safe": false,
+      "updated_at": "2026-08-19",
+      "authored_by": "Claude",
+      "review_notes_zh": "AI draft：為補中藥庫缺口而建(方劑組成列連結對象)。性味歸經功效依所列來源;劑量未填(不虛構)。待 Ting 源審核。",
+      "id": "herb.zao_xin_tu",
+      "name_zh": "灶心土",
+      "name_en": "Ignited Yellow Earth",
+      "pinyin": "Zao Xin Tu",
+      "pinyin_toned": "Zào Xīn Tǔ",
+      "pharmaceutical_latin": "Terra Flava Usta",
+      "category": "止血藥 / Stop Bleeding",
+      "taste_temperature_zh": "辛，溫",
+      "channels_zh": [
+        "脾經",
+        "胃經"
+      ],
+      "functions_zh": [
+        "溫中止血",
+        "止嘔",
+        "止瀉"
+      ],
+      "aliases_zh": [
+        "伏龍肝"
+      ],
+      "cautions_zh": [
+        "陰虛失血及熱證嘔吐者不宜。"
+      ],
+      "cautions_en": [
+        "Not suitable for bleeding from Yin deficiency or vomiting from Heat patterns."
+      ],
+      "source_citations": [
+        "《中藥大辭典》：伏龍肝",
+        "黃土湯(《金匱要略》)主藥"
+      ],
+      "channels_en": [],
+      "field_sources": {
+        "functions_zh": [
+          "《中藥大辭典》：伏龍肝",
+          "黃土湯(《金匱要略》)主藥"
+        ],
+        "taste_temperature_zh": [
+          "《中藥大辭典》：伏龍肝",
+          "黃土湯(《金匱要略》)主藥"
+        ],
+        "channels_zh": [
+          "《中藥大辭典》：伏龍肝",
+          "黃土湯(《金匱要略》)主藥"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
       "ncbahm_2026_official": false,
       "public_safe": false,
       "updated_at": "2026-08-11",
@@ -100262,6 +100491,79 @@
         ]
       },
       "card_grade": "partial"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "public_safe": false,
+      "updated_at": "2026-08-19",
+      "authored_by": "Claude",
+      "review_notes_zh": "AI draft：為補中藥庫缺口而建(方劑組成列連結對象)。性味歸經功效依所列來源;劑量未填(不虛構)。待 Ting 源審核。",
+      "id": "herb.cha_ye",
+      "name_zh": "茶葉",
+      "name_en": "Tea Leaf",
+      "pinyin": "Cha Ye",
+      "pinyin_toned": "Chá Yè",
+      "pharmaceutical_latin": "Camelliae Folium",
+      "category": "清熱藥 / Clear Heat - Drain Fire",
+      "taste_temperature_zh": "苦、甘，涼",
+      "channels_zh": [
+        "心經",
+        "肺經",
+        "胃經"
+      ],
+      "functions_zh": [
+        "清利頭目",
+        "除煩止渴",
+        "消食",
+        "利尿"
+      ],
+      "aliases_zh": [
+        "綠茶",
+        "清茶",
+        "細茶"
+      ],
+      "clinical_use_note": "川芎茶調散以「清茶調下」，取其清上降下、監製風藥之溫燥。",
+      "source_citations": [
+        "《中藥大辭典》：茶葉",
+        "《太平惠民和劑局方》川芎茶調散服法"
+      ],
+      "channels_en": [],
+      "field_sources": {
+        "functions_zh": [
+          "《中藥大辭典》：茶葉",
+          "《太平惠民和劑局方》川芎茶調散服法"
+        ],
+        "taste_temperature_zh": [
+          "《中藥大辭典》：茶葉",
+          "《太平惠民和劑局方》川芎茶調散服法"
+        ],
+        "channels_zh": [
+          "《中藥大辭典》：茶葉",
+          "《太平惠民和劑局方》川芎茶調散服法"
+        ],
+        "actions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "dosage": "curriculum/herbs/臺灣中藥典第四版英文版.md",
+        "cautions_zh": "curriculum/herbs/臺灣中藥典第四版英文版.md",
+        "cautions_en": "curriculum/herbs/臺灣中藥典第四版英文版.md"
+      },
+      "actions_en": [
+        "Clears the head and eyes",
+        "Relieve restlessness and quench thirst",
+        "Promotes digestion",
+        "Promotes urination"
+      ],
+      "dosage": {
+        "decoction_g": "3–9g"
+      },
+      "cautions_zh": [
+        "神經衰弱失眠者不宜睡前多飲",
+        "胃寒及脾胃虛弱者慎服"
+      ],
+      "cautions_en": [
+        "Avoid excessive intake before sleep in insomnia",
+        "Use with caution in Spleen/Stomach deficiency cold"
+      ]
     },
     {
       "review_status": "draft",
