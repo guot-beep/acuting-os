@@ -1,4 +1,37 @@
-# 2026-08-21 Claude — pattern-v2→main 併回 Phase B:formulas/tdis/conditions 逐欄位併,scripts/ 整批補齊
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase D:previsit/patients 畫面層(app.js + 6 支新 JS + index.html)
+
+- **範圍**:Ting 指名要「js/previsit 那塊」,查下去發現不能只搬 `previsit.html` + `js/previsit-validator.js`——
+  index.html 同一批一起載入 6 支新 JS(`clinical-store.js`/`avs.js`/`previsit-validator.js`/
+  `practice-audit.js`/`care-draft.js`,加上根目錄 `app.js` 本體 +4504 行),彼此互相呼叫函式,沒辦法只搬一半。
+  `app.js` 一開始漏查——之前查 `js/app.js` 查到空手就以為 main 沒碰過,其實真正的檔案在根目錄 `app.js`,
+  查錯路徑;搬檔當下所有新模組都找不到 `computeCareReadiness`/`lookupAgentSafetyCard` 等函式,才發現漏了
+  這支最關鍵的檔案。
+- **`styles.css` 刻意沒搬**:previsit.html 自帶內嵌 `<style>`,`zero dependencies` 是文件裡寫明的設計原則,
+  不吃 styles.css。查了才發現 styles.css 758 行差異是另一件事——全站配色改版(Brand Theme v2,已含 WCAG AA
+  對比度修正、三個競爭 `:root` 區塊合併),跟 previsit 無關,是需要 Ting 另外點頭的視覺決策,這批不動。
+- **一併補上的相依資料**(否則 `validate-avs-library.js` 5 筆 pattern id 解不到):
+  `data/config/pattern_alias_map.json`、`data/pathology/pattern_registry.json`(main 這兩個檔案原本沒有
+  獨立改動,查證過才整檔套用)。
+- **驗證**:`build-data.js` PASS;previsit self-test(35/35);`validate-care-draft-render`/
+  `validate-exposure-safety-render`/`validate-outcome-panel-render`/`validate-care-draft-phi`/
+  `validate-clinical-store-phi-boundary`/`validate-clinical-invariants`/`validate-bilingual-render-parity`/
+  `validate-no-template-protocol`/`validate-boot-order`/`validate-avs-library`/`validate-pattern-registry`/
+  `validate-pattern-standard`/`validate-relations` 全 PASS;十一個原有 domain 驗證器重跑一輪不退步(condition
+  55→54,再進一步);`check-validation-ratchet.js --update` 鎖定新 baseline。
+- **實機驗證撞到的烏龍(記錄下來避免下次重蹈)**:第一輪用瀏覽器打開 `formula.xie_xin_tang` 卡片,組成顯示
+  還是舊的「制半夏、乾薑…」7 味——一度以為是渲染層 bug 或欄位被別處覆寫,查了快半小時(`compositionSummary`
+  函式、`formulaById` 建構、`ACUTING_KNOWLEDGE` 全域賦值、bundle 裡逐位元組核對 composition 欄位皆正確)。
+  最後靠 `preview_list` 查 `cwd` 才發現:`preview_start({name:...})` 沒認到這個 worktree 裡臨時寫的
+  `.claude/launch.json`(名字對不上真正的 `.claude/launch.json`,那支原本就有、名叫 `acuting-static`),
+  結果起了一個指向**主 pattern-v2 目錄**(未併回主線修正前的舊狀態)的伺服器——瀏覽器測的其實是錯的目錄,
+  不是這個 reconcile branch。教訓:**用瀏覽器驗證前,先用 `preview_list` 核對 `cwd` 是不是真的指到要測的
+  worktree**,不要相信 `preview_start` 會自動對到你剛寫的 launch.json。手動 `node scripts/dev-server.js
+  <port>` 起在正確目錄、`preview_start({url:...})` 直接指定,重測後三種卡片(方劑/中藥/西藥)全部正確。
+- **待辦**:`styles.css` 全站配色改版——需要 Ting 明確點頭才做,不算在這批;`data/config/formula_caution_herbs.json`
+  (新)、`data/config/relation_registry.json`(main 跟 pattern-v2 都真的改過)還沒併,跟 previsit 無關,
+  留給下一輪。
+
+
 
 - **做法**:formulas.json / tdis_registry.json / condition_canon_shortlist.json 三個檔案雙邊都真的改過
   (`bothChanged` 189/40/88 筆),不能像 Phase A/C 整檔套用。寫了一個逐欄位三方合併腳本:以 pattern-v2 版本
