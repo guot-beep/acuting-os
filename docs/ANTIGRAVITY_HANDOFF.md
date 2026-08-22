@@ -34,7 +34,7 @@ previsit 頁面/驗證器 `previsit.html` + `js/previsit-validator.js` 在 patte
 - **稽核結果摘要**:
   - 全庫 358 味中藥卡逐卡完成 `functions_zh` / `modern_functions_zh` / `cautions_zh` / `contraindications_zh` 與各自英文翻譯之比對。
   - 產出詳細語意優化建議報告（涵蓋警示前綴缺漏、治性動詞缺漏、重複陣列項目及課件備註傾倒），無修改 `data/herbs/**` 資料庫（100% 唯讀安全）。
-- **Commit**: (待 commit 後填入)
+- **Commit**: [`bf4660f6`](file:///c:/Projects/acuting-antigravity/docs/audits/HERB_SEMANTIC_QA_2026-08-21.md)
 
 ---
 
