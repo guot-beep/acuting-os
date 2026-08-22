@@ -1,0 +1,23 @@
+{
+  "dataset": "Environmental / occupational exposure (暴露史) controlled vocabulary",
+  "policy": [
+    "Canonical exposure.* ids (D17). exposure.* records do not exist yet — this is the vocabulary and the gap map, same approach as symptom_taxonomy.json (D14 build order).",
+    "觀察到的暴露資料是一筆觀察值，不是診斷：任何程式路徑都不得將 exposure.* 觀察自動轉為 TCM 證型或病名（D17 §6）。",
+    "疑似暴露（suspected）不得自動升級為確診（confirmed）——確認一律需要人工覆核（病史對照、檢測報告等），本檔案的 id 與分類標籤本身不構成升級依據。",
+    "`kind` groups exposures by source (environmental / heavy_metal / chemical / occupational / combustion) for filter UI only; it carries no severity or causality weight.",
+    "IDs are ASCII (D10). Adding an exposure is a schema change: this file, then the intake form, then any validator that checks exposure.* ids."
+  ],
+  "created": "2026-08-12",
+  "applies_to": "Case-level exposure observations captured under a future exposure.* field",
+  "records": [
+    { "id": "exposure.wildfire_smoke", "name_zh": "野火煙霧", "name_en": "Wildfire smoke", "kind": "environmental" },
+    { "id": "exposure.secondhand_smoke", "name_zh": "二手菸", "name_en": "Secondhand smoke", "kind": "environmental" },
+    { "id": "exposure.mold", "name_zh": "黴菌", "name_en": "Mold", "kind": "environmental" },
+    { "id": "exposure.lead", "name_zh": "鉛", "name_en": "Lead", "kind": "heavy_metal" },
+    { "id": "exposure.mercury", "name_zh": "汞（水銀）", "name_en": "Mercury", "kind": "heavy_metal" },
+    { "id": "exposure.pesticide", "name_zh": "農藥", "name_en": "Pesticide", "kind": "chemical" },
+    { "id": "exposure.solvent", "name_zh": "有機溶劑", "name_en": "Solvents", "kind": "chemical" },
+    { "id": "exposure.occupational_dust", "name_zh": "職業性粉塵", "name_en": "Occupational dust", "kind": "occupational" },
+    { "id": "exposure.carbon_monoxide", "name_zh": "一氧化碳", "name_en": "Carbon monoxide", "kind": "combustion" }
+  ]
+}

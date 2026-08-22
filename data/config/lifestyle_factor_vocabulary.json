@@ -1,0 +1,40 @@
+{
+  "dataset": "Lifestyle factor (生活型態因子) controlled vocabulary",
+  "policy": [
+    "Canonical life.* factor ids (D17). Hierarchical dot ids group related factors under one stem (life.sleep.*, life.caffeine.*, life.nicotine.*, life.diet.*) so a card or intake form can ask 'which sleep factors' without a second lookup table; a handful of factors (alcohol, exercise, sedentary_time, hydration) stand alone at life.* because they do not cluster under an existing stem.",
+    "觀察到的生活型態資料是一筆觀察值，不是診斷：任何程式路徑都不得將 life.* 觀察自動轉為 TCM 證型或病名（D17 §6）。此清單只提供可勾選的因子與其量化建議欄位，推論仍須由臨床人員判斷。",
+    "疑似暴露（suspected）不得自動升級為確診（confirmed）——本檔案不涉及暴露分級，量表定義見 exposure_vocabulary.json。",
+    "value_hint_en on every record suggests HOW to capture the quantity (cups/day, hours/night, current/former/never + amount/day + years, …). It is a UI hint, not a stored value — the actual number lives on the case observation, not on this vocabulary.",
+    "IDs are ASCII (D10). Adding a factor is a schema change: this file, then the intake form, then any validator that checks life.* ids."
+  ],
+  "created": "2026-08-12",
+  "applies_to": "Case-level lifestyle observations captured under a future life.* field",
+  "records": [
+    { "id": "life.sleep.late_bedtime", "name_zh": "晚睡", "name_en": "Late bedtime", "value_hint_en": "usual bedtime (hh:mm)" },
+    { "id": "life.sleep.short_duration", "name_zh": "睡眠時間不足", "name_en": "Short sleep duration", "value_hint_en": "hours/night" },
+    { "id": "life.sleep.irregular_schedule", "name_zh": "作息不規律", "name_en": "Irregular sleep schedule", "value_hint_en": "regular/irregular + night-to-night variability (hours)" },
+    { "id": "life.sleep.night_shift", "name_zh": "夜班工作", "name_en": "Night shift work", "value_hint_en": "current/former/never + years" },
+    { "id": "life.sleep.frequent_waking", "name_zh": "夜間頻繁醒來", "name_en": "Frequent night waking", "value_hint_en": "times/night" },
+    { "id": "life.caffeine.coffee", "name_zh": "咖啡", "name_en": "Coffee", "value_hint_en": "cups/day" },
+    { "id": "life.caffeine.tea", "name_zh": "含咖啡因茶飲", "name_en": "Caffeinated tea", "value_hint_en": "cups/day" },
+    { "id": "life.caffeine.energy_drink", "name_zh": "能量飲料", "name_en": "Energy drinks", "value_hint_en": "cans/week" },
+    { "id": "life.caffeine.pre_workout", "name_zh": "含咖啡因運動前補給品", "name_en": "Pre-workout supplements", "value_hint_en": "servings/week" },
+    { "id": "life.nicotine.cigarette", "name_zh": "香菸", "name_en": "Cigarettes", "value_hint_en": "current/former/never + cigarettes/day + years" },
+    { "id": "life.nicotine.vaping", "name_zh": "電子煙", "name_en": "Vaping", "value_hint_en": "current/former/never + sessions/day + years" },
+    { "id": "life.nicotine.other", "name_zh": "其他尼古丁製品（嚼菸、鼻煙等）", "name_en": "Other nicotine products", "value_hint_en": "current/former/never + amount/day + years" },
+    { "id": "life.diet.raw_food", "name_zh": "生食", "name_en": "Raw food", "value_hint_en": "servings/week" },
+    { "id": "life.diet.cold_food_drinks", "name_zh": "生冷飲食", "name_en": "Cold food & drinks", "value_hint_en": "servings/day" },
+    { "id": "life.diet.raw_seafood", "name_zh": "生食海鮮", "name_en": "Raw seafood", "value_hint_en": "servings/week" },
+    { "id": "life.diet.very_hot_beverages", "name_zh": "過燙飲食", "name_en": "Very hot beverages", "value_hint_en": "servings/day" },
+    { "id": "life.diet.late_night_meals", "name_zh": "宵夜／晚餐過晚", "name_en": "Late-night meals", "value_hint_en": "times/week" },
+    { "id": "life.diet.high_sugar", "name_zh": "高糖飲食", "name_en": "High sugar intake", "value_hint_en": "servings/day" },
+    { "id": "life.diet.ultra_processed", "name_zh": "高度加工食品", "name_en": "Ultra-processed food", "value_hint_en": "servings/week" },
+    { "id": "life.diet.spicy_food", "name_zh": "辛辣飲食", "name_en": "Spicy food", "value_hint_en": "servings/week" },
+    { "id": "life.diet.irregular_meals", "name_zh": "三餐不定時", "name_en": "Irregular meal timing", "value_hint_en": "regular/irregular + typical gap (hours)" },
+    { "id": "life.diet.fasting", "name_zh": "斷食／間歇性斷食", "name_en": "Fasting", "value_hint_en": "type + hours/day or days/week" },
+    { "id": "life.alcohol", "name_zh": "飲酒", "name_en": "Alcohol use", "value_hint_en": "drinks/week" },
+    { "id": "life.exercise", "name_zh": "運動", "name_en": "Exercise", "value_hint_en": "type + minutes/week" },
+    { "id": "life.sedentary_time", "name_zh": "久坐", "name_en": "Sedentary time", "value_hint_en": "hours/day" },
+    { "id": "life.hydration", "name_zh": "飲水量", "name_en": "Water intake", "value_hint_en": "cups or liters/day" }
+  ]
+}

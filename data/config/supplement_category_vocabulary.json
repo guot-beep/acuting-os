@@ -1,0 +1,21 @@
+{
+  "dataset": "Supplement category (保健品／營養補充劑分類) controlled vocabulary",
+  "policy": [
+    "Category ids for the future supp.* namespace (D17). supp.* records do not exist yet — this is the vocabulary and the gap map, same approach as symptom_taxonomy.json (D14 build order: vocabulary first, records born when filled from a real source).",
+    "觀察到的生活型態／暴露資料一律不得自動轉為 TCM 證型或診斷（D17 §6）；本檔案僅供分類顯示，不作推論依據。",
+    "疑似暴露（suspected）不得自動升級為確診（confirmed）——升級一律需要人工覆核，本檔案的分類標籤不參與此判斷。",
+    "IDs are ASCII, plain snake_case with no namespace prefix — mirrors condition_category_vocabulary.json's id style. The category value lives on the supp.* record itself (single source of truth); this file only supplies the display label."
+  ],
+  "created": "2026-08-12",
+  "applies_to": "supp.* records (not yet built) via a future `category` field",
+  "categories": [
+    { "id": "vitamins", "name_zh": "維生素", "name_en": "Vitamins" },
+    { "id": "minerals", "name_zh": "礦物質", "name_en": "Minerals" },
+    { "id": "botanical_extracts", "name_zh": "植物萃取物", "name_en": "Botanical Extracts" },
+    { "id": "fatty_acids", "name_zh": "脂肪酸", "name_en": "Fatty Acids" },
+    { "id": "amino_acids_performance", "name_zh": "胺基酸／運動表現補劑", "name_en": "Amino Acids & Performance" },
+    { "id": "probiotics", "name_zh": "益生菌", "name_en": "Probiotics" },
+    { "id": "antioxidants_coenzymes", "name_zh": "抗氧化劑／輔酶", "name_en": "Antioxidants & Coenzymes" },
+    { "id": "multi_ingredient", "name_zh": "複方／多成分補充劑", "name_en": "Multi-ingredient Formulas" }
+  ]
+}

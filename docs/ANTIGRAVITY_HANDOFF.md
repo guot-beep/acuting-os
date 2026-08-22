@@ -5,22 +5,32 @@
 
 ---
 
-## ⚠️ 先讀：中藥分類批次填補暫停中
+## ✅ 暫停解除：pattern-v2 的中藥/穴位/藥理/formulas/conditions/tdis 都已併回 main
 
-Batch 1（清熱藥 29 味）跟 Batch 2（清熱解毒藥 23 味）都已經落地 `main`，謝謝，也謝謝照規則把 `_en`
-欄位改成純英文。
+昨天說的「另一支分支內容更完整、還沒併回」——已經處理完了。`main` 現在是：
+- 中藥庫 352→**358** 味（`actions_en` 100%、`cautions_zh` 99%、`modern_functions_en` 75%，bilingual gaps 掛零）
+- 穴位、藥理 PHARM、symptoms、supplements、clinical_cases：已整批併入
+- formulas.json / tdis_registry.json / condition_canon_shortlist.json：兩邊都改過的地方逐欄位合併過了
+  （包含 `formula.xie_xin_tang` 身分重建、`玉女煎` 重複卡刪除、71 首方歌等主線這邊的修正，跟 pattern-v2
+  自己的擴充內容都保留）
+- 驗證器全套換成比較新的版本（scripts/ 整批更新），`build-data.js` + 十個 domain 驗證器 + ratchet 全部
+  重新獨立驗過（不是信任本地工作區，是重新 clone 一份跑）。
 
-**先不要再開新的中藥分類批次**（不管是補虛、祛濕、瀉下、理氣……任何分類都不要）。原因：Claude 這邊發現
-另一支分支（`codex/pattern-v2`）已經對全庫 358 味中藥做過更完整的雙語欄位回填（`actions_en` 100%、
-`cautions_en` 99%、`modern_functions_en` 75%），但還沒併回 `main`，而且那支分支跟 `main` 在中藥、穴位、
-藥理（PHARM）好幾個資料夾都已經分岔了一大段（不只中藥）。在那支分支的內容併回 `main` 之前，任何新分類
-批次都有很高機率整批白做或跟它撞車。這邊處理好會回來更新這份文件、解除暫停。
+**現在中藥分類批次可以恢復了**（如果還有分類覆蓋率低的話——358 味的 `actions_en`/`cautions_zh` 已經接近
+滿了，`condition_tags_en` 還有缺，`related_formulas`/`safety_source_url` 也還有空間，開工前先跑
+`node scripts/validate-herb-standard.js` 看目前實際缺口，不要憑印象挑分類）。
+
+**還沒處理、你如果要動請先問**：`docs/research_packs/`、`data/research_staging/`、`js/`（有一個新的
+previsit 頁面/驗證器 `previsit.html` + `js/previsit-validator.js` 在 pattern-v2 上、main 還沒有）、
+`styles.css`、`wrangler.jsonc`（部署設定）——這些還在 pattern-v2 跟 main 之間分岔，屬於畫面/部署層，
+風險比資料層高，還沒併，先不要假設它們跟 main 一致。
 
 ---
 
-## ✅ 現在可以做 — Task 1：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
+## Task 1（如果還沒做完）：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
 
-**範圍**：`main` 上現有 352 味中藥卡（`data/herbs/herb_canon_shortlist.json`），全部 352 味，不限分類。
+**範圍**：`main` 上現有 **358** 味中藥卡（`data/herbs/herb_canon_shortlist.json`，數字比昨天多了，因為
+併回了 pattern-v2 新增的 6 味），全部，不限分類。
 
 **背景**：`validate-herb-standard.js` 剛加了 E10，能抓「整條中文完全沒翻譯、直接複製貼上」這種明顯錯誤
 （Batch 1 就是這種），但抓不到「翻了、但翻錯了」或「翻譯本身讀不通」這種語意層問題——那個只能靠人讀卡。
@@ -48,3 +58,6 @@ Batch 1（清熱藥 29 味）跟 Batch 2（清熱解毒藥 23 味）都已經落
   翻回英文）→ 已落地 `main`
 - Batch 2：清熱解毒藥 23 味 `_en`/`dosage` 回填，純英文鐵律貫徹（`9cd4ffde`）→ 已落地 `main`
 - `validate-herb-standard.js` 新增 E10：`_en` 欄位混入未翻譯中文的機器斷言（`0180b6db`）
+- pattern-v2→main 併回 Phase A/B/C（`262f369c`/`f4aaa75d`/`7da30e4c`）：穴位/藥理/symptoms/supplements/
+  clinical_cases/中藥庫/formulas/tdis/conditions/scripts 全套，逐檔驗證過才落地，細節見 `PROJECT_LOG.md`
+  2026-08-21 三條 Claude 條目。
