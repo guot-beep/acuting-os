@@ -1,4 +1,19 @@
-# 2026-08-22 Claude — pattern-v2→main 併回 Phase E+F:配色改版(Ting 已點頭)+ 最後兩個 config 檔收尾
+# 2026-08-23 Claude — pattern-v2→main 併回 Phase G(收尾):docs/research_packs/ 127 個研究工作檔整批搬入
+
+- **做了什麼**:Phase A-F 刻意跳過的最後一塊——`docs/research_packs/`(SUPP/SYM/TDIS/PROTOCOL 各線的
+  研究工作檔、SOL 交付物、批次分析報告),127 個檔案、67595 行、3.7MB。查證後確認 main 對這個目錄
+  **零獨立改動**(從來沒有任何檔案),pattern-v2 這邊全部都是新增(沒有一個是修改既有檔案)——沒有
+  三方比對的必要,單純整批搬入。
+- **範圍確認**:非資料層,`build-data.js`/任何驗證器都不引用這個目錄,純文件/研究紀錄。逐一驗證
+  126 個 `.json` 檔全部能被 `JSON.parse` 正確解析（含 11946 行的 `HERB_DOSAGE_NORMALIZE_RESULT_SOL.json`），
+  沒有損毀檔案混進來。
+- **驗證**:`build-data.js` PASS；`check-validation-ratchet.js` PASS（全部 flat，零倒退，符合預期——這批
+  本來就不影響任何驗證器）；`git status` 確認只多了這 127 個檔案，沒有連帶碰到別的東西。
+- **pattern-v2→main 併回工作正式全部結束**：Phase A 到 G 涵蓋原本 695 vs 39 commits、93→265 個檔案、
+  39 萬行等級的分岔，現在 main 跟 pattern-v2 之間只剩下 pattern-v2 自己未完成/未打算合併的部分（如果
+  之後還有新東西持續在 pattern-v2 上產生，屬於新一輪分岔，不是這輪的殘留）。
+
+
 
 - **Phase E(補記,commit `5c7b1904`→`0dd88e55`)**:styles.css 全站配色改版,Brand Theme v2 品牌溫潤風。
   上一批漏寫 PROJECT_LOG 條目,這裡補上。做法:先確認 main 對 styles.css 零獨立改動,整檔套用
