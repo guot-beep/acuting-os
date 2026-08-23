@@ -139,6 +139,11 @@ jobs:
       - name: canonical id sets may not shrink
         run: node scripts/check-canon-no-loss.js
 
+      # 2026-08-23: 信任欄位的受控詞彙鎖——review_status 曾碎裂成 16 種值
+      # （拼錯的 sourced_checked ×272 比正確的還多）。收斂完成後由這一步守住。
+      - name: review_status controlled vocabulary
+        run: node scripts/validate-review-status-vocab.js
+
       # Graduated from the ratchet 2026-08-06: the 72 extra-point D2 ids were
       # backfilled (add-point-ids.js), validate-point-ids is green, so it now
       # blocks like everything else.
